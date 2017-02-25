@@ -40,7 +40,7 @@ To start the timer which periodically refreshes snaps when a new version is push
 
 Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package will not remove directories and files created while using *snap*. It's best to remove your snaps with *snap remove* before uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package. At this time it is not possible to remove the ubuntu-core snap through the *snap* command. To remove the state, snap package cache and mount unit files completely, you can follow the instructions below.
 
-1\. We unmount any currently active snap that is mounted to `/snap`.
+1\. We unmount any currently active snap that is mounted to `/var/lib/snapd/snap/`.
 
 ```
 # umount $(mount | grep snap | awk '{print $3}')
@@ -51,11 +51,11 @@ Uninstalling the [snapd](https://www.archlinux.org/packages/?name=snapd) package
 
 ```
 # rm -rf /var/lib/snapd
-# rm -rf /snap
+# rm -rf /var/snap
 
 ```
 
-3\. We remove any unit files, that try to mount snaps from `/var/lib/snapd/snaps` to `/snap` at boot.
+3\. We remove any unit files, that try to mount snaps from `/var/lib/snapd/snaps` to `/var/lib/snapd/snap` at boot.
 
 ```
 # find /etc/systemd/system -name "snap-*.mount" -delete

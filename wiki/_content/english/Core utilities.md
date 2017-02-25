@@ -32,11 +32,11 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 
 ## Basic commands
 
-The following table lists basic shell commands every Linux user should be familiar with. Commands in **bold** are part of the shell, others are separate programs called from the shell. See the below sections and *Related articles* for details.
+The following table lists basic shell commands every Linux user should be familiar with. See the below sections and *Related articles* for details.
 
 | Command | Description | Manual page | Example |
 | man | Show manual page for a command | [man(7)](http://man7.org/linux/man-pages/man7/man.7.html) | man ed |
-| **cd** | Change directory | [cd(1)](http://man7.org/linux/man-pages/man1/cd.1.html) | cd /etc/pacman.d |
+| cd | Change directory (shell built-in command) | [cd(1)](http://man7.org/linux/man-pages/man1/cd.1.html) | cd /etc/pacman.d |
 | mkdir | Create a directory | [mkdir(1)](http://man7.org/linux/man-pages/man1/mkdir.1.html) | mkdir ~/newfolder |
 | rmdir | Remove empty directory | [rmdir(1)](http://man7.org/linux/man-pages/man1/rmdir.1.html) | rmdir ~/emptyfolder |
 | rm | Remove a file | [rm(1)](http://man7.org/linux/man-pages/man1/rm.1.html) | rm ~/file.txt |
@@ -46,7 +46,7 @@ The following table lists basic shell commands every Linux user should be famili
 | ls -al | List hidden files and file properties |
 | mv | Move a file | [mv(1)](http://man7.org/linux/man-pages/man1/mv.1.html) | mv ~/compressed.zip ~/archive/compressed2.zip |
 | cp | Copy a file | [cp(1)](http://man7.org/linux/man-pages/man1/cp.1.html) | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | Make a file executable | [chmod(1)](http://man7.org/linux/man-pages/man1/chmod.1.html) | chmod +x ~/.local/bin/myscript.sh |
+| chmod +x | Make a file [executable](/index.php/Executable "Executable") | [chmod(1)](http://man7.org/linux/man-pages/man1/chmod.1.html) | chmod +x ~/.local/bin/myscript.sh |
 | cat | Show file contents | [cat(1)](http://man7.org/linux/man-pages/man1/cat.1.html) | cat /etc/hostname |
 | strings | Show printable characters in binary files | [strings(1)](http://man7.org/linux/man-pages/man1/strings.1.html) | strings /usr/bin/free |
 | find | Search for a file | [find(1)](http://man7.org/linux/man-pages/man1/find.1.html) | find ~ -name myfile |
@@ -117,10 +117,10 @@ Instead, find takes a set of directories and matches each file under them agains
 
 *iconv* converts the encoding of characters from one codeset to another.
 
-The following command will convert the file `foo` from ISO-8859-15 to UTF-8 saving it to `foo.utf`:
+The following command will convert the file `*foo*` from ISO-8859-15 to UTF-8 saving it to `*foo*.utf`:
 
 ```
-$ iconv -f ISO-8859-15 -t UTF-8 foo > foo.utf
+$ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
 
 ```
 
@@ -133,7 +133,7 @@ See `man iconv` for more details.
 Unlike [sed](#sed), *iconv* does not provide an option to convert a file in place. However, `sponge` can be used to handle it, it comes with [moreutils](https://www.archlinux.org/packages/?name=moreutils).
 
 ```
-$ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
+$ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 
 ```
 
@@ -212,7 +212,7 @@ See `info ls` or [the online manual](http://www.gnu.org/software/coreutils/manua
 
 The `-l` option displays some metadata, for example:
 
- `$ ls -l /path/to/directory` 
+ `$ ls -l */path/to/directory*` 
 ```
 total 128
 drwxr-xr-x 2 archie users  4096 Jul  5 21:03 Desktop

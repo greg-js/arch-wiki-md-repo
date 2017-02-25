@@ -254,29 +254,7 @@ The Dolphin share functionality requires the package [kdenetwork-filesharing](ht
 
 ### KDE Desktop activities
 
-KDE Desktop Activities are special workspaces, where you can select special settings for each activity that apply only when you are using said activity. Settings that can be customized for each activity include, but are not limited to:
-
-**Changing your power settings** - say a presentation mode actvity - such that your screen never times out
-
-**Changing your default language / default keyboard to a different locale**
-
-**Changing your default permissions** - all apps launced run as root root - or - contrarily all apps have read-only access (sort of a super "incognito" mode I can't wait for this)!!
-
-**Changing your default printers**
-
-**Changing you default email and calendar** - for example from personal to work, etc.
-
-**Restoring the most commonly used apps for that activity** - moreover, apps are not launched, and thus *memory not allocated until you actually use that virtual desktop*, and could all be stopped when you decided to press the stop button for that activity.
-
-**Changing the default folders / widgets displayed on the desktop**
-
-**Changing the way that scrolling and different button mouse clicks work**
-
-and more.
-
-On your desktop, click the Cashew Plasmoid and, on the pop-up window, press "Activities".
-
-A plasma bar presenting you the current existing Plasma Desktop Activities will appear at the bottom of the screen. You can navigate between them by pressing the correspondent icons, add more, etc.
+[KDE Desktop Activities](https://userbase.kde.org/Plasma#Activities) are special workspaces where you can select specific settings for each activity that apply only when you are using said activity.
 
 ### Power saving
 

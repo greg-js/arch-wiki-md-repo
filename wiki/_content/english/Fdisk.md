@@ -66,21 +66,21 @@ The MBR is stored in the the first 512 bytes of the disk. It consist of 3 parts:
 To save the MBR as `mbr_file.img`:
 
 ```
-# dd if=/dev/sdX of=/path/to/mbr_file.img bs=512 count=1
+# dd if=/dev/sd*X* of=*/path/to/mbr_file.img* bs=512 count=1
 
 ```
 
 You can also extract the MBR from a full dd disk image:
 
 ```
-# dd if=/path/to/disk.img of=/path/to/mbr_file.img bs=512 count=1
+# dd if=*/path/to/disk.img* of=*/path/to/mbr_file.img* bs=512 count=1
 
 ```
 
 To restore (be careful, this destroys the existing partition table and with it access to all data on the disk):
 
 ```
-# dd if=/path/to/mbr_file.img of=/dev/sdX bs=512 count=1
+# dd if=/*path/to/mbr_file.img* of=/dev/sd*X* bs=512 count=1
 
 ```
 
@@ -89,21 +89,21 @@ To restore (be careful, this destroys the existing partition table and with it a
 If you only want to restore the boot loader, but not the primary partition table entries, just restore the first 446 bytes of the MBR:
 
 ```
-# dd if=/path/to/mbr_file.img of=/dev/sdX bs=446 count=1
+# dd if=*/path/to/mbr_file.img* of=/dev/sd*X* bs=446 count=1
 
 ```
 
 To restore only the partition table, one must use:
 
 ```
-# dd if=/path/to/mbr_file.img of=/dev/sdX bs=1 skip=446 count=64
+# dd if=*/path/to/mbr_file.img* of=/dev/sd*X* bs=1 skip=446 count=64
 
 ```
 
 To erase the MBR (may be useful if you have to do a full reinstall of another operating system) only the first 446 bytes are zeroed because the rest of the data contains the partition table:
 
 ```
-# dd if=/dev/zero of=/dev/sda bs=446 count=1
+# dd if=/dev/zero of=/dev/sd*X* bs=446 count=1
 
 ```
 
@@ -269,19 +269,19 @@ If the device will be bootable you will need to set the bootable flag with *fdis
 
 ### Sort partitions
 
-This applies for when a new partition is created in the space between two partitions or a partition is deleted.
+This applies for when a new partition is created in the space between two partitions or a partition is deleted. `/dev/sda` is used in this example.
 
 MBR
 
 ```
-# sfdisk -r */dev/sda*
+# sfdisk -r /dev/sda
 
 ```
 
 GPT
 
 ```
-# sgdisk -s */dev/sda*
+# sgdisk -s /dev/sda
 
 ```
 
@@ -289,10 +289,10 @@ After sorting the partitions if you are not using [Persistent block device namin
 
 ### Recover GPT header
 
-In case main GPT header or backup GPT header gets damaged, you can recover one from the other with *gdisk*.
+In case main GPT header or backup GPT header gets damaged, you can recover one from the other with *gdisk*. `/dev/sda` is used in this example.
 
 ```
-# gdisk */dev/sda*
+# gdisk /dev/sda
 
 ```
 

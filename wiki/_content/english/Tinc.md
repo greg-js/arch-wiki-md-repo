@@ -70,13 +70,7 @@ ip link set $INTERFACE down
 
 ```
 
-These files are meant to be run as scripts. As such, don't forget to make them executable!
-
-```
-#!/bin/sh
-chmod 775 /etc/tinc/*vpnname*/tinc-*
-
-```
+`tinc-up` and `tinc-down` need to be made [executable](/index.php/Executable "Executable").
 
 ### Configuration of beta
 
@@ -109,13 +103,7 @@ ip link set $INTERFACE down
 
 ```
 
-These files are meant to be run as scripts. As such, don't forget to make them executable!
-
-```
-#!/bin/sh
-chmod 775 /etc/tinc/*vpnname*/tinc-*
-
-```
+`tinc-up` and `tinc-down` need to be made [executable](/index.php/Executable "Executable").
 
 ### Setting up the hosts
 

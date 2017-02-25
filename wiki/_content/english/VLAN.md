@@ -120,12 +120,14 @@ Then [enable](/index.php/Enable "Enable") `systemd-networkd.service`. See [syste
 
 #### systemd-networkd bonded interface
 
-Similar to above, you're just going to stack more of the concepts in place. You'll want to ensure that you've got a bond set up in your switch and also make sure its a trunk with tagged vlans corresponding to what you create below. First we'll create the bond device:
+Similar to above, you're just going to stack more of the concepts in place. You'll want to ensure that you've got a bond set up in your switch and also make sure its a trunk with tagged vlans corresponding to what you create below. Convention would be to create a bond interface with the name bond0, however there is a known issue where the bonding module, when loaded, creates a bond device of the name bond0 which systemd then refuses to configure (as systemd tries to respectfully leave alone any device it did not create). So for the purposes of this write up we're going to use "bondname" and you can make the choice yourself.
 
- `/etc/systemd/network/*bond0*.netdev` 
+First we'll create the bond device:
+
+ `/etc/systemd/network/*bondname*.netdev` 
 ```
 [NetDev]
-Name=bond0
+Name=bondname
 Kind=bond
 
 [Bond]
@@ -136,10 +138,10 @@ LACPTransmitRate=fast
 
 Now create a .network directive that references the vlans and interface carriers. In this case we'll use the convention for a dual port fiber module:
 
- `/etc/systemd/network/*bond0*.network` 
+ `/etc/systemd/network/*bondname*.network` 
 ```
 [Match]
-Name=bond0
+Name=bondname
 
 [Network]
 VLAN=vlan10
@@ -159,7 +161,7 @@ We'll now set up the physical network interfaces:
 Name=enp3s0f0
 
 [Network]
-Bond=bond0
+Bond=bondname
 
 ```
  `/etc/systemd/network/*enp3s0f1*.network` 
@@ -168,7 +170,7 @@ Bond=bond0
 Name=enp3s0f1
 
 [Network]
-Bond=bond0
+Bond=bondname
 
 ```
 

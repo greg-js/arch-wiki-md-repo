@@ -14,9 +14,9 @@
 *   [3 기타 옵션](#.EA.B8.B0.ED.83.80_.EC.98.B5.EC.85.98)
     *   [3.1 커서 바꾸기](#.EC.BB.A4.EC.84.9C_.EB.B0.94.EA.BE.B8.EA.B8.B0)
     *   [3.2 테마 배경화면과 데스크톱 배경화면 통일 시키기](#.ED.85.8C.EB.A7.88_.EB.B0.B0.EA.B2.BD.ED.99.94.EB.A9.B4.EA.B3.BC_.EB.8D.B0.EC.8A.A4.ED.81.AC.ED.86.B1_.EB.B0.B0.EA.B2.BD.ED.99.94.EB.A9.B4_.ED.86.B5.EC.9D.BC_.EC.8B.9C.ED.82.A4.EA.B8.B0)
-    *   [3.3 Shutdown, reboot, suspend, exit, launch terminal from SLiM](#Shutdown.2C_reboot.2C_suspend.2C_exit.2C_launch_terminal_from_SLiM)
-    *   [3.4 Power-off error with Splashy](#Power-off_error_with_Splashy)
-    *   [3.5 Login information with SLiM](#Login_information_with_SLiM)
+    *   [3.3 SLiM에서 컴퓨터 끄기, 재부팅, 절전모드, 나가기, 터미널 실행](#SLiM.EC.97.90.EC.84.9C_.EC.BB.B4.ED.93.A8.ED.84.B0_.EB.81.84.EA.B8.B0.2C_.EC.9E.AC.EB.B6.80.ED.8C.85.2C_.EC.A0.88.EC.A0.84.EB.AA.A8.EB.93.9C.2C_.EB.82.98.EA.B0.80.EA.B8.B0.2C_.ED.84.B0.EB.AF.B8.EB.84.90_.EC.8B.A4.ED.96.89)
+    *   [3.4 Splashy 쓸 때 컴퓨터 끄기 에러](#Splashy_.EC.93.B8_.EB.95.8C_.EC.BB.B4.ED.93.A8.ED.84.B0_.EB.81.84.EA.B8.B0_.EC.97.90.EB.9F.AC)
+    *   [3.5 SLiM의 로그인 정보](#SLiM.EC.9D.98_.EB.A1.9C.EA.B7.B8.EC.9D.B8_.EC.A0.95.EB.B3.B4)
     *   [3.6 SLiM에서 DPI 설정](#SLiM.EC.97.90.EC.84.9C_DPI_.EC.84.A4.EC.A0.95)
     *   [3.7 무작위로 테마 선택하기](#.EB.AC.B4.EC.9E.91.EC.9C.84.EB.A1.9C_.ED.85.8C.EB.A7.88_.EC.84.A0.ED.83.9D.ED.95.98.EA.B8.B0)
 *   [4 자료](#.EC.9E.90.EB.A3.8C)
@@ -193,18 +193,18 @@ input_panel_y           325
 
 ### 커서 바꾸기
 
-If you want to change the default X cursor to a newer design, the [slim-cursor](https://aur.archlinux.org/packages/slim-cursor/) package is available.
+기본 X 마우스 커서를 새로운 디자인으로 바꾸고 싶다면 [slim-cursor](https://aur.archlinux.org/packages/slim-cursor/)패키지를 사용할 수 있습니다.
 
-After installing, edit `/etc/slim.conf` and uncomment the line:
+설치 후, `/etc/slim.conf` 파일 안의 아래의 부분을 지우세요:
 
 ```
 cursor   left_ptr
 
 ```
 
-This will give you a normal arrow instead. This setting is forwarded to `xsetroot -cursor_name`. You can look up the possible cursor names [here](http://cvsweb.xfree86.org/cvsweb/*checkout*/xc/lib/X11/cursorfont.h?rev=HEAD&content-type=text/plain) or in `/usr/share/icons/<your-cursor-theme>/cursors/`.
+이렇게 하시면 보통 화살표가 나옵니다. 이 설정은 `xsetroot -cursor_name`로 전달됩니다. 쓸 수 있는 커서의 이름을 [여기](http://cvsweb.xfree86.org/cvsweb/*checkout*/xc/lib/X11/cursorfont.h?rev=HEAD&content-type=text/plain)나 `/usr/share/icons/<your-cursor-theme>/cursors/` 에서 찾아 보실 수 있습니다.
 
-To change the cursor theme being used at the login screen, make a file named `/usr/share/icons/default/index.theme` with this content:
+로그인 화면에서 쓰이는 커서의 테마를 바꾸기 위해 `/usr/share/icons/default/index.theme` 파일을 만드시고 아래의 내용을 넣으세요:
 
 ```
 [Icon Theme]
@@ -212,7 +212,7 @@ Inherits=<your-cursor-theme>
 
 ```
 
-Replace <your-cursor-theme> with the name of the cursor theme you want to use (e.g. whiteglass).
+<your-cursor-theme> 부분을 쓰고 싶은 커서 테마 이름으로 바꾸세요. (예: whiteglass)
 
 ### 테마 배경화면과 데스크톱 배경화면 통일 시키기
 
@@ -224,23 +224,23 @@ SLiM 또는 데스크톱 배경화면 파일을 연결시켜 통일할 수 있�
 
 ```
 
-### Shutdown, reboot, suspend, exit, launch terminal from SLiM
+### SLiM에서 컴퓨터 끄기, 재부팅, 절전모드, 나가기, 터미널 실행
 
-You may shutdown, reboot, suspend, exit or even launch a terminal from the SLiM login screen. To do so, use the values in the username field, and the root password in the password field:
+컴퓨터 끄기나 재부팅, 대기모드, 로그아웃, 터미널 실행을 SLiM 로그인 화면에서 할 수 있습니다. 그러려면 유저네임 입력칸에 값과 루트 암호를 암호 입력칸에 넣으세요:
 
-*   To launch a terminal, enter **console** as the username (defaults to xterm which must be installed separately... edit `/etc/slim.conf` to change terminal preference)
-*   For shutdown, enter **halt** as the username
-*   For reboot, enter **reboot** as the username
-*   To exit to bash, enter **exit** as the username
-*   For suspend, enter **suspend** as the username (suspend is disabled by default, edit `/etc/slim.conf` as root to uncomment the `suspend_cmd` line and, if necessary modify the suspend command itself (e.g. change `/usr/sbin/suspend` to `sudo /usr/sbin/pm-suspend`))
+*   터미널을 실행하려면, 유저네임에 **console**을 넣으세요. (기본값은 따로 설치되어 있을 xterm 입니다... 사용할 터미널을 바꾸려면 `/etc/slim.conf`를 수정하세요.
+*   컴퓨터 끄기를 하려면 유저네임에 **halt**를 넣으세요.
+*   재부팅을 하려면 유저네임에 **reboot**를 넣으세요.
+*   bash로 나가려면 유저네임에 **exit**를 넣으세요.
+*   절전모드로 전환하려면, 유저네임에 **suspend**를 넣으세요. (절전모드는 기본값에서 비활성화 되어있습니다. 활성화 하려면 루트로 로그인해서 `/etc/slim.conf` 파일의 `suspend_cmd` 부분을 지우고, 필요한 경우에는 대기모드 명령을 수정하세요. (예: `/usr/sbin/suspend`를 `sudo /usr/sbin/pm-suspend`로 바꾸기)
 
-### Power-off error with Splashy
+### Splashy 쓸 때 컴퓨터 끄기 에러
 
-If you use Splashy and SLiM, sometimes you can't power-off or reboot from menu in GNOME, Xfce, LXDE or others. Check your `/etc/slim.conf` and `/etc/splash.conf`; set the DEFAULT_TTY=7 same as xserver_arguments vt07.
+Splashy와 SLiM을 같이 사용한다면 가끔씩 GNOME이나, Xfce, LXDE 등의 메뉴에서 컴퓨터를 끄거나 리부팅 할 때 안 되기도 합니다. `/etc/slim.conf`과 `/etc/splash.conf` 파일을 확인하고 DEFAULT_TTY=7 부분을 xserver_arguments vt07로 설정하세요.
 
-### Login information with SLiM
+### SLiM의 로그인 정보
 
-By default, SLiM fails to log logins to utmp and wtmp which causes who, last, etc. to misreport login information. To fix this edit your `slim.conf` as follows:
+utmp와 wtmp는 누가, 언제 가장 마지막에 로그인 했는지 같은 로그인 정보의 잘못된 기록을 발생시킵니다. 기본값에서 SLiM은 utmp와 wtmp로 로그인 하는 걸 로그하는 것을 실패합니다. 이것을 고치려면 `slim.conf` 파일에 아래와 같이 넣으세요:
 
 ```
  sessionstart_cmd    /usr/bin/sessreg -a -l $DISPLAY %user
@@ -250,14 +250,14 @@ By default, SLiM fails to log logins to utmp and wtmp which causes who, last, et
 
 ### SLiM에서 DPI 설정
 
-The Xorg server generally picks up the DPI but if it doesn't you can specify it to SLiM. If you set the DPI with the argument -dpi 96 in `/etc/X11/xinit/xserverrc` it will not work with SLiM. To fix this change your `slim.conf` from:
+Xorg 서버는 보통 DPI를 잡아냅니다. 그러나 못 잡아낸다면 SLiM이 문제일 수 있습니다. `/etc/X11/xinit/xserverrc`에 DPI를 argument -dpi 96 으로 설정한다면 SLiM에선 동작하지 않을 것입니다. 해결하기 위해 `slim.conf`의 아래의 부분을:
 
 ```
  xserver_arguments   -nolisten tcp vt07 
 
 ```
 
-to
+아래와 같이 바꾸세요:
 
 ```
  xserver_arguments   -nolisten tcp vt07 -dpi 96

@@ -48,7 +48,7 @@ $ chmod 0600 ~/.davfs2/secrets
 
 ```
 
-For owncloud, the url is:
+For nextcloud and owncloud the url is:
 
 ```
 https://webdav.example.com/remote.php/webdav

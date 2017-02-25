@@ -60,18 +60,18 @@ To mount devices with *udisks* or *udisks2*, remove the SUID permission from *ud
 You may use `udevadm monitor` to monitor block events and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
 
 ```
-#!/bin/bash
+#!/bin/sh
 
 pathtoname() {
-    udevadm info -p "/sys/$1" | awk -v FS== '/DEVNAME/ {print $2}'
+    udevadm info -p /sys/"$1" | awk -v FS== '/DEVNAME/ {print $2}'
 }
 
-while read -r _ _ event devpath _; do
-        if [[ $event == add ]]; then
+stdbuf -oL -- udevadm monitor --udev -s block | while read -r -- _ _ event devpath _; do
+        if [ "$event" = add ]; then
             devname=$(pathtoname "$devpath")
             udisksctl mount --block-device "$devname" --no-user-interaction
         fi
-done < <(stdbuf -o L udevadm monitor --udev -s block)
+done
 
 ```
 

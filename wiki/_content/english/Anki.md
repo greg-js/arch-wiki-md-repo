@@ -12,13 +12,11 @@ This guide shows you how to install Anki.
 
 ## Installation
 
-Install the [anki](https://www.archlinux.org/packages/?name=anki) package.
-
 If you prefer to use Anki version 1, install [anki12](https://aur.archlinux.org/packages/anki12/) from the [AUR](/index.php/AUR "AUR").
 
 If you prefer to use Anki version 2.0, install [anki20](https://aur.archlinux.org/packages/anki20/) from the [AUR](/index.php/AUR "AUR").
 
-The update from 2.0 to 2.1 alpha (which was released to the AUR on February 7th) is [not suitable for daily use](https://anki.tenderapp.com/discussions/ankidesktop/21880-sqlite3-wal-mode-exception#comment_41914634).
+**Note:** Both packages still rely on [QtWebKit for Qt 4](https://www.archlinux.org/todo/phasing-out-qtwebkit/).
 
 ## Tips and tricks
 

@@ -36,7 +36,7 @@ See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Lim
 
 *   Kernel modules loaded that are needed in the chroot environment.
 
-*   Swap enabled if needed: `# swapon /dev/sdxY` 
+*   Swap enabled if needed: `# swapon /dev/sd*xY*` 
 
 *   Internet connection established if needed.
 

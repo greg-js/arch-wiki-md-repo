@@ -555,7 +555,7 @@ mplayer -dvd-device dvd/ dvd://1
 
 ## Burning the DVD video
 
-We burn the DVD or create the iso using **wodim** and **mkisofs** (both of **cdrkit** package). To create the **iso** the command is:
+We burn the DVD or create the ISO using *cdrecord* and *mkisofs* (both included in the [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) package). To create the **iso** the command is:
 
 ```
 mkisofs -dvd-video -udf -o dvd.iso dvd/
@@ -565,7 +565,7 @@ mkisofs -dvd-video -udf -o dvd.iso dvd/
 And you can burn it with:
 
 ```
-wodim -v dev=/dev/sr0 dvd.iso
+cdrecord -v dev=/dev/sr0 dvd.iso
 
 ```
 
@@ -573,7 +573,7 @@ If you do not want to create the iso, you can use pipes to accomplish both steps
 
 ```
 export TSIZE=`mkisofs -dvd-video -udf -print-size dvd/ 2>/dev/null`
-mkisofs -dvd-video -udf -o - dvd/ | wodim -sao -eject -v dev=/dev/sr0 tsize="$TSIZE"s -
+mkisofs -dvd-video -udf -o - dvd/ | cdrecord -sao -eject -v dev=/dev/sr0 tsize="$TSIZE"s -
 
 ```
 
@@ -581,14 +581,14 @@ If you want to create the iso AND burn at the same time:
 
 ```
 export TSIZE=`mkisofs -dvd-video -udf -print-size dvd/ 2>/dev/null`
-mkisofs -dvd-video -udf -o - dvd/ | tee dvd.iso | wodim -sao -eject -v dev=/dev/sr0 tsize="$TSIZE"s -
+mkisofs -dvd-video -udf -o - dvd/ | tee dvd.iso | cdrecord -sao -eject -v dev=/dev/sr0 tsize="$TSIZE"s -
 
 ```
 
 If you just want a single command:
 
 ```
-mkisofs -dvd-video -udf -o - dvd/ | wodim -sao -eject -v dev=/dev/sr0 \
+mkisofs -dvd-video -udf -o - dvd/ | cdrecord -sao -eject -v dev=/dev/sr0 \
 tsize=`mkisofs -dvd-video -udf -print-size dvd/ 2>/dev/null`s -
 
 ```

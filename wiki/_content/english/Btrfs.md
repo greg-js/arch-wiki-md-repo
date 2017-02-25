@@ -470,13 +470,15 @@ Using copy-on-write, Btrfs is able to copy files or whole subvolumes without act
 
 For an overview of available tools to deduplicate your Btrfs partition have a look at the [upstream Wiki entry](https://btrfs.wiki.kernel.org/index.php/Deduplication#Batch).
 
+Furthermore Btrfs developers are working on inband (also known as synchronous or inline) deduplication, meaning deduplication done when writing new data to the filesystem. Currently it is still an experiment which is developed out-of-tree. Users willing to test the new feature should read the [appropriate kernel wiki page](https://btrfs.wiki.kernel.org/index.php/User_notes_on_dedupe).
+
 ## Known issues
 
 A few limitations should be known before trying.
 
 ### Encryption
 
-Btrfs has no built-in encryption support, but this may come in future. Users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
+Btrfs has no built-in encryption support, but this [may](https://lwn.net/Articles/700487/) come in the future. Users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
 
 Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "EncFS") or [TrueCrypt](/index.php/TrueCrypt "TrueCrypt"), though perhaps without some of Btrfs' features.
 

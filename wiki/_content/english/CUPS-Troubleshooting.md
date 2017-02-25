@@ -21,9 +21,10 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [5.2 CUPS: Job is shown as complete but the printer does nothing](#CUPS:_Job_is_shown_as_complete_but_the_printer_does_nothing)
     *   [5.3 CUPS: '"foomatic-rip" not available/stopped with status 3'](#CUPS:_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27)
     *   [5.4 CUPS: "Filter failed"](#CUPS:_.22Filter_failed.22)
-        *   [5.4.1 Bad permissions](#Bad_permissions)
-        *   [5.4.2 Avahi not enabled](#Avahi_not_enabled)
-        *   [5.4.3 Out-of-date plugin](#Out-of-date_plugin)
+        *   [5.4.1 Missing foomatic-db](#Missing_foomatic-db)
+        *   [5.4.2 Bad permissions](#Bad_permissions)
+        *   [5.4.3 Avahi not enabled](#Avahi_not_enabled)
+        *   [5.4.4 Out-of-date plugin](#Out-of-date_plugin)
     *   [5.5 CUPS: prints only an empty and an error-message page on HP LaserJet](#CUPS:_prints_only_an_empty_and_an_error-message_page_on_HP_LaserJet)
     *   [5.6 HPLIP 3.13: Plugin is installed, but HP Device Manager complains it is not](#HPLIP_3.13:_Plugin_is_installed.2C_but_HP_Device_Manager_complains_it_is_not)
     *   [5.7 hp-toolbox: "Unable to communicate with device"](#hp-toolbox:_.22Unable_to_communicate_with_device.22)
@@ -241,6 +242,12 @@ make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [inst
 
 ### CUPS: "Filter failed"
 
+A "filter failed" error can be caused by any number of issues. The CUPS error log should record which filter failed and why.
+
+#### Missing foomatic-db
+
+Install [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) and [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds). This fixes it in some cases.
+
 #### Bad permissions
 
 Change the permissions of the printer USB port. Get the bus and device number from `lsusb`, then set the permission using:
@@ -395,4 +402,4 @@ This seems to be caused by the wrong page size being set in [CUPS](/index.php/CU
 
 ### Printer becomes stuck after a problem
 
-When an issue arises during printing, the printer in CUPS may become unresponsive. `lpq` reports that the printer `is not ready`. It can be reactivated using `cupsenable`. To automatically have CUPS reactivate the printer, change [ErrorPolicy](https://www.cups.org/documentation.php/doc-1.6/ref-printers-conf.html#ErrorPolicy) from the default `stop-printer` to `retry-current-job`.
+When an issue arises during printing, the printer in CUPS may become unresponsive. `lpq` reports that the printer `is not ready`. It can be reactivated using `cupsenable`. To automatically have CUPS reactivate the printer, change [ErrorPolicy](https://www.cups.org/doc/man-cupsd.conf.html?TOPIC=Man+Pages#ErrorPolicy) from the default `stop-printer` to `retry-this-job`.

@@ -34,7 +34,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.9 NumLock on by default](#NumLock_on_by_default)
     *   [5.10 User switching under Xfce4](#User_switching_under_Xfce4)
     *   [5.11 Default session](#Default_session)
-    *   [5.12 Customization of the login window](#Customization_of_the_login_window)
+    *   [5.12 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
         *   [5.12.1 GTK+ greeter](#GTK.2B_greeter_2)
     *   [5.13 VNC Server](#VNC_Server)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -325,18 +325,18 @@ You can also switch users from the [XScreenSaver](/index.php/XScreenSaver "XScre
 
 Lightdm, like other DMs, stores the last-selected xsession in `~/.dmrc`. See [Display manager#Session configuration](/index.php/Display_manager#Session_configuration "Display manager") for more info.
 
-### Customization of the login window
+### Adjusting the login window's position
 
 #### GTK+ greeter
 
-Users need to edit `/etc/lightdm/lightdm-gtk-greeter.conf`
-`position` `x` and `y` values, either absolute (in pixels) or relative (in percent). Each value can also have an additional anchor location for the window, `start`, `center` and `end` separated from the value by a comma.
-Example: position=200,start 50%,center
+Users need to edit `/etc/lightdm/lightdm-gtk-greeter.conf` and enter a value for the `position` variable. It accepts `x` and `y` values, either absolute (in pixels) or relative (in percent). Each value can also have an additional anchor location for the window, `start`, `center` and `end` separated from the value by a comma.
 
-`font-name` default: `Sans 10`. This set the font style and the font size. See [Font configuration](/index.php/Font_configuration "Font configuration") for valid values.
-Example: font-name=Sans 18
+Example:
 
-`a11y-states` This set the states of the accessibility features. Example for a large default font: a11y-states=+font
+```
+position=200,start 50%,center
+
+```
 
 ### VNC Server
 

@@ -2516,7 +2516,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 *   **clyrics** — An extensible lyrics fetcher, with daemon support for cmus and mocp.
 
-	[http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)
+	[https://github.com/trizen/clyrics](https://github.com/trizen/clyrics) || [clyrics](https://aur.archlinux.org/packages/clyrics/)
 
 ## Utilities
 

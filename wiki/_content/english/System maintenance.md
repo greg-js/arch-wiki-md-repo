@@ -11,9 +11,9 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [2.3 Pacman database](#Pacman_database)
     *   [2.4 LUKS headers](#LUKS_headers)
 *   [3 Upgrading the system](#Upgrading_the_system)
-    *   [3.1 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
-    *   [3.2 Partial upgrades are unsupported](#Partial_upgrades_are_unsupported)
-    *   [3.3 Read before upgrading the system](#Read_before_upgrading_the_system)
+    *   [3.1 Read before upgrading the system](#Read_before_upgrading_the_system)
+    *   [3.2 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
+    *   [3.3 Partial upgrades are unsupported](#Partial_upgrades_are_unsupported)
     *   [3.4 Act on alerts during an upgrade](#Act_on_alerts_during_an_upgrade)
     *   [3.5 Deal promptly with new configuration files](#Deal_promptly_with_new_configuration_files)
     *   [3.6 Revert broken updates](#Revert_broken_updates)
@@ -85,33 +85,39 @@ It can make sense to periodically check and synchronize the backups of LUKS-encr
 
 ## Upgrading the system
 
-It is recommended to perform full system upgrades regularly, to enjoy both the latest bug fixes and security updates, and also to avoid having to deal with too many package upgrades that require manual intervention at once. See [Pacman#Upgrading packages](/index.php/Pacman#Upgrading_packages "Pacman") for details.
+It is recommended to perform full system upgrades regularly via [Pacman#Upgrading packages](/index.php/Pacman#Upgrading_packages "Pacman"), to enjoy both the latest bug fixes and security updates, and also to avoid having to deal with too many package upgrades that require manual intervention at once. When requesting support from the community, it will usually be assumed that the system is up to date.
 
 Make sure to have the Arch install media or another Linux "live" CD/USB available so you can easily rescue your system if there is a problem after updating. If you are running Arch in a production environment, or cannot afford downtime for any reason, test changes to configuration files, as well as updates to software packages, on a non-critical duplicate system first. Then, if no problems arise, roll out the changes to the production system.
 
 If the system has packages from the [AUR](/index.php/AUR "AUR"), carefully upgrade all of them.
 
+*pacman* is a powerful package management tool, but it does not attempt to handle all corner cases. Users must be vigilant and take responsibility for maintaining their own system.
+
+### Read before upgrading the system
+
+Before upgrading, users are expected to visit the [Arch Linux home page](https://www.archlinux.org/) to check the latest news, or alternatively subscribe to the [RSS feed](https://www.archlinux.org/feeds/news/), [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), or follow [@archlinux](https://twitter.com/archlinux) on Twitter. When updates require out-of-the-ordinary user intervention (more than what can be handled simply by following the instructions given by *pacman*), an appropriate news post will be made.
+
+Before upgrading fundamental software (such as the [kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd"), or [glibc](https://www.archlinux.org/packages/?name=glibc)) to a new version, look over the appropriate [forum](https://bbs.archlinux.org/) to see if there have been any reported problems.
+
+Users must equally be aware that upgrading packages can raise **unexpected** problems that could need immediate intervention; therefore, it is discouraged to upgrade a stable system shortly before it is required for carrying out an important task. It is wise to wait instead to have enough time in order to be able to deal with possible post-upgrade issues.
+
 ### Avoid certain pacman commands
 
-Avoid doing [partial upgrades](#Partial_upgrades_are_unsupported), i.e. never run `pacman -Sy` and instead use `pacman -Syu`.
+Avoid doing [partial upgrades](#Partial_upgrades_are_unsupported). In other words, never run `pacman -Sy`; instead, always use `pacman -Syu`.
 
 Avoid using the `--force` option with pacman, **especially** in commands such as `pacman -Syu --force` involving more than one package. The `--force` option ignores file conflicts and can even cause file loss when files are relocated between different packages! In a properly maintained system, it should only be used when explicitly recommended by the Arch developers (see [#Read before upgrading the system](#Read_before_upgrading_the_system)).
 
-Avoid using the `-d` option with pacman. `pacman -Rdd package` skips dependency checks during package removal. As a result, a package providing a critical dependency could be removed, resulting in a broken system.
+Avoid using the `-d` option with pacman. `pacman -Rdd *package*` skips dependency checks during package removal. As a result, a package providing a critical dependency could be removed, resulting in a broken system.
 
 ### Partial upgrades are unsupported
 
-Arch Linux is a [rolling release](https://en.wikipedia.org/wiki/rolling_release versions are pushed to the repositories, the developers and Trusted Users rebuild all the packages in the repositories that need to be rebuilt against the libraries. For example, if two packages depend on the same library, upgrading only one package might also upgrade the library (as a dependency), which might then break the other package which depends on an older version of the library.
+Arch Linux is a [rolling release](https://en.wikipedia.org/wiki/rolling_release versions are pushed to the repositories, the [developers](https://www.archlinux.org/people/developers/) and [Trusted Users](/index.php/Trusted_Users "Trusted Users") rebuild all the packages in the repositories that need to be rebuilt against the libraries. For example, if two packages depend on the same library, upgrading only one package might also upgrade the library (as a dependency), which might then break the other package which depends on an older version of the library.
 
-That is why partial upgrades are **not supported**. Do not use `pacman -Sy package` or any equivalent such as `pacman -Sy` followed by `pacman -S package`, **always** upgrade (with `pacman -Syu`) before installing a package. Be very careful when using `IgnorePkg` and `IgnoreGroup` for the same reason. If the system has locally installed packages (such as [AUR](/index.php/AUR "AUR") packages), users will need to rebuild them when their dependencies receive a [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump.
+That is why partial upgrades are **not supported**. Do not use `pacman -Sy *package*` or any equivalent such as `pacman -Sy` followed by `pacman -S *package*`. **Always** upgrade (with `pacman -Syu`) before installing a package. Be very careful when using `IgnorePkg` and `IgnoreGroup` for the same reason. If the system has locally installed packages (such as [AUR](/index.php/AUR "AUR") packages), users will need to rebuild them when their dependencies receive a [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bump.
 
 If a partial upgrade scenario has been created, and binaries are broken because they cannot find the libraries they are linked against, **do not "fix" the problem simply by symlinking**. Libraries receive [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") bumps when they are **not backwards compatible**. A simple `pacman -Syu` to a properly synced mirror will fix the problem as long as *pacman* is not broken.
 
 The bash script *checkupdates*, included with the pacman package, provides a safe way to check for upgrades to installed packages without running a system update at the same time. See also [BBS##1563725](https://bbs.archlinux.org/viewtopic.php?pid=1563725#p1563725).
-
-### Read before upgrading the system
-
-Before upgrading Arch, always read the latest [Arch News](https://www.archlinux.org/news/) to find out if there are any major software or configuration changes with the latest packages. Before upgrading fundamental software (such as the [kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg "Xorg"), [systemd](/index.php/Systemd "Systemd"), or [glibc](https://www.archlinux.org/packages/?name=glibc)) to a new version, look over the appropriate [forum](https://bbs.archlinux.org/) to see if there have been any reported problems.
 
 ### Act on alerts during an upgrade
 
@@ -126,6 +132,8 @@ Also, think about other configuration files you may have copied or created. If a
 ### Revert broken updates
 
 If a package update is expected/known to cause problems, packagers will ensure that pacman displays an appropriate message when the package is updated. If experiencing trouble after an update, double-check pacman's output by looking at `/var/log/pacman.log`.
+
+**Tip:** You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/) to search the pacman logs.
 
 At this point, only after ensuring there is no information available through pacman, there is no relative news on [https://www.archlinux.org/](https://www.archlinux.org/), and there are no forum posts regarding the update, consider seeking help on the [forum](https://bbs.archlinux.org), over [IRC](/index.php/IRC "IRC"), or by [downgrading](/index.php/Downgrading "Downgrading") the offending package.
 

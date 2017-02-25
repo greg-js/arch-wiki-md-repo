@@ -98,9 +98,9 @@ ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-rest
 
 ### Discovery Server
 
-The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). Documentation is provided [here](https://docs.syncthing.net/users/discosrv.html).
+The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). Documentation is provided [here](https://docs.syncthing.net/users/stdiscosrv.html).
 
-Note, that the discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`, and the user/group `syncthing` needs permissions to able to read the certificate files. Currently, you will need to edit the systemd unit file to correctly point to the certificates (as well as any other configuration changes you want to undertake, see [list](https://docs.syncthing.net/users/discosrv.html#configuring)).
+Note, that the discovery server requires certificates to run, which should ideally be placed in `/var/discosrv`, and the user/group `syncthing` needs permissions to able to read the certificate files. Currently, you will need to edit the systemd unit file to correctly point to the certificates (as well as any other configuration changes you want to undertake, see [list](https://docs.syncthing.net/users/stdiscosrv.html#configuring)).
 
  `/usr/lib/systemd/system/syncthing-discosrv.service` 
 ```

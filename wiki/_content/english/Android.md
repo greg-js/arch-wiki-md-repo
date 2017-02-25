@@ -351,7 +351,7 @@ Both are currently not available in the [AUR](/index.php/AUR "AUR") anymore, bec
 
 ## Building Android
 
-Please note that these instructions are based on the [official AOSP build instructions](http://source.android.com/source/building.html). Other Android-derived systems such as CyanogenMod will often require extra steps.
+Please note that these instructions are based on the [official AOSP build instructions](http://source.android.com/source/building.html). Other Android-derived systems such as LineageOS will often require extra steps.
 
 ### OS bitness
 

@@ -13,14 +13,14 @@
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(23)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(11)</small> |
-| <small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(16)</small> |
+| <small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(17)</small> |
 | <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(12)</small> |
 | <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(15)</small> |
 | <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(2)</small> |
 | <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(15)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(52)</small> |
-| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(75) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(76) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |
@@ -31,7 +31,7 @@
 | <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(16)</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(20)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(4)</small> |
-| <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(2)</small> |
+| <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(3)</small> |
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(18)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small> |
@@ -54,9 +54,9 @@
 | <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(14)</small> |
 | <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
 | <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(22)</small> |
-| <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(14)</small> |
+| <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
 | <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(21)</small> |
-| <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small> |
+| <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(36)</small> |
 | <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
 | <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(67)</small> |
@@ -65,7 +65,7 @@
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(58)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
-| <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(53)</small> |
+| <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(54)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
 | <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(75)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(4)</small> |
@@ -87,7 +87,7 @@
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(13)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(75) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+| <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(76) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |

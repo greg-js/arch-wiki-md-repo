@@ -236,7 +236,25 @@ You can use *View > Sort Files* to change the order in which PCManFM lists the f
 
 ### "Not authorized" error when attempting to mount drive
 
-See the [mounting without a password](/index.php/Polkit#Mounting_storage_without_password "Polkit") section of the [Polkit](/index.php/Polkit "Polkit") article.
+Make this [polkit](/index.php/Polkit "Polkit") rule in `/etc/polkit-1/rules.d/00-mount-internal.rules`:
+
+```
+polkit.addRule(function(action, subject) {
+   if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" &&
+      subject.local && subject.active && subject.isInGroup("storage")))
+      {
+         return polkit.Result.YES;
+      }
+});
+
+```
+
+And add your user to storage group:
+
+```
+# usermod -aG storage username
+
+```
 
 ### Operation not supported
 

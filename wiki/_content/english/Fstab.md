@@ -213,9 +213,9 @@ Note that the `lazytime` option works **in combination** with the aforementioned
 
 To write on a FAT32 partition, you must make a few changes to your `/etc/fstab` file.
 
- `/etc/fstab`  `/dev/sdxY    /mnt/some_folder  vfat   **user**,rw,umask=000              0  0` 
+ `/etc/fstab`  `/dev/sd*xY*    /mnt/some_folder  vfat   **user**,rw,umask=000              0  0` 
 
-The `user` flag means that any user (even non-root) can mount and unmount the partition `/dev/sdX`. `rw` gives read-write access; `umask` option removes selected rights - for example `umask=111` remove executable rights. The problem is that this entry removes executable rights from directories too, so we must correct it by `dmask=000`. See also [Umask](/index.php/Umask "Umask").
+The `user` flag means that any user (even non-root) can mount and unmount the partition `/dev/sd*X*`. `rw` gives read-write access; `umask` option removes selected rights - for example `umask=111` remove executable rights. The problem is that this entry removes executable rights from directories too, so we must correct it by `dmask=000`. See also [Umask](/index.php/Umask "Umask").
 
 Without these options, all files will be executable. You can use the option `showexec` instead of the umask and dmask options, which shows all Windows executables (com, exe, bat) in executable colours.
 

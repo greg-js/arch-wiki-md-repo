@@ -16,15 +16,11 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
     *   [3.5 Creating dependency graph](#Creating_dependency_graph)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Python issues](#Python_issues)
-        *   [4.1.1 Building from scratch without JHBuild, or in a JHBuild shell](#Building_from_scratch_without_JHBuild.2C_or_in_a_JHBuild_shell)
-        *   [4.1.2 itstool missing Python modules](#itstool_missing_Python_modules)
+        *   [4.1.1 Modules known to require python2 exclusively](#Modules_known_to_require_python2_exclusively)
     *   [4.2 pkg-config issues](#pkg-config_issues)
-    *   [4.3 gnome-devel-docs does not build](#gnome-devel-docs_does_not_build)
-    *   [4.4 pango does not build](#pango_does_not_build)
-    *   [4.5 geary does not build](#geary_does_not_build)
-    *   [4.6 Other broken modules](#Other_broken_modules)
 *   [5 Packages needed to build specific modules](#Packages_needed_to_build_specific_modules)
-*   [6 See also](#See_also)
+*   [6 Building JHBuild from scratch](#Building_JHBuild_from_scratch)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -200,90 +196,33 @@ $ jhbuild dot gedit | dot -Tpng > dependencies.png
 
 ### Python issues
 
-#### Building from scratch without JHBuild, or in a JHBuild shell
+A module that depends on [python2](https://www.archlinux.org/packages/?name=python2) may fail to build as softwares usually expect the binary filename of python 2.x to be `/usr/bin/python` and python 3.x to be `/usr/bin/python3`, which is not the case in Arch Linux: python 2.x is `/usr/bin/python2` and python 3.x is `/usr/bin/python`.
 
-If you are building from scratch on your own, it may be necessary to run *autogen.sh* with the following:
+For cases like that, force the modules to run `/usr/bin/python2` using the one or more methods below:
 
-```
-$ PYTHON=/usr/bin/python2 ./autogen.sh
+*   set *module_autoargs* with *PYTHON=/usr/bin/python2* for this specific module in `~/.config/jhbuildrc`, as mentioned in the above Configuration section — this will run autogen.sh or configure with this value for variable PYTHON
 
-```
+*   if the *configure* or *Makefile* doesn't parse PYTHON variable, one approach is to manually find all lines in *configure*/*Makefile* that run python binary and rename python -> python2 — this will hard code python2 in the module's source code.
 
-And set the PYTHON environment variable in ~/.config/jhbuildrc
+*   if only the above workarounds still don't work for you, consider editing module's .py files in order to replace *python* with *python2* when the first line matches *#!/usr/bin/env python* or *#!/usr/bin/python*
 
-```
-os.environ['PYTHON'] = '/usr/bin/python2'
+**Note:** All edits and patches that are manually applied to the source code will be lost when you wipe the directory and checkout (download) it again, so it is not exactly a permanent solution
 
-```
+**Note:** If a module's configure/build process misuse PYTHON variable, or doesn't use at all, consider reporting it to the module's upstream and/or providing patch for JHBuild upstream
 
-**Note:** JHBuild uses its own python lib directory in /opt/gnome/lib/python2.7; if you are having problems with python imports check to see that the .py files are there.
+#### Modules known to require python2 exclusively
 
-#### itstool missing Python modules
+[jhbuild](https://aur.archlinux.org/packages/jhbuild/) is already patched to use *python2* for modules that exclusively require this Python version, and therefore no action is required if you're using packaged JHBuild.
 
-Chose `[4] Start shell` and run:
+They are:
 
-```
-$ sed -ir 's/| python /| python2 /' configure
-
-```
-
-Then, exit the shell and choose `[1] Rerun phase configure`. See [this merge request](https://gitorious.org/itstool/itstool/merge_requests/6) for more details.
+*   itstool
+*   telepathy-mission-control
+*   WebKit
 
 ### pkg-config issues
 
 If you have a malformatted .pc file on your PKG_CONFIG_PATH, JHBuild will not be able to detect all the (valid) .pc files you have installed and will complain that the .pc files are missing. Look at the output of `jhbuild sysdeps`—there should be a message about the problematic .pc files.
-
-### gnome-devel-docs does not build
-
-Choose `[4] Start shell` and run:
-
-```
-$ git revert --no-edit 9ba0d959
-
-```
-
-Then, exit the shell and choose `[1] Rerun phase build`. See [this bug](https://bugzilla.gnome.org/show_bug.cgi?id=707007) for further details.
-
-### pango does not build
-
-If build failed due to cairo.h not found, do the following: Enter [4]shell, edit `pango/pangocairo.h` changing:
-
- ` #define <cairo.h>` 
-
-to
-
- ` #define <cairo/cairo.h>` 
-
-### geary does not build
-
-If you are getting this error message...
-
-```
-[ 78%] Generating webkitgtk-3.0.vapi
-error: /home/rffontenelle/jhbuild/install/share/gir-1.0/WebKit-3.0.gir not found
-Generation failed: 1 error(s), 0 warning(s)
-make[2]: *** [src/CMakeFiles/geary.dir/build.make:1277: src/webkitgtk-3.0.vapi] Error 1
-make[1]: *** [CMakeFiles/Makefile2:798: src/CMakeFiles/geary.dir/all] Error 2
-```
-
-... then please notice that geary depends on WebKitGTK (<= 2.4), but JHBuild compiles WebKit2GTK (newer). This is a known issue ([#741866](https://bugzilla.gnome.org/show_bug.cgi?id=741866) and [mailing list](https://mail.gnome.org/archives/geary-list/2016-June/msg00022.html)) and there is a plan for porting Geary ([#728002](https://bugzilla.gnome.org/show_bug.cgi?id=728002))
-
-### Other broken modules
-
-The following modules do not build, and there are no known/immediate fixes (feel free to jump in and investigate):
-
-*   aisleriot—[bug report](https://bugzilla.gnome.org/show_bug.cgi?id=707106) (probably easy to fix if you poke around)
-*   gegl
-*   gnome-boxes—[bug report](https://bugzilla.gnome.org/show_bug.cgi?id=725520) (a fix is provided there)
-*   gnome-photos
-*   gtksourceviewmm
-*   meta-gnome-apps-tested
-*   nemiver
-*   orca
-*   rygel
-*   valadoc
-
-This list includes modules transitively depending on broken modules (i.e. some of the modules might be fine; I did not check).
 
 ## Packages needed to build specific modules
 
@@ -297,6 +236,23 @@ This list includes modules transitively depending on broken modules (i.e. some o
 *   zeitgeist requires [python2-rdflib](https://www.archlinux.org/packages/?name=python2-rdflib)
 *   wireless-tools requires [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools)
 *   xorg-macros requires [xorg-util-macros](https://www.archlinux.org/packages/?name=xorg-util-macros)
+
+## Building JHBuild from scratch
+
+If you do not want to use the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package, and instead you want build JHBuild from scratch on your own, there are a few things you should pay attention too.
+
+*   Make sure to install all the dependencies required by JHBuild and its target modules. Refer to [list of dependencies for Arch Linux](https://wiki.gnome.org/Projects/Jhbuild/Dependencies/ArchLinux);
+
+*   JHBuild itself depends on [Python](/index.php/Python "Python") version 2, so make sure to run JHBuild's *autogen.sh* with the following command line:
+
+```
+$ PYTHON=/usr/bin/python2 ./autogen.sh
+
+```
+
+*   Likewise, some modules may still depend on python2\. Make sure to read the above topic 'Python issues'.
+
+*   For detailed information downloading and building the source code of JHBuild, check [How Do I at GNOME wiki](https://wiki.gnome.org/HowDoI/JhbuildJHBuild's).
 
 ## See also
 

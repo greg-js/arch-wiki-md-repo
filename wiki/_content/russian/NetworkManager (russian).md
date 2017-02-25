@@ -62,6 +62,9 @@
         *   [6.7.1 Disabling IPv6](#Disabling_IPv6)
         *   [6.7.2 Use OpenDNS servers](#Use_OpenDNS_servers)
     *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
+    *   [6.9 Настройка подмены MAC-адреса на случайный](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BC.D0.B5.D0.BD.D1.8B_MAC-.D0.B0.D0.B4.D1.80.D0.B5.D1.81.D0.B0_.D0.BD.D0.B0_.D1.81.D0.BB.D1.83.D1.87.D0.B0.D0.B9.D0.BD.D1.8B.D0.B9)
+    *   [6.10 Включение IPv6 Privacy Extensions](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_IPv6_Privacy_Extensions)
+*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Базовая установка
 
@@ -765,3 +768,43 @@ dns=dnsmasq
 ```
 
 Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/var/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with dig and verifying the server and query times.
+
+### Настройка подмены MAC-адреса на случайный
+
+Начиная с версии 1.4.0, NetworkManager поддерживает два типа подмены MAC-адреса на случайный: во время сканирования, и стабильная подмена. Оба метода могут быть настроены изменением `/etc/NetworkManager/NetworkManager.conf`.
+
+Подмена во время Wi-Fi сканирования включена по умолчанию начиная с версии 1.2.0, и может быть отключена добавлением следующей строки в `/etc/NetworkManager/NetworkManager.conf`:
+
+```
+[device]
+wifi.scan-rand-mac-address=no
+
+```
+
+**Tip:** Отключение подмены MAC-адреса может быть необходимо для стабильного соединения, например смотрите [[2]](https://bbs.archlinux.org/viewtopic.php?id=220101).
+
+В противоположность, стабильная подмена создает новый MAC-адрес для каждого отдельного подключения. Это может быть полезно в некоторых случаях, например портал запоминает состояние вашего подключения на основе MAC-адреса. Чтобы включить этот режим вы можете использовать опцию
+
+```
+[connection]
+wifi.cloned-mac-address=random
+
+```
+
+или
+
+```
+[connection]
+ethernet.cloned-mac-address=random
+
+```
+
+Вы можете узнать больше [здесь](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
+
+### Включение IPv6 Privacy Extensions
+
+Смотрите [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
+
+## Смотрите также
+
+*   [NetworkManager для Администраторов Часть 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)

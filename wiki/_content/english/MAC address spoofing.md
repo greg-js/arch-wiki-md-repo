@@ -119,7 +119,7 @@ To set a static spoofed MAC address:
  `/etc/systemd/network/00-default.link` 
 ```
 [Match]
-MACAddress=*permanent MAC*
+MACAddress=*original MAC*
 
 [Link]
 MACAddress=*spoofed MAC*
@@ -212,7 +212,7 @@ chmod +x /etc/netctl/interfaces/*interface*
 
 ```
 
-Source: [akendo.eu](https://blog.akendo.eu/archlinux-random-mac-for-new-wireless-connections/)
+Source: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-wireless-connections/)
 
 ### Method 5: NetworkManager
 

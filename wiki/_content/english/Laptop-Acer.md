@@ -105,7 +105,7 @@ Hotkeys: Some
 Synaptic Touchpad: OK (Set to Basic in BIOS)
 HDMI: untested | First boot after a UEFI install will typically stop with a "No media found" message. Go into BIOS and navigate to "Select an UEFI file as trusted". Note that a Supervisor password must be set to change these parameters. |
 | Acer Aspire F5-573G-7791 | 2016.12.01 | OK, NVIDIA GeForce 940MX (NVIDIA Device 179c), [Bumblebee](/index.php/Bumblebee "Bumblebee") 2016.02.05 | OK, Intel Device 9d71
-Driver: snd_hda_intel | OK, Realtek RTL8111/8168/8411 | OK, Intel Wireless 3165 | Not tested fully, initial signs suggest not working | Suspend to RAM: Yes
+Driver: snd_hda_intel | OK, Realtek RTL8111/8168/8411 | OK, Intel Wireless 3165 | OK | Suspend to RAM: Yes
 Disk: Not tested
 Battery: Yes
 CPU frequency scaling: Unknown | Untested (not present?) | Webcam: Untested

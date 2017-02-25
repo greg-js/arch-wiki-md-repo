@@ -139,7 +139,7 @@ In order to use the NetworkManager applet to connect:
 
 ```
 
-Concerning DNS Leaks (See: [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), Network Manager leak information due to how /etc/resolv.conf is setup. The script below is a work around posted by [@maximbaz](https://github.com/maximbaz) to work around the problem. You may need to [disable IPv6](https://wiki.archlinux.org/index.php/IPv6#Disable_IPv6) if you continue to get leaks.
+Concerning DNS Leaks (See: [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), Network Manager leak information due to how /etc/resolv.conf is setup. The script below is a work around posted by [@maximbaz](https://github.com/maximbaz) to work around the problem. You may need to [disable IPv6](/index.php/IPv6#Disable_IPv6 "IPv6") if you continue to get leaks.
 
  `/etc/NetworkManager/dispatcher.d/pia-vpn` 
 ```

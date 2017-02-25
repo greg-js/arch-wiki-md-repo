@@ -214,4 +214,22 @@ $ chmod 777 ~/.config/libfm/libfm.conf
 
 ### Errore "Non autorizzato" all'accesso/montaggio di unità USB
 
-Guarda la sezione [no password to access partitions and removable media](/index.php/File_manager_functionality#No_password_to_access_partitions_and_removable_Media "File manager functionality") della pagina [File manager functionality](/index.php/File_manager_functionality "File manager functionality").
+Creare questa regola polkit in /etc/polkit-1/rules.d/00-mount-internal.rules
+
+```
+  polkit.addRule(function(action, subject) {
+     if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" &&
+        subject.local && subject.active && subject.isInGroup("storage")))
+        {
+           return polkit.Result.YES;
+        }
+  });
+
+```
+
+E aggiungere il proprio utente al gruppo storage:
+
+```
+# usermod -aG storage username
+
+```

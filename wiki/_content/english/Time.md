@@ -40,10 +40,10 @@ The **hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores t
 
 ### Set hardware clock from system clock
 
-The following sets the hardware clock from the system clock. Additionally it updates `/etc/adjtime` or creates it if not present. See [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) section "The Adjtime File" for more information on this file.
+The following sets the hardware clock from the system clock. Additionally it updates `/etc/adjtime` or creates it if not present. See [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) section "The Adjtime File" for more information on this file as well as the [#Time skew](#Time_skew) section.
 
 ```
-# hwlock --systohc
+# hwclock --systohc
 
 ```
 
@@ -221,19 +221,17 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 
 See [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html), [localtime(5)](http://man7.org/linux/man-pages/man5/localtime.5.html) and archlinux(7) for details.
 
-**Note:** If the pre-systemd configuration file `/etc/timezone` still exists in your system, you can remove it safely, since it is no longer used.
-
 ## Time skew
 
 Every clock has a value that differs from *real time* (the best representation of which being [International Atomic Time](https://en.wikipedia.org/wiki/International_Atomic_Time "wikipedia:International Atomic Time")); no clock is perfect. A quartz-based electronic clock keeps imperfect time, but maintains a consistent inaccuracy. This base 'inaccuracy' is known as 'time skew' or 'time drift'.
 
-When the hardware clock is set with `hwclock`, a new drift value is calculated in seconds per day. The drift value is calculated by using the difference between the new value set and the hardware clock value just before the set, taking into account the value of the previous drift value and the last time the hardware clock was set. The new drift value and the time when the clock was set is written to the file `/etc/adjtime` overwriting the previous values. The hardware clock can therefore be adjusted for drift when the command `hwclock --adjust` is run; this also occurs on shutdown but only if the `hwclock` daemon is enabled (hence for systems using systemd, this does not happen).
+When the hardware clock is set with `hwclock`, a new drift value is calculated in seconds per day. The drift value is calculated by using the difference between the new value set and the hardware clock value just before the set, taking into account the value of the previous drift value and the last time the hardware clock was set. The new drift value and the time when the clock was set is written to the file `/etc/adjtime` overwriting the previous values. The hardware clock can therefore be adjusted for drift when the command `hwclock --adjust` is run; this also occurs on shutdown but only if the `hwclock` daemon is enabled, hence for Arch systems which use systemd, this does not happen.
 
 **Note:** If the hwclock has been set again less than 24 hours after a previous set, the drift is not recalculated as `hwclock` considers the elapsed time period too short to accurately calculate the drift.
 
 If the hardware clock keeps losing or gaining time in large increments, it is possible that an invalid drift has been recorded (but only applicable, if the hwclock daemon is running). This can happen if you have set the hardware clock time incorrectly or your [time standard](#Time_standard) is not synchronized with a Windows or macOS install. The drift value can be removed by removing the file `/etc/adjtime`, then set the correct hardware clock and system clock time, and check if your time standard is correct.
 
-**Note:** For those using systemd, but wish to make use of the drift value stored in `/etc/adjtime` (i.e. perhaps cannot or do not want to use NTP); they need to call `hwclock --adjust` on a regular basis, perhaps by creating a cron job.
+**Note:** If wish to make use of the drift value stored in `/etc/adjtime` even when using systemd, (i.e. perhaps you cannot or do not want to use NTP), you need to call `hwclock --adjust` on a regular basis, perhaps by creating a cron job.
 
 The software clock is very accurate but like most clocks is not perfectly accurate and will drift as well. Though rarely, the system clock can lose accuracy if the kernel skips interrupts. There are some tools to improve software clock accuracy:
 

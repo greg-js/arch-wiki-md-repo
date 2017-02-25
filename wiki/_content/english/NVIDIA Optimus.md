@@ -32,7 +32,11 @@ These options are explained in detail below.
 
 ## Disabling switchable graphics
 
-If you only care to use a certain GPU without switching, check the options in your system's BIOS. There should be an option to disable one of the cards. Some laptops only allow disabling of the discrete card, or vice-versa, but it is worth checking if you only plan to use one of the cards. If you want to use both cards, or cannot disable the card you do not want, see the options below.
+If you only care to use a certain GPU without switching, check the options in your system's BIOS. There should be an option to disable one of the cards. Some laptops only allow disabling of the discrete card, or vice-versa, but it is worth checking if you only plan to use one of the cards.
+
+For another way see [Hybrid graphics#Fully Power Down Discrete GPU](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics").
+
+If you want to use both cards, or cannot disable the card you do not want, see the options below.
 
 ## Using nvidia
 

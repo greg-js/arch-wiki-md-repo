@@ -8,6 +8,8 @@
     *   [3.1 Colors](#Colors)
     *   [3.2 Text alignment](#Text_alignment)
     *   [3.3 Examples](#Examples)
+    *   [3.4 XFT fonts](#XFT_fonts)
+        *   [3.4.1 Font Awesome icons](#Font_Awesome_icons)
 
 ## Installation
 
@@ -96,3 +98,26 @@ while true; do
 done
 
 ```
+
+#### XFT fonts
+
+The default lemonbar version does not support XFT fonts. To get support for XFT fonts, you need to install [lemonbar-xft-git](https://aur.archlinux.org/packages/lemonbar-xft-git/), which replaces [lemonbar](https://aur.archlinux.org/packages/lemonbar/).
+
+To use different font with lemonbar, you need to pass `-f` option when starting lemonbar e.g. `lemonbar -f "Roboto Medium"`.
+
+##### Font Awesome icons
+
+With XFT support, you can also add [font-awesome icons](http://fontawesome.io/) to your bar. You need to install [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/) before using the icons and pass `-f "Font Awesome"` to lemonbar. Please note, that you also need to specify one more font (e.g. `-f "Roboto Medium"`) to be used for other symbols than font awesome icons if you want something else visible in your lemonbar as font awesome does not contain other symbols.
+
+Before adding an icon to lemonbar, you need to look up its unicode id on the [icon list](http://fontawesome.io/icons/) and pass it to lemonbar string. Here is a script that displays icon with unicode id `f242` in lemonbar:
+
+ `fontawesome.sh` 
+```
+#!/usr/bin/bash
+echo -e "\uf242 Battery: 0"
+
+```
+
+Pay extra attention to `echo -e` flag, as it is necessary to properly use echo with escape sequences.
+
+And corresponding lemonbar command: `lemonbar -f "Roboto Medium" -f "Font Awesome"`

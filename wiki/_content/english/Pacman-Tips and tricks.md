@@ -64,6 +64,10 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
+*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
+
+	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
+
 *   **pcurses** — Package management in a curses frontend
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)

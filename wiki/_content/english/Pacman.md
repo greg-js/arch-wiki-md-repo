@@ -179,27 +179,17 @@ To remove a package, which is required by another package, without removing the 
 
 ### Upgrading packages
 
-**Warning:** Arch only supports full system upgrades. See [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") and [#Installing packages](#Installing_packages) for details.
+**Warning:**
 
-It is recommended that users [upgrade their system regularly](/index.php/System_maintenance#Upgrading_the_system "System maintenance"). When requesting support from the community, it will usually be assumed that the system is up to date.
+*   Users are expected to follow the guidance in the [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") section to upgrade their systems regularly and not blindly run the following command.
+*   Arch only supports full system upgrades. See [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") and [#Installing packages](#Installing_packages) for details.
 
-Before upgrading, users are expected to visit the [Arch Linux home page](https://www.archlinux.org/) to check the latest news, or alternatively subscribe to the [RSS feed](https://www.archlinux.org/feeds/news/), [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), or follow [@archlinux](https://twitter.com/archlinux) on Twitter: when updates require out-of-the-ordinary user intervention (more than what can be handled simply by following the instructions given by *pacman*), an appropriate news post will be made. Users must equally be aware that upgrading packages can raise **unexpected** problems that could need immediate intervention, therefore it is discouraged to upgrade a stable system shortly before it is required for carrying out an important task: it is wise to wait instead to have enough time in order to be able to deal with possible post-upgrade issues.
-
-*pacman* can update all packages on the system with just one command. This could take quite a while depending on how up-to-date the system is. This command can synchronize the repository databases *and* update the system's packages (excluding "local" packages that are not in the configured repositories):
+*pacman* can update all packages on the system with just one command. This could take quite a while depending on how up-to-date the system is. The following command synchronizes the repository databases *and* updates the system's packages, excluding "local" packages that are not in the configured repositories:
 
 ```
 # pacman -Syu
 
 ```
-
-*pacman* is a powerful package management tool, but it does not attempt to handle all corner cases. Users must be vigilant and take responsibility for maintaining their own system. **When performing a system update, it is essential that users read all information output by *pacman* and use common sense.** If a user-modified configuration file needs to be upgraded for a new version of a package, a *.pacnew* file will be created to avoid overwriting settings modified by the user. *pacman* will prompt the user to merge them. These files require manual intervention from the user and it is good practice to handle them right after every package upgrade or removal. See [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files") for more information.
-
-**Tip:**
-
-*   Remember that *pacman'*s output is logged in `/var/log/pacman.log`.
-*   You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/) to search the pacman logs.
-
-If one encounters problems that cannot be solved by these instructions, make sure to search the forum. It is likely that others have encountered the same problem and have posted instructions for solving it.
 
 ### Querying package databases
 

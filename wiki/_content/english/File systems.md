@@ -12,7 +12,8 @@ Individual drive partitions can be setup using one of the many different availab
     *   [1.1 Journaling](#Journaling)
     *   [1.2 FUSE-based file systems](#FUSE-based_file_systems)
     *   [1.3 Stackable file systems](#Stackable_file_systems)
-    *   [1.4 Other file systems](#Other_file_systems)
+    *   [1.4 Read-only file systems](#Read-only_file_systems)
+    *   [1.5 Clustered file systems](#Clustered_file_systems)
 *   [2 Identify existing file systems](#Identify_existing_file_systems)
 *   [3 Create a file system](#Create_a_file_system)
 *   [4 Mount a filesystem](#Mount_a_filesystem)
@@ -52,7 +53,9 @@ See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) fo
 
 All the above filesystems with the exception of ext2, FAT16/32, use [journaling](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system"). Journaling provides fault-resilience by logging changes before they are committed to the filesystem. In the event of a system crash or power failure, such file systems are faster to bring back online and less likely to become corrupted. The logging takes place in a dedicated area of the filesystem.
 
-Not all journaling techniques are the same. Ext3 and ext4 offer data-mode journaling, which logs both data and meta-data, as well as possibility to journal only meta-data changes. Data-mode journaling comes with a speed penalty and is not enabled by default. In the same vein, [Reiser4](/index.php/Reiser4 "Reiser4") offers so-called ["transaction models"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), which include pure journaling (equivalent to ext4's data-mode journaling), pure Copy-on-Write approach (equivalent to btrfs' default) and a combined approach which heuristically alternates between the two former. *It should be noted that reiser4 does not provide an equivalent to ext4's default journaling behavior (meta-data only).*
+Not all journaling techniques are the same. Ext3 and ext4 offer data-mode journaling, which logs both data and meta-data, as well as possibility to journal only meta-data changes. Data-mode journaling comes with a speed penalty and is not enabled by default. In the same vein, [Reiser4](/index.php/Reiser4 "Reiser4") offers so-called ["transaction models"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), which include pure journaling (equivalent to ext4's data-mode journaling), pure Copy-on-Write approach (equivalent to btrfs' default) and a combined approach which heuristically alternates between the two former.
+
+**Note:** Reiser4 does not provide an equivalent to ext4's default journaling behavior (meta-data only).
 
 The other filesystems provide ordered-mode journaling, which only logs meta-data. While all journaling will return a filesystem to a valid state after a crash, data-mode journaling offers the greatest protection against corruption and data loss. There is a compromise in system performance, however, because data-mode journaling does two write operations: first to the journal and then to the disk. The trade-off between system speed and data safety should be considered when choosing the filesystem type.
 
@@ -66,13 +69,17 @@ Some FUSE-based file systems:
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
+*   **[EncFS](/index.php/EncFS "EncFS")** — EncFS is a userspace stackable cryptographic file-system.
+
+	[https://vgough.github.io/encfs/](https://vgough.github.io/encfs/) || [encfs](https://www.archlinux.org/packages/?name=encfs)
+
 *   **fuseiso** — Mount an ISO as a regular user.
 
 	[http://sourceforge.net/projects/fuseiso/](http://sourceforge.net/projects/fuseiso/) || [fuseiso](https://www.archlinux.org/packages/?name=fuseiso)
 
-*   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
+*   **[gitfs](/index.php/Gitfs "Gitfs")** — gitfs is a FUSE file system that fully integrates with git.
 
-	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
+	[https://www.presslabs.com/gitfs/](https://www.presslabs.com/gitfs/) || [gitfs](https://aur.archlinux.org/packages/gitfs/)
 
 *   **xbfuse-git** — Mount an Xbox (360) ISO.
 
@@ -82,13 +89,9 @@ Some FUSE-based file systems:
 
 	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)
 
-*   **[EncFS](/index.php/EncFS "EncFS")** — EncFS is a userspace stackable cryptographic file-system.
+*   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
 
-	[https://vgough.github.io/encfs/](https://vgough.github.io/encfs/) || [encfs](https://www.archlinux.org/packages/?name=encfs)
-
-*   **[gitfs](/index.php/Gitfs "Gitfs")** — gitfs is a FUSE file system that fully integrates with git.
-
-	[https://www.presslabs.com/gitfs/](https://www.presslabs.com/gitfs/) || [gitfs](https://aur.archlinux.org/packages/gitfs/)
+	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 
@@ -106,13 +109,27 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 
 	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-### Other file systems
+### Read-only file systems
 
-*   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
+*   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — SquashFS is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
 
 	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
 
-*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — **OrangeFS** is a scale-out network file system designed for transparently accessing multi-server-based disk storage, in parallel. Has optimized MPI-IO support for parallel and distributed applications. Simplifies the use of parallel storage not only for Linux clients, but also for Windows, Hadoop, and WebDAV. POSIX-compatible. Part of Linux kernel since version 4.6\.
+### Clustered file systems
+
+*   **[Ceph](https://en.wikipedia.org/wiki/Ceph "wikipedia:Ceph")** — Ceph is a unified, distributed storage system designed for excellent performance, reliability and scalability.
+
+	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
+
+*   **[GlusterFS](/index.php/GlusterFS "GlusterFS")** — GlusterFS is a scalable network file system.
+
+	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **[MooseFS](https://en.wikipedia.org/wiki/MooseFS "wikipedia:MooseFS")** — MooseFS is a fault tolerant, highly available and high performance scale-out network distributed file system.
+
+	[https://www.gluster.org/](https://www.gluster.org/) || [moosefs](https://www.archlinux.org/packages/?name=moosefs)
+
+*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — OrangeFS is a scale-out network file system designed for transparently accessing multi-server-based disk storage, in parallel. Has optimized MPI-IO support for parallel and distributed applications. Simplifies the use of parallel storage not only for Linux clients, but also for Windows, Hadoop, and WebDAV. POSIX-compatible. Part of Linux kernel since version 4.6\.
 
 	[http://www.orangefs.org/](http://www.orangefs.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
@@ -163,10 +180,10 @@ To find just mounted file systems, see [#Listing mounted file systems](#Listing_
 
 To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
 
-For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions) on `/dev/*sda1*`, run:
+For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions) on `/dev/sda1`, run:
 
 ```
-# mkfs.*ext4* /dev/*sda1*
+# mkfs.ext4 /dev/sda1
 
 ```
 
@@ -179,28 +196,28 @@ The new file system can now be mounted to a directory of choice.
 
 ## Mount a filesystem
 
-To manually mount a filesystem on a device (e.g., a partition) use [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html):
+To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html). This example mounts `/dev/sda1` to `/mnt`.
 
 ```
-# mount */dev/sda1* */mnt*
+# mount /dev/sda1 /mnt
 
 ```
 
-This attaches the filesystem on `*/dev/sda1*` at the directory `*/mnt*`, making the contents of the filesystem visible. Any data that existed at `*/mnt*` before this action is made invisible until the device is unmounted.
+This attaches the filesystem on `/dev/sda1` at the directory `/mnt`, making the contents of the filesystem visible. Any data that existed at `/mnt` before this action is made invisible until the device is unmounted.
 
 [fstab](/index.php/Fstab "Fstab") contains information on how devices should be automatically mounted if present. See the [fstab](/index.php/Fstab "Fstab") article for more information on how to modify this behavior.
 
-If a device is specified in `/etc/fstab` and only the device or mount point is given on the command line, that information will be used in mounting. For example, if `/etc/fstab` contains a line indicating that `*/dev/sda1*` should be mounted to `*/mnt*`, then the following will automatically mount the device to that location:
+If a device is specified in `/etc/fstab` and only the device or mount point is given on the command line, that information will be used in mounting. For example, if `/etc/fstab` contains a line indicating that `/dev/sda1` should be mounted to `/mnt`, then the following will automatically mount the device to that location:
 
 ```
-# mount */dev/sda1*
+# mount /dev/sda1
 
 ```
 
 Or
 
 ```
-# mount */mnt*
+# mount /mnt
 
 ```
 
@@ -226,7 +243,7 @@ $ findmnt
 *findmnt* takes a variety of arguments which can filter the output and show additional information. For example, it can take a device or mount point as an argument to show only information on what is specified:
 
 ```
-$ findmnt */dev/sda1*
+$ findmnt /dev/sda1
 
 ```
 
@@ -234,17 +251,17 @@ $ findmnt */dev/sda1*
 
 ### Umount a file system
 
-To unmount a file system use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Either the device containting the file system or the mount point can be specified:
+To unmount a file system use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Either the device containing the file system (e.g., `/dev/sda1`) or the mount point (e.g., `/mnt`) can be specified:
 
 ```
-# umount */dev/sda1*
+# umount /dev/sda1
 
 ```
 
 Or
 
 ```
-# umount */mnt*
+# umount /mnt
 
 ```
 
