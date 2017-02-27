@@ -131,7 +131,7 @@ See also: [Logout alters workspaces](http://forum.xfce.org/viewtopic.php?id=6056
 
 If you experience video tearing whilst using Xfwm, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option. If you use Intel graphics and you have already enabled "TearFree" option in Xorg config as described in [Intel graphics#Tear-free video](/index.php/Intel_graphics#Tear-free_video "Intel graphics"), then disable *Synchronize drawing to the vertical blank* option.
 
-If this does not fix the tearing, consider disabling Xfwm's composite manager and using an alternative [composite manager](/index.php/Composite_manager "Composite manager").
+If this does not fix the tearing, consider disabling Xfwm's compositor and using an alternative [composite manager](/index.php/Composite_manager "Composite manager").
 
 ## See also
 

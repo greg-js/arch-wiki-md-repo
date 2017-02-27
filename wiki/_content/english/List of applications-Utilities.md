@@ -881,9 +881,9 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/djmelik/archey](https://github.com/djmelik/archey) || [archey2](https://aur.archlinux.org/packages/archey2/)
 
-*   **archey3** — Python script to display system infomation alongside the Arch Linux logo.
+*   **[archey3](/index.php/Archey3 "Archey3")** — Python script to display system infomation alongside the Arch Linux logo.
 
-	[http://www.generictestdomain.net/archey3/](http://www.generictestdomain.net/archey3/) || [archey3](https://www.archlinux.org/packages/?name=archey3)
+	[https://lclarkmichalek.github.io/archey3](https://lclarkmichalek.github.io/archey3) || [archey3](https://www.archlinux.org/packages/?name=archey3)
 
 *   **dmidecode** — It reports information about your system's hardware as described in your system BIOS according to the SMBIOS/DMI standard.
 

@@ -67,6 +67,7 @@ A comprehensive list of features are documented at the [official Openbox website
     *   [12.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
     *   [12.10 Enable Hot Corners](#Enable_Hot_Corners)
     *   [12.11 Window snapping](#Window_snapping)
+    *   [12.12 Smooth display manager transition](#Smooth_display_manager_transition)
 *   [13 Troubleshooting](#Troubleshooting_2)
     *   [13.1 Windows load behind the active window](#Windows_load_behind_the_active_window)
 *   [14 See also](#See_also)
@@ -831,6 +832,16 @@ However, it should be noted that once a window has been 'snapped' to an edge, it
 ```
 
 This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/) are also available to automatically simulate window snapping behaviour without the use of keybinds.
+
+### Smooth display manager transition
+
+**Note:** This has been confirmed to work with [LightDM](/index.php/LightDM "LightDM").
+
+Users of display managers might experience a flickering during the transition between the display manager and the Openbox desktop. The flickering comes from Openbox setting the root window's color during startup. Therefore there's a brief moment when the display flashes in a grey color, between the display manager's background and the desktop's wallpaper.
+
+Setting the root window's background color can be disabled by editing the Openbox startup script found in `/usr/lib/openbox/openbox-autostart`. Simply comment out (or delete) the block starting with `# Set a background color`. See [this blog post](http://dglava.github.io/en/lightdm-openbox.html) for more information.
+
+**Note:** Users who don't specifically set their wallpaper will "inherit" the display manager's background automatically if they disable the root window color adjustment.
 
 ## Troubleshooting
 

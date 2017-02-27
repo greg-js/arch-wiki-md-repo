@@ -4,7 +4,6 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 
 *   [1 Installation](#Installation)
 *   [2 Forward to a Gmail mail server](#Forward_to_a_Gmail_mail_server)
-    *   [2.1 Using an app password](#Using_an_app_password)
 *   [3 Security](#Security)
 *   [4 Sending email](#Sending_email)
     *   [4.1 Attachments](#Attachments)
@@ -16,7 +15,9 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 
 ## Forward to a Gmail mail server
 
-To configure SSMTP, you will have to edit its configuration file (`/etc/ssmtp/ssmtp.conf`) and enter your account settings:
+To configure SSMTP, you will have to edit its configuration file (`/etc/ssmtp/ssmtp.conf`) and enter your account settings.
+
+If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://security.google.com/settings/security/apppasswords) page. Use the generated 16-character password in the `AuthPass` line. Spaces in the password can be omitted.
 
  `/etc/ssmtp/ssmtp.conf` 
 ```
@@ -31,8 +32,8 @@ mailhub=smtp.gmail.com:587
 # The address where the mail appears to come from for user authentication.
 rewriteDomain=gmail.com
 
-# The full hostname
-hostname=localhost
+# The full hostname.  Must be correctly formed, fully qualified domain name or GMail will reject connection.
+hostname=yourlocalhost.yourlocaldomain.tld
 
 # Use SSL/TLS before starting negotiation
 UseTLS=Yes
@@ -77,10 +78,6 @@ Which changes `/etc/passwd` to:
 root:x:0:0:root@myhostname,,,:/root:/bin/bash
 mainuser:x:1000:1000:mainuser@myhostname,,,:/home/mainuser:/bin/bash
 ```
-
-### Using an app password
-
-If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://security.google.com/settings/security/apppasswords) page. Use the generated 16-character password in the `AuthPass` line. Spaces in the password can be omitted.
 
 ## Security
 

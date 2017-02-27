@@ -431,6 +431,8 @@ To change the installation reason of an already installed package, execute:
 
 Use `--asexplicit` to do the opposite operation.
 
+**Tip:** Installing optional dependencies with `--asdeps` will cause it such that if you [remove orphans](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks"), *pacman* will also remove leftover optional dependencies.
+
 ### Search for a package that contains a specific file
 
 Sync the files database:
@@ -479,6 +481,8 @@ extra/mariadb           10.1.9-4     10.1.10-1      0.26 MiB      13.80 MiB
 
 #### Skip package from being upgraded
 
+**Warning:** Be careful in skipping packages, since [partial upgrades](/index.php/Partial_upgrades "Partial upgrades") are unsupported.
+
 To have a specific package skipped when [upgrading](#Upgrading_packages) the system, specify it as such:
 
 ```
@@ -491,6 +495,8 @@ For multiple packages use a space-separated list, or use additional `IgnorePkg` 
 It will still be possible to upgrade the ignored packages using `pacman -S`: in this case *pacman* will remind you that the packages have been included in an `IgnorePkg` statement.
 
 #### Skip package group from being upgraded
+
+**Warning:** Be careful in skipping package groups, since [partial upgrades](/index.php/Partial_upgrades "Partial upgrades") are unsupported.
 
 As with packages, skipping a whole package group is also possible:
 
@@ -635,9 +641,9 @@ In the case that *pacman* crashes with a "database write" error while removing p
 
 ### "Unable to find root device" error after rebooting
 
-Most likely your initramfs got broken during a kernel update (improper use of *pacman'*s `--force` option can be a cause). You have two options; first, try the *Fallback* entry:
+Most likely your initramfs got broken during a kernel update (improper use of *pacman'*s `--force` option can be a cause). You have two options; first, try the *Fallback* entry.
 
-**Tip:** In case you removed this entry for whatever reason, you can always press the `Tab` key when the bootloader menu shows up (for Syslinux) or `e` (for GRUB or systemd-boot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your bootloader) to boot with the new parameters.
+**Tip:** In case you removed the *Fallback* entry, you can always press the `Tab` key when the bootloader menu shows up (for Syslinux) or `e` (for GRUB or systemd-boot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your bootloader) to boot with the new parameters.
 
 Once the system starts, run this command (for the stock [linux](https://www.archlinux.org/packages/?name=linux) kernel) either from the console or from a terminal to rebuild the initramfs image:
 
@@ -646,25 +652,23 @@ Once the system starts, run this command (for the stock [linux](https://www.arch
 
 ```
 
-If that does not work, from a current Arch release (CD/DVD or USB stick), run:
-
-**Note:** If you do not have a current release or if you only have some other "live" Linux distribution laying around, you can [chroot](/index.php/Chroot "Chroot") using the old fashioned way. Obviously, there will be more typing than simply running the `arch-chroot` script.
+If that does not work, from a current Arch release (CD/DVD or USB stick), [mount](/index.php/Mount "Mount") your root and boot partitions. Then [chroot](/index.php/Chroot "Chroot") using *arch-chroot*:
 
 ```
-# mount /dev/sdxY /mnt         # Your root partition.
-# mount /dev/sdxZ /mnt/boot    # If you use a separate /boot partition.
 # arch-chroot /mnt
 # pacman -Syu mkinitcpio systemd linux
 
 ```
 
-**Note:** If *pacman* fails with `Could not resolve host`, please [check your internet connection](/index.php/Network_configuration#Check_the_connection "Network configuration").
+**Note:**
+
+*   If you do not have a current release or if you only have some other "live" Linux distribution laying around, you can [chroot](/index.php/Chroot "Chroot") using the old fashioned way. Obviously, there will be more typing than simply running the `arch-chroot` script.
+*   If *pacman* fails with `Could not resolve host`, please [check your internet connection](/index.php/Network_configuration#Check_the_connection "Network configuration").
+*   If you cannot enter the arch-chroot or chroot environment but need to re-install packages you can use the command `pacman -r /mnt -Syu foo bar` to use *pacman* on your root partition.
 
 Reinstalling the kernel (the [linux](https://www.archlinux.org/packages/?name=linux) package) will automatically re-generate the initramfs image with `mkinitcpio -p linux`. There is no need to do this separately.
 
 Afterwards, it is recommended that you run `exit`, `umount /mnt/{boot,}` and `reboot`.
-
-**Note:** If you cannot enter the arch-chroot or chroot environment but need to re-install packages you can use the command `pacman -r /mnt -Syu foo bar` to use *pacman* on your root partition.
 
 ### Signature from "User <email@gmail.com>" is unknown trust, installation failed
 

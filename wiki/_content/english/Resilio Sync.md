@@ -36,13 +36,7 @@ Alternatively, the bare 'tar.gz' packaged executable can be downloaded from the 
 
 The Linux client of Resilio Sync does not use a typical GUI, instead it sets up a WebUI server accessible at `localhost:8888`. Shared folders can also be configured statically in a configuration file, but doing so disables the WebGUI.
 
-Once installed, you'll first need to create a configuration file at `~/.config/rslsync/rslsync.conf`, see [#Configuration](#Configuration). You will also need to create the `storage_path` directory. When that is done, start and (if you want it to start on boot) enable the service:
-
-```
-$ systemctl --user start rslsync
-$ systemctl --user enable rslsync
-
-```
+Once installed, you'll first need to create a configuration file at `~/.config/rslsync/rslsync.conf`, see [#Configuration](#Configuration). You will also need to create the `storage_path` directory. When that is done, start and (if you want it to start on boot) [start/enable](/index.php/Start/enable "Start/enable") the user service `rslsync` (i.e., with the `--user` flag.
 
 The service will run as the user invoking the command. Note that the above command is *not* run as root: doing so may lead to a cryptic error stating that D-Bus has refused the connection.
 
@@ -50,13 +44,7 @@ The service will run as the user invoking the command. Note that the above comma
 
 **Note:** If running `rslsync` on a headless server, enable lingering to start `rslsync` and keep it running outside user sessions: [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
-You can also run it as the `rslsync` system user, just leave the `--user` part out:
-
-```
-# systemctl enable rslsync
-# systemctl start rslsync
-
-```
+You can also run it as the `rslsync.service` system user (without the `--user` flag).
 
 Configuration for this user is located at `/etc/rslsync.conf`, and metadata is saved in `/var/lib/rslsync/` by default. You should review the configuration settings especially user and password, see below.
 

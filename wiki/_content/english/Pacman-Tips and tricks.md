@@ -243,16 +243,7 @@ For *recursively* removing orphans and their configuration files:
 
 If no orphans were found, pacman errors with `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
 
-**Note:** As of [pacman](https://www.archlinux.org/packages/?name=pacman) 4.2.0, `-Qt` lists only true orphans. To include packages which are *optionally* required by another package, pass the `-t` flag twice (*i.e.*, `-Qtt`).
-
-Note that the `-Rns` (or `-Rnc`) option will remove only direct dependencies but not optional dependencies that were explicitly installed (without `--asdeps` option).
-
-Although it is not a requirement, but only for better system maintenance whenever you are installing optional dependencies try to install them with `--asdeps` option. Doing this doesn't affect anything in runtime or installation. It only affects when you have removed a package and there were optional dependencies. Then if you remove orphans it will also remove leftover optional dependencies if they were installed using `--asdeps` option. So while you are installing optional dependencies, use the following command:
-
-```
-# pacman -S --asdeps <packages that are optional dependencies>
-
-```
+**Note:** The arguments `-Qt` list only true orphans. To include packages which are *optionally* required by another package, pass the `-t` flag twice (*i.e.*, `-Qtt`).
 
 ### Removing everything but base group
 

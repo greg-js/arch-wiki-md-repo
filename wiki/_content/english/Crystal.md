@@ -1,5 +1,12 @@
 [Crystal](http://crystal-lang.org) is a statically typed, compiled programming language with [Ruby](/index.php/Ruby "Ruby") inspired syntax and global type inference.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+*   [3 Shards](#Shards)
+*   [4 See also](#See_also)
+
 ## Installation
 
 To install Crystal, [install](/index.php/Install "Install") [crystal](https://www.archlinux.org/packages/?name=crystal). To install the latest development version install [crystal-git](https://aur.archlinux.org/packages/crystal-git/).
@@ -33,6 +40,10 @@ For more options see:
  $ crystal help
 
 ```
+
+## Shards
+
+The dependency manager shards is also available in the repositories. To install it, [install](/index.php/Install "Install") [shards](https://www.archlinux.org/packages/?name=shards). To install the latest development version install [shards-git](https://aur.archlinux.org/packages/shards-git/).
 
 ## See also
 

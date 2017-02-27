@@ -33,7 +33,7 @@ Quoting [Celery documentation](http://docs.celeryproject.org/en/latest/getting-s
 
 ### Celery
 
-For configuration files the directory `/etc/celery/` needs to be created. An example configuration file is provided within [Celery documentation](http://docs.celeryproject.org/en/latest/tutorials/daemonizing.html#example-configuration).
+For configuration files the directory `/etc/celery/` needs to be created. An example configuration file is provided within [Celery documentation](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#example-configuration).
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `celery@*celery*.service`.
 
@@ -53,7 +53,9 @@ The default configuration:
 
 ```
 
-You probably want to replace `0.0.0.0` with `127.0.0.1`, RabbitMQ does not support Unix sockets. Read more about environmental variables within [RabbitMQ docs](http://www.rabbitmq.com/configure.html)
+You probably want to replace `0.0.0.0` with `127.0.0.1`, RabbitMQ does not support Unix sockets.
+
+For simple configurations, you may also want to add `HOME=/var/lib/rabbitmq`. Read more about environmental variables within [RabbitMQ docs](http://www.rabbitmq.com/configure.html)
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `rabbitmq.service`.
 

@@ -299,7 +299,7 @@ initrd /@/boot/initramfs-linux.img
 Example with Arch installed on a separate dataset zroot/ROOT/default:
 
 ```
-inux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
+linux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
 initrd /ROOT/default/@/boot/initramfs-linux.img
 
 ```

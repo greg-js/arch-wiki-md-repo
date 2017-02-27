@@ -46,6 +46,10 @@ Other versions include:
 
 	[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)
 
+*   **Thunderbird with GTK+ 3** — Stable release built with gtk3 instead of gtk2.
+
+	[https://www.mozilla.org/thunderbird/channel/](https://www.mozilla.org/thunderbird/channel/) || [thunderbird-gtk3](https://aur.archlinux.org/packages/thunderbird-gtk3/)
+
 A version overview, both past and future, can be read on the [Mozilla wiki](https://wiki.mozilla.org/Releases).
 
 ## Securing

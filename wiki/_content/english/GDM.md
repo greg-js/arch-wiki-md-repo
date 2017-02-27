@@ -15,6 +15,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
         *   [2.3.4 Turning off the sound](#Turning_off_the_sound)
         *   [2.3.5 Make the power button interactive](#Make_the_power_button_interactive)
         *   [2.3.6 Enabling tap-to-click](#Enabling_tap-to-click)
+        *   [2.3.7 Disable/Enable Accessibility Menu](#Disable.2FEnable_Accessibility_Menu)
     *   [2.4 GDM keyboard layout](#GDM_keyboard_layout)
         *   [2.4.1 GNOME Control Center](#GNOME_Control_Center)
         *   [2.4.2 GDM 2.x layout](#GDM_2.x_layout)
@@ -282,6 +283,18 @@ To check the if it was set correctly, use:
 If you get the error `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, make sure dbus is running:
 
  `$ sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+
+#### Disable/Enable Accessibility Menu
+
+To disable or enable the Accessibility Menu, set the following key in dconf editor:
+
+```
+# machinectl shell gdm@
+# gsettings set org.gnome.desktop.interface toolkit-accessibility false
+# exit
+```
+
+The menu is disabled when the key is false, enabled when it is true.
 
 ### GDM keyboard layout
 

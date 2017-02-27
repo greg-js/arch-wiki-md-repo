@@ -42,6 +42,8 @@ Prosody has optional depedencies that although not strictly required for its ope
 	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
 *Requires:* [lua51-dbi](https://aur.archlinux.org/packages/lua51-dbi/)
 
+**Warning:** [lua51-dbi](https://aur.archlinux.org/packages/lua51-dbi/) is currently without upstream! See [FS#53081](https://bugs.archlinux.org/task/53081)
+
 **Warning:** If enabled, Prosody will store passwords in plaintext within the database by default. It is recommended to use a hashed authentication module such as [mod_auth_internal_hashed](http://prosody.im/doc/modules/mod_auth_internal_hashed)
 
 	Better Connection Scaling (Recommended)

@@ -39,7 +39,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 	"local_port":1080,
 	"password":"your-passwd",
 	"timeout":300,
-	"method":"aes-128-gcm",
+	"method":"chacha20-ietf",
 	"fast_open":false,
 	"workers":1
 }
@@ -56,7 +56,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 | local_port | 本地监听端口，一般为`1080` |
 | password | 用以加密的密匙 |
 | timeout | 超时时间（秒） |
-| method | 加密方法，默认的`table`是一种不安全的加密。shadowsocks-libev 3.0.0以上版本支持由AES-NI及PCLMUL指令硬件加速的AES-GCM，请检查你的/proc/cpuinfo，确认是否可以使用`aes-128-gcm`。 |
+| method | 加密方法，默认的`table`是一种不安全的加密。建议使用`chacha20-ietf`。 |
 | fast_open | 是否启用[TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open) |
 | wokers | worker数量，如果不理解含义请不要改 |
 
@@ -181,41 +181,11 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 
 #### 加密方法
 
-**注意:** 默认加密方法`table`速度很快，但很不安全。如果CPU支持AES-NI及PCLMUL指令硬件加速的话，推荐使用`aes-128-gcm`。如果是旧CPU（不支持AES硬件加速），ChaCha20是占用最小速度最快的一种方式。请不要使用`rc4`，它不安全。
+方法列表参见[[1]](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)。 并且可以使用[[2]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)脚本来比较和找出在你机器上运行最快的加密方法。
+
+**注意:** 默认加密方法`table`速度很快。请不要使用`rc4`，它不安全。
 
 **提示：** 安装`M2Crypto`可略微提升加密速度，对于Python2来说，安装[python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto)即可。
-
-可选的加密方式：
-
-*   aes-256-gcm
-*   aes-128-gcm
-*   aes-192-gcm
-*   aes-256-cfb（Shadowsocks经典、传统的加密算法，也是Shadowsocks的作者推荐过的加密算法，移动平台可能开销稍高）
-*   aes-128-cfb
-*   aes-192-cfb
-*   aes-256-ofb
-*   aes-128-ofb
-*   aes-192-ofb
-*   aes-128-ctr
-*   aes-192-ctr
-*   aes-256-ctr
-*   aes-128-cfb8
-*   aes-192-cfb8
-*   aes-256-cfb8
-*   aes-128-cfb1
-*   aes-192-cfb1
-*   aes-256-cfb1
-*   bf-cfb
-*   camellia-128-cfb
-*   camellia-192-cfb
-*   camellia-256-cfb
-*   cast5-cfb
-*   chacha20
-*   idea-cfb
-*   rc2-cfb
-*   rc4-md5
-*   salsa20
-*   seed-cfb
 
 **注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
 。

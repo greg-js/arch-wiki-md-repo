@@ -52,7 +52,7 @@ You can start sway by simply typing `sway` in a terminal.
 
 ### Using a display manager
 
-The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by [GDM](/index.php/GDM "GDM").
+The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by modern display managers like [GDM](/index.php/GDM "GDM") and [SDDM](/index.php/SDDM "SDDM").
 
 ### From X
 

@@ -139,11 +139,13 @@ At this point, only after ensuring there is no information available through pac
 
 ## Use the package manager to install software
 
-[Pacman](/index.php/Pacman "Pacman") does a much better job than you at keeping track of files. If you install things manually you *will*, sooner or later, forget what you did, forget where you installed to, install conflicting software, install to the wrong locations, etc. Instead, learn how to [create a package](/index.php/Creating_packages "Creating packages").
+[Pacman](/index.php/Pacman "Pacman") does a much better job than you at keeping track of files. If you install things manually you *will*, sooner or later, forget what you did, forget where you installed to, install conflicting software, install to the wrong locations, etc.
 
-To clean up improperly installed files, use [lostfiles](https://aur.archlinux.org/packages/lostfiles/) or see [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
+*   Install packages from the official repositories using the method in the [Pacman#Installing packages](/index.php/Pacman#Installing_packages "Pacman") section.
+*   If the program you desire is not available, check to see if someone has created a package in the [AUR](/index.php/AUR "AUR"). Follow the method in that article for installation.
+*   Lastly, if the program you want is not in the official repositories or in the AUR, learn how to [create a package](/index.php/Creating_packages "Creating packages") for it.
 
-See also [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)), which allows creating a commented configuration file with package lists and changed files. This allows documenting the reason why a package is installed, so it's clear when it's no longer needed.
+To clean up improperly installed files, see [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 
 ### Choose open-source drivers
 

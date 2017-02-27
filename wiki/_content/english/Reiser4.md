@@ -35,7 +35,7 @@
 
 **Note:** Backing up your bootloader configuration file should be considered.
 
-a) **Recomended:** make a small (as mentioned above, 20-200mb) partition for `/boot` with a filesystem other than Reiser4 with [GParted](/index.php/GParted "GParted"), and then copy your `/boot` folder to the partition. Update your bootloader config accordingly, eg. with [Grub2](/index.php/Grub2 "Grub2") do:
+a) **Recommended:** make a small (as mentioned above, 20-200mb) partition for `/boot` with a filesystem other than Reiser4 with [GParted](/index.php/GParted "GParted"), and then copy your `/boot` folder to the partition. Update your bootloader config accordingly, eg. with [Grub2](/index.php/Grub2 "Grub2") do:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -94,7 +94,7 @@ mkfs.reiser4 -o create=ccreg40,compress=lzo1 /dev/sda**X**
 
 ### Copy system
 
-Once the partition is formated, copy you current system to the new partition and create the system directories. You may either do this from Arch Linux, or **to make it easier** (so that you do not have to use makedev later), just **boot up with the [Gparted LiveCD](http://gparted.sourceforge.net/livecd.php) and mount both your new Reiser4 partition and your current root partition. Then, just copy everything over (as root) like so:**
+Once the partition is formatted, copy you current system to the new partition and create the system directories. You may either do this from Arch Linux, or **to make it easier** (so that you do not have to use makedev later), just **boot up with the [Gparted LiveCD](http://gparted.sourceforge.net/livecd.php) and mount both your new Reiser4 partition and your current root partition. Then, just copy everything over (as root) like so:**
 
 ```
 cd /mnt

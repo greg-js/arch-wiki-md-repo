@@ -39,6 +39,8 @@ $ export PATH=~/bin:$PATH
 
 ```
 
+**Note:** You will probably not get notified with **any message** if building the environment script fails because of invalid Python version.
+
 ## Build core-image-minimal
 
 Time to build the *core-image-minimal* target. First place yourself in the `poky` directory and source the environment script. Then build it with *bitbake*:

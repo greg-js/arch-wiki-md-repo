@@ -12,9 +12,8 @@
     *   [1.7 Launch a new browser instance](#Launch_a_new_browser_instance)
     *   [1.8 Directly open *.torrent files and magnet links with a torrent client](#Directly_open_.2A.torrent_files_and_magnet_links_with_a_torrent_client)
     *   [1.9 Touch Scrolling on touchscreen devices](#Touch_Scrolling_on_touchscreen_devices)
-    *   [1.10 Disable system tray icon](#Disable_system_tray_icon)
-    *   [1.11 Reduce memory usage](#Reduce_memory_usage)
-    *   [1.12 User Agent](#User_Agent)
+    *   [1.10 Reduce memory usage](#Reduce_memory_usage)
+    *   [1.11 User Agent](#User_Agent)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -46,7 +45,7 @@ Shift+ESC can be used to bring up the browser task manager wherein memory, CPU, 
 
 ### Broken icons in Download tab
 
-If Chromium shows icon placeholders (icons representing broken documents) instead of appropriate icons in its Download tab, the likely cause is that the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) package is not installed.
+If Chromium shows icon placeholders (icons representing broken documents) instead of appropriate icons in its Download tab, the likely cause is that the [adwaita-icon-theme](https://www.archlinux.org/packages/?name=adwaita-icon-theme) package is not installed.
 
 ### Chromium overrides/overwrites Preferences file
 
@@ -131,14 +130,6 @@ Chrome and Chromium do not support touchscreen by default. There are a couple se
 *   You may need to specify which touch device to use. Find your touchscreen device with `xinput list` then launch Chromium with the `--touch-devices=**x**` parameter, where "**x**" is the id of your device.
     **Note:** If the device is designated as a slave pointer, using this may not work, use the master pointer's ID instead.
 
-### Disable system tray icon
-
-Open the URL `chrome://flags` in the browser. Disable this flag:
-
-*   `device-discovery-notifications`
-
-Click the restart button at the bottom of the page.
-
 ### Reduce memory usage
 
 By default, Chromium uses a separate OS process for each *instance* of a visited web site. [[1]](https://www.chromium.org/developers/design-documents/process-models#Supported_Models) However, you can specify command-line switches when starting Chromium to modify this behaviour.
@@ -164,15 +155,6 @@ In addition, you can suspend or store inactive Tabs with extensions such as [Tab
 ### User Agent
 
 The User Agent can be arbitrarily modified at the start of Chromium's base instance via its `--user-agent="[string]"` parameter.
-
-For the same User Agent as the stable Chrome release for Linux i686 (at the time of writing, the most popular Linux edition of Chrome) one would use:
-
-```
---user-agent="Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11"
-
-```
-
-An official, automatically updated listing of Chromium releases which also shows the included WebKit version is available as the [OmahaProxy Viewer](https://omahaproxy.appspot.com/).
 
 ## Profile maintenance
 
@@ -276,7 +258,7 @@ To confirm this is working run [this test](https://panopticlick.eff.org) and mak
 
 ## Making flags persistent
 
-**Note:** Starting with `chromium 42.0.2311.90-1` only per-user flags are supported.
+**Note:** The `chromium-flags.conf` file is specific to Arch Linux and is supported via a custom launcher script that was added in `chromium 42.0.2311.90-1`.
 
 You can put your flags in a `chromium-flags.conf` file under `$HOME/.config/` (or under `$XDG_CONFIG_HOME` if you have configured that environment variable).
 
@@ -295,10 +277,6 @@ Below is an example `chromium-flags.conf` file that defines the flags `--start-m
 --incognito
 
 ```
-
-**Tip:** If you have Pepper Flash installed, the launcher will automatically pass the correct flags to Chromium so you do not need to define any `--ppapi-flash-*` flags.
-
-**Note:** The `chromium-flags.conf` file is specific to Arch Linux and is supported via a custom launcher script that was added in `chromium 42.0.2311.90-1`.
 
 ## See also
 

@@ -10,26 +10,14 @@ With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Li
 
 *   [1 Article preface](#Article_preface)
 *   [2 Installation](#Installation)
-    *   [2.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
-        *   [2.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
-        *   [2.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
-        *   [2.1.3 Login / SSH](#Login_.2F_SSH)
-    *   [2.2 Using prebuilt ArchLinuxARM images](#Using_prebuilt_ArchLinuxARM_images)
-        *   [2.2.1 Download the source](#Download_the_source)
-        *   [2.2.2 Installation](#Installation_2)
-*   [3 Network](#Network)
-    *   [3.1 SSH](#SSH)
-*   [4 X.org driver](#X.org_driver)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Ethernet not working](#Ethernet_not_working)
-    *   [5.2 HDMI 1080p resolution](#HDMI_1080p_resolution)
-        *   [5.2.1 Manually change the resolution](#Manually_change_the_resolution)
-        *   [5.2.2 Automatically set resolution on boot](#Automatically_set_resolution_on_boot)
-        *   [5.2.3 Display turns off after idle and does not turn on again](#Display_turns_off_after_idle_and_does_not_turn_on_again)
-*   [6 Benchmarks](#Benchmarks)
-    *   [6.1 SATA HDD](#SATA_HDD)
-    *   [6.2 Network](#Network_2)
-*   [7 See also](#See_also)
+    *   [2.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
+    *   [2.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
+    *   [2.3 Login / SSH](#Login_.2F_SSH)
+*   [3 X.org driver](#X.org_driver)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Ethernet not working](#Ethernet_not_working)
+    *   [4.2 Display turns off after idle and does not turn on again](#Display_turns_off_after_idle_and_does_not_turn_on_again)
+*   [5 See also](#See_also)
 
 ## Article preface
 
@@ -37,11 +25,9 @@ This article is strongly based on [Raspberry Pi](/index.php/Raspberry_Pi "Raspbe
 
 ## Installation
 
-### Using original ArchLinuxARM tarball
-
 This method will install unmodified ArchLinuxARM armv7 basesystem to your Banana Pi, meaning you'll have the latest mainline kernel running.
 
-#### Install basesystem to a SD card
+### Install basesystem to a SD card
 
 Zero the beginning of the SD card:
 
@@ -101,7 +87,7 @@ Compile it and write it to the SD-card using the package [uboot-tools](https://w
 
 ```
 
-#### Compile and copy U-Boot bootloader
+### Compile and copy U-Boot bootloader
 
 The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. Then clone the u-boot source code and compile a Banana Pi image:
 
@@ -120,38 +106,13 @@ If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.b
 
 ```
 
-#### Login / SSH
+### Login / SSH
 
 SSH login for root is disabled by default. Login with the default user account and use [su](/index.php/Su "Su").
 
 | Type | Username | Password |
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
-
-### Using prebuilt ArchLinuxARM images
-
-#### Download the source
-
-First make sure you download the right image for your board. Although you can install the image for the Pi on the Pro as well for example, it doesn't include features like wireless support out of the box.
-
-*   [Arch image for Banana Pi](http://www.lemaker.org/portal.php?mod=list&catid=4)
-*   [Arch image for Banana Pro](http://www.lemaker.org/portal.php?mod=list&catid=5)
-
-You can get customized images as well, like this [Arch / LXDE distribution for the Pi](http://blog.eldajani.net/banana-pi-arch-linux-customized-distribution/).
-
-#### Installation
-
-See the [Banana Pi documentation](http://wiki.lemaker.org/SD_card_installation). You mostly need to download the [Arch Linux image](http://www.lemaker.org/article-26-1.html), unpack it, and dump it to your SD card. If your SD card is larger than 4G, you might want to resize the filesystem with a tool like `parted` etc.
-
-## Network
-
-### SSH
-
-Luckily the [SSH daemon](/index.php/Secure_Shell "Secure Shell") is already installed by default. The default login data is:
-
-| Type | Username | Password |
-| Root | `root` | `bananapi` |
-| User | `bananapi` | `bananapi` |
 
 ## X.org driver
 
@@ -168,69 +129,7 @@ ethtool -s eth0 speed 100 duplex half autoneg off
 
 ```
 
-### HDMI 1080p resolution
-
-There are two methods to achieve changing the resolution from the default 1280x720/60Hz to 1920x1080/60Hz.
-
-#### Manually change the resolution
-
-Yield all possible HDMI-resolutions:
-
-```
-# cat /sys/class/graphics/fb0/modes
-
-```
-
-Change to desired resolution, e.g.:
-
-```
-# echo "D:1920x1080p-60" > /sys/class/graphics/fb0/mode
-
-```
-
-#### Automatically set resolution on boot
-
-You need to edit the kernel parameters in the `uEnv.txt` and provide the required parameters in `script.bin`. As the `script.bin` is a binary file, you need to use the Sunix tools, to convert it to a `script.fex` text file, make your changes and reconvert it to the `script.bin`. (see also [Sunxi fex guide](http://linux-sunxi.org/Fex_Guide#disp_init_configuration), [Sunix kernel arguments](http://linux-sunxi.org/Kernel_arguments) and [this thread](http://forum.lemaker.org/viewthread.php?action=printable&tid=1881)).
-
-```
-$ cd $HOME
-$ mkdir $HOME/boot
-$ sudo mount /dev/mmcblk0p1 $HOME/boot
-$ cp $HOME/boot/script.bin $HOME/script.bin
-$ pacman -S sunxi-tools
-$ bin2fex $HOME/script.bin $HOME/script.fex
-
-```
-
-Now edit the created `script.fex` with an editor of your choice. Find the `[disp_init]` section and change/add the following parameters:
-
-```
-screen0_output_mode = 10
-fb0_framebuffer_num = 3
-fb0_scaler_mode_enable = 0
-sunxi_fb_mem_reserve = 32
-
-```
-
-Save the changes, run `fex2bin`, backup and replace the previous `script.bin`.
-
-```
-$ $HOME/sunxi-tools/fex2bin $HOME/script.fex $HOME/script.bin
-$ sudo cp $HOME/boot/script.bin $HOME/boot/script.bin.backup
-$ sudo cp $HOME/script.bin $HOME/boot/script.bin
-
-```
-
-After creating a backup, you can change the `disp.screen0.output_mode` part of the `$HOME/boot/uEnv.txt` config with root privileges:
-
-```
-disp.screen0.output_mode=10:1920x1080p60
-
-```
-
-Unmount the boot partition, reboot and you should have 1080p/60Hz.
-
-#### Display turns off after idle and does not turn on again
+### Display turns off after idle and does not turn on again
 
 If you also have an issue with the display turning off after some idle time and not turning on again, you might want to disable [DPMS](/index.php/DPMS "DPMS"). Therefore add these X11 arguments to the proper configuration of your display manager.
 
@@ -253,24 +152,6 @@ If for some reason the display still keeps turning off, e.g. when restarting you
 # echo "D:1920x1080p-60" > /sys/class/graphics/fb0/mode
 
 ```
-
-## Benchmarks
-
-Of course the following values might differ from yours, as they are dependend on the actual hardware connected (e.g. the HDD), but it might give you a feeling about the Banana Pi performances.
-
-### SATA HDD
-
-I connected two different external HDDs (3,5" with external energy source) via SATA-L to eSATA-I cable to the Banana Pi. My reading/writing results using [dd](/index.php/Benchmarking/Data_storage_devices#Using_dd "Benchmarking/Data storage devices") (average of 3 run times):
-
- HDD 1 (2 TB) | HDD 2 (4 TB) |
-| Reading | 81.8 MB/s | 115.5 MB/s |
-| Writing | 37.6 MB/s | 39,4 MB/s |
-
-### Network
-
-Due to the Allwinner A20 SoC limitations the BPi is not able to use the full theoretical bandwidth of the Gigabit Ethernet NIC. Yet the BPi is able to use about 510 MBits per second.
-
-Benchmarking was done using `iperf` (average of 3 run times). Client BPi and Server were connected to a Gigabit capable switch via Gigabit Ethernet.
 
 ## See also
 

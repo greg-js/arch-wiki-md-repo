@@ -12,7 +12,7 @@ This document applies in particular to Arch Linux on a Toshiba Satellite L30/L35
 *   [8 HDD](#HDD)
 *   [9 CD/DVD](#CD.2FDVD)
 *   [10 Audio issues](#Audio_issues)
-*   [11 Hybernate/Suspent](#Hybernate.2FSuspent)
+*   [11 Hibernate/Suspend](#Hibernate.2FSuspend)
 *   [12 Desktop Environment](#Desktop_Environment)
 *   [13 HTPC use](#HTPC_use)
 
@@ -22,7 +22,7 @@ Originally this is Intel Celeron M440 single core processor, 1024MB of RAM, ATI 
 
 Processor can be upgraded up to Intel Core 2 Duo T2450 2.0GHz for x86 system, or even Intel Core 2 Duo T7200 2.0GHz for x64 system. Processor upgrade gives you much performance improvements. T7200 processor works @ 1600MHz due to 533MHz system clock.
 
-Officialy L30 can handle up to 2GB of RAM, but it works with 3GB of RAM too(2+1). DO NOT WORKS with 2+2GB or RAM.
+Officially L30 can handle up to 2GB of RAM, but it works with 3GB of RAM too(2+1). DOES NOT WORK with 2+2GB of RAM.
 
 Details from "lspci" in my case(not stock):
 
@@ -52,7 +52,7 @@ Details from "lspci" in my case(not stock):
 
 ## GPU
 
-AMD/ATI Mobility Radeon Xpress 200M 128MB works well with xf86-video-ati driver. Recomended to install mesa-vdpau and opencl-mesa for better video performance. Can play 720p and some 1080p with mpv player or kodi, but only after processor upgrade.
+AMD/ATI Mobility Radeon Xpress 200M 128MB works well with xf86-video-ati driver. Recommended to install mesa-vdpau and opencl-mesa for better video performance. Can play 720p and some 1080p with mpv player or kodi, but only after processor upgrade.
 
 ## Wi-Fi
 
@@ -65,7 +65,7 @@ options ath5k nohwcrypt=1
 ```
 `
 
-Unfortunately this fix works not so good. Best solution change wi-fi card. For example to this: `Network controller: Qualcomm Atheros AR922X Wireless Network Adapter (rev 01)` It is 300Mbit N wifi card, but with this card some hardware modifications is needed to work second USB port, because Atheros AR9223 is much bigger then AR2413/2414\. Vertical 4 pin usb socket must be replaced with 4 pin horizontal socket on motherboard.
+Unfortunately this fix does not work well and the best solution is to change the wi-fi card. For example to this: `Network controller: Qualcomm Atheros AR922X Wireless Network Adapter (rev 01)` It is 300Mbit N wifi card, but with this card some hardware modifications is needed to work second USB port, because Atheros AR9223 is much bigger then AR2413/2414\. Vertical 4 pin usb socket must be replaced with 4 pin horizontal socket on motherboard.
 
 ## Ethernet
 
@@ -95,7 +95,7 @@ CD/DVD drive can/MUST be raplaces with optibay to support second HDD.
 
 Internal speakers may be muted after using headphones/expernal speakers. To fix this problem comment `#load-module module-switch-on-port-available` in `/etc/pulse/default.pa`
 
-## Hybernate/Suspent
+## Hibernate/Suspend
 
 Do not work properly. Don't know fix yet.
 

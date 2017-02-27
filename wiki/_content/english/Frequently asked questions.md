@@ -185,7 +185,7 @@ No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6
 
 ### What to do before upgrading?
 
-Before upgrading check the front page [Arch news](https://www.archlinux.org/), [Announcement lists](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), and optionally the [forum](https://bbs.archlinux.org/) and [Mailing Lists](https://mailman.archlinux.org/mailman/listinfo/), before hitting enter. Any special instructions will be posted there. See also [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance").
+Follow the [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") section.
 
 ### A package update was released, but pacman says the system is up to date
 

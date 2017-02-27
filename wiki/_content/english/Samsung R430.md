@@ -8,7 +8,7 @@ This page aims to provide as much information as possible to make the Samsung R4
 *   [4 Touchpad](#Touchpad)
 *   [5 Wireless](#Wireless)
 *   [6 Screen brightness](#Screen_brightness)
-*   [7 Enable and disable featues](#Enable_and_disable_featues)
+*   [7 Enable and disable features](#Enable_and_disable_features)
 
 ## Hardware Specification
 
@@ -59,7 +59,7 @@ and, if it isn't bright enough, try with the next number, not without unloading 
 
 ```
 
-The shift parameter bit-shifts the brightness values, as to make it a sane number. The recomended is to make it so max_level is 256, so it can be calculated by adding one to the max_value (getting a power of two), then calculat[[ing the base 2 logarithm of that, and substracting 8 from the result.
+The shift parameter bit-shifts the brightness values, as to make it a sane number. The recommended is to make it so max_level is 256, so it can be calculated by adding one to the max_value (getting a power of two), then calculating the base 2 logarithm of that, and subtracting 8 from the result.
 
 finally, you have to load the module, to do this, just issue
 
@@ -72,7 +72,7 @@ To load it automatically at boot, add a `nvidia-bl.conf` file containing the lin
 
 The brightness level can then be set by writing the desired value to **/sys/class/backlight/nvidia_backlight/brightness**
 
-## Enable and disable featues
+## Enable and disable features
 
 To be able to activate and deactivate features such as the touchpad or the wireless card, you need to install the kernel module [easy-slow-down-manager](https://aur.archlinux.org/packages/easy-slow-down-manager/). It's very simple to use and the usage is described in **/usr/share/doc/easy-slow-down-manager/README**.
 

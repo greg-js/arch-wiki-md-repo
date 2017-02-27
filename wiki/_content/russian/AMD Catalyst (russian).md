@@ -22,12 +22,13 @@
         *   [1.4.1 Запуск двух X серверов (один использующий драйвер Intel, другой fglrx) одновременно](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B4.D0.B2.D1.83.D1.85_X_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.BE.D0.B2_.28.D0.BE.D0.B4.D0.B8.D0.BD_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8E.D1.89.D0.B8.D0.B9_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_Intel.2C_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B9_fglrx.29_.D0.BE.D0.B4.D0.BD.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE)
         *   [1.4.2 Проблемы с PowerXpress на ноутбуке запущенный в режиме AMD (pxp_switch_catalyst amd) с внешним / вторым монитором](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_PowerXpress_.D0.BD.D0.B0_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.89.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_AMD_.28pxp_switch_catalyst_amd.29_.D1.81_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.BC_.2F_.D0.B2.D1.82.D0.BE.D1.80.D1.8B.D0.BC_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.BC)
 *   [2 Репозитории Xorg](#.D0.A0.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B8_Xorg)
-    *   [2.1 xorg117](#xorg117)
-    *   [2.2 xorg116](#xorg116)
-    *   [2.3 xorg115](#xorg115)
-    *   [2.4 xorg114](#xorg114)
-    *   [2.5 xorg113](#xorg113)
-    *   [2.6 xorg112](#xorg112)
+    *   [2.1 xorg118](#xorg118)
+    *   [2.2 xorg117](#xorg117)
+    *   [2.3 xorg116](#xorg116)
+    *   [2.4 xorg115](#xorg115)
+    *   [2.5 xorg114](#xorg114)
+    *   [2.6 xorg113](#xorg113)
+    *   [2.7 xorg112](#xorg112)
 *   [3 Инструменты](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
     *   [3.1 Catalyst-hook](#Catalyst-hook)
     *   [3.2 Catalyst-generator](#Catalyst-generator)
@@ -371,6 +372,16 @@ EndSection
 Catalyst славится своим медленным обновлением. Поэтому новые версии Xorg несовместимы с Catalyst. Это значит, что вам нужно собрать свои пакеты Xorg или использовать репозиторий. Vi0L0 занялся этой задачей и сделал несколько репозиториев.
 
 Чтобы включить один из репозиториев, следуйте инструкциям в [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") (используйте тот же PGP ключ для репозитория [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories")). Не забудьте добавит выбранный репозиторий **выше других репозиториев** в `pacman.conf`, даже выше репозитория *catalyst*.
+
+### xorg118
+
+[amdgpu-pro](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") (драйвер, которым AMD в настоящий момент заменяет catalyst для своих новых видеокарт) не работает с xorg 1.19
+
+```
+[xorg118]
+Server = http://mirror.hactar.xyz/Vi0L0/xorg118/$arch
+
+```
 
 ### xorg117
 

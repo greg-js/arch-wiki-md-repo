@@ -11,7 +11,7 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
 *   [3 Configuration](#Configuration)
     *   [3.1 View current settings](#View_current_settings)
     *   [3.2 Using visudo](#Using_visudo)
-    *   [3.3 Example Entries](#Example_Entries)
+    *   [3.3 Example entries](#Example_entries)
     *   [3.4 Sudoers default file permissions](#Sudoers_default_file_permissions)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Disable per-terminal sudo](#Disable_per-terminal_sudo)
@@ -88,7 +88,7 @@ Defaults      editor=/usr/bin/nano, !env_editor
 
 ```
 
-### Example Entries
+### Example entries
 
 To allow a user to gain full root privileges when he/she precedes a command with `sudo`, add the following line:
 
@@ -239,6 +239,8 @@ To enable root login again:
 $ sudo passwd root
 
 ```
+
+**Tip:** To get to an interactive root prompt, even after disabling the *root* account, use `sudo -i`.
 
 #### gksu
 

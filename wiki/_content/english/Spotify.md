@@ -54,7 +54,7 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 	[https://www.mopidy.com/](https://www.mopidy.com/) || [mopidy](https://www.archlinux.org/packages/?name=mopidy)+ [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)
 
-*   **Librespot** — An open source client library for Spotify. It enables applications to use Spotify's service (streaming), without using the official closed-source *libspotif*.
+*   **Librespot** — An open source client library for Spotify. It enables applications to use Spotify's service (streaming), without using the official closed-source *libspotify*.
 
 	[https://github.com/plietar/librespot](https://github.com/plietar/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/) [librespot-alsa-git](https://aur.archlinux.org/packages/librespot-alsa-git/)
 

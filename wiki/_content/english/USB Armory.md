@@ -19,10 +19,7 @@ The hardware design features the Freescale i.MX53 processor, supporting advanced
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Network](#Network)
-        *   [2.1.1 Firewall](#Firewall)
-    *   [2.2 LED Brightness](#LED_Brightness)
-    *   [2.3 X](#X)
+    *   [2.1 LED Brightness](#LED_Brightness)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -30,46 +27,6 @@ The hardware design features the Freescale i.MX53 processor, supporting advanced
 Follow the [official Arch Linux ARM instructions](http://archlinuxarm.org/platforms/armv7/freescale/usb-armory).
 
 ## Usage
-
-### Network
-
-Device already has a static IP configured with `10.0.0.1` via [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Notably lacking is a default DNS configuration, which can easily be added:
-
- `/etc/systemd/network/gadget-deadbeef.network` 
-```
-[Network]
-DNS=1.2.3.4
-```
-
-On host, use the following [netctl](/index.php/Netctl "Netctl") configuration:
-
- `/etc/netctl/armory` 
-```
-Description='Ethernet over USB Armory'
-Interface=$INTERFACE_NAME
-IP=static
-Address=('10.0.0.2/24')
-```
-
-**Note:** `$INTERFACE_NAME` will change according to which USB port is used
-
-#### Firewall
-
-The official instructions require adding an [iptables](/index.php/Iptables "Iptables") rule to allow packet forwarding from the USB Armory through the host machine:
-
-```
-# iptables -t nat -A POSTROUTING -s 10.0.0.1/32 -o eth0 -j MASQUERADE
-
-```
-
-Hosts that also have an active [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") must also change the `FORWARD` policy:
-
-```
-# iptables -P FORWARD ACCEPT
-
-```
-
-Or setup a more restrictive rule that allows NAT forwarding on the host.
 
 ### LED Brightness
 
@@ -91,10 +48,6 @@ w /sys/class/gpio/export - - - - 123
 w /sys/class/gpio/gpio123/direction - - - - in
 
 ```
-
-### X
-
-Follow [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell").
 
 ## See also
 

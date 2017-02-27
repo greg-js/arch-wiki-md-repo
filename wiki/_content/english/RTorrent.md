@@ -11,7 +11,9 @@
 *   [3 Key bindings](#Key_bindings)
     *   [3.1 Redundant mapping](#Redundant_mapping)
 *   [4 Additional tips](#Additional_tips)
-    *   [4.1 systemd service file with tmux or screen](#systemd_service_file_with_tmux_or_screen)
+    *   [4.1 Systemd services using tmux or screen](#Systemd_services_using_tmux_or_screen)
+        *   [4.1.1 With screen](#With_screen)
+        *   [4.1.2 with tmux](#with_tmux)
     *   [4.2 systemd service file with dtach](#systemd_service_file_with_dtach)
     *   [4.3 Pre-allocation](#Pre-allocation)
     *   [4.4 Manage completed files](#Manage_completed_files)
@@ -194,11 +196,120 @@ To remove these mappings automatically at startup you may add the two preceding 
 
 ## Additional tips
 
-### systemd service file with tmux or screen
+### Systemd services using tmux or screen
+
+Usage of the following services depends on type of service unit.
+
+**For system services** (in /etc/systemd/system/):
+
+To start at boot time:
+
+```
+# systemctl enable rtorrent
+
+```
+
+Start manually:
+
+```
+# systemctl start rtorrent
+
+```
+
+Stop:
+
+```
+# systemctl stop rtorrent
+
+```
+
+Make sure 'rtorrent' user is created with the appropriate home directory with your rtorrent.rc placed in.
+
+**For user services** (in /etc/systemd/user/):
+
+```
+$ systemctl --user enable rtorrent
+
+```
+
+Start manually:
+
+```
+$ systemctl --user start rtorrent
+
+```
+
+Stop:
+
+```
+$ systemctl --user stop rtorrent
+
+```
+
+#### With screen
+
+*   As system service unit
+
+ `/etc/systemd/system/rtorrent.service` 
+```
+[Unit]
+Description=rTorrent
+After=network.target
+
+[Service]
+Type=forking
+KillMode=none
+User=rtorrent
+ExecStartPre=/usr/bin/bash -c "if test -e %h/.rtorrent_session/rtorrent.lock && test -z `pidof rtorrent`; then rm -f %h/.rtorrent_session/rtorrent.lock; fi"
+ExecStart=/usr/bin/screen -dmfa -S rtorrent /usr/bin/rtorrent
+ExecStop=/usr/bin/bash -c "test `pidof rtorrent` && killall -w -s 2 /usr/bin/rtorrent"
+WorkingDirectory=%h
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+*   As user service unit
+
+ `/etc/systemd/user/rtorrent.service` 
+```
+[Unit]
+Description=rTorrent
+After=network.target
+
+[Service]
+Type=forking
+KillMode=none
+ExecStart=/usr/bin/screen -dmfa -S rtorrent /usr/bin/rtorrent
+ExecStop=/usr/bin/killall -w -s 2 /usr/bin/rtorrent
+WorkingDirectory=%h
+
+[Install]
+WantedBy=default.target
+
+```
+
+Attach to rtorrent's session:
+
+```
+screen -D -r rtorrent
+
+```
+
+Detach:
+
+```
+Ctrl-a d
+
+```
+
+#### with tmux
 
 *   With independent tmux server (restart rtorrent if crashed)
 
- `~/.config/systemd/user/rt.service` 
+ `~/.config/systemd/user/rtorrent.service` 
 ```
 [Unit]
 Description=rtorrent
@@ -230,52 +341,11 @@ KillMode=none
 User=rtorrent
 ExecStart=/usr/bin/tmux new-session -c /mnt/storage/rtorrent -s rtorrent -n rtorrent -d rtorrent
 ExecStop=/usr/bin/bash -c "/usr/bin/tmux send-keys -t rtorrent C-q && while pidof rtorrent > /dev/null; do sleep 0.5; done"
-WorkingDirectory=/home/rtorrent/
+WorkingDirectory=%h
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-
-```
-
-*   With screen
-
- `/etc/systemd/user/rt.service` 
-```
-[Unit]
-Description=rTorrent
-After=network.target
-
-[Service]
-Type=forking
-KillMode=none
-ExecStart=/usr/bin/screen -d -m -fa -S rtorrent /usr/bin/rtorrent
-ExecStop=/usr/bin/killall -w -s 2 /usr/bin/rtorrent
-WorkingDirectory=%h
-
-[Install]
-WantedBy=default.target
-
-```
-
-Start at boot time:
-
-```
-$ systemctl --user enable rt
-
-```
-
-Start manually:
-
-```
-$ systemctl --user start rt
-
-```
-
-Stop:
-
-```
-$ systemctl --user stop rt
 
 ```
 
@@ -287,24 +357,10 @@ tmux attach -t rt
 
 ```
 
-Or if you use screen:
-
-```
-screen -D -r rtorrent
-
-```
-
 Detach:
 
 ```
 Ctrl-b d
-
-```
-
-Or if you use screen:
-
-```
-Ctrl-a d
 
 ```
 

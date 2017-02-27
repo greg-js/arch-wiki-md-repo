@@ -43,17 +43,18 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [3.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
     *   [3.2 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
-    *   [3.3 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
-    *   [3.4 How to open a *.doc automatically with Abiword or LibreOffice Writer](#How_to_open_a_.2A.doc_automatically_with_Abiword_or_LibreOffice_Writer)
-    *   [3.5 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
-    *   [3.6 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
-    *   [3.7 Adding magnet protocol association](#Adding_magnet_protocol_association)
-    *   [3.8 Adding magnet protocol association for kTorrent (KDE4)](#Adding_magnet_protocol_association_for_kTorrent_.28KDE4.29)
-    *   [3.9 Prevent accidental closing](#Prevent_accidental_closing)
-    *   [3.10 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
-    *   [3.11 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [3.12 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [3.13 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
+    *   [3.3 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
+    *   [3.4 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
+    *   [3.5 How to open a *.doc automatically with Abiword or LibreOffice Writer](#How_to_open_a_.2A.doc_automatically_with_Abiword_or_LibreOffice_Writer)
+    *   [3.6 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
+    *   [3.7 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
+    *   [3.8 Adding magnet protocol association](#Adding_magnet_protocol_association)
+    *   [3.9 Adding magnet protocol association for kTorrent (KDE4)](#Adding_magnet_protocol_association_for_kTorrent_.28KDE4.29)
+    *   [3.10 Prevent accidental closing](#Prevent_accidental_closing)
+    *   [3.11 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
+    *   [3.12 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
+    *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [3.14 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -529,6 +530,12 @@ To modify the default values (i.e. speed-up) of the mouse wheel scroll speed, go
 *   Set `mousewheel.acceleration.factor` to the desired number (10 to 20 are common values).
 
 Alternatively you can install the [SmoothWheel add-on](http://smoothwheel.mozdev.org/).
+
+### Pixel-perfect trackpad scrolling
+
+To enable one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
+
+If scrolling is undesirably jerky, try enabling Firefox's "Smooth Scrolling" option in Preferences > Advanced.
 
 ### Change the order of search engines in the Firefox Search Bar
 

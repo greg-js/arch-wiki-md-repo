@@ -39,7 +39,7 @@ You can [install](/index.php/Install "Install") the [synergy](https://www.archli
 
 ### Windows and macOS
 
-[Download](http://synergy-project.org/download/) and run the newest installer from the official website.
+[Download](https://symless.com/synergy/) and run the newest installer from the official website. The official version is paid, although you may compile and run your own builds for free using [sources on GitHub](https://github.com/symless/synergy).
 
 ## Pre-configuration
 

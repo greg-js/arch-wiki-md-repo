@@ -1,8 +1,10 @@
-Bazaar is a version control system that helps you track project history over time and to collaborate easily with others.
+[Bazaar](https://bazaar.canonical.com/) is a version control system that helps you track project history over time and to collaborate easily with others.
+
+## Installation
+
+Install the [bzr](https://www.archlinux.org/packages/?name=bzr) package. For the development version, install the [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/) package. The Bazaar Explorer is provided by the [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/) package.
 
 ## Setting up Bazaar server with xinetd
-
-Install the [bzr](https://www.archlinux.org/packages/?name=bzr) package.
 
 Add a `*bzr-usr*` [user](/index.php/User "User") if needed.
 

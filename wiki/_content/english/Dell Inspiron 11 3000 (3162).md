@@ -4,10 +4,10 @@
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | xf86-input-libinput |
 | Camera | Working | linux-uvc |
-| Card Reader | Not Tested | rtsx_usb |
-| Bluetooth | Not Tested - Probably Works | btusb |
+| Card Reader | Working | rtsx_usb |
+| Bluetooth | Working | btusb |
 
-This is an install and configuration guide for the Dell Inspiron 11 300 (3162) laptop.
+This is an install and configuration guide for the Dell Inspiron 11 3000 (3162) laptop.
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
@@ -93,7 +93,7 @@ Audio using [ALSA](/index.php/ALSA "ALSA") worked immediately after install. I h
 
 ### Keyboard
 
-Most of the extra keys did not work for me after install. Some or all might work if you use a full desktop environment like Gnome or KDE though. I was able to configure my window manager to run appropriate commands when the extra keys are pressed. The Enable/Disable wireless key did work without any extra work on my part. Otherwise, the keyboard works as expected.
+Most of the extra keys did not work for me after install. Some or all might work if you use a full desktop environment like Gnome or KDE though. I was able to configure my window manager to run appropriate commands when the extra keys are pressed. The Enable/Disable wireless key did work without any extra work on my part. However, the page up and page down keys (activated by pressing Fn + PageUp or PageDn) do not work as expected. After pressing and releasing them, the scrolling action will be glitched and will not stop. If you pressed PageUp, try pressing PageDn to neutralize the glitch.
 
 ### Touchpad
 
@@ -105,11 +105,11 @@ The camera worked without effort on my part. I tested by installing running guvc
 
 ### Card Reader
 
-I have not tested the card reader yet.
+It works as expected.
 
 ### Bluetooth
 
-The bluetooth hardware is recognized and the appropriate modules are loaded. I am also able to turn on power and detect other bluetooth devices. I have not, however, attempted to pair a device so I can not confirm that it functions fully.
+The bluetooth hardware is recognized and the appropriate modules are loaded. I am also able to turn on power and detect other bluetooth devices. Pairing works, and so does file transfer from and to the device.
 
 ### Suspend & Hibernate
 
@@ -120,7 +120,7 @@ Suspend works fine with no extra work on my part. Hibernate did not work for me 
 ### Specs
 
 *   CPU: Intel Celeron N3060
-*   GPU: Intel HD400
+*   GPU: Intel HD 400 (Braswell)
 *   RAM: 4 GB DDR3 1600 MHz
 *   HDD: 32 GB eMMC
 *   Wireless: Intel Centrino Wireless-AC 3160

@@ -454,15 +454,15 @@ If you do not have an Xorg configuration file, you can create one for your prese
 
  `/etc/profile.d/kwin.sh` 
 ```
-export __GL_YIELD="USLEEP"
+export KWIN_TRIPLE_BUFFER=1
 
 ```
 
-Also if the above does not help, then try this:
+Also if the above does not help, then try this, however you could have huge performance loss in games since this option will put the GL threads to sleep (Source: Feral Interactive Support Ticket):
 
  `/etc/profile.d/kwin.sh` 
 ```
-export KWIN_TRIPLE_BUFFER=1
+export __GL_YIELD="USLEEP"
 
 ```
 

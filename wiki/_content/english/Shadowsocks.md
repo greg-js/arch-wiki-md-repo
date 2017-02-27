@@ -31,7 +31,7 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
     "local_port":1080,
     "password":"mypassword",
     "timeout":300,
-    "method":"aes-128-gcm",
+    "method":"chacha20-ietf",
     "fast_open": false,
     "workers": 1
 }
@@ -39,8 +39,6 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 ```
 
 **Tip:** To specify multiple server IPs, the following syntax can be used `"server":["1.1.1.1","2.2.2.2"],`
-
-**Tip:** If CPU does not support AES hardware acceleration, please use `"method":"chacha20",`
 
 | Name | Explanation |
 | server | the address your server listens |

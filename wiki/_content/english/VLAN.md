@@ -120,20 +120,23 @@ Then [enable](/index.php/Enable "Enable") `systemd-networkd.service`. See [syste
 
 #### systemd-networkd bonded interface
 
-Similar to above, you're just going to stack more of the concepts in place. You'll want to ensure that you've got a bond set up in your switch and also make sure its a trunk with tagged vlans corresponding to what you create below. Convention would be to create a bond interface with the name bond0, however there is a known issue where the bonding module, when loaded, creates a bond device of the name bond0 which systemd then refuses to configure (as systemd tries to respectfully leave alone any device it did not create). So for the purposes of this write up we're going to use "bondname" and you can make the choice yourself.
+Similar to above, you're just going to stack more of the concepts in place. You'll want to ensure that you've got a bond set up in your switch and also make sure its a trunk with tagged vlans corresponding to what you create below. Convention would be to create a bond interface with the name `bond0`, however there is a known issue where the `bonding` module, when loaded, creates a bond device of the name `bond0` which systemd then refuses to configure (as systemd tries to respectfully leave alone any device it did not create).
 
-First we'll create the bond device:
+**Tip:** To prevent the `bonding` module to create an initial `bond0` interface, set the `max_bonds` option of the bonding module to `0` (default value is `1`): `/etc/modprobe.d/bonding.conf`  `options bonding max_bonds=0` See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") and [Linux Ethernet Bonding Driver HOWTO (Kernel Documentation)](https://www.kernel.org/doc/Documentation/networking/bonding.txt)for details.
+
+For the purposes of this write up, we are going to use `*bondname*` and you can make the choice yourself.
+
+First, we create the bond device:
 
  `/etc/systemd/network/*bondname*.netdev` 
 ```
 [NetDev]
-Name=bondname
+Name=*bondname*
 Kind=bond
 
 [Bond]
 Mode=802.3ad
 LACPTransmitRate=fast
-
 ```
 
 Now create a .network directive that references the vlans and interface carriers. In this case we'll use the convention for a dual port fiber module:
@@ -141,14 +144,13 @@ Now create a .network directive that references the vlans and interface carriers
  `/etc/systemd/network/*bondname*.network` 
 ```
 [Match]
-Name=bondname
+Name=*bondname*
 
 [Network]
 VLAN=vlan10
 VLAN=vlan20
 VLAN=vlan30
-BindCarrier=enp3s0f0 enp3s0f1
-
+BindCarrier=*enp3s0f0 enp3s0f1*
 ```
 
 We're using the vlan<number> naming convention here, you can use something else but realize that this is a named reference so you'll have to have a corresponding set of files with the same name.
@@ -158,20 +160,18 @@ We'll now set up the physical network interfaces:
  `/etc/systemd/network/*enp3s0f0*.network` 
 ```
 [Match]
-Name=enp3s0f0
+Name=*enp3s0f0*
 
 [Network]
-Bond=bondname
-
+Bond=*bondname*
 ```
  `/etc/systemd/network/*enp3s0f1*.network` 
 ```
 [Match]
-Name=enp3s0f1
+Name=*enp3s0f1*
 
 [Network]
-Bond=bondname
-
+Bond=*bondname*
 ```
 
 At this time you could reboot, and likely should, because the bonded interface is created at boot time. Restarting systemd-networkd will consume changes from these files typically, but device creation seems to occur at startup.
@@ -186,7 +186,6 @@ Kind=vlan
 
 [VLAN]
 Id=10
-
 ```
 
 Now create the associated network directive to set an address:
@@ -205,7 +204,6 @@ Address=10.10.10.2/24
 [Route]
 Destination=0.0.0.0/0
 Gateway=10.10.10.1
-
 ```
 
 We'll create a similar pair of files for the VLAN with an ID of 20:
@@ -218,7 +216,6 @@ Kind=vlan
 
 [VLAN]
 Id=20
-
 ```
  `/etc/systemd/network/*vlan20*.network` 
 ```
@@ -234,7 +231,6 @@ Address=10.10.20.2/24
 [Route]
 Destination=10.10.20.0/24
 Gateway=10.10.20.1
-
 ```
 
 And again for the VLAN with an ID of 30:
@@ -247,7 +243,6 @@ Kind=vlan
 
 [VLAN]
 Id=30
-
 ```
  `/etc/systemd/network/*vlan30*.network` 
 ```
@@ -263,10 +258,9 @@ Address=10.10.30.2/24
 [Route]
 Destination=10.10.30.0/24
 Gateway=10.10.30.1
-
 ```
 
-Note that the Destination on vlan10 is set to 0.0.0.0/0, which will match all outbound, becoming the default route.
+Note that the Destination on `vlan10` is set to `0.0.0.0/0`, which will match all outbound, becoming the default route.
 
 #### netctl
 

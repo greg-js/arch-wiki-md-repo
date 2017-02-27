@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Enlightenment](/index.php/Enlightenment "Enlightenment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-03，点击[这里](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=464174)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Enlightenment](/index.php/Enlightenment "Enlightenment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-25，点击[这里](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=464174)可以查看翻译后英文页面的改动。
 
 ## Contents
 
@@ -120,7 +120,7 @@ Enlightenment 首选的网络管理器是 [ConnMan](/index.php/Connman "Connman"
 
 #### Polkit 代理
 
-Enlightenment does not ship with a [graphical polkit authentication agent](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)"). If you want to access some privileged actions (e.g. mount a filesystem on a system device), you have to install one and autostart it. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate it. There is an EFL based authentication agent available in the AUR, [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/).
+Enlightenment 没有提供[图形化的 polkit 认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")。如果要执行某些需授权的操作（例如安装系统设备上的文件系统），你要安装一个认证代理并且使它自动启动。后者可以导航至***设置面板 > 应用 > 启动应用程序 > 系统***设置项并激活它。AUR 中提供了一个基于 EFL 的认证代理，名为 [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)。
 
 #### 集成 GNOME 密钥环
 
@@ -138,39 +138,39 @@ More information on this topic in the [GNOME Keyring](/index.php/GNOME_Keyring "
 
 #### 系统托盘
 
-**注意:** Since Enlightenment 20, Xembed support has been removed [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) meaning that many 'legacy' applets can no longer be displayed in the Systray. To use these applets, you will need to use a standalone system tray application such as [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) instead.
+**注意:** 从 Enlightenment 20 版开始，对 Xembed 的支持已被移除 [[1]](https://twitter.com/_enlightenment_/status/538000507315314688)。这意味着许多“传统的”托盘部件将无法显示在托盘。要使用这些托盘部件，需要另外安装一个独立的系统托盘程序（例如 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)）
 
-Enlightenment has support for a system tray but it is disabled by default. To enable the system tray, open the Enlightenment main menu, navigate to the *Settings* submenu and click on the *Modules* option. Scroll down until you see the *Systray* option. Highlight that option and click the *Load* button. Now that the module has been loaded, it can be added to the shelf. Right click on the shelf you wish to add the Systray to, hightlight the *Shelf* submenu and click on the *Contents* option. Scroll down until you see *Systray*. Highlight that option and click the *Add* button.
+Enlightenment 支持系统托盘，但默认未启用。若要启用系统托盘，请打开 Enlightenment 主菜单，导航至***设置***子菜单，点击***模块***选项，向下滚动至***系统托盘***选项并聚焦，点击***加载***按钮。这样就加载了模块，可将其添加到书架中。在待添加系统托盘的书架上右击，聚焦于***书架***子菜单，点击***内容*** 选项，向下滚动到***系统托盘***并聚焦，然后点击***添加***按钮。
 
 #### 通知
 
-Enlightenment provides a notification server through its Notification extension.
+Enlightenment 的“通知”扩展模块提供了一个通知服务器。
 
-*   Notifications may be displayed in any corner of the "screen" as defined below
-*   Available screen policies are Primary Screen, Current Screen, All Screens, and Xinerama
-*   Notifications may be filtered based on urgency (Low, Normal, or Critical in any combination)
-*   A default notification timeout may be set and optionally enforced for all notifications
-*   The notification server may also optionally ignore replace ID requests
+*   通知可以按下述定义显示在屏幕任一角落
+*   可用的屏幕策略有：主屏幕、当前屏幕、所有屏幕和 Xinerama
+*   通知可以按紧急程度过滤（低、普通、紧急，及各种组合形式）
+*   可以设置默认通知消隐时间，也可以设置是否强制不自动消隐
+*   通知服务器可以设置是否忽略替换 ID 的请求
 
 ### 主题
 
-More themes to customize the look of Enlightenment are available from:
+下列更多主题用于定制 Enlightenment 外观：
 
 *   [exchange.enlightenment.org](http://exchange.enlightenment.org/theme)
-*   [e17-stuff.org](http://e17-stuff.org/index.php?xcontentmode=7000)
-*   [relighted.c0n.de](http://relighted.c0n.de/#100) for the default theme in 200 different colors
-*   [git.enlightenment.org](http://git.enlightenment.org/themes) (git clone the theme you like, run 'make' and you end up with a .edj theme file)
-*   [packages.bodhilinux.com](http://packages.bodhilinux.com/bodhi/pool/stable/b/) has a good collection (you will need to extract the .edj file from the .deb; bsdtar will do this and is part of the base ArchLinux install). A nice catalog can be seen at [their wiki](https://web.archive.org/web/20140120083020/http://art.bodhilinux.com/doku.php?id=bodhi_e17_themes_v3).
+*   [e17-stuff.org](http://e17-stuff.org/index.php?xcontentmode=7000)*（译注：页面已失效）*
+*   [relighted.c0n.de](http://relighted.c0n.de/#100) 默认主题的 200 种不同颜色组合
+*   [git.enlightenment.org](http://git.enlightenment.org/themes)（用 git 抓取喜欢的主题，运行 'make' 生成 .edj 后缀的主题文件）
+*   [packages.bodhilinux.com](http://packages.bodhilinux.com/bodhi/pool/stable/b/) 这里有一堆不错的主题（需从 .deb 包中释放出 .edj 文件，可以用 ArchLinux 的基础组件 bsdtar 释放）。在他们的维基上还提供了一个很不错的分类 [[2]](https://web.archive.org/web/20140120083020/http://art.bodhilinux.com/doku.php?id=bodhi_e17_themes_v3)。
 
-You can install the themes (coming in .edj format) using the theme configuration dialog or by moving them to `~/.e/e/themes`.
+你可以在主题设置对话框中安装这些 .edj 文件格式的主题，或者把它们放在 `~/.e/e/themes` 目录中。
 
-**注意:** Enlightenment does not provide a stable theme API, and there have been numerous theme API changes over the years, even after E17 was released. Themes that have not been updated regularly are unlikely to work.
+**注意:** Enlightenment 未提供完整的主题 API，多年来，甚至在 E17 发布后，很多主题 API 也已改变。未及时更新的主题很可能无法正常工作。
 
-**提示：** To make GTK and Qt applications match the default theme of Enlightenment you can download a theme like the [E17 GTK theme](http://gnome-look.org/content/show.php/?content=163472), place it in `~/.themes/` and select application themes from Enlightenments settings, and set it to that, this will make all GTK2 and GTK3 applications match the default Enlightenment theme, you can then configure Qt applications (or configure Qt's default settings) to use the Gtk+ theme so it will mimic the theme your GTK applications are using, this way you can make sure most applications will blend in perfectly with your default enlightenment theme. 参阅[Qt 与 GTK 应用程序外观一致化](/index.php/Qt_%E4%B8%8E_GTK_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A4%96%E8%A7%82%E4%B8%80%E8%87%B4%E5%8C%96 "Qt 与 GTK 应用程序外观一致化")。
+**提示：** 若要使 GTK 和 Qt 应用程序与 Enlightenment 默认主题相匹配，你可以下载一个类似 [E17 GTK 主题](http://gnome-look.org/content/show.php/?content=163472)这样的主题包，放在 `~/.themes/` 中并在Enlightenment 的设置中选中它，然后对其做配置。这样可以使所有 GTK2 和 GTK3 应用匹配默认 Enlightenment 主题，然后，你可以配置 Qt 应用程序（或者配置 Qt 的默认设置），让其使用 Gtk+ 主题。这样 Qt 应用程序将模拟当前使用的 GTK 应用程序。这样就可以让绝大部分应用程序都使用 enlightenment 的主题。参阅[Qt 与 GTK 应用程序外观一致化](/index.php/Qt_%E4%B8%8E_GTK_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A4%96%E8%A7%82%E4%B8%80%E8%87%B4%E5%8C%96 "Qt 与 GTK 应用程序外观一致化")。
 
 #### GTK+
 
-To alter the GTK+ theme, go to *Settings > All > Look > Application Theme*.
+替换 GTK+ 主题的选项在***设置 > 全部 > 外观 > 应用程序主题***。
 
 ### 模块和小部件
 
@@ -314,7 +314,7 @@ Create an Init, a Start and a Stop folder in your `~/.e16` folder: any .sh scrip
 
 ## 配置输入法
 
-**注意:** 为方便简体中文用户，本节内容暂予保留
+**注意:** 英文版本节文字已删除。为方便中文用户，本节内容暂予保留
 
 E17 内置了输入法支持的模块，支持的输入法有 iiimf 、scim 和 uim 。使用这些输入法的配置在
 

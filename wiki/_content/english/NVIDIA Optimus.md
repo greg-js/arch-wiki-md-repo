@@ -4,7 +4,7 @@ NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete 
 
 *   using the official Optimus support included with the proprietary NVIDIA driver, which offers the best NVIDIA performance but does not allow GPU switching and can be more buggy than the open-source driver
 
-*   using the PRIME functionality of the open-source nouveau driver, which allows GPU switching but offers poor performance compared to the proprietary NVIDIA driver and does not currently implement any powersaving
+*   using the PRIME functionality of the open-source nouveau driver, which allows GPU switching and powersaving but offers poor performance compared to the proprietary NVIDIA driver and may cause issues with sleep and hibernate
 
 *   using the third-party Bumblebee program to implement Optimus-like functionality, which offers GPU switching and powersaving but requires extra configuration
 
@@ -267,7 +267,9 @@ For more information, look at NVIDIA's official page on the topic [[3]](http://u
 
 ### Tearing/Broken VSync
 
-This requires [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.19 or higher, [linux](https://www.archlinux.org/packages/?name=linux) kernel 4.5 or higher, and [nvidia](https://www.archlinux.org/packages/?name=nvidia) 370.23 or higher. You can read the official [forum thread here](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/).
+This requires [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.19 or higher, [linux](https://www.archlinux.org/packages/?name=linux) kernel 4.5 or higher, and [nvidia](https://www.archlinux.org/packages/?name=nvidia) 370.23 or higher. Then enable [DRM kernel mode setting](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA"), which will in turn enable the PRIME synchronization and fix the tearing.
+
+You can read the official [forum thread](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/) for details.
 
 ### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 

@@ -11,54 +11,53 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 ## Contents
 
 *   [1 Preparation](#Preparation)
-*   [2 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
-*   [3 File system creation](#File_system_creation)
-    *   [3.1 Creating a new file system](#Creating_a_new_file_system)
-        *   [3.1.1 File system on a single device](#File_system_on_a_single_device)
-        *   [3.1.2 Multi-device file system](#Multi-device_file_system)
-    *   [3.2 Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion)
-*   [4 Configuring the file system](#Configuring_the_file_system)
-    *   [4.1 Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29)
-        *   [4.1.1 Disabling CoW](#Disabling_CoW)
-        *   [4.1.2 Forcing CoW](#Forcing_CoW)
-    *   [4.2 Compression](#Compression)
-    *   [4.3 Subvolumes](#Subvolumes)
-        *   [4.3.1 Creating a subvolume](#Creating_a_subvolume)
-        *   [4.3.2 Listing subvolumes](#Listing_subvolumes)
-        *   [4.3.3 Deleting a subvolume](#Deleting_a_subvolume)
-        *   [4.3.4 Mounting subvolumes](#Mounting_subvolumes)
-        *   [4.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
-    *   [4.4 Quota](#Quota)
-    *   [4.5 Commit Interval](#Commit_Interval)
-    *   [4.6 SSD TRIM](#SSD_TRIM)
-*   [5 Usage](#Usage)
-    *   [5.1 Displaying used/free space](#Displaying_used.2Ffree_space)
-    *   [5.2 Defragmentation](#Defragmentation)
-    *   [5.3 RAID](#RAID)
-        *   [5.3.1 Scrub](#Scrub)
-            *   [5.3.1.1 Start manually](#Start_manually)
-            *   [5.3.1.2 Start with a service or timer](#Start_with_a_service_or_timer)
-        *   [5.3.2 Balance](#Balance)
-    *   [5.4 Snapshots](#Snapshots)
-    *   [5.5 Send/receive](#Send.2Freceive)
-    *   [5.6 Deduplication](#Deduplication)
-*   [6 Known issues](#Known_issues)
-    *   [6.1 Encryption](#Encryption)
-    *   [6.2 Swap file](#Swap_file)
-    *   [6.3 TLP](#TLP)
-    *   [6.4 Linux-rt kernel](#Linux-rt_kernel)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Checksum hardware acceleration](#Checksum_hardware_acceleration)
-    *   [7.2 Corruption recovery](#Corruption_recovery)
-    *   [7.3 Booting into snapshots with GRUB](#Booting_into_snapshots_with_GRUB)
-    *   [7.4 Use Btrfs subvolumes with systemd-nspawn](#Use_Btrfs_subvolumes_with_systemd-nspawn)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 GRUB](#GRUB)
-        *   [8.1.1 Partition offset](#Partition_offset)
-        *   [8.1.2 Missing root](#Missing_root)
-    *   [8.2 BTRFS: open_ctree failed](#BTRFS:_open_ctree_failed)
-    *   [8.3 btrfs check](#btrfs_check)
-*   [9 See also](#See_also)
+*   [2 File system creation](#File_system_creation)
+    *   [2.1 File system on a single device](#File_system_on_a_single_device)
+    *   [2.2 Multi-device file system](#Multi-device_file_system)
+*   [3 Configuring the file system](#Configuring_the_file_system)
+    *   [3.1 Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29)
+        *   [3.1.1 Disabling CoW](#Disabling_CoW)
+        *   [3.1.2 Forcing CoW](#Forcing_CoW)
+    *   [3.2 Compression](#Compression)
+    *   [3.3 Subvolumes](#Subvolumes)
+        *   [3.3.1 Creating a subvolume](#Creating_a_subvolume)
+        *   [3.3.2 Listing subvolumes](#Listing_subvolumes)
+        *   [3.3.3 Deleting a subvolume](#Deleting_a_subvolume)
+        *   [3.3.4 Mounting subvolumes](#Mounting_subvolumes)
+        *   [3.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
+    *   [3.4 Quota](#Quota)
+    *   [3.5 Commit Interval](#Commit_Interval)
+    *   [3.6 SSD TRIM](#SSD_TRIM)
+*   [4 Usage](#Usage)
+    *   [4.1 Displaying used/free space](#Displaying_used.2Ffree_space)
+    *   [4.2 Defragmentation](#Defragmentation)
+    *   [4.3 RAID](#RAID)
+        *   [4.3.1 Scrub](#Scrub)
+            *   [4.3.1.1 Start manually](#Start_manually)
+            *   [4.3.1.2 Start with a service or timer](#Start_with_a_service_or_timer)
+        *   [4.3.2 Balance](#Balance)
+    *   [4.4 Snapshots](#Snapshots)
+    *   [4.5 Send/receive](#Send.2Freceive)
+    *   [4.6 Deduplication](#Deduplication)
+*   [5 Known issues](#Known_issues)
+    *   [5.1 Encryption](#Encryption)
+    *   [5.2 Swap file](#Swap_file)
+    *   [5.3 TLP](#TLP)
+    *   [5.4 Linux-rt kernel](#Linux-rt_kernel)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
+    *   [6.2 Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion)
+    *   [6.3 Checksum hardware acceleration](#Checksum_hardware_acceleration)
+    *   [6.4 Corruption recovery](#Corruption_recovery)
+    *   [6.5 Booting into snapshots with GRUB](#Booting_into_snapshots_with_GRUB)
+    *   [6.6 Use Btrfs subvolumes with systemd-nspawn](#Use_Btrfs_subvolumes_with_systemd-nspawn)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 GRUB](#GRUB)
+        *   [7.1.1 Partition offset](#Partition_offset)
+        *   [7.1.2 Missing root](#Missing_root)
+    *   [7.2 BTRFS: open_ctree failed](#BTRFS:_open_ctree_failed)
+    *   [7.3 btrfs check](#btrfs_check)
+*   [8 See also](#See_also)
 
 ## Preparation
 
@@ -66,34 +65,11 @@ The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and
 
 User space utilities are available by [installing](/index.php/Installing "Installing") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package.
 
-## Partitionless Btrfs disk
-
-Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes, using [subvolumes](#Subvolumes) to simulate partitions. However, using a partitionless setup is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. There are some limitations to partitionless single disk setups:
-
-*   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
-*   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
-*   Cannot use [UEFI](/index.php/UEFI "UEFI") to boot.
-
-To overwrite the existing partition table with Btrfs, run the following command:
-
-```
-# mkfs.btrfs /dev/sd*X*
-
-```
-
-For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
-
-Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") or [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB").
-
-**Warning:** GRUB strongly discourages installation to a partitionless disk.
-
 ## File system creation
 
-A Btrfs file system can either be newly created or have one converted.
+The following shows how to create a new Btrfs file system. To convert an ext3/4 partition to Btrfs, see [#Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion). To use a partitionless setup, see [#Partitionless Btrfs disk](#Partitionless_Btrfs_disk).
 
-### Creating a new file system
-
-#### File system on a single device
+### File system on a single device
 
 To format a partition do:
 
@@ -109,7 +85,7 @@ The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata
 
 ```
 
-#### Multi-device file system
+### Multi-device file system
 
 **Warning:**
 
@@ -130,30 +106,6 @@ You **must** include either the `udev` hook or the `btrfs` hook in `/etc/mkinitc
 **Note:** Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
 
 See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
-
-### Ext3/4 to Btrfs conversion
-
-**Warning:** As of mid-to-late 2015, there are many reports on the btrfs mailing list about incomplete/corrupt/broken conversions. The situation is improving as patches are being submitted, but proceed very carefully. Make sure you have *working* backups of any data you cannot afford to lose. See [Conversion from Ext3](https://btrfs.wiki.kernel.org/index.php/Conversion_from_Ext3) on the btrfs wiki.
-
-Boot from an install CD, then convert by doing:
-
-```
-# btrfs-convert /dev/*partition*
-
-```
-
-Mount the partion and test the conversion by checking the files. Be sure to change the `/etc/fstab` to reflect the change (**type** to `btrfs` and **fs_passno** [the last field] to `0` as Btrfs does not do a file system check on boot). Also note that the UUID of the partition will have changed, so update fstab accordingly when using UUIDs. `chroot` into the system and rebuild the GRUB menu list (see [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") and [GRUB](/index.php/GRUB "GRUB") articles). If converting a root filesystem, while still chrooted run `mkinitcpio -p linux` to regenerate the initramfs or the system will not successfully boot. If you get stuck in grub with 'unknown filesystem' try reinstalling grub with `grub-install /dev/*partition*` and regenerate the config as well `grub-mkconfig -o /boot/grub/grub.cfg`.
-
-After confirming that there are no problems, complete the conversion by deleting the backup `ext2_saved` sub-volume. Note that you cannot revert back to ext3/4 without it.
-
-```
-# btrfs subvolume delete /ext2_saved
-
-```
-
-Finally [balance](#Balance) the file system to reclaim the space.
-
-Remember that some applications which were installed prior have to be adapted to Btrfs. Notably [TLP#Btrfs](/index.php/TLP#Btrfs "TLP") needs special care to avoid filesystem corruption but other applications may profit from certain features as well.
 
 ## Configuring the file system
 
@@ -484,7 +436,7 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Swap file
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs intentionally does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
 
 ### TLP
 
@@ -495,6 +447,51 @@ Using TLP requires special precautions in order to avoid filesystem corruption. 
 As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel does not boot with the Btrfs file system. This is due to the slow development of the *rt* patchset.
 
 ## Tips and tricks
+
+### Partitionless Btrfs disk
+
+**Warning:** Most users do not want this type of setup and instead should install Btrfs on a regular partition. Furthermore GRUB strongly discourages installation to a partitionless disk.
+
+Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes, using [subvolumes](#Subvolumes) to simulate partitions. However, using a partitionless setup is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. There are some limitations to partitionless single disk setups:
+
+*   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
+*   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
+*   Cannot use [UEFI](/index.php/UEFI "UEFI") to boot.
+
+To overwrite the existing partition table with Btrfs, run the following command:
+
+```
+# mkfs.btrfs /dev/sd*X*
+
+```
+
+For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
+
+Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") or [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB").
+
+### Ext3/4 to Btrfs conversion
+
+**Warning:** As of mid-to-late 2015, there are many reports on the btrfs mailing list about incomplete/corrupt/broken conversions. The situation is improving as patches are being submitted, but proceed very carefully. Make sure you have *working* backups of any data you cannot afford to lose. See [Conversion from Ext3](https://btrfs.wiki.kernel.org/index.php/Conversion_from_Ext3) on the btrfs wiki.
+
+Boot from an install CD, then convert by doing:
+
+```
+# btrfs-convert /dev/*partition*
+
+```
+
+Mount the partion and test the conversion by checking the files. Be sure to change the `/etc/fstab` to reflect the change (**type** to `btrfs` and **fs_passno** [the last field] to `0` as Btrfs does not do a file system check on boot). Also note that the UUID of the partition will have changed, so update fstab accordingly when using UUIDs. `chroot` into the system and rebuild the GRUB menu list (see [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") and [GRUB](/index.php/GRUB "GRUB") articles). If converting a root filesystem, while still chrooted run `mkinitcpio -p linux` to regenerate the initramfs or the system will not successfully boot. If you get stuck in grub with 'unknown filesystem' try reinstalling grub with `grub-install /dev/*partition*` and regenerate the config as well `grub-mkconfig -o /boot/grub/grub.cfg`.
+
+After confirming that there are no problems, complete the conversion by deleting the backup `ext2_saved` sub-volume. Note that you cannot revert back to ext3/4 without it.
+
+```
+# btrfs subvolume delete /ext2_saved
+
+```
+
+Finally [balance](#Balance) the file system to reclaim the space.
+
+Remember that some applications which were installed prior have to be adapted to Btrfs. Notably [TLP#Btrfs](/index.php/TLP#Btrfs "TLP") needs special care to avoid filesystem corruption but other applications may profit from certain features as well.
 
 ### Checksum hardware acceleration
 
