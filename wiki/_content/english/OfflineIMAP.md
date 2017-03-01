@@ -57,14 +57,12 @@ accounts = main
 localrepository = main-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = main-remote
-# Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
 
 [Repository main-local]
-# Currently, offlineimap only supports maildir and IMAP for local repositories.
+# OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
 type = Maildir
 # Where should the mail be placed?
-localfolders = ~/Maildir
+localfolders = ~/mail
 
 [Repository main-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
@@ -93,7 +91,7 @@ For more options, see the [official documentation](http://offlineimap.org/doc/na
 Before running offlineimap, create any parent directories that were allocated to local repositories:
 
 ```
-$ mkdir ~/Maildir
+$ mkdir ~/mail
 
 ```
 
@@ -149,29 +147,20 @@ holdconnectionopen = yes
 
 #### systemd service
 
-When configured to run background jobs, offlineimap can be managed with the following systemd service:
+When configured to run background jobs, offlineimap can be managed with the following [systemd/User](/index.php/Systemd/User "Systemd/User") service:
 
- `/etc/systemd/system/offlineimap@.service` 
+ `/etc/systemd/user/offlineimap.service` 
 ```
 [Unit]
 Description=Start offlineimap as a daemon
-Requires=network-online.target
-After=network.target
 
 [Service]
-User=%i
 ExecStart=/usr/bin/offlineimap
-KillSignal=SIGUSR2
-Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 
 ```
-
-Then [enable](/index.php/Enable "Enable") `offlineimap@*user*.service`.
-
-**Note:** If your configuration involves [D-Bus](/index.php/D-Bus "D-Bus") operations, e.g. [#Gnome keyring](#Gnome_keyring), you should adapt this service for systemd user instance as described in [systemd/User](/index.php/Systemd/User "Systemd/User") instead of using it directly. This approach is necessary to set the `DBUS_SESSION_BUS_ADDRESS` variable correctly.
 
 ### Automatic mailbox generation for mutt
 
@@ -195,7 +184,7 @@ Then add the following lines to `~/.mutt/muttrc`.
  `~/.mutt/muttrc` 
 ```
 # IMAP: offlineimap
-set folder = "~/Mail"
+set folder = "~/mail"
 source ~/.mutt/mailboxes
 set spoolfile = "+account/INBOX"
 set record = "+account/Sent\ Items"

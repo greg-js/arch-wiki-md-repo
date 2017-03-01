@@ -1,24 +1,13 @@
 [Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威[Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
 
-Opera 浏览器仍在不断开发创新。它的特色功能包括集成的邮件客户端、一键保存书签、标签栈（一种特别的标签组织方式）以及对 [HTML5](https://en.wikipedia.org/wiki/HTML5 "wikipedia:HTML5") 的良好支持。
-
-Opera 是跨平台浏览器，可以在 Windows, Mac 和 Linux 上运行。
-
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 插件](#.E6.8F.92.E4.BB.B6)
-    *   [2.1 Adobe Flash](#Adobe_Flash)
-    *   [2.2 Java 支持](#Java_.E6.94.AF.E6.8C.81)
-    *   [2.3 Adblock](#Adblock)
+    *   [2.1 Adblock](#Adblock)
 *   [3 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
     *   [3.1 禁用功能和服务](#.E7.A6.81.E7.94.A8.E5.8A.9F.E8.83.BD.E5.92.8C.E6.9C.8D.E5.8A.A1)
-        *   [3.1.1 禁用电子邮件客户端](#.E7.A6.81.E7.94.A8.E7.94.B5.E5.AD.90.E9.82.AE.E4.BB.B6.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [3.1.2 禁用 ARGB, LIRC and mailto links](#.E7.A6.81.E7.94.A8_ARGB.2C_LIRC_and_mailto_links)
-    *   [3.2 提高Flash性能](#.E6.8F.90.E9.AB.98Flash.E6.80.A7.E8.83.BD)
-        *   [3.2.1 .xinitrc 例子](#.xinitrc_.E4.BE.8B.E5.AD.90)
-        *   [3.2.2 命令行例子](#.E5.91.BD.E4.BB.A4.E8.A1.8C.E4.BE.8B.E5.AD.90)
-    *   [3.3 Profile in tmpfs](#Profile_in_tmpfs)
+    *   [3.2 Profile in tmpfs](#Profile_in_tmpfs)
 *   [4 外观](#.E5.A4.96.E8.A7.82)
     *   [4.1 主题](#.E4.B8.BB.E9.A2.98)
     *   [4.2 标题栏](#.E6.A0.87.E9.A2.98.E6.A0.8F)
@@ -40,7 +29,7 @@ Opera 是跨平台浏览器，可以在 Windows, Mac 和 Linux 上运行。
 
 ## 安装
 
-Opera 26 已经在 2014 年 12 月上旬发布；它仅仅提供了 64 位版本。作为一个里程碑，从此以后，旧的私有 Presto 排版引擎被更先进且开源的 Blink 引擎所替代。之前的 12.16 版本仍然支持 32 位系统。
+Opera 26 于 2014 年 12 月上旬发布；它仅仅提供了 64 位版本。作为一个里程碑，从此以后，旧的专有 Presto 排版引擎被更先进的开源引擎 Blink 所替代。之前的 12.16 版本仍然支持 32 位系统。
 
 Opera 可以在 [官方软件仓库安装](/index.php/Official_repositories "Official repositories")。官方仓库为 x86_64 架构的系统提供新的 Blink 版本 Opera，而为 i686 架构的系统提供旧的 Presto 版本的 Opera。
 
@@ -48,27 +37,21 @@ Opera 可以在 [官方软件仓库安装](/index.php/Official_repositories "Off
 
 ## 插件
 
-Opera可以使用大多数主流浏览器所支持的，基于Netscape的插件。 详见 [Browser plugins](/index.php/Browser_plugins "Browser plugins"). opera的插件选项见 *Settings > Preferences... > Advanced > Content > Plug-in Options*.
-
-### Adobe Flash
-
-请见: [Browser plugins#Flash Player](/index.php/Browser_plugins#Flash_Player "Browser plugins")
-
-### Java 支持
-
-请见 the main article: [Browser plugins#Java (IcedTea)](/index.php/Browser_plugins#Java_.28IcedTea.29 "Browser plugins")
+有关不同插件和安装说明的详细信息，请参阅[Browser plugins](/index.php/Browser_plugins "Browser plugins")。注意，Opera不再支持Netscape插件API（NPAPI），而只支持较新的Pepper插件API（PPAPI）。
 
 ### Adblock
 
-可以安装 [AUR](/index.php/AUR "AUR") 中 [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/) 软件包以获得 Adblock 支持。
+**提示：** Opera也有一个内置的广告拦截器，可以在设置中启用。
+
+安装 [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/) 软件包以获取 Adblock 支持。
 
 ## 性能调整
 
-尽管 Opera 在现代的机器上运行速度已经相当不错，其实它仍有性能调优的空间。请阅读 [Opera Wiki page](http://operawiki.info/operaperformance) 以了解详情。
+虽然Opera在现代硬件上运行相当快，但可以进一步调整。有关更多示例，请参阅 [Opera Wiki page](http://operawiki.info/operaperformance)。
 
 ### 禁用功能和服务
 
-其中最大限度地提高应用的性能的关键是禁用不需要的功能和服务通过本地[opera:config Preferences Editor.](http://www.opera.com/browser/tutorials/personalize/behavior/)
+最大化应用程序性能的关键之一，是通过[opera:config Preferences Editor.](http://www.opera.com/browser/tutorials/personalize/behavior/)禁用不需要的功能和服务。
 
 一些不需要的功能：
 
@@ -78,75 +61,16 @@ Opera可以使用大多数主流浏览器所支持的，基于Netscape的插件�
 *   **Multimedia**: unckeck desired options under opera:config#Multimedia.
 *   **Web Server**: uncheck *Enable* under opera:config#Web Server.
 
-为了更简单的找到它，我们把这些选项的相应（没有空格）路径写在地址栏中。 例如 `opera:config#UserPrefs|ShowTrayIcon`或者使用内置搜索。
-
-#### 禁用电子邮件客户端
-
-其他命令行选项可用于进一步控制浏览器的功能和服务。不使用默认的内部电子邮件客户端启动Opera：
-
-```
-$ opera -nomail
-
-```
-
-另外，如果你想永久禁止内部电子邮件客户端，你可以取消选中opera:config#UserPrefs下的' '显示电子邮件客户端*选项。*
-
-#### 禁用 ARGB, LIRC and mailto links
-
-没有[ARGB](https://en.wikipedia.org/wiki/ARGB "wikipedia:ARGB") (32-bit)的视觉效果开启Opera。 [LIRC](http://www.lirc.org/) infrared control support and with `mailto:` 禁用链接：
-
-```
-$ opera -noargb -nolirc -nomaillinks
-
-```
-
-### 提高Flash性能
-
-为了提高Flash的性能，在启动Opera之前你要设置以下环境变量，在[xinitrc](/index.php/Xinitrc "Xinitrc"), 或者 [~/.bash_profile](/index.php/Bash "Bash")中export条目，或者全系统改变`/etc/profile`：
-
-```
- OPERAPLUGINWRAPPER_PRIORITY=0
- OPERA_KEEP_BLOCKED_PLUGIN=1
-
-```
-
-另外一个能帮你解决Flash问题的环境变量：
-
-```
-GDK_NATIVE_WINDOWS=1
-
-```
-
-看博客[Linux上的Flash问题?](http://my.opera.com/ruario/blog/flash-problems-on-linux)去添加细节。
-
-#### .xinitrc 例子
-
- `~/.xinitrc` 
-```
-...
-export OPERAPLUGINWRAPPER_PRIORITY=0
-export OPERA_KEEP_BLOCKED_PLUGIN=0
-...
-
-```
-
-#### 命令行例子
-
-使用命令行变量作为Opera：
-
-```
-$ OPERAPLUGINWRAPPER_PRIORITY=0 OPERA_KEEP_BLOCKED_PLUGIN=1 opera &
-
-```
+为了更容易找到这些选项，只需在地址栏中输入相应的路径（无空格）即可。 例如 `opera:config#UserPrefs|ShowTrayIcon`或者使用内置搜索。
 
 ### Profile in tmpfs
 
-Relocate the browser profile to a [tmpfs](/index.php/Fstab#tmpfs "Fstab") filesystem, including `/tmp` for improvements in application response as the entire profile is now stored in RAM. Another benefit is a reduction in disk read and write operations, of which SSDs benefit the most.
+将浏览器配置文件重新定位到 [tmpfs](/index.php/Tmpfs "Tmpfs")文件系统，包括 `/ tmp`，以改进应用程序响应，因为整个配置文件现在都存储在RAM中。另一个好处是减少了磁盘读写操作，其于SSD最为有利。
 
-There are currently two ways of doing this:
+目前有两种方法：
 
-*   using [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon"), that automatically detects and relocates the Opera profile to tmpfs.
-*   using the `-pd` command-line flag to tell Opera where to store its profile data:
+*   使用[Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")，自动检测并将Opera配置文件重定位到tmpfs。
+*   使用 `-pd`命令行标志告诉Opera在哪里存储其配置文件数据：
 
 ```
 $ opera -pd /tmp/opera

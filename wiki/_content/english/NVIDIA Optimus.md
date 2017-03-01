@@ -42,7 +42,7 @@ If you want to use both cards, or cannot disable the card you do not want, see t
 
 The [proprietary NVIDIA driver](/index.php/NVIDIA "NVIDIA") does not support dynamic switching like the nouveau driver (meaning it can only use the NVIDIA device). It also has notable screen-tearing issues that NVIDIA recognizes but has not fixed. However, it does allow use of the discrete GPU and has (as of October 2013) a marked edge in performance over the nouveau driver.
 
-First, install [nvidia](https://www.archlinux.org/packages/?name=nvidia), [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) from the official repositories.
+First, install [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) from the official repositories.
 
 Then, configure `xorg.conf`. You will need to know the PCI address of the NVIDIA card, which you can find by issuing
 
@@ -52,8 +52,6 @@ $ lspci | grep -E "VGA|3D"
 ```
 
 The PCI address is the first 7 characters of the line that mentions NVIDIA. It will look something like `01:00.0`. In the `xorg.conf`, you will need to format it as `#:#:#`; e.g. `01:00.0` would be formatted as `1:0:0`.
-
-**Note:** Since Xorg-server 1.17-1 [FS#43830](https://bugs.archlinux.org/task/43830) related to the `modesetting` module persists for Optimus configurations. A work-around for some systems is to set the `Option "AccelMethod"` to `"none"`, as in the configuration below. Other systems require it set to `"sna"`, see [#Alternative configuration](#Alternative_configuration).
 
 **Note:** On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see [#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log).
 
@@ -70,44 +68,6 @@ Section "Device"
     Driver "nvidia"
     BusID "<BusID for NVIDIA device here>"
     Option "AllowEmptyInitialConfiguration"
-EndSection
-
-```
-
-For older X servers
-
- `/etc/X11/xorg.conf` 
-```
-Section "ServerLayout"
-    Identifier "layout"
-    Screen 0 "nvidia"
-    Inactive "intel"
-EndSection
-
-Section "Device"
-    Identifier "nvidia"
-    Driver "nvidia"
-    **# Change BusID if necessary. Tips: (lspci | grep 3D) (Change 01:00.0 to 1:0:0)**
-    **BusID "PCI:1:0:0"**
-EndSection
-
-Section "Screen"
-    Identifier "nvidia"
-    Device "nvidia"
-    Option "AllowEmptyInitialConfiguration" "Yes"
-EndSection
-
-Section "Device"
-    Identifier "intel"
-    Driver "modesetting"
-    **# Change BusID if necessary. Tips: (lspci | grep VGA) (Change 00:02.0 to 0:2:0)**
-    **BusID "PCI:0:2:0"**
-    Option "AccelMethod"  "none"
-EndSection
-
-Section "Screen"
-    Identifier "intel"
-    Device "intel"
 EndSection
 
 ```

@@ -98,7 +98,7 @@ If you prefer another implementation, check *Open PDF files in the default PDF v
 
 ### Certificates
 
-Chromium uses [NSS](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `Settings` → `Show advanced settings...` → `Manage Certificates...`.
+Chromium uses [NSS](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `chrome://settings/certificates`.
 
 ## Tips and tricks
 

@@ -4,11 +4,13 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
+**翻译状态：** 本文是英文页面 [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Go+package+guidelines&diff=0&oldid=468868)可以查看翻译后英文页面的改动。
+
 Arch Linux 对 [Go](https://en.wikipedia.org/wiki/Go_(programming_language) 的支持非常完善。
 
 软件包 [go](https://www.archlinux.org/packages/?name=go) 中包含了 **go** 工具 (用于运行 `go fix`, `go build` 等)。 另外还有个提供 `gccgo` 的 [gcc-go](https://www.archlinux.org/packages/?name=gcc-go) 软件包。
 
-你可以用 [go-makepkg](https://github.com/seletskiy/go-makepkg) 工具来协助你简单的打包Go程序，而不用从头到尾手动编写 PKGBUILD 。
+[go-makepkg](https://github.com/seletskiy/go-makepkg) 是简单易用的 Go 程序打包工具，不用手动编写 PKGBUILD 。
 
 ## Contents
 
@@ -28,9 +30,9 @@ Arch Linux 对 [Go](https://en.wikipedia.org/wiki/Go_(programming_language) 的�
 
 ### 命名
 
-*   对于使用Go语言编写的独立应用，使用小写字母的应用名作为软件包名。
+*   对于使用 Go 语言编写的独立应用，使用小写字母的应用名作为软件包名。
     *   如果软件包名已被占用，请另选一个合适的。
-*   对于使用Go语言编写的软件库，请使用小写字母的 `go-*库名*` 作为软件包名。
+*   对于使用 Go 语言编写的软件库，请使用小写字母的 `go-*库名*` 作为软件包名。
     *   如果软件库名本身就是以 `go-` 开头的，请不要使用 `go-*go-模块名*` 这样的名字，而改用 `go-*模块名*`。
 *   对于使用"go"工具下载的软件包，只有当它不是从tar包或者tagged提交(而是从trunk/HEAD)下载源码时，软件包名才添加"-git"后缀。
     *   类似的，对于mercurial 版本控制系统，只有当软件包未从release-revision下载源码时，才添加"-hg"后缀。
@@ -185,7 +187,7 @@ package() {
 
 另外一种依靠 `go get`的方式如下。
 
-你一般不需要修改 build() 或 package() 函数，只需要修改前面的变量 (pkgname 等)即可。
+一般不需要修改 build() 或 package() 函数，只需要修改前面的变量 (pkgname 等)即可。
 
 如果打包有问题，请先确保手动执行 `go get` 没问题。
 

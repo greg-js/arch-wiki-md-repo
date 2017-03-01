@@ -31,7 +31,7 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
     "local_port":1080,
     "password":"mypassword",
     "timeout":300,
-    "method":"chacha20-ietf",
+    "method":"chacha20-ietf-poly1305",
     "fast_open": false,
     "workers": 1
 }
@@ -39,6 +39,8 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 ```
 
 **Tip:** To specify multiple server IPs, the following syntax can be used `"server":["1.1.1.1","2.2.2.2"],`
+
+**Tip:** To find out the fastest method running on your machine, you can benchmark with the script[[1]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)
 
 | Name | Explanation |
 | server | the address your server listens |

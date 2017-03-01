@@ -94,7 +94,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce).
 
-	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
+	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
 
 *   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines.
 

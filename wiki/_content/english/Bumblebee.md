@@ -1,6 +1,6 @@
 From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
-"*Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.*"
+	Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.
 
 ## Contents
 
@@ -62,12 +62,9 @@ Before installing Bumblebee, check your BIOS and activate Optimus (older laptops
 
 ### Installing Bumblebee with Intel/NVIDIA
 
-Install:
+[Install](/index.php/Install "Install"):
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
-
-**Note:** [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) depends on [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) and provides all [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl), [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl) and [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl) to avoid dependency conflict between the respective libgl versions.
-
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) - Install appropriate NVIDIA driver. For more information read [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
@@ -76,7 +73,6 @@ For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applicat
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - A render/display bridge for 32 bit applications.
 *   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) or [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) - match the version of the 64 bit package.
-*   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) and make sure that [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) is **not** installed
 
 In order to use Bumblebee, it is necessary to add your regular *user* to the `bumblebee` group:
 
@@ -296,7 +292,7 @@ ExecStart=/bin/sh -c 'echo ON > /proc/acpi/bbswitch'
 WantedBy=shutdown.target
 ```
 
-Then enable the service by running `systemctl enable nvidia-enable.service` at the root prompt.
+Then [enable](/index.php/Enable "Enable") the `nvidia-enable.service` unit.
 
 #### Enable NVIDIA card after waking from suspend
 

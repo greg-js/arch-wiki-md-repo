@@ -2,7 +2,7 @@
 
 * * *
 
-**Internet** – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – **Internet** – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -48,38 +48,52 @@
             *   [1.5.2.1 IRC clients](#IRC_clients)
                 *   [1.5.2.1.1 Console](#Console_4)
                 *   [1.5.2.1.2 Graphical](#Graphical_3)
-            *   [1.5.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
-                *   [1.5.2.2.1 Command line](#Command_line)
-                *   [1.5.2.2.2 Console clients](#Console_clients)
-                *   [1.5.2.2.3 Graphical clients](#Graphical_clients)
-                *   [1.5.2.2.4 Servers](#Servers)
-            *   [1.5.2.3 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.2.3.1 Console](#Console_5)
-                *   [1.5.2.3.2 Graphical](#Graphical_4)
-            *   [1.5.2.4 Lan messengers](#Lan_messengers)
+            *   [1.5.2.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
+                *   [1.5.2.2.1 Console](#Console_5)
+                *   [1.5.2.2.2 Graphical](#Graphical_4)
+            *   [1.5.2.3 XMPP servers](#XMPP_servers)
+            *   [1.5.2.4 Other](#Other_2)
+            *   [1.5.2.5 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.5.2.5.1 Console](#Console_6)
+                *   [1.5.2.5.2 Graphical](#Graphical_5)
+            *   [1.5.2.6 Lan messengers](#Lan_messengers)
         *   [1.5.3 VoIP / Softphone](#VoIP_.2F_Softphone)
             *   [1.5.3.1 Clients](#Clients)
                 *   [1.5.3.1.1 SIP](#SIP)
                 *   [1.5.3.1.2 IAX2](#IAX2)
                 *   [1.5.3.1.3 Skype](#Skype)
-                *   [1.5.3.1.4 Other](#Other_2)
+                *   [1.5.3.1.4 Other](#Other_3)
                 *   [1.5.3.1.5 Multi-protocol](#Multi-protocol)
-            *   [1.5.3.2 Utilities](#Utilities)
+            *   [1.5.3.2 Voice servers](#Voice_servers)
+            *   [1.5.3.3 Utilities](#Utilities)
         *   [1.5.4 Speech recognition](#Speech_recognition)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_6)
-            *   [1.6.1.2 Graphical](#Graphical_5)
+            *   [1.6.1.1 Console](#Console_7)
+            *   [1.6.1.2 Graphical](#Graphical_6)
         *   [1.6.2 Podcast clients](#Podcast_clients)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
-        *   [1.6.4 Blog software](#Blog_software)
+        *   [1.6.4 Blog engines](#Blog_engines)
         *   [1.6.5 Microblogging clients](#Microblogging_clients)
     *   [1.7 Remote desktop](#Remote_desktop)
         *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
         *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
     *   [1.8 Pastebin clients](#Pastebin_clients)
     *   [1.9 Bitcoin](#Bitcoin)
-    *   [1.10 Surveying](#Surveying)
+    *   [1.10 Web Servers](#Web_Servers)
+        *   [1.10.1 LAMP stack](#LAMP_stack)
+            *   [1.10.1.1 Servers](#Servers)
+            *   [1.10.1.2 Databases](#Databases)
+            *   [1.10.1.3 PHP](#PHP)
+        *   [1.10.2 Content management, social networks, blog publishers](#Content_management.2C_social_networks.2C_blog_publishers)
+        *   [1.10.3 Wiki engines](#Wiki_engines)
+        *   [1.10.4 Education management](#Education_management)
+        *   [1.10.5 Mail servers](#Mail_servers)
+        *   [1.10.6 Instant messaging servers](#Instant_messaging_servers)
+        *   [1.10.7 FTP servers](#FTP_servers_2)
+        *   [1.10.8 Cloud storage servers](#Cloud_storage_servers)
+        *   [1.10.9 Remote desktop servers](#Remote_desktop_servers_2)
+        *   [1.10.10 Surveying](#Surveying)
 
 ## Internet
 
@@ -307,7 +321,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
 
-*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) layout engine, a fork of Gecko. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
+*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) layout engine, a fork of Gecko. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Without support for newer Firefox features such as cache2, e10s, and OTMC.
 
 	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/)
 
@@ -731,17 +745,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
-##### XMPP (Jabber)
+##### XMPP (Jabber) clients
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
 
-###### Command line
-
-*   **jp** — CLI frontend for Salut à Toi, multi-purpose XMPP client
-
-	[https://salut-a-toi.org](https://salut-a-toi.org) || [sat-jp](https://aur.archlinux.org/packages/sat-jp/)
-
-###### Console clients
+###### Console
 
 *   **Freetalk** — Console-based Jabber client.
 
@@ -767,11 +775,15 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[http://www.profanity.im/](http://www.profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
 
+*   **sat-jp** — CLI frontend for Salut à Toi, multi-purpose XMPP client
+
+	[https://salut-a-toi.org](https://salut-a-toi.org) || [sat-jp](https://aur.archlinux.org/packages/sat-jp/)
+
 *   **xmpp-client** — A minimalist XMPP client with OTR support.
 
 	[https://github.com/agl/xmpp-client](https://github.com/agl/xmpp-client) || [go-xmpp-client](https://aur.archlinux.org/packages/go-xmpp-client/)
 
-###### Graphical clients
+###### Graphical
 
 *   **[Gajim](https://en.wikipedia.org/wiki/Gajim "wikipedia:Gajim")** — Jabber client written in PyGTK.
 
@@ -789,7 +801,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://www.archlinux.org/packages/?name=tkabber)
 
-###### Servers
+##### XMPP servers
 
 See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org/wiki/Comparison_of_XMPP_server_software "wikipedia:Comparison of XMPP server software").
 
@@ -808,6 +820,12 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 *   **[Openfire](/index.php/Openfire "Openfire")** — An XMPP IM multiplatform server written in Java
 
 	[http://www.igniterealtime.org/projects/openfire/](http://www.igniterealtime.org/projects/openfire/) || [openfire](https://www.archlinux.org/packages/?name=openfire)
+
+##### Other
+
+*   **Ricochet** — Anonymous peer-to-peer instant messaging.
+
+	[https://ricochet.im/](https://ricochet.im/) || [ricochet](https://aur.archlinux.org/packages/ricochet/)
 
 ##### Multi-protocol clients
 
@@ -957,7 +975,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
 
-*   **[Mumble](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)")** — Voice chat application similar to TeamSpeak.
+*   **[Mumble](/index.php/Mumble "Mumble")** — Voice chat application similar to TeamSpeak.
 
 	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
 
@@ -978,6 +996,12 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 *   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
 	[http://ring.cx/](http://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
+
+##### Voice servers
+
+*   **[Murmur](/index.php/Murmur "Murmur")** — The voice chat application server for Mumble.
+
+	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
 
 ##### Utilities
 
@@ -1127,41 +1151,9 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[http://www.mit.edu/people/jik/software/xrn.html](http://www.mit.edu/people/jik/software/xrn.html) || [xrn](https://aur.archlinux.org/packages/xrn/)
 
-#### Blog software
+#### Blog engines
 
-See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "wikipedia:Blog software") and [Wikipedia:List of content management systems](https://en.wikipedia.org/wiki/List_of_content_management_systems "wikipedia:List of content management systems").
-
-*   **[Drupal](/index.php/Drupal "Drupal")** — An open source content management platform powering millions of websites and applications. It is built, used, and supported by an active and diverse community of people around the world.
-
-	[http://drupal.org/](http://drupal.org/) || [drupal](https://www.archlinux.org/packages/?name=drupal)
-
-*   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
-
-	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
-
-*   **Hexo** — A fast, simple & powerful blog framework, powered by Node.js.
-
-	[http://hexo.io](http://hexo.io) || [nodejs-hexo](https://aur.archlinux.org/packages/nodejs-hexo/)
-
-*   **[Jekyll](/index.php/Jekyll "Jekyll")** — A static blog engine, written in Ruby, which supports Markdown, textile and other formats.
-
-	[http://jekyllrb.com/](http://jekyllrb.com/) || [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/)
-
-*   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not mantained anymore.
-
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
-
-*   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
-
-	[https://getnikola.com/](https://getnikola.com/) || [python-nikola](https://aur.archlinux.org/packages/python-nikola/)
-
-*   **Pelican** — A static site generator, powered by Python.
-
-	[http://docs.getpelican.com/en/3.5.0/](http://docs.getpelican.com/en/3.5.0/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
-
-*   **[Wordpress](/index.php/Wordpress "Wordpress")** — An easy to setup and administer FLOSS content management system featuring a strong and vibrant community with thousands of plugins and themes.
-
-	[http://wordpress.org/](http://wordpress.org/) || [wordpress](https://www.archlinux.org/packages/?name=wordpress)
+See [Content management, social networks, blog publishers](/index.php/List_of_applications#Content_management.2C_social_networks.2C_blog_publishers "List of applications")
 
 #### Microblogging clients
 
@@ -1345,7 +1337,133 @@ Pastebin services are often used to quote text or images while collaborating and
 
 See [Bitcoin#Bitcoin software](/index.php/Bitcoin#Bitcoin_software "Bitcoin").
 
-### Surveying
+### Web Servers
+
+For more information, see [Server](/index.php/Server "Server")
+
+#### LAMP stack
+
+For more information, see [LAMP](/index.php/LAMP "LAMP")
+
+##### Servers
+
+*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
+
+	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
+
+*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
+
+	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
+
+*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
+
+	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
+
+*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
+
+	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
+
+*   **[Webfs](/index.php/Webfs "Webfs")** — Simple and instant http server for mostly static content.
+
+	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
+
+##### Databases
+
+see [Databases](/index.php/List_of_applications#Databases "List of applications")
+
+##### PHP
+
+*   **[PHP](/index.php/PHP "PHP")** — A general-purpose scripting language that is especially suited to web development.
+
+	[http://www.php.net/](http://www.php.net/) || [php](https://www.archlinux.org/packages/?name=php)
+
+#### Content management, social networks, blog publishers
+
+See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "wikipedia:Blog software") and [Wikipedia:List of content management systems](https://en.wikipedia.org/wiki/List_of_content_management_systems "wikipedia:List of content management systems").
+
+**Note:** Content managers, social networks, and blog publishers overlap in many functions.
+
+*   **[Diaspora](/index.php/Diaspora "Diaspora")** — A distributed privacy aware social network.
+
+	[https://diasporafoundation.org](https://diasporafoundation.org) || [diaspora-mysql](https://aur.archlinux.org/packages/diaspora-mysql/) or [diaspora-postgresql](https://aur.archlinux.org/packages/diaspora-postgresql/)
+
+*   **[Drupal](/index.php/Drupal "Drupal")** — A PHP-based content management platform.
+
+	[http://www.drupal.org/](http://www.drupal.org/) || [drupal](https://www.archlinux.org/packages/?name=drupal)
+
+*   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
+
+	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
+
+*   **Hexo** — A fast, simple & powerful blog framework, powered by Node.js.
+
+	[http://hexo.io](http://hexo.io) || [nodejs-hexo](https://aur.archlinux.org/packages/nodejs-hexo/)
+
+*   **[Jekyll](/index.php/Jekyll "Jekyll")** — A static blog engine, written in Ruby, which supports Markdown, textile and other formats.
+
+	[http://jekyllrb.com/](http://jekyllrb.com/) || [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/)
+
+*   **[Joomla](/index.php/Joomla "Joomla")** — A php Content Management System (CMS) which enables you to build websites and powerful online applications.
+
+	[http://www.joomla.org/](http://www.joomla.org/) || [joomla](https://aur.archlinux.org/packages/joomla/)
+
+*   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not mantained anymore.
+
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://www.archlinux.org/packages/?name=nanoblogger)
+
+*   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
+
+	[https://getnikola.com/](https://getnikola.com/) || [python-nikola](https://aur.archlinux.org/packages/python-nikola/)
+
+*   **Pelican** — A static site generator, powered by Python.
+
+	[http://docs.getpelican.com/en/3.5.0/](http://docs.getpelican.com/en/3.5.0/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
+
+*   **[Wordpress](/index.php/Wordpress "Wordpress")** — Blog tool and publishing platform.
+
+	[https://wordpress.org/](https://wordpress.org/) || [wordpress](https://www.archlinux.org/packages/?name=wordpress)
+
+#### Wiki engines
+
+*   **[MediaWiki](/index.php/MediaWiki "MediaWiki")** — MediaWiki engine.
+
+	[http://www.mediawiki.org/wiki/MediaWiki](http://www.mediawiki.org/wiki/MediaWiki) || [mediawiki](https://www.archlinux.org/packages/?name=mediawiki)
+
+*   **[Moinmoin](/index.php/Moinmoin "Moinmoin")** — A python wiki clone.
+
+	[http://moinmo.in/](http://moinmo.in/) || [moinmoin](https://www.archlinux.org/packages/?name=moinmoin)
+
+#### Education management
+
+see [Education](/index.php/List_of_applications#Education "List of applications")
+
+#### Mail servers
+
+see
+
+#### Instant messaging servers
+
+see [XMPP servers](/index.php/List_of_applications#XMPP_servers "List of applications")
+
+#### FTP servers
+
+see [FTP servers](/index.php/List_of_applications#FTP_servers "List of applications") and [SFTP servers](/index.php/List_of_applications#SFTP_clients "List of applications")
+
+#### Cloud storage servers
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — A cloud server to store your files centrally on a hardware controlled by you.
+
+	[https://nextcloud.com](https://nextcloud.com) || [nextcloud](https://www.archlinux.org/packages/?name=nextcloud)
+
+*   **[Seafile](/index.php/Seafile "Seafile")** — An online file storage and collaboration tool.
+
+	[https://github.com/haiwen/seafile-server](https://github.com/haiwen/seafile-server) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
+
+#### Remote desktop servers
+
+see [Remote desktop servers](/index.php/List_of_applications#Remote_desktop_servers "List of applications")
+
+#### Surveying
 
 *   **[LimeSurvey](https://en.wikipedia.org/wiki/LimeSurvey "wikipedia:LimeSurvey")** — An open source on-line survey application. As a web server-based software it enables users to develop and publish on-line surveys, and collect responses, with no programming.
 

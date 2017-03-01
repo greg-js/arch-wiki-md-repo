@@ -51,7 +51,7 @@ The CrashPlan daemon's configuration files (in `/opt/crashplan/conf`) are in an 
 2.  Create an SSH tunnel. On the client: `ssh -N -L 4243:localhost:4243 headless.example.com`.
 3.  Start the CrashPlan client. (Again, the executable is named `CrashPlanDesktop`.)
 
-More ideas can be found on these websites:
+Note that the authentication token (located in `/var/lib/crashplan/.ui_info`) on the local and remote servers must match. More ideas can be found on these websites:
 
 *   The CrashPlan support site [details](http://support.code42.com/CrashPlan/Latest/Configuring/Configuring_A_Headless_Client) a slightly more complicated method of tunneling traffic from the client (CrashPlan Desktop) to the daemon (CrashPlan Engine) through an SSH tunnel.
 *   A [post by Bryan Ross](http://www.liquidstate.net/how-to-manage-your-crashplan-server-remotely/) details how to make CrashPlan Desktop connect directly to CrashPlan Engine. Note that this method can be less secure than tunneling traffic through an SSH tunnel.

@@ -27,10 +27,10 @@ With a LiveCD a couple methods are available: change root and use the `passwd` c
 1.  Select the appropriate boot entry in the [GRUB](/index.php/GRUB "GRUB") menu and press `e` to edit the line.
 2.  Select the kernel line and press `e` again to edit it.
 3.  Append `init=/bin/bash` at the end of line.
-4.  Press `b` to boot (this change is only temporary and will not be saved to your menu.lst). After booting you will be at the bash prompt.
+4.  Press `Ctrl-X` to boot (this change is only temporary and will not be saved to your menu.lst). After booting you will be at the bash prompt.
 5.  Your root file system is mounted as readonly now, so remount it as read/write `mount -n -o remount,rw /`.
 6.  Use the `passwd` command to create a new root password.
-7.  Reboot and do not lose your password again!
+7.  Reboot by typing `reboot -f` and do not lose your password again!
 
 **Note:** Some keyboards may not be loaded properly by the init system with this method and you will not be able to type anything at the bash prompt. If this is the case, you will have to use another method.
 

@@ -452,21 +452,13 @@ If you do not have an Xorg configuration file, you can create one for your prese
 
 ### Avoid screen tearing in KDE (KWin)
 
+If `ForceFullCompositionPipeline` described above does not help:
+
  `/etc/profile.d/kwin.sh` 
 ```
 export KWIN_TRIPLE_BUFFER=1
 
 ```
-
-Also if the above does not help, then try this, however you could have huge performance loss in games since this option will put the GL threads to sleep (Source: Feral Interactive Support Ticket):
-
- `/etc/profile.d/kwin.sh` 
-```
-export __GL_YIELD="USLEEP"
-
-```
-
-**Warning:** Do not have both of the above enabled at the same time.
 
 If you enable triple buffering make sure to enable `TripleBuffering` for the driver itself.
 
@@ -482,7 +474,15 @@ EndSection
 
 Also make sure to select OpenGL >= 2.0 as rendering backend under Systemsettings > Display and Monitor > Compositor.
 
-In some cases neither of the above fixes work. A possible fix is to configure [ForceFullCompositionPipeline](#Avoid_screen_tearing).
+If the above does not help, then try this, however you could have huge performance loss in games since this option will put the GL threads to sleep:
+
+ `/etc/profile.d/kwin.sh` 
+```
+export __GL_YIELD="USLEEP"
+
+```
+
+**Warning:** Do not have both of the above enabled at the same time.
 
 Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)
 

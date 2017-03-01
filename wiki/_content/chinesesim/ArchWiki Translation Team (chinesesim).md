@@ -154,7 +154,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Network Time Protocol daemon (简体中文)](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)") | 未翻译 | 无 | 部分未翻译 |
 | [OpenOffice (简体中文)](/index.php/OpenOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "OpenOffice (简体中文)") | 过期 | 无 | 无 |
 | [Opera (简体中文)](/index.php/Opera_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Opera (简体中文)") | 未翻译 | Bobby | 请优先翻译此文 |
-| [Pacman GUI Frontends (简体中文)](/index.php/Pacman_GUI_Frontends_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman GUI Frontends (简体中文)") | 翻译中 | KaiYuan Guo | 无 |
+| [Pacman GUI Frontends (简体中文)](/index.php/Pacman_GUI_Frontends_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman GUI Frontends (简体中文)") | 过期 | 无 | 无 |
 | [Pidgin (简体中文)](/index.php/Pidgin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pidgin (简体中文)") | 进行中 | Cael | 无 |
 | [Plasma (简体中文)](/index.php/Plasma_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Plasma (简体中文)") | 未翻译 | 无 | 无 |
 | [ranger (简体中文)](/index.php/Ranger_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ranger (简体中文)") | 完成 | Jason Zhang | 完善中 |

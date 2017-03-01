@@ -221,13 +221,13 @@ If you do not use a DE, place the line from [#Autostart on tty login](#Autostart
 
 #### Autostart with systemd
 
-The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
+The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides a user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`; see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use a different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file; the process already has user permissions and therefore it is not necessary to change them further.
 
 All you have to do is enable and start the `mpd` [user service](/index.php/Systemd/User "Systemd/User").
 
 **Note:**
 
-*   [mpd](https://www.archlinux.org/packages/?name=mpd) provides also system service file in `/usr/lib/systemd/system/mpd.service`, but as the process is started as root, it does not read the user configuration file and falls back to `/etc/mpd.conf`. [Global configuration](#Global_configuration) is described in other section.
+*   [mpd](https://www.archlinux.org/packages/?name=mpd) also provides a system service file in `/usr/lib/systemd/system/mpd.service`, but as the process is started as root; it does not read the user configuration file and falls back to `/etc/mpd.conf`. [Global configuration](#Global_configuration) is described above.
 *   Make sure to disable every other method of starting mpd you used before.
 
 #### Scripted configuration

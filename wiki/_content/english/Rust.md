@@ -213,7 +213,7 @@ Atom supports Rust programming with the available [Tokamak IDE](https://vertexcl
 
 #### Visual Studio Code
 
-Support for Rust can be obtained by installing [RustyCode](https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode).
+Support for Rust can be obtained by installing the [Rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
 
 #### Vim
 

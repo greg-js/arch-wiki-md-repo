@@ -156,7 +156,7 @@ Se si usa KDE, si ha la possibilità di vedere le condivisioni Samba. Non sarà 
 
 ### Accedere alle condivisioni Samba da GNOME/Xfce4
 
-Per poter accedere alle condivisioni Samba da GNOME Files sarà necessario installare i pacchetti [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) e [gnome-vfs](https://www.archlinux.org/packages/?name=gnome-vfs)
+Per poter accedere alle condivisioni Samba da GNOME Files sarà necessario installare i pacchetti [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) e [gnome-vfs](https://aur.archlinux.org/packages/gnome-vfs/)
 
 Per potervi accedere usando thunar in Xfce4 sarà necessario installare solamente [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb)
 

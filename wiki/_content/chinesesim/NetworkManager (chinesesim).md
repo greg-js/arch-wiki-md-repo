@@ -2,7 +2,7 @@
 
 [网络管理器](http://projects.gnome.org/NetworkManager/)(NetworManager)是检测网络、自动连接网络的程序。无论是无线还是有线连接，它都可以令您轻松管理。对于无线网络,网络管理器优先连接已知的网络并可以自动切换到最可靠的无线网络。利用网络管理器的程序可以自由切换在线和离线模式。网络管理器会相对无线网络优先选择有线网络，支持 VPN。网络管理器最初由 Redhat 公司开发，现在由 [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 管理。
 
-**警告:** 请注意, Wi-Fi 的密码默认情况下是明文保存的。参见 [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
+**警告:** 请注意, Wi-Fi 的密码默认情况下是明文保存的。参见 [#加密的Wi-Fi密码](#.E5.8A.A0.E5.AF.86.E7.9A.84Wi-Fi.E5.AF.86.E7.A0.81)
 
 ## Contents
 
@@ -55,7 +55,7 @@
     *   [5.21 Systemd瓶颈](#Systemd.E7.93.B6.E9.A2.88)
     *   [5.22 网络(WiFi)经常有规律地断开](#.E7.BD.91.E7.BB.9C.28WiFi.29.E7.BB.8F.E5.B8.B8.E6.9C.89.E8.A7.84.E5.BE.8B.E5.9C.B0.E6.96.AD.E5.BC.80)
 *   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [6.1 加密的 Wi-Fi 密码](#.E5.8A.A0.E5.AF.86.E7.9A.84_Wi-Fi_.E5.AF.86.E7.A0.81)
+    *   [6.1 加密的Wi-Fi密码](#.E5.8A.A0.E5.AF.86.E7.9A.84Wi-Fi.E5.AF.86.E7.A0.81)
     *   [6.2 通过Wi-Fi共享网络连接](#.E9.80.9A.E8.BF.87Wi-Fi.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
         *   [6.2.1 Ad-hoc](#Ad-hoc)
         *   [6.2.2 Real AP](#Real_AP)
@@ -649,9 +649,9 @@ NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-w
 
 ## 提示与技巧
 
-### 加密的 Wi-Fi 密码
+### 加密的Wi-Fi密码
 
-默认, NetworkManager在连接文件`/etc/NetworkManager/system-connections/`中以明文存储密码。 要打印存储的密码，使用下列命令：
+NetworkManager默认在连接文件`/etc/NetworkManager/system-connections/`中以明文存储密码。要打印存储的密码，使用下列命令：
 
 ```
 # grep -H '^psk=' /etc/NetworkManager/system-connections/*

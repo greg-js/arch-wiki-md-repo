@@ -16,7 +16,8 @@
         *   [4.1.2 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
     *   [4.2 Permanently adding undetected resolutions](#Permanently_adding_undetected_resolutions)
     *   [4.3 Resolution lower than expected](#Resolution_lower_than_expected)
-    *   [4.4 Full RGB in HDMI](#Full_RGB_in_HDMI)
+    *   [4.4 Correction of overscan tv resolutions](#Correction_of_overscan_tv_resolutions)
+    *   [4.5 Full RGB in HDMI](#Full_RGB_in_HDMI)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -330,6 +331,16 @@ EndSection
 ```
 
 About the numbers: DELL on the left and Samsung on the right. So the virtual width is of sum of both LCD width 3600=1920+1680; Height then is figured as the max of them, which is max(1200,1050)=1200\. If you put one LCD above the other, use this calculation instead: (max(width1, width2), height1+height2).
+
+### Correction of overscan tv resolutions
+
+(screen zoom)
+
+[See the problem ?](http://www.hostingpics.net/viewer.php?id=754061IMG20170228123124.jpg)
+
+Check your TV if there is a parameter to change. if not, apply an underscan and change values of vborder and hborder. Underscan vborder and underscan hborder can be different for you, just check it and change it by more or less.
+
+`xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40`
 
 ### Full RGB in HDMI
 

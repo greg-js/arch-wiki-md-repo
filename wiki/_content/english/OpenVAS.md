@@ -105,6 +105,8 @@ Point your web browser to [http://127.0.0.1](http://127.0.0.1) and login with yo
 
 **Note:** By default, `gsad` will bind to port 80\. If you are already running a webserver, this will obviously cause problems. Pass the `--port` switch to `gsad` for an alternate port. Read the `gsad` man page for options like `--http-only`, `--no-redirect`, and more.
 
+**Note:** The [Greenbone Security Assistant](http://www.greenbone.net/technology/openvas.html) WebUI requires the [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) package in order to provide PDF downloads of the reports.
+
 ## Systemd
 
 Redhat based systemd units are in an AUR package named [openvas-systemd](https://aur.archlinux.org/packages/openvas-systemd/). The contain a few tweaks such as better TLS settings.

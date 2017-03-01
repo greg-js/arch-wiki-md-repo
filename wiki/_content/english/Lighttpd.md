@@ -1,4 +1,4 @@
-[Lighttpd](http://www.lighttpd.net/) is "a secure, fast, compliant, and very flexible [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") that has been optimized for high-performance environments. It has a very low memory footprint compared to other webservers and takes care of cpu-load. Its advanced feature-set ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, Output-Compression, URL-Rewriting and many more) make lighttpd the perfect webserver-software for every server that suffers load problems."
+[Lighttpd](https://www.lighttpd.net/) is "a secure, fast, compliant, and very flexible [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") that has been optimized for high-performance environments. It has a very low memory footprint compared to other webservers and takes care of cpu-load. Its advanced feature-set ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, Output-Compression, URL-Rewriting and many more) make lighttpd the perfect webserver-software for every server that suffers load problems."
 
 ## Contents
 
@@ -32,10 +32,17 @@
 
 The lighttpd configuration file is: `/etc/lighttpd/lighttpd.conf`. By default it should produce a working test page.
 
-To check your `lighttpd.conf` for bugs you can use this command - helps finding misconfigurations very fast:
+To check your `lighttpd.conf` for bugs you can use this command (helps finding misconfigurations very quickly):
 
 ```
 $ lighttpd -t -f /etc/lighttpd/lighttpd.conf
+
+```
+
+A more thorough preflight check is also available:
+
+```
+$ lighttpd -tt -f /etc/lighttpd/lighttpd.conf
 
 ```
 
@@ -289,13 +296,13 @@ include "conf.d/fastcgi.conf"
 
 ```
 
-**Note:** Remember that the order in which the modules are loaded is important, the correct order is listed in `/usr/share/doc/lighttpd/config/modules.conf`. Any misconfiguration may cause *lighttpd* to crash.
+**Note:** Remember that the order in which the modules are loaded is important, the correct order is listed in `/usr/share/doc/lighttpd/config/modules.conf`.
 
 [Reload](/index.php/Reload "Reload") lighttpd.
 
 **Note:**
 
-*   If you receive errors like *No input file found* when attempting to access php files, there are several possible explanations. See [this FAQ](http://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP) for more information.
+*   If you receive errors like *No input file found* when attempting to access php files, there are several possible explanations. See [this FAQ](https://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP) for more information.
 *   Make sure that no other module (e.g. `mod_cgi`) will try to handle the *.php* extension.
 
 ##### Using php-fpm
@@ -331,7 +338,10 @@ Follow instructions on [RubyOnRails](/index.php/RubyOnRails "RubyOnRails").
 
 #### Python FastCGI
 
-**Note:** This method will not work with Python 3 because *Flup* library is only available for Python 2\. If you want to use Python 3, you should refer to [#CGI](#CGI) section.
+**Note:**
+
+*   lighttpd supports Python WSGI protocol: [HowToPythonWSGI](https://redmine.lighttpd.net/projects/lighttpd/wiki/HowToPythonWSGI).
+*   The following method will not work with Python 3 because *Flup* library is only available for Python 2\. If you want to use Python 3, you should refer to [#CGI](#CGI) section.
 
 Install and configure FastCGI (see [#FastCGI](#FastCGI) above).
 
@@ -467,4 +477,4 @@ include "conf.d/compress.conf"
 
 ## See also
 
-*   [Lighttpd wiki](http://redmine.lighttpd.net/projects/lighttpd/wiki)
+*   [Lighttpd wiki](https://redmine.lighttpd.net/projects/lighttpd/wiki)

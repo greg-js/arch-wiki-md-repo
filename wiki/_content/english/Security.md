@@ -255,7 +255,7 @@ This allows all users who are members of the group users to run the commands `/s
 
 **Tip:**
 
-To use `nano` instead of `vi` with `visudo`,
+To use restricted version of `nano` instead of `vi` with `visudo`,
 
  `/etc/sudoers`  `Defaults editor=/usr/bin/rnano` 
 

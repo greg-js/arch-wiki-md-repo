@@ -26,12 +26,12 @@
         *   [5.1.7 Поиск](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA)
     *   [5.2 Расширенная конфигурация](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
         *   [5.2.1 Appearance](#Appearance)
-            *   [5.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
-                *   [5.2.1.1.1 Global dark theme](#Global_dark_theme)
-            *   [5.2.1.2 Window manager themes](#Window_manager_themes)
-                *   [5.2.1.2.1 Titlebar height](#Titlebar_height)
-                *   [5.2.1.2.2 Titlebar button order](#Titlebar_button_order)
-                *   [5.2.1.2.3 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
+            *   [5.2.1.1 Темы GTK+ и иконок](#.D0.A2.D0.B5.D0.BC.D1.8B_GTK.2B_.D0.B8_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
+                *   [5.2.1.1.1 Глобальная темная тема](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
+            *   [5.2.1.2 Темы оконного менеджера](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0)
+                *   [5.2.1.2.1 Высота заголовка](#.D0.92.D1.8B.D1.81.D0.BE.D1.82.D0.B0_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0)
+                *   [5.2.1.2.2 Порядок кнопок в заголовке](#.D0.9F.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.B2_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B5)
+                *   [5.2.1.2.3 Скрыть заголовок, когда окно во весь экран](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D0.BA.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BE.D0.BA.D0.BD.D0.BE_.D0.B2.D0.BE_.D0.B2.D0.B5.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD)
             *   [5.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
             *   [5.2.1.4 Icons on menu](#Icons_on_menu)
         *   [5.2.2 Desktop](#Desktop)
@@ -252,7 +252,12 @@ fi
 
 GNOME использует для сохранения настроек системы и приложений DConf - хранилище данных. Рабочий стол поставляется с настройками по умолчанию, установленными приложениями и их собственными базами данных. Базовая конфигурация производится при помощи панели управления GNOME (*gnome-control-center*) или настройки отдельных приложений. Можно всегда напрямую изменить базу данных DConf; это выполняется при помощи инструмента командной строки *gsettings*. В частности его можно использовать, чтобы настроить параметры, которые не доступны через пользовательский интерфейс.
 
-Настройки GNOME применяются GNOME Settings Daemon. Обратите внимание, что демон может быть запущен вне сессии GNOME, чтобы применить настройки GNOME вне родной среды. Выполните `nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &`.
+Настройки GNOME применяются GNOME Settings Daemon. Обратите внимание, что демон может быть запущен вне сессии GNOME, чтобы применить настройки GNOME вне родной среды. Выполните:
+
+```
+$ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
+
+```
 
 Конфигурация обычно производится отдельно для каждого пользователя и остальная часть этого раздела не приводит примеры того, как создать конфигурацию для нескольких пользователей одновременно.
 
@@ -343,61 +348,61 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 #### Appearance
 
-##### GTK+ themes and icon themes
+##### Темы GTK+ и иконок
 
-To install a new theme or icon set, add the relevant `~/.local/share/themes` or `~/.local/share/icons` respectively (add to `/usr/share/` instead of `~/.local/share/` for the themes to be available systemwide.) They and other GUI settings can also be defined in `~/.config/gtk-3.0/settings.ini`:
+Чтобы установить новую тему или комплект иконок, переместите их в релевантную директорию(`~/.local/share/themes` или `~/.local/share/icons` соответственно; можете использовать `/usr/share/` вместо `~/.local/share/` для общесистемного доступа.) Настройки интерфейса могут быть заданы в `~/.config/gtk-3.0/settings.ini`:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
 [Settings]
 gtk-theme-name = Adwaita
-# next option is applicable only if selected theme supports it
+# если приложение поддерживает темную тему Adwaita
 gtk-application-prefer-dark-theme = true
-# set font name and dimension
+# название шрифта и его размер
 gtk-font-name = Sans 10
 
 ```
 
-Additional theme locations:
+Дополнительные темы можно установить из:
 
 *   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
 *   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
-*   [GTK+ 3 themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
-*   [Cursor themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
-*   [Icon themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
+*   [GTK+ 3 темы в AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
+*   [Темы курсоров in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
+*   [Темы иконок в AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
-Once installed, they can be selected using the GNOME Tweak Tool or GSettings - see below for GSettings commands:
+После установки они могут быть выбраны посредством GNOME Tweak Tool или GSettings. Смотрите ниже для GSettings:
 
-For the GTK+ theme:
-
-```
-$ gsettings set org.gnome.desktop.interface gtk-theme *theme-name*
+Для темы GTK+:
 
 ```
-
-For the icon theme
-
-```
-$ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
+$ gsettings set org.gnome.desktop.interface gtk-theme *имя-темы*
 
 ```
 
-###### Global dark theme
-
-GNOME will use the Adwaita light theme by default however a dark variant of this theme (called the Global Dark Theme) also exists and can be selected using the Tweak Tool or by editing the GTK+ 3 settings file - see [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Some applications such as Image Viewer (*eog*) use the dark theme by default. It should be noted that the Global Dark Theme only works with GTK+ 3 applications; some GTK+ 3 applications may only have partial support for the Global Dark theme. Qt and GTK+ 2 support for the Global Dark Theme may be added in the future.
-
-##### Window manager themes
-
-The window manager theme (the style of the window titlebars) can be set using the GNOME Tweak Tool or the following GSettings command:
+Для темы иконок:
 
 ```
-$ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
+$ gsettings set org.gnome.desktop.interface icon-theme *имя-темы*
 
 ```
 
-###### Titlebar height
+###### Глобальная темная тема
 
-**Note:** Applying this configuration shrinks the titlebar of the GNOME-terminal and Chromium, but does not appear to affect the Nautilus titlebar height.
+GNOME будет использовать светлую тему Adwaita по умолчанию, однако темная вариация этой темы также существует и может быть выбрана посредством Tweak Tool или путем редактирования конфигурационного файла GTK+ 3 - смотрите [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Некоторые приложения, например Image Viewer (*eog*), уже используют темную тему по умолчанию. Следует отметить, что Глобальная Темная тема работает только с приложениями GTK+ 3; некоторые приложения GTK+ 3 могут иметь лишь частичную поддержку Глобальной Темной Темы. Поддержка Qt и GTK+ 2 может быть добавлена в будущем.
+
+##### Темы оконного менеджера
+
+Тема оконного менеджера (стиль заголовка окна) может быть установлена используя GNOME Tweak Tool или следующей командой GSettings:
+
+```
+$ gsettings set org.gnome.desktop.wm.preferences theme *имя-темы*
+
+```
+
+###### Высота заголовка
+
+**Примечание:** Эта конфигурация сжимает заголовок GNOME-terminal и Chromium, но не влияет на высоту заголовка Nautilus.
  `~/.config/gtk-3.0/gtk.css` 
 ```
 headerbar.default-decoration {
@@ -414,26 +419,26 @@ headerbar.default-decoration button.titlebutton {
 
 ```
 
-See [[2]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) for more information.
+Смотрите [[2]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) для дополнительной информации.
 
-###### Titlebar button order
+###### Порядок кнопок в заголовке
 
-To set the order for the GNOME window manager (Mutter, Metacity):
+Выполните, чтобы задать порядок кнопок (Mutter, Metacity):
 
 ```
 $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
 
 ```
 
-**Tip:** The colon indicates which side of the titlebar the window buttons will appear.
+**Совет:** Двоеточие указывает, с какой стороны заголовка окна будут располагаться кнопки.
 
-###### Hide titlebar when maximized
+###### Скрыть заголовок, когда окно во весь экран
 
-*   [Install](/index.php/Install "Install") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) or [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Maximized windows get the title bar merged into the activity bar, saving precious pixels.
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) или [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Заголовок окон будет перемещен в панель в верхней части экрана, экономя драгоценные пиксели.
 
-*   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Он изменяет стандартные настройки оконного менеджера, так чтобы заголовки окон legacy-приложений скрывались автоматически, когда они развернуты во весь экран или прикреплены к одной из сторон.
 
-*   [Install](/index.php/Install "Install") [maximus](https://aur.archlinux.org/packages/maximus/). To start the application, execute *maximus* from a terminal. When running, the daemon will automatically maximize windows. It will undecorate maximized windows and redecorate them when they are unmaximized. If you do not want all windows to start maximized, run `maximus -m` instead. Note that this will only work with windows decorated by the window manager; applications that use client-side decoration such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") will not be undecorated when maximized.
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [maximus](https://aur.archlinux.org/packages/maximus/). Выполните *maximus* из терминала, чтобы запустить приложение. По запуске демон автоматически разворачивает окна на весь экран. Он изменяет их при развороте во весь экран и возвращает прежний вид по необходимости. Если вы не хотите, чтобы все окна запускались развернутыми на весь экран, запускайте следующий образом - `maximus -m`. Обратите внимание, что это будет работает только с окнами, которые отрисовываются менеджером окон; приложение, использующую собственную отрисовку, например [GNOME Files](/index.php/GNOME_Files "GNOME Files"), не будут изменяться при развороте на весь экран.
 
 ##### GNOME Shell themes
 

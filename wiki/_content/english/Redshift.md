@@ -62,7 +62,7 @@ There are several options to have redshift automatically started:
 
 ### Quick start
 
-**Tip:** [Latlong.net](http://www.latlong.net/) provides a service getting the Latitude and Longitude coordinates.
+**Tip:** You can get the coordinates of a place with [GeoNames.org](http://www.geonames.org/).
 
 To just get it up and running with a basic setup, issue:
 

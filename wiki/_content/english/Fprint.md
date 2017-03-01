@@ -29,7 +29,7 @@ Make sure you have one of the supported finger scanners. You can check if your d
 
 ### Login configuration
 
-**Note:** If you use [GDM](/index.php/GDM "GDM"), the fingerprint-option is already available in the login menu. You can skip this section!
+**Note:** If you use [GDM](/index.php/GDM "GDM"), the fingerprint-option is already available in the login menu (if not add yourself to the `input` group). You can skip this section!
 
 Add `pam_fprintd.so` as *sufficient* to the top of the auth section of `/etc/pam.d/system-local-login`:
 

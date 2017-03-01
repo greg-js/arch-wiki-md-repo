@@ -626,6 +626,8 @@ $ git remote set-url origin git@*address*:*user*/*repo*.git
 
 ```
 
+**Note:** To use pinentry curses for gpg signing make sure to `export GPG_TTY=$(tty)` (alternatively use pinentry-tty) otherwise the signing step will fail if gpg is currently in a locked state (since it can't prompt for pin)
+
 Signed-off-by line append (a name-email signature is added to the commit which is required by some projects):
 
 ```

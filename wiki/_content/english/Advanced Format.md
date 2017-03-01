@@ -47,6 +47,7 @@ The logical sector size is the sector size used for data transfer. This value mu
 | Seagate | ST500DM002 | 500.0 GB | 512 | 4096 |
 | Seagate | ST1000DL002 | 1.0 TB | 512 | 4096 |
 | Seagate | ST1000DM003 | 1.0 TB | 512 | 4096 |
+| Seagate | ST1000DM010 | 1.0 TB | 512 | 4096 |
 | Seagate | ST2000DL003 | 2.0 TB | 512 | 512 |
 | Seagate | ST2000DM001 | 2.0 TB | 512 | 4096 |
 | Seagate | ST3000DM001 | 3.0 TB | 512 | 4096 |

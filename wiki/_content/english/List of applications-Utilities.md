@@ -2,7 +2,7 @@
 
 * * *
 
-[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – **Utilities** – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – **Utilities** – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -11,25 +11,25 @@
     *   [1.2 Mount tools](#Mount_tools)
         *   [1.2.1 Udisks](#Udisks)
     *   [1.3 Basic shell commands](#Basic_shell_commands)
-    *   [1.4 getty](#getty)
-    *   [1.5 Integrated development environments](#Integrated_development_environments)
-    *   [1.6 Build automation](#Build_automation)
-    *   [1.7 Terminal emulators](#Terminal_emulators)
-        *   [1.7.1 VTE-based](#VTE-based)
-        *   [1.7.2 KMS-based](#KMS-based)
-        *   [1.7.3 framebuffer-based](#framebuffer-based)
-    *   [1.8 Files](#Files)
-        *   [1.8.1 File managers](#File_managers)
-            *   [1.8.1.1 Console](#Console)
-            *   [1.8.1.2 Graphical](#Graphical)
-        *   [1.8.2 Trash management](#Trash_management)
-        *   [1.8.3 File synchronization](#File_synchronization)
-        *   [1.8.4 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [1.8.4.1 Console](#Console_2)
-            *   [1.8.4.2 Graphical](#Graphical_2)
-        *   [1.8.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [1.8.6 Batch renamers](#Batch_renamers)
-        *   [1.8.7 Search and replace](#Search_and_replace)
+    *   [1.4 Integrated development environments](#Integrated_development_environments)
+    *   [1.5 Build automation](#Build_automation)
+    *   [1.6 Terminal emulators](#Terminal_emulators)
+        *   [1.6.1 VTE-based](#VTE-based)
+        *   [1.6.2 KMS-based](#KMS-based)
+        *   [1.6.3 framebuffer-based](#framebuffer-based)
+    *   [1.7 Files](#Files)
+        *   [1.7.1 File managers](#File_managers)
+            *   [1.7.1.1 Console](#Console)
+            *   [1.7.1.2 Graphical](#Graphical)
+        *   [1.7.2 Trash management](#Trash_management)
+        *   [1.7.3 File synchronization](#File_synchronization)
+        *   [1.7.4 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [1.7.4.1 Console](#Console_2)
+            *   [1.7.4.2 Graphical](#Graphical_2)
+        *   [1.7.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [1.7.6 Batch renamers](#Batch_renamers)
+        *   [1.7.7 Search and replace](#Search_and_replace)
+    *   [1.8 Databases](#Databases)
     *   [1.9 Disk cleaning](#Disk_cleaning)
     *   [1.10 Disk usage display](#Disk_usage_display)
     *   [1.11 Clock synchronization](#Clock_synchronization)
@@ -107,13 +107,11 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 ### Basic shell commands
 
+see also [getty#Installation](/index.php/Getty#Installation "Getty")
+
 *   **[Core utilities](/index.php/Core_utilities "Core utilities")** — The basic file, shell and text manipulation utilities of the GNU operating system
 
 	[https://www.gnu.org/software/coreutils/coreutils.html](https://www.gnu.org/software/coreutils/coreutils.html) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
-
-### getty
-
-See [getty#Installation](/index.php/Getty#Installation "Getty").
 
 ### Integrated development environments
 
@@ -728,6 +726,20 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 *   **KfileReplace** — GUI for batch processing search and replace operations.
 
 	[https://www.kde.org/applications/utilities/kfilereplace/](https://www.kde.org/applications/utilities/kfilereplace/) || [kdewebdev-kfilereplace](https://www.archlinux.org/packages/?name=kdewebdev-kfilereplace)
+
+### Databases
+
+*   **[MySQL](/index.php/MySQL "MySQL")** — Fast SQL database server, drop-in replacement for MySQL.
+
+	[http://mariadb.org/](http://mariadb.org/) || [mariadb](https://www.archlinux.org/packages/?name=mariadb)
+
+*   **[PostgreSQL](/index.php/PostgreSQL "PostgreSQL")** — A sophisticated object-relational DBMS.
+
+	[http://www.postgresql.org/](http://www.postgresql.org/) || [postgresql](https://www.archlinux.org/packages/?name=postgresql)
+
+*   **[SQLite](/index.php/SQLite "SQLite")** — A C library that implements an SQL database engine.
+
+	[http://www.sqlite.org/](http://www.sqlite.org/) || [sqlite](https://www.archlinux.org/packages/?name=sqlite)
 
 ### Disk cleaning
 

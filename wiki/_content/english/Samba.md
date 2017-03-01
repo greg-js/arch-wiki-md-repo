@@ -284,6 +284,10 @@ To speed up the service on boot, add the `x-systemd.automount` option to the ent
 
 Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`.
 
+**Note:** Make sure the filename corresponds to the mountpoint you want to use.
+
+E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount the share under `/mnt/myshare`. Otherwise the following error might occur: "*systemd[1]: mnt-myshare.mount: `Where=` setting doesn't match unit name. Refusing.*"
+
 `Requires=` replace (if needed) with your [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration").
 
 `What=` path to share

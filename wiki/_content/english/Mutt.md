@@ -256,7 +256,7 @@ Maildir is a generic and standardized format. Almost every MUA is able to handle
 
 ```
 set mbox_type=Maildir
-set folder=$HOME/mail
+set folder=~/mail
 set spoolfile=+/
 set header_cache=~/.cache/mutt
 ```

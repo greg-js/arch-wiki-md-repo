@@ -44,9 +44,9 @@ Copy to each client the `ca.crt`, and their respective crt and key files.
 
 ## Setting up the server
 
-*   Create `/etc/openvpn/myvpnserver.conf` with a content like this:
+*   Create `/etc/openvpn/server/myvpnserver.conf` with a content like this:
 
- `/etc/openvpn/myvpnserver.conf` 
+ `/etc/openvpn/server/myvpnserver.conf` 
 ```
 port *<port>*
 proto tcp
@@ -73,7 +73,7 @@ status /tmp/vpn.status 10
 
 ```
 
-*   Start and, optionally, enable for autostart on boot, the daemon. (In this example, is `openvpn@myvpnserver.service`)
+*   Start and, optionally, enable for autostart on boot, the daemon. (In this example, is `openvpn-server@myvpnserver.service`)
 
 Read [Daemon](/index.php/Daemon "Daemon") for more information.
 
@@ -81,7 +81,7 @@ Read [Daemon](/index.php/Daemon "Daemon") for more information.
 
 *   Create a .conf file for each client like this:
 
- `a-client-conf-file.conf` 
+ `/etc/openvpn/client/a-client-conf-file.conf` 
 ```
 client
 remote *<server>* *<port>*

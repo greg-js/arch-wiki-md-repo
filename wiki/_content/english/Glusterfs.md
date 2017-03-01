@@ -4,9 +4,9 @@
 
 [Install](/index.php/Install "Install") the package [glusterfs](https://www.archlinux.org/packages/?name=glusterfs).
 
-### Filesystem Configuration
+## Configuration
 
-Glusterfs can be setup to run in many different configurations depending operating needs, including disdtributed and replicated. For the example below, a two node replicated server is being created, with nodes gluster1 and gluster2 each have two disks, one containing the OS sda, the other to be shared by glusterfs sdb. Unless stated all setup is carried on gluster1
+Glusterfs can be setup to run in many different configurations depending operating needs, including distributed and replicated. For the example below, a two node replicated server is being created, with nodes gluster1 and gluster2 each have two disks, one containing the OS sda, the other to be shared by glusterfs sdb. Unless stated all setup is carried on gluster1
 
 *   [Start/enable](/index.php/Start/enable "Start/enable") the gluster daemon `glusterd.service` on both servers.
 

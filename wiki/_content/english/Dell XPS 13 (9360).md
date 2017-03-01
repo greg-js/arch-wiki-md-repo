@@ -9,7 +9,7 @@
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
 
-The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October in both a standard edition with Windows installed as well as a Developer Edition with Ubuntu installed. There is no hardware difference between them. Just like the older versions ([Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)")), [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations. This fourth gen model includes Intel's Kaby Lake CPU and configurable with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information it won't be available with LPDDR 2133 MHz RAM.
+The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October in both a standard edition with Windows installed as well as a Developer Edition with Ubuntu installed. There is no hardware difference between them. Just like the older versions ([Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)") and [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations. This fourth gen model includes Intel's Kaby Lake CPU and configurable with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information it won't be available with LPDDR 2133 MHz RAM.
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
@@ -28,6 +28,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
     *   [6.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
     *   [6.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
+    *   [6.3 Thunderbolt Firmware updates](#Thunderbolt_Firmware_updates)
 *   [7 SATA controller](#SATA_controller)
 *   [8 Touchpad](#Touchpad)
     *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
@@ -64,46 +65,39 @@ The video should work with the `i915` driver of the current [linux](https://www.
 For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"))
 
 ```
-modeset=1
+modeset=1 enable_rc6=1 enable_fbc=1 
 
 ```
 
-For modesetting, wasn't default.
-
-```
-enable_rc6=1 
-
-```
-
-Works fine, also gives some decent powersaving. Higher levels than 1 do not exist and get changed by the system to 1.
-
-```
-enable_fbc=1 
-
-```
-
-Didn't change so much for energy saving, but helped a lot for the coil whine issue
+The first argument is to enable modesetting if it's not set by default. The secound argument is needed to active power-saving C-States. Higher values than 1 are not available for kaby lake CPUs. The third argument is for frame buffer compression power savings. These values should work well!
 
 ```
 enable_guc_loading=1 enable_guc_submission=1
 
 ```
 
-Update the GuC binary blob, you have to download the firmware ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)) and add in manually to '/usr/lib/firmware/i915/' at the moment.
+These arguments are used to enable GuC updates. GuC is a small propietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the offical repository.
 
 ```
 enable_huc=1
 
 ```
 
-The binary is allready released, but vanilla kernel doesn't try to load it at the moment. Maybe working for kernel 4.9.9 or 4.9.10.
+HuC is also an binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The vanilla kernel doesn't load it at the moment! Patches to load HuC have to find their way into the i915 kernel graphic stack before this option will work. Maybe working for kernel 4.10 or 4.11.
 
 ```
-enable_psr=2
+enable_psr=1 disable_power_well=0 OR enable_psr=2 
 
 ```
 
-Enalbe psr level 2 is working while level 1 has a lot of problems, setting it on level 2 doens't give much energy saving at the moment. It's said that 'disable_power_well=0 enable_psr=1' is working in this combination.
+Enalbe psr level 2 is working, while level 1 has a lot of problems. Setting it on level 2 doens't give much energy saving at the moment. It's said that 'disable_power_well=0 enable_psr=1' is working in this combination.
+
+```
+NOT WORKING: semaphores=1 
+
+```
+
+The semaphore option is NOT working for kaby lake CPUs and won't enable even if you set the option to 1.
 
 ### Blank screen issue after booting
 
@@ -135,6 +129,13 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Aukey USB C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
+| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
+| [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
+| [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
+
+### Thunderbolt Firmware updates
+
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories, the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware, but unfortunately, does not provide the updated payload files. These can be extracted from the Windows firmware update files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
 
 ## SATA controller
 
@@ -193,6 +194,8 @@ You can also change the brightness (0-2) by editing the following file. This is 
 ## Firmware Updates
 
 Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux"). Please note if you have used a bind mount partition for /boot, you will not be able to use the fwupd utility; Instead format a USB as FAT32 and put the bios update .exe on. Reboot into the one-time-boot menu and update the BIOS flash through there.
+
+Alternatively, the BIOS update can be downloaded from the Dell website, and placed in a location accessible to the firmware. This could be the '/boot' folder, or a FAT32 formatted USB stick. Then restart your laptop and hit F12 while starting. In the boot menu choose firmware update and select the new file!
 
 ## Troubleshooting
 

@@ -459,7 +459,7 @@ Increasing the virtual memory dirty writeback time helps to aggregate disk I/O t
 
 To do the same for journal commits on supported filesystems (e.g. ext4, btrfs...), use `commit=60` as a option in [fstab](/index.php/Fstab "Fstab").
 
-See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for other parameters affecting I/O performance and power saving.
+Note that this value is modified as a side effect of the Laptop Mode setting below. See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for other parameters affecting I/O performance and power saving.
 
 #### Laptop Mode
 

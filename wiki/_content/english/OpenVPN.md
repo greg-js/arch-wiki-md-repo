@@ -92,7 +92,7 @@ When setting up an OpenVPN server, users need to create a [Public Key Infrastruc
 
 ## A basic L3 IP routing configuration
 
-**Note:** Unless otherwise explicitly stated, the rest of this article assumes a bais L3 IP routing configuration.
+**Note:** Unless otherwise explicitly stated, the rest of this article assumes a basic L3 IP routing configuration.
 
 OpenVPN is an extremely versatile piece of software and many configurations are possible, in fact machines can be both "servers" and "clients", blurring the distinction between server and client.
 

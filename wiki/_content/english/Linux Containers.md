@@ -252,6 +252,13 @@ To login into a container:
 
 ```
 
+If when login you get pts/0 and lxc/tty1 use:
+
+```
+# lxc-console -n CONTAINER_NAME -t 0
+
+```
+
 Once logged, treat the container like any other linux system, set the root password, create users, install packages, etc.
 
 To attach to a container:

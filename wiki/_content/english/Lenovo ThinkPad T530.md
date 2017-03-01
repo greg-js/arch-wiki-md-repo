@@ -8,8 +8,9 @@
 *   [3 Input](#Input)
     *   [3.1 Hotkeys (Media Keys)](#Hotkeys_.28Media_Keys.29)
 *   [4 Networking](#Networking)
-    *   [4.1 Ericsson H5321 GW Mobile Broadband modem](#Ericsson_H5321_GW_Mobile_Broadband_modem)
-*   [5 See also](#See_also)
+*   [5 Backlight Brightness with the Nvidia driver](#Backlight_Brightness_with_the_Nvidia_driver)
+    *   [5.1 Ericsson H5321 GW Mobile Broadband modem](#Ericsson_H5321_GW_Mobile_Broadband_modem)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -40,7 +41,7 @@ When in discrete graphics mode, The backlight does not work while in UEFI Mode. 
 Media keys that work out of the box:
 
 *   Wireless On/Off
-*   Backlight Brightness (If you use the nVidia driver, configuration will be needed - see [NVIDIA](/index.php/NVIDIA "NVIDIA"))
+*   Backlight Brightness (If you use the nVidia driver, configuration will be needed - see below)
 *   Thinklight / Keyboard Backlighting
 *   Sleep
 
@@ -60,6 +61,21 @@ See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") 
 ## Networking
 
 Both the Ethernet and wireless are supported by Arch out of the box. All the available Intel wireless cards are very well supported, including good powersaving. The Lenovo branded (Realtek) card does not work as well and does not support powersaving on Linux.
+
+## Backlight Brightness with the Nvidia driver
+
+When using the proprietary nvidia driver, it needs to be instructed to take care of brightness control.
+
+ `/usr/share/X11/xorg.conf.d/10-nvidia-brightness.conf` 
+```
+Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "GF108M [NVS 5400M]"
+    Option         "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+```
 
 ### Ericsson H5321 GW Mobile Broadband modem
 
