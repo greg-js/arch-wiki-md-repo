@@ -1,5 +1,5 @@
 | [Laptop main page](/index.php/Laptop "Laptop") |
-| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - **Toshiba** - [Other](/index.php/Laptop/Other "Laptop/Other") |
+| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - **Toshiba** - [Other](/index.php/Laptop/Other "Laptop/Other") |
 
 ## Model list
 
@@ -7,6 +7,13 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Satellite C650-160 | 2017.2 | Intel Corporation Mobile 4 Series Chipset Integrated Graphics Controller support with xf86-video-intel driver | sound works with PulseAudio - volume buttons work | Qualcomm Atheros AR8152 v1.1 works | Qualcomm Atheros AR9285 Wireless Network Adapter (PCI-Express) works with linux-libre | not tested | Suspend to
+RAM: works
+Disk: NA
+Battery: 3hr
+Dimming of display: works
+Frequency scaling of CPU: not tested | NA | Chicony USB 2.0 Camera works with [Linux UVC driver](http://linux-uvc.berlios.de).
+Card reader: not tested | Kernel 4.9.11-gnu-1 linux-libre |
 | Satellite U405-S2856 | current | Intel GMA X3100 3D support with xf86-video-intel driver | sound works with snd_hda_intel and [ALSA](/index.php/ALSA "ALSA"). Volume dial requires xorg configuration | Marvell 88E8040 works with sky2 kernel module | Atheros AR928X works with ma80211 and ath9k | not tested | Suspend to
 RAM: works
 Disk: NA

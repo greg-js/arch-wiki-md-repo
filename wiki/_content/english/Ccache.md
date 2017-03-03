@@ -9,9 +9,10 @@
     *   [2.3 Enable with colorgcc](#Enable_with_colorgcc)
 *   [3 Misc](#Misc)
     *   [3.1 Change the cache directory](#Change_the_cache_directory)
-    *   [3.2 Disable the cache via environment](#Disable_the_cache_via_environment)
-    *   [3.3 CLI](#CLI)
-    *   [3.4 makechrootpkg](#makechrootpkg)
+    *   [3.2 Set maximum cache size](#Set_maximum_cache_size)
+    *   [3.3 Disable the cache via environment](#Disable_the_cache_via_environment)
+    *   [3.4 CLI](#CLI)
+    *   [3.5 makechrootpkg](#makechrootpkg)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -19,6 +20,12 @@
 [Install](/index.php/Install "Install") the [ccache](https://www.archlinux.org/packages/?name=ccache) package.
 
 ## Configuration
+
+The default behavior can be overridden by configuration files. Priority of the configuration settings is as follows (where 1 is highest):
+
+1.  Environment variables
+2.  Cache-specific configuration file (`$HOME/.ccache/ccache.conf`)
+3.  System-wide configuration file (`/etc/ccache.conf`)
 
 ### Enable ccache for makepkg
 
@@ -70,16 +77,22 @@ gcj:/usr/bin/gcj
 
 You may want to move the cache directory to a faster location than the default `~/.ccache` directory, like an SSD or a [ramdisk](/index.php/Ramdisk "Ramdisk").
 
-To change the cache location:
+To change the cache location only in the current shell:
 
 ```
 $ export CCACHE_DIR=/ramdisk/ccache
 
 ```
 
+### Set maximum cache size
+
+The default value is 5 gigabyte, however it is possible to use a lower or even a higher value:
+
+ `/home/<user>/.ccache/ccache.conf`  `max_size = 2.0G` 
+
 ### Disable the cache via environment
 
-If you wish to disable CCache only in the current shell you can set:
+If you wish to disable CCache only in the current shell:
 
 ```
 $ export CCACHE_DISABLE=1

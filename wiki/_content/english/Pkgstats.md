@@ -1,4 +1,4 @@
-pkgstats sends a list of all installed packages, [kernel modules](https://www.archlinux.org/news/pkgstats-now-collects-modules-usage/), the architecture and the mirror you are using to the Arch Linux project. This information is anonymous and cannot be used to identify the user, but it will help Arch developers prioritize their efforts.
+pkgstats sends a list of all installed packages, [kernel modules](https://www.archlinux.org/news/pkgstats-now-collects-modules-usage/), the architecture and the mirror you are using to the Arch Linux project. This information is anonymous and cannot be used to identify the user, but it will help Arch developers prioritize their efforts ([source code](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/pkgstats)).
 
 ## Installation
 

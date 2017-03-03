@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Opera](/index.php/Opera "Opera") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-3-1，点击[这里](https://wiki.archlinux.org/index.php?title=Opera&diff=0&oldid=469197)可以查看翻译后英文页面的改动。
+
 [Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威[Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
 
 ## Contents
@@ -14,18 +16,18 @@
     *   [4.3 标签模式](#.E6.A0.87.E7.AD.BE.E6.A8.A1.E5.BC.8F)
     *   [4.4 字体](#.E5.AD.97.E4.BD.93)
 *   [5 私有标签](#.E7.A7.81.E6.9C.89.E6.A0.87.E7.AD.BE)
-*   [6 辅助提示](#.E8.BE.85.E5.8A.A9.E6.8F.90.E7.A4.BA)
+*   [6 辅助功能提示](#.E8.BE.85.E5.8A.A9.E5.8A.9F.E8.83.BD.E6.8F.90.E7.A4.BA)
     *   [6.1 禁用文本选择](#.E7.A6.81.E7.94.A8.E6.96.87.E6.9C.AC.E9.80.89.E6.8B.A9)
-    *   [6.2 Grab and scroll mode](#Grab_and_scroll_mode)
-    *   [6.3 Long pressing a link opens it in a background tab (extension)](#Long_pressing_a_link_opens_it_in_a_background_tab_.28extension.29)
-    *   [6.4 虚拟屏幕键盘 (扩展)](#.E8.99.9A.E6.8B.9F.E5.B1.8F.E5.B9.95.E9.94.AE.E7.9B.98_.28.E6.89.A9.E5.B1.95.29)
+    *   [6.2 抓取和滚动模式](#.E6.8A.93.E5.8F.96.E5.92.8C.E6.BB.9A.E5.8A.A8.E6.A8.A1.E5.BC.8F)
+    *   [6.3 长按链接会在后台标签（扩展程序）中打开它](#.E9.95.BF.E6.8C.89.E9.93.BE.E6.8E.A5.E4.BC.9A.E5.9C.A8.E5.90.8E.E5.8F.B0.E6.A0.87.E7.AD.BE.EF.BC.88.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F.EF.BC.89.E4.B8.AD.E6.89.93.E5.BC.80.E5.AE.83)
+    *   [6.4 虚拟屏幕键盘 (扩展程序)](#.E8.99.9A.E6.8B.9F.E5.B1.8F.E5.B9.95.E9.94.AE.E7.9B.98_.28.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F.29)
 *   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [7.1 NVIDIA 显卡上出现条纹](#NVIDIA_.E6.98.BE.E5.8D.A1.E4.B8.8A.E5.87.BA.E7.8E.B0.E6.9D.A1.E7.BA.B9)
     *   [7.2 卧式鼠标滚轮滚动](#.E5.8D.A7.E5.BC.8F.E9.BC.A0.E6.A0.87.E6.BB.9A.E8.BD.AE.E6.BB.9A.E5.8A.A8)
     *   [7.3 启动外部浏览器](#.E5.90.AF.E5.8A.A8.E5.A4.96.E9.83.A8.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [7.4 Opera crashes when starting or closing with GTK+ 2.24.7+](#Opera_crashes_when_starting_or_closing_with_GTK.2B_2.24.7.2B)
-    *   [7.5 Unreadable input fields and address bar with dark GTK+ themes](#Unreadable_input_fields_and_address_bar_with_dark_GTK.2B_themes)
-*   [8 See Also](#See_Also)
+    *   [7.4 使用GTK + 2.24.7+开始或关闭时，Opera崩溃](#.E4.BD.BF.E7.94.A8GTK_.2B_2.24.7.2B.E5.BC.80.E5.A7.8B.E6.88.96.E5.85.B3.E9.97.AD.E6.97.B6.EF.BC.8COpera.E5.B4.A9.E6.BA.83)
+    *   [7.5 带有深色GTK +主题的不可读输入字段和地址栏](#.E5.B8.A6.E6.9C.89.E6.B7.B1.E8.89.B2GTK_.2B.E4.B8.BB.E9.A2.98.E7.9A.84.E4.B8.8D.E5.8F.AF.E8.AF.BB.E8.BE.93.E5.85.A5.E5.AD.97.E6.AE.B5.E5.92.8C.E5.9C.B0.E5.9D.80.E6.A0.8F)
+*   [8 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -51,21 +53,21 @@ Opera 可以在 [官方软件仓库安装](/index.php/Official_repositories "Off
 
 ### 禁用功能和服务
 
-最大化应用程序性能的关键之一，是通过[opera:config Preferences Editor.](http://www.opera.com/browser/tutorials/personalize/behavior/)禁用不需要的功能和服务。
+如要最大化应用程序性能，可以通过[opera:config Preferences Editor.](http://www.opera.com/browser/tutorials/personalize/behavior/)禁用不需要的功能和服务。
 
 一些不需要的功能：
 
-*   **Systray Icon**: uncheck *Show Tray Icon* under opera:config#UserPrefs.
-*   **BitTorrent**: uncheck *Enable* under opera:config#BitTorrent.
-*   **Geolocation**: uncheck *Enable geolocation* under opera:config#Geolocation.
-*   **Multimedia**: unckeck desired options under opera:config#Multimedia.
-*   **Web Server**: uncheck *Enable* under opera:config#Web Server.
+*   **Systray Icon**: 在 opera:config#UserPrefs 中取消选中 *Show Tray Icon*.
+*   **BitTorrent**: 在 opera:config#BitTorrent 中取消选中 *Enable* .
+*   **Geolocation**: 在 opera:config#Geolocation 中取消选中 *Enable geolocation* .
+*   **Multimedia**: 在 opera:config#Multimedia 中取消选中 desired options.
+*   **Web Server**: 在 opera:config#Web Server 中取消选中 *Enable* .
 
 为了更容易找到这些选项，只需在地址栏中输入相应的路径（无空格）即可。 例如 `opera:config#UserPrefs|ShowTrayIcon`或者使用内置搜索。
 
 ### Profile in tmpfs
 
-将浏览器配置文件重新定位到 [tmpfs](/index.php/Tmpfs "Tmpfs")文件系统，包括 `/ tmp`，以改进应用程序响应，因为整个配置文件现在都存储在RAM中。另一个好处是减少了磁盘读写操作，其于SSD最为有利。
+将浏览器配置文件重新定位到 [tmpfs](/index.php/Tmpfs "Tmpfs")文件系统，包括 `/tmp`，以改进应用程序响应，因为整个配置文件现在都存储在RAM中。另一个好处是减少了磁盘读写操作，其于SSD最为有利。
 
 目前有两种方法：
 
@@ -81,23 +83,23 @@ $ opera -pd /tmp/opera
 
 ### 主题
 
-虽然Opera是跨平台的，但是它可以在不同版本的 Linux 桌面环境中工作得很好。
+虽然Opera是跨平台的，但它可以很好地集成到各种Linux桌面环境中。
 
 	Qt
 
-	安装并通过应用`qtconfig`来使用你的 Qt，这样可以使你的菜单更加丰富。
+	要使菜单外观与Qt更好地融合，安装并通过`qtconfig`应用您想要的Qt主题。
 
 	KDE
 
-	你能够安装一个像[这样](http://my.opera.com/community/customize/skins/info/?id=8141)的主题使你的 Opera 使用KDE的图标。
+	要使Opera使用KDE图标，您可以安装一个KDE主题，比如[这个](https://addons.opera.com/en/themes/details/aire-kde/?display=en)。
 
 	GTK+
 
-	一个很棒的使用 Tango 图标的主题[clicked here](http://my.opera.com/community/customize/skins/info/?id=3465).
+	可以在[这里](http://my.opera.com/community/customize/skins/info/?id=3465).找到一个使用Tango图标的GTK +皮肤。
 
 ### 标题栏
 
-在标签栏点击鼠标右键取消选中“显示边框”可以隐藏标题栏。
+通过右键单击选项卡栏，然后取消选中“显示边框”，可以隐藏标题栏。
 
 ### 标签模式
 
@@ -107,85 +109,85 @@ Opera原生支持标签级联和平铺模式上。可以通过激活“主”工
 
 可以在 *Settings > Preferences... > Advanced > Fonts*下配置字体.
 
-如果在第一次运行Opera之前已经安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)软件包。不管是由本地 GTK+ 选项[GNOME](/index.php/GNOME "GNOME")还是 KDE 字体管理器指定，Opera都将使用默认字体配置。要强制已经安装的Opera使用系统设置选项：
+如果在第一次运行Opera之前已经安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)软件包，Opera将默认使用这些字体，而不管本地GTK +选项，GNOME或KDE字体管理指定什么。如要强制已经安装的Opera使用系统设置选项：
 
-*   Close all running instances of Opera.
-*   Un-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package.
-*   Move the existing profile folder: `mv -i ~/.opera ~/.opera.bak`
-*   Run an instance of Opera and verify that your font manager settings have been applied.
-*   Restore bookmarks and desired filter files from `~/.opera.bak` to `~/.opera` except for the `operaprefs.ini` file.
-*   Re-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package, if desired.
+*   关闭所有正在运行的Opera实例。
+*   卸载 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) 软件包.
+*   移动现有配置文件文件夹： `mv -i ~/.opera ~/.opera.bak`
+*   打开Opera，并验证您的字体管理器设置是否已应用。
+*   将`~/.opera.bak` 中书签和所需的过滤器文件还原至 `~/.opera`， `operaprefs.ini` 文件除外.
+*   如果需要，请重新安装 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) 软件包.
 
-**Note:** If no text except numbers is showing on some of the webpages that might be a problem with the fonts. A known issue that causes this problem is the *helvetica* pfb postscript fonts.
+**Note:** 如果除了数字之外没有文本显示在某些网页上，这可能是字体的问题。 导致这个问题的一个已知问题是 *helvetica* pfb postscript字体。
 
 ## 私有标签
 
-如果你要浏览你访问过却没有留下明显痕迹的网站节点，你可以使用私有标签。当你关闭私有标签的时候，下面相关的数据将被删除：
+要浏览而不留下您访问的网站的明显痕迹，您可以使用私有标签。关闭私有标签时，将删除与该标签相关的以下数据：
 
 *   Cache
 *   Cookies
 *   History
 *   Logins
 
-在 [--incognito option](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=95464) Chrome/[Chromium](/index.php/Chromium "Chromium")和 [PrivateBrowsing](https://wiki.mozilla.org/PrivateBrowsing) [Firefox](/index.php/Firefox "Firefox")这是很相似的.
+这与 Chrome/[Chromium](/index.php/Chromium "Chromium") 中的 [--incognito option](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=95464) 和 [Firefox](/index.php/Firefox "Firefox") 中的 [PrivateBrowsing](https://wiki.mozilla.org/PrivateBrowsing) 很相似.
 
-使用命令行去打开一个私有标签：
+要从命令行打开新的私有标签，请使用：
 
 ```
 $ opera -newprivatetab
 
 ```
 
-为了确保整个会话持续时间只有私有标签使用：
+要确保在整个浏览会话期间只使用私有标签页：
 
-*   Set *Settings > Preferences... > General > Startup > Start without open tabs*.
-*   Clear any entries in *Settings > Preferences... > General > Home page option*.
-*   Enable *Settings > Preferences... > Advanced > Tabs > Additional tab options... > Allow windows with no tabs*.
+*   设置 *Settings > Preferences... > General > Startup > Start without open tabs*.
+*   清除 *Settings > Preferences... > General > Home page option* 中的所有条目.
+*   启用 *Settings > Preferences... > Advanced > Tabs > Additional tab options... > Allow windows with no tabs*.
 
-当你已经Opera的时候，你想打开一个私有标签，你能按 `Ctrl+Shift+N` 或者查看 *Menu > New Tabs and Windows > New Private Window*. 随后打开的所有标签也是私有的。
+要在已经运行Opera时打开一个新窗口进行隐身浏览，您只需按 `Ctrl+Shift+N` 或通过*Menu > New Tabs and Windows > New Private Window*新建私有窗口。所有后续打开的标签也是私有的。
 
-## 辅助提示
+## 辅助功能提示
 
 ### 禁用文本选择
 
-在Opera上可以禁用文本选择。然而，JavaScript的文本选择将一直工作(例如 in forms, etc.). 通过以下方法设置：
+在Opera中可以禁用文本选择。 但是，通过JavaScript的文本选择仍然可以工作（例如表单，等等）。可以通过以下方法设置：
 
 ```
 opera:config#System|DisableTextSelect
 
 ```
 
-### Grab and scroll mode
+### 抓取和滚动模式
 
-Besides setting text selection off, grab and scroll mode makes page scrolling possible with mouse dragging. It is very useful, especially when you have a touchscreen. Copy and paste the link bellow to get to the mentioned setting.
+除了关闭文本选择，抓取和滚动模式使鼠标拖动可以进行页面滚动。 这是非常有用的，特别是当你有一个触摸屏时。复制并粘贴下面的链接即可访问上述设置。
 
 ```
 opera:config#UserPrefs|ScrollIsPan
 
 ```
 
-It is also possible to change this setting on the fly by dragging and dropping the appropriate Opera button into a toolbar. The button can be found in *Menu > Appearance > Buttons > Browser View*.
+还可以通过将适当的Opera按钮拖放到工具栏中来即时更改此设置。该按钮可以在 *Menu > Appearance > Buttons > Browser View* 中找到。
 
-### Long pressing a link opens it in a background tab (extension)
+### 长按链接会在后台标签（扩展程序）中打开它
 
-It is possible to open up any long-clicked link in a new background tab by installing [this](https://addons.opera.com/en/addons/extensions/details/open-in-background-with-long-press/) extension.
+可以通过安装[这个](https://addons.opera.com/en/addons/extensions/details/open-in-background-with-long-press/)扩展程序在新的后台标签中打开任何长按的链接。
 
-### 虚拟屏幕键盘 (扩展)
+### 虚拟屏幕键盘 (扩展程序)
 
-有一个允许使用虚拟屏幕键盘的扩展。可以在 [here](https://addons.opera.com/en/addons/extensions/details/virtual-keyboard/)上找到更进一步的细节和安装链接。
+有一个允许使用虚拟屏幕键盘的扩展。可以在 [这里](https://addons.opera.com/en/addons/extensions/details/virtual-keyboard/)找到更多详细信息和安装链接。
 
 ## 故障排除
 
 ### NVIDIA 显卡上出现条纹
 
-运行下面的命令：
+运行以下命令：
 
 ```
 $ nvidia-settings -a InitialPixmapPlacement=2
 
 ```
 
-在某些计算机上， [http://helion.pl](http://helion.pl) 运行及其缓慢，使它成为一个完美的测试节点。
+在某些计算机上， 如果没有运行以上命令，[[1]](http://helion.pl) 运行会极其缓慢，使它成为一个完美的测试网站。
 
 ### 卧式鼠标滚轮滚动
 
@@ -201,11 +203,11 @@ or
 
 ### 启动外部浏览器
 
-如果Opera不能很好的显示网站，一个解决方案是在外部浏览器中显示当前显示的网页。
+如果Opera不能很好的显示网站，一个解决方案是在外部浏览器中打开当前显示的网页。
 
-**Note:** The following method appears to be deprecated in favor of the built-in `Open With` menu accessed via the right mouse button.
+**提示：** 以下方法似乎已被弃用，取而代之的方法是通过鼠标右键访问内置 `Open With` 菜单。
 
-*   在`$HOME/.opera/toolbar/standard_toolbar.ini`中设置下面的行`[Site Navigation Toolbar.content]`:
+*   在`$HOME/.opera/toolbar/standard_toolbar.ini`中，设置 `[Site Navigation Toolbar.content]` 的下一行为:
 
 ```
 Button0, "Chromium"="Execute program, "chromium, "%u", , "Chromium""
@@ -219,31 +221,31 @@ Button0, "Firefox"="Execute program, "firefox", "%u", , "Firefox""
 
 ```
 
-*   任意数量的命令行选项可以被包括在字符串中:
+*   在字符串中可以包括任意数量的命令行选项:
 
 ```
 Button0, "Chromium"="Execute program, "chromium --block-nonsandboxed-plugins --disable-java --incognito --safe-plugins --start-maximized --user-data-dir=/tmp/.chromium", "%u", , "Chromium""
 
 ```
 
-### Opera crashes when starting or closing with GTK+ 2.24.7+
+### 使用GTK + 2.24.7+开始或关闭时，Opera崩溃
 
-If this crash occurs, you can work around it by changing the *DialogToolkit* option to 4:
+如果发生此崩溃，您可以通过将 *DialogToolkit* 选项更改为4来解决此问题:
 
 ```
 opera:config#FileSelector|DialogToolkit
 
 ```
 
-This will disable GTK+ styling support and hence avoid the issue.
+这将禁用GTK +样式支持，从而避免该问题。
 
-### Unreadable input fields and address bar with dark GTK+ themes
+### 带有深色GTK +主题的不可读输入字段和地址栏
 
-When using a dark GTK theme, one might encounter Opera address bar and Internet pages with unreadable input and text fields (e.g. Amazon can have black text on black text field background). This can happen because the site only sets either background or text color, and Opera takes the other one from the theme.
+当使用黑色GTK主题时，可能遇到Opera地址栏和具有不可读输入和文本字段的页面（例如，Amazon可以在黑色文本字段背景上具有黑色文本）。这可能是因为网站仅设置背景或文本颜色其中之一，而Opera从主题中获取另一个。
 
-Using an installed clear theme and a command help to work around the problem: `env GTK2_RC_FILES=/usr/share/themes/<light-theme-name/gtk-2.0/gtkrc opera`
+使用安装的全新主题和命令来解决这个问题： `env GTK2_RC_FILES=/usr/share/themes/<light-theme-name/gtk-2.0/gtkrc opera`
 
-to turn it as default, use a prefered text editor and edit the file `/usr/bin/opera`. e.g. using Opera 12.14:
+要将其设为默认值，请使用首选的文本编辑器编辑文件 `/usr/bin/opera`. 例如， 使用 Opera 12.14:
 
 ```
 sudo gedit /usr/bin/opera
@@ -255,7 +257,7 @@ exec /usr/lib/opera/opera "$@"
 
 ```
 
-edit the file and follow the example changing to...
+编辑文件并按照示例更改为...
 
 ```
 /usr/bin/opera
@@ -267,9 +269,9 @@ env GTK2_RC_FILES=/usr/share/themes/Clearlooks/gtk-2.0/gtkrc /usr/lib/opera/oper
 
 ```
 
-this will make the browser use a clear theme that you set in the file `/usr/bin/opera` that was used in the above example the theme "Clearlooks" and the problems will be solved.
+这将使浏览器使用您在上面“Clearlooks”文件 `/usr/bin/opera` 中设置的全新主题，如此问题将得以解决。
 
-## See Also
+## 参见
 
 *   [Opera Wiki](http://operawiki.info/Opera)
 *   [Opera Knowledge Base](http://www.opera.com/support/kb/)

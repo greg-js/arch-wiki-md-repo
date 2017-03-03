@@ -47,6 +47,10 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 
 	[wikipedia:GNOME Speech](https://en.wikipedia.org/wiki/GNOME_Speech "wikipedia:GNOME Speech") || [gnome-speech](https://www.archlinux.org/packages/?name=gnome-speech)
 
+*   **Jovie** — KDE Text To Speech Daemon.
+
+	[https://userbase.kde.org/Jovie](https://userbase.kde.org/Jovie) || [kdeaccessibility-jovie](https://www.archlinux.org/packages/?name=kdeaccessibility-jovie)
+
 *   **[MBROLA](/index.php/Mbrola "Mbrola")** — Non-free phonemes-to-audio program which supports more than 70 languages.
 
 	[http://tcts.fpms.ac.be/synthesis/mbrola.html](http://tcts.fpms.ac.be/synthesis/mbrola.html) || [mbrola](https://aur.archlinux.org/packages/mbrola/)
@@ -55,13 +59,17 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 
 	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
 
+*   **Orca** — Screen reader for individuals who are blind or visually impaired
+
+	[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)
+
+*   **[Simple Orca Plugin System](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")** — Plug-in extension for the Orca screen reader
+
+	[https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php) || [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/)
+
 *   **Speech Dispatcher** — Common interface to speech synthesis. It has backends for eSpeak, Festival, and a few other speech synthesizers.
 
 	[http://www.freebsoft.org/speechd](http://www.freebsoft.org/speechd) || [speech-dispatcher](https://www.archlinux.org/packages/?name=speech-dispatcher)
-
-*   **Jovie** — KDE Text To Speech Daemon.
-
-	[https://userbase.kde.org/Jovie](https://userbase.kde.org/Jovie) || [kdeaccessibility-jovie](https://www.archlinux.org/packages/?name=kdeaccessibility-jovie)
 
 ## List of voiced commands applications
 

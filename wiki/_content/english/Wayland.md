@@ -361,10 +361,10 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### gparted
 
-(20161229) gparted wants to run as root, before starting it allow all local users to display applications on your desktop by typing in a command line:
+gparted wants to run as root. Before starting it, allow root user to display applications on your desktop by typing the following in a command line. Refer [GNOME bug 772875](https://bugzilla.gnome.org//show_bug.cgi?id=772875).
 
 ```
- xhost +local:
+ xhost si:localuser:root
 
 ```
 

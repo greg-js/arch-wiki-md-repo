@@ -1,4 +1,4 @@
-From [https://en.wikipedia.org/wiki/3d_mouse#3D_mice](https://en.wikipedia.org/wiki/3d_mouse#3D_mice):
+From [wikipedia:3d mouse#3D mice](https://en.wikipedia.org/wiki/3d_mouse#3D_mice "wikipedia:3d mouse"):
 
 	Also known as bats, flying mice, or wands, these devices generally function through ultrasound and provide at least three degrees of freedom. Probably the best known example would be 3DConnexion/Logitech's SpaceMouse from the early 1990s.
 
@@ -13,7 +13,7 @@ For more information: [http://www.3dconnexion.com/products/what-is-a-3d-mouse.ht
     *   [2.1 Blender with spacenav support](#Blender_with_spacenav_support)
 *   [3 See also](#See_also)
 
-### Proprietary drivers
+## Proprietary drivers
 
 1\. Plug your 3D mouse into your USB port. Use `lsusb` to check if it was recognised
 
@@ -161,7 +161,7 @@ $> tar xfz 3dxware-linux-v1-5-2.i386.tar.gz xcube
 $> ./xcube
 ```
 
-### Open Source Drivers
+## Open Source Drivers
 
 There exists also an open source driver for 3Dconnexion devices maintained by the spacenav project. Unfortunately the list of supported applications is very short. Actually there is only one major software supporting the spacenav driver, namely the 3D creation suite Blender. For it to work three things must be fulfilled
 
@@ -176,7 +176,7 @@ $> grep 3Dconnexion /proc/bus/input/devices
 N: Name="3Dconnexion SpaceNavigator"
 ```
 
-For the second point install [libspnav](https://www.archlinux.org/packages/?name=libspnav) and [spacenavd](https://aur.archlinux.org/packages/spacenavd/) from AUR. For testing it's a good idea to start the daemon on foreground mode. The output should look similar to this:
+For the second point install [libspnav](https://www.archlinux.org/packages/?name=libspnav) and [spacenavd](https://aur.archlinux.org/packages/spacenavd/) from AUR. For testing it is a good idea to start the daemon on foreground mode. The output should look similar to this:
 
 ```
 $> sudo spacenavd -v -d
@@ -207,7 +207,7 @@ WantedBy=multi-user.target
 
 Now everything is up and running and every supported application should be able to use the 3D Mouse.
 
-#### Blender with spacenav support
+### Blender with spacenav support
 
 The [blender](https://www.archlinux.org/packages/?name=blender) package in the community repository is now compiled with spacenav support by default.
 

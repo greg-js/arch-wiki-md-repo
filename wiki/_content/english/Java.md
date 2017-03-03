@@ -318,7 +318,7 @@ Some Java programs insist on using the cross platform Metal look and feel. In so
 
 `swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
 
-**Note:** Forcing Java to use GTK may break some applications. Currently JRE/JDK (as of 8u60) is linked against GTK2 while many desktop applications start using GTK3\. If a GTK3 app has Java plugins with GUI, the app is likely to crash when opening the Java GUI, as mixing GTK2 and GTK3 in the same process is not supported. Libreoffice 5.0 is an example for this.
+**Note:** Forcing Java to use GTK may break some applications. The JRE/JDK is linked against GTK2 while many desktop applications use GTK3\. If a GTK3 app has Java plugins with GUI, the app is likely to crash when opening the Java GUI, as mixing GTK2 and GTK3 in the same process is not supported. Libreoffice 5.0 is an example of this.
 
 ### Better 2D performance
 

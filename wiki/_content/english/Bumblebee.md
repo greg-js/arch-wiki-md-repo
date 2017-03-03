@@ -66,8 +66,8 @@ Before installing Bumblebee, check your BIOS and activate Optimus (older laptops
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
-*   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) - Install appropriate NVIDIA driver. For more information read [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
+*   Optionally install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
 
 For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applications support on 64-bit machines, install:
 

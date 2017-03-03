@@ -48,7 +48,7 @@ This article is not meant to be an exhaustive setup guide and assumes that the r
 
 The Raspberry Pi is an ARM-based device and therefore needs binaries compiled for this architecture. These binaries are provided by the [Arch Linux ARM project](http://archlinuxarm.org/about) which ports Arch Linux to ARM-based devices. They also have a separate community and forum on their website, while original forum does *not* support ARM specific issues. With the introduction of the Raspberry Pi 2 the packages needed now depend on which architecture the devices has:
 
-*   ARMv6 (BCM2835): Raspberry Pi Model A, A+, B, B+, Zero
+*   ARMv6 (BCM2835): Raspberry Pi Model A, A+, B, B+, Zero, Zero W
 *   ARMv7 (BCM2836): Raspberry Pi 2 (based on Model B+)
 *   ARMv8 (BCM2837): Raspberry Pi 3
 
@@ -258,7 +258,7 @@ loglevel=5
 
 ```
 
-**Note:** The Pi3 requires `enable_uart=1` be added to `/boot/cmdline.txt` in order to display boot messages.
+**Note:** The Pi3 requires `enable_uart=1` be added to `/boot/config.txt` in order to display boot messages.
 
 If the default speed of 115200 does not work properly, try changing it to 38400:
 

@@ -5,31 +5,34 @@ It is lightweight, highly extensible, and is designed to look similar to uTorren
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Web Server Configuration](#Web_Server_Configuration)
-    *   [2.1 Apache](#Apache)
-    *   [2.2 Nginx](#Nginx)
-    *   [2.3 Nginx (manual installation)](#Nginx_.28manual_installation.29)
-    *   [2.4 Lighttpd](#Lighttpd)
-        *   [2.4.1 lighttpd](#lighttpd_2)
-            *   [2.4.1.1 lighttpd.conf](#lighttpd.conf)
-                *   [2.4.1.1.1 Test](#Test)
-            *   [2.4.1.2 php.ini](#php.ini)
-        *   [2.4.2 rutorrent](#rutorrent)
-        *   [2.4.3 Testing](#Testing)
-        *   [2.4.4 Plugins](#Plugins)
-        *   [2.4.5 SSL and Authentication](#SSL_and_Authentication)
-            *   [2.4.5.1 User Authentication](#User_Authentication)
-            *   [2.4.5.2 SSL](#SSL)
-                *   [2.4.5.2.1 Troubleshooting](#Troubleshooting)
-*   [3 ruTorrent Configuration](#ruTorrent_Configuration)
-*   [4 See Also](#See_Also)
-*   [5 External Links](#External_Links)
+*   [2 Configuration](#Configuration)
+*   [3 Web server configuration](#Web_server_configuration)
+    *   [3.1 Apache](#Apache)
+    *   [3.2 Nginx](#Nginx)
+    *   [3.3 Nginx (manual installation)](#Nginx_.28manual_installation.29)
+    *   [3.4 Lighttpd](#Lighttpd)
+        *   [3.4.1 lighttpd](#lighttpd_2)
+            *   [3.4.1.1 lighttpd.conf](#lighttpd.conf)
+                *   [3.4.1.1.1 Test](#Test)
+            *   [3.4.1.2 php.ini](#php.ini)
+        *   [3.4.2 rutorrent](#rutorrent)
+        *   [3.4.3 Testing](#Testing)
+        *   [3.4.4 Plugins](#Plugins)
+        *   [3.4.5 SSL and authentication](#SSL_and_authentication)
+            *   [3.4.5.1 User authentication](#User_authentication)
+            *   [3.4.5.2 SSL](#SSL)
+        *   [3.4.6 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
 
 ## Installation
 
 Install [rutorrent](https://aur.archlinux.org/packages/rutorrent/) from the AUR. If you want to use the development version install [rutorrent-git](https://aur.archlinux.org/packages/rutorrent-git/).
 
-## Web Server Configuration
+## Configuration
+
+See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config). By default the configuration files are symlinked to `/etc/webapps/rutorrent/conf`.
+
+## Web server configuration
 
 ### Apache
 
@@ -224,35 +227,32 @@ scgi_port = localhost:5050
 
 ```
 
-Instead of using a tcp port, it is also possible to use a socket using the scgi_local option instead. This did not work for me, as lighttpd complained about permissions regardless of permissions / location of socket file.
+Instead of using a tcp port, it may also be possible to use a socket using the scgi_local option instead, however lighttpd may complain about permissions regardless of permissions / location of socket file.
 
 You can choose a port other than 5050 if you like.
 
 #### lighttpd
 
-Install lighthttp and php.
+Install [Lighttpd](/index.php/Lighttpd "Lighttpd") and [PHP](/index.php/PHP "PHP").
 
 ```
 # pacman -S lighttpd php php-cgi fcgi
 
 ```
 
-Information on setting up lighthttp can be found on it's wiki page: [Lighttpd](/index.php/Lighttpd "Lighttpd")
-
-After starting lighthttp as per the wiki, you should be able to access the test page at [http://localhost:80](http://localhost:80).
+After starting lighttpd as per the wiki, you should be able to access the test page at [http://localhost:80](http://localhost:80).
 
 By default the pages are served from /srv/http, this is where we will be putting rutorrent.
 
 ##### lighttpd.conf
 
-Edit lighthttpd's config file, /etc/lighttpd/lighttpd.conf.
+Edit lighttpd's config file, /etc/lighttpd/lighttpd.conf.
 
 The following lines tell lighttpd to load the fastcgi and simple-cgi modules. Fast cgi is needed for rutorrent itself, and scgi for rutorrent to communicate with rtorrent.
 
 ```
 server.modules += ( "mod_fastcgi" )
 server.modules += ( "mod_scgi" )
-
 ```
 
 We need to tell lighttpd how to treat files like css, images (jpg etc.), js. Otherwise it will not know what to do with them, and you may get a dialog to download the file or rutorrent will just not work properly.
@@ -319,7 +319,6 @@ mimetype.assign             = (
       # default mime type
       ""              =>      "application/octet-stream",
      )
-
 ```
 
 Next we add the configuration for scgi to connect to rtorrent. Make sure to use the same port as when configuring rtorrent.
@@ -334,17 +333,15 @@ scgi.server = ( "/RPC2" =>
         )
     )
 )
-
 ```
 
-And finally the fastcgi settings so lighthttpd knows how to deal with php.
+And finally the fastcgi settings so lighttpd knows how to deal with php.
 
 ```
 fastcgi.server = ( ".php" => ((
                  "bin-path" => "/usr/bin/php-cgi",
                  "socket" => "/tmp/php.socket"
 )))
-
 ```
 
 ###### Test
@@ -356,7 +353,7 @@ At this point, you should be able to test if rtorrent and lighttpd's scgi are wo
 
 ```
 
-This should output a log list of methods that can be accessed through rtorrent's scgi interface. If it doesn't then something may be wrong. If you get error 500 (internal server error), make sure rTorrent is running.
+This should output a log list of methods that can be accessed through rtorrent's scgi interface. If it does not then something may be wrong. If you get error 500 (internal server error), make sure rTorrent is running.
 
 ##### php.ini
 
@@ -421,9 +418,9 @@ To install plugins for rutorrent, download the archive of the plugin you want an
 
 Plugins can be found on the rutorrent website: [http://code.google.com/p/rutorrent/wiki/Plugins](http://code.google.com/p/rutorrent/wiki/Plugins)
 
-#### SSL and Authentication
+#### SSL and authentication
 
-##### User Authentication
+##### User authentication
 
 Detailed information on the different authentication methods can be found here: [http://redmine.lighttpd.net/projects/1/wiki/Docs_ModAuth](http://redmine.lighttpd.net/projects/1/wiki/Docs_ModAuth)
 
@@ -455,7 +452,7 @@ So using username: 'tom', Realm: 'rtorrent' and password: 'secret_pass', we can 
 
 ```
 
--n tells echo not to print a newline, the cut command takes just the first 32 bytes so we don't get the dash at the end.
+-n tells echo not to print a newline, the cut command takes just the first 32 bytes so we do not get the dash at the end.
 
 So now save the hash in a variable by running:
 
@@ -475,7 +472,7 @@ Now save it to our password file:
 
 You can use any file name you like, just add the same file to lighttpd.conf.
 
-root as owner of this file should work ok, however it didn't work for me unless I made http owner.
+If root as owner of this file does not work, try http:
 
 ```
 # chown http /etc/lighttpd/lighttpd-htdigest.user
@@ -548,7 +545,7 @@ Then https should work, and depending on what you changed, http may not work any
 
 Note: This cert is not signed by a Certificate Authority, so you will have to add an exception in firefox.
 
-###### Troubleshooting
+#### Troubleshooting
 
 For problems with rutorrent or lighttpd, the best place to check first is probably the lighttpd log files, in **/var/log/lighttpd/**. Particularly error.log.
 
@@ -557,16 +554,7 @@ For problems with rutorrent or lighttpd, the best place to check first is probab
 
 ```
 
-## ruTorrent Configuration
-
-See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config). By default the configuration files are symlinked to `/etc/webapps/rutorrent/conf`.
-
-## See Also
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [RTorrent](/index.php/RTorrent "RTorrent")
-
-## External Links
+## See also
 
 *   [https://github.com/Novik/ruTorrent/wiki](https://github.com/Novik/ruTorrent/wiki)
 *   [http://httpd.apache.org/docs/2.2/configuring.html](http://httpd.apache.org/docs/2.2/configuring.html)

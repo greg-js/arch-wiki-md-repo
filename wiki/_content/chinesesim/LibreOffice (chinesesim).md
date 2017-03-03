@@ -1,39 +1,34 @@
 引自 [主页 - LibreOffice](http://zh-cn.libreoffice.org/):
 
-	*LibreOffice是一款功能强大且免费的开源办公软件，它同时支持Windows, Macintosh 和 Linux系统，为你提供六种针对文档编辑和数据处理需求的拥有丰富功能的应用：Writer, Calc, Impress, Draw, Math和Base。[Support](http://www.libreoffice.org/get-help/)和[documentation](http://www.libreoffice.org/get-help/documentation/)对于我们庞大的且忠实的的社区用户，贡献者和开发者是完全开放的。 [还等什么，加入我们!](http://www.libreoffice.org/get-involved/)*
+	*LibreOffice是一款功能强大且免费的开源办公软件，它同时支持Windows, Macintosh 和 Linux系统，为你提供六种针对文档编辑和数据处理需求的拥有丰富功能的应用：Writer, Calc, Impress, Draw, Math和Base。*
 
 ## Contents
 
-*   [1 LibreOffice同Arch Linux的情缘](#LibreOffice.E5.90.8CArch_Linux.E7.9A.84.E6.83.85.E7.BC.98)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 主题](#.E4.B8.BB.E9.A2.98)
-    *   [3.1 Firefox 主题](#Firefox_.E4.B8.BB.E9.A2.98)
-    *   [3.2 关闭启动LOGO](#.E5.85.B3.E9.97.AD.E5.90.AF.E5.8A.A8LOGO)
-*   [4 管理扩展](#.E7.AE.A1.E7.90.86.E6.89.A9.E5.B1.95)
-*   [5 语言帮助](#.E8.AF.AD.E8.A8.80.E5.B8.AE.E5.8A.A9)
-    *   [5.1 拼写检查](#.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5)
-    *   [5.2 断词换行规则](#.E6.96.AD.E8.AF.8D.E6.8D.A2.E8.A1.8C.E8.A7.84.E5.88.99)
-    *   [5.3 词库](#.E8.AF.8D.E5.BA.93)
-    *   [5.4 语法检查](#.E8.AF.AD.E6.B3.95.E6.A3.80.E6.9F.A5)
-    *   [5.5 芬兰语拼写检查](#.E8.8A.AC.E5.85.B0.E8.AF.AD.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5)
-    *   [5.6 对于en-US的离线帮助](#.E5.AF.B9.E4.BA.8Een-US.E7.9A.84.E7.A6.BB.E7.BA.BF.E5.B8.AE.E5.8A.A9)
-*   [6 宏的安装](#.E5.AE.8F.E7.9A.84.E5.AE.89.E8.A3.85)
-*   [7 LibreOffice的优化](#LibreOffice.E7.9A.84.E4.BC.98.E5.8C.96)
-*   [8 疑难问题的解决](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98.E7.9A.84.E8.A7.A3.E5.86.B3)
-    *   [8.1 更改字体](#.E6.9B.B4.E6.94.B9.E5.AD.97.E4.BD.93)
-    *   [8.2 抗锯齿](#.E6.8A.97.E9.94.AF.E9.BD.BF)
-    *   [8.3 使用NFSv3共享时突然停止运行](#.E4.BD.BF.E7.94.A8NFSv3.E5.85.B1.E4.BA.AB.E6.97.B6.E7.AA.81.E7.84.B6.E5.81.9C.E6.AD.A2.E8.BF.90.E8.A1.8C)
-    *   [8.4 对Java framework错误的修正](#.E5.AF.B9Java_framework.E9.94.99.E8.AF.AF.E7.9A.84.E4.BF.AE.E6.AD.A3)
-    *   [8.5 LibreOffice无法检测到你的证书](#LibreOffice.E6.97.A0.E6.B3.95.E6.A3.80.E6.B5.8B.E5.88.B0.E4.BD.A0.E7.9A.84.E8.AF.81.E4.B9.A6)
-    *   [8.6 在编辑模式下运行 .pps 文件(没有幻灯片)](#.E5.9C.A8.E7.BC.96.E8.BE.91.E6.A8.A1.E5.BC.8F.E4.B8.8B.E8.BF.90.E8.A1.8C_.pps_.E6.96.87.E4.BB.B6.28.E6.B2.A1.E6.9C.89.E5.B9.BB.E7.81.AF.E7.89.87.29)
-    *   [8.7 参考书目的问题](#.E5.8F.82.E8.80.83.E4.B9.A6.E7.9B.AE.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [8.8 多媒体支持](#.E5.A4.9A.E5.AA.92.E4.BD.93.E6.94.AF.E6.8C.81)
-    *   [8.9 在 Xfwm4 下内容未按照窗口改变自身大小](#.E5.9C.A8_Xfwm4_.E4.B8.8B.E5.86.85.E5.AE.B9.E6.9C.AA.E6.8C.89.E7.85.A7.E7.AA.97.E5.8F.A3.E6.94.B9.E5.8F.98.E8.87.AA.E8.BA.AB.E5.A4.A7.E5.B0.8F)
-    *   [8.10 gvfs 映射](#gvfs_.E6.98.A0.E5.B0.84)
-
-## LibreOffice同Arch Linux的情缘
-
-对于[OpenOffice.org](/index.php/OpenOffice.org "OpenOffice.org")的官方支持由LibreOffice所取代，它是该工程的 "Document Foundation"分支, 其中包含了对于一些功能的强化和额外的特征。 请参考 [Dropping Oracle OpenOffice (arch-general)](https://mailman.archlinux.org/pipermail/arch-general/2011-March/018819.html).
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 主题](#.E4.B8.BB.E9.A2.98)
+    *   [2.1 Firefox 主题](#Firefox_.E4.B8.BB.E9.A2.98)
+    *   [2.2 关闭启动LOGO](#.E5.85.B3.E9.97.AD.E5.90.AF.E5.8A.A8LOGO)
+*   [3 管理扩展](#.E7.AE.A1.E7.90.86.E6.89.A9.E5.B1.95)
+*   [4 语言帮助](#.E8.AF.AD.E8.A8.80.E5.B8.AE.E5.8A.A9)
+    *   [4.1 拼写检查](#.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5)
+    *   [4.2 断词换行规则](#.E6.96.AD.E8.AF.8D.E6.8D.A2.E8.A1.8C.E8.A7.84.E5.88.99)
+    *   [4.3 词库](#.E8.AF.8D.E5.BA.93)
+    *   [4.4 语法检查](#.E8.AF.AD.E6.B3.95.E6.A3.80.E6.9F.A5)
+    *   [4.5 芬兰语拼写检查](#.E8.8A.AC.E5.85.B0.E8.AF.AD.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5)
+    *   [4.6 对于en-US的离线帮助](#.E5.AF.B9.E4.BA.8Een-US.E7.9A.84.E7.A6.BB.E7.BA.BF.E5.B8.AE.E5.8A.A9)
+*   [5 宏的安装](#.E5.AE.8F.E7.9A.84.E5.AE.89.E8.A3.85)
+*   [6 LibreOffice的优化](#LibreOffice.E7.9A.84.E4.BC.98.E5.8C.96)
+*   [7 疑难问题的解决](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98.E7.9A.84.E8.A7.A3.E5.86.B3)
+    *   [7.1 更改字体](#.E6.9B.B4.E6.94.B9.E5.AD.97.E4.BD.93)
+    *   [7.2 抗锯齿](#.E6.8A.97.E9.94.AF.E9.BD.BF)
+    *   [7.3 使用NFSv3共享时突然停止运行](#.E4.BD.BF.E7.94.A8NFSv3.E5.85.B1.E4.BA.AB.E6.97.B6.E7.AA.81.E7.84.B6.E5.81.9C.E6.AD.A2.E8.BF.90.E8.A1.8C)
+    *   [7.4 对Java framework错误的修正](#.E5.AF.B9Java_framework.E9.94.99.E8.AF.AF.E7.9A.84.E4.BF.AE.E6.AD.A3)
+    *   [7.5 LibreOffice无法检测到你的证书](#LibreOffice.E6.97.A0.E6.B3.95.E6.A3.80.E6.B5.8B.E5.88.B0.E4.BD.A0.E7.9A.84.E8.AF.81.E4.B9.A6)
+    *   [7.6 在编辑模式下运行 .pps 文件(没有幻灯片)](#.E5.9C.A8.E7.BC.96.E8.BE.91.E6.A8.A1.E5.BC.8F.E4.B8.8B.E8.BF.90.E8.A1.8C_.pps_.E6.96.87.E4.BB.B6.28.E6.B2.A1.E6.9C.89.E5.B9.BB.E7.81.AF.E7.89.87.29)
+    *   [7.7 参考书目的问题](#.E5.8F.82.E8.80.83.E4.B9.A6.E7.9B.AE.E7.9A.84.E9.97.AE.E9.A2.98)
+    *   [7.8 多媒体支持](#.E5.A4.9A.E5.AA.92.E4.BD.93.E6.94.AF.E6.8C.81)
+    *   [7.9 在 Xfwm4 下内容未按照窗口改变自身大小](#.E5.9C.A8_Xfwm4_.E4.B8.8B.E5.86.85.E5.AE.B9.E6.9C.AA.E6.8C.89.E7.85.A7.E7.AA.97.E5.8F.A3.E6.94.B9.E5.8F.98.E8.87.AA.E8.BA.AB.E5.A4.A7.E5.B0.8F)
+    *   [7.10 gvfs 映射](#gvfs_.E6.98.A0.E5.B0.84)
 
 ## 安装
 

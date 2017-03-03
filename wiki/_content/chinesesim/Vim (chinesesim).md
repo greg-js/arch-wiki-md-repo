@@ -1,18 +1,17 @@
 **翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-3-3，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=420839)可以查看翻译后英文页面的改动。
 
-[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)")是[终端](https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals "wikipedia:Computer terminal")文本编辑器[Vi](https://en.wikipedia.org/wiki/Vi "wikipedia:Vi")的加强版本,加入了更多特性来帮助编辑源代码。Vim的一部分增强功能包括文件比较（vimdiff），语法高亮，全面的帮助系统，本地脚本（vimscript），和便于选择的可视化模式。
-
-Vim专注于键盘操作，它并不是像nano或pico一样的简单编辑器。Vim需要花时间来学习，并值得花上更多的时间来掌握。
+[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)")是一个终端文本编辑器。作为[Vi](https://en.wikipedia.org/wiki/Vi "wikipedia:Vi")的一个扩展版本，它具有以下附加功能：语法突出显示，全面的帮助系统，本地脚本（vimscript），文本选择的可视模式和文件比较（vimdiff）。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 用法](#.E7.94.A8.E6.B3.95)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 语法高亮](#.E8.AF.AD.E6.B3.95.E9.AB.98.E4.BA.AE)
-    *   [3.2 自动换行显示](#.E8.87.AA.E5.8A.A8.E6.8D.A2.E8.A1.8C.E6.98.BE.E7.A4.BA)
-    *   [3.3 使用鼠标](#.E4.BD.BF.E7.94.A8.E9.BC.A0.E6.A0.87)
-    *   [3.4 跨行移动光标](#.E8.B7.A8.E8.A1.8C.E7.A7.BB.E5.8A.A8.E5.85.89.E6.A0.87)
+    *   [3.1 剪贴板](#.E5.89.AA.E8.B4.B4.E6.9D.BF)
+    *   [3.2 语法高亮](#.E8.AF.AD.E6.B3.95.E9.AB.98.E4.BA.AE)
+    *   [3.3 自动换行显示](#.E8.87.AA.E5.8A.A8.E6.8D.A2.E8.A1.8C.E6.98.BE.E7.A4.BA)
+    *   [3.4 使用鼠标](#.E4.BD.BF.E7.94.A8.E9.BC.A0.E6.A0.87)
+    *   [3.5 跨行移动光标](#.E8.B7.A8.E8.A1.8C.E7.A7.BB.E5.8A.A8.E5.85.89.E6.A0.87)
 *   [4 文件合并](#.E6.96.87.E4.BB.B6.E5.90.88.E5.B9.B6)
 *   [5 技巧和建议](#.E6.8A.80.E5.B7.A7.E5.92.8C.E5.BB.BA.E8.AE.AE)
     *   [5.1 显示行号](#.E6.98.BE.E7.A4.BA.E8.A1.8C.E5.8F.B7)
@@ -40,31 +39,34 @@ Vim专注于键盘操作，它并不是像nano或pico一样的简单编辑器。
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")下面两个软件包中的一个：
 
 *   [vim](https://www.archlinux.org/packages/?name=vim) — 提供Python 2/3, Lua, Ruby 和 Perl 解释器支持，但没有 GTK/X 支持
-*   [gvim](https://www.archlinux.org/packages/?name=gvim) — 除了提供和`vim`一样的功能外，还提供了图像界面。
+*   [gvim](https://www.archlinux.org/packages/?name=gvim) — 除了提供和`vim`一样的功能外，还提供GTK/X支持。
 
 **注意:**
 
-*   [vim](https://www.archlinux.org/packages/?name=vim)包不包含 [Xorg](/index.php/Xorg "Xorg") 支持。因此Vim缺失了 `+clipboard` 特性，Vim也就不能够同X11的 *primary* 和 *clipboard* [剪切板](/index.php/Clipboard "Clipboard")交互。[gvim](https://www.archlinux.org/packages/?name=gvim)包在全面支持图形界面的同时提供了命令行版本带`+clipboard`的Vim。
-*   非官方源[herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories")也提供大量Vim/gVim变种版本: `vim-cli` `vim-gvim-common` `vim-gvim-gtk` `vim-gvim-qt` `vim-rt` 和 `vim-tiny`。
+*   [vim](https://www.archlinux.org/packages/?name=vim)包不包含 [Xorg](/index.php/Xorg "Xorg") 支持。具体而言，Vim缺失 `+clipboard` 特性，因而不能够使用 *primary* 和 *clipboard* [剪贴板](/index.php/Clipboard "Clipboard")。[gvim](https://www.archlinux.org/packages/?name=gvim)同时提供命令行版本带`+clipboard`的Vim。
+*   非官方源[herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories")也提供数个Vim/gVim变种版本: `vim-cli` `vim-gvim-common` `vim-gvim-gtk` `vim-gvim-qt` `vim-rt` 和 `vim-tiny`。
 
 ## 用法
 
-要学习一些基本的Vim使用操作，可以运行**vimtutor**（控制台版本）或**gvimtutor**（图形界面版本）阅读Vim教程。
+有关如何使用Vim的基本概述，请遵循vim教程运行**vimtutor**（控制台版本）或**gvimtutor**（图形界面版本）。
 
-Vim包含了一个广泛的帮助系统，可以用`:h *subject*`命令来访问。*subject*主题可以是命令，配置选项，热键绑定，插件等。使用`:h`命令（不带任何*subject*）来获取帮助系统的相关信息以及在不同的主题之间切换。
+Vim包含了一个广泛的帮助系统，可以用`:h *subject*`命令来访问。*subject*可以是命令，配置选项，热键绑定，插件等。使用`:h`命令（不带任何*subject*）来获取帮助系统的相关信息以及在不同的主题之间切换。
 
 ## 配置
 
-用户配置文件为`~/.vimrc`，相关的文件位于`~/.vim/`；全局配置文件为`/etc/vimrc`，相关的文件位于`/usr/share/vim/`。
+Vim的用户特定配置文件位于主目录`~/.vimrc`，当前用户的Vim文件位于`~/.vim/`；全局配置文件为`/etc/vimrc`，全局Vim文件位于`/usr/share/vim/`。
 
-如果需要常用的功能（如语法高亮、打开文件时回到上一次的光标位置等），将配置文件范例加到`/etc/vimrc`中：
+**注意:** 常用的功能，如语法高亮在 `defaults.vim` 中启用，当没有 `~.vimrc` 时加载。将 `skip_defaults_vim=1` 添加到 `/etc/vimrc`以完全禁用加载 `defaults.vim`。 [[1]](https://github.com/vim/vim/issues/1033)
 
- `/etc/vimrc/` 
-```
-...
-runtime! vimrc_example.vim
+### 剪贴板
 
-```
+Vim命令如 `:yank` 或 `:paste` 使用未命名寄存器，默认情况下对应于 `"*` 寄存器。如果 `+clipboard` 功能可用，`"*` 寄存器发送到X中的 `PRIMARY` 缓冲区。
+
+要更改默认寄存器，您可以 `:set clipboard=unnamedplus` 使用 `"+` 寄存器。`"+` 寄存器对应于X中的 `CLIPBOARD` 缓冲区。
+
+欲见更多信息，请参见 `:help 'clipboard'`。
+
+**提示：** 可以创建复制和粘贴操作的自定义快捷方式。参见例如 [[2]](http://superuser.com/a/189198) 用于绑定 `ctrl + c`，`ctrl + v` 和 `ctrl + x`。
 
 ### 语法高亮
 

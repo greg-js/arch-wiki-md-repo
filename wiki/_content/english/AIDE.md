@@ -1,28 +1,25 @@
 AIDE is a host-based intrusion detection system (HIDS) for checking the integrity of files. It does this by creating a baseline database of files on an initial run, and then checks this database against the system on subsequent runs. File properties that can be checked against include inode, permissions, modification time, file contents, etc.
 
-AIDE only does file integrity checks. It does not check for rootkits or parse logfiles for suspicious activity, like some other HIDS (such as OSSEC) do. For these features, you can use an additional HIDS ([see here](http://www.la-samhna.de/library/scanners.html) for a possibly biased comparison), or use standalone rootkit scanners (rkhunter, chkrootkit) and log monitoring solutions ([logwatch](/index.php/Logwatch "Logwatch"), logcheck).
+AIDE only does file integrity checks. It does not check for rootkits or parse logfiles for suspicious activity, like some other [HIDS](/index.php/List_of_applications/Security#Threat_and_vulnerability_detection "List of applications/Security") (such as OSSEC) do. For these features, you can use an additional HIDS ([see here](http://www.la-samhna.de/library/scanners.html) for a possibly biased comparison), or use standalone rootkit scanners (rkhunter, chkrootkit) and log monitoring solutions ([logwatch](/index.php/Logwatch "Logwatch"), logcheck).
 
 ## Contents
 
-*   [1 Setup](#Setup)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Configuration](#Configuration)
-    *   [1.3 Usage](#Usage)
-    *   [1.4 Cron](#Cron)
-    *   [1.5 Security](#Security)
-*   [2 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 Usage](#Usage)
+    *   [3.1 Cron](#Cron)
+    *   [3.2 Security](#Security)
+*   [4 See also](#See_also)
 
-## Setup
-
-### Installation
+## Installation
 
 [Install](/index.php/Install "Install") [aide](https://www.archlinux.org/packages/?name=aide) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-### Configuration
+## Configuration
 
 The default config file at `/etc/aide.conf` has pretty sane defaults and is heavily commented. If you want to change the rules, see `man aide.conf` and the [AIDE Manual](http://aide.sourceforge.net/stable/manual.html) for documentation.
 
-### Usage
+## Usage
 
 To check your configuration, use `aide -D`.
 
@@ -34,7 +31,7 @@ For more info, see `man aide`.
 
 ### Cron
 
-AIDE can be run manually if desired, but you may want to run it automatically instead. How you set this up will depend on your cron daemon and MUA (if email notification is desired).
+AIDE can be run manually if desired, but you may want to run it automatically instead. How you set this up will depend on your [cron](/index.php/Cron "Cron") daemon and MUA (if email notification is desired).
 
 If cron is set up to automatically mail all job output, it can be as simple as
 

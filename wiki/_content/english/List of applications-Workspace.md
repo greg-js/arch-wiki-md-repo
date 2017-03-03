@@ -8,27 +8,23 @@
 
 *   [1 Workspace](#Workspace)
     *   [1.1 Bootsplash](#Bootsplash)
-    *   [1.2 Command shells](#Command_shells)
-    *   [1.3 Terminal multiplexers](#Terminal_multiplexers)
-    *   [1.4 Desktop environments](#Desktop_environments)
-    *   [1.5 Window managers](#Window_managers)
-        *   [1.5.1 Console](#Console)
-        *   [1.5.2 Graphical](#Graphical)
-    *   [1.6 Window tilers](#Window_tilers)
-    *   [1.7 Virtual desktop pagers](#Virtual_desktop_pagers)
-    *   [1.8 Support applications](#Support_applications)
-        *   [1.8.1 Login managers](#Login_managers)
-        *   [1.8.2 Composite managers](#Composite_managers)
-        *   [1.8.3 Taskbars / panels / docks](#Taskbars_.2F_panels_.2F_docks)
-        *   [1.8.4 Application launchers](#Application_launchers)
-        *   [1.8.5 Logout dialogue](#Logout_dialogue)
-    *   [1.9 Accessibility](#Accessibility)
-        *   [1.9.1 Screen reading](#Screen_reading)
-        *   [1.9.2 Speech recognition](#Speech_recognition)
+    *   [1.2 Display managers](#Display_managers)
+    *   [1.3 Command shells](#Command_shells)
+    *   [1.4 Terminal multiplexers](#Terminal_multiplexers)
+    *   [1.5 Desktop environments](#Desktop_environments)
+    *   [1.6 Window managers](#Window_managers)
+        *   [1.6.1 Console](#Console)
+        *   [1.6.2 Graphical](#Graphical)
+    *   [1.7 Window tilers](#Window_tilers)
+    *   [1.8 Taskbars / panels / docks](#Taskbars_.2F_panels_.2F_docks)
+    *   [1.9 Application launchers](#Application_launchers)
+    *   [1.10 Wallpaper setters](#Wallpaper_setters)
+    *   [1.11 Composite managers](#Composite_managers)
+    *   [1.12 Virtual desktop pagers](#Virtual_desktop_pagers)
+    *   [1.13 Logout dialogue](#Logout_dialogue)
+    *   [1.14 Accessibility](#Accessibility)
 
 ## Workspace
-
-The default installation of Arch provides Bash as shell interpreter and does not contain any Desktop Environment, therefore forces users to choose one themselves. Most Arch boxes run some X11 Window Manager and/or Desktop Environment, but of course there are still people who prefer doing everyday tasks in bare console.
 
 ### Bootsplash
 
@@ -45,6 +41,10 @@ See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipe
 *   **[Splashy](/index.php/Splashy "Splashy")** — A graphical boot process designed to replace the aging Bootsplash program
 
 	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
+
+### Display managers
+
+See the main article: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager").
 
 ### Command shells
 
@@ -78,8 +78,6 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 See the main article: [Desktop environment#List of desktop environments](/index.php/Desktop_environment#List_of_desktop_environments "Desktop environment").
 
-See also [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
-
 ### Window managers
 
 #### Console
@@ -97,8 +95,6 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 #### Graphical
 
 See the main article: [Window manager#List of window managers](/index.php/Window_manager#List_of_window_managers "Window manager").
-
-See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers").
 
 ### Window tilers
 
@@ -126,49 +122,7 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 
 	[http://wumwum.sourceforge.net/](http://wumwum.sourceforge.net/) || [wumwum](https://aur.archlinux.org/packages/wumwum/)
 
-### Virtual desktop pagers
-
-See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
-
-*   **bbpager** — Dockable pager for [blackbox](/index.php/Blackbox "Blackbox") and other window managers.
-
-	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
-
-*   **fbpager** — Virtual desktop pager for fluxbox.
-
-	[http://www.fluxbox.org/fbpager](http://www.fluxbox.org/fbpager) || [fbpager-git](https://aur.archlinux.org/packages/fbpager-git/)
-
-*   **IPager** — A configurable pager with transparency, originally developed for Fluxbox.
-
-	[http://useperl.ru/ipager/index.en.html](http://useperl.ru/ipager/index.en.html) || [ipager](https://aur.archlinux.org/packages/ipager/)
-
-*   **Neap** — An non-intrusive and light pager that runs in the notification area of your panel.
-
-	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap](https://aur.archlinux.org/packages/neap/)
-
-*   **Netwmpager** — A NetWM/EWMH compatible pager.
-
-	[http://sourceforge.net/projects/sf-xpaint/files/netwmpager/](http://sourceforge.net/projects/sf-xpaint/files/netwmpager/) || [netwmpager](https://aur.archlinux.org/packages/netwmpager/)
-
-*   **obpager** — Pager for [Openbox](/index.php/Openbox "Openbox") writen in C++.
-
-	[http://obpager.sourceforge.net/](http://obpager.sourceforge.net/) || [obpager](https://aur.archlinux.org/packages/obpager/)
-
-*   **Pager** — A highly configurable pager compatible with Openbox Multihead.
-
-	[https://github.com/BurntSushi/pager-multihead](https://github.com/BurntSushi/pager-multihead) || [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/)
-
-### Support applications
-
-#### Login managers
-
-See the main article: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager").
-
-#### Composite managers
-
-See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg").
-
-#### Taskbars / panels / docks
+### Taskbars / panels / docks
 
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — Lightweight dock which sits at the bottom of the screen.
 
@@ -250,7 +204,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 	[http://docs.xfce.org/xfce/xfce4-panel/start](http://docs.xfce.org/xfce/xfce4-panel/start) || [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
 
-#### Application launchers
+### Application launchers
 
 See also [Wikipedia:Comparison of desktop application launchers](https://en.wikipedia.org/wiki/Comparison_of_desktop_application_launchers "wikipedia:Comparison of desktop application launchers").
 
@@ -346,7 +300,83 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[http://dmwit.com/yeganesh](http://dmwit.com/yeganesh) || [yeganesh](https://aur.archlinux.org/packages/yeganesh/)
 
-#### Logout dialogue
+### Wallpaper setters
+
+*   **bgs** — An extremely fast and small background setter for X based on imlib2.
+
+	[https://github.com/Gottox/bgs/](https://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
+
+*   **esetroot** — Eterm's root background setter, packaged separately
+
+	[http://www.eterm.org/](http://www.eterm.org/) || [esetroot](https://aur.archlinux.org/packages/esetroot/)
+
+*   **[Feh](/index.php/Feh "Feh")** — A lightweight and powerful image viewer that can also be used to manage the desktop wallpaper.
+
+	[http://linuxbrit.co.uk/software/feh/](http://linuxbrit.co.uk/software/feh/) || [feh](https://www.archlinux.org/packages/?name=feh)‎
+
+*   **habak** — A background changing app
+
+	[http://fvwm-crystal.org/](http://fvwm-crystal.org/) || [habak](https://www.archlinux.org/packages/?name=habak)
+
+*   **hsetroot** — A tool to create compose wallpapers.
+
+	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
+
+*   **[Nitrogen](/index.php/Nitrogen "Nitrogen")** — A fast and lightweight desktop background browser and setter for X windows.
+
+	[http://projects.l3ib.org/nitrogen/](http://projects.l3ib.org/nitrogen/) || [nitrogen](https://www.archlinux.org/packages/?name=nitrogen)
+
+*   **pybgsetter** — Multi-backend (hsetroot, Esetroot, habak, feh) to set desktop wallpaper
+
+	http://bbs.archlinux.org/viewtopic.php?id=88997 || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
+
+*   **wallpaperd** — A small application that takes care of setting the background image
+
+	[https://projects.pekdon.net/projects/wallpaperd](https://projects.pekdon.net/projects/wallpaperd) || [wallpaperd](https://aur.archlinux.org/packages/wallpaperd/)
+
+*   **xli** — An image display program for X
+
+	[https://packages.debian.org/sid/xli](https://packages.debian.org/sid/xli) || [xli](https://aur.archlinux.org/packages/xli/)
+
+**Tip:** In order to avoid installing one more package, you may find convenient to use the `display` utility from [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or `gm display` from [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick). E.g.: `display -backdrop -background '#3f3f3f' -flatten -window root *image*`.
+
+### Composite managers
+
+See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg").
+
+### Virtual desktop pagers
+
+See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
+
+*   **bbpager** — Dockable pager for [blackbox](/index.php/Blackbox "Blackbox") and other window managers.
+
+	[http://bbtools.sourceforge.net/download.php?file=6](http://bbtools.sourceforge.net/download.php?file=6) || [bbpager](https://www.archlinux.org/packages/?name=bbpager)
+
+*   **fbpager** — Virtual desktop pager for fluxbox.
+
+	[http://www.fluxbox.org/fbpager](http://www.fluxbox.org/fbpager) || [fbpager-git](https://aur.archlinux.org/packages/fbpager-git/)
+
+*   **IPager** — A configurable pager with transparency, originally developed for Fluxbox.
+
+	[http://useperl.ru/ipager/index.en.html](http://useperl.ru/ipager/index.en.html) || [ipager](https://aur.archlinux.org/packages/ipager/)
+
+*   **Neap** — An non-intrusive and light pager that runs in the notification area of your panel.
+
+	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap](https://aur.archlinux.org/packages/neap/)
+
+*   **Netwmpager** — A NetWM/EWMH compatible pager.
+
+	[http://sourceforge.net/projects/sf-xpaint/files/netwmpager/](http://sourceforge.net/projects/sf-xpaint/files/netwmpager/) || [netwmpager](https://aur.archlinux.org/packages/netwmpager/)
+
+*   **obpager** — Pager for [Openbox](/index.php/Openbox "Openbox") writen in C++.
+
+	[http://obpager.sourceforge.net/](http://obpager.sourceforge.net/) || [obpager](https://aur.archlinux.org/packages/obpager/)
+
+*   **Pager** — A highly configurable pager compatible with Openbox Multihead.
+
+	[https://github.com/BurntSushi/pager-multihead](https://github.com/BurntSushi/pager-multihead) || [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/)
+
+### Logout dialogue
 
 A few simple shutdown managers are available:
 
@@ -368,20 +398,4 @@ A few simple shutdown managers are available:
 
 ### Accessibility
 
-#### Screen reading
-
-*   **Mimic** — Text-to-speech voice synthesis from the Mycroft project
-
-	[https://mimic.mycroft.ai/](https://mimic.mycroft.ai/) || [mimic-git](https://aur.archlinux.org/packages/mimic-git/)
-
-*   **Orca** — Screen reader for individuals who are blind or visually impaired
-
-	[http://www.gnome.org/projects/orca](http://www.gnome.org/projects/orca) || [orca](https://www.archlinux.org/packages/?name=orca)
-
-*   **[Simple Orca Plugin System](/index.php/Simple_Orca_Plugin_System "Simple Orca Plugin System")** — Plug-in extension for the Orca screen reader
-
-	[https://stormdragon.tk/orca-plugins/index.php](https://stormdragon.tk/orca-plugins/index.php) || [simpleorcapluginsystem-git](https://aur.archlinux.org/packages/simpleorcapluginsystem-git/)
-
-#### Speech recognition
-
-See the main article [Speech recognition](/index.php/Speech_recognition "Speech recognition") for applications.
+See [Accessibility](/index.php/Accessibility "Accessibility").

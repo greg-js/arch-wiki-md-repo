@@ -39,7 +39,7 @@
 
 **Note:** SLiM no longer supports a 'default' session where multiple sessions have been enabled. This is most noticable where attempting to log out and back in again to the same session.
 
-As of version **1.3.6-2**, SLiM can automatically detect installed desktop environments and window managers. This is achieved through the use of `sessiondir /usr/share/xsessions/` in `/etc/slim.conf`. It will therefore be necessary for those who installed an earlier version of SLiM to amend `/etc/slim.conf` and [xinitrc](/index.php/Xinitrc "Xinitrc"), accordingly.
+SLiM can automatically detect installed desktop environments and window managers through the use of `sessiondir /usr/share/xsessions/` in `/etc/slim.conf`. Those who installed an earlier version of SLiM must amend `/etc/slim.conf` and [xinitrc](/index.php/Xinitrc "Xinitrc"), accordingly.
 
 ### Enabling SLiM
 

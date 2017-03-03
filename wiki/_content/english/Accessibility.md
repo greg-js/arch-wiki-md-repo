@@ -12,7 +12,7 @@ There are many different methods of providing accessibility to users that suffer
         *   [2.2.1 Independent of Graphical Environment](#Independent_of_Graphical_Environment_2)
             *   [2.2.1.1 Button Mapping](#Button_Mapping)
 *   [3 Visual Assistance](#Visual_Assistance)
-    *   [3.1 Text To Speech](#Text_To_Speech)
+    *   [3.1 Speech recognition](#Speech_recognition)
     *   [3.2 Console & Virtual Terminal Emulators](#Console_.26_Virtual_Terminal_Emulators)
 *   [4 Issues](#Issues)
 
@@ -179,9 +179,9 @@ Once satisfied, you can enable it on start by placing the first line in `~/.xini
 
 As with physical assistance, most modern desktop environments ship with an extensive set of features to tweak the visual aspects of your system. Generally, these options can be found listed under those of 'accessibility' or 'visual assistance'. Alternatively, useful options might be found in the settings of the individual applications.
 
-### Text To Speech
+### Speech recognition
 
-See [Text to speech](/index.php/Text_to_speech "Text to speech").
+See [Speech recognition](/index.php/Speech_recognition "Speech recognition").
 
 ### Console & Virtual Terminal Emulators
 

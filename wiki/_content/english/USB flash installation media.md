@@ -315,11 +315,6 @@ label unetbootindefault
 menu label Archlinux_x86_64
 kernel /arch/boot/x86_64/vmlinuz
 append initrd=/arch/boot/x86_64/archiso.img archisodevice=/dev/sd**x1** ../../
-
-label ubnentry0
-menu label Archlinux_i686
-kernel /arch/boot/i686/vmlinuz
-append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 ```
 
 In `/dev/sd**x1**` you must replace **x** with the first free letter after the last letter in use on the system where you are installing Arch Linux (e.g. if you have two hard drives, use `c`.). You can make this change during the first phase of boot by pressing `Tab` when the menu is shown.
@@ -419,8 +414,6 @@ syslinux.exe -m -a -d /Boot/Settings X:
 ```
 
 ## Troubleshooting
-
-*   For the [MEMDISK Method](#Loading_the_installation_media_from_RAM), if you get the famous "30 seconds" error trying to boot the i686 version, press the `Tab` key over the `Boot Arch Linux (i686)` entry and add `vmalloc=448M` at the end. For reference: *If your image is bigger than 128MiB and you have a 32-bit OS, then you have to increase the maximum memory usage of vmalloc*. [[1]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   If you get the "30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
 

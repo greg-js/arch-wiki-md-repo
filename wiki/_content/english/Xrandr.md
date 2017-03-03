@@ -334,13 +334,11 @@ About the numbers: DELL on the left and Samsung on the right. So the virtual wid
 
 ### Correction of overscan tv resolutions
 
-(screen zoom)
+With a flat panel TV, [w:overscan](https://en.wikipedia.org/wiki/overscan "w:overscan") looks like the picture is "zoomed in" so the edges are cut off.
 
-[See the problem ?](http://www.hostingpics.net/viewer.php?id=754061IMG20170228123124.jpg)
+Check your TV if there is a parameter to change. If not, apply an `underscan` and change border values. The required `underscan vborder` and `underscan hborder` values can be different for you, just check it and change it by more or less.
 
-Check your TV if there is a parameter to change. if not, apply an underscan and change values of vborder and hborder. Underscan vborder and underscan hborder can be different for you, just check it and change it by more or less.
-
-`xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40`
+`$ xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40`
 
 ### Full RGB in HDMI
 

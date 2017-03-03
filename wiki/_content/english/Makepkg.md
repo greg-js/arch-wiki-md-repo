@@ -124,7 +124,7 @@ The options passed to a C/C++ compiler (e.g. [gcc](https://www.archlinux.org/pac
 
 **Note:** Keep in mind that not all build systems use the variables configured in `makepkg.conf`. For example, *cmake* disregards the preprocessor options environment variable, `CPPFLAGS`. Consequently, many [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contain workarounds with options specific to the build system used by the packaged software.
 
-As of version 4.3.0, GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example,
+GCC can automatically detect and enable safe architecture-specific optimizations. To use this feature, first remove any `-march` and `-mtune` flags, then add `-march=native`. For example,
 
 ```
 CFLAGS="-march=native -O2 -pipe -fstack-protector-strong"

@@ -1,6 +1,6 @@
 There are two official Linux versions of Skype available:
 
-*   The new Skype for Linux Alpha (released 2016-07-13): see [#Skype for Linux Alpha](#Skype_for_Linux_Alpha)
+*   The new Skype for Linux (released 2016-07-13, currently in beta): see [#Skype for Linux](#Skype_for_Linux)
 
 	It is basically the web version in a wrapper. Group video chat is not yet working.
 
@@ -12,7 +12,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
 
 ## Contents
 
-*   [1 Skype for Linux Alpha](#Skype_for_Linux_Alpha)
+*   [1 Skype for Linux](#Skype_for_Linux)
 *   [2 Legacy Skype](#Legacy_Skype)
     *   [2.1 Installation](#Installation)
     *   [2.2 Skype sound](#Skype_sound)
@@ -42,9 +42,9 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
         *   [2.4.12 Skype doesn't output any sound after upgrading PulseAudio](#Skype_doesn.27t_output_any_sound_after_upgrading_PulseAudio)
 *   [3 Skype plugin for Pidgin](#Skype_plugin_for_Pidgin)
 
-## Skype for Linux Alpha
+## Skype for Linux
 
-There is a new [Skype for Linux Alpha](http://blogs.skype.com/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (group video chat is not yet working).
+There is a new [Skype for Linux Beta](https://community.skype.com/t5/Linux/Skype-5-0-for-Linux-Beta-is-here/td-p/4609846), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (group video chat is not yet working).
 
 [Install](/index.php/Install "Install") it with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) or [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
 

@@ -1,4 +1,4 @@
-[Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs") is an extensible, customizable, self-documenting real-time display editor. At the core of Emacs lies an [Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp") interpreter, the language in which the majority of Emacs' built-in functionality and extensions are implemented. GTK is the default X toolkit used as of GNU Emacs 22, though it functions equally well within a CLI environment. The text-editing capabilities of Emacs are often compared to that of [vim](/index.php/Vim "Vim").
+[Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs") is an extensible, customizable, self-documenting real-time display editor. At the core of Emacs lies an [Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp") interpreter, the language in which the majority of Emacs' built-in functionality and extensions are implemented. GNU Emacs uses GTK as its X toolkit, though it functions equally well within a CLI environment. The text-editing capabilities of Emacs are often compared to that of [vim](/index.php/Vim "Vim").
 
 ## Contents
 

@@ -25,25 +25,25 @@
         *   [5.1.6 Сетевые учетные записи](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D1.83.D1.87.D0.B5.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8)
         *   [5.1.7 Поиск](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA)
     *   [5.2 Расширенная конфигурация](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-        *   [5.2.1 Appearance](#Appearance)
+        *   [5.2.1 Внешний вид](#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B9_.D0.B2.D0.B8.D0.B4)
             *   [5.2.1.1 Темы GTK+ и иконок](#.D0.A2.D0.B5.D0.BC.D1.8B_GTK.2B_.D0.B8_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
                 *   [5.2.1.1.1 Глобальная темная тема](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
             *   [5.2.1.2 Темы оконного менеджера](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0)
                 *   [5.2.1.2.1 Высота заголовка](#.D0.92.D1.8B.D1.81.D0.BE.D1.82.D0.B0_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0)
                 *   [5.2.1.2.2 Порядок кнопок в заголовке](#.D0.9F.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.B2_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B5)
                 *   [5.2.1.2.3 Скрыть заголовок, когда окно во весь экран](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D0.BA.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BE.D0.BA.D0.BD.D0.BE_.D0.B2.D0.BE_.D0.B2.D0.B5.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD)
-            *   [5.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
-            *   [5.2.1.4 Icons on menu](#Icons_on_menu)
-        *   [5.2.2 Desktop](#Desktop)
-            *   [5.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
-            *   [5.2.2.2 Lock screen and background](#Lock_screen_and_background)
-        *   [5.2.3 Extensions](#Extensions)
-        *   [5.2.4 Input methods](#Input_methods)
-        *   [5.2.5 Fonts](#Fonts)
-        *   [5.2.6 Startup applications](#Startup_applications)
-        *   [5.2.7 Power](#Power)
-            *   [5.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
-            *   [5.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
+            *   [5.2.1.3 Темы GNOME Shell](#.D0.A2.D0.B5.D0.BC.D1.8B_GNOME_Shell)
+            *   [5.2.1.4 Иконки в меню](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B2_.D0.BC.D0.B5.D0.BD.D1.8E)
+        *   [5.2.2 Рабочий стол](#.D0.A0.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB)
+            *   [5.2.2.1 Иконки на рабочем столе](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.BD.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.BC_.D1.81.D1.82.D0.BE.D0.BB.D0.B5)
+            *   [5.2.2.2 Фон экрана блокировки и рабочего стола](#.D0.A4.D0.BE.D0.BD_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
+        *   [5.2.3 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+        *   [5.2.4 Методы ввода](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.D1.8B_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+        *   [5.2.5 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
+        *   [5.2.6 Запуск приложений при входе в систему](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+        *   [5.2.7 Электропитание](#.D0.AD.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D0.B5)
+            *   [5.2.7.1 Изменить поведение при закрытии крышки](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B8_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8)
+            *   [5.2.7.2 Изменить действие, выполняемое при критическом уровне заряда батареи](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.B4.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.B8.D0.B5.2C_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D1.8F.D0.B5.D0.BC.D0.BE.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BA.D1.80.D0.B8.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.BC_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5_.D0.B7.D0.B0.D1.80.D1.8F.D0.B4.D0.B0_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8)
         *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
 *   [6 Использование оболочки](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
     *   [6.1 Шпаргалка GNOME](#.D0.A8.D0.BF.D0.B0.D1.80.D0.B3.D0.B0.D0.BB.D0.BA.D0.B0_GNOME)
@@ -109,7 +109,7 @@
 *   [12 Empathy (встроенная система обмена мгновенными сообщениями) и GNOME Online Accounts](#Empathy_.28.D0.B2.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BE.D0.B1.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BC.D0.B3.D0.BD.D0.BE.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8.29_.D0.B8_GNOME_Online_Accounts)
 *   [13 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [13.1 Невозможно изменить настройки в dconf-editor](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B2_dconf-editor)
-    *   [13.2 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [13.2 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_2)
         *   [13.2.1 Когда расширение рушит GNOME](#.D0.9A.D0.BE.D0.B3.D0.B4.D0.B0_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D1.83.D1.88.D0.B8.D1.82_GNOME)
         *   [13.2.2 Расширения не работают после обновления GNOME 3](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_3)
         *   [13.2.3 Удаление расширений Gnome Shell](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B9_Gnome_Shell)
@@ -346,7 +346,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 Параметры GNOME (которые сохраняются в базе данных DConf) также могут быть настроены используя [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (графический инструмент для настройки DConf) или [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) - консольный утилита для настройки. В GNOME Tweak Tool нет скрытых настроек, все они предоставлены в графическом интерфейсе; заметим, однако, что вы не найдете все описываемые ниже параметры в этой утилите.
 
-#### Appearance
+#### Внешний вид
 
 ##### Темы GTK+ и иконок
 
@@ -440,90 +440,88 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 *   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [maximus](https://aur.archlinux.org/packages/maximus/). Выполните *maximus* из терминала, чтобы запустить приложение. По запуске демон автоматически разворачивает окна на весь экран. Он изменяет их при развороте во весь экран и возвращает прежний вид по необходимости. Если вы не хотите, чтобы все окна запускались развернутыми на весь экран, запускайте следующий образом - `maximus -m`. Обратите внимание, что это будет работает только с окнами, которые отрисовываются менеджером окон; приложение, использующую собственную отрисовку, например [GNOME Files](/index.php/GNOME_Files "GNOME Files"), не будут изменяться при развороте на весь экран.
 
-##### GNOME Shell themes
+##### Темы GNOME Shell
 
-The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly ensure that you have the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package installed. Then enable the *User Themes* extension, either through GNOME Tweak Tool or through the [GNOME Shell Extensions](https://extensions.gnome.org) webpage. Shell themes can then be loaded and selected using the GNOME Tweak Tool.
+Тему Gnome Shell можно настроить. Убедитесь, что установлен пакет [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions). Затем включите расширение *User Themes* при помощи GNOME Tweak Tool или через сайт [GNOME Shell Extensions](https://extensions.gnome.org). Темы Shell могут быть загружены и выбраны используя GNOME Tweak Tool.
 
-There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
+Некоторые темы GNOME Shell доступны [в AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
-Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+Также темы можно скачать с [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
 
-##### Icons on menu
+##### Иконки в меню
 
-The default GNOME schema doesn't display any icon on menus. To display icons on menus, issue the following command.
+По умолчанию не отображаются никакие иконки в меню. Чтобы включить отображение иконок в меню, выполните следующую команду.
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
 
 ```
 
-#### Desktop
+#### Рабочий стол
 
-Various Desktop settings can be applied.
+Различные настройки, связанные с рабочим столом.
 
-##### Icons on the Desktop
+##### Иконки на рабочем столе
 
-See [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
+Смотрите [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
 
-##### Lock screen and background
+##### Фон экрана блокировки и рабочего стола
 
-When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
+При настройке фона рабочего стола и экрана блокировки, важно отметить, что вкладка Изображения будет отображать картинки, расположенные только в папке `/home/*имяпользователя*/Изображения`. Если вы хотите использовать картинку, не находящуюся в этой папке, используйте команды ниже.
 
-For the desktop background:
-
-```
-$ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/picture.jpg'
+Для рабочего стола:
 
 ```
-
-For the lock screen background
-
-```
-$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
+$ gsettings set org.gnome.desktop.background picture-uri 'file:///путь/к/моей/картинке.jpg'
 
 ```
 
-#### Extensions
+Для экрана блокировки:
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
+```
+$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///путь/к/моей/картинке.jpg'
 
-GNOME Shell can be customized with extensions per user or system-wide.
+```
 
-The catalogue of extensions is available at [extensions.gnome.org](https://extensions.gnome.org). By a user they can be installed and activated in the browser by setting the switch in the top left of the screen to **ON** and clicking **Install** on the resulting dialog (if the extension in question is not installed). After installation it is shown in the [extensions.gnome.org/local/](https://extensions.gnome.org/local/) tab, which has to be visited as well to check for available updates. Installed extensions can also be enabled or disabled using [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+#### Расширения
 
-More information about GNOME shell extensions is available on the [GNOME Shell Extensions about page](https://extensions.gnome.org/about/).
+**Примечание:** Плагин GNOME Shell, позволяющий устанавливать расширения с [extensions.gnome.org](https://extensions.gnome.org), работает из коробки для таких браузеров, как [Firefox](/index.php/Firefox "Firefox") или [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). Для браузеров Google Chrome/Chromium, Opera и Vivaldi требуется установить [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
 
-[Installing](/index.php/Installing "Installing") extensions via a package makes them available for all users of the system and automates the update process.
+GNOME Shell может быть настроен при помощи расширений как для отдельного пользователя, так и для всех сразу.
 
-The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session).
+Расширения можно найти на [extensions.gnome.org](https://extensions.gnome.org). Они могут быть установлены и активированы в браузере путем установки переключателя в верхнем правом углу экрана на **ON** и последующего нажатия **Install** в диалоге (если расширение не установлено). После установки оно покажется во вкладке [extensions.gnome.org/local/](https://extensions.gnome.org/local/), которая также может быть использована для проверки обновлений. Установленные дополнения могут быть включены или, наоборот, выключены посредством [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 
-Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
+Больше информации о расширениях среды GNOME доступно [на этой странице](https://extensions.gnome.org/about/).
 
-#### Input methods
+Расширение, [установленные](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") через пакеты, доступны для всех пользователей системы, также автоматизируется процесс их обновления.
 
-GNOME has integrated support for input methods through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.
+Пользователи, которые хотят панель задач, но не желают использовать сессию GNOME Classic, возможно, захотят установить расширение *Window list* (предоставляемое пакетом [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions)).
 
-#### Fonts
+#### Методы ввода
 
-**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
+GNOME имеет встроенную поддержку методов ввода через [IBus](/index.php/IBus "IBus"), нужно установить только [ibus](https://www.archlinux.org/packages/?name=ibus) и и соответствующий движок (например, [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) для Intelligent Pinyin); после установки можно добавить соответствующий движок, как раскладку клавиатуры, в настройках GNOME Язык и регион.
 
-Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweak Tool for the relevant options.
+#### Шрифты
 
-For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+**Совет:** Если вы установите *Коэффициент масштабирования* на число, большее 1.00, то Универсальное меню будет автоматически включено.
 
-#### Startup applications
+Можно настроить шрифты для заголовков окон, интерфейса (приложений), документов и изменить моноширинный шрифт. Смотрите вкладку Шрифты в Tweak Tool.
 
-To start certain applications on login, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`.
+Для хинтинга, скорее всего, потребуется RGBA, так как он подходит для мониторов большинства типов, и если шрифты кажутся слишком загороженными, то измените хинтинг на *Slight* или *None*.
 
-The [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) allows managing autostart-entries.
+#### Запуск приложений при входе в систему
 
-**Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+Для запуска определенных приложений при входе в систему скопируйте соответствующий файл `.desktop` из `/usr/share/applications/` в `~/.config/autostart/`.
 
-**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+[gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) позволяет управлять тем, какие приложения будут запущены при входе.
 
-#### Power
+**Совет:** Если кнопка с плюсом в Tweak Tool недоступна, попробуйте запустить Tweak Tool из терминала следующей командой: `gnome-tweak-tool`. Смотрите [страницу форума](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
-The basic power settings that may want to be altered (these example settings assume the user is using a laptop - change them as desired):
+**Примечание:** Устаревший диалог *gnome-session-properties* может быть добавлен путем [установки](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/).
+
+#### Электропитание
+
+Вы, возможно, захотите изменить стандартные настройки электропитания (этот пример подразумевает то, что вы используете ноутбук; измените их по необходимости):
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.power button-power *hibernate*
@@ -535,22 +533,22 @@ $ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
 
 ```
 
-To keep a monitor active on lid close:
+Оставить монитор включенным при закрытии крышки:
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
 
 ```
 
-##### Configure behaviour on lid switch close
+##### Изменить поведение при закрытии крышки
 
-The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+GNOME Tweak Tool может дополнительно *тормозить systemd* для этого ACPI события.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Чтобы включить это, запустите Tweak Tool и под вкладкой электропитание, отметьте опцию *Не переводить в ждущий режим при закрытии крышки*. Это значит, что система не будет ничего делать при закрытии крышки вместо того, чтобы перейти в ждущий режим - стандартное поведение. Включение этой опции создает файл `~/.config/autostart/ignore-lid-switch-tweak.desktop`, который будет автоматически запускать ингибитор Tweak Tool.
 
-If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+Если вы не хотите, чтобы система переходила в ждущий режим или ничего не делала при закрытии крышки, то вы должны убедиться, что опция, описанная выше, **не** включена, а затем настроить *systemd* при помощи `HandleLidSwitch=*preferred_behaviour*`, как описано в [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
-##### Change critical battery level action
+##### Изменить действие, выполняемое при критическом уровне заряда батареи
 
-The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+Панель настроек не предоставляет соответствующую опцию для изменения действия, которое будет выполняться при критическом уровне заряда батареи. Также эти настройки были удалены из dconf. В настоящий момент они управляются upower. Отредактируйте файл настроек upower - `/etc/UPower/UPower.conf`. Найдите следующие параметры и настройте под свои нужны.
 
  `/etc/UPower/UPower.conf` 
 ```

@@ -163,7 +163,7 @@ bcdedit /timeout 30
 
 ### Системы с UEFI
 
-Загрузчики [gummiboot (Русский)](/index.php/Gummiboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gummiboot (Русский)") и [rEFInd (Русский)](/index.php/REFInd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "REFInd (Русский)") автоматически обнаруживают загрузчик Windows (`\EFI\Microsoft\Boot\bootmgfw.efi`) и добавляют его в свои меню, поэтому для них не требуется какой-либо дополнительной настройки.
+Загрузчики [systemd-boot (Русский)](/index.php/Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-boot (Русский)") и [rEFInd (Русский)](/index.php/REFInd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "REFInd (Русский)") автоматически обнаруживают загрузчик Windows (`\EFI\Microsoft\Boot\bootmgfw.efi`) и добавляют его в свои меню, поэтому для них не требуется какой-либо дополнительной настройки.
 
 Если вы используете [GRUB (2)](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)"), следуйте этому [руководству](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Windows_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_UEFI "GRUB (Русский)").
 

@@ -66,7 +66,7 @@ Both the Ethernet and wireless are supported by Arch out of the box. All the ava
 
 When using the proprietary nvidia driver, it needs to be instructed to take care of brightness control.
 
- `/usr/share/X11/xorg.conf.d/10-nvidia-brightness.conf` 
+ `/etc/X11/xorg.conf.d/10-nvidia-brightness.conf` 
 ```
 Section "Device"
     Identifier     "Device0"

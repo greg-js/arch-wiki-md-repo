@@ -113,9 +113,7 @@ dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/vesamenu.c32 to 192.168
 dnsmasq-tftp[2544]: sent /mnt/archiso/arch/boot/syslinux/splash.png to 192.168.0.110
 ```
 
-After you load `pxelinux.0` and `archiso.cfg` via TFTP, you will (hopefully) be presented with a [syslinux](/index.php/Syslinux "Syslinux") boot menu with several options, two of which are of potential usefulness to us.
-
-Select either *Boot Arch Linux (x86_64) (HTTP)* or *Boot Arch Linux (i686) (HTTP)* depending on your CPU architecture.
+After you load `pxelinux.0` and `archiso.cfg` via TFTP, you will (hopefully) be presented with a [syslinux](/index.php/Syslinux "Syslinux") boot menu with several options, where you can select *Boot Arch Linux (x86_64) (HTTP)*.
 
 Next the kernel and initramfs (appropriate for the architecture you selected) will be transferred, again via TFTP:
 
@@ -196,7 +194,7 @@ LABEL 2
         ENDTEXT
 ```
 
-Replace x86_64 with i686 to boot the 32-bit variant. You can also replace archiso_nfs_srv with any of the supported methods listed above (HTTP, NBD). Adding the ip= instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network.
+You can replace archiso_nfs_srv with any of the supported methods listed above (HTTP, NBD). Adding the ip= instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network.
 
 ### DHCP interface rename bug
 

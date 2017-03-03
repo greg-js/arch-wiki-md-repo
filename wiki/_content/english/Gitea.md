@@ -130,10 +130,6 @@ PrintMotd no
 Subsystem sftp /usr/lib/ssh/sftp-server
 ```
 
-*   Export **GITEA_CUSTOM** using `/home/**gitea**/.ssh/environment`:
-
- `/home/**gitea**/.ssh/environment`  `GITEA_CUSTOM=/var/lib/gitea/custom` 
-
 *   Set correct [SSH permissions](/index.php/SSH_keys#Key_ignored_by_the_server "SSH keys")
 *   [Restart](/index.php/Restart "Restart") `gitea.service` and `sshd.service`
 *   Generate a [SSH key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the **client** (if non exists)

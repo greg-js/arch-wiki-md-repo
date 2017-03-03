@@ -33,7 +33,7 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
 
 ## Current status in Arch Linux
 
-Current status of those elements in Arch Linux:
+SELinux is not officially supported (see [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-October/034352.html)[[2]](https://lists.archlinux.org/pipermail/arch-general/2017-February/043149.html)). The status of unofficial support is:
 
 | Name | Status | Available at |
 | SELinux enabled kernel | Implemented | Removed since the 3.14 official Arch kernel: The main complaint was the lack of Kconfig option to disable audit by default. Available in the AUR. |

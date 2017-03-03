@@ -126,7 +126,7 @@ First [enable](/index.php/Enable "Enable") the `machines.target` target, then `s
 
 **Tip:**
 
-*   Symbolic links to containers in `/var/lib/machines` do not work as of [systemd](https://www.archlinux.org/packages/?name=systemd) v229, see [[1]](https://github.com/systemd/systemd/issues/2001).
+*   Symbolic links to containers in `/var/lib/machines` currently do not work, see [[1]](https://github.com/systemd/systemd/issues/2001).
 *   To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See `systemd-nspawn(1)` for all options.
 
 ### Build and test packages

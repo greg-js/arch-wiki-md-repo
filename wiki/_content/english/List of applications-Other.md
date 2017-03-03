@@ -9,13 +9,14 @@
 *   [1 Others](#Others)
     *   [1.1 Finance](#Finance)
     *   [1.2 Education](#Education)
-    *   [1.3 Flashcards](#Flashcards)
-    *   [1.4 Time management](#Time_management)
-        *   [1.4.1 Console](#Console)
-        *   [1.4.2 Graphical](#Graphical)
-    *   [1.5 Emulators](#Emulators)
-        *   [1.5.1 Consoles](#Consoles)
-        *   [1.5.2 Other](#Other)
+        *   [1.2.1 Flashcards](#Flashcards)
+    *   [1.3 Time management](#Time_management)
+        *   [1.3.1 Console](#Console)
+        *   [1.3.2 Graphical](#Graphical)
+    *   [1.4 Emulators](#Emulators)
+        *   [1.4.1 Consoles](#Consoles)
+        *   [1.4.2 Other](#Other)
+    *   [1.5 Speech recognition](#Speech_recognition)
     *   [1.6 Amateur radio](#Amateur_radio)
     *   [1.7 Display calibration](#Display_calibration)
         *   [1.7.1 Console](#Console_2)
@@ -85,11 +86,9 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 ### Education
 
-*   **[Moodle](/index.php/Moodle "Moodle")** — Moodle is a open-source software learning management system.
+See also [Education management engines](/index.php/List_of_applications#Education_management_engines "List of applications")
 
-	[https://moodle.org/](https://moodle.org/) || [moodle](https://aur.archlinux.org/packages/moodle/)
-
-### Flashcards
+#### Flashcards
 
 *   **[Anki](/index.php/Anki "Anki")** — Anki is a program which makes remembering things easy.
 
@@ -361,6 +360,10 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 *   **X Neko Project II** — PC-9801 emulator.
 
 	[http://www.asahi-net.or.jp/~aw9k-nnk/np2/](http://www.asahi-net.or.jp/~aw9k-nnk/np2/) || [xnp2](https://aur.archlinux.org/packages/xnp2/)
+
+### Speech recognition
+
+See [Speech recognition#List of speech recognition applications](/index.php/Speech_recognition#List_of_speech_recognition_applications "Speech recognition").
 
 ### Amateur radio
 

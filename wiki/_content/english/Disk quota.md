@@ -46,7 +46,7 @@ or, to additionally enable the group quota mount option:
 
 ```
 
-Note: these quota options are possibly obsolete. See [#Journaled quota](#Journaled_quota).
+**Note:** These quota options are possibly obsolete. See [#Journaled quota](#Journaled_quota).
 
 After adding the options remount
 

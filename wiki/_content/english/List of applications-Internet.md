@@ -9,91 +9,89 @@
 *   [1 Internet](#Internet)
     *   [1.1 Network managers](#Network_managers)
     *   [1.2 VPN clients](#VPN_clients)
-    *   [1.3 Web browsers](#Web_browsers)
-        *   [1.3.1 Console](#Console)
-        *   [1.3.2 Graphical](#Graphical)
-            *   [1.3.2.1 Gecko-based](#Gecko-based)
-            *   [1.3.2.2 Blink-based](#Blink-based)
-                *   [1.3.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
-                *   [1.3.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.3.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
-            *   [1.3.2.3 WebKit-based](#WebKit-based)
-                *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
-                *   [1.3.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
-            *   [1.3.2.4 Other](#Other)
-    *   [1.4 File sharing](#File_sharing)
-        *   [1.4.1 Download managers](#Download_managers)
-        *   [1.4.2 FTP](#FTP)
-            *   [1.4.2.1 FTP clients](#FTP_clients)
-            *   [1.4.2.2 FTP servers](#FTP_servers)
-        *   [1.4.3 SSH/SFTP](#SSH.2FSFTP)
-            *   [1.4.3.1 SFTP servers](#SFTP_servers)
-            *   [1.4.3.2 SFTP clients](#SFTP_clients)
-        *   [1.4.4 Distributed file systems](#Distributed_file_systems)
-        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.5.1 Console](#Console_2)
-                *   [1.4.5.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.4.5.1.2 Console Interface](#Console_Interface)
-            *   [1.4.5.2 Graphical Interface](#Graphical_Interface)
-                *   [1.4.5.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.5.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.4.5.2.3 others](#others)
-        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.7 Video downloaders](#Video_downloaders)
-    *   [1.5 Communication](#Communication)
-        *   [1.5.1 Email clients](#Email_clients)
-            *   [1.5.1.1 Console](#Console_3)
-            *   [1.5.1.2 Graphical](#Graphical_2)
-        *   [1.5.2 Instant messaging](#Instant_messaging)
-            *   [1.5.2.1 IRC clients](#IRC_clients)
-                *   [1.5.2.1.1 Console](#Console_4)
-                *   [1.5.2.1.2 Graphical](#Graphical_3)
-            *   [1.5.2.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
-                *   [1.5.2.2.1 Console](#Console_5)
-                *   [1.5.2.2.2 Graphical](#Graphical_4)
-            *   [1.5.2.3 XMPP servers](#XMPP_servers)
-            *   [1.5.2.4 Other](#Other_2)
-            *   [1.5.2.5 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.2.5.1 Console](#Console_6)
-                *   [1.5.2.5.2 Graphical](#Graphical_5)
-            *   [1.5.2.6 Lan messengers](#Lan_messengers)
-        *   [1.5.3 VoIP / Softphone](#VoIP_.2F_Softphone)
-            *   [1.5.3.1 Clients](#Clients)
-                *   [1.5.3.1.1 SIP](#SIP)
-                *   [1.5.3.1.2 IAX2](#IAX2)
-                *   [1.5.3.1.3 Skype](#Skype)
-                *   [1.5.3.1.4 Other](#Other_3)
-                *   [1.5.3.1.5 Multi-protocol](#Multi-protocol)
-            *   [1.5.3.2 Voice servers](#Voice_servers)
-            *   [1.5.3.3 Utilities](#Utilities)
-        *   [1.5.4 Speech recognition](#Speech_recognition)
-    *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
-        *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_7)
-            *   [1.6.1.2 Graphical](#Graphical_6)
-        *   [1.6.2 Podcast clients](#Podcast_clients)
-        *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
-        *   [1.6.4 Blog engines](#Blog_engines)
-        *   [1.6.5 Microblogging clients](#Microblogging_clients)
-    *   [1.7 Remote desktop](#Remote_desktop)
-        *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
-        *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
-    *   [1.8 Pastebin clients](#Pastebin_clients)
-    *   [1.9 Bitcoin](#Bitcoin)
-    *   [1.10 Web Servers](#Web_Servers)
-        *   [1.10.1 LAMP stack](#LAMP_stack)
-            *   [1.10.1.1 Servers](#Servers)
-            *   [1.10.1.2 Databases](#Databases)
-            *   [1.10.1.3 PHP](#PHP)
-        *   [1.10.2 Content management, social networks, blog publishers](#Content_management.2C_social_networks.2C_blog_publishers)
-        *   [1.10.3 Wiki engines](#Wiki_engines)
-        *   [1.10.4 Education management](#Education_management)
-        *   [1.10.5 Mail servers](#Mail_servers)
-        *   [1.10.6 Instant messaging servers](#Instant_messaging_servers)
-        *   [1.10.7 FTP servers](#FTP_servers_2)
-        *   [1.10.8 Cloud storage servers](#Cloud_storage_servers)
-        *   [1.10.9 Remote desktop servers](#Remote_desktop_servers_2)
-        *   [1.10.10 Surveying](#Surveying)
+    *   [1.3 Anonymizing networks](#Anonymizing_networks)
+    *   [1.4 Web browsers](#Web_browsers)
+        *   [1.4.1 Console](#Console)
+        *   [1.4.2 Graphical](#Graphical)
+            *   [1.4.2.1 Gecko-based](#Gecko-based)
+            *   [1.4.2.2 Blink-based](#Blink-based)
+                *   [1.4.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
+                *   [1.4.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+                *   [1.4.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
+            *   [1.4.2.3 WebKit-based](#WebKit-based)
+                *   [1.4.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
+                *   [1.4.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
+            *   [1.4.2.4 Other](#Other)
+    *   [1.5 File sharing](#File_sharing)
+        *   [1.5.1 Download managers](#Download_managers)
+        *   [1.5.2 FTP](#FTP)
+            *   [1.5.2.1 FTP clients](#FTP_clients)
+            *   [1.5.2.2 FTP servers](#FTP_servers)
+        *   [1.5.3 SSH/SFTP](#SSH.2FSFTP)
+            *   [1.5.3.1 SFTP servers](#SFTP_servers)
+            *   [1.5.3.2 SFTP clients](#SFTP_clients)
+        *   [1.5.4 Distributed file systems](#Distributed_file_systems)
+        *   [1.5.5 BitTorrent clients](#BitTorrent_clients)
+            *   [1.5.5.1 Console](#Console_2)
+                *   [1.5.5.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.5.5.1.2 Console Interface](#Console_Interface)
+            *   [1.5.5.2 Graphical Interface](#Graphical_Interface)
+                *   [1.5.5.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.5.5.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.5.5.2.3 others](#others)
+        *   [1.5.6 Other P2P networks](#Other_P2P_networks)
+        *   [1.5.7 Video downloaders](#Video_downloaders)
+    *   [1.6 Communication](#Communication)
+        *   [1.6.1 Email clients](#Email_clients)
+            *   [1.6.1.1 Console](#Console_3)
+            *   [1.6.1.2 Graphical](#Graphical_2)
+        *   [1.6.2 Instant messaging](#Instant_messaging)
+            *   [1.6.2.1 IRC clients](#IRC_clients)
+                *   [1.6.2.1.1 Console](#Console_4)
+                *   [1.6.2.1.2 Graphical](#Graphical_3)
+            *   [1.6.2.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
+                *   [1.6.2.2.1 Console](#Console_5)
+                *   [1.6.2.2.2 Graphical](#Graphical_4)
+            *   [1.6.2.3 XMPP servers](#XMPP_servers)
+            *   [1.6.2.4 Other](#Other_2)
+            *   [1.6.2.5 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.6.2.5.1 Console](#Console_6)
+                *   [1.6.2.5.2 Graphical](#Graphical_5)
+            *   [1.6.2.6 Lan messengers](#Lan_messengers)
+        *   [1.6.3 VoIP / Softphone](#VoIP_.2F_Softphone)
+            *   [1.6.3.1 Clients](#Clients)
+                *   [1.6.3.1.1 SIP](#SIP)
+                *   [1.6.3.1.2 IAX2](#IAX2)
+                *   [1.6.3.1.3 Skype](#Skype)
+                *   [1.6.3.1.4 Other](#Other_3)
+                *   [1.6.3.1.5 Multi-protocol](#Multi-protocol)
+            *   [1.6.3.2 Voice servers](#Voice_servers)
+            *   [1.6.3.3 Utilities](#Utilities)
+    *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
+        *   [1.7.1 News aggregators](#News_aggregators)
+            *   [1.7.1.1 Console](#Console_7)
+            *   [1.7.1.2 Graphical](#Graphical_6)
+        *   [1.7.2 Podcast clients](#Podcast_clients)
+        *   [1.7.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
+        *   [1.7.4 Blog engines](#Blog_engines)
+        *   [1.7.5 Microblogging clients](#Microblogging_clients)
+    *   [1.8 Remote desktop](#Remote_desktop)
+        *   [1.8.1 Remote desktop clients](#Remote_desktop_clients)
+        *   [1.8.2 Remote desktop servers](#Remote_desktop_servers)
+    *   [1.9 Pastebin clients](#Pastebin_clients)
+    *   [1.10 Bitcoin](#Bitcoin)
+    *   [1.11 Web Servers](#Web_Servers)
+        *   [1.11.1 LAMP stack](#LAMP_stack)
+            *   [1.11.1.1 Servers](#Servers)
+            *   [1.11.1.2 Databases](#Databases)
+            *   [1.11.1.3 PHP](#PHP)
+        *   [1.11.2 Content management, social networks, blog publishers](#Content_management.2C_social_networks.2C_blog_publishers)
+        *   [1.11.3 Wiki engines](#Wiki_engines)
+        *   [1.11.4 Education management engines](#Education_management_engines)
+        *   [1.11.5 Mail servers](#Mail_servers)
+        *   [1.11.6 FTP servers](#FTP_servers_2)
+        *   [1.11.7 Cloud storage servers](#Cloud_storage_servers)
+        *   [1.11.8 Surveying](#Surveying)
 
 ## Internet
 
@@ -132,6 +130,24 @@
 *   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
+
+### Anonymizing networks
+
+*   **[Freenet](/index.php/Freenet "Freenet")** — An encrypted network without censorship.
+
+	[https://freenetproject.org](https://freenetproject.org) || [freenet](https://aur.archlinux.org/packages/freenet/)
+
+*   **[GNUnet](/index.php/GNUnet "GNUnet")** — A framework for secure peer-to-peer networking.
+
+	[http://gnunet.org](http://gnunet.org) || [gnunet](https://www.archlinux.org/packages/?name=gnunet)
+
+*   **[I2P](/index.php/I2P "I2P")** — A distributed anonymous network.
+
+	[https://geti2p.net](https://geti2p.net) || [i2p](https://aur.archlinux.org/packages/i2p/)
+
+*   **[Tor](/index.php/Tor "Tor")** — Anonymizing overlay network.
+
+	[http://www.torproject.org/](http://www.torproject.org/) || [tor](https://www.archlinux.org/packages/?name=tor)
 
 ### Web browsers
 
@@ -557,6 +573,8 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/Comparison_of_e-mail_clients "wikipedia:Comparison of e-mail clients").
 
+See also [Mail servers](/index.php/List_of_applications#Mail_servers "List of applications").
+
 ##### Console
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
@@ -823,7 +841,7 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 ##### Other
 
-*   **Ricochet** — Anonymous peer-to-peer instant messaging.
+*   **Ricochet** — Anonymous peer-to-peer instant messaging system built on [Tor](/index.php/Tor "Tor") hidden services.
 
 	[https://ricochet.im/](https://ricochet.im/) || [ricochet](https://aur.archlinux.org/packages/ricochet/)
 
@@ -1001,7 +1019,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Murmur](/index.php/Murmur "Murmur")** — The voice chat application server for Mumble.
 
-	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
+	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [murmur](https://www.archlinux.org/packages/?name=murmur)
 
 ##### Utilities
 
@@ -1012,10 +1030,6 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 *   **SIPp** — Open source test tool and traffic generator for the SIP protocol.
 
 	[http://sipp.sourceforge.net/](http://sipp.sourceforge.net/) || [sipp](https://aur.archlinux.org/packages/sipp/)
-
-#### Speech recognition
-
-See [Speech recognition#List of speech recognition applications](/index.php/Speech_recognition#List_of_speech_recognition_applications "Speech recognition").
 
 ### News, RSS, and blogs
 
@@ -1433,21 +1447,21 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 	[http://moinmo.in/](http://moinmo.in/) || [moinmoin](https://www.archlinux.org/packages/?name=moinmoin)
 
-#### Education management
+#### Education management engines
 
-see [Education](/index.php/List_of_applications#Education "List of applications")
+*   **[Moodle](/index.php/Moodle "Moodle")** — Moodle is a open-source software learning management system.
+
+	[https://moodle.org/](https://moodle.org/) || [moodle](https://aur.archlinux.org/packages/moodle/)
 
 #### Mail servers
 
-see
+*   **Dovecot** — An IMAP and POP3 server written with security primarily in mind.
 
-#### Instant messaging servers
-
-see [XMPP servers](/index.php/List_of_applications#XMPP_servers "List of applications")
+	[http://dovecot.org/](http://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
 
 #### FTP servers
 
-see [FTP servers](/index.php/List_of_applications#FTP_servers "List of applications") and [SFTP servers](/index.php/List_of_applications#SFTP_clients "List of applications")
+See [FTP servers](/index.php/List_of_applications#FTP_servers "List of applications") and [SFTP servers](/index.php/List_of_applications#SFTP_clients "List of applications")
 
 #### Cloud storage servers
 
@@ -1458,10 +1472,6 @@ see [FTP servers](/index.php/List_of_applications#FTP_servers "List of applicati
 *   **[Seafile](/index.php/Seafile "Seafile")** — An online file storage and collaboration tool.
 
 	[https://github.com/haiwen/seafile-server](https://github.com/haiwen/seafile-server) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
-
-#### Remote desktop servers
-
-see [Remote desktop servers](/index.php/List_of_applications#Remote_desktop_servers "List of applications")
 
 #### Surveying
 

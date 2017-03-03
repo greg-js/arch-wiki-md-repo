@@ -168,7 +168,7 @@ For input devices the X server defaults to the libinput driver ([xf86-input-libi
 After starting X server, the log file will show which driver hotplugged for the individual devices (note the most recent log file name may vary):
 
 ```
-$ grep -e "Using input driver " ~/.local/share/xorg/Xorg.0.log
+$ grep -e "Using input driver " Xorg.0.log
 
 ```
 

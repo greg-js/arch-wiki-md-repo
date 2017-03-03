@@ -70,7 +70,7 @@ To enable *smooth transition* (if supported) you have to:
 
 ### Show Delay
 
-As of version 0.9.0 plymouth has a new configuration option available in /etc/plymouth/plymouthd.conf
+Plymouth has a configuration option to delay the splash screen:
 
  `/etc/plymouth/plymouthd.conf` 
 ```

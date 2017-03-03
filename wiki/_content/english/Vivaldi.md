@@ -3,14 +3,21 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Media playback](#Media_playback)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Unable to set Vivaldi as default web browser](#Unable_to_set_Vivaldi_as_default_web_browser)
-*   [4 See also](#See_also)
+*   [2 Extensions](#Extensions)
+*   [3 Media playback](#Media_playback)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Unable to set Vivaldi as default web browser](#Unable_to_set_Vivaldi_as_default_web_browser)
+*   [5 See also](#See_also)
 
 ## Installation
 
 Vivaldi can be [installed](/index.php/Installed "Installed") with [vivaldi](https://aur.archlinux.org/packages/vivaldi/) or [vivaldi-beta](https://aur.archlinux.org/packages/vivaldi-beta/) or [vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/). Alternatively you can add [herecura's repo](http://repo.herecura.eu), where you can find prebuilt packages.
+
+## Extensions
+
+Vivaldi is compatible with most of Chrome's extensions. These can be installed direct on [Chrome Web Store](https://https://chrome.google.com/webstore/category/extensions). To see which extensions are installed/enabled search for `vivaldi://extensions` or just `extensions`.
+
+See also [Chrome extensions](https://en.wikipedia.org/wiki/Google_Chrome_Extension "wikipedia:Google Chrome Extension") on Wikipedia.
 
 ## Media playback
 
@@ -27,3 +34,4 @@ You have to edit [default applications](/index.php/Default_applications "Default
 ## See also
 
 *   [Official webpage](http://vivaldi.com/)
+*   [Chromium](https://wiki.archlinux.org/index.php/Chromium)

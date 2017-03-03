@@ -74,6 +74,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [schuay](https://aur.archlinux.org/packages.php?K=schuay&SeB=m) | Jakob Gruber | jakob.gruber@gmail.com |
 | [seblu](https://aur.archlinux.org/packages.php?K=seblu&SeB=m) | Sébastien Luttringer | s е b l u *at* a r c h l і n ux *dot* o r g |
 | [sergej](https://aur.archlinux.org/packages.php?K=sergej&SeB=m) | [Sergej Pupykin](/index.php/User:Sergej "User:Sergej") | pupykin.s+arch@gmail.com |
+| [shibumi](https://aur.archlinux.org/packages.php?K=shibumi&SeB=m) | [Christian Rebischke](/index.php/User:Shibumi "User:Shibumi") | Chris.Rebischke [at] archlinux [dot] org |
 | [speps](https://aur.archlinux.org/packages.php?K=speps&SeB=m) | SpepS | dreamspepser at yahoo dot it |
 | [stativ](https://aur.archlinux.org/packages.php?K=stativ&SeB=m) | Lukas Jirkovsky | l.jirkovsky strange_curved_character gmail.com |
 | [svenstaro](https://aur.archlinux.org/packages.php?K=svenstaro&SeB=m) | [Sven-Hendrik Haase](/index.php/User:Svenstaro "User:Svenstaro") | sh@lutzhaase.com |

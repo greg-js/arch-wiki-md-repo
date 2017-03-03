@@ -4,6 +4,7 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 PlayonLinux Method](#PlayonLinux_Method)
+        *   [1.1.1 PlayOnLinux 5](#PlayOnLinux_5)
     *   [1.2 AUR Package](#AUR_Package)
     *   [1.3 Wine Method](#Wine_Method)
         *   [1.3.1 Create a 32-bit Wine PREFIX](#Create_a_32-bit_Wine_PREFIX)
@@ -38,6 +39,16 @@ If the installer fails saying that DirectX cannot be installed, make sure you in
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 *   [openal](https://www.archlinux.org/packages/?name=openal)
 *   [freealut](https://www.archlinux.org/packages/?name=freealut)
+
+#### PlayOnLinux 5
+
+1.  Install [playonlinux5-git](https://aur.archlinux.org/packages/playonlinux5-git/)
+2.  Open it and go to Apps -> Games -> "League of Legends BETA Client".
+3.  Click install.
+4.  Run the "League of Legends BETA Client" from Library.
+5.  Upgrade to the BETA client.
+6.  Wait for it to finish and close the launcher.
+7.  Start the BETA client from the Library.
 
 ### AUR Package
 

@@ -246,7 +246,7 @@ numlock=1
 
 ### LXQt
 
-Set the option in `~/.config/lqxt/session.conf`:
+Set the option in `~/.config/lxqt/session.conf`:
 
 ```
 numlock=true

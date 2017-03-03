@@ -109,7 +109,7 @@ color=1:GlowingLogo:FFFFFF
 
 ## Razer Blade
 
-Razer Blade is Razer's line of gaming laptops. There is currently a 14" model, and a 17" model. Due to the proprietary SBUI trackpad on the 17" model, it will be extremely difficult to get it to work without extensive USB protocol reversing.
+Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (Razer Blade Stealth), 14" model (Razer Blade), and a 17" model (Razer Blade Pro). Due to the proprietary SBUI trackpad on the 17" model, it will be extremely difficult to get it to work without extensive USB protocol reversing.
 
 ### 2016 version (Razer Blade & Razer Blade Stealth)
 
@@ -118,6 +118,41 @@ The normal installation process works in general with the exceptions enumerated 
 #### Killer Wireless Network Adapter
 
 Killer Wireless adapters no longer require special firmware to function, and will work right out of the box.
+
+Blade 2016 with Killer 1535 will, however, drop connection upon heavy load. A possible solution is to use the [git](https://github.com/kvalo/ath10k-firmware/) version of ath10k as following:
+
+Remove the included firmware:
+
+```
+# rm -r /lib/firmware/ath10k/QCA6174/
+
+```
+
+Download the latest firmware using [wget](https://www.archlinux.org/packages/?name=wget) or your favorite browser:
+
+```
+$ wget https://github.com/kvalo/ath10k-firmware/archive/master.zip
+
+```
+
+Unzip the downloaded file using your preferred method and copy to /lib/firmware/ath10k/:
+
+```
+# cp -r ath10k-firmware-master/QCA6174/ /lib/firmware/ath10k/
+
+```
+
+Rename some files:
+
+```
+# cd /lib/firmware/ath10k/QCA6174/hw2.1/
+# mv firmware-5.bin_SW_RM.1.1.1-00157-QCARMSWPZ-1 firmware-5.bin
+# cd /lib/firmware/ath10k/QCA6174/hw3.0/
+# mv firmware-4.bin_WLAN.RM.2.0-00180-QCARMSWPZ-1 firmware-4.bin
+
+```
+
+Reboot and test.
 
 #### Touchpad
 

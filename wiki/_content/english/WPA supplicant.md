@@ -343,21 +343,14 @@ In some instances it was found that storing the passphrase cleartext in the `psk
 
 ### Problems with eduroam and other MSCHAPv2 connections
 
-As of [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 1:2.6-1, following [FS#51358](https://bugs.archlinux.org/task/51358), you should change your configuration from
-
-```
-phase2="auth=MSCHAPv2"
-
-```
-
-by capitalizing the letter "v", to
+Ensure that your config uses
 
 ```
 phase2="auth=MSCHAPV2"
 
 ```
 
-You could even omit this setting entirely, since MSCHAPV2 is the default.
+with a capital "v" (see [FS#51358](https://bugs.archlinux.org/task/51358)). You could even omit this setting entirely, since MSCHAPV2 is the default.
 
 ## See also
 
