@@ -14,7 +14,7 @@ Support of a various streaming services is provided by a plugins, which can be e
 
 ## Installation
 
-[Install](/index.php/Install "Install") [livestreamer](https://www.archlinux.org/packages/?name=livestreamer), available from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install [livestreamer-dev-git](https://aur.archlinux.org/packages/livestreamer-dev-git/) from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 

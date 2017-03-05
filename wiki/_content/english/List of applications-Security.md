@@ -177,7 +177,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 #### Screen lockers
 
-**Warning:** Only *sflock*, *physlock*, *Cinnamon Screensaver*, *MATE Screensaver* and *GNOME Screensaver* are able to block tty access.
+**Warning:** Only *sflock*, *physlock*, *Cinnamon Screensaver*, *MATE Screensaver* and *GNOME Screensaver* are able to block tty access. See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg") on how to manually block tty access.
 
 *   **Cinnamon Screensaver** — Screen locker for the Cinnamon desktop.
 
@@ -279,7 +279,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Parchive** — Utility which creates and uses PAR2 files to detect damage in data files and repair them if necessary.
 
-	[http://parchive.sourceforge.net/](http://parchive.sourceforge.net/) || [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline)
+	[https://github.com/Parchive/par2cmdline](https://github.com/Parchive/par2cmdline) || [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline)
 
 #### Encryption, signing, steganography
 
@@ -328,6 +328,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **Console Password Manager** — Curses based password manager using PGP-encryption.
 
 	[https://github.com/comotion/cpm](https://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
+
+*   **Encryptr** — Zero-knowledge, cloud-based password manager.
+
+	[https://spideroak.com/personal/encryptr](https://spideroak.com/personal/encryptr) || [encryptr](https://aur.archlinux.org/packages/encryptr/)
 
 *   **Enpass** — A multiplatform password manager
 

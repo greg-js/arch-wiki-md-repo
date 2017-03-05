@@ -24,10 +24,11 @@ According to the [official website](http://www.gnupg.org):
     *   [4.3 Exporting subkey](#Exporting_subkey)
     *   [4.4 Rotating subkeys](#Rotating_subkeys)
 *   [5 Signatures](#Signatures)
-    *   [5.1 Sign a file](#Sign_a_file)
-    *   [5.2 Clearsign a file or message](#Clearsign_a_file_or_message)
-    *   [5.3 Make a detached signature](#Make_a_detached_signature)
-    *   [5.4 Verify a signature](#Verify_a_signature)
+    *   [5.1 Create a signature](#Create_a_signature)
+        *   [5.1.1 Sign a file](#Sign_a_file)
+        *   [5.1.2 Clearsign a file or message](#Clearsign_a_file_or_message)
+        *   [5.1.3 Make a detached signature](#Make_a_detached_signature)
+    *   [5.2 Verify a signature](#Verify_a_signature)
 *   [6 gpg-agent](#gpg-agent)
     *   [6.1 Configuration](#Configuration_2)
     *   [6.2 Reload the agent](#Reload_the_agent)
@@ -99,7 +100,7 @@ This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and c
 
 ## Usage
 
-**Note:** Whenever a *`<user-id>`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
+**Note:** Whenever a *`user-id`* is required in a command, it can be specified with your key ID, fingerprint, a part of your name or email address, etc. GnuPG is flexible on this.
 
 ### Create key pair
 
@@ -148,7 +149,7 @@ So, in order for others to send encrypted messages to you, they need your public
 To generate an ASCII version of your public key (*e.g.* to distribute it by e-mail):
 
 ```
-$ gpg --output *public.key* --armor --export *<user-id>* 
+$ gpg --output *public.key* --armor --export *user-id* 
 
 ```
 
@@ -172,21 +173,21 @@ Alternatively, [#Use a keyserver](#Use_a_keyserver) to find a public key.
 You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
 
 ```
-$ gpg --send-keys *<key-id>*
+$ gpg --send-keys *user-id*
 
 ```
 
 To find out details of a key on the keyserver, without importing it, do:
 
 ```
-$ gpg --search-keys *<key-id>*
+$ gpg --search-keys *user-id*
 
 ```
 
 To import a key from a key server:
 
 ```
-$ gpg --recv-keys *<key-id>*
+$ gpg --recv-keys *user-id*
 
 ```
 
@@ -211,23 +212,23 @@ You need to [#Import a public key](#Import_a_public_key) of a user before encryp
 To encrypt a file with the name *doc*, use:
 
 ```
-$ gpg --recipient *<user-id>* --encrypt *doc*
+$ gpg --recipient *user-id* --encrypt *doc*
 
 ```
 
-To decrypt (option `--decrypt` or `-d`) a file with the name *doc.gpg* encrypted with your public key, use:
+To decrypt (option `--decrypt` or `-d`) a file with the name *doc*.gpg encrypted with your public key, use:
 
 ```
-$ gpg --output *doc* --decrypt *doc.gpg*
+$ gpg --output *doc* --decrypt *doc*.gpg
 
 ```
 
-*gpg* will prompt you for your passphrase and then decrypt and write the data from *doc.gpg* to *doc*. If you omit the `-o` (`--output`) option, *gpg* will write the decrypted data to stdout.
+*gpg* will prompt you for your passphrase and then decrypt and write the data from *doc*.gpg to *doc*. If you omit the `-o` (`--output`) option, *gpg* will write the decrypted data to stdout.
 
 **Tip:**
 
 *   Add `--armor` to encrypt a file using ASCII armor (suitable for copying and pasting a message in text format)
-*   Use `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `-r` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
+*   Use `-R *user-id*` or `--hidden-recipient *user-id*` instead of `-r` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
 *   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
 *   You can use gnupg to encrypt your sensitive documents by using your own user-id as recipient, but only individual files at a time, though you can always tarball various files and then encrypt the tarball. See also [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") if you want to encrypt directories or a whole file-system.
 
@@ -245,11 +246,11 @@ $ gpg -c --s2k-cipher-algo AES256 --s2k-digest-algo SHA512 --s2k-count 65536 *do
 
 ```
 
-*   Decrypt a symmetrically encrypted *doc.gpg* using a passphrase
-*   Output decrypted contents into the same directory as *doc.gpg*
+*   Decrypt a symmetrically encrypted *doc*.gpg using a passphrase
+*   Output decrypted contents into the same directory as *doc*.gpg
 
 ```
-$ gpg *doc.gpg*
+$ gpg *doc*.gpg
 
 ```
 
@@ -367,60 +368,69 @@ $ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 
 Signatures certify and timestamp documents. If the document is modified, verification of the signature will fail. Unlike encryption which uses public keys to encrypt a document, signatures are created with the user's private key. The recipient of a signed document then verifies the signature using the sender's public key.
 
-### Sign a file
+### Create a signature
+
+#### Sign a file
 
 To sign a file use the `--sign` or `-s` flag:
 
 ```
- $ gpg --output *doc.sig* --sign *doc*
+ $ gpg --output *doc*.sig --sign *doc*
 
 ```
 
-The above also encrypts the file and stores it in binary format.
+`*doc*.sig` contains both the compressed content of the original file `*doc*` and the signature in a binary format, but the file is not encrypted. However, you can combine signing with [encrypting](#Encrypt_and_decrypt).
 
-### Clearsign a file or message
+#### Clearsign a file or message
 
 To sign a file without compressing it into binary format use:
 
 ```
- $ gpg --clearsign *doc*
+ $ gpg --output *doc*.sig --clearsign *doc*
 
 ```
 
-This wraps the document into an ASCII-armored signature, but does not modify the document.
+Here both the content of the original file `*doc*` and the signature are stored in human-readable form in `*doc*.sig`.
 
-### Make a detached signature
+#### Make a detached signature
 
 To create a separate signature file to be distributed separately from the document or file itself, use the `--detach-sig` flag:
 
 ```
- $ gpg --output *doc.sig* --detach-sig *doc*
+ $ gpg --output *doc*.sig --detach-sig *doc*
 
 ```
 
-This method is often used in distributing software projects to allow users to verify that the program has not been modified by a third party.
+Here the signature is stored in `*doc*.sig`, but the contents of `*doc*` are not stored in it. This method is often used in distributing software projects to allow users to verify that the program has not been modified by a third party.
 
 ### Verify a signature
 
 To verify a signature use the `--verify` flag:
 
 ```
- $ gpg --verify *doc.sig*
+ $ gpg --verify *doc*.sig
 
 ```
 
-where `*doc.sig*` is the signature you wish to verify.
+where `*doc*.sig` is the signed file containing the signature you wish to verify.
 
-To verify and decrypt a file at the same time, use the `--decrypt` flag as you normally would in decrypting a file.
-
-If you are verifying a detached signature, both the file and the signature must be present when verifying. For example, to verify Arch Linux's latest iso you would do:
+If you are verifying a detached signature, both the signed data file and the signature file must be present when verifying. For example, to verify Arch Linux's latest iso you would do:
 
 ```
- $ gpg --verify *archlinux-<version>-dual.iso.sig*
+ $ gpg --verify archlinux-*version*.iso.sig
 
 ```
 
-where `*archlinux-<version>-dual.iso*` must be located in the same directory.
+where `archlinux-*version*.iso` must be located in the same directory.
+
+You can also specify the signed data file with a second argument:
+
+```
+ $ gpg --verify archlinux-*version*.iso.sig */path/to/*archlinux-*version*.iso
+
+```
+
+If a file as been encrypted in addition to being signed, simply [decrypt](#Encrypt_and_decrypt) the file and its signature will also be verified.
 
 ## gpg-agent
 

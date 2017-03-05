@@ -57,7 +57,8 @@ $ fprintd-enroll
 or create a new signature for all fingers ([username] must be replaced with your username)
 
 ```
-$ fprintd-delete [username] && fprintd-enroll -f left-thumb [username] && fprintd-enroll -f left-index-finger [username] && fprintd-enroll -f left-middle-finger [username] && fprintd-enroll -f left-ring-finger [username] && fprintd-enroll -f left-little-finger [username] && fprintd-enroll -f right-thumb [username] && fprintd-enroll -f right-index-finger [username] && fprintd-enroll -f right-middle-finger [username] && fprintd-enroll -f right-ring-finger [username] && fprintd-enroll -f right-little-finger [username]
+$ fprintd-delete [username]
+$ for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f $finger [username]; done
 
 ```
 

@@ -199,18 +199,40 @@ srcman is a pacman/makepkg wrapper written in Bash, which transparently handles 
 
 ## Сравнительная таблица
 
-| Программа | Язык | Поддержка зависимостей | Поддержка репозиториев Core/extra/community | Активно разрабатывается | Использование |
-| [Aurget](#aurget) | Bash | Да | Нет | Да | see `aurget --help` |
-| [AurShell](#aursh) | Python | Нет | Нет | Нет | aursh (запускает Aurshell, где используется определенный набор команд) |
-| [Aurora](#aurora) | Python3 | Базовая (при помощи makepkg) | Нет | Да | см. aurora --help |
-| [Clyde](#clyde) | Lua | Да | Да | Нет | Идентично pacman'у (например, clyde -S <имя_пакета>) |
-| [Cower](#cower) | C | Да | Нет | Да | см. `cower -h` |
-| [Makeaur](#makeaur) | Bash | Нет | Нет | Создан форк | makeaur <имя_пакета> |
-| [Pacaur](#pacaur) | Bash, backend in C (cower) | Да | Да | Да | Идентично pacman'у, со специфичными для AUR аргументами. См. также `pacaur -h`. |
-| [Packer](#packer) | Bash | Да | Да | Да | Идентично pacman'у (например, packer -S <имя_пакета>) |
-| [pacmoon](#pacmoon) | Zsh | Да | Да | Да | Идентично emerge из portage pacmoon -av <имя_пакета> |
-| [Paktahn](#paktahn) | Lisp | Да | Да | Да | Идентично pacman'у (например, pak -S <имя_пакета>) |
-| [pbfetch](#pbfetch) | Bash | Да | Да | Да | Идентично pacman'у, со специфичными для AUR аргументами (доп. аргументы для редактирования PKGBUILD и т.п.) |
-| [powaur](#powaur) | C | Нет | Ограниченная | Да | Идентично pacman'у (например, powaur -S <имя_пакета>) |
-| [tupac](#tupac) | PHP | Да | Да | Updated under request | Идентично pacman'у (например, tupac -S <имя_пакета>) |
-| [Yaourt](#yaourt) | Bash, бэкенд на C | Да | Да | Да | Идентично pacman'у (например, yaourt -S <имя_пакета>) |
+Расшифровка значений колонок:
+
+*   *Безопасный*: не [исполняет](/index.php/Help:Reading_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Source "Help:Reading (Русский)") PKGBUILD по умолчанию вообще, или предварительно уведомляет об этом пользователя и предлагает ему возможность предварительно просмотреть файл. Некоторые помощники, как известно, выполняют PKGBUILD перед показом пользователю, **разрешая выполнение вредоносного кода**. *Опционально* означает, что существует флаг командной строки или опция конфигурации для предотвращения автоматического выполнения файла перед просмотром.
+*   *Чистая сборка*: не экспортирует новые переменные, которые могут помешать успешному процессу сборки.
+*   *Надёжный парсер*: способность обрабатывать сложные пакеты (например [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/)), используя предоставленные метаданные (RPC/.SRCINFO) вместо [парсинга](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing") PKGBUILD.
+*   *Надёжный разрешатель*: способность корректно разрешать и собирать сложные цепочки зависимостей, такие, как [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/).
+*   *Разделённые пакеты*: способность правильно собирать и устанавливать разделённые пакеты (такие, как [python-nikola](https://aur.archlinux.org/packages/python-nikola/)) независимо.
+*   *Git clone*: использует команду git clone вместо загрузки тарболлов (устарело с AUR 4)
+*   *Синтаксис*: P — значит [Pacman](/index.php/Pacman "Pacman")-подобный, S — собственный.
+
+| Название | Язык | Безопасный | Чистая сборка | Надёжный парсер | Надёжный разрешатель | Разделённые пакеты | Git clone | Автодополнение в оболочках | Синтаксис | Специфика |
+| apacman | Bash | Нет [[2]](https://github.com/oshazard/apacman/issues/8) | Нет [[3]](https://github.com/oshazard/apacman/search?utf8=%E2%9C%93&q=export) | Нет | Нет | Нет | Нет | - | P | Форк *packer* |
+| aura | Haskell | Да | Да | Нет [[4]](https://github.com/aurapm/aura/issues/14) | Нет | Нет [[5]](https://github.com/aurapm/aura/issues/353) | Нет | bash/zsh | P | Откаты, [ABS](/index.php/ABS "ABS"), поддержка [powerpill](/index.php/Powerpill "Powerpill"), многоязычный, требует [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
+| aurel | Emacs Lisp | Да | N/A | Да | N/A | N/A | Нет | N/A | S | интеграция с Emacs, нет автосборок |
+| aurget | Bash | Опционально | Да | Нет | Нет | Нет [[6]](https://github.com/pbrisbin/aurget/issues/40) | Нет | bash/zsh | P | сортировка по голосам |
+| aurutils | Bash/C | Да | Да | Да | Да | Да | Да | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [Локальный репозиторий](/index.php/Local_repository "Local repository"), [подписи пакетов](/index.php/Package_signing "Package signing"), поддержка [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") |
+| bauerbill | Python3 | Да | Да | Да | Да | Да | Да | bash/zsh | P/S | Управление доверием, поддержка ABS,расширяет Powerpill |
+| burgaur | Python3/C | Опционально с [mc](/index.php/Mc "Mc") | Да | Нет | Нет | Нет | Нет | - | P | Обертка для *cower* |
+| cower | C | Да | N/A | Да | N/A | N/A | Нет | bash/zsh | S | Нет автосборки, поддержка регулярок, сортировка по голосам/популярности |
+| owlman | Bash/C | Да | Да | Да | Нет | Частично | Нет | - | S | Обертка для *cower* |
+| pacaur | Bash/C | Да | Да | Да | Да | Да | Да | bash/zsh | P/S | Минимизирует взаимодействие с пользователем, многоязычный, сортировка по голосам/популярности |
+| packer | Bash | Нет | Да | Нет | Нет | Нет | Нет | - | P | - |
+| pbget | Python3 | Да | N/A | Да | N/A | N/A | Да | - | S | Нет автосборки |
+| PKGBUILDer | Python3 | Опционально | Да | Да | Да | Частично [[7]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Да | - | P | Автосборка по умолчанию, используйте `-F` для отключения. Многоязычный |
+| prm | Bash | Да [[8]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Да | N/A | N/A | Да | - | S | Нет автосборки, поддержка ABS |
+| repoctl | Go | Да | N/A | Да [[9]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | Нет | zsh | S | Нет автосборки, поддержка локальных репозиториев |
+| spinach | Bash | Нет [[10]](https://github.com/floft/spinach/blob/master/spinach#L287) | Да | Нет | Нет | Нет | Нет | - | S | - |
+| trizen | Perl | Да | Да | Да [[11]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Нет | Да [[12]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Нет | - | P | комментарии из AUR |
+| wrapaur | Bash | Да | Да | Нет | Нет | Нет | Да | - | S | обновление зеркал, вывод новостей и комментариев AUR |
+| yaah | Bash | Да | N/A | Да | N/A | N/A | Опционально | bash | S | Нет автосборки |
+| yaourt | Bash/C | Нет (*yaourt -Si*) [[13]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[14]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | Нет [[15]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | Нет | Нет [[16]](https://github.com/archlinuxfr/yaourt/issues/186) | Нет [[17]](https://github.com/archlinuxfr/yaourt/issues/85) | Опционально | bash/zsh/fish | P | Резервное копирование, поддержка ABS, комментарии AUR, многоязычный |
+| yay | Go | Да | Да | Да | Нет | Частично | Нет | bash/zsh/fish | P | сортировка по голосам |
+
+**Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. ввёл специфичные для архитектур поля. [[18]](http://allanmcrae.com/2014/12/pacman-4-2-released/) Однако, на момент 06.04.2016, [AurJson](/index.php/AurJson "AurJson") обьединяет все записи в одно поле: [FS#48796](https://bugs.archlinux.org/task/48796). Помощники, использующие RPC, могут использовать для получения зависимостей нижеследующие обходные пути:
+
+*   [bauerbill](https://aur.archlinux.org/packages/bauerbill/) [[19]](https://bbs.archlinux.org/viewtopic.php?pid=1617235#p1617235), [pkgbuilder](https://aur.archlinux.org/packages/pkgbuilder/) [[20]](https://github.com/Kwpolska/pkgbuilder/blob/65d9d74ef05f8996b81afb1cd005e3c337afa8b2/pkgbuilder/build.py#L198): Получение конкретных полей из [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [aurutils](https://aur.archlinux.org/packages/aurutils/) [[21]](https://github.com/AladW/aurutils/issues/80), [pacaur](https://aur.archlinux.org/packages/pacaur/) [[22]](https://github.com/rmarquis/pacaur/issues/465), [trizen](https://aur.archlinux.org/packages/trizen/) [[23]](https://github.com/trizen/trizen/commit/6a8ff9dc8cc83af783b8475dfbe89988dbc8a553): Убрать префикс `lib32-` на системах `i686`

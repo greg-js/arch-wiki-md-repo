@@ -13,6 +13,7 @@ This article explains how to create a bridge that contains at least an ethernet 
 *   [2 Assigning an IP address](#Assigning_an_IP_address)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Wireless interface on a bridge](#Wireless_interface_on_a_bridge)
+    *   [3.2 Speeding up traffic destinated to the bridge itself](#Speeding_up_traffic_destinated_to_the_bridge_itself)
 *   [4 See also](#See_also)
 
 ## Creating a bridge
@@ -169,6 +170,21 @@ When the bridge is fully set up, it can be assigned an IP address:
 To add a wireless interface to a bridge, you first have to assign the wireless interface to an access point or start an access point with [hostapd](/index.php/Software_access_point "Software access point"). Otherwise the wireless interface will not be added to the bridge.
 
 See also [Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkConnections#Bridging_with_a_wireless_NIC) on Debian wiki.
+
+### Speeding up traffic destinated to the bridge itself
+
+In some situations the bridge not only serves as a bridge box, but also talks to other hosts. Packets that arrive on a bridge port and that are destinated to the bridge box itself will by default enter the iptables INPUT chain with the logical bridge port as input device. These packets will be queued twice by the network code, the first time they are queued after they are received by the network device. The second time after the bridge code examined the destination MAC address and determined it was a locally destinated packet and therefore decided to pass the frame up to the higher protocol stack.[[1]](http://ebtables.netfilter.org/examples/basic.html#ex_speed)
+
+The way to let locally destinated packets be queued only once is by brouting them in the BROUTING chain of the broute table. Suppose br0 has an IP address and that br0's bridge ports do not have an IP address. Using the following rule should make all locally directed traffic be queued only once:
+
+```
+# ebtables -t broute -A BROUTING -d $MAC_OF_BR0 -p ipv4 -j redirect --redirect-target DROP
+
+```
+
+The replies from the bridge will be sent out through the br0 device (assuming your routing table is correct and sends all traffic through br0), so everything keeps working neatly, without the performance loss caused by the packet being queued twice.
+
+The redirect target is needed because the MAC address of the bridge port is not necessarily equal to the MAC address of the bridge device. The packets destinated to the bridge box will have a destination MAC address equal to that of the bridge br0, so that destination address must be changed to that of the bridge port.
 
 ## See also
 

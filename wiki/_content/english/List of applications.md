@@ -1815,7 +1815,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 #### Screen lockers
 
-**Warning:** Only *sflock*, *physlock*, *Cinnamon Screensaver*, *MATE Screensaver* and *GNOME Screensaver* are able to block tty access.
+**Warning:** Only *sflock*, *physlock*, *Cinnamon Screensaver*, *MATE Screensaver* and *GNOME Screensaver* are able to block tty access. See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg") on how to manually block tty access.
 
 *   **Cinnamon Screensaver** — Screen locker for the Cinnamon desktop.
 
@@ -1917,7 +1917,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Parchive** — Utility which creates and uses PAR2 files to detect damage in data files and repair them if necessary.
 
-	[http://parchive.sourceforge.net/](http://parchive.sourceforge.net/) || [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline)
+	[https://github.com/Parchive/par2cmdline](https://github.com/Parchive/par2cmdline) || [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline)
 
 #### Encryption, signing, steganography
 
@@ -1966,6 +1966,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **Console Password Manager** — Curses based password manager using PGP-encryption.
 
 	[https://github.com/comotion/cpm](https://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
+
+*   **Encryptr** — Zero-knowledge, cloud-based password manager.
+
+	[https://spideroak.com/personal/encryptr](https://spideroak.com/personal/encryptr) || [encryptr](https://aur.archlinux.org/packages/encryptr/)
 
 *   **Enpass** — A multiplatform password manager
 
@@ -4997,7 +5001,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
-*   **PDF Shuffler** — Combine, split, roatate and reorder PDF documents. Uses Python and GTK3.
+*   **PDF Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK3.
 
 	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler-git](https://aur.archlinux.org/packages/pdfshuffler-git/)
 

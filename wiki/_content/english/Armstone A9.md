@@ -1,5 +1,7 @@
 The ArmStone A9 is an ARM developement platform board in PicoITX form factor with Freescale i.MX6 CPU.
 
+**Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
+
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)

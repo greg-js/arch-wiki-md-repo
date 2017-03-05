@@ -8,6 +8,7 @@
     *   [1.3 Touchpad](#Touchpad)
     *   [1.4 Backlight control keys](#Backlight_control_keys)
     *   [1.5 Suspend to ram](#Suspend_to_ram)
+    *   [1.6 UMTS Modem](#UMTS_Modem)
 *   [2 Power Saving](#Power_Saving)
     *   [2.1 TLP](#TLP)
 *   [3 x230T (tablet version)](#x230T_.28tablet_version.29)
@@ -109,6 +110,26 @@ Type=oneshot
 ExecStart=/etc/rc.local.shutdown
 StandardInput=tty
 RemainAfterExit=yes
+
+```
+
+### UMTS Modem
+
+Some models come with an integrated USB UMTS modem.
+
+```
+$ lsusb -d 0bdb:1926 
+Bus 003 Device 004: ID 0bdb:1926 Ericsson Business Mobile Networks BV H5321 gw Mobile Broadband Driver
+
+```
+
+In order for it to work with [NetworkManager](/index.php/NetworkManager "NetworkManager"), you will need to install [ModemManager](https://www.archlinux.org/packages/?name=modemmanager) from the official repositories.
+
+For it to be recognized by ModemManager, you also need to set the kernel module option to:
+
+```
+# /etc/modprobe.d/umts-modem.conf
+options cdc_ncm prefer_mbim=N
 
 ```
 

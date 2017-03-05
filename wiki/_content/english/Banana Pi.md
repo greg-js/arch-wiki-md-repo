@@ -1,10 +1,12 @@
 From the [manufacturer](http://www.lemaker.org/):
 
-> Banana Pi is an open-source single-board computer. It can run Android 4.4, Ubuntu, Debian, Rasberry Pi Image, as well as the Cubieboard Image. It uses the AllWinner A20 SoC, and has 1GB DDR3 SDRAM
+	Banana Pi is an open-source single-board computer. It can run Android 4.4, Ubuntu, Debian, Rasberry Pi Image, as well as the Cubieboard Image. It uses the AllWinner A20 SoC, and has 1GB DDR3 SDRAM
 
 BananaPi is a minimalist computer built for the [ARMv7-A architecture](https://en.wikipedia.org/wiki/ARMv7-A "wikipedia:ARMv7-A"). [More information about this project](http://www.bananapi.org/) and [technical specification](http://www.bananapi.org/p/product.html).
 
 With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Linux kernel. So for any hardware or kernel related tasks, you should [take a look at the Sunxi Wiki](https://linux-sunxi.org/Main_Page) as well.
+
+**Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
 
 ## Contents
 
@@ -32,7 +34,7 @@ This method will install unmodified ArchLinuxARM armv7 basesystem to your Banana
 Zero the beginning of the SD card:
 
 ```
-dd if=/dev/zero of=/dev/sdX bs=1M count=8
+# dd if=/dev/zero of=/dev/sdX bs=1M count=8
 
 ```
 
@@ -42,7 +44,7 @@ Mount the ext4 filesystem, replacing `sda1` with the formatted partition:
 
 ```
 # mkdir mnt
-# mount /dev/*sda1* mnt
+# mount /dev/*sdX1* /mnt
 
 ```
 
@@ -116,7 +118,7 @@ SSH login for root is disabled by default. Login with the default user account a
 
 ## X.org driver
 
-The X.org driver for Banana Pi can be installed with the *xf86-video-fbdev* package.
+The X.org driver for Banana Pi can be installed with the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package.
 
 ## Troubleshooting
 
@@ -155,4 +157,5 @@ If for some reason the display still keeps turning off, e.g. when restarting you
 
 ## See also
 
-*   [[1]](http://wiki.lemaker.org/BananaPro/Pi:FAQs)
+*   [Manufacturer device FAQ](http://wiki.lemaker.org/BananaPro/Pi:FAQs)
+*   [Jelly's blog on installing ALARM](http://vdwaa.nl/archlinux/arm/bananapi/banana-pi-archlinux-arm/)

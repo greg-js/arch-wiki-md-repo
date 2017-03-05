@@ -108,6 +108,8 @@ If you installed Arch Linux x86_64 and plan on using 32-bit applications, you wi
 
 [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") lists several other unsupported repositories.
 
+You may consider installing the [pkgstats](/index.php/Pkgstats "Pkgstats") service.
+
 ### Mirrors
 
 Visit [Mirrors](/index.php/Mirrors "Mirrors") for steps on taking full advantage of using the fastest and most up to date mirrors of the official repositories. As explained in the article, a particularly good advice is to routinely check the [Mirror Status](https://www.archlinux.org/mirrors/status/) page for a list of mirrors that have been recently synced.

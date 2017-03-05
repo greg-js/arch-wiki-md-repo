@@ -173,6 +173,8 @@ These applications have been designed to centralize the backup of several machin
 
 See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services").
 
+**Tip:** [cryptomator](https://aur.archlinux.org/packages/cryptomator/) is an open-source, multi-platform program designed to add client-side transparent encryption on cloud-shared files.
+
 *   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
 
 	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)

@@ -1,18 +1,17 @@
 Orange Pi (One) is a minimalist computer built for the [ARMv7-A architecture](https://en.wikipedia.org/wiki/ARMv7-A "wikipedia:ARMv7-A"). [More information about this project](http://www.orangepi.org/).
 
-## Contents
-
-*   [1 Article preface](#Article_preface)
-*   [2 Installation](#Installation)
-    *   [2.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
-        *   [2.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
-        *   [2.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
-        *   [2.1.3 Login / SSH](#Login_.2F_SSH)
-*   [3 See also](#See_also)
-
-## Article preface
+**Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
 
 This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
+        *   [1.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
+        *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
+        *   [1.1.3 Login / SSH](#Login_.2F_SSH)
+*   [2 See also](#See_also)
 
 ## Installation
 
@@ -109,4 +108,4 @@ SSH login for root is disabled by default. Login with the default user account a
 
 ## See also
 
-*   [[1]](https://blog.christophersmart.com/2016/10/23/building-and-booting-upstream-linux-and-u-boot-for-orange-pi-one-arm-board/)
+*   ["Just another Geek's" blog about installing Linux](https://blog.christophersmart.com/2016/10/23/building-and-booting-upstream-linux-and-u-boot-for-orange-pi-one-arm-board/)

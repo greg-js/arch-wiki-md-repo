@@ -53,7 +53,7 @@ Notable variants are:
 
 *   **MPlayer2** — Fork of MPlayer
 
-	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
+	|| [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
 
 **Note:** *mplayer2* development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst) if you want to use it.
 
@@ -103,7 +103,7 @@ System-wide configuration files are located in the `/etc/mplayer/`, whereas the 
 *   `example.conf` - Is an example of mplayer.conf, which is not automatically created after installation.
 *   `input.conf` - Contains configuration of a hotkeys.
 
-In the `~/.mplayer/` by default created a file with a name *config*.
+A file `config` is created in the `~/.mplayer/` directory by default.
 
 See also: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), `man mplayer`.
 

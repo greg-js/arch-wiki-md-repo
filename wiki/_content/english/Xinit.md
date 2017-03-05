@@ -12,7 +12,6 @@ Most display managers also source the similar [xprofile](/index.php/Xprofile "Xp
     *   [2.2 xinitrc](#xinitrc)
 *   [3 Usage](#Usage)
 *   [4 Autostart X at login](#Autostart_X_at_login)
-    *   [4.1 Automatic login to the virtual console](#Automatic_login_to_the_virtual_console)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
     *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
@@ -56,36 +55,15 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 ```
 
-The reason of doing this (instead of creating one from scratch) is to preserve some desired default behaviour in the original file, such as sourcing shell scripts from `/etc/X11/xinit/xinitrc.d`. Scripts in this directory without `.sh` extension are not sourced.
-
-Append desired commands and *remove/comment the conflicting lines*. Remember, lines following `exec` would be ignored. For example, to start [openbox](/index.php/Openbox#Standalone "Openbox"):
+Then, [append](/index.php/Append "Append") desired commands. Remember, lines following a command using `exec` would be ignored. For example, to start `xscreensaver` in the background and then start [openbox](/index.php/Openbox#Standalone "Openbox"), append the following:
 
  `~/.xinitrc` 
 ```
-...
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-    for f in /etc/X11/xinit/xinitrc.d/**?*.sh** ; do
-        [ -x "$f" ] && . "$f"
-    done
-    unset f
-fi
-
-# twm &
-# xclock -geometry 50x50-1+1 &
-# xterm -geometry 80x50+494+51 &
-# xterm -geometry 80x20+494-0 &
-# exec xterm -geometry 80x66+0+0 -name login
-
-## some applications that should be run in the background
-xscreensaver **&**
-xsetroot -cursor_name left_ptr **&**
-
-**exec** openbox-session
-
+xscreensaver &
+exec openbox-session
 ```
 
-**Note:** At the very least, ensure that the *if block* in the example above is present in your `.xinitrc` file to ensure that the scripts in `/etc/X11/xinit/xinitrc.d` are sourced.
+**Note:** At the very least, ensure that the last if block in `/etc/X11/xinit/xinitrc` is present in your `.xinitrc` file to ensure that the scripts in `/etc/X11/xinit/xinitrc.d` are sourced.
 
 Long-running programs started before the window manager, such as a screensaver and wallpaper application, must either fork themselves or be run in the background by appending an `&` sign. Otherwise, the script would halt and wait for each program to exit before executing the window manager or desktop environment. Note that some programs should instead not be forked, to avoid race bugs, as is the case of [xrdb](/index.php/Xrdb "Xrdb"). Prepending `exec` will replace the script process with the window manager process, so that X does not exit even if this process forks to the background.
 
@@ -135,17 +113,15 @@ fi
 
 ```
 
-**Note:**
+You can replace the `-eq 1` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
 
-*   You can replace the `-eq 1` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
-*   Alternative conditions to detect the virtual terminal include `"$(tty)" == "/dev/tty1"`, which does not allow comparison with `-le`, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in [serial consoles](/index.php/Serial_console "Serial console").
-*   If you would like to remain logged in when the X session ends, remove `exec`.
+Alternatively conditions to detect the virtual terminal include `"$(tty)" == "/dev/tty1"`, which does not allow comparison with `-le`, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in [serial consoles](/index.php/Serial_console "Serial console").
+
+If you would like to remain logged in when the X session ends, remove `exec`.
 
 See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
 
-### Automatic login to the virtual console
-
-This method can be combined with [automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
+**Tip:** This method can be combined with [automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
 
 ## Tips and tricks
 
@@ -190,50 +166,26 @@ The following example `~/.xinitrc` shows how to start a particular desktop envir
 session=${1:-xfce}
 
 case $session in
-    awesome           ) exec awesome;;
-    bspwm             ) exec bspwm;;
-    catwm             ) exec catwm;;
-    cinnamon          ) exec cinnamon-session;;
-    dwm               ) exec dwm;;
-    enlightenment     ) exec enlightenment_start;;
-    ede               ) exec startede;;
-    fluxbox           ) exec startfluxbox;;
-    gnome             ) exec gnome-session;;
-    gnome-classic     ) exec gnome-session --session=gnome-classic;;
     i3|i3wm           ) exec i3;;
-    icewm             ) exec icewm-session;;
-    jwm               ) exec jwm;;
     kde               ) exec startkde;;
-    mate              ) exec mate-session;;
-    monster|monsterwm ) exec monsterwm;;
-    notion            ) exec notion;;
-    openbox           ) exec openbox-session;;
-    unity             ) exec unity;;
     xfce|xfce4        ) exec startxfce4;;
-    xmonad            ) exec xmonad;;
     # No known session, try to run it as command
-    *) exec $1;;
+    *                 ) exec $1;;
 esac
 
 ```
 
-To pass the argument:
+To pass the argument *session*:
 
 ```
-$ xinit
-$ xinit gnome
-$ xinit kde
-$ xinit wmaker
+$ xinit *session*
 
 ```
 
 or
 
 ```
-$ startx
-$ startx ~/.xinitrc gnome
-$ startx ~/.xinitrc kde
-$ startx ~/.xinitrc wmaker
+$ startx ~/.xinitrc *session*
 
 ```
 

@@ -2,14 +2,14 @@ Two different font systems are used by X11: the older or core X Logical Font Des
 
 ## Contents
 
-*   [1 Font Names](#Font_Names)
+*   [1 Font names](#Font_names)
     *   [1.1 Font name elements](#Font_name_elements)
-*   [2 Font Sizes](#Font_Sizes)
-*   [3 The Font Search Path](#The_Font_Search_Path)
+*   [2 Font sizes](#Font_sizes)
+*   [3 Font search path](#Font_search_path)
     *   [3.1 mkfontscale and mkfontdir](#mkfontscale_and_mkfontdir)
 *   [4 Aliases](#Aliases)
 
-## Font Names
+## Font names
 
 Font names are complex when using XLFD:
 
@@ -82,7 +82,7 @@ A zero, `0`, or a `*` may be used for scalable fonts if you specify POINT_SIZE.
 | POINT_SIZE
 *ptSz* | The body heighth for which the font was designed. Values are expressed as tenths of a point (one point is nominally one seventy-secondth of an inch).
 
-See [Font sizes](#Font_Sizes).
+See [#Font sizes](#Font_sizes).
 
  |
 | RESOLUTION_X
@@ -120,9 +120,9 @@ It's always safe to choose an available registry that is compatible with the use
 | CHARSET_ENCODING
 *encdng* | An identifier for the character set encoding. |
 
-## Font Sizes
+## Font sizes
 
-Font names are stored in the *fonts.dir* file in each font directory. For more information about these files, see [The Font Search Path](#The_Font_Search_Path) below. In a font name, the pixel and point sizes, and the x and y resolution values, may be changed and the changes will affect a font's displayed size and also the spacing between characters and between lines.
+Font names are stored in the *fonts.dir* file in each font directory. For more information about these files, see [#Font search path](#Font_search_path) below. In a font name, the pixel and point sizes, and the x and y resolution values, may be changed and the changes will affect a font's displayed size and also the spacing between characters and between lines.
 
 As a general rule, bitmap fonts have their best appearance at the sizes the designers specified. For these fonts, changing the size-related values from those stored in the font names may give unexpected or ugly distortions or an unmatchable font pattern.
 
@@ -140,7 +140,7 @@ To specify a scalable font at a particular size you only need to provide a value
 
 ```
 
-## The Font Search Path
+## Font search path
 
 Please see [Fonts](/index.php/Fonts "Fonts") for a guide to installing font files and modifying the font path. For a font to be available to the X server, the directory containing the font file must be on the user's font path. You can check your current font path with:
 

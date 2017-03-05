@@ -24,6 +24,7 @@ The Central Dogma of LIRC (an allusion to the [flow of information](http://www.n
         *   [5.1.1 When using Xorg](#When_using_Xorg)
         *   [5.1.2 On an ARM device not using Xorg](#On_an_ARM_device_not_using_Xorg)
     *   [5.2 Changing default configuration](#Changing_default_configuration)
+        *   [5.2.1 Example](#Example)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -223,6 +224,28 @@ $ mode2 --driver devinput --device /dev/input/event5
 ```
 
 Now try pressing buttons on the remote. If there is no output, try different driver and device combinations. Once a working combination has been identified, change **driver** and **device** in `/etc/lirc/lirc_options.conf` appropriately.
+
+#### Example
+
+An example configuration for a MCE RC6 compatible receiver:
+
+ `/etc/lirc/lirc_options.conf` 
+```
+[lircd]
+nodaemon        = False
+driver          = default
+device          = /dev/lirc0
+output          = /var/run/lirc/lircd
+pidfile         = /var/run/lirc/lircd.pid
+plugindir       = /usr/lib/lirc/plugins
+permission      = 666
+allow-simulate  = No
+repeat-max      = 600
+
+[lircmd]
+uinput          = False
+nodaemon        = False
+```
 
 ## See also
 

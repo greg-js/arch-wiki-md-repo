@@ -11,7 +11,7 @@ Twm is a window manager for X11\. It is a small program, being built against Xli
 
 ### Twm creation and name
 
-Twm was written by Tom LaStrange, a developer who was frustrated by the limitations of [uwm (Ultrix Window Manager)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")[[[1]](http://www.linuxplanet.com/linuxplanet/reports/3000/2/), the only window manager around when X11 was first released. Twm supplanted uwm as the default window manager supplied with X11 from the X11R4 release in 1989[wikipedia:UWM_(computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)").
+Twm was written by Tom LaStrange, a developer who was frustrated by the limitations of [uwm (Ultrix Window Manager)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")[[[1]](http://www.linuxplanet.com/linuxplanet/reports/3000/2/), the only window manager around when X11 was first released. Twm supplanted uwm as the default window manager supplied with X11 from the X11R4 release in 1989, [wikipedia:UWM_(computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)").
 
 Twm has stood for *Tom's Window Manager*, *Tab Window Manager* and more recently *Timeless Window Manager*[wikipedia:Twm](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm").
 

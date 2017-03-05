@@ -638,7 +638,12 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ### libGL error: failed to load driver: swrast
 
-The AVD loaded incorrect version of libstdc++, you can remove the libstdc++.so.6 from Android/Sdk/tools/lib64/libstdc++
+The AVD loads an incorrect version of libstdc++, you can remove the folder libstdc++ from ~/Android/Sdk/emulator/lib64/ (for 64-bit) or ~/Android/Sdk/emulator/lib/ (for 32-bit) , e.g.:
+
+```
+rm -r ~/Android/Sdk/emulator/lib64/libstdc++
+
+```
 
 ### sh: glxinfo: command not found
 
@@ -661,4 +666,4 @@ QObject::~QObject: Timers cannot be stopped from another thread
 
 ```
 
-You could figure out how to install glxinfo (seems to be another AUR) but if your computer has enough power you could simply use software to render graphics. To do so, go to Tools -> Android -> AVD Manager, edit the AVD (click the pencil icon), then select "Software - GLES 2.0" for "Emulated Performance -> Graphcs".
+You could figure out how to install glxinfo (seems to be another AUR) but if your computer has enough power you could simply use software to render graphics. To do so, go to Tools -> Android -> AVD Manager, edit the AVD (click the pencil icon), then select "Software - GLES 2.0" for "Emulated Performance -> Graphics".

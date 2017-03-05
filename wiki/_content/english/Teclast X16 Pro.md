@@ -67,7 +67,9 @@ This is remembered during a reboot. Global shortcuts to change sound volume work
 
 ### WiFi
 
-this step will take quite long, you can stop here and use the tab with an USB Wi-Fi Dongle
+This step will take quite long, you can stop here and use the tab with an USB Wi-Fi Dongle.
+
+There is an issue with wpa_supplicant 1.2.6\. For the time beeing you have to downgrade wpa_supplicant to version 1.2.5\. See [https://github.com/hadess/rtl8723bs/issues/113](https://github.com/hadess/rtl8723bs/issues/113)
 
 Compiling an Arch Linux kernel, see [Kernels/Traditional_compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation")
 

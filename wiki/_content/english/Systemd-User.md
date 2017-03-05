@@ -123,22 +123,9 @@ There are several ways to run xorg within systemd units. Below there are two opt
 
 ### Automatic login into Xorg without display manager
 
-This option will launch a system unit that will start a user session with an xorg server and then run the usual `~/.xinitrc` to launch the window manager, etc.
+This option will launch a system unit that will start a user session with an xorg server and then run the usual `~/.xinitrc` to launch the window manager, etc. You need to have [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/) installed. Set up your xinitrc as specified in the [Xinit#xinitrc](/index.php/Xinit#xinitrc "Xinit") section.
 
-You need to have [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/) installed.
-
-Set up your [xinitrc](/index.php/Xinitrc "Xinitrc") from the skeleton, so that it will source the files in `/etc/X11/xinit/xinitrc.d/`. Running your `~/.xinitrc` should not return, so either have `wait` as the last command, or add `exec` to the last command that will be called and which should not return (your window manager, for instance).
-
-The session will use its own dbus daemon, but various systemd utilities will automatically connect to the `dbus.service` instance.
-
-Finally, enable (**as root**) the *xlogin* service for automatic login at boot:
-
-```
-# systemctl enable xlogin@*username*
-
-```
-
-The user session lives entirely inside a systemd scope and everything in the user session should work just fine.
+The session will use its own dbus daemon, but various systemd utilities will automatically connect to the `dbus.service` instance. Finally, [enable](/index.php/Enable "Enable") the `xlogin@*username*` service for automatic login at boot. The user session lives entirely inside a systemd scope and everything in the user session should work just fine.
 
 ### Xorg as a systemd user service
 

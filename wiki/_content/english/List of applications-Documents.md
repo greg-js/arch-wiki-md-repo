@@ -625,7 +625,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
-*   **PDF Shuffler** — Combine, split, roatate and reorder PDF documents. Uses Python and GTK3.
+*   **PDF Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK3.
 
 	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler-git](https://aur.archlinux.org/packages/pdfshuffler-git/)
 

@@ -1,24 +1,22 @@
 The Banana Pro (also often referred to as Banana Pi Pro) is a SBC from the manufacturer [LeMaker](http://www.lemaker.org/). You can see the specifications [here](http://www.lemaker.org/product-bananapro-specification.html). By now, this article only covers the installation using the [tarball](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz), which is very similar to the installation of the [Banana Pi](/index.php/Banana_Pi "Banana Pi").
 
-## Contents
-
-*   [1 Information prior to installing](#Information_prior_to_installing)
-*   [2 Installation](#Installation)
-    *   [2.1 Install base system to a SD card](#Install_base_system_to_a_SD_card)
-    *   [2.2 Install base system to a SD card and SATA/USB device](#Install_base_system_to_a_SD_card_and_SATA.2FUSB_device)
-*   [3 Network](#Network)
-    *   [3.1 LAN](#LAN)
-    *   [3.2 WLAN](#WLAN)
-*   [4 Login](#Login)
-*   [5 See also](#See_also)
-
-## Information prior to installing
-
 This article is very similar to the [Banana Pi](/index.php/Banana_Pi "Banana Pi"), though the description there doesn't apply fully to the Banana Pro. Also, users have to be familiar with installing an Arch system ([Partitioning](/index.php/Partitioning "Partitioning"), [formatting](/index.php/File_systems "File systems"), etc.), as this will only cover the installation of the base system. Further configuration won't be covered here.
 
-**Note:** If you use a Linux installation with `e2fsprogs < 1.43`, omit the extra options `-O ^metadata_csum,^64bit` below to format the root file system.
+**Note:**
 
-**Note:** Ensure to install the **root file system on the first partition**, otherwise it will not boot. (e.g. `sda**1**, sdb**1**, ...`)
+*   The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
+*   Ensure to install the **root file system on the first partition**, otherwise it will not boot. (e.g. `sda**1**, sdb**1**, ...`).
+
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 Install base system to a SD card](#Install_base_system_to_a_SD_card)
+    *   [1.2 Install base system to a SD card and SATA/USB device](#Install_base_system_to_a_SD_card_and_SATA.2FUSB_device)
+*   [2 Network](#Network)
+    *   [2.1 LAN](#LAN)
+    *   [2.2 WLAN](#WLAN)
+*   [3 Login](#Login)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -31,32 +29,23 @@ dd if=/dev/zero of=/dev/sdX bs=1M count=8
 
 ```
 
-Download the root filesystem and the required boot files (will be saved in your current working directory):
+Download the root filesystem, bootloader and the required .scr file (will be saved in your current working directory):
 
 ```
-# wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)                     # base system
-# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin)   # Bootloader for Banana Pro
-# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr)                    # Also a required boot file for the Banana Pro
+# wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
+# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin)
+# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr)
 
 ```
 
-Use `fdisk` to partition the SD card...
+Use *fdisk* to partition the SD card:
 
 ```
 # fdisk /dev/sdX
 
 ```
 
-...and format it with `mkfs.ext4`.
-
-For **e2fsprogs < 1.43**:
-
-```
-# mkfs.ext4 /dev/sdX1
-
-```
-
-For **e2fsprogs >= 1.43**:
+and format it:
 
 ```
 # mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1
@@ -66,23 +55,23 @@ For **e2fsprogs >= 1.43**:
 Create a mountpoint if needed and mount the root partition, on which Arch Linux will be installed later on. Replace `sdX` with the device name of your SD card. (e.g. `sdc`)
 
 ```
-# mkdir <mountpoint>                  # create a mountpoint
-# mount /dev/sdX1 <mountpoint>        # replace sdX1 with sda1, sdb1, sdc1, ...
+# mkdir <mountpoint>
+# mount /dev/sdX1 <mountpoint>
 
 ```
 
 Extract the root file system to the root partition of your SD card:
 
 ```
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C <mountpoint>                         # extract to SD card
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C <mountpoint>
 
 ```
 
 Copy the bootloader (`u-boot-sunxi-with-spl.bin`) and boot file:
 
 ```
-# dd if=/path/to/u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8                  # install the bootloader
-# cp /path/to/boot.scr [mountpoint]/boot
+# dd if=/path/to/u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
+# cp /path/to/boot.scr <mountpoint>/boot
 # umount <mountpoint>
 
 ```
@@ -104,39 +93,32 @@ dd if=/dev/zero of=/dev/**sdX** bs=1M count=8
 
 ```
 
-Download the required files if you haven't done it already:
+Download the required files if you have not done it already:
 
 ```
-# wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)                     # base system
-# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin)   # Bootloader for Banana Pro
-# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr)                    # Also a required boot file
+# wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
+# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/u-boot-sunxi-with-spl.bin)
+# wget [http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr](http://pkgbuild.com/~tredaelli/alarm/bananapro/boot/boot.scr)
 
 ```
 
 Install the bootloader to the (whole) SD card:
 
 ```
-# dd if=/path/to/u-boot-sunxi-with-spl.bin of=/dev/**sdX** bs=1024 seek=8                       # Installs only the bootloader to your SD card. You can eject the SD card now if you want to.
+# dd if=/path/to/u-boot-sunxi-with-spl.bin of=/dev/**sdX** bs=1024 seek=8                       
 
 ```
 
-Use `fdisk` to partition the *SATA/USB device*...
+You can eject the SD card now, if you want.
+
+Use *fdisk* to partition the *SATA/USB device*:
 
 ```
 # fdisk /dev/*sdY*
 
 ```
 
-...and format it with `mkfs.ext4`.
-
-For **e2fsprogs < 1.43**:
-
-```
-# mkfs.ext4 /dev/*sdY1*
-
-```
-
-For **e2fsprogs >= 1.43**:
+and format it:
 
 ```
 # mkfs.ext4 -O ^metadata_csum,^64bit /dev/*sdY1*
@@ -146,8 +128,8 @@ For **e2fsprogs >= 1.43**:
 Create a mountpoint if needed and mount the root partition. Again, `*sdY1*` is the root partition of the *SATA/USB device* (`*sdY*`), on which Arch Linux will be installed.
 
 ```
-# mount /dev/*sdY1* <mountpoint>                                                        # Mount the root partition
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C <mountpoint>                        # Extract the root filesystem to your root partition
+# mount /dev/*sdY1* <mountpoint>
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C <mountpoint>
 # cp /path/to/boot.scr <mountpoint>/boot
 # umount <mountpoint>
 
@@ -184,4 +166,4 @@ The root account is locked by default for SSH login. Login as normal user and us
 
 ## See also
 
-[Banana Pro FAQ](http://wiki.lemaker.org/BananaPro/Pi:FAQs)
+*   [Banana Pro FAQ](http://wiki.lemaker.org/BananaPro/Pi:FAQs)

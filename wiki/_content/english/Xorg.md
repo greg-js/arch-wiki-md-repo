@@ -37,6 +37,8 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
     *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
     *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
+    *   [7.6 Block TTY access](#Block_TTY_access)
+    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 General](#General)
     *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
@@ -496,6 +498,26 @@ kill -9 $pid
 ```
 
 Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+
+### Block TTY access
+
+To block tty access when in an X add the following to [xorg.conf(5)](http://man7.org/linux/man-pages/man5/xorg.conf.5.html):
+
+```
+Section "ServerFlags"
+    Option "DontVTSwitch" "True"
+EndSection
+```
+
+### Prevent a user from killing X
+
+To prevent a user from killing when it is running add the following to [xorg.conf(5)](http://man7.org/linux/man-pages/man5/xorg.conf.5.html):
+
+```
+Section "ServerFlags"
+    Option "DontZap"      "True"
+EndSection
+```
 
 ## Troubleshooting
 

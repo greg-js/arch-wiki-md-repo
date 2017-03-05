@@ -89,7 +89,7 @@ The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata
 
 **Warning:**
 
-*   As of August 2016, the RAID 5, RAID 6 mode of Btrfs is considered *fatally flawed*, and shouldn't be used for "anything but testing with throw-away data." [[1]](https://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg55161.html)
+*   The RAID 5, RAID 6 mode of Btrfs is considered *fatally flawed*, and should not be used for "anything but testing with throw-away data." See [the Btrfs page on RAID5 and RAID6](https://btrfs.wiki.kernel.org/index.php/RAID56) for status updates.
 *   Some [boot loaders](/index.php/Boot_loader "Boot loader") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
 
 Multiple devices can be entered to create a RAID. Supported RAID levels include RAID 0, RAID 1, RAID 10, RAID 5 and RAID 6\. The RAID levels can be configured separately for data and metadata using the `-d` and `-m` options respectively. By default the data is striped (`raid0`) and the metadata is mirrored (`raid1`). See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information about how to create a Btrfs RAID volume as well as the manpage for `mkfs.btrfs`.
@@ -168,7 +168,7 @@ When installing Arch to an empty Btrfs partition, use the `compress` option when
 
 ### Subvolumes
 
-"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[2]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
+"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
 Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted as `/` (by default), or another subvolume can be [mounted](#Mounting_subvolumes) instead. Subvolumes can be moved around in the filesystem and are rather identified by their id than their path.
 
@@ -213,7 +213,7 @@ Subvolumes can be mounted like file system partitions using the `subvol=*/path/t
 
 **Tip:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as `/` (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as `/`.
 
-**Note:** "Most mount options apply to the **whole filesystem**, and only the options for the first subvolume to be mounted will take effect. This is due to lack of implementation and may change in the future." [[3]](https://btrfs.wiki.kernel.org/index.php/Mount_options) See the [Btrfs Wiki FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#Can_I_mount_subvolumes_with_different_mount_options.3F) for which mount options can be used per subvolume.
+**Note:** "Most mount options apply to the **whole filesystem**, and only the options for the first subvolume to be mounted will take effect. This is due to lack of implementation and may change in the future." [[2]](https://btrfs.wiki.kernel.org/index.php/Mount_options) See the [Btrfs Wiki FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#Can_I_mount_subvolumes_with_different_mount_options.3F) for which mount options can be used per subvolume.
 
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 
@@ -230,7 +230,7 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 
-Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[4]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
+Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[3]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 ### Quota
 
@@ -369,7 +369,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 #### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[5]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[4]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 
@@ -436,7 +436,7 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Swap file
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs intentionally does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs intentionally does not have for possibility of file system corruption [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[6]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
 
 ### TLP
 
@@ -471,7 +471,7 @@ Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would f
 
 ### Ext3/4 to Btrfs conversion
 
-**Warning:** As of mid-to-late 2015, there are many reports on the btrfs mailing list about incomplete/corrupt/broken conversions. The situation is improving as patches are being submitted, but proceed very carefully. Make sure you have *working* backups of any data you cannot afford to lose. See [Conversion from Ext3](https://btrfs.wiki.kernel.org/index.php/Conversion_from_Ext3) on the btrfs wiki.
+**Warning:** There are many reports on the btrfs mailing list about incomplete/corrupt/broken conversions. Make sure you have *working* backups of any data you cannot afford to lose. See [Conversion from Ext3](https://btrfs.wiki.kernel.org/index.php/Conversion_from_Ext3) on the btrfs wiki for more information.
 
 Boot from an install CD, then convert by doing:
 

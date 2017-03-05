@@ -125,7 +125,7 @@ Several extensions are available for awesome (3.5+):
  | Dynamic tagging |
 | 
 
-*   [Naughty](http://awesome.naquadah.org/wiki/Naughty)
+*   [Naughty](https://awesomewm.org/apidoc/libraries/naughty.html)
 
  | Pop-up notifications |
 | 

@@ -162,10 +162,23 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 
 #### 命令行运行服务端
 
-在服务器上`cd`到`config.json`所在目录：
+方法一：
 
-1.  运行`ssserver`；
-2.  如果想在后台一直运行，可改执行：`nohup ssserver > log &`；
+1.  在服务器上`cd`到`config.json`所在目录：
+2.  运行`ssserver`；
+
+如果想在后台一直运行，可改执行：`nohup ssserver > log &`；
+
+方法二： 若不想加载`config.json`，可手动运行：
+
+ `# ssserver -s *监听地址(通常为0.0.0.0)* -p *监听端口* -k *密码* -m *加密方法* -t *超时时间（秒）*` 
+
+配合nohup和&可使之后台运行，关闭终端也不影响，例如：
+
+```
+# nohup ssserver -s 0.0.0.0 -p 443 -k a29rw4pacnj2ahmf -m aes-192-cfb -t 600 &
+
+```
 
 #### 以守护进程形式运行服务端
 
@@ -181,14 +194,45 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 
 #### 加密方法
 
-方法列表参见[[1]](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)。 并且可以使用[[2]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)脚本来比较和找出在你机器上运行最快的加密方法。
+**注意:** 默认加密方法`table`速度很快，但很不安全。请不要使用`rc4`，它不安全。
 
-**注意:** 默认加密方法`table`速度很快。请不要使用`rc4`，它不安全。
+可选的加密方式：
+
+*   aes-256-cfb（Shadowsocks经典、传统的加密算法，也是Shadowsocks的作者推荐过的加密算法，移动平台可能开销稍高）
+*   aes-128-cfb
+*   aes-192-cfb
+*   aes-256-ofb
+*   aes-128-ofb
+*   aes-192-ofb
+*   aes-128-ctr
+*   aes-192-ctr
+*   aes-256-ctr
+*   aes-128-cfb8
+*   aes-192-cfb8
+*   aes-256-cfb8
+*   aes-128-cfb1
+*   aes-192-cfb1
+*   aes-256-cfb1
+*   aes-256-gcm
+*   aes-128-gcm
+*   aes-192-gcm
+*   bf-cfb
+*   camellia-128-cfb
+*   camellia-192-cfb
+*   camellia-256-cfb
+*   cast5-cfb
+*   chacha20
+*   idea-cfb
+*   rc2-cfb
+*   rc4-md5
+*   salsa20
+*   seed-cfb
 
 **提示：** 安装`M2Crypto`可略微提升加密速度，对于Python2来说，安装[python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto)即可。
 
 **注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
-。
+
+加密类别列表参见[[1]](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)。 并且可以使用[[2]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)脚本来比较和找出在你机器上运行最快的加密方法。
 
 ## 参阅
 

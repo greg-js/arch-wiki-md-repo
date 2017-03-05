@@ -26,7 +26,7 @@ Blender only officially supports only the proprietary drivers from both AMD (for
 
 ## Professional Rendering Plugins
 
-Blender is becoming increasingly well known in the professional industry. As such, there are now alternative rendering methods to the Blender Render and Cycles, in the form of plugins. This should server as a list of the major professional rendering plugins that are released or upcoming for Linux.
+Blender is becoming increasingly well known in the professional industry. As such, there are now alternative rendering methods to the Blender Render and Cycles, in the form of plugins. This should serve as a list of the major professional rendering plugins that are released or upcoming for Linux.
 
 ### LuxRenderer
 
@@ -38,7 +38,7 @@ RenderMan is a linux compatible proprietary rendering plugin that is free for us
 
 ### Pro-Render
 
-[Pro-Render](http://www.amd.com/en-us/innovations/software-technologies/radeon-pro-technologies/radeon-prorender) is an upcoming open source Blender rendering plugin from AMD that will allow any machine capable of OpenCL 1.2 the ability to create realistic GPU renders, allowing for faster work compared to the CPU.
+[Pro-Render](https://github.com/Radeon-prorender/Blender/releases) is an upcoming open source Blender rendering plugin from AMD that will allow any machine capable of OpenCL 1.2 the ability to create realistic GPU renders, allowing for faster work compared to the CPU.
 
 ## Troubleshooting
 

@@ -409,7 +409,7 @@ EOF
 
 ```
 
-**Warning:** It has been observed that with systemd version 220 creating this file causes bridges used by Docker loose their IP addresses. Running Docker with a manually-defined network, as described above, is known to work.
+**Note:** It has been observed that with systemd version 220 creating this file causes bridges used by Docker to lose their IP addresses. Running Docker with a manually-defined network, as described above, is known to work.
 
 Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `docker` services.
 

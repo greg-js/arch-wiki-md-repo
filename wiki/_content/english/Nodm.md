@@ -8,7 +8,7 @@
 
 Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
 
-After installing nodm, modify the `/etc/nodm.conf` file. Set the `NODM_USER` variable to the user which should be automatically logged in, and change the `NODM_XSESSION` variable to point to the script that starts your session. This script must be executable!
+After installing nodm, modify the `/etc/nodm.conf` file. Set the `NODM_USER` variable to the user which should be automatically logged in, and change the `NODM_XSESSION` variable to point to the script that starts your session. The `NODM_XSESSION` script must be executable!
 
  `/etc/nodm.conf` 
 ```

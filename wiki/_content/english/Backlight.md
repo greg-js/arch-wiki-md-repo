@@ -12,14 +12,8 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [4 systemd-backlight service](#systemd-backlight_service)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 light](#light)
-    *   [5.3 acpilight](#acpilight)
-    *   [5.4 illum](#illum)
-    *   [5.5 relight](#relight)
-    *   [5.6 setpci (use with great care)](#setpci_.28use_with_great_care.29)
-    *   [5.7 Calise](#Calise)
-    *   [5.8 brightd](#brightd)
-    *   [5.9 lux](#lux)
+    *   [5.2 Other utilities](#Other_utilities)
+    *   [5.3 setpci](#setpci)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -204,31 +198,37 @@ EndSection
 
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
 
-### light
+### Other utilities
 
-Light is the successor and C-port of *LightScript*.
+*   **light** — Light is the successor and C-port of *LightScript*.
 
-[Install](/index.php/Install "Install") [light](https://aur.archlinux.org/packages/light/) for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/) for the latest development version. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/) package.
+	[https://github.com/haikarainen/light](https://github.com/haikarainen/light) || [light](https://aur.archlinux.org/packages/light/)
 
-See the [GitHub page](http://haikarainen.github.io/light/) for more information.
+*   **acpilight** — acpilight contains an "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
 
-### acpilight
+	[https://github.com/wavexx/acpilight/](https://github.com/wavexx/acpilight/) || [acpilight](https://aur.archlinux.org/packages/acpilight/)
 
-[acpilight](https://aur.archlinux.org/packages/acpilight/) contains an "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
+*   **illum** — ilum monitors the brightness up and brightness down keys on all input devices (via libevdev) and adjusts the backlight when they are pressed (via sysfs). Written for newer BIOS/UEFI that does not automatically handle those buttons for you. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
 
-See the [acpilight repository](https://github.com/wavexx/acpilight/) for more information.
+	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
 
-### illum
+*   **relight** — The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
 
-[illum-git](https://aur.archlinux.org/packages/illum-git/) monitors the brightness up and brightness down keys on all input devices (via libevdev) and adjusts the backlight when they are pressed (via sysfs).
+	[http://xyne.archlinux.ca/projects/relight](http://xyne.archlinux.ca/projects/relight) || [relight](https://aur.archlinux.org/packages/relight/)
 
-Written for newer BIOS/UEFI that doesn't automatically handle those buttons for you. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
+*   **calise** — The main features of this program are that it is very precise, very light on resource usage, and with the daemon version (.service file for systemd users available too). It has practically no impact on battery life.
 
-### relight
+	[http://calise.sourceforge.net/mediawiki/index.php/Main_Page](http://calise.sourceforge.net/mediawiki/index.php/Main_Page) || [calise](https://aur.archlinux.org/packages/calise/)
 
-[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/) in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
+*   **brightd** — Macbook-inspired brightd automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
 
-### setpci (use with great care)
+	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
+
+*   **lux** — lux is a Bash script to easily control brightness on backlight-controllers.
+
+	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
+
+### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
 
@@ -238,27 +238,6 @@ When using this method, you need to use `lspci` first to find out where your gra
 # setpci -s 00:02.0 F4.B=0
 
 ```
-
-### Calise
-
-The software [calise](http://calise.sourceforge.net/wordpress/) can be found in AUR.
-
-*   Stable version: [calise](https://aur.archlinux.org/packages/calise/)
-*   Development version: [calise-git](https://aur.archlinux.org/packages/calise-git/)
-
-It basically computes ambient brightness, and set screen's correct backlight, simply making captures from the webcam, for laptop without light sensor. For more information, calise has its own wiki: [Calise wiki](http://calise.sourceforge.net/mediawiki/index.php/Main_Page).
-
-The main features of this program are that it is very precise, very light on resource usage, and with the daemon version (.service file for systemd users available too), it has practically no impact on battery life.
-
-### brightd
-
-Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/) automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
-
-### lux
-
-[lux](https://aur.archlinux.org/packages/lux/) is a Bash script to easily control brightness on backlight-controllers.
-
-See the [GitHub page](https://github.com/Ventto/lux) for more information.
 
 ## Color correction
 

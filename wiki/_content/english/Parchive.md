@@ -1,4 +1,4 @@
-Parchive (Parity archive) is a file verification and repair tool using PAR2 files to detect damage in data files and repair them if necessary. It can be used with any kind of file.
+[Parchive](https://github.com/Parchive/par2cmdline) (Parity archive) is a file verification and repair tool using PAR2 files to detect damage in data files and repair them if necessary. It can be used with any kind of file.
 
 ## Contents
 
@@ -15,7 +15,7 @@ Parchive (Parity archive) is a file verification and repair tool using PAR2 file
 
 ## How it works
 
-`par2create` takes the input file(s) and interprets the input as a certain number of data blocks. Based on the data blocks, `par2create` then creates recovery blocks with the help of the [Reed-Solomon error corretion](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction "wikipedia:Reed–Solomon error correction") code. Later, you can trade any recovery block for any corrupted data block in order to repair the source data. You need as much recovery blocks as data blocks have gone corrupted in order to repair the file(s) successfully.
+`par2create` takes the input file(s) and interprets the input as a certain number of data blocks. Based on the data blocks, `par2create` then creates recovery blocks with the help of the [w:Reed–Solomon error correction](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction "w:Reed–Solomon error correction") code. Later, you can trade any recovery block for any corrupted data block in order to repair the source data. You need as much recovery blocks as data blocks have gone corrupted in order to repair the file(s) successfully.
 
 Let's say you want to calculate 30% of recovery information for a precious file:
 
@@ -147,7 +147,7 @@ You can also change the path of the `par2`/`sig` file.
 
 **Note:** This is work in progress. Help is appreciated.
 
-Parchive unfortunately does not support multithreading. You can compile available versions using tbb or OpenMP, see the [wikipedia:Parchive Wikipedia page]. As a workaround, one could modify the script to shuffle the given list of files and then run the script as many times as you have cores available in different shells. The script will ignore already processed files, allowing the collaboration of the instances of the script. Obviously one would need to use something like:
+Parchive unfortunately does not support multithreading. You can compile available versions using tbb or OpenMP, see the [w:Parchive](https://en.wikipedia.org/wiki/Parchive "w:Parchive") article. As a workaround, one could modify the script to shuffle the given list of files and then run the script as many times as you have cores available in different shells. The script will ignore already processed files, allowing the collaboration of the instances of the script. Obviously, one would need to use something like:
 
 ```
 #!/bin/bash
@@ -164,4 +164,4 @@ for i in "$(shuf $SHUFFILE)" ; do
 
 ```
 
-But then, the spaces of the file names mess up the whole thing. Quoting `$i` results in a single loop with an enormous file name...
+But then, the spaces of the file names mess up the whole thing. Quoting `$i` results in a single loop with an enormous file name.

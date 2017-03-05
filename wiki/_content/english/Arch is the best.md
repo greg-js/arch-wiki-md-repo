@@ -1073,6 +1073,16 @@ puts "Arch is the best!"
 
 ```
 
+	TrumpScript
+
+	A scripting language based on President Trump's words.
+
+```
+say it with me, "Arch is the best!";
+america is great.
+
+```
+
 	UEFI
 
 	An extensible firmware framework
@@ -1276,17 +1286,24 @@ Arch és el millor!
 
 ```
 
-	Chinese (Simplified)
+	Cantonese
 
 ```
-Arch 最棒了！
+阿祺真係冇得頂！
 
 ```
 
-	Chinese (Traditional)
+	Chinese (Mainland)
 
 ```
-Arch 好棒棒！
+Arch最棒了！
+
+```
+
+	Chinese (Taiwan)
+
+```
+Arch蠻贊的！
 
 ```
 
@@ -1364,6 +1381,13 @@ Arch on paras!
 
 ```
 Arch est le meilleur!
+
+```
+
+	Fullwidth English
+
+```
+Ａｒｃｈ　ｉｓ　ｔｈｅ　Ｂｅｓｔ！
 
 ```
 
