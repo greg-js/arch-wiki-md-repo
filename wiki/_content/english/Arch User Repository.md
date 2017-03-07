@@ -189,7 +189,7 @@ When submitting a package to the AUR, observe the following rules:
 
 ```
 
-	If there was previous maintainers, put them as contributors. The same applies for the original submitter if this is not you. If you are a co-maintainer, add the name of the other current maintainers as well.
+	If there were previous maintainers, put them as contributors. The same applies for the original submitter if this is not you. If you are a co-maintainer, add the names of the other current maintainers as well.
 
 ```
 # Maintainer: Your name <address at domain dot tld>

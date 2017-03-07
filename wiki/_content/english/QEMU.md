@@ -250,16 +250,18 @@ Using IOMMU opens to features like PCI passthrough and memory protection from fa
 To enable IOMMU:
 
 1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
-2.  Add `intel_iommu=on` if you have an Intel CPU or `amd_iommu=on` if you have an AMD CPU, to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+2.  Set the correct [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") based on the CPU-vendor:
+    *   Intel - `intel_iommu=on` or `intel_iommu=pt`
+    *   AMD - `amd_iommu=on`
 3.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
 4.  Add `-device intel-iommu` to create the IOMMU device:
 
 ```
-$ qemu-system-i386 -enable-kvm -machine q35,accel=kvm -device intel-iommu ..
+$ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time ..
 
 ```
 
-**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` , so while adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Using_vfio-pci "PCI passthrough via OVMF")) you should not create the IOMMU device with `-device intel-iommu` if PCI passthrough is required.
+**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Using_vfio-pci "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
 
 ## Moving data between host and guest OS
 

@@ -43,7 +43,6 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [5.1 Encryption](#Encryption)
     *   [5.2 Swap file](#Swap_file)
     *   [5.3 TLP](#TLP)
-    *   [5.4 Linux-rt kernel](#Linux-rt_kernel)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
     *   [6.2 Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion)
@@ -442,10 +441,6 @@ Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This 
 
 Using TLP requires special precautions in order to avoid filesystem corruption. Refer to the [according TLP section](/index.php/TLP#Btrfs "TLP") for more information.
 
-### Linux-rt kernel
-
-As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel does not boot with the Btrfs file system. This is due to the slow development of the *rt* patchset.
-
 ## Tips and tricks
 
 ### Partitionless Btrfs disk
@@ -533,7 +528,7 @@ See the [Btrfs Problem FAQ](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ)
 
 #### Partition offset
 
-**Note:** The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `core.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd*X*`) directly.
+The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `core.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd*X*`) directly.
 
 [GRUB](/index.php/GRUB "GRUB") can boot Btrfs partitions, however the module may be larger than other [file systems](/index.php/File_systems "File systems"). And the `core.img` file made by `grub-install` may not fit in the first 63 sectors (31.5KiB) of the drive between the MBR and the first partition. Up-to-date partitioning tools such as `fdisk` and `gdisk` avoid this issue by offsetting the first partition by roughly 1MiB or 2MiB.
 
@@ -557,13 +552,13 @@ You are now being dropped into an emergency shell.
 
 A workaround is to remove `btrfs` from the `HOOKS` array in `/etc/mkinitcpio.conf` and instead add `btrfs` to the `MODULES` array. Then regenerate the initramfs with `mkinitcpio -p linux` (adjust the preset if needed) and reboot.
 
-See the [original forums thread](https://bbs.archlinux.org/viewtopic.php?id=189845) and [FS#42884](https://bugs.archlinux.org/task/42884) for further information and discussion.
-
 You will get the same error if you try to mount a raid array without one of the devices. In that case you must add the `degraded` mount option to `/etc/fstab`. If your root resides on the array, you must also add `rootflags=degraded` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-**Note:** As of August 2016, a potential workaround for this bug is to mount the array by a single drive only in `/etc/fstab`, and allow btrfs to discover and append the other drives automatically. Group-based identifiers such as UUID and LABEL appear to contribute to the failure. For example, a two-device RAID1 array consisting of 'disk1' and disk2' will have a UUID allocated to it, but instead of using the UUID, use only `/dev/mapper/disk1` in `/etc/fstab`.
+As of August 2016, a potential workaround for this bug is to mount the array by a single drive only in `/etc/fstab`, and allow btrfs to discover and append the other drives automatically. Group-based identifiers such as UUID and LABEL appear to contribute to the failure. For example, a two-device RAID1 array consisting of 'disk1' and disk2' will have a UUID allocated to it, but instead of using the UUID, use only `/dev/mapper/disk1` in `/etc/fstab`. For a more detailed explanation, see the following [blog post](https://blog.samcater.com/fix-for-btrfs-open_ctree-failed-when-running-root-fs-on-raid-1-or-raid10-arch-linux/).
 
-For a more detailed explanation, see the following [blog post.](https://blog.samcater.com/fix-for-btrfs-open_ctree-failed-when-running-root-fs-on-raid-1-or-raid10-arch-linux/)
+Another possible workaround is to remove the `udev` hook in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") and replace it with the `systemd` hook. In this case, `btrfs` should *not* be in the `HOOKS` or `MODULES` arrays.
+
+See the [original forums thread](https://bbs.archlinux.org/viewtopic.php?id=189845) and [FS#42884](https://bugs.archlinux.org/task/42884) for further information and discussion.
 
 ### btrfs check
 

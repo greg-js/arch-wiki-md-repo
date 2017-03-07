@@ -301,7 +301,7 @@ Using the above gives a workable alsamixer. I've found that using VLC & its mixe
 
 Starting with the Linux kernel version 3.3 (at its release candidates) the following setting should be used in */etc/modprobe.d/sound.conf* to handle headphone detection correcly:
 
- `options snd-hda-intel model=imac27_122` 
+ `options snd-hda-intel model=imac27` 
 
 * * *
 

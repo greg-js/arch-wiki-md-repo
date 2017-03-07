@@ -409,7 +409,7 @@ Create `/etc/httpd/conf/extra/php-fcgid.conf` with the following content:
         #DefaultInitEnv PHP_FCGI_CHILDREN 3
         # Maximum requests before a process is stopped and a new one is launched
         #DefaultInitEnv PHP_FCGI_MAX_REQUESTS 5000
-        <Location /fcgid-bin/>
+    <Location /fcgid-bin/>
         SetHandler fcgid-script
         Options +ExecCGI
     </Location>

@@ -272,7 +272,7 @@ In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer 
 
 ### Text editors
 
-See [Text editors](/index.php/List_of_applications/Documents#Text_editors "List of applications/Documents")
+See [List of applications/Documents#Text editors](/index.php/List_of_applications/Documents#Text_editors "List of applications/Documents").
 
 ### Integrated development environments
 

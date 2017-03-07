@@ -52,7 +52,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 | server | 服务端监听地址(IPv4或IPv6) |
 | server_port | 服务端端口，一般为`443` |
-| local_address | 本地监听地址，缺省为`127.0.0.1` |
+| local_address | 本地监听地址，缺省为`127.0.0.1` 可用-b参数设置 |
 | local_port | 本地监听端口，一般为`1080` |
 | password | 用以加密的密匙 |
 | timeout | 超时时间（秒） |

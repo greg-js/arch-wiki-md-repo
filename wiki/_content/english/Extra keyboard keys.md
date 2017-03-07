@@ -118,6 +118,8 @@ Here is an example output:
 
 ```
 
+[Xbindkeys#Identifying keycodes](/index.php/Xbindkeys#Identifying_keycodes "Xbindkeys") is another wrapper to "xev" that reports keycodes.
+
 If you press a key and nothing appears in the terminal, it means that either the key does not have a *scancode*, the *scancode* is not mapped to a *keycode*, or some other process is capturing the keypress. If you suspect that a process listening to X server is capturing the keypress, you can try running xev from a clean X session:
 
 ```

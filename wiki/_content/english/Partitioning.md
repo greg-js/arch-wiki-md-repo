@@ -79,6 +79,8 @@ The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 
 GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
 
+**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") is required.
+
 Some points to consider when choosing:
 
 *   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, the MBR scheme is required.
@@ -96,8 +98,6 @@ Some advantages of GPT over MBR are:
 *   Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 ZiB. MBR is limited to addressing 2 TiB of space per drive.
 *   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Fdisk#Recover_GPT_header "Fdisk") in case the primary ones are damaged.
 *   CRC32 checksums to detect errors and corruption of the header and partition table.
-
-**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") is required. Please note that this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
 
 The section on [#Partitioning tools](#Partitioning_tools) contains a table indicating which tools are available for creating and modifying GPT and MBR tables.
 

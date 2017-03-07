@@ -472,10 +472,12 @@ See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/
 [Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN "wikipedia:Wake-on-LAN") can be a useful feature, but if you are not making use of it then it is simply draining extra power waiting for a magic packet while in suspend. Disabling for all Ethernet interfaces:
 
  `/etc/udev/rules.d/70-disable_wol.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="/usr/bin/ethtool -s %k wol d"` 
+**Note:** You need to install [ethtool](https://www.archlinux.org/packages/?name=ethtool) for the above to take effect.
 
 To enable powersaving on all wireless interfaces:
 
  `/etc/udev/rules.d/70-wifi-powersave.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*", RUN+="/usr/bin/iw dev %k set power_save on"` 
+**Note:** You need to install [iw](https://www.archlinux.org/packages/?name=iw) for the above to take effect.
 
 In these examples, `%k` is a specifier for the kernel name of the matched device. For example, if it finds that the rule is applicable to `wlan0`, the `%k` specifier will be replaced with `wlan0`. To apply the rules to only a particular interface, just replace the pattern `eth*` and specifier `%k` with the desired interface name. For more information, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
 
@@ -589,7 +591,7 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 
 **Note:** This adds latency when accessing a drive that has been idle, so it is one of the few settings that may be worth toggling based on whether you are on AC power.
  `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="min_power"` 
-**Warning:** SATA Active Link Power Management can lead to data loss on some devices (e.g. Lenovo T440s [is known to suffer](http://lkml.indiana.edu/hypermail/linux/kernel/1401.2/02171.html) this problem. Issue is still verified to occur on Linux kernel version 4.5.1\. Do not enable this setting unless you have frequent backups.)
+**Warning:** SATA Active Link Power Management can lead to data loss on some devices. For example, the Lenovo T440s [is known to suffer](http://lkml.indiana.edu/hypermail/linux/kernel/1401.2/02171.html) from this problem. Do not enable this setting unless you have frequent backups.
 
 ### Hard disk drive
 

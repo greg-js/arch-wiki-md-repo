@@ -181,7 +181,9 @@ SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obs
 
 ```
 
-See [systemd.exec(5)](http://man7.org/linux/man-pages/man5/systemd.exec.5.html) and [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") for more information.
+See [systemd.exec(5)](http://man7.org/linux/man-pages/man5/systemd.exec.5.html) and [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") for more information. Additionally see [upstream comments](https://github.com/jedisct1/dnscrypt-proxy/pull/601#issuecomment-284171727).
+
+This can be combined with the additions in [#dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges).
 
 ### Enable EDNS0
 
@@ -284,7 +286,7 @@ Finally [restart](/index.php/Restart "Restart") `unbound.service`.
 
 ### dnscrypt runs with root privileges
 
-See [FS#49881](https://bugs.archlinux.org/task/49881). To work around this, create an unprivileged user manually.
+See [FS#49881](https://bugs.archlinux.org/task/49881) for more information. To work around this, create an unprivileged user manually.
 
 [Create the user](/index.php/Users_and_groups#User_management "Users and groups") as follows:
 
@@ -293,7 +295,7 @@ See [FS#49881](https://bugs.archlinux.org/task/49881). To work around this, crea
 
 ```
 
-Edit `/etc/dnscrypt-proxy.conf`, appending the new user:
+Two possible solutions Edit `/etc/dnscrypt-proxy.conf`, appending the new user:
 
 ```
 User dnscrypt
@@ -309,4 +311,4 @@ CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 
 ```
 
-This second option is useful when using a caching server like unbound and is preferred, since the unit is not exec'ed as root in the first place. If you [changed the port](#Change_port) to an unprivileged one (e.g. 5353), then `CapabilityBoundingSet=CAP_NET_BIND_SERVICE` is not needed.
+This second option is useful when using a caching server like unbound and is preferred, since the unit is not exec'ed as root in the first place. If you [changed the port](#Change_port) to an unprivileged one (e.g. 5353), then `CapabilityBoundingSet=CAP_NET_BIND_SERVICE` is not needed. This method can be combined with [#Sandboxing](#Sandboxing).

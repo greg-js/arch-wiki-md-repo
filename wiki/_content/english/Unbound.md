@@ -334,19 +334,10 @@ WantedBy=timers.target
 
 ### Sandboxing
 
-It is possible to sandbox the default `unbound.service` by restricting [capabilities](/index.php/Capabilities "Capabilities") and enforcing [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") features:
-
-*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities
-    *   `CAP_IPC_LOCK` = Prevents paging by allowing *unbound* to lock data in memory
-        *   Not a hard requirement for *unbound* but rather a personal security choice
-    *   `CAP_NET_BIND_SERVICE` = Allows for socket binding to privileged ports < 1024
-    *   `CAP_SETGID CAP_SETUID` = Modifies the *user* *group* to *nobody* *nobody*
-    *   `CAP_SYS_CHROOT` = Allows the creation of a chroot at `/etc/unbound`
-*   `ReadWritePaths` specifies paths to override from `ProtectSystem=strict`
-    *   `/etc/unbound` = Allows the *ExecStartPre* command to complete
-    *   `/run` = Allows access to the PID file at `/run/unbound.pid`
+It is possible to sandbox the default `unbound.service` by restricting [capabilities](/index.php/Capabilities "Capabilities") and enforcing [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") features.
 
 [Edit](/index.php/Systemd#Drop-in_files "Systemd") `unbound.service` and add the following contents (cf. [FS#52700](https://bugs.archlinux.org/task/52700)):
+
 ```
 [Unit]
 CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT
@@ -367,6 +358,15 @@ SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete 
 
 ```
 
+*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities
+    *   `CAP_IPC_LOCK` = Prevents paging by allowing *unbound* to lock data in memory
+        *   Not a hard requirement for *unbound* but rather a personal security choice
+    *   `CAP_NET_BIND_SERVICE` = Allows for socket binding to privileged ports < 1024
+    *   `CAP_SETGID CAP_SETUID` = Modifies the *user* *group* to *nobody* *nobody*
+    *   `CAP_SYS_CHROOT` = Allows the creation of a chroot at `/etc/unbound`
+*   `ReadWritePaths` specifies paths to override from `ProtectSystem=strict`
+    *   `/etc/unbound` = Allows the *ExecStartPre* command to complete
+    *   `/run` = Allows access to the PID file at `/run/unbound.pid`
 *   The *@mount* system call set includes *chroot()* which is required by unbound to build its environment
 *   `mount` and `unmount2` require explicit listing if they are to be blacklisted apart from the *@mount* macro
 *   The above example blacklists `CAP_SYS_ADM` which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/)

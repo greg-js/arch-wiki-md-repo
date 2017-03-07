@@ -11,13 +11,13 @@
         *   [3.1.1 Whisker 菜单](#Whisker_.E8.8F.9C.E5.8D.95)
         *   [3.1.2 编辑菜单](#.E7.BC.96.E8.BE.91.E8.8F.9C.E5.8D.95)
     *   [3.2 桌面](#.E6.A1.8C.E9.9D.A2)
-        *   [3.2.1 图标文字的背景透明](#.E5.9B.BE.E6.A0.87.E6.96.87.E5.AD.97.E7.9A.84.E8.83.8C.E6.99.AF.E9.80.8F.E6.98.8E)
+        *   [3.2.1 图标文字的透明背景](#.E5.9B.BE.E6.A0.87.E6.96.87.E5.AD.97.E7.9A.84.E9.80.8F.E6.98.8E.E8.83.8C.E6.99.AF)
         *   [3.2.2 从右键菜单中剔除 Thunar 选项](#.E4.BB.8E.E5.8F.B3.E9.94.AE.E8.8F.9C.E5.8D.95.E4.B8.AD.E5.89.94.E9.99.A4_Thunar_.E9.80.89.E9.A1.B9)
         *   [3.2.3 多显示器连续壁纸](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E8.BF.9E.E7.BB.AD.E5.A3.81.E7.BA.B8)
-        *   [3.2.4 杀死窗口的快捷键](#.E6.9D.80.E6.AD.BB.E7.AA.97.E5.8F.A3.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE)
+        *   [3.2.4 关闭窗口的快捷键](#.E5.85.B3.E9.97.AD.E7.AA.97.E5.8F.A3.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE)
     *   [3.3 会话](#.E4.BC.9A.E8.AF.9D)
         *   [3.3.1 自启动程序](#.E8.87.AA.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
-            *   [3.3.1.1 延迟自启动应用程序](#.E5.BB.B6.E8.BF.9F.E8.87.AA.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+            *   [3.3.1.1 延迟应用程序启动](#.E5.BB.B6.E8.BF.9F.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8)
         *   [3.3.2 锁定屏幕](#.E9.94.81.E5.AE.9A.E5.B1.8F.E5.B9.95)
         *   [3.3.3 用户切换](#.E7.94.A8.E6.88.B7.E5.88.87.E6.8D.A2)
         *   [3.3.4 禁用保存的会话](#.E7.A6.81.E7.94.A8.E4.BF.9D.E5.AD.98.E7.9A.84.E4.BC.9A.E8.AF.9D)
@@ -27,7 +27,7 @@
         *   [3.5.1 键盘音量键](#.E9.94.AE.E7.9B.98.E9.9F.B3.E9.87.8F.E9.94.AE)
             *   [3.5.1.1 快捷键](#.E5.BF.AB.E6.8D.B7.E9.94.AE)
     *   [3.6 键盘快捷键](#.E9.94.AE.E7.9B.98.E5.BF.AB.E6.8D.B7.E9.94.AE)
-    *   [3.7 Polkit 身法认证代理](#Polkit_.E8.BA.AB.E6.B3.95.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86)
+    *   [3.7 Polkit 验证代理](#Polkit_.E9.AA.8C.E8.AF.81.E4.BB.A3.E7.90.86)
     *   [3.8 Display blanking](#Display_blanking)
 *   [4 提示和小技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E5.B0.8F.E6.8A.80.E5.B7.A7)
     *   [4.1 从 thunar 和 xfdesktop 隐藏分区](#.E4.BB.8E_thunar_.E5.92.8C_xfdesktop_.E9.9A.90.E8.97.8F.E5.88.86.E5.8C.BA)
@@ -67,31 +67,31 @@
 
 从[显示管理器](/index.php/Display_manager "Display manager")中选择*Xfce Session*，或者添加 `exec startxfce4` 到 [Xinitrc](/index.php/Xinitrc "Xinitrc") 中。
 
-**注意:** 不要直接用 `xfce4-session`，`startxfce4` 会在恰当的时间运行它。
+**注意:** 不要直接调用 `xfce4-session`可执行文件，`startxfce4` 是正确的命令，它会在恰当的时间调用前述可执行文件。
 
 ## 配置
 
 Xfce 把配置的选项保存到 [Xfconf](http://docs.xfce.org/xfce/xfconf/start)。有几个方式来修改这些选项：
 
-*   在主菜单中，选择 [设置](http://docs.xfce.org/xfce/xfce4-settings/start)，选择想要修改的选项。选项实际上是位于 `/usr/bin/xfce4-*` 和 `/usr/bin/xfdesktop-settings` 中的程序。
-*   `xfce4-settings-editors` 能看到和修改所有的设置。此处修改的选项会立即生效。使用`xfconf-query`来通过命令行设置；[文档中](http://docs.xfce.org/xfce/xfconf/xfconf-query)有更多的细节。
-*   设置保存在 XML 文件中。此文件位于 `~/.config/xfce4/xfconf/xfce-perchannel-xml/`，也可以手动修改文件。但是，此处的修改不会立即生效。
+*   在主菜单中，选择 [设置](http://docs.xfce.org/xfce/xfce4-settings/start)和要自定义的类别。类别是通常位于 `/usr/bin/xfce4-*` 和 `/usr/bin/xfdesktop-settings` 中的程序。
+*   `xfce4-settings-editors` 可以查看和修改所有设置。此处修改的选项会立即生效。使用`xfconf-query`从命令行更改设置；[文档中](http://docs.xfce.org/xfce/xfconf/xfconf-query)有更多的细节。
+*   设置保存在 XML 文件中。此文件位于 `~/.config/xfce4/xfconf/xfce-perchannel-xml/`，可以手动修改。但是，此处的修改不会立即生效。
 
 ### 菜单
 
 #### Whisker 菜单
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin)（包含在 [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) 中）是一个可选应用启动器。它可以显示所有的已安装应用中最喜欢和经常被使用的应用。支持应用分类和模糊查询。安装完成后就可以替换掉面板1的第一个项目“应用程序菜单”了（在“设置/面板/项目"选择添加”Whisker 菜单“）。
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin)（包含在 [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) 中）是一个可选应用启动器。它可以显示收藏夹列表，通过类别按钮浏览所有已安装的应用程序，并支持模糊搜索。安装完成后，就可以替换掉面板1的第一个项目“应用程序菜单”了（在“设置/面板/项目"选择添加”Whisker 菜单“）。
 
 #### 编辑菜单
 
-有一些工具可以用来实现此项需求：
+许多图形工具可以用来实现此项需求：
 
 *   **XAME** — 使用Gambas编写，用于Xfce编辑菜单项的图形工具，在其他环境中没有效果。（已停止开发）
 
 	[http://www.redsquirrel87.com/XAME.php](http://www.redsquirrel87.com/XAME.php) || [xame](https://aur.archlinux.org/packages/xame/)
 
-*   **MenuLibre** — 一个高级的菜单编辑器，提供了一个纯粹，易用的界面。
+*   **MenuLibre** — 一个高级的菜单编辑器，提供了一个纯粹、易用的界面。
 
 	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/)
 
@@ -136,11 +136,11 @@ Xfce 把配置的选项保存到 [Xfconf](http://docs.xfce.org/xfce/xfconf/start
 
 `<Layout>` 标签定义了菜单的布局。应用程序可以被放在文件夹中，或任何我们想要的组织方式。在 [Xfce wiki](http://wiki.xfce.org/howto/customize-menu) 有更多的详细信息。
 
-你可以通过编辑 `.desktop` 本身来改变Xfce的菜单。隐藏项，可以参见 [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries")。你可以改变 `Categories=` 桌面项的行，以编辑应用程序的标签（category）。参见 [Desktop entries#File example](/index.php/Desktop_entries#File_example "Desktop entries")。
+你可以通过编辑 `.desktop` 本身来改变Xfce的菜单。隐藏项，可以参见 [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries")。你可以通过改变 `Categories=` 桌面项的行，来编辑应用程序类别。参见 [Desktop entries#File example](/index.php/Desktop_entries#File_example "Desktop entries")。
 
 ### 桌面
 
-#### 图标文字的背景透明
+#### 图标文字的透明背景
 
 默认桌面图标的文字是白色背景，可以创建或者修改 `~/.gtkrc-2.0` 来得到不一样的效果：
 
@@ -169,20 +169,20 @@ $ xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
 
 #### 多显示器连续壁纸
 
-打开 `xfce4-settings-editor` 创建如下的字段：
+打开 `xfce4-settings-editor` 创建如下的属性：
 
 ```
-属性: /backdrop/screen0/xinerama-stretch
-类型: Boolean
-值: TRUE|1|Enabled
+Property: /backdrop/screen0/xinerama-stretch
+Type: Boolean
+Value: TRUE|1|Enabled
 
 ```
 
-#### 杀死窗口的快捷键
+#### 关闭窗口的快捷键
 
-Xfce没有杀死窗口的快捷键，当程序假死时，我们可能需要这样的快捷键。
+Xfce没有关闭窗口的快捷键，当程序假死时，我们可能需要这样的快捷键。
 
-通过包 [xorg-xkill](https://www.archlinux.org/packages/?name=xorg-xkill)，使用 `xkill` 来交互时的杀掉一个窗口。对于当下的激活窗口，使用包 [xdotool](https://www.archlinux.org/packages/?name=xdotool)：
+使用 [xorg-xkill](https://www.archlinux.org/packages/?name=xorg-xkill)，`xkill` 可以交互关闭窗口。对于当下的激活窗口，使用包 [xdotool](https://www.archlinux.org/packages/?name=xdotool)：
 
 ```
 $ xdotool getwindowfocus windowkill
@@ -202,13 +202,13 @@ $ xkill -id "$(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.
 
 #### 自启动程序
 
-可以在 **程序 > 设置 > 设置管理器 > 会话和自启动** 中，设置与Xfce一起启动的自启动程序。 此处列出了所有自启动的程序。点击 **添加** 按钮后可以添加自定义的自启动任务。
+可以在 **程序 > 设置 > 设置管理器 > 会话和自启动** 中点击**应用程序自启动**，设置与Xfce一起启动的自启动程序。 此处列出了所有自启动的程序。点击 **添加** 按钮后可以添加自定义的自启动任务，需指定可执行文件的路径。
 
-当然，也可以将要执行的命令（包括变量）加入 [xinitrc](/index.php/Xinitrc "Xinitrc")。如果使用 [显示管理器](/index.php/Display_manager "Display manager")，则加入 [xprofile](/index.php/Xprofile "Xprofile") 。
+当然，也可以将要执行的命令（包括设置环境变量）加入 [xinitrc](/index.php/Xinitrc "Xinitrc")。如果使用 [显示管理器](/index.php/Display_manager "Display manager")，则加入 [xprofile](/index.php/Xprofile "Xprofile") 。
 
-##### 延迟自启动应用程序
+##### 延迟应用程序启动
 
-有时候，延迟某个应用程序的自启动是很有用的。特别是如 `sleep 3 && command` 这样的命令在自启动中是不起作用的。与之相对，你需要使用如下的语法来替代：
+延迟某个应用程序启动有时可能很有用。在**应用程序自启动**中指定类似 `sleep 3 && command` 的命令不会起作用。作为一个解决办法，可以使用如下命令：
 
 ```
 sh -c "sleep 3 && command"
@@ -219,27 +219,27 @@ sh -c "sleep 3 && command"
 
 要通过 *xflock4* 脚本锁定 Xfce4 会话，可以从下面软件列表中选择安装一个：[xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) 和 [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)。
 
-或者可以选择使用下面命令设置屏保：
+或者，可以设置锁定命令：
 
 ```
 $ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l" --create -t string
 
 ```
 
-更新命令时，可以使用：
+更新命令可以使用：
 
 ```
 $ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command -l"
 
 ```
 
-[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") 包含了屏幕锁定程序列表。
+[List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") 包含一个全面的屏幕锁定程序列表。
 
-**提示：** [light-locker](https://www.archlinux.org/packages/?name=light-locker) 是和 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) 相整合的。安装后,电源管理设定中会出现'安全’标签页。现有的'系统休眠时锁定屏幕'选项会集成到'安全'标签页中。
+**提示：** [light-locker](https://www.archlinux.org/packages/?name=light-locker) 是和 [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) 相整合的。安装 light-locker 后,电源管理设定中会出现*安全*标签页。现有的*系统休眠时锁定屏幕*选项会集成到*安全*标签页中。
 
 #### 用户切换
 
-Xfce4可以切换用户，只要 [显示管理器](/index.php/Display_manager "Display manager") 有进行支持，比如 [LightDM](/index.php/LightDM "LightDM") 和 [GDM](/index.php/GDM "GDM") 。具体请参看其wiki页面。当你已经安装并配置好你的显示管理器之后，你就可以通过'actions buttons'菜单项来切换用户。
+当与具有用户切换功能的[显示管理器](/index.php/Display_manager "Display manager")一起使用时，Xfce4支持用户切换 - 例如 [LightDM](/index.php/LightDM "LightDM") 和 [GDM](/index.php/GDM "GDM") 。有关详细信息，请参阅您的显示管理器的Wiki页面。当您安装并正确配置了显示管理器时，您可以从面板中的'action buttons'菜单项切换用户。
 
 要想要用 GDM 以外的显示管理器切换用户, 需要额外的步骤:
 
@@ -248,7 +248,7 @@ Xfce4可以切换用户，只要 [显示管理器](/index.php/Display_manager "D
 
 #### 禁用保存的会话
 
-可以通过下面命令禁用某个用户的会话：
+可以通过下面命令禁用某个用户已保存的会话：
 
 ```
 $ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
@@ -257,9 +257,9 @@ $ xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false
 
 然后进入 *应用程序* -> *设置* -> *会话和启动* -> *会话* 并点击 *清除已保存的会话* 按钮。
 
-**Tip:** 如果上面命令无法持久生效，可以用下面命令：`xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
+**提示：** 如果上面命令无法持久生效，可以用下面命令：`xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false`
 
-Xfce [kiosk 模式](https://wiki.xfce.org/howto/kiosk_mode) 可以用来彻底禁用对话的保存。为了禁用对话，创建或者编辑 `/etc/xdg/xfce4/kiosk/kioskrc` 并加入如下的行：
+Xfce [kiosk 模式](https://wiki.xfce.org/howto/kiosk_mode) 可以用来彻底禁用对话的保存。要禁用对话，创建或者编辑 `/etc/xdg/xfce4/kiosk/kioskrc` 并加入如下内容：
 
 ```
 [xfce4-session]
@@ -267,45 +267,47 @@ SaveSession=NONE
 
 ```
 
-如果kiosk模式不能工作，用户可以给对话目录设置只读权限：
+如果kiosk模式不起作用，用户可以给会话目录设置只读权限：
 
 ```
 $ rm ~/.cache/sessions/* && chmod 500 ~/.cache/sessions
 
 ```
 
-此操作会防止Xfce保存所有的会话，除了设置和配置。
+此操作会防止Xfce保存所有的会话，即使任何别的设置允许保存会话。
 
 #### 默认窗口管理器
 
-**注意:** 为了更改起效果，在设置后必须清除已经保存的会话，并确保初次登出时没有开启会话保存。想要的窗口管理器运行起来之后，可以再开启会话保存。
+**注意:** 要使更改生效，需要清除保存的会话，并确保在首次注销时禁用会话保存。 一旦选择的窗口管理器正在运行，可以再次启用会话保存。
 
 窗口管理器的设定保存在：
 
 *   /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml - 系统设置
 *   ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml - 用户设置
 
-单个用户的默认窗口管理器可以用下面命令修改：
+单个用户的默认窗口管理器可以用*xfconf-query*命令设置：
 
 ```
 $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa **wm_name**
 
 ```
 
-下面命令增加参数:
+如果要使用命令行选项启动窗口管理器，请使用以下命令：:
 
 ```
 $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -t string -s **wm_name** -s **--wm-option**
 
 ```
 
-要修改整个系统的默认窗口管理器，需要手动编辑配置文件，将 *xfwm4* 修改为需要的管理器。可以使用 `<value type="string" value="**--wm-option**"/>` 增加额外的参数。
+如需更多命令行选项，只需向命令中添加更多 `-t string` 和 `-s **--wm-option**` 参数。
 
-或者也可以设置开机启动运行 或在命令行运行该命令并保存会话保存然后注销。请注意该方法并没有真正地更改默认窗口管理器，而只是每次开机时将其替换掉。另外需要关闭会话保存，否则可能会运行两次新的窗口管理器。
+如需更改整个系统的默认窗口管理器，手动编辑上面指定的文件，将*xfwm4*更改为首选窗口管理器，并添加更多 `<value type="string" value="**--wm-option**"/>` 选项（如果需要）。
+
+要更改窗口管理器，还可以设置 `**wm_name** --replace` 自启动，或者在终端中运行 `**wm_name** --replace &`并确保在注销时保存会话。请注意该方法并没有真正地更改默认窗口管理器，而只是每次开机时将其替换掉。如果你使用自动启动工具，应该禁用保存的会话，因为这可能导致新的窗口管理器在默认窗口管理器之后启动两次。
 
 ### 更换主题
 
-在 [xfce-look.org](http://www.xfce-look.org) 上有不少 XFCE 的主题。 *Xfwm* 的主题保存在 `/usr/share/themes/xfce4`, 在 *设置 > 窗口管理器* 中可以更改主题。 而[GTK+](/index.php/GTK%2B "GTK+") 主题在 *设置 > 外观* 更改。
+在 [xfce-look.org](http://www.xfce-look.org) 上有不少 XFCE 的主题。 *Xfwm* 的主题保存在 `/usr/share/themes/xfce4`, 在 *设置 > 窗口管理器* 中可以更改主题。 而[GTK+](/index.php/GTK%2B "GTK+") 主题在 *设置 > 外观* 设置。
 
 如果想要使所有的应用能有一个统一的外观, 参见 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") 获得更多的信息。
 
@@ -315,15 +317,15 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 #### 键盘音量键
 
-[xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) 提供了一个音量小工具，并支持键盘音量控制和音量提示。或者可以用没有小工具的 [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)，这在比如和 [pasystray](https://aur.archlinux.org/packages/pasystray/) 配合使用时会很方便。
+[xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) 提供了一个面板小程序，它支持键盘音量控制和音量提示。或者，可以用不提供面板图标的 [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)，它还提供键绑定和通知控制。当同时使用 [pasystray](https://aur.archlinux.org/packages/pasystray/) 进行更细微的控制时会很方便。
 
-还可以用 [xfce4-mixer](https://git.xfce.org/apps/xfce4-mixer/)，同样支持键盘控制和面板小工具以及 Alsa。但请注意它是基于一个已在 1.0 版本被被废止的 GStreamer 0.10 功能的。
+还可以用 [xfce4-mixer](https://git.xfce.org/apps/xfce4-mixer/)，它同样提供面板小程序和键盘快捷键，并支持Alsa。然而，请注意，它是基于已在1.0中放弃的GStreamer 0.10的功能。
 
 [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications") 下有和特定桌面无关的选项替代。
 
 ##### 快捷键
 
-如果不想用小工具或守护程序来控制音量键的话，可以在键盘设定下手动地将其映射到控制命令。诸声音系统的特定命令可在下面查到。
+如不使用控制音量键的小程序或守护程序，则可以使用Xfce的键盘设置手动将音量控制命令映射到音量键。对于您正在使用的音响系统，请参阅以下链接到相应命令的部分。
 
 *   ALSA: [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture").
 *   PulseAudio: [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio")
@@ -331,11 +333,11 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 ### 键盘快捷键
 
-键盘快捷键在两个地方设置： *设置 > 窗口管理器 > 键盘* 和 *设置 > 键盘 > 应用程序快捷键*。
+键盘快捷键在两个地方设置： *设置 > 窗口管理器 > 键盘* 和 *设置 > 键盘 > 快捷键*。
 
-### Polkit 身法认证代理
+### Polkit 验证代理
 
-在安装 [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) 时，会一起安装 [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)，并会随系统自动启动;并不主要用户的干预。更多信息请参见 [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")。
+在安装 [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) 时，会同时安装 [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)，并随系统自动启动;无需用户干预。更多信息请参见 [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")。
 
 Xfce 可用的第三方 Polkit 身份认证代理，参见 [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/) 和 [xfce-polkit](https://aur.archlinux.org/packages/xfce-polkit/)。
 

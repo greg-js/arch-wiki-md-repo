@@ -40,7 +40,7 @@ Visitare la [Tabella dei Contenuti](/index.php/Table_of_contents_(Italiano) "Tab
 
 	[ArchWiki Tutorial](/index.php/Help:Editing_(Italiano) "Help:Editing (Italiano)")
 
-	Breve tutorial sull'editing ed i contributi alla wiki di Arch Linux.
+	Breve tutorial sull'editing e i contributi alla wiki di Arch Linux.
 
 	[Comunità Internazionale](/index.php/International_communities "International communities")
 

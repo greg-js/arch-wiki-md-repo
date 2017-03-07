@@ -122,6 +122,29 @@ From [figlet](https://www.archlinux.org/packages/?name=figlet) 2.2.5-1:
 
 ```
 
+User art:
+
+```
+                  -@                
+                  .##@               
+                 .####@              
+                 @#####@             
+               . *######@            
+              .##@o@#####@           
+             /############@          
+            /##############@         
+           @######@**%######@        
+          @######`     %#####o       
+         @######@       ######%      
+       -@#######h       ######@.`    
+      /#####h**``       `**%@####@   
+     @H@*`                    `*%#@  
+    *`                            `* 
+
+```
+
+by Cyllos
+
 ## See also
 
 *   [Arch Linux artwork](https://www.archlinux.org/art/)

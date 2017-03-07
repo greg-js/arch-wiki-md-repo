@@ -490,7 +490,7 @@ Failure in the system primary application, like X11. |
 | 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
 | 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
 
-If issue you are looking for, was not found on according level, search it on couple of priority levels above and below. This rules are recommendations. Some errors considered a normal occasion for program so they marked low in priority by developer, and on the contrary, sometimes too many messages plaques too high priorities for them, but often it's an arguable situation. And often you really should solve an issue, also to understand architecture and adopt best practices.
+If you cannot find a message on the expected priority level, also search a couple of levels above and below: these rules are recommendations, and the developer of the affected application may have a different perception of the issue's importance from yours.
 
 Examples:
 

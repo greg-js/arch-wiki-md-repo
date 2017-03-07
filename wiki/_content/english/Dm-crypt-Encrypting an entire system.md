@@ -1036,7 +1036,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaZ` (the partition which holds the lvm containing the root filesystem), see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
-Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file and [install](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP:
+Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file and [install](/index.php/GRUB#Install "GRUB") to the mounted ESP:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg

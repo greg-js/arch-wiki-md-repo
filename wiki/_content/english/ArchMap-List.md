@@ -1040,5 +1040,6 @@ You can use the following website to get your device's coordinates along with a 
 49.00408, 8.40861 "wombalton" # Karlsruhe, Baden-Württemberg, Germany, EU
 51.993161, 7.547592 "thunfisch" # Münster, NRW, Germany, EU
 51.544265, -0.011686 "ragreener" # London, United Kingdom
+61.464059, 23.890607 "Michael" # Tampere, Finland
 
 ```

@@ -114,6 +114,8 @@ then run `mkinitcpio -p linux` to update the [initramfs](/index.php/Initramfs "I
 
 ### mkinitcpio hook
 
+**Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked (see [Dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration")), but swap autodetection is not available yet.[[2]](https://github.com/systemd/systemd/issues/4878)
+
 If the swap device is on a different device from that of the root file system, it will not be opened by the `encrypt` hook, i.e. the resume will take place before `/etc/crypttab` can be used, therefore it is required to create a hook in `/etc/mkinitcpio.conf` to open the swap LUKS device before resuming.
 
 If you want to use a partition which is currently used by the system, you have to disable it first:
@@ -231,13 +233,6 @@ kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevi
 
 ```
 
-In order for the LUKS header in the swap device to be detected, a cryptdevice parameter for the swap device, e.g. cryptdevice=/dev/<device>:swapDevice, will have to be added to the kernel parameters:
-
-```
-kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice cryptdevice=/dev/sda3:swapDevice resume=/dev/mapper/swapDevice ro
-
-```
-
 To make the parameter persistent on kernel updates, add it to `/etc/default/grub`.
 
 At boot time, the `openswap` hook will open the swap partition so the kernel resume may use it. If you use special hooks for resuming from hibernation, make sure they are placed **after** `openswap` in the `HOOKS` array. Please note that because of initrd opening swap, there is no entry for swapDevice in `/etc/crypttab` needed in this case.
@@ -282,4 +277,4 @@ HOOKS="... **keyboard** encrypt ..."
 
 ## Known Issues
 
-*   "Stopped (with error) /dev/dm-1" in logs. See [[2]](https://github.com/systemd/systemd/issues/1620).
+*   "Stopped (with error) /dev/dm-1" in logs. See [[3]](https://github.com/systemd/systemd/issues/1620).

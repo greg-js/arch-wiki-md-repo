@@ -20,25 +20,26 @@
     *   [2.5 Keyboard backlight](#Keyboard_backlight)
         *   [2.5.1 Automatically turn on backlight when typing](#Automatically_turn_on_backlight_when_typing)
     *   [2.6 Audio](#Audio)
-    *   [2.7 Network](#Network)
-        *   [2.7.1 Wired](#Wired)
-        *   [2.7.2 Wireless](#Wireless)
-    *   [2.8 Display](#Display)
-        *   [2.8.1 Touchscreen](#Touchscreen)
-        *   [2.8.2 GPU](#GPU)
-        *   [2.8.3 HiDPI](#HiDPI)
-        *   [2.8.4 Xbindkeys](#Xbindkeys)
-    *   [2.9 KMS](#KMS)
-    *   [2.10 Webcam](#Webcam)
-    *   [2.11 Fingerprint Reader](#Fingerprint_Reader)
-    *   [2.12 WWAN (Mobile broadband)](#WWAN_.28Mobile_broadband.29)
-    *   [2.13 GPS](#GPS)
-    *   [2.14 Bluetooth](#Bluetooth)
-*   [3 Other hardware](#Other_hardware)
-    *   [3.1 Docking](#Docking)
-        *   [3.1.1 Audio](#Audio_2)
-        *   [3.1.2 Video](#Video)
-        *   [3.1.3 Other ports](#Other_ports)
+*   [3 Add ALSA-Preamplifier](#Add_ALSA-Preamplifier)
+    *   [3.1 Network](#Network)
+        *   [3.1.1 Wired](#Wired)
+        *   [3.1.2 Wireless](#Wireless)
+    *   [3.2 Display](#Display)
+        *   [3.2.1 Touchscreen](#Touchscreen)
+        *   [3.2.2 GPU](#GPU)
+        *   [3.2.3 HiDPI](#HiDPI)
+        *   [3.2.4 Xbindkeys](#Xbindkeys)
+    *   [3.3 KMS](#KMS)
+    *   [3.4 Webcam](#Webcam)
+    *   [3.5 Fingerprint Reader](#Fingerprint_Reader)
+    *   [3.6 WWAN (Mobile broadband)](#WWAN_.28Mobile_broadband.29)
+    *   [3.7 GPS](#GPS)
+    *   [3.8 Bluetooth](#Bluetooth)
+*   [4 Other hardware](#Other_hardware)
+    *   [4.1 Docking](#Docking)
+        *   [4.1.1 Audio](#Audio_2)
+        *   [4.1.2 Video](#Video)
+        *   [4.1.3 Other ports](#Other_ports)
 
 ## Model description
 
@@ -451,6 +452,69 @@ You may need to add default sound card options to the module.
 In /etc/modprobe.d/alsa-base.conf include the following line:
 
 options snd_hda_intel index=1
+
+## Add ALSA-Preamplifier
+
+It is a common problem on laptops running linux that the sound, even on maximum, is not loud enough. This can be fixed by adding an ALSA preamplifier. Install alsa-utils:
+
+```
+sudo pacman -S alsa-utils
+
+```
+
+Change the config in /etc/asound.conf to the following ( you might have to adjust the cardnumber):
+
+```
+# Set your DEFAULT device to the softvol plug-in
+# NOT to a hardware card device
+#
+# The "!" means completely override the previous default
+# Not just changing/adding to it.
+pcm.!default {
+  type plug
+  slave.pcm "softvol"
+}
+
+# Configure softvol
+pcm.softvol {
+  type softvol
+
+  # Send softvol's output to dmix
+  slave {
+    pcm "dmix"
+    # If you wanted to you could send the output to a card directly
+    # But in most cases it's better to send it to dmix and let
+    # dmix handle where to send it. You can add a whole extra section
+    # to configure dmix and where it sends output, but I'm
+    # not covering that here.
+
+    ## Use Card 0 Device 0 instead of dmix
+    # pcm "hw:0,0"
+    ## Use Card 2 Device 0 instead of dmix
+    # pcm "hw:2,0"
+  }
+
+  # Add a control slider in your mixer interfaces
+  # i.e. KMix and alsamixer
+  control {
+    name "Pre-Amp"
+    card 0 #<CardNumberYouWantControlToShowOn> i.e. card 0 or card 2
+  }
+
+  # Minimum dB when slider is at 0%
+  min_dB -5.0
+
+  # Maximum DB when slider is at 100%
+  max_dB 40.0
+
+  # How many levels the slider should go through
+  # i.e. how granular do you want your control to be
+  resolution 12
+}
+
+```
+
+Taken from [here](https://web.archive.org/web/20160316004932/http://blog.tpa.me.uk/2013/10/23/alsa-pre-amp-volume-boost-the-simple-explanation/). **WARNING:** It is possible to permanently damage your loudspeakers if you turn it up too much!
 
 ### Network
 

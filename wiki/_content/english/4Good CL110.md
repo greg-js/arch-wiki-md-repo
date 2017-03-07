@@ -1,22 +1,23 @@
-This article serves as a temporal indexing directory for the issues of running Arch Linux on 4GOOD CL110 Cloudbook until there's time to improve, and possibly rewrite it.
+This article serves as a temporal indexing directory for the issues of running Arch Linux on 4GOOD CL110 Cloudbook until there's time to improve, and possibly rewrite it. As much as it would be desirable to keep this article wikified - I am afraid that it will have to stay informal for the time being.
 
 ## Contents
 
 *   [1 Hardware](#Hardware)
 *   [2 Installing](#Installing)
-*   [3 CPU](#CPU)
-    *   [3.1 cpufreq](#cpufreq)
-*   [4 Init](#Init)
-*   [5 UEFI](#UEFI)
-*   [6 Multimedia](#Multimedia)
-    *   [6.1 Audio](#Audio)
-    *   [6.2 Video](#Video)
-    *   [6.3 Webcam](#Webcam)
-*   [7 Networking](#Networking)
-    *   [7.1 Wireless](#Wireless)
-*   [8 Input](#Input)
-    *   [8.1 Touchpad](#Touchpad)
-*   [9 See also](#See_also)
+*   [3 UEFI](#UEFI)
+    *   [3.1 Init-related hard-freezes](#Init-related_hard-freezes)
+*   [4 CPU](#CPU)
+    *   [4.1 CPU-related hard-freezes](#CPU-related_hard-freezes)
+    *   [4.2 cpufreq](#cpufreq)
+*   [5 Multimedia](#Multimedia)
+    *   [5.1 Audio](#Audio)
+    *   [5.2 Video](#Video)
+    *   [5.3 Webcam](#Webcam)
+*   [6 Networking](#Networking)
+    *   [6.1 Wireless](#Wireless)
+*   [7 Input](#Input)
+    *   [7.1 Touchpad](#Touchpad)
+*   [8 See also](#See_also)
 
 ## Hardware
 
@@ -33,50 +34,67 @@ This article serves as a temporal indexing directory for the issues of running A
 
 ## Installing
 
+## UEFI
+
+This model has a 32bit UEFI [32bit UEFI boot image instructions](https://git.archlinux.org/archiso.git/tree/docs/README.transfer#n105) After that the process is pretty straightforward and the installation is no different to that of a normal Arch system.
+
+### Init-related hard-freezes
+
+The deal with init system is ugly. System experiences a hard(unrecoverable freeze) soon after being booted(5-20 seconds), probably due to some delayed service startup. The problem lies in the systemd, and as of 2017/01/10 it was still there. Section coming soon... In short - switch over from systemd to OpenRC Use [this website](http://systemd-free.org/) as a guide.
+
+A flawless [migration guide](http://systemd-free.org/migrate.php) It's actually pretty flawed, so this article *should* address some of the out-of-date issues An up-to-date [scipt](https://github.com/MiCoArcher/openrc-migrator/blob/master/openrc-migrator.sh) designed to aid in migration. Read it first, and only then run it!
+
 ## CPU
+
+There are multiple CPU-related issues, which if left unaddress may turn one's computing into a hell-like experience.
+
+### CPU-related hard-freezes
+
+A single major CPU issue are the [hard freezes](https://forum.manjaro.org/t/intel-bay-trail-freezes-the-linux-kernel/1931), common to many bay-trail devices . A simple solution to the problem is to add "max_cstate=1" option to the [kernel parameters](https://wiki.archlinux.org/index.php/Kernel_parameters).
 
 ### cpufreq
 
-## Init
-
-Section coming soon... In short - switch over from systemd to OpenRC Use [this website](http://systemd-free.org/) as a guide.
-
-A flawless [migration guide](http://systemd-free.org/migrate.php) It's actually pretty flawed, so this article *should* address some of the out-of-date issues
-
-## UEFI
-
-This model has a 32bit UEFI [32bit UEFI boot image instructions](https://git.archlinux.org/archiso.git/tree/docs/README.transfer#n105)
+Coming soon...
 
 ## Multimedia
 
 ### Audio
 
-Audio is supported through ALSA with virtually no configuration. Following the [ALSA](/index.php/ALSA "ALSA") article should cover all that is needed.
+Audio driver is not in the mainline yet, and I had no way of testing whether it is even going to work. It's a rather unpopular laptop, and I don't see how this is going to change. However, you are welcome to contribute to this article if you know of any regular bay-trail audio drivers. I suggest using a USB soundcard.
 
 ### Video
 
-The on-board graphics uses the Intel driver. [Install](/index.php/Install "Install") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
+The on-board graphics uses the Intel driver. [Install](/index.php/Install "Install") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Xorg will only start with the following syntax:
+
+```
+startx -- <other flags>
+
+```
+
+Such as
+
+```
+startx -- -keeptty
+
+```
 
 Aside from that, there are no out-of-the-ordinary configuration steps. Consult [Xorg](/index.php/Xorg "Xorg") and [Intel](/index.php/Intel "Intel") for more information.
 
 ### Webcam
 
-The webcam should be supported through the `uvcvideo` module by default, if not:
-
-```
-# modprobe uvcvideo
-
-```
+The webcam is not supported and there is not even a driver for it.
 
 ## Networking
 
 ### Wireless
 
-See [#See also](#See_also)
+Wireless is provided by r8723bs SDIO driver. Rather unstable, but it is still usable. See [#See also](#See_also)
 
 ## Input
 
 ### Touchpad
+
+A nightmare. It's a mono-pad, that has no buttons on it, but that's not the main issue. The big thing about the touchpad is that it is generating random characters when you tap at it's edges. Another issue - it's not a Synaptic, so it doesn't benefit from any of the synaptic-related settings. The driver comes from the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package.
 
 ## See also
 

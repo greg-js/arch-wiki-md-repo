@@ -13,7 +13,7 @@ Install [clang](https://www.archlinux.org/packages/?name=clang) from the [Offici
 
 ## Build packages with Clang
 
-Add `export CC=clang` and (for C++) `export CXX=clang++` to your `/etc/makepkg.conf`.
+Add `export CC=clang` and (for C++) `export CXX=clang++` to your `/etc/makepkg.conf`. If you are building with `debug` also remove `-fvar-tracking-assignments` from `DEBUG_CFLAGS` and `DEBUG_CXXFLAGS` as clang does not support it.
 
 NB: For packages that specify GCC-specific build options, there may be build errors that require either editing the source package, the pkgbuild or commenting out the clang lines in makepkg.conf.
 

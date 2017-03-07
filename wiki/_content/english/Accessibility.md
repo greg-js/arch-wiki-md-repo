@@ -7,10 +7,11 @@ There are many different methods of providing accessibility to users that suffer
     *   [2.1 Operating the Keyboard](#Operating_the_Keyboard)
         *   [2.1.1 Console](#Console)
             *   [2.1.1.1 Sticky Keys](#Sticky_Keys)
-        *   [2.1.2 Independent of Graphical Environment](#Independent_of_Graphical_Environment)
+        *   [2.1.2 Independent of Specific Desktop Environment](#Independent_of_Specific_Desktop_Environment)
     *   [2.2 Operating the Mouse](#Operating_the_Mouse)
-        *   [2.2.1 Independent of Graphical Environment](#Independent_of_Graphical_Environment_2)
+        *   [2.2.1 Independent of Specific Desktop Environment](#Independent_of_Specific_Desktop_Environment_2)
             *   [2.2.1.1 Button Mapping](#Button_Mapping)
+            *   [2.2.1.2 Mouse Keys](#Mouse_Keys)
 *   [3 Visual Assistance](#Visual_Assistance)
     *   [3.1 Speech recognition](#Speech_recognition)
     *   [3.2 Console & Virtual Terminal Emulators](#Console_.26_Virtual_Terminal_Emulators)
@@ -106,7 +107,7 @@ Finally, move this file, e.g. "loadkeys.service", to `/usr/lib/systemd/system/` 
 
 ```
 
-#### Independent of Graphical Environment
+#### Independent of Specific Desktop Environment
 
 One method of enabling desktop environment-independent accessibility function is by passing it through X, given that it is build with XKB support. This can be done by setting parameters for the X server, as specified in its man page:
 
@@ -143,7 +144,7 @@ Similar to most implementations, Sticky Keys can be disabled by pressing a modif
 
 ### Operating the Mouse
 
-#### Independent of Graphical Environment
+#### Independent of Specific Desktop Environment
 
 ##### Button Mapping
 
@@ -174,6 +175,17 @@ $ xmodmap -pp
 ```
 
 Once satisfied, you can enable it on start by placing the first line in `~/.xinitrc`.
+
+##### Mouse Keys
+
+Mouse keys is a feature of some graphical user interfaces that uses the keyboard (especially numeric keypad) as a pointing device. It can replace the mouse, or works beside it. [MouseKeys](https://en.wikipedia.org/wiki/MouseKeys "w:MouseKeys") on Wikipedia has the full information. Note the warning about `setxkbmap` resets xmodmap configuration at the beginning of the [xmodmap](/index.php/Xmodmap "Xmodmap") wiki entry when following Wikipedia's sugesstion and enabling it with `setxkbmap`. One can use
+
+```
+$ xset | grep "Mouse Keys"
+
+```
+
+to see Mouse Keys current state.
 
 ## Visual Assistance
 

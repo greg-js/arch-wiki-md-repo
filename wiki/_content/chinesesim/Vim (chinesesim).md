@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-3-3，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=420839)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Vim](/index.php/Vim "Vim") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-3-5，点击[这里](https://wiki.archlinux.org/index.php?title=Vim&diff=0&oldid=468006)可以查看翻译后英文页面的改动。
 
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)")是一个终端文本编辑器。作为[Vi](https://en.wikipedia.org/wiki/Vi "wikipedia:Vi")的一个扩展版本，它具有以下附加功能：语法突出显示，全面的帮助系统，本地脚本（vimscript），文本选择的可视模式和文件比较（vimdiff）。
 
@@ -23,7 +23,7 @@
 *   [6 插件](#.E6.8F.92.E4.BB.B6)
     *   [6.1 安装](#.E5.AE.89.E8.A3.85_2)
         *   [6.1.1 使用插件管理器](#.E4.BD.BF.E7.94.A8.E6.8F.92.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8)
-        *   [6.1.2 从Arch软件库下载](#.E4.BB.8EArch.E8.BD.AF.E4.BB.B6.E5.BA.93.E4.B8.8B.E8.BD.BD)
+        *   [6.1.2 使用Arch软件库](#.E4.BD.BF.E7.94.A8Arch.E8.BD.AF.E4.BB.B6.E5.BA.93)
     *   [6.2 cscope](#cscope)
         *   [6.2.1 Taglist](#Taglist)
 *   [7 参阅](#.E5.8F.82.E9.98.85)
@@ -93,7 +93,7 @@ autocmd FileType python set breakindentopt=shift:4
 
 ### 使用鼠标
 
-Vim可以使用鼠标，但只在一些终端上起作用（Linux上的[xterm](/index.php/Xterm "Xterm")和带有[gpm](https://www.archlinux.org/packages/?name=gpm)的Linux控制台，更多细节参阅[Console mouse support](/index.php/Console_mouse_support "Console mouse support")）：
+Vim可以使用鼠标，但只在某些终端上起作用：Linux上的[xterm](/index.php/Xterm "Xterm")和带有[gpm](https://www.archlinux.org/packages/?name=gpm)的Linux控制台（更多细节请参阅[Console mouse support](/index.php/Console_mouse_support "Console mouse support")），还有PuTTY。
 
 开启这个功能，将下面这行代码加入`~/.vimrc`中：
 
@@ -102,10 +102,9 @@ set mouse=a
 
 ```
 
-**注意:**
+`mouse=a` 选项在 `defaults.vim` 中设置，如果没有 `~/.vimrc`，则会使用 `defaults.vim` 的设置。
 
-*   这个方法在使用SSH的PuTTY中同样适用。
-*   在PuTTY中，通常的高亮/复制行为有所不同，因为在使用鼠标时，Vim会进入可视模式。为了用能鼠标选中文本，需要同时按住`Shift`键。
+**注意:** 当在终端中启用鼠标时，如果可以访问X服务器，则复制/粘贴将使用`"*` 寄存器。通过按住shift键还可以使用xterm处理鼠标按钮。还可以参考`clipboard` 选项。
 
 ### 跨行移动光标
 
@@ -115,7 +114,7 @@ set mouse=a
 
 ## 文件合并
 
-Vim自带了一个文件差异编辑器（一个用来显示多个文件之间的差异还可以方便的将其合并的程序）。用*vimdiff*来启动它——指定几对文件即可：`vimdiff *file1* *file2*`。以下是*vimdiff*-specific命令的清单。
+Vim自带了一个文件差异编辑器（一个用来显示多个文件之间的差异还可以方便的将其合并的程序）。用*vimdiff*来启动它——指定所需文件即可：`vimdiff *file1* *file2*`。以下是*vimdiff*-specific命令的清单。
 
 | 行为 | 快捷键 |
 | 下一差异 | `]c` |
@@ -133,7 +132,7 @@ Vim自带了一个文件差异编辑器（一个用来显示多个文件之间�
 
 使用`:set number`来显示行号。默认显示绝对行号，可用`:set relativenumber`开启相对行号。
 
-使用`:*行号*` or `*行号*gg`跳转到指定行号。跳转都记录在一个跳转列表中,更多细节参考`:h jump-motions`。
+使用`:*line number*` or `*line number*gg`跳转到指定行号。跳转都记录在一个跳转列表中，更多细节参考`:h jump-motions`。
 
 ### 拼写检查
 
@@ -144,29 +143,23 @@ set spell
 
 ```
 
-Vim默认只安装了英语字典。其他的字典可在[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")通过搜索`vim-spell`而寻得。检查可用语言包：
-
-```
-# pacman -Ss vim-spell
-
-```
-
-额外的字典可以从[Vim's FTP archive](http://ftp.vim.org/vim/runtime/spell/)获取。把下载的字典文件存入`~/.vim/spell/`，并用 `:setlocal spell spelllang=*en_us*` (将`*en_us*` 换成所需的字典的名称)开启。
+Vim默认只安装了英语字典。更多字典可以通过搜索vim-spell在[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")中找到。其他字典可以在[Vim的FTP archive](http://ftp.vim.org/vim/runtime/spell/)中找到。把下载的字典文件存入`~/.vim/spell/`中，并使用以下命令启用：`:setlocal spell spelllang=*en_us*`(将`*en_us*` 换成所需的字典的名称)。
 
 | 行为 | 快捷键 |
 | 下一个拼写错误 | `]s` |
 | 上一个拼写错误 | `[s` |
 | 拼写纠正建议 | `z=` |
-| 将单词添加到用户正确字典 | `zg` |
-| 将单词添加到内部正确字典 | `zG` |
-| 将单词添加到用户错误字典 | `zw` |
-| 将单词添加到内部正确字典 | `zW` |
+| 拼写正确，添加到用户正确字典 | `zg` |
+| 在会话中当作正确拼写 | `zG` |
+| 拼写错误，添加到用户错误字典 | `zw` |
+| 在会话中当作正确拼写 | `zW` |
 | 重新进行拼写检查 | `:spellr` |
 
 **提示：**
 
-*   如果需要针对两种语言进行拼写检察（例如英语与德语），在`~/.vimrc`或`/etc/vimrc`中添加`set spelllang=*en,de*`并重启Vim即可。
-*   使用用于进行文件类型检测的FileType插件和自建规则，可以对任意文件类型开启拼写检查。例如，要开启对扩展名为`.txt`的文件的拼写检查，创建文件`/usr/share/vim/vimfiles/ftdetect/plaintext.vim`，添加内容`autocmd BufRead,BufNewFile *.txt setfiletype plaintext`，然后在`~/.vimrc`或`/etc/vimrc`添加`autocmd FileType plaintext setlocal spell spelllang=en_us`，重启vim即可。
+*   如果需要针对两种语言进行拼写检查（例如英语与德语），在`~/.vimrc`或`/etc/vimrc`中添加`set spelllang=*en,de*`并重启Vim即可。
+*   您可以通过使用FileType插件和用于文件类型检测的自定义规则，为任意文件类型（例如*.txt*）启用拼写检查。 要对以*.txt*结尾的任何文件启用拼写检查，请创建文件 `/usr/share/vim/vimfiles/ftdetect/plaintext.vim`，并将 `autocmd BufRead,BufNewFile *.txt setfiletype plaintext` 插入该文件。接下来，将 `autocmd FileType plaintext setlocal spell spelllang=*en_us*` 插入到`~/.vimrc` 或 `/etc/vimrc` 中，然后重新启动Vim。
+
 *   如果想只对LaTeX（或TeX）文档起用拼写检查，在`~/.vimrc`或`/etc/vimrc`添加`autocmd FileType **tex** setlocal spell spelllang=*en_us*`，重启Vim即可。至于非英语语言，替换上述语句中的`en_us`为相应语言代码即可。
 
 ### 记录光标位置
@@ -181,15 +174,13 @@ augroup END
 
 ```
 
-另见：[Vim Wiki上的相关内容](http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session)。
-
 ### 用 vim 替代 vi
 
 创建一个[alias](/index.php/Alias "Alias")，如下：
 
  `alias vi=vim` 
 
-或者,如果你想输入`sudo vi`并得到`vim`, 安装[vi-vim-symlink](https://aur.archlinux.org/packages/vi-vim-symlink/)，它将移除`vi`并用一个符号链接`vim`代替。
+或者，如果你想输入`sudo vi`而得到`vim`，安装[vi-vim-symlink](https://aur.archlinux.org/packages/vi-vim-symlink/)，它将移除`vi`并用一个符号链接`vim`代替。
 
 ### DOS/Windows回车问题
 
@@ -206,9 +197,11 @@ augroup END
 
 另一个解决方法是，安装 [dos2unix](https://www.archlinux.org/packages/?name=dos2unix)，然后执行 `dos2unix <文件名>`。
 
+**注意:** 另一个简单的方法是更改 `fileformat` 设置。 `set ff=unix` 以转化DOS/Windows行尾为Unix行尾。要做到相反，只要 `set ff=dos`，就可以将Unix行尾转换成DOS/Windows行尾。
+
 ### gVim窗口底部的空格
 
-如果[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")设置为忽略窗口大小渲染窗口，gVim会将空白区域填充为GTK主题背景色，看起来会比较难看。
+如果[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")设置为忽略窗口大小提示，gVim会将非功能区域填充为GTK主题背景色。
 
 解决方案是调整gVim在窗口底部保留的空间大小。将下面的代码加入 `~/.vimrc`中：
 
@@ -221,36 +214,32 @@ set guiheadroom=0
 
 ## 插件
 
-使用插件来提高效率，它能改变Vim的界面，添加新命令，代码自动补全，整合其他程序和工具，添加其他编程语言等功能。
+向Vim添加插件可以提高您的效率。 插件可以改变Vim的界面，添加新命令，代码完成支持，使用Vim集成其他程序和实用程序，添加对其他语言的支持等等。
 
-**提示：** 参阅[Vim Awesome](http://vimawesome.com/)获取一些热门插件
+**提示：** 有关常用插件的列表，请参阅 [Vim Awesome](http://vimawesome.com/)
 
 ### 安装
 
 #### 使用插件管理器
 
-插件管理器使安装和管理插件有相似的方法，而与在何种平台上运行Vim无关。它是一个像包管理器一样的用来管理其它Vim插件的插件。
+插件管理器允许以类似的方式安装和管理插件，而与在何种平台上运行Vim无关。它本身是一个插件，其功能是作为其他Vim插件的包管理器。
 
 *   [Vundle](https://github.com/gmarik/Vundle.vim)是现在最流行的Vim插件管理器。
 *   [Vim-plug](https://github.com/junegunn/vim-plug)是一个极简的Vim插件管理器，有许多的特性，比如按需插件加载和并行升级。
-*   [pathogen.vim](https://github.com/tpope/vim-pathogen)是一个简单的用于管理Vim的运行时路径的插件。
+*   [pathogen.vim](https://github.com/tpope/vim-pathogen)是一个简单的用于管理Vim的runtimepath的插件。
+*   [Dein.vim](https://github.com/Shougo/dein.vim) 是一个替代 [NeoBundle](https://github.com/Shougo/neobundle.vim) 的插件管理器，可以在这里找到 [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
 
-#### 从Arch软件库下载
+#### 使用Arch软件库
 
 [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/)分类下有许多插件。 使用`pacman -Sg vim-plugins`来列出可用的插件，然后你可用pacman[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。
 
-```
-pacman -Ss vim-plugins
-
-```
-
 ### cscope
 
-[Cscope](http://cscope.sourceforge.net/)是一个工程浏览工具。通过导航到一个词/符号/函数并通过快捷键调用cscope，能快速找到：函数调用及函数定义等。
+[Cscope](http://cscope.sourceforge.net/)是用于浏览项目的工具。 通过导航到字/符号/函数并调用cscope（通常使用快捷键），它可以找到：调用函数的函数，函数定义等等。
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")[cscope](https://www.archlinux.org/packages/?name=cscope)包。
 
-拷贝cscope预设文件，该文件会被Vim自动读为:
+将cscope默认文件复制到Vim将自动读取的位置:
 
 ```
 mkdir -p ~/.vim/plugin

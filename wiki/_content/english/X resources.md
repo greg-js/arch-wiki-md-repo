@@ -159,6 +159,8 @@ To add a comment to your Xresources file, simply prefix it with an exclamation m
 
 #### Include files
 
+**Note:** You need to have a C preprocessor, such as `GNU CPP`, installed to use this functionality.
+
 To use different files for each application, use `#include` in the main file. For example:
 
  `~/.Xresources` 

@@ -37,7 +37,7 @@ Following this example, when installing Arch Linix, /dev/sda1 became boot and /d
 
 Grub was configured with: *grub-mkconfig -o /boot/grub/grub.cfg*
 
-Per [this](/index.php/GRUB#Installation_2 "GRUB"), GRUB installed with a command like: *grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub*
+Per [this](/index.php/GRUB#Install "GRUB"), GRUB installed with a command like: *grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub*
 
 ## Network/Wifi
 

@@ -125,12 +125,12 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
 
 ```
 
-By default, your Bluetooth adapter will not power on after a reboot. To make it power on after a reboot, add a udev rule:
+By default, your Bluetooth adapter will not power on after a reboot. The former method by using `hciconfig hci0 up` is deprecated, see the [release note](http://www.bluez.org/release-of-bluez-5-35/). Now you just need to add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom in the `[Policy]` section:
 
- `/etc/udev/rules.d/10-local.rules` 
+ `/etc/bluetooth/main.conf` 
 ```
-# Set bluetooth power up
-ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
+[Policy]
+AutoEnable=true
 ```
 
 ### Troubleshooting
@@ -179,6 +179,8 @@ bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protoc
 ```
 
 This may be due to the [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package not being installed. Install it if it missing, then restart pulseaudio.
+
+It can also be due to permission, especially if starting pulseaudio as root allows you to connect. Add your user is part of the *lp* group, then restart pulseaudio. See `/etc/dbus-1/system.d/bluetooth.conf` for reference.
 
 If the issue is not due to the missing package, the problem in this case is that PulseAudio is not catching up. A common solution to this problem is to restart PulseAudio. Note that it is perfectly fine to run *bluetoothctl* as root while PulseAudio runs as user. After restarting PulseAudio, retry to connect. It is not necessary to repeat the pairing.
 

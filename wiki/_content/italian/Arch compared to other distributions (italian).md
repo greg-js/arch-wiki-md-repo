@@ -77,7 +77,7 @@ Fedora è una costola della distribuzione Red Hat ed è stata nel tempo una dell
 
 ## Arch vs Mandriva
 
-Mandriva (precedentemente Mandrake), fu creata nel 1998 con l'obiettivo di rendere GNU/Linux facile per tutti. E' basata su pacchetti RPM ed usa il gestore urpmi. Ancora, Arch predilige un approccio più semplice, essendo basata su linea di comando e permettendo un certo grado di configurazione. Arch è mirata all'utente intermedio ed avanzato.
+Mandriva (precedentemente Mandrake), fu creata nel 1998 con l'obiettivo di rendere GNU/Linux facile per tutti. È basata su pacchetti RPM ed usa il gestore urpmi. Ancora, Arch predilige un approccio più semplice, essendo basata su linea di comando e permettendo un certo grado di configurazione. Arch è mirata all'utente intermedio ed avanzato.
 
 ## Arch vs SUSE
 
@@ -89,7 +89,7 @@ PCLinuxOS è una popolare distribuzione basata su Mandriva che propone un comple
 
 # I *BSD
 
-Entrambi Arch e *BSD offrono una forte base integrata e sistemi 'port' in combinazione con la disponibilità di pacchetti binari. I BSD derivano dalla Berkeley UNIX. Perciò, *BSD non sono distribuzioni GNU/Linux, ma piuttosto, sistemi operativi 'UNIX-like'.
+Sia Arch che *BSD offrono una forte base integrata e sistemi 'port' in combinazione con la disponibilità di pacchetti binari. I BSD derivano dalla Berkeley UNIX. Perciò, *BSD non sono distribuzioni GNU/Linux, ma piuttosto, sistemi operativi 'UNIX-like'.
 
 ## Arch vs FreeBSD
 

@@ -12,6 +12,7 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Use experimental webengine backend](#Use_experimental_webengine_backend)
     *   [3.2 dwb-like session handling](#dwb-like_session_handling)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -60,8 +61,14 @@ To use the more secure webengine backend, use the `--backend` flag:
 
 ```
 
-**Note:** The qutebrowser implementation of webengine is experimental and may be missing features.
+**Note:** The qutebrowser implementation of webengine is experimental and may be missing features. See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2335) for updates.
 
 ### dwb-like session handling
 
 To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option ("per-window" sessions, multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/.local/bin/qutebrowser).
+
+## See also
+
+*   [Github repository](https://github.com/qutebrowser/qutebrowser)
+*   [Homepage](http://qutebrowser.org/)
+*   [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=191076)

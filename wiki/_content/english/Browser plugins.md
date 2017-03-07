@@ -1,6 +1,6 @@
 There are two types of browser plugins, based on the plugin API they use:
 
-*   Netscape plugin API (NPAPI): these plugins work in [Firefox](/index.php/Firefox "Firefox") ([from version 52 only Flash Player](/index.php/Firefox#Plugins "Firefox")) and most smaller browsers (**not** in Chromium and Opera).
+*   Netscape plugin API (NPAPI): these plugins work in most smaller browsers ([Firefox supports only the Flash Player plugin](/index.php/Firefox#Plugins "Firefox"), Chromium and Opera do **not** support these plugins).
 *   Pepper plugin API (PPAPI): these plugins work in [Chromium](/index.php/Chromium "Chromium") (and Chrome), [Opera](/index.php/Opera "Opera") and [Vivaldi](/index.php/Vivaldi "Vivaldi").
 
 Most plugins on this page are NPAPI-only, unless noted otherwise.
@@ -212,7 +212,10 @@ Install [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-wi
 
 ## Google Hangouts
 
-**Note:** This plugin is not required when using Chromium
+**Note:**
+
+*   This plugin is not required when using Chromium
+*   Hangouts calling doesn't work in Firefox as of March 2017.[[1]](https://gsuiteupdates.googleblog.com/2017/02/google-hangouts-temporary-issues-with-firefox.html)
 
 Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_Compared_to_Other_Distributions](/index.php/Arch_Compared_to_Other_Distributions "Arch Compared to Other Distributions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-22，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Compared_to_Other_Distributions&diff=0&oldid=420550)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_compared_to_other_distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-06，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=466779)可以查看翻译后英文页面的改动。
 
 本文在 Arch Linux 和其他流行的 GNU/Linux 发行版、类 UNIX 操作系统之间做了一些比较，以帮助用户判断 Arch Linux 是否能符合他们的需要。虽然对此进行一些描述有助于用户理解这些操作系统之间的不同点，但是比较 Arch Linux 和其他发行版的最好办法还是安装它们并进行亲身体验。
 
@@ -24,31 +24,30 @@
 
 ## 基于源码的发行版
 
-基于源码的发行版非常容易移植，它们的优点是可以根据机器架构和使用情况最优地控制和编译整个系统和所有软件，而劣势是要在源码编译上消耗大量时间。Arch Linux 的基础包和其他所有软件包都只为 i686 和 x86-64 平台编译，相比基于 i386/i486/i586 二进制包的发行版,性能的优势和潜力更大。
+基于源码的发行版非常容易移植，它们的优点是可以根据机器架构和使用情况最优地控制和编译整个系统和所有软件，而劣势是要在源码编译上消耗大量时间。Arch Linux 的基础包和其他所有软件包都只为 x86-64 架构编译（在 2017 年 11 月[之前](https://www.archlinux.org/news/phasing-out-i686-support/)，仍对 i686 架构提供支持），相比基于 i486/i586 二进制包的发行版，性能的优势和潜力更大。
 
 ### CRUX
 
 *   在创建Arch之前，Judd Vinet使用CRUX并且对其相当赞赏（CRUX是 Per Lidén创建的一个极简发行版），在草创之初，ARCH就和CRUX、BSD秉承同样的理念，之后才有了用C完成的[pacman](/index.php/Pacman "Pacman")。
-*   ARCH和CRUX拥有一些相同的指导理念，比如：针对硬件架构进行优化,极简化和K.I.S.S原则驱动。
 *   ARCH和CRUX的发行版都提供类ports系统，并且和*BSD系统一样，都提供了一个基础系统以供用户在其之上进行构建。
-*   ARCH使用pacman来进行二进制包管理,同时还使用[Arch Build System](/index.php/Arch_Build_System "Arch Build System")。CRUX使用一个叫prt-get的社区开发软件和它自己的ports系统来处理依赖关系解析。尽管如此，CRUX上所有的软件包都需要从源代码进行编译，虽然CRUX的基础系统是基于二进制包的。
-*   ARCH官方只支持i686和x86_64架构.而CRUX官方只支持x86_64。
+*   ARCH使用pacman来进行二进制包管理,同时还使用[Arch Build System](/index.php/Arch_Build_System "Arch Build System")。CRUX使用一个叫“prt-get”的社区开发软件和它自己的ports系统来处理依赖关系解析。尽管如此，CRUX上所有的软件包都需要从源代码进行编译，虽然CRUX的基础系统是基于二进制包的。
+*   ARCH 和 CRUX 官方都只支持 x86_64 架构。
 *   ARCH是一个滚动升级系统，其软件仓库提供大量编译好的二进制软件包,除此之外，还拥有[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")。CRUX的软件仓库比较逊色并且其ports系统也缺乏官方支持。
 
 ### LFS
 
 *   LFS（Linux From Scratch）只以文档形式存在，提供的文档指导用户如何从零开始构建一个完全个性化的操作系统：从如何获取构建一个基础操作系统所需的源代码，到如何编译，如何打补丁，如何对系统进行配置。总之，LFS 提供一个构建和定制基础系统的良好教程。
 *   LFS 不提供在线软件仓库；必须手动获取源代码，然后用 make 编译安装它们。（需要一些包管理方法,这点在 LFS Hints 里面提到过）
-*   Arch 基础系统除了提供和 LFS 一样的软件包,还包含 [systemd](/index.php/Systemd "Systemd") ，[pacman](/index.php/Pacman "Pacman") 等一些额外的工具，并且这些软件都已经为 i686/x86_64 架构编译过了。Arch 社区和开发者提供了数以千计的软件包，这些软件包可以通过 [pacman](/index.php/Pacman "Pacman") 或者 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 脚本进行安装（PKGBUILD脚本需要和 [Arch Build System](/index.php/Arch_Build_System "Arch Build System") 一起使用）。除此之外，Arch 还包含了一个名叫 [makepkg](/index.php/Makepkg "Makepkg") 的工具来生成方便pacman使用的.pkg.tar.xz格式的包。
+*   Arch 基础系统除了提供和 LFS 一样的软件包，还包含 [systemd](/index.php/Systemd "Systemd")，[pacman](/index.php/Pacman "Pacman") 等一些额外的工具，并且这些软件都已经为 x86_64 架构编译过了。Arch 社区和开发者提供了数以千计的软件包，这些软件包可以通过 [pacman](/index.php/Pacman "Pacman") 或者 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 脚本进行安装（PKGBUILD 脚本需要和 [Arch Build System](/index.php/Arch_Build_System "Arch Build System") 一起使用）。除此之外，Arch 还包含了一个名叫 [makepkg](/index.php/Makepkg "Makepkg") 的工具来生成方便 pacman 使用的“.pkg.tar.xz”格式的包。
 *   Judd Vinet 从零开始构建了 Arch，然后使用 C 开发了 Pacman。所以，Arch 有些时候被幽默的描述为“外带一个优秀包管理器的 Linux ”。
 
 ### Gentoo/Funtoo Linux
 
 *   Arch Linux 和 Gentoo Linux 都是滚动升级的发行版，所以在上游软件发布很短时间后，其上就会有软件包可用。
-*   Gentoo 的基础系统和软件包都是根据用户指定的 USE 标识直接从源代码构建。Gentoo 提供了一个类 ports 系统（ Ports 是 BSD 上的一个系统工具）来从源代码编译软件包，而 Arch 基础系统被设计为“直接由预构建好的 i686/x86_64 二进制软件包组成”。一般来说，Arch 更易于构建和升级，而 Gentoo 更易于进行系统化的定制。
-*   Arch 支持 i686 和 x86_64 架构，Gentoo对x86、ppc、sparc、alpha、amd64、arm、mips、hppa、s390、sh和 itanium 架构都提供官方支持。
-*   Gentoo 的官方包管理工具比 ArchLinux 的更复杂和强大，而且一些在 Gentoo 中处于核心位置的特性（比如 UES标记、SLOTs 等等）在 Arch 中并没有相对应的功能。究其原因，一是因为 ArchLinux 主要是一个二进制发行版，第二是因为 Gentoo 和 Arch 在设计哲学上有些差别。Arch 在原则上更偏向于架构的简洁性和避免过度设计。
-*   因为 Gentoo 和 Arch 的安装包都只包含基本系统，所以它们两者都被认为是需要高度定制化的系统。一般来说，Gentoo 用户如果习惯于 systemd 的话，对Arch的大多数方面都会感到满意。
+*   Gentoo 的基础系统和软件包都是根据用户指定的 USE 标识直接从源代码构建。Gentoo 提供了一个类 ports 系统（ Ports 是 BSD 上的一个系统工具）来从源代码编译软件包，而 Arch 基础系统被设计为“直接由预构建好的 x86_64 二进制软件包组成”。一般来说，Arch 更易于构建和升级，而 Gentoo 更易于进行系统化的定制。
+*   Arch 只支持 x86_64 架构，Gentoo 对 x86（i486/i686）、x86_64、PPC/PPC64、SPARC、Alpha、ARM、MIPS、HPPA、S/390、Itanium 架构提供官方支持。
+*   Gentoo 的官方包管理工具比 ArchLinux 的更复杂和强大，而且一些在 Gentoo 中处于核心位置的特性（比如 [USE 标记](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE/zh-cn)、[SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage/zh-cn#.E7.AE.80.E4.BB.8B_.3D) 等等）在 Arch 中并没有相对应的功能。究其原因，一是因为 ArchLinux 主要是一个二进制发行版，第二是因为 Gentoo 和 Arch 在[设计哲学](/index.php/Arch_Linux#Principles "Arch Linux")上有些差别。Arch 在原则上更偏向于架构的简洁性和避免过度设计。
+*   因为 Gentoo 和 Arch 的安装包都只包含基本系统，所以它们两者都被认为是需要高度定制化的系统。一般来说，Gentoo 用户如果习惯于 [systemd](/index.php/Systemd "Systemd") 的话，对Arch的大多数方面都会感到满意。
 
 ## 通用发行版
 
@@ -57,7 +56,7 @@
 ### Debian GNU/Linux
 
 *   Debian 是上游最大的发行版,其社区规模更大,提供稳定、测试和不稳定分支,包含超过43000个二进制包. ARCH 的软件仓库相对较小,但是如果包含AUR,那么支持的软件数量也差不多.
-*   Debian 对自由软件更热情,但是也提供非自由软件仓库.ARCH对GNU定义的非自由（'non-free'）软件更显宽容.
+*   Debian 对自由软件更热情，但是也提供非自由软件仓库。Arch 对 GNU 定义的非自由（“non-free”）软件更显宽容.
 *   Debian 对稳定分支的测试更详细彻底，软件基本冻结并提供[五年](https://wiki.debian.org/LTS)支持。Arch 提供的的软件包比 Debian Stable 和 testing 分支中的软件包更新,和 unstable 里的差不多，而且没有固定发布周期，滚动发布。
 *   Debian 支持许多架构,包括 alpha,arm,hppa,i386,x86_64,ia64,m68k,mips,mipsel,powerpc,s390和sparc.而ARCH仅对 i686 和 x86_64 提供官方支持,其对 arm 的支持移植自社区项目(例如对Raspberry Pi的支持).
 *   ARCH 对从源码创建软件包提供更好的支持,有一个类 ports 系统.Debian 不提供类 ports 系统,而是依靠它巨大的软件仓库.
@@ -80,8 +79,6 @@
 
 ### Slackware
 
-*   Slackware 和 Arch 很相似，二者都是小巧优雅的发行版。
-*   Slackware 很少修改软件包，从内核往上全部都使用上游提供的软件。Arch 只有在避免出现严重问题或保证顺利打包时才使用补丁。
 *   Slackware 使用 BSD 风格的初始化脚本，Arch 使用 [systemd](/index.php/Systemd "Systemd").
 *   Arch 有一个健壮的包管理系统 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")。与 Slackware 的标准工具不同，它可以自己处理依赖关系并提供更自动化的系统升级方式。Slackware 用户更倾向于手动处理依赖关系，以尽可能控制自己的系统。Slackware也对预编译的库和依赖提供杰出的支持。
 *   Arch 是一个滚动升级的系统，Slackware的发布更为保守，更喜欢提供稳定的软件包。在这个方面，Arch 更为“前卫”。
@@ -116,7 +113,7 @@
 
 ### Mandriva/Mageia
 
-Mandriva Linux (以前的 Mandrake Linu x) 创建自1998年，它的目标是让 GNU/Linux 对任何人来说都很容易使用。它使用基于 RPM 的 urpmi 包管理器, 现在已经不再维护。Mageia 是一个由 Mandriva 前雇员创建的 Mandriva 分支，但是和 Mandriva 不一样的是，它是一个非盈利的由社区驱动的发行版。再一次重申：Arch 是一个比 Mandriva 或者 Mageia 要简单的发行版，基于文本，而且要依赖于更多的手动配置，Arch瞄准的是Linux中、高级用户。
+Mandriva Linux (以前的 Mandrake Linux) 创建自1998年，它的目标是让 GNU/Linux 对任何人来说都很容易使用。它使用基于 RPM 的 urpmi 包管理器, 现在已经不再维护。Mageia 是一个由 Mandriva 前雇员创建的 Mandriva 分支，但是和 Mandriva 不一样的是，它是一个非盈利的由社区驱动的发行版。Arch 是一个比 Mandriva 或者 Mageia 要简单的发行版，基于文本，而且要依赖于更多的手动配置，Arch 瞄准的是 Linux 中、高级用户。
 
 ## 与BSD系列的对比
 

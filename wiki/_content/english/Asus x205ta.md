@@ -207,7 +207,7 @@ Proceed as usual.
 
 There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. With luck, the relevant patches are expected to reach the mainline kernel in release 4.11\.
 
-In the meantime you can compile Pierre Bossart's patched kernel branch, set various ALSA settings and copy some UCM files [as described in this bug thread](https://bugzilla.kernel.org/show_bug.cgi?id=95681). Note that these patches are still experimental and some people testing them have had their speakers suddenly heat up to dangerous levels.
+In the meantime you can compile Pierre Bossart's patched kernel branch, set various ALSA settings and copy some UCM files [as described in this bug thread](https://bugzilla.kernel.org/show_bug.cgi?id=95681). Note that these patches are still experimental and some people testing them have had their speakers suddenly [heat up to dangerous levels](https://bugzilla.kernel.org/show_bug.cgi?id=95681#c75).
 
 See also: [this step-by-step description of how to compile Pierre Bossart's patches](https://ubuntuforums.org/showthread.php?t=2254322&page=126&p=13592053#post13592053).
 

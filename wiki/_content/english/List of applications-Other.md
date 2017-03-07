@@ -86,7 +86,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 ### Education
 
-See also [Education management engines](/index.php/List_of_applications#Education_management_engines "List of applications")
+See also [List of applications/Internet#Education management engines](/index.php/List_of_applications/Internet#Education_management_engines "List of applications/Internet").
 
 #### Flashcards
 

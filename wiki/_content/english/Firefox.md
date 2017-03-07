@@ -136,7 +136,7 @@ Please note that the first line must contain exactly `//`. The syntax of the fil
 
 Firefox uses [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. Go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](https://www.quirksmode.org/html5/tests/video.html) or [audio-test page](https://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
-Since Firefox 49 HTML5 DRM playback is supported by the Google Widevine CDM, it is however not enabled by default. See *Preferences > Content > DRM content* if you want to learn more.
+HTML5 DRM playback is supported by the Google Widevine CDM, it is however not enabled by default. See *Preferences > Content > DRM content* if you want to learn more.
 
 See [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration and enabling support for Widevine (Netflix, Amazon Video, etc.).
 
@@ -164,7 +164,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ## Plugins
 
-**Note:** Firefox will remove support for plugins (except for Flash) in Firefox 52 (March 2017).[[1]](https://support.mozilla.org/en-US/kb/npapi-plugins) Firefox 52 ESR will still support plugins.
+**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash. Firefox ESR will support plugins until 2018.
 
 See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 
@@ -333,7 +333,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Javascript context menu does not appear on some sites
 
@@ -349,13 +349,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[3]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[4]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[5]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[2]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[3]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[4]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[6]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[5]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

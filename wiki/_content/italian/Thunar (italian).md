@@ -1,4 +1,4 @@
-[Thunar](http://thunar.xfce.org/index.html) è un file manager che ha l'obiettivo di essere veloce, leggero e facile da usare. E' parte integrante del desktop [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), ma è possibile usarlo anche in maniera indipendente. Ciò lo rende molto attraente per utenti di vari window manager autonomi, come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [Awesome](/index.php/Awesome3_(Italiano) "Awesome3 (Italiano)") e anche [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") se usato in maniera *standalone*.
+[Thunar](http://thunar.xfce.org/index.html) è un file manager che ha l'obiettivo di essere veloce, leggero e facile da usare. È parte integrante del desktop [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), ma è possibile usarlo anche in maniera indipendente. Ciò lo rende molto attraente per utenti di vari window manager autonomi, come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [Awesome](/index.php/Awesome3_(Italiano) "Awesome3 (Italiano)") e anche [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") se usato in maniera *standalone*.
 
 ## Contents
 
@@ -12,7 +12,7 @@
     *   [4.2 Eseguire in Modalità Demone](#Eseguire_in_Modalit.C3.A0_Demone)
     *   [4.3 Tema icone](#Tema_icone)
     *   [4.4 Partenza lenta "da freddo"](#Partenza_lenta_.22da_freddo.22)
-*   [5 Altri plugins e addons](#Altri_plugins_e_addons)
+*   [5 Altri plugin e addon](#Altri_plugin_e_addon)
     *   [5.1 Thunar Archive Plugin](#Thunar_Archive_Plugin)
         *   [5.1.1 Installazione](#Installazione_3)
     *   [5.2 Thunar Media Tags Plugin](#Thunar_Media_Tags_Plugin)
@@ -100,9 +100,9 @@ Naturalmente è fondamentale avere installato il pacchetto [gnome-icon-theme](ht
 
 Alcuni utenti lamentano un avvio lento di Thunar la prima volta che viene avviato. Ciò è dovuto al fatto che gvfs attua un controllo sulla rete e Thunar non si avvio fino a che questo processo è in corso. per cambiare questa caratteristica editare il file: `/usr/share/gvfs/mounts/network.mount` e cambiare **AutoMount=true** in **AutoMount=false**.
 
-## Altri plugins e addons
+## Altri plugin e addon
 
-Molti plugins sono parte del pacchetto [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)
+Molti plugin sono parte del pacchetto [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)
 
 ### Thunar Archive Plugin
 

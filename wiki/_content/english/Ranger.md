@@ -17,11 +17,12 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
     *   [4.2 External drives](#External_drives)
     *   [4.3 Image mounting](#Image_mounting)
     *   [4.4 New tab in current folder](#New_tab_in_current_folder)
-    *   [4.5 Shell tips](#Shell_tips)
-        *   [4.5.1 Synchronize path](#Synchronize_path)
-        *   [4.5.2 Start a shell from ranger](#Start_a_shell_from_ranger)
-            *   [4.5.2.1 A simpler solution](#A_simpler_solution)
-        *   [4.5.3 Start new ranger instance only if it is not running in current shell](#Start_new_ranger_instance_only_if_it_is_not_running_in_current_shell)
+    *   [4.5 PDF file preview](#PDF_file_preview)
+    *   [4.6 Shell tips](#Shell_tips)
+        *   [4.6.1 Synchronize path](#Synchronize_path)
+        *   [4.6.2 Start a shell from ranger](#Start_a_shell_from_ranger)
+            *   [4.6.2.1 A simpler solution](#A_simpler_solution)
+        *   [4.6.3 Start new ranger instance only if it is not running in current shell](#Start_new_ranger_instance_only_if_it_is_not_running_in_current_shell)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 See also](#See_also)
@@ -279,6 +280,37 @@ You may have noticed there are two shortcuts for opening a new tab in home (`g``
 map <c-n>  eval fm.tab_new('%d')
 
 ```
+
+### PDF file preview
+
+You can preview PDF files in ranger by first converting the PDF file to an image. Ranger will store the image previews in `~/.cache/ranger/`.
+
+First, ensure image preview is enabled:
+
+ `~/.config/ranger/rc.conf` 
+```
+# Use one of the supported image preview protocols
+set preview_images true
+
+```
+
+Ranger can preview images using, for example, [w3m](https://www.archlinux.org/packages/?name=w3m); see `~/.config/ranger/rc.conf` for all available preview methods.
+
+Finally, add the following pdf preview command:
+
+ `~/.config/ranger/scope.sh` 
+```
+# Image previews, if enabled in ranger.
+if [ "$preview_images" = "True" ]; then
+    case "$mimetype" in
+        application/pdf)
+             pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6;;
+    esac
+fi
+
+```
+
+In this example the `pdftoppm` utility from [poppler](https://www.archlinux.org/packages/?name=poppler) is used to create the image preview. Other (usually slower) options are available, for example [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) or [imagemagick](https://www.archlinux.org/packages/?name=imagemagick).
 
 ### Shell tips
 

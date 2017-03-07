@@ -158,8 +158,6 @@ On the other hand, the latest iteration of the [NSA Fact Sheet Suite B Cryptogra
 
 #### ECDSA
 
-**Note:** The Windows SSH client PuTTY does not support ECDSA as of March 2016\. One needs a PuTTY development snapshot to connect to a server that uses only ECDSA keys.[[8]](http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/)
-
 The Elliptic Curve Digital Signature Algorithm (ECDSA) was introduced as the preferred algorithm for authentication [in OpenSSH 5.7](http://www.openssh.com/txt/release-5.7). Some vendors also disable the required implementations due to potential patent issues.
 
 There are two sorts of concerns with it:
@@ -171,7 +169,7 @@ Both of those concerns are best summarized in [libssh curve25519 introduction](h
 
 #### Ed25519
 
-[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5): "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[9]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
+[Ed25519](http://ed25519.cr.yp.to/) was introduced in [OpenSSH 6.5](http://www.openssh.com/txt/release-6.5): "*Ed25519 is an elliptic curve signature scheme that offers better security than ECDSA and DSA and good performance*". Its main strengths are its speed, its constant-time run time (and resistance against side-channel attacks), and its lack of nebulous hard-coded constants.[[8]](https://git.libssh.org/projects/libssh.git/tree/doc/curve25519-sha256@libssh.org.txt) See also [this blog post](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/) by a Mozilla developer on how it works.
 
 It is already implemented in [many applications and libraries](https://en.wikipedia.org/wiki/Curve25519#Popularity "wikipedia:Curve25519") and is the [default key exchange algorithm](https://www.libssh.org/2013/11/03/openssh-introduces-curve25519-sha256libssh-org-key-exchange/) (which is different from key *signature*) in OpenSSH.
 

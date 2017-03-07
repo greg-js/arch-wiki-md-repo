@@ -571,9 +571,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 #### Email clients
 
-See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/Comparison_of_e-mail_clients "wikipedia:Comparison of e-mail clients").
-
-See also [Mail servers](/index.php/List_of_applications#Mail_servers "List of applications").
+See also [#Mail servers](#Mail_servers) and [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/Comparison_of_e-mail_clients "wikipedia:Comparison of e-mail clients").
 
 ##### Console
 
@@ -1167,7 +1165,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 #### Blog engines
 
-See [Content management, social networks, blog publishers](/index.php/List_of_applications#Content_management.2C_social_networks.2C_blog_publishers "List of applications")
+See [#Content management, social networks, blog publishers](#Content_management.2C_social_networks.2C_blog_publishers).
 
 #### Microblogging clients
 
@@ -1383,7 +1381,7 @@ For more information, see [LAMP](/index.php/LAMP "LAMP")
 
 ##### Databases
 
-see [Databases](/index.php/List_of_applications#Databases "List of applications")
+See [List of applications/Utilities#Databases](/index.php/List_of_applications/Utilities#Databases "List of applications/Utilities").
 
 ##### PHP
 
@@ -1461,7 +1459,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 #### FTP servers
 
-See [FTP servers](/index.php/List_of_applications#FTP_servers "List of applications") and [SFTP servers](/index.php/List_of_applications#SFTP_clients "List of applications")
+See [#FTP servers](#FTP_servers) and [#SFTP clients](#SFTP_clients).
 
 #### Cloud storage servers
 

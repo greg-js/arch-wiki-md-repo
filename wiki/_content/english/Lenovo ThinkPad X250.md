@@ -50,6 +50,8 @@ In order to get the backlight to work, I added `options thinkpad_acpi force-load
 
 **Note:** Not all X250 keyboards have backlight
 
+Although a dedicated Pause-key is missing, it can be input using the key combination `Fn` + `P`
+
 #### Sound and Volume Control
 
 With [acpid](https://www.archlinux.org/packages/?name=acpid) and [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed, you can map the volume buttons to change the volume. Here are some samples:

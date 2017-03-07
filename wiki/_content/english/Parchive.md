@@ -79,7 +79,7 @@ As a consequence, one recovery file containing all recovery packets is sufficien
 
 5% is a reasonable amount of recovery data but you can go up to 100% recovery data for really important files. 100% recovery files can restore your file if you accidentally deleted the original one and you are too lazy to search for the file in your backup (you have one, have you? :).
 
-Here is a simple script which runs over directories and batch-protects the files:
+Here is a simple script which runs over the current directory recursively and batch-protects the files:
 
 **Tip:** You may have to make sure that your `bin/` folder is in the search path:
 ```
@@ -87,42 +87,38 @@ $ export PATH=$PATH:$HOME/bin/
 
 ```
 Put this line in your init file in your home directory to make it permanent.
-
-**Note:** Only matched entries are considered. Probably one can use recursion by using `$(find $(pwd))`.
  `$HOME/bin/batchprotect.sh` 
 ```
 #!/bin/bash
+OIFS="$IFS"
+IFS=$'
+'
+for file in $(find . -type f | shuf) ; do
+	ending=$(echo "$file" | sed 's/\(.*\)\.\(.*\)$/\2/')
 
-while [ ! -z "$1" ] ; do
-	if [ ! -d "$1" ] ; then
-		#entry is not a directory
-
-		ending=$(echo "$1" | sed 's/\(.*\)\.\(.*\)$/\2/')
-
-		#include this block if you want to have 5% recovery data
-		if [ ! -e "$1-5.par2" -a $ending != "par2" -a $ending != "sig" ]; then
-			par2create -n1 -r5 "$1"
-			rm "$1".par2
-			mv "$1".vol*par2 "$1"-5.par2
-		fi
-
-		#include this block if you want to have 100% recovery data
-		if [ ! -e "$1-100.par2" -a $ending != "par2" -a $ending != "sig" ]; then
-			par2create -n1 -r100 "$1"
-			rm "$1".par2
-			mv "$1".vol*par2 "$1"-100.par2
-		fi
-
-		#include this block if you want to check for normal AND cryptographic integrity 
-		if [ ! -e "$1.sig" -a $ending != "par2" -a $ending != "sig" ]; then
-			gpg --default-key C0FFEEBEEFC0FFEEBEEFC0FFEEDEADBEEF31415926 --detach-sign --yes "$1"
-		fi
+	#include this block if you want to have 5% recovery data
+	if [ ! -e "$file-5.par2" -a $ending != "par2" -a $ending != "sig" ]; then
+		par2create -n1 -r5 "$file"
+		rm "$file".par2
+		mv "$file".vol*par2 "$file"-5.par2
 	fi
-	shift
+
+	#include this block if you want to have 100% recovery data
+	if [ ! -e "$file-100.par2" -a $ending != "par2" -a $ending != "sig" ]; then
+		par2create -n1 -r100 "$file"
+		rm "$file".par2
+		mv "$file".vol*par2 "$file"-100.par2
+	fi
+
+	#include this block if you want to check for normal AND cryptographic integrity 
+	if [ ! -e "$file.sig" -a $ending != "par2" -a $ending != "sig" ]; then
+		gpg --default-key C0FFEEBEEFC0FFEEBEEFC0FFEEDEADBEEF31415926 --detach-sign --yes "$file"
+	fi
 done
+IFS="$OIFS"
 ```
 
-You would then call `batchprotect.sh *` in order to have all files in the current directory protected by Parchive. The detached signature serves you to be sure that no one tampered with your data. Additionally, you don't have to maintain list of checksums since gpg can do that for you, too.
+You would then call `batchprotect.sh` in order to have all files in the current directory recursively protected by Parchive. The detached signature serves you to be sure that no one tampered with your data. Additionally, you don't have to maintain list of checksums since gpg can do that for you, too.
 
 ### Verification
 
@@ -145,23 +141,4 @@ You can also change the path of the `par2`/`sig` file.
 
 ### Multithreading
 
-**Note:** This is work in progress. Help is appreciated.
-
-Parchive unfortunately does not support multithreading. You can compile available versions using tbb or OpenMP, see the [w:Parchive](https://en.wikipedia.org/wiki/Parchive "w:Parchive") article. As a workaround, one could modify the script to shuffle the given list of files and then run the script as many times as you have cores available in different shells. The script will ignore already processed files, allowing the collaboration of the instances of the script. Obviously, one would need to use something like:
-
-```
-#!/bin/bash
-SHUFFILE=$(mktemp -t batchprotect.XXXXXXXXXX)
-echo "" > $SHUFFILE
-
-while [ ! -z "$i" ] ; do
-	echo $i >> $SHUFFILE
-	shift
-done
-
-for i in "$(shuf $SHUFFILE)" ; do
-...
-
-```
-
-But then, the spaces of the file names mess up the whole thing. Quoting `$i` results in a single loop with an enormous file name.
+Parchive unfortunately does not support multithreading. You can compile available versions using tbb or OpenMP, see the [w:Parchive](https://en.wikipedia.org/wiki/Parchive "w:Parchive") article. Since the script shuffles the given list of files, a workaround is possible. You can run the script as many times as you have cores available in different shells. The script will ignore already processed files which allows for the collaboration of multiple instances of the script.

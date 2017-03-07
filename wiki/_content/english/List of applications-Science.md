@@ -224,7 +224,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-See also [List of applications#Spreadsheets](/index.php/List_of_applications#Spreadsheets "List of applications")
+See also [List of applications/Documents and texts#Spreadsheets](/index.php?title=List_of_applications/Documents_and_texts&action=edit&redlink=1 "List of applications/Documents and texts (page does not exist)")
 
 ### Chemistry and biology
 
