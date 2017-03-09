@@ -13,19 +13,19 @@ Wireshark is a free and open-source packet analyzer. It is used for network trou
 
 ## Installation
 
-The wireshark package has been split into the CLI version as well as GTK and Qt frontends, which depend on the CLI.
+The wireshark package has been split into the CLI version as well as GTK+ and Qt frontends, which depend on the CLI.
 
-**Warning:** The Qt frontend, along with missing some features, is also not as stable as the GTK frontend. If you have issues with listing network interfaces, enabling monitor mode, and/or permissions, even after setting everything up correctly, try using the GTK version and see if your issues persist.
+**Warning:** The Qt frontend, along with missing some features, is also not as stable as the GTK+ frontend. If you have issues with listing network interfaces, enabling monitor mode, and/or permissions, even after setting everything up correctly, try using the GTK version and see if your issues persist.
 
-*   CLI version - [Install](/index.php/Pacman "Pacman") package [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli).
-*   GTK frontend - [Install](/index.php/Pacman "Pacman") package [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk).
-*   Qt frontend - [Install](/index.php/Pacman "Pacman") package [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt).
+*   CLI version (tshark) - [Install](/index.php/Pacman "Pacman") package [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli).
+*   GTK+ frontend (wireshark-gtk) - [Install](/index.php/Pacman "Pacman") package [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) (deprecated).
+*   Qt frontend (wireshark) - [Install](/index.php/Pacman "Pacman") package [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) (recommended).
 
 ## Capturing as normal user
 
 Running Wireshark as root is insecure.
 
-Arch Linux uses [method from Wireshark wiki](http://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Other_Linux_based_systems_or_other_installation_methods) to separate privileges. When [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) is installed, [install script](/index.php/PKGBUILD#install "PKGBUILD") sets `/usr/bin/dumpcap` capabilities.
+Arch Linux uses [method from Wireshark wiki](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Other_Linux_based_systems_or_other_installation_methods) to separate privileges. When [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) is installed, [install script](/index.php/PKGBUILD#install "PKGBUILD") sets `/usr/bin/dumpcap` capabilities.
 
  `$ getcap /usr/bin/dumpcap`  `/usr/bin/dumpcap = cap_net_admin,cap_net_raw+eip` 
 
@@ -35,7 +35,7 @@ There are two methods to capture as a normal user :
 
 ### Add the user to the wireshark group
 
-To use wireshark as a normal user, add user to the `wireshark` [group](/index.php/Group "Group").
+To use wireshark as a normal user, add user to the `wireshark` [group](/index.php/Group "Group"). Re-login to apply the changes or use `newgrp wireshark` to open a shell with the new group.
 
 ### Use sudo
 
@@ -49,9 +49,9 @@ Then run wireshark with
 
 ## A few capturing techniques
 
-There are a number of different ways to capture exactly what you are looking for in Wireshark, by applying filters.
+There are a number of different ways to capture exactly what you are looking for in Wireshark, by applying [capture filters](https://wiki.wireshark.org/CaptureFilters) or [display filters](https://wiki.wireshark.org/DisplayFilters).
 
-**Note:** To learn the filter syntax, see man pcap-filter(7).
+**Note:** To learn the capture filter syntax, see man pcap-filter(7). For display filters, see man wireshark-filter(4).
 
 ### Filtering TCP packets
 
@@ -73,8 +73,8 @@ $ tshark -f "udp"
 
 ### Filter packets to a specific IP Address
 
-*   If you would like to see all the traffic going to a specific address, enter `ip.dst == 1.2.3.4`, replacing `1.2.3.4` with the IP address the outgoing traffic is being sent to.
+*   If you would like to see all the traffic going to a specific address, enter display filter `ip.dst == 1.2.3.4`, replacing `1.2.3.4` with the IP address the outgoing traffic is being sent to.
 
-*   If you would like to see all the incoming traffic for a specific address, enter `ip.src == 1.2.3.4`, replacing `1.2.3.4` with the IP address the incoming traffic is being sent to.
+*   If you would like to see all the incoming traffic for a specific address, enter display filter `ip.src == 1.2.3.4`, replacing `1.2.3.4` with the IP address the incoming traffic is being sent to.
 
-*   If you would like to see all the incoming and outgoing traffic for a specific address, enter `ip.addr == 1.2.3.4`, replacing `1.2.3.4` with the relevant IP address.
+*   If you would like to see all the incoming and outgoing traffic for a specific address, enter display filter `ip.addr == 1.2.3.4`, replacing `1.2.3.4` with the relevant IP address.

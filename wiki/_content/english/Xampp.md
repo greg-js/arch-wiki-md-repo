@@ -22,7 +22,7 @@ Install [xampp](https://aur.archlinux.org/packages/xampp/).
 
 #### Manual Installation
 
-Download the installer from [the website](https://www.apachefriends.org/index.html).
+Download the installer from: [the website](https://www.apachefriends.org/index.html).
 
 The downloaded file is an installer script. Make it executable and run it by typing:
 
@@ -84,19 +84,7 @@ In order to start Xampp at boot, service needs to be created, in the following f
 
 Put these lines:
 
-```
-[Unit]
-Description=XAMPP
-
-[Service]
-ExecStart=/opt/lampp/lampp start
-ExecStop=/opt/lampp/lampp stop
-Type=forking
-
-[Install]
-WantedBy=multi-user.target
-
-```
+[Unit] Description=XAMPP [Service] ExecStart=/opt/lampp/lampp start ExecStop=/opt/lampp/lampp stop Type=forking [Install] WantedBy=multi-user.target
 
 Enable autostart like this:
 

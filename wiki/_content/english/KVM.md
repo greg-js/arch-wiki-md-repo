@@ -19,8 +19,7 @@ This article does not cover features common to multiple emulators using KVM as a
 *   [3 How to use KVM](#How_to_use_KVM)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Nested virtualization](#Nested_virtualization)
-    *   [4.2 Alternative Networking with SSH tunnels](#Alternative_Networking_with_SSH_tunnels)
-    *   [4.3 Enabling huge pages](#Enabling_huge_pages)
+    *   [4.2 Enabling huge pages](#Enabling_huge_pages)
 *   [5 See also](#See_also)
 
 ## Checking support for KVM
@@ -148,37 +147,6 @@ Boot VM and check if vmx flag is present:
 $ egrep --color=auto 'vmx|svm' /proc/cpuinfo
 
 ```
-
-### Alternative Networking with SSH tunnels
-
-Setting up bridged networking can be a bit of a hassle sometimes. If the sole purpose of the VM is experimentation, one strategy to connect the host and the guests is to use SSH tunneling.
-
-The basic steps are as follows:
-
-*   Setup an SSH server in the host OS
-*   (optional) Create a designated user used for the tunneling (e.g. tunneluser)
-*   Install SSH in the VM
-*   Setup authentication
-
-See: [SSH](/index.php/SSH "SSH") for the setup of SSH, especially [SSH#Forwarding other ports](/index.php/SSH#Forwarding_other_ports "SSH").
-
-When using the default user network stack, the host is reachable at address 10.0.2.2.
-
-If everything works and you can SSH into the host, simply add something like the following to your `/etc/rc.local`
-
-```
-# Local SSH Server
-echo "Starting SSH tunnel"
-sudo -u vmuser ssh tunneluser@10.0.2.2 -N -R 2213:127.0.0.1:22 -f
-# Random remote port (e.g. from another VM)
-echo "Starting random tunnel"
-sudo -u vmuser ssh tunneluser@10.0.2.2 -N -L 2345:127.0.0.1:2345 -f
-
-```
-
-In this example a tunnel is created to the SSH server of the VM and an arbitrary port of the host is pulled into the VM.
-
-This is a quite basic strategy to do networking with VMs. However, it is very robust and should be quite sufficient most of the time.
 
 ### Enabling huge pages
 

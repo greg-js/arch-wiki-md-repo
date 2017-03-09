@@ -5,9 +5,9 @@
     *   [1.2 nymeria.archlinux.org](#nymeria.archlinux.org)
     *   [1.3 dragon.archlinux.org](#dragon.archlinux.org)
     *   [1.4 alberich.archlinux.org](#alberich.archlinux.org)
-    *   [1.5 gudrun.archlinux.org](#gudrun.archlinux.org)
-    *   [1.6 gerolde.archlinux.org](#gerolde.archlinux.org)
-    *   [1.7 celestia.archlinux.org](#celestia.archlinux.org)
+    *   [1.5 gudrun.archlinux.org [turned off]](#gudrun.archlinux.org_.5Bturned_off.5D)
+    *   [1.6 gerolde.archlinux.org [turned off]](#gerolde.archlinux.org_.5Bturned_off.5D)
+    *   [1.7 celestia.archlinux.org [turned off]](#celestia.archlinux.org_.5Bturned_off.5D)
 *   [2 Desired setup](#Desired_setup)
     *   [2.1 vostok.archlinux.org (Intel Xeon E3-1245 2 x 3 TB 16GB ECC RAM)](#vostok.archlinux.org_.28Intel_Xeon_E3-1245_2_x_3_TB_16GB_ECC_RAM.29)
     *   [2.2 apollo.archlinux.org ([1])](#apollo.archlinux.org_.28.5B1.5D.29)
@@ -39,17 +39,17 @@
 *   releng stuff. no idea
 *   tracker
 
-## gudrun.archlinux.org
+## gudrun.archlinux.org [turned off]
 
 *   planet [turned off]
-*   bugs
+*   bugs [turned off]
 *   archweb [turned off]
-*   patchwork
+*   patchwork [turned off]
 *   projects [turned off]
 
-## gerolde.archlinux.org
+## gerolde.archlinux.org [turned off]
 
-## celestia.archlinux.org
+## celestia.archlinux.org [turned off]
 
 *   pkgbuild.com
 
@@ -70,7 +70,7 @@
 *   archweb [done]
 *   patchwork [wip]
 *   projects
-*   mail
+*   mail (uncertain. possibly better if mail is on orion so that not everything is on one box)
 
 ## soyuz.archlinux.org ([[2]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 

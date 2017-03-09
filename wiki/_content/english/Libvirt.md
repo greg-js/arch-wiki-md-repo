@@ -602,13 +602,7 @@ Currently this is possible in Arch Linux through a workaround. [This ovmf packag
 
 ```
 
-*   Restart `libvirtd`
-
-```
- # systemctl stop libvirtd
- # systemctl start libvirtd
-
-```
+*   [Restart](/index.php/Restart "Restart") `libvirtd`.
 
 Now you are ready to create a uefi virtual machine. Create a new virtual machine through [virt-manager](https://www.archlinux.org/packages/?name=virt-manager). When you get to the final page of the 'New VM' wizard, do the following:
 

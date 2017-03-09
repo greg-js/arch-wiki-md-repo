@@ -28,7 +28,7 @@
 *   [19 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
 *   [20 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [21 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
-*   [22 Very slow app down speed](#Very_slow_app_down_speed)
+*   [22 Very slow app download speed](#Very_slow_app_download_speed)
 *   [23 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
 *   [24 Hardware decoding not available](#Hardware_decoding_not_available)
 
@@ -384,7 +384,7 @@ Chances are you are missing [lib32-libcanberra](https://www.archlinux.org/packag
 
 With that, steam should no longer crash when trying to launch a game through in home streaming.
 
-## Very slow app down speed
+## Very slow app download speed
 
 If your Steam apps (games, software…) download speed through client is unusually slow, but browsing Steam store and streaming videos is unaffected, installing DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[5]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
 

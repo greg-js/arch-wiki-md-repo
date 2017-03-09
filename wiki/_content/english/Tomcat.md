@@ -82,12 +82,7 @@ To have read permissions on the configuration files and work well with some IDEs
 
 ## Start/stop Tomcat
 
-You can start Tomcat by running:
-
-```
-systemctl start tomcat7
-
-```
+[Start](/index.php/Start "Start") the `tomcat7` service.
 
 Once Tomcat is started, you can visit this page to see the result: [http://localhost:8080](http://localhost:8080). If a nice Tomcat local home page is displayed this means your Servlet container is up and running and ready to host you web apps. If the startup script failed or you can only see a Java error displayed in you browser, have a look at startup logs using [systemd's journalctl](/index.php/Systemd#Journal "Systemd"). Google is full of answers on recurrent issues found in Tomcat logs.
 

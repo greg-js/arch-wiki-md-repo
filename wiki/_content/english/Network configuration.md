@@ -12,6 +12,8 @@ This page explains how to set up a **wired** connection to a network. If you nee
     *   [4.1 Device names](#Device_names)
         *   [4.1.1 Get current device names](#Get_current_device_names)
         *   [4.1.2 Change device name](#Change_device_name)
+            *   [4.1.2.1 with systemd.link](#with_systemd.link)
+            *   [4.1.2.2 udev](#udev)
         *   [4.1.3 Reverting to traditional device names](#Reverting_to_traditional_device_names)
     *   [4.2 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
     *   [4.3 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
@@ -222,6 +224,39 @@ Wireless device names can also be retrieved using `iw dev`. See [Wireless networ
 
 #### Change device name
 
+You can influence the naming rules of your devices in two ways: either with a systemd Network device configuration or with udev rules.
+
+##### with systemd.link
+
+You may also change the devicenames via systemd.link (since systemd v197), to additionally apply various other checks (detailed in [systemd.link(5)](http://man7.org/linux/man-pages/man5/systemd.link.5.html)).
+
+In case you want to match via Path, and are unsure about its value, you can aquire it with the following command (substituting `enp0s25` for your device):
+
+```
+$ udevadm info --path=/sys/class/net/enp0s25 | grep 'ID_PATH='
+
+```
+
+```
+E: ID_PATH=pci-0000:00:19.0
+
+```
+
+A short, but complete example:
+
+ `/etc/systemd/network/10-ethernet.link` 
+```
+[Match]
+Path=pci-0000:00:19.0
+#alternatively use the MAC address
+#MACAddress=ff:ee:dd:cc:bb:aa
+
+[Link]
+Name=net0
+```
+
+##### udev
+
 You can change the device name by defining the name manually with an udev-rule. For example:
 
  `/etc/udev/rules.d/10-network.rules` 
@@ -255,7 +290,14 @@ To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they 
 
 #### Reverting to traditional device names
 
-If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled with the following:
+If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled by masking the systemd link:
+
+```
+ # ln -s /dev/null /etc/systemd/network/99-default.link
+
+```
+
+or by masking the udev rule:
 
 ```
  # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules

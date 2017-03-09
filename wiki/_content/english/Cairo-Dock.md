@@ -142,5 +142,5 @@ And to get the permission to read the full output of the iwconfig as a normal us
 
 ## See also
 
-*   [glx.org](http://www.glx-dock.org/index.php)
-*   [launchpad](https://launchpad.net/cairo-dock/)
+*   [glx-dock.org](http://www.glx-dock.org/index.php)
+*   [Launchpad](https://launchpad.net/cairo-dock/)

@@ -162,7 +162,7 @@ A reboot is needed for new settings to take effect.
 
 ### Caveats for analog TV-Out
 
-Since Raspberry Pi 1 Model B+ and Raspberry Pi 2 Model B, the composite video socket was removed, with the replacement of composite signal through the 3.5mm video/audio jack. Some RCA cables do not follow the same standard as Raspberry Pi, in which case connect the red or white audio plug for video.[[1]](http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-model-b-3-5mm-audiovideo-jack/)
+Since Raspberry Pi 1 Model B+ and Raspberry Pi 2 Model B, the composite video socket was removed, with the replacement of composite signal through the 3.5mm video/audio jack. Some RCA cables do not follow the same standard as Raspberry Pi, in which case connect the red or white audio plug for video.[[3]](http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-model-b-3-5mm-audiovideo-jack/)
 
 ### X.org driver
 

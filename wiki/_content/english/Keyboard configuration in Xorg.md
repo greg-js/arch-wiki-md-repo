@@ -185,7 +185,9 @@ $ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
 
 ### Enabling mouse keys
 
-[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "wikipedia:Mouse keys") is now disabled by default and has to be manually enabled by passing `keypad:pointerkeys` to `XkbOptions`. This will make the `Shift+NumLock` shortcut toggle mouse keys.
+[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is disabled by default and has to be manually enabled by passing `keypad:pointerkeys` to `XkbOptions`. This will make the `Shift+NumLock` shortcut toggle mouse keys.
+
+See also [X KeyBoard extension#Mouse control](/index.php/X_KeyBoard_extension#Mouse_control "X KeyBoard extension") for advanced configuration.
 
 ### Configuring compose key
 

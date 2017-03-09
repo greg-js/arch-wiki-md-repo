@@ -361,12 +361,7 @@ http {
 }
 ```
 
-Start nginx service with
-
-```
-# systemctl start nginx
-
-```
+[Start](/index.php/Start "Start") the `nginx` service.
 
 There are several ways to start puma server, two ways are recommended below:
 
@@ -830,14 +825,7 @@ server {
 
 ```
 
-At this point you are in conditions to run Nginx with:
-
-```
-# systemctl start nginx
-
-```
-
-and to access both CMSs through *refinery.domain.com* and *browser.domain.com*.
+At this point you are in conditions to [start](/index.php/Start "Start") the `nginx` service and to access both CMSs through *refinery.domain.com* and *browser.domain.com*.
 
 ### References
 

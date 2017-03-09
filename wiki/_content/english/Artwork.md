@@ -125,7 +125,7 @@ From [figlet](https://www.archlinux.org/packages/?name=figlet) 2.2.5-1:
 User art:
 
 ```
-                  -@                
+                   -@                
                   .##@               
                  .####@              
                  @#####@             

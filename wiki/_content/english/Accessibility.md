@@ -2,38 +2,36 @@ There are many different methods of providing accessibility to users that suffer
 
 ## Contents
 
-*   [1 Desktop Environments](#Desktop_Environments)
-*   [2 Physical Assistance](#Physical_Assistance)
-    *   [2.1 Operating the Keyboard](#Operating_the_Keyboard)
-        *   [2.1.1 Console](#Console)
-            *   [2.1.1.1 Sticky Keys](#Sticky_Keys)
-        *   [2.1.2 Independent of Specific Desktop Environment](#Independent_of_Specific_Desktop_Environment)
-    *   [2.2 Operating the Mouse](#Operating_the_Mouse)
-        *   [2.2.1 Independent of Specific Desktop Environment](#Independent_of_Specific_Desktop_Environment_2)
-            *   [2.2.1.1 Button Mapping](#Button_Mapping)
-            *   [2.2.1.2 Mouse Keys](#Mouse_Keys)
-*   [3 Visual Assistance](#Visual_Assistance)
-    *   [3.1 Speech recognition](#Speech_recognition)
-    *   [3.2 Console & Virtual Terminal Emulators](#Console_.26_Virtual_Terminal_Emulators)
-*   [4 Issues](#Issues)
+*   [1 Desktop environments](#Desktop_environments)
+*   [2 Independent to specific desktop environments](#Independent_to_specific_desktop_environments)
+    *   [2.1 Operating the keyboard](#Operating_the_keyboard)
+        *   [2.1.1 Sticky keys with systemd](#Sticky_keys_with_systemd)
+        *   [2.1.2 Sticky keys with xserverrc](#Sticky_keys_with_xserverrc)
+    *   [2.2 Operating the mouse](#Operating_the_mouse)
+        *   [2.2.1 Button mapping](#Button_mapping)
+        *   [2.2.2 Mouse keys](#Mouse_keys)
+    *   [2.3 Visual assistance](#Visual_assistance)
+        *   [2.3.1 Speech recognition](#Speech_recognition)
+        *   [2.3.2 Console and Virtual Terminal Emulators](#Console_and_Virtual_Terminal_Emulators)
+*   [3 Known issues](#Known_issues)
 
-## Desktop Environments
+## Desktop environments
 
-Most modern desktop environments ship with an extensive set of features, among which one can find a tool to configure the accessibility options with. Generally, these options can be found listed under those of 'accessibility', or under those of the corresponding input device (e.g. 'keyboard' and 'mouse').
+Most modern desktop environments ship with an extensive set of features, among which one can find a tool to configure the accessibility options with. Generally, these options can be found listed under those of 'accessibility', or under those of the corresponding input device (e.g. 'keyboard' and 'mouse'). For example, with [GNOME](https://help.gnome.org/users/gnome-help/stable/a11y.html.en) and [KDE](https://userbase.kde.org/Applications/Accessibility).
 
 **Note:** When using the configuration tools of a desktop environment, be weary of possible conflicts with settings of desktop-environment-independent tools.
 
-## Physical Assistance
+## Independent to specific desktop environments
 
-For speech recognition, see [Text to speech](/index.php/Text_to_speech "Text to speech").
+The [Xorg](/index.php/Xorg "Xorg") server has features (accessx) for physical assistance by setting parameters via the [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension"). This section covers examples.
 
-### Operating the Keyboard
+For speech recognition, see also [Text to speech](/index.php/Text_to_speech "Text to speech").
+
+### Operating the keyboard
 
 For Braille, see [Arch Linux for the blind](/index.php/Arch_Linux_for_the_blind "Arch Linux for the blind").
 
-#### Console
-
-##### Sticky Keys
+#### Sticky keys with systemd
 
 In order to enable Sticky Keys in a TTY, you require to know the exact keycodes of the keys to be used. These can be found by a tool like [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) or [xkeycaps](https://www.archlinux.org/packages/?name=xkeycaps). Alternatively, you can inspect the output of *dumpkeys*, provided that the current keymap is correct.
 
@@ -81,10 +79,9 @@ Load your new mapping by running the following command:
 
 ```
 
-If you are satisfied by the results, then move the file to a suitable directory, and ensure that it will be loaded on boot either by placing the above command in `/etc/rc.local` (old method), or by using a systemd service file (preferred method).
+If you are satisfied by the results, then move the file to a suitable directory. To have it [enabled](/index.php/Enable "Enable") on boot, see the following systemd unit:
 
-In case of systemd, an example service file might look like:
-
+ `/etc/systemd/system/loadkeys.service` 
 ```
 [Unit]
 Description="load custom keymap (sticky keys)"
@@ -97,17 +94,9 @@ RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target emergency.target rescue.target
-
 ```
 
-Finally, move this file, e.g. "loadkeys.service", to `/usr/lib/systemd/system/` and enable it by running:
-
-```
-# systemctl enable loadkeys
-
-```
-
-#### Independent of Specific Desktop Environment
+#### Sticky keys with xserverrc
 
 One method of enabling desktop environment-independent accessibility function is by passing it through X, given that it is build with XKB support. This can be done by setting parameters for the X server, as specified in its man page:
 
@@ -142,15 +131,13 @@ Note that once X has started, e.g. by executing `startx`, it still requires you 
 
 Similar to most implementations, Sticky Keys can be disabled by pressing a modifier key and any other key at the same time.
 
-### Operating the Mouse
+### Operating the mouse
 
-#### Independent of Specific Desktop Environment
-
-##### Button Mapping
+#### Button mapping
 
 By using *xmodmap*, you can map functions to mouse buttons independent of your graphical environment. For this, you need to know which physical button on your mouse is read as which number, which can be found by a tool such as [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev). Generally, the physical buttons of left, middle, and right are read as the first, second, and third button, respectively.
 
-Once you have acquired these, continue by creating a configuration file on a suitable location, e.g. `~/.mousekeys`. Next, open the file with your favourite editor, and write the keyword `pointer =` followed by an enumeration of the previously-found number of mouse buttons.
+Once you have acquired these, continue by creating a configuration file on a suitable location, e.g. `~/.mouseconfig`. Next, open the file with your favourite editor, and write the keyword `pointer =` followed by an enumeration of the previously-found number of mouse buttons.
 
 For example, a three button mouse with a scroll wheel is able to provide five physical actions: left, middle, and right click, as well as scroll up and scroll down. This can be mapped to the same functions by using the following line in the configuration file:
 
@@ -169,37 +156,55 @@ pointer = 3 2 1 4 5
 When you are done, you can test and inspect your mapping by running `xmodmap`:
 
 ```
-$ xmodmap ~/.mousekeys
+$ xmodmap ~/.mouseconfig
 $ xmodmap -pp
 
 ```
 
 Once satisfied, you can enable it on start by placing the first line in `~/.xinitrc`.
 
-##### Mouse Keys
+#### Mouse keys
 
-Mouse keys is a feature of some graphical user interfaces that uses the keyboard (especially numeric keypad) as a pointing device. It can replace the mouse, or works beside it. [MouseKeys](https://en.wikipedia.org/wiki/MouseKeys "w:MouseKeys") on Wikipedia has the full information. Note the warning about `setxkbmap` resets xmodmap configuration at the beginning of the [xmodmap](/index.php/Xmodmap "Xmodmap") wiki entry when following Wikipedia's sugesstion and enabling it with `setxkbmap`. One can use
-
-```
-$ xset | grep "Mouse Keys"
+[w:Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is an Xorg feature (like StickyKeys) to use the keyboard (especially a numeric keypad) as a pointing device. It can replace a mouse, or work beside it. It is disabled by default. You can use
 
 ```
+$ xset q | grep "Mouse Keys"
 
-to see Mouse Keys current state.
+```
 
-## Visual Assistance
+to see status. To enable it for a session:
+
+```
+$ setxkbmap -option keypad:pointerkeys
+
+```
+
+If you use a [xmodmap](/index.php/Xmodmap "Xmodmap") configuration, be aware *setxkbmap* resets it.
+
+To enable Mouse keys permanently, add
+
+```
+Option "XkbOptions" "keypad:pointerkeys" 
+
+```
+
+to the keyboard configuration file. This will make the `Shift+NumLock` shortcut toggle mouse keys.
+
+For more see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") and [X KeyBoard extension#Mouse control](/index.php/X_KeyBoard_extension#Mouse_control "X KeyBoard extension") for advanced configuration.
+
+### Visual assistance
 
 As with physical assistance, most modern desktop environments ship with an extensive set of features to tweak the visual aspects of your system. Generally, these options can be found listed under those of 'accessibility' or 'visual assistance'. Alternatively, useful options might be found in the settings of the individual applications.
 
-### Speech recognition
+#### Speech recognition
 
 See [Speech recognition](/index.php/Speech_recognition "Speech recognition").
 
-### Console & Virtual Terminal Emulators
+#### Console and Virtual Terminal Emulators
 
 *   Edit `/etc/vconsole.conf`.
 *   Edit `~/.Xresources`.
 
-## Issues
+## Known issues
 
 *   Configuration of input devices is not recognized by software that circumvents the software layer, e.g. [wine](/index.php/Wine "Wine"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), and [QEMU](/index.php/QEMU "QEMU").

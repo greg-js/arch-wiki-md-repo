@@ -274,6 +274,8 @@ Some users experience regular freezes, where their x205ta can only be restarted 
 
 Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
 
+There is a kernel available with patches from Intel in the AUR: [linux-baytrail411](https://aur.archlinux.org/packages/linux-baytrail411/). It also includes the patches for sound implemented in the mainline 4.11 kernel.
+
 ### Bluetooth
 
 Install a correct firmware file (e.g., BCM43341B0_002.001.014.0122.0176.hcd from Windows 10 driver) as /lib/firmware/brcm/BCM43341B0.hcd.

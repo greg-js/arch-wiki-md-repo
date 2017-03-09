@@ -96,10 +96,10 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 [Install](/index.php/Install "Install") the [qemu](https://www.archlinux.org/packages/?name=qemu) package (or [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless) for the version without GUI) and below optional packages for your needs:
 
 *   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - extra architectures support
-*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - glusterfs block support
-*   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - iSCSI block support
+*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - [GlusterFS](/index.php/GlusterFS "GlusterFS") block support
+*   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - [iSCSI](/index.php/ISCSI "ISCSI") block support
 *   [qemu-block-rbd](https://www.archlinux.org/packages/?name=qemu-block-rbd) - RBD block support
-*   [samba](https://www.archlinux.org/packages/?name=samba) - SMB/CIFS server support
+*   [samba](https://www.archlinux.org/packages/?name=samba) - [SMB/CIFS](/index.php/Samba "Samba") server support
 
 ## Graphical front-ends for QEMU
 
@@ -1568,7 +1568,7 @@ Failed to open module: libgfapi.so.0: cannot open shared object file: No such fi
 
 ```
 
-is not a problem, it just means that you are lacking the optional GlusterFS dependency.
+[Install](/index.php/Install "Install") [glusterfs](https://www.archlinux.org/packages/?name=glusterfs) or ignore the error message as GlusterFS is a optional dependency.
 
 ### Kernel panic on LIVE-environments
 

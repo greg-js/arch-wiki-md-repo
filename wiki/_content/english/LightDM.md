@@ -42,7 +42,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
     *   [6.3 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
     *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
-    *   [6.5 LightDM doesn't appear](#LightDM_doesn.27t_appear)
+    *   [6.5 LightDM does not appear](#LightDM_does_not_appear)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
 *   [7 See also](#See_also)
 
@@ -349,7 +349,7 @@ Setup an authentication password on the server as root:
 
 ```
 
-Edit the lightdm configuration file as shown below. Note that `listen-address` configures the vnc to only listen to connections from localhost. This is used to only allow connections via [ssh and port forwarding](https://wiki.archlinux.org/index.php/TigerVNC#On_the_client). If you want to allow insecure connections you can disable this setting.
+Edit the lightdm configuration file as shown below. Note that `listen-address` configures the vnc to only listen to connections from localhost. This is used to only allow connections via [ssh and port forwarding](/index.php/TigerVNC#On_the_client "TigerVNC"). On the SSH client, make sure that you use "localhost:5900" for the tunnel destination; using "127.0.0.1:5900" or "::1:5900" is not reliable on dual stack network connections. If you want to allow insecure connections you can disable this setting.
 
  `/etc/lightdm/lightdm.conf` 
 ```
@@ -391,7 +391,7 @@ In case of your locale not being displayed correctly in Lightdm add your locale 
 
 ### Missing icons with GTK greeter
 
-If you're using [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) as a greeter and it shows placeholder images as icons, make sure valid icon themes and themes are installed and configured. Check the following file:
+If you are using [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) as a greeter and it shows placeholder images as icons, make sure valid icon themes and themes are installed and configured. Check the following file:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
 ```
@@ -412,9 +412,9 @@ If you are using multiple monitors, LightDM may display in the wrong one (e.g. i
 
 Replace *HDMI1* with your real monitor ID, which you can find from **xrandr** command output.
 
-### LightDM doesn't appear
+### LightDM does not appear
 
-It may happen that your system boots so fast that LightDM service is started before your graphics drivers are properly loaded. If this is your case, you'll want to add the following config to your lightdm.conf file:
+It may happen that your system boots so fast that LightDM service is started before your graphics drivers are properly loaded. If this is your case, you will want to add the following config to your lightdm.conf file:
 
 ```
    [LightDM]

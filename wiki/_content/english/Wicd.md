@@ -291,16 +291,7 @@ If the above does not work, you could try [https://bbs.archlinux.org/viewtopic.p
 
 ### Problems after package update
 
-Sometimes the wicd client fails to load after a package update due to D-Bus errors.
-
-A solution is to remove the config files in the `/etc/wicd/` directory.
-
-```
-# systemctl stop wicd
-# rm /etc/wicd/*.conf
-# systemctl start wicd
-
-```
+Sometimes the wicd client fails to load after a package update due to D-Bus errors. A solution is to [stop](/index.php/Stop "Stop") `wicd.service`, remove the configuration files in the `/etc/wicd/` directory, and [start](/index.php/Start "Start") `wicd.service`.
 
 ### Note about graphical sudo programs
 

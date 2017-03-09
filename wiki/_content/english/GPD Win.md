@@ -68,7 +68,7 @@ No fix found yet. Device uses the Intel Battery Management Device INT33FE. These
 
 #### Rotating X Session
 
-Because the device uses a phone screen, the display has to be rotated to function properly. Since kernel 4.9.2, rotating X session (manually with [xrandr](/index.php/Xrandr "Xrandr") or within settings of a desktop environment) works out-of-the-box.
+Because the device uses a phone screen, the display has to be rotated to function properly. Since kernel 4.9.2, rotating X session (manually with [xrandr](/index.php/Xrandr "Xrandr") or within settings of a desktop environment) works out-of-the-box. (NB: before investing too much time (or buying the device) it is worth noting there may be idiosyncrasies in the gpdwin batches. Running 4.9.11-1 (March 7, 2017) did not fix the screen rotation issue on my gpdwin.).
 
 #### Rotating touch screen
 

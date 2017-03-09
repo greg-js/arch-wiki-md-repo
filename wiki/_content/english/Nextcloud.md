@@ -341,7 +341,7 @@ See also [UWSGI#Starting service](/index.php/UWSGI#Starting_service "UWSGI").
 
 ### Setting strong permissions for the filesystem
 
-From the [official installation manual](https://doc.owncloud.org/server/9.2/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
+From the [official installation manual](https://docs.nextcloud.com/server/11/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
 
 	For hardened security we recommend setting the permissions on your ownCloud directories as strictly as possible, and for proper server operations. This should be done immediately after the initial installation and before running the setup. Your HTTP user must own the `config/`, `data/` and `apps/` directories so that you can configure ownCloud, create, modify and delete your data files, and install apps via the ownCloud Web interface.
 
@@ -349,7 +349,7 @@ From the [official installation manual](https://doc.owncloud.org/server/9.2/admi
  `oc-perms` 
 ```
 #!/bin/bash
-ocpath='/usr/share/webapps/owncloud'
+ocpath='/usr/share/webapps/nextcloud'
 htuser='http'
 htgroup='http'
 rootuser='root'
@@ -425,10 +425,10 @@ fail2ban-regex /usr/share/webapps/owncloud/data/owncloud.log /etc/fail2ban/filte
 
 ## Maintenance associated with Arch package updates
 
-When the Arch owncloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Alternatively, one can run use `/usr/share/webapps/owncloud/occ upgrade` from the shell but it must be run as the *http* user:
+When the Arch nextcloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Alternatively, one can run use `/usr/share/webapps/nextcloud/occ upgrade` from the shell but it must be run as the *http* user:
 
 ```
-# sudo -u http /usr/share/webapps/owncloud/occ upgrade
+# sudo -u http /usr/share/webapps/nextcloud/occ upgrade
 
 ```
 

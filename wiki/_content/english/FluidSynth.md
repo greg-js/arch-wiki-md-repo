@@ -25,7 +25,7 @@ There are two ways to use FluidSynth. Either as MIDI player or as daemon adding 
 You can simply use fluidsynth to play MIDI files:
 
 ```
-$ fluidsynth -a alsa -m alsa_seq -l -i /usr/share/soundfonts/FluidR3_GM2-2.sf2 example.midi
+$ fluidsynth -a alsa -m alsa_seq -l -i /usr/share/soundfonts/FluidR3_GM.sf2 example.midi
 
 ```
 
@@ -40,7 +40,7 @@ One may wish to use pulseaudio instead of alsa as the argument to the -a option.
 If you want fluidsynth to run as ALSA daemon, edit `/etc/conf.d/fluidsynth` and add your soundfont along with any other changes you would like to make. For e.g., fluidr3:
 
 ```
-SOUND_FONT=/usr/share/soundfonts/FluidR3_GM2-2.sf2
+SOUND_FONT=/usr/share/soundfonts/FluidR3_GM.sf2
 AUDIO_DRIVER=alsa
 OTHER_OPTS='-is -m alsa_seq -r 48000'
 
@@ -81,7 +81,7 @@ Requires [twolame](https://www.archlinux.org/packages/?sort=&q=twolame&maintaine
 Simple command lines to convert midi to ogg:
 
 ```
-$ fluidsynth -nli -r 48000 -o synth.cpu-cores=2 -T oga -F example.ogg /usr/share/soundfonts/fluidr3/FluidR3GM.SF2 example.MID
+$ fluidsynth -nli -r 48000 -o synth.cpu-cores=2 -T oga -F example.ogg /usr/share/soundfonts/FluidR3_GM.sf2 example.MID
 
 ```
 
@@ -93,7 +93,7 @@ maxjobs=$(grep processor /proc/cpuinfo | wc -l)
 midi2ogg() {
 	name=$(echo $@ | sed -r s/[.][mM][iI][dD][iI]?$//g | sed s/^[.][/]//g)
 	for arg; do 
-	fluidsynth -nli -r 48000 -o synth.cpu-cores=$maxjobs -F "/dev/shm/$name.raw" /usr/share/soundfonts/fluidr3/FluidR3GM.SF2 "$@"
+	fluidsynth -nli -r 48000 -o synth.cpu-cores=$maxjobs -F "/dev/shm/$name.raw" /usr/share/soundfonts/FluidR3_GM.sf2 "$@"
 	oggenc -r -B 16 -C 2 -R 48000 "/dev/shm/$name.raw" -o "$name.ogg"
 	rm "/dev/shm/$name.raw"
 	## Uncomment for replaygain tagging

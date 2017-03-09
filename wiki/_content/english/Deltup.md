@@ -24,6 +24,7 @@ Edit `/etc/pacman.d/mirrorlist` and add the proper repository:
 
 ## Delta Archlinux.fr
 Server = http://delta.archlinux.fr/$repo/os/$arch
+Server = https://delta.0web.ir/$repo/os/$arch
 .....
 ```
 

@@ -22,8 +22,6 @@
     *   [4.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
     *   [4.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
     *   [4.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
-    *   [4.5 X server does not start unless user is root](#X_server_does_not_start_unless_user_is_root)
-    *   [4.6 Not authorized to perform operation when mounting device](#Not_authorized_to_perform_operation_when_mounting_device)
 *   [5 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
 *   [6 See also](#See_also)
 
@@ -182,33 +180,6 @@ To prevent a missing file error, create the file:
 
 ```
 # touch /etc/sysctl.conf
-
-```
-
-### X server does not start unless user is root
-
-With Xorg 1.16, X was made rootless and now relies on systemd-login. Using `startx` will not work as-is when running OpenRC as your init system.
-
-To solve this, create the `/etc/X11/Xwrapper.config` file with the following contents:
-
-```
-# Xorg.wrapper configuration file
-needs_root_rights = yes
-
-```
-
-### Not authorized to perform operation when mounting device
-
-When you use `startx` to start `Xfce`, you may not be able mount other devices directly in `thunar`, in this case, you can change your `~/.xinitrc` file with codes below. [[6]](https://bbs.archlinux.org/viewtopic.php?pid=976373#p976373)
-
-```
-#if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-# for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-#  [ -x "$f" ] && . "$f"
-# done
-# unset f
-#fi
-exec ck-launch-session startxfce4
 
 ```
 

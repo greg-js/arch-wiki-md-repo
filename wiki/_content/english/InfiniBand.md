@@ -54,7 +54,7 @@ This page explains how to set up, diagnose, and benchmark an InfiniBand network.
         *   [5.1.2 getaddrinfo failed: Name or service not known](#getaddrinfo_failed:_Name_or_service_not_known)
     *   [5.2 Speed problems](#Speed_problems)
 *   [6 Network segmentation](#Network_segmentation)
-*   [7 How can I use libsdp for SDP (Sockets Direct Protocol)? =](#How_can_I_use_libsdp_for_SDP_.28Sockets_Direct_Protocol.29.3F_.3D)
+*   [7 How can I use libsdp for SDP (Sockets Direct Protocol)?](#How_can_I_use_libsdp_for_SDP_.28Sockets_Direct_Protocol.29.3F)
 
 ## Introduction
 
@@ -763,7 +763,7 @@ Does this match your expected [bandwidth and number of virtual lanes](#Bandwidth
 
 An InfiniBand subnet can be partitioned for different customers or applications, giving security and quality of service guarantees. Each partition is identified by a PKEY (Partition Key.)
 
-## How can I use libsdp for SDP (Sockets Direct Protocol)? =
+## How can I use libsdp for SDP (Sockets Direct Protocol)?
 
 Use [librdmacm](https://aur.archlinux.org/packages/librdmacm/) instead. (When it started, it was called rsockets.)
 

@@ -26,10 +26,10 @@
 *   [7 Useful tips](#Useful_tips)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Cannot start a container with systemd 232](#Cannot_start_a_container_with_systemd_232)
-    *   [8.2 Docker info errors out](#Docker_info_errors_out)
-    *   [8.3 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
-    *   [8.4 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [8.5 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+    *   [8.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
+    *   [8.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
+    *   [8.4 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+    *   [8.5 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -360,19 +360,6 @@ To grab the IP address of a running container:
 
 Append `systemd.legacy_systemd_cgroup_controller=yes` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), see [bug report](https://github.com/opencontainers/runc/issues/1175) for details.
 
-### Docker info errors out
-
-If running `docker info` gives an error that looks like this:
-
-```
- FATA[0000] Get [http:///var/run/docker.sock/v1.17/info](http:///var/run/docker.sock/v1.17/info): read unix /var/run/docker.sock: connection reset by peer. Are you trying to connect to a TLS-enabled daemon without TLS? 
-
-```
-
-then you might not have the `bridge` module loaded. You can check for it by running `lsmod` . If it is not loaded, you can try to load it with `modprobe` or simply reboot (a reboot might be required if you have upgraded your kernel recently without rebooting and the bridge module was built for the more recent kernel.)
-
-See [this issue on GitHub for more information](https://github.com/docker/docker/issues/6853).
-
 ### Deleting Docker Images in a BTRFS Filesystem
 
 Deleting docker images in a [btrfs](/index.php/Btrfs "Btrfs") filesystem leaves the images in `/var/lib/docker/btrfs/subvolumes/` with a size of 0\. When you try to delete this you get a permission error.
@@ -437,6 +424,17 @@ EOF
 # systemctl restart docker.service
 
 ```
+
+### Error initializing graphdriver: devmapper
+
+If `systemctl` fails to start docker and provides an error:
+
+```
+ Error starting daemon: error initializing graphdriver: devmapper: Device docker-8:2-915035-pool is not a thin pool
+
+```
+
+Then, try the following steps to resolve the error. Stop the service, back up `/var/lib/docker/` (if desired), remove the contents of `/var/lib/docker/`, and try to start the service. See the open [GitHub issue](https://github.com/docker/docker/issues/21304) for details.
 
 ## See also
 

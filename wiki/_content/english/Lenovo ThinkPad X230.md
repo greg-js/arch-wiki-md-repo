@@ -117,21 +117,13 @@ RemainAfterExit=yes
 
 Some models come with an integrated USB UMTS modem.
 
-```
-$ lsusb -d 0bdb:1926 
-Bus 003 Device 004: ID 0bdb:1926 Ericsson Business Mobile Networks BV H5321 gw Mobile Broadband Driver
-
-```
+ `$ lsusb -d 0bdb:1926`  `Bus 003 Device 004: ID 0bdb:1926 Ericsson Business Mobile Networks BV H5321 gw Mobile Broadband Driver` 
 
 In order for it to work with [NetworkManager](/index.php/NetworkManager "NetworkManager"), you will need to install [ModemManager](https://www.archlinux.org/packages/?name=modemmanager) from the official repositories.
 
 For it to be recognized by ModemManager, you also need to set the kernel module option to:
 
-```
-# /etc/modprobe.d/umts-modem.conf
-options cdc_ncm prefer_mbim=N
-
-```
+ `/etc/modprobe.d/umts-modem.conf`  `options cdc_ncm prefer_mbim=N` 
 
 ## Power Saving
 

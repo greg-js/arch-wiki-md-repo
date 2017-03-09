@@ -28,9 +28,10 @@ This tutorial shows how to download, install, and configure the following softwa
         *   [2.2.2 With freetype2 2.5.0.1-1](#With_freetype2_2.5.0.1-1)
         *   [2.2.3 With ncurses 5.9](#With_ncurses_5.9)
         *   [2.2.4 lib32-glibc 2.23-1](#lib32-glibc_2.23-1)
-        *   [2.2.5 Install libraries](#Install_libraries)
     *   [2.3 Application Menu Entry - ModelSim-Altera Edition](#Application_Menu_Entry_-_ModelSim-Altera_Edition)
-    *   [2.4 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_.22ModelSim_Failed_to_access_library_.27work.27.22_error)
+    *   [2.4 Troubleshooting](#Troubleshooting_2)
+        *   [2.4.1 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_.22ModelSim_Failed_to_access_library_.27work.27.22_error)
+        *   [2.4.2 Crash with "Error: couldn't open socket: host is unreachable"](#Crash_with_.22Error:_couldn.27t_open_socket:_host_is_unreachable.22)
 
 ## Quartus Prime Standard Edition
 
@@ -440,12 +441,6 @@ export LD_LIBRARY_PATH=${HOME}/altera/xx.x/lib32;${HOME}/altera/xx.x/lib32/glibc
 
 ```
 
-#### Install libraries
-
-Install library *libxft* and *ncurses*: [libxft](https://www.archlinux.org/packages/?name=libxft), [ncurses](https://www.archlinux.org/packages/?name=ncurses), [libxext](https://www.archlinux.org/packages/?name=libxext).
-
-For 64 bit edition, install these library from [multilib](/index.php/Multilib "Multilib") repository: [lib32-libxft](https://www.archlinux.org/packages/?name=lib32-libxft), [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses), [lib32-libxext](https://www.archlinux.org/packages/?name=lib32-libxext).
-
 ### Application Menu Entry - ModelSim-Altera Edition
 
 You can add Modelsim to your system application menu by creating a `modelsim.desktop` file in your `~/.local/share/applications` directory
@@ -468,7 +463,9 @@ Categories=Development
 
 ```
 
-### Resolving the "ModelSim Failed to access library 'work'" error
+### Troubleshooting
+
+#### Resolving the "ModelSim Failed to access library 'work'" error
 
 The solution was originally documented here: [http://jackeyblog.blogspot.com/2005/07/note-myself-modelsim-failed-to-access.html](http://jackeyblog.blogspot.com/2005/07/note-myself-modelsim-failed-to-access.html)
 
@@ -483,5 +480,25 @@ when running a simulation in a new directory, you must create a new `work` direc
 
 ```
 ModelSim> vlib work
+
+```
+
+#### Crash with "Error: couldn't open socket: host is unreachable"
+
+If ModelSilm crash while trying to start a simulation with the error:
+
+```
+Error: couldn't open socket: host is unreachable
+Trouble making server.
+
+```
+
+then you may need to add an entry for `localhost` in your `/etc/hosts` file:
+
+ ` /etc/hosts` 
+```
+  #<ip-address>  <hostname.domain.org>  <hostname>
+  ...
+  127.0.0.1      localhost              *yourhostname*
 
 ```

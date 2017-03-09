@@ -1,12 +1,3 @@
-## Contents
-
-*   [1 Summary](#Summary)
-*   [2 Installation](#Installation)
-*   [3 Usage](#Usage)
-*   [4 The 'cannot connect to X server :0.0' output](#The_.27cannot_connect_to_X_server_:0.0.27_output)
-
-## Summary
-
 From Xhost man page:
 
 The xhost program is used to add and delete host names or user names to the list allowed to make connections to the X server. In the case of hosts, this provides a rudimentary form of privacy control and security. It is only sufficient for a workstation (single user) environment, although it does limit the worst abuses. Environments which require more sophisticated measures should implement the user-based mechanism or use the hooks in the protocol for passing other authentication data to the server.

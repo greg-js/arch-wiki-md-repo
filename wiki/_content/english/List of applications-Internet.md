@@ -981,7 +981,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 ###### Skype
 
-*   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for high-quality voice communication.
+*   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
 
 	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 

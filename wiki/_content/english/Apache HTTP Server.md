@@ -169,6 +169,7 @@ Create a private key and self-signed certificate. This is adequate for most inst
 If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request"), follow these keygen instructions instead of the above:
 
 ```
+# cd /etc/httpd/conf
 # openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out server.key
 # chmod 400 server.key
 # openssl req -new -sha256 -key server.key -out server.csr

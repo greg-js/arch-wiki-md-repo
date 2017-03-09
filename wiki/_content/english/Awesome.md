@@ -343,7 +343,7 @@ Note that the `.desktop` files are re-read each time awesome starts, thereby slo
 
 ### Pop-up menus
 
-There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)*. See [[6]](https://gist.github.com/anonymous/5a5ea49638662cefdb3b) for an example for awesome3.
+There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
 
 ### Applications menu
 
@@ -376,7 +376,7 @@ awful.titlebar.hide(c)
 
 ### Battery notification
 
-See [[7]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
+See [[6]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
 
 ### Media Controls
 
@@ -510,7 +510,7 @@ keysym Caps_Lock = Super_L Caps_Lock
 
 ### Fix Java (GUI appears gray only)
 
-See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[8]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
+See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[7]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
 
 ### Eclipse: cannot resize/move main window
 
@@ -558,7 +558,7 @@ or:
 
 ```
 
-See [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
+See [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
 
 ### Prevent the mouse scroll wheel from changing tags
 

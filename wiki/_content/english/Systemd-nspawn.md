@@ -33,7 +33,6 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
-    *   [5.3 systemd-nspawn@myContainer fails to start](#systemd-nspawn.40myContainer_fails_to_start)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -98,7 +97,7 @@ To start the resulting i686 Arch Linux systemd-nspawn instance, just issue the f
 
 Install [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), and one or both of [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/) and [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) (obviously install the keyrings for the distros you want).
 
-**Note:** systemd-nspawn requires that the os in the container has systemd running as PID 1, this means Ubuntu before 15.04 will not work out of the box and requires additional configuration to switch from upstart to systemd.
+**Note:** *systemd-nspawn* requires that the operating system in the container has systemd running as PID 1 and *systemd-nspawn* is installed in the container. This means Ubuntu before 15.04 will not work out of the box and requires additional configuration to switch from upstart to systemd. Also make sure that the `systemd-container` package is installed on the container system.
 
 From there it's rather easy to setup Debian or Ubuntu environments:
 
@@ -363,20 +362,6 @@ Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container
 ### Unable to upgrade some packages on the container
 
 It can sometimes be impossible to upgrade some packages on the container, [filesystem](https://www.archlinux.org/packages/?name=filesystem) being a perfect example. The issue is due to `/sys` being mounted as Read Only. The workaround is to remount the directory in Read Write when running `mount -o remount,rw -t sysfs sysfs /sys`, do the upgrade then reboot the container.
-
-### systemd-nspawn@myContainer fails to start
-
-You may encounter the following error message when trying to start `systemd-nspawn@myContainer`:
-
-```
-systemd-nspawn[451]: execv() failed: No such file or directory
-systemd[1]: systemd-nspawn@myContainer.service: Main process exited, code=exited, status=1/FAILURE
-systemd[1]: systemd-nspawn@myContainer.service: Unit entered failed state.
-systemd[1]: systemd-nspawn@myContainer.service: Failed with result 'exit-code'.
-
-```
-
-Make sure that `systemd-nspawn` is installed inside the container system. For instance on debian-based container systems, install `systemd-container` package.
 
 ## See also
 

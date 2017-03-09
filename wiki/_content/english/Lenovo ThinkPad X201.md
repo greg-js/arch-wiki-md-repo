@@ -10,7 +10,7 @@ The [Lenovo X201](https://support.lenovo.com/us/en/documents/migr-75044) is a du
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Card reader | Yes |
 | [Power management](/index.php/Power_management "Power management") | Limited |
-| [Backlight](/index.php/Backlight "Backlight") | Limited |
+| [Backlight](/index.php/Backlight "Backlight") | Yes |
 
 ## Contents
 
@@ -30,19 +30,19 @@ The [Lenovo X201](https://support.lenovo.com/us/en/documents/migr-75044) is a du
 
 ### Backlight
 
-As of [linux](https://www.archlinux.org/packages/?name=linux) 3.16, backlight keys must be configured manually. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=81691#c11) See [Backlight](/index.php/Backlight "Backlight") for details.
+Append the `acpi_backlight=video` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 ### Hibernation
 
-See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate"). Hibernation works with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (up to [4.1.21](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/linux-lts&id=c9883bea839496e92108533914e6b428c3f5f0a8)).
+See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate").
 
 ## Troubleshooting
 
 ### Overheating
 
-There are some discussions concerning overheating-related shutdowns when running under full load (video encoding, etc). [[2]](http://forums.lenovo.com/t5/X-Series-ThinkPad-Laptops/x201-random-shutdown/td-p/227471) [[3]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/751689)
+There are some discussions concerning overheating-related shutdowns when running under full load (video encoding, etc). [[1]](http://forums.lenovo.com/t5/X-Series-ThinkPad-Laptops/x201-random-shutdown/td-p/227471) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/751689)
 
-Use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/) configuration [[4]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
+Use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/) configuration [[3]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
 
  `/etc/thinkfan.conf` 
 ```
@@ -68,9 +68,7 @@ Try pressing the **mute button** (next to the Escape key). See [this article](ht
 
 ### No ACPI events
 
-After suspension, an EC IRQ may hang in the queue causing all functions keys to stop working. [[6]](http://www.coreboot.org/Board:lenovo/x201)
-
-Other issues include the yellow USB port not being powered.
+See coreboot documentation: [[4]](https://www.coreboot.org/Board:lenovo/x201) [[5]](http://www.coreboot.org/pipermail/coreboot-gerrit/2015-July/028593.html)
 
 ### Display issues
 
@@ -78,7 +76,7 @@ See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel grap
 
 ### Hardware virtualization
 
-If [KVM](/index.php/KVM "KVM") claims virtualization support is disabled in BIOS, even with VT-x enabled, disable Intel TXT. [[7]](https://groups.google.com/forum/#!topic/qubes-users/4NP4goUds2c)
+If [KVM](/index.php/KVM "KVM") claims virtualization support is disabled in BIOS, even with VT-x enabled, disable Intel TXT. [[6]](https://groups.google.com/forum/#!topic/qubes-users/4NP4goUds2c)
 
 ## lspci
 

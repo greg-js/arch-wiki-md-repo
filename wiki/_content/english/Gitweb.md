@@ -125,8 +125,6 @@ Next we need to make a gitweb config file. Open (or create if it does not exist)
 
  `/etc/gitweb.conf` 
 ```
-our $git_temp = "/tmp";
-
 # The directories where your projects are. Must not end with a slash.
 our $projectroot = "/path/to/your/repositories"; 
 

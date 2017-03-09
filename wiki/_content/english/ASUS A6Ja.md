@@ -180,4 +180,4 @@ Lapsus is a set of programs created to help manage additional laptop features su
 
 Install [lapsus](https://github.com/aur-archive/lapsus) or [lapsus-svn](https://github.com/aur-archive/lapsus-svn) from the AUR archive. There will be certain complications. First, the berlios.de site on which the lapsus project was formerly hosted has closed down. Fortunately, the code is [archived on Google Code](https://code.google.com/p/lapsus/). You will need to modify the PKGBUILD accordingly. If you succeed in building the code you will need to create a lapsus.service file, since the PKGBUILDS antedate the adoption of systemd.
 
-Now start the lapsusd daemon: **systemctl start lapsusd**. If if works well, then enable it **systemctl enable lapsusd**.
+Now [start/enable](/index.php/Start/enable "Start/enable") the `lapsusd` daemon.

@@ -608,6 +608,18 @@ main = putStrLn "Arch is the best!"
 
 ```
 
+	Idris
+
+	A general purpose pure functional programming language with dependent types. Haskell, but crazier.
+
+```
+module Main
+
+main : IO ()
+main = putStrLn "Arch is the best!"
+
+```
+
 	Io
 
 	A pure object-oriented programming language inspired by Smalltalk, Self, Lua, Lisp, Act1, and NewtonScript.
@@ -959,6 +971,20 @@ PRINT "Arch is the best!"
 archIsBest <- function() { cat("Arch is the best!
 ") }
 archIsBest()
+
+```
+
+	Racket
+
+	A general purpose, multi-paradigm programming language in the Lisp-Scheme family.
+
+```
+#lang racket
+
+(let ([str "Arch is the best!
+"])
+    (write-string str)
+    (values))
 
 ```
 
@@ -1338,9 +1364,18 @@ So Arch, Much Good, Wow
 	Dutch
 
 ```
-Arch is het best!
+Arch is het beste!
 
 ```
+
+	or
+
+```
+Arch is de beste!
+
+```
+
+(these have a slighty different meaning)
 
 	Esperanto
 
@@ -1530,6 +1565,15 @@ Arch yra geriausias!
 la .artc. xagrai
 
 ```
+
+	or for those who prefer an experimental grammar
+
+```
+la'oi Arch xagrai
+
+```
+
+(to mi catlu do doi la bauspo fazykamni toi)
 
 	Lolcat
 
