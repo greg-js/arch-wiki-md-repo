@@ -126,15 +126,15 @@ This [guide](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_
 
 ## lspci
 
+`lspci` returns this on P50 model 20EN:
+
 ```
 00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 07)
 00:01.0 PCI bridge: Intel Corporation Skylake PCIe Controller (x16) (rev 07)
-00:02.0 VGA compatible controller: Intel Corporation Device 191d (rev 06)
 00:14.0 USB controller: Intel Corporation Sunrise Point-H USB 3.0 xHCI Controller (rev 31)
 00:14.2 Signal processing controller: Intel Corporation Sunrise Point-H Thermal subsystem (rev 31)
 00:16.0 Communication controller: Intel Corporation Sunrise Point-H CSME HECI #1 (rev 31)
 00:17.0 SATA controller: Intel Corporation Sunrise Point-H SATA controller [AHCI mode] (rev 31)
-00:1b.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Root Port #17 (rev f1)
 00:1c.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #1 (rev f1)
 00:1c.2 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #3 (rev f1)
 00:1c.4 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #5 (rev f1)
@@ -145,22 +145,22 @@ This [guide](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_
 00:1f.3 Audio device: Intel Corporation Sunrise Point-H HD Audio (rev 31)
 00:1f.4 SMBus: Intel Corporation Sunrise Point-H SMBus (rev 31)
 00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (2) I219-LM (rev 31)
-01:00.0 VGA compatible controller: NVIDIA Corporation GM107GLM [Quadro M2000M] (rev ff)
-02:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller (rev 01)
+01:00.0 VGA compatible controller: NVIDIA Corporation GM107GLM [Quadro M2000M] (rev a2)
+01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
 04:00.0 Network controller: Intel Corporation Wireless 8260 (rev 3a)
 3e:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller (rev 01)
 3f:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS525A PCI Express Card Reader (rev 01)
 
 ```
 
-`lsusb` returns something like:
+`lsusb` returns something like this on P50 model 20EN:
 
 ```
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 004: ID 138a:0090 Validity Sensors, Inc.
-Bus 001 Device 003: ID 04f2:b52c Chicony Electronics Co., Ltd
-Bus 001 Device 006: ID 8087:0a2b Intel Corp.
-Bus 001 Device 005: ID 0765:5010 X-Rite, Inc.
+Bus 001 Device 003: ID 138a:0090 Validity Sensors, Inc. 
+Bus 001 Device 002: ID 04f2:b52c Chicony Electronics Co., Ltd 
+Bus 001 Device 005: ID 0765:5010 X-Rite, Inc. X-Rite Pantone Color Sensor
+Bus 001 Device 004: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```

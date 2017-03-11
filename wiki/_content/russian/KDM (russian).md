@@ -11,11 +11,13 @@
 
 ## Вступление
 
-KDM (KDE Display Manager) это менеджер входа в систему для KDE. Он поддерживает различные темы оформления, автовход, выбор графического окружения для входа и т.д.
+KDM (KDE Display Manager) это менеджер входа в систему для KDE4\. Он поддерживает различные темы оформления, автовход, выбор графического окружения для входа и т.д.
 
 ## Установка
 
-*Смотрите [Display manager (Русский)](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").*
+Скачайте [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/). Инструкция по установке пакетов AUR [Help:Reading (Русский)#Репозиторий пользователей Arch (AUR)](/index.php/Help:Reading_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_Arch_.28AUR.29 "Help:Reading (Русский)")
+
+Затем следуйте [Display manager (Русский)#Запуск экранного менеджера](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0 "Display manager (Русский)") для запуска KDM при загрузке.
 
 ## Настройка
 

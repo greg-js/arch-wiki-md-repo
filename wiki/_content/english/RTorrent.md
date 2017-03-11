@@ -3,6 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Unofficial packages](#Unofficial_packages)
 *   [2 Configuration](#Configuration)
     *   [2.1 Performance](#Performance)
     *   [2.2 Create and manage files](#Create_and_manage_files)
@@ -29,21 +30,31 @@
     *   [6.2 Saving magnet links as torrent files in watch folder](#Saving_magnet_links_as_torrent_files_in_watch_folder)
 *   [7 Magnet to Torrent](#Magnet_to_Torrent)
     *   [7.1 In order to use this with an ARM device](#In_order_to_use_this_with_an_ARM_device)
-*   [8 rtorrent-pyro](#rtorrent-pyro)
-    *   [8.1 PyroScope](#PyroScope)
-*   [9 See also](#See_also)
+*   [8 rtorrent-ps](#rtorrent-ps)
+    *   [8.1 Installation](#Installation_2)
+    *   [8.2 Configuration](#Configuration_2)
+*   [9 PyroScope command line utilities](#PyroScope_command_line_utilities)
+*   [10 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) package that is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Alternatively, install the [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) or [rtorrent-vi-color](https://aur.archlinux.org/packages/rtorrent-vi-color/) package.
+### Unofficial packages
+
+*   [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) - Git [master branch](https://github.com/rakshasa/rtorrent) package
+
+*   [rtorrent-ps](https://aur.archlinux.org/packages/rtorrent-ps/) - Release package with [rtorrent-ps patchset](https://github.com/pyroscope/rtorrent-ps)
+
+*   [rtorrent-pyro-git](https://aur.archlinux.org/packages/rtorrent-pyro-git/) - Git [feature-bind branch](https://github.com/rakshasa/rtorrent/tree/feature-bind) package with [rtorrent-ps patchset](https://github.com/pyroscope/rtorrent-ps)
+
+*   [rtorrent-vi-color](https://aur.archlinux.org/packages/rtorrent-vi-color/) - Release package with vi-like key bindings
 
 ## Configuration
 
 **Note:**
 
-*   See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks).
+*   See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent).
 *   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax=conf:` to `~/.rtorrent.rc`.
 
 Before running rTorrent, find the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` and copy it to `~/.rtorrent.rc`:
@@ -55,7 +66,7 @@ $ cp /usr/share/doc/rtorrent/rtorrent.rc ~/.rtorrent.rc
 
 ### Performance
 
-**Note:** See the rTorrent wiki article on this subject for more information: [Performance Tuning](http://web.archive.org/web/20140213011439/http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning)
+**Note:** See the rTorrent wiki article on this subject for more information: [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
 
 The values for the following options are dependent on the system's hardware and Internet connection speed. To find the optimal values read: [Optimize Your BitTorrent Download Speed](http://torrentfreak.com/optimize-your-BitTorrent-download-speed)
 
@@ -796,7 +807,7 @@ You could also use the [magnet2torrent-git](https://aur.archlinux.org/packages/m
 How to use:
 
 ```
-$ magnet2torrent <magnet link> [torrent file]
+$ magnet2torrent -m <magnet link> -o [torrent file]
 
 ```
 
@@ -812,77 +823,27 @@ libtorrent-rasterbar 1:1.0.9-1
 
 Then you can compile magnet2torrent-git package.
 
-## rtorrent-pyro
+## rtorrent-ps
 
-[rtorrent-pyro-git](https://aur.archlinux.org/packages/rtorrent-pyro-git/) from the [AUR](/index.php/AUR "AUR") comes with an extended rtorrent console interface. It does not contain the pyroscope tools yet though. If you also need the pyroscope tools see [#PyroScope](#PyroScope) .
+[rTorrent-PS](https://github.com/pyroscope/rtorrent-ps) is an rTorrent distribution in form of a patchset with UI enhancements, colorization, and some added features.
 
-Make sure you add following command to ~/.rtorrent.rc, which makes the asterisk key * to a shortcut for toggling between extended and collapsed view within rtorrent's interface:
+### Installation
 
- `schedule = bind_collapse,0,0,"ui.bind_key=download_list,*,view.collapsed.toggle="` 
+Use the various packages available in the AUR, or alternatively create a package using the build script from the GitHub repository, which additionally builds pre-tested dependency versions and may help avoid known issues.
 
-Also set "pyro.extended" to 1 to activate rTorrent-PS features.
+### Configuration
+
+Set "pyro.extended" to 1 in your rTorrent configuration file to activate rTorrent-PS features.
 
  `system.method.insert = pyro.extended, value|const, 1` 
-**Note:** You may notice that some systemd service scripts for rtorrent do not work with rtorrent-ps installed. If you are using tmux or screen this may because it is exiting with the error, "your terminal only supports 8 colors". To fix this make sure your tmux/screen config sets the TERM variable to a 256 color variant, or change your rtorrent theme to an 8 color one such as [https://github.com/pyroscope/rtorrent-ps/blob/master/docs/examples/color_scheme8.rc](https://github.com/pyroscope/rtorrent-ps/blob/master/docs/examples/color_scheme8.rc).
 
-### PyroScope
+See rtorrent-ps templates of the [pimp-my-box](https://github.com/pyroscope/pimp-my-box/tree/master/roles/rtorrent-ps/templates/rtorrent/rtorrent.d) repository for additional configuration examples. Be aware they may require PyroScope command line utilities to work.
 
-We create a directory for the installation of pyroscope, then download and update the source code from subversion:
+## PyroScope command line utilities
 
-```
-mkdir -p ~/.lib
-git clone "https://github.com/pyroscope/pyrocore.git" ~/.lib/pyroscope
-~/.lib/pyroscope/update-to-head.sh
-```
+[PyroScope command line utilities](https://github.com/pyroscope/pyrocore/) are a collection of tools for the the rTorrent client that work well together with the [#rtorrent-ps](#rtorrent-ps) patchset. Amongst other things, they provide automation for common tasks and a queue manager for rTorrent.
 
-Adding pyroscope bin's PATH to .bashrc:
-
- `export PATH=$PATH:path_to_the_bin      # Example path for pyroscope bin's: /home/user/.lib/pyroscope/bin/` 
-
-Creating the ~/.pyroscope/config.ini:
-
- `pyroadmin --create-config` 
-
-Add this to your ~/.rtorrent.rc. Do not forget to add the path of your pyroscope bin's dir (see below).
-
-```
-system.method.insert = pyro.bin_dir, string|const, write_here_path_to_your_pyroscope_bin_dir     # Example path: /home/user/.lib/pyroscope/bin/
-system.method.insert = pyro.rc_dialect, string|const|simple, "execute_capture=bash,-c,\"test $1 = 0.8.6 && echo -n 0.8.6 || echo -n 0.8.9\",dialect,$system.client_version="
-system.method.insert = pyro.rtorrent_rc, string|const|private, "$cat=~/.pyroscope/rtorrent-,\"$pyro.rc_dialect=\",.rc.default"
-import = $pyro.rtorrent_rc=
-```
-
-Optionally: TORQUE: Daemon watchdog schedule. Must be activated by touching the "~/.pyroscope/run/pyrotorque" file! You can also just use rtorrent watch dir or give pyro_watchdog a try, which comes with 'treewatch' ability, meaning it also watches for torrents recursively within the given watch path. Further documentation for pyro_watchdog is here: [[1]](http://code.google.com/p/pyroscope/wiki/QueueManager) To enable pyro_watchdog, add this in ~/.rtorrent.rc and further configurations are in ~/.pyroscope/torque.ini.
-
- `schedule = pyro_watchdog,30,300,"pyro.watchdog=~/.pyroscope,-v"` 
-
-Following steps are important. Before using pyroscope tools you have to set the missing "loaded" times to that of the .torrent file. Run this in your terminal:
-
-```
-rtcontrol '!*"*' loaded=0 -q -sname -o 'echo "$(name)s"
-test -f "$(metafile)s" && rtxmlrpc -q d.set_custom $(hash)s tm_loaded \$(\
-    ls -l --time-style "+%%s" "$(metafile)s" \
-    | cut -f6 -d" ")
-rtxmlrpc -q d.save_session $(hash)s' | bash
-```
-
-And now set the missing "completed" times to that of the data file or directory:
-
-```
-rtcontrol '!*"*' completed=0 done=100 path=\! is_ghost=no -q -sname -o 'echo "$(name)s"
-test -e "$(realpath)s" && rtxmlrpc -q d.set_custom $(hash)s tm_completed \$(\
-    ls -ld --time-style "+%%s" "$(realpath)s" \
-    | cut -f6 -d" ")
-rtxmlrpc -q d.save_session $(hash)s' | bash
-```
-
-Example usage: Will print out all torrents older than 2 hours:
-
- `rtcontrol -V completed=+2h -scompleted -ocompleted` 
-
-Deletes all torrents older than 48 hours:
-
- `rtcontrol -V completed=+48h -scompleted -ocompleted --cull --yes` 
+Follow the [official documentation](https://pyrocore.readthedocs.io/) for installation and configuration. See rtorrent-ps templates of the [pimp-my-box](https://github.com/pyroscope/pimp-my-box/tree/master/roles/rtorrent-ps/templates/rtorrent/rtorrent.d) repository for additional configuration examples.
 
 ## See also
 

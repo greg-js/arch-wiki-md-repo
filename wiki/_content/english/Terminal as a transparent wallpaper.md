@@ -38,7 +38,7 @@ Under *Scrolling* you must **select** "Disabled".
 
 ```
 
-That's all you need, to run Tilda go to Applications –> Accessories –> Tilda and you should see it right there. The reason its not what I use for my transparent terminal because this is an easy fix and not very stable and crashes quite often (at least for me), while I know others who are quite happy with Tilda. Other reason is that not allways stay as wallpaper, if you use the "pulldown key" (F1) it comes to front.
+That's all you need, to run Tilda go to Applications –> Accessories –> Tilda.
 
 ## The Professional Way
 

@@ -786,7 +786,7 @@ Cree el archivo de configuración del menú de GRUB:
 
 ```
 
-[Instale GRUB](/index.php/GRUB#Install "GRUB") para la ESP montada:
+[Instale GRUB](/index.php/GRUB#Installation_2 "GRUB") para la ESP montada:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --recheck

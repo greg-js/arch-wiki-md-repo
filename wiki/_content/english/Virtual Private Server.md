@@ -164,4 +164,4 @@ DNS=('2001:4860:4860::8888' '2001:4860:4860::8844' '8.8.8.8' '8.8.4.4')
 
 ### Xen
 
-See [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_.28PVHVM_mode.29 "Xen") and/or [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_.28PV_mode.29 "Xen").
+See [Xen](/index.php/Xen "Xen").

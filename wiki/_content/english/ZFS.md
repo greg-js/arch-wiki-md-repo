@@ -962,7 +962,6 @@ WantedBy=local-fs.target
 
 ## See also
 
-*   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
 *   [ZFS on Linux](http://zfsonlinux.org/)
 *   [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq)
 *   [FreeBSD Handbook -- The Z File System](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/zfs.html)

@@ -80,7 +80,7 @@ Steps below were tested by contributors of this page and work perfectly. **Howev
 
 To update the BIOS from a USB drive, follow these steps (alternatively, you can download the iso, burn it to a CD, and then boot from the CD):
 
-1.  Download the latest firmware from the official [E440 Downloads](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e440?TabName=Downloads) page.
+1.  Download the latest firmware from the official [E440 Downloads](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e440?TabName=Downloads) page (search for "BIOS Update (Bootable CD) for Windows").
 2.  Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) utility.
 3.  Convert ISO image (change 'XX' to match the filename of downloaded .iso): `geteltorito.pl -o bios.img j9ujXXwd.iso` 
 4.  Write the image to the USB drive. Suppose, your drive is `/dev/sdb`. **Warning:** all information on USB stick will be lost!

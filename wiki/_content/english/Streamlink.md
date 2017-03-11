@@ -14,7 +14,7 @@ Support of a various streaming services is provided by a plugins, which can be e
 
 ## Installation
 
-[Install](/index.php/Install "Install") [streamlink](https://aur.archlinux.org/packages/streamlink/), available in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [streamlink](https://www.archlinux.org/packages/?name=streamlink) package or [streamlink-git](https://aur.archlinux.org/packages/streamlink-git/) from the [AUR](/index.php/AUR "AUR")
 
 ## Usage
 

@@ -22,11 +22,13 @@
     *   [5.3 Firewall](#Firewall_2)
     *   [5.4 Connect](#Connect)
         *   [5.4.1 SSH Tunnel](#SSH_Tunnel)
-*   [6 See Also](#See_Also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 No module named service_identity](#No_module_named_service_identity)
+*   [7 See Also](#See_Also)
 
 ## Installation
 
-Install [deluge](https://www.archlinux.org/packages/?name=deluge) and optionally [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity) as users may experience a lengthy warning and have their client reject many valid certificate/hostname mappings. Additional optional dependencies can be viewed using the [pacman -Si](#Querying_package_databases) command.
+Install [deluge](https://www.archlinux.org/packages/?name=deluge).
 
 **Note:** Currently, [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted) and its 4 other dependencies that pacman pulls in automatically when installing deluge are not removed due to a bug revolving around a dependency cycle, see: [FS#41031](https://bugs.archlinux.org/task/41031). Users can circumvent this by removing the affected packages (assuming they are not needed by other packages installed on the system): `pacman -Rs deluge python2-twisted`.
 
@@ -330,6 +332,22 @@ $ ssh -fNL 127.0.0.2:58846:localhost:58846 <ssh host>
 ```
 
 The port **58846** should be replaced with the port the deluge server is running on and **<ssh host>** should be replaced with the server hosting both deluge and the SSH server.
+
+## Troubleshooting
+
+### No module named service_identity
+
+Upon running `deluged` or `deluge-console`, you may recieve a message like the following:
+
+```
+:0: UserWarning: You do not have a working installation of the service_identity module: 'No module named service_identity'.  
+Please install it from <[https://pypi.python.org/pypi/service_identity](https://pypi.python.org/pypi/service_identity)> and make sure all of its dependencies are satisfied.  
+Without the service_identity module and a recent enough pyOpenSSL to support it, Twisted can perform only rudimentary TLS 
+client hostname verification.  Many valid certificate/hostname mappings may be rejected.
+
+```
+
+You may be missing [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity), which is an optional dependency to [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted). See [FS#43806](https://bugs.archlinux.org/task/43806).
 
 ## See Also
 

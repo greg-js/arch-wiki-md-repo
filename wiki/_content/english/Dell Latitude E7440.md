@@ -68,6 +68,17 @@ Tested on: i3-git, mesa-full-i965 and xf86-video-intel-git 2.99.911-1 but this w
 
 Laptop bios version A05\. ~~Meanwhile I've upgraded to bios version A08 and this issue seems to have been fixed.~~ Nope, it's still not fixed. If you want the video card to perform at full speed it is my impression you need to boot with the AC connected.
 
+*I believe this issue is caused by the combination of speedstep and intel_pstate driver. I disabled the driver in grub, falling back to the previous method for cpu control, and it seems to have improved things*
+
+*To disable, append your kernel options with:*
+
+```
+intel_pstate=disable
+
+```
+
+The above is a confirmed bug pertaining to Dell machines only, a workaround is being attempted in the kernel: [https://bugzilla.kernel.org/show_bug.cgi?id=90041](https://bugzilla.kernel.org/show_bug.cgi?id=90041)
+
 This is actually a "feature" called Intel SpeedStep, that reduces performance in order to extend battery life. It can be disabled in BIOS. The linux kernel seems to support it so it should be possible to configure this on OS level.
 
 *   [Wireless#iwlwifi](/index.php/Wireless#iwlwifi "Wireless") for Intel 7260 wifi card.

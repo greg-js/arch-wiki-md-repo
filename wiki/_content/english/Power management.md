@@ -544,7 +544,7 @@ By default it looks like this:
 
 #### USB autosuspend
 
-The linux kernel can automatically suspend USB devices when they are not in use. This can sometimes save quite a bit of power, however some USB devices are not compatible with USB power saving and start to misbehave (common for USB mice/keyboards). [udev](/index.php/Udev "Udev") rules based on whitelist or blacklist filtering can help to mitigate the problem.
+The Linux kernel can automatically suspend USB devices when they are not in use. This can sometimes save quite a bit of power, however some USB devices are not compatible with USB power saving and start to misbehave (common for USB mice/keyboards). [udev](/index.php/Udev "Udev") rules based on whitelist or blacklist filtering can help to mitigate the problem.
 
 The most simple and likely useless example is enabling autosuspend for all USB devices:
 

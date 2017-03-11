@@ -487,7 +487,7 @@ In the next step make sure the protocol and extension are changed to be IPv6 app
 Netfilter conntrack does not appear to track ICMPv6 Neighbor Discovery Protocol (the IPv6 equivalent of ARP), so we need to allow ICMPv6 traffic regardless of state for all directly attached subnets. The following should be inserted after dropping `--ctstate INVALID`, but before any other DROP or REJECT targets, along with a corresponding line for each directly attached subnet:
 
 ```
-# ip6tables -A INPUT -s fe80::/10 -p icmpv6 -j ACCEPT
+# ip6tables -A INPUT -s fe80::/10 -p ipv6-icmp -j ACCEPT
 
 ```
 

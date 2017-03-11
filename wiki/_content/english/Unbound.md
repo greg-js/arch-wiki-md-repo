@@ -354,7 +354,7 @@ ReadWritePaths=/etc/unbound /run
 RestrictAddressFamilies=AF_INET AF_UNIX
 RestrictRealtime=true
 SystemCallArchitectures=native
-SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete @resources
+SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete
 
 ```
 

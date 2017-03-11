@@ -28,7 +28,7 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 ## Installation
 
-**Warning:** Pipelight requires a browser with NPAPI support, e.g. Firefox. NPAPI support is **not** present in Chrome/Chromium or Opera.
+**Warning:** Pipelight requires a browser with NPAPI support. NPAPI support is **not** present in Chrome/Chromium, Firefox or Opera.
 
 Pipelight can be [installed](/index.php/Install "Install") with the [pipelight](https://aur.archlinux.org/packages/pipelight/) package.
 

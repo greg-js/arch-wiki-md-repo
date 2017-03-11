@@ -319,6 +319,10 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [quimup](https://aur.archlinux.org/packages/quimup/)
 
+*   **SkyMPC** — A simple MPD client, powered by Qt5
+
+	[https://github.com/soramimi/SkyMPC](https://github.com/soramimi/SkyMPC) || [skympc-git](https://aur.archlinux.org/packages/skympc-git/)
+
 ## See also
 
 *   [MPD Forum](http://forum.musicpd.org/)

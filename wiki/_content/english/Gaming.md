@@ -73,7 +73,9 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   The [Humble Store](https://www.humblebundle.com/store)
 
-*   [itch.io](https://itch.io/)|[itch](https://aur.archlinux.org/packages/itch/)
+*   **[itch.io](https://en.wikipedia.org/wiki/itch.io "wikipedia:itch.io")** — Indie game store.
+
+	[https://itch.io/](https://itch.io/) || [itch](https://aur.archlinux.org/packages/itch/)
 
 *   [GOG.com](http://www.gog.com/games/linux)
 
@@ -82,8 +84,6 @@ A good number are available in the [official repositories](/index.php/Official_r
 *   Many GOG.com titles come pre-packaged with DOSBox, ScummVM or Wine.
 
 ### Flash
-
-**Note:** The official Adobe Flash Player for Linux with NPAPI-based browsers is stuck at major version 11, whereas the current (as of August 25, 2015) major version is 18\. An up-to-date Adobe Flash Player is, however, obtainable on Linux with PPAPI-based browsers. Please see [wikipedia:Adobe Flash Player#Desktop platforms](https://en.wikipedia.org/wiki/Adobe_Flash_Player#Desktop_platforms "wikipedia:Adobe Flash Player") for more info. If you do not wish to install Chrome, however, there is an even more potent option to use the Windows version of Flash; see [http://community.linuxmint.com/tutorial/view/2028](http://community.linuxmint.com/tutorial/view/2028) for details.
 
 Several huge Flash games portals exists, among them are:
 

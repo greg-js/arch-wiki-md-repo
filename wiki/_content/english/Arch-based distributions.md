@@ -54,7 +54,6 @@ The following distributions include a pre-installed [Desktop environment](/index
 
 ### Others
 
-*   [Alpine Linux](http://alpinelinux.org/)
 *   [Arch Linux ARM](http://archlinuxarm.org/)
 *   [Arch-Anywhere](https://arch-anywhere.org/)
 *   [LinHES](http://linhes.org/)

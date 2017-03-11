@@ -190,7 +190,7 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 
 ```
 
-**提示：** 如果使用的服务端端口号小于1024，需要修改`usr/lib/systemd/system/shadowsocks-server@.service`使得`user=root`，之后使用`systemctl daemon-reload`重新载入守护进程配置，即可开启监听。
+**提示：** 如果使用的服务端端口号小于1024，需要修改`usr/lib/systemd/system/shadowsocks-server@.service`使得`user=root`，之后使用`systemctl daemon-reload`重新载入守护进程配置，即可开启监听。当然也可以用root权限运行，来开启端口号小于1024的监听
 
 #### 加密方法
 

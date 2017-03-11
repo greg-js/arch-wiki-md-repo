@@ -6,7 +6,10 @@
 *   [2 Права и собственность](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B0_.D0.B8_.D1.81.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
 *   [3 Управление пользователями](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F.D0.BC.D0.B8)
 *   [4 Управление группами](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B0.D0.BC.D0.B8)
-*   [5 Groups](#Groups)
+*   [5 Группы](#.D0.93.D1.80.D1.83.D0.BF.D0.BF.D1.8B)
+    *   [5.1 Пользовательские группы](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B)
+    *   [5.2 Системные группы](#.D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B)
+    *   [5.3 Pre-systemd groups](#Pre-systemd_groups)
 
 ## Обзор
 
@@ -234,62 +237,54 @@ $ cat /etc/group
 
 Пользователю необходимо перезайти в систему, чтобы изменения вступили в силу.
 
-## Groups
+## Группы
 
-Workstation/desktop users often add their non-root user to the following groups to allow access to peripherals and other hardware and facilitate system administration:
+### Пользовательские группы
 
-*   audio
-*   floppy
-*   lp
-*   network
-*   optical
-*   power
-*   storage
-*   video
-*   wheel
+Некоторые пользователи должны состоять в некоторых из следующих групп, чтобы получить доступ к периферийным устройствам и упростить администрирование системы:
 
-<caption>A list of groups and their function (sorted alphabetically)</caption>
-| Group | Affected files | Purpose |
-| adm | `/var/log/*` | Read access to log files. |
-| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Access to sound hardware. |
-| avahi |
-| bin | `/usr/bin/*` | Right to modify binaries only by root, but right to read or executed by anyone. (Please modify this for better understanding...) |
-| camera | Access to [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras"). |
-| clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | Used by [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus"). |
-| daemon |
-| dbus | `/var/run/dbus/*` |
-| disk | `/dev/sda[1-9]`, `/dev/sdb[1-9]` | Access to block devices not affected by other groups such as optical, floppy, and storage. |
-| floppy | `/dev/fd[0-9]` | Access to floppy drives. |
-| ftp | `/srv/ftp` |
-| games | `/var/games` | Access to some game software. |
-| gdm |
-| hal | `/var/run/hald`, `/var/cache/hald` |
-| http |
+| Группа | Затронутые файлы | Цель |
+| adm | Группа администрирования, аналогичная `wheel`. |
+| ftp | `/srv/ftp/` | Доступ к файлам, обслуживаемым [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") серверами. |
+| games | `/var/games` | Доступ к некоторым игровым программам. |
+| http | `/srv/http/` | Доступ к файлам, обслуживаемым [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") серверами. |
+| log | Доступ к лог-файлам в `/var/log/`, созданным [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
+| rfkill | `/dev/rfkill` | Право управления состоянием питания беспроводных устройств (используется [rfkill](https://www.archlinux.org/packages/?name=rfkill)). |
+| sys | Право администрирования принтеров в [CUPS](/index.php/CUPS "CUPS"). |
+| systemd-journal | `/var/log/journal/*` | Может использоваться для обеспечения доступа (только для чтения) к журналам systemd, в качестве альтернативы `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). В противном случае отображаются только сообщения, созданные пользователем. |
+| users | Стандартная группа пользователей. |
+| uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | RS-232 последовательные порты и подключенные к ним устройства. |
+| wheel | Группа администрирования, обычно используемая для предоставления доступа к [sudo](/index.php/Sudo "Sudo") и [su](/index.php/Su "Su") (Не использует его по умолчанию, настраивается в `/etc/pam.d/su` и `/etc/pam.d/su-l`). Он также может использоваться для получения полного доступа на чтение к [journal](/index.php/Systemd#Journal "Systemd") файлам. |
+
+### Системные группы
+
+Следующие группы используются для системных целей, назначение пользователям требуется только для специальных целей:
+
+| Группа | Затронутые файлы | Цель |
+| dbus | Используется внутри [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use `updatedb` command. |
-| log | `/var/log/*` | Access to log files in `/var/log`, |
-| lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to printer hardware; enables the user to manage print jobs. |
-| mem |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Смотрите [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Доступ к устройствам параллельного порта (принтеры и другие) и доступ (только для чтения) к файлам [CUPS](/index.php/CUPS "CUPS"). Если вы запустите устройство параллельного порта без принтера, см. [FS#50009](https://bugs.archlinux.org/task/50009) возможные. |
 | mail | `/usr/bin/mail` |
-| network | Right to change network settings such as when using [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
-| networkmanager | Requirement for your user to connect wirelessly with [NetworkManager](/index.php/NetworkManager "NetworkManager"). This group is not included with Arch by default so it must be added manually. |
-| nobody | Unprivileged group. |
-| ntp |
-| optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Access to optical devices such as CD and DVD drives. |
-| policykit |
-| power | Right to use [suspend](/index.php/Pm-utils "Pm-utils") utilities and power management controls. |
-| rfkill |
-| root | `/*` | Complete system administration and control (root, admin). |
-| scanner | `/var/lock/sane` | Access to scanner hardware. |
-| smmsp | `sendmail` group |
-| storage | Access to removable drives such as USB hard drives, flash/jump drives, MP3 players; enables the user to mount storage devices through [HAL](/index.php/HAL "HAL") and [D-Bus](/index.php/D-Bus "D-Bus"). |
-| stb-admin |
-| sys | Right to admin printers in [CUPS](/index.php/CUPS "CUPS"). |
-| thinkpad | `/dev/misc/nvram` | Used by ThinkPad users for access to tools such as [tpb](/index.php/Tpb "Tpb"). |
-| tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` | Eg. to acces /dev/ACMx |
-| users | Standard users group. |
-| uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]` | Serial and USB devices such as modems, handhelds, RS-232/serial ports. |
-| vboxusers | `/dev/vboxdrv` | Right to use [VirtualBox](/index.php/VirtualBox "VirtualBox") software. |
-| video | `/dev/fb/0`, `/dev/misc/agpgart` | Access to video capture devices, DRI/3D hardware acceleration ([X](/index.php/Xorg "Xorg") can be used *without* belonging to this group). |
-| vmware | Right to use [VMware](/index.php/VMware "VMware") software. |
-| wheel | Right to use [sudo](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)") (setup with `visudo`), also affected by PAM. |
+| nobody | Непривилегированная группа. |
+| proc | `/proc/*pid*/` | Группа, уполномоченная изучать информацию о процессах, в противном случае запрещена опцией монтирования [proc filesystem](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). Группа должна быть явно задана с помощью опции монтирования. |
+| smmsp | [sendmail](/index.php/Sendmail "Sendmail") группа. |
+| tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` |
+| utmp | `/run/utmp`, `/var/log/btmp`, `/var/log/wtmp` |
+
+### Pre-systemd groups
+
+Перед переходом arch на [systemd](/index.php/Systemd "Systemd"), gользователи должны были быть добавлены вручную в эти группы, чтобы иметь возможность доступа к соответствующим устройствам. This way has been deprecated in favour of [udev](/index.php/Udev "Udev") marking the devices with a `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) and *logind* assigning the permissions to users dynamically via [ACLs](/index.php/ACL "ACL") according to which session is currently active. Обратите внимание: сеанс не должен быть разбит, чтобы это сработало (см. [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")).
+
+Есть некоторые исключения, которые требуют добавления пользователя в некоторые из этих групп: например, если вы хотите разрешить пользователям доступ к устройству, даже когда они не вошли в систему. Однако обратите внимание, что добавление пользователей в группы может добавить некоторые функциональные возможности(например, группа `audio` нарушит быстрое переключение пользователей и позволяет приложениям блокировать смешение программного обеспечения).
+
+| Группы | Затронутые файлы | Цель |
+| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Прямой доступ к звуковому оборудованию для всех сеансов. По-прежнему требуется, чтобы [ALSA](/index.php/ALSA "ALSA") и [OSS](/index.php/OSS "OSS") работали в удаленных сеансах, см.[ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). |
+| disk | `/dev/sd[a-z][1-9]` | Доступ к блочным устройствам, не затронутым другими группами, такими как `optical`, `floppy`, и `storage`. |
+| floppy | `/dev/fd[0-9]` | Доступ к флоппи-дискам. |
+| input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Доступ к устройствам ввода. Введено в systemd 215 [[2]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
+| kvm | `/dev/kvm` | Доступ к виртуальным машинам с использованием [KVM](/index.php/KVM "KVM"). |
+| optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Доступ к оптическим устройствам, таким как CD- и DVD-приводы. |
+| scanner | `/var/lock/sane` | Доступ к оборудованию сканера. |
+| storage | Доступ к съемным дискам, таким как жесткие диски USB, флеш-накопители, MP3-плееры; Позволяет пользователю монтировать запоминающие устройства. |
+| video | `/dev/fb/0`, `/dev/misc/agpgart` | Доступ к устройствам захвата видео, аппаратное ускорение 2D / 3D, framebuffer ([X](/index.php/X "X") можно использовать *без* поддержки этой группы). |

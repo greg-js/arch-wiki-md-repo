@@ -74,21 +74,19 @@ To set Chromium as the default browser and to change which applications Chromium
 
 **Note:** Chromium no longer supports the Netscape plugin API (NPAPI), so [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the repositories cannot be used.
 
-*Pepper Flash* is the Flash Player plugin, using the new Pepper plugin API. To install it for Chromium, [install](/index.php/Install "Install") it the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+The Flash Player plugin, using the new Pepper plugin API, is automatically installed when using Google Chrome.
 
-For Chrome < 57, make sure the plugin is enabled in `chrome://plugins` and restart Chromium via its menu.
+To install it for Chromium, [install](/index.php/Install "Install") the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
 
 Make sure Flash is allowed to run in `chrome://settings/content`.
 
 ### Widevine Content Decryption Module plugin
 
-Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It comes bundled with Chrome.
+Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It is automatically installed when using Google Chrome.
 
-To install the Widevine CDM for Chromium, install the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package.
+To install it for Chromium, [install](/index.php/Install "Install") the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package.
 
-For Chrome < 57, make sure the plugin is enabled in `chrome://plugins`.
-
-For Chrome >= 57, make sure *Allow sites to play protected content* is checked in `chrome://settings/content`.
+Make sure *Allow sites to play protected content* is checked in `chrome://settings/content`.
 
 ### PDF viewer plugin
 

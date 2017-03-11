@@ -177,7 +177,7 @@ NoNewPrivileges=true
 RestrictRealtime=true
 RestrictAddressFamilies=AF_INET
 SystemCallArchitectures=native
-SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obsolete @raw-io @resources
+SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obsolete @raw-io
 
 ```
 

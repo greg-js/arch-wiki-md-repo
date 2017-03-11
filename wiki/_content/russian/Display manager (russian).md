@@ -36,7 +36,7 @@
 
 	[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/) || [gdm](https://www.archlinux.org/packages/?name=gdm)
 
-*   **[KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)")** — экранный менеджер [KDE](/index.php/KDE "KDE").
+*   **[KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)")** — экранный менеджер [KDE](/index.php/KDE "KDE")4 (Поддержка прекращена).
 
 	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
@@ -56,7 +56,7 @@
 
 	[http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)
 
-*   **[SDDM](/index.php/SDDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SDDM (Русский)")** — экранный менеджер, основанный на QML.
+*   **[SDDM](/index.php/SDDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SDDM (Русский)")** — экранный менеджер, основанный на QML. Продолжение KDE4 kdm, рекомендуется для Plasma 5 и LXQt
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm), [sddm-git](https://aur.archlinux.org/packages/sddm-git/)
 

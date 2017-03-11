@@ -555,7 +555,7 @@ These have their own sites, and are *not supported* in the official Wine forums/
 
 [PlayOnLinux](http://www.playonlinux.com/) is a graphical Windows and DOS program manager. It contains scripts to assist the configuration and running of programs, it can manage multiple Wine versions and even use a specific version for each executable (e.g. because of regressions). If you need to know which Wine version works best for a certain game, try the [Wine Application Database](http://appdb.winehq.org/). You can find the [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) package in [community](/index.php/Community "Community").
 
-**Tip:** PlayOnLinux supports Bumblebee. Open POL console, type this command `POL_Config_Write BEFORE_WINE **optirun**` and hit enter. **optirun** command will be used and each application will be run using **optirun**. You can even use **primusrun** instead!
+**Tip:** PlayOnLinux supports [Bumblebee](/index.php/Bumblebee "Bumblebee"). Open POL console, type this command `POL_Config_Write BEFORE_WINE **optirun**` and hit enter. **optirun** command will be used and each application will be run using **optirun**. You can even use **primusrun** instead!
 
 ### PyWinery
 

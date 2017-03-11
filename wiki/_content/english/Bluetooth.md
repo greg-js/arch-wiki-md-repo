@@ -17,20 +17,21 @@
     *   [4.4 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [5 Audio](#Audio)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 bluetoothctl](#bluetoothctl_2)
-    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
-    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [6.10 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
-    *   [6.11 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [6.12 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
-    *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
+    *   [6.2 bluetoothctl](#bluetoothctl_2)
+    *   [6.3 gnome-bluetooth](#gnome-bluetooth)
+    *   [6.4 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [6.4.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+    *   [6.5 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [6.6 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [6.7 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [6.8 My computer is not visible](#My_computer_is_not_visible)
+    *   [6.9 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [6.10 HSP/HFP profiles](#HSP.2FHFP_profiles)
+    *   [6.11 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
+    *   [6.12 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [6.13 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [6.14 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
 
 ## Installation
 
@@ -245,6 +246,20 @@ Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Blue
 In order to enable your system to be detected as an A2DP sink (e.g. to play music from your phone via your computer speakers), add `Enable=Source,Sink,Media,Socket` under `[General]` in `/etc/bluetooth/audio.conf`.
 
 ## Troubleshooting
+
+### Shell command _____ is missing from bluez-utils
+
+Some tools have been marked as deprecated and removed from the package. At this time they are still available in the AUR package [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). Their functionality is partially covered by new tools, while some things have yet to be implemented with the new [D-Bus API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/):
+
+| Deprecated tool | Most likely replacement |
+| gatttool | btgatt-client, [D-Bus Gatt API [https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt)] |
+| hciattach | btattach |
+| hciconfig | btmgmt (and bluetoothctl?) |
+| hcidump | btmon (and btsnoop) |
+| hcitool | missing, [D-Bus Device API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) available |
+| rfcomm | missing, implement with [D-Bus Profile1 API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt)? |
+| ciptool |
+| sdptool | missing, functionality seems to be scattered over different D-Bus objects: [Profile](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt), [Advertising](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/advertising-api.txt), and the UUIDs arrays in [device](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) and [adapter](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/adapter-api.txt). |
 
 ### bluetoothctl
 

@@ -155,14 +155,14 @@ For more information, see [PulseAudio: Running](http://www.freedesktop.org/wiki/
 PulseAudio can be manually started with:
 
 ```
-$ pulseaudio --start
+$ systemctl start --user pulseaudio
 
 ```
 
 And stopped with:
 
 ```
-$ pulseaudio --kill
+$ systemctl stop --user pulseaudio
 
 ```
 

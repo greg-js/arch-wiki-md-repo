@@ -569,7 +569,7 @@ This can easily be fixed by making an executable file named `/etc/pm/config.d/hi
 
 ### Display not powering on after suspension (radeon)
 
-If you get a blank display after suspension with radeon gpu, try to create `/etc/pm/config.d/radeon`, and add the following:
+If you get a blank display after suspension with radeon GPU, try to create `/etc/pm/config.d/radeon`, and add the following:
 
  `/etc/pm/config.d/radeon` 
 ```

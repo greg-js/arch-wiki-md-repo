@@ -340,7 +340,7 @@ EndSection
 
 This section lists tips for individual applications.
 
-*   mplayer: use `-xineramascreen 1` to make the video play on screen #1 (the second screen.) Add `xineramascreen=1` to `~/.mplayer/config` to make permanent.
+*   mplayer: use `-xineramascreen 1` to make the video play on screen #1 (the second screen.) Add `xineramascreen=1` to `~/.mplayer/config` to make it permanent.
 *   Xonotic: if you are playing across multiple screens and you are unable to turn left/right properly, set `vid_stick_mouse` to 1 in `~/.xonotic/data/config.cfg`
 
 ### Window managers

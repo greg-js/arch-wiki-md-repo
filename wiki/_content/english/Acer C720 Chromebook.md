@@ -11,6 +11,7 @@ The Acer C720 Chromebook (and newer Chromebooks in general) features a "legacy b
         *   [2.2.1 Bluetooth coexistence](#Bluetooth_coexistence)
         *   [2.2.2 Power saving](#Power_saving)
         *   [2.2.3 Improving signal quality](#Improving_signal_quality)
+        *   [2.2.4 Fixing decrease in bandwidth](#Fixing_decrease_in_bandwidth)
     *   [2.3 Enabling the light sensor](#Enabling_the_light_sensor)
 *   [3 Suspend](#Suspend)
     *   [3.1 Fix wakeup from suspend on lid close](#Fix_wakeup_from_suspend_on_lid_close)
@@ -86,6 +87,10 @@ You can enable power savings with the option `ps_enable=1` to reduce power usage
 
 Enable antenna diversity with the option `bt_ant_diversity=1` to improve the signal quality and boost performance. However, keep in mind that [this disables the bluetooth interface](https://wireless.wiki.kernel.org/en/users/drivers/ath9k/antennadiversity) and, as such, bluetooth coexistence must not be loaded at the same time.
 
+#### Fixing decrease in bandwidth
+
+If you are experiencing a decrease in bandwidth at seemingly random times try switching from hardware to software wireless encryption as explained in [Wireless network configuration#ath9k](/index.php/Wireless_network_configuration#ath9k "Wireless network configuration").
+
 ### Enabling the light sensor
 
 Intersil ISL29018 is the light sensor in the C720, as default its module is disabled on build time so in order to use the sensor the kernel should be recompiled with `CONFIG_SENSORS_ISL29018` enabled. You can also compile just the single module. Follow the preparation instructions as [Compile_kernel_module](/index.php/Compile_kernel_module "Compile kernel module"), enable the module in your `.config` and execute
@@ -159,3 +164,4 @@ You can bypass this switch with a screw inserted in hole #6.
 *   [Chromium OS Acer C720 & C720P Developer Page](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook)
 *   [BBS topic](https://bbs.archlinux.org/viewtopic.php?id=173418)
 *   Unbricking with [flashrom](https://www.archlinux.org/packages/?name=flashrom) [using the Raspberry Pi](http://flashrom.org/RaspberryPi), requires [SOIC clip](http://www.hmcelectronics.com/product/Pomona/5250), See [GPIO matrix](http://elinux.org/Rpi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29) and [pictures](https://drive.google.com/folderview?id=0B9f62MH0umbmRTA2Xzd5WHhjWEU&usp=sharing). also there is a [BeagleBone method](http://www.tnhh.net/2014/08/25/unbricking-chromebook-with-beaglebone.html).
+*   [Configuration files with optimization tweaks for Haswell devices used by default in the GalliumOS Linux distribution](https://github.com/GalliumOS/galliumos-haswell).

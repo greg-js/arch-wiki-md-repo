@@ -14,119 +14,115 @@ This page explains how to set up, diagnose, and benchmark an InfiniBand network.
 *   [2 Terminology](#Terminology)
     *   [2.1 Hardware](#Hardware)
     *   [2.2 GUID](#GUID)
-    *   [2.3 NEED ANOTHER NAME](#NEED_ANOTHER_NAME)
-    *   [2.4 Software](#Software)
-*   [3 Software installation](#Software_installation)
+    *   [2.3 Network Management](#Network_Management)
+*   [3 Installation](#Installation)
     *   [3.1 Upgrade firmware](#Upgrade_firmware)
         *   [3.1.1 For Mellanox](#For_Mellanox)
         *   [3.1.2 For Intel/QLogic](#For_Intel.2FQLogic)
     *   [3.2 Kernel modules](#Kernel_modules)
     *   [3.3 Subnet manager](#Subnet_manager)
-        *   [3.3.1 For a software subnet manager, use opensm](#For_a_software_subnet_manager.2C_use_opensm)
-    *   [3.4 TCP/IP over InfiniBand (IPoIB)](#TCP.2FIP_over_InfiniBand_.28IPoIB.29)
-        *   [3.4.1 Connection mode](#Connection_mode)
-        *   [3.4.2 MTU](#MTU)
-        *   [3.4.3 Fine-tuning connection mode and MTU](#Fine-tuning_connection_mode_and_MTU)
-    *   [3.5 Remote Data Storage over InfiniBand](#Remote_Data_Storage_over_InfiniBand)
-        *   [3.5.1 targetcli](#targetcli)
-            *   [3.5.1.1 Installing and using](#Installing_and_using)
-            *   [3.5.1.2 Create backstores](#Create_backstores)
-        *   [3.5.2 iSCSI](#iSCSI)
-            *   [3.5.2.1 Over IPoIB](#Over_IPoIB)
-            *   [3.5.2.2 Over iSER](#Over_iSER)
-                *   [3.5.2.2.1 Bug with multiple iSER devices, workarounds](#Bug_with_multiple_iSER_devices.2C_workarounds)
-                *   [3.5.2.2.2 Configuring iSER devices](#Configuring_iSER_devices)
-                *   [3.5.2.2.3 Workaround for multiple iSER devices on open-iscsi 2.0_873-7](#Workaround_for_multiple_iSER_devices_on_open-iscsi_2.0_873-7)
-        *   [3.5.3 SRP](#SRP)
-*   [4 InfiniBand programs for diagnosing and benchmarking](#InfiniBand_programs_for_diagnosing_and_benchmarking)
-    *   [4.1 ibstat - View a computer's InfiniBand GUIDs](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs)
-    *   [4.2 ibhosts - View all hosts on InfiniBand network](#ibhosts_-_View_all_hosts_on_InfiniBand_network)
-    *   [4.3 ibswitches - View all switches on InfiniBand network](#ibswitches_-_View_all_switches_on_InfiniBand_network)
-    *   [4.4 iblinkinfo - View link information on InfiniBand network](#iblinkinfo_-_View_link_information_on_InfiniBand_network)
-    *   [4.5 ibping - Ping another InfiniBand device](#ibping_-_Ping_another_InfiniBand_device)
-    *   [4.6 ibdiagnet - Show diagnostic information for entire subnet](#ibdiagnet_-_Show_diagnostic_information_for_entire_subnet)
-    *   [4.7 qperf - Measure performance over RDMA or TCP/IP](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP)
-        *   [4.7.1 TCP/IP over IPoIB](#TCP.2FIP_over_IPoIB)
-    *   [4.8 iperf - Measure performance over TCP/IP](#iperf_-_Measure_performance_over_TCP.2FIP)
-*   [5 Common problems / FAQ](#Common_problems_.2F_FAQ)
-    *   [5.1 Connection problems](#Connection_problems)
-        *   [5.1.1 Link, physical state, and port state](#Link.2C_physical_state.2C_and_port_state)
-        *   [5.1.2 getaddrinfo failed: Name or service not known](#getaddrinfo_failed:_Name_or_service_not_known)
-    *   [5.2 Speed problems](#Speed_problems)
+        *   [3.3.1 Software subnet manager](#Software_subnet_manager)
+*   [4 TCP/IP (IPoIB)](#TCP.2FIP_.28IPoIB.29)
+    *   [4.1 Connection mode](#Connection_mode)
+    *   [4.2 MTU](#MTU)
+    *   [4.3 Finetuning connection mode and MTU](#Finetuning_connection_mode_and_MTU)
+*   [5 Remote data storage](#Remote_data_storage)
+    *   [5.1 targetcli](#targetcli)
+        *   [5.1.1 Installing and using](#Installing_and_using)
+        *   [5.1.2 Create backstores](#Create_backstores)
+    *   [5.2 iSCSI](#iSCSI)
+        *   [5.2.1 Over IPoIB](#Over_IPoIB)
+        *   [5.2.2 Over iSER](#Over_iSER)
+            *   [5.2.2.1 Configuring iSER devices](#Configuring_iSER_devices)
 *   [6 Network segmentation](#Network_segmentation)
-*   [7 How can I use libsdp for SDP (Sockets Direct Protocol)?](#How_can_I_use_libsdp_for_SDP_.28Sockets_Direct_Protocol.29.3F)
+*   [7 SDP (Sockets Direct Protocol)](#SDP_.28Sockets_Direct_Protocol.29)
+*   [8 Diagnosing and benchmarking](#Diagnosing_and_benchmarking)
+    *   [8.1 ibstat - View a computer's IB GUIDs](#ibstat_-_View_a_computer.27s_IB_GUIDs)
+    *   [8.2 ibhosts - View all hosts on IB network](#ibhosts_-_View_all_hosts_on_IB_network)
+    *   [8.3 ibswitches - View all switches on IB network](#ibswitches_-_View_all_switches_on_IB_network)
+    *   [8.4 iblinkinfo - View link information on IB network](#iblinkinfo_-_View_link_information_on_IB_network)
+    *   [8.5 ibping - Ping another IB device](#ibping_-_Ping_another_IB_device)
+    *   [8.6 ibdiagnet - Show diagnostic information for entire subnet](#ibdiagnet_-_Show_diagnostic_information_for_entire_subnet)
+    *   [8.7 qperf - Measure performance over RDMA or TCP/IP](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP)
+        *   [8.7.1 TCP/IP over IPoIB](#TCP.2FIP_over_IPoIB)
+    *   [8.8 iperf - Measure performance over TCP/IP](#iperf_-_Measure_performance_over_TCP.2FIP)
+*   [9 Common problems / FAQ](#Common_problems_.2F_FAQ)
+    *   [9.1 Connection problems](#Connection_problems)
+        *   [9.1.1 Link, physical state and port state](#Link.2C_physical_state_and_port_state)
+        *   [9.1.2 getaddrinfo failed: Name or service not known](#getaddrinfo_failed:_Name_or_service_not_known)
+    *   [9.2 Speed problems](#Speed_problems)
 
 ## Introduction
 
 ### Overview
 
-InfiniBand (abbreviated IB) is an alternative to Ethernet and Fibre Channel. InfiniBand provides high bandwidth and low latency. InfiniBand can transfer data directly to and from a storage device on one machine to userspace on another machine, bypassing and avoiding the overhead of a system call. InfiniBand adapters can handle the networking protocols, unlike Ethernet networking protocols which are ran on the CPU. This allows the OS's and CPU's to remain free while the high bandwidth transfers take place, which can be a real problem with 10Gb+ Ethernet.
+InfiniBand (abbreviated IB) is an alternative to Ethernet and Fibre Channel. IB provides high bandwidth and low latency. IB can transfer data directly to and from a storage device on one machine to userspace on another machine, bypassing and avoiding the overhead of a system call. IB adapters can handle the networking protocols, unlike Ethernet networking protocols which are ran on the CPU. This allows the OS's and CPU's to remain free while the high bandwidth transfers take place, which can be a real problem with 10Gb+ Ethernet.
 
-InfiniBand hardware is made by Mellanox (which merged with Voltaire, and is heavily backed by Oracle) and Intel (which acquired QLogic's InfiniBand program.) InfiniBand is most often used by supercomputers, clusters, and data centers. IBM, HP, and Cray are also members of the InfiniBand Steering Committee. Facebook, Twitter, eBay, YouTube, and PayPal are examples of InfiniBand users.
+IB hardware is made by Mellanox (which merged with Voltaire, and is heavily backed by Oracle) and Intel (which acquired QLogic's IB division in 2012). IB is most often used by supercomputers, clusters, and data centers. IBM, HP, and Cray are also members of the InfiniBand Steering Committee. Facebook, Twitter, eBay, YouTube, and PayPal are examples of IB users.
 
-InfiniBand software is developed under the [OpenFabrics Open Source Alliance](http://www.openfabrics.org)
+IB software is developed under the [OpenFabrics Open Source Alliance](https://www.openfabrics.org/)
 
 ### Affordable used equipment
 
-With large businesses benefiting so much from jumping to newer versions, the maximum length limitations of passive InfiniBand cabling, the high cost of active InfiniBand cabling, and the more technically complex setup than Ethernet, the used InfiniBand market is heavily saturated, allowing used InfiniBand devices to affordably be used at home or smaller businesses for their internal networks.
+With large businesses benefiting so much from jumping to newer versions, the maximum length limitations of passive IB cabling, the high cost of active IB cabling, and the more technically complex setup than Ethernet, the used IB market is heavily saturated, allowing used IB devices to affordably be used at home or smaller businesses for their internal networks.
 
 ### Bandwidth
 
 #### Signal transfer rates
 
-InfiniBand transfer rates now correspond to the maximum supported by PCI Express (abbreviated PCIe). It originally corresponded to PCI Extended (abbreviated PCI-X), which severely limited performance. It launched using SDR (Single Data Rate) with a signaling rate of 2.5Gb/s per lane (corresponding with PCI Express v1.0), and has added: DDR (Double Data Rate) at 5Gb/s (PCI Express v2.0); QDR (Quad Data Rate) at 10Gb/s (PCI Express 3.0); and FDR (Fourteen Data Rate) at 14.0625Gbps (PCI Express 4.0.) InfiniBand is now delivering EDR (Enhanced Data Rate) at 25Gb/s. Planned around 2017 will be HDR (High Data Rate) at 50Gb/s.
+IB transfer rates now correspond to the maximum supported by PCI Express (abbreviated PCIe). It originally corresponded to PCI Extended (abbreviated PCI-X), which severely limited performance. It launched using SDR (Single Data Rate) with a signaling rate of 2.5Gb/s per lane (corresponding with PCI Express v1.0), and has added: DDR (Double Data Rate) at 5Gb/s (PCI Express v2.0); QDR (Quad Data Rate) at 10Gb/s (PCI Express 3.0); and FDR (Fourteen Data Rate) at 14.0625Gbps (PCI Express 4.0.) IB is now delivering EDR (Enhanced Data Rate) at 25Gb/s. Planned around 2017 will be HDR (High Data Rate) at 50Gb/s.
 
 #### Effective throughput & multiple virtual lanes
 
-Because SDR, DDR, and QDR versions use 8/10 encoding (8 bits of data takes 10 bits of signaling), effective throughput for these is lowered to 80%: SDR at 2Gb/s/lane; DDR at 4Gb/s/lane; and QDR at 8Gb/s/lane. Starting with FDR, InfiniBand uses 64/66 encoding, allowing a higher effective throughput to signaling rate ratio of 96.97%: FDR at 13.64Gb/s/lane; EDR at 24.24Gb/s/lane; and HDR at 48.48Gb/s/lane.
+Because SDR, DDR, and QDR versions use 8/10 encoding (8 bits of data takes 10 bits of signaling), effective throughput for these is lowered to 80%: SDR at 2Gb/s/lane; DDR at 4Gb/s/lane; and QDR at 8Gb/s/lane. Starting with FDR, IB uses 64/66 encoding, allowing a higher effective throughput to signaling rate ratio of 96.97%: FDR at 13.64Gb/s/lane; EDR at 24.24Gb/s/lane; and HDR at 48.48Gb/s/lane.
 
-InfiniBand devices are capable of using multiple virtual lanes, most using 4X, but some using a slower 1X or faster 12X.
+IB devices are capable of using multiple virtual lanes, most using 4X, but some using a slower 1X or faster 12X.
 
 When using the common 4X lane devices, this effectively allows total effective throughputs of: SDR of 8Gb/s; DDR of 16Gb/s; QDR of 32Gb/s; FDR of 54.54Gb/s; EDR of 96.97Gb/s; and HDR of 193.94Gb/s.
 
 ### Latency
 
-InfiniBand's latency is incredibly small: SDR (5us); DDR (2.5us); QDR (1.3us); FDR (0.7us); EDR (0.5us); and HDR (< 0.5us.) For comparison 10Gb Ethernet is more like 7.22us, ten times more than FDR's latency.
+IB's latency is incredibly small: SDR (5us); DDR (2.5us); QDR (1.3us); FDR (0.7us); EDR (0.5us); and HDR (< 0.5us). For comparison 10Gb Ethernet is more like 7.22us, ten times more than FDR's latency.
 
 ### Backwards compatibility
 
-InfiniBand devices are almost always backwards compatible. Connections should be established at the lowest common denominator. A DDR adapter meant for a PCI Express 8x slot should work in a PCI Express 4x slot. (With half the bandwidth.)
+IB devices are almost always backwards compatible. Connections should be established at the lowest common denominator. A DDR adapter meant for a PCI Express 8x slot should work in a PCI Express 4x slot (with half the bandwidth).
 
 ### Cables
 
-InfiniBand passive copper cables can be up to 7 meters using up to QDR, and 3 meters using FDR.
+IB passive copper cables can be up to 7 meters using up to QDR, and 3 meters using FDR.
 
-InfiniBand active fiber (optical) cables can be up to 300 meters using up to FDR. (Only 100 meters on FDR10, which is a variant not otherwise really discussed in this article.)
+IB active fiber (optical) cables can be up to 300 meters using up to FDR (only 100 meters on FDR10).
 
-Mellanox MetroX devices exist which allow up to 80 kilometer (50 mile) connections. Latency increases by about 5us per kilometer.
+Mellanox MetroX devices exist which allow up to 80 kilometer connections. Latency increases by about 5us per kilometer.
 
-An InfiniBand cable can be used to directly link two computers without a switch; InfiniBand cross-over cables do not exist.
+An IB cable can be used to directly link two computers without a switch; IB cross-over cables do not exist.
 
 ## Terminology
 
 ### Hardware
 
-Adapters, switches, routers, and bridges/gateways must be specifically made for InfiniBand.
+Adapters, switches, routers, and bridges/gateways must be specifically made for IB.
 
 	HCA (Host Channel Adapter)
 
-	Like an Ethernet NIC (Network Interface Card). Connects the InfiniBand cable to the PCI Express bus, at the full speed of the bus if the proper generation of HCA is used. An end node on an InfiniBand network, executes transport-level functions, and supports the InfiniBand verbs interface.
+	Like an Ethernet NIC (Network Interface Card). Connects the IB cable to the PCI Express bus, at the full speed of the bus if the proper generation of HCA is used. An end node on an IB network, executes transport-level functions, and supports the IB verbs interface.
 
 	Switch
 
-	Like an Ethernet NIC. Moves packets from one link to another on the same InfiniBand subnet.
+	Like an Ethernet NIC. Moves packets from one link to another on the same IB subnet.
 
 	Router
 
-	Like an Ethernet router. Moves packets between different InfiniBand subnets.
+	Like an Ethernet router. Moves packets between different IB subnets.
 
 	Bridge/Gateway
 
-	A standalone piece of hardware, or a computer performing this function. Bridges InfiniBand and Ethernet networks.
+	A standalone piece of hardware, or a computer performing this function. Bridges IB and Ethernet networks.
 
 ### GUID
 
-Like Ethernet MAC addresses, but a device has multiple GUID's. Assigned by the hardware manufacturer, and remains the same through reboots. 64-bit addresses (24-bit manufacturer prefix and 40-bit device identifier.) Given to adapters, switches, routers, and bridges/gateways.
+Like Ethernet MAC addresses, but a device has multiple GUID's. Assigned by the hardware manufacturer, and remains the same through reboots. 64-bit addresses (24-bit manufacturer prefix and 40-bit device identifier). Given to adapters, switches, routers, and bridges/gateways.
 
 	Node GUID
 
@@ -144,33 +140,31 @@ Like Ethernet MAC addresses, but a device has multiple GUID's. Assigned by the h
 
 	16-bit addresses, assigned by the Subnet Manager when picked up by the Subnet Manager. Used for routing packets. Not persistent through reboots.
 
-### NEED ANOTHER NAME
+### Network Management
 
 	SM (Subnet Manager)
 
-	Actively manages an InfiniBand subnet. Can be implemented as a software program on a computer connected to the InfiniBand network, built in to an InfiniBand switch, or as a specialized InfiniBand device. Initializes and configures everything else on the subnet, including assigning LIDs (Local IDentifiers.) Establishes traffic paths through the subnet. Isolates faults. Prevents unauthorized Subnet Managers. You can have multiple switches all on one subnet, under one Subnet Manager. You can have redundant Subnet Managers on one subnet, but only one can be active at a time.
+	Actively manages an IB subnet. Can be implemented as a software program on a computer connected to the IB network, built in to an IB switch, or as a specialized IB device. Initializes and configures everything else on the subnet, including assigning LIDs (Local IDentifiers). Establishes traffic paths through the subnet. Isolates faults. Prevents unauthorized Subnet Managers. You can have multiple switches all on one subnet, under one Subnet Manager. You can have redundant Subnet Managers on one subnet, but only one can be active at a time.
 
 	MAD (MAnagement Datagram)
 
-	Standard message format for subnet manager to and from InfiniBand device communication, carried by a UD (Unreliable Datagram.)
+	Standard message format for subnet manager to and from IB device communication, carried by a UD (Unreliable Datagram).
 
 	UD (Unreliable Datagram)
 
-### Software
+## Installation
 
-## Software installation
-
-This article makes many references to the InfiniBand AUR packages. You can [obtain and install AUR packages any way you wish](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository").
+First install [rdma-core](https://aur.archlinux.org/packages/rdma-core/) which contains all core libraries and daemons.
 
 ### Upgrade firmware
 
 Running the most recent firmware can give significant performance increases, and fix connectivity issues.
 
-**Warning:** That being said, upgrade your firmware at your own risk! Whatever device you're flashing new firmware onto, there is always some risk of bricking the device.
+**Warning:** Be careful or the device may be bricked!
 
 #### For Mellanox
 
-*   Install [mstflint](https://aur.archlinux.org/packages/mstflint/), with prerequisites: [libibumad](https://aur.archlinux.org/packages/libibumad/); [libibmad](https://aur.archlinux.org/packages/libibmad/).
+*   Install [mstflint](https://aur.archlinux.org/packages/mstflint/)
 *   Determine your adapter's PCI device ID (in this example, "05:00.0" is the adapter's PCI device ID)
 
  `$ lspci | grep Mellanox`  `**05:00.0** InfiniBand: Mellanox Technologies MT25418 [ConnectX VPI PCIe 2.0 2.5GT/s - IB DDR / 10GigE] (rev a0)` 
@@ -186,10 +180,10 @@ PSID:            **MT_04A0110002**
 ```
 
 *   Check latest firmware version
-    *   Visit [Mellanox's firmware download page](http://www.mellanox.com/page/firmware_download). (This guide incorporates this link's "firmware burning instructions", using its mstflint option.)
+    *   Visit [Mellanox's firmware download page](http://www.mellanox.com/page/firmware_download) (this guide incorporates this link's "firmware burning instructions", using its mstflint option)
     *   Choose the category of device you have
     *   Locate your device's PSID on their list, that mstflint gave you
-    *   Examine the Firmware Image filename to see if it's more recent than your adapter's FW Version. (i.e. If Mellanox lists for your PSID a file fw-25408-2_9_1000-MHGH28-XTC_A1.bin.zip, that's a 2.9.1000 FW Version.)
+    *   Examine the Firmware Image filename to see if it's more recent than your adapter's FW Version, i.e. `fw-25408-2_9_1000-MHGH28-XTC_A1.bin.zip`, is version `2.9.1000`
 *   If there's a more recent version, download new firmware and burn it to your adapter
 
 ```
@@ -200,51 +194,26 @@ $ unzip <*firmware .bin.zip file name*>
 
 #### For Intel/QLogic
 
-(Intel acquired QLogic's InfiniBand program)
-
-... You figure it out, and update this wiki! Maybe start at [http://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/Defaultnewsearch.aspx](http://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/Defaultnewsearch.aspx) or [https://downloadcenter.intel.com/](https://downloadcenter.intel.com/)
+Search for the model number (or a substring) over at [Intel Download Center](https://downloadcenter.intel.com/) and follow the instructions. The downloaded software will probably need to be run from RHEL/CentOS or SUSE/OpenSUSE.
 
 ### Kernel modules
 
-Recent kernels have InfiniBand modules compiled in, and they just need to be loaded.
+Edit `/etc/rdma/rdma.conf` to your liking and [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rdma.service`.
 
-*   Install [rdma](https://aur.archlinux.org/packages/rdma/)
-    *   Its `/usr/lib/udev/rules.d/98-rdma.rules` attempts loading hardware kernel modules cxgb*, ib_*, mlx*, iw_*, be2net, and usnic*.
-    *   Its `/usr/lib/rdma/rdma-init-kernel` (which is what `rdma.service` starts) loads kernel modules requested by `/etc/rdma/rdma.conf`.
-
-<caption>/etc/rdma/rdma.conf supports these options</caption>
-| Option | If yes, loads category | of these kernel modules |
-| (Always) | Core | ib_core, ib_mad, ib_sa, and ib_addr |
-| (Always) | Core user | ib_umad, ib_uverbs, ib_ucm, and rdma_ucm |
-| (Always) | Core connection manager | iw_cm, ib_cm, and rdma_cm |
-| IPOIB_LOAD=yes (default yes)* | Internet Protocol over InfiniBand | ib_ipoib |
-| RDS_LOAD=yes (default yes) | Reliable Datagram Service | rds, rds_tcp, and rds_rdma |
-| SRP_LOAD=yes (default yes) | SCSI Remote Protocol initiator | ib_srp |
-| SRPT_LOAD=yes (default yes) | SCSI Remote Protocol target | ib_srpt |
-| ISER_LOAD=yes (default yes) | iSCSI over RDMA initiator | ib_iser. |
-| ISERT_LOAD=yes (default no) | iSCSI over RDMA target | ib_isert. |
-| (if lhca devices) | IBM pSeries Adapters (rare) | ib_ehca |
-| (if be2net module) | Emulex Adpaters (rare) | ocrdma |
-
-	* ib_ipoib also loaded a dependency for `RDS_LOAD=yes`, or if `/etc/rdma/rdma.conf` doesn't exist
-
-*   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rdma.service`
-
-**Note:** [Due to how the kernel stacks are handled](https://bugzilla.redhat.com/show_bug.cgi?id=965829), changes to `/etc/rdma/rdma.conf` only take effect during boot, or upon a boot's first [start](/index.php/Start "Start") of `rdma.service`. Restarting `rdma.service` will have no effect.
+**Note:** [Due to how the kernel stacks are handled](https://bugzilla.redhat.com/show_bug.cgi?id=965829), changes to `/etc/rdma/rdma.conf` only take effect max once every boot, when `rdma.service` is started for first time. Restarting `rdma.service` has no effect.
 
 ### Subnet manager
 
-Each InfiniBand network requires a subnet manager. (It is also possible to set up a redundant subnet manager.) Without one, your devices may show they have a link, but will never move past the state "Initializing" to "Active". A subnet manager often (typically every 5 or 30 seconds) checks the InfiniBand for new adapters, and adds them to the network's routing tables. If you have an InfiniBand switch with an embedded subnet manager, you can use that, or you can keep it disabled and use a software subnet manager instead. Dedicated InfiniBand subnet manager devices also exist.
+Each IB network requires at least one subnet manager. Without one, devices may show having a link, but will never change state from `Initializing` to `Active`. A subnet manager often (typically every 5 or 30 seconds) checks the network for new adapters and adds them to the routing tables. If you have an IB switch with an embedded subnet manager, you can use that, or you can keep it disabled and use a software subnet manager instead. Dedicated IB subnet manager devices also exist.
 
-#### For a software subnet manager, use opensm
+#### Software subnet manager
 
 On one system:
 
-*   [Install rdma for loading kernel modules](#Kernel_modules)
-*   Install [opensm](https://aur.archlinux.org/packages/opensm/), with prerequisite [libibumad](https://aur.archlinux.org/packages/libibumad/).
-*   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `opensm.service`.
+*   Install [opensm](https://aur.archlinux.org/packages/opensm/)
+*   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `opensm.service`
 
-All of your connected InfiniBand ports should now be in a (port) state of "Active", and a physical state of "LinkUp". You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs) in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/):
+All of your connected IB ports should now be in a (port) state of `Active`, and a physical state of `LinkUp`. You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs) from [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/):
 
  `$ ibstat` 
 ```
@@ -254,45 +223,19 @@ Physical state: LinkUp
 ...
 ```
 
-And/or by examining the `/sys` filesystem:
+Or by examining the `/sys` filesystem:
 
  `$ cat /sys/class/infiniband/*kernel_module*/ports/*port_number*/phys_state`  `5: LinkUp`  `$ cat /sys/class/infiniband/*kernel_module*/ports/*port_number*/state`  `4: ACTIVE` 
 
-### TCP/IP over InfiniBand (IPoIB)
+## TCP/IP (IPoIB)
 
-You can create a virtual Ethernet Adapter to be ran on an InfiniBand adapter. This is intended so programs that are designed to work with TCP/IP but not InfiniBand, can (indirectly) use InfiniBand networks. This is not intended to route internet traffic through your InfiniBand network. (Unless your internet connection is faster than your Ethernet devices are... Which means you're working with [Internet2](https://en.wikipedia.org/wiki/Internet2 "wikipedia:Internet2"), **very** high performance supercomputers, clusters, or data centers, or you live in a handpicked area by [Google Fiber](https://fiber.google.com/about/) or [Comcast](http://www.pcmag.com/article2/0,2817,2479953,00.asp) offering a 2Gbps+ internet connection, which isn't available residentially anywhere as of mid 2015.)
+You can create a virtual Ethernet Adapter that runs on the HCA. This is intended so programs designed to work with TCP/IP but not IB, can (indirectly) use IB networks. Performance is negatively affected due to sending all traffic through the normal TCP stack; requiring system calls, memory copies, and network protocols to run on the CPU rather than on the HCA.
 
-There is a performance hit for programs using InfiniBand via TCP/IP rather than natively. Using IPoIB sends all traffic through the normal TCP stack, requires system calls, memory copies, and the network protocols are ran on the CPU rather than on the InfiniBand adapter.
+Configure the IB interface(s) (e.g. `ib0`), [like traditional Ethernet adapters](/index.php/Network_configuration "Network configuration").
 
-*   [Install rdma for loading kernel modules](#Kernel_modules).
-*   You should now have a network interface(s) (likely `ib*X*` like `ib0`), that you [can configure just like a traditional Ethernet adapter](/index.php/Network_configuration "Network configuration"). If you only have one subnet with point-to-point connections (perhaps with switches) with no gateways, for:
-    *   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"): (replacing the IP addresses as needed, to use a subnet that does not conflict with your existing private network IP addresses)
+### Connection mode
 
- `/etc/systemd/network/*interface*.network` 
-```
-[Match]
-Name=*interface*
-
-[Network]
-Address=192.168.2.1/24
-```
-
-	[restart](/index.php/Restart "Restart") (or [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable")) `systemd-networkd.service`
-
-*   [static IP address via systemd service](/index.php/Network_configuration#systemd_service "Network configuration"): (replacing the IP addresses as needed, to use a subnet that does not conflict with your existing private network IP addresses)
-
- `/etc/conf.d/net-conf-*interface*` 
-```
-address=192.168.2.1
-netmask=24
-broadcast=192.168.2.255
-```
-
-	[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `network@*interface*.service`
-
-#### Connection mode
-
-IPoIB can run in "datagram" (default), or "connected" mode. Connected mode [allows you to set a higher MTU](#Fine-tuning_MTU), but does increase TCP latency for short messages by about 5% more than datagram mode.
+IPoIB can run in datagram (default) or connected mode. Connected mode [allows you to set a higher MTU](#Finetuning_connection_mode_and_MTU), but does increase TCP latency for short messages by about 5% more than datagram mode.
 
 To see the current mode used:
 
@@ -301,11 +244,11 @@ $ cat /sys/class/net/*interface*/mode
 
 ```
 
-#### MTU
+### MTU
 
-In datagram mode, UD (Unreliable Datagram) transport is used, which typically forces the MTU to be 2044 bytes. (Technically to the IB L2 MTU - 4 bytes for the IPoIB encapsulation header, which is usually 2044 bytes.)
+In datagram mode, UD (Unreliable Datagram) transport is used, which typically forces the MTU to be 2044 bytes. Technically to the IB L2 MTU - 4 bytes for the IPoIB encapsulation header, which is usually 2044 bytes.
 
-In connected mode, RC (Reliable Connected) transport is used, which allows a MTU up to the maximum IP packet size of 64K (65520 bytes is the exact maximum.)
+In connected mode, RC (Reliable Connected) transport is used, which allows a MTU up to the maximum IP packet size, 65520 bytes.
 
 To see your MTU:
 
@@ -314,154 +257,126 @@ $ ip link show *interface*
 
 ```
 
-#### Fine-tuning connection mode and MTU
+### Finetuning connection mode and MTU
 
 You only need `ipoibmodemtu` if you want to change the default connection mode and/or MTU.
 
-*   [Install and set up TCP/IP over InfiniBand (IPoIB)](#TCP.2FIP_over_InfiniBand_.28IPoIB.29).
+*   [Install and set up TCP/IP over IB (IPoIB)](#TCP.2FIP_.28IPoIB.29)
 *   Install [ipoibmodemtu](https://aur.archlinux.org/packages/ipoibmodemtu/)
-*   Configure `ipoibmodemtu` through `/etc/ipoibmodemtu.conf`, which contains instructions on how to do so.
-    *   It defaults to setting a single InfiniBand port `ib0` to `connected` mode and MTU `65520`.
+*   Configure `ipoibmodemtu` through `/etc/ipoibmodemtu.conf`, which contains instructions on how to do so
+    *   It defaults to setting a single IB port `ib0` to `connected` mode and MTU `65520`
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `ipoibmodemtu.service`
 
-Different setups will see different results. Some people see a gigantic (double+) speed increase by usign `connected` mode and MTU `65520`, and a few see about the same or even worse speeds. Use [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) and/or [iperf](#iperf_-_Measure_performance_over_TCP.2FIP) to fine-tune your system.
+Different setups will see different results. Some people see a gigantic (double+) speed increase by usign `connected` mode and MTU `65520`, and a few see about the same or even worse speeds. Use [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) and [iperf](#iperf_-_Measure_performance_over_TCP.2FIP) to finetune your system.
 
-Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples given in this article, here are author's results on a SDR speed InfiniBand network (8 theoretical Gb/s) with various fine-tuning:
+Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples given in this article, here are example results from an SDR network (8 theoretical Gb/s) with various finetuning:
 
 | Mode | MTU | MB/s | us latency |
 | datagram | 2044 | 707 | 19.4 |
 | connected | 2044 | 353 | 18.9 |
 | connected | 65520 | 726 | 19.6 |
 
-**Tip:** It's usually best to have an entire subnet using the same connection and MTU settings. Mixing and matching appears to work, but not optimally.
+**Tip:** Use the same connection and MTU settings for the entire subnet. Mixing and matching doesn't work optimally.
 
-### Remote Data Storage over InfiniBand
+## Remote data storage
 
-You can share physical or virtual devices from a target (host/server) to an initiator (guest/client) system over an InfiniBand network, using iSCSI, iSCSI with iSER, or SRP. These methods differ from traditional file sharing (i.e. [Samba](/index.php/Samba "Samba") or [NFS](/index.php/NFS "NFS")) because the initiator system views the shared device as its own block level device, rather than a traditionally mounted network shared folder. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`
+You can share physical or virtual devices from a target (host/server) to an initiator (guest/client) system over an IB network, using iSCSI, iSCSI with iSER, or SRP. These methods differ from traditional file sharing (i.e. [Samba](/index.php/Samba "Samba") or [NFS](/index.php/NFS "NFS")) because the initiator system views the shared device as its own block level device, rather than a traditionally mounted network shared folder. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`
 
-The disadvantage is only one system can use each shared device at a time; trying to mount a shared device on the target or another initiator system will fail. (An initiator system can certainly run traditional file sharing on top.)
+The disadvantage is only one system can use each shared device at a time; trying to mount a shared device on the target or another initiator system will fail (an initiator system can certainly run traditional file sharing on top).
 
-The advantages are faster bandwidth, more control, and even having an initiator's root filesystem being physically located remotely (remote booting.)
+The advantages are faster bandwidth, more control, and even having an initiator's root filesystem being physically located remotely (remote booting).
 
-#### targetcli
+### targetcli
 
 `targetcli` acts like a shell that presents its complex (and not worth creating by hand) `/etc/target/saveconfig.json` as a pseudo-filesystem.
 
-##### Installing and using
+#### Installing and using
 
 On the target system:
 
-*   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) with prerequisites: [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/); and [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/).
+*   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `target.service`
 
 In `targetcli`:
 
-*   In any pseudo-directory, you can run `help` to see the commands available *in that pseudo-directory*. Or, `help *command*` (like `help create`) for more detailed help.
-*   Tab-completion is also available for many commands.
-*   Run `ls` to see the entire pseudo-filesystem at and below the current pseudo-directory.
+*   In any pseudo-directory, you can run `help` to see the commands available *in that pseudo-directory* or `help *command*` (like `help create`) for more detailed help
+*   Tab-completion is also available for many commands
+*   Run `ls` to see the entire pseudo-filesystem at and below the current pseudo-directory
 
-##### Create backstores
+#### Create backstores
 
 In `targetcli`, setup a backstore for each device or virtual device to share:
 
-*   To share an actual block device, run: `cd /backstores/block`; and `create *name* *dev*`.
-*   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`.
-*   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create *name* *dev*`.
-*   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create *name* *size*`.
-*   Where *name* is for the backstore's name.
-*   Where *dev* is the block device to share (i.e. /dev/sda, /dev/sda4, /dev/disk/by-id/*x*, or a LVM logical volume /dev/vg0/lv1).
-*   Where *file* is the file to share (i.e. */path/to/file*).
-*   Where *size* is the size of the RAM disk to create (i.e. 512MB, 20GB.)
+*   To share an actual block device, run: `cd /backstores/block`; and `create *name* *dev*`
+*   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`
+*   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create *name* *dev*`
+*   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create *name* *size*`
+*   Where *name* is for the backstore's name
+*   Where *dev* is the block device to share (i.e. `/dev/sda`, `/dev/sda4`, `/dev/disk/by-id/*XXX*`, or a LVM logical volume `/dev/vg0/lv1`)
+*   Where *file* is the file to share (i.e. `/path/to/file`)
+*   Where *size* is the size of the RAM disk to create (i.e. 512MB, 20GB)
 
-#### iSCSI
+### iSCSI
 
-iSCSI allows storage devices and virtual storage devices to be used over a network. For InfiniBand networks, the storage can either work over IPoIB or iSER.
+iSCSI allows storage devices and virtual storage devices to be used over a network. For IB networks, the storage can either work over IPoIB or iSER.
 
-There is a lot of overlap with the [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"), [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator"), and [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") articles, but the necessities will be discussed since much needs to be customized for usage over InfiniBand.
+There is a lot of overlap with the [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"), [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator"), and [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") articles, but the necessities will be discussed since much needs to be customized for usage over IB.
 
-##### Over IPoIB
+#### Over IPoIB
 
 Perform the target system instructions first, which will direct you when to temporarily switch over to the initiator system instructions.
 
-*   On the target and initiator systems, [install TCP/IP over InfiniBand](#TCP.2FIP_over_InfiniBand_.28IPoIB.29).
+*   On the target and initiator systems, [install TCP/IP over IB](#TCP.2FIP_.28IPoIB.29)
 
 *   On the target system, for each device or virtual device you want to share, in `targetcli`:
-    *   [Create a backstore](#Create_backstores).
-    *   For each backstore, create an iqn (iSCSI Qualified Name) (the name other systems' configurations will see the storage as.)
-        *   Run: `cd /iscsi`; and `create`. It will give you a *randomly_generated_target_name*, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
-        *   Set up the tpg (Target Portal Group), automatically created in the last step as tpg1.
-            *   Create a lun (Logical Unit Number).
-                *   Run: `cd *randomly_generated_target_name*/tpg1/luns`; and `create *storage_object*`. Where `*storage_object*` is a full path to an existing storage object, i.e. /backstores/block/*name*.
-            *   Create an acl (Access Control List).
-                *   Run: `cd ../acls`; and `create *wwn*`. Where `*wwn*` is the initiator system's iqn (iSCSI Qualified Name), aka its (World Wide Name).
-                    *   Get the `*wwn*` by running on the initiator system, **not** this target system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)) `cat /etc/iscsi/initiatorname.iscsi`.
-    *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
+    *   [Create a backstore](#Create_backstores)
+    *   For each backstore, create an IQN (iSCSI Qualified Name) (the name other systems' configurations will see the storage as)
+        *   Run: `cd /iscsi`; and `create`. It will give you a *randomly_generated_target_name*, i.e. `iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a`
+        *   Set up the TPG (Target Portal Group), automatically created in the last step as tpg1
+            *   Create a lun (Logical Unit Number)
+                *   Run: `cd *randomly_generated_target_name*/tpg1/luns`; and `create *storage_object*`. Where `*storage_object*` is a full path to an existing storage object, i.e. `/backstores/block/*name*`
+            *   Create an acl (Access Control List)
+                *   Run: `cd ../acls`; and `create *wwn*`, where `*wwn*` is the initiator system's IQN (iSCSI Qualified Name), aka its (World Wide Name)
+                    *   Get the `*wwn*` by running on the initiator system, **not** this target system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi)) `cat /etc/iscsi/initiatorname.iscsi`
+    *   Save and exit by running: `cd /`; `saveconfig`; and `exit`
 
 *   On the initiator system:
-    *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi), or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/).
-    *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") open-iscsi.service.
-    *   At this point, if you need this initiator system's iqn (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target system's `luns`, run: `cat /etc/iscsi/initiatorname.iscsi`.
-    *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*`, where *portal* is an IP (v4 or v6) address or hostname.
-    *   Login to discovered targets. Run `iscsiadm -m node -L all`.
-    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached`. The block device ID will be the last line in the tree for each target. (`-P` is the print command, its option is the verbosity level, and only level 3 lists the block device IDs.)
+    *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi)
+    *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `open-iscsi.service`
+    *   At this point, if you need this initiator system's IQN (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target system's `luns`, run: `cat /etc/iscsi/initiatorname.iscsi`
+    *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*`, where *portal* is an IP (v4 or v6) address or hostname
+    *   Login to discovered targets. Run `iscsiadm -m node -L all`
+    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached`. The block device ID will be the last line in the tree for each target (`-P` is the print command, its option is the verbosity level, and only level 3 lists the block device IDs)
 
-##### Over iSER
+#### Over iSER
 
-iSER (iSCSI Extensions for RDMA) takes advantage of InfiniBand's RDMA protocols, rather than using TCP/IP. It eliminates TCP/IP overhead, and provides higher bandwidth, zero copy time, lower latency, and lower CPU utilization.
+iSER (iSCSI Extensions for RDMA) takes advantage of IB's RDMA protocols, rather than using TCP/IP. It eliminates TCP/IP overhead, and provides higher bandwidth, zero copy time, lower latency, and lower CPU utilization.
 
-###### Bug with multiple iSER devices, workarounds
-
-As of [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) 2.0_873-7, if you try discovering multiple iSER devices, as described below, `iscsiadm` will give this error:
-
-```
-  iscsiadm: recv's end state machine bug?
-  iscsiadm: Could not perform SendTargets discovery: iSCSI PDU timed out
-
-```
-
-The bug was fixed long ago, but the [open-iscsi developers](https://github.com/open-iscsi/open-iscsi) have not tagged a release since 2012, so [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) 2.0_873-7 is using its source code from 2012\. So, your two workarounds are:
-
-1.  Use [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/), to run the latest development branch source code.
-2.  Use the workaround described a few sections below.
-
-###### Configuring iSER devices
-
-You can use these instructions if you're going to use a single iSER device, or if you're going to use multiple iSER devices and have installed [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/). If you're going to use multiple iSER devices and are using [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) to run a tagged release version rather than the developmental branch source code, you need to use the workaround described in the section below.
+##### Configuring iSER devices
 
 Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following changes:
 
-*   If you wish, instead of [installing IPoIB](#TCP.2FIP_over_InfiniBand_.28IPoIB.29), you can just [install RDMA for loading kernel modules](#Kernel_modules).
+*   If you wish, instead of [installing IPoIB](#TCP.2FIP_.28IPoIB.29), you can just [install RDMA for loading kernel modules](#Kernel_modules)
 *   On the target system, after everything else is setup, while still in `targetcli`, enable iSER on the target:
-    *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260` for each *iqn* you want to have use iSER rather than IPoIB.
-        *   Where *iqn* is the randomly generated target name, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
-    *   Run `enable_iser true`.
-    *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
-*   On the initiator system, when running `iscsiadm` to discover online targets and login to them, use the additional argument `-I iser`.
+    *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260` for each *iqn* you want to have use iSER rather than IPoIB
+        *   Where *iqn* is the randomly generated target name, i.e. `iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a`
+    *   Run `enable_iser true`
+    *   Save and exit by running: `cd /`; `saveconfig`; and `exit`
+*   On the initiator system, when running `iscsiadm` to discover online targets and login to them, use the additional argument `-I iser`
 
-###### Workaround for multiple iSER devices on open-iscsi 2.0_873-7
+## Network segmentation
 
-The bug only affects discovering multiple iSER devices. Once they're discovered, you can login to them, and fully use them. So as a workaround, you can discover the targets using IPoIB, change the target to iSER, make the 3 changes (filename, and two setting values) that `open-iscsi -m discovery` would make using iSER on the initiator, and proceed as normal.
+An IB subnet can be partitioned for different customers or applications, giving security and quality of service guarantees. Each partition is identified by a PKEY (Partition Key).
 
-*   On the target system, follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, **without** the changes for [Configuring iSER devices](#Configuring_iSER_devices).
-*   On the initiator system, follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, **up to and including** discovering online targets, **without** the changes for [Configuring iSER devices](#Configuring_iSER_devices). Then:
-    *   Run `systemctl stop open-iscsi`.
-    *   Rename each `/etc/iscsi/nodes/*iqn*/*ip-port*/default` file to `iser`, and edit each of these files.
-        *   Where *iqn* is the randomly generated target name in targetcli, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
-        *   Where *ip-port-etc* is a directory in the form "192.168.2.1,3260,1".
-        *   Change `iface.iscsi_ifacename = default` to `iface.iscsi_ifacename = iser`.
-        *   Change `iface.transport_name = tcp` to `iface.transport_name = iser`.
-*   On the target system, enable iSER by following the [Configuring iSER devices](#Configuring_iSER_devices) instructions for the target system.
-*   On the initiator system:
-    *   Run `systemctl start open-iscsi`.
-    *   When logging in to discovered targets, run `iscsiadm -m node -L all -I iser`.
+## SDP (Sockets Direct Protocol)
 
-#### SRP
+Use `librdmacm` (successor to rsockets and libspd) and `LD_PRELOAD` to intercept non-IB programs' socket calls, and transparently (to the program) send them over IB via RDMA. Dramatically speeding up programs built for TCP/IP, much more than can be achieved by using IPoIB. It avoids the need to change the program's source code to work with IB and can even be used for closed source programs. It does not work for programs that statically link in socket libraries.
 
-## InfiniBand programs for diagnosing and benchmarking
+## Diagnosing and benchmarking
 
-### ibstat - View a computer's InfiniBand GUIDs
+### ibstat - View a computer's IB GUIDs
 
-ibstat will show you detailed information about each InfiniBand adapter in the computer it is ran on, including: model number; number of ports; firmware and hardware version; node, system image, and port GUIDs; and port state, physical state, rate, base lid, lmc, SM lid, capability mask, and link layer.
+ibstat will show you detailed information about each IB adapter in the computer it is ran on, including: model number; number of ports; firmware and hardware version; node, system image, and port GUIDs; and port state, physical state, rate, base lid, lmc, SM lid, capability mask, and link layer.
 
  `$ ibstat` 
 ```
@@ -494,11 +409,11 @@ CA 'mlx4_0'
                 Link layer: InfiniBand
 ```
 
-This example shows a Mellanox Technologies (MT) adapter. Its PCI Device ID is reported (25418), rather than the model number of part number. It shows a state of "Active", which means is it properly connected to a subnet manager. It shows a physical state of "LinkUp", which means it has an electrical connection via cable, but is not necessarily properly connected to a subnet manager. It shows a total rate of 20 Gb/s (which for this card is from a 5.0 Gb/s signaling rate and 4 virtual lanes.) It shows the subnet manager assigned the port a lid of 3.
+This example shows a Mellanox Technologies (MT) adapter. Its PCI Device ID is reported (25418), rather than the model number of part number. It shows a state of "Active", which means is it properly connected to a subnet manager. It shows a physical state of "LinkUp", which means it has an electrical connection via cable, but is not necessarily properly connected to a subnet manager. It shows a total rate of 20 Gb/s (which for this card is from a 5.0 Gb/s signaling rate and 4 virtual lanes). It shows the subnet manager assigned the port a lid of 3.
 
-### ibhosts - View all hosts on InfiniBand network
+### ibhosts - View all hosts on IB network
 
-ibhosts will show you the Node GUIDs, number of ports, and device names, for each host on the InfiniBand network.
+ibhosts will show you the Node GUIDs, number of ports, and device names, for each host on the IB network.
 
  `# ibhosts` 
 ```
@@ -506,16 +421,16 @@ Ca      : 0x0002c90300002778 ports 2 "MT25408 ConnectX Mellanox Technologies"
 Ca      : 0x0002c90300002f78 ports 2 "hostname mlx4_0"
 ```
 
-### ibswitches - View all switches on InfiniBand network
+### ibswitches - View all switches on IB network
 
-ibswitches will show you the Node GUIDs, number of ports, and device names, for each switch on the InfiniBand network. If you are running with direct connections only, it will show nothing.
+ibswitches will show you the Node GUIDs, number of ports, and device names, for each switch on the IB network. If you are running with direct connections only, it will show nothing.
 
 ```
 # ibswitches
 
 ```
 
-### iblinkinfo - View link information on InfiniBand network
+### iblinkinfo - View link information on IB network
 
 iblinkinfo will show you the device names, Port GUIDs, number of virtual lanes, [signal transfer rates](#Signal_transfer_rates), state, physical state, and what it is connected to.
 
@@ -529,9 +444,9 @@ CA: hostname mlx4_0:
 
 This example shows two adapters directly connected with out a switch, using a 5.0 Gb/s [signal transfer rate](#Signal_transfer_rates), and 4 virtual lanes (4X).
 
-### ibping - Ping another InfiniBand device
+### ibping - Ping another IB device
 
-ibping will attempt pinging another InfiniBand GUID. ibping must be ran in server mode on one computer, and in client mode on another.
+ibping will attempt pinging another IB GUID. ibping must be ran in server mode on one computer, and in client mode on another.
 
 ibping must be ran in server mode on one computer.
 
@@ -557,7 +472,7 @@ Pong from hostname.(none) (Lid 1): time 0.074 ms
 rtt min/avg/max = 0.053/0.063/0.074 ms
 ```
 
-If you're running IPoIB, you can use regular `ping` which pings through the TCP/IP stack. ibping uses InfiniBand interfaces, and does not use the TCP/IP stack.
+If you're running IPoIB, you can use regular `ping` which pings through the TCP/IP stack. ibping uses IB interfaces, and does not use the TCP/IP stack.
 
 ### ibdiagnet - Show diagnostic information for entire subnet
 
@@ -664,7 +579,7 @@ tcp_lat:
 
 ### iperf - Measure performance over TCP/IP
 
-iperf is not an InfiniBand aware program, and is meant to test over TCP/IP or UDP. Even though [#qperf - Measure performance over TCP/IP or RDMA](#qperf_-_Measure_performance_over_TCP.2FIP_or_RDMA) can test your InfiniBand TCP/IP performace using IPoIB, iperf is still another program you can use.
+iperf is not an IB aware program, and is meant to test over TCP/IP or UDP. Even though [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) can test your IB TCP/IP performace using IPoIB, iperf is still another program you can use.
 
 iperf must be ran in server mode on one computer.
 
@@ -696,55 +611,52 @@ iperf shows Transfer in base 10 GB's, and Bandwidth in base 2 GB's. So, this exa
 
 ### Connection problems
 
-#### Link, physical state, and port state
+#### Link, physical state and port state
 
-*   See if the InfiniBand hardware modules are recognized by the system.
+*   See if the IB hardware modules are recognized by the system.
 
  `$ dmesg | egrep -i "Mellanox|InfiniBand|QLogic|Voltaire" # If you have an Intel adapter, you'll have to use Intel here and look through a few lines if you have other Intel hardware` 
 ```
 [    6.287556] mlx4_core: Mellanox ConnectX core driver v2.2-1 (Feb, 2014)
 [    8.686257] <mlx4_ib> mlx4_ib_add: mlx4_ib: Mellanox ConnectX InfiniBand driver v2.2-1 (Feb 2014)
 ```
-
--and/or-
-
  `$ ls -l /sys/class/infiniband`  `mlx4_0 -> ../../devices/pci0000:00/0000:00:03.0/0000:05:00.0/infiniband/mlx4_0` 
 
 If nothing is shown, your kernel isn't recognizing your adapter. This example shows approximately what you will see if you have a Mellanox ConnectX adapter, which uses the mlx4_0 kernel module.
 
-*   Check the port and physical states. Either run [ibstat](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs), or examine the /sys filesystem.
+*   Check the port and physical states. Either run [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs) or examine `/sys`.
 
- `$ ibstat`  `(look at the port shown you expect to be connected)` 
+ `$ ibstat`  `(look at the port shown that you expect to be connected)` 
 
--and/or-
+or
 
  `$ cat /sys/class/infiniband/<kernel module>/ports/<port number>/phys_state`  ` 5: LinkUp`  `$ cat /sys/class/infiniband/<kernel module>/ports/<port number>/state`  ` 4: ACTIVE` 
 
 The physical state should be "LinkUp". If it isn't, your cable likely isn't plugged in, isn't connected to anything on the other end, or is defective. The (port) state should be "Active". If it's "Initializing" or "INIT", your [subnet manager](#Subnet_manager) doesn't exist, isn't running, or hasn't added the port to the network's routing tables.
 
-*   Can you successfully [ibping](#ibping_-_Ping_another_InfiniBand_device) which uses InfiniBand directly, rather than IPoIB? Can you successfully `ping`, if you are running IPoIB?
+*   Can you successfully [ibping](#ibping_-_Ping_another_IB_device) which uses IB directly, rather than IPoIB? Can you successfully `ping`, if you are running IPoIB?
 
 *   Consider [upgrading firmware](#Upgrade_firmware).
 
 #### getaddrinfo failed: Name or service not known
 
-*   Run [ibhosts](#ibhosts_-_View_all_hosts_on_InfiniBand_network) to see the CA names at the end of each line in quotes.
+*   Run [ibhosts](#ibhosts_-_View_all_hosts_on_IB_network) to see the CA names at the end of each line in quotes.
 
 ### Speed problems
 
 *   Start by double-checking your expectations.
 
-How have you determined you have a speed problem? Are you using [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) or [iperf](#iperf_-_Measure_performance_over_TCP.2FIP), which both transmit data to and from memory rather than hard drives. Or, are you benchmarking actual file transfers, which relies on your hard drives? Unless you're running RAID to boost speed, even with the fastest SSD's available in mid 2015, a single hard drive (or sometimes even multiple ones) will be bottlenecking your InfiniBand transfer speeds. Are you using RDMA or TCP/IP via IPoIB? If so, [there is a performance hit](#TCP.2FIP_over_InfiniBand_.28IPoIB.29) for using IPoIB instead of RDMA.
+How have you determined you have a speed problem? Are you using [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) or [iperf](#iperf_-_Measure_performance_over_TCP.2FIP), which both transmit data to and from memory rather than hard drives. Or, are you benchmarking actual file transfers, which relies on your hard drives? Unless you're running RAID to boost speed, even with the fastest SSD's available in mid 2015, a single hard drive (or sometimes even multiple ones) will be bottlenecking your IB transfer speeds. Are you using RDMA or TCP/IP via IPoIB? If so, [there is a performance hit](#TCP.2FIP_.28IPoIB.29) for using IPoIB instead of RDMA.
 
-*   Check your link speeds. Run [ibstat](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs), [iblinkinfo](#iblinkinfo_-_View_link_information_on_InfiniBand_network), or examine the /sys filesystem.
+*   Check your link speeds. Run [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs), [iblinkinfo](#iblinkinfo_-_View_link_information_on_IB_network), or examine `/sys`.
 
- `$ ibstat`  `(look at the Rate shown on the port you are using.)` 
+ `$ ibstat`  `(look at the Rate shown on the port you are using)` 
 
--and/or-
+or
 
  `# iblinkinfo`  `(look at the middle part formatted like "4X     5.0 Gbps")` 
 
--and/or-
+or
 
  `$ cat /sys/class/infiniband/<kernel module>/ports/<port number>/rate`  `20 Gb/sec (4X DDR)` 
 
@@ -758,15 +670,3 @@ Does this match your expected [bandwidth and number of virtual lanes](#Bandwidth
 ```
 
 *   Consider [upgrading firmware](#Upgrade_firmware).
-
-## Network segmentation
-
-An InfiniBand subnet can be partitioned for different customers or applications, giving security and quality of service guarantees. Each partition is identified by a PKEY (Partition Key.)
-
-## How can I use libsdp for SDP (Sockets Direct Protocol)?
-
-Use [librdmacm](https://aur.archlinux.org/packages/librdmacm/) instead. (When it started, it was called rsockets.)
-
-librdmacm (and formerly libsdp) use `LD_PRELOAD` to intercept non-Infiniband programs' socket calls, and transparently (to the program) send them over RDMA over InfiniBand. That is, it can dramatically speed up programs built for TCP/IP, more than you can achieve by using them with IPoIB. It avoids the need to change a program's source code to work with InfiniBand, and can even be used on programs without the user having the source code. It does not work on programs that statically linked in socket libraries.
-
-libsdp was deprecated. The ib_sdp kernel module is no longer maintained or distributed.

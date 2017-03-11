@@ -2,28 +2,21 @@
 
 *   [1 Running public Arch AMIs](#Running_public_Arch_AMIs)
     *   [1.1 AMI Images from Uplink Labs](#AMI_Images_from_Uplink_Labs)
-    *   [1.2 Archlinux AMI](#Archlinux_AMI)
-    *   [1.3 Other AMIs](#Other_AMIs)
+    *   [1.2 Other AMIs](#Other_AMIs)
 *   [2 Building Arch AMIs](#Building_Arch_AMIs)
 
 ## Running public Arch AMIs
 
 ### AMI Images from Uplink Labs
 
-Uplink Labs creates new images approximately twice a month, for a number of regions:
-
-[http://www.uplinklabs.net/projects/arch-linux-on-ec2/](http://www.uplinklabs.net/projects/arch-linux-on-ec2/)
-
-### Archlinux AMI
-
-current releases: **Release 2017.01.15**
+Uplink Labs creates new images approximately twice a month. Images are being built for a number of regions, and cover the following configurations:
 
 *   ebs hvm x86_64 lts
 *   s3 hvm x86_64 lts
 *   ebs hvm x86_64 stable
 *   s3 hvm x86_64 stable
 
-for update list: [https://www.uplinklabs.net/projects/arch-linux-on-ec2/](https://www.uplinklabs.net/projects/arch-linux-on-ec2/)
+AMI links and more information are available on [http://www.uplinklabs.net/projects/arch-linux-on-ec2/](http://www.uplinklabs.net/projects/arch-linux-on-ec2/) .
 
 ### Other AMIs
 
@@ -47,3 +40,5 @@ This may be an issue with Amazon running different versions of Xen on different 
 ## Building Arch AMIs
 
 [linux-ec2](https://aur.archlinux.org/packages/linux-ec2/) in [AUR](/index.php/AUR "AUR") compiles the Arch linux kernel for AWS with Xen modules enabled and the XSAVE patch applied.
+
+Aforementioned Uplink Labs webpage also has a manual on the build process.

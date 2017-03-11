@@ -205,7 +205,7 @@ Proceed as usual.
 
 ### Sound
 
-There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. With luck, the relevant patches are expected to reach the mainline kernel in release 4.11\.
+There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches have been admitted in the first release candidate of kernel 4.11\.
 
 In the meantime you can compile Pierre Bossart's patched kernel branch, set various ALSA settings and copy some UCM files [as described in this bug thread](https://bugzilla.kernel.org/show_bug.cgi?id=95681). Note that these patches are still experimental and some people testing them have had their speakers suddenly [heat up to dangerous levels](https://bugzilla.kernel.org/show_bug.cgi?id=95681#c75).
 
@@ -274,7 +274,7 @@ Some users experience regular freezes, where their x205ta can only be restarted 
 
 Setting kernel argument "intel_idle.max_cstate=1" solve the problem without affecting performance. The [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") page may help with adding to the kernel parameters.
 
-There is a kernel available with patches from Intel in the AUR: [linux-baytrail411](https://aur.archlinux.org/packages/linux-baytrail411/). It also includes the patches for sound implemented in the mainline 4.11 kernel.
+There is a kernel available with patches from Intel in the AUR: [linux-baytrail411](https://aur.archlinux.org/packages/linux-baytrail411/).
 
 ### Bluetooth
 

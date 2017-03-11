@@ -165,7 +165,7 @@ Once satisfied, you can enable it on start by placing the first line in `~/.xini
 
 #### Mouse keys
 
-[w:Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is an Xorg feature (like StickyKeys) to use the keyboard (especially a numeric keypad) as a pointing device. It can replace a mouse, or work beside it. It is disabled by default. You can use
+[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is a Xorg feature (like StickyKeys) to use the keyboard (especially a numeric keypad) as a pointing device. It can replace a mouse, or work beside it. It is disabled by default. You can use
 
 ```
 $ xset q | grep "Mouse Keys"

@@ -3,6 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Old Presto version](#Old_Presto_version)
 *   [2 Plugins](#Plugins)
     *   [2.1 Adblock](#Adblock)
 *   [3 Performance tweaks](#Performance_tweaks)
@@ -29,13 +30,13 @@
 
 ## Installation
 
-In early December 2014, Opera version 26 was released, but only for 64-bit systems: with this milestone, the old proprietary Presto layout engine is replaced with the more modern and open-source Blink engine. The previous 12.16 version is still supported for 32-bit systems.
+[Install](/index.php/Install "Install") the [opera](https://www.archlinux.org/packages/?name=opera) package.
 
-[Installing](/index.php/Install "Install") the [opera](https://www.archlinux.org/packages/?name=opera) package will provide the new Blink version on x86_64 systems, and the old Presto version on i686 systems.
+### Old Presto version
 
-**Tip:** Using Presto-based Opera isn't recommended because of security and compliance with modern web standards. Instead you can try [Vivaldi](/index.php/Vivaldi "Vivaldi") by former Opera team members or [Otter Browser](/index.php/Otter_Browser "Otter Browser") with really similar UI.
+The current Opera uses the modern and open-source Blink engine. You can still use the old proprietary Presto layout engine by installing Opera 12.16 with the [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) package.
 
-The 12.16 Presto version is also available from the [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) package for both x86_64 and i686 architectures.
+Using Presto-based Opera isn't recommended because of security and compliance with modern web standards. Instead you can try [Vivaldi](/index.php/Vivaldi "Vivaldi") by former Opera team members or [Otter Browser](/index.php/Otter_Browser "Otter Browser") with really similar UI.
 
 ## Plugins
 

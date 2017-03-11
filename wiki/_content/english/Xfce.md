@@ -78,6 +78,8 @@ Xfce stores configuration options in [Xfconf](http://docs.xfce.org/xfce/xfconf/s
 
 ### Menu
 
+See [Xdg-menu](/index.php/Xdg-menu "Xdg-menu") for more info on using the Free Desktop menu system.
+
 #### Whisker menu
 
 [xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) (also included in [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).

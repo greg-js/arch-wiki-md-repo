@@ -234,23 +234,29 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 
 #### Symmetric
 
-Symmetric encryption does not require the generation of a key pair and can be used to simply encrypt data with a passphrase.
+Symmetric encryption does not require the generation of a key pair and can be used to simply encrypt data with a passphrase. Simply use `--symmetric` or `-c` to perform symmetic encryption:
 
-*   Encrypt *doc* with a symmetric cipher using a passphrase
-*   Use the AES-256 cipher algorithm to encrypt the passphrase
-*   Use the SHA-512 digest algorithm to mangle the passphrase
-*   Mangle the passphrase for 65536 iterations
+```
+$ gpg -c *doc*
+
+```
+
+The following example:
+
+*   Encrypts `*doc*` with a symmetric cipher using a passphrase
+*   Uses the AES-256 cipher algorithm to encrypt the passphrase
+*   Uses the SHA-512 digest algorithm to mangle the passphrase
+*   Mangles the passphrase for 65536 iterations
 
 ```
 $ gpg -c --s2k-cipher-algo AES256 --s2k-digest-algo SHA512 --s2k-count 65536 *doc*
 
 ```
 
-*   Decrypt a symmetrically encrypted *doc*.gpg using a passphrase
-*   Output decrypted contents into the same directory as *doc*.gpg
+To decrypt a symmetrically encrypted `*doc*.gpg` using a passphrase and output decrypted contents into the same directory as `*doc*` do:
 
 ```
-$ gpg *doc*.gpg
+$ gpg --output *doc* --decrypt *doc*.gpg
 
 ```
 

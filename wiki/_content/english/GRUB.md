@@ -17,7 +17,7 @@
 *   [3 UEFI systems](#UEFI_systems)
     *   [3.1 Check if you have GPT and an ESP](#Check_if_you_have_GPT_and_an_ESP)
     *   [3.2 Create an ESP](#Create_an_ESP)
-    *   [3.3 Install](#Install)
+    *   [3.3 Installation](#Installation_2)
     *   [3.4 Further reading](#Further_reading)
         *   [3.4.1 Alternative install method](#Alternative_install_method)
         *   [3.4.2 UEFI firmware workaround](#UEFI_firmware_workaround)
@@ -270,7 +270,7 @@ For GPT, you are looking for "Partition Table: gpt". For EFI, you are looking fo
 
 If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
 
-### Install
+### Installation
 
 **Note:** UEFI firmware are not implemented consistently by hardware manufacturers. The installation examples provided are intended to work on the widest range of UEFI systems possible. Those experiencing problems despite applying these methods are encouraged to share detailed information for their hardware-specific cases, especially where solving these problems. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
 

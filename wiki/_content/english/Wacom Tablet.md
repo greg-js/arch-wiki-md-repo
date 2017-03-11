@@ -84,6 +84,8 @@ The *xf86-input-wacom* driver was designed to work with the Xorg server so there
 
 If you have installed like [libwacom](https://www.archlinux.org/packages/?name=libwacom) remove those packages first. They are known to cause problems with newer version of X. *xf86-input-wacom* is the only package you need to install the X11 drivers.
 
+I myself uninstalled [libwacom](https://www.archlinux.org/packages/?name=libwacom), then gdm would not load, I personally have Wayland and the linux-lts kernel.
+
 ### Manual setup
 
 A manual configuration is done in `/etc/X11/xorg.conf` or in a separate file in the `/etc/X11/xorg.conf.d/` directory. The Wacom tablet device is accessed using a input event interface in `/dev/input/` which is provided by the kernel driver. The interface number `event??` is likely to change when unplugging and replugging into the same or especially a different *USB* port. Therefore it is wise to not refer to the device using its concrete `event??` interface (**static** configuration) but by letting *udev* dynamically create a symbolic link to the correct `event` file (**dynamic** configuration).

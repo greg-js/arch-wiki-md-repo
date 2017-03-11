@@ -25,7 +25,7 @@ Hardware-based full-disk encryption (FDE) is now available from many hard disk d
 
 ## Overview
 
-Many modern SED FDE are made by HDD/SSD vendors which adher to the [OPAL 2.0](http://www.trustedcomputinggroup.org/files/resource_files/FF80CE7D-1A4B-B294-D060AD8807BF9453/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) and [Enterprise](http://www.trustedcomputinggroup.org/files/resource_files/FFAE13C6-1A4B-B294-D0D8D885F9F4FB67/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) standards developed by the Trusted Computing Group (TCG). Enterprise SAS versions of the TCG standard are called "TCG Enterprise" drives. The hardware manufactured according to the standards is [labelled](http://www.wave.com/self-encrypting-drive-compatibility-list) accordingly.
+Many modern SED FDE are made by HDD/SSD vendors which adher to the [OPAL 2.0](http://www.trustedcomputinggroup.org/files/resource_files/FF80CE7D-1A4B-B294-D060AD8807BF9453/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) and [Enterprise](http://www.trustedcomputinggroup.org/files/resource_files/FFAE13C6-1A4B-B294-D0D8D885F9F4FB67/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) standards developed by the Trusted Computing Group (TCG). Enterprise SAS versions of the TCG standard are called "TCG Enterprise" drives. The hardware manufactured according to the standards is [labelled](http://www.wavesys.com/self-encrypting-drive-compatibility-list) accordingly.
 
 Unlocking (for runtime decryption) of the drive takes place via either a software, pre-boot authentication environment or with a [#BIOS based ATA-password](#BIOS_based_ATA-password) on power up.
 

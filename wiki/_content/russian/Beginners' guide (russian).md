@@ -130,7 +130,7 @@ $ pacman-key -v archlinux-*версия*-dual.iso.sig
 
 ### Проверка того, произошла ли загрузка в режиме UEFI
 
-В случае, если у вас материнская плата [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)") с включенным режимом загрузки UEFI (и установлен более предпочтительным чем режим BIOS/Legacy), CD/USB-носитель автоматически запустит Arch Linux через [gummiboot (Русский)](/index.php/Gummiboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gummiboot (Русский)"), в результате чего вы увидите следующее меню (с белыми буквами на черном фоне) с подсвеченным первым пунктом:
+В случае, если у вас материнская плата [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)") с включенным режимом загрузки UEFI (и установлен более предпочтительным чем режим BIOS/Legacy), CD/USB-носитель автоматически запустит Arch Linux через [systemd-boot (Русский)](/index.php/Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-boot (Русский)"), в результате чего вы увидите следующее меню (с белыми буквами на черном фоне) с подсвеченным первым пунктом:
 
 ```
 Arch Linux archiso x86_64 UEFI USB
@@ -717,7 +717,7 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 Сгенерируйте файл [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") приведенной ниже командой. Рекомендуется использовать UUID для указания конкретного раздела (смотрите раздел [fstab (Русский)#Определение файловой системы](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B "Fstab (Русский)")). Если вы предпочитаете использовать метки, замените опцию `-U` на `-L`:
 
 ```
-# genfstab -U -p /mnt >> /mnt/etc/fstab
+# genfstab -U /mnt >> /mnt/etc/fstab
 # nano /mnt/etc/fstab
 
 ```
@@ -822,6 +822,13 @@ FONT=cyr-sun16
 
 ### Аппаратные часы
 
+Используйте *timedatectl*, чтобы обеспечить точность системных часов:
+
+```
+# timedatectl set-ntp true
+
+```
+
 Все операционные системы должны воспринимать часовой пояс аппаратных часов одинаковым образом, иначе время будет сбиваться при синхронизации. Команда *hwclock* генерирует файл `/etc/adjtime`, который содержит соответствующие настройки. Для [UTC](https://en.wikipedia.org/wiki/ru:%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B2%D1%80%D0%B5%D0%BC%D1%8F "wikipedia:ru:Всемирное координированное время") запустите:
 
 ```
@@ -850,9 +857,9 @@ FONT=cyr-sun16
 Добавьте то же самое имя узла в файл `/etc/hosts`:
 
 ```
-#<ip-address> <hostname.domain.org> <hostname>
-127.0.0.1 localhost.localdomain localhost *myhostname*
-::1   localhost.localdomain localhost *myhostname*
+#127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+ *127.0.1.1*	*myhostname*.localdomain	*myhostname*
 
 ```
 
@@ -1098,32 +1105,32 @@ FONT=cyr-sun16
 
 Для систем с UEFI доступно несколько загрузчиков, полный список смотрите на странице [Boot loaders](/index.php/Boot_loaders "Boot loaders"). Возможно, вам подойдут эти загрузчики:
 
-*   [gummiboot (Русский)](/index.php/Gummiboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gummiboot (Русский)") — минималистичный менеджер загрузки UEFI, предоставляющий меню для ядер [EFISTUB](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)") и других приложений UEFI. Рекомендуется новичкам, особенно тем, кто желает иметь возможность загружаться и в другие установленные операционные системы, например Windows 8.
-*   [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA_.D0.B2_UEFI "GRUB (Русский)") — более полноценный загрузчик, полезный, если у вас возникают проблемы с Gummiboot.
+*   [systemd-boot (Русский)](/index.php/Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-boot (Русский)") (ранее назывался *gummiboot*) — минималистичный менеджер загрузки UEFI, предоставляющий меню для ядер [EFISTUB](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)") и других приложений UEFI. Рекомендуется новичкам, особенно тем, кто желает иметь возможность загружаться и в другие установленные операционные системы, например Windows 8.
+*   [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA_.D0.B2_UEFI "GRUB (Русский)") — более полноценный загрузчик, полезный, если у вас возникают проблемы с Systemd-boot.
 
-Здесь мы покажем пример установки *gummiboot*. Сперва установите пакет [dosfstools](https://www.archlinux.org/packages/?name=dosfstools), чтобы вы могли управлять системным разделом EFI после установки, а также [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) для создания загрузочной записи UEFI (которая используется установочными скриптами менеджера загрузки):
-
-```
-# pacman -S dosfstools efibootmgr
-
-```
+Здесь мы покажем пример установки *systemd-boot*.
 
 **Примечание:**
 
 *   Для загрузки в режиме UEFI жесткий диск должен быть размечен в GPT и иметь [системный раздел EFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_UEFI_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.B2_Linux "Unified Extensible Firmware Interface (Русский)") (512 Мбайт или больше, с типом раздела `EF00` и отформатированный в FAT32). В следующих примерах этот раздел монтируется в каталог `/boot`. Если вы следовали этому руководству с самого начала, у вас уже должно быть правильно все сделано.
-*   Очень желательно, чтобы системный раздел EFI был смонтирован в `/boot`, так как это требуется для автоматического обновления Gummiboot.
+*   Очень желательно, чтобы системный раздел EFI был смонтирован в `/boot`, так как это требуется для автоматического обновления Systemd-boot.
 
-Установите пакет [gummiboot](https://www.archlinux.org/packages/?name=gummiboot) и запустите автоматический установочный скрипт, заменив `*$esp*` на место расположения вашего системного раздела EFI (обычно это `/boot`):
-
-```
-# pacman -S gummiboot
-# gummiboot --path=*$esp* install
+Введите следующую команду для установки systemd-boot, заменив $esp на место расположения вашего системного раздела EFI (обычно это /boot):
 
 ```
+# bootctl --path=$esp install
 
-По файлам *.efi* в `*$esp*/EFI/boot` прошивкой устанавливается наличие операционных систем. Для Gummiboot необходимо наличие загрузочного файла `bootx64.efi`. Также будет необходимо вручную создать файлы настроек для Gummiboot.
+```
 
-Сперва создайте файл `*$esp*/loader/entries/arch.conf` и добавьте в него следующее, заменив `/dev/sda*x*` на ваш **корневой раздел** (например, `/dev/sda1`):
+Cперва создайте файл `*$esp*/loader/loader.conf` со следующим содержимым, заменив значение тайм-аута (опция `timeout`, указывается в секундах) на желаемое:
+
+ `# nano *$esp*/loader/loader.conf` 
+```
+default  arch
+timeout  5
+```
+
+Создайте файл `*$esp*/loader/entries/arch.conf` и добавьте в него следующее, заменив `/dev/sda*x*` на ваш **корневой раздел** (например, `/dev/sda1`):
 
  `# nano *$esp*/loader/entries/arch.conf` 
 ```
@@ -1133,15 +1140,39 @@ initrd         /initramfs-linux.img
 options        root=/dev/sda*x* rw
 ```
 
-Затем создайте `*$esp*/loader/loader.conf` со следующим содержимым, заменив значение тайм-аута (опция `timeout`, указывается в секундах) на желаемое:
+Если у вас процессор Intel, установите пакет [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode):
 
- `# nano *$esp*/loader/loader.conf` 
 ```
-default  arch
-timeout  5
+# pacman -S intel-ucode
+
 ```
 
-Для получения дополнительной информации о настройке и использовании gummiboot смотрите статью [gummiboot (Русский)](/index.php/Gummiboot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gummiboot (Русский)").
+И добавьте строку `initrd /intel-ucode.img` в файл `*$esp*/loader/entries/arch.conf`:
+
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options ...
+
+```
+
+Обновим systemd-boot:
+
+```
+# bootctl update
+
+```
+
+Если $ESP не смонтирован на `/boot`, опция `--path=` может передать его, например:
+
+```
+# bootctl --path=/boot/$esp update
+
+```
+
+Для получения дополнительной информации о настройке и использовании Systemd-boot смотрите статью [systemd-boot (Русский)](/index.php/Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-boot (Русский)").
 
 ## Размонтирование разделов и перезагрузка
 
