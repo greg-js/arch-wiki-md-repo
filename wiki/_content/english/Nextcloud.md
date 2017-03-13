@@ -132,7 +132,7 @@ Depending on which [webserver](/index.php/Webserver "Webserver") you are using, 
 Copy the Apache configuration file to the configuration directory:
 
 ```
-# cp /etc/webapps/owncloud/apache.example.conf /etc/httpd/conf/extra/owncloud.conf
+# cp /etc/webapps/nextcloud/apache.example.conf /etc/httpd/conf/extra/nextcloud.conf
 
 ```
 
@@ -141,7 +141,7 @@ Modify the file according to your preferences. By default it includes an alias f
 And include it in `/etc/httpd/conf/httpd.conf`:
 
 ```
-Include conf/extra/owncloud.conf
+Include conf/extra/nextcloud.conf
 
 ```
 

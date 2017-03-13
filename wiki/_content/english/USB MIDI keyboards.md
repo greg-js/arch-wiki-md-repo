@@ -16,7 +16,7 @@ This how-to assumes that you are using [ALSA](/index.php/ALSA "ALSA") and that y
 
 ### ALSA
 
-Install the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package.
 
 Type `aseqdump`. It should output something like:
 

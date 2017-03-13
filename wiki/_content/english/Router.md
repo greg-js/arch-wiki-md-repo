@@ -175,7 +175,7 @@ To properly hand out IPv6s to the network clients we will need to use an adverti
 
 The above configuration of shorewall does not include [UPnP](https://en.wikipedia.org/wiki/UPnP "wikipedia:UPnP") support. Use of UPnP is discouraged as it may make the gateway vulnerable to attacks from within the LAN. However, some applications require this to function correctly.
 
-To enable UPnP on your router, you need to install an UPnP Internet gateway daemon (IGD). To get it, install [miniupnpd](https://www.archlinux.org/packages/?name=miniupnpd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+To enable UPnP on your router, you need to install an UPnP Internet gateway daemon (IGD). To get it, [install](/index.php/Install "Install") the [miniupnpd](https://www.archlinux.org/packages/?name=miniupnpd) package.
 
 Read the [Shorewall guide on UPnP](http://www.shorewall.net/UPnP.html) for more information
 

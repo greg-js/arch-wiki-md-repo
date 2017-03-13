@@ -394,7 +394,7 @@ The [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") has OpenSSH agent emulation.
 
 #### Installation
 
-[Install](/index.php/Install "Install") the [keychain](https://www.archlinux.org/packages/?name=keychain) package available from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [keychain](https://www.archlinux.org/packages/?name=keychain) package.
 
 #### Configuration
 
@@ -437,7 +437,7 @@ Because Keychain reuses the same *ssh-agent* process on successive logins, you s
 
 The [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass) package provides a graphical dialog for entering your passhrase when running an X session. *x11-ssh-askpass* depends only on the [libx11](https://www.archlinux.org/packages/?name=libx11) and [libxt](https://www.archlinux.org/packages/?name=libxt) libraries, and the appearance of *x11-ssh-askpass* is customizable. While it can be invoked by the *ssh-add* program, which will then load your decrypted keys into [ssh-agent](#ssh-agent), the following instructions will, instead, configure *x11-ssh-askpass* to be invoked by the aforementioned [Keychain](#Keychain) script.
 
-Install [keychain](https://www.archlinux.org/packages/?name=keychain) and [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass), both available in the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [keychain](https://www.archlinux.org/packages/?name=keychain) and [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass) packages.
 
 Edit your `~/.xinitrc` file to include the following lines, replacing the name and location of your private key if necessary. Be sure to place these commands **before** the line which invokes your window manager.
 
@@ -485,9 +485,9 @@ The appearance of the *x11-ssh-askpass* dialog can be customized by setting its 
 
 There are other passphrase dialog programs which can be used instead of *x11-ssh-askpass*. The following list provides some alternative solutions.
 
-*   [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) is available in the official repositories. It is dependent on [kdelibs](https://www.archlinux.org/packages/?name=kdelibs) and is suitable for the [KDE](/index.php/KDE "KDE") Desktop Environment.
+*   [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) is dependent on [kdelibs](https://www.archlinux.org/packages/?name=kdelibs) and is suitable for the [KDE](/index.php/KDE "KDE") Desktop Environment.
 
-*   [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) depends on the [qt4](https://www.archlinux.org/packages/?name=qt4) libraries and is available from the official repositories.
+*   [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) depends on the [qt4](https://www.archlinux.org/packages/?name=qt4) libraries.
 
 ### pam_ssh
 

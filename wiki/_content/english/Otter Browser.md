@@ -9,7 +9,7 @@
 
 ## Installation
 
-Otter Browser can be [installed](/index.php/Installed "Installed") with [otter-browser](https://aur.archlinux.org/packages/otter-browser/) or [otter-browser-git](https://aur.archlinux.org/packages/otter-browser-git/).
+Otter Browser can be [installed](/index.php/Installed "Installed") with [otter-browser](https://aur.archlinux.org/packages/otter-browser/), [otter-browser-weekly](https://aur.archlinux.org/packages/otter-browser-weekly/) ( or [otter-browser-git](https://aur.archlinux.org/packages/otter-browser-git/). It's recommended to use *-weekly* package, which combines new features from *-git* with more stable experience.
 
 **Tip:** [qt5-webkit-ng](https://www.archlinux.org/packages/?name=qt5-webkit-ng) should be installed to make QtWebKit backend using up-to-date WebKit engine.
 

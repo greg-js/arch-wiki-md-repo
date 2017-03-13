@@ -176,7 +176,7 @@ fi
 
 When not using the GDM login manager, numlockx can be added to GNOME's start-up applications.
 
-[Install](/index.php/Install "Install") [numlockx](https://www.archlinux.org/packages/?name=numlockx) from the [official repositories](/index.php/Official_repositories "Official repositories"). Then, add a start-up command to launch `numlockx`.
+[Install](/index.php/Install "Install") the [numlockx](https://www.archlinux.org/packages/?name=numlockx) package. Then, add a start-up command to launch `numlockx`.
 
 ```
 $ gnome-session-properties

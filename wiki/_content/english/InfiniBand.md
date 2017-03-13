@@ -213,7 +213,7 @@ On one system:
 *   Install [opensm](https://aur.archlinux.org/packages/opensm/)
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `opensm.service`
 
-All of your connected IB ports should now be in a (port) state of `Active`, and a physical state of `LinkUp`. You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs) from [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/):
+All of your connected IB ports should now be in a (port) state of `Active`, and a physical state of `LinkUp`. You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs).
 
  `$ ibstat` 
 ```
@@ -231,7 +231,7 @@ Or by examining the `/sys` filesystem:
 
 You can create a virtual Ethernet Adapter that runs on the HCA. This is intended so programs designed to work with TCP/IP but not IB, can (indirectly) use IB networks. Performance is negatively affected due to sending all traffic through the normal TCP stack; requiring system calls, memory copies, and network protocols to run on the CPU rather than on the HCA.
 
-Configure the IB interface(s) (e.g. `ib0`), [like traditional Ethernet adapters](/index.php/Network_configuration "Network configuration").
+Configure the IB interface (e.g. `ib0`) [like a traditional Ethernet adapter](/index.php/Network_configuration "Network configuration").
 
 ### Connection mode
 
@@ -373,6 +373,8 @@ An IB subnet can be partitioned for different customers or applications, giving 
 Use `librdmacm` (successor to rsockets and libspd) and `LD_PRELOAD` to intercept non-IB programs' socket calls, and transparently (to the program) send them over IB via RDMA. Dramatically speeding up programs built for TCP/IP, much more than can be achieved by using IPoIB. It avoids the need to change the program's source code to work with IB and can even be used for closed source programs. It does not work for programs that statically link in socket libraries.
 
 ## Diagnosing and benchmarking
+
+All IB specific tools are included in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/).
 
 ### ibstat - View a computer's IB GUIDs
 

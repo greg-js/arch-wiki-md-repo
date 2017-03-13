@@ -117,7 +117,7 @@ set editor=`echo \$EDITOR`
 
 ```
 
-Here the `$` gets escaped so that it does not get substituted by Mutt before being passed to the shell. Also note the use of the backquotes, as bash syntax `$(...)` does not work. Mutt has a lot of predefined variables, but you can also set your own. User variable **must begin with "my"!**
+Here the `$` gets escaped so that it does not get substituted by Mutt before being passed to the shell. Also note the use of the backquotes, as bash syntax `$(...)` does not work. Mutt has a lot of predefined variables, but you can also set your own. User variables **must begin with "my"!**
 
 ```
 set my_name = "John Doe"
@@ -177,7 +177,7 @@ instead, where your account is *username@gmail.com*. This way it will be possibl
 
 ##### spoolfile
 
-The spoolfile is the folder where your (unfiltered) e-mail arrives. Most e-mail services conventionally names it *INBOX*. You can now use '=' or '+' as a substitution for the full `folder` path that was configured above. For example:
+The spoolfile is the folder where your (unfiltered) e-mail arrives. Most e-mail services conventionally name it *INBOX*. You can now use '=' or '+' as a substitution for the full `folder` path that was configured above. For example:
 
 ```
 set spoolfile=+INBOX
@@ -371,7 +371,7 @@ Well all you need is to write account-specific parameters to their respective fi
 Mutt can handle this thanks to one of its most powerful features: hooks. Basically a hook is a command that gets executed before a specific action. There are several hooks available. For multiple accounts, you must use account-hooks *and* folder-hooks.
 
 *   Folder-hooks will run a command before switching folders. This is mostly useful to set the appropriate SMTP parameters when you are in a specific folder. For instance when you are in your work mailbox and you send a e-mail, it will automatically use your work account as sender.
-*   Account-hooks will run a command everytime Mutt calls a function related to an account, like IMAP syncing. It does not require you to switch to any folder.
+*   Account-hooks will run a command every time Mutt calls a function related to an account, like IMAP syncing. It does not require you to switch to any folder.
 
 Hooks take two parameters:
 
@@ -454,63 +454,31 @@ macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
 ### Passwords management
 
-Keep in mind that writing your password in `.muttrc` is a security risk, and it might be of your concern. The trivial way to keep your passwords safe is not writing them in the config file. Mutt will then prompt for it when needed. However, this is quite cumbersome in the long run, especiallly if you have several accounts.
+Keep in mind that writing your password in `.muttrc` is a security risk. One solution is to always enter the password manually, but this becomes cumbersome.
 
-Here follows a smart and convenient solution: all your passwords are encrypted into one file and Mutt will prompt for a passphrase on startup only. You can opt for a keyring tool (e.g. GPG, [pwsafe](https://www.archlinux.org/packages/?name=pwsafe)) or an encryption tool like [ccrypt](https://www.archlinux.org/packages/?name=ccrypt), which may be more simple and straightforward to use. Since GPG is a Mutt dependency, we will use it here.
-
-First create a pair of public/private keys:
+An alternative solution is to encrypt your password with [GnuPG](/index.php/GnuPG "GnuPG") in an encrypted file. [Setup your own keypair](/index.php/GnuPG#Create_key_pair "GnuPG") if you have not done so already. [Create](/index.php/Create "Create") a file in a [tmpfs](/index.php/Tmpfs "Tmpfs") with the following contents:
 
 ```
-gpg --gen-key
+set my_pass = " *password*"
 
-```
-
-If you do not understand this process have a look at [Wikipedia:Asymmetric cryptography](https://en.wikipedia.org/wiki/Asymmetric_cryptography "wikipedia:Asymmetric cryptography").
-
-Create a file **in a secure environment** since it will contain your passwords for a couple of seconds:
-
- `~/.my-pwds` 
-```
-set my_pw_personal = "*first password*"
-set my_pw_work = "*second password*"
 ```
 
 **Note:** Remember that user defined variables **must** start with `my_`.
 
-Now encrypt the file:
+Then [encrypt](/index.php/GnuPG#Encrypt_and_decrypt "GnuPG") this file, setting yourself as the recipient and move it into an accessible location. In this example the encrypted file resides at $HOME/.my-pwds.gpg.
+
+In your mutt configuration file add the following before any account:
 
 ```
-gpg -e -r 'your-name' ~/.my-pwds
-
-```
-
-Note that 'your-name' must match the one you provided at the `gpg --gen-key` step. Now you can wipe your file containing your passwords in clear:
-
-```
-shred -xu ~/.my-pwds
-
-```
-
-Back to your account dedicated files, e.g. `.mutt/muttrc`:
-
-```
-set imap_pass=$my_pw_personal
-# Every time the password is needed, use $my_pw_personal variable.
-```
-
-And in your `.muttrc`, **before** you source any account dedicated file:
-
-```
-source "gpg2 -dq $HOME/.my-pwds.gpg |"
+source "gpg -dq $HOME/.my-pwds.gpg |"
 
 ```
 
 **Note:** At the end of the line above, there is no space between the pipe and the double quote.
 
-*   The `-q` parameter makes gpg2 quiet which prevents gpg2 output messing with Mutt interface.
-*   The pipe `|` at the end of a string is the Mutt syntax to tell that you want the result of what is preceeding.
+This decrypts the file quietly and sets the variable `my_pass` in this example. This can be used in any variable after it has been source. For example:
 
-Explanation: when Mutt starts, it will first source the result of the password decryption, that is why it will prompt for a passphrase. Then all passwords will be stored in memory in specific variables for the time Mutt runs. Then, when a folder-hook is called, it sets the imap_pass variable to the variable holding the appropriate password. When switching accounts, the imap_pass variable will be set to another variable holding another password, etc.
+ `set imap_pass=$my_pass` 
 
 If you use external tools like OfflineIMAP and msmtp, you need to set up an agent (e.g. gpg-agent, see [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG")) to keep the passphrase into cache and thus avoiding those tools always prompting for it.
 

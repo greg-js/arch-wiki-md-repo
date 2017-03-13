@@ -47,4 +47,4 @@ To start suricata automatically at system boot, [enable](/index.php/Daemon "Daem
 
 For example, if the network interface is `eth0` , the service name is `suricata@eth0.service`.
 
-**Tip:** If the service file is not yet included in AUR you can find it here: [[2]](http://pastebin.archlinux.fr/468715). Place this file under `/usr/lib/systemd/system/suricata@.service`
+**Tip:** If the service file is not yet included in AUR you can find it here: [[2]](http://archlinux.pastebin.com/RAtGPVL9). Place this file under `/usr/lib/systemd/system/suricata@.service`

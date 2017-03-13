@@ -22,7 +22,7 @@ You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH
 
 ## Installation
 
-[Install](/index.php/Install "Install") [sshfs](https://www.archlinux.org/packages/?name=sshfs) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [sshfs](https://www.archlinux.org/packages/?name=sshfs) package.
 
 ### Mounting
 

@@ -166,7 +166,7 @@ The `/usr/lib/openbox/openbox-xdg-autostart` python2 script runs applications ba
 
 ### GUI configuration
 
-Several GUI applications are available to quickly and easily configure your Openbox desktop. From the [official repositories](/index.php/Official_repositories "Official repositories"):
+Several GUI applications are available to quickly and easily configure your Openbox desktop.
 
 *   **ObConf** — A GTK2 based configuration tool for the Openbox window manager.
 
@@ -519,9 +519,9 @@ It is important to note that a substantial range of both **Openbox-specific** an
 
 ### Installation: official and AUR
 
-A good selection of [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) are available from the official repositories.
+A good selection of thems are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package.
 
-Both Openbox-specific and Openbox-compatible themes installed from the [official repositories](/index.php/Official_repositories "Official repositories") and/or the [AUR](/index.php/AUR "AUR") will be automatically installed to the `/usr/share/themes` directory. Both will also be immediately available for selection.
+Both Openbox-specific and Openbox-compatible themes installed will be automatically installed to the `/usr/share/themes` directory. Both will also be immediately available for selection.
 
 ### Installation: other sources
 
@@ -706,7 +706,7 @@ By default Openbox switches from the last desktop back to the first desktop on m
 
 **Warning:** This may not work where other actions are defined within the action group.
 
-The program [transset-df](https://www.archlinux.org/packages/?name=transset-df) is available in the official repositories, and can enable window transparency on-the-fly.
+The program [transset-df](https://www.archlinux.org/packages/?name=transset-df) can enable window transparency on-the-fly.
 
 For example, using the following code in the `<mouse>` section of the `~/.config/openbox/rc.xml` file will enable control of application window transparency by hovering the mouse-pointer over the title bar and scrolling with the middle button:
 
@@ -734,7 +734,7 @@ The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides
 
 ### Xprop values for applications
 
-[xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) is available in the official repositories, and can be used to relay property values for selected applications. Where frequently using per-application settings, the following [Bash Alias](/index.php/Bash#Aliases "Bash") may be useful: dy:
+[xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) can be used to relay property values for selected applications. Where frequently using per-application settings, the following [Bash Alias](/index.php/Bash#Aliases "Bash") may be useful: dy:
 
 ```
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'

@@ -936,11 +936,9 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 [Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
 
-**Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[8]](https://bbs.archlinux.org/viewtopic.php?id=190757)
-
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[9]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[8]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -999,7 +997,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[10]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[9]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

@@ -57,7 +57,7 @@ mkinitcpio has been developed by the Arch Linux developers and from community co
 
 ## Installation
 
-The [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) package is available in the [official repositories](/index.php/Official_repositories "Official repositories") and is a dependency of the [linux](https://www.archlinux.org/packages/?name=linux) package.
+[Install](/index.php/Install "Install") the [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) package, which is a dependency of the [linux](https://www.archlinux.org/packages/?name=linux) package, so most users will already have it installed.
 
 Advanced users may wish to install the latest development version of mkinitcpio from Git with the [mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) package.
 
@@ -299,7 +299,7 @@ Assembly via udev is also possible using the `mdadm_udev` hook. Upstream prefers
 
 **Required Packages**
 
-`net` requires the [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+`net` requires the [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) package.
 
 **Kernel Parameters**
 

@@ -34,7 +34,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") package [fcitx](https://www.archlinux.org/packages/?name=fcitx) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [fcitx](https://www.archlinux.org/packages/?name=fcitx) package.
 
 ### Input method engines
 

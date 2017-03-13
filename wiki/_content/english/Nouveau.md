@@ -26,8 +26,6 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
 
 For 32-bit application support on x86_64, also install [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) from [multilib](/index.php/Multilib "Multilib").
 
-For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl).
-
 ## Loading
 
 The Nouveau kernel module should load automatically on system boot. If it does not happen, then:

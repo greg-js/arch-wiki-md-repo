@@ -58,8 +58,6 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 For 32-bit application support on x86_64, also install [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) from [multilib](/index.php/Multilib "Multilib").
 
-For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl).
-
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
 
 ## Loading
@@ -247,6 +245,8 @@ See [http://www.x.org/wiki/RadeonFeature/#index3h2](http://www.x.org/wiki/Radeon
 ### Dynamic power management
 
 Since kernel 3.13, DPM is enabled by default for [lots of AMD Radeon hardware](http://kernelnewbies.org/Linux_3.13#head-f95c198f6fdc7defe36f470dc8369cf0e16898df). If you want to disable it, add the parameter `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+**Tip:** DPM works on R6xx gpus, but is not enabled by default in the kernel (only R7xx and up). Setting the `radeon.dpm=1` kernel parameter will enable dpm.
 
 Unlike [dynpm](#Dynamic_frequency_switching), the "dpm" method uses hardware on the GPU to dynamically change the clocks and voltage based on GPU load. It also enables clock and power gating.
 

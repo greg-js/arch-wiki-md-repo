@@ -35,7 +35,7 @@ Works perfectly out of the box with the typical installation. More information: 
 
 ### Touchpad
 
-Works fully with 3.17+ kernel. For LTS kernel, use the [patch of vencik](https://github.com/vencik/psmouse-dkms-alpsv7) for the multi-touch support.
+Works fully with 3.17+ kernel.
 
 ### Bluetooth
 

@@ -64,13 +64,13 @@ Works out-of-the-box.
 
 ### Ethernet
 
-Works out-of-the-box on current 3.19 kernel. alx driver got upstreamed somewhere around kernel version 3.10.
+Works out-of-the-box.
 
 ### Touchpad
 
-Touchpad now works out-of-the-box starting from kernel 3.14.
+Touchpad works out-of-the-box.
 
-Touchpad LED also works (out-of-the-box). To turn LED on:
+To turn the touchpad LED on:
 
 ```
 echo 255 >/sys/class/leds/dell-laptop::touchpad/brightness
@@ -94,7 +94,7 @@ Works out-of-the-box. Notice that rts5139 driver is in staging, so be ready to c
 
 ### Video
 
-Intel HD4000 works OK since 3.4 kernel, use earlier kernels at one's own risk.
+Intel HD4000 works out-of-the-box.
 
 ### Sound
 

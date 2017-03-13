@@ -245,7 +245,7 @@ termcapinfo xterm* ti@:te@
 
 If you started a program outside screen, but now you would like it to be inside, you can use **reptyr** to reparent the process from it's current tty to one inside screen.
 
-[Install](/index.php/Install "Install") the package [reptyr](https://www.archlinux.org/packages/?name=reptyr) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [reptyr](https://www.archlinux.org/packages/?name=reptyr) package.
 
 Get the PID of the process (you can use `ps ax` for that). Now just enter the PID as argument to reptyr inside a screen window.
 

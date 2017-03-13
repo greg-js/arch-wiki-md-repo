@@ -30,7 +30,7 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 [Install](/index.php/Install "Install") the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
 
-To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
+For 32-bit application support on x86_64, also install [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) from [multilib](/index.php/Multilib "Multilib").
 
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
 
@@ -106,7 +106,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 ## Enable amdgpu for Sea Islands or Southern Islands cards
 
-The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9), is compiled with Southern Islands and Sea Island support enabled by default (`CONFIG_DRM_AMDGPU_CIK=Y` and `CONFIG_DRM_AMDGPU_SI=Y` [[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4987)).
+The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package, is compiled with Southern Islands and Sea Island support enabled by default (`CONFIG_DRM_AMDGPU_CIK=Y` and `CONFIG_DRM_AMDGPU_SI=Y` [[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4987)).
 
 When using these cards, the default driver will be the old radeon driver. To use the amdgpu driver instead, you must [#Disable radeon driver](#Disable_radeon_driver).
 

@@ -57,7 +57,7 @@ EndSection
 
 ## Modifying DPMS and screensaver settings using xset
 
-It is possible to turn off your monitor using the *xset* tool which is provided by the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package in the [official repositories](/index.php/Official_repositories "Official repositories").
+It is possible to turn off your monitor using the *xset* tool which is provided by [installing](/index.php/Installing "Installing") the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package.
 
 **Note:** If using this command manually in a shell you may need to prefix it with `sleep 1;` for it to work correctly, for example `sleep 1; xset dpms force off`
 

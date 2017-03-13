@@ -22,7 +22,7 @@ Festival offers a general framework for building speech synthesis systems as wel
 
 ## Installation
 
-[Install](/index.php/Install "Install") [festival](https://www.archlinux.org/packages/?name=festival) from [official repositories](/index.php/Official_repositories "Official repositories"). You need a voice package like [festival-english](https://www.archlinux.org/packages/?name=festival-english) or [festival-us](https://www.archlinux.org/packages/?name=festival-us). Further languages are available in official repositories and in [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [festival](https://www.archlinux.org/packages/?name=festival) package. You need a voice package like [festival-english](https://www.archlinux.org/packages/?name=festival-english) or [festival-us](https://www.archlinux.org/packages/?name=festival-us).
 
 Test festival:
 

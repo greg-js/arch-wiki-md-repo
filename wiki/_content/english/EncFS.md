@@ -28,9 +28,10 @@ For more details on how EncFS compares to other disk encryption solution, see [D
             *   [4.6.2.2 login](#login)
             *   [4.6.2.3 gdm](#gdm)
             *   [4.6.2.4 Configuration](#Configuration)
-    *   [4.7 Mount when USB drive with EncFS folders is inserted using fsniper](#Mount_when_USB_drive_with_EncFS_folders_is_inserted_using_fsniper)
-        *   [4.7.1 How to](#How_to)
-    *   [4.8 Mount using KDE KWallet](#Mount_using_KDE_KWallet)
+    *   [4.7 Mount at login using pam_mount](#Mount_at_login_using_pam_mount)
+    *   [4.8 Mount when USB drive with EncFS folders is inserted using fsniper](#Mount_when_USB_drive_with_EncFS_folders_is_inserted_using_fsniper)
+        *   [4.8.1 How to](#How_to)
+    *   [4.9 Mount using KDE KWallet](#Mount_using_KDE_KWallet)
 *   [5 Encrypted backup](#Encrypted_backup)
     *   [5.1 Backup encrypted directory](#Backup_encrypted_directory)
     *   [5.2 Backup plaintext directory](#Backup_plaintext_directory)
@@ -216,6 +217,8 @@ foo             /home/foo/EncryptedFolder             /home/foo/DecryptedFolder 
 
 ```
 
+**Note:** It is not possible to mount multiple EncFS folders at login using `pam_encfs`. If multiple entries are specified in `/etc/security/pam_encfs.conf`, only the first one will be mounted, and the rest will be ignored. To mount multiple EncFS folders at login it is necessary to use [pam_mount](/index.php/Pam_mount "Pam mount"). See [#Mount at login using pam_mount](#Mount_at_login_using_pam_mount) for details.
+
 Also, if you see the following line, remove `allow_root` from the options. Otherwise, it will be in conflict with `allow_other` defined above.
 
 ```
@@ -231,6 +234,16 @@ user_allow_other
 ```
 
 To test your config, open a new virtual terminal (e.g. `Ctrl+Alt+F4`) and login. You should see pam successfuly mount your EncFS folder.
+
+### Mount at login using pam_mount
+
+Install and configure [pam_mount](/index.php/Pam_mount "Pam mount") as explained on its wiki page. EncFS mounts can be specified in pam_mount's configuration file as follows:
+
+ `/etc/security/pam_mount.conf.xml`  `<volume fstype="fuse" path="encfs#*/path/to/encfs/encrypted/data*" mountpoint="*/path/to/decrypted/data/mountpoint*" options="nonempty" />` 
+
+The EncFS mounts need to have the same password than your user account. The `nonempty` option makes it possible to mount the encrypted file system even when the mount point is non-empty. You may remove this option if this is not the desired behaviour.
+
+It is possible to mount multiple EncFS folders at login specifying multiple consecutive `<volume>` entries in the configuration file.
 
 ### Mount when USB drive with EncFS folders is inserted using fsniper
 

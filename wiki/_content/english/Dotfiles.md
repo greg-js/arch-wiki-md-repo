@@ -54,7 +54,7 @@ $ git commit -a
 
 	[https://github.com/EvanPurkhiser/dots](https://github.com/EvanPurkhiser/dots) || [dots-manager](https://aur.archlinux.org/packages/dots-manager/)
 
-*   **[etckeeper](/index.php/Etckeeper "Etckeeper")** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade; for pacman, these hooks currently have to be triggered manually.
+*   **[etckeeper](/index.php/Etckeeper "Etckeeper")** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade.
 
 	[http://joeyh.name/code/etckeeper/](http://joeyh.name/code/etckeeper/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
 

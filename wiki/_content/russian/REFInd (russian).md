@@ -221,6 +221,7 @@ Description=path monitor for rEFInd updates
 
 [Path]
 PathChanged=/usr/share/refind
+Unit=refind_update.service
 
 [Install]
 WantedBy=multi-user.target

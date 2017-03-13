@@ -253,6 +253,17 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  |
 | [Google Earth](/index.php/Google_Earth "Google Earth") | `~/.googleearth` | Some paths can be changed with the `KMLPath` and `CachePath` options in `~/.config/Google/GoogleEarthPlus.conf` |
+| [GQ LDAP client](https://sourceforge.net/projects/gqclient) | `~/.gq`
+
+`~/.gq-state`
+
+ | [1.51](https://sourceforge.net/p/gqclient/mailman/message/2053978) | `$ export GQRC="$XDG_CONFIG_HOME"/gqrc`
+
+`$ export GQSTATE="$XDG_DATA_HOME"/gq/gq-state`
+
+`$ mkdir -p "$(dirname "$GQSTATE")"`
+
+ |
 | [gradle](https://gradle.org/) | `~/.gradle` | [[58]](https://discuss.gradle.org/t/be-a-nice-freedesktop-citizen-move-the-gradle-to-the-appropriate-location-in-linux/2199) | `$ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle` |
 | [gtk](/index.php/Gtk "Gtk") | `~/.gtkrc` | `$ export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc` |
 | [gtk2](/index.php/Gtk "Gtk") | `~/.gtkrc-2.0` | `$ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc` |
@@ -411,7 +422,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 `~/.julia_history`
 
  | [[85]](https://github.com/JuliaLang/julia/issues/4630) [[86]](https://github.com/JuliaLang/julia/issues/10016) |
-| [Linux PAM](https://fedorahosted.org/linux-pam/) | `~/.pam_environment` | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
+| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
 | [lldb](http://lldb.llvm.org/) | `~/.lldb`
 
 `~/.lldbinit`

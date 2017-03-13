@@ -13,7 +13,7 @@ Gcin is a new generation of Chinese input method server developed by Edward Liu.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [gcin](https://www.archlinux.org/packages/?name=gcin) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [gcin](https://www.archlinux.org/packages/?name=gcin) package.
 
 ### Installing other input tables
 

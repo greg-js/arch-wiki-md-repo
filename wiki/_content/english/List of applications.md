@@ -491,6 +491,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch](https://github.com/Wintervenom/Scripts/blob/master/file/launch/dmenu-launch) || [dmenu-launch](https://aur.archlinux.org/packages/dmenu-launch/)
 
+*   **dmenu2** — Fork of dmenu with many useful patches applied and additional options like screen select, dim or opacity change.
+
+	[https://bitbucket.org/melek/dmenu2](https://bitbucket.org/melek/dmenu2) || [dmenu2](https://aur.archlinux.org/packages/dmenu2/)
+
 *   **dswitcher** — *dmenu*-based window switcher that works regardless of workspace or minimization.
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
@@ -575,7 +579,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **habak** — A background changing app
 
-	[http://fvwm-crystal.org/](http://fvwm-crystal.org/) || [habak](https://www.archlinux.org/packages/?name=habak)
+	[http://fvwm-crystal.sourceforge.net/](http://fvwm-crystal.sourceforge.net/) || [habak](https://www.archlinux.org/packages/?name=habak)
 
 *   **hsetroot** — A tool to create compose wallpapers.
 

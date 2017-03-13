@@ -7,6 +7,7 @@ Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
 *   [1 Hardware lists](#Hardware_lists)
 *   [2 Compatibility](#Compatibility)
     *   [2.1 Touchpad](#Touchpad)
+        *   [2.1.1 Middle click](#Middle_click)
     *   [2.2 Wifi](#Wifi)
     *   [2.3 Graphics](#Graphics)
     *   [2.4 QHD+ Pentile Display](#QHD.2B_Pentile_Display)
@@ -24,9 +25,7 @@ See [[2]](https://gist.github.com/precurse/6dc1990cd000551c8f11) for UX305CA (Sk
 
 ### Touchpad
 
-See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for details.
-
-Multi-touch scrolling works as of kernel 3.16.
+Works after installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
 If default Palm Detection doesn't work well, one can manually disable part of the trackpad by setting AreaEdge properties.
 
@@ -38,13 +37,7 @@ You can do this on the fly or add these parameters in the config file:
 
 ```
 
-**UX305C:**
-
-Touchpad will only work by default with Linux 4.5.0-rc1 or later. Can currently be used by installing [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/).
-
-**UX305UA**
-
-Touchpad works great on Linux-4.4.3 kernel and superior.
+#### Middle click
 
 EDIT by sputnick 20160424: With ASUS Zenbook UX305UA-FC057T, I can't figure out how to simulate middle click (to paste) even after running
 
@@ -61,8 +54,6 @@ Edit by [H3g3m0n](/index.php?title=User:H3g3m0n&action=edit&redlink=1 "User:H3g3
 synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 ```
-
-Edit by Ouafnico (30 Aug 2016) : Touchpad works well with xf86-input-libinput (and removing xf86-input-synaptics ; because libinput replace old synaptics), except the middle click. If someone got a solution...
 
 ### Wifi
 

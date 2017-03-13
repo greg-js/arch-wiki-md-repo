@@ -207,7 +207,7 @@ $ gpg --recv-keys *user-id*
 
 #### Asymmetric
 
-You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`).
+You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`). Additionally you need to [#Create key pair](#Create_key_pair) if you have not already done so.
 
 To encrypt a file with the name *doc*, use:
 
@@ -230,7 +230,7 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 *   Add `--armor` to encrypt a file using ASCII armor (suitable for copying and pasting a message in text format)
 *   Use `-R *user-id*` or `--hidden-recipient *user-id*` instead of `-r` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
 *   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
-*   You can use gnupg to encrypt your sensitive documents by using your own user-id as recipient, but only individual files at a time, though you can always tarball various files and then encrypt the tarball. See also [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") if you want to encrypt directories or a whole file-system.
+*   You can use gnupg to encrypt your sensitive documents by using your own user-id as recipient or by using the `--default-recipient-self` flag instead; however, you can only do this one file at a time, although you can always tarball various files and then encrypt the tarball. See also [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") if you want to encrypt directories or a whole file-system.
 
 #### Symmetric
 

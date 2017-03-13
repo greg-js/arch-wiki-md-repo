@@ -23,7 +23,7 @@ TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_sy
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) package.
 
 You should also install a [SoundFont](https://en.wikipedia.org/wiki/SoundFont "wikipedia:SoundFont") to be able to produce sound. Here is a list of SoundFonts:
 

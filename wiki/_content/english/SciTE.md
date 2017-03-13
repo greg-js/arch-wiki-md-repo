@@ -9,7 +9,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [scite](https://www.archlinux.org/packages/?name=scite), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [scite](https://www.archlinux.org/packages/?name=scite) package.
 
 ## Configuration
 

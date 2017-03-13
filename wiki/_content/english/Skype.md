@@ -310,7 +310,7 @@ Make skype home dir and download dir accessible:
 
 ```
 
-Install incron with the [incron](https://www.archlinux.org/packages/?name=incron) package from the [official repositories](/index.php/Official_repositories "Official repositories"), and enable and start `incrond` [using systemd](/index.php/Systemd#Using_units "Systemd"). Open incrontab for root user:
+[Install](/index.php/Install "Install") incron with the [incron](https://www.archlinux.org/packages/?name=incron) package, and enable and start `incrond` [using systemd](/index.php/Systemd#Using_units "Systemd"). Open incrontab for root user:
 
 ```
 # incrontab -e

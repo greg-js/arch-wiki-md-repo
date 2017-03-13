@@ -31,8 +31,7 @@ This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retin
     *   [3.4 Touchpad](#Touchpad)
     *   [3.5 Memory Card (SDHCI/SDX) Reader](#Memory_Card_.28SDHCI.2FSDX.29_Reader)
 *   [4 What does not work (early August 2013, 3.10.3-1)](#What_does_not_work_.28early_August_2013.2C_3.10.3-1.29)
-    *   [4.1 General](#General)
-    *   [4.2 Graphics](#Graphics_2)
+    *   [4.1 Graphics](#Graphics_2)
 *   [5 Discussions](#Discussions)
 *   [6 See also](#See_also)
 
@@ -293,15 +292,6 @@ As a workaround you will need to reload the sdhci kernel modules, as per: [https
 ```
 
 ## What does not work (early August 2013, 3.10.3-1)
-
-### General
-
-*   The thunderbolt hotplug issue has been solved as of 3.17 for non-chained device, tested to work on 3.18.1\. For versions before 3.17 and for chained devices, the controller cannot
-    *   be connected and used after boot
-    *   be used if the controller is logically or physically disconnected and reconnected during an active session
-    *   survive suspend and resume states because the kernel is not able to successfully change the power state
-    *   This is caused by a non-compliant UEFI implementation by Apple.
-*   see [http://mjg59.dreamwidth.org/15948.html](http://mjg59.dreamwidth.org/15948.html) for further information (circa August 2012)
 
 ### Graphics
 

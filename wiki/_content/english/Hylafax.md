@@ -18,7 +18,7 @@ From [HylaFAX home page](http://www.hylafax.org/content/Main_Page):
 
 ## Setup
 
-[Install](/index.php/Install "Install") [hylafax](https://www.archlinux.org/packages/?name=hylafax).
+[Install](/index.php/Install "Install") the [hylafax](https://www.archlinux.org/packages/?name=hylafax) package.
 
 It could be that you need a MTA installed like [Postfix](/index.php/Postfix "Postfix"):
 

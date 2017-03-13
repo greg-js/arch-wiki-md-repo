@@ -569,7 +569,7 @@ This will ensure you do not accidentally upgrade the database to an incompatible
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 
-For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available in the [official repositories](/index.php/Official_repositories "Official repositories") that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL.
+For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL.
 
 When you are ready, upgrade the following packages: [postgresql](https://www.archlinux.org/packages/?name=postgresql), [postgresql-libs](https://www.archlinux.org/packages/?name=postgresql-libs), and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade). Note that the data directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new database must be initialized, as described near the top of this page.
 

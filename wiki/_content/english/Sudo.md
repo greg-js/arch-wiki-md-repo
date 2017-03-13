@@ -274,7 +274,7 @@ Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/), w
 
 Let us say you create 3 users: admin, devel, and joe. The user "admin" is used for journalctl, systemctl, mount, kill, and iptables; "devel" is used for installing packages, and editing config files; and "joe" is the user you log in with. To let "joe" reboot, shutdown, and use netctl we would do the following:
 
-Edit /etc/pam.d/su and /etc/pam.d/su-1 Require user be in the wheel group, but do not put anyone in it.
+Edit `/etc/pam.d/su` and `/etc/pam.d/su-1` Require user be in the wheel group, but do not put anyone in it.
 
 ```
 #%PAM-1.0

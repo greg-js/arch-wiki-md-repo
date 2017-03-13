@@ -1,6 +1,6 @@
 This article explains how to install TrueType Microsoft fonts and emulate Windows' font rendering.
 
-**Tip:** See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for alternatives available in the [official repositories](/index.php/Official_repositories "Official repositories").
+**Tip:** See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for alternatives.
 
 ## Contents
 

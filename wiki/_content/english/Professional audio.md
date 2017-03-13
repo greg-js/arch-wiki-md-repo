@@ -210,11 +210,11 @@ you need to disable the "snd_dice" module.
 
 If after getting jack setup you will find that Flash has no audio.
 
-In order to get flash to work with jack you will need to install [libflashsupport-jack](https://aur.archlinux.org/packages/libflashsupport-jack/) from the [AUR](/index.php/AUR "AUR").
+In order to get flash to work with jack you will need to [install](/index.php/Install "Install") the [libflashsupport-jack](https://aur.archlinux.org/packages/libflashsupport-jack/) package.
 
 You can also use more flexible method to allow Alsa programs (including Flash) play sound while jack is running:
 
-First you must install the jack plugin for Alsa by installing [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) from the [official repositories](/index.php/Official_repositories "Official repositories"). Enable it by editing (or creating) `/etc/asound.conf` (system wide settings) to have these lines:
+First you must install the jack plugin for Alsa by [installing](/index.php/Installing "Installing") the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package. Enable it by editing (or creating) `/etc/asound.conf` (system wide settings) to have these lines:
 
 ```
 # convert alsa API over jack API

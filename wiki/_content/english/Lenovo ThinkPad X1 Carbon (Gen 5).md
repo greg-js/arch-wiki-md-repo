@@ -8,8 +8,7 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
-    *   [2.3 "Native Ethernet"](#.22Native_Ethernet.22)
-    *   [2.4 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.3 TrackPoint Scrolling](#TrackPoint_Scrolling)
 
 ## Model description
 
@@ -29,6 +28,7 @@ Version: ThinkPad X1 Carbon 5th
 | **Device** | **Working** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
+| Native Ethernet with [Dongle](http://shop.lenovo.com/us/en/itemdetails/4X90F84315/460/D60A78A4A48A422E9761BD184AD3750A) | Yes |
 | Mobile broadband |  ?? |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
@@ -37,7 +37,7 @@ Version: ThinkPad X1 Carbon 5th
 | Fingerprint Reader | No |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| microSD card reader |  ?? |
+| microSD card reader | Yes |
 
 ### Fingerprint Reader
 
@@ -48,9 +48,9 @@ The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc
 ### Keyboard Fn Shortcuts
 
 *   Fn+4 sends XF86Sleep (puts computer to sleep by default)
-*   Fn+S sends Alt_L
+*   Fn+S sends Alt_L+Sys_Req
 *   Fn+P sends Pause
-*   Fn+B sends Control_L
+*   Fn+B sends Control_L+Break
 *   Fn+K sends Scroll_Lock
 *   Fn by itself sends XF86WakeUp (wakes computer from sleep by default)
 
@@ -60,10 +60,6 @@ There are two options for displays:
 
 *   14" FHD IPS (1920 x 1080): Works
 *   14" WQHD (2560 x 1440): ??
-
-### "Native Ethernet"
-
-RJ45-Adapter: ??
 
 ### TrackPoint Scrolling
 

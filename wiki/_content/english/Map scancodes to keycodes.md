@@ -37,6 +37,8 @@ The *.hwdb* file can contain multiple blocks of mappings for different keyboards
 
 The format of each line in the block body is `KEYBOARD_KEY_*<scancode>*=*<keycode>*`. The value of `*<scancode>*` is hexadecimal, but without the leading `0x` (i.e. specify `a0` instead of `0xa0`), whereas the value of `*<keycode>*` is the lower-case keycode name string as listed in `/usr/include/linux/input-event-codes.h` (see the `KEY_*<KEYCODE>*` variables), a sorted list is available at [[1]](http://hal.freedesktop.org/quirk/quirk-keymap-list.txt). It is not possible to specify decimal value in `*<keycode>*`.
 
+**Tip:** You can obtain the identificator for the device you want to setup a custom *hwdb* rule for by using `# evemu-describe`. This utility provided by the [evemu](https://www.archlinux.org/packages/?name=evemu) package.
+
 ### Example for custom hwdb
 
 The example hwdb file will match all AT keyboards:

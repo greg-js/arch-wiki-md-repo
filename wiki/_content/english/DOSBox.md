@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [dosbox](https://www.archlinux.org/packages/?name=dosbox) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dosbox](https://www.archlinux.org/packages/?name=dosbox) package.
 
 ## Configuration
 

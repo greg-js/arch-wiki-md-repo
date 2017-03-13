@@ -129,11 +129,11 @@ Works out of the box. Uses the `uvcvideo` module, see [Kernel modules](/index.ph
 
 ### Graphics controller
 
-[Install](/index.php/Install "Install") [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), available in the [Official repositories](/index.php/Official_repositories "Official repositories"), see [Intel](/index.php/Intel "Intel").
+[Install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. See [Intel](/index.php/Intel "Intel").
 
 ### Touchpad
 
-[Install](/index.php/Install "Install") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
 
 ### Bluetooth
 
@@ -219,7 +219,7 @@ Install [florence](https://aur.archlinux.org/packages/florence/), available in t
 
 #### Gnome 3.2.x
 
-[Install](/index.php/Install "Install") [caribou](https://www.archlinux.org/packages/?name=caribou), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [caribou](https://www.archlinux.org/packages/?name=caribou) package.
 
 ### Gesture recognition
 

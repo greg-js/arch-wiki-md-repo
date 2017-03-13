@@ -91,11 +91,11 @@ In order for video acceleration to work, and often to expose all the modes that 
 
 | Brand | Type | Driver | OpenGL | OpenGL ([Multilib](/index.php/Multilib "Multilib")) | Documentation |
 | **AMD/
-ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
+ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI](/index.php/ATI "ATI") |
 | Proprietary | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| **Intel** | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
-| **Nvidia** | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Nouveau](/index.php/Nouveau "Nouveau") |
+| **Intel** | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
+| **Nvidia** | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
 | [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 | [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [nvidia-304xx-utils](https://www.archlinux.org/packages/?name=nvidia-304xx-utils) | [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) |
@@ -437,7 +437,7 @@ See main article: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding "SSH").
 
 With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
 
-[Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package.
 
 Find the name or ID of the device you want to disable:
 

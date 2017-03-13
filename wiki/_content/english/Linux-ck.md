@@ -26,7 +26,7 @@
 
 [Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available both in [AUR](/index.php/AUR "AUR") and in the [unofficial repo-ck repository](#Use_pre-compiled_packages) that allows users to run a kernel and headers setup patched with Con Kolivas' ck patchset[[1]](http://users.tpg.com.au/ckolivas/kernel/), including MuQSS (Multiple Queue Skiplist Scheduler, pronounced *mux*) which replaces Brain Fuck Scheduler (BFS), his previous work. Many Arch Linux users choose this kernel for its excellent desktop interactivity and responsiveness under any load situation.
 
-Ck patchset is designed for desktop/laptop use but not for servers. It provides low latency environment and works well for 16 CPUs or less.
+Ck patchset is designed for desktop/laptop use but not for servers. It provides low latency environment and works well for 16 CPUs or fewer.
 
 ### Release cycle
 
@@ -52,10 +52,8 @@ The [linux-ck](https://aur.archlinux.org/packages/linux-ck/) package contains an
 In addition to the [linux-ck](https://aur.archlinux.org/packages/linux-ck/) package, there are LTS kernel releases patched with the above patchsets as well and with the previously mentioned modifications:
 
 *   [linux-lts-ck](https://aur.archlinux.org/packages/linux-lts-ck/) - The current Arch Linux LTS kernel patched with the CK patchset
-*   [linux-lts310-ck](https://aur.archlinux.org/packages/linux-lts310-ck/) - The 3.10 LTS kernel patched with the CK patchset
-*   [linux-lts312-ck](https://aur.archlinux.org/packages/linux-lts312-ck/) - The 3.12 LTS kernel patched with the CK patchset
 
-**Note:** These three packages are maintained by clfarron4, thus pre-compiled versions will not be present in the unofficial ck repo.
+**Note:** This package is maintained by vishwin, thus pre-compiled versions will not be present in the unofficial ck repo.
 
 ## Installation options
 
@@ -76,7 +74,7 @@ Users can further customize the linux-ck package via tweaks contained in the PKG
 
 More details about these options are provided in the PKGBUILD itself. Be sure to read them carefully if compiling from AUR!
 
-**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few.
+**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few. Alternatively, use the corresponding DKMS package, for instance install [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) as described in [NVIDIA#Custom_kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA").
 
 ### Use pre-compiled packages
 

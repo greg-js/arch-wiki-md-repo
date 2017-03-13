@@ -15,7 +15,7 @@ Using Privoxy is necessary when they use a [SOCKS](https://en.wikipedia.org/wiki
 
 ## Installation and setup
 
-[Install](/index.php/Install "Install") the [privoxy](https://www.archlinux.org/packages/?name=privoxy) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [privoxy](https://www.archlinux.org/packages/?name=privoxy) package.
 
 When Privoxy is used in conjunction with [Tor](/index.php/Tor "Tor") the two applications need to exchange information through a chain, which requires the specification of forwarding rules.
 

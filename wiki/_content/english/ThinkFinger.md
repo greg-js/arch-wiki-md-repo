@@ -22,7 +22,7 @@ ThinkWiki has a [list of various fingerprint readers](http://www.thinkwiki.org/w
 
 ## Installation
 
-Install [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) package.
 
 ## Configuration
 

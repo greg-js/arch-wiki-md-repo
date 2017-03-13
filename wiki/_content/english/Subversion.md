@@ -44,7 +44,7 @@ The goal of this how to is to setup Subversion, with Apache. Why use Apache for 
 
 Install [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") as described in its article.
 
-Besides Apache, you will only need to install [subversion](https://www.archlinux.org/packages/?name=subversion), available from the [official repositories](/index.php/Official_repositories "Official repositories").
+Besides Apache, you will only need to install the [subversion](https://www.archlinux.org/packages/?name=subversion) package.
 
 ### Subversion Configuration
 
@@ -192,7 +192,7 @@ Enjoy!
 
 ### Install the package
 
-Install [subversion](https://www.archlinux.org/packages/?name=subversion) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Install the [subversion](https://www.archlinux.org/packages/?name=subversion) package.
 
 ### Create a repository
 

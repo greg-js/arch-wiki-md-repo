@@ -37,7 +37,7 @@ Nowadays, SCIM is also:
 
 ## Installing SCIM
 
-SCIM can be [installed](/index.php/Pacman "Pacman") with the package [scim](https://www.archlinux.org/packages/?name=scim), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+SCIM can be [installed](/index.php/Pacman "Pacman") with the package [scim](https://www.archlinux.org/packages/?name=scim).
 
 ### Installing Input Method Engines
 

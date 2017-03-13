@@ -14,11 +14,11 @@ There are several ways to backup DVD videos. The quickest and simplest is [to co
 
 ## Installation
 
-[Install](/index.php/Install "Install") [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dvdbackup](https://www.archlinux.org/packages/?name=dvdbackup) package.
 
-[dvdauthor](https://www.archlinux.org/packages/?name=dvdauthor) is available in the official repositories, but it is only required if backing up specific titles or title sets.
+[dvdauthor](https://www.archlinux.org/packages/?name=dvdauthor) is only required if backing up specific titles or title sets.
 
-[libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) is available in the official repositories and is required to read encrypted DVDs.
+[libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) is required to read encrypted DVDs.
 
 ## Examining the DVD
 

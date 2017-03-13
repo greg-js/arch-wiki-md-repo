@@ -155,7 +155,7 @@ $ ldapadd -D "cn=Manager,dc=example,dc=org" -W -f user_joe.ldif
 
 Install the OpenLDAP client as described in [OpenLDAP](/index.php/OpenLDAP "OpenLDAP"). Make sure you can query the server with `ldapsearch`.
 
-Next, [install](/index.php/Install "Install") [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Next, [install](/index.php/Install "Install") the [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) package.
 
 ### NSS Configuration
 
@@ -291,7 +291,7 @@ SSSD is a system daemon. Its primary function is to provide access to identity a
 
 ### General Package Details
 
-[sssd](https://www.archlinux.org/packages/?name=sssd) is a package available from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [sssd](https://www.archlinux.org/packages/?name=sssd) package.
 
 ### How to enable SSSD for basic Authentication
 

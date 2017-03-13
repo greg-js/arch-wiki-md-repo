@@ -19,14 +19,11 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [1 Hardware](#Hardware)
 *   [2 Configuration](#Configuration)
     *   [2.1 flip_done timed out freezes](#flip_done_timed_out_freezes)
-    *   [2.2 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
-    *   [2.3 Suspend / Resume](#Suspend_.2F_Resume)
-    *   [2.4 Hibernate / Resume](#Hibernate_.2F_Resume)
-    *   [2.5 Fingerprint Sensor](#Fingerprint_Sensor)
-    *   [2.6 ALSA Beep](#ALSA_Beep)
-    *   [2.7 Function keys](#Function_keys)
-    *   [2.8 Video Issues](#Video_Issues)
-    *   [2.9 Smartcard Reader](#Smartcard_Reader)
+    *   [2.2 Fingerprint Sensor](#Fingerprint_Sensor)
+    *   [2.3 ALSA Beep](#ALSA_Beep)
+    *   [2.4 Function keys](#Function_keys)
+    *   [2.5 Video Issues](#Video_Issues)
+    *   [2.6 Smartcard Reader](#Smartcard_Reader)
 *   [3 See also](#See_also)
 
 ## Hardware
@@ -81,18 +78,6 @@ See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1689914#p1689914) 
 video=SVIDEO-1:d
 
 ```
-
-### Touchpad/TrackPoint
-
-With kernels older than 4.5.1, there is a [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working. This bug was fixed in linux-4.5.1.
-
-### Suspend / Resume
-
-With kernels older than 4.6, suspending the T460s by closing the lid when running on battery causes the machine to freeze up entirely. This can be worked around by setting the "intel_pstate=no_hwp" kernel parameter or by compiling the kernel with the patch attached to the [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=113551) tracking this issue.
-
-### Hibernate / Resume
-
-A long standing kernel bug caused resume from hibernation to fail with a probability that depended on the amount of allocated RAM. This bug is fixed by [this patch](https://bugzilla.kernel.org/show_bug.cgi?id=104771), and is included in the [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package.
 
 ### Fingerprint Sensor
 

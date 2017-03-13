@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs) from the [official repositories](/index.php/Official_repositories "Official repositories")
+[Install](/index.php/Install "Install") the [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs) package.
 
 If needed, make sure that fuse has been started.
 

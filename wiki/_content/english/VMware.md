@@ -35,6 +35,8 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.12 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
+    *   [5.13 vmplayer fails to start on version 12.5.3](#vmplayer_fails_to_start_on_version_12.5.3)
+    *   [5.14 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -408,7 +410,7 @@ This is likely due to the `vmnet` module not being loaded [[1]](http://www.linux
 
 ### Kernel modules fail to build after Linux 4.9
 
-As of VMware Workstation Pro 12.5.2, the module source needs to be modified to be successfully compiled under kernel 4.9 [[2]](http://rglinuxtech.com/?p=1847).
+On VMware Workstation Pro 12.5.2, the module source needs to be modified to be successfully compiled under kernel 4.9 [[2]](http://rglinuxtech.com/?p=1847).
 
 ```
 # cd /usr/lib/vmware/modules/source
@@ -426,6 +428,33 @@ As of VMware Workstation Pro 12.5.2, the module source needs to be modified to b
 # sed -i 's/addr, 1, 1, 0/addr, 1, 0/g' vmnet-only/userif.c
 # tar cf vmnet.tar vmnet-only
 # rm -r vmnet-only
+
+```
+
+### vmplayer fails to start on version 12.5.3
+
+It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
+
+If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead.
+
+```
+mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
+
+```
+
+### vmware 12 process terminates immediately after start, no GUI is launched
+
+Registered bug at [Mageia](https://bugs.mageia.org/show_bug.cgi?id=9739), but it seems that there are no error messages shown in terminal with arch. When inspecting the logs, which are in `/tmp/vmware-<id>`, there are `VMWARE_SHIPPED_LIBS_LIST is not set`, `VMWARE_SYSTEM_LIBS_LIST is not set`, `VMWARE_USE_SHIPPED_LIBS is not set`, `VMWARE_USE_SYSTEM_LIBS is not set` issues. Process simply terminates with `Unable to execute /usr/lib/vmware/bin/vmware-modconfig.` after vmware or vmplayer is executed. Solution is the same, as root do:
+
+```
+# mv /etc/vmware/icu/icudt44l.dat /etc/vmware/icu/icudt44l.dat.bak
+
+```
+
+Also there is a workaround:
+
+```
+# export VMWARE_USE_SHIPPED_LIBS='yes'
 
 ```
 

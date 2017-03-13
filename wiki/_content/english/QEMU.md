@@ -50,6 +50,8 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
         *   [7.2.1 SPICE](#SPICE)
+            *   [7.2.1.1 Password authentication with SPICE](#Password_authentication_with_SPICE)
+            *   [7.2.1.2 TLS encryption](#TLS_encryption)
     *   [7.3 vmware](#vmware)
     *   [7.4 virtio](#virtio)
     *   [7.5 cirrus](#cirrus)
@@ -72,12 +74,13 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [10.1.2 Custom script](#Custom_script)
     *   [10.2 Mouse integration](#Mouse_integration)
     *   [10.3 Pass-through host USB device](#Pass-through_host_USB_device)
-    *   [10.4 Enabling KSM](#Enabling_KSM)
-    *   [10.5 Multi-monitor support](#Multi-monitor_support)
-    *   [10.6 Copy and paste](#Copy_and_paste)
-    *   [10.7 Windows-specific notes](#Windows-specific_notes)
-        *   [10.7.1 Fast startup](#Fast_startup)
-        *   [10.7.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+    *   [10.4 USB redirection with SPICE](#USB_redirection_with_SPICE)
+    *   [10.5 Enabling KSM](#Enabling_KSM)
+    *   [10.6 Multi-monitor support](#Multi-monitor_support)
+    *   [10.7 Copy and paste](#Copy_and_paste)
+    *   [10.8 Windows-specific notes](#Windows-specific_notes)
+        *   [10.8.1 Fast startup](#Fast_startup)
+        *   [10.8.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
     *   [11.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
@@ -798,7 +801,7 @@ The advantage of this method is you do not have to add sudo privileges to your u
 
 #### Basics
 
-VDE support can be [installed](/index.php/Pacman "Pacman") via the [vde2](https://www.archlinux.org/packages/?name=vde2) package in the [official repositories](/index.php/Official_repositories "Official repositories").
+VDE support can be [installed](/index.php/Pacman "Pacman") via the [vde2](https://www.archlinux.org/packages/?name=vde2) package.
 
 In our config, we use tun/tap to create a virtual interface on my host. Load the `tun` module (see [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details):
 
@@ -1064,6 +1067,47 @@ For improved support for multiple monitors, clipboard sharing, etc. the followin
 *   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more
 *   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
+
+##### Password authentication with SPICE
+
+If you want to enable password authentication with SPICE you need to remove `disable-ticketing` from the `-spice` argument and instead add `password=*yourpassword*`. For example:
+
+```
+$ qemu-system-x86_64 -vga qxl -spice port=5900,password=*yourpassword* -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
+
+```
+
+Your SPICE client should now ask for the password to be able to connect to the SPICE server.
+
+##### TLS encryption
+
+You can also configure TLS encryption for communicating with the SPICE server. First, you need to have a directory which contains the following files (the names must be exactly as indicated):
+
+*   `ca-cert.pem`: the CA master certificate.
+*   `server-cert.pem`: the server certificate signed with `ca-cert.pem`.
+*   `server-key.pem`: the server private key.
+
+An example of generation of self-signed certificates with your own generated CA for your server is shown in the [Spice User Manual](https://www.spice-space.org/spice-user-manual.html#_generating_self_signed_certificates).
+
+Afterwards, you can run QEMU with SPICE as explained above but using the following `-spice` argument: `-spice tls-port=5901,password=*yourpassword*,x509-dir=*/path/to/pki_certs*`, where `*/path/to/pki_certs*` is the directory path that contains the three needed files shown earlier.
+
+It is now possible to connect to the server using [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3):
+
+```
+$ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
+
+```
+
+Keep in mind that the `--spice-host-subject` parameter needs to be set according to your `server-cert.pem` subject. You also need to copy `ca-cert.pem` to every client to verify the server certificate.
+
+**Tip:** You can get the subject line of the server certificate in the correct format for `--spice-host-subject` (with entries separated by commas) using the following command: `$ openssl x509 -noout -subject -in server-cert.pem | cut -d' ' -f2- | sed 's/\///' | sed 's/\//,/g'` 
+
+The equivalent [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) command is:
+
+```
+$ remote-viewer spice://*hostname*?tls-port=5901 --spice-ca-file=*/path/to/ca-cert.pem* --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
+
+```
 
 ### vmware
 
@@ -1382,6 +1426,29 @@ A less invasive solution is to emulate an EHCI (USB 2) or XHCI (USB 3) controlle
 You can also add the `...,port=*<n>*` setting to the previous option to specify in which physical port of the virtual controller you want to attach your device, useful in the case you want to add multiple usb devices to the VM.
 
 **Note:** If you encounter permission errors when running QEMU, see [Udev#Writing udev rules](/index.php/Udev#Writing_udev_rules "Udev") for information on how to set permissions of the device.
+
+### USB redirection with SPICE
+
+When using [#SPICE](#SPICE) it is possible to redirect USB devices from the client to the virtual machine without needing to specify them in the QEMU command. It is possible to configure the number of USB slots available for redirected devices (the number of slots will determine the maximum number of devices which can be redirected simultaneously). The main advantages of using SPICE for redirection compared to the previously-mentioned `-usbdevice` method is the possibility of hot-swapping USB devices after the virtual machine has started, without needing to halt it in order to remove USB devices from the redirection or adding new ones. This method of USB redirection also allows us to redirect USB devices over the network, from the client to the server. In summary, it is the most flexible method of using USB devices in a QEMU virtual machine.
+
+We need to add one EHCI/UHCI controller per available USB redirection slot desired as well as one SPICE redirection channel per slot. For example, adding the following arguments to the QEMU command you use for starting the virtual machine in SPICE mode will start the virtual machine with three available USB slots for redirection:
+
+```
+-device ich9-usb-ehci1,id=usb \
+-device ich9-usb-uhci1,masterbus=usb.0,firstport=0,multifunction=on \
+-device ich9-usb-uhci2,masterbus=usb.0,firstport=2 \
+-device ich9-usb-uhci3,masterbus=usb.0,firstport=4 \
+-chardev spicevmc,name=usbredir,id=usbredirchardev1 \
+-device usb-redir,chardev=usbredirchardev1,id=usbredirdev1 \
+-chardev spicevmc,name=usbredir,id=usbredirchardev2 \
+-device usb-redir,chardev=usbredirchardev2,id=usbredirdev2 \
+-chardev spicevmc,name=usbredir,id=usbredirchardev3 \
+-device usb-redir,chardev=usbredirchardev3,id=usbredirdev3
+```
+
+Both `spicy` from [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
+
+**Warning:** Keep in mind that when a USB device is redirected from the client, it will not be usable from the client operating system itself until the redirection is stopped. It is specially important to never redirect the input devices (namely mouse and keyboard), since it will be then difficult to access the SPICE client menus to revert the situation, because the client won't respond to the input devices after being redirected to the virtual machine.
 
 ### Enabling KSM
 

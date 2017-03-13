@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-15，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=446770)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-12，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=468701)可以查看翻译后英文页面的改动。
 
-2013年间，洪任諭（“PCMan”）启动了将 LXDE 移植到 Qt 的项目。LXDE-Qt 的首个预览版发布于2013年7月3日。而在2013年7月21日，Razor-qt（一个与LXDE类似的桌面）与 LXDE 宣布合并，产生了 LXQt。这个桌面集合了 Razor-qt 和 LXDE 的组件。尽管 LXDE 目前的精力已经集中到 LXQt，GTK+ 2 的版本依然在维护。
+2013年间，洪任諭（“PCMan”）启动了将 [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)") 移植到 [Qt](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)") 的项目。LXDE-Qt 的[首个预览版](http://blog.lxde.org/?p=1013)发布于2013年7月3日。而在2013年7月21日，Razor-qt（一个与LXDE类似的桌面）与 LXDE 宣布合并，产生了 [LXQt](http://lxqt.org)。这个桌面集合了 Razor-qt 和 LXDE 的组件。尽管 LXDE 目前的精力已经集中到 LXQt，GTK+ 2 的版本依然在维护。
 
 ## Contents
 
@@ -16,43 +16,27 @@
 *   [4 建议应用](#.E5.BB.BA.E8.AE.AE.E5.BA.94.E7.94.A8)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [6.1 自定义“离开”菜单](#.E8.87.AA.E5.AE.9A.E4.B9.89.E2.80.9C.E7.A6.BB.E5.BC.80.E2.80.9D.E8.8F.9C.E5.8D.95)
+*   [7 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) 包组。 你还需要安装一个图标主题。 默认的是 *Oxygen*, 可以从 [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) 包安装。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) 包组和一个图标主题（如 [breeze-icons](https://www.archlinux.org/packages/?name=breeze-icons) 或 [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons)，[buuf-deuce-kde-icon-theme](https://aur.archlinux.org/packages/buuf-deuce-kde-icon-theme/) 是一套活泼可爱的“粘土”风格图标主题，推荐）。
 
 你还可以安装以下附加功能包：
-
-*   **[Connman](/index.php/Connman "Connman")** — 类似 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的网络管理器。
-
-	[http://git.kernel.org/cgit/network/connman](http://git.kernel.org/cgit/network/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
 *   **LXQt Connman applet** — LXQt [Connman](/index.php/Connman "Connman") 的系统托盘小程序。
 
 	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
 
-*   **LXImage-Qt** — LXQt 的图像查看器和截图工具。
-
-	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
-
-*   **ObConf-Qt** — Qt 版 ObConf，[Openbox](/index.php/Openbox "Openbox") 的配置工具。
-
-	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://www.archlinux.org/packages/?name=obconf-qt)
-
-*   **QTerminal** — 基于 Qt 的轻量级终端模拟器。
-
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
-
 *   **[SDDM](/index.php/SDDM "SDDM")** — LXQt 推荐的显示管理器。
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — LXQt 的锁屏组件所需的屏幕保护程序。
+*   如果需要，可安装锁屏组件，如：[slock](https://www.archlinux.org/packages/?name=slock) 或 [](https://www.archlinux.org/packages/?name=%5B%5Bxscreensaver%5D%5D)[xscreensaver](/index.php/Xscreensaver "Xscreensaver")[](https://www.archlinux.org/packages/?name=%5B%5Bxscreensaver%5D%5D)。Both are confirmed to integrate with LXQt, others may too.如果需要禁用屏幕锁，设置*LXQT 会话设置->挂起前锁屏*
 
-	[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
-
-某些 LXQt 面板插件的某些功能需要安装额外的包。可查阅 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) 的 [可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")。
+*   某些 LXQt 面板插件的某些功能需要安装额外的包。可查阅 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) 的 [可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")。
 
 ## 启动桌面
 
@@ -104,9 +88,7 @@ lxqt-config-session
 
 ### 设置环境变量
 
-LXQt 会话的环境变量在“会话设置”中定义。
-
-例如：用 `SAL_USE_VCLPLUGIN=gtk` 可以强制 libreoffice 以 gtk2 启动。
+LXQt 会话的[环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")在“会话设置”中定义。
 
 ### 编辑应用程序菜单
 
@@ -122,9 +104,36 @@ LXQt是一个轻量级桌面，作为一个简单的安装不会提供很多桌�
 
 When moving icons on the desktop it is possible to place them a bit too close to each other making them connected. If unable to separate them Stop Desktop from Session Settings, remove `.config/pcmanfm-qt/lxqt/desktop-items-0.conf` and Start Desktop again.
 
+## 提示与技巧
+
+### 自定义“离开”菜单
+
+你可以自定义“离开”菜单项，只需将各个 .desktop 文件复制到 `~/.local/share/applications` 目录并编辑各文件使其包含 *NoDisplay=true*。参阅：[#876](https://github.com/lxde/lxqt/issues/876)。
+
+Complete list of files to consider masking include:
+
+```
+lxqt-hibernate.desktop
+lxqt-leave.desktop
+lxqt-lockscreen.desktop
+lxqt-logout.desktop
+lxqt-reboot.desktop
+lxqt-shutdown.desktop
+lxqt-suspend.desktop
+
+```
+
+举例：移去“休眠”选项。
+
+```
+$ mkdir -p ~/.local/share/applications
+$ sed '/OnlyShowIn/aNoDisplay=true' </usr/share/applications/lxqt-hibernate.desktop >~/.local/share/applications/lxqt-hibernate.desktop
+
+```
+
 ## 参阅
 
 *   [LXQt homepage](http://lxqt.org)
 *   [LXQt development](https://github.com/lxde/lxqt)
 *   [LXQt on deviantART](http://lxqt-de.deviantart.com/)
-*   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
+*   [LXQt wiki on GitHub](https://github.com/lxde/lxqt/wiki)

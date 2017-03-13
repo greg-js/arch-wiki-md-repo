@@ -42,3 +42,4 @@ Enable copy to clipboard
 *   [Zathura website](https://pwmt.org/projects/zathura/)
 *   [Poppler website](http://poppler.freedesktop.org/)
 *   [Page „PDF reference“ from Adobe](http://www.adobe.com/devnet/pdf/pdf_reference.html)
+*   [Keyboard shortcuts](https://github.com/pwmt/zathura/blob/master/doc/man/_bindings.txt)

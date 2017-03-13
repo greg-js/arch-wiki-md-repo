@@ -79,7 +79,9 @@ At least a video card with second generation [PureVideo HD](https://en.wikipedia
 
 ### DRM kernel mode setting
 
-**Note:** The NVIDIA driver does **not** provide an `fbdev` driver for the high-resolution console for the kernel compiled-in `vesafb` module. However, the kernel compiled-in `efifb` module supports high-resolution nvidia console on EFI systems.[[1]](http://forums.fedoraforum.org/showthread.php?t=306271) Another option to get high-resolution consoles is to use GRUB, see [NVIDIA/Tips and tricks#Fixing terminal resolution](/index.php/NVIDIA/Tips_and_tricks#Fixing_terminal_resolution "NVIDIA/Tips and tricks") and [[2]](https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/).
+**Warning:** Enabling KMS seems to cause crashes with kernel 4.10 and [nvidia](https://www.archlinux.org/packages/?name=nvidia) 378.13-3.[[1]](https://www.reddit.com/r/archlinux/comments/5yskgn/recurring_freezes_after_upgrade_to_4101_with/)
+
+**Note:** The NVIDIA driver does **not** provide an `fbdev` driver for the high-resolution console for the kernel compiled-in `vesafb` module. However, the kernel compiled-in `efifb` module supports high-resolution nvidia console on EFI systems.[[2]](http://forums.fedoraforum.org/showthread.php?t=306271) Another option to get high-resolution consoles is to use GRUB, see [NVIDIA/Tips and tricks#Fixing terminal resolution](/index.php/NVIDIA/Tips_and_tricks#Fixing_terminal_resolution "NVIDIA/Tips and tricks") and [[3]](https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/).
 
 [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add `nvidia`, `nvidia_modeset`, `nvidia_uvm` and `nvidia_drm` to your [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs").
 

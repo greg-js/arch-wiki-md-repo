@@ -1,34 +1,50 @@
-It is not always possible to copy one computer's drive to the other. For example, some files must differ on both machines, or respective updates do not match.
+This article provides ideas how to keep two systems (folders) in sync across devices. This is a challenging problem, especially if both devices are used concurrently and files may be in conflict.
 
 ## Contents
 
 *   [1 Unison](#Unison)
-    *   [1.1 Limitations](#Limitations)
+    *   [1.1 Prerequisites](#Prerequisites)
+    *   [1.2 Configuration example](#Configuration_example)
+    *   [1.3 Limitations](#Limitations)
 *   [2 rsync](#rsync)
-*   [3 rdiff-backup](#rdiff-backup)
-*   [4 Syncthing](#Syncthing)
+*   [3 Syncthing](#Syncthing)
+*   [4 Other](#Other)
 
 ## Unison
 
 [Unison](http://www.cis.upenn.edu/~bcpierce/unison/). [Screenshot](http://caml.inria.fr/about/successes-images/unison.jpg).
 
-You need to have ssh on both machines, and (the same version of) unison installed on both machines (your laptop and desktop). Then with a few simple commands you can synchronise directories, and in a GUI you can select which things you wish to have synchronised and which not. You can also resolve conflicts.
+Unision allows you to do a sync in both directions. The great feature of Unison is that it provides you with a GUI that can assist you in resolving conflicts when synchronizing files.
 
-**~/.unison/electra.prf** (laptop)
+### Prerequisites
+
+You need to have the same version of unison installed on both machines as well as SSH.
+
+### Configuration example
+
+Consider user Joe that has two systems, Alpha and Beta.
+
+The example below shows you the following useful Unison configuration file instructions:
+
+*   Define the two `root` folders to sync;
+*   Using the `follow` instruction to follow symbolic links;
+*   Including a `common` set of file ignores.
+
+**~/.unison/alpha.prf**
 
 ```
-root = /home/hugo
-root = ssh://pyros//home/hugo
+root = /home/joe
+root = ssh://beta//home/joe
 follow = Path school
 include common
 
 ```
 
-**~/.unison/pyros.prf** (desktop)
+**~/.unison/beta.prf**
 
 ```
-root = /home/hugo
-root = ssh://electra//home/hugo
+root = /home/joe
+root = ssh://alpha//home/hugo
 follow = Path school
 include common
 
@@ -42,82 +58,19 @@ ignore = Name sylpheed.log*
 ignore = Name unison.log
 ignore = Name .ICEauthority
 ignore = Name .Xauthority
-ignore = Path {.songinfo,.radinfo}
-ignore = Path .adesklets
-ignore = Path .Azureus
-ignore = Path .forward
-ignore = Path adesklets
-ignore = Path .ethereal
-ignore = Path .sheep
-ignore = Path .xinitrc
-ignore = Path .config
-ignore = Path .xscreensaver
-ignore = Path .xawtv
-ignore = Path .radio
-ignore = Path .forward
-ignore = Path .dc++
-ignore = Path .quodlibet
-ignore = Path .tvtime
-ignore = Path .config/graveman
-ignore = Path .xmodmap
-ignore = Path .java
-ignore = Path .tvlist*
-ignore = Path .thumbnails
-ignore = Path .ssh
-ignore = Path .viminfo
-ignore = Path .vim/tmp
-ignore = Path Desktop
-ignore = Path .wine*
-ignore = Path motion
-ignore = Path src/ufobot/test_pipe
-ignore = Path tmp
-ignore = Path local
-ignore = Path books
-ignore = Path .mozilla/firefox/*/Cache*
-ignore = Path .liferea/cache
-ignore = Path .liferea/mozilla/liferea/Cache
-ignore = Path .sylpheed-*/*.bak
-ignore = Path .sylpheed-*/folderlist.xml*
-ignore = Path .liferea/new_subscription
-ignore = Path .mozilla/firefox/pluginreg.dat
-ignore = Path .mozilla/firefox/*/lock
-ignore = Path .mozilla/firefox/*/XUL.mfasl
-ignore = Path .mozilla/firefox/*/xpti.dat
-ignore = Path .mozilla/firefox/*/cookies.txt
-ignore = Path .xbindkeysrc
-ignore = Path .unison/ar*
-ignore = Path .gaim/icons
-ignore = Path .gaim/blist.xml
-ignore = Path .asoundrc
-ignore = Path .maillog
-ignore = Path .openoffice2/.lock
 
 ```
 
-As you can see, there are two different profiles, one for running from the laptop, and one for running the desktop. Files are posted here as example, they are nowhere essential for your configuration.
-
-Bash aliases were created for quick usage. One example is:
+You can call unison from the command line, for example:
 
 ```
-alias unisync="unison-gtk2 electra -contactquietly -logfile /dev/null"
-
-```
-
-This starts unisync using profile 'electra', for when running the laptop.
-
-A line in ~/Desktop/autostart automates the process when wanting to sync desktop with laptop:
-
-```
-xterm -e 'ping -q -W 2 -c 2 pyros &&
-unison-gtk2 electra -contactquietly -logfile /dev/null &&
-gxmessage -buttons no:0,yes:1  Syncing done. Shutdown pyros? ||
-ssh pyros sudo halt' &
+alias unisync="unison-gtk2 beta -contactquietly -logfile /dev/null"
 
 ```
 
 ### Limitations
 
-You can also use this tool with NFS shares, but you may find that it is slower, because using the ssh solution it asks the other side to check for updates, and thus not requiring network traffic for that part of the syncing process.
+You can also use this tool with NFS shares instead of SSH, but you may find that it is slower. The advantage of using SSH is that the local unison asks the remote unison process to check for updates, rather than trying to do it locally using NFS (which requires additional network traffic).
 
 If you are using a ssh port different from the default (22), for example 1022, use this line in your prf file:
 
@@ -126,7 +79,7 @@ sshargs = -p 1022
 
 ```
 
-If you are using symbolic links and want to synchronise your files on a vfat system (usb key for example), unison will not accept them and generate errors. You cannot just tell unison you do not want symbolic links, you have to name them all. To find them on your system, you can run
+If you are using symbolic links and want to synchronize your files on a vfat system (usb key for example), unison will not accept them and generate errors. As a solution, you can tell unison not to synchronize links (`links` option). However, if this is not an option for you, you can find them on your system with:
 
 ```
 find ~/folder -type l
@@ -137,66 +90,12 @@ Unison is very sensitive and requires the **exact same versions** on [client and
 
 ## rsync
 
-See [rsync](/index.php/Rsync "Rsync")
-
-## rdiff-backup
-
-The following tool was used with the following backup script:
-
-```
-#!/bin/sh
-
-mount /bak
-#mount /boot
-mount /mnt/win
-
-rdiff-backup \
-   --exclude-regexp 'cache$' \
-   --exclude-regexp '(?i)/te?mp$' \
-   --exclude /mnt \
-   --exclude /vol \
-   --exclude /bak \
-   --exclude /usr/media \
-   --exclude /usr/media/misc \
-   --exclude /usr/lib \
-   --exclude /tmp \
-   --exclude /var/dl \
-   --exclude /var/spool \
-   --exclude /var/cache \
-   --exclude /proc \
-   --exclude /dev \
-   --exclude /sys \
-/ /bak/sys
-
-echo "----------------------------------------"
-echo " * Listing increments of backup"
-echo "----------------------------------------"
-rdiff-backup --list-increments /bak/sys
-
-echo ""
-echo "----------------------------------------"
-echo " * Removing backups older than 5 Weeks"
-echo "----------------------------------------"
-rdiff-backup --force --remove-older-than 5W /bak/sys
-
-##Force is necessary because:
-#Fatal Error: Found 2 relevant increments, dated:
-#Sat Apr 10 12:39:24 2004
-#Sat Apr 17 04:15:01 2004
-#If you want to delete multiple increments in this way, use the --force.
-
-echo ""
-echo "----------------------------------------"
-echo " * Disk usage after backup"
-echo "----------------------------------------"
-df -h
-
-umount /bak
-#umount /boot
-umount /mnt/win
-
-```
+See [rsync](/index.php/Rsync "Rsync").
 
 ## Syncthing
 
-See [syncthing](/index.php/Syncthing "Syncthing")
+See [syncthing](/index.php/Syncthing "Syncthing").
+
+## Other
+
+Consider Dropbox, Owncloud or Nextcloud.

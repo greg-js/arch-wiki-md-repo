@@ -17,7 +17,6 @@ The instructions for getting Arch Linux to work on this machine are similar to t
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 Touchpad right-click not functioning in X11](#Touchpad_right-click_not_functioning_in_X11)
     *   [4.2 Unable to boot into Linux after exhausting battery](#Unable_to_boot_into_Linux_after_exhausting_battery)
-    *   [4.3 Backlight adjustment doesn't work with stock fw](#Backlight_adjustment_doesn.27t_work_with_stock_fw)
 
 ## Installation
 
@@ -111,9 +110,3 @@ If the "Right Click" behavior of the touchpad is not working or it frequently fa
 ### Unable to boot into Linux after exhausting battery
 
 This is due to the 'dev_boot_legacy' flag being stored in volatile memory, and so being lost when the power runs out. This can be solved by enabling [booting to SeaBIOS by default](/index.php/Chromebook#Boot_to_SeaBIOS_by_default "Chromebook").
-
-### Backlight adjustment doesn't work with stock fw
-
-When using stock Coreboot firmware (and not [John Lewis' builds of Coreboot](/index.php/Chromebook#Custom_Firemware "Chromebook")) the backlight adjustment might not work properly. With a custom firmware the backlight will work perfectly as the firmware use the video PCI's IDs of the C720 ([[3]](https://bbs.archlinux.org/viewtopic.php?pid=1489911#p1489911)).
-
-A patch adding this support was accepted to the Linux upstream sources and would be included in kernel 4.0. As a temporary measure you can compile a kernel with [this patch](https://gist.github.com/dhead666/6a6ae3c5e328cb15e503).

@@ -201,7 +201,7 @@ Permissions to access video devices (e.g. `/dev/video0`) are handled by [udev](/
 
 ## Webcam configuration
 
-If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use [GTK+ UVC Viewer](http://guvcview.sourceforge.net/) (guvcview), available in the [Official repositories](/index.php/Official_repositories "Official repositories") as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
+If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use [GTK+ UVC Viewer](http://guvcview.sourceforge.net/) (guvcview), available in the package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
 
 ### Webcam resolution
 
@@ -271,11 +271,11 @@ QtCAM is an Open Source Linux Webcam Software that enables users to capture/view
 
 ### fswebcam
 
-fswebcam is a tiny and flexible webcam app which can be called from the command line. Install it from the [official repositories](/index.php/Official_repositories "Official repositories") as the package [fswebcam](https://www.archlinux.org/packages/?name=fswebcam).
+fswebcam is a tiny and flexible webcam app which can be called from the command line. [Install](/index.php/Install "Install") the package [fswebcam](https://www.archlinux.org/packages/?name=fswebcam).
 
 ### GTK+ UVC Viewer (guvcview)
 
-In addition to being a convenient way to configure your webcam, [guvcview](http://guvcview.sourceforge.net/) also allows capturing (with sound!) and viewing video from devices supported by the Linux UVC driver. Available in the [official repositories](/index.php/Official_repositories "Official repositories") as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
+In addition to being a convenient way to configure your webcam, [guvcview](http://guvcview.sourceforge.net/) also allows capturing (with sound!) and viewing video from devices supported by the Linux UVC driver. Available as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
 
 ### Kopete
 
@@ -373,7 +373,7 @@ See [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg").
 
 ### ekiga
 
-This is very similar to Microsoft NetMeeting. Install the [ekiga](https://www.archlinux.org/packages/?name=ekiga) package from the official repositories. The configuration druid will set everything up for you.
+This is very similar to Microsoft NetMeeting. [Install](/index.php/Install "Install") the [ekiga](https://www.archlinux.org/packages/?name=ekiga) package. The configuration druid will set everything up for you.
 
 ### Sonic-snap
 

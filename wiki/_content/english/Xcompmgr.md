@@ -32,7 +32,7 @@ Section "Extensions"
 EndSection
 ```
 
-Xcompmgr can be [installed](/index.php/Installed "Installed") with the package [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), available in the [official repositories](/index.php/Official_repositories "Official repositories"). For transparency also [install](/index.php/Install "Install") [transset-df](https://www.archlinux.org/packages/?name=transset-df) from the [official repositories](/index.php/Official_repositories "Official repositories"). See [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm") for an example.
+Xcompmgr can be [installed](/index.php/Installed "Installed") with the package [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). For transparency also [install](/index.php/Install "Install") the [transset-df](https://www.archlinux.org/packages/?name=transset-df). See [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm") for an example.
 
 ### Forks and updated versions
 

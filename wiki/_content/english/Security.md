@@ -58,6 +58,7 @@ This article contains recommendations and best practices for hardening an Arch L
         *   [12.2.2 GRUB](#GRUB)
     *   [12.3 Denying console login as root](#Denying_console_login_as_root)
     *   [12.4 Automatic logout](#Automatic_logout)
+    *   [12.5 Block TTY access from X](#Block_TTY_access_from_X)
 *   [13 Rebuilding packages](#Rebuilding_packages)
     *   [13.1 Custom hardening flags](#Custom_hardening_flags)
 *   [14 See also](#See_also)
@@ -516,6 +517,10 @@ $ export TMOUT="$(( 60*10 ))";
 ```
 
 Note that this will not work if there is some command running in the shell (eg.: an SSH session or other shell without `TMOUT` support). But if you are using VC mostly for restarting frozen GDM/Xorg as root, then this is very useful.
+
+### Block TTY access from X
+
+See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg").
 
 ## Rebuilding packages
 

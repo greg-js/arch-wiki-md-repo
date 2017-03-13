@@ -13,7 +13,7 @@ This article aims at describing how to install Mattermost in production mode on 
 *   [2 Configuration](#Configuration)
     *   [2.1 Set up a database server](#Set_up_a_database_server)
         *   [2.1.1 MySQL/MariaDB](#MySQL.2FMariaDB)
-        *   [2.1.2 PostgreSQL using tcp/ip socket connection](#PostgreSQL_using_tcp.2Fip_socket_connection)
+        *   [2.1.2 PostgreSQL using TCP/IP socket connection](#PostgreSQL_using_TCP.2FIP_socket_connection)
         *   [2.1.3 PostgreSQL using Unix-domain socket connection](#PostgreSQL_using_Unix-domain_socket_connection)
     *   [2.2 Configuring Mattermost](#Configuring_Mattermost)
     *   [2.3 Starting Mattermost](#Starting_Mattermost)
@@ -116,7 +116,7 @@ exit;
 
 ```
 
-#### PostgreSQL using tcp/ip socket connection
+#### PostgreSQL using TCP/IP socket connection
 
 **Note:** When Mattermost and postgresql are on the same machine, it is recommended to use unix socket mechanism for the connection between Mattermost and Postgresql, as it is more secure and faster. Settings specific to the unix socket connection are detailed in the section [#PostgreSQL using Unix-domain socket connection](#PostgreSQL_using_Unix-domain_socket_connection) below.
 
@@ -228,7 +228,7 @@ host all all 10.10.10.2/32 md5
 
 ```
 
-	Check with `netstat` or the default `ss` tool from [iproute](https://www.archlinux.org/packages/?name=iproute) command to see postgresql actually running on given ip and port::
+	Check with `netstat` or the default `ss` tool from [iproute2](https://www.archlinux.org/packages/?name=iproute2) command to see postgresql actually running on given ip and port::
 
 ```
 # netstat -anp | grep 5432
@@ -252,7 +252,7 @@ mattermost=> \q
 
 Below are the instructions specific to a connection between Postgresql and Mattermost via an Unix-domain socket. Only changes from the original setup described above are mentioned.
 
-From the section [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") above, change the steps accordingly:
+Based on the [section above](#PostgreSQL_using_TCP.2FIP_socket_connection), change the steps accordingly:
 
 *   Step 5: Name the database `mattermost_db`
 *   Step 6: Name the user `mattermost`
@@ -470,7 +470,7 @@ curl http://localhost
 
 ```
 
-*   Step 9: Obtain a cert using the `webroot plugin <[https://certbot.eff.org/docs/using.html#webroot](https://certbot.eff.org/docs/using.html#webroot)>`_::
+*   Step 9: Obtain a cert using the [webroot plugin](https://certbot.eff.org/docs/using.html#webroot):
 
 ```
 # certbot certonly --webroot -w /var/www/example -d example.com -d www.example.com

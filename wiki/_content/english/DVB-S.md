@@ -223,7 +223,7 @@ You can find all the channel names by running szap -q (assuming the channel list
 
 Kaffeine is a really nice player; it supports EPG, time-shifting, and recording. Additionally Kaffeine has built-in channel-searching.
 
-Install it with [kaffeine](https://www.archlinux.org/packages/?name=kaffeine) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") it with the [kaffeine](https://www.archlinux.org/packages/?name=kaffeine) package.
 
 *   [More Information](https://archlinux.org/packages/search/?q=kaffeine)
 *   [Project page](http://kaffeine.sourceforge.net/)

@@ -335,7 +335,7 @@ where *<pin>* is your headset's PIN. Then try to connect to the headset.
 
 ### Headset and ALSA Devices
 
-1\. First if you have not already, [install](/index.php/Install "Install") [bluez](https://www.archlinux.org/packages/?name=bluez) from the [official repositories](/index.php/Official_repositories "Official repositories").
+1\. First if you have not already, [install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) package.
 
 2\. Scan for your device
 

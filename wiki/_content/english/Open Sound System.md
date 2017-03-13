@@ -14,7 +14,6 @@ The [Open Sound System](https://en.wikipedia.org/wiki/Open_Sound_System "wikiped
     *   [4.3 Other Mixers](#Other_Mixers)
 *   [5 Configuring Applications for OSS](#Configuring_Applications_for_OSS)
     *   [5.1 Applications that use GStreamer](#Applications_that_use_GStreamer)
-        *   [5.1.1 Xfce4-mixer and OSS4](#Xfce4-mixer_and_OSS4)
     *   [5.2 Applications that use OpenAL](#Applications_that_use_OpenAL)
     *   [5.3 Audacity](#Audacity)
     *   [5.4 Gajim](#Gajim)
@@ -266,30 +265,6 @@ export PHONON_GST_AUDIOSINK=oss4sink
 
 You can add this to your `~/.bashrc` to be loaded on login.
 
-#### Xfce4-mixer and OSS4
-
-If you tried the above section to get [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) to work and it does not work at all, then you may have to compile [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) yourself. Download the PKGBUILD and other files needed from ABS or [here](https://projects.archlinux.org/svntogit/packages.git/tree/gstreamer0.10-good/repos), edit the PKGBUILD, add --enable-oss.
-
-```
- ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-   **--enable-oss \**
-   --disable-static --enable-experimental \
-   --disable-schemas-install \
-   --disable-hal \
-   --with-package-name="GStreamer Good Plugins (Archlinux)" \
-   --with-package-origin="[https://www.archlinux.org/](https://www.archlinux.org/)"
-
-```
-
-and then run makepkg -i.
-
-```
- makepkg -i
-
-```
-
-Other LINKS: [OSS forum](http://www.4front-tech.com/forum/)
-
 ### Applications that use OpenAL
 
 By default OpenAL uses ALSA. To change this, simply define the usage of OSS in `/etc/openal/alsound.conf`:
@@ -391,7 +366,7 @@ See also: [MPlayer#Configuration](/index.php/MPlayer#Configuration "MPlayer").
 
 ### Skype
 
-The official [skype](https://www.archlinux.org/packages/?name=skype) package includes support for PulseAudio only, since OSS and ALSA support has been dropped with version 4.3\. Due to community efforts, being able to use Skype with OSS (and without PulseAudio) is still possible though:
+The [skype](https://aur.archlinux.org/packages/skype/) package includes support for PulseAudio only, since OSS and ALSA support has been dropped with version 4.3\. Due to community efforts, being able to use Skype with OSS (and without PulseAudio) is still possible though:
 
 You can install [skype_oss_wrapper-git](https://aur.archlinux.org/packages/skype_oss_wrapper-git/) from AUR, which utilizes a fake libpulse.so library that mimics PulseAudio behaviour for Skype. After installing you will need to start Skype with the command: `skype_oss` - or simply start it through the created application shortcut: "Skype (OSSv4)". It does pretty well for a wrapper, although it can only work with 48KHz input and output . Should you find any misbehaviours or missing features, bug reports and patches are greatly appreciated.
 
@@ -752,7 +727,7 @@ In the future, more complete methods may be available for emulating ALSA, such a
 
 #### Instructions
 
-*   Install the `alsa-plugins` package, available in the official repositories.
+*   [Install](/index.php/Install "Install") the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package.
 
 *   Edit `/etc/asound.conf` as follows.
 

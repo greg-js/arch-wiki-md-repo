@@ -105,7 +105,7 @@ The [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)
 
 ### Installation
 
-[Install](/index.php/Install "Install") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want to use shared folders you also need to install [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If you want to use shared folders you also need to install the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package.
 
 Open-VM-Tools reads version information from `/etc/arch-release`, which is empty:
 

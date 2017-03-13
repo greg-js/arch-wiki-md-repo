@@ -117,12 +117,7 @@ There are at least three ways to use a custom DSDT:
 
 This method has the advantage that you do not need to recompile your kernel, and updating the kernel will not make it necessary to repeat these steps.
 
-This method requires the following kernel config to be enabled (true for the [linux](https://www.archlinux.org/packages/?name=linux) package):
-
-*   `ACPI_TABLE_UPGRADE=y` (Linux kernel 4.6+)
-*   `CONFIG_ACPI_INITRD_TABLE_OVERRIDE=y` (Linux kernel <=4.5)
-
-See [[1]](https://www.kernel.org/doc/Documentation/acpi/initrd_table_override.txt) for details.
+This method requires the `ACPI_TABLE_UPGRADE=y` kernel config to be enabled (true for the [linux](https://www.archlinux.org/packages/?name=linux) package). See [[1]](https://www.kernel.org/doc/Documentation/acpi/initrd_table_override.txt) for details.
 
 First, create the following folder structure:
 

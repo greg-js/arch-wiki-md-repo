@@ -1,5 +1,7 @@
 [OfflineIMAP](http://offlineimap.org/) is a Python utility to sync mail from IMAP servers. It does not work with the POP3 protocol or mbox, and is usually paired with a MUA such as [Mutt](/index.php/Mutt "Mutt").
 
+**Note:** [imapfw](http://www.offlineimap.org/development/2015/10/08/imapfw-is-made-public.html) is intened to replace offlineimap in the future.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -7,7 +9,7 @@
     *   [2.1 Minimal](#Minimal)
     *   [2.2 Selective folder synchronization](#Selective_folder_synchronization)
 *   [3 Usage](#Usage)
-*   [4 Miscellaneous](#Miscellaneous)
+*   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Running offlineimap in the background](#Running_offlineimap_in_the_background)
         *   [4.1.1 systemd service](#systemd_service)
     *   [4.2 Automatic mailbox generation for mutt](#Automatic_mailbox_generation_for_mutt)
@@ -104,7 +106,7 @@ $ offlineimap
 
 Mail accounts will now be synced. If anything goes wrong, take a closer look at the error messages. OfflineIMAP is usually very verbose about problems; partly because the developers did not bother with taking away tracebacks from the final product.
 
-## Miscellaneous
+## Tips and tricks
 
 ### Running offlineimap in the background
 
@@ -244,12 +246,7 @@ $ chmod 600 ~/.netrc
 
 GNU Privacy Guard can be used for storing a password in an encrypted file. First set up [GnuPG](/index.php/GnuPG "GnuPG") and then follow the steps in this section. It is assumed that you can use your GPG private key [without entering a password](/index.php/GnuPG#gpg-agent "GnuPG") all the time.
 
-First type in the password for the email account in a plain text file. Do this in a secure directory with `700` permissions located on a [tmpfs](/index.php/Tmpfs "Tmpfs") to avoid writing the unencrypted password to the disk. Then encrypt the file with your private key:
-
-```
-$ gpg --default-recipient-self -e */path/to/plain/password*
-
-```
+First type in the password for the email account in a plain text file. Do this in a secure directory with `700` permissions located on a [tmpfs](/index.php/Tmpfs "Tmpfs") to avoid writing the unencrypted password to the disk. Then [encrypt](/index.php/GnuPG#Encrypt_and_decrypt "GnuPG") the file with GnuPG setting yourself as the recipient.
 
 Remove the plain text file since it is no longer needed. Move the encrypted file to the final location, e.g. `~/.offlineimappass.gpg`.
 

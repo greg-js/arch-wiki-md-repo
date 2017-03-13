@@ -1,4 +1,4 @@
-[Splashy](http://alioth.debian.org/projects/splashy/) is a userspace implementation of a splash screen for Linux systems. It provides a graphical environment during system boot using the Linux framebuffer layer via [directfb](http://www.directfb.org).
+[Splashy](http://alioth.debian.org/projects/splashy/) is a userspace implementation of a splash screen for Linux systems. It provides a graphical environment during system boot using the Linux framebuffer layer via [directfb].
 
 ## Contents
 

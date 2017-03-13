@@ -72,20 +72,6 @@ DRI_PRIME=1 %command%
 
 ```
 
-On some systems optirun gives better performances than primusrun, however some games may crash shortly after the launch. This may be fixed preloading the correct version of libGL. Use:
-
-```
-locate libGL
-
-```
-
-to find out the available implementations. For a 64 bits game you may want to preload the nvidia 64 bits libGL, then use the launch command:
-
-```
-LD_PRELOAD=/usr/lib/nvidia/libGL.so optirun %command%
-
-```
-
 If you are running the [Linux-ck](/index.php/Linux-ck "Linux-ck") kernel, you may have some success in reducing overall latencies and improving performance by launching the game in SCHED_ISO (low latency, avoid choking CPU) via [schedtool](https://www.archlinux.org/packages/?name=schedtool)
 
 ```

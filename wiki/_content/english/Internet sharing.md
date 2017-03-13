@@ -76,7 +76,7 @@ Afterwards it is advisable to double-check forwarding is enabled as required aft
 
 ### Enable NAT
 
-[Install](/index.php/Install "Install") the package [iptables](https://www.archlinux.org/packages/?name=iptables) from the [official repositories](/index.php/Official_repositories "Official repositories"). Use iptables to enable NAT:
+[Install](/index.php/Install "Install") the [iptables](https://www.archlinux.org/packages/?name=iptables) package. Use iptables to enable NAT:
 
 ```
 # iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE

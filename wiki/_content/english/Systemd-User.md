@@ -66,7 +66,7 @@ Create the [drop-in](/index.php/Systemd#Drop-in_files "Systemd") directory `/etc
  `/etc/systemd/system/user@.service.d/local.conf` 
 ```
 [Service]
-Environment="PATH=/usr/lib/ccache/bin/:$PATH"
+Environment="PATH=/usr/lib/ccache/bin:/usr/local/bin:/usr/bin:/bin"
 Environment="EDITOR=nano -c"
 Environment="BROWSER=firefox"
 Environment="NO_AT_BRIDGE=1"
