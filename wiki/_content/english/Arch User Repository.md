@@ -48,6 +48,8 @@ Users can search and download PKGBUILDs from the [AUR Web Interface](https://aur
 *   Glance over the [#FAQ](#FAQ) for answers to the most common questions.
 *   You may wish to adjust `/etc/makepkg.conf` to optimize for your processor prior to building packages from the AUR. A significant improvement in compile times can be realized on systems with multi-core processors by adjusting the MAKEFLAGS variable. Users can also enable hardware-specific optimizations in GCC via the CFLAGS variable. See [makepkg](/index.php/Makepkg "Makepkg") for more information.
 
+It is also possible to interact with the AUR through SSH: type `ssh aur@aur.archlinux.org help` for a list of available commands.
+
 ## History
 
 In the beginning, there was `ftp://ftp.archlinux.org/incoming`, and people contributed by simply uploading the PKGBUILD, the needed supplementary files, and the built package itself to the server. The package and associated files remained there until a [Package Maintainer](/index.php/Package_Maintainer "Package Maintainer") saw the program and adopted it.

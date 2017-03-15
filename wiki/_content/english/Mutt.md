@@ -32,43 +32,47 @@ This article covers using both native IMAP sending and retrieval, and a setup de
         *   [2.6.1 Security concern](#Security_concern)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Key bindings](#Key_bindings)
-    *   [3.2 E-mail character encoding](#E-mail_character_encoding)
+    *   [3.2 Composition](#Composition)
+        *   [3.2.1 Encrypt and sign mail (GnuPG)](#Encrypt_and_sign_mail_.28GnuPG.29)
+        *   [3.2.2 E-mail character encoding](#E-mail_character_encoding)
+        *   [3.2.3 Custom mail headers](#Custom_mail_headers)
+        *   [3.2.4 Signature block](#Signature_block)
+            *   [3.2.4.1 Random signature](#Random_signature)
+        *   [3.2.5 Compose and send from command line](#Compose_and_send_from_command_line)
+        *   [3.2.6 Compose HTML e-mails](#Compose_HTML_e-mails)
+        *   [3.2.7 Display another email while composing](#Display_another_email_while_composing)
     *   [3.3 Printing](#Printing)
-    *   [3.4 Custom mail headers](#Custom_mail_headers)
-    *   [3.5 Signature block](#Signature_block)
-        *   [3.5.1 Random signature](#Random_signature)
-    *   [3.6 Viewing URLs & opening your favorite web browser](#Viewing_URLs_.26_opening_your_favorite_web_browser)
-    *   [3.7 Viewing HTML](#Viewing_HTML)
-    *   [3.8 Mutt and Vim](#Mutt_and_Vim)
-    *   [3.9 Mutt and GNU nano](#Mutt_and_GNU_nano)
-    *   [3.10 Mutt and Emacs](#Mutt_and_Emacs)
-    *   [3.11 Colors](#Colors)
-    *   [3.12 Index Format](#Index_Format)
-        *   [3.12.1 Display recipient instead of sender in "Sent" folder view](#Display_recipient_instead_of_sender_in_.22Sent.22_folder_view)
-        *   [3.12.2 Variable column width](#Variable_column_width)
-    *   [3.13 Contact management](#Contact_management)
-        *   [3.13.1 Address aliases](#Address_aliases)
-        *   [3.13.2 Abook](#Abook)
-        *   [3.13.3 Goobook](#Goobook)
-    *   [3.14 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
-    *   [3.15 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
-    *   [3.16 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
-    *   [3.17 Speed up folders switch](#Speed_up_folders_switch)
-    *   [3.18 Use Mutt to send mail from command line](#Use_Mutt_to_send_mail_from_command_line)
-    *   [3.19 Composing HTML e-mails](#Composing_HTML_e-mails)
-    *   [3.20 How to display another email while composing](#How_to_display_another_email_while_composing)
-    *   [3.21 Archive treated e-mails](#Archive_treated_e-mails)
-    *   [3.22 Mutt-Sidebar](#Mutt-Sidebar)
-    *   [3.23 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
-    *   [3.24 Filtering the message view](#Filtering_the_message_view)
-    *   [3.25 Display the index above the pager view](#Display_the_index_above_the_pager_view)
-    *   [3.26 Default folder for saving attachments](#Default_folder_for_saving_attachments)
-    *   [3.27 PGP signed/encrypted mail](#PGP_signed.2Fencrypted_mail)
-    *   [3.28 Pager behavior](#Pager_behavior)
-    *   [3.29 Fast reply](#Fast_reply)
-    *   [3.30 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
-    *   [3.31 Conversation grouping](#Conversation_grouping)
-    *   [3.32 IMAP message cache](#IMAP_message_cache)
+    *   [3.4 Viewing content](#Viewing_content)
+        *   [3.4.1 Viewing URLs in a web browser](#Viewing_URLs_in_a_web_browser)
+        *   [3.4.2 Viewing HTML](#Viewing_HTML)
+        *   [3.4.3 Filtering the message view](#Filtering_the_message_view)
+        *   [3.4.4 Conversation grouping](#Conversation_grouping)
+    *   [3.5 Configuring editors to work with mutt](#Configuring_editors_to_work_with_mutt)
+        *   [3.5.1 vim](#vim)
+        *   [3.5.2 GNU nano](#GNU_nano)
+        *   [3.5.3 Emacs](#Emacs)
+    *   [3.6 Display settings](#Display_settings)
+        *   [3.6.1 Colors](#Colors)
+        *   [3.6.2 Index Format](#Index_Format)
+        *   [3.6.3 Display recipient instead of sender in "Sent" folder view](#Display_recipient_instead_of_sender_in_.22Sent.22_folder_view)
+        *   [3.6.4 Variable column width](#Variable_column_width)
+        *   [3.6.5 Sidebar](#Sidebar)
+        *   [3.6.6 Display the index above the pager view](#Display_the_index_above_the_pager_view)
+    *   [3.7 Contact management](#Contact_management)
+        *   [3.7.1 Address aliases](#Address_aliases)
+        *   [3.7.2 Abook](#Abook)
+        *   [3.7.3 Goobook](#Goobook)
+    *   [3.8 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
+    *   [3.9 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
+    *   [3.10 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
+    *   [3.11 Speed up folders switch](#Speed_up_folders_switch)
+    *   [3.12 Archive treated e-mails](#Archive_treated_e-mails)
+    *   [3.13 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
+    *   [3.14 Default folder for saving attachments](#Default_folder_for_saving_attachments)
+    *   [3.15 Pager behavior](#Pager_behavior)
+    *   [3.16 Fast reply](#Fast_reply)
+    *   [3.17 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
+    *   [3.18 IMAP message cache](#IMAP_message_cache)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
     *   [4.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
@@ -520,7 +524,22 @@ bind attach,index G last-entry
 
 ```
 
-### E-mail character encoding
+### Composition
+
+#### Encrypt and sign mail (GnuPG)
+
+To start encrypting mail in mutt using [GnuPG](/index.php/GnuPG "GnuPG") copy `/usr/share/doc/mutt/samples/gpg.rc` to your mutt configuration folder (e.g., to `~/.mutt/gpg.rc`). Then [append](/index.php/Append "Append") the following to your mutt configuration file (e.g., `~/.mutt/mutrrc`):
+
+```
+source ~/.mutt/gpg.rc
+
+```
+
+Most encryption options are then available by pressing `p` in the compose view
+
+See the `pgp_*` and `crypt_*` options in [muttrc(5)](http://man7.org/linux/man-pages/man5/muttrc.5.html).
+
+#### E-mail character encoding
 
 You may be concerned with sending e-mail in a decent character set (charset for short) like UTF-8\. Nowadays UTF-8 is highly recommended to almost everyone.
 
@@ -547,16 +566,7 @@ set send_charset="utf-8"
 
 The first compatible charset starting from the left will be used. Since UTF-8 is a superset of US-ASCII it does not harm to leave it in front of UTF-8, it may ensure old MUA will not get confused when seeing the charset in the e-mail header.
 
-### Printing
-
-You can install [muttprint](https://aur.archlinux.org/packages/muttprint/) for fancier printing quality. In your muttrc file, insert:
-
-```
-set print_command="/usr/bin/muttprint %s -p {PrinterName}"
-
-```
-
-### Custom mail headers
+#### Custom mail headers
 
 One of the greatest thing in Mutt is that you can have full control over your mail header.
 
@@ -611,7 +621,7 @@ my_hdr User-Agent: Every email client sucks, this one just sucks less.
 
 ```
 
-### Signature block
+#### Signature block
 
 Create a .signature in your home directory. Your signature will be appended at the end of your email. Alternatively you can specify a file in your Mutt configuration:
 
@@ -620,7 +630,7 @@ set signature="path/to/sig/file"
 
 ```
 
-#### Random signature
+##### Random signature
 
 You can use *fortune* (package [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)) to add a random signature to Mutt.
 
@@ -630,7 +640,72 @@ Create a fortune file and then add the following line to your .muttrc:
 
 Note the pipe at the end. It tells Mutt that the specified string is not a file, but a command.
 
-### Viewing URLs & opening your favorite web browser
+#### Compose and send from command line
+
+Man pages will show all available commands and how to use them, but here are a couple of examples. You could use Mutt to send alerts, logs or some other system information, triggered by login through .bash_profile, or as a regular [cron](/index.php/Cron "Cron") job.
+
+Send a message:
+
+```
+mutt -s "Subject" somejoeorjane@someserver.com < /var/log/somelog
+
+```
+
+Send a message with attachment:
+
+```
+mutt -s "Subject" somejoeorjane@someserver.com -a somefile < /tmp/sometext.txt
+
+```
+
+#### Compose HTML e-mails
+
+Since Mutt has nothing of a WYSIWIG client, HTML is quite straightforward, and you can do much more than with all WYSIWIG mail clients around since you edit the source code directly. Simply write your mail using HTML syntax. For example:
+
+```
+This is normal text<br>
+<b>This is bold text</b>
+
+```
+
+Now before sending the mail, use the `edit-type` command (default shortcut `Ctrl+t`), and replace `text/plain` by `text/html`.
+
+**Note:** HTML e-mails are regarded by many people as useless, cumbersome, and subject to reading issues. Mutt can read HTML mails with a text browser like w3m or lynx, but it has clearly no advantage over a plain-text e-mail. You should avoid writing HTML e-mails when possible.
+
+#### Display another email while composing
+
+A common complaint with Mutt is that when composing a new mail (or reply), you cannot open another mail (i.e. for checking with another correspondent) without closing the current mail (postponing). The following describes a solution:
+
+First, fire up Mutt as usual. Then, launch another terminal window. Now start a new Mutt with
+
+```
+mutt -R
+
+```
+
+This starts Mutt in read-only mode, and you can browse other emails at your convenience. It is strongly recommended to always launch a second Mutt in read-only mode, as conflicts will easily arise otherwise.
+
+**Note:** When changing folders (with `c` or `y`) the read-only mode is not preserved. Instead `Esc c` has to be used.
+
+**Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a keyboard shortcut (see [Extra Keyboard Keys](/index.php/Extra_Keyboard_Keys "Extra Keyboard Keys") for details):
+```
+$TERMINAL -e mutt -R
+
+```
+where `$TERMINAL` is your terminal.
+
+### Printing
+
+You can install [muttprint](https://aur.archlinux.org/packages/muttprint/) for fancier printing quality. In your muttrc file, insert:
+
+```
+set print_command="/usr/bin/muttprint %s -p {PrinterName}"
+
+```
+
+### Viewing content
+
+#### Viewing URLs in a web browser
 
 Your should start by creating a .mutt directory in $HOME if not done yet. There, create a file named macros. Insert the following:
 
@@ -662,7 +737,7 @@ The `2>/dev/null` is to make it quiet, i.e. to prevent useless message printing 
 
 **Note:** urlview has a few deficiencies (e.g. the inability to handle certain email encodings) and is fairly feature-bare (e.g. it does not provide context for links it finds). There are a couple alternatives that do better. One, which can handle all email encodings and provides link context, is [extract_url.pl](http://www.memoryhole.net/~kyle/extract_url/). Another, which can also provide link context but cannot handle all email encodings, is [urlscan-git](https://aur.archlinux.org/packages/urlscan-git/). Both are drop-in replacements for urlview, though extract_url has features which benefit from additional configuration changes.
 
-### Viewing HTML
+#### Viewing HTML
 
 It is possible to pass the html body to an external HTML program and then dump it, keeping email viewing uniform and unobtrusive. Three programs are described here: [lynx](https://www.archlinux.org/packages/?name=lynx), [w3m](https://www.archlinux.org/packages/?name=w3m) and [elinks](https://www.archlinux.org/packages/?name=elinks) (make sure the selected package is [installed](/index.php/Pacman "Pacman")).
 
@@ -717,7 +792,44 @@ macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/mail.html && $BROWSER ~/.cache/
 
 ```
 
-### Mutt and Vim
+#### Filtering the message view
+
+You can restrict the view to e-mails matching a pattern and specific properties with the `limit` command (default shortcut: `l`).
+
+To view all e-mails containing "foo" in the header, simply write "foo" and you are done. To remove the filter, use the "all" keyword.
+
+To view all flagged messages, use
+
+```
+~F
+
+```
+
+To view all unread messages that are either of size ≥1MB or from johndoe, use
+
+```
+~U (~z 1M- | ~f johndoe)
+
+```
+
+All possible patterns are listed in the [official manual](http://www.mutt.org/doc/manual/manual-4.html#ss4.2).
+
+#### Conversation grouping
+
+The default sort order is by date. Use the `sort-mailbox` command (default key: `o`) to change the sorting option. You can group e-mails by conversation/thread, in which case you can define how to sort threads and how to sort within a thread.
+
+In the following example, threads are sorted according to the date of their last e-mail.
+
+ `muttrc` 
+```
+set sort=threads
+set sort_aux=last-date-received
+
+```
+
+### Configuring editors to work with mutt
+
+#### vim
 
 *   To limit the width of text to 72 characters, edit your .[vimrc](/index.php/Vim "Vim") file and add:
 
@@ -750,7 +862,7 @@ set tmpdir="~/.tmp"
 
 ```
 
-### Mutt and GNU nano
+#### GNU nano
 
 [nano](/index.php/Nano "Nano") is another nice console editor to use with Mutt.
 
@@ -768,7 +880,7 @@ Also, in muttrc file, you can specify the line to start editing so that you will
 
 ```
 
-### Mutt and Emacs
+#### Emacs
 
 Emacs has a *mail* and a *message* major mode. To switch to mail-mode automatically when Emacs is called from Mutt, you can add the following to your `.emacs`:
 
@@ -787,27 +899,17 @@ set editor="emacsclient -a \"\" -t"
 
 ```
 
-### Colors
+### Display settings
 
-Append sample color definitions to your .muttrc file:
+#### Colors
 
-```
-$ cat /usr/share/doc/mutt/samples/colors.linux >> ~/.muttrc
+[Append](/index.php/Append "Append") the contents of `/usr/share/doc/mutt/samples/colors.linux` to your .muttrc file, or copy and source it. Then adjust to your liking.
 
-```
+The actual color each of these settings will produce depends on the colors set in your [~/.Xresources](/index.php/Xresources "Xresources") file.
 
-Then adjust to your liking. The actual color each of these settings will produce depends on the colors set in your [~/.Xresources](/index.php/Xresources "Xresources") file.
+Alternatively, you can source any file you want containing colors (and thus act as a theme file). See [[1]](http://nongeekshandbook.blogspot.be/2009/03/mutt-color-configuration.html) for a theme example.
 
-Alternatively, you can source any file you want containing colors (and thus act as a theme file):
-
-```
-source ~/.mutt/colors.zenburn
-
-```
-
-See [[1]](http://nongeekshandbook.blogspot.be/2009/03/mutt-color-configuration.html) for a theme example.
-
-### Index Format
+#### Index Format
 
 Here follows a quick example to put in your `.muttrc` to customize the Index Format, i.e. the columns displayed in the folder view.
 
@@ -850,6 +952,32 @@ We can add a binding to force re-computing the index format without changing fol
  `muttrc` 
 ```
 macro index,pager \CL "<enter-command>$my_index_format_pre"F"$my_index_format_post<enter><redraw-screen>"
+
+```
+
+#### Sidebar
+
+Example settings for a sidebar are in `/usr/share/doc/mutt/samples/sample.muttrc-sidebar`, including keybindings. Copy, edit, and source that file in your mutt configuration file. Be sure to change `set sidebar_visible = yes`.
+
+[Append](/index.php/Append "Append") the following in order to toggle the sidebar visibility:
+
+```
+bind index,pager B sidebar-toggle-visible
+
+```
+
+**Note:** You *must* set the `mailboxes` variables or the `imap_check_subscribed` to tell the sidebar which folder should be displayed. See the [mailboxes](#mailboxes) section.
+
+Note that with the `mailboxes` option, folders appear in the order they were set to `mailboxes` if you do not use the `sidebar_sort_method` option.
+
+**Tip:** To add a separator between different mailboxes, add a fake folder to the list of folders For example add: mailboxes "+-- My mailbox -----------"
+
+#### Display the index above the pager view
+
+Set the following variable in your `muttrc`:
+
+```
+set pager_index_lines=10
 
 ```
 
@@ -967,60 +1095,6 @@ Add this to your `.muttrc`:
 
  `set sleep_time = 0` 
 
-### Use Mutt to send mail from command line
-
-Man pages will show all available commands and how to use them, but here are a couple of examples. You could use Mutt to send alerts, logs or some other system information, triggered by login through .bash_profile, or as a regular [cron](/index.php/Cron "Cron") job.
-
-Send a message:
-
-```
-mutt -s "Subject" somejoeorjane@someserver.com < /var/log/somelog
-
-```
-
-Send a message with attachment:
-
-```
-mutt -s "Subject" somejoeorjane@someserver.com -a somefile < /tmp/sometext.txt
-
-```
-
-### Composing HTML e-mails
-
-Since Mutt has nothing of a WYSIWIG client, HTML is quite straightforward, and you can do much more than with all WYSIWIG mail clients around since you edit the source code directly. Simply write your mail using HTML syntax. For example:
-
-```
-This is normal text<br>
-<b>This is bold text</b>
-
-```
-
-Now before sending the mail, use the `edit-type` command (default shortcut `Ctrl+t`), and replace `text/plain` by `text/html`.
-
-**Note:** HTML e-mails are regarded by many people as useless, cumbersome, and subject to reading issues. Mutt can read HTML mails with a text browser like w3m or lynx, but it has clearly no advantage over a plain-text e-mail. You should avoid writing HTML e-mails when possible.
-
-### How to display another email while composing
-
-A common complaint with Mutt is that when composing a new mail (or reply), you cannot open another mail (i.e. for checking with another correspondent) without closing the current mail (postponing). The following describes a solution:
-
-First, fire up Mutt as usual. Then, launch another terminal window. Now start a new Mutt with
-
-```
-mutt -R
-
-```
-
-This starts Mutt in read-only mode, and you can browse other emails at your convenience. It is strongly recommended to always launch a second Mutt in read-only mode, as conflicts will easily arise otherwise.
-
-**Note:** When changing folders (with `c` or `y`) the read-only mode is not preserved. Instead `Esc c` has to be used.
-
-**Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a keyboard shortcut (see [Extra Keyboard Keys](/index.php/Extra_Keyboard_Keys "Extra Keyboard Keys") for details):
-```
-$TERMINAL -e mutt -R
-
-```
-where `$TERMINAL` is your terminal.
-
 ### Archive treated e-mails
 
 When you read an e-mail, you have four choices: Answer it, Flag it, Archive it or Delete it. If you have this in mind, you can keep your inbox slim and fit with this macro (set up for Gmail):
@@ -1032,83 +1106,11 @@ macro index \' "<tag-pattern>~R !~D !~F<enter>\
 
 ```
 
-### Mutt-Sidebar
-
-A sidebar is included by default in Arch. You can choose to display the sidebar on startup, or to prompt it manually with a key:
-
-```
-set sidebar_visible = yes
-bind index,pager B sidebar-toggle-visible
-
-```
-
-You also probabaly need some shortcuts to navigate in the bar:
-
-```
-# Ctrl-n, Ctrl-p to select next, previous folder.
-# Ctrl-o to open selected folder.
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
-
-```
-
-**Note:** You *must* set the `mailboxes` variables or the `imap_check_subscribed` to tell the sidebar which folder should be displayed. See the [mailboxes](#mailboxes) section.
-
-Note that with the `mailboxes` option, folders appear in the order they were set to `mailboxes` if you do not use the `sidebar_sort_method` option.
-
-If you have trouble with truncated names, set the option
-
-```
-set sidebar_short_path = yes
-
-```
-
-Finally, you may want to add a separator between different mailboxes. The sidebar patch does not currently provide any kind of separator option. A simple (and dirty) workaround is to add a fake folder to the list of folders:
-
-```
-mailboxes "+-- My mailbox -----------"
-
-```
-
-The dashes are not required, they are here just for fancy output.
-
 ### Migrating mails from one computer to another
 
 In case you are transfering your mails to a new machine (copy&paste), you probably need to delete the header cache (a file or folder like `~/.cache/mutt` if you followed the above configuration) to make Mutt able to read your migrated E-Mails. Otherwise Mutt may freeze.
 
 Note that if you had a folder created for you header cache, all mailboxes will have their own cache file, so you can delete caches individually without having to remove everything.
-
-### Filtering the message view
-
-You can restrict the view to e-mails matching a pattern and specific properties with the `limit` command (default shortcut: `l`).
-
-To view all e-mails containing "foo" in the header, simply write "foo" and you are done. To remove the filter, use the "all" keyword.
-
-To view all flagged messages, use
-
-```
-~F
-
-```
-
-To view all unread messages that are either of size ≥1MB or from johndoe, use
-
-```
-~U (~z 1M- | ~f johndoe)
-
-```
-
-All possible patterns are listed in the [official manual](http://www.mutt.org/doc/manual/manual-4.html#ss4.2).
-
-### Display the index above the pager view
-
-Set the following variable in your `muttrc`:
-
-```
-set pager_index_lines=10
-
-```
 
 ### Default folder for saving attachments
 
@@ -1118,30 +1120,6 @@ By default Mutt will save attachments to the folder it was started from. If you 
 alias mutt='cd ~/attachments && mutt'
 
 ```
-
-### PGP signed/encrypted mail
-
-The official Mutt package is compiled with GPGME support. If you have a pair of keys in your [GnuPG](/index.php/GnuPG "GnuPG") keyring, then it suffices to add this:
-
- `.muttrc` 
-```
-set crypt_use_gpgme=yes
-
-```
-
-For convenience, you can set further PGP settings:
-
- `.muttrc` 
-```
-set crypt_replysign=yes
-set crypt_replysignencrypted=yes
-set pgp_timeout=3600
-
-```
-
-See the `pgp_*` and `crypt_*` options in `muttrc(5)`.
-
-To be able to view the encrypted message to others, add either `encrypt-to` or `hidden-encrypt-to` in your `~/.gnupg/gpg.conf`.
 
 ### Pager behavior
 
@@ -1178,19 +1156,6 @@ Mutt will include your e-mail address(es) in the recipient list when you group-r
 
 ```
 alternates mail1@server1|mail2@server2|...
-
-```
-
-### Conversation grouping
-
-The default sort order is by date. Use the `sort-mailbox` command (default key: `o`) to change the sorting option. You can group e-mails by conversation/thread, in which case you can define how to sort threads and how to sort within a thread.
-
-In the following example, threads are sorted according to the date of their last e-mail.
-
- `muttrc` 
-```
-set sort=threads
-set sort_aux=last-date-received
 
 ```
 

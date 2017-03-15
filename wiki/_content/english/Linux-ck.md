@@ -70,11 +70,11 @@ Users can further customize the linux-ck package via tweaks contained in the PKG
 *   Optional **nconfig** for user specific tweaking.
 *   Option to compile a minimal set of modules via a make **localmodconfig**.
 *   Option to bypass the standard ARCH config options and simply use the **current kernel configuration** file.
-*   Optionally set the [**BFQ I/O scheduler**](http://algo.ing.unimo.it/people/paolo/disk_sched/) as default.
+*   Optionally set the [BFQ I/O scheduler](http://algo.ing.unimo.it/people/paolo/disk_sched/) as default.
 
 More details about these options are provided in the PKGBUILD itself. Be sure to read them carefully if compiling from AUR!
 
-**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few. Alternatively, use the corresponding DKMS package, for instance install [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) as described in [NVIDIA#Custom_kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA").
+**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few. Alternatively, use the corresponding [DKMS](/index.php/DKMS "DKMS") package, for instance install [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) as described in [NVIDIA#Custom_kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA").
 
 ### Use pre-compiled packages
 

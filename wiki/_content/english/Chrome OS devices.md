@@ -265,6 +265,8 @@ After flashing the firmware you can continue to [Installing Arch Linux](#Install
 
 Create an [Arch Linux Installer USB drive](/index.php/USB_flash_installation_media "USB flash installation media").
 
+**Note:** If the USB loads but fails to boot into Arch, it may be due a bug in the syslinux the current (2017.03.01) installer uses. The 2016.11.01 version from the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") will work until the issue is resolved.
+
 #### Booting the installation media
 
 *   Plug the USB drive to the Chrome OS device and start SeaBIOS with `Ctrl + L` at the white boot splash screen (if SeaBIOS is not set as default).

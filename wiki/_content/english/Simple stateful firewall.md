@@ -317,7 +317,10 @@ More information is in the iptables man page, or reading the docs and examples o
 
 #### Tricking port scanners
 
-**Note:** This opens you up to a form of [DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack "wikipedia:Denial-of-service attack"). An attack can send packets with spoofed IPs and get them blocked from connecting to your services.
+**Note:**
+
+*   This opens you up to a form of [DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack "wikipedia:Denial-of-service attack"). An attack can send packets with spoofed IPs and get them blocked from connecting to your services.
+*   This trick may block legal IP address for the reason that: while packets from legal IP address and their destination port is also a permitted one, but some of these packets may be regarded as INVALID by module conntrack. So legal IP address goes to the blacklist and is blocked out. A solution may be that permitting all packets destined for that port.
 
 Port scans are used by attackers to identify open ports on your computer. This allows them to identify and fingerprint your running services and possibly launch exploits against them.
 

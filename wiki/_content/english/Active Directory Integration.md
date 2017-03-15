@@ -666,7 +666,7 @@ Now you need to tell winbind to use the file by adding these lines to the /etc/s
 
 ```
 
-It should look sth. like this:
+It should look something like this:
 
  `/etc/samba/smb.conf` 
 ```

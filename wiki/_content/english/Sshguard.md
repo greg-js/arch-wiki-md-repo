@@ -81,8 +81,6 @@ To save the rules:
 
 [Enable](/index.php/Enable "Enable") and start the `sshguard.service`. The provided systemd unit uses a blacklist located at `/var/db/sshguard/blacklist.db` and pipes journalctl into sshguard for monitoring.
 
-To add optional sshguard arguments, modify the provided service with drop-in snippets as described in [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
-
 ### syslog-ng
 
 If you have [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) installed, you may start sshguard directly from the command line instead.
@@ -94,16 +92,16 @@ If you have [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) inst
 
 ## Configuration
 
+Configuration is done in `/etc/sshguard.conf` which is required for *sshguard* to start. A commented example is located at `/usr/share/doc/sshguard/sshguard.conf.sample`.
+
+**Note:** Piped commands and runtime flags in *sshguards's* systemd units [are not supported](https://sourceforge.net/p/sshguard/mailman/message/35709860/). Such flags can be modified in the configuration file.
+
 ### Change danger level
 
-By default in the Arch-provided systemd unit, offenders become permanently banned once they have reached a "danger" level of 120 (or 12 failed logins; see [terminology](http://www.sshguard.net/docs/terminology/) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
-
-[Edit the provided systemd unit](/index.php/Systemd#Editing_provided_units "Systemd") and change the `ExecStart=` line:
+By default in the Arch-provided configuration file, offenders become permanently banned once they have reached a "danger" level of 120 (or 12 failed logins; see [terminology](http://www.sshguard.net/docs/terminology/) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
 
 ```
-[Service]
-ExecStart=
-ExecStart=/usr/lib/systemd/scripts/sshguard-journalctl "-b 200:/var/db/sshguard/blacklist.db" SYSLOG_FACILITY=4 SYSLOG_FACILITY=10
+BLACKLIST_FILE=200:/var/db/sshguard/blacklist.db
 
 ```
 
@@ -113,12 +111,11 @@ Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
 
 ### Aggressive banning
 
-For some users under constant attack, it may be beneficial to enable a more aggressive banning policy. If you can be reasonably sure that accidental failed logins are unlikely, then you can instruct SSHGuard to automatically ban hosts with a single failed login. [Edit the provided systemd unit](/index.php/Systemd#Editing_provided_units "Systemd") in the following way:
+For some users under constant attack, it may be beneficial to enable a more aggressive banning policy. If you can be reasonably sure that accidental failed logins are unlikely, then you can instruct SSHGuard to automatically ban hosts with a single failed login. Modify the parameters in the configuration file in the following way:
 
 ```
-[Service]
-ExecStart=
-ExecStart=/usr/lib/systemd/scripts/sshguard-journalctl "-a 10 -b 10:/var/db/sshguard/blacklist.db" SYSLOG_FACILITY=4 SYSLOG_FACILITY=10
+THRESHOLD=10
+BLACKLIST_FILE=10:/var/db/sshguard/blacklist.db
 
 ```
 

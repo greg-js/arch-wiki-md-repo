@@ -1,4 +1,4 @@
-From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once."
+From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use and free chat client used by millions. Connect to AIM, Google Talk, ICQ, IRC, XMPP, and more chat networks all at once."
 
 ## Contents
 
@@ -10,7 +10,6 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
     *   [3.3 Sametime protocol](#Sametime_protocol)
     *   [3.4 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
     *   [3.5 Skype plugin](#Skype_plugin)
-    *   [3.6 Web QQ](#Web_QQ)
 *   [4 Security](#Security)
 *   [5 Privacy](#Privacy)
     *   [5.1 Pidgin-OTR](#Pidgin-OTR)
@@ -25,8 +24,6 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
     *   [11.1 Version Match for Sametime](#Version_Match_for_Sametime)
     *   [11.2 Browser error](#Browser_error)
     *   [11.3 ICQ Buddy Information encoding fix](#ICQ_Buddy_Information_encoding_fix)
-    *   [11.4 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
-    *   [11.5 Sound fix](#Sound_fix)
 *   [12 See also](#See_also)
 
 ## Installation
@@ -102,10 +99,6 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 ### Skype plugin
 
 Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) package.
-
-### Web QQ
-
-Simply install [pidgin-lwqq](https://www.archlinux.org/packages/?name=pidgin-lwqq) and then add a new account, selecting webQQ as the protocol. QQ is a proprietary chat protocol/IM service mainly used in Asia, particularly China.
 
 ## Security
 
@@ -353,48 +346,6 @@ Account > *your ICQ account* > Edit account > Advanced tab
 ```
 
 Select `Encoding: CP1251` (for Cyrillic).
-
-### Installing Pidgin after a Carrier installation
-
-If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps *before* installing Pidgin:
-
-*   Quit Carrier
-*   Delete your `~/.purple` directory.
-
-**Warning:** This will remove all your user settings for any programs that use libpurple, i.e. Pidgin, Carrier, etc.
-
-```
-rm -r ~/.purple
-
-```
-
-*   Uninstall **carrier** and **libpurple**.
-*   Install **pidgin** and **libpurple**.
-
-### Sound fix
-
-To have event sounds working, install the [gstreamer0.10-good](https://aur.archlinux.org/packages/gstreamer0.10-good/) package. Alternatively, in the "Sounds" preferences tab, the method can be set to 'command' and one of the following sound commands used.
-
-After configuring [ALSA](/index.php/ALSA "ALSA"):
-
-```
-$ aplay %s
-
-```
-
-If using [OSS](/index.php/OSS "OSS"):
-
-```
-$ ossplay %s
-
-```
-
-And for [PulseAudio](/index.php/PulseAudio "PulseAudio"):
-
-```
-$ paplay %s
-
-```
 
 ## See also
 

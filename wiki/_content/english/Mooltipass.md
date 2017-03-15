@@ -1,8 +1,8 @@
-The [Mooltipass](https://www.themooltipass.com/) is an open hardware and open software, hardware password keeper in which users store their credentials for authenticating against web application, PAM session, and password protected applications...
+The [Mooltipass](https://www.themooltipass.com/) is an open hardware and open software, hardware password keeper in which users store their credentials for authenticating against web application, [PAM](/index.php/PAM "PAM") session, and password protected applications.
 
 The device can be used with any USB compatible system that supports HID class devices.
 
-As a daily based user, one is able to interact directly with the device by using a clickable scroll-wheel or is free to use one of the available browser extension/application ([chromium-extension-mooltipass](https://aur.archlinux.org/packages/chromium-extension-mooltipass/), [firefox-extension-mooltipass](https://aur.archlinux.org/packages/firefox-extension-mooltipass/), [chromium-app-mooltipass](https://aur.archlinux.org/packages/chromium-app-mooltipass/))
+As a daily based user, one is able to interact directly with the device by using a clickable scroll-wheel or is free to use one of the available browser extensions/applications.
 
 ## Contents
 
@@ -17,19 +17,19 @@ As a daily based user, one is able to interact directly with the device by using
     *   [6.3 Moolticute](#Moolticute)
         *   [6.3.1 Moolticute-CLI](#Moolticute-CLI)
         *   [6.3.2 Moolticute_ssh-agent](#Moolticute_ssh-agent)
-    *   [6.4 =Mooltipy](#.3DMooltipy)
+    *   [6.4 Mooltipy](#Mooltipy)
 *   [7 See also](#See_also)
 
 ## Introduction
 
 The team behind Mooltipass was faced with the great complexity of password based authentication which require a strict policy including:
 
-*   An unique password for every usage;
-*   An hardly-guessable password;
+*   A unique password for every usage;
+*   A hardly-guessable password;
 
-In order to combine security of such policy and usability people came with software password managers like [keepassx2](https://www.archlinux.org/packages/?name=keepassx2). Unfortunately, such solution implies that all credentials remains in computer memory, so it could eventually be stolen by a malicious software.
+In order to combine security of such policy and usability people came with software [password managers](/index.php/Password_manager "Password manager") like [KeePass](/index.php/KeePass "KeePass"). Unfortunately, such solution implies that all credentials remains in computer memory, so it could eventually be stolen by a malicious software.
 
-Mooltipass is an external device, on which credential are stored encrypted using [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard")-[CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_.28CTR.29 "wikipedia:Block cipher mode of operation") and a key of 256 bits stored on an pin-locked smartcard. When plugged, the Mooltipass emulates an HID device and will act like a keyboard to send your credentials information to the targeted application. Even if an attacker is able to sniff at some point the communication between the device and the host it is likely that he won't be able to gather all credentials nor to inject its own data.
+Mooltipass is an external device, on which credential are stored encrypted using [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard")-[CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_.28CTR.29 "wikipedia:Block cipher mode of operation") and a key of 256 bits stored on an pin-locked smartcard. When plugged, the Mooltipass emulates an HID device and will act like a keyboard to send your credentials information to the targeted application. Even if an attacker is able to sniff at some point the communication between the device and the host it is likely that he will not be able to gather all credentials nor to inject its own data.
 
 ## Password storing
 
@@ -64,7 +64,7 @@ Mooltipass has been designed to be easy to use for everyone. The main way of int
 
 ### Chromium
 
-Chromium was the first target for Mooltipass, the team created one application [chromium-app-mooltipass](https://aur.archlinux.org/packages/chromium-app-mooltipass/) for easily managing the password database, backups and device settings.
+[Chromium](/index.php/Chromium "Chromium") was the first target for Mooltipass, the team created one application [chromium-app-mooltipass](https://aur.archlinux.org/packages/chromium-app-mooltipass/) for easily managing the password database, backups and device settings.
 
 Also there is an extension, [chromium-extension-mooltipass](https://aur.archlinux.org/packages/chromium-extension-mooltipass/) that detects login forms on web page and selects the right credential for you on the device. The user only has to check on the Mooltipass screen that the request is legitimate and to approve/deny using the hardware scroll-wheel.
 
@@ -72,7 +72,7 @@ Also there is an extension, [chromium-extension-mooltipass](https://aur.archlinu
 
 ### Firefox
 
-Like Chromium, Firefox user could use [firefox-extension-mooltipass](https://aur.archlinux.org/packages/firefox-extension-mooltipass/) for easy interaction between web site and credentials stored on the device.
+Like Chromium, [Firefox](/index.php/Firefox "Firefox") users can use [firefox-extension-mooltipass](https://aur.archlinux.org/packages/firefox-extension-mooltipass/) for easy interaction between web sites and credentials stored on the device.
 
 ### Moolticute
 
@@ -86,13 +86,13 @@ For scripting purpose there is [moolticute-cli](https://aur.archlinux.org/packag
 
 #### Moolticute_ssh-agent
 
-[moolticute_ssh-agent](https://aur.archlinux.org/packages/moolticute_ssh-agent/) benefit from the filesystem support of Mooltipass so users are able to store their (unencrypted) SSH keys. Moolticute_ssh-agent implement an SSH agent that allows to load the key from the device.
+[moolticute_ssh-agent](https://aur.archlinux.org/packages/moolticute_ssh-agent/) benefit from the filesystem support of Mooltipass so users are able to store their (unencrypted) [SSH keys](/index.php/SSH_keys "SSH keys"). Moolticute_ssh-agent implement an SSH agent that allows to load the key from the device.
 
-### =Mooltipy
+### Mooltipy
 
 Last client implementation is [mooltipy](https://github.com/osquat/mooltipy) that implement both some CLI tools and an Python module that could be used for scripting.
 
-**Note:** This tools is being packaged and should pop on AUR as soon as some fixes as been issued for supporting Python3.
+**Note:** This tools is being packaged and should pop on [AUR](/index.php/AUR "AUR") as soon as some fixes as been issued for supporting Python3.
 
 ## See also
 

@@ -56,6 +56,8 @@ Andy Lutomirski has created a patchset which fixes powersaving for NVME devices 
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
 
+This patch is now in mainline (4.11rc1), so it is a matter of time before the standard kernel can be used instead.
+
 ## Video
 
 The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
@@ -69,14 +71,14 @@ modeset=1 enable_rc6=1 enable_fbc=1
 
 ```
 
-The first argument is to enable modesetting if it's not set by default. The secound argument is needed to active power-saving C-States. Higher values than 1 are not available for kaby lake CPUs. The third argument is for frame buffer compression power savings. These values should work well!
+The first argument is to enable modesetting if it's not set by default. The second argument is needed to active power-saving C-States. Higher values than 1 are not available for kaby lake CPUs. The third argument is for frame buffer compression power savings. These values should work well!
 
 ```
 enable_guc_loading=1 enable_guc_submission=1
 
 ```
 
-These arguments are used to enable GuC updates. GuC is a small propietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the offical repository.
+These arguments are used to enable GuC updates. GuC is a small proprietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the official repository.
 
 ```
 enable_huc=1
@@ -90,7 +92,7 @@ enable_psr=1 disable_power_well=0 OR enable_psr=2
 
 ```
 
-Enalbe psr level 2 is working, while level 1 has a lot of problems. Setting it on level 2 doens't give much energy saving at the moment. It's said that 'disable_power_well=0 enable_psr=1' is working in this combination.
+Enable psr level 2 is working, while level 1 has a lot of problems. Setting it on level 2 doesn't give much energy saving at the moment. It's said that 'disable_power_well=0 enable_psr=1' is working in this combination.
 
 ```
 NOT WORKING: semaphores=1 
@@ -101,7 +103,7 @@ The semaphore option is NOT working for kaby lake CPUs and won't enable even if 
 
 ### Blank screen issue after booting
 
-If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics") for more information about the kernel paramter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
+If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics") for more information about the kernel parameter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
 
 ## Wireless
 

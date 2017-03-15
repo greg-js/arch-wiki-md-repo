@@ -88,7 +88,7 @@ $ git commit -a
 
 *   **yadm** — Manages files across systems using a single Git repository. Provides a way to use alternate files on a specific OS or host. Supplies a method of encrypting confidential data so it can safely be stored in your repository.
 
-	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)
+	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm-git](https://aur.archlinux.org/packages/yadm-git/)
 
 ### Maintaining dotfiles across multiple machines
 

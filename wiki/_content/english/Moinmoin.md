@@ -22,6 +22,8 @@ You can also run MoinMoin directly from `/usr/share/moin/` if you're ok with non
 
 ### Uwsgi
 
+Copy the file `/usr/share/moin/server/moin.wsgi` to `/var/lib/moin`. In the file, replace the string `'/path/to/wikiconfigdir'` with `'/var/lib/moin'` and uncomment the line.
+
 Install [uwsgi-plugin-python2](https://www.archlinux.org/packages/?name=uwsgi-plugin-python2) and create the file `/var/lib/moin/uwsgi.ini` with the following content.
 
 ```
@@ -31,7 +33,7 @@ chmod-socket = 660
 plugin = python2
 
 chdir = /var/lib/moin/
-wsgi-file = /usr/share/moin/server/moin.wsgi
+wsgi-file = /var/lib/moin/moin.wsgi
 
 master
 workers = 3

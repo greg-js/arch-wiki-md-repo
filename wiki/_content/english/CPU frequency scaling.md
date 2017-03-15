@@ -188,7 +188,7 @@ To set the value, run:
 
 #### Make changes permanent
 
-To have changes persist on system reboot probably the easiest is to use systemd-tmpfiles. For example to set the sampling_down_factor on boot you could create or edit a `/etc/tmpfiles.d/10-cpu-sampling-down.conf` file as follow
+To have changes persist on system reboot probably the easiest is to use [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). For example to set the sampling_down_factor on boot you could create or edit a `/etc/tmpfiles.d/10-cpu-sampling-down.conf` file as follow
 
  `/etc/tmpfiles.d/10-cpu-sampling-down.conf` 
 ```

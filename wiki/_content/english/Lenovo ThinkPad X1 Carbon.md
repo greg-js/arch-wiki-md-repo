@@ -138,7 +138,7 @@ The video card installed is Intel HD Graphics 4000\. See [intel](/index.php/Inte
 
 #### Brightness control
 
-Default brightness adjustment keys work but need to be pressed multiple times to increase/decrease the screen brightness. Writing your own ACPI handlers for those buttons seems to have no effect. In order to use them properly you need to add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi="!Windows 2012"`. See also [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight").
+Default brightness adjustment keys work but need to be pressed multiple times to increase/decrease the screen brightness. Writing your own ACPI handlers for those buttons seems to have no effect. In order to use them properly you need to add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi="!Windows 2012"`. See also [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight"). **This approach is considered deprecated; from Windows 8 onwards, backlight control was offloaded to userspace so that it can be done via the GPU instead of via ACPI. Use the approach with xbacklight below instead. See [here](https://sourceforge.net/p/ibm-acpi/mailman/ibm-acpi-devel/?viewmonth=201503&viewday=13) for details.**
 
 Some desktop environments may lack granularity while changing brightness. This is due to the DE (e.g. gnome-settings-daemon) along with the internal graphics module changing the brightness when brightness adjustment keys are pressed causing multiple steps per press. To work around this one can add the following to their boot parameters:
 

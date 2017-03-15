@@ -15,6 +15,7 @@ For more details on how EncFS compares to other disk encryption solution, see [D
 *   [1 Comparison to eCryptFS](#Comparison_to_eCryptFS)
 *   [2 Installation](#Installation)
 *   [3 Usage](#Usage)
+    *   [3.1 Changing the password](#Changing_the_password)
 *   [4 User friendly mounting](#User_friendly_mounting)
     *   [4.1 Mount using Gnome Encfs Manager](#Mount_using_Gnome_Encfs_Manager)
     *   [4.2 Mount using gnome-encfs](#Mount_using_gnome-encfs)
@@ -68,6 +69,17 @@ $ fusermount -u ~/*name*
 ```
 
 To remount the file-system, issue the first command, and enter the key used to encode it. Once this has been entered, the file-system will be mounted again.
+
+### Changing the password
+
+To change the password of a directory encrypted by EncFS, the following command can be used:
+
+```
+$ encfsctl passwd ~/.*name*
+
+```
+
+In this example, `~/.*name*` is the path to the directory which contains the encoded files. The tool will ask for your current password and afterwards, you will be able to set a new one.
 
 ## User friendly mounting
 
@@ -389,3 +401,4 @@ $ ls -la ~/restoremythesis
 
 *   [EncFS](https://vgough.github.io/encfs/) - project homepage
 *   [Security audit](https://defuse.ca/audits/encfs.htm) of EncFS by Taylor Hornby (January 14, 2014).
+*   [EncFS micro-how-to](https://www.ict.griffith.edu.au/anthony/info/crypto/encfs.hints) by Anthony Thyssen.

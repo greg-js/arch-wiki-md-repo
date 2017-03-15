@@ -9,10 +9,11 @@
 *   [5 Adding more databases/signatures repositories](#Adding_more_databases.2Fsignatures_repositories)
 *   [6 Scan for viruses](#Scan_for_viruses)
 *   [7 Using the milter](#Using_the_milter)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Error: Clamd was NOT notified](#Error:_Clamd_was_NOT_notified)
-    *   [8.2 Error: No supported database files found](#Error:_No_supported_database_files_found)
-    *   [8.3 Error: Can't create temporary directory](#Error:_Can.27t_create_temporary_directory)
+*   [8 OnAccessScan](#OnAccessScan)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Error: Clamd was NOT notified](#Error:_Clamd_was_NOT_notified)
+    *   [9.2 Error: No supported database files found](#Error:_No_supported_database_files_found)
+    *   [9.3 Error: Can't create temporary directory](#Error:_Can.27t_create_temporary_directory)
 
 ## Installation
 
@@ -123,6 +124,71 @@ WantedBy=multi-user.target
 ```
 
 Enable and start the service.
+
+## OnAccessScan
+
+On-access scanning require the kernel to be compiled with *fanotify* (kernel >= 3.8).
+
+On-access scanning will scan the file while reading, writing or executing it.
+
+Is it possibile to enable the **OnAccessScan** editing the `/etc/clamav/clamd.conf`:
+
+ `/etc/clamav/clamd.conf` 
+```
+# Enable son-access scan, required clamd service running
+ScanOnAccess true
+
+# Set the mount point where to recursively perform the scan,
+# this could be every path or multiple path (one line for path)
+OnAccessMount /usr
+OnAccessMount /home/
+OnAccessExcludePath /var/log/
+
+# flag fanotify to block any events on monitored files to perform the scan
+OnAccessPrevention false
+
+# perform scans on newly created, moved, or renamed files
+OnAccessExtraScanning true
+
+# check the UID from the event of fanotify
+OnAccessExclude UID 0
+
+# action to perform when clamav detects a malicious file
+# it is possibile to specify ad inline command too
+VirusEvents /etc/clamav/detected.zsh
+
+# WARNING: clamd should run as root
+User root
+
+```
+
+Create:
+
+ `/etc/clamav/detected.zsh` 
+```
+#!/usr/bin/env zsh
+alert="Signature detected: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
+
+echo "$(date) - $CLAM_VIRUSEVENT_VIRUSNAME > $CLAM_VIRUSEVENT_FILENAME" >> /var/log/clamav/infected.log
+
+if [[ -z $(command -v notify-send) ]]; then
+  echo "$alert" {{!}} wall -n
+else
+  notify-send "$alert"
+fi
+
+```
+
+If you are using [AppArmor](/index.php/AppArmor "AppArmor") it is necessary to allow clamd to run as root:
+
+```
+# aa-complain clamd
+
+```
+
+Restart/start the service with `systemct restart clamd.service`.
+
+Source: [http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html](http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html)
 
 ## Troubleshooting
 

@@ -31,7 +31,7 @@ This article is a general list of applications sorted by category, as a referenc
     *   [1.10 Wallpaper setters](#Wallpaper_setters)
     *   [1.11 Composite managers](#Composite_managers)
     *   [1.12 Virtual desktop pagers](#Virtual_desktop_pagers)
-    *   [1.13 Logout dialogue](#Logout_dialogue)
+    *   [1.13 Shutdown/logout managers](#Shutdown.2Flogout_managers)
     *   [1.14 Accessibility](#Accessibility)
 *   [2 Utilities](#Utilities)
     *   [2.1 Partitioning tools](#Partitioning_tools)
@@ -287,7 +287,9 @@ This article is a general list of applications sorted by category, as a referenc
 
 ### Bootsplash
 
-See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipedia:Bootsplash").
+	See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipedia:Bootsplash").
+
+[view](/index.php/List_of_applications/Bootsplash_applications "List of applications/Bootsplash applications") | [talk](/index.php?title=Talk:List_of_applications/Bootsplash_applications&action=edit&redlink=1 "Talk:List of applications/Bootsplash applications (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Bootsplash_applications&action=edit)
 
 *   **[Fbsplash](/index.php/Fbsplash "Fbsplash")** — Gentoo implementation as bootsplash program
 
@@ -303,15 +305,17 @@ See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipe
 
 ### Display managers
 
-See the main article: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager").
+	See the main article: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager").
 
 ### Command shells
 
-See the main article: [Command-line shell](/index.php/Command-line_shell "Command-line shell").
+	See the main article: [Command-line shell](/index.php/Command-line_shell "Command-line shell").
 
-See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
+	See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
 
 ### Terminal multiplexers
+
+[view](/index.php/List_of_applications/Terminal_multiplexers "List of applications/Terminal multiplexers") | [talk](/index.php?title=Talk:List_of_applications/Terminal_multiplexers&action=edit&redlink=1 "Talk:List of applications/Terminal multiplexers (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Terminal_multiplexers&action=edit)
 
 *   **abduco** — Tool for session attach and detach support which allows a process to run independently from its controlling terminal.
 
@@ -335,13 +339,15 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 ### Desktop environments
 
-See the main article: [Desktop environment#List of desktop environments](/index.php/Desktop_environment#List_of_desktop_environments "Desktop environment").
+	See the main article: [Desktop environment#List of desktop environments](/index.php/Desktop_environment#List_of_desktop_environments "Desktop environment").
 
 ### Window managers
 
-#### Console
+	See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of the functions of window managers for the console.
 
-See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of the functions of window managers for the console.
+[view](/index.php/List_of_applications/Window_managers "List of applications/Window managers") | [talk](/index.php?title=Talk:List_of_applications/Window_managers&action=edit&redlink=1 "Talk:List of applications/Window managers (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Window_managers&action=edit)
+
+###### Console
 
 *   **dvtm** — [dwm](/index.php/Dwm "Dwm")-style window manager in the console.
 
@@ -351,11 +357,13 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
-#### Graphical
+###### Graphical
 
-See the main article: [Window manager#List of window managers](/index.php/Window_manager#List_of_window_managers "Window manager").
+	See the main article: [Window manager#List of window managers](/index.php/Window_manager#List_of_window_managers "Window manager").
 
 ### Window tilers
+
+[view](/index.php/List_of_applications/Window_tilers "List of applications/Window tilers") | [talk](/index.php?title=Talk:List_of_applications/Window_tilers&action=edit&redlink=1 "Talk:List of applications/Window tilers (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Window_tilers&action=edit)
 
 *   **PyTyle3** — An automatic tiler that is compatible with Openbox Multihead with faster action and lower memory footprint.
 
@@ -382,6 +390,8 @@ See the main article: [Window manager#List of window managers](/index.php/Window
 	[http://wumwum.sourceforge.net/](http://wumwum.sourceforge.net/) || [wumwum](https://aur.archlinux.org/packages/wumwum/)
 
 ### Taskbars / panels / docks
+
+[view](/index.php/List_of_applications/Taskbars_panels_docks "List of applications/Taskbars panels docks") | [talk](/index.php?title=Talk:List_of_applications/Taskbars_panels_docks&action=edit&redlink=1 "Talk:List of applications/Taskbars panels docks (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Taskbars_panels_docks&action=edit)
 
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — Lightweight dock which sits at the bottom of the screen.
 
@@ -465,7 +475,9 @@ See the main article: [Window manager#List of window managers](/index.php/Window
 
 ### Application launchers
 
-See also [Wikipedia:Comparison of desktop application launchers](https://en.wikipedia.org/wiki/Comparison_of_desktop_application_launchers "wikipedia:Comparison of desktop application launchers").
+	See also [Wikipedia:Comparison of desktop application launchers](https://en.wikipedia.org/wiki/Comparison_of_desktop_application_launchers "wikipedia:Comparison of desktop application launchers").
+
+[view](/index.php/List_of_applications/Application_launchers "List of applications/Application launchers") | [talk](/index.php?title=Talk:List_of_applications/Application_launchers&action=edit&redlink=1 "Talk:List of applications/Application launchers (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Application_launchers&action=edit)
 
 *   **ADeskBar** — Easy, simple and unobtrusive application launcher for Openbox.
 
@@ -565,6 +577,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 ### Wallpaper setters
 
+**Tip:** In order to avoid installing one more package, you may find convenient to use the `display` utility from [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or `gm display` from [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick). E.g.: `display -backdrop -background '#3f3f3f' -flatten -window root *image*`.
+
+[view](/index.php/List_of_applications/Wallpaper_setters "List of applications/Wallpaper setters") | [talk](/index.php?title=Talk:List_of_applications/Wallpaper_setters&action=edit&redlink=1 "Talk:List of applications/Wallpaper setters (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Wallpaper_setters&action=edit)
+
 *   **bgs** — An extremely fast and small background setter for X based on imlib2.
 
 	[https://github.com/Gottox/bgs/](https://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
@@ -601,15 +617,15 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://packages.debian.org/sid/xli](https://packages.debian.org/sid/xli) || [xli](https://aur.archlinux.org/packages/xli/)
 
-**Tip:** In order to avoid installing one more package, you may find convenient to use the `display` utility from [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or `gm display` from [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick). E.g.: `display -backdrop -background '#3f3f3f' -flatten -window root *image*`.
-
 ### Composite managers
 
-See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg").
+	See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg").
 
 ### Virtual desktop pagers
 
-See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
+	See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wikipedia:Pager (GUI)").
+
+[view](/index.php/List_of_applications/Virtual_desktop_pagers "List of applications/Virtual desktop pagers") | [talk](/index.php?title=Talk:List_of_applications/Virtual_desktop_pagers&action=edit&redlink=1 "Talk:List of applications/Virtual desktop pagers (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Virtual_desktop_pagers&action=edit)
 
 *   **bbpager** — Dockable pager for [blackbox](/index.php/Blackbox "Blackbox") and other window managers.
 
@@ -639,9 +655,9 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 	[https://github.com/BurntSushi/pager-multihead](https://github.com/BurntSushi/pager-multihead) || [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/)
 
-### Logout dialogue
+### Shutdown/logout managers
 
-A few simple shutdown managers are available:
+[view](/index.php/List_of_applications/Shutdown_managers "List of applications/Shutdown managers") | [talk](/index.php?title=Talk:List_of_applications/Shutdown_managers&action=edit&redlink=1 "Talk:List of applications/Shutdown managers (page does not exist)") | [edit](https://wiki.archlinux.org/index.php?title=List_of_applications/Shutdown_managers&action=edit)
 
 *   **exitx-polkit** — A GTK logout dialog for Openbox with PolicyKit support.
 
@@ -661,7 +677,7 @@ A few simple shutdown managers are available:
 
 ### Accessibility
 
-See [Accessibility](/index.php/Accessibility "Accessibility").
+	See [Accessibility](/index.php/Accessibility "Accessibility").
 
 ## Utilities
 

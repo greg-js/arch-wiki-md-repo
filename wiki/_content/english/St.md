@@ -66,7 +66,7 @@ $ st -f "Liberation Mono:size=12"
 
 ### Colors
 
-Edit the following line to set *foreground*, *background* and *cursor* colors:
+Edit the following lines to set *foreground*, *background*, and *cursor* colors:
 
 ```
  static unsigned int defaultfg = 7;
@@ -75,7 +75,7 @@ Edit the following line to set *foreground*, *background* and *cursor* colors:
 
 ```
 
-The values refer to the `*colorname[]` array in the same file, you can use default color or add yours in `#rrggbb`, for example:
+The values refer to the `*colorname[]` array in the same file; you can use default color or add yours in `#rrggbb`, for example:
 
 ```
  static const char *colorname[] = {

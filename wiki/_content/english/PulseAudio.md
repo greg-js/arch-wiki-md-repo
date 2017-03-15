@@ -230,7 +230,7 @@ Although [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-a
  }
 ```
 
-The [soure code](http://git.alsa-project.org/?p=alsa-plugins.git;a=tree;f=pulse;hb=HEAD) can be read to know all available options.
+The [source code](http://git.alsa-project.org/?p=alsa-plugins.git;a=tree;f=pulse;hb=HEAD) can be read to know all available options.
 
 #### ALSA/dmix without grabbing hardware device
 

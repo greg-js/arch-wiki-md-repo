@@ -6,6 +6,7 @@ The Lenovo ThinkPad X260 is the successor to the [Lenovo ThinkPad X240](/index.p
     *   [1.1 Fingerprint](#Fingerprint)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 fn-4 sleep hotkey not recognized](#fn-4_sleep_hotkey_not_recognized)
+    *   [2.2 No audio from docking station](#No_audio_from_docking_station)
 
 ## Configuration
 
@@ -18,3 +19,9 @@ Some X260's come with vfs (Validity Sensors) fingerprint readers. If this is the
 ### fn-4 sleep hotkey not recognized
 
 Not sure if a BIOS level error or not. fn itself is regarded as an acpi wakeup event but fn-4 registers nothing, while working under windows.
+
+### No audio from docking station
+
+Kernel is already supported docking station after commit 3194ed4, but maybe not enable default, edit this file to enable it.
+
+ `/etc/modprobe.d/alsa-base.conf`  `options snd-hda-intel model=thinkpad`

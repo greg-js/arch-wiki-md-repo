@@ -47,7 +47,7 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
 
 ## Preparation
 
-Before using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup), always make sure the `dm-crypt` [kernel module](/index.php/Kernel_module "Kernel module") is loaded.
+Before using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup), always make sure the `dm_crypt` [kernel module](/index.php/Kernel_module "Kernel module") is loaded.
 
 ## Cryptsetup usage
 

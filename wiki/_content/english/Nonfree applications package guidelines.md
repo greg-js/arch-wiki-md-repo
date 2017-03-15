@@ -55,10 +55,9 @@ There are multiple reasons for packaging even non-packageable software:
 
 Yes, it's better to leave this guide and spend some time searching (or maybe even creating) alternatives to an application you wanted to package because:
 
-1.  Packaging nonfree software is often messy and often against [The Arch Way](/index.php/The_Arch_Way "The Arch Way")
-2.  It is better to support software that is owned by us all than software that is owned by a company
-3.  It is better to support software that is actively maintained
-4.  It is better to support software that can be fixed if just one person out of millions cares enough
+1.  It is better to support software that is owned by us all than software that is owned by a company
+2.  It is better to support software that is actively maintained
+3.  It is better to support software that can be fixed if just one person out of millions cares enough
 
 ### Use open source variants where possible
 

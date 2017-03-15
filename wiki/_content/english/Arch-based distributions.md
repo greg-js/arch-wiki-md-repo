@@ -47,7 +47,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [Obarun](http://www.obarun.org/index.html)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
-*   [Miraclx OS](http://miraclxos.ml)
+*   [Miraclx OS](http://miraclx-os.ml)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Velt OS](https://velt.io)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)

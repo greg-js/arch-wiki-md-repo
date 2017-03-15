@@ -238,8 +238,8 @@ $ man -s 7 -k ".*"
 
 Arch Linux specific pages:
 
-*   archlinux(7)
-*   mkinitcpio(8)
+*   [archlinux(7)](https://manned.org/archlinux.7)
+*   [mkinitcpio(8)](https://manned.org/mkinitcpio.8)
 *   [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)
 *   [pacman-key(8)](https://www.archlinux.org/pacman/pacman-key.8.html)
 *   [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)
