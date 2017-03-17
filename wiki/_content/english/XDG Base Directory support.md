@@ -376,7 +376,17 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
  |
 | [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) | `~/.Xauthority` | `$ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority` |
-| [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) | `~/.xinitrc` | `$ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc` |
+| [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) | `~/.xinitrc`
+
+`~/.xserverrc`
+
+ | `$ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc`
+
+`$ export X="$XDG_CONFIG_HOME"/X11/xserverrc`
+
+Note that these variables are respected by *xinit*, but not by *startx*.
+
+ |
 | [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) | `~/.Xresources`
 
 `~/.Xdefaults`

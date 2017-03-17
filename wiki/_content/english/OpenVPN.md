@@ -435,7 +435,7 @@ To troubleshoot a VPN connection, start the client's daemon manually with `openv
 
 ### systemd service configuration
 
-To start OpenVPN automatically at system boot, either for a client or for a server, [enable](/index.php/Enable "Enable") `openvpn-server@*<configuration>*.service` on the applicable machine. (Leave `.conf` out of the `<configuration>` string.)
+To start the OpenVPN server automatically at system boot, [enable](/index.php/Enable "Enable") `openvpn-server@*<configuration>*.service` on the applicable machine. For a client, [enable](/index.php/Enable "Enable") `openvpn-client@*<configuration>*.service` instead. (Leave `.conf` out of the `<configuration>` string.)
 
 For example, if the client configuration file is `/etc/openvpn/client/*client*.conf`, the service name is `openvpn-client@*client*.service`. Or, if the server configuration file is `/etc/openvpn/server/*server*.conf`, the service name is `openvpn-server@*server*.service`.
 

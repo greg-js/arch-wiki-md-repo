@@ -320,6 +320,8 @@ If the link light on the network switch is enabled when the computer is turned o
 
 *   MSI B85M-E45 motherboard, BIOS version V10.9, onboard Realtek 8111G chipset
 
+For the `r8168` module you might need to set the `s5wol=1` [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to enable the wake on LAN functionality.
+
 ### Suspend/Resume
 
 If the computer does not wake after suspend/hibernate when using [TLP](/index.php/TLP "TLP"), set the `WOL_DISABLE` value to `N` in `/etc/default/tlp`.

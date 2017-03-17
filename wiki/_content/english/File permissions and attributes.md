@@ -234,7 +234,7 @@ In that case *chmod* throw an error.
 
 *chmod* can also set permissions using numbers.
 
-Using numbers is another method which allows you to edit the permissions for all three owner, group, and others at the same time. This basic structure of the code is this:
+Using numbers is another method which allows you to edit the permissions for all three owner, group, and others at the same time, as well as the setuid, setgid, and sticky bits. This basic structure of the code is this:
 
 ```
 $ chmod *xxx* *filename*
@@ -316,12 +316,23 @@ The value of the above would therefore be 775\.
 Consider we wanted to remove the writable permission from group:
 
 ```
--rwzr-xr-x
+-rwxr-xr-x
  111101101
 
 ```
 
 The value would therefore be 755 and you would use `chmod 755 *filename*` to remove the writable permission. You will notice you get the same three digit number no matter which method you use. Whether you use text or numbers will depend on personal preference and typing speed. When you want to restore a directory or file to default permissions e.g. read and write (and execute) permission to the owner but deny write permission to everyone else, it may be faster to use `chmod 755/644 *filename*`. However if you are changing the permissions to something out of the norm, it may be simpler and quicker to use the text method as opposed to trying to convert it to numbers, which may lead to a mistake. It could be argued that there is not any real significant difference in the speed of either method for a user that only needs to use *chmod* on occasion.
+
+You can also use the numeric method to set the `setuid`, `setgid`, and `sticky` bits by using four digits.
+
+```
+setuid=4
+setgid=2
+sticky=1
+
+```
+
+For example, `chmod 2777 *filename*` will set read/write/executable bits for everyone and also enable the `setgid` bit.
 
 ### Bulk chmod
 

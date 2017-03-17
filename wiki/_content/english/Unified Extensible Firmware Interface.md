@@ -387,19 +387,29 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 ### OVMF for Virtual Machines
 
-[OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware for QEMU.
+[OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware and a separate non-volatile variable store for QEMU.
 
-You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository and run it as follows:
+You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository.
 
-```
-$ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/ovmf_x64.bin,format=raw,if=pflash,readonly
-
-```
-
-As shorter alternative, [ovmf](https://www.archlinux.org/packages/?name=ovmf) can be loaded using `-bios` parameter
+It is [advised](http://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt) to make a local copy of the non-volatile variable store for your virtual machine:
 
 ```
-$ qemu-system-x86_64 -enable-kvm -m 1G -bios /usr/share/ovmf/ovmf_x64.bin
+$ cp /usr/share/ovmf/ovmf_vars_x64.bin my_uefi_vars.bin
+
+```
+
+To use the OVMF firmware and this variable store, add following to your QEMU command:
+
+```
+-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin \
+-drive if=pflash,format=raw,file=my_uefi_vars.bin
+
+```
+
+For example:
+
+```
+$ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin -drive if=pflash,format=raw,file=efi_vars.bin …
 
 ```
 

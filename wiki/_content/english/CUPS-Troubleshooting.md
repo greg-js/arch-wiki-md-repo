@@ -103,14 +103,16 @@ To check the printer's settings go to *Printers*, then *Modify Printer*. Copy do
 
 ### All jobs are "The printer is not responding"
 
-On networked printers, you should check that the name that CUPS uses as its connection URI resolves to the printer's IP via DNS, e.g. If your printer's connection looks like this:
+On networked printers, you should check that the hostname in the printer's URI resolves to the printer's IP address via DNS, e.g. if your printer's connection looks like this:
 
 ```
 lpd://BRN_020554/BINARY_P1
 
 ```
 
-then the hostname 'BRN_020554' needs to resolve to the printer's IP from the server running CUPS
+then the hostname 'BRN_020554' needs to resolve to the printer's IP from the server running CUPS. If [Avahi](/index.php/Avahi "Avahi") is being used, ensure that [Avahi's hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") is working.
+
+Alternatively, replace the hostname used in the URI with the printer's IP address.
 
 ### The PPD version is not compatible with gutenprint
 

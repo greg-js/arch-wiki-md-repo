@@ -4,7 +4,7 @@ A key challenge for system administrators of any datacenter is trying to coexist
 
 [Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory") serves as a central location for network administration and security. It is responsible for authenticating and authorizing all users and computers within a network of Windows domain type, assigning and enforcing security policies for all computers in a network and installing or updating software on network computers. For example, when a user logs into a computer that is part of a Windows domain, it is Active Directory that verifies his or her password and specifies whether he or she is a system administrator or normal user.
 
-Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap and DNS. These same standards are available as linux, but piecing them together is not an easy task. Following these steps will help you configure an ArchLinux host to authenticate against an AD domain.
+Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap "wikipedia:Ldap") versions 2 and 3, [Kerberos](/index.php/Kerberos "Kerberos") and DNS. These same standards are available as linux, but piecing them together is not an easy task. Following these steps will help you configure an ArchLinux host to authenticate against an AD domain.
 
 This guide explains how to integrate an Arch Linux host with an existing Windows Active Directory domain. Before continuing, you must have an existing Active Directory domain, and have a user with the appropriate rights within the domain to: query users and add computer accounts (Domain Join).
 

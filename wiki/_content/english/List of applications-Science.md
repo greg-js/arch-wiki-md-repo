@@ -2,7 +2,7 @@
 
 * * *
 
-[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – **Science** – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – **Science** – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -99,10 +99,6 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 *   **[AXIOM](https://en.wikipedia.org/wiki/Axiom_(computer_algebra_system) "wikipedia:Axiom (computer algebra system)")** — FriCAS: derivative of the powerful AXIOM-CAS
 
 	[http://fricas.sourceforge.net](http://fricas.sourceforge.net) || [fricas](https://aur.archlinux.org/packages/fricas/)
-
-*   **[Fermat](https://en.wikipedia.org/wiki/Fermat_(computer_algebra_system) "wikipedia:Fermat (computer algebra system)")** — Computer algebra system that does arithmetic of arbitrarily long integers and fractions, multivariate polynomials, symbolic calculations, matrices over polynomial rings, graphics, and other numerical calculations.
-
-	[http://home.bway.net/lewis/](http://home.bway.net/lewis/) || [fermat](https://aur.archlinux.org/packages/fermat/)
 
 *   **[GAP](https://en.wikipedia.org/wiki/GAP_(computer_algebra_system) "wikipedia:GAP (computer algebra system)")** — Computer algebra system for computational discrete algebra with particular emphasis on computational group theory.
 
@@ -282,10 +278,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://pymol.org](http://pymol.org) || [pymol](https://www.archlinux.org/packages/?name=pymol)
 
-*   **[RasMol](https://en.wikipedia.org/wiki/RasMol "wikipedia:RasMol")** — Computer program written for molecular graphics visualization intended and used primarily for the depiction and exploration of biological macromolecule structures.
-
-	[http://www.rasmol.org/](http://www.rasmol.org/) || [rasmol](https://aur.archlinux.org/packages/rasmol/)
-
 ##### Drawing
 
 *   **[BKChem](https://en.wikipedia.org/wiki/BKchem "wikipedia:BKchem")** — Practical and goodlooking skeletal formula molecule drawing program.
@@ -361,10 +353,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **[KStars](https://en.wikipedia.org/wiki/KStars "wikipedia:KStars")** — Planetarium application that provides an accurate graphical simulation of the night sky, from any location on Earth, at any date and time. It is included in KDE Edu.
 
 	[http://edu.kde.org/kstars/](http://edu.kde.org/kstars/) || [kstars](https://www.archlinux.org/packages/?name=kstars)
-
-*   **Open PHD Guiding** — Telescope autoguiding software based on the famous PHD Guiding.
-
-	[http://openphdguiding.org/](http://openphdguiding.org/) || [open-phd-guiding-svn](https://aur.archlinux.org/packages/open-phd-guiding-svn/)
 
 *   **Qastrocam-g2** — Webcam acquisition software for planetary imaging.
 

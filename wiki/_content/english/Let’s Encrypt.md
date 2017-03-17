@@ -33,7 +33,7 @@ Plugins are available for automated configuration and installation of the issued
 
 ## Configuration
 
-Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more information about creating and usage of certificates.
+Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more information about creation and usage of certificates.
 
 ### Webroot
 

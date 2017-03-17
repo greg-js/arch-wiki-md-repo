@@ -2,7 +2,7 @@
 
 * * *
 
-[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – **Security** – [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – **Security** – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -147,15 +147,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[https://code.google.com/archive/p/opendlp/](https://code.google.com/archive/p/opendlp/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **Swatch** — Utility that can monitor just about any type of log.
-
-	[http://swatch.sourceforge.net/](http://swatch.sourceforge.net/) || [swatch](https://aur.archlinux.org/packages/swatch/)
-
 #### Anti malware
-
-*   **chkrootkit** — Locally checks for signs of a rootkit.
-
-	[http://www.chkrootkit.org/](http://www.chkrootkit.org/) || [chkrootkit](https://aur.archlinux.org/packages/chkrootkit/)
 
 *   **[ClamAV](/index.php/ClamAV "ClamAV")** — Open source antivirus engine for detecting trojans, viruses, malware & other malicious threats.
 
@@ -259,7 +251,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **hashdeep** — A cross-platform tools to computer hashes, or message digests, for any number of files
 
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [md5deep](https://aur.archlinux.org/packages/md5deep/)
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://aur.archlinux.org/packages/hashdeep/)
 
 *   **Parano** — A GNOME frontend for creating/editing/checking MD5 and SFV files
 
@@ -311,23 +303,11 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://www.silenteye.org/](http://www.silenteye.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=silenteye)</small>
 
-*   **snow** — Steganography program for concealing messages in text files
-
-	[http://www.darkside.com.au/snow/](http://www.darkside.com.au/snow/) || [snow](https://aur.archlinux.org/packages/snow/)
-
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
 
-*   **stegparty** — A steganography utility hides text by typoing text existing text files.
-
-	[https://github.com/countrygeek/stegparty](https://github.com/countrygeek/stegparty) || [stegparty](https://aur.archlinux.org/packages/stegparty/)
-
 #### Password managers
-
-*   **Console Password Manager** — Curses based password manager using PGP-encryption.
-
-	[https://github.com/comotion/cpm](https://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
 
 *   **Encryptr** — Zero-knowledge, cloud-based password manager.
 
@@ -344,14 +324,6 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **GPass** — Password manegement software for GNOME2 desktop.
 
 	[https://github.com/raffael-sfm/gpass](https://github.com/raffael-sfm/gpass) || [gpass](https://aur.archlinux.org/packages/gpass/)
-
-*   **GPassword Manager** — Simple, lightweight and cross-platform utility for managing and accessing passwords.
-
-	[http://sourceforge.net/projects/gpasswordman/](http://sourceforge.net/projects/gpasswordman/) || [gpasswordman](https://aur.archlinux.org/packages/gpasswordman/)
-
-*   **Gtkpass** — Gtkpass is a GTK and Libkpass-based password manager for KeePass 1.x databases.
-
-	[https://sourceforge.net/projects/gtkpass/](https://sourceforge.net/projects/gtkpass/) || [gtkpass](https://aur.archlinux.org/packages/gtkpass/)
 
 *   **Ked Password Manager** — A password manager that helps to manage large numbers of passwords.
 
@@ -372,14 +344,6 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
 	[http://sourceforge.net/projects/mypasswords7/](http://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **MyPasswordSafe** — Easy-to-use QT based password manager, compatible with Password Safe files (and therefore pwsafe).
-
-	[http://www.semanticgap.com/myps/](http://www.semanticgap.com/myps/) || [mypasswordsafe](https://aur.archlinux.org/packages/mypasswordsafe/)
-
-*   **Pasaffe** — Easy to use password manager for Gnome with a Password Safe 3.0 compatible database.
-
-	[https://launchpad.net/pasaffe](https://launchpad.net/pasaffe) || [pasaffe](https://aur.archlinux.org/packages/pasaffe/)
 
 *   **[pass](/index.php/Pass "Pass")** — Simple console based password manager
 

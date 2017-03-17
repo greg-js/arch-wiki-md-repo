@@ -1,3 +1,10 @@
+## Contents
+
+*   [1 Hardware Overview](#Hardware_Overview)
+*   [2 Sound](#Sound)
+*   [3 Display](#Display)
+*   [4 What does not work](#What_does_not_work)
+
 ## Hardware Overview
 
 Output of `lspci -nn`:
@@ -39,6 +46,24 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ## Sound
 
 Initially the headphone port did not work, after setting Auto-mute to Lineout+Speaker and a reboot it started working
+
+## Display
+
+According to `cat /sys/kernel/debug/dri/0/i915_edp_psr_status`:
+
+```
+Sink_Support: yes
+Source_OK: no
+Enabled: no
+Active: no
+Busy frontbuffer bits: 0x000
+Re-enable work scheduled: no
+Main link in standby mode: no
+HW Enabled & Active bit: no
+
+```
+
+The FullHD panel supports psr, but the i915 psr implementation for skylake has [Known Bugs](https://bugs.freedesktop.org/show_bug.cgi?id=94126)
 
 ## What does not work
 

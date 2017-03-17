@@ -1,10 +1,8 @@
-[Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) is a network authentication system.
-
-[krb5 documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/index.html)
+[Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) is a network authentication system. See [krb5 documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/index.html).
 
 ## Server
 
-Install the [krb5](https://www.archlinux.org/packages/?name=krb5) package, if it isn't already installed, and configure it to your needs. Ex:
+Install the [krb5](https://www.archlinux.org/packages/?name=krb5) package, if it is not already installed, and configure it to your needs. For example:
 
  `/etc/krb5.conf` 
 ```
@@ -40,13 +38,16 @@ _kerberos-adm._udp SRV 0 0 750 kerberos.example.com.
 
 ```
 
-Don't forget reverse DNS!
+Do not forget reverse DNS.
 
-Add ALLOW rules to your firewall for both tcp and udp on ports 88 and 750 (krb5 documentation says tcp is used on both, though mine isn't listening for tcp on 750)
+Add ALLOW rules to your firewall for both tcp and udp on ports 88 and 750.
 
 Create the database:
 
- `# krb5_util -r EXAMPLE.COM create -s` 
+```
+# krb5_util -r EXAMPLE.COM create -s
+
+```
 
 Enable and start the krb5-kdc service.
 
@@ -57,8 +58,6 @@ Start kadmin, using the local root user instead of kerberos authentication:
 Authenticating as principal root/admin@EXAMPLE.COM with password.
 kadmin.local:
 ```
-
-You can do most things
 
 ### Basic Commands
 
@@ -79,15 +78,15 @@ Add a service principal:
 
 ## SSH Authentication
 
-Make sure both your ssh server and ssh client configurations include this line, then restart the server
+Make sure both your [SSH](/index.php/SSH "SSH") server and client configurations include this line, then restart the server:
 
  `GSSAPIAuthentication yes` 
 
-Generate a service principal
+Generate a service principal:
 
  `kadmin.local:  add_principal -randkey host/someserver.example.com@EXAMPLE.COM` 
 
-Generate the keytab for the server
+Generate the keytab for the server:
 
  `kadmin.local:  ktadd -keytab /root/someserver.krb5.keytab` 
 ```
@@ -95,10 +94,10 @@ Generate the keytab for the server
 # chmod 600 /etc/krb5.keytab
 ```
 
-Get a ticket-granting ticket on the ssh client
+Get a ticket-granting ticket on the ssh client:
 
  `$ kinit myuser@EXAMPLE.COM`  `Password for myuser@EXAMPLE.COM: ***` 
 
-Debug with
+Debug with:
 
  `$ ssh someserver.example.com -v`

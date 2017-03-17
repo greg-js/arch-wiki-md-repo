@@ -20,6 +20,7 @@
     *   [4.6 Use liquidprompt](#Use_liquidprompt)
     *   [4.7 Put git status in prompt](#Put_git_status_in_prompt)
     *   [4.8 Evaluate ssh-agent](#Evaluate_ssh-agent)
+    *   [4.9 The "command not found" hook](#The_.22command_not_found.22_hook)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -194,6 +195,10 @@ In fish, `eval (ssh-agent)` generate errors due to how variables are set. To wor
  $ eval (ssh-agent -c)
 
 ```
+
+### The "command not found" hook
+
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. This hook will be run by default if [pkgfile](/index.php/Pkgfile "Pkgfile") is installed.
 
 ## See also
 

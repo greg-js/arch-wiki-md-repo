@@ -864,10 +864,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://xonotic.org](http://xonotic.org) || [xonotic](https://www.archlinux.org/packages/?name=xonotic)
 
-*   **Mutant Factions** — Free multiplayer action coop game.
-
-	[http://mutantfactions.net](http://mutantfactions.net) || [mutantfactions](https://aur.archlinux.org/packages/mutantfactions/)
-
 ## Simulation
 
 *   **[Beyond the Red Line](https://en.wikipedia.org/wiki/Beyond_the_Red_Line "wikipedia:Beyond the Red Line")** — Completely free stand-alone conversion of Freespace 2 based on the TV show Battlestar Galactica. Presumed abandoned, see Diaspora: Shattered Armistice for an alternative.

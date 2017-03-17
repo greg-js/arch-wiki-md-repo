@@ -99,30 +99,30 @@ Az [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) tartalmazza az *i3-dm
 
 ## Beállítás
 
-See [Configuring i3](http://i3wm.org/docs/userguide.html#configuring) for details. The rest of this article assumes the *i3* configuration file to be in the folder `~/.config`.
+Lásd az [i3 konfigurálását](http://i3wm.org/docs/userguide.html#configuring) részletekért. Ennek a fejezetnek nagyrésze feltételezi, hogy az *i3* konfigurációs könyvtára az `~/.config` könyvtárban van.
 
 ### Konfiguráció varázsló és alternatív billentyűzetkiosztások
 
-When *i3* is first started, it offers to run the configuration wizard *i3-config-wizard*. This tool creates `~/.config/i3/config` by rewriting a template configuration file in `/etc/i3/config.keycodes`. It makes two modifications to the default template:
+Az *i3* első indításakor felajánlja, hogy futtatja az *i3-config-wizard* beállítás varázslót. Ez az eszköz létrehozza az `~/.config/i3/config`-ot az `/etc/i3/config.keycodes` minta konfigurációs fájl változtatásával. Két módosítást végez a sablonhoz képest:
 
-1.  It asks the user to choose a default modifier key, which it adds to the template as a single line, like `set $mod Mod1`; and
-2.  it replaces all *bindcode* lines with *bindsym* lines corresponding to the user's current keyboard layout.
+1.  Megkérdezi a felhasználót, hogy melyik legyen az alapértelmezett módosító billentyű, majd egy sort ad hozzá a konfigurációs fájlhoz, pl.: `set $mod Mod1`
+2.  Az összes *bindcode* sort *bindsym*-re cseréli a felhasználó billentyűzet-kiosztásának megfelelően.
 
-Step 2 is designed to ensure that the four navigation shortcuts, `j`, `k`, `l` and "semicolon" on a Qwerty keyboard, will be mapped to keysyms which have the same location, e.g. `h`, `t`, `n`, `s` on a [Dvorak](/index.php/Dvorak "Dvorak") keyboard. The side-effect of this magic is that up to fifteen other keysyms may be remapped in ways which break the mnemonics - so that, for a Dvorak user, "restart" is bound to `$mod1+p` instead of `$mod1+r`, "split horizontally" is bound to `$mod1+d` instead of `$mod1+h`, and so on.
+A második lépés megerősíti, hogy a `j`, `k`, `l` és "pontosvessző" egy Querty billentyűzeten vannak, és Dvorak billentyűzeten azokhoz a billentyűkhöz lesznek rendelve, amik ugyanazon a helyen vannak, pl.: `h`, `t`, `n`, `s`. Ennek a folyamatnak a mellékhatása az, hogy több, mint tizenöt másik billentyű is át lesz rendezve, és ezáltal megszűnik a könnyű memorizálhatóság - tehát egy Dvorak felhasználónak az "restart" `$mod1+p` lesz `$mod1+r` helyett, a "split horizontally" pedig `$mod1+d` lesz `$mod1+h` helyett, és így tovább.
 
-Therefore, users of alternate keyboard layouts who want straightforward key bindings, which match the bindings given in tutorials, may prefer to circumvent the "config wizard". This can be done by just copying `/etc/i3/config` into `~/.config/i3/config` (or `~/.i3/config`), and editing that file.
+Ebből következően, az alternatív billentyűzet-kiosztásokat használók, akik ugyanolyan gyorsbillentyű elrendezést szeretnének, mint amilyenek a tutorialokban vannak, előnyben részesíthetik a "konfiguráció varázsló" kihagyását. Ez úgy lehetséges, hogy az `/etc/i3/config`-ot a `~/.config/i3/config`-ba másolod (vagy az `~/.i3/config`-ba), és azt a fájlt szerkeszted.
 
-Note that a keycode-based configuration is also possible, e.g. for users who often switch between keyboard layouts, but want the i3 bindings to stay the same.
+Ne felejtsük el, hogy billentyűkód alapú konfiguráció szintén lehetséges, és praktikus lehet olyan felhasználóknak, akik több, eltérő billentyűzetkiosztást használnak, de változatlan i3 gyorsbillentyűket szeretnének.
 
 ### Színsémák
 
-The configuration file allows for customization of window decoration colors, but the syntax makes it impractical to create or share themes. There are several projects which make this easier and include a variety of user-contributed themes.
+A konfigurációs fájl lehetőséget ad az ablakkeret színeinek testreszabására, de a szintaxis miatt nehézkes témák létrehozása, megosztása. Számos projekt van, ami ezt könnyebbé teszi, és felhasználók által létrehozott témákat is elérhetővé tesz.
 
-*   **i3-style** — Modifies your config in place from a theme stored in a JSON object, designed for frequently tweaking or changing a colorscheme
+*   **i3-style** — A konfigurációs fájlt módosítja egy JSON objektumban tárolt téma alapján. Rendszeres témaváltoztatáshoz tervezve.
 
 	[https://github.com/acrisci/i3-style](https://github.com/acrisci/i3-style) || [nodejs-i3-style](https://aur.archlinux.org/packages/nodejs-i3-style/)
 
-*   **j4-make-config** — Merge your config with a collection of themes or personal config parts, for example host-specific configuration, allowing quick changing of the theme and flexible, dynamic customization of the configuration
+*   **j4-make-config** — Egyesíti az alap konfigurációt egy témával, vagy saját beállítás részletekkel, például host-specifikus konfiguráció. Lehetőséget ad a téma gyors cserélésére, és a konfiguráció rugalmas, gyors változtatására.
 
 	[https://github.com/okraits/j4-make-config](https://github.com/okraits/j4-make-config) || [j4-make-config-git](https://aur.archlinux.org/packages/j4-make-config-git/)
 

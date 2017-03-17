@@ -66,7 +66,7 @@ Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 
 To enable *smooth transition* (if supported) you have to:
 
 1.  Disable your [Display manager](/index.php/Display_manager "Display manager") Unit, e.g. `systemctl disable gdm.service`
-2.  Enable the respective DM-plymouth Unit (GDM, LXDM, SLiM units provided), e.g. `systemctl enable gdm-plymouth.service`
+2.  Enable the respective DM-plymouth Unit (GDM, LXDM, SLiM, LightDM, SDDM units provided), e.g. `systemctl enable gdm-plymouth.service`
 
 ### Show Delay
 

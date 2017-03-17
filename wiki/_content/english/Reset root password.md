@@ -16,11 +16,9 @@ With a LiveCD a couple methods are available: change root and use the `passwd` c
 ### Change root
 
 1.  Boot the LiveCD and [mount](/index.php/Mount "Mount") the root partition of your main system.
-2.  Enter the [chroot](/index.php/Chroot "Chroot") session.
-3.  Use the `passwd` command to set the new password (you won't be prompted for an old one).
-4.  Exit chroot session.
-5.  Unmount the root partition.
-6.  Reboot, and enter your new password. If you can't remember it, go to step 1.
+2.  Use the `passwd --root MOUNT_POINT USER_NAME` command to set the new password (you won't be prompted for an old one).
+3.  Unmount the root partition.
+4.  Reboot, and enter your new password. If you can't remember it, go to step 1.
 
 ## Using GRUB to invoke bash
 

@@ -30,6 +30,8 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.8 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
     *   [5.9 Segmentation Fault on startup](#Segmentation_Fault_on_startup)
     *   [5.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
+    *   [5.11 Addon manager not working](#Addon_manager_not_working)
+    *   [5.12 Using webcam/video device](#Using_webcam.2Fvideo_device)
 
 ## Overview
 
@@ -347,3 +349,13 @@ opengl('save','software')
 ```
 
 See [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=96671) for more.
+
+### Addon manager not working
+
+Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2016b)
+
+### Using webcam/video device
+
+Make sure the correct support package addons are installed (webcam or OS Generic Video Interface for example). If running matlab as a user, make sure your user has write permissions to wherever the support packages are being downloaded and installed.
+
+At least Matlab 2016b doesn't recognize webcams or imaq adapters correctly without gstreamer0.10\. The gstreamer0.10 can be found in the aur and installed as a work around.

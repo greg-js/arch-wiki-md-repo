@@ -140,7 +140,7 @@ PAM modules from the [Official repositories](/index.php/Official_repositories "O
 
 *   [Active Directory Integration#Configuring PAM](/index.php/Active_Directory_Integration#Configuring_PAM "Active Directory Integration")
 
-	uses `pam_winbind.so` and `pam_krb5.so` to let users authenticate via Active Directory (LDAP, Kerberos) services.
+	uses `pam_winbind.so` and `pam_krb5.so` to let users authenticate via Active Directory (LDAP, [Kerberos](/index.php/Kerberos "Kerberos")) services.
 
 *   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") with its [LDAP authentication#NSS and PAM](/index.php/LDAP_authentication#NSS_and_PAM "LDAP authentication") section
 

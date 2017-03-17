@@ -50,7 +50,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 *   For even older cards, have a look at [#Unsupported drivers](#Unsupported_drivers).
 
-4\. If you are on 64-bit and also need 32-bit OpenGL support, you must also install the equivalent *lib32* package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) or [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils)).
+4\. For 32-bit application support on x86_64, you must also install the equivalent *lib32* package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) or [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils)).
 
 5\. Reboot. The [nvidia](https://www.archlinux.org/packages/?name=nvidia) package contains a file which blacklists the *nouveau* module, so rebooting is necessary.
 

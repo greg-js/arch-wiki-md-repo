@@ -181,15 +181,15 @@ group **groupname/foo** {
 ```
  mount {    
    cpuset = /your/path/*groupname*;
-}
+ }
 
 ```
 
 This is equivalent to these shell commands:
 
 ```
- `# mkdir /your/path/*groupname*
-# mount -t /your/path -o cpuset *groupname* /your/path/*groupname*`
+ # mkdir /your/path/*groupname*
+ # mount -t /your/path -o cpuset *groupname* /your/path/*groupname*
 
 ```
 

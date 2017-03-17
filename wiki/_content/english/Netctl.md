@@ -127,7 +127,7 @@ After enabling a profile, it will be started at next boot. Obviously this can on
 *netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profile for wired and wireless connections:
 
 *   For wired interfaces, install package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd): After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in/unplugged.
-    *   The `netctl-ifplugd@*interface*.service` will prefer profiles which use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP").
+    *   The `netctl-ifplugd@*interface*.service` will prefer profiles that use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP").
     *   To automatically start a static IP profile the option `ExcludeAuto=no` needs to be set in it.
     *   To prioritize a profile with a static IP over DHCP profiles, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`.
 

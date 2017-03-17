@@ -12,6 +12,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
 *   [3 Launching programs](#Launching_programs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 libncurses.so.5 not found](#libncurses.so.5_not_found)
+    *   [4.2 Synthesis segfaults](#Synthesis_segfaults)
 
 ## Prerequisites
 
@@ -142,3 +143,9 @@ $ ls /var/cache/pacman/pkg/ | grep ncurses
 or download it from the [Arch Linux Archive](https://archive.archlinux.org/packages/n/ncurses/)
 
 After obtaining the package, simply extract `/usr/lib/libncurses.*` to `/opt/Xilinx/Vivado/<version>/lib/lnx64.o/`
+
+### Synthesis segfaults
+
+See [https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-performing-synthesis/td-p/706847](https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-performing-synthesis/td-p/706847)
+
+You'll need to recompile glibc (just take the PKGBUILD from the abs) with `--disable-lock-elision`. Instead of patching the system libc in /usr/lib, copy the newly compiled `libpthread-2.25.so` and `libc-2.25.so` to `/opt/Xilinx/Vivado/2016.4/ids_lite/ISE/lib/lin64` Don't forget to repeat this when glibc gets upgraded.

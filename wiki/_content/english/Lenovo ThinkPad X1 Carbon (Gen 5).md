@@ -29,7 +29,7 @@ Version: ThinkPad X1 Carbon 5th
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
 | Native Ethernet with [Dongle](http://shop.lenovo.com/us/en/itemdetails/4X90F84315/460/D60A78A4A48A422E9761BD184AD3750A) | Yes |
-| Mobile broadband |  ?? |
+| Mobile broadband | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |

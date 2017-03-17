@@ -430,7 +430,7 @@ Before arch migrated to [systemd](/index.php/Systemd "Systemd"), users had to be
 There are some notable exceptions which require adding a user to some of these groups: for example if you want to allow users to access the device even when they are not logged in. However, note that adding users to the groups can even cause some functionality to break (for example, the `audio` group will break fast user switching and allows applications to block software mixing).
 
 | Group | Affected files | Purpose |
-| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions. It is still required to make [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS") work in remote sessions, see [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). |
+| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions. It is still required to make [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS") work in remote sessions, see [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). Also used in [JACK](/index.php/JACK "JACK") to give users realtime processing permissions. |
 | disk | `/dev/sd[a-z][1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
 | floppy | `/dev/fd[0-9]` | Access to floppy drives. |
 | input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Access to input devices. Introduced in systemd 215 [[2]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |

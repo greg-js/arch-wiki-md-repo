@@ -84,7 +84,19 @@ In order to start Xampp at boot, service needs to be created, in the following f
 
 Put these lines:
 
-[Unit] Description=XAMPP [Service] ExecStart=/opt/lampp/lampp start ExecStop=/opt/lampp/lampp stop Type=forking [Install] WantedBy=multi-user.target
+```
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+```
 
 Enable autostart like this:
 

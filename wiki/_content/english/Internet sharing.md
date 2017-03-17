@@ -38,7 +38,7 @@ On the server computer, assign a static IPv4 address to the interface connected 
 
 ```
 
-To have your static ip assigned at boot, you can use [netctl](/index.php/Netctl "Netctl").
+To have your static ip assigned at boot, you can use a [network manager](/index.php/Network_manager "Network manager").
 
 ### Enable packet forwarding
 

@@ -32,6 +32,7 @@
     *   [6.12 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
     *   [6.13 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
     *   [6.14 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.15 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -578,3 +579,30 @@ a2dp-source profile connect failed for 9C:64:40:22:E1:3F: Protocol not available
 ```
 
 try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) and restarting pulseaudio. This error can manifest even while using only file transfer.
+
+### Device does not show up in scan
+
+Some devices using bluetooth low energy do not appear when scanning with bluetoothctl, for example the Logitech MX Master. The simplest way I've found to connect them is by installing [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/), then:
+
+```
+# systemctl start bluetooth.service
+# bluetoothctl
+[NEW] Controller (MAC) myhostname [default]
+[bluetooth]# power on
+[CHG] Controller (MAC) Class: 0x0c010c
+Changing power on succeeded
+[CHG] Controller (MAC) Powered: yes
+[bluetooth]# scan on
+Discovery started
+[CHG] Controller (MAC) Discovering: yes
+
+```
+
+In another terminal:
+
+```
+# hcitool lescan
+
+```
+
+Wait until your device shows up, then Ctrl+C hcitool. bluetoothctl should now see your device and pair normally.

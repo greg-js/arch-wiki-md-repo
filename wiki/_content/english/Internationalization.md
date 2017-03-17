@@ -31,13 +31,47 @@ See [Keyboard configuration in console](/index.php/Keyboard_configuration_in_con
 
 ## Input methods in Xorg
 
-*   [gcin](/index.php/Gcin "Gcin")
-*   [fcitx](/index.php/Fcitx "Fcitx")
-*   [SCIM](/index.php/SCIM "SCIM") with the x11 FrontEnd module
-*   [uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim") (Japanese)
-*   [IBus](/index.php/IBus "IBus")
-*   [Dasom](/index.php/Dasom "Dasom")
-*   [Nimf](/index.php/Nimf "Nimf")
+See also: [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
+
+*   **[Fcitx](/index.php/Fcitx "Fcitx")** — Flexible Context-aware Input Tool with eXtension.
+
+	[http://fcitx-im.org](http://fcitx-im.org) || [fcitx](https://www.archlinux.org/packages/?name=fcitx)
+
+*   **Hime** — A GTK2+/GTK3+ based universal input method platform.
+
+	[http://hime-ime.github.io/](http://hime-ime.github.io/) || [hime-git](https://aur.archlinux.org/packages/hime-git/)
+
+*   **[IBus](/index.php/IBus "IBus")** — Next Generation Input Bus for Linux.
+
+	[http://ibus.googlecode.com](http://ibus.googlecode.com) || [ibus](https://www.archlinux.org/packages/?name=ibus)
+
+*   **[Rime IME](/index.php/Rime_IME "Rime IME")** — Rime input method engine.
+
+	[http://rime.im/](http://rime.im/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
+
+*   **[UIM](/index.php/UIM "UIM")** — Multilingual input method library.
+
+	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
+
+*   **[gcin](/index.php/Gcin "Gcin")** —
+
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[SCIM](/index.php/SCIM "SCIM") with the x11 FrontEnd module** —
+
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim") (Japanese)** —
+
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Dasom](/index.php/Dasom "Dasom")** —
+
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Nimf](/index.php/Nimf "Nimf")** —
+
+	|| <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ### GTK immodule
 

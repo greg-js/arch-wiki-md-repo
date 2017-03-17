@@ -10,7 +10,7 @@
 | <small>1.5.</small> [Events](/index.php/Category:Events "Category:Events") <small>(7)</small> |
 | <small>1.6.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
 | <small>1.7.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
-| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(23)</small> |
+| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(11)</small> |
 | <small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(12)</small> |
@@ -74,9 +74,9 @@
 | <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
 | <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(18)</small> |
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(17)</small> |
+| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(24)</small> |
+| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
 | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(19)</small> |
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
@@ -116,7 +116,7 @@
 | <small>6.3.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(1)</small> |
 | <small>6.3.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(14)</small> |
 | <small>6.3.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
-| <small>6.3.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(18)</small> |
+| <small>6.3.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(17)</small> |
 | <small>6.4.</small> [Dotfiles](/index.php/Category:Dotfiles "Category:Dotfiles") <small>(4)</small> |
 | <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(27)</small> |
 | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |

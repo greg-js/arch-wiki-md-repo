@@ -102,6 +102,9 @@ Actually, for this to work, we will need to add the primary and secondary groups
  nvidia-persistenced | 143 |
 | [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) | nslcd | 146 |
 | [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) | transmission | 169 |
+| [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) | zabbix-server | 170 |
+| [zabbix-proxy](https://www.archlinux.org/packages/?name=zabbix-proxy) | zabbix-proxy | 171 |
+| [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent) | zabbix-agent | 172 |
  postfwd | 180 |
  smokeping | 181 |
  spamd | 182 |
@@ -245,6 +248,9 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) | wireshark | 150 |
  cgred | 160 |
 | [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) | transmission | 169 |
+| [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) | zabbix-server | 170 |
+| [zabbix-proxy](https://www.archlinux.org/packages/?name=zabbix-proxy) | zabbix-proxy | 171 |
+| [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent) | zabbix-agent | 172 |
  postfwd | 180 |
  smokeping | 181 |
  spamd | 182 |

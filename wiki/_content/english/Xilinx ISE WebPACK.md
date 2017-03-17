@@ -5,7 +5,7 @@ The Xilinx ISE WebPACK is a complete FPGA/CPLD programmable logic design suite p
 *   Functional (Behavioral) and Timing (post-Place & Route) simulation
 *   Download of configuration data into target device via communications cable
 
-The development of the ISE WebPACK has been stopped in favor of the [Vivaldo Suite](/index.php/Xilinx_Vivado "Xilinx Vivado"), but it is still useful to develop for older devices not supported by the new suite.
+The development of the ISE WebPACK has been stopped in favor of the [Vivado Suite](/index.php/Xilinx_Vivado "Xilinx Vivado"), but it is still useful to develop for older devices not supported by the new suite.
 
 While Arch Linux is not one of the officially supported distributions, many features are known to work on Arch Linux.
 

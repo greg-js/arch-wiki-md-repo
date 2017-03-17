@@ -2,7 +2,7 @@
 
 * * *
 
-[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – **Documents** – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – **Documents** – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -20,7 +20,6 @@
             *   [1.7.2.1 Collaborative text editors](#Collaborative_text_editors)
     *   [1.8 Readers and Viewers](#Readers_and_Viewers)
         *   [1.8.1 E-book applications](#E-book_applications)
-            *   [1.8.1.1 Book organizers](#Book_organizers)
         *   [1.8.2 PDF and DjVu](#PDF_and_DjVu)
             *   [1.8.2.1 Console](#Console_2)
             *   [1.8.2.2 Graphical](#Graphical_2)
@@ -227,10 +226,6 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://github.com/lervag/vimtex/](https://github.com/lervag/vimtex/) ||
 
-*   **WhizzyTeX** — WhizzyTeX provides a nice live preview editor for Emacs.
-
-	[http://www.emacswiki.org/emacs/WhizzyTeX/](http://www.emacswiki.org/emacs/WhizzyTeX/) || [whizzytex](https://aur.archlinux.org/packages/whizzytex/)
-
 *   **Zotero** — This is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
 
 	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
@@ -381,18 +376,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://brackets.io](http://brackets.io) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
-*   **[Cream](https://en.wikipedia.org/wiki/Cream_(software) "wikipedia:Cream (software)")** — A user-friendly editor atop of gVim.
-
-	[http://cream.sourceforge.net](http://cream.sourceforge.net) || [cream](https://aur.archlinux.org/packages/cream/)
-
-*   **Edile** — PyGTK code and scripting editor implemented in one file.
-
-	[https://code.google.com/archive/p/edile/](https://code.google.com/archive/p/edile/) || [edile](https://aur.archlinux.org/packages/edile/)
-
-*   **ePad** — A simple text editor written in Python and EFL.
-
-	[https://github.com/JeffHoogland/ePad](https://github.com/JeffHoogland/ePad) || [epad](https://aur.archlinux.org/packages/epad/)
-
 *   **FeatherPad** — Minimal Qt5 plain text editor featuring a native dark theme and support for tabs, printing and syntax highlighting.
 
 	[https://github.com/tsujan/FeatherPad](https://github.com/tsujan/FeatherPad) || [featherpad](https://aur.archlinux.org/packages/featherpad/)
@@ -456,10 +439,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **[PyRoom](https://en.wikipedia.org/wiki/PyRoom "wikipedia:PyRoom")** — Great distractionless PyGTK text editor, a clone of the infamous WriteRoom.
 
 	[http://pyroom.org](http://pyroom.org) || [pyroom](https://aur.archlinux.org/packages/pyroom/)
-
-*   **QEdit** — A multi-purpose text editor based on NEdit using Qt.
-
-	[http://hugo.pereira.free.fr/software/index.php?page=package&package_list=software_list_qt4&package=qedit](http://hugo.pereira.free.fr/software/index.php?page=package&package_list=software_list_qt4&package=qedit) || [qedit](https://aur.archlinux.org/packages/qedit/)
 
 *   **QSciTE** — Qt clone of the SciTE text and code editor.
 
@@ -540,18 +519,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **[Sigil](https://en.wikipedia.org/wiki/Sigil_(application) "wikipedia:Sigil (application)")** — WYSIWYG ebook editor.
 
 	[http://sigil-ebook.com/](http://sigil-ebook.com/) || [sigil](https://www.archlinux.org/packages/?name=sigil)
-
-##### Book organizers
-
-for more collection apps, see also [Multimedia#Collection managers](/index.php/Multimedia#Collection_managers "Multimedia")
-
-*   **Alexandria** — GNOME application to help manage your book collection.
-
-	[http://alexandria.rubyforge.org/](http://alexandria.rubyforge.org/) || [alexandria](https://aur.archlinux.org/packages/alexandria/)
-
-*   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Open source Integrated Library System (ILS), used world-wide by public, school and special libraries.
-
-	[http://koha-community.org/](http://koha-community.org/) || [koha](https://aur.archlinux.org/packages/koha/)
 
 #### PDF and DjVu
 
@@ -691,10 +658,6 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 *   **[MComix](https://en.wikipedia.org/wiki/MComix "wikipedia:MComix")** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
 	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
-
-*   **QComicBook** — Lightweight comic book viewer written in C++ and Qt4.
-
-	[https://github.com/stolowski/QComicBook](https://github.com/stolowski/QComicBook) || [qcomicbook](https://aur.archlinux.org/packages/qcomicbook/)
 
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 

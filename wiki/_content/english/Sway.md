@@ -226,7 +226,7 @@ when run inside a terminal multiplexer (such as gnu screen or tmux). To avoid th
 
 ### Incorrect Monitor Resolution
 
-Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The window manager [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
+Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The compositor [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
 
 You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries ([see Kernel Mode Setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
 

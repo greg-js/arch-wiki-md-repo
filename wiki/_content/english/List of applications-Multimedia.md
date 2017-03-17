@@ -2,7 +2,7 @@
 
 * * *
 
-[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – **Multimedia** – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – **Multimedia** – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -436,10 +436,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[http://6xq.net/projects/pianobar/](http://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
 
-*   **shell-fm** — Console-based player for the streams provided by [last.fm](http://www.last.fm/).
-
-	[https://github.com/jkramer/shell-fm/](https://github.com/jkramer/shell-fm/) || [shell-fm](https://aur.archlinux.org/packages/shell-fm/)
-
 *   **[VLC](https://en.wikipedia.org/wiki/VLC_media_player "wikipedia:VLC media player")** — Highly portable multimedia player with ncurses interface module, and multimedia framework capable of reading most audio and video formats as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
 
 	[https://www.videolan.org/vlc/](https://www.videolan.org/vlc/) || [vlc](https://www.archlinux.org/packages/?name=vlc)
@@ -541,10 +537,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 *   **pithos** — Python/GTK Pandora Radio desktop client.
 
 	[https://pithos.github.io/](https://pithos.github.io/) || [pithos](https://aur.archlinux.org/packages/pithos/)
-
-*   **Potamus** — Lightweight, intuitive GTK+ audio player with an emphasis on high audio quality.
-
-	[http://offog.org/code/potamus.html](http://offog.org/code/potamus.html) || [potamus](https://aur.archlinux.org/packages/potamus/)
 
 *   **Pragha** — GTK+ music manager. (fork of the Consonance Music Manager)
 
@@ -921,10 +913,6 @@ Screencast utilities allow you to create a video of your desktop or individual w
 *   **byzanz** — Simple screencast tool that produces GIF animations.
 
 	[http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
-
-*   **glc** — Screencast tool that can capture the sound and video from OpenGL applications, such as games, where regular X11 screencast tools produce choppy results.
-
-	[https://github.com/nullkey/glc](https://github.com/nullkey/glc) || [glc](https://aur.archlinux.org/packages/glc/)
 
 *   **Green Recorder** — A simple yet functional desktop recorder for Linux systems.
 

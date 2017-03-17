@@ -10,7 +10,7 @@
     *   [4.1 Drag and Drop](#Drag_and_Drop)
     *   [4.2 More key commands](#More_key_commands)
 *   [5 Plugins](#Plugins)
-*   [6 External resources](#External_resources)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -29,7 +29,7 @@ User-specific configuration can be found in `~/.config/terminator/config`.
 
 ### GTK+ customization
 
-**Note:** This configuration [doesn't](https://bbs.archlinux.org/viewtopic.php?pid=1687446#p1687446) [work](https://wiki.archlinux.org/index.php/User_talk:Szb#Reducing_the_size_of_Terminator_tabs) for all users.
+**Note:** This configuration [doesn't](https://bbs.archlinux.org/viewtopic.php?pid=1687446#p1687446) work for all users, see [User talk:Szb#Reducing the size of Terminator tabs](/index.php/User_talk:Szb#Reducing_the_size_of_Terminator_tabs "User talk:Szb").
 
 Terminator supports tabs. Tab header height is sometimes considered too big. This can be fixed with gtk styling. From version 1.9 Terminator uses gtk+ 3, so that configuration can be done in `~/.config/gtk-3.0/gtkcss`. The items to customize are 'notebook tab', 'notebook tab button'. (note that this affects other gtk3 applications, too).
 
@@ -99,7 +99,7 @@ Exec=sh -c "terminator -p $( shuf -n 1 $HOME/.config/terminator/profiles )"
 
 ```
 
-Save the file and restart your [DE](/index.php/Desktop_environment "Desktop environment").
+Save the file and restart your [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 Bonus: Go to the terminator preferences and under the "keybindings" tab, take note of how to switch to the next profile. This way,if the profile Terminator has started with is not your liking, you can quickly change it.
 
@@ -118,7 +118,7 @@ man terminator
 
 Terminator also supports plugins. See [writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) for more details.
 
-## External resources
+## See also
 
 *   [Terminator](http://gnometerminator.blogspot.com/p/introduction.html) - Official site
 *   [Writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) - Terminator Plugin HOWTO

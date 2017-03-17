@@ -75,7 +75,7 @@ The brightness can be set by writing a number to `brightness`. Attempting to set
 
 ### Kernel command-line options
 
-Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). On Nvidia Optimus laptops, the kernel parameter nomodeset can interfere with the ability to adjust the backlight. Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following kernel parameters in your [bootloader](/index.php/Bootloader "Bootloader"):
+Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). On Nvidia Optimus laptops, the kernel parameter nomodeset can interfere with the ability to adjust the backlight. Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
 acpi_backlight=video
@@ -88,7 +88,7 @@ If you find that changing the `acpi_video0` backlight does not actually change t
 
 **Tip:**
 
-*   On an Asus notebooks you might also need to `modprobe asus-nb-wmi` as root.
+*   On an Asus notebooks you might also need to load the `asus-nb-wmi` [kernel module](/index.php/Kernel_module "Kernel module").
 *   Disabling legacy boot on Dell XPS13 breaks backlight support.
 
 ### Udev rule
@@ -110,25 +110,25 @@ SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="
 Switching off the backlight (for example when one locks the notebook) can be useful to conserve battery energy. Ideally the following command inside of a graphical session should work:
 
 ```
-sleep 1 && xset dpms force off
+$ sleep 1 && xset dpms force off
 
 ```
 
 The backlight should switch on again on mouse movement or keyboard input. If the previous command does not work, there is a chance that `vbetool` works. Note, however, that in this case the backlight must be manually activated again. The command is as follows:
 
 ```
-vbetool dpms off
+$ vbetool dpms off
 
 ```
 
 To activate the backlight again:
 
 ```
-vbetool dpms on
+$ vbetool dpms on
 
 ```
 
-For example, this can be put to use when closing the notebook lid as outlined in the entry for [Acipd](/index.php/Acpid#Laptop_Monitor_Power_Off "Acpid").
+For example, this can be put to use when closing the notebook lid using [Acpid](/index.php/Acpid "Acpid").
 
 ## systemd-backlight service
 

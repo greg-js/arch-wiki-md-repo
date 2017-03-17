@@ -16,6 +16,7 @@ Lenovo ThinkPad X1 Carbon (X1C). There is also a touch version. Comes without op
     *   [2.4 Video](#Video)
         *   [2.4.1 Brightness control](#Brightness_control)
             *   [2.4.1.1 Xbindkeys](#Xbindkeys_2)
+            *   [2.4.1.2 ACPI](#ACPI)
         *   [2.4.2 Wrong EDID for external display](#Wrong_EDID_for_external_display)
     *   [2.5 KMS](#KMS)
     *   [2.6 Webcam](#Webcam)
@@ -112,7 +113,7 @@ Sound works out of the box.
 
 #### Xbindkeys
 
-For alternative window managers (Fluxbox, etc..), try installing [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and adding the following to ~/.xbindkeysrc
+For alternative window managers (Fluxbox, etc..), try installing [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and adding the following to `~/.xbindkeysrc`:
 
 ```
 "amixer -c 0 set Master 1dB-"
@@ -138,18 +139,13 @@ The video card installed is Intel HD Graphics 4000\. See [intel](/index.php/Inte
 
 #### Brightness control
 
-Default brightness adjustment keys work but need to be pressed multiple times to increase/decrease the screen brightness. Writing your own ACPI handlers for those buttons seems to have no effect. In order to use them properly you need to add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi="!Windows 2012"`. See also [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight"). **This approach is considered deprecated; from Windows 8 onwards, backlight control was offloaded to userspace so that it can be done via the GPU instead of via ACPI. Use the approach with xbacklight below instead. See [here](https://sourceforge.net/p/ibm-acpi/mailman/ibm-acpi-devel/?viewmonth=201503&viewday=13) for details.**
+Default brightness adjustment keys work but need to be pressed multiple times to increase/decrease the screen brightness. Use either the [#Xbindkeys_2](#Xbindkeys_2) or [#ACPI](#ACPI) methods to fix this.
 
-Some desktop environments may lack granularity while changing brightness. This is due to the DE (e.g. gnome-settings-daemon) along with the internal graphics module changing the brightness when brightness adjustment keys are pressed causing multiple steps per press. To work around this one can add the following to their boot parameters:
-
-```
-video.brightness_switch_enabled=0
-
-```
+Some desktop environments may lack granularity while changing brightness. This is due to the DE (e.g. gnome-settings-daemon) along with the internal graphics module changing the brightness when brightness adjustment keys are pressed causing multiple steps per press. To work around this add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `video.brightness_switch_enabled=0`.
 
 ##### Xbindkeys
 
-For alternative window managers (Fluxbox, etc..), try installing [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and adding the following to ~/.xbindkeysrc
+Install [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and append the following to `~/.xbindkeysrc`:
 
 ```
 "xbacklight -dec 5"
@@ -158,6 +154,10 @@ For alternative window managers (Fluxbox, etc..), try installing [xbindkeys](/in
   XF86MonBrightnessUp
 
 ```
+
+##### ACPI
+
+Writing custom ACPI handlers for the brightness adjustment keys seems to have no effect. In order to use them properly you need to add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi="!Windows 2012"`. See also [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight"). Note that the ACPI backlight is [disabled by default](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fbc9fe1b4f222a7c575e3bd8e9defe59c6190a04) on Windows 8 hardware with a native backlight. Consider using the [#Xbindkeys](#Xbindkeys) approach instead.
 
 #### Wrong EDID for external display
 

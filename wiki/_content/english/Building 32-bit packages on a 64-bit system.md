@@ -21,8 +21,8 @@ You will also need to comment out any multi-lib repos.
 ```
 Change CARCH="x86_64" **to** *CARCH="i686"*
 CHOST="x86_64-unknown-linux-gnu" **to** CHOST="i686-unknown-linux-gnu".
-CFLAGS="-march=x86_64 -mtune=generic -O2 -pipe" **to** CFLAGS="-march=i686 -mtune=generic -O2 -pipe" .
-CXXFLAGS="-march=x86_64 -mtune=generic -O2 -pipe" **to** CXXFLAGS="-march=i686 -mtune=generic -O2 -pipe" .
+CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe" **to** CFLAGS="-march=i686 -mtune=generic -O2 -pipe" .
+CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe" **to** CXXFLAGS="-march=i686 -mtune=generic -O2 -pipe" .
 
 ```
 

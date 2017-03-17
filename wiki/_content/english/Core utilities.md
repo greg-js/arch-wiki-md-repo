@@ -190,7 +190,7 @@ See [List of applications#Terminal pagers](/index.php/List_of_applications#Termi
 
 [Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
 
- `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
+ `~/.bashrc`  `alias less='/usr/share/vim/vim80/macros/less.sh'` 
 
 There is also an alternative to *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
 

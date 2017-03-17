@@ -5,7 +5,7 @@ The installation should be going without any problems, if you follow the followi
 ## Contents
 
 *   [1 Pre-Installation System Settings](#Pre-Installation_System_Settings)
-*   [2 Grpahic Card Configuration](#Grpahic_Card_Configuration)
+*   [2 Grapahics Card Configuration](#Grapahics_Card_Configuration)
     *   [2.1 Intel Only](#Intel_Only)
     *   [2.2 Intel/Nvidia Hybrid Configuration](#Intel.2FNvidia_Hybrid_Configuration)
 *   [3 Input](#Input)
@@ -27,7 +27,7 @@ Installation of Arch can proceed normally. Refer to the [Installation guide](/in
 
 **Note:** Remember that your SSD is called `nvme0n1`, not `sda`.
 
-## Grpahic Card Configuration
+## Grapahics Card Configuration
 
 The Mi Book has an Intel, as well as an Nvidia GPU.
 
@@ -54,7 +54,7 @@ Refer to the respective articles.
 
 ### Touchpad
 
-To use the touchpad like a normal one, you have to use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). If you use [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), your touchpad acts like a touchscreen (e.g it maps your movements directly to your screen). But if you are using [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (What you really shouldn't, because it is deprecated( see [Synaptics](/index.php/Synaptics "Synaptics"))) things are only working sporadicly. This configuration of [libinput](https://www.archlinux.org/packages/?name=libinput) using XOrg configuration files enables two finger gestures, tap-to-click and 2-and 3-finger clicks (for right- and middleclick respectively).
+To use the touchpad like a normal one, you have to use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). If you use [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), your touchpad acts like a touchscreen (e.g it maps your movements directly to your screen). But if you are using [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (although you really shouldn't, because it is deprecated (see [Synaptics](/index.php/Synaptics "Synaptics"))) things are only working sporadically. This configuration of [libinput](https://www.archlinux.org/packages/?name=libinput) using XOrg configuration files enables two finger gestures, tap-to-click and 2-and 3-finger clicks (for right- and middle-click respectively).
 
  `/etc/X11/xorg.conf.d/20-touchpad.conf` 
 ```

@@ -1,6 +1,6 @@
 | **Device** | **Working** |
 | Intel graphics | Yes |
-| HDMI | Not tested |
+| HDMI | Yes |
 | VGA | Not tested |
 | Audio | Yes |
 | USB 3.0 | Yes |
@@ -11,7 +11,7 @@
 | Backlight control | Yes |
 | Function keys | Yes |
 | Hardware switches | Yes |
-| Card reader | Not tested |
+| Card reader | Yes |
 | Webcam | Yes |
 | USB 3.0 Type-C™ port | Yes |
 | Fingerprint Reader | Not tested |

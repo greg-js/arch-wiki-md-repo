@@ -2,7 +2,7 @@
 
 * * *
 
-[Workspace](/index.php/List_of_applications/Workspace "List of applications/Workspace") – **Utilities** – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – **Utilities** – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
 
@@ -30,21 +30,18 @@
         *   [1.7.6 Batch renamers](#Batch_renamers)
         *   [1.7.7 Search and replace](#Search_and_replace)
         *   [1.7.8 Finders](#Finders)
-    *   [1.8 Databases](#Databases)
-    *   [1.9 Disk cleaning](#Disk_cleaning)
-    *   [1.10 Disk usage display](#Disk_usage_display)
-    *   [1.11 Clock synchronization](#Clock_synchronization)
-    *   [1.12 System maintenance](#System_maintenance)
-    *   [1.13 System monitoring](#System_monitoring)
-    *   [1.14 System information viewers](#System_information_viewers)
-        *   [1.14.1 Console](#Console_3)
-        *   [1.14.2 Graphical](#Graphical_3)
-        *   [1.14.3 Others](#Others)
-    *   [1.15 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [1.16 Power management](#Power_management)
-    *   [1.17 Clipboard managers](#Clipboard_managers)
-    *   [1.18 Package management](#Package_management)
-    *   [1.19 Input method editor](#Input_method_editor)
+    *   [1.8 Disk cleaning](#Disk_cleaning)
+    *   [1.9 Disk usage display](#Disk_usage_display)
+    *   [1.10 Clock synchronization](#Clock_synchronization)
+    *   [1.11 System monitoring](#System_monitoring)
+    *   [1.12 System information viewers](#System_information_viewers)
+        *   [1.12.1 Console](#Console_3)
+        *   [1.12.2 Graphical](#Graphical_3)
+    *   [1.13 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [1.14 Power management](#Power_management)
+    *   [1.15 Clipboard managers](#Clipboard_managers)
+    *   [1.16 Package management](#Package_management)
+    *   [1.17 Input methods](#Input_methods)
 
 ## Utilities
 
@@ -96,10 +93,6 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
-*   **udisks_functions** — Bash functions and aliases for *udisks2*
-
-	[https://bbs.archlinux.org/viewtopic.php?id=109307](https://bbs.archlinux.org/viewtopic.php?id=109307) || [udisks_functions](https://aur.archlinux.org/packages/udisks_functions/)
-
 *   **udisksvm** — GUI *udisks* wrapper for removable media
 
 	[https://bbs.archlinux.org/viewtopic.php?id=112397](https://bbs.archlinux.org/viewtopic.php?id=112397) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
@@ -134,10 +127,6 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://sourceforge.net/projects/mlterm/](http://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)
 
-*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — Tabbed X terminal emulator based on rxvt.
-
-	[http://materm.sourceforge.net/wiki/pmwiki.php](http://materm.sourceforge.net/wiki/pmwiki.php) || [mrxvt](https://aur.archlinux.org/packages/mrxvt/)
-
 *   **QTerminal** — A lightweight Qt-based terminal emulator.
 
 	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
@@ -153,10 +142,6 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 *   **[st](/index.php/St "St")** — Simple terminal implementation for X.
 
 	[http://st.suckless.org](http://st.suckless.org) || [st](https://www.archlinux.org/packages/?name=st)
-
-*   **Terminal** — A terminal emulator, that supports multiple windows, scroll buffer and all the expected features. A part of GNUstep.
-
-	[http://gap.nongnu.org/terminal/index.html](http://gap.nongnu.org/terminal/index.html) || [gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/)
 
 *   **Terminology** — Terminal emulator by the Enlightenment project team with innovative features: file thumbnails and media play like a media player.
 
@@ -234,17 +219,9 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix](https://aur.archlinux.org/packages/terminix/), [terminix-git](https://aur.archlinux.org/packages/terminix-git/)
 
-*   **Termit** — Simple terminal emulator based on the vte library that includes tabs, bookmarks, and the ability to switch encodings.
-
-	[https://github.com/nonstop/termit/wiki](https://github.com/nonstop/termit/wiki) || [termit](https://aur.archlinux.org/packages/termit/)
-
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
-
-*   **Terra** — is a GTK+3.0 based terminal emulator with useful user interface, it also supports multiple terminals with splitting screen horizontally or vertically -- (similar to guake).
-
-	[https://github.com/ozcan/terra-terminal](https://github.com/ozcan/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
 
 *   **tinyterm** — Very lightweight terminal emulator based on VTE.
 
@@ -354,10 +331,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://github.com/visualfc/liteide](https://github.com/visualfc/liteide) || [liteide](https://www.archlinux.org/packages/?name=liteide)
 
-*   **MonkeyStudio** — Monkey Studio (MkS) is a cross platform IDE written in C++/Qt 4\. Syntax highlighting for more than 22 programming languages.
-
-	[http://monkeystudio.org/](http://monkeystudio.org/) || [monkeystudio](https://aur.archlinux.org/packages/monkeystudio/)
-
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
 
 	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop](https://www.archlinux.org/packages/?name=monodevelop)
@@ -464,10 +437,6 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 ##### Graphical
 
-*   **Andromeda** — Qt-based cross-platform file manager.
-
-	[https://github.com/ABBAPOH/Andromeda/](https://github.com/ABBAPOH/Andromeda/) || [andromeda](https://aur.archlinux.org/packages/andromeda/)
-
 *   **Caja** — The file manager for the MATE desktop.
 
 	[https://github.com/mate-desktop/caja](https://github.com/mate-desktop/caja) || [caja](https://www.archlinux.org/packages/?name=caja)
@@ -475,10 +444,6 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **Deepin File Manager** — File manager developed for [Deepin](/index.php/Deepin "Deepin").
 
 	[https://github.com/linuxdeepin/dde-file-manager](https://github.com/linuxdeepin/dde-file-manager) || [deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager)
-
-*   **Dino** — Easy to use and powerful file manager built in Qt.
-
-	[http://dfm.sourceforge.net/](http://dfm.sourceforge.net/) || [dino-dfm](https://aur.archlinux.org/packages/dino-dfm/)
 
 *   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE desktop.
 
@@ -646,10 +611,6 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 	[http://fileroller.sourceforge.net/](http://fileroller.sourceforge.net/) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
 
-*   **FreeArc** — General-purpose archiver written in haskell, comes with a GTK2 gui. Currently only available on 32-bit platform. (Requires multilib on x86_64)
-
-	[http://encode.ru/threads/43-FreeArc/](http://encode.ru/threads/43-FreeArc/) || [freearc](https://aur.archlinux.org/packages/freearc/)
-
 *   **[PeaZip](https://en.wikipedia.org/wiki/PeaZip "wikipedia:PeaZip")** — Open source file and archive manager.
 
 	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/) [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
@@ -766,20 +727,6 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	[https://wiki.gnome.org/Projects/Tracker](https://wiki.gnome.org/Projects/Tracker) || [tracker](https://www.archlinux.org/packages/?name=tracker)
 
-### Databases
-
-*   **[MySQL](/index.php/MySQL "MySQL")** — Fast SQL database server, drop-in replacement for MySQL.
-
-	[http://mariadb.org/](http://mariadb.org/) || [mariadb](https://www.archlinux.org/packages/?name=mariadb)
-
-*   **[PostgreSQL](/index.php/PostgreSQL "PostgreSQL")** — A sophisticated object-relational DBMS.
-
-	[http://www.postgresql.org/](http://www.postgresql.org/) || [postgresql](https://www.archlinux.org/packages/?name=postgresql)
-
-*   **[SQLite](/index.php/SQLite "SQLite")** — A C library that implements an SQL database engine.
-
-	[http://www.sqlite.org/](http://www.sqlite.org/) || [sqlite](https://www.archlinux.org/packages/?name=sqlite)
-
 ### Disk cleaning
 
 *   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint
@@ -822,35 +769,11 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 ### Clock synchronization
 
-*   **[NTPd](/index.php/NTPd "NTPd")** — Network Time Protocol reference implementation.
-
-	[http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project](http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project) || [ntp](https://www.archlinux.org/packages/?name=ntp)
-
-*   **[Chrony](/index.php/Chrony "Chrony")** — Lightweight NTP client and server.
-
-	[http://chrony.tuxfamily.org/](http://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
-
-*   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Free, easy to use implementation of the Network Time Protocol.
-
-	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
-
-*   **[systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")** — A daemon that has been added for synchronizing the system clock across the network.
-
-	[https://www.freedesktop.org/wiki/Software/systemd/](https://www.freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
-
-### System maintenance
-
-*   **cylon** — Updates, Maintenance, anti-malware, backup and system checks in a menu driven Bash script.
-
-	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
+See [Time#Time_synchronization](/index.php/Time#Time_synchronization "Time").
 
 ### System monitoring
 
 See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification").
-
-*   **candybar** — WebKit-based status line for tiling window managers.
-
-	[https://github.com/Lokaltog/candybar](https://github.com/Lokaltog/candybar) || [candybar-git](https://aur.archlinux.org/packages/candybar-git/)
 
 *   **[Conky](/index.php/Conky "Conky")** — Lightweight, scriptable system monitor.
 
@@ -962,10 +885,6 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 #### Graphical
 
-*   **CPU-G** — An application that shows useful information about your hardware, it looks like CPU-Z in Windows.
-
-	[http://cpug.sourceforge.net/](http://cpug.sourceforge.net/) || [cpu-g](https://aur.archlinux.org/packages/cpu-g/)
-
 *   **hardinfo** — A small application that displays information about your hardware and operating system, it looks like the Device Manager in Windows.
 
 	[http://hardinfo.berlios.de/HomePage](http://hardinfo.berlios.de/HomePage) || [hardinfo](https://www.archlinux.org/packages/?name=hardinfo)
@@ -981,12 +900,6 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **KDE Info Center** — Shows hardware and software information.
 
 	[https://www.kde.org/applications/system/kinfocenter/](https://www.kde.org/applications/system/kinfocenter/) || [kinfocenter](https://www.archlinux.org/packages/?name=kinfocenter)
-
-#### Others
-
-*   **tp-hdd-led** — Monitor HDD use with the Think-Led
-
-	[http://timherbst.de/en/tp-hdd-led/](http://timherbst.de/en/tp-hdd-led/) || [tp-hdd-led](https://aur.archlinux.org/packages/tp-hdd-led/)
 
 ### Keyboard layout switchers
 
@@ -1018,26 +931,6 @@ See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_manager
 
 See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").
 
-### Input method editor
+### Input methods
 
-See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
-
-*   **[Fcitx](/index.php/Fcitx "Fcitx")** — Flexible Context-aware Input Tool with eXtension.
-
-	[http://fcitx-im.org](http://fcitx-im.org) || [fcitx](https://www.archlinux.org/packages/?name=fcitx)
-
-*   **Hime** — A GTK2+/GTK3+ based universal input method platform.
-
-	[http://hime-ime.github.io/](http://hime-ime.github.io/) || [hime-git](https://aur.archlinux.org/packages/hime-git/)
-
-*   **[IBus](/index.php/IBus "IBus")** — Next Generation Input Bus for Linux.
-
-	[http://ibus.googlecode.com](http://ibus.googlecode.com) || [ibus](https://www.archlinux.org/packages/?name=ibus)
-
-*   **[Rime IME](/index.php/Rime_IME "Rime IME")** — Rime input method engine.
-
-	[http://rime.im/](http://rime.im/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
-
-*   **[UIM](/index.php/UIM "UIM")** — Multilingual input method library.
-
-	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
+See the main article: [Internationalization#Input_methods_in_Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").

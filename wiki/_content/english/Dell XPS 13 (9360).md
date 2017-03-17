@@ -134,6 +134,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
 | [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
 | [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
+| [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 
 ### Thunderbolt Firmware updates
 

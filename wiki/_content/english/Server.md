@@ -7,8 +7,9 @@ This guide will give you an overview for the most common server options in exist
     *   [1.2 Arch Linux as a server OS](#Arch_Linux_as_a_server_OS)
 *   [2 Requirements](#Requirements)
 *   [3 Basic set-up](#Basic_set-up)
-    *   [3.1 SSH](#SSH)
-    *   [3.2 LAMP](#LAMP)
+    *   [3.1 HTTP](#HTTP)
+    *   [3.2 SSH](#SSH)
+    *   [3.3 LAMP](#LAMP)
 *   [4 Additional web-services](#Additional_web-services)
     *   [4.1 E-Mail](#E-Mail)
     *   [4.2 FTP](#FTP)
@@ -72,6 +73,32 @@ We want to be able to remotely log-on to our server to perform several administr
 As the bold letters suggest, there is a name for this combination of applications: LAMP.
 
 The following sections will guide you through the installation and configuration of the above mentioned basic set-up features.
+
+### HTTP
+
+You may choose from several HTTP servers, for example:
+
+*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
+
+	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
+
+*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
+
+	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
+
+*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
+
+	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
+
+*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
+
+	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
+
+*   **[Webfs](/index.php/Webfs "Webfs")** — Simple and instant http server for mostly static content.
+
+	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
+
+See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "w:Comparison of web server software").
 
 ### SSH
 

@@ -9,7 +9,9 @@
 
 ## Usage
 
-Mainly, the mouse should work right away with the supplied USB dongle. To get a [Bluetooth](/index.php/Bluetooth "Bluetooth") connection working, change the channel on the bottom of the mouse, and click the `connect` button. Now, search for the mouse with a bluetooth manager of your choice and engage a connection. In future it should connect as soon as you switch to that channel when your bluetooth is active.
+The mouse should work with no special configuration if using the unified receiver USB dongle. Plug in the dongle, then press the `connect` button on the mouse.
+
+To use [Bluetooth](/index.php/Bluetooth "Bluetooth"), change the channel on the bottom of the mouse, and click the `connect` button. Now, search for the mouse with a bluetooth manager of your choice and pair. In future it should connect as soon as you switch to that channel when your bluetooth is active. If you have problems with the mouse not showing when scanning, see [Bluetooth LE device does not show up in scan](/index.php/Bluetooth#Device_does_not_show_up_in_scan "Bluetooth")
 
 ## Mappings for extra buttons
 

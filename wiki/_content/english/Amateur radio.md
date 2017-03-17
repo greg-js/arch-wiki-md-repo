@@ -80,7 +80,7 @@ then logoff and logon.
 
 *   **aprx** — lightweight APRS digipeater and i-Gate interface
 
-	[http://wiki.ham.fi/Aprx.en](http://wiki.ham.fi/Aprx.en) || [aprx-svn](https://aur.archlinux.org/packages/aprx-svn/)
+	[http://thelifeofkenneth.com/aprx/](http://thelifeofkenneth.com/aprx/) || [aprx](https://aur.archlinux.org/packages/aprx/)
 
 *   **xdx** — network client
 

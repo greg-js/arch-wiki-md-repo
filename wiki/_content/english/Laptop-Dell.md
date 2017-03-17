@@ -37,8 +37,6 @@ install CD version
 
 ## Latitude
 
-## Precision
-
 | Model version | Arch Linux
 install CD version
  | Hardware support | Remarks |
@@ -55,6 +53,8 @@ install CD version
 | [Latitude E7450](http://www.dell.com/us/business/p/latitude-e7450-ultrabook/pd?oc=cal147w7pf2) | [2016.03.01](https://www.archlinux.org/releng/releases/2016.03.01/) | Intel HD5500 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | Intel HD Audio with ALSA | Yes | Intel Wireless 7265 | BT 4.0 LE, untested | Suspend-to-RAM perfect, Hibernate does not work. SSD drive (no spindown) | No. | SD card reader. Synaptics touchpad + stick. Webcam works without problems. Backlit keyboard. Integrated mic works. FN-keys works once you set them up (lock, volume, monitor, search, sleep, backlight). RFID reader. Fingerprint reader. Get about 9h batterylife. Intel i7 CPU, 16GB RAM. | Monitor backlight does not work out of the box. Need to be set up with some scripts. A distinct static clicking can be heard when using headphones about every second (turning up the volume drowns out the noise) |
 | Latitude E7470 | 2017.01.01 | yes | yes | [pm-utils](/index.php/Pm-utils "Pm-utils") suspend-to-RAM works, hibernate works | [EFISTUB](/index.php/EFISTUB "EFISTUB") bootmanager does not work because it seems impossible to pass kernel parameters. Not via [efibootmgr](/index.php?title=Efibootmgr&action=edit&redlink=1 "Efibootmgr (page does not exist)"), nor [UEFI](/index.php/UEFI "UEFI") shell bcfg, nor the built-in gui. All ports of the docking station (PR03X) work. |
 | [Latitude E7270](/index.php/Dell_Latitude_E7270 "Dell Latitude E7270") | 2017.01.01 | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | Intel HD Audio with ALSA and Pulseaudio | yes | yes (IWL 8260) | untested | suspend-to-RAM after UEFI Update, hibernate works | Yes, working without runtime pm | High suspend usage with power share port active |
+
+## Precision
 
 | Model version | Arch Linux
 install CD version

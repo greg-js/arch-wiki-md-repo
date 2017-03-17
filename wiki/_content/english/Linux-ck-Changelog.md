@@ -1,3 +1,8 @@
+**Bump to v4.10.3-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.3)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c59854559c168a1b65d4c78f60adfa8a4c826c43](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c59854559c168a1b65d4c78f60adfa8a4c826c43)
+
 **Bump to v4.10.2-2**
 
 *   Changelog: apply fix for CVE-2017-2636

@@ -209,7 +209,7 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 ### Client
 
-Users intending to use NFS4 with Kerberos, also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`. However, due to bug [FS#50663](https://bugs.archlinux.org/task/50663) in glibc, `rpc-gssd.service` currently fails to start. Adding the "-f" (foreground) flag in the service is a workaround:
+Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos"), also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`. However, due to bug [FS#50663](https://bugs.archlinux.org/task/50663) in glibc, `rpc-gssd.service` currently fails to start. Adding the "-f" (foreground) flag in the service is a workaround:
 
  `# systemctl edit rpc-gssd.service` 
 ```
