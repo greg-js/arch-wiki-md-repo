@@ -10,7 +10,7 @@ The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.con
     *   [1.1 Testing](#Testing)
 *   [2 Alternative DNS servers](#Alternative_DNS_servers)
     *   [2.1 OpenNIC](#OpenNIC)
-    *   [2.2 OpenDNS](#OpenDNS)
+    *   [2.2 Cisco Umbrella (was: OpenDNS)](#Cisco_Umbrella_.28was:_OpenDNS.29)
     *   [2.3 Google](#Google)
     *   [2.4 Comodo](#Comodo)
     *   [2.5 Yandex](#Yandex)
@@ -86,9 +86,9 @@ nameserver 2a05:dfc7:5::5353
 
 ```
 
-### OpenDNS
+### Cisco Umbrella (was: OpenDNS)
 
-[OpenDNS](https://opendns.com) provides free alternative nameservers:
+[OpenDNS](https://www.opendns.com/home-internet-security/) provided free alternative nameservers, was [bought by Cisco in 11/2016](https://umbrella.cisco.com/products/features/opendns-cisco-umbrella) and continues to offer OpenDNS as end-user product of its "Umbrella" product suite with focus on Security Enforcement, Security Intelligence and Web Filtering. The old nameservers [still work](https://www.opendns.com/setupguide/) but are [pre-configured to block adult content](https://www.opendns.com/home-internet-security/):
 
 ```
 # OpenDNS IPv4 nameservers

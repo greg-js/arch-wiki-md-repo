@@ -224,7 +224,7 @@ build() {
 
   platform=`for f in "$GOROOT/pkg/"*; do echo \`basename $f\`; done|grep linux`
 
-  rm "$platform"
+  rm -f "$platform"
   mkdir "$platform"
   cd "$platform"
 

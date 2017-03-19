@@ -55,6 +55,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.12 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
     *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [3.14 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
+    *   [3.15 Enable touchscreen gestures](#Enable_touchscreen_gestures)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -666,6 +667,12 @@ Once your container is booted, run the Xorg binary like so:
 ### Show search matches position in scroll bar
 
 This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/firefox/addon/findbar-tweak/) extension.
+
+### Enable touchscreen gestures
+
+Make sure `dom.w3c_touch_events.enabled` is either set to 1 (*enabled*) or 2 (*default, auto-detect*).
+
+Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change persistent, add that command to `/etc/profile.d/firefox.sh`.
 
 ## See also
 

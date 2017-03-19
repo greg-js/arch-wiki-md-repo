@@ -26,13 +26,6 @@ Previous locations listed below are deprecated and will be closed soon:
 
 *   [http://ala.seblu.net/](http://ala.seblu.net/)
 
-The locations listed below are now closed:
-
-*   [http://seblu.net/a/archive](http://seblu.net/a/archive)
-*   [http://seblu.net/a/arm](http://seblu.net/a/arm)
-*   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
-*   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)
-
 The [source code](https://github.com/seblu/archivetools) is also available for setting up your own mirror.
 
 ## Directories

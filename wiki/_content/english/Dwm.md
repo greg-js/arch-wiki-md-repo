@@ -5,26 +5,20 @@
 *   [1 Installation](#Installation)
 *   [2 Starting dwm](#Starting_dwm)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Patches](#Patches)
-        *   [3.1.1 Window tiling patches](#Window_tiling_patches)
-    *   [3.2 Customizing config.h](#Customizing_config.h)
-        *   [3.2.1 Adding custom keybinds/shortcuts](#Adding_custom_keybinds.2Fshortcuts)
-    *   [3.3 Customizing config.mk](#Customizing_config.mk)
-    *   [3.4 Statusbar configuration](#Statusbar_configuration)
-        *   [3.4.1 Conky statusbar](#Conky_statusbar)
+    *   [3.1 Customization](#Customization)
+    *   [3.2 Patches](#Patches)
+    *   [3.3 Status bar](#Status_bar)
+    *   [3.4 Use pacman](#Use_pacman)
+    *   [3.5 Applying changes](#Applying_changes)
 *   [4 Basic usage](#Basic_usage)
-    *   [4.1 Using dmenu](#Using_dmenu)
-    *   [4.2 Controlling windows](#Controlling_windows)
-        *   [4.2.1 Giving another tag to a window](#Giving_another_tag_to_a_window)
-        *   [4.2.2 Closing a window](#Closing_a_window)
-        *   [4.2.3 Window layouts](#Window_layouts)
-    *   [4.3 Exiting dwm](#Exiting_dwm)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
-    *   [5.2 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
-    *   [5.3 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
-    *   [5.4 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
-    *   [5.5 Make some windows start floating](#Make_some_windows_start_floating)
+    *   [5.1 Statusbar configuration](#Statusbar_configuration)
+        *   [5.1.1 Conky statusbar](#Conky_statusbar)
+    *   [5.2 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
+    *   [5.3 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
+    *   [5.4 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
+    *   [5.5 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
+    *   [5.6 Make some windows start floating](#Make_some_windows_start_floating)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fixing misbehaving Java applications](#Fixing_misbehaving_Java_applications)
     *   [6.2 Fixing the extra topbar that does not disappear when changing resolution/monitors](#Fixing_the_extra_topbar_that_does_not_disappear_when_changing_resolution.2Fmonitors)
@@ -35,13 +29,13 @@
 
 **Note:** If dwm is not compiled from source, opportunities for customization are lost since dwm's configuration is performed by editing its source code. See [#Configuration](#Configuration) for more information.
 
-[Install](/index.php/Install "Install") the [dwm](https://www.archlinux.org/packages/?name=dwm) package. Alternatively, compile dwm from source using [ABS](/index.php/ABS "ABS") or the [dwm-git](https://aur.archlinux.org/packages/dwm-git/) package (for the development version), making changes to the source code as desired. You may also want to install [dmenu](/index.php/Dmenu "Dmenu"), a fast and lightweight dynamic menu for [Xorg](/index.php/Xorg "Xorg").
+[Install](/index.php/Install "Install") the [dwm](https://www.archlinux.org/packages/?name=dwm) package. Alternatively, make changes to the source code, then compile dwm using [ABS](/index.php/ABS "ABS") or the [dwm-git](https://aur.archlinux.org/packages/dwm-git/) package for the development version.
 
 ## Starting dwm
 
 Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
-Alternatively, to start dwm with `startx` or the [SLiM](/index.php/SLiM "SLiM") login manager, simply append the following to `~/.xinitrc`:
+Alternatively, to start dwm with [startx](/index.php/Startx "Startx") append the following to `~/.xinitrc`:
 
 ```
 exec dwm
@@ -50,90 +44,31 @@ exec dwm
 
 ## Configuration
 
-As mentioned in [#Installation](#Installation), dwm is configured at compile-time by editing some of its source files, namely `config.h` and `config.mk` and also `dwm.c`.
+### Customization
 
-Once changes have been made, update the checksums in the PKGBUILD, see [PKGBUILD#Integrity](/index.php/PKGBUILD#Integrity "PKGBUILD"). Alternatively, you can skip integrity checks by calling *makepkg* with the `--skipinteg` switch.
-
-Then, compile and reinstall dwm:
-
-```
-$ makepkg -fi
-
-```
-
-Assuming the configuration changes were valid, the command above will compile dwm, build and reinstall the resulting package. If problems were encountered, review the output for specific information.
-
-Finally, restart dwm in order to apply the changes.
-
-**Tip:** To recompile easily, make an alias by putting `alias redwm='cd ~/dwm; updpkgsums; makepkg -fi --noconfirm && killall dwm'` in your `.bashrc` file.
+dwm is configured at compile-time by editing some of its source files, namely `config.h`. For detailed information on these settings see the included, well commented `config.def.h` as well as the [customisation section](http://dwm.suckless.org/customisation/) on the dwm website.
 
 ### Patches
 
 The official website has a number of [patches](http://dwm.suckless.org/patches/) that can add extra functionality to dwm. These patches primarily make changes to the `dwm.c` file but also make changes to the `config.h` file where appropriate. For information on applying patches, see [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
 
-#### Window tiling patches
+### Status bar
 
-The [Bottom Stack](http://dwm.suckless.org/patches/bottom_stack) patch provides an additional tiling mode that splits the screen horizontally, as opposed to the default vertically oriented tiling mode. Similarly, bstack horizontal splits the tiles horizontally. The [gaplessgrid patch](http://dwm.suckless.org/patches/gapless_grid) allows windows to be tiled like a grid.
+See the [dwmstatus](http://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration] section in [#Tips and tricks].
 
-The default behaviour of dwm is to apply the currently selected layout for all tags. To have different layouts for different tags use the [pertag](http://dwm.suckless.org/patches/pertag) patch.
+### Use pacman
 
-### Customizing config.h
+You should [create a package](/index.php/Creating_packages "Creating packages") using a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") so that [pacman](/index.php/Pacman "Pacman") is aware of the package.
 
-The `config.h` file is where the general dwm preferences are stored. Most settings within the file should be self-explanatory. For detailed information on these settings, see the [dwm website](http://dwm.suckless.org/customisation/).
+### Applying changes
 
-#### Adding custom keybinds/shortcuts
+After making any desired changes and installing the updated package, restart dwm in order to apply the changes.
 
-Two entries are needed in `config.h` to create custom keybinds. One under the `/* commands */` section, and another under the `static Key keys[] = {` section.
+## Basic usage
 
-```
-static const char **keybindname*[]   = { "*command*", "*flags*", "*arguments*", NULL };
+Consult the [dwm tutorial](http://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see dwm(1).
 
-```
-
-`*keybindname*` can be anything; `*command*`, `*flags*` and `*arguments*` can be anything but they have to be individually enclosed in `""`.
-
-Some examples:
-
-`{ MODKEY, XK_*key*, spawn, {.v = *keybindname* } }` would bind `Mod+*key*` to the command defined previously.
-
-`{ MODKEY|ShiftMask, XK_*key*, spawn, {.v = *keybindname* } }` would bind `Mod+Shift+*key*` Use ControlMask for `Ctrl` key.
-
-Single keys such as `Fn` or multimedia keys have to be bound with the hex codes obtainable from the program *xev*.
-
-`{ 0, 0xff00, spawn, {.v = *keybindname* } }` would bind foo key `0xff00` to `*keybindname*`.
-
-See [Extra keyboard keys#Keycodes](/index.php/Extra_keyboard_keys#Keycodes "Extra keyboard keys") for information on finding keycodes.
-
-### Customizing config.mk
-
-**Warning:** Installing software directly from source without creating a package is **not recommended** as [pacman](/index.php/Pacman "Pacman") will not be able to track the installed files.
-
-The `config.mk` file is included by Makefile. It allows you to configure how GNU *make* is going to compile and install dwm.
-
-If you are installing dwm directly from source, without creating a package first, then be sure to alter `config.mk` to set the correct prefixes:
-
-Modify `PREFIX`:
-
-```
-PREFIX = /usr
-
-```
-
-The X11 include folder:
-
-```
-X11INC = /usr/include/X11
-
-```
-
-And the the X11 lib directory:
-
-```
-X11LIB = /usr/lib/X11
-
-```
-
-**Tip:** If you only wish to test configuration changes without affecting systemwide dwm, change `PREFIX` to a local directory such as `${HOME}/.local`. Note that if you are compiling using the [dwm](https://www.archlinux.org/packages/?name=dwm) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), you should change the `PREFIX` in the PKGBUILD instead as this will take precedence over `config.mk` - see the *package()* function - and you should also change the `pkgname`.
+## Tips and tricks
 
 ### Statusbar configuration
 
@@ -195,42 +130,6 @@ $mpd_smart :: ${cpu cpu1}% / ${cpu cpu2}%  ${loadavg 1} ${loadavg 2 3} :: ${acpi
 ```
 
 For icons and color options, see [dzen](/index.php/Dzen "Dzen").
-
-## Basic usage
-
-Besides the following sections, also consult the [dwm tutorial](http://dwm.suckless.org/tutorial) for information on basic dwm usage.
-
-### Using dmenu
-
-To start [dmenu](/index.php/Dmenu "Dmenu"), press `Mod1` + `P` (`Mod1` should be the `Alt` key by default). This can be changed if you so desire. Then, simply type in the first few characters of the binary you wish to run until you see it along the top bar. Use your left and right arrow keys to navigate to the binary and press enter.
-
-### Controlling windows
-
-#### Giving another tag to a window
-
-Changing a window's tag is simple. To do so, simply bring the window into focus by hovering over it with your cursor. Then press `Shift` + `Mod1` + `x`, where `x` is the number of the tag to which you want to move the window. `Mod1` is, by default, the `Alt` key.
-
-#### Closing a window
-
-To cleanly close a window using dwm, simply press `Shift` + `Mod1` + `c`.
-
-#### Window layouts
-
-By default, dwm will operate in tiled mode. This can be observed by new windows on the same tag growing smaller and smaller as new windows are opened. The windows will, together, take up the entire screen (except for the menu bar) at all times. There are, however, two other modes: floating and monocle. Floating mode should be familiar to users of non-tiling window managers; it allows users to rearrange windows as they please. Monocle mode will keep a single window visible at all times.
-
-To switch to floating mode, simply press `Mod1` + `F`. `Mod1` is, by default, the `Alt` key. To check if you are in floating mode, you should see something like this next to the numbered tags in the top right corner of the screen: ><>.
-
-To switch to monocole mode, press `Mod1` + `M`. To check if you are in monocle mode, you can see an M in square brackets (if no windows are open on that tag) or a number in square brackets (which corresponds with the number of windows open on that tag). Thus, a tag with no windows open would display this: [M], and a tag with 'n' windows open would display this: [n].
-
-To return to tiled mode, press `Mod1` + `T`. You will see a symbol which looks like this: []= .
-
-For using alternate window layouts, see [#Window tiling patches](#Window_tiling_patches).
-
-### Exiting dwm
-
-To cleanly exit dwm, press `Shift` + `Mod1` + `q`.
-
-## Tips and tricks
 
 ### Restart dwm without logging out or closing programs
 
@@ -318,20 +217,7 @@ For some windows, such as preferences dialogs, it does not make sense for these 
 
 ### Fixing misbehaving Java applications
 
-As of JRE 6u20, Java applications may misbehave in dwm because dwm is not a known window manager for [Java](/index.php/Java "Java"). The misbehavior may include menus closing when the mouse is released and other minor issues. Firstly, install the [wmname](https://www.archlinux.org/packages/?name=wmname) package.
-
-Now use *wmname* to set a WM name that Java recognizes:
-
-```
-$ wmname LG3D
-
-```
-
-**Note:** This may cause some programs to behave oddly when tiled (specifically [Chromium](/index.php/Chromium "Chromium")).
-
-This setting is not persistent so you may want to add this command to your `.xinitrc` or `.xprofile`.
-
-Alternatively, it is also possible to change enable `export _JAVA_AWT_WM_NONREPARENTING=1` in `/etc/profile.d/jre.sh`
+See [Java#Non-reparenting window managers](/index.php/Java#Non-reparenting_window_managers "Java") for a solution.
 
 ### Fixing the extra topbar that does not disappear when changing resolution/monitors
 

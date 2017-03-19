@@ -1,11 +1,9 @@
 ## Developers
 
 *   Aaron Griffin
-
 *   Allan McRae
     *   Packaging (toolchain)
     *   Pacman development
-
 *   Anatol Pomozov
     *   Packaging for Ruby language, cross-compilers, ...
     *   Bug tracking for many packages (including working with upstream)
@@ -113,19 +111,20 @@
 *   Antonio Rojas
 *   Balló György
     *   Packaging (Cinnamon, GNOME Flashback, LXDE)
+*   Baptiste Jonglez
+*   Bruno Pagani
 *   Christian Hesse
-*   Connor Behan
-    *   Packaging
+*   Christian Rebischke
+    *   Security team
 *   Daniel Micay
     *   Packaging (including grsecurity/PaX which is a lot of work)
     *   Wiki administration, but only with occasional bursts of activity now
-*   Daniel Wallace
-    *   Packaging
 *   Evgeniy Alekseev
     *   Packaging (mostly scientific packages and Qt applications)
     *   AUR requests
 *   Fabio Castelli
     *   Packaging
+*   Giancarlo Razzolini
 *   Ike Devolder
     *   Packaging
 *   Jakob Gruber
@@ -143,7 +142,6 @@
 *   Johannes Löthberg
     *   Packaging
     *   AUR requests
-    *   IRC op
 *   Jonathan Steel
     *   Packaging
 *   Kyle Keen
@@ -159,11 +157,12 @@
     *   projects.archlinux.org maintenance
 *   Lukas Jirkovsky
     *   Packaging
-*   Martin Wimpress
 *   Massimiliano Torromeo
     *   Packaging
 *   Maxime Gauduin
     *   Packaging (Pantheon, emulators, music players and stuff)
+*   NicoHood
+*   Nicola Squartini
 *   Pierre Neidhardt
     *   Packaging
 *   Sébastien Luttringer
@@ -178,15 +177,12 @@
 *   Xyne
     *   Packaging
     *   Forum Moderation
-*   Михаил Страшун
-    *   Packaging (dlang group only)
 
 ## Support Staff
 
 *   Alad Wenter
     *   Wiki administration
-*   Christian Rebischke
-    *   Security team
+    *   IRC op
 *   Dario Giovannetti
     *   Wiki administration
 *   Doug Newgard
@@ -199,6 +195,8 @@
     *   Wiki Administration
 *   Jesse McClure (Trilby)
     *   Forum moderation
+*   Jordan Beaver
+    *   IRC op
 *   Levente Polyak
     *   See above (TU)
 *   Phillip Smith (fukawi2)

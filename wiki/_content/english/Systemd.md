@@ -492,11 +492,6 @@ Failure in the system primary application, like X11. |
 
 If you cannot find a message on the expected priority level, also search a couple of levels above and below: these rules are recommendations, and the developer of the affected application may have a different perception of the issue's importance from yours.
 
-Examples:
-
-*   Info message: `pulseaudio[2047]: W: [pulseaudio] alsa-mixer.c: Volume element Master has 8 channels. That's too much! I can't handle that!` It is an warning or error by definition.
-*   Plaguing alert message: `sudo[21711]:     user : a password is required ; TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=list /usr/bin/pacman --color auto -Sy` The [reason](https://bbs.archlinux.org/viewtopic.php?id=184455) - user was manually added to sudoers file, not to wheel group, which is arguably normal action, but sudo produced an alert on every occasion.
-
 ### Facility
 
 A syslog facility code is used to specify the type of program that is logging the message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).

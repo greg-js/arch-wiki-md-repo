@@ -28,7 +28,7 @@
 
 	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)
 
-*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — 扩展自xinit，由纯粹的Bush脚本编写的
+*   **[Console TDM](/index.php/Console_TDM "Console TDM")** — 扩展自xinit，由纯粹的Bash脚本编写的
 
 	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)
 

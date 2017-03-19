@@ -43,7 +43,7 @@ Battery state can be read using ACPI utilities from the terminal. ACPI command l
 
 *   [cbatticon](https://www.archlinux.org/packages/?name=cbatticon) is a battery icon that sits in the system tray.
 *   [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/) is a battery monitor that sits in the system tray, similar to batti.
-*   [batify](https://aur.archlinux.org/packages/batify/) is a Bash script to set plug and battery level notifications using udev and libnotify (multi-xusers).
+*   [batify](https://aur.archlinux.org/packages/batify/) is an udevrule file triggering plug and battery level notifications (multi-x sessions support).
 
 #### hibernate on low battery level
 

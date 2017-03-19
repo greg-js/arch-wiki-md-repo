@@ -1,4 +1,4 @@
-**systemd-boot**, previously called **gummiboot**, is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with the [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on Arch system by default.
+**systemd-boot**, previously called **gummiboot**, is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on Arch system by default.
 
 It is simple to configure but it can only start EFI executables such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager.
 

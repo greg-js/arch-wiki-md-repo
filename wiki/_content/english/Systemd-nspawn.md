@@ -126,7 +126,6 @@ First [enable](/index.php/Enable "Enable") the `machines.target` target, then `s
 
 **Tip:**
 
-*   Symbolic links to containers in `/var/lib/machines` currently do not work, see [[1]](https://github.com/systemd/systemd/issues/2001).
 *   To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See `systemd-nspawn(1)` for all options.
 
 ### Build and test packages
@@ -137,7 +136,7 @@ See [Creating packages for other distributions](/index.php/Creating_packages_for
 
 ### machinectl
 
-**Note:** The *machinectl* tool requires [systemd](/index.php/Systemd "Systemd") and [dbus](https://www.archlinux.org/packages/?name=dbus) to be installed in the container. See [[2]](https://github.com/systemd/systemd/issues/685) for detailed discussion.
+**Note:** The *machinectl* tool requires [systemd](/index.php/Systemd "Systemd") and [dbus](https://www.archlinux.org/packages/?name=dbus) to be installed in the container. See [[1]](https://github.com/systemd/systemd/issues/685) for detailed discussion.
 
 Managing your containers is essentially done with the `machinectl` command. See `machinectl(1)` for details.
 
@@ -298,7 +297,7 @@ See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
 ### Specify per-container settings
 
-To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[3]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[4]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
+To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[2]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[3]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
 
 ```
  man systemd.nspawn
@@ -357,7 +356,7 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 ```
 
-Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[5]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[6]](https://github.com/systemd/systemd/issues/852).
+Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[4]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[5]](https://github.com/systemd/systemd/issues/852).
 
 ### Unable to upgrade some packages on the container
 

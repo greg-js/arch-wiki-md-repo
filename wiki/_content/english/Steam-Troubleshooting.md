@@ -19,18 +19,19 @@
     *   [10.1 FMOD sound engine](#FMOD_sound_engine)
 *   [11 Missing libc](#Missing_libc)
 *   [12 Missing libGL](#Missing_libGL)
-*   [13 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
-*   [14 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
-*   [15 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-*   [16 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [17 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [18 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
-*   [19 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
-*   [20 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [21 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
-*   [22 Very slow app download speed](#Very_slow_app_download_speed)
-*   [23 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
-*   [24 Hardware decoding not available](#Hardware_decoding_not_available)
+*   [13 Missing vgui2_s.so](#Missing_vgui2_s.so)
+*   [14 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
+*   [15 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
+*   [16 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+*   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+*   [18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+*   [19 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+*   [20 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+*   [21 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+*   [22 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
+*   [23 Very slow app download speed](#Very_slow_app_download_speed)
+*   [24 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
+*   [25 Hardware decoding not available](#Hardware_decoding_not_available)
 
 ## Debugging Steam
 
@@ -299,6 +300,18 @@ You are missing the following 32-bit libraries, and Steam may not run: libGL.so.
 Make sure you have installed the `lib32` version of all your video drivers as described in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 If you get this error after reinstalling your Nvidia proprietary drivers, or switching from a version to another, [reinstall](/index.php/Reinstall "Reinstall") [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) and [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl).
+
+## Missing vgui2_s.so
+
+Error on startup:
+
+```
+Could not load module 'vgui2_s.so'.
+For more information visit [https://support.steampowered.com/kb_article.php?ref=9205-OZVN-0660](https://support.steampowered.com/kb_article.php?ref=9205-OZVN-0660)
+
+```
+
+Solution: install package `lib32-openal`
 
 ## Games do not launch on older Intel hardware
 

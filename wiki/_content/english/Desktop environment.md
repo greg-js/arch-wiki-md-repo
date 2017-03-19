@@ -61,9 +61,9 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[http://lxqt.org/](http://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
 
-*   **[MATE](/index.php/MATE "MATE")** — Mate provides an intuitive and attractive desktop to Linux users using traditional metaphors. MATE is a fork of GNOME 2.
+*   **[MATE](/index.php/MATE "MATE")** — Mate provides an intuitive and attractive desktop to Linux users using traditional metaphors. MATE started as a fork of GNOME 2, but now uses GTK+ 3.
 
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || GTK+ 2: [mate](https://www.archlinux.org/groups/x86_64/mate/), GTK+ 3: [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/)
+	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — The Sugar Learning Platform is a computer environment composed of Activities designed to help children from 5 to 12 years of age learn together through rich-media expression. Sugar is the core component of a worldwide effort to provide every child with the opportunity for a quality education — it is currently used by nearly one-million children worldwide speaking 25 languages in over 40 countries. Sugar provides the means to help people lead fulfilling lives through access to a quality education that is currently missed by so many.
 
@@ -263,27 +263,15 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [MATE](/index.php/MATE "MATE") (GTK+ 2) | [GTK+](/index.php/GTK%2B "GTK+") 2/3
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
+| [MATE](/index.php/MATE "MATE") | [GTK+](/index.php/GTK%2B "GTK+") 3
+[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
 [marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
 [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
 [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
 [caja](https://www.archlinux.org/packages/?name=caja) | [Galculator](http://galculator.sourceforge.net/)
-[galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | pluma
+[galculator](https://www.archlinux.org/packages/?name=galculator) | pluma
 [pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
 [eom](https://www.archlinux.org/packages/?name=eom) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [MATE](/index.php/MATE "MATE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
-[marco-gtk3](https://www.archlinux.org/packages/?name=marco-gtk3) | MATE Panel
-[mate-panel-gtk3](https://www.archlinux.org/packages/?name=mate-panel-gtk3) | MATE Terminal
-[mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
-[caja-gtk3](https://www.archlinux.org/packages/?name=caja-gtk3) | [Galculator](http://galculator.sourceforge.net/)
-[galculator](https://www.archlinux.org/packages/?name=galculator) | pluma
-[pluma-gtk3](https://www.archlinux.org/packages/?name=pluma-gtk3) | Eye of MATE
-[eom-gtk3](https://www.archlinux.org/packages/?name=eom-gtk3) | [Parole](http://docs.xfce.org/apps/parole/start)
 [parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |

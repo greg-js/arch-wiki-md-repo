@@ -100,11 +100,10 @@ Additionally, it is possible to define [desktop-environment](/index.php/Desktop_
 
 **Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it
 ```
-$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list 
+$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
 
 ```
-
-the reverse symlink unfortunately does not work because of how `xdg-mime` writes to this file.
+`xdg-mime` writes to `$XDG_CONFIG_HOME/mimeapps.list` file after this [patch](https://cgit.freedesktop.org/xdg/xdg-utils/commit/?id=9dac27a442b0e44b3f235798b77715e26169500f).
 
 **Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 

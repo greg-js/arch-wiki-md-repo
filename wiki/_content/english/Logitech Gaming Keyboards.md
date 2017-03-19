@@ -4,6 +4,7 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   the C based [g15daemon project](http://sourceforge.net/projects/g15daemon/).
 *   [https://github.com/tolga9009/sidewinderd](https://github.com/tolga9009/sidewinderd)
 *   [https://github.com/Wattos/logitech-g710-linux-driver](https://github.com/Wattos/logitech-g710-linux-driver)
+*   [https://github.com/MatMoul/g810-led](https://github.com/MatMoul/g810-led)
 
 ## Install
 
@@ -44,6 +45,13 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 [hid-lg-g710-plus-dkms-git](https://aur.archlinux.org/packages/hid-lg-g710-plus-dkms-git/) supports:
 
 *   Logitech G710 / G710+
+
+[g810-led-git](https://aur.archlinux.org/packages/g810-led-git/) supports:
+
+*   G410
+*   G610
+*   G810
+*   G910
 
 ## G510 on g15daemon
 

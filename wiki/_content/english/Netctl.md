@@ -194,7 +194,12 @@ wifi-menu -o
 
 ```
 
-it generates the configuration file in `/etc/netctl/` for the network to use for [#Automatic operation](#Automatic_operation) at the same time.
+it generates the configuration file in `/etc/netctl/` for the network to use for [#Automatic operation](#Automatic_operation) at the same time. If the system has different [wireless interfaces](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration"), pass one accordingly:
+
+```
+wifi-menu -o *interface*
+
+```
 
 Alternatively, the profile may also be configured manually, as follows:
 

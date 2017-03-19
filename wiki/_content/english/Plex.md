@@ -1,4 +1,4 @@
-Plex is a media player system and software suite consisting of many player applications for 10-foot user interfaces and an associated media server that organizes personal media stored on local devices. Integrated Plex Channels provide users with access to a growing number of online content providers such as YouTube, Vimeo, TEDTalks, and CNN among others. Plex also provides integration for cloud services including Dropbox, Box, Google Drive, Copy and Bitcasa.
+Plex is a media player system and software suite consisting of many player applications for 10-foot user interfaces and an associated media server that organizes personal media stored on local devices. Integrated Plex Channels provide users with access to a growing number of online content providers such as YouTube, Vimeo, TEDTalks, and CNN among others. Plex also provides integration for cloud services including Dropbox, Box, Google Drive, or Copy.
 
 Plex for Linux is split into a closed-source server Plex Media Server, and an open-source client Plex Home Theater, a fork of the popular [Kodi](/index.php/Kodi "Kodi") project.
 
@@ -50,13 +50,13 @@ Plugins can be installed inside `$PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR/Plex
 
 It is recommended to store your media files outside of your home directory, as making it accessible to PMS would mean lowering its security. Having a separate `/media` or `/mnt/media` partition is a good setup for use with PMS.
 
-You can further increase security via systemd, by creating a `/etc/systemd/system/plexmediaserver.service.d/restrict.conf` file containing the following:
+You can further increase security via systemd, by [editing](/index.php/Edit "Edit") `plexmediaserver.service` as follows:
 
+ `/etc/systemd/system/plexmediaserver.service.d/restrict.conf` 
 ```
 [Service]
 ReadOnlyDirectories=/
 ReadWriteDirectories=/var/lib/plex /tmp
-
 ```
 
 **Note:** Those mechanisms are currently limited, see [DeveloperWiki:Security#ReadOnly/ReadWrite](/index.php/DeveloperWiki:Security#ReadOnly.2FReadWrite "DeveloperWiki:Security"). For instance, ReadOnlyDirectories do not apply to any submount, you have to list them as well.

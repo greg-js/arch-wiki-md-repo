@@ -53,6 +53,6 @@ It is possible to use an alternative [window manager](/index.php/Window_manager 
 
 ## See also
 
-*   [Official Solus Project website](https://solus-project.com/)
+*   [Official Budgie Desktop website](https://budgie-desktop.org/)
 *   [Official git repositories for Solus development](https://git.solus-project.com/)
 *   [Build status for Solus projects](https://build.solus-project.com/)

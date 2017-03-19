@@ -2,23 +2,24 @@
 
 At the moment there is support for [Volcanic Islands (VI)](http://xorg.freedesktop.org/wiki/RadeonFeature/) and experimental support for [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) and [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) cards. AMD has absolutely no plans for supporting the pre-GCN GPUs.
 
-Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
+Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
 ## Contents
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
-    *   [2.1 AMDGPU PRO](#AMDGPU_PRO)
+    *   [2.1 Blacklist radeon](#Blacklist_radeon)
+    *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
-*   [6 Enable amdgpu for Sea Islands or Southern Islands cards](#Enable_amdgpu_for_Sea_Islands_or_Southern_Islands_cards)
-    *   [6.1 Disable radeon driver](#Disable_radeon_driver)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
-    *   [7.2 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
+    *   [6.2 Unable to start Xorg on Southern Islands (SI) or Sea Islands (CIK) GPU](#Unable_to_start_Xorg_on_Southern_Islands_.28SI.29_or_Sea_Islands_.28CIK.29_GPU)
+    *   [6.3 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [6.4 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
 
 ## Selecting the right driver
 
@@ -26,7 +27,10 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 ## Installation
 
-**Note:** If coming from the proprietary Catalyst driver, see [AMD Catalyst#Uninstallation](/index.php/AMD_Catalyst#Uninstallation "AMD Catalyst") first.
+**Note:**
+
+*   If coming from the proprietary Catalyst driver, see [AMD Catalyst#Uninstallation](/index.php/AMD_Catalyst#Uninstallation "AMD Catalyst") first.
+*   The [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package is only used for [Xorg](/index.php/Xorg "Xorg") acceleration and not strictly required.
 
 [Install](/index.php/Install "Install") the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
 
@@ -34,21 +38,34 @@ For 32-bit application support on x86_64, also install [lib32-mesa](https://www.
 
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
 
-**Note:** The [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package is only used for Xorg acceleration and not strictly required.
+### Blacklist radeon
+
+The [linux](https://www.archlinux.org/packages/?name=linux) package enables AMDGPU support for cards of the Southern Islands (SI) and Sea Islands (CIK). When building or compiling a [kernel](/index.php/Kernel "Kernel"), `CONFIG_DRM_AMDGPU_SI=Y` and/or `CONFIG_DRM_AMDGPU_CIK=Y` should be be set in the config.
+
+Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon](/index.php/Radeon "Radeon") driver may be used instead of the AMDGPU driver.
+
+[Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module to force usage of the `amdgpu` module:
+
+ `/etc/modprobe.d/radeon.conf` 
+```
+blacklist radeon
+
+```
 
 ### AMDGPU PRO
 
 **Warning:** Arch Linux is not officially supported.
 
-AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). For a detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
+**Note:**
 
-The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. For some workloads it provides better performance than the open-source driver ([example benchmark](http://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)), while for others it is true the contrary ([example benchmark](https://openbenchmarking.org/prospect/1610315-TA-AMDGPUPRO08/998ba9b677230564e0fbca342a8e1b9a7e85b6ab)).
+*   To use the proprietary OpenCL component without AMDGPU PRO, [install](/index.php/Install "Install") [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) instead.
+*   A [downgrade](/index.php/Downgrade "Downgrade") of the [linux](https://www.archlinux.org/packages/?name=linux) (4.8 or 4.9) and [Xorg](/index.php/Xorg "Xorg") (1.18) packages may be required to use AMDGPU PRO.
+
+AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. The driver provides OpenGL, [OpenCL](/index.php/OpenCL "OpenCL"), [Vulkan](/index.php/Vulkan "Vulkan") and [VDPAU](/index.php/VDPAU "VDPAU") support. For some workloads it provides better performance than the open-source driver ([example benchmark](http://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)), while for others it is true the contrary ([example benchmark](https://openbenchmarking.org/prospect/1610315-TA-AMDGPUPRO08/998ba9b677230564e0fbca342a8e1b9a7e85b6ab)).
 
 See the [release notes](http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
 
-There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/Corngood/archlinux-amdgpu](https://github.com/Corngood/archlinux-amdgpu) for issues or pull requests.
-
-If you want to use the open source AMDGPU drivers, and only the proprietary OpenCL component, then use ([opencl-amd](https://aur.archlinux.org/packages/opencl-amd/))
+A patched version of the official AMDGPU PRO driver is available as [amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/) in [AUR](/index.php/AUR "AUR").
 
 ## Loading
 
@@ -104,25 +121,15 @@ Using this section, you can enable features and tweak the driver settings.
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-## Enable amdgpu for Sea Islands or Southern Islands cards
-
-The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package, is compiled with Southern Islands and Sea Island support enabled by default (`CONFIG_DRM_AMDGPU_CIK=Y` and `CONFIG_DRM_AMDGPU_SI=Y` [[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4987)).
-
-When using these cards, the default driver will be the old radeon driver. To use the amdgpu driver instead, you must [#Disable radeon driver](#Disable_radeon_driver).
-
-### Disable radeon driver
-
-CIK and SI cards will default to the [radeon](/index.php/Radeon "Radeon") driver, even after manually enabling AMDGPU for these cards when building the kernel.
-
-Prevent the `radeon` module from loading by [blacklisting](/index.php/Blacklist "Blacklist") the `radeon` module, to force usage of the `amdgpu` module:
-
- `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
-
 ## Troubleshooting
 
 ### No HDMI/DP Audio
 
 The open source AMDGPU driver relies on the DAL code that [currently being worked on](https://cgit.freedesktop.org/~agd5f/linux/log/?h=drm-next-4.7-wip-dal). Until DAL is mainlined, audio suppport for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the AMDGPU-PRO driver.
+
+### Unable to start Xorg on Southern Islands (SI) or Sea Islands (CIK) GPU
+
+This issue may occur when both the `radeon` and `amdgpu` module are loaded at boot, see [#Blacklist radeon](#Blacklist_radeon).
 
 ### Xorg or applications won't start
 
@@ -140,3 +147,23 @@ Section "Screen"
 EndSection
 
 ```
+
+### Screen artifacts and frequency problem
+
+If you have screen artifacts when setting your screen frequency up to 120+Hz your "Memory Clock" and "GPU Clock" are certainly too low to handle the screen request.
+
+A workaround [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is available by doing the following:
+
+```
+# echo high > /sys/class/drm/card0/device/power_dpm_force_performance_level
+
+```
+
+or
+
+```
+# echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
+
+```
+
+There is a GUI solution [[2]](https://github.com/marazmista/radeon-profile) were you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).

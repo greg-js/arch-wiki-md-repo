@@ -184,6 +184,8 @@ Open the address where you have installed Nextcloud in a web browser (e.g., [htt
 
 ## Security Hardening
 
+The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/11/admin_manual/configuration_server/harden_server.html) article guides along generic topics. See also the project's [Security scanner](https://scan.nextcloud.com/).
+
 ### Let's Encrypt
 
 #### nginx

@@ -37,8 +37,6 @@ Both client and server only require the [installation](/index.php/Install "Insta
 
 It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_synchronization "Time") to keep client/server clocks in sync. Without accurate clocks on all nodes, NFS can introduce unwanted delays.
 
-**Note:** [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) for Arch Linux ARM starting with update 1.3.2-4 (possibly earlier) has been reported by one user to behave differently from the x86_64 or i686 package. See the discussion page for a recipe for client mounts.
-
 ## Configuration
 
 ### Server

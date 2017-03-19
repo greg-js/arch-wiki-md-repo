@@ -11,25 +11,24 @@
 | Backlight control | Yes - only software control |
 | Function keys | Yes |
 | Hardware switches | Not tested |
-| Card reader | Not tested |
+| Card reader | Yes |
 | Webcam | Not tested |
 | USB 3.0 Type-C™ port | Not tested |
-| Fingerprint Reader | Not tested |
+| Fingerprint Reader | No |
 
 ## Contents
 
 *   [1 Device information](#Device_information)
 *   [2 Backlight](#Backlight)
 *   [3 ACPI errors](#ACPI_errors)
-*   [4 Touchpad](#Touchpad)
-*   [5 Graphic card setup](#Graphic_card_setup)
-*   [6 other errors/bugs](#other_errors.2Fbugs)
+*   [4 Graphic card setup](#Graphic_card_setup)
+*   [5 PCIe error in dmesg](#PCIe_error_in_dmesg)
 
 ## Device information
 
-This is a work in progress with information about the HP ProBook 430 G4\. There are many configurations for these models of HP Probooks. Mine is a HP ProBook 430 G4/822C, BIOS P85 Ver. 01.03 12/05/2016, shipped with a Core i5-7200U, 8GB, 256GB SSD. I've added a 2nd 8GB memory rig and placed my old 64GB 2,5" SATA SSD into the 2nd slot. The UEFI bios allows legacy boot.
+This is a work in progress with information about the HP ProBook 430 G4\. There are many configurations for these models of HP Probooks. The information below are given from a model HP ProBook 430 G4/822C, BIOS P85 Ver. 01.03 12/05/2016, shipped with a Core i5-7200U, 8GB, 256GB SSD. The notebook supports exchanging two memory modules and support one 2,5" disc drive and one M.2-SSD. The UEFI bios allows legacy boot.
 
-Basic information for the new [HP ProBook 430 G4](http://www.notebookcheck.net/HP-updates-the-mainstream-ProBook-400-series.174476.0.html) model. Hardware works out of the box. No configuration was needed. Information for the "Not tested" units will be posted additionally.
+A review in German is available here: [HP ProBook 430 G4 review](http://www.notebookcheck.com/Test-HP-ProBook-430-G4-Core-i7-Full-HD-Laptop.185256.0.html). Basic hardware works out of the box. No configuration was needed. Information for the "Not tested" units will be posted additionally.
 
 ```
 lspci -v
@@ -249,9 +248,9 @@ Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB
 Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WMPV] (Node ffff88041f89b780), AE_AML_OPERAND_VALU
 ```
 
-## Touchpad
+Upstream report: [https://bugzilla.kernel.org/show_bug.cgi?id=194833](https://bugzilla.kernel.org/show_bug.cgi?id=194833) - this error may be caused by adding the 2nd memory module and/or a broken BIOS implementation.
 
-Middle click doesn't work so far.
+Kernel 4.11 will included a fix for a 10 second boot delay that will be shortened to below 3 seconds with this patch: [https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c3a696b6](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c3a696b6)
 
 ## Graphic card setup
 
@@ -275,7 +274,7 @@ Section "Device"
 EndSection
 ```
 
-## other errors/bugs
+## PCIe error in dmesg
 
 ```
 Feb 21 16:08:58 localhost systemd-udevd[75]: Assertion '!d->current' failed at src/libsystemd/sd-event/sd-event.c:733, function event_un
@@ -284,3 +283,5 @@ Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0: PCIe Bus Error: severity
 Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00000001/00002000
 Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0:    [ 0] Receiver Error         (First)
 ```
+
+This one can be fixed with appending pci=noaer to the kernel boot line.

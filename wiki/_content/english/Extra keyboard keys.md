@@ -85,7 +85,7 @@ then the *scancode* you need is `0xa0`.
 
 #### In console
 
-The *keycodes* for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") are reported by the *showkey* utility. *showkey* waits for a key to be pressed and if none is during 10 seconds it quits, which is the only way to exit the program. To execute *showkey* you need to be in a virtual console, not in a graphical environment. Run the following command
+The *keycodes* for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") are reported by the *showkey* utility. *showkey* waits for a key to be pressed and if none is during 10 seconds it quits. To execute *showkey* you need to be in a virtual console, not in a graphical environment. Run the following command
 
 ```
 # showkey --keycodes

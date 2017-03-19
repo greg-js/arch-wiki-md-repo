@@ -30,7 +30,7 @@ Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása
         *   [4.4.2 Restore the window layout of the workspace](#Restore_the_window_layout_of_the_workspace)
     *   [4.5 Scratchpad containers](#Scratchpad_containers)
     *   [4.6 Screensaver and power management](#Screensaver_and_power_management)
-    *   [4.7 Shutdown, reboot, lock screen](#Shutdown.2C_reboot.2C_lock_screen)
+    *   [4.7 Kikapcsolás, újraindítás, képernyővédő](#Kikapcsol.C3.A1s.2C_.C3.BAjraind.C3.ADt.C3.A1s.2C_k.C3.A9perny.C5.91v.C3.A9d.C5.91)
     *   [4.8 External displays manual management](#External_displays_manual_management)
     *   [4.9 Tabbed or stacked web-browsing](#Tabbed_or_stacked_web-browsing)
     *   [4.10 Workspace variables](#Workspace_variables)
@@ -405,14 +405,14 @@ A [systemd](/index.php/Systemd "Systemd") service file can be used to lock the s
 
 See also [DPMS](/index.php/DPMS "DPMS").
 
-### Shutdown, reboot, lock screen
+### Kikapcsolás, újraindítás, képernyővédő
 
-Key combinations for shutdown, reboot and screenlock can be added to `~/.config/i3/config`. The below example assumes you have [polkit](https://www.archlinux.org/packages/?name=polkit) installed to allow unprivileged users to run [power management](/index.php/Systemd#Power_management "Systemd") commands.
+Billentyűkombinációk beállíthatók a leállításhoz, újraindításhoz, és képernyővédőhöz a `~/.config/i3/config`-ben. Az alábbi példák feltételezik, hogy a [polkit](https://www.archlinux.org/packages/?name=polkit) telepítve van az [energiagazdálkodási](/index.php/Systemd#Power_management "Systemd") parancsok normál felhasználóként való futtatásához.
 
 ```
 set $Locker i3lock && sleep 1
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system Energiagazdálkodás (l) zárolás, (e) kijelentkezés, (s) felfüggesztés, (h) hibernálás, (r) újraindítás, (Shift+s) leállítás
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
@@ -421,7 +421,7 @@ mode "$mode_system" {
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
-    # back to normal: Enter or Escape
+    # vissza normál módba: Enter vagy Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -430,14 +430,14 @@ bindsym $mod+Pause mode "$mode_system"
 
 ```
 
-Once completed, you will be presented with a prompt whenever you press `$mod+pause`. For more complex behaviour, use a separate script, and refer to it in the mode. [[3]](https://gist.github.com/anonymous/c8cd0a59bf4acb273068)
+Ha kész, egy promptot fogsz kapni amikor megnyomod a `$mod+pause`-t. Komplexebb parancsokhoz készíts saját szkriptet, és hivatkozz rájuk gyorsbillentyűkkel. [[3]](https://gist.github.com/anonymous/c8cd0a59bf4acb273068)
 
 **Note:**
 
-*   `sleep 1` adds a small delay to prevent possible race conditions with suspend [[4]](https://bugs.launchpad.net/ubuntu/+source/unity-2d/+bug/830348)
-*   The `-i` argument for `systemctl poweroff` causes a shutdown even if other users are logged-in (this requires [polkit](https://www.archlinux.org/packages/?name=polkit)), or when *logind* (wrongly) assumes so. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=62676)
+*   `sleep 1` egy kis késleltetést ad, hogy mindent le tudjon zárni a gép felfüggeszés előtt. [[4]](https://bugs.launchpad.net/ubuntu/+source/unity-2d/+bug/830348)
+*   Az `-i` argumentum a `systemctl poweroff` kikapcsolja a gépet akkor is, hogyha más felhasználók be vannak jelentkezve (ehhez szükséges a [polkit](https://www.archlinux.org/packages/?name=polkit)), vagy amikor *logind* (hibásan) ezt feltételezi. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=62676)
 
-For a list of alternative screen lockers, see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+Alternatív képernyővédők listájához lásd [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 ### External displays manual management
 

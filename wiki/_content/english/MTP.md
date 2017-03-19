@@ -90,14 +90,21 @@ If connection is successful, there are several switch options to use in conjunct
 List MTP devices:
 
 ```
-$ simple-mtpfs --list-devices
+$ simple-mtpfs -l
 
 ```
 
-Mount your device on `~/mnt`:
+Your list of device(s) may look like this:
 
 ```
-$ simple-mtpfs ~/mnt
+1: AsusZenfone 2 (MTP)
+
+```
+
+To mount the device with index 1 in the list to `~/mnt`:
+
+```
+$ simple-mtpfs 1 ~/mnt
 
 ```
 

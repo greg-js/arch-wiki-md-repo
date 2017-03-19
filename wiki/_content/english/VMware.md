@@ -35,7 +35,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.12 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
-    *   [5.13 vmplayer fails to start on version 12.5.3](#vmplayer_fails_to_start_on_version_12.5.3)
+    *   [5.13 vmplayer fails to start from version 12.5.3](#vmplayer_fails_to_start_from_version_12.5.3)
     *   [5.14 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
 *   [6 Uninstallation](#Uninstallation)
 
@@ -431,7 +431,7 @@ On VMware Workstation Pro 12.5.2, the module source needs to be modified to be s
 
 ```
 
-### vmplayer fails to start on version 12.5.3
+### vmplayer fails to start from version 12.5.3
 
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
 

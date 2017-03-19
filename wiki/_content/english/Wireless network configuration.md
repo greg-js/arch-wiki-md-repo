@@ -29,54 +29,55 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [3.2.4 netctl](#netctl_2)
     *   [3.3 Troubleshooting](#Troubleshooting)
         *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
-*   [4 Troubleshooting](#Troubleshooting_2)
-    *   [4.1 Temporary internet access](#Temporary_internet_access)
-    *   [4.2 Rfkill caveat](#Rfkill_caveat)
-    *   [4.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
-    *   [4.4 Observing Logs](#Observing_Logs)
-    *   [4.5 Power saving](#Power_saving)
-    *   [4.6 Failed to get IP address](#Failed_to_get_IP_address)
-    *   [4.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
-    *   [4.8 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
-    *   [4.9 Random disconnections](#Random_disconnections)
-        *   [4.9.1 Cause #1](#Cause_.231)
-        *   [4.9.2 Cause #2](#Cause_.232)
-        *   [4.9.3 Cause #3](#Cause_.233)
-        *   [4.9.4 Cause #4](#Cause_.234)
-*   [5 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
-    *   [5.1 Ralink](#Ralink)
-        *   [5.1.1 rt2x00](#rt2x00)
-        *   [5.1.2 rt3090](#rt3090)
-        *   [5.1.3 rt3290](#rt3290)
-        *   [5.1.4 rt3573](#rt3573)
-        *   [5.1.5 rt5572](#rt5572)
-    *   [5.2 Realtek](#Realtek)
-        *   [5.2.1 rtl8192cu](#rtl8192cu)
-        *   [5.2.2 rtl8192e](#rtl8192e)
-        *   [5.2.3 rtl8188eu](#rtl8188eu)
-        *   [5.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [5.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
-    *   [5.3 Atheros](#Atheros)
-        *   [5.3.1 ath5k](#ath5k)
-        *   [5.3.2 ath9k](#ath9k)
-            *   [5.3.2.1 Power saving](#Power_saving_2)
-    *   [5.4 Intel](#Intel)
-        *   [5.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
-        *   [5.4.2 iwlegacy](#iwlegacy)
-        *   [5.4.3 iwlwifi](#iwlwifi)
-            *   [5.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
-        *   [5.4.4 Disabling LED blink](#Disabling_LED_blink)
-    *   [5.5 Broadcom](#Broadcom)
-    *   [5.6 Other drivers/devices](#Other_drivers.2Fdevices)
-        *   [5.6.1 Tenda w322u](#Tenda_w322u)
-        *   [5.6.2 orinoco](#orinoco)
-        *   [5.6.3 prism54](#prism54)
-        *   [5.6.4 ACX100/111](#ACX100.2F111)
-        *   [5.6.5 zd1211rw](#zd1211rw)
-        *   [5.6.6 hostap_cs](#hostap_cs)
-    *   [5.7 ndiswrapper](#ndiswrapper)
-    *   [5.8 backports-patched](#backports-patched)
-*   [6 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
+*   [5 Troubleshooting](#Troubleshooting_2)
+    *   [5.1 Temporary internet access](#Temporary_internet_access)
+    *   [5.2 Rfkill caveat](#Rfkill_caveat)
+    *   [5.3 Observing Logs](#Observing_Logs)
+    *   [5.4 Power saving](#Power_saving)
+    *   [5.5 Failed to get IP address](#Failed_to_get_IP_address)
+    *   [5.6 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
+    *   [5.7 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [5.8 Random disconnections](#Random_disconnections)
+        *   [5.8.1 Cause #1](#Cause_.231)
+        *   [5.8.2 Cause #2](#Cause_.232)
+        *   [5.8.3 Cause #3](#Cause_.233)
+        *   [5.8.4 Cause #4](#Cause_.234)
+*   [6 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
+    *   [6.1 Ralink](#Ralink)
+        *   [6.1.1 rt2x00](#rt2x00)
+        *   [6.1.2 rt3090](#rt3090)
+        *   [6.1.3 rt3290](#rt3290)
+        *   [6.1.4 rt3573](#rt3573)
+        *   [6.1.5 rt5572](#rt5572)
+    *   [6.2 Realtek](#Realtek)
+        *   [6.2.1 rtl8192cu](#rtl8192cu)
+        *   [6.2.2 rtl8192e](#rtl8192e)
+        *   [6.2.3 rtl8188eu](#rtl8188eu)
+        *   [6.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [6.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
+    *   [6.3 Atheros](#Atheros)
+        *   [6.3.1 ath5k](#ath5k)
+        *   [6.3.2 ath9k](#ath9k)
+            *   [6.3.2.1 Power saving](#Power_saving_2)
+    *   [6.4 Intel](#Intel)
+        *   [6.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
+        *   [6.4.2 iwlegacy](#iwlegacy)
+        *   [6.4.3 iwlwifi](#iwlwifi)
+            *   [6.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
+        *   [6.4.4 Disabling LED blink](#Disabling_LED_blink)
+    *   [6.5 Broadcom](#Broadcom)
+    *   [6.6 Other drivers/devices](#Other_drivers.2Fdevices)
+        *   [6.6.1 Tenda w322u](#Tenda_w322u)
+        *   [6.6.2 orinoco](#orinoco)
+        *   [6.6.3 prism54](#prism54)
+        *   [6.6.4 ACX100/111](#ACX100.2F111)
+        *   [6.6.5 zd1211rw](#zd1211rw)
+        *   [6.6.6 hostap_cs](#hostap_cs)
+    *   [6.7 ndiswrapper](#ndiswrapper)
+    *   [6.8 backports-patched](#backports-patched)
+*   [7 See also](#See_also)
 
 ## Device driver
 
@@ -521,38 +522,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[1]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[2]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
 
-## Troubleshooting
-
-This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
-
-### Temporary internet access
-
-If you have problematic hardware and need internet access to, for example, download some software or get help in forums, you can make use of Android's built-in feature for internet sharing via USB cable. See [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") for more information.
-
-### Rfkill caveat
-
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
-
- `# rfkill list` 
-```
-0: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: yes
-
-```
-
-If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
-
-```
-# rfkill unblock wifi
-
-```
-
-**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
-
-Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
-
-See also: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
+## Tips and tricks
 
 ### Respecting the regulatory domain
 
@@ -610,6 +580,39 @@ A more permanent configuration of the regdomain can be achieved through editing 
 It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
 For further information, read the [wireless.kernel.org regulatory documentation](http://wireless.kernel.org/en/developers/Regulatory/).
+
+## Troubleshooting
+
+This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
+
+### Temporary internet access
+
+If you have problematic hardware and need internet access to, for example, download some software or get help in forums, you can make use of Android's built-in feature for internet sharing via USB cable. See [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") for more information.
+
+### Rfkill caveat
+
+Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
+
+ `# rfkill list` 
+```
+0: phy0: Wireless LAN
+	Soft blocked: yes
+	Hard blocked: yes
+
+```
+
+If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
+
+```
+# rfkill unblock wifi
+
+```
+
+**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+
+Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
+
+See also: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
 ### Observing Logs
 

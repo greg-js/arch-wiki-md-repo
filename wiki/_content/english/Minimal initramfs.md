@@ -23,7 +23,7 @@ If you need `udev`, your minimization efforts will most likely be in vain. You m
 
 ## Editing .preset files
 
-In Falconidy's tutorial, he edits `/etc/mkinitcpio.conf` and runs `mkinitcpio -g` to create the test initramfs image, leaving the known-good initramfs images on the system untouched. However, if you blindy run `mkinitcpio -P` afterwards, even the `fallback` image will be stripped down.
+In Falconidy's tutorial, he edits `/etc/mkinitcpio.conf` and runs `mkinitcpio -g` to create the test initramfs image, leaving the known-good initramfs images on the system untouched. However, if you blindly run `mkinitcpio -P` afterwards, even the `fallback` image will be stripped down.
 
 A safer way to prepare for taking the creation of the initramfs files into your own hands is to modify the `.preset` files in `/etc/mkinitcpio.d`. The following example configuration will supplant `default` with the minimal initfamfs image and create a new `normal` image that is built The Arch Way. If things go wrong, you can rely on the `normal` or `fallback` images. When you are finished, you can drop the `normal_*` lines from the config and remove the `initramfs-linux*-normal.img` files.
 
@@ -56,7 +56,7 @@ lsmod | grep -v ' [a-z]'
 
 ```
 
-**Note:** The `grep` command is used to filter out modules that were loaded as dependencies of other modules. Arch's `mkinitcpio` takes care of bringing in module dependecies.
+**Note:** The `grep` command is used to filter out modules that were loaded as dependencies of other modules. Arch's `mkinitcpio` takes care of bringing in module dependencies.
 
 Write down the modules that were loaded and type `exit` to continue booting.
 

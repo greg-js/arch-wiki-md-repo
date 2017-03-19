@@ -268,6 +268,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 *   [ftp://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](ftp://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
 *   [http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
+*   [https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
 *   rsync://ftp.icm.edu.pl/pub/Linux/dist/archlinux/ - ICM UW
 
 ### Russia

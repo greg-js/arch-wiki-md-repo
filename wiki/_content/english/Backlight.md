@@ -224,7 +224,7 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
 
-*   **lux** — lux is a Bash script to easily control brightness on backlight-controllers.
+*   **lux** — lux is a POSIX-compliant Shell script to easily control brightness on backlight-controllers.
 
 	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
 

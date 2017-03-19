@@ -9,7 +9,7 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [2.1 Autologin](#Autologin)
     *   [2.2 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
     *   [2.3 Theme settings](#Theme_settings)
-        *   [2.3.1 Main theme](#Main_theme)
+        *   [2.3.1 Current theme](#Current_theme)
         *   [2.3.2 Editing themes](#Editing_themes)
         *   [2.3.3 Mouse cursor](#Mouse_cursor)
         *   [2.3.4 Changing your avatar](#Changing_your_avatar)
@@ -78,13 +78,13 @@ Set to `breeze` for the default Plasma theme.
 
 Some themes are available in the [AUR](/index.php/AUR "AUR"), for example [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/).
 
-#### Main theme
+#### Current theme
 
-Set the main theme through the `Current` value, e.g. `Current=archlinux-simplyblack`.
+Set the current theme through the `Current` value, e.g. `Current=archlinux-simplyblack`.
 
 #### Editing themes
 
-The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your custom made themes to that directory under a separate subdirectory. Study the files installed to modify or create your own theme.
+The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your custom made themes to that directory under a separate subdirectory. Note that SDDM requires these subdirectory names to be the same as the theme names. Study the files installed to modify or create your own theme.
 
 #### Mouse cursor
 

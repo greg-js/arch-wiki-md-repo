@@ -114,13 +114,13 @@ Xorg should run smoothly without closed source drivers, which are typically need
 | GCN 4 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN4 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
 | GCN 3 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN3 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
 [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
-| GCN 2 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN2 "wikipedia:Graphics Core Next") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
-| GCN 1 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN "wikipedia:Graphics Core Next") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 2 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN2 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 1 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/Catalyst "Catalyst") legacy |
 | Older | X1000 and older | *not available* |
 
-	: Experimental AMDGPU support ([instructions](/index.php/AMDGPU#Enable_amdgpu_for_Sea_Islands_or_Southern_Islands_cards "AMDGPU")).
+	: Experimental AMDGPU support
 
 ## Running
 
@@ -659,7 +659,7 @@ session        optional        pam_xauth.so
 
 ```
 
-to `/etc/pam.d/su`. `pam_xauth` will then properly set environment variables and handle `xauth` keys.
+to `/etc/pam.d/su` and `/etc/pam.d/su-l`. `pam_xauth` will then properly set environment variables and handle `xauth` keys.
 
 ### X failed to start: Keyboard initialization failed
 

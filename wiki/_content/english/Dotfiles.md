@@ -42,6 +42,10 @@ $ git commit -a
 
 	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
+*   **dotdrop** — A tool to manage different versions of your dotfiles on different hosts.
+
+	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **dotfiles** — A tool to make managing your dotfile symlinks in $HOME easy, allowing you to keep all of them in a single directory.
 
 	[https://github.com/jbernard/dotfiles](https://github.com/jbernard/dotfiles) || [dotfiles](https://aur.archlinux.org/packages/dotfiles/)

@@ -208,6 +208,8 @@ See here for more information: [https://github.com/SirCmpwn/sway/issues/521](htt
 
 You can still apply the patch manually through installing [sway-dmenu-desktop](https://aur.archlinux.org/packages/sway-dmenu-desktop/). This creates a new binary called `sway-dmenu-desktop` to be using within sway.
 
+An alternative is to use [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), which is advertised as faster than i3-dmenu-desktop.
+
 ### Using VirtualBox
 
 Sway doesn't work well (or at all) under VirtualBox.

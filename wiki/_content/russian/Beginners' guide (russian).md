@@ -406,7 +406,7 @@ sda               8:0    0    80G  0 disk
 Для определения типа таблицы разделов на конкретном устройстве используйте следующую команду:
 
 ```
-# parted /dev/sd*x* print
+# parted /dev/sd*x*
 
 ```
 
@@ -621,7 +621,7 @@ Ignore/Cancel?
 
 *   Если вы создали новый системный раздел UEFI, обязательно отформатируйте его в систему `fat32` или `vfat32`:
 
-	 `# mkfs.vfat -F32 /dev/sd*xY*` 
+	 `# mkfs.vfat /dev/sd*xY*` 
 
 Если этого не сделать, вы не сможете загрузиться в установленную систему.
 
@@ -731,7 +731,7 @@ Server = http://mirror.example.xyz/archlinux/$repo/os/$arch
 Теперь войдите в новый сеанс командной оболочки, используя корневой каталог установленной системы при помощи [arch-chroot](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Change root (Русский)"):
 
 ```
-# arch-chroot /mnt /bin/bash
+# arch-chroot /mnt
 
 ```
 

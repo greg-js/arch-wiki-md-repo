@@ -108,9 +108,9 @@ fi
 
 #### Manage 2-monitors
 
-[mons](https://aur.archlinux.org/packages/mons/) is a Bash script to quickly manage 2-monitors display (ex: computer, duplicate, extend, projector mode).
+[mons](https://aur.archlinux.org/packages/mons/) is a POSIX-compliant shell script to quickly manage 2-monitors display.
 
-Mostly made for laptops, we may need to manage 2-plugged-in monitors as well as using basic well-known features on a daily basis (for more details, see [mons](https://github.com/Ventto/mons)).
+It provides well-known modes like computer, duplicate, extend and projector mode as well as selecting and positioning one or two monitors among those plugged in (for more details, see [mons](https://github.com/Ventto/mons)).
 
 #### Example 3
 

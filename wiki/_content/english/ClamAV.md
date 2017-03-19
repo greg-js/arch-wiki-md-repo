@@ -140,8 +140,8 @@ ScanOnAccess true
 
 # Set the mount point where to recursively perform the scan,
 # this could be every path or multiple path (one line for path)
-OnAccessMount /usr
-OnAccessMount /home/
+OnAccessMountPath /usr
+OnAccessMountPath /home/
 OnAccessExcludePath /var/log/
 
 # flag fanotify to block any events on monitored files to perform the scan
@@ -151,11 +151,11 @@ OnAccessPrevention false
 OnAccessExtraScanning true
 
 # check the UID from the event of fanotify
-OnAccessExclude UID 0
+OnAccessExcludeUID 0
 
 # action to perform when clamav detects a malicious file
 # it is possibile to specify ad inline command too
-VirusEvents /etc/clamav/detected.zsh
+VirusEvent /etc/clamav/detected.zsh
 
 # WARNING: clamd should run as root
 User root

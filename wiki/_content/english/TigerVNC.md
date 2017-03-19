@@ -146,9 +146,9 @@ After=syslog.target network.target
 Type=simple
 User=foo
 PAMName=login
-PIDFile=/home/foo/.vnc/%H:%i.pid
+PIDFile=/home/foo/.vnc/%H%i.pid
 ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-ExecStart=/usr/bin/vncserver -geometry 1440x900 -alwaysshared -fg %i
+ExecStart=/usr/bin/vncserver %i -geometry 1440x900 -alwaysshared -fg
 ExecStop=/usr/bin/vncserver -kill %i
 
 [Install]

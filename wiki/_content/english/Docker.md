@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Storage driver](#Storage_driver)
-    *   [2.2 Opening remote API](#Opening_remote_API)
+    *   [2.2 Remote API](#Remote_API)
         *   [2.2.1 Remote API with systemd](#Remote_API_with_systemd)
     *   [2.3 Daemon socket configuration](#Daemon_socket_configuration)
     *   [2.4 Proxies](#Proxies)
@@ -74,11 +74,11 @@ $ newgrp docker
 
 ### Storage driver
 
-Storage driver, a.k.a. graph driver has huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The default, most compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
+The docker storage driver (or graph driver) has huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
 
 As Arch linux ships new kernels, there's no point using the compatibility option. A good, modern choice is `overlay2`.
 
-To see current storage driver, run `# docker info | head`.
+To see current storage driver, run `# docker info | head`, modern docker installation should already use `overlay2` by default.
 
 To set your own choice of storage driver, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") and use `-s` option to `dockerd`:
 
@@ -93,12 +93,12 @@ Recall that `ExecStart=` line is needed to drop inherited `ExecStart`.
 
 Further information on options is available on the [user guide](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/).
 
-### Opening remote API
+### Remote API
 
 To open the Remote API to port `4243` manually, run:
 
 ```
- # docker daemon -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+# docker daemon -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 ```
 
