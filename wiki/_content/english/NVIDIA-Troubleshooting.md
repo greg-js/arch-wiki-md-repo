@@ -1,6 +1,6 @@
 ## Contents
 
-*   [1 Wayland (gdm) crashes after nvidia-libgl installation](#Wayland_.28gdm.29_crashes_after_nvidia-libgl_installation)
+*   [1 Wayland (gdm) crashes after installation](#Wayland_.28gdm.29_crashes_after_installation)
 *   [2 Corrupted screen: "Six screens" Problem](#Corrupted_screen:_.22Six_screens.22_Problem)
 *   [3 '/dev/nvidia0' input/output error](#.27.2Fdev.2Fnvidia0.27_input.2Foutput_error)
 *   [4 Crashing in general](#Crashing_in_general)
@@ -26,7 +26,7 @@
     *   [22.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
 *   [23 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
 
-## Wayland (gdm) crashes after nvidia-libgl installation
+## Wayland (gdm) crashes after installation
 
 On some Intel CPUs outdated microcode causes instability with Wayland when nvidia are installed, causing gdm to crash.
 
@@ -189,7 +189,7 @@ If you have installed an update of Nvidia and your screen stays black after laun
 
 *   You can also try to add the `nvidia` module directly to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file.
 
-*   If the screen still stays black with **both** the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") and the `nvidia` module directly in the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file, try re-installing [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) in that order, and finally reload the driver:
+*   If the screen still stays black with **both** the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") and the `nvidia` module directly in the [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file, try re-installing [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) in that order, and finally reload the driver:
 
 ```
 # modprobe nvidia

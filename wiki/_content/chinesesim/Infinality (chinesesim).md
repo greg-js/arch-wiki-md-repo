@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Font configuration (简体中文)](/index.php?title=Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&redirect=no "Font configuration (简体中文)")
+*   [Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)")

@@ -60,11 +60,11 @@ Configure the following `makepkg.conf` variables if needed:
 
 ### Signature checking
 
+**Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, instead relying on the user's keyring.[[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
+
 If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, *makepkg* automatically attempts to [verify](/index.php/GnuPG#Verify_a_signature "GnuPG") it. In case the user's keyring does not contain the needed public key for signature verification, *makepkg* will abort the installation with a message that the PGP key could not be verified.
 
-If a needed public key is missing, or if you want to add public keys by other developers, you can [import](/index.php/GnuPG#Import_a_public_key "GnuPG") it manually, or you can find it [on a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") and import it from there. The [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") may contain a [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") entry with the required key IDs.
-
-**Note:** The signature checking implemented in *makepkg* does not use pacman's keyring, instead relying on the user's keyring. [[1]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)
+If a needed public key for a package is missing, the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") will most likely contain a [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") entry with the required key IDs. You can [import](/index.php/GnuPG#Import_a_public_key "GnuPG") it manually, or you can find it [on a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") and import it from there.
 
 ## Usage
 

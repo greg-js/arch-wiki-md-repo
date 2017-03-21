@@ -178,7 +178,6 @@ You need to make sure that SDDM user have permissions to read those files.
 ```
 $ setfacl -m u:sddm:x /home/username
 $ setfacl -m u:sddm:r /home/username/.face.icon
-$ setfacl -m u:sddm:r /home/username/.face
 
 ```
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Mac](/index.php?title=Mac&redirect=no "Mac")
+*   [Mac](/index.php/Mac "Mac")

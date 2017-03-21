@@ -19,7 +19,7 @@
 
 ### Установка
 
-Если вы хотите использовать Zabbix server с [MariaDB](/index.php/MariaDB "MariaDB"), установите [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) из [AUR](/index.php/AUR "AUR"). Для использования с [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), вам следует использовать [zabbix-server](https://aur.archlinux.org/packages/zabbix-server/). Также вам необходимо выбрать веб-сервер с поддержкой PHP, например:
+Если вы хотите использовать Zabbix server с [MariaDB](/index.php/MariaDB "MariaDB"), установите [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) из [AUR](/index.php/AUR "AUR"). Для использования с [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), вам следует использовать [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). Также вам необходимо выбрать веб-сервер с поддержкой PHP, например:
 
 *   [Apache](/index.php/LAMP "LAMP")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
@@ -75,7 +75,7 @@ $ mysql -u zabbix -p zabbix < /etc/zabbix/database/data.sql
 
 ### Установка
 
-Серверный пакет уже содержит клиент (агент) Zabbix, но вы можете установить его отдельно с пакетом [zabbix-agent](https://aur.archlinux.org/packages/zabbix-agent/), если вам не нужен сервер.
+Серверный пакет уже содержит клиент (агент) Zabbix, но вы можете установить его отдельно с пакетом [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent), если вам не нужен сервер.
 
 ### Настройка
 

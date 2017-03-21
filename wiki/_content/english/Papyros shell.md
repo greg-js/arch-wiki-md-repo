@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Liri](/index.php?title=Liri&redirect=no "Liri")
+*   [Liri](/index.php/Liri "Liri")

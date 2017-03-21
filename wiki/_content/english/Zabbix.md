@@ -19,7 +19,7 @@
 
 ### Installation
 
-If you want to use the Zabbix server with [MariaDB](/index.php/MariaDB "MariaDB"), install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) from the [AUR](/index.php/AUR "AUR"). For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend, you should use [zabbix-server](https://aur.archlinux.org/packages/zabbix-server/). You also have to choose a web server with PHP support, e.g.:
+If you want to use the Zabbix server with [MariaDB](/index.php/MariaDB "MariaDB"), install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) from the [AUR](/index.php/AUR "AUR"). For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend, you should use [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). You also have to choose a web server with PHP support, e.g.:
 
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
@@ -95,7 +95,7 @@ See appendix for a link to the official documentation, which explains all furthe
 
 ### Installation
 
-Currently, the server package already includes [zabbix-agent](https://aur.archlinux.org/packages/zabbix-agent/), so you do not have to install this package on your monitoring server. However, for monitoring targets, the client part is more minimal, standalone and easy to deploy, just install [zabbix-agent](https://aur.archlinux.org/packages/zabbix-agent/).
+Currently, the server package already includes [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent), so you do not have to install this package on your monitoring server. However, for monitoring targets, the client part is more minimal, standalone and easy to deploy, just install [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent).
 
 ### Configuration
 

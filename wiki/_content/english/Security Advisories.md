@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Archive](/index.php?title=ArchWiki:Archive&redirect=no "ArchWiki:Archive")
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

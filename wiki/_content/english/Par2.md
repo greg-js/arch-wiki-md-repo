@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Parchive](/index.php?title=Parchive&redirect=no "Parchive")
+*   [Parchive](/index.php/Parchive "Parchive")

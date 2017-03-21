@@ -506,6 +506,14 @@ iptables -A UDP -p udp --dport 57621 -j ACCEPT -m comment --comment spotify
 
 It is also possible to restrict the source and destination to the local network.
 
+If you are using Spotify Connect to play music on a wireless speaker or AVR, your firewall needs to be configured for Spotify's mDNS lookup of those. Sadly, it uses a random unprivileged port [[3]](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Spotify-Connect-and-iptables-netfilter/td-p/1235049) which makes these firewall rules rather nasty. Fortunately, you can restrict the rules to source port 1900 or 5353.
+
+```
+iptables -A UDP -p udp --sport 1900 --dport 1025:65535 -j ACCEPT -m comment --comment spotify
+iptables -A UDP -p udp --sport 5353 --dport 1025:65535 -j ACCEPT -m comment --comment spotify
+
+```
+
 ### Search Bar text is invisible when using a dark theme
 
 The text in the search bar appears to be hardcoded to be white, making it invisible when using a dark Qt theme. To fix this, you'll need to make an override.

@@ -2,8 +2,9 @@ This is the main article on the internationalization of an Arch Linux installati
 
 The article makes use of subpages for instructions specific for languages:
 
-| [Internationalization/Indic](/index.php/Internationalization/Indic "Internationalization/Indic") | [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese") | [Internationalization/Korean](/index.php/Internationalization/Korean "Internationalization/Korean") |
-| [Internationalization/Korean (한국어)](/index.php/Internationalization/Korean_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Internationalization/Korean (한국어)") |
+*   [Internationalization/Indic](/index.php/Internationalization/Indic "Internationalization/Indic")
+
+*   [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")*   [Internationalization/Korean](/index.php/Internationalization/Korean "Internationalization/Korean")*   [Internationalization/Korean (한국어)](/index.php/Internationalization/Korean_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Internationalization/Korean (한국어)")
 
 ## Contents
 

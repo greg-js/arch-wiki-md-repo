@@ -179,7 +179,7 @@ $ setxkbmap -option keypad:pointerkeys
 
 ```
 
-**Warning:** Be aware that both [xmodmap](/index.php/Xmodmap "Xmodmap") and `setxkbmap` resets each other on mixed usage.
+If you use a [xmodmap](/index.php/Xmodmap "Xmodmap") configuration, be aware *setxkbmap* resets it.
 
 To enable Mouse keys permanently, add
 

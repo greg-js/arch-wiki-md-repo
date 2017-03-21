@@ -1,4 +1,4 @@
-引自 [维基百科](https://wiki.archlinux.org/index.php/Wikipedia:Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "zh-cn:Wikipedia:Steam"):
+引自 [维基百科](/index.php?title=Zh-cn:Wikipedia:Steam&action=edit&redlink=1 "Zh-cn:Wikipedia:Steam (page does not exist)"):
 
 	*Steam是美国维尔福于2003年9月12日推出的电子软件分发、数字版权管理及社交系统，它用于数字软件及游戏的发布销售与后续更新，支持Windows、Mac OS和Linux等操作系统，目前是全球最大的数字游戏平台。*
 

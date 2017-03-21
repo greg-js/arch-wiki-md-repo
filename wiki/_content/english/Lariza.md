@@ -13,9 +13,10 @@
     *   [2.5 Disabling JavaScript](#Disabling_JavaScript)
     *   [2.6 Adblock support](#Adblock_support)
 *   [3 Using lariza](#Using_lariza)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 lariza + tabbed freezes with certain key combinations](#lariza_.2B_tabbed_freezes_with_certain_key_combinations)
-*   [5 See also](#See_also)
+*   [4 Open urls with external applications](#Open_urls_with_external_applications)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 lariza + tabbed freezes with certain key combinations](#lariza_.2B_tabbed_freezes_with_certain_key_combinations)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -164,6 +165,31 @@ bind[lariza] = Mod+l
 ```
 
 For complete documentation, review the latest README and man pages available on the [lariza GitHub project page](https://github.com/vain/lariza).
+
+## Open urls with external applications
+
+With newer versions of lariza, page url or selected url can be sent to an executable lariza-external-handler. This can be used to open youtube video with mpv/youtube-dl or opening magnet link with your favorite torrent client. To use this feature create script named lariza-external-handler in your path and make it executable. For an example (this script uses dmenu)
+
+```
+ #!/bin/bash
+
+ shopt -s lastpipe
+ ops=(
+   mpv
+   chromium )
+
+ option=$(for i in "${ops[@]}"; do echo "$i"; done |  dmenu -p  "open <u>$url</u> with...")
+
+ [[ ! $option ]] && exit
+
+ case "$option" in
+   mpv) mpv "$2" ;;
+   chromium) chromium "$2" ;;
+   *) $option "$2" ;;
+ esac
+```
+
+To call this script from lariza use key "alt+x", this will send page url to the script as "lariza-external-handler -u $url", or right click on a link and select lariza-external-handler from context menu.
 
 ## Troubleshooting
 

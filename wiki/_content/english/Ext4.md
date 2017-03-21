@@ -338,7 +338,7 @@ The file-system can then be mounted as usual.
 You can check whether the features were successfully enabled by running:
 
 ```
-# dumpe2fs */dev/path/to/disk*
+# dumpe2fs -h */dev/path/to/disk*
 
 ```
 

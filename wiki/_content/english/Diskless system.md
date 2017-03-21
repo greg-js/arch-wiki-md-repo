@@ -69,7 +69,7 @@ group {
 
 **Note:** `next-server` should be the address of the TFTP server; everything else should be changed to match your network
 
-[RFC 4578](//tools.ietf.org/html/rfc4578) defines the "Client System Architecture Type" dhcp option. In the above configuration, if the PXE client requests an x86_64-efi binary (type 0x7), we appropriately give them one, otherwise falling back to the legacy binary. This allows both UEFI and legacy BIOS clients to boot simultaneously on the same network segment.
+RFC 4578 defines the "Client System Architecture Type" dhcp option. In the above configuration, if the PXE client requests an x86_64-efi binary (type 0x7), we appropriately give them one, otherwise falling back to the legacy binary. This allows both UEFI and legacy BIOS clients to boot simultaneously on the same network segment.
 
 Start ISC DHCP [systemd](/index.php/Systemd "Systemd") service.
 

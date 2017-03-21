@@ -291,7 +291,7 @@ If a *domU* should be started on boot, create a symlink to the configuration fil
 
 ## Configuring a hardware virtualized (HVM) Arch domU
 
-In order to use HVM *domU* install the [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) and [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs) packages.
+In order to use HVM *domU* install the [mesa](https://www.archlinux.org/packages/?name=mesa) and [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs) packages.
 
 A minimal configuration file for a HVM Arch *domU* is:
 

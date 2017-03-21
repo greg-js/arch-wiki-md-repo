@@ -26,7 +26,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [2.9 Add or edit GDM sessions](#Add_or_edit_GDM_sessions)
     *   [2.10 Enable root login in GDM](#Enable_root_login_in_GDM)
     *   [2.11 Hide user from login list](#Hide_user_from_login_list)
-    *   [2.12 Rotate login screen](#Rotate_login_screen)
+    *   [2.12 Setup default monitor settings](#Setup_default_monitor_settings)
     *   [2.13 xrandr at login](#xrandr_at_login)
     *   [2.14 Configure X server access permission](#Configure_X_server_access_permission)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -468,7 +468,9 @@ The users for the gdm user list are gathered by [AccountsService](https://www.fr
 SystemAccount=true
 ```
 
-### Rotate login screen
+### Setup default monitor settings
+
+Some [desktop environments](/index.php/Desktop_environments "Desktop environments") store display settings in `~/.config/monitors.xml`. *xrandr* commands are then generated on the base of the file content. GDM has a similar file stored in `/var/lib/gdm/.config/monitors.xml`.
 
 If you have your monitors setup as you like (orientation, primary and so on) in `~/.config/monitors.xml` and want GDM to honor those settings:
 

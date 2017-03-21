@@ -1,4 +1,4 @@
-*oidentd* is an [ident](https://en.wikipedia.org/wiki/Ident_protocol "wikipedia:Ident protocol") ([RFC 1413](//tools.ietf.org/html/rfc1413) compliant) daemon that runs on Linux, Darwin, FreeBSD, OpenBSD, NetBSD and Solaris. *oidentd* can handle IP masqueraded/NAT connections on Linux, Darwin, FreeBSD (ipf only), OpenBSD and NetBSD. *oidentd* has a flexible mechanism for specifying ident responses. Users can be granted permission to specify their own ident responses. Responses can be specified according to host and port pairs.
+*oidentd* is an [ident](https://en.wikipedia.org/wiki/Ident_protocol "wikipedia:Ident protocol") (RFC 1413 compliant) daemon that runs on Linux, Darwin, FreeBSD, OpenBSD, NetBSD and Solaris. *oidentd* can handle IP masqueraded/NAT connections on Linux, Darwin, FreeBSD (ipf only), OpenBSD and NetBSD. *oidentd* has a flexible mechanism for specifying ident responses. Users can be granted permission to specify their own ident responses. Responses can be specified according to host and port pairs.
 
 ## Contents
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [General troubleshooting#Console messages](/index.php?title=General_troubleshooting&redirect=no#Console_messages "General troubleshooting")
+*   [General troubleshooting#Console messages](/index.php/General_troubleshooting#Console_messages "General troubleshooting")

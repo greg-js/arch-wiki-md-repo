@@ -60,7 +60,7 @@
 
 该部分仅适用于 [linux](https://www.archlinux.org/packages/?name=linux) 内核包，定制内核请[略过](#.E5.A4.87.E7.94.A8.E5.AE.89.E8.A3.85.EF.BC.9A.E5.AE.9A.E5.88.B6.E5.86.85.E6.A0.B8)该小节。
 
-**小贴士:** 您最好是使用ArchLinux的[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")来安装驱动，而不是直接到[英伟达官网](http://www.nvidia.cn)去下载驱动，因为这样会在更新系统时同时更新。
+**提示：** 您最好是使用ArchLinux的[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")来安装驱动，而不是直接到[英伟达官网](http://www.nvidia.cn)去下载驱动，因为这样会在更新系统时同时更新。
 
 1.访问 NVIDIA [中文驱动下载页面](http://www.nvidia.cn/Download/index.aspx?lang=cn)来找到给定显卡的合适驱动。也可以检查[老显卡列表](http://www.nvidia.com/object/IO_32667.html).
 
@@ -192,7 +192,7 @@ EndSection
 
 ```
 
-**小贴士:** 假如您已经预先安装了开源驱动nouveau，请确定已经从`/etc/mkinitcpio.conf`里面去除"nouveau"。您也可以通过使用[这些脚本](#.E5.9C.A8nvidia.E5.92.8Cnouveau.E4.B9.8B.E9.97.B4.E5.88.87.E6.8D.A2)来在开源和闭源驱动之间进行切换。
+**提示：** 假如您已经预先安装了开源驱动nouveau，请确定已经从`/etc/mkinitcpio.conf`里面去除"nouveau"。您也可以通过使用[这些脚本](#.E5.9C.A8nvidia.E5.92.8Cnouveau.E4.B9.8B.E9.97.B4.E5.88.87.E6.8D.A2)来在开源和闭源驱动之间进行切换。
 
 ### 多台显示器
 
@@ -293,7 +293,7 @@ $ nvidia-settings -a InitialPixmapPlacement=2
 
 This is documented in [nvidia-settings source code](http://cgit.freedesktop.org/~aplattner/nvidia-settings/tree/src/libXNVCtrl/NVCtrl.h?id=b27db3d10d58b821e87fbe3f46166e02dc589855#n2797). For this setting to persist, this command needs to be run on every startup or added to your `~/.nvidia-settings-rc`.
 
-**小贴士:** 在极少数情况下`~/.nvidia-settings-rc`可能会出现问题。若真如此，Xorg服务器可能会崩溃，并且需要删除这个文件来解决问题。
+**提示：** 在极少数情况下`~/.nvidia-settings-rc`可能会出现问题。若真如此，Xorg服务器可能会崩溃，并且需要删除这个文件来解决问题。
 
 *   请到[NVIDIA Accelerated Linux Graphics Driver README and Installation Guide](http://us.download.nvidia.com/XFree86/Linux-x86_64/256.53/README/index.html)查看一些额外的细节和选项。
 

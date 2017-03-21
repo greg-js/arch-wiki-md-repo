@@ -50,7 +50,7 @@
 
 ### Установка zabbix-server
 
-Загрузите и распакуйте архив, содержащий необходимые файлы для сборки [zabbix-server](https://aur.archlinux.org/packages/zabbix-server/) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
+Загрузите и распакуйте архив, содержащий необходимые файлы для сборки [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
 
 Измените строку в файле `PKGBUILD`:
 
@@ -78,7 +78,7 @@ $ makepkg -s
 
 ```
 
-Установите [zabbix-server](https://aur.archlinux.org/packages/zabbix-server/):
+Установите [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server):
 
 ```
 $ sudo pacman -U zabbix-server-2.0.5-1-x86_64.pkg.tar.xz
@@ -698,7 +698,7 @@ $ sudo systemctl enable nginx.service
 
 ### Установка zabbix-agent
 
-Установите [zabbix-agent](https://aur.archlinux.org/packages/zabbix-agent/) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
+Установите [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
 
 ### Проверка значений параметров в файле /etc/zabbix/zabbix_agentd.conf
 

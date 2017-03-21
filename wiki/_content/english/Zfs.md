@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ZFS](/index.php?title=ZFS&redirect=no "ZFS")
+*   [ZFS](/index.php/ZFS "ZFS")

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Pacman#Hooks](/index.php?title=Pacman&redirect=no#Hooks "Pacman")
+*   [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")

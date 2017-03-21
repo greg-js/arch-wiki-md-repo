@@ -7,8 +7,7 @@ From [MATE homepage](http://mate-desktop.org/):
 *   [1 MATE applications](#MATE_applications)
 *   [2 Installation](#Installation)
     *   [2.1 Additional MATE packages](#Additional_MATE_packages)
-    *   [2.2 GTK+ 3 version](#GTK.2B_3_version)
-    *   [2.3 MATE unstable](#MATE_unstable)
+    *   [2.2 MATE unstable](#MATE_unstable)
 *   [3 Starting MATE](#Starting_MATE)
 *   [4 Configuration](#Configuration)
     *   [4.1 Accessibility](#Accessibility)
@@ -36,8 +35,7 @@ From [MATE homepage](http://mate-desktop.org/):
     *   [6.4 Use of gradient backgrounds with LightDM](#Use_of_gradient_backgrounds_with_LightDM)
     *   [6.5 Enabling panel shadow](#Enabling_panel_shadow)
     *   [6.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
-    *   [6.7 MATE Screensaver background cannot be changed](#MATE_Screensaver_background_cannot_be_changed)
-    *   [6.8 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
+    *   [6.7 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
 *   [7 See also](#See_also)
 
 ## MATE applications
@@ -97,10 +95,6 @@ There are a number of other unofficial MATE applications that are contributed to
 	[https://github.com/solus-project/brisk-menu](https://github.com/solus-project/brisk-menu) || [brisk-menu](https://aur.archlinux.org/packages/brisk-menu/)
 
 Additional packages need to be installed to take advantage of some of Caja's advanced features - see [File manager functionality](/index.php/File_manager_functionality "File manager functionality").
-
-### GTK+ 3 version
-
-An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/) and [mate-extra-gtk3](https://www.archlinux.org/groups/x86_64/mate-extra-gtk3/) groups. While it works mostly, there are few known issues with [caja](https://github.com/mate-desktop/caja/milestones/Gtk+3), [eom](https://github.com/mate-desktop/eom/milestones/Gtk+3), [marco](https://github.com/mate-desktop/marco/milestones/Gtk+3), [mate-control-center](https://github.com/mate-desktop/mate-control-center/milestones/Gtk+3), [mate-netbook](https://github.com/mate-desktop/mate-netbook/milestones/Gtk+3), [mate-notification-daemon](https://github.com/mate-desktop/mate-notification-daemon/milestones/Gtk+3), [mate-panel](https://github.com/mate-desktop/mate-panel/milestones/Gtk+3) and [pluma](https://github.com/mate-desktop/pluma/milestones/Gtk+3).
 
 ### MATE unstable
 
@@ -410,43 +404,6 @@ If this has no effect, increase the delay duration.
 A feature of the MATE panel window list is that windows can be scrolled through using the mouse or touchpad. This feature may be troublesome for some as there is potential for accidental, unintended scrolling through windows.
 
 Whilst there is no way of disabling this feature through MATE's settings, this feature can be disabled by patching [libwnck](https://www.archlinux.org/packages/?name=libwnck) using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"); in this case, rebuild libwnck with the following [patch](http://pastebin.com/raw.php?i=Bj0AnH1c). For more information on rebuilding packages with patches applied, see [Patching in ABS#Applying patches](/index.php/Patching_in_ABS#Applying_patches "Patching in ABS").
-
-### MATE Screensaver background cannot be changed
-
-**Note:** This issue has been fixed upstream as of version 1.17.1\. [[3]](https://github.com/mate-desktop/mate-screensaver/commit/b2f48abf744a58f63cff97219e31532d361eb27f)
-
-Due to a [bug](https://github.com/mate-desktop/mate-screensaver/issues/55) in MATE Screensaver, it is only possible to change the MATE Screensaver background by changing the default background image using a gsettings override. The full list of configuration options can be found in `/usr/share/glib-2.0/schemas/org.mate.background.gschema.xml`, they are overridden by creating the file `/usr/share/glib-2.0/schemas/mate-background.gschema.override`.
-
-**Note:** The values on the right must be enclosed in single quotes ('') otherwise an error will occur during re-compile.
-
-Example #1: Change the background image of the lock screen:
-
- `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
-```
-[org.mate.background]
-picture-filename='/path/to/the/background.jpg'
-```
-
-Example #2: Change the lock screen to use a gradient:
-
- `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
-```
-[org.mate.background]
-color-shading-type='vertical-gradient'
-picture-options='scaled'
-picture-filename=''
-primary-color='#152233'
-secondary-color='#000000'
-```
-
-Re-compile the schemas:
-
-```
-# glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-```
-
-Finally, restart your X session for the change to effect.
 
 ### Logout/shutdown delayed by at-spi-registryd
 

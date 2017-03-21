@@ -23,8 +23,8 @@ Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása
     *   [3.5 Terminál emulátorok](#Termin.C3.A1l_emul.C3.A1torok)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Advanced window navigation](#Advanced_window_navigation)
-    *   [4.2 Jump to open window](#Jump_to_open_window)
-    *   [4.3 Jump to urgent window](#Jump_to_urgent_window)
+    *   [4.2 Megnyitott ablakra ugrás](#Megnyitott_ablakra_ugr.C3.A1s)
+    *   [4.3 Ugrás sürgős ablakra](#Ugr.C3.A1s_s.C3.BCrg.C5.91s_ablakra)
     *   [4.4 Save and restore the window layout](#Save_and_restore_the_window_layout)
         *   [4.4.1 Save the current window layout of a single workspace](#Save_the_current_window_layout_of_a_single_workspace)
         *   [4.4.2 Restore the window layout of the workspace](#Restore_the_window_layout_of_the_workspace)
@@ -83,7 +83,7 @@ Az i3-ban a parancsok egy úgynevezett módosító billentyűvel hajthatók vég
 
 Lásd az [i3 referencia kártyát](http://i3wm.org/docs/refcard.html) és az [i3 használatát](http://i3wm.org/docs/userguide.html#_using_i3) az alapértelmezett értékekért. Lásd a [billentyű hozzárendeléseket](http://i3wm.org/docs/userguide.html#keybindings) új gyorsbillentyűk hozzáadásához.
 
-A nem Querty billentyűzetet használók hasznosnak találhatják a "beállítás varázslót", [lásd lejjebb](#Konfigur.C3.A1ci.C3.B3_var.C3.A1zsl.C3.B3_.C3.A9s_alternat.C3.ADv_billenty.C5.B1zetkioszt.C3.A1sok).
+A nem Querty billentyűzetet használók előnyben részesíthetik a "beállítás varázsló" megkerülését, [lásd lejjebb](#Konfigur.C3.A1ci.C3.B3_var.C3.A1zsl.C3.B3_.C3.A9s_alternat.C3.ADv_billenty.C5.B1zetkioszt.C3.A1sok).
 
 ### Tárolók
 
@@ -284,29 +284,29 @@ Esetleg beállíthatod a `$TERMINAL` [környezeti változót](/index.php/Environ
 
 ### Advanced window navigation
 
-See [i3 window Navigation Tips](http://www.slackword.net/?p=657).
+Lásd: [i3 ablak navigációs trükkök](http://www.slackword.net/?p=657).
 
-### Jump to open window
+### Megnyitott ablakra ugrás
 
-*   **quickswitch-i3** — Python utility to quickly change to and locate windows in i3
+*   **quickswitch-i3** — Python kellék az ablakok gyors változtatásához, és elhelyezéséhez.
 
 	[https://github.com/proxypoke/quickswitch-for-i3](https://github.com/proxypoke/quickswitch-for-i3) || [quickswitch-i3](https://aur.archlinux.org/packages/quickswitch-i3/)
 
-*   **i3-wm-scripts** — search for and jump to windows with particular names matching regexp
+*   **i3-wm-scripts** — Ablakra ugrás, melynek címe részlegesen egyezik a megadott reguláris kifejezéssel.
 
 	[https://github.com/yiuin/i3-wm-scripts](https://github.com/yiuin/i3-wm-scripts) ||
 
-*   **winmenupy** — Launches dmenu with a list of clients, sorted after workspaces. Selecting a client jumps to that window.
+*   **winmenupy** — Dmenu indítása a kliensek munkaterületek szerinti listájával. Egy kliens kiválasztásakor annak ablakára ugrik.
 
 	[https://github.com/ziberna/i3-py/blob/master/examples/winmenu.py](https://github.com/ziberna/i3-py/blob/master/examples/winmenu.py) ||
 
-*   **[rofi](/index.php/Rofi "Rofi")** — Search and jump to open and scratchpad window
+*   **[rofi](/index.php/Rofi "Rofi")** — Megnyitott és scratchpad ablakok keresése, és ugrás a kiválasztott ablakra.
 
 	[https://davedavenport.github.io/rofi/](https://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 
-### Jump to urgent window
+### Ugrás sürgős ablakra
 
-Add to `.i3/config`: [[1]](https://faq.i3wm.org/question/853/how-to-jump-to-urgent-workspace/)
+Add hozzá az `.i3/config`-hoz: [[1]](https://faq.i3wm.org/question/853/how-to-jump-to-urgent-workspace/)
 
 ```
 bindsym $mod+x [urgent=latest] focus
@@ -380,17 +380,17 @@ And finally, the layout of worskpace N can be loaded onto to workspace M by runn
 
 ### Scratchpad containers
 
-By default, [scratchpads](http://i3wm.org/docs/userguide.html#_scratchpad) only contain a single window. However, containers can also be made a scratchpad.
+Alapértelmezésben a [scratchpad](http://i3wm.org/docs/userguide.html#_scratchpad) csak egy ablakot tartalmaz. Azonban a scratchpad-re konténerek is mozgathatóak.
 
-Create a new container (for example, `Mod+Enter`), split it (`Mod+v`) and create another container. Focus the parent (`Mod+a`), split in the opposite direction (`Mod+h`), and create again.
+Hozz létre egy új konténert (például, `Mod+Enter`), vágd ketté (`Mod+v`) és hozz létre egy másik konténert. Fókuszálj az egy szinttel feljebb lévőre (`Mod+a`), oszd ketté az ellenkező irányban (`Mod+h`), és hozz létre mégegyet.
 
-Focus the first container (with focus parent as needed), make the window floating (`Mod+Shift+Space`), and move it to the scratchpad (`Mod+Shift+-`). You can now split containers to preference.
+Fókuszálj az első konténerre (ha kell, az egy szinttel feljebbire), tedd az ablakot lebegő módba (`Mod+Shift+Space`), és mozgasd a scratchpad-re (`Mod+Shift+-`). Most tetszés szerint oszthatod a konténereket.
 
-**Note:** Containers cannot be resized individually in floating windows. Resize the containers before making windows floating.
+**Note:** A konténerek nem egyénileg átméretezhetőek lebegő ablakokban. Méretezd át a konténert, mielőtt lebegő módba teszed.
 
-**Tip:** When only using terminal applications, consider a multiplexer such as [tmux](/index.php/Tmux "Tmux") instead.
+**Tip:** Terminálos alkalmazások használatakor ehelyett használj egy terminál többszörözőt, mint a [tmux](/index.php/Tmux "Tmux").
 
-See also [[2]](https://faq.i3wm.org/question/138/multiple-scratchpad/i3) for multiple scratchpads.
+Lásd: [[2]](https://faq.i3wm.org/question/138/multiple-scratchpad/i3) több scratchpad ablak.
 
 ### Screensaver and power management
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Active Directory Integration](/index.php?title=Active_Directory_Integration&redirect=no "Active Directory Integration")
+*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")

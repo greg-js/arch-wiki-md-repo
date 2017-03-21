@@ -11,7 +11,6 @@
         *   [2.1.3 client.conf](#client.conf)
     *   [2.2 Configuration command](#Configuration_command)
 *   [3 Running](#Running)
-    *   [3.1 Starting manually](#Starting_manually)
 *   [4 Back-end configuration](#Back-end_configuration)
     *   [4.1 ALSA](#ALSA)
         *   [4.1.1 Expose PulseAudio sources, sinks and mixers to ALSA](#Expose_PulseAudio_sources.2C_sinks_and_mixers_to_ALSA)
@@ -56,7 +55,6 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 *   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf): GConf support (paprefs)
 *   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): JACK sink, source and jackdbus detection
 *   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): Infrared (LIRC) volume control
-*   [pulseaudio-xen](https://www.archlinux.org/packages/?name=pulseaudio-xen): Xen paravirtual sink
 *   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf (Avahi/DNS-SD) support
 
 **Note:** Some confusion can be made between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes both Linux kernel component with sound card drivers, and a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
@@ -141,7 +139,7 @@ Of course, when configuring some variation of Surround Sound in PulseAudio, the 
 
 ## Running
 
-Since [version 7.0](http://www.freedesktop.org/wiki/Software/PulseAudio/Notes/7.0/), PulseAudio on Arch uses socket activation. [By default](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/pulseaudio&id=419bd740dc8), `pulseaudio.socket` is enabled for the [systemd/User](/index.php/Systemd/User "Systemd/User") instance.
+PulseAudio on Arch has `pulseaudio.socket` enabled by default for the [systemd/User](/index.php/Systemd/User "Systemd/User") instance. This means that PulseAudio will automatically start when needed.
 
 **Note:**
 
@@ -149,22 +147,6 @@ Since [version 7.0](http://www.freedesktop.org/wiki/Software/PulseAudio/Notes/7.
 *   Many [desktop environments](/index.php/Desktop_environments "Desktop environments") autostart programs based on [desktop files](/index.php/Desktop_entries#Autostart "Desktop entries") in the `/etc/xdg/autostart/` directory. In this case, PulseAudio will be launched automatically regardless of the socket activation status.
 
 For more information, see [PulseAudio: Running](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Running/).
-
-### Starting manually
-
-PulseAudio can be manually started with:
-
-```
-$ systemctl start --user pulseaudio
-
-```
-
-And stopped with:
-
-```
-$ systemctl stop --user pulseaudio
-
-```
 
 ## Back-end configuration
 

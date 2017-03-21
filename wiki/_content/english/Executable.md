@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Help:Reading#Make executable](/index.php?title=Help:Reading&redirect=no#Make_executable "Help:Reading")
+*   [Help:Reading#Make executable](/index.php/Help:Reading#Make_executable "Help:Reading")

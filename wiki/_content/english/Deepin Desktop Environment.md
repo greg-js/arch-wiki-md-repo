@@ -7,9 +7,8 @@
     *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
     *   [2.2 Using xinitrc](#Using_xinitrc)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Does not start](#Does_not_start)
-    *   [3.2 No background after resuming from standby](#No_background_after_resuming_from_standby)
-    *   [3.3 Open in terminal not work in deepin-file-manager](#Open_in_terminal_not_work_in_deepin-file-manager)
+    *   [3.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
+    *   [3.2 Open in terminal not work in deepin-file-manager](#Open_in_terminal_not_work_in_deepin-file-manager)
 *   [4 Bug Reporting](#Bug_Reporting)
 
 ## Installation
@@ -48,10 +47,6 @@ Execute `startx` or `xinit` to start DDE.
 **Note:** If you want to start Xorg at boot, please read the [Start X at login](/index.php/Start_X_at_login "Start X at login") article.
 
 ## Troubleshooting
-
-### Does not start
-
-Type `startdde` in virtual console and see the output. If you see error with file mentioned `libgo.so.9` - ensure you have installed **the latest** [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) package.
 
 ### No background after resuming from standby
 

@@ -58,7 +58,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BISO有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。
 
-**提示:** 不要安装下列任何软件包，请跳至后文以寻求帮助。
+**提示：** 不要安装下列任何软件包，请跳至后文以寻求帮助。
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - 提供守护进程以及程序的主要安装包。
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (或 [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) - 当未使用时禁用NVIDIA独立显卡。
@@ -97,7 +97,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 并 [启用](/index.php/Enable "Enable") `bumblebeed.service`.重启系统并使用 `[optirun](#Usage)` 开启 Optimus NVIDIA 渲染。
 
-**提示:** 如果你想改善Bumblebee性能的话，请跳至[speed optimization](/index.php/Bumblebee#Optimizing_speed "Bumblebee").
+**提示：** 如果你想改善Bumblebee性能的话，请跳至[speed optimization](/index.php/Bumblebee#Optimizing_speed "Bumblebee").
 
 ### 为 Intel/Nouveau 安装 Bumblebee
 
@@ -244,7 +244,7 @@ $ primusrun glxgears
 
 ```
 
-**提示:** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun mouse delay/disable VSYNC](/index.php/Bumblebee#Primusrun_mouse_delay.2Fdisable_VSYNC "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
+**提示：** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun mouse delay/disable VSYNC](/index.php/Bumblebee#Primusrun_mouse_delay.2Fdisable_VSYNC "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
 
 ### 电源管理
 

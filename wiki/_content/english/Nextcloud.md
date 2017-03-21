@@ -800,9 +800,6 @@ location ^~ /owncloud {
   # This module is currently not supported.
   #pagespeed off;
 
-  error_page 403 /owncloud/core/templates/403.php;
-  error_page 404 /owncloud/core/templates/404.php;
-
   location /owncloud {
     rewrite ^ /owncloud/index.php$uri;
   }

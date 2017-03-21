@@ -95,7 +95,7 @@ radeon模块应该在启动时被正常载入.
 
 ### 早启动 KMS
 
-**小贴士:** 若分辨率有问题,试试[强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F "Kernel mode setting (简体中文)")也许可以解决.
+**提示：** 若分辨率有问题,试试[强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F "Kernel mode setting (简体中文)")也许可以解决.
 
 现在 radeon 支持并需要[内核级显示模式设置](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)") (KMS)。KMS 默认启用。
 
@@ -183,11 +183,11 @@ EndSection
 
 ```
 
-**小贴士:** [driconf](https://www.archlinux.org/packages/?name=driconf) 是一个可以修改诸多设置的小工具，如 vsync, anisotropic filtering, texture compression 等。它还有一些程序（比如Goole Earth）需要的"disable Low Impact fallback"功能。
+**提示：** [driconf](https://www.archlinux.org/packages/?name=driconf) 是一个可以修改诸多设置的小工具，如 vsync, anisotropic filtering, texture compression 等。它还有一些程序（比如Goole Earth）需要的"disable Low Impact fallback"功能。
 
 ### 内核参数
 
-**小贴士:** 你也许想用 `systool` 来调试新的参数，参见[这里](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.A6.82.E8.A7.88 "Kernel modules (简体中文)")。
+**提示：** 你也许想用 `systool` 来调试新的参数，参见[这里](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.A6.82.E8.A7.88 "Kernel modules (简体中文)")。
 
 这些[内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")可能会有用：`radeon.bapm=1` [[1]](https://www.phoronix.com/scan.php?page=news_item&px=MTczMzI), `radeon.disp_priority=2` [[2]](http://lists.freedesktop.org/pipermail/xorg/2013-February/055477.html), `radeon.hw_i2c=1` [[3]](https://superuser.com/questions/723760/does-radeon-hw-i2c-1-has-any-thing-to-do-with-temperature-readings), `radeon.mst=1` [[4]](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.1-Radeon-DP-MST), `radeon.msi=1` (强制启用 MSI 支持), `radeon.audio=0` (强制禁用 GPU 音频) 和/或 `radeon.tv=0` (禁用 TV-out).
 

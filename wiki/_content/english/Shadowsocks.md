@@ -83,7 +83,7 @@ $ sslocal -s *server_address* -p *server_port* -l *local_port* -k *password* -m 
 
 The Shadowsocks client can be controlled with an instance of `shadowsocks@.service`.
 
-For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks@config.service`.
+For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks-libev@config.service`.
 
 #### GUI client
 
@@ -113,7 +113,7 @@ $ ssserver -c /etc/shadowsocks/config.json -d stop
 
 The Shadowsocks server can be controlled with an instance of `shadowsocks-server@.service`.
 
-For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks-server@config.service`.
+For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks-libev-server@config.service`.
 
 To bind Shadowsocks to a privileged port (less than 1024), the server should be started as user root:
 

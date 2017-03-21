@@ -153,14 +153,14 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 **Tip:** Searching for the legacy name of an application in the Shell search bar will successfully return the application in question. For instance, searching for *nautilus* will return *Files*.
 
 | Current | Legacy |
-| [Files](/index.php/Files "Files") | Nautilus |
-| [Web](/index.php/GNOME_Web "GNOME Web") | Epiphany |
+| [Files](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
+| [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Videos | Totem |
 | Main Menu | Alacarte |
 | Document Viewer | Evince |
 | Disk Usage Analyser | Baobab |
 | Image Viewer | EoG (Eye of GNOME) |
-| [Passwords and Keys](/index.php/GNOME_Keyring "GNOME Keyring") | Seahorse |
+| [Passwords and Keys](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
 
 ## Configuration
 

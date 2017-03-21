@@ -1569,7 +1569,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Eye of MATE** — Simple graphics viewer for the MATE desktop.
 
-	[https://github.com/mate-desktop/eom](https://github.com/mate-desktop/eom) || GTK+ 2: [eom](https://www.archlinux.org/packages/?name=eom), GTK+ 3: [eom-gtk3](https://www.archlinux.org/packages/?name=eom-gtk3)
+	[https://github.com/mate-desktop/eom](https://github.com/mate-desktop/eom) || [eom](https://www.archlinux.org/packages/?name=eom)
 
 *   **EyeSight** — Image viewer for the Hawaii desktop environment.
 

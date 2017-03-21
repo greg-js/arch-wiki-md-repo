@@ -137,7 +137,7 @@ Some projects provide only 32bit applications which may require 32bit libraries 
 
 	To show graphics (e.g. Several projects of WCG, Climateprediction)
 
-	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxdamage](https://www.archlinux.org/packages/?name=lib32-libxdamage), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl), [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
+	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa), [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
 
 ## Troubleshooting
 

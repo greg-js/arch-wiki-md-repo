@@ -666,4 +666,4 @@ QObject::~QObject: Timers cannot be stopped from another thread
 
 ```
 
-You could figure out how to install glxinfo (seems to be another AUR) but if your computer has enough power you could simply use software to render graphics. To do so, go to Tools -> Android -> AVD Manager, edit the AVD (click the pencil icon), then select "Software - GLES 2.0" for "Emulated Performance -> Graphics".
+You can try to install glxinfo (Its [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)) but if your computer has enough power you could simply use software to render graphics. To do so, go to Tools -> Android -> AVD Manager, edit the AVD (click the pencil icon), then select "Software - GLES 2.0" for "Emulated Performance -> Graphics".

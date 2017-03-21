@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [KDE Wallet](/index.php?title=KDE_Wallet&redirect=no "KDE Wallet")
+*   [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet")

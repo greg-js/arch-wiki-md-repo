@@ -26,9 +26,8 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
     *   [4.3 Remove title bar from maximized windows](#Remove_title_bar_from_maximized_windows)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Missing GLX_EXT_texture_from_pixmaps](#Missing_GLX_EXT_texture_from_pixmaps)
-        *   [5.1.1 On ATI cards (first solution)](#On_ATI_cards_.28first_solution.29)
-        *   [5.1.2 On ATI cards (second solution)](#On_ATI_cards_.28second_solution.29)
-        *   [5.1.3 On Intel chips](#On_Intel_chips)
+        *   [5.1.1 ATI cards](#ATI_cards)
+        *   [5.1.2 Intel chips](#Intel_chips)
     *   [5.2 Compiz starts without window borders with NVIDIA binary drivers](#Compiz_starts_without_window_borders_with_NVIDIA_binary_drivers)
     *   [5.3 Blank screen on resume from suspend-to-ram with NVIDIA binary drivers](#Blank_screen_on_resume_from_suspend-to-ram_with_NVIDIA_binary_drivers)
     *   [5.4 Poor performance from capable graphics cards](#Poor_performance_from_capable_graphics_cards)
@@ -279,32 +278,7 @@ As mentioned [here](http://planetkris.com/2009/07/how-to-remove-the-title-bar-wi
 
 ### Missing GLX_EXT_texture_from_pixmaps
 
-#### On ATI cards (first solution)
-
-You may run into the following error when trying to run Compiz on an ATI card:
-
-```
-Missing GLX_EXT_texture_from_pixmap
-
-```
-
-This is because Compiz's binary was compiled against Mesa's OpenGL library rather than ATI's OpenGL library.
-
-Firstly, copy the library into a directory to keep it because ATI's drivers will over write it:
-
-```
-$ install -Dm644 /usr/lib/libGL.so.1.2 /usr/lib/mesa/libGL.so.1.2
-
-```
-
-Then you can reinstall your fglrx drivers. Now start Compiz as shown below:
-
-```
-LD_PRELOAD=/usr/lib/mesa/libGL.so.1.2 compiz --replace &
-
-```
-
-#### On ATI cards (second solution)
+#### ATI cards
 
 Another possible problem with *GLX_EXT_texture_from_pixmap* on ATI cards is that the card can only render it indirectly. If so, you have to pass the option to your libgl as shown below:
 
@@ -315,9 +289,9 @@ LIBGL_ALWAYS_INDIRECT=1 compiz --replace &
 
 This workaround was tested on the following card : ATI Technologies Inc Radeon R250 [Mobility FireGL 9000] (rev 02).
 
-#### On Intel chips
+#### Intel chips
 
-Firstly, check that you're using the intel driver as opposed to i810\. Then, use the following command to start Compiz (this command must be used every time).
+Use the following command to start Compiz (this command must be used every time).
 
 ```
 LIBGL_ALWAYS_INDIRECT=true compiz --replace --sm-disable &

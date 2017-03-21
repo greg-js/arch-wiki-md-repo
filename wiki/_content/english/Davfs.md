@@ -1,4 +1,4 @@
-**DAVfs** is a Linux file system driver that allows you to mount a WebDAV server as a disk drive. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources, defined in [RFC 4918](//tools.ietf.org/html/rfc4918).
+**DAVfs** is a Linux file system driver that allows you to mount a WebDAV server as a disk drive. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources, defined in RFC 4918.
 
 ## Contents
 

@@ -34,7 +34,7 @@ reboot 5;
 timeout 10;
 retry 20;
 
-# [RFC 4361](//tools.ietf.org/html/rfc4361)          Node-specific Identifiers for DHCPv4     February 2006
+# RFC 4361          Node-specific Identifiers for DHCPv4     February 2006
 send dhcp-client-identifier 00:02:00:02:2e:2d:01:bd:c3:92:9a:44:2a:c4 ;
 send host-name "laptop";
 ```

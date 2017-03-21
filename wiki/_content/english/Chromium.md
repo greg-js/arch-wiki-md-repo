@@ -18,6 +18,7 @@
     *   [4.4 WebGL](#WebGL)
     *   [4.5 Distorted GUI](#Distorted_GUI)
     *   [4.6 Disable keyring password prompt](#Disable_keyring_password_prompt)
+    *   [4.7 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -143,6 +144,10 @@ Chromium's graphical interface may look unsightly, distorted and zoomed in on hi
 ### Disable keyring password prompt
 
 See [GNOME/Keyring#Passwords are not remembered](/index.php/GNOME/Keyring#Passwords_are_not_remembered "GNOME/Keyring"). You may also need to edit the Chromium command line to append `--password-store=gnome`.
+
+### Chromecasts in the network are not discovered
+
+You will need to enable the Media Router Component Extension in chrome://flags/#load-media-router-component-extension .
 
 ## See also
 

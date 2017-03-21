@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Creating packages](/index.php?title=Creating_packages&redirect=no "Creating packages")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")

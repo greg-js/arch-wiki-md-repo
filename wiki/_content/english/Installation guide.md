@@ -57,7 +57,7 @@ If the directory does not exist, the system may be booted in [BIOS](https://en.w
 
 ### Connect to the Internet
 
-The [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon is [enabled](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot for **wired** devices, and will attempt to start a connection. Verify a connection was established, for example with [ping](/index.php/Ping "Ping"):
+The installation image [enables](/index.php/Enable "Enable") the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon on boot for [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) devices, and will attempt to start a connection. Verify internet connectivity is available, for example with [ping](/index.php/Ping "Ping"):
 
 ```
 # ping archlinux.org
@@ -233,7 +233,7 @@ See also [Network configuration#Set the hostname](/index.php/Network_configurati
 
 ### Network configuration
 
-Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration").
+The newly installed environment has no network connection activated per default. See [Network configuration](/index.php/Network_configuration "Network configuration") to configure one.
 
 For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") the [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Optionally install [dialog](https://www.archlinux.org/packages/?name=dialog) for usage of *wifi-menu*.
 

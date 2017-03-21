@@ -1,3 +1,13 @@
+| **Device** | **Status** | **Modules** |
+| Video | Working | i915 |
+| Wireless | Working | iwlwifi |
+| Bluetooth | Working | btusb |
+| Audio | Working | snd_hda_intel |
+| Touchpad | Working |  ? |
+| Webcam | Working | uvcvideo |
+| USB-C / Thunderbolt 3 | Working |  ? |
+| Function/Multimedia Keys | Working |  ? |
+
 The Mi Notebook Air 13.3 is an aluminuim Ultrabook. It is a product by the Chinese Company Xiaomi and is currently only available in China or through import online-shops. Using the Intel Core i5 6200U @ 2.3 Ghz and the NVIDIA GeForce 940MX, it provides good power for a decent price.
 
 The installation should be going without any problems, if you follow the following steps.
@@ -46,7 +56,7 @@ blacklist nvidia
 
 ### Intel/Nvidia Hybrid Configuration
 
-You can enable hybrid GPUs by either using [Bumblebee](/index.php/Bumblebee "Bumblebee") or [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus"). Bumblebee is generally better for batterylife and compatibility but not oficially supported by NVIDIA.
+You can enable hybrid GPUs by either using [Bumblebee](/index.php/Bumblebee "Bumblebee") or [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus"). Bumblebee is generally better for battery-life and compatibility but not officially supported by NVIDIA.
 
 Refer to the respective articles.
 

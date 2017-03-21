@@ -93,7 +93,7 @@ If your firewall is iptables:
 ```
 [DEFAULT]
 bantime = 864000
-ignoreip = 127.0.0.1/8 111.111.111.111 222.222.222.222
+ignoreip = 127.0.0.1/8
 
 [sshd]
 enabled  = true
@@ -110,7 +110,7 @@ If your firewall is shorewall:
 ```
 [DEFAULT]
 bantime = 864000
-ignoreip = 127.0.0.1/8 111.111.111.111 222.222.222.222
+ignoreip = 127.0.0.1/8
 
 [ssh-shorewall]
 enabled  = true

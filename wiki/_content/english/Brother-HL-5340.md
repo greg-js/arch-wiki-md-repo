@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [CUPS/Printer-specific problems#Brother](/index.php?title=CUPS/Printer-specific_problems&redirect=no#Brother "CUPS/Printer-specific problems")
+*   [CUPS/Printer-specific problems#Brother](/index.php/CUPS/Printer-specific_problems#Brother "CUPS/Printer-specific problems")

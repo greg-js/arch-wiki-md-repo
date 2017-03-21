@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Administrators](/index.php?title=ArchWiki:Administrators&redirect=no "ArchWiki:Administrators")
+*   [ArchWiki:Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")

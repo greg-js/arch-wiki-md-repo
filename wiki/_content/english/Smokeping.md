@@ -240,11 +240,10 @@ Edit /etc/httpd/conf/httpd.conf so it includes
 
  `/etc/httpd/conf/httpd.conf` 
 ```
- LoadModule fastcgi_module modules/mod_fastcgi.so
- <IfModule fastcgi_module>
-   AddHandler fastcgi-script .fcgi
+ LoadModule fcgid_module modules/mod_fcgid.so
+ <IfModule fcgid_module>
+   AddHandler fcgid-script .fcgi
  </IfModule>
- #FastCgiConfig -idle-timeout 90  # try this if you hit errors about the scripts exceeding the idle timeout.
 
  Alias /smokeping/imgcache /srv/smokeping/imgcache
  Alias /smokeping /srv/http/smokeping

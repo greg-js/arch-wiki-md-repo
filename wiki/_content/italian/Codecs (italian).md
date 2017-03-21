@@ -117,7 +117,7 @@ Non è sempre necesario installare un codec specifico se si installa un lettore 
 
 	[http://www.webmproject.org](http://www.webmproject.org) || [libvpx](https://www.archlinux.org/packages/?name=libvpx) [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/)
 
-*   **[Opus](https://en.wikipedia.org/wiki/Opus_(audio_codec) "wikipedia:Opus (audio codec)")** — Completamente libero, codec audio estremamente versatile royalty-free. Opus è impareggiabile per il discorso interattivo e trasmissione di musica su Internet, ma è destinato anche per le applicazioni di archiviazione e streaming. É standardizzato dalla Internet Engineering Task Force (IETF), come [RFC 6716](//tools.ietf.org/html/rfc6716) che ha incorporato la tecnologia di codec SILK di Skype e il codec CELT di Xiph.Org.
+*   **[Opus](https://en.wikipedia.org/wiki/Opus_(audio_codec) "wikipedia:Opus (audio codec)")** — Completamente libero, codec audio estremamente versatile royalty-free. Opus è impareggiabile per il discorso interattivo e trasmissione di musica su Internet, ma è destinato anche per le applicazioni di archiviazione e streaming. É standardizzato dalla Internet Engineering Task Force (IETF), come RFC 6716 che ha incorporato la tecnologia di codec SILK di Skype e il codec CELT di Xiph.Org.
 
 	[http://www.opus-codec.org/](http://www.opus-codec.org/) || [opus](https://www.archlinux.org/packages/?name=opus) [opus-git](https://aur.archlinux.org/packages/opus-git/)
 

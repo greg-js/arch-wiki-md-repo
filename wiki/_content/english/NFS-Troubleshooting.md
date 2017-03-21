@@ -76,6 +76,8 @@ MOUNTD_OPTS="--manage-gids"
 
 Make sure that `nfs-server.service` and `rpcbind.service` are running on the server site, see [systemd](/index.php/Systemd "Systemd"). If they are not, start and enable them.
 
+Also make sure NFSv3 is enabled. *showmount* does **not** work with NFSv4-only servers.
+
 ## Client-side issues
 
 ### mount.nfs4: No such device

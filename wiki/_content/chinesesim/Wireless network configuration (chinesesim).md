@@ -32,7 +32,7 @@
     *   [3.3 排错](#.E6.8E.92.E9.94.99)
         *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
 *   [4 排错](#.E6.8E.92.E9.94.99_2)
-    *   [4.1 Temporary internet access](#Temporary_internet_access)
+    *   [4.1 临时上网](#.E4.B8.B4.E6.97.B6.E4.B8.8A.E7.BD.91)
     *   [4.2 Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)
     *   [4.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
     *   [4.4 Observing Logs](#Observing_Logs)
@@ -521,7 +521,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### wpa_supplicant
 
-[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly and used in combination with a dhcp client or with systemd. See the examples in `/etc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
+[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") 可直接配置并使用于dhcp客户端或systemd。 参照`/etc/wpa_supplicant/wpa_supplicant.conf` 来配置连接细节信息。
 
 #### NetworkManager
 
@@ -547,15 +547,15 @@ WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with 
 
 ## 排错
 
-This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#驱动与固件排错](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99).
+这个单元包含一般性的问题快照(troubleshooting）和提示, 问题与设备与固件驱动并没有什么严格意义上的关系。 对于驱动与固件上的问题, 请看 [#驱动与固件排错](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99).
 
-### Temporary internet access
+### 临时上网
 
-If you have problematic hardware and need internet access to, for example, download some software or get help in forums, you can make use of Android's built-in feature for internet sharing via USB cable. See [Android tethering#USB tethering](/index.php/Android_tethering#USB_tethering "Android tethering") for more information.
+如果你有问题性的设备并且需要Internet访问, 例如, 下载一些软件或向社区寻求帮助, 你可以通过Android自带的USB共享网络功能。 更多信息详见[[Android tethering#USB tethering]。
 
 ### Rfkill 警告
 
-Many laptops have a hardware button (or switch) to turn off wireless card, however, the card can also be blocked by kernel. This can be handled by [rfkill](https://www.archlinux.org/packages/?name=rfkill). Use *rfkill* to show the current status:
+许多笔记本都有一个硬件按钮或开关来关闭无线网卡, 无论如何, 无线网卡也可以通过kernel来进行屏蔽。 负责这个任务的是 [rfkill](https://www.archlinux.org/packages/?name=rfkill). 使用 *rfkill* 来显示当前状态:
 
  `# rfkill list` 
 ```
@@ -565,14 +565,15 @@ Many laptops have a hardware button (or switch) to turn off wireless card, howev
 
 ```
 
-If the card is *hard-blocked*, use the hardware button (switch) to unblock it. If the card is not *hard-blocked* but *soft-blocked*, use the following command:
+如果网卡处于 *hard-blocked*, 使用硬件按钮或开关来开启它。 如果无线网卡并没有被 *hard-blocked* 但处于 *soft-blocked*, 使用以下命令来解除:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**注意:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+**注意:** 按下硬件按钮可能会让无线网卡从 *hard-blocked* 和 *soft-unblocked* 状态变为 *hard-unblocked* 和 *soft-blocked* (i.e. *soft-blocked* bit位的切换并不会有什么不可挽回的影响). 这可以通过改变 `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+的一些选项来进行调整。
 
 切换无线网卡的硬件按钮是厂商专用的 [内核模块](/index.php/Kernel_module "Kernel module") 处理的, 通常是 [WMI](https://lwn.net/Articles/391230/) 模块。新硬件模块可能还没有被最新内核支持，这时可能需要查看内核 bug 系统并将硬件信息汇报给对应内核模块的维护者。
 

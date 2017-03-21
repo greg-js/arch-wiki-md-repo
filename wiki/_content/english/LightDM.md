@@ -389,6 +389,8 @@ In case of your locale not being displayed correctly in Lightdm add your locale 
 
 ```
 
+Alternatively if you want LightDM and its greeters to be in a language other than your set system locale, you can use the `Environment=` option in [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd").
+
 ### Missing icons with GTK greeter
 
 If you are using [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) as a greeter and it shows placeholder images as icons, make sure valid icon themes and themes are installed and configured. Check the following file:

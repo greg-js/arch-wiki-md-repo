@@ -1,4 +1,4 @@
-This article shows how to create a slim, minimal initramfs for a system with a specific, known and static hardware configuration. The procedure is expounded from [this tutorial](http://blog.falconindy.com/articles/optmizing-bootup-with-mkinitcpio.html) by Falconindy (Dave Reisner).
+This article shows how to create a slim, minimal initramfs for a system with a specific, known and static hardware configuration. The procedure is expounded from [Optimizing Bootup With mkinitcpio](http://blog.falconindy.com/articles/optmizing-bootup-with-mkinitcpio.html) by Falconindy (Dave Reisner).
 
 ## Contents
 
@@ -15,9 +15,9 @@ This article shows how to create a slim, minimal initramfs for a system with a s
 
 ## Udev requirement
 
-The big advantage of creating your own initramfs images is that you can eliminate `udev`. This hook alone is responsible for quite a bit of size (~700-800 KiB with LZ4 and LZOP, less with other algorithms) in the initramfs image. Not only will the bigger size lead to longer boots (more data to decompress) but initializing `udev` itself will also take some extra time. **However, some things require `udev`.** This includes the assembly of LVM and mdadm devices that contain the `root` partition. If you are unsure if you need `udev`, continue with the directions on this page up until the [#Initial test](#Initial_test). If not everything works without `udev`, re-enable the hook and try again.
+The big advantage of creating your own initramfs images is that you can eliminate `udev`. This hook alone is responsible for quite a bit of size (~700-800 KiB with LZ4 and LZOP, less with other algorithms) in the initramfs image. Not only will the bigger size lead to longer boots (more data to decompress) but initializing `udev` itself will also take some extra time. **However, some things require `udev`.** This includes resolving UUID, LABEL, PARTUUID and PARTLABEL identifiers and the assembly of LVM and mdadm devices that contain the `root` partition. If you are unsure if you need `udev`, continue with the directions on this page up until the [#Initial test](#Initial_test). If not everything works without `udev`, re-enable the hook and try again.
 
-Also, while most keyboards (AT,PS/2,or USB) don't require the use of the `udev` hook, Logitech USB devices using the Logitech Unified Receiver do. At this point you could either include `udev` in all images or rely on a `fallback` image that does.
+Also, while most keyboards (AT, PS/2, USB) don't require the use of the `udev` hook, Logitech USB devices using the Logitech Unified Receiver do. At this point you could either include `udev` in all images or rely on a `fallback` image that does.
 
 If you need `udev`, your minimization efforts will most likely be in vain. You may still be able to shrink the image size by ~600 KiB, but boot times will not be significantly improved. Continuing on in this scenario can still be a worthwhile learning experience.
 
@@ -80,6 +80,27 @@ You will also need the binaries to do filesystem checks on the `root` device **a
 
 ```
 BINARIES="fsck fsck.ext[2|3|4] e2fsck"
+
+```
+
+*   For vfat (UEFI boot) partitions:
+
+```
+BINARIES="fsck fsck.vfat dosfsck"
+
+```
+
+*   For btrfs single disk device:
+
+```
+BINARIES="fsck fsck.btrfs btrfsck"
+
+```
+
+*   For btrfs multi disk device:
+
+```
+BINARIES="fsck fsck.btrfs btrfs btrfsck"
 
 ```
 

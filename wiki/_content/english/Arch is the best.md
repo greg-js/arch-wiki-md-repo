@@ -1440,6 +1440,13 @@ Arch ist das Beste!
 
 ```
 
+	German (Bernese-Swiss)
+
+```
+Arch isch geil wine More!
+
+```
+
 	Greek (Modern)
 
 ```

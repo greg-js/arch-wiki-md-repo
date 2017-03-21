@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Bubblewrap](/index.php?title=Bubblewrap&redirect=no "Bubblewrap")
+*   [Bubblewrap](/index.php/Bubblewrap "Bubblewrap")

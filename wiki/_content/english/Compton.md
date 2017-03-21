@@ -15,9 +15,8 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [4.3 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
     *   [4.4 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
     *   [4.5 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.6 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
-    *   [4.7 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
-    *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.7 Lag when using xft fonts](#Lag_when_using_xft_fonts)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -244,10 +243,6 @@ backend = "xrender";
 to your compton.conf file.
 
 For more info, please see [https://github.com/chjj/compton/issues/208](https://github.com/chjj/compton/issues/208)
-
-### High CPU use with nvidia drivers
-
-When facing high CPU use with `--backend glx` or tearing with `--vsync` enabled, [install](/index.php/Install "Install") [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) as described in [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 ### Errors while trying to daemonize with nvidia drivers
 

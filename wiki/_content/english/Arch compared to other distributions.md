@@ -57,7 +57,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 *   Debian has a more vehement stance on free software but still includes non-free software in its non-free repos. Arch is more lenient, and therefore inclusive, concerning *non-free packages* as defined by GNU.
 
-*   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS). Arch packages are more current than Debian Stable and Testing, being more comparable to the Debian Unstable branch, and has no fixed release schedule.
+*   Debian focuses on stringent testing of the Stable branch, which is "frozen" and supported up to [five years](https://wiki.debian.org/LTS). Arch packages are more current than Debian Stable, being more comparable to the Debian Testing and Unstable branches, and has no fixed release schedule.
 
 *   Debian is available for many architectures, including alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390, and sparc, whereas Arch is officially i686 and x86_64, with community ports for arm (for Raspberry Pi for example) only.
 

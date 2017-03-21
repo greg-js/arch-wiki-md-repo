@@ -51,7 +51,7 @@ Additional paramethers are allowed. Now direct our browser to [https://127.0.0.1
 You can also provide ntop with your own SSL certificate. Simply put it in ntop's config directory and name it **ntop-cert.pem**
 
 ```
-# cd /etc/ntop/
+# cd /usr/share/ntop
 # openssl req -x509 -nodes -days 365 
   \-subj '/C=US/L=Portland/CN=swim' 
   \-newkey rsa:1024 -keyout ntop-cert.pem -out ntop-cert.pem

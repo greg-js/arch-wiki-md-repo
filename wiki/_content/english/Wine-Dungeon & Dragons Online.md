@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Dungeons & Dragons Online](/index.php?title=Dungeons_%26_Dragons_Online&redirect=no "Dungeons & Dragons Online")
+*   [Dungeons & Dragons Online](/index.php/Dungeons_%26_Dragons_Online "Dungeons & Dragons Online")

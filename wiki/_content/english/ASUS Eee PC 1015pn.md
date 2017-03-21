@@ -11,8 +11,7 @@ Asus 1015PN is a dual-core netbook with Nvidia IOn graphics for better gaming. I
 *   [4 ACPI](#ACPI)
 *   [5 Wireless](#Wireless)
 *   [6 Bumblebee](#Bumblebee)
-*   [7 To Do](#To_Do)
-*   [8  Links](#.C2.A0Links)
+*   [7  Links](#.C2.A0Links)
 
 ## System Specs
 
@@ -184,11 +183,6 @@ Next, two new files, `cardon` and `cardoff`, must be created in `/etc/bumblebee/
  `cardon`  `\_SB.PCI0.P0P4.DGPU.DON`  `cardoff`  `\_SB.PCI0.P0P4.DGPU.DOFF` 
 
 These are the acpi calls that Bumblebee will use to dynamically control the power of the Nvidia card. Now if bumblebee is included in the `MODULES` section of `/etc/rc.conf`, Bumblebee will automatically power down the Nvidia VGA controller unless it is being used with the optirun command.
-
-## To Do
-
-1.  Manage to get the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) or [nvidia](https://www.archlinux.org/packages/?name=nvidia) packages installed (specific libgl being used by each one)
-2.  Fix notes about rc.conf and initscripts.
 
 ##  Links
 

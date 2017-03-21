@@ -92,17 +92,13 @@ For more information about all available options see [exports(5)](http://man7.or
 
 #### Starting the server
 
-[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[2]](https://bbs.archlinux.org/viewtopic.php?id=193629):
-
- `/etc/sysconfig/nfs`  `RPCNFSDARGS="-N 2 -N 3"` 
-
-otherwise the `rpcbind.service` is required.
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`.
 
 #### Miscellaneous
 
 ##### Optional configuration
 
-`/etc/sysconfig/nfs` holds optional configurations for options to pass to `rpc.nfsd`, `rpc.mountd`, or `rpc.svcgssd`. Users setting up a simple configuration may not need to edit this file.
+Advanced configuration options can be set in `/etc/nfs.conf`. Users setting up a simple configuration may not need to edit this file.
 
 ##### Ensure NFSv4 idmapping is fully enabled
 
@@ -146,7 +142,7 @@ After the restarts, use `rpcinfo -p` on the server to examine the static ports a
 
 ##### NFSv2 compatibility
 
-Users needing to support clients using NFSv2 (for example U-Boot), should set RPCNFSDARGS="-V 2" in /etc/sysconfig/nfs.
+Users needing to support clients using NFSv2 (for example U-Boot), should set `RPCNFSDARGS="-V 2"` in `/etc/sysconfig/nfs`.
 
 ##### Firewall configuration
 
@@ -244,7 +240,7 @@ $ showmount -e servername
 For NFSv4 mount the root NFS directory and look around for available mounts:
 
 ```
-$ mount server:/ /mountpoint/on/client
+# mount server:/ /mountpoint/on/client
 
 ```
 

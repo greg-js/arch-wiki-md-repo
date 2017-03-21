@@ -1,6 +1,6 @@
 [qutebrowser](https://github.com/The-Compiler/qutebrowser) is a lightweight keyboard-driven, vim-like browser based on PyQt5 and QtWebKit.
 
-**Warning:** qutebrowser is based on a WebKit port that is considered insecure and outdated. qutebrowser is in the process of switching to the more secure qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/). Also see [#Use experimental webengine backend](#Use_experimental_webengine_backend).
+**Warning:** qt5-webkit is considered insecure and outdated, more info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/). Either [use the QtWebEngine backend](#Use_experimental_webengine_backend) or install qt5-webkit-ng.
 
 ## Contents
 

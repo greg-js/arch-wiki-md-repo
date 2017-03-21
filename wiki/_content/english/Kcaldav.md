@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [KDE](/index.php?title=KDE&redirect=no "KDE")
+*   [KDE](/index.php/KDE "KDE")

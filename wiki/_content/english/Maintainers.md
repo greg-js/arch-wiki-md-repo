@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Maintainers](/index.php?title=ArchWiki:Maintainers&redirect=no "ArchWiki:Maintainers")
+*   [ArchWiki:Maintainers](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers")

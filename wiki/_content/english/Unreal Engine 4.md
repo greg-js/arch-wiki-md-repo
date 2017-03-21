@@ -60,7 +60,7 @@ $ make UE4Editor-Linux-Debug
 If the editor doesn't start from the menu, or something doesn't work right, start it in a console and check the output for errors.
 
 ```
-$ cd /opt/unreal-tournament/Engine/Binaries/Linux/
+$ cd /opt/unreal-engine/Engine/Binaries/Linux/
 $ ./UE4Editor
 
 ```

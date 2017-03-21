@@ -79,7 +79,7 @@ The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 
 GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
 
-**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") is required.
+**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") is required.
 
 Some points to consider when choosing:
 
@@ -120,7 +120,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 **Note:**
 
 *   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
-*   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
+*   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
 *   If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be treated as partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
 
 ### Single root partition

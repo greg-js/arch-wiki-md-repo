@@ -98,7 +98,7 @@ Once you have downloaded a developer key, you will not have to download it again
 
 ### Adding unofficial keys
 
-You can use this method, for example, to add your own key to the *pacman* keyring, or when enabling a signed [unofficial repository](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+You can use this method, for example, to add your own key to the *pacman* keyring, or when enabling signed [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
 First get the key ID (`*keyid*`) from the owner of the key. Then you need to add the key to the keyring:
 

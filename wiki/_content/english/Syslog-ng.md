@@ -463,7 +463,7 @@ Feb 18 14:25:01 hostname logger: These timestamps are not optimal.
 
 ```
 
-### [RFC 3339](//tools.ietf.org/html/rfc3339) timestamps
+### RFC 3339 timestamps
 
 Same as above, except use `rfc3339` instead of `iso` for `ts_format`
 

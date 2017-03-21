@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [IOS](/index.php?title=IOS&redirect=no "IOS")
+*   [IOS](/index.php/IOS "IOS")

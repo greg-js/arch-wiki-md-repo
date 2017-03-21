@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ISCSI Initiator](/index.php?title=ISCSI_Initiator&redirect=no "ISCSI Initiator")
+*   [ISCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")

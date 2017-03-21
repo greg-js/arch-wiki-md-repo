@@ -15,7 +15,7 @@
         *   [2.1.3 Automatically after R upgrades](#Automatically_after_R_upgrades)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 .Renviron](#.Renviron)
-    *   [3.2 Rprofile.r](#Rprofile.r)
+    *   [3.2 Rprofile](#Rprofile)
 *   [4 Adding a graphical frontend to R](#Adding_a_graphical_frontend_to_R)
     *   [4.1 R Commander frontend](#R_Commander_frontend)
     *   [4.2 RKWard frontend](#RKWard_frontend)
@@ -51,7 +51,7 @@ $ R
 
 **Note:**
 
-*   Use `Shift+u` for the command (some shells use the `r` letter to repeat the last entered command). Once in your `R` session, the prompt will change to `>`
+*   Make sure to use a capital R for the command. Note that some shells use the lowercase `r` command to repeat the last entered command. Once in your `R` session, the prompt will change to `>`
 *   **site** refers to **system-wide** in R Documentation
 
 Run `?Startup` to read the documentation about system file configuration, `help()` for the on-line help,`help.start()` for the HTML browser interface to help, `demo()` for some demos and `q()` to close the session and quit.
@@ -60,27 +60,24 @@ When closing the session, you will be prompted : `Save workspace Image ?[y/n/c
 
 **Tip:**
 
-*   Tired of R's verbose startup message ? Then start `R` with the `--quiet` command-line option.
-
-`$ R --quiet` You can `alias R ="R --quiet"` in one of your [Startup files](/index.php/Startup_files "Startup files")
-
-*   Unless explicitly defined somewhere in your configuration files, `R` will start in your $HOME directory. If you want to start in a specific directory. first time you create the directory do this:
+*   Tired of R's verbose startup message ? Then start `R` with the `--quiet` command-line option (`$ R --quiet`). You can `alias R ="R --quiet"` in one of your [Startup files](/index.php/Startup_files "Startup files").
+*   Running `R` from the command line will set R's working directory to the current directory. Opening the R GUI will set R's working directory to $HOME, unless explicitly defined in your configuration files (`.Renviron` or `.Rprofile`).
+*   To colorize R output, first install the `colorout` package (first do `install.packages("devtools")` if `devtools` package is not installed)...
 
 ```
-$ R
-> setwd("path/to/your/directory")
-> q()
-Save workspace image? [y/n/c]: y
+> devtools::install_github('jalvesaq/colorout')
 
 ```
 
-`R` will create a **.RData** image file of your current environment. Then, when double-clicking this file, `R` will automatically change its working directory to the file's directory.
-
-*   colorize console output:
+...and then add the following to your `.Rprofile` (by default, located in `$HOME/.Rprofile`; create it if it does not exist).
 
 ```
-> download.file("[http://www.lepem.ufc.br/jaa/vimr/colorout_1.1-1.tar.gz](http://www.lepem.ufc.br/jaa/vimr/colorout_1.1-1.tar.gz)", destfile = "colorout_1.1-1.tar.gz")
-> install.packages("colorout_1.1-1.tar.gz", type = "source", repos = NULL)
+# $HOME/.Rprofile 
+
+if (interactive()) {
+  # Everything in here is only run if R is in "interactive" (as opposed to batch/script) mode
+  library(colorout)
+}
 
 ```
 
@@ -192,29 +189,45 @@ MYSQL_HOME = /var/lib/mysql
 
 ```
 
-### Rprofile.r
+### Rprofile
 
-For convenient reasons, you can put a specific `Rprofile.r` in each of your usual working directories. One facility would be to dedicate one directory per project, with its specific profile. When `R` will change to the working directory, it will then read the `Rprofile.r` file inside it.
+The file `.Rprofile` contains R code that is run automatically at the beginning of each R session. These files are read in the following order of preference (only one file is loaded):
 
-Here is a very short list of useful options and code:
+1\. `.Rprofile` in the current working directory.
 
- `Rprofile.r` 
+2\. User `.Rprofile`, typically in `$HOME/.Rprofile`.
+
+3\. Site `.Rprofile`, typically in `/etc/.Rprofile`.
+
+Here is an example `.Rprofile` that defines some useful settings:
+
+ `~/.Rprofile` 
 ```
-setwd("path/to/startup/directory")                                                                   # define a start up working directory
-.First <- function(){
-#welcome message
-message("Welcome back ", Sys.getenv("USER"),"!
+# The .First function is called after everything else in .Rprofile is executed
+.First <- function() {
+  # Print a welcome message
+  message("Welcome back ", Sys.getenv("USER"),"!
 ","working directory is:", getwd())
-}                                                       
-options(prompt = paste(paste (Sys.info () [c ("user", "nodename")], collapse = "@"),"[R] "))         # customize your R prompt with username and hostname in this format: **user@hostname [R]**
-options(digits = 12)                                                                                 # number of digits to print. Default is 7, max is 15
-options(stringsAsFactors = FALSE)
-options(show.signif.stars = FALSE)
-error = quote(dump.frames("${R_HOME_USER}/testdump", TRUE))                                          # post-mortem debugiging facilities
+}
+
+# Always load the 'methods' package
+library(methods)
+
+# Load the devtools and colorout packages if in interactive mode
+if (interactive()) {
+  library(devtools)
+  library(colorout)
+}
+
+options(prompt = paste(paste(Sys.info()[c("user", "nodename")], collapse = "@"),"[R] "))            # customize your R prompt with username and hostname in this format: user@hostname [R]
+options(digits = 12)                                                                                # number of digits to print. Default is 7, max is 15
+options(stringsAsFactors = FALSE)                                                                   # Disable default conversion of character strings to factors
+options(show.signif.stars = FALSE)                                                                  # Don't show stars indicating statistical significance in model outputs
+error <- quote(dump.frames("${R_HOME_USER}/testdump", TRUE))                                        # post-mortem debugging facilities
 
 ```
 
-You can add more [global options](http://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html) to customize your `R` environment. See this [post](http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile) for more user configurations.
+You can add more [global options](http://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html) to customize your `R` environment. See this [post](http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile) for more examples of user configurations.
 
 ## Adding a graphical frontend to R
 

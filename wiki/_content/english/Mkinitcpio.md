@@ -453,7 +453,7 @@ Which corresponds to the command you need to run, which may be:
 
 ```
 
-**Warning:** It's a good idea to rename the automatically generated /boot/initramfs-linux.img before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
+**Warning:** It is a good idea to rename the automatically generated /boot/initramfs-linux.img before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
 
 ### "/dev must be mounted" when it already is
 
@@ -492,13 +492,12 @@ With an improper initial ram-disk a system often is unbootable. So follow a syst
 
 #### Boot succeeds on one machine and fails on another
 
-*mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules or due to hardware mismatch. This can happen with a computer that has both USB 2.0 and 3.0 ports that loads the ohci module only. While a system with only USB 2.0 ports will not run on ohci and needs the ehci module.
+*mkinitcpio'*s `autodetect` hook filters unneeded [kernel modules](/index.php/Kernel_modules "Kernel modules") in the primary initramfs scanning `/sys` and the modules loaded at the time it is run. If you transfer your `/boot` directory to another machine and the boot sequence fails during early userspace, it may be because the new hardware is not detected due to missing kernel modules. Note that USB 2.0 and 3.0 need different kernel modules.
 
 To fix, first try choosing the [fallback](#Image_creation_and_activation) image from your [bootloader](/index.php/Bootloader "Bootloader"), as it is not filtered by `autodetect`. Once booted, run *mkinitcpio* on the new machine to rebuild the primary image with the correct modules. If the fallback image fails, try booting into an Arch Linux live CD/USB, chroot into the installation, and run *mkinitcpio* on the new machine. As a last resort, try [manually](#MODULES) adding modules to the initramfs.
 
 ## See also
 
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - Debugging with GRUB
 *   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD)
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/initrd.txt?id=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")

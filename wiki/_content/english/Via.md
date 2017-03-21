@@ -78,7 +78,7 @@ Some video cards, such as VX900 require booting [linux-openchrome](https://aur.a
 
 OpenGL support for Via's graphic chipsets is seriously outdated. At the moment you will not be able to run more fancy applications, games or compositing desktops like Compiz Fusion that rely on OpenGL as a backend, because the more recent OpenGL extensions are not yet supported in Unichrome 3D driver. You will be able to run simple OpenGL-applications though. The 3D driver for Unichrome is provided by the the DRI project.
 
-Install [unichrome-dri](https://www.archlinux.org/packages/?name=unichrome-dri), [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) and [mesa](https://www.archlinux.org/packages/?name=mesa) packages to get OpenGL to work.
+Install [unichrome-dri](https://www.archlinux.org/packages/?name=unichrome-dri) and [mesa](https://www.archlinux.org/packages/?name=mesa) packages to get OpenGL to work.
 
 ## DPMS problems
 

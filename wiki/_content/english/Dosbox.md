@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [DOSBox](/index.php?title=DOSBox&redirect=no "DOSBox")
+*   [DOSBox](/index.php/DOSBox "DOSBox")

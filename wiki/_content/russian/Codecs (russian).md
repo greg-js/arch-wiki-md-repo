@@ -99,7 +99,7 @@
 
 	[http://sourceforge.net/projects/opencore-amr/](http://sourceforge.net/projects/opencore-amr/) || [opencore-amr](https://www.archlinux.org/packages/?name=opencore-amr)
 
-*   **[Opus](https://en.wikipedia.org/wiki/ru:Opus_(%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA) "wikipedia:ru:Opus (кодек)")** — Полностью открытый, бесплатный и очень гибкий аудиокодек. Opus не только бесподобен для передачи аудио в реальном времени через Интернет, но и подходит для хранения данных. Он стандартизирован Internet Engineering Task Force (IETF) как [RFC 6716](//tools.ietf.org/html/rfc6716), включающий технологии SILK (Skype)и CELT (Xiph.Org) кодеков.
+*   **[Opus](https://en.wikipedia.org/wiki/ru:Opus_(%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA) "wikipedia:ru:Opus (кодек)")** — Полностью открытый, бесплатный и очень гибкий аудиокодек. Opus не только бесподобен для передачи аудио в реальном времени через Интернет, но и подходит для хранения данных. Он стандартизирован Internet Engineering Task Force (IETF) как RFC 6716, включающий технологии SILK (Skype)и CELT (Xiph.Org) кодеков.
 
 	[http://www.opus-codec.org/](http://www.opus-codec.org/) || [opus](https://www.archlinux.org/packages/?name=opus) [opus-git](https://aur.archlinux.org/packages/opus-git/)
 
