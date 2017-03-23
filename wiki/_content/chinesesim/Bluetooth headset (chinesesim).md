@@ -2,7 +2,7 @@
 
 Arch Linux 现在默认支持 A2DP profile (Audio Sink)，可以实现远程音频播放功能。
 
-**小贴士:**
+**提示：**
 
 *   Bluez5 只能通过 [PulseAudio](/index.php/PulseAudio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PulseAudio (简体中文)") 来支持耳机的录音/播放，不支持 [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)")。如果你不想使用 PulseAudio，你需要从 AUR 安装老版本的 Bluez 来支持。
 
@@ -76,7 +76,7 @@ PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/
 
 如果一切正常，你现在可以在[PulseAudio](/index.php/PulseAudio "PulseAudio")看到一个独立的输出设备。
 
-**小贴士:** 设备默认情况下可能是停止的。你可以在[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Configuration"标签页里选择配置(*OFF*, A2DP, HFP)
+**提示：** 设备默认情况下可能是停止的。你可以在[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Configuration"标签页里选择配置(*OFF*, A2DP, HFP)
 
 你现在可以通过[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)的"Playback"和"Pecording"标签页重定向音频的输入、输出了。
 
@@ -92,7 +92,7 @@ off                -- Off (sinks: 0, sources: 0, priority: 0, available: yes)
 
 这里可选择"a2dp_sink"或"headset_head_unit"两种配置，其中"headset_head_unit"可以支持音频输入/输出，"a2dp_sink"只支持输出。
 
-**小贴士:** 如果shell安装了对应的自动补全包[bash-completion](https://www.archlinux.org/packages/?name=bash-completion)或[zsh-completions](https://www.archlinux.org/packages/?name=zsh-completions)，可以通过tab键快速补全命令
+**提示：** 如果shell安装了对应的自动补全包[bash-completion](https://www.archlinux.org/packages/?name=bash-completion)或[zsh-completions](https://www.archlinux.org/packages/?name=zsh-completions)，可以通过tab键快速补全命令
 
 你现在可以停止扫描，并退出*bluetoothctl*命令：
 
@@ -211,15 +211,15 @@ bluetoothd[5556]: Endpoint registered: sender=:1.83 path=/MediaEndpoint/A2DPSink
 
 如果你可以看到类似的信息，说明蓝牙没有问题，你可以去检查PulseAudio的配置问题了。否则的话，退回来再次确认蓝牙是否已经连接成功。
 
-如果使用的是[GDM](/index.php/GDM "GDM")， PulseAudio 的另外一个实例可能已经启动，并捕获了你的蓝牙连接。 这种情况可以通过修改配置文件来解决：
+如果使用的是[GDM](/index.php/GDM "GDM")， PulseAudio 的另外一个实例可能已经启动，并且“捕获”了你的蓝牙连接。这种情况可以通过屏蔽GDM用户的pulseaudio socket来解决：
 
- `/var/lib/gdm/.pulse/client.conf` 
 ```
-autospawn = no
-daemon-binary = /bin/true
+# mkdir -p ~gdm/.config/systemd/user
+# ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
+
 ```
 
-需要确保这个文件的用户权限是 `gdm:gdm`， 如果不是，使用 [chown](/index.php/Chown "Chown") 修改。 这个问题在下次重启后解决。
+需要确保这个文件的用户权限是 `gdm:gdm`， 如果不是，使用 [chown](/index.php/Chown "Chown") 修改。 重启电脑后，PulseAudio的第二个实例将不再启动。
 
 #### UUIDs has unsupported type
 
@@ -273,13 +273,13 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 | Model | Version | Comments | Compatible |
 | **Philips SHB9150** | bluez5, pulseaudio 5 | Pause and resume does not work. With at least mpv and Banshee hitting the pause button stops audio output but does not pause the player. | Limited |
-| **Philips SHB9100** | Pause and resume is flaky. See [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
+| **Philips SHB9100** | Pause and resume is flaky. See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
 | **Philips SHB7000** | Pause and resume is flaky. | Limited |
 | **Philips SHB7100** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken. | Limited |
 | **Philips SHB7150** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile. | Yes |
 | **Philips SHB5500BK/00** | bluez 5.28, PulseAudio 6.0 | Pause and resume is not working. | Limited |
 | **Parrot Zik** | Firmware 1.04\. The microphone is detected, but does not work. Sometimes it lags (but does not stutter); usually this is not noticeable unless playing games, in which case you may switch to a wired connection. | Limited |
-| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[2]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
+| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[3]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
 | **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
 | **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine. | Limited |
 | **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Both A2DP & HSP/HFP work fine. | Yes |

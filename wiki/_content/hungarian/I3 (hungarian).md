@@ -36,7 +36,8 @@ Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása
     *   [4.10 Workspace variables](#Workspace_variables)
     *   [4.11 Correct handling of floating dialogs](#Correct_handling_of_floating_dialogs)
     *   [4.12 Network Download/Upload speed on statusbar](#Network_Download.2FUpload_speed_on_statusbar)
-*   [5 Patches](#Patches)
+    *   [4.13 Multimédia Billentyűk](#Multim.C3.A9dia_Billenty.C5.B1k)
+*   [5 Patch-ek](#Patch-ek)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 General](#General)
     *   [6.2 Buttons in the i3 message bar do not work](#Buttons_in_the_i3_message_bar_do_not_work)
@@ -561,11 +562,30 @@ $ find /sys/devices -name *network_interface*
 
 Now, just save the script in a suitable place (for example `~/.config/i3`) and point your status program to it.
 
-## Patches
+### Multimédia Billentyűk
 
-Packages with patches not merged upstream are available in the [AUR](/index.php/AUR "AUR"):
+Médialejátszó gyorsbillentyűk beállításához telepítsd a [playerctl](https://aur.archlinux.org/packages/playerctl/) csomagot, és add hozzá a következő gyorsbillentyűket a `~/.config/i3/config`-hoz.
 
-*   **i3-wm-iconpatch** — Titlebar icon support
+ `~/.config/i3/config` 
+```
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+```
+
+Néhány billentyűzeten, `XF86AudioPlay` and `XF86AudioPause` ugyanaz a billentyű. Ebben az esetben `playerctl play-pause`-t kell hozzáadni a `playerctl play`, és `playerctl pause` helyett.
+
+```
+bindsym XF86AudioPlay exec playerctl play-pause
+
+```
+
+## Patch-ek
+
+Patchelt csomagok, melyek nem lettek az upstreammal egyesítve, az [AUR](/index.php/AUR "AUR")-ban elérhetőek:
+
+*   **i3-wm-iconpatch** — Címsor ikon támogatás
 
 	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3-wm-iconpatch](https://aur.archlinux.org/packages/i3-wm-iconpatch/)
 
@@ -609,7 +629,7 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s
 
 ### Tearing
 
-i3 does [not properly implement double buffering](https://github.com/i3/i3/issues/661) hence tearing or flickering may occur. To prevent this, install and configure [compton](/index.php/Compton "Compton"). [[10]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
+Az i3 [nem implementálja megfelelően a double bufferelést](https://github.com/i3/i3/issues/661), ezért tearing, vagy villogás lehetséges. Ennek megelőzésére telepítsd, és állítsd be a [compton](/index.php/Compton "Compton")-t. [[10]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
 
 ### Tray icons not visible
 

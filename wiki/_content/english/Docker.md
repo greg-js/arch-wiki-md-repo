@@ -138,7 +138,8 @@ Create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") with th
  `/etc/systemd/system/docker.service.d/proxy.conf` 
 ```
 [Service]
-Environment="HTTP_PROXY=192.168.1.1"
+Environment="HTTP_PROXY=192.168.1.1:8080"
+Environment="HTTPS_PROXY=192.168.1.1:8080"
 ```
 
 **Note:** This assumes `192.168.1.1` is your proxy server, do not use `127.0.0.1`.
@@ -147,7 +148,7 @@ Verify that the configuration has been loaded:
 
 ```
 # systemctl show docker --property Environment
-Environment=HTTP_PROXY=192.168.1.1
+Environment=HTTP_PROXY=192.168.1.1:8080 HTTPS_PROXY=192.168.1.1:8080
 
 ```
 

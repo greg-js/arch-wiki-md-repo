@@ -254,7 +254,7 @@ The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/syste
 **Note:**
 
 *   The load paths are completely different when running *systemd* in [user mode](/index.php/Systemd/User#How_it_works "Systemd/User").
-*   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes. See `man systemd.unit` and `man systemd-escape` for more information.
+*   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes, or employ their pre defined semantics ('@', '-'). See `man systemd.unit` and `man systemd-escape` for more information.
 
 Look at the units installed by your packages for examples, as well as the [annotated example section](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of `man systemd.service`.
 
@@ -264,7 +264,7 @@ Look at the units installed by your packages for examples, as well as the [annot
 
 With *systemd*, dependencies can be resolved by designing the unit files correctly. The most typical case is that the unit *A* requires the unit *B* to be running before *A* is started. In that case add `Requires=*B*` and `After=*B*` to the `[Unit]` section of *A*. If the dependency is optional, add `Wants=*B*` and `After=*B*` instead. Note that `Wants=` and `Requires=` do not imply `After=`, meaning that if `After=` is not specified, the two units will be started in parallel.
 
-Dependencies are typically placed on services and not on targets. For example, `network.target` is pulled in by whatever service configures your network interfaces, therefore ordering your custom unit after it is sufficient since `network.target` is started anyway.
+Dependencies are typically placed on services and not on [#Targets](#Targets). For example, `network.target` is pulled in by whatever service configures your network interfaces, therefore ordering your custom unit after it is sufficient since `network.target` is started anyway.
 
 ### Service types
 
@@ -641,9 +641,16 @@ Some examples on how sandboxing with systemd can be deployed:
 
 As an example, we will investigate an error with `systemd-modules-load` service:
 
-**1.** Lets find the *systemd* services which fail to start:
+**1.** Lets find the *systemd* services which fail to start at boot time:
 
  `$ systemctl --failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
+
+Another way is to live log *systemd* messages:
+
+```
+$ systemctl -fp err
+
+```
 
 **2.** Ok, we found a problem with `systemd-modules-load` service. We want to know more:
 

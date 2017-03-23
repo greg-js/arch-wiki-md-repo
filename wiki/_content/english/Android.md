@@ -33,13 +33,14 @@
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
 *   [5 Alternative connection methods](#Alternative_connection_methods)
-    *   [5.1 adb-sync](#adb-sync)
-    *   [5.2 AirDroid](#AirDroid)
-    *   [5.3 AndroidScreencast](#AndroidScreencast)
-    *   [5.4 FTP](#FTP)
-    *   [5.5 KDE Connect](#KDE_Connect)
-    *   [5.6 SSH Server](#SSH_Server)
-    *   [5.7 Samba](#Samba)
+    *   [5.1 Android File Transfer](#Android_File_Transfer)
+    *   [5.2 adb-sync](#adb-sync)
+    *   [5.3 AirDroid](#AirDroid)
+    *   [5.4 AndroidScreencast](#AndroidScreencast)
+    *   [5.5 FTP](#FTP)
+    *   [5.6 KDE Connect](#KDE_Connect)
+    *   [5.7 SSH Server](#SSH_Server)
+    *   [5.8 Samba](#Samba)
 *   [6 Tips & Tricks](#Tips_.26_Tricks)
     *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
@@ -558,6 +559,10 @@ which means that your device is visible to Odin and is ready to be flashed.
 **Note:** There are no general instructions of restoring stock firmware on Samsung mobile devices. You have to use [Google](https://www.google.com) and [XDA developers forums](http://www.xda-developers.com) to find a flashing instructions for specific device. For example, this is how the [thread](http://goo.gl/cZLyF8) about the Samsung Galaxy S4 looks like
 
 ## Alternative connection methods
+
+### Android File Transfer
+
+[android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer) — reliable MTP client with minimalistic UI similar to Android File Transfer for Mac. It just works™.
 
 ### adb-sync
 

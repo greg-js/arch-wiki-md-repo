@@ -575,7 +575,7 @@ Simply set them to 0 or remove the whole file to use GNOME defaults.
 
 ### Printers not shown in the GTK print dialog
 
-It seems, that from GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
+From GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
 
 ## Tips and tricks
 

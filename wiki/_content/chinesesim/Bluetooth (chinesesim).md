@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Bluetooth](/index.php/Bluetooth "Bluetooth") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-21，点击[这里](https://wiki.archlinux.org/index.php?title=Bluetooth&diff=0&oldid=471026)可以查看翻译后英文页面的改动。
+
 [蓝牙](http://www.bluetooth.org/)是一个短距离无线通信标准，适用于手机、计算机和其他电子设备之间的通信。在 Linux 中，通常使用的蓝牙协议栈实现是 [BlueZ](http://www.bluez.org/).
 
 ## Contents
@@ -10,10 +12,13 @@
     *   [3.2 Bluedevil](#Bluedevil)
     *   [3.3 Blueberry](#Blueberry)
     *   [3.4 Blueman](#Blueman)
-*   [4 手工配置](#.E6.89.8B.E5.B7.A5.E9.85.8D.E7.BD.AE)
-    *   [4.1 音频流](#.E9.9F.B3.E9.A2.91.E6.B5.81)
-*   [5 配对](#.E9.85.8D.E5.AF.B9)
-*   [6 使用 Obex 发送接收文件](#.E4.BD.BF.E7.94.A8_Obex_.E5.8F.91.E9.80.81.E6.8E.A5.E6.94.B6.E6.96.87.E4.BB.B6)
+*   [4 使用 Obex 发送接收文件](#.E4.BD.BF.E7.94.A8_Obex_.E5.8F.91.E9.80.81.E6.8E.A5.E6.94.B6.E6.96.87.E4.BB.B6)
+    *   [4.1 ObexFS](#ObexFS)
+    *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
+    *   [4.3 Obex Object Push](#Obex_Object_Push)
+    *   [4.4 将你的电脑音响用作蓝牙音响](#.E5.B0.86.E4.BD.A0.E7.9A.84.E7.94.B5.E8.84.91.E9.9F.B3.E5.93.8D.E7.94.A8.E4.BD.9C.E8.93.9D.E7.89.99.E9.9F.B3.E5.93.8D)
+*   [5 音频](#.E9.9F.B3.E9.A2.91)
+*   [6 配对](#.E9.85.8D.E5.AF.B9)
 *   [7 示例](#.E7.A4.BA.E4.BE.8B)
     *   [7.1 西门子 S55](#.E8.A5.BF.E9.97.A8.E5.AD.90_S55)
     *   [7.2 罗技鼠标 MX Laser / M555b](#.E7.BD.97.E6.8A.80.E9.BC.A0.E6.A0.87_MX_Laser_.2F_M555b)
@@ -147,29 +152,92 @@ bluedevil 是 [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (
 
 参阅 [Blueman](/index.php/Blueman "Blueman")
 
-## 手工配置
+## 使用 Obex 发送接收文件
 
-你需要编辑 `/etc/bluetooth` 下的配置文件来实现人工配置Bluez。它们是：
+### ObexFS
 
-```
-audio.conf
-input.conf
-main.conf
-network.conf
-rfcomm.conf
+除了KDE和Gnome Bluetooth软件包之外，Obexfs是另一个选择，它可以允许你挂载你的手机作为文件系统的一部分。
 
-```
+**注意:** 如果要使用Obex，你需要一个能够提供Obex FTP服务的设备。
 
-默认的配置文件在绝大多数情况下都能都正常工作。绝大多数的配置选项在她们的文件里都有丰富的文档注释，所以自定义成为了一个简单到阅读配置选项的描述和注释的工作。全局设置从`main.conf`开始
-
-### 音频流
-
-如果你想启用从你的设备到计算机的音频流，你必须更改 `audio.conf` 然后添加这个到 `[General]` 部分：
+安装 [obexfs](https://www.archlinux.org/packages/?name=obexfs)，运行如下命令来挂载你的手机:
 
 ```
- Enable=Socket
+$ obexfs -b *MAC_address_of_device* /mountpoint
 
 ```
+
+使用完以后, 运行以下命令umount你的手机设备:
+
+```
+$ fusermount -u /mountpoint
+
+```
+
+参阅 [http://dev.zuckschwerdt.org/openobex/wiki/ObexFs](http://dev.zuckschwerdt.org/openobex/wiki/ObexFs) 查看更多挂载选项
+
+**Note:** Ensure that the bluetooth device you are mounting is **not** set to mount *read-only*. You should be able to do this from the device's settings. If the device is mounted *read-only* you may encounter a permissions error when trying to transfer files to the device.
+
+### ObexFTP transfers
+
+If your device supports the Obex FTP service but you do not wish to mount the device you can transfer files to and from the device using the obexftp command.
+
+To send a file to a device run the command:
+
+```
+$ obexftp -b *MAC_address_of_device* -p /path/to/file
+
+```
+
+To retrieve a file from a device run the command:
+
+```
+$ obexftp -b *MAC_address_of_device* -g filename
+
+```
+
+**Note:** Ensure that the file you are retrieving is in the device's *exchange folder*. If the file is in a subfolder of the exchange folder then provide the correct path in the command.
+
+### Obex Object Push
+
+For devices that do not support Obex FTP service, check if Obex Object Push is supported.
+
+```
+# sdptool browse *XX:XX:XX:XX:XX:XX*
+
+```
+
+Read the output, look for Obex Object Push, remember the channel for this service. If supported, one can use [ussp-push](https://www.archlinux.org/packages/?name=ussp-push) to send files to this device:
+
+```
+# ussp-push *XX:XX:XX:XX:XX:XX*@*CHANNEL* *file* *wanted_file_name_on_phone*
+
+```
+
+### 将你的电脑音响用作蓝牙音响
+
+这么做可以将你电脑上的外放设备用作蓝牙音响，通过蓝牙为你的手机提供外放。
+
+将以下内容添加到配置文件 `/etc/bluetooth/audio.conf` (如果文件不存在，创建一个):
+
+```
+[General]
+Enable=Source
+
+```
+
+阅读更多:
+
+*   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
+*   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
+
+## 音频
+
+如要使用蓝牙耳机或蓝牙音响设备，你需要安装 [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) 软件包。
+
+请参阅 [Bluetooth headset (简体中文)](/index.php/Bluetooth_headset_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bluetooth headset (简体中文)") 查看更多关于蓝牙耳机、音响设备及相关问题排查的信息。
+
+如要让你的电脑能够作为A2DP sink被探测到（可以作为蓝牙音响播放来自于你手机的音乐），在 `/etc/bluetooth/audio.conf`配置文件的`[General]`栏添加以下内容：`Enable=Source,Sink,Media,Socket`
 
 ## 配对
 
@@ -200,24 +268,6 @@ rfcomm.conf
 现在你可以开始从你的移动电话开始配对工作，这个脚本会在控制台询问你PIN码，你输入进去然后按回车键确认，这样就完成了配对工作。接下来可以通过^C-c终止这个脚本的执行，只需要在配对的时候使用这个脚本，而连接设备时不需要用到它。
 
 需要查看例子.请向下翻页到示例部分。
-
-## 使用 Obex 发送接收文件
-
-除了KDE和Gnome Bluetooth软件包之外，Obexfs是另一个选择，它可以允许你挂载你的移动电话作为文件系统的一部分。注意，如果要使用Obex，你需要一个能够提供Obex FTP服务的设备。 安装Obex;
-
-```
-# pacman -S obexfs
-
-```
-
-然后你可以以root权限运行如下命令来挂载你的移动电话
-
-```
-# obexfs -b <devices mac address> /mountpoint
-
-```
-
-单看更多挂载选项，参阅http://dev.zuckschwerdt.org/openobex/wiki/ObexFs
 
 ## 示例
 

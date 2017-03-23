@@ -92,6 +92,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [11.8 libgfapi error message](#libgfapi_error_message)
     *   [11.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [11.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [11.11 No internet connection with user networking](#No_internet_connection_with_user_networking)
 *   [12 See also](#See_also)
 
 ## Installation
@@ -1651,6 +1652,10 @@ or some other boot hindering process (e.g. cannot unpack initramfs, cant start s
 ### Windows 7 guest suffers low-quality sound
 
 Using `hda` audio driver for Windows 7 guest may casue low-quality sound. Changing the audio driver to `ac97` by passing arguement `-soundhw ac97` to QEMU and install ac97 driver from [Realtek AC'97 Audio Codecs](http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false) in the guest may solve the problem. See [Red Hat Bugzilla – Bug 1176761](https://bugzilla.redhat.com/show_bug.cgi?id=1176761#c16) for more information.
+
+### No internet connection with user networking
+
+When using user-mode networking, guest may not have internet access if host's [resolv.conf](https://wiki.archlinux.org/index.php/Resolv.conf) does not have any nameservers defined.
 
 ## See also
 

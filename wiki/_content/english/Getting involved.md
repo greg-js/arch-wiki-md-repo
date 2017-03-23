@@ -57,6 +57,8 @@ The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository
 
 You can help by creating and adopting packages.
 
+[aurphan](https://www.archlinux.org/packages/?name=aurphan) can help you identify orphaned packages you use, so that you can adopt them.
+
 ### Official software projects
 
 You can get involved in the development of [official Arch Linux software projects](https://git.archlinux.org/).

@@ -686,7 +686,7 @@ If you often have to edit your boot command with diverse parameters in the Sysli
 To create a compatible keymap (e.g. a german one) run:
 
 ```
-# keytab-lilo /usr/share/kbd/keymaps/i386/qwerty/us.kmap.gz /usr/share/kbd/keymaps/i386/qwertz/de.kmap.gz > /boot/syslinux/de.ktl
+# keytab-lilo /usr/share/kbd/keymaps/i386/qwerty/us.map.gz /usr/share/kbd/keymaps/i386/qwertz/de.map.gz > /boot/syslinux/de.ktl
 
 ```
 

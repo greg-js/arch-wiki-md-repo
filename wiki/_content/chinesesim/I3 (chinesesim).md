@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [i3](/index.php/I3 "I3") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-05-11，点击[这里](https://wiki.archlinux.org/index.php?title=i3&diff=0&oldid=313232)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [i3](/index.php/I3 "I3") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-22，点击[这里](https://wiki.archlinux.org/index.php?title=i3&diff=0&oldid=471488)可以查看翻译后英文页面的改动。
 
 [i3](http://i3wm.org/) 是一套动态[平铺式窗口管理器](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")，灵感来自针对开发者与资深用户的 [wmii](/index.php/Wmii "Wmii")。
 
@@ -35,7 +35,13 @@ i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的
     *   [4.15 屏幕保护器及电源管理](#.E5.B1.8F.E5.B9.95.E4.BF.9D.E6.8A.A4.E5.99.A8.E5.8F.8A.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
     *   [4.16 网速显示](#.E7.BD.91.E9.80.9F.E6.98.BE.E7.A4.BA)
 *   [5 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
-    *   [5.1 鼠标指针总处于忙碌状态](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E6.80.BB.E5.A4.84.E4.BA.8E.E5.BF.99.E7.A2.8C.E7.8A.B6.E6.80.81)
+    *   [5.1 普遍问题](#.E6.99.AE.E9.81.8D.E9.97.AE.E9.A2.98)
+    *   [5.2 按钮在i3信息栏不能用](#.E6.8C.89.E9.92.AE.E5.9C.A8i3.E4.BF.A1.E6.81.AF.E6.A0.8F.E4.B8.8D.E8.83.BD.E7.94.A8)
+    *   [5.3 Faulty line wraps in tiled terminals](#Faulty_line_wraps_in_tiled_terminals)
+    *   [5.4 鼠标指针总处于忙碌状态](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E6.80.BB.E5.A4.84.E4.BA.8E.E5.BF.99.E7.A2.8C.E7.8A.B6.E6.80.81)
+    *   [5.5 Unresponsive key bindings](#Unresponsive_key_bindings)
+    *   [5.6 Tearing](#Tearing)
+    *   [5.7 Tray icons not visible](#Tray_icons_not_visible)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -198,17 +204,29 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 	[http://j4status.j4tools.org/](http://j4status.j4tools.org/) || [j4status-git](https://aur.archlinux.org/packages/j4status-git/)提供
 
-*   **goi3bar** — Go 写的 i3status 替代品。配置文件同时还有各种插件，并发选项和丰富的插件支持。
+*   **goi3bar** — Go语言 写的 i3status 替代品。配置文件同时还有各种插件，并发选项和丰富的插件支持。
 
 	[https://github.com/denbeigh2000/goi3bar/](https://github.com/denbeigh2000/goi3bar/) || [goi3bar-git](https://aur.archlinux.org/packages/goi3bar-git/)
 
+*   **goblocks** — Go语言 写的轻便快速的 i3status 替代品。
+
+	[https://github.com/davidscholberg/goblocks](https://github.com/davidscholberg/goblocks) || [goblocks](https://aur.archlinux.org/packages/goblocks/)
+
+*   **bumblebee-status** — 多主题的Python状态栏生成器。
+
+	[https://github.com/tobi-wan-kenobi/bumblebee-status/](https://github.com/tobi-wan-kenobi/bumblebee-status/) || [bumblebee-status-git](https://aur.archlinux.org/packages/bumblebee-status-git/)
+
+*   **ty3status** — Typescript编写的 i3status 替代品，
+
+	[https://github.com/mrkmg/ty3status](https://github.com/mrkmg/ty3status) || [ty3status-git](https://aur.archlinux.org/packages/ty3status-git/)
+
 #### i3status 包装器
 
-*   **i3cat** — A [go](/index.php/Go "Go") based wrapper which can concatenate inputs from multiple external sources. It can handle click events and forwarding user specified signals to its subprocesses.
+*   **i3cat** — 基于[go](/index.php/Go "Go")语言做的包装器，它可以链接来自多个资源的输入，也可以处理鼠标操作来转发用户特定的信号到子程序。
 
 	[http://vincent-petithory.github.io/i3cat/](http://vincent-petithory.github.io/i3cat/) || [i3cat-git](https://aur.archlinux.org/packages/i3cat-git/)
 
-*   **py3status** — An extensible i3status wrapper written in Python.
+*   **py3status** — 一个可扩展的基于Python的 i3status 包装器。
 
 	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://aur.archlinux.org/packages/py3status/)
 
@@ -235,14 +253,14 @@ bar {
  }
 ```
 
-In accordance with [pango syntax](https://developer.gnome.org/pango/stable/pango-Fonts.html#pango-font-description-from-string), font size is specified only once, at the end of the comma-separated list of font families. Setting a size for each font would cause all but the last font to be ignored.
+依照 [pango syntax](https://developer.gnome.org/pango/stable/pango-Fonts.html#pango-font-description-from-string), 在逗号分割的多个字体的后面，字体大小只被设置一次，对每个字体都设置大小将会造成除了最后一个字体以外，其他的字体都被忽略。
 
-Add icons to the format strings in `~/.config/i3status/config` using the unicode numbers given in the cheatsheets linked above. The input method will vary between text editors. For instance, to insert the "heart" icon (unicode number f004):
+在`~/.config/i3status/config` 中使用unicode数字添加图标。输入法在文本处理器间有所区分。 例如，插入心型图标(unicode 数字 f004):
 
-*   in various gui text editors (e.g. [gedit](/index.php/Gedit "Gedit"), Leafpad) and terminals (e.g. GNOME Terminal, xfce4-terminal): `ctrl+shift+u`, `f004`, `Enter`
-*   in [Emacs](/index.php/Emacs "Emacs"): `ctrl+x`, `8`, `Enter`, `f004`, `Enter`
-*   in [Vim](/index.php/Vim "Vim") (while in insert mode): `Ctrl+v`, `uf004`
-*   in [urxvt](/index.php/Urxvt "Urxvt"): while holding `Ctrl+Shift`, type `f004`
+*   在多个图形化的文本处理器(如 [gedit](/index.php/Gedit "Gedit"), Leafpad) 和终端模拟器 (如 GNOME Terminal, xfce4-terminal)中: `ctrl+shift+u`, `f004`, `Enter`
+*   [Emacs](/index.php/Emacs "Emacs"): `ctrl+x`, `8`, `Enter`, `f004`, `Enter`
+*   [Vim](/index.php/Vim "Vim") (在插入模式): `Ctrl+v`, `uf004`
+*   [urxvt](/index.php/Urxvt "Urxvt"): 按住 `Ctrl+Shift`, 键入`f004`
 
 ### 在窗口之间快速跳转
 
@@ -524,6 +542,18 @@ bar {
 
 ## 疑难排除
 
+### 普遍问题
+
+In many cases, bugs are fixed in the development versions [i3-git](https://aur.archlinux.org/packages/i3-git/) and [i3status-git](https://aur.archlinux.org/packages/i3status-git/), and upstream will ask to reproduce any errors with this version. [[2]](http://i3wm.org/docs/debugging.html) See also [Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
+
+### 按钮在i3信息栏不能用
+
+如“Edit config”按钮用于在`i3-nagbar`中访问`i3-sensible-terminal`，所以确保你的终端模拟器能够被i3识别。
+
+### Faulty line wraps in tiled terminals
+
+i3 v4.3 and higher ignore size increment hints for tiled windows [[3]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html). This may cause terminals to wrap lines prematurely, amongst other issues. As a workaround, make the offending window floating, before tiling it again.
+
 ### 鼠标指针总处于忙碌状态
 
 当启动了某些并不支持启动提醒的某脚本或程序时，鼠标指针会逗留在忙碌状态六十秒以上。
@@ -535,6 +565,24 @@ exec --no-startup-id ~/script
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 ```
+
+### Unresponsive key bindings
+
+Some tools such as [scrot](/index.php/Taking_a_screenshot#scrot "Taking a screenshot") may not work when used with a regular key binding (executed after key press). In those cases, execute commands after key release with the `--release` argument [[4]](http://i3wm.org/docs/userguide.html#keybindings):
+
+```
+bindsym --release Print exec --no-startup-id scrot
+bindsym --release Shift+Print exec --no-startup-id scrot -s
+
+```
+
+### Tearing
+
+i3 does [not properly implement double buffering](https://github.com/i3/i3/issues/661) hence tearing or flickering may occur. To prevent this, install and configure [compton](/index.php/Compton "Compton"). [[5]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
+
+### Tray icons not visible
+
+The `tray_output primary` directive may require setting a primary output with *xrandr*, specifying the output explicitly or simply removing this directive. [[6]](https://github.com/i3/i3/issues/1144) See [Xrandr](/index.php/Xrandr "Xrandr") for details. The default configuration created by i3-config-wizard no longer adds this directive to the configuration from i3 4.12.
 
 ## 参见
 

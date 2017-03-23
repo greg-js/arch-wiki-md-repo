@@ -251,8 +251,6 @@ You may want to read the **Info** book to know more about it: **C-h i m info <RE
 
 ### TRAMP
 
-**Warning:** Using TRAMP with root permissions will cause `/dev/null` to be deleted after some time. [FS#47912](https://bugs.archlinux.org/task/47912) To prevent this, use the patch provided in the bug report, or replace `/bin/sh` with a link to `/bin/dash`. See [Dash#Relinking /bin/sh](/index.php/Dash#Relinking_.2Fbin.2Fsh "Dash").
-
 TRAMP (Transparent Remote Access, Multiple Protocols) is an extension which, as its name suggests, provides transparent access to remote files across a number of protocols. When prompted for a filename, entering a specific form will invoke TRAMP. Some examples:
 
 To prompt for the root password before opening /etc/hosts with root permissions:

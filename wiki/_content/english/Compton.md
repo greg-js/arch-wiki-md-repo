@@ -193,7 +193,7 @@ focus-exclude = "id = 0x1800001";
 
 ### dwm & dmenu
 
-dwm's statusbar is not detected by any of compton's functions to automatically exclude window manager elements. Neither dwm statusbar nor dmenu have a static window id. If you want to exclude it from inactive window transparency (or other), you'll have to either patch a window class into the source code of each, or exclude by less precise attributes. I have dmenu and dwm's status on top, which allows me to write a resolution independent location exclusion.
+dwm's statusbar is not detected by any of compton's functions to automatically exclude window manager elements. Neither dwm statusbar nor dmenu have a static window id. If you want to exclude it from inactive window transparency (or other), you'll have to either patch a window class into the source code of each, or exclude by less precise attributes. The following exmaple is with dwm's status on top, which allows a resolution independent of location exclusion:
 
 ```
 $ compton <any other arguments> --focus-exclude "x = 0 && y = 0 && override_redirect = true"

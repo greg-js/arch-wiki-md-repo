@@ -5,18 +5,19 @@ This article links to various methods to launch scripts or applications automati
 *   [1 Daemons](#Daemons)
     *   [1.1 Systemd](#Systemd)
 *   [2 Cron](#Cron)
-*   [3 Shells](#Shells)
-    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
-*   [4 Graphical](#Graphical)
-    *   [4.1 X session startup](#X_session_startup)
-    *   [4.2 Desktop entries](#Desktop_entries)
-    *   [4.3 GNOME](#GNOME)
-    *   [4.4 KDE Plasma](#KDE_Plasma)
-    *   [4.5 Xfce](#Xfce)
-    *   [4.6 LXDE](#LXDE)
-    *   [4.7 LXQt](#LXQt)
-    *   [4.8 Fluxbox](#Fluxbox)
-    *   [4.9 Openbox](#Openbox)
+*   [3 inotify](#inotify)
+*   [4 Shells](#Shells)
+    *   [4.1 /etc/profile](#.2Fetc.2Fprofile)
+*   [5 Graphical](#Graphical)
+    *   [5.1 X session startup](#X_session_startup)
+    *   [5.2 Desktop entries](#Desktop_entries)
+    *   [5.3 GNOME](#GNOME)
+    *   [5.4 KDE Plasma](#KDE_Plasma)
+    *   [5.5 Xfce](#Xfce)
+    *   [5.6 LXDE](#LXDE)
+    *   [5.7 LXQt](#LXQt)
+    *   [5.8 Fluxbox](#Fluxbox)
+    *   [5.9 Openbox](#Openbox)
 
 ## Daemons
 
@@ -29,6 +30,12 @@ You can start your scripts or applications as daemons, see [Daemon](/index.php/D
 ## Cron
 
 [Cron](/index.php/Cron "Cron") can be used to autostart non-GUI system setup tasks.
+
+## inotify
+
+From [Wikipedia](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify"):
+
+	*Inotify* (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications.
 
 ## Shells
 

@@ -5,6 +5,8 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration via the CLI](#Configuration_via_the_CLI)
     *   [2.1 Bluetoothctl](#Bluetoothctl)
+        *   [2.1.1 Auto power-on after boot](#Auto_power-on_after_boot)
+        *   [2.1.2 Deprecated method using hciconfig](#Deprecated_method_using_hciconfig)
 *   [3 Configuration with a graphical front-end](#Configuration_with_a_graphical_front-end)
     *   [3.1 GNOME Bluetooth](#GNOME_Bluetooth)
     *   [3.2 Bluedevil](#Bluedevil)
@@ -102,6 +104,18 @@ Connection successful
 
 ```
 
+#### Auto power-on after boot
+
+By default, your Bluetooth adapter will not power on after a reboot. The former method by using `hciconfig hci0 up` is deprecated, see the [release note](http://www.bluez.org/release-of-bluez-5-35/). Now you just need to add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom in the `[Policy]` section:
+
+ `/etc/bluetooth/main.conf` 
+```
+[Policy]
+AutoEnable=true
+```
+
+#### Deprecated method using hciconfig
+
 In order to have the device active after a reboot, a udev rule is needed:
 
  `/etc/udev/rules.d/10-local.rules` 
@@ -130,8 +144,6 @@ WantedBy=suspend.target
 ```
 
 [Enable](/index.php/Enable "Enable") an instance of the unit using your bluetooth device name, for example `bluetooth-auto-power@hci0.service`.
-
-Alternatively and instead of the custom service and udev rule, you can simply use the new [AutoEnable feature introduced in BlueZ 5.35](http://www.bluez.org/release-of-bluez-5-35/) by uncommenting `[Policy]` and `AutoEnable=true` lines in `/etc/bluetooth/main.conf`.
 
 ## Configuration with a graphical front-end
 
@@ -235,6 +247,7 @@ Enable=Source
 
 More info in:
 
+*   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
 *   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
 *   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
 

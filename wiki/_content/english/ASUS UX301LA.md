@@ -31,8 +31,6 @@ Whatever partition scheme you desire, make sure to use `parted` if you want to k
 
 **Note:** In Arch, if you have RAID 0 your hard drive device will look something like `/dev/md126` and the partitions will look like `/dev/md126p1`.
 
-**Note:** The latest mdadm version (3.3.4-1) is not able to assemble the Raid at startup. You have to downgrade mdadm in your chroot to version 3.3.2-2 to assemble the raid at boot. You should also add "mdadm" to the IgnorePkg line in pacman.conf. A workaround for the latest version of mdadm can be found here: [BBS#202597](https://bbs.archlinux.org/viewtopic.php?id=202597).
-
 ### Installing Arch
 
 See [Installation guide](/index.php/Installation_guide "Installation guide").

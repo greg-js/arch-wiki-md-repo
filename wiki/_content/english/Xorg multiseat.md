@@ -440,15 +440,45 @@ As soon as you [attach](#Attaching_devices_to_a_seat) the sound card to the seat
 
 If two users want to use the sound card simultaneously, it is necessary to use a sound server, [PulseAudio](/index.php/PulseAudio "PulseAudio") being most prevalent. Usually, the PulseAudio server runs only for active user and does not allow for multiple user instances. Solution to this problem is using the system-wide PulseAudio server. Although this approach is discouraged by its authors, it is probably most applicable setup.
 
+	Configuring for multiple users, without system-mode daemon
+
+This results in all the mixing transferred to a single server
+
+*   Copy the default configuration to the main user's home directory:
+
+ `cp /etc/pulse/default.pa ~/.pulse/` 
+
+or
+
+ `cp /etc/pulse/default.pa ~/.config/pulse/` 
+
+*   Edit the file, adding at the end:
+
+ `load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1` 
+
+*   Restart pulseaudio, if already running:
+
+```
+$ pulseaudio -k
+$ pulseaudio --daemonize=no
+```
+
+*   Repeat this procedure for each secondary user, as the user:
+
+ `$ echo "default-server = 127.0.0.1" > ~/.pulse/client.conf` 
+
 	Configuring for system-wide PulseAudio
 
 *   Create user pulse and put him into group audio (PulseAudio drops root privileges and changes to user pulse. Group membership allows for device access.)
 *   Create group pulse-access and put users, who will play sound locally into it (Group membership is used for access control for local access to PA daemon.)
 *   In /etc/pulse/default.pa state explicitly the access rights
 
- `load-module module-native-protocol-unix auth-group=pulse-access auth-group-enable=1` 
+```
+load-module module-native-protocol-unix auth-group=pulse-access 
+auth-group-enable=1
+```
 
-Create /etc/dbus-1/system.d/pulseaudio.conf with this content [/etc/dbus-1/system.d/pulseaudio.conf](https://bbs.archlinux.org/viewtopic.php?pid=563481#p563481):
+Create /etc/dbus-1/system.d/pulseaudio.conf with this content [[https://bbs.archlinux.org/viewtopic.php?pid=563481#p563481](https://bbs.archlinux.org/viewtopic.php?pid=563481#p563481) /etc/dbus-1/system.d/pulseaudio.conf]:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -460,7 +490,10 @@ Create /etc/dbus-1/system.d/pulseaudio.conf with this content [/etc/dbus-1/syste
 	</policy>
 </busconfig>
 ```
-Start PA as system-wide, under root: `pulseaudio --system` 
+
+Start PA as system-wide, under root:
+
+ `pulseaudio --system` 
 
 In `/var/run/pulse` should appear files for communication with daemon, namely pid and native.
 
@@ -468,8 +501,12 @@ In `/var/run/pulse` should appear files for communication with daemon, namely pi
 
 You can check communication with system daemon as non-root by e.g. `pactl -s "unix:/var/run/pulse/native" list`.
 
-It is possible to enable automatic network connection to local daemon in /etc/pulse/client.conf
+It is possible to enable automatic network connection to local daemon in
 
+```
+/etc/pulse/client.conf
+
+```
  `auto-connect-localhost = yes` 
 
 The users should be able to connect to PA server. All the cons for system-wide daemon become essentially pros, e.g. ability to control volume of other users streams in pavucontrol.

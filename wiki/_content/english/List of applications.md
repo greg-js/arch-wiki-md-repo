@@ -251,20 +251,19 @@ This article is a general list of applications sorted by category, as a referenc
         *   [7.5.2 Speech recognition](#Speech_recognition)
     *   [7.6 Amateur radio](#Amateur_radio)
     *   [7.7 Display calibration](#Display_calibration)
-    *   [7.8 Bootsplash](#Bootsplash)
-    *   [7.9 Display managers](#Display_managers)
-    *   [7.10 Command shells](#Command_shells)
-    *   [7.11 Terminal multiplexers](#Terminal_multiplexers)
-    *   [7.12 Desktop environments](#Desktop_environments)
-        *   [7.12.1 Window managers](#Window_managers)
-            *   [7.12.1.1 Console](#Console_18)
-            *   [7.12.1.2 Graphical](#Graphical_17)
-            *   [7.12.1.3 Composite managers](#Composite_managers)
-        *   [7.12.2 Window tilers](#Window_tilers)
-        *   [7.12.3 Taskbars](#Taskbars)
-        *   [7.12.4 Application launchers](#Application_launchers)
-        *   [7.12.5 Wallpaper setters](#Wallpaper_setters)
-        *   [7.12.6 Virtual desktop pagers](#Virtual_desktop_pagers)
+    *   [7.8 Display managers](#Display_managers)
+    *   [7.9 Command shells](#Command_shells)
+    *   [7.10 Terminal multiplexers](#Terminal_multiplexers)
+    *   [7.11 Desktop environments](#Desktop_environments)
+        *   [7.11.1 Window managers](#Window_managers)
+            *   [7.11.1.1 Console](#Console_18)
+            *   [7.11.1.2 Graphical](#Graphical_17)
+            *   [7.11.1.3 Composite managers](#Composite_managers)
+        *   [7.11.2 Window tilers](#Window_tilers)
+        *   [7.11.3 Taskbars](#Taskbars)
+        *   [7.11.4 Application launchers](#Application_launchers)
+        *   [7.11.5 Wallpaper setters](#Wallpaper_setters)
+        *   [7.11.6 Virtual desktop pagers](#Virtual_desktop_pagers)
 *   [8 See also](#See_also)
 
 ## Internet
@@ -5283,7 +5282,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
 
-	[https://code.google.com/archive/p/higan/](https://code.google.com/archive/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
+	[https://byuu.org/emulation/higan/](https://byuu.org/emulation/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Command line driven multi system emulator.
 
@@ -5372,22 +5371,6 @@ See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wi
 ### Display calibration
 
 See the main article: [ICC profiles](/index.php/ICC_profiles "ICC profiles").
-
-### Bootsplash
-
-See also [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipedia:Bootsplash").
-
-*   **[Fbsplash](/index.php/Fbsplash "Fbsplash")** — Gentoo implementation as bootsplash program
-
-	[http://wiki.gentoo.org/wiki/Fbsplash](http://wiki.gentoo.org/wiki/Fbsplash) || [fbsplash](https://aur.archlinux.org/packages/fbsplash/)
-
-*   **[Plymouth](/index.php/Plymouth "Plymouth")** — The new graphical boot process for Fedora, replacing the aging Red Hat Graphical Boot
-
-	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)
-
-*   **[Splashy](/index.php/Splashy "Splashy")** — A graphical boot process designed to replace the aging Bootsplash program
-
-	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
 
 ### Display managers
 

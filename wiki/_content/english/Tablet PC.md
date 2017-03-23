@@ -194,6 +194,22 @@ Note that there are many other surface pro 3 rotate scripts on github, including
 
 See [iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy). [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) is available in the AUR.
 
+If you want the rotation, but have the problem that GNOME is adjusting your brightness automatically in a bad way, then you can use these commands to disable it.
+
+For current user, which can also be done via power management GUI:
+
+```
+dbus-launch gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+
+```
+
+For GDM, which cannot be done via GUI:
+
+```
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+
+```
+
 ## Tips and tricks
 
 ### CellWriter

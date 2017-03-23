@@ -147,7 +147,7 @@ See [GNOME/Keyring#Passwords are not remembered](/index.php/GNOME/Keyring#Passwo
 
 ### Chromecasts in the network are not discovered
 
-You will need to enable the Media Router Component Extension in chrome://flags/#load-media-router-component-extension .
+You will need to enable the Media Router Component Extension in `chrome://flags/#load-media-router-component-extension`.
 
 ## See also
 

@@ -1,6 +1,6 @@
 [qutebrowser](https://github.com/The-Compiler/qutebrowser) is a lightweight keyboard-driven, vim-like browser based on PyQt5 and QtWebKit.
 
-**Warning:** qt5-webkit is considered insecure and outdated, more info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/). Either [use the QtWebEngine backend](#Use_experimental_webengine_backend) or install qt5-webkit-ng.
+**Warning:** [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit) is considered insecure and outdated. More info [is found here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/). Either [use the QtWebEngine backend](#Use_experimental_webengine_backend) or install [qt5-webkit-ng](https://www.archlinux.org/packages/?name=qt5-webkit-ng).
 
 ## Contents
 
@@ -16,7 +16,7 @@
 
 ## Installation
 
-Install either the [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser) or the [qutebrowser-git](https://aur.archlinux.org/packages/qutebrowser-git/) package.
+[Install](/index.php/Install "Install") either the [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser) or the [qutebrowser-git](https://aur.archlinux.org/packages/qutebrowser-git/) package.
 
 ## Basic usage
 

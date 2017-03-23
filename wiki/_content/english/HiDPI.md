@@ -246,6 +246,8 @@ The content should be something like following. Please make sure that the namesp
 
 If the preferences pages are still tiny, you should try setting a minimum font size in your preferences -> Content -> Font&Colors -> Advanced.
 
+Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
+
 #### Chromium / Google Chrome
 
 Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:

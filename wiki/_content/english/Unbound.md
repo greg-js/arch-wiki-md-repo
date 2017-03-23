@@ -339,7 +339,7 @@ It is possible to sandbox the default `unbound.service` by restricting [capabili
 [Edit](/index.php/Systemd#Drop-in_files "Systemd") `unbound.service` and add the following contents (cf. [FS#52700](https://bugs.archlinux.org/task/52700)):
 
 ```
-[Unit]
+[Service]
 CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT
 MemoryDenyWriteExecute=true
 NoNewPrivileges=true

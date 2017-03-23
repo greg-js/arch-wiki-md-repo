@@ -176,7 +176,7 @@ To circumvent some of those problems AppArmor can cache profiles in `/etc/apparm
 *   [AppArmor Core Policy Reference](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference) — Detailed description of available options in a profile
 *   [Ubuntu Tutorial](http://ubuntuforums.org/showthread.php?t=1008906) — General overview of available utilities and profile creation
 *   [Ubuntu Wiki](https://help.ubuntu.com/community/AppArmor) — Basic command overview
-*   [AppArmor Verions](http://wiki.apparmor.net/index.php/AppArmor_versions) — Version overview and links to the respective release notes
+*   [AppArmor Versions](http://wiki.apparmor.net/index.php/AppArmor_versions) — Version overview and links to the respective release notes
 *   [apparmor.d(5)](http://manpages.ubuntu.com/manpages/oneiric/man5/apparmor.d.5.html) — Structure of the AppArmor configuration directory
 *   [apparmor_parse(8)](http://manpages.ubuntu.com/manpages/oneiric/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
 *   [Kernel Interfaces](http://wiki.apparmor.net/index.php/Kernel_interfaces) — Low level interfaces to the AppArmor kernel module

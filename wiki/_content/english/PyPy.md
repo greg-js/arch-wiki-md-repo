@@ -1,4 +1,4 @@
-[PyPy](http://pypy.org/) is an alternate implementation of the [Python](/index.php/Python "Python") 2.7.10 and 3.2.5 interpreters. PyPy's benefits are in the area of speed, memory usage, sandboxing and stacklessness. It is compatible with CPython with [some exceptions](http://pypy.org/compat.html). PyPy also can be used to compile RPython programs to C code.
+[PyPy](http://pypy.org/) is an alternate implementation of the [Python](/index.php/Python "Python") 2.7.13 and 3.5.3 interpreters. PyPy's benefits are in the area of speed, memory usage, sandboxing and stacklessness. It is compatible with CPython with [some exceptions](http://pypy.org/compat.html). PyPy also can be used to compile RPython programs to C code.
 
 ## Contents
 

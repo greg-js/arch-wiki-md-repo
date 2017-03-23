@@ -12,19 +12,22 @@
         *   [1.3.3 Client installation](#Client_installation)
             *   [1.3.3.1 Using Windows installer](#Using_Windows_installer)
             *   [1.3.3.2 Using an existing copy of the game](#Using_an_existing_copy_of_the_game)
-        *   [1.3.4 Compatibility Steps (Optional)](#Compatibility_Steps_.28Optional.29)
-        *   [1.3.5 Run the game under Wine](#Run_the_game_under_Wine)
-            *   [1.3.5.1 Use the League Client open beta](#Use_the_League_Client_open_beta)
+        *   [1.3.4 Run the game under Wine](#Run_the_game_under_Wine)
+            *   [1.3.4.1 Use the League Client open beta](#Use_the_League_Client_open_beta)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Tips](#Tips)
-    *   [2.2 Launcher screen is black](#Launcher_screen_is_black)
-    *   [2.3 Login server does not respond](#Login_server_does_not_respond)
-    *   [2.4 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
-    *   [2.5 In-game shop crash](#In-game_shop_crash)
-    *   [2.6 Store Authentication Required](#Store_Authentication_Required)
-    *   [2.7 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
-    *   [2.8 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
-    *   [2.9 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
+    *   [2.2 Connection issues](#Connection_issues)
+        *   [2.2.1 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
+        *   [2.2.2 Login server does not respond](#Login_server_does_not_respond)
+    *   [2.3 Launcher issues](#Launcher_issues)
+        *   [2.3.1 Launcher screen is black](#Launcher_screen_is_black)
+        *   [2.3.2 In-game shop crash](#In-game_shop_crash)
+        *   [2.3.3 Store Authentication Required](#Store_Authentication_Required)
+        *   [2.3.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+        *   [2.3.5 Game failing to run after Champion Select screen](#Game_failing_to_run_after_Champion_Select_screen)
+    *   [2.4 In-game issues](#In-game_issues)
+        *   [2.4.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
+    *   [2.5 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
 
 ## Installation
 
@@ -134,65 +137,6 @@ After you get your hands on the game, either move or symlink it to your wine32 p
 
 ```
 
-#### Compatibility Steps (Optional)
-
-**Warning:** These steps may be not necessary.
-
-*   **Hostname** (Fixes the game failing to run after Champion Select screen)
-
-First you will want to find your hostname.
-
-```
-# cat /etc/hostname
-
-```
-
-Then you will want to make sure your /etc/hosts file uses your hostname over localhost, you can do this by opening /etc/hosts with an editor of your choice.
-
-```
-# nano /etc/hosts
-
-```
-
-Then replace all mentions of localhost with the hostname you got from the first command (this change requires a system restart, without this your game will fail after champion select with a "Bad Window" error)
-
-*   **Texture Patch** (Fixes in-game store crashing the game when it is opened)
-
-You now need to patch away the mipmaps of the in-game shop icons. An alternative method is to patch [Wine itself](http://pastebin.com/xSNJjkMY).
-
-A better method is edit the .../Config/Game.cfg and under the [General] section add "x3d_platform=1" along with the other options instead of patching either wine or the texture files. This works in wine 1.7.53.
-
-Download
-
-[LoL-Linux-Tools](https://github.com/A-Metaphysical-Drama/LoL-Linux-Tools/)
-
-Extract the file to a location of your choosing, then edit config.py with an editor of your choice and set an absolute path.
-
-```
-lol_path = '/home/USERNAME/.wine32/drive_c/Riot Games/League of Legends/'
-
-```
-
-Then execute the patch with
-
-```
-# python2 lol_linux.py texture_patch
-
-```
-
-If all went well, you will see an output explaning what the patch is doing (unpacking a bunch of dds files from an archive, patching out the mipmaps in them, archiving them again, and then it will be done, this takes a few) And now your LoL client should finally be working!
-
-**Warning:** If you use this Texture Patch rather than patching Wine itself for compatibility with the original store icons, you will need to apply the patch again every time the game is updated. This is because if Riot Games add new icons or change existing ones, they will not be compatible with Wine anymore.
-
-You can create an alias in .bashrc to automate this process a bit.
-
-```
-alias lol-update='python2 $HOME/.lol_patch/lol_linux.py texture_patch'
-
-```
-
-The patch will only take long to finish the first time you run it, as it does not need to patch all of the files again, only the ones that are new or have changed.
-
 #### Run the game under Wine
 
 Create an alias to execute the 32-bit Wine installation (in ~/.bashrc) this is not really a required step, but just a good practice since you can use this to run other programs that play better with a 32-bit wine prefix than a 64-bit one.
@@ -298,21 +242,35 @@ And running the beta version by typing
 
 ### Tips
 
-*   In case of flashing minimap or exceedingly low FPS try disabling HUD animations in the in-game options for notable boost in performance.
+*   In case of flashing mini-map or exceedingly low FPS try disabling HUD animations in the in-game options for notable boost in performance.
 
-*   On certain intel cards, enabling vertical sync can lead to a big boost in performance.
+*   On certain Intel cards, enabling vertical sync can lead to a big boost in performance.
 
 *   If the terrain is too dark, one solution would be to install the proprietary drivers of your graphics card.
 
 *   Disabling Anti-Aliasing, Vertical Synchronization and Frame Rate Cap in the in-game options may greatly improve performance for some cards.
 
-*   If there is no ingame audio with usb sound cards, installing [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) may resolve it.
+*   If there is no in-game audio with usb sound cards, installing [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) may resolve it.
 
-### Launcher screen is black
+### Connection issues
 
-Install the 32-bit graphics driver listed in the *OpenGL (Multilib)* column in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
+#### Connection Error: connection failure unable to connect to the pvp.net server
 
-### Login server does not respond
+Authentication and logging in works, however the connection then fails with the abovementioned error. One possible solution, according to [https://appdb.winehq.org/objectManager.php?sClass=version&iId=19141](https://appdb.winehq.org/objectManager.php?sClass=version&iId=19141) is disabling TCP timestamps:
+
+```
+# sysctl -w net.ipv4.tcp_timestamps=0
+
+```
+
+For a permanent solution:
+
+```
+# echo "net.ipv4.tcp_timestamps = 0" > /etc/sysctl.d/10-tcp-timestamps.conf
+
+```
+
+#### Login server does not respond
 
 You need to properly configure **wininet** library:
 
@@ -332,20 +290,13 @@ Alternatively, you can disable the library by adding the following variable over
 
 ```
 
-### For d3dstream patched Wine
+### Launcher issues
 
-**Warning:** On some setups users may experience temporary game freezes during gameplay if using this patch, proceed with caution. If this happens to you, you may be better off using the official version of Wine as freezing is not tolerable in competitive games.
+#### Launcher screen is black
 
-*   You need to add a registry key to Wine in order to apply the performance boost the patch offers, [read this](https://bbs.archlinux.org/viewtopic.php?pid=1321578#p1321578) for more information on how.
+Install the 32-bit graphics driver listed in the *OpenGL (Multilib)* column in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
-*   If you cannot access the launcher store running d3dstream patched wine, you can bypass the problem by running the game from the default 64-bit prefix with the below command, just remember to restart the game before you try to go for another match.
-
-```
-wine .wine32/drive_c/Riot\ Games/League\ of\ Legends/lol.launcher.exe
-
-```
-
-### In-game shop crash
+#### In-game shop crash
 
 Edit the file `Config/game.cfg` and add `x3d_platform=1` to `[General]` section.
 
@@ -359,7 +310,7 @@ This option should switch to the OpenGL renderer.
 
 **Warning:** This may cause some moderate to severe graphic bugs and blurry textures, depending on setup.
 
-### Store Authentication Required
+#### Store Authentication Required
 
 If clicking "Browse the Store" causes a dialog box titled "Authentication Required" with the text "Please enter your username and password: Server store.XX#.lol.riotgame.com", do not enter your user/pass. Clicking OK leads to a screen filled with black text (highlight to confirm), and clicking Cancel probably gives some network timeout error.
 
@@ -367,25 +318,42 @@ A possible solution: After you log in, there is a home screen containing element
 
 Tip via [Play on Linux thread](https://www.playonlinux.com/en/app-1135-League_Of_Legends.html).
 
-### Connection Error: connection failure unable to connect to the pvp.net server
-
-Authentication and logging in works, however the connection then fails with the abovementioned error. One possible solution, according to [https://appdb.winehq.org/objectManager.php?sClass=version&iId=19141](https://appdb.winehq.org/objectManager.php?sClass=version&iId=19141) is disabling TCP timestamps:
-
-```
-# sysctl -w net.ipv4.tcp_timestamps=0
-
-```
-
-For a permanent solution:
-
-```
-# echo "net.ipv4.tcp_timestamps = 0" > /etc/sysctl.d/10-tcp-timestamps.conf
-
-```
-
-### Hang after champ select with AMD proprietary fglrx driver
+#### Hang after champ select with AMD proprietary fglrx driver
 
 If you have the proprietary AMD fglrx driver installed, you should install trough winetricks the `directx9` package (Not d3dx_y)
+
+#### Game failing to run after Champion Select screen
+
+First you will want to find your hostname.
+
+```
+# cat /etc/hostname
+
+```
+
+Then you will want to make sure your /etc/hosts file uses your hostname over localhost, you can do this by opening /etc/hosts with an editor of your choice.
+
+```
+# nano /etc/hosts
+
+```
+
+Then replace all mentions of localhost with the hostname you got from the first command (this change requires a system restart, without this your game will fail after champion select with a "Bad Window" error)
+
+### In-game issues
+
+#### For d3dstream patched Wine
+
+**Warning:** On some setups users may experience temporary game freezes during gameplay if using this patch, proceed with caution. If this happens to you, you may be better off using the official version of Wine as freezing is not tolerable in competitive games.
+
+*   You need to add a registry key to Wine in order to apply the performance boost the patch offers, [read this](https://bbs.archlinux.org/viewtopic.php?pid=1321578#p1321578) for more information on how.
+
+*   If you cannot access the launcher store running d3dstream patched wine, you can bypass the problem by running the game from the default 64-bit prefix with the below command, just remember to restart the game before you try to go for another match.
+
+```
+wine .wine32/drive_c/Riot\ Games/League\ of\ Legends/lol.launcher.exe
+
+```
 
 ### PlayOnLinux Troubleshooting
 
