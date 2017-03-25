@@ -188,13 +188,17 @@ To set the value, run:
 
 #### Make changes permanent
 
-To have changes persist on system reboot probably the easiest is to use [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). For example to set the sampling_down_factor on boot you could create or edit a `/etc/tmpfiles.d/10-cpu-sampling-down.conf` file as follow
+Even though [kernel modules#Using file in /etc/modprobe.d/](/index.php/Kernel_modules#Using_file_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") or [systemd](/index.php/Systemd "Systemd") might work to make the changes permanent, in some cases there might be race conditions. This is noted at [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
 
- `/etc/tmpfiles.d/10-cpu-sampling-down.conf` 
+For example, to set the scaling governor of the CPU core `0` to performance while the scaling driver is `acpi_cpufreq`, create the following udev rule:
+
+ `/etc/udev/rules.d/50-scaling-governor.rules` 
 ```
-w /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor - - - - 40
+SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' "
 
 ```
+
+To have the chages persist after boot, when an initramfs is used, follow the example at [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 
 ## Interaction with ACPI events
 

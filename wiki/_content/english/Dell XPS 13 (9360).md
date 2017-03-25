@@ -42,6 +42,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [12.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
     *   [12.4 Popping Sound on headphones/external speakers](#Popping_Sound_on_headphones.2Fexternal_speakers)
     *   [12.5 Coil Whine](#Coil_Whine)
+    *   [12.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
 *   [13 See Also](#See_Also)
 
 ## Content adaptive brightness control
@@ -225,6 +226,10 @@ If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will ac
 ### Coil Whine
 
 Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. For some users, it is possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"). The coil whine will then start again under heavy graphic load. For the touchscreen model, this may be very often, due to the high resolution screen. In a similar vein, the display can be run at a lower resolution, again reducing the load on the graphics card.
+
+### Freezing after waking from suspend
+
+Installing [xf86-video-intel-git](https://aur.archlinux.org/packages/xf86-video-intel-git/) is [reported](https://bbs.archlinux.org/viewtopic.php?pid=1698282#p1698282) to fix this.
 
 ## See Also
 

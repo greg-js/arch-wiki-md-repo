@@ -256,13 +256,13 @@ The change will be visible as soon as the application is restarted. No special m
 Here are some common Microsoft Windows cursors that rdesktop uses when connecting to a remote machine running Windows 7\. Unfortunately animated cursors are difficult to override as they are sent frame-by-frame, so one mapping will be needed for every frame!
 
 ```
-$ ln -s /usr/share/icons/$THEME/cursors/00000000017e000002fc000000000000 ~/.icons/default/cursors/xterm
-$ ln -s /usr/share/icons/$THEME/cursors/00000093000010860000631100006609 ~/.icons/default/cursors/right_ptr
-$ ln -s /usr/share/icons/$THEME/cursors/01e00000201c00004038000080300000 ~/.icons/default/cursors/plus
-$ ln -s /usr/share/icons/$THEME/cursors/24020000002800000528000084810000 ~/.icons/default/cursors/left_ptr
-$ ln -s /usr/share/icons/$THEME/cursors/6ce0180090108e0005814700a0021400 ~/.icons/default/cursors/left_ptr_watch
-$ ln -s /usr/share/icons/$THEME/cursors/d2201000a2c622004385440041308800 ~/.icons/default/cursors/hand
-$ ln -s /usr/share/icons/$THEME/cursors/fc618c00da110f0034fd0e004e082400 ~/.icons/default/cursors/watch
+$ ln -s /usr/share/icons/$THEME/cursors/xterm          ~/.icons/default/cursors/00000000017e000002fc000000000000
+$ ln -s /usr/share/icons/$THEME/cursors/right_ptr      ~/.icons/default/cursors/00000093000010860000631100006609
+$ ln -s /usr/share/icons/$THEME/cursors/plus           ~/.icons/default/cursors/01e00000201c00004038000080300000
+$ ln -s /usr/share/icons/$THEME/cursors/left_ptr       ~/.icons/default/cursors/24020000002800000528000084810000
+$ ln -s /usr/share/icons/$THEME/cursors/left_ptr_watch ~/.icons/default/cursors/6ce0180090108e0005814700a0021400
+$ ln -s /usr/share/icons/$THEME/cursors/hand           ~/.icons/default/cursors/d2201000a2c622004385440041308800
+$ ln -s /usr/share/icons/$THEME/cursors/watch          ~/.icons/default/cursors/fc618c00da110f0034fd0e004e082400
 
 ```
 

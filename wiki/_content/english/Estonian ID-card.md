@@ -2,9 +2,13 @@ Packages to enable Estonian ID-card support are available from the [Arch User Re
 
 ## Quick install
 
-Install [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) from the [official repositories](/index.php/Official_repositories "Official repositories") and [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/), [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) from the [AUR](/index.php/AUR "AUR").
+1\. Install [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) from the [official repositories](/index.php/Official_repositories "Official repositories") and [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/), [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) from the [AUR](/index.php/AUR "AUR").
 
-Enable `pcscd.socket` [using systemd](/index.php/Systemd#Using_units "Systemd").
+2\. Enable `pcscd.socket` [using systemd](/index.php/Systemd#Using_units "Systemd").
+
+[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) package contains [Native Messaging](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging) host for Google Chrome/Chromium and Firefox and it is the modern way of doing authentication and digital signatures on the web.
+
+For Google Chrome and Chromium you also will probably want to run [esteid-update-nssdb](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb) script that enables TLS client authentication the the browser.
 
 ## Browser plugin (web authentication & digital signatures)
 

@@ -8,14 +8,13 @@ This page contains information specific to the ASUS Zenbook UX301LA. Some of it 
     *   [1.3 Installing Arch](#Installing_Arch)
 *   [2 Function Keys](#Function_Keys)
 *   [3 KDE and Keyboard Backlight](#KDE_and_Keyboard_Backlight)
-*   [4 Intel Graphics](#Intel_Graphics)
-*   [5 Display](#Display)
-*   [6 Touchpad](#Touchpad)
-*   [7 Wi-Fi](#Wi-Fi)
-*   [8 Battery Issues](#Battery_Issues)
-*   [9 Hardware](#Hardware)
-*   [10 Heat](#Heat)
-*   [11 Helpful Links](#Helpful_Links)
+*   [4 Display](#Display)
+*   [5 Touchpad](#Touchpad)
+*   [6 Wi-Fi](#Wi-Fi)
+*   [7 Battery Issues](#Battery_Issues)
+*   [8 Hardware](#Hardware)
+*   [9 Heat](#Heat)
+*   [10 Helpful Links](#Helpful_Links)
 
 ## Installation
 
@@ -53,10 +52,6 @@ You may need to run the following command on login to fix keyboard backlight con
 qdbus org.kde.kded /kded unloadModule powerdevil
 qdbus org.kde.kded /kded loadModule powerdevil
 ```
-
-## Intel Graphics
-
-If you're using [GNOME](/index.php/GNOME "GNOME") and have issues with screen tearing, check out [GNOME#Tear-free video with Intel HD Graphics](/index.php/GNOME#Tear-free_video_with_Intel_HD_Graphics "GNOME").
 
 ## Display
 

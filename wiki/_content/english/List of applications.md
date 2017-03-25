@@ -338,7 +338,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
 
-	[http://lynx.isc.org](http://lynx.isc.org) || [lynx](https://www.archlinux.org/packages/?name=lynx)
+	[http://lynx.invisible-island.net/](http://lynx.invisible-island.net/) || [lynx](https://www.archlinux.org/packages/?name=lynx)
 
 *   **retawq** — Interactive, multi-threaded network client (web browser) for text terminals.
 
@@ -392,7 +392,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
 
-*   **[Opera](/index.php/Opera "Opera")** — Highly customizable proprietary browser with focuses on an adherence to web rendering standards.
+*   **[Opera](/index.php/Opera "Opera")** — Proprietary browser developed by Opera Software.
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 

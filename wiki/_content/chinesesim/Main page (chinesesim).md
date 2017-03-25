@@ -74,4 +74,3 @@ ArchWiki 有一些特殊的语法和标注方式，要了解它们，请阅读 [
 *   [arch-cn 中文 IRC 频道](irc://oftc/arch-cn)以及[archlinux-cn 中文 IRC 频道](irc://freenode/archlinux-cn)
 *   [Ubuntu 中文 IRC 频道](irc://freenode/ubuntu-cn)
 *   [百度 archlinux 吧](http://tieba.baidu.com/f?kw=archlinux)
-*   [Tyrant's Arch](http://arch.acgtyrant.com)

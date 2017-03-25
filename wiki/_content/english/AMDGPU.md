@@ -15,6 +15,7 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [4 Xorg configuration](#Xorg_configuration)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
+    *   [5.2 Driver options](#Driver_options)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
     *   [6.2 Unable to start Xorg on Southern Islands (SI) or Sea Islands (CIK) GPU](#Unable_to_start_Xorg_on_Southern_Islands_.28SI.29_or_Sea_Islands_.28CIK.29_GPU)
@@ -120,6 +121,26 @@ Using this section, you can enable features and tweak the driver settings.
 ### Enabling video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+### Driver options
+
+The following options apply to `/etc/X11/xorg.conf.d/**20-amdgpu.conf**`.
+
+Please read `man amdgpu` first before setting driver options.
+
+**DRI** sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the Xorg version is >= 1.18.3, otherwise DRI2 is used:
+
+```
+Option "DRI" "3" 
+
+```
+
+**TearFree** controls tearing prevention using the hardware page flipping mechanism. If this option is set, the default value of the property is set to *auto*, which means that TearFree is on for outputs with rotation or other RandR transforms:
+
+```
+Option "TearFree" "true"
+
+```
 
 ## Troubleshooting
 

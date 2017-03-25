@@ -1449,7 +1449,7 @@ We need to add one EHCI/UHCI controller per available USB redirection slot desir
 
 Both `spicy` from [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
 
-**Warning:** Keep in mind that when a USB device is redirected from the client, it will not be usable from the client operating system itself until the redirection is stopped. It is specially important to never redirect the input devices (namely mouse and keyboard), since it will be then difficult to access the SPICE client menus to revert the situation, because the client won't respond to the input devices after being redirected to the virtual machine.
+**Warning:** Keep in mind that when a USB device is redirected from the client, it will not be usable from the client operating system itself until the redirection is stopped. It is specially important to never redirect the input devices (namely mouse and keyboard), since it will be then difficult to access the SPICE client menus to revert the situation, because the client will not respond to the input devices after being redirected to the virtual machine.
 
 ### Enabling KSM
 
@@ -1592,7 +1592,7 @@ If this helps, you can add this to your `~/.bashrc` file.
 
 Add `-show-cursor` to QEMU's options to see a mouse cursor.
 
-If that still doesn't work, make sure you've set your display device appropriately.
+If that still does not work, make sure you have set your display device appropriately.
 
 For example: `-vga qxl`
 
@@ -1609,7 +1609,7 @@ $ qemu-system-i386 -k *keymap* *disk_image*
 
 ```
 
-Due to a [bug in QEMU v2.8.0](https://bugs.launchpad.net/qemu/+bug/1578192), on a Wayland session manually setting the keymap won't help to get the arrow keys to work. The bug is fixed in master so you can install [qemu-git](https://aur.archlinux.org/packages/qemu-git/).
+Due to a [bug in QEMU v2.8.0](https://bugs.launchpad.net/qemu/+bug/1578192), on a Wayland session manually setting the keymap will not help to get the arrow keys to work. The bug is fixed in master so you can install [qemu-git](https://aur.archlinux.org/packages/qemu-git/).
 
 ### Guest display stretches on window resize
 
@@ -1655,7 +1655,7 @@ Using `hda` audio driver for Windows 7 guest may casue low-quality sound. Changi
 
 ### No internet connection with user networking
 
-When using user-mode networking, guest may not have internet access if host's [resolv.conf](https://wiki.archlinux.org/index.php/Resolv.conf) does not have any nameservers defined.
+When using user-mode networking, guest may not have internet access if host's [resolv.conf](/index.php/Resolv.conf "Resolv.conf") does not have any nameservers defined.
 
 ## See also
 

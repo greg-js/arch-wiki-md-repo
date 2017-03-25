@@ -18,8 +18,8 @@
 *   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [3.1 Создание ссылок на недостающие курсоры](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BE.D0.BA_.D0.BD.D0.B0_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D1.8E.D1.89.D0.B8.D0.B5_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D1.8B)
     *   [3.2 Замена недостающих курсоров](#.D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D1.8E.D1.89.D0.B8.D1.85_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.BE.D0.B2)
-    *   [3.3 rdesktop](#rdesktop)
-    *   [3.4 Изменение стандартного курсора X сервера](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.B0_X_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0)
+        *   [3.2.1 rdesktop](#rdesktop)
+    *   [3.3 Изменение стандартного курсора X сервера](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.B0_X_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0)
 *   [4 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -251,18 +251,18 @@ $ ln -s /usr/share/icons/Vanilla-DMZ/cursors/left_ptr ~/.icons/default/cursors/2
 
 Изменения будут видны после перезапуска приложения. Никаких специальных методов запуска приложений не требуется.
 
-### rdesktop
+#### rdesktop
 
 Вот некоторые распространенные курсоры Microsoft Windows, rdesktop использует их при подключении к удаленной машине под управлением Windows 7\. К сожалению анимированные курсоры трудно переопределить, так как они отправляются по-кадру, поэтому изображение нужно будет для каждого кадра!
 
 ```
-$ ln -s /usr/share/icons/$THEME/cursors/00000000017e000002fc000000000000 ~/.icons/default/cursors/xterm
-$ ln -s /usr/share/icons/$THEME/cursors/00000093000010860000631100006609 ~/.icons/default/cursors/right_ptr
-$ ln -s /usr/share/icons/$THEME/cursors/01e00000201c00004038000080300000 ~/.icons/default/cursors/plus
-$ ln -s /usr/share/icons/$THEME/cursors/24020000002800000528000084810000 ~/.icons/default/cursors/left_ptr
-$ ln -s /usr/share/icons/$THEME/cursors/6ce0180090108e0005814700a0021400 ~/.icons/default/cursors/left_ptr_watch
-$ ln -s /usr/share/icons/$THEME/cursors/d2201000a2c622004385440041308800 ~/.icons/default/cursors/hand
-$ ln -s /usr/share/icons/$THEME/cursors/fc618c00da110f0034fd0e004e082400 ~/.icons/default/cursors/watch
+$ ln -s /usr/share/icons/$THEME/cursors/xterm          ~/.icons/default/cursors/00000000017e000002fc000000000000
+$ ln -s /usr/share/icons/$THEME/cursors/right_ptr      ~/.icons/default/cursors/00000093000010860000631100006609
+$ ln -s /usr/share/icons/$THEME/cursors/plus           ~/.icons/default/cursors/01e00000201c00004038000080300000
+$ ln -s /usr/share/icons/$THEME/cursors/left_ptr       ~/.icons/default/cursors/24020000002800000528000084810000
+$ ln -s /usr/share/icons/$THEME/cursors/left_ptr_watch ~/.icons/default/cursors/6ce0180090108e0005814700a0021400
+$ ln -s /usr/share/icons/$THEME/cursors/hand           ~/.icons/default/cursors/d2201000a2c622004385440041308800
+$ ln -s /usr/share/icons/$THEME/cursors/watch          ~/.icons/default/cursors/fc618c00da110f0034fd0e004e082400
 
 ```
 

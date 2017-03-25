@@ -33,9 +33,7 @@ You can start your scripts or applications as daemons, see [Daemon](/index.php/D
 
 ## inotify
 
-From [Wikipedia](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify"):
-
-	*Inotify* (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications.
+[inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) can be used to execute commands or scripts on [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") events, triggered by file-system changes. See [some examples](https://techarena51.com/index.php/inotify-tools-example/).
 
 ## Shells
 

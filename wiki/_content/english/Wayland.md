@@ -394,7 +394,7 @@ gparted wants to run as root. Before starting it, allow root user to display app
 
 ### Remote desktop and vm applications don't grab input
 
-Per design Wayland doesn't allow for an application to grab input devices and constrict the region of the input device to the application, a much wanted feature when using a remote dekstop app or running a desktop vm, which means that modifier keys and hotkeys will not be sent correctly to the remote machine or vm and also tge mouse pointer will not be restricted to the application's user interface (which might cause a parallax effect). [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=97333) [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1285770)
+Per design Wayland doesn't allow for an application to grab input devices and constrict the region of the input device to the application, a much wanted feature when using a remote desktop app or running a desktop vm, which means that modifier keys and hotkeys will not be sent correctly to the remote machine or vm and also the mouse pointer will not be restricted to the application's user interface (which might cause a parallax effect). [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=97333) [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1285770)
 
 ## See also
 

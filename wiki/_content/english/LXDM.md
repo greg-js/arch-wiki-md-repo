@@ -188,6 +188,13 @@ These files can be used to set session environment variables and to start servic
 
 Note that LXDM does *not* source `~/.xinitrc`, so those migrating from a DM that *does* use this file, like [SLiM](/index.php/SLiM "SLiM"), will have to move their settings elsewhere — probably `~/.xprofile`. Also note LXDM does not source `~/.bash_profile`.
 
+If you still want to use your `~/.xinitrc` file, you can add a line to the `/etc/lxdm/PostLogin` event file:
+
+```
+source ~/.xinitrc
+
+```
+
 LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
 
 ### Flash fix for dark backgrounds

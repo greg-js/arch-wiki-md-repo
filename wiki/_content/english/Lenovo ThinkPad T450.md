@@ -21,9 +21,9 @@ All hardware works out of the box, except the following:
 
 ### Sound
 
-The audio has a conflict between two modules. The modules inquestion are `snd_hda_intel` and `snd_hda_codec`. Disabling the intel sound module module fixes the sound issue. You can disable it by creating a blacklisting snd_hda_intel (possible snd_hda_codec instead?) file.
+See [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA") to set the default sound card to Intel PCH (speakers and headphones).
 
- `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1` 
+ ` /etc/modprobe.d/thinkpad-t450s.conf `  `options snd_hda_intel index=1,0` 
 
 ### Rebinding Forward and Back Keys
 

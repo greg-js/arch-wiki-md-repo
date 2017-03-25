@@ -56,6 +56,7 @@ Now you have a whole bunch of commands at your disposal. These are in no particu
 $ hamachi set-nick bob
 $ hamachi login
 $ hamachi create my-net secretpassword
+$ hamachi do-join my-net
 $ hamachi go-online my-net
 $ hamachi list
 $ hamachi go-offline my-net

@@ -839,7 +839,7 @@ This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) pro
 
 Users of display managers might experience a flickering during the transition between the display manager and the Openbox desktop. The flickering comes from Openbox setting the root window's color during startup. Therefore there's a brief moment when the display flashes in a grey color, between the display manager's background and the desktop's wallpaper.
 
-Setting the root window's background color can be disabled by editing the Openbox startup script found in `/usr/lib/openbox/openbox-autostart`. Simply comment out (or delete) the block starting with `# Set a background color`. See [this blog post](http://dglava.github.io/en/lightdm-openbox.html) for more information.
+Setting the root window's background color can be disabled by editing the Openbox startup script found in `/usr/lib/openbox/openbox-autostart`. Simply comment out (or delete) the block starting with `# Set a background color`.
 
 **Note:** Users who don't specifically set their wallpaper will "inherit" the display manager's background automatically if they disable the root window color adjustment.
 

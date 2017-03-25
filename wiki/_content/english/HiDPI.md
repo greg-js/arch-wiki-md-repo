@@ -353,9 +353,9 @@ There's also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 ### VLC
 
-As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve some of the problems.
+As of 2017-03-17, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve most of the problems.
 
-Qt5 may detect that you have a HiDPI display and if so the video will be played in one corner of the window with lots of black space around it, even in fullscreen. You can start vlc with `QT_AUTO_SCREEN_SCALE_FACTOR=0` to workaround the problem, although the interface elements will be smaller. ([source](https://trac.videolan.org/vlc/ticket/17823))
+Qt5 may detect that you have a HiDPI display and if so the video will be played in one corner of the window with lots of black space around it, even in fullscreen. You can start vlc with `QT_AUTO_SCREEN_SCALE_FACTOR=0` to workaround the problem, although the interface elements will be smaller. ([source](https://trac.videolan.org/vlc/ticket/17484))
 
 ### Steam
 

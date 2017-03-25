@@ -107,7 +107,7 @@ $ createdb -T template_postgis [new_postgis_db]
 
 ## More Resources
 
-For additional resources concerning PostGIS, check out the [PostGIS Documentation](http://postgis.refractions.net/documentation/).
+For additional resources concerning PostGIS, check out the [PostGIS Documentation](http://postgis.net/documentation/).
 
 ## PostGIS failing with json_tokener_error
 

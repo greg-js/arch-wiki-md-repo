@@ -5,15 +5,17 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 ## Contents
 
 *   [1 Headset via Bluez5/PulseAudio](#Headset_via_Bluez5.2FPulseAudio)
-    *   [1.1 Setting up auto connection](#Setting_up_auto_connection)
-    *   [1.2 Troubleshooting](#Troubleshooting)
-        *   [1.2.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
-        *   [1.2.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
-        *   [1.2.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
-        *   [1.2.4 Connecting works, but there're sound glitches all the time](#Connecting_works.2C_but_there.27re_sound_glitches_all_the_time)
-        *   [1.2.5 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
-        *   [1.2.6 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
-        *   [1.2.7 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
+    *   [1.1 Configuration via CLI](#Configuration_via_CLI)
+        *   [1.1.1 Setting up auto connection](#Setting_up_auto_connection)
+    *   [1.2 Configuration via GNOME Bluetooth](#Configuration_via_GNOME_Bluetooth)
+    *   [1.3 Troubleshooting](#Troubleshooting)
+        *   [1.3.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
+        *   [1.3.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
+        *   [1.3.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
+        *   [1.3.4 Connecting works, but there're sound glitches all the time](#Connecting_works.2C_but_there.27re_sound_glitches_all_the_time)
+        *   [1.3.5 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
+        *   [1.3.6 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.3.7 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -46,6 +48,8 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 ## Headset via Bluez5/PulseAudio
 
 PulseAudio 5.x supports A2DP per default. Make sure the following packages are [installed](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), [bluez-firmware](https://www.archlinux.org/packages/?name=bluez-firmware). Without [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) you will not be able to connect after the next pairing and you will not get any usable error messages.
+
+### Configuration via CLI
 
 [Start](/index.php/Start "Start") the `bluetooth.service` systemd unit.
 
@@ -101,7 +105,7 @@ You can now disable scanning again and exit the program:
 
 ```
 
-### Setting up auto connection
+#### Setting up auto connection
 
 To make your headset auto connect you need to enable PulseAudio's switch-on-connect module. Do this by adding the following lines to your the following to your `/etc/pulse/default.pa`:
 
@@ -132,6 +136,14 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 [Policy]
 AutoEnable=true
 ```
+
+### Configuration via GNOME Bluetooth
+
+You can use [GNOME Bluetooth](/index.php/Bluetooth#GNOME_Bluetooth "Bluetooth") graphical front-end to easily configure your bluetooth headset.
+
+First, you need to be sure that `bluetooth.service` systemd unit is running.
+
+Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you can connect to your headset selecting it on the device list. You can directly access to sound configuration panel from the device menu. On the sound panel, a new sink should appear when your device is connected.
 
 ### Troubleshooting
 

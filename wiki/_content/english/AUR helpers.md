@@ -59,6 +59,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/falconindy/cower](https://github.com/falconindy/cower) || [cower](https://aur.archlinux.org/packages/cower/)
 
+*   **cylon** — pacman and pacaur wrapper, and is also a wrapper for cower and provides it a backend. Includes various other maintenance functions and extras.
+
+	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
+
 *   **owlman** — pacman and cower wrapper ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=129609))
 
 	[https://github.com/baskerville/owlman](https://github.com/baskerville/owlman) || [owlman](https://aur.archlinux.org/packages/owlman/)
@@ -190,13 +194,13 @@ The columns have the following meaning:
 | prm | Bash | Yes [[7]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | repoctl | Go | Yes | N/A | Yes [[8]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |
 | spinach | Bash | No [[9]](https://github.com/floft/spinach/blob/master/spinach#L287) | Yes | No | No | No | No | None | S | - |
-| trizen | Perl | Yes | Yes | Yes [[10]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | No | Yes [[11]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | No | None | P | AUR comments |
+| trizen | Perl | Yes | Yes | Yes [[10]](https://github.com/trizen/trizen/commit/7ab7ee5f9f1f5d971b731d092fc8e1dd963add4b) | Yes | Yes [[11]](https://github.com/trizen/trizen/commit/3c94434c66ede793758f2bf7de84d68e3174e2ac) | Yes [[12]](https://github.com/trizen/trizen/commit/6fb0cc9e0ab66b8cca9493b0618ba4bab5fd2252) | None | P | AUR comments |
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | S | No automatic builds |
-| yaourt | Bash/C | No (*yaourt -Si*) [[12]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[13]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | No [[14]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[15]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[16]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
+| yaourt | Bash/C | No (*yaourt -Si*) [[13]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[14]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | No [[15]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[16]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[17]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
 | yay | Go | Yes | Yes | Yes | No | Partial | No | bash/zsh/fish | P | sort by votes |
 
-**Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[17]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
+**Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[18]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
 
-*   [bauerbill](https://aur.archlinux.org/packages/bauerbill/) [[18]](https://bbs.archlinux.org/viewtopic.php?pid=1617235#p1617235), [pkgbuilder](https://aur.archlinux.org/packages/pkgbuilder/) [[19]](https://github.com/Kwpolska/pkgbuilder/blob/65d9d74ef05f8996b81afb1cd005e3c337afa8b2/pkgbuilder/build.py#L198): Retrieve specific fields from [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
-*   [aurutils](https://aur.archlinux.org/packages/aurutils/) [[20]](https://github.com/AladW/aurutils/issues/80), [pacaur](https://aur.archlinux.org/packages/pacaur/) [[21]](https://github.com/rmarquis/pacaur/issues/465), [trizen](https://aur.archlinux.org/packages/trizen/) [[22]](https://github.com/trizen/trizen/commit/6a8ff9dc8cc83af783b8475dfbe89988dbc8a553): Strip the `lib32-` prefix on `i686` systems
+*   [bauerbill](https://aur.archlinux.org/packages/bauerbill/) [[19]](https://bbs.archlinux.org/viewtopic.php?pid=1617235#p1617235), [pkgbuilder](https://aur.archlinux.org/packages/pkgbuilder/) [[20]](https://github.com/Kwpolska/pkgbuilder/blob/65d9d74ef05f8996b81afb1cd005e3c337afa8b2/pkgbuilder/build.py#L198): Retrieve specific fields from [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [aurutils](https://aur.archlinux.org/packages/aurutils/) [[21]](https://github.com/AladW/aurutils/issues/80), [pacaur](https://aur.archlinux.org/packages/pacaur/) [[22]](https://github.com/rmarquis/pacaur/issues/465), [trizen](https://aur.archlinux.org/packages/trizen/) [[23]](https://github.com/trizen/trizen/commit/6a8ff9dc8cc83af783b8475dfbe89988dbc8a553): Strip the `lib32-` prefix on `i686` systems

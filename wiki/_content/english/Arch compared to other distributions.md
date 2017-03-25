@@ -75,7 +75,7 @@ These distributions offer a broad range of advantages and strengths, and can be 
 
 *   Fedora packages use the RPM format with the DNF package manager. Arch uses [pacman](/index.php/Pacman "Pacman") to manage tar.xz packages.
 
-*   Fedora refuses to include MP3 media support and other non-free software in official repositories due to its dedication to free software, though third-party repositories are available for such packages. Arch is more lenient in its disposition toward MP3 and non-free software, leaving the discernment to the user.
+*   Fedora refuses to include non-free software in official repositories due to its dedication to free software, though third-party repositories are available for such packages. Arch is more lenient in its disposition toward non-free software, leaving the discernment to the user.
 
 *   Fedora offers many installation options including a graphical installer as well as a minimal option. Fedora "spins" also provide alternative assortments of desktop environments to choose from, each with a modest assortment of default packages. Arch, on the other hand, only provides a few scripts meant to ease the process of a minimal base system install.
 

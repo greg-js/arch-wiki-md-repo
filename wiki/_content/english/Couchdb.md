@@ -16,7 +16,7 @@ Install the [couchdb](https://www.archlinux.org/packages/?name=couchdb) package.
 
 By default, the package depends on [erlang-nox](https://www.archlinux.org/packages/?name=erlang-nox) without GTK, for headless servers. You can also install the standard version, [erlang](https://www.archlinux.org/packages/?name=erlang), that does require GTK.
 
-After installation visit: [http://127.0.0.1:5984/_utils/#setup](http://127.0.0.1:5984/_utils/#setup) to setup the database and admin user account. If you select single node setup you might need to create few databases manually via http api:
+After installation [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `couchdb.service` daemon and visit: [http://127.0.0.1:5984/_utils/#setup](http://127.0.0.1:5984/_utils/#setup) to setup the database and admin user account. If you select single node setup you might need to create few databases manually via http api:
 
 ```
    curl -X PUT [http://127.0.0.1:5984/_users](http://127.0.0.1:5984/_users)
@@ -31,7 +31,7 @@ see [Single Node Setup](http://docs.couchdb.org/en/2.0.0/install/index.html#sing
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `couchdb.service` daemon.
 
-Test to see if the service is running by running `curl -XGET http://127.0.0.1:5984/`. Ping will not work (it's not supposed to unlike on other systems where it does). Note that in order to access this instance of CouchDB from another system you'll need to configure it (see below).
+Test to see if the service is running by running `curl http://127.0.0.1:5984/`. Ping will not work (it's not supposed to unlike on other systems where it does). Note that in order to access this instance of CouchDB from another system you'll need to configure it (see below).
 
 ### Using Futon admin interface
 

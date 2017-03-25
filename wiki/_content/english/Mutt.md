@@ -207,7 +207,7 @@ set imap_check_subscribed
 
 These two versions are equivalent if you want to subscribe to all folders. So the second method is much more convenient, but the first one gives you more flexibility. Also, newer Mutt versions are configured by default to include a macro bound to the 'y' key which will allow you to change to any of the folders listed under mailboxes.
 
-If you do not set this variable, the *spoolfile* will be used by default. This variable is also important for the [sidebar](#Mutt-Sidebar).
+If you do not set this variable, the *spoolfile* will be used by default. This variable is also important for the [#Sidebar](#Sidebar).
 
 ##### Summary
 
