@@ -4,6 +4,7 @@ This article describes specific steps to configure hardware on the notebook mode
 
 *   [1 Wireless](#Wireless)
 *   [2 Power management](#Power_management)
+    *   [2.1 Troubleshooting](#Troubleshooting)
 *   [3 Audio](#Audio)
     *   [3.1 Multimedia keys](#Multimedia_keys)
 *   [4 Video](#Video)
@@ -24,6 +25,12 @@ Laptop Mode tools with a combination of Cpufreq, acpi and pm-utils will work on 
 *   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") (may not be required)
 *   [Acpid](/index.php/Acpid "Acpid")
 *   [Pm-utils](/index.php/Pm-utils "Pm-utils")
+
+## Troubleshooting
+
+On almost every kernel and distribution the CPU scaling doesnt work and it stays stuck at 800Mhz constantly. An easy fix is to append the linux line in [grub](/index.php/GRUB "GRUB") and add: "acpi=noirq" . To make it permanent you need to configure the GRUB_CMDLINE_LINUX argument.
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="acpi=noirq"` 
 
 # Audio
 

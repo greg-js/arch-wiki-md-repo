@@ -1239,6 +1239,10 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
+*   **[Teamviewer](/index.php?title=Teamviewer&action=edit&redlink=1 "Teamviewer (page does not exist)")** — Remote desktop client.
+
+	[http://www.teamviewer.com/](http://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
+
 *   **[vncviewer (TigerVNC)](/index.php/TigerVNC "TigerVNC")** — VNC viewer for X.
 
 	[http://tigervnc.org/](http://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)

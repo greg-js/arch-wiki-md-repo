@@ -9,7 +9,7 @@ The *multilib* repository is an [official repository](/index.php/Official_reposi
 
 ## Directory structure
 
-A 64-bit installation of Arch Linux with *multilib* enabled follows a directory structure similar to Debian Squeeze. The 32-bit compatible libraries are located under `/usr/lib32/`, and the native 64-bit libraries under `/usr/lib/`.
+With the multilib repository enabled, the 32-bit compatible libraries are located under `/usr/lib32/`.
 
 ## Enabling
 
@@ -21,9 +21,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Then update the package list and upgrade with `pacman -Syu`.
-
-**Note:** Do not just run `pacman -Sy`, see [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance").
+Then [upgrade](/index.php/Upgrade "Upgrade") the system.
 
 ## Disabling
 
@@ -36,12 +34,7 @@ Execute the following command to remove all packages that were installed from *m
 
 ```
 
-If you have conflicts with gcc-libs reinstall the 64-bit versions and try the previous command again:
-
-```
-# pacman -S gcc-libs base-devel
-
-```
+If you have conflicts with gcc-libs reinstall the [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group.
 
 Comment out the `[multilib]` section in `/etc/pacman.conf`:
 
@@ -51,7 +44,7 @@ Comment out the `[multilib]` section in `/etc/pacman.conf`:
 
 ```
 
-Then update the package list and upgrade with `pacman -Syu`.
+Then [upgrade](/index.php/Upgrade "Upgrade") the system.
 
 ## See also
 

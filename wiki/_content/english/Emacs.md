@@ -4,10 +4,9 @@
 
 *   [1 Installation](#Installation)
 *   [2 Running Emacs](#Running_Emacs)
-    *   [2.1 Normal way](#Normal_way)
-    *   [2.2 No Colors](#No_Colors)
-    *   [2.3 As a daemon](#As_a_daemon)
-    *   [2.4 As a systemd unit](#As_a_systemd_unit)
+    *   [2.1 No Colors](#No_Colors)
+    *   [2.2 As a daemon](#As_a_daemon)
+    *   [2.3 As a systemd unit](#As_a_systemd_unit)
 *   [3 Usage](#Usage)
     *   [3.1 The manuals](#The_manuals)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -59,13 +58,9 @@ If you want to fully enjoy all the extended features of Emacs without installing
 
 ```
 
-Another common variant is [xemacs](https://aur.archlinux.org/packages/xemacs/).
-
 ## Running Emacs
 
 Before launching emacs, you should know how to close it (especially if you run it in a terminal): use the `Ctrl+x``Ctrl+c` key sequence.
-
-### Normal way
 
 To start Emacs run:
 
@@ -110,77 +105,21 @@ This will cause all text to appear in white color only.
 
 ### As a daemon
 
-Emacs can take some time to start since it has to load the `.emacs` file each time. Besides, you may want to access the same files from different instances. Since version 23, Emacs is able to run as a daemon to which users can connect. To run Emacs as a daemon:
+In order to avoid reloading the Emacs config file every time Emacs starts, you can run Emacs as a daemon:
 
 ```
 $ emacs --daemon
 
 ```
 
-You are likely to start the daemon at startup time and to connect a window to the daemon. Besides, it is possible to connect *both* graphical and console clients to the daemon at the same time and make the GUI to start quickly.
-
-If you want to connect to the daemon simply use the following command (note that it will start a graphical client if called in a graphical environment or a console client if called in a console like a tty):
-
-```
-$ emacsclient
-
-```
-
-If you merely want a console client despite being in a graphical environment then use:
-
-```
-$ emacsclient -t
-
-```
-
-Furthermore, you can add the `-a ""` parameter. Now, the first time you call the command, it will start emacs as a daemon, so that it remains running in background and so improving startup times for future calls (and to remember buffers as well).
-
-If you start the client from a terminal or another program, you may want not to wait for it to return, so that you can continue using the calling program and even close it without closing the Emacs client. To do so, start the client with the `-n` (`--no-wait`) parameter:
+You may then connect to the daemon by running:
 
 ```
 $ emacsclient -nc
 
 ```
 
-Note that some programs such as Mutt or Git (for commit messages) wait for the editor to finish, so you cannot use the `-n` parameter. If your default editor is set to use it, you will have to specify an alternate editor (*e.g.* `emacsclient -a "" -t`) for those programs.
-
-You could use the following shell configuration:
-
-```
-alias emt='emacsclient -nc -a ""'
-alias emc='emacsclient -t -a ""'
-EDITOR='emacsclient -a ""'
-```
-
-but it has some caveats: many program will fail to load the external editor because of the spaces in the command.
-
-A more convenient and reliable solution is to write your own script:
-
- `/usr/local/bin/emc` 
-```
-#!/bin/sh
-if [ -z "$DISPLAY" ]; then
-    IS_GRAPHICAL=true
-else
-    IS_GRAPHICAL=$(emacs --batch -Q --eval='(if (fboundp '"'"'tool-bar-mode) (message "true") (message "false"))' 2>&1)
-fi
-
-if $IS_GRAPHICAL; then
-    emacsclient -a "" -nc "$@"
-else
-    emacsclient -a "" -t "$@"
-fi
-
-```
-
-then make it executable:
-
-```
-# chmod 755 /usr/local/bin/emc
-
-```
-
-Now 'emc' will work just as expected. Setting the `EDITOR` environment variable to the aforementionned script should suffice to make the client be your defaut editor.
+Which creates a new frame `-c` (use `-t` if you prefer to use it in the terminal) and doesn't hog the terminal `-n` (`--no-wait`). Note that some programs such as Mutt or Git (for commit messages) wait for the editor to finish, so you cannot use the `-n` parameter. If your default editor is set to use it, you will have to specify an alternate editor (*e.g.* `emacsclient -a "" -t`) for those programs.
 
 ### As a systemd unit
 
@@ -188,6 +127,7 @@ The old system unit method had some caveats. It gave a limited shell environment
 
 Create a systemd unit for emacs:
 
+**Note:** Such a unit file is planned for inclusion in Emacs 26.1, see [emacs bug 16507](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=16507).
  `~/.config/systemd/user/emacs.service` 
 ```
 [Unit]
@@ -217,8 +157,6 @@ To actually use the unit, either reboot or start the unit manually:
 $ systemctl --user start emacs
 
 ```
-
-**Note:** Such a unit file is planned for inclusion in Emacs 26.1, see [emacs bug 16507](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=16507).
 
 ## Usage
 

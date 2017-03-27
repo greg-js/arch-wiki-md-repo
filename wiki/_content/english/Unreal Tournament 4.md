@@ -22,7 +22,7 @@ Register at [UnrealEngine.com](https://www.unrealengine.com/) and link your GitH
 
 ### Installing from the AUR
 
-Unreal Tournament 4 can be compiled from source by using the [unreal-tournament-4](https://aur.archlinux.org/packages/unreal-tournament-4/) package in [AUR](/index.php/AUR "AUR") or you can download a compiled version from their forum and install it with the [ut4](https://aur.archlinux.org/packages/ut4/) package.
+Unreal Tournament 4 can be compiled from source by using the [unreal-tournament-4](https://aur.archlinux.org/packages/unreal-tournament-4/) package in [AUR](/index.php/AUR "AUR") or you can download a compiled version from their forum and install it with the [unrealtournament4](https://aur.archlinux.org/packages/unrealtournament4/) package.
 
 The package needs about 100 GiB free space to build, with 10 GiB of source files to download, and the compilation might take a few hours.
 

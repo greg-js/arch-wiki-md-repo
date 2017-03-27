@@ -634,6 +634,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://glhack.sourceforge.net/](http://glhack.sourceforge.net/) || [glhack](https://www.archlinux.org/packages/?name=glhack)
 
+*   **Infra-Arcana** — A game inspired by the writings of H.P. Lovecraft.
+
+	[https://sites.google.com/site/infraarcana/](https://sites.google.com/site/infraarcana/) || [infra-arcana](https://aur.archlinux.org/packages/infra-arcana/), [infra-arcana-git](https://aur.archlinux.org/packages/infra-arcana-git/)
+
 *   **[Nethack](https://en.wikipedia.org/wiki/NetHack "wikipedia:NetHack")** — Single player dungeon exploration game.
 
 	[http://www.nethack.org/](http://www.nethack.org/) || [nethack](https://www.archlinux.org/packages/?name=nethack)

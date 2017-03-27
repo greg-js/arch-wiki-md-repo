@@ -272,6 +272,10 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 	[http://fceux.com/](http://fceux.com/) || [fceux](https://www.archlinux.org/packages/?name=fceux)
 
+*   **Gambatte** — Accurate Game Boy Color emulator
+
+	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://www.archlinux.org/packages/?name=gambatte-qt)), SDL CLI frontend ([gambatte-sdl](https://www.archlinux.org/packages/?name=gambatte-sdl)).
+
 *   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
 
 *   activate OpenGL, set video resolution per custom to 1024x600 for streched full-screen or 800x600 for non-streched;

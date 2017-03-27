@@ -27,6 +27,7 @@
     *   [2.8 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
     *   [2.9 What to do before upgrading?](#What_to_do_before_upgrading.3F)
     *   [2.10 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
+    *   [2.11 Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?](#Upstream_project_X_has_released_a_new_version._How_long_will_it_take_for_the_Arch_package_to_update_to_that_new_version.3F)
 *   [3 Installation](#Installation)
     *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer.3F)
     *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch.2C_and_now_I_am_at_a_shell.21_What_now.3F)
@@ -190,6 +191,10 @@ Follow the [System maintenance#Upgrading the system](/index.php/System_maintenan
 ### A package update was released, but pacman says the system is up to date
 
 *pacman* mirrors are not synced immediately. It may take over 24 hours before an update is available to you. The only options are be patient or use another mirror. [MirrorStatus](https://www.archlinux.org/mirrors/status/) can help you identify an up-to-date mirror.
+
+### Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?
+
+Package updates will be released when they are ready. The specifc amount of time can be as short as a few hours after upstream releases a minor bugfix update to as long as several weeks after a large package group's major update. The amount of time from an upstream's new version to Arch releasing a new package depends on the specific packages and the availability of the package maintainers. Additionally, some packages spend some time in the [testing](/index.php/Testing "Testing") repository, so this can prolong the time before a package is updated. [Package maintainers](/index.php/Package_maintainer "Package maintainer") attempt to work quickly to bring stable updates to the repositories. If you find a package in the official repositories that is out of date, go to that package's page at the [package website](https://www.archlinux.org/packages/) and flag it.
 
 ## Installation
 

@@ -1422,6 +1422,10 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
+*   **[Teamviewer](/index.php?title=Teamviewer&action=edit&redlink=1 "Teamviewer (page does not exist)")** — Remote desktop client.
+
+	[http://www.teamviewer.com/](http://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
+
 *   **[vncviewer (TigerVNC)](/index.php/TigerVNC "TigerVNC")** — VNC viewer for X.
 
 	[http://tigervnc.org/](http://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
@@ -5264,6 +5268,10 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 *   **FCEUX** — NTSC and PAL 8 bit Nintendo/Famicom emulator that is an evolution of the original FCE Ultra emulator. It is accurate, compatible and actively maintained.
 
 	[http://fceux.com/](http://fceux.com/) || [fceux](https://www.archlinux.org/packages/?name=fceux)
+
+*   **Gambatte** — Accurate Game Boy Color emulator
+
+	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://www.archlinux.org/packages/?name=gambatte-qt)), SDL CLI frontend ([gambatte-sdl](https://www.archlinux.org/packages/?name=gambatte-sdl)).
 
 *   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
 

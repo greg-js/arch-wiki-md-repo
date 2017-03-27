@@ -108,7 +108,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") [mpv(1)](https://mpv.io/manual/master/). To make this persistent, add the line `hwdec=*method*` to your configuration file.
 
-When hardware decoding is used, the video output should generally be set to `opengl` or `opengl-hq` (or possibly `vdpau` if using `hwdec=vdpau`). In particular, `hwdec=vaapi` should be used with `vo=opengl` [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) if possible.
+When hardware decoding is used, the video output should generally be set to `opengl` or `opengl-hq` (or possibly `vdpau` if using `hwdec=vdpau`). In particular, `hwdec=vaapi` should be used with `profile=opengl` [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) if possible (`opengl-hq` has sometimes huge CPU spikes when a video is read using this mode).
 
 If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
@@ -220,7 +220,7 @@ If you're using a compositor (e.g. in KDE Plasma 5) and find that composition is
 An example of creating a single screenshot, by using a start time (`HH:MM:SS`):
 
 ```
-$ mpv --no-audio --vo=image --start=00:01:30 --frames=1 /path/to/video/file
+$ mpv --no-audio --profile=image --start=00:01:30 --frames=1 /path/to/video/file
 
 ```
 
@@ -264,7 +264,7 @@ $ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 mpv defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the XV (XVideo) video output device may help:
 
- `~/.config/mpv/mpv.conf`  `vo=xv` 
+ `~/.config/mpv/mpv.conf`  `profile=xv` 
 
 This VO is deprecated and will cause issues in recent versions of mpv, most noticeably is the osd looking very blurry.
 

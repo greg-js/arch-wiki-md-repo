@@ -58,7 +58,7 @@ where 123456 is the offset from the beginning of the resume device where the swa
 
 *   The `image size` parameter (optional) can be used to limit the size of the system snapshot image created by s2disk. If it's not possible to create an image of the desired size, s2disk will suspend anyway, using a bigger image. If image size is set to 0, the image will be as small as possible.
 
-*   The `shutdown method` parameter (optional) specifies the operation that will be carried out when the machine is ready to be powered off. If set to "reboot" the machine will be rebooted immediately. If set to "platform" the machine will be shut down using special power management operations available from the kernel that may be necessary for the hardware to be properly reinitialized after the resume, and may cause the system to resume faster.
+*   The `shutdown method` parameter (optional) specifies the operation that will be carried out when the machine is ready to be powered off. If set to "reboot" the machine will be rebooted immediately. If set to "platform" the machine will be shut down using special power management operations available from the kernel that may be necessary for the hardware to be properly reinitialized after the resume, and may cause the system to resume faster. If set to "shutdown" the machine will simply be powered down, which may cause trouble for some hardware.
 
 *   If the `compute checksum` parameter is set to 'y', the s2disk and resume tools will use the MD5 algorithm to verify the image integrity.
 
@@ -169,7 +169,7 @@ It is probably necessary to resort to a userspace tool which calls internally s2
 
 To to put your system into hibernation a.k.a *Suspend to Disk* with `systemctl hibernate`, [edit](/index.php/Edit "Edit") `systemd-hibernate.service`, adding:
 
- `/etc/systemd/system/systemd-hibernate-service.d/override.conf` 
+ `/etc/systemd/system/systemd-hibernate.service.d/override.conf` 
 ```
 [Service]
 ExecStart=

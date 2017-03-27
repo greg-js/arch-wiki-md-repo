@@ -12,13 +12,14 @@
     *   [3.5 Applying changes](#Applying_changes)
 *   [4 Basic usage](#Basic_usage)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Statusbar configuration](#Statusbar_configuration)
-        *   [5.1.1 Conky statusbar](#Conky_statusbar)
-    *   [5.2 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
-    *   [5.3 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
-    *   [5.4 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
-    *   [5.5 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
-    *   [5.6 Make some windows start floating](#Make_some_windows_start_floating)
+    *   [5.1 st keybindings conflict](#st_keybindings_conflict)
+    *   [5.2 Statusbar configuration](#Statusbar_configuration)
+        *   [5.2.1 Conky statusbar](#Conky_statusbar)
+    *   [5.3 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
+    *   [5.4 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
+    *   [5.5 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
+    *   [5.6 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
+    *   [5.7 Make some windows start floating](#Make_some_windows_start_floating)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fixing misbehaving Java applications](#Fixing_misbehaving_Java_applications)
     *   [6.2 Fixing the extra topbar that does not disappear when changing resolution/monitors](#Fixing_the_extra_topbar_that_does_not_disappear_when_changing_resolution.2Fmonitors)
@@ -54,7 +55,7 @@ The official website has a number of [patches](http://dwm.suckless.org/patches/)
 
 ### Status bar
 
-See the [dwmstatus](http://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration] section in [#Tips and tricks].
+See the [dwmstatus](http://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
 
 ### Use pacman
 
@@ -69,6 +70,10 @@ After making any desired changes and installing the updated package, restart dwm
 Consult the [dwm tutorial](http://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see dwm(1).
 
 ## Tips and tricks
+
+### st keybindings conflict
+
+The default terminal for *dwm* is [st](/index.php/St "St"). Be default, *st* uses `Mod1+Ctrl+C` for copy, but *dwm* uses this same key combination to kill a program. You should change this shortcut in either *dwm* or *st* such that *st* is not killed when attempting to copy text.
 
 ### Statusbar configuration
 
@@ -245,4 +250,3 @@ This will cause dwm to ignore resize requests from all client windows, not just 
 *   [Hacking dwm thread](https://bbs.archlinux.org/viewtopic.php?id=92895/)
 *   Check out the forums' [wallpaper thread](https://bbs.archlinux.org/viewtopic.php?id=57768/) for a selection of dwm wallpapers
 *   [Show off your dwm configuration forum thread](https://bbs.archlinux.org/viewtopic.php?id=74599)
-*   [dwm: Tags are not workspaces](http://wongdev.com/blog/dwm-tags-are-not-workspaces/)

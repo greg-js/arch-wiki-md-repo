@@ -37,8 +37,8 @@ For example, for [urxvt](/index.php/Urxvt "Urxvt"):
 
  `~/.inputrc` 
 ```
-"\eOd": backward-word
-"\eOc": forward-word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
 ```
 
 ## History

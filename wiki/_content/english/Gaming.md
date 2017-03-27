@@ -126,7 +126,7 @@ You can also download [sdl-nokeyboardgrab](https://aur.archlinux.org/packages/sd
 
 In some cases like those mentioned above, it may be necessary or desired to run a second X server. Running a second X server has multiple advantages such as better performance, the ability to "tab" out of your game by using `Ctrl+Alt+F7`/`Ctrl+Alt+F8`, no crashing your primary X session (which may have open work on) in case a game conflicts with the graphics driver. The new X server will be akin a remote access login for the ALSA, so your user need to be part of the `audio` group to be able to hear any sound.
 
-To start a second X server (using [Xonotic](http://www.xonotic.org/) as an example) you can simply do:
+To start a second X server (using the free first person shooter game [Xonotic](http://www.xonotic.org/) as an example) you can simply do:
 
 ```
 $ xinit /usr/bin/xonotic-glx -- :1 vt$XDG_VTNR

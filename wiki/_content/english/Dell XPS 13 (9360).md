@@ -35,15 +35,16 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [9 Touchscreen](#Touchscreen)
     *   [9.1 Gestures](#Gestures)
 *   [10 Keyboard Backlight](#Keyboard_Backlight)
-*   [11 Firmware Updates](#Firmware_Updates)
-*   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [12.2 Not waking from suspend](#Not_waking_from_suspend)
-    *   [12.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
-    *   [12.4 Popping Sound on headphones/external speakers](#Popping_Sound_on_headphones.2Fexternal_speakers)
-    *   [12.5 Coil Whine](#Coil_Whine)
-    *   [12.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
-*   [13 See Also](#See_Also)
+*   [11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+*   [12 Firmware Updates](#Firmware_Updates)
+*   [13 Troubleshooting](#Troubleshooting)
+    *   [13.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [13.2 Not waking from suspend](#Not_waking_from_suspend)
+    *   [13.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
+    *   [13.4 Popping Sound on headphones/external speakers](#Popping_Sound_on_headphones.2Fexternal_speakers)
+    *   [13.5 Coil Whine](#Coil_Whine)
+    *   [13.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
+*   [14 See Also](#See_Also)
 
 ## Content adaptive brightness control
 
@@ -194,6 +195,19 @@ You can also change the brightness (0-2) by editing the following file. This is 
    /sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/brightness
 
 ```
+
+## Hidden Keyboard Keys
+
+There are additional Fn+<Key> (sequences) that are not marked at all on the keyboard but underlying hardware generates them anyway. Here they are (if you find more add them to the table below):
+
+<caption>Hidden Fn Keys</caption>
+| Fn+<Key> | Resulting key (sequence) |
+| Fn+Ins | Sleep |
+| Fn+Super_L | Super_R |
+| Fn+B | Pause (=Break?) |
+| Fn+R | Print |
+| Fn+S | Scroll_Lock |
+| Fn+A / D / E / F / G / T / Q / W | XF86Launch3 |
 
 ## Firmware Updates
 

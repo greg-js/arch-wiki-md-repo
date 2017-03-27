@@ -523,7 +523,7 @@ $ chmod +x ~/.kde4/env/ssh-agent.sh
 
 ```
 
-当您登录到 KDE 桌面环境时，它就会自动运行脚本 `ssh-agent.sh`。这样子就能够调用 `ksshaskpass`，当 {{ic|envoy} 调用 {{ic|ssh-agent} 时，{{ic|ksshaskpass} 就会请求您输入 KDE 电子钱包的密码了。而 KDE 电子钱包则会保存您的密码短语，在 `ssh-agent` 需要的时候由 KDE 电子钱包提供。
+当您登录到 KDE 桌面环境时，它就会自动运行脚本 `ssh-agent.sh`。这样子就能够调用 `ksshaskpass`，当 `envoy` 调用 `ssh-agent` 时，`ksshaskpass` 就会请求您输入 KDE 电子钱包的密码了。而 KDE 电子钱包则会保存您的密码短语，在 `ssh-agent` 需要的时候由 KDE 电子钱包提供。
 
 ### pam_ssh
 
@@ -599,7 +599,7 @@ $ chmod 600 ~/.ssh/authorized_keys
 
 如果这样还不能解决您的问题，您可以试试将 `sshd_config` 中的 `StrictModes` 设为 `no`。如果将 `StrictModes` 关闭就能够顺利认证的话，说明相关文件的权限还没有改对。
 
-**小贴士:** 为保证安全，记得把 `StrictModes` 设为 `yes`。
+**提示：** 为保证安全，记得把 `StrictModes` 设为 `yes`。
 
 请确认您的 SSH 服务器支持您所使用的密钥类型， 可以实施 RSA 或者 DSA。某些服务器可能不支持 ECDSA 密钥。
 

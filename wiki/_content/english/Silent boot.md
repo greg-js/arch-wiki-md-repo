@@ -49,7 +49,7 @@ To hide any kernel messages from the console, add or modify the `kernel.printk` 
 
 To hide `startx` messages, you could redirect its output to `/dev/null`, in your [.bash_profile](https://github.com/kaihendry/Kai-s--HOME/blob/master/.bash_profile) like so:
 
-**Warning:** As of Xorg 1.16 with rootless login, see [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg").
+**Note:** Redirection is broken with rootless login. See [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg").
 
 ```
 $ [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null

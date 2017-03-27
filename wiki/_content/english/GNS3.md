@@ -10,8 +10,9 @@ From the webpage:
 *   [2 Adding virtual machines](#Adding_virtual_machines)
     *   [2.1 VirtualBox](#VirtualBox)
         *   [2.1.1 Install VirtualBox](#Install_VirtualBox)
-        *   [2.1.2 Adding VMs to GNS3](#Adding_VMs_to_GNS3)
-        *   [2.1.3 Adding VMs to your topology](#Adding_VMs_to_your_topology)
+        *   [2.1.2 Adding the GNS3 VM to VirtualBox](#Adding_the_GNS3_VM_to_VirtualBox)
+        *   [2.1.3 Adding VMs to GNS3](#Adding_VMs_to_GNS3)
+        *   [2.1.4 Adding VMs to your topology](#Adding_VMs_to_your_topology)
     *   [2.2 Qemu](#Qemu)
     *   [2.3 VMware](#VMware)
         *   [2.3.1 Installation](#Installation_2)
@@ -38,6 +39,20 @@ To use VirtualBox-machines for your topology you need to install [virtualbox](ht
 ```
 
 If you don't install the [virtualbox-sdk](https://www.archlinux.org/packages/?name=virtualbox-sdk) package you will not get the `vboxapi.py` script and GNS3s `vboxwrapper.py` needs this to connect the VMs.
+
+#### Adding the GNS3 VM to VirtualBox
+
+The official GNS3 VM should be used to increase performance. Go to [GNS3 Github](https://github.com/GNS3/gns3-gui/releases\) and download the VirtualBox version of the GNS3 VM with the exact same version number as your GNS3 version. Unzip and import the VM in VirtualBox.
+
+To create a network connection between the GNS3 VM and the host OS a host-only network must be configured. In VirtualBox > Preferences > Network, set up a host-only network. In most cases, it will be called vboxnet0 or similar. Note the IP address dedicated to the interface in the GUI. For some reason, VirtualBox does not assign the IP to the interface, nor does it enable it. Therefore, this must be performed manually in the terminal. See [Network_configuration#Manual_assignment](/index.php/Network_configuration#Manual_assignment "Network configuration") for more information on assigning IP addresses.
+
+```
+# ip addr add *IP_address*/*subnet_mask* dev vboxnet0
+# ip link set dev vboxnet0 up
+
+```
+
+Launch the GNS3 startup wizard and select the GNS3 VM and it should be able to start the VM.
 
 #### Adding VMs to GNS3
 

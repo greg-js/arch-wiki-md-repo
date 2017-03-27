@@ -36,15 +36,13 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
     *   [6.5 Atomic reloading](#Atomic_reloading)
 *   [7 File definitions](#File_definitions)
 *   [8 Getting started](#Getting_started)
-*   [9 Samples](#Samples)
+*   [9 Examples](#Examples)
     *   [9.1 Simple IP/IPv6 firewall](#Simple_IP.2FIPv6_firewall)
     *   [9.2 Limit rate IP/IPv6 firewall](#Limit_rate_IP.2FIPv6_firewall)
     *   [9.3 Jump](#Jump)
-*   [10 Practical examples](#Practical_examples)
-    *   [10.1 Different rules for different interfaces](#Different_rules_for_different_interfaces)
-    *   [10.2 Masquerading](#Masquerading)
-*   [11 Logging to syslog](#Logging_to_syslog)
-*   [12 See also](#See_also)
+    *   [9.4 Different rules for different interfaces](#Different_rules_for_different_interfaces)
+    *   [9.5 Masquerading](#Masquerading)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -130,7 +128,7 @@ The purpose of tables is to hold chains. Unlike tables in iptables, there are no
 
 IPv6 is specified as `ip6`.
 
-To create one rule that applies to both IPv4 and IPv6, use `inet`. This requires Linux >=3.15\. `inet` allows for the unification of the `ip` and `ip6` families to make defining rules for both easier.
+To create one rule that applies to both IPv4 and IPv6, use `inet`. `inet` allows for the unification of the `ip` and `ip6` families to make defining rules for both easier.
 
 **Note:** `inet` does not work for `nat`-type chains, only for `filter`-type chains. ([source](http://www.spinics.net/lists/netfilter/msg56411.html))
 
@@ -529,7 +527,7 @@ Delete all rules in a chain:
 
 ```
 
-## Samples
+## Examples
 
 ### Simple IP/IPv6 firewall
 
@@ -612,8 +610,6 @@ table inet filter {
 
 ```
 
-## Practical examples
-
 ### Different rules for different interfaces
 
 If your box has more than one network interface, and you'd like to use different rules for different interfaces, you may want to use a "dispatching" filter chain, and then interface-specific filter chains. For example, let's assume your box acts as a home router, you want to run a web server accessible over the LAN (interface nsp3s0), but not from the public internet (interface enp2s0), you may want to consider a structure like this:
@@ -661,7 +657,6 @@ nftables has a special keyword `masquerade` "where the source address is automag
 
 To use it:
 
-*   use kernel >=3.18 (true if you use the default kernel)
 *   make sure masquerading is enabled in the kernel (true if you use the default kernel), otherwise during kernel configuration, set
 
 ```
@@ -686,10 +681,6 @@ table ip nat {
 }
 
 ```
-
-## Logging to syslog
-
-If you use a Linux kernel < 3.17, you have to modprobe `xt_LOG` to enable logging.
 
 ## See also
 

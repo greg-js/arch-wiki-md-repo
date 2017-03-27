@@ -563,13 +563,9 @@ To disable, again use `amdcccle` or run:
 
 ### Video acceleration
 
-**[Video Acceleration API](https://en.wikipedia.org/wiki/Video_Acceleration_API "wikipedia:Video Acceleration API") (VA API)** is an open source software library (libVA) and API specification which provides GPU acceleration for video processing on Linux/UNIX based operating systems. The process works by enabling hardware accelerated video decode at various entry-points (VLD, IDCT, Motion Compensation, deblocking) for common encoding standards (MPEG-2, MPEG-4 ASP/H.263, MPEG-4 AVC/H.264, and VC-1/WMV3).
+Catalyst supports [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") via VA-API. Applications can take advantage of AMD Radeons UVD2 chipsets via AMD's [X-Video Bitstream Acceleration (XvBA)](https://en.wikipedia.org/wiki/X-Video_Bitstream_Acceleration "wikipedia:X-Video Bitstream Acceleration") library. There is no need to manually install it as it is included in the [catalyst-test](https://aur.archlinux.org/packages/catalyst-test/), [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/) and [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) packages.
 
-VA-API gained a proprietary backend (in November 2009) called [xvba-video](https://aur.archlinux.org/packages/xvba-video/), that allows VA-API programmed applications to take advantage of AMD Radeons UVD2 chipsets via the [XvBA (X-Video Bitstream Acceleration API designed by AMD)](https://en.wikipedia.org/wiki/XvBA "wikipedia:XvBA") library.
-
-**Note:** No need to install the [xvba-video](https://aur.archlinux.org/packages/xvba-video/) package when using `catalyst-test` or `catalyst-total`, because a symlink is being used instead.
-
-XvBA support and xvba-video is still under development, however it is **working very well in most cases**. Build (or install from Vi0L0's repo) the proprietary [xvba-video](https://aur.archlinux.org/packages/xvba-video/) package, or if you have problems with that version, install [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/); and also install [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) and [libva](https://www.archlinux.org/packages/?name=libva). Then just set your video player to use vaapi:gl as video output:
+For **mplayer**: Install [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) and [libva](https://www.archlinux.org/packages/?name=libva). Then just set your video player to use `vaapi:gl` as video output:
 
 ```
 $ mplayer -vo vaapi:gl movie.avi
@@ -1116,15 +1112,13 @@ Bug introduced in Catalyst 13.6 beta, not fixed till now (13.9).
 
 After enabling "Tear-Free" functionality every freshly started OpenGL application is lagging, often generates only 30 FPS, it also touches composited desktop.
 
-Workaround is pretty simple and was found by M132\. Here are the steps, do everything in "AMD Catalyst Control Center" (amdcccle) application:
+Workaround is pretty simple and was found by M132:
 
-```
-1\. Enable Tear-Free, it will set 3D V-Sync option to "Always on".
-2\. Set 3D V-Sync to "Always Off".
-3\. Make sure Tear-Free is still on.
-4\. Restart X / Re-login.
-
-```
+1.  Open "AMD Catalyst Control Center" (amdcccle) application
+2.  Enable Tear-Free, it will set 3D V-Sync option to "Always on".
+3.  Set 3D V-Sync to "Always Off".
+4.  Make sure Tear-Free is still on.
+5.  Restart X / Re-login.
 
 It is working well on KDE 4.11.x, but in case of problems M132 suggests: "Try disabling "Detect refresh rate" and specify monitor's refresh rate in the Composite plugin."
 

@@ -228,6 +228,10 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
 
+*   **BacklightTooler** — BacklightTooler is simple open source backlight control software. It adds some extra features like automatic backlight adjustments using a webcam and a rather silly 'pulse' feature.
+
+	[https://github.com/cotix/backlighttooler](https://github.com/cotix/backlighttooler) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 ### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.

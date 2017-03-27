@@ -21,7 +21,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 *   [3 Targets](#Targets)
     *   [3.1 Get current targets](#Get_current_targets)
     *   [3.2 Create custom target](#Create_custom_target)
-    *   [3.3 Targets table](#Targets_table)
+    *   [3.3 Mapping between SysV runlevels and systemd targets](#Mapping_between_SysV_runlevels_and_systemd_targets)
     *   [3.4 Change current target](#Change_current_target)
     *   [3.5 Change default target to boot into](#Change_default_target_to_boot_into)
 *   [4 Temporary files](#Temporary_files)
@@ -384,7 +384,7 @@ $ systemctl list-units --type=target
 
 The runlevels that held a defined meaning under sysvinit (i.e., 0, 1, 3, 5, and 6); have a 1:1 mapping with a specific *systemd* *target*. Unfortunately, there is no good way to do the same for the user-defined runlevels like 2 and 4\. If you make use of those it is suggested that you make a new named *systemd* *target* as `/etc/systemd/system/*your target*` that takes one of the existing runlevels as a base (you can look at `/usr/lib/systemd/system/graphical.target` as an example), make a directory `/etc/systemd/system/*your target*.wants`, and then symlink the additional services from `/usr/lib/systemd/system/` that you wish to enable.
 
-### Targets table
+### Mapping between SysV runlevels and systemd targets
 
 | SysV Runlevel | systemd Target | Notes |
 | 0 | runlevel0.target, poweroff.target | Halt the system. |

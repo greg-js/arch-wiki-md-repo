@@ -56,7 +56,7 @@ The following incompatibilities require building a custom kernel with fewer feat
 
 *   hibernation is not supported (conflicts with `CONFIG_GRKERNSEC_KMEM`, `CONFIG_PAX_MEMORY_SANITIZE` and `CONFIG_RANDOMIZE_BASE`)
 *   tools which require altering the CPU MSR, such as [powertop](https://www.archlinux.org/packages/?name=powertop) or [cpupower](https://www.archlinux.org/packages/?name=cpupower) are [incompatible](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Deny_reading.2Fwriting_to_.2Fdev.2Fkmem.2C_.2Fdev.2Fmem.2C_and_.2Fdev.2Fport) with `CONFIG_GRKERNSEC_KMEM`.
-*   Xen and [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) are not supported (conflicts with `CONFIG_PAX_KERNEXEC` and `CONFIG_PAX_MEMORY_UDEREF`)
+*   Xen and [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) are unsupported if hardware virtualization is disabled or unavailable (conflicts with `CONFIG_PAX_KERNEXEC` and `CONFIG_PAX_MEMORY_UDEREF`)
 *   The code reuse attacks protection (RAP), enabled with `CONFIG_PAX_RAP`, is not compatible with out-of-tree binary code, as, for example, the patched proprietary nvidia driver [nvidia-grsec](https://aur.archlinux.org/packages/nvidia-grsec/) in the [AUR](/index.php/AUR "AUR").
 
 Known incompatibilities with other packages:

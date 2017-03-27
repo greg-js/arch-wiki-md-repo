@@ -22,22 +22,22 @@ From the [project web page](http://newsbeuter.org/):
 
 ## Installation
 
-[newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter) is available from the official repositories.
+Install the [newsbeuter](https://www.archlinux.org/packages/?name=newsbeuter) package. For the development version, install the [newsbeuter-git](https://aur.archlinux.org/packages/newsbeuter-git/) package.
 
 ## Usage
 
-Once installation is finished, newsbeuter can be started from the command line with
+Newsbeuter can't start without any configured feeds. Feeds can be configured in `~/.newsbeuter/urls`.
+
+Newsbeuter can be started from the command line with
 
 ```
 newsbeuter
 
 ```
 
-Navigation is pretty straightforward. To see a complete list of keybindings consult the man page or the hit the `?` key from inside newsbeuter.
+Press the `?` key to see a list of all keybindings. Keybindings can be rebound, see [#Configuration](#Configuration).
 
-**Warning:** newsbeuter can't start without any configured feeds. To add feeds see the next section [#Managing feeds](#Managing_feeds)
-
-**Note:** keybindings can be re-binded. See [#Configuration](#Configuration) and consult the man page for the list of bindable functions
+**Warning:** If you only have a single feed newsbeuter won't cache fetched items (this bug is fixed in the development version).
 
 ## Managing feeds
 

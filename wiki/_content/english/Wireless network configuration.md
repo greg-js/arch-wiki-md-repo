@@ -485,12 +485,12 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 ### eduroam
 
-[eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") (education roaming) is an international roaming service for users in research, higher education and further education, based on WPA2 Enterprise.
+[eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") is an international roaming service for users in research, higher education and further education, based on WPA2 Enterprise.
 
-**Warning:**
+**Note:**
 
 *   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
-*   When storing connection profiles unencrypted, restrict read access to the root account by specifying `chmod 600 *profile*` as root.
+*   When storing connection profiles unencrypted, it is recommended restrict read access to the root account by specifying `chmod 600 *profile*` as root.
 
 **Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 

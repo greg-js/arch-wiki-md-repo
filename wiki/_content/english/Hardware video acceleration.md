@@ -209,7 +209,7 @@ The choice varies depending on your video card vendor:
 
 *   For Intel Graphics use VA-API.
 *   For NVIDIA cards use VDPAU.
-*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)).
+*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[5]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
 
 There are also two specific types of drivers for VA-API and VDPAU:
 
@@ -224,45 +224,39 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 **Open source drivers:**
 
-*   [AMD](/index.php/ATI "ATI") Radeon 9500 and newer GPUs are supported by either [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa) or [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
+*   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by either [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa) or [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 *   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
     *   To get better support on GMA 4500 consider using [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead, see [Intel#H.264 decoding on GMA 4500](/index.php/Intel#H.264_decoding_on_GMA_4500 "Intel") for instructions and caveats.
 *   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 
 **Proprietary drivers:**
 
-*   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 series and newer GPUs are supported by [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
+*   AMD cards depend on the driver:
+    *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") uses [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
+    *   [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") uses [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) + [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) (see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")).
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 8 series and newer GPUs are supported by [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 
 ### Installing VDPAU
 
 **Open source drivers:**
 
-*   [AMD](/index.php/ATI "ATI") Radeon 9500 and newer GPUs are supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
+*   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
 *   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) (see [#Installing VA-API](#Installing_VA-API)).
 *   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau). It [requires](http://nouveau.freedesktop.org/wiki/VideoAcceleration/#firmware) [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/), which contains the required firmware to operate that is presently extracted from the NVIDIA binary driver.
 
 **Proprietary drivers:**
 
-*   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 series and newer GPUs are supported by [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) (see [#Installing VA-API](#Installing_VA-API)).
+*   AMD cards depend on the driver:
+    *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") uses [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) (see [#Installing VA-API](#Installing_VA-API)).
+    *   [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") uses [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) (see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")).
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 400 series and newer GPUs are supported by [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
     *   GeForce 8/9 and GeForce 100-300 series are supported by [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils).
 
 ## Verification
 
-**Tip:**
+Your system may work perfectly out-of-the-box without needing any configuration. Therefore it’s a good idea to start with this section to see it that’s is the case.
 
-*   [mpv](/index.php/Mpv#Hardware_Decoding "Mpv") is great for testing hardware acceleration in practice.
-*   For [radeon](/index.php/Radeon "Radeon") the driver name can determined by running:
-
- `$ grep -iE 'vdpau|dri driver' ~/.local/share/xorg/Xorg.0.log` 
-```
-(II) RADEON(0): [DRI2] DRI driver: radeonsi
-(II) RADEON(0): [DRI2] VDPAU driver: radeonsi
-
-```
-
-In this case you want to use `radeonsi` for both VA-API and VDPAU.
+**Tip:** [mpv](/index.php/Mpv#Hardware_Decoding "Mpv") is great for testing hardware acceleration in practice.
 
 ### Verifying VA-API
 
@@ -366,11 +360,22 @@ VC1_ADVANCED                    4  9216  2048  1152
 
 ## Configuration
 
-**Note:** Although the video driver should automatically enable hardware video acceleration support for both VA-API and VDPAU, it may be needed to configure VA-API/VDPAU manually. See [#Verification](#Verification).
+Although the video driver should automatically enable hardware video acceleration support for both VA-API and VDPAU, it may be needed to configure VA-API/VDPAU manually. Only continue to this section if you went through [#Verification](#Verification).
+
+**Note:** The default driver names, used if there’s no other configuration present, are guess by the system. However, they are often hacked together and may not work. You can see the guessed values by running: `$ grep -iE 'vdpau|dri driver' ~/.local/share/xorg/Xorg.0.log` 
+```
+(II) RADEON(0): [DRI2] DRI driver: radeonsi
+(II) RADEON(0): [DRI2] VDPAU driver: radeonsi
+
+```
+
+In this case `radeonsi` is the default for both VA-API and VDPAU.
+
+This does not represent the *configuration* however. The values above won’t change even if you override them.
 
 ### Configuring VA-API
 
-The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API is autodetected. To determine which one is used see [#Verification](#Verification). You can override it by setting the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
+You can override the [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API by using the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
 
 *   For Intel Graphics use `i965`.
 *   For NVIDIA use `vdpau`.
@@ -378,12 +383,13 @@ The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endstha
 
 **Note:**
 
-*   You can find the installed drivers in `/usr/lib/dri/`.
+*   You can find the installed drivers in `/usr/lib/dri/`. They are used as `/usr/lib/vdpau/**${LIBVA_DRIVER_NAME}**_drv_video.so`.
+*   Some drivers are installed several times under different names for compatibility reasons. You can see which by running `sha1sum /usr/lib/dri/*`.
 *   Since version 12.0.1 [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) provides `radeonsi` instead of `gallium`.
 
 ### Configuring VDPAU
 
-The driver for use with VDPAU is auto-detected, but you may need to override it by using the `VDPAU_DRIVER` [environment variable](/index.php/Environment_variable "Environment variable").
+You can override the driver for VDPAU by using the `VDPAU_DRIVER` [environment variable](/index.php/Environment_variable "Environment variable").
 
 The correct driver name depends on your setup:
 
@@ -393,7 +399,8 @@ The correct driver name depends on your setup:
 
 **Note:**
 
-*   You can find the installed drivers in `/usr/lib/vdpau/`.
+*   You can find the installed drivers in `/usr/lib/vdpau/`. They are used as `/usr/lib/vdpau/libvdpau_**${VDPAU_DRIVER}**.so`.
+*   Some drivers are installed several times under different names for compatibility reasons. You can see which by running `sha1sum /usr/lib/vdpau/*`.
 *   For hybrid setups (both NVIDIA and AMD), it may be necessary to [set](/index.php/Environment_variable "Environment variable") `DRI_PRIME=1`. For more information see [PRIME](/index.php/PRIME "PRIME").
 
 ## Troubleshooting

@@ -42,7 +42,7 @@ The validation server sends that authentication status back to the target system
 
 #### AES key compromise
 
-As you can imagine, the AES key should be kept very secret. It can not be retrieved from the Yubikey itself (or it should not, at least not with software). It is present in the validation server though, so the security of this server is very important.
+As you can imagine, the AES key should be kept secret. It cannot be retrieved from the Yubikey itself (or it should not, at least not with software). It is present in the validation server though, so the security of this server is very important.
 
 #### Validation requests/responses tampering
 

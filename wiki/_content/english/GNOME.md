@@ -399,7 +399,7 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 #### Extensions
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/) and the appropriate browser extension.
 
 GNOME Shell can be customized with extensions per user or system-wide.
 

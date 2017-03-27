@@ -284,11 +284,7 @@ See details on the [official website](http://wayland.freedesktop.org/toolkits.ht
 
 ### GTK+ 3
 
-The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package from the official repositories now has the Wayland backend enabled.
-
-GTK+ 3 gained support for multiple backends at runtime and can switch between backends in the same way Qt can with lighthouse.
-
-When both Wayland and X backends are enabled, GTK+ will default to the X11 backend, but this can be overridden by modifying an environment variable: `GDK_BACKEND=wayland`.
+The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Wayland backend enabled. GTK+ will default to the X11 backend, but this can be overridden by modifying an environment variable: `GDK_BACKEND=wayland`.
 
 ### Qt 5
 
@@ -317,14 +313,14 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 ## Window managers and desktop shells
 
 | Name | Type | Description |
-| GNOME | Compositing | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
+| GNOME | Stacking | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [Github](https://github.com/SirCmpwn/sway) |
-| Enlightenment | Compositing | Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland) |
-| KDE Plasma | Compositing | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
+| Enlightenment | Stacking | [More Info](https://www.enlightenment.org/about-wayland) |
+| KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
-| Orbital | Compositing | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
-| Liri Shell | Compositing | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
+| Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
+| Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
 | Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing using Virtual Reality. |
 | Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizeable (lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |

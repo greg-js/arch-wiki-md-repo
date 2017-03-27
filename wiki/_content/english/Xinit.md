@@ -115,7 +115,7 @@ fi
 
 You can replace the `-eq 1` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
 
-Alternatively conditions to detect the virtual terminal include `"$(tty)" == "/dev/tty1"`, which does not allow comparison with `-le`, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in [serial consoles](/index.php/Serial_console "Serial console").
+Alternative conditions to detect the virtual terminal include `"$(tty)" = "/dev/tty1"`, which does not allow comparison with `-le`, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in [serial consoles](/index.php/Serial_console "Serial console").
 
 If you would like to remain logged in when the X session ends, remove `exec`.
 
