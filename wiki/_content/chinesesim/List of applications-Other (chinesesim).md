@@ -504,7 +504,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **Wyrd** — Text-based front-end to Remind, a calendar and alarm program used on UNIX and Linux computers.
 
-	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://www.archlinux.org/packages/?name=wyrd)
+	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://aur.archlinux.org/packages/wyrd/)
 
 *   **mail2rem** — Small script for importing *.ics calendars from Maildir to Remind calendar.
 

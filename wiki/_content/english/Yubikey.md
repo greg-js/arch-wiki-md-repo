@@ -26,7 +26,9 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
     *   [4.1 Chromium/Chrome](#Chromium.2FChrome)
     *   [4.2 Firefox](#Firefox)
 *   [5 Enabling OpenPGP smartcard mode](#Enabling_OpenPGP_smartcard_mode)
-*   [6 Troubleshooting](#Troubleshooting)
+*   [6 Yubikey and KeePass](#Yubikey_and_KeePass)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Yubikey not acting as HID device](#Yubikey_not_acting_as_HID_device)
 
 ## Introduction
 
@@ -223,6 +225,22 @@ These steps will allow you to use the OpenPGP functionality of your YubiKey.
 3.  Enable and start `pcscd` with `sudo systemctl enable pcscd.service`and `sudo systemctl start pcscd.service`
 4.  To verify that your YubiKey is ready to be used run `pcsc_scan` which will provide some informations about the connected device. Further you can use `gpg --card-status` to verify that GPG can interact with the card.
 
+## Yubikey and KeePass
+
+Yubikey can be integrated with [KeePass](/index.php/KeePass "KeePass") using [plugins](/index.php/KeePass#Yubikey "KeePass").
+
 ## Troubleshooting
 
 Restart, especially if you have completed updates since your Yubikey last worked. Do this even if some functions appear to be functioning.
+
+### Yubikey not acting as HID device
+
+Add udev rule as described in [article](https://michaelheap.com/yubikey-on-arch/%7Cthis)
+
+```
+$ sudo echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="users", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0"' | sudo tee /etc/udev/rules.d/10-security-key.rules
+$ udevadm trigger
+
+```
+
+You may also need to [install](/index.php/Install "Install") the package [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) if you want support in chrome.

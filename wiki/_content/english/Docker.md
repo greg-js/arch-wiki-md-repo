@@ -36,7 +36,7 @@
 
 **Note:**
 
-*   Docker doesn't support i686 [[1]](https://github.com/docker/docker/issues/136).
+*   Docker does not support i686 [[1]](https://github.com/docker/docker/issues/136).
 *   Docker needs the `loop` module on first usage. The following steps may be required before starting docker:
 
 ```
@@ -54,14 +54,9 @@ You may need to reboot before the module is available.
 
 ```
 
-If you want to be able to run docker as a regular user, add yourself to the docker group:
+If you want to be able to run docker as a regular user, add yourself to the `docker` [group](/index.php/Group "Group").
 
-**Warning:** Anyone added to the 'docker' group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](http://docs.docker.com/engine/articles/security/).
-
-```
-# gpasswd -a *user* docker
-
-```
+**Warning:** Anyone added to the `docker` group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](http://docs.docker.com/engine/articles/security/).
 
 Then re-login or to make your current user session aware of this new group, you can use:
 
@@ -76,7 +71,7 @@ $ newgrp docker
 
 The docker storage driver (or graph driver) has huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
 
-As Arch linux ships new kernels, there's no point using the compatibility option. A good, modern choice is `overlay2`.
+As Arch linux ships new kernels, there is no point using the compatibility option. A good, modern choice is `overlay2`.
 
 To see current storage driver, run `# docker info | head`, modern docker installation should already use `overlay2` by default.
 
@@ -106,7 +101,7 @@ To open the Remote API to port `4243` manually, run:
 
 `-H unix:///var/run/docker.sock` part for host machine access via terminal.
 
-##### Remote API with systemd
+#### Remote API with systemd
 
 To start the remote API with the docker daemon, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") with the following content:
 
@@ -167,7 +162,7 @@ The settings in the `docker.service` file will not translate into containers. To
 
 ### Configuring DNS
 
-By default, docker will make `resolv.conf` in the container match `/etc/resolv.conf` on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields an empty file, then [Google DNS servers](https://developers.google.com/speed/public-dns/) are used. If you are using a service like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to provide name resolution, you may need to add an entry to the `/etc/resolv.conf` for docker's network interface so that it isn't filtered out.
+By default, docker will make `resolv.conf` in the container match `/etc/resolv.conf` on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields an empty file, then [Google DNS servers](https://developers.google.com/speed/public-dns/) are used. If you are using a service like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to provide name resolution, you may need to add an entry to the `/etc/resolv.conf` for docker's network interface so that it is not filtered out.
 
 ### Running Docker with a manually-defined network
 
@@ -285,7 +280,7 @@ Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive 
 
 In case you want to remove Docker entirely you can do this by following the steps below:
 
-**Note:** Don't just copy paste those commands without making sure you know what you are doing!
+**Note:** Do not just copy paste those commands without making sure you know what you are doing.
 
 Check for running containers:
 

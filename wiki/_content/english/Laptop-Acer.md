@@ -120,7 +120,7 @@ USB:
 
  | (BIOS v1.15) After UEFI installation, must set Supervisor password, add bootloader as trusted, and boot with SecureBoot. BIOS v1.25 reportedly has problems on similar E5 models that were fixed in 1.31 onward. |
 | Acer Aspire E5-575G-5538 | 2017.02.01 | OK, Nvidia GeForce 940MX (NVIDIA Device 179c), [Bumblebee](/index.php/Bumblebee "Bumblebee") dkms version, proprietary Nvidia drivers dkms version.
-Nouveau crashes with drm error -22. | OK, HDA-Intel | Untested | OK, Qualcomm Atheros | Pairing works
+Nouveau crashes with drm error -22. | OK, HDA-Intel | Works, needed to set MAC in a profile in NetworkManager settings. | OK, Qualcomm Atheros | Pairing works
 Sending files works. Receiving files works.
 Bluetooth PAN works. | Suspend to RAM: Yes
 Disk: Untested

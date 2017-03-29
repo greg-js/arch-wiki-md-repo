@@ -217,7 +217,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **Terminix** — A tiling terminal emulator for Linux using GTK+ 3
 
-	[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix](https://aur.archlinux.org/packages/terminix/), [terminix-git](https://aur.archlinux.org/packages/terminix-git/)
+	[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix-git](https://aur.archlinux.org/packages/terminix-git/)
 
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
@@ -365,7 +365,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
 
-	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder)
+	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
 
 *   **Thonny** — Python IDE for beginners.
 

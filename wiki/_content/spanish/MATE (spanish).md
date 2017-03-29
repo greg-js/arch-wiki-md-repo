@@ -64,7 +64,7 @@ También hay otras aplicaciones de MATE no oficiales que son mantenidas por la c
 
 *   **MATE Screensaver Hacks** — Habilita salvapantallas de xscreensaver en MATE.
 
-	[http://www.jwz.org/xscreensaver/](http://www.jwz.org/xscreensaver/) || [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks)
+	[http://www.jwz.org/xscreensaver/](http://www.jwz.org/xscreensaver/) || [mate-screensaver-hacks](https://aur.archlinux.org/packages/mate-screensaver-hacks/)
 
 *   **MATE Themes Extras** — Colección de temas de escritorio GTK2/3 para MATE.
 

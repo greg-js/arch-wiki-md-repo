@@ -104,7 +104,7 @@ Se hai problemi a riprodurre video a 720 e 1080 dpi è normale fintanto che non 
 
 #### Vecchi driver fbdev (default)
 
-Se la sospensione non funziona ci sono varie opzioni che puoi provare. Prima di tutto assicurati di avere [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) e [pm-quirks](https://www.archlinux.org/packages/?name=pm-quirks) [installati](/index.php/Pacman "Pacman"). Vedi la pagina man di pm-suspend per una lista di tutto. Un opzione che è stata segnalata è `quirk-vbemode-restore`, che salva e ricarica la modalità Vesa corrente.
+Se la sospensione non funziona ci sono varie opzioni che puoi provare. Prima di tutto assicurati di avere [pm-utils](https://aur.archlinux.org/packages/pm-utils/) e [pm-quirks](https://aur.archlinux.org/packages/pm-quirks/) [installati](/index.php/Pacman "Pacman"). Vedi la pagina man di pm-suspend per una lista di tutto. Un opzione che è stata segnalata è `quirk-vbemode-restore`, che salva e ricarica la modalità Vesa corrente.
 
 Per testarlo apri il terminale e usa il comando:
 

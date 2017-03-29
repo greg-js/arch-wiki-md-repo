@@ -8,12 +8,13 @@
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)
         *   [2.3.1 PHP](#PHP)
-        *   [2.3.2 Ruby on Rails](#Ruby_on_Rails)
-        *   [2.3.3 Python FastCGI](#Python_FastCGI)
-    *   [2.4 SSL](#SSL)
-        *   [2.4.1 Let's Encrypt](#Let.27s_Encrypt)
-        *   [2.4.2 Server Name Indication](#Server_Name_Indication)
-    *   [2.5 Output Compression](#Output_Compression)
+    *   [2.4 Reverse Proxy](#Reverse_Proxy)
+        *   [2.4.1 Ruby on Rails](#Ruby_on_Rails)
+        *   [2.4.2 Python FastCGI](#Python_FastCGI)
+    *   [2.5 SSL](#SSL)
+        *   [2.5.1 Let's Encrypt](#Let.27s_Encrypt)
+        *   [2.5.2 Server Name Indication](#Server_Name_Indication)
+    *   [2.6 Output Compression](#Output_Compression)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -118,6 +119,22 @@ VirtualHost {
 ```
 
 Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
+
+### Reverse Proxy
+
+This example shows a reverse proxy configuration which forwards requests to `https://service.domain.net` to another local running web service on port `8181`:
+
+ `/etc/hiawatha/hiawatha.conf` 
+```
+VirtualHost {
+        Hostname = service.domain.net
+        WebsiteRoot = /var/www/domain
+        StartFile = index.html
+        ReverseProxy .* http://127.0.0.1:8181/
+        RequireTLS = yes
+}
+
+```
 
 #### Ruby on Rails
 

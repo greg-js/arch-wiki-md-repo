@@ -15,7 +15,7 @@
 *   [7 Socket restrictions](#Socket_restrictions)
 *   [8 Auditing](#Auditing)
 *   [9 Hide information from /proc](#Hide_information_from_.2Fproc)
-*   [10 RBAC](#RBAC)
+*   [10 Role Based Access Control (RBAC)](#Role_Based_Access_Control_.28RBAC.29)
     *   [10.1 Working with gradm](#Working_with_gradm)
     *   [10.2 Generating a policy](#Generating_a_policy)
     *   [10.3 Tweaking your policy](#Tweaking_your_policy)
@@ -145,13 +145,11 @@ The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package 
 
 The [hidepid](https://www.archlinux.org/packages/?name=hidepid) package can be installed to set up the necessary `systemd-logind` exception and enable `hidepid=2`. It will also work with `CONFIG_GRKERNSEC_PROC` in a custom kernel configured to use the correct proc group gid.
 
-## RBAC
+## Role Based Access Control (RBAC)
 
-Role Based Access Control
+There are two basic types of access control mechanisms used to prevent unauthorized access to files (or information in general): Discretionary Access Control (DAC) and Mandatory Access Control (MAC). By default, Linux uses a DAC mechanism: the creator of the file can define who has access to the file. A MAC system however forces everyone to follow rules set by the administrator.
 
-There are two basic types of access control mechanisms used to prevent unauthorized access to files (or information in general): DAC (Discretionary Access Control) and MAC (Mandatory Access Control). By default, Linux uses a DAC mechanism: the creator of the file can define who has access to the file. A MAC system however forces everyone to follow rules set by the administrator.
-
-The MAC implementation grsecurity supports is called Role Based Access Control. RBAC associates roles with each user. Each role defines what operations can be performed on certain objects. Given a well-written collection of roles and operations your users will be restricted to perform only those tasks that you tell them they can do. The default "deny-all" ensures you that a user cannot perform an action you have not thought of.
+The MAC implementation that grsecurity supports is called Role Based Access Control (RBAC). RBAC associates roles with each user. Each role defines what operations can be performed on certain objects. Given a well-written collection of roles and operations your users will be restricted to perform only those tasks that you tell them they can do. The default "deny-all" ensures you that a user cannot perform an action you have not thought of.
 
 ### Working with gradm
 
@@ -191,9 +189,10 @@ If you want to leave the admin role, run gradm -u admin:
 
 The RBAC system comes with a great feature called "learning mode". The learning mode can generate an anticipatory least privilege policy for your system. This allows for time and money savings by being able to rapidly deploy multiple secure servers.
 
-To use the learning mode, activate it using gradm:
+To use the learning mode, enable RBAC system and run full system learning:
 
 ```
+# gradm -E
 # gradm -F -L /etc/grsec/learning.log
 
 ```

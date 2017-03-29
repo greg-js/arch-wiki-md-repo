@@ -100,7 +100,7 @@ To get that working you need [fprintd](https://www.archlinux.org/packages/?name=
 
 ### Suspend
 
-Works flawlessly with with [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) or any DE integration. If resuming from suspend works once but not a second time, try disabling Intel's Anti-Theft module in BIOS (see [this kernel bug report](https://bugzilla.kernel.org/show_bug.cgi?id=11963)).
+Works flawlessly with with [pm-utils](https://aur.archlinux.org/packages/pm-utils/) or any DE integration. If resuming from suspend works once but not a second time, try disabling Intel's Anti-Theft module in BIOS (see [this kernel bug report](https://bugzilla.kernel.org/show_bug.cgi?id=11963)).
 
 ### Power consumption
 

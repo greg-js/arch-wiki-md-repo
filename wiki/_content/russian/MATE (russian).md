@@ -70,7 +70,7 @@ MATE доступен в [официальных репозиториях](/inde
 *   [mate-color-manager](https://aur.archlinux.org/packages/mate-color-manager/) - Утилита управления цветом.
 *   [mate-accountsdialog](https://www.archlinux.org/packages/?name=mate-accountsdialog) - Приложение для просмотра и редактирования информации об аккаутнах.
 *   [mate-disk-utility](https://aur.archlinux.org/packages/mate-disk-utility/) - Утилита управления дисками.
-*   [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks) - Хранители экрана xscreensaver для MATE.
+*   [mate-screensaver-hacks](https://aur.archlinux.org/packages/mate-screensaver-hacks/) - Хранители экрана xscreensaver для MATE.
 *   [mate-themes-extras](https://www.archlinux.org/packages/?name=mate-themes-extras) - Коллекция GTK2/3 тем для MATE.
 
 *   [variety](https://www.archlinux.org/packages/?name=variety) - Смена обоев на рабочем столе с регулярным интервалом.
@@ -242,7 +242,7 @@ $ dconf write /org/mate/desktop/media-handling/automount-open false
 
 ### Заставка
 
-MATE использует [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver) для блокировки вашей сессии. По умолчанию имеется лишь несколько тем для заставки. Установив пакет [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks) можно получить их гораздо больше. Это позволит вам использовать темы и экраны блокировки [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") для [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver).
+MATE использует [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver) для блокировки вашей сессии. По умолчанию имеется лишь несколько тем для заставки. Установив пакет [mate-screensaver-hacks](https://aur.archlinux.org/packages/mate-screensaver-hacks/) можно получить их гораздо больше. Это позволит вам использовать темы и экраны блокировки [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") для [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver).
 
 ### Экран блокировки и его фоновое изображение
 

@@ -209,7 +209,7 @@ add control = Control_L Control_R
 
 ### Turn CapsLock into Control, and LeftControl into Hyper
 
-Laptop users may prefer having `CapsLock` as `Control`. The `Left Hyper` key can be used as a modifier.
+Laptop users may prefer having `CapsLock` as `Control`. The `Left Control` key can be used as a `Hyper` modifier (an additional modifier for emacs or openbox or i3).
 
  `~/.Xmodmap` 
 ```

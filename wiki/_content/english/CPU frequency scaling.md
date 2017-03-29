@@ -25,7 +25,7 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
 
 ### thermald
 
-[thermald](https://aur.archlinux.org/packages/thermald/) is a Linux daemon used to prevent the overheating of platforms. This daemon monitors temperature and applies compensation using available cooling methods.
+[thermald](https://www.archlinux.org/packages/?name=thermald) is a Linux daemon used to prevent the overheating of platforms. This daemon monitors temperature and applies compensation using available cooling methods.
 
 By default, it monitors CPU temperature using available CPU digital temperature sensors and maintains CPU temperature under control, before HW takes aggressive correction action. If there is a skin temperature sensor in thermal sysfs, then it tries to keep skin temperature under 45C.
 
@@ -46,7 +46,7 @@ The configuration file for *cpupower* is located in `/etc/default/cpupower`. Thi
 *   The native CPU module is loaded automatically.
 *   The `pstate` power scaling driver is used automatically for modern Intel CPUs instead of the other drivers below. This driver takes priority over other drivers and is built-in as opposed to being a module. This driver is currently automatically used for Sandy Bridge and newer CPUs. If you encounter a problem while using this driver, add `intel_pstate=disable` to your kernel line. You can use the same user space utilities with this driver, **but cannot control it**.
 *   Even P State behavior mentioned above can be influenced with `/sys/devices/system/cpu/intel_pstate`, e.g. Intel Turbo Boost can be deactivated with `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` for keeping CPU-Temperatures low.
-*   Additional control for modern Intel CPUs is available with the [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/)), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. thermald can also be used for older Intel CPUs. If the latest drivers are not available, then the daemon will revert to x86 model specific registers and the Linux ‘cpufreq subsystem’ to control system cooling.
+*   Additional control for modern Intel CPUs is available with the [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://www.archlinux.org/packages/?name=thermald)), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. thermald can also be used for older Intel CPUs. If the latest drivers are not available, then the daemon will revert to x86 model specific registers and the Linux ‘cpufreq subsystem’ to control system cooling.
 
 *cpupower* requires modules to know the limits of the native CPU:
 
@@ -188,7 +188,7 @@ To set the value, run:
 
 #### Make changes permanent
 
-Even though [kernel modules#Using file in /etc/modprobe.d/](/index.php/Kernel_modules#Using_file_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") or [systemd](/index.php/Systemd "Systemd") might work to make the changes permanent, in some cases there might be race conditions. This is noted at [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
+To have the desired scaling enabled at boot, [kernel modules#Using file in /etc/modprobe.d/](/index.php/Kernel_modules#Using_file_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
 
 For example, to set the scaling governor of the CPU core `0` to performance while the scaling driver is `acpi_cpufreq`, create the following udev rule:
 
@@ -198,7 +198,7 @@ SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' 
 
 ```
 
-To have the chages persist after boot, when an initramfs is used, follow the example at [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+To have the rule already applied in the *initramfs*, follow the example at [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 
 ## Interaction with ACPI events
 
@@ -282,7 +282,7 @@ A special parameter has to be passed to the processor module.
 
 For trying this temporarily change the value in `/sys/module/processor/parameters/ignore_ppc` from `0` to `1`.
 
-For setting it permanent refer to [Kernel modules](/index.php/Kernel_modules#Configuration "Kernel modules") or just read on. Add `processor.ignore_ppc=1` to your kernel boot line or create
+For setting it permanently [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") describes alternatives. For example, you can add `processor.ignore_ppc=1` to your kernel boot line, or create
 
  `/etc/modprobe.d/ignore_ppc.conf` 
 ```

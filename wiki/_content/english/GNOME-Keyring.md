@@ -123,6 +123,8 @@ When using a display manager, the keyring works out of the box for most cases. T
 
 **Note:** You may need to install [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)
 
+For GDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
+
 For KDM, see [KDM#KDM and Gnome-keyring](/index.php/KDM#KDM_and_Gnome-keyring "KDM").
 
 For [SDDM](/index.php/SDDM "SDDM"), follow the KDM guidelines, but modify `/etc/pam.d/sddm` instead of `/etc/pam.d/kde`.

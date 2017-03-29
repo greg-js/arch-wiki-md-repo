@@ -213,7 +213,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   **i3blocks** — Расширяется с помощью shell-скриптов. Может обрабатывать события мыши, прерывания, и определение интервалов регенерации на основе каждого блока.
 
-	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://aur.archlinux.org/packages/i3blocks/)
+	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)
 
 *   **i3phtatus** — Легко расширяемая замена i3status предназначена для i3bar, написан на PHP.
 

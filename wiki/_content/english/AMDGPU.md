@@ -14,8 +14,9 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
 *   [5 Performance tuning](#Performance_tuning)
-    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [5.2 Driver options](#Driver_options)
+    *   [5.1 PowerPlay](#PowerPlay)
+    *   [5.2 Enabling video acceleration](#Enabling_video_acceleration)
+    *   [5.3 Driver options](#Driver_options)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
     *   [6.2 Unable to start Xorg on Southern Islands (SI) or Sea Islands (CIK) GPU](#Unable_to_start_Xorg_on_Southern_Islands_.28SI.29_or_Sea_Islands_.28CIK.29_GPU)
@@ -117,6 +118,17 @@ EndSection
 Using this section, you can enable features and tweak the driver settings.
 
 ## Performance tuning
+
+### PowerPlay
+
+PowerPlay is the name given to AMD's dynamic clock scaling technology. Depending on your GPU and kernel version, it will default to on or off.
+
+To get maximum performance and even power savings, append to your kernel cmdline:
+
+```
+amdgpu.powerplay=1
+
+```
 
 ### Enabling video acceleration
 

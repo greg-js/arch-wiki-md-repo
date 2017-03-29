@@ -174,7 +174,7 @@ if (is_executable($_SERVER["X_SCRIPT_FILENAME"])) {
 4\. Add these directives to the domain nginx config file:
 
 ```
-location ^~ /awstats-icon {
+location ^~ /awstatsicons {
    alias /usr/share/webapps/awstats/icon/;
    access_log off;
 }

@@ -70,7 +70,7 @@ If you have problems playing 720p and 1080i videos, yes, that's normal while the
 
 #### Old fbdev driver (default)
 
-If suspend does not work, there are various quirk options you can try. First, make sure that you have [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) and [pm-quirks](https://www.archlinux.org/packages/?name=pm-quirks) [installed](/index.php/Pacman "Pacman"). See the manpage for pm-suspend for a list of them all. One that has been reported to help is `quirk-vbemode-restore`, which saves and restores the current VESA mode.
+If suspend does not work, there are various quirk options you can try. First, make sure that you have [pm-utils](https://aur.archlinux.org/packages/pm-utils/) and [pm-quirks](https://aur.archlinux.org/packages/pm-quirks/) [installed](/index.php/Pacman "Pacman"). See the manpage for pm-suspend for a list of them all. One that has been reported to help is `quirk-vbemode-restore`, which saves and restores the current VESA mode.
 
 To test it, open a terminal and use the following command
 

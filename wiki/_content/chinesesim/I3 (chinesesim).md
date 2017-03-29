@@ -190,7 +190,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   **[i3blocks](/index.php/I3blocks "I3blocks")** — 通过 shell 脚本扩展。 它可以处理点击事件，中断，和定义或更在块的基础上更新间隔。
 
-	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://aur.archlinux.org/packages/i3blocks/)
+	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)
 
 *   **i3pystatus** — 默认带有许多插件和选项的可扩展 Python 3 状态栏
 

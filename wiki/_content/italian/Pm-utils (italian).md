@@ -48,7 +48,7 @@ Utilizzato in combinazione col pacchetto [cpupower](/index.php/Cpupower "Cpupowe
 
 ## Installazione
 
-Il pacchetto [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) è reperibile nei [Repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+Il pacchetto [pm-utils](https://aur.archlinux.org/packages/pm-utils/) è reperibile nei [Repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 **Note:**
 
@@ -71,7 +71,7 @@ Il backend per la sospensione è specificato dalla variabile SLEEP_MODULE nel fi
 *   uswsusp - [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)
 *   tuxonice - [linux-ice](https://aur.archlinux.org/packages/linux-ice/) / [linux-pf](/index.php/Linux-pf "Linux-pf")
 
-Inoltre, [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) contiene in `/usr/lib/pm-utils/video-quirks/` delle regole speciali per esigenze particolari, ad esempio se c'è un driver video problematico, in modo che venga attuata una politica non-standard all'atto della sospensione.
+Inoltre, [pm-utils](https://aur.archlinux.org/packages/pm-utils/) contiene in `/usr/lib/pm-utils/video-quirks/` delle regole speciali per esigenze particolari, ad esempio se c'è un driver video problematico, in modo che venga attuata una politica non-standard all'atto della sospensione.
 
 ## Configurazione di base
 

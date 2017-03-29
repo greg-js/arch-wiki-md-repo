@@ -320,17 +320,17 @@ localhost
 
 ### On the client
 
-With the server now only accepting connection from the localhost, connect to the box via ssh using the -L switch to enable tunnels. For more on this feature, see the manpage for ssh itself. For example:
+With the server now only accepting connection from the localhost, connect to the box via ssh using X-forwarding and the -L switch to enable tunnels. For more on this feature, see the manpage for ssh itself. For example:
 
 ```
-$ ssh 10.1.10.2 -L 5901:localhost:5901
+$ ssh -X 10.1.10.2 -L 5901:localhost:5901
 
 ```
 
 This forwards the server port 5901 to the client box also on port 5901\. Note that one does not have to match the port numbers on the server and client. For example:
 
 ```
-$ ssh 10.1.10.2 -L 8900:localhost:5901
+$ ssh -X 10.1.10.2 -L 8900:localhost:5901
 
 ```
 

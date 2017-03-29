@@ -26,7 +26,7 @@
 
 ## 安装
 
-[pm-utils](https://www.archlinux.org/packages/?name=pm-utils) 包可以从官方软件仓库安装：
+[pm-utils](https://aur.archlinux.org/packages/pm-utils/) 包可以从官方软件仓库安装：
 
 ```
 # pacman -S pm-utils

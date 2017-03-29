@@ -28,9 +28,9 @@ It could be that you need a MTA installed like [Postfix](/index.php/Postfix "Pos
 
 *   Answer the other questions, important ones could be the ringtones, max pages, permissions on files or your the name that should be shown.
 
-*   [Enable](/index.php/Enable "Enable") [systemd](/index.php/Systemd "Systemd") service for the daemon. Assuming your modem is on ttyS0, the service would be `faxgetty@ttyS0.service`.
+*   [Enable](/index.php/Enable "Enable") the service for the daemon. Assuming your modem is on ttyS0, the service would be `faxgetty@ttyS0.service`.
 
-*   You will probably need to start 3 daemons at boot; faxgetty@ttyS0, hfaxd, and faxq. See [Daemons#Starting on boot](/index.php/Daemons#Starting_on_boot "Daemons"). To start manually, see [Daemons#Starting manually](/index.php/Daemons#Starting_manually "Daemons").
+*   The package contains further services and [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") to [start/enable](/index.php/Start/enable "Start/enable") for your usage. For example, `hfaxd.service` and `faxq.service`.
 
 Your received faxes will be saved in `/var/spool/hylafax/rcvq/` and deleted after 30 days. Your sent faxes will be saved in `/var/spool/hylafax/sendq/`.
 

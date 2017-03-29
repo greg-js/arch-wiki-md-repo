@@ -105,7 +105,7 @@ The Spotify client implements the [MPRIS2](https://specifications.freedesktop.or
 
 ##### Playerctl
 
-The [playerctl](https://aur.archlinux.org/packages/playerctl/) utility provides a command line tool to send commands to MPRIS clients. The only commands you will likely need to bind globally are `play-pause`, `next` and `previous`
+The [playerctl](https://www.archlinux.org/packages/?name=playerctl) utility provides a command line tool to send commands to MPRIS clients. The only commands you will likely need to bind globally are `play-pause`, `next` and `previous`
 
 ```
 $ playerctl play-pause
@@ -216,7 +216,7 @@ It is also possible to launch spotify with the `--ui.track_notifications_enabled
 
 ### Show track notifications
 
-[playerctl](https://aur.archlinux.org/packages/playerctl/) provides a library you can use with [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) and a notification daemon such as [dunst](https://www.archlinux.org/packages/?name=dunst) to show the artist and title in a notification when the track changes.
+[playerctl](https://www.archlinux.org/packages/?name=playerctl) provides a library you can use with [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) and a notification daemon such as [dunst](https://www.archlinux.org/packages/?name=dunst) to show the artist and title in a notification when the track changes.
 
 ```
 #!/usr/bin/env python3
@@ -238,7 +238,7 @@ GLib.MainLoop().run()
 
 ### Skip overplayed radio tracks
 
-Another use of the [playerctl](https://aur.archlinux.org/packages/playerctl/) library is to skip tracks that are played too much on radio when you do not necessarily want to downvote these tracks because you may want to hear them again later on that station.
+Another use of the [playerctl](https://www.archlinux.org/packages/?name=playerctl) library is to skip tracks that are played too much on radio when you do not necessarily want to downvote these tracks because you may want to hear them again later on that station.
 
 ```
 #!/usr/bin/env python3

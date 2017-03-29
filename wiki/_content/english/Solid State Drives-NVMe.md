@@ -57,6 +57,12 @@ Andy Lutomirski has created a patchset which fixes powersaving for NVME devices 
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
 
+As of Kernel 4.11, the patch has been merged into mainline and is no longer necessary.
+
+To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) and run `nvme get-feature -f 0x0c -H /dev/nvme`
+
+Expected output is: "Autonomous Power State Transition Enable (APSTE): Enabled"
+
 ## References
 
 *   [Intel Linux NVMe driver reference](http://www.intel.com/content/dam/support/us/en/documents/ssdc/data-center-ssds/Intel_Linux_NVMe_Guide_330602-002.pdf)

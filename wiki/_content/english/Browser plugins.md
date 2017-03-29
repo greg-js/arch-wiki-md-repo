@@ -163,13 +163,15 @@ See [Citrix](/index.php/Citrix "Citrix").
 
 ## Java (IcedTea)
 
-**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium and Opera.
+**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium and Opera. Firefox starting from version 52 dropped support for NPAPI (except for Adobe Flash) ending support for Java - [link](https://support.mozilla.org/t5/Problems-with-add-ons-plugins-or/Why-do-Java-Silverlight-Adobe-Acrobat-and-other-plugins-no/ta-p/31069).
 
 To enable [Java](/index.php/Java "Java") support in your browser, you have two options: the open-source [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") (recommended) or Oracle's proprietary version. For details about why OpenJDK is recommended see [this](https://mailman.archlinux.org/pipermail/arch-general/2011-August/021671.html).
 
 To use OpenJDK, you have to install the [IcedTea](http://icedtea.classpath.org/wiki/Main_Page) browser plugin, [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web).
 
 If you want to use Oracle's JRE, install the [jre](https://aur.archlinux.org/packages/jre/) package.
+
+Firefox released ESR (Extended Support Release)[firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) version of Firefox 52 which will continue supporting NPAPI plugins until early 2018.
 
 **Note:** If you experience any problems with the Java plugin (e.g. it is not recognized by the browser), you can try this [solution](#Plugins_are_installed_but_not_working).
 

@@ -1,42 +1,31 @@
-PIA is a subscription based service provided from [PIA](https://www.privateinternetaccess.com/). See its [How It Works](https://www.privateinternetaccess.com/pages/how-it-works/) page for more information.
+This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private internet access](/index.php/Private_internet_access "Private internet access").
 
 ## Contents
 
-*   [1 Requirements](#Requirements)
-*   [2 Installation](#Installation)
-    *   [2.1 After Installation](#After_Installation)
+*   [1 Installation](#Installation)
+*   [2 After Installation](#After_Installation)
 *   [3 Usage](#Usage)
     *   [3.1 Enabling auto-login](#Enabling_auto-login)
-    *   [3.2 Manually Connecting to VPN](#Manually_Connecting_to_VPN)
-    *   [3.3 Automatically connect to VPN](#Automatically_connect_to_VPN)
-    *   [3.4 Advanced Options](#Advanced_Options)
-*   [4 Example Configuration](#Example_Configuration)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 See also](#See_also)
-
-## Requirements
-
-PIA supports nearly any operating system and solution any user would need. This guide automatically sets up the configurations for PIA which works for most Arch Linux users.
-
-**Note:** Arch Linux users may set up PIA manually by reading information on [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/) page.
-
-Be sure to have installed [openvpn](https://www.archlinux.org/packages/?name=openvpn) and if using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn).
+        *   [3.1.1 Manually Connecting to VPN](#Manually_Connecting_to_VPN)
+        *   [3.1.2 Automatically connect to VPN](#Automatically_connect_to_VPN)
+        *   [3.1.3 Advanced Options](#Advanced_Options)
+    *   [3.2 Example Configuration](#Example_Configuration)
+    *   [3.3 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/) or [private-internet-access-vpn-dev](https://aur.archlinux.org/packages/private-internet-access-vpn-dev/)package.
 
-The package provides a tool that downloads the [OPENVPN CONFIGURATION FILES (DEFAULT)](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
+The package provides a tool that downloads the [OpenVPN configuration files](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
 
 Configuration for the package is stored in `/etc/private-internet-access`
 
-### After Installation
+## After Installation
 
 If there are any issues with connectivity and you are running [connman](https://www.archlinux.org/packages/?name=connman), please [restart](/index.php/Restart "Restart") `connman-vpn.service`.
 
 ## Usage
-
-**Note:** As of `openvpn` version 2.4.0, VPN configurations are been put into subfolders. See: [OpenVPN 2.4.0 update requires administrative interaction](https://www.archlinux.org/news/openvpn-240-update-requires-administrative-interaction/)
 
 ### Enabling auto-login
 
@@ -66,11 +55,11 @@ This secures the access to the file from non-root users. Read more on [File perm
 
 **Tip:** Disable auto-login in configurations by adding `openvpn_auto_login = False` to `/etc/private-internet-access/pia.conf` and running `pia -a`
 
-### Manually Connecting to VPN
+#### Manually Connecting to VPN
 
 Run `openvpn --config /etc/openvpn/client/{config_file_name}` as root. `{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
 
-### Automatically connect to VPN
+#### Automatically connect to VPN
 
 *   For [connman](https://www.archlinux.org/packages/?name=connman):
 
@@ -81,7 +70,7 @@ Run `openvpn --config /etc/openvpn/client/{config_file_name}` as root. `{config_
 
 *   For [openvpn](https://www.archlinux.org/packages/?name=openvpn) you can look here: [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
-### Advanced Options
+#### Advanced Options
 
 **Warning:** Protocols and port combinations no longer work as of Version 3.1\. See [Github Issue #17](https://github.com/flamusdiu/python-pia/issues/17) or PIA's Support - [Which encryption/auth settings should I use for ports on your gateways?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/225274288-Which-encryption-auth-settings-should-I-use-for-ports-on-your-gateways-)
 
@@ -98,7 +87,7 @@ Run `openvpn --config /etc/openvpn/client/{config_file_name}` as root. `{config_
 | port | See for list: PIA's Support -
 [Which encryption/auth settings should I use for ports on your gateways?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/225274288-Which-encryption-auth-settings-should-I-use-for-ports-on-your-gateways-) | Default: 1198 |
 
-## Example Configuration
+### Example Configuration
 
 The configuration enables auto-login, configures only Connman and OpenVPN, uses port 8080 over UDP, and configures only US East, US West, Japan, UK London, and UK Southampton VPN endpoints. OpenVPN is always configured.
 
@@ -115,7 +104,7 @@ hosts = US East, US West, Japan, UK London, UK Southampton
 
 ```
 
-## Troubleshooting
+### Troubleshooting
 
 In order to use the NetworkManager applet to connect:
 

@@ -103,7 +103,7 @@ lspci: (from UX301LA-DH71T)
 
 ## Heat
 
-As you have probably noticed, the UX301 family of laptops will reach 80° Celsius doing the most remedial of tasks, and upwards of 90° while watching videos. You may want to consider installing and configuring [thermald](https://aur.archlinux.org/packages/thermald/) from the [AUR](/index.php/AUR "AUR").
+As you have probably noticed, the UX301 family of laptops will reach 80° Celsius doing the most remedial of tasks, and upwards of 90° while watching videos. You may want to consider installing and configuring [thermald](https://www.archlinux.org/packages/?name=thermald) from the [AUR](/index.php/AUR "AUR").
 
 ## Helpful Links
 

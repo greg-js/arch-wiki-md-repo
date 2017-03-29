@@ -157,7 +157,7 @@ $ diskutil list
 
 Your USB device will appear as something like `/dev/disk2 (external, physical)`. Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.
 
-A USB device is normally auto-mounted in Mac OS, and you have to unmount (not eject) it before block-writing to it with `dd`. In Terminal, do:
+A USB device is normally auto-mounted in macOS, and you have to unmount (not eject) it before block-writing to it with `dd`. In Terminal, do:
 
 ```
 $ diskutil unmountDisk /dev/diskX
@@ -171,7 +171,7 @@ $ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
 
-After completion, Mac OS may complain that "The disk you inserted was not readable by this computer". Select 'Ignore'. The USB device will be bootable.
+After completion, macOS may complain that "The disk you inserted was not readable by this computer". Select 'Ignore'. The USB device will be bootable.
 
 ### Using manual formatting
 

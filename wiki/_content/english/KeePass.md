@@ -10,6 +10,7 @@ Currently, there are two variants of the database formats: *KeePass 1.x (Classic
     *   [2.2 Firefox](#Firefox)
     *   [2.3 Chrome/Chromium](#Chrome.2FChromium)
     *   [2.4 Nextcloud](#Nextcloud)
+    *   [2.5 Yubikey](#Yubikey)
 *   [3 See Also](#See_Also)
 
 ## Installation
@@ -89,6 +90,30 @@ Modifies window title to assist autotype feature. Similar to KeePass Helper for 
 *   [Keeweb for Nextcloud](https://github.com/jhass/nextcloud-keeweb) ([nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/))
 
 Open Keepass stores inside Nextcloud
+
+### Yubikey
+
+[Yubikey](/index.php/Yubikey "Yubikey") can be integrated with KeePass thanks to contributors of KeePass plugins.
+
+1.  StaticPassword
+
+    	Configure one of Yubikey slots to store static password. You can make the password as strong as 65 characters (64 characters with leading `!`). This password can then be used as master password for your KeePass database.
+
+2.  one-time passwords (OATH-HOTP)
+
+    1.  Download plugin from KeePass website: [http://keepass.info/plugins.html#otpkeyprov](http://keepass.info/plugins.html#otpkeyprov)
+    2.  Use [yubikey-personalization-gui-git](https://aur.archlinux.org/packages/yubikey-personalization-gui-git/) to setup OATH-HOTP
+    3.  In advanced mode untick `OATH Token Identifier`
+    4.  In KeePass additional option will show up under `Key file / provider` called `One-Time Passwords (OATH HOTP)
+    5.  Copy secret, key length (6 or 8), and counter (in Yubikey personalization GUI this parameter is called `Moving Factor Seed`)
+    6.  You may need to setup `Look-ahead count` option to something greater than 0, please see [thread](https://forum.yubico.com/viewtopic.php?f=16&t=1120%7Cthis) for more information
+    7.  See [video](https://www.yubico.com/products/services-software/personalization-tools/oath/%7Cthis) for more help
+
+3.  Challenge-Response (HMAC-SHA1)
+
+    1.  Get the plugin from AUR: [keepass-plugin-keechallenge](https://aur.archlinux.org/packages/keepass-plugin-keechallenge/)
+    2.  In KeePass additional option will show up under `Key file / provider` called `Yubikey challenge-response`
+    3.  Plugin assumes slot 2 is used
 
 ## See Also
 

@@ -1,4 +1,4 @@
-[XAMPP](http://www.apachefriends.org/en/xampp.html) is an easy to install Apache distribution containing MySQL, PHP and Perl. It contains: Apache, MySQL, PHP & PEAR, Perl, ProFTPD, phpMyAdmin, OpenSSL, GD, Freetype2, libjpeg, libpng, gdbm, zlib, expat, Sablotron, libxml, Ming, Webalizer, pdf class, ncurses, mod_perl, FreeTDS, gettext, mcrypt, mhash, eAccelerator, SQLite and IMAP C-Client.
+[XAMPP](http://www.apachefriends.org/en/xampp.html) is an easy to install Apache distribution containing MariaDB, PHP and Perl. It contains: Apache, MariaDB, PHP & PEAR, Perl, ProFTPD, phpMyAdmin, OpenSSL, GD, Freetype2, libjpeg, libpng, gdbm, zlib, expat, Sablotron, libxml, Ming, Webalizer, pdf class, ncurses, mod_perl, FreeTDS, gettext, mcrypt, mhash, eAccelerator, SQLite and IMAP C-Client.
 
 ## Contents
 

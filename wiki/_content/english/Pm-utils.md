@@ -52,7 +52,7 @@ Used in conjunction with the [cpupower](/index.php/Cpupower "Cpupower") package,
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package.
+[Install](/index.php/Install "Install") the [pm-utils](https://aur.archlinux.org/packages/pm-utils/) package.
 
 **Note:**
 
@@ -75,7 +75,7 @@ Suspend backend is specified by the `SLEEP_MODULE` configuration variable in `/e
 *   uswsusp - [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)
 *   tuxonice - [linux-ice](https://aur.archlinux.org/packages/linux-ice/) / [linux-pf](/index.php/Linux-pf "Linux-pf")
 
-Furthermore, [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) ships with its own video quirks database in `/usr/lib/pm-utils/video-quirks/`.
+Furthermore, [pm-utils](https://aur.archlinux.org/packages/pm-utils/) ships with its own video quirks database in `/usr/lib/pm-utils/video-quirks/`.
 
 ## Basic configuration
 
@@ -108,7 +108,7 @@ Three methods are available to suspend without the need for a root password: usi
 
 #### User permission method
 
-Because the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) scripts must be run as root, you may want to make the scripts accessible to normal users by running sudo without the root password. To do so, edit the `/etc/sudoers` file with `visudo` as root. For more information, see [sudo](/index.php/Sudo "Sudo").
+Because the [pm-utils](https://aur.archlinux.org/packages/pm-utils/) scripts must be run as root, you may want to make the scripts accessible to normal users by running sudo without the root password. To do so, edit the `/etc/sudoers` file with `visudo` as root. For more information, see [sudo](/index.php/Sudo "Sudo").
 
 Add the following lines, replacing `*username*` with your own user name, then save and exit `visudo`:
 

@@ -19,7 +19,7 @@ Od wydania Mesy 9.0, na mobilnych układach o nazwie kodowej "Iron Lake" czasami
 
 ## Hibernation
 
-Po zainstalowaniu i konfiguracji pakietu [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) hibernacja i usypianie odbywa się bezproblemowo.
+Po zainstalowaniu i konfiguracji pakietu [pm-utils](https://aur.archlinux.org/packages/pm-utils/) hibernacja i usypianie odbywa się bezproblemowo.
 
 ## Oszczędzanie Energii
 

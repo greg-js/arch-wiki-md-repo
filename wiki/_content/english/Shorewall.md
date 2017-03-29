@@ -1,4 +1,4 @@
-[The Shoreline Firewall](http://www.shorewall.net/), more commonly known as "Shorewall", is high-level tool for configuring Netfilter.
+[The Shoreline Firewall](http://www.shorewall.net/), more commonly known as "Shorewall", is a high-level tool for configuring Netfilter.
 
 You describe your firewall/gateway requirements using entries in a set of configuration files. Shorewall reads those configuration files and with the help of the iptables utility, Shorewall configures Netfilter to match your requirements.
 

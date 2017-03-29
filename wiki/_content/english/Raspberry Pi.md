@@ -480,10 +480,10 @@ Copy the QEMU executable, which will handle the translation from ARM, to the SD 
 
 ```
 
-Finally chroot into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"), keeping in mind that `qemu-arm-static` needs to be called in the `chroot` command i.e.:
+Finally chroot into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"):
 
 ```
-# chroot /mnt/arch /usr/bin/qemu-arm-static /bin/bash
+# chroot /mnt/arch /bin/bash
 
 ```
 

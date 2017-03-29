@@ -93,7 +93,7 @@ Works out of the box, using ath9k module.
 
 ## Suspend to RAM
 
-Works without problems using [pm-utils](https://www.archlinux.org/packages/?name=pm-utils).
+Works without problems using [pm-utils](https://aur.archlinux.org/packages/pm-utils/).
 
 Use acpid or some power manager to enable on lid-closing or similar. Sleep button has no effect, though. Does not seem to emit an ACPI signal, but is detected by Xorg as XF86Sleep.
 

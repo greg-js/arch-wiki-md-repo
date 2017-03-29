@@ -10,7 +10,6 @@ From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 *   [2 System requirements](#System_requirements)
 *   [3 Configuring dom0](#Configuring_dom0)
     *   [3.1 Installation of the Xen hypervisor](#Installation_of_the_Xen_hypervisor)
-        *   [3.1.1 With UEFI support](#With_UEFI_support)
     *   [3.2 Modification of the bootloader](#Modification_of_the_bootloader)
         *   [3.2.1 UEFI](#UEFI)
         *   [3.2.2 GRUB](#GRUB)
@@ -60,35 +59,7 @@ The Xen hypervisor relies on a full install of the base operating system. Before
 
 To install the Xen hypervisor, [install](/index.php/Install "Install") the [xen](https://aur.archlinux.org/packages/xen/) package. It provides the Xen hypervisor, current xl interface and all configuration and support files, including systemd services. The [multilib](/index.php/Multilib "Multilib") repository needs to be enabled and the [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/) package group installed to compile Xen. Install the [xen-docs](https://aur.archlinux.org/packages/xen-docs/) package for the man pages and documentation.
 
-#### With UEFI support
-
-It's possible to boot the Xen hypervisor though the bare UEFI system on a modern computer but requires you to first recompile binutils to add support for x86_64-pep emulation. Using the archway of doing things you would use the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") and add `--enable-targets=x86_64-pep` to the build options of the binutils PKGBUILD file:
-
-```
---disable-werror --disable-gdb **--enable-targets=x86_64-pep**
-
-```
-
-**Note:**
-
-This will not work on the newest version of binutils you will need to downgrade to an older version from the svn:
-
-```
-$ svn checkout --depth empty svn://svn.archlinux.org/packages
-$ cd packages
-$ svn update -r 215066 binutils
-
-```
-Then compile and install. See [[1]](https://nims11.wordpress.com/2013/02/17/downgrading-packages-in-arch-linux-the-worst-case-scenario/) for details of the procedure.
-
-The next time binutils gets updated on your system it will be overwritten with the official version again. However, you only need this change to (re-)compile the UEFI aware Xen hypervisor, it is not needed at either boot or run time.
-
-Now when you compile Xen with your x86_64-pep aware binutils a UEFI kernel will be built and installed by default. It is located at `/usr/lib/efi/xen-?.?.?.efi` where "?" represent the version digits. The other files you find that also begin with "xen" are simply symlinks back to the real file and can be ignored. However, the efi-binary needs to be manually copied to `/boot`, e.g.:
-
-```
-# cp /usr/lib/efi/xen-4.4.0.efi /boot
-
-```
+You also need to install the [seabios](https://www.archlinux.org/packages/?name=seabios) and/or the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package to boot VMs with BIOS or UEFI respectively.
 
 ### Modification of the bootloader
 

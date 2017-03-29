@@ -196,7 +196,7 @@ Nem minden plugin van definiálva az alapértelmezett konfigurációban, és né
 
 *   **[i3blocks](/index.php/I3blocks "I3blocks")** — Shell scriptek által bővíthető. Kezelni tudja a kattintásokat, megszakításokat, és a blokkonkénti külön frissítési idótartam beállítását.
 
-	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://aur.archlinux.org/packages/i3blocks/)
+	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)
 
 *   **i3pystatus** — Bővíthető Python 3 rendszermonitor, számos pluginnel és konfigurálási opcióval.
 
@@ -564,7 +564,7 @@ Now, just save the script in a suitable place (for example `~/.config/i3`) and p
 
 ### Multimédia Billentyűk
 
-Médialejátszó gyorsbillentyűk beállításához telepítsd a [playerctl](https://aur.archlinux.org/packages/playerctl/) csomagot, és add hozzá a következő gyorsbillentyűket a `~/.config/i3/config`-hoz.
+Médialejátszó gyorsbillentyűk beállításához telepítsd a [playerctl](https://www.archlinux.org/packages/?name=playerctl) csomagot, és add hozzá a következő gyorsbillentyűket a `~/.config/i3/config`-hoz.
 
  `~/.config/i3/config` 
 ```

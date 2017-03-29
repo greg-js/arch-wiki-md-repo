@@ -1688,6 +1688,9 @@ look for entries that say `not found`
 *   [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo)
 *   [lib32-libdrm](https://www.archlinux.org/packages/?name=lib32-libdrm)
 
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
+*   [lib32-libwrap](https://www.archlinux.org/packages/?name=lib32-libwrap)
+
 ### Colors
 
 If colors are wrong with FOSS drivers (r600g at least), try to run the game in windowed mode, rendering will be corrected. ([bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=60553))

@@ -29,13 +29,11 @@ User-specific configuration can be found in `~/.config/terminator/config`.
 
 ### GTK+ customization
 
-**Note:** This configuration [doesn't](https://bbs.archlinux.org/viewtopic.php?pid=1687446#p1687446) work for all users, see [User talk:Szb#Reducing the size of Terminator tabs](/index.php/User_talk:Szb#Reducing_the_size_of_Terminator_tabs "User talk:Szb").
-
-Terminator supports tabs. Tab header height is sometimes considered too big. This can be fixed with gtk styling. From version 1.9 Terminator uses gtk+ 3, so that configuration can be done in `~/.config/gtk-3.0/gtkcss`. The items to customize are 'notebook tab', 'notebook tab button'. (note that this affects other gtk3 applications, too).
+Terminator supports tabs. Tab header height is sometimes considered too big. This can be fixed with gtk styling. From version 1.9 Terminator uses gtk+ 3, so that configuration can be done in `~/.config/gtk-3.0/gtk.css`. The items to customize are 'notebook tab', 'notebook tab button'. (note that this affects other gtk3 applications, too).
 
 Example config:
 
- `~/.config/gtk-3.0/gtkcss` 
+ `~/.config/gtk-3.0/gtk.css` 
 ```
 notebook tab {
   min-height: 0;

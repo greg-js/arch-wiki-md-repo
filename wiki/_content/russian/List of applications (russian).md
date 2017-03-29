@@ -4692,7 +4692,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Wyrd** — Текстовый фронтенд к Remind, календарь и программа сигнализации, используемый на компьютерах UNIX и Linux
 
-	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://www.archlinux.org/packages/?name=wyrd)
+	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://aur.archlinux.org/packages/wyrd/)
 
 #### Графические
 

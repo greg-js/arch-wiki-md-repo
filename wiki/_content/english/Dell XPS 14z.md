@@ -68,7 +68,7 @@ kernel /boot/vmlinuz... **i915.semaphores=1**
 
 Classical power saving tricks should apply for this laptop. See the dedicated pages of [acpid](/index.php/Acpid "Acpid"), [laptop-mode](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") and [cpufreq](/index.php/Cpufreq "Cpufreq").
 
-First try to install [pm-utils](https://www.archlinux.org/packages/?name=pm-utils).
+First try to install [pm-utils](https://aur.archlinux.org/packages/pm-utils/).
 
 and see if the following command works successfully:
 

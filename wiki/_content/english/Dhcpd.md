@@ -111,8 +111,7 @@ There is no service files provided by default to use *dhcpd* only on one interfa
 [Unit]
 Description=IPv4 DHCP server on %I
 Wants=network.target
-After=network-pre.target
-Before=network.target
+After=network.target
 
 [Service]
 Type=forking

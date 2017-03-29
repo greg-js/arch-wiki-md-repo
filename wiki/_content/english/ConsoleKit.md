@@ -73,7 +73,7 @@ The kdebase-workspace package needs to be recompiled for use with consolekit ([k
 
 ### Use D-Bus for power operations
 
-**Note:** Using ConsoleKit2's D-Bus methods for suspend, hibernate, and hybrid sleep requires [pm-utils](https://www.archlinux.org/packages/?name=pm-utils).
+**Note:** Using ConsoleKit2's D-Bus methods for suspend, hibernate, and hybrid sleep requires [pm-utils](https://aur.archlinux.org/packages/pm-utils/).
 
 Shut down:
 

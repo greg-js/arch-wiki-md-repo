@@ -13,28 +13,28 @@
 
 ## Installation
 
-Install [jupyter](https://www.archlinux.org/packages/?name=jupyter). For the browser-based notebook, also install [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook).
+To install Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) and [python-ipywidgets](https://www.archlinux.org/packages/?name=python-ipywidgets) packages.
 
 ## Running
 
-Run
+To start the notebook server, run:
 
 ```
-jupyter notebook
+$ jupyter notebook
 
 ```
 
-to start the notebook server. Then open a browser and navigate to [localhost:8888](http://localhost:8888).
+Then open a browser and navigate to [http://localhost:8888/](http://localhost:8888/).
 
 ## Kernels
 
 ### Haskell
 
-Install [ihaskell-git](https://aur.archlinux.org/packages/ihaskell-git/) from the AUR. Then run `ihaskell install`.
+Install the [ihaskell-git](https://aur.archlinux.org/packages/ihaskell-git/) package. Then run `ihaskell install`.
 
 ### Julia
 
-Install [julia](https://www.archlinux.org/packages/?name=julia) and run `julia` to get a REPL prompt. Then run:
+Install the [julia](https://www.archlinux.org/packages/?name=julia) package and run `julia` to get a REPL prompt. Then run:
 
 ```
 Pkg.add("IJulia")
@@ -45,7 +45,7 @@ See the [Julia manual](http://docs.julialang.org/en/release-0.4/manual/packages/
 
 ### Python
 
-Install [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for Python 2\. Python 3 support (via [python-ipykernel](https://www.archlinux.org/packages/?name=python-ipykernel)) is included when installing [jupyter](https://www.archlinux.org/packages/?name=jupyter).
+Install the [python2-ipykernel](https://www.archlinux.org/packages/?name=python2-ipykernel) package for Python 2 support. Python 3 support (via [python-ipykernel](https://www.archlinux.org/packages/?name=python-ipykernel)) is included when installing [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook).
 
 ### R
 
@@ -53,4 +53,4 @@ Follow the installation instructions in [IR Kernel](https://github.com/IRkernel/
 
 ### Sage math
 
-Install [sagemath](https://www.archlinux.org/packages/?name=sagemath) and [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter).
+Install the [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter) package.

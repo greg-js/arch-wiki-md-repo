@@ -68,7 +68,7 @@ These are the more popular scripts and tools designed to help power saving:
 
 *   **[pm-utils](/index.php/Pm-utils "Pm-utils")** — Suspend and powerstate setting framework (largely undeveloped now).
 
-	[http://pm-utils.freedesktop.org/](http://pm-utils.freedesktop.org/) || [pm-utils](https://www.archlinux.org/packages/?name=pm-utils)
+	[http://pm-utils.freedesktop.org/](http://pm-utils.freedesktop.org/) || [pm-utils](https://aur.archlinux.org/packages/pm-utils/)
 
 *   **[powertop](/index.php/Powertop "Powertop")** — A tool to diagnose issues with power consumption and power management to help set power saving settings.
 

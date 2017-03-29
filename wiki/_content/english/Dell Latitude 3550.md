@@ -97,4 +97,4 @@ works with [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptic
 
 ### Cpu frequency scaling
 
-install from aur [thermald](https://aur.archlinux.org/packages/thermald/) or [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)
+install from aur [thermald](https://www.archlinux.org/packages/?name=thermald) or [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)

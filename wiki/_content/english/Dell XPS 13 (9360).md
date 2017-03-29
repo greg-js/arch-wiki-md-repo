@@ -44,6 +44,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [13.4 Popping Sound on headphones/external speakers](#Popping_Sound_on_headphones.2Fexternal_speakers)
     *   [13.5 Coil Whine](#Coil_Whine)
     *   [13.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
+    *   [13.7 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
 *   [14 See Also](#See_Also)
 
 ## Content adaptive brightness control
@@ -140,7 +141,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories, the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware, but unfortunately, does not provide the updated payload files. These can be extracted from the Windows firmware update files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories, the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware, but unfortunately, does not provide the updated payload files. These can be extracted from the Windows firmware update files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel. The thunderbolt-icm kernel module is available in the AUR [thunderbolt-icm-dkms-git](https://aur.archlinux.org/packages/thunderbolt-icm-dkms-git/).
 
 ## SATA controller
 
@@ -202,9 +203,9 @@ There are additional Fn+<Key> (sequences) that are not marked at all on the keyb
 
 <caption>Hidden Fn Keys</caption>
 | Fn+<Key> | Resulting key (sequence) |
-| Fn+Ins | Sleep |
+| Fn+Ins | XF86Sleep |
 | Fn+Super_L | Super_R |
-| Fn+B | Pause (=Break?) |
+| Fn+B | Pause |
 | Fn+R | Print |
 | Fn+S | Scroll_Lock |
 | Fn+A / D / E / F / G / T / Q / W | XF86Launch3 |
@@ -244,6 +245,10 @@ Unfortunately Dell still did not fix this issue and the sound for my model was v
 ### Freezing after waking from suspend
 
 Installing [xf86-video-intel-git](https://aur.archlinux.org/packages/xf86-video-intel-git/) is [reported](https://bbs.archlinux.org/viewtopic.php?pid=1698282#p1698282) to fix this.
+
+### Continuous hissing sound with headphones
+
+Open alsamixer and set "Headphone Mic Boost" gain to 10 dB: [https://www.reddit.com/r/Dell/comments/4j1zz4/headphones_have_static_noise_with_ubuntu_1604_on/](https://www.reddit.com/r/Dell/comments/4j1zz4/headphones_have_static_noise_with_ubuntu_1604_on/) Note that this does reduce the volume slightly.
 
 ## See Also
 

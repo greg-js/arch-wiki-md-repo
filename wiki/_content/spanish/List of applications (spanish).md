@@ -3392,7 +3392,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **Wyrd** — Interfaz basada en texto para Remind, un programa de calendarios y alarmas usado en ordenadores con sistemas UNIX y Linux.
 
-	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://www.archlinux.org/packages/?name=wyrd)
+	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://aur.archlinux.org/packages/wyrd/)
 
 *   **DevTodo** — Pequeña aplicación en línea de comandos parar mantener listas de tareas.
 

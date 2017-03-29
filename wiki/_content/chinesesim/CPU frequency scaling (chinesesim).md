@@ -27,7 +27,7 @@ Linux 内核具有 CPU 调频实现，该基础架构称为 *cpufreq*。从 3.4 
 
 ### thermald
 
-[thermald](https://aur.archlinux.org/packages/thermald/) 是一个 Linux 守护进程，用于防止平台过热。此守护进程会监控平台温度，并采用可用的冷却方式来降低温度。
+[thermald](https://www.archlinux.org/packages/?name=thermald) 是一个 Linux 守护进程，用于防止平台过热。此守护进程会监控平台温度，并采用可用的冷却方式来降低温度。
 
 默认情况下，在硬件采取激进的降温措施之前，它将利用现有的 CPU 数字温度传感器监控 CPU 温度，并保持 CPU 的温度处于可控范围。如果 sysfs 中存在表面温度传感器，那么它将让表面温度保持在 45℃ 以下。
 
@@ -53,7 +53,7 @@ Linux 内核具有 CPU 调频实现，该基础架构称为 *cpufreq*。从 3.4 
 *   原生 CPU 模块将会自动加载。
 *   对于现代 Intel CPU，将使用 `pstate` 功率驱动程序，而非下列其他驱动程序。此驱动程序的优先级高于其他驱动程序，并编入内核（而非编译为模块）。此驱动程序将自动用于 Sandy Bridge（以及更新的 CPU）。如果在使用这个驱动的时候遇到问题，建议您在 Grub 的内核参数中将其禁用（即修改 /etc/default/grub 文件，在 GRUB_CMDLINE_LINUX_DEFAULT= 后添加 `intel_pstate=disable`）。您可以使用与此驱动程序配套的用户空间工具，但这些工具**不受您的控制**。
 *   尽管上述 P State 行为会受到 `/sys/devices/system/cpu/intel_pstate` 影响，例如：可以通过 `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` 关闭 Intel 睿频加速，从而降低 CPU 的温度。
-*   对于现代 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如 [thermald](https://aur.archlinux.org/packages/thermald/)），它们可以通过 P-state、T-state 或 Intel 节能驱动程序来主动控制系统温度。thermald 也适用于较老的 Intel CPU。如果最新版本的驱动程序不可用，那么守护进程会还原为 x86 MSR (Model Specific Register)，由 Linux“cpufreq 子系统”来控制系统冷却。
+*   对于现代 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如 [thermald](https://www.archlinux.org/packages/?name=thermald)），它们可以通过 P-state、T-state 或 Intel 节能驱动程序来主动控制系统温度。thermald 也适用于较老的 Intel CPU。如果最新版本的驱动程序不可用，那么守护进程会还原为 x86 MSR (Model Specific Register)，由 Linux“cpufreq 子系统”来控制系统冷却。
 
 *cpupower* 需要相应模块来了解本地 CPU 的限制信息：
 

@@ -224,11 +224,11 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
 
-*   **lux** — lux is a POSIX-compliant Shell script to easily control brightness on backlight-controllers.
+*   **lux** — lux is a POSIX-compliant Shell script to control brightness on backlight-controllers.
 
 	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
 
-*   **BacklightTooler** — BacklightTooler is simple open source backlight control software. It adds some extra features like automatic backlight adjustments using a webcam and a rather silly 'pulse' feature.
+*   **BacklightTooler** — BacklightTooler is a backlight control tool with brightness auto-adjustment using a webcam.
 
 	[https://github.com/cotix/backlighttooler](https://github.com/cotix/backlighttooler) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 

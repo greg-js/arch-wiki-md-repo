@@ -44,7 +44,7 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 #### Intel
 
 *   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): official Intel CPU runtime, also supports non-Intel CPUs
-*   [beignet](https://aur.archlinux.org/packages/beignet/): open-source implementation for Intel IvyBridge+ iGPUs
+*   [beignet](https://www.archlinux.org/packages/?name=beignet): open-source implementation for Intel IvyBridge+ iGPUs
 
 #### Others
 

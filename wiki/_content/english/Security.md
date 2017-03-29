@@ -309,7 +309,7 @@ Pathname-based access control is a simple form of access control that offers per
 The MAC implementation grsecurity supports is called role-based access control. RBAC associates roles with each user. Each role defines what operations can be performed on certain objects. Given a well-written collection of roles and operations your users will be restricted to perform only those tasks that you tell them they can do. The default "deny-all" ensures you that a user cannot perform an action you have not thought of.
 
 *   [Grsecurity RBAC](/index.php/Grsecurity#RBAC "Grsecurity") has a learning mode like AppArmor for easy configuration
-*   [Grsecurity RBAC](/index.php/Grsecurity#RBAC "Grsecurity") does not rely on extra meta-data like SELinux. RBAC is significantly faster then SELinux.
+*   [Grsecurity RBAC](/index.php/Grsecurity#RBAC "Grsecurity") does not rely on extra meta-data like SELinux. RBAC is significantly faster than SELinux.
 
 ### Labels MAC
 

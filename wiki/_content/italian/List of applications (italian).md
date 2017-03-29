@@ -2927,7 +2927,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Wyrd** — Front-end testuale a Remind, un programma per il calendario e i promemoria utilizzato su sistemi UNIX e Linux.
 
-	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://www.archlinux.org/packages/?name=wyrd)
+	[http://pessimization.com/software/wyrd/](http://pessimization.com/software/wyrd/) || [wyrd](https://aur.archlinux.org/packages/wyrd/)
 
 #### Grafiche
 

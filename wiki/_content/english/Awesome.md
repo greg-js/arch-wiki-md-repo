@@ -380,7 +380,7 @@ See [[6]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html)
 
 ### Media Controls
 
-It is possible to control both volume and media playback via a combination of amixer (available via the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package) and [playerctl](https://aur.archlinux.org/packages/playerctl/). The following can be added to the relevant key binding section of your rc.lua configuration file:
+It is possible to control both volume and media playback via a combination of amixer (available via the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package) and [playerctl](https://www.archlinux.org/packages/?name=playerctl). The following can be added to the relevant key binding section of your rc.lua configuration file:
 
 ```
    -- Volume Keys
