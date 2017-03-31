@@ -84,7 +84,7 @@
 
 ### 어떻게 하면 신뢰받는 사용자(Trusted User)가 될 수 있을까?
 
-[이곳](/index.php/Trusted_Users#How_to_become_TU.3F "Trusted Users")을 참고하자.
+[이곳](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users")을 참고하자.
 
 ### 아티스트로서 참여할 수 있는 방법은 뭘까?
 

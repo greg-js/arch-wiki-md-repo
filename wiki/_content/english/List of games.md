@@ -230,11 +230,11 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://wiki.linuxquestions.org/wiki/BSD_games](http://wiki.linuxquestions.org/wiki/BSD_games) || [bsd-games](https://www.archlinux.org/packages/?name=bsd-games)
 
-*   **Kajongg** — An implementation of [Mahjong](https://en.wikipedia.org/wiki/Mahjong) for 4 players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **Kajongg** — An implementation of [Mahjong](https://en.wikipedia.org/wiki/Mahjong "wikipedia:Mahjong") for 4 players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kdegames-kajongg](https://www.archlinux.org/packages/?name=kdegames-kajongg)
 
-*   **KHangMan** — [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KHangMan** — [Hangman](https://en.wikipedia.org/wiki/Hangman_(game) "wikipedia:Hangman (game)"). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/education/khangman/](https://www.kde.org/applications/education/khangman/) || [khangman](https://www.archlinux.org/packages/?name=khangman)
 
@@ -242,11 +242,11 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[https://www.kde.org/applications/games/kpatience/](https://www.kde.org/applications/games/kpatience/) || [kpatience](https://www.archlinux.org/packages/?name=kpatience)
 
-*   **KSquares** — A [dots-and-boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KSquares** — A [dots-and-boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes "wikipedia:Dots and Boxes") game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/ksquares/](https://www.kde.org/applications/games/ksquares/) || [ksquares](https://www.archlinux.org/packages/?name=ksquares)
 
-*   **Lskat** — A variation of [Skat](https://en.wikipedia.org/wiki/Skat) card game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
+*   **Lskat** — A variation of [Skat](https://en.wikipedia.org/wiki/Skat "wikipedia:Skat") card game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
 
 	[https://www.kde.org/applications/games/lskat/](https://www.kde.org/applications/games/lskat/) || [kdegames-lskat](https://www.archlinux.org/packages/?name=kdegames-lskat)
 
@@ -406,7 +406,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://www.blockout.net/blockout2/](http://www.blockout.net/blockout2/) || [blockout2](https://aur.archlinux.org/packages/blockout2/)
 
-*   **Bovo** — [Gomoku](https://en.wikipedia.org/wiki/Gomoku)-like game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **Bovo** — [Gomoku](https://en.wikipedia.org/wiki/Gomoku "wikipedia:Gomoku")-like game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/bovo/](https://www.kde.org/applications/games/bovo/) || [bovo](https://www.archlinux.org/packages/?name=bovo)
 
@@ -474,7 +474,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.kde.org/applications/games/klines/](https://www.kde.org/applications/games/klines/) || [klines](https://www.archlinux.org/packages/?name=klines)
 
-*   **KMines** — [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)), part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KMines** — [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game) "wikipedia:Minesweeper (video game)"), part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kmines/](https://www.kde.org/applications/games/kmines/) || [kmines](https://www.archlinux.org/packages/?name=kmines)
 
@@ -486,7 +486,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kdegames-kolf](https://www.archlinux.org/packages/?name=kdegames-kolf)
 
-*   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho "wikipedia:Shisen-Sho"). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kshisen/](https://www.kde.org/applications/games/kshisen/) || [kshisen](https://www.archlinux.org/packages/?name=kshisen)
 

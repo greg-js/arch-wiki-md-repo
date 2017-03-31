@@ -28,7 +28,7 @@ Laptop Mode tools with a combination of Cpufreq, acpi and pm-utils will work on 
 
 ## Troubleshooting
 
-On almost every kernel and distribution the CPU scaling doesnt work and it stays stuck at 800Mhz constantly. An easy fix is to append the linux line in [grub](/index.php/GRUB "GRUB") and add: "acpi=noirq" . To make it permanent you need to configure the GRUB_CMDLINE_LINUX argument.
+On almost every kernel and distribution the CPU scaling doesnt work and it stays stuck at 800Mhz constantly. An easy fix is to append the linux line in [GRUB](/index.php/GRUB "GRUB") and add: "acpi=noirq" . To make it permanent you need to configure the GRUB_CMDLINE_LINUX argument.
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="acpi=noirq"` 
 

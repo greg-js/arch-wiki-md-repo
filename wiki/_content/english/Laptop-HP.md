@@ -130,7 +130,7 @@ Card reader: yes | -- |
 | [HP ENVY TouchSmart 17-j113tx](/index.php/HP_ENVY_TouchSmart_17-j113tx "HP ENVY TouchSmart 17-j113tx") | 2014.11 | Intel HD 4600 (*i915*) + NVIDIA GeForce GT 740M (*nouveau* or proprietary *NVIDIA*) as an Optimus setup. | Intel HD Audio (*snd_hda_intel*) | Realtek, exact model is unclear (*r8169*) | Intel 7260 (*iwlwifi*) | Intel Bluetooth, works | ACPI: Yes, Suspend to RAM: Yes, Suspend to Disk: Yes, Battery: Yes, Display Dimming: Yes, CPU Frequency Scaling: Yes | Not included. | Optical Disk Drive, TouchScreen, Webcam, SD Card Reader | See article. |
 | HP Pavilion Ultrabook 15-b030st | 2015.05 | Intel Core i5-3317U + NVIDIA GeForce GT 630M (*nouveau* or proprietary *NVIDIA*) as an Optimus setup. | Intel HD Audio (*snd_hda_intel*) |  ??? | Ralink RT3290 | Not working | -- | Works | -- | -- |
 | HP Pavilion g6-2379sr | 2016.09 | Intel Core i5-3230M, Intel HD 4000 (*i915*) + AMD Radeon 7670M HD (*radeon*)
-Needs [PRIME](https://wiki.archlinux.org/index.php/PRIME) configuration to use hybrid graphics | Intel sound card: *snd-hda-intel* | RTL8101\. Driver: *r8169* | Ralink RT3290\. Works very bad with driver *rt2800pci* and stop work after installing *[rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/)* | Not work even after installing *[rtbth-dkms](https://aur.archlinux.org/packages/rtbth-dkms/)* | ACPI: Works
+Needs [PRIME](/index.php/PRIME "PRIME") configuration to use hybrid graphics | Intel sound card: *snd-hda-intel* | RTL8101\. Driver: *r8169* | Ralink RT3290\. Works very bad with driver *rt2800pci* and stop work after installing *[rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/)* | Not work even after installing *[rtbth-dkms](https://aur.archlinux.org/packages/rtbth-dkms/)* | ACPI: Works
 Suspend to RAM: Working properly
 Suspend to Disk: Not work (don't turn off pc, just freeze on black screen)
 Battery: Works
@@ -153,7 +153,7 @@ Suspend to RAM: Works
 Suspend to Disk: Not tested
 Battery: Works
 Display dimming: Works
-CPU frequency scaling: Works(only performance and powersave governors*[[1]](https://wiki.archlinux.org/index.php/CPU_frequency_scaling#Scaling_governors)[[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ)*) | --- | Hotkeys: Works
+CPU frequency scaling: Works(only performance and powersave governors*[CPU frequency scaling#Scaling governors](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling")[[1]](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ)*) | --- | Hotkeys: Works
 Webcam: Works
 Card reader: not tested | There is small problem with p2p wpa_supplicant, possible solution: p2p_disabled=1.
 Can't set mute-key led light. |
@@ -164,7 +164,7 @@ Battery: Works
 Display dimming: Works
  | --- | Hotkeys: Works
 Webcam: Works
-Card reader: Works | The wifi signal is weak. It is better to use module from lwfinger's rtlwifi_new repo [[3]](https://github.com/lwfinger/rtlwifi_new) with ant_sel=2 option for the module [[4]](https://aur.archlinux.org/packages/rtlwifi_new-dkms) |
+Card reader: Works | The wifi signal is weak. It is better to use module from lwfinger's rtlwifi_new repo [[2]](https://github.com/lwfinger/rtlwifi_new) with ant_sel=2 option for the module [[rtlwifi_new-dkms](https://aur.archlinux.org/packages/rtlwifi_new-dkms/)] |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

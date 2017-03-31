@@ -153,7 +153,7 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 **Tip:** Searching for the legacy name of an application in the Shell search bar will successfully return the application in question. For instance, searching for *nautilus* will return *Files*.
 
 | Current | Legacy |
-| [Files](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
+| [Files](/index.php/Files "Files") | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Videos | Totem |
 | Main Menu | Alacarte |
@@ -242,7 +242,7 @@ or via *gnome-tweak-tool*.
 
 [NetworkManager](/index.php/NetworkManager "NetworkManager") is the native tool of the GNOME project to control network settings from the shell. [Install](/index.php/Install "Install") the [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) package and [enable](/index.php/Enable "Enable") the `NetworkManager.service` systemd unit.
 
-While any other [network manager](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet") can be used as well, NetworkManager provides the full integration via the shell network settings and a status indicator applet [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (not required for GNOME).
+While any other [network manager](/index.php/Network_manager "Network manager") can be used as well, NetworkManager provides the full integration via the shell network settings and a status indicator applet [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (not required for GNOME).
 
 #### Online accounts
 

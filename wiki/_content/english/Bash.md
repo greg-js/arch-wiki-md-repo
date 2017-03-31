@@ -93,7 +93,7 @@ It may require up to three tab-presses to show all possible completions for a co
 
 #### Common programs and options
 
-By default, Bash only tab-completes commands, filenames, and variables. The package [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) extends this by adding more specialized tab completions for common commands and their options. With [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), normal completions (such as `$ ls file.*<tab><tab>`) will behave differently; however, they can be re-enabled with `$ compopt -o bashdefault *program*` (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=128471) and [[3]](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html) for more detail).
+By default, Bash only tab-completes commands, filenames, and variables. The package [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) extends this by adding more specialized tab completions for common commands and their options, which can be enabled by sourcing `/usr/share/bash-completion/bash_completion`. With [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), normal completions (such as `$ ls file.*<tab><tab>`) will behave differently; however, they can be re-enabled with `$ compopt -o bashdefault *program*` (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=128471) and [[3]](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html) for more detail).
 
 #### Customize per-command
 

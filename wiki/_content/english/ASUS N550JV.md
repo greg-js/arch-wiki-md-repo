@@ -216,7 +216,7 @@ Then [enable](/index.php/Enable "Enable") `beep-disable.service` and `beep-disab
 
 ##### Crackling sound
 
-Add `tsched=0` to pulseaudio config file as per instructions at [PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting").
+Add `tsched=0` to pulseaudio config file as per instructions at [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting").
 
 ### Messages during console login
 

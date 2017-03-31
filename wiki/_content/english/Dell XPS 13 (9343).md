@@ -230,11 +230,11 @@ Refer to the Audio section above for more info, as well as the [BBS thread](http
 
 ### Loud cracks/noise during boot or audio playback
 
-Some users have reported above sound outputs, as described e.g. in [this BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208496). [Disabling audio powersafe](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback) may work for people using the **HDA** audio mode. However, it is still unknown how to solve this issue for the **I2S** audio mode. For further reference, see the corresponding [kernel bug record](https://bugzilla.kernel.org/show_bug.cgi?id=112611).
+Some users have reported above sound outputs, as described e.g. in [this BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208496). [Disabling audio powersafe](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") may work for people using the **HDA** audio mode. However, it is still unknown how to solve this issue for the **I2S** audio mode. For further reference, see the corresponding [kernel bug record](https://bugzilla.kernel.org/show_bug.cgi?id=112611).
 
 ### Display freezes while manipulating external displays with Xrandr / random blanking
 
-`xrandr` commands (for eg. [HiDPI#Multiple_displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[12]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [[13]](https://wiki.archlinux.org/index.php/Intel_graphics#Skylake_support). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
+`xrandr` commands (for eg. [HiDPI#Multiple displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[12]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
 
 If you are experiencing freezes in GNOME on Login and/or after, be sure you have latest BIOS installed and disabled the C state feature.
 

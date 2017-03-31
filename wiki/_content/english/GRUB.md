@@ -1007,7 +1007,7 @@ This error may occur when you try installing GRUB in a VMware container. Read mo
 
 #### Common installation errors
 
-*   If you have a problem when running grub-install with sysfs or procfs and it says you must run `modprobe efivars`, try [Unified Extensible Firmware Interface#Mount_efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
+*   If you have a problem when running grub-install with sysfs or procfs and it says you must run `modprobe efivars`, try [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
 *   Without `--target` or `--directory` option, grub-install cannot determine for which firmware to install. In such cases `grub-install` will print `source_dir does not exist. Please specify --target or --directory`.
 *   If after running grub-install you are told your partition does not look like an EFI partition then the partition is most likely not `Fat32`.
 

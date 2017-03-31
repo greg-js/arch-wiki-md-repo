@@ -45,7 +45,7 @@ Specifically, the procedure for installing Arch Linux on a MacBook is:
 2.  **[Partitioning](#Partitioning)**: Resizing or deleting the OS X partition to create partitions for Arch Linux.
 3.  **[Setup bootloader](#Setup_bootloader)**: Making sure that the new partition is bootable.
 4.  **[Install Arch Linux](#Installation)**: Actually installing Arch Linux.
-5.  **[Post-installation](#Post-installation)**: MacBook-specific configuration.
+5.  **[Post-installation](#Post_installation)**: MacBook-specific configuration.
 
 ## Firmware updates
 
@@ -126,7 +126,7 @@ You may now use `wifi-menu` to connect to your network of choice.
 MacBooks can be easily configured to use [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [GRUB](/index.php/GRUB "GRUB") directly from the Apple bootloader, without the need for third-party tools such as [rEFInd](/index.php/REFInd "REFInd"). Systemd-boot is the recommended way for systems that support UEFI.
 
 *   First, make sure you mounted the EFI System Partition at `/boot`
-*   Proceed with [Installation](/index.php/Installation_guide "Installation guide") normally
+*   Proceed with [Installation](/index.php/Installation "Installation") normally
 *   Once inside the chrooted enviroment, type the following command to install *systemd-boot*:
 
  `# bootctl --path=/boot install` 

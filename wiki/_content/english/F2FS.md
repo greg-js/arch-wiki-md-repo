@@ -1,5 +1,12 @@
 [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) is a file system intended for NAND-based flash memory. It is supported from kernel 3.8 onwards.
 
+## Contents
+
+*   [1 Creating a F2FS partition](#Creating_a_F2FS_partition)
+*   [2 Mounting a F2FS partition](#Mounting_a_F2FS_partition)
+*   [3 Install Arch Linux on F2FS partition](#Install_Arch_Linux_on_F2FS_partition)
+*   [4 Checking and repair](#Checking_and_repair)
+
 ## Creating a F2FS partition
 
 In order to create a F2FS partition, [install](/index.php/Install "Install") [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
@@ -37,3 +44,7 @@ With the latest [installation media](https://www.archlinux.org/download/) it is 
 5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
 
 Be sure to also check out the [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") page if you're installing Arch on a USB flash drive. (In particular the part about editing `/etc/mkinitcpio.conf` is important, otherwise your system won't boot.)
+
+## Checking and repair
+
+Checking and repairs to f2fs partitions are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See the manpage for available switches.

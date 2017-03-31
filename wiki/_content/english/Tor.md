@@ -251,7 +251,7 @@ To use a program over tor, configure it to use 127.0.0.1 or localhost as a SOCKS
 
 The Tor Project currently only supports web browsing with tor through the [Tor Browser Bundle](https://aur.archlinux.org/packages/?K=tor-browser-), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers, but this is [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser) by the Tor Project.
 
-**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Import_a_public_key](/index.php/GnuPG#Import_a_public_key "GnuPG").
+**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Import a public key](/index.php/GnuPG#Import_a_public_key "GnuPG").
 
 ### Firefox
 

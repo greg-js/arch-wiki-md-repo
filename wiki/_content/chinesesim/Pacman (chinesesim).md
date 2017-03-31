@@ -548,7 +548,7 @@ Include = /path/to/common/settings
 
 ### 软件仓库
 
-除了特殊的[[options]section](#General_options), 每个`pacman.conf`中的`section`都定义了一个使用的软件包仓库，*仓库*是多个软件包的*逻辑*上的集合，他们*物理*上存储在一个或多个服务器：这也是为什么每一个服务器都叫做这个仓库的*镜像*。
+除了特殊的[options](#General_options)section, 每个`pacman.conf`中的`section`都定义了一个使用的软件包仓库，*仓库*是多个软件包的*逻辑*上的集合，他们*物理*上存储在一个或多个服务器：这也是为什么每一个服务器都叫做这个仓库的*镜像*。
 
 仓库区分为[官方]与[Unofficial user repositories|非官方](/index.php/Official_repositories "Official repositories")两类。配置文件中仓库的顺序十分重要；当几个仓库出现同名安装包，不管版本号是否相同，**pacman**将使用配置文件中排前的仓库。[upgrade](#Upgrading_packages)升级整个系统，来让新添加的仓库生效。
 

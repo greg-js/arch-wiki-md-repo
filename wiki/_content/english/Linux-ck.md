@@ -45,7 +45,7 @@ There are **three** modifications to the config files:
 
 **All other options are set to the ARCH defaults outlined in the main kernel's config files.** Of course users are free to edit them.
 
-The [linux-ck](https://aur.archlinux.org/packages/linux-ck/) package contains an option to switch on the **nconfig** config editor (see the section [below](/index.php/Linux-ck#Compile_the_package_from_source "Linux-ck")).
+The [linux-ck](https://aur.archlinux.org/packages/linux-ck/) package contains an option to switch on the **nconfig** config editor (see the section [below](#Compile_the_package_from_source)).
 
 ### Long-Term Support (LTS) CK releases
 
@@ -74,7 +74,7 @@ Users can further customize the linux-ck package via tweaks contained in the PKG
 
 More details about these options are provided in the PKGBUILD itself. Be sure to read them carefully if compiling from AUR!
 
-**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few. Alternatively, use the corresponding [DKMS](/index.php/DKMS "DKMS") package, for instance install [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) as described in [NVIDIA#Custom_kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA").
+**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few. Alternatively, use the corresponding [DKMS](/index.php/DKMS "DKMS") package, for instance install [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) as described in [NVIDIA#Custom kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA").
 
 ### Use pre-compiled packages
 
@@ -173,5 +173,5 @@ Always feel free to open a thread in the forums for support purpose. Be sure to 
 *   [Kernel patch homepage of Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/)
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.it/)
 *   [Con Kolivas' desktop-centric kernel patchset](http://lkml.org/lkml/2009/9/6/136)
-*   [Wikipedia's Con Kovalis page](https://en.wikipedia.org/wiki/Con_Kolivas)
-*   [Wikipedia's BFS article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler)
+*   [Wikipedia's Con Kovalis page](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas")
+*   [Wikipedia's BFS article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")

@@ -50,7 +50,7 @@ More info on this issue in [Environment variables#Per user](/index.php/Environme
 
 ### Unable to delete files
 
-By default, [Electron](/index.php/Electron "Electron") apps use `gvfs-trash` to delete files. For users not using [Gnome](/index.php/Gnome "Gnome") the `ELECTRON_TRASH` environmental variable can be used to specify which trash utility should be used.
+By default, [Electron](/index.php/Electron "Electron") apps use `gvfs-trash` to delete files. For users not using [GNOME](/index.php/GNOME "GNOME") the `ELECTRON_TRASH` environmental variable can be used to specify which trash utility should be used.
 
 For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
 

@@ -354,7 +354,7 @@ server.listen
 
 ```
 #!/bin/csh
-echo "Hello, World!"
+echo "Arch is the best!"
 
 ```
 

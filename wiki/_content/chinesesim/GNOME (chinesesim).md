@@ -194,7 +194,7 @@ GNOME 的这些配置通常是用户间相互独立的。以下文字仅供单�
 
 #### 日期与时间
 
-如果系统已有配置好的 [NTP 守护进程](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon_(简体中文))，它同样会对 GNOME 桌面环境起作用。如果需要，您也可以手动控制进行同步。
+如果系统已有配置好的 [NTP 守护进程](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)")，它同样会对 GNOME 桌面环境起作用。如果需要，您也可以手动控制进行同步。
 
 如需在顶栏显示日期，请运行：
 

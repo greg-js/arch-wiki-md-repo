@@ -367,7 +367,7 @@ Both Android and iOS users can use the official app (currently free of charge) t
 
 #### Using a physical remote control
 
-Any PC with a supported IR receiver/remote, can use remote using [Lirc](/index.php/Lirc "Lirc") or using the native kernel supported modules. Configuring specific remotes with lirc is covered on the [Lirc](/index.php/Lirc "Lirc") article.
+Any PC with a supported IR receiver/remote, can use remote using [LIRC](/index.php/LIRC "LIRC") or using the native kernel supported modules. Configuring specific remotes with lirc is covered on the [LIRC](/index.php/LIRC "LIRC") article.
 
 To work properly with Kodi, a file will be required that maps the lirc events to Kodi keypresses. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
 
@@ -462,7 +462,7 @@ Kodi has a webservice that allows interaction through a web-interface. By defaul
 
 ### Using ALSA
 
-If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable. The Kodi wiki for NUC devices provides [[instructions](http://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)]
+If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable. The Kodi wiki for NUC devices provides [instructions](http://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)
 
 ### Raspberry Pi (all generations)
 

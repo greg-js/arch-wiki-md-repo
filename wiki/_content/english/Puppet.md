@@ -18,7 +18,7 @@ From [Puppet web site](https://puppetlabs.com/puppet/what-is-puppet/):
 
 If you want to install from Puppet's git repo, [puppet-git](https://aur.archlinux.org/packages/puppet-git/) is available through the [AUR](/index.php/AUR "AUR").
 
-If you want to install a puppet master you can install the [puppetserver](https://aur.archlinux.org/packages/puppetserver/) package from the AUR the documentation for which is on the page [Puppet Server](/index.php/Puppet_Server "Puppet Server").
+If you want to install a puppet master you can install the [puppetserver](https://aur.archlinux.org/packages/puppetserver/) package from the AUR the documentation for which is on the page [Puppet server](/index.php/Puppet_server "Puppet server").
 
 ## Configuration
 

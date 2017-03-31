@@ -68,7 +68,7 @@ As a result:
 
 ### General
 
-**Warning:** Unless you use the [dkms](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") versions of these packages, the ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
+**Warning:** Unless you use the [dkms](/index.php/Dkms "Dkms") versions of these packages, the ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
 
 **Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repo if your current kenel is newer.
 

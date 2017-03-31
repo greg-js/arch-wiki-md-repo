@@ -81,7 +81,7 @@ Deluge can be configured through any of the clients as well as by simply editing
 When using the systemd deluged.service, the shared directory/directories need to be shared so that other users on the system are able to access the data. The general strategy is to:
 
 1.  Change the owner and group of the shared directory to deluge:deluge.
-2.  Set the [File_permissions_and_attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") on the shared directory to at least 770.
+2.  Set the [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") on the shared directory to at least 770.
 3.  Add your user (or the user/users needing to access the files) to the deluge group.
 
 Example using `/mnt/torrent_data`:

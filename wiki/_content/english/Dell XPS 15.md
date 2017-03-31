@@ -229,7 +229,7 @@ lspci for model Precision 5510:
 
 ## Differences between XPS 9550 & Precision 5510
 
-The Precision 5510 is essentially identical to the [XPS 9550](https://wiki.archlinux.org/index.php/Dell_XPS_15_(9550)) variant, with the exception of an Intel Wireless NIC & Quadro 1000M Graphics Chip. Compared to the 9550's Broadcom NIC & 960M graphics chip.
+The Precision 5510 is essentially identical to the [XPS 9550](/index.php/Dell_XPS_15_(9550) "Dell XPS 15 (9550)") variant, with the exception of an Intel Wireless NIC & Quadro 1000M Graphics Chip. Compared to the 9550's Broadcom NIC & 960M graphics chip.
 
 ## System Setup
 
@@ -288,7 +288,7 @@ Regardless, for now, it is recommended that you don't/reduce hot-plugging headph
 
 ### Graphics
 
-By default, both Intel and NVidia cards are active, which can consume a lot of power. Using the Intel-only setup below, you can reduce your battery usage due to disabling the Nvidia card. The Intel and Nvidia setup describes how to utilize both cards and save power using [Bumblebee](/index.php/Bumblebee "Bumblebee"). See also [Hybrid_graphics](/index.php/Hybrid_graphics "Hybrid graphics").
+By default, both Intel and NVidia cards are active, which can consume a lot of power. Using the Intel-only setup below, you can reduce your battery usage due to disabling the Nvidia card. The Intel and Nvidia setup describes how to utilize both cards and save power using [Bumblebee](/index.php/Bumblebee "Bumblebee"). See also [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics").
 
 #### Intel only
 
@@ -556,7 +556,7 @@ Listed below are you may encounter with the XPS 9550 4K:
 **01.02.10+**
 • Increased speeds (faster boot, applications feel snappier when loading, especially in 01.02.13)
 • Black screen upon resume (the computer will operate as if it's on, to get display to work, set brightness to max using keyboard shortcut)
-• Brightness flickers/stutters when dimming or increasing the brightness (demonstrated in [i3wm](https://wiki.archlinux.org/index.php/I3))
+• Brightness flickers/stutters when dimming or increasing the brightness (demonstrated in [i3wm](/index.php/I3wm "I3wm"))
 • Screen flickers on low brightness settings
 • Possible poor fan behavior (not confirmed)
 • Battery will not charge beyond 60%. The fix is to download and flash [1.2.14 BIOS or later](http://downloads.dell.com/FOLDER03906323M/1/XPS_9550_1.2.14.exe) Flashing 01.02.00 will be pointless after, as the issue carries over to this version of BIOS.

@@ -93,4 +93,4 @@ As of Kernel 3.15.2-1, the trackpad - including two-finger scroll - should work 
 
 ## Suspend/Hibernate
 
-Suspend and Hibernate doesn't work out of the box because of hybrid graphics. Adding `acpi_osi=! acpi_osi="Windows 2009"` to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") fixes the issue. [[1]](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29)
+Suspend and Hibernate doesn't work out of the box because of hybrid graphics. Adding `acpi_osi=! acpi_osi="Windows 2009"` to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") fixes the issue. [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")

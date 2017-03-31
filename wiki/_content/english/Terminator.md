@@ -80,7 +80,7 @@ cat $HOME/.config/terminator/config | grep -B 1 'background_color' | grep '\]\]'
 
 ```
 
-If you add more profiles in the future and would like to have them included in the startup pool, you will have to reissue the command above. You can create an [alias](/index.php/Bash#Aliases "Bash").
+If you add more profiles in the future and would like to have them included in the startup pool, you will have to reissue the command above. You can create an [alias](/index.php/Alias "Alias").
 
 You must now modify Terminator's desktop file so that it selects a random profile from this list at startup.
 

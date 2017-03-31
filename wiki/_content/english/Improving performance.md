@@ -368,7 +368,7 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 
 ### Clock frequency and timings
 
-RAM can run at different clock frequencies and timings, which can be configured in the BIOS. Memory performance depends on both values. Selecting the highest preset presented by the BIOS usually improves the performance over the default setting. Note that increasing the frequency to values not supported by both motherboard and RAM vendor is overclocking, and similar risks and disdvantages apply, see [Improving_performance#Overclocking](/index.php/Improving_performance#Overclocking "Improving performance").
+RAM can run at different clock frequencies and timings, which can be configured in the BIOS. Memory performance depends on both values. Selecting the highest preset presented by the BIOS usually improves the performance over the default setting. Note that increasing the frequency to values not supported by both motherboard and RAM vendor is overclocking, and similar risks and disdvantages apply, see [#Overclocking](#Overclocking).
 
 ### Root on RAM overlay
 
@@ -453,7 +453,7 @@ Every time a connection is made, the system must first resolve a fully qualified
 
 ## Watchdogs
 
-According to [[9]](https://en.wikipedia.org/wiki/Watchdog_timer):
+According to [wikipedia:Watchdog_timer](https://en.wikipedia.org/wiki/Watchdog_timer "wikipedia:Watchdog timer"):
 
 	A watchdog timer [...] is an electronic timer that is used to detect and recover from computer malfunctions. During normal operation, the computer regularly resets the watchdog timer [...]. If, [...], the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal [...] used to initiate corrective [...] actions [...] typically include placing the computer system in a safe state and restoring normal system operation.
 
@@ -475,10 +475,10 @@ or use:
 
 ```
 
-After you disabled watchdogs, you can *optionally* avoid the loading of the module responsible of the hardware watchdog, too. Do it by [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the related module, e.g. `iTCO_wdt`.
+After you disabled watchdogs, you can *optionally* avoid the loading of the module responsible of the hardware watchdog, too. Do it by [blacklisting](/index.php/Blacklisting "Blacklisting") the related module, e.g. `iTCO_wdt`.
 
 **Note:** Some users [reported](https://bbs.archlinux.org/viewtopic.php?id=221239) the `nowatchdog` parameter doesn't work as expected but they have successfully disabled the watchdog (at least the hardware one) by blacklisting the above-mentioned module.
 
-Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](https://wiki.archlinux.org/index.php/Power_management#Disabling_NMI_watchdog).
+Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](/index.php/Power_management#Disabling_NMI_watchdog "Power management").
 
-See [[10]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[11]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[12]](http://0pointer.de/blog/projects/watchdog.html), and [[13]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[9]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[10]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[11]](http://0pointer.de/blog/projects/watchdog.html), and [[12]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.

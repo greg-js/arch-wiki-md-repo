@@ -82,7 +82,7 @@ Or run
 
 MPD is a program for playing music via a daemon process instead of using a client. It also incorporates a music database for quick access, playlists, and a variety of front-end options.
 
-**Note:** MPD has its own <u>built-in</u> HTTP Streaming, and using Icecast+mpd may not be needed. See [Music Player Daemon : HTTP Streaming](/index.php/Music_Player_Daemon/Tips_and_tricks#HTTP_Streaming "Music Player Daemon/Tips and tricks") for more information.
+**Note:** MPD has its own <u>built-in</u> HTTP Streaming, and using Icecast+mpd may not be needed. See [Music Player Daemon : HTTP Streaming](/index.php/Music_Player_Daemon/Tips_and_tricks#HTTP_streaming "Music Player Daemon/Tips and tricks") for more information.
 
 ### Step 1: Set Up MPD and Install a Client
 

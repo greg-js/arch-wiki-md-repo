@@ -61,7 +61,7 @@ To change Netbeans look and feel, go to *Tools > Options > Appearance > Look and
 To add a dark look and feel to the GUI but also to the colorschemes used in the code, you can install one of the following certified extension from the plugin directory which can be reached from *Tools > Plugins > Available Plugins*:
 
 *   *Dark Look And Feel Themes*
-*   *Darcula LAF for NetBeans*: which, as of January 2017, better integrates with current [desktop environments](/index.php/Desktop_environment "Desktop environment") and mimic the default Darcula look and feel from used in IntelliJ IDEA or [Android Studio](/index.php/Android#Android_Studio "Android").
+*   *Darcula LAF for NetBeans*: which, as of January 2017, better integrates with current [desktop environments](/index.php/Desktop_environments "Desktop environments") and mimic the default Darcula look and feel from used in IntelliJ IDEA or [Android Studio](/index.php/Android_Studio "Android Studio").
 
 ### Integrate with the Apache Tomcat Servlet Container
 

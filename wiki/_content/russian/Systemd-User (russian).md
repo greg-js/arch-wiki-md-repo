@@ -104,7 +104,7 @@ XDG_CONFIG_HOME DEFAULT=@{HOME}/.local/config
 XDG_DATA_HOME   DEFAULT=@{HOME}/.local/data
 ```
 
-For details about the syntax of the `.pam_environment` file see [Environment_variables#Using_pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
+For details about the syntax of the `.pam_environment` file see [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
 
  `$ systemctl --user show-environment` 
 ```
@@ -210,7 +210,7 @@ $ systemctl --user set-environment XDG_VTNR=1
 
 **Note:** xorg should be launched at the same virtual terminal where the user logged in. Otherwise logind will consider the session inactive.
 
-3\. Make sure to configure the `DISPLAY` environment variable as explained [above](#DISPLAY_and_XAUTHORITY).
+3\. Make sure to configure the `DISPLAY` environment variable as explained [above](#DISPLAY_.D0.B8_XAUTHORITY).
 
 4\. Then, to enable socket activation for xorg on display 0 and tty 2 one would do:
 

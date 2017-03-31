@@ -175,7 +175,7 @@ It is also recommended to disable password logins entirely. This will greatly in
 
 You can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") either `sshd.service` **or** `sshd.socket` to begin using the daemon.
 
-If using the socket service, you will need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the unit file if you want it to listen on a port other than the default 22:
+If using the socket service, you will need to [edit](/index.php/Edit "Edit") the unit file if you want it to listen on a port other than the default 22:
 
  `# systemctl edit sshd.socket` 
 ```

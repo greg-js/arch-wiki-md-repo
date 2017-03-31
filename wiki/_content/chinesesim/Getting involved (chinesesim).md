@@ -180,7 +180,7 @@ Arch 特别服务：
 
 ### 如何成为 Trusted User?
 
-请阅读 [Trusted Users#How to become TU?](/index.php/Trusted_Users#How_to_become_TU.3F "Trusted Users").
+请阅读 [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
 
 ### 作为艺术爱好者，我可以做什么?
 

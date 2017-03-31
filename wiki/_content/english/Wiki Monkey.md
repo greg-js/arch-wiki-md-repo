@@ -38,7 +38,7 @@ By executing a plugin, the text in the editor will be modified, but note that th
     *   *Use code templates* replaces `<pre>`, `<code>` and `<tt>` with [Template:bc](/index.php/Template:Bc "Template:Bc") and [Template:ic](/index.php/Template:Ic "Template:Ic"), taking care of adding numbered parameters or `<nowiki>` tags when necessary.
     *   *Expand contractions* expands some common English contractions, e.g. "don't" becomes "do not".
     *   *Squash multiple line breaks* compresses multiple empty lines into one.
-    *   *Convert summary to related* starts the conversion discussed in [Help talk:Style/Article summary templates#Deprecation of summaries and overviews](/index.php/Help_talk:Style/Article_summary_templates#Deprecation_of_summaries_and_overviews "Help talk:Style/Article summary templates"); the user will have to finish it manually.
+    *   *Convert summary to related* starts the conversion discussed in [[1]](https://wiki.archlinux.org/index.php?title=Help_talk:Style/Article_summary_templates&oldid=444175); the user will have to finish it manually.
 *   *RegExp substitution* lets you perform a regular expression substitution.
 *   *Query plugins* groups all the plugins that need to query external pages in order to obtain the information needed to update the page.
     *   *Fix external section links* checks links to sections of other articles (`[[Article#Section]]`) and tries to fix them if broken; it also supports [Template:Related](/index.php/Template:Related "Template:Related") and [Template:Related2](/index.php/Template:Related2 "Template:Related2").

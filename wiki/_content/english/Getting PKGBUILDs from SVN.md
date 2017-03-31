@@ -23,7 +23,7 @@ $ svn checkout --depth=empty [svn://svn.archlinux.org/packages](svn://svn.archli
 
 ```
 
-For community:
+For community, multilib:
 
 ```
 $ svn checkout --depth=empty [svn://svn.archlinux.org/community](svn://svn.archlinux.org/community) 

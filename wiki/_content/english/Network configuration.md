@@ -311,7 +311,7 @@ An easy way to setup DHCP for simple requirements is to use [systemd-networkd](/
 
 #### dhclient
 
-[dhclient](https://www.archlinux.org/packages/?name=dhclient) is the Internet Systems Consortium DHCP client. [Enable](/index.php/Enable "Enable") the `dhclient@*interface*.service`, where `*interface*` is a wired [#Device name](#Device_name). See dhclient(8) and dhclient.conf(5) for details.
+[dhclient](https://www.archlinux.org/packages/?name=dhclient) is the Internet Systems Consortium DHCP client. [Enable](/index.php/Enable "Enable") the `dhclient@*interface*.service`, where `*interface*` is a wired [#Device names](#Device_names). See dhclient(8) and dhclient.conf(5) for details.
 
 #### netctl
 

@@ -1,3 +1,8 @@
+**Bump to v4.10.7-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.7](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.7)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=284a27116b443ad313a5a031a8677e4fea1b6d5c](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=284a27116b443ad313a5a031a8677e4fea1b6d5c)
+
 **Bump to v4.10.6-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.6](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.6)
@@ -104,7 +109,7 @@
 **Bump to v4.8.15-2**
 
 *   Changelog: [Updates](https://github.com/graysky2/kernel_gcc_patch/compare/graysky2:2301b1528e80d86b88a252d5e17227278c62131c...84aad1d8bf5e0c2505b8fb9882394a262a7307e8) to gcc patch
-*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+*   Commit: **Linux-ck/Changelog**
 
 **Bump to v4.8.15-1**
 
@@ -1231,7 +1236,7 @@ sed -i 's/_bfqpath=.*$/_bfqpath="http:\/\/repo-ck.com\/source\/mirror"/' PKGBUIL
 
 **Bump to v3.10.1-2**
 
-*   Changelog: Set the CONFIG_INTEL_MEI* from hardcoded to modules following [flyspray 36144](https://bugs.archlinux.org/task/36144) and the ubuntu bug report/lkml discussion therein. This may have positive effects for users experiencing graphical corruptions/black screens from suspend.
+*   Changelog: Set the CONFIG_INTEL_MEI* from hardcoded to modules following [FS#36144](https://bugs.archlinux.org/task/36144) and the ubuntu bug report/lkml discussion therein. This may have positive effects for users experiencing graphical corruptions/black screens from suspend.
 *   Commit: [http://pkgbuild.com/git/aur-mirror.git/commit/linux-ck?id=e6d9e50667e2439217e15c3a8ca5b53985147c6c](http://pkgbuild.com/git/aur-mirror.git/commit/linux-ck?id=e6d9e50667e2439217e15c3a8ca5b53985147c6c)
 
 **Bump to v3.10.1-1**

@@ -99,7 +99,7 @@ fi
 
 ### dd - advanced example
 
-Use the following command to randomize the drive/partition using a randomly-seeded AES cipher from [OpenSSL](/index.php/OpenSSL "OpenSSL") (displaying the optional progress meter with [pv](https://www.archlinux.org/packages/?name=pv)):
+An alternative is to randomize the drive/partition using a randomly-seeded AES cipher from [OpenSSL](/index.php/OpenSSL "OpenSSL") (displaying the optional progress meter with [pv](https://www.archlinux.org/packages/?name=pv)). For example:
 
 ```
 # openssl enc -aes-256-ctr -pass pass:"$(dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64)" -nosalt </dev/zero \
@@ -115,7 +115,7 @@ The command above creates a 128 byte encryption key seeded from `/dev/urandom`. 
 
 The block size is set to 64K above as it is usually faster than the default 512 bytes, and yields nearly optimal transfer rates across a range of hardware: [[1]](http://superuser.com/questions/234199/good-block-size-for-disk-cloning-with-diskdump-dd) and the references therein.
 
-See also [Dm-crypt/Drive preparation#dm-crypt wipe before installation](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation "Dm-crypt/Drive preparation") for a similar approach.
+See also [Dm-crypt/Drive preparation#dm-crypt wipe on an empty disk or partition](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation") for a similar approach.
 
 ### Using a template file
 

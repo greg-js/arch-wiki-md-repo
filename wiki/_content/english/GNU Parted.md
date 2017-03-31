@@ -12,6 +12,7 @@ GNU Parted is a program for creating and manipulating partition tables. [GParted
     *   [4.2 Partition schemes](#Partition_schemes)
         *   [4.2.1 UEFI/GPT examples](#UEFI.2FGPT_examples)
         *   [4.2.2 BIOS/MBR examples](#BIOS.2FMBR_examples)
+        *   [4.2.3 BIOS/GPT example](#BIOS.2FGPT_example)
     *   [4.3 Resizing Partitions](#Resizing_Partitions)
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
@@ -235,6 +236,21 @@ In the final example below, separate `/boot` (100MiB), `/` (20GiB), swap (4GiB),
 
 ```
 
+#### BIOS/GPT example
+
+This example assumes you are using [GRUB](/index.php/GRUB "GRUB") as your bootloader.
+
+Unlike in the BIOS/MBR case, a special 2 MiB partition [is required for the extra grub code.](http://askubuntu.com/questions/500359/efi-boot-partition-and-biosgrub-partition) The third partition can be further divided to include a swap partition or a separate partition for `/home`.
+
+```
+(parted) mkpart primary 1MiB 3MiB
+(parted) set 1 bios_grub on
+(parted) mkpart primary ext2 3MiB 200MiB
+(parted) set 2 boot on
+(parted) mkpart primary ext4 200MiB 100%
+
+```
+
 ### Resizing Partitions
 
 **Warning:** Partitions that are being resized must be unmounted and not in use. If it cannot be done (e.g. the partition that mounts to `/`), use a live media/rescue system.
@@ -335,7 +351,7 @@ Reference to this little gem [here](http://gparted-forum.surf4.info/viewtopic.ph
 
 ### Fixing messed-up partition order
 
-See [Fdisk#Sort_partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
+See [Fdisk#Sort partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
 
 **Note:** You must run **partprobe** as root or reboot the system in order for the kernel to read the new partition table!
 

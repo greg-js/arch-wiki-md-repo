@@ -4,7 +4,7 @@ En los sistemas basados en SysVinit, **init** es el primer proceso que se ejecut
 
 **inittab** es el archivo de configuración inicial que encuentra init en `/etc`. Contiene las instrucciones de inicio de los programas y scripts que van a funcionar al iniciar el nivel de ejecución especificado.
 
-Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del trabajo se delega en los [#Scripts Principales de Arranque](#Scripts_Principales_de_Arranque). Este artículo se centra en init e inittab.
+Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del trabajo se delega en los [#Scripts principales de arranque](#Scripts_principales_de_arranque). Este artículo se centra en init e inittab.
 
 ## Contents
 

@@ -41,7 +41,6 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
 *   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
     *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
     *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
-*   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 
 ## Upgrades
 

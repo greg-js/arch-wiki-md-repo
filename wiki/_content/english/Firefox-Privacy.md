@@ -177,7 +177,7 @@ Disconnect is a open source project aimed at stopping 2,000 third-party sites fr
 
 Disconnect can also stop side-jacking, which utilizes stolen cookies to steal personal data. It is easy to use and well supported. It can be added to Firefox at the [official website](https://disconnect.me/).
 
-**Note:** Firefox gained a feature based on the Disconnect list. See [Firefox tweaks#Enable firefox optional tracking protection](/index.php/Firefox_tweaks#Enable_firefox_optional_tracking_protection "Firefox tweaks").
+**Note:** Firefox gained a feature based on the Disconnect list. See [#Enable tracking protection](#Enable_tracking_protection).
 
 ### NoScript
 

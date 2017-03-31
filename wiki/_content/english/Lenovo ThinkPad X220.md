@@ -36,7 +36,7 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ### Boot fails (UEFI/GPT)
 
-The laptop can not boot from a [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") disk in `Legacy BIOS` mode, it is necessary to either switch to `UEFI` booting or create a [MBR Partition Table](/index.php/Partitioning#Master_Boot_Record "Partitioning").
+The laptop can not boot from a [GPT](/index.php/GPT "GPT") disk in `Legacy BIOS` mode, it is necessary to either switch to `UEFI` booting or create a [MBR Partition Table](/index.php/Partitioning#Master_Boot_Record "Partitioning").
 
 Additional considerations from ThinkWiki:
 

@@ -7,9 +7,8 @@ Speech recognition is any means by which you can interface with your computer vi
 *   [1 Types of speech recognition](#Types_of_speech_recognition)
 *   [2 List of text to speech applications](#List_of_text_to_speech_applications)
 *   [3 List of voiced commands applications](#List_of_voiced_commands_applications)
-    *   [3.1 Gnome-Voice-Control](#Gnome-Voice-Control)
-    *   [3.2 VEDICS](#VEDICS)
-    *   [3.3 Perlbox-Voice](#Perlbox-Voice)
+    *   [3.1 VEDICS](#VEDICS)
+    *   [3.2 Perlbox-Voice](#Perlbox-Voice)
 *   [4 List of speech recognition applications](#List_of_speech_recognition_applications)
     *   [4.1 Free Speech Recognition Engines](#Free_Speech_Recognition_Engines)
     *   [4.2 Proprietary Speech Recognition Engines](#Proprietary_Speech_Recognition_Engines)
@@ -73,15 +72,14 @@ Two text-to-speech applications are Festival and eSpeak, a small feature compari
 
 ## List of voiced commands applications
 
-### Gnome-Voice-Control
-
-[gnome-voice-control](https://aur.archlinux.org/packages/gnome-voice-control/) is a dialogue system to control the GNOME Desktop. It is developed on Google Summer of Code 2007.
-
 ### VEDICS
 
 VEDICS (Voice Enabled Desktop Interaction and Control System) is an assistive software which lets the user to interact with the OS using voice commands.
 
-Note: Not yet tested
+Note:
+
+*   Last updated in 2011.
+*   Not yet tested.
 
 [Site Link](http://vedics.sourceforge.net/)
 
@@ -99,7 +97,6 @@ Perlbox Voice is an voice enabled application to bring your desktop under your c
 Note:
 
 *   Last updated in 2005
-*   Package is in AUR, but missing festival-don dependency.
 
 [Site Link](http://perlbox.sourceforge.net/pbtk/)
 

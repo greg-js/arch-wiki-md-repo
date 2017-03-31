@@ -127,7 +127,7 @@ Then, the ISE design tools will be found in your `PATH` and can be started by ty
 
 #### Launching via desktop icons
 
-You can also create a [desktop entry](/index.php/Desktop_entries "Desktop entries") at `/usr/share/applications/`
+You can also create a [desktop entry](/index.php/Desktop_entry "Desktop entry") at `/usr/share/applications/`
 
  `/usr/share/applications/ise.desktop` 
 ```

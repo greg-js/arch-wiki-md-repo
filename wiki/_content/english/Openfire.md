@@ -1,4 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/Openfire):
+From [Wikipedia](https://en.wikipedia.org/wiki/Openfire "wikipedia:Openfire"):
 
 	Openfire (previously known as Wildfire, and Jive Messenger) is an instant messaging (IM) and groupchat server that uses [XMPP](/index.php/XMPP "XMPP") server written in [Java](/index.php/Java "Java") and licensed under the Apache License 2.0.
 
@@ -23,7 +23,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Openfire):
 
 Make sure the PC that is supposed to run the Openfire server is safe / behind a [firewall](/index.php/Firewall "Firewall") - as soon as it is started, the admin interfaces becomes available to anyone who has access to port 9090 and 9091.
 
-For a local server on a PC, the integrated Database of Openfire will suffice under most circumstances. If an unusual amount of traffic is expected and the PC lacks RAM, a [mysql](/index.php/Mysql "Mysql") database can be used instead (See [#Create_database_on_server](#Create_database_on_server)).
+For a local server on a PC, the integrated Database of Openfire will suffice under most circumstances. If an unusual amount of traffic is expected and the PC lacks RAM, a [MySQL](/index.php/MySQL "MySQL") database can be used instead (See [#Create database on remote](#Create_database_on_remote)).
 
 [Install](/index.php/Install "Install") [openfire](https://www.archlinux.org/packages/?name=openfire) and start the `openfire.service`.
 
@@ -45,7 +45,7 @@ Openfire can create its own flat file database (which is a list of mysql command
 
 ( comment out the option / use `bind-address = 127.0.0.1` instead to allow loopback TCP/IP or alternatively [#Add unix socket support](#Add_unix_socket_support) )
 
-A working [mysql](/index.php/Mysql "Mysql") server needs to be installed to create an external database for Openfire like this:
+A working [MySQL](/index.php/MySQL "MySQL") server needs to be installed to create an external database for Openfire like this:
 
  `mysql` 
 ```

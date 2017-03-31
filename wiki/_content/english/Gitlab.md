@@ -328,7 +328,7 @@ Finally run the following commands to check your installation:
 **Note:**
 
 *   The *gitlab:env:info* and *gitlab:check* commands will show a fatal error related to git. This is OK.
-*   If *gitlab:check* fails with *Check GitLab API access: FAILED. code: 401*, see [[2]](https://wiki.archlinux.org/index.php/gitlab#401_Unauthorized_on_all_API_access) and [[3]](https://wiki.archlinux.org/index.php/gitlab#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty) of the troubleshoot section to resolve this.
+*   If *gitlab:check* fails with *Check GitLab API access: FAILED. code: 401*, see [#401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access) and [#/etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty) of the troubleshoot section to resolve this.
 *   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
 
 #### Configure Git User

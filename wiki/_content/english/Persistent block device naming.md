@@ -203,7 +203,7 @@ To use persistent names in the [boot manager (boot loader)](/index.php/Boot_load
 *   You are using a [mkinitcpio](/index.php/Mkinitcpio#Configuration "Mkinitcpio") initial RAM disk image
 *   You have udev enabled in `/etc/mkinitcpio.conf`
 
-The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel_parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
+The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
 
 Non-persistent device naming using the `/dev` path format, in this example `*/dev/sdr1*` is the root partition.
 

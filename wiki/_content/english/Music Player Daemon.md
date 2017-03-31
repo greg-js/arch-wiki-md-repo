@@ -88,7 +88,7 @@ Test everything by starting a client application ([ncmpc](https://www.archlinux.
 
 If the `mpd.socket` unit (provided by [mpd](https://www.archlinux.org/packages/?name=mpd)) is enabled while `mpd.service` is disabled, systemd will not start mpd immediately, but it will listen on the appropriate sockets. When an mpd client attempts to connect on one of those sockets, systemd will start `mpd.service` and transparently hand over control of those ports to the mpd process.
 
-If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see `man 5 mpd.conf` for details).
+If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Edit "Edit") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see `man 5 mpd.conf` for details).
 
 #### Configure audio
 

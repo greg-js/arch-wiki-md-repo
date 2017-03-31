@@ -44,7 +44,7 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server.
+Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server.
 
 The NTP server to be used will be determined using the following rules:
 

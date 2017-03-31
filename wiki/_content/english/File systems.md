@@ -137,7 +137,7 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 
 	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 
-*   **[GlusterFS](/index.php/GlusterFS "GlusterFS")** — GlusterFS is a scalable network file system.
+*   **[Glusterfs](/index.php/Glusterfs "Glusterfs")** — GlusterFS is a scalable network file system.
 
 	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
 
@@ -171,7 +171,7 @@ File systems are usually created on a [partition](/index.php/Partition "Partitio
 **Warning:**
 
 *   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
-*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
+*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Boot_loader "Boot loader").
 
 Before continuing, [identify the device](/index.php/Lsblk "Lsblk") where the file system will be created and whether or not it is mounted. For example:
 
@@ -185,14 +185,14 @@ sda
 
 ```
 
-Mounted file systems **must** be [unmounted](#Unmount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
+Mounted file systems **must** be [unmounted](#Umount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
 
 ```
 # umount /dev/sda2
 
 ```
 
-To find just mounted file systems, see [#Listing mounted file systems](#Listing_mounted_file_systems).
+To find just mounted file systems, see [#List mounted file systems](#List_mounted_file_systems).
 
 To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
 

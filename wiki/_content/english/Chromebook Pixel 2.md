@@ -66,7 +66,7 @@ The [linux-samus README](https://github.com/raphael/linux-samus#sound) details h
 
 ### (Samus) Linux 4.9 (AUR)
 
-[Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) package. The installed [boot loader](/index.php/Boot_loaders "Boot loaders") needs to be configured so that it is possible to boot the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) image. See [[1]](https://github.com/raphael/linux-4.1-samus) for more information (i.e. audio and microphone configuration).
+[Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) package. The installed [boot loader](/index.php/Boot_loader "Boot loader") needs to be configured so that it is possible to boot the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) image. See [[1]](https://github.com/raphael/linux-4.1-samus) for more information (i.e. audio and microphone configuration).
 
 According to [Intel graphics](/index.php/Intel_graphics "Intel graphics") if the `linux-samus4` kernel has a blank screen during boot, then try adding `i915` to `MODULES` in `/etc/mkinitcpio.conf`. Finally, run `mkinitcpio -p linux-samus4` to regenerate the image.
 
@@ -95,7 +95,7 @@ Add this to your .xinitrc to load at login.
 
 ## Unresolved Issues
 
-*   [xkeyboard-config](https://www.archlinux.org/packages/?name=xkeyboard-config) provides a <tt>chromebook</tt> model which can be specified, for example, with <tt>localectl set-x11-keymap us chromebook</tt> but when using [Gnome](/index.php/Gnome "Gnome") on [Wayland](/index.php/Wayland "Wayland") the model is not recognized. The media keys still behave as function keys and <tt>setxkbmap -print -verbose 10</tt> doesn't show the <tt>chromebook</tt> model being used.
+*   [xkeyboard-config](https://www.archlinux.org/packages/?name=xkeyboard-config) provides a <tt>chromebook</tt> model which can be specified, for example, with <tt>localectl set-x11-keymap us chromebook</tt> but when using [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland") the model is not recognized. The media keys still behave as function keys and <tt>setxkbmap -print -verbose 10</tt> doesn't show the <tt>chromebook</tt> model being used.
 *   Occasional lockup on booting into GDM using Wayland 1.12.0-1, GDM 3.22.1-1, and linux 4.9-1.
 *   It would be nice if touchscreen behaved more like the touchpad so that the touchscreen could be used for scrolling.
 *   Touchpad occasionally doesn't work after waking from sleep using linux 4.9-1.

@@ -236,6 +236,6 @@ exec --no-startup-id redshift-gtk
 *   [Redshift на github](http://github.com/jonls/redshift)
 *   **sct** — set color temperature
 
-	[https://aur.archlinux.org/packages/sct/](https://aur.archlinux.org/packages/sct/) || [sct](https://aur.archlinux.org/packages/sct/)
+	[sct](https://aur.archlinux.org/packages/sct/) || [sct](https://aur.archlinux.org/packages/sct/)
 
 *   [Цветовая температура](https://en.wikipedia.org/wiki/ru:%D0%A6%D0%B2%D0%B5%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0 "wikipedia:ru:Цветовая температура")

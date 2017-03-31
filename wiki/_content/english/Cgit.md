@@ -82,7 +82,7 @@ $HTTP["url"] =~ "^/cgit" {
     mimetype.assign = ( ".css" => "text/css" )
 }
 url.redirect = (
-    "^/git/(.*)$" => "/cgit/cgit.cgi/$1",
+    "^/git(/.*)?$" => "/cgit/cgit.cgi$1",
 )
 
 ```

@@ -15,7 +15,7 @@ Instalar el paquete [libpam-google-authenticator](https://aur.archlinux.org/pack
 
 ## Configurando PAM
 
-**Warning:** Si haces toda la configuración via SSH no cierres la sesión antes de comprobar que todo funciona correctamente, si no puedes bloquearte a ti mismo. A demás considera crear una llave SSH (véase [SSH_keys_(Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)")) antes de activar PAM.
+**Warning:** Si haces toda la configuración via SSH no cierres la sesión antes de comprobar que todo funciona correctamente, si no puedes bloquearte a ti mismo. A demás considera crear una llave SSH (véase [SSH keys (Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)")) antes de activar PAM.
 
 Por lo general, se quiere una autenticación de dos pasos sólo para el inicio de sesión remoto. El correspondiente fichero de configuración de PAM es `/etc/pam.d/sshd`. En caso de que quieras usar Google Authenticator de manera global Tendrías que cambiar `/etc/pam.d/system-auth`, sin embargo, en éste caso procede con extremo cuidado para no bloquearse a si mismo. En ésta guía procedemos a editar `/etc/pam.d/sshd` con ésta configuración que es más segura (pero no necesariamente) en una sesión local.
 

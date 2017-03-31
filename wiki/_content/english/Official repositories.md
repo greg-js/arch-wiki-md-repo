@@ -113,7 +113,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Make sure [you make bug reports](/index.php/KDE#Bugs "KDE") if you find any problems.
+Make sure [you make bug reports](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") if you find any problems.
 
 #### Disabling testing repositories
 

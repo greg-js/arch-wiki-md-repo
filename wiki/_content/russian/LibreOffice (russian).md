@@ -63,7 +63,7 @@ $ pacman -S hunspell
 
 ```
 
-Словари можно найти на [AUR](https://aur.archlinux.org) ([hunspell-ru](https://aur.archlinux.org/packages/hunspell-ru), [hunspell-ru-aot](https://aur.archlinux.org/packages/hunspell-ru-aot), [hunspell-ru-aot-ieyo](https://aur.archlinux.org/packages/hunspell-ru-aot-ieyo)).
+Словари можно найти на [AUR](https://aur.archlinux.org) ([hunspell-ru](https://aur.archlinux.org/packages/hunspell-ru/), [hunspell-ru-aot](https://aur.archlinux.org/packages/hunspell-ru-aot/), [hunspell-ru-aot-ieyo](https://aur.archlinux.org/packages/hunspell-ru-aot-ieyo/)).
 
 ## Правила переноса
 

@@ -83,7 +83,7 @@ To connect to a VPN service provided by a third party, most of the following can
 
 ## Create a Public Key Infrastructure (PKI) from scratch
 
-When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is detailed in the [easy-rsa](/index.php/Easy-rsa "Easy-rsa") article. Once the needed certificates, private keys, and associated files are created via following the steps in the separate article, one should have 5 files in `/etc/openvpn/server` at this point:
+When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is detailed in the [Easy-RSA](/index.php/Easy-RSA "Easy-RSA") article. Once the needed certificates, private keys, and associated files are created via following the steps in the separate article, one should have 5 files in `/etc/openvpn/server` at this point:
 
 *   `/etc/openvpn/server/ca.crt`
 *   `/etc/openvpn/server/dh.pem`

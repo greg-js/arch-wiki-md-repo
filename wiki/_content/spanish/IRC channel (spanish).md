@@ -66,7 +66,7 @@ El canal actualmente está +q $~a. Esto significa que tienes que registrarte e i
 
 ### Directrices de #archlinux
 
-1.  El idioma del canal es inglés. Si necesitas ayuda en otro idioma busca [canales internacionales de arch](/index.php/IRC_channels_(Espa%C3%B1ol)#Canales_internacionales_de_IRC "IRC channels (Español)").
+1.  El idioma del canal es inglés. Si necesitas ayuda en otro idioma busca [canales internacionales de arch](#Canales_internacionales_de_IRC).
 2.  Lee el `/tema` con regularidad. Normalmente contiene información importante.
 3.  No participes en [*flamewars*](https://en.wikipedia.org/wiki/es:Flame#Flame_wars "wikipedia:es:Flame"), reporta instantaneamente a los que violen esta norma y a los trolls a los [operadores de canales](#Operadores_de_.23archlinux).
 4.  No hagas spam en el canal, usa pastebin para compartir algo mayor de tres líneas. `comando &> salida del comando.txt` en combinación con [clientes pastebin](/index.php/List_of_applications_(Espa%C3%B1ol)#Clientes_pastebin "List of applications (Español)") pueden hacer más sencillo este proceso.

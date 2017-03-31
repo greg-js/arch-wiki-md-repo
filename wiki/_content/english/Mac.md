@@ -119,7 +119,7 @@ Partitioning of the storage drive is no different from any other PC or laptop. H
 How to partition depends on how many operating systems you want install. The following options will be explained:
 
 *   Single boot: [#Arch Linux only](#Arch_Linux_only)
-*   Dual boot: [#OS X with Arch Linux](#OS_X_with_Arch_Linux) *(recommended so you can still return to OS X when needed)*
+*   Dual boot: [#Arch Linux with OS X or other operating systems](#Arch_Linux_with_OS_X_or_other_operating_systems) *(recommended so you can still return to OS X when needed)*
 *   Triple boot: [#OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
 
 ### Arch Linux only
@@ -158,7 +158,7 @@ You need to partition your hard drive while keeping the partitions used for OS X
 
 It is possible to resize the newly created partition from within the Arch installation media, or delete it in order to proceed with the creation of other partitions (eg. swap).
 
-**Tip:** Instead of cluttering your drive with different partition, it is possible to use a [swapfile](/index.php/Swap#Swap_file "Swap") instead of a dedicated partition. Another solution can be setting up [LVM](/index.php/LVM "LVM") in order to use the newly-created partition as a container. Please refer to the linked articles.
+**Tip:** Instead of cluttering your drive with different partition, it is possible to use a [swapfile](/index.php/Swapfile "Swapfile") instead of a dedicated partition. Another solution can be setting up [LVM](/index.php/LVM "LVM") in order to use the newly-created partition as a container. Please refer to the linked articles.
 
 #### Option 1: EFI
 

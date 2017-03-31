@@ -1,11 +1,11 @@
 | **Device** | **Status** | **Modules** |
-| Intel | Working | [i915](/index.php/Intel_graphics "Intel graphics") |
+| Intel | Working | [i915](/index.php/I915 "I915") |
 | Nvidia | Working | [nouveau *or* nvidia](/index.php/NVIDIA_Optimus "NVIDIA Optimus") |
 | Wireless | Working | iwlwifi |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | [xf86-input-synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") |
-| Stylus | Working | [wacom](/index.php/Wacom_Tablet "Wacom Tablet") |
-| Touchscreen | Working | [wacom](/index.php/Wacom_Tablet "Wacom Tablet") |
+| Stylus | Working | [wacom](/index.php/Wacom "Wacom") |
+| Touchscreen | Working | [wacom](/index.php/Wacom "Wacom") |
 | Camera | Working | [uvcvideo](/index.php/Webcam_setup#linux-uvc "Webcam setup") |
 | Card Reader | Not tested |
 | Bluetooth | Working | btusb |

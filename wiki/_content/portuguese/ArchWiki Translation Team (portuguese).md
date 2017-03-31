@@ -108,7 +108,7 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Wmii](/index.php/Wmii "Wmii") | Guia de instalação e utilização do Wmii. [Documento Original](/index.php/Wmii "Wmii") | [Cainã Costa](/index.php?title=User:CainaCosta&action=edit&redlink=1 "User:CainaCosta (page does not exist)") | Não iniciada |
 | [KDE](/index.php/KDE "KDE") | Tradução do guia do ambiente KDE | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Não iniciado |
 | [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") | Tradução do [Documento original](/index.php/ATI_Catalyst "ATI Catalyst") | [Robson Berthelsen](/index.php?title=User:Nosbor868&action=edit&redlink=1 "User:Nosbor868 (page does not exist)") | Não iniciado |
-| [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics") | Tradução do [Documento Original](/index.php/Intel_graphics "Intel graphics") | [Guilherme Nanini](/index.php?title=User:Gnanini&action=edit&redlink=1 "User:Gnanini (page does not exist)") | Concluído |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Tradução do [Documento Original](/index.php/Intel_graphics "Intel graphics") | [Guilherme Nanini](/index.php?title=User:Gnanini&action=edit&redlink=1 "User:Gnanini (page does not exist)") | Concluído |
 
 ## Equipe de Traducão:
 

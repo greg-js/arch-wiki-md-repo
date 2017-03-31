@@ -11,7 +11,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) package from the [community](/index.php/Official_repositories#community "Official repositories") repository. The commands `par2`, `par2create`, `par2verify` and `par2repair` are now available.
+[Install](/index.php/Install "Install") the [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) package. The commands `par2`, `par2create`, `par2verify` and `par2repair` are now available.
 
 ## How it works
 

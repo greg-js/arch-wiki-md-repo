@@ -113,18 +113,18 @@ This setup is for a JBOD, good for 3 or less drives normally, where space is sti
 Assemble the Linear Span:
 
 ```
-# zpool create san /dev/sdd /dev/sde /dev/sdf
+# zpool create zpool san /dev/sdd /dev/sde /dev/sdf
 
 ```
- `# zpool status san` 
+ `# zpool status zpool` 
 ```
-  pool: san
+  pool: zpool
  state: ONLINE
   scan: scrub repaired 0 in 4h22m with 0 errors on Fri Aug 28 23:52:55 2015
 config:
 
         NAME        STATE     READ WRITE CKSUM
-        san         ONLINE       0     0     0
+        zpool       ONLINE       0     0     0
           sde       ONLINE       0     0     0
           sdd       ONLINE       0     0     0
           sdf       ONLINE       0     0     0

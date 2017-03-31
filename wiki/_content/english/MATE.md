@@ -66,10 +66,6 @@ The base desktop consists of [marco](https://www.archlinux.org/packages/?name=ma
 
 There are a number of other unofficial MATE applications that are contributed to and maintained by the MATE community and therefore not included in the [mate](https://www.archlinux.org/groups/x86_64/mate/) or [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) groups.
 
-*   **Caja Actions** — An extension for Caja which allows arbitrary programs to be launched via context menu.
-
-	[https://github.com/raveit65/caja-actions](https://github.com/raveit65/caja-actions) || [caja-actions](https://www.archlinux.org/packages/?name=caja-actions)
-
 *   **Dock Applet** — Application dock for the MATE panel.
 
 	[https://github.com/robint99/dock-applet](https://github.com/robint99/dock-applet) || [mate-applet-dock](https://www.archlinux.org/packages/?name=mate-applet-dock)

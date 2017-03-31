@@ -40,7 +40,7 @@ Create a partition with partition type *EFI System* using fdisk. Proceed to [#Fo
 
 ## Format the partition
 
-After creating the ESP, you **must** [format](/index.php/File_systems#Formatting "File systems") it as FAT32:
+After creating the ESP, you **must** [format](/index.php/File_systems#Create_a_file_system "File systems") it as FAT32:
 
 ```
 # mkfs.fat -F32 /dev/sd*xY*

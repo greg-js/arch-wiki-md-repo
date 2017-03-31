@@ -74,7 +74,7 @@ cgroup  ipc  mnt  net  pid  uts
 
 *   Bind as read-write the entire host `/` directory to `/` in the sandbox
 *   Mount a new devtmpfs filesystem to `/dev` in the sandbox
-*   Create new [IPC](https://en.wikipedia.org/wiki/Inter-process_communication "wikipedia:Inter-process communication") and [control group](/index.php/Cgroups "Cgroups") namespaces
+*   Create new [IPC](https://en.wikipedia.org/wiki/Inter-process_communication "wikipedia:Inter-process communication") and [control group](/index.php/Control_group "Control group") namespaces
 *   Create a new UTS namespace and set `dhcpcd` as the hostname
 
 ```
@@ -240,8 +240,8 @@ Applications which have not yet been patched against [known vulnerabilities](htt
 *   Create new cgroup/IPC/network/PID/UTS namespaces for the application and its processes
     *   If the kernel does not support non-privileged user namespaces, skip its creation and continue
     *   Creation of a new network namespace prevents the sandbox from obtaining network access
-*   Add a custom or an arbitrary [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") to the sandbox such as `p7zip`
-*   Unset the `XAUTHORITY` [environment variable](/index.php/Environment_variables "Environment variables") to hide the location of the X11 connection cookie
+*   Add a custom or an arbitrary [hostname](/index.php/Hostname "Hostname") to the sandbox such as `p7zip`
+*   Unset the `XAUTHORITY` [environment variable](/index.php/Environment_variable "Environment variable") to hide the location of the X11 connection cookie
     *   *7za* does not need to connect to an X11 display server to function properly
 *   Start a new terminal session to prevent keyboard input from escaping the sandbox
 

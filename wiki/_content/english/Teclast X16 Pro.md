@@ -71,7 +71,7 @@ This step will take quite long, you can stop here and use the tab with an USB Wi
 
 There is an issue with wpa_supplicant 1.2.6\. For the time beeing you have to downgrade wpa_supplicant to version 1.2.5\. See [https://github.com/hadess/rtl8723bs/issues/113](https://github.com/hadess/rtl8723bs/issues/113)
 
-Compiling an Arch Linux kernel, see [Kernels/Traditional_compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation")
+Compiling an Arch Linux kernel, see [Kernels/Traditional compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation")
 
 1) apply the pm_set/get-revertes + rfkill patches **NOT** the sound patches from Laszlo-Fiat see: [http://github.com/hadess/rtl8723bs/issues/76](http://github.com/hadess/rtl8723bs/issues/76) (0001-My-changes-for-4.7.0-rc7-for-Baytrail-T.patch.txt)
 
@@ -142,4 +142,4 @@ According to /sys/bus/i2c/devices, there is an OVTI2680 device (OmniVision OV268
 
 ### On-Screen Keyboard
 
-Depending on your preferred window manager, install kvkbd for [KDE](/index.php/KDE "KDE") or CellWriter for [Gnome](/index.php/Gnome "Gnome"), see [Tablet_PC](/index.php/Tablet_PC "Tablet PC")
+Depending on your preferred window manager, install kvkbd for [KDE](/index.php/KDE "KDE") or CellWriter for [GNOME](/index.php/GNOME "GNOME"), see [Tablet PC](/index.php/Tablet_PC "Tablet PC")

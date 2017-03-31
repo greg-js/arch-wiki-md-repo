@@ -1,4 +1,4 @@
-This article is a tutorial for turning a computer into an internet gateway/router. It focuses on *security*, since the gateway is connected directly to the Internet. It should not run **any** services available to the outside world. Towards the LAN, it should only run gateway specific services. It should not run httpd, ftpd, samba, nfsd, etc. as those belong on a server in the LAN as they introduce security flaws.
+This article is a tutorial for turning a computer into an internet gateway/router. To strengthen its security it should not run **any** services available to the outside world. Towards the LAN, run only gateway specific services especially do not run httpd, ftpd, samba, nfsd, etc. as those belong on a server in the LAN since they introduce security risks.
 
 This article does not attempt to show how to set up a shared connection between 2 PCs using cross-over cables. For a simple internet sharing solution, see [Internet sharing](/index.php/Internet_sharing "Internet sharing").
 
@@ -106,8 +106,9 @@ and start editing. For the interface configuration choose the interface that con
 
 We will use [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), a DNS and DHCP daemon for the LAN. It was specifically designed for small sites. [Install](/index.php/Install "Install") it with the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package.
 
-Dnsmasq needs to be configured to be a DHCP server. To do this, edit `/etc/dnsmasq.conf`:
+Dnsmasq needs to be configured to be a DHCP server with a configuration similar to the following:
 
+ `/etc/dnsmasq.conf` 
 ```
 interface=intern0 # make dnsmasq listen for requests only on intern0 (our LAN)
 expand-hosts      # add a domain to simple hostnames in /etc/hosts
@@ -121,7 +122,7 @@ dhcp-range=10.0.0.2,10.0.0.255,255.255.255.0,1h # defines a DHCP-range for the L
 
 Somewhere below, you will notice you can also add "static" DHCP leases, i.e. assign an IP-address to the MAC-address of a computer on the LAN. This way, whenever the computer requests a new lease, it will get the same IP. That is very useful for network servers with a DNS record. You can also deny certain MAC's from obtaining an IP.
 
-Now [start](/index.php/Start "Start") `dnsmasq.service`.
+Now [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `dnsmasq.service`.
 
 ## Connection sharing
 

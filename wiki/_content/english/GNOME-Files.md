@@ -40,9 +40,9 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 **Tip:** This extension works only with these icon-themes which contain additional colored icons, eg:
 [numix-icon-theme-git](https://aur.archlinux.org/packages/numix-icon-theme-git/), [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/), [vivacious-folder-colors-addon](https://aur.archlinux.org/packages/vivacious-folder-colors-addon/), [humanitycolors-icon-theme](https://aur.archlinux.org/packages/humanitycolors-icon-theme/)
 
-*   **Nautilus Actions** — Configures programs to be launched when files are selected in Files
+*   **File Manager Actions** — Configures programs to be launched when files are selected in Files
 
-	[http://www.nautilus-actions.org/](http://www.nautilus-actions.org/) || [nautilus-actions](https://www.archlinux.org/packages/?name=nautilus-actions)
+	[https://git.gnome.org/browse/filemanager-actions](https://git.gnome.org/browse/filemanager-actions) || [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions)
 
 *   **Nautilus Admin** — Add to menu: "Open as administrator" or "Edit as administrator"
 

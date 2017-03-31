@@ -46,7 +46,7 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-进一步讲, NTP 服务器也可以通过 [systemd-networkd](/index.php/Systemd-networkd#.5BNetwork.5D_section "Systemd-networkd") 提供，通过 `NTP=` 选项启用, 或者通过DHCP 服务动态加载.
+进一步讲, NTP 服务器也可以通过 [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd") 提供，通过 `NTP=` 选项启用, 或者通过DHCP 服务动态加载.
 
 NTP 服务器使用规则:
 

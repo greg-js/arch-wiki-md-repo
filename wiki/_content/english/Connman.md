@@ -274,7 +274,7 @@ SingleConnectedTechnology=true
 
 ### Connecting to eduroam
 
-[WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise") networks such as eduroam require a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. For example, create `/var/lib/connman/eduroam.config`:
+[WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise") networks such as eduroam require a separate configuration file before [connecting](#Wi-Fi) to the network. For example, create `/var/lib/connman/eduroam.config`:
 
  `eduroam.conf` 
 ```

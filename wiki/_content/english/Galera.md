@@ -25,7 +25,7 @@ MariaDB V>10.1 is ready to use galera / wsrep out of the box. [[1]](https://mari
 [Install](/index.php/Install "Install") these packages:
 
 *   [mariadb](https://www.archlinux.org/packages/?name=mariadb) — Standard MariaDB Package
-*   [galera](https://aur.archlinux.org/packages/galera/) — ATM this package does not install the galera library to the right place so you should [Galera#Compile Galera](/index.php/Galera#Compile_Galera "Galera") yourself.
+*   [galera](https://aur.archlinux.org/packages/galera/) — ATM this package does not install the galera library to the right place so you should [#Compile Galera](#Compile_Galera) yourself.
 
 ## Configuration
 

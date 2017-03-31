@@ -100,7 +100,7 @@ TIMELINE_LIMIT_YEARLY="0"
 
 #### Change snapshot and cleanup frequencies
 
-If you are using the provided systemd timers, you can [edit](/index.php/Systemd#Editing_provided_units "Systemd") them to change the snapshot and cleanup frequency.
+If you are using the provided systemd timers, you can [edit](/index.php/Edit "Edit") them to change the snapshot and cleanup frequency.
 
 For example, when editing the `snapper-timeline.timer`, add the following to make the frequency every five minutes, instead of hourly:
 
@@ -120,7 +120,7 @@ OnUnitActiveSec=1h
 
 ```
 
-See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") and [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd").
+See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") and [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd").
 
 ### Manual snapshots
 

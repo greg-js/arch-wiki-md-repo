@@ -769,7 +769,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 ### Clock synchronization
 
-See [Time#Time_synchronization](/index.php/Time#Time_synchronization "Time").
+See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
 
 ### System monitoring
 
@@ -933,4 +933,4 @@ See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").
 
 ### Input methods
 
-See the main article: [Internationalization#Input_methods_in_Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
+See the main article: [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").

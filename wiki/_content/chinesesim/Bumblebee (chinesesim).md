@@ -244,7 +244,7 @@ $ primusrun glxgears
 
 ```
 
-**提示：** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun mouse delay/disable VSYNC](/index.php/Bumblebee#Primusrun_mouse_delay.2Fdisable_VSYNC "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
+**提示：** 如果你想禁用 `VSYNC`参见 [Bumblebee#Primusrun mouse delay (disable VSYNC)](/index.php/Bumblebee#Primusrun_mouse_delay_.28disable_VSYNC.29 "Bumblebee"). 这也能降低输入延迟并稍微提升性能。
 
 ### 电源管理
 

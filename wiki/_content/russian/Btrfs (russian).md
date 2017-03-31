@@ -351,7 +351,7 @@ To defragment the entire file system verbosely:
 
 ### RAID
 
-Btrfs offers native "RAID" for [#Multi-device file systems](#Multi-device_file_system). Notable features which set btrfs RAID apart from [mdadm](/index.php/Mdadm "Mdadm") are self-healing redundant arrays and online balancing. See [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information. The Btrfs sysadmin page also [has a section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) with some more technical background.
+Btrfs offers native "RAID" for [#Multi-device file system](#Multi-device_file_system)s. Notable features which set btrfs RAID apart from [mdadm](/index.php/Mdadm "Mdadm") are self-healing redundant arrays and online balancing. See [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information. The Btrfs sysadmin page also [has a section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) with some more technical background.
 
 **Важно:** Parity RAID (RAID 5/6) code has multiple serious data-loss bugs in it. See the Btrfs Wiki's [RAID5/6 page](https://btrfs.wiki.kernel.org/index.php/RAID56) and a bug report on [linux-btrfs mailing list](https://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg55161.html) for more detailed information.
 

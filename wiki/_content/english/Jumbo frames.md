@@ -50,7 +50,7 @@ Example:
 
 ### Systemd unit
 
-**Tip:** If supported, it's recommend to set the MTU value in the [Network manager](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet") instead (see [systemd-networkd](/index.php/Systemd-networkd#.5BLink.5D_section "Systemd-networkd")).
+**Tip:** If supported, it's recommend to set the MTU value in the [Network manager](/index.php/Network_manager "Network manager") instead (see [systemd-networkd](/index.php/Systemd-networkd#.5BLink.5D_section "Systemd-networkd")).
 
 To make the setting permanent, we will create a systemd unit.
 

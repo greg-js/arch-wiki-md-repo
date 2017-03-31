@@ -234,7 +234,7 @@ To use vapoursynth filters you have to install the [vapoursynth](https://www.arc
 
 ### Debanding (flash3kyuu)
 
-**Note:** Mpv already include a debanding shader which is enabled by default with the [opengl-hq profile](/index.php/Mpv#High_quality_video_output "Mpv"). Refer to the manual for more information on how to tune it.
+**Note:** Mpv already include a debanding shader which is enabled by default with the [opengl-hq profile](#High_quality_video_output). Refer to the manual for more information on how to tune it.
 
 To use the `f3k_db` debanding filter install [vapoursynth-plugin-f3kdb](https://www.archlinux.org/packages/?name=vapoursynth-plugin-f3kdb) and write a python script that uses the *vapoursynth* extension.
 
@@ -270,7 +270,7 @@ This VO is deprecated and will cause issues in recent versions of mpv, most noti
 
 It is possible to increase playback performance even more (especially on lower hardware), but this decreases the video quality dramatically in most cases.
 
-The following [options](/index.php/Mpv#Configuration "Mpv") may be considered to increase the video playback performance:
+The following [options](#Configuration) may be considered to increase the video playback performance:
 
  `~/.config/mpv/mpv.conf` 
 ```

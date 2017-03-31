@@ -244,7 +244,7 @@ To allow users to mount it as long as the mount point resides in a directory con
 
 *   Abstain from using a trailing `/`. `//*SERVER*/*sharename***/**` will not work.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
-*   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant").
+*   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown "WPA supplicant").
 
 ##### Storing Share Passwords
 

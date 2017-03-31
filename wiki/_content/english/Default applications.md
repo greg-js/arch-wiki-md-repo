@@ -1,4 +1,4 @@
-There is frequently more than one application able to handle data of a certain type, so users and even some packages assemble lists of default applications for each [MIME type](#MIME_types). While the base install of Arch Linux does not define default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
+There is frequently more than one application able to handle data of a certain type, so users and even some packages assemble lists of default applications for each [#MIME type](#MIME_types). While the base install of Arch Linux does not define default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
 
 ## Contents
 
@@ -67,7 +67,7 @@ $ update-mime-database ~/.local/share/mime
 
 ```
 
-Of course this will not have any affect if no desktop entries are associated with the MIME type. You may need to create new [desktop entries](/index.php/Desktop_entries "Desktop entries") or modify [mimeapps.list](#XDG_standard).
+Of course this will not have any affect if no desktop entries are associated with the MIME type. You may need to create new [desktop entries](/index.php/Desktop_entries "Desktop entries") or modify [#mimeapps.list](#XDG_standard).
 
 ### Desktop entries
 
@@ -79,7 +79,7 @@ The files in `/usr/share/applications/` should not be edited directly, it is pos
 
 The configuration of default applications depends on which launcher is used. Unfortunately there are multiple incompatible standards and many programs even have their own custom formats.
 
-The most common standards are explained below for manual editing. You can also use some [utility](#Utilities) to do the job, which may be using some of these standards internally or its own configuration format.
+The most common standards are explained below for manual editing. There are also several [#Utilities](#Utilities) which can do the job, which may or may not implement the following standards.
 
 ### Environment variables
 
@@ -96,14 +96,9 @@ The [XDG standard](https://specifications.freedesktop.org/mime-apps-spec/mime-ap
 | `/usr/local/share/applications/mimeapps.list`
 `/usr/share/applications/mimeapps.list` | distribution-provided defaults |
 
-Additionally, it is possible to define [desktop-environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [XFCE](/index.php/XFCE "XFCE"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
+Additionally, it is possible to define [desktop environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [Xfce](/index.php/Xfce "Xfce"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
 
-**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it
-```
-$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
-
-```
-`xdg-mime` writes to `$XDG_CONFIG_HOME/mimeapps.list` file after this [patch](https://cgit.freedesktop.org/xdg/xdg-utils/commit/?id=9dac27a442b0e44b3f235798b77715e26169500f).
+**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list` 
 
 **Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 
@@ -144,7 +139,7 @@ The [mailcap(4)](http://linux.die.net/man/4/mailcap) file format is used by mail
 
 ## Utilities
 
-While it is possible to configure default applications and MIME types by directly editing [mimeapps.list](#XDG_standard) and the [#MIME database](#MIME_database), there are many tools that can simplify the process. These tools are also important because applications may delegate opening of files to these tools rather than trying to implement the MIME type standard themselves.
+While it is possible to configure default applications and MIME types by directly editing [#mimeapps.list](#XDG_standard) and the [#MIME database](#MIME_database), there are many tools that can simplify the process. These tools are also important because applications may delegate opening of files to these tools rather than trying to implement the MIME type standard themselves.
 
 If you use a [desktop environment](/index.php/Desktop_environment "Desktop environment") you should first check if it provides its own utility. That should be preferred over these alternatives.
 
@@ -175,7 +170,9 @@ $ xdg-settings set default-url-scheme-handler irc xchat.desktop
 
 ```
 
-**Tip:** If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to work properly without a desktop environment, you will need to install [#perl-file-mimeinfo](#perl-file-mimeinfo) or another [xdg-open alternative](#xdg-open_alternatives).
+**Tip:** If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to work properly without a desktop environment, you will need to install [#perl-file-mimeinfo](#perl-file-mimeinfo) or one of the [#xdg-open alternatives](#xdg-open_alternatives).
+
+**Note:** Ironically, xdg-utils writes to deprecated config locations (see [#XDG Standard](#XDG_Standard)). This will be fixed in version [1.1.2](https://cgit.freedesktop.org/xdg/xdg-utils/commit/?id=9dac27a442b0e44b3f235798b77715e26169500f).
 
 ### xdg-open alternatives
 
@@ -251,11 +248,11 @@ $ whippet -m photo.jpeg
 
 ```
 
-In addition to the standard [mimeapps.list](#XDG_standard), *whippet* can also use a SQlite database of weighted application/MIME type/regex associations to determine which app to use.
+In addition to the standard [#mimeapps.list](#XDG_standard), *whippet* can also use a SQlite database of weighted application/MIME type/regex associations to determine which app to use.
 
 #### Naive replacements
 
-The following packages replace [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) however they only provide an `xdg-open` script. These versions of `xdg-open` do not do any delegation to desktop-environment-specific tools and do not read/write the standard [mimeapps.list](#XDG_standard) config file (each has its own custom config), so they may not integrate well with other programs that manipulate default applications. However you may find them simpler to use if you do not use a desktop environment.
+The following packages replace [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) however they only provide an `xdg-open` script. These versions of `xdg-open` do not do any delegation to desktop-environment-specific tools and do not read/write the standard [#mimeapps.list](#XDG_standard) config file (each has its own custom config), so they may not integrate well with other programs that manipulate default applications. However you may find them simpler to use if you do not use a desktop environment.
 
 **Warning:** If you need any `xdg-*` binaries from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) other than `xdg-open` you should not use these applications, since they do not provide them.
 
@@ -281,11 +278,11 @@ A [desktop entry](/index.php/Desktop_entry "Desktop entry") is required in order
 
 ### Missing association
 
-If the application's desktop entry does not specify the MIME type under its `MimeType` key, it will not be considered when an application is needed to open that type. Edit [mimeapps.list](#XDG_standard) to add an association between the .desktop file and the MIME type.
+If the application's desktop entry does not specify the MIME type under its `MimeType` key, it will not be considered when an application is needed to open that type. Edit [#mimeapps.list](#XDG_standard) to add an association between the .desktop file and the MIME type.
 
 ### Non-default application
 
-If the desktop entry is associated with the MIME type, it may simply not be set as the default. Edit [mimeapps.list](#XDG_standard) to set the default association.
+If the desktop entry is associated with the MIME type, it may simply not be set as the default. Edit [#mimeapps.list](#XDG_standard) to set the default association.
 
 ### Nonstandard association
 

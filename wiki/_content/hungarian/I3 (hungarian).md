@@ -161,7 +161,7 @@ Lásd az [i3bar konfigurálását](http://i3wm.org/docs/userguide.html#_configur
 
 Néhány felhasználó esetleg előnyben részesít olyan paneleket, amelyeket a hagyományos [asztali környezetek](/index.php/Desktop_environment "Desktop environment") biztosítanak. Ez elérhető a választott panel alkalmazás automatikus indításával az i3 indításakor.
 
-Az [XFCE](/index.php/XFCE "XFCE") panel indításához add hozzá a következő sort az `~/.config/i3/config`-hoz:
+Az [Xfce](/index.php/Xfce "Xfce") panel indításához add hozzá a következő sort az `~/.config/i3/config`-hoz:
 
 ```
 exec --no-startup-id xfce4-panel --disable-wm-check
@@ -238,7 +238,7 @@ Nem minden plugin van definiálva az alapértelmezett konfigurációban, és né
 
 #### Ikonszerű betűk az állapotsoron
 
-*i3bar* [patchelhető](#Patches) XBM icon támogatáshoz, de használhatsz helyette ikonszerű betűket.
+*i3bar* [patchelhető](#Patch-ek) XBM icon támogatáshoz, de használhatsz helyette ikonszerű betűket.
 
 *   **ttf-font-awesome** — Nagyítható vektor ikonok, CSS-el szabhatóak testre. Ez a [cheatsheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) leírja az Unicode kódjait.
 

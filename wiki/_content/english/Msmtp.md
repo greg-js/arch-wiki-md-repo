@@ -64,7 +64,7 @@ $ chmod 600 ~/.msmtprc
 
 ```
 
-To avoid saving the password in plain text in the configuration file, use *passwordeval* to launch an external program, or see the [#Password_management](#Password_management) section below. This example using Gnu PG is commonly used to perform decryption of a password:
+To avoid saving the password in plain text in the configuration file, use *passwordeval* to launch an external program, or see the [#Password management](#Password_management) section below. This example using Gnu PG is commonly used to perform decryption of a password:
 
 ```
  echo -e "password

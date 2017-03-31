@@ -39,14 +39,14 @@ Installation of Arch can proceed normally. Refer to the [Installation guide](/in
 
 ## Grapahics Card Configuration
 
-The Mi Book has an Intel, as well as an Nvidia GPU.
+The Mi Book has an Intel, as well as a Nvidia GPU.
 
 ### Intel Only
 
 If you want to completely disable the Nvidia GPU and save batterylife, do the following:
 
 *   Installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package
-*   Blacklisting the [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) kernel modules [Kernel Modules#Blacklisting](/index.php/Kernel_Modules#Blacklisting "Kernel Modules")
+*   Blacklisting the [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) kernel modules [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
 
  `/etc/modprobe.d/nouveau.conf` 
 ```
@@ -81,7 +81,7 @@ EndSection
 
 ### Fn-Keys
 
-On this notebook the Fn-keys are enabled as default (e.g. pressing F1 mutes the sound). If pressing the keys does nothing you are most likely using a [Window Manager](/index.php/Window_Manager "Window Manager") and not a [Desktop Environment](/index.php/Desktop_Environment "Desktop Environment"). Use the respective configuration files to bind the keys to their use. For example [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") or [i3](/index.php/I3 "I3")'s `bindsym`.
+On this notebook the Fn-keys are enabled as default (e.g. pressing F1 mutes the sound). If pressing the keys does nothing you are most likely using a [Window manager](/index.php/Window_manager "Window manager") and not a [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Use the respective configuration files to bind the keys to their use. For example [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") or [i3](/index.php/I3 "I3")'s `bindsym`.
 
 Most Fn-keys return the correct keycodes. Here is a table containing that information:
 

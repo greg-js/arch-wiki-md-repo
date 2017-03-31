@@ -246,7 +246,7 @@ $ chmod 600 ~/.netrc
 
 GNU Privacy Guard can be used for storing a password in an encrypted file. First set up [GnuPG](/index.php/GnuPG "GnuPG") and then follow the steps in this section. It is assumed that you can use your GPG private key [without entering a password](/index.php/GnuPG#gpg-agent "GnuPG") all the time.
 
-First type in the password for the email account in a plain text file. Do this in a secure directory with `700` permissions located on a [tmpfs](/index.php/Tmpfs "Tmpfs") to avoid writing the unencrypted password to the disk. Then [encrypt](/index.php/GnuPG#Encrypt_and_decrypt "GnuPG") the file with GnuPG setting yourself as the recipient.
+First type in the password for the email account in a plain text file. Do this in a secure directory with `700` permissions located on a [tmpfs](/index.php/Tmpfs "Tmpfs") to avoid writing the unencrypted password to the disk. Then [encrypt](/index.php/Encrypt "Encrypt") the file with GnuPG setting yourself as the recipient.
 
 Remove the plain text file since it is no longer needed. Move the encrypted file to the final location, e.g. `~/.offlineimappass.gpg`.
 

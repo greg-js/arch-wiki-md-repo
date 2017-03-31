@@ -466,6 +466,7 @@ Note that this value is modified as a side effect of the Laptop Mode setting bel
 See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt) on the laptop mode 'knob.' *"A sensible value for the knob is 5 seconds."*
 
  `/etc/sysctl.d/laptop.conf`  `vm.laptop_mode = 5` 
+**Note:** This setting is mainly relevant to spinning-disk drives.
 
 ### Network interfaces
 

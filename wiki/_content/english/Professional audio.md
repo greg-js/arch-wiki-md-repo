@@ -28,6 +28,7 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
     *   [7.1 Steinberg's SDKs](#Steinberg.27s_SDKs)
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
 *   [9 Linux and Arch Linux Pro Audio in the News](#Linux_and_Arch_Linux_Pro_Audio_in_the_News)
+*   [10 Mailing list](#Mailing_list)
 
 ## Getting Started
 
@@ -39,7 +40,7 @@ The following packages are a good start to build a full-featured pro audio syste
 
 *   [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 *   [patchage](https://www.archlinux.org/packages/?name=patchage)
-*   [ardour](https://www.archlinux.org/packages/?name=ardour)
+*   [ardour5](https://aur.archlinux.org/packages/ardour5/)
 *   [qtractor](https://www.archlinux.org/packages/?name=qtractor)
 *   [hydrogen](https://www.archlinux.org/packages/?name=hydrogen)
 *   [musescore](https://www.archlinux.org/packages/?name=musescore)
@@ -70,10 +71,6 @@ You may want to consider the following often seen system optimizations:
 
 *   Add yourself to the *audio* [group](/index.php/Group "Group").
 *   Add the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-
-**Warning:** Enabling threadirqs seems to be causing system lockups in conjunction with usb devices in at least some kernel versions starting with 3.13 and including at least 3.14-rc2\. See for example [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) and [http://www.spinics.net/lists/linux-usb/msg102504.html](http://www.spinics.net/lists/linux-usb/msg102504.html) also linked from there.
-EDIT: The changelog seems to indicate that this has been fixed in the 3.13.6 vanilla kernel. (Search for threadirqs in [https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6](https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6))
-
 *   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
 *   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to *performance*.
 *   Add *noatime* to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
@@ -307,12 +304,9 @@ The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice 
 
 ## MIDI
 
-If you want to use any MIDI hardware you need to ensure the ALSA MIDI driver is loaded. You can set the MIDI driver to load at boot by creating the file `/etc/modules-load.d/alsamidi.conf` containing:
+To decrease MIDI jitter when using external MIDI equipment jack2's -Xalsarawmidi option should be used. When doing this you need to use a2jmidid, too.
 
-```
-snd_seq_midi
-
-```
+With [alsa-midi-latency-test](https://github.com/koppi/alsa-midi-latency-test) you could test how much jitter you get. PCI and PCIe cards are usually much better than USB MIDI devices.
 
 To work with MIDI, it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
 
@@ -575,3 +569,7 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 *   [An Arch Tale](http://www.linuxjournal.com/content/arch-tale) - Article by fellow musician and writer Dave Phillips, October 2011
 
 *   [From Windows to Linux: a sound decision](http://www.itwire.com/opinion-and-analysis/open-sauce/36698-from-windows-to-linux-a-sound-decision) - Interview with Geoff "songshop" Beasley, February 2010
+
+## Mailing list
+
+*   [Linux-audio-user -- A list for linux audio users](http://lists.linuxaudio.org/listinfo/linux-audio-user) The Linux pro-audio related mailing list with much traffic and a huge subscriber community of users and developers.

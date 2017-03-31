@@ -412,7 +412,7 @@ A world map will appear in the Tek window. You can also view other `*.tek` files
 
 ### Protect against X11 input snooping
 
-It was already [mentioned](https://wiki.archlinux.org/index.php/Xterm#Menus) about the **Secure Keyboard** mode. However, using mouse to enter the secure mode is not always convenient. One can instead associate a key-binding with the `secure()` function. For example:
+It was already [mentioned](#Menus) about the **Secure Keyboard** mode. However, using mouse to enter the secure mode is not always convenient. One can instead associate a key-binding with the `secure()` function. For example:
 
 ```
 XTerm*VT100.translations: #override \

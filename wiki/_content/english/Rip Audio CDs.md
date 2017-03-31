@@ -55,7 +55,7 @@ For some examples of audio tag editors see: [List of applications#Audio tag edit
 
 ### Converting to other formats
 
-If the CD ripper you used does not support the format you wanted to convert to you can use other encoders/decoders such as [FFmpeg](/index.php/FFmpeg "FFmpeg") or [MEncoder](/index.php/MEncoder "MEncoder"). Some simple scripts to convert from [flac](/index.php/Convert_Flac_to_Mp3 "Convert Flac to Mp3") to MP3 can also be found on the wiki.
+If the CD ripper you used does not support the format you wanted to convert to you can use other encoders/decoders such as [FFmpeg](/index.php/FFmpeg "FFmpeg") or [MEncoder](/index.php/MEncoder "MEncoder"). Some simple scripts to convert from [flac](/index.php/Convert_FLAC_to_MP3 "Convert FLAC to MP3") to MP3 can also be found on the wiki.
 
 ## See also
 

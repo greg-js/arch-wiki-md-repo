@@ -38,7 +38,7 @@
 Цель aurget - предоставление простого, подобного pacman интерфейса к AUR, сделать AUR удобным, в независимости от того, желает ли пользователь найти, скачать, собрать, установить или обновить пакеты AUR.
 
 *   Сайт: [http://pbrisbin.com/posts/aurget/](http://pbrisbin.com/posts/aurget/)
-*   Пакет: [https://aur.archlinux.org/packages/aurget/](https://aur.archlinux.org/packages/aurget/)
+*   Пакет: [aurget](https://aur.archlinux.org/packages/aurget/)
 
 ### aurora
 
@@ -90,14 +90,14 @@ Cower is a fast and simple AUR search and download agent, which will also check 
 
 *   Сайт: [http://github.com/falconindy/cower](http://github.com/falconindy/cower)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?id=97137](https://bbs.archlinux.org/viewtopic.php?id=97137)
-*   Пакет: [https://aur.archlinux.org/packages/cower/](https://aur.archlinux.org/packages/cower/)
+*   Пакет: [cower](https://aur.archlinux.org/packages/cower/)
 
 ### haskell-archlinux
 
 haskell-archlinux is a library to programmatically access the AUR and Пакет metadata from the Haskell programming language.
 
 *   Сайт: [https://hackage.haskell.org/package/archlinux](https://hackage.haskell.org/package/archlinux)
-*   Пакет: [https://aur.archlinux.org/packages/haskell-archlinux/](https://aur.archlinux.org/packages/haskell-archlinux/)
+*   Пакет: [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
 
 ### makeaur
 
@@ -119,7 +119,7 @@ Pacaur is a fast workflow AUR wrapper, using [cower](/index.php/AUR_helpers#cowe
 
 *   Сайт: [https://github.com/Spyhawk/pacaur](https://github.com/Spyhawk/pacaur)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?pid=937423](https://bbs.archlinux.org/viewtopic.php?pid=937423)
-*   Пакет: [https://aur.archlinux.org/packages/pacaur/](https://aur.archlinux.org/packages/pacaur/)
+*   Пакет: [pacaur](https://aur.archlinux.org/packages/pacaur/)
 
 ### packer
 
@@ -127,7 +127,7 @@ Packer is a wrapper for pacman and the AUR. It was designed to be a simple and v
 
 *   Сайт: [http://github.com/bruenig/packer](http://github.com/bruenig/packer) (not available)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?id=88115](https://bbs.archlinux.org/viewtopic.php?id=88115)
-*   Пакет: [https://aur.archlinux.org/packages/packer/](https://aur.archlinux.org/packages/packer/)
+*   Пакет: [packer](https://aur.archlinux.org/packages/packer/)
 *   Wiki: [https://github.com/bruenig/packer/wiki](https://github.com/bruenig/packer/wiki)
 
 ### pacmoon

@@ -8,6 +8,8 @@ Private Internet Access is a subscription-based VPN service. See its [How It Wor
 *   [2 Automatic](#Automatic)
     *   [2.1 Official installation script](#Official_installation_script)
     *   [2.2 Packages](#Packages)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Internet "kill switch"](#Internet_.22kill_switch.22)
 
 ## Manual
 
@@ -46,3 +48,38 @@ Private Internet Access has an installation script that sets up [NetworkManager]
 *   **[Private Internet Access VPN](/index.php/Private_Internet_Access_VPN "Private Internet Access VPN")** — Installs profiles for [NetworkManager](/index.php/NetworkManager "NetworkManager"), [Connman](/index.php/Connman "Connman"), and [OpenVPN](/index.php/OpenVPN "OpenVPN").
 
 	[https://www.privateinternetaccess.com/](https://www.privateinternetaccess.com/) || [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/)
+
+## Tips and tricks
+
+### Internet "kill switch"
+
+The following [iptables](/index.php/Iptables "Iptables") rules only allow network traffic through the `tun` interface, with the exception that traffic is allowed to PIA's DNS servers and to port 1197, which is used in establishing the VPN connection:
+
+ `/etc/iptables/iptables.rules` 
+```
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:10]
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i tun+ -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
+-A OUTPUT -d 209.222.18.222/32 -j ACCEPT
+-A OUTPUT -d 209.222.18.218/32 -j ACCEPT
+-A OUTPUT -p udp -m udp --dport 1197 -j ACCEPT
+-A OUTPUT -o tun+ -j ACCEPT
+-A OUTPUT -j REJECT --reject-with icmp-net-unreachable
+COMMIT
+```
+
+This ensures that if you are disconnected from the VPN uknowingly, no network traffic is allowed in or out.
+
+If you wish to additionally access devices on your LAN, you will need to explicity allow them. For example, to allow access to devices on `192.0.0.0/24`, add the following two rules (before any REJECT rule):
+
+```
+-A INPUT -s 192.168.0.0/24 -j ACCEPT
+-A OUTPUT -d 192.168.0.0/24 -j ACCEPT
+
+```
+
+Additionally, the above rules block the ICMP protocol, which is probably not desired. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=224655) for potential pitfalls of using these iptables rules as well as more details.

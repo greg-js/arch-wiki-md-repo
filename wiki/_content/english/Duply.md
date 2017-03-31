@@ -8,6 +8,7 @@ From [duply.net](http://www.duply.net/):
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 No GPG Passphrase](#No_GPG_Passphrase)
+    *   [3.2 Signing fails using GPG version 2.1.0 or later](#Signing_fails_using_GPG_version_2.1.0_or_later)
 *   [4 Backup configuration](#Backup_configuration)
 
 ## Installation
@@ -75,6 +76,19 @@ Because of [a bug](https://sourceforge.net/p/ftplicity/bugs/83/) in the Duply, d
 # Turn on --use-agent option no matter what
 DUPL_PARAMS="$DUPL_PARAMS --use-agent"
 ```
+
+### Signing fails using GPG version 2.1.0 or later
+
+Due to changes in recent versions of GPG, this message may occur during backup process:
+
+```
+duply gpg: signing failed: Inappropriate ioctl for device
+
+```
+
+This can be fixed by uncommenting *GPG_OPTS* section of Duply's *conf* file and adding *--pinentry-mode loopback* argument into it:
+
+ `~/.duply/my_profile/conf OR /etc/duply/my_profile/conf (if running as root)`  `GPG_OPTS='--pinentry-mode loopback'` 
 
 ## Backup configuration
 

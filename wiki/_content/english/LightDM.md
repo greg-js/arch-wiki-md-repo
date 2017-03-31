@@ -363,7 +363,7 @@ height=768
 depth=24
 ```
 
-Now open an ssh tunnel and connect to localhost as described in [TigerVNC#On_the_client](/index.php/TigerVNC#On_the_client "TigerVNC").
+Now open an ssh tunnel and connect to localhost as described in [TigerVNC#On the client](/index.php/TigerVNC#On_the_client "TigerVNC").
 
 **Note:** If you get a blank screen upon opening the VNC connection, try a different lightdm greeter.
 
@@ -389,7 +389,7 @@ In case of your locale not being displayed correctly in Lightdm add your locale 
 
 ```
 
-Alternatively if you want LightDM and its greeters to be in a language other than your set system locale, you can use the `Environment=` option in [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd").
+Alternatively if you want LightDM and its greeters to be in a language other than your set system locale, you can use the `Environment=` option in [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd").
 
 ### Missing icons with GTK greeter
 

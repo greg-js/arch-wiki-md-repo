@@ -63,7 +63,7 @@ For additional functionality, you may wish to install the following:
 
 ### Run with a graphical login manager
 
-Login managers that support Wayland such as [sddm](/index.php/Sddm "Sddm") and [gdm](/index.php/Gdm "Gdm") can run a Liri session.
+Login managers that support Wayland such as [SDDM](/index.php/SDDM "SDDM") and [GDM](/index.php/GDM "GDM") can run a Liri session.
 
 ### Run from a tty
 

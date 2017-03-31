@@ -63,6 +63,6 @@ There are two options for displays:
 
 ### TrackPoint Scrolling
 
-To enable TrackPoint middle-button scrolling, [install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories") add the following line to your [.xinitrc](https://wiki.archlinux.org/index.php/Xinit).
+To enable TrackPoint middle-button scrolling, [install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories") add the following line to your [.xinitrc](/index.php/.xinitrc ".xinitrc").
 
  `xinput set-prop "ImPS/2 Generic Wheel Mouse" 288 0 0 1`

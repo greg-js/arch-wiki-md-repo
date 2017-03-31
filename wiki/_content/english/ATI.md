@@ -183,7 +183,7 @@ EndSection
 
 **Tip:** You may want to debug the new parameters with `systool` as stated in [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
 
-Defining the **gartsize**, if not autodetected, can be done by adding `radeon.gartsize=32` as a [kernel parameter](/index.php/Kernel_parameters "Kernel parameters").
+Defining the **gartsize**, if not autodetected, can be done by adding `radeon.gartsize=32` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 **Note:** Setting this parameter should not be needed anymore with modern AMD video cards:
 ```
@@ -199,7 +199,7 @@ The changes take effect at the next reboot.
 
 Since kernel 3.6, PCI Express 2.0 in **radeon** is turned on by default.
 
-It may be unstable with some motherboards. It can be deactivated by adding `radeon.pcie_gen2=0` as a [kernel parameter](/index.php/Kernel_parameters "Kernel parameters").
+It may be unstable with some motherboards. It can be deactivated by adding `radeon.pcie_gen2=0` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 See [Phoronix article](http://www.phoronix.com/scan.php?page=article&item=amd_pcie_gen2&num=1) for more information.
 
@@ -589,7 +589,7 @@ EndSection
 
 ### Adding undetected/unsupported resolutions
 
-See [Xrandr#Adding_undetected_resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
+See [Xrandr#Adding undetected resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
 
 ### TV showing a black border around the screen
 

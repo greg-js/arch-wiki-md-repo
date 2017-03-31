@@ -110,7 +110,7 @@ OnUnitActiveSec=1h
 
 ```
 
-参阅 [Systemd (简体中文)/定时器](/index.php?title=Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/%E5%AE%9A%E6%97%B6%E5%99%A8&action=edit&redlink=1 "Systemd (简体中文)/定时器 (page does not exist)") 和 [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd").
+参阅 [Systemd (简体中文)/定时器](/index.php?title=Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/%E5%AE%9A%E6%97%B6%E5%99%A8&action=edit&redlink=1 "Systemd (简体中文)/定时器 (page does not exist)") 和 [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd").
 
 ### 手动创建快照
 

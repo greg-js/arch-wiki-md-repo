@@ -34,7 +34,7 @@
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
-*   如果需要，可安装锁屏组件，如：[slock](https://www.archlinux.org/packages/?name=slock) 或 [](https://www.archlinux.org/packages/?name=%5B%5Bxscreensaver%5D%5D)[xscreensaver](/index.php/Xscreensaver "Xscreensaver")[](https://www.archlinux.org/packages/?name=%5B%5Bxscreensaver%5D%5D)。Both are confirmed to integrate with LXQt, others may too.如果需要禁用屏幕锁，设置*LXQT 会话设置->挂起前锁屏*
+*   如果需要，可安装锁屏组件，如：[slock](https://www.archlinux.org/packages/?name=slock) 或 [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)。Both are confirmed to integrate with LXQt, others may too.如果需要禁用屏幕锁，设置*LXQT 会话设置->挂起前锁屏*
 
 *   某些 LXQt 面板插件的某些功能需要安装额外的包。可查阅 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) 的 [可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")。
 

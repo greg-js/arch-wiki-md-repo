@@ -30,7 +30,7 @@
 
 Use *sensors-detect* as root to detect and generate a list of kernel modules:
 
-**Warning:** Do not use anything other than the default options (by just hitting `Enter`), unless you know exactly what you are doing. See [#Laptop Screen issues after running sensors-detect](#Laptop_Screen_issues_after_running_sensors-detect).
+**Warning:** Do not use anything other than the default options (by just hitting `Enter`), unless you know exactly what you are doing. See [#Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect).
 
 ```
 # sensors-detect

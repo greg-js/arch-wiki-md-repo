@@ -59,7 +59,7 @@ See the [dwmstatus](http://dwm.suckless.org/dwmstatus/) section on the dwm websi
 
 ### Use pacman
 
-You should [create a package](/index.php/Creating_packages "Creating packages") using a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") so that [pacman](/index.php/Pacman "Pacman") is aware of the package.
+You should [create a package](/index.php/Create_a_package "Create a package") using a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") so that [pacman](/index.php/Pacman "Pacman") is aware of the package.
 
 ### Applying changes
 

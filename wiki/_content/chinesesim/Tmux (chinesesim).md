@@ -12,30 +12,30 @@
     *   [2.3 正确设置 term](#.E6.AD.A3.E7.A1.AE.E8.AE.BE.E7.BD.AE_term)
     *   [2.4 其他设置](#.E5.85.B6.E4.BB.96.E8.AE.BE.E7.BD.AE)
     *   [2.5 用systemd后台自启tmux](#.E7.94.A8systemd.E5.90.8E.E5.8F.B0.E8.87.AA.E5.90.AFtmux)
-*   [3 Session initialization](#Session_initialization)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Scrolling issues](#Scrolling_issues)
+*   [3 会话初始化](#.E4.BC.9A.E8.AF.9D.E5.88.9D.E5.A7.8B.E5.8C.96)
+*   [4 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
+    *   [4.1 滚动问题](#.E6.BB.9A.E5.8A.A8.E9.97.AE.E9.A2.98)
     *   [4.2 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
 *   [5 ICCCM Selection Integration](#ICCCM_Selection_Integration)
     *   [5.1 Urxvt MiddleClick Solution](#Urxvt_MiddleClick_Solution)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Start tmux with default session layout](#Start_tmux_with_default_session_layout)
-        *   [6.1.1 Get the default layout values](#Get_the_default_layout_values)
-        *   [6.1.2 Define the default tmux layout](#Define_the_default_tmux_layout)
-        *   [6.1.3 Autostart tmux with default tmux layout](#Autostart_tmux_with_default_tmux_layout)
-        *   [6.1.4 Alternate approach for default session](#Alternate_approach_for_default_session)
+*   [6 提示和小技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E5.B0.8F.E6.8A.80.E5.B7.A7)
+    *   [6.1 启动时使用默认布局](#.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
+        *   [6.1.1 获取默认布局参数](#.E8.8E.B7.E5.8F.96.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.8F.82.E6.95.B0)
+        *   [6.1.2 定义默认布局](#.E5.AE.9A.E4.B9.89.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
+        *   [6.1.3 自动使用默认布局启动tmux](#.E8.87.AA.E5.8A.A8.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.90.AF.E5.8A.A8tmux)
+        *   [6.1.4 默认会话的替代实现方式](#.E9.BB.98.E8.AE.A4.E4.BC.9A.E8.AF.9D.E7.9A.84.E6.9B.BF.E4.BB.A3.E5.AE.9E.E7.8E.B0.E6.96.B9.E5.BC.8F)
     *   [6.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
-    *   [6.3 Start tmux on every shell login](#Start_tmux_on_every_shell_login)
+    *   [6.3 启动shell时自动启动tmux](#.E5.90.AF.E5.8A.A8shell.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8tmux)
         *   [6.3.1 Bash](#Bash)
-    *   [6.4 Start a non-login shell](#Start_a_non-login_shell)
-    *   [6.5 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
+    *   [6.4 启动non-login shell](#.E5.90.AF.E5.8A.A8non-login_shell)
+    *   [6.5 像标签一样使用窗口](#.E5.83.8F.E6.A0.87.E7.AD.BE.E4.B8.80.E6.A0.B7.E4.BD.BF.E7.94.A8.E7.AA.97.E5.8F.A3)
     *   [6.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
-    *   [6.7 Correct the TERM variable according to terminal type](#Correct_the_TERM_variable_according_to_terminal_type)
-    *   [6.8 Reload an updated configuration without restarting tmux](#Reload_an_updated_configuration_without_restarting_tmux)
-    *   [6.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
-    *   [6.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
-    *   [6.11 Automatic layouting](#Automatic_layouting)
-    *   [6.12 Vim friendly configuration](#Vim_friendly_configuration)
+    *   [6.7 根据终端类型自动更正TERM环境变量](#.E6.A0.B9.E6.8D.AE.E7.BB.88.E7.AB.AF.E7.B1.BB.E5.9E.8B.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.AD.A3TERM.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
+    *   [6.8 不用重启tmux就能加载新的配置](#.E4.B8.8D.E7.94.A8.E9.87.8D.E5.90.AFtmux.E5.B0.B1.E8.83.BD.E5.8A.A0.E8.BD.BD.E6.96.B0.E7.9A.84.E9.85.8D.E7.BD.AE)
+    *   [6.9 样例代码:attach已启动的会话而不是新开一个](#.E6.A0.B7.E4.BE.8B.E4.BB.A3.E7.A0.81:attach.E5.B7.B2.E5.90.AF.E5.8A.A8.E7.9A.84.E4.BC.9A.E8.AF.9D.E8.80.8C.E4.B8.8D.E6.98.AF.E6.96.B0.E5.BC.80.E4.B8.80.E4.B8.AA)
+    *   [6.10 标题栏自动更改](#.E6.A0.87.E9.A2.98.E6.A0.8F.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.94.B9)
+    *   [6.11 自动布局](#.E8.87.AA.E5.8A.A8.E5.B8.83.E5.B1.80)
+    *   [6.12 使用类似Vim的快捷键设置](#.E4.BD.BF.E7.94.A8.E7.B1.BB.E4.BC.BCVim.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE.E8.AE.BE.E7.BD.AE)
 *   [7 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
 
 ## 安装
@@ -203,9 +203,9 @@ WantedBy=multi-user.target
 
 把这个文件放在 [systemd/User](/index.php/Systemd/User "Systemd/User") 目录下,如 `~/.config/systemd/user/tmux.service`. 这样tmux service 就会在你登录时自动启动.
 
-## Session initialization
+## 会话初始化
 
-You can have tmux open a session with preloaded windows by including those details in your `~/.tmux.conf`:
+可以通过修改配置文件`~/.tmux.conf`来使得tmux在初始化一个sesson的时候自动新建窗口, 比如:
 
 ```
 new  -n WindowName Command
@@ -214,22 +214,23 @@ neww -n WindowName Command
 
 ```
 
-To start a session with split windows (multiple panes), include the splitw command below the neww you would like to split; thus:
+如果想在tmux启动session的时候自动分割窗口, 只需要把相应分割命令加在你想分割的窗口的neww命令之下, 如下:
 
 ```
 new  -s SessionName -n WindowName Command
 neww -n foo/bar foo
+# 在这之下添加分割窗口命令
 splitw -v -p 50 -t 0 bar
 selectw -t 1 
 selectp -t 0
 
 ```
 
-would open 2 windows, the second of which would be named foo/bar and would be split vertically in half (50%) with foo running above bar. Focus would be in window 2 (foo/bar), top pane (foo).
+这将启动两个窗口, 第二个窗口会被命名为foo/bar并且会被垂直对半分割, 其中窗格foo会在窗格bar的上面,光标会在第二个窗口(foo/bar)上面的窗格(foo)
 
-**Note:** Numbering for sessions, windows and panes starts at zero, unless you have specified a base-index of 1 in your `.conf`
+{{注意|除非你在你得配置文件`.conf`中特别指定, 否则会话(session), window(窗口),panes(窗格)的序号都是从0开始算起.}
 
-To manage multiple sessions, source separate session files from your conf file:
+想要管理多个会话, 需要在你的配置文件中用source命令分别执行相应会话的配置文件
 
 ```
 # initialize sessions
@@ -238,11 +239,11 @@ bind B source-file ~/.tmux/bar
 
 ```
 
-## Troubleshooting
+## 常见问题与解答
 
-### Scrolling issues
+### 滚动问题
 
-If you have issues scrolling with Shift-PageUp/Shift-PageDown in your terminal, try this:
+如果你在终端中使用Shift-PageUp/Shift-PageDown 翻页有问题,把下面加到配置文件中试试:
 
 ```
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
@@ -340,9 +341,9 @@ While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while j
 
 **Note:** The current tmux version 1.8-1 has a bug where it sometimes might not be possible to paste tmux buffer between different panes of tmux. This behaviour is fixed in the git-version (2013.10.15)
 
-## Tips and tricks
+## 提示和小技巧
 
-### Start tmux with default session layout
+### 启动时使用默认布局
 
 To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
 
@@ -351,7 +352,7 @@ tmuxinator doctor
 
 ```
 
-#### Get the default layout values
+#### 获取默认布局参数
 
 Start Tmux as usual and configure your windows and panes layout as you like. When finished, get the current layout values by executing (while you are still within the current Tmux session)
 
@@ -370,7 +371,7 @@ The output may look like this (two windows with 3 panes and 2 panes layout)
 
 The Interesting part you need to copy for later use begins after **[layout...** and excludes **... ] @2 (active)**. For the first window layout you need to copy e.g. **20a0,274x83,0,0{137x83,0,0,3,136x83,138,0[136x41,138,0,5,136x41,138,42,6]}**
 
-#### Define the default tmux layout
+#### 定义默认布局
 
 Knowing this, you can exit the current tmux session. Following this, you create your default Tmux session layout by editing Tmuxinator's config file (Don't copy the example, get your layout values as described above)
 
@@ -402,7 +403,7 @@ mux default
 
 ```
 
-#### Autostart tmux with default tmux layout
+#### 自动使用默认布局启动tmux
 
 If you like to start your terminal session with your default Tmux session layout edit
 
@@ -414,7 +415,7 @@ If you like to start your terminal session with your default Tmux session layout
 
 ```
 
-#### Alternate approach for default session
+#### 默认会话的替代实现方式
 
 Instead of using the above method, one can just write a bash script that when run, will create the default session and attach to it. Then you can execute it from a terminal to get the pre-designed configuration in that terminal
 
@@ -436,7 +437,7 @@ Use this command to start urxvt with a started tmux session. I use this with the
 
  `urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"` 
 
-### Start tmux on every shell login
+### 启动shell时自动启动tmux
 
 #### Bash
 
@@ -493,7 +494,7 @@ fi
 
 ```
 
-### Start a non-login shell
+### 启动non-login shell
 
 Tmux starts a [login shell](http://unix.stackexchange.com/questions/38175) [by default](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/5997), which may result in multiple negative side effects:
 
@@ -507,7 +508,7 @@ set -g default-command "${SHELL}"
 
 ```
 
-### Use tmux windows like tabs
+### 像标签一样使用窗口
 
 The following settings added to `~/.tmux.conf` allow to use tmux windows like tabs, such as those provided by the reference of these hotkeys — [urxvt's tabbing extensions](/index.php/Rxvt-unicode#urxvtq_with_tabbing "Rxvt-unicode"). An advantage thereof is that these virtual “tabs” are independent of the terminal emulator.
 
@@ -623,7 +624,7 @@ Citing the author:
 
 	Therefore, when my computer looses network connectivity, all "foo.something" clients are killed while "foo" remains. I can then call "rsc foo" to continue work from where I stopped.
 
-### Correct the TERM variable according to terminal type
+### 根据终端类型自动更正TERM环境变量
 
 Instead of [setting a fixed TERM variable in tmux](#Setting_the_correct_term), it is possible to set the proper TERM (either `screen` or `screen-256color`) according to the type of your terminal emulator:
 
@@ -652,7 +653,7 @@ if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
 fi
 ```
 
-### Reload an updated configuration without restarting tmux
+### 不用重启tmux就能加载新的配置
 
 By default tmux reads `~/.tmux.conf` only if it was not already running. To have tmux load a configuration file afterwards, execute:
 
@@ -675,7 +676,7 @@ source .tmux.conf
 
 ```
 
-### Template script to run program in new session resp. attach to existing one
+### 样例代码:attach已启动的会话而不是新开一个
 
 This script checks for a program presumed to have been started by a previous run of itself. Unless found it creates a new tmux session and attaches to a window named after and running the program. If however the program was found it merely attaches to the session and selects the window.
 
@@ -696,7 +697,7 @@ exit 0
 
 A derived version to run *irssi* with the *nicklist* plugin can be found on [its ArchWiki page](/index.php/Irssi#irssi_with_nicklist_in_tmux "Irssi").
 
-### Terminal emulator window titles
+### 标题栏自动更改
 
 If you SSH into a host in a tmux window, you'll notice the window title of your terminal emulator remains to be `user@localhost` rather than `user@server`. To allow the title bar to adapt to whatever host you connect to, set the following in `~/.tmux.conf`
 
@@ -708,7 +709,7 @@ set -g set-titles-string "#T"
 
 For `set-titles-string`, `#T` will display `user@host:~` and change accordingly as you connect to different hosts.
 
-### Automatic layouting
+### 自动布局
 
 When creating new splits or destroying older ones the currently selected layout isn't applied. To fix that, add following binds which will apply the currently selected layout to new or remaining panes:
 
@@ -718,7 +719,7 @@ bind-key -n M-n split-window \; select-layout
 
 ```
 
-### Vim friendly configuration
+### 使用类似Vim的快捷键设置
 
 See [[2]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
 

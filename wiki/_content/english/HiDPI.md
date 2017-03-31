@@ -220,7 +220,7 @@ For more details see [https://phab.enlightenment.org/w/elementary/](https://phab
 
 ### GRUB
 
-Set a lower resolution for the framebuffer as explained in [GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution](/index.php/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution "GRUB/Tips and tricks").
+Set a lower resolution for the framebuffer as explained in [GRUB/Tips and tricks#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution "GRUB/Tips and tricks").
 
 ## Applications
 

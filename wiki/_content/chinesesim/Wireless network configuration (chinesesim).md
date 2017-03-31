@@ -529,7 +529,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### connman
 
-[connman](/index.php/Connman "Connman") needs a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. See connman-service.config(5) and [Connman#Connecting_to_eduroam](/index.php/Connman#Connecting_to_eduroam "Connman") for details.
+[connman](/index.php/Connman "Connman") needs a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. See connman-service.config(5) and [Connman#Connecting to eduroam](/index.php/Connman#Connecting_to_eduroam "Connman") for details.
 
 #### netctl
 

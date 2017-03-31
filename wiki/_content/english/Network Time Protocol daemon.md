@@ -325,7 +325,7 @@ ntpd[2130]: unable to create socket on eth0 (5) for fe80::6ef0:49ff:fe51:4946%2#
 ntpd[2130]: failed to init interface for address fe80::6ef0:49ff:fe51:4946%2
 ```
 
-you can get rid of it by disabling IP6\. To do so, [edit](/index.php/Systemd#Editing_provided_units "Systemd") `ntpd.service` and add `-4`:
+you can get rid of it by disabling IP6\. To do so, [edit](/index.php/Edit "Edit") `ntpd.service` and add `-4`:
 
 ```
 [Service]

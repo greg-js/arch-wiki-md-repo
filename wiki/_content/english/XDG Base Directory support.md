@@ -247,7 +247,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  | [60e0cfe](https://git.gnome.org/browse/gimp/commit/?id=60e0cfe) | [[54]](https://bugzilla.gnome.org/show_bug.cgi?id=166643) [[55]](https://mail.gnome.org/archives/gimp-developer-list/2012-October/msg00028.html) | `$ export GIMP2_DIRECTORY="$XDG_CONFIG_HOME"/gimp` |
 | [gliv](http://guichaz.free.fr/gliv/) | `~/.glivrc` | `$ gliv --glivrc="$XDG_CONFIG_HOME"/gliv/glivrc` |
-| [GnuPG](/index.php/GPG "GPG") | `~/.gnupg` | [[56]](https://bugs.gnupg.org/gnupg/issue1456) [[57]](https://bugs.gnupg.org/gnupg/issue1018) | `$ export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg`
+| [GnuPG](/index.php/GnuPG "GnuPG") | `~/.gnupg` | [[56]](https://bugs.gnupg.org/gnupg/issue1456) [[57]](https://bugs.gnupg.org/gnupg/issue1018) | `$ export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg`
 
 `$ gpg2 --homedir "$XDG_CONFIG_HOME"/gnupg`
 

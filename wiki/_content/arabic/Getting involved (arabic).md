@@ -167,7 +167,7 @@
 
 ### كيف يمكنني أن أصبح عضوًا موثوقًا به؟?
 
-يرجى قراءة [Trusted Users#How to become TU?](/index.php/Trusted_Users#How_to_become_TU.3F "Trusted Users").
+يرجى قراءة [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
 
 ### ما الذي يمكنني فعله كفنّان؟
 

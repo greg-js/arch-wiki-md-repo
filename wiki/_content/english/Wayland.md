@@ -44,9 +44,9 @@ For the GPU driver and Wayland composer to be compatible they must support the s
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | Most* | All |
-| EGLStreams | [Nvidia](/index.php/Nvidia "Nvidia") | [GNOME](/index.php/GNOME "GNOME") ([from 3.24](https://bugzilla.gnome.org/show_bug.cgi?id=773629)) |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME") ([from 3.24](https://bugzilla.gnome.org/show_bug.cgi?id=773629)) |
 
-*: "Most" GPU drivers (supporting GBM) include [AMDGPU](/index.php/AMDGPU "AMDGPU"), [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [Nouveau](/index.php/Nouveau "Nouveau"). **Not included** are [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") and [Nvidia](/index.php/Nvidia "Nvidia")
+*: "Most" GPU drivers (supporting GBM) include [AMDGPU](/index.php/AMDGPU "AMDGPU"), [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [Nouveau](/index.php/Nouveau "Nouveau"). **Not included** are [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") and [NVIDIA](/index.php/NVIDIA "NVIDIA")
 
 ## Weston
 

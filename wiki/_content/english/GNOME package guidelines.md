@@ -27,7 +27,7 @@ When creating packages that install GConf schema files, use
 
 for the package installation step in the PKGBUILD.
 
-Do not call `gconfpkg` in the .install file, as GConf schemas are automatically installed/removed (while installing/removing the GNOME package) via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [gconf](https://www.archlinux.org/packages/?name=gconf)=3.2.6-4
+Do not call `gconfpkg` in the .install file, as GConf schemas are automatically installed/removed (while installing/removing the GNOME package) via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [gconf](https://www.archlinux.org/packages/?name=gconf)=3.2.6-4
 
 ## GSettings schemas
 
@@ -35,7 +35,7 @@ The GConf schemas were migrated to GSettings schemas, so many GNOME applications
 
 To avoid recompiling GSettings database on packaging, use the `--disable-schemas-compile` switch for **./configure**.
 
-Do not call `glib-compile-schemas` in the .install file, as GSettings schema databases are automatically recompiled via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [glib2](https://www.archlinux.org/packages/?name=glib2)=2.48.0-2.
+Do not call `glib-compile-schemas` in the .install file, as GSettings schema databases are automatically recompiled via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [glib2](https://www.archlinux.org/packages/?name=glib2)=2.48.0-2.
 
 ## Scrollkeeper documentation
 
@@ -47,13 +47,13 @@ It can be disabled using `--disable-scrollkeeper` switch from **./configure**.
 
 Quite some packages install icons in the hicolor icon theme. These packages should depend on [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache).
 
-Do not call `gtk-update-icon-cache` in the .install file, as the icon cache is updated via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
+Do not call `gtk-update-icon-cache` in the .install file, as the icon cache is updated via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
 
 ## .desktop files
 
 Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them. They should depend on [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)
 
-Do not call `update-desktop-database` in the .install file, as the database is automatically updated via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
+Do not call `update-desktop-database` in the .install file, as the database is automatically updated via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
 
 ## .install files
 

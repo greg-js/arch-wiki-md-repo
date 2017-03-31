@@ -310,7 +310,7 @@ $ mount /dev/loop0p1 *punto de montaje*
 
 ```
 
-Para montar la imagen de disco con *udisksctl* , vea [Udisks #Mount loop devices](/index.php/Udisks#Mount_loop_devices "Udisks").
+Para montar la imagen de disco con *udisksctl* , vea [Udisks#Mount loop devices](/index.php/Udisks#Mount_loop_devices "Udisks").
 
 #### Con kpartx
 

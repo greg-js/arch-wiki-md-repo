@@ -122,7 +122,7 @@ At the time of this note, the available iwlwifi-8000C-XX.ucode files include ver
 
 ### External monitor can't be detected on Hybrid Graphics
 
-This [guide](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip) works, if you want to use nvidia driver. If you are using nouveau driver look at [this](https://bbs.archlinux.org/viewtopic.php?id=221358) thread.
+This [guide](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") works, if you want to use nvidia driver. If you are using nouveau driver look at [this](https://bbs.archlinux.org/viewtopic.php?id=221358) thread.
 
 ## lspci
 

@@ -31,7 +31,7 @@ Two parts are available in [official repositories](/index.php/Official_repositor
 
 ### Configure Secure Shell daemon
 
-X2Go uses [Secure Shell](/index.php/Secure_Shell "Secure Shell") in order to work, so you need to configure sshd daemon to allow X11 forwarding and then start it first. Follow the instructions at [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") and [Secure_Shell#Daemon_management](/index.php/Secure_Shell#Daemon_management "Secure Shell").
+X2Go uses [Secure Shell](/index.php/Secure_Shell "Secure Shell") in order to work, so you need to configure sshd daemon to allow X11 forwarding and then start it first. Follow the instructions at [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") and [Secure Shell#Daemon management](/index.php/Secure_Shell#Daemon_management "Secure Shell").
 
 If you are using other than POSIX (C) locale, you may want to add the following line to [configuration file](/index.php/Secure_Shell#Server_usage "Secure Shell")
 

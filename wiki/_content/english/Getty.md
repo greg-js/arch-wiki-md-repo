@@ -19,7 +19,7 @@ Alternatives include:
 
 *   **mingetty** — A minimal getty which allows automatic logins.
 
-	[https://aur.archlinux.org/packages/mingetty/](https://aur.archlinux.org/packages/mingetty/) || [mingetty](https://aur.archlinux.org/packages/mingetty/)
+	[mingetty](https://aur.archlinux.org/packages/mingetty/) || [mingetty](https://aur.archlinux.org/packages/mingetty/)
 
 *   **fbgetty** — A console getty like mingetty, which supports framebuffers.
 
@@ -102,4 +102,4 @@ This overrides only `TTYVTDisallocate` for *agetty* on TTY1, and leaves the glob
 
 ## See also
 
-*   [Systemd#Change_default_target_to_boot_into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")
+*   [Systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")

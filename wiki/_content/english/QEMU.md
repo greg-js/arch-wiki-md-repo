@@ -92,7 +92,6 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [11.8 libgfapi error message](#libgfapi_error_message)
     *   [11.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [11.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
-    *   [11.11 No internet connection with user networking](#No_internet_connection_with_user_networking)
 *   [12 See also](#See_also)
 
 ## Installation
@@ -100,7 +99,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 [Install](/index.php/Install "Install") the [qemu](https://www.archlinux.org/packages/?name=qemu) package (or [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless) for the version without GUI) and below optional packages for your needs:
 
 *   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - extra architectures support
-*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - [GlusterFS](/index.php/GlusterFS "GlusterFS") block support
+*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - [Glusterfs](/index.php/Glusterfs "Glusterfs") block support
 *   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - [iSCSI](/index.php/ISCSI "ISCSI") block support
 *   [qemu-block-rbd](https://www.archlinux.org/packages/?name=qemu-block-rbd) - RBD block support
 *   [samba](https://www.archlinux.org/packages/?name=samba) - [SMB/CIFS](/index.php/Samba "Samba") server support
@@ -539,6 +538,8 @@ This default configuration allows your virtual machines to easily access the Int
 QEMU's user-mode networking can offer more capabilities such as built-in TFTP or SMB servers, redirecting host ports to the guest (for example to allow SSH connections to the guest) or attaching guests to VLANs so that they can talk to each other. See the QEMU documentation on the `-net user` flag for more details.
 
 However, user-mode networking has limitations in both utility and performance. More advanced network configurations require the use of tap devices or other methods.
+
+**Note:** If the host system uses [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), make sure to symlink the `/etc/resolv.conf` file as described in [systemd-networkd#Required services and setup](/index.php/Systemd-networkd#Required_services_and_setup "Systemd-networkd"), otherwise the DNS lookup in the guest system will not work.
 
 ### Tap networking with QEMU
 
@@ -1266,7 +1267,7 @@ Modifying an existing Windows guest for booting from virtio disk is a bit tricky
 
 You can download the virtio disk driver from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-Now you need to create a new disk image, which fill force Windows to search for the driver. For example:
+Now you need to create a new disk image, which will force Windows to search for the driver. For example:
 
 ```
 $ qemu-img create -f qcow2 *fake.qcow2* 1G
@@ -1653,10 +1654,6 @@ or some other boot hindering process (e.g. cannot unpack initramfs, cant start s
 
 Using `hda` audio driver for Windows 7 guest may casue low-quality sound. Changing the audio driver to `ac97` by passing arguement `-soundhw ac97` to QEMU and install ac97 driver from [Realtek AC'97 Audio Codecs](http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false) in the guest may solve the problem. See [Red Hat Bugzilla – Bug 1176761](https://bugzilla.redhat.com/show_bug.cgi?id=1176761#c16) for more information.
 
-### No internet connection with user networking
-
-When using user-mode networking, guest may not have internet access if host's [resolv.conf](/index.php/Resolv.conf "Resolv.conf") does not have any nameservers defined.
-
 ## See also
 
 *   [Official QEMU website](http://qemu.org)
@@ -1673,3 +1670,4 @@ When using user-mode networking, guest may not have internet access if host's [r
 *   [Networking QEMU Virtual BSD Systems](http://bsdwiki.reedmedia.net/wiki/networking_qemu_virtual_bsd_systems.html)
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
+*   [KVM/QEMU Virtio Tuning and SSD VM Optimization Guide](https://wiki.mikejung.biz/KVM_/_Xen)

@@ -68,7 +68,7 @@ Unlike other filesystem types, [btrfs](/index.php/Btrfs "Btrfs") has native supp
 
 #### Find damaged files
 
-First of all, let's [scrub](/index.php/Btrfs#scrub "Btrfs") the damaged partition:
+First of all, let's [scrub](/index.php/Btrfs#Scrub "Btrfs") the damaged partition:
 
  `# btrfs scrub -Bd /dev/sdxy` 
 

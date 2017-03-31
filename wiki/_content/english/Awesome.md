@@ -73,7 +73,7 @@ You can set up [GNOME](/index.php/GNOME "GNOME") to use awesome as the visual in
 
 ### XFCE
 
-See [Xfce#Default_window_manager](/index.php/Xfce#Default_window_manager "Xfce").
+See [Xfce#Default window manager](/index.php/Xfce#Default_window_manager "Xfce").
 
 ## Configuration
 

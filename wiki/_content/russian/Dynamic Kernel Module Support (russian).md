@@ -41,7 +41,6 @@
 *   [VirtualBox](/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VirtualBox (Русский)"):
     *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
     *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
-*   [VMware](/index.php/VMware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VMware (Русский)"), раздел [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 
 ## Обновления
 

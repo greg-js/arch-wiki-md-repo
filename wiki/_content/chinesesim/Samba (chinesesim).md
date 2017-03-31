@@ -256,7 +256,7 @@ $ smbtree -b -N
 
 *   结尾不要加 `/`. `//*SERVER*/*sharename***/**` 无法工作.
 *   如果挂载工作不稳定，出现死机和掉线问题，请尝试用 `vers=` 设置不同的 SMB 协议版本。例如， 挂载 Vista 用 `vers=2.0`.
-*   如果挂载了 cifs 机器上出现关机超时，请参考 [WPA supplicant#Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29 "WPA supplicant").
+*   如果挂载了 cifs 机器上出现关机超时，请参考 [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown "WPA supplicant").
 
 ##### 保存共享密码
 

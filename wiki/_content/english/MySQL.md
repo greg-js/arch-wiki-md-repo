@@ -117,7 +117,7 @@ Depending on the scope of the changes you want to make (system-wide, user-only..
 
 ### Grant remote access
 
-**Warning:** This is not considered as best practice and may cause security issues. Consider using [Secure Shell](/index.php/Secure_Shell "Secure Shell"), [VNC](/index.php/VNC "VNC") or [VPN](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network"), if you want to maintain the MySQL-server outside and/or inside your LAN.
+**Warning:** This is not considered as best practice and may cause security issues. Consider using [Secure Shell](/index.php/Secure_Shell "Secure Shell"), [VNC](/index.php/VNC "VNC") or [VPN](/index.php/VPN "VPN"), if you want to maintain the MySQL-server outside and/or inside your LAN.
 
 If you want to access your MySQL server from other LAN hosts, you have to edit the following lines in `/etc/mysql/my.cnf`:
 

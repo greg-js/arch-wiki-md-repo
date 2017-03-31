@@ -27,7 +27,7 @@ Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进�
 
 ## 配置
 
-`/etc` 目录有多个子目录与 PAM 相关，使用命令 `pacman -Ql pam | grep /etc` 查看默认创建的配置文件。这些配置与 [#安全性参数](#.E5.AE.89.E5.85.A8.E6.80.A7.E5.8F.82.E6.95.B0) 或 [#PAM 基础配置](#PAM_.E5.9F.BA.E7.A1.80.E9.85.8D.E7.BD.AE) 有关。
+`/etc` 目录有多个子目录与 PAM 相关，使用命令 `pacman -Ql pam | grep /etc` 查看默认创建的配置文件。这些配置与 [#安全性参数](#.E5.AE.89.E5.85.A8.E6.80.A7.E5.8F.82.E6.95.B0)或 [#PAM 基础配置](#PAM_.E5.9F.BA.E7.A1.80.E9.85.8D.E7.BD.AE) 有关。
 
 ### 安全性参数
 
@@ -92,7 +92,7 @@ auth      optional  pam_permit.so
 
 将导致只有 root 用户可以登录（Arch Linux 默认允许 root 用户登录）。要让普通用户可以登录，则需要删除该文件。
 
-参考 [#PAM stack and module configuration](#PAM_stack_and_module_configuration) 来对具体使用进行配置。
+参考 [#PAM stack and module configuration](#PAM_stack_and_module_configuration)来对具体使用进行配置。
 
 ## 配置方法
 

@@ -47,7 +47,7 @@ While [Hurd](https://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under act
 
 	[https://www.gnu.org/software/gzip/](https://www.gnu.org/software/gzip/) || [gzip](https://www.archlinux.org/packages/?name=gzip)
 
-*   **[tar](/index.php/Core_utilities#tar "Core utilities")** — It provides the ability to create or decompress tar archives, as well as various other kinds of manipulation.
+*   **[tar](/index.php/Tar "Tar")** — It provides the ability to create or decompress tar archives, as well as various other kinds of manipulation.
 
 	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 

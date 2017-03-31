@@ -20,7 +20,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 To complete TLP's install, you must [enable](/index.php/Enable "Enable") the systemd services `tlp.service` and `tlp-sleep.service`. You should also [disable](/index.php/Disable "Disable") the systemd service `systemd-rfkill.service` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 
-**Note:** `tlp.service` starts `NetworkManager.service` if it is available: [FS#43733](https://bugs.archlinux.org/task/43733). If you use a different [network manager](/index.php/List_of_applications#Network_managers "List of applications"), [edit](/index.php/Systemd#Editing_provided_units "Systemd") `tlp.service`in order to remove the service (line `Wants=`) or [mask](/index.php/Mask "Mask") it.
+**Note:** `tlp.service` starts `NetworkManager.service` if it is available: [FS#43733](https://bugs.archlinux.org/task/43733). If you use a different [network manager](/index.php/List_of_applications#Network_managers "List of applications"), [edit](/index.php/Edit "Edit") `tlp.service`in order to remove the service (line `Wants=`) or [mask](/index.php/Mask "Mask") it.
 
 ### ThinkPads only
 

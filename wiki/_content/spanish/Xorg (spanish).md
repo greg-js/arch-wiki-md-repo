@@ -210,8 +210,7 @@ Véase el artículo principal main article [Multihead](/index.php/Multihead "Mul
 Véanse también las instruccines específicas para su GPU:
 
 *   [NVIDIA (Español)#Varios monitores](/index.php/NVIDIA_(Espa%C3%B1ol)#Varios_monitores "NVIDIA (Español)")
-*   [Nouveau (Español)#Dual Head](/index.php/Nouveau_(Espa%C3%B1ol)#Dual_Head "Nouveau (Español)")
-*   [ATI Catalyst (Español)#Doble Pantalla (Dual Head / Dual Screen / Xinerama)](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Doble_Pantalla_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "ATI Catalyst (Español)")
+*   [Nouveau (Español)#Dual Head](/index.php/Nouveau_(Espa%C3%B1ol)#Dual_Head "Nouveau (Español)")* [ATI Catalyst (Español)#Doble Pantalla (Dual Head / Dual Screen / Xinerama)](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Doble_Pantalla_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "ATI Catalyst (Español)")
 *   [ATI (Español)#Configuración Dual Head](/index.php/ATI_(Espa%C3%B1ol)#Configuraci.C3.B3n_Dual_Head "ATI (Español)")
 
 #### Más de una tarjeta gráfica

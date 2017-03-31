@@ -50,7 +50,7 @@ There are multiple CPU-related issues, which if left unaddress may turn one's co
 
 ### CPU-related hard-freezes
 
-A single major CPU issue are the [hard freezes](https://forum.manjaro.org/t/intel-bay-trail-freezes-the-linux-kernel/1931), common to many bay-trail devices . A simple solution to the problem is to add "max_cstate=1" option to the [kernel parameters](https://wiki.archlinux.org/index.php/Kernel_parameters).
+A single major CPU issue are the [hard freezes](https://forum.manjaro.org/t/intel-bay-trail-freezes-the-linux-kernel/1931), common to many bay-trail devices . A simple solution to the problem is to add "max_cstate=1" option to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 ### cpufreq
 

@@ -163,7 +163,7 @@ Ignore/Cancel?
 
 ```
 
-表示分区没 [对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90 "Partitioning (简体中文)")，请按照 [分区对齐](/index.php/GNU_Parted_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90 "GNU Parted (简体中文)") 进行修正。
+表示分区没 [对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90 "Partitioning (简体中文)")，请按照 [分区对齐](#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90) 进行修正。
 
 下面命令设置 `/boot` 为启动目录：
 

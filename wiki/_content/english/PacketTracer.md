@@ -12,7 +12,7 @@ Cisco Packet Tracer is a powerful network simulation program that allows student
 
 ## Disclaimer
 
-Understand if you have permission from Cisco Systems to use this software. If you do not meet eligibility, discontinue your progress and consider alternatives such as [Gns3](/index.php/Gns3 "Gns3").
+Understand if you have permission from Cisco Systems to use this software. If you do not meet eligibility, discontinue your progress and consider alternatives such as [GNS3](/index.php/GNS3 "GNS3").
 
 ## Installation
 
@@ -76,6 +76,6 @@ You may use these videos as supplements to the installation to either ease or vi
 
 ## See also
 
-*   [Gns3](/index.php/Gns3 "Gns3")
+*   [GNS3](/index.php/GNS3 "GNS3")
 *   [Cisco Packet Tracer - Networking Academy](https://www.netacad.com/web/about-us/cisco-packet-tracer)
 *   [Cisco Packet Tracer-based Assessment Environment Check](http://skills.netacad.net/check/check.html)

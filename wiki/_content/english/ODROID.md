@@ -72,7 +72,7 @@ One solution is to use [odroid-auto-bridge](https://aur.archlinux.org/packages/o
 
 Running linux containers on an ODROID host is quirky. In addition to the difficulties with network bridging described above, users will need to change the default forwarding policy on the host OS to allow for DHCP requests to the containers to work properly. Alternatively, users can use implement a static IP setup for containers.
 
-Users wishing to retain the DHCP functionality need to install [ufw](/index.php/Ufw "Ufw") and configure it (see [Uncomplicated_Firewall#Basic_configuration](/index.php/Uncomplicated_Firewall#Basic_configuration "Uncomplicated Firewall")) on the host OS, Beyond the standard configuration, modify `/etc/default/ufw` as follows:
+Users wishing to retain the DHCP functionality need to install [ufw](/index.php/Ufw "Ufw") and configure it (see [Uncomplicated Firewall#Basic configuration](/index.php/Uncomplicated_Firewall#Basic_configuration "Uncomplicated Firewall")) on the host OS, Beyond the standard configuration, modify `/etc/default/ufw` as follows:
 
  `/etc/default/ufw`  `DEFAULT_FORWARD_POLICY="ACCEPT"` 
 

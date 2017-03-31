@@ -197,7 +197,7 @@ See also [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities").
 
 ### dcfldd
 
-Dcfldd doesn't print the average speed in MB/s like good old dd does but with [time](/index.php/Benchmarking#time "Benchmarking") you can work around that.
+Dcfldd doesn't print the average speed in MB/s like good old dd does but with [time](#time) you can work around that.
 
 Time the run clearing the disk:
 

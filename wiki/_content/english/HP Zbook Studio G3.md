@@ -18,7 +18,7 @@ This laptop is currently very difficult to get working with Arch. Despite the pr
 
 ## Installation
 
-Installation is generally pretty straight forward, however, there are some things to consider. Follow the general instructions of the [[guide](https://wiki.archlinux.org/index.php/Installation_guide%7Cinstallation)]
+Installation is generally pretty straight forward, however, there are some things to consider. Follow the general instructions of the [installation|guide](/index.php/Installation_guide "Installation guide")
 
 ### Using hybrid graphics
 
@@ -47,7 +47,7 @@ This laptop usually comes pre-loaded with windows 7. Although the laptop boots i
 
 ### X config
 
-Install the [nvidia](/index.php/NVIDIA "NVIDIA") driver. If you are using the system in discrete graphics mode, you may need to run nvidia-xconfig as root to be able to run [X](/index.php/X "X").
+Install the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver. If you are using the system in discrete graphics mode, you may need to run nvidia-xconfig as root to be able to run [X](/index.php/X "X").
 
 ### HiDPI configuration
 

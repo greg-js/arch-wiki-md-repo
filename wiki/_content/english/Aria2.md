@@ -357,7 +357,7 @@ Just use the command below:
 
 ### pacman XferCommand
 
-See [Pacman/Tips_and_tricks#aria2](/index.php/Pacman/Tips_and_tricks#aria2 "Pacman/Tips and tricks").
+See [pacman/Tips and tricks#aria2](/index.php/Pacman/Tips_and_tricks#aria2 "Pacman/Tips and tricks").
 
 ### Changing the User Agent
 

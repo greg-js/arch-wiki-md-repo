@@ -68,7 +68,7 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 ```
 
-**注意:** [ZFS](/index.php/ZFS "ZFS") 文件系统对于 bindmounts 方式挂载要特殊处理，参阅 [ZFS#Bindmount](/index.php/ZFS#Bindmount "ZFS")。
+**注意:** [ZFS](/index.php/ZFS "ZFS") 文件系统对于 bindmounts 方式挂载要特殊处理，参阅 [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS")。
 
 增加允许被挂载的目录和主机到`exports`：
 

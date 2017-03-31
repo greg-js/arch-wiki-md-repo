@@ -119,7 +119,7 @@ When you want to **release** a package, first copy the package along with its si
     *   **Tag** the package: `archrelease community-{i686,x86_64`}.
 *   **Update** the repository: `ssh orion.archlinux.org /community/db-update`.
 
-Also see the *Miscellaneous* section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") and [SSH_keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). For the section *Avoid having to enter your password all the time* use *orion.archlinux.org* instead of *gerolde.archlinux.org*.
+Also see the *Miscellaneous* section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") and [SSH keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). For the section *Avoid having to enter your password all the time* use *orion.archlinux.org* instead of *gerolde.archlinux.org*.
 
 ### Disowning packages
 

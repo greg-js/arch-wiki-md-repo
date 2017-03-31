@@ -61,7 +61,7 @@ style=adwaita
 ...
 ```
 
-*   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=adwaita`. Alternatively, use [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package. For more detailed instructions, see [Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
+*   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=adwaita`. Alternatively, use [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package. For more detailed instructions, see [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
 
 ## Theme engines
 

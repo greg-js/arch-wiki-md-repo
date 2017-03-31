@@ -96,7 +96,8 @@ Battery: Yes
 CPU frequency scaling: untested | Untested | Webcam: Yes
 Hotkeys: OK
 Synaptic Touchpad: OK
-HDMI: **Does not work** |
+HDMI: **Does not work**
+Microphone: **Does not work** |
 | [Aspire One Cloudbook 11](/index.php/Acer_Cloudbook "Acer Cloudbook") | archlinux-201608 | Intel HD Graphics 400 | OK, HDA-Intel | N/A | OK, Qualcomm Atheros | OK | Suspend to RAM: Yes
 Disk: Not tested
 Battery: Yes

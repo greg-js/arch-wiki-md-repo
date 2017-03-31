@@ -113,7 +113,7 @@ Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up
 
 #### Qsynth using JACK
 
-1.  We need to install [qsynth](https://www.archlinux.org/packages/?name=qsynth), [jack](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit"), [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
+1.  We need to install [qsynth](https://www.archlinux.org/packages/?name=qsynth), [jack](/index.php/Jack "Jack"), [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 2.  Launch qjackctl and check the settings:
 
 ```

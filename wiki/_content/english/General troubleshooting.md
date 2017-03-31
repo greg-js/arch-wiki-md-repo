@@ -118,7 +118,7 @@ This is basic management that applies to most terminal emulators, including virt
 
 This pauses not only the output, but also programs which try to print to the terminal, as they will block on the `write()` calls for as long as the output is paused. If your *init* appears frozen, make sure the system console is not paused.
 
-To see error messages which are already displayed, see [Getty#Have_boot_messages_stay_on_tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
+To see error messages which are already displayed, see [Getty#Have boot messages stay on tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
 
 #### Scrollback
 

@@ -87,7 +87,7 @@ If you do not source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh in your .xinitr
 
 ### udisksvm
 
-[udisksvm](https://aur.archlinux.org/packages/udisksvm) is a graphical udisks2 wrapper application written in Python3 and using the Qt5 framework. It uses only mouse clicks to mount, unmount removable devices or eject a CD/DVD. It is well adapted to light weight graphical environments, like Openbox with Tint2. It is a stand-alone mounting/automounting application running in background (see the README file in the package for details).
+[udisksvm](https://aur.archlinux.org/packages/udisksvm/) is a graphical udisks2 wrapper application written in Python3 and using the Qt5 framework. It uses only mouse clicks to mount, unmount removable devices or eject a CD/DVD. It is well adapted to light weight graphical environments, like Openbox with Tint2. It is a stand-alone mounting/automounting application running in background (see the README file in the package for details).
 
 ## Tips and tricks
 

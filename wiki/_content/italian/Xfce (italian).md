@@ -755,7 +755,7 @@ Si può legere un ottimo articolo su come creare [profili colore con dispwin, ec
 
 Se si desidera **caricare un profilo ICC** (che avete precedentemente creato o scaricato) per calibrare il monitor all'avvio, è possibile scaricare [xcalib](https://aur.archlinux.org/packages/xcalib/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"), quindi aprire Gestione impostazioni di XFCE4, fare clic sull'icona *Sessione e Avvio*, e nella scheda *Avvio automatico* aggiungere una nuova voce in cui il comando sia `/usr/bin/xcalib /percorso/del/file/profilo.icc`. Avete ancora bisogno di impostare nelle vostre applicazioni che utilizzano un profilo, quale deve essere utilizzato per avere le immagini visualizzate con gestione del colore.
 
-Un'altra opzione è dispwin. Dispwin calibra non solo la visualizzazione, ma stabilisce anche un _ICC_PROFILE centrale per X in modo che alcune applicazioni possono utilizzare un profilo di visualizzazione di "sistema " invece di richiedere all'utente di impostare manualmente il profilo di visualizzazione (GIMP, Inkscape, darktable, UFRaw, ecc ). Vedere [ICC profiles#Loading ICC Profiles](/index.php/ICC_profiles#Loading_ICC_Profiles "ICC profiles") per ulteriori informazioni.
+Un'altra opzione è dispwin. Dispwin calibra non solo la visualizzazione, ma stabilisce anche un _ICC_PROFILE centrale per X in modo che alcune applicazioni possono utilizzare un profilo di visualizzazione di "sistema " invece di richiedere all'utente di impostare manualmente il profilo di visualizzazione (GIMP, Inkscape, darktable, UFRaw, ecc ). Vedere [ICC profiles#Loading ICC profiles](/index.php/ICC_profiles#Loading_ICC_profiles "ICC profiles") per ulteriori informazioni.
 
 #### Creare un profilo
 

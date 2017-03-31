@@ -183,7 +183,7 @@ After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirror
 
 ### Installation tips
 
-You can now proceed to [Installation_guide#Partition_the_disks](/index.php/Installation_guide#Partition_the_disks "Installation guide") and follow the rest of the [Installation guide](/index.php/Installation_guide "Installation guide").
+You can now proceed to [Installation guide#Partition the disks](/index.php/Installation_guide#Partition_the_disks "Installation guide") and follow the rest of the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 Some host systems or configurations may require certain extra steps. See the sections below for tips.
 
@@ -285,7 +285,7 @@ This will trigger later an error on boot in the initrd stage. Therefore, you hav
 *   After installing the system, double check your [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") and your bootloader settings. See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for a list of bootloaders.
 *   You may need to change your `/etc/mdadm.conf` to reflect your [RAID](/index.php/RAID "RAID") settings (if applicable).
 *   You may need to change your `HOOKS` and `MODULES` according to your [LVM](/index.php/LVM "LVM") and [RAID](/index.php/RAID "RAID") requirements: `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
-*   You will most likely need to generate new initrd images with mkinitcpio. See [Mkinitcpio#Image_creation_and_activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+*   You will most likely need to generate new initrd images with mkinitcpio. See [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 *   Set `use_lvmetad = 0` in `/etc/lvm/lvm.conf`.
 *   Update your bootloader settings. See your bootloader's wiki page for details.
 *   Set `use_lvmetad = 1` in `/etc/lvm/lvm.conf`.

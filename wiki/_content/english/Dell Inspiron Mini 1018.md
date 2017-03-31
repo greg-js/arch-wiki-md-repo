@@ -14,7 +14,7 @@ Follow the [installation guide](/index.php/Installation_guide "Installation guid
 
 ### Black screen at boot
 
-Try [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") in /etc/modprobe.d/ during the [chroot](/index.php/Installation_guide#Configure_the_system "Installation guide") stage of the installation
+Try [blacklisting](/index.php/Blacklisting "Blacklisting") in /etc/modprobe.d/ during the [chroot](/index.php/Installation_guide#Configure_the_system "Installation guide") stage of the installation
 
 ```
 blacklist dell-laptop

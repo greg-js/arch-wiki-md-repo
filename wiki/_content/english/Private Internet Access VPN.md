@@ -1,4 +1,4 @@
-This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private internet access](/index.php/Private_internet_access "Private internet access").
+This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private Internet Access](/index.php/Private_Internet_Access "Private Internet Access").
 
 ## Contents
 

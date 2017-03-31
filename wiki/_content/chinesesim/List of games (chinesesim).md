@@ -363,7 +363,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[http://www.blockout.net/blockout2/](http://www.blockout.net/blockout2/) || [blockout2](https://aur.archlinux.org/packages/blockout2/)
 
-*   **Bovo** — [Gomoku](https://en.wikipedia.org/wiki/Gomoku)-like game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **Bovo** — [Gomoku](https://en.wikipedia.org/wiki/Gomoku "wikipedia:Gomoku")-like game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/bovo/](https://www.kde.org/applications/games/bovo/) || [bovo](https://www.archlinux.org/packages/?name=bovo)
 
@@ -431,7 +431,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[https://www.kde.org/applications/games/klines/](https://www.kde.org/applications/games/klines/) || [klines](https://www.archlinux.org/packages/?name=klines)
 
-*   **KMines** — [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)), part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KMines** — [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game) "wikipedia:Minesweeper (video game)"), part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kmines/](https://www.kde.org/applications/games/kmines/) || [kmines](https://www.archlinux.org/packages/?name=kmines)
 
@@ -443,7 +443,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kdegames-kolf](https://www.archlinux.org/packages/?name=kdegames-kolf)
 
-*   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+*   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho "wikipedia:Shisen-Sho"). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kshisen/](https://www.kde.org/applications/games/kshisen/) || [kshisen](https://www.archlinux.org/packages/?name=kshisen)
 

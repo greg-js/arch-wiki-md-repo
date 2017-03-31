@@ -67,7 +67,7 @@ Opera 可以在 [官方软件仓库安装](/index.php/Official_repositories "Off
 
 ### Profile in tmpfs
 
-将浏览器配置文件重新定位到 [tmpfs](/index.php/Tmpfs "Tmpfs")文件系统，包括 `/tmp`，以改进应用程序响应，因为整个配置文件现在都存储在RAM中。另一个好处是减少了磁盘读写操作，其于SSD最为有利。
+将浏览器配置文件重新定位到[tmpfs](/index.php/Tmpfs "Tmpfs")文件系统，包括 `/tmp`，以改进应用程序响应，因为整个配置文件现在都存储在RAM中。另一个好处是减少了磁盘读写操作，其于SSD最为有利。
 
 目前有两种方法：
 

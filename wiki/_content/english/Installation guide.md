@@ -42,7 +42,7 @@ The default [console keymap](/index.php/Keyboard_configuration_in_console "Keybo
 
 To modify the layout, append a file name to [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
 
-[Console fonts](/index.php/Fonts#Console_fonts "Fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
 ### Verify the boot mode
 
@@ -64,7 +64,7 @@ The installation image [enables](/index.php/Enable "Enable") the [dhcpcd](/index
 
 ```
 
-If none is available, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
+If none is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
 For **wireless** connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
@@ -81,7 +81,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-When recognized by the live system, disks are assigned to a *block device* such as `/dev/sda`. To identify these devices, use [lsblk](/index.php/Core_utilities#lsblk "Core utilities") or *fdisk* — results ending in `rom`, `loop` or `airoot` may be ignored:
+When recognized by the live system, disks are assigned to a *block device* such as `/dev/sda`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk* — results ending in `rom`, `loop` or `airoot` may be ignored:
 
 ```
 # fdisk -l
@@ -93,7 +93,7 @@ The following *partitions* (shown with a numerical suffix) are required for a ch
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap#Swap_file "Swap").
+[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
 
 To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted"). See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
 
@@ -150,7 +150,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
 
-To [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") packages and other groups such as [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), append the names to *pacstrap* (space separated) or to individual [pacman](/index.php/Pacman "Pacman") commands after the [#Chroot](#Chroot) step.
+To [install](/index.php/Install "Install") packages and other groups such as [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), append the names to *pacstrap* (space separated) or to individual [pacman](/index.php/Pacman "Pacman") commands after the [#Chroot](#Chroot) step.
 
 ## Configure the system
 
@@ -176,7 +176,7 @@ Check the resulting file in `/mnt/etc/fstab` afterwards, and edit it in case of 
 
 ### Time zone
 
-Set the [time zone](/index.php/Time#Time_zone "Time"):
+Set the [time zone](/index.php/Time_zone "Time zone"):
 
 ```
 # ln -sf /usr/share/zoneinfo/*Region*/*City* /etc/localtime
@@ -235,7 +235,7 @@ See also [Network configuration#Set the hostname](/index.php/Network_configurati
 
 The newly installed environment has no network connection activated per default. See [Network configuration](/index.php/Network_configuration "Network configuration") to configure one.
 
-For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") the [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Optionally install [dialog](https://www.archlinux.org/packages/?name=dialog) for usage of *wifi-menu*.
+For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Optionally install [dialog](https://www.archlinux.org/packages/?name=dialog) for usage of *wifi-menu*.
 
 ### Initramfs
 

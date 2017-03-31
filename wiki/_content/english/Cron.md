@@ -57,7 +57,7 @@ Check `/etc/cron.daily/` and similar directories to see which jobs are present. 
 
 cron registers the output from *stdout* and *stderr* and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. In order for mail to be written to a user's spool, there must be an smtp daemon running on the system, e.g. [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd). Otherwise, you can install a package that provides the sendmail command, and configure it to send mail to a remote mail exchanger. You can also log the messages by using the `-m` option and writing a custom script.
 
-1.  [Edit](/index.php/Systemd#Editing_provided_units "Systemd") the `cronie.service` unit.
+1.  [Edit](/index.php/Edit "Edit") the `cronie.service` unit.
 2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd), [ssmtp](/index.php/SSMTP "SSMTP"), or write a custom script.
 
 #### Example with ssmtp
@@ -285,7 +285,7 @@ $ crontab -e
 
 ```
 
-**Note:** By default the `crontab` command uses the `vi` editor. To change it, [export](/index.php/Environment_variable "Environment variable") `EDITOR` or `VISUAL`, or specify the editor directly: `EDITOR=vim crontab -e`.
+**Note:** By default the `crontab` command uses the `vi` editor. To change it, [export](/index.php/Export "Export") `EDITOR` or `VISUAL`, or specify the editor directly: `EDITOR=vim crontab -e`.
 
 To remove their crontabs, they should use:
 

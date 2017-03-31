@@ -143,7 +143,7 @@ At this point, only after ensuring there is no information available through pac
 
 *   Install packages from the official repositories using the method in the [Pacman#Installing packages](/index.php/Pacman#Installing_packages "Pacman") section.
 *   If the program you desire is not available, check to see if someone has created a package in the [AUR](/index.php/AUR "AUR"). Follow the method in that article for installation.
-*   Lastly, if the program you want is not in the official repositories or in the AUR, learn how to [create a package](/index.php/Creating_packages "Creating packages") for it.
+*   Lastly, if the program you want is not in the official repositories or in the AUR, learn how to [create a package](/index.php/Create_a_package "Create a package") for it.
 
 To clean up improperly installed files, see [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 
@@ -223,7 +223,7 @@ Avoid any use of the testing repository, even individual packages from testing. 
 
 ### Install the linux-lts package
 
-The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is an alternative Arch kernel package, and is available in the [core](/index.php/Official_repositories#core "Official repositories") repository. This particular kernel version has long-term support (LTS) from upstream, including security fixes and some feature backports. It is useful if you prefer the stability of less-frequent kernel updates or if you want a fallback kernel in case a new kernel version causes problems.
+The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is an alternative Arch kernel package, and is available in the [core](/index.php/Core "Core") repository. This particular kernel version has long-term support (LTS) from upstream, including security fixes and some feature backports. It is useful if you prefer the stability of less-frequent kernel updates or if you want a fallback kernel in case a new kernel version causes problems.
 
 To make it available as a boot option, you will need to update your [bootloader](/index.php/Bootloader "Bootloader")'s configuration file to use the LTS kernel and ram disk: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 

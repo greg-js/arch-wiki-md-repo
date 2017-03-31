@@ -106,7 +106,7 @@ The indicator LED for `XF86AudioMicMute` seems to be broken in some way. Accordi
 
 #### Fingerprint Reader
 
-The fingerprint reader is a Validity Sensors model (138a:0017) also used on the Thinkpad X1 Carbon and T440\. ThinkFinger does NOT support this reader. This fingerprint reader requires libfprint to be build from the current git ([https://github.com/ars3niy/fprint_vfs5011.git](https://github.com/ars3niy/fprint_vfs5011.git) ). Alternatively, it can also be done going through Fprint[[1]](https://wiki.archlinux.org/index.php/Fprint), for 20ALA0K-WIG.
+The fingerprint reader is a Validity Sensors model (138a:0017) also used on the Thinkpad X1 Carbon and T440\. ThinkFinger does NOT support this reader. This fingerprint reader requires libfprint to be build from the current git ([https://github.com/ars3niy/fprint_vfs5011.git](https://github.com/ars3niy/fprint_vfs5011.git) ). Alternatively, it can also be done going through [Fprint](/index.php/Fprint "Fprint"), for 20ALA0K-WIG.
 
 ### Caveats
 

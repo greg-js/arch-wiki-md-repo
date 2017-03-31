@@ -35,7 +35,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Fingerprint Reader | **Not working** ² |
 | Smartcard reader | **Working** |
 
-¹Pen-buttons can be assigned with xsetwacom, see [Wacom_Tablet#Remapping_Buttons](/index.php/Wacom_Tablet#Remapping_Buttons "Wacom Tablet"). Device name is "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus".
+¹Pen-buttons can be assigned with xsetwacom, see [Wacom Tablet#Remapping Buttons](/index.php/Wacom_Tablet#Remapping_Buttons "Wacom Tablet"). Device name is "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus".
 
 ²https://bugs.freedesktop.org/show_bug.cgi?id=94536
 

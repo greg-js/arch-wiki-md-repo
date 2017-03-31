@@ -190,7 +190,7 @@ Here is a list of things that you may do in order to gain some "popularity" towa
 
 ### How can I become a Trusted User?
 
-Please read [Trusted Users#How to become TU?](/index.php/Trusted_Users#How_to_become_TU.3F "Trusted Users").
+Please read [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
 
 ### What can I do as an artist?
 

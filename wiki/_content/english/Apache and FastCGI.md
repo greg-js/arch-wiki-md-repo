@@ -72,4 +72,4 @@ It doesn't work? Apache error log (`/var/log/httpd/error_log`) should help you f
 ## See also
 
 *   [lighttpd#FastCGI](/index.php/Lighttpd#FastCGI "Lighttpd")
-*   [Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server")
+*   [Apache HTTP Server#Using php-fpm and mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server")

@@ -146,7 +146,7 @@ Plex Home Theater can be launched by running `plexhometheater.sh` from your term
 
 ## Plex Media Player (PMP)
 
-Plex Media Player is the current release of Plex's media client. It has officially replaced [#Plex Home Theater (PHT)](/index.php/Plex#Plex_Home_Theater_.28PHT.29 "Plex") (which is still receiving bug fixes) and builds upon previous functionality, such as using mpv. Plex has made PMP [available](https://www.plex.tv/blog/plex-media-player-now-ambidextrous-free-kodi-said/) to all users and it has also become compatible with Kodi. Keep in mind, PMP is not open-source (unlike PHT).
+Plex Media Player is the current release of Plex's media client. It has officially replaced [#Plex Home Theater (PHT)](#Plex_Home_Theater_.28PHT.29) (which is still receiving bug fixes) and builds upon previous functionality, such as using mpv. Plex has made PMP [available](https://www.plex.tv/blog/plex-media-player-now-ambidextrous-free-kodi-said/) to all users and it has also become compatible with Kodi. Keep in mind, PMP is not open-source (unlike PHT).
 
 ### Installation
 

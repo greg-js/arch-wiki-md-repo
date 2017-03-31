@@ -520,7 +520,7 @@ If you do not want to setup Office in the default Wine prefix (`~/.wine`), creat
 
 ```
 **Tips**
-1\. You may be interested in Microsoft fonts, there are a number of ways to do so, see [Microsoft fonts](https://wiki.archlinux.org/index.php/Microsoft_fonts) article.
+1\. You may be interested in Microsoft fonts, there are a number of ways to do so, see [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") article.
 2\. If installation fails, ensure your wine prefix is 32-bit:
  $ head -5 ~/.wine/system.reg
 

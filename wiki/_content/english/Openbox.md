@@ -519,7 +519,7 @@ It is important to note that a substantial range of both **Openbox-specific** an
 
 ### Installation: official and AUR
 
-A good selection of thems are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package.
+A good selection of themes are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package.
 
 Both Openbox-specific and Openbox-compatible themes installed will be automatically installed to the `/usr/share/themes` directory. Both will also be immediately available for selection.
 

@@ -32,11 +32,11 @@ However don't be discouraged. It is the scope of this article: to simplify the i
 
 ### In place of a PHP server
 
-[Install](/index.php/Install#Installation_of_packages "Install") the [joomla](https://aur.archlinux.org/packages/joomla/) package.
+[Install](/index.php/Install "Install") the [joomla](https://aur.archlinux.org/packages/joomla/) package.
 
 ### From scratch
 
-Start by [installing](/index.php/Install#Installation_of_packages "Install") all of the necessary packages: [apache](https://www.archlinux.org/packages/?name=apache) [php](https://www.archlinux.org/packages/?name=php) [php-apache](https://www.archlinux.org/packages/?name=php-apache) [mariadb](https://www.archlinux.org/packages/?name=mariadb)
+Start by [installing](/index.php/Installing "Installing") all of the necessary packages: [apache](https://www.archlinux.org/packages/?name=apache) [php](https://www.archlinux.org/packages/?name=php) [php-apache](https://www.archlinux.org/packages/?name=php-apache) [mariadb](https://www.archlinux.org/packages/?name=mariadb)
 
 For MySQL(MariaDB) or PostgreSQL see [#Choosing between MySQL and PostgreSQL](#Choosing_between_MySQL_and_PostgreSQL)
 
@@ -44,7 +44,7 @@ For MySQL(MariaDB) or PostgreSQL see [#Choosing between MySQL and PostgreSQL](#C
 
 ### Apache
 
-See [Apache_HTTP_Server#Configuration](/index.php/Apache_HTTP_Server#Configuration "Apache HTTP Server")
+See [Apache HTTP Server#Configuration](/index.php/Apache_HTTP_Server#Configuration "Apache HTTP Server")
 
 After following the instructions you should have a running copy of Apache.
 

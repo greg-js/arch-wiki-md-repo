@@ -49,7 +49,7 @@ GStreamer 将会自动的检测并使用正确的 API [[1]](http://docs.gstreame
 *   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
 *   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU support.
 
-**注意:** 在 Intel GPUs 上启用 VA-API 支持可能会遇到视频文件缩略图的问题 详见 [GNOME Files#Thumbnailing_not_working_for_video_files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files").
+**注意:** 在 Intel GPUs 上启用 VA-API 支持可能会遇到视频文件缩略图的问题 详见 [GNOME Files#Thumbnailing not working for video files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files").
 
 ## Bugs
 

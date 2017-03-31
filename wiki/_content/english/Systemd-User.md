@@ -96,7 +96,7 @@ XDG_CONFIG_HOME DEFAULT=@{HOME}/.local/config
 XDG_DATA_HOME   DEFAULT=@{HOME}/.local/data
 ```
 
-For details about the syntax of the `.pam_environment` file see [Environment_variables#Using_pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
+For details about the syntax of the `.pam_environment` file see [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
 
  `$ systemctl --user show-environment` 
 ```

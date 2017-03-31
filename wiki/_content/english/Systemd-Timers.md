@@ -169,7 +169,7 @@ Group=systemd-journal
 
 Where `*user*` is the user being emailed and `*address*` is that user's email address. Although the recipient is hard-coded, the unit file to report on is passed as an instance parameter, so this one service can send email for many other units. At this point you can [start](/index.php/Start "Start") `status-email-*user*@dbus.service` to verify that you can receive the emails.
 
-Then simply [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service you want emails for and add `OnFailure=status-email-*user*@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
+Then simply [edit](/index.php/Edit "Edit") the service you want emails for and add `OnFailure=status-email-*user*@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
 
 **Note:**
 

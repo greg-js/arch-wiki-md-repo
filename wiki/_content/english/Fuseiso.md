@@ -34,9 +34,9 @@ To unmount the image, use `fusermount -u *mountpoint*`, it works fine even with 
 
 ## Using with GNOME Files
 
-For users of GNOME there is an easy way of using fuseiso from the nautilus-context menu. First you will need the [nautilus-actions](https://www.archlinux.org/packages/?name=nautilus-actions) package, then you need to save the following scripts to a folder of your choice (eg. `/usr/local/bin`):
+For users of GNOME there is an easy way of using fuseiso from the nautilus-context menu. First you will need the [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions) package, then you need to save the following scripts to a folder of your choice (eg. `/usr/local/bin`):
 
- `nautilus-actions-iso-mount.sh` 
+ `filemanager-actions-iso-mount.sh` 
 ```
  #!/bin/bash
 
@@ -46,7 +46,7 @@ For users of GNOME there is an easy way of using fuseiso from the nautilus-conte
  fuseiso -p "$1" "$MOUNTPOINT"
 
 ```
- `nautilus-actions-iso-umount.sh` 
+ `filemanager-actions-iso-umount.sh` 
 ```
  #!/bin/bash
 
@@ -60,17 +60,17 @@ For users of GNOME there is an easy way of using fuseiso from the nautilus-conte
 and make them executable:
 
 ```
-chmod +x */path_to_scripts/*nautilus-actions-iso-*
+chmod +x */path_to_scripts/*filemanager-actions-iso-*
 
 ```
 
-Now, start *nautilus-actions-config* (*System > Preferences > Nautilus Actions Configuration*).
+Now, start *fma-config-tool* (*System > Preferences > Nautilus Actions Configuration*).
 
 Add a new action with the following settings:
 
 *   Label: *Mount ISO*
 *   Icon: A symbol of your choice (eg: *gtk-cdrom*)
-*   Path: `*/path_to_scripts/*nautilus-actions-iso-mount.sh`
+*   Path: `*/path_to_scripts/*filemanager-actions-iso-mount.sh`
 *   Parameters: *%F*
 *   Working directory: *%d*
 *   Basenames: **.iso ; *.nrg ; *.bin ; *.img ; *.mdf (for each add a seperated entry)*
@@ -83,7 +83,7 @@ And a second one:
 
 *   Label: *Unmount ISO*
 *   Icon: A symbol of your choice (eg: *gtk-cdrom*)
-*   Path: `*/path_to_scripts/*nautilus-actions-iso-umount.sh`
+*   Path: `*/path_to_scripts/*filemanager-actions-iso-umount.sh`
 *   Parameters: *%F*
 *   Working directory: *%d*
 *   Basenames: **.iso ; *.nrg ; *.bin ; *.img ; *.mdf (for each add a seperated entry)*

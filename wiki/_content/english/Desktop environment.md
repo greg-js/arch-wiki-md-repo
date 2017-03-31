@@ -268,8 +268,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
 [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
 [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
-[caja](https://www.archlinux.org/packages/?name=caja) | [Galculator](http://galculator.sourceforge.net/)
-[galculator](https://www.archlinux.org/packages/?name=galculator) | pluma
+[caja](https://www.archlinux.org/packages/?name=caja) | MATE Calc
+[mate-calc](https://www.archlinux.org/packages/?name=mate-calc) | pluma
 [pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
 [eom](https://www.archlinux.org/packages/?name=eom) | [Parole](http://docs.xfce.org/apps/parole/start)
 [parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")

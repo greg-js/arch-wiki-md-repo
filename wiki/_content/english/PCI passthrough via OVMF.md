@@ -738,7 +738,7 @@ pulseaudio --start
 
 ```
 
-Virtual Machine audio will now be routed through the host as an application. The application [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) can be used to control the output device. Be aware that on Windows guests, this can cause audio crackling without [using Message-Signaled Interrupts.](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+Virtual Machine audio will now be routed through the host as an application. The application [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) can be used to control the output device. Be aware that on Windows guests, this can cause audio crackling without [using Message-Signaled Interrupts.](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
 
 ### Gotchas
 

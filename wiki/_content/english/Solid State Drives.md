@@ -60,7 +60,7 @@ To verify TRIM support, run:
 
 And check the values of DISC-GRAN and DISC-MAX columns. Non-zero values indicate TRIM support.
 
-Or [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") [hdparm](https://www.archlinux.org/packages/?name=hdparm) package and run:
+Or [install](/index.php/Install "Install") [hdparm](https://www.archlinux.org/packages/?name=hdparm) package and run:
 
 ```
 # hdparm -I /dev/sda | grep TRIM
@@ -213,7 +213,7 @@ ADATA has a utility available for Linux (i686) on their support page [here](http
 
 Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product [here](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File."
 
-**Note:** ISO images provided by Crucial does not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/Partitioning#Master_Boot_Record "Partitioning") won't be present, making such device unbootable.
+**Note:** ISO images provided by Crucial does not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/MBR "MBR") won't be present, making such device unbootable.
 
 Owners of an M4 Crucial model, may check if a firmware upgrade is needed with `smartctl`.
 

@@ -117,4 +117,4 @@ Open Keepass stores inside Nextcloud
 
 ## See Also
 
-*   [Pass](/index.php/Pass "Pass")
+*   [List of applications/Security#Password_managers](/index.php/List_of_applications/Security#Password_managers "List of applications/Security")

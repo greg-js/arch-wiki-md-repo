@@ -67,7 +67,7 @@ To make it stick across server reboots, add the bind mount to `fstab`:
 
 ```
 
-**Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bindmount](/index.php/ZFS#Bindmount "ZFS").
+**Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
 
 Add directories to be shared and an ip address or hostname(s) of client machines that will be allowed to mount them in `exports`:
 

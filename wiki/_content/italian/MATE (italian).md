@@ -209,7 +209,7 @@ Le applicazioni Qt4 potrebbero non ereditare il tema GTK2\. Questo problema si p
 
 ### Evolution Email non funziona
 
-si guardi [Evolution#Using Evolution Outside Of Gnome](/index.php/Evolution#Using_Evolution_Outside_Of_Gnome "Evolution").
+si guardi [Evolution#Using Evolution Outside Of GNOME](/index.php/Evolution#Using_Evolution_Outside_Of_GNOME "Evolution").
 
 ### Sticky Notes persi durante riavvio
 

@@ -27,4 +27,4 @@ See [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card
 
 ### Rebinding Forward and Back Keys
 
-See [T420](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T420#Rebind_Forward_and_Back_keys)
+See [T420](/index.php/Lenovo_ThinkPad_T420#Rebind_Forward_and_Back_keys "Lenovo ThinkPad T420")

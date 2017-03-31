@@ -243,27 +243,24 @@ This article is a general list of applications sorted by category, as a referenc
     *   [7.3 Time management](#Time_management)
         *   [7.3.1 Console](#Console_17)
         *   [7.3.2 Graphical](#Graphical_16)
-    *   [7.4 Emulators](#Emulators)
-        *   [7.4.1 Consoles](#Consoles)
-        *   [7.4.2 Other](#Other_4)
-    *   [7.5 Accessibility](#Accessibility)
-        *   [7.5.1 Screen reading](#Screen_reading)
-        *   [7.5.2 Speech recognition](#Speech_recognition)
-    *   [7.6 Amateur radio](#Amateur_radio)
-    *   [7.7 Display calibration](#Display_calibration)
-    *   [7.8 Display managers](#Display_managers)
-    *   [7.9 Command shells](#Command_shells)
-    *   [7.10 Terminal multiplexers](#Terminal_multiplexers)
-    *   [7.11 Desktop environments](#Desktop_environments)
-        *   [7.11.1 Window managers](#Window_managers)
-            *   [7.11.1.1 Console](#Console_18)
-            *   [7.11.1.2 Graphical](#Graphical_17)
-            *   [7.11.1.3 Composite managers](#Composite_managers)
-        *   [7.11.2 Window tilers](#Window_tilers)
-        *   [7.11.3 Taskbars](#Taskbars)
-        *   [7.11.4 Application launchers](#Application_launchers)
-        *   [7.11.5 Wallpaper setters](#Wallpaper_setters)
-        *   [7.11.6 Virtual desktop pagers](#Virtual_desktop_pagers)
+    *   [7.4 Accessibility](#Accessibility)
+        *   [7.4.1 Screen reading](#Screen_reading)
+        *   [7.4.2 Speech recognition](#Speech_recognition)
+    *   [7.5 Amateur radio](#Amateur_radio)
+    *   [7.6 Display calibration](#Display_calibration)
+    *   [7.7 Display managers](#Display_managers)
+    *   [7.8 Command shells](#Command_shells)
+    *   [7.9 Terminal multiplexers](#Terminal_multiplexers)
+    *   [7.10 Desktop environments](#Desktop_environments)
+        *   [7.10.1 Window managers](#Window_managers)
+            *   [7.10.1.1 Console](#Console_18)
+            *   [7.10.1.2 Graphical](#Graphical_17)
+            *   [7.10.1.3 Composite managers](#Composite_managers)
+        *   [7.10.2 Window tilers](#Window_tilers)
+        *   [7.10.3 Taskbars](#Taskbars)
+        *   [7.10.4 Application launchers](#Application_launchers)
+        *   [7.10.5 Wallpaper setters](#Wallpaper_setters)
+        *   [7.10.6 Virtual desktop pagers](#Virtual_desktop_pagers)
 *   [8 See also](#See_also)
 
 ## Internet
@@ -476,7 +473,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
 
-*   **[Uzbl](/index.php/UZBL-Browser "UZBL-Browser")** — Group of web interface tools which adhere to the Unix philosophy.
+*   **[Uzbl](/index.php/Uzbl "Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
 
 	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
 
@@ -856,7 +853,7 @@ This section lists all software with [instant messaging](https://en.wikipedia.or
 
 See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
 
-**Note:** Most web browsers and many IM clients also support IRC.
+**Note:** There are IRC web interfaces and many IM clients also support IRC.
 
 ###### Console
 
@@ -926,9 +923,9 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client) [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client for the GNOME desktop inspired by [Irssi](/index.php/Irssi "Irssi").
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter, Facebook Chat, Google Talk and Jabber / XMPP.
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
 ##### XMPP (Jabber) clients
 
@@ -3214,7 +3211,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 ### Clock synchronization
 
-See [Time#Time_synchronization](/index.php/Time#Time_synchronization "Time").
+See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
 
 ### System monitoring
 
@@ -3378,7 +3375,7 @@ See [pacman tips#Utilities](/index.php/Pacman_tips#Utilities "Pacman tips").
 
 ### Input methods
 
-See the main article: [Internationalization#Input_methods_in_Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
+See the main article: [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
 
 ## Documents and texts
 
@@ -5236,127 +5233,6 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 *   **[Workrave](https://en.wikipedia.org/wiki/Workrave "wikipedia:Workrave")** — A tool to help RSI.
 
 	[http://www.workrave.org/](http://www.workrave.org/) || [workrave](https://www.archlinux.org/packages/?name=workrave)
-
-### Emulators
-
-An emulator is a program which serves to replicate the functions of another platform or system so as to allow applications and games to be run in environments they were not programmed for.
-
-**Note:** For possibly more up to date selection of emulators, try checking the [AUR 'emulators' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&L=0&C=5&SeB=nd&SB=n&SO=a&PP=25)
-
-**Warning:** Owning a high-level emulator is not illegal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.
-
-#### Consoles
-
-See also [Wikipedia:List of video game console emulators](https://en.wikipedia.org/wiki/List_of_video_game_console_emulators "wikipedia:List of video game console emulators").
-
-*   **Citra** — Nintendo 3DS emulator.
-
-	[http://citra-emu.org/](http://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
-
-*   **DeSmuME** — Nintendo DS emulator.
-
-	[http://desmume.org/](http://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
-
-*   **[Dolphin](/index.php/Dolphin_emulator "Dolphin emulator")** — Very capable GameCube and Wii emulator.
-
-	[http://dolphin-emu.org/](http://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
-
-*   **epsxe** — Emulator for the PlayStation video game console for x86-based PC hardware.
-
-	[http://www.epsxe.com/](http://www.epsxe.com/) || [epsxe](https://aur.archlinux.org/packages/epsxe/)
-
-*   **FCEUX** — NTSC and PAL 8 bit Nintendo/Famicom emulator that is an evolution of the original FCE Ultra emulator. It is accurate, compatible and actively maintained.
-
-	[http://fceux.com/](http://fceux.com/) || [fceux](https://www.archlinux.org/packages/?name=fceux)
-
-*   **Gambatte** — Accurate Game Boy Color emulator
-
-	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://www.archlinux.org/packages/?name=gambatte-qt)), SDL CLI frontend ([gambatte-sdl](https://www.archlinux.org/packages/?name=gambatte-sdl)).
-
-*   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
-
-*   activate OpenGL, set video resolution per custom to 1024x600 for streched full-screen or 800x600 for non-streched;
-*   use "Normal" renderer, I couldn't find a visible advantage with the other ones.
-
-	[http://www.gens.me/](http://www.gens.me/) || [gens](https://www.archlinux.org/packages/?name=gens)
-
-*   **Gens-GS** — Gens2, rewritten in C++, combining features from various Gens forks.
-
-	[http://segaretro.org/Gens/GS](http://segaretro.org/Gens/GS) || [gens-gs](https://www.archlinux.org/packages/?name=gens-gs)
-
-*   **gngeo** — Command-line NeoGeo emulator.
-
-	[http://gngeo.googlecode.com](http://gngeo.googlecode.com) || [gngeo](https://aur.archlinux.org/packages/gngeo/)
-
-*   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
-
-	[https://byuu.org/emulation/higan/](https://byuu.org/emulation/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
-
-*   **mednafen** — Command line driven multi system emulator.
-
-	[http://mednafen.sourceforge.net/](http://mednafen.sourceforge.net/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
-
-*   **Mupen64Plus** — Highly compatible Nintendo 64 emulator with plugin system.
-
-	[http://www.mupen64plus.org/](http://www.mupen64plus.org/) || [mupen64plus](https://www.archlinux.org/packages/?name=mupen64plus) or a graphical front-end, such as [m64py](https://aur.archlinux.org/packages/m64py/) or [cutemupen](https://aur.archlinux.org/packages/cutemupen/).
-
-*   **pSX** — A not plugin-based PlayStation emulator with fairly high compatibility.
-
-	[http://psxemulator.gazaxian.com/](http://psxemulator.gazaxian.com/) || [psx](https://aur.archlinux.org/packages/psx/)
-
-*   **PCSXR** — PlayStation emulator; Debian fork of the abandoned original PCSX
-
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
-
-*   **PCSX2** — PlayStation 2 emulator. It is still being maintained and developed. It requires BIOS files.
-
-	[http://www.pcsx2.net/](http://www.pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
-
-*   **PPSSPP** — PlayStation Portable emulator.
-
-	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
-
-*   **snes-9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
-
-	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x](https://www.archlinux.org/packages/?name=snes9x)
-
-*   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Game Boy emulator with Game Boy Advance, Game Boy Color, and Super Game Boy support.
-
-	[http://vba.ngemu.com/](http://vba.ngemu.com/) || [vbam-gtk](https://www.archlinux.org/packages/?name=vbam-gtk)
-
-*   **ZSNES** — Highly compatible Super Nintendo emulator.
-
-	[http://www.zsnes.com/](http://www.zsnes.com/) || [zsnes](https://www.archlinux.org/packages/?name=zsnes)
-
-#### Other
-
-*   **DOSBox** — Open-source DOS emulator which primarily focuses on running DOS Games.
-
-	[http://www.dosbox.com/](http://www.dosbox.com/) || [dosbox](https://www.archlinux.org/packages/?name=dosbox)
-
-*   **DOSEmu** — Open-source DOS emulator.
-
-	[http://www.dosemu.org/](http://www.dosemu.org/) || [dosemu](https://www.archlinux.org/packages/?name=dosemu)
-
-*   **MAME** — Multiple Arcade Machine Emulator.
-
-	[http://mamedev.org/](http://mamedev.org/) || [sdlmame](https://www.archlinux.org/packages/?name=sdlmame)
-
-*   **ResidualVM** — Cross-platform 3D game interpreter which allows you to play LucasArts' Lua-based 3D adventures.
-
-	[http://residualvm.org/](http://residualvm.org/) || [residualvm](https://aur.archlinux.org/packages/residualvm/)
-
-*   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
-
-	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
-
-*   **ScummVM** — Virtual machine for old school adventures.
-
-	[http://www.scummvm.org/](http://www.scummvm.org/) || [scummvm](https://www.archlinux.org/packages/?name=scummvm)
-
-*   **X Neko Project II** — PC-9801 emulator.
-
-	[http://www.asahi-net.or.jp/~aw9k-nnk/np2/](http://www.asahi-net.or.jp/~aw9k-nnk/np2/) || [xnp2](https://aur.archlinux.org/packages/xnp2/)
 
 ### Accessibility
 

@@ -93,14 +93,14 @@ If you are experiencing a decrease in bandwidth at seemingly random times try sw
 
 ### Enabling the light sensor
 
-Intersil ISL29018 is the light sensor in the C720, as default its module is disabled on build time so in order to use the sensor the kernel should be recompiled with `CONFIG_SENSORS_ISL29018` enabled. You can also compile just the single module. Follow the preparation instructions as [Compile_kernel_module](/index.php/Compile_kernel_module "Compile kernel module"), enable the module in your `.config` and execute
+Intersil ISL29018 is the light sensor in the C720, as default its module is disabled on build time so in order to use the sensor the kernel should be recompiled with `CONFIG_SENSORS_ISL29018` enabled. You can also compile just the single module. Follow the preparation instructions as [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module"), enable the module in your `.config` and execute
 
 ```
 $ make SUBDIRS=drivers/staging/iio/light modules
 
 ```
 
-then follow [Compile_kernel_module#Module_installation](/index.php/Compile_kernel_module#Module_installation "Compile kernel module") to install the module.
+then follow [Compile kernel module#Module installation](/index.php/Compile_kernel_module#Module_installation "Compile kernel module") to install the module.
 
 ## Suspend
 

@@ -74,7 +74,7 @@ It is recommended to run DNSCrypt as a forwarder for a local DNS cache, otherwis
 
 **Note:** Changing the IP address or port in `/etc/dnscrypt-proxy.conf` [does not work](https://github.com/jedisct1/dnscrypt-proxy/issues/528) when using the provided systemd unit and must be changed in the provided systemd socket as follows.
 
-In order to forward to a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `5353` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.socket` with the following contents:
+In order to forward to a local DNS cache, *dnscrypt-proxy* should listen on a port different from the default `53`, since the DNS cache itself needs to listen on `53` and query *dnscrypt-proxy* on a different port. Port number `5353` is used as an example in this section. In this example, the port number is larger than 1024 so *dnscrypt-proxy* is not required to be run by root. [Edit](/index.php/Edit "Edit") `dnscrypt-proxy.socket` with the following contents:
 
 ```
 [Socket]

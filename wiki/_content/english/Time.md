@@ -151,7 +151,7 @@ If the above appears to have no effect, and a 64-bit variant of Windows is being
 
 Should Windows ask to update the clock due to DST changes, let it. It will leave the clock in UTC as expected, only correcting the displayed time.
 
-The hardware clock and system clock time may need to be [updated](#Set_clock) after setting this value.
+The [#Hardware clock](#Hardware_clock) and [#System clock](#System_clock) time may need to be updated after setting this value.
 
 If you are having issues with the offset of the time, try reinstalling [tzdata](https://www.archlinux.org/packages/?name=tzdata) and then setting your time zone again:
 

@@ -313,7 +313,7 @@ Only full fingerprints are accepted. They must be uppercase and must not contain
 
 **Note:** You can use `gpg --list-keys --fingerprint <KEYID>` to find out the fingerprint of the appropriate key.
 
-Please read [Makepkg#Signature_checking](/index.php/Makepkg#Signature_checking "Makepkg") for more information.
+Please read [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg") for more information.
 
 ## Integrity
 

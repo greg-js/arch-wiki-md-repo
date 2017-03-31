@@ -221,9 +221,7 @@ Icons can be automatically downloaded from [openiconlibrary](http://openiconlibr
 
 ### List or search in .desktop files
 
-The [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) script is listing available *.desktop* files or searching in their content.
-
-Examples
+[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) can list available *.desktop* files or search their contents.
 
 ```
 $ lsdesktopf
@@ -232,15 +230,7 @@ $ lsdesktopf --list gtk zh_TW,zh_CN,en_GB
 
 ```
 
-List MIME-types or parts of MIME-types found in *.desktop*, and which desktop files shares same MIME-type, output is equal as in [mimeapps.list](/index.php/Default_applications#Configuration_of_the_mimeapps.list_file "Default applications") for section `[Added Associations]`.
-
-```
-$ lsdesktopf --gm
-$ lsdesktopf --gm [options]
-
-```
-
-For more options use `lsdesktopf --help`.
+It can also perform MIME-type-related searches. See [Default applications#lsdesktopf](/index.php/Default_applications#lsdesktopf "Default applications").
 
 ### fbrokendesktop
 

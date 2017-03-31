@@ -59,7 +59,7 @@ See [Category:Getting and installing Arch](/index.php/Category:Getting_and_insta
 
 ### Microphone
 
-See [PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting") and [PulseAudio/Troubleshooting#Static_noise_in_microphone_recording](/index.php/PulseAudio/Troubleshooting#Static_noise_in_microphone_recording "PulseAudio/Troubleshooting").
+See [PulseAudio/Troubleshooting#Microphone not detected by PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting") and [PulseAudio/Troubleshooting#Static noise in microphone recording](/index.php/PulseAudio/Troubleshooting#Static_noise_in_microphone_recording "PulseAudio/Troubleshooting").
 
 ### Video
 

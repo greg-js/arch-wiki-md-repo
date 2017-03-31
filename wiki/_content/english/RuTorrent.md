@@ -213,7 +213,7 @@ sudo systemctl start php-fpm nginx
 
 ```
 
-*   Consider using [rtorrent with tmux](/index.php/RTorrent#systemd_service_file_with_tmux_or_screen "RTorrent")
+*   Consider using [rtorrent with tmux](/index.php/RTorrent#Systemd_services_using_tmux_or_screen "RTorrent")
 *   Navigate to [http://localhost/rutorrent/](http://localhost/rutorrent/)
 
 ### Lighttpd

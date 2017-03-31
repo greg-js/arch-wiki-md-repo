@@ -1398,7 +1398,7 @@ Splice comes with both x86 and x64 binaries. Steam does not have to be running t
 
 ## Star Wars Battlefront II
 
-Star wars battlefront 2's steam version running under [WINE](/index.php/Wine "Wine") has a bug which causes it to take forever to load a game. The solution is to compile a custom wine version with the patch from this [WINEHQ bug page](https://bugs.winehq.org/show_bug.cgi?id=29582) Instructions are at the bottom of the page.
+Star wars battlefront 2's steam version running under [Wine](/index.php/Wine "Wine") has a bug which causes it to take forever to load a game. The solution is to compile a custom wine version with the patch from this [WINEHQ bug page](https://bugs.winehq.org/show_bug.cgi?id=29582) Instructions are at the bottom of the page.
 
 **Note:** The required patch is called "updated patchset (GetForgroundWindow hack + posix semaphores) rebased onto wine-1.7.55".
 
@@ -1603,7 +1603,7 @@ $ ln -s /usr/lib32/libopenal.so libOpenAL.so
 *   [lib32-gstreamer0.10-base](https://aur.archlinux.org/packages/lib32-gstreamer0.10-base/)
 *   [lib32-pangox-compat](https://aur.archlinux.org/packages/lib32-pangox-compat/)
 
-As lib32-gstreamer0.10-base is quite hard to build you can use [alucryd-multilib](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#alucryd-multilib) repo for this package
+As lib32-gstreamer0.10-base is quite hard to build you can use [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repo for this package
 
 ## Tomb Raider
 

@@ -157,11 +157,11 @@ Failed to read or parse configuration '/dev/fd/63'
 
 ## 高级用法
 
-对于各种纷繁复杂的网络，更常见的场景是使用 [[EAP](https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE)] 管理配置文件。各种配置及其范例可参阅手册页[wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)；所有可支持的配置参数可参考范例文件 `/etc/wpa_supplicant/wpa_supplicant.conf`。
+对于各种纷繁复杂的网络，更常见的场景是使用 [EAP](https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE) 管理配置文件。各种配置及其范例可参阅手册页[wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)；所有可支持的配置参数可参考范例文件 `/etc/wpa_supplicant/wpa_supplicant.conf`。
 
 ### 配置
 
-如上文中[#带 WPA 通行字的连接](#.E5.B8.A6_WPA_.E9.80.9A.E8.A1.8C.E5.AD.97.E7.9A.84.E8.BF.9E.E6.8E.A5)一节所述，一个基本的配置文件可以这样生成：
+如上文中[#带 wpa 通行字的连接](#.E5.B8.A6_wpa_.E9.80.9A.E8.A1.8C.E5.AD.97.E7.9A.84.E8.BF.9E.E6.8E.A5)一节所述，一个基本的配置文件可以这样生成：
 
 ```
 # wpa_passphrase MYSSID passphrase > /etc/wpa_supplicant/example.conf

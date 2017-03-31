@@ -191,7 +191,7 @@
 
 ### Как я могу стать доверенным пользователем?
 
-Прочтите [Trusted Users#How to become TU?](/index.php/Trusted_Users#How_to_become_TU.3F "Trusted Users").
+Прочтите [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
 
 ### Что я могу сделать как художник?
 

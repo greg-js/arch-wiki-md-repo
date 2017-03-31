@@ -50,7 +50,7 @@ Dolphin uses *KIO slaves* for network access, trash and other functionality, unl
 
 ### Device names shown as "X GiB Harddrive"
 
-Create a filesystem label, or a partition label, and Dolphin will show this label in the device list instead of the size. See [Persistent_block_device_naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming").
+Create a filesystem label, or a partition label, and Dolphin will show this label in the device list instead of the size. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming").
 
 ### Transparent fonts
 
