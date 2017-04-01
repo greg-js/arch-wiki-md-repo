@@ -113,66 +113,64 @@ Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should autom
 
 ### Multiple Copy Problem
 
-Sometimes when using the latest drivers, the printer will print multiple copies (my MFC-9330CDW printed 10 copies, yours may differ). The solution is to update the firmware (there is a windows tool, but it didn't work for me). To start you will need snmpwalk (found here: [http://www.ireasoning.com/downloadmibbrowserfree.php](http://www.ireasoning.com/downloadmibbrowserfree.php)).
+Sometimes when using the latest drivers, the printer will print multiple copies (for instance a MFC-9330CDW printed 10 copies). The solution is to update the firmware (there is a windows tool, but it didn't work for me).
+
+[Install](/index.php/Install "Install") [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) and run:
 
 ```
-mkdir Brother_FW
-cd Brother_FW
-wget [http://www.ireasoning.com/download/mibfree/mibbrowser.zip](http://www.ireasoning.com/download/mibfree/mibbrowser.zip)
-unzip mibbrowser.zip
-./ireasoning/mibbrowser/snmpwalk.sh -c public $PRINTER_IP > snmp_output.log
-cat snmp_output.log | grep -A 1 3.6.1.4.1.2435.2.4.3.99.3.1.6.1.2
+snmpwalk -c public $PRINTER_IP | grep -A 1 3.6.1.4.1.2435.2.4.3.99.3.1.6.1.2
 
 ```
 
-At this point, you will have the relevant data that has to be passed to Brother to get a valid Firmware download link. That file will look similar to the one below (name it `request.xml`):
+At this point, you will have the relevant data to get a valid firmware download link from Brother. The file should look similar to the one below:
+
+ `request.xml` 
+```
+ <REQUESTINFO>
+    <FIRMUPDATETOOLINFO>
+        <FIRMCATEGORY>MAIN</FIRMCATEGORY>
+        <OS>LINUX</OS>
+        <INSPECTMODE>1</INSPECTMODE>
+    </FIRMUPDATETOOLINFO>
+
+    <FIRMUPDATEINFO>
+        <MODELINFO>
+            <SELIALNO></SELIALNO>
+            <NAME>MFC-9330CDW</NAME>
+            <SPEC>0401</SPEC>
+            <DRIVER></DRIVER>
+            <FIRMINFO>
+                <FIRM>
+                    <ID>MAIN</ID>
+                    <VERSION>R1506121801:4504</VERSION>
+                </FIRM>
+                <FIRM>
+                    <ID>SUB1</ID>
+                    <VERSION>1.07</VERSION>
+                </FIRM>
+                <FIRM>
+                    <ID>SUB2</ID>
+                    <VERSION>L1505291600</VERSION>
+                </FIRM>
+            </FIRMINFO>
+        </MODELINFO>
+        <DRIVERCNT>1</DRIVERCNT>
+        <LOGNO>2</LOGNO>
+        <ERRBIT></ERRBIT>
+        <NEEDRESPONSE>1</NEEDRESPONSE>
+    </FIRMUPDATEINFO>
+ </REQUESTINFO>
 
 ```
-<REQUESTINFO>
-   <FIRMUPDATETOOLINFO>
-       <FIRMCATEGORY>MAIN</FIRMCATEGORY>
-       <OS>LINUX</OS>
-       <INSPECTMODE>1</INSPECTMODE>
-   </FIRMUPDATETOOLINFO>
 
-   <FIRMUPDATEINFO>
-       <MODELINFO>
-           <SELIALNO></SELIALNO>
-           <NAME>MFC-9330CDW</NAME>
-           <SPEC>0401</SPEC>
-           <DRIVER></DRIVER>
-           <FIRMINFO>
-               <FIRM>
-                   <ID>MAIN</ID>
-                   <VERSION>R1506121801:4504</VERSION>
-               </FIRM>
-               <FIRM>
-                   <ID>SUB1</ID>
-                   <VERSION>1.07</VERSION>
-               </FIRM>
-               <FIRM>
-                   <ID>SUB2</ID>
-                   <VERSION>L1505291600</VERSION>
-               </FIRM>
-           </FIRMINFO>
-       </MODELINFO>
-       <DRIVERCNT>1</DRIVERCNT>
-       <LOGNO>2</LOGNO>
-       <ERRBIT></ERRBIT>
-       <NEEDRESPONSE>1</NEEDRESPONSE>
-   </FIRMUPDATEINFO>
-</REQUESTINFO>
-
-```
-
-Next, we post this file to Brother and extract the resulting URL.
+Post this file to Brother:
 
 ```
 curl -X POST -d @request.xml [https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate](https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate) -H "Content-Type:text/xml" > response.xml
 
 ```
 
-In `response.xml` you will find a `<PATH>` tag that contains the url. Next, we download the firmware, push it to the printer, and let the printer process it. Before that is done, change the Admin password to something known, it will be used as the user to log into the FTP site (VERY bad practice, don't do this).
+In `response.xml` you will find a `<PATH>` tag that contains the firmware download URL. Next, download the firmware, push it to the printer, and let the printer process it. Before that is done, change the Admin password to something known, it will be used as the user to log into the FTP site (VERY bad practice, don't do this).
 
 ```
 wget [http://update-akamai.brother.co.jp/CS/LZ4266_W.djf](http://update-akamai.brother.co.jp/CS/LZ4266_W.djf)

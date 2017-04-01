@@ -18,7 +18,7 @@ SSL connections are supported by default in this packages. Also Firefox plugin w
 
 #### Google Chromium
 
-If you have problems launching Citrix applications with Chromium, just go to `about:plugins` and disable "Citrix Receiver for Linux".
+If you have problems launching Citrix applications with Chromium, just go to `chrome://extensions` and disable "Citrix Receiver for Linux".
 
 Next, create `/usr/share/applications/wfica.desktop` (Exec path may vary based on package installed):
 

@@ -902,6 +902,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://web.archive.org/web/odakyufan.zxq.net/openbve/](https://web.archive.org/web/odakyufan.zxq.net/openbve/) || [openbve](https://www.archlinux.org/packages/?name=openbve)
 
+*   **[Oolite](https://en.wikipedia.org/wiki/Oolite_(video_game) "wikipedia:Oolite (video game)")** — 3D space trading and combat simulator in the spirit of Elite.
+
+	[http://oolite.org/](http://oolite.org/) || [oolite](https://www.archlinux.org/packages/?name=oolite)
+
 *   **[Pioneer](https://en.wikipedia.org/wiki/Pioneer_(video_game) "wikipedia:Pioneer (video game)")** — Open source, 3D, freeform single player space adventure set in the Milkyway galaxy at the turn of the 31st century in the spirit of Frontier: Elite II.
 
 	[http://pioneerspacesim.net/](http://pioneerspacesim.net/) || [pioneer](https://aur.archlinux.org/packages/pioneer/)

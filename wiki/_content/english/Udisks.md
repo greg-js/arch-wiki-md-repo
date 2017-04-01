@@ -37,23 +37,19 @@ The automatic mounting of devices is easily achieved with udisks wrappers. See a
 
 ### devmon
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible with *udisks* and *udisks2*. It uses mount helpers with the following priority:
+[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible with *udisks* and *udisks2*. It uses programs with the following priority:
 
 1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
 2.  pmount (SUID)
 3.  udisks
 4.  udisks2
 
-To mount devices with *udisks* or *udisks2*, remove the SUID permission from *udevil*:
+**Note:**
 
-```
-# chmod -s /usr/bin/udevil
+*   *udevil* or *pmount* are only considered if set SUID. To remove this permission, run `chmod -s /usr/bin/*udevil*` as root).
+*   If *udevil* is further not executable (removed with `chmod -x /usr/bin/udevil` as root), *udisks* is used to monitor for new devices.
 
-```
-
-**Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use *udisks* for device monitoring
-
-**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind that services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. The service reads command line arguments for devmon from the `/etc/conf.d/devmon` file. Keep in mind that services run outside the [session](/index.php/Session "Session"): adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
 
 ### udevadm monitor
 

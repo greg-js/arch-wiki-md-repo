@@ -119,7 +119,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Убедитесь, что Вы [предоставляете информацию о багах](/index.php/KDE#Bugs "KDE") в процессе использования.
+Убедитесь, что Вы [предоставляете информацию о багах](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") в процессе использования.
 
 #### Отключение testing
 

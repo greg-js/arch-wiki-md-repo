@@ -643,12 +643,12 @@ As an example, we will investigate an error with `systemd-modules-load` service:
 
 **1.** Lets find the *systemd* services which fail to start at boot time:
 
- `$ systemctl --failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
+ `$ systemctl --state=failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
 
 Another way is to live log *systemd* messages:
 
 ```
-$ systemctl -fp err
+$ journalctl -fp err
 
 ```
 
@@ -798,7 +798,7 @@ Also=virtlogd.socket
 
 ```
 
-This only defines the necessary/dependent sockets to be enabled services(i.e. as "autostart"), too - but does not start them whenever the DISABLED (= non-autostarting) service ist started manually e.g. by running `systemctl start libvirtd`
+This only defines the necessary/dependent sockets to be enabled services(i.e. as "autostart"), too - but does not start them whenever the DISABLED (= non-autostarting) service is started manually e.g. by running `systemctl start libvirtd`
 
 Thus the correct (?) way to manually start a service with dependent subservices once (instead of at each start of the system) probably is
 

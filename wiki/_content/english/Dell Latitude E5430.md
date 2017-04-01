@@ -2,19 +2,18 @@ The Dell Latitude E5430 is a business line laptop made for corporate users who h
 
 ## Contents
 
-*   [1 Hardware](#Hardware)
-*   [2 Installation](#Installation)
-*   [3 Wireless](#Wireless)
-    *   [3.1 Broadcom BCM5761](#Broadcom_BCM5761)
-*   [4 Graphic Interface Configuration](#Graphic_Interface_Configuration)
-    *   [4.1 Issue with XKeyboardConfig](#Issue_with_XKeyboardConfig)
-*   [5 General Configurations](#General_Configurations)
-    *   [5.1 PC Speaker](#PC_Speaker)
-    *   [5.2 Synaptics Touchpad](#Synaptics_Touchpad)
+*   [1 Hardware Overview](#Hardware_Overview)
+*   [2 Bluetooth](#Bluetooth)
+*   [3 Fingerprint](#Fingerprint)
+*   [4 Synaptics Touchpad](#Synaptics_Touchpad)
+*   [5 Wireless](#Wireless)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Issue with XKeyboardConfig](#Issue_with_XKeyboardConfig)
+    *   [6.2 Disable PC Speaker](#Disable_PC_Speaker)
 
-## Hardware
+## Hardware Overview
 
-Modules found by hwdetect:
+Modules found by [hwdetect](https://www.archlinux.org/packages/?name=hwdetect):
 
 ```
 AGP      : intel-gtt 
@@ -63,21 +62,59 @@ lspci output:
 
 ```
 
-## Installation
+lsusb output:
 
-You can follow the [Installation guide](/index.php/Installation_guide "Installation guide") to get yourself up and running. Just few exceptions mentioned below.
+```
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 005: ID 08ff:2810 AuthenTec, Inc. AES2810
+Bus 001 Device 004: ID 0c45:643f Microdia Dell Integrated HD Webcam
+Bus 001 Device 003: ID 413c:8197 Dell Computer Corp. 
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+## Bluetooth
+
+Install [bluez](https://www.archlinux.org/packages/?name=bluez) package, start and/or enable `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+
+## Fingerprint
+
+You should find a fingerprint sensor with
+
+```
+$ lsusb | grep AuthenTec
+Bus 001 Device 005: ID 08ff:2810 AuthenTec, Inc. AES2810
+
+```
+
+You'll need the [fprintd](https://www.archlinux.org/packages/?name=fprintd) package. See [fprint](/index.php/Fprint "Fprint") for more information.
+
+## Synaptics Touchpad
+
+Install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for enabling the touchpad.
 
 ## Wireless
 
-### Broadcom BCM5761
+You may find out which wireless network card you have with:
 
-This card requires the proprietary [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver, available in AUR (alternatively, you can use its dkms version, [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)).
+```
+$ lspci | grep Broadcom | grep -v Ethernet
 
-## Graphic Interface Configuration
+```
+
+It seems this laptop may have BCM5761 or BCM43228.
+
+In both cases, you will need the proprietary driver [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), or its dkms version, [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/).
+
+## Troubleshooting
 
 ### Issue with XKeyboardConfig
 
-While starting the graphic interface, you might come across with the bug [#77504](https://bugs.freedesktop.org/show_bug.cgi?id=77504) reported in freedesktop bugzilla. It seems to apply to both Xorg and Xwayland. During the display server startup, the XKEYBOARD keymap compiler (xkbcomb) reports:
+While starting the graphic interface, you might come across with the bug [#77504](https://bugs.freedesktop.org/show_bug.cgi?id=77504) reported in freedesktop bugzilla. It seems to apply to both Xorg and Wayland. During the display server startup, the XKEYBOARD keymap compiler (xkbcomb) reports:
 
 ```
 > Warning:          Compat map for group 2 redefined
@@ -90,7 +127,7 @@ Errors from xkbcomp are not fatal to the X server
 
 ```
 
-I (josephgbr) followed the solution provided in the forum topic [Xkeyboard/xkbcomp gives warnings](https://bbs.archlinux.org/viewtopic.php?pid=1105212) and it seems to work fine: Comment out the following lines in the file `/usr/share/X11/xkb/compat/basic`. The double forward-slash is the comment symbol.
+One solution is to comment out the following lines in the file `/usr/share/X11/xkb/compat/basic`. The double forward-slash is the comment symbol.
 
 ```
  //    group 2 = AltGr;                                                                
@@ -98,11 +135,11 @@ I (josephgbr) followed the solution provided in the forum topic [Xkeyboard/xkbco
  //    group 4 = AltGr; 
 ```
 
-## General Configurations
+This solution of provided in the forum thread [Xkeyboard/xkbcomp gives warnings](https://bbs.archlinux.org/viewtopic.php?pid=1105212).
 
-### PC Speaker
+### Disable PC Speaker
 
-The E5430 has an awfully loud PC speaker. To disable it, ensure the module `pcspkr` is not loaded during bootup:
+To disable it, ensure the module `pcspkr` is not loaded during bootup:
 
  `/etc/modprobe.d/nobeep.conf` 
 ```
@@ -110,9 +147,3 @@ The E5430 has an awfully loud PC speaker. To disable it, ensure the module `pcsp
 
 blacklist pcspkr
 ```
-
-You should follow instructions for installing [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") and [pm-utils](/index.php/Pm-utils "Pm-utils"). There have been no problems with suspending and hibernating this laptop - just ensure you have enough swap.
-
-### Synaptics Touchpad
-
-Make sure you install the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as it is required by the touchpad

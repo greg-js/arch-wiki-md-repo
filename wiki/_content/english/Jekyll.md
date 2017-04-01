@@ -214,7 +214,7 @@ It is recommended to define server options in your `_config.yml`. The default wi
 *   [Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) "wikipedia:Textile (markup language)")
 *   [Installation Tutorial](http://danielmcgraw.com/2011/04/14/The-Ultimate-Guide-To-Getting-Started-With-Jekyll-Part-1/) by Daniel McGraw
 *   [Configuration Tutorial](http://danielmcgraw.com/2011/04/18/The-Ultimate-Guide-To-Getting-Started-With-Jekyll-Part-2/) by Daniel McGraw
-*   [Jekyll vs. Hyde](http://philipm.at/2011/0507/) by Philip Mateescu
+*   [Jekyll vs. Hyde](http://philipm.at/2011/jekyll_vs_hyde.html) by Philip Mateescu
 *   Websites created with Jekyll can be found on [GitHub](https://github.com/mojombo/jekyll/wiki/sites)
 *   **Required software:**
     *   [http://redcloth.org](http://redcloth.org) - RedCloth

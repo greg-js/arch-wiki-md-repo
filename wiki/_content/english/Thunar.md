@@ -67,7 +67,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 ## Thunar Volume Manager
 
-While Thunar supports automatic mounting and unmounting of removable media (with [gvfs](https://www.archlinux.org/packages/?name=gvfs)), the Thunar Volume Manager allows extended functionality, such as automatically running commands or automatically opening a Thunar window for mounted media.
+While Thunar supports automatic mounting and unmounting of removable media ([gvfs](https://www.archlinux.org/packages/?name=gvfs) package is required), the Thunar Volume Manager allows extended functionality, such as automatically running commands or automatically opening a Thunar window for mounted media.
 
 ### Installation
 

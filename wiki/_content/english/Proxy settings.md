@@ -33,6 +33,8 @@ Some programs look for the all caps version of the environment variables.
 
 If the proxy environment variables are to be made available to all users and all applications, the above mentioned export commands may be added to a script, say "proxy.sh" inside /etc/profile.d/. The script has to be then made executable. This method is helpful while using a Desktop Environment like [Xfce](/index.php/Xfce "Xfce") which does not provide an option for proxy configuration. For example, [Chromium](/index.php/Chromium "Chromium") browser will make use of the variables set using this method while running XFCE.
 
+Alternatively, there's a tool named [ProxyMan](https://github.com/himanshub16/ProxyMan) which claims to configure system-wide proxy settings easily. It also handles proxy configurations of other software like [git], [npm], Dropbox, etc. The project is inspired from Alan Pope's idea of making a script.
+
 Alternatively you can automate the toggling of the variables by adding a function to your .bashrc (thanks to Alan Pope for original script idea)
 
 ```

@@ -10,12 +10,13 @@ Dedicated article for common problems and solutions.
 *   [2 Client-side issues](#Client-side_issues)
     *   [2.1 mount.nfs4: No such device](#mount.nfs4:_No_such_device)
     *   [2.2 mount.nfs4: access denied by server while mounting](#mount.nfs4:_access_denied_by_server_while_mounting)
-    *   [2.3 Unable to connect from OS X clients](#Unable_to_connect_from_OS_X_clients)
-    *   [2.4 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
-    *   [2.5 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
-    *   [2.6 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
-    *   [2.7 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
-    *   [2.8 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
+    *   [2.3 mount.nfs4: Invalid argument](#mount.nfs4:_Invalid_argument)
+    *   [2.4 Unable to connect from OS X clients](#Unable_to_connect_from_OS_X_clients)
+    *   [2.5 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
+    *   [2.6 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
+    *   [2.7 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
+    *   [2.8 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
+    *   [2.9 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
 *   [3 Performance issues](#Performance_issues)
     *   [3.1 Diagnose the problem](#Diagnose_the_problem)
     *   [3.2 Server threads](#Server_threads)
@@ -103,6 +104,10 @@ NFS shares have to reside in /srv - check your `/etc/exports` file and if necess
 Check that the permissions on your client's folder are correct. Try using 755.
 
 or try "exportfs -rav" reload `/etc/exports` file.
+
+### mount.nfs4: Invalid argument
+
+Enable and start nfs-client.target and make sure the appropriate daemons (nfs-idmapd, rpc-gssd, etc) are running on the server.
 
 ### Unable to connect from OS X clients
 

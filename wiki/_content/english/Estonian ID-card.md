@@ -12,6 +12,8 @@ Packages to enable Estonian ID-card support are available from the [Arch User Re
 
 For Google Chrome and Chromium you also will probably want to run [esteid-update-nssdb](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb) script that enables TLS client authentication in the browser.
 
+If you still can't login from Firefox with your ID-card you should install [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+
 ## ID-card and Digidoc utilities
 
 The ID-card utility packages are [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) and [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/), with dependencies [libdigidoc](https://aur.archlinux.org/packages/libdigidoc/) and [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/).

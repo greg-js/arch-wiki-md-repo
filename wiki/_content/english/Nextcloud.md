@@ -677,7 +677,7 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 
 ### "Cannot write into apps directory"
 
-As mentioned in the [official admin manual](http://doc.owncloud.org/server/6.0/admin_manual/configuration/configuration_apps.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+As mentioned in the [official admin manual](https://doc.owncloud.org/server/latest/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
 *Also*, not mentioned there, the directory needs to be in the `open_basedir` line in `/etc/php/php.ini`.
 

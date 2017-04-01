@@ -6,16 +6,15 @@ At least four different versions of this laptop exist: AO1-131-C9PM and AO1-131-
     *   [1.1 AO1-431-C2YR](#AO1-431-C2YR)
     *   [1.2 AO1-431-C7F9 (possibly)](#AO1-431-C7F9_.28possibly.29)
     *   [1.3 AO1-431-C8G8](#AO1-431-C8G8)
-*   [2 Installation (legacy mode)](#Installation_.28legacy_mode.29)
-    *   [2.1 BIOS configuration](#BIOS_configuration)
-    *   [2.2 Kernel parameters](#Kernel_parameters)
-    *   [2.3 Installation](#Installation)
-*   [3 Installation (UEFI mode)](#Installation_.28UEFI_mode.29)
-    *   [3.1 BIOS configuration](#BIOS_configuration_2)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 GDM](#GDM)
-    *   [4.2 High load average on idle](#High_load_average_on_idle)
-    *   [4.3 Bluetooth](#Bluetooth)
+    *   [1.4 BIOS configuration](#BIOS_configuration)
+    *   [1.5 Kernel parameters](#Kernel_parameters)
+    *   [1.6 Installation](#Installation)
+*   [2 Installation (UEFI mode)](#Installation_.28UEFI_mode.29)
+    *   [2.1 BIOS configuration](#BIOS_configuration_2)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 GDM](#GDM)
+    *   [3.2 High load average on idle](#High_load_average_on_idle)
+    *   [3.3 Bluetooth](#Bluetooth)
 
 ## Hardware
 
@@ -115,26 +114,6 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-## Installation (legacy mode)
-
-The default Arch kernel version 4.7.3 is not compatible with this line of laptops due to the module pinctrl_cherryview being built-in to the Kernel. Therefore, you will have to compile your own kernel, possibly on another Arch machine. Follow the [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") guide and change the line
-
-```
-CONFIG_PINCTRL_CHERRYVIEW=y
-
-```
-
-to
-
-```
-CONFIG_PINCTRL_CHERRYVIEW=n
-
-```
-
-in the config (config.x86_64 if running 64-bit Arch) file to have a successfully working kernel.
-
-Linux-lts 4.4.38-1 does work with this line of laptops, but this is likely to change in the future releases.
-
 ### BIOS configuration
 
 *   Touchpad: Basic
@@ -150,16 +129,10 @@ Without these options, the installation image will not load at all:
 *   edd=off
 *   noapic
 
-Without this option, the kernel will automatically load the **pinctrl_cherryview** module which is incompatible with the Acer Cloudbook:
-
-*   modprobe.blacklist=pinctrl_cherryview
-
-If that module gets loaded, multiple ACPI issues will arise; systemd-udevd will freeze and report multiple errors.
-
 Therefore these parameters needs to be added at the end of the kernel parameters' line of the boot launcher:
 
 ```
-linux /vmlinuz-linux ... edd=off noapic modprobe.blacklist=pinctrl_cherryview
+linux /vmlinuz-linux ... edd=off noapic
 
 ```
 
@@ -167,9 +140,7 @@ linux /vmlinuz-linux ... edd=off noapic modprobe.blacklist=pinctrl_cherryview
 
 *   Everything should function without any issues thanks to the previous kernel parameters, proceed to install the image as normal.
     *   The module for the wireless NIC is included with the kernel, so Wi-Fi works out of the box.
-*   Do not forget to add **edd=off noapic** to the kernel parameters of the boot launcher's configuration file and also to blacklist the **pinctrl_cherryview** module.
-
-See: [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
+*   Do not forget to add **edd=off noapic** to the kernel parameters of the boot launcher's configuration file.
 
 ## Installation (UEFI mode)
 

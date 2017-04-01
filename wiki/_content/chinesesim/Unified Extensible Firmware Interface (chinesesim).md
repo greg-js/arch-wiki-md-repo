@@ -28,7 +28,8 @@
     *   [6.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
 *   [7 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
     *   [7.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
-    *   [7.2 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
+    *   [7.2 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
+    *   [7.3 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
 *   [8 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
     *   [8.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
     *   [8.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
@@ -416,6 +417,10 @@ As shorter alternative, [ovmf](https://www.archlinux.org/packages/?name=ovmf) ca
 $ qemu-system-x86_64 -enable-kvm -m 1G -bios /usr/share/ovmf/ovmf_x64.bin
 
 ```
+
+### 使用虚拟机
+
+[VirtualBox](/index.php/VirtualBox "VirtualBox")、[VMware](/index.php/VMware "VMware")虚拟机支持UEFI固件。
 
 ### 仅 BIOS 的系统使用 DUET
 

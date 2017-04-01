@@ -624,7 +624,7 @@ The files from `/usr/share/X11/xkb` are a good source of examples, especially wh
 
 While sometimes used in conjunction with preset configuration, [xmodmap](/index.php/Xmodmap "Xmodmap") is not directly related to XKB. This tool uses different (pre-XKB) ideas on how keycodes are processed within X; in particular, xmodmap lacks the notion of groups and types, so trying to set more than one keysym per key is not likely to work.
 
-Generally it is not recommended to use xmodmap, except maybe for the simpliest tasks. XKB-compatible equivalent of xmodmap is xkbcomp; however, xkbcomp lacks -e option, so it is not that simple. Anyway, whenever possible, xkbcomp should be preferred.
+Generally it is not recommended to use xmodmap, except maybe for the simplest tasks. XKB-compatible equivalent of xmodmap is xkbcomp; however, xkbcomp lacks -e option, so it is not that simple. Anyway, whenever possible, xkbcomp should be preferred.
 
 ## Indicators
 

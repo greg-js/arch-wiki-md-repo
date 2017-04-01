@@ -1,4 +1,6 @@
-[Unbound](https://unbound.net/) is a validating, recursive, and caching DNS resolver. According to [Wikipedia:Unbound (DNS Server)](https://en.wikipedia.org/wiki/Unbound_(DNS_Server) "wikipedia:Unbound (DNS Server)"), "Unbound has supplanted the Berkeley Internet Name Domain ([BIND](/index.php/BIND "BIND")) as the default, base-system name server in several open source projects, where it is perceived as smaller, more modern, and more secure for most applications."
+[Unbound](https://unbound.net/) is a validating, recursive, and caching DNS resolver. According to [Wikipedia:Unbound (DNS Server)](https://en.wikipedia.org/wiki/Unbound_(DNS_Server) "wikipedia:Unbound (DNS Server)"):
+
+	Unbound has supplanted the Berkeley Internet Name Domain ([BIND](/index.php/BIND "BIND")) as the default, base-system name server in several open source projects, where it is perceived as smaller, more modern, and more secure for most applications.
 
 ## Contents
 

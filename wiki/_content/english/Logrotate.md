@@ -21,7 +21,19 @@ By default, logrotate runs daily using a [systemd timer](/index.php/Systemd/Time
 
 ## Configuration
 
-The primary configuration file for logrotate is `/etc/logrotate.conf`; additional configuration files are included from the `/etc/logrotate.d` directory.
+The primary configuration file for logrotate is `/etc/logrotate.conf`; additional configuration files are included from the `/etc/logrotate.d` directory. To verify if logrotate works correctly run the following command which will produce debug output:
+
+```
+logrotate -d
+
+```
+
+To test your logrotate script, for example your nginx logrotate script in */etc/logrotate.d* directory, use:
+
+```
+logrotate -f -v /etc/logrotate.d/nginx
+
+```
 
 ## Troubleshooting
 

@@ -31,13 +31,14 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.4 Skype](#Skype)
     *   [6.5 Spotify](#Spotify)
     *   [6.6 Zathura document viewer](#Zathura_document_viewer)
-    *   [6.7 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [6.8 NetBeans](#NetBeans)
-    *   [6.9 Gimp 2.8](#Gimp_2.8)
-    *   [6.10 VLC](#VLC)
-    *   [6.11 Steam](#Steam)
-    *   [6.12 Java applications](#Java_applications)
-    *   [6.13 Unsupported applications](#Unsupported_applications)
+    *   [6.7 Sublime Text 3](#Sublime_Text_3)
+    *   [6.8 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.9 NetBeans](#NetBeans)
+    *   [6.10 Gimp 2.8](#Gimp_2.8)
+    *   [6.11 VLC](#VLC)
+    *   [6.12 Steam](#Steam)
+    *   [6.13 Java applications](#Java_applications)
+    *   [6.14 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Mirroring](#Mirroring)
@@ -328,6 +329,10 @@ UI text scaling is specified via [configuration file](https://pwmt.org/projects/
 set font "monospace normal 20"
 
 ```
+
+### Sublime Text 3
+
+Sublime Text 3 has full support for display scaling. Go to Preferences > Settings > User Settings and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
 
 ### IntelliJ IDEA
 

@@ -446,8 +446,6 @@ Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can gr
 
 Sometimes it is easier to work directly on a disk image instead of the real Raspberry Pi. This can be achieved by mounting an SD card containing the RPi root partition and chrooting into it. From the chroot it should be possible to run *pacman* and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by [QEMU](/index.php/QEMU "QEMU").
 
-**Note:** As of January 2016, [make](https://www.archlinux.org/packages/?name=make) won't run in QEMU for ARM so it is not possible to build packages this way. Follow the [guide on the Arch Linux ARM website](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) to build a cross-compiler if building ARM packages is needed.
-
 Install [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/) and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) from the [AUR](/index.php/AUR "AUR").
 
 Make sure that the ARM to x86 translation is active:

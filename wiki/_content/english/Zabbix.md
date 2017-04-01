@@ -4,6 +4,8 @@
 
 *   [1 Server setup](#Server_setup)
     *   [1.1 Installation](#Installation)
+        *   [1.1.1 Zabbix-server installation:](#Zabbix-server_installation:)
+        *   [1.1.2 Zabbix-frontend installation:](#Zabbix-frontend_installation:)
     *   [1.2 Configuration](#Configuration)
     *   [1.3 Starting](#Starting)
 *   [2 Agent setup](#Agent_setup)
@@ -19,7 +21,16 @@
 
 ### Installation
 
-If you want to use the Zabbix server with [MariaDB](/index.php/MariaDB "MariaDB"), install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) from the [AUR](/index.php/AUR "AUR"). For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend, you should use [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). You also have to choose a web server with PHP support, e.g.:
+#### Zabbix-server installation:
+
+*   install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) if you want to use the [MariaDB](/index.php/MariaDB "MariaDB") as database backend;
+*   install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) if you want to use the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend;
+
+#### Zabbix-frontend installation:
+
+Just install [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) from official repositories.
+
+You also have to choose a web server with PHP support if you want to use zabbix-frontend, e.g.:
 
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
@@ -36,7 +47,7 @@ $ ln -s /usr/share/webapps/zabbix /srv/http/zabbix
 
 ```
 
-Make sure to adjust following variables to these minimal values in your `php.ini`:
+Make sure to adjust following variables to these minimal values in your `/etc/php/php.ini`:
 
 ```
 extension=bcmath.so
