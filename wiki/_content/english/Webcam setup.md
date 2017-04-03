@@ -31,10 +31,9 @@ This is a guide to setting up your webcam in Arch Linux.
     *   [6.9 mpv](#mpv)
     *   [6.10 FFmpeg](#FFmpeg)
     *   [6.11 ekiga](#ekiga)
-    *   [6.12 Sonic-snap](#Sonic-snap)
-    *   [6.13 Skype](#Skype)
-    *   [6.14 Motion](#Motion)
-    *   [6.15 MJPG-streamer](#MJPG-streamer)
+    *   [6.12 Skype 4.x](#Skype_4.x)
+    *   [6.13 Motion](#Motion)
+    *   [6.14 MJPG-streamer](#MJPG-streamer)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
     *   [7.2 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
@@ -92,8 +91,6 @@ You can find the full list of supported devices [here](http://royale.zerezo.com/
 
 An extensive list of supported webcams is available [[1]](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/video4linux/gspca.txt;hb=HEAD).
 
-**Note:** This driver does not have V4L1 support.
-
 ### stv680
 
 Many cheap no-name cameras that came out Asia in the last couple of years use the stv680 chipset. Most of these cameras were novelty items (i.e. Pencam, SpyC@m and LegoCam).
@@ -131,7 +128,6 @@ As of kernel 2.6.26 linux-uvc is part of the kernel. Just load the uvcvideo modu
 
 **Note:**
 
-*   This driver does not have V4L1 support.
 *   With WebCam SCB-0385N (usb ID 2232:1005), WebCam SC-0311139N (usb ID 2232:1020) and WebCam SC-03FFL11939N (usb ID 2232:1028), you might need to add some configuration to the module if the usage of the camera makes the system freeze :
 
  `/etc/modprobe.d/uvcvideo.conf`  `options uvcvideo nodrop=1` 
@@ -230,18 +226,18 @@ Which should print the height, width pairs the camera is capable of - in this ca
 
 ## Get software to use your webcam
 
-Version 2.6.27 of the Linux kernel supports [many new webcam drivers](http://mxhaard.free.fr/spca5xx.html). Legacy Video4Linux API has been dropped, and these drivers now only support Video4Linux version 2\. Pixel format decoding has been pushed to user space, since Video4Linux version 2 does not support kernel space decoding. The libv4l library provides userland applications with pixel decoding services and will be used by most programs. Other compatibility layers are also available.
+Version 2.6.27 of the Linux kernel dropped support for the legacy Video4Linux (1) API. Pixel format decoding has been pushed to user space, since Video4Linux version 2 does not support kernel space decoding. The libv4l library provides userland applications with pixel decoding services and will be used by most programs. Other compatibility layers are also available.
 
-**If your device is created but your image looks strange (mine was nearly completely green), you probably need this.**
+**If your device is created but your image looks strange (e.g. nearly completely green), you probably need this.**
 
-If the application has V4L2 support but no pixelformat support (eg: cheese) then use the following command:
-
-```
-LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so cheese
+If the application has V4L2 support but no pixelformat support then use the following command:
 
 ```
+LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so application
 
-If the application only supports the older version of V4L (Skype is the most popular of this kind of software) then use this command:
+```
+
+If the application only supports the older version of V4L (Skype 4.x is the most popular of this kind of software) then use this command:
 
 ```
 LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype
@@ -254,9 +250,9 @@ or
 
  `export LD_PRELOAD=/usr/'$LIB'/libv4l/v4l1compat.so` 
 
-For 32-bit applications (e.g. Skype) within Arch64, install the [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) package.
+For 32-bit [multilib](/index.php/Multilib "Multilib") applications, install the [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) package.
 
-If the webcam works fine on guvcview, but it does not work in Skype, you may also need to set
+If the webcam works fine on guvcview, but it does not work in Skype 4.x, you may also need to set
 
 ```
 export XLIB_SKIP_ARGB_VISUALS=1
@@ -375,15 +371,11 @@ See [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg").
 
 This is very similar to Microsoft NetMeeting. [Install](/index.php/Install "Install") the [ekiga](https://www.archlinux.org/packages/?name=ekiga) package. The configuration druid will set everything up for you.
 
-### Sonic-snap
+### Skype 4.x
 
-[sonic-snap](https://aur.archlinux.org/packages/sonic-snap/) [[3]](http://www.stolk.org/sonic-snap/) is a viewer/grabber for sn9c102-based webcams **only**.
+The old "legacy" [Skype](/index.php/Skype "Skype") 4.x supports only V4L1\. If you get a green or disorted picture with Skype read the section [#Get software to use your webcam](#Get_software_to_use_your_webcam) above.
 
-### Skype
-
-The newest version of [Skype](/index.php/Skype "Skype") has video support. Check Video Devices in the options for a test image which you can double-click to make full screen. Install the [skype](https://aur.archlinux.org/packages/skype/) package. If you get a green or disorted picture with skype read the section [#Get software to use your webcam](#Get_software_to_use_your_webcam) above.
-
-If you're running x86-64 you might actually need to install [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) and then run skype with
+If you're running x86-64 you might actually need to install [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) and then run Skype with
 
 ```
 LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype

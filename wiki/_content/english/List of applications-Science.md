@@ -62,15 +62,11 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **galculator** — GTK+ based scientific calculator.
 
-	[http://galculator.sourceforge.net/](http://galculator.sourceforge.net/) || [galculator](https://www.archlinux.org/packages/?name=galculator) [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
+	[http://galculator.sourceforge.net/](http://galculator.sourceforge.net/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
 
 *   **[GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop.
 
 	[https://wiki.gnome.org/Apps/Calculator](https://wiki.gnome.org/Apps/Calculator) || [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator)
-
-*   **[GCalctool](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop (old GTK2 version).
-
-	[http://www.gnome.org](http://www.gnome.org) || [gcalctool-oldgui](https://aur.archlinux.org/packages/gcalctool-oldgui/)
 
 *   **KAlgebra** — Calculator and 3D plotter included in KDE EDU.
 
@@ -79,6 +75,10 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 *   **[KCalc](https://en.wikipedia.org/wiki/KCalc "wikipedia:KCalc")** — Scientific calculator included in the KDE desktop.
 
 	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
+
+*   **MATE Calc** — Calculator for the MATE desktop environment.
+
+	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate-calc](https://www.archlinux.org/packages/?name=mate-calc)
 
 *   **Qalculate** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
 
@@ -220,7 +220,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-See also [List of applications/Documents and texts#Spreadsheets](/index.php?title=List_of_applications/Documents_and_texts&action=edit&redlink=1 "List of applications/Documents and texts (page does not exist)")
+See also [List of applications/Documents#Spreadsheets](/index.php/List_of_applications/Documents#Spreadsheets "List of applications/Documents")
 
 ### Chemistry and biology
 

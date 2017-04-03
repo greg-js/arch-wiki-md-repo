@@ -68,7 +68,7 @@ To more easily find these options just write the respective path (without spaces
 
 ### Profile in tmpfs
 
-Relocate the browser profile to a [tmpfs](/index.php/Fstab#tmpfs "Fstab") filesystem, including `/tmp` for improvements in application response as the entire profile is now stored in RAM. Another benefit is a reduction in disk read and write operations, of which SSDs benefit the most.
+Relocate the browser profile to a [tmpfs](/index.php/Tmpfs "Tmpfs") filesystem, including `/tmp` for improvements in application response as the entire profile is now stored in RAM. Another benefit is a reduction in disk read and write operations, of which SSDs benefit the most.
 
 There are currently two ways of doing this:
 

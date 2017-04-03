@@ -301,7 +301,7 @@ FastCGI technology is introduced into nginx to work with many external tools, i.
 
 Make sure [open_basedir](/index.php/PHP#Configuration "PHP") allows the directories containing PHP files to be accessed (starting with PHP 7.0 it is [unset by default](https://www.archlinux.org/news/php-70-packages-released/), so no change is required).
 
-After that let us configure modules you need. For example to use sqlite3 you should install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite). Then enable it in `/etc/php/php.ini` by uncommenting following line:
+Next, configure modules you need. For example, if you want to use sqlite3, install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) then enable it in `/etc/php/php.ini` by uncommenting following line:
 
 ```
 extension=sqlite3.so

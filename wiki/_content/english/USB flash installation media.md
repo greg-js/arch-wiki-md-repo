@@ -125,7 +125,7 @@ Now, launch your `command prompt` as an administrator. Next, change directory (`
 If your Arch Linux ISO is elsewhere you may need to state the full path, for convenience you may wish to put the Arch Linux ISO into the same folder as the dd executable. The basic format of the command will look like this.
 
 ```
-# dd if=*archlinux-2015-XX-YY-dual.iso* od=\\.\*x*: bs=4M
+# dd if=*archlinux-2017-XX-YY-x86_64.iso* od=\\.\*x*: bs=4M
 
 ```
 
@@ -136,11 +136,11 @@ If your Arch Linux ISO is elsewhere you may need to state the full path, for con
 Simply replace the various null spots (indicated by an "x") with the correct date and correct drive letter. Here is a complete example.
 
 ```
-# dd if=ISOs\archlinux-2015.01.01-dual.iso od=\\.\d: bs=4M
+# dd if=ISOs\archlinux-2017.04.01-x86_64.iso od=\\.\d: bs=4M
 
 ```
 
-**Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive*X*`, where `*X*` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-2015.01.01-dual.iso of=\\.\PhysicalDrive1 bs=4M` 
+**Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive*X*`, where `*X*` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-2017.04.01-x86_64.iso of=\\.\PhysicalDrive1 bs=4M` 
 
 You can find out the physical drive number by typing `wmic diskdrive list brief` at the command prompt or with `dd --list`
 
@@ -189,7 +189,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 # mkdir -p /mnt/{iso,usb}
-# mount -o loop archlinux-2016.04.01-dual.iso /mnt/iso
+# mount -o loop archlinux-2017.04.01-x86_64.iso /mnt/iso
 # mount /dev/sd**Xn** /mnt/usb
 # cp -a /mnt/iso/* /mnt/usb
 # sync
@@ -397,7 +397,7 @@ DEFAULT arch_iso
 LABEL arch_iso
         MENU LABEL Arch Setup
         LINUX memdisk
-        INITRD /Boot/ISOs/archlinux-2015.01.01-dual.iso
+        INITRD /Boot/ISOs/archlinux-2017.04.01-x86_64.iso
         APPEND iso
 ```
 

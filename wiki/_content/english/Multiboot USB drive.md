@@ -232,13 +232,11 @@ loopback loop **($isopart)**$isofile
 
 #### Arch Linux monthly release
 
-**Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `i686`.
-
 Also see [archiso](/index.php/Archiso "Archiso").
 
 ```
-menuentry '[loopback]archlinux-2014.12.01-dual.iso' {
-	set isofile='/boot/iso/archlinux-2014.12.01-dual.iso'
+menuentry '[loopback]archlinux-2017.04.01-x86_64.iso' {
+	set isofile='/boot/iso/archlinux-2017.04.01-x86_64.iso'
 	loopback loop $isofile
 	linux (loop)/arch/boot/**x86_64**/vmlinuz archisodevice=/dev/loop0 img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
 	initrd (loop)/arch/boot/**x86_64**/archiso.img

@@ -54,6 +54,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [12.1 Client daemon not reconnecting after suspend](#Client_daemon_not_reconnecting_after_suspend)
     *   [12.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
     *   [12.3 PID files not present](#PID_files_not_present)
+    *   [12.4 Route configuration fails with systemd-networkd](#Route_configuration_fails_with_systemd-networkd)
 *   [13 See also](#See_also)
 
 ## Install OpenVPN
@@ -780,24 +781,21 @@ It automates the actions required for the [OpenVPN howto](https://community.open
 
 [openvpn-reconnect](https://aur.archlinux.org/packages/openvpn-reconnect/), available on the AUR, solves this problem by sending a SIGHUP to openvpn after waking up from suspend.
 
-Alternatively, you can kill and restart openvpn by creating the folowing file:
+Alternatively, you can kill and restart OpenVPN after suspend by creating the folowing systemd service:
 
- `/usr/lib/systemd/system-sleep/vpn.sh` 
+ `/etc/systemd/system/openvpn-reconnect.service` 
 ```
-#!/bin/sh
-if [ "$1" == "pre" ]
-then
-  killall openvpn
-fi
-```
+[Unit]
+Description=Restart OpenVPN after suspend
 
-Make it executable `chmod a+x /usr/lib/systemd/system-sleep/vpn.sh` and [edit](/index.php/Edit "Edit") the respective service:
-
- `/etc/systemd/system/openvpn-client@.service.d/restart.conf` 
-```
 [Service]
-Restart=always
+ExecStart=/usr/bin/pkill --signal SIGHUP --exact openvpn
+
+[Install]
+WantedBy=sleep.target
 ```
+
+[Enable](/index.php/Enable "Enable") this service for it to take effect.
 
 ### Connection drops out after some time of inactivity
 
@@ -822,6 +820,34 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 The default systemd service file for openvpn-client does not have the --writepid flag enabled, despite creating /var/run/openvpn-client. If this breaks a config (such as an i3bar VPN indicator), simply change:
 
  `/usr/lib/systemd/system/openvpn-client@.service`  `ExecStart=/usr/sbin/openvpn --suppress-timestamps --nobind --config %i.conf --writepid /var/run/openvpn-client/%i.pid` 
+
+### Route configuration fails with systemd-networkd
+
+When using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to manage network connections and attempting to tunnel all outgoing traffic through the VPN, OpenVPN may fail to add routes. This is a result of systemd-networkd attempting to manage the tun interface before OpenVPN finishes configuring the routes. When this happens, the following message will appear in the OpenVPN log.
+
+```
+openvpn[458]: RTNETLINK answers: Network is unreachable
+openvpn[458]: ERROR: Linux route add command failed: external program exited with error status: 2
+
+```
+
+With systemd-233 (currently in [testing](/index.php/Testing "Testing")), systemd-networkd can be configured to ignore the tun connections and allow OpenVPN to manage them. To do this, create the following file:
+
+ `/etc/systemd/network/90-tun-ignore.network` 
+```
+[Match]
+Name=tun*
+
+[Link]
+Unmanaged=true
+```
+
+[Restart](/index.php/Restart "Restart") `systemd-networkd.service` to apply the changes. To verify that the changes took effect, start the previously problematic OpenVPN connection and run `networkctl`. The output should have a line similar to the following:
+
+```
+7 tun0             none               routable    unmanaged
+
+```
 
 ## See also
 

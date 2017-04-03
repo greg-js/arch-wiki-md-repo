@@ -10,17 +10,16 @@
     *   [4.1 Проверка конфигурации](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8)
     *   [4.2 Режим чистки](#.D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B8)
     *   [4.3 Запуск и завершение psd](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8_.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_psd)
-    *   [4.4 Supported distros](#Supported_distros)
-    *   [4.5 Установка частоты синхронизации (опционально)](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.87.D0.B0.D1.81.D1.82.D0.BE.D1.82.D1.8B_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.28.D0.BE.D0.BF.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.29)
-*   [5 FAQ](#FAQ)
-    *   [5.1 What is overlayfs and why do I want to use it?](#What_is_overlayfs_and_why_do_I_want_to_use_it.3F)
-    *   [5.2 Overlayfs needs more memory to accommodate my profile/profiles in /run/user/xxxx. How can I allocate more?](#Overlayfs_needs_more_memory_to_accommodate_my_profile.2Fprofiles_in_.2Frun.2Fuser.2Fxxxx._How_can_I_allocate_more.3F)
-    *   [5.3 My system crashed and did not sync back. What do I do?](#My_system_crashed_and_did_not_sync_back._What_do_I_do.3F)
-    *   [5.4 Where can I find this snapshot?](#Where_can_I_find_this_snapshot.3F)
-    *   [5.5 How can I restore the snapshot?](#How_can_I_restore_the_snapshot.3F)
-    *   [5.6 Can psd delete the snapshots automatically?](#Can_psd_delete_the_snapshots_automatically.3F)
-*   [6 Поддержка](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0)
-*   [7 psd в других дистрибутивах](#psd_.D0.B2_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.B4.D0.B8.D1.81.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.B8.D0.B2.D0.B0.D1.85)
+*   [5 Поддерживаемые дистрибутивы](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D0.B8.D1.81.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.B8.D0.B2.D1.8B)
+    *   [5.1 Установка частоты синхронизации (опционально)](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.87.D0.B0.D1.81.D1.82.D0.BE.D1.82.D1.8B_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.28.D0.BE.D0.BF.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.29)
+*   [6 FAQ](#FAQ)
+    *   [6.1 Что такое overlayfs и зачем его использовать?](#.D0.A7.D1.82.D0.BE_.D1.82.D0.B0.D0.BA.D0.BE.D0.B5_overlayfs_.D0.B8_.D0.B7.D0.B0.D1.87.D0.B5.D0.BC_.D0.B5.D0.B3.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C.3F)
+    *   [6.2 Overlayfs требует больше памяти для размещения моего профиля/профилей в /run/user/xxxx. Как мне выделить больше?](#Overlayfs_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D1.82_.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D0.B5_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.BE.D0.B5.D0.B3.D0.BE_.D0.BF.D1.80.D0.BE.D1.84.D0.B8.D0.BB.D1.8F.2F.D0.BF.D1.80.D0.BE.D1.84.D0.B8.D0.BB.D0.B5.D0.B9_.D0.B2_.2Frun.2Fuser.2Fxxxx._.D0.9A.D0.B0.D0.BA_.D0.BC.D0.BD.D0.B5_.D0.B2.D1.8B.D0.B4.D0.B5.D0.BB.D0.B8.D1.82.D1.8C_.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D0.B5.3F)
+    *   [6.3 Моя система аварийно завершила работу и не была синхронизирована. Что мне делать?](#.D0.9C.D0.BE.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.B0.D0.B2.D0.B0.D1.80.D0.B8.D0.B9.D0.BD.D0.BE_.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B8.D0.BB.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.83_.D0.B8_.D0.BD.D0.B5_.D0.B1.D1.8B.D0.BB.D0.B0_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B0._.D0.A7.D1.82.D0.BE_.D0.BC.D0.BD.D0.B5_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.3F)
+    *   [6.4 Где я могу найти снимок?](#.D0.93.D0.B4.D0.B5_.D1.8F_.D0.BC.D0.BE.D0.B3.D1.83_.D0.BD.D0.B0.D0.B9.D1.82.D0.B8_.D1.81.D0.BD.D0.B8.D0.BC.D0.BE.D0.BA.3F)
+    *   [6.5 Как восстановить снимок?](#.D0.9A.D0.B0.D0.BA_.D0.B2.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.81.D0.BD.D0.B8.D0.BC.D0.BE.D0.BA.3F)
+    *   [6.6 Может ли psd удалить снимки автоматически?](#.D0.9C.D0.BE.D0.B6.D0.B5.D1.82_.D0.BB.D0.B8_psd_.D1.83.D0.B4.D0.B0.D0.BB.D0.B8.D1.82.D1.8C_.D1.81.D0.BD.D0.B8.D0.BC.D0.BA.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.3F)
+*   [7 Поддержка](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0)
 *   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Преимущества psd
@@ -179,9 +178,9 @@ $ systemctl --user [option] psd.service
 
 Доступные опции: start stop enable disable status
 
-### Supported distros
+## Поддерживаемые дистрибутивы
 
-Since psd is just a bash script with a systemd service, it should run on any flavor of Linux running systemd. Around a dozen distros provide an official package or user-maintained option to install psd. One can also build psd from source. See the official website for available packages and installation instructions.
+*psd* представляет из себя обычный bash-скрипт и должен работать на любом дистрибутиве Linux. Многие дистрибутивы предоставляют официальные и пользовательские пакеты для установки psd. На [официальном сайте](https://github.com/graysky2/profile-sync-daemon#installation-from-distro-packages) доступен список пакетов и инструкции по установке.
 
 ### Установка частоты синхронизации (опционально)
 
@@ -203,43 +202,47 @@ OnUnitActiveSec=10min
 
 ## FAQ
 
-### What is overlayfs and why do I want to use it?
+### Что такое overlayfs и зачем его использовать?
 
-Overlayfs is a simple union file-system mainlined in the Linux kernel version 3.18.0\. Starting with psd version 5.54, overlayfs can be used to reduce the memory footprint of psd's tmpfs space and to speed up sync and unsync operations. The magic is in how the overlay mount only writes out data that has changed rather than the entire profile. The same recovery features psd uses in its default mode are also active when running in overlayfs mode. Overlayfs mode is enabled by uncommenting the USE_OVERLAYFS="yes" line in `$XDG_CONFIG_HOME/psd/psd.conf` followed by a restart of the daemon.
+Overlayfs это простая файловая система, включенная в ядро Linux с версии 3.18.0\. В psd, начиная с версии 5.54, overlayfs можно использовать, чтобы уменьшить занимаемую демоном psd память в tmpfs и ускорить операции синхронизации с диском. Особенность метода в том, что overlayfs записывает только измененные данные, а не весь профиль. Те же функции восстановления, которые использует psd в своем режиме по умолчанию, также активны при работе в режиме overlayfs. Чтобы включить режим Overlayfs, нужно раскомментировать строку USE_OVERLAYFS="yes" в `$XDG_CONFIG_HOME/psd/psd.conf` и затем перезапустить демон.
 
-There are several versions of overlayfs available to the Linux kernel in production in various distros. Versions 22 and lower have a module called 'overlayfs' while newer versions (23 and higher) have a module called 'overlay' -- note the lack of the 'fs' in the newer version. Psd will automatically detect the overlayfs available to your kernel if it is configured to use one of them.
+Существует несколько версий overlayfs, доступных в ядре Linux в различных дистрибутивах. В версиях 22 и ниже есть модуль под названием 'overlayfs', а в более новых версиях (23 и выше) есть модуль под названием 'overlay' -- обратите внимание на отсутствие 'fs' в новой версии. psd автоматически обнаружит overlayfs, доступный в вашем ядре, если тот настроен на его использование.
 
-Since version 6.05 of psd, users wanting to take advantage of this mode MUST have sudo rights (without password prompt) to `/usr/bin/psd-overlay-helper` or global sudo rights. The following line in `/etc/sudoers` will supply your user with these rights. Add it using `/usr/bin/visudo` as root:
+Начиная с версии psd 6.05, пользователи, желающие использовать этот режим, ДОЛЖНЫ иметь права sudo (без запроса на ввод пароля) для файла `/usr/bin/psd-overlay-helper` или же глобально. Следующая строка в файле `/etc/sudoers` предоставит пользователю эти права. Добавьте её с помощью `/usr/bin/visudo` от имени root:
 
 ```
 foo ALL=NOPASSWD: /usr/bin/psd-overlay-helper
 
 ```
 
-See the example in the PREVIEW MODE section above which shows a system using overlayfs to illustrate the memory savings that can be achieved. Note the "overlayfs size" report compared to the total "profile size" report for each profile. Be aware that these numbers will change depending on how much data is written to the profile, but in common use cases the overlayfs size will always be less than the profile size.
+См. пример в разделе "Проверка конфигурации" выше, в котором показана система, использующая overlayfs для иллюстрации возможностей экономии памяти.
 
-### Overlayfs needs more memory to accommodate my profile/profiles in /run/user/xxxx. How can I allocate more?
+Обратите внимание на строку "overlayfs size" в сравнении со строкой "profile size" для каждого профиля. Имейте в виду, что эти цифры будут меняться в зависимости от объема данных, записываемых в профиль, но при обычном использовании размер overlayfs всегда будет меньше размера профиля.
 
-The standard way of controlling the size of /run/user is the RuntimeDirectorySize directive in logind.conf (see the man page for logind.conf for more). By default, 10% of physical memory is used but one can increase it safely. Remember that tmpfs only uses what is actually used; the number specified here is just a maximum allowed.
+### Overlayfs требует больше памяти для размещения моего профиля/профилей в /run/user/xxxx. Как мне выделить больше?
 
-### My system crashed and did not sync back. What do I do?
+Стандартный способ контроля размера /run/user это директива RuntimeDirectorySize в logind.conf (подробнее см. man-страницу для logind.conf). По умолчанию используется 10% физической памяти, но можно безопасно ее увеличить. Помните, что tmpfs использует только то, что фактически используется; Указанное здесь число является только максимально допустимым.
 
-Odds are the "last good" backup of your browser profiles is just fine still sitting happily on your filesystem. Upon restarting `psd` (on a reboot for example), a check is preformed to see if the symlink to the tmpfs copy of your profile is invalid. If it is invalid, *psd* will snapshot the "last good" backup before it rotates it back into place. This is more for a sanity check that *psd* did no harm and that any data loss was a function of something else.
+### Моя система аварийно завершила работу и не была синхронизирована. Что мне делать?
 
-**Note:** Users can disable the snapshot/backup feature entirely by uncommenting and setting the USE_BACKUPS variable to 'no' in `$XDG_CONFIG_HOME/psd/psd.conf` if desired.
+Скорее всего, "последняя целая" резерваная копия of ваших профилей браузеров все ещё в сохранности у вас на жестком диске. При перезапуске `psd` (например, при перезагрузке), выполняется проверка, чтобы убедиться, что символическая ссылка на копию в tmpfs вашего профиля недействительна. Если она недействительна, psd снимет "последнюю целую" резервную копию, прежде чем вернуть её на место.
 
-### Where can I find this snapshot?
+Эта опция больше для проверки, что *psd* работоспособен и любая потеря данных была по причине чего-то другого.
 
-It depends on the browser. You will find the snapshot in the same directory as the browser profile and it will contain a date-time-stamp that corresponds to the time at which the recovery took place. For example, chromium will be `~/.config/chromium-backup-crashrecovery-20130912_153310` -- of course, the date_time suffix will be different for you.
+**Примечание:** Пользователи могут полностью отключить функцию моментального снимка/резервного копирования, раскомментировав и установив переменную USE_BACKUPS в значение 'no' в `$XDG_CONFIG_HOME/psd/psd.conf`, если нужно.
 
-### How can I restore the snapshot?
+### Где я могу найти снимок?
 
-*   Stop `psd`.
-*   Confirm that there is no symlink to the tmpfs browser profile directory. If there is, *psd* did not stop correctly for other reasons.
-*   Move the "bad" copy of the profile to a backup (do not blindly delete anything).
-*   Copy the snapshot directory to the name that browser expects.
+Это зависит от браузера. Вы найдете моментальный снимок в том же каталоге, что и профиль браузера, и он будет содержать отметку даты и времени, которая соответствует времени, когда был сделан снимок. Например, для chromium это будет `~/.config/chromium-backup-crashrecovery-20130912_153310` -- конечно, отметка времени у вас будет своя.
 
-Example using Chromium:
+### Как восстановить снимок?
+
+*   Остановить `psd`.
+*   Убедиться, что нет символьной ссылки на директорию профиля браузера в tmpfs. Если есть, *psd* не был завершен корректно по другим причинам.
+*   Переместите "плохую" копию профиля в резервную копию (не удаляйте ничего просто так).
+*   Скопируйте каталог с моментальным снимком туда, куда нужно для конкретного браузера.
+
+Пример для браузера Chromium:
 
 ```
 mv ~/.config/chromium ~/.config/chromium-bad
@@ -247,19 +250,15 @@ cp -a ~/.config/chromium-backup-crashrecovery-20130912_153310 ~/.config/chromium
 
 ```
 
-At this point you can launch chromium which will use the backup snapshot you just copied into place. If all is well, close the browser and restart psd. You may safely delete `~/.config/chromium-backup-crashrecovery-20130912_153310` at this point.
+Теперь вы можете запустить Chromium, который будет использовать скопированный резервный снимок. Если все в порядке, закройте браузер и перезапустите psd. На этом этапе вы можете безопасно удалить `~/.config/chromium-backup-crashrecovery-20130912_153310`.
 
-### Can psd delete the snapshots automatically?
+### Может ли psd удалить снимки автоматически?
 
-Yes, run psd with the "clean" switch to delete snapshots.
+Да, запустите psd с ключом "clean" для удаления снимков.
 
 ## Поддержка
 
 Пишите в [тему на форуме (англ.)](https://bbs.archlinux.org/viewtopic.php?pid=1026974) для комментариев и прочих обсуждений.
-
-## psd в других дистрибутивах
-
-*psd* представляет из себя обычный bash-скрипт и должен работать на любом дистрибутиве Linux. Многие дистрибутивы предоставляют официальные и пользовательские пакеты для установки psd. На [официальном сайте](https://github.com/graysky2/profile-sync-daemon#installation-from-distro-packages) доступен список пакетов и инструкции по установке.
 
 ## Смотрите также
 

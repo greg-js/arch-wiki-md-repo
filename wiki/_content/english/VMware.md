@@ -307,7 +307,7 @@ This can be fixed by either installing the [ncurses5-compat-libs](https://aur.ar
 
 ### Unable to download VMware Tools for Guests
 
-If after [#Preventing crashes and freezes when checking for updates](#Preventing_crashes_and_freezes_when_checking_for_updates) you are still unable to download the VMware Tools ISOs, you may either try running `vmware` or `vmplayer` as *root*, or downloading them directly from the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
+To download the tools manually, visit the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
 
 Navigate to: "*application name* / *version* / *build ID* / linux / packages/" and download the appropriate Tools.
 
@@ -364,7 +364,7 @@ sound.fileName=*"surround51:CARD=Live,DEV=0"*
 sound.autodetect=*"FALSE"*
 ```
 
-[OSS emulation](/index.php/Advanced_Linux_Sound_Architecture#User-space_utilities "Advanced Linux Sound Architecture") should also be disabled.
+[OSS emulation](/index.php/Advanced_Linux_Sound_Architecture#OSS_compatibility "Advanced Linux Sound Architecture") should also be disabled.
 
 ### Kernel-based Virtual Machine (KVM) is running
 

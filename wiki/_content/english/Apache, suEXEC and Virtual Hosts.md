@@ -93,7 +93,7 @@ ServerName localhost:80
 
 ## Finishing up
 
-Every time you change default configuration parameters you need to [restart](/index.php/Daemons#Restarting "Daemons") **httpd** (Apache) to make them take effect.
+Every time you change default configuration parameters you need to [restart](/index.php/Restart "Restart") the `httpd.service` (Apache) to make them take effect.
 
 ## References
 

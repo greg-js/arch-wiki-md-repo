@@ -18,6 +18,7 @@ You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH
     *   [6.3 Remote host has disconnected](#Remote_host_has_disconnected)
     *   [6.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
     *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
+    *   [6.6 fstab mounting issues](#fstab_mounting_issues)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -310,6 +311,24 @@ WantedBy=multi-user.target
 ```
 
 Then enable the service: `systemctl enable killsshfs.service`
+
+### fstab mounting issues
+
+To get verbose debugging output, add the following to the mount options:
+
+```
+ssh_command=ssh\040-vv,sshfs_debug,debug
+
+```
+
+**Note:** Here, `\040` represents a space which fstab uses to separate fields.
+
+To be able to run `mount -av` and see the debug output, remove the following:
+
+```
+ noauto,x-systemd.automount
+
+```
 
 ## See also
 

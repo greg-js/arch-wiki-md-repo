@@ -4,7 +4,7 @@
 *   Extensive internationalization support.
 *   A complete library that provides SQL database access, XML parsing, thread management, network support, and a unified cross-platform application programming interface (API) for file handling.
 
-The Qt framework is emerging as a major development platform and is the basis of the [KDE](/index.php/KDE "KDE") software community, among other important open source and proprietary applications such as [VLC](/index.php/VLC "VLC"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Mathematica](/index.php/Mathematica "Mathematica"), [Skype](/index.php/Skype "Skype") and many others.
+The Qt framework is emerging as a major development platform and is the basis of the [KDE](/index.php/KDE "KDE") software community, among other important open source and proprietary applications such as [VLC](/index.php/VLC "VLC"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Mathematica](/index.php/Mathematica "Mathematica") and many others.
 
 ## Contents
 

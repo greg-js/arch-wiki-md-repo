@@ -28,6 +28,10 @@ exec twm
 
 Then start [X](/index.php/X "X") as normal.
 
+**Note:**
+
+*   After executing `startx`, there is only a black screen. Try to move your mouse and **left click** to get a twm menu to make sure that twm actually works.
+
 ## Configuration
 
 By default, twm looks very dated and unintuitive. By creating the file `~/.twmrc`, you can customize twm to make it more friendly.

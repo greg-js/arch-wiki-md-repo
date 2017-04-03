@@ -59,7 +59,7 @@ There are several options to have redshift automatically started:
 
 **Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see `man systemd.service`)
 
-*   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`
+*   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`. On other desktop environments, [Desktop entries](/index.php/Desktop_entries "Desktop entries") inside `~/.config/autostart` can be used.
 
 ### Quick start
 

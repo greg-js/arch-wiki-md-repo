@@ -313,7 +313,7 @@ Replace `intel` with the right driver, e.g. `nvidia`.
 
 **Tip:** Try [#Adding undetected resolutions](#Adding_undetected_resolutions) first, if it doesn't work, you may try this method.
 
-If you video card is recognized but the resolution is lower than you expect, you may try this.
+If your video card is recognized but the resolution is lower than you expect, you may try this.
 
 Background: ATI X1550 based video card and two LCD monitors DELL 2408(up to 1920x1200) and Samsung 206BW(up to 1680x1050). Upon first login after installation, the resolution default to 1152x864\. xrandr does not list any resolution higher than 1152x864\. You may want to try editing /etc/X11/xorg.conf, add a section about virtual screen, logout, login and see if this helps. If not then read on.
 

@@ -30,6 +30,8 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 **Warning:** Pipelight requires a browser with NPAPI support. NPAPI support is **not** present in Chrome/Chromium, Firefox or Opera.
 
+**Warning:** Pipelight project itself is discontinued, which means no security fixes will be released which can make your system vulnerable.
+
 Pipelight can be [installed](/index.php/Install "Install") with the [pipelight](https://aur.archlinux.org/packages/pipelight/) package.
 
 If you want to use Pipelight with a non-standard version of Wine, or want to install it somewhere else, modify the following variables in the PKGBUILD:

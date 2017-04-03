@@ -188,7 +188,7 @@ To set the value, run:
 
 #### Make changes permanent
 
-To have the desired scaling enabled at boot, [kernel modules#Using file in /etc/modprobe.d/](/index.php/Kernel_modules#Using_file_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
+To have the desired scaling enabled at boot, [kernel module options](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
 
 For example, to set the scaling governor of the CPU core `0` to performance while the scaling driver is `acpi_cpufreq`, create the following udev rule:
 

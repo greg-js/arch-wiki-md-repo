@@ -505,7 +505,7 @@ set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIMRUNTIME
 ```
  `~/.profile` 
 ```
-export VIMINIT="$XDG_CONFIG_HOME"/vim/vimrc
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 ```
 

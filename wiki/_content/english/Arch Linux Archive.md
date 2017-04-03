@@ -160,15 +160,13 @@ The [iso](https://archive.archlinux.org/iso) directory contains official ISO ima
 ├── 2015.07.01
 ├── 2015.08.01
 ├── 2015.09.01
-└── 2015.10.01
+└── 2017.04.01
     ├── arch
-    ├── archlinux-2015.10.01-dual.iso
-    ├── archlinux-2015.10.01-dual.iso.sig
-    ├── archlinux-2015.10.01-dual.iso.torrent
-    ├── archlinux-bootstrap-2015.10.01-i686.tar.gz
-    ├── archlinux-bootstrap-2015.10.01-i686.tar.gz.sig
-    ├── archlinux-bootstrap-2015.10.01-x86_64.tar.gz
-    ├── archlinux-bootstrap-2015.10.01-x86_64.tar.gz.sig
+    ├── archlinux-2017.04.01-x86_64.iso
+    ├── archlinux-2017.04.01-x86_64.iso.sig
+    ├── archlinux-2017.04.01-x86_64.iso.torrent
+    ├── archlinux-bootstrap-2017.04.01-x86_64.tar.gz
+    ├── archlinux-bootstrap-2017.04.01-x86_64.tar.gz.sig
     ├── md5sums.txt
     └── sha1sums.txt
 

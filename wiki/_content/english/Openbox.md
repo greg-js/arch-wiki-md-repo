@@ -515,7 +515,7 @@ It is important to note that a substantial range of both **Openbox-specific** an
 
 ### Configuration
 
-[obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) should be used to select and configure available GTK themes. See [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox") or [Skype](/index.php/Skype "Skype").
+[obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) should be used to select and configure available GTK themes. See [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox").
 
 ### Installation: official and AUR
 

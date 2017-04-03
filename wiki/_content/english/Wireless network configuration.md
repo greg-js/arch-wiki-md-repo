@@ -441,7 +441,7 @@ GUI | Console tools |
 
 #### Connman
 
-*ConnMan* is an alternative to *NetworkManager* and *Wicd*, designed to be light on resources making it ideal for netbooks, and other mobile devices. It is modular in design takes advandage of the dbus API and provides proper abstraction on top of *wpa_supplicant*.
+*ConnMan* is an alternative to *NetworkManager* and *Wicd*, designed to be light on resources making it ideal for netbooks, and other mobile devices. It is modular in design takes advantage of the dbus API and provides proper abstraction on top of *wpa_supplicant*.
 
 See [Connman](/index.php/Connman "Connman").
 

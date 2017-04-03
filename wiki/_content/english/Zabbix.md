@@ -4,8 +4,8 @@
 
 *   [1 Server setup](#Server_setup)
     *   [1.1 Installation](#Installation)
-        *   [1.1.1 Zabbix-server installation:](#Zabbix-server_installation:)
-        *   [1.1.2 Zabbix-frontend installation:](#Zabbix-frontend_installation:)
+        *   [1.1.1 Zabbix-server installation](#Zabbix-server_installation)
+        *   [1.1.2 Zabbix-frontend installation](#Zabbix-frontend_installation)
     *   [1.2 Configuration](#Configuration)
     *   [1.3 Starting](#Starting)
 *   [2 Agent setup](#Agent_setup)
@@ -21,22 +21,22 @@
 
 ### Installation
 
-#### Zabbix-server installation:
+#### Zabbix-server installation
 
-*   install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) if you want to use the [MariaDB](/index.php/MariaDB "MariaDB") as database backend;
-*   install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) if you want to use the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend;
+*   Install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) if you want to use the [MariaDB](/index.php/MariaDB "MariaDB") as database backend.
+*   Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) if you want to use the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend.
 
-#### Zabbix-frontend installation:
+#### Zabbix-frontend installation
 
-Just install [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) from official repositories.
+Just install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
 
-You also have to choose a web server with PHP support if you want to use zabbix-frontend, e.g.:
+You also have to choose a web server with PHP support if you want to use *zabbix-frontend*, e.g.:
 
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")
 *   [nginx](/index.php/Nginx "Nginx")
 
-Or one of the other servers found in the [web server](/index.php/Category:Web_server "Category:Web server") category. You may edit the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") if you plan to use Nginx as web-server, since by default they have [apache](https://www.archlinux.org/packages/?name=apache) and [php-apache](https://www.archlinux.org/packages/?name=php-apache) as dependency.
+Or one of the other servers found in [Category:Web server](/index.php/Category:Web_server "Category:Web server").
 
 ### Configuration
 
@@ -72,27 +72,24 @@ $ mysql -u zabbix -p zabbix < /usr/share/zabbix/database/data.sql
 
 ```
 
-Note: If you using PHP 7.1 you need to edit /srv/http/zabbix/include/func.inc.php
-
+**Note:** If you using PHP 7.1 you need to edit `/srv/http/zabbix/include/func.inc.php`:
 ```
-   function str2mem($val) {
-       $val = trim($val);
-       $last = strtolower(substr($val, -1));
-       switch ($last) {
-               case 'g':
-                       $val = (int) $val * 1024;
-                       /* falls through */
-               case 'm':
-                       $val = (int) $val * 1024;
-                       /* falls through */
-               case 'k':
-                       $val = (int) $val * 1024;
-       }
-       return $val;
-
-```
-
+function str2mem($val) {
+    $val = trim($val);
+    $last = strtolower(substr($val, -1));
+    switch ($last) {
+            case 'g':
+                    $val = (int) $val * 1024;
+                    /* falls through */
+            case 'm':
+                    $val = (int) $val * 1024;
+                    /* falls through */
+            case 'k':
+                    $val = (int) $val * 1024;
+    }
+    return $val;
 }
+```
 
 ### Starting
 
@@ -106,7 +103,7 @@ See appendix for a link to the official documentation, which explains all furthe
 
 ### Installation
 
-Currently, the server package already includes [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent), so you do not have to install this package on your monitoring server. However, for monitoring targets, the client part is more minimal, standalone and easy to deploy, just install [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent).
+The server package already includes [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent), so you do not have to install this package on your monitoring server. However, for monitoring targets, the client part is more minimal, standalone and easy to deploy, just install [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent).
 
 ### Configuration
 
@@ -131,20 +128,20 @@ Further make sure the port `10050` on your device being monitored is not blocked
 On the client site, you can check the state of an item like this:
 
 ```
-zabbix_agentd -t hdd.smart[sda,Temperature_Celsius]
+$ zabbix_agentd -t hdd.smart[sda,Temperature_Celsius]
 
 ```
 
 On the server/monitoring site, try this:
 
 ```
-zabbix_get -s *host* -k hdd.smart[sda,Temperature_Celsius]
+$ zabbix_get -s *host* -k hdd.smart[sda,Temperature_Celsius]
 
 ```
 
 ### Monitor ArchLinux system updates
 
-Here's an approach on how to monitor your ArchLinux clients for available system update using a custom `UserParameter`:
+Here is an approach on how to monitor your ArchLinux clients for available system update using a custom `UserParameter`:
 
  `/etc/zabbix/zabbix_agentd.conf`  `Include=/etc/zabbix/zabbix_agentd.conf.d/*.conf`  `/etc/zabbix/zabbix_agentd.conf.d/archlinuxupdates.conf`  `UserParameter=archlinuxupdates,checkupdates | wc -l` 
 

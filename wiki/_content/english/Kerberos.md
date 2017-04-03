@@ -54,7 +54,7 @@ Add ALLOW rules to your firewall for both tcp and udp on ports 88 and 750.
 Create the database:
 
 ```
-# krb5_util -r EXAMPLE.COM create -s
+# kdb5_util -r EXAMPLE.COM create -s
 
 ```
 
@@ -127,7 +127,7 @@ This file's format is described in the MIT Kerberos [documentation](https://web.
 
 Restart the kdc and kadmin daemons:
 
- `sudo systemctl restart krb5-kdc krb5-kadmin` 
+ `sudo systemctl restart krb5-kdc krb5-kadmind` 
 
 You can now use kadmin as your own user, authenticating with kerberos:
 

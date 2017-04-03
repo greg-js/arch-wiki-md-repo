@@ -73,9 +73,8 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.6.4 VoIP / Softphone](#VoIP_.2F_Softphone)
             *   [1.6.4.1 Clients](#Clients)
                 *   [1.6.4.1.1 SIP](#SIP)
-                *   [1.6.4.1.2 Skype](#Skype)
-                *   [1.6.4.1.3 Other](#Other_3)
-                *   [1.6.4.1.4 Multi-protocol](#Multi-protocol)
+                *   [1.6.4.1.2 Other](#Other_3)
+                *   [1.6.4.1.3 Multi-protocol](#Multi-protocol)
             *   [1.6.4.2 Voice servers](#Voice_servers)
             *   [1.6.4.3 Utilities](#Utilities)
     *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
@@ -923,7 +922,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client) [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter, Facebook Chat, Google Talk and Jabber / XMPP.
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter, Google Talk and Jabber / XMPP.
 
 	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
@@ -1101,7 +1100,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
-	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
+	[http://icanblink.com/](http://icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
 
 *   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
 
@@ -1123,25 +1122,19 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
 
-*   **Minisip** — SIP User Agent with focus on security (supports TLS, end-to-end security, SRTP, MIKEY (DH, PSK, PKE)).
-
-	[http://www.minisip.org/](http://www.minisip.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=minisip)</small>
-
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
 	[http://www.twinklephone.com/](http://www.twinklephone.com/) || [twinkle](https://aur.archlinux.org/packages/twinkle/)
 
 *   **[X-Lite](https://en.wikipedia.org/wiki/X-Lite "wikipedia:X-Lite")** — Proprietary freeware VoIP soft phone that uses SIP.
 
-	[http://www.counterpath.net/x-lite](http://www.counterpath.net/x-lite) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
+	[http://www.counterpath.com/x-lite/](http://www.counterpath.com/x-lite/) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
 
-###### Skype
+###### Other
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
-
-###### Other
+	[https://www.skype.com/](https://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/) or [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/)
 
 *   **Hangups** — A third-party instant messaging client for Google Hangouts
 
@@ -1167,7 +1160,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
-	[http://ring.cx/](http://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
+	[https://ring.cx/](https://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
 
 ##### Voice servers
 
@@ -1419,7 +1412,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
-*   **[Teamviewer](/index.php?title=Teamviewer&action=edit&redlink=1 "Teamviewer (page does not exist)")** — Remote desktop client.
+*   **TeamViewer** — Proprietary remote desktop client. It uses its own proprietary protocol.
 
 	[http://www.teamviewer.com/](http://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
 
@@ -3605,7 +3598,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal and others.
 
-	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
+	[http://virtaal.translatehouse.org/](http://virtaal.translatehouse.org/) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
 ### Text editors
 
@@ -4490,10 +4483,6 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
-*   **silenteye** — A steganography application written in C++, use Qt4 library.
-
-	[http://www.silenteye.org/](http://www.silenteye.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=silenteye)</small>
-
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
@@ -4600,15 +4589,11 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **galculator** — GTK+ based scientific calculator.
 
-	[http://galculator.sourceforge.net/](http://galculator.sourceforge.net/) || [galculator](https://www.archlinux.org/packages/?name=galculator) [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
+	[http://galculator.sourceforge.net/](http://galculator.sourceforge.net/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
 
 *   **[GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop.
 
 	[https://wiki.gnome.org/Apps/Calculator](https://wiki.gnome.org/Apps/Calculator) || [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator)
-
-*   **[GCalctool](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop (old GTK2 version).
-
-	[http://www.gnome.org](http://www.gnome.org) || [gcalctool-oldgui](https://aur.archlinux.org/packages/gcalctool-oldgui/)
 
 *   **KAlgebra** — Calculator and 3D plotter included in KDE EDU.
 
@@ -4617,6 +4602,10 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 *   **[KCalc](https://en.wikipedia.org/wiki/KCalc "wikipedia:KCalc")** — Scientific calculator included in the KDE desktop.
 
 	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
+
+*   **MATE Calc** — Calculator for the MATE desktop environment.
+
+	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate-calc](https://www.archlinux.org/packages/?name=mate-calc)
 
 *   **Qalculate** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
 
@@ -4758,7 +4747,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 	[http://scidavis.sourceforge.net/](http://scidavis.sourceforge.net/) || [scidavis](https://aur.archlinux.org/packages/scidavis/)
 
-See also [List of applications/Documents and texts#Spreadsheets](/index.php?title=List_of_applications/Documents_and_texts&action=edit&redlink=1 "List of applications/Documents and texts (page does not exist)")
+See also [List of applications/Documents#Spreadsheets](/index.php/List_of_applications/Documents#Spreadsheets "List of applications/Documents")
 
 ### Chemistry and biology
 

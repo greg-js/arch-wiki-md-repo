@@ -1,13 +1,18 @@
-[pass](http://www.zx2c4.com/projects/password-store/) is a simple password manager for the command line. Passwords are stored inside gpg encrypted files in a simple directory tree structure. pass is a shell script that makes use of existing tools like [gnupg](https://www.archlinux.org/packages/?name=gnupg), [pwgen](https://www.archlinux.org/packages/?name=pwgen), [tree](https://www.archlinux.org/packages/?name=tree) and [git](https://www.archlinux.org/packages/?name=git).
+From [the official website](https://www.passwordstore.org/):
+
+	*Password management should be simple and follow Unix philosophy. With pass, each password lives inside of a gpg encrypted file whose filename is the title of the website or resource that requires the password. These encrypted files may be organized into meaningful folder hierarchies, copied from computer to computer, and, in general, manipulated using standard command line file management utilities.*
+
+pass is a simple password manager for the command line. Pass is a shell script that makes use of existing tools like [gnupg](https://www.archlinux.org/packages/?name=gnupg), [tree](https://www.archlinux.org/packages/?name=tree) and [git](https://www.archlinux.org/packages/?name=git).
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
 *   [3 Migrating to pass](#Migrating_to_pass)
-*   [4 Advanced usage](#Advanced_usage)
-*   [5 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
-*   [6 See also](#See_also)
+*   [4 Extensions](#Extensions)
+*   [5 Advanced usage](#Advanced_usage)
+*   [6 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -70,6 +75,26 @@ $ pass -c archlinux.org/wiki/username
 ## Migrating to pass
 
 There are multiple scripts listed on the [pass-project page](http://www.zx2c4.com/projects/password-store/) to import passwords from other programs
+
+## Extensions
+
+Since version 1.7, pass supports extensions developed by the community. These extensions extend the features of pass with the support of new commands.
+
+*   [pass-tomb](https://github.com/roddhjav/pass-tomb) ([pass-tomb](https://aur.archlinux.org/packages/pass-tomb/))
+
+Manage the whole tree of your password store encrypted inside a [tomb](https://aur.archlinux.org/packages/tomb/).
+
+*   [pass-otp](https://github.com/tadfisher/pass-otp) ([pass-otp](https://aur.archlinux.org/packages/pass-otp/))
+
+Support for one-time-password (OTP) tokens.
+
+*   [pass-import](https://github.com/roddhjav/pass-import) ([pass-import](https://aur.archlinux.org/packages/pass-import/))
+
+A generic importer tool from other password managers.
+
+*   [pass-update](https://github.com/roddhjav/pass-update) ([pass-update](https://aur.archlinux.org/packages/pass-update/))
+
+An easy flow for updating passwords.
 
 ## Advanced usage
 

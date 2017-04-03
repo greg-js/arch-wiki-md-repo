@@ -405,7 +405,7 @@ mux default
 
 #### 自动使用默认布局启动tmux
 
-If you like to start your terminal session with your default Tmux session layout edit
+如果你想在启动终端的时候直接进入tmux, 并且使用默认布局, 可以往~/.bashrc添加如下:
 
  `~/.bashrc` 
 ```
@@ -441,7 +441,7 @@ Use this command to start urxvt with a started tmux session. I use this with the
 
 #### Bash
 
-For bash, simply add the following line of bash code to your .bashrc before your aliases; the code for other shells is very similar:
+对bash用户, 只需要将下面命令添加到自己家目录下的.bashrc, 要注意这句命令需要在alias配置之前.对其它shell的配置也是类似的
 
  `~/.bashrc` 
 ```
@@ -451,9 +451,9 @@ For bash, simply add the following line of bash code to your .bashrc before your
 
 ```
 
-**Note:** This snippet ensures that tmux is not launched inside of itself (something tmux usually already checks for anyway). tmux sets $TMUX to the socket it is using whenever it runs, so if $TMUX isn't set or is length 0, we know we aren't already running tmux.
+**注意:** 这些代码确保tmux不会在tmux中启动(tmux嵌套于tmux中). tmux 通过设置环境变量$TMUX 来设置tmux启动所用的socket, 如果$TMUX不存在,或者长度为0那么就可以知道当前没有运行tmux.
 
-Add the following snippet to start only one session (unless you start some manually), on login, try attach at first, only create a session if no tmux is running.
+下面的配置会尝试只启动一个会话, 当你登录时, 如果之前启动过会话, 那么它会直接attach, 而不是新开一个. 想要新开一个session要么是因为之前没有会话, 要么是你手动启动一个新的会话.
 
 ```
 # TMUX
@@ -464,7 +464,7 @@ fi
 
 ```
 
-The following snippet does the same thing, but also checks tmux is installed before trying to launch it. It also tries to reattach you to an existing tmux session at logout, so that you can shut down every tmux session quickly from the same terminal at logout.
+下面的配置实现的功能相似, 但是他会在启动tmux之前先检查一下tmux是否已经安装. 它也会在你登出之前帮你重新连接上未关闭的session, 这样可以让你手动关闭会话并保存相应的工作,避免数据丢失,进程异常中断.
 
 ```
 # TMUX
@@ -480,7 +480,7 @@ fi
 
 ```
 
-Another possibility is to try to attach to existing deattached session or start a new session:
+另外一种配置, 一样可以实现自动连接已存在的会话,否则会新开一个:
 
 ```
 if [[ -z "$TMUX" ]] ;then
@@ -655,21 +655,21 @@ fi
 
 ### 不用重启tmux就能加载新的配置
 
-By default tmux reads `~/.tmux.conf` only if it was not already running. To have tmux load a configuration file afterwards, execute:
+如果对tmux的配置文件`~/.tmux.conf`做了修改, 默认情况下tmux是不会自动重新加载的, 除非关闭所有正在运行的tmux会话. 如果不想关闭会话而手动加载tmux的配置文件, 可以在命令行下输入:
 
 ```
 tmux source-file <path>
 
 ```
 
-This can be added to `~/.tmux.conf` as e. g.:
+也可以在配置文件 `~/.tmux.conf` 中加入下面配置(这样下次输入 ctrl+b r就可以加载新的配置文件了):
 
 ```
 bind r source-file <path>
 
 ```
 
-You can also do ^: and type :
+还有一种做法是输入前缀+冒号(ctrl+b :),然后输入如下命令:
 
 ```
 source .tmux.conf

@@ -29,7 +29,7 @@ Next mount the image:
 
 ```
 # mkdir -p /mnt/archiso
-# mount -o loop,ro archlinux-2013.11.01-dual.iso /mnt/archiso
+# mount -o loop,ro archlinux-2017.04.01-x86_64.iso /mnt/archiso
 ```
 
 ## Server setup
@@ -172,7 +172,7 @@ After the kernel loads, the Arch bootstrap image will copy the root filesystem v
 [generic]
 [archiso]
     readonly = true
-    exportname = /srv/archlinux-2013.02.01-dual.iso
+    exportname = /srv/archlinux-2017.04.01-x86_64.iso
 ```
 
 [Start](/index.php/Start "Start") `nbd.service`.

@@ -49,3 +49,4 @@ If your laptop freezes whilst booting Linux, usually, one of these solutions wil
         ```
 
 2.  Set the BIOS setting `OS Selection` in the `Advanced` menu to `Windows 7`.
+3.  Update kernel to version which has a fix as described in [this kernel bug report](https://bugzilla.kernel.org/show_bug.cgi?id=101271).

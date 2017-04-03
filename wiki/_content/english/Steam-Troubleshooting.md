@@ -32,6 +32,7 @@
 *   [23 Very slow app download speed](#Very_slow_app_download_speed)
 *   [24 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
 *   [25 Hardware decoding not available](#Hardware_decoding_not_available)
+*   [26 Audio streams can't be moved between devices](#Audio_streams_can.27t_be_moved_between_devices)
 
 ## Debugging Steam
 
@@ -418,3 +419,17 @@ For steam to work, disable dri3 in xorg config file or as a workaround run steam
 ## Hardware decoding not available
 
 In-home streaming hardware decoding uses `vaapi`, so it needs to be installed (or wrapped around `vdpau`). See [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Remember to install the `lib32` versions as well.
+
+## Audio streams can't be moved between devices
+
+If you use [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and attempt to move an audio stream between different sinks, there's a possibility that you won't be able to move the stream.
+
+This is due to recent versions of OpenAL default to disallow pulse streams from being moved, create a ~/.alsoftrc with the contents
+
+```
+[pulse]
+allow-moves=true
+
+```
+
+to remedy this fact

@@ -17,7 +17,7 @@
 | <small>2.5.</small> [Emuladores](/index.php/Category:Emulators_(Espa%C3%B1ol) "Category:Emulators (Español)") <small>(4)</small> |
 | <small>2.6.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(2)</small> |
 | <small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(5)</small> |
-| <small>2.8.</small> [Gráficos y autoedición](/index.php/Category:Graphics_and_desktop_publishing_(Espa%C3%B1ol) "Category:Graphics and desktop publishing (Español)") <small>(0)</small> |
+| <small>2.8.</small> [Gráficos y autoedición](/index.php?title=Category:Graphics_and_desktop_publishing_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Graphics and desktop publishing (Español) (page does not exist)") <small>(0)</small> |
 | <small>2.9.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>2.9.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
 | <small>2.9.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
@@ -59,7 +59,7 @@
 | <small>4.11.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(5)</small> |
 | <small>4.12.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(1)</small> |
 | <small>4.12.1.</small> [Dispositivos ópticos](/index.php/Category:Optical_(Espa%C3%B1ol) "Category:Optical (Español)") <small>(1)</small> |
-| <small>4.13.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(0)</small> |
+| <small>4.13.</small> [TV cards](/index.php?title=Category:TV_cards_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:TV cards (Español) (page does not exist)") <small>(0)</small> |
 | <small>5.</small> [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(5)</small> |
 | <small>5.1.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(5)</small> |
 | <small>5.2.</small> [Protocolo de Transferencia de Archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
@@ -74,11 +74,11 @@
 | <small>5.8.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.9.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small> |
 | <small>5.10.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(6) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
-| <small>5.11.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(Espa%C3%B1ol) "Category:Telephony and voice (Español)") <small>(0)</small> |
+| <small>5.11.</small> [Telephony and voice](/index.php?title=Category:Telephony_and_voice_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Telephony and voice (Español) (page does not exist)") <small>(0)</small> |
 | <small>5.12.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(8)</small> |
 | <small>5.13.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
 | <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(5)</small> |
-| <small>6.1.</small> [Audio/Vídeo](/index.php/Category:Audio/Video_(Espa%C3%B1ol) "Category:Audio/Video (Español)") <small>(0)</small> |
+| <small>6.1.</small> [Audio/Vídeo](/index.php?title=Category:Audio/Video_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Audio/Video (Español) (page does not exist)") <small>(0)</small> |
 | <small>6.2.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(25)</small> |
 | <small>6.2.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(8)</small> |
 | <small>6.2.2.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(3) (también en [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)"))</small> |
@@ -101,7 +101,7 @@
 | <small>6.9.</small> [Gestión de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(22)</small> |
 | <small>6.9.1.</small> [Arch User Repository (AUR)](/index.php/Category:Arch_User_Repository_(Espa%C3%B1ol) "Category:Arch User Repository (Español)") <small>(2) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small> |
 | <small>6.10.</small> [Gestión de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(3)</small> |
-| <small>6.11.</small> [Scripts](/index.php/Category:Scripts_(Espa%C3%B1ol) "Category:Scripts (Español)") <small>(0)</small> |
+| <small>6.11.</small> [Scripts](/index.php?title=Category:Scripts_(Espa%C3%B1ol)&action=edit&redlink=1 "Category:Scripts (Español) (page does not exist)") <small>(0)</small> |
 | <small>6.12.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(10)</small> |
 | <small>6.12.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(5)</small> |
 | <small>6.12.2.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(5) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |

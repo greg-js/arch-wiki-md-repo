@@ -354,7 +354,7 @@ Other applications that are usually provided by desktop environments are:
 *   Desktop wallpaper setter and desktop icon: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") and [Openbox#Icon programs](/index.php/Openbox#Icon_programs "Openbox")
 *   Display manager: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager")
 *   Display power saving settings: [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
-*   Logout dialogue: [List of applications#Logout dialogue](/index.php/List_of_applications#Logout_dialogue "List of applications")
+*   Logout dialogue: [Oblogout](/index.php/Oblogout "Oblogout")
 *   Mount tool: [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")
 *   Notification daemon: [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
 *   Polkit authentication agent: [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")

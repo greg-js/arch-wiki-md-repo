@@ -63,9 +63,8 @@
         *   [1.6.4 VoIP / Softphone](#VoIP_.2F_Softphone)
             *   [1.6.4.1 Clients](#Clients)
                 *   [1.6.4.1.1 SIP](#SIP)
-                *   [1.6.4.1.2 Skype](#Skype)
-                *   [1.6.4.1.3 Other](#Other_3)
-                *   [1.6.4.1.4 Multi-protocol](#Multi-protocol)
+                *   [1.6.4.1.2 Other](#Other_3)
+                *   [1.6.4.1.3 Multi-protocol](#Multi-protocol)
             *   [1.6.4.2 Voice servers](#Voice_servers)
             *   [1.6.4.3 Utilities](#Utilities)
     *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
@@ -743,7 +742,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client) [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter, Facebook Chat, Google Talk and Jabber / XMPP.
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter, Google Talk and Jabber / XMPP.
 
 	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
@@ -921,7 +920,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
-	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
+	[http://icanblink.com/](http://icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
 
 *   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
 
@@ -943,25 +942,19 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
 
-*   **Minisip** — SIP User Agent with focus on security (supports TLS, end-to-end security, SRTP, MIKEY (DH, PSK, PKE)).
-
-	[http://www.minisip.org/](http://www.minisip.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=minisip)</small>
-
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
 	[http://www.twinklephone.com/](http://www.twinklephone.com/) || [twinkle](https://aur.archlinux.org/packages/twinkle/)
 
 *   **[X-Lite](https://en.wikipedia.org/wiki/X-Lite "wikipedia:X-Lite")** — Proprietary freeware VoIP soft phone that uses SIP.
 
-	[http://www.counterpath.net/x-lite](http://www.counterpath.net/x-lite) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
+	[http://www.counterpath.com/x-lite/](http://www.counterpath.com/x-lite/) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
 
-###### Skype
+###### Other
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for voice and video communication.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
-
-###### Other
+	[https://www.skype.com/](https://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/) or [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/)
 
 *   **Hangups** — A third-party instant messaging client for Google Hangouts
 
@@ -987,7 +980,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
-	[http://ring.cx/](http://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
+	[https://ring.cx/](https://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
 
 ##### Voice servers
 
@@ -1239,7 +1232,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
-*   **[Teamviewer](/index.php?title=Teamviewer&action=edit&redlink=1 "Teamviewer (page does not exist)")** — Remote desktop client.
+*   **TeamViewer** — Proprietary remote desktop client. It uses its own proprietary protocol.
 
 	[http://www.teamviewer.com/](http://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
 

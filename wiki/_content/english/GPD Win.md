@@ -4,14 +4,15 @@
 
 *   [1 Fixes](#Fixes)
     *   [1.1 Built-in Wi-Fi](#Built-in_Wi-Fi)
-    *   [1.2 Battery sensor](#Battery_sensor)
+    *   [1.2 Battery monitoring](#Battery_monitoring)
     *   [1.3 Rotating X Session](#Rotating_X_Session)
     *   [1.4 Rotating touch screen](#Rotating_touch_screen)
     *   [1.5 Fixing occasional crash when using all cores](#Fixing_occasional_crash_when_using_all_cores)
     *   [1.6 Sound](#Sound)
     *   [1.7 Memory card reader](#Memory_card_reader)
-    *   [1.8 Volume buttons](#Volume_buttons)
+    *   [1.8 Physical power and volume buttons](#Physical_power_and_volume_buttons)
     *   [1.9 Adjusting screen brightness](#Adjusting_screen_brightness)
+    *   [1.10 Suspend/resume/waking up when opening the lid](#Suspend.2Fresume.2Fwaking_up_when_opening_the_lid)
 *   [2 Installation guide](#Installation_guide)
     *   [2.1 Boot the installer](#Boot_the_installer)
     *   [2.2 Formating and mounting partitions for dual booting with Windows 10](#Formating_and_mounting_partitions_for_dual_booting_with_Windows_10)
@@ -60,11 +61,9 @@ wifi-menu
 
 ```
 
-#### Battery sensor
+#### Battery monitoring
 
-No fix found yet. Device uses the Intel Battery Management Device INT33FE. These links may be useful for finding a fix: [https://github.com/TheSSJ/android_kernel_asus_moorefield/tree/350f074f508463993a7cba1bb6014a5af8c32de4/drivers/external_drivers/drivers/mfd/intel_pmic](https://github.com/TheSSJ/android_kernel_asus_moorefield/tree/350f074f508463993a7cba1bb6014a5af8c32de4/drivers/external_drivers/drivers/mfd/intel_pmic)
-
-[https://github.com/01org/ProductionKernelQuilts/blob/master/uefi/cht-m1stable/patches/0001-PMIC-Add-WC-PMIC-support.patch](https://github.com/01org/ProductionKernelQuilts/blob/master/uefi/cht-m1stable/patches/0001-PMIC-Add-WC-PMIC-support.patch)
+Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html). His kernel will also fix "Not charging when the power cable gets plugged in after boot" and "Only drawing max 0.5A from the charger, charging slowly if at all".
 
 #### Rotating X Session
 
@@ -85,19 +84,23 @@ Turbo Boost on this CPU is software-controlled and the Linux kernel (4.4) is not
 
 #### Sound
 
-Works out of the box with latest kernel. Does not work at all with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
+Works out of the box with latest and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel. Headphone jack works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html).
 
 #### Memory card reader
 
 Works out of the box with latest and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
 
-#### Volume buttons
+#### Physical power and volume buttons
 
-No fix found yet.
+Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html).
 
 #### Adjusting screen brightness
 
-No fix found yet.
+Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html).
+
+#### Suspend/resume/waking up when opening the lid
+
+Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html).
 
 ## Installation guide
 

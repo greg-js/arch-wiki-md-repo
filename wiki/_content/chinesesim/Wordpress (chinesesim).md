@@ -5,18 +5,18 @@ Wordpress的最大特性是易于配置与管理。[搭建WordPress将使用5分
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 Installation using pacman](#Installation_using_pacman)
-    *   [1.2 Manual install](#Manual_install)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Host config](#Host_config)
-    *   [2.2 Configure apache](#Configure_apache)
-    *   [2.3 Configure MySQL](#Configure_MySQL)
-        *   [2.3.1 Using MariaDB command-line tool](#Using_MariaDB_command-line_tool)
-        *   [2.3.2 Using phpMyAdmin](#Using_phpMyAdmin)
-*   [3 WordPress Installation](#WordPress_Installation)
-*   [4 Usage](#Usage)
-    *   [4.1 Installing a theme](#Installing_a_theme)
-        *   [4.1.1 Finding new themes](#Finding_new_themes)
+    *   [1.1 使用pacman安装](#.E4.BD.BF.E7.94.A8pacman.E5.AE.89.E8.A3.85)
+    *   [1.2 手动安装](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 主机配置](#.E4.B8.BB.E6.9C.BA.E9.85.8D.E7.BD.AE)
+    *   [2.2 配置apache](#.E9.85.8D.E7.BD.AEapache)
+    *   [2.3 配置MySQL](#.E9.85.8D.E7.BD.AEMySQL)
+        *   [2.3.1 使用MariaDB命令行工具](#.E4.BD.BF.E7.94.A8MariaDB.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.B7.A5.E5.85.B7)
+        *   [2.3.2 使用phpMyAdmin](#.E4.BD.BF.E7.94.A8phpMyAdmin)
+*   [3 WordPress安装](#WordPress.E5.AE.89.E8.A3.85)
+*   [4 使用](#.E4.BD.BF.E7.94.A8)
+    *   [4.1 安装一个主题](#.E5.AE.89.E8.A3.85.E4.B8.80.E4.B8.AA.E4.B8.BB.E9.A2.98)
+        *   [4.1.1 寻找新的主题](#.E5.AF.BB.E6.89.BE.E6.96.B0.E7.9A.84.E4.B8.BB.E9.A2.98)
         *   [4.1.2 Install using the admin panel](#Install_using_the_admin_panel)
         *   [4.1.3 Install manually](#Install_manually)
     *   [4.2 Installing a plugin](#Installing_a_plugin)
@@ -28,17 +28,17 @@ Wordpress的最大特性是易于配置与管理。[搭建WordPress将使用5分
 
 ## 安装
 
-WordPress requires [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL") to be installed and configured. See the [LAMP](/index.php/LAMP "LAMP") wiki article for more information. During configuration, be aware that some WordPress features require [PHP extensions](http://wordpress.stackexchange.com/questions/42098/what-are-php-extensions-and-libraries-wp-needs-and-or-uses) that may not be turned on by default.
+WordPress需要安装和配置[PHP](/index.php/PHP "PHP")及[MySQL](/index.php/MySQL "MySQL") 。 详细请查阅[LAMP](/index.php/LAMP "LAMP")文档。在配置中,某些WordPress功能需要[PHP extensions](http://wordpress.stackexchange.com/questions/42098/what-are-php-extensions-and-libraries-wp-needs-and-or-uses) 可能不是默认打开。
 
-### Installation using pacman
+### 使用pacman安装
 
-[Install](/index.php/Install "Install") the [wordpress](https://www.archlinux.org/packages/?name=wordpress) package.
+建议手动安装！！！ [Install](/index.php/Install "Install") the [wordpress](https://www.archlinux.org/packages/?name=wordpress) package.
 
-**Warning:** While it is easier to let pacman manage updating your WordPress install, this is not necessary. WordPress has functionality built-in for managing updates, themes, and plugins. If you decide to install the official community package, you will not be able to install plugins and themes using the WordPress admin panel without a needlessly complex permissions setup, or logging into FTP as root. pacman does not delete the WordPress install directory when uninstalling it from your system regardless of whether or not you have added data to the directory manually or otherwise.
+**警告:** 虽然使用pacman能更容易的安装和升级WordPress, 但这不是必须的。WordPress具有内置功能，用于管理更新，主题和插件。 如果你决定使用pacman安装官方仓库的,如果不配置必须的权限的话，您将无法使用WordPress管理面板安装插件和主题,或以root身份登录FTP. 无论您是否手动或以其他方式将数据添加到目录，pacman都不会从系统中卸载WordPress安装目录。
 
-### Manual install
+### 手动安装
 
-Go to [wordpress.org](http://wordpress.org/download/) and download the latest version of WordPress and extract it to your webserver directory. Give the directory enough permissions to allow your FTP user to write to the directory (used by WordPress).
+访问[wordpress.org](http://wordpress.org/download/)下载WordPress的最新版本，将其解压到你的webserver目录中. 为目录提供足够的权限，允许您的FTP用户写入目录（WordPress需要使用）。
 
 ```
 cd /srv/http/*whatever*
@@ -47,13 +47,13 @@ tar xvzf latest.tar.gz
 
 ```
 
-## Configuration
+## 配置
 
-The configuration method used here assumes you are using WordPress on a local network.
+这里使用的配置方法假设您是在本地网络上使用WordPress。
 
-### Host config
+### 主机配置
 
-Make sure your `/etc/hosts` file is setup correctly. This will be important when accessing your WordPress CMS from a local network. Your `/etc/hosts` file should look something like the following,
+确保你的`/etc/hosts`已经正确配置. 当从本地网络访问WordPress CMS时，这将非常重要。你的`/etc/hosts`文件应该如下所示,
 
 ```
 #<ip-address>   <hostname.domain.org>   <hostname>
@@ -61,13 +61,13 @@ Make sure your `/etc/hosts` file is setup correctly. This will be important when
 ::1             lithium.kaboodle.net    localhost lithium
 ```
 
-**Note:** You will need to use a proxy server to access your WordPress installation from mobile devices if you plan on using hostnames to install WordPress, otherwise your website will appear broken [#Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29).
+**注意:** 如果计划使用主机名安装WordPress，则需要使用代理服务器从移动设备访问您的WordPress安装，否则你的网站将会崩溃 [#Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29).
 
-### Configure apache
+### 配置apache
 
-**Note:** You will need [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL"). Check [LAMP#PHP](/index.php/LAMP#PHP "LAMP") and [LAMP#MySQL/MariaDB](/index.php/LAMP#MySQL.2FMariaDB "LAMP") sections for instructions.
+**注意:** 你将需要 [Apache](/index.php/Apache "Apache") 已经配置运行[PHP](/index.php/PHP "PHP") 和 [MySQL](/index.php/MySQL "MySQL")，检查 [LAMP#PHP](/index.php/LAMP#PHP "LAMP") 和[LAMP#MySQL/MariaDB](/index.php/LAMP#MySQL.2FMariaDB "LAMP") 说明的部分。
 
-You will need to create a config file for apache to find your WordPress install. Create the following file and edit it your favorite text editor:
+你将需要为apache创建一个配置文件来找到你安装的WordPress。使用你最爱的编辑器创建以下的文件：
 
  `# /etc/httpd/conf/extra/httpd-wordpress.conf` 
 ```
@@ -79,9 +79,12 @@ Alias /wordpress "/usr/share/webapps/wordpress"
 </Directory>
 ```
 
-Change `/wordpress` in the first line to whatever you want. For example, `/myblog` would require that you navigate to `[http://hostname/myblog](http://hostname/myblog)` to see your WordPress website.
+```
+修改第一行的`/wordpress` 为你想要的。例如, `/myblog` 将要求你导航到 `[http://hostname/myblog](http://hostname/myblog)` 来访问你的WordPress.
 
-Also change the paths to your WordPress install folder in case you did a manual install. Do not forget to append the parent directory to the `php_admin_value` variable as well as shown below.
+```
+
+如果你是手动安装的话，还需要修改你的WordPress安装文件夹的路径。 不要忘记将父目录添加到`php_admin_value`如下所示。
 
  `# /etc/httpd/conf/extra/httpd-wordpress.conf` 
 ```
@@ -93,7 +96,7 @@ Alias /myblog "/mnt/data/srv/wordpress"
 </Directory>
 ```
 
-Next edit the [Apache](/index.php/Apache "Apache") configuration file and add the following:
+然后编辑[Apache](/index.php/Apache "Apache")配置文件，添加以下行：
 
  `# /etc/httpd/conf/httpd.conf` 
 ```
@@ -101,26 +104,27 @@ Include conf/extra/httpd-wordpress.conf
 
 ```
 
-Now restart `httpd.service` (Apache) using [systemd](/index.php/Systemd#Using_units "Systemd").
+现在使用[systemd](/index.php/Systemd#Using_units "Systemd")重启`httpd.service` (Apache)。
 
-### Configure MySQL
+### 配置MySQL
 
-MySQL can be configured using a plethora of tools, but the most common are the command-line or [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php).
+MySQL 可以使用多种工具进行配置,但是最常用的是使用命令行和[phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php).
 
-**Tip:** Make sure MariaDB is installed and configured correctly. At a minimum, follow the [installation instructions](/index.php/MySQL#Installation "MySQL") for Arch Linux.
+**提示：** 确保MariaDB已经安装和正确配置。至少要遵循 [installation instructions](/index.php/MySQL#Installation "MySQL") for Arch Linux.
 
-#### Using MariaDB command-line tool
+#### 使用MariaDB命令行工具
 
-First, login as root. You will be asked for your MariaDB root password:
+首先,以root身份登录。您将被要求输入您的MariaDB root密码：
 
 ```
 $ mysql -u root -p
 
 ```
 
-Then create a user and database:
+然后创建一个用户和数据库
 
-**Note:** `wordpress` is your Database Name and `wp-user` is your User Name. You can change them if you wish. Also replace `choose_db_password` with your new Password for this database. You will be asked for these values along with `localhost` in the next section.
+数据库名称是
+**Note:** `wordpress`，用户名是`wp-user`。你可以修改它们为你想要的.。还可以使用您的新数据库密码替换`choose_db_password`。你需要在下一部分`localhost`提供这些值
 
 ```
 MariaDB> CREATE DATABASE wordpress;
@@ -129,56 +133,54 @@ MariaDB> FLUSH PRIVILEGES;
 MariaDB> EXIT
 ```
 
-See WordPress.org [official instructions](https://codex.wordpress.org/Installing_WordPress#Using_the_MySQL_Client) for details.
+访问WordPress.org [official instructions](https://codex.wordpress.org/Installing_WordPress#Using_the_MySQL_Client)获取更多细节.
 
-#### Using phpMyAdmin
+#### 使用phpMyAdmin
 
-See [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to install and configure phpMyAdmin.
+访问[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")来安装和配置phpMyAdmin.
 
-In your web browser, navigate to your phpMyAdmin host and perform the following steps:
+在你的浏览器中,登录到你的phpMyAdmin并执行以下操作:
 
-1.  Login to phpMyAdmin.
-2.  Click "user" and then click "Add user".
-3.  Give the pop up window a name and a password.
-4.  Select "Create database with same name and grant all privileges".
-5.  Click the "Add user" button to create the user.
+1.  登录phpMyAdmin。
+2.  点击"user"然后点击"Add user"。
+3.  在弹出窗口输入名字和密码。
+4.  选择"Create database with same name and grant all privileges"给予全部权限。
+5.  点击"Add user"按钮来创建一个用户。
 
-## WordPress Installation
+## WordPress安装
 
-Once you have spent a couple of hours setting up your http server, php, and mysql, it is finally time to let WordPress have its five minutes and install itself. So let us begin.
+一旦你花了几个小时的时间设置你的http服务器、php和mysql，这将是是最后的安装WordPress的五分钟，让我们开始吧。
 
-The WordPress installation procedure will use the URL in the address field of your web browser as the default website URL. If you have navigated to [http://localhost/wordpress](http://localhost/wordpress), your website will be accessible from your local network, but it will be broken in appearance and function.
+1.  访问`[http://hostname/wordpress](http://hostname/wordpress)`。
+2.  点击"Create a Configuration File" 按钮。
+3.  点击"Let's go!"按钮。
+4.  填写上一节中创建的数据库信息。
+5.  点击"Submit"。
 
-1.  Navigate to `[http://hostname/wordpress](http://hostname/wordpress)`.
-2.  Click the "Create a Configuration File" button.
-3.  Click the "Let's go!" button.
-4.  Fill in you database information created in the previous section
-5.  Click "Submit".
+假如你使用的是pacman安装的WordPress, 那么这个安装过程将无法创建WordPress使用的wp-config.php文件的正确权限。您将不得不使用WordPress将提供的信息以root身份执行此步骤。
 
-If you installed WordPress from the Official repository, then this setup procedure will not have the correct permissions to create the wp-config.php file used by WordPress. You will have to do this step yourself as root using information WordPress will provide.
+将出现一个页面，说WordPress无法写入wp-config.php文件。复制编辑框中的文本，并在文本编辑器中以root身份打开`/usr/share/webapps/wordpress/wp-config.php`。 将复制的文本粘贴中并保存文件。
 
-A page will appear saying WordPress can not write the wp-config.php file. Copy the text in the edit box and open `/usr/share/webapps/wordpress/wp-config.php` as root in your text editor. Paste the copied text into the editor and save the file.
+之后,您必须使用chown将/usr/share/webapps/wordpress/及其中的所有文件的权限修改为 用户为`http` 组为`http`，以便网络服务器可以访问它。
 
-After that, you will have to change permissions of the /usr/share/webapps/wordpress/ and all the files inside it to user `http` and group `http` by using chown so that the webserver can access it.
+最后，点击"Run the install" ，WordPress将使用您的信息填充数据库。一旦完成,页面将显示"Success!"。点击login按钮结束你的安装。
 
-Finally, Click "Run the install" and WordPress will populate the database with your information. Once complete, you will be shown "Success!" page. Click the login button to finish your installation.
+现在是从所有设备访问您的网站的好时机，确保您的WordPress安装设置正确。
 
-Now would be a good time to access your website from all your devices to be sure your WordPress installation is setup correctly.
+## 使用
 
-## Usage
+### 安装一个主题
 
-### Installing a theme
+#### 寻找新的主题
 
-#### Finding new themes
-
-There are tens of thousands of themes available for WordPress. Searching on google for a good theme can be like wading through a river filled with trash. Good places for looking for themes include:
+WordPress有数以万计的可用主题。在谷歌搜索一个好的主题就好像通过一个充满垃圾的河流。寻找主题的好地方包括：
 
 *   [Official WordPress theme website](https://wordpress.org/themes/)
 *   [Smashing Magazine](http://www.smashingmagazine.com/)
 *   [The Theme Factory](http://thethemefoundry.com/)
 *   [Woo Themes](http://www.woothemes.com/)
 
-**Tip:** One can use WordPress' admin interface to install plugins and themes. To do this, make the user that serves WordPress the [owner](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") of your WordPress directory. For [Apache](/index.php/Apache_HTTP_Server#Advanced_options "Apache HTTP Server") this user is normally http.
+**提示：** 可以使用WordPress的管理界面来安装插件和主题。为此， make the user that serves WordPress the [owner](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") of your WordPress directory. For [Apache](/index.php/Apache_HTTP_Server#Advanced_options "Apache HTTP Server") this user is normally http.
 
 #### Install using the admin panel
 
