@@ -3,7 +3,7 @@
 若有空不妨協助翻譯各類文件，謝謝。
 
 | [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(72)</small> |
-| <small>1.</small> [關於 Arch](/index.php/Category:About_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:About Arch (正體中文)") <small>(8)</small> |
+| <small>1.</small> [關於 Arch](/index.php/Category:About_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:About Arch (正體中文)") <small>(9)</small> |
 | <small>1.1.</small> [Arch 開發](/index.php/Category:Arch_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Arch development (正體中文)") <small>(0) (還在 [開發](/index.php/Category:Development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Development (正體中文)"))</small> |
 | <small>1.1.1.</small> [軟體包開發](/index.php/Category:Package_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package development (正體中文)") <small>(5)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:ArchWiki (正體中文)") <small>(1)</small> |
@@ -50,7 +50,6 @@
 | <small>6.7.1.</small> [Localization](/index.php/Category:Localization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Localization (正體中文)") <small>(1)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Kernel (正體中文)") <small>(1)</small> |
 | <small>6.9.</small> [軟體包管理](/index.php/Category:Package_management_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package management (正體中文)") <small>(6)</small> |
-| <small>6.9.1.</small> [Arch 使用者軟體庫](/index.php/Category:Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Arch User Repository (正體中文)") <small>(1)</small> |
 | <small>6.10.</small> [安全性](/index.php/Category:Security_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Security (正體中文)") <small>(1)</small> |
 | <small>6.11.</small> [系統恢復](/index.php/Category:System_recovery_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:System recovery (正體中文)") <small>(3)</small> |
 | <small>6.12.</small> [虛擬化](/index.php/Category:Virtualization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Virtualization (正體中文)") <small>(3)</small> |

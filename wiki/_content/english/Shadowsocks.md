@@ -1,4 +1,4 @@
-[Shadowsocks](http://shadowsocks.org) is a lightweight socks5 proxy, written in python.
+[Shadowsocks](http://shadowsocks.org) is a lightweight socks5 proxy, Originally written in Python.
 
 ## Contents
 
@@ -65,17 +65,17 @@ To adjust the logging level, the option `"verbose": *value*` may be added, with 
 
 #### From the command line
 
-The client is started with the `sslocal` command. To start it using the configuration file `/etc/shadowsocks/config.json`:
+The client is started with the `ss-local` command. To start it using the configuration file `/etc/shadowsocks/config.json`:
 
 ```
-$ sslocal -c /etc/shadowsocks/config.json
+$ ss-local -c /etc/shadowsocks/config.json
 
 ```
 
 Alternatively, the configuration may be specified directly on the command:
 
 ```
-$ sslocal -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method*
+$ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method*
 
 ```
 
@@ -93,20 +93,20 @@ Install [shadowsocks-qt5](https://www.archlinux.org/packages/?name=shadowsocks-q
 
 #### From the command line
 
-The server is started with the `ssserver` command.
+The server is started with the `ss-server` command.
 
 To start it in the foreground using the configuration file `/etc/shadowsocks/config.json`:
 
 ```
-$ ssserver -c /etc/shadowsocks/config.json
+$ ss-server -c /etc/shadowsocks/config.json
 
 ```
 
 To run in the background:
 
 ```
-$ ssserver -c /etc/shadowsocks/config.json -d start
-$ ssserver -c /etc/shadowsocks/config.json -d stop
+$ ss-server -c /etc/shadowsocks/config.json -d start
+$ ss-server -c /etc/shadowsocks/config.json -d stop
 ```
 
 #### Using systemd

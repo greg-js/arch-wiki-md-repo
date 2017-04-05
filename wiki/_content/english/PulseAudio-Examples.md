@@ -427,7 +427,7 @@ Change the LAN IP subnet to match that of the those clients you wish to have acc
 
 For the remote PulseAudio server to appear in the PulseAudio Device Chooser (`pasystray`), load the appropriate zeroconf modules, and enable the [Avahi](/index.php/Avahi "Avahi") [daemon](/index.php/Daemon "Daemon").
 
-On the client install `pulseaudio-zeroconf`.
+On the client and server install `pulseaudio-zeroconf`.
 
 On both machines, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `avahi-daemon` systemd unit.
 

@@ -403,3 +403,4 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 *   [Arch Forum thread for XPS 13](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 *   [Dell XPS 13 9350 driver and firmware updates](http://www.dell.com/support/home/us/en/19/product-support/product/xps-13-9350-laptop/drivers)
+*   [Service Manual for Dell XPS 13 (9350)](http://topics-cdn.dell.com/pdf/xps-13-9350-laptop_Service%20Manual_en-us.pdf)

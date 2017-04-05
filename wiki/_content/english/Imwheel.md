@@ -52,6 +52,20 @@ Matching all programs (using ".*") can cause unwanted behaviour in some programs
 
 For example, terminal emulators in which scrolling selects commands from the history will jump multiple items per scroll.
 
+imwheel catches modifier keys for monitored mouse buttons, for passing them further you need to explicitly configure it to do so. In example below `Left Control` used with mousewheel is passed to chromium for zoom function without multiplying:
+
+```
+# Speed up scrolling for chromium and pass unchanged for zoom
+"^chromium$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+    Shift_L,   Up,   Shift_L|Button4, 4
+    Shift_L,   Down, Shift_L|Button5, 4
+    Control_L, Up,   Control_L|Button4
+    Control_L, Down, Control_L|Button5
+
+```
+
 ### Run imwheel
 
 Run imwheel simply like so:

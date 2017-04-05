@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Wordpress](/index.php/Wordpress "Wordpress") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-05，点击[这里](https://wiki.archlinux.org/index.php?title=Wordpress&diff=0&oldid=472142)可以查看翻译后英文页面的改动。
+
 [WordPress](http://wordpress.org)是由[Matt Mullenweg](https://en.wikipedia.org/wiki/Matt_Mullenweg "wikipedia:Matt Mullenweg")创建的免费开源内容管理系统([CMS](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system"))，并于2003年首次发行。WordPress拥有庞大而充满活力的社区，提供数以万计的免费插件和主题，让用户轻松自定义WordPress的外观和功能。 WordPress是根据GPLv2授权的。
 
 Wordpress的最大特性是易于配置与管理。[搭建WordPress将使用5分钟（实际上远远不止）](http://codex.wordpress.org/Installing_WordPress). WordPress管理面板允许用户轻松地配置其网站的几乎每个方面，包括获取和安装插件和主题。WordPress提供方便的自动更新。

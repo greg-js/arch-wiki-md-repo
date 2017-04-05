@@ -665,6 +665,8 @@ For L502X model: there are additional Fn+<Key> (sequences) that are not marked a
 
 ### Touchpad Gestures
 
+The 1.2.21 BIOS update has caused many users to lose mouse scrolling in Chromium. [A bug report has been opened about the issue.](https://bugs.chromium.org/p/chromium/issues/detail?id=647038) A workaround would be to disable Smooth Scrolling in chrome://flags
+
 #### libinput
 
 ##### XPS 9550

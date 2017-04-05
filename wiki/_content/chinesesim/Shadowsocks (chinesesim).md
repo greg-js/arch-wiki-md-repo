@@ -1,4 +1,4 @@
-[Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，以python写成；
+[Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，有多种实现方式。
 
 ## Contents
 
@@ -64,7 +64,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 #### 命令行
 
-在`config.json`所在目录下运行`sslocal`即可；若需指定配置文件的位置：
+在`config.json`所在目录下运行`sslocal`（shadowsocks-libev 使用 `ss-local`）即可；若需指定配置文件的位置：
 
  `# sslocal -c /etc/shadowsocks/config.json` 
 **注意:** 有用户报告无法成功在运行时加载`config.json`
@@ -77,6 +77,8 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 * * *
 
 #### 以守护进程形式运行客户端
+
+**注意:** shadowsocks和shadowsocks-libev的systemd 系统单元使用相同的配置文件路径 （`/etc/shadowsocks`）
 
 Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`*conf-file*.json`（以`*conf-file*`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
 
@@ -103,6 +105,8 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 * * *
 
 #### 浏览器配置
+
+**提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名。
 
 ##### Firefox
 

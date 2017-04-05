@@ -9,9 +9,10 @@ Disk cloning is the process of making an image of a partition or of an entire ha
     *   [1.4 Create disk image](#Create_disk_image)
     *   [1.5 Restore system](#Restore_system)
 *   [2 Using ddrescue](#Using_ddrescue)
-*   [3 Disk cloning software](#Disk_cloning_software)
-    *   [3.1 dd spin-offs](#dd_spin-offs)
-*   [4 See also](#See_also)
+*   [3 Using e2image](#Using_e2image)
+*   [4 Disk cloning software](#Disk_cloning_software)
+    *   [4.1 dd spin-offs](#dd_spin-offs)
+*   [5 See also](#See_also)
 
 ## Using dd
 
@@ -140,6 +141,19 @@ Now you can check the file system for corruption and mount the new drive.
 # fsck -f /dev/sdY
 
 ```
+
+## Using e2image
+
+*e2image* is a tool included in [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) for debugging purposes. It can be used to copy ext2, ext3, and ext4 partitions efficiently by only copying the used blocks. Note that is only works for ext2, ext3, and ext4 filesystems, and the unused blocks are not copied so this may not be a useful tool if one is hoping to recover deleted files.
+
+To clone a partition from physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partition 1 with e2image, run
+
+```
+ # e2image -ra -p /dev/sda1 /dev/sdb1
+
+```
+
+**Note:** gparted uses e2image to efficiently copy ext2/3/4 partitions.
 
 ## Disk cloning software
 

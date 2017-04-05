@@ -82,7 +82,7 @@ Since version 1.7, pass supports extensions developed by the community. These ex
 
 *   [pass-tomb](https://github.com/roddhjav/pass-tomb) ([pass-tomb](https://aur.archlinux.org/packages/pass-tomb/))
 
-Manage the whole tree of your password store encrypted inside a [tomb](https://aur.archlinux.org/packages/tomb/).
+Manage the whole tree of your password store encrypted inside a [tomb](/index.php/Tomb "Tomb").
 
 *   [pass-otp](https://github.com/tadfisher/pass-otp) ([pass-otp](https://aur.archlinux.org/packages/pass-otp/))
 

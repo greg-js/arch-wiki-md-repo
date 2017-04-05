@@ -187,10 +187,10 @@ $ distccmon-text 2
 
 ```
 
-One can also simply tail `/var/log/messages.log` on daemon:
+One can also simply tail `systemd journal log` on daemon:
 
 ```
-# tail -f /var/log/messages.log
+# journalctl -f -u distccd
 
 ```
 

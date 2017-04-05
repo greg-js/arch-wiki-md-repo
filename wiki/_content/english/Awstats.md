@@ -11,8 +11,9 @@ From [AWStats - Free log file analyzer for advanced statistics](http://awstats.s
     *   [2.3 Including AWStats configuration in Apache's configuration](#Including_AWStats_configuration_in_Apache.27s_configuration)
     *   [2.4 AWStats Configuration](#AWStats_Configuration)
 *   [3 Nginx](#Nginx)
-*   [4 GeoIP (optional)](#GeoIP_.28optional.29)
-*   [5 See also](#See_also)
+*   [4 Generating Statistics](#Generating_Statistics)
+*   [5 GeoIP (optional)](#GeoIP_.28optional.29)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -109,8 +110,6 @@ Now you can run the script to test the results, e.g. if you have a `/etc/awstats
  /usr/share/awstats/tools/awstats_buildstaticpages.pl config=apache -update -awstatsprog=/usr/share/webapps/awstats/cgi-bin/awstats.pl -dir=/srv/http/awstats
 
 ```
-
-See also AWStats cron template: `/usr/share/doc/awstats-7.5/cron.hourly`
 
 **Warning:** With these settings anyone will be able to reach AWStats. Setting a authentication would help keeping these stats private.
 
@@ -224,6 +223,36 @@ location ~ ^/awstats {
 ```
 
 With this you can access your awstats page simply by typing **"http://your_domain.com/awstats"** in the address bar of your browser.
+
+## Generating Statistics
+
+You can generate the latest statistics of all your sites manually by issuing the following command:
+
+```
+/usr/share/awstats/tools/awstats_updateall.pl now -awstatsprog=/usr/share/webapps/awstats/cgi-bin/awstats.pl
+
+```
+
+This process can be automated by cron. See AWStats cron template: `/usr/share/doc/awstats-7.5/cron.hourly` However, if you are using logrotate, you have to make sure the cronjob starts right before logrotate runs. Otherwise, statistics will be lost because loratate will change the access log file name to a different name not accessible by awstats. A better way to deal with this is to use web server specific logrotate script normally located in */etc/logrotate.d* to trigger the awstats calculation. An example of nginx logrotate script is provided here. Note the addition of a *prerotate* directive:
+
+```
+/var/log/nginx/*log {
+ daily
+ missingok
+ notifempty
+ create 640 http log
+ compress
+ sharedscripts
+ prerotate
+   # Trigger awstats computation
+   /usr/share/awstats/tools/awstats_updateall.pl now -awstatsprog=/usr/share/webapps/awstats/cgi-bin/awstats.pl
+ endscript
+ postrotate
+    test ! -r /run/nginx.pid || kill -USR1 `cat /run/nginx.pid`
+ endscript
+}
+
+```
 
 ## GeoIP (optional)
 

@@ -19,7 +19,6 @@
 *   [6 Pokretanje WarCraft-a III](#Pokretanje_WarCraft-a_III)
     *   [6.1 WarCraft III: The Reign of Chaos](#WarCraft_III:_The_Reign_of_Chaos)
     *   [6.2 WarCraft III: The Frozen Throne](#WarCraft_III:_The_Frozen_Throne)
-*   [7 Isto pogledajte](#Isto_pogledajte)
 
 ## Увoд
 
@@ -166,7 +165,3 @@ wine ~/.wine/drive_c/Program\ Files/Warcraft\ III/Frozen\ Throne.exe -opengl
 ```
 
 Ne treba vam -opengl parametar ako vam je Direcd3D renderovanje dovoljno brzo. Ovo morate sami da istestirate i zakljucite.
-
-## Isto pogledajte
-
-*   [Snoopy](/index.php/Snoopy "Snoopy")

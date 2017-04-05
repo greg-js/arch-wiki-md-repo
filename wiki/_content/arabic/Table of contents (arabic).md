@@ -1,10 +1,9 @@
 | [العربية](/index.php/Category:%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9 "Category:العربية")‎ <small>(48)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:About Arch (العربية)")‎ <small>(8)</small> |
-| <small>1.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Arch User Repository (العربية)")‎ <small>(1) (also in [Package management](/index.php/Category:Package_management_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Package management (العربية)")‎)</small> |
-| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:ArchWiki (العربية)")‎ <small>(1)</small> |
-| <small>1.3.</small> [Events](/index.php/Category:Events_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Events (العربية)")‎ <small>(1)</small> |
-| <small>1.4.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(3)</small> |
-| <small>1.5.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Live Arch systems (العربية)")‎ <small>(2)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:About Arch (العربية)")‎ <small>(9)</small> |
+| <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:ArchWiki (العربية)")‎ <small>(1)</small> |
+| <small>1.2.</small> [Events](/index.php/Category:Events_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Events (العربية)")‎ <small>(1)</small> |
+| <small>1.3.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(3)</small> |
+| <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Live Arch systems (العربية)")‎ <small>(2)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Applications (العربية)")‎ <small>(0)</small> |
 | <small>2.1.</small> [File managers](/index.php/Category:File_managers_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:File managers (العربية)")‎ <small>(6)</small> |
 | <small>2.2.</small> [Internet applications](/index.php/Category:Internet_applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Internet applications (العربية)")‎ <small>(0) (also in [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)")‎)</small> |
@@ -23,7 +22,6 @@
 | <small>6.2.1.</small> [Display managers](/index.php/Category:Display_managers_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Display managers (العربية)")‎ <small>(1)</small> |
 | <small>6.3.</small> [File systems](/index.php/Category:File_systems_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:File systems (العربية)")‎ <small>(2)</small> |
 | <small>6.4.</small> [Package management](/index.php/Category:Package_management_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Package management (العربية)")‎ <small>(4)</small> |
-| <small>6.4.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Arch User Repository (العربية)")‎ <small>(1) (also in [About Arch](/index.php/Category:About_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:About Arch (العربية)")‎)</small> |
 | <small>6.5.</small> [Power management](/index.php/Category:Power_management_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Power management (العربية)")‎ <small>(1)</small> |
 | <small>6.6.</small> [Security](/index.php/Category:Security_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Security (العربية)")‎ <small>(1)</small> |
 | <small>6.6.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Secure Shell (العربية)")‎ <small>(1) (also in [Networking](/index.php/Category:Networking_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Networking (العربية)")‎)</small> |

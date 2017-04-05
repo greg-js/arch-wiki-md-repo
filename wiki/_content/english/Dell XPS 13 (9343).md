@@ -243,6 +243,7 @@ If you are experiencing freezes in GNOME on Login and/or after, be sure you have
 General:
 
 *   [Collection of links and different configurations](https://github.com/mpalourdio/xps13)
+*   [Service Manual for Dell XPS 13 (9343)](http://downloads.dell.com/Manuals/all-products/esuprt_laptop/esuprt_xps_laptop//xps-13-9343-laptop_Service%20Manual_en-us.pdf)
 
 Project Sputnik:
 

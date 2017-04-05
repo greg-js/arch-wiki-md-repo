@@ -11,7 +11,6 @@
 | <small>6.1.</small> [Boot proces](/index.php/Category:Boot_process_(Nederlands) "Category:Boot process (Nederlands)") <small>(1)</small> |
 | <small>6.2.</small> [Desktop environments](/index.php/Category:Desktop_environments_(Nederlands) "Category:Desktop environments (Nederlands)") <small>(2)</small> |
 | <small>6.3.</small> [Paketbeheer](/index.php/Category:Package_management_(Nederlands) "Category:Package management (Nederlands)") <small>(3)</small> |
-| <small>6.3.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(Nederlands) "Category:Arch User Repository (Nederlands)") <small>(1)</small> |
 | <small>7.</small> [Storage](/index.php/Category:Storage_(Nederlands) "Category:Storage (Nederlands)") <small>(1)</small> |
 | <small>8.</small> [Systeemadministratie](/index.php/Category:System_administration_(Nederlands) "Category:System administration (Nederlands)") <small>(0)</small> |
 | <small>8.1.</small> [Virtualization](/index.php/Category:Virtualization_(Nederlands) "Category:Virtualization (Nederlands)") <small>(2)</small> |

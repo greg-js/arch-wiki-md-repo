@@ -3,7 +3,7 @@
 | Wireless | Working | ath10k |
 | Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working |  ? |
+| Touchpad | Working | hid_multitouch (mousedev) |
 | Webcam | Working | uvcvideo |
 | USB-C / Thunderbolt 3 | Working |  ? |
 | Wireless switch | Working | intel_hid |
@@ -34,6 +34,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
 *   [9 Touchscreen](#Touchscreen)
     *   [9.1 Gestures](#Gestures)
+    *   [9.2 Scrolling in Firefox](#Scrolling_in_Firefox)
 *   [10 Keyboard Backlight](#Keyboard_Backlight)
 *   [11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
 *   [12 Firmware Updates](#Firmware_Updates)
@@ -181,6 +182,10 @@ The touchscreen works without additional configuration. The bug resulting in a d
 
 Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for information about the current development state and available methods.
 
+### Scrolling in Firefox
+
+See [Firefox/Tweaks#Pixel-perfect trackpad scrolling](/index.php/Firefox/Tweaks#Pixel-perfect_trackpad_scrolling "Firefox/Tweaks"). This enables both touchscreen scrolling and high-res trackpad scrolling.
+
 ## Keyboard Backlight
 
 By default, the keyboard backlight turns off after 10 seconds of inactivity. Some users might find this too short and annoying. The delay can be increased (or decreased) by editing this file:
@@ -253,3 +258,4 @@ Open alsamixer and set "Headphone Mic Boost" gain to 10 dB: [https://www.reddit.
 ## See Also
 
 *   [Arch Forum thread for Dell XPS 13 (9360)](https://bbs.archlinux.org/viewtopic.php?id=217865)
+*   [Service Manual for Dell XPS 13 (9360)](http://topics-cdn.dell.com/pdf/xps-13-9360-laptop_Service%20Manual_en-us.pdf)

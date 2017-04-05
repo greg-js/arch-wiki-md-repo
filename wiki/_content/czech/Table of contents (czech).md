@@ -1,7 +1,7 @@
 | [Česky](/index.php/Category:%C4%8Cesky "Category:Česky") <small>(1)</small> |
-| <small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(13)</small> |
+| <small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(14)</small> |
 | <small>1.1.</small> [Vývoj Archu](/index.php/Category:Arch_development_(%C4%8Cesky) "Category:Arch development (Česky)") <small>(0)</small> |
-| <small>1.1.1.</small> [Vývoj balíčků](/index.php/Category:Package_development_(%C4%8Cesky) "Category:Package development (Česky)") <small>(5)</small> |
+| <small>1.1.1.</small> [Vývoj balíčků](/index.php/Category:Package_development_(%C4%8Cesky) "Category:Package development (Česky)") <small>(4)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%C4%8Cesky) "Category:ArchWiki (Česky)") <small>(1)</small> |
 | <small>1.2.1.</small> [Pomoc](/index.php/Category:Help_(%C4%8Cesky) "Category:Help (Česky)") <small>(2)</small> |
 | <small>1.3.</small> [Události](/index.php/Category:Events_(%C4%8Cesky) "Category:Events (Česky)") <small>(1)</small> |
@@ -36,8 +36,7 @@
 | <small>6.5.</small> [Souborové systémy](/index.php/Category:File_systems_(%C4%8Cesky) "Category:File systems (Česky)") <small>(2)</small> |
 | <small>6.6.</small> [Zmezinárodnění](/index.php/Category:Internationalization_(%C4%8Cesky) "Category:Internationalization (Česky)") <small>(1)</small> |
 | <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(%C4%8Cesky) "Category:Kernel (Česky)") <small>(2)</small> |
-| <small>6.8.</small> [Správa balíčků](/index.php/Category:Package_management_(%C4%8Cesky) "Category:Package management (Česky)") <small>(8)</small> |
-| <small>6.8.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%C4%8Cesky) "Category:Arch User Repository (Česky)") <small>(2)</small> |
+| <small>6.8.</small> [Správa balíčků](/index.php/Category:Package_management_(%C4%8Cesky) "Category:Package management (Česky)") <small>(7)</small> |
 | <small>6.9.</small> [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)") <small>(1)</small> |
 | <small>6.9.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(1) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small> |
 | <small>6.10.</small> [Obnova systému](/index.php/Category:System_recovery_(%C4%8Cesky) "Category:System recovery (Česky)") <small>(2)</small> |

@@ -101,6 +101,12 @@ Then `R` searches for the **site-wilde** `Rprofile.site` defined by the `R_PROFI
 
 There are many add-on `R` packages, which can be browsed on [The R Website.](http://cran.r-project.org/web/packages/available_packages_by_date.html). They can be installed from within `R` using the `**install.packages(c("pkgname"))**` command. `R` can install its packages locally as **per user** local settings or **system wide**.
 
+**Note:**
+
+*   `**install.packages()**` requires [tk](https://www.archlinux.org/packages/?name=tk) to be [installed](/index.php/Installed "Installed") for selecting mirrors. Try installing this package if you see:
+
+`Error: .onLoad failed in loadNamespace() for 'tcltk', details (...)`
+
 Within your `R` session, run this command to check that your user library exists and is set correctly:
 
  `> Sys.getenv("R_LIBS_USER")`  `[1] "/path/to/directory/R/packages"` 

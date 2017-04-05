@@ -1,4 +1,4 @@
-[Motion](http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome) is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
+[Motion](https://motion-project.github.io/) is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
 
 ## Installation
 

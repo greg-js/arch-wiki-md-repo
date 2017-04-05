@@ -128,6 +128,8 @@ The important mount options here are *noauto,x-systemd.automount,_netdev*.
 *   *x-systemd.automount* does the on-demand magic
 *   *_netdev* tells it that it is a network device, not a block device (without it "No such device" errors might happen)
 
+**Note:** After editing `/etc/fstab`, (re)start the required service: `systemctl daemon-reload && systemctl restart <target>` where `<target>` can be found by running `systemctl list-unit-files --type automount`
+
 **Tip:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
 
 ### On boot

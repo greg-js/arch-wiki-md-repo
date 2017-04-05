@@ -101,6 +101,8 @@ See [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card
 
 I compiled libfprint-git from the AUR, although it is possible that the version from the repos might work. Then set up [Fprint](/index.php/Fprint "Fprint") or [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui").
 
+As of version 0.7.0-1, the fprintd package from Extra repo works out of the box (no need to compile it yourself).
+
 ### Function Keys
 
 All "special" keys either function or map to Xorg special key classes out of the box. Mappings are below:

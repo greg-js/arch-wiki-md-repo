@@ -1,12 +1,9 @@
-OpenTTD is a tile-based transportation management game based on [Transport Tycoon Deluxe](https://en.wikipedia.org/wiki/Transport_Tycoon_Deluxe "wikipedia:Transport Tycoon Deluxe"). The game is in the community repository.
+OpenTTD is a free re-implementation of the popular DOS game [Transport Tycoon Deluxe](https://en.wikipedia.org/wiki/Transport_Tycoon_Deluxe "wikipedia:Transport Tycoon Deluxe"). You are a transport company owner, and you must manage it over the years in order to make profit.
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 Original Transport Tycoon Deluxe data (optional)](#Original_Transport_Tycoon_Deluxe_data_.28optional.29)
-        *   [1.1.1 Where to get the data](#Where_to_get_the_data)
-        *   [1.1.2 Graphics and sound effects](#Graphics_and_sound_effects)
-        *   [1.1.3 Music](#Music)
 *   [2 Tutorial](#Tutorial)
 *   [3 Configuration](#Configuration)
     *   [3.1 Game Options](#Game_Options)
@@ -16,70 +13,33 @@ OpenTTD is a tile-based transportation management game based on [Transport Tycoo
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Heightmaps](#Heightmaps)
     *   [4.2 Cheats](#Cheats)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Music is not playing](#Music_is_not_playing)
+*   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [openttd](https://www.archlinux.org/packages/?name=openttd) package.
+[Install](/index.php/Install "Install") the [openttd](https://www.archlinux.org/packages/?name=openttd) package from the [community](/index.php/Community "Community") repository.
 
-The [openttd-opengfx](https://www.archlinux.org/packages/?name=openttd-opengfx) package provides a free replacement of the base graphics.
+If you do not own the original game, [openttd-opengfx](https://www.archlinux.org/packages/?name=openttd-opengfx) and [openttd-opensfx](https://www.archlinux.org/packages/?name=openttd-opensfx) contains the free graphics & sounds.
 
-The [openttd-opensfx](https://www.archlinux.org/packages/?name=openttd-opensfx) package provides a free replacement of the base sound.
+The free music pack, [OpenMSX](https://wiki.openttd.org/OpenMSX), can be downloaded from [the online content downloader provided with the game](https://wiki.openttd.org/Online_content).
 
 ### Original Transport Tycoon Deluxe data (optional)
 
-OpenTTD can utilize the non-free graphics and sound data of the original Windows/DOS version of Transport Tycoon Deluxe.
+OpenTTD can use the non-free graphics and sound data of the original Windows/DOS version of Transport Tycoon Deluxe.
 
-#### Where to get the data
-
-If you wish to play OpenTTD with the non-free TTD base graphics and sounds, you will need several files from either the Windows/DOS version of Transport Tycoon Deluxe.
+**Note:** While you can dump the files from either the DOS or the Windows version of the game, only the Windows version provides the original music.
 
 You can get these files from the game CD-ROM, from an existing install or you get them from the freely available game installation archive available at [Abandonia](http://www.abandonia.com/en/games/240).
 
-#### Graphics and sound effects
+To use the original graphics & sound effects, copy the following files to `/usr/share/openttd/data/` or `~/.openttd/baseset` :
 
-Copy the following files to /usr/share/openttd/data/
+*   Windows : trg1r.grf, trgcr.grf, trghr.grf, trgir.grf, trgtr.grf
+*   DOS : TRG1.GRF, TRGC.GRF, TRGH.GRF, TRGI.GRF, TRGT.GRF
+*   sample.cat from either version
 
-*   trg1r.grf or TRG1.GRF
-*   trgcr.grf or TRGC.GRF
-*   trghr.grf or TRGH.GRF
-*   trgir.grf or TRGI.GRF
-*   trgtr.grf or TRGT.GRF
-*   sample.cat
-
-#### Music
-
-The free music set [OpenMSX](http://dev.openttdcoop.org/projects/openmsx) can be installed directly from the in-game download manager.
-
-If you wish to listen to the original music (Windows version only), Copy the files from the gm folder of the original TTD game directory to: `~/.openttd/gm`
-
-If your sound driver does not support MIDI natively, you will need to install [timidity](/index.php/Timidity "Timidity") (configuring a sound sample is enough). timidity might not work in some environments, e.g. with [PulseAudio](/index.php/PulseAudio "PulseAudio"); the alternative is to use [FluidSynth](/index.php/FluidSynth "FluidSynth") as follows.
-
-Install the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) and [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) packages.
-
-Create a fluidsynth wrapper script in e.g. `~/.openttd/playmidi`:
-
-```
-#!/bin/bash
-
-trap "pkill fluidsynth" EXIT
-fluidsynth -a pulseaudio -i /usr/share/soundfonts/FluidR3_GM2-2.sf2 $*
-
-```
-
-Do not forget to allow the script to execute:
-
-```
-$ chmod 755 ~/.openttd/playmidi
-
-```
-
-Run *openttd*, passing the wrapper script filename as an argument to the *extmidi* driver:
-
-```
- $ PATH=$HOME/.openttd:$PATH openttd -m extmidi:cmd=playmidi
-
-```
+For the original soundtrack, copy the files from the gm folder of the original TTD game directory to `~/.openttd/gm`.
 
 ## Tutorial
 
@@ -89,7 +49,7 @@ For an in-game tutorial, a game script has been implemented. Just download 'Begi
 
 ## Configuration
 
-The OpenTTD main configuration file is located at ~/.openttd/openttd.cfg and is automatically created upon first startup.
+The OpenTTD main configuration file is located at `~/.openttd/openttd.cfg` and is automatically created upon first startup.
 
 Various settings in the configuration file can be edited with buttons on the main menu. Each button is explained below.
 
@@ -132,6 +92,56 @@ OpenTTD allows using a grayscale image as a [heightmap](https://wiki.openttd.org
 A cheat menu can be shown in a local game by pressing Ctrl-Alt-C.
 
 Detailed information about cheats are available [here](https://secure.openttd.org/wiki/Cheats).
+
+## Troubleshooting
+
+### Music is not playing
+
+The soundtrack of the game is made of [MIDI](/index.php/MIDI "MIDI") files. Therefore, you need a [MIDI synthesizer](/index.php/MIDI#Software "MIDI") to play them.
+
+The game will automatically try to use [TiMidity++](/index.php/Timidity "Timidity") with no additional arguments. If for some reason you need/want to use another synthesizer, OpenTTD provides the "extmidi" music driver, which allows you to configure a command to be ran to play music.
+
+**Warning:** When using the extmidi driver, the in-game volume control sliders are disabled and cannot be used to change the volume.
+
+**Warning:** If the command you want to run is not included in `$PATH`, you must specify the absolute path.
+
+Edit your openttd.cfg to configure extmidi :
+
+ `~/.openttd/openttd.cfg` 
+```
+[misc]
+musicdriver = "extmidi:cmd=<command>"
+```
+
+**Note:** You can also configure extmidi when starting up the game : `openttd -m extmidi:cmd=<command>`
+
+However, extmidi does not allow additionnal arguments in the command. The solution is to use a wrapper script (for example, `~/.openttd/playmidi`) :
+
+```
+#!/bin/bash
+
+#here, we want to use the [FluidSynth](/index.php/FluidSynth "FluidSynth") synthesizer with the soundfont
+#provided in [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid) and [PulseAudio](/index.php/PulseAudio "PulseAudio")
+
+trap "pkill fluidsynth" EXIT
+fluidsynth -a pulseaudio -i /usr/share/soundfonts/FluidR3_GM2-2.sf2 $*
+
+```
+
+Mark it as executable :
+
+```
+$ chmod 755 ~/.openttd/playmidi
+
+```
+
+Then you can specify the full path to the script as the command to be used with extmidi :
+
+ `~/.openttd/openttd.cfg` 
+```
+[misc]
+musicdriver = "extmidi:cmd=/home/<user>/openttd/playmidi"
+```
 
 ## See also
 

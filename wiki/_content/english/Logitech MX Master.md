@@ -70,7 +70,7 @@ If you prefer to get a visual feedback on how the volume level changes you could
 
 Now start `xbindkeys`, preferably add that to the autostart list of your desktop environment.
 
-The thumb button is special, with the Logitech software available for Windows and Mac, you would be able to map up to 5 actions to it: by pressing the button or by pressing the button and moving the mouse in one of four directions. As of November 2015, there is no way to enable the direction feature using Arch.
+The thumb button is special. With the Logitech software available for Windows and Mac, you would be able to map up to 5 actions to it: by pressing the button or by pressing the button and moving the mouse in one of four directions. As of November 2015, there is no way to enable the direction feature using Arch.
 
 If you look at the keys the button triggers you will notice that it sends a series of keys, confusing xbindkeys. You need to add a short sleep here so xbindkeys will only react on the first keys send so we can at least map one action to it:
 

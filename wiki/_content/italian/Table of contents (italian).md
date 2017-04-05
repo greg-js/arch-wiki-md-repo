@@ -1,5 +1,5 @@
 | [Italiano](/index.php/Category:Italiano "Category:Italiano") <small>(1)</small> |
-| <small>1.</small> [A proposito di Arch](/index.php/Category:About_Arch_(Italiano) "Category:About Arch (Italiano)") <small>(14)</small> |
+| <small>1.</small> [A proposito di Arch](/index.php/Category:About_Arch_(Italiano) "Category:About Arch (Italiano)") <small>(15)</small> |
 | <small>1.1.</small> [Sviluppo di Arch Linux](/index.php/Category:Arch_development_(Italiano) "Category:Arch development (Italiano)") <small>(0)</small> |
 | <small>1.1.1.</small> [Sviluppo dei Pacchetti](/index.php/Category:Package_development_(Italiano) "Category:Package development (Italiano)") <small>(19)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Italiano) "Category:ArchWiki (Italiano)") <small>(3)</small> |
@@ -72,7 +72,6 @@
 | <small>6.8.</small> [Internazionalizzazione](/index.php/Category:Internationalization_(Italiano) "Category:Internationalization (Italiano)") <small>(1)</small> |
 | <small>6.9.</small> [Kernel](/index.php/Category:Kernel_(Italiano) "Category:Kernel (Italiano)") <small>(9)</small> |
 | <small>6.10.</small> [Gestore dei Pacchetti](/index.php/Category:Package_management_(Italiano) "Category:Package management (Italiano)") <small>(15)</small> |
-| <small>6.10.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(Italiano) "Category:Arch User Repository (Italiano)") <small>(2)</small> |
 | <small>6.11.</small> [Risparmio energetico](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)") <small>(8)</small> |
 | <small>6.12.</small> [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)") <small>(12)</small> |
 | <small>6.12.1.</small> [Server Proxy](/index.php/Category:Proxy_servers_(Italiano) "Category:Proxy servers (Italiano)") <small>(1) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |

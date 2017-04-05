@@ -14,23 +14,22 @@
     *   [2.5 Configuring DNS](#Configuring_DNS)
     *   [2.6 Running Docker with a manually-defined network](#Running_Docker_with_a_manually-defined_network)
     *   [2.7 Images location](#Images_location)
-*   [3 Docker 0.9.0 -- 1.2.x and LXC](#Docker_0.9.0_--_1.2.x_and_LXC)
-*   [4 Images](#Images)
-    *   [4.1 Arch Linux](#Arch_Linux)
-        *   [4.1.1 x86_64](#x86_64)
-        *   [4.1.2 i686](#i686)
-        *   [4.1.3 Build Image](#Build_Image)
-    *   [4.2 Debian](#Debian)
-*   [5 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
-*   [6 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
-*   [7 Useful tips](#Useful_tips)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Cannot start a container with systemd 232](#Cannot_start_a_container_with_systemd_232)
-    *   [8.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
-    *   [8.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [8.4 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
-    *   [8.5 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
-*   [9 See also](#See_also)
+*   [3 Images](#Images)
+    *   [3.1 Arch Linux](#Arch_Linux)
+        *   [3.1.1 x86_64](#x86_64)
+        *   [3.1.2 i686](#i686)
+        *   [3.1.3 Build Image](#Build_Image)
+    *   [3.2 Debian](#Debian)
+*   [4 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
+*   [5 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
+*   [6 Useful tips](#Useful_tips)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Cannot start a container with systemd 232](#Cannot_start_a_container_with_systemd_232)
+    *   [7.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
+    *   [7.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
+    *   [7.4 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+    *   [7.5 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -193,21 +192,6 @@ Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for t
 [Service]
 ExecStart= 
 ExecStart=/usr/bin/dockerd -g */path/to/new/location/docker* -H fd://
-```
-
-## Docker 0.9.0 -- 1.2.x and LXC
-
-Since version 0.9.0 Docker provides a new way to start containers without relying on a LXC library called *libcontainer*.
-
-The lxc exec driver and the -lxc-conf option may also be removed in the near future [[2]](https://github.com/docker/docker/pull/5797), hence, you will not be able to use `lxc-attach` with containers managed by Docker 0.9.0+ by default. It is required to make docker daemon run with `-e lxc` as an argument.
-
-Create [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service` with the following content:
-
- `/etc/systemd/system/docker.service.d/lxc.conf` 
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/docker -d -e lxc
 ```
 
 ## Images

@@ -203,10 +203,10 @@ Compiz does not have to be configured through CCSM. Settings can be changed by e
 
 Features of this sample configuration:
 
-*   ctrl+alt+[numpad] arranges the current window
-*   left and right bottom corner shows Taskbar
-*   mouse control for everything (but typing)
-*   some effects
+*   `Ctrl+Alt+*[numpad]*` arranges the current window.
+*   Left and right bottom corner shows taskbar.
+*   Mouse control for everything (but typing).
+*   Some effects.
 
 ```
 [core]

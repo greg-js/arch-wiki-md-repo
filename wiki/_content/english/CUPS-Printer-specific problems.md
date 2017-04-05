@@ -450,6 +450,7 @@ For printers requiring the *cnijfilter* drivers, search for the correct driver [
 
 | Printer | Driver/filter | Notes |
 | ML-2010 | [splix](https://www.archlinux.org/packages/?name=splix) |
+| SCX-4200 | [splix](https://www.archlinux.org/packages/?name=splix) |
 | Newer printers? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) |
 | Printer | Driver/filter | Notes |
 

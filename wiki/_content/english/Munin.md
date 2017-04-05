@@ -261,7 +261,7 @@ Now test your plugin. You do not need to use the full path to the plugin, `munin
 
 ```
 
-And [restart](/index.php/Restart "Restart") `munin-node.servce`. Finally, refresh the web page.
+And [restart](/index.php/Restart "Restart") `munin-node.service`. Finally, refresh the web page.
 
 ##### Additional Plugins
 

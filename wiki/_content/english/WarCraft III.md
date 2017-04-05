@@ -181,4 +181,3 @@ install following packages: [lib32-alsa-lib](https://www.archlinux.org/packages/
 
 *   [Wine](/index.php/Wine "Wine")
 *   [WineHQ's AppDB entry](http://appdb.winehq.org/objectManager.php?sClass=application&iId=897)
-*   [Snoopy](/index.php/Snoopy "Snoopy")

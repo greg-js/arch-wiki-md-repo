@@ -438,7 +438,7 @@ It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libst
 If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead.
 
 ```
-mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
+# mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
 
 ```
 
