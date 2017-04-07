@@ -21,7 +21,8 @@ This page explains how to set up, diagnose, and benchmark an InfiniBand network.
         *   [3.1.2 For Intel/QLogic](#For_Intel.2FQLogic)
     *   [3.2 Kernel modules](#Kernel_modules)
     *   [3.3 Subnet manager](#Subnet_manager)
-        *   [3.3.1 Software subnet manager](#Software_subnet_manager)
+    *   [3.4 Enable port](#Enable_port)
+        *   [3.4.1 Software subnet manager](#Software_subnet_manager)
 *   [4 TCP/IP (IPoIB)](#TCP.2FIP_.28IPoIB.29)
     *   [4.1 Connection mode](#Connection_mode)
     *   [4.2 MTU](#MTU)
@@ -206,6 +207,10 @@ Edit `/etc/rdma/rdma.conf` to your liking and [start](/index.php/Start "Start") 
 
 Each IB network requires at least one subnet manager. Without one, devices may show having a link, but will never change state from `Initializing` to `Active`. A subnet manager often (typically every 5 or 30 seconds) checks the network for new adapters and adds them to the routing tables. If you have an IB switch with an embedded subnet manager, you can use that, or you can keep it disabled and use a software subnet manager instead. Dedicated IB subnet manager devices also exist.
 
+### Enable port
+
+If the port is in the physical state `Sleep` (can be verified with `ibstat`) then it first needs to be enabled by running `ibportstate --Direct 0 1 enable` for it to wake up. This may need to be automated at boot if the ports at both ends of the link are sleeping.
+
 #### Software subnet manager
 
 On one system:
@@ -374,7 +379,7 @@ Use `librdmacm` (successor to rsockets and libspd) and `LD_PRELOAD` to intercept
 
 ## Diagnosing and benchmarking
 
-All IB specific tools are included in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/).
+All IB specific tools are included in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/) and [ibutils](https://aur.archlinux.org/packages/ibutils/).
 
 ### ibstat - View a computer's IB GUIDs
 

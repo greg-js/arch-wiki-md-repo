@@ -15,7 +15,9 @@ Install the [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) packag
 
 ## Configuration
 
-Minimal configuration should be needed. Simply [start](/index.php/Start "Start") the `rabbitmq` service.
+No configuration should be needed. Simply [start](/index.php/Start "Start") the `rabbitmq` service.
+
+Default configuration file location `/etc/rabbitmq/rabbitmq-env.conf`. See more about configuration [on the official docs](https://www.rabbitmq.com/configure.html)
 
 ## Troubleshooting
 

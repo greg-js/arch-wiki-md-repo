@@ -25,6 +25,7 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Diagnose the problem](#Diagnose_the_problem)
     *   [5.2 Emacs](#Emacs)
+        *   [5.2.1 Emacs Daemon](#Emacs_Daemon)
     *   [5.3 Input method module](#Input_method_module_2)
     *   [5.4 Ctrl+Space fail to work in GTK programs](#Ctrl.2BSpace_fail_to_work_in_GTK_programs)
     *   [5.5 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
@@ -197,9 +198,20 @@ If your `LC_CTYPE` is English, you may not be able to use input method in emacs 
 
 Note that the corresponding locale should be enabled on your your system. Uncomment the corresponding line, for example, `zh_CN.UTF-8`, in `/etc/locale.gen` and run `locale-gen`.
 
-If you are using [emacs daemon/client mode](/index.php/Emacs#As_a_daemon "Emacs"), `LC_CTYPE` should be set when starting the daemon. For example, by running emacs daemon with `LC_CTYPE=zh_CN.UTF-8 emacs --daemon`
-
 The default fontset will use `-*-*-*-r-normal--14-*-*-*-*-*-*-*' as basefont(in src/xfns.c), if you do not have one matched(like terminus、or 75dpi things, you can look the output of `xlsfonts'), XIM can not be activated.
+
+#### Emacs Daemon
+
+If you are using [emacs daemon/client mode](/index.php/Emacs#As_a_daemon "Emacs"), `LC_CTYPE` should be set when starting the daemon. For example, by running emacs daemon with `LC_CTYPE=zh_CN.UTF-8 emacs --daemon`.
+
+If starting emacs daemon from systemd, set Environment in the unit file like this:
+
+```
+Environment="LC_CTYPE=zh_CN.UTF-8" "XMODIFIERS=@im=fcitx"
+
+```
+
+(XMODIFIERS may need to be set explicitly here as systemd doesn't load .xprofile. Check the `initial-environment` variable in emacs to verify both variables are set correctly.)
 
 ### Input method module
 

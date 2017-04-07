@@ -27,7 +27,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Budgie](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie is a desktop environment designed with the modern user in mind, it focuses on simplicity and elegance.
 
-	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
+	[https://budgie-desktop.org/](https://budgie-desktop.org/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
 *   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon strives to provide a traditional user experience. Cinnamon is a fork of GNOME 3.
 
@@ -49,9 +49,9 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[https://wiki.gnome.org/Projects/GnomeFlashback](https://wiki.gnome.org/Projects/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
-*   **[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")** — The KDE Plasma desktop environment is a familiar working environment. Plasma Desktop offers all the tools required for a modern desktop computing experience so you can be productive right from the start.
+*   **[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")** — The KDE Plasma desktop environment is a familiar working environment. Plasma offers all the tools required for a modern desktop computing experience so you can be productive right from the start.
 
-	[https://www.kde.org/workspaces/plasmadesktop/](https://www.kde.org/workspaces/plasmadesktop/) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
+	[https://www.kde.org/plasma-desktop](https://www.kde.org/plasma-desktop) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — The Lightweight X11 Desktop Environment is a fast and energy-saving desktop environment. It comes with a modern interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. Fundamentally designed to be lightweight, LXDE strives to be less CPU and RAM intensive than other environments.
 
@@ -106,10 +106,6 @@ Prior to installing a desktop environment, a functional X server installation is
 *   **[Trinity](/index.php/Trinity "Trinity")** — The Trinity Desktop Environment (TDE) project is a computer desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style.
 
 	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || See [Trinity](/index.php/Trinity "Trinity")
-
-*   **[Unity](/index.php/Unity "Unity")** — Unity is a shell for GNOME designed by Canonical for Ubuntu.
-
-	[http://unity.ubuntu.com/](http://unity.ubuntu.com/) || See [Unity](/index.php/Unity "Unity")
 
 ## Comparison of desktop environments
 
@@ -312,17 +308,6 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [theweb](https://aur.archlinux.org/packages/theweb/) | [LightDM](/index.php/LightDM "LightDM") Contemporary Greeter
 [lightdm-webkit-theme-contemporary](https://aur.archlinux.org/packages/lightdm-webkit-theme-contemporary/) |
 | [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
-| [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
-[compiz-ubuntu](https://aur.archlinux.org/packages/compiz-ubuntu/) | [Unity](/index.php/Unity "Unity") | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") Unity Greeter
-[lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) |
 | [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 2/3
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
 [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [Xfce Panel](http://docs.xfce.org/xfce/xfce4-panel/start)

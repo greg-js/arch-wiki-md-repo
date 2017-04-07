@@ -1,4 +1,4 @@
-Вы можете использовать sshfs для монтирования удаленной системы - доступной через [SSH](/index.php/SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH (Русский)") - в локальную папку так, что сможете совершать любые операции над примонтированными файлами с помощью любого инструмента (копирование, переименовывание, редактирование с помощью vim и так далее).
+[SSHFS](https://github.com/libfuse/sshfs) - клиент файловой системы на основе FUSE для монтирования каталогов через [SSH](/index.php/SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH (Русский)").
 
 ## Contents
 
@@ -18,20 +18,21 @@
     *   [6.3 Удаленный хост отключен](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D1.85.D0.BE.D1.81.D1.82_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD)
     *   [6.4 Зависание приложений (например, Gnome Files, Gedit)](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.28.D0.BD.D0.B0.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80.2C_Gnome_Files.2C_Gedit.29)
     *   [6.5 Завершение работы зависает, когда sshfs примонтирована](#.D0.97.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_sshfs_.D0.BF.D1.80.D0.B8.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B0)
+    *   [6.6 Проблемы с монтированием fstab](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_fstab)
 *   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [sshfs](https://www.archlinux.org/packages/?name=sshfs) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
 ### Монтирование
 
 **Совет:** Можно использовать [Google Authenticator](/index.php/Google_Authenticator_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Google Authenticator (Русский)") c sshfs для дополнительной безопасности.
 
-Перед монтированием, убедитесь, что права целевой директории позволят получить к ней соответствующий доступ. Монтирование удаленного каталога:
+Для того, чтобы примонтировать каталог, используя SSH, пользователь должен иметь доступ к нему. Монтирование удаленной директории:
 
 ```
-$ sshfs *USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS*
+$ sshfs [user@]host:[каталог] mountpoint [параметры]
 
 ```
 
@@ -42,22 +43,13 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 
 ```
 
-Где `-p 9876` является номером порта, `-C` - использование сжатия и `-o allow_other` - разрешение обычным пользователям доступ на чтение/запись.
+Где `-p 9876` является номером порта, `-C` - использование сжатия и `-o allow_other` - разрешение несуперпользователям на чтение/запись.
 
 **Примечание:** Опция `allow_other` отключена по умолчанию. Раскоментируйте `user_allow_other` в `/etc/fuse.conf`, чтобы у обычных пользователей был доступ к параметру монтирования allow_other.
 
 **Примечание:** Пользователи могут задать нестандартный порт в host-by-host конфигурации в `~/.ssh/config`, чтобы избежать параметра -p. Для получения дополнительной информации смотрите [Secure Shell (Русский)#Сохранение данных о подключении в конфигурационном файле ssh](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D0.BE.D0.BC_.D1.84.D0.B0.D0.B9.D0.BB.D0.B5_ssh "Secure Shell (Русский)").
 
 SSH запросит пароль, если необходимо. Если вы не хотите постоянно вводить пароль, прочитайте: [как использовать ключ аутентификации RSA с SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) или [SSH Keys](/index.php/SSH_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH keys (Русский)").
-
-**Совет:** Чтобы быстро смонтировать удаленную директорию, сделать нужные файловые манипуляции и размонтировать ее, создайте скрипт и добавьте в него следующее:
-```
-sshfs USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS
-mc LOCAL_MOUNT_POINT
-fusermount -u LOCAL_MOUNT_POINT
-
-```
-Скрипт смонтирует удаленный каталог, запустит MC и размонтирует при выходе.
 
 ### Размонтирование
 
@@ -124,6 +116,8 @@ user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_ne
 *   *noauto* - монтирование не будет происходит при загрузке.
 *   *x-systemd.automount* - делает магию, связанную с запросом.
 *   *_netdev* - показывает, что это сетевое устройство, а не блочное (без этой опции может появится ошибка "No such device")
+
+**Примечание:** После редактирования `/etc/fstab`, (пере)запустите соответствующий сервис: `systemctl daemon-reload && systemctl restart <цель>`; можно найти `<цель>`, используя `systemctl list-unit-files --type automount`
 
 **Совет:**
 
@@ -318,6 +312,24 @@ WantedBy=multi-user.target
 ```
 
 Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `killsshfs.service`.
+
+### Проблемы с монтированием fstab
+
+Для получения подробной отладочной информации, добавьте следующее в параметры монтирования:
+
+```
+ssh_command=ssh\040-vv,sshfs_debug,debug
+
+```
+
+**Note:** `\040` - пробел, используемый fstab для разделения полей.
+
+Чтобы видеть отладочную информацию, запустив при этом `mount -av`, удалите следующее:
+
+```
+noauto,x-systemd.automount
+
+```
 
 ## Смотрите также
 

@@ -366,6 +366,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [DejaVu Serif](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
 *   [Droid Serif](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+*   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/))
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -530,8 +531,8 @@ A section of the Unicode standard is designated for pictographic characters call
 
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
 *   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) and [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contain many math fonts such as Latin Modern Math and [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for configuration.
+*   [otf-stix](https://aur.archlinux.org/packages/otf-stix/) - A standalone, more recent version of STIX
 *   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) - Improved version of Computer Modern fonts as used in LaTeX
-*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with support for maths written from right to left.
 *   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
 *   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType fonts
 

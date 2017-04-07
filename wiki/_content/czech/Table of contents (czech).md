@@ -2,9 +2,9 @@
 | <small>1.</small> [O Archu](/index.php/Category:About_Arch_(%C4%8Cesky) "Category:About Arch (Česky)") <small>(14)</small> |
 | <small>1.1.</small> [Vývoj Archu](/index.php/Category:Arch_development_(%C4%8Cesky) "Category:Arch development (Česky)") <small>(0)</small> |
 | <small>1.1.1.</small> [Vývoj balíčků](/index.php/Category:Package_development_(%C4%8Cesky) "Category:Package development (Česky)") <small>(4)</small> |
-| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%C4%8Cesky) "Category:ArchWiki (Česky)") <small>(1)</small> |
+| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%C4%8Cesky) "Category:ArchWiki (Česky)") <small>(2)</small> |
 | <small>1.2.1.</small> [Pomoc](/index.php/Category:Help_(%C4%8Cesky) "Category:Help (Česky)") <small>(2)</small> |
-| <small>1.3.</small> [Události](/index.php/Category:Events_(%C4%8Cesky) "Category:Events (Česky)") <small>(1)</small> |
+| <small>1.3.</small> [Události](/index.php/Category:Events_(%C4%8Cesky) "Category:Events (Česky)") <small>(0)</small> |
 | <small>1.4.</small> [Získání a instalace Archu](/index.php/Category:Getting_and_installing_Arch_(%C4%8Cesky) "Category:Getting and installing Arch (Česky)") <small>(4)</small> |
 | <small>2.</small> [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)") <small>(4)</small> |
 | <small>2.1.</small> [Command shells](/index.php/Category:Command_shells_(%C4%8Cesky) "Category:Command shells (Česky)") <small>(1)</small> |

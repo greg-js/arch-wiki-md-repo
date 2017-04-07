@@ -75,7 +75,7 @@ Works out of the box
 
 ### Wi-fi
 
-Install from AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or (better) [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
+Install from AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or (better) [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)
 
 ### Audio
 

@@ -82,10 +82,6 @@ There are a number of other unofficial MATE applications that are contributed to
 
 	[https://bitbucket.org/ubuntu-mate/mate-tweak](https://bitbucket.org/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)
 
-*   **TopMenu (GTK+)** — MATE panel applet for a global menubar.
-
-	[https://git.javispedro.com/cgit/topmenu-gtk.git/about/](https://git.javispedro.com/cgit/topmenu-gtk.git/about/) || [topmenu-gtk](https://aur.archlinux.org/packages/topmenu-gtk/)
-
 *   **BriskMenu** — Modern, efficient menu for the MATE Desktop Environment from SolusOS distribution.
 
 	[https://github.com/solus-project/brisk-menu](https://github.com/solus-project/brisk-menu) || [brisk-menu](https://aur.archlinux.org/packages/brisk-menu/)

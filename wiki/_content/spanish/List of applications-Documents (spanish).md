@@ -244,6 +244,10 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://siag.nu/siag/](http://siag.nu/siag/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
+*   **sc-im** — Planilla de cálculo con interfaz basada en ncurses. Fork de sc.
+
+	[https://github.com/andmarti1424/sc-im/](https://github.com/andmarti1424/sc-im/) || [sc-im](https://aur.archlinux.org/packages/sc-im/)
+
 ### Documentos científicos
 
 Con [LaTeX](/index.php/LaTeX "LaTeX"), la creación de cualquier documento científico, artículo, diario, etc. está a la orden del día.

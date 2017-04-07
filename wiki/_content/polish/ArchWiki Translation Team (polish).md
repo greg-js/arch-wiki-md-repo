@@ -32,7 +32,3 @@ Poniżej znajduje się lista artykułów, które istnieją tylko w nieanglojęzy
 | [Small Business Server (Italiano)](/index.php/Small_Business_Server_(Italiano) "Small Business Server (Italiano)") | włoski | Sprawdź również [Category:Small Business Server (Italiano)](/index.php/Category:Small_Business_Server_(Italiano) "Category:Small Business Server (Italiano)") |
 | [Tavolette Trust Aiptek (Italiano)](/index.php/Tavolette_Trust_Aiptek_(Italiano) "Tavolette Trust Aiptek (Italiano)") | włoski |
 | [Vim (Italiano)#Controllo ortografico](/index.php/Vim_(Italiano)#Controllo_ortografico "Vim (Italiano)") | włoski | [Vim#Spell checking](/index.php/Vim#Spell_checking "Vim") ma mniej treści |
-
-## Sprawdź również
-
-[Arch Translation Day](/index.php/Arch_Translation_Day "Arch Translation Day")

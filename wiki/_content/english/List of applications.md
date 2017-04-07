@@ -1606,7 +1606,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **imv** — Lightweight image viewer with support for Wayland and animated GIFs which uses FreeImage.
 
-	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://aur.archlinux.org/packages/imv/)
+	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://www.archlinux.org/packages/?name=imv)
 
 *   **LxImage-Qt** — The LXQt image viewer.
 
@@ -1775,10 +1775,6 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Replacement for Adobe Illustrator or CorelDraw, oriented for "prepress ready" PostScript & PDF output.
 
 	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
-
-*   **[Xara LX](https://en.wikipedia.org/wiki/Xara_Xtreme_LX "wikipedia:Xara Xtreme LX")** — Advanced vector graphics program, the open source version of the commercial Xara X.
-
-	[http://www.xaraxtreme.org/](http://www.xaraxtreme.org/) || [xaralx](https://aur.archlinux.org/packages/xaralx/)
 
 *   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — General-purpose diagramming program for flowcharts, network diagrams, UML diagrams, BPMN diagrams, mind maps, organization charts, and Entity Relationship diagrams.
 
@@ -2654,13 +2650,13 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
 
-*   **Terminix** — A tiling terminal emulator for Linux using GTK+ 3
-
-	[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix-git](https://aur.archlinux.org/packages/terminix-git/)
-
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
+
+*   **Tilix** — A tiling terminal emulator for Linux using GTK+ 3
+
+	[https://github.com/gnunn1/tilix](https://github.com/gnunn1/tilix) || [tilix](https://aur.archlinux.org/packages/tilix/) [tilix-git](https://aur.archlinux.org/packages/tilix-git/)
 
 *   **tinyterm** — Very lightweight terminal emulator based on VTE.
 
@@ -3499,6 +3495,10 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 *   **[sc](/index.php?title=Sc&action=edit&redlink=1 "Sc (page does not exist)")** — curses-based lightweight spreadsheet.
 
 	[http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html](http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html) || [sc](https://www.archlinux.org/packages/?name=sc)
+
+*   **sc-im** — spreadsheet program based on sc.
+
+	[https://github.com/andmarti1424/sc-im/](https://github.com/andmarti1424/sc-im/) || [sc-im](https://aur.archlinux.org/packages/sc-im/)
 
 ### Scientific documents
 
@@ -4391,7 +4391,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://github.com/benruijl/sflock](https://github.com/benruijl/sflock) || [sflock-git](https://aur.archlinux.org/packages/sflock-git/)
 
-*   **slock** — Very simple and lightweight X screen locker. Offers only a black background when locked, there are no animations or text fields.
+*   **[slock](/index.php/Slock "Slock")** — Very simple and lightweight X screen locker. Offers only a black background when locked, there are no animations or text fields.
 
 	[http://tools.suckless.org/slock](http://tools.suckless.org/slock) || [slock](https://www.archlinux.org/packages/?name=slock)
 
@@ -5553,6 +5553,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   [Arch Linux Forums / LnF Awards 2011](https://bbs.archlinux.org/viewtopic.php?id=111878) - The best Light & Fast apps of 2011
 *   [Arch Linux Forums / LnF Awards 2012](https://bbs.archlinux.org/viewtopic.php?id=138281) - The best Light & Fast apps of 2012
 *   [Survey: Vote for the most popular apps of 2013-2014](https://bbs.archlinux.org/viewtopic.php?id=174764)
+*   [Survey: Vote for the most popular apps of 2017+](https://bbs.archlinux.org/viewtopic.php?pid=1702332)
 *   [http://sourceforge.net/](http://sourceforge.net/) open source software
 *   [http://www.oschina.net/](http://www.oschina.net/) open source china
 *   [http://linuxappfinder.com/](http://linuxappfinder.com/)

@@ -424,15 +424,7 @@ See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for mo
 
 ### Dual-booting
 
-The best way to add other entries is editing the `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added when running `grub-mkconfig`. After adding the new lines, run:
-
- `# grub-mkconfig -o /boot/grub/grub.cfg` 
-
-or, for UEFI-GPT Mode (As per [#Alternative install method](#Alternative_install_method)):
-
- `# grub-mkconfig -o /boot/efi/EFI/GRUB/grub.cfg` 
-
-to generate an updated `grub.cfg`.
+The best way to add other entries is editing the `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added after rerunning `grub-mkconfig`.
 
 ##### "Shutdown" menu entry
 

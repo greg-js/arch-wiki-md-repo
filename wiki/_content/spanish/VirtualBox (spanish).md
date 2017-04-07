@@ -239,7 +239,7 @@ Cuando el sistema huésped es Arch Linux, el primer método no funciona y da com
 #### Sistemas huéspedes que ejecutan un kernel oficial
 
 *   Si está utilizando el kernel [linux](https://www.archlinux.org/packages/?name=linux), asegúrese de que el paquete [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) ha sido instalado. Este último se ha debido ser instalado con el paquete [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils).
-*   Si está utilizando la versión LTS del kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), es necesario instalar el paquete [virtualbox-guest-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-lts). [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) puede ser ahora eliminado.
+*   Si está utilizando la versión LTS del kernel ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), es necesario instalar el paquete [virtualbox-guest-modules-lts](https://aur.archlinux.org/packages/virtualbox-guest-modules-lts/). [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) puede ser ahora eliminado.
 *   Si está utilizando el kernel [linux-ck](https://aur.archlinux.org/packages/linux-ck/), compile el paquete [virtualbox-ck-guest-modules](https://aur.archlinux.org/packages/virtualbox-ck-guest-modules/). [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) puede ser ahora eliminado en este caso también, si lo desea.
 
 #### Sistemas huéspedes que ejecutan un kernel personalizado

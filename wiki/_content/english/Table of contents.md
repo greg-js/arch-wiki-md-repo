@@ -6,7 +6,7 @@
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(14)</small> |
 | <small>1.2.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.3.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
-| <small>1.4.</small> [Events](/index.php/Category:Events "Category:Events") <small>(7)</small> |
+| <small>1.4.</small> [Events](/index.php/Category:Events "Category:Events") <small>(6)</small> |
 | <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small> |
@@ -136,4 +136,4 @@
 | <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
 | <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(21)</small> |
 | <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
-| <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(62)</small> |
+| <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(63)</small> |

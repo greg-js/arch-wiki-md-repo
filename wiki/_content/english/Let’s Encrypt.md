@@ -277,16 +277,16 @@ You'll probably want your web server to reload the certificates after each time 
 
 **Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 
-Add a timer to renew the certificates daily, including a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load:
+Add a timer to check for certificate renewal twice a day and include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load [[1]](https://certbot.eff.org/#arch-nginx):
 
  `/etc/systemd/system/certbot.timer` 
 ```
 [Unit]
-Description=Daily renewal of Let's Encrypt's certificates
+Description=Twice daily renewal of Let's Encrypt's certificates
 
 [Timer]
-OnCalendar=daily
-RandomizedDelaySec=1day
+OnCalendar=0/12:00:00
+RandomizedDelaySec=1h
 Persistent=true
 
 [Install]

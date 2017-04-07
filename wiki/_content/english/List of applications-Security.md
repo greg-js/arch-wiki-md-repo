@@ -207,7 +207,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://github.com/benruijl/sflock](https://github.com/benruijl/sflock) || [sflock-git](https://aur.archlinux.org/packages/sflock-git/)
 
-*   **slock** — Very simple and lightweight X screen locker. Offers only a black background when locked, there are no animations or text fields.
+*   **[slock](/index.php/Slock "Slock")** — Very simple and lightweight X screen locker. Offers only a black background when locked, there are no animations or text fields.
 
 	[http://tools.suckless.org/slock](http://tools.suckless.org/slock) || [slock](https://www.archlinux.org/packages/?name=slock)
 

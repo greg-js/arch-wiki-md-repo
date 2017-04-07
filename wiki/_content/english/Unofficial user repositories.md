@@ -82,13 +82,14 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.10 eatabrick](#eatabrick)
         *   [5.1.11 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.12 holo](#holo)
-        *   [5.1.13 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.14 markzz](#markzz)
-        *   [5.1.15 qt-debug](#qt-debug)
-        *   [5.1.16 quarry](#quarry)
-        *   [5.1.17 siosm-aur](#siosm-aur)
-        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.13 jrpi](#jrpi)
+        *   [5.1.14 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.15 markzz](#markzz)
+        *   [5.1.16 qt-debug](#qt-debug)
+        *   [5.1.17 quarry](#quarry)
+        *   [5.1.18 siosm-aur](#siosm-aur)
+        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -866,6 +867,19 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 ```
 [holo]
 Server = https://repo.holocm.org/archlinux/x86_64
+
+```
+
+#### jrpi
+
+*   **Maintainer:** [João Miguel](https://wiki.archlinux.org/index.php/User:JMCF125)
+*   **Description:** Some packages from the AUR, patched official packages and old packages.
+*   **Package list:** [https://jrpi.mooo.com/repo/](https://jrpi.mooo.com/repo/)
+*   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
+
+```
+[jrpi]
+Server = https://jrpi.mooo.com/repo/
 
 ```
 

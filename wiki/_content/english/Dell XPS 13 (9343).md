@@ -82,7 +82,7 @@ This laptop series comes with a SSD as storage device; this section aims to remi
 
 ### Wi-Fi
 
-Most configurations feature the Dell DW1560 802.11ac adapter (based on the Broadcom BCM4352 chip) which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) (in this case, remember to install `linux-headers` too, even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
+Most configurations feature the Dell DW1560 802.11ac adapter (based on the Broadcom BCM4352 chip) which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) (in this case, remember to install `linux-headers` too, even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
 
 Some higher-end models do not use the Dell-branded Broadcom adapter but instead they use an Intel Wireless 7265 card, which is supported by the mainline kernel. This card is widely available as an after-market purchase for those wishing to replace the Broadcom adapter in their laptop. This wireless adapter, other than an enviable driver support, for both Wi-Fi and Bluetooth, that makes installation easier, compared to the Broadcom card, it has a 2-3 times wider reception range and a much higher throughput [citation needed], making it an worthwhile upgrade should you decide to do so.
 

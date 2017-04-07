@@ -136,7 +136,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **imv** — Lightweight image viewer with support for Wayland and animated GIFs.
 
-	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://aur.archlinux.org/packages/imv/)
+	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://www.archlinux.org/packages/?name=imv)
 
 *   **LxImage-Qt** — The LXQt image viewer.
 

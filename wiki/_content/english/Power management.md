@@ -625,6 +625,7 @@ Examples of powersave scripts:
 
 *   [ftw](https://github.com/supplantr/ftw), package: [ftw-git](https://aur.archlinux.org/packages/ftw-git/)
 *   [powersave](https://github.com/Unia/powersave)
+*   [throttle](https://github.com/quequotion/pantheon-bzr-qq/blob/master/EXTRAS/indicator-powersave/throttle), from [indicator-powersave](https://aur.archlinux.org/packages/indicator-powersave/)
 
 The above udev rule should work as expected, but if your power settings are not updated after a suspend or hibernate cycle, you should add a script in `/usr/lib/systemd/system-sleep/` with the following contents:
 

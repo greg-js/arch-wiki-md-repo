@@ -1,4 +1,4 @@
-You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.).
+[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting directories over [SSH](/index.php/SSH "SSH").
 
 ## Contents
 
@@ -27,12 +27,12 @@ You can use sshfs to mount a remote system - accessible via [SSH](/index.php/SSH
 
 ### Mounting
 
-**Tip:** [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") can be used with sshfs as additional security.
+**Tip:** [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") can be used with sshfs for additional security.
 
-Before attempting to mount a directory, make sure the file permissions on the target directory allow your user correct access. To mount, invoke `sshfs` to mount a remote directory:
+In order to be able to mount a directory the SSH user needs to be able to access it. Invoke `sshfs` to mount a remote directory:
 
 ```
-$ sshfs *USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS*
+$ sshfs [user@]host:[dir] mountpoint [options]
 
 ```
 
@@ -43,22 +43,13 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 
 ```
 
-Where `-p 9876` stands for the port number, `-C` use compression and `-o allow_other` to allow non-rooted users have read/write access.
+Where `-p 9876` stands for the port number, `-C` enables compression and `-o allow_other` grants non-rooted users read/write access.
 
 **Note:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
 
 **Note:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
 SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, read: [How to Use RSA Key Authentication with SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) or [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
-
-**Tip:** To quickly mount a remote dir, do some file-management and unmount it, put this in a script:
-```
-sshfs USERNAME@HOSTNAME_OR_IP:/REMOTE_PATH LOCAL_MOUNT_POINT SSH_OPTIONS
-mc LOCAL_MOUNT_POINT
-fusermount -u LOCAL_MOUNT_POINT
-
-```
-This will mount the remote directory, launch MC, and unmount it when you exit.
 
 ### Unmounting
 

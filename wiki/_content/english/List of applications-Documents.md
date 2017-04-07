@@ -164,6 +164,10 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 	[http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html](http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html) || [sc](https://www.archlinux.org/packages/?name=sc)
 
+*   **sc-im** — spreadsheet program based on sc.
+
+	[https://github.com/andmarti1424/sc-im/](https://github.com/andmarti1424/sc-im/) || [sc-im](https://aur.archlinux.org/packages/sc-im/)
+
 ### Scientific documents
 
 With [TeX, LaTeX and friends](/index.php/TeX_Live "TeX Live"), creation of any scientific document, article, journal, etc. is made commonplace.

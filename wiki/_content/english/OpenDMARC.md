@@ -91,7 +91,7 @@ where the latter allows a subdomain in the "From" header while the former does n
 
 The domain policy (p) and subdomain policy (sp) might be one of:
 
-*   "monitor"
+*   "none" (for monitor mode)
 *   "quarantine"
 *   "reject"
 

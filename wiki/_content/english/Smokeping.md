@@ -29,7 +29,7 @@ The smokeping package consists of two parts:
 In addition to the [smokeping](https://www.archlinux.org/packages/?name=smokeping) package, you will need:
 
 *   A tool that smokeping can use for monitoring. [fping](https://www.archlinux.org/packages/?name=fping) is the simplest and default method for simple ping probes.
-*   [apache](https://www.archlinux.org/packages/?name=apache) and [mod_fastcgi](https://www.archlinux.org/packages/?name=mod_fastcgi) for the web interface.
+*   [apache](https://www.archlinux.org/packages/?name=apache) and [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) for the web interface.
 *   An image cache directory that the FastCGI script can write to, e.g. `/srv/smokeping/imgcache`
 *   A data directory that the smokeping daemon can write to, and the FastCGI script can read, e.g. `/srv/smokeping/data`
 *   To ensure that the main config file is readable by the smokeping daemon.

@@ -158,7 +158,7 @@ As of kernel 3.1, appending `acpi_osi=Linux` to the kernel line in your bootload
 
 For BCM4313 there are the following drivers available:
 
-*   proprietary [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver or, its dkms version [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/), both available in AUR.
+*   proprietary [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver or, its dkms version [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), both available in AUR.
 
 *   open source `brcm80211` driver directly included in the Linux kernel, since version 3.0.0 (recommended)
 

@@ -62,7 +62,7 @@ The following incompatibilities require building a custom kernel with fewer feat
 Known incompatibilities with other packages:
 
 *   [pkgstats](https://www.archlinux.org/packages/?name=pkgstats) - tries to list the loaded modules as non-root and treats it as a fatal error when it fails
-*   [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) - fails to be compiled with [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers) due to illegal memory access
+*   [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) - fails to be compiled with [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers) due to illegal memory access
 
 Out-of-tree modules may require patches for compatibility with kernel hardening features like `CONFIG_PAX_SIZE_OVERFLOW`:
 

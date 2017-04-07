@@ -14,7 +14,8 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
     *   [1.7 Remote access through vpn](#Remote_access_through_vpn)
         *   [1.7.1 Requirements](#Requirements)
         *   [1.7.2 How to](#How_to)
-    *   [1.8 Troubleshooting](#Troubleshooting)
+    *   [1.8 Library Updates](#Library_Updates)
+    *   [1.9 Troubleshooting](#Troubleshooting)
 *   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_.28PHT.29)
     *   [2.1 Installation](#Installation_2)
 *   [3 Plex Media Player (PMP)](#Plex_Media_Player_.28PMP.29)
@@ -112,6 +113,14 @@ If you share your libraries with some friends, but want the data to go through y
 3.  Finally, go to your plex server settings, enable advanced settings and define the custom port at 11652
 
 **Warning:** Don't forget to replace the 11652 example port with yours!
+
+### Library Updates
+
+Plex Media Server has a setting "Update my library automatically" which can detect new media files as they're downloaded to your library. But as your library grows, these updates might stop working reliably. To fix, you need to increase the number of files non-root users are allowed to subscribe to via inotify. Create the file `/etc/sysctl.d/40-max-user-watches.conf`
+
+ `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
+
+and run `sudo sysctl --system` to apply without rebooting. Now plex should see any new files.
 
 ### Troubleshooting
 

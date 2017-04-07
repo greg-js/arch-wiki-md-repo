@@ -73,7 +73,7 @@ See: [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ### Wireless
 
-This laptop comes Broadcom Corporation BCM43142 wireless card, which requires [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
+This laptop comes Broadcom Corporation BCM43142 wireless card, which requires [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)
 
 See: [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 

@@ -847,11 +847,12 @@ Follow the [official documentation](https://pyrocore.readthedocs.io/) for instal
 
 ## See also
 
+*   [The rTorrent Handbook](http://rtorrent-docs.rtfd.io/) - Includes an explanation of basic and advanced configuration, a scripting guide, and a (not yet) complete command reference with an auto-generated index.
 *   [Manpage for rtorrent](http://linux.die.net/man/1/rtorrent)
 *   [Screen Tips](/index.php/Screen_Tips "Screen Tips")
 *   [Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients") on Wikipedia
-*   [rTorrent Community Wiki](http://community.rutorrent.org/) - Public place for information on rTorrent and any project related to rTorrent, regarding setup, configuration, operations, and development.
-*   [PyroScope](http://code.google.com/p/pyroscope/) - Collection of command line tools for rTorrent. It provides commands for creating and modifying torrent files, moving data on completion without having multiple watch folders, and mass-controlling download items via rTorrent's XML-RPC interface: searching, start/stop, deleting items with or without their data, etc. It also offers a documented [Python](/index.php/Python "Python") API.
+*   [rTorrent Community Wiki](https://github.com/rtorrent-community/rtorrent-community.github.io/wiki) - Public place for information on rTorrent and any project related to rTorrent, regarding setup, configuration, operations, and development.
+*   [pyrocore](https://github.com/pyroscope/pyrocore) - Collection of command line tools for rTorrent. It provides commands for creating and modifying torrent files, moving data on completion without having multiple watch folders, and mass-controlling download items via rTorrent's XML-RPC interface: searching, start/stop, deleting items with or without their data, etc. It also offers a documented [Python](/index.php/Python "Python") API.
 *   [ruTorrent with Lighttpd](/index.php/Rutorrent_with_lighttpd "Rutorrent with lighttpd")
 *   [How-to install rTorrent and Hellanzb on CentOS 5 64-bit VPS](http://wiki.theaveragegeek.com/howto/installing_rtorrent_and_hellanzb_on_centos5_64-bit_vps)
 *   [Installation guide for rTorrent and Pyroscope on Debian](http://code.google.com/p/pyroscope/wiki/DebianInstallFromSource) - Collection of tools for the BitTorrent protocol and especially the rTorrent client

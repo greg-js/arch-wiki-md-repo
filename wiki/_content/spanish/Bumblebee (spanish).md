@@ -90,7 +90,7 @@ donde `$USER` es el nombre de inicio de sesión del usuario. A continuación, ci
 
 Terminado, reinicie el sistema y utilice el programa `[optirun](#Uso)` para disfrutar de la tecnología NVIDIA Optimus para el *rendering*.
 
-Si simplemente desea desactivar su tarjeta NVIDIA, esto debería ser todo lo que se necesita, además de tener instalado `bbswitch`. El demonio bumblebeed, de forma predeterminada, instruye a bbswitch para desactivar la tarjeta cuando se inicia. Consulte también la sección [administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa) más abajo.
+Si simplemente desea desactivar su tarjeta NVIDIA, esto debería ser todo lo que se necesita, además de tener instalado `bbswitch`. El demonio bumblebeed, de forma predeterminada, instruye a bbswitch para desactivar la tarjeta cuando se inicia. Consulte también la sección [administración de energíam](#Administraci.C3.B3n_de_energ.C3.ADa)ás abajo.
 
 ## Uso
 

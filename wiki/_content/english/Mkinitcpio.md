@@ -231,6 +231,7 @@ For **sd-encrypt** see [systemd-cryptsetup-generator(8)](https://www.freedesktop
 | **lvm2** | **sd-lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
 | **fsck** | Adds the fsck binary and file system-specific helpers. If added after the **autodetect** hook, only the helper specific to your root file system will be added. Usage of this hook is **strongly** recommended, and it is required with a separate `/usr` partition. | Runs fsck against your root device (and `/usr` if separate) prior to mounting. The use of this hook requires the rw parameter to be set on the kernel commandline ([discussion](https://bbs.archlinux.org/viewtopic.php?pid=1307895#p1307895)). |
 | **filesystems** | This includes necessary file system modules into your image. This hook is **required** unless you specify your file system modules in MODULES. | -- |
+| **shutdown** | -- | Copies the contents of the initramfs into `/run/initramfs` for reuse on shutdown. This is needed when you have `/usr` mounted on a separate partition. |
 
 ### COMPRESSION
 
@@ -393,7 +394,7 @@ If using an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm
 If you keep `/usr` as a separate partition, you must adhere to the following requirements:
 
 *   Add the `fsck` hook, mark `/usr` with a `passno` of `0` in `/etc/fstab`. While recommended for everyone, it is mandatory if you want your `/usr` partition to be fsck'ed at boot-up. Without this hook, `/usr` will never be fsck'd.
-*   Add the `usr` hook. This will mount the `/usr` partition after root is mounted.
+*   If not using the systemd hook, add the `usr` hook. This will mount the `/usr` partition after root is mounted.
 
 ## Troubleshooting
 

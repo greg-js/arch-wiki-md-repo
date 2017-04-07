@@ -334,7 +334,7 @@ On some desktop environments the on screen keyboard might freeze when trying to 
 
 #### Wine
 
-[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
+[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the application `xbox360cemu.v.3.0` (e.g. from here: [https://github.com/jacobmischka/ds4-in-wine/tree/master/xbox360cemu.v.3.0](https://github.com/jacobmischka/ds4-in-wine/tree/master/xbox360cemu.v.3.0)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
 
  `xbox360cemu.ini` 
 ```
@@ -352,7 +352,7 @@ Left Trigger=a3
 Right Trigger=a6
 ```
 
-Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0.rar` to the same directory and run it with Wine in order to test if it works. However neither mouse nor keyboard emulation work with this method.
+Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0` to the same directory and run it with Wine in order to test if the mappings work correctly. However neither mouse nor keyboard emulation work with this method.
 
 ### Xbox 360 controller
 

@@ -215,13 +215,13 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
 
-*   **Terminix** — A tiling terminal emulator for Linux using GTK+ 3
-
-	[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix-git](https://aur.archlinux.org/packages/terminix-git/)
-
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
+
+*   **Tilix** — A tiling terminal emulator for Linux using GTK+ 3
+
+	[https://github.com/gnunn1/tilix](https://github.com/gnunn1/tilix) || [tilix](https://aur.archlinux.org/packages/tilix/) [tilix-git](https://aur.archlinux.org/packages/tilix-git/)
 
 *   **tinyterm** — Very lightweight terminal emulator based on VTE.
 

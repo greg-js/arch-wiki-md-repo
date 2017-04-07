@@ -167,7 +167,7 @@ Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=177151), it might 
 
 ### Fan control
 
-Install [mbpfan-git](https://aur.archlinux.org/packages/mbpfan-git/) or [macfanctld](https://aur.archlinux.org/packages/macfanctld/) and [enable](/index.php/Enable "Enable") the relative .service in order to prevent laptop overheating.
+Install [mbpfan-git](https://aur.archlinux.org/packages/mbpfan-git/) or [macfanctld](https://aur.archlinux.org/packages/macfanctld/) and [enable](/index.php/Enable "Enable") the mbpfan.service in order to prevent laptop overheating.
 
 ### Console
 
@@ -429,7 +429,7 @@ Updated 2016-07-21
 
 ### Wi-Fi
 
-*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) from the [AUR](/index.php/AUR "AUR") works
+*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) from the [AUR](/index.php/AUR "AUR") works
     *   Stability is an issue for some, look at [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for possible fixes (e.g. downgrading kernel works if your card is BCM4360)
 
 ### Backlight keys / Suspend support

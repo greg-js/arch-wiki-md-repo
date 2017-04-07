@@ -111,16 +111,16 @@ Xorg should run smoothly without closed source drivers, which are typically need
 ### AMD
 
 | GPU architecture | Radeon cards | Open-source driver | Proprietary driver |
-| GCN 4 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN4 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
-| GCN 3 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN3 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
+| GCN 4&5 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
+| GCN 3 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
 [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
-| GCN 2 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN2 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
-| GCN 1 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 2* | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 1* | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/Catalyst "Catalyst") legacy |
 | Older | X1000 and older | *not available* |
 
-	: Experimental AMDGPU support
+	*: Experimental AMDGPU support
 
 ## Running
 
@@ -501,7 +501,7 @@ Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotoo
 
 ### Block TTY access
 
-To block tty access when in an X add the following to [xorg.conf(5)](http://man7.org/linux/man-pages/man5/xorg.conf.5.html):
+To block tty access when in an X add the following to [xorg.conf](#Configuration):
 
 ```
 Section "ServerFlags"
@@ -511,7 +511,7 @@ EndSection
 
 ### Prevent a user from killing X
 
-To prevent a user from killing when it is running add the following to [xorg.conf(5)](http://man7.org/linux/man-pages/man5/xorg.conf.5.html):
+To prevent a user from killing when it is running add the following to [xorg.conf](#Configuration):
 
 ```
 Section "ServerFlags"

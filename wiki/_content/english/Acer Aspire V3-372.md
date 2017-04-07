@@ -49,7 +49,7 @@ Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD)
 
 To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/app/answers/detail/a_id/29349/) in the BIOS settings. Then you should be able to boot Arch.
 
-If you set up your installation media (USB drive) via [Rufus](/index.php/USB_flash_installation_media#Using_Rufus "USB flash installation media") i had the most success by using *GPT* as partition table (in UEFI mode).
+If you set up your installation media (USB drive) via [Rufusi](/index.php/USB_flash_installation_media#Using_Rufus "USB flash installation media") had the most success by using *GPT* as partition table (in UEFI mode).
 
 ### Video
 

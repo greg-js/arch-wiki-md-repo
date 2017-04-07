@@ -51,7 +51,3 @@ List here articles that only exist in non-English languages, or that exist in En
 | [Tencent QQ (简体中文)](/index.php/Tencent_QQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tencent QQ (简体中文)") | Chinese (Simplified) |
 | [Wineasio (Русский)](/index.php/Wineasio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wineasio (Русский)") | Russian |
 | [Zabbix (Русский)](/index.php/Zabbix_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zabbix (Русский)") | Russian |
-
-## See also
-
-[Arch Translation Day](/index.php/Arch_Translation_Day "Arch Translation Day")

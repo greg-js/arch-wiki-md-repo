@@ -94,7 +94,7 @@ The BIOS and the boot menu can be accessed by using the *alternative* power butt
 
 ### Wireless
 
-Works after installing the proprietary driver module [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/), which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
+Works after installing the proprietary driver module [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
 
 ### Bluetooth
 

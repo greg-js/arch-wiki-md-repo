@@ -108,7 +108,7 @@ $ lspci | grep Broadcom | grep -v Ethernet
 
 It seems this laptop may have BCM5761 or BCM43228.
 
-In both cases, you will need the proprietary driver [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), or its dkms version, [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/).
+In both cases, you will need the proprietary driver [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms), or its non-DKMS version [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/).
 
 ## Troubleshooting
 

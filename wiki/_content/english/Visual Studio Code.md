@@ -7,6 +7,7 @@
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Integrated Terminal](#Integrated_Terminal)
+    *   [3.2 External Terminal](#External_Terminal)
 
 ## Installation
 
@@ -42,5 +43,19 @@ Example:
 ```
 "terminal.integrated.shell.linux": "/usr/bin/fish",
 "terminal.integrated.shellArgs.linux": ["-l","-d 3"]
+
+```
+
+### External Terminal
+
+If you are using **Terminator** as default terminal for Arch and you have an error on Visual Studio Code: `Unable to launch debugger worker process (vsdbg) through the terminal. spawn truecolor ENOENT`, you can change the terminal that will be used by Visual Studio to another terminal (eg gnome-terminal).
+
+`"terminal.external.linuxExec": "Yours alternative terminal"` sets the default terminal to be used for exec debug.
+
+Example:
+
+ `~/.config/Code/User/settings.json` 
+```
+"terminal.external.linuxExec": "gnome-terminal"
 
 ```

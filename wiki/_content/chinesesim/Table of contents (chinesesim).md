@@ -8,7 +8,7 @@
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(18)</small> |
 | <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
-| <small>1.3.</small> [活动](/index.php/Category:Events_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Events (简体中文)") <small>(3)</small> |
+| <small>1.3.</small> [活动](/index.php/Category:Events_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Events (简体中文)") <small>(1)</small> |
 | <small>1.4.</small> [获取并安装Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") <small>(18)</small> |
 | <small>1.5.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
 | <small>2.</small> [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)") <small>(6)</small> |

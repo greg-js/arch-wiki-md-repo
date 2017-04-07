@@ -32,7 +32,7 @@ You can create pretty much the same effect with a standard xmonad installation, 
 
 ```
 
-**Note:** See [Known issues](#Known_issues) section if you get any compile errors.
+**Note:** See [Known issuessection](#Known_issues) if you get any compile errors.
 
 ## Running Bluetile
 

@@ -227,6 +227,5 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 ## Véase también
 
-*   [ArchWiki Translation Day](/index.php/ArchWiki_Translation_Day "ArchWiki Translation Day")
 *   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")
 *   [Linux conferences](/index.php/Linux_conferences "Linux conferences")

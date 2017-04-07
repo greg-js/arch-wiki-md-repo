@@ -254,9 +254,20 @@ Now you should be able to access nagios through your webbrowser using the userna
 
 ## Monitor an Archlinux host
 
-You will need [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) and [nrpe](https://www.archlinux.org/packages/?name=nrpe) to monitor your host.
+You will need [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) and either [nrpe](https://www.archlinux.org/packages/?name=nrpe) or use check_by_ssh along with passwordless ssh to monitor your host.
 
-As always when monitoring, the configuration is done in /etc/nrpe/nrpe.cfg and the interesting files to monitor will be in /usr/share/nagios/libexec/ . Do not forget to edit nrpe.cfg as it is mostly empty after install.
+The nrpe configuration is done in /etc/nrpe/nrpe.cfg and the interesting files to monitor will be in /usr/share/nagios/libexec/ . Do not forget to edit nrpe.cfg as it is mostly empty after install.
+
+Quick notes on check_by_ssh: On the monitoring system, su to the user account that Nagios/Icinga/whatever runs as, run ssh-keygen. Create a user on the Arch system to be monitored with the same name and a temporary password eg: # useradd -m -d /home/icinga -s /bin/bash -p icinga icinga. From the monitoring system run this: $ ssh-copy-id ip.ad.dr.ess (ie the IP of the client). Back on the client: # passwd -d icinga (ie clear the temporary password). Verify you can login from the server eg $ ssh icinga@ip.ad.dr.ess.
+
+Many non Arch systems install the monitoring plugins to /usr/lib/nagios/plugins but Arch installs them to /usr/lib/monitoring-plugins/. It may be helpful to create /usr/lib/nagios and symlink ../monitoring-plugins to plugins from that directory.
+
+Here's an example of a command invocation run from the command line as the monitoring system's user. Given the note on paths mentioned above this should work on nearly any Linux (and probably BSD - it does on FreeNAS) distro:
+
+```
+$ /usr/lib/nagios/plugins/check_by_ssh -E -H 192.168.100.11 -C "/usr/lib/nagios/plugins/check_disk -w 10 -c 5 --path=/ --units=GB"
+
+```
 
 ## Plugin check_rdiff
 

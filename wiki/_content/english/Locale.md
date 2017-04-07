@@ -220,7 +220,7 @@ You need to launch these applications from a UTF-8 locale or they will drop UTF-
 
 It is possible that the environment variables are redefined in other files than `locale.conf`, for example `~/.pam_environment`. See [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") for details.
 
-If you're using a desktop environment, such as [Gnome](/index.php/Gnome "Gnome"), its language settings may be overriding the settings in `locale.conf`.
+If you're using a desktop environment, such as [GNOME](/index.php/GNOME "GNOME"), its language settings may be overriding the settings in `locale.conf`.
 
 ## See also
 

@@ -9,7 +9,7 @@ Generation of random data is crucial for several applications like making crypto
 *   [1 Kernel built-in RNG](#Kernel_built-in_RNG)
     *   [1.1 /dev/random](#.2Fdev.2Frandom)
     *   [1.2 /dev/urandom](#.2Fdev.2Furandom)
-*   [2 Faster alternatives](#Faster_alternatives)
+*   [2 Alternatives](#Alternatives)
 *   [3 See also](#See_also)
 
 ## Kernel built-in RNG
@@ -41,11 +41,37 @@ The kernel's pool size is given by `INPUT_POOL_WORDS * OUTPUT_POOL_WORDS` which 
 
 ### /dev/urandom
 
-In contrast to `/dev/random`, `/dev/urandom` reuses existing entropy pool data while the pool is replenished: the output will contain less entropy than the corresponding read from `/dev/random`, but its quality should be sufficient for a paranoid disk wipe, [preparing for block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk"), wiping LUKS keyslots, wiping single files and many other purposes.[[1]](http://www.2uo.de/myths-about-urandom/) [[2]](http://sockpuppet.org/blog/2014/02/25/safely-generate-random-numbers/) [[3]](https://www.mail-archive.com/cryptography@randombit.net/msg04748.html)
+In contrast to `/dev/random`, `/dev/urandom` takes (since kernel 4.8) an initial random seed to feed a cryptographic stream cipher.[[1]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e192be9d9a30555aae2ca1dc3aad37cba484cd4a)
+
+The stream cipher is used because it can provide a high volume of high quality pseudo-random data suitable for many purposes like, for example, [preparing for block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk"), wiping LUKS keyslots, etc.
 
 **Warning:** `/dev/urandom` is **not** recommended for the generation of long-term cryptographic keys.
 
-## Faster alternatives
+The warning above keeps it simple, i.e. whether it applies or not largely depends on the system's status and purpose. For example, it matters considerably whether the system has just booted up, or the kernel has had time to gather entropy and fill the entropy pool.
+
+Some posts which explain and discuss the different aspects are:
+
+*   [Myths about urandom](http://www.2uo.de/myths-about-urandom/) - highly informative but (unfortunately) also containing fallacies, and
+*   [Safely generate random numbers](http://sockpuppet.org/blog/2014/02/25/safely-generate-random-numbers/) - a post which illustrates what may happen when trying to single-handedly change the kernel infrastructure for gathering entropy.
+
+For an Arch system, the above implies the following for `/dev/urandom`:
+
+1.  Use the kernel's `getrandom()` system call, whenever possible. It is provided to ensure that `/dev/urandom` has initialized appropriately. See [getrandom(2)](http://man7.org/linux/man-pages/man2/getrandom.2.html)
+2.  If you use the `/dev/urandom` device for generating entropy for any long-term purpose, **do ensure** it has initialized properly.
+3.  Take care to troubleshoot critical services which rely on `/dev/urandom` entropy during boot/startup. Even on a modern system the kernel's entropy initialization may take many seconds and some factors (e.g. virtualization) may delay it further. The kernel does warn, but not indefinetely.[[2]](https://patchwork.kernel.org/patch/9173499/)
+
+An example output:
+
+```
+$ dmesg | grep -e random:
+...
+[    0.844818] random: systemd-udevd: uninitialized urandom read (16 bytes read)
+[    7.022171] random: fast init done
+[   12.916705] random: crng init done
+
+```
+
+## Alternatives
 
 For applications other than the generation of long-term cryptographic keys, a practical compromise between performance and security is the use of a [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator "wikipedia:Pseudorandom number generator"). In Arch Linux repositories for example:
 
@@ -65,3 +91,4 @@ There are also [cryptographically secure pseudorandom number generators](https:/
 *   [ENT](http://www.fourmilab.ch/random/) - A simple program for testing random sequences (entropy, Chi square test, Monte Carlo, correlation, etc.)
 *   [DIY HRNG](http://www.codeproject.com/Articles/795845/Arduino-Hardware-Random-Sequence-Generator-with-Ja) - One example of a low-cost, DIY Arduino HRNG
 *   [An Analysis of OpenSSL's Random Number Generator](https://eprint.iacr.org/2016/367) - Paper on RNG reseeding risks in OpenSSL functionality
+*   [Linux Random Number Generator – A New Approach](http://www.chronox.de/lrng/doc/lrng.pdf) - Paper discussing updates to the devices (March 2017)

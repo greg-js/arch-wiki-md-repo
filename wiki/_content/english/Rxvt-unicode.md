@@ -308,7 +308,7 @@ URxvt.perl-ext-common:
 
 ```
 
-**Note:** If you use multiple Perl extension features, you can list them in succession, comma-separated: `URxvt.perl-ext-common:default,matcher,tabbed.`
+**Note:** If you use multiple Perl extension features, you can list them in succession, comma-separated: `URxvt.perl-ext-common:default,matcher,tabbed`
 
 ## Troubleshooting
 

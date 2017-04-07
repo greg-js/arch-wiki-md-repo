@@ -1,5 +1,3 @@
-**翻译状态：** 本文是英文页面 [BOINC](/index.php/BOINC "BOINC") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-01-18，点击[这里](https://wiki.archlinux.org/index.php?title=BOINC&diff=0&oldid=293461)可以查看翻译后英文页面的改动。
-
 [BOINC 官方网站](http://boinc.berkeley.edu/)：“利用您的计算机（Windows、Mac 以及 Linux）的空闲的时间，帮助寻找治疗疾病的方法、研究全球变暖、发现脉冲星…… 进行各种各样的科学研究。这一切简单且安全！”
 
 [维基百科](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC")：“伯克利开放式网络计算平台（Berkeley Open Infrastructure for Network Computing，BOINC）是一个用于志愿计算和网格计算的非商业的中间件系统。开发 BOINC 的最初目的是支援 SETI@home 项目，而后来它发展成为一个支持多种项目的强大的分布式计算平台，这些项目的研究领域涵盖了数学、医学、分子生物学、气候学以及天体物理学等等。BOINC 力图让研究人员享用到全世界数以亿计的个人电脑的强大计算能力。”

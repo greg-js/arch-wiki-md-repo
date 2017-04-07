@@ -3,7 +3,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Plasma Desktop](#Plasma_Desktop)
+    *   [1.1 Plasma](#Plasma)
     *   [1.2 KDE applications and language packs](#KDE_applications_and_language_packs)
     *   [1.3 Unstable releases](#Unstable_releases)
 *   [2 Starting Plasma](#Starting_Plasma)
@@ -11,7 +11,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [2.2 Manual](#Manual)
 *   [3 Configuration](#Configuration)
     *   [3.1 Personalization](#Personalization)
-        *   [3.1.1 Plasma desktop](#Plasma_desktop_2)
+        *   [3.1.1 Plasma desktop](#Plasma_desktop)
             *   [3.1.1.1 Themes](#Themes)
                 *   [3.1.1.1.1 Qt and GTK+ Applications Appearance](#Qt_and_GTK.2B_Applications_Appearance)
             *   [3.1.1.2 Widgets](#Widgets)
@@ -66,31 +66,26 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
     *   [6.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
     *   [6.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-    *   [6.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
-    *   [6.6 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [6.7 Graphical related problems](#Graphical_related_problems)
-        *   [6.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [6.7.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
-        *   [6.7.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
-            *   [6.7.3.1 GPU driver problem](#GPU_driver_problem)
-            *   [6.7.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
-        *   [6.7.4 Low 3D desktop performance](#Low_3D_desktop_performance)
-        *   [6.7.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
-        *   [6.7.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [6.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
-    *   [6.8 Sound problems under KDE](#Sound_problems_under_KDE)
-        *   [6.8.1 ALSA related problems](#ALSA_related_problems)
-            *   [6.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
-            *   [6.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [6.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
-    *   [6.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [6.11 Multi-monitor issues](#Multi-monitor_issues)
-    *   [6.12 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
+    *   [6.5 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [6.6 Graphical related problems](#Graphical_related_problems)
+        *   [6.6.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
+        *   [6.6.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
+        *   [6.6.3 Bad performance](#Bad_performance)
+            *   [6.6.3.1 Disable desktop effects](#Disable_desktop_effects)
+            *   [6.6.3.2 Disable compositing](#Disable_compositing)
+        *   [6.6.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+    *   [6.7 Sound problems under KDE](#Sound_problems_under_KDE)
+        *   [6.7.1 ALSA related problems](#ALSA_related_problems)
+            *   [6.7.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
+            *   [6.7.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [6.8 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [6.9 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [6.10 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
 *   [7 See also](#See_also)
 
 ## Installation
 
-### Plasma Desktop
+### Plasma
 
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
@@ -98,7 +93,7 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 
 ### KDE applications and language packs
 
-To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of the Plasma Desktop.
+To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of Plasma.
 
 If you need language files, install `kde-l10n-***yourlanguagehere***` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see the [kde-l10n split package](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
@@ -114,9 +109,9 @@ Plasma can be started either graphically, using a [display manager](/index.php/D
 
 **Tip:** To better integrate SDDM with Plasma, it is recommended to edit `/etc/sddm.conf` to use the breeze theme. Refer to [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") for instructions.
 
-To launch a Plasma 5 session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
+To launch a Plasma session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
-As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, up to Qt 5.7\. With later versions it does not work yet, see the [Plasma 5.9 Errata](https://community.kde.org/Plasma/5.9_Errata#Wayland). To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
+As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, up to Qt 5.7\. With 5.8.0, it is broken ([fix upcoming in 5.8.1](https://bugreports.qt.io/browse/QTBUG-58423)). Also see the [Plasma 5.9 Errata](https://community.kde.org/Plasma/5.9_Errata#Wayland). To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
 
 ### Manual
 
@@ -161,7 +156,7 @@ Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and 
 
 	GTK+
 
-The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
+The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
 
 In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`.
 
@@ -181,7 +176,7 @@ Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/pa
 
 ##### Disable panel shadow
 
-As the plasma panel is on top of other windows, its shadow is drawn over them. [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the Plasma panel is on top of other windows, its shadow is drawn over them. [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
@@ -216,7 +211,7 @@ There you can also directly download and install more themes with one click, and
 
 Icon themes can be installed and changed on *System Settings > Icons*.
 
-**Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma 5 and KDE apps. It is recommended to install Plasma compatible icon themes instead.
+**Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma and KDE apps. It is recommended to install Plasma compatible icon themes instead.
 
 #### Fonts
 
@@ -226,13 +221,13 @@ Try installing the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dej
 
 After the installation, be sure to log out and back in. You should not have to modify anything in *System Settings > Fonts*.
 
-If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go *System Settings > Appearance > Fonts* System Settings will likely alter your font configuration file (`fonts.conf`).
+If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go *System Settings > Fonts* System Settings will likely alter your font configuration file (`fonts.conf`).
 
 There is no way to prevent this, but, if you set the values to match your `fonts.conf` file, the expected font rendering will return (it will require you to restart your application or in a few cases restart your desktop). Note that Gnome's Font Preferences also does this.
 
 ##### Fonts are huge or seem disproportional
 
-Try to force font DPI to `**96**` in *System Settings > Application Appearance > Fonts*.
+Try to force font DPI to `**96**` in *System Settings > Fonts*.
 
 If that does not work, try setting the DPI directly in your Xorg configuration as documented in [Xorg#Setting DPI manually](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
@@ -244,7 +239,7 @@ The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE 
 
 **Tip:** Use the [CUPS](/index.php/CUPS "CUPS") web interface for faster configuration. Printers configured in this way can be used in KDE applications.
 
-You can also configure printers in *System Settings > Printer Configuration*. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups). See [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS").
+You can also configure printers in *System Settings > Printers*. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups). See [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS").
 
 ### Samba/Windows support
 
@@ -311,7 +306,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 **Note:**
 
-*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
+*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
 *   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   A possible fix is to run
@@ -372,7 +367,7 @@ KDE implements desktop search with a software called Baloo, a file indexing and 
 
 ##### Using and configuring Baloo
 
-In order to search using Baloo on the KDE Plasma Desktop, start krunner (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`.
+In order to search using Baloo on the Plasma desktop, start krunner (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`.
 
 By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click.
 
@@ -509,7 +504,7 @@ You will need to install KDE Connect both on your computer and on your Android. 
 
 ### Using an alternative window manager
 
-The component chooser settings in plasma 5 does not allow changing the window manager anymore. [[5]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[6]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
+The component chooser settings in Plasma does not allow changing the window manager anymore. [[5]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[6]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 
@@ -558,7 +553,7 @@ Set environment variable `KWIN_COMPOSE` to 'O2ES' to force the OpenGL ES backend
 
 ### Configuring monitor resolution / multiple monitors
 
-To enable display resolution management and multiple monitors in Plasma 5, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to System Settings/Display and Monitor.
+To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to *Sytem Settings > Display and Monitor*.
 
 ### Open application launcher with Super key (Windows key)
 
@@ -698,28 +693,6 @@ $ qdbus org.kde.KWin /KWin supportInformation
 
 ```
 
-### KDE and Qt programs look bad when in a different window manager
-
-If you are using KDE or Qt programs but not in a full Plasma session (specifically, you did not run `startkde`), then as of Plasma 4.6.1 you will need to tell Qt how to find KDE's styles (Oxygen, QtCurve etc.)
-
-You just need to set the environment variable `QT_PLUGIN_PATH`. E.g. put:
-
-```
-export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
-
-```
-
-into your `/etc/profile` (or `~/.profile` if you do not have root access). `qtconfig-qt4` should then be able to find your KDE styles and everything should look nice again!
-
-Alternatively, you can symlink the Qt styles directory to the KDE styles one:
-
-```
-# ln -s /usr/lib/kde4/plugins/styles/ /usr/lib/qt4/pluginlib32-libdbusmenu-glibs/styles
-
-```
-
-Under Gnome you can try to install the package libgnomeui.
-
 ### KF5/Qt5 applications do not display icons in i3/fvwm/awesome
 
 See [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
@@ -742,47 +715,21 @@ Then go to *System Settings > Startup and Shutdown > Autostart* and *Check/Add* 
 
 If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications do not refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to *System Settings > Display and Monitor > Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
-#### Low 2D desktop performance (or) artifacts appear when on 2D
+#### Bad performance
 
-##### GPU driver problem
+Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects](#Disable_desktop_effects) or [#Disable compositing](#Disable_compositing).
 
-Make sure you have the proper driver for your card installed, so that your desktop is at least 2D accelerated. Follow these articles for more information: [ATI](/index.php/ATI "ATI"), [NVIDIA](/index.php/NVIDIA "NVIDIA"), [Intel](/index.php/Intel "Intel") for more information, in order to make sure that everything is all right. The open-source ATI and Intel drivers and the proprietary (binary) Nvidia driver should theoretically provide the best 2D and 3D acceleration.
+##### Disable desktop effects
 
-##### The Raster engine workaround
+Plasma has desktop effects enabled by default. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
 
-If this does not solve your problems, your driver may not provide a good **XRender** acceleration which the current Qt painter engine relies on by default.
+##### Disable compositing
 
-You can change the painter engine to software based only by invoking the application with the `-graphicssystem raster` command line. This rendering engine can be set as the default one by recompiling Qt with the same as configure option, `-graphicssystem raster`.
-
-The raster paint engine enables the CPU to do the majority of the painting, as opposed to the GPU. You may get better performance, depending on your system. This is basically a work-around for the terrible Linux driver stack, since the CPU should obviously not be doing graphical computations since it is designed for fewer threads of greater complexity, as opposed to the GPU which is many threads but lesser computational strength. So, only use Raster engine if you are having problems or your GPU is much slower than you CPU, otherwise is better to use XRender.
-
-Since Qt 4.7+, recompiling Qt is not needed. Simply export `QT_GRAPHICSSYSTEM=raster`, or `opengl`, or `native` (for the default). Raster depends on the CPU, OpenGL depends on the GPU and high driver support, and Native is just using the X11 rendering (mixture, usually).
-
-**The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) from AUR and configure this particular Qt setting through *System Settings > Qt Graphics System*.
-
-For more information, consult this [KDE Developer blog entry](https://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](https://web.archive.org/web/20100430183745/http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine).
-
-#### Low 3D desktop performance
-
-KDE begins with desktop effects enabled. Older cards may be insufficient for 3D desktop acceleration. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
-
-**Note:** You may encounter such problems with 3D desktop performance even when using a more powerful graphics card. Make sure the GPU driver and its components has been successfully installed.
-
-#### Desktop compositing is disabled on my system with a modern Nvidia GPU
-
-Sometimes, KWin may have settings in its configuration file (`kwinrc`) that *may* cause a problem on re-activating the 3D desktop `OpenGL` compositing. That could be caused randomly (for example, due to a sudden Xorg crash or restart, and it gets corrupted), so, in case that happens, delete your `~/.kde4/share/config/kwinrc` file and relogin. The KWin settings will turn to the KDE default ones and the problem should be probably gone.
+In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
 
 #### Flickering in fullscreen when compositing is enabled
 
-As of KDE SC 4.6.0, there is an option in *Sytem Settings > Desktop Effect > Advanced > Suspend desktop effects for fullscreen windows*. Uncheck it would tell kwin to disable unredirect fullscren.
-
-#### Display settings lost on reboot (multiple monitors)
-
-There is a [bug](https://bugs.kde.org/show_bug.cgi?id=346961) in kscreen that makes it forget dual screen settings after reboot with certain displays. A possible workaround is to uninstall [kscreen](https://www.archlinux.org/packages/?name=kscreen) and specify your screen setup in a xorg.conf file instead:
-
-*   See [Multihead#RandR](/index.php/Multihead#RandR "Multihead") for using the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension.
-*   For Nouveau you can use the template at [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau"), just edit it to suit your setup.
-*   For the proprietary nvidia driver you can use the [nvidia-settings](/index.php/NVIDIA#Using_NVIDIA_Settings "NVIDIA") utility as root to write the config file.
+In *Sytem Settings > Display and Monitor*, uncheck *Allow applications to block compositing*. This may harm performance.
 
 ### Sound problems under KDE
 
@@ -804,7 +751,7 @@ Go to *System Settings > Multimedia > Phonon* and set the device named `default`
 
 ##### MP3 files cannot be played when using the GStreamer Phonon backend
 
-This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Phonon > Backend (tab)*.
+This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Backend*.
 
 ### Inotify folder watch limit
 
@@ -833,12 +780,6 @@ fs.inotify.max_user_watches = 10000
 ### Freezes when using Automount on a NFS volume
 
 Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
-
-### Multi-monitor issues
-
-The current release of KDE Plasma has several issues with multi-monitor setups, which can make Plasma unusable. See [KDE Bug 356225](https://bugs.kde.org/show_bug.cgi?id=356225).
-
-These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to [remove](/index.php/Remove "Remove") them first.
 
 ### No Suspend/Hibernate options
 

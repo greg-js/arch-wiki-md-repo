@@ -19,11 +19,11 @@ Wordpress的最大特性是易于配置与管理。[搭建WordPress将使用5分
 *   [4 使用](#.E4.BD.BF.E7.94.A8)
     *   [4.1 安装一个主题](#.E5.AE.89.E8.A3.85.E4.B8.80.E4.B8.AA.E4.B8.BB.E9.A2.98)
         *   [4.1.1 寻找新的主题](#.E5.AF.BB.E6.89.BE.E6.96.B0.E7.9A.84.E4.B8.BB.E9.A2.98)
-        *   [4.1.2 Install using the admin panel](#Install_using_the_admin_panel)
-        *   [4.1.3 Install manually](#Install_manually)
+        *   [4.1.2 使用管理面板安装主题](#.E4.BD.BF.E7.94.A8.E7.AE.A1.E7.90.86.E9.9D.A2.E6.9D.BF.E5.AE.89.E8.A3.85.E4.B8.BB.E9.A2.98)
+        *   [4.1.3 手动安装主题](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85.E4.B8.BB.E9.A2.98)
     *   [4.2 Installing a plugin](#Installing_a_plugin)
-    *   [4.3 Updating](#Updating)
-*   [5 Troubleshooting](#Troubleshooting)
+    *   [4.3 升级](#.E5.8D.87.E7.BA.A7)
+*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29)
 *   [6 Tips and tricks](#Tips_and_tricks)
 *   [7 See also](#See_also)
@@ -184,13 +184,13 @@ WordPress有数以万计的可用主题。在谷歌搜索一个好的主题就�
 
 **提示：** 可以使用WordPress的管理界面来安装插件和主题。为此， make the user that serves WordPress the [owner](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") of your WordPress directory. For [Apache](/index.php/Apache_HTTP_Server#Advanced_options "Apache HTTP Server") this user is normally http.
 
-#### Install using the admin panel
+#### 使用管理面板安装主题
 
 Before installing a theme using the admin panel, you will need to setup an [FTP](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") server on your WordPress host. To maintain a high level of protection, you might set up a [user](/index.php/User "User") on your system specifically for WordPress, give it the home directory of `<path to your WordPress install>/wp-content`, disallow anonymous login, and allow no more users to log in than for WordPress (and obviously others as required by your setup).
 
 Once the FTP server is setup, login to your WordPress installation and click "Appearance->Install Themes->Upload". From there select your zip file that contains your theme and click "Install Now". You will be presented with a box asking for FTP information, enter it and click "Proceed". You might need to update [file ownership](/index.php/Chown "Chown") and [rights](/index.php/Chmod "Chmod") if WordPress reports that it is unable to write to the directory. If you have been following along closely, you should now have an installed theme. Activate it if you wish.
 
-#### Install manually
+#### 手动安装主题
 
 Download the archive and extract into the **wp-content/themes** folder
 
@@ -222,13 +222,13 @@ Select your new theme from the theme chooser ("Appearance->Themes")
 
 The steps for installing a plugin are the same as they are for installing a theme. Just click the "Plugins" link in the left navigation bar and follow the steps.
 
-### Updating
+### 升级
 
 Every now and then when you log into wordpress there will be a notification informing you of updates. If you have correctly installed and configured an FTP client, and have the correct filesystem permissions to write in the WordPress install path then you should be able to perform updates at the click of a button. Just follow the steps.
 
 Alternatively, you can use SSH to update your installation with the [SSH SFTP Updater Support plugin](https://wordpress.org/plugins/ssh-sftp-updater-support/).
 
-## Troubleshooting
+## 故障排除
 
 ### Appearance is broken (no styling)
 

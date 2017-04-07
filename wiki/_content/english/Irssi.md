@@ -103,7 +103,7 @@ Ensure [SASL](#Authenticating_with_SASL) is configured correctly. You may use Ni
 
 ### SSL Connection
 
-Freenode uses port 6697, 7000 and 7070 for SSL connections (**not** 6667). To connect to Freenode IRC network via SSL you have to setup an new connection. Start `irssi` and run:
+Freenode uses port 6697, 7000 and 7070 for SSL connections (**not** 6667). To connect to Freenode IRC network via SSL you have to setup a new connection. Start `irssi` and run:
 
 ```
 /server add -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 chat.freenode.net

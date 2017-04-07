@@ -25,7 +25,7 @@
 
 ## Souhrnně
 
-**Arch Linux User-Community Repository (AUR)** je repozitář pro uživatele Arch Linuxu řízený komunitou. AUR byl od počátku vytvořen k tomu, aby organizoval sdílení PKGBUILDů v širší komunitě a usnadnil začleňování oblíbených balíčků, kterými přispěli uživatelé, do repozitáře [community](/index.php/AUR_-_u%C5%BEivatelsk%C3%BD_pr%C5%AFvodce_(%C4%8Cesky)#.5Bcommunity.5D "AUR - uživatelský průvodce (Česky)").
+**Arch Linux User-Community Repository (AUR)** je repozitář pro uživatele Arch Linuxu řízený komunitou. AUR byl od počátku vytvořen k tomu, aby organizoval sdílení PKGBUILDů v širší komunitě a usnadnil začleňování oblíbených balíčků, kterými přispěli uživatelé, do repozitáře [community](#.5Bcommunity.5D).
 
 Je přezdíván rodiště nových balíčků Arch Linuxu -- v AUR uživatelé přispívají svými vlastními balíčky. Komunita AUR hlasuje pro ně nebo proti nim, a jakmile bylo pro balíček dostatečně hlasováno, AUR Trusted User (Důvěryhodný Uživatel) ho přesune do repozitáře [community], odkud je přístupný přes [pacmana](/index.php/Pacman_(%C4%8Cesky) "Pacman (Česky)") a [ABS](/index.php/ABS_-_The_Arch_Build_System_(%C4%8Cesky) "ABS - The Arch Build System (Česky)").
 
@@ -35,7 +35,7 @@ Kromě tohoto článku si nezapomeňte přečíst [uživatelského průvodce AUR
 
 ## Začínáme
 
-*   Krátký návod pro instalování balíčků z AUR můžete nalézt [zde](/index.php/AUR_-_u%C5%BEivatelsk%C3%BD_pr%C5%AFvodce_(%C4%8Cesky)#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED "AUR - uživatelský průvodce (Česky)"). Pro detailní informace o sestavování balíčků z AUR se prosím podívejte na článek o [makepkg](/index.php/Makepkg "Makepkg").
+*   Krátký návod pro instalování balíčků z AUR můžete nalézt [zde](#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED). Pro detailní informace o sestavování balíčků z AUR se prosím podívejte na článek o [makepkg](/index.php/Makepkg "Makepkg").
 *   [Uživatelský průvodce AUR](/index.php/AUR_-_u%C5%BEivatelsk%C3%BD_pr%C5%AFvodce_(%C4%8Cesky) "AUR - uživatelský průvodce (Česky)") vysvětluje a ukazuje, jak zpřístupnit repozitář [community] v [pacmanu](/index.php/Pacman_(%C4%8Cesky) "Pacman (Česky)") a [ABS](/index.php/ABS_-_The_Arch_Build_System_(%C4%8Cesky) "ABS - The Arch Build System (Česky)").
 *   Navštivte [webové rozhraní AUR](https://aur.archlinux.org), abyste se informovali o aktualizacích a událostech. Najdete tam také statistiky a aktualizovaný seznam nejnovějších balíčků dostupných v AUR.
 *   Také se podívejte na [otázky a odpovědi](/index.php/AUR_Q_%26_A "AUR Q & A").
@@ -107,7 +107,7 @@ Nejdříve před kompilací čehokoliv s <tt>makepkg</tt> udělejte <tt>pacman -
 
 #### Jak zpřístupním balíčky z Unsupported?
 
-[Viz zde.](/index.php/AUR_User_Guidelines_(%C4%8Cesky)#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED "AUR User Guidelines (Česky)")
+[Viz zde.](#Jak_na_bal.C3.AD.C4.8Dek_z_UNSUPPORTED)
 
 #### Jak můžu posílat balíčky do AUR bez použití webového rozhraní?
 

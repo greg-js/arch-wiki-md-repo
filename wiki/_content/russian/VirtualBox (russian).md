@@ -117,7 +117,7 @@
 #### Использование различных версий ядра Linux на хост-машине
 
 *   Если вы используете ядро [linux](https://www.archlinux.org/packages/?name=linux), убедитесь, что пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) установлен. По умолчанию последняя версия этого пакета устанавливается как зависимость [virtualbox](https://www.archlinux.org/packages/?name=virtualbox).
-*   Если вы используете LTS версию ядра ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), тогда вам нужно установить пакет [virtualbox-host-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-host-modules-lts). Пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) после этого можно удалить.
+*   Если вы используете LTS версию ядра ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), тогда вам нужно установить пакет [virtualbox-host-modules-lts](https://aur.archlinux.org/packages/virtualbox-host-modules-lts/). Пакет [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) после этого можно удалить.
 *   Если вы используете ядро [linux-ck](https://aur.archlinux.org/packages/linux-ck/), установите пакет [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/).
 
 #### Обновление ядра Linux на хост-машине
@@ -268,7 +268,7 @@ VirtualBox использует `ifconfig` и `route`, чтобы назначи
 #### Запуск гостевой ОС с официальным ядром
 
 *   Если вы используете ядро [linux](https://www.archlinux.org/packages/?name=linux), убедитесь, что пакет [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) установлен. [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) устанавливается как зависимость пакета [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils).
-*   Если вы используете LTS ядро ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), установите пакет [virtualbox-guest-modules-lts](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-lts). Пакет [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) может быть удалён по вашему желанию.
+*   Если вы используете LTS ядро ([linux-lts](https://www.archlinux.org/packages/?name=linux-lts)), установите пакет [virtualbox-guest-modules-lts](https://aur.archlinux.org/packages/virtualbox-guest-modules-lts/). Пакет [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) может быть удалён по вашему желанию.
 *   Если вы используете ядро [linux-ck](https://aur.archlinux.org/packages/linux-ck/), скомпилируйте пакет [virtualbox-ck-guest-modules](https://aur.archlinux.org/packages/virtualbox-ck-guest-modules/). Пакет [virtualbox-guest-modules](https://www.archlinux.org/packages/?name=virtualbox-guest-modules) также может быть удалён.
 
 #### Запуск гостевой ОС со сторонним ядром

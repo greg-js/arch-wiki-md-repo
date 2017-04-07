@@ -68,12 +68,12 @@ Both of these drivers require non-free firmware to function. Install [b43-firmwa
 
 ### broadcom-wl
 
-There are two version in [AUR](/index.php/AUR "AUR") of the restrictively licensed driver:
+There are two variants of the restrictively licensed driver:
 
-*   the standard [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
-*   and the [DKMS](/index.php/DKMS "DKMS") variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
+*   the regular variant: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
+*   the [DKMS](/index.php/DKMS "DKMS") variant: [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)
 
-**Tip:** The DKMS variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
+**Tip:** The DKMS variant [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms)
 
 *   is kernel agnostic. This means it supports different kernels you may use (e.g. [linux-ck](https://aur.archlinux.org/packages/linux-ck/)).
 *   is kernel release agnostic, too. It will be automatically rebuilt after every kernel upgrade or fresh installation. If you use [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or another kernel release dependant variant (e.g. [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), it may happen that kernel upgrades break wireless from time to time until the packages are in sync again.
@@ -125,7 +125,7 @@ To work in monitor mode, use this newly created network interface.
 
 Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). It should be blackisted if using a **b43** driver.
 
-If you are using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), uninstall and reinstall it after upgrading your kernel or switch to [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) package.
+If you are using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), uninstall and reinstall it after upgrading your kernel or switch to [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) package.
 
 ### Device with broadcom-wl driver not working/showing
 

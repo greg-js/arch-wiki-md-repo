@@ -14,10 +14,11 @@
 *   [4 Integrating with mutt](#Integrating_with_mutt)
     *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
 *   [5 Integrating with NeoMutt / mutt-kz](#Integrating_with_NeoMutt_.2F_mutt-kz)
+*   [6 Permanently delete emails](#Permanently_delete_emails)
 
 ## Overview
 
-Notmuch is written in C and an order of magnitude faster than sup-mail. Notmuch can be terminated during the indexing process, on the next run it will continue where it left off. Also like sup-mail, it does not provide a way to permanently delete unwanted email messages. It doesn't fetch or send mails, nor does it store your email addresses, you'll need to use programs like [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), [msmtp](/index.php/Msmtp "Msmtp") and *abook* for those tasks.
+Notmuch is written in C and an order of magnitude faster than sup-mail. Notmuch can be terminated during the indexing process, on the next run it will continue where it left off. Also like sup-mail, it does not provide a way to permanently delete unwanted email messages (however, see [#Permanently delete emails](#Permanently_delete_emails)). It doesn't fetch or send mails, nor does it store your email addresses, you'll need to use programs like [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), [msmtp](/index.php/Msmtp "Msmtp") and *abook* for those tasks.
 
 Notmuch is available in the [official repositories](/index.php/Official_repositories "Official repositories"): [notmuch](https://www.archlinux.org/packages/?name=notmuch) or [notmuch-git](https://aur.archlinux.org/packages/notmuch-git/) from the [AUR](/index.php/AUR "AUR")
 
@@ -185,4 +186,14 @@ macro index A "<modify-labels>+archive -unread -inbox\
 " "Archive message"
 macro index c "<change-vfolder>?" "Change to vfolder overview"
 macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+```
+
+## Permanently delete emails
+
+One choice is to maintain a tag of emails you wish to remove from your disk, for example, "killed". Then, you can run this to delete them permanently:
+
+```
+ notmuch search --output=files tag:killed | xargs -r rm
+ notmuch new
+
 ```

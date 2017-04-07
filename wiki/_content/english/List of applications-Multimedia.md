@@ -136,7 +136,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **imv** — Lightweight image viewer with support for Wayland and animated GIFs which uses FreeImage.
 
-	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://aur.archlinux.org/packages/imv/)
+	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://www.archlinux.org/packages/?name=imv)
 
 *   **LxImage-Qt** — The LXQt image viewer.
 
@@ -305,10 +305,6 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Replacement for Adobe Illustrator or CorelDraw, oriented for "prepress ready" PostScript & PDF output.
 
 	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
-
-*   **[Xara LX](https://en.wikipedia.org/wiki/Xara_Xtreme_LX "wikipedia:Xara Xtreme LX")** — Advanced vector graphics program, the open source version of the commercial Xara X.
-
-	[http://www.xaraxtreme.org/](http://www.xaraxtreme.org/) || [xaralx](https://aur.archlinux.org/packages/xaralx/)
 
 *   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — General-purpose diagramming program for flowcharts, network diagrams, UML diagrams, BPMN diagrams, mind maps, organization charts, and Entity Relationship diagrams.
 
