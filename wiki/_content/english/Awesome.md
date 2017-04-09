@@ -143,11 +143,69 @@ Several extensions are available for awesome (3.5+):
 
 ### Autorun programs
 
-See [awesome wiki](http://awesome.naquadah.org/wiki/Autostart) and [Autostart](/index.php/Autostart "Autostart").
+To autorun programs, create a shell script via
+
+```
+$ touch .config/awesome/autorun.sh
+
+```
+
+and make it executable by
+
+```
+$ chmod +x .config/awesome/autorun.sh
+
+```
+
+Open `autorun.sh` in an editor and insert the following:
+
+ `.config/awesome/autorun.sh` 
+```
+#!/usr/bin/env bash
+
+function run {
+  if ! pgrep $1 ;
+  then
+    $@&
+  fi
+}
+```
+
+To add programs to autostart, simply append `run program [some arguments]` to `autorun.sh`. The `run` function checks whether there already is an instance of `program` running and only runs `program` if there is none. You can check your `autorun.sh` by running it:
+
+```
+$ .config/awesome/autorun.sh
+
+```
+
+If everything is fine, add the following line to your `rc.lua`:
+
+ `.config/awesome/rc.lua` 
+```
+...
+awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
+...
+```
 
 ### Changing keyboard layout
 
-See [awesome wiki](http://awesome.naquadah.org/wiki/Change_keyboard_maps#Display.2Fchange_keyboard_map) and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
+There is multiple ways to configure keyboard layers. In the default config awesome already has the layout widget activated - but it wont show up until there is a choice. To set multiple layers temporary, run
+
+```
+$ setxkbmap -layout "us,de"
+
+```
+
+The awesome keyboard widget should appear, clicking on it should toggle the layout. If you want a keycombo to change the layout, you may append `-option "grp:alt_shift_toggle"`. This for example will let you change the layout by pressing `Shift+Alt`. So the complete command would be:
+
+```
+$ setxkbmap -layout "us,de" -option "grp:alt_shift_toggle"
+
+```
+
+Once you've found the appropiate comand to setup your layouts, add it to [Awesome#Autorun_programs](/index.php/Awesome#Autorun_programs "Awesome").
+
+Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
 ### Theming
 
@@ -384,10 +442,10 @@ It is possible to control both volume and media playback via a combination of am
 
 ```
    -- Volume Keys
-   awful.key({}, "#122", function ()
+   awful.key({}, "XF86AudioLowerVolume", function ()
      awful.util.spawn("amixer -q -D pulse sset Master 5%-")
    end),
-   awful.key({}, "#123", function ()
+   awful.key({}, "XF86AudioRaiseVolume", function ()
      awful.util.spawn("amixer -q -D pulse sset Master 5%+")
    end),
    awful.key({}, "XF86AudioMute", function ()
@@ -590,5 +648,4 @@ Xdg-menu will generate duplicate entries if you copy desktop-files from /usr/sha
 *   [https://awesomewm.org/apidoc/documentation/90-FAQ.md.html](https://awesomewm.org/apidoc/documentation/90-FAQ.md.html) - FAQ
 *   [http://www.lua.org/pil/](http://www.lua.org/pil/) - Programming in Lua (first edition)
 *   [https://awesomewm.org/](https://awesomewm.org/) - The official awesome website
-*   [http://awesome.naquadah.org/wiki/Main_Page](http://awesome.naquadah.org/wiki/Main_Page) - the awesome wiki
 *   [https://bbs.archlinux.org/viewtopic.php?id=88926](https://bbs.archlinux.org/viewtopic.php?id=88926) - share your awesome!

@@ -158,6 +158,13 @@ $ systemctl --user start emacs
 
 ```
 
+Unfortunately, systemd user units aren't run from a login shell and don't inherit it's environment. This means private bin directories or settings like python's WORKON_HOME (normally done in ~/.profile) will be missing. See [[1]](https://wiki.archlinux.org/index.php/Systemd/User) for some suggestions on dealing with that. A simpler hack is just to alter your ExecStart line to run emacs --daemon in a bash login shell.
+
+```
+$ ExecStart=/bin/bash -l -c '/usr/bin/emacs --daemon'
+
+```
+
 ## Usage
 
 Although Emacs is complex, it will not take long to begin to understand the benefits which the level of customization and extensibility bring. Furthermore, the comprehensive variety of extensions already available allows it to be transformed into a powerful environment for almost any form of text-editing.
@@ -254,7 +261,7 @@ To set this permanently, consider adding it to your `.xinitrc` file.
 
 Now, if you ever need to upcase an region, just use the default `C-x C-u` keybinding, which calls the `upcase-region` function.
 
-See [[1]](http://ergoemacs.org/emacs/swap_CapsLock_Ctrl.html) for an alternative approach.
+See [[2]](http://ergoemacs.org/emacs/swap_CapsLock_Ctrl.html) for an alternative approach.
 
 If you are missing your Caps Lock function, map it as both "Shift" at same time.
 
@@ -465,7 +472,7 @@ Alternatively, you can simply tell emacs to colour systemd files (services, time
 
 ### Clipboard support for emacs-nox
 
-To use the [Xorg](/index.php/Xorg "Xorg") clipboard in emacs-nox, [install](/index.php/Install "Install") [xclip](https://www.archlinux.org/packages/?name=xclip) and add the following function to `~/.emacs` [[2]](https://lists.gnu.org/archive/html/help-gnu-emacs/2014-08/msg00189.html)
+To use the [Xorg](/index.php/Xorg "Xorg") clipboard in emacs-nox, [install](/index.php/Install "Install") [xclip](https://www.archlinux.org/packages/?name=xclip) and add the following function to `~/.emacs` [[3]](https://lists.gnu.org/archive/html/help-gnu-emacs/2014-08/msg00189.html)
 
 ```
 ;; use xclip to copy/paste in emacs-nox

@@ -347,7 +347,7 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 *   **System policies** — Set of configuration modules which allows administrator to change [PolicyKit](/index.php/PolicyKit "PolicyKit") settings.
 
-	[https://projects.kde.org/projects/extragear/base/polkit-kde-kcmodules-1](https://projects.kde.org/projects/extragear/base/polkit-kde-kcmodules-1) || [kcm-polkit-kde-git](https://aur.archlinux.org/packages/kcm-polkit-kde-git/)
+	[https://cgit.kde.org/polkit-kde-kcmodules-1.git](https://cgit.kde.org/polkit-kde-kcmodules-1.git) || [kcm-polkit-kde-git](https://aur.archlinux.org/packages/kcm-polkit-kde-git/)
 
 *   **wacom tablet** — KDE GUI for the Wacom Linux Drivers.
 
@@ -641,7 +641,7 @@ Many problems in KDE are related to configuration.
 
 Plasma problems are usually caused by unstable **Plasma widgets** (colloquially called *plasmoids*) or **Plasma themes**. First, find which was the last widget or theme you had installed and disable it or uninstall it.
 
-So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report (bugs.kde.org) **only if it is an official widget**. If it is not, it is recommended you find the entry on [https://store.kde.org/](https://store.kde.org/) and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
+So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report ([https://bugs.kde.org/](https://bugs.kde.org/)) **only if it is an official widget**. If it is not, it is recommended you find the entry on [https://store.kde.org/](https://store.kde.org/) and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
 
 If you cannot find the problem, but you do not want *all* the settings to be lost, navigate to `~/.config`:
 
@@ -787,7 +787,6 @@ If your system is able to suspend or hibernate using systemd but do not have the
 
 ## See also
 
-*   [KDE homepage](https://www.kde.org)
-*   [KDE bug tracker](https://bugs.kde.org)
-*   [KDE Projects](https://projects.kde.org)
+*   [KDE homepage](https://www.kde.org/)
+*   [KDE bug tracker](https://bugs.kde.org/)
 *   [Martin Graesslin's blog](https://blog.martin-graesslin.com/blog/kategorien/kde/)

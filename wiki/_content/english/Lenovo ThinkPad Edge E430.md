@@ -76,7 +76,7 @@ If, like me, you failed to realize that the wireless card was a horribly support
 
 ### SD Card Reader
 
-**As of 3.8 a 3rd party module is not needed, device is accessible @ /dev/mccX**
+**As of 3.8 a 3rd party module is not needed, device is accessible @ /dev/mccX thanks to rtsx_pci**
 
 The card reader will not work out-of-the-box pre-3.8, but thanks to Icetonic, the necessary kernel module, [rts5229](https://aur.archlinux.org/packages.php?ID=60832), can be found from the Realtek website or from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Download the tarball and install with [makepkg](/index.php/Makepkg "Makepkg").
 

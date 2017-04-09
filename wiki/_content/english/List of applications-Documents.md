@@ -771,6 +771,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://www.qownnotes.org/](http://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
 
+*   **RedNotebook** — Modern journal, which lets you format, tag and search your entries.
+
+	[http://rednotebook.sourceforge.net/](http://rednotebook.sourceforge.net/) || [rednotebook](https://aur.archlinux.org/packages/rednotebook/)
+
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Desktop note-taking application for Linux and Unix with a wiki-like linking system to connect notes together.
 
 	[https://wiki.gnome.org/Apps/Tomboy](https://wiki.gnome.org/Apps/Tomboy) || [tomboy](https://www.archlinux.org/packages/?name=tomboy)

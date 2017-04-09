@@ -26,7 +26,7 @@ The RR can also easily be generated with the tools `ldns-dane` from [ldns](https
 
 ## DANE supporting software
 
-*   [Postfix](/index.php/Postfix#Dane "Postfix")
+*   [Postfix](/index.php/Postfix#DANE_.28DNSSEC.29 "Postfix")
 *   Exim > 4.85
 *   Prosody (via [prosody-mod-s2s-auth-dane](https://aur.archlinux.org/packages/prosody-mod-s2s-auth-dane/))
 

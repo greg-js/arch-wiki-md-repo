@@ -103,7 +103,7 @@ and select the profile. Unison has a nice interface where you can view the progr
 
 For Unison to function properly, the same version *must* be installed on all clients. If, for example, one computer has version 2.40 and the other has 2.32, they will not be able to sync with each other. This applies to *all* computers that share a directory to be synchronized across your machines.
 
-The Unison binary/ies also *must* be compiled against the same version of OCaml, see [https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439](https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439) . This makes Unison virtualy unusable on heterogeneous networks.
+The Unison binary/ies also *must* be compiled against the same version of OCaml, see [https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439](https://groups.yahoo.com/neo/groups/unison-users/conversations/topics/11439) . This makes Unison virtually unusable on heterogeneous networks.
 
 Due to the staggered releases with varying Linux distros, you might be stuck with older versions of Unison, while Arch Linux has the latest upstream version in the Extra repository. There are unofficial [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for versions 2.32 ([unison-232](https://aur.archlinux.org/packages/unison-232/)), 2.27 ([unison-227](https://aur.archlinux.org/packages/unison-227/)) and 2.40 ([unison-240-compat](https://aur.archlinux.org/packages/unison-240-compat/)) on the [AUR](/index.php/AUR "AUR") that allow users of multiple distros to continue using Unison with their existing systems.
 

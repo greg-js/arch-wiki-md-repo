@@ -496,6 +496,8 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 
 [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
 
+[lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
+
 [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/)
 
 ## Civilization VI

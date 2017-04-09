@@ -139,6 +139,8 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
 | [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
 | [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
+| [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |
+| [PCT UHC304](http://www.pct-max.com.tw/cht/products.php?index=289) | HDMI (4K@30Hz, 2K@60Hz), Gigabit Ethernet, USB-A, USB-C | Working |
 
 ### Thunderbolt Firmware updates
 
@@ -253,7 +255,14 @@ Installing [xf86-video-intel-git](https://aur.archlinux.org/packages/xf86-video-
 
 ### Continuous hissing sound with headphones
 
-Open alsamixer and set "Headphone Mic Boost" gain to 10 dB: [https://www.reddit.com/r/Dell/comments/4j1zz4/headphones_have_static_noise_with_ubuntu_1604_on/](https://www.reddit.com/r/Dell/comments/4j1zz4/headphones_have_static_noise_with_ubuntu_1604_on/) Note that this does reduce the volume slightly.
+Open alsamixer and set "Headphone Mic Boost" gain to 10 dB (See discussion on [reddit](https://www.reddit.com/r/Dell/comments/4j1zz4/headphones_have_static_noise_with_ubuntu_1604_on/)). Note that this does reduce the volume slightly.
+
+You may also run the equivalent command:
+
+```
+   $ amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1
+
+```
 
 ## See Also
 

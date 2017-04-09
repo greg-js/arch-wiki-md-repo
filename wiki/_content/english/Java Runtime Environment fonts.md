@@ -49,7 +49,7 @@ _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 Specify the variable on the command line before the executable to try the new configuration:
 
 ```
-_JAVA_OPTIONS=*options* *exectuable* 
+_JAVA_OPTIONS=*options* *executable* 
 
 ```
 

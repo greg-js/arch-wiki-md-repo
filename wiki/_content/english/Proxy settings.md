@@ -9,6 +9,7 @@ A proxy is "an interface for a service, especially for one that is remote, resou
 *   [3 Web Proxy Options](#Web_Proxy_Options)
     *   [3.1 Simple Proxy with SSH](#Simple_Proxy_with_SSH)
 *   [4 Using a SOCKS proxy](#Using_a_SOCKS_proxy)
+    *   [4.1 curl and pacman](#curl_and_pacman)
 *   [5 Proxy settings on GNOME3](#Proxy_settings_on_GNOME3)
 *   [6 Microsoft NTLM proxy](#Microsoft_NTLM_proxy)
     *   [6.1 Configuration](#Configuration)
@@ -198,6 +199,12 @@ server = 127.0.0.1
 server_port = 8080
 server_type = 5
 ```
+
+### curl and pacman
+
+You may set the `all_proxy` environment variable to let curl and pacman (which uses curl) use your socks5 proxy:
+
+ `$ export all_proxy="socks5://your.proxy:1080"` 
 
 ## Proxy settings on GNOME3
 

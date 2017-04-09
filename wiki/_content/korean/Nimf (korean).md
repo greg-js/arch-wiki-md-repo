@@ -33,7 +33,6 @@ export QT4_IM_MODULE="nimf"
 export QT_IM_MODULE=nimf
 export XMODIFIERS="@im=nimf"
 nimf-daemon
-nimf-indicator
 
 ```
 

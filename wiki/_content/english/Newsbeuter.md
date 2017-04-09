@@ -37,7 +37,7 @@ newsbeuter
 
 Press the `?` key to see a list of all keybindings. Keybindings can be rebound, see [#Configuration](#Configuration).
 
-**Warning:** If you only have a single feed newsbeuter won't cache fetched items (this bug is fixed in the development version).
+**Note:** If you only have a single feed newsbeuter won't cache fetched items (this bug is fixed in the development version).
 
 ## Managing feeds
 

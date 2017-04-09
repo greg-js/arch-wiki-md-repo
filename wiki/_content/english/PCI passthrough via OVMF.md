@@ -30,19 +30,18 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [6.2 Passing the boot GPU to the guest](#Passing_the_boot_GPU_to_the_guest)
     *   [6.3 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
 *   [7 QEMU without libvirtd (can switch GPUs without reboot)](#QEMU_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [8.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
-    *   [8.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-    *   [8.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-*   [9 Passing though other devices](#Passing_though_other_devices)
-    *   [9.1 USB controller](#USB_controller)
-    *   [9.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
-    *   [9.3 Gotchas](#Gotchas_3)
-        *   [9.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
-*   [10 Troubleshooting](#Troubleshooting_2)
-    *   [10.1 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-*   [11 See also](#See_also)
+*   [8 Passing though other devices](#Passing_though_other_devices)
+    *   [8.1 USB controller](#USB_controller)
+    *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
+    *   [8.3 Gotchas](#Gotchas_3)
+        *   [8.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [9.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+    *   [9.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
+    *   [9.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+    *   [9.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+*   [10 See also](#See_also)
 
 ## Prerequisites
 
@@ -230,20 +229,9 @@ If you did need to add this module to your kernel image configuration manually, 
  `# mkinitcpio -p linux` 
 **Note:** If you are using a non-standard kernel, such as `linux-vfio`, replace `linux` with whichever kernel you intend to use.
 
-Add the relevant PCI device IDs to the kernel command line:
-
- `/etc/default/grub` 
-```
-...
-GRUB_CMDLINE_LINUX_DEFAULT="... pci-stub.ids=10de:13c2,10de:0fbb ..."
-...
-```
+Add the relevant PCI device IDs to the `pci-stubs.ids` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), e.g. `pci-stub.ids=10de:13c2,10de:0fbb`.
 
 **Note:** If, as noted [here](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `pci-stub`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `pci-stub` to bind with.
-
-Reload the grub configuration:
-
- `# grub-mkconfig -o /boot/grub/grub.cfg` 
 
 Check dmesg output for successful assignment of the device to pci-stub:
 
@@ -530,122 +518,6 @@ With these new scripts, is it possible to switch GPUs without rebooting, only a 
 
 [vfio-users : Example configuration with CLI Qemu (working VM => host audio)](https://www.redhat.com/archives/vfio-users/2015-August/msg00020.html)
 
-## Troubleshooting
-
-### "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs
-
-**Note:** This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers
-
-Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '123456789ab') as opposed to longer or shorter strings.
-
- `EDITOR=nano virsh edit myPciPassthroughVm` 
-```
-...
-
-<features>
-	<hyperv>
-		...
-		<vendor_id state='on' value='whatever'/>
-		...
-	</hyperv>
-	...
-	<kvm>
-	<hidden state='on'/>
-	</kvm>
-</features>
-...
-
-```
-
-Users with older versions of QEMU and/or libvirt will instead have to disable a few hypervisor extensions, which can degrade performance substentially. If this is what you want to do, do the following replacement in your libvirt domain config file.
-
- `EDITOR=nano virsh edit myPciPassthroughVm` 
-```
-...
-<features>
-	<hyperv>
-		<relaxed state='on'/>
-		<vapic state='on'/>
-		<spinlocks state='on' retries='8191'/>
-	</hyperv>
-	...
-</features>
-...
-<clock offset='localtime'>
-	<timer name='hypervclock' present='yes'/>
-</clock>
-...
-```
-
-```
-...
-
-<clock offset='localtime'>
-	<timer name='hypervclock' present='no'/>
-</clock>
-...
-<features>
-	<kvm>
-	<hidden state='on'/>
-	</kvm>
-	...
-	<hyperv>
-		<relaxed state='off'/>
-		<vapic state='off'/>
-		<spinlocks state='off'/>
-	</hyperv>
-	...
-</features>
-...
-```
-
-### Unexpected crashes related to CPU exceptions
-
-In some cases, kvm may react strangely to certain CPU operations, such as GeForce Experience complaining about an unsupported CPU being present or some game crashing for unknown reasons. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs instead of returning an error value.
-
- `/etc/modprobe.d/kvm.conf` 
-```
-...
-options kvm ignore_msrs=1
-...
-```
-
-**Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
-
-### "System Thread Exception Not Handled" when booting on a Windows VM
-
-Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
-
-### Slowed down audio pumped through HDMI on the video card
-
-For some users VM's audio slows down/starts stuttering/becomes demonic after a while when it's pumped through HDMI on the video card. This usually also slows down graphics. A possible solution consists of enabling MSI (Message Signaled-Based Interrupts) instead of the default (Line-Based Interrupts).
-
-In order to check whether MSI is supported or enabled, run the following command as root:
-
-```
-# lspci -vs $device | grep 'MSI:'
-
-```
-
-where `$device` is the card's address (e.g. `01:00.0`).
-
-The output should be similar to:
-
-```
-Capabilities: [60] MSI: Enable**-** Count=1/1 Maskable- 64bit+
-
-```
-
-A `-` after `Enabled` means MSI is supported, but not used by the VM, while a `+` says that the VM is using it.
-
-The procedure to enable it is quite complex, instructions and an overview of the setting can be found [here](http://forums.guru3d.com/showthread.php?t=378044).
-
-Other hints can be found on the [lime-technology's wiki](http://lime-technology.com/wiki/index.php/UnRAID_6/VM_Guest_Support#Enable_MSI_for_Interrupts_to_Fix_HDMI_Audio_Support), or on this article on [VFIO tips and tricks](http://vfio.blogspot.it/2014/09/vfio-interrupts-and-how-to-coax-windows.html).
-
-Some tools named `MSI_util` or similar are available on the Internet, but they didn't work for me on Windows 10 64bit.
-
-In order to fix the issues enabling MSI on the 0 function of my nVidia card (`01:00.0 VGA compatible controller: NVIDIA Corporation GM206 [GeForce GTX 960] (rev a1) (prog-if 00 [VGA controller])`) was not enough; I also enabled it on the other function (`01:00.1 Audio device: NVIDIA Corporation Device 0fba (rev a1)`) and that seems to have fixed the issue.
-
 ## Passing though other devices
 
 ### USB controller
@@ -773,6 +645,120 @@ IOMMU group 13
 This signals that the xHCI USB controller in 00:14.0 cannot be reset and will therefore stop the VM from shutting down properly, while the integrated sound card in 00:1b.0 and the other two controllers in 00:1a.0 and 00:1d.0 do not share this problem and can be passed without issue.
 
 ## Troubleshooting
+
+### "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs
+
+**Note:** This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers
+
+Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '123456789ab') as opposed to longer or shorter strings.
+
+ `EDITOR=nano virsh edit myPciPassthroughVm` 
+```
+...
+
+<features>
+	<hyperv>
+		...
+		<vendor_id state='on' value='whatever'/>
+		...
+	</hyperv>
+	...
+	<kvm>
+	<hidden state='on'/>
+	</kvm>
+</features>
+...
+
+```
+
+Users with older versions of QEMU and/or libvirt will instead have to disable a few hypervisor extensions, which can degrade performance substentially. If this is what you want to do, do the following replacement in your libvirt domain config file.
+
+ `EDITOR=nano virsh edit myPciPassthroughVm` 
+```
+...
+<features>
+	<hyperv>
+		<relaxed state='on'/>
+		<vapic state='on'/>
+		<spinlocks state='on' retries='8191'/>
+	</hyperv>
+	...
+</features>
+...
+<clock offset='localtime'>
+	<timer name='hypervclock' present='yes'/>
+</clock>
+...
+```
+
+```
+...
+
+<clock offset='localtime'>
+	<timer name='hypervclock' present='no'/>
+</clock>
+...
+<features>
+	<kvm>
+	<hidden state='on'/>
+	</kvm>
+	...
+	<hyperv>
+		<relaxed state='off'/>
+		<vapic state='off'/>
+		<spinlocks state='off'/>
+	</hyperv>
+	...
+</features>
+...
+```
+
+### Unexpected crashes related to CPU exceptions
+
+In some cases, kvm may react strangely to certain CPU operations, such as GeForce Experience complaining about an unsupported CPU being present or some game crashing for unknown reasons. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs instead of returning an error value.
+
+ `/etc/modprobe.d/kvm.conf` 
+```
+...
+options kvm ignore_msrs=1
+...
+```
+
+**Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
+
+### "System Thread Exception Not Handled" when booting on a Windows VM
+
+Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
+
+### Slowed down audio pumped through HDMI on the video card
+
+For some users VM's audio slows down/starts stuttering/becomes demonic after a while when it's pumped through HDMI on the video card. This usually also slows down graphics. A possible solution consists of enabling MSI (Message Signaled-Based Interrupts) instead of the default (Line-Based Interrupts).
+
+In order to check whether MSI is supported or enabled, run the following command as root:
+
+```
+# lspci -vs $device | grep 'MSI:'
+
+```
+
+where `$device` is the card's address (e.g. `01:00.0`).
+
+The output should be similar to:
+
+```
+Capabilities: [60] MSI: Enable**-** Count=1/1 Maskable- 64bit+
+
+```
+
+A `-` after `Enabled` means MSI is supported, but not used by the VM, while a `+` says that the VM is using it.
+
+The procedure to enable it is quite complex, instructions and an overview of the setting can be found [here](http://forums.guru3d.com/showthread.php?t=378044).
+
+Other hints can be found on the [lime-technology's wiki](http://lime-technology.com/wiki/index.php/UnRAID_6/VM_Guest_Support#Enable_MSI_for_Interrupts_to_Fix_HDMI_Audio_Support), or on this article on [VFIO tips and tricks](http://vfio.blogspot.it/2014/09/vfio-interrupts-and-how-to-coax-windows.html).
+
+Some tools named `MSI_util` or similar are available on the Internet, but they didn't work for me on Windows 10 64bit.
+
+In order to fix the issues enabling MSI on the 0 function of my nVidia card (`01:00.0 VGA compatible controller: NVIDIA Corporation GM206 [GeForce GTX 960] (rev a1) (prog-if 00 [VGA controller])`) was not enough; I also enabled it on the other function (`01:00.1 Audio device: NVIDIA Corporation Device 0fba (rev a1)`) and that seems to have fixed the issue.
 
 ### No HDMI audio output on host when intel_iommu is enabled
 

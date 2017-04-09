@@ -4,8 +4,6 @@ Wireshark is a free and open-source packet analyzer. It is used for network trou
 
 *   [1 Installation](#Installation)
 *   [2 Capturing as normal user](#Capturing_as_normal_user)
-    *   [2.1 Add the user to the wireshark group](#Add_the_user_to_the_wireshark_group)
-    *   [2.2 Use sudo](#Use_sudo)
 *   [3 A few capturing techniques](#A_few_capturing_techniques)
     *   [3.1 Filtering TCP packets](#Filtering_TCP_packets)
     *   [3.2 Filtering UDP packets](#Filtering_UDP_packets)
@@ -25,27 +23,13 @@ The wireshark package has been split into the CLI version as well as GTK+ and Qt
 
 Running Wireshark as root is insecure.
 
-Arch Linux uses [method from Wireshark wiki](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Other_Linux_based_systems_or_other_installation_methods) to separate privileges. When [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) is installed, [install script](/index.php/PKGBUILD#install "PKGBUILD") sets `/usr/bin/dumpcap` capabilities.
+Arch Linux uses [method from Wireshark wiki](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Other_Linux_based_systems_or_other_installation_methods) to separate privileges. When [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) is installed, [install script](/index.php/PKGBUILD#install "PKGBUILD") sets additional [capabilities](/index.php/Capabilities "Capabilities") on the `/usr/bin/dumpcap` executable, these capabilities can be listed as follows:
 
- `$ getcap /usr/bin/dumpcap`  `/usr/bin/dumpcap = cap_net_admin,cap_net_raw+eip` 
+ `$ getcap /usr/bin/dumpcap`  `/usr/bin/dumpcap = cap_dac_override,cap_net_admin,cap_net_raw+eip` 
 
-`/usr/bin/dumpcap` is the only process that has privileges to capture packets. `/usr/bin/dumpcap` can only be run by root and members of the `wireshark` group.
+`/usr/bin/dumpcap` is the only process that has privileges to capture packets. `/usr/bin/dumpcap` can only be run by root and members of the `wireshark` group. Other users will see the *Couldn't run /usr/bin/dumpcap in child process: Permission denied* error in Wireshark.
 
-There are two methods to capture as a normal user :
-
-### Add the user to the wireshark group
-
-To use wireshark as a normal user, add user to the `wireshark` [group](/index.php/Group "Group"). Re-login to apply the changes or use `newgrp wireshark` to open a shell with the new group.
-
-### Use sudo
-
-You can use [sudo](/index.php/Sudo "Sudo") to temporarily change group to `wireshark`. The following line allows all users in the wheel group to run programs with GID set to wireshark GID:
-
- `%wheel ALL=(:wireshark) /usr/bin/wireshark, /usr/bin/tshark` 
-
-Then run wireshark with
-
- `$ sudo -g wireshark wireshark` 
+To use wireshark as a normal user, add the user to the `wireshark` [group](/index.php/Group "Group") (`sudo gpasswd -a $USER wireshark`). Re-login to apply the changes or use `newgrp wireshark` to open a shell with the new group and start Wireshark from there.
 
 ## A few capturing techniques
 

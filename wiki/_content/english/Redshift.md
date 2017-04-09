@@ -4,8 +4,8 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 **Note:**
 
-*   Redshift only works with [Xorg](/index.php/Xorg "Xorg") [[1]](https://github.com/jonls/redshift/issues/55) – [Wayland](/index.php/Wayland "Wayland") is not supported yet.
-*   A native [GNOME](/index.php/GNOME "GNOME") [extension](https://github.com/benzea/gnome-shell-extension-redshift) has been made available and supports [Wayland](/index.php/Wayland "Wayland"), however it requires a patched [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon). See [#GNOME Shell Extension](#GNOME_Shell_Extension).
+*   Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature. [[1]](https://github.com/jonls/redshift/issues/55)
+*   The [Redshift GNOME shell extension](https://github.com/benzea/gnome-shell-extension-redshift) supports [Wayland](/index.php/Wayland "Wayland"), see [#GNOME Shell Extension](#GNOME_Shell_Extension).
 
 ## Contents
 
@@ -39,10 +39,10 @@ The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.o
 
 **Note:**
 
-*   [Disable](/index.php/Disable "Disable")/stop any running Redshift instance, because it is not compatible with this GNOME Extension.
-*   You may want to [uninstall](/index.php/Uninstall "Uninstall") [redshift](https://www.archlinux.org/packages/?name=redshift) since it is not used by [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/).
+*   [Disable](/index.php/Disable "Disable")/stop any running Redshift instance, because it is not compatible with the extension.
+*   You may want to [uninstall](/index.php/Uninstall "Uninstall") [redshift](https://www.archlinux.org/packages/?name=redshift) since it is not used by the extension.
 
-Install [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/), restart/re-login and enable/configure the extension with [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+Install [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/), restart/re-login and enable/configure the extension with the [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 
 ## Configuration
 

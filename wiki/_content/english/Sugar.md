@@ -5,28 +5,15 @@ Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name th
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 From AUR](#From_AUR)
-    *   [1.2 From Activity Library](#From_Activity_Library)
+    *   [1.1 From Activity Library](#From_Activity_Library)
 *   [2 Starting Sugar](#Starting_Sugar)
-*   [3 Packaging](#Packaging)
-    *   [3.1 Notes](#Notes)
-*   [4 See also](#See_also)
+*   [3 See also](#See_also)
 
 ## Installation
 
 *   For the core system (*Glucose*), install [sugar](https://www.archlinux.org/packages/?name=sugar). It provides the graphical interface and a desktop session, but not very useful on its own.
 *   The [sugar-fructose](https://www.archlinux.org/groups/x86_64/sugar-fructose/) group contains the base activities (*Fructose*) including a web browser, a text editor, a media player and a terminal emulator.
 *   The [sugar-runner](https://www.archlinux.org/packages/?name=sugar-runner) package provides a helper script that makes it possible to launch Sugar within another desktop environment, or from the command line directly.
-
-### From AUR
-
-**Activities**
-
-Activities are available under name `sugar-activity-**activity**` from AUR.
-
-**Etoys**
-
-`etoys` is provided separately as it is part of glucose but also include the fructose activity. It is available as [etoys](https://aur.archlinux.org/packages/etoys/) in AUR.
 
 ### From Activity Library
 
@@ -50,38 +37,6 @@ Select the session *Sugar* from the display manager's session menu.
 If [sugar-runner](https://www.archlinux.org/packages/?name=sugar-runner) installed, Sugar can be launched with the `sugar-runner` command.
 
 Alternative method is to add `exec sugar` to the `~/.xinitrc` file. After that, Sugar can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details). After setting up the `~/.xinitrc` file, it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
-
-## Packaging
-
-Almost all activities have the same building procedure, a `setup.py` that calls functions shipped with sugar. Below is a typical `PKGBUILD`:
-
- `PKGBUILD` 
-```
-# Contributor: Name <name@mail.com>
-pkgname=sugar-activity-calculate
-_realname=Calculate
-pkgver=30
-pkgrel=1
-pkgdesc="A calculator for Sugar."
-arch=('i686' 'x86_64')
-url="[https://www.sugarlabs.org/](https://www.sugarlabs.org/)"
-license=('GPL')
-depends=('sugar-toolkit-gtk3')
-source=([https://download.sugarlabs.org/sources/sucrose/fructose/${_realname}/${_realname}-$pkgver.tar.bz2](https://download.sugarlabs.org/sources/sucrose/fructose/${_realname}/${_realname}-$pkgver.tar.bz2))
-md5sums=('011bd911516f27d05194320164c7dcd7')
-
-package() {
-  cd "$srcdir/${_realname}-$pkgver"
-  ./setup.py install --prefix="$pkgdir/usr"
-}
-# vim:set ts=2 sw=2 et:
-```
-
-### Notes
-
-*   Activity building procedure is not made for packaging and using `--prefix` can be dangerous if the application uses this path internally. I think the correct way to do this would be to patch the installation procedure in `sugar` so it accepts an argument such as `--destdir=`.
-
-*   I *suggest* that we prefix sugar activities packages in AUR with `sugar-activity-`.
 
 ## See also
 

@@ -20,7 +20,7 @@ With sftpman, you first setup (define) your remote filesystems and then you moun
 
 In order to use *sftpman* or it's GTK frontend *sftpman-gtk*, you'll first need to have a working [SSHFS](/index.php/SSHFS "SSHFS") setup.
 
-[SSHFS](/index.php/SSHFS "SSHFS") and fuse are installed as dependencies, so you may just need to add *fuse* to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
+[SSHFS](/index.php/SSHFS "SSHFS") and FUSE are installed as dependencies, so you may just need to add *fuse* to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
 
 ## Installation
 

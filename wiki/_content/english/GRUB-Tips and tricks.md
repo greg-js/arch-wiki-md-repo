@@ -347,6 +347,8 @@ GRUB_SAVEDEFAULT=true
 
 ```
 
+This will only work if /boot is not a btrfs, because grub cannot write to btrfs. But it will generate a misleading error message: "sparse file not allowed. Press any key to continue.".
+
 **Note:** Manually added menu items, e.g. Windows in `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`, will need `savedefault` added.
 
 ### Changing the default menu entry

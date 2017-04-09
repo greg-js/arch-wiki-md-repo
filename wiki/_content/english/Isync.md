@@ -35,6 +35,8 @@ Install [isync](https://www.archlinux.org/packages/?name=isync) from the [offici
 
 ## Configuring
 
+**Note:** Google appears to block isync from downloading emails by default. You need to change your account's security preferences. Toggle "Allow less secure apps" to "on" on [Google's Security Page](https://myaccount.google.com/security) Also not that isync does is not an insecure app.
+
 First create and customize the main configuration file using this example ~/.mbsyncrc:
 
  `~/.mbsyncrc` 
@@ -151,6 +153,8 @@ StandardOutput=syslog
 StandardError=syslog
 
 ```
+
+**Note:** It's possible this service could trigger without an internet connection. A solution is to add the following into the Unit section: `After=network.target network-online.target dbus.socket`
 
 The following timer configures **mbsync** to be started every 2 hours :
 

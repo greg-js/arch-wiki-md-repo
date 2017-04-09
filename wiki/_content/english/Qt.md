@@ -99,15 +99,15 @@ The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, 
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
-	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4)
+	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4)
 
 *   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — KDE Oxygen style.
 
-	[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen-kde4](https://www.archlinux.org/packages/?name=oxygen-kde4)
+	[https://cgit.kde.org/oxygen.git](https://cgit.kde.org/oxygen.git) || [oxygen-kde4](https://www.archlinux.org/packages/?name=oxygen-kde4)
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
-	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt4](https://www.archlinux.org/packages/?name=qtcurve-qt4)
+	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-qt4](https://www.archlinux.org/packages/?name=qtcurve-qt4)
 
 *   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
@@ -127,15 +127,15 @@ The following styles are included in Qt5: *Fusion*, *Windows*. Others can be ins
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
-	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze](https://www.archlinux.org/packages/?name=breeze)
+	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze](https://www.archlinux.org/packages/?name=breeze)
 
 *   **Oxygen** — KDE Oxygen style.
 
-	[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
+	[https://cgit.kde.org/oxygen.git](https://cgit.kde.org/oxygen.git) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
-	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
+	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
 
 *   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 

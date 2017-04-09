@@ -13,6 +13,11 @@
         *   [2.1.1 有关smokeping配置文件语法的注意事项](#.E6.9C.89.E5.85.B3smokeping.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E8.AF.AD.E6.B3.95.E7.9A.84.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)
     *   [2.2 安装系统中的其他部分](#.E5.AE.89.E8.A3.85.E7.B3.BB.E7.BB.9F.E4.B8.AD.E7.9A.84.E5.85.B6.E4.BB.96.E9.83.A8.E5.88.86)
     *   [2.3 启动服务](#.E5.90.AF.E5.8A.A8.E6.9C.8D.E5.8A.A1)
+*   [3 安装Web界面](#.E5.AE.89.E8.A3.85Web.E7.95.8C.E9.9D.A2)
+*   [4 高级配置](#.E9.AB.98.E7.BA.A7.E9.85.8D.E7.BD.AE)
+*   [5 Troubleshooting](#Troubleshooting)
+*   [6 注意](#.E6.B3.A8.E6.84.8F)
+    *   [6.1 Smoketrace (Tr.cgi)](#Smoketrace_.28Tr.cgi.29)
 
 ## 安装
 
@@ -238,3 +243,62 @@ host = /targets/ArchLinux /targets/GoogleDNS
 # systemctl enable smokeping.service
 
 ```
+
+## 安装Web界面
+
+编辑`/etc/httpd/conf/httpd.conf`，使其包含以下内容：
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+ LoadModule fcgid_module modules/mod_fcgid.so
+ <IfModule fcgid_module>
+   AddHandler fcgid-script .fcgi
+ </IfModule>
+
+ Alias /smokeping/imgcache /srv/smokeping/imgcache
+ Alias /smokeping /srv/http/smokeping
+
+ <Directory "/srv/smokeping/imgcache">
+   AllowOverride all
+   Require all granted
+ </Directory>
+
+ <Directory "/srv/http/smokeping">
+  Options FollowSymLinks ExecCGI
+  AllowOverride all
+  Require all granted
+ </Directory>
+
+```
+
+通过 `httpd.service`，启动 [Start](/index.php/Start "Start") Apache 。
+
+检查 `[http://localhost/smokeping/smokeping.fcgi](http://localhost/smokeping/smokeping.fcgi)` 是否载入。第一批数据将在几分钟后出现。
+
+如果由于字体原因导致图像不可读，你应当安装[ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)。
+
+## 高级配置
+
+Smokeping是一个可以被多种方式配置的有力工具。你可以启动许多不同类型的探针。你可以设置发送统计信息的从属smokeping服务器（slave smokeping servers），并显示来自其他服务器的探测结果。 你也可以使用perl创建你自己的探针。这篇教程目前并没有讲解这些选项。如果你对这些内容感兴趣，可以查阅[Smokeping官方网站](http://oss.oetiker.ch/smokeping/index.en.html)上的资料。
+
+## Troubleshooting
+
+The smokeping package is currently broken in several ways. To get the service to run as a daemon, you'll need to modify the provided systemd unit file to have this parameter:
+
+```
+   type=forking
+
+```
+
+Smokemail is also not currently included, and is a required file for smokeping to run. You'll need to download the file and add it manually from smokeping's github:
+
+```
+   [https://github.com/oetiker/SmokePing/blob/master/etc/smokemail.dist](https://github.com/oetiker/SmokePing/blob/master/etc/smokemail.dist)
+
+```
+
+## 注意
+
+### Smoketrace (Tr.cgi)
+
+根据[更新记录](http://oss.oetiker.ch/smokeping/pub/CHANGES)，v2.5.5版本后[SmokeTraceroute](http://oss.oetiker.ch/smokeping/doc/smoketrace.en.html)功能正式上线。

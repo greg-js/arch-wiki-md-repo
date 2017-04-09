@@ -7,7 +7,7 @@ The HP Envy 15t-j000 Quad Edition is a laptop released in 2013.
 | Audio | **Working** | snd_hda_intel |
 | Touchpad | **Working** | synaptics |
 | Camera | **Working** |
-| Card Reader | **Working** | rts5229 |
+| Card Reader | **Working** | rts5229 !!from 3.8, try rtsx_pci!! |
 | Fingerprint Reader | **Not Working** |
 
 ## Contents

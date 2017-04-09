@@ -176,14 +176,14 @@ Yandex.DNS' speed is the same in all three modes. In "Basic" mode, there is no t
 ```
 # censurfridns.dk IPv4 nameservers
 nameserver 91.239.100.100    ## anycast.censurfridns.dk
-nameserver 89.233.43.71      ## ns1.censurfridns.dk
+nameserver 89.233.43.71      ## unicast.censurfridns.dk
 
 ```
 
 ```
 # censurfridns.dk IPv6 nameservers
 nameserver 2001:67c:28a4::             ## anycast.censurfridns.dk
-nameserver 2002:d596:2a92:1:71:53::    ## ns1.censurfridns.dk
+nameserver 2a01:3a0:53:53::    ## unicast.censurfridns.dk
 
 ```
 

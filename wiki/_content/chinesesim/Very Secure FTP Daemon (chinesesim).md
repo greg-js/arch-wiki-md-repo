@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-08，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=464942)可以查看翻译后英文页面的改动。
+
 **vsftpd** (Very Secure FTP Daemon) 是一个为UNIX类系统开发的轻量,稳定和安全的FTP服务器端.
 
 ## Contents
@@ -13,8 +15,8 @@
     *   [2.7 使用 xinetd](#.E4.BD.BF.E7.94.A8_xinetd)
     *   [2.8 使用 SSL 使 FTP 安全](#.E4.BD.BF.E7.94.A8_SSL_.E4.BD.BF_FTP_.E5.AE.89.E5.85.A8)
     *   [2.9 动态 DNS](#.E5.8A.A8.E6.80.81_DNS)
-    *   [2.10 Port configurations](#Port_configurations)
-    *   [2.11 Configuring iptables](#Configuring_iptables)
+    *   [2.10 端口配置](#.E7.AB.AF.E5.8F.A3.E9.85.8D.E7.BD.AE)
+    *   [2.11 配置 iptables](#.E9.85.8D.E7.BD.AE_iptables)
 *   [3 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
     *   [3.1 虚拟用户的PAM认证](#.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E7.9A.84PAM.E8.AE.A4.E8.AF.81)
         *   [3.1.1 为虚拟用户创建私有目录](#.E4.B8.BA.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.9B.AE.E5.BD.95)
@@ -155,7 +157,7 @@ max_per_ip=2 # 每个 IP 允许的最大连接数
 
 ### 使用 xinetd
 
-Xinetd提供增强的监控和控制连接功能。It is not necessary though for a basic good working vsftpd-server.
+Xinetd提供增强的监控和控制连接功能。对于基本的可以工作的 vsftpd-server 是不必要的
 
 安装 vsftpd 将会添加必要的服务文件 `/etc/xinetd.d/vsftpd`， 默认情况下，服务被禁用。
 
@@ -246,16 +248,16 @@ pasv_address=yourdomain.noip.info
 
 **注意:** 您将无法通过 LAN 连接到被动模式。尝试在局域网 PC 的 FTP 客户端上的活动模式。
 
-### Port configurations
+### 端口配置
 
-Especially for private FTP servers that are exposed to the web it's recommended to change the listening port to something other than the standard port 21\. This can be done using the following lines in `/etc/vsftpd.conf`:
+特别是对于暴露于 Web 的私有 FTP 服务器，建议将监听端口更改为标准端口 21 以外的其他服务器。可以使用 `/etc/vsftpd.conf` 中的以下行来完成此操作：
 
 ```
 listen_port=2211
 
 ```
 
-Furthermore a custom passive port range can be given by:
+此外，定制的端口范围可以由以下行给出：
 
 ```
 pasv_min_port=49152
@@ -263,32 +265,32 @@ pasv_max_port=65534
 
 ```
 
-### Configuring iptables
+### 配置 iptables
 
-Often the server running the FTP daemon is protected by an [iptables](/index.php/Iptables "Iptables") firewall. To allow access to the FTP server the corresponding port needs to be opened using something like
+通常，运行FTP守护进程的服务器受 [Iptables (简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)") 防火墙的保护。要允许访问FTP服务器，需要打开相应的端口，如：
 
 ```
 # iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
 
 ```
 
-This article won't provide any instruction on how to set up iptables but here is an example: [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
+本文不会提供有关如何设置iptables的任何说明，但这里是一个例子：[Simple stateful firewall (简体中文)](/index.php/Simple_stateful_firewall_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Simple stateful firewall (简体中文)")。
 
-There are some kernel modules needed for proper FTP connection handling by iptables that should be referenced here. Among those especially *nf_conntrack_ftp*. It is needed as FTP uses the given *listen_port* (21 by default) for commands only; all the data transfer is done over different ports. These ports are chosen by the FTP daemon at random and for each session (also depending on whether active or passive mode is used). To tell iptables that packets on ports should be accepted, *nf_conntrack_ftp* is required. To load it automatically on boot create a new file in `/etc/modules-load.d` e.g.:
+有一些内核模块需要在这里引用的 iptables 正确的处理 FTP 连接。 其中特别是 *nf_conntrack_ftp*。这是需要的，因为FTP使用给定的 *listen_port*（默认为21） 仅用于命令; 所有的数据传输都是通过不同的端口完成的。 这些端口由FTP守护程序为每个会话随机选择（也取决于是使用主动还是被动模式）。要告诉 iptables 应该接受端口上的数据包，需要 *nf_conntrack_ftp*。要在启动时自动加载，请在 `/etc/modules-load.d` 中创建新文件，例如：
 
 ```
 # echo nf_conntrack_ftp > /etc/modules-load.d/nf_conntrack_ftp.conf
 
 ```
 
-If the kernel >= 4.7 you either need to set *net.netfilter.nf_conntrack_helper=1* via *sysctl* e.g.
+如果内核 >= 4.7，您需要通过 *sysctl* 设置 *net.netfilter.nf_conntrack_helper = 1*，如：
 
 ```
 # echo net.netfilter.nf_conntrack_helper=1 > /etc/sysctl.d/70-conntrack.conf
 
 ```
 
-or use
+或使用
 
 ```
 # iptables -A PREROUTING -t raw -p tcp --dport 21 -j CT --helper ftp
@@ -299,30 +301,30 @@ or use
 
 ### 虚拟用户的PAM认证
 
-Since [PAM](/index.php/PAM "PAM") no longer provides `pam_userdb.so` another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/). For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/). This section is however limited to explain how to configure a chroot environment and authentication by `pam_pwdfile.so`.
+由于 [PAM (简体中文)](/index.php/PAM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PAM (简体中文)") 不再提供 `pam_userdb.so` 另一个简单的方法是使用 [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/)。对于具有许多用户的环境，另一个选项可能是 [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/) 。但是，本节仅限于解释如何通过 `pam_pwdfile.so` 配置chroot环境和身份验证。
 
-In this example we create the directory `vsftpd`:
+在此示例中，我们创建目录 `vsftpd`：
 
 ```
 # mkdir /etc/vsftpd
 
 ```
 
-One option to create and store user names and passwords is to use the Apache generator htpasswd:
+创建和存储用户名和密码的一个选择是使用 Apache 的生成器 htpasswd：
 
 ```
 # htpasswd -c /etc/vsftpd/.passwd
 
 ```
 
-A problem with the above command is that vsftpd might not be able to read the generated MD5 hashed password. If running the same command with the -d switch, crypt() encryption, password become readable by vsftpd, but the downside of this is less security and a password limited to 8 characters. Openssl could be used to produce a MD5 based BSD password with algorithm 1:
+上述命令的一个问题是 vsftpd 可能无法读取生成的 MD5 散列密码。如果使用 -d 开关运行相同的命令，则使用 crypt() 加密，vsftpd 的密码变得可读，但其缺点是安全性较低，密码限制为8个字符。 Openssl 可用于使用算法1生成基于 MD5 的 BSD 密码：
 
 ```
 # openssl passwd -1
 
 ```
 
-Whatever solution the produced `/etc/vsftpd/.passwd` should look like this:
+无论那个解决方案 `/etc/vsftpd/.passwd` 应该如下所示：
 
 ```
 username1:hashed_password1
@@ -331,7 +333,7 @@ username2:hashed_password2
 
 ```
 
-Next you need to create a PAM service using `pam_pwdfile.so` and the generated `/etc/vsftpd/.passwd` file. In this example we create a PAM policy for *vsftpd* with the following content:
+接下来，您需要使用 `pam_pwdfile.so` 和生成的 `/etc/vsftpd/.passwd` 文件创建PAM服务。在本例中，我们为 *vsftpd* 创建了一个PAM策略，其中包含以下内容：
 
  `/etc/pam.d/vsftpd` 
 ```
@@ -339,24 +341,24 @@ auth required pam_pwdfile.so pwdfile /etc/vsftpd/.passwd
 account required pam_permit.so
 ```
 
-Now it is time to create a home for the virtual users. In the example `/srv/ftp` is decided to host data for virtual users, which also reflects the default directory structure of Arch. First create the general user virtual and make `/srv/ftp` its home:
+现在是为虚拟用户创建一个 home 的时候了。在示例中，决定用 `/srv/ftp` 为虚拟用户托管数据，这也反映了Arch的默认目录结构。首先创建 virtual 用户并使 `/srv/ftp` 成为它的 home：
 
 ```
 # useradd -d /srv/ftp virtual
 
 ```
 
-Make virtual the owner:
+让 virtual 成为所有者
 
 ```
 # chown virtual:virtual /srv/ftp
 
 ```
 
-A basic `/etc/vsftpd.conf` with no private folders configured, which will default to the home folder of the virtual user:
+一个基本的没有私人文件夹配置的 /etc/vsftpd，默认的虚拟用户的 home 文件夹:
 
 ```
-# pointing to the correct PAM service file
+# 指向正确的PAM服务文件
 pam_service_name=vsftpd
 write_enable=YES
 hide_ids=YES
@@ -373,18 +375,18 @@ virtual_use_local_privs=YES
 
 ```
 
-Some parameters might not be necessary for your own setup. If you want the chroot environment to be writable you will need to add the following to the configuration file:
+您自己的设置可能不需要一些参数。如果您希望chroot环境可写，您将需要将以下内容添加到配置文件中：
 
 ```
-allow_writeable_chroot=YES
+allow_writeable_chroot = YES
 
 ```
 
-Otherwise vsftpd because of default security settings will complain if it detects that chroot is writable.
+否则 vsftpd 的默认安全设置会抱怨，如果它检测到chroot是可写的。
 
-[Start](/index.php/Start "Start") `vsftpd.service`.
+[Start](/index.php/Start "Start") `vsftpd.service`。
 
-You should now be able to login from a ftp-client with any of the users and passwords stored in `/etc/vsftpd/.passwd`.
+您现在应该可以使用存储在 `/etc/vsftpd/.passwd` 中的任何用户和密码从FTP客户端登录。
 
 #### 为虚拟用户创建私有目录
 
@@ -409,7 +411,7 @@ user_sub_token=$USER
 
 ### vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service
 
-add this to your /etc/vsftpd.conf
+将其添加到您的 `/etc/vsftpd.conf`：
 
 ```
 seccomp_sandbox=NO
@@ -418,9 +420,9 @@ seccomp_sandbox=NO
 
 ### vsftpd: refusing to run with writable root inside chroot()
 
-As of vsftpd 2.3.5, the chroot directory that users are locked to must not be writable. This is in order to prevent a security vulnerabilty.
+从 vsftpd 2.3.5 开始，用户被锁定的 chroot 目录不可写。这是为了防止安全漏洞。
 
-The safe way to allow upload is to keep chroot enabled, and configure your FTP directories.
+允许上传的安全方法是保持 chroot 启用，并配置您的 FTP 目录。
 
 ```
 local_root=/srv/ftp/user
@@ -435,26 +437,31 @@ local_root=/srv/ftp/user
 
 ```
 
-If you must:
+如果你必须这么做：
 
-You can put this into your `/etc/vsftpd.conf` to workaround this security enhancement (since vsftpd 3.0.0; from [Fixing 500 OOPS: vsftpd: refusing to run with writable root inside chroot ()](http://www.benscobie.com/fixing-500-oops-vsftpd-refusing-to-run-with-writable-root-inside-chroot/)):
+您可以将其放入您的 `/etc/vsftpd.conf` 以解决此安全性增强（自vsftpd 3.0.0;从[Fixing 500 OOPS: vsftpd: refusing to run with writable root inside chroot ()](http://www.benscobie.com/fixing-500-oops-vsftpd-refusing-to-run-with-writable-root-inside-chroot/))：
 
 ```
 allow_writeable_chroot=YES
 
 ```
 
-or alternative:
+或者：
 
-Install [vsftpd-ext](https://aur.archlinux.org/packages/vsftpd-ext/) and set in the conf file allow_writable_root=YES
+安装 [vsftpd-ext](https://aur.archlinux.org/packages/vsftpd-ext/)  并在 conf 文件中设置
+
+```
+allow_writable_chroot=YES
+
+```
 
 ### FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL
 
-vsftpd tries to display plain-text error messages in the SSL session. In order to debug this, temporarily disable encryption and you will see the correct error message.[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
+vsftpd 尝试在 SSL 会话中显示纯文本错误消息。 为了进行调试，暂时禁用加密，您将看到正确的错误消息。[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
 
 ### vsftpd.service fails to run on boot
 
-If you have enabled the vsftpd service and it fails to run on boot, make sure it is set to load after network.target in the service file:
+如果您启用了vsftpd服务，并且无法在启动时运行，请确保它已在服务文件中设置为在 network.target 之后加载：
 
  `/usr/lib/systemd/system/vsftpd.service` 
 ```
@@ -465,7 +472,7 @@ After=network.target
 
 ### ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6
 
-you most likely have commented out the line
+你很有可能已经注释了这一行
 
 ```
 # When "listen" directive is enabled, vsftpd runs in standalone mode and
@@ -480,7 +487,7 @@ listen_ipv6=YES
 
 ```
 
-instead of setting
+而不是设置
 
 ```
 # When "listen" directive is enabled, vsftpd runs in standalone mode and

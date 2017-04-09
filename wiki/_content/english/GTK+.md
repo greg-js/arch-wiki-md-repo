@@ -140,7 +140,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Oxygen-Gtk** — Port of the default KDE widget theme (Oxygen) to GTK2
 
-	[https://projects.kde.org/projects/playground/artwork/oxygen-gtk/](https://projects.kde.org/projects/playground/artwork/oxygen-gtk/) || [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2)
+	[https://cgit.kde.org/oxygen-gtk.git](https://cgit.kde.org/oxygen-gtk.git) || [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2)
 
 *   **Aurora Gtk Engine** — Latest member of the Clearlooks family.
 
@@ -148,7 +148,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
-	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
+	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
 
 There are a number of additional GTK+ themes in the [AUR](/index.php/AUR "AUR"): [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [search for gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
 
@@ -174,7 +174,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 *   **KDE GTK Configurator** — Application that allows you to change style and font of GTK+ 2 and Gtk+ 3 applications.
 
-	[https://projects.kde.org/kde-gtk-config](https://projects.kde.org/kde-gtk-config) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
+	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
 	After installation, `kde-gtk-config` can also be found in *System Settings > Application Style > GTK*.
 

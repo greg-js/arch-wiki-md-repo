@@ -31,9 +31,9 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 
 #### AMD/ATI
 
-*   [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa): open-source [Radeon](/index.php/Radeon "Radeon") runtime
-*   [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/): open-source [AMDGPU](/index.php/AMDGPU "AMDGPU") (non PRO) runtime
-*   [amdgpu-pro-opencl](https://aur.archlinux.org/packages/amdgpu-pro-opencl/): [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") proprietary runtime
+*   [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa): free runtime for [AMDGPU](/index.php/AMDGPU "AMDGPU") and [Radeon](/index.php/Radeon "Radeon")
+*   [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/): proprietary standalone runtime for [AMDGPU](/index.php/AMDGPU "AMDGPU")
+*   [amdgpu-pro-opencl](https://aur.archlinux.org/packages/amdgpu-pro-opencl/): proprietary runtime for [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO")
 *   [opencl-catalyst](https://aur.archlinux.org/packages/opencl-catalyst/): AMD proprietary runtime, soon to be deprecated in favor of [AMDGPU](/index.php/AMDGPU "AMDGPU")
 *   [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/): AMD CPU runtime
 

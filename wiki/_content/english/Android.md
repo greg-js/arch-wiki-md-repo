@@ -327,7 +327,7 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 #### Notes & Troubleshooting
 
-*   **ADB** can also be installed via [platform tools](#Android_SDK_platform_API)(usually available in `/opt/android-sdk/platform-tools/`), so it might not be necesarry to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
+*   **ADB** can also be installed via [platform tools](#Android_SDK_platform_API)(usually available in `/opt/android-sdk/platform-tools/`), so it might not be necessary to install [android-tools](https://www.archlinux.org/packages/?name=android-tools) (available in `/usr/bin/`).
 
 *   If you are getting an empty list (your device is not there), it may be because you have not enabled USB debugging on your device. You can do that by going to Settings => Applications => Development and enabling USB debugging. On Android 4.2 (Jelly Bean) the Development menu is hidden; to enable it go to Settings => About phone and tap Build number 7 times.
 

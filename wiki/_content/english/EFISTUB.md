@@ -16,6 +16,7 @@ An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly usi
     *   [2.3 Using UEFI directly](#Using_UEFI_directly)
         *   [2.3.1 efibootmgr](#efibootmgr)
         *   [2.3.2 UEFI Shell](#UEFI_Shell)
+        *   [2.3.3 Using a startup.nsh script](#Using_a_startup.nsh_script)
 
 ## Setting up EFISTUB
 
@@ -286,3 +287,18 @@ Shell> bcfg boot -opt **N** "root=**/dev/sdX#** rw initrd=\initramfs-linux.img"
 ```
 
 where `N` is the priority number you selected in the first step, and `/dev/sdX#` represents your root partition.
+
+#### Using a `startup.nsh` script
+
+Some UEFI implementations are even buggier. E.g., [VirtualBox](/index.php/VirtualBox "VirtualBox") doesn't store efivars that are set in a running VM, they are kept only during reboots of said VM. As well, anything set through the UEFI firmware interface (accessed with `F12` at boot) is lost on poweroff. Early hardware and some laptop manufacturers are not better by much.
+
+The [UEFI Shell Specification 2.0](http://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) establishes that a script called `startup.nsh` at the root of the ESP partition will always be interpreted and can contain arbitrary instructions; among those you can set a bootloading line. Make sure you mount the ESP partition on `/boot` and create a `startup.nsh` script that contains a kernel bootloading line, such as this (make sure to adapt to your needs!):
+
+```
+vmlinuz-linux root=/dev/daX rootfs=myfs rootflags=myrootflags \
+ kernel.flag=foo mymodule.flag=bar \
+ initrd=\intel-ucode.img initrd=\initramfs-linux.img
+
+```
+
+Please note that AMD microcode is loaded later in tbe boot process and read from disk by the kernel; thus, you can delete the ucode loading section. Finally, this method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort.

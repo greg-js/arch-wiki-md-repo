@@ -46,8 +46,6 @@ snd_usb_lib            16640  1 snd_usb_audio
 
 ```
 
-**Note:** As of kernel 3.19.2 you might also need to manually load [module](/index.php/Kernel_modules "Kernel modules") `snd_seq_midi`. Bug report [FS#44286](https://bugs.archlinux.org/task/44286)
-
 Now type `aconnect -i` to list all MIDI input ports. The output should contain:
 
 ```

@@ -195,12 +195,14 @@ If you get errors stating that /etc/security/pam_winbind.conf was not found, cre
   debug_state = no
   try_first_pass = yes
   krb5_auth = yes
-  krb5_cache_type = FILE
+  krb5_ccache_type = FILE
   cached_login = yes
   silent = no
   mkhomedir = yes
 
 ```
+
+With this setup, winbind will create user keytabs on the fly (krb5_ccache_type = FILE) at login and maintain them. You can verify this by simply running klist in a shell after logging in as an AD user but without needing to run kinit. You may need to set additional permissions on /etc/krb5.keytab eg 640 instead of 600 to get this to work (see [FS#52621](https://bugs.archlinux.org/task/52621) for example)
 
 ### Samba
 
@@ -271,7 +273,7 @@ Hopefully, you have not rebooted yet! Fine. If you are in an X-session, quit it,
 
 Enable and start the individual Samba deamons `smbd.service`, `nmbd.service`, and `winbindd.service`.
 
-Next we'll need to modify the NSSwitch configuration, which tells the Linux host how to retrieve information from various sources and in which order to do so. In this case, we are appending Active Directory as additional sources for Users, Groups, and Hosts.
+Next we will need to modify the NSSwitch configuration, which tells the Linux host how to retrieve information from various sources and in which order to do so. In this case, we are appending Active Directory as additional sources for Users, Groups, and Hosts.
 
  `/etc/nsswitch.conf` 
 ```
@@ -661,7 +663,7 @@ KVNO Principal
 Now you need to tell winbind to use the file by adding these lines to the /etc/samba/smb.conf:
 
 ```
- kerberos method = system keytab
+ kerberos method = secrets and keytab
  dedicated keytab file = /etc/krb5.keytab
 
 ```
