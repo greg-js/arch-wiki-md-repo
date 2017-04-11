@@ -164,7 +164,7 @@ Once the system and the boot loader are installed, VirtualBox will first attempt
 *   Create a script named `startup.nsh` at the ESP root containing the path to the boot loader application, e.g. `\EFI\grub\grubx64.efi`.
 *   Boot directly from the ESP partition using a [startup.nsh script](/index.php/EFISTUB#Using_a_startup.nsh_script "EFISTUB").
 
-Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete.It doesn´t store efivars set interactively. Therefore, EFI entries added to it manually in the fir(accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
+Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete. It doesn't store efivars set interactively. Therefore, EFI entries added to it manually in the firmware (accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
 
 See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
 

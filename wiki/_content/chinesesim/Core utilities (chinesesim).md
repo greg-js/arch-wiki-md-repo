@@ -122,11 +122,11 @@ $ *command* |& grep *args*
 
 ## find
 
-*find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
+*find*是[findutils](https://www.archlinux.org/packages/?name=findutils)软件包的一部分, 它属于[base](https://www.archlinux.org/groups/x86_64/base/)软件包组。
 
 One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
 
-Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
+作为替代, find获取一组目录并将文件一一与正则表达式进行匹配。 这种设计方式allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
 
 ## locate
 

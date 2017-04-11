@@ -39,9 +39,11 @@ For fish, keybindings are in:
 
 fish will source this by default but the bindings have to be enabled manually:
 
- `~/.config/fish/config.fish` 
+ `~/.config/fish/functions/fish_user_key_bindings.fish` 
 ```
-fzf_key_bindings
+function fish_user_key_bindings
+	fzf_key_bindings
+end
 
 ```
 

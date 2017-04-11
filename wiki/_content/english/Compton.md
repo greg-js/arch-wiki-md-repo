@@ -159,7 +159,7 @@ Alternatively, you may try to exclude slock by its window id, or by excluding al
 Exclude all windows with no name from compton using the following options:
 
 ```
-$ compton <other arguments> --focus-exclude "! name~=*"*
+$ compton <other arguments> --focus-exclude "! name~=''"
 
 ```
 

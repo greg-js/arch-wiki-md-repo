@@ -59,11 +59,13 @@ You will probably want to have a spare monitor (the GPU will not display anythin
 
 ## Setting up IOMMU
 
-IOMMU is a system specific IO mapping mechanism and can be used with most devices. IOMMU is a generic name for Intel VT-x/Intel and AMD AMD-V/AMD-Vi.
+IOMMU is a system specific IO mapping mechanism and can be used with most devices. IOMMU is a generic name for Intel VT-d and AMD-Vi.
+
+Before you enable IOMMU, you might have to first enable (non-IOMMU) virtualisation (Intel VT-x/"Vanderpool" or AMD-V/"Pacifica") in your BIOS settings.
 
 ### Enabling IOMMU
 
-Ensure that AMD-VI/VT-d is enabled in your BIOS settings. Both normally show up alongside other CPU features (meaning they could be in an overclocking-related menu) either with their actual names ("Vt-d" or "AMD-VI"), legacy names ("Vanderpool" for Vt-x, "Pacifica" for AMD-V) or in more ambiguous terms such as "Virtualization technology", which may or may not be explained in the manual.
+Ensure that AMD-Vi/Intel VT-d is enabled in your BIOS settings. Both normally show up alongside other CPU features (meaning they could be in an overclocking-related menu) either with their actual names ("VT-d" or "AMD-Vi") or in more ambiguous terms such as "Virtualization technology", which may or may not be explained in the manual.
 
 You will also have to enable iommu support in the kernel itself through a [bootloader kernel option](/index.php/Kernel_parameters "Kernel parameters"). Depending on your type of CPU, use either `intel_iommu=on` for Intel CPUs (VT-d) or `amd_iommu=on` for AMD CPUs (AMD-Vi).
 

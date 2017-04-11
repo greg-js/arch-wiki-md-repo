@@ -33,9 +33,13 @@ The behavior and appearance of Zathura can be customised using a configuration f
 
 ## Useful tips
 
+Commands may be entered directly into Zathura by pushing `:`, just like vi.
+
 Enable copy to clipboard
 
  ` ~/.config/zathura/zathurarc `  `set selection-clipboard clipboard` 
+
+In side-by-side mode, to view the first page on the left side, enter the command `set first-page-column 1:1` into Zathura. This is particularly useful for reading music scans where typesetting optimizes page-turning on certain pages. Like other Zathura commands, this can go in `zathurarc` as well.
 
 ## See also
 

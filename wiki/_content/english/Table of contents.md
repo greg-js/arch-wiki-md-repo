@@ -19,7 +19,7 @@
 | <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(11)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(49)</small> |
-| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(74) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(76) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |
@@ -87,7 +87,7 @@
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(13)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(74) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+| <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(76) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |
@@ -99,7 +99,7 @@
 | <small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.12.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(10)</small> |
 | <small>5.13.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.14.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(10)</small> |
+| <small>5.14.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(11)</small> |
 | <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(6)</small> |
 | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(66)</small> |

@@ -205,7 +205,7 @@ Where `*<id>*` is:
 
 BCM2708 has a hardware watchdog which can be utilized by enabling the `bcm2708_wdog` [kernel module](/index.php/Kernel_module "Kernel module").
 
-For proper operation the `watchdog` daemon also has to be installed, configured (by uncommenting the "watchdog-device" line in `/etc/watchdog.conf`) and [enabled](/index.php/Enabled "Enabled").
+For proper operation, install the *watchdog* package, configure it (by uncommenting the "watchdog-device" line in `/etc/watchdog.conf`) and [enable](/index.php/Enable "Enable") `watchdog.service`.
 
 This should also apply for Raspberry Pi 2 by using the `bcm2709_wdog` module and Raspberry Pi 3 by using the `bcm2835_wdt` module.
 

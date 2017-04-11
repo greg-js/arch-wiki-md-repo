@@ -505,7 +505,7 @@ $ WINEARCH=win32 WINEPREFIX=~/win32 winetricks -q msxml3 dotnet40 corefonts
 
 Microsoft Office 2010 (MSO-2010) works without any problems ~~(tested with Microsoft Office Home and Student 2010, Wine 1.7.5; Microsoft Office Professional Plus 2010, Wine 1.7.51)~~. Activation over Internet also works.
 
-Start by installing [wine-mono](https://www.archlinux.org/packages/?name=wine-mono), [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko), [samba](https://www.archlinux.org/packages/?name=samba), [lib32-libxslt](https://www.archlinux.org/packages/?name=lib32-libxslt) [libwbclient](https://www.archlinux.org/packages/?name=libwbclient) and [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2).
+Start by enabling multilib (32-bit) repos and installing [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) [samba](https://www.archlinux.org/packages/?name=samba) [lib32-libxslt](https://www.archlinux.org/packages/?name=lib32-libxslt) [libwbclient](https://www.archlinux.org/packages/?name=libwbclient) [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2)
 
 Proceed with launching the installer:
 
@@ -516,13 +516,13 @@ $ wine /path/to/office_cd/setup.exe
 
 ```
 
-If you do not want to setup Office in the default Wine prefix (`~/.wine`), create new one as described in [#WINEPREFIX](#WINEPREFIX) section. You could also put the above exports into your shell initialization script as also noted there.
+If you do not want to setup MSO-2010 in the default Wine prefix (`~/.wine`), create new one as described in [#WINEPREFIX](#WINEPREFIX) section. You could also put the above exports into your shell initialization script as also noted there.
 
 ```
 **Tips**
 1\. You may be interested in Microsoft fonts, there are a number of ways to do so, see [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") article.
-2\. If installation fails, ensure your wine prefix is 32-bit:
- $ head -5 ~/.wine/system.reg
+2\. If installation fails, ensure your wine prefix is 32-bit by running in terminal "head -5 ~/.wine/system.reg"
+3\. Ensure **Windows version is XP**.
 
 ```
 

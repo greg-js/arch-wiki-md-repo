@@ -390,11 +390,9 @@ Initialization problem, exiting.
 
 ```
 
-**Note:** This is still a problem in v16.0\. The solution is to downgrade lib32-freetype2 to 2.5.0.1-1 because the other method mentioned below does not seem to work.
-
 There are two solutions to solve this problem. The first involves downgrading the Package (probably via the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")). If you are using the 32-bit version, it is sufficient to downgrade [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2). The second and more elegant solution involves replacing the old freetype version for ModelSim only without withholding updates on the whole system (originally proposed at the now-dead link [http://communities.mentor.com/mgcx/message/46770](http://communities.mentor.com/mgcx/message/46770)):
 
-*   Copy the freetype library and symlinks somewhere in the altera folder, eg: `$HOME/altera/xx.x/lib32/`
+*   Copy the lib32-freetype2 2.5.0.1-1 library and symlinks somewhere in the altera folder, eg: `$HOME/altera/xx.x/lib32/`
 
 ```
 libfreetype.so
@@ -402,10 +400,10 @@ libfreetype.so.6
 libfreetype.so.6.10.2
 ```
 
-*   Edit the ModelSim script `/opt/altera/15.1/modelsim_ae/vco` and add near the top (after the `#!/bin/sh`)
+*   Edit the ModelSim script `/opt/altera/15.1/modelsim_ae/vco` and add after `dir=`dirname "$arg0"``
 
 ```
-export LD_LIBRARY_PATH=${HOME}/altera/xx.x/lib32
+export LD_LIBRARY_PATH=${dir}/../lib32
 
 ```
 

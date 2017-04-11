@@ -119,11 +119,11 @@ $ emacsclient -nc
 
 ```
 
-Which creates a new frame `-c` (use `-t` if you prefer to use it in the terminal) and doesn't hog the terminal `-n` (`--no-wait`). Note that some programs such as Mutt or Git (for commit messages) wait for the editor to finish, so you cannot use the `-n` parameter. If your default editor is set to use it, you will have to specify an alternate editor (*e.g.* `emacsclient -a "" -t`) for those programs.
+Which creates a new frame `-c` (use `-t` if you prefer to use it in the terminal) and does not hog the terminal `-n` (`--no-wait`). Note that some programs such as Mutt or Git (for commit messages) wait for the editor to finish, so you cannot use the `-n` parameter. If your default editor is set to use it, you will have to specify an alternate editor (*e.g.* `emacsclient -a "" -t`) for those programs.
 
 ### As a systemd unit
 
-The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we'll be using a user unit, which tends to work a lot better than naively calling *emacs --daemon*.
+The old system unit method had some caveats. It gave a limited shell environment which restricted shell calls, so we will be using a user unit, which tends to work a lot better than naively calling *emacs --daemon*.
 
 Create a systemd unit for emacs:
 
@@ -158,7 +158,7 @@ $ systemctl --user start emacs
 
 ```
 
-Unfortunately, systemd user units aren't run from a login shell and don't inherit it's environment. This means private bin directories or settings like python's WORKON_HOME (normally done in ~/.profile) will be missing. See [[1]](https://wiki.archlinux.org/index.php/Systemd/User) for some suggestions on dealing with that. A simpler hack is just to alter your ExecStart line to run emacs --daemon in a bash login shell.
+Unfortunately, systemd user units are not run from a login shell and do not inherit its environment. This means private bin directories or settings like python's WORKON_HOME (normally done in ~/.profile) will be missing. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for some suggestions on dealing with that. A simpler hack is just to alter your ExecStart line to run emacs --daemon in a bash login shell.
 
 ```
 $ ExecStart=/bin/bash -l -c '/usr/bin/emacs --daemon'
@@ -261,7 +261,7 @@ To set this permanently, consider adding it to your `.xinitrc` file.
 
 Now, if you ever need to upcase an region, just use the default `C-x C-u` keybinding, which calls the `upcase-region` function.
 
-See [[2]](http://ergoemacs.org/emacs/swap_CapsLock_Ctrl.html) for an alternative approach.
+See [[1]](http://ergoemacs.org/emacs/swap_CapsLock_Ctrl.html) for an alternative approach.
 
 If you are missing your Caps Lock function, map it as both "Shift" at same time.
 
@@ -312,7 +312,7 @@ If you want to run the it in new session just do `emacs <file> -`.
 
 You can use several configurations and tell Emacs to load one or the other.
 
-For example, let's define two configuration files.
+For example, let us define two configuration files.
 
  `.emacs` 
 ```
@@ -472,7 +472,7 @@ Alternatively, you can simply tell emacs to colour systemd files (services, time
 
 ### Clipboard support for emacs-nox
 
-To use the [Xorg](/index.php/Xorg "Xorg") clipboard in emacs-nox, [install](/index.php/Install "Install") [xclip](https://www.archlinux.org/packages/?name=xclip) and add the following function to `~/.emacs` [[3]](https://lists.gnu.org/archive/html/help-gnu-emacs/2014-08/msg00189.html)
+To use the [Xorg](/index.php/Xorg "Xorg") clipboard in emacs-nox, [install](/index.php/Install "Install") [xclip](https://www.archlinux.org/packages/?name=xclip) and add the following function to `~/.emacs` [[2]](https://lists.gnu.org/archive/html/help-gnu-emacs/2014-08/msg00189.html)
 
 ```
 ;; use xclip to copy/paste in emacs-nox
@@ -573,7 +573,7 @@ $ emacs -q
 
 *   You may need to monitor any network packets sent from your computer (using a program like Wireshark) to see if there is any strange behavior.
 
-*   A simple way to search for the cause is to comment-out (i.e., prefix lines with ';') suspect sections of your `~/.emacs` (or `~/.emacs.d/init.el`) then start Emacs again to see if there's any change. Keep in mind use of "require" and "load" can slow the startup down, especially when used with larger extensions. They should, as a rule, only be used when their target is either: needed once Emacs starts or provides little more than "autoloads" for an extension. Otherwise, use the 'autoload function directly. For example, instead of:
+*   A simple way to search for the cause is to comment-out (i.e., prefix lines with ';') suspect sections of your `~/.emacs` (or `~/.emacs.d/init.el`) then start Emacs again to see if there is any change. Keep in mind use of "require" and "load" can slow the startup down, especially when used with larger extensions. They should, as a rule, only be used when their target is either: needed once Emacs starts or provides little more than "autoloads" for an extension. Otherwise, use the 'autoload function directly. For example, instead of:
 
 ```
 (require 'anything)
@@ -624,7 +624,7 @@ Searching about this bug on Google, we find this link: [http://lists.gnu.org/arc
 Explaining the problem: in recent versions of b72
 
 ```
-Emacs, the normal way to use accent keys doesn't work as expected. Trying to accent a word like 'fiancé' will produce the message above.
+Emacs, the normal way to use accent keys does not work as expected. Trying to accent a word like 'fiancé' will produce the message above.
 
 ```
 
@@ -635,7 +635,7 @@ A way to solve it is just put the line above on your startup file, `~/.emacs`:
 
 ```
 
-And no, it isn't a bug, but a feature of new Emacs versions. Reading the subsequent messages about it on the mail list, we found it ([http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html](http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html)):
+And no, it is not a bug, but a feature of new Emacs versions. Reading the subsequent messages about it on the mail list, we found it ([http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html](http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html)):
 
 	*It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be classified as a feature ... Maybe it's just because the file is auto-loaded though pretty useless.*
 

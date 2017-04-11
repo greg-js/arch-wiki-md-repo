@@ -8,11 +8,11 @@
 *   [2 ACPI](#ACPI)
     *   [2.1 Параметры ядра](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D1.8F.D0.B4.D1.80.D0.B0)
     *   [2.2 Правило Udev](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.BE_Udev)
-*   [3 Switching off the backlight](#Switching_off_the_backlight)
-*   [4 systemd-backlight service](#systemd-backlight_service)
-*   [5 Backlight utilities](#Backlight_utilities)
+*   [3 Выключение подсветки](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B8)
+*   [4 Служба systemd-backlight](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd-backlight)
+*   [5 Утилиты настройки](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 Other utilities](#Other_utilities)
+    *   [5.2 Другие утилиты](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
     *   [5.3 setpci](#setpci)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
@@ -36,8 +36,6 @@
 Все методы доступны пользователю через `/sys/class/backlight` и xrandr/xbacklight может выбрать один способ контролировать яркость. Пока еще не совсем понятно, который из способов xbacklight предпочитает по умолчанию.
 
 *Смотрите [FS#27677](https://bugs.archlinux.org/task/27677) для xbacklight, если вам выдает "No outputs have backlight property."* Есть временное решение, в случае если xrandr/xbacklight не выбирает нужную папку в `/sys/class/backlight`: Вы можете указать ту, которая вам нужна в xorg.conf, внеся имя той папки в поле "Backlight" секции Device (смотрите [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) внизу страницы для более подробной информации).
-
-*   яркость контролируется регистром HW с помощью setpci
 
 ## ACPI
 
@@ -107,73 +105,73 @@ acpi_backlight=native
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
 ```
 
-**Примечание:** Служба systemd-backlight восстанавливает предыдущий уровень яркости подсветки во время загрузки. Чтобы предотвратить конфликты для указанных выше правил, см. [#systemd-backlight service](#systemd-backlight_service).
+**Примечание:** Служба systemd-backlight восстанавливает предыдущий уровень яркости подсветки во время загрузки. Чтобы предотвратить конфликты для указанных выше правил, см. [#Служба systemd-backlight](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd-backlight).
 
-**Совет:** Чтобы настроить подсветку в зависимости от состояния питания, см. [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") и используйте выбранную вами [утилиту](#Backlight_utilities) в скрипте.
+**Совет:** Чтобы настроить подсветку в зависимости от состояния питания, см. [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") и используйте выбранную вами [утилиту](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8) в скрипте.
 
-## Switching off the backlight
+## Выключение подсветки
 
-Switching off the backlight (for example when one locks the notebook) can be useful to conserve battery energy. Ideally the following command inside of a graphical session should work:
+Выключение подсветки (например, при закрытии крышки ноутбука) может быть полезно для сохранения заряда батареи. Выполните следующую команду:
 
 ```
 $ sleep 1 && xset dpms force off
 
 ```
 
-The backlight should switch on again on mouse movement or keyboard input. If the previous command does not work, there is a chance that `vbetool` works. Note, however, that in this case the backlight must be manually activated again. The command is as follows:
+Подсветка должна включиться снова при движении мыши или вводе с клавиатуры. Если предыдущая команда не работает, есть шанс, что `vbetool` заработает. Отметьте, однако, что в этом случае подсветка должна быть вручную активирована снова. Выполните:
 
 ```
 $ vbetool dpms off
 
 ```
 
-To activate the backlight again:
+Чтобы снова включить подсветку:
 
 ```
 $ vbetool dpms on
 
 ```
 
-For example, this can be put to use when closing the notebook lid using [Acpid](/index.php/Acpid "Acpid").
+Например, это можно использовать при закрытии крышки ноутбука с помощью [Acpid](/index.php/Acpid "Acpid").
 
-## systemd-backlight service
+## Служба systemd-backlight
 
-The [systemd](/index.php/Systemd "Systemd") package includes the service `systemd-backlight@.service`, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in [#ACPI](#ACPI), generating services for each folder found in `/sys/class/backlight/`. For example, if there is a folder named `acpi_video0`, it generates a service called `systemd-backlight@backlight:acpi_video0.service`. When using other methods of setting the backlight at boot, it is recommended to [mask](/index.php/Mask "Mask") the service `systemd-backlight@.service`.
+Пакет [systemd](/index.php/Systemd "Systemd") содержит "static" службу `systemd-backlight@.service`, которая включена по умолчанию. Она сохраняет яркость подсветки во время выключения ПК и восстанавливает при включении. Эта служба использует ACPI метод, описанный в [#ACPI](#ACPI), создавая службы для каждой папки, найденной в `/sys/class/backlight/`. Например, если есть папка `acpi_video0`, она создаст службу `systemd-backlight@backlight:acpi_video0.service`. Если вы используете другие методы установки яркости во время загрузки, рекомендуется [маскировать](/index.php/Mask "Mask") службу `systemd-backlight@.service`, чтобы сделать невозможным ее запуск.
 
-Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an *instance* of the service, e.g. `systemd-backlight@backlight\:acpi_video1` for `acpi_video1`.
+Некоторые ноутбуки имеют несколько видеоадаптеров (как Optimus) и восстановление подсветки не выполняется в следствие ошибок. Попробуйте [маскировать](/index.php/Systemd#Using_units "Systemd") *instance* этой службы, например `systemd-backlight@backlight\:acpi_video1` в случае `acpi_video1`.
 
-From the systemd-backlight@.service man page:
+Из man-страницы systemd-backlight@.service:
 
-systemd-backlight understands the following kernel command line parameter:
+systemd-backlight принимает следующий параметр командной строки:
 
 ```
 systemd.restore_state=
 
 ```
 
-Takes a boolean argument. Defaults to "1".
+Принимает логическое значение. По умолчанию "1".
 
-If "0", does not restore the backlight settings on boot. However, settings will still be stored on shutdown.
+Если "0", не восстанавливает настройки яркости во время загрузки. Однако, настройки будут всё равно сохраняться при выключении.
 
-## Backlight utilities
+## Утилиты настройки
 
 ### xbacklight
 
-Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) package.
+Яркость может быть установлена с помощью пакета [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight).
 
-**Note:**
+**Примечание:**
 
-*   xbacklight only works with intel. Radeon does not support the RandR backlight property.
-*   xbacklight currently does not work with the modesetting driver [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=96572).
+*   xbacklight работает только с intel. Radeon не поддерживает свойство подсветки RandR.
+*   xbacklight в настоящий момент не работает с modesetting-драйвером [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=96572).
 
-To set brightness to 50% of maximum:
+Чтобы установить яркость в 50% от максимальной:
 
 ```
 $ xbacklight -set 50
 
 ```
 
-Increments can be used instead of absolute values, for example to increase or decrease brightness by 10%:
+Приращения могут использоваться вместо абсолютных значений, например, для увеличения или уменьшения яркости на 10%:
 
 ```
 $ xbacklight -inc 10
@@ -181,7 +179,7 @@ $ xbacklight -dec 10
 
 ```
 
-Gamma can be set using either the [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) or [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma) package. The following commands create the same effect.
+Гамма может быть установлена с использованием пакета [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) или [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma). Следующие команды создают одинаковый эффект.
 
 ```
 $ xrandr --output LVDS1 --gamma 1.0:1.0:1.0
@@ -189,9 +187,9 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 ```
 
-**Tip:** These commands can be bound to keyboard keys as described in [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
+**Совет:** Эти команды могут быть привязаны к клавишам клавиатуры, как описано в [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
 
-If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`. You can specify the directory by setting the `Backlight` option of the device section in xorg.conf. For instance, if the name of the directory is `intel_backlight`, the device section can be configured as follows:
+Если вы сталкиваетесь с ошибкой "No outputs have backlight property", это потому, что xrandr/xbacklight не выбирает правильную папку в `/sys/class/backlight`. Вы можете указать папку, настроив опцию `Backlight` в device-разделе файла xorg.conf. К примеру, если имя папки `intel_backlight`, раздел device может быть настроен следующим образом:
 
  `/etc/X11/xorg.conf` 
 ```
@@ -202,47 +200,47 @@ Section "Device"
 EndSection
 ```
 
-See [FS#27677](https://bugs.archlinux.org/task/27677) and [[4]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
+См. [FS#27677](https://bugs.archlinux.org/task/27677) и [[4]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) для подробностей.
 
-### Other utilities
+### Другие утилиты
 
-*   **light** — Light is the successor and C-port of *LightScript*.
+*   **light** — Light последователь *LightScript*.
 
 	[https://github.com/haikarainen/light](https://github.com/haikarainen/light) || [light](https://aur.archlinux.org/packages/light/)
 
-*   **acpilight** — acpilight contains an "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
+*   **acpilight** — acpilight содержит "xbacklight"-совместимую утилиту, которая использует sys файловую систему для установки яркости экрана. Т.к. она не использует X вообще, ее также можно использовать в консоли и с Wayland. Она не имеет проблем с KMS драйверами. Кроме того, на ноутбуках ThinkPad можно также настраивать подсветку клавиатуры.
 
 	[https://github.com/wavexx/acpilight/](https://github.com/wavexx/acpilight/) || [acpilight](https://aur.archlinux.org/packages/acpilight/)
 
-*   **illum** — ilum monitors the brightness up and brightness down keys on all input devices (via libevdev) and adjusts the backlight when they are pressed (via sysfs). Written for newer BIOS/UEFI that does not automatically handle those buttons for you. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
+*   **illum** — ilum следит за клавишами увеличения и уменьшения яркости на всех устройствах ввода (с помощью libevdev) и настраивает яркость по нажатию клавиши (через sysfs). Написана для новых BIOS/UEFI, которые не обрабатывают нажатия этих клавиш за вас. Это альтернатива обработке этих клавиш через acpi или с помощью горячих клавиш x11/wm.
 
 	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
 
-*   **relight** — The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
+*   **relight** — Этот пакет предоставляет `relight.service`, [systemd](/index.php/Systemd "Systemd")-службу для автоматического восстановления предыдущих настроек подсветки во время перезагрузки вместе с использованием ACPI метода, описанного выше, и *relight-menu* — диалоговое меню для выбора и настройки подсветки на разных экранах.
 
 	[http://xyne.archlinux.ca/projects/relight](http://xyne.archlinux.ca/projects/relight) || [relight](https://aur.archlinux.org/packages/relight/)
 
-*   **calise** — The main features of this program are that it is very precise, very light on resource usage, and with the daemon version (.service file for systemd users available too). It has practically no impact on battery life.
+*   **calise** — Основное достоинство этой программы в том, что она очень точная, потребляет мало ресурсов и имеет демон-версию (.service файл для пользователей systemd также доступен). Она практически не влияет на время работы от батареи.
 
 	[http://calise.sourceforge.net/mediawiki/index.php/Main_Page](http://calise.sourceforge.net/mediawiki/index.php/Main_Page) || [calise](https://aur.archlinux.org/packages/calise/)
 
-*   **brightd** — Macbook-inspired brightd automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
+*   **brightd** — brightd автоматически приглушает (но не переводит в режим ожидания) экран, если в течение какого-то времени пользователь не взаимодействует с ПК. Хорошее дополнение к [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") для того, чтобы экран не гас внезапно.
 
 	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
 
-*   **lux** — lux is a POSIX-compliant Shell script to control brightness on backlight-controllers.
+*   **lux** — lux это совместимый с POSIX сценарий оболочки для управления яркостью на контролерах подсветки.
 
 	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
 
-*   **BacklightTooler** — BacklightTooler is a backlight control tool with brightness auto-adjustment using a webcam.
+*   **BacklightTooler** — BacklightTooler это инструмент управления подсветкой с автоматической настройкой яркости с использованием веб-камеры.
 
 	[https://github.com/cotix/backlighttooler](https://github.com/cotix/backlighttooler) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ### setpci
 
-It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
+Для настройки подсветки можно установить регистр видеокарты. Это означает, что вы настраиваете подсветку, напрямую манипулируя оборудованием, что может быть рискованным и, как правило, не является хорошей идеей. Этот метод поддерживается не всеми графическими картами.
 
-When using this method, you need to use `lspci` first to find out where your graphic card is.
+Используя этот метод, вам сначала нужно использовать `lspci` чтобы найти ваш графический адаптер.
 
 ```
 # setpci -s 00:02.0 F4.B=0

@@ -11,8 +11,9 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 *   [3 Canon](#Canon)
     *   [3.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
 *   [4 Epson](#Epson)
-    *   [4.1 Epson Perfection 1270](#Epson_Perfection_1270)
-    *   [4.2 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
+    *   [4.1 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
+    *   [4.2 Epson Perfection 1270](#Epson_Perfection_1270)
+    *   [4.3 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
 *   [5 Fujitsu](#Fujitsu)
     *   [5.1 S300M](#S300M)
 *   [6 HP](#HP)
@@ -124,6 +125,10 @@ For network (including Wi-Fi) scanners, install [iscan](https://www.archlinux.or
 net {IP_OF_SCANNER}
 
 ```
+
+### Epson Perfection V550 Photo
+
+Install [iscan-plugin-perfection-v550](https://aur.archlinux.org/packages/iscan-plugin-perfection-v550/)
 
 ### Epson Perfection 1270
 

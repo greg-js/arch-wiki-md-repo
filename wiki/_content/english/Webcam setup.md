@@ -388,7 +388,7 @@ You can either set an alias for skype, or rename the original skype binary in `/
 
 	*Motion is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.*
 
-[motion](https://www.archlinux.org/packages/?name=motion) can only handle v4l2 devices so if you need to use a camera that only has v4l1 drivers you need to preload v4l1compat.so as previously mentioned. Otherwise you will get loads of errors about motion not able to find a suitable palette.
+[Motion](/index.php/Motion "Motion") can only handle v4l2 devices so if you need to use a camera that only has v4l1 drivers you need to preload v4l1compat.so as previously mentioned. Otherwise you will get loads of errors about motion not able to find a suitable palette.
 
 **Tip:** If you need to load webcams in order (i.e. get the /dev/video0..n device order) or set ownership or permissions, take a look at writing rules for [writing udev rules](/index.php/Udev#Writing_udev_rules "Udev").
 

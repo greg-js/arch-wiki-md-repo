@@ -186,7 +186,7 @@ If you are using [AppArmor](/index.php/AppArmor "AppArmor") it is necessary to a
 
 ```
 
-Restart/start the service with `systemct restart clamd.service`.
+Restart/start the service with `systemctl restart clamd.service`.
 
 Source: [http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html](http://blog.clamav.net/2016/03/configuring-on-access-scanning-in-clamav.html)
 

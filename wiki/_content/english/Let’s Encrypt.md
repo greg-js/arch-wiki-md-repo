@@ -308,7 +308,7 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop nginx.service" --post-hook "/usr/bin/systemctl start nginx.service" --quiet --agree-tos
+ExecStart=/usr/bin/certbot renew --post-hook "/usr/bin/systemctl restart nginx.service" --agree-tos
 ```
 
 ###### Apache

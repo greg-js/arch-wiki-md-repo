@@ -86,10 +86,6 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
 
-*   **Pactoys** — Set of utilities including repository manager, upstream release detector and recipe quality checker.
-
-	[https://github.com/renatosilva/pactoys](https://github.com/renatosilva/pactoys) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 *   **pacutils** — Helper library for libalpm based programs.
 
 	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)

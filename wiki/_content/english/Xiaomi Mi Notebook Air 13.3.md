@@ -117,6 +117,8 @@ EndSection
 
 ### WiFi
 
-If you are having issues with the autodetected wifi drivers, that's because there's a conflict between two of them, as you can see using `rfkill list` To solve it, block the wrong driver:
+If you are having issues with the auto-detected WiFi drivers, that's because there's a conflict between two of them, as you can see using `rfkill list` To solve it, block the wrong driver:
 
- `/etc/modprobe.d/blacklist.conf`  `blacklist acer-wmi`
+ `/etc/modprobe.d/blacklist.conf`  `blacklist acer-wmi` 
+
+Note, this issue is fixed in kernel version 4.9 and above.

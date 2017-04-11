@@ -247,6 +247,7 @@ Example of a `nginx.conf` using SSL:
  `/etc/nginx/nginx.conf` 
 ```
 http {
+        ...
         ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;
@@ -279,6 +280,7 @@ server {
         location / {
             index index.html index.htm;
         }
+}
 }
 
 ```

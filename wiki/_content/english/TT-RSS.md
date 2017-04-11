@@ -16,19 +16,29 @@ tt-rss is installed into `/usr/share/webapps/tt-rss/`; you'll need to make this 
 - With [Nginx](/index.php/Nginx "Nginx") :
 
 ```
-# ln -s /usr/share/webapps/tt-rss /usr/share/nginx/http/tt-rss
+# ln -s /usr/share/webapps/tt-rss /usr/share/nginx/html/tt-rss
 
 ```
 
 ### Set up php and database
 
-You'll need to set up a database, either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). Create a user and database, e.g. with mysql:
+You'll need to set up a database, either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+
+Create a user and database, e.g. with mysql:
 
 ```
 $ mysql -p -u root
 mysql> CREATE USER 'ttrss'@'localhost' IDENTIFIED BY 'somepassword';
 mysql> CREATE DATABASE ttrss;
 mysql> GRANT ALL PRIVILEGES ON ttrss.* TO "ttrss"@"localhost" IDENTIFIED BY 'somepassword';
+
+```
+
+Or create a user and database in PostgreSQL, e.g.:
+
+```
+[postgres]$ createuser -P --interactive
+[postgres]$ createdb -U ttrss ttrss
 
 ```
 

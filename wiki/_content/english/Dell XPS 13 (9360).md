@@ -66,6 +66,8 @@ This patch is now in mainline (4.11rc1), so it is a matter of time before the st
 
 The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
 
+If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
+
 ### Module-based Powersaving Options
 
 For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"))
@@ -135,7 +137,8 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Aukey USB C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
-| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Not Working |
+| [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
+| [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
 | [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
 | [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
 | [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |

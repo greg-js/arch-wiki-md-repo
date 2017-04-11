@@ -731,7 +731,7 @@ cat /proc/sys/kernel/random/entropy_avail
 
 A healthy Linux system with a lot of entropy available will have return close to the full 4,096 bits of entropy. If the value returned is less than 200, the system is running low on entropy.
 
-To solve it, remember you do not often need to create keys and best just do what the message suggests (e.g. create disk activity, move the mouse, edit the wiki - all will create entropy). If that does not help, check which service is using up the entropy and consider stopping it for the time. If that is no alternative, see [Random number generation#Faster alternatives](/index.php/Random_number_generation#Faster_alternatives "Random number generation").
+To solve it, remember you do not often need to create keys and best just do what the message suggests (e.g. create disk activity, move the mouse, edit the wiki - all will create entropy). If that does not help, check which service is using up the entropy and consider stopping it for the time. If that is no alternative, see [Random number generation#Alternatives](/index.php/Random_number_generation#Alternatives "Random number generation").
 
 ### su
 

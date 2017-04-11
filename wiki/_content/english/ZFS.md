@@ -85,7 +85,7 @@ Test the installation by issuing `zpool status` on the command line. If an "insm
 
 ### Root on ZFS
 
-When performing an Arch install on ZFS, [zfs-git](https://aur.archlinux.org/packages/zfs-git/) and its dependencies can be installed in the archiso environment as outlined in the previous section.
+When performing an Arch install on ZFS, [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) or [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) and its dependencies can be installed in the archiso environment as outlined in the previous section.
 
 It may be useful to prepare a [customized archiso](#Embed_the_archzfs_packages_into_an_archiso) with ZFS support builtin. For a much more detailed guide on installing Arch with ZFS as its root file system, see [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS").
 

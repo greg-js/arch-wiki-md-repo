@@ -42,14 +42,14 @@
 
 ### aurora
 
-Aurora is a very simple frontend for the AUR. It allows the user to install AUR packages, download the AUR packages (for manual installation) and also offers an AUR upgrade feature. By design, aurora does not wrap pacman.
+Aurora это очень простой фронтэнд для Aur. Он позволяет пользовательзователю устанавливать AUR-пакеты, скачивать AUR-пакеты(для продвинутой установки) и также помогает улучшать будующее AUR. Благодаря дизайну aurora не заменит pacman.
 
 *   Сайт: [http://bitbucket.org/bbenne10/aurora](http://bitbucket.org/bbenne10/aurora)
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=41732](https://aur.archlinux.org/packages.php?ID=41732) (not available)
 
 ### aurpac
 
-Light'n'fast AUR and pacman frontend.
+Быстрый AUR и pacman фронтэнд
 
 *   Сайт: [http://3ed.jogger.pl/2009/02/15/aurpac/](http://3ed.jogger.pl/2009/02/15/aurpac/) (not available)
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=23919](https://aur.archlinux.org/packages.php?ID=23919) (not available)
@@ -65,28 +65,28 @@ Aurploader prompts the user for an AUR username and password and will then uploa
 
 **Примечание:** По состоянию на 30.09.2010 активная разработка прекращена.
 
-AurShell is a shell-like application. With plugins included, it's possible to build and install packages from AUR, ABS, and even wrap pacman.
+AurShell это приложение-консоль. С предустановленными плагинами возможно собрать или установить пакеты из:AUR, ABS,pacman
 
 *   Сайт: [http://github.com/husio/aursh/](http://github.com/husio/aursh/) (not available)
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=33423](https://aur.archlinux.org/packages.php?ID=33423) (not available)
 
 ### autoaur
 
-autoaur is a script for automatic mass downloading, updating, building, and installing groups of AUR packages.
+autoaur - это скрипт автоматической массовой загрузки, обновления и установки AUR-пакетов.
 
 *   Сайт: [autoaur](/index.php?title=Autoaur&action=edit&redlink=1 "Autoaur (page does not exist)")
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=6390](https://aur.archlinux.org/packages.php?ID=6390) (not available)
 
 ### burp
 
-burp is a fast and simple AUR uploader written in C. Supports persistent cookies for seamless logins.
+burp это быстрый и простой AUR загрузчик написанный на С. Поддерживает технологию Cookie
 
 *   Сайт: [http://github.com/falconindy/burp](http://github.com/falconindy/burp) (not available)
 *   Пакет: [https://aur.archlinux.org/packages.php?ID=37216](https://aur.archlinux.org/packages.php?ID=37216) (not available)
 
 ### cower
 
-Cower is a fast and simple AUR search and download agent, which will also check for updates and download dependencies.
+Cower - быстрый и простой AUR-поисковик и загрузчик. Он также позволяет проверять обновления и подтягивать зависимости.
 
 *   Сайт: [http://github.com/falconindy/cower](http://github.com/falconindy/cower)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?id=97137](https://bbs.archlinux.org/viewtopic.php?id=97137)
@@ -94,7 +94,7 @@ Cower is a fast and simple AUR search and download agent, which will also check 
 
 ### haskell-archlinux
 
-haskell-archlinux is a library to programmatically access the AUR and Пакет metadata from the Haskell programming language.
+haskell-archlinux это програмная библиотека позволяющая использовать AUR и метаданные пакета используя язык Haskell
 
 *   Сайт: [https://hackage.haskell.org/package/archlinux](https://hackage.haskell.org/package/archlinux)
 *   Пакет: [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)

@@ -26,6 +26,8 @@ The [official app](https://desktop.telegram.org/):
 
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) pre-compiled binary from [Telegram](https://desktop.telegram.org/).
 *   [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) that needs [Qt](/index.php/Qt "Qt") libraries to be compiled.
+*   [telegram-desktop-systemqt](https://aur.archlinux.org/packages/telegram-desktop-systemqt/) Experimental build of Telegram Desktop using system Qt instead of Telegram custom Qt libraries.
+*   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) Experimental build of Telegram Desktop using system Qt and emojis replaced with those from Noto Color Emoji.
 
 Alternative unofficial clients:
 

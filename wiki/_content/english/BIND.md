@@ -54,7 +54,7 @@ Do not forget to [restart](/index.php/Restart "Restart") `named.service`.
 
 This is a simple tutorial in howto setup a simple home network DNS-server with bind. In our example we use "domain.tld" as our domain.
 
-For a more elaborate example see [Two-in-one DNS server with BIND9](http://www.howtoforge.com/two_in_one_dns_bind9_views).
+For a more elaborate example see [Two-in-one DNS server with BIND9](http://www.howtoforge.com/two_in_one_dns_bind9_views). Another guide at [Linux Home Server HOWTO - Domain name system (BIND)](http://www.brennan.id.au/08-Domain_Name_System_BIND.html) will show you how to set up internal network name resolution in no time; short, on-point and very informative.
 
 ### 1\. Creating a zonefile
 

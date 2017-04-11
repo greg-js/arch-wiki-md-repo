@@ -11,7 +11,11 @@
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Use experimental webengine backend](#Use_experimental_webengine_backend)
-    *   [3.2 dwb-like session handling](#dwb-like_session_handling)
+    *   [3.2 Minimize fingerprinting](#Minimize_fingerprinting)
+        *   [3.2.1 Set a common user-agent](#Set_a_common_user-agent)
+        *   [3.2.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
+        *   [3.2.3 Disable reading from canvas](#Disable_reading_from_canvas)
+    *   [3.3 dwb-like session handling](#dwb-like_session_handling)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -63,9 +67,54 @@ To use the more secure webengine backend, use the `--backend` flag:
 
 **Note:** The qutebrowser implementation of webengine is experimental and may be missing features. See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2335) for updates.
 
+### Minimize fingerprinting
+
+Websites may be able to identify you based on combining information on screen size, user-agent, HTTP_ACCEPT headers, and more. See [[1]](https://panopticlick.eff.org/) for more information and to test the uniqueness of your browser. Below are a few steps that can be taken to make your qutebrowser installation more "generic".
+
+Additionally see [Firefox/Privacy#Configuration tweaks](/index.php/Firefox/Privacy#Configuration_tweaks "Firefox/Privacy") for more ideas.
+
+#### Set a common user-agent
+
+Several user agents are available as options when using `:set network user-agent`. Another, possibly more generic user-agent is:
+
+```
+Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
+
+```
+
+**Note:**
+
+*   Changing `Linux x86_64` to a non-Linux platform may make your browser more unique, since websites can also gather your platform type via Javascript, and this setting cannot be changed in qutebrowser.
+*   Changing your user-agent away from the default will prevent some websites from working properly.
+
+#### Set a common HTTP_ACCEPT header
+
+The following is a common HTTP_ACCEPT header. Under `network` in qutebrowser's settings set:
+
+```
+accept-language = en-US,en;q=0.5
+custom-headers = {"accept": "text/html, */*; q=0.01"}
+
+```
+
+#### Disable reading from canvas
+
+This option is not currently available in qutebrowser other than by specifying it on the commandline like so:
+
+```
+$ qutebrowser --qt-flag disable-reading-from-canvas
+
+```
+
+See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
+
+**Note:** This will not have any effect with the QtWebKit backend. See [Qutebrowser#Use experimental webengine backend](/index.php/Qutebrowser#Use_experimental_webengine_backend "Qutebrowser") to use the webengine backend.
+
 ### dwb-like session handling
 
-To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option ("per-window" sessions, multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/.local/bin/qutebrowser).
+To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option ("per-window" sessions, multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser).
+
+**Note:** The wrapper script defaults to the (experimental) webengine backend. You can pass `--backend webkit` to have it use the QtWebKit backend.
 
 ## See also
 

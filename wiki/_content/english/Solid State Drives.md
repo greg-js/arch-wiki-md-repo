@@ -80,7 +80,7 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 #### Continuous TRIM
 
-**Warning:** Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](https://forums.freebsd.org/threads/56951/#post-328912) generally by filesystem developer Theodore Ts'o. If in doubt about your hardware, apply [#Periodic TRIM](#Periodic_TRIM) instead.
+**Warning:** Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](https://forums.freebsd.org/threads/56951/#post-328912) generally by ext filesystem developer Theodore Ts'o. If in doubt about your hardware, apply [#Periodic TRIM](#Periodic_TRIM) instead.
 
 **Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 "w:Serial ATA") all TRIM commands were synchronous, so continuous trimming would produce frequent system freezes. In this case, applying [#Periodic TRIM](#Periodic_TRIM) less often is better alternative. Similar issue holds also for a [number of devices](https://github.com/torvalds/linux/blob/master/drivers/ata/libata-core.c#L4403-L4417), for which queued TRIM command execution was blacklisted due to [serious data corruption](https://blog.algolia.com/when-solid-state-drives-are-not-that-solid/). See [Wikipedia:Trim (computing)#Shortcomings](https://en.wikipedia.org/wiki/Trim_(computing)#Shortcomings for details.
 

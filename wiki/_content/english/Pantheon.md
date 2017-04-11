@@ -1,38 +1,43 @@
-[Pantheon](http://elementary.io/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and macOS.
+[Pantheon](http://elementary.io/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and MacOS.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Additional Info](#Additional_Info)
-        *   [1.1.1 Packages based on older evolution-data-server](#Packages_based_on_older_evolution-data-server)
+    *   [1.1 Desktop Environment](#Desktop_Environment)
+    *   [1.2 Services and Configuration](#Services_and_Configuration)
+    *   [1.3 Theme](#Theme)
+    *   [1.4 Applications](#Applications)
 *   [2 Launching Pantheon](#Launching_Pantheon)
-    *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
-    *   [2.2 Via .xinitrc](#Via_.xinitrc)
-    *   [2.3 Autostart applications](#Autostart_applications)
+    *   [2.1 Via Display Manager](#Via_Display_Manager)
+    *   [2.2 Via xinit](#Via_xinit)
+        *   [2.2.1 Autostart applications with ~/.xinitrc](#Autostart_applications_with_.7E.2F.xinitrc)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Pantheon Files](#Pantheon_Files)
-        *   [3.1.1 Enable context menu entries](#Enable_context_menu_entries)
-    *   [3.2 Terminal](#Terminal)
-        *   [3.2.1 Opacity (transparency)](#Opacity_.28transparency.29)
+    *   [3.1 Plank](#Plank)
+        *   [3.1.1 Adding new application icons](#Adding_new_application_icons)
+    *   [3.2 Pantheon Files](#Pantheon_Files)
+        *   [3.2.1 Enable context menu entries](#Enable_context_menu_entries)
+    *   [3.3 Terminal](#Terminal)
+        *   [3.3.1 Opacity (transparency)](#Opacity_.28transparency.29)
 *   [4 Known Issues](#Known_Issues)
-    *   [4.1 Indicators not working in wingpanel](#Indicators_not_working_in_wingpanel)
-    *   [4.2 Indicator-session menus not working](#Indicator-session_menus_not_working)
-    *   [4.3 No transparency in pantheon-terminal](#No_transparency_in_pantheon-terminal)
-    *   [4.4 White icons in pantheon-files](#White_icons_in_pantheon-files)
-    *   [4.5 Wingpanel is transparent](#Wingpanel_is_transparent)
-    *   [4.6 Corrupted graphics in canonical indicators](#Corrupted_graphics_in_canonical_indicators)
-    *   [4.7 Cannot interact with the LightDM Pantheon greeter](#Cannot_interact_with_the_LightDM_Pantheon_greeter)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 GTK+ applications surrounded by awful black shadow box](#GTK.2B_applications_surrounded_by_awful_black_shadow_box)
-    *   [5.2 Gala crashes on start](#Gala_crashes_on_start)
-    *   [5.3 How can I add new applications to the dock?](#How_can_I_add_new_applications_to_the_dock.3F)
-    *   [5.4 How can I change the default appearance such as GTK theme, font size, etc?](#How_can_I_change_the_default_appearance_such_as_GTK_theme.2C_font_size.2C_etc.3F)
-    *   [5.5 I do not have any mouse cursor](#I_do_not_have_any_mouse_cursor)
-    *   [5.6 Wingpanel is empty except for Applications](#Wingpanel_is_empty_except_for_Applications)
+    *   [4.1 Gala crashes on start](#Gala_crashes_on_start)
+    *   [4.2 I do not have any mouse cursor](#I_do_not_have_any_mouse_cursor)
+    *   [4.3 Indicators not appearing in wingpanel](#Indicators_not_appearing_in_wingpanel)
+        *   [4.3.1 Third-party indicators](#Third-party_indicators)
+    *   [4.4 Indicator-session menus not responsive](#Indicator-session_menus_not_responsive)
+    *   [4.5 Cannot interact with the LightDM Pantheon greeter](#Cannot_interact_with_the_LightDM_Pantheon_greeter)
+    *   [4.6 Appearance Issues](#Appearance_Issues)
+        *   [4.6.1 How can I change the default appearance such as GTK theme, font size, etc?](#How_can_I_change_the_default_appearance_such_as_GTK_theme.2C_font_size.2C_etc.3F)
+        *   [4.6.2 Pantheon-terminal transparency](#Pantheon-terminal_transparency)
+        *   [4.6.3 Wingpanel transparency](#Wingpanel_transparency)
+        *   [4.6.4 GTK+ applications surrounded by awful black shadow box](#GTK.2B_applications_surrounded_by_awful_black_shadow_box)
+        *   [4.6.5 White icons in pantheon-files](#White_icons_in_pantheon-files)
+        *   [4.6.6 Corrupted graphics in Ayatana indicators](#Corrupted_graphics_in_Ayatana_indicators)
 
 ## Installation
 
-Pantheon is split into several packages which are available in an unofficial repository which is daily updated with recent changes from upstream. To use the repository add the following lines at the top of your sources in `/etc/pacman.conf`:
+**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions"), [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly. The *-[bzr](/index.php/Bazaar "Bazaar") packages contain the most recent updates and are *less* likely to have obsolete dependencies in Archlinux, but occasionally have stability or build issues and may not be compatible with the standard releases.
+
+Some Pantheon packages are available from the [community](/index.php/Community "Community") repository, but [Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages. To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
 ```
 [pantheon]
@@ -41,78 +46,81 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
-**Note:** All Pantheon related PKGBUILDs can be found in [Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
+**Note:** The PKGBUILDs for these packages are also available in the [AUR](/index.php/AUR "AUR").
 
-Alternatively, all packages provided by the repository are also available in the [AUR](/index.php/AUR "AUR") for those who prefer to build the packages from source.
+### Desktop Environment
 
-To get a minimal desktop interface, you may start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/). This will pull the following core components:
+To get the minimal Pantheon desktop interface, start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/), which pulls--among other dependencies--the core components:
 
 *   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/): Watchdog service to keep core Pantheon apps running
 *   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/): Window Manager
-*   [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/): Top panel
-*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/): Application launcher
-*   [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): Dock
+*   [wingpanel](https://www.archlinux.org/packages/?name=wingpanel): Top panel (release version)
+*   [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher): Application launcher (release version)
 
-However,it is recommended to install the following packages to get a fully working Pantheon Shell:
+You may additionally install these packages as well:
 
-**Note:** Problems can occur when using (non)-mixed bzr packages! You can install the latest release, by adding -bzr to its install package-name.
+*   [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): MacOS-like Dock
+*   [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/): Top panel (bzr version)
+*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/): Application launcher (bzr version)
 
-*   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/): Video player
+### Services and Configuration
+
+These packages provide background services and default settings for Pantheon and elementary OS applications:
+
+*   [pantheon-default-settings-bzr](https://aur.archlinux.org/packages/pantheon-default-settings-bzr/): Default desktop appearance, behavior, and application configuration; pulls in theme packages [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme), [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/), [pantheon-backgrounds-bzr](https://aur.archlinux.org/packages/pantheon-backgrounds-bzr/), and [plank-theme-pantheon-bzr](https://aur.archlinux.org/packages/plank-theme-pantheon-bzr/).
 *   [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/): Service for sharing data between apps
-*   [dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/): Contacts manager (does not build)
-*   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
-*   [elementary-icon-theme-bzr](https://aur.archlinux.org/packages/elementary-icon-theme-bzr/): elementary icons
-*   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
-*   [elementary-wallpapers-bzr](https://aur.archlinux.org/packages/elementary-wallpapers-bzr/): elementary wallpaper collection
-*   [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/): elementary GTK theme
-*   [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/): RSS feeds reader (does not build)
-*   [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/): Note taking app
-*   [geary](https://www.archlinux.org/packages/?name=geary): Email client
-*   [indicator-pantheon-session-bzr](https://aur.archlinux.org/packages/indicator-pantheon-session-bzr/): Session indicator
-*   [lightdm-pantheon-greeter-bzr](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-bzr/): LightDM greeter
-*   [maya-calendar-bzr](https://aur.archlinux.org/packages/maya-calendar-bzr/): Calendar
-*   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser
-*   [noise-player-bzr](https://aur.archlinux.org/packages/noise-player-bzr/): Audio player
-*   [pantheon-backgrounds-bzr](https://aur.archlinux.org/packages/pantheon-backgrounds-bzr/): Wallpaper collection
-*   [pantheon-calculator-bzr](https://aur.archlinux.org/packages/pantheon-calculator-bzr/): Calculator
-*   [pantheon-default-settings-bzr](https://aur.archlinux.org/packages/pantheon-default-settings-bzr/): Pantheon default's settings (appearance, etc.)
-*   [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/): File explorer
-*   [pantheon-notify-bzr](https://aur.archlinux.org/packages/pantheon-notify-bzr/): Notification daemon
-*   [pantheon-print-bzr](https://aur.archlinux.org/packages/pantheon-print-bzr/): Print settings
-*   [pantheon-terminal-bzr](https://aur.archlinux.org/packages/pantheon-terminal-bzr/): Terminal emulator
-*   [plank-theme-pantheon-bzr](https://aur.archlinux.org/packages/plank-theme-pantheon-bzr/): Pantheon theme for plank
-*   [scratch-text-editor-bzr](https://aur.archlinux.org/packages/scratch-text-editor-bzr/): Text editor
-*   [snap-photobooth-bzr](https://aur.archlinux.org/packages/snap-photobooth-bzr/): Webcam app
-*   [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/): Settings manager
+*   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patch against [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) to support [elementary-dpms-helper-bzr](https://aur.archlinux.org/packages/elementary-dpms-helper-bzr/) and [wingpanel-indicator-power-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-power-bzr/)
+*   [pantheon-print-bzr](https://aur.archlinux.org/packages/pantheon-print-bzr/): Print settings dialog
+*   [pantheon-agent-polkit-bzr](https://aur.archlinux.org/packages/pantheon-agent-polkit-bzr/): Polkit authentication agent
 
-**Note:** You will also need to install plugs, look for "switchboard-plug-*" in the [AUR](https://aur.archlinux.org/packages/?O=0&K=switchboard-plug) or in [Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
+### Theme
+
+These packages contribute to the look and feel of the desktop:
+
+*   [elementary-icon-theme-bzr](https://aur.archlinux.org/packages/elementary-icon-theme-bzr/): Icon theme designed to be smooth, sexy, clear, and efficient (bzr version)
+*   [lightdm-pantheon-greeter-bzr](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-bzr/): LightDM greeter
 
 It is also recommended to install the following fonts:
 
 *   [ttf-opensans](https://aur.archlinux.org/packages/ttf-opensans/): Open Sans Fonts
-*   [ttf-raleway-font-family](https://aur.archlinux.org/packages/ttf-raleway-font-family/): Raleway Font Family
+*   [ttf-raleway](https://aur.archlinux.org/packages/ttf-raleway/): Raleway Font
 *   [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu): Font family based on the Bitstream Vera Fonts
 *   [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid): General-purpose fonts released by Google as part of Android
 *   [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont): Set of free outline fonts covering the Unicode character set
 *   [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation): Red Hats Liberation fonts
 
-### Additional Info
+### Applications
 
-#### Packages based on older evolution-data-server
+These packages are the original, patched, and selected applications that comprise the elementary OS software suite:
 
-[dexter-contacts-bzr](https://aur.archlinux.org/packages/dexter-contacts-bzr/) and [feedler-bzr](https://aur.archlinux.org/packages/feedler-bzr/) do not build because they are based on evolution-data-server 3.2\. Arch Linux provides version 3.10 which uses a different Vala API.
+*   [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/): File explorer based on Marlin
+*   [pantheon-terminal-bzr](https://aur.archlinux.org/packages/pantheon-terminal-bzr/): Terminal emulator
+*   [scratch-text-editor-bzr](https://aur.archlinux.org/packages/scratch-text-editor-bzr/): Text editor
+*   [pantheon-calculator-bzr](https://aur.archlinux.org/packages/pantheon-calculator-bzr/): Calculator
+*   [noise-player-bzr](https://aur.archlinux.org/packages/noise-player-bzr/): Audio player
+*   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/): Video player
+*   [maya-calendar-bzr](https://aur.archlinux.org/packages/maya-calendar-bzr/): Calendar
+*   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser (recently replaced by a patched version of [Epiphany](https://www.archlinux.org/packages/?name=Epiphany))
+*   [pantheon-mail-bzr](https://aur.archlinux.org/packages/pantheon-mail-bzr/): Email client based on [Geary](https://www.archlinux.org/packages/?name=Geary)
+*   [screenshot-tool-bzr](https://aur.archlinux.org/packages/screenshot-tool-bzr/): Screenshot tool
+*   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
+*   [pantheon-photos-bzr](https://aur.archlinux.org/packages/pantheon-photos-bzr/): Photo manager based on [Slingshot](https://www.archlinux.org/packages/?name=Slingshot)
+*   [snap-photobooth-bzr](https://aur.archlinux.org/packages/snap-photobooth-bzr/): Webcam app (recently developed into pantheon-camera)
+*   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
+*   [pantheon-notes-bzr](https://aur.archlinux.org/packages/pantheon-notes-bzr/): Note taking app, replacing [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/)
+*   [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/): Pluggable settings manager
 
 ## Launching Pantheon
 
-### Via a Display Manager
+**Note:** Either install [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/) or add 'gala' to `org.pantheon.desktop.cerbere.monitored-processes` in [cerbere](https://aur.archlinux.org/packages/cerbere/)'s [dconf](http://s0.uploads.im/AvOIT.png) to avoid errors such as no visible mouse cursor, failure to start, etc.
 
-[pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a session entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
+### Via [Display Manager](/index.php/Display_Manager "Display Manager")
 
-**Note:** Either use the bzr version of *cerbere* or add 'gala' to the monitored processes for this to work.
+[pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a [gnome-session](https://www.archlinux.org/packages/?name=gnome-session) entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 
-### Via .xinitrc
+### Via [xinit](/index.php/Xinit "Xinit")
 
-You can also use `~/.xinitrc` to launch the Pantheon shell. The following code will successfully launch a Pantheon session:
+Alternatively, you can use `~/.xinitrc` to launch the Pantheon shell, such as:
 
 ```
 #!/bin/sh
@@ -135,23 +143,31 @@ exec cerbere
 
 ```
 
-**Note:** Pantheon may refuse to start correctly, resulting in errors such as no visible mouse cursor and others. In this case you have to add the window manager 'gala' to the list of monitored processes of cebere. This can be done in `dconf-editor` and should look like [this](http://s0.uploads.im/AvOIT.png). Remember do not run dconf-editor as root, use your local username.
+#### Autostart applications with `~/.xinitrc`
 
-### Autostart applications
+This method does not support [XDG](/index.php/XDG_support "XDG support") autostart. However, there are 3 other ways to achieve this for applications which do not provide a [systemd unit](/index.php/Systemd#Using_units "Systemd"):
 
-Pantheon, when launched via `~/.xinitrc`, does not support XDG autostart. However, there are 3 other ways to achieve this for applications which do not provide a systemd unit:
-
-*   You may add any program to your `~/.xinitrc`, preferably right before the *exec cerbere* line. This is the better choice for one-shot programs.
-*   Or you may edit the `org.pantheon.cerbere.monitored-processes` key using *dconf-editor* and add the programs of your choice. This method is best for applications which keep running in the background.
+*   You may add any program to your `~/.xinitrc`, preferably right before the `exec cerbere` line. This is the better choice for one-shot programs.
+*   Or you may edit the `org.pantheon.desktop.cerbere.monitored-processes` key using *dconf-editor* and add the programs of your choice. This method is best for applications which keep running in the background.
 *   Or you may use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to add support for XDG autostart in your `~/.xinitrc`.
 
-**Note:** Keep in mind that applications started via *cerbere* cannot be terminated, they will keep respawning.
+**Note:** Keep in mind that applications started via *cerbere* cannot be terminated, they will keep respawning up to `org.pantheon.desktop.cerbere.max-crashes`
 
 ## Configuration
 
-Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most are available in the AUR and the custom repo. All pantheon settings can also be altered via *dconf*, they are located in the `org.pantheon` key. Use *dconf-editor* for easy editing.
+Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most of which are available in the [AUR](/index.php/AUR "AUR") and [Alucryd's repo](#Installation) as *switchboard-plug-*-bzr*. All pantheon settings, except [plank's](/index.php/Plank "Plank"), can also be altered via *dconf* and are located in the `org.pantheon` key. Use *dconf-editor* for easy editing.
 
-Part of the configuration is handled by [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) via a dedicated plug, which unfortunately only supports GNOME up to 3.6\. Use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) itself and [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead.
+**Note:** The intent is to replace [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), but not all of its settings have been ported. You may prefer to use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) itself and [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead.
+
+**Note:** Although it seems to have been abandoned, [switchboard-plug-elementary-tweaks-bzr](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-bzr/) remains a useful tool for configuring many aspects of the pantheon desktop, including [plank](/index.php/Plank "Plank").
+
+### Plank
+
+#### Adding new application icons
+
+Either drag and drop a desktop file on to the dock, or right click on a running application and select "Keep in dock". You can then reorder icons by drag and drop.
+
+**Note:** Plank has its own plaintext configuration files in `~/.config/plank/`
 
 ### Pantheon Files
 
@@ -165,54 +181,66 @@ If you want to enable context menu entries such as for [file-roller](https://www
 
 You can set a certain opacity to make Pantheon Terminal (semi-)transparent. Open `dconf-editor` and go to `org.pantheon.terminal.settings.opacity` to set your desired opacity.
 
+**Note:** For [pantheon-terminal-bzr](https://aur.archlinux.org/packages/pantheon-terminal-bzr/), the background color and transparency are set by `org.pantheon.terminal.settings.background`
+
 ## Known Issues
 
-### Indicators not working in wingpanel
+### Gala crashes on start
 
-Make sure the /etc/xdg/autostart/indicator-[name].desktop file contains Pantheon inside OnlyShowIn=
+It appears that unconfigured gala tries to use default gnome wallpaper as a background. However, the corresponding file is absent unless you have [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) installed. Thus, install [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) to workaround the crash. It is safe to remove this package after you configure pantheon in a way you want.
+
+### I do not have any mouse cursor
+
+The 'gala' window manager is most likely [not running](#Launching_Pantheon). Add 'gala' to the list of cerbere's monitored processes.
+
+### Indicators not appearing in wingpanel
+
+Wingpanel does not come with any indicators, they must be installed individually.
+
+**Note:** [wingpanel](https://aur.archlinux.org/packages/wingpanel/) and [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/) implement different kinds of indicators. The standard release wingpanel--poorly--supports the same kind of indicators as [Unity](/index.php/Unity "Unity"), while there are native indicators for the bzr version available in the [AUR](/index.php/AUR "AUR") and [Alucryd's repo](#Installation) as *wingpanel-indicator-*-bzr*.
+
+#### Third-party indicators
+
+If you launch pantheon from a [display manager](#Via_a_Display_Manager), make sure third-party indicators' `/etc/xdg/autostart/indicator-*.desktop` files contain *Pantheon* in `OnlyShowIn=`, eg:
 
 ```
 OnlyShowIn=Unity;XFCE;GNOME;Pantheon;
 
 ```
 
-**Note:**
+If you launch pantheon by [~/.xinitrc](#Via_.xinitrc), you need to add third-party indicators to one of the three start-up methods described above.
 
-*   Indicator support itself is a complex issue, due to discrepancies between Ubuntu and Gnome's differing implementations of KDE's status notification indicators.
-*   The pantheon devs now have [their own standard indicators](https://launchpad.net/~wingpanel-devs) for wingpanel.
+Additionally, indicators designed for [Unity](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-bzr/) to appear in [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/).
 
-### Indicator-session menus not working
-
-*   [indicator-session-bzr](https://aur.archlinux.org/packages/indicator-session-bzr/)
-
-This version of indicator-session relies on dbus methods native to Unity for most of its fuctions; it can be made to work by patching out the use of Unity dialogs, such as in [indicator-session-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)
+### Indicator-session menus not responsive
 
 *   [indicator-session](https://aur.archlinux.org/packages/indicator-session/)
 
-This version of indicator-session fails to interact with the session manager somehow; a (crudely hacked) version that uses systemd/logind instead is available [indicator-session-systemd](https://aur.archlinux.org/packages/indicator-session-systemd/)
+This version of indicator-session relies on dbus methods provided by [Unity](/index.php/Unity "Unity") for most of its functions and fails to fallback to gnome or systemd methods in its absence.
 
-*About This Computer*, *Lock* and *Sound Settings* ([indicator-sound](https://aur.archlinux.org/packages/indicator-sound/) or [indicator-sound-pantheon-bzr](https://github.com/quequotion/pantheon-bzr-qq/tree/master/REDUNDANT/indicator-session-pantheon-bzr)) rely on gnome components that may not be installed, such as gnome-control-center and gnome-screensaver.
+*   [wingpanel-indicator-session-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-session-bzr/)
 
-For *Lock* functionality (including "Ctrl+L" hotkey), replace gnome-screensaver with [light-locker](/index.php/Light-locker "Light-locker") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [a script that emulates the gnome-screensaver dbus](https://github.com/quequotion/pantheon-bzr-qq/tree/master/EXTRAS/xscreensaver-dbus-screenlock).
+For *Lock* to function (and "Ctrl+L" hotkey), install [light-locker](/index.php/Light-locker "Light-locker") or [xscreensaver-dbus-screenlock](https://aur.archlinux.org/packages/xscreensaver-dbus-screenlock/).
 
-### No transparency in pantheon-terminal
+### Cannot interact with the LightDM Pantheon greeter
 
-Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentaryOS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme.
+You need to delete `/var/lib/lightdm/.pam_environment`. Do note however that this file is a workaround for the following LightDM bug: [https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482](https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482)
 
-### White icons in pantheon-files
+### Appearance Issues
 
-Currently there seems to be a bug which displays the view icons in the top location in a white colour instead of black. This can be fixed by installing [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/) or adding the following line to `gtk-widgets.css` or `gtk-widgets.css` of your [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) theme:
+#### How can I change the default appearance such as GTK theme, font size, etc?
 
-```
-GtkToolItem { color: @text_color; }
+Install [switchboard-plug-elementary-tweaks-bzr](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-bzr/). Alternatively, use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or see [GTK+](/index.php/GTK%2B "GTK+").
 
-```
+#### Pantheon-terminal transparency
 
-### Wingpanel is transparent
+Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/), [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/) or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme or the override file in `~/.config/gtk-3.0/gtk.css`.
 
-Wingpanel is transparent by design when using the elementary GTK theme. It becomes black when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
+#### Wingpanel transparency
 
-To achieve the former behavior within other themes just add the following lines to the end of it's css. It is mostly found within `/usr/share/themes/<theme-name>` or `~/.themes/<theme-name>`. Depending on your theme the filename may be `apps.css` or `gtk.css`:
+Wingpanel is transparent by design when using [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/), and becomes opaque when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
+
+To achieve the former behavior within other themes, add the following lines to the end of its css or the override file in `~/.config/gtk-3.0/gtk.css`:
 
 ```
 /*********************
@@ -229,19 +257,9 @@ To achieve the former behavior within other themes just add the following lines 
 
 ```
 
-### Corrupted graphics in canonical indicators
+#### GTK+ applications surrounded by awful black shadow box
 
-Indicators behave incorrectly with every theme I have tried. They are very ancient, all of them date back to 2012 because the newer indicators depend on Ubuntu patches, and they should be killed with fire anyway. Wingpanel is doing just that and I hope the next major release will ship their new plugin system.
-
-### Cannot interact with the LightDM Pantheon greeter
-
-You need to delete `/var/lib/lightdm/.pam_environment`. Do note however that this file is a workaround for the following LightDM bug: [https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482](https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482)
-
-## Troubleshooting
-
-### GTK+ applications surrounded by awful black shadow box
-
-Elementary GTK theme seems to be using its own files and ignoring `~/.config/gtk-3.0/gtk.css` config file. This has been reported on [https://bugs.launchpad.net/elementaryos/+bug/1592441](https://bugs.launchpad.net/elementaryos/+bug/1592441). To work around the issue, go to the file `/usr/share/themes/elementary/gtk-3.0/gtk-widgets.css` and look for the following (around line 3669):
+The Elementary GTK theme seems to be using its own files and ignoring the `~/.config/gtk-3.0/gtk.css` user-override config file. This has been reported on [https://bugs.launchpad.net/elementaryos/+bug/1592441](https://bugs.launchpad.net/elementaryos/+bug/1592441). To work around the issue, go to the file `/usr/share/themes/elementary/gtk-3.0/gtk-widgets.css` and look for the following (around line 3669):
 
 ```
 decoration,
@@ -268,22 +286,15 @@ decoration,
 
 ```
 
-### Gala crashes on start
+#### White icons in pantheon-files
 
-It appears that unconfigured gala tries to use default gnome wallpaper as a background. However, the corresponding file is absent unless you have [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) installed. Thus, install [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard) to workaround the crash. It is safe to remove this package after you configure pantheon in a way you want.
+Currently there seems to be a bug which displays the view icons in the top location in a white colour instead of black. This can be fixed by installing [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/) or adding the following line to `gtk-widgets.css` or `gtk-widgets.css` of your [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) theme:
 
-### How can I add new applications to the dock?
+```
+GtkToolItem { color: @text_color; }
 
-Either drag and drop a desktop file on it, or right click on a running application and select "Keep in dock". You can then reorder icons by drag and drop.
+```
 
-### How can I change the default appearance such as GTK theme, font size, etc?
+#### Corrupted graphics in Ayatana indicators
 
-Install [switchboard-plug-elementary-tweaks-bzr](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-bzr/). Alternatively, use [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) or see [GTK+](/index.php/GTK%2B "GTK+").
-
-### I do not have any mouse cursor
-
-The 'gala' window manager is most likely not running. [#Via .xinitrc](#Via_.xinitrc) Add 'gala' to the list of cerbere's monitored processes.
-
-### Wingpanel is empty except for Applications
-
-The indicators that are displayed in the wingpanel are split into separate packages. [#Installation](#Installation) Install additional indicators such as [wingpanel-indicator-datetime-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-bzr/), [indicator-power](https://aur.archlinux.org/packages/indicator-power/) or [indicator-sound](https://aur.archlinux.org/packages/indicator-sound/).
+Indicators behave incorrectly with every theme I have tried. They are very ancient, all of them date back to 2012 because the newer indicators depend on Ubuntu patches, and they should be killed with fire anyway. Wingpanel is doing just that and I hope the next major release will ship their new plugin system.

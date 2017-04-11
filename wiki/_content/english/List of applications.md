@@ -54,9 +54,9 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.5.8 Video downloaders](#Video_downloaders)
     *   [1.6 Communication](#Communication)
         *   [1.6.1 Email clients](#Email_clients)
+            *   [1.6.1.1 Console](#Console_3)
+            *   [1.6.1.2 Graphical](#Graphical_2)
         *   [1.6.2 Mail servers](#Mail_servers)
-            *   [1.6.2.1 Console](#Console_3)
-            *   [1.6.2.2 Graphical](#Graphical_2)
         *   [1.6.3 Instant messaging](#Instant_messaging)
             *   [1.6.3.1 IRC clients](#IRC_clients)
                 *   [1.6.3.1.1 Console](#Console_4)
@@ -742,13 +742,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 #### Email clients
 
-See also [#Mail servers](#Mail_servers) and [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/Comparison_of_e-mail_clients "wikipedia:Comparison of e-mail clients").
-
-#### Mail servers
-
-*   **Dovecot** — An IMAP and POP3 server written with security primarily in mind.
-
-	[http://dovecot.org/](http://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
+See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/Comparison_of_email_clients "wikipedia:Comparison of email clients")
 
 ##### Console
 
@@ -841,6 +835,14 @@ See also [#Mail servers](#Mail_servers) and [Wikipedia:Comparison of e-mail clie
 *   **WMail** — The missing desktop client for Gmail & Google Inbox
 
 	[http://thomas101.github.io/wmail/](http://thomas101.github.io/wmail/) || [wmail-bin](https://aur.archlinux.org/packages/wmail-bin/)
+
+#### Mail servers
+
+See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
+
+*   **Dovecot** — An IMAP and POP3 server written with security primarily in mind.
+
+	[http://dovecot.org/](http://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
 
 #### Instant messaging
 

@@ -370,7 +370,7 @@ Alternatively, shred can be instructed to do only one pass, with entropy from e.
 
 ### Badblocks
 
-For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package) perform a disk wipe, a destructive [read-write test](/index.php/Badblocks#read-write_Test "Badblocks") has to be done:
+For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package) perform a disk wipe, a destructive [read-write test](/index.php/Badblocks#read-write_Test_.28warning:destructive.29 "Badblocks") has to be done:
 
 ```
 # badblocks -c <NUMBER_BLOCKS> -wsv /dev/<drive>
