@@ -446,20 +446,43 @@ Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can gr
 
 Sometimes it is easier to work directly on a disk image instead of the real Raspberry Pi. This can be achieved by mounting an SD card containing the RPi root partition and chrooting into it. From the chroot it should be possible to run *pacman* and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by [QEMU](/index.php/QEMU "QEMU").
 
+Note that only 64 bit Raspberry Pi models can use `aarch64`, the rest need to use `arm`.
+
 Install [binfmt-support](https://aur.archlinux.org/packages/binfmt-support/) and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) from the [AUR](/index.php/AUR "AUR").
 
-Make sure that the ARM to x86 translation is active:
+Enable and start the binfmt-support service:
 
 ```
-# update-binfmts --importdir /var/lib/binfmts/ --import
+# systemctl enable binfmt-support
+# systemctl start binfmt-support
+
+```
+
+[qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) is needed to allow the execution of compiled programs from other architectures. This is similar to what is provided by [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra), but the "static" variant is required for chroot. Examples:
+
+```
+qemu-arm-static path_to_sdcard/usr/bin/ls
+qemu-aarch64-static path_to_sdcard/usr/bin/ls
+
+```
+
+These two lines execute the `ls` command compiled for 32-bit ARM and 64-bit ARM respectively. Note that this will not work without chrooting, because it will look for libraries not present in the host system.
+
+[qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) allows automatically prefixing the ARM exectuable with `qemu-arm-static` or `qemu-aarch64-static`. See for example `/var/lib/binfmts/qemu-arm` and the `qemu-user-static` [PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=qemu-user-static#n38).
+
+Make sure that the ARM executable support is active:
+
+```
 # update-binfmts --display qemu-arm
+# update-binfmts --display qemu-aarch64
 
 ```
 
-If ARM to x86 translation is not active, enable it using update-binfmts:
+If it is not active, enable it using update-binfmts:
 
 ```
 # update-binfmts --enable qemu-arm
+# update-binfmts --enable qemu-aarch64
 
 ```
 
@@ -471,17 +494,31 @@ Mount the SD card to `mnt/` (the device name may be different).
 
 ```
 
-Copy the QEMU executable, which will handle the translation from ARM, to the SD card root:
+Mount boot partition if needed (again, use the suitable device name):
 
 ```
-# cp /usr/bin/qemu-arm-static mnt/usr/bin
+# mount /dev/mmcblk0p1 mnt/boot
+
+```
+
+Copy the QEMU executables, which will handle the translation from ARM, to the SD card root:
+
+```
+# cp /usr/bin/qemu-arm-static /usr/bin/qemu-aarch64-static mnt/usr/bin
 
 ```
 
 Finally chroot into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"):
 
 ```
-# chroot /mnt/arch /bin/bash
+# chroot mnt/ /bin/bash
+
+```
+
+Alternatively, you can use `arch-chroot` from [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), as it will provide network support:
+
+```
+# arch-chroot mnt/ /bin/bash
 
 ```
 

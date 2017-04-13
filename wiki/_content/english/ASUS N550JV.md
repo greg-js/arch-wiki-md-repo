@@ -29,10 +29,11 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [2.1.1 Dual boot](#Dual_boot)
         *   [2.1.2 Bug](#Bug)
         *   [2.1.3 Sound pops twice during shutdown and sleep](#Sound_pops_twice_during_shutdown_and_sleep)
-            *   [2.1.3.1 Crackling sound](#Crackling_sound)
-    *   [2.2 Messages during console login](#Messages_during_console_login)
-    *   [2.3 USB devices and sleep](#USB_devices_and_sleep)
-        *   [2.3.1 Battery charging issues](#Battery_charging_issues)
+        *   [2.1.4 Crackling sound](#Crackling_sound)
+    *   [2.2 Failed to initialize the NVIDIA GPU](#Failed_to_initialize_the_NVIDIA_GPU)
+    *   [2.3 Messages during console login](#Messages_during_console_login)
+    *   [2.4 USB devices and sleep](#USB_devices_and_sleep)
+        *   [2.4.1 Battery charging issues](#Battery_charging_issues)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad switch](#Touchpad_switch)
     *   [3.2 Full fan speed](#Full_fan_speed)
@@ -45,7 +46,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 #### Drivers
 
-Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee"). Add the kernel parameter `rcutree.rcu_idle_gp_delay=1` to your bootloader configuration, so that *optirun* will not fail to start.
+Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA "Bumblebee").
 
 #### Brightness
 
@@ -68,14 +69,7 @@ $ alsamixer -c PCH
 
 #### Brightness
 
-Key mappings `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"). To resolve, install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/) and load the module to control hotkeys:
-
-```
-# modprobe asus-nb-wmi
-
-```
-
-and [start and enable](/index.php/Enable "Enable") the `asus-kbd-backlight.service`.
+Key mappings `FN+F3` and `FN+F4` should work with majority of [desktop environments](/index.php/Desktop_environments "Desktop environments") out of the box. If not, install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/), load kernel module `asus-nb-wmi` to control hotkeys, then [start and enable](/index.php/Enable "Enable") the `asus-kbd-backlight.service`.
 
 Now you can take control over the keyboard backlight:
 
@@ -164,11 +158,11 @@ Touchpad might not work as expected out of the box. To resolve, install [Touchpa
 
 ### Audio
 
-##### Dual boot
+#### Dual boot
 
 If you boot your laptop right after Windows to Linux, sound might only work through headphones jack, but not through speakers and subwoofer. The quick fix is to suspend your laptop and resume it back.
 
-##### Bug
+#### Bug
 
 The internal speakers seems not to play any sound until volume is being increased significantly. This also occurs on Windows operation system as well as on Linux.
 
@@ -214,9 +208,13 @@ WantedBy=suspend.target
 
 Then [enable](/index.php/Enable "Enable") `beep-disable.service` and `beep-disable-wakeup.service` as root.
 
-##### Crackling sound
+#### Crackling sound
 
 Add `tsched=0` to pulseaudio config file as per instructions at [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting").
+
+### Failed to initialize the NVIDIA GPU
+
+If you receive error similar to this `Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)`, see [here](/index.php/NVIDIA_Optimus#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29 "NVIDIA Optimus").
 
 ### Messages during console login
 

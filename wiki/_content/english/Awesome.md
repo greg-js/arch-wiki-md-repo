@@ -183,7 +183,7 @@ If everything is fine, add the following line to your `rc.lua`:
  `.config/awesome/rc.lua` 
 ```
 ...
-awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
+awful.util.spawn_with_shell("~/.config/awesome/autorun.sh")
 ...
 ```
 

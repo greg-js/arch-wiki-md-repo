@@ -15,7 +15,7 @@ The installation should be going without any problems, if you follow the followi
 ## Contents
 
 *   [1 Pre-Installation System Settings](#Pre-Installation_System_Settings)
-*   [2 Grapahics Card Configuration](#Grapahics_Card_Configuration)
+*   [2 Graphics Card Configuration](#Graphics_Card_Configuration)
     *   [2.1 Intel Only](#Intel_Only)
     *   [2.2 Intel/Nvidia Hybrid Configuration](#Intel.2FNvidia_Hybrid_Configuration)
 *   [3 Input](#Input)
@@ -37,7 +37,7 @@ Installation of Arch can proceed normally. Refer to the [Installation guide](/in
 
 **Note:** Remember that your SSD is called `nvme0n1`, not `sda`.
 
-## Grapahics Card Configuration
+## Graphics Card Configuration
 
 The Mi Book has an Intel, as well as a Nvidia GPU.
 

@@ -309,6 +309,8 @@ EndSection
 
 Replace `intel` with the right driver, e.g. `nvidia`.
 
+If this doesn't work for you, try removing the Screen and Device sections and just leaving the Monitor section. [[2]](https://bbs.archlinux.org/viewtopic.php?id=225134)
+
 ### Resolution lower than expected
 
 **Tip:** Try [#Adding undetected resolutions](#Adding_undetected_resolutions) first, if it doesn't work, you may try this method.

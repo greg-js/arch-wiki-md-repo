@@ -1,6 +1,7 @@
 ## Contents
 
 *   [1 Linux 4.0](#Linux_4.0)
+    *   [1.1 Compiling the Kernel Modules](#Compiling_the_Kernel_Modules)
 *   [2 VTune Amplifier XE 2013](#VTune_Amplifier_XE_2013)
     *   [2.1 Missing asm/system.h](#Missing_asm.2Fsystem.h)
     *   [2.2 Implicit declaration of this_cpu_read](#Implicit_declaration_of_this_cpu_read)
@@ -13,7 +14,15 @@
 
 ## Linux 4.0
 
-VTune 2015 currently does not work with Linux 4.0, due to changes in the kernel that prevent the sepdk module from building. You need VTune 2016 which was released in August 2015.
+VTune 2015 currently does not work with Linux 4.0, due to changes in the kernel that prevent the sepdk module from building. You need VTune 2016 which was released in August 2015\.
+
+### Compiling the Kernel Modules
+
+To build the kernel modules on Arch you should follow the 4th part of the README on sepdk folder. You can follow the [Compile_kernel_module](/index.php/Compile_kernel_module "Compile kernel module") with [Kernels/Traditional compilation#Download the kernel source](/index.php/Kernels/Traditional_compilation#Download_the_kernel_source "Kernels/Traditional compilation"), downloading the source code to `/usr/src/`, extracting it with the name following the README and following the steps to unpack the kernel source.
+
+There's a problem on the script `./build-driver` that some users couldn't run the funcion `get_absolute_path()` so you should hardcode the variables `DRIVER_DIRECTORY` and `KERNEL_SRC_DIR`.
+
+Also, there's a bug when trying to compile the kernel modules with kernel 4.10\. [Link to Intel Forum](https://software.intel.com/en-us/forums/intel-vtune-amplifier-xe/topic/722656)
 
 ## VTune Amplifier XE 2013
 

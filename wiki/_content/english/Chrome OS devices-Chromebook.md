@@ -1,5 +1,12 @@
 Main article: [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices").
 
+## Contents
+
+*   [1 Introduction](#Introduction)
+    *   [1.1 First generation of Chromebooks](#First_generation_of_Chromebooks)
+*   [2 Hardware comparisons](#Hardware_comparisons)
+*   [3 See also](#See_also)
+
 ## Introduction
 
 ### First generation of Chromebooks
@@ -10,7 +17,7 @@ The first generation of Chromebooks: Google Cr-48, Samsung Series 5 500 and Acer
 *   Take the ChrUbuntu approach which uses the Chrome OS kernel and modules.
 *   Build and sign your own kernel, see [[1]](https://plus.google.com/+OlofJohansson/posts/34PYU79eUqP).
 
-## Hardware Comparisons
+## Hardware comparisons
 
 **Warning:** The availability of SeaBIOS does not promise device compatibility for Linux or that the pre-installed SeaBIOS works properly. Before purchasing a device visit its page on the ArchWiki and look for Linux users' posts about that model.
 
@@ -247,3 +254,7 @@ Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/rockchip/asus-chromeboo
 [notes](/index.php/User_talk:Pierro78/Asus_chromebook_flip "User talk:Pierro78/Asus chromebook flip")</small> |
 
 </center>
+
+## See also
+
+*   [Gallium OS hardware compatibility](https://wiki.galliumos.org/Hardware_Compatibility) for Chromebooks

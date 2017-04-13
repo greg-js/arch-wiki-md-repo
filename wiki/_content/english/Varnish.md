@@ -1,6 +1,6 @@
 Varnish Cache is a web application accelerator also known as a caching HTTP reverse proxy. You install it in front of any server that speaks HTTP and configure it to cache the contents.
 
-## Multiple backends
+## Customizing Varnish
 
 By default, varnish comes configured in `/etc/varnish/default.vcl` to use **localhost:8080** as the only backend, default.vcl is called by the default systemd varnish.service file :
 
@@ -25,15 +25,17 @@ $ systemctl enable varnish
 ln -s '/usr/lib/systemd/system/varnish.service' '/etc/systemd/system/multi-user.target.wants/varnish.service'
 ```
 
-instead copy it and edit to increase malloc default.vcl etc:
+Override the defaults in the unit file by using systemctl edit.
 
- `$ cp '/usr/lib/systemd/system/varnish.service' '/etc/systemd/system/varnish.service'` 
+ `$ systemctl edit varnish.service` 
 
-then enable varnish and it will use your customized .service file instead:
+To override ExecStart use an empty ExecStart line first and then an ExecStart with the new values. Eg.
 
 ```
-$ systemctl enable varnish
-ln -s '/etc/systemd/system/varnish.service' '/etc/systemd/system/multi-user.target.wants/varnish.service'
+[Service]
+ExecStart=
+ExecStart=/usr/bin/varnishd -j unix,user=nobody -F -a :6081 -T localhost:6082 -f /etc/varnish/default.vcl -S /etc/varnish/secret -s malloc,1G
+
 ```
 
 Also, if you change the config file `/etc/varnish/default.vcl` you'll need to reload varnish:

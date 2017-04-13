@@ -1,4 +1,4 @@
-From the project [home page](http://www.videolan.org/vlc/):
+From the project [home page](https://www.videolan.org/vlc/):
 
 	VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
 
@@ -9,7 +9,7 @@ From the project [home page](http://www.videolan.org/vlc/):
 *   [3 Skins](#Skins)
 *   [4 Web interface](#Web_interface)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 File association in GNOME](#File_association_in_GNOME)
+    *   [5.1 File associations in GNOME](#File_associations_in_GNOME)
     *   [5.2 Twitch.tv streaming over VLC](#Twitch.tv_streaming_over_VLC)
     *   [5.3 Playing streamed content from a local DLNA server](#Playing_streamed_content_from_a_local_DLNA_server)
     *   [5.4 Control using hotkeys or cli](#Control_using_hotkeys_or_cli)
@@ -27,7 +27,7 @@ From the project [home page](http://www.videolan.org/vlc/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [vlc](https://www.archlinux.org/packages/?name=vlc) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [vlc](https://www.archlinux.org/packages/?name=vlc) package.
 
 Notable variants are:
 
@@ -42,7 +42,7 @@ Notable optional dependencies are:
 
 ## Language
 
-It seems VLC does not offer an option to change language in its *Preferences* menu. But you can use the *LANGUAGE=* prefix. For instance, modify the `/usr/share/applications/vlc.desktop` line:
+VLC does not offer an option to change language in its *Preferences* menu. But you can use the *LANGUAGE=* prefix. For instance, modify the `/usr/share/applications/vlc.desktop` line:
 
 ```
 Exec=/usr/bin/vlc %U
@@ -60,9 +60,9 @@ to switch VLC interface to French.
 
 ## Skins
 
-VLC can be "skinned" for a different look and feel. You can obtain new skins for VLC from [http://www.videolan.org/vlc/skins.php](http://www.videolan.org/vlc/skins.php).
+VLC can be "skinned" for a different look and feel. You can get skins at the [skins website](https://www.videolan.org/vlc/skins.php).
 
-Installation of skins is simple just download the skin you wish to use and copy it to:
+To install a skin download it and move it to:
 
 ```
 ~/.local/share/vlc/skins2
@@ -71,7 +71,7 @@ Installation of skins is simple just download the skin you wish to use and copy 
 
 Open up VLC, click *Tools > Preferences*. When the preferences window opens up you should be in the "Interface" tab
 
-Choose the "Use custom skin" radio button, and browse to the location of the downloaded skin.
+Choose the "Use custom skin" radio button, and select the downloaded skin.
 
 Restart VLC for the change to take effect.
 
@@ -92,7 +92,7 @@ Edit `/usr/share/vlc/lua/http/.hosts` to allow remote connections. You will need
 
 ## Tips and tricks
 
-### File association in GNOME
+### File associations in GNOME
 
 Copy the system desktop file to the local one (local `.desktop` files supersede the global ones):
 
@@ -128,7 +128,7 @@ Follow instructions in script to setup a socket for VLC.
 
 Either run the script from the command line or register the script with keyboard shortcuts through your desktop.
 
-Alternatively, you can use dbus-send [as discussed here](http://theelitist.github.io/control-vlc-media-player-through-d-bus) to interact with VLC:
+Alternatively, you can use dbus-send [as discussed here](https://theelitist.github.io/control-vlc-media-player-through-d-bus) to interact with VLC:
 
 ```
 $ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -147,14 +147,14 @@ VLC automatically tries to use an available API, but you can override it by goin
 
 ### systemd service
 
-VLC's web interface can be started from systemd. First, we need to create a default user. We'll use UID 75 in this example since it's not in use according to [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database").
+VLC's web interface can be started from systemd. First, you need to create a default user. This example will use UID 75 since it's not reserved according to [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database").
 
 ```
 # useradd -c "VLC daemon" -d / -G audio -M -p \! -r -s /bin/false -u 75 -U vlcd
 
 ```
 
-Now we create the systemd service file:
+Now create the systemd service file:
 
  `/etc/systemd/system/vlc.service` 
 ```
@@ -188,7 +188,7 @@ If using a ffmpeg variant from the AUR, be sure that you have upgraded it as wel
 When starting VLC you can get a segfault, and ruling out general factors such as [Microcode](/index.php/Microcode "Microcode"), a possible workaround to this is running the following:
 
 ```
- # /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
+# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
 
 ```
 
@@ -203,7 +203,7 @@ Another workaround can be reinstalling vlc within an `LD_PRELOAD` environment:
 
 ### Missing icons in dropdown menus
 
-This can happen under XFCE, there will be no more icons in dropdown menus, like the or the PCI card icon.
+This can happen under XFCE, there will be no more icons in dropdown menus, like the PCI card icon.
 
 Execute these commands to reactivate these icons:
 
@@ -224,9 +224,9 @@ This happens at least on Intel cards, and a fix that reportedly solves the probl
 
 ### No playback via SFTP of media files names containing spaces
 
-If vlc does not play any videos or audio files over SFTP first confirm you have sshfs installed.
+If VLC does not play any videos or audio files over SFTP make sure you have [sshfs](https://www.archlinux.org/packages/?name=sshfs) installed.
 
-If it refuses to play any media files containing spaces via SFTP and always asks for authentication change the line
+If it refuses to play any media files containing spaces via SFTP and always asks for authentication change the Exec line in the vlc.desktop file from
 
 ```
 Exec=/usr/bin/vlc --started-from-file %U
@@ -240,11 +240,11 @@ Exec=/usr/bin/vlc --started-from-file %F
 
 ```
 
-in the vlc.desktop file. [[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
+[[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
 
 ## See also
 
 *   [List of applications#Multimedia](/index.php/List_of_applications#Multimedia "List of applications")
-*   [VLC homepage](http://www.videolan.org/vlc/)
+*   [VLC homepage](https://www.videolan.org/vlc/)
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
-*   [Control VLC via a browser](http://wiki.videolan.org/Control_VLC_via_a_browser)
+*   [Control VLC via a browser](https://wiki.videolan.org/Control_VLC_via_a_browser)

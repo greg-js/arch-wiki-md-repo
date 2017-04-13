@@ -13,6 +13,8 @@ The following are examples of encrypting a secondary, i.e. non-root, filesystem 
 *   [3 Loop device](#Loop_device)
     *   [3.1 Manual mounting and unmounting](#Manual_mounting_and_unmounting_2)
     *   [3.2 Resizing the loopback filesystem](#Resizing_the_loopback_filesystem)
+*   [4 Device cloning and resizing](#Device_cloning_and_resizing)
+    *   [4.1 btrfs resizing](#btrfs_resizing)
 
 ## Overview
 
@@ -186,5 +188,29 @@ You can now mount the container again:
 
 ```
 # mount /dev/mapper/secret /mnt/secret
+
+```
+
+## Device cloning and resizing
+
+If a storage device encrypted with dm-crypt is being cloned (with a tool like dd) to another larger device, the underlying dm-crypt device must be resized to use the whole space.
+
+The destination device is /dev/sdX2 in this example, the whole available space adjacent to the partition will be used:
+
+```
+# cryptsetup luksOpen /dev/sdX2 sdX2
+# cryptsetup resize sdX2
+
+```
+
+Then the underlying filesystem must be resized.
+
+### btrfs resizing
+
+Using btrfs, resizing is an online operation, therefore the device must be mounted:
+
+```
+# mount /dev/mapper/sdX2 /mnt/sdX2/
+# btrfs filesystem resize max /mnt/sdX2/
 
 ```

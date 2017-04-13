@@ -9,7 +9,8 @@
     *   [2.3 Logueo Automático](#Logueo_Autom.C3.A1tico)
     *   [2.4 Múltiples gestores de ventanas](#M.C3.BAltiples_gestores_de_ventanas)
     *   [2.5 Temas](#Temas)
-        *   [2.5.1 Configuración de pantalla dual](#Configuraci.C3.B3n_de_pantalla_dual)
+        *   [2.5.1 Utilizar imagen personalizada como fondo de login](#Utilizar_imagen_personalizada_como_fondo_de_login)
+        *   [2.5.2 Configuración de pantalla dual](#Configuraci.C3.B3n_de_pantalla_dual)
 *   [3 Otras opciones](#Otras_opciones)
     *   [3.1 Cambiando el cursor](#Cambiando_el_cursor)
     *   [3.2 Igualar fondos de SLiM y de fondo de pantalla](#Igualar_fondos_de_SLiM_y_de_fondo_de_pantalla)
@@ -151,6 +152,32 @@ $ slim -p /usr/share/slim/themes/<theme name>
 Para cerrar, escriba "exit" en la linea de logueo y pulse Enter.
 
 Temas adicionales se encuentran disponibles en [AUR](/index.php/AUR "AUR").
+
+#### Utilizar imagen personalizada como fondo de login
+
+Puede usar cualquier tema instalado o el tema por defecto de SLiM para utilizar la imagen de su elección.
+
+Primero se debe asegurar que el tema que se desea personalizar está configurado como tema actual en el archivo de configuración de SLiM
+
+```
+# current_theme       <nombre_tema> (por ejemplo: default, archlinux-simplyblack)
+
+```
+
+Después se debe reemplazar el archivo background.jpg del tema actual con la imagen deseada
+
+```
+# mv /usr/share/slim/themes/<nombre_tema>/background.jpg{,.bck}
+# cp /path/to/image.jpg /usr/share/slim/themes/<nombre_tema>/background.jpg
+
+```
+
+Se puede previsualizar la nueva imagen de login con el comando
+
+```
+# slim -p /usr/share/slim/themes/<nombre_tema>
+
+```
 
 #### Configuración de pantalla dual
 

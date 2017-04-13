@@ -223,6 +223,7 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Supports the most popular filesystems on Linux, Windows and Mac OS.
     *   Compression.
     *   Saving to multiple CDs or DVDs or across a network using Samba/NFS.
+    *   Development stopped in favor of FSArchiver.
 
 	[http://www.partimage.org/Main_Page](http://www.partimage.org/Main_Page) || [partimage](https://www.archlinux.org/packages/?name=partimage)
 

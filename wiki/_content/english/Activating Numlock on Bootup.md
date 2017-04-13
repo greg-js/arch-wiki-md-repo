@@ -203,10 +203,11 @@ In the file `~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml`, make sur
 
 ### SDDM
 
-In the file `/etc/sddm.conf`, add the following line under the `[General]` section:
+In the file `/etc/sddm.conf`, under the `[General]` section, set *Numlock* value to *on* :
 
 ```
 [General]
+...
 Numlock=on
 
 ```

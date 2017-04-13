@@ -35,10 +35,8 @@
     *   [3.4 What makes Arch unique amongst other "minimal" distributions?](#What_makes_Arch_unique_amongst_other_.22minimal.22_distributions.3F)
 *   [4 64-bit](#64-bit)
     *   [4.1 How do I determine if my processor is x86_64 compatible?](#How_do_I_determine_if_my_processor_is_x86_64_compatible.3F)
-    *   [4.2 Will I have all the packages from my 32-bit Arch?](#Will_I_have_all_the_packages_from_my_32-bit_Arch.3F)
-    *   [4.3 Why 64-bit?](#Why_64-bit.3F)
-    *   [4.4 Can I build 32-bit packages for i686 inside 64-bit Arch?](#Can_I_build_32-bit_packages_for_i686_inside_64-bit_Arch.3F)
-    *   [4.5 Can I switch from i686 to x86_64 without reinstalling?](#Can_I_switch_from_i686_to_x86_64_without_reinstalling.3F)
+    *   [4.2 Why 64-bit?](#Why_64-bit.3F)
+    *   [4.3 Can I switch from i686 to x86_64 without reinstalling?](#Can_I_switch_from_i686_to_x86_64_without_reinstalling.3F)
 
 ## General
 
@@ -227,14 +225,6 @@ $ grep -w lm /proc/cpuinfo
 
 Under Windows, using the freeware [CPU-Z](http://www.cpuid.com/cpuz.php) helps determine whether your CPU is 64-bit compatible. CPUs with AMD's instruction set "AMD64" or Intel's solution "EM64T" should be compatible with the x86_64 releases and binary packages.
 
-### Will I have all the packages from my 32-bit Arch?
-
-Most official packages have 64-bit versions, though you may need to enable the [multilib](/index.php/Multilib "Multilib") repository to run some 32-bit programs. [Package Differences](https://www.archlinux.org/packages/differences/) lists the few cases where the multilib packages differ from the native 32-bit versions.
-
-The only exception is [AUR](/index.php/AUR "AUR") packages that only have `'i686'` listed, but even then they may work for 64-bit too. Just try adding `'x86_64'` to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
-
-As a last resort, you can always [install a 32-bit system inside your 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
-
 ### Why 64-bit?
 
 It is faster under most circumstances and as an added bonus also inherently more secure due to the nature of [Address space layout randomization (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") in combination with [Position-independent code (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") and the [NX Bit](https://en.wikipedia.org/wiki/NX_Bit "wikipedia:NX Bit") which is not available in the stock i686 kernel due to disabled PAE. If your computer has more than 4GB of RAM, only a 64-bit OS will be able to fully utilize it.
@@ -242,10 +232,6 @@ It is faster under most circumstances and as an added bonus also inherently more
 Programmers also increasingly tend to care less about 32-bit ("legacy") as "new" x86 CPUs typically support the 64-bit extensions.
 
 There are many more reasons we could list here to tell you to avoid 32-bit, but between the kernel, userspace and individual programs it is simply not viable to list every last thing that 64-bit does much better these days.
-
-### Can I build 32-bit packages for i686 inside 64-bit Arch?
-
-Yes. You can use the [multilib](/index.php/Multilib "Multilib") repository with a [makepkg config](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg") or [install a 32-bit system inside your 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
 
 ### Can I switch from i686 to x86_64 without reinstalling?
 

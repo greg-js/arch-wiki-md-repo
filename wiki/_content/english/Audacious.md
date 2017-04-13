@@ -1,4 +1,4 @@
-**Audacious** is a free and advanced audio player based on GTK+. It's focused on audio quality and supports a wide variety of audio codecs, and is easily extensible through third-party plugins.
+[Audacious](http://audacious-media-player.org/) is a free and advanced audio player based on GTK+. It's focused on audio quality and supports a wide variety of audio codecs, and is easily extensible through third-party plugins.
 
 ## Contents
 

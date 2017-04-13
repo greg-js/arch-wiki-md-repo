@@ -5455,6 +5455,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
 
+*   **launch** — Simple command for launching applications from a terminal emulator.
+
+	[https://github.com/silverhammermba/launch](https://github.com/silverhammermba/launch) || [launch-cmd](https://aur.archlinux.org/packages/launch-cmd/)
+
 *   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — Very popular cross-platform application launcher with a plugin-based system used to provide extra functionality.
 
 	[http://www.launchy.net/](http://www.launchy.net/) || [launchy](https://www.archlinux.org/packages/?name=launchy)

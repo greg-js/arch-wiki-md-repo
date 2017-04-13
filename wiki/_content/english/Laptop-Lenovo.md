@@ -125,8 +125,9 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingeprint Reader (Yes) |
+| Lenovo ThinkPad W510 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Touchscreen (Yes), Fingeprint Reader (Not tested) | Tested April 2017 / Linux 4.10.8 |
 | Lenovo ThinkPad W540 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingeprint Reader (Yes) | Tested April 2017 / Linux 4.10.8 |
+| Lenovo ThinkPad W550s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Not tested), Webcam (Yes), Fingeprint Reader (Yes) |
 
 #### X series
 
@@ -139,6 +140,7 @@ install CD version
 | Lenovo ThinkPad X61s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD slot |
 | [Lenovo ThinkPad X100e](/index.php/Lenovo_ThinkPad_X100e "Lenovo ThinkPad X100e") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | SD card (Yes), Webcam (Yes) |
 | [Lenovo ThinkPad X200](/index.php/Lenovo_ThinkPad_X200 "Lenovo ThinkPad X200") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
+| [Lenovo ThinkPad X200S](/index.php/Lenovo_ThinkPad_X200S "Lenovo ThinkPad X200S") | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Not tested | Everything worked out of the box. However, fingerprint, SD card and webcam were not tested |
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
 | [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
 | [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes) |

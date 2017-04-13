@@ -23,20 +23,22 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [4.4 Enable 3D graphics on Intel and Optimus](#Enable_3D_graphics_on_Intel_and_Optimus)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
-    *   [5.2 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [5.3 USB devices not recognized](#USB_devices_not_recognized)
-    *   [5.4 The installer fails to start](#The_installer_fails_to_start)
-        *   [5.4.1 User interface initialization failed](#User_interface_initialization_failed)
-    *   [5.5 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
-    *   [5.6 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
-    *   [5.7 Issues with ALSA output](#Issues_with_ALSA_output)
-    *   [5.8 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
-    *   [5.9 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
-    *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
-    *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
-    *   [5.12 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
-    *   [5.13 vmplayer fails to start from version 12.5.3](#vmplayer_fails_to_start_from_version_12.5.3)
-    *   [5.14 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
+    *   [5.2 /dev/vmci not found](#.2Fdev.2Fvmci_not_found)
+    *   [5.3 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
+    *   [5.4 USB devices not recognized](#USB_devices_not_recognized)
+    *   [5.5 The installer fails to start](#The_installer_fails_to_start)
+        *   [5.5.1 User interface initialization failed](#User_interface_initialization_failed)
+    *   [5.6 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
+    *   [5.7 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
+    *   [5.8 Issues with ALSA output](#Issues_with_ALSA_output)
+    *   [5.9 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
+    *   [5.10 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
+    *   [5.11 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
+    *   [5.12 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+    *   [5.13 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
+    *   [5.14 vmplayer/vmware fails to start from version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.5)
+    *   [5.15 vmplayer/vmware fails to start from version 12.5.3](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3)
+    *   [5.16 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -243,11 +245,28 @@ The full error is:
 
 ```
 Could not open /dev/vmmon: No such file or directory.
-Please make sure that the kernel module `vmmon' is loaded.
+Please make sure that the kernel module 'vmmon' is loaded.
 
 ```
 
 This means that at least the `vmmon` module is not loaded. See the [#systemd services](#systemd_services) section for automatic loading.
+
+### /dev/vmci not found
+
+The full error is:
+
+```
+Failed to open device "/dev/vmci": No such file or directory
+Please make sure that the kernel module 'vmci' is loaded.
+
+```
+
+Try to recompile VMware kernel modules with:
+
+```
+# vmware-modconfig --console --install-all
+
+```
 
 ### Kernel headers for version 4.x-xxxx were not found. If you installed them[...]
 
@@ -431,14 +450,25 @@ On VMware Workstation Pro 12.5.2, the module source needs to be modified to be s
 
 ```
 
-### vmplayer fails to start from version 12.5.3
+### vmplayer/vmware fails to start from version 12.5.5
+
+As per [[3]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
+
+### vmplayer/vmware fails to start from version 12.5.3
 
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
 
-If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead.
+If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:
 
 ```
 # mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
+
+```
+
+Also there is a workaround:
+
+```
+# export VMWARE_USE_SHIPPED_LIBS='yes'
 
 ```
 

@@ -123,12 +123,7 @@ Using this section, you can enable features and tweak the driver settings.
 
 PowerPlay is the name given to AMD's dynamic clock scaling technology. Depending on your GPU and kernel version, it will default to on or off.
 
-To get maximum performance and even power savings, append to your kernel cmdline:
-
-```
-amdgpu.powerplay=1
-
-```
+To get maximum performance and even power savings, add the `amdgpu.powerplay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 ### Enabling video acceleration
 

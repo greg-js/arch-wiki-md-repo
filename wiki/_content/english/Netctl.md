@@ -6,25 +6,29 @@
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Profile configuration](#Profile_configuration)
-    *   [3.2 Automatic operation](#Automatic_operation)
-        *   [3.2.1 Basic method](#Basic_method)
-        *   [3.2.2 Automatic switching of profiles](#Automatic_switching_of_profiles)
-    *   [3.3 Example profiles](#Example_profiles)
-        *   [3.3.1 Wired](#Wired)
-        *   [3.3.2 Wireless (WPA-PSK)](#Wireless_.28WPA-PSK.29)
+    *   [3.2 Starting a profile](#Starting_a_profile)
+    *   [3.3 Enabling a profile](#Enabling_a_profile)
+        *   [3.3.1 One profile](#One_profile)
+        *   [3.3.2 Automatic switching of profiles](#Automatic_switching_of_profiles)
+            *   [3.3.2.1 Wired](#Wired)
+            *   [3.3.2.2 Wireless](#Wireless)
+    *   [3.4 Example profiles](#Example_profiles)
+        *   [3.4.1 Wired](#Wired_2)
+        *   [3.4.2 Wireless (WPA-PSK)](#Wireless_.28WPA-PSK.29)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Using an Experimental GUI](#Using_an_Experimental_GUI)
-    *   [4.2 Eduroam](#Eduroam)
-    *   [4.3 Bonding](#Bonding)
-        *   [4.3.1 Load balancing](#Load_balancing)
-        *   [4.3.2 Wired to wireless failover](#Wired_to_wireless_failover)
-    *   [4.4 Using any interface](#Using_any_interface)
-    *   [4.5 Using hooks](#Using_hooks)
-        *   [4.5.1 Examples](#Examples)
-            *   [4.5.1.1 Execute commands on established connection](#Execute_commands_on_established_connection)
-            *   [4.5.1.2 Activate network-online.target](#Activate_network-online.target)
-            *   [4.5.1.3 Set default DHCP client](#Set_default_DHCP_client)
-    *   [4.6 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
+    *   [4.1 Obfuscate wireless passphrase](#Obfuscate_wireless_passphrase)
+    *   [4.2 Using an Experimental GUI](#Using_an_Experimental_GUI)
+    *   [4.3 Eduroam](#Eduroam)
+    *   [4.4 Bonding](#Bonding)
+        *   [4.4.1 Load balancing](#Load_balancing)
+        *   [4.4.2 Wired to wireless failover](#Wired_to_wireless_failover)
+    *   [4.5 Using any interface](#Using_any_interface)
+    *   [4.6 Using hooks](#Using_hooks)
+        *   [4.6.1 Examples](#Examples)
+            *   [4.6.1.1 Execute commands on established connection](#Execute_commands_on_established_connection)
+            *   [4.6.1.2 Activate network-online.target](#Activate_network-online.target)
+            *   [4.6.1.3 Set default DHCP client](#Set_default_DHCP_client)
+    *   [4.7 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
@@ -58,9 +62,9 @@ Optional dependencies are shown in the table below.
 
 It is advisable to read the following man pages before using netctl:
 
-*   [netctl](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.1.txt)
-*   [netctl.profile](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt)
-*   [netctl.special](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.special.7.txt)
+*   [netctl(1)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.1.txt)
+*   [netctl.profile(5)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.profile.5.txt)
+*   [netctl.special(7)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.special.7.txt)
 
 ## Configuration
 
@@ -68,19 +72,16 @@ It is advisable to read the following man pages before using netctl:
 
 ### Profile configuration
 
-The *netctl* profile files are stored in `/etc/netctl/` and example configuration files are available in `/etc/netctl/examples/`. Common configurations include:
+The *netctl* profile files are stored in `/etc/netctl/` and example configuration files are available in `/etc/netctl/examples/`.
 
-*   ethernet-dhcp
-*   ethernet-static
-*   wireless-wpa
-*   wireless-wpa-static
-
-To use an example profile, simply copy it from `/etc/netctl/examples/` to `/etc/netctl/` and configure it to your needs; see basic [#Example profiles](#Example_profiles) below. The first parameter you need to create a profile is the network `Interface`, see [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration") for details.
+To use an example profile, simply [copy](/index.php/Copy "Copy") it from `/etc/netctl/examples/` to `/etc/netctl/` and configure it to your needs; see basic [#Example profiles](#Example_profiles) below. The first parameter you need to create a profile is the network `Interface`, see [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration") for details.
 
 **Tip:**
 
 *   For wireless settings, you can use `wifi-menu -o` as root to generate the profile file in `/etc/netctl/`.
 *   To enable a static IP profile on wired interface no matter if the cable is connected or not, use `SkipNoCarrier=yes` in your profile.
+
+### Starting a profile
 
 Once you have created your profile, attempt to establish a connection (use only the profile name, not the full path):
 
@@ -91,22 +92,11 @@ Once you have created your profile, attempt to establish a connection (use only 
 
 If the above command results in a failure, then use `journalctl -xn` and `netctl status *profile*` to obtain a more in depth explanation of the failure.
 
-### Automatic operation
+### Enabling a profile
 
-If you use only one profile (per interface) or want to switch profiles manually, the [Basic method](#Basic_method) will do. Most common examples are servers, workstations, routers etc.
+#### One profile
 
-If you need to switch multiple profiles frequently, use [Automatic switching of profiles](#Automatic_switching_of_profiles). Most common examples are laptops.
-
-#### Basic method
-
-With this method, you can statically start only one profile per interface. First manually check that the profile can be started successfully with:
-
-```
-# netctl start *profile* 
-
-```
-
-then it can be enabled using:
+A profile can be enabled to start at boot by using:
 
 ```
 # netctl enable *profile*
@@ -122,28 +112,36 @@ This will create and enable a [systemd](/index.php/Systemd "Systemd") service th
 
 After enabling a profile, it will be started at next boot. Obviously this can only be successful, if the network cable for a wired connection is plugged in, or the wireless access point used in a profile is in range respectively.
 
+If you need to switch multiple profiles frequently, use [#Automatic switching of profiles](#Automatic_switching_of_profiles) instead of enabling a profile.
+
 #### Automatic switching of profiles
 
-*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profile for wired and wireless connections:
+*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profile for wired and wireless connections.
 
-*   For wired interfaces, install package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd): After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in/unplugged.
-    *   The `netctl-ifplugd@*interface*.service` will prefer profiles that use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP").
-    *   To automatically start a static IP profile the option `ExcludeAuto=no` needs to be set in it.
-    *   To prioritize a profile with a static IP over DHCP profiles, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`.
+##### Wired
 
-*   For wireless interfaces, install package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond): After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
-    *   Profiles must use `Security=wpa-configsection` or `Security=wpa` to work with *netctl-auto* rather than `Security=wpa-config`.
-    *   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
-    *   You can use `priority=` in the *WPAConfigSection* (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available.
+[Install](/index.php/Install "Install") package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd). After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in/unplugged.
+
+*   The `netctl-ifplugd@*interface*.service` will prefer profiles that use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP").
+*   To automatically start a static IP profile the option `ExcludeAuto=no` needs to be set in it.
+*   To prioritize a profile with a static IP over DHCP profiles, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`.
+
+##### Wireless
+
+[Install](/index.php/Install "Install") the package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond). After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
+
+*   Profiles must use `Security=wpa-configsection` or `Security=wpa` to work with *netctl-auto* rather than `Security=wpa-config`.
+*   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
+*   You can use `priority=` in the *WPAConfigSection* (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available.
 
 Note that *interface* is not literal, but to be substituted by the name of your device's interface, e.g. `netctl-auto@wlp4s0.service`. See `netctl.profile(5)` for details.
 
-**Warning:**
+**Note:**
 
 *   If any of the profiles contain errors, such as an empty or misquoted `Key=` variable, the unit will fail to load with the message `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`, even when that profile is not being used.
-*   This method conflicts with the [Basic method](#Basic_method). If you have previously enabled a profile through *netctl*, run `netctl disable *profile*` to prevent the profile from starting twice at boot.
+*   If you have previously enabled [#One profile](#One_profile) through *netctl*, run `netctl disable *profile*` to prevent the profile from starting twice at boot.
 
-Since netctl 1.3 it is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a list of available actions run:
+It is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a list of available actions run:
 
 ```
  # netctl-auto --help
@@ -187,57 +185,6 @@ Take care to include the subnet notation of `/24`. It equates to a netmask of `2
 
 The following applies for the standard wireless connections using a pre-shared key (WPA-PSK). See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise") for example profiles with other authentication methods.
 
-The standard *netctl* tool to connect to a wireless network (WPA-PSK, WEP) interactively is *wifi-menu*; used with the `-o` option:
-
-```
-wifi-menu -o 
-
-```
-
-it generates the configuration file in `/etc/netctl/` for the network to use for [#Automatic operation](#Automatic_operation) at the same time. If the system has different [wireless interfaces](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration"), pass one accordingly:
-
-```
-wifi-menu -o *interface*
-
-```
-
-Alternatively, the profile may also be configured manually, as follows:
-
-Copy the example file `wireless-wpa` from `/etc/netctl/examples` to `/etc/netctl` (name of your choice):
-
-```
-# cp /etc/netctl/examples/wireless-wpa /etc/netctl/.
-
-```
-
-Edit the profile as needed (modifying `Interface`, `ESSID` and `Key`) and it is done.
-
-At this step you may want to re-confirm the new profile you created is `chmod 600` and confirm it works by starting it:
-
-```
-netctl start wireless-wpa
-
-```
-
-before configuring any [#Automatic operation](#Automatic_operation).
-
-Optionally you can also follow the following step to obfuscate the wireless passphrase (*wifi-menu* does it automatically):
-
-Users **not** wishing to have the passphrase to their wireless network stored in *plain text* have the option of storing the corresponding 256-bit pre-shared key instead, which is calculated from the passphrase and the SSID using standard algorithms.
-
-Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant"):
-
- `$ wpa_passphrase *your_essid*` 
-```
-network={
-  ssid="*your_essid*"
-  #psk="*passphrase*"
-  psk=64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
-}
-```
-
-The *pre-shared key* (psk) now needs to replace the plain text passphrase of the `Key` variable in the profile. Once completed your network profile `wireless-wpa` containing a 256-bit PSK should resemble:
-
  `/etc/netctl/wireless-wpa` 
 ```
 Description='A simple WPA encrypted wireless connection using 256-bit PSK'
@@ -256,6 +203,25 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 *   Although "encrypted", the key that you put in the profile configuration is enough to connect to a WPA-PSK network. Therefore this process is only useful for hiding the human-readable version of the passphrase. This will not prevent anyone with read access to this file from connecting to the network.
 
 ## Tips and tricks
+
+### Obfuscate wireless passphrase
+
+You can also follow the following step to obfuscate the wireless passphrase (*wifi-menu* does it automatically):
+
+Users **not** wishing to have the passphrase to their wireless network stored in *plain text* have the option of storing the corresponding 256-bit pre-shared key instead, which is calculated from the passphrase and the SSID using standard algorithms.
+
+Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant"):
+
+ `$ wpa_passphrase *your_essid*` 
+```
+network={
+  ssid="*your_essid*"
+  #psk="*passphrase*"
+  psk=64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
+}
+```
+
+The *pre-shared key* (psk) now needs to replace the plain text passphrase of the `Key` variable in the profile.
 
 ### Using an Experimental GUI
 

@@ -541,9 +541,7 @@ See the `pgp_*` and `crypt_*` options in [muttrc(5)](http://man7.org/linux/man-p
 
 #### E-mail character encoding
 
-You may be concerned with sending e-mail in a decent character set (charset for short) like UTF-8\. Nowadays UTF-8 is highly recommended to almost everyone.
-
-When using Mutt there are two levels where the charset must be specified:
+When using Mutt there are two levels where the character sets that must be specified:
 
 *   The text editor used to write the e-mail must save it in the desired encoding.
 *   Mutt will then check the e-mail and determine which encoding is the more appropriate according to the priority you specified in the `send_charset` variable. Default: "us-ascii:iso-8859-1:utf-8".

@@ -1,4 +1,4 @@
-[Ktorrent](http://ktorrent.org/) is a the BitTorrent client for KDE.
+[Ktorrent](https://www.kde.org/applications/internet/ktorrent/) is a the BitTorrent client for KDE.
 
 ## Installation
 

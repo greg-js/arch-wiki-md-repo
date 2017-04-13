@@ -16,11 +16,8 @@ This document describes how to set up PostgreSQL. It also describes how to confi
 *   [5 Administration tools](#Administration_tools)
 *   [6 Setup HHVM to work with PostgreSQL](#Setup_HHVM_to_work_with_PostgreSQL)
 *   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
-    *   [7.1 Quick guide](#Quick_guide)
-        *   [7.1.1 Troubleshooting](#Troubleshooting)
-    *   [7.2 Detailed instructions](#Detailed_instructions)
-        *   [7.2.1 Manual dump and reload](#Manual_dump_and_reload)
-*   [8 Troubleshooting](#Troubleshooting_2)
+    *   [7.1 Manual dump and reload](#Manual_dump_and_reload)
+*   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
     *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
     *   [8.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
@@ -386,174 +383,6 @@ Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5, 9.6`) requires so
 
 **Tip:** If you already migrated from 9.2 to 9.3 and you want to migrate from 9.3 to 9.4, change versions before executing commands. If `/var/lib/postgres/data-9.2` already exists and you just copy-paste all commands, `pg_upgrade` will complain about the wrong version of the database, because your version 9.3 database will be stored in `/var/lib/postgres/data-9.2/data/`.
 
-### Quick guide
-
-If you had custom settings in configuration files like `pg_hba.conf` and `postgresql.conf`, merge them into the new ones. If you have set options such as `data_directory`, `hba_file` or `ident_file` in your `postgresql.conf`, please temporally unset them before the migration.
-
-**Warning:** This quick script is critical. Please make sure you have dumped your complete database before embarking in such upgrade.
-
-**First step: dump your database and stop PostgreSQL**
-
-```
-# su -l postgres
-[postgres]$ cd /var/lib/postgres
-[postgres]$ mkdir dump
-[postgres]$ pg_dumpall | gzip > dump/pgdumpall.gz
-
-```
-
-[Stop](/index.php/Stop "Stop") `postgresql.service`.
-
-**Second step: prepare the upgrade script**
-
- `upgrade_pg.sh` 
-```
-# Usage: sh ./upgrade_pg.sh <x.y version to update from>
-
-FROM_VERSION="$1"
-
-su -l postgres -c "mv /var/lib/postgres/data /var/lib/postgres/data-${FROM_VERSION}"
-su -l postgres -c 'mkdir /var/lib/postgres/data'
-su -l postgres -c 'chmod 700 /var/lib/postgres/data'
-su -l postgres -c "initdb --locale $LANG -E UTF8 -D /var/lib/postgres/data"
-su -l postgres -c "pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data"
-
-```
-
-**Third step: update the packages and install postgresql-old-upgrade**
-
-```
-# pacman -Syu postgresql-old-upgrade postgresql postgresql-libs
-
-```
-
-**Fourth step: run the upgrade script**
-
-The first time, it is advisable to run one by one the commands of this script.
-
-**Fith step: start the database**
-
-[Start](/index.php/Start "Start") `postgresql.service`
-
-#### Troubleshooting
-
-If the `pg_upgrade` step fails with the following messages,
-
-	cannot write to log file pg_upgrade_internal.log
-
-	Failure, exiting
-
-	Make sure you are in a directory that the postgres user has enough rights to write the log file to (`/tmp` for example), or use `su -l postgres` instead of `sudo -u postgres`.
-
-	If you are in a directory that postgres user has enough rights to write the log file to however you still get this error then make sure `/var/lib/postgres` is owned by postgres
-
-	LC_COLLATE error that says that old and new values are different
-
-	Figure out what the old locale was, `C` or `en_US.UTF-8` for example, and force it when calling `initdb`.
-
-	 `sudo -u postgres LC_ALL=C initdb -D /var/lib/postgres/data` 
-
-	There seems to be a postmaster servicing the old cluster.
-
-	Please shutdown that postmaster and try again.
-
-	Make sure postgres is not running. If you still get the error, then chances are there is an old PID file you need to clear out.
-
-	Find the old pid in old pg data,
-
-```
-  $ sudo -u postgres ls -l /var/lib/postgres/data-9.X
-  total 88
-  -rw------- 1 postgres postgres     4 Mar 25  2012 PG_VERSION
-  drwx------ 8 postgres postgres  4096 Jul 17 00:36 base
-  drwx------ 2 postgres postgres  4096 Jul 17 00:38 global
-  drwx------ 2 postgres postgres  4096 Mar 25  2012 pg_clog
-  -rw------- 1 postgres postgres  4476 Mar 25  2012 pg_hba.conf
-  -rw------- 1 postgres postgres  1636 Mar 25  2012 pg_ident.conf
-  drwx------ 4 postgres postgres  4096 Mar 25  2012 pg_multixact
-  drwx------ 2 postgres postgres  4096 Jul 17 00:05 pg_notify
-  drwx------ 2 postgres postgres  4096 Mar 25  2012 pg_serial
-  drwx------ 2 postgres postgres  4096 Jul 17 00:53 pg_stat_tmp
-  drwx------ 2 postgres postgres  4096 Mar 25  2012 pg_subtrans
-  drwx------ 2 postgres postgres  4096 Mar 25  2012 pg_tblspc
-  drwx------ 2 postgres postgres  4096 Mar 25  2012 pg_twophase
-  drwx------ 3 postgres postgres  4096 Mar 25  2012 pg_xlog
-  -rw------- 1 postgres postgres 19169 Mar 25  2012 postgresql.conf
-  -rw------- 1 postgres postgres    48 Jul 17 00:05 postmaster.opts
-  -rw------- 1 postgres postgres    80 Jul 17 00:05 postmaster.pid   # <-- This is the problem
-
-```
-
-	Move the old pid to temporary directory,
-
-```
-$ sudo -u postgres mv /var/lib/postgres/data-9.X/postmaster.pid /tmp
-
-```
-
-	ERROR: could not access file "$libdir/postgis-2.0": No such file or directory
-
-	Retrieve `postgis-2.0.so` from [postgis](https://www.archlinux.org/packages/?name=postgis) for version postgresql 9.X () and copy it to `/opt/pgsql-9.X/lib` and make sure the privileges are readable by postgres user.
-
-	Your installation references loadable libraries that are missing from the new installation.
-
-	could not load library "$libdir/postgis-2.2":
-
-	ERROR: incompatible library "/usr/lib/postgresql/postgis-2.2.so": version mismatch
-
-	DETAIL: Server is version 9.6, library is version 9.5.
-
-	You can manually compile the previous version of PostGIS against the new version of PostgreSQL, use it for the upgrade process, then install the new version back.
-
-	In this example we upgrade from the old **PostgreSQL 9.5 + PostGIS 2.2** to the new **PostgreSQL 9.6 + PostGIS 2.3**:
-
-```
-# Uninstall PostGIS 2.3.
-sudo pacman -R postgis
-
-# Download and compile PostGIS 2.2 against PostgreSQL 5.6\. The latest sources can be found at http://postgis.net/source/
-wget http://download.osgeo.org/postgis/source/postgis-2.2.3.tar.gz
-tar -xvf postgis-2.2.3.tar.gz
-cd postgis-2.2.3
-./configure
-make 
-
-# Copy just the files we need to upgrade the database.
-sudo cp postgis/postgis-2.2.so /usr/lib/postgresql
-sudo cp raster/rt_pg/rtpostgis-2.2.so /usr/lib/postgresql                                                
-sudo cp topology/postgis_topology-2.2.so /usr/lib/postgresql
-
-# Run pg_upgrade as described above. It should now finish successfully.
-[...]
-
-# Remove PostGIS 2.2.
-sudo rm /usr/lib/postgresql/postgis-2.2.so
-sudo rm /usr/lib/postgresql/rtpostgis-2.2.so
-sudo rm /usr/lib/postgresql/postgis_topology-2.2.so
-
-# Install PostGIS 2.3 back again.
-sudo pacman -S postgis
-
-```
-
-	Your installation references loadable libraries that are missing from the new installation.
-
-	You can add these libraries to the new installation, or remove the functions using them from the old installation.
-
-	A list of problem libraries is in the file
-
-	loadable_libraries.txt
-
-	Could not load library "$libdir/pg_upgrade_support"
-
-	ERROR: could not access file "$libdir/pg_upgrade_support": No such file or directory
-
-	It means you have leftovers from old failed pg_upgrade attempts that you never completed. So you'll need to start postgres with old data and
-
-	in each database execute `DROP SCHEMA IF EXISTS binary_upgrade CASCADE;`
-
-### Detailed instructions
-
 **Note:** Official PostgreSQL [upgrade documentation](http://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
 
 **Warning:** The following instructions could cause data loss. **Use at your own risk**.
@@ -587,7 +416,7 @@ The upgrade invocation will likely look something like the following. **Do not r
 
 ```
 
-#### Manual dump and reload
+### Manual dump and reload
 
 You could also do something like this (after the upgrade and install of [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade)).
 

@@ -1,6 +1,6 @@
-KeePass is an offline encrypted password database format. It is an alternative to popular online password managers and is supported on all major distributions and other OS platforms.
+KeePass is an encrypted password database format. It is an alternative to online password managers and is supported on all major platforms.
 
-Currently, there are two variants of the database formats: *KeePass 1.x (Classic)* and *KeePass 2.x*
+There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
 ## Contents
 
@@ -15,7 +15,7 @@ Currently, there are two variants of the database formats: *KeePass 1.x (Classic
 
 ## Installation
 
-There are three major implementations of KeePass, which are included in official repositories:
+There are three major implementations of KeePass, which are all included in official repositories:
 
 *   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — An easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices. It also has optional autotype and clipboard support respectively when `xdotool` and `xsel` are installed. Supports importing from [many formats](http://keepass.info/help/base/importexport.html). Has [many plugins](http://keepass.info/plugins.html).
 

@@ -56,8 +56,14 @@ SNMP v3 adds security and encrypted authentication/communication. It uses a diff
 ```
 mkdir /etc/snmp/
 echo rouser *read_only_user* >> /etc/snmp/snmpd.conf
+# or use the wizard $ snmpconf -g basic_setup
+
+```
+
+```
 mkdir -p /var/net-snmp/
 echo createUser *read_only_user* SHA *password1* AES *password2* > /var/net-snmp/snmpd.conf
+# or use the tool # net-snmp-create-v3-user -ro -a SHA -x AES
 
 ```
 

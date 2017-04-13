@@ -389,6 +389,30 @@ $ sbverify --list */path/to/binary*
 
 *   You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
 
+*   You can also create your own pacman hook to sign kernel on install and updates.
+
+ `/usr/local/bin/secureboot-sign-linux` 
+```
+#!/bin/bash
+
+sbsign --key /var/local/lib/secureboot/MOK.key --cert /var/local/lib/secureboot/MOK.crt --output /boot/vmlinuz-linux.signed /boot/vmlinuz-linux
+mv /boot/vmlinuz-linux.signed /boot/vmlinuz-linux
+```
+ `/etc/pacman.d/hooks/99-secureboot.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux
+
+[Action]
+Description = Signing Kernel for SecureBoot
+When = PostTransaction
+Exec = /usr/local/bin/secureboot-sign-linux
+Depends = sbsigntools
+```
+
 ### Put firmware in "Setup Mode"
 
 Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware in Setup Mode, enter firmware setup utility and find an option to delete or clear certificates.

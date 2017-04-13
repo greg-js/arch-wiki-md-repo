@@ -57,10 +57,13 @@ Add the following to `/etc/lighttpd/lighttpd.conf`:
 
 ```
 server.modules += ( "mod_alias", "mod_cgi", "mod_redirect", "mod_setenv" )
-setenv.add-environment = ( "GITWEB_CONFIG" => "/etc/gitweb.conf" )
 url.redirect += ( "^/gitweb$" => "/gitweb/" )
 alias.url += ( "/gitweb/" => "/usr/share/gitweb/" )
 $HTTP["url"] =~ "^/gitweb/" {
+       setenv.add-environment = (
+               "GITWEB_CONFIG" => "/etc/gitweb.conf",
+               "PATH" => env.PATH
+       )
        cgi.assign = ( ".cgi" => "" )
        server.indexfiles = ( "gitweb.cgi" )
 }

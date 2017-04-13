@@ -1,4 +1,4 @@
-[GIMP](http://www.gimp.org/) is one of many in the [List of applications/Multimedia#Raster editors](/index.php/List_of_applications/Multimedia#Raster_editors "List of applications/Multimedia").
+[GIMP](https://www.gimp.org/) is one of many in the [List of applications/Multimedia#Raster editors](/index.php/List_of_applications/Multimedia#Raster_editors "List of applications/Multimedia").
 
 ## Installation
 

@@ -11,7 +11,8 @@
     *   [2.3 Set default username](#Set_default_username)
     *   [2.4 Enable Autologin](#Enable_Autologin)
     *   [2.5 Theming](#Theming)
-        *   [2.5.1 Dual screen setup](#Dual_screen_setup)
+        *   [2.5.1 Custom background](#Custom_background)
+        *   [2.5.2 Dual screen setup](#Dual_screen_setup)
 *   [3 Other options](#Other_options)
     *   [3.1 Changing the cursor](#Changing_the_cursor)
     *   [3.2 Match SLiM and Desktop Wallpaper](#Match_SLiM_and_Desktop_Wallpaper)
@@ -128,20 +129,29 @@ current_theme       archlinux-simplyblack
 
 ```
 
-To preview a theme run while an instance of the Xorg server is running by:
+You can preview a theme while Xorg is running with:
 
 ```
-$ slim -p /usr/share/slim/themes/<theme name>
+$ slim -p /usr/share/slim/themes/*<theme name>*
 
 ```
 
 To close, type "exit" in the Login line and press Enter.
 
-Additional theme packages can be found in the [AUR](/index.php/AUR "AUR").
+Additional theme packages can be found in the [AUR](/index.php/AUR "AUR"). See the [theme documentation](https://github.com/iwamatsu/slim/blob/master/THEMES) for how to customize your theme or make your own. SLiM does not support alternative theme directories, so it is recommended to [create a package](/index.php/Create_a_package "Create a package") for your custom theme so that [pacman](/index.php/Pacman "Pacman") is aware of it.
+
+#### Custom background
+
+SLiM is hard-coded to load `background.png` or `background.jpg` (in that order) from your theme directory. Simply overwrite the appropriate file
+
+```
+# cp /path/to/new_background.jpg /usr/share/slim/themes/*<theme_name>*/background.jpg
+
+```
 
 #### Dual screen setup
 
-You can customize the slim theme in `/usr/share/slim/themes/<your-theme>/slim.theme` to turn these percents values. The box itself is 450 pixels by 250 pixels:
+You can customize the slim theme in `/usr/share/slim/themes/*<your-theme>*/slim.theme` to turn these percents values. The box itself is 450 pixels by 250 pixels:
 
 ```
 input_panel_x           50%
@@ -165,7 +175,7 @@ input_panel_y           400
 
 ```
 
-If your theme has a background picture you should use the background_style setting ('stretch', 'tile', 'center' or 'color') to get it correctly displayed. Have a look at the [very simple and clear official documentation about slim themes](https://web.archive.org/web/20140414001555/http://slim.berlios.de/themes_howto.php) for further details.
+If your theme has a background picture you should use the background_style setting (stretch, tile, center or color) to get it correctly displayed.
 
 ## Other options
 

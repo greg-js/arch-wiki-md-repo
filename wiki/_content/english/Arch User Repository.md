@@ -74,14 +74,7 @@ Installing packages from the AUR is a relatively simple process. Essentially:
 
 ### Prerequisites
 
-First ensure that the necessary tools are installed:
-
-```
-# pacman -S --needed base-devel
-
-```
-
-The package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient; it includes [make](https://www.archlinux.org/packages/?name=make) and other tools needed for compiling from source.
+First ensure that the necessary tools are installed by [installing](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group which includes [make](https://www.archlinux.org/packages/?name=make) and other tools needed for compiling from source.
 
 **Note:** Packages in the AUR assume that the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is installed, i.e. they do not list the group's members as dependencies explicitly.
 

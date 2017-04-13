@@ -1,5 +1,7 @@
 This article provides an overview of the Arch Build System (ABS) along with a walkthrough for beginners. It is not intended to be a complete reference guide.
 
+**Warning:** ABS [is broken and may be deprecated](https://lists.archlinux.org/pipermail/arch-dev-public/2017-March/028752.html). Use [Getting PKGBUILDs from SVN](/index.php/Getting_PKGBUILDs_from_SVN "Getting PKGBUILDs from SVN") and [asp](https://github.com/falconindy/asp) as alternatives.
+
 ## Contents
 
 *   [1 What is the Arch Build System?](#What_is_the_Arch_Build_System.3F)

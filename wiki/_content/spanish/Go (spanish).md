@@ -3,16 +3,16 @@
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Prueba tu instalación](#Prueba_tu_instalaci.C3.B3n)
+    *   [1.1 Probar instalación](#Probar_instalaci.C3.B3n)
     *   [1.2 $GOPATH](#.24GOPATH)
-    *   [1.3 Habilita la compilación cruzada para otras plataformas](#Habilita_la_compilaci.C3.B3n_cruzada_para_otras_plataformas)
+    *   [1.3 Habilitar la compilación cruzada para otras plataformas](#Habilitar_la_compilaci.C3.B3n_cruzada_para_otras_plataformas)
 *   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
     *   [2.1 Complemento para Jetbrains](#Complemento_para_Jetbrains)
 *   [3 Ver también](#Ver_tambi.C3.A9n)
 
 ## Instalación
 
-Hay dos compiladores de Go en la actualidad, y se pueden instalar desde los repositorios oficiales:
+Actualmente, hay dos compiladores para Go, y se pueden instalar desde los repositorios oficiales:
 
 *   **go**: Interfaz con el conjunto de herramientas de compilación que pueden instalarse con el paquete [go](https://www.archlinux.org/packages/?name=go)
     *   Compilación rápida
@@ -22,9 +22,9 @@ Hay dos compiladores de Go en la actualidad, y se pueden instalar desde los repo
     *   Goroutines se convierte en pleno flujo
     *   Tamaño pequeño del binario (enlazamiento dinámico)
 
-### Prueba tu instalación
+### Probar instalación
 
-Verifica que Go está instalado correctamente escribiendo un simple programa, como el siguiente:
+Para verificar si Go está instalado correctamente, se puede escribir un simple programa a modo de prueba, como el siguiente:
 
  `hello.go` 
 ```
@@ -38,7 +38,7 @@ func main() {
 
 ```
 
-Luego, ejecútalo con `go`:
+Luego, ejecutar con `go`:
 
  `$ go run hello.go` 
 ```
@@ -62,40 +62,40 @@ $ gccgo hello.go -o hello
 
 ### $GOPATH
 
-Las dependencias de Go, cuando se usan por ej. en las declaraciones `import`, son buscadas en la variable `$GOPATH`, y luego - en `$GOROOT` (en el directorio de instalación, `/usr/lib/go` por defecto). Si deseas usar dependencias externas, no únicamente las que están en `$GOROOT`, debes especificar tu área de trabajo en `~/.bash_profile` (o su equivalente):
+Las dependencias de Go, cuando se usan, por ej. en las declaraciones `import`, se buscan en la variable `$GOPATH`, y luego - en `$GOROOT` (en el directorio de instalación, `/usr/lib/go` por defecto). Si se desea usar dependencias externas, no únicamente las que están en `$GOROOT`, se debe especificar el área de trabajo en `~/.bash_profile` (o su equivalente):
 
 ```
 export GOPATH=~/go
 
 ```
 
-**Tip:** Puedes ver todas las variable de go ejecutando `go env`
+**Tip:** Se pueden ver todas las variable de Go ejecutando `go env`
 
-Crea el espacio de trabajo:
+Crear el espacio de trabajo:
 
 ```
 $ mkdir -p ~/go/{bin,src}
 
 ```
 
-`src` el directorio se usa para guardar tus archivos de código fuente, y `bin` para los ejecutables.
+`src` el directorio se usa para guardar los archivos de código fuente, y `bin` para los ejecutarlos.
 
-También puedes agregar la ruta a el directorio `bin` en `$PATH` para ejecutar programas instalados (escritos en el lenguaje de programación Go) donde sea (como, por ejemplo, `ls`):
+También se puede agregar la ruta a el directorio `bin` en `$PATH` para ejecutar programas instalados (escritos en el lenguaje de programación Go) donde sea (como, por ejemplo, `ls`):
 
 ```
 export PATH="$PATH:$GOPATH/bin"
 
 ```
 
-Notese que también añadimos el subdirectorio `bin` a la variable `$PATH` así podremos ejecutar cualquier programa instalado requerido.
+Notese que también se añadió el subdirectorio `bin` a la variable `$PATH` así se podrá ejecutar cualquier programa instalado requerido.
 
-Ejecuta `go help gopath` para más información.
+Ejecute `go help gopath` para más información.
 
-### Habilita la compilación cruzada para otras plataformas
+### Habilitar la compilación cruzada para otras plataformas
 
 El paquete oficial sólo admite arquitecturas de Linux amd64, 386 y arm. Para admitir la compilación cruzada de Darwin, FreeBSD y MS Windows, siga lo siguiente.
 
-No se puede construir `/usr/lib/go/src` por sí sólo, por ej. si configuras `$GOROOT_BOOTSTRAP` a `/usr/lib/go` obtendrás una advertencia como esta:
+No se puede construir `/usr/lib/go/src` por sí sólo, por ej. si se configura `$GOROOT_BOOTSTRAP` a `/usr/lib/go` se obtendrá una advertencia como esta:
 
 ```
  $ cd /usr/lib/go/src
@@ -107,7 +107,7 @@ No se puede construir `/usr/lib/go/src` por sí sólo, por ej. si configuras `$G
 
 ```
 
-Para evitar eso, consigue una copia de Go desde [https://golang.org/](https://golang.org/).
+Para evitar eso, consiga una copia de Go desde [https://golang.org/](https://golang.org/).
 
 **Nota:** Los comandos siguientes asumirán que extrajo la descarga de Go a `~/downloads/go`.
 
@@ -128,7 +128,7 @@ Ahora puede construir su sistema. Utilice el comando de arranque.
 
 **Nota:** Estos comandos tendrán que ejecutarse después de cada actualización del paquete Go.
 
-Para más información, ve [FS#30287](https://bugs.archlinux.org/task/30287).
+Para más información, ver [FS#30287](https://bugs.archlinux.org/task/30287).
 
 ## Solución de problemas
 
