@@ -13,6 +13,8 @@ This article does not attempt to show how to set up a shared connection between 
     *   [4.1 PPPoE configuration](#PPPoE_configuration)
 *   [5 DNS and DHCP](#DNS_and_DHCP)
 *   [6 Connection sharing](#Connection_sharing)
+    *   [6.1 Connection sharing with shorewall](#Connection_sharing_with_shorewall)
+    *   [6.2 Manual](#Manual)
 *   [7 IPv6 tips](#IPv6_tips)
     *   [7.1 Unique Local Addresses](#Unique_Local_Addresses)
     *   [7.2 Global Unicast Addresses](#Global_Unicast_Addresses)
@@ -128,7 +130,29 @@ Now [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `
 
 Time to tie the two network interfaces to each other.
 
-This can be done with Shorewall. See [Shorewall](/index.php/Shorewall "Shorewall") for detailed configuration.
+### Connection sharing with shorewall
+
+See [Shorewall](/index.php/Shorewall "Shorewall") for a detailed configuration guide.
+
+### Manual
+
+First of all we need to allow packets to hop from one network interface to the other. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
+
+In order for packets to be properly send and received it is necessary to translate the IP addresses between the outward facing network and the subnet used locally. The technique is called *masquerading* and is necessary for both interfaces. For this task we are going to use [iptables](/index.php/Iptables "Iptables"):
+
+ `/etc/iptables/iptables.rules` 
+```
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+-A POSTROUTING -o intern0 -j MASQUERADE
+-A POSTROUTING -o extern0 -j MASQUERADE
+COMMIT
+```
+
+The router should now be fully functioning and route your traffic. However since it is facing the public internet it makes sense to additionally guard it using a [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
 ## IPv6 tips
 

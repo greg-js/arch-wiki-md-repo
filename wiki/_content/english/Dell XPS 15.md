@@ -304,45 +304,34 @@ If your model comes with an nVidia card which you don't use then you can try to 
 
 ```
 modprobe acpi_call
-test_off.sh
+./usr/share/acpi_call/examples/turn_off_gpu.sh
 
 ```
 
-If you have a positive value then do:
+One of the many results will be "works!". Use the value that works in the following call:
 
 ```
 echo '\_SB.<YOUR>.<POSITIVE>.<VALUE>._OFF' > /proc/acpi/call
 
 ```
 
-Else your can test the other script m11xr2.sh (it worked for me):
+If none worked, you can try one of the other files in the `/usr/share/acpi_call/examples` directory.
 
-```
-/usr/share/acpi_call/m11xr2.sh off
-
-```
-
-For the XPS 15 9550 the correct command seems to be:
+For example, the following works on the XPS 15 9550:
 
 ```
 echo '\_SB.PCI0.PEG0.PEGP._OFF' > /proc/acpi/call
 
 ```
 
-You can use this command *before* and *after* to see how the battery consumption change (you need to disconnect sector first):
+You can use this command *before* and *after* to see how the battery consumption change (you need to disconnect sector first and the lower the better):
 
 ```
 cat /sys/class/power_supply/BAT0/current_now
 
 ```
 
-To make this permanent, just add your working command in `/etc/rc.local`. Example:
-
-```
-modprobe acpi_call
-/usr/share/acpi_call/m11xr2.sh off
-
-```
+To make this permanent, just create a [systemd unit file](https://wiki.archlinux.org/index.php/Systemd#Writing_unit_files) with your working command.
 
 #### Intel with Nvidia
 

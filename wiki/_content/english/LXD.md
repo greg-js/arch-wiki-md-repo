@@ -47,7 +47,7 @@ $ echo "root:1000000:65536" | sudo tee -a /etc/subuid /etc/subgid
 By default the LXD daemon allows users in the `lxd` group access, so add your user to the group:
 
 ```
-$ usermod -a -G lxd <user>
+# usermod -a -G lxd <user>
 
 ```
 

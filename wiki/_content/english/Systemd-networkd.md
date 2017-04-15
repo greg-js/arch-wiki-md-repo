@@ -35,7 +35,9 @@
         *   [3.2.6 Notice](#Notice)
     *   [3.3 Static IP network](#Static_IP_network)
 *   [4 Management and desktop integration](#Management_and_desktop_integration)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 resolve not searching the local domain](#resolve_not_searching_the_local_domain)
+*   [6 See also](#See_also)
 
 ## Basic usage
 
@@ -43,28 +45,18 @@ The [systemd](https://www.archlinux.org/packages/?name=systemd) package is part 
 
 ### Required services and setup
 
-To use *systemd-networkd*, [start](/index.php/Start "Start") the following two services and [enable](/index.php/Enable "Enable") them to run on system boot:
+To use *systemd-networkd*, [start/enable](/index.php/Start/enable "Start/enable") both `systemd-networkd.service` and `systemd-resolved.service`.
 
-*   `systemd-networkd.service`
-*   `systemd-resolved.service`
+**Tip:** *systemd-resolved* is required only if you are specifying DNS entries in *.network* files or if you want to obtain DNS addressesfrom networkd's DHCP client. Alternatively you may manually manage `/etc/resolv.conf`
 
-**Note:** *systemd-resolved* is actually required only if you are specifying DNS entries in *.network* files or if you want to obtain DNS addresses from networkd's DHCP client. Alternatively you may manually manage `/etc/resolv.conf`
-
-For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), delete or rename the existing file and create the following symbolic link (when using systemd-resolved):
+For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), delete or rename the existing file and create the following symbolic link when using *systemd-resolved*:
 
 ```
 # ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 ```
 
-See `man systemd-resolved` and `man resolved.conf` and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
-
-**Note:** Systemd's `resolve` may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
-
-*   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
-*   Switch to using fully-qualified domain names
-*   Use `/etc/hosts` to resolve hostnames
-*   Fall back to using glibc's `dns` instead of using systemd's `resolve`
+See [systemd-resolved(8)](http://man7.org/linux/man-pages/man8/systemd-resolved.8.html), [resolved.conf(5)](http://man7.org/linux/man-pages/man5/resolved.conf.5.html), and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 ### Configuration examples
 
@@ -545,6 +537,17 @@ When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "W
 [networkd-notify](https://github.com/wavexx/networkd-notify) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
 
 The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to NetworkManager-dispatcher.
+
+## Troubleshooting
+
+### resolve not searching the local domain
+
+Systemd's `resolve` may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
+
+*   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
+*   Switch to using fully-qualified domain names
+*   Use `/etc/hosts` to resolve hostnames
+*   Fall back to using glibc's `dns` instead of using systemd's `resolve`
 
 ## See also
 

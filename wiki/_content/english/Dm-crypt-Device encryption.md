@@ -27,23 +27,25 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
     *   [5.3 Re-encrypting devices](#Re-encrypting_devices)
         *   [5.3.1 Encrypt an unencrypted filesystem](#Encrypt_an_unencrypted_filesystem)
         *   [5.3.2 Re-encrypting an existing LUKS partition](#Re-encrypting_an_existing_LUKS_partition)
-*   [6 Keyfiles](#Keyfiles)
-    *   [6.1 Types of keyfiles](#Types_of_keyfiles)
-        *   [6.1.1 passphrase](#passphrase)
-        *   [6.1.2 randomtext](#randomtext)
-        *   [6.1.3 binary](#binary)
-    *   [6.2 Creating a keyfile with random characters](#Creating_a_keyfile_with_random_characters)
-        *   [6.2.1 Storing the keyfile on a filesystem](#Storing_the_keyfile_on_a_filesystem)
-            *   [6.2.1.1 Securely overwriting stored keyfiles](#Securely_overwriting_stored_keyfiles)
-        *   [6.2.2 Storing the keyfile in tmpfs](#Storing_the_keyfile_in_tmpfs)
-    *   [6.3 Configuring LUKS to make use of the keyfile](#Configuring_LUKS_to_make_use_of_the_keyfile)
-    *   [6.4 Manually unlocking a partition using a keyfile](#Manually_unlocking_a_partition_using_a_keyfile)
-    *   [6.5 Unlocking a secondary partition at boot](#Unlocking_a_secondary_partition_at_boot)
-    *   [6.6 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
-        *   [6.6.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
-            *   [6.6.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
-            *   [6.6.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
-        *   [6.6.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
+*   [6 Resizing encrypted devices](#Resizing_encrypted_devices)
+    *   [6.1 Loopback filesystem](#Loopback_filesystem)
+*   [7 Keyfiles](#Keyfiles)
+    *   [7.1 Types of keyfiles](#Types_of_keyfiles)
+        *   [7.1.1 passphrase](#passphrase)
+        *   [7.1.2 randomtext](#randomtext)
+        *   [7.1.3 binary](#binary)
+    *   [7.2 Creating a keyfile with random characters](#Creating_a_keyfile_with_random_characters)
+        *   [7.2.1 Storing the keyfile on a filesystem](#Storing_the_keyfile_on_a_filesystem)
+            *   [7.2.1.1 Securely overwriting stored keyfiles](#Securely_overwriting_stored_keyfiles)
+        *   [7.2.2 Storing the keyfile in tmpfs](#Storing_the_keyfile_in_tmpfs)
+    *   [7.3 Configuring LUKS to make use of the keyfile](#Configuring_LUKS_to_make_use_of_the_keyfile)
+    *   [7.4 Manually unlocking a partition using a keyfile](#Manually_unlocking_a_partition_using_a_keyfile)
+    *   [7.5 Unlocking a secondary partition at boot](#Unlocking_a_secondary_partition_at_boot)
+    *   [7.6 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
+        *   [7.6.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
+            *   [7.6.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
+            *   [7.6.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
+        *   [7.6.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
 
 ## Preparation
 
@@ -627,6 +629,70 @@ MK bits:       	128
 ```
 
 While it is possible to upgrade the encryption of such a device, it is currently only feasible in two steps. First, re-encrypting with the same encryption options, but using the `--reduce-device-size` option to make further space for the larger LUKS header. Second, re-encypt the whole device again with the desired cipher. For this reason and the fact that a backup should be created in any case, creating a new, fresh encrypted device to restore into is always the faster option.
+
+## Resizing encrypted devices
+
+If a storage device encrypted with dm-crypt is being cloned (with a tool like dd) to another larger device, the underlying dm-crypt device must be resized to use the whole space.
+
+The destination device is /dev/sdX2 in this example, the whole available space adjacent to the partition will be used:
+
+```
+# cryptsetup luksOpen /dev/sdX2 sdX2
+# cryptsetup resize sdX2
+
+```
+
+Then the underlying filesystem must be resized.
+
+### Loopback filesystem
+
+Assuming that an encrypted loopback filesystem is mounted on `/mnt/secret`, for example following [Dm-crypt/Encrypting a non-root file system#Loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system"), first unmount the encrypted container:
+
+```
+# umount /mnt/secret
+# cryptsetup close secret
+# losetup -d /dev/loop0
+
+```
+
+Next, expand the container file with the size of the data you want to add:
+
+**Warning:** Be careful to really use **two** `>`, or you will override your current container.
+
+```
+# dd if=/dev/urandom bs=1M count=1024 | cat - >> /bigsecret
+
+```
+
+Now map the container to the loop device:
+
+```
+# losetup /dev/loop0 /bigsecret
+# cryptsetup --type luks open /dev/loop0 secret
+
+```
+
+After this, resize the encrypted part of the container to the maximum size of the container file:
+
+```
+# cryptsetup resize secret
+
+```
+
+Finally, perform a filesystem check and, if it is ok, resize it (example for ext2/3/4):
+
+```
+# e2fsck -f /dev/mapper/secret
+# resize2fs /dev/mapper/secret
+
+```
+
+You can now mount the container again:
+
+```
+# mount /dev/mapper/secret /mnt/secret
+
+```
 
 ## Keyfiles
 

@@ -13,6 +13,7 @@
     *   [5.2 Connection](#Connection)
         *   [5.2.1 Manual](#Manual)
         *   [5.2.2 At boot (systemd)](#At_boot_.28systemd.29)
+            *   [5.2.2.1 802.1x/radius](#802.1x.2Fradius)
     *   [5.3 wpa_cli action script](#wpa_cli_action_script)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
@@ -257,6 +258,36 @@ To enable wireless at boot, enable an instance of one of the above services on a
 Now choose and [enable](/index.php/Enable "Enable") an instance of a service to obtain an ip address for the particular *interface* as indicated in the [#Overview](#Overview). For example, [enable](/index.php/Enable "Enable") the `dhcpcd@*interface*` systemd unit.
 
 **Tip:** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+
+##### 802.1x/radius
+
+To connect a wired adapter using 802.1x/radius you will need to specify some configurations and enable the necessary service for the adapter. This is useful for headless servers using *networkd*.
+
+Replace `*adapter*` with the wired adapter you wish to connect, and adapt the settings to match your 802.1x/radius requirements.
+
+ `/etc/wpa_supplicant/wpa_supplicant-wired-*adapter*.conf` 
+```
+ctrl_interface=/var/run/wpa_supplicant
+ap_scan=0
+network={
+  key_mgmt=IEEE8021X
+  eap=PEAP
+  identity="*user_name*"
+  password="*user_password*"
+  phase2="autheap=MSCHAPV2"
+}
+```
+
+Since this file is storing a plaintext password, [chown](/index.php/Chown "Chown") it to `root:root` and [chmod](/index.php/Chmod "Chmod") it to `600`.
+
+Before running the `wpa_supplicant-wired@*adapter*.service` service, make sure to set the device down:
+
+```
+# ip link set *adapter* down
+
+```
+
+**Tip:** This setup can be used during system installation as well, though you may want to run using `dhcpcd@*adapter*.service` to solicit an address.
 
 ### wpa_cli action script
 

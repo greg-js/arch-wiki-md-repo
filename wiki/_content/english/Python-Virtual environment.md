@@ -7,7 +7,7 @@
     *   [2.1 Packages](#Packages)
 *   [3 Usage](#Usage)
     *   [3.1 Creation](#Creation)
-        *   [3.1.1 pyvenv](#pyvenv)
+        *   [3.1.1 venv](#venv)
         *   [3.1.2 virtualenv](#virtualenv)
     *   [3.2 Activation](#Activation)
 *   [4 Python versions](#Python_versions)
@@ -22,7 +22,7 @@ A virtual environment is a directory into which some binaries and shell scripts 
 
 ## Installation
 
-[Python](/index.php/Python "Python") 3.3+ comes with a tool called *pyvenv* and an API called *venv* for extending the native implementation. For applications that require an older version of Python, *virtualenv* must be used.
+[Python](/index.php/Python "Python") 3.3+ comes with a module called *venv*. For applications that require an older version of Python, *virtualenv* must be used.
 
 ### Packages
 
@@ -38,18 +38,13 @@ All three tools use a similar workflow.
 
 ### Creation
 
-Use *pyvenv* or *virtualenv* to create the virtual environment within your project directory. Be sure to exclude the venv directory from version control--a copy of `pip freeze` will be enough to rebuild it.
+Use *venv* or *virtualenv* to create the virtual environment within your project directory. Be sure to exclude the venv directory from version control--a copy of `pip freeze` will be enough to rebuild it.
 
-#### pyvenv
+#### venv
 
-This tool is provided by [python](https://www.archlinux.org/packages/?name=python) (3.3+).
+**Note:** This method replaces the *pyvenv* script, which is deprecated since [python](https://www.archlinux.org/packages/?name=python) 3.6.
 
-```
-$ pyvenv venv
-
-```
-
-Since [python](https://www.archlinux.org/packages/?name=python) 3.6 the *pyvenv* script is deprecated, thus the above command should be executed as:
+This tool is provided by [python](https://www.archlinux.org/packages/?name=python) (3.3+):
 
 ```
 $ python -m venv venv
@@ -93,21 +88,21 @@ To exit the virtual environment, run the function provided by `bin/activate`:
 
 ## Python versions
 
-The binary versions depend on which virtual environment tool was used. For instance, the *python* command used in the Python 2 example points to `bin/python2.7`, while the one in the *pyvenv* example points to `bin/python3.5`.
+The binary versions depend on which virtual environment tool was used. For instance, the *python* command used in the Python 2 example points to `bin/python2.7`, while the one in the *venv* example points to `bin/python3.6`.
 
-One major difference between *pyvenv* and *virtualenv* is that the former uses the system's Python binary by default:
+One major difference between *venv* and *virtualenv* is that the former uses the system's Python binary by default:
 
 ```
-$ ls -l pyvenv/bin/python3.5
-lrwxrwxrwx 1 foo foo 7 Jun  3 19:57 pyvenv/bin/python3.5 -> /usr/bin/python3
+$ ls -l venv/bin/python3.6
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:57 venv/bin/python3.6 -> /usr/bin/python3
 
 ```
 
 The *virtualenv* tool uses a separate Python binary in the environment directory:
 
 ```
-$ ls -l venv3/bin/python3.5
-lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 venv3/bin/python3.5 -> python3
+$ ls -l virtualenv/bin/python3.6
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 virtualenv/bin/python3.6 -> python3
 
 ```
 
@@ -183,7 +178,7 @@ After you have done your things, leave the virtual environment:
 
 ## See also
 
-*   [Python venv (pyvenv)](https://docs.python.org/3/library/venv.html)
+*   [Python venv](https://docs.python.org/3/library/venv.html)
 *   [virtualenv Pypi page](https://pypi.python.org/pypi/virtualenv)
 *   [Tutorial for virtualenv](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox)
 *   [virtualenvwrapper page at Doug Hellmann's](http://www.doughellmann.com/docs/virtualenvwrapper/)

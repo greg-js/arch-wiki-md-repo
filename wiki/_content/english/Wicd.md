@@ -35,7 +35,7 @@
 
 ### Base package
 
-[Install](/index.php/Install "Install") [wicd](https://www.archlinux.org/packages/?name=wicd), available in the [official repositories](/index.php/Official_repositories "Official repositories"). It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
+[Install](/index.php/Install "Install") the [wicd](https://www.archlinux.org/packages/?name=wicd) package. It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
 
 ### GTK+ client
 
@@ -69,7 +69,7 @@ Disable any existing network management services, including `netctl`, `netcfg`, 
 
 **Note:** You might need to stop and disable the **network** daemon instead of **netctl**, which is a current replacement for **network** service. If unsure, try disabling both.
 
-Start the **wicd** [systemd](/index.php/Systemd "Systemd") [daemon](/index.php/Daemon "Daemon") and enable it at system start up.
+[Start/enable](/index.php/Start/enable "Start/enable") the `wicd.service` systemd unit.
 
 Add your account to **users** group:
 

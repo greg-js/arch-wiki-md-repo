@@ -3,22 +3,19 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Profile configuration](#Profile_configuration)
-    *   [3.2 Starting a profile](#Starting_a_profile)
-    *   [3.3 Enabling a profile](#Enabling_a_profile)
-        *   [3.3.1 One profile](#One_profile)
-        *   [3.3.2 Automatic switching of profiles](#Automatic_switching_of_profiles)
-            *   [3.3.2.1 Wired](#Wired)
-            *   [3.3.2.2 Wireless](#Wireless)
-    *   [3.4 Example profiles](#Example_profiles)
-        *   [3.4.1 Wired](#Wired_2)
-        *   [3.4.2 Wireless (WPA-PSK)](#Wireless_.28WPA-PSK.29)
+*   [2 Configuration](#Configuration)
+*   [3 Usage](#Usage)
+    *   [3.1 Starting a profile](#Starting_a_profile)
+    *   [3.2 Enabling a profile](#Enabling_a_profile)
+    *   [3.3 Special systemd units](#Special_systemd_units)
+        *   [3.3.1 Wired](#Wired)
+        *   [3.3.2 Wireless](#Wireless)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Obfuscate wireless passphrase](#Obfuscate_wireless_passphrase)
-    *   [4.2 Using an Experimental GUI](#Using_an_Experimental_GUI)
-    *   [4.3 Eduroam](#Eduroam)
+    *   [4.1 Example profiles](#Example_profiles)
+        *   [4.1.1 Wired](#Wired_2)
+        *   [4.1.2 Wireless (WPA-PSK)](#Wireless_.28WPA-PSK.29)
+    *   [4.2 Obfuscate wireless passphrase](#Obfuscate_wireless_passphrase)
+    *   [4.3 Using an experimental GUI](#Using_an_experimental_GUI)
     *   [4.4 Bonding](#Bonding)
         *   [4.4.1 Load balancing](#Load_balancing)
         *   [4.4.2 Wired to wireless failover](#Wired_to_wireless_failover)
@@ -45,32 +42,21 @@
 
 [netctl](https://www.archlinux.org/packages/?name=netctl) is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it should already be installed on your system. Otherwise [install](/index.php/Install "Install") it as usual.
 
-Optional dependencies are shown in the table below.
+*netctl's* [#Special systemd units](#Special_systemd_units) used in automating connections require some additional dependencies; see that section for more information.
 
-| Feature | Dependency | netctl program
-(if relevant) |
-| Automatic wireless connections | [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) | `netctl-auto` |
-| Automatic wired connections | [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) | `netctl-ifplugd` |
+Other optional dependencies are shown in the table below.
+
+| Feature | Dependency |
 | WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |
 | DHCP | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) or [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
-| Wifi menus | [dialog](https://www.archlinux.org/packages/?name=dialog) |
+| *wifi-menu* | [dialog](https://www.archlinux.org/packages/?name=dialog) |
 | PPPoE | [ppp](https://www.archlinux.org/packages/?name=ppp) |
 
 **Warning:** Do not enable concurrent, conflicting network services. Use `systemctl --type=service` to ensure that no other network service is running before enabling a *netctl* profile/service.
 
-## Usage
-
-It is advisable to read the following man pages before using netctl:
-
-*   [netctl(1)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.1.txt)
-*   [netctl.profile(5)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.profile.5.txt)
-*   [netctl.special(7)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.special.7.txt)
-
 ## Configuration
 
 *netctl* uses profiles to manage network connections and different modes of operation to start profiles automatically or manually on demand.
-
-### Profile configuration
 
 The *netctl* profile files are stored in `/etc/netctl/` and example configuration files are available in `/etc/netctl/examples/`.
 
@@ -78,23 +64,27 @@ To use an example profile, simply [copy](/index.php/Copy "Copy") it from `/etc/n
 
 **Tip:**
 
-*   For wireless settings, you can use `wifi-menu -o` as root to generate the profile file in `/etc/netctl/`.
-*   To enable a static IP profile on wired interface no matter if the cable is connected or not, use `SkipNoCarrier=yes` in your profile.
+*   For wireless settings, you can use `wifi-menu -o` as root to generate the profile file in `/etc/netctl/`. The [dialog](https://www.archlinux.org/packages/?name=dialog) package is required to use *wifi-menu*.
+*   Use `SkipNoCarrier=yes` in your profile to enable a static IP profile on a wired interface no matter if the cable is connected or not.
+
+See [netctl.profile(5)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.profile.5.txt) for a complete list of profile options.
+
+## Usage
+
+See [netctl(1)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.1.txt) for a complete list of *netctl* commands.
 
 ### Starting a profile
 
-Once you have created your profile, attempt to establish a connection (use only the profile name, not the full path):
+Once you have created your profile, attempt to establish a connection, where *profile* is only the profile name, not the full path:
 
 ```
 # netctl start *profile*
 
 ```
 
-If the above command results in a failure, then use `journalctl -xn` and `netctl status *profile*` to obtain a more in depth explanation of the failure.
+If the above command results in a failure, then use `journalctl -xn` and `netctl status *profile*` to obtain a more in-depth explanation of the failure.
 
 ### Enabling a profile
-
-#### One profile
 
 A profile can be enabled to start at boot by using:
 
@@ -112,23 +102,23 @@ This will create and enable a [systemd](/index.php/Systemd "Systemd") service th
 
 After enabling a profile, it will be started at next boot. Obviously this can only be successful, if the network cable for a wired connection is plugged in, or the wireless access point used in a profile is in range respectively.
 
-If you need to switch multiple profiles frequently, use [#Automatic switching of profiles](#Automatic_switching_of_profiles) instead of enabling a profile.
+If you need to switch multiple profiles frequently (i.e., traveling with a laptop), use [#Special systemd units](#Special_systemd_units) instead of enabling a profile.
 
-#### Automatic switching of profiles
+### Special systemd units
 
-*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profile for wired and wireless connections.
+*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profiles for wired and wireless connections. See [netctl.special(7)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.special.7.txt) for a complete list of special systemd units.
 
-##### Wired
+#### Wired
 
-[Install](/index.php/Install "Install") package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd). After [starting and enabling](/index.php/Start "Start") `netctl-ifplugd@*interface*.service` DHCP profiles are started/stopped when the network cable is plugged in/unplugged.
+[Install](/index.php/Install "Install") the [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) package and [start/enable](/index.php/Start/enable "Start/enable") the `netctl-ifplugd@*interface*.service` systemd unit. DHCP profiles will be started/stopped when the network cable is plugged in/unplugged.
 
 *   The `netctl-ifplugd@*interface*.service` will prefer profiles that use [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP").
 *   To automatically start a static IP profile the option `ExcludeAuto=no` needs to be set in it.
 *   To prioritize a profile with a static IP over DHCP profiles, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`.
 
-##### Wireless
+#### Wireless
 
-[Install](/index.php/Install "Install") the package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond). After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
+[Install](/index.php/Install "Install") the [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) package and [start/enable](/index.php/Start/enable "Start/enable") `netctl-auto@*interface*.service` systemd unit. *netctl* profiles will be started/stopped automatically as you move from the range of one network into the range of another network (roaming).
 
 *   Profiles must use `Security=wpa-configsection` or `Security=wpa` to work with *netctl-auto* rather than `Security=wpa-config`.
 *   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
@@ -139,14 +129,11 @@ Note that *interface* is not literal, but to be substituted by the name of your 
 **Note:**
 
 *   If any of the profiles contain errors, such as an empty or misquoted `Key=` variable, the unit will fail to load with the message `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`, even when that profile is not being used.
-*   If you have previously enabled [#One profile](#One_profile) through *netctl*, run `netctl disable *profile*` to prevent the profile from starting twice at boot.
+*   If you have previously [enabled a profile](#Enabling_a_profile) through *netctl*, run `netctl disable *profile*` to prevent the profile from starting twice at boot.
 
-It is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a list of available actions run:
+It is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a complete list of available actions see [netctl-auto(1)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl-auto.1.txt).
 
-```
- # netctl-auto --help
-
-```
+## Tips and tricks
 
 ### Example profiles
 
@@ -183,7 +170,7 @@ Take care to include the subnet notation of `/24`. It equates to a netmask of `2
 
 #### Wireless (WPA-PSK)
 
-The following applies for the standard wireless connections using a pre-shared key (WPA-PSK). See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise") for example profiles with other authentication methods.
+The following applies for the standard wireless connections using a pre-shared key (WPA-PSK).
 
  `/etc/netctl/wireless-wpa` 
 ```
@@ -202,11 +189,9 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 *   If the passphrase fails, try removing the `\"` in the `Key` variable.
 *   Although "encrypted", the key that you put in the profile configuration is enough to connect to a WPA-PSK network. Therefore this process is only useful for hiding the human-readable version of the passphrase. This will not prevent anyone with read access to this file from connecting to the network.
 
-## Tips and tricks
-
 ### Obfuscate wireless passphrase
 
-You can also follow the following step to obfuscate the wireless passphrase (*wifi-menu* does it automatically):
+You can also follow the following step to obfuscate the wireless passphrase (*wifi-menu* does it automatically when using the `-o` flag):
 
 Users **not** wishing to have the passphrase to their wireless network stored in *plain text* have the option of storing the corresponding 256-bit pre-shared key instead, which is calculated from the passphrase and the SSID using standard algorithms.
 
@@ -223,19 +208,15 @@ network={
 
 The *pre-shared key* (psk) now needs to replace the plain text passphrase of the `Key` variable in the profile.
 
-### Using an Experimental GUI
+### Using an experimental GUI
 
 If you want a graphical user interface to manage *netctl* and your connections and you are not afraid of highly experimental unofficial packages, there are some options available. [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) provides a Qt-based graphical interface, DBus daemon and KDE widget. An alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
-
-### Eduroam
-
-See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise").
 
 ### Bonding
 
 From [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 
-	*The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed.*
+	The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed.
 
 #### Load balancing
 
@@ -398,7 +379,7 @@ When the `wired` profile is started, any machine using the two files above will 
 
 ### Using hooks
 
-netctl supports hooks in `/etc/netctl/hooks/` and per interface hooks in `/etc/netctl/interfaces/`. You can set any option in a hook/interface that you can in a profile. They are read the same way! Most importantly this includes `ExecUpPost` and `ExecDownPre`.
+netctl supports hooks in `/etc/netctl/hooks/` and per interface hooks in `/etc/netctl/interfaces/`. You can set any option in a hook/interface that you can in a profile. Most importantly this includes `ExecUpPost` and `ExecDownPre`.
 
 When a profile is read, netctl sources **all executable** scripts in `hooks`, then it reads the profile file for the connection and finally it sources an executable script with the name of the interface used in the profile from the `interfaces` directory. Therefore, declarations in an interface script override declarations in the profile, which override declarations in hooks.
 

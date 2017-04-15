@@ -181,16 +181,16 @@ Next, create a new service file at `/etc/systemd/system/btkbd.service`.
 Description=systemd Unit to automatically start a Bluetooth keyboard
 Documentation=https://wiki.archlinux.org/index.php/Bluetooth_Keyboard
 ConditionPathExists=/etc/btkbd.conf
-ConditionPathExists=/usr/bin/hcitool
-ConditionPathExists=/usr/bin/hciconfig
+ConditionPathExists=/usr/local/bin/hcitool
+ConditionPathExists=/usr/local/sbin/hciconfig
 
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/btkbd.conf
 ExecStart=
-ExecStart=/usr/bin/hciconfig ${HCIDEVICE} up
+ExecStart=/usr/local/sbin/hciconfig ${HCIDEVICE} up
 # ignore errors on connect, spurious problems with bt? so start next command with -
-ExecStart=-/usr/bin/hcitool cc ${BTKBDMAC}
+ExecStart=-/usr/local/bin/hcitool cc ${BTKBDMAC}
 
 [Install]
 WantedBy=bluetooth.target

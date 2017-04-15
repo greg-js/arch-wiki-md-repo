@@ -118,7 +118,7 @@ Visit [Mirrors](/index.php/Mirrors "Mirrors") for steps on taking full advantage
 
 *Ports* is a system initially used by BSD distributions consisting of build scripts that reside in a directory tree on the local system. Simply put, each port contains a script within a directory intuitively named after the installable third-party application.
 
-The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS) tree offers the same functionality by providing build scripts called [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), which are populated with information for a given piece of software; integrity hashes, project URL, version, license and build instructions. These PKGBUILDs are later parsed by [makepkg](/index.php/Makepkg "Makepkg"), the actual program that generates packages cleanly manageable by *pacman*.
+The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") offers the same functionality by providing build scripts called [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), which are populated with information for a given piece of software; integrity hashes, project URL, version, license and build instructions. These PKGBUILDs are later parsed by [makepkg](/index.php/Makepkg "Makepkg"), the actual program that generates packages cleanly manageable by *pacman*.
 
 Every package in the repositories along with those present in the AUR are subject to recompilation with *makepkg*.
 

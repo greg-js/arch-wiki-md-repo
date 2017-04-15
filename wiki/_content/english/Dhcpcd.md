@@ -9,14 +9,14 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 DHCP static route(s)](#DHCP_static_route.28s.29)
     *   [3.2 DHCP Client Identifier](#DHCP_Client_Identifier)
-    *   [3.3 Speed up DHCP by disabling ARP probing](#Speed_up_DHCP_by_disabling_ARP_probing)
-    *   [3.4 Static profile](#Static_profile)
-        *   [3.4.1 Fallback profile](#Fallback_profile)
+    *   [3.3 Static profile](#Static_profile)
+        *   [3.3.1 Fallback profile](#Fallback_profile)
 *   [4 Hooks](#Hooks)
     *   [4.1 10-wpa_supplicant](#10-wpa_supplicant)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Remove old DHCP lease](#Remove_old_DHCP_lease)
-    *   [5.2 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
+    *   [5.1 Speed up DHCP by disabling ARP probing](#Speed_up_DHCP_by_disabling_ARP_probing)
+    *   [5.2 Remove old DHCP lease](#Remove_old_DHCP_lease)
+    *   [5.3 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Client ID](#Client_ID)
     *   [6.2 Check DHCP problem by releasing IP first](#Check_DHCP_problem_by_releasing_IP_first)
@@ -27,33 +27,30 @@
 
 ## Installation
 
-The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is available to be [installed](/index.php/Install "Install"). It is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
+The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already installed on your system.
 
-You might be interested in [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/), which is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon (and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
+[dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon, and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
 
 ## Running
 
-*dhcpcd* includes two unit files which can be used to [control](/index.php/Enable "Enable") the daemon:
+To start the daemon for the daemon for *all* network interfaces, [start/enable](/index.php/Start/enable "Start/enable") `dhcpcd.service`.
 
-*   `dhcpcd.service` starts the daemon for *all* [network interfaces](/index.php/Network_interfaces "Network interfaces");
-*   the template unit `dhcpcd@.service` binds it to a particular interface, for example `dhcpcd@*interface*.service` where *interface* is an interface shown with `ip link`.
+To start the daemon for a specific interface alone, [start/enable](/index.php/Start/enable "Start/enable") the template unit `dhcpcd@*interface*.service`, where *interface* can be found with [Network configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
 
 Using the template unit is recommended; see [#dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces) for details.
 
-To start *dhcpcd* manually, run the following command:
-
- `# dhcpcd *eth0*` 
-```
-dhcpcd: version 5.1.1 starting
-dhcpcd: *eth0*: broadcasting for a lease
-...
-dhcpcd: *eth0*: leased 192.168.1.70 for 86400 seconds
+Alternatively, to start *dhcpcd* manually, run the following command:
 
 ```
+# dhcpcd *interface*
+
+```
+
+In all of the above, you will be assigned a dynamic IP address. To assign a static IP address, see [#Static profile](#Static_profile).
 
 ## Configuration
 
-The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details. Some of the frequently used options are highlighted below.
+The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details. Some of the frequently used options are highlighted below.
 
 ### DHCP static route(s)
 
@@ -92,17 +89,6 @@ If the *dhcpcd* default configuration fails to obtain an IP, the following optio
 The DUID value is set in `/etc/dhcpcd.duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](http://tools.ietf.org/html/rfc4361#section-6.1)).
 
 Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") to ensure that all three IDs are unique. If duplicate DUID values are presented to the DNS server, e.g. in the case where a virtual machine has been cloned and the hostname and MAC have been made unique but the DUID has not been changed, then the result will be that as each client with the duplicated DUID requests a lease the server will remove the predecessor from the DNS record.
-
-### Speed up DHCP by disabling ARP probing
-
-*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](http://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
-
-```
-noarp
-
-```
-
-This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described ARP probing, speeding up connections to networks with DHCP.
 
 ### Static profile
 
@@ -181,6 +167,17 @@ If you manage wireless connections with *wpa_supplicant* itself, the hook may cr
 To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
 ## Tips and tricks
+
+### Speed up DHCP by disabling ARP probing
+
+*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](http://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
+
+```
+noarp
+
+```
+
+This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described ARP probing, speeding up connections to networks with DHCP.
 
 ### Remove old DHCP lease
 

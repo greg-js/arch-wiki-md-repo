@@ -12,12 +12,16 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
     *   [1.3 YubiCloud and validation servers](#YubiCloud_and_validation_servers)
 *   [2 Two-factor authentication with SSH](#Two-factor_authentication_with_SSH)
     *   [2.1 Prerequisites](#Prerequisites)
-    *   [2.2 PAM configuration](#PAM_configuration)
-        *   [2.2.1 If using HTTPS to authenticate the validation server](#If_using_HTTPS_to_authenticate_the_validation_server)
-        *   [2.2.2 If using HMAC to authenticate the validation server](#If_using_HMAC_to_authenticate_the_validation_server)
-    *   [2.3 SSHD configuration](#SSHD_configuration)
-    *   [2.4 That is it!](#That_is_it.21)
-    *   [2.5 Explanation](#Explanation)
+    *   [2.2 Configuration](#Configuration)
+        *   [2.2.1 Authorization Mapping Files](#Authorization_Mapping_Files)
+            *   [2.2.1.1 Central authorization mapping](#Central_authorization_mapping)
+            *   [2.2.1.2 Per-user authorization mapping](#Per-user_authorization_mapping)
+            *   [2.2.1.3 Obtaining the Yubikey token ID (a.k.a. public ID)](#Obtaining_the_Yubikey_token_ID_.28a.k.a._public_ID.29)
+        *   [2.2.2 PAM configuration](#PAM_configuration)
+            *   [2.2.2.1 If using HMAC to authenticate the validation server](#If_using_HMAC_to_authenticate_the_validation_server)
+        *   [2.2.3 SSHD configuration](#SSHD_configuration)
+    *   [2.3 That is it!](#That_is_it.21)
+    *   [2.4 Explanation](#Explanation)
 *   [3 Installing the OATH Applet for a Yubikey NEO](#Installing_the_OATH_Applet_for_a_Yubikey_NEO)
     *   [3.1 Configure the NEO as a CCID Device](#Configure_the_NEO_as_a_CCID_Device)
     *   [3.2 Install the Applet](#Install_the_Applet)
@@ -79,53 +83,82 @@ Install [yubico-pam](https://www.archlinux.org/packages/?name=yubico-pam).
 
 **Note:** If you are configuring a distant server to use Yubikey, you should open at least one additional, rescue SSH session, so that you are not locked out of your server if the configuration does not work and you exit your main session inadvertently
 
-### PAM configuration
+**Note:** The following assumes you're using the default Yubico servers. See the [yubico-pam documentation](https://github.com/Yubico/yubico-pam) for options relevant to using your own server.
 
-You have to edit `/etc/pam.d/sshd`, and modify the line that reads :
+### Configuration
 
-```
-auth		required	pam_unix.so
+#### Authorization Mapping Files
 
-```
+A mapping must be made between the YubiKey token ID and the user ID it is attached to. There are two ways to do this, either centrally in one file, or individually, where users can create the mapping in their home directories. If the central authorization mapping file is being used, user home directory mappings will not be used and the opposite applies if user home directory mappings are being used, the central authorization mappings file will not be used.
 
-into
+##### Central authorization mapping
 
-```
-auth		required	pam_unix.so	use_first_pass
+Create a file `/etc/yubico/authorized_yubikeys`, the file must contain a user name and the Yubikey token ID separated by colons (same format as the passwd file) for each user you want to allow onto the system using a Yubikey.
 
-```
-
-Then choose one of the following.
-
-#### If using HTTPS to authenticate the validation server
-
-Insert the following line **before** the previously modified `pam_unix.so` line.
+The mappings should look like this, one per line:
 
 ```
-auth            required        pam_yubico.so           id=1 url=[https://api.yubico.com/wsapi/2.0/verify?id=%d&otp=%s](https://api.yubico.com/wsapi/2.0/verify?id=%d&otp=%s)
+<first user name>:<Yubikey token ID1>:<Yubikey token ID2>:...
+<second user name>:<Yubikey token ID3>:<Yubikey token ID4>:...
 
 ```
 
-The id=1 is of no real use but it is required.
+You can specify multiple key tokens to correspond to one user, but only one is required.
 
-**Note:** If you run your own validation server, modify the `url` parameter to point to your server. If you are not running your own validation server, you may omit the `url` parameter entirely as it is the default.
+##### Per-user authorization mapping
 
-**Note:** These instructions are outdated and are unlikely to work. It may be useful to go to [https://developers.yubico.com/yubico-pam/Yubikey_and_SSH_via_PAM.html](https://developers.yubico.com/yubico-pam/Yubikey_and_SSH_via_PAM.html) for up to date instructions while someone finds the time to update the Arch Wiki.
-
-#### If using HMAC to authenticate the validation server
-
-Insert the following line **before** the previously modified `pam_unix.so` line.
+Each user creates a `~/.yubico/authorized_yubikeys` file inside of their home directory and places the mapping in that file, the file must have only one line:
 
 ```
-auth            required        pam_yubico.so           id=1234 key=YnVubmllcyBhcmUgY29vbAo=
+<user name>:<Yubikey token ID1>:<Yubikey token ID2>
 
 ```
 
-where `id` and `key` are your own HMAC ID and key, requested from Yubico as explained above.
+This is much the same concept as the SSH authorized_keys file.
 
-**Note:** HMAC credentials should be unique to a single target server. That way, if an attacker finds them, he will not be able to craft responses to authenticate to other target servers you own
+Note that this file must be readable by the pam_yubico module when the user is authenticated, otherwise login will fail. If this is not possible or desired, use the global mapping file instead.
 
-**Note:** We did not specify the `url` parameter: it defaults to Yubico's HTTP (non-TLS) server
+##### Obtaining the Yubikey token ID (a.k.a. public ID)
+
+You can obtain the Yubikey token ID in several ways. One is by removing the last 32 characters of any OTP (One Time Password) generated with your Yubikey. Another is by using the [modhex calculator](http://demo.yubico.com/php-yubico/Modhex_Calculator.php).
+
+Enter your Yubikey OTP and convert it, your Yubikey token ID is 12 characters and listed as:
+
+```
+Modhex encoded: XXXXXXX
+
+```
+
+#### PAM configuration
+
+Add one of the two following lines to the beginnning of `/etc/pam.d/sshd`:
+
+```
+auth            required      pam_yubico.so id=APIID authfile=/etc/yubico/authorized_yubikeys
+
+```
+
+if you're using a central authorization mapping file, or
+
+```
+auth            required      pam_yubico.so id=APIID
+
+```
+
+if you're using per-user authorization mapping.
+
+**Note:** If you run your own validation server, add the `urllist` parameter to point to your server.
+
+##### If using HMAC to authenticate the validation server
+
+Change `id` and `key` in `/etc/pam.d/sshd`:
+
+```
+auth            required      pam_yubico.so id=APIID key=APIKEY ...
+
+```
+
+where `APIID` and `APIKEY` are your own HMAC ID and key, requested from Yubico as explained above.
 
 You should also disallow unprivileged users to read the file to prevent them from seeing the HMAC credentials:
 
@@ -134,11 +167,11 @@ You should also disallow unprivileged users to read the file to prevent them fro
 
 ```
 
-**Note:** If you run your own validation server, add the `url` parameter to point to your server. If you are not running your own validation server, you may omit the `url` parameter entirely as it is the default.
+**Note:** HMAC credentials should be unique to a single target server. That way, if an attacker finds them, he will not be able to craft responses to authenticate to other target servers you own
 
-### SSHD configuration
+#### SSHD configuration
 
-You should check that `/etc/ssh/sshd_config` contains these lines and that they are not commented, but I believe this is the default.
+You should check that `/etc/ssh/sshd_config` contains these lines and that they are not commented. The `sshd_config` shipped with [openssh](https://www.archlinux.org/packages/?name=openssh) has these set correctly by default.
 
 ```
 ChallengeResponseAuthentication no
@@ -152,11 +185,11 @@ You should not need to restart anything if you just touched the PAM config file.
 
 To log in, at the `Password:` prompt of SSH, you have to type your password **without pressing enter** and touch the Yubikey's button. The Yubikey should send a return at the end of the OTP so you do not need to touch the enter key at all.
 
-**Note:** If you remove use_first_pass from the pam_unix.so line, you can just use your YubiKey first, then it will prompt for your password after the YubiKey line.
+You can display information about the login data generated by `pam_yubico` by adding the `debug` option to the auth line in`/etc/pam.d/sshd`. However, if you're using a central authorization file, you should remove that option once finished testing, as it causes `pam_yubico` to display the entire content of the central file to every user who logs in using a Yubikey.
 
 ### Explanation
 
-This works because the prompt is `pam_yubico.so`'s one, since this module is before `pam_unix.so`, which does basic password authentication. So, you are giving a string that is the concatenation of your password and the OTP to `pam_yubico.so`. Since the OTPs have a fixed length (let us call this size N), it just has to get the last N characters to retrieve the OTP, and it assumes that the other characters at the start are the password. It tries to validate the OTP, and in case of success, sends the password to the next PAM module, `pam_unix.so`, which was instructed not to prompt for the password, but to receive it from the previous module, with `use_first_pass`.
+This works because the prompt is `pam_yubico.so`'s one, since this module is before `pam_unix.so`, which normally does basic password authentication. So, you are giving a string that is the concatenation of your password and the OTP to `pam_yubico.so`. Since the OTPs have a fixed length (let us call this size N), it just has to get the last N characters to retrieve the OTP, and it assumes that the other characters at the start are the password. It tries to validate the OTP, and in case of success, sends the password to the next PAM module. In Archlinux' default PAM stack, the authenticator `pam_unix.so` is instructed to try receiving a password from the previous module with `try_first_pass`, so it automatically uses the password sent by `pam_yubico.so`.
 
 ## Installing the OATH Applet for a Yubikey NEO
 
@@ -166,7 +199,7 @@ These steps will allow you to install the OATH applet onto your Yubikey NEO. Thi
 
 ### Configure the NEO as a CCID Device
 
-1.  Get [yubikey-personalization-gui-git](https://aur.archlinux.org/packages/yubikey-personalization-gui-git/) from the AUR.
+1.  Install [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui) ([yubikey-personalization-gui-git](https://aur.archlinux.org/packages/yubikey-personalization-gui-git/)).
 2.  Add the udev rules and reboot so you can manage the YubiKey without needing to be root
 3.  Run `ykpersonalize -m82`, enter `y`, and hit enter.
 

@@ -17,6 +17,8 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [4.5 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
     *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
     *   [4.7 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.8 Flicker](#Flicker)
+    *   [4.9 Fullscreen tearing](#Fullscreen_tearing)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -260,6 +262,21 @@ If you experience heavy lag when using Xft fonts in applications such as [xterm]
 or try using the xrender backend.
 
 See [[1]](https://github.com/chjj/compton/issues/152) for more information.
+
+### Flicker
+
+Applies to fully maximized windows (in sessions without any panels) with the default compton.conf caused and resolved by the following option:
+
+```
+ unredir-if-possible = false;
+
+```
+
+See [[2]](https://github.com/chjj/compton/issues/402) for more information.
+
+### Fullscreen tearing
+
+If you observe screen tearing of video playback only in fullscreen mode see above.
 
 ## See also
 

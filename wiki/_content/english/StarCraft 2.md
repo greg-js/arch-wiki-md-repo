@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
     *   [1.1 Packages](#Packages)
     *   [1.2 Configuration](#Configuration)
-    *   [1.3 Installing with the Battle.net App](#Installing_with_the_Battle.net_App)
+    *   [1.3 Installing with the Blizzard App (former Battle.net App)](#Installing_with_the_Blizzard_App_.28former_Battle.net_App.29)
     *   [1.4 Installing from DVD](#Installing_from_DVD)
     *   [1.5 Playing StarCraft II](#Playing_StarCraft_II)
 *   [2 Hints for Performance Tuning](#Hints_for_Performance_Tuning)
@@ -45,9 +45,11 @@ Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D* (right-click on Wine and New ->
 *   **If you are asked to install Gecko, then click Install to do so.**
 *   If the Battle.net App window is white, open *winecfg*, go to *Applications* and set *Windows Version* to "Windows XP". You may do so for Battle.net.exe only, as SC2 itself works fine with this being set to anything newer.
 
-#### Installing with the Battle.net App
+#### Installing with the Blizzard App (former Battle.net App)
 
-Recent SC2 versions require the [Battle.net App](http://eu.battle.net/en/app/) to be installed, as it replaced the launchers for all Blizzard games. Furthermore, recent patches massively changed the file structure in their newer games - if you have a fast enough internet connection, it might be faster to download a new copy from the Battle.net App than trying to install the game from DVD. Simply install the app, select your region, log in with a Battle.net Account, then select StarCraft II on the left and click Install. You'll be able to select your game language and installation location. (Installing the game on a native Linux filesystem instead of NTFS might improve loading times.)
+Recent SC2 versions require the [Blizzard App](http://eu.battle.net/en/app/) to be installed, as it replaced the launchers for all Blizzard games. Furthermore, recent patches massively changed the file structure in their newer games - if you have a fast enough internet connection, it might be faster to download a new copy from the Blizzard App than trying to install the game from DVD. Simply install the app, select your region, log in with a Blizzard Account, then select StarCraft II on the left and click Install. You'll be able to select your game language and installation location. (Installing the game on a native Linux filesystem instead of NTFS might improve loading times.)
+
+**Note:** You need to install [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) in order to use the online-mode of the [Blizzard App](/index.php/Battle.net "Battle.net").
 
 #### Installing from DVD
 

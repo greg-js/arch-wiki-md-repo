@@ -6,7 +6,6 @@ Tvheadend is a TV streaming server and recorder. Tvheadend supports DVB-S/S2, DV
 *   [2 HDHomeRun](#HDHomeRun)
 *   [3 Setup](#Setup)
 *   [4 Configuration](#Configuration)
-    *   [4.1 Unable to Log In](#Unable_to_Log_In)
 *   [5 XMLTV](#XMLTV)
 *   [6 Playback Clients](#Playback_Clients)
 
@@ -30,11 +29,7 @@ If you want Tvheadend to run on boot then enable the service with the following:
 
 Once the service is running configuration of Tvheadend is done through a web interface on [localhost:9981](http://localhost:9981).
 
-## Unable to Log In
-
-Some people have issues accessing the web interface with the [Tvheadend-git](https://aur.archlinux.org/packages/Tvheadend-git/) package. If the default of a blank username and password does not work, then it can be worked around by starting the service with the `tvheadend -C` command. This will let us create a username and password before restarting without -C. Begin by editing the services file at `/usr/lib/systemd/system/tvheadend.service`. On the `ExecStart` line we need to add the option `-C` like so `ExecStart=/usr/bin/tvheadend -f -p /var/run/tvheadend.pid $OPTIONS -C` 
-
-Then run `systemctl daemon-reload` followed by `systemctl restart tvheadend`. You can now navigate to the configuration interface in a web browser [localhost:9981](http://localhost:9981/) and either follow the setup wizard to create a new user, or close the wizard and navigate to Configuration > Users > Access Entries tabs. Once your username and password are created and working, follow the above instructions again to remove the `-C` command, then reload and restart your service.
+The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.
 
 # XMLTV
 

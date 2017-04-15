@@ -333,6 +333,13 @@ $ ln -s /media/sf_*shared_folder_name* ~/*my_documents*
 
 ```
 
+If you have permission issues as a user after creating the symbolic link, chmod /media with 775.
+
+```
+$ chmod 775 /media
+
+```
+
 #### Mount at boot
 
 You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to prevent startup problems with systemd, `comment=systemd.automount` should be added to `/etc/fstab`. This way, the shared folders are mounted only when those mount points are accessed and not during startup. This can avoid some problems, especially if the guest additions are not loaded yet when systemd read fstab and mount the partitions.

@@ -44,22 +44,21 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.20 tredaelli-systemd](#tredaelli-systemd)
         *   [3.1.21 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [3.2 Unsigned](#Unsigned_2)
-        *   [3.2.1 archaudio](#archaudio)
-        *   [3.2.2 archlinuxfr](#archlinuxfr)
-        *   [3.2.3 archlinuxgr](#archlinuxgr)
-        *   [3.2.4 archlinuxgr-kde4](#archlinuxgr-kde4)
-        *   [3.2.5 arsch](#arsch)
-        *   [3.2.6 cinnamon](#cinnamon)
-        *   [3.2.7 heftig](#heftig)
-        *   [3.2.8 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.9 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.10 noware](#noware)
-        *   [3.2.11 openrc-eudev](#openrc-eudev)
-        *   [3.2.12 pantheon](#pantheon)
-        *   [3.2.13 pietma](#pietma)
-        *   [3.2.14 trinity](#trinity)
-        *   [3.2.15 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.16 QOwnNotes](#QOwnNotes)
+        *   [3.2.1 archlinuxfr](#archlinuxfr)
+        *   [3.2.2 archlinuxgr](#archlinuxgr)
+        *   [3.2.3 archlinuxgr-kde4](#archlinuxgr-kde4)
+        *   [3.2.4 arsch](#arsch)
+        *   [3.2.5 cinnamon](#cinnamon)
+        *   [3.2.6 heftig](#heftig)
+        *   [3.2.7 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.8 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
+        *   [3.2.9 noware](#noware)
+        *   [3.2.10 openrc-eudev](#openrc-eudev)
+        *   [3.2.11 pantheon](#pantheon)
+        *   [3.2.12 pietma](#pietma)
+        *   [3.2.13 trinity](#trinity)
+        *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.15 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
@@ -465,17 +464,6 @@ Server = http://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$ar
 ### Unsigned
 
 **Note:** Users will need to add the following to these entries: `SigLevel = PackageOptional`
-
-#### archaudio
-
-*   **Maintainer:** [Ray Rashif](/index.php/User:Schivmeister "User:Schivmeister"), [Joakim Hernberg](https://aur.archlinux.org/account/jhernberg)
-*   **Description:** Pro-audio packages
-
-```
-[archaudio-production]
-Server = http://repos.archaudio.org/$repo/$arch
-
-```
 
 #### archlinuxfr
 

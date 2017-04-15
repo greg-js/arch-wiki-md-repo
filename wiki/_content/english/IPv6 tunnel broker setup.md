@@ -121,9 +121,6 @@ Gateway=<IPv6 gateway>
 DNS=2001:4860:4860::8888
 DNS=2001:4860:4860::8844
 
-[Route]
-Destination=::/0
-
 ```
 
 And, add this line to `[Network]` section of your default Internet connection `.network` file:

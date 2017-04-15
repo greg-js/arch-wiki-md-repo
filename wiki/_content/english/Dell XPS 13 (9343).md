@@ -78,7 +78,7 @@ Works out-of-the-box:
 
 ### SSD
 
-This laptop series comes with a SSD as storage device; this section aims to remind you that this technology needs some configuration in order to achieve the best operative conditions. See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for information.
+This laptop series comes with a SSD as storage device; this technology needs some configuration in order to achieve the best operative conditions. See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for information.
 
 ### Wi-Fi
 

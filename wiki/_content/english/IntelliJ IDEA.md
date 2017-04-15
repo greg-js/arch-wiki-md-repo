@@ -1,0 +1,5 @@
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) is a proprietary IDE made by JetBrains. It can be used for many programming languages and SDKs, including [Java](/index.php/Java "Java"), [Scala](/index.php/Scala "Scala"), [Android](/index.php/Android "Android"), and web development. It supports many more languages and frameworks through plugins. While the full version of IDEA requires a subscription, a *community edition* (IDEA CE) exists which requires no subscription. IDEA CE is mostly useful for JVM-based languages.
+
+## Installation
+
+The subscription version, IntelliJ IDEA Ultimate, is available through the AUR as [intellij-idea-ultimate](https://aur.archlinux.org/packages/intellij-idea-ultimate/). Community Edition is available as [intellij-idea-ce](https://aur.archlinux.org/packages/intellij-idea-ce/).

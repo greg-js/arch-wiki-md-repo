@@ -7,23 +7,9 @@
     *   [2.1 GUID Partition Table (GPT) specific instructions](#GUID_Partition_Table_.28GPT.29_specific_instructions)
     *   [2.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
     *   [2.3 Installation](#Installation)
-        *   [2.3.1 Install boot files](#Install_boot_files)
-            *   [2.3.1.1 Install to disk](#Install_to_disk)
-            *   [2.3.1.2 Install to external USB stick](#Install_to_external_USB_stick)
-                *   [2.3.1.2.1 BIOS](#BIOS)
-                *   [2.3.1.2.2 EFI](#EFI)
-            *   [2.3.1.3 Install to partition or partitionless disk](#Install_to_partition_or_partitionless_disk)
-            *   [2.3.1.4 Generate core.img alone](#Generate_core.img_alone)
 *   [3 UEFI systems](#UEFI_systems)
     *   [3.1 Check if you have GPT and an ESP](#Check_if_you_have_GPT_and_an_ESP)
-    *   [3.2 Create an ESP](#Create_an_ESP)
-    *   [3.3 Installation](#Installation_2)
-    *   [3.4 Further reading](#Further_reading)
-        *   [3.4.1 Alternative install method](#Alternative_install_method)
-        *   [3.4.2 UEFI firmware workaround](#UEFI_firmware_workaround)
-        *   [3.4.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
-        *   [3.4.4 GRUB standalone](#GRUB_standalone)
-        *   [3.4.5 Technical information](#Technical_information)
+    *   [3.2 Installation](#Installation_2)
 *   [4 Generate the main configuration file](#Generate_the_main_configuration_file)
 *   [5 Configuration](#Configuration)
     *   [5.1 Additional arguments](#Additional_arguments)
@@ -107,146 +93,22 @@ Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region 
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), where already installed.
-
-**Note:** Simply installing the package will not update the `/boot/grub/i386-pc/core.img` file and the GRUB modules in `/boot/grub/i386-pc`. You need to update them manually using `grub-install` as explained below.
-
-#### Install boot files
-
-There are 4 ways to install GRUB boot files in BIOS booting:
-
-*   [Install to disk](#Install_to_disk) (recommended)
-*   [Install to external USB stick](#Install_to_external_USB_stick) (for recovery)
-*   [Install to partition or partitionless disk](#Install_to_partition_or_partitionless_disk) (not recommended)
-*   [Generate core.img alone](#Generate_core.img_alone) (safest method, but requires another BIOS bootloader like [Syslinux](/index.php/Syslinux "Syslinux") to be installed to chainload `/boot/grub/i386-pc/core.img`)
-
-**Note:** See [https://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html](https://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) for additional documentation.
-
-##### Install to disk
-
-**Note:** The method below is specific to installing GRUB to a partitioned (MBR or GPT) disk, with GRUB files installed to the current `/boot/grub` directory and its first stage code installed to the 440-byte MBR boot code region (not to be confused with MBR partition table). To signal *grub-install* to install files to a different location, such as when migrating to new drives, use the `--boot-directory` flag, such as in [#Install to external USB stick](#Install_to_external_USB_stick).
-
-The following commands will:
-
-*   Set up GRUB in the 440-byte Master Boot Record boot code region
-*   Populate the `/boot/grub` directory
-*   Generate the `/boot/grub/i386-pc/core.img` file
-*   Embed it in the 31 KiB (minimum size - varies depending on partition alignment) post-MBR gap in case of MBR partitioned disk
-*   In the case of a GPT partitioned disk it will embed it in the BIOS Boot Partition, denoted by `bios_grub` flag in parted and EF02 type code in gdisk
+[Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), where already installed. Then do:
 
 ```
 # grub-install --target=i386-pc /dev/sd*x*
-# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+
+where `/dev/sd*x*` is the [partitioned](/index.php/Partition "Partition") disk where grub is to be installed.
+
+Now you must [#Generate the main configuration file](#Generate_the_main_configuration_file).
 
 If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on multiple physical disks.
 
-##### Install to external USB stick
+**Tip:** See [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") for other ways to install GRUB, such as to a USB stick.
 
-###### BIOS
-
-Assume your USB stick's first partition is FAT32 and its partition is /dev/sdy1
-
-```
-# mkdir -p /mnt/usb
-# mount /dev/sdy1 /mnt/usb
-# grub-install --target=i386-pc --debug --boot-directory=/mnt/usb/boot /dev/sdy
-# grub-mkconfig -o /mnt/usb/boot/grub/grub.cfg
-
-```
-
-Optionally backup configuration files of `grub.cfg`:
-
-```
-# mkdir -p /mnt/usb/etc/default
-# cp /etc/default/grub /mnt/usb/etc/default
-# cp -a /etc/grub.d /mnt/usb/etc
-
-```
-
-```
-# sync; umount /mnt/usb
-
-```
-
-###### EFI
-
-To have grub write its EFI image to `/boot/efi/EFI/BOOT/BOOTX64.efi`, which the boot firmware will be able to find without any UEFI boot entry, use `--removable` when you run `grub-install`.
-
-##### Install to partition or partitionless disk
-
-**Warning:** GRUB **strongly discourages** installation to a partition boot sector or a partitionless disk as GRUB Legacy or Syslinux does. This setup is prone to breakage, especially during updates, and is **not supported** by the Arch developers.
-
-To set up grub to a partition boot sector, to a partitionless disk (also called superfloppy) or to a floppy disk, run (using for example `/dev/sdaX` as the `/boot` partition):
-
-```
-# chattr -i /boot/grub/i386-pc/core.img
-# grub-install --target=i386-pc --debug --force /dev/sdaX
-# chattr +i /boot/grub/i386-pc/core.img
-
-```
-
-**Note:**
-
-*   `/dev/sdaX` used for example only.
-*   `--target=i386-pc` instructs `grub-install` to install for BIOS systems only. It is recommended to always use this option to remove ambiguity in *grub-install*.
-
-You need to use the `--force` option to allow usage of blocklists and should not use `--grub-setup=/bin/true` (which is similar to simply generating `core.img`).
-
-`grub-install` will give out warnings like which should give you the idea of what might go wrong with this approach:
-
-```
-/sbin/grub-setup: warn: Attempting to install GRUB to a partitionless disk or to a partition. This is a BAD idea.
-/sbin/grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists.
-                        However, blocklists are UNRELIABLE and their use is discouraged.
-
-```
-
-Without `--force` you may get the below error and `grub-setup` will not setup its boot code in the partition boot sector:
-
-```
-/sbin/grub-setup: error: will not proceed with blocklists
-
-```
-
-With `--force` you should get:
-
-```
-Installation finished. No error reported.
-
-```
-
-The reason why `grub-setup` does not by default allow this is because in case of partition or a partitionless disk is that GRUB relies on embedded blocklists in the partition bootsector to locate the `/boot/grub/i386-pc/core.img` file and the prefix directory `/boot/grub`. The sector locations of `core.img` may change whenever the file system in the partition is being altered (files copied, deleted etc.). For more info, see [https://bugzilla.redhat.com/show_bug.cgi?id=728742](https://bugzilla.redhat.com/show_bug.cgi?id=728742) and [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
-
-The workaround for this is to set the immutable flag on `/boot/grub/i386-pc/core.img` (using `chattr` command as mentioned above) so that the sector locations of the `core.img` file in the disk is not altered. The immutable flag on `/boot/grub/i386-pc/core.img` needs to be set only if GRUB is installed to a partition boot sector or a partitionless disk, not in case of installation to MBR or simple generation of `core.img` without embedding any bootsector (mentioned above).
-
-Unfortunately, the `grub.cfg` file that is created will not contain the proper UUID in order to boot, even if it reports no errors. see [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604). In order to fix this issue the following commands:
-
-```
-# mount /dev/sdxY /mnt        #Your root partition.
-# mount /dev/sdxZ /mnt/boot   #Your boot partition (if you have one).
-# arch-chroot /mnt
-# pacman -S linux
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-##### Generate core.img alone
-
-To populate the `/boot/grub` directory and generate a `/boot/grub/i386-pc/core.img` file **without** embedding any GRUB bootsector code in the MBR, post-MBR region, or the partition bootsector, add `--grub-setup=/bin/true` to `grub-install`:
-
-```
-# grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda
-
-```
-
-**Note:**
-
-*   `/dev/sda` used for example only.
-*   `--target=i386-pc` instructs `grub-install` to install for BIOS systems only. It is recommended to always use this option to remove ambiguity in grub-install.
-
-You can then chainload GRUB's `core.img` from GRUB Legacy or syslinux as a Linux kernel or as a multiboot kernel (see also [Syslinux#Chainloading](/index.php/Syslinux#Chainloading "Syslinux")).
+See [grub-install(8)](http://man7.org/linux/man-pages/man8/grub-install.8.html) and [[3]](https://www.gnu.org/software/grub/manual/html_node/BIOS-installation.html) for more details on the *grub-install* command.
 
 ## UEFI systems
 
@@ -257,18 +119,16 @@ You can then chainload GRUB's `core.img` from GRUB Legacy or syslinux as a Linux
 
 ### Check if you have GPT and an ESP
 
-An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is needed on every disc you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 8 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from. (We are calling it `/dev/sda`.)
+An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) is needed on every disk you want to boot using EFI. GPT is not strictly necessary, but it is highly recommended and is the only method currently supported in this article. If you are installing Arch Linux on an EFI-capable computer with an already-working operating system, like Windows 8 for example, it is very likely that you already have an ESP. To check for GPT and for an ESP, use `parted` as root to print the partition table of the disk you want to boot from.
 
 ```
-# parted /dev/sda print
+# parted /dev/sd*x* print
 
 ```
 
 For GPT, you are looking for "Partition Table: gpt". For EFI, you are looking for a small (512 MiB or less) partition with a vfat/fat32 file system and the *boot* flag enabled. On it, there should be a directory named "EFI". If these criteria are met, this is your ESP. Make note of the partition number. You will need to know which one it is, so you can mount it later on while installing GRUB to it. In the following of this section `*esp*` must be substituted by it in commands.
 
-### Create an ESP
-
-If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
+If you do not have an ESP, you will need to create one. See [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ### Installation
 
@@ -276,12 +136,7 @@ If you do not have an ESP, you will need to create one. See [EFI System Partitio
 
 This section assumes you are installing GRUB for x86_64 systems (x86_64-efi). For i686 systems, replace `x86_64-efi` with `i386-efi` where appropriate.
 
-Make sure you are in a [bash](/index.php/Bash "Bash") shell. For example, when booting from the Arch ISO:
-
-```
-# arch-chroot /mnt /bin/bash
-
-```
+Make sure you are in a [bash](/index.php/Bash "Bash") shell.
 
 [Install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr). *GRUB* is the bootloader, *efibootmgr* creates bootable `.efi` stub entries used by the GRUB installation script.
 
@@ -308,75 +163,7 @@ Remember to [#Generate the main configuration file](#Generate_the_main_configura
 *   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI. `--efi-directory` specifies the mountpoint of the ESP. It replaces `--root-directory`, which is deprecated.
 *   You might note the absence of a <device_path> option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any <device_path> provided will be ignored by the GRUB install script, as UEFI bootloaders do not use a MBR or partition boot sector at all.
 
-See [UEFI troubleshooting](#UEFI) in case of problems.
-
-### Further reading
-
-Below is other relevant information regarding installing Arch via UEFI
-
-#### Alternative install method
-
-Usually, GRUB keeps all files, including configuration files, in `/boot`, regardless of where the EFI System Partition is mounted.
-
-If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=*esp*` to the grub-install command:
-
-```
-# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
-
-```
-
-This puts all GRUB files in `*esp*/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
-
-```
-# grub-mkconfig -o *esp*/grub/grub.cfg
-
-```
-
-Configuration is otherwise the same.
-
-#### UEFI firmware workaround
-
-Some UEFI firmware requires that the bootable `.efi` stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
-
-To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
-
-```
-# mkdir *esp*/EFI/boot
-# cp *esp*/EFI/grub_uefi/grubx64.efi *esp*/EFI/boot/bootx64.efi
-
-```
-
-#### Create a GRUB entry in the firmware boot manager
-
-`grub-install` automatically tries to create a menu entry in the boot manager. If it does not, then see [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI") for instructions to use `efibootmgr` to create a menu entry. However, the problem is likely to be that you have not booted your CD/USB in UEFI mode, as in [UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
-
-#### GRUB standalone
-
-This section assumes you are creating a standalone GRUB for x86_64 systems (x86_64-efi). For i686 systems, replace `x86_64-efi` with `i386-efi` where appropriate.
-
-It is possible to create a `grubx64_standalone.efi` application which has all the modules embedded in a tar archive within the UEFI application, thus removing the need for having a separate directory populated with all of the GRUB UEFI modules and other related files. This is done using the `grub-mkstandalone` command (included in [grub](https://www.archlinux.org/packages/?name=grub)) as follows:
-
-```
-# echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
-# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg=/tmp/grub.cfg" -v
-
-```
-
-Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `*esp*/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
-
-**Note:** The option `--modules="part_gpt part_msdos"` (with the quotes) is necessary for the `${cmdpath}` feature to work properly.
-
-**Warning:** You may find that the `grub.cfg` file is not loaded due to `${cmdpath}` missing a slash (i.e. `(hd1,msdos2)EFI/Boot` instead of `(hd1,msdos2)/EFI/Boot`) and so you are dropped into a GRUB shell. If this happens determine what `${cmdpath}` is set to (`echo ${cmdpath}` ) and then load the config file manually (e.g. `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
-
-#### Technical information
-
-The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
-
-Due to this embedding of `/boot/grub` contents inside the standalone image itself, it does not rely on actual (external) `/boot/grub` for anything. Thus in case of standalone GRUB EFI file `${prefix}==(memdisk)/boot/grub` and the standalone GRUB EFI file reads expects the config file to be at `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`.
-
-Hence to make sure the standalone GRUB EFI file reads the external `grub.cfg` located in the same directory as the EFI file (inside the GRUB environment, it is denoted by `${cmdpath}` ), we create a simple `/tmp/grub.cfg` which instructs GRUB to use `${cmdpath}/grub.cfg` as its config (`configfile ${cmdpath}/grub.cfg` command in `(memdisk)/boot/grub/grub.cfg`). We then instruct grub-mkstandalone to copy this `/tmp/grub.cfg` file to `${prefix}/grub.cfg` (which is actually `(memdisk)/boot/grub/grub.cfg`) using the option `"boot/grub/grub.cfg=/tmp/grub.cfg"`.
-
-This way, the standalone GRUB EFI file and actual `grub.cfg` can be stored in any directory inside the EFI System Partition (as long as they are in the same directory), thus making them portable.
+See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Tips and tricks#UEFI further reading](/index.php/GRUB/Tips_and_tricks#UEFI_further_reading "GRUB/Tips and tricks").
 
 ## Generate the main configuration file
 
@@ -395,7 +182,7 @@ Use the *grub-mkconfig* tool to generate `grub.cfg`:
 
 By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") and [#Dual-booting](#Dual-booting) for custom menu entries for other systems.
 
-**Tip:** To have *grub-mkconfig* search for other installed systems, [install](/index.php/Install "Install") [os-prober](https://www.archlinux.org/packages/?name=os-prober).
+**Tip:** To have *grub-mkconfig* search for other installed systems, [install](/index.php/Install "Install") the [os-prober](https://www.archlinux.org/packages/?name=os-prober) package.
 
 **Note:**
 
@@ -1073,11 +860,11 @@ GRUB can take a long time to load when disk space is low. Check if you have suff
 
 ### error: unknown filesystem
 
-GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2TB of the drive [[3]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2TB, then reinstall and reconfigure GRUB.
+GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2TB of the drive [[4]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2TB, then reinstall and reconfigure GRUB.
 
 ### grub-reboot not resetting
 
-GRUB seems to be unable to write to root BTRFS partitions [[4]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (don't forget `grub-mkconfig -o /boot/grub/grub.cfg`).
+GRUB seems to be unable to write to root BTRFS partitions [[5]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (don't forget `grub-mkconfig -o /boot/grub/grub.cfg`).
 
 ### Old BTRFS prevents installation
 

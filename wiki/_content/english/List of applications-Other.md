@@ -103,7 +103,7 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 *   **[Anki](/index.php/Anki "Anki")** — Anki is a program which makes remembering things easy.
 
-	[http://ankisrs.net/](http://ankisrs.net/) || [anki12](https://aur.archlinux.org/packages/anki12/) [anki20](https://aur.archlinux.org/packages/anki20/)
+	[http://ankisrs.net/](http://ankisrs.net/) || [anki12](https://aur.archlinux.org/packages/anki12/) [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/)
 
 *   **iGNUit** — Memorization aid based on the Leitner flashcard system.
 

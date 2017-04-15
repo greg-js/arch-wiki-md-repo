@@ -8,54 +8,47 @@ This page explains how to set up a **wired** connection to a network. If you nee
 *   [3 Device driver](#Device_driver)
     *   [3.1 Check the status](#Check_the_status)
     *   [3.2 Load the module](#Load_the_module)
-*   [4 Network interfaces](#Network_interfaces)
+*   [4 Network management](#Network_management)
     *   [4.1 Device names](#Device_names)
         *   [4.1.1 Get current device names](#Get_current_device_names)
-        *   [4.1.2 Change device name](#Change_device_name)
-        *   [4.1.3 Reverting to traditional device names](#Reverting_to_traditional_device_names)
-    *   [4.2 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
-    *   [4.3 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
-*   [5 Configure the IP address](#Configure_the_IP_address)
-    *   [5.1 Dynamic IP address](#Dynamic_IP_address)
-        *   [5.1.1 systemd-networkd](#systemd-networkd)
-        *   [5.1.2 dhcpcd](#dhcpcd)
-        *   [5.1.3 dhclient](#dhclient)
-        *   [5.1.4 netctl](#netctl)
-    *   [5.2 Static IP address](#Static_IP_address)
-        *   [5.2.1 netctl](#netctl_2)
-        *   [5.2.2 systemd-networkd](#systemd-networkd_2)
-        *   [5.2.3 dhcpcd](#dhcpcd_2)
-        *   [5.2.4 Manual assignment](#Manual_assignment)
-        *   [5.2.5 Calculating addresses](#Calculating_addresses)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 ifplugd for laptops](#ifplugd_for_laptops)
-    *   [6.2 Bonding or LAG](#Bonding_or_LAG)
-    *   [6.3 IP address aliasing](#IP_address_aliasing)
-        *   [6.3.1 Example](#Example)
-    *   [6.4 Change MAC/hardware address](#Change_MAC.2Fhardware_address)
-    *   [6.5 Internet sharing](#Internet_sharing)
-    *   [6.6 Router configuration](#Router_configuration)
-    *   [6.7 Promiscuous mode](#Promiscuous_mode)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
-    *   [7.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
-        *   [7.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
-        *   [7.2.2 Ways of fixing it](#Ways_of_fixing_it)
-            *   [7.2.2.1 Bad](#Bad)
-            *   [7.2.2.2 Good](#Good)
-            *   [7.2.2.3 Best](#Best)
-        *   [7.2.3 More about it](#More_about_it)
-    *   [7.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
-        *   [7.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [7.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
-        *   [7.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
-        *   [7.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [7.3.5 Enable *LAN Boot ROM* in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
-    *   [7.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [7.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
-*   [8 See also](#See_also)
+        *   [4.1.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
+    *   [4.2 Dynamic IP address](#Dynamic_IP_address)
+    *   [4.3 Static IP address](#Static_IP_address)
+        *   [4.3.1 Manual assignment](#Manual_assignment)
+        *   [4.3.2 Calculating addresses](#Calculating_addresses)
+    *   [4.4 Network managers](#Network_managers)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Change device name](#Change_device_name)
+    *   [5.2 Revert to traditional device names](#Revert_to_traditional_device_names)
+    *   [5.3 Set device MTU and queue length](#Set_device_MTU_and_queue_length)
+    *   [5.4 ifplugd for laptops](#ifplugd_for_laptops)
+    *   [5.5 Bonding or LAG](#Bonding_or_LAG)
+    *   [5.6 IP address aliasing](#IP_address_aliasing)
+        *   [5.6.1 Example](#Example)
+    *   [5.7 Change MAC/hardware address](#Change_MAC.2Fhardware_address)
+    *   [5.8 Internet sharing](#Internet_sharing)
+    *   [5.9 Router configuration](#Router_configuration)
+    *   [5.10 Promiscuous mode](#Promiscuous_mode)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
+    *   [6.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
+        *   [6.2.1 How to diagnose the problem](#How_to_diagnose_the_problem)
+        *   [6.2.2 Ways of fixing it](#Ways_of_fixing_it)
+            *   [6.2.2.1 Bad](#Bad)
+            *   [6.2.2.2 Good](#Good)
+            *   [6.2.2.3 Best](#Best)
+        *   [6.2.3 More about it](#More_about_it)
+    *   [6.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+        *   [6.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
+        *   [6.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [6.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
+        *   [6.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
+        *   [6.3.5 Enable *LAN Boot ROM* in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [7 See also](#See_also)
 
 ## Check the connection
 
@@ -190,99 +183,57 @@ Search in the Internet for the right module/driver for the chipset. Some common 
 
 If udev is not detecting and loading the proper module automatically during bootup, see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
-## Network interfaces
+## Network management
 
 ### Device names
 
 For computers with multiple NICs, it is important to have fixed device names. Many configuration problems are caused by interface name changing.
 
-[udev](/index.php/Udev "Udev") is responsible for which device gets which name. Systemd v197 introduced [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier, creating an entry such as `enp0s25`. This behavior may be disabled by adding `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+[udev](/index.php/Udev "Udev") is responsible for which device gets which name. Systemd uses [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier, creating an entry such as `enp0s25`.
 
-**Note:** When changing the interface naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change. Specifically, if you have [netctl static profiles](/index.php/Netctl#Basic_method "Netctl") enabled, run `netctl reenable *profile*` to update the generated service file.
+**Tip:** This behavior may be disabled by adding `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+**Note:** When changing the interface naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change.
 
 #### Get current device names
 
-Current NIC names can be found via `sysfs` or `ip link`. For example:
-
- `$ ls /sys/class/net` 
-```
-lo enp0s3
+Both wired and wireless device names can be found via:
 
 ```
- `$ ip link` 
-```
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default 
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
-    link/ether 08:00:27:23:6f:3a brd ff:ff:ff:ff:ff:ff
+$ ls /sys/class/net
 
 ```
+
+or
+
+```
+$ ip link
+
+```
+
+Note that `lo` is the [W:Loop_device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device") and not used in making network connections.
 
 Wireless device names can also be retrieved using `iw dev`. See [Wireless network configuration#Getting some useful information](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration") for details.
 
-#### Change device name
+**Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
 
-You can change the device name by defining the name manually with an udev-rule. For example:
+#### Enabling and disabling network interfaces
 
- `/etc/udev/rules.d/10-network.rules` 
-```
-SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
-SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
+You can activate a network interface using:
 
 ```
-
-These rules will be applied automatically at boot.
-
-A couple of things to note:
-
-*   To get the MAC address of each card, use this command: `cat /sys/class/net/*device_name*/address`
-*   Make sure to use the lower-case hex values in your udev rules. It doesn't like upper-case.
-
-If the network card has a dynamic MAC, you can use `DEVPATH`, for example:
-
- `/etc/udev/rules.d/10-network.rules` 
-```
-SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
-SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
+# ip link set *interface* up
 
 ```
 
-The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
-
-To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/*DEVPATH*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set enp1s0 down`).
-
-**Note:** When choosing the static names **it should be avoided to use names in the format of "eth*X*" and "wlan*X*"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
-
-#### Reverting to traditional device names
-
-If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled by masking the udev rule:
+To deactivate it do:
 
 ```
- # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+# ip link set *interface* down
 
 ```
 
-### Set device MTU and queue length
-
-You can change the device MTU and queue length by defining manually with an udev-rule. For example:
-
- `/etc/udev/rules.d/10-network.rules` 
-```
-ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
-
-```
-
-### Enabling and disabling network interfaces
-
-You can activate or deactivate network interfaces using:
-
-```
-# ip link set eth0 up
-# ip link set eth0 down
-
-```
-
-To check the result:
+To check the result for the interface `eth0`:
 
  `$ ip link show dev eth0` 
 ```
@@ -293,33 +244,15 @@ To check the result:
 
 **Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Manual assignment](#Manual_assignment) for reestablishing it.
 
-## Configure the IP address
-
-**Warning:** Use a single method to manage the network, as several methods may conflict.
-
-You have two options: a dynamically assigned address using [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), or an unchanging "static" address. See also [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
-
 ### Dynamic IP address
 
-#### systemd-networkd
+See [#Network managers](#Network_managers) for a list of options in setting a dynamic IP address.
 
-An easy way to setup DHCP for simple requirements is to use [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") service provided by systemd. See [systemd-networkd#Basic DHCP network](/index.php/Systemd-networkd#Basic_DHCP_network "Systemd-networkd").
-
-#### dhcpcd
-
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") is the default client in Arch Linux to setup DHCP on the installation ISO. It is a powerful tool with many configurable DHCP client options. See [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd") on how to activate it for an interface.
-
-#### dhclient
-
-[dhclient](https://www.archlinux.org/packages/?name=dhclient) is the Internet Systems Consortium DHCP client. [Enable](/index.php/Enable "Enable") the `dhclient@*interface*.service`, where `*interface*` is a wired [#Device names](#Device_names). See dhclient(8) and dhclient.conf(5) for details.
-
-#### netctl
-
-[netctl](/index.php/Netctl "Netctl") is a CLI-based tool for configuring and managing network connections through user-created profiles. Create a profile as shown in [netctl#Example profiles](/index.php/Netctl#Example_profiles "Netctl"), then enable it as described in [netctl#Basic method](/index.php/Netctl#Basic_method "Netctl").
+Alternatively, [install](/index.php/Install "Install") the [dhclient](https://www.archlinux.org/packages/?name=dhclient) package, which is the Internet Systems Consortium DHCP client. Then, [enable](/index.php/Enable "Enable") the `dhclient@*interface*.service`, where `*interface*` is a wired [device name](#Device_names). See dhclient(8) and dhclient.conf(5) for details.
 
 ### Static IP address
 
-A static IP address can be configured with most standard Arch Linux networking tools. Independent of the tool you choose, you will probably need to be prepared with the following information:
+A static IP address can be configured with most standard [network managers](#Network_managers). Independently of the tool you choose, you will probably need to be prepared with the following information:
 
 *   Static IP address
 *   Subnet mask, or possibly its [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), for example `/24` is the CIDR notation of `255.255.255.0` netmask.
@@ -336,21 +269,9 @@ If you are running a private network, it is safe to use IP addresses in `192.168
 
 **Tip:** Addresses can be calculated with the [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) package; see [#Calculating addresses](#Calculating_addresses).
 
-#### netctl
-
-To create a [netctl](/index.php/Netctl "Netctl") profile with a static IP, set the `IP=static` option as well as `Address`, `Gateway`, and `DNS`. See [netctl#Wired](/index.php/Netctl#Wired "Netctl").
-
-#### systemd-networkd
-
-The [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") service provided by systemd can set up a static IP using a simple configuration file. See [systemd-networkd#Wired adapter using a static IP](/index.php/Systemd-networkd#Wired_adapter_using_a_static_IP "Systemd-networkd").
-
-#### dhcpcd
-
-See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
-
 #### Manual assignment
 
-It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [network interface](#Network_interfaces):
+It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection made using this method will not persist across reboots. First enable the [network interface](#Device_names):
 
 ```
 # ip link set *interface* up
@@ -429,7 +350,77 @@ Hosts/Net: 2                     Class A, Private Internet
 
 ```
 
+### Network managers
+
+There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously. The following table compares the different connection managers. *Automatically handles wired connection* means that there is at least one option for the user to simply start the daemon without creating a configuration file.
+
+| Connection manager | Automatically handles
+wired connection | Official
+GUI | [Archiso](/index.php/Archiso "Archiso") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Console tools | Systemd units |
+| [Connman](/index.php/Connman "Connman") | Yes | No | No | `connmanctl` | `connman.service` |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/))* | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
+| [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
+| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | No | `nmcli`,`nmtui` | `NetworkManager.service` |
+| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
+| [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
+
+*The `dhcpd@*interface*.service` is enabled on the Arch Linux ISO.
+
+See [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
+
 ## Tips and tricks
+
+### Change device name
+
+You can change the device name by defining the name manually with an udev-rule. For example:
+
+ `/etc/udev/rules.d/10-network.rules` 
+```
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
+
+```
+
+These rules will be applied automatically at boot.
+
+A couple of things to note:
+
+*   To get the MAC address of each card, use this command: `cat /sys/class/net/*device_name*/address`
+*   Make sure to use the lower-case hex values in your udev rules. It doesn't like upper-case.
+
+If the network card has a dynamic MAC, you can use `DEVPATH`, for example:
+
+ `/etc/udev/rules.d/10-network.rules` 
+```
+SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
+SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
+
+```
+
+The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
+
+To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/*DEVPATH*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set enp1s0 down`).
+
+**Note:** When choosing the static names **it should be avoided to use names in the format of "eth*X*" and "wlan*X*"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
+
+### Revert to traditional device names
+
+If you would prefer to retain traditional interface names such as eth0, [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) can be disabled by masking the udev rule:
+
+```
+ # ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
+```
+
+### Set device MTU and queue length
+
+You can change the device MTU and queue length by defining manually with an udev-rule. For example:
+
+ `/etc/udev/rules.d/10-network.rules` 
+```
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
+
+```
 
 ### ifplugd for laptops
 

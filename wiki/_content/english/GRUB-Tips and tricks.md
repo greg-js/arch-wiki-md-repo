@@ -1,29 +1,149 @@
 ## Contents
 
-*   [1 GUI configuration tools](#GUI_configuration_tools)
-*   [2 Visual configuration](#Visual_configuration)
-    *   [2.1 Setting the framebuffer resolution](#Setting_the_framebuffer_resolution)
-    *   [2.2 915resolution hack](#915resolution_hack)
-    *   [2.3 Background image and bitmap fonts](#Background_image_and_bitmap_fonts)
-    *   [2.4 Theme](#Theme)
-    *   [2.5 Menu colors](#Menu_colors)
-    *   [2.6 Hidden menu](#Hidden_menu)
-    *   [2.7 Disable framebuffer](#Disable_framebuffer)
-*   [3 Booting ISO9660 image file directly via GRUB](#Booting_ISO9660_image_file_directly_via_GRUB)
-*   [4 Persistent block device naming](#Persistent_block_device_naming)
-*   [5 Using labels](#Using_labels)
-*   [6 Password protection of GRUB menu](#Password_protection_of_GRUB_menu)
-    *   [6.1 Password protection of GRUB edit and console options only](#Password_protection_of_GRUB_edit_and_console_options_only)
-*   [7 Hide GRUB unless the Shift key is held down](#Hide_GRUB_unless_the_Shift_key_is_held_down)
-*   [8 Combining the use of UUIDs and basic scripting](#Combining_the_use_of_UUIDs_and_basic_scripting)
-*   [9 Manually creating grub.cfg](#Manually_creating_grub.cfg)
-*   [10 Multiple entries](#Multiple_entries)
-    *   [10.1 Disable submenu](#Disable_submenu)
-    *   [10.2 Recall previous entry](#Recall_previous_entry)
-    *   [10.3 Changing the default menu entry](#Changing_the_default_menu_entry)
-    *   [10.4 Boot non-default entry only once](#Boot_non-default_entry_only_once)
-*   [11 Play a tune](#Play_a_tune)
-*   [12 Manual configuration of core image for early boot](#Manual_configuration_of_core_image_for_early_boot)
+*   [1 Alternative installation methods](#Alternative_installation_methods)
+    *   [1.1 Install to external USB stick](#Install_to_external_USB_stick)
+        *   [1.1.1 BIOS](#BIOS)
+        *   [1.1.2 EFI](#EFI)
+    *   [1.2 Install to partition or partitionless disk](#Install_to_partition_or_partitionless_disk)
+    *   [1.3 Generate core.img alone](#Generate_core.img_alone)
+*   [2 GUI configuration tools](#GUI_configuration_tools)
+*   [3 Visual configuration](#Visual_configuration)
+    *   [3.1 Setting the framebuffer resolution](#Setting_the_framebuffer_resolution)
+    *   [3.2 915resolution hack](#915resolution_hack)
+    *   [3.3 Background image and bitmap fonts](#Background_image_and_bitmap_fonts)
+    *   [3.4 Theme](#Theme)
+    *   [3.5 Menu colors](#Menu_colors)
+    *   [3.6 Hidden menu](#Hidden_menu)
+    *   [3.7 Disable framebuffer](#Disable_framebuffer)
+*   [4 Booting ISO9660 image file directly via GRUB](#Booting_ISO9660_image_file_directly_via_GRUB)
+*   [5 Persistent block device naming](#Persistent_block_device_naming)
+*   [6 Using labels](#Using_labels)
+*   [7 Password protection of GRUB menu](#Password_protection_of_GRUB_menu)
+    *   [7.1 Password protection of GRUB edit and console options only](#Password_protection_of_GRUB_edit_and_console_options_only)
+*   [8 Hide GRUB unless the Shift key is held down](#Hide_GRUB_unless_the_Shift_key_is_held_down)
+*   [9 Combining the use of UUIDs and basic scripting](#Combining_the_use_of_UUIDs_and_basic_scripting)
+*   [10 Manually creating grub.cfg](#Manually_creating_grub.cfg)
+*   [11 Multiple entries](#Multiple_entries)
+    *   [11.1 Disable submenu](#Disable_submenu)
+    *   [11.2 Recall previous entry](#Recall_previous_entry)
+    *   [11.3 Changing the default menu entry](#Changing_the_default_menu_entry)
+    *   [11.4 Boot non-default entry only once](#Boot_non-default_entry_only_once)
+*   [12 Play a tune](#Play_a_tune)
+*   [13 Manual configuration of core image for early boot](#Manual_configuration_of_core_image_for_early_boot)
+*   [14 UEFI further reading](#UEFI_further_reading)
+    *   [14.1 Alternative install method](#Alternative_install_method)
+    *   [14.2 UEFI firmware workaround](#UEFI_firmware_workaround)
+    *   [14.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
+    *   [14.4 GRUB standalone](#GRUB_standalone)
+    *   [14.5 Technical information](#Technical_information)
+
+## Alternative installation methods
+
+### Install to external USB stick
+
+#### BIOS
+
+Assume your USB stick's first partition is FAT32 and its partition is /dev/sdy1
+
+```
+# mkdir -p /mnt/usb
+# mount /dev/sdy1 /mnt/usb
+# grub-install --target=i386-pc --debug --boot-directory=/mnt/usb/boot /dev/sdy
+# grub-mkconfig -o /mnt/usb/boot/grub/grub.cfg
+
+```
+
+Optionally backup configuration files of `grub.cfg`:
+
+```
+# mkdir -p /mnt/usb/etc/default
+# cp /etc/default/grub /mnt/usb/etc/default
+# cp -a /etc/grub.d /mnt/usb/etc
+
+```
+
+```
+# sync; umount /mnt/usb
+
+```
+
+#### EFI
+
+To have grub write its EFI image to `/boot/efi/EFI/BOOT/BOOTX64.efi`, which the boot firmware will be able to find without any UEFI boot entry, use `--removable` when you run `grub-install`.
+
+### Install to partition or partitionless disk
+
+**Warning:** GRUB **strongly discourages** installation to a partition boot sector or a partitionless disk as GRUB Legacy or Syslinux does. This setup is prone to breakage, especially during updates, and is **not supported** by the Arch developers.
+
+To set up grub to a partition boot sector, to a partitionless disk (also called superfloppy) or to a floppy disk, run (using for example `/dev/sdaX` as the `/boot` partition):
+
+```
+# chattr -i /boot/grub/i386-pc/core.img
+# grub-install --target=i386-pc --debug --force /dev/sdaX
+# chattr +i /boot/grub/i386-pc/core.img
+
+```
+
+**Note:**
+
+*   `/dev/sdaX` used for example only.
+*   `--target=i386-pc` instructs `grub-install` to install for BIOS systems only. It is recommended to always use this option to remove ambiguity in *grub-install*.
+
+You need to use the `--force` option to allow usage of blocklists and should not use `--grub-setup=/bin/true` (which is similar to simply generating `core.img`).
+
+`grub-install` will give out warnings like which should give you the idea of what might go wrong with this approach:
+
+```
+/sbin/grub-setup: warn: Attempting to install GRUB to a partitionless disk or to a partition. This is a BAD idea.
+/sbin/grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists.
+                        However, blocklists are UNRELIABLE and their use is discouraged.
+
+```
+
+Without `--force` you may get the below error and `grub-setup` will not setup its boot code in the partition boot sector:
+
+```
+/sbin/grub-setup: error: will not proceed with blocklists
+
+```
+
+With `--force` you should get:
+
+```
+Installation finished. No error reported.
+
+```
+
+The reason why `grub-setup` does not by default allow this is because in case of partition or a partitionless disk is that GRUB relies on embedded blocklists in the partition bootsector to locate the `/boot/grub/i386-pc/core.img` file and the prefix directory `/boot/grub`. The sector locations of `core.img` may change whenever the file system in the partition is being altered (files copied, deleted etc.). For more info, see [https://bugzilla.redhat.com/show_bug.cgi?id=728742](https://bugzilla.redhat.com/show_bug.cgi?id=728742) and [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
+
+The workaround for this is to set the immutable flag on `/boot/grub/i386-pc/core.img` (using `chattr` command as mentioned above) so that the sector locations of the `core.img` file in the disk is not altered. The immutable flag on `/boot/grub/i386-pc/core.img` needs to be set only if GRUB is installed to a partition boot sector or a partitionless disk, not in case of installation to MBR or simple generation of `core.img` without embedding any bootsector (mentioned above).
+
+Unfortunately, the `grub.cfg` file that is created will not contain the proper UUID in order to boot, even if it reports no errors. see [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604). In order to fix this issue the following commands:
+
+```
+# mount /dev/sdxY /mnt        #Your root partition.
+# mount /dev/sdxZ /mnt/boot   #Your boot partition (if you have one).
+# arch-chroot /mnt
+# pacman -S linux
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+### Generate core.img alone
+
+To populate the `/boot/grub` directory and generate a `/boot/grub/i386-pc/core.img` file **without** embedding any GRUB bootsector code in the MBR, post-MBR region, or the partition bootsector, add `--grub-setup=/bin/true` to `grub-install`:
+
+```
+# grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda
+
+```
+
+**Note:**
+
+*   `/dev/sda` used for example only.
+*   `--target=i386-pc` instructs `grub-install` to install for BIOS systems only. It is recommended to always use this option to remove ambiguity in grub-install.
+
+You can then chainload GRUB's `core.img` from GRUB Legacy or syslinux as a Linux kernel or as a multiboot kernel (see also [Syslinux#Chainloading](/index.php/Syslinux#Chainloading "Syslinux")).
 
 ## GUI configuration tools
 
@@ -433,3 +553,71 @@ Finally, generate the core image, listing all of the modules determined to be re
 ```
 
 The generated EFI core image can now be used in the same way as the image that is generated automatically by `grub-install`: place it in your EFI partition and enable it with `efibootmgr`, or configure as appropriate for your system firmware.
+
+## UEFI further reading
+
+Below is other relevant information regarding installing Arch via UEFI.
+
+### Alternative install method
+
+Usually, GRUB keeps all files, including configuration files, in `/boot`, regardless of where the EFI System Partition is mounted.
+
+If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=*esp*` to the grub-install command:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
+
+```
+
+This puts all GRUB files in `*esp*/grub`, instead of in `/boot/grub`. When using this method, make sure you have *grub-mkconfig* put the configuration file in the same place:
+
+```
+# grub-mkconfig -o *esp*/grub/grub.cfg
+
+```
+
+Configuration is otherwise the same.
+
+### UEFI firmware workaround
+
+Some UEFI firmware requires that the bootable `.efi` stub have a specific name and be placed in a specific location: `*esp*/EFI/boot/bootx64.efi` (where `*esp*` is the UEFI partition mountpoint). Failure to do so in such instances will result in an unbootable installation. Fortunately, this will not cause any problems with other firmware that does not require this.
+
+To do so, first create the necessary directory, and then copy across the grub `.efi` stub, renaming it in the process:
+
+```
+# mkdir *esp*/EFI/boot
+# cp *esp*/EFI/grub_uefi/grubx64.efi *esp*/EFI/boot/bootx64.efi
+
+```
+
+### Create a GRUB entry in the firmware boot manager
+
+`grub-install` automatically tries to create a menu entry in the boot manager. If it does not, then see [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI") for instructions to use `efibootmgr` to create a menu entry. However, the problem is likely to be that you have not booted your CD/USB in UEFI mode, as in [UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+
+### GRUB standalone
+
+This section assumes you are creating a standalone GRUB for x86_64 systems (x86_64-efi). For i686 systems, replace `x86_64-efi` with `i386-efi` where appropriate.
+
+It is possible to create a `grubx64_standalone.efi` application which has all the modules embedded in a tar archive within the UEFI application, thus removing the need for having a separate directory populated with all of the GRUB UEFI modules and other related files. This is done using the `grub-mkstandalone` command (included in [grub](https://www.archlinux.org/packages/?name=grub)) as follows:
+
+```
+# echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
+# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg=/tmp/grub.cfg" -v
+
+```
+
+Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `*esp*/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
+
+**Note:** The option `--modules="part_gpt part_msdos"` (with the quotes) is necessary for the `${cmdpath}` feature to work properly.
+
+**Warning:** You may find that the `grub.cfg` file is not loaded due to `${cmdpath}` missing a slash (i.e. `(hd1,msdos2)EFI/Boot` instead of `(hd1,msdos2)/EFI/Boot`) and so you are dropped into a GRUB shell. If this happens determine what `${cmdpath}` is set to (`echo ${cmdpath}` ) and then load the config file manually (e.g. `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
+
+### Technical information
+
+The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
+
+Due to this embedding of `/boot/grub` contents inside the standalone image itself, it does not rely on actual (external) `/boot/grub` for anything. Thus in case of standalone GRUB EFI file `${prefix}==(memdisk)/boot/grub` and the standalone GRUB EFI file reads expects the config file to be at `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`.
+
+Hence to make sure the standalone GRUB EFI file reads the external `grub.cfg` located in the same directory as the EFI file (inside the GRUB environment, it is denoted by `${cmdpath}` ), we create a simple `/tmp/grub.cfg` which instructs GRUB to use `${cmdpath}/grub.cfg` as its config (`configfile ${cmdpath}/grub.cfg` command in `(memdisk)/boot/grub/grub.cfg`). We then instruct grub-mkstandalone to copy this `/tmp/grub.cfg` file to `${prefix}/grub.cfg` (which is actually `(memdisk)/boot/grub/grub.cfg`) using the option `"boot/grub/grub.cfg=/tmp/grub.cfg"`.
+
+This way, the standalone GRUB EFI file and actual `grub.cfg` can be stored in any directory inside the EFI System Partition (as long as they are in the same directory), thus making them portable.

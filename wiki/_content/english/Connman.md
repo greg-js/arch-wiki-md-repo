@@ -83,7 +83,7 @@ ConnMan has a standard command line client `connmanctl`. It can run in 2 modes:
 
 ### Wired
 
-ConnMan will automatically handle wired connections.
+*ConnMan* will automatically handle wired connections.
 
 ### Wi-Fi
 

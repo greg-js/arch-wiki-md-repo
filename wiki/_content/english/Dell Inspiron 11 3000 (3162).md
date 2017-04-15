@@ -60,7 +60,7 @@ Once in setup:
 
 ### Disabling Load Legacy Option Rom
 
-With this option enabled the laptop screen would shut off while booting the install media and when booting the installed system unless KMS was disabled. Disabling KMS, however, prevents X from starting as, from what I have read, the xf86-video-intell driver restyle="background: #afa; color: inherit; vertical-align: middle; text-align: center; "|Workingquires KMS.
+With this option enabled the laptop screen would shut off while booting the install media and when booting the installed system unless KMS was disabled. Disabling KMS, however, prevents X from starting as, from what I have read, the xf86-video-intel driver requires KMS.
 
 Once in setup:
 
@@ -69,7 +69,7 @@ Once in setup:
 
 ## Base Install
 
-Once setup has been configured, installation using the [Installation guide]] and [General recommendations](/index.php/General_recommendations "General recommendations") proceeded without issue. As this laptop uses an Intel processor, pay attention to the sections covering microcode updates.
+Once setup has been configured, installation using the [Installation guide](/index.php/Installation_guide "Installation guide") and [General recommendations](/index.php/General_recommendations "General recommendations") proceeded without issue. As this laptop uses an Intel processor, pay attention to the sections covering microcode updates.
 
 ## Configuration
 
@@ -81,7 +81,7 @@ Once setup has been configured, installation using the [Installation guide]] and
 
 #### Brightness
 
-The brightness hotkeys (Fn-F11 & Fn-F12) did not work for me out of the box but they might if you are using a full desktop environment like Gnome or KDE. Still, I had no trouble making the hotkeys work using information found on the [Backlight](/index.php/Backlight "Backlight") and [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") pages and my window manager's documentation. My solution involved configuring my window manager to map the XF86MonBrightnessUp and XF86MonBrightnessDown keys to run the appropriate xbacklight command.
+The brightness hotkeys (Fn-F11 & Fn-F12) did not work for me out of the box but they will if you are using a full desktop environment like Gnome or KDE. Still, I had no trouble making the hotkeys work using information found on the [Backlight](/index.php/Backlight "Backlight") and [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") pages and my window manager's documentation. My solution involved configuring my window manager to map the XF86MonBrightnessUp and XF86MonBrightnessDown keys to run the appropriate xbacklight command.
 
 ### Wireless
 
@@ -93,7 +93,19 @@ Audio using [ALSA](/index.php/ALSA "ALSA") worked immediately after install. I h
 
 ### Keyboard
 
-Most of the extra keys did not work for me after install. Some or all might work if you use a full desktop environment like Gnome or KDE though. I was able to configure my window manager to run appropriate commands when the extra keys are pressed. The Enable/Disable wireless key did work without any extra work on my part. However, the page up and page down keys (activated by pressing Fn + PageUp or PageDn) do not work as expected. After pressing and releasing them, the scrolling action will be glitched and will not stop. If you pressed PageUp, try pressing PageDn to neutralize the glitch.
+Most of the extra keys did not work for me after install. Some or all will work if you use a full desktop environment like Gnome or KDE though. I was able to configure my window manager to run appropriate commands when the extra keys are pressed. The Enable/Disable wireless key did work without any extra work on my part. However, the page up and page down keys (activated by pressing Fn + PageUp or PageDn) do not work as expected. After pressing and releasing them, the scrolling action will be glitched and will not stop. To fix this create the following [hwdb](/index.php/Map_scancodes_to_keycodes#Using_udev "Map scancodes to keycodes"):
+
+ `/etc/udev/hwdb.d/90-custom-keyboard.hwdb` 
+```
+evdev:atkbd:dmi:bvn*:bvr*:bd*:svnDell*:pnInspiron*3162:pvr*
+ KEYBOARD_KEY_c7=!home
+ KEYBOARD_KEY_cf=!end
+ KEYBOARD_KEY_c9=!pageup
+ KEYBOARD_KEY_d1=!pagedown
+
+```
+
+Pay attention to formatting. This is the first reason why it may not work.
 
 ### Touchpad
 
@@ -113,7 +125,7 @@ The bluetooth hardware is recognized and the appropriate modules are loaded. I a
 
 ### Suspend & Hibernate
 
-Suspend works fine with no extra work on my part. Hibernate did not work for me but this is likely due to a misconfiguration on my part.
+Suspend and hibernation do work fine with no extra work on my part.
 
 ## Hardware Details
 

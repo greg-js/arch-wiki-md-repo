@@ -91,6 +91,8 @@ When setting up an OpenVPN server, users need to create a [Public Key Infrastruc
 *   `/etc/openvpn/server/servername.crt` and `/etc/openvpn/server/servername.key`
 *   `/etc/openvpn/server/ta.key`
 
+Alternatively, as of OpenVPN 2.4, one can use Easy-RSA to generate certificates and keys using elliptic curves. See the OpenVPN documentation for details.
+
 ## A basic L3 IP routing configuration
 
 **Note:** Unless otherwise explicitly stated, the rest of this article assumes a basic L3 IP routing configuration.

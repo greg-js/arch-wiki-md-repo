@@ -66,9 +66,9 @@ If you run into problems with `winetricks` or programs with a 64-bit environment
 
 Configuring Wine is typically accomplished using:
 
-*   [winecfg](https://wiki.winehq.org/Winecfg) is a GUI configuration tool for Wine. You can run it from a console window with: `$ wine winecfg`, or `$ WINEPREFIX=~/.some_prefix wine winecfg`.
-*   `control.exe` is Wine's implementation of Windows' Control Panel which can be accessed with: `$ wine control`.
-*   [regedit](https://wiki.winehq.org/FAQ#How_do_I_edit_the_Wine_registry.3F) is Wine's registry editing tool. If *winecfg* and the Control Panel are not enough, see WineHQ's article on [Useful Registry Keys](https://wiki.winehq.org/Useful_Registry_Keys).
+*   [winecfg](https://wiki.winehq.org/Winecfg) is a GUI configuration tool for Wine, which can be started by running `winecfg`.
+*   [regedit](https://wiki.winehq.org/Regedit) is Wine's registry editing tool, which can be started by running `regedit`. See WineHQ's article on [Useful Registry Keys](https://wiki.winehq.org/Useful_Registry_Keys).
+*   [control](https://wiki.winehq.org/Control) is Wine's implementation of the Windows Control Panel, which can be started by running `wine control`.
 *   See WineHQ's [List of Commands](https://wiki.winehq.org/List_of_Commands) for the full list.
 
 ### WINEPREFIX

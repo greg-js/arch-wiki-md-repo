@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar) package.
 
 ## Configuration
 

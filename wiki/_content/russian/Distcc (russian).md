@@ -7,7 +7,7 @@ Distcc это программа, предназначенная для расп
 *   [3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
     *   [3.1 Ведомый (Slaves)](#.D0.92.D0.B5.D0.B4.D0.BE.D0.BC.D1.8B.D0.B9_.28Slaves.29)
     *   [3.2 Мастер](#.D0.9C.D0.B0.D1.81.D1.82.D0.B5.D1.80)
-        *   [3.2.1 For use with makepkg](#For_use_with_makepkg)
+        *   [3.2.1 Для использования с makepkg](#.D0.94.D0.BB.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D1.81_makepkg)
         *   [3.2.2 For use without makepkg](#For_use_without_makepkg)
 *   [4 Compile](#Compile)
     *   [4.1 With makepkg](#With_makepkg)
@@ -32,40 +32,40 @@ Distcc это программа, предназначенная для расп
 
 	master
 
-	The master is the computer which initiates the compilation.
+	Мастер-это компьютер, на котором выполняется компиляция.
 
 	slaves
 
 	The slave(s) accept compilation requests send by the master.
 
-**Note:** Both master and slave(s) machines need to be running distcc.
+**Примечание:** как Мастер так и Слев машин(ы) должны быть запущены по distcc.
 
 ## Приступая к работе
 
-[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all PCs in the cluster:
+[Установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [distcc](https://www.archlinux.org/packages/?name=distcc) на всех компьютерах в кластере:
 
-For other distros, or even OSes including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html).
+Для других дистрибутивов, или даже операционных систем, включая Windows использование через cygwin, обратитесь к [distcc docs](http://distcc.samba.org/doc.html).
 
 ## Конфигурация
 
 ### Ведомый (Slaves)
 
-The configuration for the slaves is stored in `/etc/conf.d/distccd`. The available command line options are listed in [distcc(1)](https://linux.die.net/man/1/distccd). At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
+Конфигурация для slaves хранится в `/etc/conf.d/distccd`. Параметры командной строки указаны в [distcc(1)](https://linux.die.net/man/1/distccd). Как минимум, настроить разрешенные диапазонов адресов в [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") формат:
 
 ```
 DISTCC_ARGS="--allow 192.168.0.0/24"
 
 ```
 
-A nice tool for converting address ranges to CIDR format can be found here: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr).
+Хороший инструмент для преобразования диапазонов адресов CIDR можно найти здесь: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr).
 
-[Start](/index.php/Start "Start") `distccd.service` on every participating slave. To have `distccd.service` start at boot-up, [enable](/index.php/Enable "Enable") it on every participating machine.
+[Запустить](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Запустить") `distccd.service` на всех участвующих slave. Для запуска `distccd.service` при загрузке, [enable](/index.php/Enable "Enable") на каждой участвующей машине.
 
 ### Мастер
 
-#### For use with makepkg
+#### Для использования с makepkg
 
-Edit `/etc/makepkg.conf` in the following three sections:
+Редактировать `/etc/makepkg.conf` в следующих трех разделах:
 
 1.  BUILDENV has distcc unbanged i.e. without exclamation point.
 2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).

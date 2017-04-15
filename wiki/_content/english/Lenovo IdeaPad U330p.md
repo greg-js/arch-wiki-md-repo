@@ -68,7 +68,15 @@ Check with
 
 ```
 
-that 11n_disable is set to 1. Now you have a stable wifi. To set 11n_disable=1 permanently after the installation see [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+that 11n_disable is set to 1. Now you have a stable wifi. To set `11n_disable=1` permanently after the installation see [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+
+You may also have to enable software encryption. The configuration file `/etc/modprobe.d/iwlwifi.conf` will look like this:
+
+ `/etc/modprobe.d/iwlwifi.conf` 
+```
+options iwlwifi 11n_disable=1
+options iwlwifi swcrypto=1
+```
 
 ### BIOS setup
 

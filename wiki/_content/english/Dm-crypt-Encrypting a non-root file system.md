@@ -12,9 +12,6 @@ The following are examples of encrypting a secondary, i.e. non-root, filesystem 
         *   [2.2.2 On user login](#On_user_login)
 *   [3 Loop device](#Loop_device)
     *   [3.1 Manual mounting and unmounting](#Manual_mounting_and_unmounting_2)
-    *   [3.2 Resizing the loopback filesystem](#Resizing_the_loopback_filesystem)
-*   [4 Device cloning and resizing](#Device_cloning_and_resizing)
-    *   [4.1 btrfs resizing](#btrfs_resizing)
 
 ## Overview
 
@@ -106,7 +103,7 @@ First, start by creating an encrypted container, using an appropriate [random nu
 
 This will create the file `bigsecret` with a size of 10 megabytes.
 
-**Note:** To avoid having to [resize](#Resizing_the_loopback_filesystem) the container later on, make sure to make it larger than the total size of the files to be encrypted, in order to at least also host the associated metadata needed by the internal file system. If you are going to use LUKS mode, its metadata header requires one to two megabytes alone.
+**Note:** To avoid having to [resize](/index.php/Dm-crypt/Device_encryption#Loopback_filesystem "Dm-crypt/Device encryption") the container later on, make sure to make it larger than the total size of the files to be encrypted, in order to at least also host the associated metadata needed by the internal file system. If you are going to use LUKS mode, its metadata header requires one to two megabytes alone.
 
 Next create the device node `/dev/loop0`, so that we can mount/use our container:
 
@@ -138,79 +135,5 @@ To mount the container again:
 # losetup /dev/loop0 /bigsecret
 # cryptsetup --type luks open /dev/loop0 secret
 # mount -t ext4 /dev/mapper/secret /mnt/secret
-
-```
-
-### Resizing the loopback filesystem
-
-First unmount the encrypted container:
-
-```
-# umount /mnt/secret
-# cryptsetup close secret
-# losetup -d /dev/loop0
-
-```
-
-Next, expand the container file with the size of the data you want to add:
-
-**Warning:** Be careful to really use **two** `>`, or you will override your current container.
-
-```
-# dd if=/dev/urandom bs=1M count=1024 | cat - >> /bigsecret
-
-```
-
-Now map the container to the loop device:
-
-```
-# losetup /dev/loop0 /bigsecret
-# cryptsetup --type luks open /dev/loop0 secret
-
-```
-
-After this, resize the encrypted part of the container to the maximum size of the container file:
-
-```
-# cryptsetup resize secret
-
-```
-
-Finally, perform a filesystem check and, if it is ok, resize it (example for ext2/3/4):
-
-```
-# e2fsck -f /dev/mapper/secret
-# resize2fs /dev/mapper/secret
-
-```
-
-You can now mount the container again:
-
-```
-# mount /dev/mapper/secret /mnt/secret
-
-```
-
-## Device cloning and resizing
-
-If a storage device encrypted with dm-crypt is being cloned (with a tool like dd) to another larger device, the underlying dm-crypt device must be resized to use the whole space.
-
-The destination device is /dev/sdX2 in this example, the whole available space adjacent to the partition will be used:
-
-```
-# cryptsetup luksOpen /dev/sdX2 sdX2
-# cryptsetup resize sdX2
-
-```
-
-Then the underlying filesystem must be resized.
-
-### btrfs resizing
-
-Using btrfs, resizing is an online operation, therefore the device must be mounted:
-
-```
-# mount /dev/mapper/sdX2 /mnt/sdX2/
-# btrfs filesystem resize max /mnt/sdX2/
 
 ```

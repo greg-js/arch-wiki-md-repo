@@ -29,7 +29,7 @@ The recommended way to switch to opt-in is to [install](/index.php/Install "Inst
 It is also possible to temporarily disable soft mode:
 
 ```
-# kernel.pax.softmode=0
+# sysctl kernel.pax.softmode=0
 
 ```
 

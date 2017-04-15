@@ -2,16 +2,14 @@ This guide was started for *USB* based Wacom tablets, so much of the info in her
 
 ## Contents
 
-*   [1 Installing](#Installing)
-    *   [1.1 Check if kernel drivers needed (usually not)](#Check_if_kernel_drivers_needed_.28usually_not.29)
-    *   [1.2 Install Wacom drivers](#Install_Wacom_drivers)
-    *   [1.3 Automatic setup](#Automatic_setup)
-    *   [1.4 Manual setup](#Manual_setup)
-        *   [1.4.1 Dynamic with udev](#Dynamic_with_udev)
-            *   [1.4.1.1 USB-devices](#USB-devices)
-            *   [1.4.1.2 Serial devices](#Serial_devices)
-        *   [1.4.2 Static setup](#Static_setup)
-        *   [1.4.3 Xorg configuration](#Xorg_configuration)
+*   [1 Installation](#Installation)
+    *   [1.1 Automatic setup](#Automatic_setup)
+    *   [1.2 Manual setup](#Manual_setup)
+        *   [1.2.1 Dynamic with udev](#Dynamic_with_udev)
+            *   [1.2.1.1 USB-devices](#USB-devices)
+            *   [1.2.1.2 Serial devices](#Serial_devices)
+        *   [1.2.2 Static setup](#Static_setup)
+        *   [1.2.3 Xorg configuration](#Xorg_configuration)
 *   [2 Configuration](#Configuration)
     *   [2.1 General concepts](#General_concepts)
         *   [2.1.1 Temporary configuration](#Temporary_configuration)
@@ -41,19 +39,13 @@ This guide was started for *USB* based Wacom tablets, so much of the info in her
     *   [4.2 System freeze](#System_freeze)
 *   [5 References](#References)
 
-## Installing
+## Installation
 
-### Check if kernel drivers needed (usually not)
-
-After plugging in the tablet (in case of a USB device) check `lsusb` and/or `dmesg | grep -i wacom` to see if the kernel recognizes your tablet. It should also be listed in `/proc/bus/input/devices`.
-
-In case it is not recognized, it might happen for new devices not to be supported by the current kernel. Sometimes the tablet has already support by a more recent driver than the one that comes with the kernel. In that case you may try to install [input-wacom-dkms](https://aur.archlinux.org/packages/input-wacom-dkms/) from the [AUR](/index.php/AUR "AUR").
-
-### Install Wacom drivers
-
-Thanks to [The Linux Wacom Project](http://linuxwacom.sourceforge.net), you only need to install the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package, which contains everything needed to use a Wacom tablet on Linux.
-
-**Note:** There is also [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/) in AUR which provides git version of *xf86-input-wacom*, but you might encounter some troubles. For me the buttons for example did only work with the stable release, not with the git version. So it is recommended to try *xf86-input-wacom* first.
+1.  **Check if the kernel recognizes your tablet**
+    In case of a USB tablet, plug it in and check `lsusb`, `dmesg | grep -i wacom` or `/proc/bus/input/devices`.
+    When your tablet isn't recognized but supported by a more recent driver than the one in the kernel try to install [input-wacom-dkms](https://aur.archlinux.org/packages/input-wacom-dkms/).
+2.  **Install the Wacom drivers**
+    Install the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package. If it doesn't work try the less stable [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/).
 
 ### Automatic setup
 

@@ -30,22 +30,6 @@ These components combine to the init *system*. Some inits include the service ma
 
 	[http://freedesktop.org/wiki/Software/systemd/](http://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Upstart](https://en.wikipedia.org/wiki/Upstart "wikipedia:Upstart")** — Event-based init system which handles starting, stopping and supervising of tasks and services.
-
-	[http://upstart.ubuntu.com/](http://upstart.ubuntu.com/) || [upstart](https://aur.archlinux.org/packages/upstart/)
-
-*   **initng** — Dependency-based init system with parallelization and asynchronous start.
-
-	[http://initng.sourceforge.net/trac](http://initng.sourceforge.net/trac) || [initng-git](https://aur.archlinux.org/packages/initng-git/)
-
-*   **Epoch** — Single-threaded init system designed for minimal footprint, compatibility and unified configuration.
-
-	[http://universe2.us/epoch.html](http://universe2.us/epoch.html) || [epoch-init-system](https://aur.archlinux.org/packages/epoch-init-system/)
-
-*   **finit** — Fast and extensible init, originally based on EeePC fastinit.
-
-	[https://github.com/troglobit/finit](https://github.com/troglobit/finit) || [finit-arc](https://aur.archlinux.org/packages/finit-arc/) / [finit-arc-git](https://aur.archlinux.org/packages/finit-arc-git/)
-
 ## Inits
 
 *   **[BusyBox](/index.php/BusyBox "BusyBox")** — Utilities for rescue and embedded systems.

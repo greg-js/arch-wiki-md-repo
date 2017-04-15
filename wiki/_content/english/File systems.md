@@ -119,7 +119,7 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 
 *   **Unionfs** — Unionfs is a filesystem service for Linux, FreeBSD and NetBSD which implements a union mount for other file systems.
 
-	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
+	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **unionfs-fuse** — A user space Unionfs implementation.
 

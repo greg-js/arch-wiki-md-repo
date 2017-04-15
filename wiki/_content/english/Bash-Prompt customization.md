@@ -56,7 +56,7 @@ $ infocmp
 
 ```
 
-The capability names (the part before the =) can be looked up in the terminfo man page for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
+The capability names (the part before the =) can be looked up in [terminfo(5)](http://man7.org/linux/man-pages/man5/terminfo.5.html) for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
 
 ```
 $ tput setaf 2

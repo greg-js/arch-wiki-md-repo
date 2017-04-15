@@ -4,7 +4,7 @@
 
 This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html) and its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html) utility, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) and [sgdisk(8)](http://www.rodsbooks.com/gdisk/sgdisk.html) utilities.
 
-**Tip:** For basic partitioning functionality with a graphical interface, [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html) and [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) can be used.
+**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html) and [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) can be used.
 
 ## Contents
 

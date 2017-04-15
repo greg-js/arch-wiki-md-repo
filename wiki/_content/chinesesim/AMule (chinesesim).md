@@ -14,7 +14,7 @@ aMule是一个跨平台的eD2k和Kademlia网络客户端，类似于eMule，即�
 
 ## 安装
 
-[官方源](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")提供了软件包[amule](https://www.archlinux.org/packages/?name=amule)。另外，[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中的[amule-dlp](https://aur.archlinux.org/packages/amule-dlp/)软件包支持[动态吸血保护](https://code.google.com/p/amule-dlp/)（旧版本）。
+[官方源](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")提供了软件包[amule](https://www.archlinux.org/packages/?name=amule)。另外，[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中的[amule-dlp-git](https://aur.archlinux.org/packages/amule-dlp-git/)软件包支持动态吸血保护。
 
 **amuled**是aMule的后台守护进程。其前端有GTK的aMuleGUI、网页版的aMuleWeb、命令行的aMuleCmd。
 

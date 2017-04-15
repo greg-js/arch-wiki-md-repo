@@ -91,12 +91,6 @@ lsblk -no UUID /dev/sda2
 
 [systemd](/index.php/Systemd "Systemd") activates swap partitions based on two different mechanisms. Both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code `82`.
 
-This can be solved by one of the following options:
-
-*   Removing the swap entry from `/etc/fstab`
-*   Changing the swap partition's type code from `82` to an arbitrary type code
-*   Setting the attribute of the swap partition to "**63**: do not automount"
-
 #### Disabling swap
 
 To deactivate specific swap space:

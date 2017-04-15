@@ -1,4 +1,4 @@
-This article describes the Linux kernel realtime patch set, and how to configure, test, and troubleshoot realtime kernels.
+This article describes the Linux kernel realtime patch set, and some utilities useful for trouble shooting scheduling latencies.
 
 ## Contents
 
@@ -10,10 +10,6 @@ This article describes the Linux kernel realtime patch set, and how to configure
     *   [5.1 cyclictest](#cyclictest)
     *   [5.2 hackbench](#hackbench)
     *   [5.3 hwlatdetect](#hwlatdetect)
-*   [6 Configuration](#Configuration)
-*   [7 Tips and Tricks](#Tips_and_Tricks)
-*   [8 Troubleshooting](#Troubleshooting)
-*   [9 Known issues](#Known_issues)
 
 ## What is realtime
 
@@ -47,7 +43,7 @@ When trying to determine the system's maximum scheduling latency, the system nee
 
 ## Latency testing utilities
 
-There are several tools available to check kernel scheduling latencies, and to track down the causes of latency spikes. One set of tools comes in a package called [rt-tests](https://aur.archlinux.org/packages/rt-tests/) (also available from [archaudio-production](/index.php/Unofficial_user_repositories#archaudio "Unofficial user repositories")).
+There are several tools available to check kernel scheduling latencies, and to track down the causes of latency spikes. One set of tools comes in a package called [rt-tests](https://aur.archlinux.org/packages/rt-tests/).
 
 ### cyclictest
 
@@ -116,14 +112,3 @@ Samples exceeding threshold: 16
 The result shows 16 NMIs detected that exceeded the 15 usecs threshold specified, the maximum latency detected was 21 usecs.
 
 [hwlatdetect(8)](http://man.cx/hwlatdetect) man page.
-
-## Configuration
-
-## Tips and Tricks
-
-## Troubleshooting
-
-## Known issues
-
-*   bcache support is disabled due to how it uses locks.
-*   A problem with the powernow-k8 module causing a hang at boot on some AMD CPUs.

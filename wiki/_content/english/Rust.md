@@ -25,8 +25,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
         *   [7.1.2 Clippy](#Clippy)
     *   [7.2 Editors](#Editors)
         *   [7.2.1 Atom](#Atom)
-        *   [7.2.2 Visual Studio Code](#Visual_Studio_Code)
-        *   [7.2.3 Vim](#Vim)
+        *   [7.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
+        *   [7.2.3 Visual Studio Code](#Visual_Studio_Code)
+        *   [7.2.4 Vim](#Vim)
 *   [8 See also](#See_also)
 
 ### Rust Core Library
@@ -210,6 +211,10 @@ $ cargo install clippy
 #### Atom
 
 Atom supports Rust programming with the available [Tokamak IDE](https://vertexclique.github.io/tokamak/) plugin.
+
+#### IntelliJ IDEA
+
+[IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA") has a [Rust plugin](https://github.com/intellij-rust/intellij-rust). The same plugin also works with CLion. When configuring the toolchain, use rustup to download the source (`rustup component add rust-src`), and then select `~/.rustup/toolchains/<your toolchain>/bin` as the toolchain location.
 
 #### Visual Studio Code
 

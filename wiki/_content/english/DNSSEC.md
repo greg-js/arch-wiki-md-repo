@@ -4,7 +4,7 @@
 *   [2 Howto enable DNSSEC in specific software](#Howto_enable_DNSSEC_in_specific_software)
     *   [2.1 OpenSSH (fixes only weak point in SSH design)](#OpenSSH_.28fixes_only_weak_point_in_SSH_design.29)
     *   [2.2 Firefox (secure browsing - enhancement of HTTPS)](#Firefox_.28secure_browsing_-_enhancement_of_HTTPS.29)
-    *   [2.3 Chromium/Google Chrome (secure browsing - enhancement of HTTPS)](#Chromium.2FGoogle_Chrome_.28secure_browsing_-_enhancement_of_HTTPS.29)
+    *   [2.3 Chromium/~~Google Chrome~~ (secure browsing - enhancement of HTTPS)](#Chromium.2FGoogle_Chrome_.28secure_browsing_-_enhancement_of_HTTPS.29)
     *   [2.4 BIND (serving signed DNS zones)](#BIND_.28serving_signed_DNS_zones.29)
     *   [2.5 Postfix (fight spam and frauds)](#Postfix_.28fight_spam_and_frauds.29)
     *   [2.6 jabberd (fight spam and frauds)](#jabberd_.28fight_spam_and_frauds.29)

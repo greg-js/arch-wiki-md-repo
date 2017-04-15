@@ -21,7 +21,7 @@ There are many posts on the forums about different firewall apps and scripts so 
 
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") - Setting up a comprehensive firewall with [iptables](/index.php/Iptables "Iptables").
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") - the wiki page for the simple [iptables](/index.php/Iptables "Iptables") frontend, [ufw](https://www.archlinux.org/packages/?name=ufw), provides a nice tutorial for a basic configuration.
-*   [Router](/index.php/Router "Router") Setup Guide - A tutorial for turning a computer into an [internet gateway/router](https://en.wikipedia.org/wiki/Router_(computing) "wikipedia:Router (computing)"). It focuses on [security](/index.php/Security "Security") and configuring your gateway to have as few insecure holes to the internet as possible.
+*   [Router](/index.php/Router "Router") Setup Guide - A tutorial for turning a computer into an [internet gateway/router](https://en.wikipedia.org/wiki/Router_(computing) "wikipedia:Router (computing)").
 
 #### External firewall tutorials
 

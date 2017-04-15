@@ -38,7 +38,11 @@ Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.con
 **Warning:**
 
 *   If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
-*   Using PARTUUID in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
+*   Using PARTUUID or PARTLABEL in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
+
+After adding the `plymouth-encrypt` hook, if input goes to the background in plaintext instead of into the password prompt you need to add your (kernel) graphics driver to your initramfs. For example, if using intel:
+
+ `/etc/mkinitcpio.conf`  `MODULES="i915 [...]"` 
 
 ### Alternative plymouth hook (systemd)
 

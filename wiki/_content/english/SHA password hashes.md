@@ -1,13 +1,5 @@
 The Secure Hash Algorithms (SHA) are a set of [hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function "wikipedia:Cryptographic hash function") often used to encrypt passwords. By default Arch uses SHA-512 for passwords, but some systems may still be using the older [MD5](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5") algorithm. This article describes how to increase password security.
 
-## Contents
-
-*   [1 Benefits of SHA-2 over MD5](#Benefits_of_SHA-2_over_MD5)
-*   [2 Increasing security](#Increasing_security)
-*   [3 Re-hash the passwords](#Re-hash_the_passwords)
-*   [4 Known problems](#Known_problems)
-    *   [4.1 fgetty](#fgetty)
-
 ## Benefits of SHA-2 over MD5
 
 In Linux distributions login passwords are commonly hashed and stored in the `/etc/shadow` file using the [MD5 algorithm](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5"). The security of the MD5 hash function has been severely compromised by [collision vulnerabilities](https://en.wikipedia.org/wiki/MD5#Collision_vulnerabilities "wikipedia:MD5"). This does not mean MD5 is insecure for password hashing but in the interest of decreasing vulnerabilities a more secure and robust algorithm that has no known weaknesses (e.g. SHA-512) is recommended.
@@ -47,9 +39,3 @@ As root issue the following command,
 where `*username*` is the name of the user whose password you are changing. Then re-enter their current password, and it will be re-hashed using the SHA-2 function.
 
 To verify that your passwords have been re-hashed, check the `/etc/shadow` file as root. Passwords hashed with SHA-256 should begin with a `$5` and passwords hashed with SHA-512 will begin with `$6`.
-
-## Known problems
-
-### fgetty
-
-Arch Linux is using SHA-512 password hashing by default (since 2011-11-26). The very minimal terminal manager *fgetty* does not support SHA-512 password hashing by default. Enabling SHA-512 with the default *fgetty* will cause you to be locked out. A patched version of *fgetty* is in the [AUR](/index.php/AUR "AUR") named [fgetty-pam](https://aur.archlinux.org/packages/fgetty-pam/) which adds SHA-512 support.
