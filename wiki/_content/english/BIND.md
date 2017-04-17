@@ -1,11 +1,13 @@
-Berkeley Internet Name Daemon (BIND) is the reference implementation of the Domain Name System (DNS) protocols.
+[BIND](https://www.isc.org/downloads/bind/) is the most widely used Domain Name System (DNS) server.
 
 **Note:** The organization developing BIND is serving security notices to paying customers up to four days before Linux distributions or the general public.[[1]](https://kb.isc.org/article/AA-00861/0/ISC-Software-Defect-and-Security-Vulnerability-Disclosure-Policy.html)
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Forwarding](#Forwarding)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Restrict access to localhost](#Restrict_access_to_localhost)
+    *   [2.2 Set up DNS forwarding](#Set_up_DNS_forwarding)
 *   [3 A configuration template for running a domain](#A_configuration_template_for_running_a_domain)
     *   [3.1 1\. Creating a zonefile](#1._Creating_a_zonefile)
     *   [3.2 2\. Configuring master server](#2._Configuring_master_server)
@@ -19,42 +21,45 @@ Berkeley Internet Name Daemon (BIND) is the reference implementation of the Doma
 
 ## Installation
 
-These few steps show you how to install BIND and set it up as a local caching-only server.
-
 [Install](/index.php/Install "Install") the [bind](https://www.archlinux.org/packages/?name=bind) package.
 
-Optionally edit `/etc/named.conf` and add this into the options section, to only allow connections from the localhost:
+To use BIND as the system's DNS server prepend `nameserver 127.0.0.1` to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+
+[Start/enable](/index.php/Start/enable "Start/enable") the `named.service` systemd unit.
+
+## Configuration
+
+BIND is configured in `/etc/named.conf`. The available options are documented in the `named.conf` man page.
+
+[Reload](/index.php/Reload "Reload") the `named.service` unit to apply configuration changes.
+
+### Restrict access to localhost
+
+To only allow connections from localhost add the following line to the options section in `/etc/named.conf`:
 
 ```
 listen-on { 127.0.0.1; };
 
 ```
 
-Edit [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to use the local DNS server, 127.0.0.1.
+### Set up DNS forwarding
 
-[Start](/index.php/Start "Start") `named.service`.
+To make BIND forward DNS queries to another DNS server add the forwarders clause to the options section.
 
-## Forwarding
-
-When BIND acts as a forwarding DNS server, it merely acts as a cache for known queries, and naively forwards all other requests to a predefined upstream DNS server - such as the one managed by your ISP, or some well-known global DNS service like OpenNIC or Google DNS servers.
-
-To setup a forwarding DNS server, add these lines to `/etc/named.conf` in either the global options section or in a specific zone, and change IP address according to your setup.
+Example to make BIND forward to the Google DNS servers:
 
 ```
-options {
- listen-on { 192.168.66.1; };
- forwarders { 8.8.8.8; 8.8.4.4; };
-};
+forwarders { 8.8.8.8; 8.8.4.4; };
 
 ```
-
-Do not forget to [restart](/index.php/Restart "Restart") `named.service`.
 
 ## A configuration template for running a domain
 
 This is a simple tutorial in howto setup a simple home network DNS-server with bind. In our example we use "domain.tld" as our domain.
 
-For a more elaborate example see [Two-in-one DNS server with BIND9](http://www.howtoforge.com/two_in_one_dns_bind9_views). Another guide at [Linux Home Server HOWTO - Domain name system (BIND)](http://www.brennan.id.au/08-Domain_Name_System_BIND.html) will show you how to set up internal network name resolution in no time; short, on-point and very informative.
+For a more elaborate example see [Two-in-one DNS server with BIND9](http://www.howtoforge.com/two_in_one_dns_bind9_views).
+
+Another guide at [Linux Home Server HOWTO - Domain name system (BIND): Adding your domain](http://www.brennan.id.au/08-Domain_Name_System_BIND.html#yourdomain) will show you how to set up internal network name resolution in no time; short, on-point and very informative.
 
 ### 1\. Creating a zonefile
 
@@ -105,11 +110,7 @@ zone "domain.tld" IN {
 
 ```
 
-[Start/enable](/index.php/Start/enable "Start/enable") `named.service` and you are done.
-
-Otherwise [reload](/index.php/Reload "Reload") the configuration files.
-
-The latter option will keep your nameserver available while still allowing the configuration change.
+[Reload](/index.php/Reload "Reload") the `named.service` unit to apply the configuration change.
 
 ### 3\. Setting this to be your default DNS server
 

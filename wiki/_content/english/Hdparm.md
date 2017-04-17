@@ -10,11 +10,12 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [2.2 Benchmarking](#Benchmarking)
     *   [2.3 Power management configuration](#Power_management_configuration)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
-    *   [3.2 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
+    *   [3.1 Querying the status of the disk without waking it up](#Querying_the_status_of_the_disk_without_waking_it_up)
+    *   [3.2 Working with unsupported hardware](#Working_with_unsupported_hardware)
+    *   [3.3 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
+    *   [3.4 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
-    *   [4.2 Drive is not supported](#Drive_is_not_supported)
 
 ## Installation
 
@@ -24,7 +25,7 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
 
 ### Disk info
 
-To get information about your hard disk, run the following:
+To get information about hard disks, run the following:
 
 ```
 # hdparm -I /dev/sda
@@ -39,7 +40,7 @@ See [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_dev
 
 Modern hard drives support numerous power management features, the most common ones are summarized in the following table. See `hdparm(8)` for the complete list.
 
-**Warning:** Too aggressive power management can reduce the lifespan of your hard drive due to frequent parking and spindowns.
+**Warning:** Overly aggressive power management can reduce the lifespan of hard drives due to frequent parking and spindowns.
 
 | Parameter | Description |
 | `-B` | Set the [Advanced Power Management](https://en.wikipedia.org/wiki/Advanced_Power_Management "wikipedia:Advanced Power Management") feature. Possible values are between 1 and 255, low values mean more aggressive power management and higher values mean better performance. Values from 1 to 127 permit spin-down, whereas values from 128 to 254 do not. A value of 255 completely disables the feature. |
@@ -62,9 +63,45 @@ To apply different value, for example set APM to 127:
 
 ## Tips and tricks
 
+### Querying the status of the disk without waking it up
+
+Invoking hdparm with the query option is known to wake-up some drives. Instead, consider `smartctl` provided by [smartmon-tools](https://www.archlinux.org/packages/?name=smartmon-tools) to query the device which will not wake up a sleeping disk.
+
+Example:
+
+```
+# smartctl -i -n standby /dev/sda
+smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.10.10-1-ARCH] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Device is in STANDBY mode, exit(2)
+
+```
+
+### Working with unsupported hardware
+
+Some drives, particularly external ones, do not support spin down via hdparm. A diagnostic error message similar to the following is a good clue this is the case:
+
+```
+# hdparm -S 240 /dev/sda
+/dev/sda:
+setting standby to 240 (20 minutes)
+HDIO_DRIVE_CMD(setidle) failed: Invalid argument
+
+```
+
+Such drives can be spun down using [hd-idle](https://www.archlinux.org/packages/?name=hd-idle) which ships with a systemd service. One need only edit `/etc/conf.d/hd-idle` and edit the "HD_IDLE_OPTS" line followed by starting and enabling `hd-idle.service`:
+
+Example using a 30 min idle time for sda:
+
+```
+HD_IDLE_OPTS="-i 0 -a sda -i 1800"
+
+```
+
 ### Persistent configuration using udev rule
 
-To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule for your values:
+To make the setting persistent, adapt the following [udev](/index.php/Udev "Udev") rule:
 
  `/etc/udev/rules.d/50-hdparm.rules` 
 ```
@@ -72,7 +109,7 @@ ACTION=="add", SUBSYSTEM=="block", KERNEL=="sda", RUN+="/usr/bin/hdparm -B 254 -
 
 ```
 
-If you have more than one hard drive you could make the rule more flexible. For example, to apply power-saving settings for all external drives (assuming there is only one internal drive, `/dev/sda`):
+Systems with multiple hard drives, can make the rule more flexible. For example, to apply power-saving settings for all external drives (assuming there is only one internal drive, `/dev/sda`):
 
  `/etc/udev/rules.d/50-hdparm.rules` 
 ```
@@ -104,7 +141,7 @@ Then [enable](/index.php/Enable "Enable") it.
 
 ### APM level reset after suspend
 
-The APM level may get reset after a suspend, so you will probably also have to re-execute the command after each resume. This can be automated with the following [systemd](/index.php/Systemd "Systemd") unit (adapted from a [forum thread](https://bbs.archlinux.org/viewtopic.php?id=151640)):
+The APM level may get reset after a suspend requiring it to be re-executed after each resume. This can be automated with the following [systemd](/index.php/Systemd "Systemd") unit (adapted from a [forum thread](https://bbs.archlinux.org/viewtopic.php?id=151640)):
 
  `/etc/systemd/system/apm.service` 
 ```
@@ -122,8 +159,4 @@ WantedBy=sleep.target
 
 **Note:** The `sleep.target` is pulled by all `suspend`, `hybrid-sleep` and `hibernate` targets, but it finishes starting up *before* the system is suspended, so the three targets have to be specified explicitly. See [[1]](https://wiki.archlinux.org/index.php?title=Talk:Hdparm&oldid=440457#Troubleshooting_APM_settings_after_suspend.2C_hibernate_or_hybrid-sleep).
 
-Alternatively you can create a [hook in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").
-
-### Drive is not supported
-
-In this case you could consider using a different approach and the tool [hd-idle](http://hd-idle.sourceforge.net/).
+Alternatively, create a [hook in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").

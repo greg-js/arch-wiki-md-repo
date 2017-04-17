@@ -149,18 +149,23 @@ holdconnectionopen = yes
 
 #### systemd service
 
-When configured to run background jobs, offlineimap can be managed with the following [systemd/User](/index.php/Systemd/User "Systemd/User") service:
+Instead of setting OfflineIMAP as a daemon, it can be managed with the packages's provided [systemd/User](/index.php/Systemd/User "Systemd/User") timer. To use it, [start/enable](/index.php/Start/enable "Start/enable") the user timer `offlineimap.timer` using the `--user` flag.
 
- `/etc/systemd/user/offlineimap.service` 
+This timer by default runs OfflineIMAP every 15 minutes. This can be easily changed by creating a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"). For example, the following modifies the timer to check every 5 minutes:
+
+ `~/.systemd/user/offlineimap.timer.d/timer.conf` 
 ```
-[Unit]
-Description=Start offlineimap as a daemon
+[Timer]
+OnUnitInactive=5m
 
+```
+
+For more robust solution it is possible to set a watchdog which will kill OfflineIMAP in case of freeze:
+
+ `~/.systemd/user/offlineimap.service.d/service.conf` 
+```
 [Service]
-ExecStart=/usr/bin/offlineimap
-
-[Install]
-WantedBy=default.target
+WatchDogSec=300
 
 ```
 

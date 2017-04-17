@@ -39,7 +39,7 @@ It will be necessary to edit `/etc/oblogout.conf` to change the `lock =` command
 For example, where having installed [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") - which must itself also be autostarted as a [Daemon](/index.php/Daemon "Daemon") process in the `~/.config/openbox/autostart` file - then `/etc/oblogout.conf` would be edited accordingly:
 
 ```
-lock = screensaver-command --lock
+lock = xscreensaver-command --lock
 
 ```
 

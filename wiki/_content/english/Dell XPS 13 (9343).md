@@ -33,6 +33,7 @@ However, some manual configuration is still recommended to get the best experien
             *   [2.6.1.1 Setting the default sound card](#Setting_the_default_sound_card)
         *   [2.6.2 I2S mode](#I2S_mode)
             *   [2.6.2.1 Enabling the microphone](#Enabling_the_microphone)
+            *   [2.6.2.2 Using Jack](#Using_Jack)
     *   [2.7 Touchpad](#Touchpad)
         *   [2.7.1 Synaptics driver](#Synaptics_driver)
         *   [2.7.2 Libinput driver](#Libinput_driver)
@@ -142,6 +143,10 @@ In I2S mode, the built-in microphone is muted by default. To enable it you have 
 *   finally, toggle over to the **Mic** item and raise the volume to 100.
 
 **Note:** Cycling the **Port** (from *Main Microphone* to *Headset Microphone (unplugged)*, and back) of the **Input Devices** tab in the `pavucontrol` application, has the same effect of the above instructions.
+
+##### Using Jack
+
+By default Jack recognises four capture ports and is unusable because the transport is broken into short fragments with breaks between them. Limit input to two channels with `-i2` on the command line or the corresponding option in [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)'s advanced settings.
 
 ### Touchpad
 

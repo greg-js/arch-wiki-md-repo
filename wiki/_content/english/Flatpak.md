@@ -110,6 +110,8 @@ This is known to be necessary in Awesome.
 
 ## Creating a custom base runtime
 
+**Warning:** If you want to release your software to the public as a Flatpak, an Arch-based runtime is unsuitable. In this case, you will want to follow [official documentation](http://docs.flatpak.org) to integrate your software into the proper Flatpak ecosystem using the [common runtimes](http://flatpak.org/runtimes.html).
+
 **Note:** You may want to use an untrusted, unprivileged user account for bundling untrusted software because the software is not sandboxed during app and runtime creation.
 
 **Note:** When distributing bundles to others, you may be legally obliged to provide the source code of some of the bundled software upon request. You may want to use [ABS](/index.php/ABS "ABS") to build these packages from source.

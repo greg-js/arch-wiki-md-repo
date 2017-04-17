@@ -17,6 +17,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
         *   [3.3.2 On-the-fly patch](#On-the-fly_patch)
     *   [3.4 Silent Mode](#Silent_Mode)
     *   [3.5 Streaming server](#Streaming_server)
+    *   [3.6 Getting a games appid](#Getting_a_games_appid)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
@@ -210,6 +211,32 @@ $ steam -silent
 ### Streaming server
 
 See [https://steamcommunity.com/sharedfiles/filedetails/?id=680514371](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371)
+
+### Getting a games appid
+
+The easiest way to get a games appid is to do the following:
+
+1.  From within steam, right click on the game, create desktop shortcut
+2.  Open up the desktop file (nano ~/Desktop/<game>.desktop)
+3.  You should see the line:
+
+```
+Exec=steam steam://rungameid/65980 
+
+```
+
+65980 is the game's appid. We can now use this to launch a game directly from the command line. Example below.
+
+```
+$ cat ~/Desktop/<game>.desktop | grep rungameid 
+    Exec=steam steam://rungameid/65980
+$ cd .steam/steam/steamapps/common/<game>
+$ touch steam_appid.txt 
+$ echo 65980 > steam_appid.txt
+$ ./<game>
+```
+
+This is useful when troubleshooting problems. This method will also prevent steam from complaining about a missing appid when launching a game from the command line.
 
 ## Troubleshooting
 

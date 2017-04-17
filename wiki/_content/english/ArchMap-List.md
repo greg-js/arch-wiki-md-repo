@@ -1041,5 +1041,6 @@ You can use the following website to get your device's coordinates along with a 
 51.993161, 7.547592 "thunfisch" # Münster, NRW, Germany, EU
 51.544265, -0.011686 "ragreener" # London, United Kingdom
 61.464059, 23.890607 "Michael" # Tampere, Finland
+42.250611, -84.459172 "Mark Weiman (markzz)" # Jackson, Michigan, United States
 
 ```

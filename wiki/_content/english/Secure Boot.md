@@ -18,6 +18,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
         *   [2.1.1 Creating keys](#Creating_keys)
         *   [2.1.2 Updating keys](#Updating_keys)
     *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
+        *   [2.2.1 Signing kernel with pacman hook](#Signing_kernel_with_pacman_hook)
     *   [2.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
     *   [2.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
         *   [2.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
@@ -389,15 +390,10 @@ $ sbverify --list */path/to/binary*
 
 *   You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
 
-*   You can also create your own pacman hook to sign kernel on install and updates.
+#### Signing kernel with pacman hook
 
- `/usr/local/bin/secureboot-sign-linux` 
-```
-#!/bin/bash
+You can also create your own pacman hook to sign kernel on install and updates.
 
-sbsign --key /var/local/lib/secureboot/MOK.key --cert /var/local/lib/secureboot/MOK.crt --output /boot/vmlinuz-linux.signed /boot/vmlinuz-linux
-mv /boot/vmlinuz-linux.signed /boot/vmlinuz-linux
-```
  `/etc/pacman.d/hooks/99-secureboot.hook` 
 ```
 [Trigger]
@@ -409,7 +405,7 @@ Target = linux
 [Action]
 Description = Signing Kernel for SecureBoot
 When = PostTransaction
-Exec = /usr/local/bin/secureboot-sign-linux
+Exec = /usr/bin/sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 Depends = sbsigntools
 ```
 

@@ -1,4 +1,4 @@
-Wireshark is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education. Originally named Ethereal, in May 2006 the project was renamed Wireshark due to trademark issues.
+[Wireshark](https://www.wireshark.org/) is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.
 
 ## Contents
 
@@ -11,25 +11,28 @@ Wireshark is a free and open-source packet analyzer. It is used for network trou
 
 ## Installation
 
-The wireshark package has been split into the CLI version as well as GTK+ and Qt frontends, which depend on the CLI.
+Wireshark's default interface uses Qt, the GTK+ interface is deprecated and might be removed in the future.
 
-**Warning:** The Qt frontend, along with missing some features, is also not as stable as the GTK+ frontend. If you have issues with listing network interfaces, enabling monitor mode, and/or permissions, even after setting everything up correctly, try using the GTK version and see if your issues persist.
+[Install](/index.php/Install "Install") [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) or [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) when you prefer the GTK+ interface.
 
-*   CLI version (tshark) - [Install](/index.php/Pacman "Pacman") package [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli).
-*   GTK+ frontend (wireshark-gtk) - [Install](/index.php/Pacman "Pacman") package [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) (deprecated).
-*   Qt frontend (wireshark) - [Install](/index.php/Pacman "Pacman") package [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) (recommended).
+Both frontends depend on the [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) package that provides the `tshark` CLI.
 
 ## Capturing as normal user
 
-Running Wireshark as root is insecure.
+Do not run Wireshark as root, it is insecure. Wireshark has implemented privilege separation. [[1]](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Most_UNIXes)
 
-Arch Linux uses [method from Wireshark wiki](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Other_Linux_based_systems_or_other_installation_methods) to separate privileges. When [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) is installed, [install script](/index.php/PKGBUILD#install "PKGBUILD") sets additional [capabilities](/index.php/Capabilities "Capabilities") on the `/usr/bin/dumpcap` executable, these capabilities can be listed as follows:
+The [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [install script](/index.php/PKGBUILD#install "PKGBUILD") sets packet capturing [capabilities](/index.php/Capabilities "Capabilities") on the `/usr/bin/dumpcap` executable.
 
- `$ getcap /usr/bin/dumpcap`  `/usr/bin/dumpcap = cap_dac_override,cap_net_admin,cap_net_raw+eip` 
+`/usr/bin/dumpcap` can only be executed by root and members of the `wireshark` group.
 
-`/usr/bin/dumpcap` is the only process that has privileges to capture packets. `/usr/bin/dumpcap` can only be run by root and members of the `wireshark` group. Other users will see the *Couldn't run /usr/bin/dumpcap in child process: Permission denied* error in Wireshark.
+Therefore to use Wireshark as a normal user you just have to add your user to the `wireshark` [group](/index.php/Group "Group"):
 
-To use wireshark as a normal user, add the user to the `wireshark` [group](/index.php/Group "Group") (`sudo gpasswd -a $USER wireshark`). Re-login to apply the changes or use `newgrp wireshark` to open a shell with the new group and start Wireshark from there.
+```
+sudo gpasswd -a $USER wireshark
+
+```
+
+Re-login to apply the change or use `newgrp wireshark` to open a shell with the new group and start Wireshark from there.
 
 ## A few capturing techniques
 

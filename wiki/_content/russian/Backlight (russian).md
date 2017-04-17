@@ -14,16 +14,16 @@
     *   [5.1 xbacklight](#xbacklight)
     *   [5.2 Другие утилиты](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
     *   [5.3 setpci](#setpci)
-*   [6 Color correction](#Color_correction)
+*   [6 Цветовая коррекция](#.D0.A6.D0.B2.D0.B5.D1.82.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BA.D0.BE.D1.80.D1.80.D0.B5.D0.BA.D1.86.D0.B8.D1.8F)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
     *   [6.3 redshift](#redshift)
     *   [6.4 NVIDIA settings](#NVIDIA_settings)
-    *   [6.5 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
-    *   [7.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_.28Intel_i915_only.29)
-    *   [7.3 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
+    *   [6.5 Увеличение яркости выше максимального уровня](#.D0.A3.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D1.8B.D1.88.D0.B5_.D0.BC.D0.B0.D0.BA.D1.81.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D1.8F)
+*   [7 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [7.1 Частота ШИМ-модуляции подсветки (только для Intel i915)](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE.D1.82.D0.B0_.D0.A8.D0.98.D0.9C-.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B8_.28.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_Intel_i915.29)
+    *   [7.2 Инвертированная яркость (только для Intel i915)](#.D0.98.D0.BD.D0.B2.D0.B5.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.B0.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.28.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_Intel_i915.29)
+    *   [7.3 sysfs изменен, но нет изменения яркости](#sysfs_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.2C_.D0.BD.D0.BE_.D0.BD.D0.B5.D1.82_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8)
 
 ## Обзор
 
@@ -68,7 +68,7 @@ bl_power           device/            power/             type
 
 ```
 
-Яркость может быть изменена, написав число в `brightness`. Здесь невозможно использовать число выше максимальной яркости.
+Яркость может быть изменена, если записать число в `brightness`. Здесь невозможно использовать число выше максимальной яркости.
 
 ```
 # tee /sys/class/backlight/acpi_video0/brightness <<< 5
@@ -247,40 +247,37 @@ EndSection
 
 ```
 
-## Color correction
+## Цветовая коррекция
 
 ### xcalib
 
-**Note:** *xcalib* does *not* change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (Desktop PCs). Use `xcalib -clear` to reset the LUT.
+**Примечание:** *xcalib не меняет* силу подсветки, а просто модифицирует LUT-таблицу: это означает, что время работы от батареи не изменится. Однако, это может быть полезно, когда регулировка подсветки недоступна (настольные ПК). Используйте `xcalib -clear`, чтобы сбросить LUT.
 
-The package [xcalib](https://aur.archlinux.org/packages/xcalib/) ([upstream URL](http://xcalib.sourceforge.net/)) is available in the [AUR](/index.php/AUR "AUR") and can be used to dim the screen. A demonstration video is available on [YouTube](https://www.youtube.com/watch?v=A9xsvntT6i4). This program can correct gamma, invert colors, and reduce contrast, the latter of which we use in this case. For example, to dim down:
+Пакет [xcalib](https://aur.archlinux.org/packages/xcalib/) ([upstream URL](http://xcalib.sourceforge.net/)) доступен в [AUR](/index.php/AUR "AUR") и может использоваться, чтобы уменьшить яркость экрана. Видео-демонстрация доступна на [YouTube](https://www.youtube.com/watch?v=A9xsvntT6i4). Эта программа может корректировать гамму, инвертировать цвета и уменьшать контраст. Например, чтобы уменьшить яркость посредством изменения контраста:
 
 ```
 $ xcalib -co 40 -a
 
 ```
 
-This program uses ICC technology to interact with X11 and while the screen is dimmed, you may find that the mouse cursor is just as bright as before.
+Эта программа использует технологию ICC для взаимодействия с X11, и пока экран затенен, вы можете обнаружить, что курсор мыши так же ярок, как и раньше.
 
 ### Xflux
 
-Xflux is the [f.lux](http://justgetflux.com) port for the X-Windows system. It fluctuates your screen between blue during the day and yellow or orange at night. This helps you adapt to the time of day and stop staying up late because of your bright computer screen.
+Xflux это порт [f.lux](http://justgetflux.com) для системы X-Windows. Он меняет оттенок экрана между синим в течение дня и желтым или оранжевым ночью. Это помогает вам адаптироваться к времени суток и перестать поздно ложиться спать из-за вашего яркого монитора.
 
-Various packages exist in the AUR that use *f.lux*.[[5]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of *f.lux*. Various daemons exist to handle the automatic startup of the xflux package.
+В AUR существуют различные пакеты, которые используют *f.lux*.[[5]](https://aur.archlinux.org/packages/?O=0&K=xflux) "Основной" пакет - [xflux](https://aur.archlinux.org/packages/xflux/), который охватывает функционал командной строки *f.lux*. Существуют различные демоны для автоматического запуска пакета xflux.
 
 ### redshift
 
-The program [redshift](/index.php/Redshift "Redshift") in the official repositories uses `randr` to adjust the screen brightness depending on the time of day and your geographic position. It can also do RGB gamma corrections and set color temperatures. As with `xcalib`, this is very much a software solution and the look of the mouse cursor is unaffected. To execute a single quick adjustment of the brightness, try something like this:
+Программа [redshift](/index.php/Redshift "Redshift") в официальных репозиториях использует `randr`, чтобы настроить яркость экрана в зависимости от времени суток и вашего географического положения. Она также может выполнять RGB гамма-коррекцию и задавать цветовые температуры. Как и `xcalib`, это лишь программное решение, и внешний вид курсора мыши не изменяется. Чтобы выполнить быструю настройку яркости, попробуйте что-то вроде этого:
 
 ```
 redshift -o -l 0:0 -b 0.8 -t 6500:6500
 
 ```
 
-**Tip:** If your longitude is west or your latitude is south, you should input it as negative.
-
-Example for Berkeley, CA:
-
+**Совет:** Если ваша долгота западная или широта южная, вы должны ввести ее как отрицательную. Пример для Berkeley, CA:
 ```
 redshift-gtk -l 37.8717:-122.2728 
 
@@ -288,70 +285,70 @@ redshift-gtk -l 37.8717:-122.2728
 
 ### NVIDIA settings
 
-Users of [NVIDIA's proprietary drivers](/index.php/NVIDIA "NVIDIA") users can change display brightness via the nvidia-settings utility under "X Server Color Correction." However, note that this has absolutely nothing to do with backlight (intensity), it merely adjusts the color output. (Reducing brightness this way is a power-inefficient last resort when all other options fail; increasing brightness spoils your color output completely, in a way similar to overexposed photos.)
+Пользователи [несвободных драйверов NVIDIA](/index.php/NVIDIA "NVIDIA") могут менять яркость дисплея с помощью утилиты nvidia-settings в разделе "X Server Color Correction". Однако, заметьте, что это не имеет ничего общего с подсветкой (Интенсивность), она всего лишь регулирует цветность. (Уменьшение яркости таким образом не является энергоэффективным. Используйте его в последнюю очередь, если все другие варианты не срабатывают; увеличение яркости портит цвета на экране полностью, по аналогии с засвеченностью фотографий.)
 
-### Increase brightness above maximum level
+### Увеличение яркости выше максимального уровня
 
-You can use [xrandr](/index.php/Xrandr "Xrandr") to increase brightness above its maximum level:
+Вы можете испльзовать [xrandr](/index.php/Xrandr "Xrandr") для увеличения яркости выше максимального уровня:
 
 ```
 $ xrandr --output *output_name* --brightness 2
 
 ```
 
-This will set the brightness level to 200%. It will cause higher power usage and sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
+Это установит уровень яркости на 200%. Это приведёт к повышению энергопотребления и снижению качества цвета в пользу яркости, тем не менее оно особенно подходит для ситуаций, когда окружающий свет очень яркий (например, солнечный свет).
 
-## Troubleshooting
+## Решение проблем
 
-### Backlight PWM modulation frequency (Intel i915 only)
+### Частота ШИМ-модуляции подсветки (только для Intel i915)
 
-Laptops with LED backlight are known to have screen flicker sometimes. This is because the most efficient way of controlling LED backlight brightness is by turning the LED's on and off very quickly varying the amount of time they are on.
+Известно, что на ноутбуках со светодиодной подсветкой иногда мерцает экран. Это объясняется тем, что наиболее эффективным способом управления яркостью подсветки светодиодов является быстрое включение и выключение светодиодов, изменяя время их свечения.
 
-However, the frequency of the switching, so-called PWM (pulse-width modulation) frequency, may not be high enough for the eye to perceive it as a single brightness and instead see flickering. This causes some people to have symptoms such as headaches and eyestrain.
+Однако, частота переключения, так называемая частота ШИМ (широтно-импульсная модуляция), может быть недостаточно высокой, чтобы глаз воспринимал её как непрерывное свечение, и вместо этого видно мерцание. Это вызывает у некоторых людей такие симптомы, как головные боли и усталость глаз.
 
-If you have an Intel i915 GPU, then it may be possible to adjust PWM frequency to eliminate flicker.
+Если у вас графический адаптер Intel i915, то возможно настроить частоту ШИМ, чтобы устранить мерцание.
 
-Period of PWM (inverse to frequency) is stored in 4 higher bytes of `0xC8254` register (if you are using the Intel GM45 chipset use address `0x61254` instead). To manipulate registers values install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories.
+Период ШИМ (обратно пропорциональный частоте) записывается в 4 старших байта регистра `0xC8254` (если вы используете чипсет Intel GM45, вместо этого используйте адрес `0x61254`). Чтобы манипулировать значениями регистров, установите [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) из официальных репозиториев.
 
-To increase the frequency, period must be reduced. For example:
+Чтобы увеличить частоту, период должен быть уменьшен. Например:
 
  `# intel_reg read 0xC8254`  `0xC8254 : 0x12281228` 
 
-Then to double PWM frequency divide 4 higher bytes by 2 and write back resulting value, keeping lower bytes unchanged:
+Затем, чтобы удвоить частоту ШИМ, разделите 4 старших байта на 2 и запишите полученное значение, сохраняя нижние байты неизменными:
 
 ```
 # intel_reg write 0xC8254 0x09141228
 
 ```
 
-You can use online calculator to calculate desired value [http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html](http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html)
+Вы можете использовать онлайн-калькулятор для расчета желаемого значения [http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html](http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html)
 
-To set new frequency automatically, consider writing an udev rule or install [intelpwm-udev](https://aur.archlinux.org/packages/intelpwm-udev/).
+Чтобы установить новую частоту автоматически, попробуйте написать правило udev или установить [intelpwm-udev](https://aur.archlinux.org/packages/intelpwm-udev/).
 
-### Inverted Brightness (Intel i915 only)
+### Инвертированная яркость (только для Intel i915)
 
-Symptoms:
+Симптомы:
 
-*   after installing `xf86-video-intel` systemd-backlight.service turns off the backlight during boot
-    *   possible solution: mask systemd-backlight.service
-*   switching from X to another VT turns the backlight off
-*   the brightness keys are inverted (i.e. turning up the brightness makes the screen darker)
+*   после установки `xf86-video-intel` systemd-backlight.service выключает подсветку во время загрузки
+    *   возможное решение: маскировать systemd-backlight.service
+*   переключение с X на другую виртуальную консоль выключает подсветку
+*   кнопки регулировки подсветки инвертированы (например, увеличение яркости делает экран темнее)
 
-This problem may be solved by adding `i915.invert_brightness=1` to the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+Эта проблема может быть решена добавлением `i915.invert_brightness=1` в список [параметров ядра](/index.php/Kernel_parameters "Kernel parameters").
 
-### sysfs modified but no brightness change
+### sysfs изменен, но нет изменения яркости
 
-**Note:** This behavior and their workarounds have been confirmed on the Dell M6700 with Nvidia K5000m (BIOS version prior to A10) and Clevo P750ZM (Eurocom P5 Pro Extreme) with Nvidia 980m.
+**Примечание:** Такое поведение и способы его обхода были подтверждены на Dell M6700 с Nvidia K5000m (версия BIOS до A10) и Clevo P750ZM (Eurocom P5 Pro Extreme) с Nvidia 980m.
 
-On some systems, the brighness hotkeys on your keyboard correctly modify the values of the acpi interface in `/sys/class/backlight/acpi_video0/actual_brightness` but the brightness of the screen is not changed. Brigthness applets from [desktop environments](/index.php/Desktop_environments "Desktop environments") may also show changes to no effect.
+На некоторых системах горячие клавиши яркости на клавиатуре корректно изменяют значения интерфейса acpi в `/sys/class/backlight/acpi_video0/actual_brightness`, но яркость экрана не изменяется. Апплеты яркости в [окружениях рабочего стола](/index.php/Desktop_environments "Desktop environments") могут также показывать изменения без результатов.
 
-If you have tested the recommended kernel parameters and only `xbacklight` works, then you may be facing an incompatibility between your BIOS and kernel driver.
+Если вы протестировали рекомендуемые параметры ядра и только `xbacklight` работает, вы можете столкнуться с несовместимостью между вашим BIOS и драйвером ядра.
 
-In this case the only solution is to wait for a fix either from the BIOS or GPU driver manufacturer.
+В этом случае единственное решение - дождаться исправления от производителя BIOS или драйвера GPU.
 
-A workaround is to use the inotify kernel api to trigger `xbacklight` each time the value of `/sys/class/backlight/acpi_video0/actual_brightness` changes.
+Обходной путь - использовать inotify api ядра для запуска `xbacklight` каждый раз, когда изменяется значение `/sys/class/backlight/acpi_video0/actual_brightness`.
 
-First [install](/index.php/Install "Install") [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools). Then create a script around inotify that will be launched upon each boot or through [autostart](/index.php/Autostart "Autostart").
+Сперва [установите](/index.php/Install "Install") [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools). Затем создайте скрипт, который будет запускаться при каждом включении с помощью [автозагрузки](/index.php/Autostart "Autostart").
 
  `/usr/local/bin/xbacklightmon` 
 ```

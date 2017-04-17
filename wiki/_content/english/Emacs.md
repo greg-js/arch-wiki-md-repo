@@ -26,7 +26,6 @@
     *   [6.2 Menus appear empty](#Menus_appear_empty)
     *   [6.3 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
     *   [6.4 Slow startup](#Slow_startup)
-        *   [6.4.1 When network is limited](#When_network_is_limited)
     *   [6.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
     *   [6.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
     *   [6.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
@@ -503,7 +502,7 @@ See also [mwheel.el](http://www.opensource.apple.com/source/emacs/emacs-51/emacs
 
 Emacs includes hundreds of modes, libraries and other extensions, with many more available to further Emacs' capabilities. Most of these come with instructions detailing any changes needed to be made in `~/.emacs`. These instructions are generally found in the comment block at the beginning of an elisp source file, or in a README (or similar), should the extension consist of multiple source files.
 
-You can use the [Emacs Lisp Package Archive (ELPA)](http://tromey.com/elpa/) to automatically install packages. See the manual for instructions. ELPA is included with Emacs 24 and above; it is an accepted part of the Emacs ecosystem. Also, check out the [Marmalade](http://marmalade-repo.org/) and [MELPA](http://melpa.milkbox.net/) repos.
+You can use the [Emacs Lisp Package Archive (ELPA)](http://tromey.com/elpa/) to automatically install packages. See the manual for instructions. ELPA is included with Emacs 24 and above; it is an accepted part of the Emacs ecosystem. Also, check out [MELPA](http://melpa.milkbox.net/) for additional packages.
 
 **Tip:** Use `M-x list-packages` to get a list of available packages for installation.
 
@@ -584,18 +583,6 @@ you might use:
 
 ```
 (autoload 'anything "anything" "Select anything" t)
-
-```
-
-#### When network is limited
-
-Some packages depending on Tramp (e.g. Helm, Magit) will cause slow startup on limited network connections.
-
-Add the following to your `.emacs` *before* loading the offending packages:
-
-```
-(setq tramp-ssh-controlmaster-options
-      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
 ```
 

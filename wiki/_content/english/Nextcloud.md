@@ -60,7 +60,7 @@ Nextcloud requires several components:
 
 *   A web server: [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx")
 *   A database: [MariaDB](/index.php/MariaDB "MariaDB") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
-*   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP).
+*   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP_setup).
 
 These will be configured in [#Setup](#Setup).
 
@@ -169,6 +169,8 @@ server_names_hash_bucket_size 64;
 include conf.d/*.conf;
 
 ```
+
+Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/11/admin_manual/installation/nginx_nextcloud_9x.html). You will likely have to change the `root` location, as the arch package installs to `/usr/share/webapps/` instead of `/var/www/`.
 
 From this point on, it is recommended to obtain a secure-certificates using [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt"), see [#Security Hardening](#Security_Hardening).
 

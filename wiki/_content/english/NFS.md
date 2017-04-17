@@ -12,10 +12,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.1.1 Starting the server](#Starting_the_server)
         *   [2.1.2 Miscellaneous](#Miscellaneous)
             *   [2.1.2.1 Optional configuration](#Optional_configuration)
-            *   [2.1.2.2 Ensure NFSv4 idmapping is fully enabled](#Ensure_NFSv4_idmapping_is_fully_enabled)
-            *   [2.1.2.3 Static ports for NFSv3](#Static_ports_for_NFSv3)
-            *   [2.1.2.4 NFSv2 compatibility](#NFSv2_compatibility)
-            *   [2.1.2.5 Firewall configuration](#Firewall_configuration)
+            *   [2.1.2.2 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces.2FIPs)
+            *   [2.1.2.3 Ensure NFSv4 idmapping is fully enabled](#Ensure_NFSv4_idmapping_is_fully_enabled)
+            *   [2.1.2.4 Static ports for NFSv3](#Static_ports_for_NFSv3)
+            *   [2.1.2.5 NFSv2 compatibility](#NFSv2_compatibility)
+            *   [2.1.2.6 Firewall configuration](#Firewall_configuration)
     *   [2.2 Client](#Client)
         *   [2.2.1 Error from systemd](#Error_from_systemd)
         *   [2.2.2 Manual mounting](#Manual_mounting)
@@ -101,6 +102,25 @@ For more information about all available options see [exports(5)](http://man7.or
 ##### Optional configuration
 
 Advanced configuration options can be set in `/etc/nfs.conf`. Users setting up a simple configuration may not need to edit this file.
+
+##### Restricting NFS to interfaces/IPs
+
+By default, starting `nfs-server.service` will listen for connections on all network interfaces, regardless of `/etc/exports`. This can be changed by defining which IPs and/or hostnames to listen on.
+
+ `/etc/nfs.conf` 
+```
+[nfsd]
+host=192.168.1.123
+# Alternatively, you can use your hostname.
+# host=myhostname
+```
+
+Restarting the service will apply the changes immediately.
+
+```
+# systemctl restart nfs-server.service
+
+```
 
 ##### Ensure NFSv4 idmapping is fully enabled
 

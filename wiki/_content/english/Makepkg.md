@@ -13,13 +13,14 @@
     *   [3.1 Creating optimized packages](#Creating_optimized_packages)
         *   [3.1.1 MAKEFLAGS](#MAKEFLAGS)
     *   [3.2 Package hardening](#Package_hardening)
-    *   [3.3 Improving compile times](#Improving_compile_times)
-        *   [3.3.1 tmpfs](#tmpfs)
-        *   [3.3.2 ccache](#ccache)
-    *   [3.4 Generate new checksums](#Generate_new_checksums)
-    *   [3.5 Create uncompressed packages](#Create_uncompressed_packages)
-    *   [3.6 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
-    *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
+    *   [3.3 Show packages with specific packager](#Show_packages_with_specific_packager)
+    *   [3.4 Improving compile times](#Improving_compile_times)
+        *   [3.4.1 tmpfs](#tmpfs)
+        *   [3.4.2 ccache](#ccache)
+    *   [3.5 Generate new checksums](#Generate_new_checksums)
+    *   [3.6 Create uncompressed packages](#Create_uncompressed_packages)
+    *   [3.7 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
+    *   [3.8 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
     *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
@@ -183,6 +184,22 @@ To check that the hardened flags have been used, [install](/index.php/Install "I
 $ checksec --dir /tmp/makepkg/dwm/pkg/dwm/usr/bin
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FORTIFY Checked         Total   Filename
 Full RELRO      Canary found      NX enabled    PIE enabled     No RPATH   No RUNPATH   Yes     4               6       /tmp/makepkg/dwm/pkg/dwm/usr/bin/dwm
+
+```
+
+### Show packages with specific packager
+
+This shows all packages installed on the system with the packager named *packagername*:
+
+```
+$ expac "%n %p" | grep "*packagername*" | column -t
+
+```
+
+This shows all packages installed on the system with the packager set in the `/etc/makepkg` variable `PACKAGER`. This shows only packages that are in a repository defined in `/etc/pacman.conf`.
+
+```
+$ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)
 
 ```
 

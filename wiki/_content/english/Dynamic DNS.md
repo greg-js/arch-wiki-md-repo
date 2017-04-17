@@ -5,7 +5,8 @@
 *   [1 Update tools](#Update_tools)
     *   [1.1 Router](#Router)
     *   [1.2 ddclient](#ddclient)
-        *   [1.2.1 Starting ddclient after networking is up](#Starting_ddclient_after_networking_is_up)
+        *   [1.2.1 Use an external website to determine IP address](#Use_an_external_website_to_determine_IP_address)
+        *   [1.2.2 Starting ddclient after networking is up](#Starting_ddclient_after_networking_is_up)
     *   [1.3 Other tools](#Other_tools)
 *   [2 Other providers](#Other_providers)
     *   [2.1 duiadns](#duiadns)
@@ -39,6 +40,17 @@ Some of the compatible services are listed below, but you can also check the [ex
 | [Dynu](https://www.dynu.com/) | Free or paid | 4 free, 500 paid | [example](https://www.dynu.com/DynamicDNS/IPUpdateClient/DDClient) |
 
 **Note:** Free users of no-ip are required to manually confirm their domain(s) every 30 days. Domain confirmation is not required for Enhanced users though. More info at [Why is My Hostname Pending Deletion?](http://www.noip.com/support/knowledgebase/why-is-my-hostname-pending-deletion/)
+
+#### Use an external website to determine IP address
+
+If ddclient is unable to detect your IP address, you can configure ddclient to fetch your IP from an external webpage such as [whatismyip.org](http://whatismyip.org/). Add somewhere in the config file:
+
+ `/etc/ddclient/ddclient.conf` 
+```
+# use whatismyip.org to determine IP address
+use=web
+use=whatismyip.org
+```
 
 #### Starting ddclient after networking is up
 

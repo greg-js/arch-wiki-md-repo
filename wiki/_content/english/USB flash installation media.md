@@ -294,7 +294,7 @@ For some old BIOS systems, only booting from USB-ZIP drives is supported. This m
 
 From here continue with the manual formatting method. The partition will be /dev/sd**x**4 due to the way ZIP drives work.
 
-**Note:** Do not format the drive as FAT32 keep it as FAT16.
+**Note:** Do not format the drive as FAT32; keep it as FAT16.
 
 #### Using UNetbootin
 

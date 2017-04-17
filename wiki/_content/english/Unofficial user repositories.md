@@ -102,7 +102,8 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.10 pkgbuild-current](#pkgbuild-current)
         *   [5.2.11 pnsft-pur](#pnsft-pur)
         *   [5.2.12 rakudo](#rakudo)
-        *   [5.2.13 zrootfs](#zrootfs)
+        *   [5.2.13 rust-git](#rust-git)
+        *   [5.2.14 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -894,7 +895,7 @@ Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
 
 ```
 [markzz]
-Server = http://repo.markzz.com/arch/$repo/$arch
+Server = https://repo.markzz.com/arch/$repo/$arch
 
 ```
 
@@ -1103,6 +1104,17 @@ Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 ```
 [rakudo]
 Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
+
+```
+
+#### rust-git
+
+*   **Maintainer:** Tatsuyuki Ishi <ishitatsuyuki@gmail.com>
+*   **Description:** Packages of rust-git and others built with custom PKGBUILD.
+
+```
+[rust-git]
+Server = https://tatsuyuki.kdns.info/archlinux/$repo/$arch
 
 ```
 

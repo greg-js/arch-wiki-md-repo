@@ -28,7 +28,7 @@ There are various ways of installing Arch on a USB stick, depending on the opera
 
 *   If you have another Linux computer available (it need not be Arch), you can follow the instructions at [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux").
 *   An Arch Linux CD/USB can be used to install Arch onto the USB key, via booting the CD/USB and following the [installation guide](/index.php/Installation_guide "Installation guide"). If booting from a Live USB, the installation will have to be made on a different USB stick.
-*   If you run Windows or OS X, download VirtualBox, install VirtualBox Extensions, add the USB drive to a virtual machine running Arch (for example running from an iso), point the installation into the USB drive.
+*   If you run Windows or OS X, download VirtualBox, install VirtualBox Extensions, add the USB drive to a virtual machine running Arch (for example running from an iso), point the installation into the USB drive while using the instructions at the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Installation tweaks
 

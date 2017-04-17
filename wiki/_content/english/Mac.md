@@ -623,7 +623,7 @@ Note that you can also run it without a configuration file, the defaults may wor
 
 The keyboard backlight is controlled by `/sys/class/leds/smc::kbd_backlight`. Write the desired value to `brightness` in that directory.
 
-You may also use [kbdlight](https://aur.archlinux.org/packages/kbdlight/) to control keyboard backlight though scripts or by running it via [sxhkd](/index.php/Sxhkd "Sxhkd"). It has the advantage of allowing keyboard light-level changes without being root.
+Both [acpilight](https://aur.archlinux.org/packages/acpilight/) or [kbdlight](https://aur.archlinux.org/packages/kbdlight/) allow to control keyboard backlight though scripts. With the appropriate udev rules or [sxhkd](/index.php/Sxhkd "Sxhkd") they allow light-level changes without being root.
 
 ###### NVIDIA note
 
@@ -1499,6 +1499,8 @@ For Intel-only graphics, install the [xf86-video-intel](https://www.archlinux.or
 For Dual Graphics see [MacBookPro11,x#Graphics](/index.php/MacBookPro11,x#Graphics "MacBookPro11,x").
 
 **Note:** The kernel parameters *acpi_backlight*, *i915.lvds_downclock*, *i915.enable_ips*, and *intel_iommu* are no longer necessary as of kernel 4.2.
+
+**Note:** (Kernel 4.10.8, MacBook Pro 11,4) If you experience system lock ups and/or tearing in Xorg, remove the .[xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) completely, including any config file you made for it. Xorg will default to its modesetting DDX driver. The performance of this driver is good and the locks go away. See also: [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 
 #### 2012 - 2014 models
 

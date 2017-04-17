@@ -18,7 +18,9 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
             *   [2.2.1.2 Per-user authorization mapping](#Per-user_authorization_mapping)
             *   [2.2.1.3 Obtaining the Yubikey token ID (a.k.a. public ID)](#Obtaining_the_Yubikey_token_ID_.28a.k.a._public_ID.29)
         *   [2.2.2 PAM configuration](#PAM_configuration)
-            *   [2.2.2.1 If using HMAC to authenticate the validation server](#If_using_HMAC_to_authenticate_the_validation_server)
+            *   [2.2.2.1 The default way](#The_default_way)
+            *   [2.2.2.2 Using pure HMAC to authenticate the validation server](#Using_pure_HMAC_to_authenticate_the_validation_server)
+            *   [2.2.2.3 Using pure HTTPS to authenticate the validation server](#Using_pure_HTTPS_to_authenticate_the_validation_server)
         *   [2.2.3 SSHD configuration](#SSHD_configuration)
     *   [2.3 That is it!](#That_is_it.21)
     *   [2.4 Explanation](#Explanation)
@@ -131,34 +133,40 @@ Modhex encoded: XXXXXXX
 
 #### PAM configuration
 
+Having set up the `pam_yubico` module, you next need to tell PAM to use it when logging in via SSH. There are several ways of doing this.
+
+##### The default way
+
+Obtain HMAC credentials from Yubico as described in [#YubiCloud and validation servers](#YubiCloud_and_validation_servers). You will receive a Client ID and a secret key.
+
 Add one of the two following lines to the beginnning of `/etc/pam.d/sshd`:
 
 ```
-auth            required      pam_yubico.so id=APIID authfile=/etc/yubico/authorized_yubikeys
+auth            required      pam_yubico.so id=CLIENTID authfile=/etc/yubico/authorized_yubikeys
 
 ```
 
 if you're using a central authorization mapping file, or
 
 ```
-auth            required      pam_yubico.so id=APIID
+auth            required      pam_yubico.so id=CLIENTID
 
 ```
 
-if you're using per-user authorization mapping.
+if you're using per-user authorization mapping, where `CLIENTID`} is your Client ID. This method utilizes your ID and the server's certificate to authenticate the connection.
 
-**Note:** If you run your own validation server, add the `urllist` parameter to point to your server.
+**Note:** This will authenticate via Yubico's free YubiCloud servers. If you want to use a different server, add it via the `urllist` parameter.
 
-##### If using HMAC to authenticate the validation server
+##### Using pure HMAC to authenticate the validation server
 
-Change `id` and `key` in `/etc/pam.d/sshd`:
-
-```
-auth            required      pam_yubico.so id=APIID key=APIKEY ...
+Add `key` to the above lines in `/etc/pam.d/sshd`:
 
 ```
+auth            required      pam_yubico.so id=CLIENTID key=SECRETKEY ...
 
-where `APIID` and `APIKEY` are your own HMAC ID and key, requested from Yubico as explained above.
+```
+
+where `CLIENTID` and `SECRETKEY` are your HMAC ID and key.
 
 You should also disallow unprivileged users to read the file to prevent them from seeing the HMAC credentials:
 
@@ -168,6 +176,12 @@ You should also disallow unprivileged users to read the file to prevent them fro
 ```
 
 **Note:** HMAC credentials should be unique to a single target server. That way, if an attacker finds them, he will not be able to craft responses to authenticate to other target servers you own
+
+##### Using pure HTTPS to authenticate the validation server
+
+**Warning:** While this "old" method of using a dummy id still works, it is unknown how secure and/or future-proof it is, as Yubico no longer describes it in their documentation. Proceed at your own risk. At the very least you should ensure that only HTTPS servers with valid certificates are used for authentication.
+
+If you do not want to use HMAC credentials from Yubico, it is still possible to authenticate via the Yubico server by setting `CLIENTID=1` instead of your own ID. Although `pam_yubico`'s default server uses HTTPS already, for security reasons you should specify it manually via the `urllist` parameter, as the servers certificate is the only way in which the connection is authenticated. You can find the keyserver URL by adding the `debug` parameter to the `auth` line.
 
 #### SSHD configuration
 
@@ -181,7 +195,7 @@ UsePAM yes
 
 ### That is it!
 
-You should not need to restart anything if you just touched the PAM config file.
+You should not need to restart anything if you did not change the SSHD config file.
 
 To log in, at the `Password:` prompt of SSH, you have to type your password **without pressing enter** and touch the Yubikey's button. The Yubikey should send a return at the end of the OTP so you do not need to touch the enter key at all.
 
@@ -235,7 +249,7 @@ release_context
 
 ### (Optional) Install the Yubico Authenticator Desktop client
 
-You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/).
+You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop](https://aur.archlinux.org/packages/yubico-yubioath-desktop/) or [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/).
 
 While `pcscd.service` is running, run `yubioath-gui` and insert your Yubikey when prompted.
 

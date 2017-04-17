@@ -49,7 +49,7 @@ A modo de pautas orientativas para aquellos usuarios que se aproximan por primer
 
 	2\. Revise aleatoramente las páginas de ArchWiki (Español) para familiarizarse con su distribución y estructura, y:
 
-	2.1\. Etiquete los artículos que requieren intervención con el plantilla adecuada (familiarícese con los plantillas leyendo [esta sección](/index.php/Help:Template "Help:Template")).
+	2.1\. Etiquete los artículos que requieren intervención con la plantilla adecuada (familiarícese con las plantillas leyendo [esta sección](/index.php/Help:Template "Help:Template")).
 
 	2.2\. Redirija páginas a su nueva ubicación (siguiendo la de la versión inglesa). Consulte [esta sección](/index.php/Help:Editing_(Espa%C3%B1ol)#Redirecciones "Help:Editing (Español)") para saber cómo.
 

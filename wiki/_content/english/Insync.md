@@ -10,6 +10,7 @@
     *   [3.1 Control via CLI](#Control_via_CLI)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Slow sync process](#Slow_sync_process)
+    *   [4.2 GUI not starting and failing silently](#GUI_not_starting_and_failing_silently)
 
 ## Installation
 
@@ -55,3 +56,9 @@ The default systemd service file provided in [insync](https://aur.archlinux.org/
 ExecStart=/usr/bin/insync start
 
 ```
+
+### GUI not starting and failing silently
+
+When running `insync start`, the status tray icon does not appear and insync does not start.
+
+According to [this](https://forums.insynchq.com/t/insync-arch-linux-not-starting-segfault-at-730-error-14/8893) thread, this is due to `QGtkStyle`. You will need to set the Qt4 theme to something other than Gtk+ using `qtconfig-qt4`.

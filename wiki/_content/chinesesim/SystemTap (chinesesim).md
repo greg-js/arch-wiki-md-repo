@@ -72,7 +72,7 @@ CONFIG_X86_DECODER_SELFTEST=n
 
 ### Systemtap
 
-从 [AUR](/index.php/AUR "AUR") 中安装systemtap即可: [systemtap](https://aur.archlinux.org/packages/systemtap/), 完成.
+从 [AUR](/index.php/AUR "AUR") 中安装systemtap即可: [systemtap](https://www.archlinux.org/packages/?name=systemtap), 完成.
 
 ## 编译自定义内核
 

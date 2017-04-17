@@ -34,6 +34,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.3 Messages during console login](#Messages_during_console_login)
     *   [2.4 USB devices and sleep](#USB_devices_and_sleep)
         *   [2.4.1 Battery charging issues](#Battery_charging_issues)
+    *   [2.5 Card reader does not detect cards](#Card_reader_does_not_detect_cards)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad switch](#Touchpad_switch)
     *   [3.2 Full fan speed](#Full_fan_speed)
@@ -152,7 +153,7 @@ Test with `xev` or try to bind something on media button. `FN+F7` should be cont
 
 ### Touchpad
 
-Touchpad might not work as expected out of the box. To resolve, install [Touchpad Synaptics driver](/index.php/Touchpad_Synaptics#Installation "Touchpad Synaptics").
+Install [Touchpad Synaptics driver](/index.php/Touchpad_Synaptics#Installation "Touchpad Synaptics").
 
 ## Troubleshooting
 
@@ -165,8 +166,6 @@ If you boot your laptop right after Windows to Linux, sound might only work thro
 #### Bug
 
 The internal speakers seems not to play any sound until volume is being increased significantly. This also occurs on Windows operation system as well as on Linux.
-
-To fix this, please flash BIOS 206 as per description in [#Disable GPU throotling](#Disable_GPU_throotling) section.
 
 #### Sound pops twice during shutdown and sleep
 
@@ -227,7 +226,7 @@ Nouveau E[    DRM] Pointer to flat panel table invalid
 
 ```
 
-After installing Intel with Nvidia graphics drivers, messages should dissappear.
+To resolve, refer to [ASUS_N550JV#Drivers](/index.php/ASUS_N550JV#Drivers "ASUS N550JV").
 
 ### USB devices and sleep
 
@@ -268,6 +267,10 @@ Then [enable](/index.php/Enable "Enable") `root-suspend.service` and `root-resum
 #### Battery charging issues
 
 This battery in this laptop can only be accessed by removing the bottom of the entire laptop, which requires removing 10 TORX-5 screws. That there appears to be a power issue related to the recharging USB port (the USB port with a lightning bolt) under Linux. When an externally powered device is plugged into the charging USB port and the system is power cycled, the battery indicator will begin flashing orange and the system no longer recognizes or charges the battery. One way to reset the charging circuit is to force shutdown by holding the power button for a few seconds. See [this thread at the Ubuntu forums](http://ubuntuforums.org/showthread.php?t=2176915&page=4&p=13035724#post13035724) for other possible solutions.
+
+### Card reader does not detect cards
+
+Due to unknown reasons, card reader does not detect cards. To resolve this, quickly pull out the card and insert it back for several times and after few seconds card will be detected in your system.
 
 ## Tips and tricks
 

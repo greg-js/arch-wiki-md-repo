@@ -60,6 +60,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [4.6 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_.5Bpreauth.5D)
     *   [4.7 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
     *   [4.8 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
+    *   [4.9 tmux/screen session killed when disconnecting from SSH](#tmux.2Fscreen_session_killed_when_disconnecting_from_SSH)
 *   [5 See also](#See_also)
 
 ## OpenSSH
@@ -908,6 +909,12 @@ Their offer: diffie-hellman-group1-sha1
 ```
 
 The best resolution for these failures is to upgrade/configure the server to not use deprecated algorithms. If that is not possible, you can force the client to reenable the algorithm with the [client option](#Configuration) `KexAlgorithms +diffie-hellman-group1-sha1`.
+
+### tmux/screen session killed when disconnecting from SSH
+
+If your processes get killed at the end of the session, it is possible that you are using socket activation and it gets killed by [systemd](https://www.archlinux.org/packages/?name=systemd) when it notices that the SSH session process exited. In that case there are two solutions. One is to avoid using socket activation by using `ssh.service` instead of `ssh.socket`. The other is to set `KillMode=process` in the Service section of `ssh@.service`.
+
+The `KillMode=process` setting may also be useful with the classic `ssh.service`, as it avoids killing the SSH session process or the [screen](https://www.archlinux.org/packages/?name=screen) or [tmux](https://www.archlinux.org/packages/?name=tmux) processes when the server gets stopped or restarted.
 
 ## See also
 

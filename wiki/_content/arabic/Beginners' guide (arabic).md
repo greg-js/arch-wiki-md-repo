@@ -44,9 +44,9 @@
 
 ## التجهيز
 
-يفترض أن يعمل آرتش لينكس على أي معالج بمعمارية [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) مع 256MB ذاكرة RAM كحد أدنى. يحتاج التثبيت الأساسي لكل الحزم من المجموعة [base](https://www.archlinux.org/groups/x86_64/base/) أقل من 800MB تقريبا من مساحة القرص.
+يفترض أن يعمل آرتش لينكس على أي معالج بمعمارية [x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") مع 512 MB ذاكرة RAM كحد أدنى. يحتاج التثبيت الأساسي لكل الحزم من المجموعة [base](https://www.archlinux.org/groups/x86_64/base/) أقل من 800MB تقريبا من مساحة القرص. تحتاج عملية التثبيت جلب حزم من مستودع بعيد، تتطلب هذه العمليه الاتصال بالانترنت.
 
-ألق نظرة على [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") لمعلومات عن تنزيل وسيط التثبيت, وطرق إقلاعها على الجهاز المطلوب. هذا يفترض الدليل أنك تستخدم آخر إصدار.
+ألق نظرة على [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") لمعلومات عن تنزيل وسيط التثبيت, وطرق إقلاعها على الجهاز المطلوب. يفترض هذا الدليل أنك تستخدم آخر إصدار.
 
 سيتم تسجيل الدخول تلقائيا بحساب الجذر إلى صدفة [Zsh](/index.php/Zsh "Zsh"). ينصح باستخدام محرر مثل [nano](/index.php/Nano#Usage "Nano") أو [vim](/index.php/Vim#Usage "Vim") للتعديل على ملفات الضبط الموجودة عادة في `/etc`
 
@@ -61,7 +61,7 @@
 
 ```
 
-انظر إلى [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") لمزيد من التفاصيل.
+اذا لم يكن المجلد موجود فقد يكون النظام اقلع في وضع [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") او CSM. ارجع لدليل اللوحه الام الخاصه بجهازك لمزيد من التفاصيل. انظر إلى [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") لمزيد من التفاصيل.
 
 ### ضبط تنسيق لوحة المفاتيح keyboard layout
 

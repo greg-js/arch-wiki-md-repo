@@ -1,4 +1,4 @@
-GNOME (pronounced *gah-nohm* or *nohm*) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project"). The default display is [Wayland](/index.php/Wayland "Wayland") instead of [Xorg](/index.php/Xorg "Xorg").
+[GNOME](https://www.gnome.org/) (pronounced *gah-nohm* or *nohm*) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project"). The default display is [Wayland](/index.php/Wayland "Wayland") instead of [Xorg](/index.php/Xorg "Xorg").
 
 ## Contents
 
@@ -518,15 +518,15 @@ For further information, refer to the [app-folders schema](https://git.gnome.org
 
 ## See also
 
-*   [The Official Website of GNOME](http://www.gnome.org/)
+*   [The Official Website of GNOME](https://www.gnome.org/)
 *   [Extensions for GNOME-shell](https://extensions.gnome.org/)
 *   [GNOME Shell Cheat Sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet), commands, keyboard shortcuts and other tips for using GNOME Shell.
 *   Themes, icons, and backgrounds:
-    *   [GNOME Art](http://art.gnome.org/)
-    *   [GNOME Look](http://www.gnome-look.org/)
+    *   [Personalize GNOME](https://wiki.gnome.org/Personalization)
+    *   [GNOME Look](https://www.gnome-look.org/)
 *   GTK+/GNOME programs:
     *   [GNOME Files](http://www.gnomefiles.org/)
-    *   [GNOME Project Listing](http://www.gnome.org/projects/)
+    *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 *   GNOME Source/Mirrors:
     *   [GNOME Git Repository](https://git.gnome.org/browse/)

@@ -63,7 +63,7 @@ Arch users with the same laptop as you are: a minority of a minority of a minori
 
 ## Recompiling it yourself
 
-Your best resources in this endeavor are going to be [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](http://www.lesswatts.org/projects/acpi/) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile.
+Your best resources in this endeavor are going to be [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](https://01.org/linux-acpi) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile.
 
 You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code, and be familiar with [Kernel Compilation#Compilation](/index.php/Kernel_Compilation#Compilation "Kernel Compilation") to install it.
 

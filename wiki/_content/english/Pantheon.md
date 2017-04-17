@@ -54,8 +54,8 @@ To get the minimal Pantheon desktop interface, start by installing [pantheon-ses
 
 *   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/): Watchdog service to keep core Pantheon apps running
 *   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/): Window Manager
-*   [wingpanel](https://www.archlinux.org/packages/?name=wingpanel): Top panel (release version)
-*   [slingshot-launcher](https://www.archlinux.org/packages/?name=slingshot-launcher): Application launcher (release version)
+*   [wingpanel](https://aur.archlinux.org/packages/wingpanel/): Top panel (release version)
+*   [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/): Application launcher (release version)
 
 You may additionally install these packages as well:
 
@@ -100,11 +100,11 @@ These packages are the original, patched, and selected applications that compris
 *   [noise-player-bzr](https://aur.archlinux.org/packages/noise-player-bzr/): Audio player
 *   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/): Video player
 *   [maya-calendar-bzr](https://aur.archlinux.org/packages/maya-calendar-bzr/): Calendar
-*   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser (recently replaced by a patched version of [Epiphany](https://www.archlinux.org/packages/?name=Epiphany))
-*   [pantheon-mail-bzr](https://aur.archlinux.org/packages/pantheon-mail-bzr/): Email client based on [Geary](https://www.archlinux.org/packages/?name=Geary)
+*   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser (recently replaced by a patched version of [epiphany](https://www.archlinux.org/packages/?name=epiphany))
+*   [pantheon-mail-bzr](https://aur.archlinux.org/packages/pantheon-mail-bzr/): Email client based on [geary](https://www.archlinux.org/packages/?name=geary)
 *   [screenshot-tool-bzr](https://aur.archlinux.org/packages/screenshot-tool-bzr/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
-*   [pantheon-photos-bzr](https://aur.archlinux.org/packages/pantheon-photos-bzr/): Photo manager based on [Slingshot](https://www.archlinux.org/packages/?name=Slingshot)
+*   [pantheon-photos-bzr](https://aur.archlinux.org/packages/pantheon-photos-bzr/): Photo manager based on [Slingshot](https://aur.archlinux.org/packages/Slingshot/)
 *   [snap-photobooth-bzr](https://aur.archlinux.org/packages/snap-photobooth-bzr/): Webcam app (recently developed into pantheon-camera)
 *   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
 *   [pantheon-notes-bzr](https://aur.archlinux.org/packages/pantheon-notes-bzr/): Note taking app, replacing [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/)

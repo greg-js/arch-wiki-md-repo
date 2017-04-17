@@ -584,6 +584,10 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://aur.archlinux.org/packages/llpp/)
 
+*   **Master PDF Editor** — A functional proprietary PDF editor. Free non-commercial use. (closed source)
+
+	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/)
+
 *   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast PDF and XPS viewer and toolkit written in portable C. Features CJK font support.
 
 	[http://mupdf.com](http://mupdf.com) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)

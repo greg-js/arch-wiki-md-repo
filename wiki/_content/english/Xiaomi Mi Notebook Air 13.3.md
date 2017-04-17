@@ -21,9 +21,12 @@ The installation should be going without any problems, if you follow the followi
 *   [3 Input](#Input)
     *   [3.1 Touchpad](#Touchpad)
     *   [3.2 Fn-Keys](#Fn-Keys)
-*   [4 Troubleshoothing](#Troubleshoothing)
-    *   [4.1 Backlight](#Backlight)
-    *   [4.2 WiFi](#WiFi)
+*   [4 Display Calibration](#Display_Calibration)
+*   [5 NVM Express SSD](#NVM_Express_SSD)
+    *   [5.1 linux-nvme](#linux-nvme)
+*   [6 Troubleshoothing](#Troubleshoothing)
+    *   [6.1 Backlight](#Backlight)
+    *   [6.2 WiFi](#WiFi)
 
 ## Pre-Installation System Settings
 
@@ -45,14 +48,18 @@ The Mi Book has an Intel, as well as a Nvidia GPU.
 
 If you want to completely disable the Nvidia GPU and save batterylife, do the following:
 
-*   Installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package
-*   Blacklisting the [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) kernel modules [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
+*   Install the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package
+*   Blacklist the [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) kernel modules [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules")
 
  `/etc/modprobe.d/nouveau.conf` 
 ```
 blacklist nouveau
 blacklist nvidia
 ```
+
+*   Install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) to [turn off the card](/index.php/Bumblebee#Power_management "Bumblebee")
+
+ `/etc/modprobe.d/bbswitch`  `options bbswitch load_state=0 unload_state=0` 
 
 ### Intel/Nvidia Hybrid Configuration
 
@@ -64,7 +71,7 @@ Refer to the respective articles.
 
 ### Touchpad
 
-To use the touchpad like a normal one, you have to use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). If you use [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), your touchpad acts like a touchscreen (e.g it maps your movements directly to your screen). But if you are using [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (although you really shouldn't, because it is deprecated (see [Synaptics](/index.php/Synaptics "Synaptics"))) things are only working sporadically. This configuration of [libinput](https://www.archlinux.org/packages/?name=libinput) using XOrg configuration files enables two finger gestures, tap-to-click and 2-and 3-finger clicks (for right- and middle-click respectively).
+To use the touchpad like a normal one, you have to use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). If you use [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev), your touchpad acts like a touchscreen (e.g it maps your movements directly to your screen). But if you are using [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (although you really should not, because it is deprecated (see [Synaptics](/index.php/Synaptics "Synaptics"))) things are only working sporadically. This configuration of [libinput](https://www.archlinux.org/packages/?name=libinput) using XOrg configuration files enables two finger gestures, tap-to-click and 2-and 3-finger clicks (for right- and middle-click respectively).
 
  `/etc/X11/xorg.conf.d/20-touchpad.conf` 
 ```
@@ -99,6 +106,20 @@ Most Fn-keys return the correct keycodes. Here is a table containing that inform
 | `F11` | `Print` |
 | `F12` | `Insert` |
 
+## Display Calibration
+
+Factory display calibration is poor. In lieu of a colorimeter, try the [ICC profiles](/index.php/ICC_profiles "ICC profiles") at [tlvince/xiaomi-mi-notebook-air-13](https://github.com/tlvince/xiaomi-mi-notebook-air-13/tree/085e5ad7034563256a42d8fb106e8c95057ddf6e/display-calibration).
+
+## NVM Express SSD
+
+### linux-nvme
+
+Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in Linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or repository linked below.
+
+**linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
+
+	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
+
 ## Troubleshoothing
 
 ### Backlight
@@ -117,7 +138,7 @@ EndSection
 
 ### WiFi
 
-If you are having issues with the auto-detected WiFi drivers, that's because there's a conflict between two of them, as you can see using `rfkill list` To solve it, block the wrong driver:
+If you are having issues with the auto-detected WiFi drivers, that is because there is a conflict between two of them, as you can see using `rfkill list` To solve it, block the wrong driver:
 
  `/etc/modprobe.d/blacklist.conf`  `blacklist acer-wmi` 
 

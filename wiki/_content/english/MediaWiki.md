@@ -1,4 +1,4 @@
-**Note:** If you are using xampp, instead of [LAMP](/index.php/LAMP "LAMP"), there are different steps you need to take after installing. More info [here](https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_XAMPP#381)
+[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in PHP, originally developed for Wikipedia.
 
 ## Contents
 
@@ -18,11 +18,15 @@
 
 ## Installation
 
-You need to have a web server, such as [Apache](/index.php/Apache "Apache") installed, configured to be able to use [PHP](/index.php/PHP "PHP").
+**Note:** To install MediaWiki on XAMPP see [mw:Manual:Installing MediaWiki on XAMPP](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki_on_XAMPP "mw:Manual:Installing MediaWiki on XAMPP").
 
-[Install](/index.php/Install "Install") the [php-gd](https://www.archlinux.org/packages/?name=php-gd), [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) packages.
+To run MediaWiki you need three things:
 
-You will also need a database system, such as [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite").
+*   the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package
+*   a web server – [Apache](/index.php/Apache "Apache"), [Nginx](/index.php/Nginx "Nginx") or [Lighttpd](/index.php/Lighttpd "Lighttpd")
+*   a database system – [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite")
+
+Optionally install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or [php-gd](https://www.archlinux.org/packages/?name=php-gd) for thumbnail rendering and [php-intl](https://www.archlinux.org/packages/?name=php-intl) to handle Unicode normalization.
 
 ## Configuration
 
@@ -67,7 +71,7 @@ You will need to create the directory if it doesn't exist and then restrict its 
 
 Copy `/etc/webapps/mediawiki/apache.example.conf` to `/etc/httpd/conf/extra/mediawiki.conf` and edit it as needed.
 
-Add the following lines to `/etc/httpd/conf/httpd.conf`
+Add the following line to `/etc/httpd/conf/httpd.conf`
 
 ```
 Include conf/extra/mediawiki.conf
@@ -176,7 +180,7 @@ The generated `LocalSettings.php` file is offered for download, save it to `/usr
 
 ### Mathematics (texvc)
 
-Usually installing [texvc](https://www.archlinux.org/packages/?name=texvc) and enabling it in the config are enough:
+Usually installing [texvc](https://www.archlinux.org/packages/?name=texvc) and enabling it in the config is enough:
 
 ```
 $wgUseTeX = true;
@@ -197,14 +201,15 @@ Check that php, apache and mysql uses UTF-8\. Otherwise you may face strange bug
 
 ### VisualEditor
 
-After following [this instruction](https://www.mediawiki.org/wiki/Extension:VisualEditor) on how to install the VisualEditor, you need a backend nodejs application on your server, called [Parsoid](https://www.mediawiki.org/wiki/Parsoid), to get it finally working.
+The VisualEditor MediaWiki extension provides a rich-text editor for MediaWiki. Follow [mw:Extension:VisualEditor](https://www.mediawiki.org/wiki/Extension:VisualEditor "mw:Extension:VisualEditor") to install it.
 
-Simply install [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/) from the [AUR](/index.php/AUR "AUR") and adjust the path to your MediaWiki in following file:
+You will also need the [Parsoid](https://www.mediawiki.org/wiki/Parsoid "mw:Parsoid") Node.js backend, which is available from the [AUR](/index.php/AUR "AUR") as [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/).
 
- `/usr/share/webapps/parsoid/api/localsettings.js` 
+Adjust the path to MediaWiki in `/usr/share/webapps/parsoid/api/localsettings.js`:
+
 ```
 parsoidConfig.setInterwiki( 'localhost', 'http://localhost/mediawiki/api.php' );
 
 ```
 
-After that simply [enable](/index.php/Enable "Enable") and start `parsoid.service`.
+After that [enable](/index.php/Enable "Enable") and start `parsoid.service`.

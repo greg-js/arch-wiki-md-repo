@@ -35,13 +35,15 @@
 
 1.  确认启动方式是 UEFI 模式
 2.  验证[可以正确访问 EFI 变量](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface")
-3.  挂载 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition")(ESP)
-    **Note:** systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#.E6.9B.B4.E6.96.B0)部分。
+3.  挂载 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition")(ESP)，下面的例子中会用 `$esp` 代替 EFI 系统分区的实际位置。
 
-4.  复制内核和 initramfs 到 ESP。
-    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
+**Note:** systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#.E6.9B.B4.E6.96.B0)部分。
 
-5.  执行下面命令将 systemd-boot 程序复制到 EFI 系统分区并将 systemd-boot 安装成EFI启动管理器的默认的 EFI 程序。
+1.  如果 EFI 系统分区没挂载在 /boot 上的话，复制内核和 initramfs 到 ESP。
+
+**Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
+
+1.  执行下面命令将 systemd-boot 程序复制到 EFI 系统分区并将 systemd-boot 安装成EFI启动管理器的默认的 EFI 程序。
 
 ```
 # bootctl --path=*$esp* install

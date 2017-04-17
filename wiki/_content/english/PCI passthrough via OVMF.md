@@ -41,6 +41,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [9.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
     *   [9.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [9.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+    *   [9.6 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
 *   [10 See also](#See_also)
 
 ## Prerequisites
@@ -765,6 +766,21 @@ In order to fix the issues enabling MSI on the 0 function of my nVidia card (`01
 ### No HDMI audio output on host when intel_iommu is enabled
 
 If after enabling `intel_iommu` the HDMI output device of Intel GPU becomes unusable on the host then setting the option `igfx_off` (i.e. `intel_iommu=on,igfx_off`) might bring the audio back, please read `Graphics Problems?` in [Intel-IOMMU.txt](https://www.kernel.org/doc/Documentation/Intel-IOMMU.txt) for details about setting `igfx_off`.
+
+### X doesnt start after enabling vfio_pci
+
+This is related to the host gpu being detected as a secondary gpu, which cases X to error, when it tries to load a driver for the guest gpu. To circumvent this, a xorg conf specifying the BusID for the host gpu is necessary. The correct BusID can be acquired from lspci or the Xorg log.
+
+ `10-radeon.conf` 
+```
+Section "Device"
+        Identifier "Radeon GPU"
+        Driver "radeon"
+        BusID  "PCI:3:0:0"
+EndSection
+```
+
+[Source](https://www.redhat.com/archives/vfio-users/2016-August/msg00025.html)
 
 ## See also
 

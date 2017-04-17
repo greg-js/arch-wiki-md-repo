@@ -31,6 +31,8 @@ The package can be [installed](/index.php/Install "Install") with [flpsed](https
 
 [Inkscape](http://www.inkscape.org/) is an image editing program that can be used to fill PDF forms, by importing the PDF file and inserting text fields at the correct location. The fields are likely blank when the forms are read electronically, but it should work well enough for printing.
 
+See [inkscape](/index.php/Inkscape "Inkscape") for more info.
+
 ### Master PDF Editor
 
 [Master PDF Editor](https://code-industry.net/) is a PDF editing program that is able to read properly PDF files that "require Adobe Reader 8 or higher" (this is the message that Evince would display when trying to open such files). It is free for non-commercial use.

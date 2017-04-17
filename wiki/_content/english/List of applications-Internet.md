@@ -644,7 +644,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **N1** — A new mail client, built on the modern web and designed to be extended.
 
-	[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1](https://aur.archlinux.org/packages/n1/)
+	[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1-git](https://aur.archlinux.org/packages/n1-git/)
 
 *   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
 

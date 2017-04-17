@@ -1,4 +1,4 @@
-Delta updates save time and size in downloading and updating the system. Packages that are downloaded will be a sort of "diff" of the new package, which will be used to patch the old package into the new package at the end of the download.
+Delta updates can save time and size in downloading and updating the system. Packages that are downloaded will be a sort of "diff" of the new package, which will be used to patch the old package into the new package at the end of the download.
 
 ## Contents
 
@@ -9,24 +9,11 @@ Delta updates save time and size in downloading and updating the system. Package
 
 ## Install
 
-[Install](/index.php/Install "Install") the [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) package.
+[Install](/index.php/Install "Install") the [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) package. This utility is required in order to apply the binary diffs that delta mirrors provide in addition to full packages.
 
 ## Configuration
 
-Edit `/etc/pacman.d/mirrorlist` and add the proper repository:
-
- `/etc/pacman.d/mirrorlist` 
-```
-##
-## Arch Linux repository mirrorlist
-## Generated on 2011-03-24
-##
-
-## Delta Archlinux.fr
-Server = http://delta.archlinux.fr/$repo/os/$arch
-Server = https://delta.0web.ir/$repo/os/$arch
-.....
-```
+The official mirrors are not obliged to provide package delta files. Add a new mirror entry to pacman's mirrorlist, choosing a mirror which provides deltas. See [Mirrors#Enabling_a_specific_mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors") for further direction on this. There are some delta-capable mirrors listed in [Mirrors#Unofficial_mirrors](/index.php/Mirrors#Unofficial_mirrors "Mirrors").
 
 Then edit `/etc/pacman.conf` uncommenting the option `UseDelta`:
 
@@ -40,6 +27,8 @@ UseDelta
 TotalDownload
 .....
 ```
+
+This will instruct pacman to download and apply a package delta where one is advertised in the sync database, and it will apply to a version of the package currently in the local pacman package cache.
 
 ## Comparisons
 
@@ -75,10 +64,6 @@ In this way we do not need to download 416,89 MB of packages but only 343,15 MB,
 
 ## Disadvantages
 
-This method isn't fully supported in Arch Linux as opposed to [OpenSuSE](http://www.opensuse.org) or [Gentoo](http://www.gentoo.org) which use this as standard for their update system. In fact the available delta repository are just a few. The results can be much better if delta have more deltup packages between previous versions in the repositories. For example, in the repository the author uses, there is only -1 version of each package.
+This method isn't fully supported in Arch Linux as opposed to [OpenSuSE](http://www.opensuse.org) or [Gentoo](http://www.gentoo.org) which use this as standard for their update system. Beacuse of this, there are only small number of mirrors supporting deltas.
 
-```
-kdeartwork-kscreensaver-4.6.2-1_to_4.6.3-1-x86_64.delta	2011-May-06 22:35:41	301.8K	 application/octet-stream 
-kdeartwork-kscreensaver-4.6.3-1-x86_64.pkg.tar.xz	2011-May-06 08:57:57	589.2K	 application/octet-stream
-
-```
+When a system hasn't been kept fully up-to-date all of the time, then it is possible that there will be no delta available to patch between the old and current versions, but instead patches are only available for one or more versions of the package *in between* the installed and current versions. Thus, the more deltas the mirror provides between historic versions and the current version, the more likely it is that using deltas will reduce the total download size. However, mirrors currently available only host deltas for between 1 and 3 versions before the current. This can reduce the benefit to be seen on a system which not frequently updated.
