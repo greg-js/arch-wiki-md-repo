@@ -50,7 +50,7 @@ In all of the above, you will be assigned a dynamic IP address. To assign a stat
 
 ## Configuration
 
-The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details. Some of the frequently used options are highlighted below.
+The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](https://www.daemon-systems.org/man/dhcpcd.conf.5.html) for details. Some of the frequently used options are highlighted below.
 
 ### DHCP static route(s)
 

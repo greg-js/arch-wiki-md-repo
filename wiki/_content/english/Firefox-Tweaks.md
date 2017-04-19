@@ -56,6 +56,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [3.14 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
     *   [3.15 Enable touchscreen gestures](#Enable_touchscreen_gestures)
+    *   [3.16 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -672,6 +673,16 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 Make sure `dom.w3c_touch_events.enabled` is either set to 1 (*enabled*) or 2 (*default, auto-detect*).
 
 Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change persistent, add that command to `/etc/profile.d/firefox.sh`.
+
+### Disable WebRTC audio post processing
+
+If you are using the PulseAudio [module-echo-cancel](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation), you probably don't want Firefox to do additional audio post processing.
+
+<caption>To disable audio post processing, set the following parameters</caption>
+| Key | Value | Description |
+| media.getusermedia.aec_enabled | false | AEC = Acoustic Echo Cancellation |
+| media.getusermedia.agc_enabled | false | AGC = Automatic Gain Control |
+| media.getusermedia.noise_enabled | false | Noise suppression. BEWARE: Disabling noise suppression in Firefox may lead to a "Mickey Mouse voice" |
 
 ## See also
 

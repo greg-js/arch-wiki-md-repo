@@ -385,7 +385,7 @@ After reboot, you should be able to use the touchpad normally.
 
 **Note:** Lid suspend might not work directly after boot, you might need to wait a little.
 
-The following are instructions to fix the suspend functionality. Even if you are using a pre-installed SeaBIOS or John Lewis' pre-built SeaBIOS you will still need this fix.
+The following are instructions to fix the suspend functionality. Users of a pre-installed SeaBIOS or John Lewis' pre-built SeaBIOS you will need this fix. This procedure is not needed with Matt DeVillier's custom firmware since problematic ACPI wake devices (such as `TPAD`) are firmware-disabled.
 
 There have been a few alternatives discussed and those may work better for some. [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1364376#p1364376) [[11]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521)
 

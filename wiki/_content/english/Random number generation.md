@@ -71,6 +71,10 @@ $ dmesg | grep -e random:
 
 ```
 
+In above example, the system has long reached its default boot target before the kernel gathered enough entropy to initialize the pool. Due to systemd [requiring](https://github.com/systemd/systemd/issues/4167) entropy at an early stage, it may happen though that the pool is depleted in the boot process without further kernel warnings.
+
+Hence, a problem at this boot stage is that another service, e.g. an [OpenSSL](/index.php/OpenSSL "OpenSSL") session for a web server or any other cryptographic service, may start without receiving a sufficient quality entropy seed from the depleted `/dev/urandom` pool. Moving on, in a typical configuration OpenSSL may use that seed during the whole session's runtime, and only request a fresh seed for a new session.
+
 ## Alternatives
 
 For applications other than the generation of long-term cryptographic keys, a practical compromise between performance and security is the use of a [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator "wikipedia:Pseudorandom number generator"). In Arch Linux repositories for example:

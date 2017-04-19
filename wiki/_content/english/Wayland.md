@@ -60,19 +60,19 @@ Install the [weston](https://www.archlinux.org/packages/?name=weston) package.
 
 <caption>***Keyboard Shortcuts** (super = windows key - can be changed, see weston.ini)* `Ctrl-b`</caption>
 | Cmd | Action |
-| Ctrl + Alt + Backspace | Quit Weston |
-| Super + Scroll (or PageUp/PageDown) | Zoom in/out of desktop |
-| Super + Tab | Switch windows |
-| Super + LMB | Move Window |
-| Super + MMB | Rotate Window ! |
-| Super + RMB | Resize Window |
-| Super + Alt + Scroll | Change window opacity |
-| Super + K | Force Kill Active Window |
-| Super + KeyUp/KeyDown | Switch Prev/Next Workspace |
-| Super + Shift + KeyUp/KeyDown | Grab Current Window and Switch Workspace |
-| Super + F***n*** | Switch to Workspace ***n*** |
-| Super + S | Take a screenshot |
-| Super + R | Record a screencast. |
+| `Ctrl+Alt+Backspace` | Quit Weston |
+| `Super+Scroll` (or `PageUp`/`PageDown`) | Zoom in/out of desktop |
+| `Super+Tab` | Switch windows |
+| `Super+LMB` | Move Window |
+| `Super+MMB` | Rotate Window ! |
+| `Super+RMB` | Resize Window |
+| `Super+Alt+Scroll` | Change window opacity |
+| `Super+K` | Force Kill Active Window |
+| `Super+KeyUp/KeyDown` | Switch Prev/Next Workspace |
+| `Super+Shift+KeyUp/KeyDown` | Grab Current Window and Switch Workspace |
+| `Super+F***n***` | Switch to Workspace ***n*** |
+| `Super+S` | Take a screenshot |
+| `Super+R` | Record a screencast. |
 
 Now that Wayland and its requirements are installed you should be ready to test it out.
 

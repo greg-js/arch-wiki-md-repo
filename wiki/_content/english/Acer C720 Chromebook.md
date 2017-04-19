@@ -33,37 +33,7 @@ For information on general Chromebook post installation configuration (hotkeys, 
 
 ### Touchpad Configuration
 
-[Add](/index.php/Add "Add") the Xorg touchpad configuration below for better usability (increases touchpad sensitivity). These options are not available for all touchpad drivers (e.g. [libinput](/index.php/Libinput "Libinput")).
-
- `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-```
-Section "InputClass" 
-    Identifier      "touchpad peppy cyapa" 
-    MatchIsTouchpad "on" 
-    MatchDevicePath "/dev/input/event*" 
-    MatchProduct    "cyapa" 
-    Option          "FingerLow" "10" 
-    Option          "FingerHigh" "10" 
-EndSection
-```
-
-If you want to remove the "right-click" behavior from the touchpad from the bottom right area (you can still right-click with two finger clicks), you should add two lines to following section from `/etc/X11/xorg.conf.d/50-cros-touchpad.conf`
-
- `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-```
-
-Section "InputClass"
-    Identifier      "touchpad peppy cyapa"
-    MatchIsTouchpad "on"
-    MatchDevicePath "/dev/input/event*"
-    MatchProduct    "cyapa"
-    Option          "FingerLow" "8"
-    Option          "FingerHigh" "16"
-    Option "SoftButtonAreas" "0% 0 0% 0 0 0 0 0"
-    Option "AreaBottomEdge" "0%"
-EndSection
-
-```
+See the [libinput](/index.php/Libinput "Libinput") article on how to install and setup your touchpad.
 
 ### Improving WLAN and BT performance
 

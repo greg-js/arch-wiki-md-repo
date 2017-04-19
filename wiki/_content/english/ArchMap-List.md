@@ -684,7 +684,7 @@ You can use the following website to get your device's coordinates along with a 
 37.38323,-122.14408 "artico" # Los Altos Hills, CA, USA
 52.62301,-1.1131 "sausageandeggs" # Leicester, England
 40.24249,-75.36771 "Jimi" # Harleysville, PA, USA
-19.469423,-99.127437 "cruznick" # Distriot Federal, Mexico
+19.469423,-99.127437 "cruznick" # Distrito Federal, Mexico
 43.318168457071,-8.3661532402039 "gonzafreire" # Culleredo, Spain
 38.006097,23.673756 "ebal" # Athens, Greece
 48.814408,9.327236 "kpi" # Kernen, Germany
@@ -1042,5 +1042,6 @@ You can use the following website to get your device's coordinates along with a 
 51.544265, -0.011686 "ragreener" # London, United Kingdom
 61.464059, 23.890607 "Michael" # Tampere, Finland
 42.250611, -84.459172 "Mark Weiman (markzz)" # Jackson, Michigan, United States
+19.040532, -98.194858 "Marco A. Rojas (MrcRjs)" # Puebla de Zaragoza, Puebla, Mexico
 
 ```

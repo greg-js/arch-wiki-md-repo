@@ -121,11 +121,15 @@ See [Xrandr#Configuration](/index.php/Xrandr#Configuration "Xrandr").
 
 ### DPI settings
 
-Sometimes it's useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find "ServerArguments" parameter in sdd.conf and add -dpi %YOUR RESOLUTION at the end of the string.
+Sometimes it's useful to set up correct monitor's PPI settings on a "Display Manager" level. To do so you need to find "ServerArguments" parameter in sddm.conf and add -dpi %YOUR RESOLUTION at the end of the string.
 
 For example:
 
- `/etc/sddm.conf`  `ServerArguments=-nolisten tcp -dpi 94` 
+ `/etc/sddm.conf` 
+```
+[X11]
+ServerArguments=-nolisten tcp -dpi 94
+```
 
 ## Troubleshooting
 

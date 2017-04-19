@@ -68,31 +68,38 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
             *   [9.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
         *   [9.2.2 Network drivers](#Network_drivers)
     *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
-*   [10 Tips and tricks](#Tips_and_tricks)
-    *   [10.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
-        *   [10.1.1 With libvirt](#With_libvirt)
-        *   [10.1.2 Custom script](#Custom_script)
-    *   [10.2 Mouse integration](#Mouse_integration)
-    *   [10.3 Pass-through host USB device](#Pass-through_host_USB_device)
-    *   [10.4 USB redirection with SPICE](#USB_redirection_with_SPICE)
-    *   [10.5 Enabling KSM](#Enabling_KSM)
-    *   [10.6 Multi-monitor support](#Multi-monitor_support)
-    *   [10.7 Copy and paste](#Copy_and_paste)
-    *   [10.8 Windows-specific notes](#Windows-specific_notes)
-        *   [10.8.1 Fast startup](#Fast_startup)
-        *   [10.8.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
-    *   [11.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
-    *   [11.3 No visible Cursor](#No_visible_Cursor)
-    *   [11.4 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
-    *   [11.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [11.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [11.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
-    *   [11.8 libgfapi error message](#libgfapi_error_message)
-    *   [11.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-    *   [11.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
-*   [12 See also](#See_also)
+*   [10 QEMU Monitor](#QEMU_Monitor)
+    *   [10.1 Accessing the monitor console](#Accessing_the_monitor_console)
+    *   [10.2 Sending keyboard presses to the virtual machine using the monitor console](#Sending_keyboard_presses_to_the_virtual_machine_using_the_monitor_console)
+    *   [10.3 Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console)
+    *   [10.4 Running the virtual machine in immutable mode](#Running_the_virtual_machine_in_immutable_mode)
+    *   [10.5 Pause and power options via the monitor console](#Pause_and_power_options_via_the_monitor_console)
+    *   [10.6 Taking screenshots of the virtual machine](#Taking_screenshots_of_the_virtual_machine)
+*   [11 Tips and tricks](#Tips_and_tricks)
+    *   [11.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
+        *   [11.1.1 With libvirt](#With_libvirt)
+        *   [11.1.2 Custom script](#Custom_script)
+    *   [11.2 Mouse integration](#Mouse_integration)
+    *   [11.3 Pass-through host USB device](#Pass-through_host_USB_device)
+    *   [11.4 USB redirection with SPICE](#USB_redirection_with_SPICE)
+    *   [11.5 Enabling KSM](#Enabling_KSM)
+    *   [11.6 Multi-monitor support](#Multi-monitor_support)
+    *   [11.7 Copy and paste](#Copy_and_paste)
+    *   [11.8 Windows-specific notes](#Windows-specific_notes)
+        *   [11.8.1 Fast startup](#Fast_startup)
+        *   [11.8.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
+    *   [12.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
+    *   [12.3 No visible Cursor](#No_visible_Cursor)
+    *   [12.4 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
+    *   [12.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [12.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [12.8 libgfapi error message](#libgfapi_error_message)
+    *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+*   [13 See also](#See_also)
 
 ## Installation
 
@@ -126,7 +133,7 @@ To run QEMU you will need a hard disk image, unless you are booting a live syste
 
 A hard disk image can be *raw*, so that it is literally byte-by-byte the same as what the guest sees, and will always use the full capacity of the guest hard drive on the host. This method provides the least I/O overhead, but can waste a lot of space, as not-used space on the guest cannot be used on the host.
 
-Alternatively, the hard disk image can be in a format such as *qcow2* which only allocates space to the image file when the guest operating system actually writes to those sectors on its virtual hard disk. The image appears as the full size to the guest operating system, even though it may take up only a very small amount of space on the host system. Using this format instead of *raw* will likely affect performance.
+Alternatively, the hard disk image can be in a format such as *qcow2* which only allocates space to the image file when the guest operating system actually writes to those sectors on its virtual hard disk. The image appears as the full size to the guest operating system, even though it may take up only a very small amount of space on the host system. This image format also supports QEMU snapshotting functionality (see [#Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console) for details). However, using this format instead of *raw* will likely affect performance.
 
 QEMU provides the `qemu-img` command to create hard disk images. For example to create a 4 GB image in the *raw* format:
 
@@ -209,7 +216,7 @@ $ qemu-system-i386 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,for
 
 ```
 
-See `qemu(1)` for more information about loading other media types (such as floppy, disk images or physical drives) and [#Running virtualized system](#Running_virtualized_system) for other useful options.
+See qemu(1) for more information about loading other media types (such as floppy, disk images or physical drives) and [#Running virtualized system](#Running_virtualized_system) for other useful options.
 
 After the operating system has finished installing, the QEMU image can be booted directly (see [#Running virtualized system](#Running_virtualized_system)).
 
@@ -229,7 +236,7 @@ $ qemu-system-i386 *options* *disk_image*
 
 ```
 
-Options are the same for all `qemu-system-*` binaries, see `qemu(1)` for documentation of all options.
+Options are the same for all `qemu-system-*` binaries, see qemu(1) for documentation of all options.
 
 By default, QEMU will show the virtual machine's video output in a window. One thing to keep in mind: when you click inside the QEMU window, the mouse pointer is grabbed. To release it, press `Ctrl+Alt+g`.
 
@@ -243,6 +250,7 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 **Note:**
 
+*   If you get permission errors from KVM add your user to the `kvm` group.
 *   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
 *   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
 
@@ -1049,6 +1057,10 @@ $ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -device virtio-se
 
 ```
 
+From the [SPICE page on the KVM wiki](https://www.linux-kvm.org/page/SPICE): "*The `-device virtio-serial-pci` option adds the virtio-serial device, `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device and `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.*"
+
+**Tip:** Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
+
 Connect to the guest by using a SPICE client. At the moment [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) is recommended, however other [clients](http://www.spice-space.org/download.html), including other platforms, are available:
 
 ```
@@ -1238,7 +1250,7 @@ You might also want to install [qemu-guest-agent](https://www.archlinux.org/pack
 
 Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See `man qemu-system` for more details about applying a delay at boot.
+The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See qemu(1) for more details about applying a delay at boot.
 
 The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
 
@@ -1325,6 +1337,110 @@ sed -i bak "s/ada/vtbd/g" /etc/fstab
 
 And verify that `/etc/fstab` is consistent. If anything goes wrong, just boot into a rescue CD and copy `/etc/fstab.bak` back to `/etc/fstab`.
 
+## QEMU Monitor
+
+While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU Monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](http://download.qemu-project.org/qemu-doc.html#pcsys_005fmonitor).
+
+### Accessing the monitor console
+
+When using the `std` default graphics option, one can access the QEMU Monitor by pressing `Ctrl+Alt+2` or by clicking *View > compatmonitor0* in the QEMU window. To return to the virtual machine graphical view either press `Ctrl+Alt+1` or click *View > VGA*.
+
+However, the standard method of accessing the monitor is not always convenient and does not work in all graphic outputs QEMU supports. Alternative options of accessing the monitor are described below:
+
+*   [telnet](/index.php/Telnet "Telnet"): Run QEMU with the `-monitor telnet:127.0.0.1:*port*,server,nowait` parameter. When the virtual machine is started you will be able to access the monitor via telnet:
+
+```
+ $ telnet 127.0.0.1 *port*
+
+```
+
+**Note:** If `127.0.0.1` is specified as the IP to listen it will be only possible to connect to the monitor from the same host QEMU is running on. If connecting from remote hosts is desired, QEMU must be told to listen `0.0.0.0` as follows: `-monitor telnet:0.0.0.0:*port*,server,nowait`. Keep in mind that it is recommended to have a [firewall](/index.php/Firewalls "Firewalls") configured in this case or make sure your local network is completely trustworthy since this connection is completely unauthenticated and unencrypted.
+
+*   UNIX socket: Run QEMU with the `-monitor unix:*socketfile*,server,nowait` parameter. Then you can connect with either [socat](https://www.archlinux.org/packages/?name=socat) or [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat).
+
+For example, if QEMU is run via:
+
+```
+ $ qemu-system-x86_64 *[...]* -monitor unix:/tmp/monitor.sock,server,nowait *[...]*
+
+```
+
+It is possible to connect to the monitor with:
+
+```
+ $ socat - UNIX-CONNECT:/tmp/monitor.sock
+
+```
+
+Or with:
+
+```
+ $ nc -U /tmp/monitor.sock
+
+```
+
+*   TCP: You can expose the monitor over TCP with the argument `-monitor tcp:127.0.0.1:*port*,server,nowait`. Then connect with netcat, either [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat) or [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) by running:
+
+```
+ $ nc 127.0.0.1 *port*
+
+```
+
+**Note:** In order to be able to connect to the tcp socket from other devices other than the same host QEMU is being run on you need to listen to `0.0.0.0` like explained in the telnet case. The same security warnings apply in this case as well.
+
+*   Standard I/O: It is possible to access the monitor automatically from the same terminal QEMU is being run by running it with the argument `-monitor stdio`.
+
+### Sending keyboard presses to the virtual machine using the monitor console
+
+Some combinations of keys may be difficult to perform on virtual machines due to the host intercepting them instead in some configurations (a notable example is the `Ctrl+Alt+F*` key combinations, which change the active tty). To avoid this problem, the problematic combination of keys may be sent via the monitor console instead. Switch to the monitor and use the `sendkey` command to forward the necessary keypresses to the virtual machine. For example:
+
+```
+ (qemu) sendkey ctrl-alt-f2
+
+```
+
+### Creating and managing snapshots via the monitor console
+
+**Note:** This feature will **only** work when the virtual machine disk image is in *qcow2* format. It will not work with *raw* images.
+
+It is sometimes desirable to save the current state of a virtual machine and having the possibility of reverting the state of the virtual machine to that of a previously saved snapshot at any time. The QEMU monitor console provides the user with the necessary utilities to create snapshots, manage them, and revert the machine state to a saved snapshot.
+
+*   Use `savevm *name*` in order to create a snapshot with the tag *name*.
+*   Use `loadvm *name*` to revert the virtual machine to the state of the snapshot *name*.
+*   Use `delvm *name*` to delete the snapshot tagged as *name*.
+*   Use `info snapshots` to see a list of saved snapshots. Snapshots are identified by both an auto-incremented ID number and a text tag (set by the user on snapshot creation).
+
+### Running the virtual machine in immutable mode
+
+It is possible to run a virtual machine in a frozen state so that all changes will be discarded when the virtual machine is powered off just by running QEMU with the `-snapshot` parameter. When the disk image is written by the guest, changes will be saved in a temporary file in `/tmp` and will be discarded when QEMU halts.
+
+However, if a machine is running in frozen mode it is still possible to save the changes to the disk image if it is afterwards desired by using the monitor console and running the following command:
+
+```
+ (qemu) commit
+
+```
+
+If snapshots are created when running in frozen mode they will be discarded as soon as QEMU is exited unless changes are explicitly commited to disk, as well.
+
+### Pause and power options via the monitor console
+
+Some operations of a physical machine can be emulated by QEMU using some monitor commands:
+
+*   `system_powerdown` will send an ACPI shutdown request to the virtual machine. This effect is similar to the power button in a physical machine.
+*   `system_reset` will reset the virtual machine similarly to a reset button in a physical machine. This operation can cause data loss and file system corruption since the virtual machine is not cleanly restarted.
+*   `stop` will pause the virtual machine.
+*   `cont` will resume a virtual machine previously paused.
+
+### Taking screenshots of the virtual machine
+
+Screenshots of the virtual machine graphic display can be obtained in the PPM format by running the following command in the monitor console:
+
+```
+ (qemu) screendump *file.ppm*
+
+```
+
 ## Tips and tricks
 
 ### Starting QEMU virtual machines on boot
@@ -1369,7 +1485,7 @@ Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, wi
 
 	haltcmd
 
-	Command to shut down a VM safely. I am using `-monitor telnet:..` and power off my VMs via ACPI by sending `system_powerdown` to monitor. You can use SSH or some other ways.
+	Command to shut down a VM safely. In this example, the QEMU monitor is exposed via telnet using `-monitor telnet:..` and the VMs are powered off via ACPI by sending `system_powerdown` to monitor with the `nc` command. You can use SSH or some other ways as well.
 
 Example configs:
 
@@ -1483,18 +1599,7 @@ The default VGA memory size for QXL devices is 16M (VRAM size is 64M). This is n
 
 ### Copy and paste
 
-To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically).
-
-Start QEMU with the following options:
-
-```
-$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
-
-```
-
-The `-device virtio-serial-pci` option adds the virtio-serial device, `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device and `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port.
-
-It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
+To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically). See [#SPICE](#SPICE) for the necessary procedure to use QEMU with the SPICE protocol.
 
 ### Windows-specific notes
 
@@ -1506,7 +1611,7 @@ It is possible to run [Windows PE](/index.php/Windows_PE "Windows PE") in QEMU.
 
 **Note:** An administrator account is required to change power settings.
 
-For Windows 8 (or later) guests it is better to disable "Turn on fast startup (recommended)" from the Power Options of the Control Panel, as it causes the guest to hang during every other boot.
+For Windows 8 (or later) guests it is better to disable "Turn on fast startup (recommended)" from the Power Options of the Control Panel as explained in the following [forum page](https://www.tenforums.com/tutorials/4189-turn-off-fast-startup-windows-10-a.html), as it causes the guest to hang during every other boot.
 
 Fast Startup may also need to be disabled for changes to the `-smp` option to be properly applied.
 
@@ -1671,3 +1776,4 @@ Using `hda` audio driver for Windows 7 guest may casue low-quality sound. Changi
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)
 *   [QEMU on FreeBSD as host](https://wiki.freebsd.org/qemu)
 *   [KVM/QEMU Virtio Tuning and SSD VM Optimization Guide](https://wiki.mikejung.biz/KVM_/_Xen)
+*   [Managing Virtual Machines with QEMU - OpenSUSE documentation](https://doc.opensuse.org/documentation/leap/virtualization/html/book.virt/part.virt.qemu.html)

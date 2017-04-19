@@ -1,4 +1,4 @@
-Budgie è l'interfaccia grafica di default di Solus OS, scritto in scratch. Oltre a offrire un design moderno, Budgie può emulare l'aspetto del desktop di GNOME 2.
+Budgie è l'interfaccia grafica di default di Solus OS, scritta da zero. Oltre a offrire un design moderno, Budgie può emulare l'aspetto del desktop di GNOME 2.
 
 In questo momento Budgie è in sviluppo, quindi potresti trovare bug e nuove funzionalità verranno aggiunge in seguito.
 

@@ -122,13 +122,8 @@ See [xdg-open](/index.php/Xdg-open "Xdg-open") to change the default assocation.
 
 ### Touch Scrolling on touchscreen devices
 
-Chrome and Chromium do not support touchscreen by default. There are a couple settings you can change in the "Flags" portion of Chrome to potentially make it work for your device. This has been tested in [chromium](https://www.archlinux.org/packages/?name=chromium) from the [official repositories](/index.php/Official_repositories "Official repositories") and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) from the [AUR](/index.php/AUR "AUR").
-
-*   Browse to **chrome://flags** and set everything to default
-*   Switch "*Enable Touch events*" to "*Enabled*" (**chrome://flags/#touch-events**)
-*   Restart Chrome and touch scrolling should work. If it does not, it is worth trying the other modes that are available.
-*   You may need to specify which touch device to use. Find your touchscreen device with `xinput list` then launch Chromium with the `--touch-devices=**x**` parameter, where "**x**" is the id of your device.
-    **Note:** If the device is designated as a slave pointer, using this may not work, use the master pointer's ID instead.
+You may need to specify which touch device to use. Find your touchscreen device with `xinput list` then launch Chromium with the `--touch-devices=**x**` parameter, where "**x**" is the id of your device.
+**Note:** If the device is designated as a slave pointer, using this may not work, use the master pointer's ID instead.
 
 ### Reduce memory usage
 

@@ -61,4 +61,4 @@ ExecStart=/usr/bin/insync start
 
 When running `insync start`, the status tray icon does not appear and insync does not start.
 
-According to [this](https://forums.insynchq.com/t/insync-arch-linux-not-starting-segfault-at-730-error-14/8893) thread, this is due to `QGtkStyle`. You will need to set the Qt4 theme to something other than Gtk+ using `qtconfig-qt4`.
+According to [[1]](https://forums.insynchq.com/t/insync-arch-linux-not-starting-segfault-at-730-error-14/8893), this is due to `QGtkStyle`. You will need to set the Qt4 theme to something other than Gtk+ using `qtconfig-qt4`.

@@ -390,6 +390,8 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
+This can also help if you are using the PulseAudio [module-echo-cancel](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation), and Firefox does not recognise the virtual echo canceling source.
+
 ## See also
 
 *   [Official website](https://www.mozilla.org/firefox/)

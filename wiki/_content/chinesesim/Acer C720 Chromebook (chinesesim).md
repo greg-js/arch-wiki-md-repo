@@ -10,7 +10,6 @@
     *   [1.3 安装 Arch Linux](#.E5.AE.89.E8.A3.85_Arch_Linux)
     *   [1.4 Xorg Video 驱动](#Xorg_Video_.E9.A9.B1.E5.8A.A8)
     *   [1.5 触摸板内核模块](#.E8.A7.A6.E6.91.B8.E6.9D.BF.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-        *   [1.5.1 配置](#.E9.85.8D.E7.BD.AE)
 *   [2 提高 WLAN 和 BT 效率](#.E6.8F.90.E9.AB.98_WLAN_.E5.92.8C_BT_.E6.95.88.E7.8E.87)
 *   [3 快捷键](#.E5.BF.AB.E6.8D.B7.E9.94.AE)
 *   [4 alsa 声音设置](#alsa_.E5.A3.B0.E9.9F.B3.E8.AE.BE.E7.BD.AE)
@@ -85,27 +84,7 @@ $ sudo pacman -S xf86-video-intel
 
 ### 触摸板内核模块
 
-从 kernel 4.0 开始，Chromebook 相关驱动补丁已经和并，无需手动编译内核。
-
-#### 配置
-
-Gnome 用户可以在 Gnome 控制中心的鼠标与触摸板部分进行设置。 KDE 可以从安装 [Synaptiks](/index.php/Touchpad_Synaptics#Graphical_tools "Touchpad Synaptics") 或者 [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)，然后打开系统设置，在输入设备那里，找到触摸板，按需进行设置。
-
-您也可以手动编辑配置文件进行设置
-
- `/etc/X11/xorg.conf.d/50-cros-touchpad.conf` 
-```
-Section "InputClass" 
-    Identifier      "touchpad peppy cyapa" 
-    MatchIsTouchpad "on" 
-    MatchDevicePath "/dev/input/event*" 
-    MatchProduct    "cyapa" 
-    Option          "FingerLow" "10" 
-    Option          "FingerHigh" "10" 
-EndSection
-```
-
-更多的配置说明，请参考 [Touchpad Synaptics (简体中文)](/index.php/Touchpad_Synaptics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Touchpad Synaptics (简体中文)")。 配置好之后，您还需要重启机器以便生效。
+从 kernel 4.0 开始，Chromebook 相关驱动补丁已经合并，无需手动编译内核。也无需修改配置文件，只需安装 [Libinput](/index.php/Libinput "Libinput") 即可。关于 libinput 的配置可以参考 [Libinput](/index.php/Libinput "Libinput") 页面。
 
 ## 提高 WLAN 和 BT 效率
 

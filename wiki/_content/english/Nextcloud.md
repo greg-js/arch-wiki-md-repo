@@ -600,6 +600,8 @@ php_admin_value open_basedir "/srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/shar
 
 Restart the httpd or php-fpm service to activate the change.
 
+Alternatively, since PHP 7 doesn't use open_basedir by default, you may work around this issue by creating the required data directory owned by root:http (replace http by the user your webserver is running under) with 770 permissions.
+
 ### CSync failed to find a specific file.
 
 This is most likely a certificate issue. Recreate it, and do not leave the common name empty or you will see the error again.

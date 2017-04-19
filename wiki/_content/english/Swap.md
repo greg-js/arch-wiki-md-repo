@@ -22,6 +22,7 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
 *   [4 Performance Tuning](#Performance_Tuning)
     *   [4.1 Swappiness](#Swappiness)
     *   [4.2 Priority](#Priority)
+    *   [4.3 Using zswap or zram](#Using_zswap_or_zram)
 *   [5 Striping](#Striping)
 
 ## Swap space
@@ -244,6 +245,10 @@ Or via the `-p` (or `--priority`) parameter of swapon:
 ```
 
 If two or more areas have the same priority, and it is the highest priority available, pages are allocated on a round-robin basis between them.
+
+### Using zswap or zram
+
+[Zswap](/index.php/Zswap "Zswap") is a Linux kernel feature providing a compressed write-back cache for swapped pages. This increases the performance and decreases the IO-Operations. [ZRAM](/index.php/ZRAM "ZRAM") creates a virtual compressed Swap-file in memory as alternative to a swapfile on disc.
 
 ## Striping
 

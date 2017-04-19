@@ -31,11 +31,11 @@ zswap.enabled=1
 
 ## Customizing zswap
 
-By design, zswap has relatively few customizable parameters.
+By design, zswap has relatively few customizable parameters. zswap does not use a preallocated pool of memory to hold compressed and swapped data.
 
 ### Customize the maximum allowed size
 
-zswap does not use a preallocated pool of memory to hold compressed and swapped data. If you want to put a maximum bound on the percentage of memory that zswap can use, add this to your kernel boot parameters:
+If you want to put a maximum bound on the percentage of memory that zswap can use, add this to your kernel boot parameters:
 
 ```
   zswap.max_pool_percent=25

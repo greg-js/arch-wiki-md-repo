@@ -12,17 +12,28 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Contents
 
-*   [1 bios](#bios)
-*   [2 lspci and lsusb](#lspci_and_lsusb)
-    *   [2.1 lspci](#lspci)
-    *   [2.2 lsusb](#lsusb)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Smartcard Reader](#Smartcard_Reader)
-*   [4 See also](#See_also)
+*   [1 firmware (e.g. bios and peripherals)](#firmware_.28e.g._bios_and_peripherals.29)
+*   [2 kernel and hardware support](#kernel_and_hardware_support)
+*   [3 lspci and lsusb](#lspci_and_lsusb)
+    *   [3.1 lspci](#lspci)
+    *   [3.2 lsusb](#lsusb)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Smartcard Reader](#Smartcard_Reader)
+*   [5 See also](#See_also)
 
-## bios
+## firmware (e.g. bios and peripherals)
 
 As of writing, the current bios version is 1.0.7\. By visiting the downloads section (for the type HG/HF T470s) an iso can be downloaded and burned to disk which will perform the update [[1]](http://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470s/downloads)
+
+This laptop is unique in that it retains the thinkpad dock connection as well as provides docking ability over USB-C. We have tested with the [Thinkpad Ultra Dock](http://www.thinkwiki.org/wiki/ThinkPad_Ultra_Dock) and are able to utilize multiple HiDPI monitors via individual connections (e.g. no display port chaining). There are published [firmware updates](https://support.lenovo.com/us/en/solutions/pd014572) for the dock that require windows to install. DisplayPort chaining works via USB-C to DisplayPort adapter.
+
+## kernel and hardware support
+
+Installation with modern media puts you on Kernel 4.10.10-1, however [this note](/index.php/Dell_XPS_13_(9360)#NVME_Power_Saving_Patch "Dell XPS 13 (9360)") made [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) seem essential.
+
+As advised in [Intel graphics#Enable early KMS](/index.php/Intel_graphics#Enable_early_KMS "Intel graphics") and [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") you can add i915 to your modules.
+
+[Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") with Kaby Lake seems to work fine via va-api.
 
 ## lspci and lsusb
 

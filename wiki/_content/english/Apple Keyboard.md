@@ -74,7 +74,9 @@ To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_a
 
 ## PrintScreen and SysRq
 
-Apple Keyboards have an `F13` key instead of a `PrintScreen`/`SysRq` key. This means that [Alt+SysRq sequences](/index.php/Keyboard_shortcuts#Kernel "Keyboard shortcuts") do not work, and application actions associated with `PrintScreen` (such as taking screenshots in many games that work under [Wine](/index.php/Wine "Wine")) do not work. To fix this, follow the [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes") article to map the `F13` scancode to the `PrintScreen`/`SysRq` keycode, where 458856 (0x0**70068**) is the scancode of `F13`, and `sysrq` is the keycode of `PrintScreen`/`SysRq`.
+Apple Keyboards have an `F13` key instead of a `PrintScreen`/`SysRq` key. This means that [Alt+SysRq sequences](/index.php/Keyboard_shortcuts#Kernel "Keyboard shortcuts") do not work, and application actions associated with `PrintScreen` (such as taking screenshots in many games that work under [Wine](/index.php/Wine "Wine")) do not work. To fix this, you can add `setxkbmap -option "apple:alupckeys"` to your `.xinitrc`. This will map `PrintScreen`/`SysRq` to `F13`, as well as `Scroll lock` to `F14` and `Pause` to `F15`.
+
+Alternatively, follow the [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes") article to map the `F13` scancode to the `PrintScreen`/`SysRq` keycode, where 458856 (0x0**70068**) is the scancode of `F13`, and `sysrq` is the keycode of `PrintScreen`/`SysRq`.
 
 ## Treating Apple keyboards like regular keyboards
 

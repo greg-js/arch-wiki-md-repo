@@ -139,6 +139,8 @@ AutoEnable=true
 
 ### Configuration via GNOME Bluetooth
 
+**Note:** The A2DP profile will not activate using this method with pulseaudio 9/10 due to an ongoing bug, leading to possible low quality mono sound. see [#A2DP_not_working_with_PulseAudio](#A2DP_not_working_with_PulseAudio)
+
 You can use [GNOME Bluetooth](/index.php/Bluetooth#GNOME_Bluetooth "Bluetooth") graphical front-end to easily configure your bluetooth headset.
 
 First, you need to be sure that `bluetooth.service` systemd unit is running.
@@ -147,7 +149,7 @@ Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you
 
 ### Troubleshooting
 
-Many users report frustration with getting A2DP/Bluetooth Headsets to work.
+**Note:** Many users report frustration with getting A2DP/Bluetooth Headsets to work. see [#Switch_between_HSV_and_A2DP_setting](#Switch_between_HSV_and_A2DP_setting) for additional information.
 
 #### Selected audio profile, but headset inactive and audio cannot be redirected
 
@@ -698,7 +700,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 #### A2DP profile is unavailable
 
-As of Pulseaudio 9.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via bluetoothctl
+As of Pulseaudio 10.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via bluetoothctl
 
 ```
 bluetoothctl

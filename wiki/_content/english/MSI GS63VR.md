@@ -27,6 +27,8 @@ For HDMI/DP ouput: [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumble
 
 This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinput "Libinput") works well.
 
+Note* As of 2017.04.18, some multitouch aspects of the touchpad do not seem to be working (two finger scroll, for instance). This bug has been reported [here](https://bugs.freedesktop.org/show_bug.cgi?id=100696).
+
 ### Networking
 
 #### Wireless

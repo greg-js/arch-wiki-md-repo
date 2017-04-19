@@ -415,7 +415,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## Troubleshooting
 
-*   If you get the "30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
+*   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
 
 ## See Also
 

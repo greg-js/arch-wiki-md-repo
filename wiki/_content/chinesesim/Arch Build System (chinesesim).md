@@ -94,9 +94,9 @@ ABS 可以用来:
 
 ### /etc/abs.conf
 
-使用root编辑`/etc/abs.conf`，包含你想要仓库。
+使用root编辑`/etc/abs.conf`，包含你想要的仓库。
 
-删除除你想要的软件仓库前的叹号，比如：
+删除你想要的软件仓库前的叹号，比如：
 
 ```
 REPOS=(core extra community !testing)

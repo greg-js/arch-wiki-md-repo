@@ -1,6 +1,6 @@
 This article details the installation and configuration process of the ***Synaptics input driver*** for Synaptics (and ALPS) touchpads found on most notebooks.
 
-**Tip:** `xf86-input-synaptics` is in maintenance mode and is no longer updated. If possible, use [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features.
+**Warning:** [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) is no longer actively updated. If possible, use [libinput](/index.php/Libinput "Libinput").
 
 **Note:** If you want to configure touchpad via GNOME control center, you need to use the [libinput](/index.php/Libinput "Libinput") driver.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)
 
@@ -910,6 +910,10 @@ Certain touchpads (elantech in particular) will fail to be recognized as a devic
 Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/) from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
 
 ### ASUS Touchpads only recognised as PS/2 FocalTech emulated mouse
+
+Linux kernel 4.10 included a fix for this issue. See the [bug](https://bugzilla.kernel.org/show_bug.cgi?id=120181) report for information. If you still experience it on your model, the [hid-asus-dkms-git](https://aur.archlinux.org/packages/hid-asus-dkms-git/) package may be helpful.
+
+See, if the [hid-asus-dkms-git](https://aur.archlinux.org/packages/hid-asus-dkms-git/) package could be used.
 
 1.  Install the linux header for your kernel
 2.  Install the focaltech-dkms from [https://github.com/hanipouspilot/focaltech-dkms](https://github.com/hanipouspilot/focaltech-dkms)

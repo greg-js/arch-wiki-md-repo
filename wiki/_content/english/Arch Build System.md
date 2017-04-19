@@ -12,14 +12,12 @@ This article provides an overview of the Arch Build System (ABS) along with a wa
     *   [3.1 Prerequisites](#Prerequisites)
     *   [3.2 Non-recursive checkout](#Non-recursive_checkout)
     *   [3.3 Checkout a package](#Checkout_a_package)
-        *   [3.3.1 Checkout the current version of a package](#Checkout_the_current_version_of_a_package)
-        *   [3.3.2 Checkout an older version of a package](#Checkout_an_older_version_of_a_package)
-    *   [3.4 Updating all packages](#Updating_all_packages)
-    *   [3.5 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-    *   [3.6 Build package](#Build_package)
-        *   [3.6.1 fakeroot](#fakeroot)
+    *   [3.4 Configure makepkg](#Configure_makepkg)
+    *   [3.5 Build package](#Build_package)
+        *   [3.5.1 fakeroot](#fakeroot)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Preserve modified packages](#Preserve_modified_packages)
+    *   [4.2 Checkout an older version of a package](#Checkout_an_older_version_of_a_package)
 *   [5 Other tools](#Other_tools)
 
 ## What is the Arch Build System?
@@ -124,9 +122,7 @@ In both cases, it simply creates an empty directory, but it does know that it is
 
 ### Checkout a package
 
-#### Checkout the current version of a package
-
-In the directory containing the svn repository you checked out (i.e., "packages" or "community"), do:
+In the directory containing the svn repository you checked out (i.e., *packages* or *community*), do:
 
 ```
 $ svn update *package-name*
@@ -137,44 +133,16 @@ This will pull the package you requested into your checkout. From now on, any ti
 
 If you specify a package that does not exist, svn will not warn you. It will just print something like "At revision 115847", without creating any files. If that happens, check your spelling of the package name and that the package has not been moved to another repository (i.e. from community to the main repository).
 
-#### Checkout an older version of a package
+**Tip:** To checkout an older version of a package, see [#Checkout an older version of a package](#Checkout_an_older_version_of_a_package).
 
-Within the svn repository you checked out (i.e. "packages" or "community"), first examine the log:
-
-```
-$ svn log *package-name*
+You should periodically update all of your checked out packages if you wish to perform rebuilds on more recent revisions of the repositories. To do so, do:
 
 ```
-
-Find out the revision you want by examining the history, then speciy the revision you wish to checkout. For example, to checkout revision `r1729` you would do:
-
-```
-$ svn update -r1729 *package-name*
-
-```
-
-This will update an existing working copy of *package-name* to the chosen revision.
-
-You can also specify a date. If no revision on that day exists, svn will grab the most recent package before that time. The following example checks out the revision from 2009-03-03:
-
-```
-$ svn update -r{20090303} *package-name*
-
-```
-
-It is possible to checkout packages at versions before they were moved to another repository as well; check the logs thoroughly for the date they were moved or the last revision number.
-
-### Updating all packages
-
-To update all packages you have checked out:
-
-```
-$ cd packages
 $ svn update
 
 ```
 
-### /etc/makepkg.conf
+### Configure makepkg
 
 See [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") on how to configure *makepkg* for building packages from the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")'s you have checked out.
 
@@ -201,6 +169,33 @@ Add this group to the section `IgnoreGroup` in `/etc/pacman.conf`.
  `/etc/pacman.conf`  `IgnoreGroup = modified` 
 
 If new versions are available in the official repositories during a system update, pacman prints a note that it is skipping this update because it is in the IgnoreGroup section. At this point the modified package should be rebuilt from ABS to avoid partial upgrades.
+
+### Checkout an older version of a package
+
+Within the svn repository you checked out as described in [#Non-recursive checkout](#Non-recursive_checkout) (i.e. "packages" or "community"), first examine the log:
+
+```
+$ svn log *package-name*
+
+```
+
+Find out the revision you want by examining the history, then speciy the revision you wish to checkout. For example, to checkout revision `r1729` you would do:
+
+```
+$ svn update -r1729 *package-name*
+
+```
+
+This will update an existing working copy of *package-name* to the chosen revision.
+
+You can also specify a date. If no revision on that day exists, svn will grab the most recent package before that time. The following example checks out the revision from 2009-03-03:
+
+```
+$ svn update -r{20090303} *package-name*
+
+```
+
+It is possible to checkout packages at versions before they were moved to another repository as well; check the logs thoroughly for the date they were moved or the last revision number.
 
 ## Other tools
 

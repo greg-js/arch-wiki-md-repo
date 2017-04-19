@@ -131,15 +131,6 @@ AllowGroups   *group1 group2*
 
 ```
 
-To disable root login over SSH, change the PermitRootLogin line into this:
-
-```
-PermitRootLogin no
-
-```
-
-**Note:** `PermitRootLogin prohibit-password` is the default since version 7.0p1\. See [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html).
-
 To add a nice welcome message (e.g. from the `/etc/issue` file), configure the `Banner` option:
 
 ```
@@ -205,7 +196,6 @@ If a client cannot authenticate through a public key, by default the SSH server 
 
 ```
 PasswordAuthentication no
-ChallengeResponseAuthentication no
 
 ```
 

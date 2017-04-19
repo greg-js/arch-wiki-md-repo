@@ -18,15 +18,12 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
     *   [4.1 Python issues](#Python_issues)
         *   [4.1.1 Modules known to require python2 exclusively](#Modules_known_to_require_python2_exclusively)
     *   [4.2 pkg-config issues](#pkg-config_issues)
-*   [5 Packages needed to build specific modules](#Packages_needed_to_build_specific_modules)
-*   [6 Building JHBuild from scratch](#Building_JHBuild_from_scratch)
-*   [7 See also](#See_also)
+*   [5 Building JHBuild from scratch](#Building_JHBuild_from_scratch)
+*   [6 See also](#See_also)
 
 ## Installation
 
-Install the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package, which usually provides the stable version.
-
-Alternatively, you may want to install [jhbuild-git](https://aur.archlinux.org/packages/jhbuild-git/) for latest JHBuild version in GNOME repository.
+Install [jhbuild](https://aur.archlinux.org/packages/jhbuild/).
 
 ## Configuration
 
@@ -38,19 +35,21 @@ The variables currently accepted can be found in [JHBuild Manual](https://develo
 
 ### Default JHBuild configuration
 
-It can be found at `/usr/lib/python2.7/site-packages/jhbuild/defaults.jhbuildrc`.
+JHBuild default configuration is provided by [jhbuild](https://aur.archlinux.org/packages/jhbuild/) and can be found at `/usr/lib/python2.7/site-packages/jhbuild/defaults.jhbuildrc`.
 
-`defaults.jhbuildrc` provides default values for many configuration options, e.g. moduleset, modules, autoargs, module_autoargs, and others.
+`defaults.jhbuildrc` should contain all values for options (e.g. moduleset, module_autoargs) needed to run JHBuild smoothly.
 
-It is provided with the package, so please avoid modifying it.
+Even though the default values in `defaults.jhbuildrc` should be all you need for running JHBuild, you might want to take a look at it to decide if and what you want to customize in a personal configuration file.
 
-The values set in `defaults.jhbuildrc` should be enough for JHBuild to work. Nevertheless, take a look at its value to decide what you want to use the default, and what you want to customize in a personal jhbuild configuration file.
+**Note:** If you think you found a setting that should be default, feel free to suggestion that in [jhbuild](https://aur.archlinux.org/packages/jhbuild/) comments
 
 ### User configuration
 
-`~/.config/jhbuildrc` is very useful for setting personal values in order to overlap what is currently set in `defaults.jhbuildrc` (e.g.: want to set a different moduleset), or to set values not already set in `defaults.jhbuildrc` (e.g.: your own module_autoargs for a specific module).
+The file `~/.config/jhbuildrc` is optional. You can create it with your personal JHBuild configurations, in order to overlap the default values (see above topic).
 
-You may find a very extended sample of a configuration file in `/usr/share/jhbuild/examples/sample.jhbuildrc`
+A very extended sample of a configuration file can be found in `/usr/share/jhbuild/examples/sample.jhbuildrc`
+
+User configuration is particularly useful to, e.g., set a different moduleset, to add a flag to a build system to debug or to disable something.
 
 See below a few examples for `~/.config/jhbuildrc` contents:
 
@@ -62,7 +61,7 @@ See below a few examples for `~/.config/jhbuildrc` contents:
 
 ```
 
-*   Or you may want to enable documentation build, even though it will slowdown module compilation
+*   Or you may want to enable documentation build for autotools, even though it will slowdown module compilation
 
 ```
  autogenargs = '--enable-gtk-doc'
@@ -76,14 +75,21 @@ See below a few examples for `~/.config/jhbuildrc` contents:
 
 ```
 
-*   Or you found out that a module needs a specific setting (this is just an example; itstool is already specified)
+*   Or you found out that a module requires a specific automake option (WebKit is already patched, there is no real need for this one)
 
 ```
- module_autogenargs = {
-      'itstool': autogenargs + ' PYTHON=/usr/bin/python2'
- }
+ module_autogenargs['WebKit']: 'PYTHON=/usr/bin/python2'
 
 ```
+
+*   Or you want to disable documentation build for a module that use meson build system
+
+```
+ module_mesonargs['gstreamer']: '-Ddisable_gtkdoc=true
+
+```
+
+**Note:** **autotools** and **meson** are different build systems, so make sure to add the desired flags for the correct option name
 
 ## Usage
 
@@ -216,26 +222,12 @@ For cases like that, force the modules to run `/usr/bin/python2` using the one o
 
 They are:
 
-*   itstool
 *   telepathy-mission-control
 *   WebKit
 
 ### pkg-config issues
 
 If you have a malformatted .pc file on your PKG_CONFIG_PATH, JHBuild will not be able to detect all the (valid) .pc files you have installed and will complain that the .pc files are missing. Look at the output of `jhbuild sysdeps`—there should be a message about the problematic .pc files.
-
-## Packages needed to build specific modules
-
-*   gitg requires [gtkspell3](https://www.archlinux.org/packages/?name=gtkspell3)
-*   gtk-vnc requires [perl-text-csv](https://www.archlinux.org/packages/?name=perl-text-csv)
-*   latexila requires [lcov](https://aur.archlinux.org/packages/lcov/)
-*   pango requires [libpthread-stubs](https://aur.archlinux.org/packages/libpthread-stubs/)
-*   totem-pl-parser requires [libgcrypt15](https://www.archlinux.org/packages/?name=libgcrypt15)
-*   xf86-video-intel requires [xorg-server-devel](https://www.archlinux.org/packages/?name=xorg-server-devel)
-*   xwayland requires [xtrans](https://www.archlinux.org/packages/?name=xtrans), [xcmiscproto](https://www.archlinux.org/packages/?name=xcmiscproto), and [bigreqsproto](https://www.archlinux.org/packages/?name=bigreqsproto)
-*   zeitgeist requires [python2-rdflib](https://www.archlinux.org/packages/?name=python2-rdflib)
-*   wireless-tools requires [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools)
-*   xorg-macros requires [xorg-util-macros](https://www.archlinux.org/packages/?name=xorg-util-macros)
 
 ## Building JHBuild from scratch
 
@@ -252,7 +244,7 @@ $ PYTHON=/usr/bin/python2 ./autogen.sh
 
 *   Likewise, some modules may still depend on python2\. Make sure to read the above topic 'Python issues'.
 
-*   For detailed information downloading and building the source code of JHBuild, check [How Do I at GNOME wiki](https://wiki.gnome.org/HowDoI/JhbuildJHBuild's).
+*   For detailed information downloading and building the source code of JHBuild, check ["How Do I" at GNOME wiki](https://wiki.gnome.org/HowDoI/JhbuildJHBuild's).
 
 ## See also
 

@@ -210,7 +210,7 @@ Example:
 
 ```
 
-This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually, keep in mind that it must be a symbolic link, as specified in `archlinux(7)`:
+This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually (for example during [chroot](/index.php/Chroot "Chroot") where `timedatectl` won't work), keep in mind that it must be a symbolic link, as specified in `archlinux(7)`:
 
 ```
 # ln -sf /usr/share/zoneinfo/*Zone*/*SubZone* /etc/localtime

@@ -780,6 +780,8 @@ pcm.dsp {
 
 **Note:** This `/etc/asound.conf` file was intended for and used successfully with a global [MPD](/index.php/MPD "MPD") configuration. See [#Problems with availability to only one user at a time](#Problems_with_availability_to_only_one_user_at_a_time).
 
+**Note:** Alternatively, if you do **not** have PulseAudio installed, and just want to get `dmix` to work with vanilla ALSA, see the [upstream documentation](http://www.alsa-project.org/main/index.php/Asoundrc#dmix). In particular, you probably want to replace `dsp` in the above config with `!default`. Also, if you notice this causes certain applications to skip while playing (i.e. sound "glitchy"), and complain about underrun occurring, you may want to tweak the `slave.buffer_size` inside `pcm.dmixer`.
+
 ### Removing old ALSA state file (asound.state)
 
 The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package provides `alsa-store.service` which automatically stores the current ALSA state to `/var/lib/alsa/asound.state` upon system shutdown. This can be problematic for users who are trying to reset their current ALSA state as the `asound.state` file will be recreated with the current state upon every shutdown (e.g., attempting to remove user-defined channels from the mixer). The `alsa-store.service` service may be temporarily disabled by creating the following empty file:

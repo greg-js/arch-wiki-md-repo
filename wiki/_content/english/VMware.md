@@ -36,7 +36,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.11 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.12 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.13 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
-    *   [5.14 vmplayer/vmware fails to start from version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.5)
+    *   [5.14 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
     *   [5.15 vmplayer/vmware fails to start from version 12.5.3](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3)
     *   [5.16 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
 *   [6 Uninstallation](#Uninstallation)
@@ -450,7 +450,7 @@ On VMware Workstation Pro 12.5.2, the module source needs to be modified to be s
 
 ```
 
-### vmplayer/vmware fails to start from version 12.5.5
+### vmplayer/vmware fails to start from version 12.5.4
 
 As per [[3]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
 

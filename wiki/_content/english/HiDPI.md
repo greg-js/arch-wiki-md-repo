@@ -145,7 +145,7 @@ If the DPI displayed by xdpyinfo is not correct, see [Xorg#Display size and DPI]
 
 ## X Resources
 
-If you are not using a desktop environment such as GNOME, KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in `~/.Xresources`:
+If you are not using a desktop environment such as KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in `~/.Xresources`:
 
  `~/.Xresources` 
 ```
@@ -162,6 +162,20 @@ Xft.rgba: rgb
 Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
 
 This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting `Xft.dpi` at the same time as toolkit scale (e.g. `GDK_SCALE`) may cause interface elements to be much larger than intended in some programs like firefox.
+
+GNOME ignores X settings due to its xsettings Plugin in Gnome Settings Daemon, where DPI setting is hard coded. There is blog entry for [recompiling Gnome Settings Daemon](http://blog.drtebi.com/2012/12/changing-dpi-setting-on-gnome-34.html). In the source documentation there is another way mentioned to set X settings DPI:
+
+You can use the dconf Editor and navigate to key `/org/gnome/settings-daemon/plugins/xsettings/overrides`
+
+and complement the entry with the value
+
+`'Xft/DPI': <153600>`
+
+From README.xsettings
+
+Noting that variants must be specified in the usual way (wrapped in <>).
+
+Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ## GUI toolkits
 
