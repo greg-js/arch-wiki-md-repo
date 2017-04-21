@@ -20,6 +20,7 @@
         *   [3.2.2 KDE](#KDE)
         *   [3.2.3 kimpanel UI](#kimpanel_UI)
         *   [3.2.4 Extend pinyin dictionary](#Extend_pinyin_dictionary)
+        *   [3.2.5 Skins](#Skins)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Clipboard Access](#Clipboard_Access)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -31,6 +32,7 @@
     *   [5.5 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
     *   [5.6 fcitx and KDE](#fcitx_and_KDE)
     *   [5.7 Input method switched to English unintentionally](#Input_method_switched_to_English_unintentionally)
+    *   [5.8 Gnome on Wayland with Fcitx](#Gnome_on_Wayland_with_Fcitx)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -176,6 +178,16 @@ You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kim
 
 Pinyin dictionary is located at `~/.config/fcitx/pinyin`. File `pybase.mb` is for single characters and file `pyphrase.mb` defines pinyin phrases. To extend them, put your file into `/usr/share/fcitx/pinyin` and restart fcitx.
 
+#### Skins
+
+You can download skins and extract them to one of the following directories, you can create the directory if it doesn't exist:
+
+```
+/usr/share/fcitx/skin   #Global settings
+~/.config/fcitx/skin    #User settings
+
+```
+
 ## Tips and tricks
 
 ### Clipboard Access
@@ -271,6 +283,10 @@ At this point you should have working layouts, native KDE layouts switch icon sh
 For instance, in XMind, when the user presses Enter to create a node, input method is always switched to English, and have to be switched back to Chinese manually.
 
 To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)), switch to tab "Global Config", in dropdown menu "Share State Among Window", select "PerProgram" or "All".
+
+### Gnome on Wayland with Fcitx
+
+Since Wayland can not read the environment variables stored in `~/.xprofile`, Fcitx can not work properly in Wayland. Please select Xorg from the display manager's session menu.
 
 ## See also
 

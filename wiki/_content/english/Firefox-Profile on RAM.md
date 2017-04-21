@@ -37,7 +37,7 @@ A workaround for the first drawback is to use [anything-sync-daemon](/index.php/
 
 ## Place profile in RAM using tools
 
-Relocate the browser profile to [tmpfs](/index.php/Tmpfs "Tmpfs") so as to globally improve browser's responsiveness. Another benefit is a reduction in drive I/O operations, of which [SSDs benefit the most](/index.php/SSD#Locate_High-Use_Files_to_RAM "SSD").
+Relocate the browser profile to [tmpfs](/index.php/Tmpfs "Tmpfs") so as to globally improve browser's responsiveness. Another benefit is a reduction in drive I/O operations, of which [SSDs benefit the most](/index.php/Improving_performance#Show_disk_writes "Improving performance").
 
 Use an active management script for maximal reliability and ease of use. Several are available from the AUR.
 

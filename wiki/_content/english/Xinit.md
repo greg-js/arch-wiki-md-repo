@@ -55,18 +55,7 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 ```
 
-Then, remove or comment out the default window manager and apps:
-
- `~/.xinitrc` 
-```
-twm &
-xclock -geometry 50x50-1+1 &
-xterm -geometry 80x50+494+51 &
-xterm -geometry 80x20+494-0 &
-exec xterm -geometry 80x66+0+0 -name login
-```
-
-Then, [append](/index.php/Append "Append") desired commands. Remember, lines following a command using `exec` would be ignored. For example, to start `xscreensaver` in the background and then start [openbox](/index.php/Openbox#Standalone "Openbox"), append the following:
+Then [edit](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the file and replace the default programs with desired commands. Remember that lines following a command using `exec` would be ignored. For example, to start `xscreensaver` in the background and then start [openbox](/index.php/Openbox#Standalone "Openbox"), use the following:
 
  `~/.xinitrc` 
 ```

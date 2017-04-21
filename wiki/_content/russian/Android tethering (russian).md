@@ -1,28 +1,28 @@
-[Тетеринг](https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B3 "wikipedia:ru:Тетеринг") - это раздача интернета на компьютер со смартфона с помощью его сетевого подключения. USB tethering and Wi-Fi access point tethering are natively supported since Android Froyo (2.2). In older versions of the Android OS, most unofficial ROMs have this option enabled.
+[Тетеринг](https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B3 "wikipedia:ru:Тетеринг") - это раздача интернета на компьютер со смартфона с помощью его сетевого подключения. USB-модем и точка доступа Wi-Fi точки доступа поддерживаются изначально с Android Froyo (2.2). В более старых версиях ОС Android большинство неофициальных ПЗУ имеют эту функцию.
 
 ## Contents
 
-*   [1 Wi-Fi access point](#Wi-Fi_access_point)
+*   [1 Точка доступа Wi-Fi](#.D0.A2.D0.BE.D1.87.D0.BA.D0.B0_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_Wi-Fi)
 *   [2 USB модем](#USB_.D0.BC.D0.BE.D0.B4.D0.B5.D0.BC)
     *   [2.1 Что вам понадобится](#.D0.A7.D1.82.D0.BE_.D0.B2.D0.B0.D0.BC_.D0.BF.D0.BE.D0.BD.D0.B0.D0.B4.D0.BE.D0.B1.D0.B8.D1.82.D1.81.D1.8F)
     *   [2.2 Порядок действий](#.D0.9F.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.B4.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.B8.D0.B9)
-*   [3 USB tethering with OpenVPN](#USB_tethering_with_OpenVPN)
-    *   [3.1 Tools Needed](#Tools_Needed)
-        *   [3.1.1 Configuring the phone connection in Arch Linux](#Configuring_the_phone_connection_in_Arch_Linux)
-    *   [3.2 Procedure](#Procedure)
-    *   [3.3 Troubleshooting](#Troubleshooting)
+*   [3 USB-модем с OpenVPN](#USB-.D0.BC.D0.BE.D0.B4.D0.B5.D0.BC_.D1.81_OpenVPN)
+    *   [3.1 Необходимые инструменты](#.D0.9D.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D1.8B.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
+        *   [3.1.1 Настройка телефонного соединения в Arch Linux](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.82.D0.B5.D0.BB.D0.B5.D1.84.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_Arch_Linux)
+    *   [3.2 Процедура](#.D0.9F.D1.80.D0.BE.D1.86.D0.B5.D0.B4.D1.83.D1.80.D0.B0)
+    *   [3.3 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
         *   [3.3.1 DNS](#DNS)
         *   [3.3.2 NetworkManager](#NetworkManager)
-*   [4 Tethering via Bluetooth](#Tethering_via_Bluetooth)
-*   [5 Tethering with SOCKS proxy](#Tethering_with_SOCKS_proxy)
-    *   [5.1 Tools Needed](#Tools_Needed_2)
-    *   [5.2 Instructions](#Instructions)
+*   [4 Модем через Bluetooth](#.D0.9C.D0.BE.D0.B4.D0.B5.D0.BC_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Bluetooth)
+*   [5 Подключение через прокси-сервер SOCKS](#.D0.9F.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D1.80.D0.BE.D0.BA.D1.81.D0.B8-.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80_SOCKS)
+    *   [5.1 Необходимые инструменты](#.D0.9D.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D1.8B.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_2)
+    *   [5.2 инструкции](#.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.86.D0.B8.D0.B8)
         *   [5.2.1 Tetherbot](#Tetherbot)
         *   [5.2.2 Proxoid](#Proxoid)
 
-## Wi-Fi access point
+## Точка доступа Wi-Fi
 
-Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by default since Froyo (Android 2.2) without needing to root the phone. Moreover, this method will discharge the battery rapidly and tends to cause intense heating, unlike USB. See : **menu/wireless & networks/Internet tethering/Wi-Fi access point**
+Использование телефона Android в качестве точки доступа Wi-Fi (с использованием 3G) стало доступным по умолчанию с момента выхода Froyo (Android 2.2) без необходимости иметь root права на телефоне. Более того, этот метод быстро разряжает батарею, и в отличие от USB, приводит к интенсивному нагреву. Смотри : **menu/wireless & networks/Internet tethering/Wi-Fi access point**
 
 ## USB модем
 
@@ -61,26 +61,26 @@ Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by
 
 *   Последним шагом является [настройка сетевого соединения](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Configure_the_IP_address "Network configuration (Русский)") на данном интерфейсе.
 
-## USB tethering with OpenVPN
+## USB-модем с OpenVPN
 
-This method works for any old Android version and requires neither root access nor modifications in the phone (it is also suitable for Android 2.2 and later, but no longer required).
+Этот метод работает для любой старой версии Android и не требует ни прав root, ни модификаций в телефоне (он также подходит для Android 2.2 и новее, но больше не требуется).
 
-It does not require changes to your browser. In fact, all network traffic is transparently handled for any PC application (except ICMP pings). It is somewhat CPU intensive on the phone at high usage rates (a 500 kBytes/sec data transfer rate may take more than 50% of phone CPU on a powerful Acer Liquid).
+Он не требует изменений в вашем браузере. На самом деле, весь сетевой трафик прозрачно обрабатывается для любого приложения ПК (кроме пингов ICMP). Он несколько интенсивно потребляет процессор при высоких нагрузках (скорость передачи данных 500 кбайт/с может занимать более 50% телефонного процессора на мощном Acer Liquid).
 
-### Tools Needed
+### Необходимые инструменты
 
-For Arch, you need to [install](/index.php/Pacman "Pacman") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package. It is also required to have the Android SDK installed (which can be obtained [here](http://developer.android.com/sdk/index.html) or from the AUR). On the phone, you need the [azilink](http://code.google.com/p/azilink/) application, which is a Java-based NAT that will communicate with OpenVPN on your computer.
+Для Arch вам нужно [установить](/index.php/Pacman "Pacman") пакет [openvpn](https://www.archlinux.org/packages/?name=openvpn). Также необходимо установить Android SDK (который можно получить [здесь](http://developer.android.com/sdk/index.html) или из AUR). На телефоне вам нужно приложение [azilink](http://code.google.com/p/azilink/), которое представляет собой NAT на базе Java, который будет взаимодействовать с OpenVPN на вашем компьютере.
 
-#### Configuring the phone connection in Arch Linux
+#### Настройка телефонного соединения в Arch Linux
 
-Once you have installed the Android SDK, in order to use the provided tools your phone must be properly set up in [udev](/index.php/Udev "Udev") and your Linux user needs to be granted rights. Otherwise you may need root privileges to use the Android SDK, which is not recommended. To perform this configuration, turn on USB debugging on the phone (usually in Settings -> Applications -> Development -> USB debugging), connect it to the PC by the USB cable and run the `lsusb` command. The device should be listed. Example output for the Acer Liquid phone:
+После того, как вы установили Android SDK, чтобы использовать предоставленные инструменты, ваш телефон должен быть правильно настроен в [udev](/index.php/Udev "Udev"), и вы должны предоставить пользователю Linux права. В противном случае вам могут потребоваться привилегии root для использования Android SDK, что не рекомендуется. Чтобы выполнить эту настройку, включите отладку USB на телефоне (обычно в меню «Настройки» -> «Приложения -> Разработка -> USB-отладка»), подключите его к ПК с помощью USB-кабеля и выполните команду {ic|lsusb}}. Устройство должно быть в списке. Пример вывода для телефона Acer Liquid:
 
 ```
 Bus 001 Device 006: ID **0502**:3202 Acer, Inc. 
 
 ```
 
-Then, create the following file, replacing *ciri* by your own Linux user name, and **0502** by the vendor ID of your own phone:
+Затем создайте следующий файл, заменив *ciri* на ваше собственное имя пользователя Linux, и *0502* на идентификатор поставщика вашего телефона:
 
  `/etc/udev/rules.d/51-android.rules` 
 ```
@@ -88,18 +88,18 @@ SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
 ```
 
-As root run the `udevadm control restart` command (or reboot your computer) to make the change effective.
+Как root выполните команду `udevadm control restart` (или перезагрузите компьютер), чтобы применить изменения.
 
-Now run in your linux PC the `adb shell` command from the Android SDK as plain (non root) user: you should get a unix prompt *in your phone*.
+Теперь выполните на вашем Linux-ПК команду `adb shell` из Android SDK в качестве обычного (не root) пользователя: вы должны получить приглашение unix «на телефоне».
 
-### Procedure
+### Процедура
 
-Run the AziLink application in the phone and select "About" at the bottom to receive instructions, which basically are:
+Запустите приложение AziLink в телефоне и выберите «О программе» внизу, чтобы получить инструкции, которые в основном:
 
-1.  You will have to enable USB debugging on the phone if it was not already enabled (usually in Settings -> Applications -> Development -> USB debugging).
-2.  Connect the phone with the USB cable to the PC.
-3.  Run AziLink and make sure that the **Service active** option at the top is checked.
-4.  Run the following commands in your Linux PC:
+1.  Вам нужно будет включить отладку USB на телефоне, если она еще не была включена (обычно в меню «Настройки» -> «Приложения» -> «Разработка» -> «Отладка USB»).
+2.  Подключите телефон с помощью кабеля USB к ПК.
+3.  Запустите AziLink и убедитесь, что в верхней части окна отмечена опция **Активная служба**.
+4.  Выполните на своем ПК Linux следующие команды:
 
 	 `$ adb forward tcp:41927 tcp:41927` 
 
@@ -118,11 +118,11 @@ dhcp-option DNS 192.168.56.1
 
 ```
 
-### Troubleshooting
+### Исправление проблем
 
 #### DNS
 
-You may need to manually update the contents of [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to
+Вам может потребоваться вручную обновить содержимое [resolv.conf](/index.php/Resolv.conf "Resolv.conf") до
 
  `/etc/resolv.conf` 
 ```
@@ -132,36 +132,36 @@ nameserver 192.168.56.1
 
 #### NetworkManager
 
-If you're running NetworkManager, you may need to stop it before running OpenVPN.
+Если вы используете NetworkManager, вам может потребоваться остановить его перед запуском OpenVPN.
 
-## Tethering via Bluetooth
+## Модем через Bluetooth
 
-Android (from at least 4.0 onwards, possibly earlier) can provide a Bluetooth personal-area network (PAN) in access point mode.
+Android (по крайней мере, начиная с 4.0, возможно, ранее) может предоставить персональную сеть Bluetooth (PAN) в режиме точки доступа.
 
-NetworkManager can perform this action and handle the network initialisation itself; consult its documentation for more details.
+NetworkManager может выполнить это действие и самостоятельно обработать инициализацию сети; Обратитесь к его документации для получения более подробной информации.
 
-Alternatively: pair and ensure you can connect your computer and Android device, as described on [Bluetooth](/index.php/Bluetooth "Bluetooth"), then, substituting the address of the device (here given as `AA_BB_CC_DD_EE_FF`), do:
+В качестве альтернативы: убедитесь, что вы можете подключить свой компьютер и устройство Android, как описано в [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)"), затем, заменяя адрес устройства (здесь задан как `AA_BB_CC_DD_EE_FF`), выполните:
 
  `$ dbus-send --system --type=method_call --dest=org.bluez /org/bluez/hci0/dev_AA_BB_CC_DD_EE_FF org.bluez.Network1.Connect string:'nap'` 
 
-This will create a network interface `bnep0`. Finally, [configure a network connection](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") on this interface; Android offers DHCP by default.
+Это создаст сетевой интерфейс `bnep0`. В заключение, [настройте сетевое соединение](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_IP-.D0.B0.D0.B4.D1.80.D0.B5.D1.81.D0.B0 "Network configuration (Русский)") на этом интерфейсе; Android по умолчанию предлагает DHCP.
 
-## Tethering with SOCKS proxy
+## Подключение через прокси-сервер SOCKS
 
-With this method tethering is achieved by port forwarding from the phone to the PC. This is suitable only for browsing. For Firefox, you should set **network.proxy.socks_remote_dns** to **true** in **about:config** ( address bar )
+С этим методом привязка достигается путем переадресации порта с телефона на ПК. Это подходит только для просмотра. Для Firefox вам следует установить параметру **network.proxy.socks_remote_dns** значение **true** в **about:config** ( адресная строка )
 
-### Tools Needed
+### Необходимые инструменты
 
-*   [android-sdk](https://aur.archlinux.org/packages/android-sdk/) and [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/) from [AUR](/index.php/AUR "AUR") and [android-udev](https://www.archlinux.org/packages/?name=android-udev) from [official repositories](/index.php/Official_repositories "Official repositories")
-*   USB connection cable from your phone to PC
-*   Either [Tetherbot](http://graha.ms/androidproxy/) or [Proxoid](https://code.google.com/p/proxoid/)
+*   [android-sdk](https://aur.archlinux.org/packages/android-sdk/) и [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/) из [AUR](/index.php/AUR "AUR") и [android-udev](https://www.archlinux.org/packages/?name=android-udev) из [official repositories (Русский)](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)")
+*   Кабель USB для подключения вашего телефона к ПК
+*   Один из двух: [Tetherbot](http://graha.ms/androidproxy/) или [Proxoid](https://code.google.com/p/proxoid/)
 
-### Instructions
+### инструкции
 
 #### Tetherbot
 
-Follow the instructions under **Using the Socks Proxy** on [[1]](http://graha.ms/androidproxy/).
+Следуйте инструкциям в разделе **Using the Socks Proxy** на странице [[1]](http://graha.ms/androidproxy/).
 
 #### Proxoid
 
-Follow the instructions demonstrated in the following [link](http://androidcommunity.com/forums/f23/android-usb-tethering-for-linux-using-proxoid-24875/)
+Следуйте инструкциям, приведенным в следующих разделах [link](http://androidcommunity.com/forums/f23/android-usb-tethering-for-linux-using-proxoid-24875/)

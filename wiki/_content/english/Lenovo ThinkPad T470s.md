@@ -1,6 +1,7 @@
 | **Device** | **Status** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless](/index.php/Wireless "Wireless") | Yes |
+| Mobile Broadband | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
@@ -14,12 +15,13 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 *   [1 firmware (e.g. bios and peripherals)](#firmware_.28e.g._bios_and_peripherals.29)
 *   [2 kernel and hardware support](#kernel_and_hardware_support)
-*   [3 lspci and lsusb](#lspci_and_lsusb)
-    *   [3.1 lspci](#lspci)
-    *   [3.2 lsusb](#lsusb)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Smartcard Reader](#Smartcard_Reader)
-*   [5 See also](#See_also)
+*   [3 mobile broadband](#mobile_broadband)
+*   [4 lspci and lsusb](#lspci_and_lsusb)
+    *   [4.1 lspci](#lspci)
+    *   [4.2 lsusb](#lsusb)
+*   [5 Configuration](#Configuration)
+    *   [5.1 Smartcard Reader](#Smartcard_Reader)
+*   [6 See also](#See_also)
 
 ## firmware (e.g. bios and peripherals)
 
@@ -34,6 +36,10 @@ Installation with modern media puts you on Kernel 4.10.10-1, however [this note]
 As advised in [Intel graphics#Enable early KMS](/index.php/Intel_graphics#Enable_early_KMS "Intel graphics") and [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") you can add i915 to your modules.
 
 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") with Kaby Lake seems to work fine via va-api.
+
+## mobile broadband
+
+The mobile broadband card is a [Sierra EM7455](https://www.sierrawireless.com/products-and-solutions/embedded-solutions/networking-modules/), which can be seen below in the lsusb. We have confirmed working with with [Google's Project Fi](https://fi.google.com).
 
 ## lspci and lsusb
 

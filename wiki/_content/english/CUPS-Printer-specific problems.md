@@ -67,6 +67,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/) |
 | MFC-7360N | Install Brother's driver. |
 | MFC-9320CW | Install Brother's driver. |
+| MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
 | MFC-9840CDW | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
 | MFC-J5520DW | [brother-mfc-j5520dw](https://aur.archlinux.org/packages/brother-mfc-j5520dw/) |

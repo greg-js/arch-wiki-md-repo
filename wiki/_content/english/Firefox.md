@@ -50,13 +50,13 @@ Other alternatives include:
 
 	[https://www.mozilla.org/firefox/channel/desktop/#beta](https://www.mozilla.org/firefox/channel/desktop/#beta) || [firefox-beta](https://aur.archlinux.org/packages/firefox-beta/) or [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
-*   **Firefox Developer Edition/Aurora** — for developers
+*   **Firefox Developer Edition** — for developers
 
-	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/), [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/)
+	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/)
 
 *   **Firefox Nightly** — nightly builds for testing ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
 
-	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
+	[https://www.mozilla.org/firefox/channel/desktop/#nightly](https://www.mozilla.org/firefox/channel/desktop/#nightly) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
 *   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better KDE integration than is possible through simple Firefox plugins.
 
@@ -390,7 +390,7 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
-This can also help if you are using the PulseAudio [module-echo-cancel](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation), and Firefox does not recognise the virtual echo canceling source.
+This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
 
 ## See also
 

@@ -53,7 +53,7 @@ The following are EFL-based applications, most in an early stage of development 
 *   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance photo browser
 *   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) music player
 *   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
-*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) picture viewer
+*   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](http://smhouston.us/ephoto/) picture viewer
 *   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – E Python Media Center
 *   [equate-git](https://aur.archlinux.org/packages/equate-git/) – Equate calculator
 *   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler on-screen ruler and measurement tools

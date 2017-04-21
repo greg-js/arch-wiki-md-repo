@@ -55,7 +55,12 @@ ReadWriteDirectories=/var/run/fail2ban /var/lib/fail2ban /var/spool/postfix/mail
 
 ```
 
-In the example above, this limits the file system to read-only, except for `/var/run/fail2ban` for pid and socket files, and `/var/spool/postfix/maildrop` for [postfix](/index.php/Postfix "Postfix") sendmail. Again, this will be dependent on you system configuration and fail2ban configuration. The `/tmp` directory is needed for some fail2ban actions. Note that adding `/var/log/fail2ban` is necessary if you want fail2ban to log its activity. Make sure all the directories exist, or you will get error code 226 on starting the service.
+In the example above, this limits the file system to read-only, except for `/var/run/fail2ban` for pid and socket files, and `/var/spool/postfix/maildrop` for [postfix](/index.php/Postfix "Postfix") sendmail. Again, this will be dependent on you system configuration and fail2ban configuration. The `/tmp` directory is needed for some fail2ban actions. Note that adding `/var/log/fail2ban` is necessary if you want fail2ban to log its activity. Make sure all the directories exist, or you will get error code 226 on starting the service. And modify logtarget in `/etc/fail2ban/fail2ban.conf`:
+
+```
+logtarget = /var/log/fail2ban/fail2ban.log
+
+```
 
 ## Configuration
 

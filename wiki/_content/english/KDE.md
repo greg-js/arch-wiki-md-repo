@@ -107,7 +107,7 @@ Plasma can be started either graphically, using a [display manager](/index.php/D
 
 ### Graphically
 
-**Tip:** To better integrate SDDM with Plasma, it is recommended to edit `/etc/sddm.conf` to use the breeze theme. Refer to [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") for instructions.
+**Tip:** To better integrate SDDM with Plasma, it is recommended to use the breeze theme. Related setting is located at *System Settings - Startup dans Shutdown*. See [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
 
 To launch a Plasma session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
@@ -170,7 +170,7 @@ Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/pa
 
 ##### Sound applet in the system tray
 
-[Install](/index.php/Install "Install") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) or [kmix](https://www.archlinux.org/packages/?name=kmix) (start Kmix from the Application Launcher).
+[Install](/index.php/Install "Install") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) or [kmix](https://www.archlinux.org/packages/?name=kmix) (start Kmix from the Application Launcher). [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) is now installed by default with [plasma](https://www.archlinux.org/groups/x86_64/plasma/), no further configuration needed.
 
 **Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.config/kmixrc`.
 

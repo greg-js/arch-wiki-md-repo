@@ -222,7 +222,7 @@ Support for Rust can be obtained by installing the [Rust](https://marketplace.vi
 
 #### Vim
 
-Vim support for Rust is enabled via [vim-racer](https://github.com/racer-rust/vim-racer) plugin.
+Vim support for Rust is enabled via the official [rust.vim](https://github.com/rust-lang/rust.vim) plugin.
 
 ## See also
 

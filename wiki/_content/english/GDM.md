@@ -304,7 +304,7 @@ See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyb
 
 #### GNOME Control Center
 
-If the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start *gnome-control-center* and navigate to *Keyboard -> Input Sources*. Then, in the header bar, hit the *Login Screen* toggle button to configure the keyboard layout for GDM specifically.
+If the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed, the keyboard layout(s) can be configured using a graphical frontend. Start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. Then, in the header bar, hit the *Login Screen* toggle button to configure the keyboard layout for GDM specifically.
 
 #### GDM 2.x layout
 

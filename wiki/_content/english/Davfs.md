@@ -48,6 +48,8 @@ $ chmod 0600 ~/.davfs2/secrets
 
 ```
 
+If you want to mount the webdav directory as root user you have to change ~/.davfs2/secrets in /etc/davfs2/secrets in the second line above.
+
 For nextcloud and owncloud the url is:
 
 ```

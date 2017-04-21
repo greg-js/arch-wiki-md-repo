@@ -558,7 +558,7 @@ table inet filter {
 		# SSH (port 22)
 		tcp dport ssh accept
 
-		# HTTP (ports 80 & 445)
+		# HTTP (ports 80 & 443)
 		tcp dport { http, https } accept
 	}
 }

@@ -229,11 +229,15 @@ As an alternative workaround, run *libreoffice* with a light theme (e.g. with en
 
 ### LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme
 
-[Install](/index.php/Install "Install") the Breeze theme for [GTK+](/index.php/GTK%2B "GTK+"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
+If you don't want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in Tools > Options > LibreOffice > View > Icon Style to a readable one provided by LibreOffice.
 
-Then ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
+Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK+](/index.php/GTK%2B "GTK+"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), and, if using a LibreOffice version < 5.3.0, the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
 
-If this does not work correctly, try using the `gen` interface instead. [[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)
+Just enable "Breeze Dark" or another readable icon style in Tools > Options > LibreOffice > View > Icon Style then.
+
+If that isn't enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
+
+If this still does not work correctly, try using the `gen` interface instead. [[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)
 
 ### AutoText expected default behaviour not functional in system locales other than en_US
 

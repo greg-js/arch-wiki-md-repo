@@ -85,6 +85,8 @@ ListenDatagram=127.0.0.1:5353
 
 ```
 
+**Note:** UDP Port `5353` is used by [Avahi](/index.php/Avahi#Firewall "Avahi") (if installed and running) and can cause warnings in the journal and [Avahi](/index.php/Avahi "Avahi")'s mDNS unreliable.
+
 #### Example local DNS cache configurations
 
 The following configurations should work with *dnscrypt-proxy* and assume that it is listening on port `5353`.

@@ -34,7 +34,8 @@
 | [eliasps](/index.php/User:Eliasps "User:Eliasps") |
 | [Goldenbeetle](/index.php/User:Goldenbeetle "User:Goldenbeetle") |
 | [Ammer](/index.php/User:Ammer "User:Ammer") |
-| [Sudowoodo](/index.php/User:Sudowoodo "User:Sudowoodo") | [fragos.george](/index.php?title=User:Fragos.george&action=edit&redlink=1 "User:Fragos.george (page does not exist)") |
+| [Sudowoodo](/index.php/User:Sudowoodo "User:Sudowoodo") |
+| [fragos.george](/index.php?title=User:Fragos.george&action=edit&redlink=1 "User:Fragos.george (page does not exist)") |
 
 ### Οργάνωση της μετάφρασης
 

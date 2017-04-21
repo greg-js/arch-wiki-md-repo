@@ -18,7 +18,7 @@ This article details how to install and setup a Broadcom wireless network device
     *   [4.5 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
     *   [4.6 Suppressing console messages](#Suppressing_console_messages)
     *   [4.7 Device BCM43241 not detected](#Device_BCM43241_not_detected)
-    *   [4.8 Device BCM4366 (such as Asus PCE-AC88) not detected](#Device_BCM4366_.28such_as_Asus_PCE-AC88.29_not_detected)
+    *   [4.8 Missing firmware for Asus PCE-AC88](#Missing_firmware_for_Asus_PCE-AC88)
     *   [4.9 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
 
 ## History
@@ -163,28 +163,9 @@ To disable those messages, increase the loglevel of printk messages that get thr
 
 This device will not display with either `lspci` nor `lsusb`; there is no known solution yet. Please remove this section when resolved.
 
-### Device BCM4366 (such as Asus PCE-AC88) not detected
+### Missing firmware for Asus PCE-AC88
 
-Currently, **brcmfmac** doesn't come with the necessary firmware to load the BCM4366 device. In order to make it work, the following steps are needed:
-
-```
-# mkdir fw_temp; cd fw_temp 
-# wget [http://dlcdnet.asus.com/pub/ASUS/wireless/RT-AC88U/FW_RT_AC88U_30043807266.ZIP\?_ga\=1.187528232.1456537653.1490821407](http://dlcdnet.asus.com/pub/ASUS/wireless/RT-AC88U/FW_RT_AC88U_30043807266.ZIP\?_ga\=1.187528232.1456537653.1490821407) -O FW_RT_AC88U_30043807266.ZIP
-# unzip FW_RT_AC88U_30043807266.ZIP
-# 7z x RT-AC88U_3.0.0.4_380_7266-g6439257.trx
-# dd if=lib/modules/2.6.36.4brcmarm/kernel/drivers/net/dhd/dhd.ko skip=1276860 ibs=1 count=943184 of=brcmfmac4366c-pcie.bin
-# sha1sum brcmfmac4366c-pcie.bin
-# cp brcmfmac4366c-pcie.bin /lib/firmware/brcm/brcmfmac4366c-pcie.bin
-# reboot
-
-```
-
-**Note:**
-
-*   sha1sum of the firmware should be 9f97ebaf661631d6aa303d5e74a528cf1d95a016
-*   Doesn't work if broadcom-wl is installed.
-*   2.4 GHz works fine but 5 GHz doesn't.
-*   Tested functional as of Linux 4.10.10.
+See [[1]](https://ubuntuforums.org/showthread.php?t=2337200&p=13618497#post13618497) for a way to extract the `brcmfmac4366c-pcie.bin` firmware.
 
 ### Connection is unstable with some routers
 

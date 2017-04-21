@@ -124,7 +124,7 @@ Every package in the repositories along with those present in the AUR are subjec
 
 ### Arch User Repository
 
-While the ABS tree allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or through [AurJson](/index.php/AurJson "AurJson").
+While the Arch Build System allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or through [AurJson](/index.php/AurJson "AurJson").
 
 ## Booting
 
@@ -154,7 +154,7 @@ This section provides orientation for users wishing to run graphical application
 
 [Xorg](/index.php/Xorg "Xorg") is the public, open-source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (commonly X11, or X). It is required for running applications with graphical user interfaces (GUIs), and the majority of users will want to install it.
 
-[Wayland](/index.php/Wayland "Wayland") is a new, alternative display server protocol and the Weston reference implementation is available.
+[Wayland](/index.php/Wayland "Wayland") is a newer, alternative display server protocol and the Weston reference implementation is available.
 
 ### Display drivers
 
@@ -230,7 +230,7 @@ For better security while browsing web, paying online, connecting to [SSH](/inde
 
 ### Setting up a firewall
 
-A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), it is not enabled by default. It is highly recommended to set up some form of firewall, see [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
+A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), it is not enabled by default. It is highly recommended to set up some form of firewall. See [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
 
 ### Resource sharing
 

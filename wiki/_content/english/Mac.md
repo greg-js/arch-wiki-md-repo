@@ -31,24 +31,25 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
     *   [6.6 Light sensor](#Light_sensor)
     *   [6.7 Sound](#Sound)
     *   [6.8 Bluetooth](#Bluetooth)
-    *   [6.9 Webcam](#Webcam)
-        *   [6.9.1 iSight](#iSight)
-        *   [6.9.2 Facetime HD](#Facetime_HD)
-    *   [6.10 Temperature Sensors](#Temperature_Sensors)
-    *   [6.11 Color Profile](#Color_Profile)
-    *   [6.12 Apple Remote](#Apple_Remote)
-    *   [6.13 HFS partition sharing](#HFS_partition_sharing)
-    *   [6.14 HFS+ Partitions](#HFS.2B_Partitions)
-        *   [6.14.1 Journaling](#Journaling)
-        *   [6.14.2 Yosemite and later](#Yosemite_and_later)
-    *   [6.15 Home Sharing](#Home_Sharing)
-        *   [6.15.1 In OS X](#In_OS_X)
-            *   [6.15.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID.28s.29)
-            *   [6.15.1.2 Step 2: change "Home" permissions](#Step_2:_change_.22Home.22_permissions)
-        *   [6.15.2 In Arch](#In_Arch)
-    *   [6.16 Avoid long EFI wait before booting](#Avoid_long_EFI_wait_before_booting)
-    *   [6.17 Mute startup chime](#Mute_startup_chime)
-    *   [6.18 kworker using high CPU](#kworker_using_high_CPU)
+    *   [6.9 Magic Mouse](#Magic_Mouse)
+    *   [6.10 Webcam](#Webcam)
+        *   [6.10.1 iSight](#iSight)
+        *   [6.10.2 Facetime HD](#Facetime_HD)
+    *   [6.11 Temperature Sensors](#Temperature_Sensors)
+    *   [6.12 Color Profile](#Color_Profile)
+    *   [6.13 Apple Remote](#Apple_Remote)
+    *   [6.14 HFS partition sharing](#HFS_partition_sharing)
+    *   [6.15 HFS+ Partitions](#HFS.2B_Partitions)
+        *   [6.15.1 Journaling](#Journaling)
+        *   [6.15.2 Yosemite and later](#Yosemite_and_later)
+    *   [6.16 Home Sharing](#Home_Sharing)
+        *   [6.16.1 In OS X](#In_OS_X)
+            *   [6.16.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID.28s.29)
+            *   [6.16.1.2 Step 2: change "Home" permissions](#Step_2:_change_.22Home.22_permissions)
+        *   [6.16.2 In Arch](#In_Arch)
+    *   [6.17 Avoid long EFI wait before booting](#Avoid_long_EFI_wait_before_booting)
+    *   [6.18 Mute startup chime](#Mute_startup_chime)
+    *   [6.19 kworker using high CPU](#kworker_using_high_CPU)
 *   [7 rEFIt](#rEFIt)
     *   [7.1 Problems with rEFIt](#Problems_with_rEFIt)
         *   [7.1.1 Mavericks upgrade breaks Arch boot option](#Mavericks_upgrade_breaks_Arch_boot_option)
@@ -802,6 +803,21 @@ Then, reboot.
 ### Bluetooth
 
 Bluetooth should work out-of-the box. See the article on [Bluetooth](/index.php/Bluetooth "Bluetooth") to install and configure all software needed.
+
+### Magic Mouse
+
+If you use a magic mouse you will find it works nicely out of the box. You might want to tweak some settings such as *scroll-speed* or *acceleration*. There is no GUI for this at this time. The only way to set these settings is to instruct the kernel driver (`hid_magicmouse`) with parameters. Create a modprobe config file for your mouse.
+
+ `/etc/modprobe.d/magicmouse.conf`  `options hid_magicmouse scroll-speed=55 scroll-acceleration=1 emulate_3button=0` 
+
+This will instruct the driver to have a fast scroll-speed, do exponential acceleration and do not emulate a 3 button mouse. You can find an overview of all parameters and their current settings in `/sys/module/hid_magicmouse/parameters`.
+
+To play with the settings without rebooting you can also set them through the command line, like so:
+
+```
+# echo 55 | sudo tee /sys/module/hid_magicmouse/parameters/scroll_speed
+
+```
 
 ### Webcam
 

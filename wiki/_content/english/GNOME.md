@@ -525,7 +525,6 @@ For further information, refer to the [app-folders schema](https://git.gnome.org
     *   [Personalize GNOME](https://wiki.gnome.org/Personalization)
     *   [GNOME Look](https://www.gnome-look.org/)
 *   GTK+/GNOME programs:
-    *   [GNOME Files](http://www.gnomefiles.org/)
     *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
 *   GNOME Source/Mirrors:

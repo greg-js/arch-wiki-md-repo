@@ -411,13 +411,15 @@ Create the following service, which will run these commands:
 Description=spamassassin housekeeping stuff
 
 [Service]
-User=spamd
-Group=spamd
+#User=spamd
+#Group=spamd
 Type=oneshot
-ExecStart=-/usr/bin/vendor_perl/sa-update --allowplugins #You can remove the allowplugins options if you do not want direct plugin updates from SA.
-ExecStart=-/usr/bin/vendor_perl/sa-compile
+ExecStart=/usr/bin/vendor_perl/sa-update --allowplugins #You can remove the allowplugins options if you do not want direct plugin updates from SA.
+SuccessExitStatus=0 1 #0 = updated, 1 = no updates available
+ExecStart=/usr/bin/vendor_perl/sa-compile
+SuccessExitStatus=0
 # You can automatically train SA's bayes filter by uncommenting this line and specifying the path to a mailbox where you store email that is spam (for ex this could be yours or your users manually reported spam)
-#ExecStart=-/usr/bin/vendor_perl/sa-learn --spam <path to your spam>
+#ExecStart=/usr/bin/vendor_perl/sa-learn --spam <path to your spam>
 ```
 
 Then create the timer, which will execute the previous service daily:

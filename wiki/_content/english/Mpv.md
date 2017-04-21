@@ -178,7 +178,7 @@ The development of mpv's Lua scripts are documented in [DOCS/man/lua.rst](https:
 
 If [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) is installed, mpv can directly open a Twitch livestream.
 
-Alternatively, [livestreamer](https://www.archlinux.org/packages/?name=livestreamer) can be used to stream Twitch. See [Livestreamer#Twitch](/index.php/Livestreamer#Twitch "Livestreamer").
+Alternatively, [streamlink](https://www.archlinux.org/packages/?name=streamlink) can be used to stream Twitch. If you want a gui for launching these streams use [streamlink-twitch-gui](https://aur.archlinux.org/packages/streamlink-twitch-gui/). See [Livestreamer#Twitch](/index.php/Livestreamer#Twitch "Livestreamer").
 
 Another alternative based on Livestreamer is this Lua script: [https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc](https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc)
 

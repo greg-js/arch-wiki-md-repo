@@ -95,7 +95,7 @@ Fn+Esc to enable FnLk which will make your function keys work.
 
 With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
-This can be worked around by using the `i915.enable_rc6=0` kernel parameter [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
+This can be worked around by using the `i915.enable_rc6=0` [kernel_parameters](/index.php/Kernel_parameter "Kernel parameter") [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
 
 ### Smartcard Reader
 

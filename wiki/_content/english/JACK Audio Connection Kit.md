@@ -18,8 +18,9 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#.22Cannot_lock_down_memory_area_.28Cannot_allocate_memory.29.22_message_on_startup)
     *   [4.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
-    *   [4.3 Problems with specific applications](#Problems_with_specific_applications)
-        *   [4.3.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
+    *   [4.3 "ALSA: cannot set channel count to 1 for capture" error in logs](#.22ALSA:_cannot_set_channel_count_to_1_for_capture.22_error_in_logs)
+    *   [4.4 Problems with specific applications](#Problems_with_specific_applications)
+        *   [4.4.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -394,6 +395,10 @@ $ ps ax | grep [PID here]
 ```
 
 This will hopefully show the conflicting programs.
+
+### "ALSA: cannot set channel count to 1 for capture" error in logs
+
+Change ALSA input and output channels from 1 to 2
 
 ### Problems with specific applications
 

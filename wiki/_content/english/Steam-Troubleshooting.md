@@ -129,6 +129,8 @@ $ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | 
 
 ```
 
+If the above commands have no output and you have an NVIDIA video card, then you may need to explitly install [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
+
 ## Multiple monitors setup
 
 Setup with multiple monitors can cause `ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.` error which will make game unable to start. If you stuck on this error and have multiple monitors, try to disable all additional displays, and then run a game. You can enable them after the game successfully started.

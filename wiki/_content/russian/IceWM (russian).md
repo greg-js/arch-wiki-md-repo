@@ -20,27 +20,27 @@ IceWM находится в [официальном репозитории](/ind
 
 ## Запуск IceWM
 
-**Graphical login**
+**Графический вход**
 
-Just select *IceWM* from the session menu of your favourite [display manager](/index.php/Display_manager "Display manager").
+Просто выберите *IceWM* из меню сеанса вашего любимого [display manager (Русский)](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)").
 
-**Manually**
+**Вручную**
 
-For a basic session, append the following to `~/.xinitrc`
+Для базового сеанса, добавьте следующее в файл `~/.xinitrc`
 
 ```
 exec icewm
 
 ```
 
-To run icewm, icewmbg and icewmtray with your IceWM session, append the following to `~/.xinitrc`
+Для запуска icewm, icewmbg и icewmtray с вашим сеансом IceWM, добавьте следующее в файл `~/.xinitrc`
 
 ```
 exec icewm-session
 
 ```
 
-See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the logind session.
+Смотри [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") для деталей, таких как сохранение сеанса logind.
 
 ## Настройка
 

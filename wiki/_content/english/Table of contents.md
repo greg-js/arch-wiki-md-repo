@@ -74,7 +74,7 @@
 | <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(18)</small> |
 | <small>4.9.18.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(1)</small> |
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
+| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(20)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
@@ -82,7 +82,7 @@
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(76)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(75)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(6)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(13)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |

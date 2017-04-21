@@ -150,3 +150,4 @@ then restart `opendmarc.service`.
 ## Weblinks
 
 *   [DMARC Inspector](https://dmarcian.com/dmarc-inspector/)
+*   [IETF RFC 7489](https://datatracker.ietf.org/doc/rfc7489/)

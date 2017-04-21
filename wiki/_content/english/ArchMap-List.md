@@ -1043,5 +1043,6 @@ You can use the following website to get your device's coordinates along with a 
 61.464059, 23.890607 "Michael" # Tampere, Finland
 42.250611, -84.459172 "Mark Weiman (markzz)" # Jackson, Michigan, United States
 19.040532, -98.194858 "Marco A. Rojas (MrcRjs)" # Puebla de Zaragoza, Puebla, Mexico
+39.508295, -84.181346 "TheClean" # Clearcreek Township, Ohio
 
 ```

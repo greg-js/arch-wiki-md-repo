@@ -197,7 +197,7 @@ This is equivalent to these shell commands:
 
 ### Matlab
 
-Matlab does not have any protection against taking all your machine's memory or CPU. Launching a large calculation can thus trash your system. You could put the following in `/etc/cgconfig.conf` to protect from this (where `$USER` is your username):
+Matlab does not have any protection against taking all your machine's memory or CPU. Launching a large calculation can thus crash your system. You could put the following in `/etc/cgconfig.conf` to protect from this (where `$USER` is your username):
 
  `/etc/cgconfig.conf ` 
 ```

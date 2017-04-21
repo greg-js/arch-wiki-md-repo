@@ -12,7 +12,6 @@ Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
     *   [2.3 Graphics](#Graphics)
     *   [2.4 QHD+ Pentile Display](#QHD.2B_Pentile_Display)
     *   [2.5 Function Keys](#Function_Keys)
-        *   [2.5.1 Brightness Keys](#Brightness_Keys)
 *   [3 See also](#See_also)
 
 ## Hardware lists
@@ -58,6 +57,8 @@ synclient TapButton1=1 TapButton2=3 TapButton3=2
 ### Wifi
 
 Intel Dual Band wifi. Should work with recent kernels. 3.10+ with iwlwifi. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
+
+There is a kernel panic with 5GHz frequencies: [https://bugs.archlinux.org/task/53317](https://bugs.archlinux.org/task/53317) [https://bugzilla.kernel.org/show_bug.cgi?id=195299](https://bugzilla.kernel.org/show_bug.cgi?id=195299)
 
 ### Graphics
 
@@ -125,57 +126,6 @@ And/Or:
 ```
 
 No effect so far. Investigate.
-
-#### Brightness Keys
-
-For whatever reason, `xev` does not return any events for the standard brightness keys, but `F3` and `F4` seem to be detected as `XF86KbdBrightnessDown` and `XF86KbdBrightnessUp`, respectively.
-
-Using grub, a simple workaround is to add
-
-```
-acpi_osi=
-
-```
-
-on the
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT=
-
-```
-
-line in
-
-```
-/etc/default/grub
-
-```
-
-then, rebooting.
-
-Edit 04/23/16: UX305UA: Keys recognized with this method, but brightness levels not working (stay at minimum level).
-
-Or you can create your own shortcut on gnome, on keyboard configuration, associating a key with the commands:
-
-```
-xdotool key XF86MonBrightnessUp
-xdotool key XF86MonBrightnessDown
-
-```
-
-or
-
-```
-xbacklight -inc 10
-xbacklight -dec 10
-
-```
-
-You need to install xdotool or xbacklight first.
-
-There is also a kernel patch which enables the proper brightness keys. This patch is tested with 4.4 kernels: [https://bugzilla.kernel.org/attachment.cgi?id=195071](https://bugzilla.kernel.org/attachment.cgi?id=195071)
-
-04/2016: If someone else can try this patch given by Intel DRM Team : [https://patchwork.freedesktop.org/series/4783/](https://patchwork.freedesktop.org/series/4783/). Please respond to this thread here when done: [http://thread.gmane.org/gmane.comp.freedesktop.xorg.drivers.intel/84376/focus=84538](http://thread.gmane.org/gmane.comp.freedesktop.xorg.drivers.intel/84376/focus=84538)
 
 ## See also
 

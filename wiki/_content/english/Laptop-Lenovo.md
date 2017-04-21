@@ -114,6 +114,8 @@ install CD version
 | [Lenovo ThinkPad T440p](#Lenovo_ThinkPad_T440p) | Yes | Yes | Yes | Yes | Yes | Yes* | NA | NA | Card Reader | See below |
 | [Lenovo ThinkPad T440s](/index.php/Lenovo_ThinkPad_T440s "Lenovo ThinkPad T440s") | Yes | Yes | Yes | Yes | Yes* |  ? | Yes |  ? | See wiki page for more details about wireless |
 | [Lenovo ThinkPad T450s](/index.php/Lenovo_ThinkPad_T450s "Lenovo ThinkPad T450s") | 2015.10.01 | Yes | Yes | Yes | Yes | Yes |  ? | NA | SD Card reader; fingerprint scanner |
+| [Lenovo ThinkPad T460](#Lenovo_ThinkPad_T460) | Yes | Yes | Yes | Yes | Yes | Yes |  ? | NA | SD Card reader |
+| [Lenovo ThinkPad T460s](/index.php/Lenovo_ThinkPad_T460s "Lenovo ThinkPad T460s") | Yes | Yes | no beep | Yes | Yes | Yes |  ? | NA | SD Card reader |
 | [Lenovo ThinkPad T470s](/index.php/Lenovo_ThinkPad_T470s "Lenovo ThinkPad T470s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |

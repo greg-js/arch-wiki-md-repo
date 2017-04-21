@@ -23,10 +23,11 @@
 *   [7 ALSA monitor source](#ALSA_monitor_source)
 *   [8 Monitor specific output](#Monitor_specific_output)
 *   [9 PulseAudio through JACK](#PulseAudio_through_JACK)
-    *   [9.1 The new new way](#The_new_new_way)
-    *   [9.2 The new way](#The_new_way)
-    *   [9.3 The old way](#The_old_way)
-        *   [9.3.1 QjackCtl with start-up/shutdown scripts](#QjackCtl_with_start-up.2Fshutdown_scripts)
+    *   [9.1 The new new new way](#The_new_new_new_way)
+    *   [9.2 The new new way](#The_new_new_way)
+    *   [9.3 The new way](#The_new_way)
+    *   [9.4 The old way](#The_old_way)
+        *   [9.4.1 QjackCtl with start-up/shutdown scripts](#QjackCtl_with_start-up.2Fshutdown_scripts)
 *   [10 PulseAudio through OSS](#PulseAudio_through_OSS)
 *   [11 PulseAudio from within a chroot (e.g. 32-bit chroot in 64-bit install)](#PulseAudio_from_within_a_chroot_.28e.g._32-bit_chroot_in_64-bit_install.29)
 *   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
@@ -520,6 +521,16 @@ In Pulseaudio Volume Control (pavucontrol), under the "Playback" tab, change the
 ## PulseAudio through JACK
 
 The [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit") is popular for audio work, and is widely supported by Linux audio applications. It fills a similar niche as PulseAudio, but with more of an emphasis on professional audio work. In particular, audio applications such as Ardour and Audacity work well with Jack.
+
+### The new new new way
+
+This configuration works with both [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus) and [jack2](https://www.archlinux.org/packages/?name=jack2) packages, but works better with the dbus variant.
+
+Instead of killing PulseAudio, JACK now supports bridging between them to allow PulseAudio output to route to a running Jack instance. This will allow you to simultaneously have Jack and PulseAudio running with both outputting at the same time.
+
+If you are using [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), it is recommended to uninstall it before beginning this.
+
+Begin by installing [cadence](https://aur.archlinux.org/packages/cadence/) from the AUR. Once installed and started, JACK bridge configuration is found in the bottom right of the window. The ALSA audio bridge should be set to ALSA -> PulseAudio -> JACK, and the PulseAudio bridge should be enabled. Make sure in `pavucontrol` that all output devices besides Jack sink are muted, and all input devices besides Jack input are muted. Start JACK using the Force Restart button, and if it starts successfully PulseAudio programs should begin outputting to JACK.
 
 ### The new new way
 

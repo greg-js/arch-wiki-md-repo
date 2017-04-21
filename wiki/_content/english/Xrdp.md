@@ -1,10 +1,11 @@
-**xrdp** is a daemon that supports Microsoft's [Remote Desktop Protocol](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol "wikipedia:Remote Desktop Protocol") (RDP). It uses Xvnc or X11rdp as a backend.
+**xrdp** is a daemon that supports Microsoft's [Remote Desktop Protocol](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol "wikipedia:Remote Desktop Protocol") (RDP). It uses Xvnc, X11rdp or xorgxrdp as a backend.
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 Autoboot at startup](#Autoboot_at_startup)
-    *   [1.2 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
+    *   [1.2 Running as Terminal Server (Xorg)](#Running_as_Terminal_Server_.28Xorg.29)
+    *   [1.3 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
 *   [2 Usage](#Usage)
 *   [3 See also](#See_also)
 
@@ -15,6 +16,14 @@
 ### Autoboot at startup
 
 The [xrdp](https://aur.archlinux.org/packages/xrdp/) package contains service files for systemd. [Enable](/index.php/Enable "Enable") `xrdp.service` and `xrdp-sesman.service`.
+
+### Running as Terminal Server (Xorg)
+
+[Install](/index.php/Install "Install") the [xorgxrdp-git](https://aur.archlinux.org/packages/xorgxrdp-git/) package.
+
+Add allowed_users=anybody to /etc/X11/Xwrapper.config to allow anybody to start X
+
+Edit ~/.xinitrc or /etc/X11/xinit/xinitrc to launch your DE.
 
 ### Running with Vino (Gnome VNC-Server for root session)
 
