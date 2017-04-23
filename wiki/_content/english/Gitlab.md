@@ -654,21 +654,21 @@ Get latest code as described in [#Update Gitlab](#Update_Gitlab). Save data.
 
 ```
 # cd /home/gitlab/gitlab
-# sudo -u gitlab bundle-2.3 exec rake db:data:dump RAILS_ENV=production
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:data:dump RAILS_ENV=production"
 
 ```
 
 Follow [#Mysql](#Mysql) instructions and then setup the database.
 
 ```
-# sudo -u gitlab bundle-2.3 exec rake db:setup RAILS_ENV=production
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:setup RAILS_ENV=production"
 
 ```
 
 Finally restore old data.
 
 ```
-# sudo -u gitlab bundle-2.3 exec rake db:data:load RAILS_ENV=production
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:data:load RAILS_ENV=production"
 
 ```
 
@@ -808,14 +808,14 @@ First, move to the gitlab installation directory.
 If every gitlab page gives a 500 error, then the database migrations and the assets are probably stale. If not, skip this step.
 
 ```
-# sudo -u gitlab -H bundle-2.3 exec rake db:migrate RAILS_ENV=production
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:migrate RAILS_ENV=production"
 
 ```
 
 If gitlab is constantly waiting for the deployment to finish, then the assets have probably not been recompiled.
 
 ```
-# sudo -u gitlab -H bundle-2.3 exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production"
 
 ```
 

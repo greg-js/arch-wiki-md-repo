@@ -91,9 +91,9 @@ If you experience problems and you wish to run the server in the foreground, you
 
 ```
 
-The synergy server process needs to attach to your user's X session, which means it needs to run as your user. [Enable](/index.php/Enable "Enable") `synergys@mary` as the appropriate user (replacing 'mary' with your username).
+The synergy server process needs to attach to your user's X session, which means it needs to run as your user. [Enable](/index.php/Enable "Enable") `synergys` with `--user` option.
 
-**Tip:** You can enable `synergys@mary.socket` to start the server when a client tries to connect instead. This is useful when the service can't connect to an X server on boot.
+**Tip:** You can enable `synergys.socket` to start the server when a client tries to connect instead. This is useful when the service can't connect to an X server on boot.
 
 #### Use Encryption
 
@@ -112,31 +112,14 @@ To activate the SSL plugin, add the `--enable-crypto` option.
 *   Starting from the command line:
 
 ```
-# synergys --enable-crypto
+$ synergys --enable-crypto
 
 ```
 
 *   Starting with systemd:
 
- ` /usr/lib/systemd/system/synergys@.service` 
 ```
-[Unit]
-Description=Synergy Server Daemon
-After=network.target
-
-[Service]
-User=%i
-ExecStart=/usr/bin/synergys --no-daemon --config /etc/synergy.conf --enable-crypto
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
-
-To start the service for your user:
-
-```
-# systemctl start synergys@mary
+$ systemctl --user start synergys
 
 ```
 
@@ -341,32 +324,25 @@ synergyc server-host-name
 
 For example, using *kdm* you should edit `/usr/share/config/kdm/Xsetup`.
 
-*   To start the Synergy client with systemd, create a service file, **/etc/systemd/system/synergyc@.service** and optionally a config file, **/etc/conf.d/synergyc.conf**
+*   To start the Synergy client with systemd, create a service file:
 
- ` /etc/systemd/system/synergyc@.service` 
+ `~/.config/systemd/user/synergyc.service` 
 ```
 [Unit]
 Description=Synergy Client Daemon
 After=network.target
 
 [Service]
-EnvironmentFile=/etc/conf.d/synergyc.conf
-ExecStart=/usr/bin/synergyc --no-daemon --debug ${DEBUGLEVEL:-INFO} ${SERVERALIAS}
-User=%i
+ExecStart=/usr/bin/synergyc --no-daemon *server-name*
 
 [Install]
 WantedBy=multi-user.target
 ```
- `/etc/conf.d/synergyc.conf` 
-```
-DEBUGLEVEL=WARNING
-SERVERALIAS=server-name
-```
 
-To start the service for your user,
+To start the service for your user:
 
 ```
-# systemctl start synergyc@mary
+# systemctl --user start synergyc
 
 ```
 

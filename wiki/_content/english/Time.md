@@ -210,7 +210,7 @@ Example:
 
 ```
 
-This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually (for example during [chroot](/index.php/Chroot "Chroot") where `timedatectl` won't work), keep in mind that it must be a symbolic link, as specified in `archlinux(7)`:
+This will create an `/etc/localtime` symlink that points to a zoneinfo file under `/usr/share/zoneinfo/`. In case you choose to create the link manually (for example during [chroot](/index.php/Chroot "Chroot") where `timedatectl` won't work), keep in mind that it must be a symbolic link, as specified in [archlinux(7)](https://manned.org/archlinux.7#head8):
 
 ```
 # ln -sf /usr/share/zoneinfo/*Zone*/*SubZone* /etc/localtime
@@ -219,7 +219,7 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 
 **Tip:** The time zone can also be selected interactively with *tzselect*.
 
-See [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html), [localtime(5)](http://man7.org/linux/man-pages/man5/localtime.5.html) and archlinux(7) for details.
+See [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html), [localtime(5)](http://man7.org/linux/man-pages/man5/localtime.5.html) and [archlinux(7)](https://manned.org/archlinux.7#head8) for details.
 
 ## Time skew
 

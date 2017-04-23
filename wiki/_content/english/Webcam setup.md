@@ -107,6 +107,7 @@ A more-complete list of webcams that use the stv680 chipset is available [here](
 ### linux-uvc
 
 *   Genius iLook 1321
+*   Logitech C922 Pro Stream Webcam
 *   Logitech Webcam C210
 *   Logitech Webcam C250
 *   Logitech Webcam C270

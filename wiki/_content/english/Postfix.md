@@ -709,7 +709,7 @@ Placing policy services at the end of the queue reduces load, as only legitimate
 
 **Warning:** This is not a trivial section. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
 
-DANE supports several types of records, however not all of them are suitable in postfix.
+[DANE](/index.php/DANE "DANE") supports several types of records, however not all of them are suitable in postfix.
 
 Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
 

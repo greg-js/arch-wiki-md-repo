@@ -68,7 +68,9 @@ Finally, [start and enable](/index.php/Enable "Enable") the `dnscrypt-proxy.serv
 
 ### Local DNS cache configuration
 
-It is recommended to run DNSCrypt as a forwarder for a local DNS cache, otherwise every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work. In addition to setting up *dnscrypt-proxy*, you must setup your local DNS cache program.
+**Note:** *dnscrypt* can cache entries without relying on another program. Ensure that `LocalCache on` is in your dnscrypt configuration file to enable this feature.
+
+It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not using *dnscrypt's* cache feature; otherwise, every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work. In addition to setting up *dnscrypt-proxy*, you must setup your local DNS cache program.
 
 #### Change port
 

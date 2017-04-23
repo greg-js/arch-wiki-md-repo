@@ -38,6 +38,8 @@ If the command output shows "frozen", you may be able to work around it by:
 4.  When prompted for the password by Dell Security Manager, press Escape rather than entering it. The drive will remain locked but not frozen.
 5.  Skip to Step 3 below.
 
+**Note:** If you are using a Lenovo system and can not remove the "frozen" state (e.g. Lenovo tablets use SSD on M.2 interface), you can use a **[proprietary tool](https://pcsupport.lenovo.com/us/en/olddownloads/ds019026)** to accomplish the memory cell clearing rather than following this article. See also: [https://superuser.com/questions/763642/secure-erase-ssd-on-lenovo-thinkpad-t520-cant-unfreeze-ssd-machine-reboots-on](https://superuser.com/questions/763642/secure-erase-ssd-on-lenovo-thinkpad-t520-cant-unfreeze-ssd-machine-reboots-on)
+
 ## Step 2 - Enable security by setting a user password
 
 **Note:** When the user password is set the drive will be locked after next power cycle denying normal access until unlocked with the correct password.

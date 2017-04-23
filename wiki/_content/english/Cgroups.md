@@ -13,8 +13,9 @@ Control groups can be used in multiple ways:
 *   [1 Installing](#Installing)
 *   [2 Managing Resource Groups with Systemd](#Managing_Resource_Groups_with_Systemd)
 *   [3 Simple usage](#Simple_usage)
-    *   [3.1 Ad-hoc groups](#Ad-hoc_groups)
-    *   [3.2 Persistent group configuration](#Persistent_group_configuration)
+    *   [3.1 Manual usage](#Manual_usage)
+    *   [3.2 Ad-hoc groups](#Ad-hoc_groups)
+    *   [3.3 Persistent group configuration](#Persistent_group_configuration)
 *   [4 Useful examples](#Useful_examples)
     *   [4.1 Matlab](#Matlab)
 *   [5 Documentation](#Documentation)
@@ -34,6 +35,31 @@ After installation of the [cgmanager](https://www.archlinux.org/packages/?name=c
 You can [enable](/index.php/Enable "Enable") the `cgconfig` service with systemd. This gives you the capability to track more easily any errors in `cgconfig.conf`.
 
 ## Simple usage
+
+### Manual usage
+
+Starting with systemd 232, the *cgm* method described in the next section, this section will instead describe a manual method to limit memory usage.
+
+Create a new cgroup named *groupname*:
+
+```
+# mkdir /sys/fs/cgroup/memory/*groupname*
+
+```
+
+Example: set the maximum memory limit to 100MB:
+
+```
+# echo 10000000 > /sys/fs/cgroup/memory/*groupname*/memory.limit_in_bytes
+
+```
+
+Move a process to the cgroup (note: only one PID can be written at a time, repeat this for each process that must be moved):
+
+```
+# echo *pid* > /sys/fs/cgroup/memory/*groupname*/cgroup.procs
+
+```
 
 ### Ad-hoc groups
 

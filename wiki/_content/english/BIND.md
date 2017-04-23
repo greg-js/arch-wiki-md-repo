@@ -132,7 +132,12 @@ allow-recursion { 192.168.0.0/24; 127.0.0.1; };
 
 ## Configuring BIND to serve DNSSEC signed zones
 
-See [DNSSEC#BIND (serving signed DNS zones)](/index.php/DNSSEC#BIND_.28serving_signed_DNS_zones.29 "DNSSEC")
+*   [http://www.dnssec.net/practical-documents](http://www.dnssec.net/practical-documents)
+    *   [http://www.cymru.com/Documents/secure-bind-template.html](http://www.cymru.com/Documents/secure-bind-template.html) **(configuration template!)**
+    *   [http://www.bind9.net/manuals](http://www.bind9.net/manuals)
+    *   [http://www.bind9.net/BIND-FAQ](http://www.bind9.net/BIND-FAQ)
+*   [http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/](http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/)
+*   Or use an external mechanisms such as OpenDNSSEC (fully-automatic key rollover)
 
 ## Automatically listen on new interfaces
 

@@ -98,7 +98,7 @@ The [XDG standard](https://specifications.freedesktop.org/mime-apps-spec/mime-ap
 
 Additionally, it is possible to define [desktop environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [Xfce](/index.php/Xfce "Xfce"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
 
-**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list` 
+**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it `$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list` . Note that the symlink must be in this direction because [#xdg-utils](#xdg-utils) deletes and recreates `~/.local/share/applications/mimeapps.list` when it writes to it, which will break any symbolic/hard links to `~/.config/mimeapps.list`.
 
 **Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 
@@ -202,7 +202,7 @@ $ mimeopen -n photo.jpeg
 
 ```
 
-Most importantly, [#xdg-utils](#xdg-utils) apps will actually call `mimetype` instead of `file` for MIME type detection, if possible. This is important because `file` does not follow the [#XDG standard](#XDG_standard).
+Most importantly, [#xdg-utils](#xdg-utils) apps will actually call `mimetype` instead of `file` for MIME type detection, if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the [#XDG standard](#XDG_standard).
 
 **Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 does not *entirely* follow the [#XDG standard](#XDG_standard). For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
 

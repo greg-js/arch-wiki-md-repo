@@ -438,7 +438,7 @@ account-hook $folder "set imap_user=user@gmail.com imap_pass=****"
 
 Finally `.mutt/personal` should be similar to `.mutt/work`.
 
-Now all your accounts are set, start Mutt. To switch from one account to another, just change the folder (`c` key). Alternatively you can use the [sidebar](#Mutt-Sidebar).
+Now all your accounts are set, start Mutt. To switch from one account to another, just change the folder (`c` key). Alternatively you can use the [sidebar](#Sidebar).
 
 To change folder for different mailboxes you have to type the complete address -- for IMAP/POP3 folders, this may be quite inconvenient -- let us bind some key to it.
 

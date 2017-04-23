@@ -75,8 +75,8 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
 | Application | Legacy Path | Supported Since | Discussion | Notes |
 | [antimicro](https://github.com/Antimicro/antimicro/) | `~/.antimicro` | [edba864](https://github.com/Antimicro/antimicro/commit/edba864) | [[1]](https://github.com/Antimicro/antimicro/issues/5) |
-| [aria2](https://github.com/tatsuhiro-t/aria2/) | `~/.aria2` | [8bc1d37](https://github.com/tatsuhiro-t/aria2/commit/8bc1d37) | [[2]](https://github.com/tatsuhiro-t/aria2/issues/27) |
-| [blender](http://www.blender.org/) | `~/.blender` | [4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473) | [[3]](https://developer.blender.org/T28943) |
+| [aria2](/index.php/Aria2 "Aria2") | `~/.aria2` | [8bc1d37](https://github.com/tatsuhiro-t/aria2/commit/8bc1d37) | [[2]](https://github.com/tatsuhiro-t/aria2/issues/27) |
+| [blender](/index.php/Blender "Blender") | `~/.blender` | [4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473) | [[3]](https://developer.blender.org/T28943) |
 | [burp](https://github.com/falconindy/burp) | [f2388e9](https://github.com/falconindy/burp/commit/f2388e9) |
 | [chromium](/index.php/Chromium "Chromium") | `~/.chromium` | [23057](https://src.chromium.org/viewvc/chrome?revision=23057&view=revision) | [[4]](https://groups.google.com/forum/#!topic/chromium-dev/QekVQxF3nho) [[5]](https://code.google.com/p/chromium/issues/detail?id=16976) |
 | [citra](http://citra-emu.org/) | `~/.citra-emu` | [f7c3193fec](https://github.com/citra-emu/citra/commit/f7c3193fec) | [[6]](https://github.com/citra-emu/citra/pull/575) |
@@ -126,7 +126,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [mutt](/index.php/Mutt "Mutt") | `~/.mutt` | [42fee7585f](https://dev.mutt.org/trac/changeset/42fee7585f) | [[23]](http://dev.mutt.org/trac/ticket/3207) |
 | [mypaint](http://mypaint.intilinux.com/) | `~/.mypaint` | [cf723b74cd](https://github.com/mypaint/mypaint/commit/cf723b74cd) |
 | [ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp") | `~/.ncmpcpp` | [38d9f811](https://github.com/arybczak/ncmpcpp/commit/38d9f811de888e512b0115f551a9679eab4607f9) [27cd86e0](https://github.com/arybczak/ncmpcpp/commit/27cd86e0638bba3a7a78e44ac40dc98a58d1d90d) | [[24]](https://github.com/arybczak/ncmpcpp/issues/79) [[25]](https://github.com/arybczak/ncmpcpp/issues/110) | `ncmpcpp_directory` should be set to avoid an `error.log` file in `~/.ncmpcpp`. |
-| [neovim](http://neovim.io/) | `~/.nvim`
+| [neovim](/index.php/Neovim "Neovim") | `~/.nvim`
 
 `~/.nvimlog`
 
@@ -167,6 +167,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
  | [[39]](https://github.com/qtile/qtile/pull/835) | Some optional bar widgets can create files and directories in non-compliant paths, but most often these are still configurable. |
 | [retroarch](http://www.libretro.com/) |
 | [rr](http://rr-project.org/) | `~/.rr` | [02e7d41e](https://github.com/mozilla/rr/commit/02e7d41e) | [[40]](https://github.com/mozilla/rr/issues/1455) |
+| [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/) | Cache is placed in `$XDG_CONFIG_HOME/sublime-text-3/Cache` instead of expected `$XDG_CACHE_HOME/sublime-text-3`. |
 | [surfraw](/index.php/Surfraw "Surfraw") | `~/.surfraw.conf`
 
 `~/.surfraw.bookmarks`
@@ -176,7 +177,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 [f57fc718](http://anonscm.debian.org/cgit/surfraw/surfraw.git/commit/?id=f57fc718)
 
  |
-| [sway](https://github.com/SirCmpwn/sway) | `~/.sway/config` | [614393c09](https://github.com/SirCmpwn/sway/commit/614393c09) | [[41]](https://github.com/SirCmpwn/sway/issues/5) |
+| [sway](/index.php/Sway "Sway") | `~/.sway/config` | [614393c09](https://github.com/SirCmpwn/sway/commit/614393c09) | [[41]](https://github.com/SirCmpwn/sway/issues/5) |
 | [systemd](/index.php/Systemd "Systemd") |
 | [termite](/index.php/Termite "Termite") |
 | [transmission](/index.php/Transmission "Transmission") | `~/.transmission` | [5517](https://trac.transmissionbt.com/changeset/5517) | [[42]](https://trac.transmissionbt.com/ticket/684) |
@@ -203,7 +204,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `~/Documents/Anki`
 
  | [[49]](https://github.com/dae/anki/pull/49) [[50]](https://github.com/dae/anki/pull/58) | `$ anki -b "$XDG_DATA_HOME"/Anki` |
-| [aspell](http://aspell.net/) | `~/.aspell.conf` |
+| [aspell](/index.php/Aspell "Aspell") | `~/.aspell.conf` |
 | [Atom](/index.php/Atom "Atom") | `~/.atom` | `$ export ATOM_HOME="$XDG_DATA_HOME"/atom` |
 | [cargo](http://crates.io/) | `~/.cargo` | [[51]](https://github.com/rust-lang/cargo/pull/148) [[52]](https://github.com/rust-lang/cargo/issues/1734) | `$ export CARGO_HOME="$XDG_DATA_HOME"/cargo` |
 | [ccache](/index.php/Ccache "Ccache") | `~/.ccache` | `$ export CCACHE_DIR="$XDG_CACHE_HOME"/ccache` |
@@ -214,13 +215,13 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  |
 | [conky](/index.php/Conky "Conky") | `~/.conkyrc` | [00481ee](https://github.com/brndnmtthws/conky/commit/00481ee9a97025e8e2acd7303d080af1948f7980) | [[53]](https://github.com/brndnmtthws/conky/issues/144) | `$ conky --config="$XDG_CONFIG_HOME"/conky/conkyrc` |
-| [coreutils](https://www.gnu.org/software/coreutils/) | `~/.dircolors` | `$ source "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"` |
+| [coreutils](/index.php/Coreutils "Coreutils") | `~/.dircolors` | `$ source "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"` |
 | [crawl](http://www.dungeoncrawl.org/) | `~/.crawl` | Trailing '/' is required:
 
 `$ export CRAWL_DIR="$XDG_DATA_HOME"/crawl/`
 
  |
-| [dict](http://sourceforge.net/projects/dict/) | `~/.dictrc` | `$ dict -c "$XDG_CONFIG_HOME"/dict/dictrc` |
+| [dict](/index.php/Dict "Dict") | `~/.dictrc` | `$ dict -c "$XDG_CONFIG_HOME"/dict/dictrc` |
 | [ELinks](/index.php/ELinks "ELinks") | `~/.elinks` | `$ export ELINKS_CONFDIR="$XDG_CONFIG_HOME"/elinks` |
 | [emscripten](http://kripken.github.io/emscripten-site/) | `~/.emscripten`
 
@@ -268,7 +269,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [gtk](/index.php/Gtk "Gtk") | `~/.gtkrc` | `$ export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc` |
 | [gtk2](/index.php/Gtk "Gtk") | `~/.gtkrc-2.0` | `$ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc` |
 | [httpie](http://httpie.org) | `~/.httpie` | [[59]](https://github.com/jakubroztocil/httpie/issues/145) | `$ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME"/httpie` |
-| [ipython](http://ipython.org)/[jupyter](http://jupyter.org) | `~/.ipython` | `$ export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter`
+| [ipython](http://ipython.org)/[jupyter](/index.php/Jupyter "Jupyter") | `~/.ipython` | `$ export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter`
 
 `$ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter`
 
@@ -278,8 +279,8 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 `--home="$XDG_DATA_HOME"/irssi`
 
  |
-| [isync](http://isync.sourceforge.net) | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
-| [less](http://www.greenwoodsoftware.com/less/) | `~/.lesshst` | `$ mkdir -p "$XDG_CACHE_HOME"/less`
+| [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
+| [less](/index.php/Core_utilities#less "Core utilities") | `~/.lesshst` | `$ mkdir -p "$XDG_CACHE_HOME"/less`
 
 `$ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history`
 
@@ -290,9 +291,9 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
  |
 | [libdvdcss](http://www.videolan.org/developers/libdvdcss.html) | `~/.dvdcss` | [[61]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html) | `$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss` |
 | [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[62]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_RUNTIME_DIR"/ICEauthority` |
-| [libx11](http://www.x.org/wiki/) | `~/.XCompose` | `$ export XCOMPOSEFILE="$XDG_CONFIG_HOME"/X11/xcompose` |
+| [libx11](/index.php/Xorg "Xorg") | `~/.XCompose` | `$ export XCOMPOSEFILE="$XDG_CONFIG_HOME"/X11/xcompose` |
 | [ltrace](http://ltrace.org/) | `~/.ltrace.conf` | `$ ltrace -F "$XDG_CONFIG_HOME"/ltrace/ltrace.conf` |
-| [Mathematica](http://www.wolfram.com/mathematica/) | `~/.Mathematica` | `$ export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME"/mathematica` |
+| [Mathematica](/index.php/Mathematica "Mathematica") | `~/.Mathematica` | `$ export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME"/mathematica` |
 | [mednafen](http://mednafen.sourceforge.net/) | `~/.mednafen` | `$ export MEDNAFEN_HOME="$XDG_CONFIG_HOME"/mednafen` |
 | [moc](/index.php/Moc "Moc") | `~/.moc` | `$ mocp -M "$XDG_CONFIG_HOME"/moc`
 
@@ -333,13 +334,13 @@ prefix=$XDG_DATA_HOME/npm
 Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/PlatformUtils-posix.cc#L20) `~/.local/share`.
 
  |
-| [OpenSSL](https://www.openssl.org/docs/faq.html) | `~/.rnd` | Seeding file .rnd's location can be set with RANDFILE environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
+| [OpenSSL](/index.php/OpenSSL "OpenSSL") | `~/.rnd` | Seeding file .rnd's location can be set with RANDFILE environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
 | [pass](https://www.archlinux.org/packages/?name=pass) | `~/.password-store` | `$ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass` |
 | [pidgin](https://www.archlinux.org/packages/?name=pidgin) | `~/.purple` | `$ pidgin --config="$XDG_DATA_HOME"/purple` |
 | [PulseAudio](/index.php/PulseAudio "PulseAudio") | `~/.esd_auth` | Very likely generated by the `module-esound-protocol-unix.so` module. It can be configured to use a different location but it makes much more sense to just comment out this module in `/etc/pulse/default.pa` or `"$XDG_CONFIG_HOME"/pulse/default.pa`. |
 | [python-setuptools](https://pypi.python.org/pypi/setuptools) | `~/.python-eggs` | `$ export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs` |
 | [rclone](https://www.archlinux.org/packages/?name=rclone) | `~/.rclone.conf` | `$ rclone --config="$XDG_CONFIG_HOME"/rclone/rclone.conf` |
-| [readline](http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html) | `~/.inputrc` | `$ export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc` |
+| [readline](/index.php/Readline "Readline") | `~/.inputrc` | `$ export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc` |
 | [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) | `~/.*_history` | [[67]](https://github.com/hanslub42/rlwrap/issues/25) | `$ export RLWRAP_HOME="$XDG_DATA_HOME"/rlwrap` |
 | [sbt](http://www.scala-sbt.org/) | `~/.sbt`
 

@@ -72,7 +72,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ### flip_done timed out freezes
 
-See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1689914#p1689914) for some discussion. You can either move back to a <4.8 kernel by using linux-lts, or add the following parameter to your kernel command line, which seems to help (it disables S-Video, but there's no such connector on a T460s):
+See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1689914#p1689914) for some discussion. You can either move back to a <4.8 kernel by using linux-lts, or add the following parameter to your kernel command line, which seems to help (it disables S-Video, but there is no such connector on a T460s):
 
 ```
 video=SVIDEO-1:d
@@ -95,7 +95,7 @@ Fn+Esc to enable FnLk which will make your function keys work.
 
 With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
-This can be worked around by using the `i915.enable_rc6=0` [kernel_parameters](/index.php/Kernel_parameter "Kernel parameter") [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
+This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
 
 ### Smartcard Reader
 

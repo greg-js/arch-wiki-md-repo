@@ -710,7 +710,7 @@ connect [headset MAC here]
 
 #### Gnome with GDM
 
-**Note:** Below was tested with Gnome 3.18.4 and PulseAudio 8.0
+**Note:** Below was tested with Gnome 3.22.1 and PulseAudio 10.0
 
 If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio :
 

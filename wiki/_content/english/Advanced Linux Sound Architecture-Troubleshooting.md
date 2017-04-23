@@ -506,7 +506,7 @@ options snd_hda_intel enable=1,0
 
 ### Wrong sound card model type
 
-Although ALSA detects your soundcard through the BIOS, at times ALSA may not be able to recognize your [model type](http://www.kernel.org/doc/Documentation/sound/alsa/HD-Audio-Models.txt). The soundcard chip can be found in `alsamixer` (e.g. ALC662) and the model can be set in `/etc/modprobe.d/modprobe.conf` or `/etc/modprobe.d/sound.conf`. For example:
+Although ALSA detects your soundcard through the BIOS, at times ALSA may not be able to recognize your [model type](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/tree/Documentation/sound/hd-audio/models.rst). The soundcard chip can be found in `alsamixer` (e.g. ALC662) and the model can be set in `/etc/modprobe.d/modprobe.conf` or `/etc/modprobe.d/sound.conf`. For example:
 
 ```
 options snd-hda-intel model=MODEL
@@ -566,7 +566,7 @@ Where *model* is any one of the following:
 
 **Note:** It may be necessary to put this "options" line below (after) any "alias" lines about your card.
 
-You can see all the available models in the kernel documentation. For example [here](http://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/Documentation/sound/alsa/HD-Audio-Models.txt), but check that it is the correct version of that document for your kernel version.
+You can see all the available models in the kernel documentation. For example [here](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/tree/Documentation/sound/hd-audio/models.rst), but check that it is the correct version of that document for your kernel version.
 
 A list of available models is also available [here](http://www.mjmwired.net/kernel/Documentation/sound/alsa/HD-Audio-Models.txt). To know your chip name type the following command (with * being corrected to match your files). Note that some chips could have been renamed and do not directly match the available ones in the file.
 

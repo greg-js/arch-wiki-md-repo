@@ -57,7 +57,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [5.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
     *   [5.3 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [5.4 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [5.4 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
     *   [5.5 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration related](#Configuration_related)
@@ -219,7 +219,7 @@ Icon themes can be installed and changed on *System Settings > Icons*.
 
 Try installing the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) packages.
 
-After the installation, be sure to log out and back in. You should not have to modify anything in *System Settings > Fonts*.
+After the installation, be sure to log out and back in. You should not have to modify anything in *System Settings > Fonts*. If you are using [qt5ct](https://www.archlinux.org/packages/?name=qt5ct), the settings in Qt5 Configuration Tool may override the font settings in System Settings.
 
 If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go *System Settings > Fonts* System Settings will likely alter your font configuration file (`fonts.conf`).
 
@@ -555,13 +555,14 @@ Set environment variable `KWIN_COMPOSE` to 'O2ES' to force the OpenGL ES backend
 
 To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to *Sytem Settings > Display and Monitor*.
 
-### Open application launcher with Super key (Windows key)
+### Disable opening application launcher with Super key (Windows key)
 
-**Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches the application launcher. This works by looking for a launcher which has a global keyboard shortcut set.
+To disable this feature you currently can run the following command:
 
-To disable this feature you currently can use `kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""`.
+```
+$ kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""
 
-Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you do not want to start it manually.
+```
 
 ### Enabling touchpad tap to click on plasma wayland session
 

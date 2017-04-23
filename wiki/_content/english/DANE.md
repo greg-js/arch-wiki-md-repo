@@ -11,6 +11,8 @@ TLSA resource record is an own type of DNS record. It consists of port number an
 | 2 | DANE trust anchor | Hash contains a private CA (unknown to the x509 tree) by which your cert has to be signed |
 | 3 | DANE end entity | Hash contains your cert which is not matched against any other validation |
 
+**Warning:** Certificate Usage 0 and 1 are not allowed for use with email servers (port 25). See [RFC7672 3.1.3](https://tools.ietf.org/html/rfc7672#section-3.1.3) for details.
+
 <caption>Selector Field</caption>
 | Value | Name | Description |
 | 0 | cert | DATA is based on the full cert |

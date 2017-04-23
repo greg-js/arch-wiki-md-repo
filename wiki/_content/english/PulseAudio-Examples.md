@@ -35,6 +35,7 @@
 *   [14 Remap stereo to mono](#Remap_stereo_to_mono)
 *   [15 Swap left/right channels](#Swap_left.2Fright_channels)
 *   [16 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
+*   [17 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
 
 ## Set default input sources
 
@@ -888,3 +889,60 @@ autospawn = yes
 .endif
 
 ```
+
+## Having both speakers and headphones plugged in and switching in software on-the-fly
+
+By design, Pulseaudio automatically turns off Line Out when headphones are plugged in and uses Headphone slider instead. You can observe this behavior in `alsamixer`. What we want is to have Headphone and Line Out sliders working separately and at the same time. This is extremely useful if you want to remap Realtek's jacks to have, say, Rear Green for headphones and Blue for speakers (with the help of `hdajackretask` from [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools)).
+
+To achieve this, you should directly edit Pulseaudio mixer's configuration.
+
+1\. We tell pulseaudio that headphones are always plugged in. Edit:
+
+`/usr/share/pulseaudio/alsa-mixer/paths/analog-output-lineout.conf`
+
+Find:
+
+```
+[Jack Headphone]
+state.plugged = no
+state.unplugged = unknown
+
+```
+
+Change `no` to `yes`
+
+2\. By default, Line Out's volume controlled only by Master, and not by Line Out slider itself. We want to merge Line Out with Master.
+
+Add this snippet to the end of the file:
+
+```
+[Element Line Out]
+switch = mute
+volume = merge
+
+```
+
+3\. We need to completely cut off Line Out when we use headphones. Edit:
+
+`/usr/share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf`
+
+Add this snippet to the end of the file:
+
+```
+[Element Line Out]
+switch = off
+volume = off
+
+```
+
+4\. Like Pulseaudio, Alsa itself cuts off speakers when headphones are plugged in. Open `alsamixer` (in case of Realtek HDA `alsamixer -c0`) and change `Auto-Mute mode` to `disabled`.
+
+5\. Restart Pulseaudio
+
+```
+$ pulseaudio -k
+$ pulseaudio --start
+
+```
+
+Now you have two separate ports on the same sink in pulseaudio. They mute each other, so you can switch to headphones and this will mute Line Out, and vice versa. To switch between ports you can use Gnome or Plasma sound mixer, or install appropriate desktop extension.

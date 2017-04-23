@@ -26,12 +26,7 @@ This gives you a 'shell-like' command-line from which you can query the database
 
 ## Adding dictionaries
 
-There are various places on the web where you can download StarDict dictionaries. Here are some links to get you started:
-
-*   [http://abloz.com/huzheng/stardict-dic/dict.org](http://abloz.com/huzheng/stardict-dic/dict.org)
-*   [http://abloz.com/huzheng/stardict-dic/freedict.de](http://abloz.com/huzheng/stardict-dic/freedict.de)
-*   [http://abloz.com/huzheng/stardict-dic/mova.org](http://abloz.com/huzheng/stardict-dic/mova.org)
-*   [http://abloz.com/huzheng/stardict-dic](http://abloz.com/huzheng/stardict-dic)
+There are various places on the web where you can download StarDict dictionaries e.g. [http://download.huzheng.org/](http://download.huzheng.org/)
 
 Then you can extract the files into `/usr/share/stardict/dic`.
 

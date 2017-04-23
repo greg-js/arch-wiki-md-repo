@@ -22,10 +22,10 @@ Install the required Microsoft fonts: [ttf-tahoma](https://aur.archlinux.org/pac
 
 **Note:** If you have access to Windows discs, you may want to install [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/) or [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/) instead.
 
-Download and run the Steam installer from [steampowered.com](http://store.steampowered.com/about/). It is a `.msi` file so you have to start it with `msiexec`:
+Download and run the Steam installer from [steampowered.com](http://store.steampowered.com/about/):
 
 ```
-$ msiexec /i SteamInstall.msi
+$ wine SteamSetup.exe
 
 ```
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=447056)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=474777)可以查看翻译后英文页面的改动。
 
 KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -15,10 +15,10 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
     *   [3.1 个性化](#.E4.B8.AA.E6.80.A7.E5.8C.96)
         *   [3.1.1 Plasma 桌面](#Plasma_.E6.A1.8C.E9.9D.A2_2)
             *   [3.1.1.1 主题](#.E4.B8.BB.E9.A2.98)
-            *   [3.1.1.2 Qt 和 GTK+ 应用外观](#Qt_.E5.92.8C_GTK.2B_.E5.BA.94.E7.94.A8.E5.A4.96.E8.A7.82)
-            *   [3.1.1.3 小工具](#.E5.B0.8F.E5.B7.A5.E5.85.B7)
-            *   [3.1.1.4 系统托盘中的声音应用](#.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98.E4.B8.AD.E7.9A.84.E5.A3.B0.E9.9F.B3.E5.BA.94.E7.94.A8)
-            *   [3.1.1.5 Disable panel shadow](#Disable_panel_shadow)
+                *   [3.1.1.1.1 Qt 和 GTK+ 应用外观](#Qt_.E5.92.8C_GTK.2B_.E5.BA.94.E7.94.A8.E5.A4.96.E8.A7.82)
+            *   [3.1.1.2 小部件](#.E5.B0.8F.E9.83.A8.E4.BB.B6)
+            *   [3.1.1.3 系统托盘中的声音应用](#.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98.E4.B8.AD.E7.9A.84.E5.A3.B0.E9.9F.B3.E5.BA.94.E7.94.A8)
+            *   [3.1.1.4 禁用面板阴影](#.E7.A6.81.E7.94.A8.E9.9D.A2.E6.9D.BF.E9.98.B4.E5.BD.B1)
         *   [3.1.2 窗口装饰](#.E7.AA.97.E5.8F.A3.E8.A3.85.E9.A5.B0)
         *   [3.1.3 图标主题](#.E5.9B.BE.E6.A0.87.E4.B8.BB.E9.A2.98)
         *   [3.1.4 字体](#.E5.AD.97.E4.BD.93)
@@ -38,61 +38,50 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
         *   [4.1.2 KCM](#KCM)
     *   [4.2 桌面搜索](#.E6.A1.8C.E9.9D.A2.E6.90.9C.E7.B4.A2)
         *   [4.2.1 Baloo](#Baloo)
+            *   [4.2.1.1 使用及配置 Baloo](#.E4.BD.BF.E7.94.A8.E5.8F.8A.E9.85.8D.E7.BD.AE_Baloo)
+            *   [4.2.1.2 如何把可移动设备加入索引？](#.E5.A6.82.E4.BD.95.E6.8A.8A.E5.8F.AF.E7.A7.BB.E5.8A.A8.E8.AE.BE.E5.A4.87.E5.8A.A0.E5.85.A5.E7.B4.A2.E5.BC.95.EF.BC.9F)
     *   [4.3 Web 浏览器](#Web_.E6.B5.8F.E8.A7.88.E5.99.A8)
-        *   [4.3.1 Konqueuor 和 Rekonq](#Konqueuor_.E5.92.8C_Rekonq)
-        *   [4.3.2 Firefox](#Firefox)
-        *   [4.3.3 Qupzilla](#Qupzilla)
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
-            *   [4.4.1.1 运行不含 Akonadi 的 KDE](#.E8.BF.90.E8.A1.8C.E4.B8.8D.E5.90.AB_Akonadi_.E7.9A.84_KDE)
+            *   [4.4.1.1 安装](#.E5.AE.89.E8.A3.85_2)
             *   [4.4.1.2 禁用 Akonadi](#.E7.A6.81.E7.94.A8_Akonadi)
             *   [4.4.1.3 配置数据库](#.E9.85.8D.E7.BD.AE.E6.95.B0.E6.8D.AE.E5.BA.93)
+                *   [4.4.1.3.1 MariaDB/MySQL (使用 ZFS)](#MariaDB.2FMySQL_.28.E4.BD.BF.E7.94.A8_ZFS.29)
+                *   [4.4.1.3.2 PostgreSQL](#PostgreSQL)
+                *   [4.4.1.3.3 SQLite](#SQLite)
     *   [4.5 KDE Telepathy](#KDE_Telepathy)
-        *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
-    *   [4.6 Integrate Android](#Integrate_Android)
+        *   [4.5.1 使用 Telegram 与 KDE Telepathy](#.E4.BD.BF.E7.94.A8_Telegram_.E4.B8.8E_KDE_Telepathy)
+    *   [4.6 安卓整合](#.E5.AE.89.E5.8D.93.E6.95.B4.E5.90.88)
 *   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
     *   [5.1 使用其他窗口管理器](#.E4.BD.BF.E7.94.A8.E5.85.B6.E4.BB.96.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
         *   [5.1.1 KDE/Openbox 会话](#KDE.2FOpenbox_.E4.BC.9A.E8.AF.9D)
-        *   [5.1.2 Compiz 设置](#Compiz_.E8.AE.BE.E7.BD.AE)
-        *   [5.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
-    *   [5.2 Integrate Android](#Integrate_Android_2)
-    *   [5.3 获取软件包更新提醒](#.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.9B.B4.E6.96.B0.E6.8F.90.E9.86.92)
-    *   [5.4 配置 KWin 成使用 OpenGL ES](#.E9.85.8D.E7.BD.AE_KWin_.E6.88.90.E4.BD.BF.E7.94.A8_OpenGL_ES)
-    *   [5.5 Konqueror/Dolphin 文件管理器中开启视频缩略图](#Konqueror.2FDolphin_.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.AD.E5.BC.80.E5.90.AF.E8.A7.86.E9.A2.91.E7.BC.A9.E7.95.A5.E5.9B.BE)
-    *   [5.6 加速应用启动](#.E5.8A.A0.E9.80.9F.E5.BA.94.E7.94.A8.E5.90.AF.E5.8A.A8)
-    *   [5.7 显示器分辨率 / 多显示器配置](#.E6.98.BE.E7.A4.BA.E5.99.A8.E5.88.86.E8.BE.A8.E7.8E.87_.2F_.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E9.85.8D.E7.BD.AE)
-    *   [5.8 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
-*   [6 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [6.1 Plasma 在 Intel 显卡上崩溃](#Plasma_.E5.9C.A8_Intel_.E6.98.BE.E5.8D.A1.E4.B8.8A.E5.B4.A9.E6.BA.83)
-    *   [6.2 有关配置的问题](#.E6.9C.89.E5.85.B3.E9.85.8D.E7.BD.AE.E7.9A.84.E9.97.AE.E9.A2.98)
-        *   [6.2.1 Plasma 桌面行为异常](#Plasma_.E6.A1.8C.E9.9D.A2.E8.A1.8C.E4.B8.BA.E5.BC.82.E5.B8.B8)
-        *   [6.2.2 清理缓存以解决升级故障](#.E6.B8.85.E7.90.86.E7.BC.93.E5.AD.98.E4.BB.A5.E8.A7.A3.E5.86.B3.E5.8D.87.E7.BA.A7.E6.95.85.E9.9A.9C)
-        *   [6.2.3 清理 akonadi 配置来修复 kmail](#.E6.B8.85.E7.90.86_akonadi_.E9.85.8D.E7.BD.AE.E6.9D.A5.E4.BF.AE.E5.A4.8D_kmail)
-    *   [6.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
-    *   [6.4 为了支持和调试获取 KWin 的当前状况](#.E4.B8.BA.E4.BA.86.E6.94.AF.E6.8C.81.E5.92.8C.E8.B0.83.E8.AF.95.E8.8E.B7.E5.8F.96_KWin_.E7.9A.84.E5.BD.93.E5.89.8D.E7.8A.B6.E5.86.B5)
-    *   [6.5 KDE 和 Qt 程序在别的窗口管理器下很难看](#KDE_.E5.92.8C_Qt_.E7.A8.8B.E5.BA.8F.E5.9C.A8.E5.88.AB.E7.9A.84.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E5.BE.88.E9.9A.BE.E7.9C.8B)
-    *   [6.6 KF5/Qt5 应用在 i3/fvwm/awesome 中不显示图标](#KF5.2FQt5_.E5.BA.94.E7.94.A8.E5.9C.A8_i3.2Ffvwm.2Fawesome_.E4.B8.AD.E4.B8.8D.E6.98.BE.E7.A4.BA.E5.9B.BE.E6.A0.87)
-    *   [6.7 有关图形的故障](#.E6.9C.89.E5.85.B3.E5.9B.BE.E5.BD.A2.E7.9A.84.E6.95.85.E9.9A.9C)
-        *   [6.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [6.7.2 Applications don't refresh properly](#Applications_don.27t_refresh_properly)
-        *   [6.7.3 2D 桌面性能差（或）出现残影](#2D_.E6.A1.8C.E9.9D.A2.E6.80.A7.E8.83.BD.E5.B7.AE.EF.BC.88.E6.88.96.EF.BC.89.E5.87.BA.E7.8E.B0.E6.AE.8B.E5.BD.B1)
-            *   [6.7.3.1 GPU 驱动程序问题](#GPU_.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F.E9.97.AE.E9.A2.98)
-            *   [6.7.3.2 使用 Raster 引擎跳过问题](#.E4.BD.BF.E7.94.A8_Raster_.E5.BC.95.E6.93.8E.E8.B7.B3.E8.BF.87.E9.97.AE.E9.A2.98)
-        *   [6.7.4 3D 桌面性能差](#3D_.E6.A1.8C.E9.9D.A2.E6.80.A7.E8.83.BD.E5.B7.AE)
-        *   [6.7.5 有 Nvidia GPU 的系统中桌面混成被禁用](#.E6.9C.89_Nvidia_GPU_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.B8.AD.E6.A1.8C.E9.9D.A2.E6.B7.B7.E6.88.90.E8.A2.AB.E7.A6.81.E7.94.A8)
-        *   [6.7.6 启用混成后全屏时闪烁](#.E5.90.AF.E7.94.A8.E6.B7.B7.E6.88.90.E5.90.8E.E5.85.A8.E5.B1.8F.E6.97.B6.E9.97.AA.E7.83.81)
-        *   [6.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
-    *   [6.8 KDE 下的声音问题](#KDE_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
-        *   [6.8.1 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
-            *   [6.8.1.1 尝试在 KDE 中播放任何声音时出现 "返回 default" 消息](#.E5.B0.9D.E8.AF.95.E5.9C.A8_KDE_.E4.B8.AD.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E_default.22_.E6.B6.88.E6.81.AF)
-            *   [6.8.1.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
-    *   [6.9 Konsole 不保存命令历史](#Konsole_.E4.B8.8D.E4.BF.9D.E5.AD.98.E5.91.BD.E4.BB.A4.E5.8E.86.E5.8F.B2)
-    *   [6.10 Inotify 文件夹监控上限](#Inotify_.E6.96.87.E4.BB.B6.E5.A4.B9.E7.9B.91.E6.8E.A7.E4.B8.8A.E9.99.90)
-    *   [6.11 自动挂载NFS卷时卡死](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BDNFS.E5.8D.B7.E6.97.B6.E5.8D.A1.E6.AD.BB)
-    *   [6.12 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
-    *   [6.13 多显示器问题](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E9.97.AE.E9.A2.98)
-*   [7 缺陷](#.E7.BC.BA.E9.99.B7)
-*   [8 参见](#.E5.8F.82.E8.A7.81)
+        *   [5.1.2 Compiz 自定义](#Compiz_.E8.87.AA.E5.AE.9A.E4.B9.89)
+        *   [5.1.3 重新启用特殊效果](#.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8.E7.89.B9.E6.AE.8A.E6.95.88.E6.9E.9C)
+    *   [5.2 配置 KWin 使其使用 OpenGL ES](#.E9.85.8D.E7.BD.AE_KWin_.E4.BD.BF.E5.85.B6.E4.BD.BF.E7.94.A8_OpenGL_ES)
+    *   [5.3 显示器分辨率 / 多显示器配置](#.E6.98.BE.E7.A4.BA.E5.99.A8.E5.88.86.E8.BE.A8.E7.8E.87_.2F_.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E9.85.8D.E7.BD.AE)
+*   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [6.1 有关配置的问题](#.E6.9C.89.E5.85.B3.E9.85.8D.E7.BD.AE.E7.9A.84.E9.97.AE.E9.A2.98)
+        *   [6.1.1 Plasma 桌面行为异常](#Plasma_.E6.A1.8C.E9.9D.A2.E8.A1.8C.E4.B8.BA.E5.BC.82.E5.B8.B8)
+        *   [6.1.2 清理缓存以解决升级故障](#.E6.B8.85.E7.90.86.E7.BC.93.E5.AD.98.E4.BB.A5.E8.A7.A3.E5.86.B3.E5.8D.87.E7.BA.A7.E6.95.85.E9.9A.9C)
+    *   [6.2 清理 akonadi 配置来修复 kmail](#.E6.B8.85.E7.90.86_akonadi_.E9.85.8D.E7.BD.AE.E6.9D.A5.E4.BF.AE.E5.A4.8D_kmail)
+    *   [6.3 修复空的IMAP收件箱](#.E4.BF.AE.E5.A4.8D.E7.A9.BA.E7.9A.84IMAP.E6.94.B6.E4.BB.B6.E7.AE.B1)
+    *   [6.4 获取 KWin 的当前状态以进行支持和调试](#.E8.8E.B7.E5.8F.96_KWin_.E7.9A.84.E5.BD.93.E5.89.8D.E7.8A.B6.E6.80.81.E4.BB.A5.E8.BF.9B.E8.A1.8C.E6.94.AF.E6.8C.81.E5.92.8C.E8.B0.83.E8.AF.95)
+    *   [6.5 KF5/Qt5 应用在 i3/fvwm/awesome 中不显示图标](#KF5.2FQt5_.E5.BA.94.E7.94.A8.E5.9C.A8_i3.2Ffvwm.2Fawesome_.E4.B8.AD.E4.B8.8D.E6.98.BE.E7.A4.BA.E5.9B.BE.E6.A0.87)
+    *   [6.6 图形相关问题](#.E5.9B.BE.E5.BD.A2.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98)
+        *   [6.6.1 Plasma 在闭源 Nvidia 下不断崩溃](#Plasma_.E5.9C.A8.E9.97.AD.E6.BA.90_Nvidia_.E4.B8.8B.E4.B8.8D.E6.96.AD.E5.B4.A9.E6.BA.83)
+        *   [6.6.2 应用程序无法正常刷新](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.97.A0.E6.B3.95.E6.AD.A3.E5.B8.B8.E5.88.B7.E6.96.B0)
+        *   [6.6.3 性能不佳](#.E6.80.A7.E8.83.BD.E4.B8.8D.E4.BD.B3)
+            *   [6.6.3.1 禁用桌面特效](#.E7.A6.81.E7.94.A8.E6.A1.8C.E9.9D.A2.E7.89.B9.E6.95.88)
+            *   [6.6.3.2 禁用混合项（compositing）](#.E7.A6.81.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89)
+        *   [6.6.4 启用混合项（compositing）后全屏时闪烁](#.E5.90.AF.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89.E5.90.8E.E5.85.A8.E5.B1.8F.E6.97.B6.E9.97.AA.E7.83.81)
+    *   [6.7 KDE 下的声音问题](#KDE_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
+        *   [6.7.1 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
+            *   [6.7.1.1 尝试在 KDE 中播放任何声音时出现 "返回默认" 消息](#.E5.B0.9D.E8.AF.95.E5.9C.A8_KDE_.E4.B8.AD.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
+            *   [6.7.1.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
+    *   [6.8 Inotify 文件夹监控上限](#Inotify_.E6.96.87.E4.BB.B6.E5.A4.B9.E7.9B.91.E6.8E.A7.E4.B8.8A.E9.99.90)
+    *   [6.9 自动挂载NFS卷时卡死](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BDNFS.E5.8D.B7.E6.97.B6.E5.8D.A1.E6.AD.BB)
+    *   [6.10 没有挂起/休眠选项](#.E6.B2.A1.E6.9C.89.E6.8C.82.E8.B5.B7.2F.E4.BC.91.E7.9C.A0.E9.80.89.E9.A1.B9)
+*   [7 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -100,19 +89,19 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
 
 在安装Plasma之前，请确保[Xorg](/index.php/Xorg "Xorg")已经被安装到您的系统中。
 
-安装 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 元软件包或者 [plasma](https://www.archlinux.org/groups/x86_64/plasma/) 软件包组。 关于 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 和 [plasma](https://www.archlinux.org/groups/x86_64/plasma/) 两者的不同请参阅[这里](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.83.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.92.8C.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.84 "Creating packages (简体中文)")。
+安装 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 元软件包或者 [plasma](https://www.archlinux.org/groups/x86_64/plasma/) 组。 关于 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 和 [plasma](https://www.archlinux.org/groups/x86_64/plasma/) 两者的不同请参阅[这里](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.83.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.92.8C.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.84 "Creating packages (简体中文)")。
 
 如果想要最小化安装Plasma，可以安装 [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) 包。
 
 ### KDE 应用和语言包
 
-你能够通过安装 [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) 软件包组或者安装 [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) 元软件包来安装全部的 KDE Applications（应用）。请注意这仅仅安装applications（应用），并不会安装 Plasma 桌面。
+你能够通过安装 [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) 组或者安装 [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) 元软件包来安装全部的 KDE Applications（应用）。请注意这仅仅安装applications（应用），并不会安装 Plasma 桌面。
 
 如果你需要语言文件，请安装语言包 `kde-l10n-**你的语言**` (例：[kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn) 。你可以在[这里](https://www.archlinux.org/packages/extra/any/kde-l10n/)查阅所有可用的语言)
 
 ### 不稳定版本
 
-请阅 [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")。
+参阅 [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")。
 
 ## 启动 Plasma
 
@@ -120,7 +109,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 ### 图形界面启动
 
-**Tip:** 为了更好地将 SDDM 与 Plasma 整合，建议您使用微风主题。您可以在“系统设置 - 启动与关机”内设置
+**Tip:** 为了更好地将 SDDM 与 Plasma 整合，建议您使用微风主题。您可以在“系统设置 - 开关机”内设置
 
 在你的 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 菜单中选择 “Plasma” 启动 Plasma 5 。
 
@@ -128,18 +117,16 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 ### 手动启动
 
-如果希望使用“[xinitrc](/index.php/Xinitrc "Xinitrc")/startx”来启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。如果你想在登录的时候开启 Xorg 请参考[Start X at login](/index.php/Start_X_at_login "Start X at login").
+如果希望使用“[xinitrc](/index.php/Xinitrc "Xinitrc")/startx”来启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。如果你想在登录的时候开启 Xorg 请参阅[Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ## 配置
 
-大部分配置被储存在 `~/.config` ，但有些旧程序仍在使用 `~/.kde4` 。KDE 主要在**“系统设置”**里配置。它也可通过 `systemsettings5` 启动。
+大部分配置被储存在 `~/.config` ，但有些旧程序仍在使用 `~/.kde4` 。KDE 主要在**“系统设置”**内配置。它也可通过 `systemsettings5` 启动。
 
 在将配置文件移动到新位置后，一些 KDE 5 的应用程序可以使用 KDE 4 的配置。 例如：
 
 *   Konsole 皮肤从 `~/.kde4/share/apps/konsole` 移到 `~/.local/share/konsole/`
 *   应用程序的外观从 `~/.kde4/share/config/kdeglobals` 移到 `~/.config/kdeglobals`
-
-其他没有包含在下文中的个性化设置如活动、桌面立方体上的不同壁纸等，请参考[Plasma](/index.php/Plasma "Plasma")的英文wiki页面。
 
 ### 个性化
 
@@ -152,7 +139,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 通过桌面设置控制面板来安装主题是最简单的方法：
 
 ```
- 系统设置 > 工作区主题 > 桌面主题 > 获取新主题
+ 系统设置 > 工作空间主题 > 桌面主题 > 获取新主题
 
 ```
 
@@ -162,7 +149,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 注意[SDDM](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)")的登录界面主题并不在此处设置。
 
-##### Qt 和 GTK+ 应用外观
+###### Qt 和 GTK+ 应用外观
 
 **提示：** 为了 Qt 和 GTK 主题的一致性，请参见 [外观统一的 QT 和 GTK 应用](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform look for Qt and GTK applications (简体中文)")。
 
@@ -176,7 +163,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 在某些主题中，GTK+ 应用程序的工具栏显示为白底白字。若要更改 GTK2 应用程序中的颜色，请找到 `.gtkrc-2.0` 并修改工具栏区。若要更改 GTK3 应用程序中的颜色，`gtk.css` 和 `settings.ini` 文件需要被修改。
 
-##### 小工具
+##### 小部件
 
 Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid binaries）的KDE应用程序，用于增强桌面的功能。 Plasmoid二进制文件可以从[AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v)上获得的PKGBUILD安装，或者您可以编写自己的PKGBUILD。 最简单的安装Plasmoid脚本的方式是右击面板或桌面：
 
@@ -191,20 +178,20 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 ##### 系统托盘中的声音应用
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) 或 [kmix](https://www.archlinux.org/packages/?name=kmix) (从程序启动器启动 Kmix)。前者以被自动安装，无需其他设定。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) 或 [kmix](https://www.archlinux.org/packages/?name=kmix) (从程序启动器启动 Kmix)。前者以被自动安装，无需其他设定。
 
 **Note:** 要调整 [音量增减的步长](https://bugs.kde.org/show_bug.cgi?id=313579#c28)，将诸如 `VolumePercentageStep=1` 一行添加到 `~/.kde4/share/config/kmixrc` 的 `[Global]` 一节中。
 
-##### Disable panel shadow
+##### 禁用面板阴影
 
-As the Plasma panel is on top of other windows, its shadow is drawn over them. [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+因为 Plasma 的面板在其他窗口之上，所以它的阴影会渲染在其他窗口之上。[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394)若要在不影响其他阴影的情况下禁用此行为，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) 并运行:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[2]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+然后用增大光标选择面板。[[2]](https://forum.kde.org/viewtopic.php?f=285&t=121592) 如果想要自动化，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) 并创建以下脚本：
 
  `/usr/local/bin/kde-no-shadow` 
 ```
@@ -215,7 +202,7 @@ done
 
 ```
 
-The script can be run on login with *Add Script* in *Autostart*:
+此脚本可以在登录时启动，请将其加在*自动启动*：
 
 ```
 $ kcmshell5 autostart
@@ -240,7 +227,7 @@ $ kcmshell5 autostart
 
 尝试安装 [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) 和 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 软件包。
 
-安装后，确保注销并重新登录。不需要修改*系统设置 > 应用程序外观 > 字体*里的设置。
+安装后，确保注销并重新登录。不需要修改*系统设置 > 应用程序外观 > 字体*里的设置。 如果你使用 [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) 包，Qt5 设置工具将有可能覆盖系用设置内的字体设置。
 
 如果您个人已经设置了[字体](/index.php/Fonts "Fonts")渲染，小心系统设置可能会改变它们的外观。当改变了*系统设置 > 应用程序外观 > 字体*里的设置，系统将可能改写字体配置文件(`fonts.conf`)。
 
@@ -264,9 +251,9 @@ Plasma Netbool shell （上网本交互界面）以从 Plasma 5 中移除，请�
 
 ### Samba/Windows 的支持
 
-如果你想使用 Windows 服务，安装 [Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)") (软件包 [samba](https://www.archlinux.org/packages/?name=samba))。
+如果你想使用 Windows 服务，安装 [Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)") ([samba](https://www.archlinux.org/packages/?name=samba) 软件包)。
 
-The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
+Dophin 的共享服务需要 [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) 软件包以及 usershares。关于如何配置usershares（`smb.conf`未启动它），详见 [建立 Usershare 路径](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)")。在重新启动Samba之后，Dolphin的共享应该无需进一步配置。
 
 ### KDE 桌面活动
 
@@ -280,32 +267,32 @@ KDE 集成了一个名为 "**电源管理**"的节能服务，它可以调整系
 
 ### 程序自启动
 
-Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, navigate to *System Settings > Startup and Shutdown > Autostart* and add the program or shell script of your choice. For applications, a `.desktop` file will be created, for shell scripts, a symlink will be created.
+Plasma 可以在启动和关闭时自动启动应用程序并运行shell脚本。若要自动启动应用程序，请浏览到 *系统设置 > 开关机 > 自启动* 并添加您想要的程序或shell脚本。对于应用程序，`.desktop` 文件将被创建。对于shell脚本，symlink 将被创建。
 
 **Note:**
 
-*   Programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts.
-*   Shell scripts will only be run if they are marked executable.
+*   程序只能在登录时自启动，而shell脚本也可以在关机和 Plasma 启动前启动。
+*   Shell脚本只有在被标记为可执行文件时才会运行。
 
-Place [Desktop entries](/index.php/Desktop_entries "Desktop entries") (i.e. `.desktop` files) here:
+将[桌面配置项](/index.php/Desktop_entries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop entries (简体中文)")（即`.desktop`文件）放在这里：
 
 	`~/.config/autostart`
 
-	for starting applications at login.
+	在登录时启动应用程序。
 
-Place or symlink shell scripts in one of the following directories:
+将shell脚本的symlink放入以下目录之一中：
 
 	`~/.config/plasma-workspace/env`
 
-	for executing scripts at login before launching Plasma.
+	在 Plasma 启动前启动脚本。
 
 	`~/.config/autostart-scripts`
 
-	for executing scripts at login.
+	在登录时启动脚本。
 
 	`~/.config/plasma-workspace/shutdown`
 
-	for executing scripts on shutdown.
+	在关机时启动脚本。
 
 ### Phonon
 
@@ -391,35 +378,41 @@ KDE 使用 Baloo 实现文件索引和查找。
 
 #### Baloo
 
-要在 KDE 桌面中使用 Baloo 搜索，按 `ALT+F2` 并输入你的查询内容。
+##### 使用及配置 Baloo
 
-By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click. More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/).
+为了在 Plasma 桌面上使用 Baloo 进行搜索，启动 krunner （默认快捷键 `ALT+F2`）并键入查询。若要在 Dophin（文件管理器）内搜索，按`CTRL+F`。
 
-Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)). Additionally the `balooctl` process can also be used. In order to disable Baloo run `balooctl disable`.
+在默认情况下，桌面搜索的 KCM 仅显示两个选项：一个将文件夹放入黑名单的面板以及一种一次点击来禁用它的方法。
 
-Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
+或者你可以编辑 `~/.config/baloofilerc` 文件[[5]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl disable`。
 
-How do I index a removable device? By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
+将文件夹添加到黑名单或完全禁用了Baloo之后，`baloo_file_cleaner` 进程将会自动删除所有不需要的索引文件。它们被存储在 `~/.local/share/baloo/` 。
+
+##### 如何把可移动设备加入索引？
+
+默认情况下，所有可移动设备都在黑名单内。你只需要在 KCM 面板中移除你的设备即可。
 
 ### Web 浏览器
 
-#### Konqueuor 和 Rekonq
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — KDE项目的一部分, 支持两种渲染引擎 – KHTML 和基于[Chromium](/index.php/Chromium "Chromium")的 Qt Web引擎。
 
-Konqueror 支持两种渲染引擎 – KHTML 和 QtWebKit (通过 [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) 包) – Rekonq 只支持 QtWebKit. KHTML 开发在Qt迁移到WebKit后已经中止, 但由于兼容性原因仍然保留. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq.
+	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
-A successor named Fiber is currently in development, which will use Chromium's engine.
+*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — 包含 Plasma 集成特性的 Qt web 浏览器。其使用 Qt Web引擎。
 
-#### Firefox
+	[https://www.qupzilla.com/](https://www.qupzilla.com/) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
-Firefox 可以通过配置以和 Plasma 更好地集成. 参考 [Firefox KDE integration](/index.php/Firefox#KDE_integration "Firefox") 获取具体内容.
+*   **[Chromium](/index.php/Chromium "Chromium")** — Chromium 及它的专有版本 Google Chrome 具有有限的 Plasma 集成。 [它们可以使用 KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") 以及 KDE 窗口 打开/保存。
 
-#### Qupzilla
+	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) 是一个包含 Plasma 集成特性的 Qt web 浏览器. Qupzilla 2.0 将使用 Qt WebEngine 来替代 WebKit.
+*   **[Firefox](/index.php/Firefox "Firefox")** — Firefox 可以通过配置以和 Plasma 更好地集成。参考 [Firefox KDE整合](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KDE_.E6.95.B4.E5.90.88 "Firefox (简体中文)")。
+
+	[https://mozilla.org/firefox](https://mozilla.org/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
 ### PIM
 
-KDE 提供了自己的个人信息管理应用栈，包括电子邮件，联系人，日历等.
+KDE 提供了其自己的个人信息管理应用储存，包括电子邮件，联系人，日历等。
 
 #### Akonadi
 
@@ -427,9 +420,11 @@ Akonadi 是系统中本地缓存各种来源的 PIM 数据的一种方法，接�
 
 Akonadi 自身并不存储任何数据：存储格式依赖于数据的性质（例如，联系人可能以 vcard 格式存储）。
 
-##### 运行不含 Akonadi 的 KDE
+##### 安装
 
-对于想运行不包含 Akonadi 的 KDE 的用户，软件包 [akonadi-fake](https://aur.archlinux.org/packages/akonadi-fake/) 是一个不错的选择。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [akonadi](https://www.archlinux.org/packages/?name=akonadi). 若需其他插件，安装 [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons)。若需 EWS 支持，安装 [akonadi-ews-git](https://aur.archlinux.org/packages/akonadi-ews-git/)。
+
+**注意:** 如果要使用除 MariaDB/MySQL 以外的数据库引擎，请在安装 [akonadi](https://www.archlinux.org/packages/?name=akonadi) 包时使用以下命令从而跳过 [mariadb](https://www.archlinux.org/packages/?name=mariadb) 依赖项的安装: `# pacman -S akonadi --assume-installed mariadb` 
 
 ##### 禁用 Akonadi
 
@@ -437,43 +432,98 @@ Akonadi 自身并不存储任何数据：存储格式依赖于数据的性质（
 
 ##### 配置数据库
 
-启动软件包 [kdepim-runtime](https://www.archlinux.org/packages/?name=kdepim-runtime) 中的 `akonaditray`，右键点击它并选择 **配置**。在 Akonadi 服务器配置标签中，你可以：
+###### MariaDB/MySQL (使用 ZFS)
 
-*   配置 Akonadi 使用 MySQL/MariaDB 服务器
-*   配置 Akonadi 使用 PostgreSQL 服务器
-*   配置 Akonadi 使用 SQLite
+如果您的主目录位于ZFS池中，你将需要创建 `~/.config/akonadi/mysql-local.conf` 并添加以下内容：
+
+```
+[mysqld]
+innodb_use_native_aio = 0
+
+```
+
+否则你会收到 [OS error 22](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL")。
+
+###### PostgreSQL
+
+安装并设置 [PostgreSQL_(简体中文)](/index.php/PostgreSQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PostgreSQL (简体中文)")。确保 `postgresql.service` 已被[激活](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)").
+
+编辑Akonadi配置文件，使其具有以下内容：
+
+ `~/.config/akonadi/akonadiserverrc` 
+```
+[%General]
+Driver=QPSQL
+
+[QPSQL]
+Host=/run/postgresql/
+InitDbPath=/usr/bin/initdb
+Name=akonadi
+Options=
+Password=
+Port=5432
+ServerPath=/usr/bin/pg_ctl
+StartServer=true
+User=postgres
+
+```
+
+**注意:** 如果你的 PostgreSQL 数据库用户名，密码和端口不同于 `postgres` 及 `5432`, 请确保你别更改了配置选项：`User=`, `Password=`, 以及 `Port=`.
+
+运行 `akonadictl start` 启动 Akonadi 并检查其状态: `akonadictl status`。
+
+###### SQLite
+
+编辑Akonadi配置文件以匹配以下配置：
+
+ `~/.config/akonadi/akonadiserverrc` 
+```
+[%General]
+Driver=QSQLITE3
+
+[QSQLITE3]
+Name=/home/*username*/.local/share/akonadi/akonadi.db
+```
 
 ### KDE Telepathy
 
 [KDE Telepathy](http://community.kde.org/KTp) 是一个把即时信息功能紧密整合到 KDE 桌面中的项目。它使用 Telepathy 框架作为后端，意在替代 Kopete。
 
-要安装所有 Telepathy 协议，安装 [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) 组。 要使用 KDE Telepathy 客户端，安装 [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta) 软件包，它包含了所有在 [telepathy-kde](https://www.archlinux.org/groups/x86_64/telepathy-kde/) 组中的软件包。
+若要安装所有 Telepathy 协议，安装 [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) 组。 若要使用 KDE Telepathy 客户端，安装 [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta) 元软件包，它包含了所有在 [telepathy-kde](https://www.archlinux.org/groups/x86_64/telepathy-kde/) 组中的软件包。
 
-#### Use Telegram with KDE Telepathy
+#### 使用 Telegram 与 KDE Telepathy
 
-Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), installing [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) and [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). The username is the Telegram account telephone number (complete with the national prefix '+xx', e.g. '+49' for Germany). The configuration through the GUI may be tricky: if the phone number is not accepted when configuring a new account in the KDE Telepathy client (with an error message complaining about an invalid parameter which prevents the account creation), insert it between single quotes and then remove the quotes manually from the configuration file (`~/.local/share/telepathy/mission-control/accounts.cfg`) after the account creation (if the quotes are not removed after, an authentication error should rise). Note that the configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
+[Telegram](/index.php/Telegram "Telegram") 协议需要使用 [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), 安装 [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) 或 [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) 和 [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/)。用户名是 Telegram 账户电话号码 (加国家前缀 `+*xx*`，例如德国是 `+49`).
 
-### Integrate Android
+通过图形界面进行配置可能会很棘手：如果在KDE Telepathy客户端中配置新帐户时不接受电话号码（出现一个错误信息表明参数无效并阻止创建账户），请把其添加在单引号中，并在帐号创建好后从配置文件（`~/.local/share/telepathy/mission-control/accounts.cfg`）中手动移除引号（如果引号未被移除，会发生认证错误）。
 
-[KDE Connect](https://community.kde.org/KDEConnect) provides several features for you:
+**注意:** 配置文件应当在 KDE Telepathy 未运行时手动编辑，例如当 KDE 桌面未激活时，否则手动更改可能会被软件覆盖。
 
-*   Share files and URLs to/from KDE from/to any app, without wires.
-*   Touchpad emulation: Use your phone screen as your computer's touchpad.
-*   Notifications sync (4.3+): Read your Android notifications from the desktop.
-*   Shared clipboard: copy and paste between your phone and your computer.
-*   Multimedia remote control: Use your phone as a remote for Linux media players.
-*   WiFi connection: no usb wire or bluetooth needed.
-*   RSA Encryption: your information is safe.
+### 安卓整合
 
-You will need to install KDE Connect both on your computer and on your Android. For PC side, install [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install `KDE Connect` from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
+[KDE Connect](https://community.kde.org/KDEConnect) 提供了一些功能：
+
+*   从任何应用向 KDE 共享文件和 URL 或从 KDE 向任何应用共享，无需连线。
+*   触摸板模拟：将手机屏幕用作计算机的触摸板。
+*   通知同步（4.3+）：从桌面读取您的安卓通知。
+*   共享剪贴板：在手机和电脑之间复制粘贴。
+*   多媒体远程控制：将手机用作 Linux 媒体播放器的遥控器。
+*   WiFi 连接：不需要 usb 和蓝牙。
+*   RSA加密：保证您的信息安全。
+
+你需要同时在电脑和安卓上安装 KDE Connect。在PC端上安装 [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) 软件包。对于安卓端，请通过 [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) 或 [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp) 安装 `KDE Connect`。
 
 ## 提示和技巧
 
 ### 使用其他窗口管理器
 
-你可能会想使用除 KWin 外的其他窗口管理器, 比如导致绕过 [black screen with PRIME](/index.php/PRIME#Black_screen_with_GL-based_compositors "PRIME") 的 DRI bug.
+Plasma 中的组件选择器设置已不再允许更改窗口管理器。[[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)若需要更改窗口管理器，你需要在 KDE 启动之前设置 `KDEWM` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。[[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE)为此，你可以在 `~/.config/plasma-workspace/env` 中创建一个名为 `set_window_manager.sh` 的脚本，并在这导出 `KDEWM` 变量。例：使用 i3 窗口管理器：
 
-要在KDE中使用其他 [window manager](/index.php/Window_manager "Window manager")， 打开 `systemsettings` 面板后进入 Default Applications > Window Manager > Use a different window manager 并从列表中选择你用使用的窗口管理器.
+ `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
+
+然后标记其为可执行：
+
+ `$ chmod +x ~/.config/plasma-workspace/env/set_window_manager.sh` 
 
 #### KDE/Openbox 会话
 
@@ -486,9 +536,9 @@ exec openbox-kde-session
 
 ```
 
-#### Compiz 设置
+#### Compiz 自定义
 
-If you need to run Compiz with custom options and switches select *Compiz custom* and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
+如果你想要使用自定义选项运行 Compiz，选择 *Compiz custom* 然后再创建一个名为 `compiz-kde-launcher` 脚本并在其中添加要用于启动 Compiz 的命令。见以下例子：
 
  `/usr/local/bin/compiz-kde-launcher` 
 ```
@@ -499,226 +549,118 @@ wait
 
 ```
 
-Then make it executable:
+然后标记其为可执行：
 
 ```
 $ chmod +x /usr/local/bin/compiz-kde-launcher
 
 ```
 
-#### Re-enabling compositing effects
+#### 重新启用特殊效果
 
-Where replacing Kwin with a window manager the does not provide a Compositor (such as Openbox), any desktop compositing effects e.g. transparency will be lost. In this case, install and run a separate Composite manager to provide the effects such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Compton](/index.php/Compton "Compton").
+当你用不包含窗口混合器（Compositor）的窗口管理器（例如 Openbox）替换 Kwin 时，任何桌面特殊效果都会失效（例如窗口透明度）。在这种情况下，请安装并运行其他独立混合器，比如 [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") 或 [Compton](/index.php/Compton "Compton")。
 
-### Integrate Android
-
-KDE connect provides several features for you:
-
-*   Share files and URLs to/from KDE from/to any app, without wires.
-*   Touchpad emulation: Use your phone screen as your computer's touchpad.
-*   Notifications sync (4.3+): Read your Android notifications from the desktop.
-*   Shared clipboard: copy and paste between your phone and your computer.
-*   Multimedia remote control: Use your phone as a remote for Linux media players.
-*   WiFi connection: no usb wire or bluetooth needed.
-*   RSA Encryption: your information is safe.
-
-You will need to install KDE Connect both on your computer and on your Android. For PC side, install [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install `KDE Connect` from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
-
-### 获取软件包更新提醒
-
-安装 [apper](https://aur.archlinux.org/packages/apper/) 后可以从KDE系统托盘中获取软件包更新提醒以及一个基础的软件包管理工具GUI. 参考 [PackageKit website](http://www.packagekit.org/index.html) 获取更多信息.
-
-### 配置 KWin 成使用 OpenGL ES
+### 配置 KWin 使其使用 OpenGL ES
 
 设置环境变量 `KWIN_COMPOSE` 为 'O2ES' 以强制使用 OpenGL ES 后端. 请注意 OpenGL ES 未被所有驱动支持.
 
-### Konqueror/Dolphin 文件管理器中开启视频缩略图
-
-对于 Konqueror 和 Dolphin 中的视频缩略图，安装 [kdemultimedia-mplayerthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-mplayerthumbs) 或者 [kdemultimedia-ffmpegthumbs](https://www.archlinux.org/packages/?name=kdemultimedia-ffmpegthumbs)。
-
-### 加速应用启动
-
-用户 Rob 在他的博客中写道，这个“[技巧](http://kdemonkey.blogspot.nl/2008/04/magic-trick.html)”加快了应用程序的启动时间 50-150 毫秒。 要启用这个技巧，在你的 home 目录下面创建这个目录：
-
-```
-$ mkdir -p ~/.compose-cache
-
-```
-
-**注意:** 对于这中间发生了什么感到好奇的人来说，这个操作启用了一项前一段时间由 Lubos （以 general KDE speediness 知名） 提出，然后被重写并整合到 libx11 中的优化。应用平时启动时从 `/usr/share/X11/locale/<your locale>/Compose` 读取输入法信息，这个文件很长（对于 en_US.UTF-8 有超过 5000 行），需要不少时间来处理。libX11 可以缓存解析过的信息，以后读取时会快很多。但是它仅在目录存在时才会重用现有的缓存或者在 `~/.compose-cache` 中创建一份新的。
-
 ### 显示器分辨率 / 多显示器配置
 
-要在 Plasma 5 中启用分辨率和多显示器管理, 请安装 [kscreen](https://www.archlinux.org/packages/?name=kscreen). 它在 System Settings/Display and Monitor 中添加了更多选项.
+要在 Plasma 中启用分辨率和多显示器管理, 请安装 [kscreen](https://www.archlinux.org/packages/?name=kscreen). 它在 *系统设置 > 显示* 中添加了更多选项.
 
-### Open application launcher with Super key (Windows key)
-
-Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign Alt + F1 as hot key. The Super Key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
-
-## 故障排除
-
-#### Plasma 在 Intel 显卡上崩溃
-
-根据 [kde-distro-packagers](https://mail.kde.org/pipermail/kde-distro-packagers/2015-August/000088.html) 中的邮件，Intel 显卡驱动使用 SNA 加速时会引起 Plasma 崩溃，出现这种问题时，请 [切换到 UXA](/index.php/Intel_graphics#SNA_issues "Intel graphics") 方式.
+## 疑难解答
 
 ### 有关配置的问题
 
-KDE 中许多问题都源自配置文件。
+KDE 中许多问题都跟配置相关。
 
 #### Plasma 桌面行为异常
 
-Plasma 故障通常是由不稳定的 **plasmoids** 或者 **plasma themes** 引起的。首先寻找最近安装的 plasmoid 或者 plasma 主题并禁用或者卸载它。
+Plasma 故障通常是由不稳定的 **plasma 小部件**（plasmoids）或者 **plasma 主题**引起的。首先寻找最近安装的 plasmoid 或者 plasma 主题并禁用或者卸载它。
 
-因此，如果你的桌面突然碰到 "locking up"，很可能是由于安装了有问题的组件造成的。如果你不记得故障发生前你安装了什么小部件（有时它可能是一个不寻常的问题），通过逐个移除小部件直到问题不再出现来跟踪这个问题。然后你可以卸载这个小部件，**仅当它是一个官方小部件时**到 bugs.kde.org 填写一份缺陷报告。如果它不是，我推荐你在 kde-look.org 上寻找它的条目并告知小部件的开发者你所碰到的问题（再现它的详细步骤等等）。
+因此，如果你的桌面突然被"锁定"了，很可能是由于安装了有问题的组件造成的。如果你不记得故障发生前你安装了什么小部件（有时它可能是一个不寻常的问题），通过逐个移除小部件直到问题不再出现。然后你可以卸载这个小部件并提交一份缺陷报告，**若是官方小部件时**到[KDE 缺陷跟踪页](https://bugs.kde.org/)提交一份缺陷报告。如果它不是，你可以在 [https://store.kde.org/](https://store.kde.org/) 上寻找它的条目并告知小部件的开发者你所碰到的问题（以及再现它的详细步骤等）。
 
-如果你找不到问题，也不想丢失 *所有的* KDE 设置，这样办：
-
-```
- $ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
+如果你找不到问题，也不想丢失*所有的*设置，浏览到`~/.config`：
 
 ```
+$ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
 
-This command will **rename all Plasma related configs** to *.bak (e.g. `plasmarc.bak`) of your user and when you will relogin into Plasma, you will have the **default** settings back. To undo that action, remove the .bak file extension. If you already have *.bak files, rename, move, or delete them first. It is highly recommended that you create regular backups anyway. See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for a list of possible solutions.
+```
+
+这个命令会将**所有你用户跟 Plasma 有关的设置** 重命名为 *.bak (例如 `plasmarc.bak`)，并且当您重新登录 Plasma 时，您将恢复**默认**设置。若要撤销该操作，请删除.bak文件扩展名。若已有 *.bak 文件，请先重命名，移动或删除它们。强烈建议您经常备份。 有关可能的方案列表，请参阅[同步和备份程序（英文）](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")。
 
 #### 清理缓存以解决升级故障
 
-故障可能由旧的缓存导致。有时，升级后旧缓存可能会产生奇怪的、难以调试的行为，例如关不掉的 shell、改变各种设置时失去响应、以及像 ark 不能运行解压 rar / zip 文件或者 amarok 不能识别音乐等各种其它问题。这个办法也能解决 KDE 和 Qt 程序在升级后变得难看的问题。
+故障可能由旧的缓存导致。有时，升级后旧缓存可能会产生奇怪的、难以调试的行为，例如关不掉的 shell、改变设置时失去响应、以及像 ark 不能解压 rar/zip 文件又或者 amarok 不能识别音乐等各种其它问题。这个办法也能解决 KDE 和 Qt 程序在升级后变得难看的问题。
 
 用以下命令来重建缓存：
 
-```
- $ rm ~/.config/Trolltech.conf
- $ kbuildsycoca4 --noincremental
+$ rm ~/.config/Trolltech.conf $ kbuildsycoca4 --noincremental
+
+但愿你的故障已被修复。
+
+### 清理 akonadi 配置来修复 kmail
+
+首先确保 KMail 不在运行。然后备份配置文件：
 
 ```
-
-但愿你的故障已被修复。 [引用](https://bbs.archlinux.org/viewtopic.php?id=135301)。
-
-#### 清理 akonadi 配置来修复 kmail
-
-首先保证没有运行 KMail。然后备份配置文件：
-
-```
-$ mv ~/.local/share/akonadi  ~/.local/share/akonadi-old
-$ mv ~/.config/akonadi ~/.config/akonadi-old
+$ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
+$ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-启动 *系统设置 > 个人信息* 并删除所有资源。回到 Dolphin 中移除原始的 `~/.local/share/akonadi` 和 `~/.config/akonadi` - 所作的备份保证你可以在必要时恢复它们。
+启动 *系统设置 > 个人信息* 并删除所有资源。回到 Dolphin 中移除原始的 `~/.local/share/akonadi` 和 `~/.config/akonadi` - 之前所作的备份能让你在必要时恢复它们。
 
 现在回到 系统设置 页面并小心地添加必要的资源。你应该看到读取你邮件目录的资源。然后启动 Kontact/KMail 查看它是否正常运作。
 
-### Fix empty IMAP inbox
+### 修复空的IMAP收件箱
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[5]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
+对于某些 IMAP 账户，kmail将把收件箱当作一个包含此帐户所有其他文件夹的容器显示。Kmail 不会在收件箱容器中显示消息，而是在所有其他子文件夹中显示消息，请参阅 [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172)。若要解决此问题，只需在kmail帐户设置中禁用服务器端订阅即可。
 
-### 为了支持和调试获取 KWin 的当前状况
+### 获取 KWin 的当前状态以进行支持和调试
 
-这行命令输出了一份关于 KWin 当前状况的精彩总结，包括使用的选项、使用的 compositing 后端以及相关 OpenGL 驱动的能力。更多信息参见 [Martin的博客](http://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/)
-
-qdbus org.kde.kwin /KWin supportInformation
-
-### KDE 和 Qt 程序在别的窗口管理器下很难看
-
-如果你不在完整的 Plasma 会话之中（特别是你没有运行 "startkde"）使用 KDE 或者 Qt 程序，那么直到 Plasma 4.6.1，你需要告诉 Qt 怎么找到 KDE 的样式（Oxygen、QtCurve等等。）。
-
-你只需要设置 QT_PLUGIN_PATH 环境变量。即，写入
+这行命令输出了一份关于 KWin 当前状况的总结，包括使用的选项、混合（compositing）后端以及相关 OpenGL 驱动的能力。更多信息参见 [Martin的博客](http://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/)
 
 ```
-export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
+$ qdbus org.kde.KWin /KWin supportInformation
 
 ```
-
-到你的 `/etc/profile` （或者如果你没有 root 权限 `~/.profile`）。qtconfig 然后应该就能找到你的 kde 样式，然后所有东西应该就美观了！
-
-另外，你可以把 Qt 样式目录链接到 KDE 样式：
-
-```
- # ln -s /usr/lib/kde4/plugins/styles/ /usr/lib/qt4/pluginlib32-libdbusmenu-glibs/styles
-
-```
-
-在 Gnome 中，你可以尝试安装软件包 libgnomeui。
 
 ### KF5/Qt5 应用在 i3/fvwm/awesome 中不显示图标
 
 参考 [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
 
-### 有关图形的故障
+### 图形相关问题
 
-#### Plasma keeps crashing with legacy Nvidia
+#### Plasma 在闭源 Nvidia 下不断崩溃
 
-This is caused by a [bug in Plasma](https://bugs.kde.org/show_bug.cgi?id=348753) when using the Nvidia-304xx driver. Rather than disabling compositing, create a file `kwin.sh` in `~/.config/plasma-workspace/env/` with the following contents:
+这是由一个在使用 Nvidia-304xx 驱动时的 [Plasma 缺陷](https://bugs.kde.org/show_bug.cgi?id=348753) 造成。你可以在 `~/.config/plasma-workspace/env/` 下创建 `kwin.sh` 文件并添加以下内容：
 
 ```
-#!/bin/sh	
+#!/bin/sh
 export KWIN_EXPLICIT_SYNC=0
 
 ```
 
-Then go to *system-settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
+然后去 *系统设置 > 开关机 > 自启动* 并将其作为KDE启动前运行的脚本。
 
-#### Applications don't refresh properly
+#### 应用程序无法正常刷新
 
-If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to System Settings under *Display and Monitor* -> *Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
+若你使用[Intel](/index.php/Intel "Intel")并启动了3D加速渲染，你可能会发现 Plasma 面板和其他应用无法正常刷新（保持冻结）。有些 Intel 驱动跟 [EGL 有问题](https://bugzilla.redhat.com/show_bug.cgi?id=1259475)。浏览到 *系统设置 > 显示 > 器（Compositor）*并把 *OpenGL 端* 设为 *OpenGL 3.1*。若无法解决问题，请参阅[其他解决方案](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#SNA_.E9.97.AE.E9.A2.98 "Intel graphics (简体中文)")。
 
-#### 2D 桌面性能差（或）出现残影
+#### 性能不佳
 
-##### GPU 驱动程序问题
+##### 禁用桌面特效
 
-请确保你已经安装了适当的显卡驱动，这样你的桌面至少有 2D 加速。遵照这些文章：[ATI](/index.php/ATI "ATI")、[NVIDIA](/index.php/NVIDIA "NVIDIA")、[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")，以获得更多信息来保证一切正常。 开源的 ATI 和 Intel 驱动程序和私有的（二进制）Nvidia 驱动程序理论上应该能提供最好的 2D 和 3D 加速。
+Plasma 默认启用了桌面特效。你可以通过*系统设置 > 桌面特效*禁用桌面特效。你也可以使用 `Alt+Shift+F12` 切换桌面效果。
 
-##### 使用 Raster 引擎跳过问题
+##### 禁用混合项（compositing）
 
-如果这不能解决你的问题，你的驱动可能未提供好的 **XRender** 加速，而现在的 Qt 绘图引擎默认依赖于它。
+在 *系统设置 > 显示*中取消选中*启动时激活混合器（compositing）*并重启 Plasma
 
-只有使用`-graphicssystem raster`命令行参数调用程序时，才能在运行时修改绘图引擎。要默认使用此渲染引擎，需要用同样的配置选项`-graphicssystem raster`重新编译 Qt。
+#### 启用混合项（compositing）后全屏时闪烁
 
-Raster 绘图引擎使用 CPU 而不是 GPU 来处理大多数的绘制。在个别系统上，你可能获得更好的性能。这仅是为了对应糟糕的 Linux 驱动程序堆栈而采取的变通方法。CPU为通用计算优化，而GPU专门为绘图操作进行了很多优化。因此，仅当你碰到了问题或者你的 GPU 比 CPU 慢得多时才使用 Raster 引擎，否则使用 XRender 更好。
-
-从 Qt 4.7+ 起，不再需要重新编译 Qt。只需要导出 **QT_GRAPHICSSYSTEM=raster**，或者 "opengl"， 或者 "native" （这是默认值）。Raster 依赖于 CPU，OpenGL 依赖于 GPU 以及很好的驱动支持，而 Native 仅仅使用 X11 rendering (mixture, usually)。
-
-**最好的和自动的实施方法** 是从 AUR 中安装 [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) 并通过：
-
-```
- 系统设置 > Qt Graphics System
-
-```
-
-进行配置。
-
-要获得更多信息，访问这个 [KDE Developer 博客条目](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) 及/或这个 [Qt Developer 博客条目](http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine/)。
-
-#### 3D 桌面性能差
-
-KDE 一开始启用了桌面效果。旧的显卡可能不够支持 3D 桌面加速。你可以禁用桌面效果通过
-
-```
-系统设置 > 桌面效果
-
-```
-
-并且使用 `Alt+Shift+F12` 切换桌面效果。
-
-**注意:** 使用更强大的显卡时，也可能碰到这类 3D 桌面性能问题。请确保显示驱动已经正确安装。
-
-#### 有 Nvidia GPU 的系统中桌面混成被禁用
-
-有时 KWin 的配置文件（**kwinrc**）中的配置 *可能* 在重新激活 3D 桌面 **OpenGL** 混成时引起问题。这可能是随机产生的，（例如，由于 Xorg 的突然崩溃或重启，文件被损坏了），因此，发生这种情况时，删除你的 `~/.kde4/share/config/kwinrc` 文件并重新登录。KWin 配置将变为 KDE 默认值，故障应该就没有了。
-
-#### 启用混成后全屏时闪烁
-
-从 KDE SC 4.6.0 起，有一个选项为 *系统设置 > 桌面效果 > 高级 > 为全屏窗口挂起桌面特效*，不选中它将使 kwin 禁用 unredirect fullscreen。
-
-#### Display settings lost on reboot (multiple monitors)
-
-There is a [bug](https://bugs.kde.org/show_bug.cgi?id=346961) in kscreen that makes it forget dual screen settings after reboot with certain displays.
-
-A possible workaround is to uninstall [kscreen](https://www.archlinux.org/packages/?name=kscreen) and specify your screen setup in a xorg.conf file instead:
-
-*   See [Multihead#RandR](/index.php/Multihead#RandR "Multihead") for using the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension.
-*   For Nouveau you can use the template at [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau"), just edit it to suit your setup.
-*   For the proprietary nvidia driver you can use the [nvidia-settings](/index.php/NVIDIA#Using_NVIDIA_Settings "NVIDIA") utility as root to write the config file.
+在 *系统设置 > 显示*中取消选中*允许应用程序阻止混合项（compositing）*。这可能会损害性能。
 
 ### KDE 下的声音问题
 
@@ -726,39 +668,31 @@ A possible workaround is to uninstall [kscreen](https://www.archlinux.org/packag
 
 **注意:** 首先保证你已经安装了 [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 和 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)。
 
-##### 尝试在 KDE 中播放任何声音时出现 "返回 default" 消息
+##### 尝试在 KDE 中播放任何声音时出现 "返回默认" 消息
 
 当你碰到这些消息：
 
-	音频回放设备 *声音设备的名称* 不工作。
+```
+The audio playback device *声音设备的名称* does not work.
+Falling back to default
 
-	返回 default。
+```
 
 访问：
 
 ```
- 系统设置 > 多媒体 > Phonon
+ 系统设置 > 多媒体
 
 ```
 
-并在每一栏中都把名称为 "**default**" 的设备设置在所有其它设备的上面。
+并在每一栏中都把名称为 "**默认（default）**" 的设备设置在所有其它设备的上面。
 
 ##### 使用 GStreamer Phonon 后端时不能播放 MP3 文件
 
-安装 GStreamer libav 插件（软件包[gst-libav](https://www.archlinux.org/packages/?name=gst-libav)）可以解决问题。如果仍然碰到，你可以尝试安装另一个软件包，例如 [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc)，改为使用 Phonon 后端。然后，请确保它是首选的后端，通过：
+安装 GStreamer libav 插件（软件包[gst-libav](https://www.archlinux.org/packages/?name=gst-libav)）可以解决问题。如果仍然碰到，你可以尝试换一个软件包，例如 [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) 或 [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)。然后，请确保它是首选的后端，通过：
 
 ```
- 系统设置 > 多媒体 > Phonon > 后端（选项卡）
-
-```
-
-### Konsole 不保存命令历史
-
-默认情况下，只有当你在终端中输入 'exit' 时保存命令历史记录，而当你用角上的 'x' 关闭 Konsole 时它不会发生。 要启用每条命令执行后的自动保存，你需要在你的 .bashrc 文件中添加这些行：
-
-```
-shopt -s histappend
-[[ "${PROMPT_COMMAND}" ]] && PROMPT_COMMAND="$PROMPT_COMMAND;history -a" || PROMPT_COMMAND="history -a"
+ 系统设置 > 多媒体 > 后端
 
 ```
 
@@ -790,37 +724,12 @@ fs.inotify.max_user_watches = 10000
 
 对 [NFS](/index.php/NFS "NFS") 卷使用 [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") 可能导致卡死，见 [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
 
-### Locale warning when installing packages in Konsole
+### 没有挂起/休眠选项
 
-```
- mandb: can't set the locale; make sure $lc_* and $lang are correct
-
-```
-
-By default, Konsole sets $LANG to en_US.US-ASCII. If you haven't generated that locale, then mandb can't use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
-
-### 多显示器问题
-
-当前版本的 KDE Plasma 在设置多显示器时有一些问题, 可能导致Plasma不可用. 参考 [报告](https://bugs.kde.org/show_bug.cgi?id=356225) 和 [报告](https://bugs.kde.org/show_bug.cgi?id=356720).
-
-这些 bug 在上游/git KDE Plasma 构建中已经解决, 可以通过 [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) 或 [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) 来安装 - 记住这些包会和当前版本冲突 - 建议你先移除它们:
-
-```
- # pacman -R plasma-meta
-
-```
-
-[unstable releases](/index.php/Official_repositories#kde-unstable "Official repositories") 可能也包含了所需的补丁 (不确定).
-
-## 缺陷
-
-如果你发现微小或者严重的缺陷，你应该访问 [the Arch Bug Tracker](https://bugs.archlinux.org) 或/和 [KDE Bug Tracker](http://bugs.kde.org) 来汇报它们。确保你清楚想要汇报什么。
-
-如果你碰到了任何问题并在 Arch 论坛上讨论，首先确保你已经使用一个良好的同步镜像 **完全** 更新了你的系统（检查 [这里](https://www.archlinux.de/?page=MirrorStatus)） 或者尝试 [Reflector](/index.php/Reflector_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reflector (简体中文)")。
+如果你的系统可以使用 systemd 挂起/休眠，但 KDE 中没有这些选项，请确保 [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) 已被安装。
 
 ## 参见
 
-*   [[6]](http://www.kde.org) - KDE 主页
-*   [[7]](https://bugs.kde.org) - KDE 缺陷跟踪页
-*   [[8]](https://bugs.archlinux.org) - Arch Linux 缺陷跟踪页
-*   [[9]](https://projects.kde.org) - KDE 项目
+*   [KDE 主页](https://www.kde.org/)
+*   [KDE 缺陷跟踪页](https://bugs.kde.org/)
+*   [Martin Graesslin 的博客](https://blog.martin-graesslin.com/blog/kategorien/kde/)

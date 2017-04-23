@@ -10,14 +10,14 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Keep NVIDIA driver installed](#Keep_NVIDIA_driver_installed)
     *   [3.2 Installing the latest development packages](#Installing_the_latest_development_packages)
-    *   [3.3 Dual Head](#Dual_Head)
+    *   [3.3 Dual head](#Dual_head)
     *   [3.4 Setting console resolution](#Setting_console_resolution)
-    *   [3.5 Power Management](#Power_Management)
-        *   [3.5.1 Fan Control](#Fan_Control)
+    *   [3.5 Power management](#Power_management)
+        *   [3.5.1 Fan control](#Fan_control)
     *   [3.6 Optimus](#Optimus)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Disable MSI](#Disable_MSI)
-    *   [4.2 Phantom Output Issue](#Phantom_Output_Issue)
+    *   [4.2 Phantom output issue](#Phantom_output_issue)
     *   [4.3 Random lockups with kernel error messages](#Random_lockups_with_kernel_error_messages)
 
 ## Installation
@@ -106,15 +106,19 @@ $ dmesg
 
 ### Installing the latest development packages
 
-You may install the latest -git packages, through AUR:
+To get the latest Nouveau improvements, there is currently only one approved kernel tree by Nouveau that is assured to contain the latest modules designed to work with the latest drivers, so it is recommended you make sure you have these modules first, should you wish to use the git versions. Instructions can be found at [https://nouveau.freedesktop.org/wiki/InstallNouveau/](https://nouveau.freedesktop.org/wiki/InstallNouveau/) for getting them.
 
-*   You can use [mesa-git](https://aur.archlinux.org/packages/mesa-git/) which will allow the installation of the latest Mesa (including the latest DRI driver).
-*   You can also try installing a newer kernel version, through packages like [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) in which the Nouveau DRM code would allow better performance.
-*   To get the latest Nouveau improvements, you should use the [linux-git](https://aur.archlinux.org/packages/linux-git/) package from the AUR, edit the PKGBUILD and use Nouveau's own kernel repository, which is currently located at [git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau](git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau).
+To do this, you could modify the [linux-git](https://aur.archlinux.org/packages/linux-git/) PKGBUILD to use the Nouveau tree at [https://github.com/skeggsb/linux/](https://github.com/skeggsb/linux/), instead of making a package from scratch. You can then install:
 
-Upstream driver sources can be found at the [Nouveau Source page](https://nouveau.freedesktop.org/wiki/Source).
+*   [libdrm-git](https://aur.archlinux.org/packages/libdrm-git/)
+*   [lib32-libdrm-git](https://aur.archlinux.org/packages/lib32-libdrm-git/)
+*   [lib32-mesa-git](https://aur.archlinux.org/packages/lib32-mesa-git/)
+*   [lib32-mesa-libgl-git](https://aur.archlinux.org/packages/lib32-mesa-libgl-git/)
+*   [mesa-git](https://aur.archlinux.org/packages/mesa-git/)
+*   [mesa-libgl-git](https://aur.archlinux.org/packages/mesa-libgl-git/)
+*   [xf86-video-nouveau-git](https://aur.archlinux.org/packages/xf86-video-nouveau-git/)
 
-### Dual Head
+### Dual head
 
 Nouveau supports the xrandr extension for modesetting and multiple monitors. See the [xrandr](/index.php/Xrandr "Xrandr") page for tutorials.
 
@@ -164,7 +168,7 @@ Use the [fbset](https://www.archlinux.org/packages/?name=fbset) tool to adjust c
 
 You can also pass the resolution to nouveau with the `video=` kernel line option (see [KMS](/index.php/KMS "KMS")).
 
-### Power Management
+### Power management
 
 The lack of proper power management in the nouveau driver is one of the most important causes of performance issue, since most card will remain in their lower power state with lower clocks during their use. Experimental support for GPU reclocking is available for some cards (See the [Nouveau PowerManagement page](https://nouveau.freedesktop.org/wiki/PowerManagement)) and since kernel 4.5 can be controlled through a debugfs interface located at `/sys/kernel/debug/dri/*/pstate`.
 
@@ -184,7 +188,7 @@ It's also possible to manually set/force a certain power state by writing to sai
 
 **Warning:** The support for reclocking is highly experimental. Manually setting the power state may hang your system, cause corruption or overheat your card.
 
-#### Fan Control
+#### Fan control
 
 If it is implemented for you card you can configure fan control via `/sys`.
 
@@ -241,7 +245,7 @@ If you are still having problems loading the module or starting X server append 
 
 Source: [https://bugs.freedesktop.org/show_bug.cgi?id=78441](https://bugs.freedesktop.org/show_bug.cgi?id=78441)
 
-### Phantom Output Issue
+### Phantom output issue
 
 It is possible for the nouveau driver to detect "phantom" outputs. For example, both VGA-1 and LVDS-1 are shown as connected but only LVDS-1 is present.
 

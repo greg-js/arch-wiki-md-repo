@@ -52,7 +52,6 @@ This list is by no means complete. If you know of a community that is not listed
 *   Homepage: [https://www.archlinuxcn.org/](https://www.archlinuxcn.org/)
 *   Forum: [https://bbs.archlinuxcn.org/](https://bbs.archlinuxcn.org/)
 *   Forum: [https://forum.ubuntu.org.cn/viewforum.php?f=155](https://forum.ubuntu.org.cn/viewforum.php?f=155)
-*   Forum: [http://www.linuxsir.org/bbs/forum96.html](http://www.linuxsir.org/bbs/forum96.html)
 *   Forum: [http://tieba.baidu.com/f?kw=archlinux](http://tieba.baidu.com/f?kw=archlinux)
 *   Wiki: [Main page (简体中文)](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")
 

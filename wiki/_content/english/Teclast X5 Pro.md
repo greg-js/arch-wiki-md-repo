@@ -16,13 +16,13 @@ The [Teclast X5 Pro](http://www.teclast.com/zt/Tbook/X5Pro/) is a two 2 in 1 [Ta
 
 With kernel >= 4.9.0, seems the newest silead_ts driver has added support for silead mssl1680 touch screen (firmware needed [mssl1680-firmware](https://aur.archlinux.org/packages/mssl1680-firmware/)).
 
-### Installation
+## Installation
 
-Just Install Arch Linux in a normal way, however, for [SSD](/index.php/SSD "SSD") you should better refer [ArchWiki Solid_State_Drives](https://wiki.archlinux.org/index.php/Solid_State_Drives).
+Just Install Arch Linux in a normal way, however, for [SSD](/index.php/SSD "SSD") you should better refer [ArchWiki Solid_State_Drives](/index.php/Solid_State_Drives "Solid State Drives").
 
-### [Calibrating Touch Screen](https://wiki.archlinux.org/index.php/Calibrating_Touchscreen#Your_screen)
+## [Calibrating Touch Screen](/index.php/Calibrating_Touchscreen#Your_screen "Calibrating Touchscreen")
 
-Unfortunately there's no solution found for [Wayland](/index.php/Wayland "Wayland") :( (so if you are using GNOME with gdm, disable Wayland in "/etc/gdm/custom.conf" which is enabled by dafault and login with the option "Gnome on Xorg". )
+Unfortunately there is no solution found for [Wayland](/index.php/Wayland "Wayland") :( (so if you are using GNOME with gdm, disable Wayland in "/etc/gdm/custom.conf" which is enabled by dafault and login with the option "Gnome on Xorg". )
 
 Then create "/etc/X11/xorg.conf.d/99-calibration.conf"
 
@@ -39,6 +39,6 @@ EndSection
 
 Reboot and touchscreen will work fine. If not, make sure you have [mssl1680-firmware](https://aur.archlinux.org/packages/mssl1680-firmware/) installed.
 
-### On-Screen Keyboard
+## On-Screen Keyboard
 
-Depending on your preferred window manager, install kvkbd for [KDE](/index.php/KDE "KDE") or CellWriter for [GNOME](/index.php/GNOME "GNOME"), see [Tablet P C](/index.php?title=Tablet_P_C&action=edit&redlink=1 "Tablet P C (page does not exist)")
+Depending on your preferred window manager, install kvkbd for [KDE](/index.php/KDE "KDE") or CellWriter for [GNOME](/index.php/GNOME "GNOME"), see [Tablet PC](/index.php/Tablet_PC "Tablet PC")

@@ -442,8 +442,8 @@ If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot wit
 *   Alternatively, you can set a startup script in Windows that ensures that the boot order is set correctly every time you boot Windows.
     1.  Open a command prompt with admin privlages. Run `bcdedit /enum firmware` and find your desired boot entry.
     2.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-    3.  Create a batch file with the command `bcdedit /set {fwbootmgr} DEFAULT *{copied boot identifier}*`
-    4.  Open *gpedit* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*
+    3.  Create a batch file with the command `bcdedit /set "{fwbootmgr}" DEFAULT "{*copied boot identifier*}"`
+    4.  Open *gpedit.msc* and under *Local Computer Policy > Computer Configuration > Windows Settings > Scripts(Startup/Shutdown)*, choose *Startup*
     5.  Under the *Scripts* tab, choose the *Add* button, and select your batch file
 
 ### USB media gets struck with black screen

@@ -179,14 +179,16 @@ Firefox as of version 28 has the ability to control how the HTTP Referer header 
 
 **Warning:** This procedure may damage the databases in such a way that sessions are not saved properly.
 
-In Firefox 3.0, bookmarks, history, passwords are kept in an SQLite databases. SQLite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve start-up and some other bookmarks and history related tasks is to defragment and trim unused space from these databases.
+Starting with Firefox 3.0, bookmarks, history, passwords are kept in SQLite databases. SQLite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve start-up and some other bookmarks and history related tasks is to defragment and trim unused space from these databases.
 
-[profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) does just this.
+You can use [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) to do this, while Firefox is **not** running:
 
-<caption>Sample size differences comparison</caption>
+<caption>profile-cleaner usage example:</caption>
 | SQLite database | Size Before | Size After |  % change |
 | urlclassifier3.sqlite | 37 M | 30 M | 19 % |
 | places.sqlite | 16 M | 2.4 M | 85 % |
+
+Recent (as of H2 2016) versions of Firefox, provide a tool to defragment and optimize the places database, which is the source of most slowdowns and profile corruptions. To access this tool, open the `about:support` page. In the resulting page, search for `Places Database` and click the `Verify Integrity` button.
 
 #### Cache the entire profile into RAM via tmpfs
 
@@ -522,6 +524,8 @@ Before continuing, remember there is a reason some of these variables are not en
 Widevine is a digital rights management tool that Netflix, Amazon Prime Video, and others use to protect their video content.
 
 The first time you visit a Widevine-enabled page Firefox will display a prompt below the address bar asking for permission to install DRM. Approve this and then wait for the "Downloading" bar to disappear, you are now able to watch videos from Netflix, Amazon Prime Video, or any other Widevine protected site.
+
+**Note:** Please make sure to check the *Play DRM content* option under Content-Preference.
 
 ### Mouse wheel scroll speed
 

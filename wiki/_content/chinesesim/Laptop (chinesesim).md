@@ -86,18 +86,7 @@
 
 ### Laptop mode tools
 
-Install [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") with:
-
-```
-# pacman -S laptop-mode-tools
-
-```
-
-*   The configuration files can be found in /etc/laptop-mode/laptop-mode.conf and /etc/laptop-mode/conf.d/*
-*   Be sure to add *laptop-mode* to the DAEMONS array in /etc/rc.conf
-*   Be sure to go through the config files, as many powersaving features are not enabled by default.
-
-See [this thread](https://bbs.archlinux.org/viewtopic.php?id=39258) for more information.
+从aur中安装[laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/) ，使用参看 [Laptop Mode Tools](/index.php/Laptop_Mode_Tools_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Laptop Mode Tools (简体中文)") 。
 
 ### PCIe ASPM
 

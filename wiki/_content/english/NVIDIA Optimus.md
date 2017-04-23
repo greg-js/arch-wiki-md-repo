@@ -19,7 +19,6 @@ These options are explained in detail below.
         *   [2.2.1 LightDM](#LightDM)
         *   [2.2.2 SDDM](#SDDM)
         *   [2.2.3 GDM](#GDM)
-        *   [2.2.4 KDM](#KDM)
     *   [2.3 Checking 3D](#Checking_3D)
     *   [2.4 Further Information](#Further_Information)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -203,10 +202,6 @@ X-GNOME-Autostart-Phase=DisplayServer
 ```
 
 Make sure that GDM use [X as default backend](/index.php/GDM#Use_Xorg_backend "GDM").
-
-#### KDM
-
-For KDE's [KDM](/index.php/KDM "KDM"), add the xrandr lines into `/usr/share/config/kdm/Xsetup`.
 
 ### Checking 3D
 

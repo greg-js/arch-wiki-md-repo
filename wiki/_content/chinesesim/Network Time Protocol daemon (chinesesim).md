@@ -14,9 +14,9 @@
     *   [3.1 启动时启用 ntpd](#.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E7.94.A8_ntpd)
     *   [3.2 每次启动同步一次](#.E6.AF.8F.E6.AC.A1.E5.90.AF.E5.8A.A8.E5.90.8C.E6.AD.A5.E4.B8.80.E6.AC.A1)
 *   [4 技巧](#.E6.8A.80.E5.B7.A7)
-    *   [4.1 Start ntpd on network connection](#Start_ntpd_on_network_connection)
-    *   [4.2 Using ntpd with GPS](#Using_ntpd_with_GPS)
-    *   [4.3 Running in a chroot](#Running_in_a_chroot)
+    *   [4.1 有网络连接的时候启动ntpd](#.E6.9C.89.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5.E7.9A.84.E6.97.B6.E5.80.99.E5.90.AF.E5.8A.A8ntpd)
+    *   [4.2 在GPS中使用NTP](#.E5.9C.A8GPS.E4.B8.AD.E4.BD.BF.E7.94.A8NTP)
+    *   [4.3 在 chroot 底下运行](#.E5.9C.A8_chroot_.E5.BA.95.E4.B8.8B.E8.BF.90.E8.A1.8C)
 *   [5 排错](#.E6.8E.92.E9.94.99)
     *   [5.1 无法分配请求地址](#.E6.97.A0.E6.B3.95.E5.88.86.E9.85.8D.E8.AF.B7.E6.B1.82.E5.9C.B0.E5.9D.80)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
@@ -101,7 +101,7 @@ logfile /var/log/ntp.log
 
 ```
 
-一份基础的配置文件是这样的 （**为了清晰起见，已删掉了所有的注释**）：
+一份基础的配置文件是这样的：
 
  `/etc/ntp.conf` 
 ```
@@ -167,13 +167,13 @@ ExecStart=/usr/bin/hwclock -w
 
 ## 技巧
 
-### Start ntpd on network connection
+### 有网络连接的时候启动ntpd
 
-*ntpd* can be started by your network manager, so that the daemon only runs when the computer is online.
+*ntpd* 可以由你的网络管理器启动, 所以ntp这个守护进程只有在计算机有网络连接的时候才会启动.
 
 	Netctl
 
-Append the following lines to your [netctl](/index.php/Netctl "Netctl") profile:
+给你的 [netctl](/index.php/Netctl "Netctl") 配置文件添加如下这几行:
 
 ```
 ExecUpPost='/usr/bin/ntpd || true'
@@ -183,11 +183,11 @@ ExecDownPre='killall ntpd || true'
 
 	NetworkManager
 
-The *ntpd* daemon can be brought up/down along with a network connection through the use of NetworkManager's [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") scripts. The [networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) package installs one, pre-configured to start and stop the [ntpd service](#Start_ntpd_at_boot) with a connection.
+通过网络管理器的 [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") 脚本，可以同网络连接一起启动/终止*ntpd* 守护进程。 安装[networkmanager-dispatcher-ntpd](https://www.archlinux.org/packages/?name=networkmanager-dispatcher-ntpd) 预配置包 [ntpd service](#Start_ntpd_at_boot) 来让网络连接同步ntp启动/终止.
 
 	Wicd
 
-For [Wicd](/index.php/Wicd "Wicd"), create a start script in the `postconnect` directory and a stop script in the `predisconnect` directory. Remember to make them executable:
+对 [Wicd](/index.php/Wicd "Wicd") 来说, 要在 `postconnect` 目录创建一个启动脚本，在 `predisconnect` 目录创建一个终止脚本。 记住要把他们设为可执行的哦:
 
  `/etc/wicd/scripts/postconnect/ntpd` 
 ```
@@ -202,19 +202,19 @@ systemctl stop ntpd &
 
 ```
 
-**注意:** You are advised to customize the options for the *ntpd* command as explained in [#Usage](#Usage).
+**注意:** 根据 [#Usage](#Usage) 对*ntpd* 这个命令的说明，你可以自由设置自己的配置选项。
 
-See also [Wicd#Scripts](/index.php/Wicd#Scripts "Wicd").
+参照 [Wicd#Scripts](/index.php/Wicd#Scripts "Wicd").
 
 	KDE
 
-KDE can use NTP (ntp must be installed) by right clicking the clock and selecting *Adjust date/time*. However, this requires the ntp daemon to be [disabled](/index.php/Disable "Disable") before configuring KDE to use NTP. [[2]](https://bugs.kde.org/show_bug.cgi?id=178968)
+在KDE中，通过右击桌面选择 *Adjust date/time*，可以使用 NTP (别忘了安装NTP)。 注意, 在配置KDE中配置NTP之前，先要把 ntp 守护进程设置为 [disabled](/index.php/Disable "Disable") 状态. [[2]](https://bugs.kde.org/show_bug.cgi?id=178968)
 
-### Using ntpd with GPS
+### 在GPS中使用NTP
 
-Most of the articles online about configuring *ntpd* to receive time from a GPS suggest to use the SHM (shared memory) method. However, at least since *ntpd* version 4.2.8 a *much better* method is available. It connects directly to *gpsd*, so [gpsd](https://www.archlinux.org/packages/?name=gpsd) needs to be installed.
+大多数联网的交通工具要通过(共享内存) 方式让 *ntpd* 从GPS中接收时间。 但是, 从 *ntpd* 4.2.8版本开始，一个 *更好* 的办法出现了----直接与 *gpsd*守护进程交互。这个要先安装 [gpsd](https://www.archlinux.org/packages/?name=gpsd) .
 
-Add these lines to your `/etc/ntp.conf`:
+在 `/etc/ntp.conf` 配置文件中添加下面这几行:
 
  `/etc/ntp.conf` 
 ```
@@ -228,16 +228,16 @@ server 127.127.46.0
 fudge 127.127.46.0 time1 0.0 time2 0.0 refid GPS
 ```
 
-This will work as long as you have *gpsd* working. It connects to *gpsd* via the local socket and queries the "gpsd_json" object that is returned.
+只要 *gpsd* 一直起着，ntp就会一直正常运行。 ntp会通过一个本地套接字同 *gpsd* 连接, 搜索 *gpsd* 返回的 "gpsd_json" 对象.
 
-To test the setup, first ensure that *gpsd* is working by running:
+要检验安装的话, 首先要检查 *gpsd* 是不是正常运行:
 
 ```
  $ cgps -s 
 
 ```
 
-Then wait a few minutes and run `ntpq -p`. This will show if *ntpd* is talking to *gpsd*:
+然后等个几分钟运行 `ntpq -p`. 这个会显示 *ntpd* 是否已经跟 *gpsd* 建立连接了:
 
  `$ ntpq -p` 
 ```
@@ -246,13 +246,13 @@ remote           refid            st t when poll reach   delay   offset  jitter
 *GPSD_JSON(0)    .GPS.            0 l   55   64  377    0.000    2.556  14.109
 ```
 
-**提示：** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
+**提示：** 如果 *reach* 这列是0的话, 这就说明 *ntpd* 还没有同 *gpsd* 建立连接。 等几分钟再试一次。 有时 *ntpd* 要花点时间来跟*gpsd* 建立连接。
 
-### Running in a chroot
+### 在 chroot 底下运行
 
-**注意:** *ntpd* should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
+**注意:** 在试图把 *ntpd* 放到chroot目录下面之前，*ntpd* 应该在正常路径下启动 (默认在 Arch Linux 安装路径下)。 因为在相对以root身份运行的进程，chroots的用户相对没有啥权限的。
 
-Create a new directory `/etc/systemd/system/ntpd.service.d/` if it does not exist and a file named `customexec.conf` inside with the following content:
+创建一个新目录（如果还没创建的话） `/etc/systemd/system/ntpd.service.d/`，并添加在里面添加文件 `customexec.conf` ,内容如下:
 
 ```
 [Service]
@@ -261,21 +261,21 @@ ExecStart=/usr/bin/ntpd -g -i /var/lib/ntp -u ntp:ntp -p /run/ntpd.pid
 
 ```
 
-Then, edit `/etc/ntp.conf` to change the driftfile path such that it is relative to the chroot directory, rather than to the real system root. Change:
+然后, 编辑 `/etc/ntp.conf` 来改变 driftfile 路径来让跟它跟 chroot 路径保持一致, 而不是还用原先的普通路径。修改
 
 ```
 driftfile       /var/lib/ntp/ntp.drift
 
 ```
 
-to
+为
 
 ```
 driftfile       /ntp.drift
 
 ```
 
-Create a suitable chroot environment so that getaddrinfo() will work by creating pertinent directories and files (as root):
+通过root创建永久目录和文件，作为一个合适的 chroot 环境来支持 getaddrinfo() :
 
 ```
 # mkdir /var/lib/ntp/etc /var/lib/ntp/lib /var/lib/ntp/proc
@@ -283,7 +283,7 @@ Create a suitable chroot environment so that getaddrinfo() will work by creating
 
 ```
 
-and by bind-mounting the aformentioned files:
+然后通过修改 *fstab* 绑定前面提到的文件:
 
  `/etc/fstab` 
 ```
@@ -301,16 +301,16 @@ and by bind-mounting the aformentioned files:
 
 ```
 
-Finally, restart `ntpd` daemon again. Once it restarted you can verify that the daemon process is chrooted by checking where `/proc/{PID}/root` symlinks to:
+最后, 再一次重启 `ntpd` 监控进程。 一旦重启完成你就可以通过检查 `/proc/{PID}/root` 的软连接来判断监控进程是不是在 chrooted 下面工作:
 
 ```
 # ps -C ntpd | awk '{print $1}' | sed 1d | while read -r PID; do ls -l /proc/$PID/root; done
 
 ```
 
-should now link to `/var/lib/ntp` instead of `/`.
+正常应该链接到 `/var/lib/ntp` 而不是 `/`.
 
-It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
+不用等一段时间就要确定 driftfile 配置是否工作正常是比较困难的, 因为 *ntpd* 不会经常读写。 如果配置错误的话，log里面会打印一个error; 如果配置正确的话, 时间戳会更新的。 可以通过等一天来判断，如果没有log中没有错误打印，并且log的时间戳还更新了，那么说明配置成功了。
 
 ## 排错
 

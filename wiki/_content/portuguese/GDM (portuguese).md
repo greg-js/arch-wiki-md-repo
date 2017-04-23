@@ -44,7 +44,7 @@ xsetroot -solid black              # define o background
 
 ## Configuração
 
-Você não pode mas usar o comando gdmsetup para configuração do GDM na versão 2.28\. O comando foi removido, e o GDM foi padronizado e integrado com o restante do GNOME.
+Você não pode mais usar o comando gdmsetup para configuração do GDM na versão 2.28\. O comando foi removido, e o GDM foi padronizado e integrado com o restante do GNOME.
 
 Você pode instalar o gdm2setup que está no AUR para configuração do GDM, ou acompanhe a instrução:
 

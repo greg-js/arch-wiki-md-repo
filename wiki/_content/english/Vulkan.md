@@ -14,7 +14,7 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 
 ## Installation
 
-**Note:** On hybrid graphics (Optimus/AMD Dynamic Switchable Graphics):
+**Note:** On hybrid graphics (NVIDIA Optimus/AMD Dynamic Switchable Graphics):
 
 *   Vulkan is not currently supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") [[1]](https://github.com/Bumblebee-Project/Bumblebee/issues/769).
 *   The Radeon Vulkan driver now supports [PRIME](/index.php/PRIME "PRIME") [[2]](http://www.phoronix.com/scan.php?page=news_item&px=RADV-PRIME-Lands).

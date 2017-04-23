@@ -376,7 +376,9 @@ If you are using the Xorg Intel or Nouveau drivers and experience tearing video 
 
 ### Firefox looks bad with GTK+ >=3.20
 
-Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-gtk2](https://aur.archlinux.org/packages/firefox-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") or [archlinuxcn's](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") (x86_64 only) for pre-built GTK2 Firefox packages.
+Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-esr-gtk2](https://aur.archlinux.org/packages/firefox-esr-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") or [archlinuxcn's](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") (x86_64 only) for pre-built GTK2 Firefox packages.
+
+**Note:** Firefox has removed gtk2 support in v53 and will support an esr version (52) until mid 2018.
 
 ### Firefox WebRTC module cannot detect a microphone
 

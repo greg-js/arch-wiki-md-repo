@@ -211,7 +211,7 @@ On AMD systems microcode is updated a bit later in the boot process, so the outp
 Users may consult either Intel or AMD at the following links to see if a particular model is supported:
 
 *   [AMD's Operating System Research Center](http://www.amd64.org/microcode.html).
-*   [Intel's download center](https://downloadcenter.intel.com/download/24661).
+*   [Intel's download center](https://downloadcenter.intel.com/download/26400/Linux-Processor-Microcode-Data-File).
 
 ### Detecting available microcode update
 

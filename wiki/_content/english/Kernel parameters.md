@@ -163,7 +163,7 @@ This list is not comprehensive. For a complete list of all options, please see t
 | initrd= | Specify the location of the initial ramdisk. |
 | init= | Run specified binary instead of `/sbin/init` (symlinked to [systemd](/index.php/Systemd "Systemd") in Arch) as init process. |
 | init=/bin/sh | Boot to shell. |
-| systemd.unit= | Boot to a [specified target](/index.php/Systemd#Targets_table "Systemd"). |
+| systemd.unit= | Boot to a [specified target](/index.php/Systemd#Targets "Systemd"). |
 | resume= | Specify a swap device to use when waking from [hibernation](/index.php/Hibernation "Hibernation"). |
 | nomodeset | Disable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). |
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |

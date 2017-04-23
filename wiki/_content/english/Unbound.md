@@ -6,11 +6,16 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Access control](#Access_control)
+    *   [2.1 Local DNS server](#Local_DNS_server)
     *   [2.2 Root hints](#Root_hints)
-    *   [2.3 Local DNS server](#Local_DNS_server)
-    *   [2.4 DNSSEC validation](#DNSSEC_validation)
-    *   [2.5 Forwarding queries](#Forwarding_queries)
+    *   [2.3 DNSSEC validation](#DNSSEC_validation)
+        *   [2.3.1 Testing validation](#Testing_validation)
+        *   [2.3.2 Automatic updates](#Automatic_updates)
+    *   [2.4 Forwarding queries](#Forwarding_queries)
+        *   [2.4.1 Allow local network to use DNS](#Allow_local_network_to_use_DNS)
+        *   [2.4.2 Include local DNS server](#Include_local_DNS_server)
+        *   [2.4.3 Forward all remaining requests](#Forward_all_remaining_requests)
+    *   [2.5 Access control](#Access_control)
 *   [3 Usage](#Usage)
     *   [3.1 Starting Unbound](#Starting_Unbound)
     *   [3.2 Remotely control Unbound](#Remotely_control_Unbound)
@@ -22,6 +27,7 @@
     *   [4.3 WAN facing DNS](#WAN_facing_DNS)
     *   [4.4 Roothints systemd timer](#Roothints_systemd_timer)
     *   [4.5 Sandboxing](#Sandboxing)
+    *   [4.6 Example configuration](#Example_configuration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Issues concerning num-threads](#Issues_concerning_num-threads)
 *   [6 See also](#See_also)
@@ -30,11 +36,11 @@
 
 [Install](/index.php/Install "Install") the [unbound](https://www.archlinux.org/packages/?name=unbound) package.
 
-Additionally, the [expat](https://www.archlinux.org/packages/?name=expat) package is required for [DNSSEC](/index.php/DNSSEC "DNSSEC") validation.
+Additionally, the [expat](https://www.archlinux.org/packages/?name=expat) package is required for [#DNSSEC validation](#DNSSEC_validation).
 
 ## Configuration
 
-A default configuration is already included at`/etc/unbound/unbound.conf`. Additionally, there is a commented sample configuration file with other available options located at `/etc/unbound/unbound.conf.example`. The following sections highlight different settings for the configuration file. See `man unbound.conf` for other settings and more details.
+A default configuration is already included at`/etc/unbound/unbound.conf`. Additionally, there is a commented sample configuration file with other available options located at `/etc/unbound/unbound.conf.example`. The following sections highlight different settings for the configuration file. See [unbound.conf(5)](http://unbound.net/documentation/unbound.conf.html) for other settings and more details.
 
 Unless otherwise specified, any options listed in this section are to be placed under the `server` section in the configuration like so:
 
@@ -47,37 +53,19 @@ server:
 
 ```
 
-### Access control
+See also [#Example configuration](#Example_configuration).
 
-You can specify the interfaces to answer queries from by IP address. To listen on *localhost*, use the default setting:
+### Local DNS server
 
-```
-interface: 127.0.0.1
+If you want to use *unbound* as your local DNS server, set your nameserver to `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf").
 
-```
+**Tip:** A simple way to do this is to install the [openresolv](https://www.archlinux.org/packages/?name=openresolv) package and uncomment the line containing `name_servers=127.0.0.1` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
 
-To listen on all interfaces, use the following:
+See [Resolv.conf#Testing](/index.php/Resolv.conf#Testing "Resolv.conf") on how to test your settings.
 
-```
-interface: 0.0.0.0
+Check specifically that the server being used is `127.0.0.1` after making permanent changes to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
-```
-
-To control which systems can access the server by IP address, use the `access-control` option:
-
-```
-access-control: *subnet* *action*
-
-```
-
-For example:
-
-```
-access-control: 192.168.1.0/24 allow
-
-```
-
-*action* can be one of `deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok). By default everything is refused except for localhost.
+You will also need to setup *unbound* such that it is [#Forwarding queries](#Forwarding_queries) to the DNS servers of your choice.
 
 ### Root hints
 
@@ -96,30 +84,35 @@ Then, put a *root hints* file into the *unbound* configuration directory. The si
 
 It is a good idea to update `root.hints` every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by using [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). See [#Roothints systemd timer](#Roothints_systemd_timer) for an example.
 
-### Local DNS server
-
-If you want to use *unbound* as your local DNS server, set your nameserver to `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf").
-
-**Tip:** A simple way to do this is to install the [openresolv](https://www.archlinux.org/packages/?name=openresolv) package and uncomment the line containing `name_servers=127.0.0.1` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
-
-See [Resolv.conf#Testing](/index.php/Resolv.conf#Testing "Resolv.conf") on how to test your settings.
-
-Check specifically that the server being used is `127.0.0.1` after making permanent changes to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
-
 ### DNSSEC validation
 
-*unbound* automatically copies the root server trust key anchor file from `/etc/trusted-key.key` to `/etc/unbound/trusted-key.key`. To use DNSSEC validation, point *unbound* to this file by adding the following setting:
+To use [DNSSEC](/index.php/DNSSEC "DNSSEC") validation, point *unbound* to the server trust anchor file by adding the following setting under `server:`:
+
+ `/etc/unbound/unbound.conf`  `trust-anchor-file: trusted-key.key` 
+
+Also make sure that if general [#Forwarding queries](#Forwarding_queries) have been set to DNS servers that do not support DNSSEC, then comment them out; otherwise, DNS queries will fail. DNSSEC validation will only be done if the DNS server being queried supports it.
+
+**Note:** Including DNSSEC checking significantly increases DNS lookup times for initial lookups before the address is cached.
+
+#### Testing validation
+
+To test if DNSSEC is working, after [starting](/index.php/Starting "Starting") `unbound.service`, do:
 
 ```
-trust-anchor-file: trusted-key.key
+$ unbound-host -C /etc/unbound/unbound.conf -v sigok.verteiltesysteme.net
 
 ```
 
-Also make sure that if a general [forward](#Forwarding_queries) to a DNS server has been set, then comment them out; otherwise, DNS queries will fail. DNSSEC validation will only be done if the DNS server being queried supports it.
+The response should be the ip address with the word `(secure)` next to it.
 
-**Note:** Including DNSSEC checking significantly increases DNS lookup times for initial lookups. Once an address is cached locally, then the lookup is virtually instantaneous.
+```
+$ unbound-host -C /etc/unbound/unbound.conf -v sigfail.verteiltesysteme.net
 
-To test if DNSSEC is working, use *drill*:
+```
+
+Here the response should include `(BOGUS (security failure))`.
+
+Additionally you can use *drill* to test the resolver as follows:
 
 ```
 $ drill sigfail.verteiltesysteme.net
@@ -129,9 +122,34 @@ $ drill sigok.verteiltesysteme.net
 
 The first command should give an `rcode` of `SERVFAIL`. The second should give an `rcode` of `NOERROR`.
 
+#### Automatic updates
+
+`trusted-key.key` can become out of date. To have unbound automatically update the file, use the following instead of the above configuration:
+
+ `/etc/unbound/unbound.conf`  `auto-trust-anchor-file: trusted-key.key` 
+
+Additionally, the `unbound` user needs write permissions to the directory:
+
+```
+# chown root:unbound /etc/unbound
+# chmod 775 /etc/unbound
+
+```
+
+Lastly, one can also automatically check for updates before unbound is run by adding the following to the systemd unit under the `[Service]` section using a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"):
+
+```
+ExecStartPre=/usr/bin/unbound-anchor -a /etc/unbound/trusted-key.key
+
+```
+
 ### Forwarding queries
 
-**Tip:** Unbound can be used with [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") by setting up forwarding. See [DNSCrypt#Example: configuration for Unbound](/index.php/DNSCrypt#Example:_configuration_for_Unbound "DNSCrypt").
+**Tip:** Unbound can be used with [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") by setting up forwarding. See [DNSCrypt#Unbound](/index.php/DNSCrypt#Unbound "DNSCrypt").
+
+If you only want to forward queries to an external DNS server, skip ahead to [#Forward all remaining requests](#Forward_all_remaining_requests).
+
+#### Allow local network to use DNS
 
 If you have a local network which you wish to have DNS queries for and there is a local DNS server that you would like to forward queries to then you should include this line:
 
@@ -148,6 +166,8 @@ private-address: 10.0.0.0/24
 ```
 
 **Note:** You can use private-address to protect against DNS Rebind attacks. Therefore you may enable RFC1918 networks (10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16 fd00::/8 fe80::/10). Unbound may enable this feature by default in future releases.
+
+#### Include local DNS server
 
 To include a local DNS server for both forward and reverse local addresses a set of lines similar to these below is necessary with a forward and reverse lookup (choose the IP address of the server providing DNS for the local network accordingly by changing 10.0.0.1 in the lines below):
 
@@ -188,21 +208,44 @@ local-data: "1.0.0.127.in-addr.arpa. 10800 IN PTR localhost."
 
 ```
 
-Then to use specific servers for default forward zones that are outside of the local machine and outside of the local network (i.e. all other queries will be forwarded to them, and then cached) add this to the configuration file (and in this example the first two addresses are the fast google DNS servers):
+#### Forward all remaining requests
+
+To use specific servers for default forward zones that are outside of the local machine and outside of the local network add a forward zone with the name `.` to the configuration file. In this example, all requests are forwarded to Google's DNS servers:
 
 ```
 forward-zone:
   name: "."
   forward-addr: 8.8.8.8
   forward-addr: 8.8.4.4
-  forward-addr: 208.67.222.222
-  forward-addr: 208.67.220.220
 
 ```
 
-This will make *unbound* use Google and OpenDNS servers as the forward zone for external lookups.
+### Access control
 
-**Note:** OpenDNS strips DNSSEC records from responses. Do not use the above forward zone if you want to enable [#DNSSEC validation](#DNSSEC_validation).
+You can specify the interfaces to answer queries from by IP address. The default, is to listen on *localhost*.
+
+To listen on all interfaces, use the following:
+
+```
+interface: 0.0.0.0
+
+```
+
+To control which systems can access the server by IP address, use the `access-control` option:
+
+```
+access-control: *subnet* *action*
+
+```
+
+For example:
+
+```
+access-control: 192.168.1.0/24 allow
+
+```
+
+*action* can be one of `deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok). By default everything is refused except for localhost.
 
 ## Usage
 
@@ -291,8 +334,9 @@ You can use the following file and simply include it in your unbound configurati
 
  `/etc/unbound/unbound.conf` 
 ```
+server:
 ...
-include: /etc/unbound/adservers
+  include: /etc/unbound/adservers
 
 ```
 
@@ -342,7 +386,7 @@ It is possible to sandbox the default `unbound.service` by restricting [capabili
 
 ```
 [Service]
-CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT
+CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT CAP_SYS_RESOURCE
 MemoryDenyWriteExecute=true
 NoNewPrivileges=true
 PrivateDevices=true
@@ -372,6 +416,21 @@ SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete
 *   The *@mount* system call set includes *chroot()* which is required by unbound to build its environment
 *   `mount` and `unmount2` require explicit listing if they are to be blacklisted apart from the *@mount* macro
 *   The above example blacklists `CAP_SYS_ADM` which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/)
+
+### Example configuration
+
+The following is a minimal configuration that automatically updates the trusted key file for [#DNSSEC validation](#DNSSEC_validation) and uses [#Root hints](#Root_hints). All [queries are forwarded](#Forwarding_queries) to Google's DNS servers.
+
+ `/etc/unbound/unbound.conf` 
+```
+server:
+  auto-trust-anchor-file: /etc/unbound/trusted-key.key
+  root-hints: /etc/unbound/root.hints
+  forward-zone:
+    name: "."
+    forward-addr: 8.8.8.8
+    forward-addr: 8.8.4.4
+```
 
 ## Troubleshooting
 

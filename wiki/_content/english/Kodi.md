@@ -83,22 +83,16 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 **Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
 
 **Note:** lightdm does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency (xephyr) does not work when run as root by lightdm.service ([Bug to have optional dependency modified](https://bugs.archlinux.org/?string=52067)) ([Upstream Bug](https://bugs.launchpad.net/lightdm/+bug/852577)). If you don't already have it installed, Install [xorg-server](/index.php/Xorg#Installation "Xorg").
- `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
 To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling interactive passwordless login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). *Kodi* includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
 
  `/etc/lightdm/lightdm.conf` 
 ```
-[LightDM]
-minimum-vt=1
-run-directory=/run/lightdm
-
-[Seat:*]
-session-wrapper=/etc/lightdm/Xsession
+[Seat:seat0]
 pam-service=lightdm-autologin
 autologin-user=kodiuser
 autologin-user-timeout=0
-user-session=kodi
+user-session=Kodi
 ```
 
 #### Socket activation

@@ -15,7 +15,8 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Debugging a Zabbix agent](#Debugging_a_Zabbix_agent)
     *   [3.2 Monitor ArchLinux system updates](#Monitor_ArchLinux_system_updates)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Server setup
 
@@ -23,8 +24,7 @@
 
 #### Zabbix-server installation
 
-*   Install [zabbix-server-mysql](https://aur.archlinux.org/packages/zabbix-server-mysql/) if you want to use the [MariaDB](/index.php/MariaDB "MariaDB") as database backend.
-*   Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) if you want to use the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database backend.
+*   Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). This will include the necessary scripts in order to use MariaDB or postgresql. This wiki assumes you will be using MariaDB
 
 #### Zabbix-frontend installation
 
@@ -54,6 +54,7 @@ extension=bcmath.so
 extension=gd.so
 extension=sockets.so
 extension=mysqli.so
+extension=php_gettext.so
 post_max_size = 16M
 max_execution_time = 300
 max_input_time = 300
@@ -66,9 +67,9 @@ In this example, we create on localhost a MariaDB database called `zabbix` for t
 ```
 $ mysql -u root -p -e "create database zabbix"
 $ mysql -u root -p -e "grant all on zabbix.* to zabbix@localhost identified by 'test'"
-$ mysql -u zabbix -p zabbix < /usr/share/zabbix/database/schema.sql
-$ mysql -u zabbix -p zabbix < /usr/share/zabbix/database/images.sql
-$ mysql -u zabbix -p zabbix < /usr/share/zabbix/database/data.sql
+$ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/schema.sql
+$ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/images.sql
+$ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/data.sql
 
 ```
 
@@ -93,7 +94,7 @@ function str2mem($val) {
 
 ### Starting
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server` service.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server` service. If you are using MariaDB, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server-mysql` service.
 
 Finally you can access Zabbix via your local web server, e.g.: [http://127.0.0.1/zabbix](http://127.0.0.1/zabbix), finish the installation wizard and access the frontend the first time. The default username is `Admin` and password `zabbix`.
 
@@ -146,6 +147,10 @@ Here is an approach on how to monitor your ArchLinux clients for available syste
  `/etc/zabbix/zabbix_agentd.conf`  `Include=/etc/zabbix/zabbix_agentd.conf.d/*.conf`  `/etc/zabbix/zabbix_agentd.conf.d/archlinuxupdates.conf`  `UserParameter=archlinuxupdates,checkupdates | wc -l` 
 
 You have to restart `zabbix-agentd` to apply the new configuration. The keyword for the item you later use in the web frontend is `archlinuxupdates`. It returns an integer representing the count of available updates.
+
+## Troubleshooting
+
+While importing the databases, you might get an eror "Specified key was too long; max key length is 767 bytes". In order to solve this, you'll have to change the codepage configuration for your MariaDB database: [https://wiki.archlinux.org/index.php/MySQL#Using_UTF-8](https://wiki.archlinux.org/index.php/MySQL#Using_UTF-8)
 
 ## See also
 

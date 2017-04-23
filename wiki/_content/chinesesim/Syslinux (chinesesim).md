@@ -1,19 +1,24 @@
-Syslinux是一个优秀的系统启动加载器，可引导自硬盘、光盘和通过PXE的网络启动。支持fat, ext2, ext3, ext4 and btrfs文件系统.
+**翻译状态：** 本文是英文页面 [Syslinux](/index.php/Syslinux "Syslinux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=471645)可以查看翻译后英文页面的改动。
 
-**注意:** 从Syslinux 4起, Extlinux和Syslinux是指同一个东西的
+[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX")是一个优秀的启动加载器集合，可以从硬盘、光盘或通过 [PXE](/index.php/PXE "PXE") 的网络引导启动系统。支持的 [文件系统](/index.php/File_systems "File systems") 包括 [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4")和非压缩的单设备 [Btrfs](/index.php/Btrfs "Btrfs").
+
+**Warning:** Syslinux 6.03 中，有些文件系统的功能不被支持。例如 ext4 的启动卷不支持 "64bit"。详情请参考 [[1]](http://www.syslinux.org/wiki/index.php/Filesystem)。
+
+**Note:** Syslinux 本身只能访问其所在分区上的数据，通过 [#Chainloading](#Chainloading) 可以绕过这个限制。
 
 ## Contents
 
 *   [1 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-    *   [1.1 安装](#.E5.AE.89.E8.A3.85)
-        *   [1.1.1 自动完成安装](#.E8.87.AA.E5.8A.A8.E5.AE.8C.E6.88.90.E5.AE.89.E8.A3.85)
-        *   [1.1.2 手工完成安装](#.E6.89.8B.E5.B7.A5.E5.AE.8C.E6.88.90.E5.AE.89.E8.A3.85)
-            *   [1.1.2.1 MBR分区表](#MBR.E5.88.86.E5.8C.BA.E8.A1.A8)
-        *   [1.1.3 GUID Partition Table aka GPT](#GUID_Partition_Table_aka_GPT)
-        *   [1.1.4 重启](#.E9.87.8D.E5.90.AF)
+    *   [1.1 启动流程](#.E5.90.AF.E5.8A.A8.E6.B5.81.E7.A8.8B)
+    *   [1.2 在 BIOS 上安装](#.E5.9C.A8_BIOS_.E4.B8.8A.E5.AE.89.E8.A3.85)
+        *   [1.2.1 自动完成安装](#.E8.87.AA.E5.8A.A8.E5.AE.8C.E6.88.90.E5.AE.89.E8.A3.85)
+        *   [1.2.2 手工完成安装](#.E6.89.8B.E5.B7.A5.E5.AE.8C.E6.88.90.E5.AE.89.E8.A3.85)
+            *   [1.2.2.1 MBR分区表](#MBR.E5.88.86.E5.8C.BA.E8.A1.A8)
+        *   [1.2.3 GUID Partition Table aka GPT](#GUID_Partition_Table_aka_GPT)
+        *   [1.2.4 重启](#.E9.87.8D.E5.90.AF)
 *   [2 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
     *   [2.1 UEFI Syslinux 的局限性](#UEFI_Syslinux_.E7.9A.84.E5.B1.80.E9.99.90.E6.80.A7)
-    *   [2.2 安装](#.E5.AE.89.E8.A3.85_2)
+    *   [2.2 安装](#.E5.AE.89.E8.A3.85)
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 示例](#.E7.A4.BA.E4.BE.8B)
         *   [3.1.1 比较简单的 Syslinux 配置](#.E6.AF.94.E8.BE.83.E7.AE.80.E5.8D.95.E7.9A.84_Syslinux_.E9.85.8D.E7.BD.AE)
@@ -34,23 +39,30 @@ Syslinux是一个优秀的系统启动加载器，可引导自硬盘、光盘和
 
 ## BIOS 系统
 
-1.  电脑启动时，会先加载[MBR](/index.php/MBR "MBR") (`/usr/lib/syslinux/mbr.bin`)
-2.  MBR查找那些活动的分区（标注了可启动的）
-3.  找到这个分区后，卷启动记录程序（VBR=volume boot record）将被执行。如果是ext2/3/4和fat 12/16/32，`ldlinux.sys`开始的扇区是被写死进卷启动记录程序里的，卷启动记录程序将执行(`ldlinux.sys`)。当然，如果`ldlinux.sys` 的位置发生改变，syslinux将无法加载。如果是btrfs，因为文件不断移动导致`ldlinux.sys`扇区的位置不断变化，而让上面方法失效。从而使得整个syslinux需要被存储在文件系统之外。程序将被存储在卷启动记录程序之后。
-4.  当syslinux完全加载完毕，它将自动寻找一个配置文件，名字叫 `extlinux.conf` 或者`syslinux.cfg`.
-5.  找到之后，将加载整个配置文件，否则，将进入命令行窗口。
+### 启动流程
 
-### 安装
+1.  电脑启动时，BIOS 会先加载磁盘开始的 440 字节 [MBR](/index.php/MBR "MBR") 启动代码(`/usr/lib/syslinux/bios/mbr.bin` 或 `/usr/lib/syslinux/bios/gptmbr.bin`)
+2.  MBR 寻找活动分区（设置了 boot 标记的 MBR 分区），假设是 `/boot` 分区。
+3.  找到这个分区后， MBR 启动代码会执行卷启动记录程序（VBR=volume boot record）。对于 Syslinux 来说，VBR 就是 `/boot/syslinux/ldlinux.sys` 开始山区的代码， 由 `extlinux --install` 命令创建。
+4.  VBR 会加载剩余的 `ldlinux.sys`。`ldlinux.sys`开始扇区是被写死进卷启动记录程序里的。对于 btrfs 来说，因为文件不断移动导致`ldlinux.sys`扇区的位置不断变化，而让上面方法失效。从而使得整个syslinux需要被存储在文件系统之外。程序将被存储在卷启动记录程序之后。
+5.  `ldlinux.sys` 会接着加载 `/boot/syslinux/ldlinux.c32` 核心模块，这个模块包含因为文件大小限制，无法放入 `ldlinux.sys` 的代码。
+6.  当 syslinux 完全加载完毕，它将自动查找配置文件，配置文件名是 `/boot/syslinux/syslinux.cfg` 或 `/boot/syslinux/extlinux.conf`
+7.  找到之后，将加载整个配置文件，否则，将进入命令行窗口，显示 `boot:` 提示。
 
-从 [官方软件仓库](/index.php/Official_repositories "Official repositories") 中 [安装](/index.php/Pacman "Pacman") 软件包 [syslinux](https://www.archlinux.org/packages/?name=syslinux)。如果启动分区是 FAT，需要同时安装 [mtools](https://www.archlinux.org/packages/?name=mtools).
+### 在 BIOS 上安装
+
+[安装](/index.php/Pacman "Pacman") 软件包 [syslinux](https://www.archlinux.org/packages/?name=syslinux)。如果启动分区是 FAT，需要同时安装 [mtools](https://www.archlinux.org/packages/?name=mtools).
 
 **Note:**
 
-*   从 Syslinux 4 开始，Extlinux 和 Syslinux 已经统一，是同一个东西。
-*   UEFI support was added in the 6.x branch. See [UEFI Bootloaders#SYSLINUX](/index.php/UEFI_Bootloaders#SYSLINUX "UEFI Bootloaders") for more info.
-*   [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) is required for [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") support using the automated script.
+*   安装 [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) 之后自动脚本才能支持 [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table")。
+*   如果期待分区是 FAT，还需要安装 [mtools](https://www.archlinux.org/packages/?name=mtools).
+
+相关的软件包安装完成之后，还需要将启动加载器代码写入磁盘的对应扇区位置。有自动脚本和手动安装两种方式。
 
 #### 自动完成安装
+
+**Note:** The `syslinux-install_update` script is Arch specific, and is not provided/supported by Syslinux upstream. Please direct any bug reports specific to the script to the Arch Bug Tracker and not upstream.
 
 syslinux-install_update脚本将自动安装Syslinux, 复制COM32模块到`/boot/syslinux`, 设置启动标识，安装到MBR.可自动根据softraid处理MBR和 GPT磁盘。
 
@@ -360,7 +372,7 @@ LABEL windows
 
 ```
 
-*hd0 3* is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one. For more details about chainloading, see [[1]](http://syslinux.zytor.com/wiki/index.php/Comboot/chain.c32).
+*hd0 3* is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one. For more details about chainloading, see [[2]](http://syslinux.zytor.com/wiki/index.php/Comboot/chain.c32).
 
 If you have [grub2](/index.php/Grub2 "Grub2") installed in your boot partition, you can chainload it by using:
 

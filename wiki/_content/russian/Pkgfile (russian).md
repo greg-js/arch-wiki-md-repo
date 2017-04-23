@@ -73,15 +73,22 @@ abiword may be found in the following packages:
 ```
 function command-not-found
         set cmd $argv[2]
-        set pkgs (pkgfile -b -v $argv 2>/dev/null)
-        if test -n $pkgs
+        set pkgs (pkgfile -b -v $argv  2>/dev/null)
+        set pkgs_test (echo $pkgs[1] / xargs)   ## trim spaces and line feeds
+        if test -n $pkgs_test
                 echo "$cmd may be found in the following packages:"
-                echo "$pkgs"
+                echo -e $pkgs"
+"
                 return 0
+        else
+                echo "Command not found in any package."
         end
         return 127
 end
+
 ```
+
+В строке 4 `/` заменить на `|`
 
 ## Автоматические обновления
 

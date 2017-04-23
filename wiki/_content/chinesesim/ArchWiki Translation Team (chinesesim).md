@@ -1,6 +1,6 @@
 Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来的，这些页面是无数中文志愿者劳动的结晶。随着时间推移，有些页面因为没有及时维护，内容严重过时。而目前的翻译工作缺少组织，效率偏低。所以参照西班牙和意大利翻译组的做法，添加这个页面。
 
-如果你希望对Arch Wiki做贡献，参与Wiki建设，比如翻译英文页面和对已翻译过的中文页面进行维护，只需要编辑下面的[#页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)，添加相应的条目，并将自己加为相关页面的维护者。同时也欢迎为wiki做出过贡献的人将自己添加到[#贡献列表](#.E8.B4.A1.E7.8C.AE.E5.88.97.E8.A1.A8)。如果你在列表中还没有找到想要翻译的页面，可以自行添加。另外，如果因为时间原因无法再维护页面，请及时将自己从维护者列表中删除。
+如果你希望对Arch Wiki做贡献，参与Wiki建设，比如翻译英文页面和对已翻译过的中文页面进行维护，只需要编辑下面的[#页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)，添加相应的条目，并将自己加为相关页面的维护者。如果你在列表中还没有找到想要翻译的页面，可以自行添加。另外，如果因为时间原因无法再维护页面，请及时将自己从维护者列表中删除。
 
 ## Contents
 
@@ -147,16 +147,16 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)") | 翻译中 | _spaike97 | 无 |
 | [Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)") | 翻译中 | Jaurung | 完善中 |
 | [Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") | 翻译中 | qqbzg | 无 |
+| [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") | 完成 | Zyntuz | 2017-04-21同步 |
 | [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") | 完成 | Liuzhengyi | 勘误中 |
 | [LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)") | 完成 | qqbzg | 勘误中 |
 | [Local Mirror (简体中文)](/index.php/Local_Mirror_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Local Mirror (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [NetworkManager (简体中文)](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") | 翻译中 | Jack-lijing, leeking | 请优先翻译 |
-| [Network Time Protocol daemon (简体中文)](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)") | 未翻译 | 无 | 部分未翻译 |
+| [Network Time Protocol daemon (简体中文)](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)") | 完成 | sid | 完善中 |
 | [OpenOffice (简体中文)](/index.php/OpenOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "OpenOffice (简体中文)") | 过期 | 无 | 无 |
 | [Opera (简体中文)](/index.php/Opera_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Opera (简体中文)") | 未翻译 | Bobby | 请优先翻译此文 |
 | [Pacman GUI Frontends (简体中文)](/index.php/Pacman_GUI_Frontends_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman GUI Frontends (简体中文)") | 过期 | 无 | 无 |
 | [Pidgin (简体中文)](/index.php/Pidgin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pidgin (简体中文)") | 进行中 | Cael | 无 |
-| [Plasma (简体中文)](/index.php/Plasma_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Plasma (简体中文)") | 翻译中 | Zyntuz | 无 |
 | [ranger (简体中文)](/index.php/Ranger_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ranger (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [Raspberry Pi (简体中文)](/index.php/Raspberry_Pi_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Raspberry Pi (简体中文)") | 翻译中 | Mithrandir |
 | [Reporting bug guidelines (简体中文)](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)") | 翻译中 | Jason Zhang |
@@ -164,8 +164,8 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
 | [Systemd-timesyncd (简体中文)‎‎](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | Peter |
 | [Vim (简体中文)](/index.php/Vim_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Vim (简体中文)") | 完成 | Crupest | 无 |
-| [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译中 | Carl X. Su | 请优先翻译此文 |
-| [VMware (简体中文)](/index.php/VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VMware (简体中文)") | 翻译中 | Jason Zhang | 无 |
-| [Xfce (简体中文)](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)") | 翻译中 | ZaticWu | 请优先翻译 |
-| [Xmonad (简体中文)](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xmonad (简体中文)") | 未翻译 | Rns | 翻译中 |
+| [VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") | 翻译中 | 无 | 无 |
+| [VMware (简体中文)](/index.php/VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VMware (简体中文)") | 过期 | 无 | 无 |
+| [Xfce (简体中文)](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)") | 完成 | 无 | 无 |
+| [Xmonad (简体中文)](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xmonad (简体中文)") | 过期 | 无 | 无 |
 | [Xrandr (简体中文)](/index.php/Xrandr_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xrandr (简体中文)") | 过期 | 无 | 无 |

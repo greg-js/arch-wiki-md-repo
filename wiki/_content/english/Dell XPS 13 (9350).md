@@ -50,7 +50,8 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
     *   [9.2 Gestures](#Gestures)
 *   [10 Sound](#Sound)
-    *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
+    *   [10.1 Coil whine when using headphones](#Coil_whine_when_using_headphones)
+    *   [10.2 High noise floor when using headphones](#High_noise_floor_when_using_headphones)
 *   [11 Microphone](#Microphone)
 *   [12 TPM](#TPM)
     *   [12.1 TPM 2.0](#TPM_2.0)
@@ -263,7 +264,17 @@ Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for inform
 
 ## Sound
 
-### Hissing/Crackling noises when using headphones
+### Coil whine when using headphones
+
+When using TLP and audio is not playing but headphones are plugged in you may experience extremely annoying whine when using the computer. This happens after the audio adapter power saving is enabled. By default TLP sets the timeout on battery to 1 second which will cause whining almost as soon as sound is paused. To remedy this you can edit `/etc/default/tlp` to set a higher timeout or disable it:
+
+```
+SOUND_POWER_SAVE_ON_AC=300
+SOUND_POWER_SAVE_ON_BAT=300
+
+```
+
+### High noise floor when using headphones
 
 Some people reported white hissing/crackling noises when using headphones. To get rid of them you can run `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). Select your soundcard with F6 and set the headset-gain to 22 (3rd lever from the left) or use the `amixer` command:
 
