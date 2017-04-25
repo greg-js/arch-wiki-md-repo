@@ -150,7 +150,7 @@ You have to restart `zabbix-agentd` to apply the new configuration. The keyword 
 
 ## Troubleshooting
 
-While importing the databases, you might get an eror "Specified key was too long; max key length is 767 bytes". In order to solve this, you'll have to change the codepage configuration for your MariaDB database: [https://wiki.archlinux.org/index.php/MySQL#Using_UTF-8](https://wiki.archlinux.org/index.php/MySQL#Using_UTF-8)
+While importing the databases, you might get an eror "Specified key was too long; max key length is 767 bytes". In order to solve this, you will have to change the codepage configuration for your MariaDB database: [MySQL#Using_UTF-8](/index.php/MySQL#Using_UTF-8 "MySQL").
 
 ## See also
 

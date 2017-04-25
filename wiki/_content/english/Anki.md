@@ -12,11 +12,9 @@ This guide shows you how to install Anki.
 
 ## Installation
 
-If you prefer to use Anki version 1, install [anki12](https://aur.archlinux.org/packages/anki12/) from the [AUR](/index.php/AUR "AUR").
+If you prefer to use Anki version 1, [install](/index.php/Install "Install") the [anki12](https://aur.archlinux.org/packages/anki12/) package. If you prefer to use Anki version 2.0, [install](/index.php/Install "Install") the [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/).
 
-If you prefer to use Anki version 2.0, install [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/) from the [AUR](/index.php/AUR "AUR").
-
-**Note:** Both packages still rely on [QtWebKit for Qt 4](https://www.archlinux.org/todo/phasing-out-qtwebkit/).
+**Note:** Both packages still rely on [QtWebKit for Qt 4](https://www.archlinux.org/todo/phasing-out-qtwebkit/). The [anki](https://aur.archlinux.org/packages/anki/) package uses QTWebEngine but is in *alpha*.
 
 ## Tips and tricks
 

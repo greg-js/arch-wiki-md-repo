@@ -301,4 +301,4 @@ vmlinuz-linux root=/dev/daX rootfs=myfs rootflags=myrootflags \
 
 ```
 
-Please note that AMD microcode is loaded later in tbe boot process and read from disk by the kernel; thus, you can delete the ucode loading section. Finally, this method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort.
+Please note that AMD microcode is loaded later in the boot process and read from disk by the kernel; thus, you can delete the ucode loading section. Finally, this method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort.

@@ -5,60 +5,48 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 编辑配置](#.E7.BC.96.E8.BE.91.E9.85.8D.E7.BD.AE)
-    *   [3.2 自动化操作](#.E8.87.AA.E5.8A.A8.E5.8C.96.E6.93.8D.E4.BD.9C)
-        *   [3.2.1 基本方法](#.E5.9F.BA.E6.9C.AC.E6.96.B9.E6.B3.95)
-        *   [3.2.2 自动切换配置](#.E8.87.AA.E5.8A.A8.E5.88.87.E6.8D.A2.E9.85.8D.E7.BD.AE)
-    *   [3.3 配置文件示例](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E7.A4.BA.E4.BE.8B)
-        *   [3.3.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5)
-        *   [3.3.2 无线连接（WPA-PSK）](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5.EF.BC.88WPA-PSK.EF.BC.89)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
-    *   [4.2 Eduroam](#Eduroam)
-    *   [4.3 绑定](#.E7.BB.91.E5.AE.9A)
-        *   [4.3.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
-        *   [4.3.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
-    *   [4.4 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
-    *   [4.5 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
-        *   [4.5.1 范例](#.E8.8C.83.E4.BE.8B)
-            *   [4.5.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
-            *   [4.5.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
-            *   [4.5.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-*   [5 排错](#.E6.8E.92.E9.94.99)
-    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
-    *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
-    *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
-    *   [5.4 Connection timeout issues](#Connection_timeout_issues)
-    *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
-    *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
-    *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
-    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 编辑配置](#.E7.BC.96.E8.BE.91.E9.85.8D.E7.BD.AE)
+    *   [2.2 自动化操作](#.E8.87.AA.E5.8A.A8.E5.8C.96.E6.93.8D.E4.BD.9C)
+        *   [2.2.1 基本方法](#.E5.9F.BA.E6.9C.AC.E6.96.B9.E6.B3.95)
+        *   [2.2.2 自动切换配置](#.E8.87.AA.E5.8A.A8.E5.88.87.E6.8D.A2.E9.85.8D.E7.BD.AE)
+    *   [2.3 配置文件示例](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E7.A4.BA.E4.BE.8B)
+        *   [2.3.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5)
+        *   [2.3.2 无线连接（WPA-PSK）](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5.EF.BC.88WPA-PSK.EF.BC.89)
+*   [3 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [3.1 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
+    *   [3.2 Eduroam](#Eduroam)
+    *   [3.3 绑定](#.E7.BB.91.E5.AE.9A)
+        *   [3.3.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
+        *   [3.3.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
+    *   [3.4 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
+    *   [3.5 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
+        *   [3.5.1 范例](#.E8.8C.83.E4.BE.8B)
+            *   [3.5.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
+            *   [3.5.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
+            *   [3.5.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
+*   [4 排错](#.E6.8E.92.E9.94.99)
+    *   [4.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
+    *   [4.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
+    *   [4.3 DHCP timeout issues](#DHCP_timeout_issues)
+    *   [4.4 Connection timeout issues](#Connection_timeout_issues)
+    *   [4.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
+    *   [4.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
+    *   [4.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
+    *   [4.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
+*   [5 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-从[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")安装[netctl](https://www.archlinux.org/packages/?name=netctl) 软件包。 下表列出了 netctl 的可选依赖包
+[netctl](https://www.archlinux.org/packages/?name=netctl) 是 [base](https://www.archlinux.org/groups/x86_64/base/) 包组的成员，所以系统中应当已经安装了。否则可以手工[安装](/index.php/Install "Install")。 netctl 有一些用于自动连接的[#特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83)需要一些附加依赖包，详情参阅该章节。 下表列出 netctl 的其他可选依赖包：
 
-| Feature | Dependency | netctl program
-(if relevant) |
-| Automatic wireless connections | [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) | `netctl-auto` |
-| Automatic wired connections | [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) | `netctl-ifplugd` |
+| Feature | Dependency |
 | WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |
 | DHCP | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) or [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
 | Wifi menus | [dialog](https://www.archlinux.org/packages/?name=dialog) |
 | PPPoE | [ppp](https://www.archlinux.org/packages/?name=ppp) |
 
 **警告:** 请使用`systemctl --type=service`确保其它可以配置网络的服务都没有运行，同时使用多个网络配置工具会导致冲突。
-
-## 使用
-
-建议用户使用前阅读如下文档：
-
-*   [netctl](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.1.txt)
-*   [netctl.profile](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt)
-*   [netctl.special](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.special.7.txt)
 
 ## 配置
 

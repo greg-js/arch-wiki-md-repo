@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Dynamic_Kernel_Module_Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-28，点击[这里](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=455308)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Dynamic_Kernel_Module_Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-24，点击[这里](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=472594)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wikipedia:Dynamic Kernel Module Support"):
 
@@ -43,6 +43,7 @@
 *   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
     *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
     *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+*   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 
 *   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 

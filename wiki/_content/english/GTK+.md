@@ -35,10 +35,8 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [6.8 Thumbnail support for GTK+ 2 file dialog](#Thumbnail_support_for_GTK.2B_2_file_dialog)
     *   [6.9 Button/menu icons in some apps in GNOME Wayland session](#Button.2Fmenu_icons_in_some_apps_in_GNOME_Wayland_session)
     *   [6.10 Printers not shown in the GTK print dialog](#Printers_not_shown_in_the_GTK_print_dialog)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Enable typeahead search feature of file chooser widget](#Enable_typeahead_search_feature_of_file_chooser_widget)
-*   [8 Examples](#Examples)
-*   [9 See also](#See_also)
+*   [7 Examples](#Examples)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -576,12 +574,6 @@ Simply set them to 0 or remove the whole file to use GNOME defaults.
 ### Printers not shown in the GTK print dialog
 
 From GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
-
-## Tips and tricks
-
-### Enable typeahead search feature of file chooser widget
-
-As of [v3.16](https://bugzilla.gnome.org/show_bug.cgi?id=748672), the typeahead search feature of [file chooser widget](https://developer.gnome.org/gtk3/stable/GtkFileChooserDialog.html) (that is, to type the first few letters of a filename to quickly navigate to a file) is intentionally [disabled](https://mail.gnome.org/archives/commits-list/2015-January/msg05538.html) in gtk3 codebase. To re-enable this feature, patching is required. A patched gtk3 package is available in AUR as [gtk3-typeahead](https://aur.archlinux.org/packages/gtk3-typeahead/), install it if desired.
 
 ## Examples
 

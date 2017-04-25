@@ -21,7 +21,7 @@ The `diff` tool compares files line by line if you save its output you have got 
 4.  Make your changes in the `package.new` directory.
 5.  Run `diff -ura package.orig package.new --color` and check if the patch looks good.
 6.  Run `diff -ura package.orig package.new > package.patch` to create the patch.
-7.  Change into the `package.new` directory and apply the patch using `patch -p1 < ../package.patch`. Verify that the patch is working by building and installing the modified package with `makepkg -ei`.
+7.  Change into the `package.orig` directory and apply the patch using `patch -p1 < ../package.patch`. Verify that the patch is working by building and installing the modified package with `makepkg -ei`.
 
 **Note:** You can also create patches with [Git](/index.php/Git "Git") using `git diff`.
 

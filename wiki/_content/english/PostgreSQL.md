@@ -379,9 +379,7 @@ hhvm.extensions[pgsql] = pgsql.so
 
 ## Upgrading PostgreSQL
 
-Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5, 9.6`) requires some extra maintenance.
-
-**Tip:** If you already migrated from 9.2 to 9.3 and you want to migrate from 9.3 to 9.4, change versions before executing commands. If `/var/lib/postgres/data-9.2` already exists and you just copy-paste all commands, `pg_upgrade` will complain about the wrong version of the database, because your version 9.3 database will be stored in `/var/lib/postgres/data-9.2/data/`.
+Upgrading major PostgreSQL versions (i.e. from `9.*x*` to `9.*y*`) requires some extra maintenance.
 
 **Note:** Official PostgreSQL [upgrade documentation](http://www.postgresql.org/docs/current/static/upgrading.html) should be followed.
 
@@ -394,7 +392,7 @@ IgnorePkg = postgresql postgresql-libs
 
 ```
 
-This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades (e.g. 9.0.3 to 9.0.4) are safe to perform. However, if you do an accidental upgrade to a different major version (e.g. 9.0.x to 9.1.x), you might not be able to access any of your data. Always check the PostgreSQL home page ([http://www.postgresql.org/](http://www.postgresql.org/)) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](http://www.postgresql.org/support/versioning).
+This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades (e.g. 9.0.3 to 9.0.4) are safe to perform. However, if you do an accidental upgrade to a different major version (e.g. 9.0.x to 9.1.x), you might not be able to access any of your data. Always check the [PostgreSQL home page](http://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](http://www.postgresql.org/support/versioning).
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 

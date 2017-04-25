@@ -89,7 +89,7 @@ Wireless worked with no additional effort on my part. This is fairly important a
 
 ### Audio
 
-Audio using [ALSA](/index.php/ALSA "ALSA") worked immediately after install. I have not needed [PulseAudio](/index.php/PulseAudio "PulseAudio") yet so it remains untested.
+Audio using [ALSA](/index.php/ALSA "ALSA") worked immediately after install.
 
 ### Keyboard
 

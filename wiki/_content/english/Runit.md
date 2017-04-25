@@ -5,6 +5,8 @@ See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Using runit alongside systemd](#Using_runit_alongside_systemd)
+    *   [1.2 Replacing init with runit-init](#Replacing_init_with_runit-init)
 *   [2 Using runit](#Using_runit)
     *   [2.1 The Tools](#The_Tools)
     *   [2.2 The Extras](#The_Extras)
@@ -20,18 +22,21 @@ See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description
 
 ## Installation
 
-To replace init with runit-init
+### Using runit alongside systemd
+
+It is possible to use runit as a simple process supervisor alongside the default Arch Linux's init system ([systemd](/index.php/Systemd "Systemd")). For this purpose, install [runit-systemd](https://aur.archlinux.org/packages/runit-systemd/), which provides a barebones runit installation without any stage scripts (`/etc/runit/{1..3}`) or runlevels (`/etc/runit/runsvdir/*`), which are generally only useful when using runit as the init system. The package provides a directory (`/var/service`) in which the desired runit services can be put and a systemd unit which starts runit monitoring that directory. Only the services configured in `/var/service` will be supervised by runit. Just [enable and start](/index.php/Systemd#Using_units "Systemd") `runit.service`.
+
+The package [arch-runit-services](https://aur.archlinux.org/packages/arch-runit-services/) provides some example services that can be used. This package puts the services in `/etc/sv`. The services inside can be symlinked to `/var/service` for them to be used.
+
+### Replacing init with runit-init
+
+**Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd") as the init system. [[1]](https://lists.archlinux.org/pipermail/arch-general/2015-July/039460.html) When using a different init system, please mention so in support requests.
 
 *   install sysvinit-tools and sysvinit (say Yes to replacing systemd-sysvcompat)
 *   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/) and [runit-run](https://aur.archlinux.org/packages/runit-run/) from the [AUR](/index.php/AUR "AUR")
 *   choose/create a default runlevel (see Run Levels)
 *   add init=/sbin/runit-init to your bootloader's kernel command line
 *   reboot
-
-If you just want to get your feet wet and not replace init just yet, runit-musl can be installed side-by-side with the regular Arch systemd PID1, providing just process supervision of those services you put in `/var/service`.
-
-*   install [runit-musl](https://aur.archlinux.org/packages/runit-musl/) and [runit-services](https://aur.archlinux.org/packages/runit-services/) from the [AUR](/index.php/AUR "AUR")
-*   start runsvdir /var/service using your current init scheme (inittab/rc.local/systemd, whatever)
 
 The [runit-services](https://aur.archlinux.org/packages/runit-services/) package puts services in `/etc/sv` and uses `/usr/bin/rsvlog` as a logger (it's a shell script, take a look and modify to taste, improvements welcome).
 

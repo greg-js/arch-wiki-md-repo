@@ -104,23 +104,16 @@ Once Nagios is configured, it is time to configure the webserver.
 
 ### Apache Configuration
 
-Edit /etc/httpd/conf/httpd.conf, add the following to the end of the file:
+Edit `/etc/httpd/conf/httpd.conf`, add the following to the end of the file:
 
 ```
 LoadModule php5_module modules/libphp5.so
-
- **Note:** cgi scripts failed for me until i uncommented
-LoadModule cgi_module modules/mod_cgi.so
-
-1.  Nagios
-
 Include "conf/extra/nagios.conf"
-
-1.  PHP
-
 Include "conf/extra/php5_module.conf"
-
 ```
+
+**Note:** For CGI scripts to work, you'll need to uncomment the following.
+ `LoadModule cgi_module modules/mod_cgi.so` 
 
 Copy configure file:
 
@@ -242,6 +235,13 @@ Start/Restart apache:
 
 ```
 # systemctl restart httpd
+
+```
+
+Or Start/Restart nginx:
+
+```
+# systemctl restart nginx
 
 ```
 

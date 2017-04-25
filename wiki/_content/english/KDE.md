@@ -95,7 +95,7 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 
 To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of Plasma.
 
-If you need language files, install `kde-l10n-***yourlanguagehere***` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see the [kde-l10n split package](https://www.archlinux.org/packages/extra/any/kde-l10n/).
+Most KDE packages ship their own translations. The exception is KDE4-based packages from kde-applications. If you need language files for these packages, install `kde-l10n-***yourlanguagehere***` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see the [kde-l10n split package](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
 ### Unstable releases
 

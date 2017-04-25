@@ -26,7 +26,8 @@
     *   [5.1 Self-signed certificate](#Self-signed_certificate)
     *   [5.2 Certificate authority](#Certificate_authority)
         *   [5.2.1 Makefile](#Makefile)
-*   [6 See also](#See_also)
+*   [6 libssl.so.1.0.0 error](#libssl.so.1.0.0_error)
+*   [7 See also](#See_also)
 
 ## SSL introduction
 
@@ -387,6 +388,37 @@ To revoke certificates:
 
 ```
 make revoke item=**cert.pem**
+
+```
+
+## libssl.so.1.0.0 error
+
+if your system get the error above after update to 1.1.0.e-1,
+
+```
+libssl.so.1.0.0: cannot open shared object file: No such file or directory
+
+```
+
+you cannot do the pacman -Syu because the pacman NEED this libs, so just do the soft links above
+
+```
+ln -s /usr/lib/libcrypto.so.1.1 /usr/lib/libcrypto.so.1.0.0
+ln -s /usr/lib/libssl.so.1.1 /usr/lib/libssl.so.1.0.0
+
+```
+
+and do the update
+
+```
+pacman -Syu
+
+```
+
+or just the openssl1-0 (with force because you already have the files, but dont worry)
+
+```
+pacman -S openssl-1.0 --force
 
 ```
 

@@ -19,6 +19,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [3 Issues](#Issues)
     *   [3.1 Audio](#Audio)
     *   [3.2 Touchpad](#Touchpad)
+    *   [3.3 Multimedia keys](#Multimedia_keys)
 
 ## Hardware info
 
@@ -81,3 +82,26 @@ In best case scenario just one speaker is going to work. There's a bug for that:
 When using synaptics X11 drivers touchpad works but fails to detect palm, which causes problems when typing. Dell XPS13 had similar issue and they fixed it, but HP is not going to do that. Refer to [https://github.com/advancingu/XPS13Linux/issues/3](https://github.com/advancingu/XPS13Linux/issues/3)
 
 When using libinput drivers palm detection works out of the box.
+
+### Multimedia keys
+
+While the keyboard backlight (f5) and airplane mode (f12) keys work without any intervention, the rest of the fn keys will be nonfunctional out of the box (unless your DE/WM provides this functionality). In the case that it doesn't, this can be remedied with [acpid](/index.php/Acpid "Acpid"), allowing the screen brightness, volume, and multimedia back/play/forward keys to work.
+
+Hardware names that the acpi event handler recognizes for these buttons are as follows:
+
+ `$ journalctl -f` 
+```
+... ACPI group/action undefined: **video/brightnessdown** / BRTDN
+... ACPI group/action undefined: **video/brightnessup** / BRTUP
+... ACPI group/action undefined: **button/mute** / MUTE
+... ACPI group/action undefined: **button/volumedown** / VOLDN
+... ACPI group/action undefined: **button/volumeup** / VOLUP
+... ACPI group/action undefined: **cd/prev** / CDPREV
+... ACPI group/action undefined: **cd/play** / CDPLAY
+... ACPI group/action undefined: **cd/next** / CDNEXT
+
+```
+
+Following the information and examples provided in [acpid#Tips_and_tricks](/index.php/Acpid#Tips_and_tricks "Acpid"), handlers can be put in `/etc/acpi/events/` to perform actions on all of these.
+
+Alternatively, a quick solution to get screen backlight control working with the media keys is to use [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager), selecting `Handle display brightness keys` in the settings.

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=474777)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=474987)可以查看翻译后英文页面的改动。
 
 KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -97,7 +97,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
 
 你能够通过安装 [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) 组或者安装 [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) 元软件包来安装全部的 KDE Applications（应用）。请注意这仅仅安装applications（应用），并不会安装 Plasma 桌面。
 
-如果你需要语言文件，请安装语言包 `kde-l10n-**你的语言**` (例：[kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn) 。你可以在[这里](https://www.archlinux.org/packages/extra/any/kde-l10n/)查阅所有可用的语言)
+大多数 KDE 的软件包都自带翻译。 只有 kde-applications 内基于 KDE4 的软件包是例外。 如果您需要这些软件包的语言文件，请安装 `kde-l10n-**你的语言**` 语言包 (例：[kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn) 。你可以在[这里](https://www.archlinux.org/packages/extra/any/kde-l10n/)查阅所有可用的语言)
 
 ### 不稳定版本
 

@@ -289,14 +289,14 @@ VPN_ADDR=XXX
 IFACE=wlan0
 
 function getIP(){
-	/sbin/ifconfig $1 |grep "inet "|awk '{print $2}'
+	/sbin/ip addr show $1 | grep "inet " | awk '{print $2}' | sed 's:/.*::'       
 }
 
 function getGateWay(){
-	/sbin/route -n |grep -m 1 "^0\.0\.0\.0" |awk '{print $2}'
+	/sbin/route -n | grep -m 1 "^0\.0\.0\.0" | awk '{print $2}'
 }
 function getVPNGateWay(){
-	/sbin/route -n |grep -m 1 "$VPN_ADDR" |awk '{print $2}'
+	/sbin/route -n | grep -m 1 "$VPN_ADDR" | awk '{print $2}'
 }
 
 GW_ADDR=$(getGateWay)  

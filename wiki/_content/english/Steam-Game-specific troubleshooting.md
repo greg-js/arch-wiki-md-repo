@@ -121,6 +121,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [43.1 Japanese text invisible](#Japanese_text_invisible)
 *   [44 Hyper Light Drifter](#Hyper_Light_Drifter)
     *   [44.1 The controller doesn't work](#The_controller_doesn.27t_work)
+    *   [44.2 Missing libcurl.so.4 or version `CURL_OPENSSL_3' not found](#Missing_libcurl.so.4_or_version_.60CURL_OPENSSL_3.27_not_found)
 *   [45 The Impossible Game](#The_Impossible_Game)
     *   [45.1 Dependencies](#Dependencies_17)
 *   [46 The Inner World](#The_Inner_World)
@@ -1015,10 +1016,21 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 
 ### The controller doesn't work
 
-Install lib32-sdl2 and change the game launch options in Steam to:
+Install [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2) and change the game launch options in Steam to:
 
 ```
  LD_PRELOAD=libSDL2.so %command%
+
+```
+
+### Missing libcurl.so.4 or version `CURL_OPENSSL_3' not found
+
+Install [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat).
+
+Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and use the following:
+
+```
+ LD_PRELOAD=libcurl.so.3 %command%
 
 ```
 

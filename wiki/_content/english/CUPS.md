@@ -20,9 +20,10 @@
     *   [5.2 Web interface](#Web_interface)
     *   [5.3 GUI applications](#GUI_applications)
 *   [6 Configuration](#Configuration)
-    *   [6.1 cups-browsed](#cups-browsed)
-    *   [6.2 Printer sharing](#Printer_sharing)
-    *   [6.3 Without a local CUPS server](#Without_a_local_CUPS_server)
+    *   [6.1 Polkit configuration](#Polkit_configuration)
+    *   [6.2 cups-browsed](#cups-browsed)
+    *   [6.3 Printer sharing](#Printer_sharing)
+    *   [6.4 Without a local CUPS server](#Without_a_local_CUPS_server)
 *   [7 Troubleshooting](#Troubleshooting)
 *   [8 See also](#See_also)
 
@@ -317,6 +318,22 @@ The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cup
 [cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](http://man7.org/linux/man-pages/man5/papersize.5.html).
 
 By default, all logs are sent to files in `/var/log/cups/`. By changing the values of the `AccessLog`, `ErrorLog`, and `PageLog` directives in `/etc/cups/cups-files.conf` to `syslog`, CUPS can be made to log to the [systemd journal](/index.php/Systemd_journal "Systemd journal") instead. See [the fedora wiki page](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) for information on the original proposed change.
+
+### Polkit configuration
+
+If prompts you for the admin password every time you use a GUI to configure a printer, you may need to allow printer administration rights in as well.
+
+Here's an example that allows members of the wheel group to administer printers without a password:
+
+ `/etc/polkit-1/rules.d/49-allow-passwordless-printer-admin.rules` 
+```
+polkit.addRule(function(action, subject) { 
+    if (action.id == "org.opensuse.cupspkhelper.mechanism.all-edit" && 
+        subject.isInGroup("wheel")){ 
+        return polkit.Result.YES; 
+    } 
+});
+```
 
 ### cups-browsed
 

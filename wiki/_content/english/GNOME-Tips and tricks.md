@@ -67,9 +67,9 @@ The file is regenerated regularly so do not comment the file. The uncommented li
 
 ### Keyboard switch with command
 
-To have keyboard shortcut **Alt** + **Shift** switch keyboards:
+To change the default keyboard shortcut **Win** + **Space** to another hot key:
 
-Open Gnome-Tweak-Tool (or Keyboard Settings, in GNOME 3.16) and set *Typing* > *Modifiers-only input sources* > *select Alt-shift*. For more information see also the forum [thread](https://bbs.archlinux.org/viewtopic.php?id=152127).
+For example to change to *Alt*+*Shift*: open Gnome-Tweak-Tool (or Keyboard Settings, in GNOME 3.16) and set *Typing* > *Modifiers-only input sources* > *select Alt-shift*. For more information see also the forum [thread](https://bbs.archlinux.org/viewtopic.php?id=152127).
 
 ### XkbOptions keyboard options
 

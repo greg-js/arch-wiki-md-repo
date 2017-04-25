@@ -6,6 +6,7 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | Smartcard Reader | Yes |
+| Fingerprint Reader | No |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T470s laptop.
 
@@ -36,6 +37,8 @@ Installation with modern media puts you on Kernel 4.10.10-1, however [this note]
 As advised in [Intel graphics#Enable early KMS](/index.php/Intel_graphics#Enable_early_KMS "Intel graphics") and [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") you can add i915 to your modules.
 
 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") with Kaby Lake seems to work fine via va-api.
+
+On [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) via [wayland](/index.php/Wayland "Wayland"), suspend-resume results in the fan holding at 100% without ever spinning down. Alternatively if you use [xorg](/index.php/Xorg "Xorg") this doesn't seem to happen.
 
 ## mobile broadband
 

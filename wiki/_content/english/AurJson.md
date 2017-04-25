@@ -1,4 +1,4 @@
-The **AurJson** interface is a lightweight remote interface for the [AUR](/index.php/AUR "AUR"). It utilizes HTTP GET queries as the request format, and [json](http://www.json.org/) as the response data exchange format.
+The [AurJson](https://aur.archlinux.org/rpc.php) interface is a lightweight [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call "w:Remote procedure call") interface for the [AUR](/index.php/AUR "AUR"). It utilizes HTTP GET queries as the request format, and [JSON](http://www.json.org/) as the response data exchange format.
 
 **Note:** This article describes v5 of the RPC Interface API, as released with AUR v4.2.0 on February 15, 2016.
 
@@ -18,16 +18,9 @@ The **AurJson** interface is a lightweight remote interface for the [AUR](/index
 
 ## API usage
 
-The [RPC interface](https://aur.archlinux.org/rpc.php) has two major query types:
-
-*   search
-*   info
-
-Data is returned in json encapsulated format.
-
 ### Query types
 
-As noted above, there are two query types:
+There are two query types:
 
 *   search
 *   info
@@ -37,30 +30,30 @@ As noted above, there are two query types:
 Package searches can be performed by issuing requests of the form:
 
 ```
-/rpc/?v=5&type=search&by=field&arg=keywords
+/rpc/?v=5&type=search&by=*field*&arg=*keywords*
 
 ```
 
-where ***keywords*** is the search argument and ***field*** is one of the following values:
+where `*keywords*` is the search argument and `*field*` is one of the following values:
 
-*   *name* (search by package name only)
-*   *name-desc* (search by package name and description)
-*   *maintainer* (search by package maintainer)
+*   `name` (search by package name only)
+*   `name-desc` (search by package name and description)
+*   `maintainer` (search by package maintainer)
 
-The ***by*** parameter can be skipped and defaults to *name-desc*. Possible return types are ***search*** and ***error***.
+The `by` parameter can be skipped and defaults to `name-desc`. Possible return types are `search` and `error`.
 
 If a maintainer search is performed and the search argument is left empty, a list of orphan packages is returned.
 
 Examples:
 
-Search for *foobar*:
+Search for `foobar`:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar
 
 ```
 
-Search for packages maintained by *john*:
+Search for packages maintained by `john`:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=search&by=maintainer&arg=john
@@ -79,24 +72,24 @@ https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar&callback=jsonp11922446
 Package information can be performed by issuing requests of the form:
 
 ```
-/rpc/?v=5&type=info&arg[]=pkg1&arg[]=pkg2&…
+/rpc/?v=5&type=info&arg[]=*pkg1*&arg[]=*pkg2*&…
 
 ```
 
-where ***pkg1***, ***pkg2***, … are the exact matches of names of packages to retrieve package details for.
+where `*pkg1*`, `*pkg2*`, … are the exact matches of names of packages to retrieve package details for.
 
-Possible return types are ***multiinfo*** and ***error***.
+Possible return types are `multiinfo` and `error`.
 
 Examples:
 
-Info for single *foobar* package:
+Info for single `foobar` package:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar
 
 ```
 
-Info for multiple *foobar* and *bar* packages:
+Info for multiple `foobar` and `bar` packages:
 
 ```
 https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
@@ -110,26 +103,23 @@ The return payload is of one format, and currently has three main types. The res
 The format of the return payload is:
 
 ```
-{"version":5,"type":"ReturnType","resultcount":0,"results":ReturnData}
+{"version":5,"type":*ReturnType*,"resultcount":0,"results":*ReturnData*}
 
 ```
 
-ReturnType is a string, and the value is one of:
+`*ReturnType*` is a string, and the value is one of:
 
-```
-* search
-* multiinfo
-* error
+*   `search`
+*   `multiinfo`
+*   `error`
 
-```
-
-The type of ReturnData is an array of dictionary objects for the ***search*** and ***multiinfo*** ReturnType, and an empty array for ***error*** ReturnType.
+The type of `*ReturnData*` is an array of dictionary objects for the `search` and `multiinfo` `*ReturnType*`, and an empty array for `error` `*ReturnType*`.
 
 #### error
 
-The error type has an error response string as the return value. An error response can be returned from either a **search** or an **info** query type.
+The error type has an error response string as the return value. An error response can be returned from either a `search` or an `info` query type.
 
-Example of ReturnType ***error***:
+Example of `*ReturnType*` `error`:
 
 ```
 {"version":5,"type":"error","resultcount":0,"results":[],"error":"Incorrect by field specified."}
@@ -140,7 +130,7 @@ Example of ReturnType ***error***:
 
 The search type is the result returned from a search request operation. **The actual results of a search operation will be the same as an info request for each result. See the info section.**
 
-Example of ReturnType ***search***:
+Example of `*ReturnType*` `search`:
 
 ```
 {"version":5,"type":"search","resultcount":2,"results":[{"ID":206807,"Name":"cower-git", ...}]}
@@ -151,7 +141,7 @@ Example of ReturnType ***search***:
 
 The info type is the result returned from an info request operation.
 
-Example of ReturnType ***multiinfo***:
+Example of `*ReturnType*` `multiinfo`:
 
 ```
  {

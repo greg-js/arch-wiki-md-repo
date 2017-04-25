@@ -388,7 +388,7 @@ Qt5 may detect that you have a HiDPI display and if so the video will be played 
 
 The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be installed to increase the font size of the interface. While not perfect, it does improve usability.
 
-**Note:** The skin must be downloaded to `~/.local/share/Steam/skins`, not `~/.steam/skins/` as the README says.
+**Note:** The README for the HiDPI skin lists several possible locations for where to place the skin. The correct folder out of these can be identified by the presence of a file named `skins_readme.txt`.
 
 [MetroSkin Unofficial Patch](http://steamcommunity.com/groups/metroskin/discussions/0/517142253861033946/) also helps with HiDPI on Steam with Linux.
 

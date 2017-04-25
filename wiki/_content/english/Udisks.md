@@ -108,6 +108,15 @@ After, you need to create /media directory:
 
 ```
 
+If udiskie has been installed, run:
+
+```
+# udiskie
+
+```
+
+in terminal to mount the media
+
 ### Mount loop devices
 
 To easily mount ISO images, use the following command:

@@ -66,6 +66,7 @@ Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed 
 
 ```
 unixsocket /var/lib/redis/redis.sock
+unixsocketperm 700
 port 0
 timeout 0
 

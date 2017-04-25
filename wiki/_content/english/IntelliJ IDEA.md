@@ -2,4 +2,4 @@
 
 ## Installation
 
-The subscription version, IntelliJ IDEA Ultimate, is available through the AUR as [intellij-idea-ultimate-edition](https://aur.archlinux.org/packages/intellij-idea-ultimate-edition/). Community Edition is available as [intellij-idea-ce](https://aur.archlinux.org/packages/intellij-idea-ce/).
+Install [intellij-idea-community-edition](https://www.archlinux.org/packages/?name=intellij-idea-community-edition). The subscription version, IntelliJ IDEA Ultimate Edition, is available through the AUR as [intellij-idea-ultimate-edition](https://aur.archlinux.org/packages/intellij-idea-ultimate-edition/).

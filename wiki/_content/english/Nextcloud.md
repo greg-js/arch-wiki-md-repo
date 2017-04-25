@@ -165,12 +165,38 @@ Create an empty directory to hold the cloud-specific config file:
 In `/etc/nginx/nginx.conf`, add the following lines under the "http" section:
 
 ```
+http {
+...
+...
 server_names_hash_bucket_size 64;
 include conf.d/*.conf;
+}
 
 ```
 
 Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/11/admin_manual/installation/nginx_nextcloud_9x.html). You will likely have to change the `root` location, as the arch package installs to `/usr/share/webapps/` instead of `/var/www/`.
+
+Addtitionally, you should change
+
+```
+upstream php-handler {
+   server 127.0.0.1:9000;
+   #server unix:/var/run/php5-fpm.sock;
+}
+
+```
+
+to
+
+```
+upstream php-handler {
+   #server 127.0.0.1:9000;
+   server unix:/run/php-fpm/php-fpm.sock;
+}
+
+```
+
+in the `/etc/nginx/conf.d/nextcloud.conf` file.
 
 From this point on, it is recommended to obtain a secure-certificates using [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt"), see [#Security Hardening](#Security_Hardening).
 
