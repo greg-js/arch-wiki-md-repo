@@ -9,7 +9,6 @@
 *   [1 Utilities](#Utilities)
     *   [1.1 Partitioning tools](#Partitioning_tools)
     *   [1.2 Mount tools](#Mount_tools)
-        *   [1.2.1 Udisks](#Udisks)
     *   [1.3 Terminal emulators](#Terminal_emulators)
         *   [1.3.1 VTE-based](#VTE-based)
         *   [1.3.2 KMS-based](#KMS-based)
@@ -51,6 +50,8 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 ### Mount tools
 
+See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
+
 *   **9mount** — Mount 9p filesystems.
 
 	[http://sqweek.net/code/9mount/](http://sqweek.net/code/9mount/) || [9mount](https://aur.archlinux.org/packages/9mount/)
@@ -82,20 +83,6 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 *   **zulucrypt** — A GUI frontend for cryptsetup to create, manage and mount encrypted volumes; supports encfs as well
 
 	[https://mhogomchungu.github.io/zuluCrypt/](https://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
-
-#### Udisks
-
-*   **bashmount** — A bash script to mount and manage removable media as a regular user with *udisks2*
-
-	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
-
-*   **udiskie** — Automatic disk mounting service using *udisks2*
-
-	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
-
-*   **udisksvm** — GUI *udisks* wrapper for removable media
-
-	[https://bbs.archlinux.org/viewtopic.php?id=112397](https://bbs.archlinux.org/viewtopic.php?id=112397) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
 
 ### Terminal emulators
 

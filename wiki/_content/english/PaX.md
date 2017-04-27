@@ -59,13 +59,7 @@ Extended attributes can be used to exclude executables from one or more of the f
 
 ### Using the paxd daemon
 
-The [paxd](https://www.archlinux.org/packages/?name=paxd) package provided in the official repositories includes a daemon that automatically applies PaX exceptions from `/etc/paxd.conf` whenever an executable is updated or the configuration file is modified. This is the officially supported way of applying these exceptions for binaries provided by packages. To start / enable the daemon:
-
-```
-# systemctl start paxd
-# systemctl enable paxd
-
-```
+The [paxd](https://www.archlinux.org/packages/?name=paxd) package provided in the official repositories includes a daemon that automatically applies PaX exceptions from `/etc/paxd.conf` whenever an executable is updated or the configuration file is modified. This is the officially supported way of applying these exceptions for binaries provided by packages. [Start/enable](/index.php/Start/enable "Start/enable") the `paxd.service`.
 
 #### User exceptions
 

@@ -15,9 +15,8 @@ There are various alternative kernels available for Arch Linux in addition to th
         *   [2.2.1 -ck](#-ck)
         *   [2.2.2 -rt](#-rt)
         *   [2.2.3 -bld](#-bld)
-        *   [2.2.4 -grsecurity](#-grsecurity)
-        *   [2.2.5 Tiny-Patches](#Tiny-Patches)
-        *   [2.2.6 -pf](#-pf)
+        *   [2.2.4 Tiny-Patches](#Tiny-Patches)
+        *   [2.2.5 -pf](#-pf)
     *   [2.3 Individual patches](#Individual_patches)
         *   [2.3.1 Reiser4](#Reiser4)
         *   [2.3.2 fbsplash](#fbsplash)
@@ -37,10 +36,6 @@ There are various alternative kernels available for Arch Linux in addition to th
 	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
 	Long term support (LTS) Linux kernel and modules from the *core* repository.
-
-	[linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)
-
-	The Linux Kernel and modules with [Grsecurity Patchset](/index.php/Grsecurity_Patchset "Grsecurity Patchset") and PaX patches for increased security.
 
 	[linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
@@ -169,12 +164,6 @@ patch at [https://www.kernel.org/pub/linux/kernel/projects/rt/](https://www.kern
 BLD is best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
 
 Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/)
-
-#### -grsecurity
-
-[Grsecurity](/index.php/Grsecurity "Grsecurity") is a security focused patchset. It adds numerous security related features such as Role-Based Access Control and utilizes features of the PaX project. It can be used on a desktop but a public server would receive the greatest benefit. Some applications are incompatible with the additional security measures implemented by this patchset. If this occurs, consider using a lower security level.
-
-The -grsecurity patches can be found at [https://grsecurity.net](https://grsecurity.net)
 
 #### Tiny-Patches
 

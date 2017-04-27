@@ -7,7 +7,8 @@
 *   [3 Generating a secret key file](#Generating_a_secret_key_file)
 *   [4 Setting up your OTP-generator](#Setting_up_your_OTP-generator)
 *   [5 Testing](#Testing)
-*   [6 Desktop logins](#Desktop_logins)
+*   [6 Storage location](#Storage_location)
+*   [7 Desktop logins](#Desktop_logins)
 
 ## Installation
 
@@ -108,6 +109,29 @@ SSH to your host from another machine and/or from another terminal window:
  Verification code: <generated/backup-code>
  Password: <password>
  $
+
+```
+
+## Storage location
+
+If you want to change the secret key files' storage path, you can use the flag `--secret`:
+
+```
+$ google-authenticator --secret="/**PATH_FOLDER**/**USERNAME**"
+
+```
+
+Then, don't forget to change the location path for PAM, in `/etc/pam.d/sshd`:
+
+ `/etc/pam.d/sshd`  `auth required pam_google_authenticator.so user=root secret=/**PATH_FOLDER**/${USER}` 
+
+`user=root` is used to force PAM to search the file using root user.
+
+Also, take care with the permissions of the secret key file. Indeed, the file **must** be only-readable by the owner (chmod: `400`). Here, the owner is root.
+
+```
+$ chown root.root /**PATH_FILE**/**SECRET_KEY_FILES**
+  chmod 400 /**PATH_FILE**/**SECRET_KEY_FILES**
 
 ```
 

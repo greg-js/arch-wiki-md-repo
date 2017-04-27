@@ -84,7 +84,7 @@ Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install
 
 #### Enable support to run unprivileged contains (optional)
 
-User wishing to run *unprivileged* containers need to complete several additional setup steps.
+Users wishing to run *unprivileged* containers need to complete several additional setup steps.
 
 Firstly, a custom kernel is required that has support for User namespaces. This option is available under **General setup>Namespaces support>User namespace** from an nconfig, or by simply modifying the kernel [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with the following line inserted prior to the "make prepare" line:
 

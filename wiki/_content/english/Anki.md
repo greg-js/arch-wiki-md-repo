@@ -6,27 +6,27 @@ This guide shows you how to install Anki.
 
 *   [1 Installation](#Installation)
 *   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Kanji Stroke Support](#Kanji_Stroke_Support)
-    *   [2.2 Asian Language Support](#Asian_Language_Support)
+    *   [2.1 Kanji stroke support](#Kanji_stroke_support)
+    *   [2.2 Asian language support](#Asian_language_support)
 *   [3 See also](#See_also)
 
 ## Installation
 
-If you prefer to use Anki version 1, [install](/index.php/Install "Install") the [anki12](https://aur.archlinux.org/packages/anki12/) package. If you prefer to use Anki version 2.0, [install](/index.php/Install "Install") the [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/).
+For the latest version of *Anki* [install](/index.php/Install "Install") the [anki](https://aur.archlinux.org/packages/anki/) package.
 
-**Note:** Both packages still rely on [QtWebKit for Qt 4](https://www.archlinux.org/todo/phasing-out-qtwebkit/). The [anki](https://aur.archlinux.org/packages/anki/) package uses QTWebEngine but is in *alpha*.
+If you prefer to use Anki version 1, [install](/index.php/Install "Install") the [anki12](https://aur.archlinux.org/packages/anki12/) package. If you prefer to use Anki version 2.0, [install](/index.php/Install "Install") the [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/) package.
+
+**Note:** Both version 1 and 2.0 still rely on [QtWebKit for Qt 4](https://www.archlinux.org/todo/phasing-out-qtwebkit/). The [anki](https://aur.archlinux.org/packages/anki/) package uses QTWebEngine but is in *alpha*.
 
 ## Tips and tricks
 
-### Kanji Stroke Support
+### Kanji stroke support
 
-Install [kanjistrokeorders-ttf](https://aur.archlinux.org/packages/kanjistrokeorders-ttf/) from the [AUR](/index.php/AUR "AUR") if you want to display kanji stroke orders in Anki. You have to select this font inside Anki in your deck properties after installation.
+[Install](/index.php/Install "Install") the [kanjistrokeorders-ttf](https://aur.archlinux.org/packages/kanjistrokeorders-ttf/) package if you want to display kanji stroke orders in Anki. You have to select this font inside Anki in your deck properties after installation.
 
-### Asian Language Support
+### Asian language support
 
-Install [mecab-ipadic](https://aur.archlinux.org/packages/mecab-ipadic/) from the [AUR](/index.php/AUR "AUR").
-
-Install [kakasi](https://www.archlinux.org/packages/?name=kakasi) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [mecab-ipadic](https://aur.archlinux.org/packages/mecab-ipadic/) package and the [kakasi](https://www.archlinux.org/packages/?name=kakasi) package.
 
 Launch Anki, and inside Anki use "File->Download->Shared Plugin" to download and install the "Japanese Support" plugin, restart.
 

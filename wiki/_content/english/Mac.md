@@ -1373,6 +1373,7 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 
 *   The keyboard and the touchpad do *not* work (still looking for a solution).
     *   There's a WIP driver [here](https://github.com/cb22/macbook12-spi-driver) that sort of works with a DSDT hack (the previous problem with this driver related to battery drain has been fixed now).
+    *   The keyboard backlight cannot be enabled [[4]](https://bbs.archlinux.org/viewtopic.php?id=219631)
 
 #### Mid 2007 13" - Version 2,1
 
@@ -1658,7 +1659,7 @@ There are more steps on how to resolve this issue in [this thread on the Arch fo
 
 ##### Suspend/Resume
 
-Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[4]](https://github.com/patjak/mba6x_bl).
+Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[5]](https://github.com/patjak/mba6x_bl).
 
 ##### WiFi
 

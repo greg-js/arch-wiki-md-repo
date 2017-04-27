@@ -49,7 +49,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 [Optimus Technology](http://www.nvidia.com/object/optimus_technology.html) is a *[hybrid graphics](http://hybrid-graphics-linux.tuxfamily.org/index.php?title=Hybrid_graphics)* implementation without a hardware multiplexer. The integrated GPU manages the display while the dedicated GPU manages the most demanding rendering and ships the work to the integrated GPU to be displayed. When the laptop is running on battery supply, the dedicated GPU is turned off to save power and prolong the battery life. It has also been tested successfully with desktop machines with Intel integrated graphics and an nVidia dedicated graphics card.
 
-Bumblebee is a software implementation comprising of two parts:
+Bumblebee is a software implementation comprising two parts:
 
 *   Render programs off-screen on the dedicated video card and display it on the screen using the integrated video card. This bridge is provided by VirtualGL or primus (read further) and connects to a X server started for the discrete video card.
 *   Disable the dedicated video card when it is not in use (see the [#Power management](#Power_management) section)

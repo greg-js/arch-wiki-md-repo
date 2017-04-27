@@ -44,7 +44,7 @@ A sample `database.yml` file is packaged with Armitage as `/usr/share/metasploit
 
 Msfconsole requires [Ruby](/index.php/Ruby "Ruby") and some [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") to run without error.
 
-Follow the [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") and [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM") articles to install and use Ruby version 2.3.1 and set it to default.
+Follow the [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") and [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM") articles to install and use Ruby version 2.3.3 and set it to default.
 
 Once complete, source the newly created RVM installation:
 

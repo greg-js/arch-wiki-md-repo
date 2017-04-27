@@ -25,7 +25,7 @@ Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bi
 *   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/)
 *   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/)
 
-**Note:** Enabling [multilib](/index.php/Multilib "Multilib") repositories on x86_64 systems is required due to 32bit dependencies.
+**Note:** Enabling [multilib](/index.php/Multilib "Multilib") repositories on x86_64 systems is no longer required for the basic game since 0.43.05 release.
 
 You will need to be in the games group to run Dwarf Fortress. If you are not in the games group, add yourself, then log out and back in again:
 

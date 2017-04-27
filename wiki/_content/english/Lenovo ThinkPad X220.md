@@ -11,7 +11,8 @@ The Lenovo ThinkPad X220 is a small-form-factor laptop with Intel Mobile i5/i7 C
     *   [2.1 Boot fails (UEFI/GPT)](#Boot_fails_.28UEFI.2FGPT.29)
     *   [2.2 Reboot loop after resume from suspend](#Reboot_loop_after_resume_from_suspend)
     *   [2.3 Microphone](#Microphone)
-    *   [2.4 Backlight](#Backlight)
+    *   [2.4 Multi-monitor setups with X](#Multi-monitor_setups_with_X)
+    *   [2.5 Backlight](#Backlight)
 *   [3 See also](#See_also)
 
 ## Setup
@@ -71,6 +72,14 @@ This information was taken from [the Lenovo forums](http://forums.lenovo.com/t5/
 The x220 internal microphone has been the source of many complaints across platforms. Specifically, it can generate a lot of static or hissing on top of any recorded audio. The workaround is to mute the right mic input channel (in audio control programs that allow independent channel setting) or to drag the balance slider in a GUI for the internal mic level fully to the left.
 
 Note also that the audio jack is a combination headset/mic jack and will work with modern smartphone headsets with inline microphones, as an alternative.
+
+### Multi-monitor setups with X
+
+Some window managers, such as [qtile](/index.php/Qtile "Qtile") or [awesome](/index.php/Awesome "Awesome") don't seem to get along with the `sna` acceleration method of the [intel](/index.php/Intel_graphics "Intel graphics") driver, which results in tiled and broken display of the environments, when using a multi-monitor setup (using internal monitor only, works just fine).
+
+[Switching to uxa](/index.php/Intel_graphics#SNA_issues "Intel graphics") fixes this [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1706248#p1706248).
+
+It seems, that this issue does not occur in other desktop environments, such as [XFCE](/index.php/XFCE "XFCE"), however.
 
 ### Backlight
 

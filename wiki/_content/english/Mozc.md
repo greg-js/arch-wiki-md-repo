@@ -13,13 +13,13 @@ From the project [home page](https://github.com/google/mozc):
     *   [2.3 Fcitx](#Fcitx)
     *   [2.4 Mozc for Emacs](#Mozc_for_Emacs)
         *   [2.4.1 Disabling XIM on Emacs](#Disabling_XIM_on_Emacs)
-*   [3 Tips](#Tips)
+*   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Confirming Mozc version which you are using now](#Confirming_Mozc_version_which_you_are_using_now)
     *   [3.2 Launching Mozc tools from command line](#Launching_Mozc_tools_from_command_line)
     *   [3.3 Use CapsLock as Eisu_toggle key on ASCII layout keyboard](#Use_CapsLock_as_Eisu_toggle_key_on_ASCII_layout_keyboard)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Building Mozc fails (process is killed)](#Building_Mozc_fails_.28process_is_killed.29)
-    *   [4.2 New version of Mozc does not appear though I upgraded Mozc and restarted X or IBus (not rebooted)](#New_version_of_Mozc_does_not_appear_though_I_upgraded_Mozc_and_restarted_X_or_IBus_.28not_rebooted.29)
+    *   [4.2 New version of Mozc does not appear though I upgraded Mozc and restarted X or Input Method Framework (not rebooted)](#New_version_of_Mozc_does_not_appear_though_I_upgraded_Mozc_and_restarted_X_or_Input_Method_Framework_.28not_rebooted.29)
 
 ## Installation
 
@@ -51,7 +51,7 @@ _emacs_mozc="yes"
 
 Likewise, you must also enable uim-mozc-ut2 manually to build it.
 
-Once Mozc is installed, you might need to restart X or the Input Method Framework before you can use it.
+Once Mozc is installed, you might need to restart X or your Input Method Framework before you can use it.
 
 ## Configuration
 
@@ -83,9 +83,9 @@ $ uim-pref-gtk (Or, uim-pref-gtk3/uim-pref-qt4)
 
 which brings forth a GUI.
 
-Choose your preferring input method as 'Default input method'.
+Choose your preferring input method as *Default input method*.
 
-**Note:** Mozc will be not listed in 'Default input method' at first time so you will need to add it into 'Enabled input methods' to use.
+**Note:** Mozc will be not listed in *Default input method* at first time so you will need to add it into *Enabled input methods* to use.
 
 **Warning:** You **must** run the following command whenever you upgrade or (re-)install **uim**.
 # uim-module-manager --register mozc
@@ -131,7 +131,7 @@ Emacs*UseXIM: false
 
 ```
 
-## Tips
+## Tips and tricks
 
 ### Confirming Mozc version which you are using now
 
@@ -152,9 +152,9 @@ Mozc-1.6.1187.102  *⇐ Current version of Mozc*
 
 ### Launching Mozc tools from command line
 
-The followings are commands to launch mozc tools.
+The followings are commands to launch Mozc tools.
 
-*   Mozc property: `$ /usr/lib/mozc/mozc_tool --mode=config_dialog`
+*   Mozc Settings: `$ /usr/lib/mozc/mozc_tool --mode=config_dialog`
 *   Mozc Dictionary Tool: `$ /usr/lib/mozc/mozc_tool --mode=dictionary_tool`
 *   Mozc Word Register: `$ /usr/lib/mozc/mozc_tool --mode=word_register_dialog`
 *   Mozc Hand Writing: `$ /usr/lib/mozc/mozc_tool --mode=hand_writing`
@@ -162,13 +162,13 @@ The followings are commands to launch mozc tools.
 
 ### Use CapsLock as Eisu_toggle key on ASCII layout keyboard
 
-All of the preset keymap styles of Mozc, command *ToggleAlphanumericMode* on *Composition* mode is assigned to `Eisu` (Eisu_toggle), `Hiragana/Katakana` or `Muhenkan` key, but the ASCII keyboard has none of them.
+In all of the preset keymap styles of Mozc, the command *Toggle alphanumeric mode* on *Composition* mode is assigned to the `Eisu` (Eisu_toggle), `Hiragana/Katakana` or `Muhenkan` key, but the ASCII keyboard has none of them.
 
-One of the solution for it is to use CapsLock key as Eisu_toggle (Mozc does not recognize CapsLock key as of r124). The following is way to assign the Eisu_toggle to `CapsLock` (without any modifier keys) and the Caps_Lock to `Shift+CapsLock`, like OADG keyboard layout.
+One solution for it is to use Caps Lock key as Eisu_toggle (Mozc does not recognize the Caps Lock key as of r124). The following is a way to assign Eisu_toggle to `Caps Lock` (without any modifier keys) and Caps_Lock to `Shift+CapsLock`, as on the OADG keyboard layout.
 
-**Warning:** This way affects to desktop wide.
+**Warning:** This will affect all applications.
 
-Edit the `~/.Xmodmap` as follows:
+Edit `~/.Xmodmap` as follows:
 
 ```
 keycode 66 = Eisu_toggle Caps_Lock
@@ -176,7 +176,7 @@ clear Lock
 
 ```
 
-Then, restart X or run xmodmap to apply immediately:
+Then, restart X or run *xmodmap* to apply the changes immediately:
 
 ```
 $ xmodmap ~/.Xmodmap
@@ -187,7 +187,7 @@ $ xmodmap ~/.Xmodmap
 
 ### Building Mozc fails (process is killed)
 
-If build process is failed with like the following messages:
+If the build process fails with an error message like the following:
 
 ```
 ...
@@ -198,11 +198,11 @@ make: *** [xxx/xxx...] error 137
 
 ```
 
-Make sure whether you have run out of memory.
+Make sure you have not run out of memory.
 
-### New version of Mozc does not appear though I upgraded Mozc and restarted X or IBus (not rebooted)
+### New version of Mozc does not appear though I upgraded Mozc and restarted X or Input Method Framework (not rebooted)
 
-Old version of Mozc may be still on your memory. Try to kill existing *mozc_server* process:
+The old version of Mozc may be still on your memory. Try to kill the existing *mozc_server* process:
 
 ```
 $ killall mozc_server

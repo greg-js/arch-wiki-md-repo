@@ -34,7 +34,6 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [7.4 ptrace scope](#ptrace_scope)
         *   [7.4.1 Examples of broken functionality](#Examples_of_broken_functionality)
     *   [7.5 hidepid](#hidepid)
-    *   [7.6 grsecurity](#grsecurity)
 *   [8 Sandboxing applications](#Sandboxing_applications)
     *   [8.1 Firejail](#Firejail)
     *   [8.2 bubblewrap](#bubblewrap)
@@ -349,8 +348,6 @@ This can be helpful in specific domains, but is not usually useful. A JIT compil
 
 Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` flag. This flag is enabled by default and prevents processes from performing a `ptrace` call on other processes outside of their scope without `CAP_SYS_PTRACE`. While many debugging tools require this for some of their functionality, it is a significant improvement in security. Without this feature, there is essentially no separation between processes running as the same user without applying extra layers like namespaces. The ability to attach a debugger to an existing process is a demonstration of this weakness.
 
-**Note:** In [grsecurity](/index.php/Grsecurity "Grsecurity"), this protection is toggled via the `kernel.grsecurity.harden_ptrace` flag instead.
-
 #### Examples of broken functionality
 
 **Note:** You can still execute these commands as root (such as allowing them through [sudo](/index.php/Sudo "Sudo") for certain users, with or without a password), or enable ptrace selectively through `setcap cap_sys_ptrace=eip */path/to/program*`.
@@ -362,11 +359,15 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 ### hidepid
 
-The kernel has the ability to hide other users' processes from unprivileged users by mounting the `proc` filesystem with `hidepid=1` or `hidepid=2`. This can be automated with the [hidepid](https://www.archlinux.org/packages/?name=hidepid) package. It will install polkit and systemd-logind exceptions and make sure `/proc` is mounted with `hidepid=2,gid=26`.
+The kernel has the ability to hide other users' processes from unprivileged users by mounting the `proc` filesystem with `hidepid=1,gid=26` or `hidepid=2,gid=26`. The `26` gid is the proc group provided by the filesystem package and acts as a whitelist. If a user or service needs access to /proc/PID directories beyond their own, add it to the group.
 
-### grsecurity
+For this to work, a baseline exception needs to be added for systemd-logind:
 
-The [grsecurity](/index.php/Grsecurity "Grsecurity") kernel provides many security-related improvements. It hardens both the kernel and userspace against common memory corruption vulnerabilities, along with providing many miscellaneous features and a role-based access control system. It is the only way to secure the kernel itself against exploitation, which is the most important improvement for a system already making good use of user isolation, containers/chroots and sandboxes.
+ `/etc/systemd/system/systemd-logind.service.d/hidepid.conf` 
+```
+[Service]
+SupplementaryGroups=proc
+```
 
 ## Sandboxing applications
 

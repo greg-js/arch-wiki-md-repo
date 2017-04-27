@@ -34,6 +34,7 @@ There exists a similar application that you may also want to consider: [rbenv](/
     *   [4.2 Ruby 1.8.x won't compile with RVM](#Ruby_1.8.x_won.27t_compile_with_RVM)
     *   [4.3 Ruby 1.9.1 won't compile with RVM](#Ruby_1.9.1_won.27t_compile_with_RVM)
     *   [4.4 Ruby 2.2.2 won't compile with RVM](#Ruby_2.2.2_won.27t_compile_with_RVM)
+    *   [4.5 Ruby 2.3.1 won't compile with RVM](#Ruby_2.3.1_won.27t_compile_with_RVM)
 *   [5 See Also](#See_Also)
 
 ## Installing RVM
@@ -578,6 +579,17 @@ Like with 1.8.x and 1.9.1, earlier patchlevels do not like the OpenSSL 1.0\. The
 $ rvm pkg install openssl
 $ rvm remove 2.2.2
 $ rvm install 2.2.2 -C --with-openssl-dir=$HOME/.rvm/usr
+
+```
+
+#### Ruby 2.3.1 won't compile with RVM
+
+Like with 1.8.x, 1.9.1 and 2.2.2, earlier patchlevels do not like the OpenSSL 1.0\. Then you can use the very same solution above, by installing openssl locally on RVM.
+
+```
+$ rvm pkg install openssl
+$ rvm remove 2.3.1
+$ rvm install 2.3.1 -C --with-openssl-dir=$HOME/.rvm/usr
 
 ```
 

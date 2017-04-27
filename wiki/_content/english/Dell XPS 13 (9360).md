@@ -144,6 +144,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 | [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |
 | [PCT UHC304](http://www.pct-max.com.tw/cht/products.php?index=289) | HDMI (4K@30Hz, 2K@60Hz), Gigabit Ethernet, USB-A, USB-C | Working |
+| [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
 
 ### Thunderbolt Firmware updates
 

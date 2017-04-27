@@ -5,15 +5,12 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Mount helpers](#Mount_helpers)
-    *   [3.1 devmon](#devmon)
-    *   [3.2 udevadm monitor](#udevadm_monitor)
-    *   [3.3 udiskie](#udiskie)
-        *   [3.3.1 udiskie freezing and configuration](#udiskie_freezing_and_configuration)
-    *   [3.4 udisksvm](#udisksvm)
+    *   [3.1 udevadm monitor](#udevadm_monitor)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
     *   [4.2 Mount loop devices](#Mount_loop_devices)
     *   [4.3 Hide selected partitions](#Hide_selected_partitions)
+        *   [4.3.1 Example](#Example)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
     *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
@@ -21,35 +18,37 @@
 
 ## Installation
 
-There are two versions of *udisks* called [udisks](https://aur.archlinux.org/packages/udisks/) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of *udisks* has ceased in favor of *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+There are two versions of *udisks* called [udisks](https://aur.archlinux.org/packages/udisks/) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of **udisks** has ceased in favor of **udisks2**. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly (see `man udisksd` and `man udisks-daemon`). They can be controlled through the command-line with *udisksctl* and *udisks*, respectively. See `man udisksctl` and `man udisks` for more information.
+[udisksd(8)](https://udisks.freedesktop.org/docs/latest/udisksd.8.html) (for **udisks2**) and [udisks-daemon(8)](https://udisks.freedesktop.org/docs/1.0.5/udisks-daemon.8.html) (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](https://udisks.freedesktop.org/docs/latest/udisksctl.1.html) and [udisks(1)](https://udisks.freedesktop.org/docs/1.0.5/udisks.1.html), respectively.
 
 ## Configuration
 
-Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If your [session](/index.php/Session "Session") is not activated or present, for example, when controlling udisks from [systemd/User](/index.php/Systemd/User "Systemd/User"), configure policykit manually.
+Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If the [user session](/index.php/Session "Session") is not activated or present (for example, when controlling udisks from a [systemd/User](/index.php/Systemd/User "Systemd/User") service), adjust Polkit rules accordingly.
 
 See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks permissions for the `storage` group, and [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example.
 
 ## Mount helpers
 
-The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications").
 
-### devmon
+*   **bashmount** — A bash script to mount and manage removable media as a regular user with *udisks2*.
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible with *udisks* and *udisks2*. It uses programs with the following priority:
+	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
-2.  pmount (SUID)
-3.  udisks
-4.  udisks2
+*   **udiskie** — Automatic disk mounting service using *udisks2*, with support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [details](https://github.com/coldfix/udiskie/wiki/Usage)
 
-**Note:**
+	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 
-*   *udevil* or *pmount* are only considered if set SUID. To remove this permission, run `chmod -s /usr/bin/*udevil*` as root).
-*   If *udevil* is further not executable (removed with `chmod -x /usr/bin/udevil` as root), *udisks* is used to monitor for new devices.
+*   **udisksvm** — GUI *udisks2* wrapper written in Python3 and using the Qt5 framework. It uses mouse clicks to mount, unmount removable devices or eject a CD/DVD. See the [README](https://github.com/berbae/udisksvm/blob/master/README) file for details.
 
-**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. The service reads command line arguments for devmon from the `/etc/conf.d/devmon` file. Keep in mind that services run outside the [session](/index.php/Session "Session"): adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+	[https://github.com/berbae/udisksvm](https://github.com/berbae/udisksvm) || [udisksvm](https://aur.archlinux.org/packages/udisksvm/)
+
+*   **udevil** — Includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to *udisks* and *udisks2*.
+
+	[https://github.com/IgnorantGuru/udevil](https://github.com/IgnorantGuru/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
+
+**Note:** *devmon* only uses *udisks* or *udisks2* for mounting (in this order) if *udevil* or *pmount* miss the SUID permission. To remove this permission, run `chmod -s /usr/bin/*udevil*` as root.
 
 ### udevadm monitor
 
@@ -71,20 +70,6 @@ done
 
 ```
 
-### udiskie
-
-[udiskie](https://www.archlinux.org/packages/?name=udiskie) is a mount helper using either [udisks](https://aur.archlinux.org/packages/udisks/) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage). Github is also here: [udiskie](https://github.com/coldfix/udiskie)
-
-#### udiskie freezing and configuration
-
-[udiskie](https://www.archlinux.org/packages/?name=udiskie) may freeze/crash or not work in some situations/setups if you do not have some of the notification support installed. For [instance](https://bbs.archlinux.org/viewtopic.php?id=203164) xfce and udiskie may not work correctly. You may see udiskie freeze in xfce if you do not install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) and [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) also.
-
-If you do not source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh in your .xinitrc you may have issues also.
-
-### udisksvm
-
-[udisksvm](https://aur.archlinux.org/packages/udisksvm/) is a graphical udisks2 wrapper application written in Python3 and using the Qt5 framework. It uses only mouse clicks to mount, unmount removable devices or eject a CD/DVD. It is well adapted to light weight graphical environments, like Openbox with Tint2. It is a stand-alone mounting/automounting application running in background (see the README file in the package for details).
-
 ## Tips and tricks
 
 ### Mount to /media (udisks2)
@@ -100,22 +85,6 @@ By default, udisks2 mounts removable drives under the ACL controlled directory `
 ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 ```
-
-After, you need to create /media directory:
-
-```
-# mkdir /media
-
-```
-
-If udiskie has been installed, run:
-
-```
-# udiskie
-
-```
-
-in terminal to mount the media
 
 ### Mount loop devices
 
@@ -150,7 +119,7 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 Because block device names can change between reboots, it is also possible to use UUIDs (as gathered from executing the `blkid /dev/sdX` command) to hide partitions or whole devices:
 
-For example:
+#### Example
 
 ```
 # blkid /dev/sdX

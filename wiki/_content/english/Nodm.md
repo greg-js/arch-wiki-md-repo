@@ -26,8 +26,8 @@ For proper session handling, create pam.d file with the following content:
 ```
 #%PAM-1.0
 
-auth      include   system-login
-account   include   system-login
-password  include   system-login
-session   include   system-login
+auth      include   system-local-login
+account   include   system-local-login
+password  include   system-local-login
+session   include   system-local-login
 ```

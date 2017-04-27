@@ -6,10 +6,10 @@
     *   [1.1 Resource file settings](#Resource_file_settings)
         *   [1.1.1 TERM Environmental Variable](#TERM_Environmental_Variable)
         *   [1.1.2 UTF-8](#UTF-8)
-        *   [1.1.3 Making xterm's 'Alt' key behaves as on other terminal emulators](#Making_xterm.27s_.27Alt.27_key_behaves_as_on_other_terminal_emulators)
+        *   [1.1.3 Make 'Alt' key behave as on other terminal emulators](#Make_.27Alt.27_key_behave_as_on_other_terminal_emulators)
         *   [1.1.4 Fix the backspace key](#Fix_the_backspace_key)
     *   [1.2 Scrolling](#Scrolling)
-        *   [1.2.1 The Scrollbar](#The_Scrollbar)
+        *   [1.2.1 Scrollbar](#Scrollbar)
     *   [1.3 Menus](#Menus)
         *   [1.3.1 Main Options menu](#Main_Options_menu)
         *   [1.3.2 VT Options menu](#VT_Options_menu)
@@ -45,9 +45,14 @@ There are several options you can set in your [X resources](/index.php/X_resourc
 
 #### TERM Environmental Variable
 
-Allow xterm to report the **TERM** variable correctly. **Do not** set the TERM variable from your *~/.bashrc* or *~/.bash_profile* or similar file. The terminal itself should report the correct TERM to the system so that the proper *terminfo* file will be used. Two usable terminfo files are *xterm,* and *xterm-256color.*
+Allow xterm to report the TERM variable correctly. **Do not** set the TERM variable from your *~/.bashrc* or *~/.bash_profile* or similar file. The terminal itself should report the correct TERM to the system so that the proper *terminfo* file will be used. Two usable terminfo names are *xterm* and *xterm-256color*. To set the name, use the resource
 
-Without setting TERM explicitly, xterm should report `$TERM` as `xterm`. You can check this from within xterm using either of these commands:
+```
+XTerm.termName: xterm-256color
+
+```
+
+You can check the result within xterm using either of these commands:
 
 ```
 $ echo $TERM
@@ -55,33 +60,21 @@ $ tset -q
 
 ```
 
-When TERM is not set explicitly, color schemes for some programs, such as *vim,* may not appear until a key is pressed or some other input occurs. This can be remedied with this resource setting:
-
-```
-xterm*termName: xterm-256color
-
-```
-
 #### UTF-8
 
-Make certain your [locale settings](/index.php/Locale#Setting_the_locale "Locale") are correct for UTF-8\. Adding the following line to your resource file will then make xterm interpret all incoming data as UTF-8 encoded:
+Ensure that your [locale](/index.php/Locale "Locale") is set up for UTF-8\. If you do not use UTF-8, you may need to force xterm to more strictly follow your locale by setting
 
 ```
-XTerm*locale: true
+XTerm.vt100.locale: true
 
 ```
 
-#### Making xterm's 'Alt' key behaves as on other terminal emulators
+#### Make 'Alt' key behave as on other terminal emulators
 
-The default `Alt` key behavior on `xterm` is a modifier to send eight bit input characters so that user can insert `æ` by pressing `Alt+f` inside `xterm`.
-
-This behavior is different from terminal emulators such as `gnome-terminal` and `konsole`, which uses `Alt` as modifier to sends `^[` (escape} character.
-
-If you want `Alt` key on `xterm` to behave as on other terminal emulators, i.e. sends `^[` instead of acts as eight bit modifier, you will need to put one of the following line in your resource file.
+The default `Alt` key behavior in xterm is a modifier to send eight bit input characters e.g. to insert `æ` by pressing `Alt+f`. To make `Alt` instead send a `^[` (escape) key (as in gnome-terminal and konsole), set
 
 ```
-XTerm*metaSendsEscape: true
-XTerm*eightBitInput: false
+XTerm.vt100.metaSendsEscape: true
 
 ```
 
@@ -108,27 +101,35 @@ Xterm*saveLines: 4096
 
 Other X resources that affect scrolling are `jumpScroll`, set to `true` by default, and `multiScroll` and `fastScroll`, both of which default to `false`. To scroll inside an [alternate screen](#VT_Options_menu), set `alternateScroll` to `true`.
 
-#### The Scrollbar
+#### Scrollbar
 
-The scrollbar is not shown by default. It can be made visible by a menu selection, by command line options, or by setting resource values. It can be made to appear to the left or right of the window and its visual appearance can be modified through resource settings.
+The scrollbar is not shown by default. It can be enabled and its appearance tweaked through resource settings (note the differing capitalization of "scrollbar"!)
+
+```
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 8
+
+```
+
+See [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html) for other scrollbar resources.
 
 The scrollbar operates differently from what you may be accustomed to using.
 
 *   To scroll down:
 
-	– Click on the scrollbar with the left mouse button.
+	– Click on the scrollbar with the left mouse button, or
 
-	– Click on the scrollbar below the *thumb* with the middle mouse button.
+	– Click on the scrollbar below the thumb with the middle mouse button.
 
 *   To scroll up:
 
-	– Click on the scrollbar with the right mouse button.
+	– Click on the scrollbar with the right mouse button, or
 
-	– Click on the scrollbar above the *thumb* with the middle mouse button.
+	– Click on the scrollbar above the thumb with the middle mouse button.
 
 *   To position text, moving in either direction:
 
-	– Grab the *thumb* and use "click-and-drag" with the middle mouse button.
+	– Grab the thumb and use "click-and-drag" with the middle mouse button.
 
 ### Menus
 

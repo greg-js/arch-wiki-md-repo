@@ -172,10 +172,9 @@ This will only create a `network` section. A configuration file with some more c
 
  `/etc/wpa_supplicant/example.conf` 
 ```
-ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface=/run/wpa_supplicant
 ctrl_interface_group=wheel
 update_config=1
-fast_reauth=1
 ap_scan=1
 
 network={

@@ -9,11 +9,24 @@ Install the [apache-spark](https://aur.archlinux.org/packages/apache-spark/) pac
 Some environment variables are set in `/etc/profile.d/apache_spark.sh`.
 
 | ENV | Value | Description |
-| PATH | `$PATH:/usr/lib/apache_spark/bin` | Spark binaries |
+| PATH | `$PATH:/opt/apache-spark/bin` | Spark binaries |
 
 You may need to adjust your `PATH` [environment variable](/index.php/Environment_variable "Environment variable") if your shell inhibits `/etc/profile.d`:
 
 ```
-export PATH=$PATH:/usr/lib/apache_spark/bin
+export PATH=$PATH:/opt/apache-spark/bin
 
 ```
+
+## Enable R support
+
+The [R](/index.php/R "R") package [sparkR](https://spark.apache.org/docs/latest/sparkr.html) is distributed with the package but not built during installation. To connect to Spark from R you must first build the package by running
+
+```
+# $SPARK_HOME/R/install-dev.sh
+
+```
+
+as described in `$SPARK_HOME/R/README.md`. You may also wish to build the package documentation following the instructions in `$SPARK_HOME/R/DOCUMENTATION.md`.
+
+Once the sparkR R package has been built you can connect using `/usr/bin/sparkR`.

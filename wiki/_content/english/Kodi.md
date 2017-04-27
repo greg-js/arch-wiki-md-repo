@@ -36,9 +36,10 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.5 Use port 80 for webserver](#Use_port_80_for_webserver)
     *   [3.6 Using ALSA](#Using_ALSA)
     *   [3.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [3.7.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.7.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.7.3 USB DAC not working](#USB_DAC_not_working)
+    *   [3.8 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
+        *   [3.8.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [3.8.2 Right Click Menu Key](#Right_Click_Menu_Key)
+        *   [3.8.3 USB DAC not working](#USB_DAC_not_working)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Accessing kodi logs](#Accessing_kodi_logs)
     *   [4.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -464,7 +465,11 @@ Kodi runs smoothly on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips
 
 *   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 *   This package ships with a systemd service to run in standalone mode.
-*   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended.
+*   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended for RPi version 1 while a value of 256 is recommended for RPi2 and 3.
+
+### TV is not detected unless powered on first
+
+This is a known issue. See [Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first](http://kodi.wiki/view/Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first) for a simple fix.
 
 #### Run kodi in a window manager
 

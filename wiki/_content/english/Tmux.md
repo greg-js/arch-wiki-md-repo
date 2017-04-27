@@ -362,14 +362,14 @@ It is possible to copy tmux selection to X clipboard (and to X primary/secondary
 
 ```
 # Emacs style
-bind-key -t emacs-copy y copy-pipe "xsel -i -p && xsel -o -p | xsel -i -b"
+bind-key -T copy-mode y send-key -X copy-pipe-and-cancel "xsel -i -p && xsel -o -p | xsel -i -b"
 bind-key C-y run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
 
 ```
 # Vim style
-bind-key -t vi-copy y copy-pipe "xsel -i -p && xsel -o -p | xsel -i -b"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel -i -p && xsel -o -p | xsel -i -b"
 bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
@@ -378,7 +378,7 @@ bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
 # Vim style
-bind-key -t vi-copy y copy-pipe "xclip -i -sel clip > /dev/null"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
 bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
 ```
@@ -804,6 +804,26 @@ bind-key -n M-n split-window \; select-layout
 ### Vim friendly configuration
 
 See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
+
+With tmux 2.4 change:
+
+```
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-selection
+bind -t vi-copy 'Space' halfpage-down
+bind -t vi-copy 'Bspace' halfpage-up
+
+```
+
+to:
+
+```
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
+bind-key -T copy-mode-vi 'Space' send -X halfpage-down
+bind-key -T copy-mode-vi 'Bspace' send -X halfpage-up
+
+```
 
 ## See also
 

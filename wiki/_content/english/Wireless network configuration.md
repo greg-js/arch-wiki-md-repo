@@ -197,7 +197,7 @@ The name of ther interface will be output after the word "Interface". For exampl
 To check link status, use following command.
 
 ```
-$ iw dev *interface*
+$ iw dev *interface* link
 
 ```
 
@@ -277,7 +277,7 @@ Depending on the encryption, you need to associate your wireless device with the
 *   **WEP**
     *   using a hexadecimal or ASCII key (the format is distinguished automatically, because a WEP key has a fixed length): `# iw dev *interface* connect "*your_essid*" key 0:*your_key*` 
     *   using a hexadecimal or ASCII key, specifying the third set up key as default (keys are counted from zero, four are possible): `# iw dev *interface* connect "*your_essid*" key d:2:*your_key*` 
-*   **WPA/WPA2** According to what you got from [#Discover access points](#Discover_access_points), issue this command: `# wpa_supplicant -D nl80211,wext -i *interface* -c <(wpa_passphrase "*your_SSID*" "*your_key*")` 
+*   **WPA/WPA2** According to what you got from [#Discover access points](#Discover_access_points), issue this command: `# wpa_supplicant -i *interface* -c <(wpa_passphrase "*your_SSID*" "*your_key*")` 
 
 If this does not work, you may need to adjust the options. If connected successfully, continue in a new terminal (or quit `wpa_supplicant` with `Ctrl+c` and add the `-B` switch to the above command to run it in the background). [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") contains more information on options and on how to create a permanent configuration file for the wireless access point.
 

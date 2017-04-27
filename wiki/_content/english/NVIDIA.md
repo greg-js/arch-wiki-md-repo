@@ -103,7 +103,7 @@ Target=nvidia
 [Action]
 Depends=mkinitcpio
 When=PostTransaction
-Exec=/usr/bin/mkinitcpio -p linux
+Exec=/usr/bin/mkinitcpio -P
 ```
 
 ### Hardware accelerated video decoding with XvMC

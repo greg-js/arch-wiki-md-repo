@@ -107,7 +107,7 @@ Plasma can be started either graphically, using a [display manager](/index.php/D
 
 ### Graphically
 
-**Tip:** To better integrate SDDM with Plasma, it is recommended to use the breeze theme. Related setting is located at *System Settings - Startup dans Shutdown*. See [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
+**Tip:** To better integrate SDDM with Plasma, it is recommended to use the breeze theme. Related setting is located at *System Settings > Startup and Shutdown*. See [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
 
 To launch a Plasma session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 

@@ -20,7 +20,7 @@
     *   [5.2 Web interface](#Web_interface)
     *   [5.3 GUI applications](#GUI_applications)
 *   [6 Configuration](#Configuration)
-    *   [6.1 Polkit configuration](#Polkit_configuration)
+    *   [6.1 Allowing admin authentication through PolicyKit](#Allowing_admin_authentication_through_PolicyKit)
     *   [6.2 cups-browsed](#cups-browsed)
     *   [6.3 Printer sharing](#Printer_sharing)
     *   [6.4 Without a local CUPS server](#Without_a_local_CUPS_server)
@@ -319,11 +319,11 @@ The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cup
 
 By default, all logs are sent to files in `/var/log/cups/`. By changing the values of the `AccessLog`, `ErrorLog`, and `PageLog` directives in `/etc/cups/cups-files.conf` to `syslog`, CUPS can be made to log to the [systemd journal](/index.php/Systemd_journal "Systemd journal") instead. See [the fedora wiki page](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) for information on the original proposed change.
 
-### Polkit configuration
+### Allowing admin authentication through PolicyKit
 
-If prompts you for the admin password every time you use a GUI to configure a printer, you may need to allow printer administration rights in as well.
+[PolicyKit](/index.php/PolicyKit "PolicyKit") can be configured to allow users to configure printers using a GUI without the admin password.
 
-Here's an example that allows members of the wheel group to administer printers without a password:
+Here's an example that allows members of the wheel [group](/index.php/Group "Group") to administer printers without a password:
 
  `/etc/polkit-1/rules.d/49-allow-passwordless-printer-admin.rules` 
 ```

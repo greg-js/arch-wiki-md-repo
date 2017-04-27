@@ -1,16 +1,28 @@
-Clover is a UEFI bootloader developed for booting Hackintosh and multiboot with other operating systems. It can be used to boot Linux kernels with [EFISTUB](/index.php/EFISTUB "EFISTUB") support. The advantage of Clover to other bootloaders is it supports native resolution GUI on wide screens people commonly use today.
+Clover EFI is a bootloader developed to boot OS X (Hackintoshes), Windows and Linux in legacy or UEFI mode.
+
+The main advantages of Clover are:
+
+*   Emulate EUFI on legacy BIOS systems
+*   Boot Linux kernels with [EFISTUB](/index.php/EFISTUB "EFISTUB") support
+*   Supports native resolution GUI on wide screens people commonly use today
+*   Easy of use
+*   Easily customizable
 
 ## Installation
 
 Download Clover Bootable ISO from [here](http://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/)
 
-extract archive and find the `Clover-*-X64.iso` file, mount it.
+Extract archive and find the `Clover-*-X64.iso` file, mount it.
 
-copy everything in `EFI` folder to your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+Copy everything in `EFI` folder to your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ## Configuration
 
-Configuration is done through an xml file `config.plist` under path `EFI/CLOVER` from the UEFI partition. For details please reference [their wiki](http://clover-wiki.zetam.org/Home), for the Linux kernel EFISTUB boot entry and native resolution GUI, add following code to the relevent place.
+Configuration is done through an xml file `config.plist` under path `EFI/CLOVER` from the UEFI partition.
+
+A tool is now available to easily edit your `config.plist` in any OS: [Cloud Clover Editor (CCE)](http://cloudclovereditor.altervista.org/cce/index.php)
+
+For details please reference [their wiki](http://clover-wiki.zetam.org/Home), for the Linux kernel EFISTUB boot entry and native resolution GUI, add following code to the relevent place.
 
 `/initramfs-linux.img` and `vmlinuz-linux` are relative to the root of the UEFI partition. In this example, the initramfs and kernel files have to be at the root of the EFI partition, at the same level as the `EFI` directory.
 

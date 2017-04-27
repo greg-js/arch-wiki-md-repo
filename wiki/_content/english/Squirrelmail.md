@@ -15,7 +15,7 @@ SquirrelMail is a lightweight webmail provider with IMAP/IMAPS support. The Squi
 
 ### Available Versions
 
-SquirrelMail is available in two flavors. Version 1.4 and version 1.5\. Version 1.4 is the stable version while 1.5 is the development version. Both are available in either a compressed tar archive or through svn. The development version contains a newer interface and features not found in the stable release. Plugins that extend the functionality of both versions are available (Calendar, Spelling, etc.)
+SquirrelMail is available in two flavors. Version 1.4 and version 1.5\. Version 1.4 ( [squirrelmail](https://aur.archlinux.org/packages/squirrelmail/) )is the stable version while 1.5 is the development version ([squirrelmail-dev-svn](https://aur.archlinux.org/packages/squirrelmail-dev-svn/)). Both are available in either a compressed tar archive or through svn. The development version contains a newer interface and features not found in the stable release. Plugins that extend the functionality of both versions are available (Calendar, Spelling, etc.)
 
 **Note:** I have used the development version for several years and have only had a couple of issues which were resolved with the developer in a matter of hours after first reporting the issue on the SquirrelMail mailing list.
 

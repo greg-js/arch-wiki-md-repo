@@ -246,6 +246,8 @@ remote           refid            st t when poll reach   delay   offset  jitter
 
 **Tip:** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
 
+**Note:** *ntpd* expects that your GPS device is called e.g. `/dev/gps0`. If your GPS device is connected via USB, it may appear as `/dev/ttyUSB0` instead, and you may have to create a symlink `ln -s /dev/ttyUSB0 /dev/gps0` and run *gpsd* on that linked `/dev/gps0` so that the `GPSD_JSON` line appears as expected.
+
 ### Running in a chroot
 
 **Note:** *ntpd* should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
