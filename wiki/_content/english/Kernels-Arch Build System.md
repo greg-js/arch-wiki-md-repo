@@ -52,7 +52,7 @@ Edit `PKGBUILD` and look for the `pkgbase` parameter. Change this to your custom
 
 ```
 
-Depending on the PKGBUILD you may have to also rename `linux.install` to match the modified `pkgbase` (e.g. for [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)).
+Depending on the PKGBUILD you may have to also rename `linux.install` to match the modified `pkgbase`.
 
 ### Changing prepare()
 

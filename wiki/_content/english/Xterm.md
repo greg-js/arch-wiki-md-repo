@@ -8,6 +8,7 @@
         *   [1.1.2 UTF-8](#UTF-8)
         *   [1.1.3 Make 'Alt' key behave as on other terminal emulators](#Make_.27Alt.27_key_behave_as_on_other_terminal_emulators)
         *   [1.1.4 Fix the backspace key](#Fix_the_backspace_key)
+        *   [1.1.5 Key binding](#Key_binding)
     *   [1.2 Scrolling](#Scrolling)
         *   [1.2.1 Scrollbar](#Scrollbar)
     *   [1.3 Menus](#Menus)
@@ -41,7 +42,7 @@
 
 ### Resource file settings
 
-There are several options you can set in your [X resources](/index.php/X_resources "X resources") files that may make this terminal emulator much easier to use. See `man xterm` for a complete list.
+There are several options you can set in your [X resources](/index.php/X_resources "X resources") files that may make this terminal emulator much nicer to use. See [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html) for a complete list.
 
 #### TERM Environmental Variable
 
@@ -80,13 +81,32 @@ XTerm.vt100.metaSendsEscape: true
 
 #### Fix the backspace key
 
-On Arch Linux, `xterm` sends `^H` key when backspace is pressed. This breaks `Ctrl+H` key combination on [Emacs](/index.php/Emacs "Emacs"). The workaround is making `xterm` sends `^?` when backspace is pressed, by adding the following lines to X resource file.
+On Arch Linux, xterm sends `^H` key when backspace is pressed. This breaks the `Ctrl+H` key combination on [Emacs](/index.php/Emacs "Emacs"). The workaround is to send `^?` when backspace is pressed by setting the resources
 
 ```
-XTerm*backarrowKey: false
-XTerm*ttyModes: erase ^?
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
 
 ```
+
+#### Key binding
+
+xterm defines a whole suite of "actions" for manipulating the terminal e.g. `copy-selection()`, `hard-reset()`, `scroll-back()`, etc. These actions can be mapped to mouse/key combinations using the `translations` resource. For example, you can map `Ctrl+M` and `Ctrl+R` to maximize/restore the window:
+
+```
+XTerm.vt100.translations: #override 
+\
+    Ctrl <Key>M: maximize() 
+\
+    Ctrl <Key>R: restore()
+
+```
+
+`#override` indicates that these bindings should override any existing ones (you almost always want this for custom key bindings). Each binding must be separated by the escape sequence `
+`. If you want to insert a literal newline, it also needs to be escaped (hence `
+\`). See the **KEY BINDINGS** section of [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html) for the full list of actions and many examples.
+
+**Tip:** You can also have separate sets of keybindings that you switch between. See the `keymap()` action in the man page.
 
 ### Scrolling
 
@@ -95,11 +115,11 @@ As new lines are written to the bottom of the xterm window, older lines disappea
 By default, 1024 lines are saved. You can change the number of saved lines with the `saveLines` resource,
 
 ```
-Xterm*saveLines: 4096
+XTerm.vt100.saveLines: 4096
 
 ```
 
-Other X resources that affect scrolling are `jumpScroll`, set to `true` by default, and `multiScroll` and `fastScroll`, both of which default to `false`. To scroll inside an [alternate screen](#VT_Options_menu), set `alternateScroll` to `true`.
+Other X resources that affect scrolling are `jumpScroll`, `multiScroll`, and `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html)). To scroll inside an [#alternate screen](#VT_Options_menu), set `alternateScroll` to `true`.
 
 #### Scrollbar
 
@@ -133,9 +153,9 @@ The scrollbar operates differently from what you may be accustomed to using.
 
 ### Menus
 
-The Arch Linux version of xterm is compiled with the *toolbar,* or *menubar,* disabled. The menus are still available as *popups* when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
+[xterm](https://www.archlinux.org/packages/?name=xterm) is compiled with the *toolbar,* or *menubar,* disabled. The menus are still available as *popups* when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
 
-**Tip:** If the popup menu windows show only as small boxes, it is probably because you have a line similar to this, `xterm*geometry: 80x32`, in your resources file. This *does* start xterm in an 80 column by 32 row main window, but it also forces the menu windows to be 80 pixels by 32 pixels! Replace the incorrect line with this: `xterm*VT100.geometry: 80x32` 
+**Tip:** If the popup menu windows show only as small boxes, it is probably because you have a line similar to this, `XTerm*geometry: 80x32`, in your resources file. This *does* start xterm in an 80 column by 32 row main window, but it also forces the menu windows to be 80 pixels by 32 pixels! This is why you should fully specify the resource: `XTerm.vt100.geometry: 80x32` 
 
 Some of the menu options are discussed below.
 
@@ -157,7 +177,7 @@ Some of the menu options are discussed below.
 
 ***Ctrl + MiddleMouse***
 
-*   `Select to Clipboard` – Normally, selected text is stored in PRIMARY, to be pasted with `Shift+Insert` or by using the middle mouse button. By toggling this option to *on,* selected text will use CLIPBOARD, allowing you to paste the text selected in an xterm window into a GUI application using `Ctrl+v`. The corresponding XTerm resource is `selectToClipboard`.
+*   `Select to Clipboard` – Normally, selected text is stored in PRIMARY, to be pasted with `Shift+Insert` or by using the middle mouse button. By toggling this option to *on,* selected text will use CLIPBOARD, allowing you to paste the text selected in an xterm window into a GUI application using `Ctrl+v`. The corresponding resource is `XTerm.vt100.selectToClipboard`.
 
 *   `Show Alternate Screen` – When you use an a terminal application such as *vim,* or *less,* the alternate screen is opened. The main VT window, now hidden, remains in memory. You can view this main window, but not issue any commands in it, by toggling this menu option. You are able to select and copy text from this main window.
 
@@ -191,26 +211,25 @@ By default, xterm, and many other applications running under X, copy highlighted
 
 There is another buffer used for copied text called the CLIPBOARD selection. The text in the CLIPBOARD is long-lived, remaining available until a user actively overwrites it. Applications that use `Ctrl+c` and `Ctrl+x` for text copying and cutting operations, and `Ctrl+v` for pasting, are using the CLIPBOARD.
 
-The fleeting nature of the PRIMARY selection, where copied text is lost as soon as another selection is highlighted, annoys some users. Xterm allows the user to switch between the use of PRIMARY and CLIPBOARD using `Select to Clipboard` on the [#VT Options menu](#VT_Options_menu) or with the `selectToClipboard` resource.
+The fleeting nature of the PRIMARY selection, where copied text is lost as soon as another selection is highlighted, annoys some users. xterm allows the user to switch between the use of PRIMARY and CLIPBOARD using `Select to Clipboard` on the [#VT Options menu](#VT_Options_menu) or with the `XTerm.vt100.selectToClipboard` resource.
 
 #### PRIMARY and CLIPBOARD
 
-With the above setting you can select if you want to use PRIMARY or CLIPBOARD, but to use both you need a 'hack'. For example, put this in your .Xresources:
+With the above setting you can select if you want to use PRIMARY or CLIPBOARD, but you can also hack it to add the selection to both. Just override the [#Key binding](#Key_binding) for releasing the left mouse button:
 
 ```
-XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
-
-```
-
-You can configure XTerm to behave like modern terminals (like gnome-terminal) that recognize Ctrl+Shift+C and Ctrl+Shift+V for Copy and Paste (using CLIPBOARD) by setting the following rule in your .Xresources:
-
-```
-xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOARD) 
- Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+<Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 ```
 
-Note that this configuration does not impact PRIMARY and it should be working as it was before this configuration.
+You can add [#Key bindings](#Key_binding) similar to other terminals' copy/paste behavior (such as gnome terminal):
+
+```
+Ctrl Shift <Key>C: copy-selection(CLIPBOARD) 
+\
+Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+```
 
 #### Selecting text
 
@@ -226,41 +245,26 @@ You do not have to be precise immediately with the right-click – any highlight
 
 You can clear any selected text by left-clicking once, anywhere within the xterm window.
 
-When a character-based application runs inside Xterm, it is allowed to receive mouse events. This may be a problem if the program can not communicate with the X11 clipboard. In order to pass these events to the underlying Xterm, they must be accompanied by the `Shift` key. For example, in [links(1)](https://www.archlinux.org/packages/?q=links) (not `xlinks -g`), one can mouse-click on URLs and menu items, but not select or paste with a middle button. To do copy-paste, press the `Shift` key and then perform mouse clicks (the key needs to be pressed only during the click, so there is no need to hold it when dragging mouse to select, for instance, a text block).
+When a character-based application runs inside xterm, it is allowed to receive mouse events. This may be a problem if the program can not communicate with the X11 clipboard. In order to pass these events to the underlying xterm, they must be accompanied by the `Shift` key. For example, in [links(1)](https://www.archlinux.org/packages/?q=links) (not `xlinks -g`), one can mouse-click on URLs and menu items, but not select or paste with a middle button. To do copy-paste, press the `Shift` key and then perform mouse clicks (the key needs to be pressed only during the click, so there is no need to hold it when dragging mouse to select, for instance, a text block).
 
 ## Colors
 
-Xterm defaults to black text, the *foreground* color, on a white *background.* The foreground and background colors can be reversed using the [VT Options menu](#VT_Options_menu) or with the `-rv` command line option.
+xterm defaults to black text, the *foreground* color, on a white *background.* The foreground and background colors can be reversed by setting the resource
 
 ```
-$ xterm -rv
-
-```
-
-Alternatively, the same thing can be accomplished with the following [X resources parameter](/index.php/X_resources "X resources") (do not forget to [reread the new resource afterwards](/index.php/X_resources#Load_resource_file "X resources")!):
-
-```
-XTerm*reverseVideo: on
+XTerm.vt100.reverseVideo: true
 
 ```
 
-Xterm's foreground color (the text color) and the background color may be set from the command line, using the options `-fg` and `-bg` respectively.
+Alternatively, you can directly change the foreground and background colors (as well as the first sixteen terminal colors) using resources:
 
 ```
-xterm -fg PapayaWhip -bg "rgb:00/00/80"
+XTerm.vt100.foreground: white
+XTerm.vt100.background: black
+XTerm.vt100.color0: rgb:28/28/28
+! ...
+XTerm.vt100.color15: rgb:e4/e4/e4
 
-```
-
-The first sixteen terminal colors, as well as the foreground and background colors, may be set from an [X resources](/index.php/X_resources "X resources") file:
-
-```
-XTerm*foreground: rgb:b2/b2/b2
-XTerm*background: rgb:08/08/08
-XTerm*color0: rgb:28/28/28
-
-! ...Lines omitted...
-
-XTerm*color15: rgb:e4/e4/e4
 ```
 
 **Note:** Colors for applications that use the X libraries may be specified in many different ways.
@@ -269,7 +273,7 @@ Some colors can be specified by assigned names. If [emacs](https://www.archlinux
 
 The color `PapayaWhip` is the same as `rgb:ff/ef/d5`, which is the same as `#ffefd5`.
 
-See **man(7) X,** from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
+See [X(7)](ftp://www.x.org/pub/current/doc/man/man7/X.7.xhtml) from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
 
 Many suggestions for color schemes can be viewed in the forum thread, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
 
@@ -277,6 +281,7 @@ Many suggestions for color schemes can be viewed in the forum thread, [Terminal 
 ```
 *foreground: rgb:b2/b2/b2
 *background: rgb:08/08/08
+
 ```
 The above example sets the foreground and background color values for all *Xlib* applications (xclock, xfontsel, and others) that use these resources. This is a nice, easy way to achieve a unified color scheme.
 
@@ -284,7 +289,7 @@ The above example sets the foreground and background color values for all *Xlib*
 
 ### Default fonts
 
-Xterm's default font is the bitmap font named by the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description") alias `fixed`, often resolving to
+xterm's default font is the bitmap font named by the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description") alias `fixed`, often resolving to
 
 ```
 -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-?
@@ -298,29 +303,27 @@ $ fc-match mono
 
 ```
 
-Fonts can be specified from the command line, with the options `-fn` for bitmap font names and `-fa` for Xft names. The example below allows you to alternate between the two fonts by toggling `TrueType Fonts` from the [#VT Fonts menu](#VT_Fonts_menu).
-
- `$ xterm -fn 7x13 -fa "Liberation Mono:size=10:antialias=false"` 
-
-For a more permanent change, the default fonts may be set in an [X resources](/index.php/X_resources "X resources") file:
+Fonts can be specified in your resources, depending on whether the font is TrueType or not:
 
 ```
-xterm*faceName: Liberation Mono:size=10:antialias=false
-xterm*font: 7x13
+XTerm.vt100.faceName: Liberation Mono:size=10:antialias=false
+XTerm.vt100.font: 7x13
+
 ```
 
-**Note:** There is a long-standing bug in xterm that prevents the command line option `-fn` working correctly when `faceName` has been set in a resource file. One solution is to set the resource `renderFont` to `false` on the command line.
+To test, you can also set the font on the command line: `-fa` for `faceName`, `-fn` for `font`. If you set both kinds of fonts, you can alternate between the two by toggling `TrueType Fonts` from the [#VT Fonts menu](#VT_Fonts_menu). You can also choose the default with the following resource
+
 ```
-$ xterm -fn 8x13                             # If this command does not set the font,
-$ xterm -fn 8x13 -xrm "*renderFont:false"    # set the 'renderFont' resource to 'false'.
+! start with TrueType fonts disabled
+XTerm.vt100.renderFont: false
+
 ```
-Perhaps easier, you can just toggle `TrueType Fonts` from the [#VT Fonts menu](#VT_Fonts_menu) in the terminal window.
 
 ### Bold and underlined fonts
 
 Italic fonts are shown as underlined characters when using XLFD names in xterm. TrueType fonts should use an oblique typeface.
 
-If you do not specify a bold font at the command line, `-fb`, or through the `boldFont` resource, xterm will attempt to find a bold font matching the normal font. If a matching font is not found, the bold font will be created by "overstriking" the normal font.
+If you do not specify a bold font at the command line, `-fb`, or through the `XTerm.vt100.boldFont` resource, xterm will attempt to find a bold font matching the normal font. If a matching font is not found, the bold font will be created by "overstriking" the normal font.
 
 ### CJK Fonts
 
@@ -329,9 +332,10 @@ Many fonts do not contain glyphs for the double width Chinese, Japanese and Kore
 Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easier to use TrueType fonts for CJK display, using the `faceNameDoublesize` resource. This example uses *DejaVu Sans Mono* as the normal font and *WenQuanYi Bitmap Song* as the double width font:
 
 ```
-xterm*faceName: DejaVu Sans Mono:style=Book:antialias=false
-xterm*faceNameDoublesize: WenQuanYi Bitmap Song
-xterm*faceSize: 8
+XTerm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=false
+XTerm.vt100.faceNameDoublesize: WenQuanYi Bitmap Song
+XTerm.vt100.faceSize: 8
+
 ```
 
 ## Tips and tricks
@@ -351,10 +355,10 @@ Also see [Per-application transparency](/index.php/Per-application_transparency 
 
 ### Enable bell urgency
 
-Add the following line to your `~/.Xresources` file:
+To make the bell character notify the window manager of urgency, set:
 
 ```
-xterm*bellIsUrgent: true
+XTerm.vt100.bellIsUrgent: true
 
 ```
 
@@ -365,24 +369,28 @@ xterm*bellIsUrgent: true
 When using small font sizes, bold or italic characters may be difficult to read. One solution is to turn off bolding and underlining or italics and use color instead. This example does just that:
 
 ```
-! Forbid bold font faces; bold type is light blue.
-XTerm*colorBDMode: true
-XTerm*colorBD: rgb:82/a4/d3
-! Do not underscore text, underlined text is white.
-XTerm*colorULMode: true
-XTerm*colorUL: rgb:e4/e4/e4
+! disable bold font faces, instead make text light blue.
+XTerm.vt100.colorBDMode: true
+XTerm.vt100.colorBD: rgb:82/a4/d3
+! disable underlined text, instead make it white.
+XTerm.vt100.colorULMode: true
+XTerm.vt100.colorUL: rgb:e4/e4/e4
+! similarly use colorIT for italics
+
 ```
+
+See [#Colors](#Colors) for formatting information.
 
 #### Adjust line spacing
 
-Lines of text can sometimes be too close together, or they may appear to be too widely spaced. For one example, using *DejaVu Sans Mono,* the low underscore glyph may butt against CJK glyphs or the cursor block in the line below. Line spacing, called *leading* by typographers, can be adjusted using the `scaleHeight` resource. Here, the line spacing is widened:
+Lines of text can sometimes be too close together, or they may appear to be too widely spaced. For one example, using *DejaVu Sans Mono,* the low underscore glyph may butt against CJK glyphs or the cursor block in the line below. Line spacing, called *leading* by typographers, can be adjusted with the following resource, for example to widen the spacing:
 
 ```
-XTerm*scaleHeight: 1.01
+XTerm.scaleHeight: 1.01
 
 ```
 
-Valid values for `scaleHeight` range from `0.9` to `1.5`, with `1.0` being the default.
+Valid values for range from `0.9` to `1.5`, with `1.0` being the default.
 
 ### Remove black border
 
@@ -413,17 +421,11 @@ A world map will appear in the Tek window. You can also view other `*.tek` files
 
 ### Protect against X11 input snooping
 
-It was already [mentioned](#Menus) about the **Secure Keyboard** mode. However, using mouse to enter the secure mode is not always convenient. One can instead associate a key-binding with the `secure()` function. For example:
+It can be inconvenient to activate **Secure Keyboard** mode from the [#Main Options menu](#Main_Options_menu). You can instead invoke the `secure()` action with a [#Key binding](#Key_binding):
 
 ```
-XTerm*VT100.translations: #override \
-        Shift <Key>Up: scroll-back(1,line) 
-\
-        Shift <Key>Down: scroll-forw(1,line) 
-\
-        **Ctrl Alt <Key>S: secure() 
-\**
-        ...
+Ctrl Alt <Key>S: secure()
+
 ```
 
 ## Troubleshooting

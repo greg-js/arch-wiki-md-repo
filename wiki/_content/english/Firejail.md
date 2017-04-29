@@ -1,4 +1,4 @@
-[Firejail](https://firejail.wordpress.com/) is an easy to use SUID sandbox program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces, seccomp-bpf and Linux capabilities. Used alone or combined with [Grsecurity](/index.php/Grsecurity "Grsecurity") or other kernel hardening systems can further increase the security provided. Firejail is ideal for use with browsers, desktop applications, and daemons/servers alike.
+[Firejail](https://firejail.wordpress.com/) is an easy to use SUID sandbox program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces, seccomp-bpf and Linux capabilities.
 
 ## Contents
 

@@ -244,3 +244,4 @@ To restore the original packages, reinstall [freetype2](https://www.archlinux.or
 ## See also
 
 *   [Gentoo forums](http://forums.gentoo.org/viewtopic-p-7273876.html#7273876)
+*   [Infinality fontconfig](https://github.com/bohoomil/fontconfig-ultimate)

@@ -44,6 +44,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
 | FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/CUPS#Foomatic "CUPS") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
+| FAX-2940 | [brother-fax2940](https://aur.archlinux.org/packages/brother-fax2940/) |
 | HL-2030 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
 | HL-2035 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Should be compatible with any drivers for the HL-2030. |
 | HL-2040 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |

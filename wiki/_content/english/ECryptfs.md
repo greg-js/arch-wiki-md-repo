@@ -69,8 +69,6 @@ eCryptfs has been included in Linux since version 2.6.19\. Start by loading the 
 
 ```
 
-**Tip:** If you use [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec), auto-loading of cryptographic modules may fail when executing the `ecryptfs-mount-private` wrapper (as of November 2014). As a work-around, load the mentioned module manually; for example `modprobe md5` as root and [configure](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") the system to load it at next boot.
-
 To actually mount an eCryptfs filesystem, you need to use userspace tools provided by the package [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) available in the [Official repositories](/index.php/Official_repositories "Official repositories"). Unfortunately, due to the poor design of these tools, you must choose between three ways of setting up eCryptfs with different tradeoffs:
 
 1.  Use the [high-level tools](#High-level_tools_.28hardcoded_paths.29), which set things up automatically but require the lower directory to be `~/.Private/`, and allow only one encrypted filesystem per user.

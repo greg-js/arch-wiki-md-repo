@@ -104,7 +104,7 @@ Your list of device(s) may look like this:
 To mount the device with index 1 in the list to `~/mnt`:
 
 ```
-$ simple-mtpfs 1 ~/mnt
+$ simple-mtpfs --device 1 ~/mnt
 
 ```
 

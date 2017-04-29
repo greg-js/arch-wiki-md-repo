@@ -6,8 +6,8 @@
     *   [1.1 Install transcoders](#Install_transcoders)
     *   [1.2 HTTPS Setup](#HTTPS_Setup)
         *   [1.2.1 With Subsonic](#With_Subsonic)
-        *   [1.2.2 With Nginx](#With_Nginx)
-        *   [1.2.3 With LightTPD](#With_LightTPD)
+        *   [1.2.2 With nginx](#With_nginx)
+        *   [1.2.3 With lighttpd](#With_lighttpd)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 FLAC playback](#FLAC_playback)
     *   [2.2 UTF-8 file names not added to the database](#UTF-8_file_names_not_added_to_the_database)
@@ -51,9 +51,9 @@ SUBSONIC_HTTPS_PORT=8443
 
 **Note:** port 8443 seems hard-coded somewhere. When attempting to change it to port 8080 it will automatically redirect the browser to port 8443 after manually accepting the invalid HTTPS certificate. You will still be able to re-navigate to port 8080 after the warning page and have it work on that port.
 
-#### With Nginx
+#### With nginx
 
-If you already have multiple web services running, it might be easier to use a single SSL configuration everywhere. The following Nginx configuration runs Subsonic under [https://example.com/subsonic](https://example.com/subsonic) :
+If you already have multiple web services running, it might be easier to use a single SSL configuration everywhere. The following nginx configuration runs Subsonic under [https://example.com/subsonic](https://example.com/subsonic) :
 
 ```
 server {
@@ -83,9 +83,9 @@ SUBSONIC_PORT=4040
 SUBSONIC_HTTPS_PORT=0
 ```
 
-#### With LightTPD
+#### With lighttpd
 
-The following configuration makes LightTPD accept HTTPS connections and proxy them to localhost. An advantage of this approach is that Subsonic does not need to be aware of SSL settings, and it can be left with default settings. This configuration is also designed to play well with the case where LightTPD is hosting multiple sites at a single IP address.
+The following configuration makes lighttpd accept HTTPS connections and proxies them to localhost. An advantage of this approach is that Subsonic does not need to be aware of SSL settings, and it can be left with default settings. This configuration is also designed to play well with the case where lighttpd is hosting multiple sites at a single IP address.
 
  `/etc/lighttpd.conf` 
 ```

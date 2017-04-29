@@ -635,10 +635,6 @@ A list of devices supported by the modules is available at the project's [homepa
 
 For devices which are using the rt3090 chipset it should be possible to use `rt2800pci` driver, however, is not working with this chipset very well (e.g. sometimes it is not possible to use higher rate than 2Mb/s).
 
-The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) driver. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") at boot.
-
-**Note:** This driver also works with rt3062 chipsets. Also the [rt3090](https://aur.archlinux.org/packages/rt3090/) package is not supported by the latest kernel and has been orphaned; [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) should be used instead.
-
 #### rt3290
 
 The rt3290 chipset is recognised by the kernel `rt2800pci` module. However, some users experience problems and reverting to a patched Ralink driver seems to be beneficial in these [cases](https://bbs.archlinux.org/viewtopic.php?id=161952).

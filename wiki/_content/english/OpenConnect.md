@@ -62,7 +62,7 @@ Run this command below to get your ssl cert SHA1.
 
 ```
 
-It should return something like this. # Server SSL certificate didn't match: sha1:8cde39f3bf9d770cb7d1f2379e86384ff12932bb copy this into the comnmand below.
+It should return something like this: `# Server SSL certificate didn't match: sha1:8cde39f3bf9d770cb7d1f2379e86384ff12932bb`. Copy this into the comnmand below.
 
 ```
 # openconnect --servercert=sha1:<SHA1_OF_THE_SSL_CERT_FROM_ABOVE> --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<YOU_USERNAME_HERE>

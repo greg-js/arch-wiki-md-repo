@@ -608,7 +608,7 @@ Tell the command lines you tried, the medium type (e.g. CD-R, DVD+RW, ...), and 
 *   [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss)
 *   [libdvdnav](https://www.archlinux.org/packages/?name=libdvdnav)
 
-Additionally, you must install player software. Popular DVD players are [MPlayer](/index.php/MPlayer "MPlayer"), [xine](https://en.wikipedia.org/wiki/Xine "wikipedia:Xine") and [VLC](/index.php/VLC "VLC"). See the [video players](/index.php/List_of_applications/Multimedia#Video_players "List of applications/Multimedia") list and the specific instructions for [MPlayer](/index.php/MPlayer#DVD_playing "MPlayer").
+此外，你必须安装播放器软件。比较出名的播放器有 [MPlayer](/index.php/MPlayer "MPlayer")，[xine](https://en.wikipedia.org/wiki/Xine "wikipedia:Xine") 和 [VLC](/index.php/VLC "VLC")。参阅 [video players](/index.php/List_of_applications/Multimedia#Video_players "List of applications/Multimedia") 和 [MPlayer](/index.php/MPlayer#DVD_playing "MPlayer") 的详细说明。
 
 ## Ripping
 
@@ -715,19 +715,19 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 #### dvd::rip
 
-dvd::rip is a front-end to [transcode](https://www.archlinux.org/packages/?name=transcode), used to extract DVD's to the hard disk and transcode or extract and transcode on-the-fly.
+dvd::rip是[transcode](https://www.archlinux.org/packages/?name=transcode)的前端，用来将DVD提取到硬盘并解码或者实时转码。
 
-The following packages should be installed:
+以下的包应被安装：
 
-*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
-*   [libdv](https://www.archlinux.org/packages/?name=libdv): Software codec for DV video
-*   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX).
+*   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): [transcode](https://www.archlinux.org/packages/?name=transcode) 的GTK前端，可以抓取并解码。
+*   [libdv](https://www.archlinux.org/packages/?name=libdv): DV视频软件解码器。
+*   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): 可以转码为 XviD 的开源 MPEG-4 视频编码解码器(DivX 的自由替代)
 *   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): If you want to encode your ripped files as DivX.
 *   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/): If you want to read and process subtitles.
 
 The dvd::rip preferences are mostly well-documented/self-explanatory. If you need help with something, see [http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp](http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp).
 
-Ripping a DVD is often a simple matter of selecting the preferred codec(s), selecting the desired titles, then clicking the "Rip" button.
+抓取 DVD 只需选择需要的编码格式，设置标题并点击 "Rip" 按钮。
 
 ## 疑难解答
 
@@ -756,23 +756,23 @@ dvd=/dev/sr0
 
 ### DVD设备噪音大
 
-If playing DVD videos causes the system to be very loud, it may be because the disk is spinning faster than it needs to. To temporarily change the speed of the drive, run:
+如果播放DVD导致系统很吵，可能是因为光碟转地比需要的速度更快。暂时改变设备的转速，运行：
 
 ```
 # eject -x 12 /dev/dvd
 
 ```
 
-Sometimes:
+有时：
 
 ```
 # hdparm -E12 /dev/dvd
 
 ```
 
-Any speed that is supported by the drive can be used, or 0 for the maximum speed.
+可以使用设备所支持的任何速度，或者0来表示最大速度。
 
-[Setting CD-ROM and DVD-ROM drive speed](http://michal.kosmulski.org/computing/tips/cd-rom-speed.html)
+[设置CD-ROM和DVD-ROM设备的转速](http://michal.kosmulski.org/computing/tips/cd-rom-speed.html)
 
 ### Playback does not work with new computer (new DVD-Drive)
 
@@ -806,16 +806,16 @@ BraseroLibburn Libburn reported an error SCSI error on write(16976,16): [3 0C 00
 
 ### AHCI
 
-If your new DVD drive is detected but you can't mount disks, check wether your BIOS uses [AHCI](/index.php/AHCI "AHCI") and add the module to the kernel image.
+如果你的新DVD设备已被检测到但不能挂载光盘，检查你的BIOS是否使用了 [AHCI](/index.php/AHCI "AHCI") 并将模块添加到内核映像。
 
-Edit `/etc/mkinitcpio.conf` and add `ahci` to the `MODULES` variable (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for details):
+编辑 `/etc/mkinitcpio.conf` 并将 `ahci` 添加到 `MODULES` 变量(更多信息参阅 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"))：
 
 ```
 MODULES="ahci"
 
 ```
 
-Rebuild the kernel image so that it includes the newly added module:
+重构内核映像以包括新添加的模块：
 
 ```
 # mkinitcpio -p linux

@@ -79,7 +79,12 @@ Run `sensors` again, and check if there is an RPM readout. If not, increase the 
 
 **Note:** Advanced users may want to skip this section and write `/etc/fancontrol` on their own, which also saves them from hearing all of the fans at full speed.
 
-Once sensors is properly configured, run `pwmconfig` to test and configure speed control. Follow the instructions in `pwmconfig` to set up basic speeds. The default configuration options should create a new file, `/etc/fancontrol`.
+Once sensors are properly configured, use `pwmconfig` to test and configure fan speed control. The default configuration options should create `/etc/fancontrol` configuration file:
+
+```
+# pwmconfig
+
+```
 
 ### Tweaking
 

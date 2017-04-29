@@ -93,10 +93,6 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	The Linux Kernel and modules with [Multipath TCP](http://multipath-tcp.org/) support.
 
-	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)
-
-	The Linux Kernel and modules with [PaX](/index.php/PaX "PaX") patches for increased security.
-
 	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
 
 	Linux kernel and modules with the pf-kernel patch [-ck patchset (BFS included), TuxOnIce, BFQ] and aufs3.

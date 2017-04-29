@@ -24,9 +24,8 @@ This article contains recommendations and best practices for hardening an Arch L
         *   [5.2.2 Denying ssh login](#Denying_ssh_login)
 *   [6 Mandatory access control](#Mandatory_access_control)
     *   [6.1 Pathname MAC](#Pathname_MAC)
-    *   [6.2 Role-based access control](#Role-based_access_control)
-    *   [6.3 Labels MAC](#Labels_MAC)
-    *   [6.4 Access Control Lists](#Access_Control_Lists)
+    *   [6.2 Labels MAC](#Labels_MAC)
+    *   [6.3 Access Control Lists](#Access_Control_Lists)
 *   [7 Kernel hardening](#Kernel_hardening)
     *   [7.1 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
     *   [7.2 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
@@ -303,13 +302,6 @@ Pathname-based access control is a simple form of access control that offers per
 *   [AppArmor](/index.php/AppArmor "AppArmor") is a [Canonical](https://en.wikipedia.org/wiki/Canonical "wikipedia:Canonical")-maintained MAC implementation seen as an "easier" alternative to SELinux.
 *   [Tomoyo](/index.php/Tomoyo "Tomoyo") is another simple, easy-to-use system offering mandatory access control. It is designed to be both simple in usage and in implementation, requiring very few dependencies.
 
-### Role-based access control
-
-The MAC implementation grsecurity supports is called role-based access control. RBAC associates roles with each user. Each role defines what operations can be performed on certain objects. Given a well-written collection of roles and operations your users will be restricted to perform only those tasks that you tell them they can do. The default "deny-all" ensures you that a user cannot perform an action you have not thought of.
-
-*   [Grsecurity RBAC](/index.php/Grsecurity#RBAC "Grsecurity") has a learning mode like AppArmor for easy configuration
-*   [Grsecurity RBAC](/index.php/Grsecurity#RBAC "Grsecurity") does not rely on extra meta-data like SELinux. RBAC is significantly faster than SELinux.
-
 ### Labels MAC
 
 Labels-based access control means the extended attributes of a file are used to govern its security permissions. While this system is arguably more flexible in its security offerings than pathname-based MAC, it only works on filesystems that support these extended attributes.
@@ -319,8 +311,6 @@ Labels-based access control means the extended attributes of a file are used to 
 ### Access Control Lists
 
 [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") (ACLs) are an alternative to attaching rules directly to the filesystem in some way. ACLs implement access control by checking program actions against a list of permitted behavior.
-
-*   [grsecurity](/index.php/Grsecurity "Grsecurity") implements ACL access control, as well as a complete kernel patchset focused on improving security. Its changes extend to control of memory allocation, improved chroot restrictions, and rules involving specific network behavior.
 
 ## Kernel hardening
 
@@ -341,8 +331,6 @@ Enabling `kernel.kptr_restrict` will hide kernel symbol addresses in `/proc/kall
 The Linux kernel includes the ability to compile BPF/Seccomp rule sets to native code as a performance optimization. The `net.core.bpf_jit_enable` flag should be left at 0 for a maximum level of security.
 
 This can be helpful in specific domains, but is not usually useful. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference.
-
-**Note:** [grsecurity](/index.php/Grsecurity "Grsecurity") includes JIT hardening for the BPF JIT compiler, greatly reducing the risk of exploitation.
 
 ### ptrace scope
 
@@ -371,11 +359,11 @@ SupplementaryGroups=proc
 
 ## Sandboxing applications
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel and may prevent certain sandboxing features from being made available to applications. The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package sets `CONFIG_USER_NS=y` and is a viable alternative to the stock kernel if the ability to create user namepaces as an unprivileged user is desired.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel and may prevent certain sandboxing features from being made available to applications.
 
 ### Firejail
 
-[Firejail](/index.php/Firejail "Firejail") is an easy to use and simple tool for sandboxing applications and servers alike. Firejail is suggested for browsers and internet facing applications, as well as any servers you may be running. Firejail is further enhanced when used with [Grsecurity](/index.php/Grsecurity "Grsecurity").
+[Firejail](/index.php/Firejail "Firejail") is an easy to use and simple tool for sandboxing applications and servers alike. Firejail is suggested for browsers and internet facing applications, as well as any servers you may be running.
 
 ### bubblewrap
 
@@ -531,7 +519,7 @@ Packages can be rebuilt and stripped of undesired functions and features as a me
 
 While still a work in progress, the following build flags can be enabled in `/etc/makepkg.conf` as they are expected to become [Arch default](https://lists.archlinux.org/pipermail/arch-dev-public/2016-October/028405.html) flags in the future:
 
-*   `z,now` to LDFLAGS
+*   `-z,now` to LDFLAGS
 *   `-fno-plt -fstack-check` to [CFLAGS](https://en.wikipedia.org/wiki/CFLAGS "wikipedia:CFLAGS")
 
 Using [hardening-check](https://aur.archlinux.org/packages/hardening-check/) to verify the status of the vanilla `bzip2` binary:

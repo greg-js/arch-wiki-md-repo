@@ -16,14 +16,7 @@ You can install [webmin](https://aur.archlinux.org/packages/webmin/) from the [A
 
 ## Configuration
 
-To allow access to Webmin from a remote computer, edit `/etc/webmin/miniserv.conf` to include your network address. (Note - 127.0.0.1 is there by default)
-
-```
-allow=127.0.0.1 192.168.1.0
-
-```
-
-The above example allows all computers on the 192.168.1.0 network to access Webmin.
+To allow access to Webmin from a remote computer, configure your firewall to allow access to TCP port 10000\. You may want to configure firewall to restrict access only from certain IP addresses.
 
 ## Starting
 

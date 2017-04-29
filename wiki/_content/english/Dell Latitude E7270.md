@@ -45,7 +45,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Sound
 
-Initially the headphone port did not work, after setting Auto-mute to Lineout+Speaker and a reboot it started working
+Audio output via the headphone port does not work if the microphone is muted when the laptop is started. Unmuting the microphone fixes the issue, it can be savely muted afterwards.
 
 ## Display
 

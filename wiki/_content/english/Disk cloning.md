@@ -25,7 +25,7 @@ The *dd* command is a simple, yet versatile and powerful tool. It can be used to
 From physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partition 1.
 
 ```
-# dd if=/dev/sda1 of=/dev/sdb1 bs=64K conv=noerror,sync
+# dd if=/dev/sda1 of=/dev/sdb1 bs=64K conv=noerror,sync status=progress
 
 ```
 
@@ -36,15 +36,16 @@ From physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partiti
 From physical disk `/dev/sd*X*` to physical disk `/dev/sd*Y*`
 
 ```
-# dd if=/dev/sd*X* of=/dev/sd*Y* bs=64K conv=noerror,sync
+# dd if=/dev/sd*X* of=/dev/sd*Y* bs=64K conv=noerror,sync status=progress
 
 ```
 
 This will clone the entire drive, including the MBR (and therefore bootloader), all partitions, UUIDs, and data.
 
+*   `bs=` sets the block size. Defaults to 512 bytes, which is the "classic" block size for hard drives since the early 1980s, but is not the most convenient. Use a bigger value, 64K or 128K. Also, please read the warning below, because there is more to this than just "block sizes" -it also influences how read errors propagate. See [[1]](http://www.mail-archive.com/eug-lug@efn.org/msg12073.html) and [[2]](http://blog.tdg5.com/tuning-dd-block-size/) for details and to figure out the best bs value for your use case.
 *   `noerror` instructs *dd* to continue operation, ignoring all read errors. Default behavior for *dd* is to halt at any error.
 *   `sync` fills input blocks with zeroes if there were any read errors, so data offsets stay in sync.
-*   `bs=` sets the block size. Defaults to 512 bytes, which is the "classic" block size for hard drives since the early 1980s, but is not the most convenient. Use a bigger value, 64K or 128K. Also, please read the warning below, because there is more to this than just "block sizes" -it also influences how read errors propagate. See [[1]](http://www.mail-archive.com/eug-lug@efn.org/msg12073.html) and [[2]](http://blog.tdg5.com/tuning-dd-block-size/) for details and to figure out the best bs value for your use case.
+*   `status=progress` shows periodic transfer statistics which can be used to estimate when the operation may be complete.
 
 **Warning:** The block size you specify influences how read errors are handled. Read below. For data recovery, use [ddrescue](#Using_ddrescue).
 

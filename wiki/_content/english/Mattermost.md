@@ -349,7 +349,7 @@ Open up a browser and navigate to [http://localhost:8065/](http://localhost:8065
 
 ### TLS/SSL via reverse web-proxy
 
-Since Mattermost doesn't support self signed TLS/SSL keys in their [Android](/index.php/Android "Android") or [iOS](/index.php/IOS "IOS") app, a good thing to do is to setup a reverse web proxy.
+Since Mattermost doesn't support self signed TLS/SSL keys in their [Android](/index.php/Android "Android") or [iOS](/index.php/IOS "IOS") app, a good thing to do is to [setup a reverse web proxy](https://docs.mattermost.com/install/config-proxy-nginx.html?highlight=proxy#configuring-nginx-as-a-proxy-for-mattermost-server).
 
 The main benefits of a proxy are:
 
@@ -448,7 +448,7 @@ server {
 *   Step 6: Restart nginx:
 
 ```
-# systemctl restart ngnix.service
+# systemctl restart nginx.service
 
 ```
 

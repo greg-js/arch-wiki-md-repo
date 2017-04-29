@@ -18,6 +18,7 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
     *   [4.1 Python issues](#Python_issues)
         *   [4.1.1 Modules known to require python2 exclusively](#Modules_known_to_require_python2_exclusively)
     *   [4.2 pkg-config issues](#pkg-config_issues)
+    *   [4.3 Build failed due to incompatible meson versions](#Build_failed_due_to_incompatible_meson_versions)
 *   [5 Building JHBuild from scratch](#Building_JHBuild_from_scratch)
 *   [6 See also](#See_also)
 
@@ -228,6 +229,23 @@ They are:
 ### pkg-config issues
 
 If you have a malformatted .pc file on your PKG_CONFIG_PATH, JHBuild will not be able to detect all the (valid) .pc files you have installed and will complain that the .pc files are missing. Look at the output of `jhbuild sysdeps`—there should be a message about the problematic .pc files.
+
+### Build failed due to incompatible meson versions
+
+You may come across with a message similar to the one below.
+
+```
+Meson encountered an error:
+Build directory has been generated with Meson version 0.40.0, which is incompatible with current version 0.40.1.
+Please delete this build directory AND create a new one.
+FAILED: build.ninja 
+'/usr/bin/python3' '/home/foobar/jhbuild/install/bin/meson' --internal regenerate '/home/foobar/jhbuild/checkout/gst-plugins-base' '/home/foobar/.cache/jhbuild/build/gst-plugins-base' --backend ninja
+ninja: error: rebuilding 'build.ninja': subcommand failed
+```
+
+In the above example, the module was configured with meson 0.40.0 at on time, but a newer version (0.40.1, in the example) is now installed and is not compatible with the old one.
+
+**Solution:** Run Configure phase again, in order to have this module configured with newer Meson version
 
 ## Building JHBuild from scratch
 

@@ -24,7 +24,7 @@ Issue the following command:
 
 ```
 
-If the command output shows "frozen" one cannot continue to the next step. Some BIOSes block the ATA Secure Erase command by issuing a "SECURITY FREEZE" command to "freeze" the drive before booting an operating system.
+In the security section of the output it should say "not frozen". If it shows as just "frozen" then you cannot continue to the next step. Some BIOSes block the ATA Secure Erase command by issuing a "SECURITY FREEZE" command to "freeze" the drive before booting an operating system.
 
 A possible solution is to simply [suspend](/index.php/Suspend "Suspend") the system. Upon waking up, it is likely that the freeze will be lifted. If unsuccessful, one can try hot-(re)plug the data cable (which might crash the kernel). If hot-(re)plugging the SATA data cable crashes the kernel try letting the operating system fully boot up, then quickly hot-(re)plug both the SATA power and data cables. If hot-(re)plugging of SATA cables still crashes the kernel, make sure that AHCI is enabled in the BIOS (AHCI allows hot-(re)plugging operations without a crash). Using a USB-to-SATA adapter is an option if it supports hotplugging. One can also use [hdparm](https://www.archlinux.org/packages/?name=hdparm) via USB.
 

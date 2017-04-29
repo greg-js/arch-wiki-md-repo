@@ -841,7 +841,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Unreal Tournament (upcoming)](https://en.wikipedia.org/wiki/Unreal_Tournament_(upcoming_video_game) "wikipedia:Unreal Tournament (upcoming video game)")** — Free and open-source remake of the original using Unreal Engine 4
 
-	[https://www.unrealtournament.com/](https://www.unrealtournament.com/) || [unreal-tournament-4](https://aur.archlinux.org/packages/unreal-tournament-4/)
+	[https://www.unrealtournament.com/](https://www.unrealtournament.com/) || [unrealtournament4](https://aur.archlinux.org/packages/unrealtournament4/)
 
 *   **[Unvanquished](https://en.wikipedia.org/wiki/Unvanquished_(video_game) "wikipedia:Unvanquished (video game)")** — Team-based fps/rts hybrid game which pits aliens against humans. Monthly release that can be played on official servers.
 

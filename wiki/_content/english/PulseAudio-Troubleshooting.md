@@ -928,7 +928,7 @@ load-module module-switch-on-connect
 
 ### My Bluetooth device is paired but does not play any sound
 
-[See the article in Bluetooth section](/index.php/Bluetooth#My_device_is_paired_but_no_sound_is_played_from_it "Bluetooth")
+[See the article in Bluetooth headset section](/index.php/Bluetooth_headset#A2DP_not_working_with_PulseAudio "Bluetooth headset")
 
 Starting from PulseAudio 2.99 and bluez 4.101 you should **avoid** using Socket interface. Do NOT use:
 

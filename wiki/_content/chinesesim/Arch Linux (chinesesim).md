@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=435940)可以查看翻译后英文页面的改动。
 
-Arch Linux 是通用 i686/x86-64 GNU/Linux 行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
+Arch Linux 是通用 i686/x86-64 GNU/Linux 发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
 
 ## Contents
 

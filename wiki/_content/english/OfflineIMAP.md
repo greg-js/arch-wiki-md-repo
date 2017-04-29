@@ -24,6 +24,7 @@
         *   [4.4.5 python2-keyring](#python2-keyring)
         *   [4.4.6 Emacs EasyPG](#Emacs_EasyPG)
         *   [4.4.7 KeePass / KeePassX](#KeePass_.2F_KeePassX)
+            *   [4.4.7.1 Old kdb format](#Old_kdb_format)
     *   [4.5 Kerberos authentication](#Kerberos_authentication)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Overriding UI and autorefresh settings](#Overriding_UI_and_autorefresh_settings)
@@ -435,26 +436,33 @@ See [http://www.emacswiki.org/emacs/OfflineIMAP#toc2](http://www.emacswiki.org/e
 
 #### KeePass / KeePassX
 
-Install [python2-keepass-git](https://aur.archlinux.org/packages/python2-keepass-git/) from the AUR, then add the following to your offlineimap.py file:
+Install [python2-libkeepass](https://aur.archlinux.org/packages/python2-libkeepass/) from the AUR, then add the following to your offlineimap.py file:
 
 ```
 #! /usr/bin/env python2
 import os, getpass
-from keepass import kpdb
+import libkeepass
 
 def get_keepass_pw(dbpath, title="", username=""):
     if os.path.isfile(dbpath):
-        db = kpdb.Database(dbpath, getpass.getpass("Master password for '" + dbpath +    "': "))
-        for entry in db.entries:
-            if (entry.title == title) and (entry.username == username):
-                return entry.password
+        with libkeepass.open(
+                os.path.expanduser(dbpath),
+                password=getpass.getpass("Master password for '" + dbpath +    "': ")) as kdb:
+            entry = kdb.tree.xpath(
+                './/Entry'
+                '/String/Key[.="Title"]/../Value[.="{title}"]/../..'
+                '/String/Key[.="UserName"]/../Value[.="{username}"]/../..'
+                '/String/Key[.="Password"]/../Value'.format(
+                    title=title,
+                    username=username
+                )
+            )[0]
+            return entry.text
     else:
         print "Error: '" + dbpath + "' does not exist."
         return
 
 ```
-
-(Credit to aki--aki: [https://gist.github.com/aki--aki/5180359](https://gist.github.com/aki--aki/5180359))
 
 Next, edit your ~/.offlineimaprc:
 
@@ -473,6 +481,29 @@ remotepasseval = get_keepass_pw("/path/to/database.kdb", title="<entry title>", 
 ```
 
 Note that as-is, this does not support KDBs with keyfiles, only KDBs with password-only auth.
+
+##### Old kdb format
+
+If your key database is stored in an old format, you the xpath strings may not be correct. This method should work in that case, but it's not compatible with the current default format (v4)
+
+Install [python2-keepass-git](https://aur.archlinux.org/packages/python2-keepass-git/) from the AUR, then add the following to your offlineimap.py file:
+
+```
+#! /usr/bin/env python2
+import os, getpass
+from keepass import kpdb
+
+def get_keepass_pw(dbpath, title="", username=""):
+    if os.path.isfile(dbpath):
+        db = kpdb.Database(dbpath, getpass.getpass("Master password for '" + dbpath +    "': "))
+        for entry in db.entries:
+            if (entry.title == title) and (entry.username == username):
+                return entry.password
+    else:
+        print "Error: '" + dbpath + "' does not exist."
+        return
+
+```
 
 ### Kerberos authentication
 

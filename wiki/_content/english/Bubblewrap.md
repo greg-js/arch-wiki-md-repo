@@ -24,7 +24,7 @@
 
 [Install](/index.php/Install "Install") [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) or [bubblewrap-git](https://aur.archlinux.org/packages/bubblewrap-git/).
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel per [FS#36969](https://bugs.archlinux.org/task/36969). This prevents the kernel from exposing user namespaces as a means to accomodate separate user information for separate virtualized services. An example would be running *syslog* in a namespace with a UID and GID different than that of the host system. The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package sets `CONFIG_USER_NS=y` but restricts it's use to privileged users for security reasons. It is a viable alternative to the stock kernel if the ability to create user namepaces is desired.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel per [FS#36969](https://bugs.archlinux.org/task/36969). This prevents the kernel from exposing user namespaces as a means to accomodate separate user information for separate virtualized services. An example would be running *syslog* in a namespace with a UID and GID different than that of the host system.
 
 ## Configuration
 

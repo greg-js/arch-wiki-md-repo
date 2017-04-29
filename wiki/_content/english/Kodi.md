@@ -469,7 +469,12 @@ Kodi runs smoothly on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips
 
 ### TV is not detected unless powered on first
 
-This is a known issue. See [Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first](http://kodi.wiki/view/Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first) for a simple fix.
+Some TVs (LG brand for example) only report their capabilities via EDID through HDMI when powered on **before** the RPi. The effects of this can manifest in one of two ways:
+
+1.  Despite being connected, the TV will be unable to detect a signal from the HDMI source until the RPi is rebooted.
+2.  The signal will be detected but incorrectly by the RPi to the point of the GUI looking distorted when compared to having the TV on first, then rebooting the RPi.
+
+Both conditions are easily fixed. See: [Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first](http://kodi.wiki/view/Raspberry_Pi_FAQ#TV_is_not_detected_unless_powered_on_first).
 
 #### Run kodi in a window manager
 

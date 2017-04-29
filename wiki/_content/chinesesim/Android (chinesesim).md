@@ -399,7 +399,7 @@ $ virtualenv2 venv # 创建一个包含 Virtualenv 的目录 venv
 
 ```
 
-{{注意|编译时可能报缺少 python 模块，可以通过链接 /usr/lib/python2.7/* 到 ~/android/venv/python2.7/ 来解决，实际路径按照虚拟环境的路径确定。
+**注意:** 编译时可能报缺少 python 模块，可以通过链接 /usr/lib/python2.7/* 到 ~/android/venv/python2.7/ 来解决，实际路径按照虚拟环境的路径确定。
 
 激活 Virtualenv，使得 $PATH 指向 Python 2。
 

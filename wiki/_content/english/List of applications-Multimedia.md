@@ -228,6 +228,10 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
+*   **G'MIC** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
+
+	[http://www.gmic.eu/](http://www.gmic.eu/) || [gmic](https://www.archlinux.org/packages/?name=gmic)
+
 *   **[Gpaint](https://en.wikipedia.org/wiki/GNU_Paint "wikipedia:GNU Paint")** — [Paintbrush](https://en.wikipedia.org/wiki/PC_Paintbrush "wikipedia:PC Paintbrush") clone for GNOME.
 
 	[http://www.gnu.org/software/gpaint/](http://www.gnu.org/software/gpaint/) || [gpaint](https://aur.archlinux.org/packages/gpaint/)

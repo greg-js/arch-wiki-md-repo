@@ -149,6 +149,7 @@ It might be necessary to use the legacy driver [nvidia-304xx](https://www.archli
 *   [aircrack-ng](https://www.archlinux.org/packages/?name=aircrack-ng)
 *   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) - a GPU memtest. Despite its name, is supports both CUDA and OpenCL
 *   [Blender](/index.php/Blender "Blender") - CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
+*   [BOINC](/index.php/BOINC "BOINC")
 
 ## Links and references
 

@@ -101,7 +101,7 @@ initrd (hd0,0)/initramfs-linux-pf.img
 
 ## Forum thread for linux-pf
 
-There is a [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=103462) at the BBS for reporting errors, impressions, ideas and requests.
+There is a [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=103462) at the BBS for reporting errors, impressions, ideas and requests. It is now closed.
 
 ## See also
 

@@ -19,15 +19,15 @@
 | <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(11)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(49)</small> |
-| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(76) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(75) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(28)</small> |
-| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(46)</small> |
+| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(48)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(22)</small> |
-| <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(16)</small> |
+| <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(17)</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(19)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(4)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(4)</small> |
@@ -87,7 +87,7 @@
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(13)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |
 | <small>5.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(76) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+| <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(75) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |

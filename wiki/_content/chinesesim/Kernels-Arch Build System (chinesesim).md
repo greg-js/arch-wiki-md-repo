@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels/Arch_Build_System&diff=0&oldid=421993)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels%2FArch_Build_System&diff=0&oldid=421993)可以查看翻译后英文页面的改动。
 
 参阅 [Kernels (简体中文)](/index.php/Kernels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels (简体中文)"). 利用 [Arch 编译系统](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")，可以基于官方的 [linux](https://www.archlinux.org/packages/?name=linux) 包编译自定义内核。这种编译方法可以自动化整个过程，并且是基于一个已经经过详细测试过的内核包。你可以编辑 PKGBUILD 来使用一个自定义内核配置或者添加附加的补丁。
 
