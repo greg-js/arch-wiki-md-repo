@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [dunst](https://www.archlinux.org/packages/?name=dunst) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package.
 
 An example configuration file is included at `/usr/share/dunst/dunstrc`.
 
@@ -67,7 +67,7 @@ browser = /usr/bin/chromium
 
 ## Scripting
 
-Dunst can be configured to run scripts based on certain notification content. Here is an example using Dunst to run a script when someone from [Pidgen](https://www.archlinux.org/packages/?name=Pidgen) signs on:
+Dunst can be configured to run scripts based on certain notification content. Here is an example using Dunst to run a script when someone from [pidgin](https://www.archlinux.org/packages/?name=pidgin) signs on:
 
 ```
 [signed_on]

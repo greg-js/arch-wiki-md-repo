@@ -401,6 +401,8 @@ First, install any network-supporting filesystem; for example [sshfs](/index.php
 
 Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
 
+**Note:** Do not make `/var/cache/pacman/pkg` or any of its ancestors (e.g., `/var`) a symlink. Pacman expects these to be directories. When pacman re-installs or upgrades itself, it will remove the symlinks and create empty directories instead. However during the transaction pacman relies on some files residing there, hence breaking the update process. Refer to [FS#50298](https://bugs.archlinux.org/task/50298) for further details.
+
 #### two-way with rsync
 
 Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable the [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for the rsync protocol.

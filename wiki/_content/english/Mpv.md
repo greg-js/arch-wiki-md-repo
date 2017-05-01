@@ -168,7 +168,7 @@ With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/), *
 
 It may be needed to specify a valid user agent for HTTP streaming, e.g. `user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0"`.
 
-[Browser plugins#Video players workarounds](/index.php/Browser_plugins#Video_players_workarounds "Browser plugins") page shows other easy ways to watch videos.
+[Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins") page shows other easy ways to watch videos.
 
 ### Improving mpv as a music player with Lua scripts
 

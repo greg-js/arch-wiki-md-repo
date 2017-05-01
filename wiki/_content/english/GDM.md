@@ -57,7 +57,7 @@ See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Disp
 
 ### Log-in screen background image
 
-**Note:** Since GNOME 3.16, GNOME Shell themes are now stored binary files (gresource).
+**Note:** Since GNOME 3.16, GNOME Shell themes are now stored as binary files (gresource).
 
 Firstly, you need to extract the existing GNOME Shell theme to a folder in your home directory. You can do this using the following script:
 

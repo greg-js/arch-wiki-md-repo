@@ -23,6 +23,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[F
 
 If you want to have desktop integration using [portals](https://github.com/flatpak/flatpak/wiki/Portals) you can install the [xdg-desktop-portal-gtk](https://www.archlinux.org/packages/?name=xdg-desktop-portal-gtk) package.
 
+**Note:** If you want to build flatpaks with `flatpak-builder` you will need to install the optional dependencies of [elfutils](https://www.archlinux.org/packages/?name=elfutils) and [patch](https://www.archlinux.org/packages/?name=patch).
+
 ## Managing repositories
 
 ### Add a repository

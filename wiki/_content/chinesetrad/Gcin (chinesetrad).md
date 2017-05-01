@@ -114,7 +114,7 @@ gcin &
 
 修改選單中程式執行的命令也能夠達成相同的效果。
 
-[Fluxbox](/index.php/Fluxbox "Fluxbox")或類似視窗管理的軟體，可以將**OOO_FORCE_DESKTOP=gnome**加入`.xinitrc`當中。
+[Fluxbox](/index.php/Fluxbox "Fluxbox")或類似視窗管理的軟體，可以將**OOO_FORCE_DESKTOP=gnome**加入`.xinitrc`或是`.xprofile`當中。
 
 * * *
 

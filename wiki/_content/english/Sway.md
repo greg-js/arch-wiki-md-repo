@@ -177,13 +177,13 @@ swaymsg -t get_outputs
 ```
  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
- bindsym XF86AudioToggle exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+ bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
  bindsym XF86MonBrightnessDown exec dsplight down 5
  bindsym XF86MonBrightnessUp exec dsplight up 5
 
 ```
 
-You many need to change the sound card index to 1 or 2 depending on your system configuration. See [Backlight](/index.php/Backlight "Backlight") for a list of utilities to control brightness and color correction.
+See [Backlight](/index.php/Backlight "Backlight") for a list of utilities to control brightness and color correction.
 
 ## Tips and tricks
 
@@ -224,7 +224,24 @@ ERROR: Unable to connect to
 
 ```
 
-when run inside a terminal multiplexer (such as gnu screen or tmux). To avoid this error, the current workaround is to run the command outside of a multiplexer.
+when run inside a terminal multiplexer (such as gnu screen or tmux). This means `swaymsg` could not connect to the socket provided in your `SWAYSOCK`.
+
+To view what the current value of `SWAYSOCK` is, type:
+
+```
+$ env | fgrep SWAYSOCK
+SWAYSOCK=/run/user/1000/sway-ipc.1000.4981.sock
+
+```
+
+To work around this problem, you may try attaching to the first available sway socket, and retrying your command:
+
+```
+$ export SWAYSOCK=$(ls /run/user/*/sway-ipc.*.sock | head -n 1)
+
+```
+
+To avoid this error, run the command outside of a multiplexer.
 
 ### Incorrect Monitor Resolution
 

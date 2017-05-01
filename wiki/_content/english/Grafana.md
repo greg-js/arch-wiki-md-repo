@@ -19,7 +19,7 @@ After that you can [Enable](/index.php/Enable "Enable") and [start](/index.php/S
 
 ### Influxdb installation
 
-One often used backend is [influxdb](https://aur.archlinux.org/packages/influxdb/). [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service. The web interface is available at [http://localhost:8083/](http://localhost:8083/)
+One often used backend is [InfluxDB](/index.php/InfluxDB "InfluxDB"). [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service. The web interface is available at [http://localhost:8083/](http://localhost:8083/)
 
 ### Aggregate data
 

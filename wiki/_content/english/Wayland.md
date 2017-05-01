@@ -31,7 +31,7 @@
     *   [5.8 liteide](#liteide)
     *   [5.9 screen recording](#screen_recording)
     *   [5.10 remote display](#remote_display)
-    *   [5.11 Remote desktop and vm applications don't grab input](#Remote_desktop_and_vm_applications_don.27t_grab_input)
+    *   [5.11 Remote desktop and VM window input grabbing](#Remote_desktop_and_VM_window_input_grabbing)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -43,10 +43,8 @@ Wayland only works on systems using [KMS](/index.php/KMS "KMS"). As Wayland is o
 For the GPU driver and Wayland composer to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](http://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
 
 | Buffer API | GPU driver support | Wayland compositor support |
-| GBM | Most* | All |
-| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME") ([from 3.24](https://bugzilla.gnome.org/show_bug.cgi?id=773629)) |
-
-*: "Most" GPU drivers (supporting GBM) include [AMDGPU](/index.php/AMDGPU "AMDGPU"), [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [Nouveau](/index.php/Nouveau "Nouveau"). **Not included** are [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") and [NVIDIA](/index.php/NVIDIA "NVIDIA")
+| GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [Sway](/index.php/Sway "Sway") (from [0.13](http://phoronix.com/scan.php?page=news_item&px=Sway-Compositor-April)) |
 
 ## Weston
 
@@ -388,9 +386,13 @@ gparted wants to run as root. Before starting it, allow root user to display app
 
 (20161229) there was a merge of FreeRDP into weston in 2013, enabled via compile time switch. The arch linux weston package currently has it not enabled.
 
-### Remote desktop and vm applications don't grab input
+### Remote desktop and VM window input grabbing
 
-Per design Wayland doesn't allow for an application to grab input devices and constrict the region of the input device to the application, a much wanted feature when using a remote desktop app or running a desktop vm, which means that modifier keys and hotkeys will not be sent correctly to the remote machine or vm and also the mouse pointer will not be restricted to the application's user interface (which might cause a parallax effect). [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=97333) [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1285770)
+Wayland does not allow exclusive input device grabbing (e.g. keyboard, mouse) by an application and to constrict the region of the input device to the application's window ([freedesktop bug](https://bugs.freedesktop.org/show_bug.cgi?id=97333), [Redhat](https://bugzilla.redhat.com/show_bug.cgi?id=1285770), also related [[1]](https://bugzilla.gnome.org/show_bug.cgi?id=752956) and [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96547)).
+
+This feature is needed in order to send hotkey combinations and modifiers to remote desktop and virtual machine windows. Also, the mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window (VM or remote desktop) is displaced from the host's mouse pointer.
+
+This limitation exists for both native Wayland and XWayland windows ([an extension was proposed for the latter](https://lists.freedesktop.org/archives/wayland-devel/2017-April/033799.html)).
 
 ## See also
 

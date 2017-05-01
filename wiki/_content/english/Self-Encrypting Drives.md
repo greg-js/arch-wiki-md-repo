@@ -118,6 +118,8 @@ Windows version of sedutils output:
 
 ```
 
+**Note:** [NVMe disks](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") are only partially supported: The *sedutil-cli --scan* command and the Linux PBA (pre-boot-authorisation) image currently only see SATA disks. It is possible to enable self-encryption on an NVMe device by passing the name to sedutil-cli, but not possible to boot from a locked NVMe disk (the PBA image does not see it). [More details here](https://github.com/Drive-Trust-Alliance/sedutil/issues/120).
+
 ### Download (or create) the pre-boot authorization (PBA) image
 
 Download the pre-boot authorization (PBA) image for a [BIOS](https://github.com/Drive-Trust-Alliance/exec/blob/master/LINUXPBARelease.img.gz?raw=true) or [64bit UEFI](https://github.com/Drive-Trust-Alliance/exec/blob/master/UEFI64_Release.img.gz?raw=true) machine.

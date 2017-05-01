@@ -99,7 +99,7 @@ $ valgrind --tool=callgrind appname
 
 ```
 
-and run the output through [kdesdk-kcachegrind](https://www.archlinux.org/packages/?name=kdesdk-kcachegrind) to graphically explore the functions the program uses. If a program hangs, this makes it easier to pinpoint the location of the error.
+and run the output through [kcachegrind](https://www.archlinux.org/packages/?name=kcachegrind) to graphically explore the functions the program uses. If a program hangs, this makes it easier to pinpoint the location of the error.
 
 ## Missing files or libraries
 

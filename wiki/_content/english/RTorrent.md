@@ -29,7 +29,6 @@
     *   [6.1 XMLRPC interface](#XMLRPC_interface)
     *   [6.2 Saving magnet links as torrent files in watch folder](#Saving_magnet_links_as_torrent_files_in_watch_folder)
 *   [7 Magnet to Torrent](#Magnet_to_Torrent)
-    *   [7.1 In order to use this with an ARM device](#In_order_to_use_this_with_an_ARM_device)
 *   [8 rtorrent-ps](#rtorrent-ps)
     *   [8.1 Installation](#Installation_2)
     *   [8.2 Configuration](#Configuration_2)
@@ -810,18 +809,6 @@ How to use:
 $ magnet2torrent -m <magnet link> -o [torrent file]
 
 ```
-
-#### In order to use this with an ARM device
-
-You should have package versions
-
-```
-python-libtorrent-rasterbar 1.0.8-1
-libtorrent-rasterbar 1:1.0.9-1
-
-```
-
-Then you can compile magnet2torrent-git package.
 
 ## rtorrent-ps
 

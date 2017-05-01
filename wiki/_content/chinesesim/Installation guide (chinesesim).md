@@ -1,16 +1,14 @@
 **翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=463062)可以查看翻译后英文页面的改动。
 
-本文将引导您从用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux "Arch Linux")。安装之前请先阅读 [FAQ (简体中文)](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。为了更清楚的阅读此文档，请参考 [Help:Reading](/index.php/Help:Reading "Help:Reading").
+本文将引导您从用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的基本操作及术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").
 
-[Category:Getting and installing Arch (简体中文)](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 包含了更多针对特殊情况的安装指南。
-
-更详细的资源，可以阅读 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章(安装环境中可以使用 [ELinks](/index.php/ELinks "ELinks") 访问)。如需要交互帮助，还可以通过 [IRC channel](/index.php/IRC_channel "IRC channel") 频道和 [论坛](https://bbs.archlinux.org/) 。此外，在使用您不熟悉的命令之前，请务必首先阅读该命令对应的 `man` 文件。查看该文件的方法很简单，通常只需要 `man *要查看的命令*` 即可。
+有关更详细的说明，请阅读本指南内相应的 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章或各类程序的[手册](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)")。有关配置的概述，请参阅 [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt)。如需要交互帮助，可以使用 [IRC channel](/index.php/IRC_channel "IRC channel") 频道和 [论坛](https://bbs.archlinux.org/)。
 
 ## Contents
 
 *   [1 安装准备](#.E5.AE.89.E8.A3.85.E5.87.86.E5.A4.87)
-    *   [1.1 验证启动模式](#.E9.AA.8C.E8.AF.81.E5.90.AF.E5.8A.A8.E6.A8.A1.E5.BC.8F)
-    *   [1.2 键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
+    *   [1.1 键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
+    *   [1.2 验证启动模式](#.E9.AA.8C.E8.AF.81.E5.90.AF.E5.8A.A8.E6.A8.A1.E5.BC.8F)
     *   [1.3 连接到因特网](#.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.9B.A0.E7.89.B9.E7.BD.91)
     *   [1.4 更新系统时间](#.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.BB.9F.E6.97.B6.E9.97.B4)
     *   [1.5 建立硬盘分区](#.E5.BB.BA.E7.AB.8B.E7.A1.AC.E7.9B.98.E5.88.86.E5.8C.BA)
@@ -34,20 +32,11 @@
 
 ## 安装准备
 
-理论上，Arch Linux能在任何内存空间不小于 256MB 的[i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")兼容机上运行。最基本的[base](https://www.archlinux.org/groups/x86_64/base/)组中包含的包将占用约 800MB 存储空间。
+Arch Linux能在任何内存空间不小于 512MB 内存的[x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64")兼容机上运行。最基本的[base](https://www.archlinux.org/groups/x86_64/base/)组中包含的包将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
 
-[Category:Getting and installing Arch (简体中文)](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中包含了下载和启动安装介质的说明。建议始终使用最新的 ISO 镜像。启动完成后会自动以 root 登录并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示， [grml config](http://grml.org/zsh/)提供了额外的配置。
+根据 [Category:Getting and installing Arch (简体中文)](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示符。类似 [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) 的常规命令都可以用 `Tab` [自动补全](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")。
 
-如果你想切换至其它的虚拟终端来干点别的事, 例如使用 ELinks 来查看这篇文档，使用 Alt+arrow 快捷键。编辑配置文件时可以使用 [nano](/index.php/Nano#Usage "Nano") 或 [vim](/index.php/Vim#Usage "Vim") 。
-
-### 验证启动模式
-
-如果 [UEFI](/index.php/UEFI "UEFI") 模式已经启用, [Archiso](/index.php/Archiso "Archiso") 将会使用 [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") 来[启动](/index.php/Boot "Boot") Arch Linux . 如果你要验证启动模式, 可以尝试列出 [efivars](/index.php/UEFI#UEFI_Variables "UEFI") 目录:
-
-```
-# ls /sys/firmware/efi/efivars
-
-```
+如果你想切换至其它的虚拟终端来干点别的事, 例如使用 [ELinks](/index.php/ELinks "ELinks") 来查看本篇指南，使用 `Alt+*arrow*` [快捷键](/index.php/Keyboard_shortcuts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Keyboard shortcuts (简体中文)")。可以使用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim") [编辑](/index.php/Textedit "Textedit")配置文件。
 
 ### 键盘布局
 
@@ -58,6 +47,17 @@
 将 *layout* 转换为您的键盘布局，如`fr`，`uk`，`dvorak`或`be-latin1`。[这里](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2")有国家的二位字母编码表。使用命令 `ls /usr/share/kbd/keymaps/**/*.map.gz` 列出所有可用的键盘布局。
 
 [Console fonts](/index.php/Console_fonts "Console fonts") 位于 `/usr/share/kbd/consolefonts/`, 设置方式请参考 [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+
+### 验证启动模式
+
+如果以在 UEFI 主板上启用 [UEFI](/index.php/UEFI "UEFI") 模式, [Archiso](/index.php/Archiso "Archiso") 将会使用 [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") 来[启动](/index.php/Boot "Boot") Arch Linux。可以列出 [efivars](/index.php/UEFI#UEFI_Variables "UEFI") 目录以验证启动模式:
+
+```
+# ls /sys/firmware/efi/efivars
+
+```
+
+如果目录不存在，系统可能以 [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") 或 CSM 模式启动，详见您的主板手册。
 
 ### 连接到因特网
 

@@ -17,7 +17,7 @@
 *   [3 Images](#Images)
     *   [3.1 Arch Linux](#Arch_Linux)
         *   [3.1.1 x86_64](#x86_64)
-        *   [3.1.2 i686](#i686)
+        *   [3.1.2 i686 and others](#i686_and_others)
         *   [3.1.3 Build Image](#Build_Image)
     *   [3.2 Debian](#Debian)
 *   [4 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
@@ -207,13 +207,13 @@ The following command pulls the [base/archlinux](https://hub.docker.com/r/base/a
 
 ```
 
-#### i686
+#### i686 and others
 
-The default Arch Linux image in Docker Registry is for x86_64 only. i686 image must be built manually.
+The default Arch Linux image in Docker Registry is for x86_64 only. Image must be built manually.
 
 #### Build Image
 
-Instead, check [docker base/archlinux registry](https://registry.hub.docker.com/u/base/archlinux/) and click the `mkimage-arch.sh` link to download `mkimage-arch.sh` and `mkimage-arch-pacman.conf` to the same directory as raw files. Next, make the script executable and run it:
+Check [moby/contrib repo](https://github.com/moby/moby/tree/master/contrib) and download `mkimage-arch.sh` and `mkimage-arch-pacman.conf` to the same directory as raw files. Next, make the script executable and run it:
 
 ```
 $ chmod +x mkimage-arch.sh

@@ -257,9 +257,9 @@ Afterwards continue with the installation procedure up to the mkinitcpio step.
 
 ### Configuring mkinitcpio
 
-Add the `keyboard` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Add the `keyboard`, `keymap` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). If the default US keymap is fine for you, you can omit the `keymap` hook.
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard keymap** block **encrypt** ... filesystems ..."` 
 
 Depending on which other hooks are used, the order may be relevant. See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 

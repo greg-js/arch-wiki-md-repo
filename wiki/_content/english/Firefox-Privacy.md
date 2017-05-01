@@ -165,7 +165,7 @@ uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](ht
 
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) was a popular exstension to block ads. Now that it is not blocking some ads on purpose [[4]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
+[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[4]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
 ### Privacy Badger
 

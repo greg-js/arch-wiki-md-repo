@@ -8,6 +8,8 @@ Examples of webs of trust:
 
 **Note:** The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using *pacman-key*), this port is required for communication.
 
+**Warning:** If `pacman-key` is run with `sudo` (`sudo pacman-key`), it can impact your user's gpg home (typically `~/.gnupg`) and cause unexpected results.
+
 ## Contents
 
 *   [1 Setup](#Setup)

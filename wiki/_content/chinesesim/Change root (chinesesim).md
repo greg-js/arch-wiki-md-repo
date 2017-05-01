@@ -144,7 +144,7 @@ $ echo $DISPLAY
 
 *   重装引导。
 *   重新构建[initramfs](/index.php/Mkinitcpio "Mkinitcpio")镜像。
-*   升级或[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")软件包。
+*   升级或[降级软件包](/index.php/%E9%99%8D%E7%BA%A7%E8%BD%AF%E4%BB%B6%E5%8C%85 "降级软件包")。
 *   重置[遗忘的密码](/index.php/Password_Recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Password Recovery (简体中文)").
 
 ## 退出chroot环境

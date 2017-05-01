@@ -36,6 +36,7 @@
 *   [15 Swap left/right channels](#Swap_left.2Fright_channels)
 *   [16 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
 *   [17 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
+*   [18 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
 
 ## Set default input sources
 
@@ -946,3 +947,17 @@ $ pulseaudio --start
 ```
 
 Now you have two separate ports on the same sink in pulseaudio. They mute each other, so you can switch to headphones and this will mute Line Out, and vice versa. To switch between ports you can use Gnome or Plasma sound mixer, or install appropriate desktop extension.
+
+## Allowing multiple users to use PulseAudio at the same time
+
+It is sometimes desirable to run some programs as another user on the same desktop of the primary user in order to isolate the software. However, PulseAudio will not accept by default connections by the secondary users, since a PulseAudio daemon is already running for the primary user. However, a PulseAudio UNIX socket can be created in order to accept connections from other users to the main PulseAudio daemon run by the primary user.
+
+First, edit `/etc/pulse/default.pa` or `~/.config/pulse/default.pa` and add a directive for the unix socket to be created:
+
+ `~/.config/pulse/default.pa`  `load-module module-native-protocol-unix auth-anonymous=1 socket=/tmp/pulse-socket` 
+
+Afterwards, set PulseAudio as a client to the UNIX socket just created in the secondary user:
+
+ `/home/*secondaryuser*/.config/pulse/client.conf`  `default-server = unix:/tmp/pulse-socket` 
+
+Now, after restarting the PulseAudio daemon, applications running as the secondary user should be able to play sound through the main PulseAudio daemon running as the primary user without problems.

@@ -4,7 +4,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 ## Contents
 
-*   [1 BIOS and UEFI Bootable USB](#BIOS_and_UEFI_Bootable_USB)
+*   [1 BIOS and UEFI bootable USB](#BIOS_and_UEFI_bootable_USB)
     *   [1.1 Using dd](#Using_dd)
         *   [1.1.1 In GNU/Linux](#In_GNU.2FLinux)
         *   [1.1.2 In Windows](#In_Windows)
@@ -17,7 +17,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
     *   [1.2 Using manual formatting](#Using_manual_formatting)
         *   [1.2.1 In GNU/Linux](#In_GNU.2FLinux_2)
         *   [1.2.2 In Windows](#In_Windows_2)
-*   [2 Other Methods for BIOS systems](#Other_Methods_for_BIOS_systems)
+*   [2 Other methods for BIOS systems](#Other_methods_for_BIOS_systems)
     *   [2.1 In GNU/Linux](#In_GNU.2FLinux_3)
         *   [2.1.1 Using a multiboot USB drive](#Using_a_multiboot_USB_drive)
         *   [2.1.2 Using GNOME Disk Utility](#Using_GNOME_Disk_Utility)
@@ -33,9 +33,9 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
             *   [2.2.4.3 Create the configuration file](#Create_the_configuration_file)
             *   [2.2.4.4 Final steps](#Final_steps)
 *   [3 Troubleshooting](#Troubleshooting)
-*   [4 See Also](#See_Also)
+*   [4 See also](#See_also)
 
-## BIOS and UEFI Bootable USB
+## BIOS and UEFI bootable USB
 
 ### Using dd
 
@@ -181,7 +181,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 **Note:** Here, we will denote the targeted partition as `/dev/sd**Xn**`. In any of the following commands, adjust **X** and **n** according to your system.
 
-*   Make sure that the latest [syslinux](https://www.archlinux.org/packages/?name=syslinux) package (version 6.02 or newer) is installed on the system.
+*   Make sure that the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package is installed on the system.
 
 *   If not done yet, create the partition table and/or partition on the device before continuing. The partition `/dev/sd**Xn**` must be formatted to FAT32.
 
@@ -198,7 +198,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 ```
 
 *   **Note:** The following step is not required when using [Archboot](/index.php/Archboot "Archboot") instead of [Archiso](/index.php/Archiso "Archiso").
-    To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2017**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2017**XX**` in the file */mnt/usb/arch/boot/syslinux/archiso_sys.cfg*, as well as */mnt/usb/loader/entries/archiso-x86_64.conf* (the last being useful only, if you want to boot the USB flash device from an EFI system). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
+    To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2017**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2017**XX**` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
@@ -270,7 +270,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 *   The `-d` switch expects a path with forward slash path-separator like in *unix systems.
 
-## Other Methods for BIOS systems
+## Other methods for BIOS systems
 
 ### In GNU/Linux
 
@@ -417,7 +417,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 *   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
 
-## See Also
+## See also
 
 *   [Gentoo wiki - LiveUSB/HOWTO](https://wiki.gentoo.org/wiki/LiveUSB/HOWTO)
 *   [Fedora wiki - How to create and use Live USB](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB)

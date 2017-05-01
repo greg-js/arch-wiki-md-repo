@@ -3,7 +3,7 @@
 [LightDM](http://www.freedesktop.org/wiki/Software/LightDM) 是一个跨桌面环境的[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")。它的特点有:
 
 *   跨桌面 - 支持不同的桌面环境.
-*   支持多种显示技术(X, Wayland, Mir, ...).
+*   支持多种显示技术(X, Wayland, ...).
 *   轻量级 - 低内存使用，高性能.
 *   支持定制会话.
 *   支持远程登录(XDMCP, VNC, XDMCP, 可插拔).

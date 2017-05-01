@@ -30,7 +30,9 @@ From [http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/):
 
 ## Installation
 
-Fbterm is available in the package [fbterm](https://www.archlinux.org/packages/?name=fbterm).
+~~Fbterm is available in the package [fbterm](https://www.archlinux.org/packages/?name=fbterm).~~
+
+**Warning:** Fbterm has been removed from the official repository
 
 After installation, mind the additional instructions:
 

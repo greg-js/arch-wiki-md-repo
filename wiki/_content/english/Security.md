@@ -36,10 +36,9 @@ This article contains recommendations and best practices for hardening an Arch L
 *   [8 Sandboxing applications](#Sandboxing_applications)
     *   [8.1 Firejail](#Firejail)
     *   [8.2 bubblewrap](#bubblewrap)
-    *   [8.3 playpen](#playpen)
-    *   [8.4 chroots](#chroots)
-    *   [8.5 Linux containers](#Linux_containers)
-    *   [8.6 Other virtualization options](#Other_virtualization_options)
+    *   [8.3 chroots](#chroots)
+    *   [8.4 Linux containers](#Linux_containers)
+    *   [8.5 Other virtualization options](#Other_virtualization_options)
 *   [9 Network and firewalls](#Network_and_firewalls)
     *   [9.1 Firewalls](#Firewalls)
     *   [9.2 Kernel parameters](#Kernel_parameters)
@@ -368,10 +367,6 @@ SupplementaryGroups=proc
 ### bubblewrap
 
 [bubblewrap](/index.php/Bubblewrap "Bubblewrap") is a setuid sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with an even smaller resource footprint than Firejail. While it lacks certain features such as file path whitelisting, bubblewrap does offer bind mounts as well as the creation of user/IPC/PID/network/cgroup namespaces and can support both simple and [complex sandboxes](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh).
-
-### playpen
-
-[playpen](https://www.archlinux.org/packages/?name=playpen) is a flyweight (single C file) tool which leverages the `chroot` command to create a read-only root directory and is targeted towards the sandboxing of non-graphical applications. See the [playpen GitHub project page](https://github.com/thestinger/playpen/) for additional details.
 
 ### chroots
 

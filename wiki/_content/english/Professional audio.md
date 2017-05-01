@@ -40,7 +40,7 @@ The following packages are a good start to build a full-featured pro audio syste
 
 *   [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 *   [patchage](https://www.archlinux.org/packages/?name=patchage)
-*   [ardour5](https://aur.archlinux.org/packages/ardour5/)
+*   [ardour](https://www.archlinux.org/packages/?name=ardour)
 *   [qtractor](https://www.archlinux.org/packages/?name=qtractor)
 *   [hydrogen](https://www.archlinux.org/packages/?name=hydrogen)
 *   [musescore](https://www.archlinux.org/packages/?name=musescore)

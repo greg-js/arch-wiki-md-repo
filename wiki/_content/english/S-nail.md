@@ -1,4 +1,4 @@
-S-nail is a mail processing system with a command syntax similar to ed, with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
+S-nail (a fork of heirloom-mailx) is a mail processing system with a command syntax similar to ed, with lines replaced by messages. It is intended to provide the functionality of the POSIX mailx command and offers (mostly optional) extensions for line editing, IDNA, MIME, S/MIME, SMTP and POP3 (and IMAP). It is usable as a mail batch language.
 
 S-nail is thus the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail").
 
@@ -7,14 +7,15 @@ In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages ca
 ## Contents
 
 *   [1 Quick shot](#Quick_shot)
-*   [2 First configuration adjustments](#First_configuration_adjustments)
-*   [3 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
-*   [4 Interactive usage](#Interactive_usage)
-    *   [4.1 I'm in!](#I.27m_in.21)
-    *   [4.2 Message composition](#Message_composition)
-*   [5 Using S/MIME](#Using_S.2FMIME)
-*   [6 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
-*   [7 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
+*   [2 Sending Mail from a server](#Sending_Mail_from_a_server)
+*   [3 First configuration adjustments](#First_configuration_adjustments)
+*   [4 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
+*   [5 Interactive usage](#Interactive_usage)
+    *   [5.1 I'm in!](#I.27m_in.21)
+    *   [5.2 Message composition](#Message_composition)
+*   [6 Using S/MIME](#Using_S.2FMIME)
+*   [7 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
+*   [8 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
 
 ## Quick shot
 
@@ -35,7 +36,7 @@ Using the `-d`ebug flag results in a dry-run that does not perform any action fo
 
 ```
 
-By default message delivery is asynchronous, and S-nail will exit as soon as the prepared message has been passed over to the delivery mechanism (the MTA or the builtin SMTP MTA), stating only wether message preparation was successful (or not). If the `sendwait` option is set, however, S-nail will wait for the started (builtin) MTA instance to exit and (instead) use the MTA exit status as its message delivery "success" or "failure" status.
+By default message delivery is asynchronous, and S-nail will exit as soon as the prepared message has been passed over to the delivery mechanism (the MTA or the builtin SMTP MTA), stating only whether message preparation was successful (or not). If the `sendwait` option is set, however, S-nail will wait for the started (builtin) MTA instance to exit and (instead) use the MTA exit status as its message delivery "success" or "failure" status.
 
 Sending messages to file and command "addresses" (not over the MTA) is possible if the `expandaddr` option is set:
 
@@ -93,9 +94,32 @@ x
 
 ```
 
+## Sending Mail from a server
+
+For a quick configuration to let your server send email using an external smtp server, create a file called .mailrc in /root or /home/$USER with the following contents. Things should send and receive correctly by default.
+
+```
+   account gmail {
+      set smtp-use-starttls
+      set smtp=smtp.gmail.com:587
+      set smtp-auth=login
+      set smtp-auth-user=username
+      set smtp-auth-password=password
+      set from="root <root@gmail.com>"
+   }
+
+```
+
+Send an email like this:
+
+```
+   echo "Sample Body" | mail -v -A gmail -s "Sample Subject" user@gmail.com
+
+```
+
 ## First configuration adjustments
 
-Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. Thus the following example uses the private user-specific configuration file.
+Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. In other words, you would want to edit the user-specific .mailrc file (possibly stored in /root) rather than /etc/mail.rc. Thus the following example uses the private user-specific configuration file.
 
 **Tip:** Using the `-n` command line argument or by setting the `NAIL_NO_SYSTEM_RC` inhibits reading `mail.rc` upon startup. Coupled with setting the `MAILRC` environment variable to `/dev/null`, this ensures that no configuration file is used. The detached script example above uses this method.
 
@@ -374,7 +398,7 @@ set smime-sign-cert=~/pair.pem \
 
 ```
 
-From now any message that is sent will be signed. The default message digest would be SHA1, as mandated by [RFC 5751](//tools.ietf.org/html/rfc5751). Note that S/MIME always works relative to the setting of the variable *from*, so it seems best to instead place the above settings in an **account**. The **verify** command verifies S/MIME messages, but note that S/MIME decryption and verification is solely based upon OpenSSL for now, which only supports messages with a simplicistic MIME structure. Sorry. By the way, if you miss hyperlinks and a table-of-content to get yourself going, the manual on the projects' website offers this; and the manual that ships with ArchLinux does, too, but needs the mdocmx(7) extension to be visible.
+From now any message that is sent will be signed. The default message digest would be SHA1, as mandated by RFC 5751. Note that S/MIME always works relative to the setting of the variable *from*, so it seems best to instead place the above settings in an **account**. The **verify** command verifies S/MIME messages, but note that S/MIME decryption and verification is solely based upon OpenSSL for now, which only supports messages with a simplicistic MIME structure. Sorry. By the way, if you miss hyperlinks and a table-of-content to get yourself going, the manual on the projects' website offers this; and the manual that ships with ArchLinux does, too, but needs the mdocmx(7) extension to be visible.
 
 ## Workaround missing OpenPGP support
 

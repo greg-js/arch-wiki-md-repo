@@ -36,8 +36,8 @@ aMule是一个跨平台的eD2k和Kademlia网络客户端，类似于eMule，即�
 
 配置文件和临时文件位于 amule 的主目录`/var/lib/amule`：
 
-*   amuled 的配置位于 `/val/lib/amule/.aMule/amule.conf`
-*   amuleweb 的配置位于`/val/lib/amule/.aMule/remote.conf`
+*   amuled 的配置位于 `/var/lib/amule/.aMule/amule.conf`
+*   amuleweb 的配置位于`/var/lib/amule/.aMule/remote.conf`
 
 安装时 pacman 会生成一个带外部访问密码的 amule.conf 文件，amuleweb 配置文件也使用相同的密码。外部配置工具可以使用此密码远程访问。要重新生成密码，可以使用：
 

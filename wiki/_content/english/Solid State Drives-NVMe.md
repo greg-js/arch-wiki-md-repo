@@ -30,11 +30,11 @@ See [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Adva
 
 ### Discards
 
-**Note:** Contrary to recommendations for SSDs, **NVMe devices should not be issued discards**.
+**Note:** Although [continuous TRIM](/index.php/Solid_State_Drives#Continuous_TRIM "Solid State Drives") is an option (albeit not recommended) for SSDs, **NVMe devices should not be issued discards**.
 
 Discards are disabled by default on typical setups that use [ext4](/index.php/Ext4 "Ext4") and [LVM](/index.php/LVM "LVM"), but other filesystems might need discards to be disabled explicitly.
 
-Intel, as one device manufacturer, recommends not to enable discards at the filesystem level, but suggests the [Solid State Drives#Periodic TRIM](/index.php/Solid_State_Drives#Periodic_TRIM "Solid State Drives") method, or apply *fstrim* manually.[[1]](https://communities.intel.com/thread/75161?start=0&tstart=0)
+Intel, as one device manufacturer, recommends not to enable discards at the filesystem level, but suggests the [periodic TRIM](/index.php/Solid_State_Drives#Periodic_TRIM "Solid State Drives") method, or apply `fstrim` manually.[[1]](https://communities.intel.com/thread/75161?start=0&tstart=0)
 
 ### Airflow
 

@@ -1,23 +1,15 @@
 ## Contents
 
 *   [1 Background](#Background)
-*   [2 Experimenting with Multiple Monitors](#Experimenting_with_Multiple_Monitors)
-    *   [2.1 KDE](#KDE)
-    *   [2.2 Gnome](#Gnome)
-    *   [2.3 LXDE](#LXDE)
-    *   [2.4 XFCE](#XFCE)
-    *   [2.5 Generic](#Generic)
-*   [3 Make Settings the Default](#Make_Settings_the_Default)
+*   [2 Experimenting with multiple monitors](#Experimenting_with_multiple_monitors)
+    *   [2.1 Loading configuration at X start](#Loading_configuration_at_X_start)
+*   [3 Make settings the default](#Make_settings_the_default)
     *   [3.1 05-device.conf](#05-device.conf)
     *   [3.2 10-monitor.conf](#10-monitor.conf)
-*   [4 Accessing a Remote GUI](#Accessing_a_Remote_GUI)
-    *   [4.1 ssh/rsh](#ssh.2Frsh)
-    *   [4.2 VNC/rdc](#VNC.2Frdc)
-    *   [4.3 Xdmc](#Xdmc)
-*   [5 Extending a Desktop beyond the Local System](#Extending_a_Desktop_beyond_the_Local_System)
-    *   [5.1 Synergy](#Synergy)
-    *   [5.2 Xdmx](#Xdmx)
-*   [6 Related Pages](#Related_Pages)
+*   [4 Extending a desktop beyond the local system](#Extending_a_desktop_beyond_the_local_system)
+    *   [4.1 Synergy](#Synergy)
+    *   [4.2 Xdmx](#Xdmx)
+*   [5 Related pages](#Related_pages)
 
 ## Background
 
@@ -27,7 +19,7 @@ It is also possible to have these multiple monitors work together as an extended
 
 This document describes how to configure such a system.
 
-## Experimenting with Multiple Monitors
+## Experimenting with multiple monitors
 
 The easiest way to begin experimenting with multiple monitors is start with a system which has a working X set-up supporting a single monitor. If you already have the additional equipment installed
 
@@ -56,36 +48,16 @@ I have two monitor devices with the logical names `VGA-1` and `DVI-0`. These nam
 
 If you have not done so already, create a simple batch script containing your desired xrandr command. Save it somewhere useful; /usr/local/bin perhaps. Your system can then be configured to call this script as you login to your account as your window manager starts. There are different locations for saving initialisation commands and indeed some Settings tools can add these commands in place for you.
 
-#### KDE
+### Loading configuration at X start
 
-placeholder for notes on KDE autostart
+Add the command to either to individual or system xinitrc scripts. Add a line after the window manager has been started but before any applications are called. Execution of the command is usually quite noticeable as the monitors change from the basic cloned, landscape display to the independent portrait mode.
 
-#### Gnome
+**Note:** This will only work if X is started manually, not from a display manager such as kdm, gdm, slim or whatever
 
-placeholder for notes on Gnome autostart
-
-#### LXDE
-
-placeholder for notes on LXDE autostart
-
-#### XFCE
-
-placeholder for notes on XFCE autostart
-
-#### Generic
-
-If none of the above options are available to you or you need a generic solution that will apply across all window managers and/or users; add the command to either to individual or system xinitrc scripts:
-
-*   system-wide initialisation file is `/etc/X11/xinit/xinitrc`; add a line after the window manager has been started but before any applications are called
-    **Tip:** this will only work if X is started manually, not from a display manager such as kdm, gdm, slim or whatever
-
+*   system-wide initialisation file is `/etc/X11/xinit/xinitrc`
 *   a user's personal initialisation file is `~/.xinitrc`
-    **Tip:** this will be called as a user logins in from kdm, gdm, slim or whatever; some window managers may also call a similar command if it has been included in a start-up file for the window manager; if you see unexpected results, check that **xrandr** is not being called several times with different options
-    Execution of the command is usually quite noticeable as the monitors change from the basic cloned, landscape display to the independent portrait mode.
 
-**Note:** if your monitor cannot be physically rotated (sometimes referred to as ""pivot"") on its stand, it is unlikely they will support this feature even if you can physically rotate them using a Vesa mounting device; check the specification of the monitor. For example, *Iiyama* E-series monitors cannot pivot but their almost identical B-series monitors can
-
-## Make Settings the Default
+## Make settings the default
 
 Now you have your regular desktop spanning multiple monitors, it would be better if
 
@@ -152,27 +124,7 @@ With these configuration files in place and all references to xrandr removes, th
 
 When you login, some window managers may attempt to reset this configuration with the result that your logged-in desktop has reverted to a pair of cloned displays and in some cases a panel stretching to a now, non-existent monitor. The 4.10 & 4.11 versions of XFCE4 will do this. This bad behaviour can usually be resolved by configuring your monitor set-up using the window manager tools and configuration files. For XFCE4, this is explained in [Xfce#Multiple monitors](/index.php/Xfce#Multiple_monitors "Xfce")
 
-## Accessing a Remote GUI
-
-It is possible to access a remote computer such that graphics from the remote system are output on your own monitor(s). Different methods address different requirements:
-
-*   use `ssh` to create a tunnel between the two systems and forward X over the tunnel. This is useful for occasional use but is limited essentially to a single application; transmission over anything slower than a Local Network is usually intolerably slow. `rsh` provides a similar technique but with no security protection
-*   use a terminal server/client such as `VNC` or `rdc` to establish communication between the two systems
-*   use Xdmc to login to a remote system
-
-#### ssh/rsh
-
-placeholder for notes on ssh/rsh
-
-#### VNC/rdc
-
-placeholder for notes on vnc/rdc
-
-#### Xdmc
-
-placeholder for notes on Xdmc
-
-## Extending a Desktop beyond the Local System
+## Extending a desktop beyond the local system
 
 The previous section outlined how to access other systems usually not close to your desktop. This section examines how to access systems which are very close to your desktop in such a way that it appears your desktop has been extended still further to incorporate these additional monitors. There are two possibilities
 
@@ -198,7 +150,7 @@ To establish an Xdmx desktop involves the following steps automated so that the 
 
 At present either Xdmx itself or the current state of window managers do not work well together for complex arrangements of multihead set-ups; the server tends to crash as soon as window drawing is required after the integrated desktop has been established.
 
-## Related Pages
+## Related pages
 
 [Xorg#Monitor settings](/index.php/Xorg#Monitor_settings "Xorg")
 

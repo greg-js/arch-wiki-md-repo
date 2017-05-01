@@ -70,6 +70,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [VPSSERVER](https://www.vpsserver.com/) | 2015.07 | KVM | Chicago, US-IL; Dallas, US-TX; Miami, US-FL; New York, US-NY; Silicon Valley, US-CA; Amsterdam, NL; Frankfurt, DE; London, UK |
 | [World4You](http://www.world4you.com/) | 2015.10.28 | OpenVZ | Austria (AT) | Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm) |
 | [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
+| [1984hosting.com](http://www.1984hosting.com/) | 2016.x | Xen | Iceland (IS) | [Hardware](https://www.1984hosting.com/product/vps/) will provide any image you request, has Arch in default image list. |
 
 ## Installation
 

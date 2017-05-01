@@ -1061,17 +1061,39 @@ From the [SPICE page on the KVM wiki](https://www.linux-kvm.org/page/SPICE): "*T
 
 **Tip:** Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
 
-Connect to the guest by using a SPICE client. At the moment [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) is recommended, however other [clients](http://www.spice-space.org/download.html), including other platforms, are available:
+Connect to the guest by using a SPICE client. [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is the recommended SPICE client by the protocol developers:
+
+```
+$ remote-viewer spice://127.0.0.1:5930
+
+```
+
+The reference and test implementation [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) can also be used:
 
 ```
 $ spicy -h 127.0.0.1 -p 5930
 
 ```
 
+Other [clients](http://www.spice-space.org/download.html), including for other platforms, are also available.
+
 Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
 
 ```
 $ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing
+
+```
+
+Then connect via:
+
+```
+$ remote-viewer spice+unix:///tmp/vm_spice.socket
+
+```
+
+or via:
+
+```
 $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 
 ```
@@ -1105,10 +1127,10 @@ An example of generation of self-signed certificates with your own generated CA 
 
 Afterwards, you can run QEMU with SPICE as explained above but using the following `-spice` argument: `-spice tls-port=5901,password=*yourpassword*,x509-dir=*/path/to/pki_certs*`, where `*/path/to/pki_certs*` is the directory path that contains the three needed files shown earlier.
 
-It is now possible to connect to the server using [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3):
+It is now possible to connect to the server using [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer):
 
 ```
-$ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
+$ remote-viewer spice://*hostname*?tls-port=5901 --spice-ca-file=*/path/to/ca-cert.pem* --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
 
 ```
 
@@ -1116,10 +1138,10 @@ Keep in mind that the `--spice-host-subject` parameter needs to be set according
 
 **Tip:** You can get the subject line of the server certificate in the correct format for `--spice-host-subject` (with entries separated by commas) using the following command: `$ openssl x509 -noout -subject -in server-cert.pem | cut -d' ' -f2- | sed 's/\///' | sed 's/\//,/g'` 
 
-The equivalent [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) command is:
+The equivalent [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) command is:
 
 ```
-$ remote-viewer spice://*hostname*?tls-port=5901 --spice-ca-file=*/path/to/ca-cert.pem* --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
+$ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
 
 ```
 
@@ -1654,14 +1676,14 @@ $ qemu-system-i386 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=
 *   If you have a raw disk image, you may want to disable the cache:
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,if=virtio,cache=none
+$ qemu-system-i386 -drive file=*disk_image*,if=virtio,**cache=none**
 
 ```
 
 *   Use the native Linux AIO:
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,if=virtio,aio=native
+$ qemu-system-i386 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
 
 ```
 
@@ -1714,8 +1736,6 @@ Should you find that some of your keys do not work or "press" the wrong key (in 
 $ qemu-system-i386 -k *keymap* *disk_image*
 
 ```
-
-Due to a [bug in QEMU v2.8.0](https://bugs.launchpad.net/qemu/+bug/1578192), on a Wayland session manually setting the keymap will not help to get the arrow keys to work. The bug is fixed in master so you can install [qemu-git](https://aur.archlinux.org/packages/qemu-git/).
 
 ### Guest display stretches on window resize
 

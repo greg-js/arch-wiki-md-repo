@@ -8,7 +8,7 @@ You may find it very convenient to drop into a shell quickly without wasting scr
 
 Install the [tilda](https://www.archlinux.org/packages/?name=tilda) package.
 
-**Note:** Tilda is not compatible with Wayland, see [Github](https://github.com/lanoxx/tilda/issues/150).
+**Note:** Tilda is not compatible with Wayland, see [GitHub](https://github.com/lanoxx/tilda/issues/150).
 
 ## Using with dwm
 
@@ -73,7 +73,7 @@ $ tilda -C
 
 ```
 
-Now you can configure Tilda, I recommend the following options:
+Now you can configure Tilda, the following options are provided as a recommendation:
 
 ```
 Font: Clean 9
@@ -86,7 +86,7 @@ Key Binding: F9
 
 ```
 
-Here is what my config looks like after those settings in `~/.config/tilda/config_0`:
+Here is what the configuration looks like after those settings in `~/.config/tilda/config_0`:
 
 ```
 tilda_config_version = "0.9.6"

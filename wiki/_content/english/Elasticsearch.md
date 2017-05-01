@@ -69,6 +69,13 @@ You may want to chance the default max. memory usage:
 
 ```
 
+You might need to update the [vm.max_map_count](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/vm-max-map-count.html) system limit:
+
+```
+# sysctl -w vm.max_map_count=262144
+
+```
+
 ## Usage
 
 Elasticsearch uses a REST API, see [Wikipedia:RESTful API](https://en.wikipedia.org/wiki/RESTful_API "wikipedia:RESTful API") for more information.

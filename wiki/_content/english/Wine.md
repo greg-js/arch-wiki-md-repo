@@ -36,6 +36,7 @@
         *   [4.16.1 Office 2010](#Office_2010)
         *   [4.16.2 Office 2013](#Office_2013)
         *   [4.16.3 Office 2016](#Office_2016)
+    *   [4.17 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
 *   [5 Third-party interfaces](#Third-party_interfaces)
     *   [5.1 CrossOver](#CrossOver)
     *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
@@ -542,6 +543,53 @@ As an alternative to the above method, [playonlinux](https://www.archlinux.org/p
 
 Doesn't work.
 
+### Running Wine under a separate user account
+
+**Note:** As of version 1.16, Xorg runs as a regular user by default. This means a special user has no access to X. The following approach only works when enabling root for Xorg; see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+
+It may be desirable to run Wine under a specifically created user account in order to reduce concerns about Windows applications having access to your home directory.
+
+First, create a [user account](/index.php/Users_and_groups "Users and groups") for Wine:
+
+```
+ # useradd -m -s /bin/bash wineuser
+
+```
+
+Afterwards, in order to open Wine applications using this new user account you need to add the new user to the X server permissions list:
+
+```
+ $ xhost +SI:localuser:wineuser
+
+```
+
+Finally, you can run Wine via the following command, which uses `env` to launch Wine with the environment variables it expects:
+
+```
+ $ sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine *arguments*
+
+```
+
+**Tip:** It is possible to automate the process of running Windows applications with Wine via this method by using a shell script as follows: `/usr/local/bin/runaswine` 
+```
+#!/bin/bash
+xhost +SI:localuser:wineuser
+sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine "$@"
+```
+
+Wine applications can then be launched via:
+
+```
+$ runaswine *"C:\path\to\application.exe"*
+
+```
+
+**Tip:** In order to not be asked for a password each time Wine is run as another user the following entry can be added to the sudoers file: `*mainuser* ALL=(wineuser) NOPASSWD: ALL`. See [Sudo#Configuration](/index.php/Sudo#Configuration "Sudo") for more information.
+
+It is recommended to run `winecfg` as the Wine user and remove all bindings for directories outside the home directory of the Wine user in the "Desktop Integration" section of the configuration window so no program run with Wine has read access to any file outside the special user's home directory.
+
+Keep in mind that audio will probably be non-functional in Wine programs which are run this way if [PulseAudio](/index.php/PulseAudio "PulseAudio") is used. See [PulseAudio/Examples#Allowing multiple users to use PulseAudio at the same time](/index.php/PulseAudio/Examples#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time "PulseAudio/Examples") for information about allowing the Wine user to access the PulseAudio daemon of the principal user.
+
 ## Third-party interfaces
 
 These have their own sites, and are *not supported* in the official Wine forums/bugzilla.
@@ -573,3 +621,4 @@ It is recommended using winetricks by default to open *.exe* files, so you can c
 *   [Advanced configuring of video card and OpenGL in Wine; Speed up Wine](http://linuxgamingtoday.wordpress.com/2008/02/16/quick-tips-to-speed-up-your-gaming-in-wine/)
 *   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
+*   [How to run Spotify and Wine under a separate user account](http://www.bobulous.org.uk/misc/Spotify-Linux-Wine.html) by Bobulous.

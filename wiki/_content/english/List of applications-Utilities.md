@@ -818,6 +818,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
 
+*   **[Telegraf](/index.php/Telegraf "Telegraf")** — Telegraf is an agent written in Go for collecting, processing, aggregating, and writing metrics.
+
+	[https://docs.influxdata.com/telegraf/latest/](https://docs.influxdata.com/telegraf/latest/) || [telegraf](https://aur.archlinux.org/packages/telegraf/)
+
 *   **[Paramano](/index.php/Paramano "Paramano")** — A light battery monitor and a CPU frequency scaler. Forked from [trayfreq](http://trayfreq.sourceforge.net/)
 
 	[https://github.com/phillid/paramano](https://github.com/phillid/paramano) || [paramano](https://aur.archlinux.org/packages/paramano/)

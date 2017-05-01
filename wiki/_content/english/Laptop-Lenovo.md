@@ -158,7 +158,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| [Lenovo Thinkpad Yoga 260](/index.php/Lenovo_Thinkpad_Yoga_260 "Lenovo Thinkpad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | N/A | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
+| [Lenovo Thinkpad Yoga 260](/index.php/Lenovo_Thinkpad_Yoga_260 "Lenovo Thinkpad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
 
 ## Lenovo
 

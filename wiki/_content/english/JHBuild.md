@@ -79,14 +79,14 @@ See below a few examples for `~/.config/jhbuildrc` contents:
 *   Or you found out that a module requires a specific automake option (WebKit is already patched, there is no real need for this one)
 
 ```
- module_autogenargs['WebKit']: 'PYTHON=/usr/bin/python2'
+ module_autogenargs['WebKit'] = 'PYTHON=/usr/bin/python2'
 
 ```
 
 *   Or you want to disable documentation build for a module that use meson build system
 
 ```
- module_mesonargs['gstreamer']: '-Ddisable_gtkdoc=true
+ module_mesonargs['gstreamer'] = '-Ddisable_gtkdoc=true
 
 ```
 

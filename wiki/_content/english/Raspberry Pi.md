@@ -217,6 +217,17 @@ This should also apply for Raspberry Pi 2 by using the `bcm2709_wdog` module and
 
 The RPi can be overclocked by editing `/boot/config.txt`, for example:
 
+**Raspberry Pi 1: Defaults**
+
+```
+arm_freq=700
+core_freq=250
+sdram_freq=400
+
+```
+
+**Raspberry Pi 1: Overclocked**
+
 ```
 arm_freq=800
 arm_freq_min=100
@@ -224,6 +235,25 @@ core_freq=300
 core_freq_min=75
 sdram_freq=400
 over_voltage=0
+
+```
+
+**Raspberry Pi 3: Defaults:**
+
+```
+arm_freq=1200
+core_freq=400
+sdram_freq=450
+
+```
+
+**Raspberry Pi 3: Overclocked**
+
+```
+arm_freq=1350
+core_freq=500
+sdram_freq=500 # test required 
+over_voltage=4
 
 ```
 

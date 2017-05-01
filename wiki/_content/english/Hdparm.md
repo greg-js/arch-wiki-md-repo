@@ -65,13 +65,13 @@ To apply different value, for example set APM to 127:
 
 ### Querying the status of the disk without waking it up
 
-Invoking hdparm with the query option is known to wake-up some drives. Instead, consider `smartctl` provided by [smartmon-tools](https://www.archlinux.org/packages/?name=smartmon-tools) to query the device which will not wake up a sleeping disk.
+Invoking hdparm with the query option is known to wake-up some drives. Instead, consider `smartctl` provided by [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) to query the device which will not wake up a sleeping disk.
 
 Example:
 
 ```
 # smartctl -i -n standby /dev/sda
-smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.10.10-1-ARCH] (local build)
+smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.10.13-1-ARCH] (local build)
 Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
 
 Device is in STANDBY mode, exit(2)

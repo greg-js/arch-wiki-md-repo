@@ -259,7 +259,7 @@ After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt
  `/etc/libvirt/qemu.conf` 
 ```
 nvram = [
-	"/usr/share/ovmf/x64/ovmf_x64.bin:/usr/share/ovmf/x64/ovmf_vars_x64.bin"
+	"/usr/share/ovmf/ovmf_code_x64.bin:/usr/share/ovmf/ovmf_vars_x64.bin"
 ]
 
 ```

@@ -31,7 +31,7 @@ The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packag
 *   [kdesdk-thumbnailers](https://www.archlinux.org/packages/?name=kdesdk-thumbnailers): Plugins for the thumbnailing system
 *   [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs): Video files (based on ffmpeg)
 *   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
-*   [audiothumbs-frameworks-git](https://aur.archlinux.org/packages/audiothumbs-frameworks-git/) : Audio files
+*   [taglib](https://www.archlinux.org/packages/?name=taglib) : Audio files
 *   [kde-thumbnailer-apk](https://aur.archlinux.org/packages/kde-thumbnailer-apk/): **A**ndroid **a**pplication **p**ackage files
 *   [kde-thumbnailer-blender](https://aur.archlinux.org/packages/kde-thumbnailer-blender/): Blender application files
 *   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/): Electronic book files
