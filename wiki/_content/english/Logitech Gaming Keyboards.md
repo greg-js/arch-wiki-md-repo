@@ -46,7 +46,7 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 
 *   Logitech G710 / G710+
 
-[g810-led-git](https://aur.archlinux.org/packages/g810-led-git/) supports:
+[g810-led-git](https://aur.archlinux.org/packages/g810-led-git/) led supports:
 
 *   G213
 *   G410

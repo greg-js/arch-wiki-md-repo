@@ -9,14 +9,14 @@
     *   [2.2 Adding Music](#Adding_Music)
     *   [2.3 Playing Tracks](#Playing_Tracks)
     *   [2.4 Keybindings](#Keybindings)
-*   [3 Tabs](#Tabs)
-    *   [3.1 Library tab (1)](#Library_tab_.281.29)
-    *   [3.2 Sorted library tab (2)](#Sorted_library_tab_.282.29)
-    *   [3.3 Playlist tab (3)](#Playlist_tab_.283.29)
-    *   [3.4 Play Queue tab (4)](#Play_Queue_tab_.284.29)
-    *   [3.5 Browser (5)](#Browser_.285.29)
-    *   [3.6 Filters tab (6)](#Filters_tab_.286.29)
-    *   [3.7 Settings tab (7)](#Settings_tab_.287.29)
+*   [3 Views](#Views)
+    *   [3.1 Library view (1)](#Library_view_.281.29)
+    *   [3.2 Sorted library view (2)](#Sorted_library_view_.282.29)
+    *   [3.3 Playlist view (3)](#Playlist_view_.283.29)
+    *   [3.4 Play Queue view (4)](#Play_Queue_view_.284.29)
+    *   [3.5 Browser view (5)](#Browser_view_.285.29)
+    *   [3.6 Filters view (6)](#Filters_view_.286.29)
+    *   [3.7 Settings view (7)](#Settings_view_.287.29)
 *   [4 Configuration](#Configuration)
     *   [4.1 Remote Control](#Remote_Control)
 *   [5 See also](#See_also)
@@ -57,11 +57,11 @@ $ cmus
 
 ```
 
-When you first launch cmus it will open to the album/artist tab.
+When you first launch cmus it will open to the album/artist view.
 
 ### Adding Music
 
-Press `5` to switch to the file-browser tab so we can add some music. Now, use the arrow keys (`up`, `down`), `Enter` and `Backspace` to navigate to where you have audio files stored. Alternatively, you may use the vim bindings (`k`, `j`) to navigate up and down through your music.
+Press `5` to switch to the file-browser view so we can add some music. Now, use the arrow keys (`up`, `down`), `Enter` and `Backspace` to navigate to where you have audio files stored. Alternatively, you may use the vim bindings (`k`, `j`) to navigate up and down through your music.
 
 To add music to your cmus library, use the arrow keys to highlight a file or folder, and press `a`. When you press `a` cmus will move you to the next line down (so that it is easy to add a bunch of files/folders in a row) and start adding the file/folder you pressed `a` in to your library. This may take a bit if you added a folder with a lot of music in it. As files are added, you will see the second time in the bottom right go up. This is the total duration of all the music in the cmus library.
 
@@ -83,35 +83,35 @@ Press `1` to go to the simple library view. Use the `up` and `down` arrow keys (
 
 See the configuration section on how to change keybindings.
 
-## Tabs
+## Views
 
-There are 7 tabs in cmus. Press keys `1`-`7` to change active tab.
+cmus has 7 views, which are accessible via the number keys.
 
-### Library tab (1)
+### Library view (1)
 
 Display all tracks in so-called **library**. Tracks are sorted artist/album tree. Artist sorting is done alphabetically. Albums are sorted by year.
 
-### Sorted library tab (2)
+### Sorted library view (2)
 
 Displays same content as view, but as a simple list which is automatically sorted by user criteria.
 
-### Playlist tab (3)
+### Playlist view (3)
 
 Displays editable playlist with optional sorting.
 
-### Play Queue tab (4)
+### Play Queue view (4)
 
 Displays queue of tracks which are played next. These tracks are played before anything else (i.e. the playlist or library).
 
-### Browser (5)
+### Browser view (5)
 
-Directory browser. In this tab, music can be added to either the library, playlist or queue from the filesystem.
+Directory browser. In this view, music can be added to either the library, playlist or queue from the filesystem.
 
-### Filters tab (6)
+### Filters view (6)
 
 Lists user defined filters.
 
-### Settings tab (7)
+### Settings view (7)
 
 Change settings. See configuration for further information.
 

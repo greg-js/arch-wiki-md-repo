@@ -666,9 +666,9 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://trojita.flaska.net/](http://trojita.flaska.net/) || [trojita](https://www.archlinux.org/packages/?name=trojita)
 
-*   **WMail** — The missing desktop client for Gmail & Google Inbox
+*   **Wavebox** — The next generation of web-desktop communication
 
-	[http://thomas101.github.io/wmail/](http://thomas101.github.io/wmail/) || [wmail-bin](https://aur.archlinux.org/packages/wmail-bin/)
+	[https://wavebox.io/](https://wavebox.io/) || [wavebox-bin](https://aur.archlinux.org/packages/wavebox-bin/)
 
 #### Mail servers
 

@@ -235,24 +235,27 @@ Arch User Repository 的指南位于:
 **#archlinux**频道的官方语言是英语,如果你需要以其它语言获得帮助,[这里](/index.php/IRC_channel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.90.84.E5.9B.BD.E7.9A.84IRC.E4.BA.A4.E6.B5.81.E9.A2.91.E9.81.93 "IRC channel (简体中文)")有各种本地化频道的列表.
 
 *   **#archlinux 频道的主要目的是讨论和支持 Arch Linux.** 如果和正在讨论的内容相关，一般的软件和硬件话题也是允许的。如果被要求私聊或移到其它频道，请遵守这个要求。
+*   加入频道以后先通过 `/topic` 读一下频道的话题,一般包括了部分重要的信息.
+*   `phrik!~archbot@archlinux/bot/phrik`是唯一的官方机器人，不要滥用机器人指令，仅在有用时才使用机器人。如果希望加入你自己的机器人，请联系频道管理员。
+*   不要刷屏,超过三行的消息请考虑使用 pastebin `program &> program-output.txt` 和 Pastebin 客户端可以简化这一操作.
+*   想尝试某个命令或者获得命令帮助请用私聊(`/query`或 `/msg`.例如 `/query phrik help <command>`).
+*   除了私聊中的离开相应外，禁止自动相应。
+*   不用问谁在或是在用和你一样的软件,直接提问就好.
+*   别依赖帮助,自己去寻找它.重复提问前先等等,大多数问题都是由其他*用户*回答的,例如你.
+*   也别害羞,如果遇到你能回答的问题，请试着给予解答,只有更多的志愿者参与回答这个频道才能蓬勃发展.
+*   如果有其他人询问关于你的问题的更多信息,记得最好总是回复他/他/它.
+
+**#archlinux-cn**频道的默认语言是中文。如果你正在修复中文输入法或此时你无法显示中文，也可以使用英文（记得提前说明一下）。
 
 *   加入频道以后先通过 `/topic` 读一下频道的话题,一般包括了部分重要的信息.
-
-*   `phrik!~archbot@archlinux/bot/phrik`是唯一的官方机器人，不要滥用机器人指令，仅在有用时才使用机器人。如果希望加入你自己的机器人，请联系频道管理员。
-
-*   不要刷屏,超过三行的消息请考虑使用 pastebin `program &> program-output.txt` 和 Pastebin 客户端可以简化这一操作.
-
-*   想尝试某个命令或者获得命令帮助请用私聊(`/query`或 `/msg`.例如 `/query phrik help <command>`).
-
-*   除了私聊中的离开相应外，禁止自动相应。
-
-*   不用问谁在或是在用和你一样的软件,直接提问就好.
-
-*   别依赖帮助,自己去寻找它.重复提问前先等等,大多数问题都是由其他*用户*回答的,例如你.
-
-*   也别害羞,如果遇到你能回答的问题，请试着给予解答,只有更多的志愿者参与回答这个频道才能蓬勃发展.
-
-*   如果有其他人询问关于你的问题的更多信息,记得最好总是回复他/他/它.
+*   **#archlinux-cn 频道的主要目的是讨论和支持 Arch Linux**，也可以讨论与发行版无关的技术话题。
+    *   如果你正在使用某个 Arch Linux 的衍生发行版，或者非 Arch Linux 的 GNU/Linux 发行版，请在提问前先说明。
+    *   另推荐阅读 [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+    *   管理员在话题跑题或明显不属于技术话题时可能会要求移步至 #archlinux-cn-offtopic ,如果被要求这样做或者转至私聊，请遵守这个要求。
+*   不要刷屏，粘贴日志请考虑使用类 Pastebin 服务，如 [https://cfp.vim-cn.com/](https://cfp.vim-cn.com/) 或 [https://fars.ee/](https://fars.ee/) 。
+*   频道内的机器人不止一个，不过也请不要滥用机器人指令。
+*   不要对着 teleboto xmppbot 说话，它们都是桥接机器人，人类的名字在它们后面，请在回复时输入桥接机器人后面的昵称。
+*   **#archlinux-cn-offtopic 容许讨论大多数内容**，但唯独请不要发送大多数人容易反感的 （例如 [NSFW](https://en.wikipedia.org/wiki/zh:NSFW "wikipedia:zh:NSFW")） 内容。
 
 ### Wiki
 

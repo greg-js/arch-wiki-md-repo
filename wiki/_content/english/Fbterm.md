@@ -1,4 +1,4 @@
-**Fbterm** (**F**rame **b**uffer **term**inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg"). Keep in mind that its development has stopped.
+Fbterm (*F*rame *b*uffer *term*inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg"). Keep in mind that its development has stopped.
 
 ## Contents
 
@@ -30,9 +30,7 @@ From [http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/):
 
 ## Installation
 
-~~Fbterm is available in the package [fbterm](https://www.archlinux.org/packages/?name=fbterm).~~
-
-**Warning:** Fbterm has been removed from the official repository
+[Install](/index.php/Install "Install") the [fbterm-git](https://aur.archlinux.org/packages/fbterm-git/) package.
 
 After installation, mind the additional instructions:
 

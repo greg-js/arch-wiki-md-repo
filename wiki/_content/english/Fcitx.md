@@ -18,9 +18,8 @@
     *   [3.2 Change default UI](#Change_default_UI)
         *   [3.2.1 Gnome-Shell](#Gnome-Shell)
         *   [3.2.2 KDE](#KDE)
-        *   [3.2.3 kimpanel UI](#kimpanel_UI)
-        *   [3.2.4 Extend pinyin dictionary](#Extend_pinyin_dictionary)
-        *   [3.2.5 Skins](#Skins)
+        *   [3.2.3 Extend pinyin dictionary](#Extend_pinyin_dictionary)
+        *   [3.2.4 Skins](#Skins)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Clipboard Access](#Clipboard_Access)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -160,7 +159,7 @@ In order to enable spell checking, press ctrl + alt + h when fcitx is on a input
 
 ### Change default UI
 
-Fcitx support kimpanel protocal to provide bettter desktop intergation.
+Fcitx support kimpanel protocol to provide bettter desktop intergation.
 
 #### Gnome-Shell
 
@@ -168,11 +167,8 @@ You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kim
 
 #### KDE
 
-[kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
-
-#### kimpanel UI
-
-[kimtoy](https://www.archlinux.org/packages/?name=kimtoy) could use skin from Sogou and fcitx.
+*   [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
+*   [kimtoy](https://www.archlinux.org/packages/?name=kimtoy) could use skin from Sogou and fcitx.
 
 #### Extend pinyin dictionary
 

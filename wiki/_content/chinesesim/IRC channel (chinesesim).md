@@ -2,11 +2,27 @@
 
 ## Contents
 
-*   [1 主要频道](#.E4.B8.BB.E8.A6.81.E9.A2.91.E9.81.93)
-    *   [1.1 用户名注册](#.E7.94.A8.E6.88.B7.E5.90.8D.E6.B3.A8.E5.86.8C)
-    *   [1.2 频道管理员](#.E9.A2.91.E9.81.93.E7.AE.A1.E7.90.86.E5.91.98)
-*   [2 其他的IRC频道](#.E5.85.B6.E4.BB.96.E7.9A.84IRC.E9.A2.91.E9.81.93)
-    *   [2.1 各国的IRC交流频道](#.E5.90.84.E5.9B.BD.E7.9A.84IRC.E4.BA.A4.E6.B5.81.E9.A2.91.E9.81.93)
+*   [1 中文频道](#.E4.B8.AD.E6.96.87.E9.A2.91.E9.81.93)
+*   [2 主要频道](#.E4.B8.BB.E8.A6.81.E9.A2.91.E9.81.93)
+    *   [2.1 用户名注册](#.E7.94.A8.E6.88.B7.E5.90.8D.E6.B3.A8.E5.86.8C)
+    *   [2.2 频道管理员](#.E9.A2.91.E9.81.93.E7.AE.A1.E7.90.86.E5.91.98)
+*   [3 其他的IRC频道](#.E5.85.B6.E4.BB.96.E7.9A.84IRC.E9.A2.91.E9.81.93)
+    *   [3.1 各国的IRC交流频道](#.E5.90.84.E5.9B.BD.E7.9A.84IRC.E4.BA.A4.E6.B5.81.E9.A2.91.E9.81.93)
+
+## 中文频道
+
+[#archlinux-cn](irc://irc.freenode.net/archlinux-cn) 是 Arch Linux 中文社区的支持频道，[#archlinux-cn-offtopic](irc://irc.freenode.net/archlinux-cn-offtopic) 是主要的交流频道。 两个频道的规则位于[Code of conduct (简体中文)#IRC](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#IRC "Code of conduct (简体中文)")上。
+
+除了 IRC 以外，中文频道还通过转发机器人实现了多个 IM 的连接：
+
+*   #archlinux-cn
+    *   XMPP/Jabber : 添加 talk@archlinuxcn.org 为好友即可加入，成功加入将收到欢迎信息。
+    *   Matrix : 加入 #freenode_#archlinux-cn:matrix.org room。
+*   #archlinux-cn-offtopic
+    *   XMPP/Jabber : 添加 offtopic@archlinuxcn.org 为好友即可加入，成功加入将收到欢迎信息。
+    *   Matrix : 加入 #freenode_#archlinux-cn-offtopic:matrix.org room。
+
+如果希望加入两个 channel 的 Telegram 群，请在 IRC 频道中寻求已经在 Telegram 群中的用户的帮助。
 
 ## 主要频道
 

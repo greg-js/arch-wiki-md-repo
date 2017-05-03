@@ -119,8 +119,6 @@ If using [nginx](/index.php/Nginx "Nginx") for the web server, you will only con
        ssl on;
        ssl_certificate path **/path/to/your/certfile**; #eg. /etc/ssl/certs/keyfile.crt
        ssl_certificate_key **/path/to/your/keyfile**; #eg /etc/ssl/private/keyfile.key
-       ssl_ciphers 'AES128+EECDH:AES128+EDH:!aNULL';
-       ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
        ssl_session_cache shared:SSL:10m;
        #optional ssl_stapling on;
        #optional ssl_stapling_verify on;

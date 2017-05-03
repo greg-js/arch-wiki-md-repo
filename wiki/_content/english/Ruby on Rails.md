@@ -87,14 +87,6 @@ $ rails new testapp_name
 
 **Note:** If you get an error like `Errno::ENOENT: No such file or directory (...) An error occurred while installing x, and Bundler cannot continue.`, you might have to configure [Bundler](/index.php/Ruby#Bundler "Ruby") so that it installs gems per-user and not system-wide. Alternatively, run `# rails new testapp_name` once as root. If it has completed successfully, delete `testapp_name/` and run `$ rails new testapp_name` again as a regular user.
 
-**Note:** If you get an error message like this:
-```
-`... FetchError: SSL_connect returned=1 errno= 0 state=SSLv2/v3 read server hello A: sslv3 alert handshake
-failure (https://s3.amazonaws.com/ production.s3.rubygems.org/gems/rake-10.0.3.gem)` 
-
-```
-install [nodejs](https://www.archlinux.org/packages/?name=nodejs) and try again.
-
 This creates a new folder inside your current working directory.
 
 ```

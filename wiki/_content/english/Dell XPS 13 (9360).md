@@ -91,7 +91,7 @@ enable_huc=1
 
 ```
 
-HuC is also an binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The vanilla kernel doesn't load it at the moment! Patches to load HuC have to find their way into the i915 kernel graphic stack before this option will work. Maybe working for kernel 4.10 or 4.11.
+HuC is also an binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). As of kernel 4.10.13, HuC is not supported.
 
 ```
 enable_psr=1 disable_power_well=0 OR enable_psr=2 

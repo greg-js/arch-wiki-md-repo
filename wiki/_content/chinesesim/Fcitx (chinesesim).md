@@ -18,7 +18,6 @@
     *   [3.2 替换自带的经典界面](#.E6.9B.BF.E6.8D.A2.E8.87.AA.E5.B8.A6.E7.9A.84.E7.BB.8F.E5.85.B8.E7.95.8C.E9.9D.A2)
         *   [3.2.1 Gnome-Shell](#Gnome-Shell)
         *   [3.2.2 KDE](#KDE)
-        *   [3.2.3 独立 kimpanel 界面](#.E7.8B.AC.E7.AB.8B_kimpanel_.E7.95.8C.E9.9D.A2)
     *   [3.3 输入法](#.E8.BE.93.E5.85.A5.E6.B3.95_2)
         *   [3.3.1 扩充内置拼音词库](#.E6.89.A9.E5.85.85.E5.86.85.E7.BD.AE.E6.8B.BC.E9.9F.B3.E8.AF.8D.E5.BA.93)
     *   [3.4 皮肤](#.E7.9A.AE.E8.82.A4)
@@ -190,11 +189,8 @@ Fcitx 支持使用 kimpanel 协议的界面，以提供更好的桌面整合体�
 
 #### KDE
 
-您可以安装 [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel), 其用 plasma 作为输入法界面, 候选框风格将与 plasma 主题保持一致。
-
-#### 独立 kimpanel 界面
-
-目前有 [kimtoy](https://www.archlinux.org/packages/?name=kimtoy)，它都可以使用搜狗输入法和 Fcitx 本身的皮肤。
+*   您可以安装 [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel), 其用 plasma 作为输入法界面, 候选框风格将与 plasma 主题保持一致。
+*   目前有 [kimtoy](https://www.archlinux.org/packages/?name=kimtoy)，它都可以使用搜狗输入法和 Fcitx 本身的皮肤。
 
 ### 输入法
 

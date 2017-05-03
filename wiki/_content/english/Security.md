@@ -27,12 +27,13 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [6.2 Labels MAC](#Labels_MAC)
     *   [6.3 Access Control Lists](#Access_Control_Lists)
 *   [7 Kernel hardening](#Kernel_hardening)
-    *   [7.1 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
-    *   [7.2 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
-    *   [7.3 Keep BPF JIT compiler disabled](#Keep_BPF_JIT_compiler_disabled)
-    *   [7.4 ptrace scope](#ptrace_scope)
-        *   [7.4.1 Examples of broken functionality](#Examples_of_broken_functionality)
-    *   [7.5 hidepid](#hidepid)
+    *   [7.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_.2F_exploit_mitigation)
+    *   [7.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
+    *   [7.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
+    *   [7.4 Keep BPF JIT compiler disabled](#Keep_BPF_JIT_compiler_disabled)
+    *   [7.5 ptrace scope](#ptrace_scope)
+        *   [7.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
+    *   [7.6 hidepid](#hidepid)
 *   [8 Sandboxing applications](#Sandboxing_applications)
     *   [8.1 Firejail](#Firejail)
     *   [8.2 bubblewrap](#bubblewrap)
@@ -312,6 +313,10 @@ Labels-based access control means the extended attributes of a file are used to 
 [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") (ACLs) are an alternative to attaching rules directly to the filesystem in some way. ACLs implement access control by checking program actions against a list of permitted behavior.
 
 ## Kernel hardening
+
+### Kernel self-protection / exploit mitigation
+
+Arch no longer offers a substantially hardened kernel package now that the [PaX](/index.php/PaX "PaX") and [grsecurity](/index.php/Grsecurity "Grsecurity") patches are no longer publicly available. The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package offers a more security-focused set of configuration options but is not *currently* comparable to even a tiny subset of what was available before. It primarily exists as a placeholder which will pull in patches from a new public kernel hardening patch set in the early planning phases. See the [article on the Gentoo wiki](https://wiki.gentoo.org/wiki/Hardened/Hardened_Kernel_Project) for the current loose plans for a new out-of-tree hardening patch set done in collaboration with upstream work.
 
 ### Restricting access to kernel logs
 

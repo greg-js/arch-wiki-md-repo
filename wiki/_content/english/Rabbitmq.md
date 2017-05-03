@@ -4,6 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Enabling MQTT](#Enabling_MQTT)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Changed hostname](#Changed_hostname)
     *   [3.2 Upgraded RabbitMQ to latest version and cannot start](#Upgraded_RabbitMQ_to_latest_version_and_cannot_start)
@@ -18,6 +19,19 @@ Install the [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) packag
 No configuration should be needed. Simply [start](/index.php/Start "Start") the `rabbitmq` service.
 
 Default configuration file location `/etc/rabbitmq/rabbitmq-env.conf`. See more about configuration [on the official docs](https://www.rabbitmq.com/configure.html)
+
+### Enabling MQTT
+
+RabbitMQ can act as MQTT server. For this functionality to work following plugin needs to be enabled:
+
+```
+   sudo -u rabbitmq -n rabbitmq-plugins enable rabbitmq_mqtt
+
+```
+
+RabbitMQ service needs to be restarted for this change to take effect.
+
+Clients need to authenticate before they can post to topics. RabbitMQ segregates traffic via virtual hosts, you need to issue `**your_user_name:configured_vhost_name**` as user name in order bo authenticate.
 
 ## Troubleshooting
 

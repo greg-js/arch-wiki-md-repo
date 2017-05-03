@@ -9,6 +9,7 @@ Document viewer uses the poppler library as a backend.
 *   [1 Installation](#Installation)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Printer does not show up](#Printer_does_not_show_up)
+    *   [2.2 Zoom-in is limited](#Zoom-in_is_limited)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -22,6 +23,18 @@ For a standalone version install [evince-no-gnome](https://aur.archlinux.org/pac
 ### Printer does not show up
 
 Simply install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends).
+
+### Zoom-in is limited
+
+Increasing the page cache size in gnome settings allows the viewer to zoom in farther on large documents. By default, this setting is set relatively small, presumably to accomodate machines with limited amounts of physical memory.
+
+Get the current value of the setting:
+
+gsettings get org.gnome.Evince page-cache-size
+
+Set a new (bigger) value instead, this results in 1-2 Gb of memory usage on a large document:
+
+gsettings set org.gnome.Evince page-cache-size 2000
 
 ## See also
 

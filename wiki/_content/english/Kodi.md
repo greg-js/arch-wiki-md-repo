@@ -22,7 +22,8 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
         *   [2.2.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
         *   [2.2.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
             *   [2.2.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
-            *   [2.2.3.2 Setup network shares](#Setup_network_shares)
+            *   [2.2.3.2 Systemd and MySQL in the same host](#Systemd_and_MySQL_in_the_same_host)
+            *   [2.2.3.3 Setup network shares](#Setup_network_shares)
         *   [2.2.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
     *   [2.3 Using a remote control](#Using_a_remote_control)
         *   [2.3.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
@@ -325,13 +326,17 @@ To tell Kodi to use the common database, insure that Kodi is not running, then c
 
 ```
 
-**Tip:** If using [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/), the default for the profile is /var/lib/kodi/.kodi and be sure to chown the newly created file to the kodi user and group, i.e. `# chown -R kodi:kodi /var/lib/kodi`
+**Tip:** If using [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/), the default for the profile is `/var/lib/kodi/.kodi` and be sure to chown the newly created file to the kodi user and group, i.e. `chown -R kodi:kodi /var/lib/kodi`
+
+##### Systemd and MySQL in the same host
+
+If MySQL is used as a server in the same host as the Kodi client, then you need to [edit](/index.php/Edit "Edit") the `kodi.service` systemd unit and modify it to include the `mysqld.service` unit in the `After` and `Wants` blocks. See [this example](http://kodi.wiki/view/HOW-TO:Autostart_Kodi_for_Linux#Add_a_new_systemd_script).
 
 ##### Setup network shares
 
-**Warning:** This only needs to be done once, on only one of the nodes. Once completed, configuration of subsequent nodes is a drop-in operation of ~/.kodi/userdata/advancedsettings.xml; no other configuration is needed!
+**Warning:** This only needs to be done once, on only one of the nodes. Once completed, configuration of subsequent nodes is a drop-in operation of `~/.kodi/userdata/advancedsettings.xml`; no other configuration is needed!
 
-**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one *MUST* setup the media using the nfs shares only!
+**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one **must** setup the media using the nfs shares only!
 
 Load Kodi and define the network shares that correspond to the exports by browsing to the following within the interface:
 
@@ -342,7 +347,7 @@ Video>Files>Add Videos>Browse>Network Filesystem(NFS)
 
 After a few seconds, the IP address corresponding to the NFS server should appear.
 
-Select "/srv/nfs/tv-shows" from the list of share and then "OK" from the menu on the right. Assign this share the category of "TV Shows" to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
+Select `/srv/nfs/tv-shows` from the list of share and then "OK" from the menu on the right. Assign this share the category of "TV Shows" to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
 
 Repeat this browsing process for the "movies" and "music" and then exit Kodi once properly configured. At this point, the MySQL tables should have been created.
 

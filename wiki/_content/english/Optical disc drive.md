@@ -636,10 +636,6 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
-*   **morituri** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
-
-	[http://thomas.apestaart.org/morituri/trac/](http://thomas.apestaart.org/morituri/trac/) || [morituri-git](https://aur.archlinux.org/packages/morituri-git/)
-
 *   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
 	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
@@ -667,6 +663,10 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 *   **soundKonverter** — Front-end to various audio converters.
 
 	[https://www.linux-apps.com/content/show.php?content=29024](https://www.linux-apps.com/content/show.php?content=29024) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+
+*   **whipper** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
+
+	[https://github.com/JoeLametta/whipper](https://github.com/JoeLametta/whipper) || [whipper](https://aur.archlinux.org/packages/whipper/)
 
 ### DVD
 

@@ -10,104 +10,104 @@
 
 ## Contents
 
-*   [1 Adding your repository to this page](#Adding_your_repository_to_this_page)
-*   [2 Any](#Any)
-    *   [2.1 Signed](#Signed)
-        *   [2.1.1 bioinformatics-any](#bioinformatics-any)
-        *   [2.1.2 xyne-any](#xyne-any)
-    *   [2.2 Unsigned](#Unsigned)
-        *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
-*   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
-    *   [3.1 Signed](#Signed_2)
-        *   [3.1.1 arcanisrepo](#arcanisrepo)
-        *   [3.1.2 archlinuxcn](#archlinuxcn)
-        *   [3.1.3 atom-editor-git](#atom-editor-git)
-        *   [3.1.4 bbqlinux](#bbqlinux)
-        *   [3.1.5 catalyst](#catalyst)
-        *   [3.1.6 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.7 city](#city)
-        *   [3.1.8 demz-repo-archiso](#demz-repo-archiso)
-        *   [3.1.9 demz-repo-core](#demz-repo-core)
-        *   [3.1.10 gnome-encfs-manager](#gnome-encfs-manager)
-        *   [3.1.11 haskell-core](#haskell-core)
-        *   [3.1.12 lxqt-git](#lxqt-git)
-        *   [3.1.13 metalgamer](#metalgamer)
-        *   [3.1.14 pipelight](#pipelight)
-        *   [3.1.15 repo-ck](#repo-ck)
-        *   [3.1.16 sergej-repo](#sergej-repo)
-    *   [3.2 Unsigned](#Unsigned_2)
-        *   [3.2.1 alucryd](#alucryd)
-        *   [3.2.2 archaudio](#archaudio)
-        *   [3.2.3 archie-repo](#archie-repo)
-        *   [3.2.4 archlinuxfr](#archlinuxfr)
-        *   [3.2.5 archlinuxgis](#archlinuxgis)
-        *   [3.2.6 archlinuxgr](#archlinuxgr)
-        *   [3.2.7 archlinuxgr-kde4](#archlinuxgr-kde4)
-        *   [3.2.8 archstuff](#archstuff)
-        *   [3.2.9 arsch](#arsch)
-        *   [3.2.10 aurbin](#aurbin)
-        *   [3.2.11 cinnamon](#cinnamon)
-        *   [3.2.12 ede](#ede)
-        *   [3.2.13 heftig](#heftig)
-        *   [3.2.14 herecura-stable](#herecura-stable)
-        *   [3.2.15 herecura-testing](#herecura-testing)
-        *   [3.2.16 mesa-git](#mesa-git)
-        *   [3.2.17 oracle](#oracle)
-        *   [3.2.18 pantheon](#pantheon)
-        *   [3.2.19 paulburton-fitbitd](#paulburton-fitbitd)
-        *   [3.2.20 pfkernel](#pfkernel)
-        *   [3.2.21 suckless](#suckless)
-        *   [3.2.22 unity](#unity)
-        *   [3.2.23 unity-extra](#unity-extra)
-        *   [3.2.24 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-*   [4 i686 only](#i686_only)
-    *   [4.1 Signed](#Signed_3)
-        *   [4.1.1 eee-ck](#eee-ck)
-        *   [4.1.2 xyne-i686](#xyne-i686)
-    *   [4.2 Unsigned](#Unsigned_3)
-        *   [4.2.1 andrwe](#andrwe)
-        *   [4.2.2 esclinux](#esclinux)
-        *   [4.2.3 kpiche](#kpiche)
-        *   [4.2.4 kernel26-pae](#kernel26-pae)
-        *   [4.2.5 linux-pae](#linux-pae)
-        *   [4.2.6 rfad](#rfad)
-        *   [4.2.7 studioidefix](#studioidefix)
-*   [5 x86_64 only](#x86_64_only)
-    *   [5.1 Signed](#Signed_4)
-        *   [5.1.1 apathism](#apathism)
-        *   [5.1.2 bioinformatics](#bioinformatics)
-        *   [5.1.3 boyska64](#boyska64)
-        *   [5.1.4 coderkun-aur](#coderkun-aur)
-        *   [5.1.5 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.6 coderkun-aur-nonfree](#coderkun-aur-nonfree)
-        *   [5.1.7 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.8 heimdal](#heimdal)
-        *   [5.1.9 siosm-aur](#siosm-aur)
-        *   [5.1.10 siosm-selinux](#siosm-selinux)
-        *   [5.1.11 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.12 xyne-x86_64](#xyne-x86_64)
-        *   [5.1.13 quarry](#quarry)
-    *   [5.2 Unsigned](#Unsigned_4)
-        *   [5.2.1 andrwe](#andrwe_2)
-        *   [5.2.2 archstudio](#archstudio)
-        *   [5.2.3 brtln](#brtln)
-        *   [5.2.4 hawaii](#hawaii)
-        *   [5.2.5 kps](#kps)
-        *   [5.2.6 miusystem](#miusystem)
-        *   [5.2.7 pnsft-pur](#pnsft-pur)
-        *   [5.2.8 mingw-w64](#mingw-w64)
-        *   [5.2.9 rightscale](#rightscale)
-        *   [5.2.10 seiichiro](#seiichiro)
-        *   [5.2.11 studioidefix](#studioidefix_2)
-        *   [5.2.12 zen](#zen)
-        *   [5.2.13 mazdlc](#mazdlc)
-        *   [5.2.14 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
-        *   [5.2.15 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
-*   [6 armv6h only](#armv6h_only)
-    *   [6.1 Unsigned](#Unsigned_5)
-        *   [6.1.1 arch-fook-armv6h](#arch-fook-armv6h)
+*   [1 加入你自己的仓库](#.E5.8A.A0.E5.85.A5.E4.BD.A0.E8.87.AA.E5.B7.B1.E7.9A.84.E4.BB.93.E5.BA.93)
+*   [2 [archlinuxcn]](#.5Barchlinuxcn.5D)
+*   [3 Any](#Any)
+    *   [3.1 Signed](#Signed)
+        *   [3.1.1 bioinformatics-any](#bioinformatics-any)
+        *   [3.1.2 xyne-any](#xyne-any)
+    *   [3.2 Unsigned](#Unsigned)
+        *   [3.2.1 archlinuxgr-any](#archlinuxgr-any)
+*   [4 Both i686 and x86_64](#Both_i686_and_x86_64)
+    *   [4.1 Signed](#Signed_2)
+        *   [4.1.1 arcanisrepo](#arcanisrepo)
+        *   [4.1.2 atom-editor-git](#atom-editor-git)
+        *   [4.1.3 bbqlinux](#bbqlinux)
+        *   [4.1.4 catalyst](#catalyst)
+        *   [4.1.5 catalyst-hd234k](#catalyst-hd234k)
+        *   [4.1.6 city](#city)
+        *   [4.1.7 demz-repo-archiso](#demz-repo-archiso)
+        *   [4.1.8 demz-repo-core](#demz-repo-core)
+        *   [4.1.9 gnome-encfs-manager](#gnome-encfs-manager)
+        *   [4.1.10 haskell-core](#haskell-core)
+        *   [4.1.11 lxqt-git](#lxqt-git)
+        *   [4.1.12 metalgamer](#metalgamer)
+        *   [4.1.13 pipelight](#pipelight)
+        *   [4.1.14 repo-ck](#repo-ck)
+        *   [4.1.15 sergej-repo](#sergej-repo)
+    *   [4.2 Unsigned](#Unsigned_2)
+        *   [4.2.1 alucryd](#alucryd)
+        *   [4.2.2 archaudio](#archaudio)
+        *   [4.2.3 archie-repo](#archie-repo)
+        *   [4.2.4 archlinuxfr](#archlinuxfr)
+        *   [4.2.5 archlinuxgis](#archlinuxgis)
+        *   [4.2.6 archlinuxgr](#archlinuxgr)
+        *   [4.2.7 archlinuxgr-kde4](#archlinuxgr-kde4)
+        *   [4.2.8 archstuff](#archstuff)
+        *   [4.2.9 arsch](#arsch)
+        *   [4.2.10 aurbin](#aurbin)
+        *   [4.2.11 cinnamon](#cinnamon)
+        *   [4.2.12 ede](#ede)
+        *   [4.2.13 heftig](#heftig)
+        *   [4.2.14 herecura-stable](#herecura-stable)
+        *   [4.2.15 herecura-testing](#herecura-testing)
+        *   [4.2.16 mesa-git](#mesa-git)
+        *   [4.2.17 oracle](#oracle)
+        *   [4.2.18 pantheon](#pantheon)
+        *   [4.2.19 paulburton-fitbitd](#paulburton-fitbitd)
+        *   [4.2.20 pfkernel](#pfkernel)
+        *   [4.2.21 suckless](#suckless)
+        *   [4.2.22 unity](#unity)
+        *   [4.2.23 unity-extra](#unity-extra)
+        *   [4.2.24 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+*   [5 i686 only](#i686_only)
+    *   [5.1 Signed](#Signed_3)
+        *   [5.1.1 eee-ck](#eee-ck)
+        *   [5.1.2 xyne-i686](#xyne-i686)
+    *   [5.2 Unsigned](#Unsigned_3)
+        *   [5.2.1 andrwe](#andrwe)
+        *   [5.2.2 esclinux](#esclinux)
+        *   [5.2.3 kpiche](#kpiche)
+        *   [5.2.4 kernel26-pae](#kernel26-pae)
+        *   [5.2.5 linux-pae](#linux-pae)
+        *   [5.2.6 rfad](#rfad)
+        *   [5.2.7 studioidefix](#studioidefix)
+*   [6 x86_64 only](#x86_64_only)
+    *   [6.1 Signed](#Signed_4)
+        *   [6.1.1 apathism](#apathism)
+        *   [6.1.2 bioinformatics](#bioinformatics)
+        *   [6.1.3 boyska64](#boyska64)
+        *   [6.1.4 coderkun-aur](#coderkun-aur)
+        *   [6.1.5 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [6.1.6 coderkun-aur-nonfree](#coderkun-aur-nonfree)
+        *   [6.1.7 freifunk-rheinland](#freifunk-rheinland)
+        *   [6.1.8 heimdal](#heimdal)
+        *   [6.1.9 siosm-aur](#siosm-aur)
+        *   [6.1.10 siosm-selinux](#siosm-selinux)
+        *   [6.1.11 subtitlecomposer](#subtitlecomposer)
+        *   [6.1.12 xyne-x86_64](#xyne-x86_64)
+        *   [6.1.13 quarry](#quarry)
+    *   [6.2 Unsigned](#Unsigned_4)
+        *   [6.2.1 andrwe](#andrwe_2)
+        *   [6.2.2 archstudio](#archstudio)
+        *   [6.2.3 brtln](#brtln)
+        *   [6.2.4 hawaii](#hawaii)
+        *   [6.2.5 kps](#kps)
+        *   [6.2.6 miusystem](#miusystem)
+        *   [6.2.7 pnsft-pur](#pnsft-pur)
+        *   [6.2.8 mingw-w64](#mingw-w64)
+        *   [6.2.9 rightscale](#rightscale)
+        *   [6.2.10 seiichiro](#seiichiro)
+        *   [6.2.11 studioidefix](#studioidefix_2)
+        *   [6.2.12 zen](#zen)
+        *   [6.2.13 mazdlc](#mazdlc)
+        *   [6.2.14 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
+        *   [6.2.15 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
+*   [7 armv6h only](#armv6h_only)
+    *   [7.1 Unsigned](#Unsigned_5)
+        *   [7.1.1 arch-fook-armv6h](#arch-fook-armv6h)
 
-## Adding your repository to this page
+## 加入你自己的仓库
 
 **注意:** 本文为[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")的翻译，添加自己的仓库，请移步[英文原始页面](/index.php/Unofficial_user_repositories "Unofficial user repositories")。
 
@@ -118,7 +118,23 @@
 *   如果仓库是签名的，请添加一个key-id，最好把它编辑成一个链到密匙服务器的连接，直接连到密钥文件上。
 *   包含一些简短的描述（软件包的分类什么的）
 *   如果你有一个介绍性的网页（无论是ArchWiki或者其他网站），请添加一个连接。
-*   If possible, avoid using comments in code blocks. The formatted description is much more readable. Users who want some comments in their `pacman.conf` can easily create it on their own.
+*   如果可能，不要在配置文件中添加注释，而是写在前面的描述中。
+
+## [archlinuxcn]
+
+*   **Maintainers:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), [Felix Yan (felixonmars, dev)](https://www.archlinux.org/people/developers/#fyan), [lilydjwg](https://twitter.com/lilydjwg), [farseerfc (TU)](https://www.archlinux.org/people/trusted-users/#farseerfc), and [others](https://github.com/archlinuxcn/repo/graphs/contributors)
+*   **Description:** 由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体/美化包等。注意 i686 的支持不太活跃而且没有完全测试。
+*   **Git Repo:** [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
+*   **Issue tracking:** [https://github.com/archlinuxcn/repo/issues](https://github.com/archlinuxcn/repo/issues) 用于打包问题，提报软件包过期，请求收录软件包和其它问题。
+*   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo) (大多位于中国大陆), 或者安装 *archlinuxcn-mirrorlist-git* 软件包。
+*   **Key-ID:** 添加 archlinuxcn 源之后，必须先安装 *archlinuxcn-keyring* 钥匙环，之后才可以安装任何其它包，否则会出现 GPG 错误。*archlinuxcn-keyring* 本身由 TU 签名。
+
+```
+[archlinuxcn]
+SigLevel = Optional TrustedOnly
+Server = http://repo.archlinuxcn.org/$arch
+
+```
 
 ## Any
 
@@ -181,21 +197,6 @@ Repositories with both i686 and x86_64 versions. The `$arch` variable will be se
 ```
 [arcanisrepo]
 Server = ftp://repo.arcanis.name/repo/$arch
-
-```
-
-#### archlinuxcn
-
-*   **维护者:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), Felix Yan (felixonmars, TU), [lilydjwg](https://twitter.com/lilydjwg), and others
-*   **描述：** The Chinese Arch Linux communities packages.
-*   **Git Repo:** [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
-*   **镜像:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo)
-*   **Key-ID:** 添加 archlinuxcn 源之后，必须先安装 “archlinuxcn-keyring” 钥匙环，之后才可以安装任何其它包。
-
-```
-[archlinuxcn]
-SigLevel = Optional TrustedOnly
-Server = http://repo.archlinuxcn.org/$arch
 
 ```
 

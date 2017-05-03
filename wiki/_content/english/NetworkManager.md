@@ -110,7 +110,7 @@ To configure and have easy access to NetworkManager, most users will want to ins
 
 ### nm-applet
 
-[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) is a GTK+ 3 front-end which works in all environments.
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) is a GTK+ 3 front-end which works under Xorg environments with a systray.
 
 To store connection secrets install and configure [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring").
 
@@ -131,7 +131,7 @@ When you close the *stalonetray* window, it closes `nm-applet` too, so no extra 
 
 #### Xfce
 
-While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), in order to see notifications, including error messages, `nm-applet` needs an implementation of the FreeDesktop.org [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
+While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), in order to see notifications, including error messages, `nm-applet` needs an implementation of the FreeDesktop.org [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). In the xfce panel settings the applet is named "Notification Area" which might be misleading to some users especially in different translation. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification. To add a password prompt for new wifi networks install a service that implements org.freedesktop.secrets like [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
 
 Without such a notification daemon, `nm-applet` outputs the following errors to stdout/stderr:
 

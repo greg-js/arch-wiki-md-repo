@@ -208,8 +208,6 @@ server {
     ssl_dhparam /etc/cozy/dh.pem;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers ALL:!aNULL:!eNULL:!LOW:!EXP:!RC4:!3DES:+HIGH:+MEDIUM;
     ssl_prefer_server_ciphers on;
     ssl on;
 

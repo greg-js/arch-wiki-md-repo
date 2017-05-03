@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=463062)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-02，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=472389)可以查看翻译后英文页面的改动。
 
 本文将引导您从用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的基本操作及术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").
 
@@ -27,8 +27,8 @@
     *   [3.7 Initramfs](#Initramfs)
     *   [3.8 Root 密码](#Root_.E5.AF.86.E7.A0.81)
     *   [3.9 安装引导程序](#.E5.AE.89.E8.A3.85.E5.BC.95.E5.AF.BC.E7.A8.8B.E5.BA.8F)
-    *   [3.10 重启](#.E9.87.8D.E5.90.AF)
-*   [4 安装后的工作](#.E5.AE.89.E8.A3.85.E5.90.8E.E7.9A.84.E5.B7.A5.E4.BD.9C)
+*   [4 重启](#.E9.87.8D.E5.90.AF)
+*   [5 安装后的工作](#.E5.AE.89.E8.A3.85.E5.90.8E.E7.9A.84.E5.B7.A5.E4.BD.9C)
 
 ## 安装准备
 
@@ -132,7 +132,7 @@ Arch Linux能在任何内存空间不小于 512MB 内存的[x86_64](https://en.w
 
 ```
 
-如果你有[swap (简体中文)](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)")分区，你还应该使用 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 激活分区。当此步骤完成，`genfstab` 才能自动检测到它们。
+genfstab 将会自动检测挂载的文件系统和 swap 分区。
 
 ## 安装
 
@@ -142,10 +142,10 @@ Arch Linux能在任何内存空间不小于 512MB 内存的[x86_64](https://en.w
 
 ### 安装基本系统
 
-执行 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，默认会安装 [base](https://www.archlinux.org/groups/x86_64/base/) 组：
+执行 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/groups/x86_64/base/) 组：
 
 ```
-# pacstrap /mnt
+# pacstrap /mnt base
 
 ```
 
@@ -178,7 +178,7 @@ Arch Linux能在任何内存空间不小于 512MB 内存的[x86_64](https://en.w
 [Change root](/index.php/Change_root "Change root") 到新安装的系统：
 
 ```
-# arch-chroot /mnt /bin/bash
+# arch-chroot /mnt
 
 ```
 
@@ -187,14 +187,14 @@ Arch Linux能在任何内存空间不小于 512MB 内存的[x86_64](https://en.w
 设置 [时区](/index.php/Time_zone "Time zone"):
 
 ```
-# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
+# ln -sf /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
 
 ```
 
 例如：
 
 ```
-# ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ```
 
@@ -292,18 +292,13 @@ zh_TW.UTF-8 UTF-8
 
 Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 并根据 [Microcode](/index.php/Microcode "Microcode") 配置 boot loader.
 
-### 重启
+## 重启
 
-输入 `exit` 或按 `Ctrl+D` 退出 chroot。
+输入 `exit` 或按 `Ctrl+D` 退出 chroot 环境。
 
-可选，卸载挂载的分区，如果有问题可以通过 [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html) 检查。
+可选用 `umount -R /mnt` 手动卸载被挂载的分区：这有助于发现任何“繁忙”的分区，并通过 [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html) 查找原因。
 
-```
-# umount -R /mnt
-
-```
-
-现在重启系统，移除安装介质并执行`reboot`，新系统启动后用 root 登录。
+最后，通过执行 `reboot` 重启系统：*systemd* 将自动卸载仍然挂载的任何分区。不要忘记移除安装介质，然后使用root帐户登录到新系统。
 
 ## 安装后的工作
 

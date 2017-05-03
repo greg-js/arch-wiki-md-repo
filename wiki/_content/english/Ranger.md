@@ -8,7 +8,7 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Defining commands](#Defining_commands)
-    *   [3.2 Colorscheme](#Colorscheme)
+    *   [3.2 Color schemes](#Color_schemes)
     *   [3.3 File association](#File_association)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Archives](#Archives)
@@ -29,7 +29,7 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
 
 ## Installation
 
-[ranger](https://www.archlinux.org/packages/?name=ranger) can be [installed](/index.php/Install "Install") from the [official repositories](/index.php/Official_repositories "Official repositories"). Use [ranger-git](https://aur.archlinux.org/packages/ranger-git/) in the [AUR](/index.php/AUR "AUR") for the development version.
+[Install](/index.php/Install "Install") the [ranger](https://www.archlinux.org/packages/?name=ranger) package, or [ranger-git](https://aur.archlinux.org/packages/ranger-git/) for the development version.
 
 ## Usage
 
@@ -89,25 +89,20 @@ To use it, type `:empty` and `Enter` with tab completion as desired.
 
 **Warning:** `[^.]` is an essential part of the above command. Without it, all files and directories of the form `..*` will be deleted, wiping out everything in your home directory.
 
-### Colorscheme
+### Color schemes
 
-Create the `colorschemes` subfolder in `~/.config/ranger`:
-
-```
-mkdir ~/.config/ranger/colorschemes
+Ranger comes with three color schemes: `default`, `jungle` and `snow`. You can change your color scheme using:
 
 ```
-
-then copy your new `*newscheme*.py` into that folder. Alter the default color scheme in the `~/.config/ranger/rc.conf` file:
-
-```
-set colorscheme *newscheme*
+set colorscheme *scheme*
 
 ```
+
+Custom color schemes can be placed in `~/.config/ranger/colorschemes`.
 
 ### File association
 
-Modify `~/.config/ranger/rifle.conf`. As the beginning lines are executed first, you should put modifications at the top of the file. For example, the following entry will open a tex file with [kile](https://www.archlinux.org/packages/?name=kile):
+Ranger uses its own file opener called `rifle`. It's configured in `~/.config/ranger/rifle.conf`. Run `ranger --copy-config=rifle` if it does not exist. For example, the following line makes [kile](https://www.archlinux.org/packages/?name=kile) the default program for tex files:
 
 ```
 ext tex = kile "$@"
@@ -425,7 +420,7 @@ set draw_borders true
 
 *   [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=93025)
 *   [DotShare.it configurations](http://dotshare.it/category/fms/ranger/)
-*   [GitHub](http://github.com/hut/ranger)
+*   [GitHub](https://github.com/hut/ranger)
 *   [Installing and using ranger](https://www.digitalocean.com/community/tutorials/installing-and-using-ranger-a-terminal-file-manager-on-a-ubuntu-vps)
 *   [Mailing list](https://lists.nongnu.org/mailman/listinfo/ranger-users)
-*   [Ranger tutorial](http://bloerg.net/2012/10/17/ranger-file-manager.html)
+*   [Ranger tutorial](https://bloerg.net/2012/10/17/ranger-file-manager.html)

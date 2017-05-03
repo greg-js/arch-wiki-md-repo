@@ -74,7 +74,7 @@ $ ln -s /usr/lib/synergy/libns.so ~/.synergy/plugins/libns.so
 
 ## Server configuration
 
-In synergy, the computer with keyboard and mouse you want to share is called server. See [Synergy Configuration File Format](http://synergy-project.org/wiki/Text_Config) for a detailed description of all available sections and options.
+In synergy, the computer with keyboard and mouse you want to share is called server. See [Synergy Configuration File Format](https://github.com/symless/synergy/wiki/Text-Config) for a detailed description of all available sections and options.
 
 ### Arch Linux
 
@@ -145,7 +145,7 @@ C:\Program Files\Synergy+\bin\synergys.exe  -f --debug ERROR --name left --log c
 
 ### macOS
 
-macOS has a similar configuration as Unix: check [the official documentation](http://synergy-project.org/wiki/Developer) for more information.
+macOS has a similar configuration as Unix: check [the official documentation](https://github.com/symless/synergy/wiki/Developer) for more information.
 
 ### Configuration examples
 
@@ -376,7 +376,7 @@ If Arch is being used as a client in a Synergy installation, the server may not 
 
 ## Troubleshooting
 
-The official documentation has a [FAQ](http://synergy-project.org/wiki/Synergy_FAQ) and also a [troubleshooting page](https://github.com/symless/synergy/wiki/User-Guide#Troubleshooting).
+The official documentation has a [FAQ](https://github.com/symless/synergy/wiki/User-FAQ) and also a [troubleshooting page](https://github.com/symless/synergy/wiki/User-Guide#Troubleshooting).
 
 ### Keyboard AltGr
 
@@ -430,4 +430,4 @@ You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt"
 ## External Links
 
 *   Synergy website: [https://symless.com/synergy/](https://symless.com/synergy/)
-*   Official documentation: [http://synergy-project.org/wiki/User_Guide](http://synergy-project.org/wiki/User_Guide)
+*   Official documentation: [https://github.com/symless/synergy/wiki/User-Guide](https://github.com/symless/synergy/wiki/User-Guide)

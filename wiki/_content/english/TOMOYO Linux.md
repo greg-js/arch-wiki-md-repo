@@ -97,7 +97,7 @@ This [table](http://akari.sourceforge.jp/comparison.html) provides a comprehensi
 
 ### Installation
 
-Both AKARI and the userspace tools must be installed. A package for [AKARI](https://aur.archlinux.org/packages.php?ID=42608) and a package for [ccs-tools](https://aur.archlinux.org/packages.php?ID=42606) are available on the AUR.
+Both AKARI and the userspace tools must be installed. A package for [AKARI](https://aur.archlinux.org/packages/akari) and a package for [ccs-tools](https://aur.archlinux.org/packages/ccs-tools) are available on the AUR.
 
 The bootloader configuration must be changed in order to activate AKARI:
 

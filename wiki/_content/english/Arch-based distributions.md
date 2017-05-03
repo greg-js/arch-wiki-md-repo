@@ -49,6 +49,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Miraclx OS](http://miraclx-os.ml)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
+*   [Nurunner Linux](https://nurunner.org/)
 *   [Velt OS](https://velt.io)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)
 

@@ -819,6 +819,8 @@ To play with the settings without rebooting you can also set them through the co
 
 ```
 
+**Note:** Using kernel *4.10.10-1-macbook* the Magic Mouse (*hid_magicmouse*) will cause a lot of system lock ups. If you experience random lock ups, try a different, wired, mouse to see if this is the case for you as well.
+
 ### Webcam
 
 #### iSight

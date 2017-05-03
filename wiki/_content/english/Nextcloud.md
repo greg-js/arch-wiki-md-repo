@@ -136,7 +136,7 @@ Copy the Apache configuration file to the configuration directory:
 
 ```
 
-Modify the file according to your preferences. By default it includes an alias for `/owncloud` pointing to `/usr/share/webapps/owncloud`.
+Modify the file according to your preferences. By default it includes an alias for `/nextcloud` pointing to `/usr/share/webapps/nextcloud`.
 
 And include it in `/etc/httpd/conf/httpd.conf`:
 

@@ -22,6 +22,7 @@
     *   [4.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
     *   [4.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
     *   [4.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
+    *   [4.5 opentmpfiles-setup failed to start](#opentmpfiles-setup_failed_to_start)
 *   [5 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
 *   [6 See also](#See_also)
 
@@ -182,6 +183,18 @@ To prevent a missing file error, create the file:
 # touch /etc/sysctl.conf
 
 ```
+
+### opentmpfiles-setup failed to start
+
+On booting openrc you may see lines like these :
+
+`* Setting up tmpfiles.d entries ... chattr: Operation not supported while setting flags on /var/log/journal chattr: No such file or directory while trying to stat /var/log/journal/%m chattr: Operation not supported while setting flags on /var/log/journal/remote [ !! ] ERROR: opentmpfiles-setup failed to start`
+
+This is caused by /usr/lib/tmpfiles.d/journal-nocow.conf using options that are only valid if journal is on a btrfs filesystem.
+
+See [https://github.com/OpenRC/opentmpfiles/issues/2](https://github.com/OpenRC/opentmpfiles/issues/2) for details
+
+A workaround is to create an empty /etc/tmpfiles.d/journal-nocow.conf to override the settings.
 
 ## Using OpenRC with a desktop environment
 

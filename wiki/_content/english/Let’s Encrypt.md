@@ -131,7 +131,7 @@ Instead of using plugins for automatic configuration, it may be preferred to ena
 
 **Tip:**
 
-*   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes [nginx specific](https://wiki.mozilla.org/Security/Server_Side_TLS#Nginx) configuration guidelines as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
+*   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
 *   [Cipherli.st](https://cipherli.st) provides strong SSL implementation examples and tutorial for most modern webservers.
 
 #### nginx
@@ -158,8 +158,6 @@ server {
   ssl_session_timeout 1d;
   ssl_session_cache shared:SSL:50m;
   ssl_session_tickets off;
-  ssl_protocols TLSv1.2;
-  ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
   ssl_prefer_server_ciphers on;
   add_header Strict-Transport-Security max-age=15768000;
   ssl_stapling on;

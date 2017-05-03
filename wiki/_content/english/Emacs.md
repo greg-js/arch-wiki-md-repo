@@ -559,6 +559,8 @@ If when you start emacs in X windows all the characters in the main window are w
 
 ### Slow startup
 
+**Note:** To eliminate startup time, users may want to consider running Emacs [as a daemon](https://wiki.archlinux.org/index.php/Emacs#As_a_systemd_unit)
+
 Slow startup times are often caused by one of two things.
 
 To determine which it might be, run Emacs with:

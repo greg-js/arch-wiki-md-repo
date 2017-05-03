@@ -498,24 +498,25 @@ To find the default configuration paths:
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
 | [Scribus](https://www.scribus.net/) | `~/.scribus` |
 | [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[100]](https://bugzil.la/726939) |
-| [Skype](/index.php/Skype "Skype") < 5.0 | `~/.Skype` | [[101]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
+| [Snes9x](http://www.snes9x.com/) | `~/.snes9x` | [[101]](https://github.com/snes9xgit/snes9x/issues/194) | Hardcoded on source file gtk/src/gtk_config.cpp function get_config_dir |
+| [Skype](/index.php/Skype "Skype") < 5.0 | `~/.Skype` | [[102]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | `~/.solfege`
 
 `~/.solfegerc`
 
 `~/lessonfiles`
 
- | [[102]](https://savannah.gnu.org/bugs/index.php?50251) |
+ | [[103]](https://savannah.gnu.org/bugs/index.php?50251) |
 | [SpamAssassin](https://spamassassin.apache.org/) | `~/.spamassassin` |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
 | [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history`
 
 `~/.sqliterc`
 
- | [[103]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[104]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
+ | [[104]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[105]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[105]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[106]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | `~/.vim`
 
@@ -545,14 +546,14 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[106]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[107]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[107]](https://github.com/conformal/xombrero/issues/74) |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[108]](https://github.com/conformal/xombrero/issues/74) |
 | [zsh](/index.php/Zsh "Zsh") | `~/.zshrc`
 
 `~/.zprofile` `~/.zshenv`
@@ -561,7 +562,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 `~/.histfile`
 
- | [[108]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[109]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 

@@ -100,7 +100,7 @@ highlight /^.*\.(zip|gz|bz2|xz|tar|tgz|tbz2|7z|rar|iso|rpm|deb)$/ ctermfg=red
 As of 0.6.2 you can customize key bindings in Vifm. These can be set from the command mode using the map command, like so:
 
 ```
- :map ] :s
+:map ] :s
 
 ```
 
@@ -236,7 +236,7 @@ Further useful programs for previews include
 Single stroke to access command line
 
 ```
-   nmap ; :
+nmap ; :
 
 ```
 
@@ -249,6 +249,6 @@ Single stroke to access command line
 To get the total size of selected files change %s to %E in `~/.vifm/vifmrc`, like so:
 
 ```
-   set statusline="  %t%= %A %10u:%-7g %15E %20d  "
+set statusline="  %t%= %A %10u:%-7g %15E %20d  "
 
 ```

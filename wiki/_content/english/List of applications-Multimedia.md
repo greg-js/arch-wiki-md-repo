@@ -406,19 +406,19 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[cmus](/index.php/Cmus "Cmus")** — Very feature-rich ncurses-based music player.
 
-	[http://cmus.github.io/](http://cmus.github.io/) || [cmus](https://www.archlinux.org/packages/?name=cmus)
+	[https://cmus.github.io/](https://cmus.github.io/) || [cmus](https://www.archlinux.org/packages/?name=cmus)
 
 *   **Cplay** — Curses front-end for various audio players (ogg123, mpg123, mpg321, splay, madplay, and mikmod, xmp, and sox).
 
-	[http://directory.fsf.org/wiki/Cplay](http://directory.fsf.org/wiki/Cplay) || [cplay](https://aur.archlinux.org/packages/cplay/)
+	[https://directory.fsf.org/wiki/Cplay](https://directory.fsf.org/wiki/Cplay) || [cplay](https://aur.archlinux.org/packages/cplay/)
 
 *   **Herrie** — Minimalistic console-based music player with native AudioScrobbler support.
 
-	[http://herrie.info/](http://herrie.info/) || [herrie](https://aur.archlinux.org/packages/herrie/)
+	[https://github.com/EdSchouten/herrie](https://github.com/EdSchouten/herrie) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
 *   **[MOC](/index.php/Moc "Moc")** — Ncurses console audio player with support for the MP3, OGG, and WAV formats.
 
-	[http://moc.daper.net/](http://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
+	[https://moc.daper.net/](https://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 
 *   **MPFC** — Gstreamer-based audio player with curses interface.
 
@@ -426,7 +426,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[mpg123](https://en.wikipedia.org/wiki/Mpg123 "wikipedia:Mpg123")** — Fast free MP3 console audio player for Linux, FreeBSD, Solaris, HP-UX and nearly all other UNIX systems (also decodes MP1 and MP2 files).
 
-	[http://www.mpg123.org/](http://www.mpg123.org/) || [mpg123](https://www.archlinux.org/packages/?name=mpg123)
+	[https://www.mpg123.org/](https://www.mpg123.org/) || [mpg123](https://www.archlinux.org/packages/?name=mpg123)
 
 *   **mps-youtube** — Terminal based YouTube jukebox with playlist management. Plays audio/video through mplayer/mpv.
 
@@ -436,9 +436,9 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://github.com/osum4est/pancake/](https://github.com/osum4est/pancake/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **[pianobar](/index.php/Pianobar "Pianobar")** — Console-based frontend for Pandora.
+*   **[pianobar](/index.php/Pianobar "Pianobar")** — Console-based frontend for the online radio Pandora.
 
-	[http://6xq.net/projects/pianobar/](http://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
+	[https://6xq.net/projects/pianobar/](https://6xq.net/projects/pianobar/) || [pianobar](https://www.archlinux.org/packages/?name=pianobar)
 
 *   **[VLC](https://en.wikipedia.org/wiki/VLC_media_player "wikipedia:VLC media player")** — Highly portable multimedia player with ncurses interface module, and multimedia framework capable of reading most audio and video formats as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
 
@@ -452,7 +452,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[Amarok](/index.php/Amarok "Amarok")** — Mature Qt-based player known for its plethora of features.
 
-	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
+	[https://amarok.kde.org/](https://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
 
 *   **[Audacious](/index.php/Audacious "Audacious")** — [Winamp](https://en.wikipedia.org/wiki/Winamp "wikipedia:Winamp") clone like Beep and old XMMS versions.
 
@@ -464,7 +464,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Amarok 1.4 clone, ported to Qt 4.
 
-	[http://www.clementine-player.org/](http://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
+	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
 *   **Cuberok** — Music player and collection manager with a lightweight interface.
 
@@ -480,7 +480,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **gmusicbrowser** — Open-source jukebox for large collections of MP3/OGG/FLAC files.
 
-	[http://gmusicbrowser.org/](http://gmusicbrowser.org/) || [gmusicbrowser](https://aur.archlinux.org/packages/gmusicbrowser/)
+	[https://gmusicbrowser.org/](https://gmusicbrowser.org/) || [gmusicbrowser](https://aur.archlinux.org/packages/gmusicbrowser/)
 
 *   **GNOME Music** — Music is the new GNOME music playing application. It aims to combine an elegant and immersive browsing experience with simple and straightforward controls.
 
@@ -488,7 +488,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Goggles Music Manager** — Music collection manager and player that automatically categorizes your music, supports gapless playback, features easy tag editing, and internet radio support. Uses the [Fox toolkit](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit").
 
-	[http://gogglesmm.github.io/](http://gogglesmm.github.io/) || [gogglesmm](https://www.archlinux.org/packages/?name=gogglesmm)
+	[https://gogglesmm.github.io/](https://gogglesmm.github.io/) || [gogglesmm](https://www.archlinux.org/packages/?name=gogglesmm)
 
 *   **Guayadeque** — Full featured media player that can easily manage large collections and uses the GStreamer media framework.
 
@@ -500,7 +500,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more.
 
-	[http://kaku.rocks/](http://kaku.rocks/) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
+	[https://github.com/EragonJ/Kaku](https://github.com/EragonJ/Kaku) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
 
 *   **Listen** — Listen is a Music player and management for GNOME written in python.
 
@@ -512,15 +512,15 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **LXMusic** — A minimalist xmms2-based music player.
 
-	[http://wiki.lxde.org/en/LXMusic](http://wiki.lxde.org/en/LXMusic) || [lxmusic](https://www.archlinux.org/packages/?name=lxmusic)
+	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || [lxmusic](https://www.archlinux.org/packages/?name=lxmusic)
 
 *   **Miam-player** — Cross-platform open source music player.
 
-	[http://miam-player.org/](http://miam-player.org/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
+	[https://miam-player.org/](https://miam-player.org/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
 
 *   **Muine** — A music player written in C Sharp.
 
-	[http://muine.gooeylinux.org/](http://muine.gooeylinux.org/) || [muine](https://www.archlinux.org/packages/?name=muine)
+	[https://muine.gooeylinux.org/](https://muine.gooeylinux.org/) || [muine](https://www.archlinux.org/packages/?name=muine)
 
 *   **Musique** — Just another music player, only better.
 
@@ -528,7 +528,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[Nightingale](https://en.wikipedia.org/wiki/Nightingale_(software) "wikipedia:Nightingale (software)")** — Open source clone of iTunes-based on [Songbird](https://en.wikipedia.org/wiki/Songbird_(software) "wikipedia:Songbird (software)"), that uses Mozilla technologies and the GStreamer framework.
 
-	[http://getnightingale.com/](http://getnightingale.com/) || [nightingale-git](https://aur.archlinux.org/packages/nightingale-git/)
+	[https://getnightingale.com/](https://getnightingale.com/) || [nightingale-git](https://aur.archlinux.org/packages/nightingale-git/)
 
 *   **Noise** — Simple, fast, and good looking music player. The official elementary music player.
 
@@ -560,15 +560,15 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[Spotify](/index.php/Spotify "Spotify")** — Proprietary music streaming service. It supports local playback and streaming from Spotify's vast library (requires a free account).
 
-	[http://www.spotify.com/](http://www.spotify.com/) || [spotify](https://aur.archlinux.org/packages/spotify/)
+	[https://www.spotify.com/](https://www.spotify.com/) || [spotify](https://aur.archlinux.org/packages/spotify/)
 
 *   **[SpotCommander](/index.php/SpotCommander "SpotCommander")** — A remote control for Spotify, optimized for mobile devices. It works on any device with a modern browser, and it's free and open source.
 
-	[http://olejon.github.io/spotcommander/](http://olejon.github.io/spotcommander/) || [spotcommander](https://aur.archlinux.org/packages/spotcommander/)
+	[https://olejon.github.io/spotcommander/](https://olejon.github.io/spotcommander/) || [spotcommander](https://aur.archlinux.org/packages/spotcommander/)
 
 *   **Tomahawk** — Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
 
-	[http://www.tomahawk-player.org/](http://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
+	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
 
 *   **[VLC](https://en.wikipedia.org/wiki/VLC_media_player "wikipedia:VLC media player")** — Highly portable multimedia player and multimedia framework capable of reading most audio and video formats as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
 
@@ -576,7 +576,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[XMMS](https://en.wikipedia.org/wiki/XMMS "wikipedia:XMMS")** — Skinnable GTK+ standalone media player similar to Winamp.
 
-	[http://legacy.xmms2.org/](http://legacy.xmms2.org/) || [xmms](https://aur.archlinux.org/packages/xmms/)
+	[https://legacy.xmms2.org/](https://legacy.xmms2.org/) || [xmms](https://aur.archlinux.org/packages/xmms/)
 
 #### Volume managers
 

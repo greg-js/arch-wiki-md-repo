@@ -45,7 +45,7 @@ Instead of using `pacman -Syuq` above, use `pacman -Syuwq`. The '-w' will cause 
 
 ## Using systemd
 
-Instead of installing and configuring cron, you can directly use [systemd](/index.php/Systemd "Systemd"). [Here](http://www.techrapid.co.uk/linux/arch-linux/automatic-update-arch-linux-with-systemd/) is an article on how to do it.
+Instead of installing and configuring cron, you can directly use [systemd](/index.php/Systemd "Systemd"). [Here](http://www.techrapid.co.uk/2017/04/automatically-update-arch-linux-with-systemd.html) is an article on how to do it.
 
 ## Manual set up of auto-update
 

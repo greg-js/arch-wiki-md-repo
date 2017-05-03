@@ -235,5 +235,5 @@ Another common workaround is to set `TERM=xterm`, however this causes other issu
 
 ## See also
 
-*   [man mc(1)](http://linux.die.net/man/1/mc)
+*   [man mc(1)](https://linux.die.net/man/1/mc)
 *   [Draft of documentation](https://www.midnight-commander.org/wiki/doc)
