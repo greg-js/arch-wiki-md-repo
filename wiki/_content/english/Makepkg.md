@@ -18,7 +18,7 @@
         *   [3.4.1 tmpfs](#tmpfs)
         *   [3.4.2 ccache](#ccache)
     *   [3.5 Generate new checksums](#Generate_new_checksums)
-    *   [3.6 Create uncompressed packages](#Create_uncompressed_packages)
+    *   [3.6 Use other compression algorithms](#Use_other_compression_algorithms)
     *   [3.7 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
     *   [3.8 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -238,9 +238,23 @@ $ updpkgsums
 
 ```
 
-### Create uncompressed packages
+### Use other compression algorithms
 
-If you do not mind having larger package files, you can speed up both packaging and installation by having makepkg produce uncompressed packages. Set `PKGEXT='.pkg.tar'` in `/etc/makepkg.conf`.
+To speed up both packaging and installation, with the tradeoff of having larger package archives, you can change `PKGEXT`. For example, the following makes the package archive uncompressed for only one invocation:
+
+```
+$ PKGEXT='.pkg.tar' makepkg
+
+```
+
+As another example, the following uses the lzop algorithm, with the [lzo](https://www.archlinux.org/packages/?name=lzo) package required:
+
+```
+$ PKGEXT='.pkg.tar.lzo' makepkg
+
+```
+
+To make one of these settings permanent, set `PKGEXT` in `/etc/makepkg.conf`.
 
 ### Utilizing multiple cores on compression
 

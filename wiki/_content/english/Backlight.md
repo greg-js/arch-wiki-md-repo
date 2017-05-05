@@ -14,6 +14,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   [5.1 xbacklight](#xbacklight)
     *   [5.2 Other utilities](#Other_utilities)
     *   [5.3 setpci](#setpci)
+    *   [5.4 Using DBus with Gnome](#Using_DBus_with_Gnome)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -240,6 +241,23 @@ When using this method, you need to use `lspci` first to find out where your gra
 
 ```
 # setpci -s 00:02.0 F4.B=0
+
+```
+
+### Using DBus with Gnome
+
+Brightness can also be adjusted as the gnome controls do. Changes are reflected in the gnome UI using this method.
+
+```
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Set org.gnome.SettingsDaemon.Power.Screen Brightness "<int32 50>"
+
+```
+
+Steps in brightness for keyboard contol can be implemented with this method as well.
+
+```
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
 
 ```
 

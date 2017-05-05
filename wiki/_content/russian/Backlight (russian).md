@@ -14,6 +14,7 @@
     *   [5.1 xbacklight](#xbacklight)
     *   [5.2 Другие утилиты](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
     *   [5.3 setpci](#setpci)
+    *   [5.4 Использование DBus с Gnome](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_DBus_.D1.81_Gnome)
 *   [6 Цветовая коррекция](#.D0.A6.D0.B2.D0.B5.D1.82.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BA.D0.BE.D1.80.D1.80.D0.B5.D0.BA.D1.86.D0.B8.D1.8F)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -244,6 +245,23 @@ EndSection
 
 ```
 # setpci -s 00:02.0 F4.B=0
+
+```
+
+### Использование DBus с Gnome
+
+Яркость также можно регулировать с помощью настроек gnome. При использовании этого метода изменения отражаются в интерфейсе gnome.
+
+```
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Set org.gnome.SettingsDaemon.Power.Screen Brightness "<int32 50>"
+
+```
+
+Пошаговое изменение яркости (для контроля с клавиатуры) также может быть реализовано этим методом.
+
+```
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
 
 ```
 

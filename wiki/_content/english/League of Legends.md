@@ -108,12 +108,16 @@ Access the libraries tab, find in the list of existing libraries (or add a new e
 
 **Warning:** The Windows installer may not work on some systems.
 
-In order to use the installer using Wine 32bit prefix, execute the following command:
+Use the latest installer from riot games: [https://signup.na.leagueoflegends.com/en/signup/redownload](https://signup.na.leagueoflegends.com/en/signup/redownload) Now unpack it and execute it using msiexec
 
 ```
-GC_DONT_GC=1 WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine /PATH/TO/INSTALLER.exe
+mkdir /tmp/lol_installer
+WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine /PATH/TO/INSTALLER.exe /extract:Z:/tmp/lol_installer
+WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine  msiexec /i /tmp/lol_installer/LoL.XXX.msi
 
 ```
+
+Where XXX is the region of the installer.
 
 Follow the steps indicated on the installer menu.
 

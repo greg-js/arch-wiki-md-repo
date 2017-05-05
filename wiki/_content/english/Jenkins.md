@@ -1,11 +1,11 @@
-[Jenkins](https://jenkins-ci.org/) is a continuous integration server: basically it is a Java application that compiles your software and runs tests on it. Note that applications do not have to contain any Java themselves, so you can benefit from it for PHP applications, Node.js, etc.
+[Jenkins](https://jenkins-ci.org/) is an open source continuous integration server written in Java. It is capable of running scheduled automated builds and test suits of managed software projects. The build or tests for example may be triggered on a per commit basis or in a calendar driven manner. Jenkins thereby relies on the code being managed via a version control system (see [git](/index.php/Git "Git")) and an automated build process. Note that Jenkins is not limited to Java applications and is suitable to manage projects in all common languages. Its capabilities can be further expanded by plugins.
 
-## Installation and usage
+## Installation
 
-[Install](/index.php/Install "Install") the [jenkins](https://www.archlinux.org/packages/?name=jenkins) or [jenkins-lts](https://aur.archlinux.org/packages/jenkins-lts/) package.
+[Install](/index.php/Install "Install") [jenkins](https://www.archlinux.org/packages/?name=jenkins) for the latest stable release or [jenkins-lts](https://aur.archlinux.org/packages/jenkins-lts/) for the long-term-support version. The package will create a Jenkins user for the daemon using systemd-sysusers.
 
-The configuration file is located in `/etc/conf.d/jenkins`.
+## Setup
 
-[Start](/index.php/Start "Start") and possibly [enable](/index.php/Enable "Enable") `jenkins.service`.
+Project configuration can be done using the built-in web interface. To access it [start/enable](/index.php/Start/enable "Start/enable") `jenkins.service`. You can now open `[http://localhost:8090](http://localhost:8090)` with your browser and start setting up Jenkins.
 
-You can now log into your jenkins at `http://localhost:8090`.
+The configuration file of the daemon running Jenkins is located at `/etc/conf.d/jenkins`. It is sourced by the according `.service` file and takes effect immediately after a restart.

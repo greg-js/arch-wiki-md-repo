@@ -513,7 +513,7 @@ See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_confi
 
 ```
 
-The following [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") options will re-encrypt the temporary filesystems each reboot:
+The following [crypttab](/index.php/Crypttab "Crypttab") options will re-encrypt the temporary filesystems each reboot:
 
  `/etc/crypttab` 
 ```
@@ -542,7 +542,7 @@ The logical volume is encrypted with it:
 
 ```
 
-The encrypted mount is configured in [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"):
+The encrypted mount is configured in [crypttab](/index.php/Crypttab "Crypttab"):
 
  `/etc/crypttab` 
 ```
@@ -1052,7 +1052,7 @@ This section deals with extra configuration to let the system **mount** the encr
 
 While GRUB asks for a passphrase to unlock the encrypted `/boot` after above instructions, the partition unlock is not passed on to the initramfs. Hence, `/boot` will not be available after the system has re-/booted, because the `encrypt` hook only unlocks the system's root.
 
-If you used the *genfstab* script during installation, it will have generated `/etc/fstab` entries for the `/boot` and `/boot/efi` mount points already, but the system will fail to find the generated device mapper for the boot partition. To make it available, add it to [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). For example:
+If you used the *genfstab* script during installation, it will have generated `/etc/fstab` entries for the `/boot` and `/boot/efi` mount points already, but the system will fail to find the generated device mapper for the boot partition. To make it available, add it to [crypttab](/index.php/Crypttab "Crypttab"). For example:
 
  `/etc/crypttab` 
 ```

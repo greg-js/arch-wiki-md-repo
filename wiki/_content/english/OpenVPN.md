@@ -819,9 +819,14 @@ A small ping-interval can increase the stability of the tunnel, but will also ca
 
 ### PID files not present
 
-The default systemd service file for openvpn-client does not have the --writepid flag enabled, despite creating /var/run/openvpn-client. If this breaks a config (such as an i3bar VPN indicator), simply change:
+The default systemd service file for openvpn-client does not have the --writepid flag enabled, despite creating /var/run/openvpn-client. If this breaks a config (such as an i3bar VPN indicator), simply change `openvpn-client@.service` using a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"):
 
- `/usr/lib/systemd/system/openvpn-client@.service`  `ExecStart=/usr/sbin/openvpn --suppress-timestamps --nobind --config %i.conf --writepid /var/run/openvpn-client/%i.pid` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/sbin/openvpn --suppress-timestamps --nobind --config %i.conf --writepid /var/run/openvpn-client/%i.pid
+
+```
 
 ### Route configuration fails with systemd-networkd
 

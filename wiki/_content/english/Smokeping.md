@@ -236,34 +236,33 @@ Since the smokeping configuration is read by both the smokeping daemon and the F
 
 ## Setup web frontend
 
-Edit /etc/httpd/conf/httpd.conf so it includes
+Edit `/etc/httpd/conf/httpd.conf` so that it includes:
 
- `/etc/httpd/conf/httpd.conf` 
 ```
- LoadModule fcgid_module modules/mod_fcgid.so
- <IfModule fcgid_module>
-   AddHandler fcgid-script .fcgi
- </IfModule>
+LoadModule fcgid_module modules/mod_fcgid.so
+<IfModule fcgid_module>
+  AddHandler fcgid-script .fcgi
+</IfModule>
 
- Alias /smokeping/imgcache /srv/smokeping/imgcache
- Alias /smokeping /srv/http/smokeping
+Alias /smokeping/imgcache /srv/smokeping/imgcache
+Alias /smokeping /srv/http/smokeping
 
- <Directory "/srv/smokeping/imgcache">
-   AllowOverride all
-   Require all granted
- </Directory>
-
- <Directory "/srv/http/smokeping">
-  Options FollowSymLinks ExecCGI
+<Directory "/srv/smokeping/imgcache">
   AllowOverride all
   Require all granted
- </Directory>
+</Directory>
+
+<Directory "/srv/http/smokeping">
+ Options FollowSymLinks ExecCGI
+ AllowOverride all
+ Require all granted
+</Directory>
 
 ```
 
 [Start](/index.php/Start "Start") Apache via the `httpd.service`.
 
-Check that `[http://localhost/smokeping/smokeping.fcgi](http://localhost/smokeping/smokeping.fcgi)` loads. The first data should appear after a couple of minutes.
+Check that [http://localhost/smokeping/smokeping.fcgi](http://localhost/smokeping/smokeping.fcgi) loads. The first data should appear after a couple of minutes.
 
 If the fonts in the graphs are unreadable, you may need to install the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) package.
 
@@ -276,16 +275,11 @@ Smokeping is a powerful tool that can be configured in many ways. You can setup 
 The smokeping package is currently broken in several ways. To get the service to run as a daemon, you'll need to modify the provided systemd unit file to have this parameter:
 
 ```
-   type=forking
+type=forking
 
 ```
 
-Smokemail is also not currently included, and is a required file for smokeping to run. You'll need to download the file and add it manually from smokeping's github:
-
-```
-   [https://github.com/oetiker/SmokePing/blob/master/etc/smokemail.dist](https://github.com/oetiker/SmokePing/blob/master/etc/smokemail.dist)
-
-```
+Smokemail is also not included even though it is required for smokeping to run. You'll need to download the file and add it manually from [smokeping's github](https://github.com/oetiker/SmokePing/blob/master/etc/smokemail.dist).
 
 ## Notes
 

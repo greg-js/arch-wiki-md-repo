@@ -204,7 +204,7 @@ $ setxkbmap -layout "us,de" -option "grp:alt_shift_toggle"
 
 ```
 
-Once you've found the appropiate comand to setup your layouts, add it to [Awesome#Autorun_programs](/index.php/Awesome#Autorun_programs "Awesome").
+Once you've found the appropiate comand to setup your layouts, add it to [#Autorun programs](#Autorun_programs).
 
 Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 

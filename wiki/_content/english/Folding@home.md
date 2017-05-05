@@ -8,6 +8,7 @@ From the project [home page](http://folding.stanford.edu/):
 *   [2 Configuration](#Configuration)
     *   [2.1 The graphical way](#The_graphical_way)
     *   [2.2 The terminal way](#The_terminal_way)
+    *   [2.3 Run f@h with user privileges](#Run_f.40h_with_user_privileges)
 *   [3 Monitoring work-unit progress](#Monitoring_work-unit_progress)
 *   [4 See also](#See_also)
 
@@ -53,6 +54,39 @@ The behaviour of foldingathome can be customized by editing `/opt/fah/config.xml
 <slot id='0' type='CPU'/>
 
 ```
+
+### Run f@h with user privileges
+
+It's not necessary to run folding with root privileges. To run it with your users privileges, grab *FAHClient*, *FAHCoreWrapper* and *config.xml* from [foldingathome](https://aur.archlinux.org/packages/foldingathome/) and copy them to user's path, e.g. */home/user/folding/*. Create systemd service:
+
+ `/usr/lib/systemd/system/fahclient.service` 
+```
+[Unit]
+Description=Folding@Home V7 Client
+Documentation=[https://folding.stanford.edu/home/the-software/](https://folding.stanford.edu/home/the-software/)
+After=network.target
+
+[Service]
+User=user
+Group=users
+WorkingDirectory=/home/user/folding/
+ExecStart=/home/user/folding/FAHClient /home/user/folding/config.xml
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Register and start service with
+
+```
+# systemctl daemon-reload
+# systemctl start fahclient.service
+
+```
+
+You can configure the running client via UI with [fahcontrol](https://aur.archlinux.org/packages/fahcontrol/).
 
 ## Monitoring work-unit progress
 

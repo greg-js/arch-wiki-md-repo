@@ -26,7 +26,9 @@
     *   [5.1 Self-signed certificate](#Self-signed_certificate)
     *   [5.2 Certificate authority](#Certificate_authority)
         *   [5.2.1 Makefile](#Makefile)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 "bad decrypt" while decrypting](#.22bad_decrypt.22_while_decrypting)
+*   [7 See also](#See_also)
 
 ## SSL introduction
 
@@ -387,6 +389,26 @@ To revoke certificates:
 
 ```
 make revoke item=**cert.pem**
+
+```
+
+## Troubleshooting
+
+### "bad decrypt" while decrypting
+
+OpenSSL 1.1.0 changed the default digest algorithm for the dgst and enc commands from MD5 to SHA256\. [[1]](https://www.openssl.org/news/changelog.html#x6)
+
+Therefore if a file has been encrypted using OpenSSL 1.0.2 or older, trying to decrypt it with an up to date version may result in an error like:
+
+```
+error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:crypto/evp/evp_enc.c:540
+
+```
+
+Supplying the `-md md5` option should solve the issue:
+
+```
+$ openssl enc -d -md md5 -in encrypted -out decrypted
 
 ```
 

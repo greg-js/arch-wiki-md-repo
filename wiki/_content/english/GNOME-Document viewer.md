@@ -14,9 +14,9 @@ Document viewer uses the poppler library as a backend.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [evince](https://www.archlinux.org/packages/?name=evince) package, or [evince-git](https://aur.archlinux.org/packages/evince-git/) for the development version. Evince installs the gnome-desktop as a dependency
+[Install](/index.php/Install "Install") the [evince](https://www.archlinux.org/packages/?name=evince) package, or [evince-git](https://aur.archlinux.org/packages/evince-git/) for the development version. Evince installs the gnome-desktop as a dependency.
 
-For a standalone version install [evince-no-gnome](https://aur.archlinux.org/packages/evince-no-gnome/) or the light version [evince-light](https://aur.archlinux.org/packages/evince-light/) for pdf support only.
+For a standalone version install [evince-no-gnome](https://aur.archlinux.org/packages/evince-no-gnome/) or the light version [evince-light](https://aur.archlinux.org/packages/evince-light/) for PDF support only.
 
 ## Troubleshooting
 
@@ -26,15 +26,14 @@ Simply install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gt
 
 ### Zoom-in is limited
 
-Increasing the page cache size in gnome settings allows the viewer to zoom in farther on large documents. By default, this setting is set relatively small, presumably to accomodate machines with limited amounts of physical memory.
+Increasing Evince's page cache size allows you to zoom in further, which is handy for large documents. By default the setting is set to 50MiB. Increasing the page cache size obviously increases Evince's memory consumption when zoomed-in.
 
-Get the current value of the setting:
+The following command increases the page cache size to one gigabyte:
 
-gsettings get org.gnome.Evince page-cache-size
+```
+dconf write /org/gnome/evince/page-cache-size "uint32 1000"
 
-Set a new (bigger) value instead, this results in 1-2 Gb of memory usage on a large document:
-
-gsettings set org.gnome.Evince page-cache-size 2000
+```
 
 ## See also
 

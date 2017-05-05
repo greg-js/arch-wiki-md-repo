@@ -318,7 +318,7 @@ menuentry 'FreeBSD' {
 
 ##### Windows installed in UEFI-GPT Mode menu entry
 
-This mode determines where the Windows bootloader resides and chain-loads it after Grub when the meny entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
+This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
 
 **Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It **WILL NOT WORK** in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more info.
 

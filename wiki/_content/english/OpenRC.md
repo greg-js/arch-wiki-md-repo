@@ -188,9 +188,17 @@ To prevent a missing file error, create the file:
 
 On booting openrc you may see lines like these :
 
-`* Setting up tmpfiles.d entries ... chattr: Operation not supported while setting flags on /var/log/journal chattr: No such file or directory while trying to stat /var/log/journal/%m chattr: Operation not supported while setting flags on /var/log/journal/remote [ !! ] ERROR: opentmpfiles-setup failed to start`
+```
+* Setting up tmpfiles.d entries ...
+chattr: Operation not supported while setting flags on /var/log/journal
+chattr: No such file or directory while trying to stat /var/log/journal/%m
+chattr: Operation not supported while setting flags on /var/log/journal/remote
+[ !! ]
+ERROR: opentmpfiles-setup failed to start
 
-This is caused by /usr/lib/tmpfiles.d/journal-nocow.conf using options that are only valid if journal is on a btrfs filesystem.
+```
+
+This is caused by `/usr/lib/tmpfiles.d/journal-nocow.conf` using options that are only valid if journal is on a btrfs filesystem.
 
 See [https://github.com/OpenRC/opentmpfiles/issues/2](https://github.com/OpenRC/opentmpfiles/issues/2) for details
 

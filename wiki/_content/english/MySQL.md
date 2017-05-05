@@ -32,6 +32,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [5.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
     *   [5.7 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
     *   [5.8 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
+    *   [5.9 OpenRC fails to start MySQL](#OpenRC_fails_to_start_MySQL)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -550,6 +551,25 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 
 ```
 # mysql -u root -p"PASSWORD" -e "PURGE BINARY LOGS TO 'mysql-bin.0000xx';"
+
+```
+
+### OpenRC fails to start MySQL
+
+To use MySQL with [OpenRC](/index.php/OpenRC "OpenRC") you need to add the following lines to the `[mysqld]` section in the MySQL config file, located at `/etc/mysql/my.cnf`.
+
+```
+user = mysql
+basedir = /usr
+datadir = /var/lib/mysql
+pid-file = /run/mysqld/mysql.pid
+
+```
+
+You should now be able to start MySQL using:
+
+```
+# rc-service mysql start
 
 ```
 

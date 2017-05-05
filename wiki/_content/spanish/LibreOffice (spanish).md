@@ -25,6 +25,11 @@ LibreOffice es el fork de la *Document Foundation* en el repositorio extra, que 
 
 ## Instalación
 
+Instale una de los siguientes paquetes de los repositorios oficiales:
+
+*   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) es la rama principal, con las mejoras nuevas.
+*   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) es la rama de mantenimiento.
+
 Asegúrese de instalar las fuentes, de lo contrario verá sólo rectángulos:
 
 ```

@@ -1,13 +1,9 @@
-This page is about the digital id software [Bankid](http://www.bankid.com/en/What-is-BankID/) or **BankID**. The underlaying application of Bankid is Nexus Personal ([http://www.nexusgroup.com](http://www.nexusgroup.com/en/solutions/Identity-Federation/nexus-personal-security-client/)), so the tips here is probably helpful for anyone trying to run other versions of Nexus Personal as well.
+[BankID](https://www.bankid.com/en/om-bankid/detta-ar-bankid) is the leading electronic identification in Sweden. The desktop client is proprietary and only available for Windows and OS X. [[1]](https://install.bankid.com/) The underlying application is [Nexus Personal](https://www.nexusgroup.com/software/nexus-personal-desktop/).
 
-## Installation
+There once was an AUR package but it no longer works. [[2]](https://github.com/felixonmars/aur3-mirror/blob/master/nexuspersonal/PKGBUILD)
 
-Install the [nexuspersonal](https://aur.archlinux.org/packages/nexuspersonal/) package from the [AUR](/index.php/AUR "AUR").
+The free implementation of BankID [FriBID](https://fribid.se/index.en.html) also no longer works with the current version of BankID.
 
-## Open source alternatives
+## Running BankID in a virtual Windows machine
 
-The open source program Fribid is available in the [AUR](/index.php/AUR "AUR"): [fribid](https://aur.archlinux.org/packages/fribid/).
-
-## Running Bankid in a virtual machine running Windows
-
-If no other solution works, you can always install for example [VirtualBox](/index.php/VirtualBox "VirtualBox") and run Bankid on a Windows virtual machine. It should work fairly out of the box with Windows XP on the guest. If you want to use a card-reader you have to add the user that runs Virtualbox (usually you) to the group `vboxusers` to be able to access the usb-connected card-reader. You can then add a usb-filter in the Virtualbox settings for the machine, so that the machine captures the card-reader automatically.
+Install [VirtualBox](/index.php/VirtualBox "VirtualBox"), download a Windows ISO, setup the machine and install BankID. If you want to use a card-reader you have to add your user to the group `vboxusers` to be able to access the usb-connected card-reader. You can then add a usb-filter in the Virtualbox settings for the machine, so that the machine recognizes the card-reader automatically.

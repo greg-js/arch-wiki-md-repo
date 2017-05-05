@@ -19,7 +19,7 @@ RNGD_OPTS="-o /dev/random -r /dev/my_hw_random_device"
 
 ```
 
-**Warning:** Some tutorials available in the Internet, and even early versions of rng-tools package, recommend the following line for systems without TRNG:
+**Warning:** Some tutorials available on the Internet recommend the following line for systems without TRNG:
 ```
 RNGD_OPTS="-o /dev/random -r /dev/urandom"
 

@@ -131,17 +131,19 @@ quit
 
 ```
 
-And finally start/enable the `mariadb` service
-
 ### PHP
 
 Now to setup our PHP server. We will be running it using Apache. Edit `/etc/php/php.ini`:
 
 A minimal config goes as follows:
 
-*   Comment out`
-    **Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-    `
+*   Comment out
+
+```
+;output_buffering = 4096
+
+```
+
 *   Edit the following value for a more verbose error reporting
 
 ```

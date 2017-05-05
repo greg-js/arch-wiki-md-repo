@@ -19,17 +19,21 @@
 
 **Note:** Specifications might differ.
 
+**Note:** BIOS may contain whitelist on PCI devices.
+
 *   Processor: 4th Generation Intel Core i5-4200M OR i7-4702MQ Processor
 *   Memory: 4/8GB PC3-12800 DDR3L SDRAM 1600 MHz
-*   WiFi: Qualcomm Atheros AR9485 OR Broadcom BCM43142 802.11b/g/n Wireless Network Adapter
+*   WiFi: Qualcomm Atheros AR9485 OR Broadcom BCM43142 802.11b/g/n Wireless Network Adapter OR Intel Wireless 7260 (2.4 Ghz with integrated bluetooth)
 *   Hard-Drive: 1TB 5400 rpm
 *   Optical Drive: DVD Recordable (Dual Layer)
 *   Integrated Graphics: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller
 *   Accelerated Graphics: NVIDIA GeForce GT 740M 1GB (optional)
 *   Sound: Intel HDA
-*   Screen: 15.6 *1366x768 (or higher) "AntiGlare" (Matte)*
+*   Screen: 15.6 *1366x768, 1920x1080 (or higher) "AntiGlare" (Matte)*
 *   SD Card Reader
-*   Ethernet: Fast-Ethernet
+*   Ethernet: RTL8101/2/6E PCI Express Fast/Gigabit Ethernet controller - Fast-Ethernet
+*   Input devices: Synaptics PS/2 TouchPad, PS/2 Keyboard (with or without backlight)
+*   Ports: Ethernet 1Gbit, 2 USB 3.0, 1 USB 2.0, 1 HDMI, 1 VGA, 4 pins audio jack (headphones and microphone)
 
 ## BIOS
 

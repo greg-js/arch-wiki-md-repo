@@ -2,7 +2,7 @@
 
 *   Ak nieste registrovaný, zaregistrujte sa.
 *   [Prihláste sa](/index.php/Special:UserLogin "Special:UserLogin") aby ste mohli editovať wiki.
-*   Zvoľte si stránku, ktorú chcete preložiť. Ak sa neviete rozhodnúť, môžte použiť [náhodný výber](/index.php/Special:Random "Special:Random") či preložiť niektorú z [prioritných stránok](/index.php/Arch_Translation_Day_(Slovensk%C3%BD)#List_of_priority_pages "Arch Translation Day (Slovenský)"). Pre príklad zvoľme `Some Page`.
+*   Zvoľte si stránku, ktorú chcete preložiť. Ak sa neviete rozhodnúť, môžte použiť [náhodný výber](/index.php/Special:Random "Special:Random") či preložiť niektorú z [prioritných stránok](#List_of_priority_pages). Pre príklad zvoľme `Some Page`.
 *   Navštívte zvolenú stránku a hornom menu vyberte *upraviť*.
 *   Skopírujte zdrojový kód stránky.
 *   Prejdite na [Some Page](/index.php?title=Some_Page_(Slovensk%C3%BD)&action=edit&redlink=1 "Some Page (Slovenský) (page does not exist)") zadaním nasledujúceho URL. `https://wiki.archlinux.org/index.php/Some_Page_(Slovenský)` 
@@ -16,4 +16,4 @@ Ak neviete ako editovať stránky, prečítajte si [ArchWiki Tutorial](/index.ph
 
 ## Zoznam prioritných stránok
 
-Please follow [Help:I18n](/index.php/Help:I18n "Help:I18n").
+Please follow [Help:i18n](/index.php/Help:I18n "Help:I18n").

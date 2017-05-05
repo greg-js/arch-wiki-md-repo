@@ -1,4 +1,4 @@
-**fish** (the **friendly interactive shell**) is a user friendly [command-line shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use.
+**fish**, the "friendly interactive shell", is a "user friendly [commandline shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use". [[1]](http://fishshell.com/docs/current/index.html)
 
 ## Contents
 
@@ -25,7 +25,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. Alternatively install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package for the development version.
+[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. Alternativel,y install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package for the development version.
 
 To make fish the default shell, see [Shell#Changing your default shell](/index.php/Shell#Changing_your_default_shell "Shell"); however, you should consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
 
@@ -156,7 +156,7 @@ end
 
 ### Use liquidprompt
 
-[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[1]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
+[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[2]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
 
 ### Put git status in prompt
 

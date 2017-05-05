@@ -29,6 +29,7 @@
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
+    *   [5.2 Problems with window compositors or Nvidia driver](#Problems_with_window_compositors_or_Nvidia_driver)
 
 ## Installation
 
@@ -200,6 +201,13 @@ ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
 
 ```
 
+If you prefer best quality open codecs (VP9 and Opus), use:
+
+```
+ytdl-format="((bestvideo[vcodec^=vp9]/bestvideo)+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio))/best"
+
+```
+
 ### youtube-dl audio with search
 
 To find and play audio straight from your terminal with `mm "*search terms*"` put the following function in your `.bashrc`:
@@ -280,3 +288,11 @@ vd-lavc-skipframe=<skipvalue>
 vd-lavc-framedrop=<skipvalue>
 vd-lavc-threads=<threads>
 ```
+
+### Problems with window compositors or Nvidia driver
+
+Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make mpv also disable window compositing when playing in windowed mode (if supported by the compositor).
+
+With the proprietary Nvidia driver, the option `video-sync=display-resample` may introduce performance problems which can be worked around with [hardware decoding](https://wiki.archlinux.org/index.php/Mpv#Hardware_Decoding), preferably CUDA since it is in a better shape than Nvidia's VDPAU and supports more codecs such as VP9 and HEVC 10 bit. Using CUDA also prevents downclocking the card to low powerstates which can help to prevent delayed or dropped frames.
+
+With KWin compositing and hardware decoding, you may also want to set `x11-bypass-compositor=no` to keep compositing enabled in fullscreen, since reanabling compositing after leaving fullscreen may introduce stutter for a period of time.

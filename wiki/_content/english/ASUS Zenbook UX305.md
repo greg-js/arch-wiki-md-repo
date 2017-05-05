@@ -1,4 +1,4 @@
-This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX305](http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX305/Features/).
+This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX305](https://www.asus.com/Notebooks/ASUS-ZenBook-UX305FA/specifications/).
 
 Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
 

@@ -74,6 +74,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 ## Supported
 
 | Application | Legacy Path | Supported Since | Discussion | Notes |
+| [aerc](https://github.com/SirCmpwn/aerc) |
 | [antimicro](https://github.com/Antimicro/antimicro/) | `~/.antimicro` | [edba864](https://github.com/Antimicro/antimicro/commit/edba864) | [[1]](https://github.com/Antimicro/antimicro/issues/5) |
 | [aria2](/index.php/Aria2 "Aria2") | `~/.aria2` | [8bc1d37](https://github.com/tatsuhiro-t/aria2/commit/8bc1d37) | [[2]](https://github.com/tatsuhiro-t/aria2/issues/27) |
 | [blender](/index.php/Blender "Blender") | `~/.blender` | [4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473) | [[3]](https://developer.blender.org/T28943) |
@@ -120,6 +121,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 [ce401d797](https://www.midnight-commander.org/changeset/ce401d797)
 
  | [[20]](https://www.midnight-commander.org/ticket/1851) |
+| [Mercurial](/index.php/Mercurial "Mercurial") | `~/.hgrc` | [354020079723](https://www.mercurial-scm.org/repo/hg/rev/354020079723) [4.2](https://www.mercurial-scm.org/wiki/Release4.2) | It is `"$XDG_CONFIG_HOME"/hg/hgrc`. |
 | [milkytracker](http://milkytracker.org/) | `~/.milkytracker_config` | [eb487c55](https://github.com/Deltafire/MilkyTracker/commit/eb487c55) | [[21]](https://github.com/Deltafire/MilkyTracker/issues/12) |
 | [mintty](https://github.com/mintty/mintty) | `~/.minttyrc` | [cff1bd8f](https://github.com/mintty/mintty/commit/cff1bd8f) v2.3.7. | [[22]](https://github.com/mintty/mintty/issues/525) |
 | [mpd](/index.php/Mpd "Mpd") | `~/.mpdconf` | [87b73284](http://git.musicpd.org/cgit/master/mpd.git/commit/?id=87b73284) |
@@ -290,6 +292,18 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[66]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_RUNTIME_DIR"/ICEauthority` |
 | [libx11](/index.php/Xorg "Xorg") | `~/.XCompose` | `$ export XCOMPOSEFILE="$XDG_CONFIG_HOME"/X11/xcompose` |
 | [ltrace](http://ltrace.org/) | `~/.ltrace.conf` | `$ ltrace -F "$XDG_CONFIG_HOME"/ltrace/ltrace.conf` |
+| [maven](https://www.archlinux.org/packages/?name=maven) | `~/.m2` | `$ mvn -gs "$XDG_CONFIG_HOME"/maven/settings.xml` `[settings.xml](http://maven.apache.org/settings.html)` 
+```
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <localRepository>${env.XDG_CACHE_HOME}/maven/repository</localRepository>
+  ...
+</settings>
+```
+ |
 | [Mathematica](/index.php/Mathematica "Mathematica") | `~/.Mathematica` | `$ export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME"/mathematica` |
 | [mednafen](http://mednafen.sourceforge.net/) | `~/.mednafen` | `$ export MEDNAFEN_HOME="$XDG_CONFIG_HOME"/mednafen` |
 | [moc](/index.php/Moc "Moc") | `~/.moc` | `$ mocp -M "$XDG_CONFIG_HOME"/moc`
@@ -386,7 +400,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
  | `$ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc`
 
-`$ export X="$XDG_CONFIG_HOME"/X11/xserverrc`
+`$ export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc`
 
 Note that these variables are respected by *xinit*, but not by *startx*.
 
@@ -468,15 +482,6 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 `~/.matho_history`
 
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
-| [Mercurial](/index.php/Mercurial "Mercurial") | `~/.hgrc` | You cannot append to the configuration search paths, just overwrite them completely. That means you need to be careful to add all default folders:
-
-`$ export HGRCPATH=/usr/lib/python2.7/site-packages/mercurial/default.d/:\ /etc/mercurial/hgrc:"${XDG_CONFIG_HOME}"/mercurial/hgrc`
-
-To find the default configuration paths:
-
-`$ env -u HGRCPATH hg debugconfig --debug | grep "read config"`
-
- |
 | [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[94]](https://github.com/Deltafire/MilkyTracker/issues/12) |
 | [Minecraft](https://minecraft.net/) | `~/.minecraft` | [[95]](https://bugs.mojang.com/browse/MCL-2563) |
 | [mongodb](https://www.mongodb.org/) | `~/.mongorc.js`

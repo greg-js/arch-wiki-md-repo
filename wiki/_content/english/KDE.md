@@ -23,6 +23,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [3.1.4.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
             *   [3.1.4.2 Fonts are huge or seem disproportional](#Fonts_are_huge_or_seem_disproportional)
         *   [3.1.5 Space efficiency](#Space_efficiency)
+        *   [3.1.6 Thumbnail generation](#Thumbnail_generation)
     *   [3.2 Printing](#Printing)
     *   [3.3 Samba/Windows support](#Samba.2FWindows_support)
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
@@ -71,9 +72,10 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.6.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
         *   [6.6.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
         *   [6.6.3 Bad performance](#Bad_performance)
-            *   [6.6.3.1 Disable desktop effects](#Disable_desktop_effects)
+            *   [6.6.3.1 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
             *   [6.6.3.2 Disable compositing](#Disable_compositing)
         *   [6.6.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [6.6.5 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
     *   [6.7 Sound problems under KDE](#Sound_problems_under_KDE)
         *   [6.7.1 ALSA related problems](#ALSA_related_problems)
             *   [6.7.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
@@ -81,6 +83,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.8 Inotify folder watch limit](#Inotify_folder_watch_limit)
     *   [6.9 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [6.10 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
+    *   [6.11 Problems with saving credentials and persistently occuring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occuring_KWallet_dialogs)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -235,6 +238,14 @@ If that does not work, try setting the DPI directly in your Xorg configuration a
 
 The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE forum post](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899) However, you can achieve something similar by editing the file `~/.config/kwinrc` adding `BorderlessMaximizedWindows=true` in the `[Windows]` section.
 
+#### Thumbnail generation
+
+To allow thumbnail generation for media or document files on the desktop and in Dolphin, install [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers), [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs) and [kde-thumbnailer-odf](https://aur.archlinux.org/packages/kde-thumbnailer-odf/).
+
+Then enable the thumbnail categories for the desktop via *right click* on the *desktop background* > *Configure Desktop* > *Icons* > *More Preview Options...*.
+
+In *Dolphin*, navigate to *Control* > *General* > *Previews*.
+
 ### Printing
 
 **Tip:** Use the [CUPS](/index.php/CUPS "CUPS") web interface for faster configuration. Printers configured in this way can be used in KDE applications.
@@ -246,6 +257,23 @@ You can also configure printers in *System Settings > Printers*. To use this met
 If you want to have access to Windows services, install [Samba](/index.php/Samba "Samba") (package [samba](https://www.archlinux.org/packages/?name=samba)).
 
 The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
+
+Plasma's abilities to access SMB shares are limited, though. Writing to Windows shares is problematic and opening files from such shares, e.g. large videos, makes Plasma copying the whole file to the local system first. To workaround this, you can install a GTK based file browser like [thunar](https://www.archlinux.org/packages/?name=thunar) with [gvfs](https://www.archlinux.org/packages/?name=gvfs) and [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) for saving login credentials) to access SMB shares in a more able way. Another possible workaround is to [mount](/index.php/Mount "Mount") a Samba share via [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to make it look to Plasma like if the SMB share was just a normal local folder and thus can be accessed normally. The mount command could look like the following for write access to a public share:
+
+```
+# mount -t cifs -o username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 //networkhost/share/ /home/user/localmountpoint/
+
+```
+
+Make it permanent:
+
+ `/etc/fstab` 
+```
+//networkhost/share/ /home/user/localmountpoint/ cifs defaults,username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 0 2
+
+```
+
+It migh or it might not be necessary to append `.local` to the hostname.
 
 ### KDE Desktop activities
 
@@ -720,9 +748,9 @@ If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), yo
 
 Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects](#Disable_desktop_effects) or [#Disable compositing](#Disable_compositing).
 
-##### Disable desktop effects
+##### Disable desktop effects manually or automatically for defined applications
 
-Plasma has desktop effects enabled by default. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
+Plasma has desktop effects enabled by default and e.g. not every game will disable them automatically. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`. Additionally, you can create custom KWin rules to automatically disable/enable compositing when a certain application/window starts under *System Settings > Window Management > Window Rules*.
 
 ##### Disable compositing
 
@@ -731,6 +759,18 @@ In *Sytem Settings > Display and Monitor*, uncheck *Enable compositor on startup
 #### Flickering in fullscreen when compositing is enabled
 
 In *Sytem Settings > Display and Monitor*, uncheck *Allow applications to block compositing*. This may harm performance.
+
+#### Screen tearing with Nvidia
+
+By default, KWin compositing suffers from tearing when used with the proprietary Nvidia driver. To work around this, create a file `kwin.sh` in `~/.config/plasma-workspace/env/` with the following contents:
+
+```
+#!/bin/sh
+export __GL_YIELD="USLEEP"
+
+```
+
+This however does only work with OpenGL compositing.
 
 ### Sound problems under KDE
 
@@ -785,6 +825,10 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 ### No Suspend/Hibernate options
 
 If your system is able to suspend or hibernate using systemd but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
+
+### Problems with saving credentials and persistently occuring KWallet dialogs
+
+It is not recommended to turn off the KWallet password saving system in the user settings as it is required to save encrypted credentials like WiFi passphrases for each user. Persistently occuring KWallet dialogs can be the consequence of turning it off. In case you find the dialogs to unlock the wallet annoying when applications want to access it, you can let the login managers `SDDM` and `LightDM` unlock the wallet at login automatically, see [KDE Wallet](https://wiki.archlinux.org/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login). The first wallet needs to be generated by KWallet (and not user-generated) in order to be usable for system program credentials. In case you want the wallet credentials not to be opened in memory for every application, you can restrict applications from accessing it with [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) in the KWallet settings. If you don't care for credential encryption at all, you can simply leave the password forms blank when KWallet asks for the password while creating a wallet. In this case, applications can access passwords without having to unlock the wallet first.
 
 ## See also
 

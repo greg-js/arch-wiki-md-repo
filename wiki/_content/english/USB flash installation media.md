@@ -114,8 +114,6 @@ dd if=image.iso of=/dev/sdb bs=4M
 
 ##### dd for Windows
 
-**Note:** Some users have an "isolinux.bin missing or corrupt" problem when booting the media with this method.
-
 A GPL licensed dd version for Windows is available at [http://www.chrysocome.net/dd](http://www.chrysocome.net/dd). The advantage of this over Cygwin is a smaller download. Use it as shown in instructions for Cygwin above.
 
 To begin, download the latest version of dd for Windows. Once downloaded, extract the archive's contents into Downloads or elsewhere.

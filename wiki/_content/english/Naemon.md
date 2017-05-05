@@ -9,13 +9,13 @@
 
 ## Installation
 
-Install [naemon-core](https://aur.archlinux.org/packages/naemon-core/) from the [AUR](/index.php/AUR "AUR"). Note that the [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/) and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/) packages will also be built.
+Install [naemon](https://aur.archlinux.org/packages/naemon/) from the [AUR](/index.php/AUR "AUR").
 
 Install the plugins from [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) as well as [fping](https://www.archlinux.org/packages/?name=fping).
 
 ## Web interface
 
-Install [naemon-livestatus](https://aur.archlinux.org/packages/naemon-livestatus/) and [naemon-thruk](https://aur.archlinux.org/packages/naemon-thruk/), then uncomment:
+Install [thruk](https://aur.archlinux.org/packages/thruk/), then uncomment:
 
  `/etc/naemon/naemon.cfg` 
 ```
@@ -23,7 +23,7 @@ broker_module=/usr/lib/naemon/naemon-livestatus/livestatus.so /var/cache/naemon/
 
 ```
 
-Thruk is a fast, modern GUI. Try out the [demo](http://demo.thruk.org/thruk/cgi-bin/login.cgi).
+Thruk is a fast, modern GUI. Try out the [demo](https://demo.thruk.org/thruk/cgi-bin/login.cgi).
 
 ### Apache configuration
 
@@ -45,9 +45,11 @@ Include conf/extra/thruk.conf
 
 ```
 
-Restart httpd and navigate to [http://localhost/naemon/](http://localhost/naemon/)
+Edit /etc/thruk/thruk.conf and set the thruk_user and thruk_group to naemon.
 
-The default username and password is admin, admin.
+Restart httpd and navigate to [http://localhost/thruk/](http://localhost/thruk/)
+
+The default username and password is thrukadmin, thrukadmin.
 
 ## See also
 

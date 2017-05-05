@@ -25,8 +25,7 @@ If a package was installed at an earlier stage, and the [pacman cache](/index.ph
 This process will remove the current package and install the older version. Dependency changes will be handled, but [pacman](/index.php/Pacman "Pacman") will not handle version conflicts. If a library or other package needs to be downgraded with the packages, please be aware that you will have to downgrade this package yourself as well.
 
 ```
-# cd /var/cache/pacman/pkg/
-# pacman -U <file_name_of_the_package>
+# pacman -U /var/cache/pacman/pkg/*package*-*old_version*.pkg.tar.xz
 
 ```
 
@@ -62,7 +61,7 @@ If the package is unavailable, find the correct [PKGBUILD](/index.php/PKGBUILD "
 
 For packages from the [official repositories](/index.php/Official_repositories "Official repositories"), retrieve the PKGBUILD with [ABS](/index.php/ABS "ABS") and change the software version. Alternatively, find the package on the [Packages](https://www.archlinux.org/packages) website, click "View Changes", and navigate to the desired version. The files are available through a `.tar.gz` snapshot, and via the *Tree* view.
 
-See also [Getting PKGBUILDs from SVN#Checkout an older revision of a package](/index.php/Getting_PKGBUILDs_from_SVN#Checkout_an_older_revision_of_a_package "Getting PKGBUILDs from SVN").
+See also [Getting PKGBUILDs from SVN#Checkout an older version of a package](/index.php/Getting_PKGBUILDs_from_SVN#Checkout_an_older_version_of_a_package "Getting PKGBUILDs from SVN").
 
 Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/). See [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository") for details.
 

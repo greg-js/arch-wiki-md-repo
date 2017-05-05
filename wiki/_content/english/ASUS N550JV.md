@@ -226,7 +226,7 @@ Nouveau E[    DRM] Pointer to flat panel table invalid
 
 ```
 
-To resolve, refer to [ASUS_N550JV#Drivers](/index.php/ASUS_N550JV#Drivers "ASUS N550JV").
+To resolve, refer to [#Drivers](#Drivers).
 
 ### USB devices and sleep
 

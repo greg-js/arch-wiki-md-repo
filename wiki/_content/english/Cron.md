@@ -265,7 +265,7 @@ For example:
 
 Will execute the script `i_love_cron.sh` at startup.
 
-See more at: [http://www.linuxandlife.com/2013/01/how-to-use-crontab-to-schedule-tasks.html#sthash.AXvOdsAz.dpuf](http://www.linuxandlife.com/2013/01/how-to-use-crontab-to-schedule-tasks.html#sthash.AXvOdsAz.dpuf)
+See more at: [http://www.adminschoice.com/crontab-quick-reference](http://www.adminschoice.com/crontab-quick-reference)
 
 ## Basic commands
 

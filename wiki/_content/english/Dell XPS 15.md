@@ -331,7 +331,7 @@ cat /sys/class/power_supply/BAT0/current_now
 
 ```
 
-To make this permanent, just create a [systemd unit file](https://wiki.archlinux.org/index.php/Systemd#Writing_unit_files) with your working command.
+To make this permanent, just create a [systemd unit file](/index.php/Systemd#Writing_unit_files "Systemd") with your working command.
 
 #### Intel with Nvidia
 

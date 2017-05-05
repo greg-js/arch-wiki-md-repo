@@ -13,7 +13,7 @@ Delta updates can save time and size in downloading and updating the system. Pac
 
 ## Configuration
 
-The official mirrors are not obliged to provide package delta files. Add a new mirror entry to pacman's mirrorlist, choosing a mirror which provides deltas. See [Mirrors#Enabling_a_specific_mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors") for further direction on this. There are some delta-capable mirrors listed in [Mirrors#Unofficial_mirrors](/index.php/Mirrors#Unofficial_mirrors "Mirrors").
+The official mirrors are not obliged to provide package delta files. Add a new mirror entry to pacman's mirrorlist, choosing a mirror which provides deltas. See [Mirrors#Enabling a specific mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors") for further direction on this. There are some delta-capable mirrors listed in [Mirrors#Unofficial mirrors](/index.php/Mirrors#Unofficial_mirrors "Mirrors").
 
 Then edit `/etc/pacman.conf` uncommenting the option `UseDelta`:
 

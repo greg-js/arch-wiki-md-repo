@@ -427,9 +427,9 @@ Here, the first free segment is from 0 to 153600 and leaves us with 153601 free 
 
 **Note:**
 
-*   this command tells to move 92468 (399668-307200) PE **from** the last segment **to** the first segment. This is possible as first segment enclosed FREE 153600 PE, which can contains the 92467 moved PE.
-*   the `--alloc anywhere` option is used as we move PE inside the same partition. In case of different partitions, the command would look something like this: `# pvmove /dev/sdb1:1000-1999 /dev/sdc1:0-999`
-*   the move can takes long (one/two hours) in case of large size. It can be a good idea to run this command in a [Tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen") session. Any unwanted stop of the process can be fatal.
+*   this command moves 92468 PEs (399668-307200) **from** the last segment **to** the first segment. This is possible as the first segment encloses 153600 free PEs, which can contain the 92467 moved PEs.
+*   the `--alloc anywhere` option is used as we move PEs inside the same partition. In case of different partitions, the command would look something like this: `# pvmove /dev/sdb1:1000-1999 /dev/sdc1:0-999`
+*   this command may take a long time (one to two hours) in case of large volumes. It might be a good idea to run this command in a [Tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen") session. Any unwanted stop of the process could be fatal.
 *   once the operation is complete, run [Fsck](/index.php/Fsck "Fsck") to make sure your file system is valid.
 
 ###### Resize physical volume
