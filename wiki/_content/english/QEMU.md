@@ -1376,7 +1376,7 @@ However, the standard method of accessing the monitor is not always convenient a
 
 ```
 
-**Note:** If `127.0.0.1` is specified as the IP to listen it will be only possible to connect to the monitor from the same host QEMU is running on. If connecting from remote hosts is desired, QEMU must be told to listen `0.0.0.0` as follows: `-monitor telnet:0.0.0.0:*port*,server,nowait`. Keep in mind that it is recommended to have a [firewall](/index.php/Firewalls "Firewalls") configured in this case or make sure your local network is completely trustworthy since this connection is completely unauthenticated and unencrypted.
+**Note:** If `127.0.0.1` is specified as the IP to listen it will be only possible to connect to the monitor from the same host QEMU is running on. If connecting from remote hosts is desired, QEMU must be told to listen `0.0.0.0` as follows: `-monitor telnet:0.0.0.0:*port*,server,nowait`. Keep in mind that it is recommended to have a [firewall](/index.php/Firewall "Firewall") configured in this case or make sure your local network is completely trustworthy since this connection is completely unauthenticated and unencrypted.
 
 *   UNIX socket: Run QEMU with the `-monitor unix:*socketfile*,server,nowait` parameter. Then you can connect with either [socat](https://www.archlinux.org/packages/?name=socat) or [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat).
 

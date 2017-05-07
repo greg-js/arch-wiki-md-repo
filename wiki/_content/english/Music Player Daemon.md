@@ -283,7 +283,11 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 *   **vimpc** — Ncurses based MPD client with vi-like key bindings
 
-	[http://sourceforge.net/projects/vimpc/](http://sourceforge.net/projects/vimpc/) || [vimpc-git](https://aur.archlinux.org/packages/vimpc-git/)
+	[https://github.com/boysetsfrog/vimpc](https://github.com/boysetsfrog/vimpc) || [vimpc-git](https://aur.archlinux.org/packages/vimpc-git/)
+
+*   **vimus** — MPD client with vim-like key bindings, written in Haskell
+
+	[https://github.com/vimus/vimus](https://github.com/vimus/vimus) || [vimus-git](https://aur.archlinux.org/packages/vimus-git/)
 
 ### Graphical
 

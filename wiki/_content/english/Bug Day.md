@@ -4,8 +4,7 @@
     *   [1.1 When?](#When.3F)
     *   [1.2 Where?](#Where.3F)
     *   [1.3 Who?](#Who.3F)
-*   [2 Past and upcoming Bug Days](#Past_and_upcoming_Bug_Days)
-*   [3 See also](#See_also)
+*   [2 See also](#See_also)
 
 ## About
 
@@ -24,8 +23,6 @@ Discussion about the bugs should be taking place in **#archlinux-bugs** on [IRC]
 ### Who?
 
 **Everyone** is allowed, invited, and encouraged to participate in Bug Day.
-
-## Past and upcoming Bug Days
 
 ## See also
 

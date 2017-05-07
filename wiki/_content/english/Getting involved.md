@@ -43,7 +43,7 @@ You can help other users to solve problems on the [IRC channel](/index.php/IRC_c
 
 ### Report installed packages
 
-[pkgstats](/index.php/Pkgstats "Pkgstats") provides a systemd timer that sends a list of the packages installed on your system, along with the architecture and the mirrors you use, to the Arch Linux developers in order to help them prioritize their efforts and make the distribution even better. The information is sent anonymously and cannot be used to identify you. You can view the collected data at the [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431).
+[pkgstats](/index.php/Pkgstats "Pkgstats") provides a [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") that sends a list of the packages installed on your system, along with the architecture and the mirrors you use, to the Arch Linux developers in order to help them prioritize their efforts and make the distribution even better. The information is sent anonymously and cannot be used to identify you. You can view the collected data at the [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431).
 
 ### Fix and report bugs
 

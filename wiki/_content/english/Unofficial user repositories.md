@@ -862,7 +862,7 @@ Server = https://repo.holocm.org/archlinux/x86_64
 
 #### jrpi
 
-*   **Maintainer:** [João Miguel](https://wiki.archlinux.org/index.php/User:JMCF125)
+*   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
 *   **Description:** Some packages from the AUR, patched official packages and old packages.
 *   **Package list:** [https://jrpi.mooo.com/repo/](https://jrpi.mooo.com/repo/)
 *   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F

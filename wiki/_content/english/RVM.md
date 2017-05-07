@@ -35,6 +35,7 @@ There exists a similar application that you may also want to consider: [rbenv](/
     *   [4.3 Ruby 1.9.1 won't compile with RVM](#Ruby_1.9.1_won.27t_compile_with_RVM)
     *   [4.4 Ruby 2.2.2 won't compile with RVM](#Ruby_2.2.2_won.27t_compile_with_RVM)
     *   [4.5 Ruby 2.3.1 won't compile with RVM](#Ruby_2.3.1_won.27t_compile_with_RVM)
+    *   [4.6 RVM uses wrong OpenSSL version](#RVM_uses_wrong_OpenSSL_version)
 *   [5 See Also](#See_Also)
 
 ## Installing RVM
@@ -590,6 +591,33 @@ Like with 1.8.x, 1.9.1 and 2.2.2, earlier patchlevels do not like the OpenSSL 1.
 $ rvm pkg install openssl
 $ rvm remove 2.3.1
 $ rvm install 2.3.1 -C --with-openssl-dir=$HOME/.rvm/usr
+
+```
+
+#### RVM uses wrong OpenSSL version
+
+Ruby versions older than 2.4 require OpenSSL 1.0 but RVM will try to build them with OpenSSL 1.1\. You know this is the case if you find this line in the ~/.rvm/log/XYZ/make.log file:
+
+```
+/usr/include/openssl/asn1_mac.h:10:2: error: #error "This file is obsolete; please update your software."
+
+```
+
+You can point it to the correct version like this:
+
+```
+$ sudo pacman -S openssl-1.0 # Probably already installed
+$ rvm remove <ruby-version>
+$ PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig:/usr/lib/pkgconfig rvm install <ruby-version>
+
+```
+
+Alternatively you could also use RVM to install OpenSSL as above:
+
+```
+$ rvm pkg install openssl
+$ rvm remove 2.3.4
+$ rvm install 2.3.4 -C --with-openssl-dir=$HOME/.rvm/usr
 
 ```
 

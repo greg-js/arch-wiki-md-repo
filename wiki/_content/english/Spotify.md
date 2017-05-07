@@ -58,6 +58,10 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 	[https://github.com/plietar/librespot](https://github.com/plietar/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/) [librespot-alsa-git](https://aur.archlinux.org/packages/librespot-alsa-git/)
 
+*   **Tomahawk** — A Music Player App written in C++/Qt
+
+	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/) [tomahawk-git](https://aur.archlinux.org/packages/tomahawk-git/) [tomahawk-qt5](https://aur.archlinux.org/packages/tomahawk-qt5/)
+
 ### Official Linux client
 
 [Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.

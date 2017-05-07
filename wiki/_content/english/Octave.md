@@ -90,10 +90,24 @@ Some packages may be found in the AUR ([search packages](https://aur.archlinux.o
 
 ## Plotting
 
-FLTK is the default plotting backend. Alternatively you can use the Gnuplot backend by installing [gnuplot](https://www.archlinux.org/packages/?name=gnuplot) and running the following command:
+Qt is the default plotting backend:
 
 ```
-octave:1> graphics_toolkit("gnuplot");
+>> available_graphics_toolkits
+ans =
+{
+  [1,1] = fltk
+  [1,2] = qt
+}
+>> graphics_toolkit
+ans = qt
+
+```
+
+Alternatively you can use either FLTK or Gnuplot backend (by installing [gnuplot](https://www.archlinux.org/packages/?name=gnuplot)) and running the following command:
+
+```
+>> graphics_toolkit("gnuplot");
 
 ```
 

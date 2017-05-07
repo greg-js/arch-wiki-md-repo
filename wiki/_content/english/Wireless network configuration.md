@@ -27,7 +27,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
-    *   [4.2 iw and wireless_tools comparsion](#iw_and_wireless_tools_comparsion)
+    *   [4.2 iw and wireless_tools comparison](#iw_and_wireless_tools_comparison)
 *   [5 Troubleshooting](#Troubleshooting_2)
     *   [5.1 Temporary internet access](#Temporary_internet_access)
     *   [5.2 Rfkill caveat](#Rfkill_caveat)
@@ -164,7 +164,7 @@ You will need to install a basic set of tools for managing the wireless connecti
 
 	[http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) || [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools)
 
-**Tip:** For a comparison of commands between *iw* and *wireless_tools*, see [#iw and wireless_tools comparsions](#iw_and_wireless_tools_comparsions).
+**Tip:** For a comparison of commands between *iw* and *wireless_tools*, see [#iw and wireless_tools comparison](#iw_and_wireless_tools_comparison).
 
 For WPA/WPA2 encryption, you will also need:
 
@@ -190,7 +190,7 @@ $ iw dev
 
 ```
 
-The name of ther interface will be output after the word "Interface". For example, it is commonly `wlan0`.
+The name of the interface will be output after the word "Interface". For example, it is commonly `wlan0`.
 
 #### Get the status of the interface
 
@@ -248,7 +248,7 @@ To see what access points are available:
 The important points to check:
 
 *   **SSID:** the name of the network.
-*   **Signal:** is reported in a wireless power ratio in dbm (e.g. from -100 to 0). The closer the negative value gets to zero, the better the signal. Observing the reported power on a good quality link and a bad one should give an idea about the individual range.
+*   **Signal:** is reported in a wireless power ratio in dBm (e.g. from -100 to 0). The closer the negative value gets to zero, the better the signal. Observing the reported power on a good quality link and a bad one should give an idea about the individual range.
 *   **Security:** it is not reported directly, check the line starting with `capability`. If there is `Privacy`, for example `capability: ESS Privacy ShortSlotTime (0x0411)`, then the network is protected somehow.
     *   If you see an `RSN` information block, then the network is protected by [Robust Security Network](https://en.wikipedia.org/wiki/IEEE_802.11i-2004 "wikipedia:IEEE 802.11i-2004") protocol, also known as WPA2.
     *   If you see an `WPA` information block, then the network is protected by [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access") protocol.
@@ -457,7 +457,7 @@ It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/de
 
 For further information, read the [wireless.kernel.org regulatory documentation](http://wireless.kernel.org/en/developers/Regulatory/).
 
-### iw and wireless_tools comparsion
+### iw and wireless_tools comparison
 
 The table below gives an overview of comparable commands for *iw* and *wireless_tools*. See [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples.
 

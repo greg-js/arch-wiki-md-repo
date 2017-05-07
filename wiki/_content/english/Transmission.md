@@ -4,7 +4,6 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuring the GUI version](#Configuring_the_GUI_version)
-    *   [2.1 GTK+ temporary cosmetic fix](#GTK.2B_temporary_cosmetic_fix)
 *   [3 Transmission daemon and CLI](#Transmission_daemon_and_CLI)
     *   [3.1 Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
     *   [3.2 Reducing journal spam](#Reducing_journal_spam)
@@ -21,17 +20,14 @@
 
 ## Installation
 
-There are several options in [official repositories](/index.php/Official_repositories "Official repositories"):
+There are several options:
 
 *   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface"), and web client ([http://localhost:9091](http://localhost:9091)) interfaces.
-*   [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) - Curses interface for the daemon.
 *   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 package.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 package.
+*   [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/) - Curses interface for the daemon.
 
-**Note:**
-
-*   The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the remote-cli package for a curses-based GUI.
-*   You cannot connect to the daemon over IPv6.[[1]](https://github.com/transmission/transmission/issues/59)
+**Note:** The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the remote-cli package for a curses-based GUI.
 
 ## Configuring the GUI version
 
@@ -41,17 +37,6 @@ GUI versions are configured to work out-of-the-box, but the user may wish to cha
 
 A guide to configuration options can be found on the Transmission web site: [https://github.com/transmission/transmission/wiki/Editing-Configuration-Files](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files).
 
-### GTK+ temporary cosmetic fix
-
-With GTK+ 3.18, transmission-gtk shows black borders in random places; these can be hidden via `gtk.css`:
-
- `~/.config/gtk-3.0/gtk.css` 
-```
-.tr-workarea .overshoot,
-.tr-workarea .undershoot { border: none; }
-
-```
-
 ## Transmission daemon and CLI
 
 The commands for *transmission-cli* are:
@@ -60,8 +45,6 @@ The commands for *transmission-cli* are:
 
 	*transmission-remote*: invokes the [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface") for the daemon, whether local or remote, followed by the command you want the daemon to execute.
 
-	*transmission-remote-cli*: (requires [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
-
 	*transmission-cli*: (deprecated) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
 
 	*transmission-show*: returns information on a given torrent file.
@@ -69,6 +52,8 @@ The commands for *transmission-cli* are:
 	*transmission-create*: creates a new torrent.
 
 	*transmission-edit*: add, delete, or replace a tracker's announce URL.
+
+	*transmission-remote-cli*: (requires [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
 
 ### Starting and stopping the daemon
 

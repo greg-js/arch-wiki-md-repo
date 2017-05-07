@@ -424,6 +424,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://github.com/stevenhoneyman/l3afpad](https://github.com/stevenhoneyman/l3afpad) || [l3afpad](https://www.archlinux.org/packages/?name=l3afpad)
 
+*   **[LightTable](https://en.wikipedia.org/wiki/Light_Table_(software) "w:Light Table (software)")** — A modern open source text editor.
+
+	[http://lighttable.com](http://lighttable.com) || [lighttable](https://aur.archlinux.org/packages/lighttable/)
+
 *   **Medit** — Programming and around-programming text editor.
 
 	[http://mooedit.sourceforge.net](http://mooedit.sourceforge.net) || [medit](https://www.archlinux.org/packages/?name=medit)

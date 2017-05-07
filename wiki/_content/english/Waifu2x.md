@@ -98,9 +98,9 @@ Install:
 
 It is recommended to install below *optional* [cuDNN](https://developer.nvidia.com/cudnn) library and bindings package. With them you can enable cuDNN backend for training, which have a significant speed up.
 
-You need to manually downlaod a cudnn binary pack from [NVIDIA cuDNN site](https://developer.nvidia.com/cudnn) during installing [cudnn](https://aur.archlinux.org/packages/cudnn/).
+You need to manually downlaod a cudnn binary pack from [NVIDIA cuDNN site](https://developer.nvidia.com/cudnn) during installing [cudnn](https://www.archlinux.org/packages/?name=cudnn).
 
-*   (optional)[cudnn](https://aur.archlinux.org/packages/cudnn/)
+*   (optional)[cudnn](https://www.archlinux.org/packages/?name=cudnn)
 *   (optional)[torch7-cudnn-git](https://aur.archlinux.org/packages/torch7-cudnn-git/):
 
 ### waifu2x source

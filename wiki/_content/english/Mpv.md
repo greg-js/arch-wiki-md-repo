@@ -117,16 +117,27 @@ By default, hardware decoding is enabled for codecs h264, vc1, wmv3, hevc, mpeg2
 
 ### High quality video output
 
-The `opengl-hq` profile is a high quality preset which use the OpenGL video driver and enables various options selected by the mpv developers. To make use of it, specify it in your configuration file.
+The `opengl-hq` profile is a high quality preset that uses the OpenGL video driver and enables various options selected by the mpv developers. To make use of it, specify it in your configuration file.
 
  `~/.config/mpv/mpv.conf`  `profile=opengl-hq` 
 
-This comes with a GLSL debanding filter by default, which may lead to bad performance for some users, and can reduce the visual quality of grainy content. You can disable it easily though.
+This profile comes with a debanding filter that greatly reduces the amount of visible banding, blocking and other quantization artifacts, at the expensive of very slightly blurring some of the finest details. In practice, it's virtually always an improvement - the only reason to disable it would be for performance.
+
+If it leads to bad performance, you can disable it easily.
 
  `~/.config/mpv/mpv.conf` 
 ```
 profile=opengl-hq
 deband=no
+```
+
+The `opengl-hq` profile defaults to the `spline36` scaling filter for mid quality and speed. For the best quality video output, the manual states that if your hardware can run it, `ewa_lanczossharp` is probably what you should use.
+
+ `~/.config/mpv/mpv.conf` 
+```
+profile=opengl-hq
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
 ```
 
 ### Automatically resuming from where you left off
@@ -293,6 +304,6 @@ vd-lavc-threads=<threads>
 
 Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make mpv also disable window compositing when playing in windowed mode (if supported by the compositor).
 
-With the proprietary Nvidia driver, the option `video-sync=display-resample` may introduce performance problems which can be worked around with [hardware decoding](https://wiki.archlinux.org/index.php/Mpv#Hardware_Decoding), preferably CUDA since it is in a better shape than Nvidia's VDPAU and supports more codecs such as VP9 and HEVC 10 bit. Using CUDA also prevents downclocking the card to low powerstates which can help to prevent delayed or dropped frames.
+With the proprietary Nvidia driver, the option `video-sync=display-resample` may introduce performance problems which can be worked around with [hardware decoding](#Hardware_Decoding), preferably CUDA since it is in a better shape than Nvidia's VDPAU and supports more codecs such as VP9 and HEVC 10 bit. Using CUDA also prevents downclocking the card to low powerstates which can help to prevent delayed or dropped frames.
 
 With KWin compositing and hardware decoding, you may also want to set `x11-bypass-compositor=no` to keep compositing enabled in fullscreen, since reanabling compositing after leaving fullscreen may introduce stutter for a period of time.

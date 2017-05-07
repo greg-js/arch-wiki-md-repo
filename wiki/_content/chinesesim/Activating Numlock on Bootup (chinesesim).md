@@ -22,22 +22,36 @@
 
 ### 使用单独服务
 
-*   从 [AUR](/index.php/AUR "AUR") 安装 [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/)，然后启用服务`numLockOnTty.service`。
-*   或者，如果您不想安装 aur 软件包来实现这一点，你可以简单地创建一个服务文件在 /etc/systemd/system:
+**Tip:** 这些步骤可以被[install](/index.php/Install "Install") [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) 并 [enabling](/index.php/Enabling "Enabling") `numLockOnTty` service替代.
+
+首先创造一个将numlock与TTYs相关联的脚本：
+
+ `/usr/bin/numlock` 
+```
+#!/bin/bash
+
+for tty in /dev/tty{1..6}
+do
+    /usr/bin/setleds -D +num < "$tty";
+done
 
 ```
+
+然后创建并 [enable](/index.php/Enable "Enable") systemd service:
+
+ `/etc/systemd/system/numlock.service` 
+```
 [Unit]
-Description=Switch on numlock from tty1 to tty6
+Description=numlock
 
 [Service]
-ExecStart=/bin/bash -c 'for tty in /dev/tty{1..6};do /usr/bin/setleds -D +num < \"$tty\";done'
+ExecStart=/usr/bin/numlock
+StandardInput=tty
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
 ```
-
-**Note:** 文件名应该有一个`.service`后缀，例如`numlock1to6.service`.
-创建它后不要忘记启用服务.
 
 ### 扩展`getty@.service`
 
@@ -55,7 +69,7 @@ ExecStartPost=/bin/sh -c 'setleds +num < /dev/%I'
 
 ### Bash alternative
 
-Add `setleds -D +num` to `~/.bash_profile`. Note that, unlike the other methods, this will not take effect until after you log in.
+将 `setleds -D +num` 加入到 `~/.bash_profile`. 需要注意的是，不同于其他方法，这种方式将会在你登录后才生效。
 
 ## X window
 

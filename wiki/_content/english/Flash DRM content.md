@@ -2,7 +2,9 @@ DRM content on Flash still requires HAL to play. This is apparent for example wi
 
 To deliver DRM-protected content, Flash calls several functions provided by the HAL daemon and its libraries. While Flash-based players remain popular, HAL has been deprecated and is not commonly installed on newer systems. To provide the necessary HAL functionality on such systems, you can either install the full HAL package and run the HAL daemon or install a modified HAL library "stub" that uses the modern UDisks daemon instead.
 
-**Note:** Only the NPAPI plugin [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) supports DRM. The PPAPI [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/), does not support DRM.
+**Note:** The NPAPI plugin [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) supports DRM until version 11.2.202.644\. The PPAPI [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) does not support DRM at all.
+
+**Warning:** With the current versions of the NPAPI plugin [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) and the PPAPI plugin [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) as of May 2017 there is no known way to support Flash DRM content.
 
 ## Contents
 

@@ -462,7 +462,7 @@ To overwrite the existing partition table with Btrfs, run the following command:
 
 For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
 
-Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") or [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB").
+Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") or [GRUB/Tips and tricks#Install to partition or partitionless disk](/index.php/GRUB/Tips_and_tricks#Install_to_partition_or_partitionless_disk "GRUB/Tips and tricks").
 
 ### Ext3/4 to Btrfs conversion
 

@@ -75,11 +75,11 @@ Note also that the audio jack is a combination headset/mic jack and will work wi
 
 ### Multi-monitor setups with X
 
-Some window managers, such as [qtile](/index.php/Qtile "Qtile") or [awesome](/index.php/Awesome "Awesome") don't seem to get along with the `sna` acceleration method of the [intel](/index.php/Intel_graphics "Intel graphics") driver, which results in tiled and broken display of the environments, when using a multi-monitor setup (using internal monitor only, works just fine).
+Some window managers, such as [qtile](/index.php/Qtile "Qtile") or [awesome](/index.php/Awesome "Awesome") don't seem to get along with the `sna` acceleration method of the [intel](/index.php/Intel "Intel") driver, which results in tiled and broken display of the environments, when using a multi-monitor setup (using internal monitor only, works just fine).
 
 [Switching to uxa](/index.php/Intel_graphics#SNA_issues "Intel graphics") fixes this [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1706248#p1706248).
 
-It seems, that this issue does not occur in other desktop environments, such as [XFCE](/index.php/XFCE "XFCE"), however.
+It seems, that this issue does not occur in other desktop environments, such as [Xfce](/index.php/Xfce "Xfce"), however.
 
 ### Backlight
 

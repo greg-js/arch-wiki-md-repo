@@ -493,6 +493,13 @@ $ for i in *.mp3; do mpg123 --rate 44100 --stereo --buffer 3072 --resync -w $(ba
 
 ```
 
+To convert AAC to WAV ensure [faad2](https://www.archlinux.org/packages/?name=faad2) is installed and run:
+
+```
+$ for i in *.m4a; do faad $i; done
+
+```
+
 Name the audio files in a manner that will cause them to be listed in the desired track order when listed alphabetically, such as `01.wav`, `02.wav`, `03.wav`, etc. Use the following command to simulate burning the WAV files as an audio CD:
 
 ```

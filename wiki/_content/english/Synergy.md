@@ -64,6 +64,8 @@ First determine the IP addresses and [host names](/index.php/Network_configurati
 
 Synergy version 1.7 replaced their own transport encryption with SSL.
 
+**Note:** Since release of version **1.8.4** the plugin [got merged into the core-binary](https://github.com/symless/synergy/issues/5627). Encryption will be automaticly build in.
+
 To install the SSL plugin, copy or symlink it to the plugins directory, which is `~/.synergy/plugins` by default.
 
 ```

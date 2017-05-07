@@ -149,8 +149,8 @@ This list is by no means complete. If you know of a community that is not listed
 ### Sweden
 
 *   Homepage: [http://archlinux.se/](http://archlinux.se/)
-*   Forum: [http://forum.archlinux.se/](http://forum.archlinux.se/)
-*   Wiki: [http://wiki.archlinux.se/](http://wiki.archlinux.se/)
+*   Forum: [http://forum.archlinux.se/](http://forum.archlinux.se/) 
+*   Wiki: [http://wiki.archlinux.se/](http://wiki.archlinux.se/) 
 
 ### Taiwan
 

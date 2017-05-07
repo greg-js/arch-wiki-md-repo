@@ -127,7 +127,7 @@ The following "block device encryption" solutions are available in Arch Linux:
 	[dm-crypt](/index.php/Dm-crypt "Dm-crypt") is the standard device-mapper encryption functionality provided by the Linux kernel. It can be used directly by those who like to have full control over all aspects of partition and key management. The management of dm-crypt is done with the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) userspace utility. It can be used for the following types of block-device encryption: *LUKS* (default), *plain*, and has limited features for *loopAES* and *Truecrypt* devices.
 
 *   LUKS, used by default, is an additional convenience layer which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use and cryptographic security.
-*   plain dm-crypt mode, being the original kernel functionality, does not employ the convenience layer. It is more difficult to apply the same cryptographic strength with it. When doing so, longer keys (passphrases or keyfiles) are the result. It has, however, other advantages, described in the following.
+*   plain dm-crypt mode, being the original kernel functionality, does not employ the convenience layer. It is more difficult to apply the same cryptographic strength with it. When doing so, longer keys (passphrases or keyfiles) are the result. It has, however, other advantages, described in the following [comparison table](#Practical_implications).
 
 	TrueCrypt
 
@@ -159,7 +159,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | Relation to filesystem | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read |
 | Encryption implemented in... | kernelspace | kernelspace | kernelspace | kernelspace | userspace (using FUSE) |
 | Cryptographic metadata stored in... |  ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | header of each encrypted file | control file at the top level of each EncFs container |
-| Wrapped encryption key stored in... |  ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | key file that can be stored anywhere | control file at the top level of each EncFs container |
+| Wrapped encryption key stored in... |  ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | key file that can be stored anywhere | key file that can be stored anywhere[[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831) |
 | 
 
 ##### Practical implications
@@ -188,7 +188,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 ##### Security features
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
-| Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Blowfish, Twofish... | AES, Blowfish |
+| Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, and any other ciphers available on the system |
 | Support for salting |  ? | ✔
 (with LUKS) | ✔ | ✔ |  ? |
 | Support for cascading multiple ciphers |  ? | Not in one device, but blockdevices can be cascaded | ✔ |  ? | ✖ |
@@ -218,7 +218,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 ##### Stacked filesystem encryption specific
 
  | eCryptfs | EncFs |
-| Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... |  ? |
+| Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... | ext3, ext4, xfs (with caveats), jfs, nfs, cifs...[[3]](https://github.com/vgough/encfs) |
 | Ability to encrypt filenames | ✔ | ✔ |
 | Ability to *not* encrypt filenames | ✔ | ✔ |
 | Optimized handling of sparse files | ✖ | ✔ |

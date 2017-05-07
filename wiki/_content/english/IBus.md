@@ -20,8 +20,9 @@
     *   [4.5 Chinese input](#Chinese_input)
     *   [4.6 LibreOffice](#LibreOffice)
     *   [4.7 Non US keyboards](#Non_US_keyboards)
-    *   [4.8 Englisch international AltGr](#Englisch_international_AltGr)
-    *   [4.9 Trouble with japanese](#Trouble_with_japanese)
+*   [5 ibus-m17n](#ibus-m17n)
+    *   [5.1 Englisch international AltGr](#Englisch_international_AltGr)
+    *   [5.2 Trouble with japanese](#Trouble_with_japanese)
 
 ## Installation
 
@@ -258,7 +259,13 @@ That will make IBus work with LibreOffice, and you can start LibreOffice from an
 
 If [Ibus does not let you write in a given language](https://code.google.com/p/ibus/issues/detail?id=155), let's say Chinese, with a different keyboard layout other than US, then you need to tell it which one to use.
 
+Each input method specifies its desired input layout in an XML configuration file in `/usr/share/ibus/component/<method_name>.xml`. Setting the `<layout>` tag to the desired value will make the ibus use that layout. With the special value `default`, ibus will use whatever is the default layout configured on the system.
+
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.
+
+## ibus-m17n
+
+In the specific case of `ibus-m17n`, a helper, `/usr/lib/ibus/ibus-engine-m17n`, generates the necessary XML at runtime. With version [1.3.4-4 of the package](https://www.archlinux.org/packages/community/x86_64/ibus-m17n/), this unfortunately uses `us` as the `layout` without a possibility of override. Fortunately, this was changed to `default` [a few commits later in Git](https://github.com/ibus/ibus-m17n/commit/2b915cb54122e2010db1182f4f1007b9f7cda5aa), but no new release was made since then. To remediate the issue, a [Git-master version of the package is available from AUR](https://aur.archlinux.org/packages/ibus-m17n-git/), which works nicely.
 
 ### Englisch international AltGr
 

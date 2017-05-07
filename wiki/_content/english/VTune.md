@@ -18,7 +18,7 @@ VTune 2015 currently does not work with Linux 4.0, due to changes in the kernel 
 
 ### Compiling the Kernel Modules
 
-To build the kernel modules on Arch you should follow the 4th part of the README on sepdk folder. You can follow the [Compile_kernel_module](/index.php/Compile_kernel_module "Compile kernel module") with [Kernels/Traditional compilation#Download the kernel source](/index.php/Kernels/Traditional_compilation#Download_the_kernel_source "Kernels/Traditional compilation"), downloading the source code to `/usr/src/`, extracting it with the name following the README and following the steps to unpack the kernel source.
+To build the kernel modules on Arch you should follow the 4th part of the README on sepdk folder. You can follow the [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module") with [Kernels/Traditional compilation#Download the kernel source](/index.php/Kernels/Traditional_compilation#Download_the_kernel_source "Kernels/Traditional compilation"), downloading the source code to `/usr/src/`, extracting it with the name following the README and following the steps to unpack the kernel source.
 
 There's a problem on the script `./build-driver` that some users couldn't run the funcion `get_absolute_path()` so you should hardcode the variables `DRIVER_DIRECTORY` and `KERNEL_SRC_DIR`.
 

@@ -185,7 +185,7 @@ See main article [Multihead](/index.php/Multihead "Multihead") for general infor
 参见GPU的具体说明:
 
 *   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
-*   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
+*   [Nouveau#Dual head](/index.php/Nouveau#Dual_head "Nouveau")
 *   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
 *   [ATI#Dual Head setup](/index.php/ATI#Dual_Head_setup "ATI")
 

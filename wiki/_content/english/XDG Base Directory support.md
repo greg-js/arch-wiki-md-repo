@@ -121,7 +121,8 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 [ce401d797](https://www.midnight-commander.org/changeset/ce401d797)
 
  | [[20]](https://www.midnight-commander.org/ticket/1851) |
-| [Mercurial](/index.php/Mercurial "Mercurial") | `~/.hgrc` | [354020079723](https://www.mercurial-scm.org/repo/hg/rev/354020079723) [4.2](https://www.mercurial-scm.org/wiki/Release4.2) | It is `"$XDG_CONFIG_HOME"/hg/hgrc`. |
+| [Mercurial](/index.php/Mercurial "Mercurial") | `~/.hgrc` | [354020079723](https://www.mercurial-scm.org/repo/hg/rev/354020079723) [4.2](https://www.mercurial-scm.org/wiki/Release4.2) | `XDG_CONFIG_HOME/hg/hgrc`. |
+| [mesa](https://www.mesa3d.org/) | [87ab26b2ab](https://cgit.freedesktop.org/mesa/mesa/commit/?id=87ab26b2ab35a29d446ae66f1795d40c184c0739) | `XDG_CACHE_HOME/mesa` |
 | [milkytracker](http://milkytracker.org/) | `~/.milkytracker_config` | [eb487c55](https://github.com/Deltafire/MilkyTracker/commit/eb487c55) | [[21]](https://github.com/Deltafire/MilkyTracker/issues/12) |
 | [mintty](https://github.com/mintty/mintty) | `~/.minttyrc` | [cff1bd8f](https://github.com/mintty/mintty/commit/cff1bd8f) v2.3.7. | [[22]](https://github.com/mintty/mintty/issues/525) |
 | [mpd](/index.php/Mpd "Mpd") | `~/.mpdconf` | [87b73284](http://git.musicpd.org/cgit/master/mpd.git/commit/?id=87b73284) |

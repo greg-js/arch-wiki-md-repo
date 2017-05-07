@@ -46,6 +46,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [17 Civilization: Beyond earth](#Civilization:_Beyond_earth)
 *   [18 Civilization VI](#Civilization_VI)
     *   [18.1 Extra LD_PRELOAD variable](#Extra_LD_PRELOAD_variable_2)
+    *   [18.2 OpenSSL 1.0](#OpenSSL_1.0)
 *   [19 The Clockwork Man](#The_Clockwork_Man)
     *   [19.1 Dependencies](#Dependencies_7)
 *   [20 Company of Heroes 2](#Company_of_Heroes_2)
@@ -536,6 +537,22 @@ env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
 ```
 
 as seen here [https://github.com/ValveSoftware/steam-for-linux/issues/4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
+
+### OpenSSL 1.0
+
+Civ 6 is built against [openssl](https://www.archlinux.org/packages/?name=openssl) 1.0 exactly. If you have updated to openssl 1.1 or later Civ6 and some other steam games [will not work](https://bugs.archlinux.org/task/53618). To provide openssl 1.0 [install](/index.php/Install "Install") [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add the following launch options to Civ6
+
+```
+ LD_LIBRARY_PATH='/usr/lib/openssl-1.0-compat/' %command%
+
+```
+
+If your are already modifying the launch command with LD_PRELOAD then you can combine the commands
+
+```
+env LD_LIBRARY_PATH='/usr/lib/openssl-1.0-compat/' LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
+
+```
 
 ## The Clockwork Man
 

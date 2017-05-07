@@ -21,6 +21,8 @@ This tutorial shows how to download, install, and configure the following softwa
     *   [1.4 Troubleshooting](#Troubleshooting)
         *   [1.4.1 Empty (greyish) windows inside quartus (XMonad)](#Empty_.28greyish.29_windows_inside_quartus_.28XMonad.29)
         *   [1.4.2 USB Blaster not working](#USB_Blaster_not_working)
+            *   [1.4.2.1 JTAG chain broken](#JTAG_chain_broken)
+            *   [1.4.2.2 Error when scanning hardware - Server error](#Error_when_scanning_hardware_-_Server_error)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
     *   [2.2 Compatibility with Archlinux](#Compatibility_with_Archlinux)
@@ -303,16 +305,54 @@ Some of the built-in editors in quartus such as ip editors and qsys only show a 
 
 #### USB Blaster not working
 
-Try running:
+Run:
 
 ```
- $ /opt/quartus/bin/jtagconfig
+ $ /opt/altera/quartus/bin/jtagconfig
+
+```
+
+Then depending on the output:
+
+##### JTAG chain broken
+
+```
  1) USB-Blaster [3-2]
    Unable to read device chain - JTAG chain broken
 
 ```
 
-A possible cause can be a missing 32 Bit version of libudev, install [lib32-libudev0-shim](https://www.archlinux.org/packages/?name=lib32-libudev0-shim) ([source](https://www-acc.gsi.de/wiki/Timing/QuartusInstallUbuntu1404.)).
+A possible cause can be a missing 32 bit version of libudev, install [lib32-libudev0-shim](https://www.archlinux.org/packages/?name=lib32-libudev0-shim) ([source](https://www-acc.gsi.de/wiki/Timing/QuartusInstallUbuntu1404.)).
+
+##### Error when scanning hardware - Server error
+
+```
+ Connecting to server(s) [........          ]
+ Error when scanning hardware - Server error
+
+```
+
+A workaround is to edit `/etc/jtagd.conf` or `$HOME/.jtagd.conf` (depending on whether you want to run jtagd as root or unprivileged user) to include the following line:
+
+```
+ Password = "changeme";
+
+```
+
+The second step is to add the server:
+
+```
+ $ /opt/altera/quartus/bin/jtagconfig --addserver 127.0.0.1 changeme
+
+```
+
+If you still have problems, try restarting `jtagd`:
+
+```
+ $ sudo killall -9 jtagd
+ $ /opt/altera/quartus/bin/jtagd
+
+```
 
 ## ModelSim-Altera Edition
 

@@ -383,7 +383,7 @@ Utilice la utilidad *grub-mkconfig* para generar el archivo `grub.cfg`:
 *   La ruta del archivo es `/boot/grub/grub.cfg`, no `/boot/grub/i386-pc/grub.cfg`.
 *   Si se está tratando de ejecutar *grub-mkconfig* en entorno chroot o en un contenedor *systemd-nspawn*, es posible que advierta que no funciona, avisándole de que *grub-probe* no puede obtener el "canonical path of /dev/sdaX". En este caso, pruebe usando *arch-chroot* como se describe [aquí](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
-Por defecto, los scripts de generación añaden automáticamente las entradas de menú para Arch Linux a cualquier configuración generada. Véase [#Arranque dual](#Arranque_dual) para configuraciones avanzadas.
+Por defecto, los scripts de generación añaden automáticamente las entradas de menú para Arch Linux a cualquier configuración generada. Véase [#Arranque dualpara](#Arranque_dual) configuraciones avanzadas.
 
 ## Configuración
 

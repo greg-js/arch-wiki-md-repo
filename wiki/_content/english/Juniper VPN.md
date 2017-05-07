@@ -28,9 +28,11 @@ The [OpenConnect](http://www.infradead.org/openconnect/) VPN client has recently
 
 To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect) from the Archlinux respositories. If your Juniper VPN setup doesn't require any input after conneting you can use this command in order to connect
 
- `sudo openconnect --juniper [https://vpn.server.com/](https://vpn.server.com/)` 
+ `# openconnect --juniper [https://vpn.server.com/](https://vpn.server.com/)` 
 
-If you want NetworkManager support, you can wait until version 1.4 comes out and install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), or try the latest git version.
+If you want NetworkManager support, install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), or try the latest git version. The VPN connection can be created through the GUI or using this command:
+
+ `$ nmcli con add type vpn con-name "Connection Name" ifname "*" vpn-type openconnect -- vpn.data "gateway=[https://vpn.server.com,protocol=nc](https://vpn.server.com,protocol=nc)"` 
 
 ## Official Software Preferred installation method
 

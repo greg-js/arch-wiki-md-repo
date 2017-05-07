@@ -61,14 +61,6 @@ SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]",
 
 Batteries can jump to a lower value instead of discharging continuously, therefore a udev string matching pattern for all capacities 0 through 5 is used.
 
-Some batteries only report critical level signal, in such case the following rule will help
-
- `/etc/udev/rules.d/99-lowbat.rules` 
-```
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{capacity_level}=="Critical", RUN+="/usr/bin/systemctl hibernate"
-
-```
-
 Other rules can be added to perform different actions depending on power supply status and/or capacity.
 
 If your system has no or missing ACPI events, use [cron](/index.php/Cron "Cron") with the following script:

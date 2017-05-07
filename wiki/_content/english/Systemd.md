@@ -648,7 +648,7 @@ As an example, we will investigate an error with `systemd-modules-load` service:
 Another way is to live log *systemd* messages:
 
 ```
-$ systemctl -fp err
+$ journalctl -fp err
 
 ```
 

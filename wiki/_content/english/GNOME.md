@@ -118,7 +118,10 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 #### Wayland sessions
 
-**Note:** An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland").
+**Note:**
+
+*   An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland").
+*   Wayland with the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284).
 
 Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 
@@ -130,6 +133,8 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 ```
+
+**Note:** If this gives infinite loop as shown in [this issue](https://bugzilla.gnome.org/show_bug.cgi?id=780801), insert `&& [[ -z $XDG_SESSION_TYPE ]]` before the semicolon.
 
 ### GNOME applications in Wayland
 
@@ -163,16 +168,20 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 
 ## Configuration
 
-The GNOME desktop relies on a configuration database backend (DConf) to store system and application settings. The desktop comes with default configuration settings, installed applications add their own to the database. The basic configuration is done either via the GNOME System Settings panel (*gnome-control-center*) or the preferences of the individual applications. A direct configuration of the DConf database is always possible as well and performed with the *gsettings* command line tool. In particular it can be used to configure settings which are not exposed via the user interface.
+The GNOME System Settings panel (*gnome-control-center*) and GNOME applications use the [dconf](https://en.wikipedia.org/wiki/Dconf "wikipedia:Dconf") configuration system to store their settings.
 
-GNOME settings are then applied by the GNOME Settings Daemon. Note that the daemon can be run outside of a GNOME session in order to apply GNOME configuration in a non-GNOME environment. To do so, execute:
+You can directly access the dconf database using the `gsettings` or `dconf` command line tools. This also allows you to configure settings not exposed by the user interfaces.
+
+Up until GNOME 3.24 settings were applied by the GNOME settings daemon, which could be run outside of a GNOME session using:
 
 ```
 $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ```
 
-The configuration is usually performed per user and the rest of this section does not cover how to create configuration templates for a multi-user-system.
+GNOME 3.24 however replaced the GNOME settings daemon with several separate settings plugins `/usr/lib/gnome-settings-daemon/gsd-*`. These plugins are now controlled via desktop files under `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). To run these plugins outside of a GNOME session you will now need to copy/edit the appropriate [desktop entries](/index.php/Desktop_entries "Desktop entries") to `~/.config/autostart`.
+
+The configuration is usually performed user-specific, this section does not cover how to create configuration templates for multiple users.
 
 ### System settings
 
@@ -436,28 +445,39 @@ The [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool
 
 #### Power
 
-The basic power settings that may want to be altered (these example settings assume the user is using a laptop - change them as desired):
+When you are using a laptop you might want to alter the following settings:
 
 ```
-$ gsettings set org.gnome.settings-daemon.plugins.power button-power *hibernate*
 $ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout *3600*
 $ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type *hibernate*
 $ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout *1800*
 $ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action *suspend*
 $ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
 
 ```
 
-To keep a monitor active on lid close:
+To keep the monitor active when the lid is closed:
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
 
 ```
 
+GNOME 3.24 deprecated the following settings:
+
+```
+org.gnome.settings-daemon.plugins.power button-hibernate
+org.gnome.settings-daemon.plugins.power button-power
+org.gnome.settings-daemon.plugins.power button-sleep
+org.gnome.settings-daemon.plugins.power button-suspend
+org.gnome.settings-daemon.plugins.power critical-battery-action
+
+```
+
 ##### Configure behaviour on lid switch close
 
-The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweak tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
 
 If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 

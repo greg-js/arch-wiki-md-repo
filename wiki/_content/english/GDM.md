@@ -421,12 +421,7 @@ $ cd /usr/share/xsessions
 
 ```
 
-2\. Modify the template `.desktop` file to open the required window manager:
-
-```
-# nano other.desktop
-
-```
+2\. Modify the template desired `.desktop` file to open the required window manager.
 
 If you happen to have KDM installed in parallel, you can alternatively open the new session in KDM which will create the new `.desktop` file. Then return to using GDM and the new session will be available.
 

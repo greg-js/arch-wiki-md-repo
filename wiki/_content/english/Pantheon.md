@@ -8,7 +8,7 @@
     *   [1.3 Theme](#Theme)
     *   [1.4 Applications](#Applications)
 *   [2 Launching Pantheon](#Launching_Pantheon)
-    *   [2.1 Via Display Manager](#Via_Display_Manager)
+    *   [2.1 Via Display manager](#Via_Display_manager)
     *   [2.2 Via xinit](#Via_xinit)
         *   [2.2.1 Autostart applications with ~/.xinitrc](#Autostart_applications_with_.7E.2F.xinitrc)
 *   [3 Configuration](#Configuration)
@@ -35,7 +35,7 @@
 
 ## Installation
 
-**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions"), [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly. The *-[bzr](/index.php/Bazaar "Bazaar") packages contain the most recent updates and are *less* likely to have obsolete dependencies in Archlinux, but occasionally have stability or build issues and may not be compatible with the standard releases.
+**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions"), [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly. The *-[bzr](/index.php/Bzr "Bzr") packages contain the most recent updates and are *less* likely to have obsolete dependencies in Archlinux, but occasionally have stability or build issues and may not be compatible with the standard releases.
 
 Some Pantheon packages are available from the [community](/index.php/Community "Community") repository, but [Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages. To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
@@ -114,7 +114,7 @@ These packages are the original, patched, and selected applications that compris
 
 **Note:** Either install [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/) or add 'gala' to `org.pantheon.desktop.cerbere.monitored-processes` in [cerbere](https://aur.archlinux.org/packages/cerbere/)'s [dconf](http://s0.uploads.im/AvOIT.png) to avoid errors such as no visible mouse cursor, failure to start, etc.
 
-### Via [Display Manager](/index.php/Display_Manager "Display Manager")
+### Via [Display manager](/index.php/Display_manager "Display manager")
 
 [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/) provides a [gnome-session](https://www.archlinux.org/packages/?name=gnome-session) entry for display managers such as [gdm](https://www.archlinux.org/packages/?name=gdm) or [lightdm](https://www.archlinux.org/packages/?name=lightdm).
 
@@ -155,7 +155,7 @@ This method does not support [XDG](/index.php/XDG_support "XDG support") autosta
 
 ## Configuration
 
-Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most of which are available in the [AUR](/index.php/AUR "AUR") and [Alucryd's repo](#Installation) as *switchboard-plug-*-bzr*. All pantheon settings, except [plank's](/index.php/Plank "Plank"), can also be altered via *dconf* and are located in the `org.pantheon` key. Use *dconf-editor* for easy editing.
+Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/packages/switchboard-bzr/) and its plugs, most of which are available in the [AUR](/index.php/AUR "AUR") and [Alucryd's repo](#Installation) as *switchboard-plug-*-bzr*. All pantheon settings, except [plank's](/index.php/Plank "Plank"), can also be altered via *dconf* and are located in the `org.pantheon` key. Use [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) for easy editing.
 
 **Note:** The intent is to replace [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), but not all of its settings have been ported. You may prefer to use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) itself and [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead.
 
@@ -167,7 +167,7 @@ Configuring Pantheon is done via [switchboard-bzr](https://aur.archlinux.org/pac
 
 Either drag and drop a desktop file on to the dock, or right click on a running application and select "Keep in dock". You can then reorder icons by drag and drop.
 
-**Note:** Plank has its own plaintext configuration files in `~/.config/plank/`
+**Note:** Plank has its own (text) configuration files in `~/.config/plank/`
 
 ### Pantheon Files
 
@@ -201,16 +201,18 @@ Wingpanel does not come with any indicators, they must be installed individually
 
 #### Third-party indicators
 
-If you launch pantheon from a [display manager](#Via_a_Display_Manager), make sure third-party indicators' `/etc/xdg/autostart/indicator-*.desktop` files contain *Pantheon* in `OnlyShowIn=`, eg:
+If you launch pantheon from a [display manager](#Via_Display_Manager), make sure third-party indicators' `/etc/xdg/autostart/indicator-*.desktop` files contain *Pantheon* in `OnlyShowIn=`, eg:
 
 ```
 OnlyShowIn=Unity;XFCE;GNOME;Pantheon;
 
 ```
 
-If you launch pantheon by [~/.xinitrc](#Via_.xinitrc), you need to add third-party indicators to one of the three start-up methods described above.
+If you launch pantheon by [~/.xinitrc](#Via_xinit), you need to add third-party indicators to one of the start-up methods described [above](#Launching_Pantheon).
 
 Additionally, indicators designed for [Unity](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-bzr/) to appear in [wingpanel-bzr](https://aur.archlinux.org/packages/wingpanel-bzr/).
+
+**Note:** Some Ayatana indicators may also want [x-canonical-accel](http://bazaar.launchpad.net/~ubuntu-desktop/gtk/ubuntugtk3/view/head:/debian/patches/x-canonical-accel.patch), etc from [gtk3-ubuntu](https://aur.archlinux.org/packages/gtk3-ubuntu/).
 
 ### Indicator-session menus not responsive
 

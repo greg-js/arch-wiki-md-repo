@@ -23,16 +23,15 @@
 *   [5 Extensions](#Extensions)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Colored output issues](#Colored_output_issues)
-    *   [6.2 Menus appear empty](#Menus_appear_empty)
-    *   [6.3 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
-    *   [6.4 Slow startup](#Slow_startup)
-    *   [6.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
-    *   [6.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
-    *   [6.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
-    *   [6.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
-    *   [6.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
-    *   [6.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
-    *   [6.11 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
+    *   [6.2 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
+    *   [6.3 Slow startup](#Slow_startup)
+    *   [6.4 Cannot open load file: ...](#Cannot_open_load_file:_...)
+    *   [6.5 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
+    *   [6.6 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
+    *   [6.7 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
+    *   [6.8 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
+    *   [6.9 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
+    *   [6.10 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
 *   [7 Alternatives](#Alternatives)
     *   [7.1 mg](#mg)
     *   [7.2 zile](#zile)
@@ -548,10 +547,6 @@ Including the following into `~/.emacs` amends the problem:
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ```
-
-### Menus appear empty
-
-A bug exists in GNU Emacs 23.1 (using the GTK toolkit) which may cause some menus to appear empty. This appears to be fixed in Emacs' CVS trunk. The corresponding [Debian bug report](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=550541) contains a workaround.
 
 ### Problems displaying characters in X Windows
 

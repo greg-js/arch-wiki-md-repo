@@ -8,6 +8,7 @@
 | USB-C / Thunderbolt 3 | Working |  ? |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
+| Fingerprint sensor | Not working |  ? |
 
 The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October in both a standard edition with Windows installed as well as a Developer Edition with Ubuntu installed. There is no hardware difference between them. Just like the older versions ([Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)") and [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations. This fourth gen model includes Intel's Kaby Lake CPU and configurable with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information it won't be available with LPDDR 2133 MHz RAM.
 

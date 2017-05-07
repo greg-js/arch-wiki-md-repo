@@ -365,7 +365,7 @@ EDIT 命令提供了类似于 nano 界面的基本编辑器，但是功能略少
 
 ### 从 ISO 创建 UEFI 可启动 USB
 
-教程见 [USB flash installation media#BIOS and UEFI Bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_Bootable_USB "USB flash installation media").
+教程见 [USB flash installation media#BIOS and UEFI bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_bootable_USB "USB flash installation media").
 
 ### 从光学介质里移除 UEFI 启动支持
 
@@ -475,7 +475,7 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 #### 使用 GRUB
 
-*   如 [link](/index.php/USB_flash_installation_media#BIOS_and_UEFI_Bootable_USB "USB flash installation media") 所述创建 USB 闪存安装介质。之后按照以下步骤来使用 GRUB 替代 Gummiboot.
+*   如 [link](/index.php/USB_flash_installation_media#BIOS_and_UEFI_bootable_USB "USB flash installation media") 所述创建 USB 闪存安装介质。之后按照以下步骤来使用 GRUB 替代 Gummiboot.
 
 *   把 `<USB>/EFI/boot/loader.efi` 备份为 `<USB>/EFI/boot/gummiboot.efi`
 

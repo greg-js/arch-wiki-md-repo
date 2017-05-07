@@ -79,7 +79,7 @@ Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch Us
 *   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) for stable releases for LTS kernels.
 *   [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) for versions with dynamic kernel module support.
 
-These branches have according for them `zfs-utils`, `spl-linux`, `spl-utils-linux` dependencies. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
+These branches have (according to them) dependencies on the `zfs-utils`, `spl-linux`, `spl-utils-linux` packages. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
 Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
 

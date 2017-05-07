@@ -63,27 +63,26 @@ and restart `httpd.service` to apply the changes.
 
 ### Lighttpd
 
-The following configuration will let you access cgit through [http://your.server.com/cgit](http://your.server.com/cgit) with [http://your.server.com/git](http://your.server.com/git) redirecting to it. It is not perfect (for example you will see "cgit.cgi" in all repos' url) but works.
+The following configuration will let you access cgit through [http://your.server.com/git](http://your.server.com/git) or [http://your.server.com/cgit](http://your.server.com/cgit). The cgit url is not perfect (for example you will see "cgit.cgi" in all repos' url) but works.
 
 Create the file `/etc/lighttpd/conf.d/cgit.conf`:
 
 ```
-server.modules += ("mod_redirect",
-                  "mod_alias",
-                  "mod_cgi",
-                  "mod_fastcgi",
-                  "mod_rewrite" )
+server.modules += ( "mod_cgi", "mod_alias" )
 
-var.webapps  = "/usr/share/webapps/"
 $HTTP["url"] =~ "^/cgit" {
-    server.document-root = webapps
+    server.document-root = "/usr/share/webapps/"
     server.indexfiles = ("cgit.cgi")
     cgi.assign = ("cgit.cgi" => "")
     mimetype.assign = ( ".css" => "text/css" )
 }
-url.redirect = (
-    "^/git(/.*)?$" => "/cgit/cgit.cgi$1",
+
+alias.url += (
+    "/git" => "/usr/share/webapps/cgit/cgit.cgi",
 )
+$HTTP["url"] =~ "^/git" {
+    cgi.assign = ( "" => "" )
+}
 
 ```
 

@@ -25,7 +25,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. Alternativel,y install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package for the development version.
+[Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. Alternatively install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package for the development version.
 
 To make fish the default shell, see [Shell#Changing your default shell](/index.php/Shell#Changing_your_default_shell "Shell"); however, you should consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
 

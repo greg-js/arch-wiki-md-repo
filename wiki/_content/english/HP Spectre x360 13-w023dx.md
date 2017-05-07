@@ -103,10 +103,10 @@ Hardware names that the acpi event handler recognizes for these buttons are as f
 
 ```
 
-Following the information and examples provided in [acpid#Tips_and_tricks](/index.php/Acpid#Tips_and_tricks "Acpid"), handlers can be put in `/etc/acpi/events/` to perform actions on all of these.
+Following the information and examples provided in [acpid#Tips and tricks](/index.php/Acpid#Tips_and_tricks "Acpid"), handlers can be put in `/etc/acpi/events/` to perform actions on all of these.
 
 Alternatively, a quick solution to get screen backlight control working with the media keys is to use [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager), selecting `Handle display brightness keys` in the settings.
 
 ### Auto Rotation
 
-See [Tablet_PC#Automatic_rotation](/index.php/Tablet_PC#Automatic_rotation "Tablet PC") for common methods of achieving this, as well as [here](https://github.com/tegan-lamoureux/Rotate-Spectre), for a python auto-rotation script specifically written for this laptop.
+See [Tablet PC#Automatic rotation](/index.php/Tablet_PC#Automatic_rotation "Tablet PC") for common methods of achieving this, as well as [here](https://github.com/tegan-lamoureux/Rotate-Spectre), for a python auto-rotation script specifically written for this laptop.

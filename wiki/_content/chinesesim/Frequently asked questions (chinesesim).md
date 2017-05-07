@@ -68,7 +68,7 @@
 
 ### Q) Arch Linux 支持什么架构?
 
-Arch Linux 支持 i686 和 x86_64 (有时称为amd64) 架构.
+Arch Linux 现在只支持 x86_64 (有时称为amd64) 架构，[对 i686 架构的支持将逐渐终结](https://www.archlinux.org/news/phasing-out-i686-support/)，如果你仍在使用 i686 版本，请参阅 [#我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
 
 ### Arch Linux 支持 ARM 处理器吗?
 

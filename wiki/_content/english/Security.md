@@ -351,9 +351,17 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 ### hidepid
 
-The kernel has the ability to hide other users' processes from unprivileged users by mounting the `proc` filesystem with `hidepid=1,gid=26` or `hidepid=2,gid=26`. The `26` gid is the proc group provided by the filesystem package and acts as a whitelist. If a user or service needs access to /proc/PID directories beyond their own, add it to the group.
+The kernel has the ability to hide other users' processes, normally accessible via `/proc`, from unprivileged users by mounting the `proc` filesystem with the `hidepid=` and `gid=` options documented [here](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/proc.txt#n1919).
 
-For this to work, a baseline exception needs to be added for systemd-logind:
+This greatly complicates an intruder's task of gathering information about running processes, whether some daemon runs with elevated privileges, whether other user runs some sensitive program, whether other users run any program at all, makes it impossible to learn whether any user runs a specific program (given the program doesn't reveal itself by its behaviour), and, as an additional bonus, poorly written programs passing sensitive information via program arguments are now protected against local eavesdroppers.
+
+The `proc` [group](/index.php/Users_and_groups#System_groups "Users and groups"), provided by the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package, acts as a whitelist of users authorized to learn other users' process information. If users or services need access to `/proc/<pid>` directories beyond their own, [add them to the group](/index.php/Users_and_groups#Group_management "Users and groups").
+
+For example, to hide process information from other users except those in the `proc` group:
+
+ `/etc/fstab`  `proc	/proc	proc	nosuid,nodev,noexec,hidepid=2,gid=proc	0	0` 
+
+For [Xorg](/index.php/Xorg "Xorg") to work, an exception needs to be added for systemd-logind:
 
  `/etc/systemd/system/systemd-logind.service.d/hidepid.conf` 
 ```

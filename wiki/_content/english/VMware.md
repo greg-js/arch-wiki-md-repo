@@ -50,6 +50,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by the `--console` installer
+*   [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) - for event sounds
 
 Download the latest [VMware Workstation Pro](https://www.vmware.com/go/tryworkstation) or [Player](https://www.vmware.com/go/downloadplayer) (or a [beta](https://communities.vmware.com/community/vmtn/beta) version, if available).
 

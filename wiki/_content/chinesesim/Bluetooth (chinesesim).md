@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Bluetooth](/index.php/Bluetooth "Bluetooth") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-21，点击[这里](https://wiki.archlinux.org/index.php?title=Bluetooth&diff=0&oldid=471026)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Bluetooth](/index.php/Bluetooth "Bluetooth") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-07，点击[这里](https://wiki.archlinux.org/index.php?title=Bluetooth&diff=0&oldid=471657)可以查看翻译后英文页面的改动。
 
 [蓝牙](http://www.bluetooth.org/)是一个短距离无线通信标准，适用于手机、计算机和其他电子设备之间的通信。在 Linux 中，通常使用的蓝牙协议栈实现是 [BlueZ](http://www.bluez.org/).
 
@@ -7,6 +7,8 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 通过命令行工具配置蓝牙](#.E9.80.9A.E8.BF.87.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.B7.A5.E5.85.B7.E9.85.8D.E7.BD.AE.E8.93.9D.E7.89.99)
     *   [2.1 Bluetoothctl](#Bluetoothctl)
+        *   [2.1.1 Auto power-on after boot](#Auto_power-on_after_boot)
+        *   [2.1.2 Deprecated method using hciconfig](#Deprecated_method_using_hciconfig)
 *   [3 图形化前端](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.89.8D.E7.AB.AF)
     *   [3.1 GNOME Bluetooth](#GNOME_Bluetooth)
     *   [3.2 Bluedevil](#Bluedevil)
@@ -92,8 +94,24 @@ Request PIN code
 [CHG] Device 00:12:34:56:78:90 Paired: yes
 Pairing successful
 [CHG] Device 00:12:34:56:78:90 Connected: no
+[bluetooth]# connect 00:12:34:56:78:90
+Attempting to connect to 00:12:34:56:78:90
+[CHG] Device 00:12:34:56:78:90 Connected: yes
+Connection successful
 
 ```
+
+#### Auto power-on after boot
+
+By default, your Bluetooth adapter will not power on after a reboot. The former method by using `hciconfig hci0 up` is deprecated, see the [release note](http://www.bluez.org/release-of-bluez-5-35/). Now you just need to add the line `AutoEnable=true` in `/etc/bluetooth/main.conf` at the bottom in the `[Policy]` section:
+
+ `/etc/bluetooth/main.conf` 
+```
+[Policy]
+AutoEnable=true
+```
+
+#### Deprecated method using hciconfig
 
 为使系统重启后激活设备，需添加一条 udev 规则：
 
@@ -123,8 +141,6 @@ WantedBy=suspend.target
 ```
 
 使用你的蓝牙设备的设备名来启用一个此服务的实例，例如 bluetooth-auto-power@hci0.service。
-
-除了添加自定义服务和 udev 规则之外，你也可以通过反注释 /etc/bluetooth/main.conf 文件中的 [Policy] 和 AutoEnable 两行，来启用 BlueZ 5.35 中引入的 AutoEnable 特性。
 
 ## 图形化前端
 
@@ -228,6 +244,7 @@ Enable=Source
 
 阅读更多:
 
+*   [Bluetooth headset](/index.php/Bluetooth_headset_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bluetooth headset (简体中文)")
 *   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
 *   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
 

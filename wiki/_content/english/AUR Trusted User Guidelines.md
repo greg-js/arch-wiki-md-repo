@@ -71,7 +71,7 @@ TUs are also in an excellent position to document recommended practices.
 
 ### Accessing and Updating the Repository
 
-The [community] repository now uses **devtools** which is the same system used for uploading packages to [core] and [extra], except that it uses another server `orion.archlinux.org` instead of `gerolde.archlinux.org`. Thus most of the instructions in [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") work without any change. Information which is specific for the [community] repository (like changed URLs) have been put here. The devtools require packagers to [set the PACKAGER variable](/index.php/Arch_Build_System#Set_the_PACKAGER_variable_in_.2Fetc.2Fmakepkg.conf "Arch Build System"). This is done in `/etc/makepkg.conf` for system-wide configuration, or in `~/.makepkg.conf` for user specific configuration.
+The [community] repository now uses **devtools** which is the same system used for uploading packages to [core] and [extra], except that it uses another server `orion.archlinux.org` instead of `gerolde.archlinux.org`. Thus most of the instructions in [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") work without any change. Information which is specific for the [community] repository (like changed URLs) have been put here. The devtools require packagers to [set the PACKAGER variable](/index.php/Makepkg#Packager_information "Makepkg") in `makepkg.conf`.
 
 Initially you should do a **non-recursive checkout** of the [community] repository:
 
