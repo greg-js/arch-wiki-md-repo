@@ -1,22 +1,39 @@
-By default, and for security reasons, root will be unable to connect to a non-root user's X server. There are multiple ways of allowing root to do so, if it is necessary.
+By default, and for security reasons, root will be unable to connect to a non-root user's [X server](/index.php/X_server "X server"). There are multiple ways of allowing root to do so however, if necessary.
 
-## The most secure methods
+**Warning:** All of the following methods have security implications that users should be aware of. As put by Emmanuele Bassi, a GNOME developper: "*there are no *real*, substantiated, technological reasons why anybody should run a GUI application as root. By running GUI applications as an admin user you're literally running millions of lines of code that have not been audited properly to run under elevated privileges; you're also running code that will touch files inside your $HOME and may change their ownership on the file system; connect, via IPC, to even more running code, etc. You're opening up a massive, gaping security hole [...].*"[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)
 
-The most secure methods are simple. They include:
+The proper, recommended way to run GUI apps under X with elevated privileges is to create a [Polkit](/index.php/Polkit "Polkit") policy, as shown in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=999328#p999328). This should however "*only be used for legacy programs*", as `man pkexec` reminds. Applications should rather "*defer the privileged operations to an auditable, self-contained,* minimal *piece of code that gets executed after doing a privilege escalation, and gets dropped when not needed*"[[2]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5). This may be the object of a bug report to the upstream project.
 
-*   kdesu (included with KDE)
+## Contents
+
+*   [1 Ponctual methods](#Ponctual_methods)
+*   [2 Alternate methods](#Alternate_methods)
+    *   [2.1 Temporarily allow root access](#Temporarily_allow_root_access)
+    *   [2.2 Permanently allow root access](#Permanently_allow_root_access)
+
+## Ponctual methods
+
+Those methods wrap the application in an elevation framework and drop the acquired privileges once it exits:
+
+*   [kdesu](https://www.archlinux.org/packages/?name=kdesu)
 
 ```
 $ kdesu *name-of-app*
 
 ```
 
-*   gksu (included with GNOME)
+See also [Sudo#kdesu](/index.php/Sudo#kdesu "Sudo").
+
+*   [gksu](/index.php/Sudo#gksu "Sudo")
+
+**Warning:** *gksu* has been deprecated since 2011[[3]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5), and has not seen any update since 2014[[4]](https://www.archlinux.org/packages/?name=gksu).
 
 ```
 $ gksu *name-of-app*
 
 ```
+
+See also [Sudo#gksu](/index.php/Sudo#gksu "Sudo").
 
 *   [bashrun](https://www.archlinux.org/packages/?name=bashrun) (in community)
 
@@ -39,40 +56,15 @@ $ sux root *name-of-app*
 
 ```
 
-These are the preferred methods, because they automatically exit when the application exits, negating any security risks quite completely.
-
 ## Alternate methods
 
 These methods will allow root to connect to a non-root user's X server, but present varying levels of security risks, especially if you run ssh. If you are behind a firewall, you may consider them to be safe enough for your requirements.
 
-*   **Temporarily allow root access**
+### Temporarily allow root access
 
-*   xhost
+See [Xhost](/index.php/Xhost "Xhost").
 
-```
-$ xhost +
-
-```
-
-will temporarily allow root, or *anyone* to connect your X server. Likewise,
-
-```
-$ xhost -
-
-```
-
-will disallow this function afterward.
-
-Some users also use:
-
-```
-$ xhost + localhost
-
-```
-
-(Your X server must be configured to listen to TCP connections for `xhost + localhost` to work).
-
-*   **Permanently allow root access**
+### Permanently allow root access
 
 	**Method 1**: Add the line
 

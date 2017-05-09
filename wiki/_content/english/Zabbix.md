@@ -94,7 +94,7 @@ function str2mem($val) {
 
 ### Starting
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server` service. If you are using MariaDB, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server-mysql` service.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server-mysql` service, if you are using MariaDB.
 
 Finally you can access Zabbix via your local web server, e.g.: [http://127.0.0.1/zabbix](http://127.0.0.1/zabbix), finish the installation wizard and access the frontend the first time. The default username is `Admin` and password `zabbix`.
 
@@ -104,7 +104,7 @@ See appendix for a link to the official documentation, which explains all furthe
 
 ### Installation
 
-The server package already includes [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent), so you do not have to install this package on your monitoring server. However, for monitoring targets, the client part is more minimal, standalone and easy to deploy, just install [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent).
+Install [zabbix-agent](https://www.archlinux.org/packages/?name=zabbix-agent) for each monitoring target, including your monitoring server where [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) is installed. [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) does no longer include `zabbix-agent`.
 
 ### Configuration
 
@@ -120,7 +120,7 @@ Further make sure the port `10050` on your device being monitored is not blocked
 
 ### Starting
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-agentd` service.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-agent` service.
 
 ## Tips and tricks
 

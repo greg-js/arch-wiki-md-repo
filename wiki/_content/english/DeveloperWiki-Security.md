@@ -9,27 +9,16 @@ This page documents progress on fixing/implementing non-CVE security-related bug
     *   [1.4 PrivateTmp](#PrivateTmp)
     *   [1.5 ReadOnly/ReadWrite](#ReadOnly.2FReadWrite)
     *   [1.6 NetworkManager / wpa_supplicant](#NetworkManager_.2F_wpa_supplicant)
-*   [2 World-readable/writeable directories](#World-readable.2Fwriteable_directories)
-*   [3 Replacing setuid with capabilities](#Replacing_setuid_with_capabilities)
-*   [4 kernel hardening](#kernel_hardening)
-*   [5 Compiler / linker hardening](#Compiler_.2F_linker_hardening)
-    *   [5.1 Packages not respecting flags](#Packages_not_respecting_flags)
-        *   [5.1.1 Tangible attack surface](#Tangible_attack_surface)
-        *   [5.1.2 Seemingly no tangible attack surface](#Seemingly_no_tangible_attack_surface)
-    *   [5.2 Full RELRO](#Full_RELRO)
-    *   [5.3 PIE](#PIE)
-        *   [5.3.1 Example](#Example)
-    *   [5.4 hardening-wrapper](#hardening-wrapper)
-*   [6 non-root X](#non-root_X)
-*   [7 grsecurity](#grsecurity)
-    *   [7.1 kernel](#kernel)
-        *   [7.1.1 use upstream features when possible](#use_upstream_features_when_possible)
-        *   [7.1.2 Enable *privileged* user namespaces](#Enable_privileged_user_namespaces)
-        *   [7.1.3 Enable KASLR and hide symbols](#Enable_KASLR_and_hide_symbols)
-        *   [7.1.4 CONFIG_GRKERNSEC_PROC=n](#CONFIG_GRKERNSEC_PROC.3Dn)
-        *   [7.1.5 CONFIG_GRKERNSEC_SYSCTL_ON=n](#CONFIG_GRKERNSEC_SYSCTL_ON.3Dn)
-        *   [7.1.6 disable Yama](#disable_Yama)
-    *   [7.2 PaX](#PaX)
+*   [2 Replacing setuid with capabilities](#Replacing_setuid_with_capabilities)
+*   [3 Compiler / linker hardening](#Compiler_.2F_linker_hardening)
+    *   [3.1 Packages not respecting flags](#Packages_not_respecting_flags)
+        *   [3.1.1 Tangible attack surface](#Tangible_attack_surface)
+        *   [3.1.2 Seemingly no tangible attack surface](#Seemingly_no_tangible_attack_surface)
+    *   [3.2 Full RELRO](#Full_RELRO)
+    *   [3.3 PIE](#PIE)
+        *   [3.3.1 Example](#Example)
+    *   [3.4 hardening-wrapper](#hardening-wrapper)
+*   [4 non-root X](#non-root_X)
 
 ## Service Isolation
 
@@ -88,12 +77,6 @@ systemd has some basic MAC capabilities (InaccessibleDirectories, ReadWriteDirec
 
 It might be possible to drop nearly all capabilities other than CAP_NET_ADMIN. Of course, if these need CAP_SYS_ADMIN for something there's no point.
 
-## World-readable/writeable directories
-
-Many packages have unnecessarily world-readable directories, and some even have unnecessarily world-writeable ones. These permissions should be tightened up.
-
-*   [FS#39808](https://bugs.archlinux.org/task/39808) - [lighttpd] /var/{cache,log}/lighttpd should not be world-readable
-
 ## Replacing setuid with capabilities
 
 This is a scratch space tracking which packages still include setuid binaries and replacing these with capabilities where possible. Reducing setuid to CAP_SYS_ADMIN or any capabilities allowing escalation to root access is not very useful (at least without MAC/RBAC backing it up), so it will not be covered (yet?).
@@ -101,21 +84,13 @@ This is a scratch space tracking which packages still include setuid binaries an
 *   ~~[FS#39686](https://bugs.archlinux.org/task/39686) - [inetutils] rsh, rcp and rlogin should use cap_net_bind_service, not setuid~~
 *   [sudo](https://www.archlinux.org/packages/?name=sudo) - requires setuid
 
-## kernel hardening
-
-*   CONFIG_SECURITY_DMESG_RESTRICT ([FS#39685](https://bugs.archlinux.org/task/39685) - closed, not implemented)
-*   kptr_restrict=1 ([FS#34323](https://bugs.archlinux.org/task/34323) - closed, not implemented)
-*   CONFIG_RANDOMIZE_BASE ([FS#41463](https://bugs.archlinux.org/task/41463) - closed, not implemented)
-*   higher CONFIG_DEFAULT_MMAP_MIN_ADDR ([FS#41260](https://bugs.archlinux.org/task/41260) - implemented)
-*   RO/NX protections for loadable kernel modules ([FS#41347](https://bugs.archlinux.org/task/41347) - implemented)
-
 ## Compiler / linker hardening
 
 The current globally enabled hardening flags:
 
 *   CPPFLAGS: -D_FORTIFY_SOURCE=2
-*   CFLAGS/CXXFLAGS: -fstack-protector-strong --param=ssp-buffer-size=4
-*   LDFLAGS: -z relro
+*   CFLAGS/CXXFLAGS: -fstack-protector-strong
+*   LDFLAGS: -Wl,-z,relro
 
 ### Packages not respecting flags
 
@@ -254,47 +229,3 @@ The [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapp
 The [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) package now ships with `/usr/bin/Xorg` as a wrapper script, calling the `/usr/bin/Xorg.wrap` setuid binary and dropping privileges if possible (video driver with [KMS](/index.php/KMS "KMS")). To decrease the attack surface, the setuid should be split into a separate package and added as a dependency to drivers without rootless X support. The script is already set up to fall back to `/usr/bin/Xorg.bin` if the wrapper is unavailable.
 
 [FS#41257](https://bugs.archlinux.org/task/41257)
-
-## grsecurity
-
-See [grsecurity](/index.php/Grsecurity "Grsecurity") for most of the documentation. This section only covers ongoing packaging issues and the rationale behind certain choices.
-
-### kernel
-
-The kernel configuration will follow the [linux](https://www.archlinux.org/packages/?name=linux) package's kernel configuration to the extent possible. The grsecurity patch set occasionally lags a bit behind the standard kernel so there may be minor differences due to the version.
-
-The default sysctl.d configuration file will not touch any flags outside of the kernel.grsecurity/kernel.pax namespaces. There should be no configuration changes creating an impact on the system when booting into a kernel without grsecurity/pax support.
-
-*   [i686 configuration](https://projects.archlinux.org/svntogit/community.git/tree/trunk/config?h=packages/linux-grsec)
-*   [x86_64 configuration](https://projects.archlinux.org/svntogit/community.git/tree/trunk/config.x86_64?h=packages/linux-grsec)
-
-#### use upstream features when possible
-
-Some grsecurity features have made their way upstream in one form or another. These can be preferred over the grsecurity-specific versions since backwards compatibility isn't a concern.
-
-*   kernel.grsecurity.dmesg (CONFIG_GRKERNSEC_DMESG=y) -> kernel.dmesg_restrict (CONFIG_SECURITY_DMESG_RESTRICT=y)
-*   kernel.grsecurity.linking_restrictions (CONFIG_GRKERNSEC_LINK=y) -> fs.protected_hardlinks, fs.protected_symlinks (set by /usr/lib/sysctl.d/50-default.conf from [systemd](https://www.archlinux.org/packages/?name=systemd))
-
-#### Enable *privileged* user namespaces
-
-The `CONFIG_USER_NS` configuration option is set, but grsecurity disallows unprivileged user namespaces so it doesn't introduce a security hole.
-
-#### Enable KASLR and hide symbols
-
-The vanilla kernel doesn't enable KASLR (yet), but there's no disadvantage to enabling it for [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec). It only randomizes the base address to one of 256 locations, so building a custom kernel for unique symbol addresses is still required for `CONFIG_GRKERNSEC_HIDESYM` to be a truly valuable exploit mitigation.
-
-#### CONFIG_GRKERNSEC_PROC=n
-
-The protection for /proc cannot be toggled dynamically and breaks too much out-of-the-box. It also doesn't mix well with containers because it's global rather than a setting for each process namespace. The upstream `hidepid` and `gid` mount options for /proc provide the core functionality with per-namespace granularity, but lack some of the auxiliary information hiding.
-
-#### CONFIG_GRKERNSEC_SYSCTL_ON=n
-
-This causes the flags to be disabled by default, as they will be enabled in a standard sysctl configuration instead. Otherwise, there is unavoidable audit spam in early boot (timechange, mount).
-
-#### disable Yama
-
-An equivalent to ptrace_scope is built-in to grsecurity, so there is no need for this.
-
-### PaX
-
-The kernel will only be compiled with supported for the extended attribute PaX flags. The ELF flags are not always a working solution, and it's much simpler if there is only one place to look for these. With only [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) installed, `kernel.pax.softmode = 1` is set to disable the userspace mitigations. Installing [paxd](https://www.archlinux.org/packages/?name=paxd) sets `kernel.pax.softmode = 0` and it automatically applies the common set of PaX exceptions whenever a Pacman transaction occurs.

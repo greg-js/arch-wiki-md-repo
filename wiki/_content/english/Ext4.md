@@ -201,6 +201,12 @@ Next, enable the encryption feature flag on your filesystem:
 
 **Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
 
+**Tip:** If you need revert this operation:
+```
+# fsck -fn; debugfs -w -R "feature -encrypt" /dev/device; fsck -fn;
+
+```
+
 Next, make a directory to encrypt:
 
 ```

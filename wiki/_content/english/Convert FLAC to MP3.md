@@ -34,13 +34,10 @@ done
 
 #### Parallel version
 
-Since LAME is a single-threaded encoder, conversion can be accelerated by encoding multiple files concurrently on multiple cores. To do this, install the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package, and run:
+Since LAME is a single-threaded encoder, conversion can be accelerated by encoding multiple files concurrently on multiple cores. To do this, install the [parallel](https://www.archlinux.org/packages/?name=parallel) package, and run:
 
 ```
-#!/bin/bash
-
-parallel-moreutils -i -j$(nproc) ffmpeg -i {} -qscale:a 0 {}.mp3 -- ./*.flac
-rename .flac.mp3 .mp3 ./*.mp3
+parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: ./*.flac
 
 ```
 

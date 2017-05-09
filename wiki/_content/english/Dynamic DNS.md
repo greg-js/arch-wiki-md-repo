@@ -49,7 +49,7 @@ If ddclient is unable to detect your IP address, you can configure ddclient to f
 ```
 # use whatismyip.org to determine IP address
 use=web
-use=whatismyip.org
+web=whatismyip.org
 ```
 
 #### Starting ddclient after networking is up

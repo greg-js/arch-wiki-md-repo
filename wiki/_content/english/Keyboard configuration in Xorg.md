@@ -148,7 +148,7 @@ $ localectl [--no-convert] set-x11-keymap *layout* [*model* [*variant* [*options
 
 ```
 
-To set a *model*, *variant* or *options*, all preceding fields need to be specified. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See `man localectl` for more information.
+To set a *model*, *variant* or *options*, all preceding fields need to be specified, but the preceding fields can be skipped by passing an empty string with `""`. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See `man localectl` for more information.
 
 To create a `/etc/X11/xorg.conf.d/00-keyboard.conf` like the above:
 

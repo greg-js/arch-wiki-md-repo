@@ -61,7 +61,6 @@ As a result:
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
-        *   [8.4.2 systemd mount unit](#systemd_mount_unit)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -932,31 +931,6 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
  `/etc/fstab` 
 ```
 /mnt/zfspool		/srv/nfs4/music		none	bind,defaults,nofail,x-systemd.requires=zfs-mount.service	0 0
-
-```
-
-#### systemd mount unit
-
-If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[4]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
-
- `srv-nfs4-music.mount` 
-```
-[Mount]
-What=/mnt/zfspool
-Where=/srv/nfs4/music
-Type=none
-Options=bind
-
-[Unit]
-DefaultDependencies=no
-Conflicts=umount.target
-Before=local-fs.target umount.target
-After=zfs-mount.service
-Requires=zfs-mount.service
-ConditionPathIsDirectory=/mnt/zfspool
-
-[Install]
-WantedBy=local-fs.target
 
 ```
 

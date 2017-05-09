@@ -273,6 +273,8 @@ sudo ln -s /usr/lib/libstdc++.so.6
 
 ```
 
+If MATLAB still crashes or corrupts graphics (during startup or when plotting), make sure Java's 2D OpenGL rendering is disabled. The environment variable `_JAVA_OPTIONS` should not contain `-Dsun.java2d.opengl=true`.
+
 ### Blank/grey UI when using DWM/Awesome
 
 [wmname](http://tools.suckless.org/wmname) is a utility to set the window manager name of the root window.

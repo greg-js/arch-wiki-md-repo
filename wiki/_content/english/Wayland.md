@@ -21,10 +21,10 @@
     *   [3.6 EFL](#EFL)
 *   [4 Window managers and desktop shells](#Window_managers_and_desktop_shells)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [5.2 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
-    *   [5.3 nemo](#nemo)
-    *   [5.4 gparted](#gparted)
+    *   [5.1 Running graphical applications as root](#Running_graphical_applications_as_root)
+    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
+    *   [5.4 nemo](#nemo)
     *   [5.5 X11 on tty1, wayland on tty2](#X11_on_tty1.2C_wayland_on_tty2)
     *   [5.6 gnome wayland on tty1, weston on tty2](#gnome_wayland_on_tty1.2C_weston_on_tty2)
     *   [5.7 weston-terminal](#weston-terminal)
@@ -329,6 +329,37 @@ Some of installed wayland desktop clients might store information in `/usr/share
 
 ## Troubleshooting
 
+### Running graphical applications as root
+
+Trying to run a graphical application as root via [su](/index.php/Su "Su"), [sudo](/index.php/Sudo "Sudo") or [pkexec](/index.php/Polkit "Polkit") in a Wayland session (*e.g.* [GParted](/index.php/GParted "GParted") or [Gedit](/index.php/Gedit "Gedit")), be it in a terminal emulator or from a graphical component, will fail with an error similar to this:
+
+```
+$ sudo gedit
+No protocol specified
+Unable to init server: Could not connect: Connection refused
+
+(gedit:2349): Gtk-WARNING **: cannot open display: :0
+
+```
+
+Before Wayland, running GUI applications with elevated privileges could be properly implemented by creating a [Polkit](/index.php/Polkit "Polkit") policy, or more dangerously done by running the command in a terminal by prepending the command with `sudo`; but under (X)Wayland this does not work anymore as the default has been made to only allow the user who started the X server to connect clients to it (see the [bug report](https://bugzilla.redhat.com/show_bug.cgi?id=1266771) and [the](https://cgit.freedesktop.org/xorg/xserver/commit/?id=c4534a3) [upstream](https://cgit.freedesktop.org/xorg/xserver/commit/?id=4b4b908) [commits](https://cgit.freedesktop.org/xorg/xserver/commit/?id=76636ac) it refers to).
+
+The most straightforward workaround is to use [xhost](/index.php/Xhost "Xhost") to temporarily allow the root user to access the local user's X session. To do so, execute the following command as the current (unprivileged) user[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1274451#c64):
+
+```
+ xhost si:localuser:root
+
+```
+
+To remove this access after the application has been closed:
+
+```
+ xhost -si:localuser:root
+
+```
+
+**Note:** This [GNOME bug report](https://bugzilla.gnome.org//show_bug.cgi?id=772875) suggests two other workarounds, with one specific to editing text files.
+
 ### LLVM assertion failure
 
 If you get an LLVM assertion failure, you need to rebuild [mesa](https://www.archlinux.org/packages/?name=mesa) without Gallium LLVM until this problem is fixed.
@@ -350,15 +381,6 @@ Gnome-shell users may experience display issues when they switch to Wayland from
 
 ```
 gsettings set org.nemo.desktop show-desktop-icons false
-
-```
-
-### gparted
-
-gparted wants to run as root. Before starting it, allow root user to display applications on your desktop by typing the following in a command line. Refer [GNOME bug 772875](https://bugzilla.gnome.org//show_bug.cgi?id=772875).
-
-```
- xhost si:localuser:root
 
 ```
 
@@ -388,11 +410,13 @@ gparted wants to run as root. Before starting it, allow root user to display app
 
 ### Remote desktop and VM window input grabbing
 
-Wayland does not allow exclusive input device grabbing (e.g. keyboard, mouse) by an application and to constrict the region of the input device to the application's window ([freedesktop bug](https://bugs.freedesktop.org/show_bug.cgi?id=97333), [Redhat](https://bugzilla.redhat.com/show_bug.cgi?id=1285770), also related [[1]](https://bugzilla.gnome.org/show_bug.cgi?id=752956) and [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96547)).
+Wayland does not allow exclusive input device grabbing (e.g. keyboard, mouse) by an application and to constrict the region of the input device to the application's window ([freedesktop bug](https://bugs.freedesktop.org/show_bug.cgi?id=97333), [Redhat](https://bugzilla.redhat.com/show_bug.cgi?id=1285770), also related [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=752956) and [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=96547)).
 
 This feature is needed in order to send hotkey combinations and modifiers to remote desktop and virtual machine windows. Also, the mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window (VM or remote desktop) is displaced from the host's mouse pointer.
 
-This limitation exists for both native Wayland and XWayland windows ([an extension was proposed for the latter](https://lists.freedesktop.org/archives/wayland-devel/2017-April/033799.html)).
+This limitation exists for both native Wayland and XWayland windows and keyboard handling extensions were proposed for both: [XWayland](https://lists.freedesktop.org/archives/wayland-devel/2017-April/033799.html) and [native Wayland clients](https://lists.freedesktop.org/archives/wayland-devel/2017-April/033800.html).
+
+There are Wayland protocol extensions for handling of the mouse pointer (and other pointing devices) in Wayland but compositors need to implement them so support in compositors might differ from one another, see [relative pointer motion events](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml) and [constraining pointer motions](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml). Similar support [already been added to XWayland](https://lists.x.org/archives/xorg-devel/2016-September/050975.html), but again, compositors need implement this.
 
 ## See also
 

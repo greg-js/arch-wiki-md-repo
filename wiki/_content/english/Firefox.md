@@ -34,7 +34,6 @@
     *   [6.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
     *   [6.19 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
     *   [6.20 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
-    *   [6.21 Make URL bar behave like Firefox on Windows regarding mouse clicks](#Make_URL_bar_behave_like_Firefox_on_Windows_regarding_mouse_clicks)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -396,19 +395,6 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
 This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
-
-### Make URL bar behave like Firefox on Windows regarding mouse clicks
-
-In `about:config`, set the following settings:
-
-```
-browser.urlbar.clickSelectsAll true
-browser.urlbar.doubleClickSelectsAll false
-layout.word_select.stop_at_punctuation true
-
-```
-
-This will make a single click in the URL bar select everything, a double click selects a single word until a punctuation and a triple click selects everything again.
 
 ## See also
 

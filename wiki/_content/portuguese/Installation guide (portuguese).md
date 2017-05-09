@@ -1,21 +1,23 @@
-Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ (Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Consulte [Beginners' guide (Português)](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)") para um guia de instalação mais detalhado.
+Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ (Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-[Arch wiki](/index.php/Main_page "Main page") é um excelente recurso e deve ser consultado para as primeiras questões. O canal [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), e o [[1]](http://forum.archlinux-br.org/index.php) também estão disponíveis se a resposta não puder ser encontrada em outro lugar. Além disso, não esqueça de verificar as páginas `man` para qualquer comando não familiarizado, o que normalmente pode ser invocado com `man *command*`.
+Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") ou as [páginas de manual](/index.php/Man_page "Man page") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/IRC_channel "IRC channel") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
 ## Contents
 
-*   [1 Download](#Download)
+*   [1 Pré-instalação](#Pr.C3.A9-instala.C3.A7.C3.A3o)
+    *   [1.1 Defina o layout do teclado](#Defina_o_layout_do_teclado)
+    *   [1.2 Verificar o modo de inicialização](#Verificar_o_modo_de_inicializa.C3.A7.C3.A3o)
+    *   [1.3 Conectar à Internet](#Conectar_.C3.A0_Internet)
+    *   [1.4 Atualizar o relógio do sistema](#Atualizar_o_rel.C3.B3gio_do_sistema)
+    *   [1.5 Partição dos discos](#Parti.C3.A7.C3.A3o_dos_discos)
+    *   [1.6 Formatar as partições](#Formatar_as_parti.C3.A7.C3.B5es)
+    *   [1.7 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
 *   [2 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [2.1 Layout do teclado](#Layout_do_teclado)
-    *   [2.2 Partição de discos](#Parti.C3.A7.C3.A3o_de_discos)
-    *   [2.3 Formatar as partições](#Formatar_as_parti.C3.A7.C3.B5es)
-    *   [2.4 Montar as partições](#Montar_as_parti.C3.A7.C3.B5es)
-    *   [2.5 Conectar-se à internet](#Conectar-se_.C3.A0_internet)
-        *   [2.5.1 Rede sem fio](#Rede_sem_fio)
-    *   [2.6 Instalar o sistema base](#Instalar_o_sistema_base)
-    *   [2.7 Configurar o sistema](#Configurar_o_sistema)
-    *   [2.8 Instalar e configurar um gerenciador de boot](#Instalar_e_configurar_um_gerenciador_de_boot)
-    *   [2.9 Desmontar e reiniciar](#Desmontar_e_reiniciar)
+    *   [2.1 Selecionar os mirrors](#Selecionar_os_mirrors)
+    *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
+    *   [2.3 Configurar o sistema](#Configurar_o_sistema)
+    *   [2.4 Instalar e configurar um gerenciador de boot](#Instalar_e_configurar_um_gerenciador_de_boot)
+    *   [2.5 Desmontar e reiniciar](#Desmontar_e_reiniciar)
 *   [3 Pós-instalação](#P.C3.B3s-instala.C3.A7.C3.A3o)
 *   [4 Configure o pacman](#Configure_o_pacman)
 *   [5 Atualizando o sistema](#Atualizando_o_sistema)
@@ -28,56 +30,129 @@ Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php
     *   [5.7 Fontes](#Fontes)
 *   [6 Apêndice](#Ap.C3.AAndice)
 
-## Download
+## Pré-instalação
 
-Baixe a nova mídia ISO Arch Linux em [Arch Linux download page](https://www.archlinux.org/download/).
+Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, uma conexão internet deve é necessária.
 
-*   Uma única imagem é fornecida, que pode ser iniciada de forma "live" em sistemas i686 e x86_64 para instalar Arch Linux através da rede. A mídia que contém o repositório [core] não são mais fornecidas.
-*   Instale imagens que sejam assinadas e é altamente recomendável verificar a sua assinatura antes do uso: isso pode ser feito baixando o arquivo *.sig* da página de download (ou um dos espelhos listados lá) para o mesmo diretório do arquivo *.iso* e usando `pacman-key -v *iso-file*.sig`.
-*   A imagem pode ser queimada para um CD, montada como um arquivo ISO, ou diretamente [gravados em um pen drive](/index.php/USB_Installation_Media "USB Installation Media"). Destina-se só para novas instalações, um sistema Arch Linux existente pode ser sempre atualizado com `pacman -Syu`.
+Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-## Instalação
+Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*arrow*`. Para [editar](/index.php/Textedit "Textedit") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
-### Layout do teclado
+### Defina o layout do teclado
 
-Para a maioria dos países, os tipos de mapeamentos de teclado já estão disponíveis, e um comando como `loadkeys uk` pode fazer o que quer. Mais arquivos de mapeamento de teclado podem ser encontrados em `/usr/share/kbd/keymaps/` (você pode omitir o caminho e arquivo de extensão keymap ao usar loadkeys).
+O [mapa de teclas de console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Para listar todos os layouts disponíveis, execute `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-### Partição de discos
+Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [brasileiro](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
 
-Consulte [partitioning](/index.php/Partitioning "Partitioning") para detalhes.
+[Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
-Se deseja criar quaisquer blocos de dispositivos como [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), ou [RAID](/index.php/RAID "RAID"), faça agora.
+### Verificar o modo de inicialização
+
+Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") vai [inicializar](/index.php/Boot "Boot") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_Variables "UEFI"):
+
+```
+# ls /sys/firmware/efi/efivars
+
+```
+
+Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") ou CSM. Veja o manual da sua placa-mãe para detalhes.
+
+### Conectar à Internet
+
+A imagem de instalação [habilita](/index.php/Enable "Enable") o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos [cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) e vai tentar iniciar uma conexão. Verifique sea conectividade da internet está disponível, por exemplo com [ping](/index.php/Ping "Ping"):
+
+```
+# ping archlinux.org
+
+```
+
+Se nenhum estiver disponível, [pare](/index.php/Stop "Stop") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Network_configuration#Device_driver "Network configuration").
+
+Para conexões **sem fio** (*wireless*), iw(8), wpa_supplicant(8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
+
+### Atualizar o relógio do sistema
+
+Use [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html) para garantir que o relógio do sistema está certo:
+
+```
+# timedatectl set-ntp true
+
+```
+
+Para verificar o status do serviço, use `timedatectl status`.
+
+### Partição dos discos
+
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositivo de bbloco* tal como `/dev/sda`. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk* — resultados no final de `rom`, `loop` ou `airoot` podem ser ignorados:
+
+```
+# fdisk -l
+
+```
+
+As seguintes *partições* (mostradas com um sufixo numérico) são exigidos para um dispositivo escolhido:
+
+*   Uma partição para o diretório raiz `/`.
+*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de Sistema EFI](/index.php/EFI_System_Partition "EFI System Partition").
+
+[Espaço swap](/index.php/Swap_space "Swap space") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Swap_file "Swap file").
+
+Para modificar as *tabelas de partição*, use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted"). Veja [Particionamento](/index.php/Partitioning "Partitioning") para mais informações.
+
+Se você quiser criar qualquer dispositivo de bloco *stacked* para [LVM](/index.php/LVM "LVM"), [criptografia de disco](/index.php/Disk_encryption "Disk encryption") ou [RAID](/index.php/RAID "RAID"), faça-o agora.
 
 ### Formatar as partições
 
-Consulte [File Systems](/index.php/File_systems#Step_2:_create_the_new_file_system "File systems") para detalhes.
+Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, para formatar a partição raiz em `/dev/*sda1*` com `*ext4*`, execute:
 
-Se você usa (U)EFI provavelmente você vai precisar de uma outra partição para hospedar o sistema de partição UEFI. Leia [Crie uma partição de sistema UEFI no Linux](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface").
+```
+# mkfs.*ext4* /dev/*sda1*
 
-### Montar as partições
+```
 
-Agora temos de montar a partição root em `/mnt`.Também deve criar diretórios para e montar outras partições (`/mnt/boot`, `/mnt/home`, ...) e monte sua partição [swap](/index.php/Swap "Swap") se quiser que seja detectada pelo `genfstab`.
+Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") para detalhes.
 
-### Conectar-se à internet
+### Montar os sistemas de arquivos
 
-Um serviço DHCP já está ativado para todos os dispositivos disponíveis. Se você precisa configurar um IP estático ou usar ferramentas de gerenciamento, como o [Netctl](/index.php/Netctl "Netctl"), você deveria parar este serviço primeiro: `systemctl stop dhcpcd.service`. Para maiores informações, leia [configuring network](/index.php/Configuring_network "Configuring network").
+[Monte](/index.php/File_systems#Mount_a_filesystem "File systems") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
-#### Rede sem fio
+```
+# mount /dev/*sda1* /mnt
 
-Execute `wifi-menu` para configurar sua rede sem fio. Para detalhes, consulte [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") e [Netctl](/index.php/Netctl "Netctl").
+```
 
-### Instalar o sistema base
+Crie pontos de montagem para quaisquer partições restantes e monte-as conforme adequado, por exemplo:
 
-Antes de instalar, talvez você queira editar `/etc/pacman.d/mirrorlist` de tal modo que seu [espelho](/index.php/Mirrors "Mirrors") preferido seja o primeiro. Esta cópia da lista de espelhos será instalado em seu novo sistema pelo `pacstrap`, então vale a pena fazer direito.
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
 
-Usando o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) instalamos o sistema básico
+```
+
+[genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) vai detectar os sistemas de arquivos montados e espaços swap.
+
+## Instalação
+
+### Selecionar os mirrors
+
+Pacotes a serem instalados devem ser baixados de [servidores *mirrors*](/index.php/Mirrors "Mirrors"), que são definidos na `/etc/pacman.d/mirrorlist`. No sistema *live*, todos os mirrors estão habilitados e ordenados por seu status e velocidade de sincronização à época em que a imagem de instalação foi criada.
+
+Quanto mais alto um mirror está posicionado na lista, mais prioritário ele será ao baixar um pacote. Você pode querer editar o arquivo e mover mirrors geograficamente mais pertos para o topo da lista, apesar de que outros critérios devem ser levados em consideração.
+
+Esse arquivo será posteriormente copiado para o novo sistema por *pacstrap*, então é melhor fazer direito.
+
+### Instalar os pacotes base
+
+Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar o grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/):
 
 ```
 # pacstrap /mnt base
 
 ```
 
-Outros pacotes podem ser instalados adicionando seus nomes no comando acima (separados por espaço), incluindo o gerenciador de boot, se quiser.
+Esse grupo não inclui todas as ferramentas da instalação *live*, tal como [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ou firmware de rede sem fio específico; veja [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para comparação.
+
+Para [instalar](/index.php/Install "Install") pacotes e outros grupos, tal como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), anexe os nomes ao *pacstrap* (separados por espaço) ou a comandos [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa do [#Chroot](#Chroot).
 
 ### Configurar o sistema
 

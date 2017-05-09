@@ -21,7 +21,7 @@ def kb_light_set(delta):
     maximum = kbd_backlight.GetMaxBrightness()
     new = max(0, current + delta)
 
-    if new >= 0 and new <= maximum:
+    if 0 <= new <= maximum:
         current = new
         kbd_backlight.SetBrightness(current)
 

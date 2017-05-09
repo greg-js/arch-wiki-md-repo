@@ -1,21 +1,40 @@
 Nesta sessão será informada, quais as documentações que estão em tradução (ou se já estão traduzidas), qual seu status e quem está traduzindo.
 
-Caso não saiba editar uma página, clique [aqui](/index.php?title=Como_Editar_P%C3%A1ginas&action=edit&redlink=1 "Como Editar Páginas (page does not exist)").
-
 ## Contents
 
-*   [1 AUR](#AUR)
-*   [2 Man pages](#Man_pages)
-*   [3 Pacman (libalpm, makepkg e repo-add)](#Pacman_.28libalpm.2C_makepkg_e_repo-add.29)
-*   [4 Wiki](#Wiki)
-*   [5 Equipe de Traducão:](#Equipe_de_Traduc.C3.A3o:)
-*   [6 Equipe de Revisão:](#Equipe_de_Revis.C3.A3o:)
+*   [1 Crie uma nova página e sua tradução](#Crie_uma_nova_p.C3.A1gina_e_sua_tradu.C3.A7.C3.A3o)
+*   [2 AUR](#AUR)
+*   [3 Man pages](#Man_pages)
+*   [4 Pacman (libalpm, makepkg e repo-add)](#Pacman_.28libalpm.2C_makepkg_e_repo-add.29)
+*   [5 Wiki](#Wiki)
+*   [6 Equipe de Traducão:](#Equipe_de_Traduc.C3.A3o:)
+*   [7 Equipe de Revisão:](#Equipe_de_Revis.C3.A3o:)
+
+## Crie uma nova página e sua tradução
+
+1.  Se você não sabe como editar páginas wiki, leia [Help:Editing (Português)](/index.php/Help:Editing_(Portugu%C3%AAs) "Help:Editing (Português)").
+2.  Leia [Help:i18n (Português)](/index.php/Help:I18n_(Portugu%C3%AAs) "Help:I18n (Português)"), que contém diretrizes compreensivas para internacionalização e localização do ArchWiki.
+3.  Faça [login](/index.php/Special:UserLogin "Special:UserLogin") para ser capaz de editar o wiki.
+4.  Escolha uma página para traduzir. Você pode usar a [função de página aleatória](/index.php/Special:Random "Special:Random"). Vamos usar exatamente esta página como um exemplo: **ArchWiki Translation Team (Português)** (já está traduzido, mas somente um exemplo hipotético).
+5.  No topo da página, clique na aba "editar" no menu horizontal.
+6.  Adicione um link interlíngua para o idioma para o qual você pretende traduzir. Veja [Links interlínguas](/index.php/Help:I18n#Interlanguage_links "Help:I18n").
+7.  Copie todo o código-fonte da página.
+8.  Salve a página com o novo link interlíngua.
+9.  Visite o link interlíngua que você criou que você seria levado para [ArchWiki Translation Team (Idioma)](/index.php?title=ArchWiki_Translation_Team_(Idioma)&action=edit&redlink=1 "ArchWiki Translation Team (Idioma) (page does not exist)"), sendo "Idioma" o [nome do idioma](/index.php/Help:I18n#Languages "Help:I18n") associado com a tradução que você está criando. Ao traduzir para Português, seria **ArchWiki Translation Team (Português)**
+10.  Já que a nova página não existe, crie-o clicando em "criar" no menu horizontal.
+11.  Você verá uma editor de texto simples. Cole aqui o código-fonte da página que você copiou anteriormente.
+12.  Altere os links "Category" para suas versões localizadas. Por exemplo, altere `[[Category:ArchWiki]]` para `[[Category:ArchWiki (Idioma)]]`. Para português, seria `[[Category:ArchWiki (Português)]]`. Veja [Help:Category](/index.php/Help:Category "Help:Category") para mais informações.
+13.  Altere o link interlíngua que você criou anteriormente para o artigo *original*, que você está traduzindo.
+14.  Traduza o texto da página copiada e salve tudo, adicionando um [resumo da edição](/index.php/Help:Style#Edit_summary "Help:Style") tal como `translate [[ArchWiki Translation Team]]`.
+15.  Atualize as listas de link interlíngua de todas outras traduções do artigo (se houver) para incluir o link de interlíngua da tradução recentemente criada.
+16.  No final da página traduzida, haverá uma lista de categorias de página que está inserida. Certifique-se que todas as categorias existam, isto é, os links não devem estar vermenlhos. Se estiver, crie todas as categorias em falta seguindo os links vermelhos - categorias são criadas da mesma forma que páginas normais.
+17.  (opcional) Crie uma outra página com o título traduzido, como [Equipe de Tradução do ArchWiki](/index.php/Equipe_de_Tradu%C3%A7%C3%A3o_do_ArchWiki "Equipe de Tradução do ArchWiki"), cujo título seja uma versão traduzida de **ArchWiki Translation Team (Português)**. Insira `#REDIRECT [[ArchWiki_Translation_Team_(Português)]]` como seu único conteúdo e salva-a.
 
 ## AUR
 
-Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_Translation "AUR Translation").
+Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_(Portugu%C3%AAs)#Tradu.C3.A7.C3.A3o_da_interface_web "AUR (Português)").
 
-**Tradutores:**
+**Tradutores:** [Rafael Fontenelle](/index.php?title=User:Josephgbr&action=edit&redlink=1 "User:Josephgbr (page does not exist)")
 
 **Revisores:**
 
@@ -30,9 +49,9 @@ Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_Tr
 
 ## Pacman (libalpm, makepkg e repo-add)
 
-Informações [aqui](https://dev.archlinux.org/~hugo/arch-i18n/) e [aqui](https://www.archlinux.org/pacman/translation-help.html)
+Informações [aqui](https://www.archlinux.org/pacman/translation-help.html)
 
-**Tradutores:**
+**Tradutores:** [Rafael Fontenelle](/index.php?title=User:Josephgbr&action=edit&redlink=1 "User:Josephgbr (page does not exist)")
 
 **Revisadores:**
 

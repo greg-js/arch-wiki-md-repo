@@ -43,7 +43,7 @@
 
 1.  电脑启动时，BIOS 会先加载磁盘开始的 440 字节 [MBR](/index.php/MBR "MBR") 启动代码(`/usr/lib/syslinux/bios/mbr.bin` 或 `/usr/lib/syslinux/bios/gptmbr.bin`)
 2.  MBR 寻找活动分区（设置了 boot 标记的 MBR 分区），假设是 `/boot` 分区。
-3.  找到这个分区后， MBR 启动代码会执行卷启动记录程序（VBR=volume boot record）。对于 Syslinux 来说，VBR 就是 `/boot/syslinux/ldlinux.sys` 开始山区的代码， 由 `extlinux --install` 命令创建。
+3.  找到这个分区后， MBR 启动代码会执行卷启动记录程序（VBR=volume boot record）。对于 Syslinux 来说，VBR 就是 `/boot/syslinux/ldlinux.sys` 开始扇区的代码， 由 `extlinux --install` 命令创建。
 4.  VBR 会加载剩余的 `ldlinux.sys`。`ldlinux.sys`开始扇区是被写死进卷启动记录程序里的。对于 btrfs 来说，因为文件不断移动导致`ldlinux.sys`扇区的位置不断变化，而让上面方法失效。从而使得整个syslinux需要被存储在文件系统之外。程序将被存储在卷启动记录程序之后。
 5.  `ldlinux.sys` 会接着加载 `/boot/syslinux/ldlinux.c32` 核心模块，这个模块包含因为文件大小限制，无法放入 `ldlinux.sys` 的代码。
 6.  当 syslinux 完全加载完毕，它将自动查找配置文件，配置文件名是 `/boot/syslinux/syslinux.cfg` 或 `/boot/syslinux/extlinux.conf`

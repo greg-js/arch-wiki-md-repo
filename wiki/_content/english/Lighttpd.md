@@ -413,7 +413,7 @@ $SERVER["socket"] == ":80" {
 
 $SERVER["socket"] == ":443" {
   ssl.engine = "enable" 
-  ssl.pemfile = "/etc/lighttpd/ssl/server.pem" 
+  ssl.pemfile = "/etc/lighttpd/certs/server.pem" 
   server.document-root = "..." 
 }
 

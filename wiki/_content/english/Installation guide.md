@@ -97,7 +97,7 @@ The following *partitions* (shown with a numerical suffix) are required for a ch
 
 To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted"). See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
 
-If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
 ### Format the partitions
 

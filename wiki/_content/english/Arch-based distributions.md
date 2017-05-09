@@ -1,6 +1,6 @@
 **Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
 
-This is a listing of Linux distributions which are derived from Arch Linux either in whole or in part. This page is here to serve as a useful reference; for a detailed comparison, see [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
+This is a listing of Linux distributions which are derived from Arch Linux **either in whole or in part**. This page is here to serve as a useful reference; for a detailed comparison, see [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
 ## Contents
 
@@ -8,19 +8,20 @@ This is a listing of Linux distributions which are derived from Arch Linux eithe
     *   [1.1 Desktop](#Desktop)
     *   [1.2 Others](#Others)
 *   [2 Inactive](#Inactive)
-    *   [2.1 2016](#2016)
-    *   [2.2 2015](#2015)
-    *   [2.3 2014](#2014)
-    *   [2.4 2013](#2013)
-    *   [2.5 2012](#2012)
-    *   [2.6 2011](#2011)
-    *   [2.7 2010](#2010)
-    *   [2.8 2009](#2009)
-    *   [2.9 2008](#2008)
-    *   [2.10 2007](#2007)
-    *   [2.11 2006](#2006)
-    *   [2.12 2005](#2005)
-    *   [2.13 2004](#2004)
+    *   [2.1 2017](#2017)
+    *   [2.2 2016](#2016)
+    *   [2.3 2015](#2015)
+    *   [2.4 2014](#2014)
+    *   [2.5 2013](#2013)
+    *   [2.6 2012](#2012)
+    *   [2.7 2011](#2011)
+    *   [2.8 2010](#2010)
+    *   [2.9 2009](#2009)
+    *   [2.10 2008](#2008)
+    *   [2.11 2007](#2007)
+    *   [2.12 2006](#2006)
+    *   [2.13 2005](#2005)
+    *   [2.14 2004](#2004)
 
 ## Active
 
@@ -31,9 +32,6 @@ Actively developed Arch derived Linux distributions.
 The following distributions include a pre-installed [Desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 *   [Antergos](https://sourceforge.net/projects/antergos/)
-*   [Arquetype CRT](https://arquetype.org/)
-*   [alphaOS](https://sourceforge.net/projects/alphaos/)
-*   [Apricity OS](https://sourceforge.net/projects/apricityos/)
 *   [ArchBang](https://sourceforge.net/projects/archbang/)
 *   [ArchBox](https://archbox-linux.github.io/)
 *   [ArchEX](https://sourceforge.net/projects/archex/)
@@ -47,7 +45,6 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [Obarun](http://www.obarun.org/index.html)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
-*   [Miraclx OS](http://miraclx-os.ml)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](https://nurunner.org/)
 *   [Velt OS](https://velt.io)
@@ -55,8 +52,9 @@ The following distributions include a pre-installed [Desktop environment](/index
 
 ### Others
 
+*   [Alpine Linux](http://alpinelinux.org/)
 *   [Arch Linux ARM](http://archlinuxarm.org/)
-*   [Arch-Anywhere](https://arch-anywhere.org/)
+*   [Arch-Anywhere](http://arch-anywhere.org/)
 *   [LinHES](http://linhes.org/)
 *   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
@@ -67,13 +65,20 @@ The following distributions include a pre-installed [Desktop environment](/index
 
 These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
 
+### 2017
+
+*   [Apricity OS](https://sourceforge.net/projects/apricityos/)
+
 ### 2016
 
+*   [alphaOS](https://sourceforge.net/projects/alphaos/)
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
+*   [Miraclx OS](http://miraclx-os.ml)
 
 ### 2015
 
 *   [ArchAssault](https://sourceforge.net/projects/archassault/)
+*   [Arquetype CRT](https://arquetype.org/)
 *   [Bridge Linux](https://sourceforge.net/projects/bridgelinux/)
 *   [Kademar](http://www.kademar.org/)
 *   [PoliArch](https://sourceforge.net/projects/poliarch/)

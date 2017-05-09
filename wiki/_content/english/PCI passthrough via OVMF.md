@@ -718,7 +718,7 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 
 ### Unexpected crashes related to CPU exceptions
 
-In some cases, kvm may react strangely to certain CPU operations, such as GeForce Experience complaining about an unsupported CPU being present or some game crashing for unknown reasons. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs instead of returning an error value.
+KVM injects a GPF when the guest tries to access unsupported MSRs. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs instead of returning an error value.
 
  `/etc/modprobe.d/kvm.conf` 
 ```
@@ -726,6 +726,11 @@ In some cases, kvm may react strangely to certain CPU operations, such as GeForc
 options kvm ignore_msrs=1
 ...
 ```
+
+Cases where adding this option might help:
+
+*   GeForce Experience complaining about an unsupported CPU being present
+*   StarCraft 2 and L.A. Noire reliably blue-screening Windows 10 with KMODE_EXCEPTION_NOT_HANDLED. The blue screen information does not identify a driver file in these cases.
 
 **Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
 

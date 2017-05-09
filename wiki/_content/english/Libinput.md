@@ -13,9 +13,10 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Button re-mapping](#Button_re-mapping)
     *   [3.2 Manual button re-mapping](#Manual_button_re-mapping)
-    *   [3.3 Gestures](#Gestures)
-        *   [3.3.1 libinput-gestures](#libinput-gestures)
-        *   [3.3.2 GnomeExtendedGestures](#GnomeExtendedGestures)
+    *   [3.3 Change touchpad sensitivity](#Change_touchpad_sensitivity)
+    *   [3.4 Gestures](#Gestures)
+        *   [3.4.1 libinput-gestures](#libinput-gestures)
+        *   [3.4.2 GnomeExtendedGestures](#GnomeExtendedGestures)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE.27s_Touchpad_KCM)
@@ -190,6 +191,10 @@ for i in $(xinput list | grep "Logitech USB Receiver" | perl -n -e'/id=(\d+)/ &&
 done
 ...
 ```
+
+### Change touchpad sensitivity
+
+To change the pressure at which the touchpad is registered, follow [this article](https://wayland.freedesktop.org/libinput/doc/latest/touchpad_pressure.html#touchpad_pressure_hwdb) in the upstream documentation.
 
 ### Gestures
 

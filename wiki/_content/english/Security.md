@@ -320,11 +320,15 @@ The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) pa
 
 ### Restricting access to kernel logs
 
+**Note:** This is enabled by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened).
+
 The kernel logs contain useful information for an attacker trying to exploit kernel vulnerabilities, such as sensitive memory addresses. The `kernel.dmesg_restrict` flag was to forbid access to the logs without the `CAP_SYS_ADMIN` capability (which only processes running as root have by default).
 
  `/etc/sysctl.d/50-dmesg-restrict.conf`  `kernel.dmesg_restrict = 1` 
 
 ### Restricting access to kernel pointers in the proc filesystem
+
+**Note:** [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) sets `kptr_restrict=2` by default rather than `0`.
 
 Enabling `kernel.kptr_restrict` will hide kernel symbol addresses in `/proc/kallsyms` from regular users without `CAP_SYSLOG`, making it more difficult for kernel exploits to resolve addresses/symbols dynamically. This will not help that much on a pre-compiled Arch Linux kernel, since a determined attacker could just download the kernel package and get the symbols manually from there, but if you're compiling your own kernel, this can help mitigating local root exploits. This will break some [perf](https://www.archlinux.org/packages/?name=perf) commands when used by non-root users (but many [perf](https://www.archlinux.org/packages/?name=perf) features require root access anyway). See [FS#34323](https://bugs.archlinux.org/task/34323) for more information.
 
@@ -342,7 +346,7 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 #### Examples of broken functionality
 
-**Note:** You can still execute these commands as root (such as allowing them through [sudo](/index.php/Sudo "Sudo") for certain users, with or without a password), or enable ptrace selectively through `setcap cap_sys_ptrace=eip */path/to/program*`.
+**Note:** You can still execute these commands as root (such as allowing them through [sudo](/index.php/Sudo "Sudo") for certain users, with or without a password).
 
 *   `gdb -p $PID`
 *   `strace -p $PID`
@@ -371,7 +375,7 @@ SupplementaryGroups=proc
 
 ## Sandboxing applications
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel and may prevent certain sandboxing features from being made available to applications.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel and may prevent certain sandboxing features from being made available to applications. The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) packages enables it but disables unprivileged usage by default unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `1`, since it greatly increases the attack surface for local privilege escalation.
 
 ### Firejail
 

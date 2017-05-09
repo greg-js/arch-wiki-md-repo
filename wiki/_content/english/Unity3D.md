@@ -28,7 +28,7 @@ Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://au
 
 ## Android Remote
 
-[Unity Remote](http://docs.unity3d.com/Manual/UnityRemote4.html) is an Android app to help test input for Android devices. It achieves this by sending a compressed screenshot to the device each frame.
+[Unity Remote](http://docs.unity3d.com/Manual/UnityRemote5.html) is an Android app to help test input for Android devices. It achieves this by sending a compressed screenshot to the device each frame.
 
 ### Prepare computer
 
@@ -53,13 +53,13 @@ For more help see the [Unity documentation](http://docs.unity3d.com/Manual/andro
 
 ### Prepare Android
 
-Install [Unity Remote 4](https://play.google.com/store/apps/details?id=com.unity3d.genericremote) from the Play Store. Alternatively you can download and build it yourself from the Asset Store.
+Install [Unity Remote 5](https://play.google.com/store/apps/details?id=com.unity3d.genericremote) from the Play Store. Alternatively you can download and build it yourself from the Asset Store.
 
 It is also [recommended](http://www.howtogeek.com/192732/android-usb-connections-explained-mtp-ptp-and-usb-mass-storage/) to set your Android device to PTP mode.
 
 **Note:** Don’t forget to turn on “USB Debugging” on your device. Go to *Settings -> Developer* options, then enable USB debugging. As of Android Jelly Bean 4.2 the Developer options are hidden by default. To enable them tap on *Settings -> About Phone -> Build Version* multiple times. Then you will be able to access the *Settings -> Developer* options.
 
-For more help see the [Unity documentation](http://docs.unity3d.com/Manual/UnityRemote4.html).
+For more help see the [Unity documentation](http://docs.unity3d.com/Manual/UnityRemote5.html).
 
 ### Test
 
@@ -69,7 +69,7 @@ Connect the phone to the computer and launch Unity Remote.
 
 Open the Editor and press play. You should now see your game transmitted to your Android device.
 
-If it doesn't work or you have questions, see the [Unity Documentation](http://docs.unity3d.com/Manual/UnityRemote4.html).
+If it doesn't work or you have questions, see the [Unity Documentation](http://docs.unity3d.com/Manual/UnityRemote5.html).
 
 ## Troubleshooting
 

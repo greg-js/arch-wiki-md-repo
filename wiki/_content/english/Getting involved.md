@@ -131,7 +131,7 @@ Community-developed software that focuses on Arch Linux.
 
 	[NetGUI](http://www.github.com/codywd/NetGUI)
 
-	Graphical front end for [Netctl](/index.php/Netctl "Netctl").
+	Graphical front end for [netctl](/index.php/Netctl "Netctl").
 
 ### ArchWiki browsing
 
@@ -182,7 +182,7 @@ Here is a list of things that you may do in order to gain some "popularity" towa
 *   Join the [Trusted Users](/index.php/Trusted_Users "Trusted Users") to gain packaging experience to show your skills.
 *   Submit packages to the AUR.
 *   Join one of the offshoot projects that may be incorporated into Arch mainstream someday, or start your own.
-*   Work on pacman, makepkg or other source code and submit patches to the bug tracker.
+*   Work on *pacman*, *makepkg* or other source code and submit patches to the bug tracker.
 *   Traverse the bug tracker and fix existing bugs.
 *   Find and submit new bugs.
 *   Fix wiki errors, add new pages, clean up existing pages, and make sure the procedures are up-to-date.

@@ -57,6 +57,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.14 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
     *   [3.15 Enable touchscreen gestures](#Enable_touchscreen_gestures)
     *   [3.16 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [3.17 Make URL bar behave like Firefox on Windows regarding mouse clicks](#Make_URL_bar_behave_like_Firefox_on_Windows_regarding_mouse_clicks)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -687,6 +688,19 @@ If you are using the PulseAudio [module-echo-cancel](https://wiki.archlinux.org/
 | media.getusermedia.aec_enabled | false | AEC = Acoustic Echo Cancellation |
 | media.getusermedia.agc_enabled | false | AGC = Automatic Gain Control |
 | media.getusermedia.noise_enabled | false | Noise suppression. BEWARE: Disabling noise suppression in Firefox may lead to a "Mickey Mouse voice" |
+
+### Make URL bar behave like Firefox on Windows regarding mouse clicks
+
+In `about:config`, set the following settings:
+
+```
+browser.urlbar.clickSelectsAll true
+browser.urlbar.doubleClickSelectsAll false
+layout.word_select.stop_at_punctuation true
+
+```
+
+This will make a single click in the URL bar select everything, a double click selects a single word until a punctuation and a triple click selects everything again.
 
 ## See also
 

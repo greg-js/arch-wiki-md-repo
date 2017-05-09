@@ -111,7 +111,7 @@ The XF86Audio* and other multimedia keys [[1]](http://wiki.linuxquestions.org/wi
 
 ```
 
-However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on *xmacro* and *xmodmap* from the [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
+However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which won't do anything useful. Here's a script based on *xmacro* and *xmodmap* from the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package for doing this[[2]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
 
 ```
 #!/bin/sh

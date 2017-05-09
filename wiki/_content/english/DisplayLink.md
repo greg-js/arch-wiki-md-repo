@@ -5,8 +5,8 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 USB 2.0 DL-1xx Devices](#USB_2.0_DL-1xx_Devices)
-    *   [1.2 USB 3.0 DL-5xxx, DL-41xx, DL-3x00 Devices](#USB_3.0_DL-5xxx.2C_DL-41xx.2C_DL-3x00_Devices)
+    *   [1.1 USB 2.0 DL-1x5, DL-1x0 Devices](#USB_2.0_DL-1x5.2C_DL-1x0_Devices)
+    *   [1.2 USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices](#USB_3.0_DL-6xxx.2C_DL-5xxx.2C_DL-41xx.2C_DL-3xxx_Devices)
     *   [1.3 Setting up X Displays](#Setting_up_X_Displays)
 *   [2 Configuration](#Configuration)
     *   [2.1 Load the framebuffer device](#Load_the_framebuffer_device)
@@ -22,7 +22,7 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
 
 ## Installation
 
-### USB 2.0 DL-1xx Devices
+### USB 2.0 DL-1x5, DL-1x0 Devices
 
 The kernel [DRM](https://en.wikipedia.org/wiki/Direct_Rendering_Manager "wikipedia:Direct Rendering Manager") driver for DisplayLink is `udl`, a rewrite of the original [udlfb](https://www.kernel.org/doc/Documentation/fb/udlfb.txt) driver. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr").
 
@@ -30,7 +30,7 @@ First, the setup and installation:
 
 *   [Blacklist](/index.php/Blacklist "Blacklist") the old kernel module, `udlfb`, which may attempt to load itself first.
 
-### USB 3.0 DL-5xxx, DL-41xx, DL-3x00 Devices
+### USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices
 
 1.  Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) driver. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver.
 2.  Enable `displaylink.service`.

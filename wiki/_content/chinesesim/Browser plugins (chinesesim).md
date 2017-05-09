@@ -21,24 +21,25 @@
 *   [2 PDF浏览器](#PDF.E6.B5.8F.E8.A7.88.E5.99.A8)
     *   [2.1 PDF.js](#PDF.js)
     *   [2.2 External PDF viewers](#External_PDF_viewers)
-*   [3 Citrix](#Citrix)
-*   [4 Java](#Java)
-*   [5 Pipelight](#Pipelight)
-*   [6 视频播放插件](#.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E6.8F.92.E4.BB.B6)
-    *   [6.1 其它插件](#.E5.85.B6.E5.AE.83.E6.8F.92.E4.BB.B6)
-*   [7 其他](#.E5.85.B6.E4.BB.96)
-    *   [7.1 Hangouts](#Hangouts)
-    *   [7.2 MozPlugger](#MozPlugger)
-    *   [7.3 kpartsplugin](#kpartsplugin)
-*   [8 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [8.1 Flash无声音](#Flash.E6.97.A0.E5.A3.B0.E9.9F.B3)
-    *   [8.2 Flash独占了声音设备](#Flash.E7.8B.AC.E5.8D.A0.E4.BA.86.E5.A3.B0.E9.9F.B3.E8.AE.BE.E5.A4.87)
-    *   [8.3 Flash性能](#Flash.E6.80.A7.E8.83.BD)
-    *   [8.4 Flash中webcam分辨率低](#Flash.E4.B8.ADwebcam.E5.88.86.E8.BE.A8.E7.8E.87.E4.BD.8E)
-    *   [8.5 Black bars in fullscreen video playback on multiheaded desktops](#Black_bars_in_fullscreen_video_playback_on_multiheaded_desktops)
-    *   [8.6 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
-    *   [8.7 插件安装后无法使用](#.E6.8F.92.E4.BB.B6.E5.AE.89.E8.A3.85.E5.90.8E.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
-    *   [8.8 Gecko Media Player 无法播放 Apple Trailers](#Gecko_Media_Player_.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE_Apple_Trailers)
+*   [3 中国的在线支付](#.E4.B8.AD.E5.9B.BD.E7.9A.84.E5.9C.A8.E7.BA.BF.E6.94.AF.E4.BB.98)
+*   [4 Citrix](#Citrix)
+*   [5 Java](#Java)
+*   [6 Pipelight](#Pipelight)
+*   [7 视频播放插件](#.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E6.8F.92.E4.BB.B6)
+    *   [7.1 其它插件](#.E5.85.B6.E5.AE.83.E6.8F.92.E4.BB.B6)
+*   [8 其他](#.E5.85.B6.E4.BB.96)
+    *   [8.1 Hangouts](#Hangouts)
+    *   [8.2 MozPlugger](#MozPlugger)
+    *   [8.3 kpartsplugin](#kpartsplugin)
+*   [9 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [9.1 Flash无声音](#Flash.E6.97.A0.E5.A3.B0.E9.9F.B3)
+    *   [9.2 Flash独占了声音设备](#Flash.E7.8B.AC.E5.8D.A0.E4.BA.86.E5.A3.B0.E9.9F.B3.E8.AE.BE.E5.A4.87)
+    *   [9.3 Flash性能](#Flash.E6.80.A7.E8.83.BD)
+    *   [9.4 Flash中webcam分辨率低](#Flash.E4.B8.ADwebcam.E5.88.86.E8.BE.A8.E7.8E.87.E4.BD.8E)
+    *   [9.5 Black bars in fullscreen video playback on multiheaded desktops](#Black_bars_in_fullscreen_video_playback_on_multiheaded_desktops)
+    *   [9.6 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
+    *   [9.7 插件安装后无法使用](#.E6.8F.92.E4.BB.B6.E5.AE.89.E8.A3.85.E5.90.8E.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
+    *   [9.8 Gecko Media Player 无法播放 Apple Trailers](#Gecko_Media_Player_.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE_Apple_Trailers)
 
 ## Flash Player
 
@@ -182,6 +183,13 @@ If this is not enough, you may need to change 2 values in `about:config`:
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
 Restart and it should work like a charm!
+
+## 中国的在线支付
+
+中国的第三方在线支付网站通常采用所谓的“安全插件”来输入密码。这些 NPAPI 插件在 Firefox 52+ 中已不再支持，可以尝试使用 [palemoon](https://aur.archlinux.org/packages/palemoon/)
+
+*   银联在线支付：[upeditor](https://aur.archlinux.org/packages/upeditor/)
+*   支付宝：[aliedit](https://aur.archlinux.org/packages/aliedit/)
 
 ## Citrix
 

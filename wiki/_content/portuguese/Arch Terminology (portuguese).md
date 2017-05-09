@@ -1,37 +1,45 @@
 A intenção desta página é desmistificar os termos comumente usados pela comunidade do Arch Linux. Sinta-se à vontade para adicionar ou modificar quaisquer termos, mas por favor use a opção de editar da opção específica. Se você decidir adicionar algum termo, por favor adicione-o em ordem alfabética.
 
-**Note:** Alguns itens estão fora da ordem alfabética enquanto falta terminar a tradução, mas serão reorganizados posteriormente
-
 ## Contents
 
-*   [1 Arch Linux](#Arch_Linux)
-*   [2 ABS](#ABS)
-*   [3 ARM](#ARM)
+*   [1 ABS](#ABS)
+*   [2 Arch Linux](#Arch_Linux)
+*   [3 Arch Linux Archive](#Arch_Linux_Archive)
 *   [4 AUR](#AUR)
-*   [5 PKGBUILD](#PKGBUILD)
-*   [6 TU, Trusted User](#TU.2C_Trusted_User)
-*   [7 bbs](#bbs)
-*   [8 community/[community]](#community.2F.5Bcommunity.5D)
-*   [9 core/[core]](#core.2F.5Bcore.5D)
-*   [10 repositório do usuário/personalizado](#reposit.C3.B3rio_do_usu.C3.A1rio.2Fpersonalizado)
-*   [11 Desenvolvedor](#Desenvolvedor)
-*   [12 extra/[extra]](#extra.2F.5Bextra.5D)
-*   [13 hwd](#hwd)
-*   [14 hwdetect](#hwdetect)
-*   [15 initramfs](#initramfs)
-*   [16 initrd](#initrd)
-*   [17 makepkg](#makepkg)
-*   [18 namcap](#namcap)
-*   [19 package](#package)
-*   [20 Package maintainer](#Package_maintainer)
-*   [21 pacman](#pacman)
-*   [22 pacman.conf](#pacman.conf)
-*   [23 repository/repo](#repository.2Frepo)
-*   [24 RTFM](#RTFM)
-*   [25 taurball](#taurball)
-*   [26 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [27 udev](#udev)
-*   [28 wiki](#wiki)
+*   [5 bbs](#bbs)
+*   [6 community/[community]](#community.2F.5Bcommunity.5D)
+*   [7 core/[core]](#core.2F.5Bcore.5D)
+*   [8 custom/user repository](#custom.2Fuser_repository)
+*   [9 Developer](#Developer)
+*   [10 extra/[extra]](#extra.2F.5Bextra.5D)
+*   [11 initramfs](#initramfs)
+*   [12 initrd](#initrd)
+*   [13 KISS](#KISS)
+*   [14 makepkg](#makepkg)
+*   [15 namcap](#namcap)
+*   [16 package](#package)
+*   [17 Package maintainer](#Package_maintainer)
+*   [18 pacman](#pacman)
+*   [19 pacman.conf](#pacman.conf)
+*   [20 PKGBUILD](#PKGBUILD)
+*   [21 repository/repo](#repository.2Frepo)
+*   [22 RTFM](#RTFM)
+*   [23 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [24 The Arch Way](#The_Arch_Way)
+*   [25 TU, Trusted User](#TU.2C_Trusted_User)
+*   [26 udev](#udev)
+*   [27 wiki](#wiki)
+
+## ABS
+
+Acrônimo de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), que pode ser traduzido como "Sistema de Compilação do Arch", é útil para:
+
+*   Fazer novos pacotes de software para os quais nenhum pacote está disponível
+*   Personalizar/modificar pacotes existentes para ajustar suas necessidades (habilitando ou desabilitando opções)
+*   Recompilar seu sistema completo usando as flags do seu compilador, "a la Gentoo"
+*   Fazer com que módulos do kernel funcionem no seu kernel personalizado
+
+ABS não é necessário para se usar o Arch Linux, mas é muito útil.
 
 ## Arch Linux
 
@@ -45,76 +53,43 @@ Archlinux, ArchLinux, archLinux, aRcHlInUx, etc. são todos estranhas mutações
 
 Oficialmente, o 'Arch' de "Arch Linux" é pronunciado /ˈɑrtʃ/ como em "archer"/arqueiro, ou "arch-nemesis" ("arqui-inimigo") e não como em "ark" ou "archangel" ("arcanjo").
 
-## ABS
+## Arch Linux Archive
 
-O [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), ou ABS, ("Sistema de Compilação do Arch") é útil para:
-
-*   Fazer novos pacotes de software para os quais nenhum pacote está disponível
-*   Personalizar/modificar pacotes existentes para ajustar suas necessidades (habilitando ou desabilitando opções)
-*   Reconstruir seu sistema completo usando as flags do seu compilador, "a la Gentoo"
-*   Fazer com que módulos do kernel funcionem no seu kernel personalizado
-
-ABS não é necessário para se usar o Arch Linux, mas é muito útil.
-
-## ARM
-
-**Note:** Arch Rollback Machine fechou em 2013-08-18 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1313360#p1313360)
-
-O [Arch Rollback Machine](/index.php/Downgrading_packages#Arch_Rollback_Machine "Downgrading packages") é um espelho que não remove versões antigas dos pacotes e é, portanto, muito útil se você precisa fazer downgrade do seu sistema.
+O [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (abreviado ALA), anteriormente conhecido Arch Linux Rollback Machine (a.k.a ARM), armazena *snapshots* de repositórios oficiais, imagens ISO e tarballs de *bootstrap* ao longo do tempo.
 
 ## AUR
 
-O [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. O AUR foi inicialmente concebido para organizar o compartilhamento de [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") por toda comunidade e para expedir a inclusão de pacotes populares contribuídos por usuários para os repositórios do [core] e [extra] via repositório [community] do AUR.
+O [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) que permite que você compile um pacote do fonte com [makepkg](/index.php/Makepkg "Makepkg") e, então, instale-o via [pacman](/index.php/Pacman#Additional_commands "Pacman"). O AUR foi criado para organizado para compartilhar novos pacotes da comunidade para ajudar e acelerar inclusão de pacotes populares para o repositório [community](/index.php/Community "Community"). Esse documento explica como usuários podem acessar e utilizar o AUR.
 
-O AUR é o local de nascimento de novos pacotes do Arch. Os usuários contribuem com seus pacotes para o AUR. A comunidade do AUR vota em seus pacotes favoritos e eventualmente, assim que um pacote receber pacotes suficientes, um Trusted User do AUR pode levar esse pacote para o repositório [community], o qual está acessível via [pacman](/index.php/Pacman "Pacman") e [ABS](/index.php/Arch_Build_System "Arch Build System").
+Um bom número de novos pacotes que entram nos repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir suas próprias compilações de pacote (PKGBUILD e arquivos relacionados). A comunidade do AUR possui a habilidade de votar por ou contra pacotes no AUR. Se um pacote se torna popular o suficiente — desde que tenha uma licença compatível e uma boa técnica de empacotamento — ele pode ser inserido no repositório *community* (diretamente acessível por [pacman](/index.php/Pacman "Pacman") ou [abs](/index.php/Abs "Abs")).
 
 Você pode acessar o repositório da comunidade de usuários do Arch Linux [aqui](https://aur.archlinux.org).
 
-## PKGBUILD
-
-Os [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") são pequenos scripts que constroem pacotes para o Arch Linux. Veja [Creating packages](/index.php/Creating_packages "Creating packages") para maiores detalhes.
-
-## TU, Trusted User
-
-Um [trusted user](/index.php/Trusted_Users "Trusted Users") ("usuário confiável"), é alguém que mantém o AUR e o repositório [community]. Trusted Users podem mover um pacote para o repositório [community], se ele foi votado como particular. TUs são apontados pela votação da maioria dos TUs existentes.
-
-Os Trusted users seguem as [AUR Trusted User Guidelines (Português)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)") e [TU by-laws](https://aur.archlinux.org/trusted-user/TUbylaws.html)
-
 ## bbs
 
-*bbs* é o acrônimo para "bulletin board system", mas no caso do Arch, é somente o fórum para suporte localizado [aqui](https://bbs.archlinux.org).
+*bbs* é o acrônimo para "Bulletin Board System"; no caso do Arch, é somente o fórum para suporte localizado [aqui](https://bbs.archlinux.org).
 
 ## community/[community]
 
-O repositório [community] é onde pacotes pré-compilados são disponibilizado pelos [Trusted Users](/index.php/Trusted_Users "Trusted Users"). A maioria dos pacotes no [community] vem do [AUR](/index.php/Arch_User_Repository "Arch User Repository").
-
-Para acessar o repositório [community], descomente-o no `/etc/pacman.conf`.
+O repositório *community* é onde pacotes pré-compilados são disponibilizados pelos [Trusted Users](/index.php/Trusted_Users "Trusted Users"). A maioria dos pacotes no *community* vem do [AUR](/index.php?title=Arch_Terminology_(Portugu%C3%AAs)/Arch_User_Repository_(Portugu%C3%AAs)&action=edit&redlink=1 "Arch Terminology (Português)/Arch User Repository (Português) (page does not exist)").
 
 ## core/[core]
 
-O repositório [core] contém os pacotes básicos para um sistema do Arch Linux. O [core] tem tudo necessário para ter um sistema de linha de comando funcionando.
+O repositório *core* contém os pacotes básicos para um sistema do Arch Linux. O *core* tem tudo que é necessário ter um sistema funcional de linha de comando.
 
-## repositório do usuário/personalizado
+## custom/user repository
 
-Em inglês "custom/user repository", qualquer usuário pode criar um e disponibilizá-lo para outros usuários. Para criar um repositório, você precisa de um conjunto de pacotes e um arquivo de banco de dados compatível com o [pacman](/index.php/Pacman "Pacman") para seus pacotes. Hospede seus arquivos online e todo mundo poderá usar seu repositório adicionando-o como um repositório comum.
+Trata-se de repositório personalizado, de usuário. Qualquer um pode criar um e disponibilizá-lo para outros usuários. Para criar um repositório, você precisa de um conjunto de pacotes e um arquivo de banco de dados compatível com o [pacman](/index.php/Pacman "Pacman") para seus pacotes. Hospede seus arquivos online e todo mundo poderá usar seu repositório adicionando-o como um repositório comum.
 
-Veja [Custom local repository](/index.php/Custom_local_repository "Custom local repository").
+Veja [Repositório local personalizado](/index.php/Custom_local_repository "Custom local repository").
 
-## Desenvolvedor
+## Developer
 
-Em inglês "developer", são semi-deuses trabalhando para melhorar o Arch por nenhum ganho financeiro. [Desenvolvedores](https://www.archlinux.org/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin, os quais por sua vez são deixados para trás por tacos.
+Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin, os quais por sua vez são deixados para trás por tacos.
 
 ## extra/[extra]
 
-Coleção oficial de pacotes do Arch é razoalmente simples, mas suplementamos isso com um maior e mais completo do repositório "extra" que contém muitas das coisas que nunca entrou na coleção de pacotes centrais. Este repositório está constantemente aumentando com a ajuda de pacotes enviados da comunidade forte. É aqui onde os ambientes de trabalho, gerenciadores de janela e programas comuns são encontrados.
-
-## hwd
-
-[hwd](https://aur.archlinux.org/packages/hwd/) é uma ferramenta de detecção de hardware e gerador de `xorg.conf` para o Arch Linux. Em vez de executar um script de configuração automática que poderia ser esperado, hwd não altera a configuração existente. Ele detecta hardwares e módulos e fornece informação sobre como fazer alterações manualmente. Isso permite que o usuário tenha controle sobre seu próprio sistema, que é a filosofia básica do Arch Linux
-
-## hwdetect
-
-[hwdetect](/index.php/Hwdetect "Hwdetect") é uma script de detecção de hardware primariamente usado para carregar ou listar módulos para ser usado no `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` ou `/etc/[mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf")`. O script faz uso da informação exportada pelo subsistema de sysfs empregado pelo kernel do Linux.
+Coleção oficial de pacotes do Arch é razoavelmente simples, mas suplementamos isso com um maior e mais completo do repositório *extra* que contém muitas das coisas que nunca entrou na coleção de pacotes centrais. Este repositório está constantemente aumentando com a ajuda de pacotes enviados da comunidade forte. É aqui onde os ambientes de trabalho, gerenciadores de janela e programas comuns são encontrados.
 
 ## initramfs
 
@@ -122,9 +97,11 @@ Veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio").
 
 ## initrd
 
-O arquivo especial `/dev/initrd` é um dispositivo de bloco somente leitura. O dispositivo `/dev/initrd` é um disco RAM que é inicializado (ex.: carregado) pelo carregador (bootloader) antes do kernel ser iniciado. O kernle, então, usa o conteúdo do dispositivo de bloco `/dev/initrd` para a segunda fase da inicialização do sistema.
+Obsoleto. Hoje em dia é frequentemente usado como um sinônimo de initramfs.
 
-Na primeira fase da inicialização, o kernel inicializa e monta uma sistema de arquivos raiz inicial do conteúdo do `/dev/initrd` (ex.: disco RAM inicializado peloe carregador (bootloader). Na segunda fase, drivers adicionais e outros módulos são carregados do conteúdo inicial raiz do dispositivo. Após carregar os módulos adicionais, um novo sistema de arquivos raiz (i.e. o sistema de arquivo raiz normal) é montado de um dispositivo diferente.
+## KISS
+
+Acrônimo para *Keep It Simple, Stupid*, que em português seria algo como "mantenha isto simples, estúpido". [Simplicidade](/index.php/Arch_Linux#Simplicity "Arch Linux") é um princípio central que o Arch Linux tenta atingir.
 
 ## makepkg
 
@@ -138,100 +115,90 @@ As regras retornam listas de mensagens. Cada mensagem pode ser uma dos três tip
 
 ## package
 
-Um package("pacote") é um conjunto de arquivos que contém:
+Pacote é um conjunto de arquivos que contém:
 
-*   Todos os arquivos (compilados) de um aplicativo
-*   Metadados sobre o aplicativo como nome, versão, dependências...
-*   Arquivos de instalação e diretrizes para o [pacman](/index.php/Pacman "Pacman")
-*   (Opcionalmente) arquivos extras para facilitar sua vida, como um script de start/stop
+*   todos os arquivos (compilados) de um aplicativo
+*   metadados sobre o aplicativo como nome, versão, dependências...
+*   arquivos e diretrizes de instalação para o [pacman](/index.php/Pacman "Pacman")
+*   (opcionalmente) arquivos extras para facilitar sua vida, como um script de start/stop
 
 O [pacman](/index.php/Pacman "Pacman"), gerenciador de pacotes do arch, pode instalar, atualizar e remover esses pacotes. Usar um gerenciador de pacotes em vez de compilar e instalar programas manualmente tem vários benefícios:
 
-*   Fácil atualização: pacman irá atualizar os pacotes existentes, logo que as atualizações estejam disponíveis
-*   Checagem de dependências: pacman lida com dependências para você, você só precisa especificar o programa e pacman instala-o junto com todos os outros programas necessários
-*   Remoção limpa: pacman tem uma lista de todos os arquivos em um pacote. Desta forma, nenhum arquivo será deixado para trás quando você decidir remover um pacote.
+*   fácil atualização: pacman vai atualizar os pacotes existentes, assim que as atualizações estiverem disponíveis
+*   verificações de dependência: pacman lida com dependências para você, você só precisa especificar o programa e pacman instala-o junto com todos os outros programas necessários
+*   remoção limpa: pacman tem uma lista de todos os arquivos em um pacote. Desta forma, nenhum arquivo será deixado para trás quando você decidir remover um pacote.
 
 **Note:** Distribuições GNU/Linux podem usar diferentes pacotes com seus respectivos gerenciadores, significa dizer que você não pode usar o pacman para instalar um pacote Debian no Arch.
 
 ## Package maintainer
 
-The role of the package maintainer is to update packages as new versions become available upstream and to field support questions relating to bugs in said packages. The term may be applied to any of the following:
+Mantenedor de pacote é o papel responsável por atualizar pacotes na medida em que novas versões são disponibilizadas pelo *upstream*, além de fornecer suporte em relatórios de erros sobre eles. O termo pode se aplicar a qualquer um dos seguintes:
 
-A core Arch Linux developer who maintains a software package in one of the official repositories (core, extra, or testing).
+*   Um desenvolvedor do Arch Linux que mantém um pacote de software em um dos repositórios oficiais (*core*, *extra* ou *testing*).
+*   Um [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") da comunidade que mantém pacotes de software no repositório de comunidade extraoficiais/sem suporte.
+*   Um usuário normal que mantém um [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") e arquivos fontes locais no [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
-A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") of the community who maintains software packages in the unsupported/unofficial community repository.
-
-A normal user who maintains a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and local source files in the [AUR](/index.php/AUR "AUR").
-
-The maintainer of a package is the person currently responsible for the package. Previous maintainers should be listed as contributors in the PKGBUILD along with others who have contributed to the package.
+O mantenedor de um pacote é a pessoa atualmente responsável pelo pacote. Mantenedores anteriores deve ser listado como contribuidores no PKGBUILD junto com outros que contribuíram para o pacote.
 
 ## pacman
 
-The [pacman](/index.php/Pacman "Pacman") package manager is one of the great highlights of Arch Linux. It combines a simple binary package format with an easy-to-use build system (see [ABS](/index.php/Arch_Build_System "Arch Build System")). Pacman makes it possible to easily manage and customize packages, whether they be from the official Arch repositories or the user's own creations. The repository system allows users to build and maintain their own custom package repositories, which encourages community growth and contribution (see [AUR](/index.php/Arch_User_Repository "Arch User Repository")).
+O [gerenciador de pacotes](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") [pacman](/index.php/Pacman "Pacman") é um das características mais distintas do Arch Linux. Ele combina um formato de pacote binário simples com um [sistema de compilação](/index.php/Arch_Build_System "Arch Build System") fácil de usar. O objetivo do *pacman* é possibilitar gerenciar pacotes facilmente, sejam eles dos [repositórios oficiais](/index.php/Official_repositories "Official repositories") ou de compilações do próprio usuário.
 
-Pacman can keep a system up to date by synchronizing package lists with the master server, making it a breeze for the security-conscious system administrator to maintain. This server/client model also allows you to download/install packages with a simple command, complete with all required dependencies (similar to Debian's apt-get).
+*pacman* mantém o sistema atualizado sincronizando listas de pacotes com o servidor mestre. Esse modelo servidor/cliente também permite que o usuário baixe/instale pacotes com um comando simples e completo com todas as dependências necessários.
 
-NB: Pacman was written by Judd Vinet, the creator of Arch Linux. It is used as a package management tool by other distributions as well, such as FrugalWare, Rubix, UfficioZero (in Italian, based on Ubuntu), and, of course, [Arch based distributions](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)") such as Archie and AEGIS.
+Note: Pacman foi escrito por Judd Vinet, o criador do Arch Linux. Ele é usado como uma ferramenta de gerenciamento de pacote por outras distribuições também, tal como FrugalWare, Rubix, UfficioZero (na Itália, baseado no Ubuntu) e, é claro, [distribuições baseada no Arch](/index.php/Arch_based_distributions "Arch based distributions"), tal como Archie e AEGIS.
 
 ## pacman.conf
 
-This is the configuration file of [pacman](/index.php/Pacman "Pacman"). It is located in `/etc`. For a full explanation of its powers, type this at the command line:
+Esse é o arquivo de configuração do [pacman](/index.php/Pacman "Pacman"). Ele está localizado no `/etc`. Para uma explicação completa de seus poderes, digite isso na linha de comando: `man pacman.conf`.
 
-```
-man pacman.conf
+## PKGBUILD
 
-```
+[PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") são pequenos scripts que são usados para compilar pacotes do Arch Linux. Veja [Criando pacotes](/index.php/Creating_packages "Creating packages") para mais detalhes.
 
 ## repository/repo
 
-The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). Official repositories are
-
-*   [core]: containing the latest version of packages required for a full CLI system
-*   [extra]: containing the latest version of packages not needed for a working system but are needed for an enjoyable system ;)
-*   [community]: containing packages that came from [AUR](/index.php/Arch_User_Repository "Arch User Repository") and got enough user votes
-
-Pacman uses these repositories to search for packages and install them. A repository can be local (i.e. on your own computer) or remote (i.e. the packages are downloaded before they are installed).
+Repositório contém pacotes pré-compilados de um ou (geralmente) mais [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). [Repositórios oficiais](/index.php/Official_repositories "Official repositories") são divididos em diferentes partes para facilitar manutenção. O pacman usa esses repositórios para pesquisar por pacotes e instalá-los. Um repositório podem ser lcaol (i.e. em seu computador) ou remoto (i.e. os pacotes são baixados antes de serem instalados).
 
 ## [RTFM](https://en.wikipedia.org/wiki/RTFM "wikipedia:RTFM")
 
-"Read The Fucking (or Fine) Manual". This simple message is replied to a lot of new Linux/Arch users who ask about the functionality of a program when it is clearly defined in the program's manual.
+'"Read The Fucking (ou Fine) Manual"', que pode ser traduzido como "Leia a porra desse manual". Essa mensagem simples é respondida a muitos dos novos usuários Linux/Arch que perguntam sobre a funcionalidade de um programa quando ela está definida, de forma clara, no manual do programa.
 
-It is often used when a user fails to make any attempt to find a solution to the problem themselves. If someone tells you this, they are not trying to offend you; they are just frustrated with your lack of effort.
+É geralmente usada quando um usuário falha em, ele mesmo, fazer qualquer tentativa de encontrar uma solução para o problema. Se alguém lhe disser isso, não está tentando lhe ofender; está apenas frustrado com sua falta de esforço.
 
-The best thing to do if you are told to do this is to read the manual page.
+A melhor coisa a se fazer se lhe falarem isso é ler a página do manual.
 
-*   To read the program manual page for a particular program, type this at the command line:
+*   Para ler a página de manual de um programa em particular chamado de NOME-PROGRAMA, digite isso na linha de comando: `man NOME-PROGRAMA`.
 
-```
-man PROGRAM-NAME
+Se você não localizar a resposta para sua pergunta no manual do programa, há mais formas de encontrar a resposta. Você pode:
 
-```
-
-where PROGRAM-NAME is the name of the program you need more information about.
-
-If you do not find the answer to your question in the program manual, there are more ways to find the answer. You can:
-
-*   search the [wiki](/index.php/Special:Search "Special:Search")
-*   search the [forum](https://bbs.archlinux.org)
-*   search the [mailing lists](https://www.google.com/#hl=en&q=arch+site:archlinux.org%2Fpipermail%2F)
-*   search the [web](https://www.google.com)
-
-## taurball
-
-The tarballed [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and local source files that are required by makepkg to create an installable binary package. The name is derived from the practice of uploading such tarballs to the [AUR](/index.php/Arch_User_Repository "Arch User Repository"), hence "tAURball".
+*   pesquisar no [wiki](/index.php/Special:Search "Special:Search")
+*   pesquisar no [fórum](https://bbs.archlinux.org)
+*   Pesquisar nas [listas de discussão](https://www.google.com/#hl=en&q=arch+site:archlinux.org%2Fpipermail%2F)
+*   Pesquisar na [web](https://www.google.com)
 
 ## testing/[testing]
 
-This is the repository where major packages/updates to packages are kept prior to release into the main repositories, so they can be bug tested and upgrade issues can be found. It is disabled by default but can be enabled in `/etc/pacman.conf`
+Esse é o respositório no qual a maioria dos pacotes ou das atualizações de pacotes são mantidas antes de serem lançadas para os repositórios principais, de forma que eles podem ser testados e atualizações de problemas podem ser descobertas. É desabilitado por padrão, mas pode ser habilitado no `/etc/pacman.conf`
+
+## The Arch Way
+
+Podendo ser traduzido como "A Forma do Arch", é um termo extraoficial tradicionalmente usado para se referir aos mais importantes [princípios do Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princ.C3.ADpios "Arch Linux (Português)").
+
+## TU, Trusted User
+
+Um *[trusted user](/index.php/Trusted_user "Trusted user")*, que pode ser traduzido como "usuário confiável", é alguém que mantém o AUR e o repositório [community]. Trusted Users podem mover um pacote para o repositório [community], se ele foi votado como particular. TUs são apontados pela votação da maioria dos TUs existentes.
+
+Os Trusted Users seguem as [AUR Trusted User Guidelines (Português)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)") e [TU by-laws](https://aur.archlinux.org/trusted-user/TUbylaws.html).
 
 ## udev
 
-[udev](/index.php/Udev "Udev") provides a dynamic device directory containing only the files for actually present devices. It creates or removes device node files in the `/dev` directory, or it renames network interfaces.
+[udev](/index.php/Udev "Udev") fornece um diretório dinâmico de dispositivos contendo apenas os arquivos para os dispositivos presentes no momento. Ele cria ou remove arquivos de nó de dispositivos no diretório `/dev` ou renomeia as interfaces de rede.
 
-Usually udev runs as udevd(8) and receives uevents directly from the kernel if a device is added/removed to/from the system.
+Geralmente o udev é executado como udevd(8) e recebe *uevents* diretamente do kernel se um dispositivo é adicionado/removido do sistema.
 
-If udev receives a device event, it matches its configured rules against the available device attributes provided in sysfs to identify the device. Rules that match may provide additional device information or specify a device node name and multiple symlink names and instruct udev to run additional programs as part of the device event handling.
+Se o udev recebe um evento de dispositivo, ele compara suas regras configuradas com os atributos do dispositivo disponível fornecidos no sysfs para identificar o dispositivo. Regras que corresponderem podem fornecer informações adicionais do dispositivo ou especificar um nome de nó de dispositivo e múltiplos nomes de *symlink* e instruir udev a executar programas adicionais como parte da manipulação de evento do dispositivo.
 
 ## [wiki](https://en.wikipedia.org/wiki/Wiki "wikipedia:Wiki")
 
-[This!](/index.php/Main_page "Main page") A place to find documentation about Arch Linux. Anyone can add and modify the documentation.
+[O próprio!](/index.php/Main_page "Main page") Um lugar para encontrar documentação sobre o Arch Linux. Qualquer um pode adicionar e modificar a documentação.

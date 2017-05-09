@@ -34,6 +34,9 @@ For additional functionality, you may wish to install the following:
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
 *   A screen locker, if needed. For example, [slock](https://www.archlinux.org/packages/?name=slock) or [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under "LXQT Session Settings/Lock screen before suspending".
+
+**Tip:** LXQt uses `xdg-screensaver` from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) for screen locking which only works with [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) and [xautolock](https://www.archlinux.org/packages/?name=xautolock) in LXQt session. You can use it or another screen locker by itself. For example, with [slock](/index.php/Slock "Slock") you can configure [systemd service](https://wiki.archlinux.org/index.php/Slock#Lock_on_suspend) as well as install patched [xdg-utils-slock](https://aur.archlinux.org/packages/xdg-utils-slock/) to obtain feelings expected by LXQt
+
 *   Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
 
 ## Starting the desktop

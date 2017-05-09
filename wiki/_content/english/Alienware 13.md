@@ -107,6 +107,8 @@ OpenGL Renderer: GeForce GTX 860M/PCIe/SSE2
 
 With this we have the graphics card working ondemand
 
+It is to be noted that some alienware laptop (AlienWare 13 R3) shows this [issue](/index.php/Bumblebee#Lockup_issue_.28lspci_hangs.29 "Bumblebee") where lspci / startx / any command hangs and freeze the system when probing inactive discrete nvidia gpu.
+
 ## Keyboard Lights
 
 To get access to the keyboard lights they can be controlling by sending data to the correct usb.

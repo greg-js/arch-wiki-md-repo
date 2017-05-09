@@ -174,21 +174,9 @@ contains_outof="SP55S;SQ45S70S;SX60P;R59P/R60P/R61P;Q310;X05;N120">
 
 Also you can play with xbindkey. As an example, here is how to bind the keys for volume control :
 
-1) install *xbindkeys* (and *xbacklight* from package *xorg-server-utils* for brightness control):
+1) Install the [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) packages:
 
-```
-pacman -S xbindkeys xorg-server-utils
-
-```
-
-2) crate a config file in your home directory :
-
-```
-vi .xbindkeysrc
-
-```
-
-3) with the following content :
+2) Create `~/.xbindkeysrc` with the following content:
 
 ```
 "amixer sset Master 2+ &"
@@ -214,7 +202,7 @@ xbindkeys -k
 
 ```
 
-4) run xbindkeys :
+3) Run xbindkeys :
 
 ```
 xbindkeys

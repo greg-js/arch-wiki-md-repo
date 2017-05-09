@@ -209,19 +209,11 @@ I
 
 ### 启用自动登录
 
-编辑 LightDM 配置文件并确保以下内容已经取消注释并配置正确:
+编辑 LightDM 配置文件，取消该行的注释，并添加要自动登陆的用户名:
 
- `/etc/lightdm/lightdm.conf` 
-```
-[Seat:*]
-pam-service=lightdm
-pam-autologin-service=lightdm-autologin
-autologin-user=*username*
-autologin-user-timeout=0
-session-wrapper=/etc/lightdm/Xsession
-```
+ `/etc/lightdm/lightdm.conf`  `autologin-user=*username*` 
 
-即使 `autologin` 已启用, LightDM 也会经由 [PAM](/index.php/PAM "PAM")验证 。你必须是 `autologin` 组的成员来使得自己登录时不用输入密码:
+你必须是 `autologin` 组的成员来使得自己登录时不用输入密码:
 
 ```
 # groupadd autologin

@@ -239,6 +239,14 @@ Name=nvidia-fan-speed
 
 **Note:** Since the drivers version 349.16, `GPUCurrentFanSpeed` has to be replaced with `GPUTargetFanSpeed`.[[1]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
 
+To make it possible to adjust the fanspeed of more than one graphics card, run:
+
+```
+$ nvidia-xconfig --enable-all-gpus
+$ nvidia-xconfig --cool-bits=4
+
+```
+
 ## Manual configuration
 
 Several tweaks (which cannot be enabled [automatically](/index.php/NVIDIA#Automatic_configuration "NVIDIA") or with the [GUI](/index.php/NVIDIA#NVIDIA_Settings "NVIDIA")) can be performed by editing your [config](/index.php/NVIDIA#Minimal_configuration "NVIDIA") file. The Xorg server will need to be restarted before any changes are applied.

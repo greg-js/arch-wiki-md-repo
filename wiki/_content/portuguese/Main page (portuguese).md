@@ -1,52 +1,61 @@
 **Bem-vindo ao Wiki [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)"): a sua fonte para a documentação do Arch Linux na web.**
 
-## Começando
+Visite a [Tabela de conteúdos](/index.php/Table_of_contents "Table of contents") para uma listagem de categorias de artigo.
 
-Os links abaixo são úteis para os iniciantes no Arch Linux.
+## A distribuição
 
 	[Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)")
 
 	Um breve resumo do Arch Linux; descreve o que esperar de um sistema Arch Linux.
 
-	[Saiba mais sobre o Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)")
+	[Perguntas frequentes](/index.php/Frequently_asked_questions_(Portugu%C3%AAs) "Frequently asked questions (Português)")
 
-	Descreve os princípios e a filosofia do Arch Linux.
+	Perguntáveis notáveis e fatos sobre a distribuição.
 
-	[Arch vs Outras Distribuições](/index.php/Arch_compared_to_other_distributions_(Portugu%C3%AAs) "Arch compared to other distributions (Português)")
+	[Arch comparado com outras distribuições](/index.php/Arch_compared_to_other_distributions_(Portugu%C3%AAs) "Arch compared to other distributions (Português)")
 
 	Resume as semelhanças e diferenças entre o Arch e outras distribuições.
 
-	[AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
-
-	É um repositório dirigido pela comunidade para usuários do Arch
-
-	[Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-
-	Gerenciador de pacote do pacman
-
 	[Guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
 
-	Um guia de instalação resumido, dirigido aos usuários experientes do Arch.
+	Guia pela processo de instalação do Arch Linux.
 
-	[FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)")
+	[Recomendações gerais](/index.php/General_recommendations "General recommendations")
 
-	Lista de perguntas mais frequentes.
+	Índice anotado de tutoriais pós-instalação e outros artigos populares.
 
-	[Conheça o systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")
+	[Lista de aplicativos](/index.php/List_of_applications "List of applications")
 
-	é um sistema e gerenciador de serviços para Linux, compatível com os scripts de inicializações SysV e LS
+	Apresentação categorizada de pacotes oficiais e do AUR comuns.
 
-	[Tutorial ArchWiki](/index.php/ArchWiki_Tutorial_(Portugu%C3%AAs) "ArchWiki Tutorial (Português)")
+## Nossa comunidade
 
-	Um breve tutorial sobre como editar e contribuindo para o Arch Linux wiki.
+	[Código de conduta](/index.php/Code_of_conduct "Code of conduct")
 
-## Notícias do Wiki
+	Diretrizes para a comunidade Arch.
 
-Visite a página de [Notícias](/index.php/Wiki_News "Wiki News") para as últimas informações sobre o Wiki (em inglês).
+	[Participe](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)")
 
-## How Tos (Como Fazer)
+	Descreve as várias formas que Archers podem contribuir para a comunidade do Arch.
 
-Está com problemas em configurar algo? Não sabe onde procurar?
-Provavelmente você encontrará algo útil na seção de [HowTos](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)"). Navegue por categorias, e tente encontrar o que procura. Se não o encontrar, tente usar a caixa de pesquisa sob a barra de navegação.
+	[ArchWiki:Contributing (Português)](/index.php?title=ArchWiki:Contributing_(Portugu%C3%AAs)&action=edit&redlink=1 "ArchWiki:Contributing (Português) (page does not exist)")
 
-É necessário criar uma conta para poder editar páginas. Depois disso, sinta-se à vontade para "brincar" no [Sandbox](/index.php/Sandbox "Sandbox") e se familiarizar com a linguagem de marcação do **ArchWiki**. A sua página de utilizador é outro bom lugar para brincar. Há uma lista da sintaxe simples em [Wiki Help Category](/index.php/Category:Help "Category:Help"). Este link também é uma barra de navegação.
+	Se você está interessado e pode contribuir para o wiki, por favor veja este artigo por ideias.
+
+	[Help:Editing (Português)](/index.php/Help:Editing_(Portugu%C3%AAs) "Help:Editing (Português)")
+
+	Tutorial curto sobre edição e contribuição para o wiki do Arch Linux.
+
+	[Comunidades internacionais](/index.php/International_communities "International communities")
+
+	Coleção de links para as comunidades do Arch Linux pelo mundo.
+
+	[Canais IRC](/index.php/IRC_channels "IRC channels")
+
+	Junte-se a seus colegas Archers para um bom bate-papo.
+
+## Ajuda
+
+Páginas do ArchWiki seguem convenções específicas, de forma que se você tiver problema em ler o ArchWiki ou entender algumas instruções, veja [Help:Reading](/index.php/Help:Reading "Help:Reading") para uma clarificação.
+
+Se estiver procurando por informações específicas, tente usar a caixa de pesquisa à esquerda. Alternativamente, use seu mecanismo de pesquisa web favorito que provavelmente fornece uma sintaxe especial ou interface para restringir os resultados para um site em particular (geralmente, anexar `site:wiki.archlinux.org` aos termos de pesquisa é suficiente). Veja [Help:Searching](/index.php/Help:Searching "Help:Searching") para outros truques.

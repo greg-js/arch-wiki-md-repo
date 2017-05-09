@@ -1,5 +1,7 @@
 **pkgfile** is a tool for searching files from packages in the [official repositories](/index.php/Official_repositories "Official repositories").
 
+**Tip:** Note since [pacman](https://www.archlinux.org/packages/?name=pacman) version 5.0 [a similar functionality is built in](/index.php/Pacman#Search_for_a_package_that_contains_a_specific_file "Pacman").
+
 ## Contents
 
 *   [1 Installation](#Installation)

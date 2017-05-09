@@ -920,7 +920,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Terasology** — Open source voxel world.
 
-	[http://terasology.org](http://terasology.org) || [minetest](https://www.archlinux.org/packages/?name=minetest)
+	[http://terasology.org](http://terasology.org) || [terasology](https://aur.archlinux.org/packages/terasology/)
 
 *   **The Powder Toy** — Open source physics sandbox game, which simulates air pressure and velocity, heat, gravity and a countless number of interactions between different substances.
 

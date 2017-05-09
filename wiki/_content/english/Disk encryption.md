@@ -159,7 +159,11 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | Relation to filesystem | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read |
 | Encryption implemented in... | kernelspace | kernelspace | kernelspace | kernelspace | userspace (using FUSE) |
 | Cryptographic metadata stored in... |  ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | header of each encrypted file | control file at the top level of each EncFs container |
-| Wrapped encryption key stored in... |  ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | key file that can be stored anywhere | key file that can be stored anywhere[[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831) |
+| Wrapped encryption key stored in... |  ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | key file that can be stored anywhere | key file that can be stored anywhere
+
+[[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831)
+
+ |
 | 
 
 ##### Practical implications
@@ -182,7 +186,11 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | Support for automounting on login |  ? | ✔ |  ? | ✔ | ✔ |
 | Support for automatic unmounting in case of inactivity |  ? |  ? |  ? |  ? | ✔ |
 | Non-root users can create/destroy containers for encrypted data | ✖ | ✖ | ✖ | limited | ✔ |
-| Provides a GUI | ✖ | ✖ | ✔ | ✖ | ✔ |
+| Provides a GUI | ✖ | ✖ | ✔ | ✖ | ✔
+
+[[3]](http://www.libertyzero.com/GEncfsM/)[[4]](https://launchpad.net/gencfsm)
+
+ |
 | 
 
 ##### Security features
@@ -218,7 +226,11 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 ##### Stacked filesystem encryption specific
 
  | eCryptfs | EncFs |
-| Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... | ext3, ext4, xfs (with caveats), jfs, nfs, cifs...[[3]](https://github.com/vgough/encfs) |
+| Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... | ext3, ext4, xfs (with caveats), jfs, nfs, cifs...
+
+[[5]](https://github.com/vgough/encfs)
+
+ |
 | Ability to encrypt filenames | ✔ | ✔ |
 | Ability to *not* encrypt filenames | ✔ | ✔ |
 | Optimized handling of sparse files | ✖ | ✔ |

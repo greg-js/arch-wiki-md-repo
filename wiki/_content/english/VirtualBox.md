@@ -11,12 +11,12 @@ In order to integrate functions of the host system to the guests, including shar
     *   [1.4 Accessing host USB devices in guest](#Accessing_host_USB_devices_in_guest)
     *   [1.5 Guest additions disc](#Guest_additions_disc)
     *   [1.6 Extension pack](#Extension_pack)
-    *   [1.7 Use the right front-end](#Use_the_right_front-end)
+    *   [1.7 Front-ends](#Front-ends)
 *   [2 Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests)
     *   [2.1 Installation in EFI mode](#Installation_in_EFI_mode)
     *   [2.2 Install the Guest Additions](#Install_the_Guest_Additions)
     *   [2.3 Set optimal framebuffer resolution](#Set_optimal_framebuffer_resolution)
-    *   [2.4 Load the Virtualbox kernel modules](#Load_the_Virtualbox_kernel_modules_2)
+    *   [2.4 Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules_2)
     *   [2.5 Launch the VirtualBox guest services](#Launch_the_VirtualBox_guest_services)
     *   [2.6 Hardware acceleration](#Hardware_acceleration)
     *   [2.7 Enable shared folders](#Enable_shared_folders)
@@ -28,44 +28,43 @@ In order to integrate functions of the host system to the guests, including shar
 *   [3 Virtual disks management](#Virtual_disks_management)
     *   [3.1 Formats supported by VirtualBox](#Formats_supported_by_VirtualBox)
     *   [3.2 Disk image format conversion](#Disk_image_format_conversion)
-        *   [3.2.1 VMDK to VDI and VDI to VMDK](#VMDK_to_VDI_and_VDI_to_VMDK)
-        *   [3.2.2 VHD to VDI and VDI to VHD](#VHD_to_VDI_and_VDI_to_VHD)
-        *   [3.2.3 QCOW2 to VDI and VDI to QCOW2](#QCOW2_to_VDI_and_VDI_to_QCOW2)
+        *   [3.2.1 QCOW](#QCOW)
     *   [3.3 Mount virtual disks](#Mount_virtual_disks)
         *   [3.3.1 VDI](#VDI)
     *   [3.4 Compact virtual disks](#Compact_virtual_disks)
     *   [3.5 Increase virtual disks](#Increase_virtual_disks)
         *   [3.5.1 General procedure](#General_procedure)
-        *   [3.5.2 Increase size for VDI disks](#Increase_size_for_VDI_disks)
+        *   [3.5.2 Increasing the size of VDI disks](#Increasing_the_size_of_VDI_disks)
     *   [3.6 Replace a virtual disk manually from the .vbox file](#Replace_a_virtual_disk_manually_from_the_.vbox_file)
         *   [3.6.1 Transfer between Linux host and other OS](#Transfer_between_Linux_host_and_other_OS)
     *   [3.7 Clone a virtual disk and assigning a new UUID to it](#Clone_a_virtual_disk_and_assigning_a_new_UUID_to_it)
 *   [4 Tips and tricks](#Tips_and_tricks)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 VERR_ACCESS_DENIED](#VERR_ACCESS_DENIED)
-    *   [5.2 pacstrap script fails](#pacstrap_script_fails)
-    *   [5.3 Keyboard and mouse are blocked in my virtual machine](#Keyboard_and_mouse_are_blocked_in_my_virtual_machine)
-    *   [5.4 Cannot send CTRL+ALT+Fn key to my virtual machine](#Cannot_send_CTRL.2BALT.2BFn_key_to_my_virtual_machine)
-    *   [5.5 Fix ISO images problems](#Fix_ISO_images_problems)
-    *   [5.6 VirtualBox GUI does not match my GTK Theme](#VirtualBox_GUI_does_not_match_my_GTK_Theme)
-    *   [5.7 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
-    *   [5.8 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
-    *   [5.9 USB subsystem is not working on the host or guest](#USB_subsystem_is_not_working_on_the_host_or_guest)
-    *   [5.10 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
-    *   [5.11 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
-    *   [5.12 Use serial port in guest OS](#Use_serial_port_in_guest_OS)
-    *   [5.13 Windows 8.x Error Code 0x000000C4](#Windows_8.x_Error_Code_0x000000C4)
-    *   [5.14 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
-    *   [5.15 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
-    *   [5.16 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
-    *   [5.17 "NS_ERROR_FAILURE" and missing menu items](#.22NS_ERROR_FAILURE.22_and_missing_menu_items)
-    *   [5.18 USB modem](#USB_modem)
-    *   [5.19 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
-    *   [5.20 No 64-bit OS client options](#No_64-bit_OS_client_options)
-    *   [5.21 Host OS freezes on Virtual Machine start](#Host_OS_freezes_on_Virtual_Machine_start)
-    *   [5.22 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
-    *   [5.23 Fullscreen mode shows blank guest screen](#Fullscreen_mode_shows_blank_guest_screen)
-    *   [5.24 Failed to insert module](#Failed_to_insert_module)
+    *   [5.1 Keyboard and mouse are locked into virtual machine](#Keyboard_and_mouse_are_locked_into_virtual_machine)
+    *   [5.2 No 64-bit OS client options](#No_64-bit_OS_client_options)
+    *   [5.3 VirtualBox GUI does not match host GTK theme](#VirtualBox_GUI_does_not_match_host_GTK_theme)
+    *   [5.4 Cannot send Ctrl+Alt+Fn to guest](#Cannot_send_Ctrl.2BAlt.2BFn_to_guest)
+    *   [5.5 USB subsystem not working](#USB_subsystem_not_working)
+    *   [5.6 USB modem not working on host](#USB_modem_not_working_on_host)
+    *   [5.7 Access serial port from guest](#Access_serial_port_from_guest)
+    *   [5.8 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
+    *   [5.9 Fullscreen mode shows blank screen](#Fullscreen_mode_shows_blank_screen)
+    *   [5.10 Host freezes on virtual machine start](#Host_freezes_on_virtual_machine_start)
+    *   [5.11 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
+    *   [5.12 Analog microphone not working](#Analog_microphone_not_working)
+    *   [5.13 Microphone not working after upgrade](#Microphone_not_working_after_upgrade)
+    *   [5.14 Problems with images converted to ISO](#Problems_with_images_converted_to_ISO)
+    *   [5.15 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
+    *   [5.16 Failed to insert module](#Failed_to_insert_module)
+    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
+    *   [5.18 NS_ERROR_FAILURE and missing menu items](#NS_ERROR_FAILURE_and_missing_menu_items)
+    *   [5.19 Arch: pacstrap script fails](#Arch:_pacstrap_script_fails)
+    *   [5.20 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
+    *   [5.21 Windows host: VERR_ACCESS_DENIED](#Windows_host:_VERR_ACCESS_DENIED)
+    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22)
+    *   [5.23 Windows 8.x error code 0x000000C4](#Windows_8.x_error_code_0x000000C4)
+    *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
+    *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -79,7 +78,7 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 *   for [linux](https://www.archlinux.org/packages/?name=linux) kernel choose [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
 *   for other [kernels](/index.php/Kernels "Kernels") choose [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
 
-To compile the virtualbox modules provided by [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms), it will also be necessary to install the appropriate headers package(s) for your installed kernel(s) (e.g. [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the [DKMS](/index.php/DKMS "DKMS") Pacman hook.
+To compile the VirtualBox modules provided by [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms), it will also be necessary to install the appropriate headers package(s) for your installed kernel(s) (e.g. [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the [DKMS](/index.php/DKMS "DKMS") Pacman hook.
 
 ### Sign modules
 
@@ -129,25 +128,23 @@ It is also recommended to install the [virtualbox-guest-iso](https://www.archlin
 
 ### Extension pack
 
-The Oracle Extension Pack which provides [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing), is released under a non-free license and **only available for personal use**. To install it, the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) package is available, and a prebuilt version can be found in the [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories") repository.
+The Oracle Extension Pack provides [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing) and is released under a non-free license **only available for personal use**. To install it, the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) package is available, and a prebuilt version can be found in the [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories") repository.
 
 If you prefer to use the traditional and manual way: download the extension manually and install it via the GUI (*File > Preferences > Extensions*) or via `VBoxManage extpack install <.vbox-extpack>`, make sure you have a toolkit (like [Polkit](/index.php/Polkit "Polkit"), gksu, etc.) to grant privileged access to VirtualBox. The installation of this extension [requires root access](https://www.virtualbox.org/ticket/8473).
 
-### Use the right front-end
+### Front-ends
 
-Now, you are ready to use VirtualBox. Congratulations!
+VirtualBox comes with three front-ends:
 
-Multiple front-ends are available to you of which three are available by default:
+*   If you want to use VirtualBox with the regular GUI, use `VirtualBox`.
+*   If you want to launch and manache your virtual machines from the command-line, use the `VBoxSDL` command, which only provides a plain window for the virtual machine without any overlays.
+*   If you want to use VirtualBox without running any GUI (e.g. on a server), use the `VBoxHeadless` command. With the VRDP extension you can still remotely access the displays of your virtual machines.
 
-*   If you want to use VirtualBox in command-line only (only launch and change settings of existing virtual machines), you can use the `VBoxSDL` command. VBoxSDL does only provide a simple window that contains only the *pure* virtual machine, without menus or other controls.
-*   If you want to use VirtualBox in command-line without any GUI running (e.g. on a server) to create, launch and configure virtual machines, use the `VBoxHeadless` which produces no visible output on the host at all, but instead only delivers VRDP data (note: VRDP is only enabled if the extension pack is installed).
-*   If you want to use VirtualBox with a GUI with menus usable via the mouse, you can run `VirtualBox`.
-
-Finally, you can use [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox") to administrate your virtual machines via a web interface.
+Finally, you can also use [phpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox") to administrate your virtual machines via a web interface.
 
 Refer to the [VirtualBox manual](https://www.virtualbox.org/manual) to learn how to create virtual machines.
 
-**Warning:** If you intend to store virtual disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, before creating any images, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the destination directory of these images.
+**Warning:** If you intend to store virtual disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, before creating any images, you should consider disabling [copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the destination directory of these images.
 
 ## Installation steps for Arch Linux guests
 
@@ -166,7 +163,7 @@ Once the system and the boot loader are installed, VirtualBox will first attempt
 
 Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete. It doesn't store efivars set interactively. Therefore, EFI entries added to it manually in the firmware (accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
 
-See also [UEFI Virtualbox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
+See also [UEFI VirtualBox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
 
 ### Install the Guest Additions
 
@@ -235,7 +232,7 @@ After these steps, the framebuffer resolution should be optimized for the GRUB m
 
 **Note:** The GRUB settings `GRUB_GFXPAYLOAD_LINUX` and `vga` will not fix the framebuffer, since they are overriden by virtue of Kernel Mode Setting, which is mandatory for using X under VirtualBox and only allows for setting the framebuffer resolution by setting the kernel parameter described above.
 
-### Load the Virtualbox kernel modules
+### Load the VirtualBox kernel modules
 
 To load the modules automatically, [enable](/index.php/Enable "Enable") `vboxservice.service` which loads the modules and synchronizes the guest's system time with the host.
 
@@ -276,9 +273,7 @@ Now, you should have a working Arch Linux guest. Note that features like clipboa
 
 ### Hardware acceleration
 
-Hardware acceleration can be activated from the VirtualBox options on the host computer. Note the [GDM](/index.php/GDM "GDM") display manager 3.16+ is known to [break](https://bugzilla.gnome.org/show_bug.cgi?id=749390) hardware acceleration support. So if you get issues with hardware acceleration, try out another display manager (lightdm seems to work fine).[[3]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
-
-If you want to share folders between your host and your Arch Linux guest, read on.
+Hardware acceleration can be activated in the VirtualBox options. The [GDM](/index.php/GDM "GDM") display manager 3.16+ is known to break hardware acceleration support. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=749390) So if you get issues with hardware acceleration, try out another display manager (lightdm seems to work fine). [[4]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
 
 ### Enable shared folders
 
@@ -383,107 +378,70 @@ See also [VirtualBox/Tips and tricks#Import/export VirtualBox virtual machines f
 
 VirtualBox supports the following virtual disk formats:
 
-*   VDI: The Virtual Disk Image is the VirtualBox own open container used by default when you create a virtual machine with VirtualBox.
+*   **VDI**: The Virtual Disk Image is the VirtualBox own open container used by default when you create a virtual machine with VirtualBox.
 
-*   VMDK: The Virtual Machine Disk has been initially developed by VMware for their products. The specification was initially closed source, but it became now an open format which is fully supported by VirtualBox. This format offers the ability to be split into several 2GB files. This feature is specially useful if you want to store the virtual machine on machines which do not support very large files. Other formats, excluding the HDD format from Parallels, do not provide such an equivalent feature.
+*   **VMDK**: The Virtual Machine Disk has been initially developed by VMware for their products. The specification was initially closed source, but it became now an open format which is fully supported by VirtualBox. This format offers the ability to be split into several 2GB files. This feature is specially useful if you want to store the virtual machine on machines which do not support very large files. Other formats, excluding the HDD format from Parallels, do not provide such an equivalent feature.
 
-*   VHD: The Virtual Hard Disk is the format used by Microsoft in Windows Virtual PC and Hyper-V. If you intend to use any of these Microsoft products, you will have to choose this format.
+*   **VHD**: The Virtual Hard Disk is the format used by Microsoft in Windows Virtual PC and Hyper-V. If you intend to use any of these Microsoft products, you will have to choose this format.
 
 **Tip:** Since Windows 7, this format can be mounted directly without any additional application.
 
-*   VHDX (read only): This is the eXtended version of the Virtual Hard Disk format developed by Microsoft, which has been released on 2012-09-04 with Hyper-V 3.0 coming with Windows Server 2012\. This new version of the disk format does offer enhanced performance (better block alignment), larger blocks size, and journal support which brings power failure resiliency. VirtualBox [should support this format in read only](https://www.virtualbox.org/manual/ch15.html#idp63002176).
+*   **VHDX** (read only): This is the eXtended version of the Virtual Hard Disk format developed by Microsoft, which has been released on 2012-09-04 with Hyper-V 3.0 coming with Windows Server 2012\. This new version of the disk format does offer enhanced performance (better block alignment), larger blocks size, and journal support which brings power failure resiliency. VirtualBox [should support this format in read only](https://www.virtualbox.org/manual/ch15.html#idp63002176).
 
-*   Version 2 of the HDD: The HDD format is developed by Parallels Inc and used in their hypervisor solutions like Parallels Desktop for Mac. Newer versions of this format (i.e. 3 and 4) are not supported due to the lack of documentation for this proprietary format.
+*   **HDD** (version 2): The HDD format is developed by Parallels Inc and used in their hypervisor solutions like Parallels Desktop for Mac. Newer versions of this format (i.e. 3 and 4) are not supported due to the lack of documentation for this proprietary format.
     **Note:** There is currently a controversy regarding the support of the version 2 of the format. While the official VirtualBox manual [only reports the second version of the HDD file format as supported](https://www.virtualbox.org/manual/ch05.html#vdidetails), Wikipedia's contributors are [reporting the first version may work too](https://en.wikipedia.org/wiki/Comparison_of_platform_virtual_machines#Image_type_compatibility "wikipedia:Comparison of platform virtual machines"). Help is welcome if you can perform some tests with the first version of the HDD format.
 
-*   QED: The QEMU Enhanced Disk format is an old file format for QEMU, another free and open source hypervisor. This format was designed from 2010 in a way to provide a superior alternative to QCOW2 and others. This format features a fully asynchronous I/O path, strong data integrity, backing files, and sparse files. QED format is supported only for compatibility with virtual machines created with old versions of QEMU.
+*   **QED**: The QEMU Enhanced Disk format is an old file format for QEMU, another free and open source hypervisor. This format was designed from 2010 in a way to provide a superior alternative to QCOW2 and others. This format features a fully asynchronous I/O path, strong data integrity, backing files, and sparse files. QED format is supported only for compatibility with virtual machines created with old versions of QEMU.
 
-*   QCOW: The QEMU Copy On Write format is the current format for QEMU. The QCOW format does support zlib-based transparent compression and encryption (the latter has flaw and is not recommended). QCOW is available in two versions: QCOW and QCOW2\. The latter tends to supersede the first one. QCOW is [currently fully supported by VirtualBox](https://www.virtualbox.org/manual/ch15.html#idp63002176). QCOW2 comes in two revisions: QCOW2 0.10 and QCOW2 1.1 (which is the default when you create a virtual disk with QEMU). VirtualBox does not support this QCOW2 format (both revisions have been tried).
+*   **QCOW**: The QEMU Copy On Write format is the current format for QEMU. The QCOW format does support zlib-based transparent compression and encryption (the latter is flawed and is not recommended). QCOW is available in two versions: QCOW and QCOW2\. QCOW2 tends to supersede the first one. QCOW is [currently fully supported by VirtualBox](https://www.virtualbox.org/manual/ch15.html#idp63002176). QCOW2 comes in two revisions: QCOW2 0.10 and QCOW2 1.1 (which is the default when you create a virtual disk with QEMU). VirtualBox does not support QCOW2.
 
-*   OVF: The Open Virtualization Format is an open format which has been designed for interoperability and distributions of virtual machines between different hypervisors. VirtualBox supports all revisions of this format via the [VBoxManage import/export feature](https://www.virtualbox.org/manual/ch08.html#idp55423424) but with [known limitations](https://www.virtualbox.org/manual/ch14.html#KnownProblems).
+*   **OVF**: The Open Virtualization Format is an open format which has been designed for interoperability and distributions of virtual machines between different hypervisors. VirtualBox supports all revisions of this format via the [VBoxManage import/export feature](https://www.virtualbox.org/manual/ch08.html#idp55423424) but with [known limitations](https://www.virtualbox.org/manual/ch14.html#KnownProblems).
 
-*   RAW: This is the mode when the virtual disk is exposed directly to the disk without being contained in a specific file format container. VirtualBox supports this feature in several ways: converting RAW disk [to a specific format](https://www.virtualbox.org/manual/ch08.html#idp59139136), or by [cloning a disk to RAW](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi), or by using directly a VMDK file [which points to a physical disk or a simple file](https://www.virtualbox.org/manual/ch09.html#idp57804112).
+*   **RAW**: This is the mode when the virtual disk is exposed directly to the disk without being contained in a specific file format container. VirtualBox supports this feature in several ways: converting RAW disk [to a specific format](https://www.virtualbox.org/manual/ch08.html#idp59139136), or by [cloning a disk to RAW](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi), or by using directly a VMDK file [which points to a physical disk or a simple file](https://www.virtualbox.org/manual/ch09.html#idp57804112).
 
 ### Disk image format conversion
 
-#### VMDK to VDI and VDI to VMDK
-
-VirtualBox can handle back and forth conversion between VDI and VMDK by itself with [VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
-
-VMDK to VDI:
+[VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) can be used to convert between VDI, VMDK, VHD and RAW.
 
 ```
-$ VBoxManage clonehd *source.vmdk* *destination.vdi* --format VDI
+$ VBoxManage clonehd *inputfile* *outputfile* --format *outputformat*
 
 ```
 
-VDI to VMDK:
+For example to convert VDI to VMDK:
 
 ```
 $ VBoxManage clonehd *source.vdi* *destination.vmdk* --format VMDK
 
 ```
 
-#### VHD to VDI and VDI to VHD
+#### QCOW
 
-VirtualBox can handle conversion back and forth this format with [VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) too.
-
-VHD to VDI:
+VirtualBox does not support [QEMU](/index.php/QEMU "QEMU")'s QCOW2 disk image format. To use a QCOW2 disk image with VirtualBox you therefore need to convert it, which you can do with [qemu](https://www.archlinux.org/packages/?name=qemu)'s `qemu-img` command. `qemu-img` can convert QCOW to / from VDI, VMDK, VHDX, RAW and various other formats (which you can see by running `qemu-img --help`).
 
 ```
-$ VBoxManage clonehd *source.vhd* *destination.vdi* --format VDI
+$ qemu-img convert -O *output_fmt* *inputfile* *outputfile*
 
 ```
 
-VDI to VHD:
+For example to convert QCOW2 to VDI:
 
 ```
-$ VBoxManage clonehd *source.vdi* *destination.vhd* --format VHD
-
-```
-
-#### QCOW2 to VDI and VDI to QCOW2
-
-[VBoxManage clonehd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) cannot handle the QEMU format conversion; we will thus rely on another tool. The `qemu-img` command from [qemu](https://www.archlinux.org/packages/?name=qemu) can be used to convert images back and forth from VDI to QCOW2\.
-**Note:** `qemu-img` can handle a bunch of other formats too. According to the `qemu-img --help`, here are the supported formats this tool supports: "*vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'".*
-
-QCOW2 to VDI:
-
-```
-$ qemu-img convert -pO vdi *source.qcow2* *destination.vdi*
-
-```
-
-VDI to QCOW2:
-
-```
-$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2*
-
-```
-
-As QCOW2 comes in two revisions (see [#Formats supported by VirtualBox](#Formats_supported_by_VirtualBox), use the flag `-o compat=` to specify the revision.
-
-```
-$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=0.10
-
-```
-
-or
-
-```
-$ qemu-img convert -pO qcow2 *source.vdi* *destination.qcow2* -o compat=1.1
+$ qemu-img convert -O vdi *source.qcow2* *destination.vdi*
 
 ```
 
 **Tip:** The `-p` parameter is used to get the progression of the conversion task.
 
+There are two revisions of QCOW2: 0.10 and 1.1\. You can specify the revision to use with `-o compat=*revision*`.
+
 ### Mount virtual disks
 
 #### VDI
 
-Mounting vdi images only works with fixed size images (a.k.a. static images); dynamic (dynamically size allocating) images are not easily mountable.
+Mounting VDI images only works with fixed size images (a.k.a. static images); dynamic (dynamically size allocating) images are not easily mountable.
 
-The offset of the partition (within the vdi) is needed, then add the value of `offData` to `32256` (e.g. 69632 + 32256 = 101888):
+The offset of the partition (within the VDI) is needed, then add the value of `offData` to `32256` (e.g. 69632 + 32256 = 101888):
 
 ```
 $ VBoxManage internalcommands dumphdinfo <storage.vdi> | grep "offData"
@@ -516,11 +474,11 @@ Alternately you can use [qemu](https://www.archlinux.org/packages/?name=qemu)'s 
 
 ```
 
-If the partition nodes are not propagated try using `partprobe /dev/nbd0`; otherwise, a vdi partition can be mapped directly to a node by: `qemu-nbd -P 1 -c /dev/nbd0 <storage.vdi>`.
+If the partition nodes are not propagated try using `partprobe /dev/nbd0`; otherwise, a VDI partition can be mapped directly to a node by: `qemu-nbd -P 1 -c /dev/nbd0 <storage.vdi>`.
 
 ### Compact virtual disks
 
-Compacting virtual disks only works with `.vdi` files and basically consists in the following steps.
+Compacting virtual disks only works with `.vdi` files and basically consists of the following steps.
 
 Boot your virtual machine and remove all bloat manually or by using cleaning tools like [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) which is [available for Windows systems too](http://bleachbit.sourceforge.net/download/windows).
 
@@ -631,9 +589,9 @@ $ rm *old.vdi*
 
 ```
 
-#### Increase size for VDI disks
+#### Increasing the size of VDI disks
 
-If your disk is a vdi one, simply run:
+If your disk is a VDI one, run:
 
 ```
 $ VBoxManage modifyhd *your_virtual_disk.vdi* --resize *the_new_size*
@@ -687,20 +645,20 @@ else print $0}' "$Filename"
 
 ### Clone a virtual disk and assigning a new UUID to it
 
-UUIDs are widely used by VirtualBox. Each virtual machines and each virtual disk of a virtual machine must have a different UUID. When you launch a virtual machine in VirtualBox, the latter will keep track of all UUID of your virtual machine instance. See the [VBoxManage list](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) to list the items registered with VirtualBox.
+UUIDs are widely used by VirtualBox. Each virtual machines and each virtual disk of a virtual machine must have a different UUID. When you launch a virtual machine in VirtualBox, VirtualBox will keep track of all UUIDs of your virtual machine instance. See the [VBoxManage list](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) to list the items registered with VirtualBox.
 
 If you cloned a virtual disk manually by copying the virtual disk file, you will need to assign a new UUID to the cloned virtual drive if you want to use the disk in the same virtual machine or even in another (if that one has already been opened, and thus registered, with VirtualBox).
 
-You can use this command to assign a new UUID to your virtual disk:
+You can use this command to assign a new UUID to a virtual disk:
 
 ```
 $ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 ```
 
-**Tip:** In the future, to avoid copying the virtual disk and assigning a new UUID to your file manually, use [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) instead.
+**Tip:** To avoid copying the virtual disk and assigning a new UUID to your file manually you can use [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
 
-**Note:** The commands above supports [all virtual disk formats supported by VirtualBox](#Formats_supported_by_VirtualBox).
+**Note:** The commands above support all [virtual disk formats supported by VirtualBox](#Formats_supported_by_VirtualBox).
 
 ## Tips and tricks
 
@@ -708,55 +666,29 @@ For advanced configuration, see [VirtualBox/Tips and tricks](/index.php/VirtualB
 
 ## Troubleshooting
 
-### VERR_ACCESS_DENIED
-
-To access the raw vmdk image on a windows host, run the VirtualBox GUI as administrator.
-
-### pacstrap script fails
-
-If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
-
-### Keyboard and mouse are blocked in my virtual machine
+### Keyboard and mouse are locked into virtual machine
 
 This means your virtual machine has captured the input of your keyboard and your mouse. Simply press the right `Ctrl` key and your input should control your host again.
 
 To control transparently your virtual machine with your mouse going back and forth your host, without having to press any key, and thus have a seamless integration, install the guest additions inside the guest. Read from the [#Install the Guest Additions](#Install_the_Guest_Additions) step if you guest is Arch Linux, otherwise read the official VirtualBox help.
 
-### Cannot send CTRL+ALT+Fn key to my virtual machine
+### No 64-bit OS client options
+
+When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
+
+If you are using a Windows host, you may need to disable Hyper-V, as it prevents VirtualBox from using VT-x. [[6]](https://www.virtualbox.org/ticket/12350)
+
+### VirtualBox GUI does not match host GTK theme
+
+See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt-based applications like VirtualBox.
+
+### Cannot send Ctrl+Alt+Fn to guest
 
 Your guest operating system is a GNU/Linux distribution and you want to open a new TTY shell by hitting `Ctrl+Alt+F2` or exit your current X session with `Ctrl+Alt+Backspace`. If you type these keyboard shortcuts without any adaptation, the guest will not receive any input and the host (if it is a GNU/Linux distribution too) will intercept these shortcut keys. To send `Ctrl+Alt+F2` to the guest for example, simply hit your *Host Key* (usually the right `Ctrl` key) and press `F2` simultaneously.
 
-### Fix ISO images problems
+### USB subsystem not working
 
-While VirtualBox can mount ISO images without problem, there are some image formats which cannot reliably be converted to ISO. For instance, ccd2iso ignores .ccd and .sub files, which can give disk images with broken files.
-
-In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for Linux inside VirtualBox or any other utility used to mount disk images.
-
-### VirtualBox GUI does not match my GTK Theme
-
-See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like Virtualbox.
-
-### OpenBSD unusable when virtualisation instructions unavailable
-
-While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the *-norawr0* argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
-
-```
-$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
-
-```
-
-### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
-
-This can occur if a VM is exited ungracefully. The solution to unlock the VM is trivial:
-
-```
-$ VBoxManage controlvm *virtual_machine_name* poweroff
-
-```
-
-### USB subsystem is not working on the host or guest
-
-Your user must be in the `vboxusers` group, and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
+Your user must be in the `vboxusers` group and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
 
 If `VBoxManage list usbhost` does not show any USB devices even if run as root, make sure that there is no old udev rules (from VirtualBox 4.x) in */etc/udev/rules.d/*. VirtualBox 5.0 installs udev rules to */usr/lib/udev/rules.d/*. You can use command like `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` to determine if the udev rule file is outdated.
 
@@ -768,23 +700,11 @@ Then make sure, the environment has been made aware of this change (reconnect, s
 
 Also make sure that your user is a member of the `storage` group.
 
-### Failed to create the host-only network interface
+### USB modem not working on host
 
-Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
+If you have a USB modem which is being used by the guest OS, killing the guest OS can cause the modem to become unusable by the host system. Killing and restarting `VBoxSVC` should fix this problem.
 
-### WinXP: Bit-depth cannot be greater than 16
-
-If you are running at 16-bit color depth, then the icons may appear fuzzy/choppy. However, upon attempting to change the color depth to a higher level, the system may restrict you to a lower resolution or simply not enable you to change the depth at all. To fix this, run `regedit` in Windows and add the following key to the Windows XP VM's registry:
-
-```
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
-"ColorDepth"=dword:00000004
-
-```
-
-Then update the color depth in the "desktop properties" window. If nothing happens, force the screen to redraw through some method (i.e. `Host+f` to redraw/enter full screen).
-
-### Use serial port in guest OS
+### Access serial port from guest
 
 Check you permission for the serial port:
 
@@ -799,18 +719,30 @@ crw-rw---- 1 root uucp 4, 67 Feb  3 09:12 /dev/ttyS3
 
 Add your user to the `uucp` [group](/index.php/Group "Group").
 
-### Windows 8.x Error Code 0x000000C4
+### Guest freezes after starting Xorg
 
-If you get this error code while booting, even if you choose OS Type Win 8, try to enable the `CMPXCHG16B` CPU instruction:
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[8]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
 
-```
-$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
+### Fullscreen mode shows blank screen
 
-```
+On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To work around this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings > User Interface > Mini ToolBar". See the [upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
 
-### Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"
+### Host freezes on virtual machine start
 
-Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
+Possible causes/solutions :
+
+*   SMAP
+
+This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. A solution to this problem is disabling SMAP support in your kernel by appending the `nosmap` option to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+*   Hardware Virtualisation
+
+Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
+
+*   Various Kernel bugs
+    *   Fuse mounted partitions (like ntfs) [[9]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+
+Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 
 ### Linux guests have slow/distorted audio
 
@@ -821,13 +753,53 @@ options snd-intel8x0 ac97_clock=48000
 
 ```
 
-### Guest freezes after starting Xorg
+### Analog microphone not working
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[6]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
 
-### "NS_ERROR_FAILURE" and missing menu items
+If after installing [PulseAudio](/index.php/PulseAudio "PulseAudio") the microphone still refuses to work, setting *Host Audio Driver* (under *VirtualBox > Machine > Settings > Audio*) to *ALSA Audio Driver* might help.
 
-If you encounter this message when first time starting the virtual machine:
+### Microphone not working after upgrade
+
+There have been issues reported around sound input in 5.1.x versions. [[11]](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
+
+[Downgrading](/index.php/Downgrading "Downgrading") may solve the problem. You can use [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
+
+### Problems with images converted to ISO
+
+Some image formats cannot be reliably converted to ISO. For instance, [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso) ignores .ccd and .sub files, which can result in disk images with broken files.
+
+In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for Linux inside VirtualBox or any other utility used to mount disk images.
+
+### Failed to create the host-only network interface
+
+Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
+
+### Failed to insert module
+
+When you get the following error when trying to load modules:
+
+```
+Failed to insert 'vboxdrv': Required key not available
+
+```
+
+[Sign](#Sign_modules) your modules or disable `CONFIG_MODULE_SIG_FORCE` in your kernel config.
+
+### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
+
+This can occur if a VM is exited ungracefully. Run the following command:
+
+```
+$ VBoxManage controlvm *virtual_machine_name* poweroff
+
+```
+
+### NS_ERROR_FAILURE and missing menu items
+
+This happens sometimes when selecting *QCOW*/*QCOW2*/*QED* disk format when creating a new virtual disk.
+
+If you encounter this message the first time you start the virtual machine:
 
 ```
 Failed to open a session for the virtual machine debian.
@@ -855,13 +827,24 @@ Exit VirtualBox, delete all files of the new machine and from virtualbox config 
 ...
 ```
 
-This happens sometimes when selecting *QCOW*/*QCOW2*/*QED* disk format when creating a new virutal disk.
+### Arch: pacstrap script fails
 
-### USB modem
+If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
 
-If you have a USB modem which is being used by the guest OS, killing the guest OS can cause the modem to become unusable by the host system. Killing and restarting `VBoxSVC` should fix this problem.
+### OpenBSD unusable when virtualisation instructions unavailable
 
-### "The specified path does not exist. Check the path and then try again." error in Windows guests
+While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the *-norawr0* argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
+
+```
+$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
+
+```
+
+### Windows host: VERR_ACCESS_DENIED
+
+To access the raw VMDK image on a Windows host, run the VirtualBox GUI as administrator.
+
+### Windows: "The specified path does not exist. Check the path and then try again."
 
 This error message often appears when running an .exe file which requires administrator priviliges from a shared folder in windows guests. See [the bug report](https://www.virtualbox.org/ticket/5732) for details.
 
@@ -872,59 +855,30 @@ There are two workarounds:
 
 Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this does not work with Windows 7 or newer.
 
-### No 64-bit OS client options
+### Windows 8.x error code 0x000000C4
 
-When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
-
-If you are using a Windows host, you may need to disable Hyper-V, as it prevents VirtualBox from using VT-x. [[7]](https://www.virtualbox.org/ticket/12350)
-
-### Host OS freezes on Virtual Machine start
-
-Possible causes/solutions :
-
-*   SMAP
-
-This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. A solution to this problem is disabling SMAP support in your kernel by appending the `nosmap` option to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-
-*   Hardware Virtualisation
-
-Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
-
-*   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[8]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[9]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
-
-Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
-
-### Analog microphone not working in guest
-
-If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
-
-If after installing [PulseAudio](/index.php/PulseAudio "PulseAudio") microphone still refuses to work, setting 'Host Audio Driver'(Virtualbox->Machine->Settings->Audio->Host Audio Driver) to 'ALSA Audio Driver' might help.
-
-**Sound input (microphone) not working after upgrade**
-
-There has been issues reported around sound input in 5.1.x versions;
-
-[https://forums.virtualbox.org/viewtopic.php?f=7&t=78797](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
-
-[Downgrading](/index.php/Downgrading "Downgrading") may solve the problem.
-
-You can use [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
-
-### Fullscreen mode shows blank guest screen
-
-On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To workaround this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings --> User Interface --> Mini ToolBar". See [the upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
-
-### Failed to insert module
-
-If you encounter problem when loading modules as follow:
+If you get this error code while booting, even if you choose OS Type Win 8, try to enable the `CMPXCHG16B` CPU instruction:
 
 ```
-Failed to insert 'vboxdrv': Required key not available
+$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ```
 
-Make sure you signed your modules or disable `CONFIG_MODULE_SIG_FORCE` in your kernel config.
+### Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"
+
+Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
+
+### WinXP: Bit-depth cannot be greater than 16
+
+If you are running at 16-bit color depth, then the icons may appear fuzzy/choppy. However, upon attempting to change the color depth to a higher level, the system may restrict you to a lower resolution or simply not enable you to change the depth at all. To fix this, run `regedit` in Windows and add the following key to the Windows XP VM's registry:
+
+```
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
+"ColorDepth"=dword:00000004
+
+```
+
+Then update the color depth in the "desktop properties" window. If nothing happens, force the screen to redraw through some method (i.e. `Host+f` to redraw/enter full screen).
 
 ## See also
 

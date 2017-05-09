@@ -13,6 +13,7 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
         *   [1.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
         *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
         *   [1.1.3 Login / SSH](#Login_.2F_SSH)
+        *   [1.1.4 Upgrading to linux-armv7-4.11.0-1](#Upgrading_to_linux-armv7-4.11.0-1)
 *   [2 See also](#See_also)
 
 ## Installation
@@ -107,6 +108,32 @@ SSH login for root is disabled by default. Login with the default user account a
 | Type | Username | Password |
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
+
+#### Upgrading to linux-armv7-4.11.0-1
+
+```
+# pacman -Syu
+
+```
+
+When upgrading linux to latest version, above boot method didn't work. So, we have to upgrade boot method.
+
+This step is creating a u-boot image of newest version.
+
+```
+$ git clone --depth 1 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
+$ cd u-boot
+$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- orangepi_one_defconfig
+$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
+
+```
+
+Now dd the image to your sdcard, where /dev/sdX is your sdcard.
+
+```
+# dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
+
+```
 
 ## See also
 

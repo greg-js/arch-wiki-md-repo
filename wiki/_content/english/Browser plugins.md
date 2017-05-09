@@ -20,26 +20,27 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 *   [2 PDF viewer](#PDF_viewer)
     *   [2.1 PDF.js](#PDF.js)
     *   [2.2 External PDF viewers](#External_PDF_viewers)
-*   [3 Citrix](#Citrix)
-*   [4 Java (IcedTea)](#Java_.28IcedTea.29)
-*   [5 Pipelight](#Pipelight)
-*   [6 Multimedia playback](#Multimedia_playback)
-    *   [6.1 Other plugins](#Other_plugins)
-    *   [6.2 Open-with Firefox extension](#Open-with_Firefox_extension)
-    *   [6.3 youtube-dl](#youtube-dl)
-*   [7 Google Hangouts](#Google_Hangouts)
-*   [8 MozPlugger](#MozPlugger)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Flash Player: no sound](#Flash_Player:_no_sound)
-    *   [9.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
-    *   [9.3 Flash Player: performance](#Flash_Player:_performance)
-    *   [9.4 Flash Player: low webcam resolution](#Flash_Player:_low_webcam_resolution)
-    *   [9.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
-    *   [9.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
-    *   [9.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
-        *   [9.7.1 Firefox](#Firefox)
-    *   [9.8 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
-    *   [9.9 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
+*   [3 Online payment in China](#Online_payment_in_China)
+*   [4 Citrix](#Citrix)
+*   [5 Java (IcedTea)](#Java_.28IcedTea.29)
+*   [6 Pipelight](#Pipelight)
+*   [7 Multimedia playback](#Multimedia_playback)
+    *   [7.1 Other plugins](#Other_plugins)
+    *   [7.2 Open-with Firefox extension](#Open-with_Firefox_extension)
+    *   [7.3 youtube-dl](#youtube-dl)
+*   [8 Google Hangouts](#Google_Hangouts)
+*   [9 MozPlugger](#MozPlugger)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 Flash Player: no sound](#Flash_Player:_no_sound)
+    *   [10.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
+    *   [10.3 Flash Player: performance](#Flash_Player:_performance)
+    *   [10.4 Flash Player: low webcam resolution](#Flash_Player:_low_webcam_resolution)
+    *   [10.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
+    *   [10.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
+    *   [10.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
+        *   [10.7.1 Firefox](#Firefox)
+    *   [10.8 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
+    *   [10.9 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
 
 ## Flash Player
 
@@ -156,6 +157,13 @@ If this is not enough, you may need to change 2 values in `about:config`:
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
 Restart and it should work like a charm!
+
+## Online payment in China
+
+Third-party online payment sites in China tend to use a "security plugin" for the password field. They are not supported anymore in Firefox 52+. You could try [palemoon](https://aur.archlinux.org/packages/palemoon/) for NPAPI support.
+
+*   [upeditor](https://aur.archlinux.org/packages/upeditor/) for UnionPay Online Pay (银联在线支付).
+*   [aliedit](https://aur.archlinux.org/packages/aliedit/) for Alipay (支付宝).
 
 ## Citrix
 

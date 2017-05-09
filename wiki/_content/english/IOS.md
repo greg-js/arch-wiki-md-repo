@@ -12,18 +12,19 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
     *   [4.2 Avidemux](#Avidemux)
     *   [4.3 Mencoder](#Mencoder)
     *   [4.4 FFMpeg](#FFMpeg)
-*   [5 iPhone/iPod Touch](#iPhone.2FiPod_Touch)
-    *   [5.1 Introduction](#Introduction)
-    *   [5.2 The iFuse Way](#The_iFuse_Way)
-        *   [5.2.1 iPhone OS 3.x and 4.x](#iPhone_OS_3.x_and_4.x)
-    *   [5.3 Generating HashInfo file](#Generating_HashInfo_file)
-    *   [5.4 Unobfuscating the Database](#Unobfuscating_the_Database)
-    *   [5.5 Syncing](#Syncing)
-*   [6 iPod Classic/Nano3g](#iPod_Classic.2FNano3g)
-*   [7 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
-*   [8 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
-*   [9 iPod management apps](#iPod_management_apps)
-*   [10 See also](#See_also)
+*   [5 Device specific](#Device_specific)
+    *   [5.1 iPhone/iPod Touch](#iPhone.2FiPod_Touch)
+        *   [5.1.1 Introduction](#Introduction)
+        *   [5.1.2 The iFuse Way](#The_iFuse_Way)
+            *   [5.1.2.1 iPhone OS 3.x, iOS 3.x and iOS 4.x](#iPhone_OS_3.x.2C_iOS_3.x_and_iOS_4.x)
+        *   [5.1.3 Generating HashInfo file](#Generating_HashInfo_file)
+        *   [5.1.4 Unobfuscating the Database](#Unobfuscating_the_Database)
+        *   [5.1.5 Syncing](#Syncing)
+    *   [5.2 iPod Classic/Nano (3rd generation)](#iPod_Classic.2FNano_.283rd_generation.29)
+    *   [5.3 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
+    *   [5.4 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
+*   [6 iPod management apps](#iPod_management_apps)
+*   [7 See also](#See_also)
 
 ## Connecting to a device
 
@@ -33,7 +34,7 @@ Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or
 
 Traditional iPods are accessed just like a normal USB storage device containing a vfat file system (in rare cases `hfsplus`), and can be [accessed as such](/index.php/USB_storage_devices "USB storage devices"). See the [USB storage devices](/index.php/USB_storage_devices "USB storage devices") article for detailed instructions.
 
-If udisks2 is running, it will mount an attached iPod to `/run/media/*$USER*/*iPod name*`.
+If udisks2 is running, it will mount an attached iPod to `/run/media/*$USER*/*iPod_name*`.
 
 If the volume label of your iPod is long, or contains a mixture of spaces, and/or lower-case and capital letters, it may present an inconvenience. You may easily change the volume label for more expedient access using `dosfslabel` from the [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) package:
 
@@ -158,9 +159,11 @@ $ ffmpeg -f mp4 -vcodec mpeg4 -maxrate 1000 -b 700 -qmin 3 -qmax 5\
 
 ```
 
-## iPhone/iPod Touch
+## Device specific
 
-### Introduction
+### iPhone/iPod Touch
+
+#### Introduction
 
 By default, neither the iPhone nor the iPod Touch present mass storage capability over USB, though there exist two solutions for accessing your files.
 
@@ -170,7 +173,7 @@ The second is to use a FUSE file system called [ifuse](https://www.archlinux.org
 
 Refer to this page:[[1]](https://help.ubuntu.com/community/PortableDevices/iPhone)
 
-### The iFuse Way
+#### The iFuse Way
 
 **Note:** If your device has a screen password, one must unlock the device to gain access through the USB interface.
 
@@ -196,7 +199,7 @@ To unmount your device:
 
 ```
 
-#### iPhone OS 3.x and 4.x
+##### iPhone OS 3.x, iOS 3.x and iOS 4.x
 
 [Install](/index.php/Install "Install") [libplist](https://www.archlinux.org/packages/?name=libplist), [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice), [libgpod](https://www.archlinux.org/packages/?name=libgpod), [usbmuxd](https://www.archlinux.org/packages/?name=usbmuxd) and [ifuse](https://www.archlinux.org/packages/?name=ifuse) packges.
 
@@ -238,11 +241,11 @@ Now, start up your favourite app such as [gtkpod](https://www.archlinux.org/pack
 
 **Note:** If gtkpod seems to work only from root/sudo while your user only gets the slash screen, you can delete your `~/.gtkpod` folder and retry. Note that gtkpod will forget your preferences.
 
-### Generating HashInfo file
+#### Generating HashInfo file
 
 If you have not previously synced your device using iTunes specifically, you will get error messages telling you that the HashInfo file is missing. This can be fixed by making an iTunes installation on MacOS or Windows create it (by plugging in the iPod there). Alternatively you can create this file yourself, instructions can be found on [this website](http://ihash.marcansoft.com/).
 
-### Unobfuscating the Database
+#### Unobfuscating the Database
 
 Since firmware version 2.0, Apple has obfuscated the music database. If you are using recent firmware, the file `/System/Library/Lockdown/Checkpoint.xml` can be modified to enable use of the older, non-obfuscated database. Replace:
 
@@ -264,7 +267,7 @@ Then reboot your device.
 
 If syncing fails with "ERROR: Unsupported checksum type '0' in cbk file generation!", you may need to leave this at 4\. libgpod seems to [expect a hashed database.](http://gitorious.org/libgpod/libgpod/blobs/b9b83dc8b6c3d1f0c53ed32f05279ca838d54e02/src/itdb_sqlite.c#line2064)
 
-### Syncing
+#### Syncing
 
 Use your favourite [iPod-compatible program](#iPod_management_apps). Individual configuration will vary, but in general, pointing your program to your specified mount point should yield good results.
 
@@ -279,7 +282,7 @@ If you used iFuse, simply type:
 
 You will still need to reload the MobileMusicPlayer process. If your device is not jailbroken, then you are stuck restarting it.
 
-## iPod Classic/Nano3g
+### iPod Classic/Nano (3rd generation)
 
 You need to set up the iPod to make libgpod able to find its FireWire ID. For this, you will need to get your FireWire ID manually
 
@@ -305,7 +308,7 @@ this should print a 16 character long string like 00A1234567891231 (it will have
 
 Your iPod can now be managed with Amarok or gtkpod.
 
-## iPod Shuffle 1st and 2nd generation
+### iPod Shuffle 1st and 2nd generation
 
 Due to the simple structure of the Shuffle (compared to the "big" iPods), it is possible to use the player almost like any other USB flash MP3 player. What is necessary is [rebuild_db.py](http://sourceforge.net/projects/shuffle-db/files/latest/download) file stored in the iPod's root directory. Simply copy MP3 files onto the iPod Shuffle (sub-folders are allowed too) and run:
 
@@ -316,7 +319,7 @@ $ python2 /path/to/rebuild_db.py
 
 [Source](http://shuffle-db.sourceforge.net/)
 
-## iPod Shuffle 4th generation
+### iPod Shuffle 4th generation
 
 To use your ipod shuffle 4g under linux you can use the python based command line tool [ipod-shuffle-4g](https://aur.archlinux.org/packages/ipod-shuffle-4g/). It also provides advanced voiceover and (auto)playlist generation support.
 

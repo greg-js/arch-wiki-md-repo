@@ -59,7 +59,9 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 Xorg can be [installed](/index.php/Install "Install") with the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) package.
 
-Additionally, some packages from the [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) meta-package are necessary for certain configuration tasks, they are pointed out in the relevant sections. Other useful packages are in the [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) group.
+Additionally, some packages from the [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) group are necessary for certain configuration tasks, they are pointed out in the relevant sections.
+
+Finally, an [xorg](https://www.archlinux.org/groups/x86_64/xorg/) group is also available, which includes Xorg server packages, packages from the [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) group and fonts.
 
 **Tip:** You will typically seek to install a [window manager](/index.php/Window_manager "Window manager") or a [desktop environment](/index.php/Desktop_environment "Desktop environment") to supplement X.
 

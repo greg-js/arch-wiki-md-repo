@@ -46,7 +46,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 ## Installation
 
-The Linux kernel supports nftables since version 3.13 but running the latest kernel is recommended. You will only need to install the userland utilities, which are provided by the package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git-version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
+Nftables is supported in the Arch Linux kernel. Userspace utilities are are provided by the package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
 ## Basic implementation
 

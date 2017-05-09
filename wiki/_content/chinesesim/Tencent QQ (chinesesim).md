@@ -29,7 +29,7 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ### SmartQQ
 
-[SmartQQ](http://w.qq.com/) 是腾讯推出的网页端 QQ，它高度模仿微信风格，功能欠完善，且高度依赖网络环境。
+[SmartQQ](http://w.qq.com/) 是腾讯推出的网页端 QQ，它高度模仿微信风格，功能欠完善，高度依赖网络环境，而且需要通过手机客户端扫描二维码登录。
 
 将 Google Chrome 的把网站做为应用程序与其桌面提醒功能整合，也可以打造一个实用的 QQ 软件：
 
@@ -96,9 +96,7 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ## 官方版本
 
-**警告:** 由于 QQ for Linux 长时间不更新，导致程序无法适应现有的部分Linux组件，安装后经常崩溃。而据用户报告，如今 QQ for Linux 也已不允许登录，每次登录都提示版本过低。（一些用户报告可以登录。）
-
-**提示：** 可以在腾讯[投诉](http://support.qq.com/write.shtml)页面呼吁官方提供 Linux 版。（然而并没有什么用）
+**警告:** QQ for Linux 已经无法使用。请勿尝试此方案。
 
 腾讯在 2008 年底发布了 QQ for Linux 1.0 Preview 3，功能如下：
 
@@ -115,7 +113,9 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ### Wine QQ
 
-目前较为成熟的 Wine 模拟方案之一为 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案。
+目前较为成熟的 Wine 模拟方案为[deepinwine-qq](https://aur.archlinux.org/packages/deepinwine-qq/)。
+
+之前比较好的解决方案有 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案等。
 
 **注意:** 如果系统默认不是中文环境可能无法输入中文,解决方法是修改启动文件的`Exec`: `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
 

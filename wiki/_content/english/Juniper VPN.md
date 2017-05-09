@@ -32,7 +32,7 @@ To use, install [openconnect](https://www.archlinux.org/packages/?name=openconne
 
 If you want NetworkManager support, install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), or try the latest git version. The VPN connection can be created through the GUI or using this command:
 
- `$ nmcli con add type vpn con-name "Connection Name" ifname "*" vpn-type openconnect -- vpn.data "gateway=[https://vpn.server.com,protocol=nc](https://vpn.server.com,protocol=nc)"` 
+ `$ nmcli con add type vpn con-name "Connection Name" ifname "*" vpn-type openconnect -- vpn.data "gateway=vpn.server.com,protocol=nc"` 
 
 ## Official Software Preferred installation method
 

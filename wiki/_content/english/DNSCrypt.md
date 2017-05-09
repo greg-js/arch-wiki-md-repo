@@ -29,6 +29,8 @@
 
 [Install](/index.php/Install "Install") the [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) package.
 
+**Tip:** [dnscrypt-proxy-gui](https://aur.archlinux.org/packages/dnscrypt-proxy-gui/) provides a GUI written in Qt to set the DNS server used by DNSCrypt.
+
 ## Configuration
 
 **Tip:** An example configuration file, `/etc/dnscrypt-proxy.conf.example` is provided, but note that systemd overrides the `LocalAddress` option with a [socket file](#Change_port).

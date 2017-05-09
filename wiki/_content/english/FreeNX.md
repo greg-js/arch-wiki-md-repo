@@ -456,7 +456,7 @@ If you get the following error while connecting:
 
 ```
 
-then you have to install the package [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils).
+then you have to install the package [xorg-sessreg](https://www.archlinux.org/packages/?name=xorg-sessreg).
 
 ### Broken resume with Cairo 1.12.x
 

@@ -33,6 +33,10 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	The Linux kernel and modules from the *core* repository. Vanilla kernel with [a few patches applied](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
 
+	[linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
+
+	A security-focused Linux kernel applying a set of [hardening patches](https://github.com/thestinger/linux-hardened) to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [Linux](https://www.archlinux.org/packages/?name=Linux) along with user namespaces (with unprivileged usage disabled by default via a patch), audit and [SELinux](/index.php/SELinux "SELinux").
+
 	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
 	Long term support (LTS) Linux kernel and modules from the *core* repository.
@@ -48,10 +52,6 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
 
 	The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
-
-	[linux-cik](https://aur.archlinux.org/packages/linux-cik/)
-
-	The Linux Kernel enabling support of extra graphic cards in [AMDGPU](/index.php/AMDGPU "AMDGPU").
 
 	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 

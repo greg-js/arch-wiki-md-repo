@@ -183,7 +183,7 @@ You must find a workaround and bind the keys yourself for the rest of them.
 
 Keys forward and back (next to cursor keys) can be easily remapped to PageDown/PageUp.
 
-[Install](/index.php/Install "Install") xmodmap with the package [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils)
+[Install](/index.php/Install "Install") xmodmap with the package [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap)
 
 Create a `~/.Xmodmap` file with content:
 

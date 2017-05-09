@@ -83,12 +83,9 @@ The following packages got all the hardware working for me:
 
 ```
 xorg-server
-xorg-server-utils
-xf86-video-vesa
 xf86-video-intel
 xf86-input-synaptics
 libsynaptics
-lib32-mesa
 mesa
 bluez
 bluez-utils

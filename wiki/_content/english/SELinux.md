@@ -36,7 +36,7 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
 SELinux is not officially supported (see [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-October/034352.html)[[2]](https://lists.archlinux.org/pipermail/arch-general/2017-February/043149.html)). The status of unofficial support is:
 
 | Name | Status | Available at |
-| SELinux enabled kernel | Implemented | Removed since the 3.14 official Arch kernel: The main complaint was the lack of Kconfig option to disable audit by default. Available in the AUR. |
+| SELinux enabled kernel | Implemented for [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened), but not [linux](https://www.archlinux.org/packages/?name=linux) | Removed since the 3.14 official [linux](https://www.archlinux.org/packages/?name=linux) kernel. |
 | SELinux Userspace tools and libraries | Implemented in AUR: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux) | Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) |
 | SELinux Policy | Work in progress, using [Reference Policy](https://github.com/TresysTechnology/refpolicy) as upstream | Work in progress at [https://github.com/archlinuxhardened/selinux-policy-arch/](https://github.com/archlinuxhardened/selinux-policy-arch/) |
 
@@ -44,6 +44,7 @@ Summary of changes in AUR as compared to official core packages:
 
 | Name | Status and comments |
 | linux | Need a rebuild with some KConfig options enabled |
+| linux-hardened | SELinux support enabled, but audit support is disabled by default and needs to be enabled with audit=1 on the kernel line |
 | coreutils | Need a rebuild with `--with-selinux` flag to link with libselinux |
 | cronie | Need a rebuild with `--with-selinux` flag |
 | dbus | Need a rebuild with `--enable-libaudit` and `--enable-selinux` flags |

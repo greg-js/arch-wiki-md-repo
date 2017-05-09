@@ -138,6 +138,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
 | [Aukey USB C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
+| [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
 | [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
 | [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
 | [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
@@ -146,6 +147,8 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |
 | [PCT UHC304](http://www.pct-max.com.tw/cht/products.php?index=289) | HDMI (4K@30Hz, 2K@60Hz), Gigabit Ethernet, USB-A, USB-C | Working |
 | [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
+| [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
+| [StarTech CDP2HD - USB-C to HDMI Adapter](https://www.startech.com/nl/en/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) | HDMI | Working |
 
 ### Thunderbolt Firmware updates
 

@@ -98,7 +98,7 @@ This section contains helpful information related to package management. For mor
 
 [pacman](/index.php/Pacman "Pacman") is the Arch Linux *pac*kage *man*ager: all users are required to become familiar with it before reading any other articles.
 
-See [pacman tips](/index.php/Pacman_tips "Pacman tips") for suggestions on how to improve your interaction with *pacman* and package management in general.
+See [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") for suggestions on how to improve your interaction with *pacman* and package management in general.
 
 ### Repositories
 
@@ -132,7 +132,7 @@ This section contains information pertaining to the boot process. An overview of
 
 ### Hardware auto-recognition
 
-Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the boot process by default. A potential improvement in boot time can be achieved by disabling module auto-loading and specifying required modules manually, as described in [Kernel modules](/index.php/Kernel_modules "Kernel modules"). Additionally, [Xorg](/index.php/Xorg "Xorg") should be able to auto-detect required drivers using udev, but users have the option to configure the X server manually too.
+Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the boot process by default. A potential improvement in boot time can be achieved by disabling module auto-loading and specifying required modules manually, as described in [Kernel modules](/index.php/Kernel_modules "Kernel modules"). Additionally, [Xorg](/index.php/Xorg "Xorg") should be able to auto-detect required drivers using `udev`, but users have the option to configure the X server manually too.
 
 ### Microcode
 

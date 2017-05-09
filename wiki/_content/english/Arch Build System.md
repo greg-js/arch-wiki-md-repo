@@ -179,7 +179,7 @@ $ svn log *package-name*
 
 ```
 
-Find out the revision you want by examining the history, then speciy the revision you wish to checkout. For example, to checkout revision `r1729` you would do:
+Find out the revision you want by examining the history, then specify the revision you wish to checkout. For example, to checkout revision `r1729` you would do:
 
 ```
 $ svn update -r1729 *package-name*
