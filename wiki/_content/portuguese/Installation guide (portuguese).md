@@ -5,7 +5,7 @@ Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index
 ## Contents
 
 *   [1 Pré-instalação](#Pr.C3.A9-instala.C3.A7.C3.A3o)
-    *   [1.1 Defina o layout do teclado](#Defina_o_layout_do_teclado)
+    *   [1.1 Definir o layout do teclado](#Definir_o_layout_do_teclado)
     *   [1.2 Verificar o modo de inicialização](#Verificar_o_modo_de_inicializa.C3.A7.C3.A3o)
     *   [1.3 Conectar à Internet](#Conectar_.C3.A0_Internet)
     *   [1.4 Atualizar o relógio do sistema](#Atualizar_o_rel.C3.B3gio_do_sistema)
@@ -15,20 +15,18 @@ Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index
 *   [2 Instalação](#Instala.C3.A7.C3.A3o)
     *   [2.1 Selecionar os mirrors](#Selecionar_os_mirrors)
     *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
-    *   [2.3 Configurar o sistema](#Configurar_o_sistema)
-    *   [2.4 Instalar e configurar um gerenciador de boot](#Instalar_e_configurar_um_gerenciador_de_boot)
-    *   [2.5 Desmontar e reiniciar](#Desmontar_e_reiniciar)
-*   [3 Pós-instalação](#P.C3.B3s-instala.C3.A7.C3.A3o)
-*   [4 Configure o pacman](#Configure_o_pacman)
-*   [5 Atualizando o sistema](#Atualizando_o_sistema)
-    *   [5.1 Gerenciamento de usuários](#Gerenciamento_de_usu.C3.A1rios)
-    *   [5.2 Gerenciamento de pacotes](#Gerenciamento_de_pacotes)
-    *   [5.3 Gerenciamento de serviços](#Gerenciamento_de_servi.C3.A7os)
-    *   [5.4 Som](#Som)
-    *   [5.5 Driver de Video](#Driver_de_Video)
-    *   [5.6 Servidor de exibição](#Servidor_de_exibi.C3.A7.C3.A3o)
-    *   [5.7 Fontes](#Fontes)
-*   [6 Apêndice](#Ap.C3.AAndice)
+*   [3 Configurar o sistema](#Configurar_o_sistema)
+    *   [3.1 Fstab](#Fstab)
+    *   [3.2 Chroot](#Chroot)
+    *   [3.3 Fuso horário](#Fuso_hor.C3.A1rio)
+    *   [3.4 Locale](#Locale)
+    *   [3.5 Hostname](#Hostname)
+    *   [3.6 Configuração de rede](#Configura.C3.A7.C3.A3o_de_rede)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Senha do root](#Senha_do_root)
+    *   [3.9 Gerenciador de boot](#Gerenciador_de_boot)
+*   [4 Reiniciar](#Reiniciar)
+*   [5 Pós-instalação](#P.C3.B3s-instala.C3.A7.C3.A3o)
 
 ## Pré-instalação
 
@@ -36,13 +34,13 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
 
 Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*arrow*`. Para [editar](/index.php/Textedit "Textedit") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
+Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Textedit "Textedit") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
-### Defina o layout do teclado
+### Definir o layout do teclado
 
 O [mapa de teclas de console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Para listar todos os layouts disponíveis, execute `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [brasileiro](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
+Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
 
 [Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
@@ -59,14 +57,14 @@ Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](htt
 
 ### Conectar à Internet
 
-A imagem de instalação [habilita](/index.php/Enable "Enable") o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos [cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) e vai tentar iniciar uma conexão. Verifique sea conectividade da internet está disponível, por exemplo com [ping](/index.php/Ping "Ping"):
+A imagem de instalação [habilita](/index.php/Enable "Enable") o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos [cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) e vai tentar iniciar uma conexão. Verifique se a conectividade da internet está disponível, por exemplo com [ping](/index.php/Ping "Ping"):
 
 ```
 # ping archlinux.org
 
 ```
 
-Se nenhum estiver disponível, [pare](/index.php/Stop "Stop") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Network_configuration#Device_driver "Network configuration").
+Se nenhum estiver disponível, [pare](/index.php/Stop "Stop") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
 
 Para conexões **sem fio** (*wireless*), iw(8), wpa_supplicant(8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
 
@@ -154,160 +152,136 @@ Esse grupo não inclui todas as ferramentas da instalação *live*, tal como [bt
 
 Para [instalar](/index.php/Install "Install") pacotes e outros grupos, tal como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), anexe os nomes ao *pacstrap* (separados por espaço) ou a comandos [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa do [#Chroot](#Chroot).
 
-### Configurar o sistema
+## Configurar o sistema
 
-*   Gerar um [fstab](/index.php/Fstab "Fstab") com o seguinte comando (se preferir use UUIDs ou labels, adicione a opção `-U` ou `-L`, respectivamente):
+### Fstab
 
-	 `# genfstab -p /mnt >> /mnt/etc/fstab` 
+Gerar um arquivo [fstab](/index.php/Fstab "Fstab") (use `-U` ou `-L` para definir por [UUID](/index.php/UUID "UUID") ou rótulos, respectivamente):
 
-*   [chroot](/index.php/Chroot "Chroot") em nosso sistema recém-instalado:
+```
+# genfstab -p /mnt >> /mnt/etc/fstab
 
-	 `# arch-chroot /mnt` 
+```
 
-*   Escreva seu hostname em `/etc/hostname`.
+Verifique o arquivo resultante em `/mnt/etc/fstab` em seguida e edite-o caso haja erros.
 
-*   Symlink `/etc/localtime` para `/usr/share/zoneinfo/Zone/SubZone`. Substitua `Zone` e `Subzone` em seu liking. Por exemplo:
+### Chroot
 
-	 `# ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime` 
+[Mude a raiz](/index.php/Change_root "Change root") para novo sistema:
 
-*   Descomente o local selecionado em `/etc/locale.gen` e gere-o com `locale-gen`.
-*   Defina a preferência [locale](/index.php/Locale#Setting_the_system_locale "Locale") em `/etc/locale.conf`.
-*   Adicione a preferência [console keymap](/index.php/KEYMAP "KEYMAP") e [font](/index.php/Fonts#Console_fonts "Fonts") em `/etc/vconsole.conf`
-*   Configure `/etc/mkinitcpio.conf` conforme necessário (veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) e crie um disco RAM inicial com:
+```
+# arch-chroot /mnt
 
-	 `# mkinitcpio -p linux` 
+```
 
-*   Defina uma seha root com `passwd`.
-*   Configure a rede novamente para o ambiente recém-instalado. Consulte [Network configuration](/index.php/Network_configuration "Network configuration") e [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+### Fuso horário
 
-### Instalar e configurar um gerenciador de boot
+Defina o [fuso horário](/index.php/Time_zone "Time zone"):
+
+```
+# ln -sf /usr/share/zoneinfo/*Região*/*Cidade* /etc/localtime
+
+```
+
+Por exemplo, para definir para o fuso horário de Brasília (*BRT* ou *BRST*), execute:
+
+```
+# ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+
+```
+
+Execute [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) para gerar `/etc/adjtime`:
+
+```
+# hwclock --systohc
+
+```
+
+Esse comando presume que o relógio de hardware está definido para [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Veja [Time#Time standard](/index.php/Time#Time_standard "Time") para mais detalhes.
+
+### Locale
+
+Descomente `pt_BR.UTF-8 UTF-8` e qualquer outra [localização](/index.php/Localization "Localization") em `/etc/locale.gen`, e gere-as com:
+
+```
+# locale-gen
+
+```
+
+Defina a [variável](/index.php/Variable "Variable") `LANG` em [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) adequadamente, por exemplo:
+
+ `/etc/locale.conf`  `LANG=*pt_BR.UTF-8*` 
+
+Se você [definir o layout do teclado](#Definir_o_layout_do_teclado), torne as alterações persistentes em [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
+
+ `/etc/vconsole.conf`  `KEYMAP=*br-abnt2*` 
+
+### Hostname
+
+Crie o arquivo [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
+
+ `/etc/hostname` 
+```
+*meuhostname*
+
+```
+
+Considere adicionar uma entrada correspondente ao [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+
+ `/etc/hosts` 
+```
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+**127.0.1.1	*meuhostname*.localdomain	*meuhostname***
+
+```
+
+Veja também [Configuração de rede#Configurando um hostname](/index.php/Configura%C3%A7%C3%A3o_de_rede#Configurando_um_hostname "Configuração de rede").
+
+### Configuração de rede
+
+O recém-instalado ambiente possui nenhuma conectividade de rede ativada por padrão. Veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para configurar uma.
+
+Para [Configuração sem fio](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Install "Install") os pacotes [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), assim como [pacotes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") que se fizerem necessários. Opcionalmente, instale [dialog](https://www.archlinux.org/packages/?name=dialog) para uso de *wifi-menu*.
+
+### Initramfs
+
+Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote [linux](https://www.archlinux.org/packages/?name=linux) com *pacstrap*.
+
+Para configurações especiais, modifique o arquivo mkinitcpio.conf(5) e recrie a imagem initramfs:
+
+```
+# mkinitcpio -p linux
+
+```
+
+### Senha do root
+
+Defina a [senha](/index.php/Password "Password") do *root* (também conhecido como "superusuário"):
+
+```
+# passwd
+
+```
+
+### Gerenciador de boot
 
 Você pode escolher entre [GRUB](/index.php/GRUB "GRUB") ou [Syslinux](/index.php/Syslinux "Syslinux").
 
-*GRUB*
+Veja [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") para escolhas disponíveis e configurações.
 
-*   Para BIOS:
+Se você tiver um CPU Intel, instale o pacote [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) também, e [habilite atualizações de *microcode*](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
-```
-# arch-chroot /mnt pacman -S grub-bios
+## Reiniciar
 
-```
+Saia de ambiente *chroot* digitando `exit` ou pressionando `Ctrl+D`.
 
-*   Para EFI(e em raros casos você precisará instalar `grub-efi-i386` ao invés de x86_64):
+Opcionalmente, desmonte todas as partições com `umount -R /mnt`: isso permite noticiar quaisquer partições "ocupadas" e localizar a causa com o [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
 
-```
-# arch-chroot /mnt pacman -S /mnt grub-efi-x86_64
-
-```
-
-*   Instale o GRUB antes de executar o chroot (sessão [Configurando o Sistema](#Configurar_o_sistema)).
-
-*Syslinux*
-
-```
-# arch-chroot /mnt pacman -S syslinux
-
-```
-
-### Desmontar e reiniciar
-
-Se você ainda está no ambiente chroot digite `exit` ou pressione `Ctrl+D` para sair. Anteriormente montamos as partições em `/mnt`. Nesta etapa vamos desmontá-las:
-
-```
-# umount /mnt/{boot,home,}
-
-```
-
-Agora reinicie e então faça a autenticação no seu novo sistema com a conta root.
+Finalmente, reinicie a máquina digitando `reboot`: quaisquer partições que ainda estejam montadas serão desmontadas automaticamente por *systemd*. Lembre-se de remover a mídia de instalação e, então, se autenticando no novo sistema com a conta de root.
 
 ## Pós-instalação
 
-## Configure o pacman
+Veja [Recomendações gerais](/index.php/General_recommendations "General recommendations") por instruções de gerenciamento de sistema e tutoriais pós-instalação (como instalar uma interface gráfica de usuário, som ou um touchpad).
 
-Edite `/etc/pacman.conf` e configure as opções, assim como os repositórios que deseja.
-
-Veja [Pacman](/index.php/Pacman "Pacman") e [Official repositories](/index.php/Official_repositories "Official repositories") para mais detalhes.
-
-## Atualizando o sistema
-
-A partir deste ponto, é aconselhavel que você atualize o sistema.
-
-Veja [atualizando os pacotes](/index.php/Pacman#Upgrading_packages "Pacman") para maiores instruções.
-
-### Gerenciamento de usuários
-
-Adicione as contas de usuário que você precisa além do conta root, como descrito em [User management](/index.php/Users_and_groups#User_management "Users and groups"). Não é recomendável usar a conta root para uso normal, ou expô-la via [SSH](/index.php/SSH "SSH") em um servidor. A conta root só deve ser usada para tarefas administrativas.
-
-### Gerenciamento de pacotes
-
-Consulte [pacman](/index.php/Pacman "Pacman") e [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") para respostas sobre a instalação, atualização e gerenciamento de pacotes.
-
-### Gerenciamento de serviços
-
-Arch Linux usa [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como init, que é um sistema e gerenciador de serviços para Linux. Para manter sua instalação do Arch Linux, é recomendável aprender o básico sobre o assunto. Interação com systemd é feito via comando `systemctl`. Leia [Uso_básico_systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_systemctl "Systemd (Português)") para maiores informações.
-
-### Som
-
-Instale o [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) (que contém `alsamixer`) e siga as instruções [these](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture").
-
-ALSA está incluído no kernel e é recomendado. Se não funcionar, [OSS](/index.php/OSS "OSS") é uma alternativa viável. Se houver requisitos avançadas de áudio, dê uma olhada no [Sound system](/index.php/Sound_system "Sound system") para uma visão geral de vários artigos.
-
-### Driver de Video
-
-O kernel do Linux inclui drivers de vídeo de código aberto e suporte para hardware framebuffers. No entanto, é necessário o suporte em nível usuário para OpenGL e aceleração 2D no X11.
-
-Se você não sabe qual o chipset de vídeo que está disponível no seu computador, execute:
-
-```
-$ lspci | grep VGA
-
-```
-
-Para obter uma lista completa de drivers de vídeo de código aberto, procure o banco de dados do pacote:
-
-```
-$ pacman -Ss xf86-video | less
-
-```
-
-O driver `vesa` é um controlador de definição de modo genérico, que irá trabalhar com quase todas as GPU, mas não fornecerá nenhuma aceleração 2D ou 3D. Se um driver preferível não puder ser localizado ou falhar ao carregar, Xorg voltará para o vesa. Para instalá-lo:
-
-```
-# pacman -S xf86-video-vesa
-
-```
-
-Para aceleração de vídeo funcionar, e muitas vezes para mostrar todos os modos de definição da GPU, um driver de vídeo adequado é necessário:
-
-| Marca | Tipo | Driver | Pacote [Multilib](/index.php/Multilib "Multilib")
-(para aplicativos 32-bit em Arch x86_64) | Documentação |
-| **AMD/ATI** | Código aberto | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-ati-dri](https://www.archlinux.org/packages/?name=lib32-ati-dri) | [ATI](/index.php/ATI "ATI") |
-| Proprietário | [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/) | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| **Intel** | Código aberto | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
-| **Nvidia** | Código aberto | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-nouveau-dri](https://www.archlinux.org/packages/?name=lib32-nouveau-dri) | [Nouveau](/index.php/Nouveau "Nouveau") |
-| [xf86-video-nv](https://aur.archlinux.org/packages/xf86-video-nv/) | – | (driver legacy) |
-| Proprietário | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
-| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) |
-
-### Servidor de exibição
-
-O Sistema X Window (geralmente X11, ou X) é uma rede e protocolo de exibição que fornece janelas em bitmap. É o padrão de fato para implementação de interfaces gráficas de usuário. Consulte o artigo [Xorg](/index.php/Xorg "Xorg") para obter mais detalhes.
-
-[Wayland](/index.php/Wayland "Wayland") é um novo protocolo de servidor de exibição e a implementação de referência Weston está disponível. Há muito pouco suporte de aplicações nesta fase inicial de desenvolvimento.
-
-### Fontes
-
-Você pode querer instalar um conjunto de fontes TrueType, como somente não escalar fontes bitmap que são incluídas por padrão. DejaVu é um conjunto de alta qualidade, as fontes de uso geral com boa cobertura [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"):
-
-```
-# pacman -S ttf-dejavu
-
-```
-
-Consulte [Font configuration](/index.php/Font_configuration "Font configuration") para saber como configurar a renderização de fontes e [Fonts](/index.php/Fonts "Fonts") para sugestões de fonte e instruções de instalação.
-
-## Apêndice
-
-Para uma lista de aplicativos que podem ser do seu interesse, veja a [List of applications](/index.php/List_of_applications "List of applications").
-
-Consulte [General recommendations](/index.php/General_recommendations "General recommendations") para tutoriais de pós-instalação, como confirar touchpad ou fonte de renderização.
+Para uma lista de aplicativos que podem ser de seu interesse, veja [Lista de aplicativos](/index.php/List_of_applications "List of applications").

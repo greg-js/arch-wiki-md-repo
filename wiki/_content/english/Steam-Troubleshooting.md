@@ -1,6 +1,6 @@
 **Tip:** The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from a terminal emulator to see that output.
 
-**Note:** In addition to being documented here, any bug/fix/error should be, if not already, reported on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux).
+**Note:** Bugs should be reported at Valve's [GitHub issue tracker](https://github.com/ValveSoftware/steam-for-linux).
 
 ## Contents
 

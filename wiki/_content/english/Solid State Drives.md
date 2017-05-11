@@ -87,9 +87,9 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:
 
 ```
-/dev/sda2  /boot       ext4  defaults,noatime,**discard**   0  2
-/dev/sda1  /boot/efi   vfat  defaults,noatime,**discard**   0  2
-/dev/sda3  /           ext4  defaults,noatime,**discard**   0  2
+/dev/sda2  /boot       ext4  defaults,**discard**   0  2
+/dev/sda1  /boot/efi   vfat  defaults,**discard**   0  2
+/dev/sda3  /           ext4  defaults,**discard**   0  2
 
 ```
 

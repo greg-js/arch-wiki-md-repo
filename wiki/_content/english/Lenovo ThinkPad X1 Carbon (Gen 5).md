@@ -8,7 +8,8 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
-    *   [2.3 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.3 Touchpad](#Touchpad)
+    *   [2.4 TrackPoint Scrolling](#TrackPoint_Scrolling)
 
 ## Model description
 
@@ -60,6 +61,10 @@ There are two options for displays:
 
 *   14" FHD IPS (1920 x 1080): Works
 *   14" WQHD (2560 x 1440): ??
+
+### Touchpad
+
+**Note:** If you experience brief and sporadic freezing of the touchpad/trackpoint, one option is to install and use the [Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") touchpad driver rather than the on provided by [libinput](/index.php/Libinput "Libinput"). Although the Synaptics driver is no longer actively supported, it appears that it may currently be more stable with the Lenovo ThinkPad X1 Carbon.
 
 ### TrackPoint Scrolling
 

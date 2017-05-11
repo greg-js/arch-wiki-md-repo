@@ -111,7 +111,7 @@ Disabling the touchscreen can be done in the UEFI settings and results in signif
 
 ### Enable NVME APST
 
-Before Kernel 4.11 Linux does not support NVME APST, so the NVME SSD is in its highest power state all the time. Significant power savings can be achieved by running a Kernel with patches to enable APST. See [Solid State Drives/NVMe#Power Saving APST](/index.php/Solid_State_Drives/NVMe#Power_Saving_APST "Solid State Drives/NVMe"). Note that the `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE` must also be set on this kernel to enable GPU switching.
+Before Kernel 4.11 Linux does not support NVME APST, so the NVME SSD is in its highest power state all the time. Significant power savings can be achieved by running a Kernel with patches and appropriate parameters to enable APST. See [Solid State Drives/NVMe#Power Saving APST](/index.php/Solid_State_Drives/NVMe#Power_Saving_APST "Solid State Drives/NVMe"). Even when running such a kernel, it may be necessary to adjust the `default_ps_max_latency_us` parameter to the `nvme_core` module in order to make ASPT work.
 
 ### Enable power saving features for the i915 kernel module
 

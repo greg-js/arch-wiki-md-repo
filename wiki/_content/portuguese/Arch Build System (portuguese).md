@@ -45,7 +45,7 @@ ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usan
 
 	[makepkg](/index.php/Makepkg "Makepkg")
 
-	Ferramenta de comando shell que lê os PKGBUILDs, baixa automaticamente e compila os fontes e cria um `.pkg.tar*` de acordo com o vetor `PKGEXT` no `makepkg.conf`. Você também pode usar makepkg para fazer seus próprios pacotes personalizados do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou fontes de terceiros. Veja [Criando pacotes](/index.php/Creating_packages "Creating packages") para mais informações.
+	Ferramenta de comando shell que lê os PKGBUILDs, baixa automaticamente e compila os fontes e cria um `.pkg.tar*` de acordo com o vetor `PKGEXT` no `makepkg.conf`. Você também pode usar makepkg para fazer seus próprios pacotes personalizados do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou fontes de terceiros. Veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes") para mais informações.
 
 	[pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 

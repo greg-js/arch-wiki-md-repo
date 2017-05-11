@@ -14,6 +14,7 @@
     *   [1.9 Touch Scrolling on touchscreen devices](#Touch_Scrolling_on_touchscreen_devices)
     *   [1.10 Reduce memory usage](#Reduce_memory_usage)
     *   [1.11 User Agent](#User_Agent)
+    *   [1.12 DOM Distiller](#DOM_Distiller)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -22,6 +23,9 @@
         *   [3.2.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
         *   [3.2.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
     *   [3.3 Canvas Fingerprinting](#Canvas_Fingerprinting)
+    *   [3.4 Privacy extensions](#Privacy_extensions)
+        *   [3.4.1 ScriptSafe](#ScriptSafe)
+        *   [3.4.2 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -151,6 +155,14 @@ In addition, you can suspend or store inactive Tabs with extensions such as [Tab
 
 The User Agent can be arbitrarily modified at the start of Chromium's base instance via its `--user-agent="[string]"` parameter.
 
+### DOM Distiller
+
+Chromium has a similar reader mode to Firefox. In this case it's called DOM Distiller, which is an [open source project](https://github.com/chromium/dom-distiller). All you need to do is run Chromium with the `--enable-dom-distiller` flag to unlock the "Distill page" menu option or you can even make it [persistent](#Making_flags_persistent). Not only does DOM Distiller provide a better reading experience by distilling the content of the page, it also simplifies pages for print. Even though the latter checkbox option has been removed from the print dialog, you can still print the distilled page, which basically has the same effect.
+
+Running the upper flag, you will find a new "Distill Page" menu item.
+
+You can reach the internal debug page by visiting `chrome://dom-distiller`
+
 ## Profile maintenance
 
 Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history and the like. Sqlite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve startup and some other bookmarks- and history-related tasks is to defragment and trim unused space from these databases.
@@ -250,6 +262,39 @@ Canvas fingerprinting is a technique that allows websites to identify users by d
 To confirm this is working run [this test](https://panopticlick.eff.org) and make sure "hash of canvas fingerprint" is reported as undetermined in the full results.
 
 **Note:** Some extensions require reading from canvas and may be broken by setting `--disable-reading-from-canvas`.
+
+### Privacy extensions
+
+Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") browser are typically also available for Chromium. See [Firefox/Privacy#Extensions](/index.php/Firefox/Privacy#Extensions "Firefox/Privacy") for details.
+
+*   [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)
+*   [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
+*   [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?hl=en)
+*   [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en)
+*   [Disconnect](https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo?hl=en)
+*   [Decentraleyes](https://chrome.google.com/webstore/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj?hl=en)
+
+#### ScriptSafe
+
+ScriptSafe is a browser extension that gives users control of the web and more secure browsing while emphasizing simplicity and intuitiveness.
+
+**Note:** Due to the nature of this extension, this will break most sites! It is designed to learn over time with sites that you allow.
+
+Check it on [GitHub](https://github.com/andryou/scriptsafe)
+
+Extension available in Chrome Web Store: [ScriptSafe](https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en)
+
+#### Vanilla Cookie Manager
+
+A Cookie Whitelist Manager for Chrome that helps protect your privacy. Automatically removes unwanted cookies. Cookies can be used for authentication, storing your site preferences or anything else that can be saved as text data. Unfortunately they can also be used to track you.
+
+You could turn off cookies completely or just shut off third-party cookies. But that would also keep out useful cookies that many web apps rely upon to work (like Google Mail or Calendar).
+
+With Vanilla you can select which cookies you want to keep on a whitelist. All unwanted cookies are deleted automatically (or manually if you prefer).
+
+Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome)
+
+Extension available in Chrome Web Store: [Vanilla Cookie Manager](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
 
 ## Making flags persistent
 

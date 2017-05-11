@@ -60,7 +60,7 @@ $ git commit -a
 
 *   **[etckeeper](/index.php/Etckeeper "Etckeeper")** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade.
 
-	[http://joeyh.name/code/etckeeper/](http://joeyh.name/code/etckeeper/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
+	[http://etckeeper.branchable.com/](http://etckeeper.branchable.com/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
 
 *   **GNU Stow** — Can be used to symlink dotfiles from a repository into the $HOME tree. See [[1]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) for more information.
 

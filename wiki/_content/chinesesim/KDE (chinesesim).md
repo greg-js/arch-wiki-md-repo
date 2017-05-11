@@ -111,9 +111,11 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 **提示：** 为了更好地将 SDDM 与 Plasma 整合，建议您使用微风主题。您可以在“系统设置 - 开关机”内设置
 
-在你的 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 菜单中选择 “Plasma” 启动 Plasma 5 。
+在你的 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 菜单中选择 *Plasma* 启动 Plasma 5 。
 
-由于 Qt 5.8 的问题， Plasma 暂时无法使用 [Wayland](/index.php/Wayland "Wayland") 启动。
+由于 Qt 5.8 的问题， Plasma 暂时无法使用 [Wayland](/index.php/Wayland "Wayland") 启动。 [Qt 5.9](https://community.kde.org/Plasma/5.9_Errata#Wayland) 将提供修复。
+
+如果想从显示管理器中使用 Wayland 启动 Plasma，请安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包。之后，*Plasma* 应显示在显示管理器中。
 
 ### 手动启动
 
@@ -123,7 +125,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 大部分配置被储存在 `~/.config` ，但有些旧程序仍在使用 `~/.kde4` 。KDE 主要在**“系统设置”**内配置。它也可通过 `systemsettings5` 启动。
 
-在将配置文件移动到新位置后，一些 KDE 5 的应用程序可以使用 KDE 4 的配置。 例如：
+在将配置文件移动到新位置后，一些 KDE 5 的应用程序可以使用 KDElibs 4 的配置。 例如：
 
 *   Konsole 皮肤从 `~/.kde4/share/apps/konsole` 移到 `~/.local/share/konsole/`
 *   应用程序的外观从 `~/.kde4/share/config/kdeglobals` 移到 `~/.config/kdeglobals`
@@ -159,7 +161,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 	GTK+
 
-在 GTK 中推荐外形美观的主题是 [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) 或 [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)。安装 [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) 并在 *系统设置 > 应用风格 > GNOME 应用设置*中选择想要的 GTK 主题。
+在 GTK 中推荐外形美观的主题是 [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) 或 [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)。安装 [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) 并在 *系统设置 > 应用风格 > GNOME 应用设置* 中选择想要的 GTK 主题。
 
 在某些主题中，GTK+ 应用程序的工具栏显示为白底白字。若要更改 GTK2 应用程序中的颜色，请找到 `.gtkrc-2.0` 并修改工具栏区。若要更改 GTK3 应用程序中的颜色，`gtk.css` 和 `settings.ini` 文件需要被修改。
 

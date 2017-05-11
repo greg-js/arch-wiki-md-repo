@@ -7,6 +7,7 @@
     *   [2.1 Official Theme Generator](#Official_Theme_Generator)
     *   [2.2 Contributed Themes](#Contributed_Themes)
     *   [2.3 Rofi as a drop-in replacement for dmenu](#Rofi_as_a_drop-in_replacement_for_dmenu)
+    *   [2.4 Rofi Theme](#Rofi_Theme)
 
 ## Installation
 
@@ -43,3 +44,7 @@ rofi -show run -modi run -location 1 -width 100 \
 **Tip:** You can add the `-dump-xresources` flag above, save the text output to a file and upload it to the [official theme generator](https://davedavenport.github.io/rofi/p11-Generator.html) to further customize the above theme.
 
 **Note:** The command line options `-show run` and `-modi run` above will make [Rofi](https://github.com/DaveDavenport/rofi) act similar to `dmenu_run` which is provided by [dmenu](https://www.archlinux.org/packages/?name=dmenu), limiting the capabilities of Rofi. See `man rofi` and the [official project description](https://github.com/DaveDavenport/rofi) for more information on the additional modes available.
+
+### Rofi Theme
+
+Require xorg-xrdb installed. Choose one theme you like [Rofi Theme](https://davedavenport.github.io/rofi/p05-Themes.html) Copy code to ~/.Xresources Reload .Xresources file by xrdb -load ~/.Xresources or restart your computer it will works. If you don't understand, you can watch this video [Youtube](https://youtu.be/r4EYovtjLCk)

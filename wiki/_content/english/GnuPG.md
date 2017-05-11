@@ -187,7 +187,7 @@ $ gpg --search-keys *user-id*
 To import a key from a key server:
 
 ```
-$ gpg --recv-keys *user-id*
+$ gpg --recv-keys *key-id*
 
 ```
 

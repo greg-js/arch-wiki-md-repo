@@ -221,3 +221,5 @@ users=
 *   **sct** — set color temperature
 
 	[sct](https://aur.archlinux.org/packages/sct/) || [sct](https://aur.archlinux.org/packages/sct/)
+
+*   [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)

@@ -30,7 +30,7 @@ Parameters either have the format `parameter` or `parameter=value`.
 
 **Note:**
 
-*   You can check the parameters your system was booted up with by running `$ cat /proc/cmdline` and see if it includes your changes.
+*   You can check the parameters your system was booted up with by running `cat /proc/cmdline` and see if it includes your changes.
 *   The Arch Linux [installation medium](https://www.archlinux.org/download/) uses [Syslinux](/index.php/Syslinux "Syslinux") for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems, and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") for [UEFI](/index.php/UEFI "UEFI") systems.
 
 Kernel parameters can be set either temporarily by editing the boot menu when it shows up, or by modifying the boot loader's configuration file.

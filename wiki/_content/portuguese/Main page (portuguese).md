@@ -38,7 +38,7 @@ Visite a [Tabela de conteúdos](/index.php/Table_of_contents "Table of contents"
 
 	Descreve as várias formas que Archers podem contribuir para a comunidade do Arch.
 
-	[ArchWiki:Contributing (Português)](/index.php?title=ArchWiki:Contributing_(Portugu%C3%AAs)&action=edit&redlink=1 "ArchWiki:Contributing (Português) (page does not exist)")
+	[ArchWiki:Contributing (Português)](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs) "ArchWiki:Contributing (Português)")
 
 	Se você está interessado e pode contribuir para o wiki, por favor veja este artigo por ideias.
 

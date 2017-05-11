@@ -12,7 +12,8 @@ The Dell Latitude E7440 is a business Ultrabook™. Generally speaking, it has n
     *   [5.3 SSD in the mSATA slot is only recognized after waking from susped](#SSD_in_the_mSATA_slot_is_only_recognized_after_waking_from_susped)
     *   [5.4 Freeze before going to suspend when lid is closed](#Freeze_before_going_to_suspend_when_lid_is_closed)
     *   [5.5 Wifi-problems with bluetooth enabled](#Wifi-problems_with_bluetooth_enabled)
-    *   [5.6 Hang with 4.2.0 kernel when docking with E-Port Plus and external monitors](#Hang_with_4.2.0_kernel_when_docking_with_E-Port_Plus_and_external_monitors)
+    *   [5.6 Wifi problems when coming back from supend state](#Wifi_problems_when_coming_back_from_supend_state)
+    *   [5.7 Hang with 4.2.0 kernel when docking with E-Port Plus and external monitors](#Hang_with_4.2.0_kernel_when_docking_with_E-Port_Plus_and_external_monitors)
 *   [6 See also](#See_also)
 
 ## Hardware Overview
@@ -143,6 +144,10 @@ esac
 ### Wifi-problems with bluetooth enabled
 
 Severe wifi problems (decresing traffic, connection drops) with bluetooth enabled. Workaround is to switch it off when not needed. This bug seems to be router-specific (happend with a Fritzbox).
+
+### Wifi problems when coming back from supend state
+
+When your wifi is gone after resume try going to BIOS and deactivate the functionality to turn wifi and wwan down when ethernet cable is connected.
 
 ### Hang with 4.2.0 kernel when docking with E-Port Plus and external monitors
 

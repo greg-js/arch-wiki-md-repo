@@ -24,11 +24,12 @@
     *   [5.3 Connecting to a vncserver from Android devices over SSH](#Connecting_to_a_vncserver_from_Android_devices_over_SSH)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
-    *   [6.2 Copying clipboard contents from the remote machine to the local](#Copying_clipboard_contents_from_the_remote_machine_to_the_local)
-    *   [6.3 Fix for no mouse cursor](#Fix_for_no_mouse_cursor)
-    *   [6.4 Recommended security settings](#Recommended_security_settings)
-    *   [6.5 Toggling Fullscreen](#Toggling_Fullscreen)
-    *   [6.6 Unable to type less than character (<)](#Unable_to_type_less_than_character_.28.3C.29)
+    *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_.28Arch_ARM.29)
+    *   [6.3 Copying clipboard contents from the remote machine to the local](#Copying_clipboard_contents_from_the_remote_machine_to_the_local)
+    *   [6.4 Fix for no mouse cursor](#Fix_for_no_mouse_cursor)
+    *   [6.5 Recommended security settings](#Recommended_security_settings)
+    *   [6.6 Toggling Fullscreen](#Toggling_Fullscreen)
+    *   [6.7 Unable to type less than character (<)](#Unable_to_type_less_than_character_.28.3C.29)
 
 ## Installation
 
@@ -392,6 +393,10 @@ Connect.
 ### Connecting to an OSX system
 
 See [https://help.ubuntu.com/community/AppleRemoteDesktop](https://help.ubuntu.com/community/AppleRemoteDesktop). Tested with Remmina.
+
+### Connecting to non-X environments on a Raspberry Pi (Arch ARM)
+
+Install [dispmanx_vnc](https://aur.archlinux.org/packages/dispmanx_vnc/) on the Arch ARM device. Frame rates are not very high but it provides a working VNC access.
 
 ### Copying clipboard contents from the remote machine to the local
 

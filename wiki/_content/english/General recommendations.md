@@ -170,7 +170,7 @@ A full-fledged desktop environment provides a complete and consistent graphical 
 
 ### Display manager
 
-Most desktop environment include a [display manager](/index.php/Display_manager "Display manager") for automatically starting the graphical environment and managing user logins. Users without a desktop environment can install one separately. Alternatively you may [start X at login](/index.php/Start_X_at_login "Start X at login") as a simple alternative to a display manager.
+Most desktop environments include a [display manager](/index.php/Display_manager "Display manager") for automatically starting the graphical environment and managing user logins. Users without a desktop environment can install one separately. Alternatively you may [start X at login](/index.php/Start_X_at_login "Start X at login") as a simple alternative to a display manager.
 
 ## Power management
 
@@ -206,7 +206,7 @@ See main article: [Suspend and hibernate](/index.php/Suspend_and_hibernate "Susp
 
 *   [OSS](/index.php/OSS "OSS") is a viable alternative in case ALSA does not work.
 
-Users may additionally wish to install and configure a [sound server](/index.php/Sound#Sound_servers "Sound") such as [PulseAudio](/index.php/PulseAudio "PulseAudio"). For advanced audio requirements, see [professional audio](/index.php/Professional_audio "Professional audio").
+Users may additionally wish to install and configure a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio"). For advanced audio requirements, see [professional audio](/index.php/Professional_audio "Professional audio").
 
 ### Browser plugins
 
@@ -250,7 +250,7 @@ Non-English or otherwise non-standard keyboards may not function as expected by 
 
 ### Mouse buttons
 
-Owners of advanced or unusual mice may find that not all mouse buttons are recognized by default, or may wish to assign different actions for extra buttons. Instructions can be found in [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+Owners of advanced or unusual mice may find that not all mouse buttons are recognized by default, or may wish to assign different actions for extra buttons. Instructions can be found in [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons").
 
 ### Laptop touchpads
 
@@ -282,9 +282,9 @@ This section relates to [daemons](/index.php/Daemons "Daemons"). For more, pleas
 
 ### File index and search
 
-Most distributions have a `locate` command available to be able to quickly search for files. To get this functionality in Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) is the recommended install. After the install you should run `updatedb` to index the filesystems.
+Most distributions have a *locate* command available to be able to quickly search for files. To get this functionality in Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) is the recommended install. After the install you should run *updatedb* to index the filesystems.
 
-[Desktop search engines](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") provide a similar service, while better integrated into [desktop environments](/index.php/Desktop_environments "Desktop environments").
+[Desktop search engines](/index.php/List_of_applications/Utilities#Finders "List of applications/Utilities") provide a similar service, while better integrated into [desktop environments](/index.php/Desktop_environment "Desktop environment").
 
 ### Local mail delivery
 
@@ -336,7 +336,7 @@ Compressed files, or archives, are frequently encountered on a GNU/Linux system.
 
 ### Console prompt
 
-The console prompt (PS1) can be customized to a great extent. See [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt") or [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") if using Bash or Zsh, respectively.
+The console prompt (PS1) can be customized to a great extent. See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") or [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") if using Bash or Zsh, respectively.
 
 ### Emacs shell
 
@@ -348,7 +348,7 @@ Using a mouse with the console for copy-paste operations can be preferred over [
 
 ### Scrollback buffer
 
-To be able to save and view text which has scrolled off the screen, refer to [Scrollback buffer](/index.php/Scrollback_buffer "Scrollback buffer").
+To be able to save and view text which has scrolled off the screen, refer to [General troubleshooting#Scrollback](/index.php/General_troubleshooting#Scrollback "General troubleshooting").
 
 ### Session management
 

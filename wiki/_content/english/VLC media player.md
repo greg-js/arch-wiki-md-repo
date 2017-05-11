@@ -137,7 +137,7 @@ $ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris
 
 ### Preventing multiple instances
 
-The default settings for VLC is to open a new instance of the program for each file that is opened. This can be annoying if you are using VLC for something like playing your music collection. You can disable this in *Tools > Preferences > Interface > Instances > Allow only one instance*. Optionally. tick *Enqueue files when in one instance mode* which keeps current file playing and adds any newly opened files to the current playlist.
+The default settings for VLC is to open a new instance of the program for each file that is opened. This can be annoying if you are using VLC for something like playing your music collection. You can disable this in *Tools > Preferences > Interface > Instances > Allow only one instance*. Optionally, tick *Enqueue files when in one instance mode* which keeps current file playing and adds any newly opened files to the current playlist.
 
 ### Hardware acceleration support
 

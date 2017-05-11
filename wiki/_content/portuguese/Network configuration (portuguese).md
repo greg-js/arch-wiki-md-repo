@@ -1,4 +1,4 @@
-Esta página explica como configurar uma conexão **cabeada**. Se você deseja configurar uma rede **wireless/sem fio** veja a página [Configuração de Redes Sem Fio](/index.php?title=Wireless_Setup_(Portugu%C3%AAs)&action=edit&redlink=1 "Wireless Setup (Português) (page does not exist)").
+Esta página explica como configurar uma conexão **cabeada**. Se você deseja configurar uma rede **wireless/sem fio** veja a página [Configuração de Redes Sem Fio](/index.php/Wireless_Setup "Wireless Setup").
 
 ## Contents
 

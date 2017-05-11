@@ -1,6 +1,6 @@
 From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
-	*The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices.*
+	The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices.
 
 The idea is to use the built-in fingerprint reader in some notebooks for login using [PAM](/index.php/PAM "PAM"). This article will also explain how to use regular password for backup login method (solely fingerprint scanner is not recommended due to numerous reasons).
 
@@ -11,6 +11,7 @@ The idea is to use the built-in fingerprint reader in some notebooks for login u
 *   [3 Configuration](#Configuration)
     *   [3.1 Login configuration](#Login_configuration)
     *   [3.2 Create fingeprint signature](#Create_fingeprint_signature)
+    *   [3.3 Restrict enrolling](#Restrict_enrolling)
 
 ## Prerequisites
 
@@ -65,3 +66,18 @@ $ for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprin
 You will be asked to scan the given finger. Swipe your right index finger **five times**. After that, the signature is created in `/var/lib/fprint/`.
 
 For more information, see `man fprintd`.
+
+### Restrict enrolling
+
+By default you are allowed to enroll new fingerprints without prompting for the password or the fingerprint. You can change this behavior using Polkit rules.
+
+In the following example only superuser can enroll fingerprints:
+
+ `/etc/polkit-1/rules.d/50-net.reactivated.fprint.device.enroll.rules` 
+```
+polkit.addRule(function (action, subject) {
+  if (action.id == "net.reactivated.fprint.device.enroll") {
+    return subject.user == "root" ? polkit.Result.YES : polkit.result.NO
+  }
+})
+```

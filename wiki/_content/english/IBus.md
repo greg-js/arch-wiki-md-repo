@@ -21,8 +21,8 @@
     *   [4.6 LibreOffice](#LibreOffice)
     *   [4.7 Non US keyboards](#Non_US_keyboards)
 *   [5 ibus-m17n](#ibus-m17n)
-    *   [5.1 Englisch international AltGr](#Englisch_international_AltGr)
-    *   [5.2 Trouble with japanese](#Trouble_with_japanese)
+    *   [5.1 English international AltGr](#English_international_AltGr)
+    *   [5.2 Trouble with Japanese](#Trouble_with_Japanese)
 
 ## Installation
 
@@ -267,10 +267,10 @@ You need to change `/usr/share/ibus/component/<method_name>.xml` and change the 
 
 In the specific case of `ibus-m17n`, a helper, `/usr/lib/ibus/ibus-engine-m17n`, generates the necessary XML at runtime. With version [1.3.4-4 of the package](https://www.archlinux.org/packages/community/x86_64/ibus-m17n/), this unfortunately uses `us` as the `layout` without a possibility of override. Fortunately, this was changed to `default` [a few commits later in Git](https://github.com/ibus/ibus-m17n/commit/2b915cb54122e2010db1182f4f1007b9f7cda5aa), but no new release was made since then. To remediate the issue, a [Git-master version of the package is available from AUR](https://aur.archlinux.org/packages/ibus-m17n-git/), which works nicely.
 
-### Englisch international AltGr
+### English international AltGr
 
 If you want to use AltGr as compose key for the english keyboard, choose `English international AltGr` in the ibus-setup instead of 'English'.
 
-### Trouble with japanese
+### Trouble with Japanese
 
-If you have trouble with japanese input try to generate the locales with uncommenting `ja_JP.UTF-8 UTF-8` in the `/etc/locale.gen` file and then run `locale-gen`.
+If you have trouble with Japanese input try to generate the locales with uncommenting `ja_JP.UTF-8 UTF-8` in the `/etc/locale.gen` file and then run `locale-gen`.

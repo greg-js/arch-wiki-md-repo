@@ -1,4 +1,4 @@
-O **Trusted User (TU)** ("Usuário confiável") é um membro da comunidade encarregado de manter o AUR funcionando. Ele/Ela mantém pacotes populares ([comunicando com o *upstream* e enviando-o patches quando necessário](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)) e vota em assuntos administrativos. Um TU é eleito de membros ativos da comunidade pelos atuais TUs em um processo democrático. TUs são os únicos membros que têm a última palavra na direção do AUR.
+O **Trusted User (TU)** ("Usuário confiado") é um membro da comunidade encarregado de manter o AUR funcionando. Ele/Ela mantém pacotes populares ([comunicando com o *upstream* e enviando-o patches quando necessário](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)) e vota em assuntos administrativos. Um TU é eleito de membros ativos da comunidade pelos atuais TUs em um processo democrático. TUs são os únicos membros que têm a última palavra na direção do AUR.
 
 Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) ("Estatuto dos TUs")
 

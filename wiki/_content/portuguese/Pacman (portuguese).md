@@ -17,7 +17,7 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [1.3 Segurança de pacotes](#Seguran.C3.A7a_de_pacotes)
 *   [2 Uso](#Uso)
     *   [2.1 Instalando Pacotes](#Instalando_Pacotes)
-        *   [2.1.1 Instalando Pacotes especificos](#Instalando_Pacotes_especificos)
+        *   [2.1.1 Instalando Pacotes específicos](#Instalando_Pacotes_espec.C3.ADficos)
         *   [2.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
     *   [2.2 Removendo pacotes](#Removendo_pacotes)
     *   [2.3 Atualizando pacotes](#Atualizando_pacotes)
@@ -137,19 +137,19 @@ O que se segue é apenas uma pequena amostra das operações que o pacman pode e
 
 ### Instalando Pacotes
 
-#### Instalando Pacotes especificos
+#### Instalando Pacotes específicos
 
 Para instalar um único pacote ou lista de pacotes (incluindo dependências), execute o seguinte comando:
 
 ```
-# pacman -S *package_name1* *package_name2* ...
+# pacman -S *nome_pacote1* *nome_pacote2* ...
 
 ```
 
-Às vezes, há várias versões de um pacote nos diferentes repositórios, por exemplo [extra] e [testing]. Para instalar a versão anterior, o repositṕorio deve ser definido na frente:
+Às vezes, há várias versões de um pacote nos diferentes repositórios, por exemplo [extra] e [testing]. Para instalar a versão anterior, o repositório deve ser definido na frente:
 
 ```
-# pacman -S extra/*package_name*
+# pacman -S extra/*nome_pacote*
 
 ```
 

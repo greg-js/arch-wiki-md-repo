@@ -56,7 +56,7 @@ For a chroot-based installation for additional security, see [#Installation in a
 
 ## Running
 
-Start/enable `nginx.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+[Start/enable](/index.php/Start/enable "Start/enable") `nginx.service`.
 
 The default served page at [http://127.0.0.1](http://127.0.0.1) is `/usr/share/nginx/html/index.html`.
 

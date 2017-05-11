@@ -111,6 +111,8 @@ SSH login for root is disabled by default. Login with the default user account a
 
 #### Upgrading to linux-armv7-4.11.0-1
 
+**Note:** These instructions have worked on an Orange Pi Zero.
+
 ```
 # pacman -Syu
 

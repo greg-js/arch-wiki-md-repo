@@ -45,7 +45,14 @@ Include conf/extra/thruk.conf
 
 ```
 
-Edit /etc/thruk/thruk.conf and set the thruk_user and thruk_group to naemon.
+Set the thruk_user and thruk_group to naemon:
+
+ `/etc/thruk/thruk_local.conf` 
+```
+thruk_user=naemon
+thruk_group=naemon
+
+```
 
 Restart httpd and navigate to [http://localhost/thruk/](http://localhost/thruk/)
 

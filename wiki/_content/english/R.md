@@ -60,7 +60,7 @@ When closing the session, you will be prompted : `Save workspace Image ?[y/n/c
 
 **Tip:**
 
-*   Tired of R's verbose startup message ? Then start `R` with the `--quiet` command-line option (`$ R --quiet`). You can `alias R ="R --quiet"` in one of your [Startup files](/index.php/Startup_files "Startup files").
+*   Tired of R's verbose startup message ? Then start `R` with the `--quiet` command-line option (`$ R --quiet`). You can `alias R="R --quiet"` in one of your [Startup files](/index.php/Startup_files "Startup files").
 *   Running `R` from the command line will set R's working directory to the current directory. Opening the R GUI will set R's working directory to $HOME, unless explicitly defined in your configuration files (`.Renviron` or `.Rprofile`).
 *   To colorize R output, first install the `colorout` package (first do `install.packages("devtools")` if `devtools` package is not installed)...
 

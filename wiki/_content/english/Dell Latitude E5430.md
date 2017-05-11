@@ -79,7 +79,7 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Bluetooth
 
-Install [bluez](https://www.archlinux.org/packages/?name=bluez) package, start and/or enable `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+[Install](/index.php/Install "Install") the package [bluez](https://www.archlinux.org/packages/?name=bluez), start and/or enable `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
 
 ## Fingerprint
 
@@ -95,7 +95,7 @@ You'll need the [fprintd](https://www.archlinux.org/packages/?name=fprintd) pack
 
 ## Synaptics Touchpad
 
-Install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for enabling the touchpad.
+[Install](/index.php/Install "Install") the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for enabling the touchpad.
 
 ## Wireless
 

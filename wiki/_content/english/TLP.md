@@ -9,8 +9,9 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 *   [2 Start](#Start)
 *   [3 Configuration](#Configuration)
     *   [3.1 Btrfs](#Btrfs)
-    *   [3.2 Radio Device Wizard](#Radio_Device_Wizard)
-    *   [3.3 Command line](#Command_line)
+    *   [3.2 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
+    *   [3.3 Radio Device Wizard](#Radio_Device_Wizard)
+    *   [3.4 Command line](#Command_line)
 *   [4 Features intentionally excluded](#Features_intentionally_excluded)
 *   [5 See also](#See_also)
 
@@ -54,6 +55,17 @@ SATA_LINKPWR_ON_BAT=max_performance
 ```
 
 See also these links for discussion on this topic: [Github bug report](https://github.com/linrunner/TLP/issues/128), [Reddit follow-up discussion](https://www.reddit.com/r/archlinux/comments/4f5xvh/saving_power_is_the_btrfs_dataloss_warning_still/).
+
+### Bumblebee with NVIDIA driver
+
+If you're running [Bumblebee](/index.php/Bumblebee "Bumblebee") with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
+
+Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value:
+
+```
+ RUNTIME_PM_BLACKLIST="01:00.0"
+
+```
 
 ### Radio Device Wizard
 

@@ -1,52 +1,141 @@
-*Uma vez que existe uma enorme confusão acerca dos repositórios de Arch, esta wiki tenta explicar o seu significado:*
+Um [repositório de software](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") é um local de armazenamento a partir do qual pacotes de software são obtidos para instalação.
+
+**Repositórios oficiais** do Arch Linux contêm softwares essenciais e populares, prontamente acessíveis via [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Eles são mantidos por [mantenedores de pacote](/index.php/Arch_terminology_(Portugu%C3%AAs)#Package_maintainer "Arch terminology (Português)").
+
+Pacotes nos repositórios oficiais são atualizados constantemente: quando um pacote é atualizado, sua versão antiga é removida do repositórios. Não há grandes lançamentos do Arch: cada pacote é atualizado na medida em que novas versões se tornam disponíveis a partir de fontes do *upstream*. Cada repositório está sempre coerente, isto é, os pacotes que ele hospeda sempre são versões reciprocamente compatíveis.
 
 ## Contents
 
-*   [1 Revisão histórica](#Revis.C3.A3o_hist.C3.B3rica)
-*   [2 Lista de repositórios](#Lista_de_reposit.C3.B3rios)
-    *   [2.1 [core]](#.5Bcore.5D)
-    *   [2.2 [extra]](#.5Bextra.5D)
-    *   [2.3 [community]](#.5Bcommunity.5D)
-    *   [2.4 [testing]](#.5Btesting.5D)
-    *   [2.5 [unsupported]](#.5Bunsupported.5D)
+*   [1 Repositórios](#Reposit.C3.B3rios)
+    *   [1.1 core](#core)
+    *   [1.2 extra](#extra)
+    *   [1.3 community](#community)
+    *   [1.4 multilib](#multilib)
+    *   [1.5 testing](#testing)
+        *   [1.5.1 community-testing](#community-testing)
+        *   [1.5.2 multilib-testing](#multilib-testing)
+        *   [1.5.3 gnome-unstable](#gnome-unstable)
+        *   [1.5.4 kde-unstable](#kde-unstable)
+        *   [1.5.5 Desabilitando repositórios de teste](#Desabilitando_reposit.C3.B3rios_de_teste)
+*   [2 Revisão histórica](#Revis.C3.A3o_hist.C3.B3rica)
 
-# Revisão histórica
+## Repositórios
 
-A maioria das divisões ocorreram por razões históricas. Originalmente, quando esta distribuição tinha ainda muito poucos utilizadores, havia um só repositório, que hoje corresponde ao [core] -- chamado [official]. Este repositório era composto, basicamente, pelas aplicações favoritas do Judd, apesar de não ser esse o caso hoje em dia. Está desenhado de maneira a ter apenas um de cada "tipo" de programa -- um desktop environment, um browser, etc.
+### core
 
-Nessa altura havia utilizadores que não gostavam das preferências de Judd, como o [Arch Build System](/index.php/Arch_Build_System "Arch Build System") é tão simples de usar, começaram a criar os seus próprios pacotes. Estes pacotes foram para um repositório chamado [unofficial] e eram mantidos por programadores que não Judd. Os dois repositórios tornaram-se igualmente suportados pelos programadores e os nomes[oficial] e [unofficial] já não faziam sentido. Estes mudaram de nome para [current] e [extra], por volta do lançamento versão 0.5. Pouco depois do lançamento da 2007.08.1, [current] mudou para [core] para evitar confusões relativamente ao que realmente contém. Os repositórios são hoje bastante iguais aos olhos quer da equipa quer da comunidade, mas o [core] tem algumas diferenças, sendo que a principal é a de que os CDs de instalação têm os pacotes apenas do [core]. Este repositório dá um sistema GNU/Linux completo, mas pode não ser o que se quer.
+Esse repositório pode ser localizado em `.../core/os/` de seu [mirror](/index.php/Mirror "Mirror") favorito.
 
-Algures entre as versões 0.5 e 0.6, verificou-se que havia muitos pacotes que a equipa não queria manter. Um dos programadores (Xentac) configurou os "Repositórios de Utilizadores de Confiança (Trusted User Repositories)", que eram repositórios não-oficiais onde utilizadores de confiança (UC) podiam pôr os pacotes que criavam. Havia um repositório [staging] onde os pacotes podiam ser promovidos pela equipa para entrar nos repositórios oficiais, mas à parte disto a equipa e esses utilizadores eram mais ou menos de confiança.
+*core* contém pacotes para:
 
-Isto funcionou por algum tempo, excepto quando os utilizadores de confiança se cansaram dos seus repositórios e os restantes utilizadores queriam também partilhar os seus pacotes. Isto levou ao desenvolvimento do [AUR](https://aur.archlinux.org/). Os utilizadores de confiança foram conglomerados num grupo bastante restrito e hoje mantêm em conjunto o repositório [community]. Os UC ainda são um grupo separado da equipa principal e não há muita comunicação entre eles. No entanto, pacotes populares são por vezes promovidos do [community] para o [extra]. O [AUR](https://aur.archlinux.org/) também que permite os restantes utilizadores submetam os seus [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") para que outros os usem, se assim desejarem. Estes pacotes não são suportados, daí o repositório se chamar [unsupported], apesar de nenhuns binários serem distribuidos, pelo que o [unsupported] não é bem um repositório. Os UC podem adoptar pacotes do [unsupported] para o [community] à sua discrição, quer seja por o pacote ser popular ou por terem interesse em mantê-lo.
+*   inicialização do Arch Linux
+*   [conectar à Internet](/index.php/Network_configuration_(Portugu%C3%AAs) "Network configuration (Português)")
+*   [compilação de pacotes](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   gerenciamento e correção de [sistemas de arquivos](/index.php/File_systems "File systems") suportados
+*   o processo de configuração do sistema (ex.: [openssh](https://www.archlinux.org/packages/?name=openssh))
 
-# Lista de repositórios
+assim como as dependências deles (não necessariamente [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD")).
 
-## [core]
+*core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no *testing* por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 
-O repositório [core] pode ser encontrado no *core/os/i686* ou *core/os/x86_64* no teu mirror favorito. Contém os pacotes principais de Arch e algum software adicional e irá fornecer um sistema básico totalmente funcional.
+**Note:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [Instalando pacotes de um CD/DVD ou USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips").
 
-*O CD de Instalação não é mais do que um script de instalação e uma cópia do repositório [core]*
+### extra
 
-## [extra]
+Esse repositório pode ser localizado em `.../extra/os/` de seu *mirror* favorito.
 
-O repositório [extra] pode ser encontrado em *extra/os/i686* ou *extra/os/x86_64* no teu mirror favorito. Contém todos os pacotes oficiais de Arch que não foram para o [core]. Por exemplo: X.org, gerenciadores de janela, servidores web, reprodutores de media, línguas como Python, Ruby e Perl, e bastante mais.
+*extra* contém todos os pacotes que não foram para o *core*. Por exemplo: Xorg, gerenciadores de janela, navegadores web, reprodutores de mídia, ferramentas para trabalhar com linguagens como Python e Ruby, e muito mais.
 
-## [community]
+### community
 
-O repositório [community] pode ser encontrado em *community/os/i686* ou *community/os/x86_64* no teu mirror favorito. Este é mantido pelos *Utilizadores de Confiança (UC)* e faz parte do *Arch User Repository (AUR)*. Contém os pacotes do *AUR* com votos suficientes ou que tenham sido adoptados por um *UC*.
+Esse repositório pode ser localizado em `.../comunidade/os/` de seu *mirror* favorito.
 
-## [testing]
+*community* contém pacotes que foram adotadores por [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") do [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"). Alguns desses pacotes podem eventualmente serem movidos para os repositórios [core](#core) ou [extra](#extra) caso os desenvolvedores os considerem cruciais para a distribuição.
 
-O repositório [testing] pode ser encontrado em *testing/os/i686* ou *testing/os/x86_64* no teu mirror favorito. [testing] é especial. Este contém pacotes que são candidatos ao [core], [extra] ou ao [unstable]. Pacotes novos vão para o [testing] se:
+### multilib
 
-*   podem danificar alguma coisa após o update e precisam de ser testados primeiro.
-*   exigem outros pacotes para ser reconstruidos. Neste caso, todos os pacotes que precisam de ser reconstruidos são colocados no [testing] primeiro e quando todos estiverem concluidos, são movidos para o repositório respectivo.
+Esse repositório pode ser localizado em `.../multilib/os/` de seu *mirror* favorito.
 
-[testing] é o único repositório que pode ter colisões nos nomes com outros repositórios oficiais. Se activo, tem de ser o primeiro listado no ficheiro `/etc/pacman.conf`.
+*multilib* contém softwares e bibliotecas 32 bits que podem ser usados para executar e compilar aplicativos 32 bits em instalações 64 bits (ex.: [wine](https://www.archlinux.org/packages/?name=wine), [steam](https://www.archlinux.org/packages/?name=steam), etc).
 
-Cuidado ao activar o repositório [testing]. O teu sistema pode ficar danificado após updates com pacotes provenientes do [testing]. O seu uso deve estar limitado a uilizadores que sabem o que estão a fazer.
+Para mais informações, veja [Multilib](/index.php/Multilib "Multilib").
 
-## [unsupported]
+### testing
 
-O repositório [unsupported] não é bem um repositório. Ao contrário dos outros repositórios, este não contém pacotes binários. É usado para referir a colecção [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") no AUR que foram submetidos por utilizadores comuns, pelo que o [unsupported] não é verdeiramente oficial. Não se pode descarregar ou instalar pacotes do [unsupported] com o [pacman](/index.php/Pacman "Pacman"). Tem de se descarreguegá-los manualmente e compilar os binários, ou usar um do popular [AUR helpers](/index.php/AUR_helpers "AUR helpers") para fazer isso automaticamente.
+**Warning:** Cuidado ao ativar o repositório *testing*. Seu sistema pode não funcionar adequadamente ao realizar uma atualização. Apenas usuários experientes que sabem como lidar com falhas de sistema em potencial devem usá-lo.
+
+Esse repositório pode ser localizado em `.../multilib/os/` de seu *mirror* favorito.
+
+*testing* contém pacotes que são candidatos aos repositórios *core* ou *extra*.
+
+Novos pacotes vão para o *testing* se:
+
+*   Eles são destinados ao repositório *core*. Tudo no *core* deve passar pelo *testing*
+
+*   Espera-se que eles quebrem alguma coisa ao atualizar e precisarem ser testados primeiro.
+
+*testing* é o único repositório que pode ter colisões nos nomes com outros repositórios oficiais. Se ativo, ele tem de ser o primeiro repositório listado em seu arquivo `/etc/pacman.conf`.
+
+**Note:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+
+Se você habilitar *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar *testing*.
+
+#### community-testing
+
+Esse repositório é similar ao repositório *testing*, mas para pacotes que são candidatos para o repositório *community*.
+
+#### multilib-testing
+
+Esse repositório é similar ao repositório *testing*, mas para pacotes que são candidatos ao repositório *multilib*.
+
+#### gnome-unstable
+
+Esse repositório contém a versão mais recente do ambiente gráfico do [GNOME](/index.php/GNOME "GNOME"), antes de ser movido para o repositório principal de teste *testing*.
+
+Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`. A entrada *gnome-unstable* deve estar primeiro na lista de repositórios (*i.e.*, acima da entrada *testing*).
+
+```
+[gnome-unstable]
+Include = /etc/pacman.d/mirrorlist
+
+```
+
+Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Bugzilla do GNOME](https://bugzilla.gnome.org/).
+
+#### kde-unstable
+
+Esse repositório contém o *beta* mais recente ou *Release Candidate* dos aplicativos e Plasma do [KDE](/index.php/KDE "KDE").
+
+Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`. A entrada *kde-unstable* deve estar primeiro na lista de repositórios (*i.e.*, em cima da entrada *testing*).
+
+```
+[kde-unstable]
+Include = /etc/pacman.d/mirrorlist
+
+```
+
+Certifique-se de [fazer relatórios de erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") se você descobrir algum problema.
+
+#### Desabilitando repositórios de teste
+
+Se você habilitou repositórios de teste, mas posteriormente decidir desabilitá-los, você deve:
+
+1.  Remover (comentar) eles do `/etc/pacman.conf`
+2.  Realizar um `# pacman -Syyuu` para "retroceder" suas atualizações para esses repositórios.
+
+O segundo item é opcional, mas tenha-o em mente que cas você tenha algum problema.
+
+## Revisão histórica
+
+A maioria das divisões de repositórios ocorreram por razões históricas. Originalmente, quando o Arch Linux tinha ainda muito poucos usuários, havia apenas um repositório conhecido como **official** (agora *core*). Na época, *official*, basicamente, continha os aplicativos favoritos do Judd Vinet. Estava desenhado de maneira a conter apenas um de cada "tipo" de programa -- um ambiente gráfico, um navegador, etc.
+
+Naquela época, havia usuários que não gostavam da seleção do Judd. Então, já que o [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") é tão fácil de usar, começaram a criar os seus próprios pacotes. Estes pacotes foram para um repositório chamado **unofficial** e eram mantidos por outros desenvolvedores, não o Judd. Eventualmente, os dois repositórios foram considerados pelos desenvolvedores igualmente com suporte, de forma que os nomes *official* e *unofficial* já não mais refletiam seu real propósito. Subsequentemente, estes foram renomeados para **current** e **extra**, por volta da versão 0.5.
+
+Pouco depois do lançamento em 2007.08.1, *current* mudou para *core* para evitar confusões sobre o que ele realmente continha. Os repositórios estão agora mais ou menos iguais aos olhos da equipe e da comunidade, mas o *core* tem algumas diferenças. A distinção principal é que os pacotes usados para CDs de instalação e *snapshots* de lançamento são criados a partir do *core*, apenas. Este repositório ainda fornece um sistema Linux completo, mas pode não ser o sistema Linux que você deseja.
+
+Por volta das versões 0.5 e 0.6, havia muitos pacotes que os desenvolvedores não queriam manter. [Jason Chu](https://www.archlinux.org/fellows/#jason) montou os "Trusted User Repositories" (que pode ser traduzido como "repositórios dos usuários confiados"), que eram repositórios não-oficiais que os usuários considerados confiados poderiam colocar pacotes que eles tinham criado. Havia um repositório **staging** no qual pacotes poderiam ser promovidos a repositórios oficiais por um dos desenvolvedores do Arch Linux, mas fora isso, os desenvolvedores e os usuários confiados eram mais ou menos diferentes.
+
+Isso funcionou por algum tempo, mas não quando os tais usuários confiados estavam entediados com seus repositórios e quando usuários não-confiados queriam compartilhar seus próprios pacotes. Isso levou ao desenvolvimento do [AUR](https://aur.archlinux.org/). Os TUs foram conglomerados em um grupo bastante restrito denominado Trusted Users e hoje eles mantêm o repositório **community**. Os TUs ainda são um grupo separado dos desenvolvedores do Arch Linux e há muita comunicação entre eles. Porém, pacotes populares ainda são por vezes promovidos do *community* para *extra*. O [AUR](https://aur.archlinux.org/) também permite que os demais usuários (não-TUs)enviem seus PKGBUILDs.
+
+Após um kernel no *core* [quebrar o sistema de muitos usuários](https://www.archlinux.org/news/please-avoid-kernel-261614-1/), a *"core signoff policy"* ("política de assinatura do core") foi introduzida. Desde então, todas as atualizações de pacotes para o *core* precisam passar pelo repositório *testing* primeiro e apenas após múltiplas assinaturas de outros desenvolvedores eles podem ser movidos. Ao longo do tempo, foi notado que vários pacotes do *core* tinham pouco uso, e signoffs de usuários ou até mesmo falta de relatórios de erros se tornaram informalmente aceitos como critério para aceitar tais pacotes.
+
+No final de 2009 e o início de 2010, com o advento de novos sistemas de arquivos, o desejo de oferecer suporte durante a instalação e com a percepção de que o *core* nunca foi claramente definido (apenas "pacotes importantes, escolhido a mão pelos desenvolvedores"), o repositório recebeu uma descrição mais precisa.

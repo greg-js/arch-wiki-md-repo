@@ -61,7 +61,9 @@ As of Kernel 4.11, the patch has been merged into mainline and is no longer nece
 
 To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) and run `nvme get-feature -f 0x0c -H /dev/nvme`
 
-Expected output is: "Autonomous Power State Transition Enable (APSTE): Enabled"
+When ASPT is enabled the output should contain "Autonomous Power State Transition Enable (APSTE): Enabled" and there should be non-zero entries in the table below indicating the idle time before transitioning into each of the available states.
+
+If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `nvme id-ctrl /dev/nvme` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) then to enable it you must pass a value at least that high to the `default_ps_max_latency_us` option for the `nvme_core` module in the boot parameters. This should enable ASPT and make the table in `nvme get-feature` show the entries.
 
 ## References
 
