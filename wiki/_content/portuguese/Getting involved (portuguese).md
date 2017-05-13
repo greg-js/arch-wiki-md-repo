@@ -1,59 +1,67 @@
-Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) é uma interação entre dois organismos onde ambos tem benefícios. Este principio se aplica aos membros próativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em pról de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [Software livre](https://en.wikipedia.org/wiki/pt:Software_livre "wikipedia:pt:Software livre").
+Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) é uma interação entre dois organismos onde ambos tem benefícios. Este princípio se aplica aos membros proativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em prol de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [software livre e de código aberto](https://en.wikipedia.org/wiki/pt:https://pt.wikipedia.org/wiki/Software_livre_e_de_c%C3%B3digo_aberto "wikipedia:pt:https://pt.wikipedia.org/wiki/Software livre e de código aberto").
+
+Este artigo descreve como usuários novos e experientes do Arch podem contribuir para a comunidade. Note que não é uma lista exaustiva.
 
 ## Contents
 
 *   [1 Projetos oficiais do Arch Linux](#Projetos_oficiais_do_Arch_Linux)
     *   [1.1 Postagens nos fóruns](#Postagens_nos_f.C3.B3runs)
-    *   [1.2 Melhore esta Wiki](#Melhore_esta_Wiki)
+    *   [1.2 Melhore esta wiki](#Melhore_esta_wiki)
     *   [1.3 Ingresse nas salas de chat](#Ingresse_nas_salas_de_chat)
-    *   [1.4 Corrija e reporte novos bugs](#Corrija_e_reporte_novos_bugs)
-    *   [1.5 Criando e adotando pacotes AUR](#Criando_e_adotando_pacotes_AUR)
-    *   [1.6 Projetos de software oficiais](#Projetos_de_software_oficiais)
-    *   [1.7 Participe de Eventos](#Participe_de_Eventos)
-    *   [1.8 Doe dinheiro](#Doe_dinheiro)
+    *   [1.4 Reporte pacotes instalados](#Reporte_pacotes_instalados)
+    *   [1.5 Corrija e reporte bugs](#Corrija_e_reporte_bugs)
+    *   [1.6 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
+    *   [1.7 Projetos de software oficiais](#Projetos_de_software_oficiais)
+    *   [1.8 Participe de eventos](#Participe_de_eventos)
+    *   [1.9 Doe dinheiro](#Doe_dinheiro)
 *   [2 Projetos da comunidade](#Projetos_da_comunidade)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
-    *   [2.3 Serviços](#Servi.C3.A7os)
-    *   [2.4 Outros](#Outros)
+    *   [2.3 Navegação do ArchWiki](#Navega.C3.A7.C3.A3o_do_ArchWiki)
+    *   [2.4 Serviços](#Servi.C3.A7os)
+    *   [2.5 Outros](#Outros)
 *   [3 FAQ](#FAQ)
     *   [3.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch.3F)
-    *   [3.2 Como me torno um "Usuário confiável"?](#Como_me_torno_um_.22Usu.C3.A1rio_confi.C3.A1vel.22.3F)
+    *   [3.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User.3F)
     *   [3.3 O que eu posso fazer sendo um artista?](#O_que_eu_posso_fazer_sendo_um_artista.3F)
 
 ## Projetos oficiais do Arch Linux
+
+Por favor, esteja familiarizado com o [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta").
 
 ### Postagens nos fóruns
 
 Uma das formas mais fáceis de participar e se envolver com o projeto é através dos [Fóruns do Arch Linux](https://bbs.archlinux.org/), que permitem a interação e ajuda de membros da comunidade com novos usuários.
 
-Tenha em mente sempre seguir a [etiqueta do fórum](/index.php/Forum_etiquette "Forum etiquette"). Os responsáveis pelo fórum podem ser contactados através do email [forum@archlinux.org](mailto:forum@archlinux.org).
+### Melhore esta wiki
 
-### Melhore esta Wiki
-
-A [ArchWiki](/index.php/AboutWiki "AboutWiki") é colaborativa e todos os usuários são incentivados a interagir, sendo a documentação principal da comunidade Arch Linux. Por favor, leia [contribuindo](/index.php/ArchWiki:Contribuiting_(Portugu%C3%AAs) "ArchWiki:Contribuiting (Português)").
+A [ArchWiki](/index.php/AboutWiki "AboutWiki") é uma documentação do Arch Linux mantida colaborativamente. Todos os usuários são incentivados a [contribuir](/index.php/ArchWiki:Contribuiting_(Portugu%C3%AAs) "ArchWiki:Contribuiting (Português)").
 
 ### Ingresse nas salas de chat
 
-Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/IRC_channel "IRC channel"). É de importância vital que você leia as [regras](/index.php/IRC_channel#.23archlinux_rules "IRC channel") e as [guias de conduta](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") antes de participar. [Canais especiais](/index.php/IRC_channels "IRC channels") estão disponíveis para tópicos específicos.
+Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/IRC_channel "IRC channel"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/IRC_channels#Other_channels "IRC channels") estão disponíveis para tópicos específicos.
 
-### Corrija e reporte novos bugs
+### Reporte pacotes instalados
 
-Reportar e corrigir bugs no [bug tracker](https://bugs.archlinux.org/) é uma das formas possíveis de se ajudar a comunidade.
+[pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)") fornece um [temporizador do systemd](/index.php/Systemd/Timers "Systemd/Timers") que envia uma lista de pacotes instalados em seu sistema, junto com a arquitetura e *mirrors* que você usa, para os desenvolvedores do Arch Linux para ajudá-los a priorizar seus esforços e melhorar a ainda mais a distribuição. As informações são enviadas anonimamente e não pode ser usadas para identificar você. Você pode ver os dados colecionados [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [neste tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=105431).
 
-Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia o [bug reporting guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+### Corrija e reporte bugs
 
-### Criando e adotando pacotes AUR
+Reportar e corrigir bugs no [rastreador de bugs](https://bugs.archlinux.org/) é uma das formas possíveis de se ajudar a comunidade.
 
-O [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") contém scripts de automatização de criação de pacotes feitos pela comunidade, permitindo a instalação de programas que não estão nos repositórios oficiais. Pacotes populares tendem a serem incluidos no repositório da [comunidade](/index.php/Community "Community").
+Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes para relatar bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
-Você pode ajudar adotando ou criando pacotes.
+### Crie e adote pacotes do AUR
+
+O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") contém scripts de automatização de criação de pacotes feitos pela comunidade, permitindo a instalação de programas que não estão nos repositórios oficiais. Pacotes populares tendem a serem incluídos no [repositório oficial da comunidade](/index.php/Reposit%C3%B3rios_oficiais#community "Repositórios oficiais"). Você pode ajudar criando e adotando pacotes.
+
+[aurphan](https://www.archlinux.org/packages/?name=aurphan) pode lhe ajudar a identificar pacotes órfãos que você usa, de forma que você possa adotá-los.
 
 ### Projetos de software oficiais
 
-Você pode colaborar com o desenvolvimento de [projetos oficiais de software do Arch Linux](https://projects.archlinux.org/).
+Você pode colaborar com o desenvolvimento de [projetos oficiais de software do Arch Linux](https://git.archlinux.org/).
 
-### Participe de Eventos
+### Participe de eventos
 
 Há eventos mensais e anuais para correção de bugs, tradução e limpeza. Você pode encontrar eventos futuros no [Calendário de eventos Arch Linux](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
@@ -67,21 +75,25 @@ Você pode ajudar a sustentar os custos dos servidores, na [página oficial de d
 
 A comunidade Arch mantém vários projetos. Sinta-se livre para incluir o seu!
 
-#### Grupos
+### Grupos
 
 Grupos específicos do Arch, que podem ser de seu interesse.
 
 	[ArchMap](/index.php/ArchMap "ArchMap")
 
-	Grupo de usuários Google Earth do Arch
+	O projeto ArchMap cria um mapa dos usuários do Arch Linux por todo o mundo
 
 	[ArchAudio](http://archaudio.org)
 
-	Repositório de terceiros e fórum de discussões de usuários Arch Linux com conhecimento em audio.
+	Repositório de terceiros e fórum de discussões de usuários Arch Linux com conhecimento em áudio.
 
 	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
 
 	Lugar de usuários Reddit, para discutir assuntos relacionados ao Arch.
+
+	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
+
+	Uma comunidade no Google Plus para usuários Arch Linux interagirem, fazer perguntas ou conversas de notícias em geral sobre o Arch Linux.
 
 	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
 
@@ -89,84 +101,94 @@ Grupos específicos do Arch, que podem ser de seu interesse.
 
 	[Arch Women](http://archwomen.org/)
 
-	Grupo com a intenção de resolver possíveis barreiras no Arch para usuários femininos. ([tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=136184)).
+	Grupo com a intenção de resolver possíveis barreiras no Arch para usuárias. ([tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
 	[LinkedIn Group](http://www.linkedin.com/groups?gid=1399787)
 
 	Grupo do LinkedIn para usuários e profissionais do Arch
 
-	[Repo-CK](http://repo-ck.com)
-
-	Repositório não-oficial para os patches {AUR|linux-ck}} de otimização de CPU, para usuários Arch.
-
-#### Software
+### Software
 
 Softwares desenvolvidos pela comunidade com foco no Arch.
 
-	[Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
+	[Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 
-	Distribuições baseadas no Arch Linux.
+	Um grande repositório movido pela comunidade de usuários do Arch.
 
-	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
+	[Repositórios não-oficiais de usuários](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
-	Utilitarios para ajudar usuários na utilização do [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+	Repositórios não-oficiais de binários mantidos por membros da comunidade.
 
-	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+	[Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR")
 
-	Ferramentas gráficas para o [pacman](/index.php/Pacman "Pacman").
+	Utilitários para ajudar usuários no uso do [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
-	[Rc.conf GUI Frontends](/index.php/Rc.conf_GUI_Frontends "Rc.conf GUI Frontends")
+	[Frontends GUI do pacman](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
-	Ferramentas gráficas para a edição do arquivo [rc.conf](/index.php/Rc.conf "Rc.conf").
+	Ferramentas gráficas para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
-#### Serviços
+	[NetGUI](http://www.github.com/codywd/NetGUI)
 
-Serviços feitos especialmente para usuários Arch Linux.
+	Front-end gráfico para o [netctl](/index.php/Netctl "Netctl").
 
-	[ArchLinux.us](http://archlinux.us)
+### Navegação do ArchWiki
 
-	Emails do domínio @archlinux.us, baseados no Gmail.
+Nós oferecemos diferentes métodos para visitar o ArchWiki.
 
-	Acesso móvel - [archlinux.mobi](http://archlinux.mobi).
+	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
 
-	[ArchLinux.me](http://archlinux.me)
+	Páginas do Arch Wiki otimizadas para navegação *offline*. Pacote: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
 
-	Blogs Arch Linux. Registre-se para participar [deste tópico](https://bbs.archlinux.org/viewtopic.php?id=73622).
+	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
 
-#### Outros
+	Arch-wiki-lite é projetado para oferecer a experiência mais suave possível para pessoas hipossuficientes que não tenham acesso à internet ou qualquer outra forma de iniciar uma interface gráfica web. Pacote: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
 
-	[TuxLyn's Arch Linux Wiki](http://wiki.gotux.net/archlinux)
+	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
 
-	Wiki pessoal, com conteúdo relacionado ao Arch Linux
+	Um visualizador simples para o ArchLinux Wiki online. Conteúdo da página é formatado para uma visão otimizada para *mobile*.
+
+	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
+
+	Uma interface simples em *curses* para os sites do MediaWiki tal como ArchWiki ou Wikipédia. Pacotes: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+
+### Serviços
+
+Serviços feitos especialmente para usuários do Arch.
+
+	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
+
+	e-mails @archlinux.info baseados em VPS.
+
+### Outros
 
 	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
 
-	Usuário confiável, com conteúdo relacionado ao Arch Linux.
+	Projteados relacionados ao Arch de um Trusted User.
 
 ## FAQ
 
 ### Como posso me tornar um desenvolvedor do Arch?
 
-A motivação principal no seu trabalho pelo Arch deve ser ajudar a comunidade como um todo, e não simplesmente se tornar um *Desenvolvedor Arch*.
+A motivação principal no seu trabalho pelo Arch deve ser ajudar a comunidade como um todo, e não simplesmente se tornar um desenvolvedor do Arch.
 
 Normalmente, novos desenvolvedores são selecionados pelos atuais desenvolvedores quando a carga de trabalho aumenta. Em alguns casos informações sobre um cargo são liberadas e você pode se aplicar a ele, porém, mais frequentemente os desenvolvedores convidam alguém que eles julgam ser bom executando as tarefas de tal cargo, e que irá completar esta lacuna no time. Ter um portfólio de contribuições para o Arch Linux é a melhor maneira de ingressar no time.
 
 Aqui está uma lista de coisas que você pode fazer para ganhar alguma "popularidade" entre os desenvolvedores do Arch:
 
-*   Estabeleca reputação sendo prestativo sempre que possível.
-*   Responda questões no fórum, IRC e listas de email.
-*   Junte-se ao [Trusted Users](/index.php/Trusted_Users "Trusted Users") para ganhar experiência em empacotamento, e para mostre suas habilidades.
+*   Estabeleça reputação sendo prestativo sempre que possível.
+*   Responda perguntas no fórum, IRC e listas de e-mail.
+*   Junte-se aos [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") para ganhar experiência em empacotamento para mostrar suas habilidades.
 *   Envie pacotes para o AUR.
 *   Junte-se a projetos que estão "na boca do brete" para serem incorporados ao Arch algum dia, ou crie seu próprio projeto.
-*   Trabalhe no pacman, makepkg, initscripts ou outra forma de código-fonte e envie patches para o bug tracker.
-*   Naveque pelo bug tracker e tente consertar bugs existentes.
+*   Trabalhe no *pacman*, *makepkg* ou outra forma de código-fonte e envie *patches* para o bug tracker.
+*   Navegue pelo rastreador de bugs e tente consertar bugs existentes.
 *   Encontre e envie novos bugs.
-*   Conserte erros na wiki, adicione novas páginas, limpe as existentes e certifique que seus procedimentos para tal estão atualizados.
+*   Conserte erros na wiki, adicione novas páginas, limpe as existentes e certifique-se que seus procedimentos para tal estão atualizados.
 *   Envie traduções.
 
-### Como me torno um "Usuário confiável"?
+### Como me torno um Trusted User?
 
-Leia [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
+Leia [Trusted Users (Português)#Como eu me torno um TU?](/index.php/Trusted_Users_(Portugu%C3%AAs)#Como_eu_me_torno_um_TU.3F "Trusted Users (Português)").
 
 ### O que eu posso fazer sendo um artista?
 

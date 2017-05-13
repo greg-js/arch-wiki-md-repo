@@ -24,8 +24,9 @@
         *   [3.2.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
     *   [3.3 Canvas Fingerprinting](#Canvas_Fingerprinting)
     *   [3.4 Privacy extensions](#Privacy_extensions)
-        *   [3.4.1 ScriptSafe](#ScriptSafe)
-        *   [3.4.2 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
+        *   [3.4.1 ScriptBlock](#ScriptBlock)
+        *   [3.4.2 ScriptSafe](#ScriptSafe)
+        *   [3.4.3 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -274,6 +275,14 @@ Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") brows
 *   [Disconnect](https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo?hl=en)
 *   [Decentraleyes](https://chrome.google.com/webstore/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj?hl=en)
 
+#### ScriptBlock
+
+ScriptBlock is similar to NoScript, which is a Firefox add-on. Both extensions stop a website from executing any kind of JavaScript. However, ScriptBlock is a much simpler design thus it's easier to use. It blocks JavaScript by default. You can allow and temporary allow JavaScripts. Once you allow them to run, it lets all the JavaScripts run on that page so you might want ScriptBlock to work in conjunction with [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en).
+
+It's also worth checking it's default whitelist, which might be permissive to you.
+
+Extension is available in the Chrome Web Store: [ScriptBlock](https://chrome.google.com/webstore/detail/scriptblock/hcdjknjpbnhdoabbngpmfekaecnpajba?hl=en-US)
+
 #### ScriptSafe
 
 ScriptSafe is a browser extension that gives users control of the web and more secure browsing while emphasizing simplicity and intuitiveness.
@@ -282,7 +291,7 @@ ScriptSafe is a browser extension that gives users control of the web and more s
 
 Check it on [GitHub](https://github.com/andryou/scriptsafe)
 
-Extension available in Chrome Web Store: [ScriptSafe](https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en)
+Extension is available in the Chrome Web Store: [ScriptSafe](https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en)
 
 #### Vanilla Cookie Manager
 
@@ -294,7 +303,7 @@ With Vanilla you can select which cookies you want to keep on a whitelist. All u
 
 Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome)
 
-Extension available in Chrome Web Store: [Vanilla Cookie Manager](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
+Extension is available in the Chrome Web Store: [Vanilla Cookie Manager](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
 
 ## Making flags persistent
 

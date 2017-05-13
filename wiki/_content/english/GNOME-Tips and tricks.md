@@ -27,6 +27,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [13 Use custom colours and gradients for desktop background](#Use_custom_colours_and_gradients_for_desktop_background)
 *   [14 Transitioning backgrounds](#Transitioning_backgrounds)
 *   [15 Custom GNOME sessions](#Custom_GNOME_sessions)
+*   [16 Redirect certain URLs to specific web browsers](#Redirect_certain_URLs_to_specific_web_browsers)
 
 ## Keyboard
 
@@ -305,3 +306,77 @@ Exec=gnome-session --session=gnome-openbox
 ```
 
 **Note:** GNOME Session calls upon the `.desktop` files of each of the components to be started. If a component you wish to start does not provide a `.desktop` file, you must create a suitable desktop entry in a directory such as `/usr/local/share/applications`.
+
+## Redirect certain URLs to specific web browsers
+
+Use Chromium for certain types of URLs while maintaining Firefox as default browser for all other tasks.
+
+Be sure pcre (for pcregrep) is installed:
+
+```
+# pacman -S pcre
+
+```
+
+Setup custom xdg-open:
+
+ `/usr/local/bin/xdg-open` 
+```
+#!/bin/bash
+DOMAIN_LIST_FILE=~/'domains.txt'
+OTHER_BROWSER='/usr/bin/chromium-browser'
+BROWSER_OPTIONS='' # Optional, for command line options passed to browser
+XDG_OPEN='/usr/bin/xdg-open'
+DEFAULT_BROWSER='/usr/bin/firefox'
+
+if echo "$1" | pcregrep -q '^https?://'; then
+    matching=0
+    while read domain; do
+	if echo "$1" | pcregrep -q "^https?://${domain}"; then
+	    matching=1
+	    break
+	fi
+    done < "$DOMAIN_LIST_FILE"
+
+    if [[ $matching -eq 1 ]]; then
+	"$OTHER_BROWSER" $BROWSER_OPTIONS ${*}
+	exit 0
+    fi
+fi
+
+"$DEFAULT_BROWSER" ${*}
+
+```
+
+Configure domains for redirect to Chromium:
+
+ `$HOME/domains.txt` 
+```
+stackexchange.com
+stackoverflow.com
+superuser.com
+www.youtube.com
+github.com
+
+```
+
+Setup xdg-open-web as desktop application:
+
+ `$HOME/.local/share/applications/xdg-open-web.desktop` 
+```
+[Desktop Entry]
+Version=1.0
+Name=xdg-open web
+GenericName=Web Browser
+Exec=xdg-open %u
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;
+
+```
+
+Set xdg-open web as default Web application in GNOME settings: GNOME Settings > Details > Default Applications > set Web to xdg-open web.

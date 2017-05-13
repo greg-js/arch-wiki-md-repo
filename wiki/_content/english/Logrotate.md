@@ -11,6 +11,7 @@ By default, logrotate's *rotation* consists of renaming existing log files with 
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 exim log not rotated](#exim_log_not_rotated)
     *   [3.2 Check logrotate status](#Check_logrotate_status)
+    *   [3.3 Skipping log because parent directory has insecure permission](#Skipping_log_because_parent_directory_has_insecure_permission)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -55,6 +56,18 @@ Run `cat /var/lib/logrotate.status` to see which logrotate files were rotated.
 "/var/log/mysql/query.log" 2016-3-20-5:0:0
 "/var/log/samba/samba-smbd.log" 2016-3-21-5:0:0
 "/var/log/httpd/access_log" 2016-3-20-5:0:0
+
+```
+
+### Skipping log because parent directory has insecure permission
+
+Set in the config which user and which group has to job `/etc/logrotate.d/job` to be run with:
+
+```
+file-to-be-rotated {
+    su user group
+    rotate 4
+}
 
 ```
 

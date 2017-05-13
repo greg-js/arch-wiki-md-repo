@@ -215,7 +215,7 @@ server {
     listen 80;
     server_name    mattermost.example.com;
 
-    location /api/v3/users/websocket {
+    location ~ /api/v[0-9]+/(users/)?websocket$ {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
         client_max_body_size 50M;

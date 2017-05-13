@@ -8,8 +8,8 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
-    *   [2.3 Touchpad](#Touchpad)
-    *   [2.4 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.3 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.4 Lenovo ThinkPad USB-C Dock](#Lenovo_ThinkPad_USB-C_Dock)
 
 ## Model description
 
@@ -62,12 +62,36 @@ There are two options for displays:
 *   14" FHD IPS (1920 x 1080): Works
 *   14" WQHD (2560 x 1440): ??
 
-### Touchpad
-
-**Note:** If you experience brief and sporadic freezing of the touchpad/trackpoint, one option is to install and use the [Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") touchpad driver rather than the on provided by [libinput](/index.php/Libinput "Libinput"). Although the Synaptics driver is no longer actively supported, it appears that it may currently be more stable with the Lenovo ThinkPad X1 Carbon.
-
 ### TrackPoint Scrolling
 
-To enable TrackPoint middle-button scrolling, [install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories") add the following line to your [.xinitrc](/index.php/.xinitrc ".xinitrc").
+To enable TrackPoint middle-button scrolling, [install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package and add the following line to your [.xinitrc](/index.php/.xinitrc ".xinitrc"):
 
- `xinput set-prop "ImPS/2 Generic Wheel Mouse" "libinput Scroll Method Enabled" 0 0 1`
+```
+xinput set-prop "ImPS/2 Generic Wheel Mouse" "libinput Scroll Method Enabled" 0 0 1
+
+```
+
+### Lenovo ThinkPad USB-C Dock
+
+The USB-C Dock is a Thunderbolt 3 device. Plugging it in results in a whole lot of PCI entries:
+
+```
+06:00.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+07:00.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+07:01.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+07:02.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+07:04.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+3c:00.0 USB controller: Intel Corporation Device 15d4 (rev 02)
+
+```
+
+It works nearly perfect out of the box with Kernel 4.10.13\. The only thing that did not work is the r8152 based USB Ethernet Port, which gives the message:
+
+```
+[    7.574773] r8152 4-1.1:1.0 (unnamed net_device) (uninitialized): Unknown version 0x6010
+
+```
+
+Installing [r8152-dkms](https://aur.archlinux.org/packages/r8152-dkms/) fixes this (the DKMS module adds the version 0x6010 to the module).
+
+Even hot plugging works: unplugging the dock while a display is connected just lets all the devices disappear. Replugging it later works, all the USB devices come back up automagically, thought you might need to issue a xrandr to get the display showing again (tested with Xorg based i3 setup).

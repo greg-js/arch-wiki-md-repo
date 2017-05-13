@@ -24,7 +24,7 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 ## Installation
 
-Install [jhbuild](https://aur.archlinux.org/packages/jhbuild/).
+[Install](/index.php/Install "Install") the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package.
 
 ## Configuration
 

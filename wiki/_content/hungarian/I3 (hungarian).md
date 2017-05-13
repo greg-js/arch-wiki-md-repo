@@ -28,8 +28,8 @@ Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása
     *   [4.4 Save and restore the window layout](#Save_and_restore_the_window_layout)
         *   [4.4.1 Save the current window layout of a single workspace](#Save_the_current_window_layout_of_a_single_workspace)
         *   [4.4.2 Restore the window layout of the workspace](#Restore_the_window_layout_of_the_workspace)
-    *   [4.5 Scratchpad containers](#Scratchpad_containers)
-    *   [4.6 Screensaver and power management](#Screensaver_and_power_management)
+    *   [4.5 Scratchpad tárolók](#Scratchpad_t.C3.A1rol.C3.B3k)
+    *   [4.6 Képernyővédő, és energiagazdálkodás](#K.C3.A9perny.C5.91v.C3.A9d.C5.91.2C_.C3.A9s_energiagazd.C3.A1lkod.C3.A1s)
     *   [4.7 Kikapcsolás, újraindítás, képernyővédő](#Kikapcsol.C3.A1s.2C_.C3.BAjraind.C3.ADt.C3.A1s.2C_k.C3.A9perny.C5.91v.C3.A9d.C5.91)
     *   [4.8 External displays manual management](#External_displays_manual_management)
     *   [4.9 Tabbed or stacked web-browsing](#Tabbed_or_stacked_web-browsing)
@@ -379,7 +379,7 @@ And finally, the layout of worskpace N can be loaded onto to workspace M by runn
 
 **Note:** If the above script does not work properly, refer to the [official documentation](http://i3wm.org/docs/layout-saving.html#_editing_layout_files). The *swallows* sections of `~/.i3/workspace_N.json` needs to be manually edited.
 
-### Scratchpad containers
+### Scratchpad tárolók
 
 Alapértelmezésben a [scratchpad](http://i3wm.org/docs/userguide.html#_scratchpad) csak egy ablakot tartalmaz. Azonban a scratchpad-re konténerek is mozgathatóak.
 
@@ -393,18 +393,18 @@ Fókuszálj az első konténerre (ha kell, az egy szinttel feljebbire), tedd az 
 
 Lásd: [[2]](https://faq.i3wm.org/question/138/multiple-scratchpad/i3) több scratchpad ablak.
 
-### Screensaver and power management
+### Képernyővédő, és energiagazdálkodás
 
-With [Power management#xss-lock](/index.php/Power_management#xss-lock "Power management") you can register a screenlocker for your i3 session. The `-time` option locks the screen after a given time period.
+A [Power management#xss-lock](/index.php/Power_management#xss-lock "Power management")-al be tudsz állítani egy képernyővédőt az i3-nak. A `-time` opcióval lezárja a képernyőt egy bizonyos idő után.
 
 ```
 xautolock -time 10 -locker "i3lock -i 'background_image.png'" &
 
 ```
 
-A [systemd](/index.php/Systemd "Systemd") service file can be used to lock the screen before the system is being sent to sleep or hibernation state. See [Power management#Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management"). Note that i3lock requires the type of the service to be `forking`.
+Egy [systemd](/index.php/Systemd "Systemd") fájl használható a képernyő zárolására, mielőtt a rendszer alvó, vagy hibernált állapotba kerül. Lásd [Power management#Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management"). Figyelj arra, hogy az i3lock-nak szükséges, hogy a service `forking` típusú legyen.
 
-See also [DPMS](/index.php/DPMS "DPMS").
+Lásd még [DPMS](/index.php/DPMS "DPMS").
 
 ### Kikapcsolás, újraindítás, képernyővédő
 

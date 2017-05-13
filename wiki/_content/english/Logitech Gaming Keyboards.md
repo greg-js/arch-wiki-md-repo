@@ -53,6 +53,7 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   G610
 *   G810
 *   G910
+*   GPRO
 
 ## G510 on g15daemon
 

@@ -282,6 +282,6 @@ Finalmente, reinicie a máquina digitando `reboot`: quaisquer partições que ai
 
 ## Pós-instalação
 
-Veja [Recomendações gerais](/index.php/General_recommendations "General recommendations") por instruções de gerenciamento de sistema e tutoriais pós-instalação (como instalar uma interface gráfica de usuário, som ou um touchpad).
+Veja [Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais") por instruções de gerenciamento de sistema e tutoriais pós-instalação (como instalar uma interface gráfica de usuário, som ou um touchpad).
 
 Para uma lista de aplicativos que podem ser de seu interesse, veja [Lista de aplicativos](/index.php/List_of_applications "List of applications").

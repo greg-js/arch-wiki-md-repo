@@ -12,7 +12,7 @@
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Buggy |  ? |
 | Power Management | Working | ... |
-| Finger Print Scanner | Not tested |  ? |
+| Finger Print Scanner | Not working | libfprint |
 | Smart Card Reader | Not tested |  ? |
 | Ambient light sensor | Not working | iio-sensor-proxy |
 | Acceleration sensor, Magnetometer, Gyro | Not working | iio-sensor-proxy |

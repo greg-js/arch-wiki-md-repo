@@ -268,8 +268,6 @@ You need to manually install the proprietary firmware. The slackware wiki descri
 
 Works out of the box. See [TrackPoint](/index.php/TrackPoint "TrackPoint") for additional details.
 
-**Note:** If you experience brief and sporadic freezing of the touchpad/trackpoint, one option is to install and use the [Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") touchpad driver rather than the on provided by [libinput](/index.php/Libinput "Libinput"). Although the Synaptics driver is no longer actively supported, it appears that it may currently be more stable with the Lenovo ThinkPad X1 Carbon.
-
 ### Docking
 
 This model has no docking port.

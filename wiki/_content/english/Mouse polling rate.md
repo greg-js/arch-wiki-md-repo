@@ -7,7 +7,10 @@ If you have invested in a high resolution mouse, adjusting the USB polling rate 
 *   [3 Display polling interval](#Display_polling_interval)
 *   [4 USB device speed](#USB_device_speed)
 *   [5 Set polling interval](#Set_polling_interval)
-*   [6 See also](#See_also)
+*   [6 Known issues](#Known_issues)
+    *   [6.1 Polling at half of requested rate](#Polling_at_half_of_requested_rate)
+    *   [6.2 Polling rate not changing](#Polling_rate_not_changing)
+*   [7 See also](#See_also)
 
 ## Polling rate and polling interval
 
@@ -126,11 +129,27 @@ To change the polling interval without rebooting
 
 You may have to unplug the mouse and plug it back in for the change to take effect.
 
-**Note:** As of May 2015 there is a kernel bug that under certain configurations prevents devices from reaching 1000hz (1ms) polling rate. See [BBS](https://bbs.archlinux.org/viewtopic.php?pid=1528109) and [Bug](https://bugzilla.kernel.org/show_bug.cgi?id=60586).
-
 **Note:** If the usbhid module is included on your initramfs image you may need to add `/etc/modprobe.d/usbhid.conf` to the image also. See the note at [Kernel modules#Using files in /etc/modprobe.d/](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules"). Alternatively, you can add `usbhid.mousepoll=X` to your kernel command line. See [Kernel modules#Using kernel command line](/index.php/Kernel_modules#Using_kernel_command_line "Kernel modules").
 
 **Tip:** When using a smaller than default interval you may want to adjust the [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration") option [VelocityScale](http://xorg.freedesktop.org/wiki/Development/Documentation/PointerAcceleration/#VelocityScale) to match.
+
+## Known issues
+
+### Polling at half of requested rate
+
+There is a kernel bug that for certain configurations prevents devices from reaching 1000hz (1ms) polling rate. See the [BBS](https://bbs.archlinux.org/viewtopic.php?pid=1528109) and [Bug](https://bugzilla.kernel.org/show_bug.cgi?id=60586).
+
+A work-around that may help is to connect the device to a port using a different driver.
+
+### Polling rate not changing
+
+The USB 3 driver `xhci-hcd` may be ignoring the `usbhid` `mousepoll` setting. See the [linux-usb mailing list message](https://www.spinics.net/lists/linux-usb/msg94744.html) and [Bug](https://bugzilla.kernel.org/show_bug.cgi?id=82571).
+
+A work-around that may help is to connect the device to a port using a different driver.
+
+Another work-around is to disable [xHCI](https://en.wikipedia.org/wiki/Extensible_Host_Controller_Interface "wikipedia:Extensible Host Controller Interface"). There might be a BIOS setting for this or you can do so by [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `xhci-hcd` module. **However**, this will cause any USB 3 ports to act as USB 2 as the kernel will use the `ehci-hcd` module.
+
+**Tip:** To see which `hcd` drivers are in use see the `S: Manufacturer` line for hub devices in `/sys/kernel/debug/usb/devices`.
 
 ## See also
 

@@ -16,11 +16,11 @@ Visite a [Tabela de conteúdos](/index.php/Table_of_contents "Table of contents"
 
 	Resume as semelhanças e diferenças entre o Arch e outras distribuições.
 
-	[Guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
+	[Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação")
 
 	Guia pela processo de instalação do Arch Linux.
 
-	[Recomendações gerais](/index.php/General_recommendations "General recommendations")
+	[Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais")
 
 	Índice anotado de tutoriais pós-instalação e outros artigos populares.
 
@@ -30,7 +30,7 @@ Visite a [Tabela de conteúdos](/index.php/Table_of_contents "Table of contents"
 
 ## Nossa comunidade
 
-	[Código de conduta](/index.php/Code_of_conduct "Code of conduct")
+	[Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta")
 
 	Diretrizes para a comunidade Arch.
 

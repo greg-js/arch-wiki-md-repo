@@ -29,7 +29,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
     *   [6.2 Passing the boot GPU to the guest](#Passing_the_boot_GPU_to_the_guest)
     *   [6.3 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
-*   [7 QEMU without libvirtd (can switch GPUs without reboot)](#QEMU_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
+*   [7 Plain QEMU without libvirt](#Plain_QEMU_without_libvirt)
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
@@ -254,7 +254,7 @@ OVMF is an open-source UEFI firmware for QEMU virtual machines. While it's possi
 
 [Libvirt](/index.php/Libvirt "Libvirt") is a wrapper for a number of virtualization utilities that greatly simplifies the configuration and deployment process of virtual machines. In the case of KVM and QEMU, the frontend it provides allows us to avoid dealing with the permissions for QEMU and make it easier to add and remove various devices on a live VM. Its status as a wrapper, however, means that it might not always support all of the latest qemu features, which could end up requiring the use of a wrapper script to provide some extra arguments to QEMU.
 
-After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf-git](https://aur.archlinux.org/packages/ovmf-git/) and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
+After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf) and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
 
  `/etc/libvirt/qemu.conf` 
 ```
@@ -511,15 +511,22 @@ The option `pcie_acs_override=downstream` is typically sufficient.
 
 After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 
-## QEMU without libvirtd (can switch GPUs without reboot)
+## Plain QEMU without libvirt
 
-[[1]](https://git.mel.vin/melvin/scripts/tree/master/qemu) starts Samba and Synergy, runs the VM and closes everything after the VM is shut down. This method does **not** require libvirtd to be running or configured.
+Instead of setting up a virtual machine with the help of libvirt, plain QEMU commands with custom parameters can be used for running the VM intended to be used with PCI passthrough. This is desirable for some use cases like scripted setups, where the flexibility for usage with other scripts is needed.
 
-With these new scripts, is it possible to switch GPUs without rebooting, only a restart of the X session is needed. This is all handled by a tiny shell script that runs in the tty. When you log in the tty, it will ask which card you would like to use if you autolaunch the shell script.
+To achieve this after [#setting up IOMMU](#setting_up_IOMMU) and [#isolating the GPU](#isolating_the_GPU), follow the [QEMU article](/index.php/QEMU "QEMU") to setup the virtualized environment, [enable KVM](/index.php/QEMU#Enable_KVM "QEMU") on it and use the flag `-device vfio-pci,host=07:00.0` replacing the identifier (07:00.0) with your actual device's ID that you used for the GPU isolation earlier.
 
-[vfio-users : Full set of (runtime) scripts for VFIO + Qemu CLI](https://www.redhat.com/archives/vfio-users/2016-May/msg00187.html)
+For utilizing the OVMF firmware, make sure the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package is installed, copy the UEFI variables from `/usr/share/ovmf/ovmf_vars_x64.bin` to temporary location like `/tmp/my_vars.bin` and finally specify the OVMF paths by appending the following parameters to the QEMU command:
 
-[vfio-users : Example configuration with CLI Qemu (working VM => host audio)](https://www.redhat.com/archives/vfio-users/2015-August/msg00020.html)
+*   `-drive if=pflash,format=raw,file=/tmp/my_vars.bin` for the variables
+*   `-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/ovmf_code_x64.bin` for the actual OVMF firmware binary, note the readonly option
+
+**Note:** QEMU's default SeaBIOS can be used instead of OVMF, but it's not recommended as it can cause issues with passthrough setups.
+
+It's recommended to study the QEMU article for ways to enhance the performance by using the [virtio drivers](/index.php/QEMU#Installing_virtio_drivers "QEMU") and other further configurations for the setup.
+
+You also might have to use the `-cpu host,kvm=off` parameter to forward the host's CPU model info to the VM and fool the virtualization detection used by Nvidia's and possibly other manufacturers' device drivers trying to block the full hardware usage inside a virtualized system.
 
 ## Passing though other devices
 

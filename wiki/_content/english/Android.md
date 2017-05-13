@@ -49,7 +49,7 @@
     *   [7.2 Android Studio: 'failed to create the SD card'](#Android_Studio:_.27failed_to_create_the_SD_card.27)
     *   [7.3 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
     *   [7.4 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
-    *   [7.5 libGL error: failed to load driver: swrast](#libGL_error:_failed_to_load_driver:_swrast)
+    *   [7.5 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn.27t_load_and_no_error_message_displayed)
     *   [7.6 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
 
 ## Exploring Android device
@@ -641,12 +641,30 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-### libGL error: failed to load driver: swrast
+### libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed
+
+Sometimes, beginning to load an AVD will cause an error message similar to this to be displayed, or the loading process will appear to finish but no AVD will load and no error message will be displayed.
 
 The AVD loads an incorrect version of libstdc++, you can remove the folder libstdc++ from ~/Android/Sdk/emulator/lib64/ (for 64-bit) or ~/Android/Sdk/emulator/lib/ (for 32-bit) , e.g.:
 
 ```
 rm -r ~/Android/Sdk/emulator/lib64/libstdc++
+
+```
+
+Alternatively you can set and export ANDROID_EMULATOR_USE_SYSTEM_LIBS in ~/.profile as:
+
+```
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+
+```
+
+Reference: Android Studio user guide, [https://developer.android.com/studio/command-line/variables.html#studio_jdk](https://developer.android.com/studio/command-line/variables.html#studio_jdk)
+
+Fix for the .desktop file might be achieved by using env command, prefixing the Exec line [Desktop entries#Modify_environment_variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries")
+
+```
+env ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 
 ```
 

@@ -98,7 +98,7 @@ This overrides only `TTYVTDisallocate` for *agetty* on TTY1, and leaves the glob
 **Note:**
 
 *   Make sure to remove `quiet` from the [kernel parameters](/index.php/Kernel_parameter "Kernel parameter").
-*   Late KMS starting may cause the first few boot messages to clear. See [KMS#Early KMS start](/index.php/KMS#Early_KMS_start "KMS").
+*   Late KMS starting may cause the first few boot messages to clear. See [KMS#Early KMS start](/index.php/KMS#Early_KMS_start "KMS") or [KMS#Disabling modesetting](/index.php/KMS#Disabling_modesetting "KMS").
 
 ## See also
 

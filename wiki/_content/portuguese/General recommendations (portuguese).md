@@ -108,7 +108,7 @@ Se você instalou o Arch Linux x86_64 e planeja usar aplicativos 32 bits, você 
 
 [Repositórios extraoficiais de usuário](/index.php/Unofficial_user_repositories "Unofficial user repositories") lista diversos outros repositórios sem suporte.
 
-Considere instalar o serviço [pkgstats](/index.php/Pkgstats "Pkgstats").
+Considere instalar o serviço [pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)").
 
 ### Mirrors
 
@@ -118,7 +118,7 @@ Por vezes chamados de "espelhos". Visite [Mirrors](/index.php/Mirrors "Mirrors")
 
 *Ports* é um sistema inicialmente usado pelas distribuições BSD consistindo em scripts de compilação que residem em uma árvore de diretório no sistema local. Basicamente, cada *port* contém um script dentro de um diretório intuitivamente nomeado pelo aplicativo terceiro instalável.
 
-O [Arch Build System](/index.php/Arch_Build_System "Arch Build System") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que de forma limpa gera pacotes gerenciáveis pelo *pacman*.
+O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que de forma limpa gera pacotes gerenciáveis pelo *pacman*.
 
 Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos a recompilação com *makepkg*.
 
@@ -218,138 +218,138 @@ Para acesso a certos conteúdos da web, [plugins de navegador](/index.php/Browse
 
 ## Conectividade
 
-This section is confined to small networking procedures. Head over to [Network configuration](/index.php/Network_configuration "Network configuration") for a full guide. For more, please see [Category:Networking](/index.php/Category:Networking "Category:Networking").
+Essa seção está confinada a pequenos procedimentos de conectividade. Siga para [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para um guia completo. Para mais, por favor veja [Category:Networking (Português)](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)").
 
 ### Sincronização de relógio
 
-The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") for implementations of such protocol.
+O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) é um protocolo para sincronizar os relógios de sistemas de computador em redes de dados de latência variável com comutação de pacotes. Veja [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") para implementações de tal protocolo.
 
 ### Segurança de DNS
 
-For better security while browsing web, paying online, connecting to [SSH](/index.php/SSH "SSH") services and similar tasks consider using [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled client software which can validate signed [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") records, and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") to encrypt DNS traffic.
+Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH "SSH") e tarefas similares, considere usar software cliente habilitado para [DNSSEC](/index.php/DNSSEC "DNSSEC") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") assinados e [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") para criptografar tráfego DNS.
 
 ### Configuração de um firewall
 
-A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), it is not enabled by default. It is highly recommended to set up some form of firewall. See [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
+Um [firewall](/index.php/Firewall "Firewall") pode fornecer uma camada extra de proteção sobre a pilha de rede do Linux. O kernel padrão do Arch é capaz de usar [iptables](/index.php/Iptables "Iptables") do [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter"), isto não está habilitado por padrão. É altamente recomendado para configurar alguma forma de firewall. Veja [Firewalls](/index.php/Firewalls "Firewalls") para os guias disponíveis.
 
 ### Compartilhamento de recurso
 
-To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [SSHFS](/index.php/SSHFS "SSHFS") article.
+Para compartilhar arquivos entre máquinas em uma rede, siga o artigo [NFS](/index.php/NFS "NFS") ou o [SSHFS](/index.php/SSHFS "SSHFS").
 
-Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
+Use [Samba](/index.php/Samba "Samba") para entrar em uma rede Windows. Para configurar a máquina para usar Active Directory para autenticação, leia [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
 
-See also [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
+Veja também [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 
 ## Dispositivos de entrada
 
-This section contains popular input device configuration tips. For more, please see [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices").
+Esse seção contém dicas de configuração de dispositivo de entrada popular. Para mais, por favor veja [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices").
 
 ### Layouts de teclado
 
-Non-English or otherwise non-standard keyboards may not function as expected by default. The necessary steps to configure the keymap are different for virtual console and [Xorg](/index.php/Xorg "Xorg"), they are described in [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") respectively.
+Teclados não-americanos ou fora de padrão podem não funcionar como esperado por padrão. Os passos necessários para configurar o mapa de teclas sãos diferentes para console virtual e [Xorg](/index.php/Xorg "Xorg"), eles são descritos [Configuração de teclado no console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") e [Configuração de teclado no Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"), respectivamente.
 
 ### Botões de mouse
 
-Owners of advanced or unusual mice may find that not all mouse buttons are recognized by default, or may wish to assign different actions for extra buttons. Instructions can be found in [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+Proprietários de mouses avançados ou incomuns podem descobrir que nem todos os botões do mouse são reconhecidos por padrão, ou podem querer atribuir ações diferentes para botões extras. Instruções podem ser localizadas em [Todos botões do mouse funcionando](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
 
 ### Touchpads de laptop
 
-Many laptops use [Synaptics](http://www.synaptics.com/) or [ALPS](http://www.alps.com/) "touchpad" pointing devices. These, and several other touchpad models, use the Synaptics input driver; see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for installation and configuration details.
+Muitos laptops usam dispositivos de ponteiro "touchpad" [Synaptics](http://www.synaptics.com/) ou [ALPS](http://www.alps.com/). Esses, e vários outros modelos de touchpad, usam o driver de entrada do Synaptics; veja [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") para detalhes de instalação e configuração.
 
 ### TrackPoints
 
-See the [TrackPoint](/index.php/TrackPoint "TrackPoint") article to configure your TrackPoint device.
+Veja o artigo [TrackPoint](/index.php/TrackPoint "TrackPoint") para configurar seu dispositivo TrackPoint.
 
 ## Otimizações
 
-This section aims to summarize tweaks, tools and available options useful to improve system and application performance.
+Essa seção visa resumir ajustes, ferramentas e opções disponíveis úteis para melhorar o desempenho do sistema e de aplicativos.
 
 ### Benchmarking
 
-[Benchmarking](/index.php/Benchmarking "Benchmarking") is the act of measuring performance and comparing the results to another system's results or a widely accepted standard through a unified procedure.
+[Benchmarking](/index.php/Benchmarking "Benchmarking") é o ato de medir o desemepho e comparar os resultados ou um padrão amplamente aceito por meio de um procedimento unificado.
 
 ### Melhorando o desempenho
 
-The [Improving performance](/index.php/Improving_performance "Improving performance") article gathers information and is a basic rundown about gaining performance in Arch Linux.
+O artigo [Melhorando o desempenho](/index.php/Improving_performance "Improving performance") junta informações e é resumo básico sobre ganho de desempenho no Arch Linux.
 
 ### Solid state drives
 
-The [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") article covers many aspects of solid state drives, including configuring them to maximize their lifetimes.
+O artigo [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") cobre muitos aspectos de *solid state drives*, também conhecidos como "unidades de estado sólido", incluindo configurá-los para maximizar seu tempo de vida.
 
 ## Serviço de sistema
 
-This section relates to [daemons](/index.php/Daemons "Daemons"). For more, please see [Category:Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services").
+Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)"). Para mais, por favor veja [Category:Daemons and system services (Português)](/index.php/Category:Daemons_and_system_services_(Portugu%C3%AAs) "Category:Daemons and system services (Português)").
 
 ### Índice e pesquisa por arquivo
 
-Most distributions have a `locate` command available to be able to quickly search for files. To get this functionality in Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) is the recommended install. After the install you should run `updatedb` to index the filesystems.
+A maioria das distribuições possuem um comando `locate` disponível para possibilitar uma pesquisa rápida por arquivos. Para obter essa funcionalidade no Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) é a instalação recomendável. Após tê-lo instalado, você deve executar `updatedb` para indexar os sistemas de arquivos.
 
-[Desktop search engines](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") provide a similar service, while better integrated into [desktop environments](/index.php/Desktop_environments "Desktop environments").
+[Mecanismos de pesquisa](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") fornecem um serviço similar, ao mesmo tempo mais integrado ao [ambiente gráfico](/index.php/Desktop_environments "Desktop environments").
 
 ### Entrega local de correio
 
-A default setup does not provide a way to sync mail. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
+Uma instalação padrão não forence uma forma de sincronizar correios eletrônicos (e-mails). Para configurar *Postfix* para uma simples entrega para caixa de correio local, veja [Postfix](/index.php/Postfix "Postfix"). Outras opções são [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") e [fdm](/index.php/Fdm "Fdm").
 
 ### Impressão
 
-[CUPS](/index.php/CUPS "CUPS") is a standards-based, open source printing system developed by Apple. See [Category:Printers](/index.php/Category:Printers "Category:Printers") for printer-specific articles.
+[CUPS](/index.php/CUPS "CUPS") é um sistema de impressão código aberto e baseado em padrões, desenvolvido pela Apple. Veja [Category:Printers](/index.php/Category:Printers "Category:Printers") para artigos específicos de impressoras.
 
 ## Aparência
 
-This section contains frequently-sought "eye candy" tweaks for an aesthetically pleasing Arch experience. For more, please see [Category:Eye candy](/index.php/Category:Eye_candy "Category:Eye candy").
+Essa seção contém ajustes cosméticos frequentemente procurados para uma experiência no Arch esteticamente mais agradável. Para mais, por favor veja see [Category:Eye candy](/index.php/Category:Eye_candy "Category:Eye candy").
 
 ### Fontes
 
-You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts are included in a basic Arch system. The [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) package provides a set of high quality, general-purpose fonts with good [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode") coverage.
+Você pode querer instalar um conjunto de fontes TrueType, já que fontes bitmap não escaláveis são incluídas no sistema Arch. O pacote [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) fornece um conjunto de alta qualidade, fontes de propósito geral com boa cobertura de [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode").
 
-A plethora of information on the subject can be found in the [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") articles.
+Uma abundância de informações sobre o assunto pode ser localizada nos artigos [Fontes](/index.php/Fonts "Fonts") e [Configuração de fonte](/index.php/Font_configuration "Font configuration").
 
-If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
+Se for dispender uma quantidade significante de tempo trabalhando pelo console virtual (i.e. fora de um servidor X), usuários podem querer alterar a fonte do console para melhorar a legibilidade; veja [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
 
 ### Temas GTK+ e Qt
 
-A big part of the applications with a graphical interface for Linux systems are based on the [GTK+](/index.php/GTK%2B "GTK+") or the [Qt](/index.php/Qt "Qt") toolkits. See those articles and [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for ideas to improve the appearance of your installed programs and adapt it to your liking.
+Uma grande parte dos aplicativos com uma interface gráfica para sistemas Linux são baseadas nos *toolkist* [GTK+](/index.php/GTK%2B "GTK+") ou [Qt](/index.php/Qt "Qt"). Veja estes artigos e [Aparência uniforme para aplicativos Qt e GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") para ideias de como melhorar a aparência de seus programas instalados e adapte-o ao seu gosto.
 
 ## Melhorias no console
 
-This section applies to small modifications that better console programs' practicality. For more, please see [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+Essa seção se aplica a pequenas modificações que melhoram a praticidade de programas de console. Para mais, por favor veja [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
 
 ### Aliases
 
-Aliasing a command, or a group thereof, is a way of saving time when using the console. This is specially helpful for repetitive tasks that do not need significant alteration to their parameters between executions. Common time-saving aliases can be found in [Bash#Aliases](/index.php/Bash#Aliases "Bash"), which are easily portable to [zsh](/index.php/Zsh "Zsh") as well.
+Fazer um *alias* de um comando, ou um grupo deles, é uma forma de economizar tempo ao usar o console. Isso é especialmente útil para tarefas repetitivas que não precisam de alterações significativas a seus parâmetros entre execuções. *Aliases* comuns para economia de tempo podem ser encontrados em [Bash#Aliases](/index.php/Bash#Aliases "Bash"), que também é facilmente portável para [zsh](/index.php/Zsh "Zsh").
 
 ### Shells alternativos
 
-[Bash](/index.php/Bash "Bash") is the shell that is installed by default in an Arch system. The live installation media, however, uses [zsh](/index.php/Zsh "Zsh") with the [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) addon package. See [Command-line shell#List of shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") for more alternatives.
+[Bash](/index.php/Bash "Bash") é o shell que está instalado por padrão em um sistema Arch. A mídia de instalação *live*, porém, usa [zsh](/index.php/Zsh "Zsh") com o pacote complementar [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Veja [Command-line shell#List of shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") para mais alternativas.
 
 ### Adições ao Bash
 
-A list of miscellaneous Bash settings, including completion enhancements, history search and [Readline](/index.php/Readline "Readline") macros is available in [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
+Uma lista de configurações Bash diversas, incluindo melhorias de *completion* (completação, conclusão), pesquisa de histórico e macros [Readline](/index.php/Readline "Readline") está disponível em [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
 
 ### Saída colorida
 
-This section is covered in [Color output in console](/index.php/Color_output_in_console "Color output in console").
+Essa seção é coberta por [Saída colorida no console](/index.php/Color_output_in_console "Color output in console").
 
 ### Arquivos compactados
 
-Compressed files, or archives, are frequently encountered on a GNU/Linux system. [Tar](/index.php/Tar "Tar") is one of the most commonly used archiving tools, and users should be familiar with its syntax (Arch Linux packages, for example, are simply xzipped tarballs). See [Bash/Functions](/index.php/Bash/Functions "Bash/Functions") for other helpful commands.
+Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar "Tar") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Bash/Functions](/index.php/Bash/Functions "Bash/Functions") para outros comandos úteis.
 
 ### Prompt de console
 
-The console prompt (PS1) can be customized to a great extent. See [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt") or [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") if using Bash or Zsh, respectively.
+O prompt de console (PS1) pode ser personalizado para uma de diversas formas. Veja [Prompt colorido do Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt") ou [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") se estiver usando Bash ou Zsh, respectivamente.
 
 ### Shell do emacs
 
-Emacs is known for featuring options beyond the duties of regular text editing, one of these being a full shell replacement. Consult [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") for a fix regarding garbled characters that may result from enabling colored output.
+Emacs é conhecido por conter opções diversas às tarefas de esperada edição de texto, sendo uma delas uma completa substituição do shell. Consulte [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") para uma correção sobre caracteres ilegíveis que podem resultar pelo uso de saída colorida.
 
 ### Suporte a mouse
 
-Using a mouse with the console for copy-paste operations can be preferred over [GNU Screen](/index.php/GNU_Screen "GNU Screen")'s traditional copy mode. Refer to [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for comprehensive directions. Note that you can already do this in [terminal emulators](/index.php/Terminal_emulators "Terminal emulators") with the [clipboard](/index.php/Clipboard "Clipboard").
+Usar um mouse com o console para operações de copiar-colar pode ser preferido em relação ao modo de cópia tradicional do [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Veja o [Suporte a mouse no console](/index.php/Console_mouse_support "Console mouse support") para direções compreensivas. Note que você já pode fazer isso em [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") com a [área de transferência](/index.php/Clipboard "Clipboard").
 
 ### Buffer de scrollback
 
-To be able to save and view text which has scrolled off the screen, refer to [Scrollback buffer](/index.php/Scrollback_buffer "Scrollback buffer").
+Para ser capaz de salvar e ver conteúdo antigo que foi deslocado para fora da tela, veja [Buffer de scrollback](/index.php/Scrollback_buffer "Scrollback buffer").
 
 ### Gerenciamento de sessão
 
-Using terminal multiplexers like [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programs may be run under sessions composed of tabs and panes that can be detached at will, so when the user either kills the terminal emulator, terminates [X](/index.php/X "X"), or logs off, the programs associated with the session will continue to run in the background as long as the terminal multiplexer server is active. Interacting with the programs requires reattaching to the session.
+Com o uso de multiplexadores de terminal como o [tmux](/index.php/Tmux "Tmux") ou [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programas podem ser executados em sessões compostas de ambas e painéis que podem ser desanexados à vontade, de forma que quando o usuário matar o emulador de terminal, terminar o [X](/index.php/X "X") ou encerrar sua sessão, os programas associados permanecerão em execução em segundo plano desde que o servidor multiplexador de terminar esteja ativo. Interação com programas requer reanexar à sessão.

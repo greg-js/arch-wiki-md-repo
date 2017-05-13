@@ -12,6 +12,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
     *   [3.1 LuxRenderer](#LuxRenderer)
     *   [3.2 RenderMan](#RenderMan)
     *   [3.3 Pro-Render](#Pro-Render)
+    *   [3.4 Blend4Web](#Blend4Web)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Blender UI graphical corruption on AMDGPU driver](#Blender_UI_graphical_corruption_on_AMDGPU_driver)
     *   [4.2 Blender does not show the AMD card as an OpenCL rendering device](#Blender_does_not_show_the_AMD_card_as_an_OpenCL_rendering_device)
@@ -39,6 +40,10 @@ RenderMan is a linux compatible proprietary rendering plugin that is free for us
 ### Pro-Render
 
 [Pro-Render](https://github.com/Radeon-prorender/Blender/releases) is an upcoming open source Blender rendering plugin from AMD that will allow any machine capable of OpenCL 1.2 the ability to create realistic GPU renders, allowing for faster work compared to the CPU.
+
+### Blend4Web
+
+[Blend4Web](http://www.blend4web.com/) is an open source framework for creating and displaying interactive 3D graphics in web browsers. It contains a Blender add-on to create and export 3D scenes directly into the web. A Blend4Web-specific profile can be activated in the add-on settings. When switching to this profile, the Blender interface changes so that it only reveals settings relevant to Blend4Web. See the [documentation](https://www.blend4web.com/doc/en/setup.html) on how to install Blend4Web SDK.
 
 ## Troubleshooting
 

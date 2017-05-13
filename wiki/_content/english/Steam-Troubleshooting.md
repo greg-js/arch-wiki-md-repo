@@ -21,7 +21,7 @@
 *   [12 Missing libGL](#Missing_libGL)
 *   [13 Missing vgui2_s.so](#Missing_vgui2_s.so)
 *   [14 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
-*   [15 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
+*   [15 2K games do not run on XFS partitions](#2K_games_do_not_run_on_XFS_partitions)
 *   [16 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
 *   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
 *   [18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
@@ -325,9 +325,9 @@ MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
 
 ```
 
-## 2k games do not run on xfs partitions
+## 2K games do not run on XFS partitions
 
-If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[4]](https://bbs.archlinux.org/viewtopic.php?id=185222)
+If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[4]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
 ## Unable to add library folder because of missing execute permissions
 
@@ -400,7 +400,7 @@ With that, steam should no longer crash when trying to launch a game through in 
 
 ## Very slow app download speed
 
-If your Steam apps (games, software…) download speed through client is unusually slow, but browsing Steam store and streaming videos is unaffected, installing DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[5]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
+If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[5]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
 
 ## Symbol lookup error using dri3
 

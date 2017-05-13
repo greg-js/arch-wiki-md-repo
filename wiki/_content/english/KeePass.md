@@ -15,31 +15,31 @@ There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
 ## Installation
 
-There are three major implementations of KeePass, which are all included in official repositories:
+There are three major implementations of KeePass, which are all available in the official repositories:
 
-*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — An easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices. It also has optional autotype and clipboard support respectively when `xdotool` and `xsel` are installed. Supports importing from [many formats](http://keepass.info/help/base/importexport.html). Has [many plugins](http://keepass.info/plugins.html).
+*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — A cross-platform password manager that has autotype and clipboard support when respectively `xdotool` and `xsel` are installed. It lets you import [many formats](http://keepass.info/help/base/importexport.html) and has [many plugins](http://keepass.info/plugins.html).
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe*. The new version [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) is compatible with 2.x database formats, but can import 1.x databases. One may also import PwManager databases and KWallet XML databases. [Does not have plugin functionality, 2017-02-03](https://www.keepassx.org/faq).
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — Started as a Linux port of KeePass. [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) uses the KeePass 2.x format, but can import 1.x databases. It also lets you import PwManager and KWallet XML databases. It does not support plugins. [[1]](https://www.keepassx.org/faq).
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
+	[https://www.keepassx.org/](https://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
-*   **KeepassXC** — Fork of KeePassX that aims to incorporate stalled Pull Requests, features, and bug fixes that are not being incorporated into the main KeePassX baseline.
+*   **[KeePassXC](https://en.wikipedia.org/wiki/KeePassXC "wikipedia:KeePassXC")** — Fork of KeePassX that aims to incorporate stalled pull requests, that are not being incorporated into KeePassX.
 
 	[https://keepassxc.org](https://keepassxc.org) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
 
-Other lesser known implementations are found in the AUR:
+Other lesser-known alternatives can be found in the AUR:
 
-*   **keepassc** — A curses-based password manager compatible to KeePass v.1.x and KeePassX. It also uses `xsel` for clipboard functions.
+*   **keepassc** — A curses-based password manager compatible to KeePass v.1.x and KeePassX. It uses `xsel` for clipboard functions.
 
-	[https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
+	[https://raymontag.github.io/keepassc/](https://raymontag.github.io/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
-*   **kpcli** — A command line browser of KeePassX database files `*.kdb`.
+*   **kpcli** — A command line interface for KeePassX database files `*.kdb`.
 
-	[http://sourceforge.net/projects/kpcli/](http://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)
+	[https://sourceforge.net/projects/kpcli/](https://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)
 
-*   **keeweb** — A desktop webapp compatible to KeePass 2.x.
+*   **keeweb** — A web app (online / Electron) compatible with KeePass 2.x.
 
 	[https://keeweb.info](https://keeweb.info) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)
 
@@ -60,6 +60,8 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 **Note:** KeePassX does not support plugins on its master branch (at the moment of writing KeePassX version is 0.4.4 and KeePassX2 version is 2.0.2). An alternative is to use global autotype feature. If plugins are absolutely necessary, [keepassxc](https://www.archlinux.org/packages/?name=keepassxc) supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as [ChromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) and [PassIFox](https://addons.mozilla.org/en-US/firefox/addon/passifox/).
 
 **Warning:** Upstream strongly advises to disable KeePassHTTP because of security issues. For more information see, [pfn/keepasshttp/issues](https://github.com/pfn/keepasshttp/issues/258) and [keepassxreboot/keepassxc/issues](https://github.com/keepassxreboot/keepassxc/issues/147).
+
+**Note:** To [mitigate the impact](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274669750) of the KeePassHTTP flaw, KeePassXC has [issued a hotfix](https://github.com/keepassxreboot/keepassxc/pull/196) as of version 2.1.1\. Some users consider the improvement good enough ([1](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274682664), [2](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274669042)) for practical purposes, as long as the system is not compromised. However, as there is still [some risk](https://github.com/keepassxreboot/keepassxc/issues/147#issuecomment-274671861) involved, KeePassHTTP support is [no longer enabled by default](https://github.com/keepassxreboot/keepassxc/blob/2.1.1/README.md#note-about-keepasshttp) in KeePassXC.
 
 ### Firefox
 

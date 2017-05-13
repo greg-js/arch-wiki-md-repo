@@ -22,7 +22,7 @@ Primeiramente leia o [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "Th
 
 ## P) Eu sou um completo iniciante no Linux. Eu deveria usar o Arch?
 
-**R)** Esta é uma questão que já foi bastante discutida. O Arch é uma distribuição voltada para usuários Linux mais avançados, porém muitas pessoas acham que o "Arch é um bom local para começar". Se você é um iniciante e deseja usar o Arch, saiba que você DEVE estar disposto a aprender. Antes de fazer sua pergunta, pesquise no google, no wiki e no fórum. Fazendo isso, você não terá problemas. Saiba, também, que muitas pessoas não querem responder as mesmas perguntas várias vezes, e você estará se expondo a este tipo de coisa. Há uma razão para que estes recursos tenham sido disponibilizados para você. Você pode consultar o [Guia para Iniciantes](/index.php/Guia_para_Iniciantes "Guia para Iniciantes").
+**R)** Esta é uma questão que já foi bastante discutida. O Arch é uma distribuição voltada para usuários Linux mais avançados, porém muitas pessoas acham que o "Arch é um bom local para começar". Se você é um iniciante e deseja usar o Arch, saiba que você DEVE estar disposto a aprender. Antes de fazer sua pergunta, pesquise no google, no wiki e no fórum. Fazendo isso, você não terá problemas. Saiba, também, que muitas pessoas não querem responder as mesmas perguntas várias vezes, e você estará se expondo a este tipo de coisa. Há uma razão para que estes recursos tenham sido disponibilizados para você. Você pode consultar o [Guia para iniciantes](/index.php/Guia_para_iniciantes "Guia para iniciantes").
 
 * * *
 

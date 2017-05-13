@@ -68,9 +68,11 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 如要配置无线网络，可以root身份运行 `wifi-menu -o` 来自动在 `/etc/netctl/` 中生成配置文件。
 
 ```
-如要在有线网络接口上启用静态IP，并忽略线缆连接状况，可以在配置文件中添加`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`配置项
+
+```
+如要在有线网络接口上启用静态IP，并忽略线缆连接状况，可以在配置文件中添加 `SkipNoCarrier=yes` 配置项
+
+```
 
 在创建好你自己的配置文件之后，可以尝试运行（仅需写出文件名，不包含完整路径）：
 

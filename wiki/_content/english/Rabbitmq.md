@@ -25,7 +25,7 @@ Default configuration file location `/etc/rabbitmq/rabbitmq-env.conf`. See more 
 RabbitMQ can act as MQTT server. For this functionality to work following plugin needs to be enabled:
 
 ```
-   sudo -u rabbitmq -n rabbitmq-plugins enable rabbitmq_mqtt
+   sudo -u rabbitmq rabbitmq-plugins enable rabbitmq_mqtt
 
 ```
 

@@ -22,6 +22,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
     *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
+    *   [3.4 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -213,6 +214,12 @@ allowed=true
 system=false
 users=
 ```
+
+### Redshift temporarily resets using some wine apps that reset gamma values
+
+If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[5]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[6]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
+
+ `HKEY_CURRENT_USER\Software\Wine\X11 Driver`  `UseXVidMode="N"` using the registry editor, or import/set it otherwise.
 
 ## See also
 

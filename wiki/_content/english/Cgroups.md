@@ -66,7 +66,7 @@ Move a process to the cgroup (note: only one PID can be written at a time, repea
 One of the powers of cgroups is that you can create "ad-hoc" groups on the fly. You can even grant the privileges to create custom groups to regular users. `groupname` is the cgroup name:
 
 ```
-# cgcreate -a *user* -g memory,cpu:*groupname*
+# cgcreate -a *user* -t *user* -g memory,cpu:*groupname*
 
 ```
 
