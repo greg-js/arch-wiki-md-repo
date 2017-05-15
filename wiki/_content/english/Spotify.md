@@ -42,7 +42,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
 
 ## Installation
 
-Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do **not** need to install both. There is also the online player (requires [Flash](/index.php/Flash "Flash")) on [https://play.spotify.com/](https://play.spotify.com/).
+Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do **not** need to install both. There is also the online player at [https://open.spotify.com/](https://open.spotify.com/).
 
 ### Third-party clients
 
@@ -70,7 +70,7 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 First, install [Wine](/index.php/Wine "Wine").
 
-Obtaining Spotify can be done by registering for an account on their Website, the application does not offer in-app registration. Obtain the appliction from [https://www.spotify.com/nl/download/windows/](https://www.spotify.com/nl/download/windows/).
+Obtaining Spotify can be done by registering for an account on their Website, the application does not offer in-app registration. Obtain the appliction from [https://www.spotify.com/us/download/windows/](https://www.spotify.com/us/download/windows/).
 
 After you have registered and downloaded your copy of the installer you will need to run the application through Wine, depending on your setup you may be able to run the application by right clicking the file. If not terminal will work just fine, as long as you run the below command in the directory of your download.
 

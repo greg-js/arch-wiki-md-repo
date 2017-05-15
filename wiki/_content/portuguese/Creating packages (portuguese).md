@@ -1,9 +1,9 @@
-Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes usando o [sistema de compilação](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") "tipo *ports*" do Arch Linux, também para enviou ao [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Ele cobre criação de um [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") – um arquivo de descrição de compilação de pacote carregado pelo `makepkg` para criar um pacote binário a partir do fonte. Se já estiver em posse de um `PKGBUILD`, veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Para instruções sobre regras e formas existentes para melhorar a qualidade de pacote, veja [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch").
+Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes usando o [sistema de compilação](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") "tipo *ports*" do Arch Linux, também para enviou ao [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Ele cobre criação de um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") – um arquivo de descrição de compilação de pacote carregado pelo `makepkg` para criar um pacote binário a partir do fonte. Se já estiver em posse de um `PKGBUILD`, veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Para instruções sobre regras e formas existentes para melhorar a qualidade de pacote, veja [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch").
 
 ## Contents
 
 *   [1 Visão Geral](#Vis.C3.A3o_Geral)
-    *   [1.1 Pacotes e grupos meta](#Pacotes_e_grupos_meta)
+    *   [1.1 Pacotes meta e grupos](#Pacotes_meta_e_grupos)
 *   [2 Preparação](#Prepara.C3.A7.C3.A3o)
     *   [2.1 Pré-requisito de software](#Pr.C3.A9-requisito_de_software)
     *   [2.2 Baixe e teste a instalação](#Baixe_e_teste_a_instala.C3.A7.C3.A3o)
@@ -25,7 +25,7 @@ Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes u
 
 ## Visão Geral
 
-Pacotes no Arch Linux são compilados usando o utilitário [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e as informações armazenadas em um arquivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Quando `makepkg` é executado, ele pesquisa por um `PKGBUILD` no diretório atual e segue as instruções nele para obter os arquivos necessários e/ou compilá-los para serem empacotados dentro do arquivo de pacote (`pkgname.pkg.tar.xz`). O pacote resultante contém arquivos binários e instruções de instalação prontos para serem instalados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
+Pacotes no Arch Linux são compilados usando o utilitário [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e as informações armazenadas em um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Quando `makepkg` é executado, ele pesquisa por um `PKGBUILD` no diretório atual e segue as instruções nele para obter os arquivos necessários e/ou compilá-los para serem empacotados dentro do arquivo de pacote (`pkgname.pkg.tar.xz`). O pacote resultante contém arquivos binários e instruções de instalação prontos para serem instalados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
 Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usando xz, que contém os seguintes arquivos gerados pelo makepkg:
 
@@ -35,9 +35,9 @@ Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usand
 *   `.INSTALL`: um arquivo opcional usado para executar comandos após o estágio instalação/atualização/remoção. (Esse arquivo está presente apenas se especificado no `PKGBUILD`.)
 *   `.Changelog`: um arquivo opcional mantido pelo mantenedor do pacote documentando as chances do pacote. (Ele não está presente em todos pacotes.)
 
-### Pacotes e grupos meta
+### Pacotes meta e grupos
 
-Um grupo de pacotes é um conjunto de pacotes relacionados, definido pelo empacotador, que pode ser instalado ou desinstalado simultaneamente usando o nome de grupo como um substituto para cada nome de pacote individual. Enquanto um grupo não é um pacote, ele pode ser instalado de forma similar a um pacote, veja [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
+Um grupo de pacotes é um conjunto de pacotes relacionados, definido pelo empacotador, que pode ser instalado ou desinstalado simultaneamente usando o nome de grupo como um substituto para cada nome de pacote individual. Enquanto um grupo não é um pacote, ele pode ser instalado de forma similar a um pacote, veja [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
 
 Um pacote meta, frequentemente (mas nem sempre) intitulado com o sufixo *-meta*, fornece funcionalidade similar a um grupo de pacotes no sentido que ele permite múltiplos pacotes relacionados serem instalados ou desinstalados simultaneamente. Pacotes meta podem ser instalados como qualquer outro pacote, veja [Pacman (Português)#Instalando Pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_Pacotes_espec.C3.ADficos "Pacman (Português)"). A única diferença entre um pacote meta e um pacote comum é que um pacote meta é vazio e existe apenas para fazer um vínculo de pacotes relacionados por meio de dependências.
 
@@ -47,24 +47,24 @@ A vantagem de um pacote meta, comparado com um grupo, é que quaisquer novos pac
 
 ### Pré-requisito de software
 
-First ensure that the necessary tools are installed. [Installing](/index.php/Install "Install") the package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient; it includes **make** and additional tools needed for compiling from source.
+Primeiro se certifique de que as ferramentas necessárias estão instaladas. [Instalar](/index.php/Install "Install") o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) deve ser o suficiente; ele inclui **make** e ferramentas adicionais necessárias para compilar a partir do código-fonte.
 
-One of the key tools for building packages is [makepkg](/index.php/Makepkg "Makepkg") (provided by [pacman](https://www.archlinux.org/packages/?name=pacman)), which does the following:
+Uma das ferramentas chaves para compilar pacotes é o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") (fornecido pelo [pacman](https://www.archlinux.org/packages/?name=pacman)), que faz o seguinte:
 
-1.  Checks if package dependencies are installed.
-2.  Downloads the source file(s) from the specified server(s).
-3.  Unpacks the source file(s).
-4.  Compiles the software and installs it under a fakeroot environment.
-5.  Strips symbols from binaries and libraries.
-6.  Generates the package meta file which is included with each package.
-7.  Compresses the fakeroot environment into a package file.
-8.  Stores the package file in the configured destination directory, which is the present working directory by default.
+1.  Verifica se as dependências do pacote estão instaladas.
+2.  Baixa os arquivos fontes dos servidores especificados.
+3.  Desempacota os arquivos fontes.
+4.  Compila o software e instala-o sob um ambiente *fakeroot*.
+5.  Remove os símbolos de binários e bibliotecas.
+6.  Gera o arquivo meta do pacote que é incluído em cada pacote.
+7.  Comprime o ambiente *fakeroot* em um arquivo de pacote.
+8.  Armazena o arquivo de pacote no diretório de destino configurado, o qual é o diretório de trabalho atual por padrão.
 
 ### Baixe e teste a instalação
 
-Download the source tarball of the software you want to package, extract it, and follow the author's steps to install the program. Make a note of all commands and/or steps needed to compile and install it. You will be repeating those same commands in the *PKGBUILD* file.
+Baixe o tarball fonte do software se você deseja empacotá-lo, extraí-lo e seguir as etapas do autor para instalar o programa. Tome nota de todos os comandos e/ou etapas necessários para compilar e instalar. Você estará repetindo os mesmos comandos no arquivo *PKGBUILD*.
 
-Most software authors stick to the 3-step build cycle:
+A maioria dos autores de software seguem o ciclo de compilação em 3 etapas:
 
 ```
 ./configure
@@ -73,68 +73,68 @@ make install
 
 ```
 
-This is a good time to make sure the program is working correctly.
+Esse é um bom momento para se certificar o programa está funcionando corretamente.
 
 ## Criação de um PKGBUILD
 
-When you run `makepkg`, it will look for a `PKGBUILD` file in the present working directory. If a `PKGBUILD` file is found it will download the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file that can be installed with `pacman -U *<package file>*`.
+Quando você executa `makepkg`, ele vai procurar por um arquivo `PKGBUILD` no diretório de trabalho atual. Se um arquivo `PKGBUILD` for localizado, ele vai baixar o código-fonte do software e compilá-lo de acordo com as instruções especificadas no arquivo `PKGBUILD`. As instruções devem ser completamente interpretáveis pelo shell [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash"). Após concluir com sucesso, os binários resultantes e metadados do pacote, isto é, informações de versão e dependências do pacote, são empacotados em um arquivo de pacote `pkgname.pkg.tar.xz` que pode ser instalado com `pacman -U *<arquivo de pacote>*`.
 
-To begin with a new package, you should first create an empty working directory, (preferably `~/abs/**pkgname**`), change into that directory, and create a `PKGBUILD` file. You can either copy the prototype PKGBUILD `/usr/share/pacman/PKGBUILD.proto` to your working directory or copy a `PKGBUILD` from a similar package. The latter may be useful if you only need to change a few options.
+Para começar com um novo pacote, você deve primeiro criar um diretório de trabalho vazio (preferivelmente `~/abs/**pkgname**`), mudar para aquele diretório, e criar um arquivo `PKGBUILD`. Você pode copiar o protótipo de PKGBUILD `/usr/share/pacman/PKGBUILD.proto` para seu diretório de trabalho ou copiar um `PKGBUILD` de um pacote similar. A última opção pode ser útil se você só precisar alterar algumas opções.
 
-**Warning:** Use only the PKGBUILD prototypes provided in the [pacman](https://www.archlinux.org/packages/?name=pacman) package (PKGBUILD-split.proto, PKGBUILD-vcs.proto and PKGBUILD.proto). The prototypes files in the [abs](https://www.archlinux.org/packages/?name=abs) package and in [the ABS git repository](https://projects.archlinux.org/abs.git/tree/prototypes) are significantly out of date and should not be used. See [FS#34485](https://bugs.archlinux.org/task/34485).
+**Warning:** Use apenas os protótipos de PKGBUILD fornecidos no pacote [pacman](https://www.archlinux.org/packages/?name=pacman) (PKGBUILD-split.proto, PKGBUILD-vcs.proto e PKGBUILD.proto). Os protótipos no pacote [abs](https://www.archlinux.org/packages/?name=abs) e [no repositório git do ABS](https://projects.archlinux.org/abs.git/tree/prototypes) estão consideravelmente desatualizados e não devem ser usados. Veja [FS#34485](https://bugs.archlinux.org/task/34485).
 
 ### Definindo as variáveis do PKGBUILD
 
-Example PKGBUILDs are located in `/usr/share/pacman/`. An explanation of possible `PKGBUILD` variables can be found in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") article.
+Exemplos de PKGBUILDs estão localizados em `/usr/share/pacman/`. Uma explicação das variáveis possíveis no `PKGBUILD` pode ser encontrada no artigo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
 
-*makepkg* defines two variables that you should use as part of the build and install process:
+*makepkg* define duas variáveis que você não deve usar como parte do processo de compilação e instalação:
 
 	`srcdir`
 
-	This points to the directory where *makepkg* extracts or symlinks all files in the source array.
+	aponta para o diretório no qual *makepkg* extrai e cria links simbólicos no vetor fonte.
 
 	`pkgdir`
 
-	This points to the directory where *makepkg* bundles the installed package, which becomes the root directory of your built package.
+	aponta para o diretório no qual *makepkg* empacota o software instalado, o qual se torna o diretório raiz de seu pacote compilado.
 
-All of them contain *absolute* paths, which means, you do not have to worry about your working directory if you use these variables properly.
+Todos eles contêm caminhos *absolutos*, o que significa que você não tem que se preocupar com seu diretório de trabalho, se você usar essas variáveis adequadamente.
 
-**Note:** *makepkg*, and thus the `build()` and `package()` functions, are intended to be non-interactive. Interactive utilities or scripts called in those functions may break *makepkg*, particularly if it is invoked with build-logging enabled (`-L`). (See [FS#13214](https://bugs.archlinux.org/task/13214).)
+**Note:** *makepkg*, e portanto as funções `build()` e `package()`, são feitas para serem não interativas. Utilitários interativos ou scripts chamados naquelas funções podem quebrar o *makepkg*, principalmente se for invocada com registro de log de compilação habilitado (`-L`). (Veja [FS#13214](https://bugs.archlinux.org/task/13214).)
 
-**Note:** Apart from the current package Maintainer, there may be previous maintainers listed above as Contributors.
+**Note:** Com exceção do *Maintainer* atual do pacote, pode haver mantenedores anteriores listados acima como *Contributors*.
 
 ### Funções do PKGBUILD
 
-There are five functions, listed here in the order they are executed if all of them exist. If one does not exist, it is simply skipped.
+Há cinco funções, listadas aqui na ordem em que elas são executadas, se todas elas existirem. Se uma não existir, ela é simplesmente ignorada.
 
-**Note:** This does not apply to the `package()` function, as it is required in every PKGBUILD
+**Note:** Note que isso não se aplica à função `package()`, já que ela é exigida em todo PKGBUILD
 
 #### prepare()
 
-This function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver.28.29) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
+Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver.28.29) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
-**Note:** (From `man PKGBUILD`) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
+**Note:** (De `man PKGBUILD`) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
 #### pkgver()
 
-`pkgver()` runs after the sources are fetched, extracted and [prepare()](#prepare.28.29) executed. So you can update the pkgver variable during a makepkg stage.
+`pkgver()` é executado após os fontes serem obtidos, extraídos e o [prepare()](#prepare.28.29) executado. Então, você pode atualizar a variável *pkgver* durante um estágio do makepkg.
 
-This is particularly useful if you are [making git/svn/hg/etc. packages](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), where the build process may remain the same, but the source could be updated every day, even every hour. The old way of doing this was to put the date into the pkgver field which, if the software was not updated, makepkg would still rebuild it thinking the version had changed. Some useful commands for this are `git describe`, `hg identify -ni`, etc. Please test these before submitting a PKGBUILD, as a failure in the `pkgver()` function can stop a build in its tracks.
+Isso é particularmente útil se você estiver [fazendo pacote git/svn/hg/etc.](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), nos quais o processo de compilação pode se manter o mesmo, mas o fonte não puder ser atualizado todo dia, ou toda hora. A forma antiga de fazer isso é colocar a data no campo *pkgver* que, se o software não fosse atualizado, makepkg ainda iria recompilá-lo pensando que a versão foi alterada. Alguns comandos úteis para isso são `git describe`, `hg identify -ni`, etc. Por favor, teste antes de enviar um PKGBUILD, já que uma falha na função `pkgver()` pode parar um processo de compilação.
 
-**Note:** pkgver cannot contain spaces or hyphens (`-`). Using sed to correct this is common.
+**Note:** pkgver não pode conter espaços ou hífens (`-`). Usar sed para corrigir isso é comum.
 
 #### build()
 
-Now you need to implement the `build()` function in the `PKGBUILD` file. This function uses common shell commands in [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) syntax to automatically compile software and create a `pkg` directory to install the software to. This allows *makepkg* to package files without having to sift through your file system.
+Agora você precisa implementar a função `build()` no arquivo `PKGBUILD`. Essa função usa comandos comuns de shell com sintaxe [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash") para compilar automaticamnete o software e criar um diretório `pkg` para instalar o software. Isso permite que o *makepkg* empacote arquivos sem ter que examinar seu sistema de arquivos.
 
-The first step in the `build()` function is to change into the directory created by uncompressing the source tarball. *makepkg* will change the current directory to `$srcdir` before executing the `build()` function. Therefore, in most cases, like suggested in `/usr/share/pacman/PKGBUILD.proto`, the first command will look like this:
+A primeira etapa na função `build()` é alterar para o diretório criado ao descompactar o tarball fonte. *makepkg* vai alterar o diretório atual para `$srcdir` antes de executar a função `build()`. Por tanto, na maioria dos casos, como sugerido no `/usr/share/pacman/PKGBUILD.proto`, o primeiro comando se parece com isso:
 
 ```
 cd "$pkgname-$pkgver"
 
 ```
 
-Now, you need to list the same commands you used when you manually compiled the software. The `build()` function in essence automates everything you did by hand and compiles the software in the fakeroot build environment. If the software you are packaging uses a configure script, it is good practice to use `--prefix=/usr` when building packages for pacman. A lot of software installs files relative to the `/usr/local` directory, which should only be done if you are manually building from source. All Arch Linux packages should use the `/usr` directory. As seen in the `/usr/share/pacman/PKGBUILD.proto` file, the next two lines often look like this:
+Agora, você precisa listar os mesmos comandos que você usou quando compilou manualmente o software. A função `build()`, essencialmente, automatiza tudo que você fez manualmente e compila o software no ambiente *fakeroot* de compilação. SE o software que você está empacotando usa um script de compilação, é uma boa prática usar `--prefix=/usr` ao compilar pacotes para o pacman. Muitos softwares instalam arquivos relativos ao diretório `/usr/local`, o que deve ser feito apenas se você está compilando manualmente do fonte. Todos os pacotes do Arch Linux devem usar o diretório `/usr`. Como visto no arquivo `/usr/share/pacman/PKGBUILD.proto`, as próximas duas linhas geralmente se parecem com isso:
 
 ```
 ./configure --prefix=/usr
@@ -142,82 +142,82 @@ make
 
 ```
 
-**Note:** If your software does not need to build anything, DO NOT use the `build()` function. The `build()` function is not required, but the `package()` function is.
+**Note:** Se seu software não precisa compilar nada, NÃO use a função `build()`. A função `build()` não é obrigatória, mas a função `package()` é.
 
 #### check()
 
-Place for calls to `make check` and similar testing routines. It is highly recommended to have `check()` as it helps to make sure software has been built correctly and works fine with its dependencies.
+Lugar para as chamadas de `make check` ou rotinas de teste similares. É altamente recomendado ter um `check()` já que ela ajuda a se certificar que o software foi compilado corretamente e funciona bem com suas dependências.
 
-Users who do not need it (and occasionally maintainers who can not fix a package for this to pass) can disable it using `BUILDENV+=('!check')` in PKGBUILD/makepkg.conf or call `makepkg` with `--nocheck` flag.
+Usuários que não precisam dela (e ocasionalmente mantenedores que não corrigem um pacote para isso passar) podem desabilitá-la usando `BUILDENV+=('!check')` no PKGBUILD/makepkg.conf ou chamar `makepkg` com a opção `--nocheck`.
 
 #### package()
 
-The final step is to put the compiled files in a directory where *makepkg* can retrieve them to create a package. This by default is the `pkg` directory—a simple fakeroot environment. The `pkg` directory replicates the hierarchy of the root file system of the software's installation paths. If you have to manually place files under the root of your filesystem, you should install them in the `pkg` directory under the same directory structure. For example, if you want to install a file to `/usr/bin`, it should instead be placed under `$pkgdir/usr/bin`. Very few install procedures require the user to copy dozens of files manually. Instead, for most software, calling `make install` will do so. The final line should look like the following in order to correctly install the software in the `pkg` directory:
+A etapa final é colocar os arquivos compilados em um diretório no qual *makepkg* possa obtê-los para criar um pacote. Isso por padrão é o diretório `pkg`—um ambiente *fakeroot* simples. O diretório `pkg` replica a hierarquia do sistema de arquivos raiz dos caminhos de instalação do software. Se você tiver que colocar arquivos manualmente sob a raiz de seu sistema de arquivos, você deveria instalá-los no diretório `pkg` sob a mesma estrutura. Por exemplo, se você deseja instalar um arquivo no `/usr/bin`, ele deveria ser colocado sob `$pkgdir/usr/bin`. Muito poucos procedimentos de instalação exibem que o usuário copie diversos arquivos manualmente. Em vez disso, para a maioria dos softwares, chamar `make install` servirá. A linha final deve se parecer com o seguinte para instalar corretamente o software no diretório `pkg`:
 
 ```
 make DESTDIR="$pkgdir/" install
 
 ```
 
-**Note:** It is sometimes the case where `DESTDIR` is not used in the `Makefile`; you may need to use `prefix` instead. If the package is built with *autoconf* / *automake*, use `DESTDIR`; this is what is [documented](https://www.gnu.org/software/automake/manual/automake.html#Install) in the manuals. If `DESTDIR` does not work, try building with `make prefix="$pkgdir/usr/" install`. If that does not work, you will have to look further into the install commands that are executed by "`make <...> install`".
+**Note:** Algumas vezes é caso do `DESTDIR` não ser usado no `Makefile`; em vez disso, você pode precisar usar `prefix`. Se o pacote é compilado com *autoconf* / *automake*, use `DESTDIR`; isso é o que está [documentado](https://www.gnu.org/software/automake/manual/automake.html#Install) nos manuais. Se `DESTDIR` não funcionar, tente compilar com `make prefix="$pkgdir/usr/" install`. Se isso não funcionar, você terá que olhar mais profundamente nos comandos de instalação que são executados por "`make <...> install`".
 
-In some odd cases, the software expects to be run from a single directory. In such cases, it is wise to simply copy these to `$pkgdir/opt`.
+Alguns casos estranhos, softwares esperam ser executados de um único diretório. Em tais casos, é sábio copiá-los para `$pkgdir/opt`.
 
-More often than not, the installation process of the software will create sub-directories below the `pkg` directory. If it does not, however, *makepkg* will generate a lot of errors and you will need to manually create sub-directories by adding the appropriate `mkdir -p` commands in the `build()` function before the installation procedure is run.
+Com uma certa frequência o processo de instalação criará um subdiretório dentro do diretório `pkg`. Se ele não criar, porém, *makepkg* vai gerar vários erros e você precisará criar manualmente os subdiretórios adicionando os comandos `mkdir -p` apropriados na função `build()` antes do procedimento de instalação ser executado.
 
-In old packages, there was no `package()` function. So, files were put into the *pkg* directory at the end of the `build()` function. If `package()` is not present, `build()` runs via *fakeroot*. In new packages, `package()` is required and runs via *fakeroot* instead, and `build()` runs without any special privileges.
+Em pacotes antigos, não havia uma função `package()`. Então, arquivos eram colocados no diretório *pkg* no final da função `build()`. Se `package()` estiver presente, `build()` executa via *fakeroot*. Em novos pacotes, `package()` é exigido e executa via *fakeroot*, e `build()` executa sem quaisquer privilégios em especial.
 
-`makepkg --repackage` runs only the `package()` function, so it creates a `*.pkg.*` file without compiling the package. This may save time e.g. if you just have changed the `depends` variable of the package.
+`makepkg --repackage` executa apenas a função `package()`, então ele cria um arquivo `*.pkg.*` sem compilar o pacote. Isso pode economizar tempo, por exemplo, se você tiver alterado apenas a variável `depends` do pacote.
 
-**Note:** The `package()` function is the only required function in a PKGBUILD. If you must only copy files into their respective directories to install a program, do not put it in the `build()` function, put that in the `package()` function.
+**Note:** A função `package()` é a única função exigida em um PKGBUILD. Se você só precisa copiar arquivos para seus respectivos diretórios para instalar um programa, não coloque isso na função `build()`, e sim na função `package()`.
 
-**Note:** Creating symlinks is a slightly awkward process in the `package()` function. Using the naive approach `ln -s "${pkgdir}/from/foo" "${pkgdir}/to/goo"` will result in a broken symlink to the build directory. The way to create a proper link is to create it pointing to an initially-broken source, `ln -s "/from/foo" "${pkgdir}/to/goo"`. Once the package is installed, the link will point to the right place.
+**Note:** Criar links simbólicos é um processo ligeiramente estranho na função `package()`. Usando a abordagem ingênua `ln -s "${pkgdir}/de/foo" "${pkgdir}/para/goo"` vai resultar em um link simbólico para o diretório de compilação. A forma apropriada de criar um link é criá-lo apontando para uma fonte inicialmente quebrada, `ln -s "/de/foo" "${pkgdir}/para/goo"`. Uma vez o pacote esteja instalado, o link vai apontar para o lugar correto.
 
 ## Teste do PKGBUILD e pacote
 
-As you are writing the `build()` function, you will want to test your changes frequently to ensure there are no bugs. You can do this using the `makepkg` command in the directory containing the `PKGBUILD` file. With a properly formatted `PKGBUILD`, makepkg will create a package; with a broken or unfinished `PKGBUILD`, it will raise an error.
+Na medida em que você escreve a função `build()`, você vai querer testar suas alterações frequentemente para se assegurar de que não há falhas. Você pode fazer isso usando o comando `makepkg` no diretório contendo o arquivo `PKGBUILD`. Com um `PKGBUILD` formatado corretamente, makepkg vai criar um pacote; com um `PKGBUILD` quebrado ou incompleto, ele vai gerar erros.
 
-If makepkg finishes successfully, it will place a file named `pkgname-pkgver.pkg.tar.xz` in your working directory. This package can be installed with the `pacman -U` command. However, just because a package file was built does not imply that it is fully functional. It might conceivably contain only the directory and no files whatsoever if, for example, a prefix was specified improperly. You can use pacman's query functions to display a list of files contained in the package and the dependencies it requires with `pacman -Qlp [package file]` and `pacman -Qip [package file]` respectively.
+Se makepkg finalizar com sucesso, ele vai colocar um arquivo chamado `pkgname-pkgver.pkg.tar.xz` em seu diretório de trabalho. Esse pacote pode ser instalado com o comando `pacman -U`. Porém, só porque um aquivo de pacote foi compilado não significa que ele está totalmente funcional. Ele pode conter apenas o diretório e nenhum arquivo se, por exemplo, um prefixo foi especificado equivocadamente. Você pode usar as funções de consulta do pacman para exibir uma lista de aquivos contidos no pacote e as dependências que ele exige com `pacman -Qlp [arquivo do pacote]` e `pacman -Qip [arquivo de pacote]`, respectivamente.
 
-If the package looks sane, then you are done! However, if you plan on releasing the `PKGBUILD` file, it is imperative that you check and double-check the contents of the `depends` array.
+Se o pacote parecer estar bom, então você está pronto! Porém, se você planeja lançar o arquivo `PKGBUILD`, é imperativo que você verifique, e verifique de novo, o conteúdo do vetor `depends`.
 
-Also ensure that the package binaries actually *run* flawlessly! It is annoying to release a package that contains all necessary files, but crashes because of some obscure configuration option that does not quite work well with the rest of the system. If you are only going to compile packages for your own system, though, you do not need to worry too much about this quality assurance step, as you are the only person suffering from mistakes, after all.
+Além disso, certifique-se de que os binários do pacote realmente são *executados* sem falha alguma! É irritante lançar um pacote que contém todos os arquivos necessários, mas trava por causa de alguma opção de configuração obscura que não funciona bem com o resto do sistema. Se você vai apenas compilar pacotes para o seu próprio sistema, você não precisa se preocupar tanto sobre a etapa de verificação de qualidade, pois, no final das contas, você é a única pessoa que sofrerá pelos equívocos.
 
 ### Verificando sanidade do pacote
 
-After testing package functionality check it for errors using [namcap](/index.php/Namcap "Namcap"):
+Após testar a funcionalidade do pacote, verifique-o por erros usando o [namcap](/index.php/Namcap "Namcap"):
 
 ```
 $ namcap PKGBUILD
-$ namcap *<package file name>*.pkg.tar.xz
+$ namcap *<nome do arquivo do pacote>*.pkg.tar.xz
 
 ```
 
-Namcap will:
+Namcap vai:
 
-1.  Check PKGBUILD contents for common errors and package file hierarchy for unnecessary/misplaced files
-2.  Scan all ELF files in package using `ldd`, automatically reporting which packages with required shared libraries are missing from `depends` and which can be omitted as transitive dependencies
-3.  Heuristically search for missing and redundant dependencies
+1.  Verificar o conteúdo do PKGBUILD por erros comuns e hierarquia de arquivos do pacote por arquivos desnecessários/colocados em lugar indevido
+2.  Varrer todos os arquivos ELF no pacote usando `ldd`, relatando automaticamente quais pacotes com as bibliotecas compartilhadas estão faltando no `depends` e quais podem ser omitidas como dependências transitivas
+3.  Pesquisar heuristicamente por dependências em falta ou redundantes
 
-and much more. Get into the habit of checking your packages with namcap to avoid having to fix the simplest mistakes after package submission.
+e muito mais. Se habitue a verificar seus pacotes com namcap para evitar de ter que corrigir os erros mais simples após envio do pacote.
 
 ## Enviando pacotes para o AUR
 
-Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidelines#Submitting_packages "AUR User Guidelines") for a detailed description of the submission process.
+Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%AAs)#Enviando_pacotes "AUR (Português)") para uma descrição detalhada do processo de envio.
 
 ## Resumo
 
-1.  Download the source tarball of the software you want to package.
-2.  Try compiling the package and installing it into an arbitrary directory.
-3.  Copy over the prototype `/usr/share/pacman/PKGBUILD.proto` and rename it to `PKGBUILD` in a temporary working directory -- preferably `~/abs/`.
-4.  Edit the `PKGBUILD` according to the needs of your package.
-5.  Run `makepkg` and see whether the resulting package is built correctly.
-6.  If not, repeat the last two steps.
+1.  Baixe o tarball fonte do software que você deseja empacotar.
+2.  Tente compilar o pacote e instalá-lo em um diretório arbitrário.
+3.  Copie o protótipo `/usr/share/pacman/PKGBUILD.proto` e renomeie-o para `PKGBUILD` em um diretório de trabalho temporário -- preferivelmente `~/abs/`.
+4.  Edite o `PKGBUILD` de acordo com as necessidades do seu pacote.
+5.  Execute `makepkg` e veja se o pacote resultante é compilado corretamente.
+6.  Se não, repita as últimas duas etapas.
 
 ### Avisos
 
-*   Before you can automate the package building process, you should have done it manually at least once unless you know *exactly* what you are doing *in advance*, in which case you would not be reading this in the first place. Unfortunately, although a good bunch of program authors stick to the 3-step build cycle of "`./configure`; `make`; `make install`", this is not always the case, and things can get real ugly if you have to apply patches to make everything work at all. Rule of thumb: If you cannot get the program to compile from the source tarball, and make it install itself to a defined, temporary subdirectory, you do not even need to try packaging it. There is not any magic pixie dust in `makepkg` that makes source problems go away.
-*   In a few cases, the packages are not even available as source and you have to use something like `sh installer.run` to get it to work. You will have to do quite a bit of research (read READMEs, INSTALL instructions, man pages, perhaps ebuilds from Gentoo or other package installers, possibly even the MAKEFILEs or source code) to get it working. In some really bad cases, you have to edit the source files to get it to work at all. However, `makepkg` needs to be completely autonomous, with no user input. Therefore if you need to edit the makefiles, you may have to bundle a custom patch with the `PKGBUILD` and install it from inside the `prepare()` function, or you might have to issue some `sed` commands from inside the `prepare()` function.
+*   Antes de você automatizar o processo de compilação do pacote, você deve tê-lo feito manualmente pelo menos uma vez, a menos que você saiba *exatamente* o que você está fazendo *desde já*, caso em que você não precisaria estar lendo isso em primeiro lugar. Infelizmente, apesar de uma boa quantidade de autores de programas seguirem o ciclo de compilação de 3 etapas de "`./configure`; `make`; `make install`", não é sempre que isso ocorre e as coisas podem dar muito errado se você tiver que aplicar patches para fazer tudo funcionar. Regra do polegar: Se você não puder fazer o programa compilar a partir do tarball fonte e fazê-lo ser instalado para um subdiretório temporário definido, você não precisa se quer empacotá-lo. Não há nenhum pozinho mágico no `makepkg` que faça os problemas do código-fonte sumirem.
+*   Em alguns casos, os pacotes nem mesmo estão disponíveis e você tem que usar alguma coisa como `sh installer.run` para fazê-los funcionar. Você terá que fazer uma boa pesquisa (ler os READMEs, instruções de INSTALL, páginas man, talvez ebuilds do Gentoo ou outros instaladores de pacote, possivelmente até os MAKEFILEs ou o código-fonte) para fazê-lo funcionar. Em alguns casos realmente sérios, você tem que editar os arquivos fontes para fazê-los funcionar. Porém, `makepkg` precisa ser completamente autônomo, com nenhuma entrada de usuário. Portanto, se você precisa editar os makefiles, você pode ter juntar um patch personalizado ao `PKGBUILD` e instalá-lo de dentro da função `prepare()`, ou você pode ter que usar alguns comandos `sed` de dentro da função `prepare()`.
 
 ## Diretrizes mais detalhadas
 
@@ -229,6 +229,6 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 
 ## Veja também
 
-*   [How to correctly create a patch file](https://bbs.archlinux.org/viewtopic.php?id=91408).
-*   [Arch Linux Classroom IRC Logs of classes about creating PKGBUILDs](https://archwomen.org/media/project_classroom/classlogs/).
-*   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)
+*   [Como criar corretamente um arquivo de patch](https://bbs.archlinux.org/viewtopic.php?id=91408).
+*   [Arch Linux Classroom IRC Logs com aulas sobre criação de PKGBUILDs](https://archwomen.org/media/project_classroom/classlogs/).
+*   [Abordagem com Fakeroot para instalação de pacote](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)

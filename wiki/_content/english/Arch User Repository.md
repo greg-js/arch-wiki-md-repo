@@ -400,5 +400,5 @@ If you use an [AUR helper](/index.php/AUR_helper "AUR helper"), you can shorten 
 ## See also
 
 *   [AUR Web Interface](https://aur.archlinux.org)
-*   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)
+*   [AUR Mailing List](https://lists.archlinux.org/listinfo/aur-general)
 *   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)

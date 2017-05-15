@@ -120,7 +120,7 @@ Make sure [you make bug reports](/index.php/Reporting_bug_guidelines "Reporting 
 If you enabled testing repositories, but later on decided to disable them, you should:
 
 1.  Remove (comment out) them from `/etc/pacman.conf`
-2.  Perform a `# pacman -Syyuu` to "rollback" your updates from these repositories.
+2.  Perform a `# pacman -Syuu` to "rollback" your updates from these repositories.
 
 The second item is optional, but keep it in mind if you notice any problems.
 

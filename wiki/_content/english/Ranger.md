@@ -22,7 +22,7 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
         *   [4.6.1 Synchronize path](#Synchronize_path)
         *   [4.6.2 Start a shell from ranger](#Start_a_shell_from_ranger)
             *   [4.6.2.1 A simpler solution](#A_simpler_solution)
-        *   [4.6.3 Start new ranger instance only if it is not running in current shell](#Start_new_ranger_instance_only_if_it_is_not_running_in_current_shell)
+        *   [4.6.3 Preventing nested ranger instances](#Preventing_nested_ranger_instances)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 See also](#See_also)
@@ -387,23 +387,24 @@ map S shell bash -c "cd %d; bash"
 
 This could probably be adapted to other shells as well. Instead of just running a shell (like the default config), this will run `cd` in a shell, then execute a interactive shell which will not immediately exit so that you can continue with what you wanted.
 
-#### Start new ranger instance only if it is not running in current shell
+#### Preventing nested ranger instances
 
-Put this in your [shell's startup file](/index.php/Autostarting#Shells "Autostarting"):
+You can start a shell in the current directory with `S`, when you exit the shell you get back to your ranger instance.
+
+When you however forget that you already are in a ranger shell and start ranger again you end up with ranger running a shell running ranger.
+
+To prevent this you can create the following function in your [shell's startup file](/index.php/Autostarting#Shells "Autostarting"):
 
 ```
-rg() {
-    if [ -z "$RANGER_LEVEL" ]
-    then
-        ranger
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        /usr/bin/ranger
     else
         exit
     fi
 }
 
 ```
-
-Execute `rg` to start or restore ranger.
 
 ## Troubleshooting
 

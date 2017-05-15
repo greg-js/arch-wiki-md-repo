@@ -28,9 +28,7 @@
 
 ## Installation
 
-Install [deluge](https://www.archlinux.org/packages/?name=deluge).
-
-**Note:** Currently, [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted) and its 4 other dependencies that pacman pulls in automatically when installing deluge are not removed due to a bug revolving around a dependency cycle, see: [FS#41031](https://bugs.archlinux.org/task/41031). Users can circumvent this by removing the affected packages (assuming they are not needed by other packages installed on the system): `pacman -Rs deluge python2-twisted`.
+Install [deluge](https://www.archlinux.org/packages/?name=deluge). GTK+ client also needs [pygtk](https://www.archlinux.org/packages/?name=pygtk) package to run.
 
 ## Daemon
 

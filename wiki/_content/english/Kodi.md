@@ -1,12 +1,4 @@
-Kodi (previously known as XBMC), is a free, [open source (GPL)](http://www.gnu.org/copyleft/gpl.html) multimedia player that originally ran on the first-generation [Xbox](https://en.wikipedia.org/wiki/Microsoft_Xbox "wikipedia:Microsoft Xbox"), and now runs on Linux, OS X, Windows, Android and iOS. Kodi can be used to play/view the most popular video, audio, and picture formats, and many more lesser-known formats, including:
-
-*   Video - DVD-Video, VCD/SVCD, MPEG-1/2/4, DivX, XviD, Matroska
-*   Audio - MP3, AAC.
-*   Picture - JPG, GIF, PNG.
-
-These can all be played directly from a CD/DVD, or from the hard-drive. Kodi can also play multimedia from a computer over a local network (LAN), or play media streams directly from the Internet. For more information, see the [Kodi FAQ](http://kodi.wiki/index.php?title=Kodi_FAQ).
-
-As of version 12, it can also be used to play and record live TV using a tuner, a backend server and a PVR plugin; more information about this can be found on the [Kodi wiki](http://kodi.wiki/?title=PVR).
+Kodi (formerly known as XBMC) is an award-winning free and open source (GPL) software media player and entertainment hub that can be installed on Linux, OSX, Windows, iOS and Android, featuring a 10-foot user interface for use with televisions and remote controls. These can all be played directly from a CD/DVD, or from the hard-drive. Kodi can also play multimedia from a computer over a local network (LAN), or play media streams directly from the Internet. It can also be used to play and record live TV using a tuner, a backend server and a PVR plugin; more information about this can be found on the [Kodi wiki](http://kodi.wiki/?title=PVR).
 
 ## Contents
 
@@ -22,8 +14,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
         *   [2.2.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
         *   [2.2.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
             *   [2.2.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
-            *   [2.2.3.2 Systemd and MySQL in the same host](#Systemd_and_MySQL_in_the_same_host)
-            *   [2.2.3.3 Setup network shares](#Setup_network_shares)
+            *   [2.2.3.2 Setup network shares](#Setup_network_shares)
         *   [2.2.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
     *   [2.3 Using a remote control](#Using_a_remote_control)
         *   [2.3.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
@@ -39,8 +30,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
     *   [3.8 TV is not detected unless powered on first](#TV_is_not_detected_unless_powered_on_first)
         *   [3.8.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.8.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.8.3 USB DAC not working](#USB_DAC_not_working)
+        *   [3.8.2 USB DAC not working](#USB_DAC_not_working)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Accessing kodi logs](#Accessing_kodi_logs)
     *   [4.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -60,31 +50,32 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
 
 ### Autostarting at boot or ondemand
 
-The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies a stand-alone wrapper script `/usr/bin/kodi-standalone` that allows a minimal system to run the application without a full blown DE. There are several methods to enable it described below.
+The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies `/usr/bin/kodi` which can be run by any user on a on-demand basis. A stand-alone wrapper script `/usr/bin/kodi-standalone` is also provided that allows a minimal system and an unprivileged user to run the application. The is advantageous for several reasons:
+
+1.  An unprivileged user cannot access a shell by definition.
+2.  Running without a full blown DE is lighter and more simplistic.
+3.  When paired with a systemd unit (or equivalent, see below), this make the box on which kodi is running more like an appliance and very robust.
+
+There are several methods to it this described below.
 
 **Warning:** Select **only one** of the methods listed below.
 
 #### Kodi-standalone-service
 
-The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and creates the needed user to run Kodi in standalone mode. This is a drop-in replacement of the package-legacy systemd service and post install script which Arch developers have removed from the package when the Xorg package updated to 1.16-1 (see [this commit](https://projects.archlinux.org/svntogit/community.git/commit/trunk?h=packages/xbmc&id=9763c6d32678f3a3f45c195bfae92eee209d504f)). Functionally, there is no difference.
-
-**Warning:** Users of Arch ARM should not attempt to install this package as breakage will occur!
-
-[Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
+The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [Xorg#Driver_installation video driver](/index.php/Xorg#Driver_installation_video_driver "Xorg") is an assumed dependency, no extra Xorg packages are needed. [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time. No additional configuration should be required for most users, however, if `kodi.service` fails to start, see [Xorg#Rootless_Xorg_.28v1.16.29](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
 
 **Note:**
 
-*   The Xorg video driver for your specific hardware is an assumed dependency.
-*   No additional configuration is required.
-*   If errors persist, add the suggested lines to /etc/X11/Xwrapper.config (as outlined in next section)
+*   The kodi user is unprivileged meaning it cannot login (default shell is `/usr/bin/nologin`).
+*   The home directory for the kodi user created is `/var/lib/kodi` not `/home/kodi`.
+
+**Warning:** Users of Arch ARM should not attempt to install this package as breakage will occur!
 
 #### Xsession with LightDM
 
 **Note:** This assumes that the user has created an kodi user named kodiuser on the system and that the following file is present as described.
 
-**Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
-
-**Note:** lightdm does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency (xephyr) does not work when run as root by lightdm.service ([Bug to have optional dependency modified](https://bugs.archlinux.org/?string=52067)) ([Upstream Bug](https://bugs.launchpad.net/lightdm/+bug/852577)). If you don't already have it installed, Install [xorg-server](/index.php/Xorg#Installation "Xorg").
+**Note:** lightdm does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency (xephyr) does not work when run as root by lightdm.service ([Bug to have optional dependency modified](https://bugs.archlinux.org/?string=52067)) ([Upstream Bug](https://bugs.launchpad.net/lightdm/+bug/852577)). Install [xorg-server](/index.php/Xorg#Installation "Xorg").
 
 To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling interactive passwordless login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). *Kodi* includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
 
@@ -101,7 +92,7 @@ user-session=Kodi
 
 Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening with *systemctl start kodi@user.socket* (replace *user* with the user running Kodi to be started as).
 
-The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` and `kodi@.socket` which can be used to run Kodi in standalone mode listening on port 8082. Depending on the setup, one may want to change the port in *kodi@.socket*. This can be done by manually using the following systemd files.
+The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` but not `kodi@.socket`. Depending on the setup, one may want to change the port in *kodi@.socket*. This can be done by manually using the following systemd files.
 
  `/etc/systemd/system/kodi@.service` 
 ```
@@ -175,7 +166,7 @@ ExecStart = /usr/bin/irexec
 
 ### Sharing a database across multiple nodes
 
-One can easily configure Kodi to share a single media library (video and music). The advantage of this is that key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
+If multiple PCs on the same network are running Kodi, they can be configured to share a single media library (video and music). The advantage of this is that key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
 
 *   Stop watching a movie or show in one room then finish watching it in another room automatically.
 *   Share watched and unwatched status for media on all nodes.
@@ -221,21 +212,19 @@ Setup the shares:
 Add the corresponding entries for these bind mounts to `/etc/fstab`:
 
 ```
-...
-
 /mnt/tv-shows /srv/nfs/tv-shows none bind 0 0
-/mnt/movies /srv/nfs/movies none bind 0 0
-/mnt/music /srv/nfs/music none bind 0 0
+/mnt/movies   /srv/nfs/movies   none bind 0 0
+/mnt/music    /srv/nfs/music    none bind 0 0
 
 ```
 
 Share the content in `/etc/exports`:
 
 ```
-/srv/nfs 192.168.0.0/24(ro,fsid=0,no_subtree_check)
+/srv/nfs          192.168.0.0/24(ro,fsid=0,no_subtree_check)
 /srv/nfs/tv-shows 192.168.0.0/24(ro,no_subtree_check,insecure)
-/srv/nfs/movies 192.168.0.0/24(ro,no_subtree_check,insecure)
-/srv/nfs/music 192.168.0.0/24(ro,no_subtree_check,insecure)
+/srv/nfs/movies   192.168.0.0/24(ro,no_subtree_check,insecure)
+/srv/nfs/music    192.168.0.0/24(ro,no_subtree_check,insecure)
 
 ```
 
@@ -279,11 +268,23 @@ First time setup:
 # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 # mysql_secure_installation
    <<follow the in-script prompts and answer "Y" to all the questions>>
+
+```
+
+```
 $ mysql -u root -p
    <<enter the mysqld root password assigned in the first step>>
-MariaDB [(none)]> CREATE USER 'kodi'@'localhost' IDENTIFIED BY 'kodi';
-MariaDB [(none)]> GRANT ALL ON *.* TO 'kodi'@'localhost';
+MariaDB [(none)]> CREATE USER 'kodi' IDENTIFIED BY 'kodi';
+MariaDB [(none)]> GRANT ALL ON *.* TO 'kodi';
+MariaDB [(none)]> flush privileges;
 MariaDB [(none)]> \q
+
+```
+
+One can optionally disable binary logging if the mysql server is only used for kodi by editing `/etc/mysql/my.cnf` and commenting the following line:
+
+```
+#log-bin=mysql-bin
 
 ```
 
@@ -328,15 +329,7 @@ To tell Kodi to use the common database, insure that Kodi is not running, then c
 
 **Tip:** If using [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/), the default for the profile is `/var/lib/kodi/.kodi` and be sure to chown the newly created file to the kodi user and group, i.e. `chown -R kodi:kodi /var/lib/kodi`
 
-##### Systemd and MySQL in the same host
-
-If MySQL is used as a server in the same host as the Kodi client, then you need to [edit](/index.php/Edit "Edit") the `kodi.service` systemd unit and modify it to include the `mysqld.service` unit in the `After` and `Wants` blocks. See [this example](http://kodi.wiki/view/HOW-TO:Autostart_Kodi_for_Linux#Add_a_new_systemd_script).
-
 ##### Setup network shares
-
-**Warning:** This only needs to be done once, on only one of the nodes. Once completed, configuration of subsequent nodes is a drop-in operation of `~/.kodi/userdata/advancedsettings.xml`; no other configuration is needed!
-
-**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one **must** setup the media using the nfs shares only!
 
 Load Kodi and define the network shares that correspond to the exports by browsing to the following within the interface:
 
@@ -351,11 +344,13 @@ Select `/srv/nfs/tv-shows` from the list of share and then "OK" from the menu on
 
 Repeat this browsing process for the "movies" and "music" and then exit Kodi once properly configured. At this point, the MySQL tables should have been created.
 
+**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one **must** setup the media using the nfs shares only!
+
 #### Cloning the configuration to other nodes on the network
 
-Setting up another Kodi node on the network to use this library is trivial. Simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi.
+To set up another Kodi node on the network to use this library, simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi.
 
-**Note:** There is NO need to do any other setup steps to define the sources since the nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the MySQL tables. If problems are encountered after this file is added to the profile directory and after Kodi is restarted, it is recommended to simply re-create the Kodi profile on that node, and again copy over the advancedsettings.xml file. This way, only a trivial amount of configuration to the GUI itself is required which is often easier than troubleshooting conflicting local databases, sources, and the like.
+**Note:** There is NO need to copy any other files or to do any other setup steps on the new kodi node. The nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the MySQL tables.
 
 ### Using a remote control
 
@@ -502,10 +497,6 @@ To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `
 *UserNameHere* ALL=NOPASSWD: /usr/bin/chvt
 
 ```
-
-#### Right Click Menu Key
-
-On the Raspberry Pi the physical keyboard "Menu Key" does not work with kodi. As an alternative hold the "Enter Key" longer to access submenus in kodi. This bug seems to be exclusive to the Raspberry Pi as it is run in a standalone environment.
 
 #### USB DAC not working
 

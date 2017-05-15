@@ -172,8 +172,6 @@ Gnome3 is able to work out the correct font size on this display, but other envi
 
 Prior to Linux 4.0.1-1, this laptop had problems resuming from suspend-to-ram, and could not reliably power off. Since Linux 4.0.1-1, these issues no longer exist and suspending/resuming as well as powering off work reliably. Suspend key (Fn+F1) works out of the box with expected behavior.
 
-On resume, the Intel GPU might hang and needs to be restarted. This happens automatically but delays the resume by quite a bit. If your resume takes a long time check `dmesg` for a message starting with `GPU HANG`. If it is present, try passing `i915.enable_execlists=0` to the linux image.
-
 If suspend fails sometimes (kernel crashes when trying to suspend), it might be due to a [bios/kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=102091). Try [blacklisting](/index.php/Blacklisting "Blacklisting") the kernel modules `mei_me` and `mei` meanwhile.
 
 ### Battery

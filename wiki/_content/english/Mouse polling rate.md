@@ -116,7 +116,7 @@ To change the configuration create the following file:
 
  `/etc/modprobe.d/usbhid.conf`  `options usbhid mousepoll=4` 
 
-This example sets a polling rate of 250Hz.
+This example requests a polling rate of 250Hz.
 
 To change the polling interval without rebooting
 
@@ -145,9 +145,11 @@ A work-around that may help is to connect the device to a port using a different
 
 The USB 3 driver `xhci-hcd` may be ignoring the `usbhid` `mousepoll` setting. See the [linux-usb mailing list message](https://www.spinics.net/lists/linux-usb/msg94744.html) and [Bug](https://bugzilla.kernel.org/show_bug.cgi?id=82571).
 
+The `xhci-hcd` module should respect the interval requested by the device, so check the documentation for the device for a hardware or firmware setting.
+
 A work-around that may help is to connect the device to a port using a different driver.
 
-Another work-around is to disable [xHCI](https://en.wikipedia.org/wiki/Extensible_Host_Controller_Interface "wikipedia:Extensible Host Controller Interface"). There might be a BIOS setting for this or you can do so by [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `xhci-hcd` module. **However**, this will cause any USB 3 ports to act as USB 2 as the kernel will use the `ehci-hcd` module.
+Another work-around is to disable [xHCI](https://en.wikipedia.org/wiki/Extensible_Host_Controller_Interface "wikipedia:Extensible Host Controller Interface"). There might be a BIOS setting for this or you can do so by [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `xhci-hcd` module. **However**, either way will cause any USB 3 ports to act as USB 2 as the kernel will use the `ehci-hcd` module instead.
 
 **Tip:** To see which `hcd` drivers are in use see the `S: Manufacturer` line for hub devices in `/sys/kernel/debug/usb/devices`.
 

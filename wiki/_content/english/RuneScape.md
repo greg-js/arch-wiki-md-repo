@@ -8,6 +8,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
     *   [1.1 RuneScape NXT](#RuneScape_NXT)
     *   [1.2 Rsu-client](#Rsu-client)
     *   [1.3 OSBuddy (Old School RuneScape only)](#OSBuddy_.28Old_School_RuneScape_only.29)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Runescape UI flicker](#Runescape_UI_flicker)
 
 ## Methods to play
 
@@ -24,3 +26,9 @@ Rsu-client is an unofficial RuneScape Unix/Linux Client and it's currently the r
 ### OSBuddy (Old School RuneScape only)
 
 [OSBuddy](https://rsbuddy.com/osbuddy/) is a third-party toolkit for Old School RuneScape which in addition to a client offers useful features, such as highscores, notes, price checker etc. It's available for installation from the AUR, [osbuddy](https://aur.archlinux.org/packages/osbuddy/).
+
+## Troubleshooting
+
+### Runescape UI flicker
+
+Try toggling on/off various Interface settings - might fix the problem temporarily until next login.

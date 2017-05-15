@@ -1,4 +1,4 @@
-Makepkg é usado para compilar e construir um pacote adequado para instalação com o [pacman](/index.php/Pacman "Pacman"), gerenciador de pacotes do Arch Linux. Makepkg é um script automático para a construção do pacote; podendo fazer o download e validar o arquivo, checando as dependências, configurações do tempo de compilação, compilar o código, instalar temporariamente como root, fazer a personalização, gerar informações, e por fim, fazer todo empacotamento.
+Makepkg é usado para compilar e construir um pacote adequado para instalação com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), gerenciador de pacotes do Arch Linux. Makepkg é um script automático para a construção do pacote; podendo fazer o download e validar o arquivo, checando as dependências, configurações do tempo de compilação, compilar o código, instalar temporariamente como root, fazer a personalização, gerar informações, e por fim, fazer todo empacotamento.
 
 O Makepkg é fornecido pelos pacotes do [pacman](https://www.archlinux.org/packages/?name=pacman) package.
 
@@ -25,7 +25,7 @@ O Makepkg é fornecido pelos pacotes do [pacman](https://www.archlinux.org/packa
 
 As opções `MAKEFLAGS`, `CFLAGS`, e `CXXFLAGS` são usadas pelo [make](https://www.archlinux.org/packages/?name=make), [gcc](https://www.archlinux.org/packages/?name=gcc), e `g++` enquanto a compilação de programa é com makepkg. Por padrão, essas opções de gerar pacotes genéricos podem ser instalados em uma ampla variedade de máquinas. Um ganho de desempenho pode ser alcançado por compilação de ajuste para o computador. A desvantagem é que os pacotes compilados especificamente para o processador do computador podem não funcionar em outras máquinas.
 
-**Nota:** Tenha em mente que nem todos os sistemas de compilação de pacote usarão suas variáveis ​​exportadas. Algumas as substituem no makefile original ou [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+**Nota:** Tenha em mente que nem todos os sistemas de compilação de pacote usarão suas variáveis ​​exportadas. Algumas as substituem no makefile original ou [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
  `/etc/makepkg.conf` 
 ```
 [...]
@@ -78,7 +78,7 @@ Veja a página de manual do GCC para uma lista completa de opções disponíveis
 
 #### MAKEFLAGS
 
-A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` *(onde 4 é a saída de `nproc`)*. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
+A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` *(onde 4 é a saída de `nproc`)*. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
 
 Consulte `man make` para obter uma lista completa das opções disponíveis.
 
@@ -142,7 +142,7 @@ Será útil se vários usuários copilarem pacotes em um sistema, ou se você fo
 
 ### Verificação de assinatura
 
-O procedimento a seguir não é necessário para compilar com makepkg, para a sua configuração inicial, vá para [#Usage](#Usage). Para desativar temporariamente a verificação de assinatura chame o comando makepkg com a opção `--skippgpcheck`. Se um arquivo de assinatura na forma de .sig faz parte da array de orgigem [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), makepkg valida a autenticidade dos arquivos de origem. Por exemplo, a assinatura pkgname-pkgver.tar.gz.sig é usada para verificar a integridade do arquivo pkgname-pkgver.tar.gz com o programa gpg. Se desejar, assinaturas de outros desenvolvedores podem ser adicionadas manualmente ao conjunto de chaves gpg. Veja no artigo [GnuPG](/index.php/GnuPG "GnuPG") para mais informação.
+O procedimento a seguir não é necessário para compilar com makepkg, para a sua configuração inicial, vá para [#Uso](#Uso). Para desativar temporariamente a verificação de assinatura chame o comando makepkg com a opção `--skippgpcheck`. Se um arquivo de assinatura na forma de .sig faz parte da array de orgigem [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), makepkg valida a autenticidade dos arquivos de origem. Por exemplo, a assinatura pkgname-pkgver.tar.gz.sig é usada para verificar a integridade do arquivo pkgname-pkgver.tar.gz com o programa gpg. Se desejar, assinaturas de outros desenvolvedores podem ser adicionadas manualmente ao conjunto de chaves gpg. Veja no artigo [GnuPG](/index.php/GnuPG "GnuPG") para mais informação.
 
 **Nota:** A verificação de assinatura implementada no makepkg não usa o conjunto de chaves do pacman. Configure gpg como explicado abaixo para permitir que o makepkg leia o conjunto de chaves do pacman.
 
@@ -176,11 +176,11 @@ Quando for configurado como dito anteriormente, a saída de `gpg --list-keys` co
 
 ### `fakeroot`
 
-Fakeroot é a permisão normal do usuário sem a necessidade do root para criar um pacote, sem poder alterar o sistema por completo. Se as tentativas de alterar o processo em construção fora do ambiente de compilação, os erros são abordados e mostra a falha – para verificar a qualidade/segurança/integridade nos PKGBUILDs para a distribuição. Por default, o fakeroot é habilitado no diretório “/etc/make.pkg”; o usuário por opção pode por **!** no BUILDENV para desabilitar.
+Fakeroot é a permissão normal do usuário sem a necessidade do root para criar um pacote, sem poder alterar o sistema por completo. Se as tentativas de alterar o processo em construção fora do ambiente de compilação, os erros são abordados e mostra a falha – para verificar a qualidade/segurança/integridade nos PKGBUILDs para a distribuição. Por default, o fakeroot é habilitado no diretório “/etc/make.pkg”; o usuário por opção pode por **!** no BUILDENV para desabilitar.
 
 ## Uso
 
-Antes de continuar, verifique se o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado. Os pacotes que pertencem a este grupo não são requeridos na lista de dependência nos arquivos [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). A instalação do grupo "base-devel" é como root:
+Antes de continuar, verifique se o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado. Os pacotes que pertencem a este grupo não são requeridos na lista de dependência nos arquivos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). A instalação do grupo "base-devel" é como root:
 
 ```
 # pacman -S base-devel
@@ -189,7 +189,7 @@ Antes de continuar, verifique se o grupo [base-devel](https://www.archlinux.org/
 
 **Nota:** Antes de reclamar sobre a falta (criar) pacotes, lembre-se sobre o grupo “base” que assume a instalação de todo o sistema do Arch Linux. O grupo "base-devel" assume toda a instação durante a construção com o **makepkg**.
 
-A construção do pacote, necessita criar um primeiro [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), ou Script, com descrição na [Creating packages](/index.php/Creating_packages "Creating packages"), ou obter a partir [ABS tree](/index.php/Arch_Build_System "Arch Build System"), [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), ou atráves de outras fontes.
+A construção do pacote, necessita criar um primeiro [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), ou Script, com descrição na [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"), ou obter a partir [árvore do ABS](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"), [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), ou através de outras fontes.
 
 **Atenção:** Apenas construção/instalação de pacotes com fontes confiáveis.
 
@@ -214,7 +214,7 @@ $ makepkg -s
 
 ```
 
-Note que essas dependências devem estar disponíveis nos repositórios configurados, consulte [pacman#Repositories](/index.php/Pacman#Repositories "Pacman") para detalhes. Alternativa para instalação manual de dependência antes da construção (`pacman -S --asdeps dep1 dep2`).
+Note que essas dependências devem estar disponíveis nos repositórios configurados, consulte [pacman (Português)#Repositórios](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios "Pacman (Português)") para detalhes. Alternativa para instalação manual de dependência antes da construção (`pacman -S --asdeps dep1 dep2`).
 
 Uma vez que todas as dependências estão satisfeita e os pacotes construídos, um arquivo de pacote (`pkgname-pkgver.pkg.tar.xz`) será criado no diretório. Para instalação, como root:
 

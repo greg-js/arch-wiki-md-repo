@@ -1,10 +1,10 @@
 From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
-	udev is a device manager for the Linux kernel. As the successor of devfsd and hotplug, udev primarily manages device nodes in the `/dev` directory. At the same time, udev also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.
+	*udev* is a device manager for the Linux kernel. As the successor of *devfsd* and *hotplug*, *udev* primarily manages device nodes in the `/dev` directory. At the same time, *udev* also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.
 
-`udev` replaces the functionality of both `hotplug` and `hwdetect`.
+*udev* replaces the functionality of both *hotplug* and *hwdetect*.
 
-Udev loads kernel modules by utilizing coding parallelism to provide a potential performance advantage versus loading these modules serially. The modules are therefore loaded asynchronously. The inherent disadvantage of this method is that udev does not always load modules in the same order on each boot. If the machine has multiple block devices, this may manifest itself in the form of device nodes changing designations randomly. For example, if the machine has two hard drives, `/dev/sda` may randomly become `/dev/sdb`. See below for more info on this.
+*udev* loads kernel modules by utilizing coding parallelism to provide a potential performance advantage versus loading these modules serially. The modules are therefore loaded asynchronously. The inherent disadvantage of this method is that *udev* does not always load modules in the same order on each boot. If the machine has multiple block devices, this may manifest itself in the form of device nodes changing designations randomly. For example, if the machine has two hard drives, `/dev/sda` may randomly become `/dev/sdb`. See below for more info on this.
 
 ## Contents
 
@@ -41,26 +41,30 @@ Udev loads kernel modules by utilizing coding parallelism to provide a potential
 
 ## Installation
 
-Udev is now part of [systemd](https://www.archlinux.org/packages/?name=systemd) and is installed by default. See [systemd-udevd.service(8)](http://man7.org/linux/man-pages/man8/systemd-udevd.service.8.html) for information.
+*udev* is now part of [systemd](/index.php/Systemd "Systemd") and is installed by default. See [systemd-udevd.service(8)](http://man7.org/linux/man-pages/man8/systemd-udevd.service.8.html) for information.
 
-A standalone fork is available in AUR: [eudev](/index.php/Eudev "Eudev").
+A standalone fork is available as [eudev](/index.php/Eudev "Eudev").
 
 ## About udev rules
 
-Udev rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with *.rules*. The udev rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
+*udev* rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with *.rules*. The *udev* rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
 
 ### Writing udev rules
 
-**Warning:** To mount removable drives, do not call `mount` from udev rules. In case of FUSE filesystems, you will get `Transport endpoint not connected` errors. Instead, you could use [udisks](/index.php/Udisks "Udisks") that handles automount correctly or to make mount work inside udev rules, copy `/usr/lib/systemd/system/systemd-udevd.service` to `/etc/systemd/system/systemd-udevd.service` and replace `MountFlags=slave` to `MountFlags=shared`.[[3]](http://unix.stackexchange.com/a/154318) Keep in mind though that udev is not intended to invoke long-running processes.
+**Warning:** To mount removable drives, do not call `mount` from *udev* rules. In case of FUSE filesystems, you will get `Transport endpoint not connected` errors. Instead, you could use [udisks](/index.php/Udisks "Udisks") that handles automount correctly or to make mount work inside *udev* rules, copy `/usr/lib/systemd/system/systemd-udevd.service` to `/etc/systemd/system/systemd-udevd.service` and replace `MountFlags=slave` to `MountFlags=shared`.[[3]](http://unix.stackexchange.com/a/154318) Keep in mind though that *udev* is not intended to invoke long-running processes.
 
-*   To learn how to write udev rules, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
-*   To see an example udev rule, follow the [Examples](http://www.reactivated.net/writing_udev_rules.html#example-printer) section of the above guide.
+*   To learn how to write *udev* rules, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
+*   To see an example *udev* rule, follow the [Examples](http://www.reactivated.net/writing_udev_rules.html#example-printer) section of the above guide.
 
 This is an example of a rule that places a symlink `/dev/video-cam1` when a webcamera is connected. First, we have found out that this camera is connected and has loaded with the device `/dev/video2`. The reason for writing this rule is that at the next boot the device might just as well show up under a different name like `/dev/video0`.
 
  `# udevadm info -a -p $(udevadm info -q path -n /dev/video2)` 
 ```
-Udevadm info starts with the device specified by the devpath and then walks up the chain of parent devices. It prints for every device found, all possible attributes in the udev rules key format. A rule to match, can be composed by the attributes of the device and the attributes from one single parent device.
+Udevadm info starts with the device specified by the devpath and then
+walks up the chain of parent devices. It prints for every device
+found, all possible attributes in the udev rules key format.
+A rule to match, can be composed by the attributes of the device
+and the attributes from one single parent device.
 
   looking at device '/devices/pci0000:00/0000:00:04.1/usb3/3-2/3-2:1.0/video4linux/video2':
     KERNEL=="video2"
@@ -100,7 +104,7 @@ In the example above we create a symlink using `SYMLINK+="video-cam1"` but we co
 
 ```
 
-In this command's output, you will see value pairs such as ID_VENDOR_ID and ID_MODEL_ID, which match your previously used attributes "idVendor" and "idProduct". A rule that uses device environment variables may look like this:
+In this command's output, you will see value pairs such as `ID_VENDOR_ID` and `ID_MODEL_ID`, which match your previously used attributes "idVendor" and "idProduct". A rule that uses device environment variables may look like this:
 
  `/etc/udev/rules.d/83-webcam-removed.rules` 
 ```
@@ -133,7 +137,7 @@ If you do not know the device name you can also list all attributes of a specifi
 
 ```
 
-This will not perform all actions in your new rules but it will however process symlink rules on existing devices which might come in handy if you are unable to load them otherwise. You can also directly provide the path to the device you want to test the udev rule for:
+This will not perform all actions in your new rules but it will however process symlink rules on existing devices which might come in handy if you are unable to load them otherwise. You can also directly provide the path to the device you want to test the *udev* rule for:
 
 ```
 # udevadm test /sys/class/backlight/acpi_video0/
@@ -142,16 +146,16 @@ This will not perform all actions in your new rules but it will however process 
 
 ### Loading new rules
 
-Udev automatically detects changes to rules files, so changes take effect immediately without requiring udev to be restarted. However, the rules are not re-triggered automatically on already existing devices. Hot-pluggable devices, such as USB devices, will probably have to be reconnected for the new rules to take effect, or at least unloading and reloading the ohci-hcd and ehci-hcd kernel modules and thereby reloading all USB drivers.
+*udev* automatically detects changes to rules files, so changes take effect immediately without requiring *udev* to be restarted. However, the rules are not re-triggered automatically on already existing devices. Hot-pluggable devices, such as USB devices, will probably have to be reconnected for the new rules to take effect, or at least unloading and reloading the ohci-hcd and ehci-hcd kernel modules and thereby reloading all USB drivers.
 
-If rules fail to reload automatically
+If rules fail to reload automatically:
 
 ```
 # udevadm control --reload
 
 ```
 
-To manually force udev to trigger your rules
+To manually force *udev* to trigger your rules:
 
 ```
 # udevadm trigger
@@ -193,21 +197,21 @@ Some display managers store the .Xauthority outside the user home directory. You
 
 ### Detect new eSATA drives
 
-If your eSATA drive is not detected when you plug it in, there are a few things you can try. You can reboot with the eSATA plugged in. Or you could try
+If your eSATA drive is not detected when you plug it in, there are a few things you can try. You can reboot with the eSATA plugged in. Or you could try:
 
 ```
 # echo 0 0 0 | tee /sys/class/scsi_host/host*/scan
 
 ```
 
-Or you could install [scsiadd](https://aur.archlinux.org/packages/scsiadd/) (from the AUR) and try
+Or you could install [scsiadd](https://aur.archlinux.org/packages/scsiadd/) (from the AUR) and try:
 
 ```
 # scsiadd -s
 
 ```
 
-Hopefully, your drive is now in `/dev`. If it is not, you could try the above commands while running
+Hopefully, your drive is now in `/dev`. If it is not, you could try the above commands while running:
 
 ```
 # udevadm monitor
@@ -241,7 +245,7 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 ### Setting static device names
 
-Because udev loads all modules asynchronously, they are initialized in a different order. This can result in devices randomly switching names. A udev rule can be added to use static device names.
+Because *udev* loads all modules asynchronously, they are initialized in a different order. This can result in devices randomly switching names. A *udev* rule can be added to use static device names.
 
 See also [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for block devices and [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration") for network devices.
 
@@ -288,7 +292,7 @@ LABEL="persistent_printer_end"
 
 #### USB flash device
 
-USB flash devices usually contain partitions, and partition labels are one way to have a static naming for a device. Another way is to create a udev rule to add symlinks in /dev/.
+USB flash devices usually contain partitions, and partition labels are one way to have a static naming for a device. Another way is to create a *udev* rule to add symlinks in /dev/.
 
 Get the serial number and USB ids from the USB flash drive (if you use multiple of the same make, you might have to check the serial is indeed unique). This command walks from partition up the chain of devices. A rule to match can be composed by the attributes of the device and the attributes from one single parent device:
 
@@ -311,7 +315,7 @@ Get the serial number and USB ids from the USB flash drive (if you use multiple 
 
 ```
 
-Create a udev rule for it by adding the following to a file in `/etc/udev/rules.d/`, such as `8-usbstick.rules`:
+Create a *udev* rule for it by adding the following to a file in `/etc/udev/rules.d/`, such as `8-usbstick.rules`:
 
 ```
 KERNEL=="sd*", ATTRS{idProduct}=="1000", ATTRS{idVendor}=="8564", ATTRS{manufacturer}=="JetFlash", ATTRS{serial}=="08CV4HPEF7S8RT1", SYMLINK+="sdUSBstick%n"
@@ -354,7 +358,7 @@ ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c52
 
 ### Triggering events
 
-It can be useful to trigger various udev events. For example, you might want to simulate a USB device disconnect on a remote machine. In such cases, use `udevadm trigger`:
+It can be useful to trigger various *udev* events. For example, you might want to simulate a USB device disconnect on a remote machine. In such cases, use `udevadm trigger`:
 
 ```
 # udevadm trigger -v -t subsystems -c remove -s usb -a "idVendor=abcd"
@@ -365,13 +369,13 @@ This command will trigger a USB remove event on all USB devices with vendor ID `
 
 ### Triggering desktop notifications from a udev rule
 
-Invoking an external script containing calls to `notify-send` via udev [can sometimes be challenging](https://bbs.archlinux.org/viewtopic.php?id=212364) since the notification(s) never display on the Desktop. Here is an example of what commands and environmental variables need to be included in which files for `notify-send` to successfully be executed from a udev rule. NOTE: a number of variables are hardcoded in this example, thus consider making them portable (i.e., $USER rather than user's shortname) once you understand the example.
+Invoking an external script containing calls to `notify-send` via *udev* [can sometimes be challenging](https://bbs.archlinux.org/viewtopic.php?id=212364) since the notification(s) never display on the Desktop. Here is an example of what commands and environmental variables need to be included in which files for `notify-send` to successfully be executed from a *udev* rule. NOTE: a number of variables are hardcoded in this example, thus consider making them portable (i.e., $USER rather than user's shortname) once you understand the example.
 
-1) The following udev rule executes a script that plays a notification sound and sends a desktop notification when screen brightness is changed according to power state on a laptop. Create the file:
+1) The following *udev* rule executes a script that plays a notification sound and sends a desktop notification when screen brightness is changed according to power state on a laptop. Create the file:
 
  `/etc/udev/rules.d/99-backlight_notification.rules` 
 ```
-Play a notification sound and send a desktop notification when screen brightness is changed according to power state on a laptop (a second udev rule actually changes the screen brightness)
+Play a notification sound and send a desktop notification when screen brightness is changed according to power state on a laptop (a second ''udev'' rule actually changes the screen brightness)
 # Rule for when switching to battery
 ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/USERNAME/.Xauthority" RUN+="/usr/bin/su USERNAME_TO_RUN_SCRIPT_AS -c /usr/local/bin/brightness_notification.sh"
 # Rule for when switching to AC
@@ -381,7 +385,7 @@ ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}==
 
 Note: 1) `USERNAME_TO_RUN_SCRIPT_AS` and `USERNAME` need to be changed to that of the shortname for the user of the graphical session where the notification will be displayed and 2) the script needs to be executed with `/usr/bin/su`, which will place its ownership under the user of the graphical session (rather than root/the system) where the notification will be displayed.
 
-2) Contents of the executable script to be run on trigger of the udev rule:
+2) Contents of the executable script to be run on trigger of the *udev* rule:
 
  `/usr/local/bin/brightness_notification.sh` 
 ```
@@ -401,15 +405,15 @@ Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNA
 
 **Warning:** The `XAUTHORITY, DISPLAY` and `DBUS_SESSION_BUS_ADDRESS` environment variables must be defined correctly.
 
-3) Load/reload the new udev rule (see above) and test it by unplugging the power supply to the laptop.
+3) Load/reload the new *udev* rule (see above) and test it by unplugging the power supply to the laptop.
 
-**Tip:** See also [xpub](https://github.com/Ventto/xpub) as a method for getting the user's display environment variables and exporting the last into udev-rules via `IMPORT` key.
+**Tip:** See also [xpub](https://github.com/Ventto/xpub) as a method for getting the user's display environment variables and exporting the last into *udev* rules via `IMPORT` key.
 
 ## Troubleshooting
 
 ### Blacklisting modules
 
-In rare cases, udev can make mistakes and load the wrong modules. To prevent it from doing this, you can blacklist modules. Once blacklisted, udev will never load that module. See [blacklisting](/index.php/Blacklisting "Blacklisting"). Not at boot-time *or* later on when a hotplug event is received (eg, you plug in your USB flash drive).
+In rare cases, *udev* can make mistakes and load the wrong modules. To prevent it from doing this, you can blacklist modules. Once blacklisted, *udev* will never load that module. See [blacklisting](/index.php/Blacklisting "Blacklisting"). Not at boot-time *or* later on when a hotplug event is received (eg, you plug in your USB flash drive).
 
 ### Debug output
 
@@ -430,9 +434,9 @@ and then rebuilding the initramfs with
 
 ### udevd hangs at boot
 
-After migrating to LDAP or updating an LDAP-backed system udevd can hang at boot at the message "Starting UDev Daemon". This is usually caused by udevd trying to look up a name from LDAP but failing, because the network is not up yet. The solution is to ensure that all system group names are present locally.
+After migrating to LDAP or updating an LDAP-backed system *udevd* can hang at boot at the message "Starting UDev Daemon". This is usually caused by *udevd* trying to look up a name from LDAP but failing, because the network is not up yet. The solution is to ensure that all system group names are present locally.
 
-Extract the group names referenced in udev rules and the group names actually present on the system:
+Extract the group names referenced in *udev* rules and the group names actually present on the system:
 
 ```
 # fgrep -r GROUP /etc/udev/rules.d/ /usr/lib/udev/rules.d | perl -nle '/GROUP\s*=\s*"(.*?)"/ && print $1;' | sort | uniq > udev_groups
@@ -472,7 +476,7 @@ This is a kernel bug and no fix has been provided yet.
 
 ### Some devices, that should be treated as removable, are not
 
-You need to create a custom udev rule for that particular device. To get definitive information of the device you can use either `ID_SERIAL` or `ID_SERIAL_SHORT` (remember to change `/dev/sdb` if needed):
+You need to create a custom *udev* rule for that particular device. To get definitive information of the device you can use either `ID_SERIAL` or `ID_SERIAL_SHORT` (remember to change `/dev/sdb` if needed):
 
 ```
 $ udevadm info /dev/sdb | grep ID_SERIAL
@@ -489,7 +493,7 @@ For udisks2, set `UDISKS_AUTO="1"` to mark the device for automounting and `UDIS
 
  `/etc/udev/rules.d/99-removable.rules`  `ENV{ID_SERIAL_SHORT}=="*serial_number*", ENV{UDISKS_AUTO}="1", ENV{UDISKS_SYSTEM}="0"` 
 
-Remember to reload udev rules with `udevadm control --reload`. Next time you plug your device in, it will be treated as an external drive.
+Remember to reload *udev* rules with `udevadm control --reload`. Next time you plug your device in, it will be treated as an external drive.
 
 ### Sound problems with some modules not loaded automatically
 
@@ -499,13 +503,13 @@ Some users have traced this problem to old entries in `/etc/modprobe.d/sound.con
 
 ### IDE CD/DVD-drive support
 
-Starting with version 170, udev does not support CD-ROM/DVD-ROM drives that are loaded as traditional IDE drives with the `ide_cd_mod` module and show up as `/dev/hd*`. The drive remains usable for tools which access the hardware directly, like *cdparanoia*, but is invisible for higher userspace programs, like KDE.
+Starting with version 170, *udev* does not support CD-ROM/DVD-ROM drives that are loaded as traditional IDE drives with the `ide_cd_mod` module and show up as `/dev/hd*`. The drive remains usable for tools which access the hardware directly, like *cdparanoia*, but is invisible for higher userspace programs, like KDE.
 
 A cause for the loading of the ide_cd_mod module prior to others, like sr_mod, could be e.g. that you have for some reason the module piix loaded with your [initramfs](/index.php/Initramfs "Initramfs"). In that case you can just replace it with ata_piix in your `/etc/mkinitcpio.conf`.
 
 ### Optical drives have group ID set to "disk"
 
-If the group ID of your optical drive is set to `disk` and you want to have it set to `optical`, you have to create a custom udev rule:
+If the group ID of your optical drive is set to `disk` and you want to have it set to `optical`, you have to create a custom *udev* rule:
 
  `/etc/udev/rules.d` 
 ```

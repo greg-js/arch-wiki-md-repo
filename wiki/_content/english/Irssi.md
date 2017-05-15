@@ -8,7 +8,7 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 Authenticating with SASL](#Authenticating_with_SASL)
     *   [3.2 Automatically connect to #archlinux on startup](#Automatically_connect_to_.23archlinux_on_startup)
-    *   [3.3 SSL Connection](#SSL_Connection)
+    *   [3.3 TLS Connection](#TLS_Connection)
         *   [3.3.1 Client certificates](#Client_certificates)
     *   [3.4 Automatic logging](#Automatic_logging)
     *   [3.5 Hide joins, parts, and quits](#Hide_joins.2C_parts.2C_and_quits)
@@ -101,12 +101,12 @@ Ensure [SASL](#Authenticating_with_SASL) is configured correctly. You may use Ni
 
 ```
 
-### SSL Connection
+### TLS Connection
 
-Freenode uses port 6697, 7000 and 7070 for SSL connections (**not** 6667). To connect to Freenode IRC network via SSL you have to setup a new connection. Start `irssi` and run:
+Freenode uses port 6697, 7000 and 7070 for SSL/TLS connections (**not** 6667). To connect to Freenode IRC network via TLS you have to setup a new connection. Start `irssi` and run:
 
 ```
-/server add -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 chat.freenode.net
+/server add -auto -tls -tls_verify -network freenode -port 6697 chat.freenode.net
 
 ```
 
@@ -118,8 +118,6 @@ Save your new settings with:
 ```
 
 If everything works you will see the "Z" mode set. It should look like this: "Mode change (+Zi) for user your-nick"
-
-**Note:** In some cases the `ssl_capath` configuration causes valid SSL certificates to fail validation, in this case removing it will fix the problem and certificates should be validated properly.
 
 #### Client certificates
 

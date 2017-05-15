@@ -364,7 +364,7 @@ GUI | [Archiso](/index.php/Archiso "Archiso") [[3]](https://git.archlinux.org/ar
 | [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
 
-*The `dhcpd@*interface*.service` is enabled on the Arch Linux ISO.
+*The `dhcpcd@*interface*.service` is enabled on the Arch Linux ISO.
 
 See [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 

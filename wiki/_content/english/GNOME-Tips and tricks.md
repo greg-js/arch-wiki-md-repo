@@ -379,4 +379,9 @@ Actions=new-window;new-private-window;
 
 ```
 
+```
+$ update-desktop-database $HOME/.local/share/applications/
+
+```
+
 Set xdg-open web as default Web application in GNOME settings: GNOME Settings > Details > Default Applications > set Web to xdg-open web.

@@ -34,7 +34,7 @@ Nesta sessão será informada, quais as documentações que estão em tradução
 
 Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_(Portugu%C3%AAs)#Tradu.C3.A7.C3.A3o_da_interface_web "AUR (Português)").
 
-**Tradutores:** [Rafael Fontenelle](/index.php?title=User:Josephgbr&action=edit&redlink=1 "User:Josephgbr (page does not exist)")
+**Tradutores:** [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr")
 
 **Revisores:**
 
@@ -51,7 +51,7 @@ Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_(P
 
 Informações [aqui](https://www.archlinux.org/pacman/translation-help.html)
 
-**Tradutores:** [Rafael Fontenelle](/index.php?title=User:Josephgbr&action=edit&redlink=1 "User:Josephgbr (page does not exist)")
+**Tradutores:** [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr")
 
 **Revisadores:**
 
@@ -131,7 +131,7 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 
 ## Equipe de Traducão:
 
-[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden")
+[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden"), [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr")
 
 ## Equipe de Revisão:
 

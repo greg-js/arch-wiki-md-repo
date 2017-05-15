@@ -33,7 +33,7 @@ Esse repositório pode ser localizado em `.../core/os/` de seu [mirror](/index.p
 *   gerenciamento e correção de [sistemas de arquivos](/index.php/File_systems "File systems") suportados
 *   o processo de configuração do sistema (ex.: [openssh](https://www.archlinux.org/packages/?name=openssh))
 
-assim como as dependências deles (não necessariamente [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD")).
+assim como as dependências deles (não necessariamente [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)")).
 
 *core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no *testing* por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 

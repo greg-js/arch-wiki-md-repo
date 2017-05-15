@@ -81,7 +81,7 @@ optdepends=('cups: printing support'
 *   Onde for possível, **remova linhas vazias** do `PKGBUILD` (`provides`, `replaces`, etc.)
 *   É uma prática comum **preservar a ordem** dos campos do `PKGBUILD` informada acima. Porém, isso não é obrigatório, sendo o único requisito neste contexto a **correção da sintaxe bash**.
 *   **Envolva com aspas** as variáveis que podem conter espaços, tal como `"$pkgdir"` e `"$srcdir"`.
-*   Para garantir a **integridade** de pacotes, certifique-se que as [variáveis de integridade](/index.php/PKGBUILD#Integrity "PKGBUILD") contêm os valores corretos. Essas podem ser atualizadas usando a ferramenta `updpkgsums`.
+*   Para garantir a **integridade** de pacotes, certifique-se que as [variáveis de integridade](/index.php/PKGBUILD_(Portugu%C3%AAs)#Integridade "PKGBUILD (Português)") contêm os valores corretos. Essas podem ser atualizadas usando a ferramenta `updpkgsums`.
 
 ## Nomenclatura de pacotes
 
@@ -128,7 +128,7 @@ optdepends=('cups: printing support'
 
 ## Tarefas do Makepkg
 
-Quando [makepkg](/index.php/Makepkg "Makepkg") é usado para compilar um pacote, ele automaticamente faz o seguinte:
+Quando [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") é usado para compilar um pacote, ele automaticamente faz o seguinte:
 
 1.  Verifica se as dependências (**depends**) e dependências em tempo de compilação (**makedepends**) do pacote estão instaladas
 2.  **Baixa os arquivos fontes** dos servidores
@@ -149,7 +149,7 @@ O vetor `arch` deve conter `'i686'` e/ou `'x86_64'`, dependendo de em quais arqu
 
 ## Licenças
 
-A variável de vetor [license](/index.php/License "License") está sendo implementada nos repositórios oficiais, e ela **deve** ser usada em seus pacotes da mesma forma. Use-a da seguinte forma:
+A variável de vetor [license](/index.php/PKGBUILD_(Portugu%C3%AAs)#license "PKGBUILD (Português)") está sendo implementada nos repositórios oficiais, e ela **deve** ser usada em seus pacotes da mesma forma. Use-a da seguinte forma:
 
 *   Um pacote de licenças foi criado no [core] armazenando as licenças comuns em /usr/share/licenses/common (ex: /usr/share/licenses/common/GPL). Se um pacote está licenciado sob uma dessas licenças, a variável de licenças deve ser definido com o nome do diretório, p. ex: license=('GPL')
 *   Se a licença apropriada não estiver incluída no pacote oficial de licenças, várias coisas devem ser feitas:
@@ -179,4 +179,4 @@ Ceritique-se de ler primeiro as diretrizes acima - pontos importantes são lista
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-Pacotes enviados ao AUR também devem estar em conformidade com [Arch User Repository (Português)#Regras de envio](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Regras_de_envio "Arch User Repository (Português)").
+Pacotes enviados ao AUR também devem estar em conformidade com as [regras de envio](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Regras_de_envio "Arch User Repository (Português)").

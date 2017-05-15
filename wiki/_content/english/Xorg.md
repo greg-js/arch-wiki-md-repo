@@ -235,6 +235,8 @@ EndSection
 
 **Note:** By default, Xorg needs to be able to detect a monitor and will not start otherwise. A workaround is to create a configuration file such as the example above and thus avoid auto-configuring. A common case where this is necessary is a headless system, which boots without a monitor and starts Xorg automatically, either from a [virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") at [login](/index.php/Start_X_at_login "Start X at login"), or from a [display manager](/index.php/Display_manager "Display manager").
 
+**Note:** For more information on Monitor Settings, see [xrandr](/index.php/Xrandr "Xrandr").
+
 ### Multiple monitors
 
 See main article [Multihead](/index.php/Multihead "Multihead") for general information.

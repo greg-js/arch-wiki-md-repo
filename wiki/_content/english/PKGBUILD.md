@@ -168,7 +168,7 @@ optdepends=('cups: printing support'
 
 An array of packages that are **only** required to build the software. The minimum dependency version can be specified in the same format as in the `depends` array. The packages in the `depends` array are implicitly required to build the package, they should not be duplicated here.
 
-**Tip:** The following can be used to see if a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or pulled in by a members of the group:
+**Tip:** The following can be used to see if a particular package is either in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group or pulled in by a member of the group:
 ```
 $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups *:.*base-devel"
 

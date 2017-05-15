@@ -90,7 +90,7 @@ At least a video card with second generation [PureVideo HD](https://en.wikipedia
 
 #### Pacman hook
 
-To avoid the possibility of forgetting to update your initramfs after an nvidia upgrade, you can use a pacman hook like this
+To avoid the possibility of forgetting to update your initramfs after an nvidia upgrade, you can use a [pacman hook](/index.php/Pacman#Hooks "Pacman"), like so:
 
  `/etc/pacman.d/hooks/nvidia.hook` 
 ```
@@ -106,6 +106,8 @@ Depends=mkinitcpio
 When=PostTransaction
 Exec=/usr/bin/mkinitcpio -P
 ```
+
+Make sure the `Target` package set in this hook is the one you've installed in steps above (eg. `nvidia`, `nvidia-lts` or `nvidia-ck-something`).
 
 ### Hardware accelerated video decoding with XvMC
 

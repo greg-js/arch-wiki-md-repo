@@ -40,6 +40,8 @@ LVDS connected (normal left inverted right x axis y axis)
 
 ```
 
+**Note:** If your resolution is not present in the above list, see [#Adding undetected resolutions](#Adding_undetected_resolutions)
+
 You can use *xrandr* to set different resolution (must be present in the above list) on some output:
 
 ```
@@ -307,7 +309,7 @@ Section "Device"
 EndSection
 ```
 
-Replace `intel` with the right driver, e.g. `nvidia`.
+Replace `intel` with the right driver, e.g. `nvidia`. When the X server is restarted, you should be able to set the new resolution.
 
 If this doesn't work for you, try removing the Screen and Device sections and just leaving the Monitor section. [[2]](https://bbs.archlinux.org/viewtopic.php?id=225134)
 

@@ -29,7 +29,7 @@ O Arch Build System (em português, "Sistema de Compilação do Arch") é sistem
 
 ### ABS é um conceito similar
 
-ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usando o SVN. Essa árvore representa, mas não contém, todos os softwares oficiais do Arch. Subdiretórios não contêm o pacote de software nem o fonte, e sim um arquivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") e, algumas vezes, outros arquivos. Ao executar [makepkg](/index.php/Makepkg "Makepkg") dentro de um diretório contendo um PKGBUILD, o software é primeiro compilado e então empacotado dentro do diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar ou atualizar seu novo pacote.
+ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usando o SVN. Essa árvore representa, mas não contém, todos os softwares oficiais do Arch. Subdiretórios não contêm o pacote de software nem o fonte, e sim um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e, algumas vezes, outros arquivos. Ao executar [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") dentro de um diretório contendo um PKGBUILD, o software é primeiro compilado e então empacotado dentro do diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar ou atualizar seu novo pacote.
 
 ### Visão geral de ABS
 
@@ -39,15 +39,15 @@ ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usan
 
 	A estrutura de diretório contendo arquivos necessários para compilar todos os pacotes oficiais, mas não os pacotes em si nem os arquivos fontes do software. Ela está disponível nos repositórios [svn](https://www.archlinux.org/svn/) e [git](https://projects.archlinux.org/svntogit/packages.git/).
 
-	[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+	[PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 
 	Um script [Bash](/index.php/Bash "Bash") que contém a URL do código-fonte junto com as instruções de compilação e empacotamento.
 
-	[makepkg](/index.php/Makepkg "Makepkg")
+	[makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 
 	Ferramenta de comando shell que lê os PKGBUILDs, baixa automaticamente e compila os fontes e cria um `.pkg.tar*` de acordo com o vetor `PKGEXT` no `makepkg.conf`. Você também pode usar makepkg para fazer seus próprios pacotes personalizados do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou fontes de terceiros. Veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes") para mais informações.
 
-	[pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+	[pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 
 	pacman é completamente separado, mas é necessariamente invocado pelo makepkg ou manualmente, para instalar e remover os pacotes compilados e para obter dependências.
 
@@ -59,7 +59,7 @@ ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usan
 
 #### Árvore SVN
 
-Os [repositórios](/index.php/Repositories_(Portugu%C3%AAs) "Repositories (Português)") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_n.C3.A3o-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
+Os [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_n.C3.A3o-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
 
 Cada pacote possui seu próprio subdiretório. Dentro dele há diretórios `repos` e `trunk`. `repos` é expandido por nome de repositório (ex.: *core*) e arquitetura. PKGBUILDs e arquivos localizados em `repos` são usados em compilações oficiais. Arquivos localizados no `trunk` são usados pelos desenvolvedores na preparação antes de serem copiados para `repos`.
 
@@ -84,7 +84,7 @@ O código-fonte do pacote não está presente no diretório ABS. Em vez disso, o
 O Arch Build System é usado para:
 
 *   Compilar ou recompilar um pacote, para qualquer motivo
-*   *Make* e instalar novos pacotes de fontes de software para os quais nenhum pacote está instalado ainda (veja [Criando pacotes](/index.php/Creating_packages "Creating packages"))
+*   *Make* e instalar novos pacotes de fontes de software para os quais nenhum pacote está instalado ainda (veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"))
 *   Personalizar pacotes existentes para atender suas necessidades (habilitar ou desabilitar opções, *patching*)
 *   Recompilar todo o seu sistema usando suas *flags* de compilador, "à la FreeBSD" (ex.: com [pacbuilder](/index.php/Pacbuilder "Pacbuilder"))
 *   Compilar e instalar, sem interferências, seu próprio kernel personalizado (veja [Compilação de kernel](/index.php/Kernels#Compilation "Kernels"))
@@ -143,11 +143,11 @@ $ svn update
 
 ### Configurar makepkg
 
-Veja [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") que você fez *checkout*.
+Veja [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configura.C3.A7.C3.A3o "Makepkg (Português)") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*.
 
 ### Compilar pacote
 
-Copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") que você deseja modificar para uma nova localização. Então, faça as modificações desejadas. Então, use *makepkg* como descrito em [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") para criar e instalar o novo pacote.
+Copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você deseja modificar para uma nova localização. Então, faça as modificações desejadas. Então, use *makepkg* como descrito em [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)") para criar e instalar o novo pacote.
 
 ## Dicas e truques
 

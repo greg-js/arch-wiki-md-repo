@@ -47,7 +47,7 @@ This guide uses [ufw](https://www.archlinux.org/packages/?name=ufw) which is ver
 
 Configuration of OpenVPN is beyond the scope of this article. Readers are encouraged to read the [OpenVPN](/index.php/OpenVPN "OpenVPN") article to properly setup the software for a given VPN provider. Note that many private VPN providers include links to directly download a properly configured openvpn.opvn profile unique to their particular service. For the purposes of this guide, `/etc/openvpn/client/myprofile.conf` will refer to that config.
 
-Verify openvpn functionality within the container; [start](/index.php/Start "Start") openvpn via `openvpn@myprofile.service` and once satisfied [enable](/index.php/Enable "Enable") it to run at boot.
+Verify openvpn functionality within the container; [start](/index.php/Start "Start") openvpn via `openvpn-client@myprofile.service` and once satisfied [enable](/index.php/Enable "Enable") it to run at boot.
 
 **Note:** Users running openvpn within an *unprivileged* container will need to create a custom systemd unit to start it within the container. Simply copy the package-provided `/usr/lib/systemd/system/openvpn-client@.service` to `/etc/systemd/system/openvpn-client@.service` and modify the new file commenting out the the line beginning with: `LimitNPROC...`
 

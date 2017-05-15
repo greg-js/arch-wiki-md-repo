@@ -260,7 +260,7 @@ Your system may work perfectly out-of-the-box without needing any configuration.
 
 ### Verifying VA-API
 
-Verify the settings for VA-API by running `vainfo`, which is provided by [libva](https://www.archlinux.org/packages/?name=libva):
+Verify the settings for VA-API by running `vainfo`, which is provided by [libva-utils](https://aur.archlinux.org/packages/libva-utils/):
 
  `$ vainfo` 
 ```

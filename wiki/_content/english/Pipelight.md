@@ -78,6 +78,8 @@ $ pipelight-plugin --enable *plugin*
 
 ### Plug-in(s) not visible in Mozilla Firefox
 
+**Note:** Pipelight only works in Firefox ESR ([firefox-esr](https://aur.archlinux.org/packages/firefox-esr/)). The regular release doesn't as it doesn't support NPAPI plugins.
+
 If upon starting [Firefox](/index.php/Firefox "Firefox") the enabled plugin doesn't appear under `about:plugins`, try running the following command before starting Mozilla Firefox:
 
 ```
@@ -97,7 +99,7 @@ There is a test page available [here](http://bubblemark.com/sl3/TestPage.html). 
 
 ### Default behavior
 
-Silverlight applets may include an option called `enableGPUAcceleration` which controls whether or not [hardware acceleration](https://en.wikipedia.org/wiki/Hardware_acceleration "wikipedia:Hardware acceleration") should be used (i.e. use the graphics card for video playback). This option is under the control of specific website's administrator, but this option can also be forced from the client's side (see below). By default, GPU acceleration is only enabled on verified systems cards **and** pages that require it. Herein, system verification is executed through the bash script `/usr/share/pipelight/hw-accel-default` that checks the graphics card vendor. Note that this script depends on the `glxinfo` utility, which is part of [mesa-demos](https://www.archlinux.org/packages/?q=mesa-demos). Make sure this package is installed if you want to Pipelight's graphics verification method.
+Silverlight applets may include an option called `enableGPUAcceleration` which controls whether or not [hardware acceleration](https://en.wikipedia.org/wiki/Hardware_acceleration "wikipedia:Hardware acceleration") should be used (i.e. use the graphics card for video playback). This option is under the control of specific website's administrator, but this option can also be forced from the client's side (see below). By default, GPU acceleration is only enabled on verified systems cards **and** pages that require it. Herein, system verification is executed through the bash script `/usr/share/pipelight/hw-accel-default` that checks the graphics card vendor. Note that this script depends on the `glxinfo` utility, which is part of [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos). Make sure this package is installed if you want to Pipelight's graphics verification method.
 
 ### Force hardware acceleration
 

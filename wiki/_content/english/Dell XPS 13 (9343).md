@@ -15,9 +15,7 @@ The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is
 
 The installation process for Arch Linux on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
-As of kernel 4.1.3, a patched kernel is no longer necessary and this means Installation Media newer than 2015.08.01 (release date: 2015-08-01) should all be able to boot this machine without problems.
-
-However, some manual configuration is still recommended to get the best experience.
+As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary. However, some manual configuration is still recommended to get the best experience.
 
 ## Contents
 
@@ -49,22 +47,21 @@ However, some manual configuration is still recommended to get the best experien
     *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
     *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
     *   [3.8 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
-    *   [3.9 Display freezes while manipulating external displays with Xrandr / random blanking](#Display_freezes_while_manipulating_external_displays_with_Xrandr_.2F_random_blanking)
 *   [4 See also](#See_also)
 
 ## Model differences
 
 Although the XPS 13 is sold in a variety of configurations in most markets, those wanting to run Linux should pay special attention to **display** options (FHD or QHD+) and **Wi-Fi adapter** differences (Dell DW1560 or Intel 7265).
 
-For users with QHD+ display, they need to use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI"). Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 has mainline kernel support, hence it will work out-of-the-box, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
+Users with QHD+ displays should use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI").
 
-There are no exclusive hardware differences between the *Developer Edition* and the *classical edition* (the one with Windows) of this laptop that means this guide is equally applicable to both models.
+Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 works out-of-the-box thanks to mainline kernel support, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
+
+There are no exclusive hardware differences between the *Developer Edition* and the standard Windows edition, so this guide is equally applicable to both models.
 
 ## Configuration
 
 ### BIOS updates
-
-Best practice is to install and use software on the latest BIOS version and this laptop makes no difference.
 
 The latest BIOS update is [A11](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=MYXCY&fileId=3598184217) and was released on 2017-02-02\. With A02 or newer, almost everything should work out-of-the-box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
 
@@ -127,13 +124,11 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 #### I2S mode
 
-With BIOS A02+ and official Arch Linux kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer.
-
-**Note:** Kernels 4.5-4.7 require the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21) otherwise the sound card will not be recognized. This has been resolved in official Arch Linux kernel 4.5.2+[[5]](https://bugs.archlinux.org/task/48936); anyhow, a better fix[[6]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e) is included in kernel 4.8.
+With BIOS A02+ and official Arch Linux kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer. (I2S support was broken in mainline kernel 4.5, and fixed in Arch kernel 4.5.2 and mainline 4.8.[[4]](https://bugs.archlinux.org/task/48936)[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e))
 
 ##### Enabling the microphone
 
-**Note:** The microphone appears to be enabled by default as of official Arch Linux kernel 4.5.3, so these instructions may be unnecessary.[[7]](https://bugs.archlinux.org/task/47989#comment146876)
+**Note:** The microphone appears to be enabled by default as of official Arch Linux kernel 4.5.3, so these instructions may be unnecessary.[[6]](https://bugs.archlinux.org/task/47989#comment146876)
 
 In I2S mode, the built-in microphone is muted by default. To enable it you have to unmute `Mic` item; follow the instructions below in order to achieve the goal:
 
@@ -184,10 +179,10 @@ You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [po
 
 **Note:**  
 
-*   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` parameters are no longer needed. Kernel 4.6.2+ is recommended as older kernels may cause the display to flicker.
-*   Soon panel self-refresh (PSR) will be disabled again. [[8]](https://patchwork.freedesktop.org/patch/127188/) Commit 2ee7dc497e348eecbb82adbb1ea9e9a7e29fe921 (drm/i915: disable PSR by default on HSW/BDW) landed on 2016-12-14 and is marked for inclusion in the stable kernel. Kernel 4.9 is already *affected*. This is the reference bug [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=95176).
+*   With kernel 4.6+, frame-buffer compression (FBC) is enabled by default, so `i915.enable_fbc` is no longer needed.
+*   Panel self refresh (PSR) causes the XPS 13's display to flicker, so it is disabled by default as of kernel 4.9.[[7]](https://bugs.freedesktop.org/show_bug.cgi?id=95176)
 *   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to IRC #intel-gfx, "there is a new auto-downclock for eDP panels in recent kernels and it is enabled by default if available, so do not use."
-*   `i915.enable_rc6=7` is useless on Broadwell (Gen8) systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on Gen7+ hardwares.[[10]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[11]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
+*   `i915.enable_rc6=7` is useless on Broadwell (Gen8) systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on Gen7+ hardware.[[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[9]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
 
 ### Calibrated ICC profile
 
@@ -236,12 +231,6 @@ Refer to the Audio section above for more info, as well as the [BBS thread](http
 ### Loud cracks/noise during boot or audio playback
 
 Some users have reported above sound outputs, as described e.g. in [this BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208496). [Disabling audio powersafe](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") may work for people using the **HDA** audio mode. However, it is still unknown how to solve this issue for the **I2S** audio mode. For further reference, see the corresponding [kernel bug record](https://bugzilla.kernel.org/show_bug.cgi?id=112611).
-
-### Display freezes while manipulating external displays with Xrandr / random blanking
-
-`xrandr` commands (for eg. [HiDPI#Multiple displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[12]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
-
-If you are experiencing freezes in GNOME on Login and/or after, be sure you have latest BIOS installed and disabled the C state feature.
 
 ## See also
 

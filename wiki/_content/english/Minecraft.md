@@ -5,7 +5,7 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
 *   [1 Client](#Client)
     *   [1.1 Installation](#Installation)
     *   [1.2 Running](#Running)
-    *   [1.3 Firewall configuration fo LAN worlds](#Firewall_configuration_fo_LAN_worlds)
+    *   [1.3 Firewall configuration for LAN worlds](#Firewall_configuration_for_LAN_worlds)
     *   [1.4 Extras](#Extras)
 *   [2 Server](#Server)
     *   [2.1 Installation](#Installation_2)
@@ -46,7 +46,7 @@ $ java -jar Minecraft.jar
 
 ```
 
-### Firewall configuration fo LAN worlds
+### Firewall configuration for LAN worlds
 
 To host a LAN World you will need two ports to be open on your [firewall](/index.php/Firewall "Firewall"):
 

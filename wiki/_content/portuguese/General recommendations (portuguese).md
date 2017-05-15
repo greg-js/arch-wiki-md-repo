@@ -118,7 +118,7 @@ Por vezes chamados de "espelhos". Visite [Mirrors](/index.php/Mirrors "Mirrors")
 
 *Ports* é um sistema inicialmente usado pelas distribuições BSD consistindo em scripts de compilação que residem em uma árvore de diretório no sistema local. Basicamente, cada *port* contém um script dentro de um diretório intuitivamente nomeado pelo aplicativo terceiro instalável.
 
-O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que de forma limpa gera pacotes gerenciáveis pelo *pacman*.
+O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que de forma limpa gera pacotes gerenciáveis pelo *pacman*.
 
 Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos a recompilação com *makepkg*.
 
@@ -152,7 +152,7 @@ Essa seção fornece orientação para usuários interessados em usar aplicativo
 
 ### Servidor de exibição
 
-[Xorg](/index.php/Xorg "Xorg") é a implementação código aberto e pública do [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (mais conhecido como *X11* ou *X*). Ele é necessário para se usar aplicativos com interfaces gráficas de usuário (também conhecidas como *GUI*s) e a maioria dos usuários terão interesse em instalá-los.
+[Xorg](/index.php/Xorg "Xorg") é a implementação código aberto e pública do [X Window System](https://en.wikipedia.org/wiki/pt:X_Window_System "wikipedia:pt:X Window System") (mais conhecido como *X11* ou *X*). Ele é necessário para se usar aplicativos com interfaces gráficas de usuário (também conhecidas como *GUI*s) e a maioria dos usuários terão interesse em instalá-los.
 
 [Wayland](/index.php/Wayland "Wayland") é um protocolo alternativo mais novo de servidor de exibição e a implementação referência de Weston está disponível.
 
@@ -162,7 +162,7 @@ O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de víd
 
 ### Ambientes gráficos
 
-Apesar do Xorg fornecer um framework básico para compilação de um ambiente gráfico, componentes adicionais podem ser considerados necessários para uma experiência de usuário completa. [Ambientes gráficos](/index.php/Desktop_environment "Desktop environment") como o [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE") e [Xfce](/index.php/Xfce "Xfce") colecionam uma gama de *clientes X*, tal como um gerenciador de janelas, painel, gerenciador de arquivos, emulador de terminal, editor de texto, ícones e outros utilitários. Usuários com menos experiência podem preferir instalar um ambiente gráfico para ter um ambiente mais familiar. Veja [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para recursos adicionais.
+Apesar do Xorg fornecer um framework básico para compilação de um ambiente gráfico, componentes adicionais podem ser considerados necessários para uma experiência de usuário completa. [Ambientes gráficos](/index.php/Desktop_environment "Desktop environment") como o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE") e [Xfce](/index.php/Xfce "Xfce") colecionam uma gama de *clientes X*, tal como um gerenciador de janelas, painel, gerenciador de arquivos, emulador de terminal, editor de texto, ícones e outros utilitários. Usuários com menos experiência podem preferir instalar um ambiente gráfico para ter um ambiente mais familiar. Veja [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") para recursos adicionais.
 
 ### Gerenciadores de janela
 
@@ -170,7 +170,7 @@ Um ambiente gráfico completo fornece uma interface gráfica de usuário complet
 
 ### Gerenciadores de exibição
 
-A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Display_manager "Display manager") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Start_X_at_login "Start X at login") como uma alternativa simples a um gerenciador de exibição.
+A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Start_X_at_login "Start X at login") como uma alternativa simples a um gerenciador de exibição.
 
 ## Gerenciamento de energia
 
@@ -202,7 +202,7 @@ Veja o artigo principal: [Suspensão e hibernação](/index.php/Suspend_and_hibe
 
 [Som](/index.php/Sound "Sound") é fornecido pelos drivers de som do kernel:
 
-*   [ALSA](/index.php/ALSA "ALSA") é incluído com o kernel e é recomendado porque geralmente ele funciona sem precisar de configuração (só precisa [retirar do mudo](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
+*   [ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)") é incluído com o kernel e é recomendado porque geralmente ele funciona sem precisar de configuração (só precisa [retirar do mudo](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
 
 *   [OSS](/index.php/OSS "OSS") é uma alternativa viável no caso de ALSA não funcionar.
 
@@ -296,7 +296,7 @@ Uma instalação padrão não forence uma forma de sincronizar correios eletrôn
 
 ## Aparência
 
-Essa seção contém ajustes cosméticos frequentemente procurados para uma experiência no Arch esteticamente mais agradável. Para mais, por favor veja see [Category:Eye candy](/index.php/Category:Eye_candy "Category:Eye candy").
+Essa seção contém ajustes cosméticos frequentemente procurados para uma experiência no Arch esteticamente mais agradável. Para mais, por favor veja [Category:Eye candy](/index.php/Category:Eye_candy "Category:Eye candy").
 
 ### Fontes
 

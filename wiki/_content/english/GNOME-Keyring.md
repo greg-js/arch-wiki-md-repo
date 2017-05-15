@@ -129,6 +129,8 @@ For KDM, see [KDM#KDM and Gnome-keyring](/index.php/KDM#KDM_and_Gnome-keyring "K
 
 For [SDDM](/index.php/SDDM "SDDM"), follow the KDM guidelines, but modify `/etc/pam.d/sddm` instead of `/etc/pam.d/kde`.
 
+For LightDM, uncomment or add the line `auth optional pam_gnome_keyring.so` in `/etc/pam.d/lightdm`.
+
 To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
 
  `~/.zshenv` 

@@ -32,7 +32,7 @@ A intenção desta página é desmistificar os termos comumente usados pela comu
 
 ## ABS
 
-Acrônimo de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), que pode ser traduzido como "Sistema de Compilação do Arch", é útil para:
+Acrônimo de [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"), que pode ser traduzido como "Sistema de Compilação do Arch", é útil para:
 
 *   Fazer novos pacotes de software para os quais nenhum pacote está disponível
 *   Personalizar/modificar pacotes existentes para ajustar suas necessidades (habilitando ou desabilitando opções)
@@ -59,9 +59,9 @@ O [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (abre
 
 ## AUR
 
-O [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) que permite que você compile um pacote do fonte com [makepkg](/index.php/Makepkg "Makepkg") e, então, instale-o via [pacman](/index.php/Pacman#Additional_commands "Pacman"). O AUR foi criado para organizado para compartilhar novos pacotes da comunidade para ajudar e acelerar inclusão de pacotes populares para o repositório [community](/index.php/Community "Community"). Esse documento explica como usuários podem acessar e utilizar o AUR.
+O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permite que você compile um pacote do fonte com [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, instale-o via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado para organizado para compartilhar novos pacotes da comunidade para ajudar e acelerar inclusão de pacotes populares para o repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Esse documento explica como usuários podem acessar e utilizar o AUR.
 
-Um bom número de novos pacotes que entram nos repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir suas próprias compilações de pacote (PKGBUILD e arquivos relacionados). A comunidade do AUR possui a habilidade de votar por ou contra pacotes no AUR. Se um pacote se torna popular o suficiente — desde que tenha uma licença compatível e uma boa técnica de empacotamento — ele pode ser inserido no repositório *community* (diretamente acessível por [pacman](/index.php/Pacman "Pacman") ou [abs](/index.php/Abs "Abs")).
+Um bom número de novos pacotes que entram nos repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir suas próprias compilações de pacote (PKGBUILD e arquivos relacionados). A comunidade do AUR possui a habilidade de votar por ou contra pacotes no AUR. Se um pacote se torna popular o suficiente — desde que tenha uma licença compatível e uma boa técnica de empacotamento — ele pode ser inserido no repositório *community* (diretamente acessível por [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
 
 Você pode acessar o repositório da comunidade de usuários do Arch Linux [aqui](https://aur.archlinux.org).
 
@@ -71,7 +71,7 @@ Você pode acessar o repositório da comunidade de usuários do Arch Linux [aqui
 
 ## community/[community]
 
-O repositório *community* é onde pacotes pré-compilados são disponibilizados pelos [Trusted Users](/index.php/Trusted_Users "Trusted Users"). A maioria dos pacotes no *community* vem do [AUR](/index.php?title=Arch_terminology_(Portugu%C3%AAs)/Arch_User_Repository_(Portugu%C3%AAs)&action=edit&redlink=1 "Arch terminology (Português)/Arch User Repository (Português) (page does not exist)").
+O repositório *community* é onde pacotes pré-compilados são disponibilizados pelos [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)"). A maioria dos pacotes no *community* vem do [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
 ## core/[core]
 
@@ -79,7 +79,7 @@ O repositório *core* contém os pacotes básicos para um sistema do Arch Linux.
 
 ## custom/user repository
 
-Trata-se de repositório personalizado, de usuário. Qualquer um pode criar um e disponibilizá-lo para outros usuários. Para criar um repositório, você precisa de um conjunto de pacotes e um arquivo de banco de dados compatível com o [pacman](/index.php/Pacman "Pacman") para seus pacotes. Hospede seus arquivos online e todo mundo poderá usar seu repositório adicionando-o como um repositório comum.
+Trata-se de repositório personalizado, de usuário. Qualquer um pode criar um e disponibilizá-lo para outros usuários. Para criar um repositório, você precisa de um conjunto de pacotes e um arquivo de banco de dados compatível com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para seus pacotes. Hospede seus arquivos online e todo mundo poderá usar seu repositório adicionando-o como um repositório comum.
 
 Veja [Repositório local personalizado](/index.php/Custom_local_repository "Custom local repository").
 
@@ -101,15 +101,15 @@ Obsoleto. Hoje em dia é frequentemente usado como um sinônimo de initramfs.
 
 ## KISS
 
-Acrônimo para *Keep It Simple, Stupid*, que em português seria algo como "mantenha isto simples, estúpido". [Simplicidade](/index.php/Arch_Linux#Simplicity "Arch Linux") é um princípio central que o Arch Linux tenta atingir.
+Acrônimo para *Keep It Simple, Stupid*, que em português seria algo como "mantenha isto simples, estúpido". [Simplicidade](/index.php/Arch_Linux_(Portugu%C3%AAs)#Simplicidade "Arch Linux (Português)") é um princípio central que o Arch Linux tenta atingir.
 
 ## makepkg
 
-[makepkg](/index.php/Makepkg "Makepkg") vai construir pacotes para você. O makepkg vai ler metadados necessários de um arquivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Tudo que ele precisa é uma plataforma Linux capaz de compilação, [wget](https://www.archlinux.org/packages/?name=wget) e alguns scripts de compilação. A vantagem a de compilar baseado em script é que você realmente faz o trabalho uma vez. Assim que você tiver o script de compilação para um pacote, tudo o que você precisará é executar makepkg e ele vai fazer o resto: baixa e balida os arquivos fontes, verifica as dependências, configura as configurações de tempo de compilação, compilação do pacote, instala o pacote em uma raiz temporária, faz personalizações, cria informações-meta e empacota toda a coisa para o [pacman](/index.php/Pacman "Pacman") usar.
+[makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") vai construir pacotes para você. O makepkg vai ler metadados necessários de um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Tudo que ele precisa é uma plataforma Linux capaz de compilação, [wget](https://www.archlinux.org/packages/?name=wget) e alguns scripts de compilação. A vantagem a de compilar baseado em script é que você realmente faz o trabalho uma vez. Assim que você tiver o script de compilação para um pacote, tudo o que você precisará é executar makepkg e ele vai fazer o resto: baixa e balida os arquivos fontes, verifica as dependências, configura as configurações de tempo de compilação, compilação do pacote, instala o pacote em uma raiz temporária, faz personalizações, cria informações-meta e empacota toda a coisa para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") usar.
 
 ## namcap
 
-[namcap](/index.php/Namcap "Namcap") é um utilitário de análise de pacotes que procura por problemas com pacotes do Arch Linux ou em seus arquivos [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Ele pode aplicar regras à lista de arquivos, no próprios arquivos ou em arquivos PKGBUILD individuais.
+[namcap](/index.php/Namcap "Namcap") é um utilitário de análise de pacotes que procura por problemas com pacotes do Arch Linux ou em seus arquivos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Ele pode aplicar regras à lista de arquivos, no próprios arquivos ou em arquivos PKGBUILD individuais.
 
 As regras retornam listas de mensagens. Cada mensagem pode ser uma dos três tipos: erro, aviso ou informação (pense nelas como notas ou comentários). Erros (referidos por "E:" são coisas que o namcap tem muita certeza de que estão erradas e precisam ser corrigidas. Avisos (referidos por "W:") são coisas que o namcap pensa que deveriam ser alteradas, mas se você sabe o que você está fazendo, então você pode ignorá-las. Informações (referidas por "I:") são apenas mostradas quando você usar o argumento de informação. Mensagens informacionais dão informações que podem ser úteis, mas é nada que tenha que ser alterado.
 
@@ -119,10 +119,10 @@ Pacote é um conjunto de arquivos que contém:
 
 *   todos os arquivos (compilados) de um aplicativo
 *   metadados sobre o aplicativo como nome, versão, dependências...
-*   arquivos e diretrizes de instalação para o [pacman](/index.php/Pacman "Pacman")
+*   arquivos e diretrizes de instalação para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   (opcionalmente) arquivos extras para facilitar sua vida, como um script de start/stop
 
-O [pacman](/index.php/Pacman "Pacman"), gerenciador de pacotes do arch, pode instalar, atualizar e remover esses pacotes. Usar um gerenciador de pacotes em vez de compilar e instalar programas manualmente tem vários benefícios:
+O [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), gerenciador de pacotes do arch, pode instalar, atualizar e remover esses pacotes. Usar um gerenciador de pacotes em vez de compilar e instalar programas manualmente tem vários benefícios:
 
 *   fácil atualização: pacman vai atualizar os pacotes existentes, assim que as atualizações estiverem disponíveis
 *   verificações de dependência: pacman lida com dependências para você, você só precisa especificar o programa e pacman instala-o junto com todos os outros programas necessários
@@ -135,14 +135,14 @@ O [pacman](/index.php/Pacman "Pacman"), gerenciador de pacotes do arch, pode ins
 Mantenedor de pacote é o papel responsável por atualizar pacotes na medida em que novas versões são disponibilizadas pelo *upstream*, além de fornecer suporte em relatórios de erros sobre eles. O termo pode se aplicar a qualquer um dos seguintes:
 
 *   Um desenvolvedor do Arch Linux que mantém um pacote de software em um dos repositórios oficiais (*core*, *extra* ou *testing*).
-*   Um [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") da comunidade que mantém pacotes de software no repositório de comunidade extraoficiais/sem suporte.
-*   Um usuário normal que mantém um [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") e arquivos fontes locais no [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
+*   Um [Trusted User](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)") da comunidade que mantém pacotes de software no repositório de comunidade extraoficiais/sem suporte.
+*   Um usuário normal que mantém um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e arquivos fontes locais no [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 
 O mantenedor de um pacote é a pessoa atualmente responsável pelo pacote. Mantenedores anteriores deve ser listado como contribuidores no PKGBUILD junto com outros que contribuíram para o pacote.
 
 ## pacman
 
-O [gerenciador de pacotes](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") [pacman](/index.php/Pacman "Pacman") é um das características mais distintas do Arch Linux. Ele combina um formato de pacote binário simples com um [sistema de compilação](/index.php/Arch_Build_System "Arch Build System") fácil de usar. O objetivo do *pacman* é possibilitar gerenciar pacotes facilmente, sejam eles dos [repositórios oficiais](/index.php/Official_repositories "Official repositories") ou de compilações do próprio usuário.
+O [gerenciador de pacotes](https://en.wikipedia.org/wiki/pt:sistema_gestor_de_pacotes é um das características mais distintas do Arch Linux. Ele combina um formato de pacote binário simples com um [sistema de compilação](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") fácil de usar. O objetivo do *pacman* é possibilitar gerenciar pacotes facilmente, sejam eles dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") ou de compilações do próprio usuário.
 
 *pacman* mantém o sistema atualizado sincronizando listas de pacotes com o servidor mestre. Esse modelo servidor/cliente também permite que o usuário baixe/instale pacotes com um comando simples e completo com todas as dependências necessários.
 
@@ -150,17 +150,17 @@ Note: Pacman foi escrito por Judd Vinet, o criador do Arch Linux. Ele é usado c
 
 ## pacman.conf
 
-Esse é o arquivo de configuração do [pacman](/index.php/Pacman "Pacman"). Ele está localizado no `/etc`. Para uma explicação completa de seus poderes, digite isso na linha de comando: `man pacman.conf`.
+Esse é o arquivo de configuração do [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Ele está localizado no `/etc`. Para uma explicação completa de seus poderes, digite isso na linha de comando: `man pacman.conf`.
 
 ## PKGBUILD
 
-[PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") são pequenos scripts que são usados para compilar pacotes do Arch Linux. Veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes") para mais detalhes.
+[PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") são pequenos scripts que são usados para compilar pacotes do Arch Linux. Veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes") para mais detalhes.
 
 ## repository/repo
 
-Repositório contém pacotes pré-compilados de um ou (geralmente) mais [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). [Repositórios oficiais](/index.php/Official_repositories "Official repositories") são divididos em diferentes partes para facilitar manutenção. O pacman usa esses repositórios para pesquisar por pacotes e instalá-los. Um repositório podem ser lcaol (i.e. em seu computador) ou remoto (i.e. os pacotes são baixados antes de serem instalados).
+Repositório contém pacotes pré-compilados de um ou (geralmente) mais [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") são divididos em diferentes partes para facilitar manutenção. O pacman usa esses repositórios para pesquisar por pacotes e instalá-los. Um repositório podem ser lcaol (i.e. em seu computador) ou remoto (i.e. os pacotes são baixados antes de serem instalados).
 
-## [RTFM](https://en.wikipedia.org/wiki/RTFM "wikipedia:RTFM")
+## [RTFM](https://en.wikipedia.org/wiki/pt:RTFM "wikipedia:pt:RTFM")
 
 '"Read The Fucking (ou Fine) Manual"', que pode ser traduzido como "Leia a porra desse manual". Essa mensagem simples é respondida a muitos dos novos usuários Linux/Arch que perguntam sobre a funcionalidade de um programa quando ela está definida, de forma clara, no manual do programa.
 
@@ -187,7 +187,7 @@ Podendo ser traduzido como "A Forma do Arch" ou "O Jeito do Arch", é um termo e
 
 ## TU, Trusted User
 
-Um *[trusted user](/index.php/Trusted_user "Trusted user")*, que pode ser traduzido como "usuário confiável", é alguém que mantém o AUR e o repositório [community]. Trusted Users podem mover um pacote para o repositório [community], se ele foi votado como particular. TUs são apontados pela votação da maioria dos TUs existentes.
+Um *[trusted user](/index.php/Trusted_user_(Portugu%C3%AAs) "Trusted user (Português)")*, que pode ser traduzido como "usuário confiável", é alguém que mantém o AUR e o repositório [community]. Trusted Users podem mover um pacote para o repositório [community], se ele foi votado como particular. TUs são apontados pela votação da maioria dos TUs existentes.
 
 Os Trusted Users seguem as [AUR Trusted User Guidelines (Português)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)") e [TU by-laws](https://aur.archlinux.org/trusted-user/TUbylaws.html).
 
@@ -199,6 +199,6 @@ Geralmente o udev é executado como udevd(8) e recebe *uevents* diretamente do k
 
 Se o udev recebe um evento de dispositivo, ele compara suas regras configuradas com os atributos do dispositivo disponível fornecidos no sysfs para identificar o dispositivo. Regras que corresponderem podem fornecer informações adicionais do dispositivo ou especificar um nome de nó de dispositivo e múltiplos nomes de *symlink* e instruir udev a executar programas adicionais como parte da manipulação de evento do dispositivo.
 
-## [wiki](https://en.wikipedia.org/wiki/Wiki "wikipedia:Wiki")
+## [wiki](https://en.wikipedia.org/wiki/pt:Wiki "wikipedia:pt:Wiki")
 
-[O próprio!](/index.php/Main_page "Main page") Um lugar para encontrar documentação sobre o Arch Linux. Qualquer um pode adicionar e modificar a documentação.
+[O próprio!](/index.php/P%C3%A1gina_principal "Página principal") Um lugar para encontrar documentação sobre o Arch Linux. Qualquer um pode adicionar e modificar a documentação.

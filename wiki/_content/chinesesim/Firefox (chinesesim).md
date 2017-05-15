@@ -6,39 +6,38 @@
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 附加组件](#.E9.99.84.E5.8A.A0.E7.BB.84.E4.BB.B6)
+    *   [2.1 添加搜索引擎](#.E6.B7.BB.E5.8A.A0.E6.90.9C.E7.B4.A2.E5.BC.95.E6.93.8E)
+        *   [2.1.1 arch-firefox-search](#arch-firefox-search)
 *   [3 Configuration](#Configuration)
 *   [4 插件](#.E6.8F.92.E4.BB.B6)
     *   [4.1 Gnome Keyring 整合](#Gnome_Keyring_.E6.95.B4.E5.90.88)
     *   [4.2 KDE 整合](#KDE_.E6.95.B4.E5.90.88)
     *   [4.3 拼写检查字典](#.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E5.AD.97.E5.85.B8)
     *   [4.4 增加搜索引擎](#.E5.A2.9E.E5.8A.A0.E6.90.9C.E7.B4.A2.E5.BC.95.E6.93.8E)
-        *   [4.4.1 arch-firefox-search](#arch-firefox-search)
+        *   [4.4.1 arch-firefox-search](#arch-firefox-search_2)
     *   [4.5 多媒体播放](#.E5.A4.9A.E5.AA.92.E4.BD.93.E6.92.AD.E6.94.BE)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Screenshot of webpage](#Screenshot_of_webpage)
+*   [5 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
+    *   [5.1 网页截图](#.E7.BD.91.E9.A1.B5.E6.88.AA.E5.9B.BE)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [6.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
-    *   [6.2 Font troubleshooting](#Font_troubleshooting)
+    *   [6.1 Firefox 启动时间太长](#Firefox_.E5.90.AF.E5.8A.A8.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
+    *   [6.2 字体问题](#.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
     *   [6.3 设置 email 客户端](#.E8.AE.BE.E7.BD.AE_email_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [6.4 程序关联](#.E7.A8.8B.E5.BA.8F.E5.85.B3.E8.81.94)
-        *   [6.4.1 文件关联问题](#.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94.E9.97.AE.E9.A2.98)
+    *   [6.4 文件关联](#.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94)
     *   [6.5 Firefox 自动创建 ~/Desktop，但我不需要](#Firefox_.E8.87.AA.E5.8A.A8.E5.88.9B.E5.BB.BA_.7E.2FDesktop.EF.BC.8C.E4.BD.86.E6.88.91.E4.B8.8D.E9.9C.80.E8.A6.81)
     *   [6.6 禁止插件弹窗](#.E7.A6.81.E6.AD.A2.E6.8F.92.E4.BB.B6.E5.BC.B9.E7.AA.97)
     *   [6.7 中键点击问题](#.E4.B8.AD.E9.94.AE.E7.82.B9.E5.87.BB.E9.97.AE.E9.A2.98)
     *   [6.8 Backspace 键无法实现“后退”功能](#Backspace_.E9.94.AE.E6.97.A0.E6.B3.95.E5.AE.9E.E7.8E.B0.E2.80.9C.E5.90.8E.E9.80.80.E2.80.9D.E5.8A.9F.E8.83.BD)
     *   [6.9 无法记录登录信息](#.E6.97.A0.E6.B3.95.E8.AE.B0.E5.BD.95.E7.99.BB.E5.BD.95.E4.BF.A1.E6.81.AF)
-    *   [6.10 使用深色GTK主题时文本区域故障](#.E4.BD.BF.E7.94.A8.E6.B7.B1.E8.89.B2GTK.E4.B8.BB.E9.A2.98.E6.97.B6.E6.96.87.E6.9C.AC.E5.8C.BA.E5.9F.9F.E6.95.85.E9.9A.9C)
+    *   [6.10 使用深色 GTK+ 主题时文本区域故障](#.E4.BD.BF.E7.94.A8.E6.B7.B1.E8.89.B2_GTK.2B_.E4.B8.BB.E9.A2.98.E6.97.B6.E6.96.87.E6.9C.AC.E5.8C.BA.E5.9F.9F.E6.95.85.E9.9A.9C)
     *   [6.11 关闭Firefox时不询问是否保存标签](#.E5.85.B3.E9.97.ADFirefox.E6.97.B6.E4.B8.8D.E8.AF.A2.E9.97.AE.E6.98.AF.E5.90.A6.E4.BF.9D.E5.AD.98.E6.A0.87.E7.AD.BE)
-    *   [6.12 Firefox 界面字体很难看](#Firefox_.E7.95.8C.E9.9D.A2.E5.AD.97.E4.BD.93.E5.BE.88.E9.9A.BE.E7.9C.8B)
-    *   [6.13 Firefox 在某些网页中字体很难看](#Firefox_.E5.9C.A8.E6.9F.90.E4.BA.9B.E7.BD.91.E9.A1.B5.E4.B8.AD.E5.AD.97.E4.BD.93.E5.BE.88.E9.9A.BE.E7.9C.8B)
-    *   [6.14 从Marketplace安装桌面应用失败且无错误提示](#.E4.BB.8EMarketplace.E5.AE.89.E8.A3.85.E6.A1.8C.E9.9D.A2.E5.BA.94.E7.94.A8.E5.A4.B1.E8.B4.A5.E4.B8.94.E6.97.A0.E9.94.99.E8.AF.AF.E6.8F.90.E7.A4.BA)
-    *   [6.15 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [6.16 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
-    *   [6.17 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
-    *   [6.18 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [6.19 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
-    *   [6.20 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.21 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
+    *   [6.12 从Marketplace安装桌面应用失败且无错误提示](#.E4.BB.8EMarketplace.E5.AE.89.E8.A3.85.E6.A1.8C.E9.9D.A2.E5.BA.94.E7.94.A8.E5.A4.B1.E8.B4.A5.E4.B8.94.E6.97.A0.E9.94.99.E8.AF.AF.E6.8F.90.E7.A4.BA)
+    *   [6.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
+    *   [6.14 在一些网页中，Javascript 上下文菜单不显示](#.E5.9C.A8.E4.B8.80.E4.BA.9B.E7.BD.91.E9.A1.B5.E4.B8.AD.EF.BC.8CJavascript_.E4.B8.8A.E4.B8.8B.E6.96.87.E8.8F.9C.E5.8D.95.E4.B8.8D.E6.98.BE.E7.A4.BA)
+    *   [6.15 Firefox 不保存默认的拼写检查语言](#Firefox_.E4.B8.8D.E4.BF.9D.E5.AD.98.E9.BB.98.E8.AE.A4.E7.9A.84.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E8.AF.AD.E8.A8.80)
+    *   [6.16 一些 MathML 符号消失了](#.E4.B8.80.E4.BA.9B_MathML_.E7.AC.A6.E5.8F.B7.E6.B6.88.E5.A4.B1.E4.BA.86)
+    *   [6.17 滚动时图片闪烁](#.E6.BB.9A.E5.8A.A8.E6.97.B6.E5.9B.BE.E7.89.87.E9.97.AA.E7.83.81)
+    *   [6.18 全屏模式下视频断裂](#.E5.85.A8.E5.B1.8F.E6.A8.A1.E5.BC.8F.E4.B8.8B.E8.A7.86.E9.A2.91.E6.96.AD.E8.A3.82)
+    *   [6.19 GTK+ >=3.20 时 Firefox 看起来很丑](#GTK.2B_.3E.3D3.20_.E6.97.B6_Firefox_.E7.9C.8B.E8.B5.B7.E6.9D.A5.E5.BE.88.E4.B8.91)
 *   [7 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -76,6 +75,18 @@
 Firefox 广为人知的一点是它的大量的附加组件，可以用来添加新功能或更改 Firefox 中已有功能。你可以在 Firefox 中的“附加组件管理器”中查找新附加组件或管理已安装的附加组件。
 
 想查看热门附加组件列表，参见： [按热门度排序的附加组件列表](https://addons.mozilla.org/zh-CN/firefox/extensions/?sort=popular).
+
+### 添加搜索引擎
+
+可以使用附加组件向 Firefox 中添加搜索引擎，戳 [这个页面](https://addons.mozilla.org/firefox/search-tools/) 查看可用的搜索引擎列表.
+
+在 [Mycroft Project](http://mycroftproject.com/) 可以找到大量的搜索引擎.
+
+你也可以使用 [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) 插件，在网站的搜索框右击，然后选择 *Add to Search Bar...* 将任何网站的搜索框添加到搜索栏.
+
+#### arch-firefox-search
+
+安装 [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) 添加 Arch 相关的搜索项目 (AUR, wiki, 论坛等等) 到 Firefox 搜索栏.
 
 ## Configuration
 
@@ -186,20 +197,20 @@ Firefox会尝试使用[FFmpeg](/index.php/FFmpeg "FFmpeg")播放HTML5的`<audio>
 
 更多配置信息请参阅 [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks")。
 
-## Tips and tricks
+## 小技巧
 
-### Screenshot of webpage
+### 网页截图
 
-To use Firefox to take a screenshot of a webpage open the developer console using `Shift+F2`. Then type in:
+要使用 Firefox 进行网页截图，使用 `Shift+F2` 打开开发者控制台。然后输入：
 
 ```
 screenshot *filename*
 
 ```
 
-where *filename* is optional.
+其中 *filename* 是可选的。
 
-To take a screenshot of the entire page, not just the section displayed on the screen, use the `--fullpage` option:
+要对整个页面进行截图而不仅仅是当前屏幕，使用 `--fullpage` 选项：
 
 ```
 screenshot --fullpage *filename*
@@ -208,13 +219,13 @@ screenshot --fullpage *filename*
 
 ## 疑难解答
 
-### Firefox startup takes very long
+### Firefox 启动时间太长
 
-If Firefox takes much longer to start up than other browsers, it may be due to lacking configuration of the localhost in `/etc/hosts`. See [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") on how to set it up.
+如果 Firefox 启动时间比其它浏览器更长，这可能是因为 `/etc/hosts` 里没有设置 localhost。查看 [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") 了解怎么设置。
 
-### Font troubleshooting
+### 字体问题
 
-See [Font configuration](/index.php/Font_configuration "Font configuration").
+查看 [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ### 设置 email 客户端
 
@@ -222,22 +233,9 @@ See [Font configuration](/index.php/Font_configuration "Font configuration").
 
 Outside the browser, `mailto` links are handled by the `x-scheme-handler/mailto` mime type, which can be easily configured with [xdg-mime](/index.php/Xdg-mime "Xdg-mime"). See [Default applications](/index.php/Default_applications "Default applications") for details and alternatives.
 
-### 程序关联
+### 文件关联
 
 请参考 [Default applications](/index.php/Default_applications "Default applications").
-
-#### 文件关联问题
-
-非 [Gnome](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 用户可能遇到该问题，安装[libgnome](https://aur.archlinux.org/packages/libgnome/)即可。
-
-如果使用KDE，还可以这样：
-
-```
-ln -s ~/.local/share/applications/mimeapps.list ~/.local/share/applications/mimeinfo.cache
-
-```
-
-这样，Firefox应该严格使用KDE的文件关联设置了。
 
 ### Firefox 自动创建 ~/Desktop，但我不需要
 
@@ -310,13 +308,13 @@ $ rm -f cookies.sqlite
 
 重启Firefox检查问题是否解决。
 
-### 使用深色GTK主题时文本区域故障
+### 使用深色 GTK+ 主题时文本区域故障
 
-使用深色[GTK](/index.php/GTK "GTK")主题时，可能看不到某些网站输入框和文本区域的文字（白底白字）。这可能是因为某些网站只设置了背景色或文本色，而Firefox主题使用了一样的颜色。
+使用深色 [GTK+](/index.php/GTK%2B "GTK+") 主题时，可能看不到某些网站输入框和文本区域的文字（例如：Amazon 会显示白底白字）。这可能是因为某些网站只设置了背景色或文本色，而 Firefox 主题使用了一样的颜色。[Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) 扩展可以根据需要正确的设置颜色.
 
-A work around is to explicitly setting standard colours for all web pages in
+另一种方法是在 `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css` 明确地设置所有网页的标准色彩或者使用 [stylish](https://addons.mozilla.org/firefox/addon/stylish/) 插件.
 
-可以在`~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css`设置所有网页的标准色彩配置。
+**Note:** 如果你想让地址栏和搜索栏都是白色，删除前两个 `:not` CSS 选择器.
 
 ```
 input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']) {
@@ -342,10 +340,10 @@ select {
 }
 ```
 
-Another workaround is to force Firefox to use a light theme (e.g. "Adwaita:light"):
+还可以强制 Firefox 使用亮色的主题 (例如 "Adwaita:light")：
 
-1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
-2.  Close all running instances of Firefox and restart your window manager/desktop environment.
+1.  把 `/usr/share/applications/firefox.desktop` 复制到 `~/.local/share/applications/firefox.desktop`，然后将所有的 `Exec=firefox` 替换成 `Exec=env GTK_THEME=Adwaita:light firefox`.
+2.  关闭所有的 Firefox 实例然后重启窗口管理器/桌面环境.
 
 ### 关闭Firefox时不询问是否保存标签
 
@@ -354,19 +352,6 @@ Another workaround is to force Firefox to use a light theme (e.g. "Adwaita:light
 1.  打开**about:config**。
 2.  修改**browser.warnOnQuit**为**true**。
 3.  修改**browser.showQuitWarning**为**true**.
-
-### Firefox 界面字体很难看
-
-如果菜单栏的字体很难看，可能是因为 Firefox 找不到好看的字体，请先通过[xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1)软件包安装 Type 1 字体。
-
-### Firefox 在某些网页中字体很难看
-
-某些网页的点阵字体显示效果比较差，可以禁用 X 的点阵字体:
-
-```
-$ sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-```
 
 ### 从Marketplace安装桌面应用失败且无错误提示
 
@@ -380,48 +365,50 @@ If you upgraded your plugin when Firefox was still running, you will thus have t
 
 The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
-### Javascript context menu does not appear on some sites
+### 在一些网页中，Javascript 上下文菜单不显示
 
-In `about:config`, unset the `dom.w3c_touch_events.enabled` setting.
+在 `about:config` 取消 `dom.w3c_touch_events.enabled` 设置.
 
-### Firefox does not remember default spell check language
+### Firefox 不保存默认的拼写检查语言
 
-The default spell checking language can be set as follows:
+默认的拼写检查语言可以用下面的方式设置：
 
-1.  Type `about:config` in the address bar.
-2.  Set `spellchecker.dictionary` to your language of choice, for instance `en_GB`.
-3.  Notice that the for dictionaries installed as a Firefox plugin the notation is `en-GB`, and for [hunspell](https://www.archlinux.org/packages/?name=hunspell) dictionaries the notation is `en_GB`.
+1.  在地址栏中打开 `about:config`.
+2.  把 `spellchecker.dictionary` 设置为你的语言，例如 `en_GB`.
+3.  注意对于 Firefox 安装的词典插件来说，符号是 `en-GB`，而对于 [hunspell](https://www.archlinux.org/packages/?name=hunspell) 词典来说，符号是 `en_GB`.
 
-When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
+当你只有 [hunspell](https://www.archlinux.org/packages/?name=hunspell) 词典时, Firefox 可能不会保存你默认的词典语言设置。要解决这个问题，你可以添加至少一个 [词典](https://addons.mozilla.org/firefox/language-tools/) 插件. 注意现在附加组件中也会有词典栏.
 
-Related questions on the **StackExchange** platform: [[2]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[3]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[4]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+**StackExchange** 上的相关问题: [[2]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[3]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[4]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
-Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
+相关的漏洞报告: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
-### Some MathML symbols are missing
+### 一些 MathML 符号消失了
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[5]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+你需要一些数学字体，比如 Latin Modern Math 和 STIX (查看这个 MDN 页面: [[5]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)) 以正确的显示 MathML.
 
-In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
+在 Arch Linux 中，[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 和 [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) 提供了这些字体，但是默认情况下设置字体却无法使用它们. 详情参见 [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live"). 你也可以尝试 [Math fonts](/index.php/Fonts#Math "Fonts").
 
-### Picture flickers while scrolling
+### 滚动时图片闪烁
 
-**Note:** Problem available in some MATE desktops
+**Note:** 在一些 MATE 桌面下会出现
 
-Uncheck the "smooth scrolling" settings:
-
-```
-Edit > Settings > Advanced > General > Use smooth scrolling
+设置中取消选中 "smooth scrolling"：
 
 ```
+编辑 > 设置 > 高级 > 通用 > 使用平滑滚动
 
-### Tearing video in fullscreen mode
+```
 
-If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
+### 全屏模式下视频断裂
 
-### Firefox looks bad with GTK+ >=3.20
+如果你使用 Xorg Intel 或者 Nouveau 驱动并且感觉全屏模式下视频有撕裂感，试试 [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
 
-Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-gtk2](https://aur.archlinux.org/packages/firefox-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") for pre-built GTK2 Firefox packages.
+### GTK+ >=3.20 时 Firefox 看起来很丑
+
+**Note:** Firefox 在 53 版本中移除了 GTK2 支持， 并且会在 2018 年年中之前一直支持 ESR 52 版本.
+
+Firefox (从 47 版本开始) [不支持](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 并且可能看起来很难看。一种办法是编译 Firefox 取消 GTK2 支持, 参见 [firefox-esr-gtk2](https://aur.archlinux.org/packages/firefox-esr-gtk2/). 另外，你可以使用 [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") 或者 [archlinuxcn's](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") (x86_64 only) 的预编译 GTK2 Firefox 包.
 
 ## 参见
 

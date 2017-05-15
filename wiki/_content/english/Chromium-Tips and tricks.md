@@ -37,7 +37,7 @@
 A number of tweaks can be accessed via typing *chrome://xxx* in the URL field. A complete list is available by typing **chrome://chrome-urls** into the URL field. Some of note are listed below:
 
 *   **chrome://flags** - access experimental features such as WebGL and rendering webpages with GPU, etc.
-*   **chrome://plugins** - view, enable and disable the currently used Chromium plugins.
+*   **chrome://extensions** - view, enable and disable the currently used Chromium extensions.
 *   **chrome://gpu** - status of different GPU options.
 *   **chrome://sandbox** - indicate sandbox status.
 *   **chrome://version** - display version and switches used to invoke the active `/usr/bin/chromium`.
