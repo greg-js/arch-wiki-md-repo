@@ -4,6 +4,7 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Front ends](#Front_ends)
+    *   [1.2 Forks](#Forks)
 *   [2 Configuration](#Configuration)
     *   [2.1 An example input.conf file](#An_example_input.conf_file)
     *   [2.2 mpv and PulseAudio/ALSA mixer controls since 0.18.1](#mpv_and_PulseAudio.2FALSA_mixer_controls_since_0.18.1)
@@ -33,23 +34,19 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mpv](https://www.archlinux.org/packages/?name=mpv) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [mpv-git](https://aur.archlinux.org/packages/mpv-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [mpv](https://www.archlinux.org/packages/?name=mpv) package or [mpv-git](https://aur.archlinux.org/packages/mpv-git/) for the development version.
 
 ### Front ends
 
-*mpv* provides an elegant User Interface called OSC which appears when moving the mouse. To ease casual users, other graphical interfaces exist:
+mpv comes with a minimal GUI called On Screen Controller (OSC), that appears when moving the mouse. There are also other front ends available:
 
 *   **Baka MPlayer** — Free and open source, cross-platform, *libmpv* based multimedia player (Qt 5).
 
 	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
 
-*   **bomi** — Powerful and easy to use multimedia player (Qt 5).
-
-	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
-
 *   **GNOME MPV** — A simple frontend for *mpv* (GTK+ 3).
 
-	[http://gnome-mpv.github.io/](http://gnome-mpv.github.io/) || [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
 *   **Media Player Classic Qute Theater** — A clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt.
 
@@ -57,13 +54,17 @@
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 
-	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+	[http://www.smplayer.info/](http://www.smplayer.info/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **xt7-player-mpv** — Qt/Gambas GUI to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
 
 	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
-**Note:** CMPlayer/*bomi* packages provide *mpv* internally.
+### Forks
+
+*   **bomi** — Powerful and easy to use multimedia player (Qt 5).
+
+	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 
 ## Configuration
 

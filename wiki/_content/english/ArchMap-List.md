@@ -1045,5 +1045,6 @@ You can use the following website to get your device's coordinates along with a 
 19.040532, -98.194858 "Marco A. Rojas (MrcRjs)" # Puebla de Zaragoza, Puebla, Mexico
 39.508295,-84.181346 "TheClean" # Clearcreek Township, Ohio
 48.8123411, 2.3710360999999693 "Ybalrid" #Ivry-sur-Seine, Île-de-France, France
+52.396330,20.931634 "nr6000000" # Legionowo, Poland
 
 ```

@@ -16,7 +16,7 @@
     *   [3.1 Avoid changing the hostname](#Avoid_changing_the_hostname)
     *   [3.2 Prefer ethernet to wireless](#Prefer_ethernet_to_wireless)
     *   [3.3 Exclusive connection](#Exclusive_connection)
-    *   [3.4 Connecting to eduroam](#Connecting_to_eduroam)
+    *   [3.4 Connecting to eduroam (802.1X)](#Connecting_to_eduroam_.28802.1X.29)
     *   [3.5 Avoiding conflicts with local DNS server](#Avoiding_conflicts_with_local_DNS_server)
     *   [3.6 Blacklist interfaces](#Blacklist_interfaces)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -272,7 +272,7 @@ SingleConnectedTechnology=true
 
 ```
 
-### Connecting to eduroam
+### Connecting to eduroam (802.1X)
 
 [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise") networks such as eduroam require a separate configuration file before [connecting](#Wi-Fi) to the network. For example, create `/var/lib/connman/eduroam.config`:
 

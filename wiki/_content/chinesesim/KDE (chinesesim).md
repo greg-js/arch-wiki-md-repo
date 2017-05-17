@@ -163,7 +163,9 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 在 GTK 中推荐外形美观的主题是 [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) 或 [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)。安装 [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) 并在 *系统设置 > 应用风格 > GNOME 应用设置* 中选择想要的 GTK 主题。
 
-在某些主题中，GTK+ 应用程序的工具栏显示为白底白字。若要更改 GTK2 应用程序中的颜色，请找到 `.gtkrc-2.0` 并修改工具栏区。若要更改 GTK3 应用程序中的颜色，`gtk.css` 和 `settings.ini` 文件需要被修改。
+在某些主题中，GTK+ 应用程序的工具栏显示为白底白字。若要更改 GTK2 应用程序中的颜色，请找到 `.gtkrc-2.0` 并修改工具栏区。若要更改 GTK3 应用程序中的颜色，`gtk.css` 和 `settings.ini` 文件需要被修改。您也可以尝试在 *系统设置 > 颜色* 中取消对 *将颜色应用于非Qt应用程序* 的勾选。
+
+一些例如 [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) 的 GTK2 程序任然因为 Plasma 的微风和 Adwaita 主题拥有透明的复选框.要解决这个问题，请安装并在 *系统设置 > 应用风格 > GNOME 应用设置* 中选择例如 [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) 这样的皮肤。Numix-Frost-Light 看起来与微风相似。
 
 ##### 小部件
 

@@ -26,13 +26,13 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 
 Python 3 is the latest version of the language, and is incompatible with Python 2\. The language is mostly the same, but many details, especially how built-in objects like dictionaries and strings work, have changed considerably, and a lot of deprecated features have finally been removed. Also, the standard library has been reorganized in a few prominent places. For an overview of the differences, visit [Python2orPython3](http://wiki.python.org/moin/Python2orPython3) and their relevant [chapter](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) in Dive into Python 3.
 
-To install the latest version of Python 3, [install](/index.php/Install "Install") the [python](https://www.archlinux.org/packages/?name=python) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+To install the latest version of Python 3, [install](/index.php/Install "Install") the [python](https://www.archlinux.org/packages/?name=python) package.
 
 If you would like to build the latest RC/betas from source, visit [Python Downloads](http://www.python.org/download/). The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") also contains good [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). If you do decide to build the RC, note that the binary (by default) installs to `/usr/local/bin/python3.x`.
 
 ### Python 2
 
-To get the latest version of Python 2, [install](/index.php/Install "Install") the [python2](https://www.archlinux.org/packages/?name=python2) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+To get the latest version of Python 2, [install](/index.php/Install "Install") the [python2](https://www.archlinux.org/packages/?name=python2) package.
 
 Python 2 will happily run alongside Python 3\. You need to specify `python2` in order to run this version.
 

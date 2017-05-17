@@ -1,4 +1,4 @@
-Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux "Arch Linux") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ (Português)](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading](/index.php/Help:Reading "Help:Reading").
+Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
 Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") ou as [páginas de manual](/index.php/Man_page "Man page") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/IRC_channel "IRC channel") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
@@ -30,7 +30,7 @@ Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index
 
 ## Pré-instalação
 
-Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, uma conexão internet deve é necessária.
+Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "w:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, uma conexão internet deve é necessária.
 
 Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
@@ -81,7 +81,7 @@ Para verificar o status do serviço, use `timedatectl status`.
 
 ### Partição dos discos
 
-Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositivo de bbloco* tal como `/dev/sda`. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk* — resultados no final de `rom`, `loop` ou `airoot` podem ser ignorados:
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um *dispositivo de bloco* tal como `/dev/sda`. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk "Lsblk") ou *fdisk* — resultados no final de `rom`, `loop` ou `airoot` podem ser ignorados:
 
 ```
 # fdisk -l

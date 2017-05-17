@@ -414,7 +414,11 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 办公
 
-可以通过 [WPS Office (简体中文)](/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPS Office (简体中文)") 进行办公，自然支持通过 Office 创建的 doc, xls, ppt 文件。
+[WPS Office (简体中文)](/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPS Office (简体中文)")
+
+[ms office online](https://www.office.com/)
+
+[LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)")
 
 ### 中文输入法
 
@@ -432,7 +436,26 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 *   [GoAgent (简体中文)](/index.php/GoAgent_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GoAgent (简体中文)") 一直免费且广为流行。
 *   [Shadowsocks (简体中文)](/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Shadowsocks (简体中文)") 也不错。
 *   [XX-Net (简体中文)](/index.php/XX-Net_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XX-Net (简体中文)")：全新GoAgent/GoGotest一体化集成软件XX-Net
-*   hosts github上的一些hosts项目也十分方便，访问[github.com](https://github.com/search?utf8=✓&q=hosts)找寻。
+*   hosts github上有一些hosts项目例如[racaljk/hosts](https://github.com/racaljk/hosts)，更改/etc/hosts文件即可，以[racaljk/hosts](https://github.com/racaljk/hosts)的hosts文件为例，执行以下命令即可更新hosts文件：
+
+ `sudo wget [https://raw.githubusercontent.com/racaljk/hosts/master/hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) -O /etc/hosts` 
+
+为方便起见，可将其使用alias别名方式写入.bashrc，首先编辑~/.bashrc，在其中添加：
+
+```
+alias hosts='sudo wget [https://raw.githubusercontent.com/racaljk/hosts/master/hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) -O /etc/hosts'
+
+```
+
+然后执行:
+
+ `source ~/.bashrc` 
+
+以后更新hosts文件只需要执行
+
+ `hosts` 
+
+即可。
 
 ### 即时通讯工具
 

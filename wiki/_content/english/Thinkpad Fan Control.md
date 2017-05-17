@@ -1,4 +1,4 @@
-By default, the EC regulates fan speed. If it's too conservative/loud for your taste, you might want a daemon to take over control. But this is risky: you take responsibility for temperature control. Excessive temperatures can damage or shorten the lifespan of components in your laptop.
+By default, the embedded controller (EC) regulates fan speed. If it's too conservative/loud for your taste, you might want a daemon to take over control. But this is risky: you take responsibility for temperature control. Excessive temperatures can damage or shorten the lifespan of components in your laptop.
 
 From the [http://www.thinkwiki.org/wiki/How_to_control_fan_speed](http://www.thinkwiki.org/wiki/How_to_control_fan_speed):
 

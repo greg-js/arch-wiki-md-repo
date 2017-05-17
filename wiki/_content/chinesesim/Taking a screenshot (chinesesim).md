@@ -145,7 +145,7 @@ xwd -root -out screenshot.xwd
 
 ## KDE
 
-如果你用KDE，可以使用ksnapshot，它可以用<Prt Scr>键来激活。
+如果你用KDE，可以使用[Spectacle](https://www.archlinux.org/packages/extra/i686/spectacle/)。
 
 ## GNOME
 

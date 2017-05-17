@@ -53,7 +53,7 @@ Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseau
 *   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth): Bluetooth (Bluez) support
 *   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer): Equalizer sink (qpaeq)
 *   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf): GConf support (paprefs)
-*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): JACK sink, source and jackdbus detection
+*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection
 *   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): Infrared (LIRC) volume control
 *   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf (Avahi/DNS-SD) support
 

@@ -28,6 +28,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [14 Transitioning backgrounds](#Transitioning_backgrounds)
 *   [15 Custom GNOME sessions](#Custom_GNOME_sessions)
 *   [16 Redirect certain URLs to specific web browsers](#Redirect_certain_URLs_to_specific_web_browsers)
+*   [17 Removing film holes/film strip from video thumbnails in Nautilus](#Removing_film_holes.2Ffilm_strip_from_video_thumbnails_in_Nautilus)
 
 ## Keyboard
 
@@ -385,3 +386,34 @@ $ update-desktop-database $HOME/.local/share/applications/
 ```
 
 Set xdg-open web as default Web application in GNOME settings: GNOME Settings > Details > Default Applications > set Web to xdg-open web.
+
+## Removing film holes/film strip from video thumbnails in Nautilus
+
+Nautilus (Files) overlays the film holes/film strip effect on video thumbnails since Gnome 3.12\. To remove or override this effect, `G_RESOURCE_OVERLAYS` can be used to reference the compiled resource `filmholes.png` and specify the path for the relevant overlay. This environment variable has only been available since GLib 2.50 and will have no effect on versions before this.
+
+Extract `filmholes.png` from Nautilus.
+
+```
+gresource extract /usr/bin/nautilus /org/gnome/nautilus/icons/filmholes.png > filmholes.png
+
+```
+
+Edit `filmholes.png` using your preferred editor and remove the film effect from the image, leaving the transparency and dimensions intact, then overwriting the extracted image.
+
+Copy or move the extracted image where desired, such as `/usr/share/icons/` and edit `~/.profile`, adding the following export, changing `/usr/share/icons/` as needed to the location you placed the file.
+
+```
+export G_RESOURCE_OVERLAYS=/org/gnome/nautilus/icons/filmholes.png=/usr/share/icons/filmholes.png
+
+```
+
+If [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) has been installed as a dependency for another file manager that may generate thumbnails, the `Exec` line in `/usr/share/thumbnailers/ffmpegthumbnailer.thumbnailer` should be modified removing the `-f` flag.
+
+To ensure that no thumbnails remain that may already have the film effect embedded, remove the thumbnail cache.
+
+```
+rm -r ~/.cache/thumbnails
+
+```
+
+Log out and back in to your session and you should no longer have the film holes/film strip effect on your thumbnails in Nautilus.

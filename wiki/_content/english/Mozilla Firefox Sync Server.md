@@ -105,9 +105,11 @@ A sample from the nginx config:
 
 ### Client configuration
 
-To configure desktop Firefox to talk to your new Sync server, go to `about:config`, search for `services.sync.tokenServerURI` and change its value to the URL of your server with a path of `token/1.0/sync/1.5`:
+To configure desktop Firefox to talk to your new Sync server, go to `about:config`, search for `identity.sync.tokenserver.uri` and change its value to the URL of your server with a path of `token/1.0/sync/1.5`:
 
- `services.sync.tokenServerURI: http://example.com/ffsync/token/1.0/sync/1.5` 
+ `identity.sync.tokenserver.uri: http://example.com/ffsync/token/1.0/sync/1.5` 
+
+Prior to Firefox 42, the TokenServer preference name for Firefox Desktop was `services.sync.tokenServerURI`. While the old preference name will work in Firefox 42 and later, the new preference is recommended as the old preference name will be reset when the user signs out from Sync causing potential confusion.
 
 ### Firefox Account Server
 

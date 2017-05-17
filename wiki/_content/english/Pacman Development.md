@@ -7,7 +7,7 @@ Remember that if **you** think something belongs on this page, add it! The curre
 *   [1 References and Links](#References_and_Links)
 *   [2 Developer Repositories](#Developer_Repositories)
     *   [2.1 Allan McRae](#Allan_McRae)
-    *   [2.2 Dan McGee](#Dan_McGee)
+    *   [2.2 Andrew Gregory](#Andrew_Gregory)
 *   [3 Git Tips](#Git_Tips)
 
 ## References and Links
@@ -35,11 +35,10 @@ Web: [https://projects.archlinux.org/users/allan/pacman.git/](https://projects.a
 Clone: [git://projects.archlinux.org/users/allan/pacman.git](git://projects.archlinux.org/users/allan/pacman.git)
 Clone: [https://projects.archlinux.org/git/users/allan/pacman.git](https://projects.archlinux.org/git/users/allan/pacman.git)
 
-### Dan McGee
+### Andrew Gregory
 
-Web: [http://code.toofishes.net/cgit/dan/pacman.git/](http://code.toofishes.net/cgit/dan/pacman.git/)
-Clone: [git://code.toofishes.net/dan/pacman.git](git://code.toofishes.net/dan/pacman.git)
-Clone: [http://code.toofishes.net/git/dan/pacman.git](http://code.toofishes.net/git/dan/pacman.git)
+Web: [https://github.com/andrewgregory/pacman/](https://github.com/andrewgregory/pacman/)
+Clone: [https://github.com/andrewgregory/pacman.git](https://github.com/andrewgregory/pacman.git)
 
 ## Git Tips
 

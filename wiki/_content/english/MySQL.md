@@ -24,15 +24,14 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
         *   [4.2.1 Example script](#Example_script)
     *   [4.3 Holland Backup](#Holland_Backup)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 MySQL daemon cannot start](#MySQL_daemon_cannot_start)
-    *   [5.2 Unable to run mysql_upgrade because MySQL cannot start](#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start)
-    *   [5.3 Reset the root password](#Reset_the_root_password)
-    *   [5.4 Check and repair all tables](#Check_and_repair_all_tables)
-    *   [5.5 Optimize all tables](#Optimize_all_tables)
-    *   [5.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
-    *   [5.7 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
-    *   [5.8 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
-    *   [5.9 OpenRC fails to start MySQL](#OpenRC_fails_to_start_MySQL)
+    *   [5.1 Unable to run mysql_upgrade because MySQL cannot start](#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start)
+    *   [5.2 Reset the root password](#Reset_the_root_password)
+    *   [5.3 Check and repair all tables](#Check_and_repair_all_tables)
+    *   [5.4 Optimize all tables](#Optimize_all_tables)
+    *   [5.5 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
+    *   [5.6 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
+    *   [5.7 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
+    *   [5.8 OpenRC fails to start MySQL](#OpenRC_fails_to_start_MySQL)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -61,11 +60,11 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards 
 
 ```
 
-**Warning:** For security reasons, the Systemd service file for this package will prevent MariaDB from using a `datadir` under the `$HOME` hierarchy
+**Note:** For security reasons, the systemd service file contains `ProtectHome=true`, which prevents MariaDB from accessing files under the `/home`, `/root` and `/run/user` hierarchies. The `datadir` has to be in an accessible location and [owned](/index.php/Chown "Chown") by the `mysql` user and group.
 
 Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 
-**Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/mysql/my.cnf`
+**Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/mysql/my.cnf`.
 
 The following command will interactively guide you through a number of recommended security measures at the database level:
 
@@ -353,69 +352,6 @@ A python-based software package named [Holland Backup](http://hollandbackup.org/
 The main [holland](https://aur.archlinux.org/packages/holland/) and [holland-common](https://aur.archlinux.org/packages/holland-common/) packages provide the core framework; one of the sub-packages ([holland-mysqldump](https://aur.archlinux.org/packages/holland-mysqldump/), [holland-mysqllvm](https://aur.archlinux.org/packages/holland-mysqllvm/) and/or [holland-xtrabackup](https://aur.archlinux.org/packages/holland-xtrabackup/) must be installed for full operation. Example configurations for each method are in the `/usr/share/doc/holland/examples/` directory and can be copied to `/etc/holland/backupsets/`, as well as using the `holland mk-config` command to generate a base config for a named provider.
 
 ## Troubleshooting
-
-### MySQL daemon cannot start
-
-If MySQL fails to start and there is no entry in the log files, you might want to check the permissions of files in the directories `/var/lib/mysql` and `/var/lib/mysql/mysql`. If the owner of files in these directories is not `mysql:mysql`, you should do the following:
-
-```
-# chown mysql:mysql /var/lib/mysql -R
-
-```
-
-If you run into permission problems despite having followed the above, ensure that your `my.cnf` is copied to `/etc/`:
-
-```
-# cp /etc/mysql/my.cnf /etc/my.cnf
-
-```
-
-Now try and start the daemon.
-
-If you get these messages in your `/var/lib/mysql/hostname.err`:
-
-```
-[ERROR] Can't start server : Bind on unix socket: Permission denied
-[ERROR] Do you already have another mysqld server running on socket: /var/run/mysqld/mysqld.sock ?
-[ERROR] Aborting
-
-```
-
-the permissions of `/var/run/mysqld` could be the culprit.
-
-```
-# chown mysql:mysql /var/run/mysqld -R
-
-```
-
-If you run mysqld and the following error appears:
-
-```
-Fatal error: Can’t open and lock privilege tables: Table ‘mysql.host’ doesn’t exist
-
-```
-
-Run the following command from the `/usr` directory to install the default tables:
-
-```
-# cd /usr
-# mysql_install_db --user=mysql --ldata=/var/lib/mysql/
-
-```
-
-If you have datadir in /home /root or /run/user or a subdirectory of those, from 10.1.16 onwards, due to enhanced security, you need to move your datadir to a path or [edit](/index.php/Edit "Edit") `mysqld.service` to change the default
-
-```
-# ProtectHome=true
-
-```
-
-to:
-
-```
-# ProtectHome=false
-
-```
 
 ### Unable to run mysql_upgrade because MySQL cannot start
 

@@ -184,7 +184,7 @@ Multiple resolutions can be specified, including the default `auto`, so it is re
 **Note:**
 
 *   Only the modes supported by the graphics card via [VESA BIOS Extensions](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions") can be used. To view the list of supported modes, install [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) and run `hwinfo --framebuffer` as root. Alternatively, enter the GRUB command line and run the command `videoinfo`.
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver (tested with GeForce GTX 970, driver: nvidia 370) accepts `GRUB_GFXMODE` in format `*<width>*x*<height>*-*<depth>*` (e.g. `1920x1200-24`, but not `1920x1200x24`).
+*   Earlier versions of the [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver (tested with GeForce GTX 970, driver: nvidia 370) accepts `GRUB_GFXMODE` in format `*<width>*x*<height>*-*<depth>*` (e.g. `1920x1200-24`, but not `1920x1200x24`). This does not appear to apply to newer cards and drivers. Pascal cards with more recent drivers (tested with GeForce GTX 1060 and nvidia 381.22) will not work with the suggested format and attempting to use it results in serious issues, including but not limited to system crashes and hard locks. The current driver and cards are best configured with `GRUB_GFXMODE` in the standard `*<width>*x*<height>*x*<depth>*` format.
 *   Make sure to run `grub-mkconfig -o /boot/grub/grub.cfg` after making changes.
 
 If this method does not work for you, the deprecated `vga=` method will still work. Just add it next to the `"GRUB_CMDLINE_LINUX_DEFAULT="` line in `/etc/default/grub` for example: `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` will give you a `1024x768` resolution.

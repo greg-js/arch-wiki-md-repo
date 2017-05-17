@@ -10,6 +10,7 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
     *   [3.3 Sametime protocol](#Sametime_protocol)
     *   [3.4 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
     *   [3.5 Skype plugin](#Skype_plugin)
+    *   [3.6 Rocket.Chat plugin](#Rocket.Chat_plugin)
 *   [4 Security](#Security)
 *   [5 Privacy](#Privacy)
     *   [5.1 Pidgin-OTR](#Pidgin-OTR)
@@ -100,6 +101,31 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 
 Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) package.
 
+### Rocket.Chat plugin
+
+Install [mercurial](https://www.archlinux.org/packages/?name=mercurial) and [discount](https://aur.archlinux.org/packages/discount/) packages.
+
+Type:
+
+```
+hg clone [https://bitbucket.org/EionRobb/purple-rocketchat/](https://bitbucket.org/EionRobb/purple-rocketchat/)
+cd purple-rocketchat
+make
+sudo make install
+
+```
+
+Following files will be installed:
+
+```
+/usr/lib/purple-2/librocketchat.so
+/usr/share/pixmaps/pidgin/protocols/16/rocketchat.png
+/usr/share/pixmaps/pidgin/protocols/48/rocketchat.png
+/usr/share/pixmaps/pidgin/protocols/22/rocketchat.png
+```
+
+The 'Rocket.Chat' protocol should be now available when creating an account.
+
 ## Security
 
 Pidgin uses Libpurple 2 which stores passwords unencrypted (in plaintext) in $HOME/.purple/account.xml, see [[1]](https://developer.pidgin.im/wiki/PlainTextPasswords). You can store them in a keyring by using a plugin like:
@@ -145,6 +171,7 @@ The plugin is available on AUR as [pidgin-gpg-git](https://aur.archlinux.org/pac
 Arch has other Pidgin-related packages. Here are the most popular (for a thorough list, search the AUR):
 
 *   [pidgin-libnotify](https://www.archlinux.org/packages/?name=pidgin-libnotify) - Libnotify support, for theme-consistent notifications
+*   [purple-libnotify-plus](https://aur.archlinux.org/packages/purple-libnotify-plus/) - Notifications with Libnotify which does work with notify-osd. It might matter for WMs without DE, like i3, the original pidgin-libnotify instead uses plain messagebox there.
 *   [guifications](https://www.archlinux.org/packages/?name=guifications) - Toaster-style popup notifications
 *   [microblog-purple](https://aur.archlinux.org/packages/microblog-purple/) - Libpurple plug-in supporting microblog services like Twitter
 *   [pidgin-latex](https://aur.archlinux.org/packages/pidgin-latex/) - A small latex plugin for pidgin. Put math between $$ and have it rendered (recepient also needs to have this installed)

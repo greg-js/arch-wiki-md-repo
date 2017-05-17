@@ -2,38 +2,28 @@
 
 其名称bilibili源于当时热门动画魔法的禁书目录和某科学的超电磁炮中的人物御坂美琴的绰号。
 
-## Contents
+## 播放
 
-*   [1 概述](#.E6.A6.82.E8.BF.B0)
-*   [2 Download?](#Download.3F)
-*   [3 Chrome](#Chrome)
-*   [4 独立播放器](#.E7.8B.AC.E7.AB.8B.E6.92.AD.E6.94.BE.E5.99.A8)
-*   [5 Firefox](#Firefox)
+目前bilibili已经支持html5播放。
 
-## 概述
+其他方法：
 
-B站的播放器,不管在firefox还是chrome上都有不同程度的问题
+*   [you-get](https://www.archlinux.org/packages/?name=you-get)
 
-特别是优酷源无法播放
+ `you-get -p [player] [url] #player是要使用的播放器（如mpv) url是播放页面网址` 
 
-而且发热巨大,让人无法忍受(flash?)
+*   [moonplayer](https://aur.archlinux.org/packages/moonplayer/) 需要下载插件，参见[[1]](https://github.com/coslyk/moonplayer-plugins)播放。
 
-## Download?
+*   [bilidan-git](https://aur.archlinux.org/packages/bilidan-git/)，github地址：[BiliDan](https://github.com/m13253/BiliDan)。
 
-如果你只是要下载,请参考[you-get](https://github.com/soimort/you-get)
+*   microcai开发的[bilibili_player](https://github.com/microcai/bilibili_player)。
 
-类似的项目还有 [Iscript](https://github.com/PeterDing/iScript)
+## 下载
 
-## Chrome
+*   you-get
 
-Chrome浏览器下有Zhuogu开发的[bilibili助手](https://github.com/Zhuogu/bilibili-helper),可以替换播放器为HTML5
+ `you-get [url]  #url即是视频播放页面的网址` 
 
-## 独立播放器
+*   github项目[Iscript](https://github.com/PeterDing/iScript)
 
-首要推荐m13253开发的[BiliDan](https://github.com/m13253/BiliDan),[AUR](https://aur.archlinux.org/packages/bilidan-git/)也有其打包
-
-次要有microcai开发的[bilibili_player](https://github.com/microcai/bilibili_player),虽然实现比bilidan更胜一筹,但Microcai大神似乎懒得维护他,看其代码时候在kde中有更加微妙的展现,期待有人测试.
-
-## Firefox
-
-安装 [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) 包可以解决乱码问题
+*   浏览器插件 如[DownloadHelper](http://www.downloadhelper.net/)

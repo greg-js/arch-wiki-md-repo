@@ -171,6 +171,17 @@ If "software rendering" is not "false", then there is a problem with your hardwa
 
 If "direct rendering" is not "yes", then there is likely a problem with your system configuration.
 
+If glxinfo works but not matlab, you can try to run:
+
+ `$ export LD_PRELOAD=/usr/lib/libstdc++.so; export LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/; matlab -nodesktop -nosplash -r "opengl info; exit" | grep Software` 
+
+If its works, you can edit Matlab launcher script to add:
+
+```
+export LD_PRELOAD=/usr/lib/libstdc++.so
+export LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/
+```
+
 ### Fonts for figures
 
 **Note:** This section only applies to R2014a and earlier as starting with R2014b MATLAB uses True Type Fonts. So as long as: `$ fc-match Helvetica` returns a font, figure fonts should work as expected.

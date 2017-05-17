@@ -16,7 +16,8 @@
 *   [8 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
 *   [9 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
 *   [10 No audio in certain games](#No_audio_in_certain_games)
-    *   [10.1 FMOD sound engine](#FMOD_sound_engine)
+    *   [10.1 Configure PulseAudio](#Configure_PulseAudio)
+    *   [10.2 FMOD sound engine](#FMOD_sound_engine)
 *   [11 Missing libc](#Missing_libc)
 *   [12 Missing libGL](#Missing_libGL)
 *   [13 Missing vgui2_s.so](#Missing_vgui2_s.so)
@@ -257,6 +258,33 @@ $ glxinfo32 | grep OpenGL.
 ## No audio in certain games
 
 If there is no audio in certain games, and the suggestions provided in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") do not fix the problem, [#Native runtime](#Native_runtime) may provide a successful workaround. (See the note about "Steam Runtime issues" at the top of this section.)
+
+### Configure PulseAudio
+
+Some games are using alsa instead of pulse. Check your .asoundrc in home directory or/and the /etc/asound.conf and make sure that the following is in this file:
+
+```
+ctl.dmixer {
+  type pulse
+}
+
+pcm.pulse {
+  type pulse
+}
+
+ctl.pulse {
+  type pulse
+}
+
+pcm.!default {
+  type pulse
+}
+
+ctl.!default {
+  type pulse
+}
+
+```
 
 ### FMOD sound engine
 

@@ -437,29 +437,42 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 ##### Pan-CJK
 
+*   思源字体：Adobe与Google合资开发的，囊括简体中文、繁体中文、日文、韩文字形和来自 Source Sans 字体家族的拉丁文、希腊文和西里尔文字形的 OpenType 字体。
+    *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - 思源黑体，无衬线字体。
+    *   [adobe-source-han-serif-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-otc-fonts) - 思源宋体，衬线字体。
+
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Google Noto CJK 字体， 提供简体中文、繁体中文、日文、韩文一致的设计和外观。它是基于 [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) 重贴的商标。
-*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - 思源黑体， 是由 Adobe 与 Google 合资开发的，囊括简体中文、繁体中文、日文、韩文字形和来自 Source Sans 字体家族的拉丁文、希腊文和西里尔文字形的高质量无衬线 OpenType 字体。
+
+*   文泉驿
+    *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑，无衬线形式字体。
+    *   [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite) - 文泉驿微米黑light版（笔画更细）。
 
 ##### 中文字
 
-*   [adobe-source-han-serif-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-otc-fonts) - 思源宋体CJKV(中日韩越)字体
-*   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts) - 思源宋体简体中文部分
-*   [adobe-source-han-serif-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-tw-fonts) - 思源宋体繁体中文部分
-*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - 思源黑体CJKV(中日韩越)字体
-*   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑体简体中文部分
-*   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑体繁体中文部分
-*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - 谷歌noto CJKV(中日韩越)字体（与思源黑体高度相似，二者为google和adobe联合开发的一款字体的不同名字，存在少量细微差异）。
-*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑，无衬线形式的高质量中日韩越 (CJKV) 轮廓字体。
-*   [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite) - 文泉驿微米黑light版（笔画更细）。
-*   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驿正黑，黑体 (无衬线) 的中文轮廓字体，附带文泉驿点阵宋体 (也支持部分日韩字符)。
-*   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - 文泉驿点阵宋体 (衬线) 中文字体
+*   思源字体
+    *   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts) - 思源宋体简体中文部分
+    *   [adobe-source-han-serif-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-tw-fonts) - 思源宋体繁体中文部分
+    *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑体简体中文部分
+    *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑体繁体中文部分
+
+*   文泉驿字体
+    *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驿正黑体，黑体 (无衬线) 的中文轮廓字体，附带文泉驿点阵宋体 (也支持部分日韩字符)。
+    *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - 文泉驿点阵宋体 (衬线) 中文字体。
+
 *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - **楷书** (带有笔触) Unicode 字体 (推荐启用反锯齿)
 *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - **明体** (印刷) Unicode 字体
 *   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - **新宋**字体，之前为 ttf-fireflysung
 *   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - 中文、越南文 TrueType 字体
-*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体
-*   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - windows10简体中文字体。
-*   [ttf-ms-win10-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win10-zh_tw/) - windows10繁体中文字体。
+
+*   台湾教育部标准字体
+    *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体
+    *   [ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/) - 台湾教育部发行的[NS11643标准的中文交换码全字库](http://data.gov.tw/node/5961)，包含明体、正宋体及正楷体。
+
+*   windows字体
+    *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - windows8简体中文字体。
+    *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - windows8繁体中文字体。
+    *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - windows10简体中文字体。
+    *   [ttf-ms-win10-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win10-zh_tw/) - windows10繁体中文字体。
 
 ##### 日文字
 

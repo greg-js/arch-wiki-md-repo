@@ -89,7 +89,7 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 There are three ways of installing Catalyst on your system. One way is to use [Vi0L0's](https://aur.archlinux.org/account/Vi0l0/) (Arch's unofficial Catalyst maintainer) repository. This repository contains all the necessary packages. The second method you can use is the AUR; PKGBUILDs offered here are also made by Vi0L0 and are the same he uses to built packages for his repository. Lastly, you can install the driver directly from AMD.
 
-Before choosing the method you prefer, you will have to see which driver you need. Since Catalyst 12.4, AMD has separated its development for Radeon HD 2xxx, 3xxx and 4xxx cards into the **legacy** Catalyst driver. For Radeon HD 5xxx to Rx 300, there is the regular Catalyst driver. Regardless of the driver you need, you will also need the Catalyst utilities.
+Before choosing the method you prefer, you will have to see which driver you need. For Radeon HD 5xxx to Rx 300, there is the regular Catalyst driver. The Radeon HD 2xxx, 3xxx and 4xxx cards need the **legacy** Catalyst driver. Regardless of the driver you need, you will also need the Catalyst utilities.
 
 **Note:** After the instructions for every method of installing, you will find general instructions **everyone** has to perform, regardless of the method you used.
 
@@ -101,9 +101,9 @@ If you do not fancy building the packages from the [AUR](/index.php/AUR "AUR"), 
 
 Vi0L0 has three different Catalyst repositories, each having different drivers:
 
-*   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, it contains the latest (stable or beta) Catalyst release.
-*   *catalyst-stable* for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, with the latest stable driver.
-*   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories") for the legacy Catalyst driver needed by Radeon HD 2xxx, 3xxx and 4xxx cards.
+*   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, it contains the latest beta release (Catalyst 15.12).
+*   *catalyst-stable* for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, with the latest stable release (Catalyst 15.9).
+*   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories") for the legacy Catalyst driver needed by Radeon HD 2xxx, 3xxx and 4xxx cards (Catalyst 12.4).
 
 To enable one of these, follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Remember to add the chosen repository **above all other repositories** in `pacman.conf`.
 

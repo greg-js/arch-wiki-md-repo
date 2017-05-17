@@ -30,7 +30,7 @@ Then add the mediawiki sites to the configuration file. For example, the followi
 
 ```
 
-Where ***Archwiki*** is the name for the site. ***https:/wiki.archlinux.org/*** is the url of the site and ***username*** and ***password*** is your username and password of this site. ***Main Page*** is the default page opened when you connect to the site.
+Where ***Archwiki*** is the name for the site. ***[https://wiki.archlinux.org/](https://wiki.archlinux.org/)*** is the url of the site and ***username*** and ***password*** is your username and password of this site. ***Main Page*** is the default page opened when you connect to the site.
 
 Other sites can also be added by appending the configuration list to the list variable **mediawiki-site-alist**.
 

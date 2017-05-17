@@ -238,6 +238,17 @@ If both the host and the container are Arch Linux, then one could, for example, 
 
 ```
 
+Or you can specify per-container bind using the file:
+
+ `/etc/systemd/nspawn/*my-container*.nspawn` 
+```
+[Files]
+Bind=/var/cache/pacman/pkg
+
+```
+
+See [#Specify per-container settings](#Specify_per-container_settings).
+
 ### Configure networking
 
 For the most simple setup, allowing outgoing connections to the internet, you can use [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") for network management and DHCP and `systemd-resolved` for DNS.

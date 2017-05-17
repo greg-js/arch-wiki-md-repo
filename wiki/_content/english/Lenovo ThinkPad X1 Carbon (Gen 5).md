@@ -10,6 +10,7 @@
     *   [2.2 Display](#Display)
     *   [2.3 TrackPoint Scrolling](#TrackPoint_Scrolling)
     *   [2.4 Lenovo ThinkPad USB-C Dock](#Lenovo_ThinkPad_USB-C_Dock)
+    *   [2.5 Thunderbolt 3 Dock](#Thunderbolt_3_Dock)
 
 ## Model description
 
@@ -64,12 +65,7 @@ There are two options for displays:
 
 ### TrackPoint Scrolling
 
-To enable TrackPoint middle-button scrolling, [install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package and add the following line to your [.xinitrc](/index.php/.xinitrc ".xinitrc"):
-
-```
-xinput set-prop "ImPS/2 Generic Wheel Mouse" "libinput Scroll Method Enabled" 0 0 1
-
-```
+TrackPoint middle-button scrolling is working out of the box (16.05.2017)
 
 ### Lenovo ThinkPad USB-C Dock
 
@@ -95,3 +91,7 @@ It works nearly perfect out of the box with Kernel 4.10.13\. The only thing that
 Installing [r8152-dkms](https://aur.archlinux.org/packages/r8152-dkms/) fixes this (the DKMS module adds the version 0x6010 to the module).
 
 Even hot plugging works: unplugging the dock while a display is connected just lets all the devices disappear. Replugging it later works, all the USB devices come back up automagically, thought you might need to issue a xrandr to get the display showing again (tested with Xorg based i3 setup).
+
+### Thunderbolt 3 Dock
+
+The HP Thunderbolt 3 Dock is working out of the box.

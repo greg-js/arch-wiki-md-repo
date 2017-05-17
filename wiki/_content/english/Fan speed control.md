@@ -15,6 +15,8 @@ For some Dell laptops, an alternative is [i8kutils](#i8kutils).
     *   [4.2 Configuration](#Configuration_2)
     *   [4.3 Disable BIOS fan speed control](#Disable_BIOS_fan_speed_control)
     *   [4.4 Installation as a service](#Installation_as_a_service)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 There are no working fan sensors, all readings are 0.](#There_are_no_working_fan_sensors.2C_all_readings_are_0.)
 
 ## Sensor driver
 
@@ -232,3 +234,62 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 ```
+
+## Troubleshooting
+
+### There are no working fan sensors, all readings are 0.
+
+**Warning:** This section is for power users. Do not follow it if you do not know what you are doing.
+
+First, find a directory containing your required files:
+
+```
+# find /sys/class/hwmon/hwmon*/ -name "fan*"
+
+```
+
+And the output should look like this:
+
+```
+/sys/class/hwmon/**hwmon2**/fan1_input
+/sys/class/hwmon/**hwmon2**/fan1_label
+
+```
+
+This means that files you will need are located in `/sys/class/hwmon/**hwmon2**/`.
+
+Now check the current fan speed:
+
+```
+# cat /sys/class/hwmon/**hwmon2**/pwm1
+
+```
+
+The output should be from 0 to 255.
+
+Now check if you are able to control fan speed by running some of these commands (note value between 0 to 255\. 0 means fan is completely stopped):
+
+```
+# echo "100" > /sys/class/hwmon/**hwmon2**/pwm1
+# echo "200" > /sys/class/hwmon/**hwmon2**/pwm1
+# echo "255" > /sys/class/hwmon/**hwmon2**/pwm1
+
+```
+
+If you can hear how fan noise changes according to fan speed values given above, then you are on the right path and `pwmconfig` indeed shows incorrect message.
+
+Open first console and execute:
+
+```
+# watch -n 1 "echo 2 > /sys/class/hwmon/hwmon2/pwm1_enable"
+
+```
+
+Then open second console and execute this:
+
+```
+# pwmconfig
+
+```
+
+Once you are done and the configuration file is generated, you should stop the first console.

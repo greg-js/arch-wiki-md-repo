@@ -163,7 +163,7 @@ The recommended theme for a pleasant appearance in GTK+ applications is [breeze-
 
 In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`. It might also help to uncheck the option to *Apply colors to non-Qt applications* under *System Settings* > *Colors*.
 
-Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly useable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *GNOME Application Style (GTK)* > *Select a GTK2 Theme:*. Numix-Frost-Light looks similar to Breeze.
+Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly usable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *GNOME Application Style (GTK)* > *Select a GTK2 Theme:*. Numix-Frost-Light looks similar to Breeze.
 
 ##### Widgets
 

@@ -37,11 +37,12 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [8.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [9.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
-    *   [9.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-    *   [9.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-    *   [9.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-    *   [9.6 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
+    *   [9.2 UEFI (ovmf) compatability](#UEFI_.28ovmf.29_compatability)
+    *   [9.3 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+    *   [9.4 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
+    *   [9.5 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+    *   [9.6 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+    *   [9.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
 *   [10 See also](#See_also)
 
 ## Prerequisites
@@ -721,6 +722,112 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 	...
 </features>
 ...
+```
+
+### UEFI (ovmf) compatability
+
+With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible)
+
+The other thing that could cause error 43 is VBIOS, that does not support UEFI.
+
+To check this get and compile the software "rom-parser"
+
+```
+$ git clone https://github.com/awilliam/rom-parser
+$ cd rom-parser
+$ make
+
+```
+
+Then dump the rom of you vga card
+
+```
+
+# cd /sys/bus/pci/devices/0000:01:00.0/
+# echo 1 > rom
+# cat rom > /tmp/image.rom
+# echo 0 > rom
+
+```
+
+and test it with
+
+```
+./rom-parser /tmp/image.rom
+
+Valid ROM signature found @600h, PCIR offset 190h
+	PCIR: type 0 (x86 PC-AT), vendor: 10de, device: 1184, class: 030000
+	PCIR: revision 0, vendor revision: 1
+Valid ROM signature found @fa00h, PCIR offset 1ch
+	PCIR: type 3 (EFI), vendor: 10de, device: 1184, class: 030000
+	PCIR: revision 3, vendor revision: 0
+		EFI: Signature Valid, Subsystem: Boot, Machine: X64
+	Last image
+
+```
+
+To be UEFI compatible, you need a "type 3 (EFI)" in the result.
+
+If not - try to find newer vbios with UEFI support.
+
+Updated vbios can be used in the VM without flashing.
+
+QEMU:
+
+```
+-device vfio-pci,host=07:00.0,......,romfile=/path/to/your/gpu/bios.bin \
+
+```
+
+libvirt:
+
+```
+   <hostdev>
+     ...
+     <rom file='/path/to/your/gpu/bios.bin'/>
+     ...
+   </hostdev
+
+```
+
+One should compare vbios versions in host and guest systems using [nvflash tool](https://www.techpowerup.com/download/nvidia-nvflash/) (linux versions under *Show more versions*) or [GPU-Z](https://www.techpowerup.com/download/techpowerup-gpu-z/) (in windows guest)
+
+```
+./nvflash --version
+...
+Version               : 80.04.XX.00.97
+...
+UEFI Support          : No
+UEFI Version          : N/A
+UEFI Variant Id       : N/A ( Unknown )
+UEFI Signer(s)        : Unsigned
+...
+
+```
+
+```
+# checking file
+./nvflash --version NV299MH.rom
+...
+Version               : 80.04.XX.00.95
+...
+UEFI Support          : Yes
+UEFI Version          : 0x10022 (Jul  2 2013 @ 16377903 )
+UEFI Variant Id       : 0x0000000000000004 ( GK1xx )
+UEFI Signer(s)        : Microsoft Corporation UEFI CA 2011
+...
+
+```
+
+If external rom did not work as it should - flashing is imminent.
+
+```
+# In order to avoid the irreparable damage to your graphics
+# adapter it is necessary to unload the NVIDIA kernel driver first
+sudo rmmod nvidia_modeset nvidia 
+# official vbios flashing without special flags
+sudo ./nvflash romfile.bin
+
 ```
 
 ### Unexpected crashes related to CPU exceptions
