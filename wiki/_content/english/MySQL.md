@@ -50,7 +50,7 @@ Alternative implementations are:
 
 **Tip:**
 
-*   If the database (in `/var/lib/mysql`) resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
+*   If the database (in `/var/lib/mysql`) resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
 *   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
 Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards run the following command **before starting** the `mariadb.service`:

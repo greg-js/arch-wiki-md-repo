@@ -28,7 +28,7 @@ This PC contains an intel wireless card, that is supported by the ipw2200 driver
 
 # Installing Wacom Tablet
 
-See [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet").
+See [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet").
 
 # Optimizing battery lifetime
 

@@ -121,7 +121,7 @@ install CD version
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
-| [Lenovo ThinkPad T560](/index.php?title=Lenovo_ThinkPad_T560&action=edit&redlink=1 "Lenovo ThinkPad T560 (page does not exist)") | Yes | Yes | Yes | Yes | Yes | No* | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
+| [Lenovo ThinkPad T560](/index.php/Lenovo_ThinkPad_T560 "Lenovo ThinkPad T560") | Yes | Yes | Yes | Yes | Yes | No* | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
 
 #### W series
 
@@ -299,7 +299,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 ### Lenovo ThinkPad T560
 
 *   Bluetooth couldn't be enabled (no out of the box experience)
-*   No automatic brightness adjusting when on battery/AC
+*   No automatic brightness adjusting when switching power supply battery <-> AC
 
 *   Hardware specifications of test device
     *   CPU: Intel CORE i7-6600U @ 2.60GHz

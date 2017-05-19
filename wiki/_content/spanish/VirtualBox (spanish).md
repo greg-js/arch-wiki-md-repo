@@ -205,7 +205,7 @@ Por último, puede utilizar [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtual
 
 Remítase al [manual de VirtualBox](https://www.virtualbox.org/manual) para aprender cómo crear máquinas virtuales.
 
-**Advertencia:** Si va a guardar imágenes de discos virtuales en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), antes de crear cualquier imagen, debería considerar desactivar [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") para el directorio de destino de estas imágenes.
+**Advertencia:** Si va a guardar imágenes de discos virtuales en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), antes de crear cualquier imagen, debería considerar desactivar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") para el directorio de destino de estas imágenes.
 
 ## Pasos para instalar Arch Linux como sistema huésped
 

@@ -62,24 +62,33 @@
 
 **提示：** 您最好是使用ArchLinux的[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")来安装驱动，而不是直接到[英伟达官网](http://www.nvidia.cn)去下载驱动，因为这样会在更新系统时同时更新。
 
-1.访问 NVIDIA [中文驱动下载页面](http://www.nvidia.cn/Download/index.aspx?lang=cn)来找到给定显卡的合适驱动。也可以检查[老显卡列表](http://www.nvidia.com/object/IO_32667.html).
+1\. 如果你不知道显卡情况，可运行以下命令获知：
 
-**Note:** For the very latest GPU models, it may be required to install [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) from the [AUR](/index.php/AUR "AUR"), since the stable drivers may not support the newly introduced features. Try the stable ones first (see bellow).
+	 `$ lspci -k | grep -A 2 -E "(VGA|3D)"` 
 
-2\. Install the appropriate driver for your card:
+2\. 也从以下渠道可确定你的显卡型号以及下载相应的版本：
 
-*   For GeForce 8 series and newer [NVC0 and newer] cards, install [nvidia](https://www.archlinux.org/packages/?name=nvidia) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
-*   For GeForce 6/7 series cards [NV40-NVAF], install [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
-*   For GeForce 5 FX series cards [NV30-NV38], install [nvidia-173xx](https://aur.archlinux.org/packages/nvidia-173xx/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   For GeForce2 MX, GeForce3 and GeForce4 series cards [NV11 and NV17-NV28], install [nvidia-96xx](https://aur.archlinux.org/packages/nvidia-96xx/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   查找代号(如 NV50, NVC0等）： [英伟达代号查询页](https://nouveau.freedesktop.org/wiki/CodeNames/)
+*   如果在上面的页面找不到你的型号的显卡，可到[英伟达历史型号列表页](http://www.nvidia.com/object/IO_32667.html)查找。
+*   驱动下载： [英伟达驱动下载站](http://www.nvidia.com/Download/index.aspx)
 
-	nvidia {-173xx,-96xx}-utils 包会跟 libgl 冲突，所以安装的时候，如果 pacman 询问您移除 libgl 并且因为依赖无法移除，您可以使用 `# pacman -Rdd libgl` 移除 libgl.
+3\. 为你的显卡安装和合适的驱动：
 
-**注意:** 假如您是使用最新的显卡，您也许需要使用[AUR](/index.php/AUR "AUR")上的驱动[nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)和[nvidia-utils-beta](https://aur.archlinux.org/packages/nvidia-utils-beta/)，因为稳定版的驱动不支持一些新引入的特性。
+*   GeForce 400 及以上版本安装 [nvidia](https://www.archlinux.org/packages/?name=nvidia) 或者 [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) 。
 
-**注意:** 在64位的操作系统上，假如您想发挥32位的程序发挥好nvidia-utils的优势，还必须安装lib32的包(例如[lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) 或者 [lib32-nvidia-utils-beta](https://aur.archlinux.org/packages/lib32-nvidia-utils-beta/))。
+**注意:** 假如您是使用最新的显卡，如果以上两个驱动安装后都不能正常工作，您也许需要使用[nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)和[nvidia-utils-beta](https://aur.archlinux.org/packages/nvidia-utils-beta/)，他们引入了一些新的特性。
 
-3\. **重新启动您的计算机**， nvidia{,-304xx,-173xx,-96xx}-utils包含一个文件可以把nouveau加入模块黑名单。重新启动会使黑名单生效。
+*   GeForce 8000/9000、ION 以及 100-300（NV5x, NV8x, NV9x and NVAx）等2006-2010的显卡型号，安装[nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) 或者 [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) 。
+
+*   FGeForce 6000/7000 （NV4x and NV6x）等2004-2006的显卡型号，安装[nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) 或[nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) 。
+
+*   更老的显卡型号参看 [#Unsupported drivers](#Unsupported_drivers).
+
+**注意:** nvidia {-173xx,-96xx}-utils 包会跟 libgl 冲突，所以安装的时候，如果 pacman 询问您移除 libgl 并且因为依赖无法移除，您可以使用 `# pacman -Rdd libgl` 移除 libgl。
+
+4\. 在64位的操作系统上，假如您想32位的程序发挥好nvidia-utils的优势，还必须启用[multilib](/index.php/Multilib "Multilib")源来安装lib32的包(例如[lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) 或者 [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils))。
+
+5\. **重新启动您的计算机**， 以使得nouveau加入模块的黑名单生效。
 
 一旦驱动安装完毕，就可以进入下一步了：[配置英伟达驱动](#.E9.85.8D.E7.BD.AE)。
 

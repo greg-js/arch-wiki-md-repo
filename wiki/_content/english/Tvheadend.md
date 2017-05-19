@@ -11,13 +11,15 @@ Tvheadend is a TV streaming server and recorder. Tvheadend supports DVB-S/S2, DV
 
 ## Installation
 
-Tvheadend is available from the [AUR](/index.php/AUR "AUR") as [tvheadend](https://aur.archlinux.org/packages/tvheadend/) and [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/). The development version is recommended, as it has many new features and capabilities.
+Tvheadend is available from the [AUR](/index.php/AUR "AUR") as [tvheadend](https://aur.archlinux.org/packages/tvheadend/) and [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/) (development branch).
+
+Since v4.2.1, [tvheadend](https://aur.archlinux.org/packages/tvheadend/) has been updated with the features and capabilities of the development branch, so featurewise they're roughly on par and [tvheadend](https://aur.archlinux.org/packages/tvheadend/) should be the more stable choice.
 
 ### HDHomeRun
 
 HDHomeRun support should be working by default in the [TVheadend](https://aur.archlinux.org/packages/TVheadend/) package.
 
-By default [Tvheadend-git](https://aur.archlinux.org/packages/Tvheadend-git/) does not have HDHomeRun support enabled. To enable it you will need to edit the PKGBUILD to add `libhdhomerun` to the depends list. In the build() list remove `--disable-hdhomerun_static` and add `--enable-hdhomerun_client`.
+By default [Tvheadend-git](https://aur.archlinux.org/packages/Tvheadend-git/) does not have HDHomeRun support enabled. To enable it you will need to edit the PKGBUILD to add `libhdhomerun` to the depends list. In the build() list remove `--disable-hdhomerun_static` and add `--enable-hdhomerun_client`. This trick can also be used for [tvheadend](https://aur.archlinux.org/packages/tvheadend/) to link it dynamically to the most recent [libhdhomerun](https://aur.archlinux.org/packages/libhdhomerun/) instead of statically to an embedded one.
 
 ## Usage
 
@@ -25,7 +27,7 @@ Once Tvheadend is installed [start](/index.php/Start "Start")/[enable](/index.ph
 
 ## Configuration
 
-Once the service is running configuration of Tvheadend is done through a web interface on [localhost:9981](http://localhost:9981).
+Once the service is running, configuration of Tvheadend is done through a web interface on [localhost:9981](http://localhost:9981).
 
 The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.
 

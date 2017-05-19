@@ -79,9 +79,7 @@ This is a good time to make sure the program is working correctly.
 
 When you run `makepkg`, it will look for a `PKGBUILD` file in the present working directory. If a `PKGBUILD` file is found it will download the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file that can be installed with `pacman -U *<package file>*`.
 
-To begin with a new package, you should first create an empty working directory, (preferably `~/abs/**pkgname**`), change into that directory, and create a `PKGBUILD` file. You can either copy the prototype PKGBUILD `/usr/share/pacman/PKGBUILD.proto` to your working directory or copy a `PKGBUILD` from a similar package. The latter may be useful if you only need to change a few options.
-
-**Warning:** Use only the PKGBUILD prototypes provided in the [pacman](https://www.archlinux.org/packages/?name=pacman) package (PKGBUILD-split.proto, PKGBUILD-vcs.proto and PKGBUILD.proto). The prototypes files in the [abs](https://www.archlinux.org/packages/?name=abs) package and in [the ABS git repository](https://projects.archlinux.org/abs.git/tree/prototypes) are significantly out of date and should not be used. See [FS#34485](https://bugs.archlinux.org/task/34485).
+To begin with a new package, you should first create an empty working directory, change into that directory, and create a `PKGBUILD` file. You can either copy the prototype PKGBUILD from the `/usr/share/pacman/` directory to your working directory or copy a `PKGBUILD` from a similar package. The latter may be useful if you only need to change a few options.
 
 ### Defining PKGBUILD variables
 
@@ -209,7 +207,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 
 1.  Download the source tarball of the software you want to package.
 2.  Try compiling the package and installing it into an arbitrary directory.
-3.  Copy over the prototype `/usr/share/pacman/PKGBUILD.proto` and rename it to `PKGBUILD` in a temporary working directory -- preferably `~/abs/`.
+3.  Copy over the prototype `/usr/share/pacman/PKGBUILD.proto` and rename it to `PKGBUILD` in a temporary working directory.
 4.  Edit the `PKGBUILD` according to the needs of your package.
 5.  Run `makepkg` and see whether the resulting package is built correctly.
 6.  If not, repeat the last two steps.

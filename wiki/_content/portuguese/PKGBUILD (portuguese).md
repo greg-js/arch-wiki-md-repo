@@ -246,7 +246,7 @@ Cada função é executada em [chroot](/index.php/Chroot "Chroot") dentro do dir
 **Tip:**
 
 *   Um protótipo de `.install` é fornecido em [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
-*   [Hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") fornecem funcionalidade similar.
+*   [Hooks do pacman](/index.php/Pacman#Hooks "Pacman") fornecem funcionalidade similar.
 
 **Note:** Não termine o script com `exit`. Isso evitaria as funções contidas de serem executadas.
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-02，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=429247)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-18，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=477222)可以查看翻译后英文页面的改动。
 
 [Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community "Community")仓库。本文介绍用户访问和使用AUR的方法。
 
@@ -40,6 +40,7 @@
     *   [9.13 为啥某个软件包从AUR消失了?](#.E4.B8.BA.E5.95.A5.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8EAUR.E6.B6.88.E5.A4.B1.E4.BA.86.3F)
     *   [9.14 我要咋找出从AUR里消失的软件包?](#.E6.88.91.E8.A6.81.E5.92.8B.E6.89.BE.E5.87.BA.E4.BB.8EAUR.E9.87.8C.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.3F)
     *   [9.15 如何查找已经安装但是从 AUR 消失的软件包](#.E5.A6.82.E4.BD.95.E6.9F.A5.E6.89.BE.E5.B7.B2.E7.BB.8F.E5.AE.89.E8.A3.85.E4.BD.86.E6.98.AF.E4.BB.8E_AUR_.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [9.16 想知道AUR 里都有啥 ？](#.E6.83.B3.E7.9F.A5.E9.81.93AUR_.E9.87.8C.E9.83.BD.E6.9C.89.E5.95.A5_.EF.BC.9F)
 *   [10 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
 
 ## 导读
@@ -49,6 +50,7 @@
 *   确保 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件包组 已被安装 (`pacman -S --needed base-devel`)。
 *   浏览[#FAQ](#FAQ)获取常见问题的答案。
 *   在`/etc/makepkg.conf`中，针对处理器使用合适的CFLAGS、CXXFLAGS编译参数，以优化软件包编译。通过设置MAKEFLAGS变量，可以启用多线程编译，使用多核心处理器的话，将大大减少编译时间。详情参见[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")。
+*   也可以通过 SSH 连接到 AUR: 运行 `ssh aur@aur.archlinux.org help` 获得可用指令的列表。
 
 ## 历史
 
@@ -71,18 +73,11 @@ AUR提供了方便人们访问的[网页接口](https://aur.archlinux.org/)，�
 1.  从AUR下载包含[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")和其他安装文件（比如 [systemd](/index.php/Systemd "Systemd") 和补丁，通常不是实际代码）的tar包。
 2.  用命令 `tar -xvf packagename.tar.gz` 解包到一个仅用于编译AUR的空闲文件夹。
 3.  验证[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")和其它相关文件,确保其中不含有恶意代码.
-4.  在上述文件夹中运行 `makepkg -sri`. 命令会自动调用[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")解决依赖关系，然后下载代码、编译并打包. 然后安装软件包，然后删除仅在编译时才需要的软件包。
+4.  在上述文件夹中运行 `makepkg -si`. 命令会自动调用[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")解决依赖关系，然后下载代码、编译并打包. 然后安装软件包。
 
 ### 准备
 
-首先确定必要的软件包组已经安装:
-
-```
-# pacman -S --needed base-devel
-
-```
-
-软件包组[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 是必须的，其中包括[make](https://www.archlinux.org/packages/?name=make)和其他编译工具：
+首先确定安装了 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件包组，其中包括[make](https://www.archlinux.org/packages/?name=make)和其他编译工具：
 
 **Note:** AUR 中的软件包都会假定你已经安装了 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件包组(例如它们不会将这个组中的软件包列入依赖列表.
 
@@ -112,6 +107,8 @@ AUR提供了方便人们访问的[网页接口](https://aur.archlinux.org/)，�
 
 ```
 
+	这样做的其中一个好处是你以后可以通过 `git pull` 的形式来更新。
+
 ### 构建和安装软件包
 
 切换到编译目录，解压缩构建文件。如果是 Git 方式获取，无需解压。
@@ -128,19 +125,24 @@ $ tar -xvzf foo.tar.gz
 
 ```
 $ cd foo
-$ nano PKGBUILD
-$ nano foo.install
+$ less PKGBUILD
+$ less foo.install
 
 ```
 
 接下来开始生成软件包。检查文件后，执行[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")（以普通用户权限）：
 
 ```
-$ makepkg -sri
+$ makepkg -si
 
 ```
 
-`-s`/`--syncdeps` 表示自动执行[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装依赖关系。`-r`/`--rmdeps` 会在编译后删除不需要的编译时依赖。`-i`/`--install` 会安装软件包。
+`-s`/`--syncdeps` 表示自动执行[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装依赖关系。`-i`/`--install` 会安装软件包。
+
+有些选项可能有用：
+
+*   `-r`/`--rmdeps` 会移除只在构建时需要的软件包，不过重新编译时就要再安装了。
+*   `-c`/`--clean` 会在构建结束时删除临时文件。如果需要调试构建过程这会十分有用。
 
 **注意:** 本文所涵盖的内容十分有限。如果想要对软件包构建有更深了解，推荐阅读[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")和[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")。
 
@@ -158,20 +160,42 @@ AUR不包含任何编译过的二进制包，用户上传[PKGBUILD](/index.php/P
 
 ### 提交软件包
 
-**Warning:** 在提交前请先熟悉 [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") 及所有的"相关文章".
+**Warning:** 在提交前请先熟悉 [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") 及所有的"相关文章".违反相应规则的软件包可能不经警告被直接删除。
+
+如果对自己的PKGBUILD缺乏信心，可以先把它贴到[AUR邮件列表](https://mailman.archlinux.org/mailman/listinfo/aur-general)，[论坛AUR版](https://bbs.archlinux.org/viewforum.php?id=4)或 [IRC 频道](/index.php/IRC_Channels "IRC Channels")，让大家帮你检查。
 
 #### 提交软件包的规则
 
 提交软件包时请遵循下列的规则:
 
-*   检查[官方仓库](https://www.archlinux.org/packages/)，如果存在该软件包的 **任何版本**，就**不要**重复提交。如果认为官方仓库的软件包已过期，请标记它。如果它有问题或者缺少功能，请反馈[bug 报告](https://bugs.archlinux.org/)。
+*   **任何提交的 PKGBUILD 都不能编译已经位于官方二进制软件包仓库的程序。** 如果认为官方仓库的软件包已过期，请标记它。如果它有问题或者缺少功能，请反馈[bug 报告](https://bugs.archlinux.org/)。
+
+	**唯一的例外**是和官方打包版本相比增加或开启了新的功能。这时 pkgname 列应该不同。例如加入了边栏支持的 `screen` 应该命名为 `screen-sidebar`，同时添加 `provides=('screen')` 以避免与官方仓库中的包冲突。
+
 *   查看AUR中是否已有相同软件包。如果已经有人维护某软件包，其他用户的提交将以评论形式报告给维护人员。如果软件包无人维护或不存在，用户提交的软件包将被收录,别创建重复的包.
 *   仔细检查上传的文件。编写PKGBUILD前务必阅读[Arch软件打包标准](/index.php/Arch_packaging_standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch packaging standards (简体中文)")。劣质的PKGBUILD会影响软件的正常使用，不要指望别人会因为你糟糕的PKGBUILD浪费了他们的时间而收到感谢。
 *   包含二进制文件或质量差的PKGBUILD有可能无提醒地被直接删除。
-*   如果对自己的PKGBUILD缺乏信心，可以先把它贴到[AUR邮件列表](https://mailman.archlinux.org/mailman/listinfo/aur-general)或[论坛AUR版](https://bbs.archlinux.org/viewforum.php?id=4)，让大家帮你检查。
 *   确保你的软件包有人需要，有人会用这个软件包吗?它非常特别吗?如果有一些人觉得它有用,就提交它.
 *   AUR 官方软件仓库中放置通用软件和软件相关内容，包括：可执行文件、配置文件、软件的在线文档和软件直接使用的数据。
 *   上传软件包之前务必掌握打包过程，自己打几个包练练手。
+*   请在 `PKGBUILD` 最上端加入包含当前维护者和过去的维护者（作为贡献者）的信息，记得对邮件地址进行必要的处理以避免被垃圾邮件骚扰。然后移除所有不必要的行。例如：
+
+	如果你从其它人接手了一个 PKGBUILD ，像这样把你的名字和邮件地址加到最上面。
+
+```
+# Maintainer: Your Name <address at domain dot tld>
+
+```
+
+	如果在你之前有其他的维护者，请将它们添加到贡献者中。（如果提交者不是你也如此。）：
+
+```
+# Maintainer: Your name <address at domain dot tld>
+# Maintainer: Other maintainer's name <address at domain dot tld>
+# Contributor: Previous maintainer's name <address at domain dot tld>	
+# Contributor: Original submitter's name <address at domain dot tld>
+
+```
 
 #### 认证
 
@@ -197,6 +221,8 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 
 ```
+
+**Note:** 即使 AUR 中的软件包被删除 Git 仓库也不会删除，所以你可能会发现 clone 一个 AUR 中还不存在的软件包时不会看到这个警告。
 
 如果已经有了 git 仓库，可以远程创建 AUR git 并获取它：
 
@@ -249,7 +275,7 @@ $ git push
 *   阅读其他用户的反馈，并试着听从建议改进软件包,这是个学习的过程!
 *   升级软件包后，不要在评论中加入版本更新信息，这些信息会冲淡更重要的用户评论。[AUR helpers](/index.php/AUR_helpers "AUR helpers") 更适合检查更新。
 *   不要提交软件包后就放任不管！PKGBUILD的和维护升级是用户自己的责任。
-*   发觉自己没有精力维护某个软件包?可以通过AURweb界面 `disown` 一个软件包或是在AUR邮件列表发条消息.
+*   发觉自己没有精力维护某个软件包?可以通过AURweb界面 `disown` 一个软件包或是在AUR邮件列表发条消息. ["孤儿包"](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=&SB=n&SO=a&PP=50&do_Orphans=Orphans) 用来表示那些所有维护者都 `disown` 的软件包.
 
 ### 其他事项
 
@@ -269,18 +295,7 @@ $ git push
 
 ## AUR3 软件包的Git仓库
 
-因为AUR的后端迁移到[Git](/index.php/Git "Git"),从2015年8月8日起无人维护的包已从AUR中移除,旧的AUR包可以在`git://pkgbuild.com/aur-mirror.git` 找到. 它以只读方式每天更新.如果不需要[提交历史](http://git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History) 通过添加 `--depth=1` 参数能克隆的快些:
-
-```
-$ git clone --depth=1 git://pkgbuild.com/aur-mirror.git
-
-```
-
-你也可以通过web浏览器打开`http://pkgbuild.com/git/aur-mirror.git/tree` 来查找某个软件包,这可能会消耗大量的时间和内存.
-
-阅读下论文章了解更多细节: [Git Web interface](http://pkgbuild.com/git/aur-mirror.git/), [forum thread](https://bbs.archlinux.org/viewtopic.php?id=113099).
-
-也可以在Github上找到AUR3软件包归档: [AUR Archive](https://github.com/aur-archive)
+因为AUR的后端迁移到[Git](/index.php/Git "Git"),从2015年8月8日起无人维护的包已从AUR中移除,可以在Github上找到AUR3软件包归档: [AUR Archive](https://github.com/aur-archive)
 
 ## AUR translation
 
@@ -318,7 +333,7 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 
 你很可能忘了点啥。
 
-1.  执行`makepkg`之前先使用`pacman -Syyu`更新系统，系统软件过时可能导致软件包构建失败。
+1.  [更新系统](/index.php/Pacman#Upgrading_packages "Pacman")，系统软件过时可能导致软件包构建失败。
 2.  确保安装了“base”和“base-devel”软件包组。
 3.  在执行`makepkg`时，使用`-s`选项检查依赖关系。
 
@@ -373,19 +388,14 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 
 ### 如何查找已经安装但是从 AUR 消失的软件包
 
-通过网络访问检查：:
+通过网络访问检查：: $ comm -23 <(pacman -Qqm | sort) <(curl [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz) | gzip -cd | sort)
 
-```
-#!/bin/bash
-for pkg in $(pacman -Qqm); do
-    if ! curl -sILfo /dev/null -w '%{http_code}' "https://aur.archlinux.org/packages/$pkg" | grep -q '^2'; then
-        echo "$pkg is missing!"
-    fi
-done
-```
+### 想知道AUR 里都有啥 ？
+
+*   [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz)
+*   使用来自 [python3-aur](https://aur.archlinux.org/packages/python3-aur/) 的 `aurpkglist` 。
 
 ## 另请参阅
 
 *   [AUR Web](https://aur.archlinux.org)
-*   [AUR 邮件列表](https://www.archlinux.org/mailman/listinfo/aur-general)
-*   [AUR Mirror Git仓库](http://pkgbuild.com/git/aur-mirror.git/)
+*   [AUR 邮件列表](https://lists.archlinux.org/listinfo/aur-general)

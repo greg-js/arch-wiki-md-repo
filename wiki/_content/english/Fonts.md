@@ -505,7 +505,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 #### Tai–Kadai
 
-*   [ttf-tlwg](https://www.archlinux.org/packages/?name=ttf-tlwg) - Collection of scalable Thai fonts
+*   [fonts-tlwg](https://www.archlinux.org/packages/?name=fonts-tlwg) - Collection of scalable Thai fonts
 *   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Lao TTF font (Phetsarath_OT)
 *   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Lao TTF fonts, both Unicode and non-Unicode for Windows
 
@@ -522,7 +522,7 @@ A section of the Unicode standard is designated for pictographic characters call
 *   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts. Some newer additions to Unicode appear to render poorly with Noto fonts.
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style.
 *   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - a color and B&W emoji SVGinOT font built from EmojiOne.
-*   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter's open-sourced emoji glyphs.
+*   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.
 
 [Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
 

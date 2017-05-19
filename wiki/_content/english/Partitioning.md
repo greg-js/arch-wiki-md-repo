@@ -187,6 +187,8 @@ Historically, the general rule for swap partition size was to allocate twice the
 
 ### Example layouts
 
+**Note:** UEFI/GPT does not really have a "bootable" flag. A bootable partition simply has partition type `EF00`. Some GPT partitioning tools include a bootable flag, but really it just sets the partition type.
+
 #### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |

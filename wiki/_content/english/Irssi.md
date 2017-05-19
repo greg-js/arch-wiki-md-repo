@@ -76,7 +76,7 @@ In order to add network with sasl mechanism here's an example:
 **Note:**
 
 *   Make sure to use the correct capitalization for the network name.
-*   First command line is for adding server with [#SSL Connection](#SSL_Connection)
+*   First command line is for adding server with [#TLS Connection](#TLS_Connection)
 *   If you have an existing network, then type second command line only.
 *   If your password contains `$`, you have to prefix it with another `$` for *irssi* to properly parse it.
 

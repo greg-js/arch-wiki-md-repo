@@ -25,19 +25,12 @@ Since you'll be using [makepkg](/index.php/Makepkg "Makepkg"), follow the best p
 
 ```
 
-[Install](/index.php/Install "Install") the [abs](https://www.archlinux.org/packages/?name=abs) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group.
+[Install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group.
 
 You need a clean kernel to start your customization from. Fetch the kernel package files from ABS into your build directory by running:
 
 ```
-$ ABSROOT=. abs core/linux
-
-```
-
-If you have some problem with the firewall blocking the rsync port, you can try with -t, which uses the tarball to sync.
-
-```
-$ ABSROOT=. abs core/linux -t
+$ ASPROOT=. asp checkout linux
 
 ```
 

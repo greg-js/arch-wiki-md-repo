@@ -110,10 +110,6 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
-*   **srcpac** — Simple tool that automates rebuilding packages from source.
-
-	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
-
 ## Maintenance
 
 **Note:** Instead of using *comm* (which requires sorted input with *sort*) in the sections below, you may also use `grep -Fxf` or `grep -Fxvf`.

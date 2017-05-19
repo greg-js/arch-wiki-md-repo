@@ -30,7 +30,7 @@ There are several ways to achieve this on Linux:
 **Note:** To choose the correct driver see [#Installation](#Installation).
 
 <caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") |
+ [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") |
 | Decoding |
 | MPEG2 | GMA 4500 and newer | 
 

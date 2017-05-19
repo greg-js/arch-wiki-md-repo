@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-20，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=435940)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-17，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=470538)可以查看翻译后英文页面的改动。
 
-Arch Linux 是通用 i686/x86-64 GNU/Linux 发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
+Arch Linux 是通用 x86-64 GNU/Linux 发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
 
 ## Contents
 
@@ -13,7 +13,11 @@ Arch Linux 是通用 i686/x86-64 GNU/Linux 发行版。Arch采用滚动升级模
 *   [3 历史](#.E5.8E.86.E5.8F.B2)
     *   [3.1 早期](#.E6.97.A9.E6.9C.9F)
     *   [3.2 中期](#.E4.B8.AD.E6.9C.9F)
-    *   [3.3 A. Griffin 时代](#A._Griffin_.E6.97.B6.E4.BB.A3)
+    *   [3.3 ArchWiki 的诞生](#ArchWiki_.E7.9A.84.E8.AF.9E.E7.94.9F)
+    *   [3.4 A. Griffin 时代](#A._Griffin_.E6.97.B6.E4.BB.A3)
+    *   [3.5 Arch 安装脚本](#Arch_.E5.AE.89.E8.A3.85.E8.84.9A.E6.9C.AC)
+    *   [3.6 Systemd 时代](#Systemd_.E6.97.B6.E4.BB.A3)
+    *   [3.7 逐步抛弃 i686 支持](#.E9.80.90.E6.AD.A5.E6.8A.9B.E5.BC.83_i686_.E6.94.AF.E6.8C.81)
 
 ## 原则
 
@@ -50,7 +54,7 @@ Arch 鼓励每一个用户 [参与](/index.php/Getting_involved "Getting involve
 
 ## 通用
 
-Arch Linux 是通用发行版，初始安装仅提供命令行环境：用户不需要删除大量不需要的软件包，而是可以从[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")成千上万的高质量软件包中进行选择，搭建自己的系统。支持 [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) 和 [x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") 架构。
+Arch Linux 是通用发行版，初始安装仅提供命令行环境：用户不需要删除大量不需要的软件包，而是可以从[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")成千上万的高质量软件包中进行选择，搭建自己的系统。支持[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") 架构。( [对 i686 架构的支持即将结束](https://www.archlinux.org/news/phasing-out-i686-support/) ）
 
 Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")[Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")，仅凭一条命令就升级整个系统。Arch还提供一个类似ports的包构建系统（[Arch Build System](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")），通过它可以轻松从源码构建和安装软件包，并用一个命令完成同步。你甚至可以用一个命令重新构建整个系统。Arch还提供[Arch User Repository](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")，它包含了数千个由用户维护的[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")脚本，配合[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")工具，从编译到打包一气呵成。用户还能轻松构建和维护属于自己的自定义软件源。
 
@@ -64,6 +68,10 @@ Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_ma
 
 [这个](https://dev.archlinux.org/~dan/archstats.svg) 表格见证了Arch Linux 社区的稳步扩大. 而且从早期开始，Arch 就树立起了 [开放、友好和社区互助的形象](http://www.osnews.com/story/4827)。
 
+### ArchWiki 的诞生
+
+2005年7月8日，用 MediaWiki 搭建的 ArchWiki [开始运行](/index.php/ArchWiki:About#History "ArchWiki:About")。
+
 ### A. Griffin 时代
 
 2007下半年，Judd Vinet 退出了Arch的开发，并[把统治权交给美国程序员 Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), 也就是 Phrakture，目前他依然是 Arch 开发者。
@@ -71,3 +79,20 @@ Arch有一个易用的[包管理系统](https://en.wikipedia.org/wiki/Package_ma
 这些年来，Arch 社区不断成长，最近也收到大量的 [关注和评论](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review")。
 
 Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 赚钱的计划。Arch 开发的详细历史可以浏览 [Wayback Machine 的 Arch 部分](http://web.archive.org/web/*/archlinux.org) 和 [Arch Linux 新闻存档](https://www.archlinux.org/news/)。
+
+### Arch 安装脚本
+
+2012 年 7 月的 Arch Linux 安装介质中 [弃用了](https://www.archlinux.org/news/install-media-20120715-released/) 基于菜单的 Arch 安装框架。并编写了几个便于安装过程中使用的脚本。
+
+### Systemd 时代
+
+2012 到 2013 年间 Arch 用 Systemd 替换了 System V init ：
+
+*   [https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)
+*   [https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)
+*   [https://www.archlinux.org/news/end-of-initscripts-support/](https://www.archlinux.org/news/end-of-initscripts-support/)
+*   [https://www.archlinux.org/news/final-sysvinit-deprecation-warning/](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
+
+### 逐步抛弃 i686 支持
+
+鉴于在开发者和社区中 i686 架构的使用程度逐渐式微，我们决定[逐步抛弃对这一架构的支持](https://www.archlinux.org/news/phasing-out-i686-support/) 。

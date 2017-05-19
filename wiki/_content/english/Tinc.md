@@ -55,8 +55,7 @@ Device = /dev/net/tun
 ```
 #!/bin/sh
 ip link set $INTERFACE up
-ip addr add  192.168.0.1/32 dev $INTERFACE
-ip route add 192.168.0.0/24 dev $INTERFACE
+ip addr add  192.168.0.1/24 dev $INTERFACE
 
 ```
 
@@ -64,8 +63,7 @@ ip route add 192.168.0.0/24 dev $INTERFACE
 
 ```
 #!/bin/sh
-ip route del 192.168.0.0/24 dev $INTERFACE
-ip addr del 192.168.0.1/32 dev $INTERFACE
+ip addr del 192.168.0.1/24 dev $INTERFACE
 ip link set $INTERFACE down
 
 ```
@@ -88,8 +86,7 @@ ConnectTo = alpha
 ```
 #!/bin/sh
 ip link set $INTERFACE up
-ip addr add 192.168.0.2/32 dev $INTERFACE
-ip route add 192.168.0.0/24 dev $INTERFACE
+ip addr add 192.168.0.2/24 dev $INTERFACE
 
 ```
 
@@ -97,8 +94,7 @@ ip route add 192.168.0.0/24 dev $INTERFACE
 
 ```
 #!/bin/sh
-ip route del 192.168.0.0/24 dev $INTERFACE
-ip addr del 192.168.0.2/32 dev $INTERFACE
+ip addr del 192.168.0.2/24 dev $INTERFACE
 ip link set $INTERFACE down
 
 ```

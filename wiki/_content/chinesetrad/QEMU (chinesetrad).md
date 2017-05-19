@@ -83,7 +83,7 @@ $ qemu-img create -f raw *image_file* 4G
 
 用 `dd` 或 `fallocate` 也可以創建一個 *raw* 鏡像。
 
-**Warning:** 如果硬碟鏡像存儲在 [Btrfs](/index.php/Btrfs "Btrfs") 系統上，在創建前請考慮禁用 [寫時複製](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs")。
+**Warning:** 如果硬碟鏡像存儲在 [Btrfs](/index.php/Btrfs "Btrfs") 系統上，在創建前請考慮禁用 [寫時複製](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
 
 #### Overlay storage images
 

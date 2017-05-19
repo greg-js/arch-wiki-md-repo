@@ -1,7 +1,5 @@
 The NanoPi M1 is a small, arm-based computer. It contains an Allwinner H3 processor and either 512 or 1024 MB of RAM. This article is strongly based on Orange Pi.
 
-**Note:** Graphics is still to be documented.
-
 ## Contents
 
 *   [1 Create the base system](#Create_the_base_system)
@@ -13,7 +11,7 @@ The NanoPi M1 is a small, arm-based computer. It contains an Allwinner H3 proces
     *   [1.6 Install U-Boot](#Install_U-Boot)
 *   [2 Configure the base system](#Configure_the_base_system)
     *   [2.1 Boot the NanoPi](#Boot_the_NanoPi)
-    *   [2.2 Update Linux](#Update_Linux)
+    *   [2.2 Configure Linux](#Configure_Linux)
 
 ## Create the base system
 
@@ -44,7 +42,7 @@ Use fdisk to partition the SD card, and use `mkfs.ext4 -O ^metadata_csum,^64bit 
 Download the RootFS from ArchLinuxArm's website:
 
 ```
-# wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
+$ wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
 
 ```
 
@@ -127,17 +125,17 @@ $ cd ..
 
 ### Boot the NanoPi
 
-Apply 5V power to the NanoPi. It should boot successfully. If not, then attach the UART serial debugger as shown [here](http://linux-sunxi.org/FriendlyARM_NanoPi_M1#Locating_the_UART).
+Apply 5V power to the NanoPi. It should boot successfully. If not, then attach the UART serial debugger as shown [here](http://linux-sunxi.org/FriendlyARM_NanoPi_M1#Locating_the_UART) and [here](/index.php/Working_with_the_serial_console "Working with the serial console").
 
 Login over SSH with `alarm/alarm`.
 
 Root password: `root`.
 
-### Update Linux
+### Configure Linux
 
-Update the Linux system using:
+It is recommended that you install the base-devel group in order to continue. Do this and update the Linux system using:
 
 ```
-# pacman -Syu
+# pacman -Syu base-devel
 
 ```

@@ -4,12 +4,6 @@
 
 [Install](/index.php/Install "Install") [firehol](https://aur.archlinux.org/packages/firehol/) or [firehol-git](https://aur.archlinux.org/packages/firehol-git/).
 
-**Note:** If you get a `ping6` related compile error, set the following symlink and recompile again:
-```
-  ln -s /usr/bin/ping /usr/bin/ping6
-
-```
-
 ## Configuration
 
 The configuration file is `/etc/firehol/firehol.conf`.

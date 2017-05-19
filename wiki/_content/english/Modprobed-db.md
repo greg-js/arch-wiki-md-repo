@@ -8,7 +8,6 @@
     *   [2.2 Systemd](#Systemd)
     *   [2.3 Data Recall](#Data_Recall)
         *   [2.3.1 Using the Official Arch kernel PKGBUILD](#Using_the_Official_Arch_kernel_PKGBUILD)
-        *   [2.3.2 Using Some Kernels in the AUR](#Using_Some_Kernels_in_the_AUR)
 *   [3 Recommendations](#Recommendations)
 *   [4 Suggested Modules](#Suggested_Modules)
 *   [5 Benefits of modprobed-db with **make localmodconfig** in custom kernels](#Benefits_of_modprobed-db_with_make_localmodconfig_in_custom_kernels)
@@ -91,36 +90,6 @@ The official Arch kernel's PKGBUILD does not have native support for this, but i
   # ... or manually edit .config
  ...
 ```
-
-#### Using Some Kernels in the AUR
-
-Several kernel packages in the AUR have native support for modprobed-db in their PKGBUILD files. For example:
-
-*   [linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)
-*   [linux-bridge-pl](https://aur.archlinux.org/packages/linux-bridge-pl/)
-*   [linux-ck-fbcondecor](https://aur.archlinux.org/packages/linux-ck-fbcondecor/)
-*   [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
-*   [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
-*   [linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
-*   [linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)
-*   [linux-lts-ck](https://aur.archlinux.org/packages/linux-lts-ck/)
-*   [linux-pf](https://aur.archlinux.org/packages/linux-pf/)
-*   [linux-uksm-ck](https://aur.archlinux.org/packages/linux-uksm-ck/)
-*   [linux-ice](https://aur.archlinux.org/packages/linux-ice/)
-*   [linux-uksm](https://aur.archlinux.org/packages/linux-uksm/)
-
-Find which other packages use it:
-
-```
-cd /scratch
-git clone --depth 1 [http://pkgbuild.com/git/aur-mirror.git](http://pkgbuild.com/git/aur-mirror.git)
-find /scratch/aur-mirror -iname "PKGBUILD" -print0 | xargs -0 grep -i 'modprobed-db recall\|modprobed_db recall' | sort
-
-```
-
-**Note:** The server pkgbuild.com is rather slow and the git clone can take a while.
-
-Alternatively, download the .tar.xz snapshot (around 90 MB) by following [this link](http://pkgbuild.com/git/aur-mirror.git/) and then clicking on the latest commit message.
 
 ## Recommendations
 

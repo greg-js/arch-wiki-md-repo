@@ -673,7 +673,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **whipper** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
 
-	[https://github.com/JoeLametta/whipper](https://github.com/JoeLametta/whipper) || [whipper](https://aur.archlinux.org/packages/whipper/)
+	[https://github.com/JoeLametta/whipper](https://github.com/JoeLametta/whipper) || [whipper](https://www.archlinux.org/packages/?name=whipper)
 
 ### DVD
 

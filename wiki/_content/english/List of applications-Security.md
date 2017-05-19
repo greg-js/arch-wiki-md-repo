@@ -109,10 +109,6 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/groups/x86_64/openvas/)
 
-*   **Osiris** — Tool for monitoring system integrity and changes across a network.
-
-	[https://launchpad.net/osiris](https://launchpad.net/osiris) || [osiris](https://www.archlinux.org/packages/?name=osiris)
-
 *   **OSSEC** — Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.
 
 	[https://ossec.github.io/](https://ossec.github.io/) || [ossec-agent](https://aur.archlinux.org/packages/ossec-agent/) [ossec-local](https://aur.archlinux.org/packages/ossec-local/) [ossec-server](https://aur.archlinux.org/packages/ossec-server/)

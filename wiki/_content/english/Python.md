@@ -123,9 +123,9 @@ Although a great number of Python packages are readily available in the [officia
 
 	[https://setuptools.readthedocs.io/](https://setuptools.readthedocs.io/) || [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [python2-setuptools](https://www.archlinux.org/packages/?name=python2-setuptools)
 
-For a brief history and feature comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install).
+For a brief history and feature comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install). Authoritative best practices in Python package management are detailed [here](https://packaging.python.org/).
 
-Authoritative best practices in Python package management are detailed [here](https://packaging.python.org/).
+If you must use pip, use it in a virtual environment or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
 
 **Note:** There are also tools integrating pip with pacman by automatically generating PKGBUILDs for specified pip-packages: [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
 
@@ -216,14 +216,7 @@ exec python3 "$@"
 
 Where `/path/to/project1/*|/path/to/project2/*|/path/to/project3*` is a list of patterns separated by `|` matching all project trees.
 
-Do not forget to make it executable:
-
-```
-# chmod +x /usr/local/bin/python
-
-```
-
-Afterwards scripts within the specified project trees will be run with Python 2.
+Do not forget to make it [executable](/index.php/Executable "Executable"). Afterwards scripts within the specified project trees will be run with Python 2.
 
 ## See also
 

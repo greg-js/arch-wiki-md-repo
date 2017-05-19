@@ -20,9 +20,10 @@ This page is a starting point for a basic OpenLDAP installation and a sanity che
         *   [2.5.3 Start slapd with SSL](#Start_slapd_with_SSL)
 *   [3 Next steps](#Next_steps)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Client authentication checking](#Client_authentication_checking)
-    *   [4.2 LDAP server stops suddenly](#LDAP_server_stops_suddenly)
-    *   [4.3 LDAP server does not start](#LDAP_server_does_not_start)
+    *   [4.1 slapd configuration checking](#slapd_configuration_checking)
+    *   [4.2 Client authentication checking](#Client_authentication_checking)
+    *   [4.3 LDAP server stops suddenly](#LDAP_server_stops_suddenly)
+    *   [4.4 LDAP server does not start](#LDAP_server_does_not_start)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -290,6 +291,15 @@ A nice web frontend is [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin").
 
 ## Troubleshooting
 
+### slapd configuration checking
+
+You can check config settings with
+
+```
+$ slaptest -f /etc/openldap/slapd.conf -v
+
+```
+
 ### Client authentication checking
 
 If you cannot connect to your server for non-secure authentication
@@ -311,7 +321,7 @@ $ ldapsearch -x -H ldaps://ldaservername:636 -D cn=Manager,dc=example,dc=example
 If you notice that slapd seems to start but then stops, try running:
 
 ```
-# chown ldap:ldap /var/lib/openldap/openldap-data/*
+# chown -R ldap:ldap /var/lib/openldap
 
 ```
 

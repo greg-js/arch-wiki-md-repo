@@ -115,4 +115,4 @@ MODULES="pata_acpi pata_sis ata_generic scsi_mod **sisfb** ..."
     *   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")
     *   [Pm-utils](/index.php/Pm-utils "Pm-utils")
     *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-    *   [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet")
+    *   [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet")

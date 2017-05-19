@@ -35,7 +35,7 @@
 
 ## Installation
 
-**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions"), [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly. The *-[bzr](/index.php/Bzr "Bzr") and *-[git](/index.php/Git "Git") packages contain the most recent updates and are *less* likely to have obsolete dependencies in Archlinux, but occasionally have stability or build issues and may not be compatible with the standard releases.
+**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions") LTS release cycle, [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly. The *-[bzr](/index.php/Bzr "Bzr") and *-[git](/index.php/Git "Git") packages contain the most recent updates and are *less* likely to have obsolete dependencies in Archlinux, but occasionally have stability or build issues and may not be compatible with the standard releases.
 
 [Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in [community](/index.php/Community "Community"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
@@ -191,7 +191,7 @@ Unconfigured gala tries to use default gnome wallpaper, which is absent unless y
 
 #### No mouse cursor after login
 
-The Gala window manager is most likely not running. Either install [cerbere-git](https://aur.archlinux.org/packages/cerbere-git/) or add `gala` to the list of cerbere's [monitored processes](#Autostart_applications_with_.7E.2F.xinitrc).
+The Gala window manager is most likely not running. Either install [cerbere-git](https://aur.archlinux.org/packages/cerbere-git/) or add `gala` to the list of cerbere's [monitored processes](#Via_xinit).
 
 ### Indicators
 
@@ -203,7 +203,7 @@ Wingpanel does not come with any indicators; they must be installed separately.
 
 #### Third-party indicators
 
-*   If launched by a [display manager](#Via_Display_Manager), append `Pantheon` to `OnlyShowIn=` in third-party indicators' [*.desktop files](/index.php/Desktop_entries#Autostart "Desktop entries")
+*   If launched by a [display manager](#Via_Display_manager), append `Pantheon` to `OnlyShowIn=` in third-party indicators' [*.desktop files](/index.php/Desktop_entries#Autostart "Desktop entries")
 
 *   If launched by [~/.xinitrc](#Via_xinit), add third-party indicators to one of the start-up methods described [above](#Launching_Pantheon).
 
@@ -219,11 +219,11 @@ Wingpanel does not come with any indicators; they must be installed separately.
 
 #### Pantheon-terminal transparency
 
-Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/), [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/) or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme or the override file in `~/.config/gtk-3.0/gtk.css`.
+Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/) or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme or the override file in `~/.config/gtk-3.0/gtk.css`.
 
 #### Wingpanel transparency
 
-Wingpanel is transparent by design when using [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or [gtk-theme-elementary-bzr](https://aur.archlinux.org/packages/gtk-theme-elementary-bzr/), and becomes opaque when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
+Wingpanel is transparent by design when using [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and becomes opaque when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
 
 To achieve the former behavior within other themes, add the following lines to the end of its css or the override file in `~/.config/gtk-3.0/gtk.css`:
 

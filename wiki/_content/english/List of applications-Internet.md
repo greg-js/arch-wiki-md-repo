@@ -494,10 +494,6 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 	[https://rakshasa.github.io/rtorrent/](https://rakshasa.github.io/rtorrent/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
 
-*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version, ncurses CLI. Requires [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) backend.
-
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli)
-
 ##### Graphical Interface
 
 ###### libtorrent-rasterbar backend
@@ -629,10 +625,6 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 *   **[Evolution](/index.php/Evolution "Evolution")** — Mature and feature-rich e-mail client that is part of the GNOME project. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
 	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution](https://www.archlinux.org/packages/?name=evolution)
-
-*   **FossaMail** — FossaMail is a Mozilla Thunderbird-based mail, news and chat client by the Pale Moon developers.
-
-	[http://www.fossamail.org](http://www.fossamail.org) || [fossamail-bin](https://aur.archlinux.org/packages/fossamail-bin/)
 
 *   **Geary** — Simple desktop mail client built in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)").
 
@@ -808,7 +800,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://aur.archlinux.org/packages/psimedia/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi-git](https://aur.archlinux.org/packages/psi-git/) [psimedia](https://aur.archlinux.org/packages/psimedia/)
 
 *   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
@@ -1157,10 +1149,6 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 *   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
 	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
-
-*   **Hexo** — A fast, simple & powerful blog framework, powered by Node.js.
-
-	[http://hexo.io](http://hexo.io) || [nodejs-hexo](https://aur.archlinux.org/packages/nodejs-hexo/)
 
 *   **[Jekyll](/index.php/Jekyll "Jekyll")** — A static blog engine, written in Ruby, which supports Markdown, textile and other formats.
 

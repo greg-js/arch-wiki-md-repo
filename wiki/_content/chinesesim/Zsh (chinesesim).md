@@ -74,7 +74,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 另请参见 [更改你的默认终端](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell")
 
-**小贴士:** 如果你要替换 [bash](https://www.archlinux.org/packages/?name=bash)，你也许想转移 `~/.bashrc` 中的某些配置到 `~/.zshrc` (例如：命令提示符和[别名](/index.php/Bash#Aliases "Bash"))，以及转移 `~/.bash_profile` 中的配置到 `~/.zprofile` (例如：[启动 X Window System 的代码](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc"))。
+**提示：** 如果你要替换 [bash](https://www.archlinux.org/packages/?name=bash)，你也许想转移 `~/.bashrc` 中的某些配置到 `~/.zshrc` (例如：命令提示符和[别名](/index.php/Bash#Aliases "Bash"))，以及转移 `~/.bash_profile` 中的配置到 `~/.zprofile` (例如：[启动 X Window System 的代码](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc"))。
 
 ## 配置文件介绍
 
@@ -155,7 +155,7 @@ promptinit
 prompt walters
 ```
 
-**小贴士:** 你可以执行命令 `source ~/.zshrc` 来生效修改的配置，而不需要重新登录
+**提示：** 你可以执行命令 `source ~/.zshrc` 来生效修改的配置，而不需要重新登录
 
 ### 配置 $PATH
 

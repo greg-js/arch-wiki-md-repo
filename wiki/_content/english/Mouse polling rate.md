@@ -149,7 +149,7 @@ The `xhci-hcd` module should respect the interval requested by the device, so ch
 
 A work-around that may help is to connect the device to a port using a different driver.
 
-Another work-around is to disable [xHCI](https://en.wikipedia.org/wiki/Extensible_Host_Controller_Interface "wikipedia:Extensible Host Controller Interface"). There might be a BIOS setting for this or you can do so by [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `xhci-hcd` module. **However**, either way will cause any USB 3 ports to act as USB 2 as the kernel will use the `ehci-hcd` module instead.
+Another work-around is to disable [xHCI](https://en.wikipedia.org/wiki/Extensible_Host_Controller_Interface "wikipedia:Extensible Host Controller Interface"). There might be a BIOS setting for this or you can do so by [blacklisting](/index.php/Blacklisting "Blacklisting") the `xhci-hcd` module. **However**, either way will cause any USB 3 ports to act as USB 2 as the kernel will use the `ehci-hcd` module instead.
 
 **Tip:** To see which `hcd` drivers are in use see the `S: Manufacturer` line for hub devices in `/sys/kernel/debug/usb/devices`.
 

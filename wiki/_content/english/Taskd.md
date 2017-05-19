@@ -91,6 +91,8 @@ taskd.key=username.key.pem
 taskd.ca=ca.cert.pem
 ```
 
+Ensure that the config file `.taskrc.android` has a newline at the end. Otherwise, it will not be parsed correctly.
+
 Now download the app and start it. When adding a profile, choose the datafolder you just created. Taskwarrior should now sync and work as expected.
 
 ## Troubleshooting

@@ -60,7 +60,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
 
 ## Código de conduta
 
-Os *padrões mínimos necessários* ao interagir com outros na comunidade do Arch Linux compreendem os quatro pontos principais. Além daqueles pontos, há diretrizes específicas para cada um dos fóruns da comunidade; os [#Fóruns](#F.C3.B3runs), [#Wiki](#Wiki), [#IRC](#IRC), [#Listas de discussão](#Listas_de_discuss.C3.A3o), [#AUR](#AUR) e [#Rastreador de erros](#Bug_tracker).
+Os *padrões mínimos necessários* ao interagir com outros na comunidade do Arch Linux compreendem os quatro pontos principais. Além daqueles pontos, há diretrizes específicas para cada um dos fóruns da comunidade; os [#Fóruns](#F.C3.B3runs), [#Wiki](#Wiki), [#IRC](#IRC), [#Listas de discussão](#Listas_de_discuss.C3.A3o), [#AUR](#AUR) e [#Rastreador de erros](#Rastreador_de_erros).
 
 ### Respeito
 
@@ -136,7 +136,7 @@ A troca livre e aberta de assistência, fala, ideias e opiniões é altamente co
 
 ## Diretrizes específicas para fóruns
 
-Além do [código comum](#Code_of_conduct), cada um dos fóruns possui suas próprias diretrizes específicas resumidas nas subseções a seguir.
+Além do [código comum](#C.C3.B3digo_de_conduta), cada um dos fóruns possui suas próprias diretrizes específicas resumidas nas subseções a seguir.
 
 ### [Fóruns](https://bbs.archlinux.org/)
 

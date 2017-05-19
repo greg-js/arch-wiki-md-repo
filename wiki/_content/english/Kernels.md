@@ -35,7 +35,7 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
-	A security-focused Linux kernel applying a set of [hardening patches](https://github.com/thestinger/linux-hardened) to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [Linux](https://www.archlinux.org/packages/?name=Linux) along with user namespaces (with unprivileged usage disabled by default via a patch), audit and [SELinux](/index.php/SELinux "SELinux").
+	A security-focused Linux kernel applying a set of [hardening patches](https://github.com/thestinger/linux-hardened) to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along with user namespaces (with unprivileged usage disabled by default via a patch), audit and [SELinux](/index.php/SELinux "SELinux").
 
 	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
@@ -80,10 +80,6 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
 
 	The Linux 3.10 Long-Term Support Kernel and modules.
-
-	[linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)
-
-	The Linux 3.12 Long-Term Support Kernel and modules.
 
 	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 

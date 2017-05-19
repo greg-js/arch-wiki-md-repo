@@ -79,9 +79,7 @@ Esse é um bom momento para se certificar o programa está funcionando corretame
 
 Quando você executa `makepkg`, ele vai procurar por um arquivo `PKGBUILD` no diretório de trabalho atual. Se um arquivo `PKGBUILD` for localizado, ele vai baixar o código-fonte do software e compilá-lo de acordo com as instruções especificadas no arquivo `PKGBUILD`. As instruções devem ser completamente interpretáveis pelo shell [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash"). Após concluir com sucesso, os binários resultantes e metadados do pacote, isto é, informações de versão e dependências do pacote, são empacotados em um arquivo de pacote `pkgname.pkg.tar.xz` que pode ser instalado com `pacman -U *<arquivo de pacote>*`.
 
-Para começar com um novo pacote, você deve primeiro criar um diretório de trabalho vazio (preferivelmente `~/abs/**pkgname**`), mudar para aquele diretório, e criar um arquivo `PKGBUILD`. Você pode copiar o protótipo de PKGBUILD `/usr/share/pacman/PKGBUILD.proto` para seu diretório de trabalho ou copiar um `PKGBUILD` de um pacote similar. A última opção pode ser útil se você só precisar alterar algumas opções.
-
-**Warning:** Use apenas os protótipos de PKGBUILD fornecidos no pacote [pacman](https://www.archlinux.org/packages/?name=pacman) (PKGBUILD-split.proto, PKGBUILD-vcs.proto e PKGBUILD.proto). Os protótipos no pacote [abs](https://www.archlinux.org/packages/?name=abs) e [no repositório git do ABS](https://projects.archlinux.org/abs.git/tree/prototypes) estão consideravelmente desatualizados e não devem ser usados. Veja [FS#34485](https://bugs.archlinux.org/task/34485).
+Para começar com um novo pacote, você deve primeiro criar um diretório de trabalho vazio, mudar para aquele diretório, e criar um arquivo `PKGBUILD`. Você pode copiar o protótipo de PKGBUILD do diretório `/usr/share/pacman/` para seu diretório de trabalho ou copiar um `PKGBUILD` de um pacote similar. A última opção pode ser útil se você só precisar alterar algumas opções.
 
 ### Definindo as variáveis do PKGBUILD
 
@@ -209,7 +207,7 @@ Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%A
 
 1.  Baixe o tarball fonte do software que você deseja empacotar.
 2.  Tente compilar o pacote e instalá-lo em um diretório arbitrário.
-3.  Copie o protótipo `/usr/share/pacman/PKGBUILD.proto` e renomeie-o para `PKGBUILD` em um diretório de trabalho temporário -- preferivelmente `~/abs/`.
+3.  Copie o protótipo `/usr/share/pacman/PKGBUILD.proto` e renomeie-o para `PKGBUILD` em um diretório de trabalho temporário.
 4.  Edite o `PKGBUILD` de acordo com as necessidades do seu pacote.
 5.  Execute `makepkg` e veja se o pacote resultante é compilado corretamente.
 6.  Se não, repita as últimas duas etapas.

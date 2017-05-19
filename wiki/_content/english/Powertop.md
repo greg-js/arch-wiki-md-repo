@@ -32,8 +32,8 @@ PowerTOP suggests a few methods to reduce the power consumption further. However
 Description=Powertop tunings
 
 [Service]
-Type=oneshot
 ExecStart=/usr/bin/powertop --auto-tune
+RemainAfterExit=true
 
 [Install]
 WantedBy=multi-user.target

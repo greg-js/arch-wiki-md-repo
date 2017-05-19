@@ -87,7 +87,7 @@ Once you found the snap you are looking for you can install it with:
 
 ```
 
-This requires root privileges. Per user installation of snaps is not possible, yet. This will download the snap into `/var/lib/snapd/snaps` and mount it to `/snap/*snapname*` to make it available to the system.
+This requires root privileges. Per user installation of snaps is not possible, yet. This will download the snap into `/var/lib/snapd/snaps` and mount it to `/snap/*snapname*` to make it available to the system. At this point you may want to add `/var/lib/snapd/snap/bin`to your $PATH variable in order to execute the installed snaps.
 
 It will also create mount units for each snap and add them to `/etc/systemd/system/multi-user.target.wants/` as symlinks to make all snaps available when the system is booted. Once that is done you should find it in the list of installed snaps together with its version number, revision and developer using:
 

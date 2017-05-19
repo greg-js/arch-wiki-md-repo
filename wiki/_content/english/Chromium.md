@@ -53,11 +53,11 @@ Other alternatives include:
 
 *   **Google Chrome Beta Channel** — the beta version
 
-	[https://www.google.com/chrome](https://www.google.com/chrome) || [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
+	[https://www.google.com/chrome/browser/beta.html](https://www.google.com/chrome/browser/beta.html) || [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
 
 *   **Google Chrome Dev Channel** — the development version
 
-	[https://www.google.com/chrome](https://www.google.com/chrome) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
+	[https://www.google.com/chrome/browser/](https://www.google.com/chrome/browser/) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
 
 **Note:**
 

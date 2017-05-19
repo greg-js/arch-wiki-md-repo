@@ -131,7 +131,7 @@ $ qemu-img create -f raw *image_file* 4G
 
 用 `dd` 或 `fallocate` 也可以创建一个 *raw* 镜像。
 
-**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，在创建前请考虑禁用 [写时复制](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs")。
+**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，在创建前请考虑禁用 [写时复制](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
 
 #### 上层存储镜像
 
@@ -994,7 +994,7 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
 
 *   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more
-*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
+*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
 
 ### vmware

@@ -149,6 +149,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [i-Tec USB-C Dual Display MST Dock](https://www.i-tec-europe.eu/?lng=en&t=3&v=443) | HDMI, DP (4K@30Hz Single Monitor, 1920x1200@60Hz Dual Monitor), Gbit Ethernet, 3xUSB-A, USB-C, Sound, Charging @ 60W | Working |
 | [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
 | [StarTech CDP2HD - USB-C to HDMI Adapter](https://www.startech.com/nl/en/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) | HDMI | Working |
+| [Kanex USB-C to HDMI 4K Adapter](https://www.amazon.com/Kanex-USB-C-Adapter-Inches-White/dp/B00VBNSY0S) | HDMI | Working |
 
 ### Thunderbolt Firmware updates
 

@@ -22,7 +22,7 @@
 
 ## Prototypes
 
-Use only the PKGBUILD prototypes provided in the [pacman](https://www.archlinux.org/packages/?name=pacman) package (`PKGBUILD-split.proto`, `PKGBUILD-vcs.proto` and `PKGBUILD.proto` in `/usr/share/pacman`). The prototypes files in the [abs](https://www.archlinux.org/packages/?name=abs) package and in [the ABS git repository](https://projects.archlinux.org/abs.git/tree/prototypes) are significantly out of date and should not be used. See [FS#34485](https://bugs.archlinux.org/task/34485).
+Use only the PKGBUILD prototypes provided in the [pacman](https://www.archlinux.org/packages/?name=pacman) package (`PKGBUILD-split.proto`, `PKGBUILD-vcs.proto` and `PKGBUILD.proto` in `/usr/share/pacman`).
 
 ## Guidelines
 

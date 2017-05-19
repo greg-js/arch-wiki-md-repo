@@ -323,7 +323,7 @@ Or the [/dev/urandom](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/
 
 ```
 
-The process is finished when dd reports, `No space left on device`:
+The process is finished when dd reports `No space left on device` and returns control back:
 
 ```
 dd: writing to ‘/dev/sdb’: No space left on device

@@ -422,9 +422,16 @@ $ source venv/bin/activate
 
 **Note:** This activation is only active for the current terminal session. The virtual env will be kept in the `venv` folder.
 
-**Note:** During build you may receive error pertaining to missing python modules. A quick and dirty fix is to symlink /usr/lib/python2.7/* to ~/android/venv/python2.7/ (Change ~/android to reflect your build directory if different than above).
+**Note:** During build you may receive error pertaining to missing python modules. A quick and dirty fix is to symlink /usr/lib/python2.7/* to ~/android/venv/lib/python2.7/ (Change ~/android to reflect your build directory if different than above).
 
 Example:
+
+```
+$ ln -s /usr/lib/python2.7/* ~/android/venv/lib/python2.7/
+
+```
+
+or (assuming build directory Data/Android_Build):
 
 ```
 $ ln -s /usr/lib/python2.7/* /Data/Android_Build/venv/lib/python2.7/
@@ -661,7 +668,7 @@ export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 
 Reference: Android Studio user guide, [https://developer.android.com/studio/command-line/variables.html#studio_jdk](https://developer.android.com/studio/command-line/variables.html#studio_jdk)
 
-Fix for the .desktop file might be achieved by using env command, prefixing the Exec line [Desktop entries#Modify_environment_variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries")
+Fix for the .desktop file might be achieved by using env command, prefixing the Exec line [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries")
 
 ```
 env ANDROID_EMULATOR_USE_SYSTEM_LIBS=1

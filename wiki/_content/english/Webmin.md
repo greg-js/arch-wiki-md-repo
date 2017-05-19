@@ -8,7 +8,6 @@ From the project [home page](http://www.webmin.com/):
 *   [2 Configuration](#Configuration)
 *   [3 Starting](#Starting)
 *   [4 Usage](#Usage)
-*   [5 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -29,21 +28,3 @@ In a web browser, enter the https address of the server with the port number 100
 https://192.168.1.1:10000 -or- https://myserver.example.net:10000
 
 You will need to enter the root password of the server running Webmin to use the Webmin interface and administer the server.
-
-## Troubleshooting
-
-If you get a an error similar to
-
-```
-Can't locate timelocal.pl in @INC (@INC contains: /opt/webmin /usr/lib/perl5/site_perl /usr/share/perl5/site_perl /usr/lib/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib/perl5/core_perl /usr/share/perl5/core_perl . /opt/webmin/ ..) at /opt/webmin/useradmin/edit_user.cgi line 6.
-
-```
-
-for example, when adding a new system user through Webmin, you [need to install](https://bbs.archlinux.org/viewtopic.php?id=142757) [perl-perl4-corelibs](https://www.archlinux.org/packages/?name=perl-perl4-corelibs).
-
-The password of a webmin user can be reset using the perl script included with the installation tarball (in this example, uncompressed to /opt/webmin):
-
-```
-/opt/webmin/changepass.pl /etc/webmin *user password*
-
-```

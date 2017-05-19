@@ -280,7 +280,7 @@ Alternatively, a number of tools are available to automate the process:
 
 	[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)
 
-For setting the XML file as the default background, see [#Lock screen and background](#Lock_screen_and_background).
+For setting the XML file as the default background, see [GNOME#Lock screen and background](/index.php/GNOME#Lock_screen_and_background "GNOME").
 
 ## Custom GNOME sessions
 
@@ -389,7 +389,7 @@ Set xdg-open web as default Web application in GNOME settings: GNOME Settings > 
 
 ## Removing film holes/film strip from video thumbnails in Nautilus
 
-Nautilus (Files) overlays the film holes/film strip effect on video thumbnails since Gnome 3.12\. To remove or override this effect, `G_RESOURCE_OVERLAYS` can be used to reference the compiled resource `filmholes.png` and specify the path for the relevant overlay. This environment variable has only been available since GLib 2.50 and will have no effect on versions before this.
+Nautilus (Files) overlays the film holes/film strip effect on video thumbnails since Gnome 3.12\. To remove or override this effect, the environment variable `G_RESOURCE_OVERLAYS` can be used to reference the path of a compiled resource (in this instance `filmholes.png`) and specify the path for the relevant overlay. This environment variable has only been available since GLib 2.50 and will have no effect on versions before this.
 
 Extract `filmholes.png` from Nautilus.
 

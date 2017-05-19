@@ -52,7 +52,7 @@ Também é possível interagir com o AUR por meio de SSH: digite `ssh aur@aur.ar
 
 ## História
 
-No começo, havia `ftp://ftp.archlinux.org/incoming` e as pessoas contribuíam simplesmente enviando o PKGBUILD, os arquivos suplementares e o próprio pacote construído para o servidor. O pacote e os arquivos associados mantiveram-se até um [Mantenedor de pacote](/index.php/Arch_Terminology_(Portugu%C3%AAs)#Package_maintainer "Arch Terminology (Português)") ver o programa e adotá-lo.
+No começo, havia `ftp://ftp.archlinux.org/incoming` e as pessoas contribuíam simplesmente enviando o PKGBUILD, os arquivos suplementares e o próprio pacote construído para o servidor. O pacote e os arquivos associados mantiveram-se até um [Mantenedor de pacote](/index.php/Arch_terminology_(Portugu%C3%AAs)#Package_maintainer "Arch terminology (Português)") ver o programa e adotá-lo.
 
 Em seguida, os Trusted User Repositories nasceram. Certos indivíduos na comunidade foram habilitados a hospedar seus próprios repositórios para qualquer um usar. O AUR expandiu nesta base, com o objetivo de ser mais flexível e usável. Na verdade, os mantenedores do AUR ainda são referidos como TUs (Trusted Users).
 
@@ -361,7 +361,7 @@ Geralmente, quando um pacote muito popular se mantém no AUR é porque:
 *   O pacote é relacionado ao AUR (ex.: um [auxiliar do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR"))
 *   Sua licença proíbe redistribuição
 
-Veja também [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") e [regras para pacotes entrarem no repositório *community*](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs)#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.27.27community.27.27 "AUR Trusted User Guidelines (Português)").
+Veja também [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") e [regras para pacotes entrarem no repositório *community*](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs)#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.5Bcommunity.5D "AUR Trusted User Guidelines (Português)").
 
 ### Como o posso agilizar processo de repetidas compilações?
 

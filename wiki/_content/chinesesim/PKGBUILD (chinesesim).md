@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-29，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=437339)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-18，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=477450)可以查看翻译后英文页面的改动。
 
 **PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 `man PKGBUILD`.
 
@@ -150,6 +150,8 @@ epoch=1
 
 不需要列出你的软件包的二次依赖，比如说：[gtk2](https://www.archlinux.org/packages/?name=gtk2)依赖[glib2](https://www.archlinux.org/packages/?name=glib2)和[glibc](https://www.archlinux.org/packages/?name=glibc)；然而[glib2](https://www.archlinux.org/packages/?name=glib2)本就依赖于[glibc](https://www.archlinux.org/packages/?name=glibc)，那么在[gtk2](https://www.archlinux.org/packages/?name=gtk2)中就不需要把[glibc](https://www.archlinux.org/packages/?name=glibc)加入 depends 列表。
 
+如果依赖的名称写成了库的名称（例如 `depends=('libfoobar.so')`），makepkg 会在编译完成的包中添加依赖这个库的二进制文件所依赖的版本，或者你可以自己加上版本号来停用自动检测（ `depends=('libfoobar.so=2')` ）。
+
 ### optdepends
 
 一组不影响软件主要功能，但能提供额外特性的软件包。应该简要说明每个包所能提供的额外功能。有些可选依赖如果不安装，软件包的个别程序可能无法正常使用。
@@ -200,6 +202,16 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 与当前软件包发生冲突的包列表。安装此软件时，所有有冲突的软件都会被删除。可以像 depends 那样指定冲突包的版本号。
 
+如果你在制作已有的软件包（例如官方源或 AUR ）的替代时，你需要在 `conflicts` 中指定它们与你的包冲突。
+
+不过如果你的包提供的包名称和其它的包冲突，你不需要将冲突的包添加进 `conflicts` 组中，例如：
+
+*   [netbeans](https://www.archlinux.org/packages/?name=netbeans) 提供 `netbeans` 。
+*   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 提供 `netbeans` ，和 `netbeans` 冲突。
+*   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 提供 `netbeans` 而且和 `netbeans` 冲突，但是因为它和 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 都提供 `netbeans` 而且 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 和 `netbeans` 冲突，pacman 可以发现它们相互冲突，于是不必在 `conflicts` 中表示 [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 和 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 冲突了。
+
+	反过来的例子： [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) 因为和 [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) 提供相同的包于是不必相互冲突。
+
 ### replaces
 
 会因安装当前包而取代的包列表，比如：[wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)中的`replaces=('wireshark')`。`pacman -Sy` 同步软件数据库后，会立刻用软件库中的另一个包替换掉 `replaces`中已安装的包。如果你只是提供已存在包的一个替代品，或者上传到 [AUR](/index.php/AUR "AUR"), 使用`conflicts`和`provides`变量——它们仅在安装冲突包时被检查。
@@ -235,6 +247,8 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 **提示：** 一个 `.install` 文件模板（原型）位于[/usr/share/pacman/proto.install 这里](https://projects.archlinux.org/pacman.git/plain/proto/proto.install)。
 
+**提示：** [pacman#Hooks](/index.php/Pacman#Hooks "Pacman") 也提供相似的功能。
+
 **Note:** 脚本不要以 `exit` 结束，否则包含的函数无法被执行。
 
 ### changelog
@@ -248,21 +262,18 @@ $ pacman -Qc *pkgname*
 
 ## 源码
 
-**注意:** 架构相关的变量可以通过下划线加架构的方式指定：`source_i686=()`. 记得要同时提供对应的校验和：`sha256sums_x86_64=()`
-
 ### source
 
 构建软件包时需要的文件列表。它必须包含软件源的位置信息，大多数情况下是一个完整的 HTTP 或 FTP 地址。可以在软件源信息中很好的调用前面提到的变量 `pkgname` 和 `pkgver`(如 `source=("https://example.com/$pkgname-$pkgver.tar.gz")`)。
 
 文件也可以放到 `PKGBUILD` 相同目录中，把文件名添加到这个列表中，以相对 `PKGBUILD` 的路径记录。在实际的编译过程开始之前，所有该列表中引用的文件都会被下载或检查是否存在，如果有文件丢失 `makepkg` 就不会继续。
 
-**提示：** 你可以为下载的文件指定不同的文件名（如将下载的文件出于某些原因有不同的文件名，像 URL 有一个 GET 参数时）。使用如下语法：`*filename*::*fileuri*`。
-
-例如：
-
-`$pkgname-$pkgver.zip::http://199.91.152.193/7pd0l2tpkidg/jg2e1cynwii/Warez_collection_16.4.exe`
-
 *makepkg* 会自动把 *.sig*, *.sign* 或 *.asc* 结尾的文件当成 PGP 签名，并自动验证源代码文件的完整性。
+
+**注意:**
+
+*   架构相关的变量可以通过下划线加架构的方式指定：`source_i686=()`. 记得要同时提供对应的校验和：`sha256sums_x86_64=()`
+*   因为所有包的 [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") 的值必须相同，所以下载的文件的文件名需要唯一。你可以为下载的文件指定不同的文件名： `source=('*filename*::*fileuri*')`,选择的 `*filename*` 最好和软件包名相关: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
 
 ### noextract
 
@@ -297,6 +308,8 @@ PGP 指纹列表。如果使用，*makepkg* 仅接受这里定义的签名，并
 仅接受完整签名，必须是大写字母而且不能有空白字符。
 
 **Note:** 可以使用 `gpg --list-keys --fingerprint <KEYID>` 查找 key 的指纹.
+
+请参阅 [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg") 了解签名效验的详细信息。
 
 ## 完整性
 

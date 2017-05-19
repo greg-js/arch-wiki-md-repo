@@ -679,6 +679,14 @@ This can be circumvented by using (for instance) fdisk to mark one of the GPT pa
 
 With cfdisk, the steps are similar, just `cfdisk /dev/sda`, choose bootable (at the left) in the desired hard disk, and quit saving.
 
+With recent version of parted, you can use `disk_toggle pmbr_boot` option. Afterwards verify that Disk Flags show pmbr_boot.
+
+```
+# parted /dev/sd*x* disk_toggle pmbr_boot
+# parted /dev/sd*x* print
+
+```
+
 More information is available [here](http://www.rodsbooks.com/gdisk/bios.html)
 
 #### EFI path

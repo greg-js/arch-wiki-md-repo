@@ -146,7 +146,7 @@ You may use `-f qcow2` to create a *qcow2* disk instead.
 
 **Note:** You can also simply create a *raw* image by creating a file of the needed size using `dd` or `fallocate`.
 
-**Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any images.
+**Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any images.
 
 #### Overlay storage images
 
@@ -1101,7 +1101,7 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
 
 *   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more
-*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
+*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
 
 ##### Password authentication with SPICE

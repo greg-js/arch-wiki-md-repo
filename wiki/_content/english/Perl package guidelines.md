@@ -60,7 +60,7 @@ A plugin for the second-generation CPAN shell, CPANPLUS, is available in the per
 
 ## PKGBUILD Examples
 
-An example PKGBUILD can be found at `/usr/share/pacman/PKGBUILD-perl.proto`, which is in the [abs](https://www.archlinux.org/packages/?name=abs) package.
+An example PKGBUILD can be found at [[1]](https://git.archlinux.org/abs.git/tree/prototypes/PKGBUILD-perl.proto).
 
 The following two PKGBUILD examples use techniques, introduced in this page, that are intended to make a PKGBUILD more resilient to more sophisticated problems. Because there are two styles of build scripts, there are two example PKGBUILDS. The first PKGBUILD is an example of how to package a distribution that uses `Makefile.PL`. The second PKGBUILD can be used as a starting point for a distribution which uses `Build.PL`.
 

@@ -82,7 +82,7 @@ The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) package install
 
 [Udev](/index.php/Udev "Udev") should automatically detect the changes if already running. But, you may want to reboot your system to verify the changes stick.
 
-Additionally, you may want to read the [Wacom Tablet#Dynamic with udev](/index.php/Wacom_Tablet#Dynamic_with_udev "Wacom Tablet") section to ensure the two wacom input devices are found. On this Helix system, it looks like this:
+Additionally, you may want to read the [Wacom tablet#Dynamic with udev](/index.php/Wacom_tablet#Dynamic_with_udev "Wacom tablet") section to ensure the two wacom input devices are found. On this Helix system, it looks like this:
 
 ```
 $ ls -l /dev/input/wacom* 

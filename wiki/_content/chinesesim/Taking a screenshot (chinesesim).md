@@ -145,7 +145,7 @@ xwd -root -out screenshot.xwd
 
 ## KDE
 
-如果你用KDE，可以使用[Spectacle](https://www.archlinux.org/packages/extra/i686/spectacle/)。
+如果你用KDE，可以使用[spectacle](https://www.archlinux.org/packages/?name=spectacle)。
 
 ## GNOME
 

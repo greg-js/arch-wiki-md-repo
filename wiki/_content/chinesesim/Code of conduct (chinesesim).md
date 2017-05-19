@@ -29,7 +29,7 @@ Arch Linux 是一个社区驱动的发行版；开发者、支持人员和提供
         *   [2.3.4 无效讨论 (BIKESHED)](#.E6.97.A0.E6.95.88.E8.AE.A8.E8.AE.BA_.28BIKESHED.29)
     *   [2.4 自由](#.E8.87.AA.E7.94.B1)
 *   [3 特有指南](#.E7.89.B9.E6.9C.89.E6.8C.87.E5.8D.97)
-    *   [3.1 Forums](#Forums)
+    *   [3.1 官方论坛](#.E5.AE.98.E6.96.B9.E8.AE.BA.E5.9D.9B)
         *   [3.1.1 如何发贴](#.E5.A6.82.E4.BD.95.E5.8F.91.E8.B4.B4)
         *   [3.1.2 粘帖图片和代码](#.E7.B2.98.E5.B8.96.E5.9B.BE.E7.89.87.E5.92.8C.E4.BB.A3.E7.A0.81)
         *   [3.1.3 生活是条双行道](#.E7.94.9F.E6.B4.BB.E6.98.AF.E6.9D.A1.E5.8F.8C.E8.A1.8C.E9.81.93)
@@ -142,7 +142,9 @@ Arch 衍生发行版通常使用不一样的软件包、版本号、软件仓库
 
 除了通用准则，还有一些特别的注意事项：
 
-### [Forums](https://bbs.archlinux.org/)
+### [官方论坛](https://bbs.archlinux.org/)
+
+首先在官方论坛上请尽量使用英语，或者考虑使用 [Other Languages 模块](https://bbs.archlinux.org/viewforum.php?id=30) 或访问 [中文论坛](https://bbs.archlinuxcn.org)。
 
 #### 如何发贴
 

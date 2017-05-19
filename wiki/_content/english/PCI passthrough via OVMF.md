@@ -36,13 +36,14 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [8.3 Gotchas](#Gotchas_3)
         *   [8.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [9.2 UEFI (ovmf) compatability](#UEFI_.28ovmf.29_compatability)
+    *   [9.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [9.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
     *   [9.3 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
     *   [9.4 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
     *   [9.5 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [9.6 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
     *   [9.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
+    *   [9.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
 *   [10 See also](#See_also)
 
 ## Prerequisites
@@ -516,7 +517,7 @@ After installation and configuration, reconfigure your [bootloader kernel parame
 
 Instead of setting up a virtual machine with the help of libvirt, plain QEMU commands with custom parameters can be used for running the VM intended to be used with PCI passthrough. This is desirable for some use cases like scripted setups, where the flexibility for usage with other scripts is needed.
 
-To achieve this after [#setting up IOMMU](#setting_up_IOMMU) and [#isolating the GPU](#isolating_the_GPU), follow the [QEMU article](/index.php/QEMU "QEMU") to setup the virtualized environment, [enable KVM](/index.php/QEMU#Enable_KVM "QEMU") on it and use the flag `-device vfio-pci,host=07:00.0` replacing the identifier (07:00.0) with your actual device's ID that you used for the GPU isolation earlier.
+To achieve this after [#Setting up IOMMU](#Setting_up_IOMMU) and [#Isolating the GPU](#Isolating_the_GPU), follow the [QEMU article](/index.php/QEMU "QEMU") to setup the virtualized environment, [enable KVM](/index.php/QEMU#Enabling_KVM "QEMU") on it and use the flag `-device vfio-pci,host=07:00.0` replacing the identifier (07:00.0) with your actual device's ID that you used for the GPU isolation earlier.
 
 For utilizing the OVMF firmware, make sure the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package is installed, copy the UEFI variables from `/usr/share/ovmf/ovmf_vars_x64.bin` to temporary location like `/tmp/my_vars.bin` and finally specify the OVMF paths by appending the following parameters to the QEMU command:
 
@@ -657,9 +658,9 @@ This signals that the xHCI USB controller in 00:14.0 cannot be reset and will th
 
 ## Troubleshooting
 
-### "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs
+### "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs
 
-**Note:** This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers
+**Note:** This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers.
 
 Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '123456789ab') as opposed to longer or shorter strings.
 
@@ -682,7 +683,7 @@ Since version 337.88, Nvidia drivers on Windows check if an hypervisor is runnin
 
 ```
 
-Users with older versions of QEMU and/or libvirt will instead have to disable a few hypervisor extensions, which can degrade performance substentially. If this is what you want to do, do the following replacement in your libvirt domain config file.
+Users with older versions of QEMU and/or libvirt will instead have to disable a few hypervisor extensions, which can degrade performance substantially. If this is what you want to do, do the following replacement in your libvirt domain config file.
 
  `EDITOR=nano virsh edit myPciPassthroughVm` 
 ```
@@ -724,25 +725,21 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 ...
 ```
 
-### UEFI (ovmf) compatability
+### UEFI (OVMF) Compatability in VBIOS
 
-With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible)
+With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible):
 
-The other thing that could cause error 43 is VBIOS, that does not support UEFI.
-
-To check this get and compile the software "rom-parser"
+Error 43 can be caused by the GPU's VBIOS without UEFI support. To check whenever your VBIOS supports it, you'll have to use `rom-parser`:
 
 ```
-$ git clone https://github.com/awilliam/rom-parser
-$ cd rom-parser
-$ make
+$ git clone [https://github.com/awilliam/rom-parser](https://github.com/awilliam/rom-parser)
+$ cd rom-parser && make
 
 ```
 
-Then dump the rom of you vga card
+Dump the GPU VBIOS:
 
 ```
-
 # cd /sys/bus/pci/devices/0000:01:00.0/
 # echo 1 > rom
 # cat rom > /tmp/image.rom
@@ -750,11 +747,14 @@ Then dump the rom of you vga card
 
 ```
 
-and test it with
+And test it for compatibility:
 
 ```
-./rom-parser /tmp/image.rom
+$ ./rom-parser /tmp/image.rom
 
+```
+
+```
 Valid ROM signature found @600h, PCIR offset 190h
 	PCIR: type 0 (x86 PC-AT), vendor: 10de, device: 1184, class: 030000
 	PCIR: revision 0, vendor revision: 1
@@ -766,31 +766,27 @@ Valid ROM signature found @fa00h, PCIR offset 1ch
 
 ```
 
-To be UEFI compatible, you need a "type 3 (EFI)" in the result.
+To be UEFI compatible, you need a "type 3 (EFI)" in the result. If it's not there, try updating your GPU VBIOS. GPU manufacturers often share VBIOS upgrades on their support pages. A large database of known compatible and working VBIOSes (along with their UEFI compatibility status!) is available on [TechPowerUp](https://www.techpowerup.com/vgabios/).
 
-If not - try to find newer vbios with UEFI support.
-
-Updated vbios can be used in the VM without flashing.
-
-QEMU:
+Updated VBIOS can be used in the VM without flashing. To load it in QEMU:
 
 ```
 -device vfio-pci,host=07:00.0,......,romfile=/path/to/your/gpu/bios.bin \
 
 ```
 
-libvirt:
+And in libvirt:
 
 ```
    <hostdev>
      ...
      <rom file='/path/to/your/gpu/bios.bin'/>
      ...
-   </hostdev
+   </hostdev>
 
 ```
 
-One should compare vbios versions in host and guest systems using [nvflash tool](https://www.techpowerup.com/download/nvidia-nvflash/) (linux versions under *Show more versions*) or [GPU-Z](https://www.techpowerup.com/download/techpowerup-gpu-z/) (in windows guest)
+One should compare VBIOS versions between host and guest systems using [nvflash](https://www.techpowerup.com/download/nvidia-nvflash/) (Linux versions under *Show more versions*) or [GPU-Z](https://www.techpowerup.com/download/techpowerup-gpu-z/) (in Windows guest). To check the currently loaded VBIOS:
 
 ```
 ./nvflash --version
@@ -805,8 +801,9 @@ UEFI Signer(s)        : Unsigned
 
 ```
 
+And to check a given VBIOS file:
+
 ```
-# checking file
 ./nvflash --version NV299MH.rom
 ...
 Version               : 80.04.XX.00.95
@@ -819,16 +816,25 @@ UEFI Signer(s)        : Microsoft Corporation UEFI CA 2011
 
 ```
 
-If external rom did not work as it should - flashing is imminent.
+If the external ROM did not work as it should in the guest, you'll have to flash the newer VBIOS image to the GPU.
+
+**Warning:** Failure during flashing may "brick" your GPU - recovery may be possible, but rarely easy and often requires additional hardware. **DO NOT** flash VBIOS images for other GPU models (different boards may use different VBIOSes, clocks, fan configuration). If it breaks, you get to keep all the pieces.
+
+In order to avoid the irreparable damage to your graphics adapter it is necessary to unload the NVIDIA kernel driver first:
 
 ```
-# In order to avoid the irreparable damage to your graphics
-# adapter it is necessary to unload the NVIDIA kernel driver first
-sudo rmmod nvidia_modeset nvidia 
-# official vbios flashing without special flags
-sudo ./nvflash romfile.bin
+# rmmod nvidia_modeset nvidia 
 
 ```
+
+Flashing the VBIOS can be done with:
+
+```
+# ./nvflash romfile.bin
+
+```
+
+**DO NOT** interrupt the flashing process, even if it looks like it's stuck. Flashing should take about a minute on most GPUs, but may take longer.
 
 ### Unexpected crashes related to CPU exceptions
 
@@ -900,6 +906,12 @@ EndSection
 ```
 
 [Source](https://www.redhat.com/archives/vfio-users/2016-August/msg00025.html)
+
+### Chromium ignores integrated graphics for acceleration
+
+Chromium and friends will try to detect as many GPUs as they can in the system and pick which one is preferred (usually discrete NVIDIA/AMD graphics). It tries to pick a GPU by looking at PCI devices, not OpenGL renderers available in the system - the result is that Chromium may ignore the integrated GPU available for rendering and try to use the dedicated GPU bound to the `vfio-pci` driver, and unusable on the host system, regardless of whenever a guest VM is running or not. This results in software rendering being used (leading to higher CPU load, which may also result in choppy video playback, scrolling and general un-smoothness).
+
+This can be fixed by [explicitly telling Chromium which GPU you want to use](/index.php/Chromium/Tips_and_tricks#Forcing_specific_GPU "Chromium/Tips and tricks").
 
 ## See also
 

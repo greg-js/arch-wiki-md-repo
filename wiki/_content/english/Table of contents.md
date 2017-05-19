@@ -7,7 +7,7 @@
 | <small>1.2.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.3.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.4.</small> [Events](/index.php/Category:Events "Category:Events") <small>(5)</small> |
-| <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
+| <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(30)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |
@@ -43,7 +43,7 @@
 | <small>3.3.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(17)</small> |
 | <small>3.4.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |
-| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(8)</small> |
+| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(9)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(7)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
 | <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
@@ -66,7 +66,7 @@
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(55)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
-| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(79)</small> |
+| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(80)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(5)</small> |
 | <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
 | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(12)</small> |
@@ -104,7 +104,7 @@
 | <small>5.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(6)</small> |
 | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(66)</small> |
 | <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
-| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(30)</small> |
+| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(38)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |

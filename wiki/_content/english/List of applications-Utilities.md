@@ -230,10 +230,6 @@ The following terminal emulators are based on the [kernel mode setting](/index.p
 
 In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer "wikipedia:Framebuffer") could be refered to a virtual device in the Linux kernel (**fbdev**) or the virtual framebuffer system for X (**xvfb**). This section mainly lists the terminal emulators that based on the in-kernel virtual device, i.e. **fbdev**.
 
-*   **[fbterm](/index.php/Fbterm "Fbterm")** — A fast framebuffer-based terminal emulator with many amazing features. Development stopped.
-
-	[https://code.google.com/archive/p/fbterm/](https://code.google.com/archive/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
-
 *   **yaft** — A simple terminal emulator for living without X, with UCS2 glyphs, wallpaper and 256color support.
 
 	[https://github.com/uobikiemukot/yaft](https://github.com/uobikiemukot/yaft) || [yaft](https://aur.archlinux.org/packages/yaft/)

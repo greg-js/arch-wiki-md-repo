@@ -505,8 +505,6 @@ env LD_LIBRARY_PATH='/usr/lib/openssl-1.0-compat/' LD_PRELOAD='./libcxxrt.so:/us
 
 Install [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and follow the instructions for Civilization VI (above).
 
-It might crash randomly. Has so far only crashed once in five hours for me though.
-
 ## The Clockwork Man
 
 Requires [lib32-libidn](https://www.archlinux.org/packages/?name=lib32-libidn).

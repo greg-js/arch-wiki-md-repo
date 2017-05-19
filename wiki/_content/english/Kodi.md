@@ -62,7 +62,7 @@ There are several methods to it this described below.
 
 #### Kodi-standalone-service
 
-The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [Xorg#Driver_installation video driver](/index.php/Xorg#Driver_installation_video_driver "Xorg") is an assumed dependency, no extra Xorg packages are needed. [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time. No additional configuration should be required for most users, however, if `kodi.service` fails to start, see [Xorg#Rootless_Xorg_.28v1.16.29](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [driver](https://wiki.archlinux.org/index.php/Xorg#Driver_installation) is an assumed dependency, no extra Xorg packages are needed. [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time. No additional configuration should be required for most users, however, if `kodi.service` fails to start, see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
 
 **Note:**
 

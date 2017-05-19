@@ -158,7 +158,7 @@ Oracle 的扩展组件以仅供个人使用的协议发布，在这里提供 [ad
 
 查阅 [VirtualBox manual](https://www.virtualbox.org/manual) 来了解如何创建虚拟机。
 
-**Warning:** 如果你打算在 [Btrfs](/index.php/Btrfs "Btrfs") 文件系统上存储虚拟硬盘镜像在创建任何镜像之前，你应该考虑在镜像的目标文件夹中关闭[Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs")
+**Warning:** 如果你打算在 [Btrfs](/index.php/Btrfs "Btrfs") 文件系统上存储虚拟硬盘镜像在创建任何镜像之前，你应该考虑在镜像的目标文件夹中关闭[Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")
 
 ## 在 VirtualBox 中安装 Archlinux
 

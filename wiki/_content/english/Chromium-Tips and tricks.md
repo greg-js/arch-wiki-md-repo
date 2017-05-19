@@ -15,6 +15,7 @@
     *   [1.10 Reduce memory usage](#Reduce_memory_usage)
     *   [1.11 User Agent](#User_Agent)
     *   [1.12 DOM Distiller](#DOM_Distiller)
+    *   [1.13 Forcing specific GPU](#Forcing_specific_GPU)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -27,6 +28,7 @@
         *   [3.4.1 ScriptBlock](#ScriptBlock)
         *   [3.4.2 ScriptSafe](#ScriptSafe)
         *   [3.4.3 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
+    *   [3.5 Do Not Track](#Do_Not_Track)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -148,7 +150,7 @@ $ chromium --single-process
 
 ```
 
-**Warning:** While the single-process model is the default in [Firefox](/index.php/Firefox "Firefox") [[2]](https://wiki.mozilla.org/Electrolysis) and other browsers, it may contain bugs not present in other models. [[3]](https://www.chromium.org/developers/design-documents/process-models#TOC-Single-process)
+**Warning:** The single-process model is discouraged because it is unsafe and may contain bugs not present in other models.[[2]](https://www.chromium.org/developers/design-documents/process-models#TOC-Single-process)
 
 In addition, you can suspend or store inactive Tabs with extensions such as [Tab Suspender](https://chrome.google.com/webstore/detail/tab-suspender/fiabciakcmgepblmdkmemdbbkilneeeh?hl=en) and [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en).
 
@@ -163,6 +165,17 @@ Chromium has a similar reader mode to Firefox. In this case it's called DOM Dist
 Running the upper flag, you will find a new "Distill Page" menu item.
 
 You can reach the internal debug page by visiting `chrome://dom-distiller`
+
+### Forcing specific GPU
+
+In multi-GPU systems, Chromium automatically detects which GPU should be used for rendering (discrete or integrated). This works 99% of the time, except when it doesn't - if a unavailable GPU is picked (for example, discrete graphics on VFIO GPU passthrough-enabled systems), `chrome://gpu` will complain about not being able to initialize the GPU process. On the same page below **Driver Information** there'll be multiple GPUs shown (GPU0, GPU1, ...). There's no way to switch between them in a user-friendly way, but you can read the device/vendor IDs present there and configure Chromium to use a specific GPU with flags:
+
+```
+$ chromium --gpu-testing-vendor-id=0x8086 --gpu-testing-device-id=0x1912
+
+```
+
+...where `0x8086` and `0x1912` is replaced by the IDs of the GPU you want to use (as shown on the `chrome://gpu` page).
 
 ## Profile maintenance
 
@@ -268,6 +281,8 @@ To confirm this is working run [this test](https://panopticlick.eff.org) and mak
 
 Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") browser are typically also available for Chromium. See [Firefox/Privacy#Extensions](/index.php/Firefox/Privacy#Extensions "Firefox/Privacy") for details.
 
+**Tip:** Installing too many extensions might take up much space in the toolbar. Those extensions which you wouldn't interact with anyway (e.g. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)) can be hide by right clicking on the extension and choosing **Hide in Chromium menu**.
+
 *   [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)
 *   [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
 *   [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?hl=en)
@@ -305,9 +320,15 @@ Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome)
 
 Extension is available in the Chrome Web Store: [Vanilla Cookie Manager](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
 
+### Do Not Track
+
+Chromium's 'Do Not Track' option is turned off by default. To enable it, visit `chrome://settings`, scroll down to **Show advanced settings...** and under **Privacy**, check **Send a "Do Not Track" request with your browsing traffic**.
+
+**Note:** DNT isn't going to stop all web tracking. So even if you turn this feature on, your data may be still collected and analyzed.
+
 ## Making flags persistent
 
-**Note:** The `chromium-flags.conf` file is specific to Arch Linux and is supported via a custom launcher script that was added in `chromium 42.0.2311.90-1`.
+**Note:** The `chromium-flags.conf` file and the accompanying custom launcher script are specific to the Arch Linux [chromium](https://www.archlinux.org/packages/?name=chromium) package.
 
 You can put your flags in a `chromium-flags.conf` file under `$HOME/.config/` (or under `$XDG_CONFIG_HOME` if you have configured that environment variable).
 

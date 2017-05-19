@@ -155,4 +155,4 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
     *   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")
     *   [Pm-utils](/index.php/Pm-utils "Pm-utils")
     *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-    *   [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet")
+    *   [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet")

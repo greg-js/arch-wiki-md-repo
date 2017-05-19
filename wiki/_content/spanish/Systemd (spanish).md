@@ -311,7 +311,7 @@ Desde la versión 38, *systemd* tiene un sistema de registro (*«log»*) propio 
 
 Por defecto, (cuando `Storage=` está definido como `auto` en `/etc/systemd/journald.conf`), journal escribe en `/var/log/journal/`. Si el directorio `/var/log/journal/` no existe (por ejemplo, si lo ha eliminado usted o algún programa), systemd **no** lo crea de forma automática, sino que escribe los registros en `/run/systemd/journal`. Esto significa que los registros se perderán al reiniciar.
 
-**Sugerencia:** Si `/var/log/journal/` reside en un sistema de archivos [btrfs](/index.php/Btrfs "Btrfs") debería considerar la opción de desactivar [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") para el directorio:
+**Sugerencia:** Si `/var/log/journal/` reside en un sistema de archivos [btrfs](/index.php/Btrfs "Btrfs") debería considerar la opción de desactivar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") para el directorio:
 ```
 # chattr +C /var/log/journal
 

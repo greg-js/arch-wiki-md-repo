@@ -86,7 +86,7 @@ As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enabl
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to edit the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
-**Warning:** If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any database. If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
+**Warning:** If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database. If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
 ## Create your first database/user
 

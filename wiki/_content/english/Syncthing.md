@@ -7,6 +7,7 @@
     *   [2.1 Run binary](#Run_binary)
     *   [2.2 System service](#System_service)
     *   [2.3 User service](#User_service)
+    *   [2.4 Syncthing-GTK](#Syncthing-GTK)
 *   [3 Accessing the web-interface](#Accessing_the_web-interface)
 *   [4 Configuration](#Configuration)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -41,6 +42,12 @@ Running Syncthing as a system service ensures that it is running at startup even
 Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
 
 The systemd services need to be started for a specific user in any case, see [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
+
+### Syncthing-GTK
+
+Syncthing can also be launched by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk). Use interface UI settings to start [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) at startup, and to state whether to launch the syncthing daemon.
+
+When launching the syncthing daemon using both systemd and [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk), it might happen that two syncthing instances run concurrently leading to high CPU consumption: one launched by syncthing-gtk, and the other (slightly later) by systemd. To solve this, either avoid launching synchting using systemd, or configure syncthing-gtk to wait for the syncthing daemon.
 
 ## Accessing the web-interface
 

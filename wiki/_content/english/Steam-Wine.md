@@ -143,7 +143,7 @@ exec wine "c:\\program files\\steam\\steam.exe" "$@"
 
 ```
 
-*   Install [mimeo](https://aur.archlinux.org/packages/mimeo/) and [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) from AUR. You will need to replace the existing [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) if installed. In XFCE, you will also need [xorg-utils](https://www.archlinux.org/packages/?name=xorg-utils).
+*   Install [mimeo](https://aur.archlinux.org/packages/mimeo/) and [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) from AUR. You will need to replace the existing [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) if installed. In XFCE, you will also need [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop).
 
 *   Create `~/.config/mimeo/associations.txt` with your favorite editor and paste:
 

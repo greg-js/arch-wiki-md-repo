@@ -240,11 +240,11 @@ If you're using a compositor (e.g. in KDE Plasma 5) and find that composition is
 An example of creating a single screenshot, by using a start time (`HH:MM:SS`):
 
 ```
-$ mpv --no-audio --profile=image --start=00:01:30 --frames=1 /path/to/video/file
+$ mpv --no-audio --start=00:01:30 --frames=1 /path/to/video/file --o=/path/to/screenshot.png
 
 ```
 
-Screenshots will be saved as 00000001.jpg in the current directory.
+Screenshots will be saved in /path/to/screenshot.png.
 
 ## Vapoursynth
 

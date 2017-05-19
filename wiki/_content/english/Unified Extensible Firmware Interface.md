@@ -350,7 +350,7 @@ See [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensib
 
 ### Create UEFI bootable USB from ISO
 
-Follow [USB flash installation media#BIOS and UEFI Bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_Bootable_USB "USB flash installation media")
+Follow [USB flash installation media#BIOS and UEFI bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_bootable_USB "USB flash installation media")
 
 ### Remove UEFI boot support from Optical Media
 

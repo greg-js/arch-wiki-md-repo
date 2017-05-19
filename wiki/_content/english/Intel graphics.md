@@ -18,6 +18,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
     *   [5.3 Setting scaling mode](#Setting_scaling_mode)
     *   [5.4 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
+        *   [5.4.1 Determine active video ports](#Determine_active_video_ports)
     *   [5.5 H.264 decoding on GMA 4500](#H.264_decoding_on_GMA_4500)
     *   [5.6 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -214,6 +215,41 @@ where `*param*` is one of `"Full"`, `"Center"` or `"Full aspect"`.
 One of the low-resolution video ports may be enabled on boot which is causing the terminal to utilize a small area of the screen. To fix, explicitly disable the port with an i915 module setting with `video=SVIDEO-1:d` in the kernel command line parameter in the bootloader. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
 If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1.
+
+#### Determine active video ports
+
+In order to find active video ports you might want to disable with the video kernel parameter, you should look at the direct rendering manager module in sysfs:
+
+```
+$ ls -l /sys/class/drm/
+total 0
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0-DP-1 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0/card0-DP-1
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0-DP-2 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0/card0-DP-2
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0-eDP-1 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0-HDMI-A-1 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0/card0-HDMI-A-1
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0-HDMI-A-2 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0/card0-HDMI-A-2
+lrwxrwxrwx 1 root root    0 May 17 11:03 card0-HDMI-A-3 -> ../../devices/pci0000:00/0000:00:02.0/drm/card0/card0-HDMI-A-3
+lrwxrwxrwx 1 root root    0 May 17 11:03 controlD64 -> ../../devices/pci0000:00/0000:00:02.0/drm/controlD64
+lrwxrwxrwx 1 root root    0 May 17 11:03 renderD128 -> ../../devices/pci0000:00/0000:00:02.0/drm/renderD128
+-r--r--r-- 1 root root 4096 May 17 11:03 version
+
+```
+
+To see the status of the respective ports:
+
+```
+$ grep . /sys/class/drm/card?-*/status
+/sys/class/drm/card0-DP-1/status:disconnected
+/sys/class/drm/card0-DP-2/status:disconnected
+/sys/class/drm/card0-eDP-1/status:disconnected
+/sys/class/drm/card0-HDMI-A-1/status:disconnected
+/sys/class/drm/card0-HDMI-A-2/status:disconnected
+/sys/class/drm/card0-HDMI-A-3/status:connected
+
+```
+
+If you find any video ports connected, which you are not aware of or you do not want to be serviced, include its identifier (the part after the `cardN-` item) in the above `video=` parameter, e.g. `video=HDMI-A-3:d` to disable the HDMI-A-3 port connected above.
 
 ### H.264 decoding on GMA 4500
 

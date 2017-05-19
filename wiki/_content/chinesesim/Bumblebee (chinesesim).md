@@ -8,8 +8,7 @@
 
 *   [1 Bumblebee: Linux上的 Optimus](#Bumblebee:_Linux.E4.B8.8A.E7.9A.84_Optimus)
 *   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 为 Intel/NVIDIA 安装 Bumblebee](#.E4.B8.BA_Intel.2FNVIDIA_.E5.AE.89.E8.A3.85_Bumblebee)
-    *   [2.2 为 Intel/Nouveau 安装 Bumblebee](#.E4.B8.BA_Intel.2FNouveau_.E5.AE.89.E8.A3.85_Bumblebee)
+    *   [2.1 为 Intel/Nouveau 安装 Bumblebee](#.E4.B8.BA_Intel.2FNouveau_.E5.AE.89.E8.A3.85_Bumblebee)
 *   [3 用法](#.E7.94.A8.E6.B3.95)
     *   [3.1 测试](#.E6.B5.8B.E8.AF.95)
     *   [3.2 一般用法](#.E4.B8.80.E8.88.AC.E7.94.A8.E6.B3.95)
@@ -58,17 +57,6 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BISO有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。
 
-**提示：** 不要安装下列任何软件包，请跳至后文以寻求帮助。
-
-*   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - 提供守护进程以及程序的主要安装包。
-*   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (或 [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) - 当未使用时禁用NVIDIA独立显卡。
-*   [primus](https://www.archlinux.org/packages/?name=primus) (或 [primus-git](https://aur.archlinux.org/packages/primus-git/)), [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) - 一个渲染/显示的桥接器。只需其中之一，不过两个都安装也不会有问题。
-*   [lib32-primus](https://www.archlinux.org/packages/?name=lib32-primus), [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - 针对32位程序的渲染/显示桥接器。必须启用 [Multilib](/index.php/Multilib "Multilib") .
-*   [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) - 测试程序 `glxgears`.
-*   [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) - 测试程序 `glxspheres` 和 `glxspheres64`.
-
-### 为 Intel/NVIDIA 安装 Bumblebee
-
 安装:
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - 提供守护进程以及程序的主要安装包。
@@ -82,7 +70,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 *   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl)
 *   [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) - 如果你要需要用 `primusrun`.
 
-**警告:** **不要** 安装 [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl). 没有它 Bumblebee 会找到正确的32位NVIDIA库。
+**警告:** **不要** 安装 [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils)，没有它 Bumblebee 会找到正确的32位NVIDIA库。
 
 **注意:** 如果你已安装 [mesa](https://www.archlinux.org/packages/?name=mesa) 和 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) ，你需要把它们加入到安装序列中以避免与 [mesa](https://www.archlinux.org/packages/?name=mesa) 和 [nvidia](https://www.archlinux.org/packages/?name=nvidia) 间的依赖冲突。
 

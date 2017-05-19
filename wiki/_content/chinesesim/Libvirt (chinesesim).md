@@ -53,7 +53,7 @@ Libvirt 的一些主要功能如下：
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [libvirt](https://www.archlinux.org/packages/?name=libvirt) 以及至少一个管理程序（hypervisor）：
 
-*   [libvirt 的 KVM/QEMU 驱动](http://libvirt.org/drvqemu.html) 是 *libvirt* 的首选驱动，如果 [KVM 功能已启用](/index.php/QEMU#Enabling_KVM "QEMU")，则支持全虚拟化和硬件加速的客户机。详见 [QEMU](/index.php/QEMU "QEMU")。
+*   [libvirt 的 KVM/QEMU 驱动](http://libvirt.org/drvqemu.html) 是 *libvirt* 的首选驱动，如果 KVM 功能已 [启用](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.90.AF.E7.94.A8_KVM "QEMU (简体中文)")，则支持全虚拟化和硬件加速的客户机。详见 [QEMU](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "QEMU (简体中文)")。
 
 *   其他[受支持的管理程序](http://libvirt.org/drivers.html)，包括 [LXC](/index.php/LXC "LXC")、[VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [Xen](/index.php/Xen "Xen")。请参见它们各自的安装说明。
     *   [Libvirt 的 LXC 驱动](http://libvirt.org/drvlxc.html) 并不依赖 [lxc](https://www.archlinux.org/packages/?name=lxc) 提供的用户空间工具。因此，即便需要使用这个驱动也并不是必须安装该工具。

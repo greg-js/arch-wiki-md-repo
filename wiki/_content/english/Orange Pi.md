@@ -2,8 +2,6 @@ Orange Pi (One) is a minimalist computer built for the [ARMv7-A architecture](ht
 
 **Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
 
-**Warning:** Do not upgrade to linux-armv7-4.11.0-1, your pi will no longer boot
-
 This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
 ## Contents
@@ -13,7 +11,6 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
         *   [1.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
         *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
         *   [1.1.3 Login / SSH](#Login_.2F_SSH)
-        *   [1.1.4 Upgrading to linux-armv7-4.11.0-1](#Upgrading_to_linux-armv7-4.11.0-1)
 *   [2 See also](#See_also)
 
 ## Installation
@@ -87,7 +84,7 @@ Compile it and write it to the SD-card using the package [uboot-tools](https://w
 The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. If you compile for a different H3 Orange Pi than the One, replace orangepi_one_config accordingly. Then clone the u-boot source code and compile a Orange Pi image:
 
 ```
-$ git clone --depth 1 -b v2016.09.01 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
+$ git clone --depth 1 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
 $ cd u-boot
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- orangepi_one_defconfig
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
@@ -108,34 +105,6 @@ SSH login for root is disabled by default. Login with the default user account a
 | Type | Username | Password |
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
-
-#### Upgrading to linux-armv7-4.11.0-1
-
-**Note:** These instructions have worked on an Orange Pi Zero.
-
-```
-# pacman -Syu
-
-```
-
-When upgrading linux to latest version, above boot method didn't work. So, we have to upgrade boot method.
-
-This step is creating a u-boot image of newest version.
-
-```
-$ git clone --depth 1 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
-$ cd u-boot
-$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- orangepi_one_defconfig
-$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
-
-```
-
-Now dd the image to your sdcard, where /dev/sdX is your sdcard.
-
-```
-# dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
-
-```
 
 ## See also
 

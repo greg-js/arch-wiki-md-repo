@@ -36,7 +36,7 @@ MariaDB - так именуется форк популярного сервер
 
 	[http://www.percona.com/software/percona-server/](http://www.percona.com/software/percona-server/) || [percona-server](https://www.archlinux.org/packages/?name=percona-server)
 
-**Tip:** Если база данных, размещаемая в каталоге `/var/lib/mysql`, расположена на разделе с файловой системой [btrfs](/index.php/Btrfs "Btrfs"), то необходимо отключить механизм [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") для этого каталога перед тем как создавать новую базу данных:
+**Tip:** Если база данных, размещаемая в каталоге `/var/lib/mysql`, расположена на разделе с файловой системой [btrfs](/index.php/Btrfs "Btrfs"), то необходимо отключить механизм [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") для этого каталога перед тем как создавать новую базу данных:
 
 `# chattr +C /var/lib/mysql`
 

@@ -165,7 +165,7 @@ Works out of the box with [xf86-input-libinput](https://www.archlinux.org/packag
 
 ### Wacom tablet input
 
-Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom). See [Wacom Tablet](/index.php/Wacom_Tablet "Wacom Tablet")
+Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom). See [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet")
 
 ## Not Working
 

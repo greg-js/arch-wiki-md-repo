@@ -132,7 +132,7 @@ Se puede uiltizar `-f qcow2` para crear un disco *qcow2* en su lugar.
 
 También puedes simplemente crear una imagen "cruda" meidante la creación de un archivo del tamaño necesitado usando `dd` ó `fallocate`.}}
 
-**Advertencia:** Si almacenas una imágen de disco en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), deberías considerar deshabilitar [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") para el directorio antes de crear imágenes.
+**Advertencia:** Si almacenas una imágen de disco en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), deberías considerar deshabilitar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") para el directorio antes de crear imágenes.
 
 #### Superposición de imágenes de almacenamiento
 
@@ -1004,7 +1004,7 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 Para una mejor compatibilidad con varios monitores, compartir el portapapeles, etc., los paquetes siguientes deben estar instalados en el invitado:
 
 *   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg cliente que permite copiar y pegar entre el cliente y X-session y más
-*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl controlador de vídeo
+*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl controlador de vídeo
 *   Para otros sistemas operativos, mire la sección Guest de la página [SPICE-Space download](http://www.spice-space.org/download.html).
 
 ### vmware

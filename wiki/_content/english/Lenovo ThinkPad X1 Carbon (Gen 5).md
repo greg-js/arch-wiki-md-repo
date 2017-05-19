@@ -65,7 +65,9 @@ There are two options for displays:
 
 ### TrackPoint Scrolling
 
-TrackPoint middle-button scrolling is working out of the box (16.05.2017)
+TrackPoint Scrolling is working out of the box in GNOME and MATE. In some WindowManagers, the TrackPoint middle-button scrolling can be enabled by [installing](/index.php/Installing "Installing") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories") and appending the following line to your [.xinitrc](/index.php/.xinitrc ".xinitrc"):
+
+ `xinput set-prop "ImPS/2 Generic Wheel Mouse" "libinput Scroll Method Enabled" 0 0 1` 
 
 ### Lenovo ThinkPad USB-C Dock
 

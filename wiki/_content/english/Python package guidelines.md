@@ -35,7 +35,7 @@ However, for managing Python packages from within PKGBUILDs, the standard-provid
 
 ### distutils
 
-A *distutils* example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto) or at `/usr/share/pacman/PKGBUILD-python.proto`, provided by the [abs](https://www.archlinux.org/packages/?name=abs) package. It follows the form:
+A *distutils* example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto). It follows the form:
 
 ```
 *<python version>* setup.py install --root="$pkgdir/" --prefix=/usr --optimize=1

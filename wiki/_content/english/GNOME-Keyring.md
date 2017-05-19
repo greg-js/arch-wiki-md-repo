@@ -112,6 +112,27 @@ export SSH_AUTH_SOCK
 
 See [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") for use in Xfce.
 
+If you use [I3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error
+
+```
+sign_and_send_pubkey: signing failed: agent refused operation
+Permission denied (publickey).
+
+```
+
+you need to add the DISPLAY environment variable to dbus-daemon in your .xinitrc, like this:
+
+ `~/.xinitrc` 
+```
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+...
+exec i3
+
+```
+
 ### With a display manager
 
 When using a display manager, the keyring works out of the box for most cases. The following display managers automatically unlock the keyring once you log in:

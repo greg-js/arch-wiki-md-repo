@@ -370,7 +370,7 @@ está no arquivo de configuração da target. Atualmente, *multi-user.target* e 
 
 Por padrão (quando `Storage=` é definido para `auto` em `/etc/systemd/journald.conf`), o journal escreve para `/var/log/journal/`. O diretório `/var/log/journal/` faz parte do pacote *systemd*. Se você ou algum programa excluir esse diretório, systemd **não** irá recriá-lo automaticamente; no entanto, ele será recriado durante a próxima atualização do pacote systemd. Até então, os registros serão gravados em `/run/systemd/journal`, e os registros se perderão na reinicialização.
 
-**Dica:** Se `/var/log/journal/` reside em um sistema de arquivo [btrfs](/index.php/Btrfs "Btrfs") você deve considerar a desativação [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") do diretório:
+**Dica:** Se `/var/log/journal/` reside em um sistema de arquivo [btrfs](/index.php/Btrfs "Btrfs") você deve considerar a desativação [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") do diretório:
 ```
 # chattr +C /var/log/journal
 

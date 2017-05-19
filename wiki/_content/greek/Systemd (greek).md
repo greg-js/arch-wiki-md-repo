@@ -369,7 +369,7 @@ Systemd can replace cron functionality to a great extent. See [systemd/Timers](/
 
 In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, systemd will **not** recreate it automatically; however, it will be recreated during the next update of the systemd package. Until then, logs will be written to `/run/systemd/journal`, and logs will be lost on reboot.
 
-**Tip:** If `/var/log/journal/` resides in a [btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling Copy-on-Write for the directory. See the main article for details: [Btrfs#Copy-On-Write (CoW)](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs").
+**Tip:** If `/var/log/journal/` resides in a [btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling Copy-on-Write for the directory. See the main article for details: [Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs").
 
 ### Filtering output
 

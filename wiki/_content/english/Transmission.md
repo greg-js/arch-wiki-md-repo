@@ -14,15 +14,18 @@
     *   [3.5 Configuring the daemon](#Configuring_the_daemon)
         *   [3.5.1 Watch dir](#Watch_dir)
         *   [3.5.2 CLI Examples](#CLI_Examples)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
-*   [5 See also](#See_also)
+*   [4 Web Interface](#Web_Interface)
+    *   [4.1 The GUI way](#The_GUI_way)
+    *   [4.2 The CLI way](#The_CLI_way)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
+*   [6 See also](#See_also)
 
 ## Installation
 
 There are several options:
 
-*   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface"), and web client ([http://localhost:9091](http://localhost:9091)) interfaces.
+*   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface"), and [web client interfaces](#Web_Interface).
 *   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 package.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 package.
 *   [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/) - Curses interface for the daemon.
@@ -208,6 +211,30 @@ If you want to remove all finished torrents you can use the following command wi
 # transmission-remote -n 'username:password' -l | grep 100% | awk '{print $1}'| paste -d, -s | xargs -i transmission-remote -t {} -r
 
 ```
+
+## Web Interface
+
+### The GUI way
+
+Once Transmission is installed, you can easily set up the web interface. All you need to do is click the **edit** menu and select **preferences**. Click the **Remote** tab and enable **Allow remote access**.
+
+Here, you have the opportunity to change the default listening port from 9091.
+
+Check the **Use authentication** and fill in a username and password so that authentication can be used.
+
+To increase security, you can restrict access from any IP address by enabling **Only allow these IP addresses**.
+
+Now you are ready to launch the web interface by either clicking on the **Open web client**, which makes your default web browser open it, or manually reaching `http://*TARGET_IP_ADDRESS*:*PORT*` with any supported web browser.
+
+If you haven't changed the listening port, the default one is 9091\. In this case, the link is `[http://localhost:9091](http://localhost:9091)`
+
+### The CLI way
+
+You don't need a graphical interface to set up the web interface, the daemon offers the very same options. You can reach the web interface without specifing any flags. See [#Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
+
+Nevertheless, you can specify everything that you see in the previous section:
+
+ `$ transmission-daemon --auth --username arch --password linux --port 9091 --allowed "127.0.0.1"` is equivalent to `$ transmission-daemon -t -u arch -v linux -p 9091 -a "127.0.0.1"` 
 
 ## Troubleshooting
 
