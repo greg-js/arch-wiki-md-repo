@@ -49,17 +49,17 @@ apt-get download (bypass the package cache) | zypper --download-only | emerge --
 ## 查询某个包的信息
 
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
-| Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | dnf list, dnf info | apt show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
-| Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
-| Display remote package information: Name, version, description, etc. | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
-| Display files provided by local package | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
-| Display files provided by a remote package | pkgfile -l | dnf repoquery -l | apt-file list $pattern | pfl |
-| Query the package which provides FILE | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) | dpkg -S / dlocate | zypper search -f | equery belongs |
-| List the files that the package holds. Again, this functionality can be mimicked by other more complex commands. | pacman -Ql
+| 显示包的全部或者部分信息。各种包管理工具默认显示的详细程度各不相同，但是可以通过设置选项使其一致。 | pacman -[S|Q]i | dnf list, dnf info | apt show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
+| 显示本地包信息，包括包名、版本、描述等。 | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
+| 显示远程包信息，包括包名、版本、描述等。 | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
+| 显示本地包提供的文件。 | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
+| 显示远程包提供的文件。 | pkgfile -l | dnf repoquery -l | apt-file list $pattern | pfl |
+| 查询提供某个文件的包。 | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) | dpkg -S / dlocate | zypper search -f | equery belongs |
+| 列出包中的文件。其他更复杂的命令亦可以提供该功能。 | pacman -Ql
 pkgfile -l | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
-| Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | pkgfile | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
-| Search all packages to find the one which holds the specified file. auto-apt is using this functionality. | pkgfile -s | dnf provides | apt-file search | zypper search -f | equery belongs |
-| Show the changelog of a package | pacman -Qc | rpm -q --changelog | apt-get changelog | rpm -q --changelog | equery changes -f |
+| 查出文件是由哪一个包提供的，主要是为了检索特定文件。其他工具亦可通过搜索命令提供该功能。 | pkgfile | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
+| 在所有包中查找包含指定文件的包。auto-apt 提供该功能。 | pkgfile -s | dnf provides | apt-file search | zypper search -f | equery belongs |
+| 显示包的更新日志。 | pacman -Qc | rpm -q --changelog | apt-get changelog | rpm -q --changelog | equery changes -f |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 
 ## 查询包列表

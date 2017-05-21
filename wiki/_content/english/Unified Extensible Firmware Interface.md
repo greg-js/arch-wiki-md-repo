@@ -462,7 +462,7 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 
 *   Backup `EFI/boot/loader.efi` to `EFI/boot/gummiboot.efi`
 
-*   [Create a GRUB standalone image](/index.php/GRUB#GRUB_standalone "GRUB") for i686 system and copy the generated `grub*.efi` to the USB as `EFI/boot/loader.efi` and/or `EFI/boot/bootia32.efi`
+*   [Create a GRUB standalone image](/index.php/GRUB/Tips_and_tricks#GRUB_standalone "GRUB/Tips and tricks") for i686 system and copy the generated `grub*.efi` to the USB as `EFI/boot/loader.efi` and/or `EFI/boot/bootia32.efi`
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 

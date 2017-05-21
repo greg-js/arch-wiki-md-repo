@@ -12,11 +12,12 @@
     *   [1.1 Python 3](#Python_3)
     *   [1.2 Python 2](#Python_2)
     *   [1.3 Старые версии](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B5_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B8)
-*   [2 Включение автодополнения в оболочке Python](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B5_Python)
+*   [2 Управление пакетами](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8)
 *   [3 Привязки к графическим библиотекам](#.D0.9F.D1.80.D0.B8.D0.B2.D1.8F.D0.B7.D0.BA.D0.B8_.D0.BA_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.BC_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B0.D0.BC)
 *   [4 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
     *   [4.1 IPython](#IPython)
     *   [4.2 Виртуальное окружение](#.D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [4.3 Включение автодополнения в оболочке Python2](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B5_Python2)
 *   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [5.1 Проблемы с версией Python в скриптах сборки](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B5.D0.B9_Python_.D0.B2_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0.D1.85_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B8)
 *   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
@@ -112,20 +113,23 @@ $ which python
 
 Дополнительные модули/библиотеки для старых версий Python можно найти в AUR по слову "python" с указанием версии без точки. Например, введите "python26" для поиска модулей версии 2.6.
 
-## Включение автодополнения в оболочке Python
+## Управление пакетами
 
-**Примечание:** Этот совет относится только к Python 2, начиная с версии 3.4 [автодополнение по клавише Tab](https://docs.python.org/3/tutorial/interactive.html) по умолчанию включено
+Огромное количество пакетов Python доступно в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") и в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), однако экосистема Python предоставляет свои собственные пакетные менеджеры, работающие с [PyPI](https://pypi.python.org/) (Python Package Index):
 
-Скопируйте следующее в интерактивную оболочку Python:
+*   **pip** — PyPA, инструмент установки пакетов Python
 
- `/usr/bin/python` 
-```
-import rlcompleter
-import readline
-readline.parse_and_bind("tab: complete")
-```
+	[https://pip.pypa.io/](https://pip.pypa.io/) || [python-pip](https://www.archlinux.org/packages/?name=python-pip), [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)
 
-Источник: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html).
+*   **setuptools** — с легкостью скачивайте, собирайте, устанавливайте, обновляйте и удаляйте пакеты Python
+
+	[https://setuptools.readthedocs.io/](https://setuptools.readthedocs.io/) || [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [python2-setuptools](https://www.archlinux.org/packages/?name=python2-setuptools)
+
+Для просмотра краткой истории и сравнения этих двух утилит, обратитесь к странице [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install). Общепризнанные лучшие практики управления пакетами Python описаны [здесь](https://packaging.python.org/).
+
+Если вы собираетесь использовать *pip*, используйте его в [виртуальном окружении](#.D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5) или с опцией `--user` (`pip install --user`), чтобы избежать конфликтов между пакетами в каталоге `/usr`. Во всех случаях предпочтительный способ установки программного обеспечения - это [использование pacman](/index.php/System_maintenance_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B9.D1.82.D0.B5_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_.D0.B4.D0.BB.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE.D0.B1.D0.B5.D1.81.D0.BF.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D1.8F "System maintenance (Русский)").
+
+**Примечание:** Существуют инструменты, автоматически генерирующие PKGBUILDы для пакетов *pip* и таким образом интегрирующие его в *pacman*: [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
 
 ## Привязки к графическим библиотекам
 
@@ -170,6 +174,21 @@ readline.parse_and_bind("tab: complete")
 Python предоставляет инструменты для создания изолированных окружений, в которых вы можете устанавливать пакеты, не влияя и никак не взаимодействуя ни на другие виртуальные окружения, ни на системные пакеты Python. Таким образом, в частности, можно изменить интерпретатор python для конкретного приложения.
 
 Для получения дополнительной информации смотрите статью [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment").
+
+### Включение автодополнения в оболочке Python2
+
+**Примечание:** Этот совет относится только к Python 2, начиная с версии 3.4 [автодополнение по клавише Tab](https://docs.python.org/3/tutorial/interactive.html) включено по умолчанию
+
+Скопируйте это в интерактивную оболочку Python:
+
+ `/usr/bin/python2` 
+```
+import rlcompleter
+import readline
+readline.parse_and_bind("tab: complete")
+```
+
+Источник: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html).
 
 ## Решение проблем
 

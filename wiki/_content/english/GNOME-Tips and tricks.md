@@ -343,9 +343,12 @@ if echo "$1" | pcregrep -q '^https?://'; then
 	"$OTHER_BROWSER" $BROWSER_OPTIONS ${*}
 	exit 0
     fi
-fi
 
-"$DEFAULT_BROWSER" ${*}
+    "$DEFAULT_BROWSER" ${*}
+    exit 0
+else
+    "$XDG_OPEN" ${*}
+fi
 
 ```
 

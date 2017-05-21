@@ -8,10 +8,11 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [2 No hinting for *italic* or **bold**](#No_hinting_for_italic_or_bold)
 *   [3 Sharp fonts](#Sharp_fonts)
 *   [4 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
-*   [5 Default fonts](#Default_fonts)
-    *   [5.1 Japanese](#Japanese)
-*   [6 Patched packages](#Patched_packages)
-*   [7 See also](#See_also)
+*   [5 Disable bold font](#Disable_bold_font)
+*   [6 Default fonts](#Default_fonts)
+    *   [6.1 Japanese](#Japanese)
+*   [7 Patched packages](#Patched_packages)
+*   [8 See also](#See_also)
 
 ## Hinted fonts
 
@@ -129,6 +130,27 @@ Some users prefer the sharper rendering that anti-aliasing does not offer:
     </edit>
   </match>
 </fontconfig>
+
+```
+
+## Disable bold font
+
+For when a font does not present itself well in bold and you can't disable bold fonts in the application ([st](/index.php/St "St") for example).
+
+```
+...
+<match target="pattern">
+    <test qual="any" name="family">
+        <string>Envy Code R</string>
+    </test>
+    <test name="weight" compare="more">
+        <const>medium</const>
+    </test>
+    <edit name="weight" mode="assign" binding="same">
+        <const>medium</const>
+    </edit>
+</match>
+...
 
 ```
 

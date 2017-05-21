@@ -44,25 +44,20 @@ It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_sy
 
 ### Server
 
-NFS needs to see the list of shares (referred to as "exports" from here on out), which are defined in `/etc/exports` in order to serve-up the content. The NFS root directory can be any directory on the file system. In the interest of security, it is recommended to use an NFS export root which will keep users limited to that mount point only. The following example illustrates this concept.
+The NFS server needs a list of exports (shared directories) which are defined in `/etc/exports`. NFS shares defined in `/etc/exports` are relative to the so-called NFS root. A good security practice is to define an NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the filesystem.
 
-Any NFS shares defined in `/etc/exports` are relative to the NFS root. In this example, the NFS root will be `/srv/nfs` and we are sharing `/mnt/music`.
+Consider this following example wherein:
+
+1.  The NFS root is `/srv/nfs`.
+2.  The export is `/srv/music` via a bind mount to the actual target `/mnt/music`.
 
 ```
 # mkdir -p /srv/nfs/music /mnt/music
-
-```
-
-Read/Write permissions must be set on the music directory so clients may write to it.
-
-Now mount the actual target share, `/mnt/music` to the directory under the NFS root via the mount --bind command:
-
-```
 # mount --bind /mnt/music /srv/nfs/music
 
 ```
 
-To make it stick across server reboots, add the bind mount to `fstab`:
+To make it stick across reboots, add the bind mount to `fstab`:
 
  `/etc/fstab` 
 ```
@@ -70,13 +65,15 @@ To make it stick across server reboots, add the bind mount to `fstab`:
 
 ```
 
+**Note:** The permissions on the server filesystem is what NFS will honor so insure that connecting users have the desired access.
+
 **Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
 
-Add directories to be shared and an ip address or hostname(s) of client machines that will be allowed to mount them in `exports`:
+Add directories to be shared and an ip address or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`:
 
  `/etc/exports` 
 ```
-/srv/nfs 192.168.1.0/24(rw,fsid=root,no_subtree_check)
+/srv/nfs       192.168.1.0/24(rw,fsid=root,no_subtree_check)
 /srv/nfs/music 192.168.1.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
 
 ```

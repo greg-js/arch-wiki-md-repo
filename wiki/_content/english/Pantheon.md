@@ -100,7 +100,7 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player developed from [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 *   [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player developed from [audience](https://www.archlinux.org/packages/?name=audience)
 *   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/)
-*   [midori-granite](https://aur.archlinux.org/packages/midori-granite/) or [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser, replaced by a customized [epiphany](https://www.archlinux.org/packages/?name=epiphany) (not yet packaged for Archlinux).
+*   [midori-granite](https://aur.archlinux.org/packages/midori-granite/) or [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser, replaced upstream by [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/)
 *   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client based on [geary](https://www.archlinux.org/packages/?name=geary)
 *   [screenshot-tool-bzr](https://aur.archlinux.org/packages/screenshot-tool-bzr/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster

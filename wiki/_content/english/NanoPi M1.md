@@ -97,10 +97,17 @@ Compile it and write it to the SD-card using the package [uboot-tools](https://w
 
 ### Install U-Boot
 
-Clone U-Boot from its master git repository:
+The upstream U-Boot repository has no graphics support as of May 2017. Clone U-Boot from the jernejsk git repository:
 
 ```
-$ git clone --depth 1 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
+$ git clone --depth 1 [https://github.com/jernejsk/u-boot.git](https://github.com/jernejsk/u-boot.git)
+
+```
+
+There is a bug in the U-Boot code for Arch. Correct this with:
+
+```
+$ sed -i -e 's/\#\!\/usr\/bin\/env\ python/\#\!\/usr\/bin\/env\ python2/g' tools/binman/binman
 
 ```
 

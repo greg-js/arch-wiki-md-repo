@@ -97,6 +97,8 @@ $ dm-tool --help
 
 ```
 
+**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use something else, e.g. from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+
 ## Testing
 
 First, [install](/index.php/Install "Install") [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr) from the [official repositories](/index.php/Official_repositories "Official repositories").

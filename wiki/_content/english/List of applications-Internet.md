@@ -638,6 +638,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1-git](https://aur.archlinux.org/packages/n1-git/)
 
+*   **openWMail** — The missing desktop client for Gmail & Google Inbox.
+
+	[https://openwmail.github.io/](https://openwmail.github.io/) || [openwmail](https://aur.archlinux.org/packages/openwmail/)
+
 *   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
 
 	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
@@ -658,7 +662,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://trojita.flaska.net/](http://trojita.flaska.net/) || [trojita](https://www.archlinux.org/packages/?name=trojita)
 
-*   **Wavebox** — The next generation of web-desktop communication
+*   **Wavebox** — The next generation of web-desktop communication (non free, trial Pro for 14 days).
 
 	[https://wavebox.io/](https://wavebox.io/) || [wavebox-bin](https://aur.archlinux.org/packages/wavebox-bin/)
 
@@ -1188,7 +1192,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Corebird** — Native Gtk+ Twitter client for the Linux desktop.
 
-	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird-git](https://aur.archlinux.org/packages/corebird-git/)
+	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://aur.archlinux.org/packages/corebird/)
 
 *   **Polly** — Linux Twitter client designed for multiple columns of multiple accounts.
 

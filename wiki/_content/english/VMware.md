@@ -455,6 +455,15 @@ On VMware Workstation Pro 12.5.2, the module source needs to be modified to be s
 
 As per [[3]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
 
+An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
+
+```
+# cd /usr/lib/vmware/lib/libz.so.1
+# mv libz.so.1 libz.so.1.old
+# ln -s /usr/lib/libz.so.1 .
+
+```
+
 ### vmplayer/vmware fails to start from version 12.5.3
 
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.

@@ -51,7 +51,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 
 ## Content adaptive brightness control
 
-In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightness embedded in the panel firmware, this "content adaptive brightness control" (usually referred to as CABC or DBC) will adjust the screen brightness depending on the content displayed on the screen and will generally be found undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this however it is only available to run in Windows and for the QHD+ model of the laptop so this precaution should be taken before installing Linux, the FHD model of the XPS 13 (9360) cannot be fixed. This is not a problem with the panel but rather a problem with the way the panels are configured for the XPS 13, as the same panel exists in the Dell's Latitude 13 7000 series (e7370) FHD model but with CABC disabled. The fix is available directly from [Dell](http://www.dell.com/support/home/de/de/debsdt1/Drivers/DriversDetails?driverId=20JWV&fileId=3574543510&osCode=WT64A&productCode=xps-13-9360-laptop&languageCode=ge&categoryId=AP).
+In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightness embedded in the panel firmware, this "content adaptive brightness control" (usually referred to as CABC or DBC) will adjust the screen brightness depending on the content displayed on the screen and will generally be found undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this however it is only available to run in Windows and for the QHD+ model of the laptop so this precaution should be taken before installing Linux, the FHD model of the XPS 13 (9360) cannot be fixed. This is not a problem with the panel but rather a problem with the way the panels are configured for the XPS 13, as the same panel exists in the Dell's Latitude 13 7000 series (e7370) FHD model but with CABC disabled. The fix is available directly from [Dell](http://www.dell.com/support/home/us/en/4/Drivers/DriversDetails?driverId=20JWV).
 
 ## NVM Express SSD
 
@@ -150,6 +150,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Tripp Lite USB-C to DVI External Video Adapter](https://www.amazon.com/Tripp-Lite-External-Charging-U444-06N-DGU-C/dp/B01LYQB1XI) | DVI, Gbit Ethernet, USB-A, USB-C PD Charging Port | Working |
 | [StarTech CDP2HD - USB-C to HDMI Adapter](https://www.startech.com/nl/en/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) | HDMI | Working |
 | [Kanex USB-C to HDMI 4K Adapter](https://www.amazon.com/Kanex-USB-C-Adapter-Inches-White/dp/B00VBNSY0S) | HDMI | Working |
+| [QacQoc GN30H USB C HUB Aluminum Multi-Port TYPE C HUB Adapter with 4K HDMI](https://smile.amazon.com/QacQoc-Aluminum-Multi-Port-Charging-Ethernet/dp/B01MU1FFMP) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 
 ### Thunderbolt Firmware updates
 

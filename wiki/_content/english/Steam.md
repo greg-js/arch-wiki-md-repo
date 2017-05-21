@@ -104,11 +104,11 @@ An extensive list of skins can be found on [Steam's forums](http://forums.steamp
 You can create a skin that does nothing but change the notification corner. First you need to create the directories:
 
 ```
- $ mkdir -p $HOME/Top-Right/resource
- $ cp -R $HOME/.steam/steam/resource/styles $HOME/Top-Right/resource/
- $ mv $HOME/Top-Right $HOME/.local/share/Steam/skins/
- $ cd .local/share/Steam/skins/
- $ cp -R Top-Right Top-Left && cp -R Top-Right Bottom-Right
+$ mkdir -p $HOME/Top-Right/resource
+$ cp -R $HOME/.steam/steam/resource/styles $HOME/Top-Right/resource/
+$ mv $HOME/Top-Right $HOME/.local/share/Steam/skins/
+$ cd .local/share/Steam/skins/
+$ cp -R Top-Right Top-Left && cp -R Top-Right Bottom-Right
 
 ```
 
@@ -117,7 +117,7 @@ Then modify the correct files. `Top-Right/resource/styles/gameoverlay.style` wil
 Now find the entry: `Notifications.PanelPosition` in whichever file you opened and change it to the appropriate value, for example for Top-Right:
 
 ```
- Notifications.PanelPosition     "TopRight"
+Notifications.PanelPosition     "TopRight"
 
 ```
 
@@ -158,14 +158,14 @@ You can edit the entry and change it between "BottomRight"(default), "TopRight" 
 Next create an alias in `$HOME/.bashrc`:
 
 ```
- alias steam_topright='pushd $HOME/.steam/ && patch -p1 -f -r - --no-backup-if-mismatch < topright.patch && popd'
+alias steam_topright='pushd $HOME/.steam/ && patch -p1 -f -r - --no-backup-if-mismatch < topright.patch && popd'
 
 ```
 
 Log out and back in to refresh the aliases. Launch Steam and wait for it to fully load, then run the alias
 
 ```
- $ steam_topright
+$ steam_topright
 
 ```
 
@@ -176,22 +176,22 @@ You can also duplicate the patch and make more aliases for the other corners if 
 To automate the process you will need a script file as steam launch options cannot read your aliases. The location and name of the file could for example be **$HOME/.scripts/steam_topright.sh**, and assuming that is the path you used, it needs to be executable:
 
 ```
- $ chmod +755 $HOME/.scripts/steam_topright.sh
+$ chmod +755 $HOME/.scripts/steam_topright.sh
 
 ```
 
 The contents of the file should be the following:
 
 ```
- #!/bin/sh
- pushd $HOME/.steam/ && patch -p1 -f -r - --no-backup-if-mismatch < topright.patch && popd
+#!/bin/sh
+pushd $HOME/.steam/ && patch -p1 -f -r - --no-backup-if-mismatch < topright.patch && popd
 
 ```
 
 And the launch options should be something like the following.
 
 ```
- $HOME/.scripts/steam_topright.sh && %command%
+$HOME/.scripts/steam_topright.sh && %command%
 
 ```
 
@@ -228,12 +228,12 @@ Exec=steam steam://rungameid/65980
 65980 is the game's appid. We can now use this to launch a game directly from the command line. Example below.
 
 ```
-$ cat ~/Desktop/<game>.desktop | grep rungameid 
+$ cat ~/Desktop/<game>.desktop | grep rungameid
     Exec=steam steam://rungameid/65980
 $ cd .steam/steam/steamapps/common/<game>
-$ touch steam_appid.txt 
 $ echo 65980 > steam_appid.txt
 $ ./<game>
+
 ```
 
 This is useful when troubleshooting problems. This method will also prevent steam from complaining about a missing appid when launching a game from the command line.

@@ -35,16 +35,17 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
     *   [8.3 Gotchas](#Gotchas_3)
         *   [8.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [9.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
-    *   [9.3 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
-    *   [9.4 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-    *   [9.5 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-    *   [9.6 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-    *   [9.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
-    *   [9.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
-*   [10 See also](#See_also)
+*   [9 Complete setups and examples](#Complete_setups_and_examples)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [10.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
+    *   [10.3 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+    *   [10.4 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
+    *   [10.5 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+    *   [10.6 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+    *   [10.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
+    *   [10.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
+*   [11 See also](#See_also)
 
 ## Prerequisites
 
@@ -655,6 +656,10 @@ IOMMU group 13
 ```
 
 This signals that the xHCI USB controller in 00:14.0 cannot be reset and will therefore stop the VM from shutting down properly, while the integrated sound card in 00:1b.0 and the other two controllers in 00:1a.0 and 00:1d.0 do not share this problem and can be passed without issue.
+
+## Complete setups and examples
+
+If you have trouble configuring a certain mechanism in your setup, you might want to look up [complete passthrough setup examples](/index.php/PCI_passthrough_via_OVMF/Examples "PCI passthrough via OVMF/Examples"). A few users have described their setups and you might want to look up certain tricks from their configuration files.
 
 ## Troubleshooting
 

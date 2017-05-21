@@ -352,14 +352,14 @@ Questa direttiva nella sezione <Directory> è la causa per cui apache ignora com
 	Inserirla nella lista "LoadModule", dove si preferisca, ma dopo `LoadModule dir_module modules/mod_dir.so`:
 
 ```
- LoadModule php5_module modules/libphp5.so
+ LoadModule php5_module modules/libphp7.so
 
 ```
 
 	Inserire la riga seguente alla fine della lista "Include":
 
 ```
- Include conf/extra/php5_module.conf
+ Include conf/extra/php7_module.conf
 
 ```
 

@@ -87,7 +87,7 @@ At the final stage of early userspace, the real root is mounted, and then replac
 
 ## Getty
 
-[init](/index.php/Init "Init") calls [getty](/index.php/Getty "Getty") once for each [virtual terminal](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (typically six of them), which initializes each tty and asks for a username and password. Once the username and password are provided, getty checks them against `/etc/passwd` and `/etc/shadow`, then calls [login](#Login), which begins a session for the user, and executes the user's shell according to `/etc/passwd`. Alternatively, getty may start a display manager if one is present on the system.
+[init](/index.php/Init "Init") calls [getty](/index.php/Getty "Getty") once for each [virtual terminal](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (typically six of them), which initializes each tty and asks for a username and password. Once the username and password are provided, getty checks them against `/etc/passwd` and `/etc/shadow`, then calls [login](#Login). Alternatively, getty may start a display manager if one is present on the system.
 
 ## Display Manager
 

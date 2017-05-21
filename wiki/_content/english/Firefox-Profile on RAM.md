@@ -18,8 +18,9 @@ Because data placed therein cannot survive a shutdown, a script responsible for 
     *   [3.1 Before you start](#Before_you_start)
     *   [3.2 The script](#The_script)
     *   [3.3 Automation](#Automation)
-        *   [3.3.1 cron job](#cron_job)
-        *   [3.3.2 Sync at login/logout](#Sync_at_login.2Flogout)
+        *   [3.3.1 SystemD](#SystemD)
+        *   [3.3.2 cron job](#cron_job)
+        *   [3.3.3 Sync at login/logout](#Sync_at_login.2Flogout)
 *   [4 See also](#See_also)
 
 ## Relocate cache only to RAM
@@ -67,9 +68,9 @@ Be sure that [rsync](/index.php/Rsync "Rsync") is installed and save the script 
 ```
 #!/bin/sh
 
-static=*main*
-link=*xyz.default*
-volatile=*/dev/shm/firefox-$USER*
+static=*static-$1*
+link=*$1*
+volatile=*/dev/shm/firefox-$1-$USER*
 
 IFS=
 set -efu
@@ -99,7 +100,8 @@ Close Firefox, make the script executable and test it:
 ```
 $ killall firefox firefox-bin
 $ chmod +x ~/bin/firefox-sync
-$ ~/bin/firefox-sync
+$ ls ~/.mozilla/firefox/
+$ ~/bin/firefox-sync <firefox-profile>
 
 ```
 
@@ -108,6 +110,34 @@ Run Firefox again to gauge the results. The second time the script runs, it will
 ### Automation
 
 Seeing that forgetting to sync the profile can lead to disastrous results, automating the process seems like a logical course of action.
+
+#### SystemD
+
+Save the following script as `~/.config/systemd/user/firefox-profile@.service`
+
+then use
+
+```
+systemctl --user daemon-reload
+systemctl --user enable firefox-profile@<profile>.service
+systemctl --user start firefox-profile@<profile>.service 
+
+```
+
+```
+ [Unit]
+ Description=Firefox profile memory cache
+
+ [Install]
+ WantedBy=default.target
+
+ [Service]
+ Type=oneshot
+ RemainAfterExit=yes
+ ExecStart=/home/matthew/bin/firefox-sync %i
+ ExecStop=/home/matthew/bin/firefox-sync %i
+
+```
 
 #### cron job
 

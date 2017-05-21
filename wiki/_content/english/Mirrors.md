@@ -91,7 +91,7 @@ pacman will now try to connect to this mirror first. Proceed to do the same for 
 
 Mirrors can be out of sync and the package list from the old mirror may not correspond to the package list of the new mirror, even though the dates of the lists may suggest that they do.
 
-After creating/editing `/etc/pacman.d/mirrorlist`, (manually or by using `rankmirrors`) issue the following command:
+After creating/editing `/etc/pacman.d/mirrorlist`, issue the following command:
 
 ```
 # pacman -Syyu

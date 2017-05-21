@@ -1,7 +1,7 @@
 | [English](/index.php/Category:English "Category:English") <small>(1)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(23)</small> |
 | <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(50)</small> |
+| <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(14)</small> |
 | <small>1.2.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
@@ -37,7 +37,7 @@
 | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(60)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
-| <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(50)</small> |
+| <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(21)</small> |
 | <small>3.3.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(17)</small> |
@@ -123,7 +123,7 @@
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(75)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
-| <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(40)</small> |
+| <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(39)</small> |
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(22)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
@@ -134,6 +134,6 @@
 | <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(6)</small> |
 | <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
-| <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(21)</small> |
+| <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(22)</small> |
 | <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
 | <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(64)</small> |

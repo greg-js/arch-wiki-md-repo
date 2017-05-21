@@ -12,8 +12,7 @@ This article describes how both new and experienced Arch users can contribute to
     *   [1.5 Fix and report bugs](#Fix_and_report_bugs)
     *   [1.6 Create and adopt AUR packages](#Create_and_adopt_AUR_packages)
     *   [1.7 Official software projects](#Official_software_projects)
-    *   [1.8 Participate in events](#Participate_in_events)
-    *   [1.9 Donate money](#Donate_money)
+    *   [1.8 Donate money](#Donate_money)
 *   [2 Community projects](#Community_projects)
     *   [2.1 Groups](#Groups)
     *   [2.2 Software](#Software)
@@ -62,10 +61,6 @@ You can help by creating and adopting packages.
 ### Official software projects
 
 You can get involved in the development of [official Arch Linux software projects](https://git.archlinux.org/).
-
-### Participate in events
-
-There are yearly and monthly events for bugfixing, translating and cleanup. You can find forthcoming events in the [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Donate money
 
@@ -128,10 +123,6 @@ Community-developed software that focuses on Arch Linux.
 	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
 	Graphical front-ends for [pacman](/index.php/Pacman "Pacman").
-
-	[NetGUI](http://www.github.com/codywd/NetGUI)
-
-	Graphical front end for [netctl](/index.php/Netctl "Netctl").
 
 ### ArchWiki browsing
 

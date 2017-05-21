@@ -43,6 +43,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
     *   [6.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
     *   [6.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
+    *   [6.16 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -708,6 +709,10 @@ Alternatively, if you are only interested in power saving (and perhaps use of ex
 ### Lockup issue (lspci hangs)
 
 See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")] for an issue that affects new laptops with a GTX 965M (or alike).
+
+### Discrete card always on and acpi warnings
+
+Add `acpi_osi="!Windows 2013"` and `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [this issue](https://github.com/Bumblebee-Project/Bumblebee/issues/592) for more information.
 
 ## See also
 

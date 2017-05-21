@@ -9,13 +9,13 @@
     *   [2.1 An example input.conf file](#An_example_input.conf_file)
     *   [2.2 mpv and PulseAudio/ALSA mixer controls since 0.18.1](#mpv_and_PulseAudio.2FALSA_mixer_controls_since_0.18.1)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 Hardware Decoding](#Hardware_Decoding)
+    *   [3.1 Hardware decoding](#Hardware_decoding)
     *   [3.2 High quality video output](#High_quality_video_output)
-    *   [3.3 Automatically resuming from where you left off](#Automatically_resuming_from_where_you_left_off)
+    *   [3.3 Save position on quit](#Save_position_on_quit)
     *   [3.4 Volume is too low](#Volume_is_too_low)
-    *   [3.5 Quickly cycle between multiple aspect ratio](#Quickly_cycle_between_multiple_aspect_ratio)
+    *   [3.5 Quickly cycle between aspect ratios](#Quickly_cycle_between_aspect_ratios)
     *   [3.6 Ignoring aspect ratio](#Ignoring_aspect_ratio)
-    *   [3.7 Drawing to a root window](#Drawing_to_a_root_window)
+    *   [3.7 Draw to the root window](#Draw_to_the_root_window)
     *   [3.8 Always show GUI](#Always_show_GUI)
     *   [3.9 Hide GUI for video files](#Hide_GUI_for_video_files)
     *   [3.10 Restoring old OSC](#Restoring_old_OSC)
@@ -104,7 +104,7 @@ Change the above to whatever volume keys you use.
 
 ## Tips and Tricks
 
-### Hardware Decoding
+### Hardware decoding
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
@@ -141,17 +141,17 @@ scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
 ```
 
-### Automatically resuming from where you left off
+### Save position on quit
 
-The default key to quit *mpv*, saving the video's current position and state, is `Shift+q`. This key can be changed by adding the `quit_watch_later` string in the key bindings configuration file.
+By default you can save the position and quit by pressing `Shift+q`. The shortcut can be changed by setting `quit_watch_later` in the key bindings configuration file.
 
-To always automatically save the current playback position on quit, start *mpv* with a flag `--save-position-on-quit`. To make option permanent, add line `save-position-on-quit` to configuration file.
+To automatically save the current playback position on quit, start *mpv* with `--save-position-on-quit`, or add `save-position-on-quit` to the configuration file.
 
 ### Volume is too low
 
 Set `volume-max=*value*` in your configuration file to a reasonable amount, such as `volume-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=acompressor`.
 
-### Quickly cycle between multiple aspect ratio
+### Quickly cycle between aspect ratios
 
 You can cycle between aspect ratios using `Shift+a` from version 0.8.0 onwards.
 
@@ -159,9 +159,9 @@ You can cycle between aspect ratios using `Shift+a` from version 0.8.0 onwards.
 
 You can ignore aspect ratio using `--keepaspect=*no*`. To make option permanent, add line `keepaspect=*no*` to configuration file.
 
-### Drawing to a root window
+### Draw to the root window
 
-Run *mpv* with `--wid=0`. This tells *mpv* to draw onto a window with a window ID of 0.
+Run *mpv* with `--wid=0`. *mpv* will draw to the window with a window ID of 0.
 
 ### Always show GUI
 
@@ -191,7 +191,7 @@ The development of mpv's Lua scripts are documented in [DOCS/man/lua.rst](https:
 
 If [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) is installed, mpv can directly open a Twitch livestream.
 
-Alternatively, [streamlink](https://www.archlinux.org/packages/?name=streamlink) can be used to stream Twitch. If you want a gui for launching these streams use [streamlink-twitch-gui](https://aur.archlinux.org/packages/streamlink-twitch-gui/). See [Livestreamer#Twitch](/index.php/Livestreamer#Twitch "Livestreamer").
+Alternatively, [streamlink](https://www.archlinux.org/packages/?name=streamlink) can be used to stream Twitch. If you want a GUI for launching these streams use [streamlink-twitch-gui](https://aur.archlinux.org/packages/streamlink-twitch-gui/). See [Livestreamer#Twitch](/index.php/Livestreamer#Twitch "Livestreamer").
 
 Another alternative based on Livestreamer is this Lua script: [https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc](https://gist.github.com/ChrisK2/8701184fe3ea7701c9cc)
 

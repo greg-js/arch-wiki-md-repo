@@ -4,7 +4,7 @@ The required information is stored in a [#Partition table](#Partition_table) sch
 
 Partition tables are created and modified using one of many [#Partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
-Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted) before data can be written to it.
+Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") ([swap](/index.php/Swap "Swap") excepted) before data can be written to it.
 
 ## Contents
 

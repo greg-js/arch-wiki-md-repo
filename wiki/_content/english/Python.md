@@ -15,7 +15,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 IPython](#IPython)
     *   [4.2 Virtual environment](#Virtual_environment)
-    *   [4.3 Getting completion in Python2 shell](#Getting_completion_in_Python2_shell)
+    *   [4.3 Tab completion in Python2 shell](#Tab_completion_in_Python2_shell)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
 *   [6 See also](#See_also)
@@ -24,11 +24,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 
 ### Python 3
 
-Python 3 is the latest version of the language, and is incompatible with Python 2\. The language is mostly the same, but many details, especially how built-in objects like dictionaries and strings work, have changed considerably, and a lot of deprecated features have finally been removed. Also, the standard library has been reorganized in a few prominent places. For an overview of the differences, visit [Python2orPython3](http://wiki.python.org/moin/Python2orPython3) and their relevant [chapter](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) in Dive into Python 3.
+Python 3 is the latest version of the language, and is incompatible with Python 2\. The language is mostly the same, but many details, especially how built-in objects like dictionaries and strings work, have changed considerably, and a lot of deprecated features have finally been removed. Also, the standard library has been reorganized in a few prominent places. For an overview of the differences, visit [Python2orPython3](https://wiki.python.org/moin/Python2orPython3) and their relevant [chapter](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) in Dive into Python 3.
 
 To install the latest version of Python 3, [install](/index.php/Install "Install") the [python](https://www.archlinux.org/packages/?name=python) package.
 
-If you would like to build the latest RC/betas from source, visit [Python Downloads](http://www.python.org/download/). The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") also contains good [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). If you do decide to build the RC, note that the binary (by default) installs to `/usr/local/bin/python3.x`.
+If you would like to build the latest RC/betas from source, visit [Python Downloads](https://www.python.org/downloads/). The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") also contains good [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). If you do decide to build the RC, note that the binary (by default) installs to `/usr/local/bin/python3.x`.
 
 ### Python 2
 
@@ -113,7 +113,7 @@ Extra modules/libraries for old versions of Python may be found on the AUR by se
 
 ## Package management
 
-Although a great number of Python packages are readily available in the [official repositories](/index.php/Official_repositories "Official repositories") and the [AUR](/index.php/AUR "AUR"), the Python ecosystem provides its own package managers for use with [PyPI](https://pypi.python.org/), the Python Package Index.
+Although a great number of Python packages are readily available in the [official repositories](/index.php/Official_repositories "Official repositories") and the [AUR](/index.php/AUR "AUR"), the Python ecosystem provides its own package managers for use with [PyPI](https://pypi.python.org/), the Python Package Index:
 
 *   **pip** — The PyPA tool for installing Python packages.
 
@@ -125,9 +125,9 @@ Although a great number of Python packages are readily available in the [officia
 
 For a brief history and feature comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install). Authoritative best practices in Python package management are detailed [here](https://packaging.python.org/).
 
-If you must use pip, use it in a virtual environment or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
+If you must use *pip*, use a [#Virtual environment](#Virtual_environment) or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
 
-**Note:** There are also tools integrating pip with pacman by automatically generating PKGBUILDs for specified pip-packages: [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
+**Note:** There are also tools integrating *pip* with *pacman* by automatically generating PKGBUILDs for specified pip-packages: [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
 
 ## Widget bindings
 
@@ -135,15 +135,15 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **TkInter** — Tk bindings
 
-	[http://wiki.python.org/moin/TkInter](http://wiki.python.org/moin/TkInter) || standard module
+	[https://wiki.python.org/moin/TkInter](https://wiki.python.org/moin/TkInter) || standard module
 
 *   **pyQt** — [Qt](/index.php/Qt "Qt") bindings
 
-	[http://www.riverbankcomputing.co.uk/software/pyqt/intro](http://www.riverbankcomputing.co.uk/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
+	[https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 
-	[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
+	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
 
 *   **pyGTK** — [GTK+ 2](/index.php/GTK%2B "GTK+") bindings
 
@@ -155,7 +155,7 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **wxPython** — wxWidgets bindings
 
-	[http://wxpython.org/](http://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
+	[https://wxpython.org/](https://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
 
 To use these with Python, you may need to install the associated widget kits.
 
@@ -172,7 +172,7 @@ $ jupyter notebook
 
 to autostart the browser and run the IPython kernel. You can select the python version when creating the notebook in the browser.
 
-[bpython](http://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
+[bpython](https://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
 
 ### Virtual environment
 
@@ -180,20 +180,16 @@ Python provides tools to create isolated environments in which you can install p
 
 See [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for details.
 
-### Getting completion in Python2 shell
+### Tab completion in Python2 shell
 
-**Note:** This is relevant only for Python 2, [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default since Python 3.4.
+Since Python 3.4 [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default, for Python 2 you can manually enable it by adding the following lines to a file referenced by the `PYTHONSTARTUP` environment variable. [[1]](https://algorithmicallyrandom.blogspot.co.at/2009/09/tab-completion-in-python-shell-how-to.html)
 
-Copy this into Python's interactive shell:
-
- `/usr/bin/python2` 
 ```
 import rlcompleter
 import readline
 readline.parse_and_bind("tab: complete")
-```
 
-Source: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html).
+```
 
 ## Troubleshooting
 
@@ -220,12 +216,12 @@ Do not forget to make it [executable](/index.php/Executable "Executable"). After
 
 ## See also
 
-*   [Learning Python, 4th edition](http://shop.oreilly.com/product/9780596158071.do)
+*   [O'Reilly's Learning Python, 5th edition](http://shop.oreilly.com/product/0636920028154.do) commercial
 *   [Dive Into Python](http://www.diveintopython.net/), [Dive Into Python3](http://getpython3.com/diveintopython3/)
-*   [A Byte of Python](http://www.swaroopch.com/notes/Python)
-*   [Learn Python The Hard Way](http://learnpythonthehardway.org)
-*   [Learn Python](http://learnpython.org)
-*   [Crash into Python](http://stephensugden.com/crash_into_python/) (assumes familiarity with other programming languages)
-*   [Beginning Game Development with Python and Pygame](http://www.apress.com/book/view/9781590598726)
+*   [A Byte of Python](https://python.swaroopch.com/)
+*   [Learn Python the Hard Way](https://learnpythonthehardway.org/)
+*   [Learn Python](https://learnpython.org/)
+*   [Crash into Python](https://stephensugden.com/crash_into_python/) (assumes familiarity with other programming languages)
+*   [Beginning Game Development with Python and Pygame](https://www.apress.com/book/9781590598726) commercial
 *   [Think Python](http://www.greenteapress.com/thinkpython/)
 *   [Pythonspot](https://pythonspot.com)

@@ -236,8 +236,8 @@ O nome do script `.install` a ser incluído no pacote. Este deve ser o mesmo que
 
 *   `pre_install` — O script é executado logo antes dos arquivos serem extraídos. Um argumento é passado: nova versão do pacote.
 *   `post_install` — O script é executado logo após os arquivos serem extraídos. Um argumento é passado: nova versão do pacote.
-*   `pre_upgrade` — O script é executado longo antes dos arquivos serem extraídos. Dois argumentos são passados na seguinte ordem: nova versão do pacote, versão antiga do pacote.
-*   `post_upgrade` — O script é executado longo após os arquivos serem extraídos. Dois argumentos são passados na seguinte ordem: nova versão do pacote, versão antiga do pacote.
+*   `pre_upgrade` — O script é executado logo antes dos arquivos serem extraídos. Dois argumentos são passados na seguinte ordem: nova versão do pacote, versão antiga do pacote.
+*   `post_upgrade` — O script é executado logo após os arquivos serem extraídos. Dois argumentos são passados na seguinte ordem: nova versão do pacote, versão antiga do pacote.
 *   `pre_remove` — O script é executado logo antes dos arquivos serem removidos. Um argumento é passado: versão antiga do pacote.
 *   `post_remove` — O script é executado logo após os arquivos serem removidos. Um argumento é passado: versão antiga do pacote.
 
