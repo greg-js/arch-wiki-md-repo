@@ -23,7 +23,7 @@ The `diff` tool compares files line by line if you save its output you have got 
 6.  Run `diff -ura package.orig package.new > package.patch` to create the patch.
 7.  Change into the `package.orig` directory and apply the patch using `patch -p1 < ../package.patch`. Verify that the patch is working by building and installing the modified package with `makepkg -ei`.
 
-**Note:** You can also create patches with [Git](/index.php/Git "Git") using `git diff`.
+**Note:** You can also create patches with [Git](/index.php/Git "Git") using `git diff` or `git format-patch` [[1]](https://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit).
 
 ## Applying patches
 

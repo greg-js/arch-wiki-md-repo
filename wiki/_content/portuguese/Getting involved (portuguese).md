@@ -12,8 +12,7 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
     *   [1.5 Corrija e reporte bugs](#Corrija_e_reporte_bugs)
     *   [1.6 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
     *   [1.7 Projetos de software oficiais](#Projetos_de_software_oficiais)
-    *   [1.8 Participe de eventos](#Participe_de_eventos)
-    *   [1.9 Doe dinheiro](#Doe_dinheiro)
+    *   [1.8 Doe dinheiro](#Doe_dinheiro)
 *   [2 Projetos da comunidade](#Projetos_da_comunidade)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
@@ -60,10 +59,6 @@ O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch 
 ### Projetos de software oficiais
 
 Você pode colaborar com o desenvolvimento de [projetos oficiais de software do Arch Linux](https://git.archlinux.org/).
-
-### Participe de eventos
-
-Há eventos mensais e anuais para correção de bugs, tradução e limpeza. Você pode encontrar eventos futuros no [Calendário de eventos Arch Linux](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Doe dinheiro
 
@@ -127,10 +122,6 @@ Softwares desenvolvidos pela comunidade com foco no Arch.
 
 	Ferramentas gráficas para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
-	[NetGUI](http://www.github.com/codywd/NetGUI)
-
-	Front-end gráfico para o [netctl](/index.php/Netctl "Netctl").
-
 ### Navegação do ArchWiki
 
 Nós oferecemos diferentes métodos para visitar o ArchWiki.
@@ -181,7 +172,7 @@ Aqui está uma lista de coisas que você pode fazer para ganhar alguma "populari
 *   Envie pacotes para o AUR.
 *   Junte-se a projetos que estão "na boca do brete" para serem incorporados ao Arch algum dia, ou crie seu próprio projeto.
 *   Trabalhe no *pacman*, *makepkg* ou outra forma de código-fonte e envie *patches* para o bug tracker.
-*   Navegue pelo rastreador de bugs e tente consertar bugs existentes.
+*   Navegue pelo [rastreador de bugs](https://bugs.archlinux.org/) e tente consertar bugs existentes.
 *   Encontre e envie novos bugs.
 *   Conserte erros na wiki, adicione novas páginas, limpe as existentes e certifique-se que seus procedimentos para tal estão atualizados.
 *   Envie traduções.

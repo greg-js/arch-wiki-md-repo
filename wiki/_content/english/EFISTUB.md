@@ -204,7 +204,7 @@ It is possible to launch an EFISTUB kernel from UEFI Shell as if it is a normal 
 
 ```
 > fs0:
-> /vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=/initramfs-linux.img
+> \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=/initramfs-linux.img
 
 ```
 

@@ -174,7 +174,7 @@ Here is a list of things that you may do in order to gain some "popularity" towa
 *   Submit packages to the AUR.
 *   Join one of the offshoot projects that may be incorporated into Arch mainstream someday, or start your own.
 *   Work on *pacman*, *makepkg* or other source code and submit patches to the bug tracker.
-*   Traverse the bug tracker and fix existing bugs.
+*   Traverse the [bug tracker](https://bugs.archlinux.org/) and fix existing bugs.
 *   Find and submit new bugs.
 *   Fix wiki errors, add new pages, clean up existing pages, and make sure the procedures are up-to-date.
 *   Submit translations.

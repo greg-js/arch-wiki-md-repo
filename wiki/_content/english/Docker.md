@@ -16,10 +16,9 @@
     *   [2.7 Images location](#Images_location)
 *   [3 Images](#Images)
     *   [3.1 Arch Linux](#Arch_Linux)
-        *   [3.1.1 x86_64](#x86_64)
-        *   [3.1.2 i686 and others](#i686_and_others)
-        *   [3.1.3 Build Image](#Build_Image)
+        *   [3.1.1 Manually](#Manually)
     *   [3.2 Debian](#Debian)
+        *   [3.2.1 Manually](#Manually_2)
 *   [4 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
 *   [5 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
 *   [6 Useful tips](#Useful_tips)
@@ -185,20 +184,18 @@ By default, docker images are located at `/var/lib/docker`. They can be moved to
 
 If you have run the docker images, you need to make sure the images are unmounted totally. Once that is completed, you may move the images from `/var/lib/docker` to the target destination.
 
-Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
+Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `--data-root` parameter to the `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/dockerd -g */path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd --data-root */path/to/new/location/docker* -H fd://
 ```
 
 ## Images
 
 ### Arch Linux
-
-#### x86_64
 
 The following command pulls the [base/archlinux](https://hub.docker.com/r/base/archlinux/) x86_64 image.
 
@@ -207,11 +204,7 @@ The following command pulls the [base/archlinux](https://hub.docker.com/r/base/a
 
 ```
 
-#### i686 and others
-
-The default Arch Linux image in Docker Registry is for x86_64 only. Image must be built manually.
-
-#### Build Image
+#### Manually
 
 Check [moby/contrib repo](https://github.com/moby/moby/tree/master/contrib) and download `mkimage-arch.sh` and `mkimage-arch-pacman.conf` to the same directory as raw files. Next, make the script executable and run it:
 
@@ -231,6 +224,15 @@ $ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
 ```
 
 ### Debian
+
+The following command pulls the [debian](https://hub.docker.com/r/_/debian/) x86_64 image.
+
+```
+# docker pull debian
+
+```
+
+#### Manually
 
 Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=debootstrap):
 

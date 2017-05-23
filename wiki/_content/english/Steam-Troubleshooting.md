@@ -27,7 +27,7 @@
 *   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
 *   [18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
 *   [19 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
-*   [20 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+*   [20 Prevent memory dumps from consuming RAM](#Prevent_memory_dumps_from_consuming_RAM)
 *   [21 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [22 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
 *   [23 Very slow app download speed](#Very_slow_app_download_speed)
@@ -227,20 +227,18 @@ Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as 
 
 ## The game crashes immediately after start
 
-First, right-click on the game, choose Properties, and click the "Set Launch Options" button. In that text box put:
+Set the following [launch options](/index.php/Steam#Launch_options "Steam"):
 
- `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` 
+ `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` 
 
-And try the game again. Some games work with this and some games don't.
-
-Then if your game still crashes immediately, try disabling: *"Enable the Steam Overlay while in-game"* in game *Properties*.
+If it does not help try disabling: *Enable the Steam Overlay while in-game* in the game properties.
 
 And finally, if those don't work, you should check Steam's output for any error from the game. You may encounter the following:
 
 *   munmap_chunk(): invalid pointer
 *   free(): invalid pointer
 
-In these particular cases, try replacing the libsteam_api.so file from the problematic game with one from a game that works fine. This error usually happens for games that were not updated recently when Steam runtime is disabled. This error has been encountered with at least AYIM, Bastion and Monaco.
+In these cases, try replacing the libsteam_api.so file from the problematic game with one of a game that works. This error usually happens for games that were not updated recently when Steam runtime is disabled. This error has been encountered with AYIM, Bastion and Monaco.
 
 ## OpenGL not using direct rendering / Steam crashes Xorg
 
@@ -390,22 +388,26 @@ Then nothing else happens. This is likely related to mis-matched `lib32-nvidia-*
 
 This error is likely caused because Steam packages its own out of date `libstdc++.so.6`. See [#Steam runtime issues](#Steam_runtime_issues) about working around the bad library. See also GitHub [issue 3773](https://github.com/ValveSoftware/steam-for-linux/issues/3773).
 
-## Prevent Memory Dumps Consuming RAM
+## Prevent memory dumps from consuming RAM
 
-Every time steam crashes, it writes a memory dump to **/tmp/dumps/**. If Steam falls into a crash loop, and it often does, the dump files can start consuming considerable space. Since **/tmp** on Arch is mounted as tmpfs, memory and swap file can be consumed needlessly. To prevent this, you can make a symbolic link to **/dev/null** or create and modify permissions on **/tmp/dumps**. Then Steam will be unable to write dump files to the directory. This also has the added benefit of Steam not uploading these dumps to Valve's servers.
+Every time Steam crashes, it writes a memory dump to `/tmp/dumps/`. If Steam falls into a crash loop, the dump files can become quite large. When `/tmp` is mounted as [tmpfs](/index.php/Tmpfs "Tmpfs"), memory and swap file can be consumed needlessly.
+
+To prevent this, link `/tmp/dumps/` to `/dev/null`:
 
 ```
 # ln -s /dev/null /tmp/dumps
 
 ```
 
-or
+Or alternatively, create and modify permissions on `/tmp/dumps`. Then Steam will be unable to write dump files to the directory.
 
 ```
 # mkdir /tmp/dumps
 # chmod 600 /tmp/dumps
 
 ```
+
+This also has the added benefit of Steam not uploading these dumps to Valve's servers.
 
 ## Killing standalone compositors when launching games
 

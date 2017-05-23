@@ -179,7 +179,7 @@ To boot SeaBIOS by default, you will need to run [`set_gbb_flags.sh`](https://ch
 
 *   Disable the hardware write protection.
 
-To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [Chrome OS device](#Chrome_OS_devices). If there is no information about your device on the ArchWiki then turn to [Information for Chrome OS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devicesDeveloper) and [Coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
+To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [Chrome OS device](#Chrome_OS_devices). If there is no information about your device on the ArchWiki then turn to [Developer Information for Chrome OS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [Coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
 
 More information about the firmware protection available at the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices") page.
 

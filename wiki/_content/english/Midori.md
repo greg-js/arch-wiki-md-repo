@@ -29,9 +29,11 @@ Some of its features are:
 
 ## Installation
 
-Midori can be [installed](/index.php/Pacman "Pacman") with the [midori](https://www.archlinux.org/packages/?name=midori) package.
+Several options are available:
 
-Development version is also available with the [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) package.
+1.  Midori stable can be [installed](/index.php/Pacman "Pacman") with the [midori](https://www.archlinux.org/packages/?name=midori) package.
+2.  Midori stable that lacks the [Zeitgeist](/index.php/Zeitgeist "Zeitgeist") requirement is available from the AUR in the [midori-no-zeitgeist](https://aur.archlinux.org/packages/midori-no-zeitgeist/).
+3.  The development version is also available with the [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) package.
 
 ## Extensions
 

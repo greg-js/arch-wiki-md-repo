@@ -57,6 +57,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [felixonmars](https://aur.archlinux.org/packages.php?K=felixonmars&SeB=m) | Felix Yan | felixonmars@archlinux.org |
 | [flexiondotorg](https://aur.archlinux.org/packages.php?K=flexiondotorg&SeB=m) | Martin Wimpress | [martin+arch@flexion.org](mailto:martin+arch@flexion.org) |
 | [foutrelis](https://aur.archlinux.org/packages.php?K=foutrelis&SeB=m) | Evangelos Foutras | evangelos@foutrelis.com |
+| [foxxx0](https://aur.archlinux.org/packages.php?K=foxxx0&SeB=m) | Thore Bödecker | me [at] foxxx0 [dot] de |
 | [giniu](https://aur.archlinux.org/packages.php?K=giniu&SeB=m) | [Andrzej Giniewicz](/index.php/User:Giniu "User:Giniu") | gginiu@gmail.com |
 | [grazzolini](https://aur.archlinux.org/packages/?SeB=m&K=grazzolini) | Giancarlo Razzolini | grazzolini [at] gmail [dot] com |
 | [gtmanfred](https://aur.archlinux.org/packages.php?K=gtmanfred&SeB=m) | Daniel Wallace | danielwallace gtmanfred com |

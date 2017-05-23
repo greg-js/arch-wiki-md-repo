@@ -19,8 +19,9 @@
 | <small>6.2.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(1)</small> |
 | <small>6.2.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(3)</small> |
 | <small>6.2.2.</small> [Web browser](/index.php/Category:Web_browser_(Portugu%C3%AAs) "Category:Web browser (Português)") <small>(1)</small> |
-| <small>6.3.</small> [Network configuration](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)") <small>(1)</small> |
-| <small>6.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)"))</small> |
+| <small>6.3.</small> [Network Configuration](/index.php/Category:Network_Configuration_(Portugu%C3%AAs) "Category:Network Configuration (Português)") <small>(1)</small> |
+| <small>6.4.</small> [Network configuration](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)") <small>(1)</small> |
+| <small>6.5.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)"))</small> |
 | <small>7.</small> [Escritório](/index.php/Category:Office_(Portugu%C3%AAs) "Category:Office (Português)") <small>(1)</small> |
 | <small>8.</small> [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)") <small>(0)</small> |
 | <small>8.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(3)</small> |

@@ -65,7 +65,7 @@ A patch was written to make the G510 keyboard fully compatible with the g15daemo
 
 To apply the patch you must download the g15daemon and libg15 sources with [abs](https://www.archlinux.org/packages/?name=abs) and edit their PKGBUILDs.
 
-**Note:** I would recommend that you instead follow the forum thread linked to at the start of this section, it is going to be a lot easier.
+**Note:** I would recommend that you instead follow the forum thread linked to at the start of this section, it is a lot easier. (And it does not require ABS)
 
 To download the sources to a folder directory called "community" (the folder will be dropped into whichever directory the terminal is in) run the two following commands:
 

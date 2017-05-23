@@ -34,7 +34,7 @@
 
 Since the profile(s), browser cache*, etc. are relocated into [tmpfs](/index.php/Tmpfs "Tmpfs") (RAM disk), the corresponding I/O associated with using the browser is also redirected from the physical drive to RAM, thus reducing wear to the physical drive and also greatly improving browser speed and responsiveness.
 
-**Note:** Some browsers such as Chrome/Chromium, Firefox (since v21) and Midori actually keep their cache directories **separately** from their profile directory. It is not within the scope of profile-sync-daemon to modify this behavior; users are encouraged to refer to the [Chromium tweaks#Cache in tmpfs](/index.php/Chromium_tweaks#Cache_in_tmpfs "Chromium tweaks") section for Chromium and to the [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM") article for several workarounds. An easy fix is to move the various browsers' cache directory from their default location (e.g. `/home/$USER/.cache/<browser>/<profile>/`) to the corresponding profile directory, e.g. `/home/$USER/.mozilla/firefox/<profile>/cache`, and then symlink the new cache folder back to its original location. This way, profile-sync-daemon will automatically take into account the cache folder too.
+**Note:** Some browsers such as Chrome/Chromium, Firefox (since v21) and Midori actually keep their cache directories **separately** from their profile directory. It is not within the scope of profile-sync-daemon to modify this behavior; users are encouraged to refer to the [Chromium tweaks#Cache in tmpfs](/index.php/Chromium_tweaks#Cache_in_tmpfs "Chromium tweaks") section for Chromium and to the [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM") article for several workarounds.
 
 ## Setup and installation
 

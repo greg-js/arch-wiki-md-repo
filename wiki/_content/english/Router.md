@@ -147,7 +147,6 @@ In order for packets to be properly send and received it is necessary to transla
 :INPUT ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
--A POSTROUTING -o intern0 -j MASQUERADE
 -A POSTROUTING -o extern0 -j MASQUERADE
 COMMIT
 ```

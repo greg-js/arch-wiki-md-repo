@@ -44,6 +44,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [Frugalware](http://frugalware.org/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [Obarun](http://www.obarun.org/index.html)
+*   [OBRevenge](http://obrevenge.weebly.com/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](https://nurunner.org/)

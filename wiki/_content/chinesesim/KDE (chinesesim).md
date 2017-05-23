@@ -25,6 +25,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
             *   [3.1.4.1 字体感觉模糊](#.E5.AD.97.E4.BD.93.E6.84.9F.E8.A7.89.E6.A8.A1.E7.B3.8A)
             *   [3.1.4.2 字体太大或变形](#.E5.AD.97.E4.BD.93.E5.A4.AA.E5.A4.A7.E6.88.96.E5.8F.98.E5.BD.A2)
         *   [3.1.5 空间效率](#.E7.A9.BA.E9.97.B4.E6.95.88.E7.8E.87)
+        *   [3.1.6 缩略图生成](#.E7.BC.A9.E7.95.A5.E5.9B.BE.E7.94.9F.E6.88.90)
     *   [3.2 打印](#.E6.89.93.E5.8D.B0)
     *   [3.3 Samba/Windows 的支持](#Samba.2FWindows_.E7.9A.84.E6.94.AF.E6.8C.81)
     *   [3.4 KDE 桌面活动](#KDE_.E6.A1.8C.E9.9D.A2.E6.B4.BB.E5.8A.A8)
@@ -246,6 +247,14 @@ $ kcmshell5 autostart
 #### 空间效率
 
 Plasma Netbool shell （上网本交互界面）以从 Plasma 5 中移除，请阅[此KDE论坛帖子](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899)。但是你仍然可以通过编辑 `~/.config/kwinrc`，在 `[Windows]` 区内加上 `BorderlessMaximizedWindows=true` 来实现类似的操作。
+
+#### 缩略图生成
+
+若要在桌面和 Dolphin 内为媒体或文档文件生成缩略图，安装 [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers)，[ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs) 和 [kde-thumbnailer-odf](https://aur.archlinux.org/packages/kde-thumbnailer-odf/)。
+
+然后在 *桌面背景* > *配置桌面* > *图标* > *更多预览选项...* 内通过 *右键单击* 启用桌面的缩略图类别。
+
+在 *Dolphin* 中，浏览到 *控制* > *通用* > *预览*。
 
 ### 打印
 

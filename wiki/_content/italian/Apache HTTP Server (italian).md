@@ -13,7 +13,8 @@ Avendo bisogno di solo un server web per sviluppo e test, [Xampp](/index.php/Xam
         *   [2.1.4 Opzioni avanzate](#Opzioni_avanzate)
     *   [2.2 PHP](#PHP)
         *   [2.2.1 Opzioni avanzate](#Opzioni_avanzate_2)
-        *   [2.2.2 Utilizzare php5 con apache2-mpm-worker e mod_fcgid](#Utilizzare_php5_con_apache2-mpm-worker_e_mod_fcgid)
+        *   [2.2.2 Utilizzare php7 con apache2-mpm-worker e mod_fcgid](#Utilizzare_php7_con_apache2-mpm-worker_e_mod_fcgid)
+        *   [2.2.3 MySQL/MariaDB](#MySQL.2FMariaDB)
     *   [2.3 MySQL](#MySQL)
 *   [3 Vedere anche](#Vedere_anche)
 *   [4 Collegamenti esterni](#Collegamenti_esterni)
@@ -345,82 +346,68 @@ Questa direttiva nella sezione <Directory> è la causa per cui apache ignora com
 
 ### PHP
 
-*   Installare il pacchetto "php-apache" da extra con pacman.
+Per installare [PHP](/index.php/PHP "PHP") sono necessari i package [php](https://www.archlinux.org/packages/?name=php) e [php-apache](https://www.archlinux.org/packages/?name=php-apache).
 
-*   Aggiungere questa riga a `/etc/httpd/conf/httpd.conf`:
-
-	Inserirla nella lista "LoadModule", dove si preferisca, ma dopo `LoadModule dir_module modules/mod_dir.so`:
+In `/etc/httpd/conf/httpd.conf`, commentare la riga:
 
 ```
- LoadModule php5_module modules/libphp7.so
+#LoadModule mpm_event_module modules/mod_mpm_event.so
 
 ```
 
-	Inserire la riga seguente alla fine della lista "Include":
+E decommenta:
 
 ```
- Include conf/extra/php7_module.conf
-
-```
-
-	Assicurarsi che la riga che segue sia decommentata in `httpd.conf` nella sezione/(dopo la riga)`<IfModule mime_module>`:
-
-```
- TypesConfig conf/mime.types
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-	Decommentare la seguente riga in `httpd.conf` (opzionale):
+**Nota:** Questa operazione è necessaria perché il package `libphp7.so` incluso in [php-apache](https://www.archlinux.org/packages/?name=php-apache) non funziona con `mod_mpm_event` e richiede `mod_mpm_prefork`. ([FS#39218](https://bugs.archlinux.org/task/39218))
+
+Altrimenti si riceverà il seguente errore:
 
 ```
- MIMEMagicFile conf/magic
+Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.  You need to recompile PHP.
+AH00013: Pre-configuration failed
+httpd.service: control process exited, code=exited status=1
+```
+Come alternativa, è possibile usare `mod_proxy_fcgi`.
+
+Per abilitare PHP è necessario editare il file `/etc/httpd/conf/httpd.conf`:
+
+*   Aggiungere le seguenti righe al termina della lista `LoadModule`:
 
 ```
-
-*   Aggiungere questa riga in `/etc/httpd/conf/mime.types`:
-
-```
- application/x-httpd-php		php
-
-```
-
-**Note:** Se non è visibile `libphp5.so` nella cartella dei moduli Apache (`/etc/httpd/modules`), si può aver dimenticato di installare il pacchetto *php-apache*.
-
-*   Se il proprio `DocumentRoot` non è `/srv/http`, aggiungerlo a `open_basedir` in `/etc/php/php.ini` così:
-
-```
- open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot
+LoadModule php7_module modules/libphp7.so
+AddHandler php7-script php
 
 ```
 
-*   Riavviare il servizio Apache per rendere effettive le modifiche:
+	Inserire la riga seguente alla fine della lista `Include`:
 
 ```
- # /etc/rc.d/httpd restart
-
-```
-
-*   Creare il file `test.php` nella cartella Apache DocumentRoot (Ad es. /srv/http/ o ~/public_html) ed all'interno inserire:
-
-```
- <?php phpinfo(); ?>
+Include conf/extra/php7_module.conf
 
 ```
 
-*   Assicurarsi di copiare questo file in `~/public_html` se si è permessa tale configurazione.
+Riavviare `httpd.service` tramite [systemd](/index.php/Systemd#Using_units "Systemd").
 
-*   Testare PHP: [http://localhost/test.php](http://localhost/test.php) o [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
+**Nota:** Se non è visibile `libphp7.so` nella cartella dei moduli Apache (`/etc/httpd/modules`), si può aver dimenticato di installare il pacchetto *php-apache*.
 
-	Se l'istruzione PHP non viene eseguita (si visualizza: <html>...</html>), controllare di avere "Includes" alla riga "Options" per la root directory. Inoltre, verificare che TypesConfig conf/mime.types sia decommentato nella sezione <IfModule mime_module>; si può anche provare ad aggiungere quanto segue a <IfModule mime_module> in `httpd.conf`:
-
-```
- AddHandler application/x-httpd-php .php
+Per testare se PHP è stato configurato corretamente, creare il file `test.php` nella `DocumentRoot` di Apache (e.g. `/srv/http/` or `~/public_html`) con il seguente contenuto:
 
 ```
+<?php phpinfo(); ?>
+
+```
+
+Per verificarne la corretta esecuzione, ragiungi: [http://localhost/test.php](http://localhost/test.php) o [http://localhost/~myname/test.php](http://localhost/~myname/test.php)
+
+Per configurazioni avanzate di PHP fare riferimento a [PHP](/index.php/PHP "PHP").
 
 #### Opzioni avanzate
 
-*   Aggiungere, se può risultare comodo, un gestore di file per. phtml in `/etc/httpd/conf/extra/php5_module.conf`:
+*   Aggiungere, se può risultare comodo, un gestore di file per. phtml in `/etc/httpd/conf/extra/php7_module.conf`:
 
 ```
  DirectoryIndex index.php index.phtml index.html
@@ -502,57 +489,16 @@ riavviare httpd con
 
 ```
 
-#### Utilizzare php5 con apache2-mpm-worker e mod_fcgid
+#### Utilizzare php7 con apache2-mpm-worker e mod_fcgid
 
-Decommentare quanto segue in `/etc/conf.d/apache`:
-
-```
-HTTPD=/usr/sbin/httpd.worker
-
-```
-
-Decommentare quanto segue in `/etc/httpd/conf/httpd.conf`:
-
-```
-Include conf/extra/httpd-mpm.conf
-
-```
-
-Installare i pacchetti mod_fcgid e php-cgi:
+Installare i package [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) e [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
 ```
 # pacman -S mod_fcgid php-cgi
 
 ```
 
-Creare `/etc/httpd/conf/extra/php5_fcgid.conf` ed aggiungerci il seguente contenuto:
-
-```
-# Required modules: fcgid_module
-
-<IfModule fcgid_module>
-	AddHandler php-fcgid .php
-	AddType application/x-httpd-php .php
-	Action php-fcgid /fcgid-bin/php-fcgid-wrapper
-	ScriptAlias /fcgid-bin/ /srv/http/fcgid-bin/
-	SocketPath /var/run/httpd/fcgidsock
-	SharememPath /var/run/httpd/fcgid_shm
-        PHP_Fix_Pathinfo_Enable 1
-        # Path to php.ini – defaults to /etc/phpX/cgi
-        DefaultInitEnv PHPRC=/etc/php/
-        # Number of PHP childs that will be launched. Leave undefined to let PHP decide.
-        #DefaultInitEnv PHP_FCGI_CHILDREN 3
-        # Maximum requests before a process is stopped and a new one is launched
-        #DefaultInitEnv PHP_FCGI_MAX_REQUESTS 5000
-        <Location /fcgid-bin/>
-		SetHandler fcgid-script
-		Options +ExecCGI
-	</Location>
-</IfModule>
-
-```
-
-Creare le directory necessarie e creare dei link simbolici per php wrapper:
+Creare la directory fcgid-bin e link simbolico per il wrapper PHP:
 
 ```
 # mkdir /srv/http/fcgid-bin
@@ -560,28 +506,63 @@ Creare le directory necessarie e creare dei link simbolici per php wrapper:
 
 ```
 
-Editare `/etc/httpd/conf/httpd.conf:`
+Creare il file `/etc/httpd/conf/extra/php-fcgid.conf` con il seguente contenuto:
+
+ `/etc/httpd/conf/extra/php-fcgid.conf` 
+```
+# Required modules: fcgid_module
+
+<IfModule fcgid_module>
+    AddHandler php-fcgid .php
+    AddType application/x-httpd-php .php
+    Action php-fcgid /fcgid-bin/php-fcgid-wrapper
+    ScriptAlias /fcgid-bin/ /srv/http/fcgid-bin/
+    SocketPath /var/run/httpd/fcgidsock
+    SharememPath /var/run/httpd/fcgid_shm
+        # If you don't allow bigger requests many applications may fail (such as WordPress login)
+        FcgidMaxRequestLen 536870912
+        # Path to php.ini – defaults to /etc/phpX/cgi
+        DefaultInitEnv PHPRC=/etc/php/
+        # Number of PHP childs that will be launched. Leave undefined to let PHP decide.
+        #DefaultInitEnv PHP_FCGI_CHILDREN 3
+        # Maximum requests before a process is stopped and a new one is launched
+        #DefaultInitEnv PHP_FCGI_MAX_REQUESTS 5000
+    <Location /fcgid-bin/>
+        SetHandler fcgid-script
+        Options +ExecCGI
+    </Location>
+</IfModule>
 
 ```
-#LoadModule php5_module modules/libphp5.so
+
+Editare `/etc/httpd/conf/httpd.conf:` abilitando mod_actions.so
+
+```
+LoadModule actions_module modules/mod_actions.so
+
+```
+
+E aggiungengo le seguenti righe:
+
+```
 LoadModule fcgid_module modules/mod_fcgid.so
-Include conf/extra/php5_fcgid.conf
+Include conf/extra/httpd-mpm.conf
+Include conf/extra/php-fcgid.conf
 
 ```
 
-Assicurarsi che `/etc/php/php.ini` abbia le direttive abilitate:
+**Nota:** Se sono state aggiunte le seguenti righe a `httpd.conf`, rimuoverle:
+```
+LoadModule php7_module modules/libphp7.so
+Include conf/extra/php7_module.conf
 
 ```
-cgi.fix_pathinfo=1
 
-```
+Riavviare `httpd.service`.
 
-Bisognerà riavviare apache:
+#### MySQL/MariaDB
 
-```
-# rc.d restart httpd
-
-```
+Seguire le istruzioni in [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP") e riavviare `httpd.service` per applicare i cambiamenti.
 
 ### MySQL
 

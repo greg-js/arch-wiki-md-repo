@@ -108,7 +108,7 @@ optdepends=('cups: printing support'
 | `/usr/share/{pkg}` | Application data |
 | `/var/lib/{pkg}` | Persistent application storage |
 | `/etc/{pkg}` | Configuration files for `{pkg}` |
-| `/opt/{pkg}` | Large self-contained packages such as Java, etc. |
+| `/opt/{pkg}` | Large self-contained packages |
 
 *   Packages should not contain any of the following directories:
     *   `/bin`

@@ -8,7 +8,12 @@
 
 ## Installation
 
-To install puppet server install the [puppetserver](https://aur.archlinux.org/packages/puppetserver/) package.
+To install puppet server install the [puppetserver](https://aur.archlinux.org/packages/puppetserver/) package. Note: Puppet Labs updated their GPG keys in January 2017 [[1]](https://puppet.com/blog/updated-puppet-gpg-signing-key). You may need to import their new keys.
+
+```
+$ gpg --fetch-keys [https://yum.puppetlabs.com/RPM-GPG-KEY-puppet](https://yum.puppetlabs.com/RPM-GPG-KEY-puppet)
+
+```
 
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `puppetserver` service.
 

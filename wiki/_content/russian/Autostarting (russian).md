@@ -7,18 +7,19 @@
 *   [1 Демоны](#.D0.94.D0.B5.D0.BC.D0.BE.D0.BD.D1.8B)
     *   [1.1 Systemd](#Systemd)
 *   [2 Cron](#Cron)
-*   [3 Коммандные оболочки](#.D0.9A.D0.BE.D0.BC.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D1.8B.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
-*   [4 Графический](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9)
-    *   [4.1 Запуск сеанса X](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.B0_X)
-    *   [4.2 Desktop entries](#Desktop_entries)
-    *   [4.3 GNOME](#GNOME)
-    *   [4.4 KDE Plasma](#KDE_Plasma)
-    *   [4.5 Xfce](#Xfce)
-    *   [4.6 LXDE](#LXDE)
-    *   [4.7 LXQt](#LXQt)
-    *   [4.8 Fluxbox](#Fluxbox)
-    *   [4.9 Openbox](#Openbox)
+*   [3 inotify](#inotify)
+*   [4 Коммандные оболочки](#.D0.9A.D0.BE.D0.BC.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D1.8B.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
+    *   [4.1 /etc/profile](#.2Fetc.2Fprofile)
+*   [5 Графический](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9)
+    *   [5.1 Запуск сеанса X](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.B0_X)
+    *   [5.2 Desktop entries](#Desktop_entries)
+    *   [5.3 GNOME](#GNOME)
+    *   [5.4 KDE Plasma](#KDE_Plasma)
+    *   [5.5 Xfce](#Xfce)
+    *   [5.6 LXDE](#LXDE)
+    *   [5.7 LXQt](#LXQt)
+    *   [5.8 Fluxbox](#Fluxbox)
+    *   [5.9 Openbox](#Openbox)
 
 ## Демоны
 
@@ -31,6 +32,10 @@
 ## Cron
 
 [Cron](/index.php/Cron "Cron") can be used to autostart non-GUI system setup tasks.
+
+## inotify
+
+[inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) может быть использован для выполнения команд или скриптов по [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") событиям, вызванным изменениями файловой системы. Смотрите [some examples](https://techarena51.com/index.php/inotify-tools-example/).
 
 ## Коммандные оболочки
 

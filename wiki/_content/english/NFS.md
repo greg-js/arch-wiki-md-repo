@@ -69,7 +69,7 @@ To make it stick across reboots, add the bind mount to `fstab`:
 
 **Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
 
-Add directories to be shared and an ip address or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`:
+Add directories to be shared and limit them to a range of addresses via a CIDR or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`:
 
  `/etc/exports` 
 ```
@@ -78,17 +78,18 @@ Add directories to be shared and an ip address or hostname(s) of client machines
 
 ```
 
-**Note:** If the target export is a tmpfs filesystem, the `fsid=1` option is required.
+It should be noted that modifying `/etc/exports` while the server is running will require a re-export for changes to take effect:
 
-Users need-not open the share to the entire subnet; one can specify a single IP address or hostname as well.
-
-For more information about all available options see [exports(5)](http://man7.org/linux/man-pages/man5/exports.5.html).
-
-**Note:** Modifying `/etc/exports` while the server is running will require a re-export for changes to take effect as noted by the upstream comments in `/etc/exports`:
 ```
 # exportfs -rav
 
 ```
+
+For more information about all available options see [exports(5)](http://man7.org/linux/man-pages/man5/exports.5.html).
+
+**Tip:** [ip2cidr](http://ip2cidr.com/) is a tool to convert an IP ranges to correctly structured CDIR specification.
+
+**Note:** If the target export is a tmpfs filesystem, the `fsid=1` option is required.
 
 #### Starting the server
 

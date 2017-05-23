@@ -256,7 +256,7 @@ The standard Java GUI toolkit has a hard-coded list of "non-reparenting" window 
 There are several things that may help:
 
 *   For [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), append the line `export _JAVA_AWT_WM_NONREPARENTING=1` in `/etc/profile.d/jre.sh`. Then, source the file `/etc/profile.d/jre.sh` or log out and log back in.
-*   For Oracle's JRE/JDK, use [SetWMName.](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-SetWMName.html) However, its effect may be canceled when also using `XMonad.Hooks.EwmhDesktops`. In this case, appending
+*   For Oracle's JRE/JDK, use [SetWMName.](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName) However, its effect may be canceled when also using `XMonad.Hooks.EwmhDesktops`. In this case, appending
 
 ```
  >> setWMName "LG3D"

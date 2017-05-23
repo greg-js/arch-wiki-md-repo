@@ -8,16 +8,17 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Big Picture Mode](#Big_Picture_Mode)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Launching games with custom commands](#Launching_games_with_custom_commands)
-    *   [3.2 Skins for Steam](#Skins_for_Steam)
-    *   [3.3 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
-        *   [3.3.1 Use a skin](#Use_a_skin)
-        *   [3.3.2 On-the-fly patch](#On-the-fly_patch)
-    *   [3.4 Silent Mode](#Silent_Mode)
-    *   [3.5 Streaming server](#Streaming_server)
-    *   [3.6 Getting a games appid](#Getting_a_games_appid)
+    *   [3.1 Directory structure](#Directory_structure)
+    *   [3.2 Launch options](#Launch_options)
+    *   [3.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [3.4 Steam skins](#Steam_skins)
+        *   [3.4.1 Creating skins](#Creating_skins)
+    *   [3.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [3.5.1 Use a skin](#Use_a_skin)
+        *   [3.5.2 Live patching](#Live_patching)
+    *   [3.6 In-Home Streaming](#In-Home_Streaming)
+    *   [3.7 Finding a games AppID](#Finding_a_games_AppID)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
@@ -25,7 +26,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 
 **Note:**
 
-*   Arch Linux is **not** [officially supported](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366).
+*   Arch Linux is **not** officially supported, the only officially supported distribution is Ubuntu. [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366).
 *   If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository.
 
 [Install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
@@ -40,7 +41,39 @@ Steam is not supported on this distribution. As such some fixes are needed on th
 
 ## Usage
 
-### Big Picture Mode
+To start Steam simply run `steam`.
+
+*   `-bigpicture` to start in Big Picture Mode
+*   `-silent` don't open the main window
+
+## Tips and tricks
+
+### Directory structure
+
+`~/.steam/` by default contains the following symlinks:
+
+```
+bin   -> ~/.steam/bin32
+bin32 -> ~/.local/share/Steam/ubuntu12_32
+bin64 -> ~/.local/share/Steam/ubuntu12_64
+root  -> ~/.local/share/Steam
+sdk32 -> ~/.local/share/Steam/linux32
+sdk64 -> ~/.local/share/Steam/linux64
+steam -> ~/.local/share/Steam
+
+```
+
+As you can see Steam stores its files in `~/.local/share/Steam/` by default. You can change where Steam stores its content by moving `~/.local/share/Steam/` and starting Steam, which will prompt you if you have moved your Steam content. You can then browse to the new location and Steam will update the symlinks in `~/.steam/`.
+
+Games are installed in `~/.steam/root/steamapps/common/`.
+
+### Launch options
+
+To set custom launch options for a game, right-click on it in your library, select Properties and click on the Set Launch Options button.
+
+When your launch options contain `%command%` Steam will replace it with the game's launch command, otherwise Steam will prefix the launch command to your launch options. The resulting command is then run in a [Bash](/index.php/Bash "Bash") shell, allowing you to set environment variables before `%command%`.
+
+### Big Picture Mode without a window manager
 
 To start Steam in Big Picture Mode from a [Display manager](/index.php/Display_manager "Display manager"), create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:
 
@@ -55,188 +88,90 @@ Icon=
 Type=Application
 ```
 
-## Tips and tricks
+### Steam skins
 
-### Launching games with custom commands
+The Steam interface can be customized using skins. Skins can overwrite interface-specific files in `~/.steam/steam`.
 
-Steam has fortunately added support for launching games using your own custom command. To do so, navigate to the Library page, right click on the selected game, click Properties, and Set Launch Options. Steam replaces the tag `%command%` with the command it actually wishes to run. For example, to launch Team Fortress 2 with primusrun and at resolution 1920x1080, you would enter:
+To install a skin:
 
-```
-primusrun %command% -w 1920 -h 1080
+1.  Place its directory in `~/.local/share/Steam/skins`.
+2.  Open *Steam > Settings > Interface* and select it.
+3.  Restart Steam.
 
-```
+An extensive list of skins can be found in [this Steam forums post](http://forums.steampowered.com/forums/showthread.php?t=1161035).
 
-The corresponding example for AMD PRIME users is:
+**Note:** Using an outdated skin may cause visual errors.
 
-```
-DRI_PRIME=1 %command%
+#### Creating skins
 
-```
+Nearly all Steam styles are defined in `~/.steam/steam/resource/styles/steam.styles` (the file is over 3,500 lines long). For a skin to be recognized it needs its own `resource/styles/steam.styles`. When a Steam update changes the official `steam.styles` your skin may become outdated, potentially resulting in visual errors.
 
-If you are running the [Linux-ck](/index.php/Linux-ck "Linux-ck") kernel, you may have some success in reducing overall latencies and improving performance by launching the game in SCHED_ISO (low latency, avoid choking CPU) via [schedtool](https://www.archlinux.org/packages/?name=schedtool)
+See `~/.local/share/Steam/skins/skins_readme.txt` for a primer on how to create skins.
 
-```
-# schedtool -I -e %command% *other arguments*
+### Changing the Steam notification position
 
-```
+The default Steam notification position is bottom right.
 
-Also keep in mind that Steam [does not really care](http://i.imgur.com/oJcLDBi.png) what you want it to run. By setting `%command%` to an environment variable, you can have Steam run whatever you would like. For example, the Launch Option used in the image above:
+You can change the Steam notification position by altering `Notifications.PanelPosition` in
 
-```
-IGNORE_ME=%command% glxgears
+*   `resource/styles/steam.styles` for desktop notifications, and
+*   `resource/styles/gameoverlay.styles` for in-game notifications
 
-```
+Both files are overwritten by Steam on startup and `steam.styles` is only read on startup.
 
-### Skins for Steam
-
-**Note:** Using skins that are not up-to-date with the version of the Steam client may cause visual errors.
-
-The Steam interface can be fully customized by copying its various interface files in its skins directory and modifying them.
-
-An extensive list of skins can be found on [Steam's forums](http://forums.steampowered.com/forums/showthread.php?t=1161035).
-
-### Changing the Steam friends notification placement
-
-**Note:** A handful of games do not support this, for example this can not work with XCOM: Enemy Unknown.
+**Note:** Some games do not respect the setting in `gameoverlay.styles` e.g. XCOM: Enemy Unknown.
 
 #### Use a skin
 
-You can create a skin that does nothing but change the notification corner. First you need to create the directories:
+You can create a skin to change the notification position to your liking. For example to change the position to top right:
 
 ```
-$ mkdir -p $HOME/Top-Right/resource
-$ cp -R $HOME/.steam/steam/resource/styles $HOME/Top-Right/resource/
-$ mv $HOME/Top-Right $HOME/.local/share/Steam/skins/
-$ cd .local/share/Steam/skins/
-$ cp -R Top-Right Top-Left && cp -R Top-Right Bottom-Right
-
-```
-
-Then modify the correct files. `Top-Right/resource/styles/gameoverlay.style` will change the corner for the in-game overlay whereas `steam.style` will change it for your desktop.
-
-Now find the entry: `Notifications.PanelPosition` in whichever file you opened and change it to the appropriate value, for example for Top-Right:
-
-```
-Notifications.PanelPosition     "TopRight"
+$ cd ~/.local/share/Steam/skins
+$ mkdir -p Top-Right/resource
+$ cp -r ~/.steam/steam/resource/styles Top-Right/resource
+$ sed -i '/Notifications.PanelPosition/ s/"[A-Za-z]*"/"TopRight"/' Top-Right/resource/styles/*
 
 ```
 
-This line will look the same in both files. Repeat the process for all the 3 variants (`Top-Right`, `Top-Left` and `Bottom-Left`) and adjust the corners for the desktop and in-game overlay to your satisfaction for each skin, then save the files.
+#### Live patching
 
-To finish you will have to select the skin in Steam: *Settings > Interface* and *<default skin>* in the drop-down menu.
+`gameoverlay.styles` can be overwritten while Steam is running, allowing you to have game-specific notification positions.
 
-You can use these files across distributions and even between Windows and Linux (macOS has its own entry for the desktop notification placement)
-
-#### On-the-fly patch
-
-This method is more compatible with future updates of Steams since the files in the skins above are updated as part of steam and as such if the original files change, the skin will not follow the graphics update to steam and will have to be re-created every time something like that happens. Doing things this way will also give you the ability to use per-game notification locations as you can run a patch changing the location of the notifications by specifying it in the launch options for games.
-
-Steam updates the files we need to edit everytime it updates (which is everytime it is launched) so the most effective way to do this is patching the file after Steam has already been launched.
-
-First you will need a patch:
-
- `$HOME/.steam/topright.patch` 
+ `~/.steam/notifpos.sh` 
 ```
---- A/steam/resource/styles/gameoverlay.styles	2013-06-14 23:49:36.000000000 +0000
-+++ B/steam/resource/styles/gameoverlay.styles	2014-07-08 23:13:15.255806000 +0000
-@@ -7,7 +7,7 @@
- 		mostly_black "0 0 0 240"
- 		semi_black "0 0 0 128"
- 		semi_gray "32 32 32 220"
--		Notifications.PanelPosition     "BottomRight"
-+		Notifications.PanelPosition     "TopRight"
- 	}
-
- 	styles
+sed -i "/Notifications.PanelPosition/ s/\"[A-Za-z]*\"/\"$1\"/" ~/.steam/steam/resource/styles/gameoverlay.styles
 
 ```
 
-**Note:** The patch file should have all above lines, including the newline at the end.
-
-You can edit the entry and change it between "BottomRight"(default), "TopRight" "TopLeft" and "BottomLeft": the following will assume you used "TopRight" as in the original file.
-
-Next create an alias in `$HOME/.bashrc`:
+And the [#Launch options](#Launch_options) should be something like:
 
 ```
-alias steam_topright='pushd $HOME/.steam/ && patch -p1 -f -r - --no-backup-if-mismatch < topright.patch && popd'
+~/.steam/notifpos.sh TopLeft && %command%
 
 ```
 
-Log out and back in to refresh the aliases. Launch Steam and wait for it to fully load, then run the alias
+### In-Home Streaming
+
+Steam has built-in support for [In-Home Streaming](http://store.steampowered.com/streaming/).
+
+See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless In-Home Streaming server on Linux.
+
+### Finding a games AppID
+
+Every Steam application has a unique AppID.
+
+To find the AppID of an installed game:
+
+1.  Right click on the game in your library, select create desktop shortcut.
+2.  Open the created file `~/Desktop/<game>.desktop` with a text editor.
+3.  Find the AppID in the Exec command `Exec=steam steam://rungameid/<appid>`.
+
+Alternatively find the game's [Steam Store](http://store.steampowered.com/) page and check out the URL:
 
 ```
-$ steam_topright
+http://store.steampowered.com/app/<appid>/<name>/
 
 ```
-
-And most games you launch after this will have their notification in the upper right corner.
-
-You can also duplicate the patch and make more aliases for the other corners if you do not want all games to use the same corner so you can switch back.
-
-To automate the process you will need a script file as steam launch options cannot read your aliases. The location and name of the file could for example be **$HOME/.scripts/steam_topright.sh**, and assuming that is the path you used, it needs to be executable:
-
-```
-$ chmod +755 $HOME/.scripts/steam_topright.sh
-
-```
-
-The contents of the file should be the following:
-
-```
-#!/bin/sh
-pushd $HOME/.steam/ && patch -p1 -f -r - --no-backup-if-mismatch < topright.patch && popd
-
-```
-
-And the launch options should be something like the following.
-
-```
-$HOME/.scripts/steam_topright.sh && %command%
-
-```
-
-There is another file in the same folder as **gameoverlay.style** folder called **steam.style** which has an entry with the exact same function as the file we patched and will change the notification corner for the desktop only (not in-game), but for editing this file to actually work it has to be set before steam is launched and the folder set to read-only so steam cannot re-write the file. Therefore the only two ways to modify that file is to make the directory read only so steam cannot change it when it is launched (can break updates) or making a skin like in method 1.
-
-### Silent Mode
-
-To stop the main window from showing at startup, use the `-silent` option:
-
-```
-$ steam -silent
-
-```
-
-**Tip:** This option can be added to a [desktop entry](/index.php/Desktop_entry "Desktop entry").
-
-### Streaming server
-
-See [https://steamcommunity.com/sharedfiles/filedetails/?id=680514371](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371)
-
-### Getting a games appid
-
-The easiest way to get a games appid is to do the following:
-
-1.  From within steam, right click on the game, create desktop shortcut
-2.  Open up the desktop file (nano ~/Desktop/<game>.desktop)
-3.  You should see the line:
-
-```
-Exec=steam steam://rungameid/65980 
-
-```
-
-65980 is the game's appid. We can now use this to launch a game directly from the command line. Example below.
-
-```
-$ cat ~/Desktop/<game>.desktop | grep rungameid
-    Exec=steam steam://rungameid/65980
-$ cd .steam/steam/steamapps/common/<game>
-$ echo 65980 > steam_appid.txt
-$ ./<game>
-
-```
-
-This is useful when troubleshooting problems. This method will also prevent steam from complaining about a missing appid when launching a game from the command line.
 
 ## Troubleshooting
 
@@ -245,5 +180,5 @@ See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshoot
 ## See also
 
 *   [Steam](https://wiki.gentoo.org/wiki/Steam) at Gentoo wiki
-*   [The Big List of DRM-Free Games on Steam](http://pcgamingwiki.com/wiki/The_Big_List_of_DRM-Free_Games_on_Steam) at PCGamingWiki
+*   [The Big List of DRM-Free Games on Steam](https://pcgamingwiki.com/wiki/The_Big_List_of_DRM-Free_Games_on_Steam) at PCGamingWiki
 *   [List of DRM-free games](http://steam.wikia.com/wiki/List_of_DRM-free_games) at wikia

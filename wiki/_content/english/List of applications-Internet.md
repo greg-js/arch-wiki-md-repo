@@ -840,6 +840,10 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 	[https://ricochet.im/](https://ricochet.im/) || [ricochet](https://aur.archlinux.org/packages/ricochet/)
 
+*   **Synapse** — Reference homeserver for the matrix protocol.
+
+	[https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse) || [matrix-synapse](https://www.archlinux.org/packages/?name=matrix-synapse)
+
 ##### Multi-protocol clients
 
 See also [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients").

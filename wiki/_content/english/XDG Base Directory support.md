@@ -530,6 +530,7 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 `~/.sqliterc`
 
  | [[105]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[106]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
+| [Steam](/index.php/Steam "Steam") | `~/.steam` |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
 | [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[107]](https://bugzil.la/735285) |

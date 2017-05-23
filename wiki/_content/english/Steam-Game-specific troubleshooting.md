@@ -2,18 +2,19 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 
 **Note:** [Steam](/index.php/Steam "Steam") installs library dependencies of a game to a library directory, but some are missing at the moment. Report bugs involving missing libraries on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux) before adding workarounds here, and then provide a link to the bug so it can be removed as the problems are fixed.
 
-**Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/SteamApps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
+**Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd *game_executable*`. `*game_executable*` is likely located somewhere in `~/.steam/root/steamapps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
 
 ## Contents
 
 *   [1 Common steps](#Common_steps)
     *   [1.1 Prepend /usr/lib to LD_LIBRARY_PATH](#Prepend_.2Fusr.2Flib_to_LD_LIBRARY_PATH)
-    *   [1.2 Adobe Air setup](#Adobe_Air_setup)
+    *   [1.2 OpenSSL 1.0 setup](#OpenSSL_1.0_setup)
+    *   [1.3 Adobe Air setup](#Adobe_Air_setup)
 *   [2 Air Brawl](#Air_Brawl)
 *   [3 Alien Isolation](#Alien_Isolation)
 *   [4 Amnesia: The Dark Descent](#Amnesia:_The_Dark_Descent)
 *   [5 And Yet It Moves](#And_Yet_It_Moves)
-    *   [5.1 Compatibility](#Compatibility)
+    *   [5.1 Game does not start](#Game_does_not_start)
 *   [6 Anodyne](#Anodyne)
 *   [7 Aquaria](#Aquaria)
     *   [7.1 Mouse pointer gets stuck in one direction](#Mouse_pointer_gets_stuck_in_one_direction)
@@ -25,7 +26,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [11 The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales)
 *   [12 The Book of Unwritten Tales: The Critter Chronicles](#The_Book_of_Unwritten_Tales:_The_Critter_Chronicles)
 *   [13 Borderlands 2](#Borderlands_2)
-    *   [13.1 Syncing save games](#Syncing_save_games)
+    *   [13.1 Migrating saves from other platforms](#Migrating_saves_from_other_platforms)
     *   [13.2 Using Ctrl Key](#Using_Ctrl_Key)
     *   [13.3 Logging into SHiFT](#Logging_into_SHiFT)
 *   [14 Borderlands: The Pre-Sequel](#Borderlands:_The_Pre-Sequel)
@@ -37,10 +38,8 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [16.1 Textures not rendering properly](#Textures_not_rendering_properly)
 *   [17 Civilization V](#Civilization_V)
     *   [17.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
-    *   [17.2 Extra LD_PRELOAD variable](#Extra_LD_PRELOAD_variable)
 *   [18 Civilization: Beyond earth](#Civilization:_Beyond_earth)
 *   [19 Civilization VI](#Civilization_VI)
-    *   [19.1 OpenSSL 1.0](#OpenSSL_1.0)
 *   [20 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
 *   [21 The Clockwork Man](#The_Clockwork_Man)
 *   [22 Company of Heroes 2](#Company_of_Heroes_2)
@@ -48,18 +47,17 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [23.1 Game starts on the wrong screen](#Game_starts_on_the_wrong_screen)
     *   [23.2 Cannot reach bottom of the screen on menus](#Cannot_reach_bottom_of_the_screen_on_menus)
     *   [23.3 Sound is played slightly delayed](#Sound_is_played_slightly_delayed)
-    *   [23.4 Unable to aim when in-game](#Unable_to_aim_when_in-game)
+    *   [23.4 Mouse not working in-game](#Mouse_not_working_in-game)
     *   [23.5 Brightness slider not working](#Brightness_slider_not_working)
     *   [23.6 Microphone not working](#Microphone_not_working)
 *   [24 Crusader Kings II](#Crusader_Kings_II)
-    *   [24.1 Tips and tricks](#Tips_and_tricks)
+    *   [24.1 Locations](#Locations)
     *   [24.2 No audio](#No_audio)
     *   [24.3 Oddly sized starting window](#Oddly_sized_starting_window)
 *   [25 Death Road To Canada](#Death_Road_To_Canada)
     *   [25.1 No music](#No_music)
 *   [26 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
 *   [27 Dirt](#Dirt)
-    *   [27.1 Fails to start](#Fails_to_start)
 *   [28 Divinity: Original Sin - Enhanced Edition](#Divinity:_Original_Sin_-_Enhanced_Edition)
     *   [28.1 Game doesn't start when using Bumblebee optirun or primusrun](#Game_doesn.27t_start_when_using_Bumblebee_optirun_or_primusrun)
 *   [29 Don't Starve](#Don.27t_Starve)
@@ -73,172 +71,173 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [30.6 Chinese Tips and player's name display problem](#Chinese_Tips_and_player.27s_name_display_problem)
     *   [30.7 Chinese input method problem](#Chinese_input_method_problem)
 *   [31 Dwarfs F2P](#Dwarfs_F2P)
-    *   [31.1 Game does not start](#Game_does_not_start)
+    *   [31.1 Game does not start](#Game_does_not_start_2)
     *   [31.2 Game crashes](#Game_crashes)
 *   [32 Dynamite Jack](#Dynamite_Jack)
     *   [32.1 Sound Issues](#Sound_Issues)
-    *   [32.2 Game does not start](#Game_does_not_start_2)
+    *   [32.2 Game does not start](#Game_does_not_start_3)
 *   [33 Euro Truck Simulator 2](#Euro_Truck_Simulator_2)
     *   [33.1 Shows only a black screen](#Shows_only_a_black_screen)
 *   [34 Football Manager 2014](#Football_Manager_2014)
 *   [35 FORCED](#FORCED)
 *   [36 FTL: Faster than Light](#FTL:_Faster_than_Light)
-    *   [36.1 Compatibility](#Compatibility_2)
+    *   [36.1 Compatibility](#Compatibility)
     *   [36.2 Problems with open-source video driver](#Problems_with_open-source_video_driver)
 *   [37 Game Dev Tycoon](#Game_Dev_Tycoon)
-    *   [37.1 Game does not start](#Game_does_not_start_3)
+    *   [37.1 Game does not start](#Game_does_not_start_4)
 *   [38 Garry's Mod](#Garry.27s_Mod)
-    *   [38.1 Game does not start](#Game_does_not_start_4)
+    *   [38.1 Game does not start](#Game_does_not_start_5)
     *   [38.2 Opening some menus causes the game to crash](#Opening_some_menus_causes_the_game_to_crash)
     *   [38.3 Game crashes after attempting to join server](#Game_crashes_after_attempting_to_join_server)
-*   [39 GRID Autosport](#GRID_Autosport)
-    *   [39.1 OpenSSL 1.0](#OpenSSL_1.0_2)
-    *   [39.2 Game does not start (Black screen)](#Game_does_not_start_.28Black_screen.29)
-*   [40 Hack 'n' Slash](#Hack_.27n.27_Slash)
-    *   [40.1 Crashes when trying to load a game](#Crashes_when_trying_to_load_a_game)
-*   [41 Hacker Evolution](#Hacker_Evolution)
-*   [42 Half-Life 2 and episodes](#Half-Life_2_and_episodes)
-    *   [42.1 Cyrillic fonts problem](#Cyrillic_fonts_problem)
-*   [43 Hammerwatch](#Hammerwatch)
-    *   [43.1 The game does not start via Steam](#The_game_does_not_start_via_Steam)
-    *   [43.2 No sound](#No_sound_3)
-*   [44 Halo: Custom Edition](#Halo:_Custom_Edition)
-*   [45 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
-    *   [45.1 Compatibility](#Compatibility_3)
-*   [46 Hatoful Boyfriend](#Hatoful_Boyfriend)
-    *   [46.1 Japanese text invisible](#Japanese_text_invisible)
-*   [47 Hyper Light Drifter](#Hyper_Light_Drifter)
-    *   [47.1 The controller does not work](#The_controller_does_not_work)
-    *   [47.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
-*   [48 The Impossible Game](#The_Impossible_Game)
-*   [49 The Inner World](#The_Inner_World)
-    *   [49.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
-        *   [49.1.1 Cutscenes](#Cutscenes)
-*   [50 Interloper](#Interloper)
-    *   [50.1 Game does not start](#Game_does_not_start_5)
-*   [51 Invisible Apartment](#Invisible_Apartment)
+*   [39 Gods will be watching](#Gods_will_be_watching)
+*   [40 GRID Autosport](#GRID_Autosport)
+    *   [40.1 Black screen when trying to play](#Black_screen_when_trying_to_play)
+*   [41 Hack 'n' Slash](#Hack_.27n.27_Slash)
+    *   [41.1 Crashes when trying to load a game](#Crashes_when_trying_to_load_a_game)
+*   [42 Hacker Evolution](#Hacker_Evolution)
+*   [43 Half-Life 2 and episodes](#Half-Life_2_and_episodes)
+    *   [43.1 Cyrillic fonts problem](#Cyrillic_fonts_problem)
+*   [44 Hammerwatch](#Hammerwatch)
+    *   [44.1 The game does not start via Steam](#The_game_does_not_start_via_Steam)
+    *   [44.2 No sound](#No_sound_3)
+*   [45 Halo: Custom Edition](#Halo:_Custom_Edition)
+*   [46 Harvest: Massive Encounter](#Harvest:_Massive_Encounter)
+    *   [46.1 Compatibility](#Compatibility_2)
+*   [47 Hatoful Boyfriend](#Hatoful_Boyfriend)
+    *   [47.1 Japanese text invisible](#Japanese_text_invisible)
+*   [48 Hyper Light Drifter](#Hyper_Light_Drifter)
+    *   [48.1 The controller does not work](#The_controller_does_not_work)
+    *   [48.2 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found)
+*   [49 The Impossible Game](#The_Impossible_Game)
+*   [50 The Inner World](#The_Inner_World)
+    *   [50.1 Bringing up the inventory or main menu](#Bringing_up_the_inventory_or_main_menu)
+        *   [50.1.1 Cutscenes](#Cutscenes)
+*   [51 Interloper](#Interloper)
     *   [51.1 Game does not start](#Game_does_not_start_6)
-*   [52 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
-    *   [52.1 Compatibility](#Compatibility_4)
-*   [53 Kerbal Space Program](#Kerbal_Space_Program)
-*   [54 Killing Floor](#Killing_Floor)
-    *   [54.1 Screen resolution](#Screen_resolution)
-    *   [54.2 Windowed mode](#Windowed_mode)
-    *   [54.3 Stuttering Sound](#Stuttering_Sound)
-*   [55 Lethal League](#Lethal_League)
-*   [56 Life is Strange](#Life_is_Strange)
-*   [57 Mark of the Ninja](#Mark_of_the_Ninja)
-    *   [57.1 Bad sound](#Bad_sound)
-*   [58 Metro: Last Light](#Metro:_Last_Light)
-*   [59 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
-    *   [59.1 Floating heads](#Floating_heads)
-*   [60 Multiwinia](#Multiwinia)
-    *   [60.1 Crash on startup](#Crash_on_startup)
-*   [61 Natural Selection 2](#Natural_Selection_2)
-    *   [61.1 No Sound](#No_Sound_4)
-*   [62 Nuclear Throne](#Nuclear_Throne)
-    *   [62.1 Missing libcurl.so.4 or version `CURL_OPENSSL_3' not found](#Missing_libcurl.so.4_or_version_.60CURL_OPENSSL_3.27_not_found)
-*   [63 Penumbra: Overture](#Penumbra:_Overture)
-    *   [63.1 Windowed mode](#Windowed_mode_2)
-*   [64 The Polynomial](#The_Polynomial)
-    *   [64.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [65 Portal 2](#Portal_2)
-    *   [65.1 Game does not start](#Game_does_not_start_7)
-    *   [65.2 Resolution too low](#Resolution_too_low)
-*   [66 Prison Architect](#Prison_Architect)
-    *   [66.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [67 Project Zomboid](#Project_Zomboid)
-    *   [67.1 No sound](#No_sound_5)
-*   [68 Redshirt](#Redshirt)
-*   [69 Revenge of the Titans](#Revenge_of_the_Titans)
-*   [70 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-*   [71 Saints Row IV](#Saints_Row_IV)
-    *   [71.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-    *   [71.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-*   [72 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [72.1 No audio](#No_audio_2)
-*   [73 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [73.1 No audio](#No_audio_3)
-*   [74 Spacechem](#Spacechem)
-    *   [74.1 Game crash](#Game_crash)
-*   [75 Splice](#Splice)
-*   [76 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [77 The Stanley Parable](#The_Stanley_Parable)
-    *   [77.1 Game won't start](#Game_won.27t_start)
-*   [78 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [79 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [79.1 Start with black screen](#Start_with_black_screen)
-    *   [79.2 No English fonts](#No_English_fonts)
-*   [80 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [80.1 No sound](#No_sound_6)
-*   [81 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [82 Tabletop Simulator](#Tabletop_Simulator)
-    *   [82.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [83 Team Fortress 2](#Team_Fortress_2)
-    *   [83.1 Making HRTF work](#Making_HRTF_work)
-    *   [83.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [83.3 No audio](#No_audio_4)
-    *   [83.4 Slow loading textures](#Slow_loading_textures)
-*   [84 Terraria](#Terraria)
-*   [85 This War of Mine](#This_War_of_Mine)
-    *   [85.1 Game does not start](#Game_does_not_start_8)
-    *   [85.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [86 Ticket to Ride](#Ticket_to_Ride)
-*   [87 Tomb Raider](#Tomb_Raider)
-    *   [87.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [87.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [88 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [89 Transistor](#Transistor)
-    *   [89.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [90 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [90.1 Troubleshooting](#Troubleshooting)
-*   [91 Trine 2](#Trine_2)
-    *   [91.1 Colors](#Colors)
-    *   [91.2 Sound](#Sound)
-    *   [91.3 Resolution](#Resolution)
-*   [92 Tropico 5](#Tropico_5)
-    *   [92.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [93 Unity of Command](#Unity_of_Command)
-    *   [93.1 Squares](#Squares)
-    *   [93.2 No audio](#No_audio_5)
-*   [94 Unity3D](#Unity3D)
-    *   [94.1 Locale settings](#Locale_settings)
-    *   [94.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [94.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-*   [95 Unrest](#Unrest)
-*   [96 War Thunder](#War_Thunder)
-    *   [96.1 Blank screen](#Blank_screen)
-*   [97 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [98 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [98.1 Game does not start](#Game_does_not_start_9)
-*   [99 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [100 World of Goo](#World_of_Goo)
-    *   [100.1 Changing resolution](#Changing_resolution)
-*   [101 XCOM](#XCOM)
-    *   [101.1 Hangs on startup](#Hangs_on_startup)
-    *   [101.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [52 Invisible Apartment](#Invisible_Apartment)
+    *   [52.1 Game does not start](#Game_does_not_start_7)
+*   [53 Joe Danger 2: The Movie](#Joe_Danger_2:_The_Movie)
+    *   [53.1 Compatibility](#Compatibility_3)
+*   [54 Kerbal Space Program](#Kerbal_Space_Program)
+*   [55 Killing Floor](#Killing_Floor)
+    *   [55.1 Screen resolution](#Screen_resolution)
+    *   [55.2 Windowed mode](#Windowed_mode)
+    *   [55.3 Stuttering sound](#Stuttering_sound)
+*   [56 Lethal League](#Lethal_League)
+*   [57 Life is Strange](#Life_is_Strange)
+*   [58 Mark of the Ninja](#Mark_of_the_Ninja)
+    *   [58.1 Bad sound](#Bad_sound)
+*   [59 Metro: Last Light](#Metro:_Last_Light)
+*   [60 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
+    *   [60.1 Floating heads](#Floating_heads)
+*   [61 Multiwinia](#Multiwinia)
+    *   [61.1 Crash on startup](#Crash_on_startup)
+*   [62 Natural Selection 2](#Natural_Selection_2)
+    *   [62.1 No Sound](#No_Sound_4)
+*   [63 Nuclear Throne](#Nuclear_Throne)
+    *   [63.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
+*   [64 Penumbra: Overture](#Penumbra:_Overture)
+    *   [64.1 Windowed mode](#Windowed_mode_2)
+*   [65 The Polynomial](#The_Polynomial)
+    *   [65.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [66 Portal 2](#Portal_2)
+    *   [66.1 Game does not start](#Game_does_not_start_8)
+    *   [66.2 Resolution too low](#Resolution_too_low)
+*   [67 Prison Architect](#Prison_Architect)
+    *   [67.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [68 Project Zomboid](#Project_Zomboid)
+    *   [68.1 No sound](#No_sound_5)
+*   [69 Redshirt](#Redshirt)
+*   [70 Revenge of the Titans](#Revenge_of_the_Titans)
+*   [71 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+*   [72 Saints Row IV](#Saints_Row_IV)
+    *   [72.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+    *   [72.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+*   [73 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [73.1 No audio](#No_audio_2)
+*   [74 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [74.1 No audio](#No_audio_3)
+*   [75 Spacechem](#Spacechem)
+    *   [75.1 Game crash](#Game_crash)
+*   [76 Splice](#Splice)
+*   [77 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [78 The Stanley Parable](#The_Stanley_Parable)
+    *   [78.1 Game won't start](#Game_won.27t_start)
+*   [79 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [80 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [80.1 Start with black screen](#Start_with_black_screen)
+    *   [80.2 No English fonts](#No_English_fonts)
+*   [81 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [81.1 No sound](#No_sound_6)
+*   [82 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [83 Tabletop Simulator](#Tabletop_Simulator)
+    *   [83.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [84 Team Fortress 2](#Team_Fortress_2)
+    *   [84.1 Making HRTF work](#Making_HRTF_work)
+    *   [84.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [84.3 No audio](#No_audio_4)
+    *   [84.4 Slow loading textures](#Slow_loading_textures)
+*   [85 Terraria](#Terraria)
+*   [86 This War of Mine](#This_War_of_Mine)
+    *   [86.1 Game does not start](#Game_does_not_start_9)
+    *   [86.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [87 Ticket to Ride](#Ticket_to_Ride)
+*   [88 Tomb Raider](#Tomb_Raider)
+    *   [88.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [88.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [89 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [90 Transistor](#Transistor)
+    *   [90.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [91 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [91.1 Troubleshooting](#Troubleshooting)
+*   [92 Trine 2](#Trine_2)
+    *   [92.1 Colors](#Colors)
+    *   [92.2 Sound](#Sound)
+    *   [92.3 Resolution](#Resolution)
+*   [93 Tropico 5](#Tropico_5)
+    *   [93.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [94 Unity of Command](#Unity_of_Command)
+    *   [94.1 Squares](#Squares)
+    *   [94.2 No audio](#No_audio_5)
+*   [95 Unity3D](#Unity3D)
+    *   [95.1 Locale settings](#Locale_settings)
+    *   [95.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [95.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+*   [96 Unrest](#Unrest)
+*   [97 War Thunder](#War_Thunder)
+    *   [97.1 Blank screen](#Blank_screen)
+*   [98 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [99 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [99.1 Game does not start](#Game_does_not_start_10)
+*   [100 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [101 World of Goo](#World_of_Goo)
+    *   [101.1 Changing resolution](#Changing_resolution)
+*   [102 XCOM](#XCOM)
+    *   [102.1 Hangs on startup](#Hangs_on_startup)
+    *   [102.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
 ### Prepend /usr/lib to LD_LIBRARY_PATH
 
-Right click on the game in your library, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
+Add `LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
-```
-LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
+### OpenSSL 1.0 setup
 
-```
+Some Steam games are built against OpenSSL 1.0\. [[1]](https://bugs.archlinux.org/task/53618)
+
+Install [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0-compat` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ### Adobe Air setup
 
-*   Package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) installs Adobe Air not in the place where the game expects it to be, fix this by creating a symlink (requires root permissions):
+The package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) installs Adobe Air not in the place where the game expects it to be, fix this by creating the following symlink:
 
 ```
-$ ln -s /opt/adobe-air-sdk/runtimes/air/linux/Adobe\ AIR /opt/Adobe\ AIR
+# ln -s "/opt/adobe-air-sdk/runtimes/air/linux/Adobe AIR" "/opt/Adobe AIR"
 
 ```
 
-*   Adobe AIR requires you to accept its EULA. You can do so using:
+Adobe AIR requires you to accept its EULA:
 
 ```
 $ mkdir -p ~/.appdata/Adobe/AIR
@@ -255,7 +254,7 @@ When some fonts are missing, [install](/index.php/Install "Install") [gnu-free-f
 You need to create the following symlink, otherwise the game will fail to start.
 
 ```
-$ ln -s /usr/lib/libpcre.so  ~/.steam/steam/SteamApps/common/Alien\ Isolation/lib/x86_64/libpcre.so.3
+$ ln -s /usr/lib/libpcre.so "$HOME/.steam/root/steamapps/common/Alien Isolation/lib/x86_64/libpcre.so.3"
 
 ```
 
@@ -277,28 +276,33 @@ Dependencies:
 *   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora)
 *   [lib32-libtiff4](https://www.archlinux.org/packages/?name=lib32-libtiff4)
 
-### Compatibility
+### Game does not start
 
-Game refuses to launch and one of the following messages can be observed on console
-
-```
- readlink: extra operand ‘Yet’
- Try 'readlink --help' for more information.
+When the game refuses to launch and prints one of the following error messages:
 
 ```
-
-OR
-
-```
- This script must be run as a user with write priviledges to game directory
+readlink: extra operand ‘Yet’
+Try 'readlink --help' for more information.
 
 ```
 
-To fix this, use:
+or
 
- `~/.steam/root/SteamApps/common/And Yet It Moves/AndYetItMovesSteam.sh` 
 ```
-#ayim_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
+This script must be run as a user with write priviledges to game directory
+
+```
+
+Open `~/.steam/root/steamapps/common/And Yet It Moves/AndYetItMovesSteam.sh` and replace the line:
+
+```
+ayim_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
+
+```
+
+with:
+
+```
 ayim_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 ```
@@ -314,23 +318,15 @@ Dependencies:
 
 ### Mouse pointer gets stuck in one direction
 
-If the mouse pointer gets stuck in any one direction, the game becomes unplayable. You may try:
+If the mouse pointer gets stuck in one direction, make sure `~/.steam/root/steamapps/common/Aquaria/usersettings.xml` contains `<JoystickEnabled on="0" />`.
 
- `~/.local/share/Steam/SteamApps/common/Aquaria/usersettings.xml` 
-```
-#<JoystickEnabled on=”1″ />
-<JoystickEnabled on=”0″ />
-```
-
-If that does not fix the issue, unplug any joystick or joystick adapter devices you may have plugged in.
+If that does not fix the issue, try unplugging any joysticks or joystick adapter devices you have plugged in.
 
 ## ARK: Survival Evolved
 
 ### Game does not start, displays text window with unreadable text
 
-Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and add this line:
-
- `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400 %command%` 
+Add `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Audiosurf 2
 
@@ -340,11 +336,11 @@ Requires [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-a
 
 ### No sound
 
-**Note:** This also helps with Never Alone (Kisima Ingitchuna) and No Time to Explain
+**Note:** This also helps with Never Alone (Kisima Ingitchuna) and No Time to Explain.
 
 [#Prepend /usr/lib to LD_LIBRARY_PATH](#Prepend_.2Fusr.2Flib_to_LD_LIBRARY_PATH).
 
-In the game, go to the options and set all audio levels to the proper volume.
+Adjust the audio levels in the game options.
 
 ## The Book of Unwritten Tales
 
@@ -355,80 +351,55 @@ Dependencies:
 
 If the game does not start, uncheck: *Properties > Enable Steam Community In-Game*.
 
-The game may segfault upon clicking the Setting menu and possibly during or before gameplay. This is a known problem and you will unfortunately have to wait for a fix from the developer. A workaround (taken from the [Steam forums](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2)) is to replace the game's RenderSystem_GL.so with one from Debian's repositories. To do that download this [deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), extract it with [dpkg](https://aur.archlinux.org/packages/dpkg/):
+The game is known to segfault when opening the settings and possibly during or before playing. A workaround from the [Steam discussions](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2) is to replace the game's `RenderSystem_GL.so` with one from Debian's repositories. To do that download [this deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), and extract it with [dpkg](https://aur.archlinux.org/packages/dpkg/):
 
 ```
-$ dpkg -x libogre-*.deb outdir}}
+$ dpkg -x libogre-*.deb outdir
 
 ```
 
-and replace `~/.local/share/Steam/SteamApps/common/The Book of Unwritten Tales/lib/32/RenderSystem_GL.so` with the one that comes with the `.deb` package.
+Now replace `~/.steam/root/steamapps/common/The Book of Unwritten Tales/lib/32/RenderSystem_GL.so` with the one extraced from the `.deb` package.
 
 ## The Book of Unwritten Tales: The Critter Chronicles
 
 See [#The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales).
 
-To prevent the game from crashing at the very end when the credits are shown, change the size of the credits image as described [here](http://steamcommunity.com/app/221830/discussions/0/828925849276110960/#c810921273836530791).
+To prevent the game from crashing at the end credits, change the size of the credits image as described [here](http://steamcommunity.com/app/221830/discussions/0/828925849276110960/#c810921273836530791).
 
 ## Borderlands 2
 
-### Syncing save games
+### Migrating saves from other platforms
 
-Steam Cloud syncing does not (intentionally) work between platforms. With that said gave save files can be manually moved between systems. Save locations can be found here: [http://pcgamingwiki.com/wiki/Borderlands_2#Game_data](http://pcgamingwiki.com/wiki/Borderlands_2#Game_data). Once backed up to a FAT32 or other cross-compatible file-system thumbdrive (or the cloud), move the saved files to your GNU/Linux system, locate your saved file location, and move into the 17-digit long numeric file name. If previous saves on your GNU/Linux system can be deleted you can do so now. The key fix that I found was a need to change the ownership, group, and permissions. I used `chown steam:steam *` and then `chmod 0660 *` to get my moved saved files to work.
+Borderlands 2 does not support cross-platform Steam Cloud syncing, you have to manually copy the files between platforms. Save locations can be found [here](https://pcgamingwiki.com/wiki/Borderlands_2#Game_data). Make sure your user can access the files.
 
 ### Using Ctrl Key
 
-Borderlands 2 does not allow the Ctrl key to be used by default. The game seems to be accessing keycodes and not keysyms, therefore xmodmap has no affect. A workaround is using *setkeycodes* to map the Ctrl-scancode to some other key, as described in [Map scancodes to keycodes#Using setkeycodes](/index.php/Map_scancodes_to_keycodes#Using_setkeycodes "Map scancodes to keycodes"). I use `setkeycodes 0x1d 56` (as root) to map Ctrl to Alt before starting the game and `setkeycodes 0x1d 29` to restore the default.
+Borderlands 2 does not allow the `Ctrl` key to be used by default. The game seems to be accessing keycodes and not keysyms, therefore xmodmap has no affect. A workaround is using *setkeycodes* to map the Ctrl-scancode to some other key, as described in [Map scancodes to keycodes#Using setkeycodes](/index.php/Map_scancodes_to_keycodes#Using_setkeycodes "Map scancodes to keycodes"). I use `setkeycodes 0x1d 56` (as root) to map Ctrl to Alt before starting the game and `setkeycodes 0x1d 29` to restore the default.
 
 ### Logging into SHiFT
 
-The Linux version of Borderlands 2 expects to be run on Ubuntu, as that is the "officially" supported distro for Steam. As a result of this, when attempting to log in to SHiFT, it will fail, claiming the server is not available. Using strace, it can be seen that it fails to connect to the server because it cannot load SSL certificates from `/usr/lib/ssl`, which is the Ubuntu filesystem spec. Arch uses `/etc/ssl`. This can be fixed by symlinking `/etc/ssl` to `/usr/lib/ssl`, like so:
-
-```
-# ln -s /etc/ssl /usr/lib/ssl
-
-```
-
-To avoid symlinking an alternative to the above is to add the following to the launch options in Steam:
-
-```
-SSL_CERT_DIR="/etc/ssl/certs" %command%
-
-```
-
-Using one method or the other you will now be able to log into SHiFT to redeem SHiFT codes.
+Out of the box you will not be able to log into SHiFT since the game expects certificates to be in `/usr/lib/ssl`, which is where Ubuntu stores them. Arch however uses `/etc/ssl`. To resolve the problem, add `SSL_CERT_DIR=/etc/ssl/certs` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Borderlands: The Pre-Sequel
 
-Borderlands the Pre-Sequel (and maybe Borderlands 2) might not be able to connect to the Gearbox SHIFT-service, this is related to a wrong path to the available SSL certificates. This can be solved by creating a symbolic link from `/etc/ssl` to `/usr/lib/ssl`. See [this comment on the steam discussion forum](http://steamcommunity.com/app/49520/discussions/0/616189742722687689/#c616189742811551908).
-
-As an alternative the following can be added to the launch options in Steam:
-
-```
-SSL_CERT_DIR="/etc/ssl/certs" %command%
-
-```
+See [#Logging into SHiFT](#Logging_into_SHiFT).
 
 ### Keyboard not working
 
-Using [dwm](/index.php/Dwm "Dwm"), no keyboard input seems to register with BL:TPQ. Switching to openbox helped solved the issue, no other fix could be found. It's either a specific dwm issue or tiling WMs in general.
+Using [dwm](/index.php/Dwm "Dwm"), no keyboard input seems to register.
 
 ### Not starting via Steam
 
-The game may stop launching from Steam; on launch, game appears as 'Running', then syncs and closes.
+The game may stop launching from Steam; on launch, game appears as *Running*, then syncs and closes.
 
-Running Steam using [Steam-Native](https://www.archlinux.org/packages/multilib/x86_64/steam-native-runtime/) will allow the game to start correctly.
-
-Alternatively create the missing `steam_appid.txt`:
+Either use [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) or create the missing `steam_appid.txt`:
 
 ```
-$ echo 261640 > ~/.steam/steam/steamapps/common/BorderlandsPreSequel/steam_appid.txt
+$ echo 261640 > ~/.steam/root/steamapps/common/BorderlandsPreSequel/steam_appid.txt
 
 ```
 
-You can now start the game directly from the game directory, directly supplying any command line options you have configured under Set Launch Options.
-
-Save the command in a [desktop entry](/index.php/Desktop_entry "Desktop entry") or script.
+You can now start the game directly from the game directory.
 
 ## Cities in Motion 2
 
@@ -448,29 +419,17 @@ Workaround for the bug [FS#35039](https://bugs.archlinux.org/task/35039) is avai
 
 ### Textures not rendering properly
 
-In the Steam client set the following launch property for the game:
-
-```
-UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes %command%
-
-```
+Add `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Civilization V
+
+You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Steam#Launch_options "Steam").
+
+[steam-for-linux issue #4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
 ### Stuttering sound with PulseAudio
 
 See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooting#Laggy_sound "PulseAudio/Troubleshooting").
-
-### Extra LD_PRELOAD variable
-
-If the game seems to start and close, consider using the following as launch options for the game:
-
-```
-env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
-
-```
-
-[steam-for-linux issue #4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
 ## Civilization: Beyond earth
 
@@ -483,27 +442,13 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 
 ## Civilization VI
 
-As with Civ V, you will need to modify the launch options, see [#Extra LD_PRELOAD variable](#Extra_LD_PRELOAD_variable).
+As with Civ V, you need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
-### OpenSSL 1.0
-
-Civ 6 is built against [openssl](https://www.archlinux.org/packages/?name=openssl) 1.0 exactly. If you have updated to openssl 1.1 or later Civ6 and some other steam games [will not work](https://bugs.archlinux.org/task/53618). To provide openssl 1.0 [install](/index.php/Install "Install") [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add the following launch options to Civ6
-
-```
- LD_LIBRARY_PATH='/usr/lib/openssl-1.0-compat/' %command%
-
-```
-
-If your are already modifying the launch command with LD_PRELOAD then you can combine the commands
-
-```
-env LD_LIBRARY_PATH='/usr/lib/openssl-1.0-compat/' LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
-
-```
+Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## Deus Ex: Mankind divided
 
-Install [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and follow the instructions for Civilization VI (above).
+Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## The Clockwork Man
 
@@ -514,7 +459,7 @@ Requires [lib32-libidn](https://www.archlinux.org/packages/?name=lib32-libidn).
 Like with [#Alien Isolation](#Alien_Isolation) you need to create the following symlink, otherwise the game will fail to start.
 
 ```
-$ ln -s /usr/lib/libpcre.so  ~/.steam/steam/SteamApps/common/Company\ of\ Heroes\ 2/lib/<ARCH>/libpcre.so.3
+$ ln -s /usr/lib/libpcre.so  "~/.steam/root/steamapps/common/Company of Heroes 2/lib/<ARCH>/libpcre.so.3"
 
 ```
 
@@ -554,20 +499,15 @@ Here X and Y is 0,2560 to move the window to the monitor on the right and H and 
 
 See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooting#Laggy_sound "PulseAudio/Troubleshooting") for a possible solution.
 
-### Unable to aim when in-game
+### Mouse not working in-game
 
-When you are unable to aim in-game but your mouse works in the GUI menus add this line to your `.bash_profile` and relogin [[1]](https://bbs.archlinux.org/viewtopic.php?id=184905):
-
-```
-export SDL_VIDEO_X11_DGAMOUSE=0
-
-```
+If your mouse works in the main menu but not in-game, add `SDL_VIDEO_X11_DGAMOUSE=0` to your [launch options](/index.php/Steam#Launch_options "Steam"). [[2]](https://bbs.archlinux.org/viewtopic.php?id=184905)
 
 ### Brightness slider not working
 
 [Install](/index.php/Install "Install") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and run `xrandr` to find out the name of your connected display output.
 
-Edit `~/.steam/steam/steamapps/common/Counter-Strike\ Global\ Offensive/csgo.sh` and add the following lines (adapt *output_name*):
+Edit `~/.steam/root/steamapps/common/Counter-Strike Global Offensive/csgo.sh` and add the following lines (adapt *output_name*):
 
 ```
 **# gamma correction**
@@ -615,11 +555,11 @@ x86_64 dependencies:
 
 *   [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl)
 
-### Tips and tricks
+### Locations
 
-Game is installed into `$HOME/Steam/SteamApps/common/Crusader Kings II`. Game can be started directly, without need of running Steam on background, using command `$HOME/Steam/SteamApps/common/Crusader Kings II/ck2`.
+The game can be started directly without running Steam by executing `./ck2` in its directory.
 
-Saves are stored in `$HOME/Documents/Paradox Interactive/Crusader Kings II/save games/`. In the newest version (2.03), save-game files seem to be stored to `$HOME/.paradoxinteractive/Crusader Kings II/`. If your documents folder is empty, try looking there.
+Save files are stored in `~/.paradoxinteractive/Crusader Kings II/`. Before version 2.03 they were stored in `~/Documents/Paradox Interactive/Crusader Kings II/save games/`.
 
 ### No audio
 
@@ -647,22 +587,13 @@ Dependencies:
 
 ## Dirt
 
-Requires [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/).
-
-### Fails to start
-
-Dirt is built against [openssl](https://www.archlinux.org/packages/?name=openssl) 1.0 exactly. If you have updated to openssl 1.1 or later Dirt and some other steam games [will not work](https://bugs.archlinux.org/task/53618). To provide openssl 1.0 [install](/index.php/Install "Install") [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) then right click on Dirt on your game list, click on Properties, click on SET LAUNCH OPTIONS, then add this:
-
-```
-LD_PRELOAD='/usr/lib64/openssl-1.0-compat/libssl.so.1.0.0 /usr/lib64/openssl-1.0-compat/libcrypto.so.1.0.0' %command%
-
-```
+Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## Divinity: Original Sin - Enhanced Edition
 
 ### Game doesn't start when using Bumblebee optirun or primusrun
 
-Edit `<path to library>/SteamApps/common/Divinity Original Sin Enhanced Edition/runner.sh` to have it use primusrun:
+Edit `~/.steam/root/steamapps/common/Divinity Original Sin Enhanced Edition/runner.sh` to have it use primusrun:
 
 ```
 LD_LIBRARY_PATH="." primusrun ./EoCApp
@@ -692,12 +623,7 @@ Dependencies:
 
 ### In-game font is unreadable
 
-Start Steam (or Dota 2) with the environment variable:
-
-```
-MESA_GL_VERSION_OVERRIDE=2.1
-
-```
+Add `MESA_GL_VERSION_OVERRIDE=2.1` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ### The game does not start
 
@@ -722,7 +648,7 @@ See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshootin
 
 ### Steam overlay
 
-Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting"), [[2]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
+Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting"), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
 
 ### Chinese Tips and player's name display problem
 
@@ -758,7 +684,7 @@ Dependencies:
 
 There was a bug that stopped Steam from fetching all the needed files. It should be resolved, if you still bump into this problem, try verifying integrity of game cache from game properties, local files tab.
 
-If the game still crashes at startup, edit `~/.local/share/Steam/SteamApps/common/Dwarfs - F2P/Run.sh` and change
+If the game still crashes at startup, edit `~/.steam/root/steamapps/common/Dwarfs - F2P/Run.sh` and change
 
 ```
 export LD_LIBRARY_PATH=.:${LD_LIBRARY_PATH}
@@ -774,7 +700,7 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:.
 
 **Note:** This file may be overwritten by updates or by verifying integrity of game cache. You may need to modify it again.
 
-If these do not help, you may have outdated libraries in the game installation folder that are crashing the game on startup. Try moving/removing the following files out of `~/.local/share/Steam/SteamApps/common/Dwarfs - F2P/` to fix it:
+If these do not help, you may have outdated libraries in the game installation folder that are crashing the game on startup. Try moving/removing the following files out of `~/.steam/root/steamapps/common/Dwarfs - F2P/` to fix it:
 
 ```
 libX11.so.6, libsteam.so libtier0_s.so, libvstdlib_s.so, steamclient.so
@@ -798,7 +724,7 @@ When running on 64-bit Arch Linux, there may be "pops and hisses" when running D
 If running steam with the `STEAM_RUNTIME=0`, Dynamite Jack may have a problem starting. Check the steam error messages for this message:
 
 ```
-/home/$USER/.local/share/Steam/SteamApps/common/Dynamite Jack/bin/main: error while loading shared libraries: libSDL-1.2.so.0: cannot open shared object file: No such file or directory
+/home/$USER/.steam/root/steamapps/common/Dynamite Jack/bin/main: error while loading shared libraries: libSDL-1.2.so.0: cannot open shared object file: No such file or directory
 
 ```
 
@@ -826,11 +752,11 @@ This game has 32-bit and 64-bit binaries. For unknown reason, steam will launch 
 
 After installation, FTL may fail to run due to a 'Text file busy' error (characterised in Steam by your portrait border going green then blue again). The easiest way to mend this is to just reboot your system. Upon logging back in FTL should run.
 
-The Steam overlay in FTL does not function as it is not a 3D accelerated game. Because of this the desktop notifications will be visible. If playing in fullscreen, therefore, these notifications in some systems may steal focus and revert you back to windowed mode with no way of going back to fullscreen without relaunching. The binaries for FTL on Steam have no DRM and it is possible to run the game *without* Steam running, so in some cases that may be optimum - just ensure that you launch FTL via the launcher script in `~/.steam/root/SteamApps/common/FTL Faster than Light/data/` rather than the FTL binary in the $arch directory.
+The Steam overlay in FTL does not function as it is not a 3D accelerated game. Because of this the desktop notifications will be visible. If playing in fullscreen, therefore, these notifications in some systems may steal focus and revert you back to windowed mode with no way of going back to fullscreen without relaunching. The binaries for FTL on Steam have no DRM and it is possible to run the game *without* Steam running, so in some cases that may be optimum - just ensure that you launch FTL via the launcher script in `~/.steam/root/steamapps/common/FTL Faster than Light/data/` rather than the FTL binary in the $arch directory.
 
 ### Problems with open-source video driver
 
-FTL may fail to run if you are using an opensource driver for your video card. There are two solutions: install a proprietary video driver or delete (rename if you are unsure) the library "libstdc++.so.6" inside `~/.steam/root/SteamApps/common/FTL\ Faster\ Than\ Light/data/amd64/lib`. This is if you are using a 64bit system. In case you are using a 32bit system you have to remove (rename) the same library located into `~/.steam/root/SteamApps/common/FTL\ Faster\ Than\ Light/data/x86/lib`.
+FTL may fail to run if you are using an opensource driver for your video card. There are two solutions: install a proprietary video driver or delete (rename if you are unsure) the library "libstdc++.so.6" inside `~/.steam/root/steamapps/common/FTL Faster Than Light/data/amd64/lib`. This is if you are using a 64bit system. In case you are using a 32bit system you have to remove (rename) the same library located into `~/.steam/root/steamapps/common/FTL Faster Than Light/data/x86/lib`.
 
 ## Game Dev Tycoon
 
@@ -842,16 +768,16 @@ You might get an error about missing `libudev.so.0`. See [Steam/Troubleshooting#
 
 ### Game does not start
 
-Error about missing client.so might appear, solution:
+When an error about a missing `client.so` appears, try the following:
 
 ```
- cd SteamLibrary/SteamApps/common/GarrysMod/bin/
- ln -s libawesomium-1-7.so.0 libawesomium-1-7.so.2
- ln -s ../garrysmod/bin/client.so ./
+$ cd ~/.steam/root/steamapps/common/GarrysMod/bin/
+$ ln -s libawesomium-1-7.so.0 libawesomium-1-7.so.2
+$ ln -s ../garrysmod/bin/client.so ./
 
 ```
 
-If the error mentions a missing library for libgcrypt.so.11, install [lib32-libgcrypt15](https://www.archlinux.org/packages/?name=lib32-libgcrypt15).
+If the error mentions a missing library for `libgcrypt.so.11`, install [lib32-libgcrypt15](https://www.archlinux.org/packages/?name=lib32-libgcrypt15).
 
 ### Opening some menus causes the game to crash
 
@@ -867,27 +793,19 @@ While in the process of joining a server, downloading resources, etc, the game s
 
 This issue arises more often when joining servers with many addons like DarkRP servers specifically.
 
-The Problem seems to correlate with a weak GPU and the game is timing out from the server, so if the GPU is the problem, lowering the graphics settings to minimum fixes the problem until you can upgrade ;).
+The problem seems to correlate with a weak GPU and the game is timing out from the server, so if the GPU is the problem, lowering the graphics settings to the minimum should fix the problem.
+
+## Gods will be watching
+
+Install [lib32-libopenssl-1.0-compat](https://aur.archlinux.org/packages/lib32-libopenssl-1.0-compat/) and add `LD_LIBRARY_PATH=/usr/lib32/openssl-1.0-compat` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## GRID Autosport
 
-### OpenSSL 1.0
+Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
-GRID is built against [openssl](https://www.archlinux.org/packages/?name=openssl) 1.0 exactly. If you have updated to openssl 1.1 or later GRID and some other steam games [will not work](https://bugs.archlinux.org/task/53618). To provide openssl 1.0 [install](/index.php/Install "Install") [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add the following launch option:
+### Black screen when trying to play
 
-```
-"LD_LIBRARY_PATH='/usr/lib/openssl-1.0-compat/' %command%"
-
-```
-
-### Game does not start (Black screen)
-
-Starting the launcher is successful, but starting the game fails with a black screen. Solution: Right click on the game in your game list, click on "Properties", click on "SET LAUNCH OPTIONS", then add:
-
-```
-"LC_ALL=C %command%"
-
-```
+Add `LC_ALL=C` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Hack 'n' Slash
 
@@ -941,7 +859,7 @@ Dependencies:
 
 ### Compatibility
 
-Game refuses to launch and throws you to library installer loop. Just edit `~/.steam/root/SteamApps/common/Harvest Massive Encounter/run_harvest` and remove everything but
+Game refuses to launch and throws you to library installer loop. Just edit `~/.steam/root/steamapps/common/Harvest Massive Encounter/run_harvest` and remove everything but
 
 ```
  #!/bin/bash
@@ -959,35 +877,18 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 
 ### The controller does not work
 
-Install [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2) and change the game launch options in Steam to:
+[Install](/index.php/Install "Install") [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2) and add `LD_PRELOAD=libSDL2.so` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
-```
-LD_PRELOAD=libSDL2.so %command%
+See the following Steam Community discussions:
 
-```
+*   [Controller Issues](https://steamcommunity.com/app/257850/discussions/1/365163686036494421)
+*   [Common Bugs + Known Issues](https://steamcommunity.com/app/257850/discussions/1/365163686045397160/)
 
-```
-**Note 01:** Follow this [discussion](https://steamcommunity.com/app/257850/discussions/1/365163686036494421/?ctp=14) for specifically the controller issues, and follow this [discussion](https://steamcommunity.com/app/257850/discussions/1/365163686045397160/) for general bugs including the controller problems.
-Both are considered the "bug reports" since they don't have an issue tracking system other than the support forum on Steam.
-
-```
-
-```
-**Note 02:** It is suggested to run the *next_update* branch to get the fixes that have recently dropped,
-however there is a libcurl segfault currently keeping it from starting at all without special workarounds.
-
-```
+It is suggested to run the *next_update* branch to get new fixes, there however currently is a libcurl segfault keeping it from starting without special workarounds.
 
 ### Missing libcurl.so.4 or version CURL_OPENSSL_3 not found
 
-[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat).
-
-Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and use the following:
-
-```
-LD_PRELOAD=libcurl.so.3 %command%
-
-```
+[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## The Impossible Game
 
@@ -1017,7 +918,7 @@ Install [jre](https://aur.archlinux.org/packages/jre/) from the [AUR](/index.php
 
 Furthermore you need the package [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
 
-There seem to be problems with the Steam overlay. Try to run the game directly with `~/Steam/SteamApps/common/TheInnerWorld/TIW_start.sh`.
+There seem to be problems with the Steam overlay. Try to run the game directly with `~/Steam/steamapps/common/TheInnerWorld/TIW_start.sh`.
 
 Note that cutscenes open in a new window. So pay attention to that and switch to the new window to enjoy the movies.
 
@@ -1040,7 +941,7 @@ Requires [qt5-multimedia](https://www.archlinux.org/packages/?name=qt5-multimedi
 When the game does not run when you launch it via Steam try to run it directly:
 
 ```
-./$HOME/.steam/steam/SteamApps/common/Invisible\ Apartment/ia1
+~/.steam/root/steamapps/common/Invisible\ Apartment/ia1
 
 ```
 
@@ -1098,9 +999,18 @@ Save the file and restart the game, it should work now.
 
 Uncheck fullscreen in the options menu, and use `Ctrl+g` to stop mouse capturing (that was non-obvious to discover..). This way you can easily minimize it and do other other things..and let your WM handle things.
 
-### Stuttering Sound
+### Stuttering sound
 
-KillingFloor comes with its own libopenal.so (called openal.so). To use system lib instead install [openal](https://www.archlinux.org/packages/?name=openal) or [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) (if using 64bit system). Then go to `$HOME/Steam/SteamApps/common/KillingFloor/System`. and rename openal.so to openal.so.bak Then create symlink to /usr/lib32/libopenal.so.1 or /usr/lib/libopenal.so.1 called openal.so
+KillingFloor comes with its own OpenAL library:
+
+```
+~/.steam/root/steamapps/common/KillingFloor/System/openal.so
+
+```
+
+Back it up, [install](/index.php/Install "Install") [openal](https://www.archlinux.org/packages/?name=openal) or [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) (if using a 64bit system).
+
+Then symlink the installed system library (`/usr/lib32/libopenal.so.1` or `/usr/lib/libopenal.so.1`) to `openal.so`.
 
 ## Lethal League
 
@@ -1124,12 +1034,7 @@ The game does not allow you to change its resolution on a multi-monitor setup on
 
 ### Floating heads
 
-Right click on `Middle-earth: Shadow of Mordor` on your game list, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
-
-```
-__GL_ShaderPortabilityWarnings=0 %command%
-
-```
+Add `__GL_ShaderPortabilityWarnings=0` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Multiwinia
 
@@ -1137,7 +1042,7 @@ Requires [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal).
 
 ### Crash on startup
 
-If Multiwinia crashes on startup on X64 systems, force launching the 32-bit executable by replacing `~/.local/share/Steam/steamapps/common/Multiwinia/run_steam.sh` with the following script:
+If Multiwinia crashes on startup on X64 systems, force launching the 32-bit executable by replacing `~/.steam/root/steamapps/common/Multiwinia/run_steam.sh` with the following script:
 
 ```
 #!/bin/sh
@@ -1145,7 +1050,7 @@ If Multiwinia crashes on startup on X64 systems, force launching the 32-bit exec
 
 ```
 
-See [[4]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+See [[5]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
 
 ## Natural Selection 2
 
@@ -1164,16 +1069,9 @@ LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH" %command%
 
 ## Nuclear Throne
 
-### Missing libcurl.so.4 or version `CURL_OPENSSL_3' not found
+### Missing libcurl.so.4 or version CURL_OPENSSL_3 not found
 
-Install [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat).
-
-Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and use the following:
-
-```
- LD_PRELOAD=libcurl.so.3 %command%
-
-```
+[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Penumbra: Overture
 
@@ -1203,7 +1101,7 @@ Dependencies:
 
 ### Segfaults during program start on 64-bit systems
 
-The game segfaults during program start because of the `LD_LIBRARY_PATH` setting in the launcher script. Edit `~/.local/share/Steam/SteamApps/common/ThePolynomial/Polynomial64`, and comment out the `LD_LIBRARY_PATH` variable. Make sure to put the `./bin/Polynomial64 "$@"` command on a new line.
+The game segfaults during program start because of the `LD_LIBRARY_PATH` setting in the launcher script. Edit `~/.steam/root/steamapps/common/ThePolynomial/Polynomial64`, and comment out the `LD_LIBRARY_PATH` variable. Make sure to put the `./bin/Polynomial64 "$@"` command on a new line.
 
 ## Portal 2
 
@@ -1339,7 +1237,7 @@ Dependencies:
 
 The shipped x86 version of Spacechem does not work on x64 with the game's own libSDL* files, and crashes with some strange output.
 
-To solve this just remove or move the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.so.0`, `libSDL_mixer-1.2.so.0` from `~/.steam/root/SteamApps/common/SpaceChem`
+To solve this just remove or move the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.so.0`, `libSDL_mixer-1.2.so.0` from `~/.steam/root/steamapps/common/SpaceChem`
 
 ## Splice
 
@@ -1362,7 +1260,7 @@ In order to use the patched wine version with PlayOnLinux, copy the completely p
 As discussed in Steam's store page, remove `libstdc++.so.6` from the game folder. For example:
 
 ```
-$ rm ~/.local/share/Steam/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.6
+$ rm ~/.steam/root/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.6
 
 ```
 
@@ -1404,7 +1302,7 @@ If using [native libraries](/index.php/Steam/Troubleshooting#Native_runtime "Ste
 If renaming any of those files works for you, you can proceed with the following instructions (revert any renaming you just did). Browse to the game's directory:
 
 ```
-$ cd "$HOME/.local/share/Steam/steamapps/common/Stephen's Sausage Roll"
+$ cd "$HOME/.steam/root/steamapps/common/Stephen's Sausage Roll"
 
 ```
 
@@ -1464,7 +1362,7 @@ libGL error: failed to load driver: swrast
 To solve this problem remove the bunlded libstdc++ using:
 
 ```
-$ rm "$HOME/.steam/steam/steamapps/common/Superbrothers Sword & Sworcery EP/lib/libstdc++.so.6*"
+$ rm "$HOME/.steam/root/steamapps/common/Superbrothers Sword & Sworcery EP/lib/libstdc++.so.6*"
 
 ```
 
@@ -1523,7 +1421,7 @@ See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http
 This happens because of an incompatibility with the newer version of `lib32-curl`. To fix the problem you need to remove the bundled `libcurl.so.4`
 
 ```
-$ rm "$HOME/.local/share/Steam/steamapps/common/This War of Mine/libcurl.so.4"
+$ rm "$HOME/.steam/root/steamapps/common/This War of Mine/libcurl.so.4"
 
 ```
 
@@ -1532,7 +1430,7 @@ $ rm "$HOME/.local/share/Steam/steamapps/common/This War of Mine/libcurl.so.4"
 The bundled `libOpenAL` might not work correctly, try the following:
 
 ```
-$ ln -sf /usr/lib32/libopenal.so ~/.local/share/Steam/steamapps/common/This\ War\ of\ Mine/libOpenAL.so
+$ ln -sf /usr/lib32/libopenal.so "$HOME/.steam/root/steamapps/common/This War of Mine/libOpenAL.so"
 
 ```
 
@@ -1551,7 +1449,7 @@ As lib32-gstreamer0.10-base is quite hard to build you can use [alucryd-multilib
 
 Tomb Raider has a very heavy amount of dependency on the Steam runtime, the easiest solution is to just run it using the runtime. You can do so by setting the following as the launch option:
 
- `/home/[your username]/.local/share/Steam/ubuntu12_32/steam-runtime/run.sh %command%` 
+ `~/.steam/root/ubuntu12_32/steam-runtime/run.sh %command%` 
 
 ### Steam Controller not working in-game
 
@@ -1587,9 +1485,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 This will force Steam to do the fix whenever Transistor is started, but allows Steam to be launched normally.
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[5]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[6]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[6]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
+Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
 
 ## Transmissions: Element 120
 
@@ -1607,14 +1505,14 @@ AppFramework : Unable to load module vguimatsurface.so!
 
 ```
 
-To show which dependencies are satisfied, go to the folder in which you installed the game (`SteamLibrary/steamapps/common/Transmissions Element 120`) and execute:
+To find missing dependencies go into `~/.steam/root/steamapps/common/Transmissions Element 120` and run:
 
 ```
 LD_LIBRARY_PATH=bin ldd bin/vguimatsurface.so
 
 ```
 
-look for entries that say `not found`
+Look for entries that say *not found*.
 
 ## Trine 2
 
@@ -1652,9 +1550,7 @@ If the game resolution is wrong when using a dual monitor setup and you can't se
 
 ### Blank screen with sound only on startup
 
-Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and add this line:
-
- `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400 %command%` 
+Add `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 ## Unity of Command
 
@@ -1662,7 +1558,7 @@ Requires [lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango).
 
 ### Squares
 
-If squares are shown instead of text, try removing `$HOME/Steam/SteamApps/common/Unity of Command/bin/libpangoft2-1.0.so.0`.
+If squares are shown instead of text, try removing `$HOME/Steam/steamapps/common/Unity of Command/bin/libpangoft2-1.0.so.0`.
 
 ### No audio
 
@@ -1721,7 +1617,7 @@ Requires [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 
 ### Blank screen
 
-If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[7]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[8]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Steam#Launch_options "Steam"). [[8]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[9]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Warhammer 40,000: Dawn of War II
 
@@ -1732,7 +1628,7 @@ Dependencies:
 
 The start script does not point to the right direction of `libasound.so.2`.
 
-To fix it open `$HOME/.steam/steam/steamapps/common/Dawn of War 2/DawnOfWar2.sh` and replace the following lines:
+To fix it open `~/.steam/root/steamapps/common/Dawn of War 2/DawnOfWar2.sh` and replace the following lines:
 
 ```
 HAS_LSB_RELEASE=$(command -v lsb_release)
@@ -1760,7 +1656,7 @@ Dependencies:
 If the game does not run, enable error messages:
 
 ```
-$ cd "$HOME/.local/share/Steam/SteamApps/common/the witcher 2"
+$ cd "$HOME/.steam/root/steamapps/common/the witcher 2"
 $ LIBGL_DEBUG=verbose ./witcher2
 
 ```
@@ -1769,7 +1665,7 @@ $ LIBGL_DEBUG=verbose ./witcher2
 
 Requires [DOSBox](/index.php/DOSBox "DOSBox").
 
-To fix the crash at start, open `~/.local/share/Steam/SteamApps/common/Wizardry6/dosbox_linux/launch_wizardry6.sh` and:
+To fix the crash at start, open `~/.steam/root/steamapps/common/Wizardry6/dosbox_linux/launch_wizardry6.sh` and:
 
 *   comment the line `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./libs`
 *   change the beginning of the line starting with `exec ./dosbox` to `exec dosbox`
@@ -1778,7 +1674,7 @@ To fix the crash at start, open `~/.local/share/Steam/SteamApps/common/Wizardry6
 
 ### Changing resolution
 
-*   To change the game resolution edit the section "Graphics display" in the configuration file `$HOME/Steam/SteamApps/common/World of Goo/properties/config.txt`. For example, see below:
+*   To change the game resolution edit the section "Graphics display" in the configuration file `$HOME/Steam/steamapps/common/World of Goo/properties/config.txt`. For example, see below:
 
 ```
  <param name="screen_width" value="1680" />
@@ -1800,7 +1696,7 @@ Dependencies:
 
 See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 
-If you are running a hybrid graphic system, try
+If you are running a [hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics") system, try:
 
 ```
 __GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
@@ -1811,4 +1707,4 @@ __GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
 
 XCOM may not recognize the SDL2 shared libraries shipped with the Steam runtime. Check if the binary finds all required files and install missing packages if necessary ([sdl2](https://www.archlinux.org/packages/?name=sdl2) and [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image)).
 
- `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 `
+ `ldd ~/.steam/root/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 `

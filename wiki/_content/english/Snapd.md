@@ -123,7 +123,7 @@ Snaps can be removed by executing:
 
 ## Support
 
-Arch Linux related mailing lists and other official Arch Linux support channels aren't an appropriate place to request help with snaps on Arch Linux. An appropriate place to ask for support is the [Snapcraft mailing list](https://lists.ubuntu.com/mailman/listinfo/snapcraft).
+Arch Linux related mailing lists and other official Arch Linux support channels aren't an appropriate place to request help with snaps on Arch Linux. An appropriate place to ask for support is the [Snapcraft forum](https://forum.snapcraft.io).
 
 ## See also
 

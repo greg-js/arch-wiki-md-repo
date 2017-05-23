@@ -582,7 +582,7 @@ Change `KeepUnusedXServer` in `/etc/bumblebee/bumblebee.conf` from `false` to `t
 
 ### Video tearing
 
-Video tearing is a somewhat common problem on Bumblebee. To fix it, you need to enable vsync. It should be enabled by default on the Intel card, but verify that from Xorg logs. To check whether or not it is enabled for NVIDIA, run:
+Video tearing is a somewhat common problem on Bumblebee. To fix it, you need to enable vsync. It should be enabled by default on the Intel card, but verify that from Xorg logs. To check whether or not it is enabled for NVIDIA, make sure [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) is installed and run:
 
 ```
 $ optirun nvidia-settings -c :8

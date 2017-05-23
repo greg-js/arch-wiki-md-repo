@@ -78,9 +78,16 @@ To set Chromium as the default browser and to change which applications Chromium
 
 **Note:** Chromium no longer supports the Netscape plugin API (NPAPI), so [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the repositories cannot be used.
 
-The Flash Player plugin, using the new Pepper plugin API, is automatically installed when using Google Chrome.
+The Flash Player plugin, using the new Pepper plugin API.
 
-To install it for Chromium, [install](/index.php/Install "Install") the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+To install it for Chromium or Chrome, [install](/index.php/Install "Install") the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+
+Add the following line (replace the version with the latest one) to `~/.config/chrome-dev-flags.conf`.
+
+```
+--ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --ppapi-flash-version=25.0.0.171
+
+```
 
 Make sure Flash is allowed to run in `chrome://settings/content`.
 
