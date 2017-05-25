@@ -73,7 +73,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-[BIOS update 1.4.15](https://downloads.dell.com/FOLDER04231247M/1/XPS_9350_1.4.15.exe) was released on 2017-05-02\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+[BIOS update 1.4.17](https://downloads.dell.com/FOLDER04325565M/1/XPS_9350_1.4.17.exe) was released on 2017-05-23\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
 
 ### Firmware Updates
 
@@ -85,7 +85,9 @@ The USB-C port supports Thunderbolt 3, Displayport-over-USB-C and USB power deli
 
 In the event of devices not working correctly, ensure that you have updated to the latest BIOS (above) and Thunderbolt firmware (below).
 
-[Thunderbolt 3 Firmware Update 2.16.01.003, A04](http://downloads.dell.com/FOLDER03798029M/1/Intel_TBT3_FW_UPDATE_NVM16_A04_2.16.01.003.exe) was released on 2016-08-10\. Unlike the BIOS update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
+Dell is working on a fwupd extension ([github repository](https://github.com/dell/thunderbolt-nvm-linux)) that allows updating Thunderbolt software from Linux.
+
+Alternatively, the [Thunderbolt 3 Firmware Update 2.16.01.003, A04](http://downloads.dell.com/FOLDER03798029M/1/Intel_TBT3_FW_UPDATE_NVM16_A04_2.16.01.003.exe) was released on 2016-08-10\. Unlike the BIOS update and the Thunderbolt-nvm Linux update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
 
 Hotplug support for this port requires a [bug fix](https://bugzilla.kernel.org/show_bug.cgi?id=115121) which landed in kernel version 4.7\. It also requires the kernel to be built with <tt>CONFIG_PCI_HOTPLUG=y</tt>.
 

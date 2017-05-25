@@ -63,7 +63,7 @@ There are no exclusive hardware differences between the *Developer Edition* and 
 
 ### BIOS updates
 
-The latest BIOS update is [A11](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=MYXCY&fileId=3598184217) and was released on 2017-02-02\. With A02 or newer, almost everything should work out-of-the-box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
+The latest BIOS update is [A12](http://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=W57K8) and was released on 24th May 2017\. With A02 or newer, almost everything should work out-of-the-box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
 
 BIOS upgrade is easy, thanks to the EFI implementation: store the update binary on the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
 

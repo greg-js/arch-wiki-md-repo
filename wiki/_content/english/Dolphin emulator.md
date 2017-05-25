@@ -1,4 +1,4 @@
-Dolphin is a Nintendo Gamecube, Wii and Triforce emulator, currently supporting the x86, AMD64 and ARM architectures. Dolphin is available for Linux, MacOSX (intel-based), MS Windows and Android. It is a free and open source, community-developed project. Dolphin was the first Gamecube and Wii emulator, and currently the only one capable of playing commercial games.
+Dolphin is a Nintendo GameCube and Wii emulator, currently supporting the x86_64 and AArch64 architectures. Dolphin is available for Linux, macOS, Windows, and Android. It is a free and open source, community-developed project. Dolphin was the first GameCube and Wii emulator, and currently the only one capable of playing commercial games.
 
 ## Contents
 
@@ -20,11 +20,11 @@ Dolphin is a Nintendo Gamecube, Wii and Triforce emulator, currently supporting 
 
 Install one of the following:
 
-*   **[Dolphin emu](/index.php/Dolphin_emu "Dolphin emu")** — A Gamecube / Wii / Triforce emulator
+*   **[Dolphin emu](/index.php/Dolphin_emu "Dolphin emu")** — A GameCube / Wii emulator
 
 	[https://dolphin-emu.org/](https://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
 
-*   **Dolphin emu (git)** — A Gamecube / Wii / Triforce emulator (development version)
+*   **Dolphin emu (git)** — A GameCube / Wii emulator (development version)
 
 	[https://github.com/dolphin-emu/dolphin](https://github.com/dolphin-emu/dolphin) || [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)
 

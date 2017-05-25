@@ -14,8 +14,8 @@
 | Power Management | Working | ... |
 | Finger Print Scanner | Not working | libfprint |
 | Smart Card Reader | Not tested |  ? |
-| Ambient light sensor | Not working | iio-sensor-proxy |
-| Acceleration sensor, Magnetometer, Gyro | Not working | iio-sensor-proxy |
+| Ambient light sensor | Working, kernel >= 4.11 | iio-sensor-proxy |
+| Acceleration sensor, Magnetometer, Gyro | Working, kernel >= 4.11 | iio-sensor-proxy |
 
 This page covers the current status of hardware support on Arch, pre-installation system configuration tweaks, as well as post-installation recommendations to improve the usability of the system.
 
@@ -49,7 +49,7 @@ The HP Pro x2 612 G2 has Intel HD Graphics 615 integrated graphics, see [Intel g
 
 ## IIO Sensors
 
-Currently the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) don't support the sensors of the HP Pro x2 612 G2.
+[iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) is working with kernel 4.11.
 
 [Issue on GitHub](https://github.com/hadess/iio-sensor-proxy/issues/163)
 

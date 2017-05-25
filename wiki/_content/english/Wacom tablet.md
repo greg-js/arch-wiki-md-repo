@@ -96,7 +96,7 @@ After (re-)plugging in your *USB*-tablet (or at least after rebooting) some symb
 
 If not, your device is likely to be not yet included in the *udev* configuration from *wacom-udev* which resides in `/usr/lib/udev/rules.d/10-wacom.rules`. It is a good idea to copy the file e.g. to `10-my-wacom.rules` before modifying it, else it might be reverted by a package upgrade.
 
-Add your device to the file by duplicating some line of another device and adapting *idVendor*,*idProduct* and the symlink name to your device. The two id's can by determined using
+Add your device to the file by duplicating some line of another device and adapting *idVendor*,*idProduct* and the symlink name to your device. The two id's can be determined using
 
 ```
 $ lsusb | grep -i wacom

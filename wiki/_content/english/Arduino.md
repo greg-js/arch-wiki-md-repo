@@ -4,11 +4,10 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 
 *   [1 Installation](#Installation)
     *   [1.1 AVR Boards](#AVR_Boards)
-    *   [1.2 Arduino Due / Yun](#Arduino_Due_.2F_Yun)
-    *   [1.3 Pinoccio Scout](#Pinoccio_Scout)
-    *   [1.4 Intel Galileo](#Intel_Galileo)
-    *   [1.5 On Arm7 devices](#On_Arm7_devices)
-    *   [1.6 RedBear Duo](#RedBear_Duo)
+    *   [1.2 Pinoccio Scout](#Pinoccio_Scout)
+    *   [1.3 Intel Galileo](#Intel_Galileo)
+    *   [1.4 On Arm7 devices](#On_Arm7_devices)
+    *   [1.5 RedBear Duo](#RedBear_Duo)
 *   [2 Configuration](#Configuration)
     *   [2.1 Accessing serial](#Accessing_serial)
 *   [3 stty](#stty)
@@ -42,10 +41,6 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 ### AVR Boards
 
 To use AVR boards such as the Arduino Uno you can install [arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core) optionally to use archlinux upstream avr-gcc instead of the bundled older avr-core. If you still want to use the older arduino-core you need to [install it in the board manager](https://www.arduino.cc/en/Guide/Cores). You can always switch between the different cores in the "Tools>Board" menu.
-
-### Arduino Due / Yun
-
-The [Arduino Due](http://arduino.cc/en/Main/arduinoBoardDue) and the [Arduino Yun](http://arduino.cc/en/Main/ArduinoBoardYun) need the version 1.5 or newer of the Arduino IDE.
 
 ### Pinoccio Scout
 
@@ -152,13 +147,6 @@ Requirements: [cmake](https://www.archlinux.org/packages/?name=cmake), [arduino]
 ### Ino
 
 [Ino](https://github.com/amperka/ino) is a command line toolkit for working with arduino hardware. [ino](https://aur.archlinux.org/packages/ino/) is available in the [AUR](/index.php/AUR "AUR").
-
-Note that `Ino` looks for the file `avrdude.conf` in `/etc/avrdude/avrdude.conf`, while [pacman](/index.php/Pacman "Pacman") appears to place this file (upon installation of [avrdude](https://www.archlinux.org/packages/?name=avrdude)) in `/etc/avrdude.conf`. If `Ino` gives you troubles create the directory `/etc/avrdude` and make the symlink:
-
-```
-ln -s /etc/avrdude.conf /etc/avrdude/avrdude.conf
-
-```
 
 ### Makefile
 
@@ -276,7 +264,7 @@ Main resource: [here](http://www.emacswiki.org/emacs/ArduinoSupport).
 
 ### Version 1.6
 
-As of Oct 5, 2014, most of the 3rd party tools only work for Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://www.archlinux.org/packages/?name=arduino)) and after. Check the version if the tools do not work.
+Some older 3rd party tools may only work with Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://www.archlinux.org/packages/?name=arduino)) and after. Check the version if the tools do not work. Note that some newer boards do not work with the old Arduino IDE.
 
 ### Consistent naming of Arduino devices
 

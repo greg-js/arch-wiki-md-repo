@@ -60,4 +60,4 @@ An `index.html` example.
 
 ## See also
 
-*   `man webfsd`
+*   `man webfsd`[[1]](https://manned.org/webfsd.1)

@@ -1,21 +1,17 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Дата последней синхронизации: 19 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=426435).
 
-Смотрите главную статью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)").
-
 Для общих методов улучшения гибкости предоставляемых советов или самого Pacman смотрите [Базовые утилиты](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B "Базовые утилиты") и [Bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)").
 
 ## Contents
 
 *   [1 Красота и комфорт](#.D0.9A.D1.80.D0.B0.D1.81.D0.BE.D1.82.D0.B0_.D0.B8_.D0.BA.D0.BE.D0.BC.D1.84.D0.BE.D1.80.D1.82)
-    *   [1.1 Операции и синтаксис Bash](#.D0.9E.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D0.B8_.D1.81.D0.B8.D0.BD.D1.82.D0.B0.D0.BA.D1.81.D0.B8.D1.81_Bash)
-    *   [1.2 Графические оболочки](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [1.3 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
+    *   [1.1 Графические оболочки](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
+    *   [1.2 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
 *   [2 Обслуживание](#.D0.9E.D0.B1.D1.81.D0.BB.D1.83.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [2.1 Список пакетов](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
         *   [2.1.1 С размером](#.D0.A1_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
-        *   [2.1.2 Последние установленные пакеты](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-        *   [2.1.3 Все пакеты, которые не зависят от других](#.D0.92.D1.81.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B.2C_.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D1.8F.D1.82_.D0.BE.D1.82_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85)
-        *   [2.1.4 Поиск установленных пакетов, не принадлежащих определенной группе или репозиторию](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2.2C_.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B5_.D0.B8.D0.BB.D0.B8_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8E)
+        *   [2.1.2 По дате](#.D0.9F.D0.BE_.D0.B4.D0.B0.D1.82.D0.B5)
+        *   [2.1.3 Не принадлежащие определенной группе или репозиторию](#.D0.9D.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B5_.D0.B8.D0.BB.D0.B8_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8E)
     *   [2.2 Просмотр файлов, принадлежащих пакету с определенным размером](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.2C_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83_.D1.81_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
     *   [2.3 Поиск файлов, не принадлежащих ни одному пакету](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.2C_.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BD.D0.B8_.D0.BE.D0.B4.D0.BD.D0.BE.D0.BC.D1.83_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83)
     *   [2.4 Удаление неиспользуемых пакетов](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
@@ -56,85 +52,67 @@
 
 ## Красота и комфорт
 
-### Операции и синтаксис Bash
-
-В дополнение к стандартному набору функций pacman, есть способ их расширить при помощи команд/синтаксиса [Bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)").
-
-Чтобы установить несколько пакетов, разделяющих аналогичные модели в своих названиях -- не всю группу, ни все совпадающие пакеты; например.[plasma](https://www.archlinux.org/groups/x86_64/plasma/):
-
-```
-# pacman -S plasma-{desktop,mediacenter,nm}
-
-```
-
-Конечно, это не ограничено и может быть расширено до множества необходимых уровней:
-
-```
-# pacman -S plasma-{workspace{,-wallpapers},pa}
-
-```
-
-Иногда, `-s` встроенный в ERE может вызвать множество нежелательных результатов, поэтому он должен быть ограничен, чтобы соответствовать только именю пакета; не описанию, ни любой другой области:
-
-```
-# pacman -Ss '^vim-'
-
-```
-
-pacman содержит операнд `-q` чтобы скрыть столбец версии, поэтому можно запросить и переустановить пакеты "compiz" как часть их имени:
-
-```
-# pacman -S $(pacman -Qq | grep compiz)
-
-```
-
 ### Графические оболочки
+
+*   **Arch-Update** — Индикатор обновлений для Gnome-Shell.
+
+	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
 
 *   **Discover** — Утилита управления пакетами для KDE, используя PackageKit.
 
 	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
-*   **GNOME packagekit** — Утилита для управления пакетами, на основе GTK
+*   **GNOME packagekit** — Утилита для управления пакетами, на основе GTK.
 
 	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+*   **GNOME Software** — Центр приложений Gnome.
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-*   **pcurses** — Управление пакетами при помощи текстового интерфейса (curses)
+*   **kalu** — Маленькое приложение, добавляющее иконку в трей, которое будет регулярно проверять доступные обновления.
+
+	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
+
+*   **pcurses** — Управление пакетами при помощи текстового интерфейса curses.
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 
-*   **tkPacman** — Графический интерфейс для pacman. Зависит от Tcl/Tk и X11, но не как не от GTK+, и QT. Взаимодействует только с базой данных пакетов через интерфейс командной строки 'pacman'. Таким образом, установка и удаление пакетов с tkPacman или с pacman
-
-приведёт к одинаковым результатам.
+*   **tkPacman** — Зависит от Tcl/Tk и X11\. Взаимодействует только с базой данных пакетов через интерфейс командной строки *pacman*.
 
 	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
 
 ### Утилиты
 
-*   **Lostfiles** — Сценарий для обнаружения осиротевших файлов.
+*   **Lostfiles** — Скрипт для обнаружения файлов, не принадлежащих ни одному пакету.
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
 
-*   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Оболочка для Pacman, проверяющая новости Arch перед обновлением, во избежании частичных обновлений, и предупреждающая об изменении файлов настроек.
+*   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Оболочка для Pacman, проверяющая новости Arch перед обновлением, во избежание частичных обновлений, и предупреждающая об изменении файлов настроек.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
+*   **pacutils** — Библиотека для программ, основанных на libalpm.
+
+	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
 
 *   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Утилита, которая находит какому пакету принадлежит файл.
 
 	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
 
-*   **[pkgtools](/index.php/Pkgtools "Pkgtools")** — Коллекция скриптов для пакетов Arch Linux.
+*   **pkgtools** — Коллекция скриптов для пакетов Arch Linux.
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
 
-*   **srcpac** — Простая утилита, которая позволяет автоматизировать пересоздание пакетов из исходного кода.
+*   **repoctl** — Утилита для управления локальными репозиториями.
 
-	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
+	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
 
-*   **[snap-pac](/index.php/Snapper#snap-pac_pacman_hooks "Snapper")** — Заставить pacman автоматически использовать snapper для создания снимков до/после, как в openSUSE'овском YaST.
+*   **repose** — Программа для создания репозиторев Arch Linux.
+
+	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
+
+*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Заставить pacman автоматически использовать snapper для создания снимков до/после, как в openSUSE'овском YaST.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
@@ -146,9 +124,10 @@ pacman содержит операнд `-q` чтобы скрыть столбе
 
 Вы можете получить список установленных пакетов с их версией, что полезно при составлении отчетов об ошибках или обсуждении установленных пакетов.
 
-*   Список всех явно установленных пакетов: `pacman -Qe` .
-*   Список всех внешних пакетов (обычно загруженных и установленных вручную): `pacman -Qm` .
-*   Список всех родных пакетов (установленных из синхронизированной(ых) баз(ы)): `pacman -Qn` .
+*   Список всех явно установленных пакетов: `pacman -Qe`.
+*   Список всех явно установленных родных пакетов (то есть присутствующие в синхронизируемой базе), которые не являются прямыми или дополнительными зависимостями: `pacman -Qent`.
+*   Список всех внешних пакетов (обычно загруженных и установленных вручную): `pacman -Qm`.
+*   Список всех родных пакетов (установленных из синхронизированной(ых) баз(ы)): `pacman -Qn`.
 *   Список пакетов по регулярному выражению (regex): `pacman -Qs *regex*`.
 *   Список пакетов по регулярному выражению с пользовательским форматом вывода: `expac -s "%-30n %v" *regex*` (требуется [expac](https://www.archlinux.org/packages/?name=expac)).
 
@@ -158,7 +137,6 @@ pacman содержит операнд `-q` чтобы скрыть столбе
 
 *   Установите [expac](https://www.archlinux.org/packages/?name=expac) и выполните `expac -H M '%m\t%n' | sort -h`.
 *   Запустите [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) с опцией `-c`.
-*   Запустите [apacman](https://aur.archlinux.org/packages/apacman/) с опцией `-L`.
 
 Чтобы перечислить размер нескольких загружаемых пакетов (оставьте `*packages*` пустым, чтобы перечислить все пакеты):
 
@@ -174,52 +152,58 @@ $ expac -H M "%011m\t%-20n\t%10d" $( comm -23 <(pacman -Qqen|sort) <(pacman -Qqg
 
 ```
 
-#### Последние установленные пакеты
+#### По дате
 
-Установите [expac](https://www.archlinux.org/packages/?name=expac) и выполните `expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -20` или `expac --timefmt=%s '%l\t%n' | sort -n | tail -20`
-
-#### Все пакеты, которые не зависят от других
-
-Если вы хотите создать список всех установленных пакетов, которые больше не от кого не зависят, вы можете использовать следующий скрипт. Это очень полезно, если вы установили много пакетов, которые не можете вспомнить, и пытаетесь освободить место на жестком диске. Вы можете просмотреть вывод, чтобы найти пакеты которые вам больше не нужны.
-
-**Примечание:** Этот скрипт покажет все пакеты, которые ни от чего не зависят, в том числе от тех, которые явно установлены. Чтобы получить список пакетов, не установленных в качестве зависимостей, но больше не требующихся какому-либо установленному пакету, смотрите [#Сироты](#.D0.A1.D0.B8.D1.80.D0.BE.D1.82.D1.8B).
+Чтобы увидеть список последних 20 установленных пакетов при помощи [expac](https://www.archlinux.org/packages/?name=expac):
 
 ```
-ignoregrp="base base-devel"
-ignorepkg=""
-
-comm -23 <(pacman -Qqt | sort) <(echo $ignorepkg | tr ' ' '
-' | cat <(pacman -Sqg $ignoregrp) - | sort -u)
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 
 ```
 
-Для получения списка с описаниями для пакетов:
+или используя секунды с начала эпохи (1970-01-01 UTC):
 
 ```
-expac -HM "%-20n\t%10d" $( comm -23 <(pacman -Qqt|sort) <(pacman -Qqg base base-devel|sort) )
+$ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 ```
 
-#### Поиск установленных пакетов, не принадлежащих определенной группе или репозиторию
+#### Не принадлежащие определенной группе или репозиторию
 
-Следующая команда выведет список всех установленных пакетов, которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), и как таковые, вероятно, были установлены пользователем вручную:
+**Примечание:** Чтобы получить список пакетов, установленных ранее как зависимости, но теперь никому не принадлежащие, смотрите [#Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29).
+
+Следующая команда выведет список всех установленных пакетов, которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-Список всех установленных пакетов, установленных не из указанного репозитория (`*repo_name*` в примере):
+Список всех установленных пакетов, которые не зависят от других пакетов и которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
-$ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
+$ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)
 
 ```
 
-Список всех установленных пакетов, которые находятся в `*repo_name*` репозитории:
+Как выше, но с описаниями:
 
 ```
-$ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
+$ expac -HM '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base base-devel | sort))
+
+```
+
+Список всех установленных пакетов, которые *не* из репозитория `*имя_репозитория*`:
+
+```
+$ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *имя_репозитория* | sort)
+
+```
+
+Список всех установленных пакетов, которые находятся в репозитории `*имя_репозитория*` :
+
+```
+$ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *имя_репозитория* | sort)
 
 ```
 

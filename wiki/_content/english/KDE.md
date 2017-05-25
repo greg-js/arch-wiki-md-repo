@@ -114,7 +114,13 @@ Plasma can be started either graphically, using a [display manager](/index.php/D
 
 To launch a Plasma session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
-As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, up to Qt 5.7\. With Qt 5.8, it is broken ([fix upcoming in Qt 5.9](https://bugreports.qt.io/browse/QTBUG-58423)). Also see the [Plasma 5.9 Errata](https://community.kde.org/Plasma/5.9_Errata#Wayland). To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
+For a Wayland Plasma session, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma (Wayland)* should be available from the display manager
+
+**Tip:** The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver implementation for Wayland requires EGLStreams. KDE have not implemented EGLStreams in their Wayland [implementation](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not). Therefore the following choice for exists:
+
+	Use KDE + Wayland on NVIDIA graphics hardware, use the [Nouveau](/index.php/Nouveau "Nouveau") driver
+
+	Use the NVIDIA proprietary driver, use KDE + Xorg
 
 ### Manual
 

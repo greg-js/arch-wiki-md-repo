@@ -76,17 +76,17 @@
 
 ### 手动设置
 
-A manual configuration is done in `/etc/X11/xorg.conf` or in a separate file in the `/etc/X11/xorg.conf.d/` directory. The Wacom tablet device is accessed using a input event interface in `/dev/input/` which is provided by the kernel driver. The interface number `event??` is likely to change when unplugging and replugging into the same or especially a different *USB* port. Therefore it is wise to not refer to the device using its concrete `event??` interface (**static** configuration) but by letting *udev* dynamically create a symbolic link to the correct `event` file (**dynamic** configuration).
+一份手动配置需要保存在 `/etc/X11/xorg.conf` 中，或者作为单独的文件保存在 `/etc/X11/xorg.conf.d/` 目录下。 Wacom 数位板的访问需要通过由内核驱动提供的 `/dev/input/` 中的一个输入事件接口。 接口的编号 `event??` 可能会随着设备从 *USB* 端口的拔插而改变，特别是从不同的端口拔插。 因此，明智的做法是不要使用具体的 `event??` 接口（*静态*配置）来确定设备，而是让 *udev* 自动地创建一个符号链接到正确的 `event` 文件（*动态*配置）。
 
 #### 使用udev
 
-**Note:** In AUR there is wacom-udev package, which includes udev-rules-file. You might skip this part and move on to the `xorg.conf` configuration if you are using the wacom-udev package from AUR.
+**注意:** AUR 中的 wacom-udev 包含了 udev 的规则文件。如果你正在使用这个包，可以跳过本小节，并从 `xorg.conf`配置 部分继续。
 
-Assuming *udev* is already installed you simply need to install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) from the [AUR](/index.php/AUR "AUR").
+假设 *udev* 已经安装，你只需要简单地从 [AUR](/index.php/AUR "AUR") 安装 [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) 。
 
 ##### USB设备
 
-After (re-)plugging in your *USB*-tablet (or at least after rebooting) some symbolic links should appear in `/dev/input` referring to your tablet device.
+在你（重新）插入你的 *USB* 数位板之后（或者至少是重启之后），`/dev/input` 下应当会出现一些指向你的数位板设备的符号链接。
 
 ```
  $ ls /dev/input/wacom* 
@@ -94,9 +94,9 @@ After (re-)plugging in your *USB*-tablet (or at least after rebooting) some symb
 
 ```
 
-If not, your device is likely to be not yet included in the *udev* configuration from *wacom-udev* which resides in `/usr/lib/udev/rules.d/10-wacom.rules`. It is a good idea to copy the file e.g. to `10-my-wacom.rules` before modifying it, else it might be reverted by a package upgrade.
+如果没有的话，你的设备可能并没有包含在 *wacom-dev* 自带的 *udev* 配置中（位于 `/usr/lib/udev/rules.d/10-wacom.rules`）。在修改这个文件之前最好复制一份（例如，复制为 `10-my-wacom.rules`），不然它可能会在包升级的时候被覆盖。
 
-Add your device to the file by duplicating some line of another device and adapting *idVendor*,*idProduct* and the symlink name to your device. The two id's can by determined using
+要将你的设备加入到文件中，请复制文件里的某一行并且更改行中的 *idVendor*，*idProduct* 和 *SYMLINK* 的值为你的设备的对应值。 其中两个 id 可以通过以下命令确认：
 
 ```
 $ lsusb | grep -i wacom
@@ -104,22 +104,22 @@ Bus 002 Device 007: ID 056a:0062 Wacom Co., Ltd
 
 ```
 
-In this example idVendor is 056a and idProduct 0062. In case you have device with touch (e.g. Bamboo Pen&Touch) you might need to add a second line for the touch input interface. For details check the linuxwacom wiki [Fixed device files with udev](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Fixed_device_files_with_udev).
+在这个例子中 *idVendor* 的值为 056a，*idProduct* 的值为 0062。 如果你的设备有触摸功能（例如 Bamboo Pen&Touch），则可能需要为触摸输入接口添加第二行配置。 更多详情请参考 linuxwacom 的 wiki [Fixed device files with udev](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Fixed_device_files_with_udev)。
 
-Save the file and reload udev's configuration profile using the command *udevadm control --reload-rules* Check again the content of */dev/input* to make sure that the *wacom* symlinks appeared. Note that you may need to plug-in the tablet again for the device to appear.
+保存文件并使用命令 *udevadm control --reload-rules* 重新加载 udev 的配置文件。 再次检查 */dev/input*，确保符号链接 *wacom* 已出现。 注意，你可能需要重新拔插设备。
 
-The files of further interest for the *Xorg* configuration are `/dev/input/wacom` and for a touch-device also `/dev/input/wacom_touch`.
+`/dev/input/wacom` 将会在 *Xorg* 配置中进一步使用，对于触摸设备来说，还有 `/dev/input/wacom_touch`。
 
 ##### Serial devices
 
-The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) should also include support for serial devices. Users of serial tablets might be also interested in the inputattach tool from [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) package. The inputattach command allows to bind serial device into /dev/input tree, for example with:
+软件包 [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) 也应当包括了对串行设备的支持。串行设备的用户也许会对 [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) 软件包中的 inputattach 工具感兴趣。inputattach 命令允许你将串行设备绑定到 /dev/input 设备树上，例如：
 
 ```
  # inputattach --w8001 /dev/ttyS0
 
 ```
 
-See *man inputattach* for help about available options. As for USB devices one should end up with a file `/dev/input/wacom` and proceed with the *Xorg* configuration.
+关于可用选项的帮助，请参见 *man inputattach*。 和 USB 设备一样，最终应得到一个 `/dev/input/wacom` 文件，然后继续进行 *Xorg* 配置。
 
 #### 静态设置
 

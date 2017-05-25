@@ -4,13 +4,14 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Paths with spaces](#Paths_with_spaces)
 *   [3 Usage](#Usage)
-    *   [3.1 Private mode](#Private_mode)
-    *   [3.2 Using Firejail by default](#Using_Firejail_by_default)
-        *   [3.2.1 Desktop files](#Desktop_files)
-        *   [3.2.2 Daemons](#Daemons)
-        *   [3.2.3 Notes](#Notes)
+    *   [3.1 Creating a custom profile](#Creating_a_custom_profile)
+    *   [3.2 Private mode](#Private_mode)
+    *   [3.3 Using Firejail by default](#Using_Firejail_by_default)
+        *   [3.3.1 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
+        *   [3.3.2 Desktop files](#Desktop_files)
+        *   [3.3.3 Daemons](#Daemons)
+        *   [3.3.4 Notes](#Notes)
 *   [4 Firetools](#Firetools)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 PulseAudio](#PulseAudio)
@@ -24,9 +25,15 @@
 
 ## Configuration
 
-Firejail uses profiles for the applications executed inside of it - you can find the default profiles in `/etc/firejail/*application*.profile`. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in `~/.config/firejail`.
+Most users will not require any custom configuration, and can proceed to the usage section, below.
 
-### Paths with spaces
+Firejail uses profiles to set the security protections for each of the applications executed inside of it - you can find the default profiles in `/etc/firejail/*application*.profile`. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in the `~/.config/firejail/` directory. You may have multiple custom profile files for a single application, and you may share the same profile file among several applications.
+
+If firejail does not have a profile for a particular application, it uses its restrictive system-wide default profile. This can result in the application not functioning as desired, without first creating a custom, and less restrictive profile.
+
+Refer to man(5) firejail-profile.
+
+**Tip:** Dealing with Paths containing spaces
 
 If you need to reference, whitelist, or blacklist a directory within a custom profile, such as with [palemoon](https://aur.archlinux.org/packages/palemoon/), you must do so using the absolute path, without encapsulation or escapes:
 
@@ -37,12 +44,30 @@ If you need to reference, whitelist, or blacklist a directory within a custom pr
 
 ## Usage
 
-To execute an application using firejail with seccomp protection, such as okular, execute the following:
+To execute an application using firejail's default protections for that application (the default profile), execute the following:
+
+```
+$ firejail <program name>
+
+```
+
+One-time additions to the default profile can be added as command line options (see the man page). For example, to execute *okular* with seccomp protection, execute the following:
 
 ```
 $ firejail --seccomp okular
 
 ```
+
+You may define multiple non-default profiles for a single program. Once you create your profile file, you can use it by executing:
+
+```
+$ firejail --profile=/absolute/path/to/profile <program name>
+
+```
+
+#### Creating a custom profile
+
+See man(5) firejail-profile
 
 #### Private mode
 
@@ -55,20 +80,39 @@ $ firejail --seccomp --private okular
 
 ### Using Firejail by default
 
-To execute an application in Firejail per default, create a symbolic link pointing to `/usr/bin/firejail`. For example:
+To use Firejail by default for all applications for which it has profiles, run the *firecfg* tool as root.
 
 ```
-$ ln -s /usr/bin/firejail /usr/local/bin/okular
+# firecfg
 
 ```
 
-The *firecfg* tool can be used to automate this process.
+This creates symbolic links in `/usr/local/bin` pointing to `/usr/bin/firejail`, for all programs for which firejail has default profiles. Once this is done, you only need to prefix a program with *firejail* if you want to run it with some custom security setting.
 
-**Tip:** To open the application with your custom Firejail options, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file instead for Okular and make it [executable](/index.php/File_permissions_and_attributes "File permissions and attributes"): `/usr/local/bin/okular`  `firejail --seccomp /usr/bin/okular $@` 
+You can manually do this for individual applications by executing:
+
+```
+# ln -s /usr/bin/firejail /usr/local/bin/<program name>
+
+```
+
+#### Verifying Firejail is being used
+
+```
+$ firejail --list
+
+```
 
 #### Desktop files
 
-Some applications use non standard paths. For these you will want to copy the `.desktop` launchers from `/usr/share/applications/*.desktop` to `~/.local/share/applications/` and then proceed to include firejail (and possibly seccomp) on the EXEC line.
+Some GUI application launchers (`.desktop` files) are coded using absolute paths to an executable, which circumvents firejail's symlink method of ensuring that it's being used. The *firecfg* tool includes an option to over-ride this on a per-user basis, by copying the `.desktop` files from `/usr/share/applications/*.desktop` to `~/.local/share/applications/` and replacing the absolute paths with simple file names.
+
+```
+$ firecfg --fix
+
+```
+
+There may be other cases for which you may need to do this manually, possibly needing to modify the EXEC line of the `.desktop` file to explicitly call firejail.
 
 #### Daemons
 

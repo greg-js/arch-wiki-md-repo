@@ -1,4 +1,4 @@
-There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards. A relatively new package, [razer-driver-meta](https://aur.archlinux.org/packages/razer-driver-meta/) can be used to enable Razer support along with [polychromatic](https://aur.archlinux.org/packages/polychromatic/) for GUI configuration. Supported devices are [listed here](http://github.com/terrycain/razer-drivers)
+There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards. A relatively new package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) can be used to enable Razer support along with [polychromatic](https://aur.archlinux.org/packages/polychromatic/) for GUI configuration. Supported devices are [listed here](http://github.com/terrycain/razer-drivers)
 
 ## Contents
 
@@ -254,7 +254,7 @@ options uvcvideo quirks=512
 
 #### Keyboard
 
-The [razer-driver-meta](https://aur.archlinux.org/packages/razer-driver-meta/) enable backlit control capabilities (including effects) and macro controls. You may use [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razercommander-git](https://aur.archlinux.org/packages/razercommander-git/) for a GUI to set the keyboard options.
+The [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) package enables backlight control capabilities (including effects) and macro controls. You may use [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razercommander-git](https://aur.archlinux.org/packages/razercommander-git/) for a GUI to set the keyboard options.
 
 ### 2014 version
 

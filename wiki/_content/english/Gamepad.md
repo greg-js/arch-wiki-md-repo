@@ -354,6 +354,8 @@ Right Trigger=a6
 
 Now start python-steamcontroller in Xbox360 mode (`sc-xbox.py start`). You might also want to copy `XInputTest.exe` from `xbox360cemu.v.3.0` to the same directory and run it with Wine in order to test if the mappings work correctly. However neither mouse nor keyboard emulation work with this method.
 
+Alternatively you can use [sc-controller](https://aur.archlinux.org/packages/sc-controller/) ([github](https://github.com/kozec/sc-controller)) for a similar graphical setup as steams own configurator. As of writing, it's a bit buggy here and there but offers an easy click and go way of configuring the controller.
+
 ### Xbox 360 controller
 
 Both the wired and wireless (with the *Xbox 360 Wireless Receiver for Windows*) controllers are supported by the `xpad` kernel module and should work without additional packages.
@@ -621,7 +623,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666", TAG+="uaccess"
 KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
 ```
 
-If you want your system to recognize the Steam controller after hot-swapping wireless/wired connections or when connected via micro-USB cable with the dongle plugged in, you may need a more complicated udev rule. Otherwise, the controller might stop working or behave like a mouse and keyboard after hot-swapping. The following rule was suggested by a Valve developer [[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/)
+If you want your system to recognize the Steam controller after hot-swapping wireless/wired connections or when connected via micro-USB cable with the dongle plugged in, you may need a more complicated udev rule. Otherwise, the controller might stop working or behave like a mouse and keyboard after hot-swapping. The following rule was suggested by a Valve developer [[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/) which is also included in the package `steam-devices`
 
  `/etc/udev/rules.d/99-steam-controller-perms.rules` 
 ```

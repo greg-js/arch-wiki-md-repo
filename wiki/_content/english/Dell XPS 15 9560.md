@@ -38,6 +38,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 965
     *   [4.3 Proprietary driver with PRIME output offloading](#Proprietary_driver_with_PRIME_output_offloading)
 *   [5 Firmware updates](#Firmware_updates)
 *   [6 Fingerprint reader](#Fingerprint_reader)
+*   [7 External links](#External_links)
 
 ## UEFI
 
@@ -103,7 +104,7 @@ $ [    4.256651] bbswitch: disabling discrete graphics
 
 ### Standard power saving configuration
 
-It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management"). One caveat is that enabling PCIE runtime power management results in [bbswitch not working](https://github.com/Bumblebee-Project/bbswitch/issues/140). A workaround is to disable PCIE runtime power management for the Nvidia GPU. For example for [TLP](/index.php/TLP "TLP"), edit `/etc/default/tlp` to have `RUNTIME_PM_BLACKLIST="01:00.0"`. Alternatively, PCIE runtime power management can be disabled for all devices using the kernel parameter `pcie_port_pm=off`.
+It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management"). One caveat is that enabling PCIE runtime power management results in [bbswitch not working](https://github.com/Bumblebee-Project/bbswitch/issues/140). A workaround is to disable PCIE runtime power management for the Nvidia GPU. For example for [TLP](/index.php/TLP "TLP"), edit `/etc/default/tlp` to have `RUNTIME_PM_BLACKLIST="01:00.0"`. This is done by default in later versions of tlp, such as [tlp-git](https://aur.archlinux.org/packages/tlp-git/). Alternatively, PCIE runtime power management can be disabled for all devices using the kernel parameter `pcie_port_pm=off`.
 
 ### Disable touchscreen
 
@@ -144,3 +145,7 @@ Firwmare updates are provided by Dell and can be installed with [fwupdate](https
 ## Fingerprint reader
 
 The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. There currently is no Linux driver but an open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+
+## External links
+
+*   [Dell XPS 15 9560 (Early 2017) Thread on the Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=223056)

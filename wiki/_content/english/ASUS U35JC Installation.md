@@ -1,0 +1,1 @@
+ `# ls /sys/firmware/efi/efivars`

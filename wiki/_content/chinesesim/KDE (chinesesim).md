@@ -114,13 +114,17 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 在你的 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 菜单中选择 *Plasma* 启动 Plasma 5 。
 
-由于 Qt 5.8 的问题， Plasma 暂时无法使用 [Wayland](/index.php/Wayland "Wayland") 启动。 [Qt 5.9](https://community.kde.org/Plasma/5.9_Errata#Wayland) 将提供修复。
+若要使用 [Wayland](/index.php/Wayland "Wayland") 启动，请安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包。之后，*Plasma* 应显示在显示管理器中。
 
-如果想从显示管理器中使用 Wayland 启动 Plasma，请安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包。之后，*Plasma* 应显示在显示管理器中。
+**提示：** [NVIDIA](/index.php/NVIDIA "NVIDIA") 的专有 Wayland 驱动需要 EGLStreams。KDE 还没有将 EGLStreams 加入到其 Wayland [配置中](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not)。因此存在以下选择：
+
+	选择 KDE + Wayland，使用 [Nouveau](/index.php/Nouveau "Nouveau") 驱动
+
+	选择 KDE + Xorg，使用 NVIDIA 专有驱动
 
 ### 手动启动
 
-如果希望使用“[xinitrc](/index.php/Xinitrc "Xinitrc")/startx”来启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。如果你想在登录的时候开启 Xorg 请参阅[Start X at login](/index.php/Start_X_at_login "Start X at login").
+如果希望使用“[xinitrc](/index.php/Xinitrc "Xinitrc")/startx”来启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。如果你想在登录的时候开启 Xorg 请参阅[Start X at login](/index.php/Start_X_at_login "Start X at login")。若要从终端启动 Wayland 会话, 运行 `startplasmacompositor`。请确保 [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) 已被安装。
 
 ## 配置
 

@@ -31,7 +31,7 @@
     *   [5.8 liteide](#liteide)
     *   [5.9 screen recording](#screen_recording)
     *   [5.10 remote display](#remote_display)
-    *   [5.11 Remote desktop and VM window input grabbing](#Remote_desktop_and_VM_window_input_grabbing)
+    *   [5.11 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -408,15 +408,18 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 (20161229) there was a merge of FreeRDP into weston in 2013, enabled via compile time switch. The arch linux weston package currently has it not enabled.
 
-### Remote desktop and VM window input grabbing
+### Input grabbing in games, remote desktop and VM windows
 
-Wayland does not allow exclusive input device grabbing (e.g. keyboard, mouse) by an application and to constrict the region of the input device to the application's window ([freedesktop bug](https://bugs.freedesktop.org/show_bug.cgi?id=97333), [Redhat](https://bugzilla.redhat.com/show_bug.cgi?id=1285770), also related [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=752956) and [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=96547)).
+In contrast to Xorg, Wayland does not allow exclusive input device grabbing (e.g. [keyboard](https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html), [mouse](https://tronche.com/gui/x/xlib/input/XGrabPointer.html)), instead, it depends on the Wayland compositor to pass keyboard shortcuts (extensions in development) and confine the pointer device to the application window.
 
-This feature is needed in order to send hotkey combinations and modifiers to remote desktop and virtual machine windows. Also, the mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window (VM or remote desktop) is displaced from the host's mouse pointer.
+This change in input grabbing breaks current applications' behavior, meaning:
 
-This limitation exists for both native Wayland and XWayland windows and keyboard handling extensions were proposed for both: [XWayland](https://lists.freedesktop.org/archives/wayland-devel/2017-April/033799.html) and [native Wayland clients](https://lists.freedesktop.org/archives/wayland-devel/2017-April/033800.html).
+*   Hotkey combinations and modifiers will be caught by the compositor and won't be sent to remote desktop and virtual machine windows.
+*   The mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window of the virtual machine or remote desktop is displaced from the host's mouse pointer.
 
-There are Wayland protocol extensions for handling of the mouse pointer (and other pointing devices) in Wayland but compositors need to implement them so support in compositors might differ from one another, see [relative pointer motion events](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml) and [constraining pointer motions](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml). Similar support [already been added to XWayland](https://lists.x.org/archives/xorg-devel/2016-September/050975.html), but again, compositors need implement this.
+Wayland protocol extensions for keyboard handling were [proposed for both](https://lists.freedesktop.org/archives/wayland-devel/2017-May/034130.html) [XWayland](https://lists.freedesktop.org/archives/wayland-devel/2017-May/034131.html) and [native Wayland clients](https://lists.freedesktop.org/archives/wayland-devel/2017-May/034132.html), there are already extensions for handling of pointer devices ([relative pointer motion events](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml) and [constraining pointer motions](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml)) and similar support [already been added to XWayland](https://lists.x.org/archives/xorg-devel/2016-September/050975.html).
+
+Support for these extensions need to be added to the Wayland compositor, and in the case of native Wayland clients probably also to the widget toolkit (e.g. GTK, QT) and the application itself. Currently, there are no known compositors supporting all these extensions.
 
 ## See also
 

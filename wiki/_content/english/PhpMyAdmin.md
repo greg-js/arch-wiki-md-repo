@@ -171,7 +171,7 @@ Using this method, you'll access PhpMyAdmin as `localhost/phpmyadmin`, similarly
          access_log /var/log/nginx/phpmyadmin_access.log;
          error_log /var/log/nginx/phpmyadmin_error.log;
          index   index.php;  
-         try_files $uri $uri/=404;
+         try_files $uri $uri/ =404;
          # Deny some static files
          location ~ ^/phpmyadmin/(README|LICENSE|ChangeLog|DCO)$ {
                  deny all;

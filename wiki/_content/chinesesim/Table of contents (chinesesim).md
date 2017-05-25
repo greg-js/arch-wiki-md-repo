@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(168)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(169)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(23)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(18)</small> |
@@ -47,8 +47,9 @@
 | <small>4.5.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
 | <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(2)</small> |
 | <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(3)</small> |
-| <small>4.7.1.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(6)</small> |
-| <small>4.7.2.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(2)</small> |
+| <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics tablet (简体中文)") <small>(1)</small> |
+| <small>4.7.2.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(6)</small> |
+| <small>4.7.3.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(2)</small> |
 | <small>4.8.</small> [笔记本电脑](/index.php/Category:Laptops_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Laptops (简体中文)") <small>(3)</small> |
 | <small>4.8.1.</small> [Acer](/index.php/Category:Acer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Acer (简体中文)") <small>(1)</small> |
 | <small>4.8.2.</small> [Apple](/index.php/Category:Apple_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apple (简体中文)") <small>(1)</small> |

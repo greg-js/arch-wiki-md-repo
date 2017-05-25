@@ -112,7 +112,7 @@ gsettings set org.gnome.desktop.interface cursor-theme *theme-name*
 Change the cursor size with (depending on the theme, sizes are 24, 32, 48, 64):
 
 ```
-gsettings set org.gnome.desktop.interface cursor-size *theme-size*
+gsettings set org.gnome.desktop.interface cursor-size *cursor-size*
 
 ```
 

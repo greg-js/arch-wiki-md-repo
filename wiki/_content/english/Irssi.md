@@ -179,9 +179,7 @@ At this point, you can remove your password from the configuration file (if you 
 In order to ignore showing of joining, leaving and quiting of users for all channels type the following in irssi:
 
 ```
-/ignore * joins
-/ignore * parts
-/ignore * quits
+/ignore * joins parts quits
 
 ```
 
