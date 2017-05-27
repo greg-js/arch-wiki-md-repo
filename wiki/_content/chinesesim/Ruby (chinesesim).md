@@ -110,7 +110,7 @@ $ gem update
 安装 Bundler:
 
 ```
-$ gem install 
+$ gem install bundler
 
 ```
 

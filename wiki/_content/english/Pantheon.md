@@ -1,12 +1,13 @@
-[Pantheon](http://elementary.io/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and MacOS.
+[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and MacOS.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Desktop Environment](#Desktop_Environment)
-    *   [1.2 Services and Configuration](#Services_and_Configuration)
-    *   [1.3 Theme](#Theme)
-    *   [1.4 Applications](#Applications)
+    *   [1.1 Unofficial binary repository](#Unofficial_binary_repository)
+    *   [1.2 Desktop Environment](#Desktop_Environment)
+    *   [1.3 Services and Configuration](#Services_and_Configuration)
+    *   [1.4 Theme](#Theme)
+    *   [1.5 Applications](#Applications)
 *   [2 Launching Pantheon](#Launching_Pantheon)
     *   [2.1 Via Display manager](#Via_Display_manager)
     *   [2.2 Via xinit](#Via_xinit)
@@ -35,7 +36,9 @@
 
 ## Installation
 
-**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions") LTS release cycle, [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly. The *-[bzr](/index.php/Bzr "Bzr") and *-[git](/index.php/Git "Git") packages contain the most recent updates and are *less* likely to have obsolete dependencies in Archlinux, but occasionally have stability or build issues and may not be compatible with the standard releases.
+**Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions") LTS release cycle, [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly and has recently moved to [github](https://github.com/elementary).
+
+### Unofficial binary repository
 
 [Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in [community](/index.php/Community "Community"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
@@ -50,18 +53,17 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ### Desktop Environment
 
-To get the minimal Pantheon desktop interface, start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/), which pulls--among other dependencies--the core components:
+To get the basic Pantheon desktop interface, start by installing [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/), which pulls--among other dependencies--the core components:
 
-*   [cerbere-bzr](https://aur.archlinux.org/packages/cerbere-bzr/): Watchdog service to keep core Pantheon apps running
-*   [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/): Window Manager
-*   [wingpanel](https://aur.archlinux.org/packages/wingpanel/): Top panel (release version)
-*   [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/): Application launcher (release version)
+*   [cerbere](https://aur.archlinux.org/packages/cerbere/): Watchdog service to keep core Pantheon apps running
+*   [gala-git](https://aur.archlinux.org/packages/gala-git/): Window Manager (development version)
+*   [wingpanel](https://aur.archlinux.org/packages/wingpanel/): Top panel
+*   [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Application launcher (development version)
 
 You may additionally install these packages as well:
 
 *   [plank](https://www.archlinux.org/packages/?name=plank) or [plank-bzr](https://aur.archlinux.org/packages/plank-bzr/): MacOS-like Dock
 *   [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/): Top panel (development version)
-*   [slingshot-launcher-bzr](https://aur.archlinux.org/packages/slingshot-launcher-bzr/): Application launcher (development version)
 
 ### Services and Configuration
 
@@ -77,7 +79,7 @@ These packages provide background services and default settings for Pantheon and
 
 These packages contribute to the look and feel of the desktop:
 
-*   [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme) or [elementary-icon-theme-git](https://aur.archlinux.org/packages/elementary-icon-theme-git/): Icon theme designed to be smooth, sexy, clear, and efficient
+*   [elementary-icon-theme-git](https://aur.archlinux.org/packages/elementary-icon-theme-git/): Icon theme designed to be smooth, sexy, clear, and efficient (development version)
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) or [lightdm-pantheon-greeter-git](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-git/): LightDM greeter
 
 It is also recommended to install the following fonts:
@@ -93,14 +95,14 @@ It is also recommended to install the following fonts:
 
 These are some of the original, patched, and selected packages that comprise the elementary OS software suite:
 
-*   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/): File explorer based on Marlin
+*   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-bzr](https://aur.archlinux.org/packages/pantheon-files-bzr/): File explorer developed from Marlin
 *   [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) or [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/): Terminal emulator
 *   [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) or [scratch-text-editor-git](https://aur.archlinux.org/packages/scratch-text-editor-git/): Text editor
 *   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
 *   [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player developed from [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 *   [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player developed from [audience](https://www.archlinux.org/packages/?name=audience)
 *   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/)
-*   [midori-granite](https://aur.archlinux.org/packages/midori-granite/) or [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser, replaced upstream by [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/)
+*   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser, replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
 *   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client based on [geary](https://www.archlinux.org/packages/?name=geary)
 *   [screenshot-tool-bzr](https://aur.archlinux.org/packages/screenshot-tool-bzr/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
@@ -143,19 +145,17 @@ exec cerbere
 
 #### Autostart applications with `~/.xinitrc`
 
-This method does not support [XDG](/index.php/XDG_support "XDG support") autostart. However, there are 3 other ways to achieve this for applications which do not provide a [systemd unit](/index.php/Systemd#Using_units "Systemd"):
+Xinit does not implement [XDG](/index.php/XDG_support "XDG support") autostart. For applications which do not provide a [systemd unit](/index.php/Systemd#Using_units "Systemd"), here are three other ways to start services:
 
-*   You may add any program to your `~/.xinitrc`, preferably right before the `exec cerbere` line. This is the better choice for one-shot programs.
-*   Or you may edit the `org.pantheon.desktop.cerbere.monitored-processes` key using *dconf-editor* and add the programs of your choice. This method is best for applications which keep running in the background.
-*   Or you may use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to add support for XDG autostart in your `~/.xinitrc`.
+*   Add any program to your `~/.xinitrc`, preferably right before the `exec cerbere` line. This is the better choice for one-shot programs.
+*   Edit the `org.pantheon.desktop.cerbere.monitored-processes` key using *dconf-editor* and add the programs of your choice. This method is best for applications which keep running in the background.
+*   Use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to add support for XDG autostart.
 
-**Note:** Keep in mind that applications started via *cerbere* cannot be terminated, they will keep respawning up to `org.pantheon.desktop.cerbere.max-crashes`
+**Note:** Keep in mind that applications started via *cerbere* cannot be terminated, they will keep respawning up to the value of `org.pantheon.desktop.cerbere.max-crashes`
 
 ## Configuration
 
 Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchboard/) and its plugs (*switchboard-plug-**), which must be installed separately. The intent is to replace [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), but not all settings--particularly not third-party applications' settings--have been ported. In some cases, you may prefer to use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) or [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead. All Pantheon settings, except [plank's](/index.php/Plank "Plank"), can also be altered via *dconf* and are located in the `org.pantheon` key. Use [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) for easy editing.
-
-**Note:** Although abandoned, [switchboard-plug-elementary-tweaks-bzr](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-bzr/) remains a useful tool for configuring many aspects of Pantheon, including [plank](/index.php/Plank "Plank").
 
 ### Plank
 
@@ -244,7 +244,7 @@ To achieve the former behavior within other themes, add the following lines to t
 
 #### GTK+ applications surrounded by awful black shadow box
 
-The Elementary GTK theme seems to be using its own files and ignoring the `~/.config/gtk-3.0/gtk.css` user-override config file. This has been reported on [https://bugs.launchpad.net/elementaryos/+bug/1592441](https://bugs.launchpad.net/elementaryos/+bug/1592441). To work around the issue, go to the file `/usr/share/themes/elementary/gtk-3.0/gtk-widgets.css` and look for the following (around line 3669):
+The elementary GTK theme seems to be using its own files and ignoring the `~/.config/gtk-3.0/gtk.css` user-override config file. This has been reported on [https://bugs.launchpad.net/elementaryos/+bug/1592441](https://bugs.launchpad.net/elementaryos/+bug/1592441). To work around the issue, go to the file `/usr/share/themes/elementary/gtk-3.0/gtk-widgets.css` and look for the following (around line 3669):
 
 ```
 decoration,

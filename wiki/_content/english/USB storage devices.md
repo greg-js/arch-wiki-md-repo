@@ -15,7 +15,9 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
 
 ## Auto-mounting with udisks
 
-This is the easiest and most frequently used method. It is used by many [desktop environments](/index.php/Desktop_environments "Desktop environments"), but can be used separately too. See [Udisks](/index.php/Udisks "Udisks") for details.
+This is the easiest and most frequently used method. It is used by many [desktop environments](/index.php/Desktop_environments "Desktop environments"), but can be used separately too.
+
+See [Udisks](/index.php/Udisks "Udisks") for detailed information, including list of mount helpers.
 
 ## Manual mounting
 

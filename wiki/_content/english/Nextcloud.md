@@ -76,7 +76,7 @@ As stated above, in order to setup Nextcloud, you must set up the appropriate PH
 
 ### PHP setup
 
-**Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 11.0](https://docs.nextcloud.com/server/11/admin_manual/installation/source_installation.html#prerequisites).
+**Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 12.0](https://docs.nextcloud.com/server/12/admin_manual/installation/source_installation.html#prerequisites-label).
 
 Install [PHP#gd](/index.php/PHP#gd "PHP"), [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) as additional modules.
 
@@ -86,7 +86,7 @@ Depending on which database backend will be used:
 *   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), see [PHP#PostgreSQL](/index.php/PHP#PostgreSQL "PHP").
 *   For [SQLite](/index.php/SQLite "SQLite"), see [PHP#Sqlite](/index.php/PHP#Sqlite "PHP").
 
-Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/11/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
+Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
 
 ### Database setup
 
@@ -94,7 +94,7 @@ An SQL database must be setup and used for your Nextcloud installation. After se
 
 #### MariaDB
 
-**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[1]](https://docs.nextcloud.com/server/11/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
+**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[1]](https://docs.nextcloud.com/server/12/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
 
 The following is an example of setting up a [MariaDB](/index.php/MariaDB "MariaDB") database and user:
 
@@ -174,7 +174,7 @@ include conf.d/*.conf;
 
 ```
 
-Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/11/admin_manual/installation/nginx_nextcloud_9x.html). You will likely have to change the `root` location, as the arch package installs to `/usr/share/webapps/` instead of `/var/www/`.
+Create a config file `/etc/nginx/conf.d/nextcloud.conf` according to the [documentation](https://docs.nextcloud.com/server/12/admin_manual/installation/nginx.html). You will likely have to change the `root` location, as the arch package installs to `/usr/share/webapps/` instead of `/var/www/`.
 
 Addtitionally, you should change
 
@@ -212,7 +212,7 @@ Open the address where you have installed Nextcloud in a web browser (e.g., [htt
 
 ## Security Hardening
 
-The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/11/admin_manual/configuration_server/harden_server.html) article guides along generic topics. See also the project's [Security scanner](https://scan.nextcloud.com/).
+The [Nextcloud Hardening and Security](https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html) article guides along generic topics. See also the project's [Security scanner](https://scan.nextcloud.com/).
 
 ### Let's Encrypt
 
@@ -976,4 +976,4 @@ Now you can enable the Collabora Online app in your Nextcloud instance. In the l
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 9.2 Admin Documentation](http://doc.owncloud.org/server/9.2/admin_manual/)
 *   [nextcloud official website](https://docs.nextcloud.com/)
-*   [nextcloud 11.0 Admin Documentation](https://docs.nextcloud.com/server/11/admin_manual/)
+*   [nextcloud 12.0 Admin Documentation](https://docs.nextcloud.com/server/12/admin_manual/)

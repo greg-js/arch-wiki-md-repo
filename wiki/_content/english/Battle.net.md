@@ -23,8 +23,6 @@ $ winetricks corefonts
 
 ## Wine config
 
-The Battle.net client must be ran as Windows Version 'Windows XP'. Other versions will result in the client being a blank white window.
-
 ## Known issues
 
 ### Login region select

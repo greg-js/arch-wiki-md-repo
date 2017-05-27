@@ -5,7 +5,7 @@ This article links to various methods to launch scripts or applications automati
 *   [1 Daemons](#Daemons)
     *   [1.1 Systemd](#Systemd)
 *   [2 Cron](#Cron)
-*   [3 inotify](#inotify)
+*   [3 Triggered by fs changes](#Triggered_by_fs_changes)
 *   [4 Shells](#Shells)
     *   [4.1 /etc/profile](#.2Fetc.2Fprofile)
 *   [5 Graphical](#Graphical)
@@ -31,9 +31,11 @@ You can start your scripts or applications as daemons, see [Daemon](/index.php/D
 
 [Cron](/index.php/Cron "Cron") can be used to autostart non-GUI system setup tasks.
 
-## inotify
+## Triggered by fs changes
 
 [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) can be used to execute commands or scripts on [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") events, triggered by file-system changes. See [some examples](https://techarena51.com/index.php/inotify-tools-example/).
+
+Other tools that use the same underlying functionality are [incron](https://www.archlinux.org/packages/?name=incron) and [fswatch](https://aur.archlinux.org/packages/fswatch/).
 
 ## Shells
 

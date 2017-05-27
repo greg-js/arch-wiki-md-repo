@@ -754,7 +754,7 @@ If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), yo
 
 #### Bad performance
 
-Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#Disable desktop effects](#Disable_desktop_effects) or [#Disable compositing](#Disable_compositing).
+Make sure you have the proper driver for your GPU installed. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for more information. If you have an older card, it might help to [#disable desktop effects](#Disable_desktop_effects_manually_or_automatically_for_defined_applications) or [#Disable compositing](#Disable_compositing).
 
 ##### Disable desktop effects manually or automatically for defined applications
 

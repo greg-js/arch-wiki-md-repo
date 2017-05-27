@@ -10,10 +10,12 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 *   [3 Configuration](#Configuration)
     *   [3.1 Btrfs](#Btrfs)
     *   [3.2 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
-    *   [3.3 Radio Device Wizard](#Radio_Device_Wizard)
-    *   [3.4 Command line](#Command_line)
-*   [4 Features intentionally excluded](#Features_intentionally_excluded)
-*   [5 See also](#See_also)
+    *   [3.3 CPU Scaling on Intel i-Series](#CPU_Scaling_on_Intel_i-Series)
+    *   [3.4 Radio Device Wizard](#Radio_Device_Wizard)
+    *   [3.5 Command line](#Command_line)
+*   [4 Debugging](#Debugging)
+*   [5 Features intentionally excluded](#Features_intentionally_excluded)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -67,6 +69,33 @@ Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the 
 
 ```
 
+### CPU Scaling on Intel i-Series
+
+Scaling on Intel i-Series Processors will work properly unless you disable intel_pstate on the kernels commandline:
+
+```
+# intel_pstate=disable
+
+```
+
+see [Kernel_parameters](/index.php/Kernel_parameters "Kernel parameters")
+
+When not having intel_pstate disabled, tlp will not be able to set the max/min frequencies: for my i7 6700HQ this looks like:
+
+```
+# cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+1050000
+
+```
+
+so the CPU will be stuck at 1.1GHz, it won't go above that value. With intel_pstate disabled:
+
+```
+# cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+2600000
+
+```
+
 ### Radio Device Wizard
 
 The Radio Device Wizard allows a more sophisticated management of radio devices depending on network connect/disconnect events. It requires [NetworkManager](/index.php/NetworkManager "NetworkManager"), [tlp-rdw](https://www.archlinux.org/packages/?name=tlp-rdw) and [enabling](/index.php/Enabling "Enabling") `NetworkManager-dispatcher.service`.
@@ -76,6 +105,15 @@ See [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#r
 ### Command line
 
 TLP provides several command line tools. See [TLP commands](http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html#commands).
+
+## Debugging
+
+You can display informations about the currently used Mode(AC/BAT) and applied configurations:
+
+```
+ # tlp-stat
+
+```
 
 ## Features intentionally excluded
 

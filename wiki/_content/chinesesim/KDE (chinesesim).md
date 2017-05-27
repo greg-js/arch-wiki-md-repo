@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=474987)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-25，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=478317)可以查看翻译后英文页面的改动。
 
 KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -75,6 +75,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
             *   [6.6.3.1 禁用桌面特效](#.E7.A6.81.E7.94.A8.E6.A1.8C.E9.9D.A2.E7.89.B9.E6.95.88)
             *   [6.6.3.2 禁用混合项（compositing）](#.E7.A6.81.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89)
         *   [6.6.4 启用混合项（compositing）后全屏时闪烁](#.E5.90.AF.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89.E5.90.8E.E5.85.A8.E5.B1.8F.E6.97.B6.E9.97.AA.E7.83.81)
+        *   [6.6.5 Nvidia 显卡屏幕撕裂](#Nvidia_.E6.98.BE.E5.8D.A1.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
     *   [6.7 KDE 下的声音问题](#KDE_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
         *   [6.7.1 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
             *   [6.7.1.1 尝试在 KDE 中播放任何声音时出现 "返回默认" 消息](#.E5.B0.9D.E8.AF.95.E5.9C.A8_KDE_.E4.B8.AD.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
@@ -82,6 +83,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
     *   [6.8 Inotify 文件夹监控上限](#Inotify_.E6.96.87.E4.BB.B6.E5.A4.B9.E7.9B.91.E6.8E.A7.E4.B8.8A.E9.99.90)
     *   [6.9 自动挂载NFS卷时卡死](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BDNFS.E5.8D.B7.E6.97.B6.E5.8D.A1.E6.AD.BB)
     *   [6.10 没有挂起/休眠选项](#.E6.B2.A1.E6.9C.89.E6.8C.82.E8.B5.B7.2F.E4.BC.91.E7.9C.A0.E9.80.89.E9.A1.B9)
+    *   [6.11 保存凭据和持续显示 KWallet 对话框的问题](#.E4.BF.9D.E5.AD.98.E5.87.AD.E6.8D.AE.E5.92.8C.E6.8C.81.E7.BB.AD.E6.98.BE.E7.A4.BA_KWallet_.E5.AF.B9.E8.AF.9D.E6.A1.86.E7.9A.84.E9.97.AE.E9.A2.98)
 *   [7 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -270,7 +272,24 @@ Plasma Netbool shell （上网本交互界面）以从 Plasma 5 中移除，请�
 
 如果你想使用 Windows 服务，安装 [Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)") ([samba](https://www.archlinux.org/packages/?name=samba) 软件包)。
 
-Dophin 的共享服务需要 [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) 软件包以及 usershares。关于如何配置usershares（`smb.conf`未启动它），详见 [建立 Usershare 路径](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)")。在重新启动Samba之后，Dolphin的共享应该无需进一步配置。
+Dophin 的共享服务需要 [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) 软件包以及 usershares。关于如何配置usershares（`smb.conf`未启动它），详见 [Samba (简体中文)#建立 Usershare_路径](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BB.BA.E7.AB.8B_Usershare_.E8.B7.AF.E5.BE.84 "Samba (简体中文)")。在重新启动Samba之后，Dolphin的共享应该无需进一步配置。
+
+Plasma 访问 SMB 共享的能力有限。写入到 Windows 共享存在问题，打开 Windows 共享内文件（例：大的视频文件）会让 Plasma 先将整个文件先复制到本地系统。要解决这个问题，您可以安装类似 [thunar](https://www.archlinux.org/packages/?name=thunar) 加 [gvfs](https://www.archlinux.org/packages/?name=gvfs) 和 [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb)（和 [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) 用于保存登录凭据）的基于GTK的文件浏览器，以更有效的方式访问 SMB 共享。 另一种可能的解决方法则是通过 {Pkg|cifs-utils}} 来 [挂载](/index.php/File_systems#Mount_a_filesystem "File systems") Samba 共享从而让 Plasma 把 SMB 共享当成一个普通的本地文件夹从而正常访问。对于公共共享的写入访问，mount命令可能如下所示：
+
+```
+# mount -t cifs -o username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 //networkhost/share/ /home/user/localmountpoint/
+
+```
+
+若要永久将其挂载：
+
+ `/etc/fstab` 
+```
+//networkhost/share/ /home/user/localmountpoint/ cifs defaults,username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 0 2
+
+```
+
+可能有必要也可能没必要将 `.local` 附加到 hostname。（原文就是这样，我也会绝望）
 
 ### KDE 桌面活动
 
@@ -667,9 +686,11 @@ export KWIN_EXPLICIT_SYNC=0
 
 #### 性能不佳
 
+请先确保您已安装了适合您 GPU 的驱动程序。有关详细信息，请参阅 [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg")。如果你的显卡较旧，你可以尝试 [#禁用桌面特效](#.E7.A6.81.E7.94.A8.E6.A1.8C.E9.9D.A2.E7.89.B9.E6.95.88) 或 [#禁用混合项（compositing）](#.E7.A6.81.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89)。
+
 ##### 禁用桌面特效
 
-Plasma 默认启用了桌面特效。你可以通过*系统设置 > 桌面特效*禁用桌面特效。你也可以使用 `Alt+Shift+F12` 切换桌面效果。
+Plasma 默认启用了桌面特效，并且不是所有的游戏都会自动禁用它们。你可以通过*系统设置 > 桌面特效*禁用桌面特效。你也可以使用 `Alt+Shift+F12` 切换桌面效果。另外，您也可以在 *系统设置 > 窗口管理 > 窗口规则* 下创建自定义KWin规则，以在某个应用程序/窗口启动时自动禁用/启用混合项。
 
 ##### 禁用混合项（compositing）
 
@@ -677,7 +698,19 @@ Plasma 默认启用了桌面特效。你可以通过*系统设置 > 桌面特效
 
 #### 启用混合项（compositing）后全屏时闪烁
 
-在 *系统设置 > 显示*中取消选中*允许应用程序阻止混合项（compositing）*。这可能会损害性能。
+在 *系统设置 > 显示*中取消选中*允许应用程序阻止混合项（compositing）*。这可能会影响性能。
+
+#### Nvidia 显卡屏幕撕裂
+
+默认情况下，KWin混合项在与专有 Nvidia 驱动一起使用时会遭受屏幕撕裂。要解决此问题，请在 `~/.config/plasma-workspace/env/` 中创建一个包含以下内容的 `kwin.sh` 文件：
+
+```
+#!/bin/sh
+export __GL_YIELD="USLEEP"
+
+```
+
+但这只适用于 OpenGL 混合。
 
 ### KDE 下的声音问题
 
@@ -744,6 +777,10 @@ fs.inotify.max_user_watches = 10000
 ### 没有挂起/休眠选项
 
 如果你的系统可以使用 systemd 挂起/休眠，但 KDE 中没有这些选项，请确保 [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) 已被安装。
+
+### 保存凭据和持续显示 KWallet 对话框的问题
+
+不建议在用户设置中关闭 KWallet 密码保存系统，因为需要它为每个用户保存加密凭证（如WiFi密码）。持续显示的 KWallet 对话框可能是关闭它的后果。如果你嫌每当应用程序想要访问 Kwallet 时需要解锁烦，你可以让登录管理器 SDDM 和 LightDM 在登录时自动解锁 KWallet，请参阅 [KDE_Wallet_(简体中文)](/index.php/KDE_Wallet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE Wallet (简体中文)")。第一个钱包需要由 KWallet 生成（而不是“用户生成”），以便用于系统程序凭据。如果你不希望让钱包凭据在内存内为每个应用打开，可以通过 [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) 在KWallet设置中限制应用程序访问它。如果您根本不关心凭证加密，您可以在创建钱包，KWallet 要求输入密码时，将密码留空。这样，应用程序将可以在不解锁钱包的情况下访问密码。
 
 ## 参见
 

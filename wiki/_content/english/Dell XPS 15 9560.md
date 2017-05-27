@@ -14,7 +14,7 @@
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
 | Power Management | Modify |
-| EFI firmware updates | Working |
+| EFI firmware updates | Not Working |
 | Fingerprint reader | Not working |
 
 This page contains recommendations for running Arch Linux on the Dell XPS 15 9650 (late 2016). With some configuration almost all the hardware is well supported. Exceptions are the fingerprint reader, occasional locks on resuming from suspend experienced by some users, and the lack of support for PRIME render offload to the discrete GPU in the Nvidia proprietary driver.
@@ -68,7 +68,7 @@ The thermometer on the discrete Nvidia GPU can be monitored with the `nvidia-smi
 
 ### Disable discrete GPU
 
-The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). To disable it when not in use it is necessary to build a custom kernel with the `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE` flag set. See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). When running such a kernel, install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot.
+The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). To disable it when not in use it is necessary to build a custom kernel with the `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE` flag set, follow Arch Kernel Bug [53281](https://bugs.archlinux.org/task/53281) to check if the flag has been set in the main package. See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). When running such a kernel, install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot.
 
 ```
 $ cat /proc/acpi/bbswitch
@@ -104,7 +104,7 @@ $ [    4.256651] bbswitch: disabling discrete graphics
 
 ### Standard power saving configuration
 
-It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management"). One caveat is that enabling PCIE runtime power management results in [bbswitch not working](https://github.com/Bumblebee-Project/bbswitch/issues/140). A workaround is to disable PCIE runtime power management for the Nvidia GPU. For example for [TLP](/index.php/TLP "TLP"), edit `/etc/default/tlp` to have `RUNTIME_PM_BLACKLIST="01:00.0"`. This is done by default in later versions of tlp, such as [tlp-git](https://aur.archlinux.org/packages/tlp-git/). Alternatively, PCIE runtime power management can be disabled for all devices using the kernel parameter `pcie_port_pm=off`.
+It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management"). One caveat on versions of TLP prior to 1.0 is that enabling PCIE runtime power management results in [bbswitch not working](https://github.com/Bumblebee-Project/bbswitch/issues/140). A workaround is to disable PCIE runtime power management for the Nvidia GPU. For example for [TLP](/index.php/TLP "TLP"), edit `/etc/default/tlp` to have `RUNTIME_PM_BLACKLIST="01:00.0"`. This is done by default in later versions of tlp, such as [tlp-git](https://aur.archlinux.org/packages/tlp-git/). Alternatively, PCIE runtime power management can be disabled for all devices using the kernel parameter `pcie_port_pm=off`.
 
 ### Disable touchscreen
 
@@ -116,7 +116,7 @@ Before Kernel 4.11 Linux does not support NVME APST, so the NVME SSD is in its h
 
 ### Enable power saving features for the i915 kernel module
 
-Passing the following options to the i915 kernel module results in significant power savings: `enable_fbc=1 enable_psr=1 disable_power_well=0`.
+Passing the following options to the i915 kernel module results in significant power savings: `enable_fbc=1 enable_psr=1 disable_power_well=0`. Some users with the HD matte screen have reported that these parameters cause screen flickering. Frame buffer compression (`enable_fbc=1`) is enabled by default starting from kernel 4.11.
 
 ### Wifi and Bluetooth
 
@@ -140,7 +140,7 @@ With this setup the discrete GPU is used for all rendering and the integrated GP
 
 ## Firmware updates
 
-Firwmare updates are provided by Dell and can be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/). Available firmware versions can also be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
+Firwmare updates are provided by Dell and can potentially be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/) but this has not been confirmed to work. Available firmware versions can also be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
 
 ## Fingerprint reader
 

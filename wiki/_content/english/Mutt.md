@@ -1002,7 +1002,7 @@ Explanation:
 
 *   `alias_file` is the file where the information is getting stored when you add an alias from within Mutt.
 *   `sort_alias` specifies which field to use to sort the alias list when displayed in Mutt. Possible values: alias, address.
-*   `reverse_alias` sorts in reverse order if set to yes.
+*   `reverse_alias` if set to yes mutt will display the "personal" name from your aliases in the index menu if it finds an alias that matches the message's sender.
 *   `source $alias_file` tells Mutt to read aliases on startup. Needed for auto-completion.
 
 Now all you have to do when prompted `To:` is writing the alias instead of the full address. The beauty of it is that you can auto-complete the alias using `Tab`. Autocompleting a wrong or an empty string will display the full list. You can select the alias as usual, or by typing its index number.

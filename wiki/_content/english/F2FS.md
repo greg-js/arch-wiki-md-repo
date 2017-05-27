@@ -31,8 +31,6 @@ The partition can then be mounted manually or via other mechanisms:
 
 ## Install Arch Linux on F2FS partition
 
-**Warning:** If using F2FS as your root partition, you will need to add the following module to the `MODULES` line in your `/etc/mkinitcpio.conf` file ([FS#49380](https://bugs.archlinux.org/task/49380)): `MODULES="... **crypto-crc32**"` To enable checksum hardware acceleration, you need to compile `crc32c-intel` into kernel, or `crc32c-generic` will be loaded first.
-
 **Warning:** If using GRUB your freshly installed system might not boot after reboot. As GRUB doesn't support F2FS it isn't able to extract the UUID (which is persistent across reboots) of your drive so it uses classic `/dev/sdXx` names instead (which are not guaranteed to be persistent across reboots). In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/sdXx` with `root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`; you can use the `blkid` command to get the UUID of your device.
 
 With the latest [installation media](https://www.archlinux.org/download/) it is possible to install Arch linux with root located on a F2FS filesystem:

@@ -171,7 +171,7 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 **Note:** Once you set up JACK, try different audio applications to test your configuration results. I spent days trying to troubleshoot JACK xrun issues with LMMS which in the end turned out to be the problem with the latter.
 
-*Further reading: [http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf](http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf)*
+*Further reading: [Linux Magazine article](http://www.linux-magazine.com/content/download/63041/486886/version/1/file/JACK_Audio_Server.pdf)*
 
 #### FireWire
 

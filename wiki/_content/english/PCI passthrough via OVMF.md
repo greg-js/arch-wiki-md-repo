@@ -45,6 +45,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.6 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
     *   [10.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
     *   [10.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
+    *   [10.9 VM only uses one core](#VM_only_uses_one_core)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -304,7 +305,7 @@ Most use cases for PCI passthroughs relate to performance-intensive domains such
 
 The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores. Here, for instance, the guest cores 0, 1, 2 and 3 are mapped to the host cores 4, 5, 6 and 7 respectively.
 
- `EDITOR=nano virsh edit myPciPassthroughVm` 
+ `EDITOR=nano virsh edit [vmname]` 
 ```
 ...
 <vcpu placement='static'>4</vcpu>
@@ -354,7 +355,7 @@ If you don't intend to be doing any computation-heavy work on the host (or even 
 
 On the quad-core machine mentioned above, it would look like this :
 
- `EDITOR=nano virsh edit myPciPassthroughVm` 
+ `EDITOR=nano virsh edit [vmname]` 
 ```
 ...
 <vcpu placement='static'>4</vcpu>
@@ -377,7 +378,7 @@ If you would instead prefer to have the host and guest running intensive tasks a
 
 On the quad-core machine mentioned above, it would look like this :
 
- `EDITOR=nano virsh edit myPciPassthroughVm` 
+ `EDITOR=nano virsh edit [vmname]` 
 ```
 ...
 <vcpu placement='static'>4</vcpu>
@@ -408,7 +409,7 @@ To allocate huge pages at boot, one must simply specify the desired amount on th
 
 Also, since static huge pages can only be used by applications that specifically request it, you must add this section in your libvirt domain configuration to allow kvm to benefit from them :
 
- `EDITOR=nano virsh edit myPciPassthroughVm` 
+ `EDITOR=nano virsh edit [vmname]` 
 ```
 ...
 <memoryBacking>
@@ -612,7 +613,7 @@ to
 
 ```
 
-Change 1000 under the user directory to your user uid (which can be found by running the `id` command.
+Change 1000 under the user directory to your user uid (which can be found by running the `id` command. Remember to save the file and exit it without ending the process before continuing, otherwise the changes will not register. If you get the message `Domain [vmname] XML configuration edited.` after exiting, it means that your changes have been applied.
 
 Restart libvirt and pulseaudio (run as your user)
 
@@ -669,7 +670,7 @@ If you have trouble configuring a certain mechanism in your setup, you might wan
 
 Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '123456789ab') as opposed to longer or shorter strings.
 
- `EDITOR=nano virsh edit myPciPassthroughVm` 
+ `EDITOR=nano virsh edit [vmname]` 
 ```
 ...
 
@@ -690,7 +691,7 @@ Since version 337.88, Nvidia drivers on Windows check if an hypervisor is runnin
 
 Users with older versions of QEMU and/or libvirt will instead have to disable a few hypervisor extensions, which can degrade performance substantially. If this is what you want to do, do the following replacement in your libvirt domain config file.
 
- `EDITOR=nano virsh edit myPciPassthroughVm` 
+ `EDITOR=nano virsh edit [vmname]` 
 ```
 ...
 <features>
@@ -917,6 +918,10 @@ EndSection
 Chromium and friends will try to detect as many GPUs as they can in the system and pick which one is preferred (usually discrete NVIDIA/AMD graphics). It tries to pick a GPU by looking at PCI devices, not OpenGL renderers available in the system - the result is that Chromium may ignore the integrated GPU available for rendering and try to use the dedicated GPU bound to the `vfio-pci` driver, and unusable on the host system, regardless of whenever a guest VM is running or not. This results in software rendering being used (leading to higher CPU load, which may also result in choppy video playback, scrolling and general un-smoothness).
 
 This can be fixed by [explicitly telling Chromium which GPU you want to use](/index.php/Chromium/Tips_and_tricks#Forcing_specific_GPU "Chromium/Tips and tricks").
+
+### VM only uses one core
+
+For some users, even if IOMMU is enabled and the core count is set to more than 1, the VM still only uses one CPU core and thread. To solve this enable "Manually set CPU topology" in `virt-manager` and set it to the desirable amount of CPU sockets, cores and threads. Keep in mind that "Threads" refers to the thread count per CPU, not the total count.
 
 ## See also
 

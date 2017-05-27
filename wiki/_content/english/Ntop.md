@@ -31,7 +31,14 @@ NTOP_LOG="/var/log/ntop/ntop.log"
 
 ```
 
-Start the *ntop* [systemd](/index.php/Systemd "Systemd") service and if you want to start *ntop* at boot, enable it.
+Before [starting](/index.php/Starting "Starting") and possibly enabling the `ntop` service, you may have to [edit](/index.php/Edit "Edit") its *ntop* command options:
+
+ `/etc/systemd/system/ntop.d/options.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/ntop *options*
+```
 
 ## Tips and tricks
 
@@ -46,6 +53,8 @@ If ntop is not just used locally on your machine, but network wide by multiple u
 
 ```
 
+On firefox, the self-signed certificat should be a problem. Page will not be shown like that.
+
 Additional paramethers are allowed. Now direct our browser to [https://127.0.0.1:4223/](https://127.0.0.1:4223/).
 
 You can also provide ntop with your own SSL certificate. Simply put it in ntop's config directory and name it **ntop-cert.pem**
@@ -57,6 +66,15 @@ You can also provide ntop with your own SSL certificate. Simply put it in ntop's
   \-newkey rsa:1024 -keyout ntop-cert.pem -out ntop-cert.pem
 
 ```
+
+Instead of make a self-signed certificat who will make your page unable to print on firefox, you should look at [letsencrypt](/index.php/Letsencrypt "Letsencrypt") service. This service will make a free well recognized certificat for your domain. Then you will have to copy privkey.pem and fullchain.pem inside ntop-cert.pem:
+
+```
+# cat /etc/letsencrypt/live/<your domain>/privkey.pem /etc/letsencrypt/live/>your domain>/fullchain.pem > /usr/share/ntop/ntop-cert.pem
+
+```
+
+you can also copy your private key in the same place.
 
 ### Group and user
 

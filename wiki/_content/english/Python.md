@@ -92,7 +92,7 @@ $ which python
 
 ```
 
-A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [#Virtual environment](#Virtual_environment).
+A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [virtual environment](#Virtual_environment).
 
 ### Old versions
 
@@ -125,7 +125,7 @@ Although a great number of Python packages are readily available in the [officia
 
 For a brief history and feature comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install). Authoritative best practices in Python package management are detailed [here](https://packaging.python.org/).
 
-If you must use *pip*, use a [#Virtual environment](#Virtual_environment) or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
+If you must use *pip*, use a [virtual environment](#Virtual_environment) or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
 
 **Note:** There are also tools integrating *pip* with *pacman* by automatically generating PKGBUILDs for specified pip-packages: [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/)
 

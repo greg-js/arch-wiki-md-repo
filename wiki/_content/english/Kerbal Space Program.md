@@ -34,7 +34,7 @@ This is also relevant if your rocket's parts do not connect.
 
 ### Game SegFaults before launching, v1.1+
 
-The Unity 5 engine expects you to be running PulseAudio. You can use the 'pulsenomore' tool[[1]](http://bugs.kerbalspaceprogram.com/issues/7515#note-28) posted on the KSP bug tracker as a workaround until this is fixed by the Unity devs.
+The Unity 5 engine expects you to be running PulseAudio. You can install [pulsenomore](https://aur.archlinux.org/packages/pulsenomore/) from the [AUR](/index.php/AUR "AUR") or download it from [[1]](http://bugs.kerbalspaceprogram.com/issues/7515#note-28) ,the KSP bug tracker, as a workaround until this is fixed by the Unity devs.
 
 ### No text display
 

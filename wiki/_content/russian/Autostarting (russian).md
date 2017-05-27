@@ -35,7 +35,7 @@
 
 ## inotify
 
-[inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) может быть использован для выполнения команд или скриптов по [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") событиям, вызванным изменениями файловой системы. Смотрите [some examples](https://techarena51.com/index.php/inotify-tools-example/).
+[inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) может быть использован для выполнения команд или скриптов по событиям [inotify](https://en.wikipedia.org/wiki/ru:inotify "wikipedia:ru:inotify"), вызванным изменениями файловой системы. Вы можете посмотреть [некоторые примеры](https://techarena51.com/index.php/inotify-tools-example/).
 
 ## Коммандные оболочки
 

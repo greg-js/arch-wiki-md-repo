@@ -16,6 +16,7 @@
     *   [1.11 User Agent](#User_Agent)
     *   [1.12 DOM Distiller](#DOM_Distiller)
     *   [1.13 Forcing specific GPU](#Forcing_specific_GPU)
+    *   [1.14 Import bookmarks from Firefox](#Import_bookmarks_from_Firefox)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -92,7 +93,6 @@ $ chromium --disk-cache-dir=/tmp/cache
 Cache should be considered temporary and will **not** be saved after a reboot or hard lock. Alternatively, use:
 
  `/etc/fstab`  `tmpfs	/home/*username*/.cache	tmpfs	noatime,nodev,nosuid,size=400M	0	0` 
-**Warning:** Adjust the size as needed and be careful. If the size is too large and you are using a sync daemon such as [psd](/index.php/Psd "Psd") on a conventional HDD, it will likely result in very slow start-up times of your graphical system due to long sync back times of the daemon.
 
 #### Profile in tmpfs
 
@@ -176,6 +176,24 @@ $ chromium --gpu-testing-vendor-id=0x8086 --gpu-testing-device-id=0x1912
 ```
 
 ...where `0x8086` and `0x1912` is replaced by the IDs of the GPU you want to use (as shown on the `chrome://gpu` page).
+
+### Import bookmarks from Firefox
+
+To ease the transition, you can import bookmarks from [Firefox](/index.php/Firefox "Firefox") into Chromium.
+
+Navigate Chromium to `chrome://settings/importData`
+
+If Firefox is already installed on your computer, you can directly import bookmarks as well as many other things from Firefox.
+
+Make sure **Mozilla Firefox** is selected. Optionally, you can uncheck some unwanted items here. Click the **Import** and then **Done**. You're done with it.
+
+**Note:** If you haven't created any bookmarks in Chromium yet, the bookmarks will show up in your bookmarks bar. If you already have bookmarks, the bookmarks will be in a new folder labeled "Imported From Firefox"
+
+If you import bookmarks from another PC, you have to export bookmarks from Firefox first.
+
+`*Ctrl + Shift + O > Import and Backup > Export Bookmarks To HTML*` *in Firefox*
+
+The procedure is pretty much the same. You need to go to `chrome://settings/importData`. However, this time, in the **From** drop-down menu, select **Bookmarks HTML File** and click the **Choose File** button and upload the desired bookmark file.
 
 ## Profile maintenance
 

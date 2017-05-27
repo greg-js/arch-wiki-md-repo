@@ -177,7 +177,7 @@ Add to `/var/lib/connman/settings` under the global section:
 
 ```
 [global]
-IPv6.privacy=prefered
+IPv6.privacy=preferred
 
 ```
 

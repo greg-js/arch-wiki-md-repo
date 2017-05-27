@@ -362,6 +362,10 @@ TimedLogin=*username*
 TimedLoginDelay=1
 ```
 
+You can set the session used for automatic login (replace `gnome-xorg` with desired session):
+
+ `/var/lib/AccountsService/users/*username*`  `XSession=gnome-xorg` 
+
 ### Passwordless login
 
 If you want to bypass the password prompt in GDM then simply add the following line on the first line of `/etc/pam.d/gdm-password`:

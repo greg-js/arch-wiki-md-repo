@@ -672,13 +672,13 @@ With this plugin it is possible to make use of online tools such as [deviantART'
 
 ## 故障排除
 
-Newer tablets' drivers might not be in the kernel yet, and additional manipulations might be needed. A notable example is the newer Intuos line of tablets (Draw/Comic/Photo).
+对于新的数位板，其驱动可能还没有进入内核，需要额外的操作。一个著名的例子是新的 Intuos 数位板(Draw/Comic/Photo)。
 
 ### 未知的设备类型
 
-If your tablet does not get recognized by `xsetwacom` and `dmesg` complains about an unknown device_type, then you need to install a patched version of input-wacom.
+如果你的数位板无法被 `xsetwacom` 识别，并且 `dmesg` 抱怨它是一个未知类型的设备，那么你需要安装一个打过补丁的 input-wacom。
 
-Download and install the for-4.4 branch from [SourceForge](http://sourceforge.net/p/linuxwacom/input-wacom/ci/jiri/for-4.4/~/tarball). Your device should be recognized after you run
+请从 [SourceForge](http://sourceforge.net/p/linuxwacom/input-wacom/ci/jiri/for-4.4/~/tarball) 下载 for-4.4 分支并安装。 之后运行以下命令后你的设备应当可以被识别了：
 
 ```
  # rmmod wacom
@@ -688,7 +688,7 @@ Download and install the for-4.4 branch from [SourceForge](http://sourceforge.ne
 
 ### 系统冻结
 
-If your system freezes when your tablet gets activated by the stylus, then you will need to [patch](/index.php/Patch "Patch") your kernel with the patch from [LKML](https://lkml.org/lkml/2015/11/20/690).
+如果在激活数位板的触控笔时，系统被冻结，那么你需要为你的内核打[补丁](/index.php/Patch "Patch")：[LKML](https://lkml.org/lkml/2015/11/20/690)。
 
 ## 参考文献
 

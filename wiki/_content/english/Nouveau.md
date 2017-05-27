@@ -19,6 +19,7 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
     *   [4.1 Disable MSI](#Disable_MSI)
     *   [4.2 Phantom output issue](#Phantom_output_issue)
     *   [4.3 Random lockups with kernel error messages](#Random_lockups_with_kernel_error_messages)
+    *   [4.4 NVIDIA 900 series card issues](#NVIDIA_900_series_card_issues)
 
 ## Installation
 
@@ -275,3 +276,35 @@ Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_c
 ### Random lockups with kernel error messages
 
 Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
+
+### NVIDIA 900 series card issues
+
+NVIDIA's 900 series cards can cause issues including X11 being unable to start and lspci freezing indefinitely. This can break live distributions/installation media. This can be detected either by running lspci, or checking the systemd journal for the error:
+
+```
+nouveau E[     DRM]Pointer to flat panel table invalid
+
+```
+
+The system will start if the Nouveau driver is disabled by passing the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+
+```
+modprobe.blacklist=nouveau
+
+```
+
+The Nouveau driver can then be loaded using
+
+```
+modprobe nouveau
+
+```
+
+The system should then function correctly. If you have another Nvidia graphics card, or just want to be safe, you can disable the offending card using:
+
+```
+$ echo 1 > /sys/bus/pci/devices/[card device id]/remove
+
+```
+
+The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver currently works correctly (version 381).

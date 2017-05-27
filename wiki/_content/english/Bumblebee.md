@@ -712,7 +712,7 @@ See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup
 
 ### Discrete card always on and acpi warnings
 
-Add `acpi_osi="!Windows 2013"` and `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [this issue](https://github.com/Bumblebee-Project/Bumblebee/issues/592) for more information.
+Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[2]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[3]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
 
 ## See also
 

@@ -108,7 +108,7 @@ Most Fn-keys return the correct keycodes. Here is a table containing that inform
 
 ## Display Calibration
 
-Factory display calibration is poor. In lieu of a colorimeter, try the [ICC profiles](/index.php/ICC_profiles "ICC profiles") at [tlvince/xiaomi-mi-notebook-air-13](https://github.com/tlvince/xiaomi-mi-notebook-air-13/tree/085e5ad7034563256a42d8fb106e8c95057ddf6e/display-calibration).
+Factory display calibration is poor. In lieu of a colorimeter, try the [ICC profiles](/index.php/ICC_profiles "ICC profiles") at [tlvince/xiaomi-mi-notebook-air-13](https://github.com/tlvince/xiaomi-mi-notebook-air-13/tree/master/display-calibration).
 
 ## NVM Express SSD
 

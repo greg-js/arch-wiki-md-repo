@@ -25,7 +25,7 @@
     *   [5.1 Load equalizer sink and dbus-protocol module](#Load_equalizer_sink_and_dbus-protocol_module)
     *   [5.2 GUI front-end](#GUI_front-end)
     *   [5.3 Load equalizer and dbus module on every boot](#Load_equalizer_and_dbus_module_on_every_boot)
-    *   [5.4 Alternative LADSPA equalizer](#Alternative_LADSPA_equalizer)
+    *   [5.4 Alternative equalizers](#Alternative_equalizers)
 *   [6 Applications](#Applications)
     *   [6.1 QEMU](#QEMU)
     *   [6.2 AlsaMixer.app](#AlsaMixer.app)
@@ -340,9 +340,11 @@ load-module module-dbus-protocol
 
 **Note:** The equalizer sink needs to be loaded after the master sink is already available.
 
-### Alternative LADSPA equalizer
+### Alternative equalizers
 
 [pulseaudio-equalizer-ladspa](https://aur.archlinux.org/packages/pulseaudio-equalizer-ladspa/) (based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) can be used as an alternative to [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
+
+[pulseeffects](https://aur.archlinux.org/packages/pulseeffects/) applies peak limiting, compression, reverberation, auto volume and 15 bands equalization to Pulseaudio applications output.
 
 ## Applications
 

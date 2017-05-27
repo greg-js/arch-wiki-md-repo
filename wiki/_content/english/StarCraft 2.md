@@ -184,6 +184,8 @@ Then add alternate key SCII hotkeys for:
 
 **Tip:** `xmodmap -e "pointer = default"` resets to default mouse functionality
 
+**Tip:** The same method could make "forward mouse button" and "back mouse button" available on your stupid 3 mouse buttons, to be bound to Next/Previous subgroups (like in TheCore/TheCore Lite); as scrollclick applications previously demoed could be better executed with RapidFire Key method
+
 ## Troubleshooting
 
 *   You may want to start the game without the launcher: `cd ~/.wine/drive_c/Program\ Files/StarCraft\ II\Support` (or `Support64` for the 64-bit version) and `wine SC2Switcher.exe` - this might make debugging easier, but you may have to select your region in-game. Furthermore, if your game is not up-to-date, you'll be unable to log in, and no error message will be shown - simply start the Battle.net Launcher and let the game update completely.

@@ -156,6 +156,8 @@ For the non-developer edition, the built-in Broadcom BCM4350 is now supported in
 
 The Broadcom adapter does not report its regulatory country and so, by default, the global settings for channels and frequencies will be set. See [Wireless network configuration#Respecting the regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration") for more information about how this can be changed.
 
+If your device is unable to find any networks try pressing the function key which toggles the wifi, then check `rfkill list` and run `rfkill unblock [device-number]` and try again.
+
 ## Bluetooth
 
 ### Intel WiFi

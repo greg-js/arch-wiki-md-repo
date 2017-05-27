@@ -286,7 +286,7 @@ The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Waylan
 
 ### Qt 5
 
-The [qt5](https://www.archlinux.org/groups/x86_64/qt5/) package from the repositories has the Wayland support if [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is installed. To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). For Arch, most QT applications do not work because of QTBUG-58423, will be fixed with qt-5.9: [https://codereview.qt-project.org/#/c/184278/](https://codereview.qt-project.org/#/c/184278/) .
+The [qt5](https://www.archlinux.org/groups/x86_64/qt5/) package from the repositories has the Wayland support if [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is installed. To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). For Arch, most QT applications do not work because of [QTBUG-58423](https://bugreports.qt.io/browse/QTBUG-58423), will be fixed with qt-5.9: [https://codereview.qt-project.org/#/c/184278/](https://codereview.qt-project.org/#/c/184278/) .
 
 ### Clutter
 
@@ -423,6 +423,7 @@ Support for these extensions need to be added to the Wayland compositor, and in 
 
 ## See also
 
+*   [Article about Wayland debugging on Fedora Wiki](https://fedoraproject.org/wiki/How_to_debug_Wayland_problems)
 *   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
 *   [Arch Linux forum discussion](https://bbs.archlinux.org/viewtopic.php?id=107499)
 *   [Wayland documentation online](http://wayland.freedesktop.org/docs/html/)
