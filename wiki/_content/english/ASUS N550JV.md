@@ -36,10 +36,11 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [2.4.1 Battery charging issues](#Battery_charging_issues)
     *   [2.5 Card reader does not detect cards](#Card_reader_does_not_detect_cards)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Touchpad switch](#Touchpad_switch)
-    *   [3.2 Full fan speed](#Full_fan_speed)
-    *   [3.3 Disable GPU throotling](#Disable_GPU_throotling)
-    *   [3.4 Special keys for window managers](#Special_keys_for_window_managers)
+    *   [3.1 Fan control](#Fan_control)
+        *   [3.1.1 Dual fan method](#Dual_fan_method)
+        *   [3.1.2 Single fan method](#Single_fan_method)
+    *   [3.2 Enable full performance of GPU](#Enable_full_performance_of_GPU)
+    *   [3.3 Special keys for window managers](#Special_keys_for_window_managers)
 
 ## Configuration
 
@@ -51,7 +52,7 @@ Install [bumblebee along with Nvidia and Intel drivers](/index.php/Bumblebee#Ins
 
 #### Brightness
 
-`FN+F5` and `FN+F6` will not produce any output (will not work) untill you use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi=` to your bootloader. It's indeed followed by a blank space.
+In order to be able to adjust the screen brightness using `Fn+F5` and `Fn+F6` you need to set the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi= ` (the space is required).
 
 ### Audio
 
@@ -70,9 +71,9 @@ $ alsamixer -c PCH
 
 #### Brightness
 
-Key mappings `FN+F3` and `FN+F4` should work with majority of [desktop environments](/index.php/Desktop_environments "Desktop environments") out of the box. If not, install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/), load kernel module `asus-nb-wmi` to control hotkeys, then [start and enable](/index.php/Enable "Enable") the `asus-kbd-backlight.service`.
+Key mappings `Fn+F3` and `Fn+F4` should work with most [desktop environments](/index.php/Desktop_environments "Desktop environments") out of the box. If not, install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/), load kernel module `asus-nb-wmi` to control hotkeys, then [start and enable](/index.php/Enable "Enable") the `asus-kbd-backlight.service`.
 
-Now you can take control over the keyboard backlight:
+Now you can control the keyboard backlighting using:
 
 ```
 $ asus-kbd-backlight up
@@ -87,7 +88,7 @@ $ asus-kbd-backlight show
 
 #### Incorrectly mapped buttons
 
-`Media` and `FN+F7` buttons are not mapped correctly. It is not necessary to remap `FN+F7` shortcut, because it works without any additional configuration.
+`Media` and `Fn+F7` buttons are not mapped correctly. It is not necessary to remap `Fn+F7` shortcut, because it works without any additional configuration.
 
 Install [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap), which provides app `xmodmap`. Generate a xmodmap config file if you haven't done it already:
 
@@ -124,7 +125,7 @@ keycode 249 =
 
 ```
 
-Optionally, for `FN+F7` give some value on keycode 253.
+Optionally, for `Fn+F7` give some value on keycode 253.
 
  `~/.Xmodmap` 
 ```
@@ -143,7 +144,7 @@ $ xmodmap ~/.Xmodmap
 
 ```
 
-Test with `xev` or try to bind something on media button. `FN+F7` should be controlled by hardware and switch display without any additional configuration. Also, if you are satisfied, put the command above to [Xinitrc](/index.php/Xinitrc "Xinitrc").
+Test with `xev` or try to bind something on media button. `Fn+F7` should be controlled by hardware and switch display without any additional configuration. Also, if you are satisfied, put the command above to [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
  `~/.xinitrc` 
 ```
@@ -153,7 +154,7 @@ Test with `xev` or try to bind something on media button. `FN+F7` should be cont
 
 ### Touchpad
 
-Install [Touchpad Synaptics driver](/index.php/Touchpad_Synaptics#Installation "Touchpad Synaptics").
+See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ## Troubleshooting
 
@@ -169,7 +170,7 @@ The internal speakers seems not to play any sound until volume is being increase
 
 #### Sound pops twice during shutdown and sleep
 
-Create new file:
+Create and [enable](/index.php/Enable "Enable") the following two services:
 
  `/etc/systemd/system/beep-disable.service` 
 ```
@@ -185,9 +186,6 @@ ExecStart=/bin/sh -c 'rmmod snd_hda_intel'
 WantedBy=shutdown.target suspend.target
 
 ```
-
-and one more:
-
  `/etc/systemd/system/beep-disable-wakeup.service` 
 ```
 [Unit]
@@ -204,8 +202,6 @@ ExecStart=/bin/sh -c 'modprobe snd_hda_intel'
 WantedBy=suspend.target
 
 ```
-
-Then [enable](/index.php/Enable "Enable") `beep-disable.service` and `beep-disable-wakeup.service` as root.
 
 #### Crackling sound
 
@@ -270,32 +266,107 @@ This battery in this laptop can only be accessed by removing the bottom of the e
 
 ### Card reader does not detect cards
 
-Due to unknown reasons, card reader does not detect cards. To resolve this, quickly pull out the card and insert it back for several times and after few seconds card will be detected in your system.
+Due to unknown reasons, card reader does not detect cards. To resolve this, quickly pull out the card and insert it back for several times (leave inserted afterwards) and after few seconds card will be detected in your system.
 
 ## Tips and tricks
 
-### Touchpad switch
+### Fan control
 
-The touchpad can be toggled using a `xinput` [script](/index.php/Touchpad_Synaptics#Software_toggle "Touchpad Synaptics").
+**Warning:** Stopping fans on high CPU/GPU load might cause serious damage to your notebook.
 
-### Full fan speed
+Below are the methods, which can be used to control both fans. Generally there are 2 advantages of fans control:
 
-**Note:** No solution yet how to slow it down. After the reboot everything is fine
+*   Save power (completely stopped fans - notes taking or viewing pictures on battery)
+*   Prevent overheating (100% speed of both fans - you can play game longer on max performance until GPU throttling occurs)
 
-This is very helpful if you are about to play a heavy game. Install package [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), then follow [Lm_sensors#Setup](/index.php/Lm_sensors#Setup "Lm sensors") guide to set up sensors. Once you ready, just before every hard game run the following command:
+#### Dual fan method
+
+**Note:** CPU fan will be controlled by `asus-wmi` and `asus-nb-wmi` modules, therefore blacklisting them prevent FN+X keys from working. However, you don't need to do anything with these modules since `asus_fan` seem to work fine. You might only see false values using `sensors` command (e.g. `asus-isa-0000` will always display 2300 RPM).
+
+Install [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/). Load kernel module:
 
 ```
-# pwmconfig
+# modprobe asus_fan
 
 ```
 
-If prompted, click `y` and after a few seconds you are done. Fan spins at full speed.
+Check if you have any control over both fans:
 
-### Disable GPU throotling
+```
+# echo 255 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1          # Full CPU fan speed (Value: 255)
+# echo 0 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1            # CPU fan is stopped (Value: 0)
+# echo 255 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1          # Full GFX fan speed (Value: 255)
+# echo 0 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1            # GFX fan is stopped (Value: 0)
+# echo 2 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1_enable     # Change CPU fan mode to automatic
+# echo 1 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1_enable     # Change CPU fan mode to manual
+# echo 2 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2_enable     # Change GFX fan mode to automatic
+# echo 1 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2_enable     # Change GFX fan mode to manual
+# cat /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/temp1_input          # Display GFX temperature (will always be 0 when GFX is disabled/unused)
 
-If you have BIOS 208 installed and tried to play something heavy, you noticed that for a few seconds game runs for 60fps, but most of the time - 20-40fps. GPU performance is being reduced, so temperature can drop down and this is known as GPU throttling. This is strange behavior and even if temperature limit is set to 90c, GPU throttling occurs at 75c or even all the time.
+```
 
-To fix this, flash [bios 206](https://www.asus.com/support/Download/3/529/0/2/dad5aYI8mC6sfoNV/41/). If your BIOS version is newer than this, you must follow [this guide](http://forums.legitreviews.com/viewtopic.php?t=41080), which requires you to have Windows installed to your laptop.
+If everything works, you might want to load this kernel module on boot:
+
+ `/etc/modules-load.d/asus_fan.conf` 
+```
+# Load asus_fan module on boot:
+asus_fan
+
+```
+
+To be able to use [Fan speed control](/index.php/Fan_speed_control "Fan speed control") script, see [Fan speed control#There are no working fan sensors, all readings are 0](/index.php/Fan_speed_control#There_are_no_working_fan_sensors.2C_all_readings_are_0 "Fan speed control").
+
+Here is a configuration file, which was tested and working fine on the Asus N550JV. However, it might need some tweaking:
+
+ `/etc/fancontrol` 
+```
+INTERVAL=10
+FCTEMPS=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/temp1_input
+FCFANS=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/fan1_input /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/fan2_input
+MINTEMP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=50 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=45
+MAXTEMP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=80 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=90
+MINSTART=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=40 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=40
+MINSTOP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=10 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=10
+
+```
+
+#### Single fan method
+
+**Note:** The kernel modules for fan control are `asus-wmi` and `asus-nb-wmi`. Unfortunately, as seen in this [GitHub page](https://github.com/KastB/asus_wmi), you can only control the right side fan (designed for CPU cooling only). Left fan will always be controlled by system and you don't have any controls over it.
+
+Below are the commands to control it (there is no need to replace the wildcard with anything, since the hwmon**X** will change after each boot):
+
+```
+# echo 255 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1           # Full fan speed (Value: 255)
+# echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1             # Fan is stopped (Value: 0)
+# echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[[:print:]]*/pwm1_enable     # Change fan mode to automatic
+# echo 1 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1_enable      # Change fan mode to manual
+
+```
+
+To be able to use [Fan speed control](/index.php/Fan_speed_control "Fan speed control") script, see [Fan speed control#There are no working fan sensors, all readings are 0](/index.php/Fan_speed_control#There_are_no_working_fan_sensors.2C_all_readings_are_0 "Fan speed control").
+
+Here is a configuration file, which was tested to work on the Asus N550JV. It however might need some tweaking:
+
+ `/etc/fancontrol` 
+```
+INTERVAL=10
+FCTEMPS=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input
+FCFANS= /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/fan1_input
+MINTEMP=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=50
+MAXTEMP=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=80
+MINSTART=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=40
+MINSTOP=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=10
+
+```
+
+### Enable full performance of GPU
+
+**Note:** This only applicable if you have BIOS 207 or BIOS 208 installed. BIOS 206 and earlier aren't affected.
+
+If you have BIOS 208 or 207 installed and tried to play something heavy, you noticed that for a few seconds game runs for 60fps, but most of the time - 20-40fps. This is strange behavior, which happens on Windows as well as on Linux. Even if the temperature limit is set to 90c, GPU throttling occurs at 75c or even all the time (with a feeling that GPU only runs at 60-70% of it's full potential).
+
+To fix this, flash [bios 206](https://www.asus.com/support/Download/3/529/0/2/dad5aYI8mC6sfoNV/41/). If your BIOS version is newer than this, you must follow [this guide](http://forums.legitreviews.com/viewtopic.php?t=41080), which requires you to have **Windows installed on this laptop**.
 
 **Note:** If you get error while installing WinFlash that this is only supported on Asus notebooks - first you need to install [ATKACPI driver](http://www.asus.com/support/Download/3/588/0/1/41/).
 

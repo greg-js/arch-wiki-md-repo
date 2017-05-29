@@ -19,8 +19,9 @@
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#.22Cannot_lock_down_memory_area_.28Cannot_allocate_memory.29.22_message_on_startup)
     *   [4.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
     *   [4.3 "ALSA: cannot set channel count to 1 for capture" error in logs](#.22ALSA:_cannot_set_channel_count_to_1_for_capture.22_error_in_logs)
-    *   [4.4 Problems with specific applications](#Problems_with_specific_applications)
-        *   [4.4.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
+    *   [4.4 Crackling or pops in audio](#Crackling_or_pops_in_audio)
+    *   [4.5 Problems with specific applications](#Problems_with_specific_applications)
+        *   [4.5.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -57,23 +58,21 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 ### GUI
 
-If you want a GUI control application, the most widely used one is [qjackctl](https://www.archlinux.org/packages/?name=qjackctl).
+[cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) is the modern GUI control application. It can be installed with the [cadence](https://aur.archlinux.org/packages/cadence/) package.
 
-Also, [cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) offers a set of applications and eases some advanced jack configurations. It can be installed with the [cadence](https://aur.archlinux.org/packages/cadence/) package.
+[qjackctl](https://www.archlinux.org/packages/?name=qjackctl) is more widely used, and still functions, but is now outdated and is not recommended.
 
 ## Basic Configuration
 
 ### Overview
 
-[This Linux Magazine article](http://www.linux-magazine.com/content/download/63041/486886/version/1/file/JACK_Audio_Server.pdf) is a very good general overview, although do not worry about manual compilations, quite a few JACK tools work right off the wire now, *after* JACK is configured correctly.
+The right configuration for your hardware and application needs depends on several factors. Your sound card and CPU will heavily affect how low of latency you can achieve when using JACK.
 
-Most tutorials are advising a realtime kernel, which is quite helpful for live synthesis and FX; but for purposes of recording and editing it is not necessary, as long as you set up for non-realtime latencies -- 10-40+ ms (100-500+ ms for older hardware).
-
-The right configuration for your hardware and application needs, depends on several factors.
+The mainline Linux kernel now supports realtime scheduling, so using a patched kernel is no longer necessary. However, [linux-rt](https://aur.archlinux.org/packages/linux-rt/) in the AUR is a patched kernel that has some extra patches that can help to get lower latencies.
 
 ### A shell-based example setup
 
-The D-Bus edition of JACK2 can make startup much easier. Formerly, we had to have QjackCtl start it for us, or use a daemonizer, or some other method. But using [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus), we can easily start and configure it via a shell script.
+The D-Bus edition of JACK2 can make startup much easier. Formerly, QjackCtl was used to start it, or a daemonizer was used, or some other method. But using [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus), JACK2 can be easily started and configured via a shell script.
 
 Create a shell script that can be executed at X login:
 
@@ -82,8 +81,6 @@ Create a shell script that can be executed at X login:
 #!/bin/bash
 
 jack_control start
-sudo schedtool -R -p 20 `pidof jackdbus`
-jack_control eps realtime true
 jack_control ds alsa
 jack_control dps device hw:HD2
 jack_control dps rate 48000
@@ -93,15 +90,10 @@ sleep 10
 a2jmidid -e &
 sleep 10
 qjackctl &
-sleep 10
-qmidiroute ~/All2MIDI1.qmr &
-sleep 10
-yoshimi -S &
-sleep 10
 
 ```
 
-The above will start a complete realtime JACK live-synthesis setup, integrating several tools. Details of each line follow. When discovering your own best configuration, it is helpful to do trial and error using QjackCtl's GUI with a non-D-Bus JACK2 version.
+The above will start a working JACK instance which other programs can then utilize. Details of each line follow. When discovering your own best configuration, it is helpful to do trial and error using QjackCtl's GUI with a non-D-Bus JACK2 version.
 
 #### Details of the shell-based example setup
 
@@ -111,20 +103,6 @@ jack_control start
 ```
 
 Starts JACK if it is not already started.
-
-```
-sudo schedtool -R -p 20 `pidof jackdbus`
-
-```
-
-Set JACK to realtime mode in the Linux kernel, priority 20 (options range 1-99).
-
-```
-jack_control eps realtime true
-
-```
-
-Sets JACK to realtime mode in its own internal setup.
 
 ```
 jack_control ds alsa
@@ -145,7 +123,7 @@ jack_control dps rate 48000
 
 ```
 
-Sets JACK to use 48000 khz sampling. Happens to work very well with this card. Some cards only do 44100, many will go much higher. The higher you go, the lower your latency, but the better your card and your CPU has to be, and software has to support this as well.
+Sets JACK to use 48000 khz sampling. Happens to work very well with this card. Some cards only do 44100, many will go much higher. The higher you go, the lower your latency, but the better your card and your CPU have to be, and software has to support this as well.
 
 ```
 jack_control dps nperiods 2
@@ -159,7 +137,7 @@ jack_control dps period 64
 
 ```
 
-Sets JACK to use 64 periods per frame. Lower is less latency, but the setting in this script gives 2.67 ms latency, which is nicely low without putting too much stress on the particular hardware this example was built for. If a USB sound system were in use it might be good to try 32\. Anything less than 3-4 ms should be fine for realtime synthesis and/or FX, 5 ms is the smallest a human being can detect. There are many cases of perfect-storm-gorgeous hardware which can handle 1 ms latency without stressing the CPU, but definitely this is not always the case! QjackCtl will tell you how you are doing; at no-load, which means no clients attached, you will want a max of 3-5% CPU usage, and if you cannot get that without xruns (the red numbers which mean the system cannot keep up with the demands), you will have to improve your hardware. There are many inexpensive USB sound systems which produce very good quality at very low latency if the USB is good on the motherboard, but not all.
+Sets JACK to use 64 periods per frame. Lower is less latency, but the setting in this script gives 2.67 ms latency, which is nicely low without putting too much stress on the particular hardware this example was built for. If a USB sound system were in use it might be good to try 32\. Anything less than 3-4 ms should be fine for realtime synthesis and/or FX, 5 ms is the smallest a human being can detect. QjackCtl will tell you how you are doing; at no-load, which means no clients attached, you will want a max of 3-5% CPU usage, and if you cannot get that without xruns (the red numbers which mean the system cannot keep up with the demands), you will have to improve your hardware.
 
 ```
 sleep 10
@@ -189,52 +167,11 @@ qjackctl &
 
 Load QjackCtl. GUI configuration tells it to run in the system tray. It will pick up the JACK session started by D-Bus just fine, and very smoothly too. It maintains the patchbay, the connections between these applications and any other JACK-enabled apps to be started manually. The patchbay is set up using manual GUI, but connections pre-configured in the patchbay are automatically created by QjackCtl itself when apps are started.
 
-```
-sleep 10
-
-```
-
-Wait for the above to settle.
-
-```
-qmidiroute ~/All2MIDI1.qmr &
-
-```
-
-Load qmidiroute, loading a custom-created configuration file which will rewrite all MIDI events on all channels to channel 1\. This is useful when plugging the PC into any keyboard anywhere -- no matter what the keyboard's channel defaults to, qmidiroute will send the signal to the synth on channel 1, where it needs it. qmidiroute is capable of very complex and useful configurations of many sorts, including multiple simultaneous translations, transpositions, signal type rewrites, etcetera.
-
-```
-sleep 10
-
-```
-
-Wait for the above to settle.
-
-```
-yoshimi -S &
-
-```
-
-Load the Yoshimi synthesizer, using the pre-saved default state.
-
-```
-sleep 10
-
-```
-
-Wait for the above to settle.
-
-With all of the above in a script run at logon, and with the QjackCtl patchbay set correctly, all we have to do is plug the PC/laptop into a MIDI keyboard using a USB-to-MIDI adapter, or simply the USB-in MIDI capability of many modern keyboards, and you are ready to play!
-
-The essence of QJackCtl is described fairly well in [this article.](http://www.linuxjournal.com/article/8354?page=full)
-
 ### A GUI-based example setup
 
-The shell-based example above, lays out in detail lots of things you may well need to know, and it does work well. If you want something much more GUI, however, do this:
+This example setup utilizes a more GUI focused configuration and management of JACK
 
 *   Install [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus).
-*   Install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio).
-*   Install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).
 *   Install [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), and tell your GUI window/desktop system to run it at startup.
 *   Make sure QjackCtl is told to:
     *   use the D-Bus interface,
@@ -245,8 +182,7 @@ The shell-based example above, lays out in detail lots of things you may well ne
     *   start minimized to sytem tray.
 *   Reboot.
 *   After logging in, you will see QjackCtl in your system tray. Left-click on it.
-*   Start tweaking in the QjackCtl GUI. The info embedded in the shell-script setup above may be of some help :-) As may be the info in [this article](http://www.linuxjournal.com/article/8354). Just remember that you have to get your latency down to less than 5ms for live tone production or filtration of any sort, or the delay will be obvious to player and listener alike.
-*   From the [AUR](/index.php/AUR "AUR"), install [non-sessionmanager-git](https://aur.archlinux.org/packages/non-sessionmanager-git/); it has the function of setting up "sessions": sets of other audio software items which Jack (through the QjackCtl patchbay or not!) will wire together. NSM can handle as many different sessions as you wish to set up; and as a result, it's all GUI, apart from the one rc.local edit in the beginning.
+*   Tweak settings in the QjackCtl GUI to lower latency. The Frame Size, Frame Buffer, and Bitrate settings all affect latency. Larger frame sizes lower latency, lower frame buffers lower latency, and higher bitrate settings lower latency, but all increase load on the sound card and your CPU. A Latency of about ~5ms is desirable for direct monitoring of instruments or microphones, as the latency begins to become perceptible at higher latencies.
 
 ### Playing nice with ALSA
 
@@ -292,20 +228,28 @@ Another approach, using ALSA loopback device (more complex but probably more rob
 
 ### gstreamer
 
-Example: watching a live stream without gconf
+gstreamer requires the [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) package to work with JACK. It contains the plugin that adds JACK support.
 
- `gst-launch-0.10 playbin2 uri=http://streamer.stackingdwarves.net/bewerungeroom.ogv audio-sink="jackaudiosink"` 
+Use whatever gnome application settings manager you prefer (gconf2, gconf-editor, gstreamer-properties, etc.)
 
-Setting gstreamer to use jack using gconftool-2
-
-```
-gconftool-2 --type string --set /system/gstreamer/0.10/audio/default/audiosink "jackaudiosink buffer-time=2000000"
-gconftool-2 --type string --set /system/gstreamer/0.10/audio/default/musicaudiosink "jackaudiosink buffer-time=2000000"
-gconftool-2 --type string --set /system/gstreamer/0.10/audio/default/chataudiosink "jackaudiosink buffer-time=2000000"
+Set the values of both
 
 ```
+/system/gstreamer/0.12/audio/default/musicaudiosink
+/system/gstreamer/0.12/audio/default/audiosink
 
-Further information: [http://jackaudio.org/gstreamer_via_jack](http://jackaudio.org/gstreamer_via_jack)
+```
+
+to
+
+```
+jackaudiosink buffer-time=2000000
+
+```
+
+Exact buffer time value is unimportant, but higher values reduce chance of crackling in the audio.
+
+Further information: [http://jackaudio.org/faq/gstreamer_via_jack.html](http://jackaudio.org/faq/gstreamer_via_jack.html)
 
 ### PulseAudio
 
@@ -400,6 +344,10 @@ This will hopefully show the conflicting programs.
 
 Change ALSA input and output channels from 1 to 2
 
+### Crackling or pops in audio
+
+Your CPU or sound card is too weak to handle your settings for JACK. Lower the bitrate, lower the frame size, and raise the frame period in small increments until crackling stops.
+
 ### Problems with specific applications
 
 #### VLC - no audio after starting JACK
@@ -414,3 +362,4 @@ Run VLC and change the following menu options:
 ## See also
 
 *   [Differences between JACK 1 and JACK2](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2)
+*   [JACK FAQ](http://jackaudio.org/faq/)

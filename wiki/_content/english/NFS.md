@@ -49,7 +49,7 @@ The NFS server needs a list of exports (shared directories) which are defined in
 Consider this following example wherein:
 
 1.  The NFS root is `/srv/nfs`.
-2.  The export is `/srv/music` via a bind mount to the actual target `/mnt/music`.
+2.  The export is `/srv/nfs/music` via a bind mount to the actual target `/mnt/music`.
 
 ```
 # mkdir -p /srv/nfs/music /mnt/music

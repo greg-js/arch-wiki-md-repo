@@ -280,14 +280,12 @@ As mentioned [here](http://planetkris.com/2009/07/how-to-remove-the-title-bar-wi
 
 #### ATI cards
 
-Another possible problem with *GLX_EXT_texture_from_pixmap* on ATI cards is that the card can only render it indirectly. If so, you have to pass the option to your libgl as shown below:
+A possible issue with *GLX_EXT_texture_from_pixmap* on ATI cards is that the card can only render it indirectly. If so, you have to pass the option to your libgl as shown below:
 
 ```
 LIBGL_ALWAYS_INDIRECT=1 compiz --replace &
 
 ```
-
-This workaround was tested on the following card : ATI Technologies Inc Radeon R250 [Mobility FireGL 9000] (rev 02).
 
 #### Intel chips
 

@@ -2,7 +2,7 @@ Clover EFI is a bootloader developed to boot OS X (Hackintoshes), Windows and Li
 
 The main advantages of Clover are:
 
-*   Emulate EUFI on legacy BIOS systems
+*   Emulate UEFI on legacy BIOS systems
 *   Boot Linux kernels with [EFISTUB](/index.php/EFISTUB "EFISTUB") support
 *   Supports native resolution GUI on wide screens people commonly use today
 *   Easy of use
@@ -10,7 +10,7 @@ The main advantages of Clover are:
 
 ## Installation
 
-Download Clover Bootable ISO from [here](http://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/)
+Download Clover Bootable ISO from [here](http://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/).
 
 Extract archive and find the `Clover-*-X64.iso` file, mount it.
 
@@ -65,4 +65,5 @@ For details please reference [their wiki](http://clover-wiki.zetam.org/Home), fo
 
 ## See also
 
-*   [http://sourceforge.net/projects/cloverefiboot/](http://sourceforge.net/projects/cloverefiboot/)
+*   [Project homepage](http://sourceforge.net/projects/cloverefiboot/)
+*   [Clover Wiki](https://clover-wiki.zetam.org/Home)

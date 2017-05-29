@@ -26,9 +26,9 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.4 Garbled or invisible text](#Garbled_or_invisible_text)
     *   [5.5 Corrupted text and fonts in menus and fields](#Corrupted_text_and_fonts_in_menus_and_fields)
     *   [5.6 Installation](#Installation_2)
-    *   [5.7 Install-Time Library Errors](#Install-Time_Library_Errors)
+    *   [5.7 Install-time library errors](#Install-time_library_errors)
     *   [5.8 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
-    *   [5.9 Segmentation Fault on startup](#Segmentation_Fault_on_startup)
+    *   [5.9 Segmentation fault on startup](#Segmentation_fault_on_startup)
     *   [5.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
     *   [5.11 Addon manager not working](#Addon_manager_not_working)
     *   [5.12 Using webcam/video device](#Using_webcam.2Fvideo_device)
@@ -61,7 +61,7 @@ To create a menu item, we need to get a icon first:
 
 ```
 
-Then create a new `.desktop` file in `/usr/share/applications` with following lines:
+Then create a new `.desktop` file in `/usr/share/applications` with following lines (see [Desktop_entries](/index.php/Desktop_entries "Desktop entries") for more info on `.desktop` files):
 
  `/usr/share/applications/matlab.desktop` 
 ```
@@ -317,7 +317,7 @@ If you notice that the menus or the input fields are corrupted or not appearing 
 
 As one installs Matlab, it might complain that it cannot find a package, for the most part just look at the package name and then install it with [Pacman](/index.php/Pacman "Pacman"), or in the case of x86_64 there are some libraries only in [AUR](/index.php/AUR "AUR").
 
-### Install-Time Library Errors
+### Install-time library errors
 
 *   Make sure that the symlink `bin/glnx64/libstdc++.so.6` is pointing to the correct version of `libstdc++.so.xx` (which is also in the same directory and has numbers where 'xx' is). By default, it may be pointing to an older (and nonexistent) version (different value for 'xx').
 
@@ -341,7 +341,7 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 ```
 
-### Segmentation Fault on startup
+### Segmentation fault on startup
 
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
 

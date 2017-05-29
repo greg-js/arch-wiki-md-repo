@@ -1,6 +1,6 @@
 Fancontrol, part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), can be used to control the speed and sound of CPU/case fans. This article covers configuration/setup of the utility.
 
-For some Dell laptops, an alternative is [i8kutils](#i8kutils).
+For some Dell laptops, an alternative is [#i8kutils](#i8kutils).
 
 ## Contents
 
@@ -16,7 +16,7 @@ For some Dell laptops, an alternative is [i8kutils](#i8kutils).
     *   [4.3 Disable BIOS fan speed control](#Disable_BIOS_fan_speed_control)
     *   [4.4 Installation as a service](#Installation_as_a_service)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 There are no working fan sensors, all readings are 0.](#There_are_no_working_fan_sensors.2C_all_readings_are_0.)
+    *   [5.1 There are no working fan sensors, all readings are 0](#There_are_no_working_fan_sensors.2C_all_readings_are_0)
 
 ## Sensor driver
 
@@ -120,19 +120,19 @@ The rest of the configuration file is split into (at least) two values per confi
 *   `MINSTOP`: The PWM value at which your fan stops spinning. Each fan is a little different. Power tweakers can `echo` different values (between 0 and 255) to `/sys/class/hwmon/hwmon0/device/pwm1` and then watch the CPU fan. When the CPU fan stops, use this value.
 *   `MINSTART`: The PWM value at which your fan starts to spin again. This is often a higher value than MINSTOP as more voltage is required to overcome inertia.
 
-There are also two settings fancontrol needs to verify the configuration file is still up to date. The lines start with the setting name and a equality sign, followed by groups of hwmon-class-device=setting, seperated by spaces. You need to specify each setting for each hwmon class device you use anywhere in the config, or fancontrol will not work.
+There are also two settings fancontrol needs to verify the configuration file is still up to date. The lines start with the setting name and an equality sign, followed by groups of hwmon-class-device=setting, separated by spaces. You need to specify each setting for each hwmon class device you use anywhere in the config, or fancontrol will not work.
 
 *   `DEVPATH`: Sets the physical device. You can determine this by executing the command
 
 ```
-readlink -f /sys/class/hwmon/*hwmon-device*/device | sed -e 's/^\/sys\///'
+readlink -f /sys/class/hwmon/*[your-hwmon-device]*/device | sed -e 's/^\/sys\///'
 
 ```
 
 *   `DEVNAME`: Sets the name of the device. Try:
 
 ```
-$ sed -e 's/[[:space:]=]/_/g' /sys/class/hwmon/*hwmon-device*/device/name
+$ sed -e 's/[[:space:]=]/_/g' /sys/class/hwmon/*[your-hwmon-device]*/device/name
 
 ```
 
@@ -237,7 +237,7 @@ WantedBy=multi-user.target
 
 ## Troubleshooting
 
-### There are no working fan sensors, all readings are 0.
+### There are no working fan sensors, all readings are 0
 
 **Warning:** This section is for power users. Do not follow it if you do not know what you are doing.
 

@@ -17,7 +17,7 @@ If you use [vi](/index.php/Vi "Vi"), Vifm gives you complete keyboard control ov
         *   [3.4.1 Creating symbolic links](#Creating_symbolic_links)
         *   [3.4.2 Torrent creation](#Torrent_creation)
     *   [3.5 Marks](#Marks)
-    *   [3.6 previews](#previews)
+    *   [3.6 Previews](#Previews)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Useful key mappings](#Useful_key_mappings)
     *   [4.2 Non-vim Users](#Non-vim_Users)
@@ -182,7 +182,7 @@ Go to a file set for mark:
 
 Vifm will remember the marks between the sessions.
 
-### previews
+### Previews
 
 Provided [poppler](https://www.archlinux.org/packages/?name=poppler) is installed, putting
 

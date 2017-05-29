@@ -17,17 +17,16 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 *   [3 Udisks](#Udisks)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Accessing firmware programmers and USB virtual comm devices](#Accessing_firmware_programmers_and_USB_virtual_comm_devices)
-    *   [4.2 Execute on USB insert](#Execute_on_USB_insert)
-    *   [4.3 Execute on VGA cable plug in](#Execute_on_VGA_cable_plug_in)
-    *   [4.4 Detect new eSATA drives](#Detect_new_eSATA_drives)
-    *   [4.5 Mark internal SATA ports as eSATA](#Mark_internal_SATA_ports_as_eSATA)
-    *   [4.6 Setting static device names](#Setting_static_device_names)
-        *   [4.6.1 Video devices](#Video_devices)
-        *   [4.6.2 Printers](#Printers)
-        *   [4.6.3 USB flash device](#USB_flash_device)
-    *   [4.7 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
-    *   [4.8 Triggering events](#Triggering_events)
-    *   [4.9 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
+    *   [4.2 Execute on VGA cable plug in](#Execute_on_VGA_cable_plug_in)
+    *   [4.3 Detect new eSATA drives](#Detect_new_eSATA_drives)
+    *   [4.4 Mark internal SATA ports as eSATA](#Mark_internal_SATA_ports_as_eSATA)
+    *   [4.5 Setting static device names](#Setting_static_device_names)
+        *   [4.5.1 Video devices](#Video_devices)
+        *   [4.5.2 Printers](#Printers)
+        *   [4.5.3 USB flash device](#USB_flash_device)
+    *   [4.6 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
+    *   [4.7 Triggering events](#Triggering_events)
+    *   [4.8 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Blacklisting modules](#Blacklisting_modules)
     *   [5.2 Debug output](#Debug_output)
@@ -177,10 +176,6 @@ The following rule will allow users in the `users` group to access the [USBtinyI
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0660"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0660"
 ```
-
-### Execute on USB insert
-
-See the [Execute on USB insert](/index.php/Execute_on_USB_insert "Execute on USB insert") article or the [devmon wrapper script](http://igurublog.wordpress.com/downloads/script-devmon/).
 
 ### Execute on VGA cable plug in
 

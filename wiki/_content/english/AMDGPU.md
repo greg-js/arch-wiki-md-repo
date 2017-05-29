@@ -8,18 +8,17 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
-    *   [2.1 Blacklist radeon](#Blacklist_radeon)
+    *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support)
     *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
 *   [5 Performance tuning](#Performance_tuning)
-    *   [5.1 PowerPlay](#PowerPlay)
-    *   [5.2 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [5.3 Driver options](#Driver_options)
+    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
+    *   [5.2 Driver options](#Driver_options)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
-    *   [6.2 Unable to start Xorg on Southern Islands (SI) or Sea Islands (CIK) GPU](#Unable_to_start_Xorg_on_Southern_Islands_.28SI.29_or_Sea_Islands_.28CIK.29_GPU)
+    *   [6.2 Incorrect screen position on HDMI](#Incorrect_screen_position_on_HDMI)
     *   [6.3 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
     *   [6.4 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
 
@@ -40,23 +39,20 @@ For 32-bit application support on x86_64, also install [lib32-mesa](https://www.
 
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
 
-### Blacklist radeon
+### Enable Southern Islands (SI) and Sea Islands (CIK) support
 
 The [linux](https://www.archlinux.org/packages/?name=linux) package enables AMDGPU support for cards of the Southern Islands (SI) and Sea Islands (CIK). When building or compiling a [kernel](/index.php/Kernel "Kernel"), `CONFIG_DRM_AMDGPU_SI=Y` and/or `CONFIG_DRM_AMDGPU_CIK=Y` should be be set in the config.
 
 Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon](/index.php/Radeon "Radeon") driver may be used instead of the AMDGPU driver.
 
-[Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module to force usage of the `amdgpu` module:
+The following workarounds are available:
 
- `/etc/modprobe.d/radeon.conf` 
-```
-blacklist radeon
-
-```
+*   Set `amdgpu` as first to load in the [Mkinitcpio#Modules](/index.php/Mkinitcpio#Modules "Mkinitcpio") array, e.g. `MODULES="amdgpu radeon"`.
+*   [Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
 ### AMDGPU PRO
 
-**Warning:** Arch Linux is not officially supported.
+**Warning:** Arch Linux is officially not supported.
 
 **Note:**
 
@@ -119,12 +115,6 @@ Using this section, you can enable features and tweak the driver settings.
 
 ## Performance tuning
 
-### PowerPlay
-
-PowerPlay is the name given to AMD's dynamic clock scaling technology. Depending on your GPU and kernel version, it will default to on or off.
-
-To get maximum performance and even power savings, add the `amdgpu.powerplay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-
 ### Enabling video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
@@ -153,11 +143,11 @@ Option "TearFree" "true"
 
 ### No HDMI/DP Audio
 
-The open source AMDGPU driver relies on the DAL code that [currently being worked on](https://cgit.freedesktop.org/~agd5f/linux/log/?h=drm-next-4.7-wip-dal). Until DAL is mainlined, audio suppport for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the AMDGPU-PRO driver.
+The open source AMDGPU driver relies on the DAL code that [currently being worked on](https://cgit.freedesktop.org/~agd5f/linux/log/?h=drm-next-4.7-wip-dal). Until DAL is mainlined, audio suppport for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the [#AMDGPU PRO](#AMDGPU_PRO) driver.
 
-### Unable to start Xorg on Southern Islands (SI) or Sea Islands (CIK) GPU
+### Incorrect screen position on HDMI
 
-This issue may occur when both the `radeon` and `amdgpu` module are loaded at boot, see [#Blacklist radeon](#Blacklist_radeon).
+Use `amdgpu.audio=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to prevent the (incomplete) HDMI audio-support from being enabled [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=195737).
 
 ### Xorg or applications won't start
 
@@ -180,7 +170,7 @@ EndSection
 
 If you have screen artifacts when setting your screen frequency up to 120+Hz your "Memory Clock" and "GPU Clock" are certainly too low to handle the screen request.
 
-A workaround [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is available by doing the following:
+A workaround [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is available by doing the following:
 
 ```
 # echo high > /sys/class/drm/card0/device/power_dpm_force_performance_level
@@ -194,4 +184,4 @@ or
 
 ```
 
-There is a GUI solution [[2]](https://github.com/marazmista/radeon-profile) were you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+There is a GUI solution [[3]](https://github.com/marazmista/radeon-profile) were you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).

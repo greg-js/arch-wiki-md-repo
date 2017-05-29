@@ -102,5 +102,5 @@ If you are compiling a module for early boot (e.g. updated module) which is copi
 
 ## See also
 
-*   [Linux Kernel Newbies](http://kernelnewbies.org/)
+*   [Linux Kernel Newbies](https://kernelnewbies.org/)
 *   [The Linux Kernel Module Programming Guide](http://www.tldp.org/LDP/lkmpg/2.6/html/)

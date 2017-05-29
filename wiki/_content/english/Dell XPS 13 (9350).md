@@ -150,6 +150,8 @@ Andy Lutomirski has created a patchset which fixes powersaving for NVME devices 
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
 
+As of kernel version 4.11, this patch is no longer needed.
+
 ## Wireless
 
 For the non-developer edition, the built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel (as of version 4.4.1-1). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.

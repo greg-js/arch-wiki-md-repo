@@ -354,7 +354,7 @@ $ gpg --edit-key *<user-id>*
 
 ```
 
-And answer the following questions it asks (see previous section for suggested settings).
+And answer the following questions it asks (see [#Create key pair](#Create_key_pair) for suggested settings).
 
 Save changes
 

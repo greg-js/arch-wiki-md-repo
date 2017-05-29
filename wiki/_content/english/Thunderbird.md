@@ -24,6 +24,7 @@ Mozilla [Thunderbird](https://www.mozilla.org/thunderbird/) is an open source em
     *   [4.5 Export + Import](#Export_.2B_Import)
     *   [4.6 Changing the default sorting order](#Changing_the_default_sorting_order)
     *   [4.7 Maildir support](#Maildir_support)
+    *   [4.8 Spell checking](#Spell_checking)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 LDAP Segfault](#LDAP_Segfault)
     *   [5.2 Error: Incoming server already exists](#Error:_Incoming_server_already_exists)
@@ -243,6 +244,10 @@ mail.serverDefaultStoreContractID = @mozilla.org/msgstore/maildirstore;1
 ```
 
 Some limitations up to at least 31.4.0-1: only the "tmp" and "cur" directories are supported. The "new" directory is completely ignored. The read state of mails are stored in a separate ".msf" file, so initially all local mail using Maildir will be marked as unread even when located in the "cur" directory.
+
+### Spell checking
+
+For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. After a restart the spell checking should work.
 
 ## Troubleshooting
 

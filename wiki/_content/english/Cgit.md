@@ -28,7 +28,7 @@
 
 Install the [cgit](https://www.archlinux.org/packages/?name=cgit) package.
 
-In order to actually use cgit you will also need to have a [web server](/index.php/Category:Web_server "Category:Web server") installed on your system, like for example [Apache](/index.php/Apache "Apache").
+To use cgit a [web server](/index.php/Category:Web_server "Category:Web server") must be installed on the system, such as [Apache](/index.php/Apache "Apache").
 
 ## Configuration of Web Server
 

@@ -23,11 +23,10 @@
 *   [7 ALSA monitor source](#ALSA_monitor_source)
 *   [8 Monitor specific output](#Monitor_specific_output)
 *   [9 PulseAudio through JACK](#PulseAudio_through_JACK)
-    *   [9.1 The new new new way](#The_new_new_new_way)
-    *   [9.2 The new new way](#The_new_new_way)
-    *   [9.3 The new way](#The_new_way)
-    *   [9.4 The old way](#The_old_way)
-        *   [9.4.1 QjackCtl with start-up/shutdown scripts](#QjackCtl_with_start-up.2Fshutdown_scripts)
+    *   [9.1 The KXStudio method](#The_KXStudio_method)
+    *   [9.2 The manual sink configuration method](#The_manual_sink_configuration_method)
+    *   [9.3 The shell script method](#The_shell_script_method)
+    *   [9.4 The PulseAudio kill method](#The_PulseAudio_kill_method)
 *   [10 PulseAudio through OSS](#PulseAudio_through_OSS)
 *   [11 PulseAudio from within a chroot (e.g. 32-bit chroot in 64-bit install)](#PulseAudio_from_within_a_chroot_.28e.g._32-bit_chroot_in_64-bit_install.29)
 *   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
@@ -522,19 +521,23 @@ In Pulseaudio Volume Control (pavucontrol), under the "Playback" tab, change the
 
 ## PulseAudio through JACK
 
-The [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit") is popular for audio work, and is widely supported by Linux audio applications. It fills a similar niche as PulseAudio, but with more of an emphasis on professional audio work. In particular, audio applications such as Ardour and Audacity work well with Jack.
+The [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit") is popular for audio work, and is widely supported by Linux audio applications. It fills a similar niche as PulseAudio, but with more of an emphasis on professional audio work. It can offer lower latency audio monitoring along with greater control of input and output of multi-i/o sound devices.
 
-### The new new new way
+### The KXStudio method
 
-This configuration works with both [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus) and [jack2](https://www.archlinux.org/packages/?name=jack2) packages, but works better with the dbus variant.
+This is the recommended method as it is [officially endorsed by the JACK developers](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_PulseOnJack)
 
-Instead of killing PulseAudio, JACK now supports bridging between them to allow PulseAudio output to route to a running Jack instance. This will allow you to simultaneously have Jack and PulseAudio running with both outputting at the same time.
+This configuration works with both [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus) and [jack2](https://www.archlinux.org/packages/?name=jack2) packages.
+
+JACK now has native features for bridging between ALSA, PulseAudio, and JACK. This will allow you to simultaneously have JACK and PulseAudio running with both outputting at the same time, with no config editing or terminal commands requried.
 
 If you are using [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), it is recommended to uninstall it before beginning this.
 
 Begin by installing [cadence](https://aur.archlinux.org/packages/cadence/) from the AUR. Once installed and started, JACK bridge configuration is found in the bottom right of the window. The ALSA audio bridge should be set to ALSA -> PulseAudio -> JACK, and the PulseAudio bridge should be enabled. Make sure in `pavucontrol` that all output devices besides Jack sink are muted, and all input devices besides Jack input are muted. Start JACK using the Force Restart button, and if it starts successfully PulseAudio programs should begin outputting to JACK.
 
-### The new new way
+### The manual sink configuration method
+
+This configuration provides a method of allowing JACK and PulseAudio to run at the same time and output to each other. It uses manual configuration of the systems that bridge between JACK and PulseAudio. This configuration has no reliance on scripts or commands and is entirely based in configuration.
 
 This configuration only works with jackdbus (JACK2 compiled with D-Bus support). It also requires the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. Make sure that `/etc/pulse/default.pa` contains a line:
 
@@ -573,7 +576,9 @@ ctl.!default {
 
 If it still does not work, check with `pavucontrol` in the playback tab and make sure the relevant programs are outputting to PulseAudio JACK Sink instead of your audio card (which JACK has control of, so it will not work). Also ensure that in the JACK graph the PulseAudio JACK Source is connected to the system audio output.
 
-### The new way
+### The shell script method
+
+This method allows JACK and PulseAudio to output at the same time. It mostly relies on shell scripts that are automatically run by QJackCTL to manage aspects of how the JACK sinks and PulseAudio behave.
 
 The basic idea is that killing PulseAudio is a bad idea because it may crash any apps using PulseAudio and disrupt any audio playing.
 
@@ -629,70 +634,9 @@ pacmd suspend false
 
 ```
 
-### The old way
+### The PulseAudio kill method
 
-Install the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package, which provides `module-jack-source` and `module-jack-sink` which allow PulseAudio to be run as a sound server above the JACK daemon. This allows the usage of per-volume adjustments and the like for the apps which need it, play-back apps for movies and audio, while allowing low-latency and inter-app connectivity for sound-processing apps which connect to JACK. However, this will prevent PulseAudio from directly writing to the sound card buffers, which will increase overall CPU usage.
-
-To just try PA on top of JACK, have PA load the necessary modules on start:
-
-```
-$ pulseaudio -L module-jack-sink -L module-jack-source
-
-```
-
-To use PulseAudio with JACK, JACK must be started before PulseAudio, using whichever method one prefers. PulseAudio then needs to be started loading the two relevant modules. Edit `/etc/pulse/default.pa`, and change the following region:
-
-```
-### Load audio drivers statically (it is probably better to not load
-### these drivers manually, but instead use module-hal-detect --
-### see below -- for doing this automatically)
-#load-module module-alsa-sink
-#load-module module-alsa-source device=hw:1,0
-#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
-#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
-#load-module module-null-sink
-#load-module module-pipe-sink
-
-### Automatically load driver modules depending on the hardware available
-.ifexists module-udev-detect.so
-load-module module-udev-detect
-.else
-### Alternatively use the static hardware detection module (for systems that
-### lack udev support)
-load-module module-detect
-.endif
-
-```
-
-to the following:
-
-```
-### Load audio drivers statically (it is probably better to not load
-### these drivers manually, but instead use module-hal-detect --
-### see below -- for doing this automatically)
-#load-module module-alsa-sink
-#load-module module-alsa-source device=hw:1,0
-#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
-#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
-#load-module module-null-sink
-#load-module module-pipe-sink
-load-module module-jack-source
-load-module module-jack-sink
-
-### Automatically load driver modules depending on the hardware available
-#.ifexists module-udev-detect.so
-#load-module module-udev-detect
-#.else
-### Alternatively use the static hardware detection module (for systems that
-### lack udev support)
-#load-module module-detect
-#.endif
-
-```
-
-Basically, this prevents module-udev-detect from loading. module-udev-detect will always try to grab the sound card (JACK has already done that, so this will cause an error). Also, the JACK source and sink must be explicitly loaded.
-
-#### QjackCtl with start-up/shutdown scripts
+This method relies on shell scripts to automatically kill PulseAudio when JACK is started, and automatically restart it when JACK is stopped. This will result in lower CPU usage than having both running, but can cause errors in already running PulseAudio application and does not allow simultaneous output of both.
 
 Using the settings listed above, use QjackCtl to execute a script upon startup and shutdown to load/unload PulseAudio. Part of the reason users may wish to do this is that the above changes disable PulseAudio's automatic hardware detection modules. This particular setup is for using PulseAudio in an exclusive fashion with JACK, though the scripts could be modified to unload and load an alternate non-JACK setup, but killing and starting PulseAudio while programs might be using it would become problematic.
 
@@ -701,9 +645,8 @@ Using the settings listed above, use QjackCtl to execute a script upon startup a
 The following example could be used and modified as necessary as a startup script that daemonizes PulseAudio and loads the *padevchooser* program (optional, needs to be built from AUR) called `jack_startup`:
 
 ```
-#!/bin/bash
+#!/bin/bash	
 #Load PulseAudio and PulseAudio Device Chooser
-
 pulseaudio -D
 padevchooser&
 
@@ -712,11 +655,10 @@ padevchooser&
 as well as a shutdown script to kill PulseAudio and the Pulse Audio Device Chooser, as another example called `jack_shutdown` also in the home directory:
 
 ```
-#!/bin/bash
-#Kill PulseAudio and PulseAudio Device Chooser
-
-pulseaudio --kill
-killall padevchooser
+#!/bin/bash	
+#Kill PulseAudio and PulseAudio Device Chooser		
+pulseaudio --kill	
+killall padevchooser	
 
 ```
 

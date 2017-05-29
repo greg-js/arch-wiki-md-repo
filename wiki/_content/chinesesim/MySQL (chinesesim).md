@@ -37,21 +37,21 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 *   如果数据库 (位于 `/var/lib/mysql`) 运行在[Btrfs](/index.php/Btrfs "Btrfs")分区之上, 你应当在创建数据库之前禁用 [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") 特性。
 *   如果数据库运行在 [ZFS](/index.php/ZFS "ZFS") 分区之上, 你应该在创建数据库之前参阅 [ZFS#Database](/index.php/ZFS#Database "ZFS") 。
 
-安装Maria软件包之后，你必须运行下面这条命令：
+安装Mariadb软件包之后，你必须运行下面这条命令：
 
 ```
 # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 ```
 
-启动 `mysqld` [守护进程](/index.php/Daemon "Daemon")，运行安装脚本，然后重新启动守护进程：
+启动 `mariadb` [守护进程](/index.php/Daemon "Daemon")，运行安装脚本，然后重新启动守护进程：
 
-**Tip:** 如果数据目录使用的不是 `/var/lib/mysql`，需要 [编辑](/index.php/Systemd#Editing_provided_units "Systemd") `mysqld.service` 文件并将目录设置到 `ExecStart` 行.
+**Tip:** 如果数据目录使用的不是 `/var/lib/mysql`，需要 [编辑](/index.php/Systemd#Editing_provided_units "Systemd") `mariadb.service` 文件并将目录设置到 `ExecStart` 行.
 
 ```
-# systemctl start mysqld
+# systemctl start mariadb
 # mysql_secure_installation
-# systemctl restart mysqld
+# systemctl restart mariadb
 
 ```
 

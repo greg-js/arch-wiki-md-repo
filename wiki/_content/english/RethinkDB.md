@@ -4,6 +4,14 @@ RethinkDB is a document-oriented database similar to [MongoDB](/index.php/MongoD
 
 Install [rethinkdb](https://www.archlinux.org/packages/?name=rethinkdb) from the official repositories.
 
+Create and set user rights for RethinkDB folder:
+
+```
+# mkdir /var/lib/rethinkdb/default
+# chown -R rethinkdb:rethinkdb /var/lib/rethinkdb/
+
+```
+
 Now you can start `rethinkdb` from the command-line:
 
 ```

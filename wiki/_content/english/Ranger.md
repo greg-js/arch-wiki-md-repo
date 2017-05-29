@@ -91,7 +91,7 @@ To use it, type `:empty` and `Enter` with tab completion as desired.
 
 ### Color schemes
 
-Ranger comes with three color schemes: `default`, `jungle` and `snow`. You can change your color scheme using:
+Ranger comes with four color schemes: `default`, `jungle`, `snow` and `solarized`. You can change your color scheme using:
 
 ```
 set colorscheme *scheme*

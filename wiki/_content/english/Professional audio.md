@@ -12,8 +12,7 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
         *   [1.2.4 Desktop Effects vs JACK](#Desktop_Effects_vs_JACK)
         *   [1.2.5 A General Example](#A_General_Example)
 *   [2 Realtime Kernel](#Realtime_Kernel)
-    *   [2.1 ABS](#ABS)
-    *   [2.2 AUR](#AUR)
+    *   [2.1 AUR](#AUR)
 *   [3 MIDI](#MIDI)
 *   [4 Environment Variables](#Environment_Variables)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
@@ -287,10 +286,6 @@ There are ready-to-run/compile patched kernels available in the ABS and AUR.
 
 **Note:** Before you decide to use a patched kernel, see [http://jackaudio.org/faq/realtime_vs_realtime_kernel.html](http://jackaudio.org/faq/realtime_vs_realtime_kernel.html).
 
-### ABS
-
-You can use [ABS](/index.php/ABS "ABS") to recompile [linux](https://www.archlinux.org/packages/?name=linux) with the patch. However, this is not the most useful of methods since updates will overwrite your custom kernel (at least you should add `IgnorePkg=linux` to `/etc/pacman.conf`).
-
 ### AUR
 
 From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
@@ -338,6 +333,8 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 
 *   Do not use the **irqbalance** daemon, or do so carefully [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 
+*   If you need to use multiple audio devices with JACK2, the **alsa_in** and **alsa_out** utilities. can be used to have extra devices wrapped and show up as outputs in the JACK patchbay.
+
 *   Some daemons/processes can unexpectedly cause **xruns**. If you do not need it - kill it. No questions asked.
 
 ```
@@ -353,6 +350,10 @@ $ killall -9 $processname
 *   You may like to read more on ALSA: [http://www.volkerschatz.com/noise/alsa.html](http://www.volkerschatz.com/noise/alsa.html)
 
 ## Hardware
+
+The majority of sound cards and audio devices will work with no extra configuration or packages, simply set the sound card jack is using to them and restart.
+
+This is not true for all devices, and so special cases are also listed.
 
 ### M-Audio Delta 1010
 

@@ -1,13 +1,13 @@
-本指南讨论的是基于*USB*的Wacom数位板，本文提供的大部分信息都着重于此。通常推荐依赖于[Xorg](/index.php/Xorg "Xorg")的自动检测功能更或者使用*动态*的设置。 然而，对于一些内嵌的数位板，如果自动检测功能不起作用，可以考虑使用静态的Xorg设置。 一份静态的Xorg设置通常会导致，当你的Wacom数位板连接到不同的*USB*端口后，甚至当你在同个端口上重新拔插后，设备无法被识别。因此，不推荐使用静态设置。
+本指南最初是为基于 *USB* 的 Wacom 数位板撰写的，所以文中大部分内容都集中于它。通常推荐依赖于 [Xorg](/index.php/Xorg "Xorg") 的自动检测功能更或者使用*动态*的设置。 然而，对于一些*内嵌*的数位板，当自动检测功能不起作用时，可以考虑使用静态的 Xorg 设置。 一份静态的 Xorg 设置通常会导致，当你的 Wacom 数位板连接到不同的 *USB* 端口后，甚至当你在同一端口上重新拔插后，设备无法被识别。因此，此方法被认定是过时的。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
     *   [1.1 自动设置](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
     *   [1.2 手动设置](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE)
-        *   [1.2.1 使用udev](#.E4.BD.BF.E7.94.A8udev)
+        *   [1.2.1 使用 udev](#.E4.BD.BF.E7.94.A8_udev)
             *   [1.2.1.1 USB设备](#USB.E8.AE.BE.E5.A4.87)
-            *   [1.2.1.2 Serial devices](#Serial_devices)
+            *   [1.2.1.2 串行设备](#.E4.B8.B2.E8.A1.8C.E8.AE.BE.E5.A4.87)
         *   [1.2.2 静态设置](#.E9.9D.99.E6.80.81.E8.AE.BE.E7.BD.AE)
         *   [1.2.3 Xorg配置](#Xorg.E9.85.8D.E7.BD.AE)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
@@ -42,21 +42,21 @@
 ## 安装
 
 1.  **检查内核是否已经识别你的数位板**
-    对于USB数位板, 连接电脑并检查`lsusb`、`dmesg | grep -i wacom`或者`/proc/bus/input/devices`的输出。
+    对于 USB 数位板, 连接电脑并检查`lsusb`、`dmesg | grep -i wacom`或者`/proc/bus/input/devices`的输出。
     当你的数位板无法被识别，而能够识别它的驱动比内核中的驱动更新时，请尝试安装[input-wacom-dkms](https://aur.archlinux.org/packages/input-wacom-dkms/)。
 2.  **安装 Wacom 驱动**
-    请安装软件包[xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)，如果无法使用，请尝试不稳定的[xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/)包。
+    请安装软件包 [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) ，如果无法使用，请尝试不稳定的 [xf86-input-wacom-git](https://aur.archlinux.org/packages/xf86-input-wacom-git/) 包。
 
 ### 自动设置
 
-新版本的X应当可以自动地检测并配置你的设备。在进一步之前，请重启X使udev的规则生效。要测试你的设备是否已经被完整的识别（例如笔和橡皮，如果有的话），请执行如下的命令
+新版本的 X 应当可以自动地检测并配置你的设备。在进一步之前，请重启 X 使新的 udev 规则生效。要测试你的设备是否已经被完整的识别（即笔和橡皮（如果有的话）都正常工作），请执行如下的命令
 
 ```
  $ xsetwacom --list devices
 
 ```
 
-该命令应当检测出所有类型的设备，例如
+该命令应当检测出所有设备并给出类型，例如
 
 ```
  Wacom Bamboo 2FG 4x5 Pen stylus 	id: 8	type: STYLUS    
@@ -66,19 +66,19 @@
 
 ```
 
-你也可以通过打开[gimg](https://www.archlinux.org/packages/?name=gimg)或者[xournal](https://www.archlinux.org/packages/?name=xournal)测试设备，并且检查扩展输入设备部分（extended input devices section），或者任何数位板相关的配置是否被你选择的软件支持。
+你也可以通过打开 [gimp](https://www.archlinux.org/packages/?name=gimp) 或者 [xournal](https://www.archlinux.org/packages/?name=xournal) 测试设备，并且检查扩展输入设备部分（extended input devices section），或者任何数位板相关的配置是否被你选择的软件支持。
 
-为了使其工作，你不需要`xorg.conf`文件，所有的配置都已经在`/etc/X11/xorg.conf.d/`文件夹中。 如果一切工作良好的话，你可以跳过手动设置章节，并继续阅读配置部分，学习如何更进一步地自定义你的数位板。
+为了使其工作，你不需要 `xorg.conf` 文件，所有的配置更改都在 `/etc/X11/xorg.conf.d/` 文件夹中。 如果一切正常的话，你可以跳过手动设置章节继续阅读配置部分，了解如何更进一步地自定义你的数位板。
 
-随着Xorg 1.8的到来，HAL的支持被放弃，对于[udev](/index.php/Udev "Udev")来说这可能会影响对某些数位板的自动检测功能，因为适用的udev规则可能不存在了，因此你可能需要自己编写。
+随着 Xorg 1.8 的到来，会弃用HAL支持转而使用udev。因为他们的 udev 规则还不存在，致使部分型号的平板电脑无法透过udev正常执行自动检测，因此你可能需要自己编写。
 
-*xf86-input-wacom*驱动在设计上是与Xorg服务器配合工作的，因此当你在Wayland上运行你的桌面环境的时候可能会出问题（而Wayland在Gnome上是默认的）。
+*xf86-input-wacom*驱动设计成与 Xorg 服务器配合工作，因此当你在 Wayland 上运行你的桌面环境的时候可能会出问题（Gnome 的默认窗口系统）。
 
 ### 手动设置
 
-一份手动配置需要保存在 `/etc/X11/xorg.conf` 中，或者作为单独的文件保存在 `/etc/X11/xorg.conf.d/` 目录下。 Wacom 数位板的访问需要通过由内核驱动提供的 `/dev/input/` 中的一个输入事件接口。 接口的编号 `event??` 可能会随着设备从 *USB* 端口的拔插而改变，特别是从不同的端口拔插。 因此，明智的做法是不要使用具体的 `event??` 接口（*静态*配置）来确定设备，而是让 *udev* 自动地创建一个符号链接到正确的 `event` 文件（*动态*配置）。
+手动配置需要保存在 `/etc/X11/xorg.conf` 中，或者作为单独的文件保存在 `/etc/X11/xorg.conf.d/` 目录下。 访问 Wacom 数位板需要通过访问 `/dev/input/` 中的一个输入事件接口，该接口由内核驱动提供。 接口的编号 `event??` 可能会随着设备从 *USB* 端口的拔插而改变，特别是从不同的端口拔插。 因此，明智的做法是不要使用具体的 `event??` 接口（*静态*配置）来确定设备，而是让 *udev* 动态创建一个符号链接到正确的 `event` 文件（*动态*配置）。
 
-#### 使用udev
+#### 使用 udev
 
 **注意:** AUR 中的 wacom-udev 包含了 udev 的规则文件。如果你正在使用这个包，可以跳过本小节，并从 `xorg.conf`配置 部分继续。
 
@@ -86,7 +86,7 @@
 
 ##### USB设备
 
-在你（重新）插入你的 *USB* 数位板之后（或者至少是重启之后），`/dev/input` 下应当会出现一些指向你的数位板设备的符号链接。
+在你（重新）插入你的 *USB* 数位板之后（或者至少是重启之后），`/dev/input` 下应当会出现一些关联到你的数位板设备的符号链接。
 
 ```
  $ ls /dev/input/wacom* 
@@ -94,9 +94,11 @@
 
 ```
 
-如果没有的话，你的设备可能并没有包含在 *wacom-dev* 自带的 *udev* 配置中（位于 `/usr/lib/udev/rules.d/10-wacom.rules`）。在修改这个文件之前最好复制一份（例如，复制为 `10-my-wacom.rules`），不然它可能会在包升级的时候被覆盖。
+如果没有，你的设备可能并没有包含在 *wacom-dev* 自带的 *udev* 配置中（位于 `/usr/lib/udev/rules.d/10-wacom.rules`）。在修改这个文件之前最好复制一份（例如，复制为 `10-my-wacom.rules`），不然它可能会在包升级的时候被覆盖（回滚）。
 
-要将你的设备加入到文件中，请复制文件里的某一行并且更改行中的 *idVendor*，*idProduct* 和 *SYMLINK* 的值为你的设备的对应值。 其中两个 id 可以通过以下命令确认：
+要将你的设备加入到文件中，请复制文件里的某一行并且更改其中的 *idVendor*，*idProduct* 和 *SYMLINK* 的值为你的设备的对应值。
+
+其中两个 id 可以通过以下命令确认：
 
 ```
 $ lsusb | grep -i wacom
@@ -104,13 +106,13 @@ Bus 002 Device 007: ID 056a:0062 Wacom Co., Ltd
 
 ```
 
-在这个例子中 *idVendor* 的值为 056a，*idProduct* 的值为 0062。 如果你的设备有触摸功能（例如 Bamboo Pen&Touch），则可能需要为触摸输入接口添加第二行配置。 更多详情请参考 linuxwacom 的 wiki [Fixed device files with udev](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Fixed_device_files_with_udev)。
+在这个例子中 *idVendor* 的值为 056a，*idProduct* 的值为 0062。 如果你的设备有触摸功能（例如 Bamboo Pen&Touch），则可能需要为触摸输入接口添加一行配置。 更多详情请参考 linuxwacom 的 wiki [Fixed device files with udev](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Fixed_device_files_with_udev)。
 
-保存文件并使用命令 *udevadm control --reload-rules* 重新加载 udev 的配置文件。 再次检查 */dev/input*，确保符号链接 *wacom* 已出现。 注意，你可能需要重新拔插设备。
+保存文件并使用命令 `udevadm control --reload-rules` 重新加载 udev 的配置文件。 再次检查 */dev/input*，确保符号链接 *wacom* 已出现。 注意，你可能需要重新拔插设备才能看到设备。
 
 `/dev/input/wacom` 将会在 *Xorg* 配置中进一步使用，对于触摸设备来说，还有 `/dev/input/wacom_touch`。
 
-##### Serial devices
+##### 串行设备
 
 软件包 [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) 也应当包括了对串行设备的支持。串行设备的用户也许会对 [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) 软件包中的 inputattach 工具感兴趣。inputattach 命令允许你将串行设备绑定到 /dev/input 设备树上，例如：
 
@@ -119,7 +121,7 @@ Bus 002 Device 007: ID 056a:0062 Wacom Co., Ltd
 
 ```
 
-关于可用选项的帮助，请参见 *man inputattach*。 和 USB 设备一样，最终应得到一个 `/dev/input/wacom` 文件，然后继续进行 *Xorg* 配置。
+关于可用选项的帮助，请参见 *man inputattach*。 对于 USB 设备，最终你应得到一个 `/dev/input/wacom` 文件，然后继续进行 *Xorg* 配置。
 
 #### 静态设置
 

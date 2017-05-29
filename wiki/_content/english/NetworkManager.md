@@ -27,6 +27,8 @@
         *   [3.4.3 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
         *   [3.4.4 Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_Wi-Fi_depending_on_LAN_cable_being_plugged_in)
         *   [3.4.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
+            *   [3.4.5.1 Create the dispatcher script](#Create_the_dispatcher_script)
+            *   [3.4.5.2 Give the script access to VPN password](#Give_the_script_access_to_VPN_password)
         *   [3.4.6 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
     *   [3.5 Proxy settings](#Proxy_settings)
     *   [3.6 Disable NetworkManager](#Disable_NetworkManager)
@@ -319,7 +321,7 @@ fi
 
 In this example we want to connect automatically to a previously defined VPN connection after connecting to a specific Wi-Fi network. First thing to do is to create the dispatcher script that defines what to do after we are connected to the network.
 
-	1\. Create the dispatcher script:
+##### Create the dispatcher script
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
 ```
@@ -347,11 +349,47 @@ esac
 
 If you would like to attempt to automatically connect to VPN for all Wi-Fi networks, you can use the following definition of the ESSID: `ESSID=$(iwgetid -r)`. Remember to set the script's permissions [accordingly](#Network_services_with_NetworkManager_dispatcher).
 
-If you require and tick the `nm-applet` option to *Make the VPN connection available to all users*, trying to connect may still fail and NetworkManager will complain about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), which brings us to step 2:
+##### Give the script access to VPN password
 
-	2\. Either edit the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/*name of your VPN connection*` and change the `password-flags` and `secret-flags` from `1` to `0`.
+Trying to connect with the above script may still fail with `NetworkManager-dispatcher.service` complaining about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Fortunately, there are different options to give the above script access to your VPN password.
 
-Alternatively put the password directly in the configuration file adding the section `vpn-secrets`:
+1: One of them requires editing the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/*name of your VPN connection*` and change the `password-flags` and `secret-flags` from `1` to `0`.
+
+If that alone doesn't work, you may have to create a `passwd-file` in a safe location with the same permissions and ownership as the dispatcher script, containing the following:
+
+ `/path/to/passwd-file` 
+```
+vpn.secrets.password:YOUR_PASSWORD
+
+```
+
+The script must be changed accordingly, so that it gets the password from the file:
+
+ `/etc/NetworkManager/dispatcher.d/vpn-up` 
+```
+#!/bin/sh
+VPN_NAME="name of VPN connection defined in NetworkManager"
+ESSID="Wi-Fi network ESSID (not connection name)"
+
+interface=$1 status=$2
+case $status in
+  up|vpn-down)
+    if iwgetid | grep -qs ":\"$ESSID\""; then
+      nmcli con up id "$VPN_NAME" passwd-file /path/to/passwd-file
+    fi
+    ;;
+  down)
+    if iwgetid | grep -qs ":\"$ESSID\""; then
+      if nmcli con show --active | grep "$VPN_NAME"; then
+        nmcli con down id "$VPN_NAME"
+      fi
+    fi
+    ;;
+esac
+
+```
+
+2: Alternatively, change the `password-flags` and put the password directly in the configuration file adding the section `vpn-secrets`:
 
 ```
  [vpn]

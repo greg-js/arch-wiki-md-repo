@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Unofficial binary repository](#Unofficial_binary_repository)
+    *   [1.1 Unofficial repository](#Unofficial_repository)
     *   [1.2 Desktop Environment](#Desktop_Environment)
     *   [1.3 Services and Configuration](#Services_and_Configuration)
     *   [1.4 Theme](#Theme)
@@ -11,7 +11,7 @@
 *   [2 Launching Pantheon](#Launching_Pantheon)
     *   [2.1 Via Display manager](#Via_Display_manager)
     *   [2.2 Via xinit](#Via_xinit)
-        *   [2.2.1 Autostart applications with ~/.xinitrc](#Autostart_applications_with_.7E.2F.xinitrc)
+        *   [2.2.1 Autostart applications with *xinit*](#Autostart_applications_with_xinit)
 *   [3 Configuration](#Configuration)
     *   [3.1 Plank](#Plank)
         *   [3.1.1 Adding new application icons](#Adding_new_application_icons)
@@ -38,7 +38,7 @@
 
 **Note:** Although their release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions") LTS release cycle, [elementary OS development](https://plus.google.com/communities/104613975513761463450) moves quickly and has recently moved to [github](https://github.com/elementary).
 
-### Unofficial binary repository
+### Unofficial repository
 
 [Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in [community](/index.php/Community "Community"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
@@ -125,6 +125,7 @@ Alternatively, you can use `~/.xinitrc` to launch the Pantheon shell, such as:
 ```
 #!/bin/sh
 
+#Prepend xinitrc.d/ configuration
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
     [ -x "$f" ] && . "$f"
@@ -132,6 +133,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+#Autostart services and applications
 gsettings-data-convert &
 xdg-user-dirs-gtk-update &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -139,23 +141,33 @@ xdg-user-dirs-gtk-update &
 /usr/lib/gnome-user-share/gnome-user-share &
 eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
 export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
+
+#Load Pantheon
 exec cerbere
 
 ```
 
-#### Autostart applications with `~/.xinitrc`
+#### Autostart applications with *xinit*
 
-Xinit does not implement [XDG](/index.php/XDG_support "XDG support") autostart. For applications which do not provide a [systemd unit](/index.php/Systemd#Using_units "Systemd"), here are three other ways to start services:
+For applications which do not provide a [systemd unit](/index.php/Systemd#Using_units "Systemd"), consider these options:
 
-*   Add any program to your `~/.xinitrc`, preferably right before the `exec cerbere` line. This is the better choice for one-shot programs.
-*   Edit the `org.pantheon.desktop.cerbere.monitored-processes` key using *dconf-editor* and add the programs of your choice. This method is best for applications which keep running in the background.
-*   Use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to add support for XDG autostart.
+*   Run once when X starts:
 
-**Note:** Keep in mind that applications started via *cerbere* cannot be terminated, they will keep respawning up to the value of `org.pantheon.desktop.cerbere.max-crashes`
+	Add it to your [`~/.xinitrc`](#Via_xinit), before the `exec cerbere` line. This is a [Shell](/index.php/Shell "Shell") script.
+
+*   Keep running in the background:
+
+	[Add it to the dconf key](#Configuration) `org.pantheon.desktop.cerbere.monitored-processes`; should the process stop, *cerbere* will respawn it as many times as `org.pantheon.desktop.cerbere.max-crashes`.
+
+*   Launch from a [.desktop](/index.php/.desktop ".desktop") file:
+
+	Use a program like [dapper](https://aur.archlinux.org/packages/dapper/), [dex-git](https://aur.archlinux.org/packages/dex-git/), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) to implement [XDG autostart](/index.php/Desktop_entries#Autostart "Desktop entries").
 
 ## Configuration
 
-Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchboard/) and its plugs (*switchboard-plug-**), which must be installed separately. The intent is to replace [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), but not all settings--particularly not third-party applications' settings--have been ported. In some cases, you may prefer to use [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) or [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) instead. All Pantheon settings, except [plank's](/index.php/Plank "Plank"), can also be altered via *dconf* and are located in the `org.pantheon` key. Use [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) for easy editing.
+Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchboard/) and its plugs (*switchboard-plug-**), which must be installed separately. Not all of [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)'s settings panels have been ported. Except [plank](/index.php/Plank "Plank"), all the Pantheon components store their configuration in the `org.pantheon` [dconf key](/index.php/GNOME#Configuration "GNOME"), which can be edited with [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor).
+
+**Note:** [switchboard-plug-elementary-tweaks-git](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-git/) provides easy access to [customizations for various aspects of the Pantheon desktop and applications](https://raw.githubusercontent.com/elementary-tweaks/elementary-tweaks/master/docs/screenshot.png), similar to [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 
 ### Plank
 
@@ -175,7 +187,7 @@ If you want to enable context menu entries such as for [file-roller](https://www
 
 #### Opacity (transparency)
 
-To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) (semi-)transparent, open [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) and go to `org.pantheon.terminal.settings.opacity` to set your desired opacity. For [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/), the background color and transparency are set by `org.pantheon.terminal.settings.background`.
+To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) (semi-)transparent, [set the dconf key](#Configuration) `org.pantheon.terminal.settings.opacity` to your desired opacity; for [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/), the background color and transparency are set by `org.pantheon.terminal.settings.background`.
 
 ## Known Issues
 

@@ -11,7 +11,9 @@ There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
     *   [2.3 Chrome/Chromium](#Chrome.2FChromium)
     *   [2.4 Nextcloud](#Nextcloud)
     *   [2.5 Yubikey](#Yubikey)
-*   [3 See Also](#See_Also)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Disable your clipboard manager](#Disable_your_clipboard_manager)
+*   [4 See Also](#See_Also)
 
 ## Installation
 
@@ -116,6 +118,12 @@ Open Keepass stores inside Nextcloud
     1.  Get the plugin from AUR: [keepass-plugin-keechallenge](https://aur.archlinux.org/packages/keepass-plugin-keechallenge/)
     2.  In KeePass additional option will show up under `Key file / provider` called `Yubikey challenge-response`
     3.  Plugin assumes slot 2 is used
+
+## Tips and tricks
+
+### Disable your clipboard manager
+
+If you are an avid user of clipboard managers, you can may need to disable your clipboard manager before you launch keepass and then re-start your clipboard manager afterward.
 
 ## See Also
 

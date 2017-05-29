@@ -71,7 +71,7 @@ Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the 
 
 ### CPU Scaling on Intel i-Series
 
-Scaling on Intel i-Series Processors will work properly unless you disable intel_pstate on the kernels commandline:
+Scaling on Intel i-Series Processors will not work properly unless you disable intel_pstate on the kernels commandline:
 
 ```
 # intel_pstate=disable

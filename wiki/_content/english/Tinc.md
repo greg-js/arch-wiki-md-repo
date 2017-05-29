@@ -194,7 +194,7 @@ And finally restart your tinc daemon:
 
 Tinc can be configured to automatically start at boot time using systemd units.
 
-Firstly enable the tinc service
+If you want to be able to start, stop or reload all of your networks at once, you have to enable the tinc service
 
 ```
 # systemctl enable tinc

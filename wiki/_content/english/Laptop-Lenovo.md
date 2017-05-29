@@ -36,6 +36,7 @@
     *   [3.11 Lenovo S21e-20](#Lenovo_S21e-20)
         *   [3.11.1 tpacpi-bat](#tpacpi-bat)
         *   [3.11.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
+    *   [3.12 Lenovo IdeaPad Y700](#Lenovo_IdeaPad_Y700)
 *   [4 See also](#See_also)
 
 ## IBM/Lenovo
@@ -174,7 +175,7 @@ install CD version
 | [Lenovo IdeaPad S10](/index.php/Lenovo_IdeaPad_S10 "Lenovo IdeaPad S10") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo IdeaPad S400 Touch](/index.php/Lenovo_IdeaPad_S400_Touch "Lenovo IdeaPad S400 Touch") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
 | Lenovo IdeaPad U430p | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
-| Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Trackpad - [buggy](https://unix.stackexchange.com/questions/362165/lenovo-y700-elantech-touchpad-query-0x01-failed) | [Trackpad requires pata_legacy to be blacklisted](https://bugzilla.kernel.org/show_bug.cgi?id=151681) |
+| Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes* | Yes | Yes | Yes | Not tested | NA | Trackpad - [buggy](https://unix.stackexchange.com/questions/362165/lenovo-y700-elantech-touchpad-query-0x01-failed) | [Trackpad requires pata_legacy to be blacklisted](https://bugzilla.kernel.org/show_bug.cgi?id=151681) |
 | [Lenovo Ideapad Z580](/index.php/Lenovo_Ideapad_Z580 "Lenovo Ideapad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 
 ### B series
@@ -323,6 +324,10 @@ See [https://github.com/teleshoes/tpacpi-bat/issues/44](https://github.com/teles
 #### ThinkPad Edge E420s Delay with Space Bar
 
 Solution: Update BIOS (at least 1.08).
+
+### Lenovo IdeaPad Y700
+
+*   The subwoofer does not work out of the box and it seems that there is no solution yet.
 
 ## See also
 

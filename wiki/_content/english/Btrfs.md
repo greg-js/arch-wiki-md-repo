@@ -17,7 +17,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 *   [3 Configuring the file system](#Configuring_the_file_system)
     *   [3.1 Copy-on-Write (CoW)](#Copy-on-Write_.28CoW.29)
         *   [3.1.1 Disabling CoW](#Disabling_CoW)
-        *   [3.1.2 Forcing CoW](#Forcing_CoW)
+        *   [3.1.2 Creating lightweight copies](#Creating_lightweight_copies)
     *   [3.2 Compression](#Compression)
     *   [3.3 Subvolumes](#Subvolumes)
         *   [3.3.1 Creating a subvolume](#Creating_a_subvolume)
@@ -139,16 +139,16 @@ $ rm -rf */path/to/dir*_old
 
 Make sure that the data are not used during this process. Also note that `mv` or `cp --reflink` as described below will not work.
 
-#### Forcing CoW
+#### Creating lightweight copies
 
-To force copy-on-write when copying files use:
+By default, when copying files on a Btrfs filesystem with `cp`, actual copies are created. To create a lightweight copy referencing to the original data, use the *reflink* option:
 
 ```
 $ cp --reflink *source* *dest* 
 
 ```
 
-This would only be required if CoW was disabled for the file to be copied (as implemented above). See the man page on `cp` for more details on the `--reflink` flag.
+See the man page on [cp(1)](http://man7.org/linux/man-pages/man1/cp.1.html) for more details on the `--reflink` flag.
 
 ### Compression
 

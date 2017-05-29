@@ -65,6 +65,7 @@ Other alternative greeters are available in the [AUR](/index.php/AUR "AUR").
 *   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
+*   [lightdm-mini-greeter](https://aur.archlinux.org/packages/lightdm-mini-greeter/): A minimal, configurable, single-user greeter.
 
 You can set the default greeter by changing the `[Seat:*]` section of the LightDM configuration file, like so:
 

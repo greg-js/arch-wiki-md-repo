@@ -301,14 +301,14 @@ More about metadata checksums can be read on the [ext4 wiki](https://ext4.wiki.k
 
 ### New filesystem
 
-To enable support for ext4 metadata checksums on a new file system make sure that you have `e2fsprogs 1.43` or newer and simply do a:
+To enable support for ext4 metadata checksums on a new file system make sure that you have `e2fsprogs 1.43` or newer and run:
 
 ```
-# mkfs.ext4 */dev/path/to/disk*
+# mkfs.ext4 -O metadata_csum */dev/path/to/disk*
 
 ```
 
-The `metadata_csum` and `64bit` options will be enabled by default.
+The `64bit` option is enabled by default.
 
 The file-system can then be mounted as usual.
 
@@ -357,6 +357,6 @@ Keep in mind that the intel module consistently performs 10x faster than the gen
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
 *   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
-*   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Kernel commits for ext4 encryption [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

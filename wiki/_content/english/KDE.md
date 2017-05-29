@@ -76,6 +76,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [6.6.3.2 Disable compositing](#Disable_compositing)
         *   [6.6.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
         *   [6.6.5 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
+        *   [6.6.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
     *   [6.7 Sound problems under KDE](#Sound_problems_under_KDE)
         *   [6.7.1 ALSA related problems](#ALSA_related_problems)
             *   [6.7.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
@@ -92,7 +93,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
 
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
-Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) meta-package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group. For differences between [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) and [plasma](https://www.archlinux.org/groups/x86_64/plasma/) reference [Creating packages#Meta packages and groups](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"). Alternatively, for a more minimal Plasma installation, install the [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) package.
+[Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) meta-package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group. For differences between [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) and [plasma](https://www.archlinux.org/groups/x86_64/plasma/) reference [Creating packages#Meta packages and groups](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"). Alternatively, for a more minimal Plasma installation, install the [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) package.
+
+[Install](/index.php/Install "Install") [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) to enable support for [Wayland](/index.php/Wayland "Wayland") in Plasma.
 
 ### KDE applications and language packs
 
@@ -106,25 +109,27 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 ## Starting Plasma
 
+**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), you may encounter an unstable and incomplete Plasma desktop. Upstream recommends to use [Xorg](/index.php/Xorg "Xorg") as porting to Wayland is still work in progress.
+
 Plasma can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
 
 ### Graphically
 
-**Tip:** To better integrate SDDM with Plasma, it is recommended to use the breeze theme. Related setting is located at *System Settings > Startup and Shutdown*. See [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
+**Tip:** To better integrate [SDDM](/index.php/SDDM "SDDM") with Plasma, it is recommended to (force-)select the breeze theme. Related setting is located at *System Settings > Startup and Shutdown*. See [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
 
-To launch a Plasma session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
+Using a [Display manager](/index.php/Display_manager "Display manager"):
 
-For a Wayland Plasma session, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma (Wayland)* should be available from the display manager
+*   Select *Plasma* to launch a new session in [Xorg](/index.php/Xorg "Xorg").
+*   [Install](/index.php/Install "Install") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) and select *Plasma (Wayland)* to launch a new session in [Wayland](/index.php/Wayland "Wayland").
 
-**Tip:** The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver implementation for Wayland requires EGLStreams. KDE have not implemented EGLStreams in their Wayland [implementation](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not). Therefore the following choice for exists:
+**Note:** The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver implementation for Wayland requires EGLStreams. KDE have not implemented EGLStreams in their Wayland [implementation](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not). The following workarounds are available:
 
-	Use KDE + Wayland on NVIDIA graphics hardware, use the [Nouveau](/index.php/Nouveau "Nouveau") driver
-
-	Use the NVIDIA proprietary driver, use KDE + Xorg
+*   Using the [Nouveau](/index.php/Nouveau "Nouveau") driver.
+*   Using the (default) Xorg session.
 
 ### Manual
 
-To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`. Note that [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is required to run Plasma on Wayland.
+To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
 
 ## Configuration
 
@@ -140,8 +145,6 @@ Some Frameworks 5 applications can use KDElibs 4 configuration, after moving the
 #### Plasma desktop
 
 ##### Themes
-
-**Note:** If the Plasma cursor theme is incorrect in some instances, see the following [forum post](https://bbs.archlinux.org/viewtopic.php?pid=1533071#p1533071) for a workaround.
 
 [Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some such themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
 
@@ -779,6 +782,23 @@ export __GL_YIELD="USLEEP"
 ```
 
 This however does only work with OpenGL compositing.
+
+#### Plasma cursor sometimes shown incorrecty
+
+Create the directory `~/.icons/default` and inside a file named `index.theme` with the following contents:
+
+ `/home/*archie*/.icons/default/index.theme` 
+```
+[Icon Theme]
+Inherits=breeze_cursors
+```
+
+Execute the following command:
+
+```
+$ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
+
+```
 
 ### Sound problems under KDE
 

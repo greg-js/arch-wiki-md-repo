@@ -154,7 +154,7 @@ rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/of/ba
 
 #### Automated backup with NetworkManager
 
-This script starts a backup when you plugin your wire.
+This script starts a backup when network connection is established.
 
 First, create a script containing the appropriate command options:
 
@@ -179,7 +179,7 @@ fi
 
 	limit I/O bandwidth; KBytes per second
 
-Also, the script must have write permission for owner (root, of course) only (see [NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
+Also, the script must have write permission for owner (root, of course) only (see [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
 
 #### Automated backup with systemd and inotify
 

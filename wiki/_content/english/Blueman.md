@@ -64,7 +64,7 @@ Users who want to use [PulseAudio](/index.php/PulseAudio "PulseAudio") with a Bl
 
 ## Configuration
 
-Configuration is done through [dconf](https://www.archlinux.org/packages/?name=dconf) (or gsettings or [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor)).
+Configuration is done through [dconf](https://www.archlinux.org/packages/?name=dconf) (or gsettings or [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor)) under `/org/blueman`.
 
 ### Disable auto power-on
 
