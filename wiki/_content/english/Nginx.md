@@ -341,6 +341,7 @@ Inside each `server` block serving a PHP web application should appear a `locati
 ```
 location ~ \.php$ {
      fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+     root           /usr/share/nginx/html;
      fastcgi_index  index.php;
      include        fastcgi.conf;
 }
@@ -352,6 +353,7 @@ If it is needed to process other extensions with PHP (e.g. *.html* and *.htm*):
 ```
 location ~ \.(php**|html|htm**)$ {
      fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+     root           /usr/share/nginx/html;
      fastcgi_index  index.php;
      include        fastcgi.conf;
 }
@@ -394,6 +396,7 @@ server {
     location ~ \.php$ {
         #fastcgi_pass 127.0.0.1:9000; (depending on your php-fpm socket configuration)
         fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        root /usr/share/nginx/html;
         fastcgi_index index.php;
         include fastcgi.conf;
     }

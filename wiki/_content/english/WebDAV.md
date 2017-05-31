@@ -8,6 +8,7 @@ The goal of this how to is to setup a simple WebDAV configuration using a [web s
     *   [1.1 Apache](#Apache)
 *   [2 Client](#Client)
     *   [2.1 Cadaver](#Cadaver)
+    *   [2.2 Thunar](#Thunar)
 *   [3 Authentication](#Authentication)
     *   [3.1 Apache](#Apache_2)
 
@@ -80,6 +81,15 @@ Creating `test': succeeded.
 dav:/dav/> ls
 Listing collection `/dav/': succeeded.
 Coll: test
+
+```
+
+### [Thunar](/index.php/Thunar "Thunar")
+
+Just press `Ctrl+l` and enter the address with *dav* or *davs* protocol specified:
+
+```
+davs://webdav.yandex.ru
 
 ```
 

@@ -95,7 +95,7 @@ Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "X
 
 [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) meta-package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group. For differences between [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) and [plasma](https://www.archlinux.org/groups/x86_64/plasma/) reference [Creating packages#Meta packages and groups](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"). Alternatively, for a more minimal Plasma installation, install the [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) package.
 
-[Install](/index.php/Install "Install") [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) to enable support for [Wayland](/index.php/Wayland "Wayland") in Plasma.
+To enable support for [Wayland](/index.php/Wayland "Wayland") in Plasma, also install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package.
 
 ### KDE applications and language packs
 
@@ -109,7 +109,7 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 ## Starting Plasma
 
-**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), you may encounter an unstable and incomplete Plasma desktop. Upstream recommends to use [Xorg](/index.php/Xorg "Xorg") as porting to Wayland is still work in progress.
+**Note:** Although it is possible to launch Plasma under [Wayland](/index.php/Wayland "Wayland"), there are some missing features and known problems as of Plasma 5.10\. See the [Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland) for a list. Use [Xorg](/index.php/Xorg "Xorg") for the most complete and stable experience.
 
 Plasma can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
 
@@ -538,6 +538,8 @@ The configuration through the GUI may be tricky: if the phone number is not acce
 *   RSA Encryption: your information is safe.
 
 You will need to install KDE Connect both on your computer and on your Android. For PC side, install [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install `KDE Connect` from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
+
+It is possible to use KDE Connect even if you do not use the Plasma desktop. For desktop environments that use AppIndicators, such as Unity, install [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/) package as well.
 
 ## Tips and tricks
 

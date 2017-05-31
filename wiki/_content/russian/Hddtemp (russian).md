@@ -47,16 +47,8 @@ ExecStart=/usr/bin/hddtemp -dF /dev/sda /dev/sdb /dev/sdc
 
 Вы также можете использовать [скрипт автоматического создания](https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh), который при помощи [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) обнаруживает все жесткие диски, поддерживаемые [hddtemp](https://www.archlinux.org/packages/?name=hddtemp); в результате чего сгенерированный шаблон файла `customexec.conf` будет отображаться в стандартном выводе.
 
-*   Перезагрузите файл юнита:
-
-```
-# systemctl --system daemon-reload
-
-```
-
-*   Перезапустите службу hddtemp:
-
- `# systemctl restart hddtemp` 
+*   [Перезагрузите systemd](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%B8%D1%82%D0%B5_systemd "Перезагрузите systemd").
+*   [Перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") службу `hddtemp`.
 
 Чтобы получить информацию о температуре, подключитесь к серверу со включеной службой, которая прослушивает порт 7634.
 

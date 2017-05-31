@@ -936,30 +936,11 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 
 ## See also
 
+*   [Aaron Toponce's 17-part blog on ZFS](https://pthree.org/2012/12/04/zfs-administration-part-i-vdevs/)
 *   [ZFS on Linux](http://zfsonlinux.org/)
 *   [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq)
 *   [FreeBSD Handbook -- The Z File System](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/zfs.html)
-*   [Oracle Solaris ZFS Administration Guide](http://docs.oracle.com/cd/E19253-01/819-5461/index.html)
+*   [Oracle Solaris ZFS Administration Guide](https://docs.oracle.com/cd/E19253-01/819-5461/index.html)
 *   [Solaris Internals -- ZFS Troubleshooting Guide](http://www.solarisinternals.com/wiki/index.php/ZFS_Troubleshooting_Guide)
-*   [Pingdom details how it backs up 5TB of MySQL data every day with ZFS](http://royal.pingdom.com/2013/06/04/zfs-backup/)
+*   [How Pingdom uses ZFS to back up 5TB of MySQL data every day](http://royal.pingdom.com/2013/06/04/zfs-backup/)
 *   [Tutorial on adding the modules to a custom kernel](https://www.linuxquestions.org/questions/linux-from-scratch-13/%5Bhow-to%5D-add-zfs-to-the-linux-kernel-4175514510/)
-
-	Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
-
-1.  [VDEVs](https://pthree.org/2012/12/04/zfs-administration-part-i-vdevs/)
-2.  [RAIDZ Levels](https://pthree.org/2012/12/05/zfs-administration-part-ii-raidz/)
-3.  [The ZFS Intent Log](https://pthree.org/2012/12/06/zfs-administration-part-iii-the-zfs-intent-log/)
-4.  [The ARC](https://pthree.org/2012/12/07/zfs-administration-part-iv-the-adjustable-replacement-cache/)
-5.  [Import/export zpools](https://pthree.org/2012/12/10/zfs-administration-part-v-exporting-and-importing-zpools/)
-6.  [Scrub and Resilver](https://pthree.org/2012/12/11/zfs-administration-part-vi-scrub-and-resilver/)
-7.  [Zpool Properties](https://pthree.org/2012/12/12/zfs-administration-part-vii-zpool-properties/)
-8.  [Zpool Best Practices](https://pthree.org/2012/12/13/zfs-administration-part-viii-zpool-best-practices-and-caveats/)
-9.  [Copy on Write](https://pthree.org/2012/12/14/zfs-administration-part-ix-copy-on-write/)
-10.  [Creating Filesystems](https://pthree.org/2012/12/17/zfs-administration-part-x-creating-filesystems/)
-11.  [Compression and Deduplication](https://pthree.org/2012/12/18/zfs-administration-part-xi-compression-and-deduplication/)
-12.  [Snapshots and Clones](https://pthree.org/2012/12/19/zfs-administration-part-xii-snapshots-and-clones/)
-13.  [Send/receive Filesystems](https://pthree.org/2012/12/20/zfs-administration-part-xiii-sending-and-receiving-filesystems/)
-14.  [ZVOLs](https://pthree.org/2012/12/21/zfs-administration-part-xiv-zvols/)
-15.  [iSCSI, NFS, and Samba](https://pthree.org/2012/12/31/zfs-administration-part-xv-iscsi-nfs-and-samba/)
-16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
-17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)

@@ -1,6 +1,6 @@
 **Bem-vindo ao Wiki [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)"): a sua fonte para a documentação do Arch Linux na web.**
 
-Visite a [Tabela de conteúdos](/index.php/Table_of_contents "Table of contents") para uma listagem de categorias de artigo.
+Visite a [tabela de conteúdo](/index.php/Tabela_de_conte%C3%BAdo "Tabela de conteúdo") para uma listagem de categorias de artigo.
 
 ## A distribuição
 
@@ -50,12 +50,12 @@ Visite a [Tabela de conteúdos](/index.php/Table_of_contents "Table of contents"
 
 	Coleção de links para as comunidades do Arch Linux pelo mundo.
 
-	[Canais IRC](/index.php/IRC_channels "IRC channels")
+	[Canais IRC](/index.php/Canais_IRC "Canais IRC")
 
 	Junte-se a seus colegas Archers para um bom bate-papo.
 
 ## Ajuda
 
-Páginas do ArchWiki seguem convenções específicas, de forma que se você tiver problema em ler o ArchWiki ou entender algumas instruções, veja [Help:Reading](/index.php/Help:Reading "Help:Reading") para uma clarificação.
+Páginas do ArchWiki seguem convenções específicas, de forma que se você tiver problema em ler o ArchWiki ou entender algumas instruções, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)") para uma clarificação.
 
 Se estiver procurando por informações específicas, tente usar a caixa de pesquisa à esquerda. Alternativamente, use seu mecanismo de pesquisa web favorito que provavelmente fornece uma sintaxe especial ou interface para restringir os resultados para um site em particular (geralmente, anexar `site:wiki.archlinux.org` aos termos de pesquisa é suficiente). Veja [Help:Searching](/index.php/Help:Searching "Help:Searching") para outros truques.

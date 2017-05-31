@@ -17,7 +17,7 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [1.3 Segurança de pacotes](#Seguran.C3.A7a_de_pacotes)
 *   [2 Uso](#Uso)
     *   [2.1 Instalando Pacotes](#Instalando_Pacotes)
-        *   [2.1.1 Instalando Pacotes específicos](#Instalando_Pacotes_espec.C3.ADficos)
+        *   [2.1.1 Instalando pacotes específicos](#Instalando_pacotes_espec.C3.ADficos)
         *   [2.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
     *   [2.2 Removendo pacotes](#Removendo_pacotes)
     *   [2.3 Atualizando pacotes](#Atualizando_pacotes)
@@ -137,7 +137,7 @@ O que se segue é apenas uma pequena amostra das operações que o pacman pode e
 
 ### Instalando Pacotes
 
-#### Instalando Pacotes específicos
+#### Instalando pacotes específicos
 
 Para instalar um único pacote ou lista de pacotes (incluindo dependências), execute o seguinte comando:
 

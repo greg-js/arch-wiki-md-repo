@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-5-13，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=256070)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-5-31，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=477117)可以查看翻译后英文页面的改动。
 
-"xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。
+"xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。 当前使用的显示器用 ***** 标记，优先使用的显示器用 **+** 标记。
 
 ## Contents
 
@@ -14,13 +14,15 @@
 *   [5 图形前端](#.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
     *   [5.1 ARandR](#ARandR)
     *   [5.2 LXrandR](#LXrandR)
-*   [6 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
-    *   [6.1 分辨率低于理想值](#.E5.88.86.E8.BE.A8.E7.8E.87.E4.BD.8E.E4.BA.8E.E7.90.86.E6.83.B3.E5.80.BC)
-        *   [6.1.1 修改xorg.conf](#.E4.BF.AE.E6.94.B9xorg.conf)
-*   [7 通过Windows客户端查询有效扫描频率](#.E9.80.9A.E8.BF.87Windows.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.9F.A5.E8.AF.A2.E6.9C.89.E6.95.88.E6.89.AB.E6.8F.8F.E9.A2.91.E7.8E.87)
-*   [8 脚本](#.E8.84.9A.E6.9C.AC)
-*   [9 在VNC上使用xrandr](#.E5.9C.A8VNC.E4.B8.8A.E4.BD.BF.E7.94.A8xrandr)
-*   [10 参见](#.E5.8F.82.E8.A7.81)
+*   [6 脚本](#.E8.84.9A.E6.9C.AC)
+*   [7 在VNC上使用xrandr](#.E5.9C.A8VNC.E4.B8.8A.E4.BD.BF.E7.94.A8xrandr)
+*   [8 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
+    *   [8.1 添加未检测到的分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E6.A3.80.E6.B5.8B.E5.88.B0.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
+        *   [8.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
+    *   [8.2 Correction of overscan tv resolutions](#Correction_of_overscan_tv_resolutions)
+    *   [8.3 Full RGB in HDMI](#Full_RGB_in_HDMI)
+        *   [8.3.1 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
+*   [9 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -53,7 +55,7 @@ LVDS connected 1400x1050+0+0 (normal left inverted right x axis y axis) 286mm x 
 
 ```
 
-**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。
+**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。详情请参考 [xrandr(1)](https://www.x.org/archive/X11R7.5/doc/man/man1/xrandr.1.html)。
 
 ## 添加未被检测到的有效分辨率
 
@@ -171,37 +173,6 @@ ARandR为xrandr提供了一个简单易用的前端。
 [LXDE](/index.php/LXDE "LXDE")桌面环境默认的显示器配置工具。
 
 这软件也是community仓库的一部分：[lxrandr](https://www.archlinux.org/packages/?name=lxrandr)
-
-## 疑难排除
-
-### 分辨率低于理想值
-
-#### 修改xorg.conf
-
-如果您在xorg.conf所设置的显卡能被正确识别出，但是实际分辨率仍低于理想值，您不妨先参考下这方案：
-
-假如您有一块ATI X1550基础显卡和两台LCD显示器：DELL 2408（1920x1200）和Samsung 206BW（1680x1050）。但是xrandr所列出的最高有效分辨率只有默认的1152x864。您可以试试再编辑/etc/X11/xorg.conf，即添加一条虚拟分辨率：
-
-修改xorg.conf
-
- `/etc/X11/xorg.conf` 
-```
-Section "Screen"
-        ...
-        SubSection "Display"
-                Virtual 3600 1200
-        EndSubSection
-EndSection
-
-```
-
-关于数字部分的理解：DELL与Samsung左右并列。于是双LCD的总宽度就共有1920+1680=3600，总高度则计为两者中的最大高度数，即max(1200,1050)=1200。如果您打算把其中一台LCD置于另一台之上，就这样计算：(max(宽度1, 宽度2), 高度1+高度2)。
-
-再重新登录下，看看是否有效果。
-
-## 通过Windows客户端查询有效扫描频率
-
-请阅读[Obtaining modelines from Windows program PowerStrip](http://www.x.org/wiki/FAQVideoModes#ObtainingmodelinesfromWindowsprogramPowerStrip)。
 
 ## 脚本
 
@@ -360,6 +331,101 @@ xrandr --newmode "1024x600"   49.00  1024 1072 1168 1312  600 603 613 624 -hsync
 xrandr --addmode default "1024x600"r
 
 ```
+
+## 疑难排除
+
+### 添加未检测到的分辨率
+
+Due to buggy hardware or drivers, your monitor's correct resolutions may not always be detected by xrandr. For example, the EDID data block queried from the monitor may be incorrect. However, we can add the desired resolutions to xrandr.
+
+First we run `gtf` or `cvt` to get the **Modeline** for the resolution we want:
+
+For some LCD screens (samsung 2343NW), the command "cvt -r" (= with reduced blanking) is to be used.
+
+ `$ cvt 1280 1024` 
+```
+# 1280x1024 59.89 Hz (CVT 1.31M4) hsync: 63.67 kHz; pclk: 109.00 MHz
+Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
+
+```
+
+**Note:** If the Intel video driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) is used, it may report the desired resolution along with its properties in `/var/log/Xorg.0.log` — use that first if it is different from the output of `gtf` or `cvt`. For instance, the log and its use with xrandr:
+```
+[    45.063] (II) intel(0): clock: 241.5 MHz   Image Size:  597 x 336 mm
+[    45.063] (II) intel(0): h_active: 2560  h_sync: 2600  h_sync_end 2632 h_blank_end 2720 h_border: 0
+[    45.063] (II) intel(0): v_active: 1440  v_sync: 1443  v_sync_end 1448 v_blanking: 1481 v_border: 0
+
+```
+
+```
+xrandr --newmode "2560x1440" 241.50 2560 2600 2632 2720 1440 1443 1448 1481 -hsync +vsync
+
+```
+
+Then we create a new xrandr mode. Note that the Modeline keyword needs to be ommited.
+
+```
+$ xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
+
+```
+
+After creating it we need an extra step to add this new mode to our current output (VGA1). We use just the name of the mode, since the parameters have been set previously.
+
+```
+$ xrandr --addmode VGA1 1280x1024_60.00
+
+```
+
+Now we change the resolution of the screen to the one we just added:
+
+```
+$ xrandr --output VGA1 --mode 1280x1024_60.00
+
+```
+
+Note that these settings only take effect during this session.
+
+If you are not sure about the resolution you will test, you may add a `sleep 5` and a safe resolution command line following, like this:
+
+```
+$ xrandr --output VGA1 --mode 1280x1024_60.00 && sleep 5 && xrandr --newmode "1024x768-safe" 65.00 1024 1048 1184 1344 768 771 777 806 -HSync -VSync && xrandr --addmode VGA1 1024x768-safe && xrandr --output VGA1 --mode 1024x768-safe
+
+```
+
+Also, change `VGA1` to correct output name.
+
+#### EDID checksum is invalid
+
+If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[1]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
+
+Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. NVIDIA users should read [NVIDIA/Troubleshooting#xrandr BadMatch](/index.php/NVIDIA/Troubleshooting#xrandr_BadMatch "NVIDIA/Troubleshooting"). `BadMatch` could indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID.
+
+### Correction of overscan tv resolutions
+
+With a flat panel TV, [w:overscan](https://en.wikipedia.org/wiki/overscan "w:overscan") looks like the picture is "zoomed in" so the edges are cut off.
+
+Check your TV if there is a parameter to change. If not, apply an `underscan` and change border values. The required `underscan vborder` and `underscan hborder` values can be different for you, just check it and change it by more or less.
+
+`$ xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40`
+
+### Full RGB in HDMI
+
+It may occur that the [Intel](/index.php/Intel "Intel") driver will not configure correctly the output of the HDMI monitor. It will set a limited color range (16-235) using the [Broadcast RGB property](https://patchwork.kernel.org/patch/1972181/), and the black will not look black, it will be grey.
+
+To see if it is your case:
+
+```
+$ xrandr --output HDMI1 --set "Broadcast RGB" "Full"
+
+```
+
+#### Screen resolution reverts back after a blink
+
+If you use [GNOME](/index.php/GNOME "GNOME") and your monitor doesn't have an EDID, above [#Adding undetected resolutions](#Adding_undetected_resolutions) might not work, with your screen just blinking once, after `xrandr --output`.
+
+Poke around with `~/.config/monitors.xml`, or delete the file completely, and then reboot.
+
+It is better explained in [this](http://unix.stackexchange.com/questions/184941/gnome-prevents-high-resolution-vga-without-edid-info-over-vga) article.
 
 ## 参见
 

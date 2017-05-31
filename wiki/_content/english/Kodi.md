@@ -4,7 +4,7 @@ Kodi (formerly known as XBMC) is an award-winning free and open source (GPL) sof
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Autostarting at boot or ondemand](#Autostarting_at_boot_or_ondemand)
+    *   [2.1 Autostarting at boot or starting on-demand](#Autostarting_at_boot_or_starting_on-demand)
         *   [2.1.1 Kodi-standalone-service](#Kodi-standalone-service)
         *   [2.1.2 Xsession with LightDM](#Xsession_with_LightDM)
         *   [2.1.3 Socket activation](#Socket_activation)
@@ -48,9 +48,14 @@ Kodi (formerly known as XBMC) is an award-winning free and open source (GPL) sof
 
 ## Configuration
 
-### Autostarting at boot or ondemand
+### Autostarting at boot or starting on-demand
 
-The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies `/usr/bin/kodi` which can be run by any user on a on-demand basis. A stand-alone wrapper script `/usr/bin/kodi-standalone` is also provided that allows a minimal system and an unprivileged user to run the application. The is advantageous for several reasons:
+The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two binaries for two different use cases:
+
+1.  `/usr/bin/kodi` is meant to be run by any user on a on-demand basis. Use it like any other program on the system.
+2.  `/usr/bin/kodi-standalone` is meant to be run by an unprivileged user.
+
+Setting up the system and running the standalone binary is advantageous for several reasons:
 
 1.  An unprivileged user cannot access a shell by definition.
 2.  Running without a full blown DE is lighter and more simplistic.
@@ -85,7 +90,7 @@ To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php
 pam-service=lightdm-autologin
 autologin-user=kodiuser
 autologin-user-timeout=0
-user-session=Kodi
+user-session=kodi
 ```
 
 #### Socket activation

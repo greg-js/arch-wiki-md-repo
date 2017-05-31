@@ -87,7 +87,7 @@ $ export PATH=$PATH:$HOME/bin/
 
 ```
 Put this line in your init file in your home directory to make it permanent.
- `$HOME/bin/batchprotect.sh` 
+ `~/bin/batchprotect.sh` 
 ```
 #!/bin/bash
 OIFS="$IFS"

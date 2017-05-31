@@ -45,10 +45,10 @@ ExecStart=
 ExecStart=/usr/bin/hddtemp -dF /dev/sda /dev/sdb /dev/sdc
 ```
 
-You can also the [auto-generate](https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh) script that detects with help of [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) all supported by [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) hard-drivers and generating to the stdout the `customexec.conf` pattern file.
+You can also use the [auto-generate](https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh) script that detects with help of [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) all supported by [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) hard-drives and generates to the stdout the `customexec.conf` pattern file.
 
-*   [Reload](/index.php/Reload "Reload") systemd's unit files.
-*   [Restart](/index.php/Restart "Restart") the hddtemp service.
+*   [Reload](/index.php/Reload "Reload") *systemd'*s unit files.
+*   [Restart](/index.php/Restart "Restart") the `hddtemp` service.
 
 To get the temperature, connect to the daemon which listens on port 7634\. With [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 

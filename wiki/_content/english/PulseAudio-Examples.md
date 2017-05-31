@@ -96,7 +96,7 @@ When done then you can logout/login or restart PulseAudio manually for these cha
 *   For quick identification at runtime (e.g. to manage sound volume), you can use the sink index instead of the sink name:
     ```
     $ pactl set-sink-volume 0 +3%
-    $ pactl set-sink-volume 0 -- -3%
+    $ pactl set-sink-volume 0 -3%
     $ pactl set-sink-mute 0 toggle
 
     ```

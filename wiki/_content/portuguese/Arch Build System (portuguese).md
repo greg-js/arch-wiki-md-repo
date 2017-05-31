@@ -97,7 +97,7 @@ ABS não é necessário para usar o Arch Linux, mas é útil para automatizar ce
 
 ### Pré-requisitos
 
-[Instale](/index.php/Install "Install") o pacote [subversion](https://www.archlinux.org/packages/?name=subversion).
+[Instale](/index.php/Instale "Instale") o pacote [subversion](https://www.archlinux.org/packages/?name=subversion).
 
 ### Checkout não-recursivo
 

@@ -5,7 +5,6 @@ This page uses a table to display the correspondence of [package management](htt
 **Note:**
 
 *   Some of the tools described here are specific to a certain version of pacman. The -Qk option is new in pacman 4.1.
-*   The command `pkgfile` can be found in the [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) package.
 
 ## Contents
 
@@ -51,12 +50,12 @@ apt-get download (bypass the package cache) | zypper --download-only | emerge --
 | Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
 | Display remote package information: Name, version, description, etc. | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
 | Display files provided by local package | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
-| Display files provided by a remote package | pkgfile -l | dnf repoquery -l | apt-file list $pattern | pfl |
+| Display files provided by a remote package | pacman -Fl | dnf repoquery -l | apt-file list $pattern | pfl |
 | Query the package which provides FILE | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) | dpkg -S / dlocate | zypper search -f | equery belongs |
 | List the files that the package holds. Again, this functionality can be mimicked by other more complex commands. | pacman -Ql
-pkgfile -l | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
-| Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | pkgfile | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
-| Search all packages to find the one which holds the specified file. auto-apt is using this functionality. | pkgfile -s | dnf provides | apt-file search | zypper search -f | equery belongs |
+pacman -Fl | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
+| Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | pacman -Fo | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
+| Search all packages to find the one which holds the specified file. auto-apt is using this functionality. | pacman -Fs | dnf provides | apt-file search | zypper search -f | equery belongs |
 | Show the changelog of a package | pacman -Qc | rpm -q --changelog | apt-get changelog | rpm -q --changelog | equery changes -f |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 

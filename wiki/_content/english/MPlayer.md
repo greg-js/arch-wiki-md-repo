@@ -35,21 +35,13 @@
 
 ## Installation
 
-Various flavours of MPlayer can be [installed](/index.php/Pacman "Pacman") from the [official repositories](/index.php/Official_repositories "Official repositories") or from the [AUR](/index.php/AUR "AUR"):
-
-*   ****MPlayer**** — Official package
-
-	[https://mplayerhq.hu/](https://mplayerhq.hu/) || [mplayer](https://www.archlinux.org/packages/?name=mplayer)
+[Install](/index.php/Install "Install") the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package, or [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/) for the development version.
 
 Notable variants are:
 
 *   **MPlayer-VAAPI** — VAAPI-enabled version
 
 	[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)
-
-*   **MPlayer-svn** — Development version
-
-	|| [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)
 
 *   **MPlayer2** — Fork of MPlayer
 
@@ -447,9 +439,7 @@ The `:1` is to lower the CDROM speed for a constant spin and less noise.
 
 ## See also
 
-*   [Official MPlayer2 website](http://www.mplayer2.org/)
-*   [MPlayer FAQ](http://wiki.multimedia.cx/index.php?title=MPlayer_FAQ)
-*   [MPlayer notes](https://www.youtube.com/watch?v=n4Ul_A0VBVI)
+*   [MPlayer FAQ](https://wiki.multimedia.cx/index.php?title=MPlayer_FAQ)
 *   [MPlayer tips](https://help.ubuntu.com/community/MPlayerTips)
 *   [How to configure MPlayer](http://how-to.wikia.com/wiki/How_to_configure_MPlayer)
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players

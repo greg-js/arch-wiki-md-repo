@@ -20,7 +20,7 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
             *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
         *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_.28not_recommended.29)
     *   [6.2 Other architectures](#Other_architectures)
-        *   [6.2.1 Arch ARM](#Arch_ARM)
+        *   [6.2.1 Arch Linux ARM](#Arch_Linux_ARM)
         *   [6.2.2 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
@@ -236,9 +236,9 @@ See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_
 
 ### Other architectures
 
-#### Arch ARM
+#### Arch Linux ARM
 
-When building on an Arch ARM device, the developers *highly* recommend using the official project toolchains.
+When building on an Arch Linux ARM device, the developers *highly* recommend using the official project toolchains.
 
 *   [ARMv8](https://archlinuxarm.org/builder/xtools/x-tools8.tar.xz)
 *   [ARMv7l hard](https://archlinuxarm.org/builder/xtools/x-tools7h.tar.xz)
@@ -262,6 +262,8 @@ Optionally link it to your user's homedir if planning to build without makepkg. 
 $ ln -s /mnt/data/x-tools8 x-tools8
 
 ```
+
+There is also a provided [distccd-alarm](https://github.com/WarheadsSE/PKGs/tree/master/distccd-alarm) package that can be used for pacman-controlled versioning and included distccd configuration.
 
 #### Additional toolchains
 

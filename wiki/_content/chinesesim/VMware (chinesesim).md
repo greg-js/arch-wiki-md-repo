@@ -41,7 +41,7 @@
     *   [5.15 版本号为12.5.4的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.4.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
     *   [5.16 版本号为12.5.3的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.3.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
     *   [5.17 vmware 12的进程在启动之后立即终止，没有显示GUI](#vmware_12.E7.9A.84.E8.BF.9B.E7.A8.8B.E5.9C.A8.E5.90.AF.E5.8A.A8.E4.B9.8B.E5.90.8E.E7.AB.8B.E5.8D.B3.E7.BB.88.E6.AD.A2.EF.BC.8C.E6.B2.A1.E6.9C.89.E6.98.BE.E7.A4.BAGUI)
-    *   [5.18 VMware模块在Linux内核4.11+上编译失败](#VMware.E6.A8.A1.E5.9D.97.E5.9C.A8Linux.E5.86.85.E6.A0.B84.11.2B.E4.B8.8A.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
+    *   [5.18 VMware模块在Linux内核4.11+上（在GCC7下）编译失败](#VMware.E6.A8.A1.E5.9D.97.E5.9C.A8Linux.E5.86.85.E6.A0.B84.11.2B.E4.B8.8A.EF.BC.88.E5.9C.A8GCC7.E4.B8.8B.EF.BC.89.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
 *   [6 卸载](#.E5.8D.B8.E8.BD.BD)
 
 ## 安装
@@ -501,7 +501,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 ```
 
-### VMware模块在Linux内核4.11+上编译失败
+### VMware模块在Linux内核4.11+上（在GCC7下）编译失败
 
 运行vmware-modconfig时返回：
 

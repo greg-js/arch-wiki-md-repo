@@ -2,7 +2,7 @@
 
 ## Installation
 
-The following AUR packages provide i3blocks:
+The following packages provide i3blocks:
 
 *   [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)
 *   [i3blocks-git](https://aur.archlinux.org/packages/i3blocks-git/)

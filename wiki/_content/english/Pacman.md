@@ -228,6 +228,13 @@ $ pacman -Qs *string1* *string2* ...
 
 ```
 
+To search for package file names in remote packages:
+
+```
+$ pacman -Fs *string1* *string2* ...
+
+```
+
 To display extensive information about a given package:
 
 ```
@@ -256,7 +263,12 @@ $ pacman -Ql *package_name*
 
 ```
 
-For packages not installed, use [pkgfile](/index.php/Pkgfile "Pkgfile").
+To retrieve a list of the files installed by a remote package:
+
+```
+$ pacman -Fl *package_name*
+
+```
 
 To verify the presence of the files installed by a package:
 
@@ -267,10 +279,17 @@ $ pacman -Qk *package_name*
 
 Passing the `k` flag twice will perform a more thorough check.
 
-One can also query the database to know which package a file in the file system belongs to:
+To query the database to know which package a file in the file system belongs to:
 
 ```
 $ pacman -Qo */path/to/file_name*
+
+```
+
+To query the database to know which remote package a file belongs to:
+
+```
+$ pacman -Fo */path/to/file_name*
 
 ```
 

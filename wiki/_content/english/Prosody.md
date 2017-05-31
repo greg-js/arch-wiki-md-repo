@@ -1,4 +1,4 @@
-From the [official website](http://prosody.im/):
+From the [official website](https://prosody.im/):
 
 	Prosody is a modern XMPP communication server. It aims to be easy to set up and configure, and efficient with system resources. Additionally, for developers it aims to be easy to extend and give a flexible system on which to rapidly develop added functionality, or prototype new protocols.
 
@@ -44,7 +44,7 @@ Prosody has optional depedencies that although not strictly required for its ope
 
 **Warning:** [lua51-dbi](https://www.archlinux.org/packages/?name=lua51-dbi) is currently without upstream! See [FS#53081](https://bugs.archlinux.org/task/53081)
 
-**Warning:** If enabled, Prosody will store passwords in plaintext within the database by default. It is recommended to use a hashed authentication module such as [mod_auth_internal_hashed](http://prosody.im/doc/modules/mod_auth_internal_hashed)
+**Warning:** If enabled, Prosody will store passwords in plaintext within the database by default. It is recommended to use a hashed authentication module such as [mod_auth_internal_hashed](https://prosody.im/doc/modules/mod_auth_internal_hashed)
 
 	Better Connection Scaling (Recommended)
 
@@ -67,7 +67,7 @@ Prosody has optional depedencies that although not strictly required for its ope
 
 **Note:** The `posix` module and `pidfile` setting contained in the default configuration file are required for Prosody's proper operation.
 
-The main configuration file is located at `/etc/prosody/prosody.cfg.lua`. Information on how to configure Prosody can be found in Prosody's [documentation](http://prosody.im/doc/configure). The syntax of the configuration file can be checked after any changes are made by running:
+The main configuration file is located at `/etc/prosody/prosody.cfg.lua`. Information on how to configure Prosody can be found in Prosody's [documentation](https://prosody.im/doc/configure). The syntax of the configuration file can be checked after any changes are made by running:
 
 ```
 # luac5.1 -p /etc/prosody/prosody.cfg.lua
@@ -138,7 +138,7 @@ A simple way to see a list of the registered users is
 
 ```
 
-alternatively, you can download the module [mod_listusers.lua](http://prosody.im/files/mod_listusers.lua), and use it as
+alternatively, you can download the module [mod_listusers.lua](https://prosody.im/files/mod_listusers.lua), and use it as
 
 ```
 # prosodyctl mod_listusers
@@ -175,7 +175,7 @@ This will enable the MUC component on host `conference.example.com`.
 
 ### Prosody modules
 
-[Prosody Modules](http://code.google.com/p/prosody-modules/) is a collection of extra modules not distributed with Prosody. These modules are in various states of development from highly experimental to relatively stable. You should consult a given module's wiki page for more information. An example of an extra module is `[pastebin](http://code.google.com/p/prosody-modules/wiki/mod_pastebin)`, which when loaded will intercept long messages (for example, log file output) and replace them with a link to a pastebin hosted using Prosody's internal HTTP server (provided by the core module, `httpserver`).
+[Prosody Modules](https://prosody.im/community_modules) is a collection of extra modules not distributed with Prosody. These modules are in various states of development from highly experimental to relatively stable. You should consult a given module's wiki page for more information. An example of an extra module is `[pastebin](http://code.google.com/p/prosody-modules/wiki/mod_pastebin)`, which when loaded will intercept long messages (for example, log file output) and replace them with a link to a pastebin hosted using Prosody's internal HTTP server (provided by the core module, `httpserver`).
 
 To use an extra module download its raw file(s) from the source browser (when viewing a file, search for the link "View raw file"). Alternatively and likely easier, use Mercurial to clone the entire repository:
 
@@ -218,7 +218,7 @@ Will return `true` if the connection is compressed or `nil` if it is not.
 One of Prosody's primary design principles is to be simple to use and configure. However, issues can still arise (and likely will as is the case with any complex software). If you encounter a problem there are a variety of steps you can take to narrow down the cause:
 
 *   **Check for known issues**
-    Look at the [release notes](http://prosody.im/doc/release) for your Prosody version to see if your issue is listed as a known issue. Also check the [issue tracker](http://code.google.com/p/lxmppd/issues/list) to see if your issue has already been reported.
+    Look at the [release notes](https://prosody.im/doc/release) for your Prosody version to see if your issue is listed as a known issue. Also check the [issue tracker](https://prosody.im/issues/list) to see if your issue has already been reported.
 *   **Check configuration syntax**
     Run `luac5.1 -p /etc/prosody/prosody.cfg.lua` to check for any syntax errors in your configuration file. If there is no output your syntax is fine.
 *   **Check the log**
@@ -233,7 +233,7 @@ One of Prosody's primary design principles is to be simple to use and configure.
 If you are unable to resolve your issue yourself there are a variety of resources you can use to seek help. In order of immediacy with which you will likely receive help:
 
 1.  XMPP Conference: `prosody@conference.prosody.im`
-2.  Mailing List: [Web Interface](http://groups.google.co.uk/group/prosody-users), [Email](mailto:prosody-users@googlegroups.com)
+2.  Mailing List: `prosody-users@googlegroups.com`, [web interface](https://groups.google.com/forum/#!forum/prosody-users)
 3.  [Arch Forums](https://bbs.archlinux.org/viewforum.php?id=4) (for package issues)
 
 ## Development
@@ -242,13 +242,13 @@ Two development packages are maintained for Prosody in the AUR, [prosody-devel](
 
 ## Communication
 
-*   Mailing Lists: [prosody-dev](http://groups.google.co.uk/group/prosody-dev), [prosody-users](http://groups.google.co.uk/group/prosody-users)
+*   Mailing Lists: [prosody-dev](https://groups.google.com/forum/#!forum/prosody-dev), [prosody-users](https://groups.google.com/forum/#!forum/prosody-users)
 *   Conference: `prosody@conference.prosody.im`
-*   Blog: [Prosodical Thoughts](http://blog.prosody.im/)
+*   Blog: [Prosodical Thoughts](https://blog.prosody.im/)
 
 ## See also
 
 *   [Official documentation](https://prosody.im/doc)
-*   [Prosodical Thoughts](http://blog.prosody.im/) (Blog)
+*   [Prosodical Thoughts](https://blog.prosody.im/) (Blog)
 *   [Issue Tracker](https://prosody.im/issues/)
 *   [Prosody Modules](https://hg.prosody.im/prosody-modules/) (Extra Modules)

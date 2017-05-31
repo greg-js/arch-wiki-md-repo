@@ -312,7 +312,7 @@ Steam properly recognizes it as a PS3 pad and Big Picture can be launched with t
 
 ##### Connecting via Bluetooth
 
-Install the [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins) and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages, which includes the *sixaxis* plugin. Then [start](/index.php/Start "Start") `bluetooth.service`, plug the controller in via USB, and the plugin should program your PC's bluetooth address into the controller automatically.
+Install the [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins), and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages, which includes the *sixaxis* plugin. Then [start](/index.php/Start "Start") `bluetooth.service`, plug the controller in via USB, and the plugin should program your PC's bluetooth address into the controller automatically.
 
 You can now disconnect your controller. The next time you hit the PlayStation button it will connect without asking anything else.
 

@@ -61,7 +61,7 @@ Andy Lutomirski has created a patchset which fixes powersaving for NVME devices 
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
 
-This patch is now in mainline (4.11rc1), so it is a matter of time before the standard kernel can be used instead.
+The kernel is now available in the official repository and can be installed with pacman. No need for manual patching.
 
 ## Video
 

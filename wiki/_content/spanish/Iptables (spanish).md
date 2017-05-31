@@ -35,7 +35,7 @@ iptables cuenta con cinco *tablas*, que son zonas en las que una cadena de regla
 
 1.  `raw` filtra los paquetes antes que cualquier otra tabla. Se utiliza principalmente para configurar exenciones de seguimiento de conexiones en combinación con el target `NOTRACK`.
 2.  `filter` es la tabla por defecto (si no se pasa la opción `-t`).
-3.  `nat` se utiliza para la [yraducción de dirección de red](https://en.wikipedia.org/wiki/es:Network_address_translation "wikipedia:es:Network address translation") (por ejemplo, el redirección de puertos). Debido a las limitaciones en iptables, el filtrado no se debe hacer aquí.
+3.  `nat` se utiliza para la [traducción de dirección de red](https://en.wikipedia.org/wiki/es:Network_address_translation "wikipedia:es:Network address translation") (por ejemplo, el redirección de puertos). Debido a las limitaciones en iptables, el filtrado no se debe hacer aquí.
 4.  `mangle` se utiliza para la alteración de los paquetes de red especializados (véase [Mangles packet](https://en.wikipedia.org/wiki/Mangled_packet "wikipedia:Mangled packet")).
 5.  `security` se utiliza para reglas de conexión de red [Mandatory Access Control](/index.php/Security#Mandatory_access_control "Security").
 

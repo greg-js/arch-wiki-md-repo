@@ -232,5 +232,3 @@ Some people (developers, TUs...) are responsible for dispatching the bugs and ch
 ## See also
 
 *   [Bug Day](/index.php/Bug_Day "Bug Day")
-*   [Midyear Cleanup](/index.php/Midyear_Cleanup "Midyear Cleanup")
-*   [Christmas Cleanup](/index.php/Christmas_Cleanup "Christmas Cleanup")

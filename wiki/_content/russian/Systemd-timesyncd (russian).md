@@ -1,8 +1,8 @@
-*systemd-timesyncd* это служба, которая была добавлена для синхронизации системных часов по сети. Эта служба по сути реализует упрощенный клиент SNTP. В отличие сложных реализаций NTP, *systemd-timesyncd* представляет только клиентскую часть, ориентируясь на запрос времени из одного удаленного сервера и синхронизации локальных часов с ним. Подробнее смотрите [список рассылки systemd](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html) (англ.)
+*systemd-timesyncd* это служба, которая была добавлена для синхронизации системных часов по сети. По сути, эта служба реализует упрощенный клиент SNTP. В отличие сложных реализаций NTP, *systemd-timesyncd* представляет только клиентскую часть, ориентируясь на запрос времени из одного удаленного сервера и синхронизации локальных часов с ним. Подробнее смотрите [список рассылки systemd](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html) (англ.)
 
 ## Установка
 
-Служба *systemd-timesyncd* доступна с [systemd](https://www.archlinux.org/packages/?name=systemd) >= 213\. Для ее [активации и запуска](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D1.8B_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_systemctl "Systemd (Русский)") выполните:
+Служба *systemd-timesyncd* доступна с [systemd](https://www.archlinux.org/packages/?name=systemd). Для ее [активации и запуска](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D1.8B_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_systemctl "Systemd (Русский)") выполните:
 
 ```
 # timedatectl set-ntp true 
@@ -23,11 +23,9 @@ NTP synchronized: yes
 
 ```
 
-**Совет:** До systemd 216 *systemd-timesyncd* требуется запущенный [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") (без дополнительной настройки) для уведомлений о статусе сетевых событий (up/down). Хоть он теперь получает события из [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") и [NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)"), но все еще может потребоваться как зависимость от конфигурации сети или используемого инструмента управления сетью.
-
 ## Настройка
 
-При запуске *systemd-timesyncd* будет читать файл конфигурации `/etc/systemd/timesyncd.conf`, который для [systemd](/index.php/Systemd "Systemd") 217 выглядит так:
+При запуске *systemd-timesyncd* будет читать файл конфигурации `/etc/systemd/timesyncd.conf`, который выглядит так:
 
  `/etc/systemd/timesyncd.conf` 
 ```
@@ -45,15 +43,15 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-Также NTP сервера могут быть предусмотрены в [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd") конфигурации с опцией `NTP=` или динамически через DHCP сервер (с *systemd* 216).
+Также NTP сервера могут быть предусмотрены в [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd") конфигурации с опцией `NTP=` или динамически через DHCP сервер.
 
 Используемый сервер NTP будет определяться по следующим правилам:
 
 *   Приоритетно - с любого интерфейса NTP серверов, полученных из конфигурации `systemd-networkd.service(8)` или через DHCP.
-*   Сервера NTP, указанные в `/etc/systemd-timesyncd.conf` будут добавлены в список интерфейса после получения ответа от серверов в процессе соединения с ними.
+*   Сервера NTP, указанные в `/etc/systemd/timesyncd.conf` будут добавлены в список интерфейса после получения ответа от серверов в процессе соединения с ними.
 *   Если после выполнения действий выше информация о серверах NTP не будет получена, то будет использоваться имя хоста и IP адреса, указанные в `FallbackNTP=`.
 
-**Важно:** При каждой синхронизации служба перезаписывает файл /var/lib/systemd/clock, путь к которому на данный момент захардкоден и не может быть изменен. В связи с этим могут возникнуть проблемы, если корневой раздел работает в режиме "только для чтения" или при попытки минимизации операций записи.
+**Важно:** При каждой синхронизации служба перезаписывает файл в `/var/lib/systemd/clock`, который на данный момент захардкоден и не может быть изменен. В связи с этим могут возникнуть проблемы, если корневой раздел работает в режиме "только для чтения" или при попытки минимизации операций записи на SD-картах.
 
 ## Смотрите также
 

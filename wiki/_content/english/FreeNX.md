@@ -39,7 +39,7 @@ From [FreeNX - the free NX](http://freenx.berlios.de/):
 
 ## Installation
 
-Get FreeNX/Nomachine from [nx-all](https://aur.archlinux.org/packages/nx-all/). Both server and client packages are included in the package. The sshd daemon (available in openssh package) must be installed and running for it to function properly.
+Get FreeNX/Nomachine from [nx3-all](https://aur.archlinux.org/packages/nx3-all/) or [nomachine](https://aur.archlinux.org/packages/nomachine/). Both server and client packages are included in the package. The sshd daemon (available in openssh package) must be installed and running for it to function properly.
 
 ## Setup
 
@@ -139,7 +139,7 @@ As of installation nxserver is set to start up automatically, however, you are l
 
 #### Arch Linux
 
-Install one or both of [opennx](https://aur.archlinux.org/packages/opennx/) and [nx-all](https://aur.archlinux.org/packages/nx-all/) packages.
+Install one or both of [opennx](https://aur.archlinux.org/packages/opennx/) and [nx3-all](https://aur.archlinux.org/packages/nx3-all/) packages.
 
 #### Windows
 
@@ -162,24 +162,19 @@ After installing nxclient on Arch Linux, executables are available in `/usr/lib/
 
 ### Keyboard shortcuts
 
-```
-CTR+ALT+F          Toggles full-screen mode. 
-CTRL+ALT+T         Shows the terminate, suspend dialog.
-CTRL+ALT+M         Maximizes of minimizes the window 
-CTRL+ALT+Mouse     Drags the viewport, so you can view different portions 
-                   of the desktop. 
-CTRL+ALT+Arrows 
-or                 Moves the viewport by an incremental amount of pixels. 
-CTRL+ALT+Keypad 
-CTRL+ALT+S         It will activate "screen-scraping" mode, so all the GetImage
-                   originated by the clients will be forwarded to the real
-                   display. This should make happy those who love taking
-                   screenshots ;-). By pressing the sequence again, nxagent
-                   will revert to the usual "fast" mode.
-CTRL+ALT+E         lazy image encoding
-CTRL+ALT+Shift+ESC Emergency-exit and kill-window
+| Keyboard Shortcut | Description |
+| `Ctrl+Alt+f` | Toggles full-screen mode. |
+| `Ctrl+Alt+t` | Shows the terminate, suspend dialog. |
+| `Ctrl+Alt+m` | Maximizes or minimizes the window. |
+| `Ctrl+Alt+Mouse` | Drags the viewport, so you can view different portions of the desktop. |
+| `Ctrl+Alt+Arrows/Keypad` | Moves the viewport by an incremental amount of pixels. |
+| `Ctrl+Alt+s` | Activates "screen-scraping" mode, so all the GetImage originated by the clients will be forwarded to the real display.
 
-```
+By pressing the sequence again, nxagent will revert to the usual "fast" mode.
+
+ |
+| `Ctrl+Alt+e` | lazy image encoding |
+| `Ctrl+Alt+Shift+Esc` | Emergency-exit and kill-window |
 
 ### Leaving fullscreen
 
@@ -470,16 +465,16 @@ Latest cairo updates broke the render extension. After resuming a session all ch
 ### Eclipse crashes when editing a file
 
 ```
- The program 'Eclipse' received an X Window System error.
- This probably reflects a bug in the program.
- The error was 'BadValue (integer parameter out of range for operation)'.
- (Details: serial 8414 error_code 2 request_code 149 minor_code 26)
+The program 'Eclipse' received an X Window System error.
+This probably reflects a bug in the program.
+The error was 'BadValue (integer parameter out of range for operation)'.
+(Details: serial 8414 error_code 2 request_code 149 minor_code 26)
 
 ```
 
-Start eclipse using (see [https://bugs.eclipse.org/bugs/show_bug.cgi?id=386955](https://bugs.eclipse.org/bugs/show_bug.cgi?id=386955)):
+Start eclipse using (see [[1]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=386955)):
 
 ```
- eclipse -vmargs -Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
+$ eclipse -vmargs -Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
 
 ```

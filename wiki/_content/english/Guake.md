@@ -119,7 +119,7 @@ guake --rename-current-tab="shell1"
 
 Notice than we should wait some time calling *sleep* to avoid race conditions between running instances.
 
-**WARNING**: `--execute` option can make harmful things on a tab running text interface program, like `fdisk` or `innotop`. Use it with caution. There is a bug on github about it: [guake#921](https://github.com/Guake/guake/issues/921)
+**Warning:** `--execute` option can make harmful things on a tab running text interface program, like `fdisk` or `innotop`. Use it with caution. There is a bug on github about it: [guake#921](https://github.com/Guake/guake/issues/921).
 
 ## Using Guake on multiple monitors
 

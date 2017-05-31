@@ -28,6 +28,7 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [6.3 Access Control Lists](#Access_Control_Lists)
 *   [7 Kernel hardening](#Kernel_hardening)
     *   [7.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_.2F_exploit_mitigation)
+        *   [7.1.1 Userspace ASLR comparison](#Userspace_ASLR_comparison)
     *   [7.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
     *   [7.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
     *   [7.4 Keep BPF JIT compiler disabled](#Keep_BPF_JIT_compiler_disabled)
@@ -316,7 +317,48 @@ Labels-based access control means the extended attributes of a file are used to 
 
 ### Kernel self-protection / exploit mitigation
 
-The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/thestinger/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults. See the [article on the Gentoo wiki](https://wiki.gentoo.org/wiki/Hardened/Hardened_Kernel_Project) for some more information. It currently offers only a small subset of the previous `linux-grsec` package providing the now private / commercial-only grsecurity patches, but the intention is for it to grow in scope alongside the upstream Kernel Self Protection Project. As much as possible will be landed upstream, but it can move ahead without waiting for changes to land and rejection of changes for political reasons won't stall it.
+The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/thestinger/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults. It currently offers a subset of the features of the previous `linux-grsec` package before PaX and grsecurity became fully private commercial-only patches. The intention is for it to grow in scope alongside the upstream Kernel Self Protection Project. As much as possible will be landed upstream, but it can move ahead without waiting for changes to land and rejection of changes for political reasons won't stall it.
+
+#### Userspace ASLR comparison
+
+The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package provides an improved implementation of Address Space Layout Randomization for userspace processes. It provides close to the same ASLR quality as PaX/grsecurity. The [paxtest](https://www.archlinux.org/packages/?name=paxtest) command can be used to obtain an estimate of the provided entropy:
+
+ `linux-hardened` 
+```
+Anonymous mapping randomization test     : 32 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 26 quality bits (guessed)
+Heap randomization test (PIE)            : 40 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 32 quality bits (guessed)
+Shared library randomization test        : 32 quality bits (guessed)
+VDSO randomization test                  : 32 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 40 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 40 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 44 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 44 quality bits (guessed)
+Offset to library randomisation (ET_EXEC): 32 quality bits (guessed)
+Offset to library randomisation (ET_DYN) : 34 quality bits (guessed)
+Randomization under memory exhaustion @~0: 32 bits (guessed)
+Randomization under memory exhaustion @0 : 32 bits (guessed)
+```
+ `linux` 
+```
+Anonymous mapping randomization test     : 28 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 13 quality bits (guessed)
+Heap randomization test (PIE)            : 28 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 28 quality bits (guessed)
+Shared library randomization test        : 28 quality bits (guessed)
+VDSO randomization test                  : 20 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 30 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 30 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 22 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 22 quality bits (guessed)
+Offset to library randomisation (ET_EXEC): 28 quality bits (guessed)
+Offset to library randomisation (ET_DYN) : 28 quality bits (guessed)
+Randomization under memory exhaustion @~0: 28 bits (guessed)
+Randomization under memory exhaustion @0 : 28 bits (guessed)
+```
 
 ### Restricting access to kernel logs
 

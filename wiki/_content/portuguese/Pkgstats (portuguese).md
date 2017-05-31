@@ -2,7 +2,7 @@ pkgstats envia uma lista de todos os pacotes instalados, [módulos de kernel](ht
 
 ## Instalação
 
-[Instale](/index.php/Install "Install") o pacote [pkgstats](https://www.archlinux.org/packages/?name=pkgstats).
+[Instale](/index.php/Instale "Instale") o pacote [pkgstats](https://www.archlinux.org/packages/?name=pkgstats).
 
 ## Uso
 

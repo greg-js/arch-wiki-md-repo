@@ -217,7 +217,7 @@ Unfortunately, what may happen when trying to play a newer Blu-ray disc is the r
 
 ```
 
-This is part of the AACS protection scheme: editors are able to revoke old software player host keys that have leaked on the Internet and distribute the lists on newer commercial disc releases. This is irreversible and does cannot be fixed even after reflashing the drive. The only two ways to correct this would be:
+This is part of the AACS protection scheme: editors are able to revoke old software player host keys that have leaked on the Internet and distribute the lists on newer commercial disc releases. This is irreversible and cannot be fixed even after reflashing the drive. The only two ways to correct this would be:
 
 *   to update the host key/certificate part in `KEYDB.cfg` to ones that have not been revoked (yet)
 *   to add in `KEYDB.cfg` the VUK of each specific disc instead, [as explained above](#Decrypting_using_VUK_.28step_3.1_or_3.2.1.29). VUKs cannot be revoked by the industry.

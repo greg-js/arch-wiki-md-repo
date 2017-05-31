@@ -39,7 +39,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.14 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
     *   [5.15 vmplayer/vmware fails to start from version 12.5.3](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3)
     *   [5.16 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
-    *   [5.17 vmware modules fail to build on kernel 4.11+](#vmware_modules_fail_to_build_on_kernel_4.11.2B)
+    *   [5.17 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -499,7 +499,7 @@ Also there is a workaround:
 
 ```
 
-### vmware modules fail to build on kernel 4.11+
+### vmware modules fail to build on kernel 4.11+ and GCC 7
 
 Running vmware-modconfig yields:
 
@@ -520,7 +520,7 @@ modconfig| I125: The GCC compiler "/sbin/gcc" cannot be used for the target kern
 To skip the check, use this workaround:
 
 ```
-# sed 's/gcc version 7/gcc version 6/' /proc/version > /tmp/version
+# sed 's/gcc version 6/gcc version 7/' /proc/version > /tmp/version
 # mount --bind /tmp/version /proc/version
 # vmware-modconfig --console --install-all
 # umount /proc/version && rm /tmp/version

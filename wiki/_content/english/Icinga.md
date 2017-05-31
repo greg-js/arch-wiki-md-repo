@@ -1,4 +1,4 @@
-[Icinga](http://www.icinga.org/) is an open source host, service and network monitoring program. It monitors specified hosts and services, alerting you to any developing issues, errors or improvements. This article describes the installation and configuration of Icinga.
+[Icinga](https://www.icinga.org/) is an open source host, service and network monitoring program. It monitors specified hosts and services, alerting you to any developing issues, errors or improvements. This article describes the installation and configuration of Icinga.
 
 ## Contents
 
@@ -227,7 +227,7 @@ Edit `/etc/php.ini`
 
 ## Upgrade database
 
-A new version usually requires an upgrade of the database. You find the sql upgrade scripts in:
+A new version usually requires an upgrade of the database. You find the SQL upgrade scripts in:
 
 ```
 /usr/share/icinga/idoutils/db/mysql/upgrade
@@ -247,8 +247,8 @@ Commands to upgrade with these scripts are:
 
 ## See also
 
-*   [icinga.org](http://www.icinga.org/) - Official website
+*   [icinga.org](https://www.icinga.org/) - Official website
 *   [monitoring-plugins](https://www.monitoring-plugins.org/) - Default plugins for Icinga and other monitoring applications
-*   [Nagios Plugins](http://www.nagiosplugins.org/) - The home of the legacy plugins
+*   [Nagios Plugins](https://nagios-plugins.org/) - The home of the legacy plugins
 *   [wikipedia.org](https://en.wikipedia.org/wiki/Icinga "wikipedia:Icinga") - Wikipedia article
-*   [NagiosExchange](http://www.nagiosexchange.org) - Overview of plugins, addons, mailing lists for Icinga
+*   [NagiosExchange](https://exchange.nagios.org/) - Overview of plugins, addons, mailing lists for Icinga

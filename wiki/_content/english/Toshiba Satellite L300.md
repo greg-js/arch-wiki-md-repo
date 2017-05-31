@@ -7,10 +7,10 @@ Contact the author of this wiki with any problems or suggestions (lagagnon at gm
 ## Contents
 
 *   [1 Specification](#Specification)
-*   [2 What Works Without Any Configuration?](#What_Works_Without_Any_Configuration.3F)
-*   [3 What Works With Minimal Configuration?](#What_Works_With_Minimal_Configuration.3F)
-*   [4 What Does Not Work?](#What_Does_Not_Work.3F)
-*   [5 Not Tested](#Not_Tested)
+*   [2 What works without any configuration?](#What_works_without_any_configuration.3F)
+*   [3 What works with minimal configuration?](#What_works_with_minimal_configuration.3F)
+*   [4 What does not work?](#What_does_not_work.3F)
+*   [5 Not tested](#Not_tested)
 *   [6 Configurations](#Configurations)
 *   [7 Upgrading your BIOS](#Upgrading_your_BIOS)
 
@@ -18,7 +18,6 @@ Contact the author of this wiki with any problems or suggestions (lagagnon at gm
 
 This laptop has a dual core Pentium T3400 CPU, 2GB RAM, 15.4" WXGA glossy LCD screen 1280x800, 250GB hard drive, DVD+ RW optical drive, PCMCIA, wireless, ethernet, modem, SD card slot, 3 USB ports, VGA out port, webcam, trackpad. Chip details from "lspci" are:
 
-`
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
 00:01.0 PCI bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express PCI Express Root Port (rev 03)
@@ -46,21 +45,20 @@ This laptop has a dual core Pentium T3400 CPU, 2GB RAM, 15.4" WXGA glossy LCD sc
 03:00.0 Network controller: Atheros Communications Inc. AR928X Wireless Network Adapter (PCI-Express) (rev 01)
 
 ```
-`
 
-## What Works Without Any Configuration?
+## What works without any configuration?
 
 Ethernet, Wireless, Microphone, Synaptic TouchPad, WebCam, USB ports, Card Reader, DVD optical drive, external video port (if booted with video device attached), CPU frequency scaling.
 
-## What Works With Minimal Configuration?
+## What works with minimal configuration?
 
 Suspend, Hibernate, Fan speed, Video tweaks, Audio, Function Keys (see below for configuring these)
 
-## What Does Not Work?
+## What does not work?
 
 The Fn key and fan control after suspend/hibernate *if* your BIOS version is less than version 2.20\. If you update your BIOS you will not have these problems.
 
-## Not Tested
+## Not tested
 
 PCMCIA, Modem.
 
@@ -68,7 +66,6 @@ PCMCIA, Modem.
 
 **Video:** Follow the [Intel](/index.php/Intel "Intel") wiki entry for Intel video. Edit your /boot/grub/menu.lst kernel boot line. See below. If these suggested changes to /boot/grub/menu.lst and /etc/X11/xorg.conf are not made you may not be able to resume from suspend, will get flickering video on shutdown and other minor video faults, but your screen will generally work OK. Here is a suggested /etc/X11/xorg.conf file for reference:
 
-`
 ```
 Section "ServerLayout"
         Identifier     "X.org Configured"
@@ -161,14 +158,17 @@ Section "Screen"
 EndSection
 
 ```
-`
+
 **Warning:** [GRUB2](/index.php/GRUB2 "GRUB2") The fan will work properly assigning the parameter:
 **Note:** GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux"
 in `/etc/default/grub`.
 
 **kernel boot parameters (/boot/grub/menu.lst):** Heed the [Intel](/index.php/Intel "Intel") video changes and boot manager kernel parameters should include:
 
-`kernel /vmlinuz-linux root=/dev/disk/by-uuid/your_UUID_here acpi_osi="Linux" ro i915.modeset=1 resume=/dev/sda3`
+```
+kernel /vmlinuz-linux root=/dev/disk/by-uuid/your_UUID_here acpi_osi="Linux" ro i915.modeset=1 resume=/dev/sda3
+
+```
 
 The important kernel parameters above are: *acpi_osi="Linux"* (fan will not function correctly without), *resume=/dev/sda3* (this is the swap partition, without which hibernate will not work) and *i915.modeset=1*, necessary for KMS video on the Intel graphics chip.
 

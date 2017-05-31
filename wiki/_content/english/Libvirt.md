@@ -579,7 +579,7 @@ if (__name__ == "__main__"):
 
 Libvirt can suport UEFI virtual machines through QEMU and [OVMF](https://github.com/tianocore/edk2).
 
-Currently this is possible in Arch Linux through a workaround. [This ovmf packaging bug](https://bugs.archlinux.org/index.php?do=details&action=details.addvote&task_id=47101) needs to be resolved for this to work out of the box or with minimal configuration of `/etc/libvirt/qemu.conf`.
+Currently this is possible in Arch Linux through a workaround. [This ovmf packaging bug](https://bugs.archlinux.org/index.php?do=details&task_id=47101) needs to be resolved for this to work out of the box or with minimal configuration of `/etc/libvirt/qemu.conf`.
 
 ### OVMF - QEMU workaround
 

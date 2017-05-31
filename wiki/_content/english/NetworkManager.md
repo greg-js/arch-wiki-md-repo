@@ -691,7 +691,7 @@ By default, NetworkManager stores passwords in clear text in the connection file
 
 The passwords are accessible to the root user in the filesystem and to users with access to settings via the GUI (e.g. `nm-applet`).
 
-If it is preferable to save the passwords in encrypted form in a keyring instead of clear text. The downside of using a keyring is that the connections have to be set up for each user.
+It is preferable to save the passwords in encrypted form in a keyring instead of clear text. The downside of using a keyring is that the connections have to be set up for each user.
 
 #### Using Gnome-Keyring
 

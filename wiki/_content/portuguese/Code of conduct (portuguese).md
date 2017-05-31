@@ -229,7 +229,7 @@ Diretrizes para o Arch User Repository podem ser encontradas aqui:
 
 Todos canais IRC do Arch Linux estão na rede irc do freenode. Usuários do freenode devem seguir a [política da rede](https://freenode.net/policies) e [diretrizes do canal](https://freenode.net/changuide) do freenode.
 
-O idioma oficial do canal **#archlinux** é o inglês. Se você precisar de ajuda em outro idioma, pesquise pelos [canais internacionais do arch](/index.php/IRC_channels#International_IRC_channels "IRC channels").
+O idioma oficial do canal **#archlinux** é o inglês. Se você precisar de ajuda em outro idioma, pesquise pelos [canais internacionais do arch](/index.php/IRC_channel_(Portugu%C3%AAs)#Canais_IRC_internacionais "IRC channel (Português)").
 
 *   **O tópico principal do #archlinux é para suporte para e discussão sobre o Arch Linux.** Conversa geral sobre software e hardware é permitida desde que não interfira no tópico principal da discussão. Se lhe for solicitado levar alguma conversa para outro canal ou mensagem privada, você deveria fazê-lo.
 
@@ -273,4 +273,4 @@ Se você sente que uma negligência flagrante foi feita ou que você precisa ale
 
 *   Para os Fóruns: use o botão "Report" localizado em baixo de toda caixa de texto ou envie um e-mail para [forum@archlinux.org](mailto:forum@archlinux.org) para contatar os administradores do fórum.
 *   Para o Wiki: contate os [ArchWiki:Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")
-*   Para os canais IRC: contate [um dos operadores](/index.php/IRC_channel#Channel_operators "IRC channel")
+*   Para os canais IRC: contate [um dos operadores](/index.php/IRC_channel_(Portugu%C3%AAs)#Operadores_do_canal "IRC channel (Português)")

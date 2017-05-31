@@ -266,11 +266,11 @@ menuentry '[loopback]archlinux-2014.11-1-archboot' {
 
 ```
 menuentry '[loopback]alpine x86_64' {
-        set isofile='/boot/iso/alpine-3.3.3-x86_64.iso'
+        set isofile='/boot/iso/alpine-extended-3.6.0-x86_64.iso'
         loopback loop $isofile
         set root=loop
-        linux /boot/vmlinuz-grsec modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
-        initrd /boot/initramfs-grsec
+        linux /boot/vmlinuz-hardened modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
+        initrd /boot/initramfs-hardened
 }
 ```
 
@@ -316,10 +316,10 @@ menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
 ##### Live install medium
 
 ```
-menuentry '[loopback]debian-live-7.8.0-amd64-xfce-desktop' {
-	set isofile='/boot/iso/debian-live-7.8.0-amd64-xfce-desktop.iso'
-	loopback loop $isofile
-	linux (loop)/live/vmlinuz boot=live config fromiso=**/dev/sdb2**/$isofile
+menuentry '[loopback]debian-live-8.8.0-amd64-gnome-desktop' {
+	set isofile='/boot/iso/debian-live-8.8.0-amd64-gnome-desktop.iso'
+	loopback loop (hd1,2)$isofile
+	linux (loop)/live/vmlinuz boot=live config fromiso=/dev/sdb2$isofile
 	initrd (loop)/live/initrd.img
 }
 ```

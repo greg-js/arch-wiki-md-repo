@@ -64,7 +64,7 @@ Both of these drivers require non-free firmware to function. Install [b43-firmwa
 
 **Note:**
 
-*   BCM4306 rev.3, BCM4311, BCM4312 noticed to have problems with **b43-firmware**. Use [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) for these cards instead.
+*   BCM4306 rev.3, BCM4311, BCM4312 and BCM4318 rev.2 have been noticed to experience problems with **b43-firmware**. Use [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) for these cards instead.
 *   BCM4331 noticed to have problems with **b43-firmware-classic**. Use [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) for this card instead.
 
 ### broadcom-wl

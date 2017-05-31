@@ -327,11 +327,11 @@ Another way would be to set your hostname (vhost) with the 'set' command which w
 
 ## See also
 
-*   [Official website](http://www.irssi.org/)
-*   [Setting up Irssi](http://linuxtidbits.wordpress.com/2008/01/09/setting-up-irssi/)
-*   [Guide to efficiently using Irssi and screen](http://quadpoint.org/articles/irssi) by Matt Sparks
-*   [Official List of Irssi scripts](http://scripts.irssi.org/)
+*   [Official website](https://irssi.org/)
+*   [Official Irssi script repository](https://scripts.irssi.org/)
+*   [Setting up Irssi](https://linuxtidbits.wordpress.com/2008/01/09/setting-up-irssi/)
+*   [Guide to efficiently using Irssi and screen](https://quadpoint.org/articles/irssi/) by Matt Sparks
 *   [IRC notifications with dzen2](http://jasonwryan.com/blog/2011/11/07/irc-dzen/) by Jason Ryan
-*   [Irssi’s /channel, /network, /server and /connect – What it means](http://pthree.org/2010/02/02/irssis-channel-network-server-and-connect-what-it-means/) by Aaron Toponce
-*   [awesome Wiki Irssi tips](https://web.archive.org/web/20160227121906/http://awesome.naquadah.org/wiki/Irssi_tips)
-*   [irssi systemd unit](https://gist.github.com/drye/5520101)
+*   [Irssi’s /channel, /network, /server and /connect – What it means](https://pthree.org/2010/02/02/irssis-channel-network-server-and-connect-what-it-means/) by Aaron Toponce
+*   [awesome Wiki Irssi tips](https://web.archive.org/web/20160227121906/http://awesome.naquadah.org/wiki/Irssi_tips) (Wayback Machine)
+*   [irssi systemd unit GitHub gist](https://gist.github.com/drye/5520101)

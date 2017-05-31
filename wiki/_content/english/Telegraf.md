@@ -10,7 +10,7 @@ Telegraf is an agent written in Go for collecting, processing, aggregating, and 
 
 All configuration is done in `/etc/telegraf/telegraf.conf`. By default it expects you to have [InfluxDB](/index.php/InfluxDB "InfluxDB") installed. To test the default output, run `telegraf --test`.
 
-The configuration is well documented, but you can also ahve a look at their [Documentation](https://docs.influxdata.com/telegraf/latest/)
+The configuration is well documented, but you can also have a look at [their documentation](https://docs.influxdata.com/telegraf/latest/).
 
 ## See also
 

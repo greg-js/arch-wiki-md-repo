@@ -21,6 +21,7 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 Classes are announced on arch-general, the forums, and other broadcasting places like twitter. A list is given below for easy viewing.
 
 | **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(s)** |
+| 2017-06-04 17:00 UTC | *The Beginner's Guide to Arch Linux Package Management* | Eschwartz | [arch-general](https://lists.archlinux.org/pipermail/arch-general/2017-May/043712.html) |
 
 ### Previous classes
 
