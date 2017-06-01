@@ -142,6 +142,8 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |
 | [Dell WD15 130W](https://www.amazon.com/dp/B01FN1YK92) | 3xUSB-A 3.0, 2xUSB-A 2.0, Ethernet, HDMI, Mini DisplayPort, VGA, Line Out, Line In | Working |
 | [StarTech.com tb32dp2 - Thunderbolt 3 Adapter](https://www.amazon.com/dp/B01ANR4CYE) | 2 x DP (4 K, 60 Hz) | Working |
+| [StarTech TBT3TBTADAP Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
+| [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
 | [Cable Matters USB-C Multiport Adapter](https://www.amazon.com/dp/B01C316EIK) | 4K HDMI or VGA, USB 3.0, Gigabit Ethernet | Working |
 | [Juiced Systems BizHUB USB-C Multiport Gigabit HDMI Hub](https://www.amazon.com/Juiced-BizHUB-Multiport-Ethernet-Delivery/dp/B01J391C3W) | 4K@30Hz HDMI, 3x USB 3.0, Gigabit Ethernet, USB-C Power, SD, Micro-SD | Working |
 | [Anker USB-C to HDMI Adapter](https://www.amazon.com/Anker-Adapter-Supports-Macbook-Chromebook/dp/B01MYUCWOK/) | 4K@60Hz HDMI | Working |

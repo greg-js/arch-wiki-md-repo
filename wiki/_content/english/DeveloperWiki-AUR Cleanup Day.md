@@ -150,4 +150,3 @@ Removed $count directories.
 
 *   [Bug Day](/index.php/Bug_Day "Bug Day")
 *   [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar")
-*   [Arch Translation Day](/index.php/Arch_Translation_Day "Arch Translation Day")

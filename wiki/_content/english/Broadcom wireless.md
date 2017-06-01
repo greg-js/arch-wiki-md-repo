@@ -20,6 +20,7 @@ This article details how to install and setup a Broadcom wireless network device
     *   [4.7 Device BCM43241 not detected](#Device_BCM43241_not_detected)
     *   [4.8 Missing firmware for Asus PCE-AC88](#Missing_firmware_for_Asus_PCE-AC88)
     *   [4.9 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
+    *   [4.10 No 5GHz for BCM4360 (14e4:43a0) devices](#No_5GHz_for_BCM4360_.2814e4:43a0.29_devices)
 
 ## History
 
@@ -170,3 +171,7 @@ See [[1]](https://ubuntuforums.org/showthread.php?t=2337200&p=13618497#post13618
 ### Connection is unstable with some routers
 
 If no other approaches help, install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), or use a [previous driver version](/index.php/Downgrading_packages "Downgrading packages").
+
+### No 5GHz for BCM4360 (14e4:43a0) devices
+
+Issue appears to be linked to a [channel issue](https://askubuntu.com/questions/749420/wireless-lost-ability-to-use-5ghz-pce-ac68) at least in the United States. Changing the wireless channel to a lower channel number (like 40) seems to allow connection to 5GHz bands.

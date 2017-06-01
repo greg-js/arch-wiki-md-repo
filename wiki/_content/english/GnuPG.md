@@ -839,7 +839,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [RFC4880 "OpenPGP Message Format"](https://tools.ietf.org/html/rfc4880)
 *   [Creating GPG Keys (Fedora)](https://fedoraproject.org/wiki/Creating_GPG_Keys)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
-*   [A more comprehensive gpg Tutorial](http://blog.sanctum.geek.nz/series/linux-crypto/)
+*   [A more comprehensive gpg Tutorial](https://sanctum.geek.nz/arabesque/series/gnu-linux-crypto/)
 *   [gpg.conf recommendations and best practices](https://help.riseup.net/en/security/message-security/openpgp/gpg-best-practices)
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)

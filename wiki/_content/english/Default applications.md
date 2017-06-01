@@ -172,8 +172,6 @@ $ xdg-settings set default-url-scheme-handler irc xchat.desktop
 
 **Tip:** If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to work properly without a desktop environment, you will need to install [#perl-file-mimeinfo](#perl-file-mimeinfo) or one of the [#xdg-open alternatives](#xdg-open_alternatives).
 
-**Note:** Ironically, xdg-utils writes to deprecated config locations (see [#XDG standard](#XDG_standard)). This will be fixed in version [1.1.2](https://cgit.freedesktop.org/xdg/xdg-utils/commit/?id=9dac27a442b0e44b3f235798b77715e26169500f).
-
 ### xdg-open alternatives
 
 Because of the complexity of the [#xdg-utils](#xdg-utils) version of `xdg-open`, it can be difficult to debug when the wrong default application is being opened. Because of this, there are many alternatives that attempt to improve upon it. Several of these alternatives replace the `/usr/bin/xdg-open` binary, thus changing the default application behavior of most applications. Others simply provide an alternative method of choosing default applications.

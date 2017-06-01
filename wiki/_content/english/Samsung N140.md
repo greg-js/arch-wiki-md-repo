@@ -202,24 +202,25 @@ Then, rebuild the initrd image
 
 #### Binding Fn keys in Openbox
 
-In [Openbox](/index.php/Openbox "Openbox") one can use the internal keybind setup instead of xbindkeys. Example of rc.xml (In this instance, volume Fn Keys):
+In [Openbox](/index.php/Openbox "Openbox") one can use the internal keybind setup instead of [xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Example of `rc.xml` (In this instance, volume Fn Keys):
 
 ```
-   <keybind key="XF86AudioRaiseVolume">
-     <action name="Execute">
-       <command>amixer set Master 5%+ unmute</command>
-     </action>
-   </keybind>
-   <keybind key="XF86AudioLowerVolume">
-     <action name="Execute">
-       <command>amixer set Master 5%- unmute</command>
-     </action>
-   </keybind>
-   <keybind key="XF86AudioMute">
-     <action name="Execute">
-       <command>amixer set Master toggle</command>
-     </action>
-   </keybind>
+<!-- Multimedia Keys -->
+<keybind key="XF86AudioRaiseVolume">
+  <action name="Execute">
+    <command>amixer set Master 5%+ unmute</command>
+  </action>
+</keybind>
+<keybind key="XF86AudioLowerVolume">
+  <action name="Execute">
+    <command>amixer set Master 5%- unmute</command>
+  </action>
+</keybind>
+<keybind key="XF86AudioMute">
+  <action name="Execute">
+    <command>amixer set Master toggle</command>
+  </action>
+</keybind>
 
 ```
 

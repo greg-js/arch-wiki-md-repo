@@ -76,7 +76,7 @@ O tamanho de nossa comunidade levou à criação de múltiplos canais IRC. Para 
 | [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | Um espaço para aprender, tentar novas coisas e pedir ajuda sem medo do ridículo. |
 | [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Canal de discussão para atingir compilações reproduzíveis. |
 | [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Discussão sobre questões de segurança em pacotes do Arch. |
-| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussão sobre [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") e seus artigos. |
+| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussão sobre [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") e seus artigos. |
 | [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Discutindo gênero e igualdade, principalmente em inglês. |
 
 ### Canais IRC internacionais

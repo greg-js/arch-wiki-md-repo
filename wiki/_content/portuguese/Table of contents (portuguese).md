@@ -1,9 +1,9 @@
-| [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(15)</small> |
+| [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(13)</small> |
 | <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(14)</small> |
 | <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(1)</small> |
 | <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(8)</small> |
-| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(3)</small> |
-| <small>1.2.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(3)</small> |
+| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(4)</small> |
+| <small>1.2.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(4)</small> |
 | <small>1.3.</small> [Baixando e Instalando o Arch](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)") <small>(0)</small> |
 | <small>2.1.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(Portugu%C3%AAs) "Category:Data compression and archiving (Português)") <small>(1)</small> |
@@ -26,6 +26,7 @@
 | <small>8.</small> [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)") <small>(0)</small> |
 | <small>8.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(3)</small> |
 | <small>8.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(1)</small> |
+| <small>8.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
 | <small>8.2.</small> [Ambientes Desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)") <small>(0)</small> |
 | <small>8.2.1.</small> [Gerenciadores de tela](/index.php/Category:Display_managers_(Portugu%C3%AAs) "Category:Display managers (Português)") <small>(3)</small> |
 | <small>8.2.2.</small> [GNOME](/index.php/Category:GNOME_(Portugu%C3%AAs) "Category:GNOME (Português)") <small>(2)</small> |
@@ -35,6 +36,7 @@
 | <small>9.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(1)</small> |
 | <small>9.1.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(Portugu%C3%AAs) "Category:Daemons and system services (Português)") <small>(2)</small> |
 | <small>9.2.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(1)</small> |
+| <small>9.2.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
 | <small>9.3.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(2)</small> |
 | <small>9.4.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
 | <small>9.5.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(2)</small> |

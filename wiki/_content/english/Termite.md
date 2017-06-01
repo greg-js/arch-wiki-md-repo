@@ -16,7 +16,7 @@ The configuration file allows to change colors and set some options. Termite sup
 
 ## Installation
 
-Install the [termite](https://www.archlinux.org/packages/?name=termite) package, or [termite-git](https://aur.archlinux.org/packages/termite-git/) for the development version.
+Install the [termite](https://www.archlinux.org/packages/?name=termite) package, or [termite-git](https://aur.archlinux.org/packages/termite-git/) for the development version. For Wayland tiling WM users, you may want to install [termite-nocsd](https://aur.archlinux.org/packages/termite-nocsd/) which disable client side decorations.
 
 ## Usage
 

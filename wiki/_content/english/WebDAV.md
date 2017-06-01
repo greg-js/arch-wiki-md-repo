@@ -84,9 +84,9 @@ Coll: test
 
 ```
 
-### [Thunar](/index.php/Thunar "Thunar")
+### Thunar
 
-Just press `Ctrl+l` and enter the address with *dav* or *davs* protocol specified:
+In [Thunar](/index.php/Thunar "Thunar") just press `Ctrl+l` and enter the address with *dav* or *davs* protocol specified:
 
 ```
 davs://webdav.yandex.ru

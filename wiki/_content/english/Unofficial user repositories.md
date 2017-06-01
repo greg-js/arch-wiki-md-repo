@@ -140,17 +140,17 @@ Server = https://mirror.archstrike.org/$arch/$repo
 
 #### ivasilev
 
-*   **Maintainer:** [Ianis G. Vasilev](http://ivasilev.net)
+*   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
-*   **Upstream page:** [http://ivasilev.net/pacman](http://ivasilev.net/pacman)
+*   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
 *   **Key-ID:** 436BB513
 
 **Note:** I mantain 'any', 'i686' and 'x86_64' repos. Each of them includes packages from 'any'. $arch can be replaced with any of the three
 
 ```
 [ivasilev]
-Server = http://ivasilev.net/pacman/any
-# Server = http://ivasilev.net/pacman/$arch
+Server = https://ivasilev.net/pacman/any
+# Server = https://ivasilev.net/pacman/$arch
 
 ```
 
@@ -351,14 +351,14 @@ Server = http://repo.herecura.be/$repo/$arch
 
 #### ivasilev
 
-*   **Maintainer:** [Ianis G. Vasilev](http://ivasilev.net)
+*   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
-*   **Upstream page:** [http://ivasilev.net/pacman](http://ivasilev.net/pacman)
+*   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
 *   **Key-ID:** 436BB513
 
 ```
 [ivasilev]
-Server = http://ivasilev.net/pacman/$arch
+Server = https://ivasilev.net/pacman/$arch
 
 ```
 

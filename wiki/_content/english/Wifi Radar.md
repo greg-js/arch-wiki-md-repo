@@ -1,4 +1,4 @@
-[WiFi Radar](http://wifi-radar.tuxfamily.org/) is a nifty little GUI program that lets you switch wireless networks with ease.
+[WiFi Radar](https://wifi-radar.tuxfamily.org/) is a nifty little GUI program that lets you switch wireless networks with ease.
 
 ## Installation
 
@@ -6,7 +6,7 @@
 
 ## Configuration
 
-The project's [documention](http://wifi-radar.tuxfamily.org/support/user-manual.html) gives a good overview for the user interface.
+The project's [documention](https://wifi-radar.tuxfamily.org/support/user-manual.html) gives a good overview for the user interface.
 
 *wifi-radar* needs to be run with administrative privileges. Edit `/etc/sudoers` using the *visudo* command and add:
 
@@ -17,7 +17,7 @@ The project's [documention](http://wifi-radar.tuxfamily.org/support/user-manual.
 
 Then, run *wifi-radar* from your application menu to view the available networks or to configure your setup.
 
-For configuration file options, see the project's [manual](http://wifi-radar.tuxfamily.org/support/user-manual.html).
+For configuration file options, see the project's [manual](https://wifi-radar.tuxfamily.org/support/user-manual.html).
 
 **Tip:**
 

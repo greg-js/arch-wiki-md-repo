@@ -317,11 +317,11 @@ Labels-based access control means the extended attributes of a file are used to 
 
 ### Kernel self-protection / exploit mitigation
 
-The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/thestinger/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults. It currently offers a subset of the features of the previous `linux-grsec` package before PaX and grsecurity became fully private commercial-only patches. The intention is for it to grow in scope alongside the upstream Kernel Self Protection Project. As much as possible will be landed upstream, but it can move ahead without waiting for changes to land and rejection of changes for political reasons won't stall it.
+The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/thestinger/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults.
 
 #### Userspace ASLR comparison
 
-The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package provides an improved implementation of Address Space Layout Randomization for userspace processes. It provides close to the same ASLR quality as PaX/grsecurity. The [paxtest](https://www.archlinux.org/packages/?name=paxtest) command can be used to obtain an estimate of the provided entropy:
+The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package provides an improved implementation of Address Space Layout Randomization for userspace processes. The [paxtest](https://www.archlinux.org/packages/?name=paxtest) command can be used to obtain an estimate of the provided entropy:
 
  `linux-hardened` 
 ```

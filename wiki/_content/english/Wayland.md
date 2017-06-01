@@ -16,7 +16,7 @@
     *   [3.1 GTK+ 3](#GTK.2B_3)
     *   [3.2 Qt 5](#Qt_5)
     *   [3.3 Clutter](#Clutter)
-    *   [3.4 SDL](#SDL)
+    *   [3.4 SDL2](#SDL2)
     *   [3.5 GLFW](#GLFW)
     *   [3.6 EFL](#EFL)
 *   [4 Window managers and desktop shells](#Window_managers_and_desktop_shells)
@@ -44,7 +44,7 @@ For the GPU driver and Wayland composer to be compatible they must support the s
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
-| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [Sway](/index.php/Sway "Sway") (from [0.13](http://phoronix.com/scan.php?page=news_item&px=Sway-Compositor-April)) |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [Sway](/index.php/Sway "Sway") |
 
 ## Weston
 
@@ -286,23 +286,23 @@ The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Waylan
 
 ### Qt 5
 
-The [qt5](https://www.archlinux.org/groups/x86_64/qt5/) package from the repositories has the Wayland support if [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is installed. To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). For Arch, most QT applications do not work because of [QTBUG-58423](https://bugreports.qt.io/browse/QTBUG-58423), will be fixed with qt-5.9: [https://codereview.qt-project.org/#/c/184278/](https://codereview.qt-project.org/#/c/184278/) .
+To enable Wayland support in Qt 5, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package.
+
+To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable").
 
 ### Clutter
 
-The Clutter toolkit has a Wayland backend that allows it to run as a Wayland client. The backend is enabled in the official package in extra.
+The Clutter toolkit has a Wayland backend that allows it to run as a Wayland client. The backend is enabled in the [clutter](https://www.archlinux.org/packages/?name=clutter) package.
 
 To run a Clutter app on Wayland, set `CLUTTER_BACKEND=wayland`.
 
-### SDL
+### SDL2
 
-Experimental wayland support is now in SDL 2.0.2 and enabled by default on Arch Linux.
-
-To run a SDL application on Wayland, set `SDL_VIDEODRIVER=wayland`.
+To run a SDL2 application on Wayland, set `SDL_VIDEODRIVER=wayland`.
 
 ### GLFW
 
-Experimental wayland support is now in GLFW 3.1 and can be enabled with the `-DGLFW_USE_WAYLAND=ON` CMake option at compile time. You can also install the package [glfw-wayland-git](https://aur.archlinux.org/packages/glfw-wayland-git/) from the AUR.
+To use GLFW with the Wayland backend, install the [glfw-wayland](https://www.archlinux.org/packages/?name=glfw-wayland) package (instead of [glfw-x11](https://www.archlinux.org/packages/?name=glfw-x11)).
 
 ### EFL
 

@@ -1,4 +1,4 @@
-[irssi](http://www.irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
+[irssi](https://irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
 
 ## Contents
 
@@ -28,7 +28,7 @@ Several scripts are available in the AUR under [**irssi-script**](https://aur.ar
 
 ## Usage
 
-For a detailed introduction see the [official documentation](http://irssi.org/documentation).
+For a detailed introduction see the [official documentation](https://irssi.org/documentation).
 
 **Note:** This section assumes you already know the basics of [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") and have used other clients in the past
 
@@ -222,7 +222,7 @@ Otherwise:
 
 ### irssi with nicklist in tmux
 
-The *irssi* plugin '[nicklist](http://scripts.irssi.org/scripts/nicklist.pl)' offers to add a pane listing the users on the channel currently viewed. It has two methods to do this:
+The *irssi* plugin '[nicklist](https://scripts.irssi.org/scripts/nicklist.pl)' offers to add a pane listing the users on the channel currently viewed. It has two methods to do this:
 
 *   **screen**, which simply adds the list to the right of *irssi*, but brings the disadvantage that the entire window gets redrawn every time *irssi* prints a line.
 

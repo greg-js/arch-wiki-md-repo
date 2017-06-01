@@ -2,25 +2,21 @@ This article covers the Arch Linux support for the Lenovo ThinkPad Edge E330s la
 
 ## Contents
 
-*   [1 Review](#Review)
-*   [2 Hardware](#Hardware)
-    *   [2.1 lspci](#lspci)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Clickpad](#Clickpad)
-    *   [3.2 Jumping cursor on touchpad release](#Jumping_cursor_on_touchpad_release)
-    *   [3.3 Video](#Video)
-    *   [3.4 Wireless](#Wireless)
-        *   [3.4.1 Intel Centrino Wireless-N 2230 (rev c4)](#Intel_Centrino_Wireless-N_2230_.28rev_c4.29)
-    *   [3.5 Sound](#Sound)
-    *   [3.6 Webcam](#Webcam)
-    *   [3.7 Power](#Power)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Brightness control](#Brightness_control)
-    *   [4.2 USB 2.0 not working or giving kernel traces](#USB_2.0_not_working_or_giving_kernel_traces)
-
-## Review
-
-Check this [http://www.notebookcheck.net/Review-Lenovo-Thinkpad-Edge-E330-Notebook.83754.0.html](http://www.notebookcheck.net/Review-Lenovo-Thinkpad-Edge-E330-Notebook.83754.0.html) for a hardware review.
+*   [1 Hardware](#Hardware)
+    *   [1.1 lspci](#lspci)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Clickpad](#Clickpad)
+    *   [2.2 Jumping cursor on touchpad release](#Jumping_cursor_on_touchpad_release)
+    *   [2.3 Video](#Video)
+    *   [2.4 Wireless](#Wireless)
+        *   [2.4.1 Intel Centrino Wireless-N 2230 (rev c4)](#Intel_Centrino_Wireless-N_2230_.28rev_c4.29)
+    *   [2.5 Sound](#Sound)
+    *   [2.6 Webcam](#Webcam)
+    *   [2.7 Power](#Power)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Brightness control](#Brightness_control)
+    *   [3.2 USB 2.0 not working or giving kernel traces](#USB_2.0_not_working_or_giving_kernel_traces)
+*   [4 See also](#See_also)
 
 ## Hardware
 
@@ -143,3 +139,7 @@ blacklist iTCO_wdt
 blacklist thinkpad_acpi # it not used by this model and gives warnings about unknown events to the logfiles when loaded.
 
 ```
+
+## See also
+
+*   [notebookcheck hardware review](https://www.notebookcheck.net/Review-Lenovo-Thinkpad-Edge-E330-Notebook.83754.0.html)

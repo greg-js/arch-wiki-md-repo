@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Kernels](/index.php/Kernels "Kernels") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-12，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=431148)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernels](/index.php/Kernels "Kernels") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=477606)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
 
@@ -17,9 +17,8 @@
         *   [2.2.1 -ck](#-ck)
         *   [2.2.2 -rt](#-rt)
         *   [2.2.3 -bld](#-bld)
-        *   [2.2.4 -grsecurity](#-grsecurity)
-        *   [2.2.5 Tiny-Patches](#Tiny-Patches)
-        *   [2.2.6 -pf](#-pf)
+        *   [2.2.4 Tiny-Patches](#Tiny-Patches)
+        *   [2.2.5 -pf](#-pf)
     *   [2.3 独立补丁](#.E7.8B.AC.E7.AB.8B.E8.A1.A5.E4.B8.81)
         *   [2.3.1 Reiser4](#Reiser4)
         *   [2.3.2 fbsplash](#fbsplash)
@@ -34,15 +33,15 @@
 
 	[linux](https://www.archlinux.org/packages/?name=linux)
 
-	位于[core]仓库中，包含了对应的 Linux 内核和内核模块。官方原版内核再加 [几个补丁](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
+	位于 "core" 仓库中，包含了对应的 Linux 内核和内核模块。官方原版内核再加 [几个补丁](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
+
+	[linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
+
+	更加注重安全的 Linux 内核，采用一系列 [加固补丁](https://github.com/thestinger/linux-hardened) 以减少内核和用户空间产生漏洞的风险。和 [linux](https://www.archlinux.org/packages/?name=linux) 相比，还启用了一些加固选项，比如用户命名空间(同时通过补丁禁用未授权用户的访问)、审计以及 [SELinux](/index.php/SELinux "SELinux")。
 
 	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
 	长期支持版 (LTS) 位于[core]仓库中，包含了长期支持的 Linux 内核和内核模块。
-
-	[linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)
-
-	支持 [Grsecurity Patchset](/index.php/Grsecurity_Patchset "Grsecurity Patchset") 和 PaX 的内核及模块，增加了系统安全性。
 
 	[linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
@@ -56,31 +55,11 @@
 
 	兼容 aufs 的 linux 内核及模块，适合使用 [docker](/index.php/Docker "Docker") 的场景.
 
-	[linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
-
-	Linux kernel with [AppArmor](/index.php/AppArmor "AppArmor") capabilities enabled.
-
-	[linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)
-
-	Linux kernel and modules with the [Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler") (BFS) - created by Con Kolivas for desktop computers with fewer than 4096 cores, with BFQ I/O scheduler as optional.
-
-	[linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/)
-
-	The Linux kernel with patches added to support chromebook hardware.
-
 	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
-	Linux Kernel built with Con Kolivas' ck1 patchset.
+	Linux 内核加 Con Kolivas 的 ck1 补丁。
 
-	Additional options which can be toggled on/off in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") include: BFQ scheduler, nconfig, localmodconfig and use running kernel's config.
-
-	These are patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The ck patches include BFS.
-
-	For further information and installation instructions, please read the [linux-ck](/index.php/Linux-ck "Linux-ck") main article.
-
-	[linux-eee-ck](https://aur.archlinux.org/packages/linux-eee-ck/)
-
-	The Linux Kernel and modules for the Asus Eee PC 701, built with Con Kolivas' ck1 patchset.
+	通过 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 可以配置的功能包括: BFQ 调度器, nconfig, localmodconfig 和使用当前运行内核的 config。
 
 	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)
 
@@ -94,7 +73,7 @@
 
 	The Linux Kernel and modules with gentoo-sources patchset and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") support.
 
-	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
+	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
 
 	The Linux Kernels without "binary blobs".
 
@@ -102,17 +81,9 @@
 
 	[Liquorix](http://liquorix.net) is a distro kernel replacement built using a Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
 
-	[linux-lts34](https://aur.archlinux.org/packages/linux-lts34/)
-
-	The Linux 3.4 Long-Term Support Kernel and modules.
-
 	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
 
 	The Linux 3.10 Long-Term Support Kernel and modules.
-
-	[linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)
-
-	The Linux 3.12 Long-Term Support Kernel and modules.
 
 	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 
@@ -122,17 +93,13 @@
 
 	The Linux Kernel and modules with [Multipath TCP](http://multipath-tcp.org/) support.
 
-	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)
-
-	Static kernel for netbooks with Intel Atom N270/N280/N450/N550 such as the Eee PC with the add-on of external firmware ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) and patchset (BFS + TuxOnIce + BFQ optional) - Only Intel GPU
-
-	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)
-
-	The Linux Kernel and modules with [PaX](/index.php/PaX "PaX") patches for increased security.
-
 	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
 
 	Linux kernel and modules with the pf-kernel patch [-ck patchset (BFS included), TuxOnIce, BFQ] and aufs3.
+
+	[linux-rt](https://aur.archlinux.org/packages/linux-rt/)
+
+	Linux kernel with the realtime patch set. Improves latency and introduces hard realtime support. [https://rt.wiki.kernel.org/](https://rt.wiki.kernel.org/)
 
 	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)
 
@@ -172,7 +139,7 @@ You can search Google for more sets, but remember to use quotes (`"-nitro"`, for
 
 #### -ck
 
-[Linux-ck](/index.php/Linux-ck "Linux-ck") contains patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The patches are created and maintained by Con Kolivas, his site is at [http://users.on.net/~ckolivas/kernel/](http://users.on.net/~ckolivas/kernel/). Con maintains a full set but also provides the patches broken down so you can add only those you prefer.
+[Linux-ck](/index.php/Linux-ck "Linux-ck") contains patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The patches are created and maintained by Con Kolivas, his site is at [http://users.tpg.com.au/ckolivas/kernel/](http://users.tpg.com.au/ckolivas/kernel/). Con maintains a full set but also provides the patches broken down so you can add only those you prefer.
 
 The -ck patches can be found at [http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/)
 
@@ -193,12 +160,6 @@ patch at [https://www.kernel.org/pub/linux/kernel/projects/rt/](https://www.kern
 BLD is best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
 
 Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/)
-
-#### -grsecurity
-
-[Grsecurity](/index.php/Grsecurity "Grsecurity") is a security focused patchset. It adds numerous security related features such as Role-Based Access Control and utilizes features of the PaX project. It can be used on a desktop but a public server would receive the greatest benefit. Some applications are incompatible with the additional security measures implemented by this patchset. If this occurs, consider using a lower security level.
-
-The -grsecurity patches can be found at [https://grsecurity.net](https://grsecurity.net)
 
 #### Tiny-Patches
 

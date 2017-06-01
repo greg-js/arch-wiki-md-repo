@@ -85,11 +85,11 @@ You will need a SSL certificate for all encrypted mail communications (SMTPS/IMA
 
 #### SMTPS
 
-Enable secure SMTP as described in [Postfix#Secure SMTP](/index.php/Postfix#Secure_SMTP "Postfix").
+Enable secure SMTP as described in [Postfix#SMTPS (port 465)](/index.php/Postfix#SMTPS_.28port_465.29 "Postfix").
 
 #### Prerequisites
 
-Before you copy&paste the configuration below, check if `relay_domains` has already been already set. If you leave more than one active, you will receive warnings during runtime.
+Before you copy & paste the configuration below, check if `relay_domains` has already been already set. If you leave more than one active, you will receive warnings during runtime.
 
 **Warning:** `relay_domains` can be dangerous. You usually do not want Postfix to forward mail of strangers. `$mydestination` is a sane default value. Double check it's value before running postfix! See [http://www.postfix.org/BASIC_CONFIGURATION_README.html#relay_to](http://www.postfix.org/BASIC_CONFIGURATION_README.html#relay_to)
 

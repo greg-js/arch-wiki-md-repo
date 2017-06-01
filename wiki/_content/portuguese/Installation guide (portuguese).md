@@ -1,6 +1,6 @@
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)").
 
-Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") ou as [páginas de manual](/index.php/Man_page "Man page") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
+Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page "Man page") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
 ## Contents
 

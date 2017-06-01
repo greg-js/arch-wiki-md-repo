@@ -32,7 +32,7 @@
 | <small>2.14.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4)</small> |
 | <small>2.15.</small> [文本编辑器](/index.php/Category:Text_editors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Text editors (简体中文)") <small>(3)</small> |
 | <small>2.16.</small> [Wine](/index.php/Category:Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wine (简体中文)") <small>(1)</small> |
-| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(14)</small> |
+| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(15)</small> |
 | <small>3.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)"))</small> |
 | <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(18)</small> |
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |

@@ -289,4 +289,4 @@ Wait until test completes, then:
 
 ## See also
 
-*   [EXT2/3 badblocks howto](http://smartmontools.sourceforge.net/badblockhowto.html)
+*   [EXT2/3 badblocks howto](https://www.smartmontools.org/wiki/BadBlockHowto)

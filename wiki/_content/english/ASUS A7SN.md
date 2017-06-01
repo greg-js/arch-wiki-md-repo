@@ -12,7 +12,6 @@
     *   [2.7 Bluetooth](#Bluetooth)
     *   [2.8 Pointer](#Pointer)
     *   [2.9 Hotkeys Keys](#Hotkeys_Keys)
-    *   [2.10 Utilities](#Utilities)
 
 ## Hardware
 
@@ -103,7 +102,3 @@ To enable the pointer follow this guide: [Touchpad Synaptics](/index.php/Touchpa
 ### Hotkeys Keys
 
 Front hotkeys should work our of box. If you use Gnome, go to System -> Preferences -> Keyboard shortcuts, and you can define the buttons.
-
-### Utilities
-
-Here are some useful utilities:

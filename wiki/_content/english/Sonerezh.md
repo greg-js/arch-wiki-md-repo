@@ -49,7 +49,7 @@ http {
 Here's an example on how you could setup a database for Sonerezh with [MariaDB](/index.php/MariaDB "MariaDB") called `sonerezh` for the user `sonerezh` identified by the password `sonerezh`:
 
 ```
-CREATE DATABASE pydio;
+CREATE DATABASE sonerezh;
 GRANT ALL PRIVILEGES ON sonerezh.* TO sonerezh@'localhost' IDENTIFIED BY 'sonerezh';
 FLUSH PRIVILEGES;
 

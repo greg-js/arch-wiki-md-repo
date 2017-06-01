@@ -1,10 +1,6 @@
-The Tecra M4 is a convertible-PC produced by Toshiba.
+The Tecra M4 is a convertible PC produced by Toshiba.
 
 Mine includes 512MByte of RAM, 60Gbyte SATA-HDD, NVidia 6200 graphics card and a serial Wacom tablet.
-
-This will be a short introduction on how to make everything work perfectly.
-
-This tutorial is a bit work in progress so stay tuned ;)
 
 ## Contents
 
@@ -18,29 +14,29 @@ This tutorial is a bit work in progress so stay tuned ;)
 *   [6 Script for changing orientation](#Script_for_changing_orientation)
 *   [7 What does not work](#What_does_not_work)
 
-# Installation
+## Installation
 
 Just boot the ArchLinux Installation disc and install the basics
 
-# Wireless drivers
+## Wireless drivers
 
 This PC contains an intel wireless card, that is supported by the ipw2200 driver. See [Wireless network configuration#ipw2100 and ipw2200](/index.php/Wireless_network_configuration#ipw2100_and_ipw2200 "Wireless network configuration").
 
-# Installing Wacom Tablet
+## Installing Wacom Tablet
 
 See [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet").
 
-# Optimizing battery lifetime
+## Optimizing battery lifetime
 
-## CPUFreq
+### CPUFreq
 
 Just install [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils")
 
-## PHC
+### PHC
 
 Optionally use [PHC](/index.php/PHC "PHC") to undervolt the processor.
 
-# Mapping screen-key to something that makes sense
+## Mapping screen-key to something that makes sense
 
 by default, the buttons on the screen return the combinations Super_L + [1-7] I prefer this tiny joystick to use as page up and page down - so I tried xmodmap
 
@@ -68,7 +64,7 @@ keycode  13 = 4 dollar Next Next onequarter currency
 
 that produces: tablet is landscape and orientation "normal" - joystick up -> page up, down -> page down tablet is portrait and orientation "left" - joystick up -> page up, down -> page down
 
-# Script for changing orientation
+## Script for changing orientation
 
  `/usr/bin/rotate` 
 ```
@@ -122,7 +118,7 @@ fi
 
 I customized the given script a bit, because turning right and inverted made no sense for me. This script can now be used with gnome-keybinding-properties
 
-# What does not work
+## What does not work
 
-*   Mapping joystick to page_up/down AND using the rotate button in gnome-keybinding-properties at the same time
-*   sound does work, if you reload the snd_intel8x0 module after boot - do not know, why
+*   Mapping joystick to page_up/down AND using the rotate button in gnome-keybinding-properties at the same time.
+*   Sound does work, if you reload the snd_intel8x0 module after boot - do not know why.

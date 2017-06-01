@@ -20,7 +20,7 @@
 
 ## Installation
 
-Install the package [cloudcross](https://aur.archlinux.org/packages/cloudcross/).
+[Install](/index.php/Install "Install") the package [cloudcross](https://aur.archlinux.org/packages/cloudcross/).
 
 ## Choosing a provider
 

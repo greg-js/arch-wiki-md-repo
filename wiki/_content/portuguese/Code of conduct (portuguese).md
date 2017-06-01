@@ -251,10 +251,10 @@ O idioma oficial do canal **#archlinux** é o inglês. Se você precisar de ajud
 
 ### Wiki
 
-Diretrizes para o [wiki](/index.php/ArchWiki:About "ArchWiki:About") podem ser encontradas em:
+Diretrizes para o [wiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") podem ser encontradas em:
 
 *   [ArchWiki:Contributing (Português)#As 3 regras fundamentais](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs)#As_3_regras_fundamentais "ArchWiki:Contributing (Português)")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
+*   [Help:Style (Português)](/index.php/Help:Style_(Portugu%C3%AAs) "Help:Style (Português)")
 *   [Help:Discussion](/index.php/Help:Discussion "Help:Discussion")
 
 ### [Rastreador de erros](https://bugs.archlinux.org/)

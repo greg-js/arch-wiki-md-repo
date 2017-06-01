@@ -1,3 +1,5 @@
+**警告:** Polipo 已经停止维护，建议使用 squid, privoxy 等其它方案.
+
 来自[Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
 	"*Polipo 是一个小而快速的缓存 web 代理程序(web 缓存, HTTP 代理, 代理服务器)。尽管 Polipo 是为一个人或一小群人使用而设计的，但并不妨碍它为一大群人所使用。*"
@@ -20,14 +22,7 @@
 
 ## 安装
 
-使用 [pacman](/index.php/Pacman "Pacman") 安装 [polipo](https://www.archlinux.org/packages/?name=polipo):
-
-```
-# pacman -S polipo
-
-```
-
-另外，可以从 [AUR](/index.php/AUR "AUR") 安装新的开发分支 [polipo-git](https://aur.archlinux.org/packages/polipo-git/)。
+[安装](/index.php/Install "Install") 软件包 [polipo](https://www.archlinux.org/packages/?name=polipo)。
 
 ## 优化 Polipo
 

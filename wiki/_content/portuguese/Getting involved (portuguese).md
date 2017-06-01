@@ -34,7 +34,7 @@ Uma das formas mais fáceis de participar e se envolver com o projeto é atravé
 
 ### Melhore esta wiki
 
-A [ArchWiki](/index.php/AboutWiki "AboutWiki") é uma documentação do Arch Linux mantida colaborativamente. Todos os usuários são incentivados a [contribuir](/index.php/ArchWiki:Contribuiting_(Portugu%C3%AAs) "ArchWiki:Contribuiting (Português)").
+A [ArchWiki](/index.php/SobreWiki "SobreWiki") é uma documentação do Arch Linux mantida colaborativamente. Todos os usuários são incentivados a [contribuir](/index.php/ArchWiki:Contribuiting_(Portugu%C3%AAs) "ArchWiki:Contribuiting (Português)").
 
 ### Ingresse nas salas de chat
 

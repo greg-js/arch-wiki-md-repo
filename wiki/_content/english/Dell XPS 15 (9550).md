@@ -33,6 +33,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [6.2 Battery](#Battery)
 *   [7 Bluetooth](#Bluetooth)
 *   [8 Thunderbolt 3 Docks](#Thunderbolt_3_Docks)
+*   [9 USB-C / Thunderbolt 3 Compatibility Chart](#USB-C_.2F_Thunderbolt_3_Compatibility_Chart)
 
 ## Pre-Installation System Settings
 
@@ -172,3 +173,12 @@ Bluetooth is disabled by default. If you wish to use Bluetooth you'll need to in
 It is possible to get video, audio, Ethernet and USB devices working by updating your BIOS to version >=1.2.19 and disabling Thunderbolt security in your bios settings. If you don't disable Thunderbolt security, then only video and power will work (at lest on the Dell TB16 dock).
 
 You can update your bios either [manually](http://www.dell.com/support/article/hr/en/hrdhs1/SLN171755/en) or by using fwupdmgr although if you installed arch by just bundling everything into /boot as some guides suggest then your only option is to update manually util this [issue](https://github.com/rhinstaller/fwupdate/issues/58) is resolved.
+
+## USB-C / Thunderbolt 3 Compatibility Chart
+
+| **Device** | **Ports** | **Status** |
+| [StarTech TBT3TBTADAP Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
+| [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
+| [https://www.amazon.co.uk/DisplayPort-CHOETECH-Thunderbolt-Compatible-ChromeBook/dp/B01N5RFAI4](https://www.amazon.co.uk/DisplayPort-CHOETECH-Thunderbolt-Compatible-ChromeBook/dp/B01N5RFAI4) CHOETECH USB-C to DisplayPort Cable (4K@60Hz)] | DisplayPort | Working |
+
+[This chart](https://wiki.archlinux.org/index.php/Dell_XPS_13_(9360)#USB-C_Compatibility_Chart) may also be helpful.
