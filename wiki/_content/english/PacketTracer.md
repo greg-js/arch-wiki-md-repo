@@ -70,9 +70,9 @@ The Cisco Packet Tracer-based Assessment Environment Check is used to confirm th
 
 You may use these videos as supplements to the installation to either ease or visualize the installation process.
 
-[PacketTracer -- Archlinux 32-bit](http://youtu.be/XBPLOxuXvAw)
+[PacketTracer -- Archlinux 32-bit](https://youtu.be/XBPLOxuXvAw)
 
-[PacketTracer -- Archlinux 64-bit](http://youtu.be/NPJpQrZ1C_s)
+[PacketTracer -- Archlinux 64-bit](https://youtu.be/NPJpQrZ1C_s)
 
 ## See also
 

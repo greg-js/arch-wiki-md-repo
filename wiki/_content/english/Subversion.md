@@ -354,4 +354,4 @@ For a list of subversion clients, see the [Wikipedia article](https://en.wikiped
 ## See also
 
 *   [http://svnbook.red-bean.com/en/1.1/svn-book.html#svn-ch-9-sect-2.2-re-load](http://svnbook.red-bean.com/en/1.1/svn-book.html#svn-ch-9-sect-2.2-re-load)
-*   [http://subversion.tigris.org/](http://subversion.tigris.org/)
+*   [https://subversion.apache.org/](https://subversion.apache.org/)

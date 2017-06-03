@@ -701,9 +701,9 @@ If you have very poor signal maybe your device has only one antenna connected an
 
 #### rtl8812au/rtl8821au
 
-Newer 802.11 a/b/g/n usb adapters, such as the Glam Hobby AC600 (Ourlink) may require rtl8812 or rtl8821 drivers before working.
+Newer 802.11 a/b/g/n/ac USB2.0/USB3.0 adapters, such as the Glam Hobby AC600 (Ourlink) or the [Edimax AC1200 (EW-7822UAC)](http://www.edimax.com/edimax/merchandise/merchandise_detail/data/edimax/global/wireless_adapters_ac1200_dual-band/ew-7822uac) may require rtl8812 or rtl8821 drivers before working.
 
-The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/).
+The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) (driver version 4), or [rtl8812au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8812au-v5-dkms-git/) (driver version 5).
 
 ```
 # modprobe 8812au

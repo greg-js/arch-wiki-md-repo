@@ -31,7 +31,7 @@ As mentioned above, there are many additional skins one can download/install to 
 
 ### Installation of Skins
 
-Skins can be 'installed' simply by unpacking their archive to the /usr/share/java/Jalbum/skins/SKINNAME
+To install a skin unpack its archive to `/usr/share/java/Jalbum/skins/*skin*`.
 
 Alternatively and preferable, users should consider making a PKGBUILD file for the skin and install it via pacman for maximal flexibility.
 

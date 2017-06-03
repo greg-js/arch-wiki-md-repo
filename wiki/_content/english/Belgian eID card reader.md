@@ -1,4 +1,4 @@
-[Belgian eID](http://eid.belgium.be/en%7C) card reader allow you to read your identity card.
+[Belgian eID](https://eid.belgium.be/en) card reader allow you to read your identity card.
 
 ## Contents
 

@@ -15,6 +15,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [4 And Yet It Moves](#And_Yet_It_Moves)
     *   [4.1 Game does not start](#Game_does_not_start)
 *   [5 Anodyne](#Anodyne)
+    *   [5.1 Play with a controller: joy2key configuration](#Play_with_a_controller:_joy2key_configuration)
 *   [6 Aquaria](#Aquaria)
     *   [6.1 Mouse pointer gets stuck in one direction](#Mouse_pointer_gets_stuck_in_one_direction)
 *   [7 ARK: Survival Evolved](#ARK:_Survival_Evolved)
@@ -305,6 +306,27 @@ Dependencies:
 
 *   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/), follow [#Adobe Air setup](#Adobe_Air_setup)
 *   [xterm](https://www.archlinux.org/packages/?name=xterm) (probably not required)
+
+### Play with a controller: joy2key configuration
+
+Configuration example to play [Anodyne](http://www.anodynegame.com/) with an XBox 360 Wireless Controller
+
+```
+COMMON
+-dev /dev/input/js0
+-X
+-thresh -18000 18000 -18000 18000 -18000 18000 -18000 18000 -18000 18000 -18000 18000 -18000 18000 -18000 18000
+-axis Left Right Up Down blank blank blank blank blank blank blank blank Left Right Up Down
+-buttons c x Return
+
+```
+
+Save this to `~/.joy2keyrc` and start joy2key after you start Anodyne
+
+```
+joy2key -rcfile ~/.joy2keyrc
+
+```
 
 ## Aquaria
 

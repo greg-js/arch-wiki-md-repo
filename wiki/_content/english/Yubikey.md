@@ -91,7 +91,7 @@ Install [yubico-pam](https://www.archlinux.org/packages/?name=yubico-pam).
 
 #### Authorization Mapping Files
 
-A mapping must be made between the YubiKey token ID and the user ID it is attached to. There are two ways to do this, either centrally in one file, or individually, where users can create the mapping in their home directories. If the central authorization mapping file is being used, user home directory mappings will not be used and the opposite applies if user home directory mappings are being used, the central authorization mappings file will not be used.
+A mapping must be made between the YubiKey token ID and the user ID it is attached to. There are two ways to do this, either centrally in one file, or individually, where users can create the mapping in their home directories. If the central authorization mapping file is being used, user home directory mappings will not be used and vice versa.
 
 ##### Central authorization mapping
 
@@ -118,7 +118,7 @@ Each user creates a `~/.yubico/authorized_yubikeys` file inside of their home di
 
 This is much the same concept as the SSH authorized_keys file.
 
-Note that this file must be readable by the pam_yubico module when the user is authenticated, otherwise login will fail. If this is not possible or desired, use the global mapping file instead.
+Note that this file must be readable by the `pam_yubico` module when the user is authenticated, otherwise login will fail. If this is not possible or desired, use the global mapping file instead.
 
 ##### Obtaining the Yubikey token ID (a.k.a. public ID)
 
@@ -282,7 +282,7 @@ Restart, especially if you have completed updates since your Yubikey last worked
 
 ### Yubikey not acting as HID device
 
-Add udev rule as described in [article](https://michaelheap.com/yubikey-on-arch/%7Cthis)
+Add udev rule as described in [this article](https://michaelheap.com/yubikey-on-arch/):
 
 ```
 $ sudo echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="users", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0"' | sudo tee /etc/udev/rules.d/10-security-key.rules

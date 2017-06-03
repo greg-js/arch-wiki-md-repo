@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Python](/index.php/Python "Python"). Дата последней синхронизации: 21 декабря 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Python&diff=0&oldid=413030).
+**Состояние перевода:** На этой странице представлен перевод статьи [Python](/index.php/Python "Python"). Дата последней синхронизации: 2 июня 2017‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Python&diff=0&oldid=479061).
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Python "wikipedia:ru:Python"):
 
@@ -26,11 +26,11 @@
 
 ### Python 3
 
-Python 3 - это актуальная на данный момент версия языка, несовместимая с Python 2\. Синтаксис в ней, по большей части, такой же, но многие вещи, например, то, как работают встроенные объекты наподобие словарей и строк, значительно изменились, а многие устаревшие функции были окончательно удалены. Помимо этого стандартная библиотека была разбита на несколько отдельных частей. Чтобы подробнее узнать о различиях, прочитайте статью [Python2orPython3](http://wiki.python.org/moin/Python2orPython3), а также относящуюся к ней [главу](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) книги "Погружение в Python 3".
+Python 3 - это актуальная на данный момент версия языка, несовместимая с Python 2\. Синтаксис в ней, по большей части, такой же, но многие вещи, например, то, как работают встроенные объекты наподобие словарей и строк, значительно изменились, а многие устаревшие функции были окончательно удалены. Помимо этого стандартная библиотека была разбита на несколько отдельных частей. Чтобы подробнее узнать о различиях, прочитайте статью [Python2orPython3](https://wiki.python.org/moin/Python2orPython3), а также относящуюся к ней [главу](http://getpython3.com/diveintopython3/porting-code-to-python-3-with-2to3.html) книги "Погружение в Python 3".
 
 Для получения самой свежей версии Python 3 [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [python](https://www.archlinux.org/packages/?name=python).
 
-Если вы хотите собрать еще более свежую RC/бета-версию из исходников, посетите страницу [Python Downloads](http://www.python.org/download/). В [пользовательском репозитории Arch](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") также есть несколько отличных [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")'ов. Если вы решили собрать RC-версию, обратите внимание, что исполняемый файл устанавливается (по умолчанию) в каталог `/usr/local/bin/python3.x`.
+Если вы хотите собрать еще более свежую RC/бета-версию из исходников, посетите страницу [Python Downloads](https://www.python.org/downloads/). В [пользовательском репозитории Arch](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") также есть несколько отличных [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")'ов. Если вы решили собрать RC-версию, обратите внимание, что исполняемый файл устанавливается (по умолчанию) в каталог `/usr/local/bin/python3.x`.
 
 ### Python 2
 
@@ -137,64 +137,67 @@ $ which python
 
 *   **TkInter** — привязки к Tk
 
-	[http://wiki.python.org/moin/TkInter](http://wiki.python.org/moin/TkInter) || стандартный модуль
+	[https://wiki.python.org/moin/TkInter](https://wiki.python.org/moin/TkInter) || стандартный модуль
 
 *   **pyQt** — привязки к [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")
 
-	[http://www.riverbankcomputing.co.uk/software/pyqt/intro](http://www.riverbankcomputing.co.uk/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
+	[https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
 
 *   **pySide** — привязки к [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")
 
-	[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
+	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
 
-*   **pyGTK** — привязки к [GTK+ 2](/index.php/GTK%2B "GTK+")
+*   **pyGTK** — привязки к [GTK+ 2](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)")
 
 	[http://www.pygtk.org/](http://www.pygtk.org/) || [pygtk](https://www.archlinux.org/packages/?name=pygtk)
 
-*   **PyGObject** — привязки к [GTK+ 2/3](/index.php/GTK%2B "GTK+") при помощи GObject Introspection
+*   **PyGObject** — привязки к [GTK+ 2/3](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)") при помощи GObject Introspection
 
 	[https://wiki.gnome.org/PyGObject_ru](https://wiki.gnome.org/PyGObject_ru) || [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) [python-gobject2](https://www.archlinux.org/packages/?name=python-gobject2) [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 
 *   **wxPython** — привязки к wxWidgets
 
-	[http://wxpython.org/](http://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
+	[https://wxpython.org/](https://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
 
-Для использования этих привязок в Python, скорее всего, потребуется установить соответствующие наборы библиотек.
+Для использования этих привязок в Python, скорее всего, потребуется доустановить соответствующие наборы библиотек.
 
 ## Советы и рекомендации
 
 ### IPython
 
-[IPython](http://ipython.org/) - это расширенная командная строка Python, доступная в официальных репозиториях в пакетах [ipython](https://www.archlinux.org/packages/?name=ipython) и [ipython2](https://www.archlinux.org/packages/?name=ipython2).
+[IPython](http://ipython.org/) - это расширенная командная строка Python, доступная в официальных репозиториях в пакетах [ipython](https://www.archlinux.org/packages/?name=ipython) и [ipython2](https://www.archlinux.org/packages/?name=ipython2). Если вы хотите использовать IPython notebook, установите пакет [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) для IPython3 или [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) для IPython2\. Затем выполните:
 
-[bpython](http://bpython-interpreter.org/) - интерфейс ncurses для интерпретатора Python, доступный в официальных репозиториях в пакетах [bpython](https://www.archlinux.org/packages/?name=bpython) и [bpython2](https://www.archlinux.org/packages/?name=bpython2).
+```
+$ jupyter notebook
+
+```
+
+чтобы запустить браузер, а в нем - ядро IPython. Вы можете выбрать версию *python* при создании notebook в браузере.
+
+[bpython](https://bpython-interpreter.org/) - интерфейс ncurses для интерпретатора Python, доступный в официальных репозиториях в пакетах [bpython](https://www.archlinux.org/packages/?name=bpython) и [bpython2](https://www.archlinux.org/packages/?name=bpython2).
 
 ### Виртуальное окружение
 
-Python предоставляет инструменты для создания изолированных окружений, в которых вы можете устанавливать пакеты, не влияя и никак не взаимодействуя ни на другие виртуальные окружения, ни на системные пакеты Python. Таким образом, в частности, можно изменить интерпретатор python для конкретного приложения.
+Python предоставляет инструменты для создания изолированных окружений, в которых вы можете устанавливать пакеты, не влияя и никак не взаимодействуя ни на другие виртуальные окружения, ни на системные пакеты Python. Таким образом, в частности, можно изменить интерпретатор *python* для конкретного приложения.
 
 Для получения дополнительной информации смотрите статью [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment").
 
 ### Включение автодополнения в оболочке Python2
 
-**Примечание:** Этот совет относится только к Python 2, начиная с версии 3.4 [автодополнение по клавише Tab](https://docs.python.org/3/tutorial/interactive.html) включено по умолчанию
+Начиная с версии Python 3.4, [автодополнение по клавише Tab](https://docs.python.org/3/tutorial/interactive.html) включено по умолчанию. Для Python 2 вы можете включить его самостоятельно, добавив следующие строки в файл, к которому обращается переменная окружения `PYTHONSTARTUP`: [[1]](https://algorithmicallyrandom.blogspot.co.at/2009/09/tab-completion-in-python-shell-how-to.html)
 
-Скопируйте это в интерактивную оболочку Python:
-
- `/usr/bin/python2` 
 ```
 import rlcompleter
 import readline
 readline.parse_and_bind("tab: complete")
-```
 
-Источник: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html](http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-python-shell-how-to.html).
+```
 
 ## Решение проблем
 
 ### Проблемы с версией Python в скриптах сборки
 
-Сборочные скрипты многих проектов предполагают, что `python` обращается к Python 2, и в конце концов это может привести к ошибке, обычно гласящей, что `print 'foo'` - неправильный синтаксис. К счастью, многие из них вызывают `python` через переменную `$PATH`, а не содержат в себе жестко прописанный `#!/usr/bin/python`. Благодаря этому, вместо редактирования установочных скриптов, вы можете создать файл `/usr/local/bin/python` с содержимым наподобие этого:
+Сборочные скрипты многих проектов предполагают, что `python` обращается к Python 2, и в конце концов это может привести к ошибке, обычно гласящей, что `print 'foo'` - неправильный синтаксис. К счастью, многие из них вызывают *python* через переменную окружения `PATH`, а не содержат в себе жестко прописанный `#!/usr/bin/python`. Благодаря этому, вместо редактирования установочных скриптов, вы можете создать файл `/usr/local/bin/python` с содержимым наподобие этого:
 
  `/usr/local/bin/python` 
 ```
@@ -215,11 +218,12 @@ exec python3 "$@"
 
 ## Смотрите также
 
-*   [Learning Python](http://shop.oreilly.com/product/9780596158071.do) - одна из самых исчерпывающих, актуальных и хорошо написанных книг про Python
-*   [Dive Into Python](http://www.diveintopython.net/) - великолепный бесплатный ресурс, предназначенный для продвинутых пользователей и имеющий [обновленную версию для Python 3](http://getpython3.com/diveintopython3/)
-*   [A Byte of Python](http://www.swaroopch.com/notes/Python) - книга, подходящая для тех, кто только начинает осваивать Python (и, в особенности, создание скриптов)
-*   [Learn Python The Hard Way](http://learnpythonthehardway.org) - лучшее введение в программирование
-*   [Learn Python](http://learnpython.org) - хороший ресурс для изучения Python
-*   [Crash into Python](http://stephensugden.com/crash_into_python/) - также известное под названием *Python for Programmers with 3 Hours*, это руководство предоставляет опытным разработчикам на других языках интенсивный курс по освоению Python
-*   [Beginning Game Development with Python and Pygame: From Novice to Professional](http://www.apress.com/book/view/9781590598726) - о разработке игр
-*   [Pythonspot](https://pythonspot.com) - великолепные руководства по программированию на Python
+*   [O'Reilly's Learning Python, пятое издание](http://shop.oreilly.com/product/0636920028154.do) коммерческое
+*   [Dive Into Python](http://www.diveintopython.net/), [Dive Into Python3](http://getpython3.com/diveintopython3/)
+*   [A Byte of Python](https://python.swaroopch.com/)
+*   [Learn Python the Hard Way](https://learnpythonthehardway.org/)
+*   [Learn Python](https://learnpython.org/)
+*   [Crash into Python](https://stephensugden.com/crash_into_python/) (предполагает владение другими языками программирования)
+*   [Beginning Game Development with Python and Pygame](https://www.apress.com/book/9781590598726) коммерческое
+*   [Think Python](http://www.greenteapress.com/thinkpython/)
+*   [Pythonspot](https://pythonspot.com)

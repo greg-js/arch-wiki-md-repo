@@ -257,7 +257,7 @@ Shell v2 在 UEFI 2.3+ 系统上表现最好，并比 Shell v1 优先推荐。Sh
 
 ### 启动 UEFI Shell
 
-部分基于华硕和 AMI Aptio x86_64 UEFI 固件的主板 (从 Sandy Bridge 起) 提供了一个叫做 `"Launch EFI Shell from filesystem device"` 的选项。对于这些主板，下载 x86_64 UEFI Shell ，复制进 EFI 系统分区，命名为 `<EFI_SYSTEM_PARTITION>/shellx64.efi` (大部分是 `/boot/efi/shellx64.efi`) .
+部分基于 AMI Aptio x86_64 UEFI 固件的主板 (从 Sandy Bridge 起，尤其是华硕) 提供了一个叫做 `"Launch EFI Shell from filesystem device"` 的选项。对于这些主板，下载 x86_64 UEFI Shell ，复制进 EFI 系统分区，命名为 `<EFI_SYSTEM_PARTITION>/shellx64.efi` (大部分是 `/boot/efi/shellx64.efi`) .
 
 Phoenix SecureCore Tiano UEFI 固件已内嵌 UEFI Shell, 可按 `F6`, `F11` 或 `F12` 键来启动。
 

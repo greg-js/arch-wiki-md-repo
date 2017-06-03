@@ -101,9 +101,12 @@ For existing users, simply set the user's shell to scponly:
 
 #### Adding a chroot jail
 
-The package comes with a script to create a chroot. To use it:
+The package comes with a script to create a chroot. To use it, run:
 
- `# cd /usr/share/doc/scponly/`  `# ./setup_chroot.sh` 
+```
+# /usr/share/doc/scponly/setup_chroot.sh
+
+```
 
 *   Provide answers
 *   Check that `/path/to/chroot` has `root:root` owner and `r-x` for others

@@ -1,4 +1,4 @@
-[Blueman](https://github.com/blueman-project/blueman) is a full featured Bluetooth manager written in [GTK+](/index.php/GTK%2B "GTK+"). See the project page on [Github](https://github.com/blueman-project/blueman).
+[Blueman](https://github.com/blueman-project/blueman) is a full featured Bluetooth manager written in [GTK+](/index.php/GTK%2B "GTK+").
 
 ## Contents
 

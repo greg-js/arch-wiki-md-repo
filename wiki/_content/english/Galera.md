@@ -129,4 +129,5 @@ $ sudo mkdir /usr/lib/galera && sudo cp libgalera_smm.so /usr/lib/galera/
 
 ## See also
 
-[Galera Wiki](http://www.codership.com/wiki/doku.php?id=galera_wiki) [Percona XtraDB Cluster’s documentation](http://www.percona.com/doc/percona-xtradb-cluster/index.html)
+*   [Galera Wiki](http://www.codership.com/wiki/doku.php?id=galera_wiki)
+*   [Percona XtraDB Cluster's documentation](https://www.percona.com/doc/percona-xtradb-cluster/index.html)

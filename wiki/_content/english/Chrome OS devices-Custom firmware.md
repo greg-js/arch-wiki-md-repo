@@ -2,10 +2,9 @@
 
 ## Contents
 
-*   [1 Introduction](#Introduction)
-    *   [1.1 Why flash a custom firmware?](#Why_flash_a_custom_firmware.3F)
-        *   [1.1.1 Pros](#Pros)
-        *   [1.1.2 Cons](#Cons)
+*   [1 Why flash a custom firmware?](#Why_flash_a_custom_firmware.3F)
+    *   [1.1 Pros](#Pros)
+    *   [1.2 Cons](#Cons)
 *   [2 Flashing the custom firmware](#Flashing_the_custom_firmware)
     *   [2.1 Disable the hardware write protection](#Disable_the_hardware_write_protection)
     *   [2.2 Flashing with John Lewis' script](#Flashing_with_John_Lewis.27_script)
@@ -36,13 +35,11 @@
         *   [5.3.1 Disabling the hardware write protection](#Disabling_the_hardware_write_protection)
         *   [5.3.2 Disabling the software write protection](#Disabling_the_software_write_protection)
 
-## Introduction
+## Why flash a custom firmware?
 
-### Why flash a custom firmware?
+### Pros
 
-#### Pros
-
-*   Adds a much recent version of SeaBIOS
+*   Adds a much recent version of SeaBIOS.
 *   Adds SeaBIOS payload of coreboot to Chrome OS devices that did not shipped with SeaBIOS.
 *   Possibility of using a [UEFI](/index.php/UEFI "UEFI") coreboot payload (only with Matt DeVillier's custom firmware).
 *   Reduce boot time.
@@ -50,11 +47,11 @@
 *   Enables VMX in models in which it is not active by default.
 *   Fixes some issues (like suspend) without further modifications.
 
-#### Cons
+### Cons
 
 *   Dangerous, might brick your device.
-*   Cannot boot stock Chrome OS (you can install [Arnold the Bat’s Chromium OS build](http://arnoldthebat.co.uk/wordpress/chromium-os/) and it should be possible upgrade it to full blown Chrome OS with a script).
-*   It is possible that some quirks will be added, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1460520#p1460520). Keep in mind that some of this quirks are the result of using the old fallback read-only Embedded Controller (EC) firmware image, and thus they may be resolved (e.g. [the one linked before](https://github.com/MattDevo/firmware/issues/15)) in firmware images which provide EC image updates, such as Matt DeVillier's one.
+*   Cannot boot stock Chrome OS (you can install [Arnold the Bat’s Chromium OS build](https://arnoldthebat.co.uk/wordpress/chromium-os/) and it should be possible upgrade it to full blown Chrome OS with a script).
+*   It is possible that some quirks will be added.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1460520#p1460520) Keep in mind that some of this quirks are the result of using the old fallback read-only Embedded Controller (EC) firmware image, and thus they may be resolved (e.g. [the one linked before](https://github.com/MattDevo/firmware/issues/15)) in firmware images which provide EC image updates, such as Matt DeVillier's one.
 
 ## Flashing the custom firmware
 
@@ -115,11 +112,6 @@ If you flashed the firmware as part of the installation process then continue by
 #### Running the script in Arch Linux
 
 *   Install [dmidecode](https://www.archlinux.org/packages/?name=dmidecode).
-
-```
-# pacman -S dmidecode
-
-```
 
 *   Enter the command shown on the [Download ROM page at John Lewis site](https://johnlewis.ie/custom-chromebook-firmware/rom-download/).
 

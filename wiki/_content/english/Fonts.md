@@ -330,7 +330,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
 *   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
 *   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/))
-*   Tamsyn ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
+*   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
 *   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
 *   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
 *   [Unifont](http://unifoundry.com/unifont.html) ([most extensive](https://en.wikipedia.org/wiki/Unicode_font#Comparison_of_fonts "wikipedia:Unicode font") Unicode coverage of any font) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))

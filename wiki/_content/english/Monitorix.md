@@ -38,7 +38,7 @@ See the configuration file for the other related options, for example [accesss r
 
 ## Start and viewing data
 
-[Start](/index.php/Start "Start") `monitorix.service` and [enable](/index.php/Enable "Enable") it to run at boot like any other systemd service.
+[Start/enable](/index.php/Start/enable "Start/enable") `monitorix.service`.
 
 To view system stats, using the perl-http-server, simply point a browser to [http://localhost:8080/monitorix](http://localhost:8080/monitorix) to see the data.
 

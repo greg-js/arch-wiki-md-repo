@@ -16,7 +16,7 @@ This guide is to help Arch users with Palm(R) devices. While installation in Arc
 
 You will need to [install](/index.php/Install "Install") one of the various Personal Information Management (PIM) software packages:
 
-*   [jpilot](https://aur.archlinux.org/packages/jpilot/)
+*   [jpilot](https://aur.archlinux.org/packages/jpilot/) – a desktop organizer software for the Palm Pilot
 *   [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 *   [gnome-pilot](https://www.archlinux.org/packages/?name=gnome-pilot)
 
@@ -28,29 +28,15 @@ You can sync in two ways, either by using libusb (preferred) or by using ttyUSB*
 
 Note: Do not have jpilot or other client open at this stage. Now, plug your device into the cradle, then into your computer (i.e. Palm T3), or straight USB cable (i.e. Tungsten E, TX) and attempt to hotsync.
 
-Open up a terminal and type:
+Run `dmesg`, the last few lines will refer to your palm. For those who are familiar with Arch, you know what to look for. Others, look for any text followed by numbers, such as sr0, sg0\. Just take a note of this, you may or may not need it. Mine lists as:
 
 ```
-   dmesg
-
-```
-
-The last few lines will refer to your palm. For those who are familiar with Arch, you know what to look for. Others, look for any text followed by numbers, such as sr0, sg0\. Just take a note of this, you may or may not need it. Mine lists as:
-
-```
-   usb 3-2: Handspring Visor / Palm OS converter now attached to ttyUSB0
-   usb 3-2: Handspring Visor / Palm OS converter now attached to ttyUSB1
+usb 3-2: Handspring Visor / Palm OS converter now attached to ttyUSB0
+usb 3-2: Handspring Visor / Palm OS converter now attached to ttyUSB1
 
 ```
 
-Next, set the directory to /dev and list the contents
-
-```
-   cd /dev/ && ls
-
-```
-
-You should see an item there called 'palm', or 'pilot'. Again, take note of which is listed. Mine is 'pilot'. Note: This will only show up when hotsyncing. If it times out, retry.
+`/dev/` should contain an item there called 'palm', or 'pilot'. Again, take note of which is listed. Mine is 'pilot'. Note: This will only show up when hotsyncing. If it times out, retry.
 
 ### libusb based sync
 
@@ -67,9 +53,9 @@ Works every time with the most troublesome Palm: T|X.
 Open up JPilot (or other software), either from the 'Office' menu (for Gnome) or by typing:
 
 ```
-   jpilot
-   kpilot
-   gnome-pilot
+jpilot
+kpilot
+gnome-pilot
 
 ```
 
@@ -196,36 +182,36 @@ To sync the device, if using jpilot, simply specify `usb:` as the serial port in
 If you get a message such as stating that you do not have proper permissions, you probably need to add your user to a group with the proper permissions. This may be 'usb' or 'uucp'.
 
 ```
-   gpasswd -a *username* usb
+gpasswd -a *username* usb
 
 ```
 
 or
 
 ```
-   gpasswd -a *username* uucp
+gpasswd -a *username* uucp
 
 ```
 
 Also, your software may have difficulty finding the device.
 
 ```
-   ls -l /dev/pilot
+ls -l /dev/pilot
 
 ```
 
 or
 
 ```
-   ls -l /dev/palm
+ls -l /dev/palm
 
 ```
 
 may help you to discover a different name for the device. Output may look like this:
 
 ```
-   lrwxrwxrwx 1 root root 8 2002-01-03 16:13 /dev/pilot -> tts/USB1
+lrwxrwxrwx 1 root root 8 2002-01-03 16:13 /dev/pilot -> tts/USB1
 
 ```
 
-Now change the Device setting (as above) to /dev/tts/USB1 or /dev/tts/USB0.
+Now change the Device setting (as above) to `/dev/tts/USB1` or `/dev/tts/USB0`.

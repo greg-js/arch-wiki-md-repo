@@ -47,24 +47,24 @@ Before using these tips, it is highly recommended to read the [Super Quick Git G
 Clone git repo - only needed once
 
 ```
- git clone [https://projects.archlinux.org/pacman.git](https://projects.archlinux.org/pacman.git) pacman
+git clone [https://projects.archlinux.org/pacman.git](https://projects.archlinux.org/pacman.git) pacman
 
 ```
 
 Enable useful hooks
 
 ```
- mv .git/hooks/applypatch-msg.sample .git/hooks/applypatch-msg
- mv .git/hooks/commit-msg.sample .git/hooks/commit-msg
- mv .git/hooks/pre-commit.sample .git/hooks/pre-commit
- mv .git/hooks/pre-rebase.sample .git/hooks/pre-rebase
+mv .git/hooks/applypatch-msg.sample .git/hooks/applypatch-msg
+mv .git/hooks/commit-msg.sample .git/hooks/commit-msg
+mv .git/hooks/pre-commit.sample .git/hooks/pre-commit
+mv .git/hooks/pre-rebase.sample .git/hooks/pre-rebase
 
 ```
 
 or
 
 ```
- rename .sample "" .git/hooks/*.sample
+rename .sample "" .git/hooks/*.sample
 
 ```
 
@@ -73,50 +73,50 @@ Always do your work on a new local branch to save yourself headaches.
 Make patch to master branch
 
 ```
- git format-patch master
+git format-patch master
 
 ```
 
 Amend patch (do not use it after a push)
 
 ```
- git commit -a --amend -s
+git commit -a --amend -s
 
 ```
 
 Update master branch
 
 ```
- git checkout master
- git pull
+git checkout master
+git pull
 
 ```
 
 Merge changes on master with "<branch>"
 
 ```
- git rebase master <branch>
+git rebase master <branch>
 
 ```
 
 Get maint branch
 
 ```
- git checkout -b maint origin/maint
+git checkout -b maint origin/maint
 
 ```
 
 Add a remote repository
 
 ```
-  git remote add toofishes [git://code.toofishes.net/dan/pacman.git](git://code.toofishes.net/dan/pacman.git)
+git remote add toofishes [git://code.toofishes.net/dan/pacman.git](git://code.toofishes.net/dan/pacman.git)
 
 ```
 
 Get toofishes working branch
 
 ```
-  git branch -r
-  git checkout -b toofishes-working toofishes/working
+git branch -r
+git checkout -b toofishes-working toofishes/working
 
 ```

@@ -1,4 +1,4 @@
-Forked from [PCManFM](/index.php/PCManFM "PCManFM"), SpaceFM is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration. More information can be found at the [official SpaceFM website](http://ignorantguru.github.io/spacefm/).
+Forked from [PCManFM](/index.php/PCManFM "PCManFM"), SpaceFM is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration. More information can be found at the [official SpaceFM website](https://ignorantguru.github.io/spacefm/).
 
 ## Contents
 
@@ -22,7 +22,7 @@ Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/) 
 
 ## Usage
 
-See the [User's Manual](http://ignorantguru.github.io/spacefm/spacefm-manual-en.html).
+See the [User's Manual](https://ignorantguru.github.io/spacefm/spacefm-manual-en.html).
 
 ### File searches
 
@@ -35,7 +35,7 @@ $ spacefm -f
 
 ### Desktop management
 
-SpaceFM includes a lightweight desktop manager. [[1]](http://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-desktopmanager). It replaces the desktop menu, adds desktop icons, and sets the wallpaper.
+SpaceFM includes a lightweight desktop manager. [[1]](https://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-desktopmanager). It replaces the desktop menu, adds desktop icons, and sets the wallpaper.
 
 To restore the native window manager menu, open `Desktop preferences`
 
@@ -46,7 +46,7 @@ $ spacefm --desktop-pref
 
 and enable the `Right click shows WM menu` option in the `Desktop` tab. Consider adding the above command to a keybind and/or the native desktop menu for easy access.
 
-To run SpaceFM as a [daemon](/index.php/Daemon "Daemon") without it managing the desktop [[2]](http://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-daemonmode), use:
+To run SpaceFM as a [daemon](/index.php/Daemon "Daemon") without it managing the desktop [[2]](https://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-daemonmode), use:
 
 ```
 $ spacefm -d
@@ -59,7 +59,7 @@ How SpaceFM may be autostarted as a daemon process or to manage the desktop for 
 
 SpaceFM supports mounting remote hosts via [udevil](/index.php/Udisks#devmon "Udisks"). To add a remote host, add the access URL into the URL bar. A terminal window should pop up showing the mounting process which is useful for error tracing.
 
-An overview of the supported remote hosts is available in the [udevil help](http://ignorantguru.github.io/udevil/udevil--help.html). For example to mount a remote FTP server:
+An overview of the supported remote hosts is available in the [udevil help](https://ignorantguru.github.io/udevil/udevil--help.html). For example to mount a remote FTP server:
 
 ```
 ftp://user:pass@sys.domain/share
@@ -105,4 +105,4 @@ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc spacefm
 
 ```
 
-See [[4]](http://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-gtkthemes) for details.
+See [[4]](https://ignorantguru.github.io/spacefm/spacefm-manual-en.html#invocation-gtkthemes) for details.

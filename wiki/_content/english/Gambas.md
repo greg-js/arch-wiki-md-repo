@@ -36,5 +36,5 @@ Gambas supports both the [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt
 
 *   [Gambas Website](http://gambas.sourceforge.net/en/main.html) - the official Gambas website on Sourceforge.
 *   [Gambas Documentation](http://www.gambasdoc.org/help?v3) - online documentation for Gambas 3.
-*   [White Island Software](http://whiteislandsoftware.com/) - an active and friendly Gambas community.
-*   [Gambas Examples](http://piga.tropicalwikis.com/wiki/Gambas_Examples) - several pieces of example code geared to game development.
+*   [Gambas Guru](https://gambas.guru/tw/Welcome) - a small Gambas community.
+*   [Gambas Examples](https://web.archive.org/web/20130926154045/http://piga.tropicalwikis.com/wiki/Gambas_Examples) - several pieces of example code geared to game development.

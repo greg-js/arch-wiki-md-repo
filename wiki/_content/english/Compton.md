@@ -10,15 +10,16 @@ Compton is a standalone composite manager, suitable for use with [window manager
         *   [2.3.1 Disable shadowing of some windows](#Disable_shadowing_of_some_windows)
 *   [3 Multihead](#Multihead)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 slock](#slock)
-    *   [4.2 dwm & dmenu](#dwm_.26_dmenu)
-    *   [4.3 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.4 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.5 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
-    *   [4.7 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [4.8 Flicker](#Flicker)
-    *   [4.9 Fullscreen tearing](#Fullscreen_tearing)
+    *   [4.1 Tabbed windows](#Tabbed_windows)
+    *   [4.2 slock](#slock)
+    *   [4.3 dwm & dmenu](#dwm_.26_dmenu)
+    *   [4.4 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.6 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.7 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.9 Flicker](#Flicker)
+    *   [4.10 Fullscreen tearing](#Fullscreen_tearing)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -137,6 +138,31 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 ## Troubleshooting
 
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
+
+### Tabbed windows
+
+When windows with transparency are tabbed, the underlying tabbed windows are still visible because of transparency. Each tabbed window also draws its own shadow resulting in multiple shadows.
+
+Removing the multiple shadows issue can be done by adding the following to the already existing [`shadow-exclude` list](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80):
+
+```
+"_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+
+```
+
+Not drawing underlying tabbed windows can be enabled by adding the following to your `compton.conf`:
+
+```
+opacity-rule = [
+  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
+  "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+];
+
+```
+
+Note that `URxvt` is the Xorg class name of your terminal. Change this if you use a different terminal.
+
+See [[1]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
 
 ### slock
 
@@ -261,7 +287,7 @@ If you experience heavy lag when using Xft fonts in applications such as [xterm]
 
 or try using the xrender backend.
 
-See [[1]](https://github.com/chjj/compton/issues/152) for more information.
+See [[2]](https://github.com/chjj/compton/issues/152) for more information.
 
 ### Flicker
 
@@ -272,7 +298,7 @@ Applies to fully maximized windows (in sessions without any panels) with the def
 
 ```
 
-See [[2]](https://github.com/chjj/compton/issues/402) for more information.
+See [[3]](https://github.com/chjj/compton/issues/402) for more information.
 
 ### Fullscreen tearing
 

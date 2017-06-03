@@ -56,28 +56,28 @@ Read each tool's man to find additional information.
 Break Djvu into separate pages:
 
 ```
- djvmcvt -i input.djvu /path/to/out/dir output-index.djvu
+djvmcvt -i input.djvu /path/to/out/dir output-index.djvu
 
 ```
 
 Convert Djvu pages into images:
 
 ```
- ddjvu --format=tiff page.djvu page.tiff
+ddjvu --format=tiff page.djvu page.tiff
 
 ```
 
 Convert Djvu pages into PDF:
 
 ```
- ddjvu --format=pdf inputfile.djvu ouputfile.pdf
+ddjvu --format=pdf inputfile.djvu ouputfile.pdf
 
 ```
 
 You can also use *--page* to export specific pages:
 
 ```
- ddjvu --format=tiff --page=1-10 input.djvu output.tiff
+ddjvu --format=tiff --page=1-10 input.djvu output.tiff
 
 ```
 
@@ -98,7 +98,7 @@ You can use [scantailor](https://www.archlinux.org/packages/?name=scantailor) to
 There is a useful script [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/).
 
 ```
- img2djvu -c1 -d600 -v1 ./out
+img2djvu -c1 -d600 -v1 ./out
 
 ```
 

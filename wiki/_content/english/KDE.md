@@ -702,7 +702,7 @@ Rebuild your cache with the following commands:
 
 ```
 $ rm ~/.config/Trolltech.conf
-$ kbuildsycoca4 --noincremental
+$ kbuildsycoca5 --noincremental
 
 ```
 

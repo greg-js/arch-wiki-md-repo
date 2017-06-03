@@ -18,17 +18,12 @@ Before using a brand new SIM (or a USB stick with SIM included) for the first ti
 
 ## Checking modem
 
-Install usbutils (base) if not installed:
-
-```
-pacman -S usbutils
-
-```
+[Install](/index.php/Install "Install") [usbutils](https://www.archlinux.org/packages/?name=usbutils).
 
 Plug in the modem and run lsusb:
 
 ```
-lsusb | grep Huawei
+$ lsusb | grep Huawei
 
 ```
 
@@ -43,24 +38,19 @@ The ID 12d1:1c0b refers to vendor id and product id. If you get different values
 
 ## Set up usb_modeswitch
 
-Install usb_modeswitch (community) if not installed:
-
-```
-pacman -S usb_modeswitch
-
-```
+[Install](/index.php/Install "Install") [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch).
 
 At this point, if you remove your modem and re-insert it udev should switch to modem mode automatically but sometimes it just doesn't work (on my system for example) so you have to do it manually as root:
 
 ```
-usb_modeswitch -c /usr/share/usb_modeswitch/12d1\:1c0b -v 12d1 -p 1c0b
+# usb_modeswitch -c /usr/share/usb_modeswitch/12d1\:1c0b -v 12d1 -p 1c0b
 
 ```
 
 ## Check if the modem is switched
 
 ```
-lsusb | grep Huawei
+$ lsusb | grep Huawei
 
 ```
 
@@ -75,26 +65,23 @@ Note that the product ID has changed from 1c0b to 1c05\. It means that the USB s
 
 ## Connecting
 
-The easiest way to connect is with sakis3g. Install ppp (base) and net-tools (core) if not installed:
+The easiest way to connect is with sakis3g.
 
-```
-pacman -S ppp net-tools
-
-```
+[Install](/index.php/Install "Install") [ppp](https://www.archlinux.org/packages/?name=ppp) and [net-tools](https://www.archlinux.org/packages/?name=net-tools).
 
 Download and install sakis3g from [http://www.sakis3g.org/](http://www.sakis3g.org/) (it's also available from [AUR](https://aur.archlinux.org/packages.php?ID=59017)):
 
 ```
-wget [http://www.sakis3g.org/versions/latest/i386/sakis3g.gz](http://www.sakis3g.org/versions/latest/i386/sakis3g.gz)
-gunzip sakis3g.gz
-mv sakis3g /usr/bin
+$ wget [http://www.sakis3g.org/versions/latest/i386/sakis3g.gz](http://www.sakis3g.org/versions/latest/i386/sakis3g.gz)
+$ gunzip sakis3g.gz
+$ mv sakis3g /usr/bin
 
 ```
 
 Run sakis3g:
 
 ```
-sakis3g --interactive
+$ sakis3g --interactive
 
 ```
 
@@ -104,10 +91,7 @@ You will have to provide your APN, username and password, assuming everything go
 
 ### Creating a configuration file
 
-```
-nano /etc/sakis3g.conf
-
-```
+Create `/etc/sakis3g.conf`.
 
 Add the following lines (CUSTOM_APN, APN_USER and APN_PASS refer to your APN, username and password respectively, you may have to adjust them):
 
@@ -152,11 +136,9 @@ Command: sudo sakis3g connect
 For both of these to work you need to add the following line to /etc/sudoers:
 
 ```
-<username> ALL=(ALL) NOPASSWD:/usr/bin/sakis3g
+*username* ALL=(ALL) NOPASSWD:/usr/bin/sakis3g
 
 ```
-
-Replace <username> with your username.
 
 ## External links
 

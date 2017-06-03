@@ -1,4 +1,4 @@
-This page deals with setting up Arch Linux on the Dell Vostro 1310 laptop. Nvidia graphics work excellently with the Nvidia 8400GS with no real hacks. There have been some problems with the ethernet NIC, but it is possible for it to work correctly.
+This page deals with setting up Arch Linux on the Dell Vostro 1310 laptop. Nvidia graphics work excellently with the Nvidia 8400GS. There have been some problems with the Ethernet NIC, but it is possible for it to work correctly.
 
 ## Contents
 
@@ -60,20 +60,8 @@ For the Intel Core 2 Duo (and all laptop cpu's) you must follow the instructions
 
 ### Hibernate/Suspend
 
-Hibernate/Suspend works out of the box with pm-utils however integration with HAL does not. In order for you to enable power-related settings like "Suspend on closing of Laptop Lid" in Gnome you will need a particular HAL policy file. This file (10-power-mgmt-policy.fdi) can be found in /usr/share/hal/fdi/policy/10osvendor/ and must be copied to /etc/hal/fdi/policy/ as root.
+Hibernate/Suspend works out of the box with pm-utils however integration with HAL does not. In order for you to enable power-related settings like "Suspend on closing of Laptop Lid" in Gnome you will need to
 
-*   As previously stated copy the 10-power-mgmt-policy.fdi file to the correct directory
-
-```
-# cp /usr/share/hal/fdi/policy/10ovendor/10-power-mgmt-policy.fdi /etc/hal/fdi/policy 
-
-```
-
-*   Add your user to the '**power'** group
-
-```
-# gpasswd -a UserNameGoesHere power 
-
-```
-
+*   Copy `/usr/share/hal/fdi/policy/10osvendor/10-power-mgmt-policy.fdi` to `/etc/hal/fdi/policy/`.
+*   Add your user to the `power` [group](/index.php/Group "Group").
 *   Restart the HAL service or your machine for the change take affect.

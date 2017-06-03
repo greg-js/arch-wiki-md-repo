@@ -115,7 +115,7 @@ Use the *Main Menu* application (provided by the [alacarte](https://www.archlinu
 
 ## Screencast recording
 
-GNOME features built-in screencast recording with the **Ctrl** + **Shift** + **Alt** + **R** key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the Videos directory. In order to use the screencast feature the gst plugins need to be installed.
+GNOME features built-in screencast recording with the `Ctrl+Shift+Alt+r` key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the Videos directory. In order to use the screencast feature the gst plugins need to be installed.
 
 ## Screenshot
 

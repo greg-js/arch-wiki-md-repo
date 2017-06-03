@@ -163,26 +163,26 @@ To use these with Python, you may need to install the associated widget kits.
 
 ### IPython
 
-[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2). If you want the IPython notebook, install [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) for the IPython3 notebook and [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for the IPython2 notebook. Run
+[IPython](http://ipython.org/) is an enhanced Python command line available in the official repositories as [ipython](https://www.archlinux.org/packages/?name=ipython) and [ipython2](https://www.archlinux.org/packages/?name=ipython2). If you want the IPython notebook, install [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) for the IPython3 notebook and [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for the IPython2 notebook. Run:
 
 ```
 $ jupyter notebook
 
 ```
 
-to autostart the browser and run the IPython kernel. You can select the python version when creating the notebook in the browser.
+to autostart the browser and run the IPython kernel. You can select the *python* version when creating the notebook in the browser.
 
 [bpython](https://bpython-interpreter.org/) is a ncurses interface to the Python interpreter, available in the official repositories as [bpython](https://www.archlinux.org/packages/?name=bpython) and [bpython2](https://www.archlinux.org/packages/?name=bpython2).
 
 ### Virtual environment
 
-Python provides tools to create isolated environments in which you can install packages without interfering with the other virtual environments nor with the system Python's packages. It could change the python interpreter used for a specific application.
+Python provides tools to create isolated environments in which you can install packages without interfering with the other virtual environments nor with the system Python's packages. It could change the *python* interpreter used for a specific application.
 
 See [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for details.
 
 ### Tab completion in Python2 shell
 
-Since Python 3.4 [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default, for Python 2 you can manually enable it by adding the following lines to a file referenced by the `PYTHONSTARTUP` environment variable. [[1]](https://algorithmicallyrandom.blogspot.co.at/2009/09/tab-completion-in-python-shell-how-to.html)
+Since Python 3.4 [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default, for Python 2 you can manually enable it by adding the following lines to a file referenced by the `PYTHONSTARTUP` environment variable: [[1]](https://algorithmicallyrandom.blogspot.co.at/2009/09/tab-completion-in-python-shell-how-to.html)
 
 ```
 import rlcompleter
@@ -195,7 +195,7 @@ readline.parse_and_bind("tab: complete")
 
 ### Dealing with version problem in build scripts
 
-Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call `python` from the `PATH` instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is a workaround. Create `/usr/local/bin/python` with content like this:
+Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call *python* from the `PATH` environment variable instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is a workaround. Create `/usr/local/bin/python` with content like this:
 
  `/usr/local/bin/python` 
 ```

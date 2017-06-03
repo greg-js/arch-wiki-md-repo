@@ -699,8 +699,9 @@ chmod 755 ~/.kde4/env/ssh-agent-startup.sh ~/.kde4/shutdown/ssh-agent-shutdown.s
 
 ## Смотрите также
 
-*   [Управление ключами OpenSSH, Часть 1](http://www-106.ibm.com/developerworks/linux/library/l-keyc.html)
-*   [Управление ключами OpenSSH, Часть 2](http://www-106.ibm.com/developerworks/linux/library/l-keyc2/)
-*   [Управление ключами OpenSSH, Часть 3](http://www-106.ibm.com/developerworks/library/l-keyc3/)
+*   [Управление ключами OpenSSH, Часть 1](https://www-106.ibm.com/developerworks/linux/library/l-keyc.html)
+*   [Управление ключами OpenSSH, Часть 2](https://www-106.ibm.com/developerworks/linux/library/l-keyc2/)
+*   [Управление ключами OpenSSH, Часть 3](https://www-106.ibm.com/developerworks/library/l-keyc3/)
 *   [Приступая к работе с SSH](http://kimmo.suominen.com/docs/ssh/)
-*   [Примечания к выпуску OpenSSH 5.7](http://www.openssh.com/txt/release-5.7)
+*   [Примечания к выпуску OpenSSH 5.7](https://www.openssh.com/txt/release-5.7)
+*   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)

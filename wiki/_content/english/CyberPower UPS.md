@@ -13,7 +13,7 @@ This document describes how to install the CyberPower UPS daemon or alternativel
 
 ## Installation of Power Panel
 
-Install powerpanel ([powerpanel](https://aur.archlinux.org/packages/powerpanel/)) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [powerpanel](https://aur.archlinux.org/packages/powerpanel/) package.
 
 ### Configuration
 
@@ -25,17 +25,9 @@ Email notifications can be accomplished by editing `/etc/powerpanel/pwrstatd-pow
 
 ### Running
 
-Start and enable the service
+[Start/enable](/index.php/Start/enable "Start/enable") `pwrstatd.service`.
 
-```
-# systemctl start pwrstatd
-# systemctl enable pwrstatd
-
-```
-
-Then run `# pwrstat -status`
-
-You should get something like this:
+Then run `# pwrstat -status`. You should get something like this:
 
 ```
 
@@ -173,12 +165,6 @@ MONITOR powerplant@localhost 1 scottie warpspeed master
 
 The file also configures what alerts are sent and where they are sent and what action is taken when the battery is low so you should probably review and make your desired changes.
 
-Then enable and start ups-monitor.service:
-
-```
-# systemctl start nut-monitor
-# systemctl enable nut-monitor
-
-```
+Then [start/enable](/index.php/Start/enable "Start/enable") `ups-monitor.service`.
 
 Your logs should show upsmon starting and monitoring the ups.

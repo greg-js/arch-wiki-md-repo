@@ -22,7 +22,7 @@ In X10, "cut buffers" were introduced. These were limited buffers that stored ar
 
 ## Background
 
-The [ICCCM](http://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections. However, in some cases, this can produce strange outcomes, such as a bidirectional shared clipboard with Windows (which uses a single-clipboard system) in a virtual machine.
+The [ICCCM](https://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections. However, in some cases, this can produce strange outcomes, such as a bidirectional shared clipboard with Windows (which uses a single-clipboard system) in a virtual machine.
 
 Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. When some applications treat PRIMARY and CLIPBOARD differently, this can cause confusion and, in some cases, inconsistent or undesirable results, but the majority of applications shows the behaviour detailed in the next section.
 
@@ -87,11 +87,11 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **ClipIt** — Fork of Parcellite.
 
-	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
+	[https://sourceforge.net/projects/gtkclipit/](https://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **Clipman** — A clipboard manager for Xfce. It keeps the clipboard contents around while it is usually lost when you close an application. It is able to handle text and images, and has a feature to execute actions on specific text selections by matching them against regular expressions.
 
-	[http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin) || [xfce4-clipman-plugin](https://www.archlinux.org/packages/?name=xfce4-clipman-plugin)
+	[https://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin) || [xfce4-clipman-plugin](https://www.archlinux.org/packages/?name=xfce4-clipman-plugin)
 
 *   **Clipmenu** — Dmenu based clipboard manager
 
@@ -115,11 +115,11 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Keepboard** — Cross-platform clipboard manager. Saves text, image and file clipboard items.
 
-	[http://sourceforge.net/projects/keepboard/](http://sourceforge.net/projects/keepboard/) ||
+	[https://sourceforge.net/projects/keepboard/](https://sourceforge.net/projects/keepboard/) ||
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Full featured clipboard manager for the KDE desktop.
 
-	[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [plasma-workspace](https://www.archlinux.org/packages/?name=plasma-workspace)
+	[https://userbase.kde.org/Klipper](https://userbase.kde.org/Klipper) || [plasma-workspace](https://www.archlinux.org/packages/?name=plasma-workspace)
 
 *   **Parcellite** — Lightweight yet feature-rich clipboard manager.
 
@@ -127,7 +127,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Pasteall** — Clipboard monitor simple and functional(with notifications in Portugese).
 
-	[https://github.com/LaraCraft93/Pasteall](https://github.com/LaraCraft93/Pasteall) || [pasteall](https://aur.archlinux.org/packages/pasteall/)
+	[https://github.com/ShyPixie/Pasteall](https://github.com/ShyPixie/Pasteall) || [pasteall](https://aur.archlinux.org/packages/pasteall/)
 
 *   **Qlipper** — Lightweight and cross-platform clipboard history applet based on Qt.
 
@@ -137,7 +137,12 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://github.com/astrand/xclip](https://github.com/astrand/xclip) || [xclip](https://www.archlinux.org/packages/?name=xclip)
 
-*   **xcmenu** — Clipboard synchronizer developed for window manager users.
+*   **xcmenu** — Clipboard synchronizer developed for window manager
+
+```
+ users.
+
+```
 
 	[https://github.com/Cloudef/xcmenu](https://github.com/Cloudef/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)
 
@@ -147,5 +152,5 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 ## See also
 
-*   [Cut-and-paste in X](http://standards.freedesktop.org/clipboards-spec/clipboards-latest.txt)
-*   [X Selections, Cut Buffers, and Kill Rings.](http://www.jwz.org/doc/x-cut-and-paste.html)
+*   [Cut-and-paste in X](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
+*   [X Selections, Cut Buffers, and Kill Rings.](https://www.jwz.org/doc/x-cut-and-paste.html)

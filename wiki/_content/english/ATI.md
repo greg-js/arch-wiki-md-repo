@@ -1,8 +1,8 @@
 Owners of **AMD** (previously **ATI**) video cards have a choice between [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source drivers (**ATI** for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver for older cards.
 
-The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).)
+The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](https://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).)
 
-If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU. See the [decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) to translate marketing names (e.g. Radeon HD4330) to chip names (e.g. R700).
+If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](https://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU. See the [decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) to translate marketing names (e.g. Radeon HD4330) to chip names (e.g. R700).
 
 ## Contents
 
@@ -117,7 +117,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 The following options apply to `/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
-Please read `man radeon` and [RadeonFeature](http://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
+Please read `man radeon` and [RadeonFeature](https://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
 
 **Acceleration architecture**; Glamor is available as a 2D acceleration method implemented through OpenGL, and it [is the default](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e) for R600 (Radeon HD2000 series) and newer graphic cards. Older cards use EXA.
 
@@ -126,7 +126,7 @@ Option "AccelMethod" "glamor"
 
 ```
 
-**DRI3** is enabled by default [since xf86-video-ati 7.8.0](http://www.phoronix.com/scan.php?page=news_item&px=Radeon-AMDGPU-1.19-Updates). For older drivers, which use DRI2 by default, switch to DRI3 with the following option:
+**DRI3** is enabled by default [since xf86-video-ati 7.8.0](https://www.phoronix.com/scan.php?page=news_item&px=Radeon-AMDGPU-1.19-Updates). For older drivers, which use DRI2 by default, switch to DRI3 with the following option:
 
 ```
 Option "DRI" "3"
@@ -201,7 +201,7 @@ Since kernel 3.6, PCI Express 2.0 in **radeon** is turned on by default.
 
 It may be unstable with some motherboards. It can be deactivated by adding `radeon.pcie_gen2=0` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
-See [Phoronix article](http://www.phoronix.com/scan.php?page=article&item=amd_pcie_gen2&num=1) for more information.
+See [Phoronix article](https://www.phoronix.com/scan.php?page=article&item=amd_pcie_gen2&num=1) for more information.
 
 ### Gallium Heads-Up Display
 
@@ -219,7 +219,7 @@ To see a full list of parameters, as well as some notes on operating GALLIUM_HUD
 
  `# GALLIUM_HUD="help" glxgears` 
 
-More information can be found from this [mailing list post](http://lists.freedesktop.org/archives/mesa-dev/2013-March/036586.html) or [this blog post](https://kparal.wordpress.com/2014/03/03/fraps-like-fps-overlay-for-linux/).
+More information can be found from this [mailing list post](https://lists.freedesktop.org/archives/mesa-dev/2013-March/036586.html) or [this blog post](https://kparal.wordpress.com/2014/03/03/fraps-like-fps-overlay-for-linux/).
 
 ## Hybrid graphics/AMD Dynamic Switchable Graphics
 
@@ -240,11 +240,11 @@ You can choose between three different methods:
 2.  [dynpm](#Dynamic_frequency_switching)
 3.  [profile](#Profile-based_frequency_switching)
 
-See [http://www.x.org/wiki/RadeonFeature/#index3h2](http://www.x.org/wiki/RadeonFeature/#index3h2) for more details.
+See [https://www.x.org/wiki/RadeonFeature/#index3h2](https://www.x.org/wiki/RadeonFeature/#index3h2) for more details.
 
 ### Dynamic power management
 
-Since kernel 3.13, DPM is enabled by default for [lots of AMD Radeon hardware](http://kernelnewbies.org/Linux_3.13#head-f95c198f6fdc7defe36f470dc8369cf0e16898df). If you want to disable it, add the parameter `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+Since kernel 3.13, DPM is enabled by default for [lots of AMD Radeon hardware](https://kernelnewbies.org/Linux_3.13#head-f95c198f6fdc7defe36f470dc8369cf0e16898df). If you want to disable it, add the parameter `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 **Tip:** DPM works on R6xx gpus, but is not enabled by default in the kernel (only R7xx and up). Setting the `radeon.dpm=1` kernel parameter will enable dpm.
 

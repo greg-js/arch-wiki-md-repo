@@ -122,7 +122,7 @@ The following section contains excerpts from [http://www.iceflatline.com/2009/09
 In order to have the Windows boot loader see the Linux partition, one of the Linux partitions created needs to be FAT32 (in this case, `/dev/sda3`). The remainder of the setup is similar to a typical installation. Some documents state that the partition being loaded by the Windows boot loader must be a primary partition but I have used this without problem on an extended partition.
 
 *   When installing the GRUB boot loader, install it on your `/boot` partition rather than the MBR.
-    **Note:** For instance, my `/boot` partition is `/dev/sda5`. So I installed GRUB at `/dev/sda5` instead of `/dev/sda`. For help on doing this, see [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB")
+    **Note:** For instance, my `/boot` partition is `/dev/sda5`. So I installed GRUB at `/dev/sda5` instead of `/dev/sda`. For help on doing this, see [GRUB/Tips and tricks#Install to partition or partitionless disk](/index.php/GRUB/Tips_and_tricks#Install_to_partition_or_partitionless_disk "GRUB/Tips and tricks").
 
 *   Under Linux make a copy of the boot info by typing the following at the command shell:
 
@@ -135,10 +135,10 @@ dd if=$my_boot_part of=/media/win/linux.bin bs=512 count=1
 
 ```
 
-*   Boot to Windows and open up and you should be able to see the FAT32 partition. Copy the linux.bin file to `C:\`. Now run **cmd** with administrator privileges (navigate to *Start > All Programs > Accessories*, right-click on *Command Prompt* and select *Run as administrator*):
+*   Boot to Windows and open up and you should be able to see the linux.bin file at `C:\`. Now run **cmd** with administrator privileges (navigate to *Start > All Programs > Accessories*, right-click on *Command Prompt* and select *Run as administrator*):
 
 ```
-bcdedit /create /d “Linux” /application BOOTSECTOR
+bcdedit /create /d "Linux" /application BOOTSECTOR
 
 ```
 

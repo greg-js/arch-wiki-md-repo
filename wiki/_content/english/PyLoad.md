@@ -13,7 +13,7 @@ pyLoad is divided into core and clients, to make it easily remote accessible. Cu
     *   [1.1 Headless servers](#Headless_servers)
     *   [1.2 Requirements](#Requirements)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Optional](#Optional)
+    *   [2.1 Manual](#Manual)
     *   [2.2 Scripts](#Scripts)
 *   [3 Running](#Running)
     *   [3.1 Essential](#Essential)
@@ -54,36 +54,17 @@ The Setup Assistant gives you a jump start, by providing a *basic* but *working*
 
 **Tip:** Most (if not all) of the options can be changed with `pyLoadGui` or with the the web interface.
 
-### Optional
+### Manual
 
-However, if you prefer to edit the pyload.conf yourself and you went with the default conf directory, you can change the settings by editing `~/.pyload/pyload.conf`. Use your favorite editor to edit, eg.:
-
-```
-# nano ~/.pyload/pyload.conf
-
-```
-
-You can get aquainted with most of the [configuration options](http://pyload.org/configuration) on that page. Do note that it is outdated, in a sense, since the `/opt/pyload/module/config/` files it refers to do not match what is still on that page.
+You can also directly edit `pyload.conf` (located in `~/.pyload/` by default.
 
 While also editable with the web interface, you can change the plugins configuration by editing `~/.pyload/plugins.conf`.
 
-**Extraction passwords** are stored in `~/.pyload/unrar_passwords.txt`. To add passwords either edit the file or:
-
-```
-# echo '*password*' >> ~/.pyload/unrar_passwords.txt
-
-```
+Extraction passwords are stored in `~/.pyload/unrar_passwords.txt`.
 
 ### Scripts
 
-For more info on this,
-
-```
-cat /opt/pyload/scripts/Readme.txt
-
-```
-
-and [visit pyload.org forums](http://forum.pyload.org/viewtopic.php?f=7&t=7).
+For more info on this read `/opt/pyload/scripts/Readme.txt`.
 
 If you are interested in running userscripts, before running, you need to either
 
@@ -95,11 +76,11 @@ If you are interested in running userscripts, before running, you need to either
 or
 
 ```
-# chown *user you defined in pyload.conf / permissions settings* /opt/pyload/scripts/
+# chown *user* /opt/pyload/scripts/
 
 ```
 
-in order for pyLoadCore to create the necessary folders.
+(the *user* being the one you defined in pyload.conf / permissions settings) in order for pyLoadCore to create the necessary folders.
 
 ## Running
 
@@ -166,7 +147,7 @@ To have it started automatically on boot, enable *pyload* service.
 
 [JDownloader](/index.php/JDownloader "JDownloader") through [jdownloader](https://aur.archlinux.org/packages/jdownloader/) package.
 
-[plowshare](http://code.google.com/p/plowshare/) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
+[plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
 
 [TuxLoad](http://tuxload.wikispaces.com/) available in AUR: [tuxload](https://aur.archlinux.org/packages/tuxload/) (CLI).
 

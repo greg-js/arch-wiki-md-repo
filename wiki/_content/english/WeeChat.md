@@ -70,7 +70,7 @@ For a more convenient method, install the **iset** script. If you have weechat 0
 
 ```
 
-In older versions, use `/weeget install iset`, or download [iset.pl](http://www.weechat.org/scripts/source/stable/iset.pl.html/) into your `~/.weechat/perl/autoload` directory manually.
+In older versions, use `/weeget install iset`, or download [iset.pl](https://www.weechat.org/scripts/source/stable/iset.pl.html/) into your `~/.weechat/perl/autoload` directory manually.
 
 Afterwards, run
 
@@ -83,7 +83,7 @@ to get a buffer with all configuration options.
 
 ### Configuration Files
 
-The .conf files for WeeChat are saved to `~/.weechat`. These files are not commented. Detailed information can be found within the program itself (see **Internally** above), or WeeChat's [user guide](http://www.weechat.org/files/doc/stable/weechat_user.en.html).
+The .conf files for WeeChat are saved to `~/.weechat`. These files are not commented. Detailed information can be found within the program itself (see **Internally** above), or WeeChat's [user guide](https://www.weechat.org/files/doc/stable/weechat_user.en.html).
 
 **Tip:** in case you want to move `.weechat` directory somewhere else (like in your **$XDG_CONFIG_HOME**), use this option: `$weechat -d $XDG_CONFIG_HOME/weechat` or set the environment variable `WEECHAT_HOME`.
 
@@ -229,7 +229,7 @@ This has nothing to do with WeeChat itself, but losing connection when idle won'
 
  `# /etc/ssh/sshd_config`  `ClientAliveInterval 300` 
 
-Or have a look at [Mosh](http://mosh.mit.edu/).
+Or have a look at [Mosh](https://mosh.org).
 
 ### OTR
 
@@ -326,11 +326,11 @@ The script uses [libnotify](https://www.archlinux.org/packages/?name=libnotify) 
 
 ### Mobile device notifications
 
-To receive notifications for mentions or private messages to an Android mobile device, you can use the [IrssiNotifier](https://irssinotifier.appspot.com/) port to WeeChat from [here](http://www.weechat.org/files/scripts/irssinotifier.py). This script requires a Google Account, and a registration step with the service provider to obtain an API key. Then, install the plugin
+To receive notifications for mentions or private messages to an Android mobile device, you can use the [IrssiNotifier](https://irssinotifier.appspot.com/) port to WeeChat from [here](https://www.weechat.org/files/scripts/irssinotifier.py). This script requires a Google Account, and a registration step with the service provider to obtain an API key. Then, install the plugin
 
 ```
 cd ~/.weechat/python
-curl -O http://www.weechat.org/files/scripts/irssinotifier.py
+curl -O https://www.weechat.org/files/scripts/irssinotifier.py
 ln -s ../irssinotifier.py autoload/
 
 ```
@@ -344,7 +344,7 @@ and intialize the API token and end-to-end encryption password in WeeChat
 
 ```
 
-An alternative that does not require a Google Account is a Ruby script for [NotifyMyAndroid.com](http://www.notifymyandroid.com) from [here](https://github.com/jamtur01/nma-weechat), with a similar installation procedure to the above, but into `~/.weechat/ruby`.
+An alternative that does not require a Google Account is a Ruby script for [NotifyMyAndroid.com](https://www.notifymyandroid.com) from [here](https://github.com/jamtur01/nma-weechat), with a similar installation procedure to the above, but into `~/.weechat/ruby`.
 
 ## Troubleshooting
 
@@ -381,12 +381,12 @@ and the help will be displayed in the main buffer (usually buffer 1).
 
 ## See also
 
-*   [Home Page](http://www.weechat.org)
-*   [WeeChat Documentation](http://www.weechat.org/doc/)
-*   [WeeChat Scripts](http://www.weechat.org/scripts/)
-*   [WeeChat Development Blog](http://dev.weechat.org/)
+*   [Home Page](https://www.weechat.org)
+*   [WeeChat Documentation](https://www.weechat.org/doc/)
+*   [WeeChat Scripts](https://www.weechat.org/scripts/)
+*   [WeeChat Development Blog](https://weechat.org/blog/)
 
 ### Guides
 
-*   [FiXato's guide to WeeChat](http://fixato.org/guides/setting_up_weechat.html)
-*   [Thoughtbot article on weechat and slack](http://robots.thoughtbot.com/weechat-for-slacks-irc-gateway)
+*   [FiXato's guide to WeeChat](https://guides.fixato.org/setting_up_weechat.html)
+*   [Thoughtbot article on weechat and slack](https://robots.thoughtbot.com/weechat-for-slacks-irc-gateway)

@@ -1,4 +1,4 @@
-[Joomla!](https://www.joomla.org/) is a free and open-source content management system (CMS) for publishing web content. It is written in PHP, uses OOP techniques and software design patterns. The data can be stored in [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and MS SQL databases.
+[Joomla!](https://www.joomla.org/) is a free and open-source content management system (CMS) for publishing web content. It is written in PHP and stores the data in a [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or MS SQL database.
 
 Among the supported features are page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.
 
@@ -169,11 +169,10 @@ extension=mysqli.so
 
 To test whether PHP was configured properly add this line somewhere in the body of a simple html page file:
 
-<?php echo '
+```
+<?php echo '<p>Hello World</p>'; ?>
 
-Hello World
-
-'; ?>
+```
 
 Save this as some_page.php
 

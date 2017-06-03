@@ -347,4 +347,4 @@ exit 0
 ## See also
 
 *   Thread in the [Ubuntu Forums](http://ubuntuforums.org/showthread.php?t=1658635).
-*   [Luke Ross' website](http://lukeross.name/dell/).
+*   [Luke Ross' website](http://lukeross.name/dell/)

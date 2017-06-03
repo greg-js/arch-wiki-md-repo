@@ -1,4 +1,4 @@
-From the project [home page](http://docs.xfce.org/xfce/thunar/start):
+From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 	*Thunar is a modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time.*
 
@@ -39,23 +39,23 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 *   **Thunar Archive Plugin** — Plugin which allows you to create and extract archive files using contextual menu items. It does not create or extract archives directly, but instead acts as a frontend for other programs such as File Roller ([file-roller](https://www.archlinux.org/packages/?name=file-roller)), Ark ([ark](https://www.archlinux.org/packages/?name=ark)) or Xarchiver ([xarchiver](https://www.archlinux.org/packages/?name=xarchiver)). Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
+	[https://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
 
 *   **Thunar Media Tags Plugin** — Plugin which allows you to view detailed information about media files. It also has a bulk renamed and allows editing of media tags. It supports ID3 (the MP3 file format's system) and Ogg/Vorbis tags. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
+	[https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
 *   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
+	[https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 
 *   **[Thunar Volume Manager](#Thunar_Volume_Manager)** — Automatic management of removeable devices in Thunar. Part of [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-volman](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) || [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman)
+	[https://goodies.xfce.org/projects/thunar-plugins/thunar-volman](https://goodies.xfce.org/projects/thunar-plugins/thunar-volman) || [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman)
 
 *   **Tumbler** — External program to generate thumbnails. Also install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) to enable video thumbnailing.
 
-	[http://git.xfce.org/xfce/tumbler/tree/README](http://git.xfce.org/xfce/tumbler/tree/README) || [tumbler](https://www.archlinux.org/packages/?name=tumbler)
+	[https://git.xfce.org/xfce/tumbler/tree/README](https://git.xfce.org/xfce/tumbler/tree/README) || [tumbler](https://www.archlinux.org/packages/?name=tumbler)
 
 *   **RAW Thumbnailer** — A lightweight and fast raw image thumbnailer that is needed to display raw thumbnails.
 
@@ -63,7 +63,7 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 *   **libgsf** — The GNOME Structured File Library is a utility library for reading and writing structured file formats. Install if you need support for odf thumbnails
 
-	[http://directory.fsf.org/wiki/Libgsf](http://directory.fsf.org/wiki/Libgsf) || [libgsf](https://www.archlinux.org/packages/?name=libgsf)
+	[https://directory.fsf.org/wiki/Libgsf](https://directory.fsf.org/wiki/Libgsf) || [libgsf](https://www.archlinux.org/packages/?name=libgsf)
 
 ## Thunar Volume Manager
 
@@ -148,7 +148,7 @@ We can change that by adding the option **x-gvfs-show** to fstab for the partiti
 
 ## Custom actions
 
-This section covers useful custom actions which can be accessed through `Edit -> Configure custom actions` and which are stored in `~/.config/Thunar/uca.xml`. More examples are listed in the [thunar wiki](http://docs.xfce.org/xfce/thunar/custom-actions). Furthermore, [this](http://duncanlock.net/blog/2013/06/28/useful-thunar-custom-actions/) blog post provides a comprehensive collection of custom actions.
+This section covers useful custom actions which can be accessed through `Edit -> Configure custom actions` and which are stored in `~/.config/Thunar/uca.xml`. More examples are listed in the [thunar wiki](https://docs.xfce.org/xfce/thunar/custom-actions). Furthermore, [this](https://duncanlock.net/blog/2013/06/28/useful-thunar-custom-actions/) blog post provides a comprehensive collection of custom actions.
 
 ### Search for files and folders
 
@@ -249,6 +249,6 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 
 ## See also
 
-*   [Thunar](http://docs.xfce.org/xfce/thunar/start) project page
-*   [Thunar Volume Manager](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
-*   This [list](http://goodies.xfce.org/projects/thunar-plugins/start) of plugins
+*   [Thunar](https://docs.xfce.org/xfce/thunar/start) project page
+*   [Thunar Volume Manager](https://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
+*   This [list](https://goodies.xfce.org/projects/thunar-plugins/start) of plugins

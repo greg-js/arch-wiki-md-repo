@@ -158,7 +158,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### 硬件自动探测
 
-默认情况下，[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在开机时自动探测硬件。。禁止加载某些内核模块、手动选择要使用的模块。此外，[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")也使用udev探测硬件，用户也可以调整这方面配置。
+默认情况下，[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在开机时自动探测硬件。禁止加载某些内核模块、手动选择要使用的模块。此外，[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")也使用udev探测硬件，用户也可以调整这方面配置。
 
 ### 微代码
 

@@ -19,17 +19,17 @@ There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
 There are three major implementations of KeePass, which are all available in the official repositories:
 
-*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — A cross-platform password manager that has autotype and clipboard support when respectively `xdotool` and `xsel` are installed. It lets you import [many formats](http://keepass.info/help/base/importexport.html) and has [many plugins](http://keepass.info/plugins.html). Original project. The most supported, future rich and complete.
+*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — A cross-platform password manager that has autotype and clipboard support when respectively `xdotool` and `xsel` are installed. It lets you import [many formats](http://keepass.info/help/base/importexport.html) and has [many plugins](http://keepass.info/plugins.html).
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassXC](https://en.wikipedia.org/wiki/KeePassXC "wikipedia:KeePassXC")** — Fork of KeePassX. With more open and rapid development, and therefore big community.
-
-	[https://keepassxc.org](https://keepassxc.org) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
-
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — A port of KeePass. [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) uses the KeePass 2.x format, but can import 1.x databases. It also lets you import PwManager and KWallet XML databases. It does not support plugins. Development stalled on 2016-10-06\. [[1]](https://www.keepassx.org/faq).
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — Started as a Linux port of KeePass. [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) uses the KeePass 2.x format, but can import 1.x databases. It also lets you import PwManager and KWallet XML databases. It does not support plugins. [[1]](https://www.keepassx.org/faq).
 
 	[https://www.keepassx.org/](https://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
+
+*   **[KeePassXC](https://en.wikipedia.org/wiki/KeePassXC "wikipedia:KeePassXC")** — Fork of KeePassX that aims to incorporate stalled pull requests, that are not being incorporated into KeePassX.
+
+	[https://keepassxc.org](https://keepassxc.org) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
 
 Other lesser-known alternatives can be found in the AUR:
 

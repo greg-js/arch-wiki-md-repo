@@ -50,7 +50,7 @@ switches=-m5 -rr5 -ol -msjpg;mp3;avi;zip;rar;tar;gz;jpg
 
 ```
 
-For a complete listing and explanation of rar's switches, see the [user's manual](http://www.rarreg.com/users_manual.php)
+For a complete listing and explanation of rar's switches, see the [user's manual](http://www.rarreg.com/users_manual.php).
 
 ## RAR compression examples
 

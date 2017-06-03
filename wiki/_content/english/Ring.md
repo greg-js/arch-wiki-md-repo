@@ -2,7 +2,7 @@
 
 The ancestor of Ring is [SFLphone](https://projects.savoirfairelinux.com/projects/sflphone/wiki), a portable SIP/AIX software phone, also developed by Savoir-faire Linux. Ring retains most of the audio and SIP capabilities of SFLphone, while adding a Bittorrent-like DHT to completely avoid dependency on servers, and offering video and chat communication.
 
-Additionally, Ring has a clean separation between daemon and user interface, and thus several interoperable clients are provided: [Gnome](https://ring.cx/en/documentation/gnulinux-installation), KDE, [Windows](https://ring.cx/en/documentation/windows-installation), [OS X](https://ring.cx/en/documentation/mac-osx-installation), [Android](https://ring.cx/en/documentation/android-installation).
+Additionally, Ring has a clean separation between daemon and user interface. The supported platforms are GNU/Linux, Windows, Mac OSX and Android.
 
 ## Installation
 

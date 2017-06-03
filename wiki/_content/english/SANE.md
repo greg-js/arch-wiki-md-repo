@@ -94,7 +94,7 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 
 *   **[Simple Scan](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#Simple_Scan "wikipedia:Scanner Access Now Easy")** — A simplified GUI that is intended to be easier to use and better integrated into the [GNOME](/index.php/GNOME "GNOME") desktop than XSane. It was initially written for Ubuntu and is maintained by Robert Ancell of Canonical Ltd. for GNU/Linux.
 
-	[http://launchpad.net/simple-scan](http://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
+	[https://launchpad.net/simple-scan](https://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
 
 *   **[Skanlite](https://en.wikipedia.org/wiki/Skanlite "wikipedia:Skanlite")** — A simple image scanning application that does nothing more than scan and save images, based on the KSane backend.
 
@@ -195,13 +195,13 @@ It may also be possible that the independant [iscan](https://www.archlinux.org/p
 
 #### Communication via xHCI not working (older scanner models)
 
-Some older scanner models do not work when connected via an USB3 port. If you experience this issue, try setting the `SANE_USB_WORKAROUND=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting your frontend.[[1]](http://lists.alioth.debian.org/pipermail/sane-announce/2017/000036.html)[[2]](https://anonscm.debian.org/cgit/sane/sane-backends.git/commit/?id=1207ce5a40664c04b934bd0a6babbc1575361356)
+Some older scanner models do not work when connected via an USB3 port. If you experience this issue, try setting the `SANE_USB_WORKAROUND=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting your frontend.[[1]](https://lists.alioth.debian.org/pipermail/sane-announce/2017/000036.html)[[2]](https://anonscm.debian.org/cgit/sane/sane-backends.git/commit/?id=1207ce5a40664c04b934bd0a6babbc1575361356)
 
 If that doesn't work, try one of the following workarounds:
 
 *   Use an USB2 port instead of an USB3 port, if available.
 *   Disable xHCI via BIOS/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
-*   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](http://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
+*   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](https://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
 *   Connect the scanner over the network instead if it is supported.
 
 ### Slow startup

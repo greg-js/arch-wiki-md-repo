@@ -1,4 +1,4 @@
-[Gajim](http://gajim.org/index.php?lang=en) is a full featured and easy to use Jabber/XMPP client.
+[Gajim](https://gajim.org/index.php?lang=en) is a full featured and easy to use Jabber/XMPP client.
 
 ## Contents
 
@@ -72,7 +72,7 @@ In case it returns "False" while Gajim is running, enable DBus Support, restart 
 
 ## Off-the-Record Messaging
 
-[OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](http://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim does not support OTR out of the box.
+[OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](https://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim does not support OTR out of the box.
 
 ### Installation / Configuration
 
@@ -94,7 +94,7 @@ There are two differently developed/deployed versions of gajim-otr. One was deve
 
 ## OMEMO Support
 
-[OMEMO Multi-End Message and Object Encryption](http://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone and recently got an experimental [plugin](https://github.com/kalkin/gajim-omemo) for Gajim.
+[OMEMO Multi-End Message and Object Encryption](https://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone and recently got an experimental [plugin](https://github.com/kalkin/gajim-omemo) for Gajim.
 
 In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) package which will also install all the required dependencies.
 

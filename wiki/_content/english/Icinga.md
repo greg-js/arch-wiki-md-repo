@@ -250,5 +250,5 @@ Commands to upgrade with these scripts are:
 *   [icinga.org](https://www.icinga.org/) - Official website
 *   [monitoring-plugins](https://www.monitoring-plugins.org/) - Default plugins for Icinga and other monitoring applications
 *   [Nagios Plugins](https://nagios-plugins.org/) - The home of the legacy plugins
-*   [wikipedia.org](https://en.wikipedia.org/wiki/Icinga "wikipedia:Icinga") - Wikipedia article
+*   [Wikipedia article](https://en.wikipedia.org/wiki/Icinga "w:Icinga")
 *   [NagiosExchange](https://exchange.nagios.org/) - Overview of plugins, addons, mailing lists for Icinga

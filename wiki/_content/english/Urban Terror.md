@@ -146,12 +146,7 @@ cat /proc/asound/card*/id
 
 ## External links
 
-[Urban Terror homepage](http://www.urbanterror.info)
-
-[ZeroRadiant homepage](http://www.qeradiant.com/cgi-bin/trac.cgi/wiki/ZeroRadiant)
-
-[UT-Forums: Level Design Linklist](http://forums.urbanterror.info/topic/141-level-design-links/)
-
-[Debian + GTKRadiant + Urban Terror HOW-TO](http://daffy.nerius.com/radiant/)
-
-[UT-Forums: Urban Terror GTKRadiant Tutorial](http://forums.urbanterror.info/topic/13539-complete-linux-gtkradiant-urt-mapping-how-to/page__hl__urtpack__fromsearch__1__s__0bed93b96b8f19a3707143f46acfb964) *Please note* that the example from this guide has no light and Urban Terror will just display black walls.
+*   [Urban Terror homepage](http://www.urbanterror.info)
+*   [UT-Forums: Level Design Linklist](http://forums.urbanterror.info/topic/141-level-design-links/)
+*   [Debian + GTKRadiant + Urban Terror HOW-TO](http://daffy.nerius.com/radiant/)
+*   [UT-Forums: Urban Terror GTKRadiant Tutorial](http://forums.urbanterror.info/topic/13539-complete-linux-gtkradiant-urt-mapping-how-to/page__hl__urtpack__fromsearch__1__s__0bed93b96b8f19a3707143f46acfb964) *Please note* that the example from this guide has no light and Urban Terror will just display black walls.

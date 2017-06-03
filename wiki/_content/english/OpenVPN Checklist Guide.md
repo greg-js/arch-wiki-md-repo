@@ -10,7 +10,7 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 ## Install
 
-[Install](/index.php/Install "Install") the packages [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the packages [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa).
 
 ## Prepare data
 

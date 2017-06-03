@@ -43,7 +43,9 @@ Version: ThinkPad X1 Carbon 5th
 
 ### Fingerprint Reader
 
-The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc` currently lacks a linux driver. [Community discussion](https://bugs.freedesktop.org/show_bug.cgi?id=94536) of this issue indicates that preliminary efforts to reverse engineer a driver have failed. Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+
+Open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
 
 ## Configuration
 

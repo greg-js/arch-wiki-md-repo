@@ -25,14 +25,14 @@ As of linux-2.6, the user can no longer control the backlight. This can be remed
 The webcam makes use of the `uvcvideo` module, which is part of the kernel as of linux-2.6\. Just run:
 
 ```
-   # modprobe uvcvideo
+# modprobe uvcvideo
 
 ```
 
 and then you can use mplayer to test the camera's video:
 
 ```
-   $  mplayer tv:// -tv driver=v4l2:width=320:height=240:fps=200:device=/dev/video0 -nosound
+$  mplayer tv:// -tv driver=v4l2:width=320:height=240:fps=200:device=/dev/video0 -nosound
 
 ```
 

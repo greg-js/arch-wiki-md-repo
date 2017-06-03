@@ -21,5 +21,5 @@ As of [systemd](https://www.archlinux.org/packages/?name=systemd) `226-1` and [d
 
 ## See also
 
-*   [D-Bus page at freedesktop.org](http://www.freedesktop.org/wiki/Software/dbus)
-*   [Introduction to D-Bus](http://www.freedesktop.org/wiki/IntroductionToDBus) on freedesktop.org
+*   [D-Bus page at freedesktop.org](https://www.freedesktop.org/wiki/Software/dbus)
+*   [Introduction to D-Bus](https://www.freedesktop.org/wiki/IntroductionToDBus) on freedesktop.org

@@ -327,4 +327,4 @@ Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-
 
 ## See also
 
-*   [RSeek](http://www.rseek.org/) A search engine for R related material.
+*   [RSeek](http://www.rseek.org/) A Google Custom Search Engine for R related material.
