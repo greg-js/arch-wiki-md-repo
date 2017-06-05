@@ -60,7 +60,7 @@ See [Fprint#Setup fingerprint-gui](/index.php/Fprint#Setup_fingerprint-gui "Fpri
 
 Unfortunately, [tp_smapi](/index.php/Tp_smapi "Tp smapi") is only partially supported on the Thinkpad T420\. A number of features work since version 0.41\. For example, the hard drive protection mechanism [HDAPS](/index.php/HDAPS "HDAPS") now works well. See the linked wiki entry.
 
-Some features like setting the starting threshold for charging the battery do not yet work. To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/) from the [AUR](/index.php/AUR "AUR").
+Some features like setting the starting threshold for charging the battery do not yet work. To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) from the [AUR](/index.php/AUR "AUR").
 
 Insert the `acpi_call` kernel module by running
 

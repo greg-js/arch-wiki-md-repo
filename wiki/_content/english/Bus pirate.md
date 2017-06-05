@@ -97,7 +97,7 @@ To communicate with the device, you can use any of the following, to name a few:
 
 ```
 
-*   `cu`
+*   `cu` from the [uucp](https://www.archlinux.org/packages/?name=uucp) package
 
 ```
 # cu -l /dev/buspirate

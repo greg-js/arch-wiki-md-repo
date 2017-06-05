@@ -226,14 +226,14 @@ keyserver hkp://keyserver.kjsl.com:80
 
 **警告:** 小心使用，禁用签名检查，pacman 会自动安装不信任的软件包。
 
-如果不在意软件包签名，可以完全禁用 PGP 签名检查，编辑 `/etc/pacman.conf` 并注释掉 [options] 下的如下行:
+如果不在意软件包签名，可以完全禁用 PGP 签名检查，编辑 `/etc/pacman.conf` 并取消注释 [options] 下的如下行:
 
 ```
 SigLevel = Never
 
 ```
 
-需要同时注释掉软件源的 SigLevel 设置。
+需要同时注释掉软件源的 SigLevel 设置，因为他们会覆盖全局设置。
 
 这样就不会进行任何签名检查，和 pacman 4 之前一样。如果这样，就不需要用 pacman-key 建立密钥环。
 

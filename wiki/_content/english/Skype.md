@@ -6,7 +6,7 @@ There are two official Linux versions of Skype available:
 
 *   The old Skype (version 4.x, final release in June 2014): see [#Legacy Skype](#Legacy_Skype)
 
-	Legacy Skype does not support calling to some newer clients.[[1]](https://blogs.skype.com/news/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/)
+	Legacy Skype does not support calling to some newer clients.[[1]](https://blogs.skype.com/news/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/) **Will stop working on 1 July 2017.**[[2]](http://www.omgubuntu.co.uk/2017/06/skype-4-3-linux-stop-working-july-2017)
 
 Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice and video chat (at least on Chromium/Chrome and Firefox), but group video chat is not yet working.
 
@@ -90,7 +90,7 @@ There are a couple of reasons you might want to restrict Skype's access to your 
 *   The skype binary is disguised against decompiling, so nobody is (still) able to reproduce what it really does.
 *   It produces encrypted traffic even when you are not actively using Skype.
 
-See [[2]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more information.
+See [[3]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more information.
 
 Restrictions can be implemented in a number of ways, with varying ease and security. It is possible to run Skype in a container, run it as a separate user, or use the [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") functionality available in the Linux kernel.
 
@@ -642,7 +642,7 @@ $ tail -f reject_003.log
 
 The output of this command will show you rejected actions for Skype, so you will be able to add them to `domain_policy.conf` file if needed.
 
-See [[3]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide to TOMOYO configuration.
+See [[4]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide to TOMOYO configuration.
 
 ### Troubleshooting
 

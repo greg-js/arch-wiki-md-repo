@@ -399,4 +399,4 @@ Se você está usando um [auxiliar do AUR](/index.php/Auxiliares_do_AUR "Auxilia
 
 *   [Interface Web do AUR](https://aur.archlinux.org)
 *   [Lista de Discussão do AUR](https://lists.archlinux.org/listinfo/aur-general)
-*   [Espelho do repositório Git do AUR](http://pkgbuild.com/git/aur-mirror.git/)
+*   [DeveloperWiki:AUR Cleanup Day](/index.php/DeveloperWiki:AUR_Cleanup_Day "DeveloperWiki:AUR Cleanup Day")

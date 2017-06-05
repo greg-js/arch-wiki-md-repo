@@ -1,6 +1,6 @@
 Describes how to show ASP.NET-sites under [Apache](/index.php/Apache "Apache") by using Mod_Mono.
 
-From [Mod_Mono's site](http://www.mono-project.com/Mod_mono):
+From [Mod_Mono's site](http://www.mono-project.com/Mod_mono/):
 
 	"*Mod_Mono is an Apache 2.0/2.2 module that provides ASP.NET support for the web's favorite server, Apache ([http://httpd.apache.org/](http://httpd.apache.org/)).*"
 
@@ -35,7 +35,7 @@ Now, Apache should be able to show ASP.NET-pages.
 
 ### AutoHosting
 
-	*Further details: [http://www.mono-project.com/AutoHosting](http://www.mono-project.com/AutoHosting)*
+	*Further details: [http://www.mono-project.com/AutoHosting/](http://www.mono-project.com/AutoHosting/)*
 
 With this setting, configuring apache for each deployment is no longer needed; just place the application in any directory within html-root and it will be promptly auto-configured. Add the following lines to `/etc/httpd/conf/httpd.conf` to enable the option:
 

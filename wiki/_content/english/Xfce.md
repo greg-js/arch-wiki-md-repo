@@ -17,6 +17,7 @@
         *   [3.3.1 Startup applications](#Startup_applications)
             *   [3.3.1.1 Delay application startup](#Delay_application_startup)
         *   [3.3.2 Lock the screen](#Lock_the_screen)
+            *   [3.3.2.1 Panel lock button](#Panel_lock_button)
         *   [3.3.3 User switching](#User_switching)
         *   [3.3.4 Disable saved sessions](#Disable_saved_sessions)
         *   [3.3.5 Default window manager](#Default_window_manager)
@@ -235,6 +236,15 @@ $ xfconf-query -c xfce4-session -p /general/LockCommand -s "light-locker-command
 See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for a comprehensive list of screen lockers.
 
 **Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). If light-locker is installed, a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under the *Security* tab.
+
+##### Panel lock button
+
+The lock button in the Action Buttons panel directly executes `/usr/bin/xflock4`, which ignores the above `/general/LockCommand` setting and the aliasing strategy outlined [in this thread](https://bbs.archlinux.org/viewtopic.php?id=189484).
+
+Using [light-locker](https://www.archlinux.org/packages/?name=light-locker), two easy solutions include:
+
+*   Edit `/usr/bin/xflock4` to execute `light-locker-command -l` directly. This should not be used for multiuser systems and could get overwritten when running upgrading the package.
+*   Replace the lock button provided by Action Buttons with a custom launcher. Remove the lock button item from Action Buttons preferences, then add a launcher item to the panel, setting *Command* to `light-locker-command -l`, optionally changing the icon to `system-lock-screen`.
 
 #### User switching
 
@@ -455,7 +465,7 @@ Xfce has no native support for colour management. [[4]](https://bugzilla.xfce.or
 
 ### Multiple monitors
 
-As of [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) version 4.11.4, Xfce has support for multiple monitors. Settings can be configured in the *Applications* -> *Settings* -> *Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
+Xfce has support for multiple monitors. Settings can be configured in the *Applications* -> *Settings* -> *Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
 
 ### SSH agents
 

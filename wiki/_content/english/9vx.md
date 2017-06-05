@@ -17,7 +17,7 @@ A minimal recent build of [9vx](https://aur.archlinux.org/packages.php?ID=49816)
 
 After installing 9vx:
 
-*   Extract a Plan9 root file system (ISOs from [official plan9](http://www.cs.bell-labs.com/plan9/index.html), [9atom](http://www.quanstro.net/plan9/9atom/) or [9front](http://code.google.com/p/plan9front/) all should work) into your directory of choice "/path/to/plan9" (9vx defaults to the directory /usr/local/plan9vx)
+*   Extract a Plan9 root file system (ISOs from [official plan9](http://www.cs.bell-labs.com/plan9/index.html), [9atom](http://www.quanstro.net/plan9/9atom/) or [9front](https://code.google.com/archive/p/plan9front) all should work) into your directory of choice "/path/to/plan9" (9vx defaults to the directory /usr/local/plan9vx)
 *   make sure that /opt/vx32/bin is in your PATH
 *   invoke "9vx -r /path/to/plan9 -u glenda" to start as user Glenda, a local system administrator user account which can be used for installing programs and changing system settings. If you run the official Plan9 root file system, you will here also get a small tutorial about how to use rio and acme.
 *   invoke "9vx -r /path/to/plan9" to start as your user (at first run, write /sys/lib/newuser at the rc prompt to set up your environment).

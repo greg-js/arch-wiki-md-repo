@@ -54,7 +54,7 @@ mv $database_out $database
 
 ```
 
-For examples of more complicated cron scripts see [here](http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/app-forensics/aide/files/aide.cron) or [here](http://rfxn.com/downloads/cron.aide).
+For examples of more complicated cron scripts see [here](https://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/app-forensics/aide/files/aide.cron) or [here](https://rfxn.com/downloads/cron.aide).
 
 ### Security
 
@@ -63,5 +63,5 @@ Since the database is stored on the root filesystem, attackers can easily modify
 ## See also
 
 *   [AIDE manual](http://aide.sourceforge.net/stable/manual.html)
-*   [Gentoo Docs - Intrusion detection](http://www.gentoo.org/doc/en/security/security-handbook.xml?part=1&chap=13#doc_chap1)
+*   [Gentoo Docs - Intrusion detection](https://wiki.gentoo.org/wiki/Security_Handbook?part=1&chap=13#doc_chap1)
 *   [Samhain Labs - file integrity checkers](http://www.la-samhna.de/library/scanners.html)

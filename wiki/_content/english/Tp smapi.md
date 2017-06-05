@@ -18,7 +18,7 @@ tp_smapi is a set of kernel modules that retrieves information from and conveys 
 
 First check whether your laptop is supported. Thinkwiki has a comprehensive [list of all supported Thinkpads.](http://www.thinkwiki.org/wiki/Tp_smapi#Model-specific_status) In case your TP does not support stop_threshold but only start_threshold please go here [#Workaround for Partially Supported Laptops](#Workaround_for_Partially_Supported_Laptops) for a decent workaround.
 
-If you are installing on a recent Thinkpad that has an Ivy Bridge processor or later (any of the `*30`, `*40` or `*50` models), tp_smapi will not work. Use [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/) or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/).
+If you are installing on a recent Thinkpad that has an Ivy Bridge processor or later (any of the `*30`, `*40` or `*50` models), tp_smapi will not work. Use [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/).
 
 ## Installation
 
@@ -193,7 +193,7 @@ exit 0
 
 ### 2nd Option
 
-To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/) or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/) from the AUR.
+To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/) from the AUR.
 
 Manually set the thresholds by calling
 

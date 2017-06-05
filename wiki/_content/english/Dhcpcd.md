@@ -1,4 +1,4 @@
-*dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
+*dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](https://roy.marples.name/projects/dhcpcd) for the full list of features.
 
 **Note:** *dhcpcd* (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
 
@@ -86,7 +86,7 @@ If the *dhcpcd* default configuration fails to obtain an IP, the following optio
 *   `iaid <interface>` derives the IAID to use for DHCP discovery. It has to be used in an interface block (started by `interface <interface>`, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1388376#p1388376)), but more frequently the next option is used:
 *   `duid` triggers using a combination of DUID and IAID as identifier.
 
-The DUID value is set in `/etc/dhcpcd.duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](http://tools.ietf.org/html/rfc4361#section-6.1)).
+The DUID value is set in `/etc/dhcpcd.duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](https://tools.ietf.org/html/rfc4361#section-6.1)).
 
 Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") to ensure that all three IDs are unique. If duplicate DUID values are presented to the DNS server, e.g. in the case where a virtual machine has been cloned and the hostname and MAC have been made unique but the DUID has not been changed, then the result will be that as each client with the duplicated DUID requests a lease the server will remove the predecessor from the DNS record.
 
@@ -170,7 +170,7 @@ To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
 ### Speed up DHCP by disabling ARP probing
 
-*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](http://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
+*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](https://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
 
 ```
 noarp
@@ -226,7 +226,7 @@ clientid
 
 ```
 
-Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID correctly. See [RFC 4361](http://tools.ietf.org/html/rfc4361) for more information.
+Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID correctly. See [RFC 4361](https://tools.ietf.org/html/rfc4361) for more information.
 
 ### Check DHCP problem by releasing IP first
 
@@ -255,7 +255,7 @@ require dhcp_server_identifier
 
 ```
 
-in `/etc/dhcpcd.conf`. This should not cause issues unless you have multiple DHCP servers on your network (not typical); see [this page](http://technet.microsoft.com/en-us/library/cc977442.aspx) for more information.
+in `/etc/dhcpcd.conf`. This should not cause issues unless you have multiple DHCP servers on your network (not typical); see [this page](https://technet.microsoft.com/en-us/library/cc977442.aspx) for more information.
 
 ### dhcpcd and systemd network interfaces
 

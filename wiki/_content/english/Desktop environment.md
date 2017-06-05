@@ -221,7 +221,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text-git)</small> | EyeSight
 [eyesight](https://aur.archlinux.org/packages/eyesight/) | Liri Player
 [liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
-[liri-browser](https://aur.archlinux.org/packages/liri-browser/) | SDDM
+[liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [LXDE](/index.php/LXDE "LXDE") (GTK+ 2) | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
@@ -273,7 +273,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
-[gala-bzr](https://aur.archlinux.org/packages/gala-bzr/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
+[gala-git](https://aur.archlinux.org/packages/gala-git/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
 [plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
 [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | [Pantheon Files](https://launchpad.net/pantheon-files)
 [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [Pantheon Calculator](https://launchpad.net/pantheon-calculator)

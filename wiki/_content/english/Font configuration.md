@@ -32,7 +32,7 @@ The font rendering packages on Arch Linux includes support for *freetype2* with 
     *   [4.3 Applications overriding hinting](#Applications_overriding_hinting)
     *   [4.4 Applications not picking up hinting from DE's settings](#Applications_not_picking_up_hinting_from_DE.27s_settings)
     *   [4.5 Incorrect hinting in GTK applications on non-Gnome systems](#Incorrect_hinting_in_GTK_applications_on_non-Gnome_systems)
-    *   [4.6 Font problem in Generated PDFs](#Font_problem_in_Generated_PDFs)
+    *   [4.6 Helvetica font problem in generated PDFs](#Helvetica_font_problem_in_generated_PDFs)
     *   [4.7 FreeType Breaking Bitmap Fonts](#FreeType_Breaking_Bitmap_Fonts)
 *   [5 See also](#See_also)
 
@@ -571,7 +571,7 @@ Xft/Antialias 1
 
 Alternatively you could just write the font configuration as `Xft.*` directives in `~/.Xresources` without using a settings daemon.
 
-### Font problem in Generated PDFs
+### Helvetica font problem in generated PDFs
 
 If the following command
 

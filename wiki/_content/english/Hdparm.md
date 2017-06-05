@@ -14,6 +14,7 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
     *   [3.2 Working with unsupported hardware](#Working_with_unsupported_hardware)
     *   [3.3 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
     *   [3.4 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
+    *   [3.5 Power management for WD Green HDDs](#Power_management_for_WD_Green_HDDs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
 
@@ -136,6 +137,12 @@ WantedBy=multi-user.target
 ```
 
 Then [enable](/index.php/Enable "Enable") it.
+
+### Power management for WD Green HDDs
+
+The the Western Digital Green drives have a special "idle3" timeout, which controls how often the drive parks its heads and enters a low power consumption state. The factory default is 8 seconds, which is a very poor choice for use with Linux. Leaving it at the default will result in hundreds of thousands of head load/unload cycles in a very short period of time, which could result in premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O.
+
+WD supplies an official `WDIDLE3.EXE` DOS utility for tweaking this setting, which should be used if at all possible. **hdparm** features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at a least a few drives. Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A full power cycle is required for any change in setting to take effect, regardless of which program is used to tweak things.
 
 ## Troubleshooting
 

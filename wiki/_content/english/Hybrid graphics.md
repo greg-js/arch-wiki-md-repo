@@ -30,7 +30,7 @@ Read [PRIME](/index.php/PRIME "PRIME") basically everything else (like AMD Radeo
 
 You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package.
 
-**Tip:** For kernels not in the [Official repositories](/index.php/Official_repositories "Official repositories"), the [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/) is an alternative. See also [DKMS](/index.php/DKMS "DKMS").
+**Tip:** For kernels not in the [Official repositories](/index.php/Official_repositories "Official repositories"), the [acpi_call-dkms](https://aur.archlinux.org/packages/acpi_call-dkms/) is an alternative. See also [DKMS](/index.php/DKMS "DKMS").
 
 Once installed load the kernel module:
 

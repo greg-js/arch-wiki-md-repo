@@ -158,3 +158,21 @@ Basic information for the new [HP ProBook 440 G4](http://www.notebookcheck.net/H
 }}
 
 ```
+
+## BIOS Update
+
+HP does not provide update files for Linux. Download a file for Windows. To update just follow instructions from your BIOS.
+
+*   Download update for your model (e.g. sp79822.exe)
+*   Format USB driver as FAT32
+*   Create on this USB driver folder `Hewlett-Packard\BIOS\New`
+*   Extract downloaded file (e.g. sp79822.exe) with 7z
+
+```
+$ 7z e sp79822.exe
+
+```
+
+*   Copy extracted files to the created folder `Hewlett-Packard\BIOS\New` (also the archive sp79822.exe)
+*   Reboot the system and enter BIOS
+*   Run BIOS update and follow instructinos

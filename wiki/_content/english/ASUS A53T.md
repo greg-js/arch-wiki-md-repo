@@ -13,7 +13,7 @@
 
 ## Summary
 
-Comprehensive review available here: [http://techreport.com/articles.x/21717](http://techreport.com/articles.x/21717)
+Comprehensive review available here: [https://techreport.com/review/21717/asus-a53t-llano-powered-notebook](https://techreport.com/review/21717/asus-a53t-llano-powered-notebook)
 
 *   Processor: AMD A6-3400M 1.4GHz Quad Core
 *   RAM: 4GB

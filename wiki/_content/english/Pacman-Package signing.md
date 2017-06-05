@@ -1,4 +1,4 @@
-To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. There are currently five [Master Signing Keys](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up *pacman-key*. So the web of trust links the user's key to the five Master Keys.
+To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. The current Master Signing Keys are found [here](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up *pacman-key*. So the web of trust links the user's key to the Master Keys.
 
 Examples of webs of trust:
 
@@ -14,7 +14,7 @@ Examples of webs of trust:
     *   [1.1 Configuring pacman](#Configuring_pacman)
     *   [1.2 Initializing the keyring](#Initializing_the_keyring)
 *   [2 Managing the keyring](#Managing_the_keyring)
-    *   [2.1 Verifying the five master keys](#Verifying_the_five_master_keys)
+    *   [2.1 Verifying the master keys](#Verifying_the_master_keys)
     *   [2.2 Adding developer keys](#Adding_developer_keys)
     *   [2.3 Adding unofficial keys](#Adding_unofficial_keys)
     *   [2.4 Debugging with gpg](#Debugging_with_gpg)
@@ -75,7 +75,7 @@ The randomness created is used to set up a keyring (`/etc/pacman.d/gnupg`) and t
 
 ## Managing the keyring
 
-### Verifying the five master keys
+### Verifying the master keys
 
 The initial setup of keys is achieved using:
 

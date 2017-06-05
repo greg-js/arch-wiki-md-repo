@@ -22,7 +22,7 @@ The required package [acl](https://www.archlinux.org/packages/?name=acl) is a de
 
 To enable ACL, the filesystem must be mounted with the `acl` option. You can use [fstab](/index.php/Fstab "Fstab") to make it permanent on your system.
 
-There is a possibility that the `acl` option is already active as default mount option on the filesystem. [Btrfs](/index.php/Btrfs "Btrfs") does and possibly ext filesystems do too. Use the following command to check ext* formatted partitions for the option:
+There is a possibility that the `acl` option is already active as default mount option on the filesystem. [Btrfs](/index.php/Btrfs "Btrfs") does and ext* filesystems do too. Use the following command to check ext* formatted partitions for the option:
 
  `# tune2fs -l /dev/sd*XY* | grep "Default mount options:"` 
 ```

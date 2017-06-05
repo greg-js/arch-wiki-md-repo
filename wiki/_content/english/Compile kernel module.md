@@ -37,8 +37,8 @@ $ make mrproper
 Then you need to copy your current existing kernel configuration to this build dir
 
 ```
-$ cp /usr/lib/modules/`uname -r`/build/.config ./
-$ cp /usr/lib/modules/`uname -r`/build/Module.symvers ./
+$ cp /usr/lib/modules/$(uname -r)/build/.config ./
+$ cp /usr/lib/modules/$(uname -r)/build/Module.symvers ./
 
 ```
 

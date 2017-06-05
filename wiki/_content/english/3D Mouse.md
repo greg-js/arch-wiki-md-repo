@@ -2,7 +2,7 @@ From [wikipedia:3d mouse#3D mice](https://en.wikipedia.org/wiki/3d_mouse#3D_mice
 
 	Also known as bats, flying mice, or wands, these devices generally function through ultrasound and provide at least three degrees of freedom. Probably the best known example would be 3DConnexion/Logitech's SpaceMouse from the early 1990s.
 
-For more information: [http://www.3dconnexion.com/products/what-is-a-3d-mouse.html](http://www.3dconnexion.com/products/what-is-a-3d-mouse.html)
+For more information: [https://www.3dconnexion.com/products/spacemouse.html#panel-whatis](https://www.3dconnexion.com/products/spacemouse.html#panel-whatis)
 
 **Note:** The following instructions have been tested and proven to work on the most basic model (Space Navigator).
 
@@ -73,7 +73,7 @@ $> gcc 3dmouse.c -o 3dmouse
 $> sudo ./3dmouse root
 ```
 
-5\. Download the linux drivers to `/tmp` from here: [http://www.3dconnexion.com/service/drivers.html](http://www.3dconnexion.com/service/drivers.html)
+5\. Download the linux drivers to `/tmp` from here: [https://www.3dconnexion.com/service/drivers.html](https://www.3dconnexion.com/service/drivers.html)
 
 6\. Unpack the install script and run it
 
@@ -222,8 +222,8 @@ ndof: using SpaceNavigator
 
 ## See also
 
-*   [3dconnexion linux forum](http://www.3dconnexion.com/forum/viewforum.php?f=22)
-*   [Source of C program used](http://www.3dconnexion.com/forum/viewtopic.php?t=1039)
-*   [Information about libXm.so.4 and libXm.so.3](http://www.3dconnexion.com/forum/viewtopic.php?t=1757)
+*   [3dconnexion linux forum](https://www.3dconnexion.com/forum/viewforum.php?f=22)
+*   [Source of C program used](https://www.3dconnexion.com/forum/viewtopic.php?t=1039)
+*   [Information about libXm.so.4 and libXm.so.3](https://www.3dconnexion.com/forum/viewtopic.php?t=1757)
 *   [Website of the open source driver spacenav](http://spacenav.sourceforge.net/)
-*   [Community Wiki about Spacemice](http://spacemice.wikidot.com/)
+*   [Community Wiki about Spacemice](https://spacemice.wikidot.com/)

@@ -64,7 +64,7 @@
 
 不幸的是，[tp_smapi](/index.php/Tp_smapi "Tp smapi")在Thinkpad T420上只被部分支持。很多特性从0.41开始才能工作。例如，硬盘驱动器保护机制[HDAPS](/index.php/HDAPS "HDAPS")现在工作得非常好。请阅读链接的wiki入口。
 
-一些特性，如设置电池开始充电阈值仍然不工作。为了控制电池充电阈值，请安装Perl脚本[tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/)，它位于[AUR](/index.php/Arch_User_Repository "Arch User Repository").
+一些特性，如设置电池开始充电阈值仍然不工作。为了控制电池充电阈值，请安装Perl脚本[tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat)，它位于[AUR](/index.php/Arch_User_Repository "Arch User Repository").
 
 通过以下命令加载内核模块`acpi_call`：
 

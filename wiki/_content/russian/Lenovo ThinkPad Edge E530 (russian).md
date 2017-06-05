@@ -139,7 +139,7 @@ EndSection
 
 ## tp_smapi
 
-Стандартный модуль [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) в настоящее время не поддерживает настройку батареи на данной модели. Для настройки режима зарядки следует установить из [пользовательского репозитория](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") пакет [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/):
+Стандартный модуль [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) в настоящее время не поддерживает настройку батареи на данной модели. Для настройки режима зарядки следует установить из [пользовательского репозитория](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") пакет [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat):
 
 ```
 # yaourt -S tpacpi-bat

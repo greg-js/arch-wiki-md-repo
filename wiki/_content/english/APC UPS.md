@@ -229,5 +229,5 @@ For example, the default KDE setting is to put the computer in sleep if it has b
 ## See also
 
 *   [Apcupsd home page](http://www.apcupsd.org/)
-*   [Forcing hibernate](http://ubuntuforums.org/showthread.php?p=4302102)
+*   [Forcing hibernate](https://ubuntuforums.org/showthread.php?p=4302102)
 *   [apcupsd manual](http://www.apcupsd.com/manual/manual.html#the-shutdown-sequence-and-its-discontents)

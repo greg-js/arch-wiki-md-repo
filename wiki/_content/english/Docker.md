@@ -45,6 +45,13 @@
 
 You may need to reboot before the module is available.
 
+The error message from not enabling the loop module may look like this:
+
+```
+'overlay' not found as a supported filesystem on this host. Please ensure kernel is new enough and has overlay
+
+```
+
 [Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. Next [start](/index.php/Start "Start") and enable `docker.service` and verify operation:
 
 ```

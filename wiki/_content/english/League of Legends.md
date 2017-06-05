@@ -3,33 +3,46 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 PlayonLinux Method](#PlayonLinux_Method)
-        *   [1.1.1 PlayOnLinux 5](#PlayOnLinux_5)
-    *   [1.2 AUR Package](#AUR_Package)
-    *   [1.3 Wine Method](#Wine_Method)
-        *   [1.3.1 Create a 32-bit Wine PREFIX](#Create_a_32-bit_Wine_PREFIX)
-        *   [1.3.2 Install the dependencies](#Install_the_dependencies)
-        *   [1.3.3 Client installation](#Client_installation)
-            *   [1.3.3.1 Using Windows installer](#Using_Windows_installer)
-            *   [1.3.3.2 Using an existing copy of the game](#Using_an_existing_copy_of_the_game)
-        *   [1.3.4 Run the game under Wine](#Run_the_game_under_Wine)
-            *   [1.3.4.1 Use the League Client open beta](#Use_the_League_Client_open_beta)
+    *   [1.1 Lutris Method](#Lutris_Method)
+    *   [1.2 PlayonLinux Method](#PlayonLinux_Method)
+        *   [1.2.1 PlayOnLinux 5](#PlayOnLinux_5)
+    *   [1.3 AUR Package](#AUR_Package)
+    *   [1.4 Wine Method](#Wine_Method)
+        *   [1.4.1 Create a 32-bit Wine PREFIX](#Create_a_32-bit_Wine_PREFIX)
+        *   [1.4.2 Install the dependencies](#Install_the_dependencies)
+        *   [1.4.3 Client installation](#Client_installation)
+            *   [1.4.3.1 Using Windows installer](#Using_Windows_installer)
+            *   [1.4.3.2 Using an existing copy of the game](#Using_an_existing_copy_of_the_game)
+        *   [1.4.4 Run the game under Wine](#Run_the_game_under_Wine)
+            *   [1.4.4.1 Use the League Client open beta](#Use_the_League_Client_open_beta)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Tips](#Tips)
-    *   [2.2 Connection issues](#Connection_issues)
-        *   [2.2.1 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
-        *   [2.2.2 Login server does not respond](#Login_server_does_not_respond)
-    *   [2.3 Launcher issues](#Launcher_issues)
-        *   [2.3.1 Launcher screen is black](#Launcher_screen_is_black)
-        *   [2.3.2 In-game shop crash](#In-game_shop_crash)
-        *   [2.3.3 Store Authentication Required](#Store_Authentication_Required)
-        *   [2.3.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
-        *   [2.3.5 Game failing to run after Champion Select screen](#Game_failing_to_run_after_Champion_Select_screen)
-    *   [2.4 In-game issues](#In-game_issues)
-        *   [2.4.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
-    *   [2.5 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
+    *   [2.2 Client update issues](#Client_update_issues)
+        *   [2.2.1 first client update stuck on 47%](#first_client_update_stuck_on_47.25)
+    *   [2.3 Connection issues](#Connection_issues)
+        *   [2.3.1 Connection Error: connection failure unable to connect to the pvp.net server](#Connection_Error:_connection_failure_unable_to_connect_to_the_pvp.net_server)
+        *   [2.3.2 Login server does not respond](#Login_server_does_not_respond)
+    *   [2.4 Launcher issues](#Launcher_issues)
+        *   [2.4.1 Launcher screen is black](#Launcher_screen_is_black)
+        *   [2.4.2 In-game shop crash](#In-game_shop_crash)
+        *   [2.4.3 Store Authentication Required](#Store_Authentication_Required)
+        *   [2.4.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
+        *   [2.4.5 Game failing to run after Champion Select screen](#Game_failing_to_run_after_Champion_Select_screen)
+    *   [2.5 In-game issues](#In-game_issues)
+        *   [2.5.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
+    *   [2.6 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
 
 ## Installation
+
+### Lutris Method
+
+**Tip:** The other methods are lot harder and/or buggy, probably not working at all in some cases. This one is easier and is reported to work on 4º of june 2017
+
+1.  Install [lutris](https://aur.archlinux.org/packages/lutris/) from [AUR](/index.php/AUR "AUR")
+2.  Install from [https://lutris.net/games/league-of-legends/](https://lutris.net/games/league-of-legends/)
+3.  Once intalled and logged in, in the top right gear of the client, check "low spec mode" and uncheck "close client during game"
+
+	Here is an outdated video from the creator of the Lutris script that could be useful in case of doubt/trobleshooting [https://www.youtube.com/watch?v=2snNhq1hRf4](https://www.youtube.com/watch?v=2snNhq1hRf4)
 
 ### PlayonLinux Method
 
@@ -255,6 +268,12 @@ And running the beta version by typing
 *   Disabling Anti-Aliasing, Vertical Synchronization and Frame Rate Cap in the in-game options may greatly improve performance for some cards.
 
 *   If there is no in-game audio with usb sound cards, installing [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) may resolve it.
+
+### Client update issues
+
+##### first client update stuck on 47%
+
+**(tried in the Lutris installation version)** I let the game updating the whole night while sleeping. By the time i woke up the client stuck in 47%. I just closed the game (and stoppped it from the Lutris GUI) and when I restarted, it worked like a charm (maybe I was just lucky) and this shouldn't be noted here, but who knows... in concrete: the advice here is just to be really patient and generous with the time, in wine that is usually required (in my case 8+ hours)
 
 ### Connection issues
 

@@ -53,13 +53,11 @@ Raw device performance tests can be run with [hdparm](https://www.archlinux.org/
 
 ### NVME Power Saving Patch
 
-Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or REPO linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
+Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. The patch has been merged into mainline kernel v4.11\. For older kernels you can use: **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
 
-As of Kernel 4.11, the patch has been merged into mainline and is no longer necessary.
-
-To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) and run `nvme get-feature -f 0x0c -H /dev/nvme`
+To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) if running an older kernel, and run `nvme get-feature -f 0x0c -H /dev/nvme`
 
 When ASPT is enabled the output should contain "Autonomous Power State Transition Enable (APSTE): Enabled" and there should be non-zero entries in the table below indicating the idle time before transitioning into each of the available states.
 

@@ -135,7 +135,7 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 
 ### Clustered file systems
 
-*   **[Ceph](https://en.wikipedia.org/wiki/Ceph "wikipedia:Ceph")** — Ceph is a unified, distributed storage system designed for excellent performance, reliability and scalability.
+*   **[Ceph](https://en.wikipedia.org/wiki/Ceph_(software) "wikipedia:Ceph (software)")** — Ceph is a unified, distributed storage system designed for excellent performance, reliability and scalability.
 
 	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 

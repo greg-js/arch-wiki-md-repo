@@ -114,9 +114,7 @@ To do this, you could modify the [linux-git](https://aur.archlinux.org/packages/
 *   [libdrm-git](https://aur.archlinux.org/packages/libdrm-git/)
 *   [lib32-libdrm-git](https://aur.archlinux.org/packages/lib32-libdrm-git/)
 *   [lib32-mesa-git](https://aur.archlinux.org/packages/lib32-mesa-git/)
-*   [lib32-mesa-libgl-git](https://aur.archlinux.org/packages/lib32-mesa-libgl-git/)
 *   [mesa-git](https://aur.archlinux.org/packages/mesa-git/)
-*   [mesa-libgl-git](https://aur.archlinux.org/packages/mesa-libgl-git/)
 *   [xf86-video-nouveau-git](https://aur.archlinux.org/packages/xf86-video-nouveau-git/)
 
 ### Dual head

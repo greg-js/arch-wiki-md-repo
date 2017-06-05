@@ -23,8 +23,8 @@
 *   [3 Установка и восстановление](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8_.D0.B2.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
     *   [3.1 Установка пакетов с CD/DVD или USB накопителя](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_.D1.81_CD.2FDVD_.D0.B8.D0.BB.D0.B8_USB_.D0.BD.D0.B0.D0.BA.D0.BE.D0.BF.D0.B8.D1.82.D0.B5.D0.BB.D1.8F)
     *   [3.2 Собственный локальный репозиторий](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9)
-    *   [3.3 Network shared pacman cache](#Network_shared_pacman_cache)
-        *   [3.3.1 Read-only cache](#Read-only_cache)
+    *   [3.3 Общий кэш pacman](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BA.D1.8D.D1.88_pacman)
+        *   [3.3.1 Только для чтения](#.D0.A2.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_.D1.87.D1.82.D0.B5.D0.BD.D0.B8.D1.8F)
         *   [3.3.2 Read-write cache](#Read-write_cache)
         *   [3.3.3 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
         *   [3.3.4 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
@@ -376,13 +376,13 @@ $ repo-add /путь/до/repo.db.tar.gz /путь/до/имя_пакета-1.0-
 
 При желании добавьте свой репозиторий в [список пользовательских репозиториев](/index.php/Unofficial_user_repositories "Unofficial user repositories"), чтобы сообщество также могло использовать его.
 
-### Network shared pacman cache
+### Общий кэш pacman
 
-If you happen to run several Arch boxes on your LAN, you can share packages so that you can greatly decrease your download times. Keep in mind you should not share between different architectures (i.e. i686 and x86_64) or you'll run into problems.
+Если у вас несколько машин с Arch в локальной сети, то вы можете обмениваться пакетами между ними, что значительно уменьшит время загрузки. Имейте ввиду, вы не должны делиться пакетами между разными архитектурами (то есть i686 и x86_64).
 
-#### Read-only cache
+#### Только для чтения
 
-If you are looking for a quick and dirty solution, you can simply run a standalone webserver which other computers can use as a first mirror: `darkhttpd /var/cache/pacman/pkg`. Just add this server at the top of your mirror list. Be aware that you might get a lot of 404 errors, due to cache misses, depending on what you do, but pacman will try the next (real) mirrors when that happens.
+Если вы ищете быстрое решение, то можете просто запустить сервер, который смогут использовать другие компьютеры, как первое зеркало: `darkhttpd /var/cache/pacman/pkg`. Просто добавьте этот сервер в верхней части списка зеркал. Помните, что вы можете получить много ошибок 404 из-за отсутствия кэша, но pacman попробует следующие (настоящие) зеркала, когда это случится.
 
 #### Read-write cache
 

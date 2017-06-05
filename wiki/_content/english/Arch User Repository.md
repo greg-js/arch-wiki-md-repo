@@ -401,4 +401,4 @@ If you use an [AUR helper](/index.php/AUR_helper "AUR helper"), you can shorten 
 
 *   [AUR Web Interface](https://aur.archlinux.org)
 *   [AUR Mailing List](https://lists.archlinux.org/listinfo/aur-general)
-*   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)
+*   [DeveloperWiki:AUR Cleanup Day](/index.php/DeveloperWiki:AUR_Cleanup_Day "DeveloperWiki:AUR Cleanup Day")

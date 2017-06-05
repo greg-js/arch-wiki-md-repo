@@ -18,6 +18,7 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [3.2 Screen redraw is broken](#Screen_redraw_is_broken)
     *   [3.3 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
     *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw.2FUnresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
+    *   [3.5 Impossible to activate displaylink's screen](#Impossible_to_activate_displaylink.27s_screen)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -214,6 +215,17 @@ If once you set up your DisplayLink your entire desktop becomes slow, try settin
 This is to be associated with bugs in hardware acceleration, which can be tested by running glxgears in the displaylink screen resulting in 1fps. There is currently no complete fix available, but turning off Hardware-Acceleration in affected applications can work as a temporary fix.
 
 This can be done in applications without a hardware-acceleration option by prepending the `LIBGL_ALWAYS_SOFTWARE=1` environment variable.
+
+### Impossible to activate displaylink's screen
+
+In case you are able to see attached monitor via DisplayLink device in your screen settings, but after you turn it on and apply settings, it becomes deactivated, then try blacklist nouveau module and reboot:
+
+ `/etc/modprobe.d/nouveau.conf` 
+```
+blacklist nouveau
+options nouveau modeset=0
+
+```
 
 ## See Also
 
