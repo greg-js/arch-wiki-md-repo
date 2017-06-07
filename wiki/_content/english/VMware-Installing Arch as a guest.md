@@ -422,6 +422,8 @@ When using [mlocate](/index.php/Mlocate "Mlocate"), it is useless to index the s
 
 If not selected at guest creation time, 3D Acceleration can be enabled in: *Edit virtual machine settings > Hardware > Display > Accelerate 3D graphics*.
 
+**Note:** Xorg can be very slow with 3D Acceleration enabled. It some cases, llvmpipe software rendering is much faster.
+
 #### OpenGL and GLSL support
 
 It is possible to update OpenGL and GLSL with new kernel modules, overriding Arch-controlled versions.

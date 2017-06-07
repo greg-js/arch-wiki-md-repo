@@ -11,14 +11,13 @@
     *   [2.5 Certificates](#Certificates)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Constant freezes under KDE](#Constant_freezes_under_KDE)
-    *   [4.2 Fonts](#Fonts)
-        *   [4.2.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
-    *   [4.3 Force 3D acceleration](#Force_3D_acceleration)
-    *   [4.4 WebGL](#WebGL)
-    *   [4.5 Distorted GUI](#Distorted_GUI)
-    *   [4.6 Disable keyring password prompt](#Disable_keyring_password_prompt)
-    *   [4.7 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
+    *   [4.1 Fonts](#Fonts)
+        *   [4.1.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
+    *   [4.2 Force 3D acceleration](#Force_3D_acceleration)
+    *   [4.3 WebGL](#WebGL)
+    *   [4.4 Distorted GUI](#Distorted_GUI)
+    *   [4.5 Disable keyring password prompt](#Disable_keyring_password_prompt)
+    *   [4.6 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -42,10 +41,6 @@ Other alternatives include:
 *   **Chromium with [VA-API](/index.php/VA-API "VA-API") support** — with a patch to enable VA-API
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
-
-*   **Chromium with GTK+ 3** — built with gtk3 instead of gtk2
-
-	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || [chromium-gtk3](https://aur.archlinux.org/packages/chromium-gtk3/)
 
 The derived browser, **Google Chrome**, bundled with Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
 
@@ -76,11 +71,9 @@ To set Chromium as the default browser and to change which applications Chromium
 
 ### Flash Player plugin
 
-**Note:** Chromium no longer supports the Netscape plugin API (NPAPI), so [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the repositories cannot be used.
+Flash Player is automatically installed when using Google Chrome.
 
-The Flash Player plugin, using the new Pepper plugin API.
-
-To install it for Chromium or Chrome, [install](/index.php/Install "Install") the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+To install it for Chromium, [install](/index.php/Install "Install") the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
 
 Add the following line (replace the version with the latest one) to `~/.config/chrome-dev-flags.conf`.
 
@@ -89,21 +82,17 @@ Add the following line (replace the version with the latest one) to `~/.config/c
 
 ```
 
-Make sure Flash is allowed to run in `chrome://settings/content`.
+Make sure Flash is allowed to run in `chrome://settings/content/flash`.
 
 ### Widevine Content Decryption Module plugin
 
 Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It is automatically installed when using Google Chrome.
 
-To install it for Chromium, [install](/index.php/Install "Install") the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package.
-
-Make sure *Allow sites to play protected content* is checked in `chrome://settings/content`.
+To install it for Chromium, [install](/index.php/Install "Install") the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package. Make sure *Allow sites to play protected content* is checked in `chrome://settings/content/protectedContent`.
 
 ### PDF viewer plugin
 
-Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin, so installing a third-party plugin is not required.
-
-If you prefer another implementation, check *Open PDF files in the default PDF viewer application* at the bottom of `chrome://settings/content`, and install one of the alternatives from [Browser plugins#PDF viewer](/index.php/Browser_plugins#PDF_viewer "Browser plugins").
+Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin. If you don't want to use this plugin, check *Open PDFs using a different application* in `chrome://settings/content/pdfDocuments`.
 
 ### Certificates
 
@@ -114,10 +103,6 @@ Chromium uses [NSS](/index.php/Network_Security_Services "Network Security Servi
 See the main article: [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks").
 
 ## Troubleshooting
-
-### Constant freezes under KDE
-
-[Uninstall](/index.php/Uninstall "Uninstall") [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse). See: [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
 
 ### Fonts
 

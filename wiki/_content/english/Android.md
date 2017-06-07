@@ -535,22 +535,24 @@ The flashing instructions can be found on Heimdall's [GitHub page](https://githu
 
 #### Odin (Virtualbox)
 
-It is also possible to restore stock Android on the Samsung devices using [Odin](http://odindownload.com/), but inside the [VirtualBox](/index.php/VirtualBox "VirtualBox"). For more information, see [XDA thread](http://forum.xda-developers.com/showthread.php?t=758634).
+**Note:** This section only covers preparation and **not** flashing instructions. Search [XDA developers forums](http://www.xda-developers.com) to find a flashing instructions for specific device. For example, [Samsung Galaxy S4](https://forum.xda-developers.com/showthread.php?t=2265477).
 
-Arch Linux related steps:
+It is also possible to restore [firmware (Android)](http://www.sammobile.com/firmwares/) on the Samsung devices using [Odin](http://odindownload.com/), but inside the [VirtualBox](/index.php/VirtualBox "VirtualBox").
+
+Arch Linux (host) preparation:
 
 1.  Install [VirtualBox](/index.php/VirtualBox "VirtualBox") together with its [extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox") and [guest additions](/index.php/VirtualBox#Guest_additions_disc "VirtualBox").
-2.  Install your preferred, but compatible with Odin, Windows operating system (with VirtualBox guest additions) into a virtual hard drive using VirtualBox
+2.  Install your preferred, but compatible with Odin, Windows operating system (with VirtualBox guest additions) into a virtual hard drive using VirtualBox.
 3.  Open VirtualBox settings of your Windows operating system, navigate to **USB**, then tick (or make sure it is ticked) **Enable USB 2.0 (EHCI) Controller**.
-4.  At VirtualBox running Windows operating system, click in the menu bar **Devices**, then **USB Devices**, then click on your Samsung mobile device connected to your computer via USB.
+4.  At VirtualBox running Windows operating system, click in the menu bar **Devices**, then **USB Devices**, then click on your Samsung mobile device from the list, which is connected to your computer via USB.
 
-Windows related links:
+Windows (guest) preparation:
 
-*   Samsung drivers can be downloaded from [here](http://androidxda.com/download-samsung-usb-drivers).
-*   Odin can be downloaded from [here](https://www.androidfilehost.com/?fid=23501681358557126).
-*   Samsung Android firmware can be downloaded from [here](http://www.sammobile.com/firmwares/).
+1.  Install [Samsung drivers](http://androidxda.com/download-samsung-usb-drivers).
+2.  Install [Odin](http://odindownload.com/).
+3.  Download required [Samsung firmware (Android)](http://www.sammobile.com/firmwares/) for your smartphone model.
 
-If you want to make sure that everything is working and ready:
+Check if configuration is working:
 
 1.  Turn your device into Download mode and connect to your Linux machine.
 2.  In virtual machine toolbar, select `devices` --> `USB` --> `...Samsung...` device.
@@ -561,9 +563,7 @@ If you want to make sure that everything is working and ready:
 
 ```
 
-which means that your device is visible to Odin and is ready to be flashed.
-
-**Note:** There are no general instructions of restoring stock firmware on Samsung mobile devices. You have to use [Google](https://www.google.com) and [XDA developers forums](http://www.xda-developers.com) to find a flashing instructions for specific device. For example, this is how the [thread](http://goo.gl/cZLyF8) about the Samsung Galaxy S4 looks like
+which means that your device is visible to Odin & Windows operating system and is ready to be flashed.
 
 ## Alternative connection methods
 

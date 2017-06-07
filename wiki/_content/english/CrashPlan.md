@@ -99,7 +99,7 @@ For backup sets containing large numbers of files (more than 100,000 or so), the
 
 ### Real time protection
 
-If you use real time protection for your backup set and have a lot of files to backup, the default system configuration might not be able to allocate all required handle to follow all files in real time. This issue can manifest itself with logs like "inotify_add_watch: No space left on device" in the syslog journal. You can follow instruction [here](http://support.code42.com/CrashPlan/Latest/Troubleshooting/Real-Time_Backup_For_Network-Attached_Drives) and configure inotify max_user_watches to a bigger value to fix the iusse.
+If you use real time protection for your backup set and have a lot of files to backup, the default system configuration might not be able to allocate all required handles to follow all files in real time. This issue can manifest itself with logs like "inotify_add_watch: No space left on device" in the syslog journal. You can follow instruction [here](http://support.code42.com/CrashPlan/Latest/Troubleshooting/Real-Time_Backup_For_Network-Attached_Drives) and configure inotify max_user_watches to a bigger value to fix the issue.
 
 ### JRE Version Update
 

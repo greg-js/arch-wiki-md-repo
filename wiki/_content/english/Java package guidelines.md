@@ -37,42 +37,39 @@ Packaging Java applications in Arch is going to take quite a bit more work for p
 
 *   Place all jar files (and no other files) distributed with the program in a `/usr/share/java/myprogram` directory. This includes all dependency jar files distributed with the application. However, effort should be made to place common or large dependency libraries into their own packages. This can only happen if the program does not depend on a specific version of a dependency library.
 
-This rule makes it possible to iteratively refactor dependencies. That is, the package and all its dependencies can be placed into one directory at first. After this has been tested, major dependencies can be refactored out one at a time. Note that some applications include bundled dependencies inside the main jar file. That is, they unjar the bundled dependencies and include them in the main jar. Such dependencies are usually very small and there is little point in refactoring them.
+	This rule makes it possible to iteratively refactor dependencies. That is, the package and all its dependencies can be placed into one directory at first. After this has been tested, major dependencies can be refactored out one at a time. Note that some applications include bundled dependencies inside the main jar file. That is, they unjar the bundled dependencies and include them in the main jar. Such dependencies are usually very small and there is little point in refactoring them.
 
-*   If the program is meant to be run by the user, write a custom shell script that runs the main jar file. This script should be placed in `/usr/bin`. Libraries generally do not require shell scripts. Write the shell script from scratch, rather than using one that is bundled with the program. Remove code that tests for custom environments (like Cygwin), and code that tries to determine if `JAVA_HOME` has been set (Arch [does not use](/index.php/Java#Former_.22One_time_setup.22_trick "Java") `JAVA_HOME`, it uses `archlinux-java` to set the `/usr/bin/java` symlink).
+*   If the program is meant to be run by the user, write a custom shell script that runs the main jar file. This script should be placed in `/usr/bin`. Libraries generally do not require shell scripts. Write the shell script from scratch, rather than using one that is bundled with the program. Remove code that tests for custom environments (like Cygwin), and code that tries to determine if `JAVA_HOME` has been set (Arch [does not use](/index.php/Java#Installation "Java") `JAVA_HOME`, it uses `archlinux-java` to set the `/usr/bin/java` symlink).
 
-such script should look like this for jar files:
+	such script should look like this for jar files:
 
 ```
 #!/bin/sh
 exec /usr/bin/java -jar '/usr/share/java/PROGRAMNAME/PROGRAMNAME.jar' "$@"
-
 ```
 
-and like this for single class files:
+	and like this for single class files:
 
 ```
 #!/bin/sh
 exec /usr/bin/java '/usr/share/java/PROGRAMNAME/PROGRAMCLASSNAME' "$@"
-
 ```
 
 *   Set the `CLASSPATH` using the `-cp` option to the Java interpreter unless there is an explicit reason not to (ie: the `CLASSPATH` is used as a plugin mechanism). The `CLASSPATH` should include all jar files in the `/usr/share/java/myprogram` direcory, as well as jar files that are from dependency libraries that have been refactored to other directories. You can use something like the following code:
 
 ```
-for name in /usr/share/java/myprogram/*.jar ; do
+for name in /usr/share/java/myprogram/*.jar ; do
   CP=$CP:$name
 done
 CP=$CP:/usr/share/java/dep1/dep1.jar
 java -cp $CP myprogram.java.MainClass
-
 ```
 
 *   Make sure the shell script is executable!
 
 *   Other files distributed with the package should be stored in a directory named after the package under `/usr/share`. You may need to set the location of this directory in a variable like `MYPROJECT_HOME` inside the shell script. This guideline assumes that the program expects all files to be in the same directory (as is standard with Java packages). If it seems more natural to put a configuration file elsewhere (for example, logs in `/var/log`), then feel free to do so.
 
-Bear in mind that `/usr` may be mounted as read-only on some systems. If there are files in the shared directory that need to be written by the application, they may have to be relocated to `/etc`, `/var`, or the user's home directory.
+	Bear in mind that `/usr` may be mounted as read-only on some systems. If there are files in the shared directory that need to be written by the application, they may have to be relocated to `/etc`, `/var`, or the user's home directory.
 
 *   As is standard with Arch Linux packages, if the above standards cannot be adhered to without a serious amount of work, the package should be installed in its preferred manner, with the resulting directory located in `/opt`. This is useful for programs that bundle JREs or include customized versions of dependencies, or do other strange or painful tasks.
 

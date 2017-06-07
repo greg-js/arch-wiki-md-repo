@@ -298,6 +298,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 *   [http://mirror.clarkson.edu/archlinux/](http://mirror.clarkson.edu/archlinux/)
 *   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
 *   [http://mirror.ziemer.bz/archlinux](http://mirror.ziemer.bz/archlinux)
+*   [https://lug.mines.edu/mirrors/archlinux/](https://lug.mines.edu/mirrors/archlinux/)
 
 ### Sourceforge (old ISOs)
 

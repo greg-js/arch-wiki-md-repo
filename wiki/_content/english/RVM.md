@@ -612,6 +612,16 @@ $ PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig:/usr/lib/pkgconfig rvm install 
 
 ```
 
+if the above doesn't work, try changing the last command to:
+
+```
+PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig \
+CFLAGS+=" -I/usr/include/openssl-1.0" \
+LDFLAGS+=" -L/usr/lib/openssl-1.0 -lssl" \
+rvm install <ruby-version>
+
+```
+
 Alternatively you could also use RVM to install OpenSSL as above:
 
 ```

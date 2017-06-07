@@ -688,7 +688,7 @@ $ gpg --import *<fingerprint>*.rev
 Now update the keyserver:
 
 ```
-$ gpg --keyserver subkeys.pgp.net --send *<userid>*
+$ gpg --keyserver subkeys.pgp.net --send-keys *<userid>*
 
 ```
 

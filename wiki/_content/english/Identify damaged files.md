@@ -70,11 +70,11 @@ Unlike other filesystem types, [btrfs](/index.php/Btrfs "Btrfs") has native supp
 
 First of all, let's [scrub](/index.php/Btrfs#Scrub "Btrfs") the damaged partition:
 
- `# btrfs scrub -Bd /dev/sdxy` 
+ `# btrfs scrub start -Bd /dev/sdxy` 
 
 The same partition can be scrubbed when mounted by providing its mount point:
 
- `# btrfs scrub -Bd /mnt/point` 
+ `# btrfs scrub start -Bd /mnt/point` 
 
 Scrub reports can be retrieved as many times as need with the `status` subcommand:
 

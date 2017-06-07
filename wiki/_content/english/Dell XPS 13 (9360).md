@@ -57,11 +57,43 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 ### NVME Power Saving Patch
 
-Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or repository linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
+Andy Lutomirski has created a patchset which fixes power saving for NVME devices in linux. The patch was merged into mainline and manually compiling the kernel is not necessary anymore. Nevertheless the [AUR](/index.php/AUR "AUR") package is still available for further use if desired. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME power saving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
 
-The kernel is now available in the official repository and can be installed with pacman. No need for manual patching.
+For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_parameters "Kernel parameters").
+
+For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all PS-States is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). To check if all states are enabled you can use the [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) package, which provides the `nvme-cli` command:
+
+```
+ # nvme get-feature -f 0x0c -H /dev/nvme0
+ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
+   Autonomous Power State Transition Enable (APSTE): Enabled
+   Auto PST Entries  .................
+   Entry[ 0]   
+   .................
+   Idle Time Prior to Transition (ITPT): 1500 ms
+   Idle Transition Power State   (ITPS): 3
+   .................
+   Entry[ 1]   
+   .................
+   Idle Time Prior to Transition (ITPT): 1500 ms
+   Idle Transition Power State   (ITPS): 3
+   .................
+   Entry[ 2]   
+   .................
+   Idle Time Prior to Transition (ITPT): 1500 ms
+   Idle Transition Power State   (ITPS): 3
+   .................
+   Entry[ 3]   
+   .................
+   Idle Time Prior to Transition (ITPT): 8500 ms
+   Idle Transition Power State   (ITPS): 4
+   .................
+
+```
+
+If the power states are enabled there should be values for ITPT and ITPS in the first entries. Also the ITPS-value of the last filled entry should be the highest power saving-state of the SSD (which can be viewed using `smartctl -a /dev/nvme0` or `nvme id-ctrl /dev/nvme0`).
 
 ## Video
 

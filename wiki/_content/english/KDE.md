@@ -56,10 +56,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [5.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
         *   [5.1.2 Compiz custom](#Compiz_custom)
         *   [5.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
-    *   [5.2 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
-    *   [5.3 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [5.4 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
-    *   [5.5 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
+    *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
+    *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration related](#Configuration_related)
         *   [6.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
@@ -588,10 +586,6 @@ $ chmod +x /usr/local/bin/compiz-kde-launcher
 
 When replacing Kwin with a window manager which does not provide a Compositor (such as Openbox), any desktop compositing effects e.g. transparency will be lost. In this case, install and run a separate Composite manager to provide the effects such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Compton](/index.php/Compton "Compton").
 
-### Configure KWin to use OpenGL ES
-
-Set environment variable `KWIN_COMPOSE` to 'O2ES' to force the OpenGL ES backend. Please note that OpenGL ES is not supported by all drivers.
-
 ### Configuring monitor resolution / multiple monitors
 
 To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to *Sytem Settings > Display and Monitor*.
@@ -604,74 +598,6 @@ To disable this feature you currently can run the following command:
 $ kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""
 
 ```
-
-### Enabling touchpad tap to click on plasma wayland session
-
-**Note:** Since plasma 5.9.2 release, this workaround is no longer needed.
-
-Currently, it is not possible to [configure tap to click via systemsettings](https://bugs.kde.org/show_bug.cgi?id=363109) on plasma wayland session. [A workaround](https://bugs.kde.org/show_bug.cgi?id=366605#c4) is provided to configure tap to click on plasma wayland session via dbus.
-
-Here are simplified steps to get touchpad tap to click enabled on plasma wayland session.
-
-Identify on which libinput recognizes the touchpad device.
-
- `# libinput-list-devices` 
-```
-Device:           ETPS/2 Elantech Touchpad
-Kernel:           /dev/input/event14
-Group:            7
-Seat:             seat0, default
-Size:             78.28x38.78mm
-Capabilities:     pointer
-Tap-to-click:     disabled
-Tap-and-drag:     enabled
-Tap drag lock:    disabled
-Left-handed:      disabled
-Nat.scrolling:    disabled
-Middle emulation: n/a
-Calibration:      n/a
-Scroll methods:   *two-finger edge
-Click methods:    none
-Disable-w-typing: enabled
-Accel profiles:   none
-Rotation:         n/a
-
-```
-
-In this case, the touchpad is identified as `event14`
-
-Check whether KDE Dbus recognizes the touchpad. Replace `event14` with the touchpad identifier found from `libinput-list-devices`.
-
- `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice name` 
-```
-ETPS/2 Elantech Touchpad
-
-```
-
-Check the current value of `tapToClick`.
-
- `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice tapToClick` 
-```
-false
-
-```
-
-Now set the `tapToClick` value to `true`.
-
-```
-$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice tapToClick true
-
-```
-
-Confirm that `tapToClick` value is `true`.
-
- `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice tapToClick` 
-```
-true
-
-```
-
-After these steps performed, tap to click should work as expected.
 
 ## Troubleshooting
 

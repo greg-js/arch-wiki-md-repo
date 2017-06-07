@@ -51,6 +51,8 @@ RenderMan is a linux compatible proprietary rendering plugin that is free for us
 
 You may experience graphical corruption on the Blender user interface. Until this is fixed, the workaround is to use Triple Buffering for blender, that however may increase VRAM usage. This can be enabled by going to **File -> User Preferences -> System**, changing the **Window Draw Method** to **Triple Buffering**.
 
+Another workaround for this bug is by installing from the AUR. ([blender-git](https://aur.archlinux.org/packages/blender-git/)) This fixes the graphical corruption on AMDGPU drivers without needing to enable **Triple Buffering**.
+
 ### Blender does not show the AMD card as an OpenCL rendering device
 
 Blender only supports the official AMD proprietary drivers for rendering with OpenCL, meaning you will need to use AMD OpenCL drivers:

@@ -205,7 +205,8 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [94.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
 *   [95 Unrest](#Unrest)
 *   [96 War Thunder](#War_Thunder)
-    *   [96.1 Blank screen](#Blank_screen)
+    *   [96.1 No audio](#No_audio_6)
+    *   [96.2 Blank screen](#Blank_screen)
 *   [97 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
 *   [98 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
     *   [98.1 Game does not start](#Game_does_not_start_10)
@@ -1571,6 +1572,10 @@ Be aware that some games do not support setting that parameter, it will simply b
 Requires [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
 
 ## War Thunder
+
+### No audio
+
+If there is no audio after launching the game, install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).
 
 ### Blank screen
 

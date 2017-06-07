@@ -35,6 +35,7 @@
     *   [6.13 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
     *   [6.14 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
     *   [6.15 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+    *   [6.16 DualBoot with Windows](#DualBoot_with_Windows)
 
 ## Installation
 
@@ -619,3 +620,7 @@ In another terminal:
 ```
 
 Wait until your device shows up, then Ctrl+C hcitool. bluetoothctl should now see your device and pair normally.
+
+### DualBoot with Windows
+
+Sometimes the bluetooth controller won't show up after booting from Windows into Linux. Turn your computer off, wait a few seconds and turn it on again.

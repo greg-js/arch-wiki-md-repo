@@ -34,7 +34,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [10.1 Flash Player: no sound](#Flash_Player:_no_sound)
     *   [10.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
     *   [10.3 Flash Player: performance](#Flash_Player:_performance)
-    *   [10.4 Flash Player: low webcam resolution](#Flash_Player:_low_webcam_resolution)
+    *   [10.4 Flash Player: no webcam, or low webcam resolution](#Flash_Player:_no_webcam.2C_or_low_webcam_resolution)
     *   [10.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
     *   [10.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
     *   [10.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
@@ -361,14 +361,16 @@ and restart the browser to see if it helps.
 
 Adobe's Flash plugin has some serious performance issues, especially when CPU frequency scaling is used. There seems to be a policy not to use the whole CPU workload, so the frequency scaling governor does not clock the CPU any higher. To work around this issue, see [CPU frequency scaling#Switching threshold](/index.php/CPU_frequency_scaling#Switching_threshold "CPU frequency scaling")
 
-### Flash Player: low webcam resolution
+### Flash Player: no webcam, or low webcam resolution
 
-If your webcam has low resolution in Flash (the image looks very pixelated) you can try starting your browser with this:
-
-```
-$ LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so [broswer]
+If Flash doesn't detect your webcam at all, or it has low resolution (the image looks very pixelated), you can try starting your browser with this:
 
 ```
+$ LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so <browser>
+
+```
+
+This is because Flash still uses the V4L1 camera API, long deprecated, and via the above we give it a compatibility layer which it needs.
 
 ### Flash Player: black bars in full screen playback on multi-headed setups
 

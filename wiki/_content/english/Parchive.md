@@ -7,7 +7,6 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Batch-protecting your files](#Batch-protecting_your_files)
     *   [3.2 Verification](#Verification)
-    *   [3.3 Multithreading](#Multithreading)
 
 ## Installation
 
@@ -93,19 +92,23 @@ Put this line in your init file in your home directory to make it permanent.
 OIFS="$IFS"
 IFS=$'
 '
-for file in $(find . -type f | shuf) ; do
+list=$(find . -type f | shuf)
+numleft=$(echo "$list" | wc -l)
+for file in $list ; do
 	ending=$(echo "$file" | sed 's/\(.*\)\.\(.*\)$/\2/')
 
 	#include this block if you want to have 5% recovery data
-	if [ ! -e "$file-5.par2" -a $ending != "par2" -a $ending != "sig" ]; then
-		par2create -n1 -r5 "$file"
+	if [ ! -e "$file-5.par2" -a $ending != "par2" -a $ending != "sig" -a "$(stat --format=%s $file)" != 0 ]; then
+		echo "$numleft original files left"
+		par2create -q -n1 -r5 "$file"
 		rm "$file".par2
 		mv "$file".vol*par2 "$file"-5.par2
 	fi
 
 	#include this block if you want to have 100% recovery data
-	if [ ! -e "$file-100.par2" -a $ending != "par2" -a $ending != "sig" ]; then
-		par2create -n1 -r100 "$file"
+	if [ ! -e "$file-100.par2" -a $ending != "par2" -a $ending != "sig" -a "$(stat --format=%s $file)" != 0 ]; then
+		echo "$numleft original files left"
+		par2create -q -n1 -r100 "$file"
 		rm "$file".par2
 		mv "$file".vol*par2 "$file"-100.par2
 	fi
@@ -114,6 +117,8 @@ for file in $(find . -type f | shuf) ; do
 	if [ ! -e "$file.sig" -a $ending != "par2" -a $ending != "sig" ]; then
 		gpg --default-key C0FFEEBEEFC0FFEEBEEFC0FFEEDEADBEEF31415926 --detach-sign --yes "$file"
 	fi
+
+	numleft=$((numleft-1))
 done
 IFS="$OIFS"
 ```
@@ -132,13 +137,9 @@ $ gpg --verify <file>.sig
 And, if you changed the path of the original file:
 
 ```
-$ par2verify <file>-5.par2 /new/path/to/<fileRenamed>
+$ par2verify -B / <file>-5.par2 /new/path/to/<fileRenamed>
 $ gpg --verify <file>.sig /new/path/to/<fileRenamed>
 
 ```
 
 You can also change the path of the `par2`/`sig` file.
-
-### Multithreading
-
-Parchive unfortunately does not support multithreading. You can compile available versions using tbb or OpenMP, see the [w:Parchive](https://en.wikipedia.org/wiki/Parchive "w:Parchive") article. Since the script shuffles the given list of files, a workaround is possible. You can run the script as many times as you have cores available in different shells. The script will ignore already processed files which allows for the collaboration of multiple instances of the script.

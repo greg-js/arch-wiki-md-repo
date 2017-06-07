@@ -1,4 +1,4 @@
-RethinkDB is a document-oriented database similar to [MongoDB](/index.php/MongoDB "MongoDB") but aims to overcome scalability and practical limitation of the latter. [[1]](http://www.rethinkdb.com/docs/comparisons/mongodb/) [[2]](http://www.rethinkdb.com/blog/mongodb-biased-comparison/) RethinkDB is built to store JSON documents, and scale to multiple machines with very little effort. It has a pleasant query language that supports really useful queries like table joins and group by, and is easy to setup and learn.
+RethinkDB is a document-oriented database similar to [MongoDB](/index.php/MongoDB "MongoDB") but aims to overcome scalability and practical limitation of the latter. [[1]](http://www.rethinkdb.com/docs/comparisons/mongodb/) [[2]](http://www.rethinkdb.com/blog/mongodb-biased-comparison/) RethinkDB is built to store JSON documents, and scale to multiple machines with very little effort. It has a pleasant query language that supports queries such as table joins and group by. It is easy to setup and learn.
 
 ## Installing RethinkDB
 

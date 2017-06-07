@@ -47,7 +47,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 **Tip:** Find out the name of your USB drive with `lsblk`. Make sure that it is **not** mounted.
 
-Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/sdb`. (do **not** append a partition number, so do **not** use something like `/dev/sdb**1**`):
+Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/sdb`. (Do **not** append a partition number, so do **not** use something like `/dev/sdb**1**`)
 
 ```
 # dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress && sync

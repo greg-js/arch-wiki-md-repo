@@ -48,8 +48,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [9.6 Boot time increasing over time](#Boot_time_increasing_over_time)
     *   [9.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
     *   [9.8 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
-    *   [9.9 dependent services are not started when starting a service manually](#dependent_services_are_not_started_when_starting_a_service_manually)
-    *   [9.10 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
+    *   [9.9 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
 *   [10 See also](#See_also)
 
 ## Basic systemctl usage
@@ -781,31 +780,6 @@ This is a [design choice](https://bugzilla.redhat.com/show_bug.cgi?id=955379#c14
 
 ```
 # systemctl enable */absolute/path/foo*.service
-
-```
-
-### dependent services are not started when starting a service manually
-
-One (in)famous example is `libvirtd.service` which needs the `virtlogd.socket` to function properly.
-
-The dependencies in `/usr/lib/systemd/system/libvirtd.service` are defined as
-
-```
-[Install]
-WantedBy=multi-user.target
-Also=virtlockd.socket
-Also=virtlogd.socket
-
-```
-
-This only defines the necessary/dependent sockets to be enabled services(i.e. as "autostart"), too - but does not start them whenever the DISABLED (= non-autostarting) service is started manually e.g. by running `systemctl start libvirtd`
-
-Thus the correct (?) way to manually start a service with dependent subservices once (instead of at each start of the system) probably is
-
-```
-systemctl enable ServiceWithSubservices
-systemctl start ServiceWithSubservices
-systemctl disable ServiceWithSubservices
 
 ```
 

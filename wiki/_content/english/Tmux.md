@@ -57,8 +57,6 @@ By default, command key bindings are prefixed by `Ctrl-b`. For example, to verti
 
 After splitting a window into multiple panes, a pane can be resized by the hitting prefix key (e.g. `Ctrl-b`) and, while continuing to hold Ctrl, press Left/Right/Up/Down. Swapping panes is achieved in the same manner, but by hitting *o* instead of a directional key.
 
-**Tip:** To mimic [screen](/index.php/Screen "Screen") key bindings copy `/usr/share/tmux/screen-keys.conf` to either of the configuration locations.
-
 Key bindings may be changed with the bind and unbind commands in `tmux.conf`. For example, the default prefix binding of `Ctrl-b` can be changed to `Ctrl-a` by adding the following commands in your configuration file:
 
 ```

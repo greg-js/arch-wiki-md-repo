@@ -10,14 +10,16 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [2.4 M5A97](#M5A97)
 *   [3 Asrock](#Asrock)
     *   [3.1 Z97M Pro4](#Z97M_Pro4)
-*   [4 HP](#HP)
-    *   [4.1 EliteBook 840 G1](#EliteBook_840_G1)
-*   [5 Intel](#Intel)
-    *   [5.1 S5400 Family](#S5400_Family)
-*   [6 Lenovo](#Lenovo)
-    *   [6.1 K450 IdeaCentre](#K450_IdeaCentre)
-    *   [6.2 M92p ThinkCentre](#M92p_ThinkCentre)
-*   [7 VirtualBox](#VirtualBox)
+*   [4 MSI](#MSI)
+    *   [4.1 B250M PRO-VH](#B250M_PRO-VH)
+*   [5 HP](#HP)
+    *   [5.1 EliteBook 840 G1](#EliteBook_840_G1)
+*   [6 Intel](#Intel)
+    *   [6.1 S5400 Family](#S5400_Family)
+*   [7 Lenovo](#Lenovo)
+    *   [7.1 K450 IdeaCentre](#K450_IdeaCentre)
+    *   [7.2 M92p ThinkCentre](#M92p_ThinkCentre)
+*   [8 VirtualBox](#VirtualBox)
 
 ## Apple Macs
 
@@ -208,6 +210,20 @@ After this launch the UEFI Shell from the UEFI setup/menu (in ASROCK UEFI BIOS, 
 # efibootmgr -c -g -d /dev/sda -p 1 -w -L "Arch Linux (GRUB)" -l /EFI/grub/grubx64.efi
 
 ```
+
+## MSI
+
+### B250M PRO-VH
+
+This MSI motherboard seems to want the EFI program to exist in a different location from where GRUB installs it. Do the following after following the instructions for installing [GRUB](/index.php/GRUB "GRUB"):
+
+```
+# mkdir /boot/EFI/BOOT
+# cp /boot/EFI/grub/grubx64.efi /boot/EFI/BOOT/shellx64.efi
+
+```
+
+**Note:** The procedure above probably also works for other MSI motherboards.
 
 ## HP
 

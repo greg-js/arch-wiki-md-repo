@@ -1,3 +1,7 @@
+From [JHBuild's wiki](https://wiki.gnome.org/Projects/Jhbuild/Introduction):
+
+	*JHBuild allows you to build and run GNOME platform and applications building the required modules in a sandbox environment, isolating the installation; so there is no need to build and run GNOME inside a virtual machine.*
+
 JHBuild is a tool that allows you to automatically download and compile "modules" (i.e. source code packages). It can pull modules from a variety of sources (CVS, Subversion, Git, Bazaar, tarballs, etc.) and handle dependencies. You can also choose which specific modules you want to build, instead of building the whole project.
 
 JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), but has since been extended to be usable with other projects.

@@ -29,7 +29,8 @@
         *   [2.4.4 Hang after champ select with AMD proprietary fglrx driver](#Hang_after_champ_select_with_AMD_proprietary_fglrx_driver)
         *   [2.4.5 Game failing to run after Champion Select screen](#Game_failing_to_run_after_Champion_Select_screen)
     *   [2.5 In-game issues](#In-game_issues)
-        *   [2.5.1 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
+        *   [2.5.1 Low FPS](#Low_FPS)
+        *   [2.5.2 For d3dstream patched Wine](#For_d3dstream_patched_Wine)
     *   [2.6 PlayOnLinux Troubleshooting](#PlayOnLinux_Troubleshooting)
 
 ## Installation
@@ -364,6 +365,11 @@ Then you will want to make sure your /etc/hosts file uses your hostname over loc
 Then replace all mentions of localhost with the hostname you got from the first command (this change requires a system restart, without this your game will fail after champion select with a "Bad Window" error)
 
 ### In-game issues
+
+#### Low FPS
+
+*   On Wine configuration, in staging tab, set CSMT option checked
+*   In game settings, set max FPS to 60 and disable vertical sync
 
 #### For d3dstream patched Wine
 

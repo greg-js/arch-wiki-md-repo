@@ -103,7 +103,7 @@ This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/i
 Bus 001 Device 003: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 
 ```
-[Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) and [pscs-tools](https://www.archlinux.org/packages/?name=pscs-tools) packages, and [enable](/index.php/Enable "Enable") the `pcscd` service. The reader should be visible when running `pcsc_scan`:
+[Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) and [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) packages, and [enable](/index.php/Enable "Enable") the `pcscd` service. The reader should be visible when running `pcsc_scan`:
 ```
 pcsc_scan
 PC/SC device scanner

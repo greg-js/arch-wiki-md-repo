@@ -172,7 +172,7 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 ## locate
 
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. After installation a script is automatically scheduled to run a daily task to update its database. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(1)](http://man7.org/linux/man-pages/man1/updatedb.1.html) for details.
+[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(1)](http://man7.org/linux/man-pages/man1/updatedb.1.html) for details.
 
 The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*. This problem is minimised by regular, typically scheduled use of the *updatedb* command, which (as the name suggests) updates the database.
 
