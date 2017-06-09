@@ -767,4 +767,3 @@ Full documentation is found [here](http://www.postfix.org/TLS_README.html#client
 
 *   [Out of Office](http://linox.be/index.php/2005/07/13/44/) for Squirrelmail
 *   [Postfix Ubuntu documentation](https://help.ubuntu.com/community/Postfix)
-*   [Use Gmail as an SMTP relay](http://sherlock.heroku.com/blog/2012/02/03/setting-up-postfix-to-use-gmail-as-an-smtp-relay-host-in-archlinux/)

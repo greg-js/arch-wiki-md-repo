@@ -43,6 +43,7 @@
     *   [4.10 Mouse button modifier](#Mouse_button_modifier)
     *   [4.11 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
     *   [4.12 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
+    *   [4.13 Adjust flag icons size in xkb-plugin](#Adjust_flag_icons_size_in_xkb-plugin)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
     *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
@@ -537,6 +538,10 @@ The 2 in the array is the middle click.
 
 Limiting the minimum brightness can be useful for displays which turn off backlight on a brightness level of 0\. In `xfce4-power-manager 1.3.2` a new hidden option had been introduced to set a minimum brightness value with a xfconf4-property. Add `brightness-slider-min-level` as an int property in xfconf4\. Adjust the int value to get a suitable minimum brightness level.
 
+### Adjust flag icons size in xkb-plugin
+
+The ability of resizing flags icons and text in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) was added in 2015[[5]](https://git.xfce.org/panel-plugins/xfce4-xkb-plugin/commit/?id=df86d1490a4491fe29056a5a1ee10093d5a9e146), but a new version of this plug-in hasn't been released since 2013\. Install [xfce4-xkb-plugin-git](https://aur.archlinux.org/packages/xfce4-xkb-plugin-git/) until they release a new version.
+
 ## Troubleshooting
 
 ### Action buttons are missing icons
@@ -610,7 +615,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -618,7 +623,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[6]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[7]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 
@@ -694,7 +699,7 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 
 ```
 
-**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[7]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
+**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[8]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
 
 ### Power Manager Plugin shows battery time and remaining percentage
 

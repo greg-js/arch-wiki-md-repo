@@ -38,7 +38,6 @@ Packages available:
 
 *   [cronie](https://www.archlinux.org/packages/?name=cronie)
 *   [fcron](https://www.archlinux.org/packages/?name=fcron)
-*   [bcron](https://aur.archlinux.org/packages/bcron/)
 *   [dcron](https://aur.archlinux.org/packages/dcron/)
 *   [vixie-cron](https://aur.archlinux.org/packages/vixie-cron/)
 *   [scron-git](https://aur.archlinux.org/packages/scron-git/)

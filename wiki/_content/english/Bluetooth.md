@@ -623,4 +623,4 @@ Wait until your device shows up, then Ctrl+C hcitool. bluetoothctl should now se
 
 ### DualBoot with Windows
 
-Sometimes the bluetooth controller won't show up after booting from Windows into Linux. Turn your computer off, wait a few seconds and turn it on again.
+If you reboot from Windows into Linux without a complete power interruption it is sometimes not possible to use bluetooth. A workaround is to turn off completely your computer and turn it on again. This will reset internal states of the bluetooth controller.

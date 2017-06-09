@@ -23,6 +23,14 @@ Questo documento descrive come installare PostgreSQL. Descrive anche come render
 
 ```
 
+*   In caso di errore, inizializzare il database
+
+```
+#su postgres
+#initdb -D /path_a_scelta/
+
+```
+
 *   (Facoltativo) Aggiungi PostgreSQL alla lista dei demoni da avviare con il sistema:
 
 ```

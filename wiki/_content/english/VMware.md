@@ -37,7 +37,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.12 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.13 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
     *   [5.14 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
-    *   [5.15 vmplayer/vmware fails to start from version 12.5.3](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3)
+    *   [5.15 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
     *   [5.16 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
     *   [5.17 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
 *   [6 Uninstallation](#Uninstallation)
@@ -465,7 +465,9 @@ An easier workaround is to make VMWare use the system's version of zlib instead 
 
 ```
 
-### vmplayer/vmware fails to start from version 12.5.3
+### vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5
+
+**Note:** Use this is not required on version 12.5.6
 
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
 

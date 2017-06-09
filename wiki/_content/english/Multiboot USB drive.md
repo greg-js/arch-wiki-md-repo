@@ -20,13 +20,11 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
             *   [1.5.2.2 Desktop live medium](#Desktop_live_medium)
         *   [1.5.3 Clonezilla Live](#Clonezilla_Live)
         *   [1.5.4 Debian](#Debian)
-            *   [1.5.4.1 Live install medium](#Live_install_medium)
         *   [1.5.5 Elementary OS](#Elementary_OS)
         *   [1.5.6 Fedora](#Fedora)
             *   [1.5.6.1 Stock installation medium](#Stock_installation_medium_2)
             *   [1.5.6.2 Workstation live medium](#Workstation_live_medium)
         *   [1.5.7 Gentoo](#Gentoo)
-            *   [1.5.7.1 Desktop LiveDVD](#Desktop_LiveDVD)
         *   [1.5.8 GParted Live](#GParted_Live)
         *   [1.5.9 Kali Linux](#Kali_Linux)
         *   [1.5.10 Knoppix](#Knoppix)
@@ -40,9 +38,10 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
         *   [1.5.16 SystemRescueCD](#SystemRescueCD)
         *   [1.5.17 Slitaz](#Slitaz)
         *   [1.5.18 Slax](#Slax)
-        *   [1.5.19 Tails](#Tails)
-        *   [1.5.20 Ubuntu](#Ubuntu)
-        *   [1.5.21 Xubuntu (32 bit)](#Xubuntu_.2832_bit.29)
+        *   [1.5.19 Spinrite](#Spinrite)
+        *   [1.5.20 Tails](#Tails)
+        *   [1.5.21 Ubuntu](#Ubuntu)
+        *   [1.5.22 Xubuntu (32 bit)](#Xubuntu_.2832_bit.29)
 *   [2 Chainloading Windows](#Chainloading_Windows)
 *   [3 Using Syslinux and memdisk](#Using_Syslinux_and_memdisk)
     *   [3.1 Preparation](#Preparation_2)
@@ -303,17 +302,15 @@ menuentry '[loopback]CentOS-7.0-1406-x86_64-GnomeLive' {
 **Tip:** Since 2014.01.05[[1]](https://projects.archlinux.org/archiso.git/commit/?id=5cd02c704046cdb6974f6b10f0cac366eeebec0e), the Arch Linux monthly release contains clonezilla.
 
 ```
-menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
-	set isofile="/boot/iso/clonezilla-live-2.2.3-25-amd64.iso"
+menuentry "[loopback]clonezilla-live-20170220-yakkety-amd64" {
+	set isofile="/boot/iso/clonezilla-live-20170220-yakkety-amd64.iso"
 	loopback loop $isofile
-	linux (loop)/live/vmlinuz findiso=$isofile boot=live union=overlay username=user config
+	linux (loop)/live/vmlinuz boot=live union=overlay username=user config components quiet noswap nolocales edd=on nomodeset ocs_live_run=\"ocs-live-general\" ocs_live_extra_param=\"\" keyboard-layouts= ocs_live_batch=\"no\" locales= vga=788 ip=frommedia nosplash toram=filesystem.squashfs findiso=$isofile
 	initrd (loop)/live/initrd.img
 }
 ```
 
 #### Debian
-
-##### Live install medium
 
 ```
 menuentry '[loopback]debian-live-8.8.0-amd64-gnome-desktop' {
@@ -361,8 +358,6 @@ menuentry '[loopback]Fedora-Workstation-Live-x86_64-24-1.2' {
 
 #### Gentoo
 
-##### Desktop LiveDVD
-
 ```
 menuentry "[loopback]livedvd-amd64-multilib-20160514" {
 	set isofile="/boot/iso/livedvd-amd64-multilib-20160514.iso"
@@ -375,10 +370,21 @@ menuentry "[loopback]livedvd-amd64-multilib-20160514" {
 #### GParted Live
 
 ```
-menuentry "[loopback]gparted-live-0.22.0-2-**amd64**" {
-	set isofile="/boot/iso/gparted-live-0.22.0-2-**amd64**.iso"
+menuentry "[loopback]gparted-live-0.28.1-1-**amd64**" {
+	set isofile="/boot/iso/gparted-live-0.28.1-1-**amd64**.iso"
 	loopback loop $isofile
-	linux (loop)/live/vmlinuz boot=live union=overlay username=user config components quiet noswap noeject toram=filesystem.squashfs ip=  nosplash findiso=$isofile
+	linux (loop)/live/vmlinuz boot=live union=overlay username=user config components quiet noswap noeject toram=filesystem.squashfs ip= nosplash findiso=$isofile
+	initrd (loop)/live/initrd.img
+}
+```
+
+Customize your resolution and language to skip the setup questions and boot into X. This uses swap - auto-detected.
+
+```
+menuentry "[loopback]gparted-live-0.28.1-1-**amd64** EN_US 1920x1200 SWAP" {
+	set isofile="/boot/iso/gparted-live-0.28.1-1-**amd64**.iso"
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz boot=live union=overlay username=user config components quiet swapon noeject locales=en_US keyboard-layouts=en xvideomode=1920x1200 gl_batch toram=filesystem.squashfs ip= nosplash findiso=$isofile
 	initrd (loop)/live/initrd.img
 }
 ```
@@ -400,7 +406,7 @@ menuentry "[loopback]kali-linux-1.0.7-**amd64**" {
 menuentry "[loopback]KNOPPIX_V7.4.2DVD-2014-09-28-EN" {
         set isofile="/boot/iso/KNOPPIX_V7.4.2DVD-2014-09-28-EN.iso"
         loopback loop $isofile
-        linux (loop)/boot/isolinux/linux bootfrom=/mnt-iso/$isofile acpi=off keyboard=us lang=us
+        linux (loop)/boot/isolinux/linux bootfrom=/dev/sda2$isofile acpi=off keyboard=us language-us lang=us
         initrd (loop)/boot/isolinux/minirt.gz
 }
 ```
@@ -515,6 +521,18 @@ menuentry 'slax' {
 	set root=(hd0,msdos3)
 	linux $dir/boot/vmlinuz from=$dir vga=normal load_ramdisk=1 prompt_ramdisk=0 printk.time=0 slax.flags=perch,xmode
 	initrd $dir/boot/initrfs.img
+}
+```
+
+#### Spinrite
+
+```
+menuentry "Spinrite" {
+	set gfxpayload=text
+	set isofile="/boot/iso/spinrite.iso"
+	set memdisk="/boot/iso/memdisk4.05"
+	linux16 (hd1,gpt3)$memdisk iso
+	initrd16 (hd1,gpt3)$isofile
 }
 ```
 

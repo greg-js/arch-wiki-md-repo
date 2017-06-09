@@ -12,7 +12,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [2.3 Grant remote access](#Grant_remote_access)
     *   [2.4 Disable remote access](#Disable_remote_access)
     *   [2.5 Enable auto-completion](#Enable_auto-completion)
-    *   [2.6 Using UTF-8](#Using_UTF-8)
+    *   [2.6 Using UTF8MB4](#Using_UTF8MB4)
     *   [2.7 Using a TMPFS for tmpdir](#Using_a_TMPFS_for_tmpdir)
     *   [2.8 Time zone tables](#Time_zone_tables)
 *   [3 Database maintenance](#Database_maintenance)
@@ -170,16 +170,26 @@ You will still be able to log in from the localhost.
 
 The MySQL client completion feature is disabled by default. To enable it system-wide edit `/etc/mysql/my.cnf`, and replace `no-auto-rehash` by `auto-rehash`. Completion will be enabled next time you run the MySQL client.
 
-### Using UTF-8
+### Using UTF8MB4
 
-In the `/etc/mysql/my.cnf` file section under the `mysqld` group, add:
+**Warning:** Before changing the character set be sure to create a backup first.
+
+**Note:** UTF8MB4 is recommended over UTF-8 since it allows full Unicode support [[1]](https://mathiasbynens.be/notes/mysql-utf8mb4) [[2]](https://stackoverflow.com/questions/30074492/what-is-the-difference-between-utf8mb4-and-utf8-charsets-in-mysql).
+
+Add the following values to the main configuration file located at `/etc/mysql/my.cnf`:
 
 ```
+[client]
+default-character-set = utf8mb4
+
 [mysqld]
-init_connect                = 'SET collation_connection = utf8_general_ci,NAMES utf8'
-collation_server            = utf8_general_ci
-character_set_client        = utf8
-character_set_server        = utf8
+collation_server = utf8mb4_unicode_ci
+character_set_client = utf8mb4
+character_set_server = utf8mb4
+skip-character-set-client-handshake
+
+[mysql]
+default-character-set = utf8mb4
 
 ```
 

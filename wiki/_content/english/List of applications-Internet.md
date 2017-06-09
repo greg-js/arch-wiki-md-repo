@@ -214,7 +214,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://github.com/gcarq/inox-patchset](https://github.com/gcarq/inox-patchset) || [inox](https://aur.archlinux.org/packages/inox/) or [inox-bin](https://aur.archlinux.org/packages/inox-bin/)
 
-*   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/iridium-browser/wiki/Differences-between-Iridium-and-Chromium).
+*   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium).
 
 	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
 

@@ -55,7 +55,7 @@ Another workaround for this bug is by installing from the AUR. ([blender-git](ht
 
 ### Blender does not show the AMD card as an OpenCL rendering device
 
-Blender only supports the official AMD proprietary drivers for rendering with OpenCL, meaning you will need to use AMD OpenCL drivers:
+Blender only supports the official AMD proprietary drivers for rendering with OpenCL, meaning you will need to install one of the following AMD OpenCL drivers:
 
 *   Install [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")
 *   Install [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) driver alongside the open source AMDGPU driver

@@ -1301,7 +1301,7 @@ Newcomers may find it quite hard to find help for Mutt. Actually most of the top
 ## See also
 
 *   [The official Mutt website](http://www.mutt.org/)
-*   [Official Manual](http://www.mutt.org/doc/devel/manual.html)
+*   [Official Manual](http://www.mutt.org/doc/manual/)
 *   [The Mutt wiki](http://wiki.mutt.org/)
 *   [Brisbin's great guide on how to setup different IMAP accounts with Mutt, offlineimap, msmtp](http://pbrisbin.com/posts/two_accounts_in_mutt/)
 *   [A Quick Guide to Mutt](http://srobb.net/mutt.html)

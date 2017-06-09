@@ -195,7 +195,7 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Support backup of a mounted root filesystem (-A option).
     *   Can be found on the [System Rescue CD](http://www.sysresccd.org/Main_Page).
 
-	[http://www.fsarchiver.org/Main_Page](http://www.fsarchiver.org/Main_Page) || [fsarchiver](https://www.archlinux.org/packages/?name=fsarchiver)
+	[http://www.fsarchiver.org/](http://www.fsarchiver.org/) || [fsarchiver](https://www.archlinux.org/packages/?name=fsarchiver)
 
 *   **[Mondo Rescue](https://en.wikipedia.org/wiki/Mondo_Rescue "wikipedia:Mondo Rescue")** — A disaster recovery solution to create backup media that can be used to redeploy the damaged system.
     *   Image-based backups, supporting Linux/Windows.

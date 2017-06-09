@@ -25,7 +25,6 @@ This is a guide of steps aggregated from other sources to installation of Arch o
     *   [4.4 Dedicated Graphics](#Dedicated_Graphics)
     *   [4.5 External Displays](#External_Displays)
     *   [4.6 HiDPI](#HiDPI)
-    *   [4.7 Xfce](#Xfce)
 
 ## Hardware
 
@@ -72,7 +71,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ## Preliminaries
 
 1.  Create a recovery device in Windows 10\. It required a USB-only (no SD card, no optical media?) flash drive greater than 8 GB. Formatting FAT32 works.
-2.  [Update the BIOS.](https://support.lenovo.com/us/en/documents/yast-3jwkjx) As of writing, the latest BIOS was 2.00 (2016-04-17). You may be able to do this in Linux/OS-independently.
+2.  [Update the BIOS.](https://support.lenovo.com/us/en/documents/yast-3jwkjx) At this time of writing, the latest BIOS is 2.15 (2017-05-30). Lenovo provides a bootable, standalone ["BIOS Update CD"](http://support.lenovo.com/us/en/downloads/ds106086) to perform this update outside of Windows.
 3.  Getting **into** the BIOS is difficult, so [here are some instructions](https://support.lenovo.com/us/en/documents/sf13-t0025) that seemed to work. The easiest way was through Windows 10.
 4.  In the BIOS, you will want to disable UEFI Secure Boot, change the boot order to look at USB devices first, allow `F12` to bypass the BIOS, and possibly enable the verbose mode because it is easier to press the appropriate buttons on time.
 
@@ -80,7 +79,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 This machine can boot either via EFI or grub.
 
-This section assumes that you've successfully created bootable Arch install media (hint: unetbootin) to a USB drive. The label of the USB installer must be correct (ARCH_201604 in this case). Restart the computer boot from the USB drive. You may need to press `F12` at some point to trigger a boot order override.
+This section assumes that you've successfully created bootable Arch install media to a USB drive. The label of the USB installer must be correct (ARCH_201604 in this case). Restart the computer boot from the USB drive. You may need to press `F12` at some point to trigger a boot order override.
 
 You need an internet connection; this guide got both ethernet and wifi to work. Find the interfaces with `ip link`.
 
@@ -116,6 +115,8 @@ for values 0–2.
 
 ### Sound
 
+The status of audio output over HDMI, Thunderbolt, and/or Mini Displayport is unknown.
+
 ### Integrated Graphics
 
 The integrated Intel GPU should work (mostly) without configuration using the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. If you experience crashes or hangs, please see [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics") for additional configuration.
@@ -124,12 +125,53 @@ The integrated Intel GPU should work (mostly) without configuration using the [x
 
 There is a BIOS option for turning off the Intel Integrated Graphics and only running the NVIDIA discrete card. While it is possible to get the console working with this configuration, there are no confirmed reports of X.org working in this setup.
 
-[NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus") contains instructions on configuring Xorg to use your Nvidia Quadro GPU. The official [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver package supports hybrid GPU configuration without requiring the use of Noveau/PRIME or Bumblebee, but this has not yet been confirmed to work with this hardware.
+[NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus") contains instructions on configuring Xorg to use your Nvidia Quadro GPU. Be sure to select the "Hybrid Graphics" in your BIOS. The official [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver package supports hybrid GPU configuration without requiring the use of Noveau/PRIME or Bumblebee. The following example configuration enables the GPU using the proprietary driver. Pay close attention to the ConstrainCursor and AccelMethod directives.
+
+ `/etc/X11/xorg.conf` 
+```
+# Server layout
+Section "ServerLayout"
+	Identifier "layout"
+	Screen 0 "nvidia"
+	Inactive "intel"
+EndSection
+
+# Intel
+Section "Device"
+	Identifier "Intel"
+	Driver "modesetting"
+	BusID "PCI:0@0:2:0"
+	#Option "AccelMethod" "sna"
+	Option "AccelMethod" "none"
+EndSection
+
+Section "Screen"
+	Identifier "intel"
+	Device "intel"
+EndSection
+
+# Nvidia
+Section "Device"
+	Identifier "nvidia"
+	Driver "nvidia"
+	BusID "PCI:1@0:0:0"
+	Option "ConstrainCursor" "off"
+EndSection
+
+Section "Screen"
+	Identifier "nvidia"
+	Device "nvidia"
+	Option "AllowEmptyInitialConfiguration" "on"
+	Option "IgnoreDisplayDevices" "CRT"
+EndSection
+```
 
 ### External Displays
 
-HDMI has been confirmed to work using Bumblebee and `intel-virtual-output`. So far, there are no confirmed reports of mini Displayport output working.
+DisplayPort over USB-C, HDMI, and Mini DisplayPort outputs all work using the above configuration with the proprietary Nvidia driver. HDMI has also been confirmed to work using Bumblebee and `intel-virtual-output`.
+
+Limited testing suggests that a maximum of 3 total displays from 2 output types may be used at one time. For example, two external DP/USB-C displays and the one internal display will achieve the maximum of three.
+
+**Warning:** Hot-swapping between different external display types has been known to hardlock the Nvidia driver. Change outputs at your own risk!
 
 ### HiDPI
-
-### Xfce

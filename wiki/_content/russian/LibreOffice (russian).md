@@ -6,22 +6,25 @@
 
 *   [1 LibreOffice в Arch Linux](#LibreOffice_.D0.B2_Arch_Linux)
 *   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [3 Управление расширениями](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
-*   [4 Проверка правописания](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [5 Правила переноса](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.BE.D1.81.D0.B0)
-*   [6 Тезаурус](#.D0.A2.D0.B5.D0.B7.D0.B0.D1.83.D1.80.D1.83.D1.81)
-*   [7 Установка макросов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D0.BE.D0.B2)
-*   [8 Запуск LibreOffice](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_LibreOffice)
-*   [9 Ускоряем LibreOffice](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D1.8F.D0.B5.D0.BC_LibreOffice)
-*   [10 Устранение несправностей](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D0.B5.D0.B9)
-    *   [10.1 Шрифт подстановки](#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.BF.D0.BE.D0.B4.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [10.2 Сглаживание](#.D0.A1.D0.B3.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [10.3 Проблемы с проверкой правописания](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.BE.D0.B9_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [10.4 Темные темы GTK, иконки и gtk-qt-engine](#.D0.A2.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_GTK.2C_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B8_gtk-qt-engine)
-    *   [10.5 Особенности при использовании сетевых папок](#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D1.81.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D1.85_.D0.BF.D0.B0.D0.BF.D0.BE.D0.BA)
-    *   [10.6 Исправляем Java Framework Error](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D0.BC_Java_Framework_Error)
-    *   [10.7 LibreOffice не находит мои сертификаты](#LibreOffice_.D0.BD.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D0.BC.D0.BE.D0.B8_.D1.81.D0.B5.D1.80.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D1.8B)
-    *   [10.8 LibreOffice не открывает документы расположенные в сети через Dolphin в KDE](#LibreOffice_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D1.80.D0.B0.D1.81.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B2_.D1.81.D0.B5.D1.82.D0.B8_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Dolphin_.D0.B2_KDE)
+*   [3 Темы оформления](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [3.1 Темы Firefox](#.D0.A2.D0.B5.D0.BC.D1.8B_Firefox)
+    *   [3.2 Отключение логотипа запуска](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE.D1.82.D0.B8.D0.BF.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0)
+*   [4 Управление расширениями](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
+*   [5 Проверка правописания](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F)
+*   [6 Правила переноса](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.BE.D1.81.D0.B0)
+*   [7 Тезаурус](#.D0.A2.D0.B5.D0.B7.D0.B0.D1.83.D1.80.D1.83.D1.81)
+*   [8 Установка макросов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D0.BE.D0.B2)
+*   [9 Запуск LibreOffice](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_LibreOffice)
+*   [10 Ускоряем LibreOffice](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D1.8F.D0.B5.D0.BC_LibreOffice)
+*   [11 Устранение несправностей](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D0.B5.D0.B9)
+    *   [11.1 Шрифт подстановки](#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.BF.D0.BE.D0.B4.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
+    *   [11.2 Сглаживание](#.D0.A1.D0.B3.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+    *   [11.3 Проблемы с проверкой правописания](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.BE.D0.B9_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F)
+    *   [11.4 Темные темы GTK, иконки и gtk-qt-engine](#.D0.A2.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_GTK.2C_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B8_gtk-qt-engine)
+    *   [11.5 Особенности при использовании сетевых папок](#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D1.81.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D1.85_.D0.BF.D0.B0.D0.BF.D0.BE.D0.BA)
+    *   [11.6 Исправляем Java Framework Error](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D0.BC_Java_Framework_Error)
+    *   [11.7 LibreOffice не находит мои сертификаты](#LibreOffice_.D0.BD.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D0.BC.D0.BE.D0.B8_.D1.81.D0.B5.D1.80.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D1.8B)
+    *   [11.8 LibreOffice не открывает документы расположенные в сети через Dolphin в KDE](#LibreOffice_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D1.80.D0.B0.D1.81.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B2_.D1.81.D0.B5.D1.82.D0.B8_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Dolphin_.D0.B2_KDE)
 
 ## LibreOffice в Arch Linux
 
@@ -47,6 +50,35 @@ LibreOffice доступен в репозитории [[extra](https://www.arch
 ```
 
 Проверьте опциональную зависимость, которую выводит [pacman](https://www.archlinux.org/packages/?name=pacman). Java Runtime Environment не требуется, пока вы не захотите использовать Libreoffice Base: см. [Java (Русский)](/index.php/Java_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java (Русский)"). Вам может понадобиться [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/), чтобы использовать [некоторые модули](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) в LibreOffice Base.
+
+## Темы оформления
+
+LibreOffice поддерживает интеграцию тем [GTK+ (Русский)](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)") and [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"). Смотри также [Uniform look for Qt and GTK applications (Русский)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform look for Qt and GTK applications (Русский)").
+
+Наборы библиотек проверяются в следующем порядке:
+
+```
+gtk3 > gtk > kde4 > generic
+
+```
+
+Чтобы принудительно использовать определенный интерфейс VCL UI, используйте одну из `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde4`, `SAL_USE_VCLPLUGIN=gtk` или `SAL_USE_VCLPLUGIN=gtk3` переменных среды ([environment variables (Русский)](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)")). Можно снять комментирование с этих переменных в `/etc/profile.d/libreoffice-fresh.sh` или `/etc/profile.d/libreoffice-still.sh`.
+
+However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
+
+Если это не сработает сразу, вам может потребоваться изменить набор значков, который используется; this is also in the Options Dialog, under *LibreOffice > View* with two pop-up boxes for "Icon size and style" (the latter pop-up box should be changed to something other than "High-contrast").
+
+### Темы Firefox
+
+LibreOffice может использовать темы Firefox. Войдите в настройки LibreOffice и выберите *Personalization > Select Theme* (*Персонализация > Выбор Темы*), затем вставьте URL адрес вашей любимой. Удобная кнопка в диалоговом окне позволяет открыть браузер.
+
+Темы можно найти в [репозитории тем Mozilla](https://addons.mozilla.org/en-US/firefox/themes/).
+
+### Отключение логотипа запуска
+
+Если вы предпочитаете отключать логотип запуска, откройте `/etc/libreoffice/sofficerc`, найдите строку содержащую `Logo=` и замените на `Logo=0`.
+
+**Note:** Эта переменная не связана с поддержкой Logo scripting.
 
 ## Управление расширениями
 

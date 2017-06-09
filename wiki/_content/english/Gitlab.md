@@ -152,7 +152,7 @@ Follow instructions describe on [Redis#Listen on socket](/index.php/Redis#Listen
 
  `/etc/webapps/gitlab/resque.yml` 
 ```
-development: unix:/var/run/redis/redis.sock
+development: unix:/run/redis/redis.sock
 test: unix:/run/redis/redis.sock
 production: unix:/run/redis/redis.sock
 ```
@@ -165,7 +165,7 @@ redis:
   port: 6379
   # pass: redispass # Allows you to specify the password for Redis
   database: 5 # Use different database, default up to 16
-  socket: /var/run/redis/redis.sock # **uncomment** this line
+  socket: /run/redis/redis.sock # **uncomment** this line
   namespace: resque:gitlab
 ```
 
@@ -218,7 +218,7 @@ production:
   username: **username**
   password: **"password"**
   # host: localhost
-  # socket: /var/run/mysqld/mysqld.sock # If running MariaDB as socket
+  # socket: /run/mysqld/mysqld.sock # If running MariaDB as socket
 ...
 
 ```

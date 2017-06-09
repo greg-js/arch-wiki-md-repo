@@ -31,7 +31,6 @@ For inspiration, see the following resources:
 
 *   Sample configuration file in `/usr/share/doc/ncmpcpp/config`.
 *   [Show your .ncmpcpp/config with screenshot forum thread](https://bbs.archlinux.org/viewtopic.php?id=66488)
-*   [Project screenshots page](http://unkart.ovh.org/ncmpcpp/screenshots.php)
 
 ## Enabling visualization
 

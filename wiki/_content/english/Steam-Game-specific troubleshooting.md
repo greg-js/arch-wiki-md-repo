@@ -429,7 +429,7 @@ Add `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes` to your [launch options](/in
 
 ## Civilization V
 
-You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Steam#Launch_options "Steam").
+You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%'` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 [steam-for-linux issue #4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
@@ -448,7 +448,7 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 
 ## Civilization VI
 
-As with Civ V, you need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Steam#Launch_options "Steam").
+As with Civ V, you need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%'` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 

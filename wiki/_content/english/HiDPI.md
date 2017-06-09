@@ -119,7 +119,7 @@ To adjust only icon scaling:
 
 #### Tray icons with fixed size
 
-If the tray icons are not scaled with the rest of the desktop, the size can be set editing the default value for *iconSize* in `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml` (e.g. the value 2 may be fine):
+If the tray icons are not scaled with the rest of the desktop, the size can be set in the Plasma configuration. System-wide configuration is located in the file `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml`, where the dimension of icons can be controlled by editing the default value for *iconSize* (a value of 2 should be fine):
 
  `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml` 
 ```
@@ -130,6 +130,19 @@ If the tray icons are not scaled with the rest of the desktop, the size can be s
            DPI systems those values would be scaled up, depending on the DPI.</label>                    
     <default>**2**</default>
 </entry>
+
+```
+
+User configuration is located in the file `~/.config/plasma-org.kde.plasma.desktop-appletsrc`. The section containing the settings for the tray bar should look similar to this; if the `iconSize` field is not present, add it.
+
+ `~/.config/plasma-org.kde.plasma.desktop-appletsrc` 
+```
+[Containments][47][General]
+extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier
+hiddenItems=org.kde.ktp-contactlist,org.kde.plasma.battery
+knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier
+shownItems=org.kde.plasma.notifications,org.kde.plasma.clipboard
+**iconSize=2**
 
 ```
 

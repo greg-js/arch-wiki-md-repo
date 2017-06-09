@@ -382,7 +382,7 @@ See [Basic Merge Conflicts](http://git-scm.com/book/en/Git-Branching-Basic-Branc
 
 If you want to send patches directly to a mailing list, you have to install the following packages: [perl-authen-sasl](https://www.archlinux.org/packages/?name=perl-authen-sasl), [perl-net-smtp-ssl](https://www.archlinux.org/packages/?name=perl-net-smtp-ssl) and [perl-mime-tools](https://www.archlinux.org/packages/?name=perl-mime-tools).
 
-Make sure you have configured you username and e-mail address, see [#Configuration](#Configuration).
+Make sure you have configured your username and e-mail address, see [#Configuration](#Configuration).
 
 **Configure** your **e-mail** settings:
 

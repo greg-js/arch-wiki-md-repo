@@ -107,7 +107,7 @@ Los comandos `startx` y `xinit` inician el servidor X y los clientes (el script 
 
 ## Configuración
 
-**Nota:** Arch proporciona, de forma predeterminada, archivos de configuración en `/etc/X11/xorg.conf.d`, y, en la mayoría de los casos, no es necesaria una configuración ulterior.
+**Nota:** Arch proporciona, de forma predeterminada, archivos de configuración en `/etc/X11/xorg.conf.d`, y, en la mayoría de los casos, no es necesaria una configuración anterior.
 
 Xorg utiliza un archivo de configuración llamado `xorg.conf` y archivos que terminan en el sufijo `.conf` para su configuración inicial: la lista completa de las carpetas en las que buscar estos archivos se puede encontrar en [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o mediante la ejecución de `man xorg.conf`, que viene acompañado de una explicación detallada de todas las opciones disponibles.
 

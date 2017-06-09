@@ -159,7 +159,7 @@ $ systemctl --user start emacs
 Unfortunately, systemd user units are not run from a login shell and do not inherit its environment. This means private bin directories or settings like python's WORKON_HOME (normally done in ~/.profile) will be missing. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for some suggestions on dealing with that. A simpler hack is just to alter your ExecStart line to run emacs --daemon in a bash login shell.
 
 ```
-$ ExecStart=/bin/bash -l -c '/usr/bin/emacs --daemon'
+ExecStart=/bin/bash -l -c '/usr/bin/emacs --daemon'
 
 ```
 

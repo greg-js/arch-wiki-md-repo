@@ -290,6 +290,8 @@ Install [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git
 
 ```
 
+**Note:** For unknown reasons this is likely going to fail (no asus_fan module found in your system). [Mkinitcpio#Image_creation_and_activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and system reboot usually fixes this issue.
+
 Check if you have any control over both fans:
 
 ```

@@ -31,9 +31,8 @@ This is a guide to setting up your webcam in Arch Linux.
     *   [6.9 mpv](#mpv)
     *   [6.10 FFmpeg](#FFmpeg)
     *   [6.11 ekiga](#ekiga)
-    *   [6.12 Skype 4.x](#Skype_4.x)
-    *   [6.13 Motion](#Motion)
-    *   [6.14 MJPG-streamer](#MJPG-streamer)
+    *   [6.12 Motion](#Motion)
+    *   [6.13 MJPG-streamer](#MJPG-streamer)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
     *   [7.2 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
@@ -238,29 +237,20 @@ LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so application
 
 ```
 
-If the application only supports the older version of V4L (Skype 4.x is the most popular of this kind of software) then use this command:
+If the application only supports the older version of V4L, use this command:
 
 ```
-LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype
+LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so application
 
 ```
 
-**Tip:** You also might want to put a line like the following into `/etc/profile` or [xprofile](/index.php/Xprofile "Xprofile") so you do not have to type that long command all the time: `export LD_PRELOAD=/usr/'$LIB'/libv4l/v4l2convert.so` 
+**Tip:** You also might want to put a line like the following into `/etc/profile` or [xprofile](/index.php/Xprofile "Xprofile") so you do not have to type that long command all the time: `export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so` 
 
 or
 
- `export LD_PRELOAD=/usr/'$LIB'/libv4l/v4l1compat.so` 
+ `export LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so` 
 
-For 32-bit [multilib](/index.php/Multilib "Multilib") applications, install the [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) package.
-
-If the webcam works fine on guvcview, but it does not work in Skype 4.x, you may also need to set
-
-```
-export XLIB_SKIP_ARGB_VISUALS=1
-
-```
-
-before starting it.
+For 32-bit [multilib](/index.php/Multilib "Multilib") applications, install the [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) package and replace `/usr/lib/libv4l/` by `/usr/lib32/libv4l/` in the above commands.
 
 ### QtCAM
 
@@ -272,7 +262,7 @@ fswebcam is a tiny and flexible webcam app which can be called from the command 
 
 ### GTK+ UVC Viewer (guvcview)
 
-In addition to being a convenient way to configure your webcam, [guvcview](http://guvcview.sourceforge.net/) also allows capturing (with sound!) and viewing video from devices supported by the Linux UVC driver. Available as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
+In addition to being a convenient way to configure your webcam, [guvcview](http://guvcview.sourceforge.net/) also allows capturing (with sound!) and viewing video from devices supported by the Linux UVC driver. Available as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications.
 
 ### Kopete
 
@@ -370,20 +360,7 @@ See [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg").
 
 ### ekiga
 
-This is very similar to Microsoft NetMeeting. [Install](/index.php/Install "Install") the [ekiga](https://www.archlinux.org/packages/?name=ekiga) package. The configuration druid will set everything up for you.
-
-### Skype 4.x
-
-The old "legacy" [Skype](/index.php/Skype "Skype") 4.x supports only V4L1\. If you get a green or disorted picture with Skype read the section [#Get software to use your webcam](#Get_software_to_use_your_webcam) above.
-
-If you're running x86-64 you might actually need to install [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) and then run Skype with
-
-```
-LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype
-
-```
-
-You can either set an alias for skype, or rename the original skype binary in `/usr/bin` and create a text file containing the above option, or you can simply adjust the Command line in the options for the Skype icon in your favourite desktop environment.
+[Install](/index.php/Install "Install") the [ekiga](https://www.archlinux.org/packages/?name=ekiga) package. The configuration druid will set everything up for you.
 
 ### Motion
 

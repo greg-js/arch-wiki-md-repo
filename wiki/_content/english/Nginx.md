@@ -90,7 +90,7 @@ http {
     server_tokens off; # Security: Disables nginx version in error messages and in the “Server” response header field.
     charset utf-8; # Force usage of UTF-8
     index index.php index.html index.htm;
-    # include servers-enabled/*; # See Server blocks
+    # include sites-enabled/*; # See Server blocks
 }
 
 ```
@@ -164,14 +164,14 @@ It may be easier to use an [Apache](/index.php/Apache "Apache") like [Virtual ho
 Create the following directories:
 
 ```
-# mkdir /etc/nginx/servers-available
-# mkdir /etc/nginx/servers-enabled
+# mkdir /etc/nginx/sites-available
+# mkdir /etc/nginx/sites-enabled
 
 ```
 
-Create a file inside the `servers-available` directory that contains one or more server blocks:
+Create a file inside the `sites-available` directory that contains one or more server blocks:
 
- `/etc/nginx/servers-available/example` 
+ `/etc/nginx/sites-available/example` 
 ```
 server {
     ..
@@ -182,21 +182,21 @@ server {
 Append the following line at the end of the `http` block in /etc/nginx/nginx.conf:
 
 ```
-include servers-enabled/*;
+include sites-enabled/*;
 
 ```
 
 To enable a `server`, simple create a symlink:
 
 ```
-# ln -s /etc/nginx/servers-available/example /etc/nginx/servers-enabled/example
+# ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
 
 ```
 
 To remove a `server`, delete the symlink:
 
 ```
-# unlink /etc/nginx/servers-enabled/example
+# unlink /etc/nginx/sites-enabled/example
 
 ```
 

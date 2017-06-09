@@ -22,11 +22,11 @@ Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása
         *   [3.4.3 Ikonszerű betűk az állapotsoron](#Ikonszer.C5.B1_bet.C5.B1k_az_.C3.A1llapotsoron)
     *   [3.5 Terminál emulátorok](#Termin.C3.A1l_emul.C3.A1torok)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Advanced window navigation](#Advanced_window_navigation)
+    *   [4.1 Fejlett ablak-navigálás](#Fejlett_ablak-navig.C3.A1l.C3.A1s)
     *   [4.2 Megnyitott ablakra ugrás](#Megnyitott_ablakra_ugr.C3.A1s)
     *   [4.3 Ugrás sürgős ablakra](#Ugr.C3.A1s_s.C3.BCrg.C5.91s_ablakra)
     *   [4.4 Save and restore the window layout](#Save_and_restore_the_window_layout)
-        *   [4.4.1 Save the current window layout of a single workspace](#Save_the_current_window_layout_of_a_single_workspace)
+        *   [4.4.1 Egy munkaterület ablak-elrendezésének mentése](#Egy_munkater.C3.BClet_ablak-elrendez.C3.A9s.C3.A9nek_ment.C3.A9se)
         *   [4.4.2 Restore the window layout of the workspace](#Restore_the_window_layout_of_the_workspace)
     *   [4.5 Scratchpad tárolók](#Scratchpad_t.C3.A1rol.C3.B3k)
     *   [4.6 Képernyővédő, és energiagazdálkodás](#K.C3.A9perny.C5.91v.C3.A9d.C5.91.2C_.C3.A9s_energiagazd.C3.A1lkod.C3.A1s)
@@ -194,7 +194,7 @@ Nem minden plugin van definiálva az alapértelmezett konfigurációban, és né
 
 	[https://github.com/brndnmtthws/conky](https://github.com/brndnmtthws/conky) || [conky](https://www.archlinux.org/packages/?name=conky)
 
-*   **[i3blocks](/index.php/I3blocks "I3blocks")** — Shell scriptek által bővíthető. Kezelni tudja a kattintásokat, megszakításokat, és a blokkonkénti külön frissítési idótartam beállítását.
+*   **[i3blocks](/index.php?title=I3blocks&action=edit&redlink=1 "I3blocks (page does not exist)")** — Shell scriptek által bővíthető. Kezelni tudja a kattintásokat, megszakításokat, és a blokkonkénti külön frissítési idótartam beállítását.
 
 	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)
 
@@ -283,7 +283,7 @@ Esetleg beállíthatod a `$TERMINAL` [környezeti változót](/index.php/Environ
 
 ## Tips and tricks
 
-### Advanced window navigation
+### Fejlett ablak-navigálás
 
 Lásd: [i3 ablak navigációs trükkök](http://www.slackword.net/?p=657).
 
@@ -320,13 +320,13 @@ From version 4.8, and onward *i3* can save and restore workspace layouts. To do 
 
 **Note:** This section only provides quick tutorial on how to save the current window layout of a single workspace and how to restore it for later use. Refer to the [official documentation](http://i3wm.org/docs/layout-saving.html) for more details
 
-#### Save the current window layout of a single workspace
+#### Egy munkaterület ablak-elrendezésének mentése
 
-To save the current window layout, follow these steps:
+A jelenlegi ablak-elrendezés mentéséhez a következőket kell tenned:
 
-1.  First, execute various commands to open windows in a preferred workspace and resize them if needed. Make sure to write down each executed command for each window.
-2.  Now, in a new workspace, open a terminal and run the following: `i3-save-tree --workspace N > ~/.i3/workspace_N.json` where N is the number of the preferred workspace. This will save the current layout of workspace N to the file `~/.i3/workspace_N.json`.
-3.  The newly created file needs to be edited, however this may be done with the following commands: `tail -n +2 ~/.i3/workspace_N.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/workspace_N.json` 
+1.  Először is, nyiss meg különböző ablakokat az előnyben részesített munkaterületen, és méretezd át őket, ha szükséges. Bizonyosodj meg róla, hogy minden parancsot leírtál, amivel az ablakokat nyitottad meg.
+2.  Most egy új munkaterületen nyiss meg egy terminált, és futtasd le a következőt: `i3-save-tree --workspace N > ~/.i3/workspace_N.json` , ahol N az előnyben részesített munkaterület száma. Ez a művelet menti a megadott munkaterület elrendezését a `~/.i3/workspace_N.json` fájlba.
+3.  Az újonnan létrehozott fájlt szerkeszteni kell, azonban ez megoldható a következő parancssal: `tail -n +2 ~/.i3/workspace_N.json | fgrep -v '// splitv' | sed 's|//||g' > ~/.i3/workspace_N.json` 
 
 #### Restore the window layout of the workspace
 

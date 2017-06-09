@@ -137,7 +137,7 @@ If you prefer to use the traditional and manual way: download the extension manu
 VirtualBox comes with three front-ends:
 
 *   If you want to use VirtualBox with the regular GUI, use `VirtualBox`.
-*   If you want to launch and manache your virtual machines from the command-line, use the `VBoxSDL` command, which only provides a plain window for the virtual machine without any overlays.
+*   If you want to launch and manage your virtual machines from the command-line, use the `VBoxSDL` command, which only provides a plain window for the virtual machine without any overlays.
 *   If you want to use VirtualBox without running any GUI (e.g. on a server), use the `VBoxHeadless` command. With the VRDP extension you can still remotely access the displays of your virtual machines.
 
 Finally, you can also use [phpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox") to administrate your virtual machines via a web interface.

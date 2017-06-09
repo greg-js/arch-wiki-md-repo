@@ -27,6 +27,10 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.4 High DPC Latency](#High_DPC_Latency)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
+        *   [6.1.1 Script variants](#Script_variants)
+            *   [6.1.1.1 Passthrough all GPUs but the boot GPU](#Passthrough_all_GPUs_but_the_boot_GPU)
+            *   [6.1.1.2 Passthrough selected GPU](#Passthrough_selected_GPU)
+        *   [6.1.2 Script installation](#Script_installation)
     *   [6.2 Passing the boot GPU to the guest](#Passing_the_boot_GPU_to_the_guest)
     *   [6.3 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
 *   [7 Plain QEMU without libvirt](#Plain_QEMU_without_libvirt)
@@ -420,7 +424,7 @@ Also, since static huge pages can only be used by applications that specifically
 
 ### CPU frequency governor
 
-Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling") is configured, the VM threads may not hit the CPU load thresholds for the frequency to ramp up. Indeed, KVM cannot actually change the CPU frequency on its own, which can be a problem if the it does not scale up with vCPU usage as it would result in underwhelming performance. An easy way to see if it behaves correctly is to check if the frequency reported by `watch lscpu` goes up when running a CPU-intensive task on the guest. If you are indeed experiencing stutter and the frequency does not go up to reach its reported maximum, it may be due to [cpu scaling being controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678). In this case, try setting all cores to maximum frequency to see if this improves performance. Note that if you're using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
+Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling") is configured, the VM threads may not hit the CPU load thresholds for the frequency to ramp up. Indeed, KVM cannot actually change the CPU frequency on its own, which can be a problem if it does not scale up with vCPU usage as it would result in underwhelming performance. An easy way to see if it behaves correctly is to check if the frequency reported by `watch lscpu` goes up when running a CPU-intensive task on the guest. If you are indeed experiencing stutter and the frequency does not go up to reach its reported maximum, it may be due to [cpu scaling being controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678). In this case, try setting all cores to maximum frequency to see if this improves performance. Note that if you're using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
 
 ### High DPC Latency
 
@@ -435,6 +439,10 @@ Certain setups require specific configuration tweaks in order to work properly. 
 ### Using identical guest and host GPUs
 
 Due to how both pci-stub and vfio-pci use your vendor and device id pair to identify which device they need to bind to at boot, if you have two GPUs sharing such an ID pair you won't be able to get your passthough driver to bind with just one of them. This sort of setup makes it necessary to use a script, so that whichever driver you're using is instead assigned by pci bus address using the `driver_override` mechanism.
+
+#### Script variants
+
+##### Passthrough all GPUs but the boot GPU
 
 Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Create the script "/sbin/vfio-pci-override.sh":
 
@@ -455,6 +463,29 @@ Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Creat
    modprobe -i vfio-pci
 
 ```
+
+##### Passthrough selected GPU
+
+In this case we manually specify the GPU to bind.
+
+```
+   #!/bin/sh
+
+   GROUP="0000:00:03.0"
+   DEVS="0000:03:00.0 0000:03:00.1 ."
+
+   if [ ! -z "$(ls -A /sys/class/iommu)" ]
+   then
+       for DEV in $DEVS; do
+           echo "vfio-pci" > /sys/bus/pci/devices/$GROUP/$DEV/driver_override
+       done
+   fi
+
+   modprobe -i vfio-pci
+
+```
+
+#### Script installation
 
 Create /etc/modprobe.d/vfio.conf with the following:
 
@@ -488,7 +519,7 @@ Regenerate your initramfs, and reboot:
 
 ### Passing the boot GPU to the guest
 
-The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally reccomanded to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that's not possible, to swap the host and guest cards in the machine itself.
+The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally recommended to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that's not possible, to swap the host and guest cards in the machine itself.
 
 ### Bypassing the IOMMU groups (ACS override patch)
 
@@ -884,7 +915,7 @@ Capabilities: [60] MSI: Enable**-** Count=1/1 Maskable- 64bit+
 
 ```
 
-A `-` after `Enabled` means MSI is supported, but not used by the VM, while a `+` says that the VM is using it.
+A `-` after `Enable` means MSI is supported, but not used by the VM, while a `+` says that the VM is using it.
 
 The procedure to enable it is quite complex, instructions and an overview of the setting can be found [here](http://forums.guru3d.com/showthread.php?t=378044).
 

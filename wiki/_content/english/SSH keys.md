@@ -351,9 +351,9 @@ It is possible to use the [systemd/User](/index.php/Systemd/User "Systemd/User")
 Description=SSH key agent
 
 [Service]
-Type=forking
+Type=simple
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
-ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 
 [Install]
 WantedBy=*default*.target
@@ -580,6 +580,8 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 *   Works with native SSH agent on Linux/Mac and with PuTTY on Windows.
 
 See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://www.archlinux.org/packages/?name=keepass-plugin-keeagent) package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/).
+
+This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools -> Options -> KeeAgent -> Agent mode socket file -> %XDG_RUNTIME_DIR%/keeagent.socket`- and environment variable: `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"'/keeagent.socket'`.
 
 ## Troubleshooting
 
