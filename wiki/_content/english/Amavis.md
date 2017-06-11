@@ -17,7 +17,7 @@ From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
 In this setup it is assumed that you are using [ClamAV](/index.php/ClamAV "ClamAV") as anti-virus scanner.
 
-*   Install [amavisd-new](https://aur.archlinux.org/packages/amavisd-new/) from the [AUR](/index.php/AUR "AUR"). You would be wise to also install optdepends such as [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [unrar](https://www.archlinux.org/packages/?name=unrar) so your filters can actually see inside compressed files.
+*   Install [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) from the [AUR](/index.php/AUR "AUR"). You would be wise to also install optdepends such as [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [unrar](https://www.archlinux.org/packages/?name=unrar) so your filters can actually see inside compressed files.
 *   Install [clamav](https://www.archlinux.org/packages/?name=clamav) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Basic Configuration

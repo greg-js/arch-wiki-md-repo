@@ -34,7 +34,6 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 *   [3 Partitioning tools](#Partitioning_tools)
     *   [3.1 fdisk/gdisk](#fdisk.2Fgdisk)
     *   [3.2 GNU Parted](#GNU_Parted)
-    *   [3.3 partitionmanager](#partitionmanager)
 *   [4 Partition alignment](#Partition_alignment)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Converting MBR to GPT](#Converting_MBR_to_GPT)
@@ -273,11 +272,9 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
 
-### partitionmanager
+*   **KDE Partition Manager** — Graphical tool written in Qt.
 
-*   **Partitionmanager** — Graphical tool written in Qt.
-
-	[http://sourceforge.net/projects/partitionman/](http://sourceforge.net/projects/partitionman/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
+	[https://www.kde.org/applications/system/kdepartitionmanager/](https://www.kde.org/applications/system/kdepartitionmanager/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
 
 ## Partition alignment
 

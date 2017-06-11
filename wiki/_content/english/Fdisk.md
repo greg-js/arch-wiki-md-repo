@@ -154,7 +154,7 @@ You can later restore the backup by running:
 
 ```
 
-If you want to clone your current device's partition layout (/dev/sda in this case) to another drive (/dev/sdc) run:
+If you want to clone your current device's partition layout (`/dev/sda` in this case) to another drive (`/dev/sdc`) run:
 
 ```
 # sgdisk -R=/dev/sdc /dev/sda
@@ -248,7 +248,7 @@ After conversion, the bootloaders will need to be reinstalled to configure them 
 **Note:**
 
 *   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR doesn't have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
-*   If your boot loader is GRUB, it needs a [BIOS Boot Partition](/index.php?title=BIOS_Boot_Partition&action=edit&redlink=1 "BIOS Boot Partition (page does not exist)").
+*   If your boot loader is GRUB, it needs a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 *   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
 
 To convert an MBR partition table to GPT, use *sgdisk*.

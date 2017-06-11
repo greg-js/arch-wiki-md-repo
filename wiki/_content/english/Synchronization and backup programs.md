@@ -47,12 +47,12 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 *   **FS monitoring**: the application listens to file system events to trigger the synchronization.
 *   **CLI**: the application is command-line driven, i.e. it is scriptable.
 *   **Other interfaces**: the application has the specified user interfaces, e.g. GUI, TUI, or web-based.
-*   **Licence**: the licence of the server and client applications.
+*   **License**: the license of the server and client applications.
 *   **Other platforms**: supported operating systems other than Linux.
 *   **Active**: whether the project is currently maintained.
 *   **Specificity**: brief notes about special features that notably set the application apart from the others.
 
-| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Conflict resolution | Multidirectional | FS monitoring | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
+| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Conflict resolution | Multidirectional | FS monitoring | CLI | Other interfaces | License | Other platforms | Active | Specificity |
 | [Resilio Sync](https://www.resilio.com/individuals/) (formerly BitTorrent Sync) | [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | Closed source | Yes | Yes, also LAN transfer encryption option |  ? | Yes |  ? | Yes, previous versions moved to archive folder |  ? | Yes |  ? | No | Web | Proprietary freemium | OS X, Windows, Android, iOS, Windows Phone, Amazon Kindle Fire, FreeBSD | Yes | P2P sync |
 | [FreeFileSync](http://freefilesync.sourceforge.net/) | [freefilesync](https://aur.archlinux.org/packages/freefilesync/) | C++ |  ? | SFTP [[1]](http://www.freefilesync.org/faq.php#features) |  ? |  ? | Yes [[2]](http://www.freefilesync.org/faq.php#features) | Yes [[3]](http://www.freefilesync.org/manual.php?topic=versioning) |  ? | No |  ? | No | Yes | GPL | Windows, OS X | Yes |
 | [git-annex](http://git-annex.branchable.com/) | [git-annex](https://www.archlinux.org/packages/?name=git-annex) | Haskell, git | rsync [[4]](http://git-annex.branchable.com/transferring_data/) | rsync [[5]](http://git-annex.branchable.com/transferring_data/) |  ? |  ? |  ? | Yes |  ? | git remotes [[6]](http://git-annex.branchable.com/sync/) |  ? | Yes | [git-annex assistant](http://git-annex.branchable.com/assistant/) | GPLv3 | OS X, Android | Yes | Manage files with git |
@@ -73,7 +73,7 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 | [Synkron](http://synkron.sourceforge.net/) | [synkron](https://aur.archlinux.org/packages/synkron/) | C++ |  ? |  ? |  ? |  ? |  ? |  ? |  ? | Yes |  ? | No | Qt | GPLv2 | Windows, OS X | [No](https://sourceforge.net/projects/synkron/) |
 | [taskd](https://tasktools.org/projects/taskd.html) | [Taskd](/index.php/Taskd "Taskd") | C++, python, | Yes | Yes |  ? | Yes |  ? |  ? |  ? | Yes | No | Yes | No | MIT | Android | Yes |
 | [Unison](http://www.cis.upenn.edu/~bcpierce/unison/) | [Unison](/index.php/Unison "Unison") | OCaml | Yes | Yes | partial [[18]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#perms) | optional [[19]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#speeding) | No | Yes [[20]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#backups) | interactive | No | No | Yes | GTK2 | GPL | Windows, OS X, FreeBSD, Android | Yes [[21]](http://www.cis.upenn.edu/~bcpierce/unison/status.html) |
-| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Conflict resolution | Multidirectional | FS monitoring | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
+| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Conflict resolution | Multidirectional | FS monitoring | CLI | Other interfaces | License | Other platforms | Active | Specificity |
 
 ## Incremental backups
 
@@ -244,6 +244,10 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
     *   Service for Chinese users.
 
 	[http://jianguoyun.com/](http://jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
+
+*   **OneDrive** — Microsoft cloud service.
+
+	[https://onedrive.com](https://onedrive.com) || [onedrive-git](https://aur.archlinux.org/packages/onedrive-git/)
 
 *   **rsync.net** — Cloud storage for offsite backups.
     *   ZFS filesystem, accessible with any SSH/SFTP/SCP tool, running on a UNIX system.

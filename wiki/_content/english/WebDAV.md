@@ -6,6 +6,7 @@ The goal of this how to is to setup a simple WebDAV configuration using a [web s
 
 *   [1 Server](#Server)
     *   [1.1 Apache](#Apache)
+    *   [1.2 Nginx](#Nginx)
 *   [2 Client](#Client)
     *   [2.1 Cadaver](#Cadaver)
     *   [2.2 Thunar](#Thunar)
@@ -65,6 +66,43 @@ Check the permissions of DavLockDB's directory and ensure it is writable by the 
 # chown -R http:http /home/httpd/html/dav
 
 ```
+
+### Nginx
+
+Install the mainline variant of [nginx](/index.php/Nginx "Nginx") and [nginx-mainline-mod-dav-ext](https://aur.archlinux.org/packages/nginx-mainline-mod-dav-ext/).
+
+At the top of your `/etc/nginx/nginx.conf` and outside any blocks, add
+
+```
+load_module /usr/lib/nginx/modules/ngx_http_dav_ext_module.so;
+
+```
+
+Add a new `location` for WebDAV to your `server` block, for example:
+
+```
+location /dav {
+    root   /srv/http;
+
+    dav_methods PUT DELETE MKCOL COPY MOVE;
+    dav_ext_methods PROPFIND OPTIONS;
+
+    # Adjust as desired:
+    dav_access all:rw;
+    client_max_body_size 0;
+    create_full_put_path on;
+    client_body_temp_path /srv/client-temp;
+    autoindex on;
+
+    allow 192.168.178.0/24;
+    deny all;
+}
+
+```
+
+The above example requires the directories `/srv/http/dav` and `/srv/client-temp` to exist.
+
+You may want to use bind mounts to make other directories accessible via WebDAV.
 
 ## Client
 

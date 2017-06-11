@@ -662,52 +662,10 @@ Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda
 
 ### Creating the keyfiles
 
-The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the encryption, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for additional details.
+The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the encryption, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for details.
 
-Create the keyfile.
-
-```
-# dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin
-
-```
-
-Make sure only root can read it. If on a multi-user system, you may want to apply similar permissions to `/boot` as well, as someone could dump the keyfile from the initramfs image.
-
-```
-# chmod 600 /crypto_keyfile.bin
-# chmod -R g-rwx,o-rwx /boot
-
-```
-
-Add the key to `/dev/md0`.
-
-```
-# cryptsetup luksAddKey /dev/md0 /crypto_keyfile.bin
-
-```
-
-Create another keyfile for the HDD so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it.
-
-```
-# mkdir -m 700 /etc/luks-keys
-# dd bs=512 count=4 if=/dev/random of=/etc/luks-keys/data
-# cryptsetup luksAddKey /dev/sdc1 /etc/luks-keys/data
-
-```
-
-Find the UUID for `/dev/sdc1`, to be used in `/etc/crypttab` for persistent naming.
-
-```
-# ls -al /dev/disk/by-uuid | grep sdc1
-
-```
-
-Edit `/etc/crypttab` to decrypt the HDD at boot, substituting in the UUID found in the previous step.
-
-```
-cryptdata    UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   /etc/luks-keys/data
-
-```
+*   Create the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") and add the key to `/dev/md0`.
+*   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot, see [dm-crypt/Device encryption#Unlocking a secondary partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
 
 ### Configuring the system
 

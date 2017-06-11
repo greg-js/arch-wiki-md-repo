@@ -1125,7 +1125,7 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 #### rust-git
 
 *   **Maintainer:** Tatsuyuki Ishi <ishitatsuyuki@gmail.com>
-*   **Description:** Packages of rust-git and others built with custom PKGBUILD.
+*   **Description:** Packages of rust-git and others. Normally updated weekly.
 
 ```
 [rust-git]

@@ -245,7 +245,7 @@ Description=Delayed hibernation trigger
 Documentation=https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279
 Documentation=https://wiki.archlinux.org/index.php/Power_management
 Before=suspend.target
-Conflicts=hibernate.target hybrid-suspend.target
+Conflicts=hibernate.target hybrid-sleep.target
 StopWhenUnneeded=true
 
 [Service]
@@ -273,7 +273,7 @@ WantedBy=sleep.target
 
 The `Before` and `Conflicts` options ensure it only is run for suspension and not hibernation--otherwise the service will run twice if delayed hibernation is triggered. The `WantedBy` and `StopWhenUnneeded` options are so it is started before sleep and stops upon resume. (Note that the `suspend.target` and `hibernate.target` targets do not stop when unneeded, but `sleep.target` does). [Enable](/index.php/Enable "Enable") the service.
 
-With recent sytemd release, you must also [edit](/index.php/Edit "Edit") the `suspend.target` file by adding a *Requires=suspend-to-hibernate.service* line to the `[Unit]` section ([source](https://bbs.archlinux.org/viewtopic.php?id=204346))
+With recent systemd release, you must also [edit](/index.php/Edit "Edit") the `suspend.target` file by adding a *Requires=suspend-to-hibernate.service* line to the `[Unit]` section ([source](https://bbs.archlinux.org/viewtopic.php?id=204346))
 
 #### Hooks in /usr/lib/systemd/system-sleep
 

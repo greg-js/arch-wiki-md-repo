@@ -142,6 +142,8 @@ With this setup the discrete GPU is used for all rendering and the integrated GP
 
 Firwmare updates are provided by Dell and can potentially be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/) but this has not been confirmed to work. Available firmware versions can also be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
 
+Firmware updates can be installed by copying the firmware file to a USB key and booting into "BIOS Flash Update" from the Boot Menu.
+
 ## Fingerprint reader
 
 The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. There currently is no Linux driver but an open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)

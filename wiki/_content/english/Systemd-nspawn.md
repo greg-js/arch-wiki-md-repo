@@ -71,8 +71,7 @@ After the container starts, log in as "root" with no password.
 
 The container can be powered off by running `poweroff` from within the container. From the host, containers can be controlled by the [machinectl](#machinectl) tool.
 
-**Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non-US keyboard users should use `%` instead of `]`
-.
+**Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non-US keyboard users should use `%` instead of `]`.
 
 #### Bootstrap Arch Linux i686 inside x86_64 host
 
@@ -108,7 +107,7 @@ From there it's rather easy to setup Debian or Ubuntu environments:
 
 ```
 
-For Debian valid code names are either the rolling names like "stable" and "testing" or release names like "stretch" and "sid", for Ubuntu the code name like "xenial" or "zesty" should be used. A complete list of codenames is in `/usr/share/debootstrap/scripts`. In case of a Debian image the "repository-url" can be `[http://deb.debian.org/debian/](http://deb.debian.org/debian/)`.
+For Debian valid code names are either the rolling names like "stable" and "testing" or release names like "stretch" and "sid", for Ubuntu the code name like "xenial" or "zesty" should be used. A complete list of codenames is in `/usr/share/debootstrap/scripts`. In case of a Debian image the "repository-url" can be `[http://deb.debian.org/debian/](http://deb.debian.org/debian/)`. For an Ubuntu image, the "repository-url" can be `[http://archive.ubuntu.com/ubuntu/](http://archive.ubuntu.com/ubuntu/)`.
 
 Unlike Arch, Debian and Ubuntu will not let you login without a password on first login. To set the root password login without the '-b' option and set a password:
 

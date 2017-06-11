@@ -11,14 +11,15 @@
     *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
     *   [2.4 在Chromium中打开pdf文件](#.E5.9C.A8Chromium.E4.B8.AD.E6.89.93.E5.BC.80pdf.E6.96.87.E4.BB.B6)
     *   [2.5 证书管理](#.E8.AF.81.E4.B9.A6.E7.AE.A1.E7.90.86)
-*   [3 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [3.1 字体](#.E5.AD.97.E4.BD.93)
-    *   [3.2 卡顿](#.E5.8D.A1.E9.A1.BF)
-    *   [3.3 PDF 插件中的字体问题](#PDF_.E6.8F.92.E4.BB.B6.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
-    *   [3.4 在浏览器和Flash播放器插件强制使用3D加速功能](#.E5.9C.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E5.92.8CFlash.E6.92.AD.E6.94.BE.E5.99.A8.E6.8F.92.E4.BB.B6.E5.BC.BA.E5.88.B6.E4.BD.BF.E7.94.A83D.E5.8A.A0.E9.80.9F.E5.8A.9F.E8.83.BD)
-    *   [3.5 WebGL](#WebGL)
-    *   [3.6 界面混乱](#.E7.95.8C.E9.9D.A2.E6.B7.B7.E4.B9.B1)
-*   [4 资源](#.E8.B5.84.E6.BA.90)
+*   [3 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
+*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [4.1 字体](#.E5.AD.97.E4.BD.93)
+    *   [4.2 卡顿](#.E5.8D.A1.E9.A1.BF)
+    *   [4.3 PDF 插件中的字体问题](#PDF_.E6.8F.92.E4.BB.B6.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
+    *   [4.4 在浏览器和Flash播放器插件强制使用3D加速功能](#.E5.9C.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E5.92.8CFlash.E6.92.AD.E6.94.BE.E5.99.A8.E6.8F.92.E4.BB.B6.E5.BC.BA.E5.88.B6.E4.BD.BF.E7.94.A83D.E5.8A.A0.E9.80.9F.E5.8A.9F.E8.83.BD)
+    *   [4.5 WebGL](#WebGL)
+    *   [4.6 界面混乱](#.E7.95.8C.E9.9D.A2.E6.B7.B7.E4.B9.B1)
+*   [5 资源](#.E8.B5.84.E6.BA.90)
 
 ## 安装
 
@@ -96,6 +97,10 @@ Chromium 和 Google Chrome 已经内置了 *Chromium PDF Viewer* 插件，所以
 ### 证书管理
 
 Chromium 使用 [NSS](/index.php/Nss "Nss") 管理证书，可以通过`Settings` → `Show advanced settings...` → `Manage Certificates...` 设置。
+
+## 提示和技巧
+
+见主要文章: [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks")。
 
 ## 疑难解答
 

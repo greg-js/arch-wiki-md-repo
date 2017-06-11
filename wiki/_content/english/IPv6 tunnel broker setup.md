@@ -1,67 +1,15 @@
 Hurricane Electric offers a free [tunnel broker](http://tunnelbroker.net/) service that is relatively painless to use under Arch if you wish to add IPv6 connectivity to an IPv4-only host.
 
-These instructions work for [SixXS](http://www.sixxs.net/) tunnels as well.
-
 ## Contents
 
 *   [1 Registering for a tunnel](#Registering_for_a_tunnel)
-*   [2 Setting up SixXS tunnel](#Setting_up_SixXS_tunnel)
-*   [3 Setting up Hurricane Electric tunnel](#Setting_up_Hurricane_Electric_tunnel)
-*   [4 systemd-networkd](#systemd-networkd)
-*   [5 Using the tunneling with dynamic IPv4 IP](#Using_the_tunneling_with_dynamic_IPv4_IP)
+*   [2 Setting up Hurricane Electric tunnel](#Setting_up_Hurricane_Electric_tunnel)
+*   [3 systemd-networkd](#systemd-networkd)
+*   [4 Using the tunneling with dynamic IPv4 IP](#Using_the_tunneling_with_dynamic_IPv4_IP)
 
 ## Registering for a tunnel
 
 It is not that hard to do. Feel free to fill in the directions here if something seems tricky, but otherwise just go the tunnel broker site and complete the registration.
-
-## Setting up SixXS tunnel
-
-First, you need to have [aiccu](https://www.archlinux.org/packages/?name=aiccu) and [radvd](https://www.archlinux.org/packages/?name=radvd) installed.
-
-Now edit `/etc/aiccu.conf` and fill in your data. If you have several tunnels, you need to also supplement the tunnel_id option in the file. The following is an example for a dynamic ayiay tunnel.
-
-```
-username <username>
-password <password>
-protocol tic
-server tic.sixxs.net
-ipv6_interface sixxs
-automatic true
-requiretls true
-pidfile /var/run/aiccu.pid
-defaultroute true
-makebeats true
-behindnat true
-
-```
-
-Test the configuration now with:
-
-```
-# systemctl start aiccu
-
-```
-
-If it works you can add a dispatcher script for the NetworkManager, so it will start whenever your network is ready. Note that enabling the service via systemd will not work, as the network will not be ready on boot. Please see [FS#38221](https://bugs.archlinux.org/task/38221) for more details.
-
- `/etc/NetworkManager/dispatcher.d/99-aiccu` 
-```
-#!/bin/bash
-# -*- coding: utf-8 -*-
-# Manual Running/Test: ./99-aiccu eth0 up
-if [ -e /sys/fs/cgroup/systemd ]; then
-  case "$2" in
-    up)
-      systemctl start aiccu.service
-      ;;
-    down)
-      systemctl stop aiccu.service
-      ;;
-  esac
-fi
-```
-
-Configuring radvd and LAN side IP of the router: See [Router](/index.php/Router#IPv6 "Router").
 
 ## Setting up Hurricane Electric tunnel
 

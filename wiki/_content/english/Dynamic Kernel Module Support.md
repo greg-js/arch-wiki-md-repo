@@ -159,6 +159,8 @@ The sources can be patched either directly in the PKGBUILD or through `dkms.conf
 
 Loading and unloading modules should be left to the user. Consider the possibility a module may crash when loaded.
 
+Also, please note that you do not have to call `depmod` explicitly to update the dependencies of your kernel module. Pacman is now calling DKMS `dkms install` and `dkms remove` automatically as hooks. `dkms install` is making sure `depmod` is called at the end of its process. `dkms install` depends on `dkms build` (to build the source against the current kernel), which itself depends on `dkms add` (to add a symlink from `/var/lib/dkms/<package>/<version>/source` to `/usr/src/<package>`.
+
 ### namcap output
 
 [namcap](/index.php/Namcap "Namcap") (which attempts to check for common mistakes and non-standard decisions in a package) is good practice to use at least once on *any* package; however, it has not yet been updated for DKMS specific guidelines.
@@ -198,12 +200,6 @@ build() {
   # Patch
   patch -p1 -i "${srcdir}"/linux-3.14.patch
 
-  # Build
-  msg2 "Starting ./configure..."
-  ./configure
-
-  msg2 "Starting make..."
-  make
 }
 
 package() {
@@ -239,32 +235,7 @@ AUTOINSTALL="yes"
 
 #### .install
 
-Instead of `depmod` now `dkms install` can be used (it depends on `dkms build`, which depends on `dkms add`):
-
- `amazing-dkms.install` 
-```
-# old version (without -$pkgrel): ${1%%-*}
-# new version (without -$pkgrel): ${2%%-*}
-
-post_install() {
-    dkms install *amazing*/${1%%-*}
-}
-
-pre_upgrade() {
-    pre_remove ${2%%-*}
-}
-
-post_upgrade() {
-    post_install ${1%%-*}
-}
-
-pre_remove() {
-    dkms remove *amazing*/${1%%-*} --all
-}
-
-```
-
-**Tip:** To keep DKMS packages closer to their non-DKMS counterparts: avoid cluttering up package files with DKMS-specific stuff (e.g. version numbers that need updating).
+Now pacman has DKMS hooks implemented, you do not have to specify DKMS-specific configuration in your .install file. Calls to `dkms install` and `dkms remove` will be automatic.
 
 ## See also
 

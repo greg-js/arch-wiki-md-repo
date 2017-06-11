@@ -16,7 +16,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
 *   [5 Cross Compiling](#Cross_Compiling)
     *   [5.1 Using rustup](#Using_rustup)
     *   [5.2 Windows](#Windows)
-    *   [5.3 unofficial packages](#unofficial_packages)
+    *   [5.3 Unofficial packages](#Unofficial_packages)
 *   [6 Cargo](#Cargo)
     *   [6.1 Usage](#Usage)
 *   [7 IDE Support](#IDE_Support)
@@ -47,6 +47,8 @@ Rust follows a regular six week release cycle, similar to the release cycle of F
 ### Native Installation
 
 To [install](/index.php/Install "Install") the latest stable version of Rust from the official Arch Linux software repository, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package. This will install the rustc compiler. You can choose to install the [cargo](https://www.archlinux.org/packages/?name=cargo) package as well.
+
+There's also development version of the Rust compiler available from [AUR](/index.php/AUR "AUR"). Use [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) for prebuilt generic binraies or [rust-git](https://aur.archlinux.org/packages/rust-git/) to build the compiler with system libraries. Prebuilt, periodically updated rust-git packages are also available from the [unofficial repo](/index.php/Unofficial_user_repositories#rust-git "Unofficial user repositories").
 
 ### Official Rustup Installation
 
@@ -153,7 +155,7 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ```
 
-### unofficial packages
+### Unofficial packages
 
 The [unofficial repo archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") has rust-nightly and Rust std library for i686, ARM, ARMv7, Windows 32 and 64 so you can just install the one you want then enjoy cross compiling. However, you have to find an ARM toolchain by yourself. For Windows 32bit targets, you'll need to get a libgcc_s_dw2-1.dll to build and run.
 

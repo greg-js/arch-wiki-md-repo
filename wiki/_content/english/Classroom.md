@@ -21,13 +21,13 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 Classes are announced on arch-general, the forums, and other broadcasting places like twitter. A list is given below for easy viewing.
 
 | **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(s)** |
-| 2017-06-04 17:00 UTC | *The Beginner's Guide to Arch Linux Package Management* | Eschwartz | [arch-general](https://lists.archlinux.org/pipermail/arch-general/2017-May/043712.html) |
 
 ### Previous classes
 
 Classes that have already happened. (Maybe students and teachers could write up some info on the experience, similar to the arch con pages.)
 
 | **Date** | **Class Title** | **Instructor(s)** | **Logs** |
+| 2017-06-04 | *The Beginner's Guide to Arch Linux Package Management* | Eschwartz | [17:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2017-06-04-the_beginners_guide_to_arch_linux_package_management.txt) |
 | 2016-12-11 | *Getting started with Arch Linux packaging* | halosghost and meskarune | [19:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-12-11-getting_started_with_arch_linux_packaging.txt) |
 | 2016-07-16 | *Git for Gits* | polyzen and meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |
 | 2015-05-17 | *An Imperfect Introduction to Static Typing* | HalosGhost | [23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt) |

@@ -55,16 +55,16 @@ Consulte el artículo [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1o
 
 Usted puede **no** querer usar Arch, si:
 
-*   no tiene la capacidad/tiempo/ganas de usar una distribución GNU/Linux basada en *do-it-yourself* («hazlo tú mismo»);
-*   necesita compatibilidad con una arquitectura que no sea x86_64 o i686;
-*   tiene una postura firme sobre el uso de una distribución que solo proporcione software libre, según la definición de GNU;
-*   cree que un sistema operativo debería configurarse por sí solo, funcionar inmediatamente una vez instalado, e incluir por defecto un completo conjunto de software y entornos de escritorios en el soporte de instalación;
-*   no desea una distribución GNU/Linux vanguardista y rolling release;
-*   está satisfecho con su actual sistema operativo.
+*   No tiene la capacidad/tiempo/ganas de usar una distribución GNU/Linux basada en *do-it-yourself* («hazlo tú mismo»).
+*   Necesita compatibilidad con una arquitectura que no sea x86_64.
+*   Tiene una postura firme sobre el uso de una distribución que solo proporcione software libre, según la definición de GNU.
+*   Cree que un sistema operativo debería configurarse por sí solo y funcionar una vez instalado, incluyendo por defecto un completo conjunto de software y entornos de escritorios en el soporte de instalación.
+*   No desea una distribución GNU/Linux rolling release («lanzamiento continuo»).
+*   Está satisfecho con su sistema operativo actual.
 
 ### ¿Qué arquitecturas soporta Arch?
 
-Arch soporta las arquitecturas i686 y x86_64 (a veces llamado amd64) .
+Arch sólo soporta x86_64 (a veces llamado amd64). El soporte para i686 será descartado y eliminado por completo en noviembre del 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/). Si todavía está ejecutando un sistema de 32-bit puede estar interesado en leer [¿Cómo puedo saber si mi procesador es compatible con x86_64?](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFC.C3.B3mo_puedo_saber_si_mi_procesador_es_compatible_con_x86_64.3F "Frequently asked questions (Español)")
 
 ### ¿Tiene Arch soporte para CPU ARM?
 

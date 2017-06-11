@@ -333,6 +333,8 @@ For starters, you can flag packages out-of-date. If it stays out-of-date for an 
 
 In the meantime, you can try updating the package yourself by editing the PKGBUILD - sometimes updates do not require any changes to the build or package process, in which case simply updating the `pkgver` or `source` array is sufficient.
 
+**Note:** [VCS packages](/index.php/VCS_package_guidelines "VCS package guidelines") are not considered out of date when the pkgver changes, so **please** do not flag them as the maintainer will merely unflag the package and ignore you. AUR maintainers should not commit mere pkgver bumps.
+
 ### Foo in the AUR does not compile when I run makepkg; what should I do?
 
 You are probably missing something trivial.
@@ -349,7 +351,7 @@ The best resource is the wiki page about [creating packages](/index.php/Creating
 
 ### I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?
 
-If you would like to have your PKGBUILD critiqued, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members. You could also get help from the [IRC channel](/index.php/IRC_channel "IRC channel"), #archlinux on irc.freenode.net. You can also use [namcap](/index.php/Namcap "Namcap") to check your PKGBUILD and the resulting package for errors.
+If you would like to have your PKGBUILD critiqued, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members. You could also get help from the [IRC channel](/index.php/IRC_channel "IRC channel"), #archlinux-aur on irc.freenode.net. You can also use [namcap](/index.php/Namcap "Namcap") to check your PKGBUILD and the resulting package for errors.
 
 ### How to get a PKGBUILD into the community repository?
 

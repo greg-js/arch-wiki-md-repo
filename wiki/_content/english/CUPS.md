@@ -72,7 +72,7 @@ To use a parallel port printer, the `lp`, `parport` and `parport_pc` [kernel mod
 
 ### Network
 
-To use [Avahi](/index.php/Avahi "Avahi") hostnames to connect to networked printers, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
+[Avahi](/index.php/Avahi "Avahi") can be used to scan for printers on the local network. To use [Avahi](/index.php/Avahi "Avahi") hostnames to connect to networked printers, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
 
 If the system is connected to a networked printer using the [Samba](/index.php/Samba "Samba") protocol, or if the system is to be a print server for Windows clients, install the [samba](https://www.archlinux.org/packages/?name=samba) package.
 
@@ -88,7 +88,7 @@ When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD fil
 
 ### CUPS
 
-CUPS provides a few PPDs and filter binaries by default, which should work out of the box.
+CUPS provides a few PPDs and filter binaries by default, which should work out of the box. CUPS also provides support for [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") and [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) printers.
 
 ### Foomatic
 
@@ -170,6 +170,7 @@ The *queue_name* is up to you. Example:
 
 ```
 # lpadmin -p HP_DESKJET_940C -E -v "usb://HP/DESKJET%20940C?serial=CN16E6C364BH" -m drv:///HP/hp-deskjet_940c.ppd.gz
+# lpadmin -p AirPrint -E -v "ipp://10.0.1.25/ipp/print" -m everywhere    # Driverless queue (Apple AirPrint or IPP Everywhere)
 # lpadmin -p SHARED_PRINTER -m raw    # Raw queue; no PPD or filter
 
 ```
@@ -337,7 +338,7 @@ polkit.addRule(function(action, subject) {
 
 ### cups-browsed
 
-CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"), and start both `avahi-daemon.service` and `cups-browsed.service`. Note that jobs are sent directly to the printer without any processing so the created queues may not work.
+CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"), and start both `avahi-daemon.service` and `cups-browsed.service`. Jobs are sent directly to the printer without any processing so the created queues may not work, however driverless printers such as those supporting [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) or [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") should work out of the box.
 
 ### Printer sharing
 
@@ -368,3 +369,4 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 *   [OpenSuSE Concepts printing guide - explains the full printing workflow](https://en.opensuse.org/Concepts_printing)
 *   [OpenSuSE CUPS in a Nutshell - a quick CUPS overview](https://en.opensuse.org/SDB:CUPS_in_a_Nutshell)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)
+*   [Debian's Printing portal - detailed technical guides](https://wiki.debian.org/Printing "debian:Printing")

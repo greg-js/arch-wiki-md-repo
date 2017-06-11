@@ -29,9 +29,11 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [12.1 Migrating saves from other platforms](#Migrating_saves_from_other_platforms)
     *   [12.2 Using Ctrl Key](#Using_Ctrl_Key)
     *   [12.3 Logging into SHiFT](#Logging_into_SHiFT)
+    *   [12.4 Game crashes nearly instantly](#Game_crashes_nearly_instantly)
 *   [13 Borderlands: The Pre-Sequel](#Borderlands:_The_Pre-Sequel)
     *   [13.1 Keyboard not working](#Keyboard_not_working)
     *   [13.2 Not starting via Steam](#Not_starting_via_Steam)
+    *   [13.3 Game crashes nearly instantly](#Game_crashes_nearly_instantly_2)
 *   [14 Cities in Motion 2](#Cities_in_Motion_2)
     *   [14.1 Dialog boxes fail to display properly](#Dialog_boxes_fail_to_display_properly)
 *   [15 Cities Skylines](#Cities_Skylines)
@@ -395,6 +397,10 @@ Borderlands 2 does not allow the `Ctrl` key to be used by default. The game seem
 
 Out of the box you will not be able to log into SHiFT since the game expects certificates to be in `/usr/lib/ssl`, which is where Ubuntu stores them. Arch however uses `/etc/ssl`. To resolve the problem, add `SSL_CERT_DIR=/etc/ssl/certs` to your [launch options](/index.php/Steam#Launch_options "Steam").
 
+### Game crashes nearly instantly
+
+As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
+
 ## Borderlands: The Pre-Sequel
 
 See [#Logging into SHiFT](#Logging_into_SHiFT).
@@ -406,6 +412,10 @@ Using [dwm](/index.php/Dwm "Dwm"), no keyboard input seems to register.
 ### Not starting via Steam
 
 If the game appears as *Running*, then syncs and closes when you launch it from Steam, try creating a `steam_appid.txt` in the game directory containing `261640`. This should resolve the issue and let you start the game directly from the game directory. If that does not work, try using the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime).
+
+### Game crashes nearly instantly
+
+As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
 
 ## Cities in Motion 2
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [VMware](/index.php/VMware "VMware") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-26，点击[这里](https://wiki.archlinux.org/index.php?title=VMware&diff=0&oldid=478292)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VMware](/index.php/VMware "VMware") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-11，点击[这里](https://wiki.archlinux.org/index.php?title=VMware&diff=0&oldid=479547)可以查看翻译后英文页面的改动。
 
 本文是关于在 Arch 中安装 VMware，你也许想寻找的是 [在 VMware 中安装 Arch Linux](/index.php/Installing_Arch_Linux_in_VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux in VMware (简体中文)")
 
@@ -24,24 +24,27 @@
         *   [4.3.1 使用修改过的 BIOS](#.E4.BD.BF.E7.94.A8.E4.BF.AE.E6.94.B9.E8.BF.87.E7.9A.84_BIOS)
     *   [4.4 在Intel和Optimus上启用3D图形](#.E5.9C.A8Intel.E5.92.8COptimus.E4.B8.8A.E5.90.AF.E7.94.A83D.E5.9B.BE.E5.BD.A2)
 *   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [5.1 错误：/dev/vmmon not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmmon_not_found)
-    *   [5.2 错误：/dev/vmci not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmci_not_found)
-    *   [5.3 错误：Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#.E9.94.99.E8.AF.AF.EF.BC.9AKernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [5.4 无法识别 USB 设备](#.E6.97.A0.E6.B3.95.E8.AF.86.E5.88.AB_USB_.E8.AE.BE.E5.A4.87)
-    *   [5.5 安装程序启动失败](#.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
-    *   [5.6 用户界面初始化失败](#.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2.E5.88.9D.E5.A7.8B.E5.8C.96.E5.A4.B1.E8.B4.A5)
-    *   [5.7 无法为客户机下载VMware Tools](#.E6.97.A0.E6.B3.95.E4.B8.BA.E5.AE.A2.E6.88.B7.E6.9C.BA.E4.B8.8B.E8.BD.BDVMware_Tools)
-    *   [5.8 当远程访问VMware时，遇到不正确的用户名/密码错误](#.E5.BD.93.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AEVMware.E6.97.B6.EF.BC.8C.E9.81.87.E5.88.B0.E4.B8.8D.E6.AD.A3.E7.A1.AE.E7.9A.84.E7.94.A8.E6.88.B7.E5.90.8D.2F.E5.AF.86.E7.A0.81.E9.94.99.E8.AF.AF)
-    *   [5.9 ALSA输出的问题](#ALSA.E8.BE.93.E5.87.BA.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [5.10 错误：Kernel-based Virtual Machine (KVM) is running](#.E9.94.99.E8.AF.AF.EF.BC.9AKernel-based_Virtual_Machine_.28KVM.29_is_running)
-    *   [5.11 旧的Intel微指令在启动时产生段错误](#.E6.97.A7.E7.9A.84Intel.E5.BE.AE.E6.8C.87.E4.BB.A4.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BA.A7.E7.94.9F.E6.AE.B5.E9.94.99.E8.AF.AF)
-    *   [5.12 错误：Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#.E9.94.99.E8.AF.AF.EF.BC.9AGuests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
-    *   [5.13 Guests系统启动后网络不可用](#Guests.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8.E5.90.8E.E7.BD.91.E7.BB.9C.E4.B8.8D.E5.8F.AF.E7.94.A8)
-    *   [5.14 在Linux 4.9后内核模块无法编译](#.E5.9C.A8Linux_4.9.E5.90.8E.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97.E6.97.A0.E6.B3.95.E7.BC.96.E8.AF.91)
-    *   [5.15 版本号为12.5.4的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.4.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-    *   [5.16 版本号为12.5.3的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.3.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-    *   [5.17 vmware 12的进程在启动之后立即终止，没有显示GUI](#vmware_12.E7.9A.84.E8.BF.9B.E7.A8.8B.E5.9C.A8.E5.90.AF.E5.8A.A8.E4.B9.8B.E5.90.8E.E7.AB.8B.E5.8D.B3.E7.BB.88.E6.AD.A2.EF.BC.8C.E6.B2.A1.E6.9C.89.E6.98.BE.E7.A4.BAGUI)
-    *   [5.18 VMware模块在Linux内核4.11+上（在GCC7下）编译失败](#VMware.E6.A8.A1.E5.9D.97.E5.9C.A8Linux.E5.86.85.E6.A0.B84.11.2B.E4.B8.8A.EF.BC.88.E5.9C.A8GCC7.E4.B8.8B.EF.BC.89.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
+    *   [5.1 错误：Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#.E9.94.99.E8.AF.AF.EF.BC.9AKernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
+    *   [5.2 无法识别 USB 设备](#.E6.97.A0.E6.B3.95.E8.AF.86.E5.88.AB_USB_.E8.AE.BE.E5.A4.87)
+    *   [5.3 当远程访问VMware时，遇到不正确的用户名/密码错误](#.E5.BD.93.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AEVMware.E6.97.B6.EF.BC.8C.E9.81.87.E5.88.B0.E4.B8.8D.E6.AD.A3.E7.A1.AE.E7.9A.84.E7.94.A8.E6.88.B7.E5.90.8D.2F.E5.AF.86.E7.A0.81.E9.94.99.E8.AF.AF)
+    *   [5.4 ALSA输出的问题](#ALSA.E8.BE.93.E5.87.BA.E7.9A.84.E9.97.AE.E9.A2.98)
+    *   [5.5 错误：Kernel-based Virtual Machine (KVM) is running](#.E9.94.99.E8.AF.AF.EF.BC.9AKernel-based_Virtual_Machine_.28KVM.29_is_running)
+    *   [5.6 组件问题](#.E7.BB.84.E4.BB.B6.E9.97.AE.E9.A2.98)
+        *   [5.6.1 错误：/dev/vmmon not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmmon_not_found)
+        *   [5.6.2 错误：/dev/vmci not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmci_not_found)
+        *   [5.6.3 在Linux 4.9后内核模块无法编译](#.E5.9C.A8Linux_4.9.E5.90.8E.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97.E6.97.A0.E6.B3.95.E7.BC.96.E8.AF.91)
+        *   [5.6.4 VMware模块在Linux内核4.11+上（在GCC7下）编译失败](#VMware.E6.A8.A1.E5.9D.97.E5.9C.A8Linux.E5.86.85.E6.A0.B84.11.2B.E4.B8.8A.EF.BC.88.E5.9C.A8GCC7.E4.B8.8B.EF.BC.89.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
+    *   [5.7 安装程序启动失败](#.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
+        *   [5.7.1 用户界面初始化失败](#.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2.E5.88.9D.E5.A7.8B.E5.8C.96.E5.A4.B1.E8.B4.A5)
+    *   [5.8 VMware启动失败](#VMware.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
+        *   [5.8.1 旧的Intel微指令在启动时产生段错误](#.E6.97.A7.E7.9A.84Intel.E5.BE.AE.E6.8C.87.E4.BB.A4.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BA.A7.E7.94.9F.E6.AE.B5.E9.94.99.E8.AF.AF)
+        *   [5.8.2 版本号为12.5.4的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.4.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
+        *   [5.8.3 版本号为12.5.3-12.5.5的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.3-12.5.5.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
+        *   [5.8.4 vmware 12的进程在启动之后立即终止，没有显示GUI](#vmware_12.E7.9A.84.E8.BF.9B.E7.A8.8B.E5.9C.A8.E5.90.AF.E5.8A.A8.E4.B9.8B.E5.90.8E.E7.AB.8B.E5.8D.B3.E7.BB.88.E6.AD.A2.EF.BC.8C.E6.B2.A1.E6.9C.89.E6.98.BE.E7.A4.BAGUI)
+    *   [5.9 客户机问题](#.E5.AE.A2.E6.88.B7.E6.9C.BA.E9.97.AE.E9.A2.98)
+        *   [5.9.1 无法为客户机下载VMware Tools](#.E6.97.A0.E6.B3.95.E4.B8.BA.E5.AE.A2.E6.88.B7.E6.9C.BA.E4.B8.8B.E8.BD.BDVMware_Tools)
+        *   [5.9.2 错误：Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#.E9.94.99.E8.AF.AF.EF.BC.9AGuests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
+        *   [5.9.3 Guests系统启动后网络不可用](#Guests.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8.E5.90.8E.E7.BD.91.E7.BB.9C.E4.B8.8D.E5.8F.AF.E7.94.A8)
 *   [6 卸载](#.E5.8D.B8.E8.BD.BD)
 
 ## 安装
@@ -243,35 +246,6 @@ Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowB
 
 ## 疑难解答
 
-### 错误：/dev/vmmon not found
-
-完整的错误是:
-
-```
-Could not open /dev/vmmon: No such file or directory.
-Please make sure that the kernel module `vmmon' is loaded.
-
-```
-
-这意味着未加载`vmmon`模块.参见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)章节
-
-### 错误：/dev/vmci not found
-
-完整的错误是:
-
-```
-Failed to open device "/dev/vmci": No such file or directory
-Please make sure that the kernel module 'vmci' is loaded.
-
-```
-
-尝试重新编译VMware内核模块：
-
-```
-# vmware-modconfig --console --install-all
-
-```
-
 ### 错误：Kernel headers for version 4.x-xxxx were not found. If you installed them[...]
 
 安装 [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)。
@@ -297,58 +271,6 @@ Please make sure that the kernel module 'vmci' is loaded.
 # vmware-usbarbitrator --kill
 
 ```
-
-### 安装程序启动失败
-
-如果你回到了执行`.bundle`时的终端提示，则这个版本的VMware Installer也许坏掉了或者不完整，你应该删掉它（你也许也应该参照[#卸载](#.E5.8D.B8.E8.BD.BD)一节中的内容）:
-
-```
-# rm -r /etc/vmware-installer
-
-```
-
-### 用户界面初始化失败
-
-你也许会看到这样的错误：
-
-```
-Extracting VMware Installer...done.
-No protocol specified
-No protocol specified
-User interface initialization failed.  Exiting.  Check the log for details.
-
-```
-
-这可以通过安装[ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)或者临时允许X拥有root权限来解决：
-
-```
-$ xhost +
-$ sudo ./<vmware filename>.bundle
-$ xhost -
-
-```
-
-### 无法为客户机下载VMware Tools
-
-访问[VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/)来手动下载这些工具。
-
-导航至："*application name* / *version* / *build ID* / linux / packages/"来下载合适的工具。
-
-解压：
-
-```
-$ tar -xvf vmware-tools-*name*-*version*-*buildID*.x86_64.component.tar
-
-```
-
-并通过VMware安装程序安装：
-
-```
-# vmware-installer --install-component=*/path/*vmware-tools-*name*-*version*-*buildID*.x86_64.component
-
-```
-
-如果上述步骤不管用，尝试安装[ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
 
 ### 当远程访问VMware时，遇到不正确的用户名/密码错误
 
@@ -401,39 +323,40 @@ blacklist kvm-intel # For Intel CPUs
 
 ```
 
-### 旧的Intel微指令在启动时产生段错误
+### 组件问题
 
-旧的Intel微指令可能会在启动时产生这样的段错误：
+#### 错误：/dev/vmmon not found
+
+完整的错误是:
 
 ```
-/usr/bin/vmware: line 31: 4941 Segmentation fault "$BINDIR"/vmware-modconfig --appname="VMware Workstation" --icon="vmware-workstation"
+Could not open /dev/vmmon: No such file or directory.
+Please make sure that the kernel module `vmmon' is loaded.
 
 ```
 
-参阅[Microcode](/index.php/Microcode "Microcode")了解如何更新微指令
+这意味着未加载`vmmon`模块.参见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)章节
 
-### 错误：Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"
+#### 错误：/dev/vmci not found
 
-这是由于在VMware Linux中[不完整的](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591)对电源管理功能的支持导致的CPU频率的变化（[Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep")和[AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")）。2012年，随着[linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be)的发布，最大CPU频率[Performance](/index.php/CPU_frequency_governors "CPU frequency governors")的管理者被动态的*Ondemand*替代。当宿主的CPU频率变化时，客户机的时钟会运行过快或过慢，同时也可能会导致客户机无法启动。
+完整的错误是:
 
-为规避该问题，宿主CPU的最高频率可以被指定，并禁用[时间戳计数器](https://en.wikipedia.org/wiki/Time_Stamp_Counter "wikipedia:Time Stamp Counter")(TSC)。在整体设置中:
-
- `/etc/vmware/config` 
 ```
-host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
-host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
-ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
+Failed to open device "/dev/vmci": No such file or directory
+Please make sure that the kernel module 'vmci' is loaded.
+
 ```
 
-**提示：** 若要每隔一分钟修正一次时间，在VMware Tools下的*Options*选项卡中，启用: *"Time synchronization between the virtual machine and the host operating system"*.
+尝试重新编译VMware内核模块：
 
-### Guests系统启动后网络不可用
+```
+# vmware-modconfig --console --install-all
 
-这可能是 `vmnet` 模块没有加载 [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/)。又见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)自动加载。
+```
 
-### 在Linux 4.9后内核模块无法编译
+#### 在Linux 4.9后内核模块无法编译
 
-对于VMware Workstation Pro 12.5.2，模块的源码必须作出修改，以便于在Linux 4.9上编译 [[2]](http://rglinuxtech.com/?p=1847)。
+对于VMware Workstation Pro 12.5.2，模块的源码必须作出修改，以便于在Linux 4.9上编译 [[1]](http://rglinuxtech.com/?p=1847)。
 
 ```
 # cd /usr/lib/vmware/modules/source
@@ -454,54 +377,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 ```
 
-### 版本号为12.5.4的vmplayer/vmware无法启动
-
-如[[3]](https://bbs.archlinux.org/viewtopic.php?id=224667)中所述，临时的解决方案是将包`libpng`降级至1.6.28-1版本，并将其加入`IgnorePkg`参数以忽略升级（参见[/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman")）。
-
-更方便的解决方案是令VMware使用系统的zlib而不是它自己的：
-
-```
-# cd /usr/lib/vmware/lib/libz.so.1
-# mv libz.so.1 libz.so.1.old
-# ln -s /usr/lib/libz.so.1 .
-
-```
-
-### 版本号为12.5.3的vmplayer/vmware无法启动
-
-这貌似是文件`/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`中的问题，`CXXABI_1.3.8`缺失。
-
-如果系统安装了[gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs)或者[gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib)，那个库就已经被安装了。因此，直接移除那个出错的文件将使vmplayer使用gcc-libs提供的版本。使用root执行：
-
-```
-# mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
-
-```
-
-同时有另一个解决方案：
-
-```
-# export VMWARE_USE_SHIPPED_LIBS='yes'
-
-```
-
-### vmware 12的进程在启动之后立即终止，没有显示GUI
-
-这是[Mageia](https://bugs.mageia.org/show_bug.cgi?id=9739)中已知的Bug，但是对于Arch，终端里似乎并没有任何错误信息输出。检阅位于`/tmp/vmware-<id>`里的日志文件，会发现启动vmware或vmplaer后，产生了`VMWARE_SHIPPED_LIBS_LIST is not set`, `VMWARE_SYSTEM_LIBS_LIST is not set`, `VMWARE_USE_SHIPPED_LIBS is not set`, `VMWARE_USE_SYSTEM_LIBS is not set`问题。进程在`Unable to execute /usr/lib/vmware/bin/vmware-modconfig.`后结束。解决方案是，以root身份执行：
-
-```
-# mv /etc/vmware/icu/icudt44l.dat /etc/vmware/icu/icudt44l.dat.bak
-
-```
-
-同时有另一个解决方案：
-
-```
-# export VMWARE_USE_SHIPPED_LIBS='yes'
-
-```
-
-### VMware模块在Linux内核4.11+上（在GCC7下）编译失败
+#### VMware模块在Linux内核4.11+上（在GCC7下）编译失败
 
 运行vmware-modconfig时返回：
 
@@ -528,6 +404,141 @@ modconfig| I125: The GCC compiler "/sbin/gcc" cannot be used for the target kern
 # umount /proc/version && rm /tmp/version
 
 ```
+
+### 安装程序启动失败
+
+如果你回到了执行`.bundle`时的终端提示，则这个版本的VMware Installer也许坏掉了或者不完整，你应该删掉它（你也许也应该参照[#卸载](#.E5.8D.B8.E8.BD.BD)一节中的内容）:
+
+```
+# rm -r /etc/vmware-installer
+
+```
+
+#### 用户界面初始化失败
+
+你也许会看到这样的错误：
+
+```
+Extracting VMware Installer...done.
+No protocol specified
+No protocol specified
+User interface initialization failed.  Exiting.  Check the log for details.
+
+```
+
+这可以通过安装[ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)或者临时允许X拥有root权限来解决：
+
+```
+$ xhost +
+$ sudo ./<vmware filename>.bundle
+$ xhost -
+
+```
+
+### VMware启动失败
+
+#### 旧的Intel微指令在启动时产生段错误
+
+旧的Intel微指令可能会在启动时产生这样的段错误：
+
+```
+/usr/bin/vmware: line 31: 4941 Segmentation fault "$BINDIR"/vmware-modconfig --appname="VMware Workstation" --icon="vmware-workstation"
+
+```
+
+参阅[Microcode](/index.php/Microcode "Microcode")了解如何更新微指令
+
+#### 版本号为12.5.4的vmplayer/vmware无法启动
+
+如[[2]](https://bbs.archlinux.org/viewtopic.php?id=224667)中所述，临时的解决方案是将包`libpng`降级至1.6.28-1版本，并将其加入`IgnorePkg`参数以忽略升级（参见[/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman")）。
+
+更方便的解决方案是令VMware使用系统的zlib而不是它自己的：
+
+```
+# cd /usr/lib/vmware/lib/libz.so.1
+# mv libz.so.1 libz.so.1.old
+# ln -s /usr/lib/libz.so.1 .
+
+```
+
+#### 版本号为12.5.3-12.5.5的vmplayer/vmware无法启动
+
+**注意:** 无需在12.5.6上执行该解决方案
+
+这貌似是文件`/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`中的问题，`CXXABI_1.3.8`缺失。
+
+如果系统安装了[gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs)或者[gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib)，那个库就已经被安装了。因此，直接移除那个出错的文件将使vmplayer使用gcc-libs提供的版本。使用root执行：
+
+```
+# mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
+
+```
+
+同时有另一个解决方案：
+
+```
+# export VMWARE_USE_SHIPPED_LIBS='yes'
+
+```
+
+#### vmware 12的进程在启动之后立即终止，没有显示GUI
+
+这是[Mageia](https://bugs.mageia.org/show_bug.cgi?id=9739)中已知的Bug，但是对于Arch，终端里似乎并没有任何错误信息输出。检阅位于`/tmp/vmware-<id>`里的日志文件，会发现启动vmware或vmplaer后，产生了`VMWARE_SHIPPED_LIBS_LIST is not set`, `VMWARE_SYSTEM_LIBS_LIST is not set`, `VMWARE_USE_SHIPPED_LIBS is not set`, `VMWARE_USE_SYSTEM_LIBS is not set`问题。进程在`Unable to execute /usr/lib/vmware/bin/vmware-modconfig.`后结束。解决方案是，以root身份执行：
+
+```
+# mv /etc/vmware/icu/icudt44l.dat /etc/vmware/icu/icudt44l.dat.bak
+
+```
+
+同时有另一个解决方案：
+
+```
+# export VMWARE_USE_SHIPPED_LIBS='yes'
+
+```
+
+### 客户机问题
+
+#### 无法为客户机下载VMware Tools
+
+访问[VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/)来手动下载这些工具。
+
+导航至："*application name* / *version* / *build ID* / linux / packages/"来下载合适的工具。
+
+解压：
+
+```
+$ tar -xvf vmware-tools-*name*-*version*-*buildID*.x86_64.component.tar
+
+```
+
+并通过VMware安装程序安装：
+
+```
+# vmware-installer --install-component=*/path/*vmware-tools-*name*-*version*-*buildID*.x86_64.component
+
+```
+
+如果上述步骤不管用，尝试安装[ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
+
+#### 错误：Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"
+
+这是由于在VMware Linux中[不完整的](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591)对电源管理功能的支持导致的CPU频率的变化（[Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep")和[AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")）。2012年，随着[linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be)的发布，最大CPU频率[Performance](/index.php/CPU_frequency_governors "CPU frequency governors")的管理者被动态的*Ondemand*替代。当宿主的CPU频率变化时，客户机的时钟会运行过快或过慢，同时也可能会导致客户机无法启动。
+
+为规避该问题，宿主CPU的最高频率可以被指定，并禁用[时间戳计数器](https://en.wikipedia.org/wiki/Time_Stamp_Counter "wikipedia:Time Stamp Counter")(TSC)。在整体设置中:
+
+ `/etc/vmware/config` 
+```
+host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
+host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
+ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
+```
+
+**提示：** 若要每隔一分钟修正一次时钟，在VMware Tools下的*Options*选项卡中，启用: *"Time synchronization between the virtual machine and the host operating system"*.
+
+#### Guests系统启动后网络不可用
+
+这可能是 `vmnet` 模块没有加载 [[3]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/)。又见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)自动加载。
 
 ## 卸载
 

@@ -1,6 +1,6 @@
-Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
+Back to [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
-**Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [Dm-crypt/Specialties#Remote unlocking of encrypted root](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").
+**Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [dm-crypt/Specialties#Remote unlocking of encrypted root](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").
 
 ## Contents
 
@@ -22,7 +22,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 System stuck on boot/password prompt doesn't show](#System_stuck_on_boot.2Fpassword_prompt_doesn.27t_show)
+    *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot.2Fpassword_prompt_does_not_show)
 
 ## mkinitcpio
 
@@ -100,7 +100,7 @@ resume=*device*
 
 ```
 
-*   `*device*` is the device file of the decrypted (swap) filesystem used for suspend2disk. If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+*   `*device*` is the device file of the decrypted (swap) filesystem used for suspend2disk. If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
 #### cryptkey
 
@@ -139,7 +139,7 @@ Example: `cryptkey=rootfs:/secretkey`
 
 Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.bin` (in the initramfs).[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/encrypt_hook?h=packages/cryptsetup#n8)
 
-See also [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
+See also [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
 
 #### crypto
 
@@ -152,7 +152,7 @@ crypto=<hash>:<cipher>:<keysize>:<offset>:<skip>
 
 ```
 
-The arguments relate directly to the *cryptsetup* options. See [Dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption").
+The arguments relate directly to the *cryptsetup* options. See [dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption").
 
 For a disk encrypted with just *plain* default options, the `crypto` arguments must be specified, but each entry can be left blank:
 
@@ -267,7 +267,7 @@ The first parameter is your preferred device mapper's name for the encrypted dri
 
 A [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") can also be set up and referenced instead of `none`. This results in an automatic unlocking, if the keyfile is accessible during boot. Since LUKS offers the option to have multiple keys, the chosen option can also be changed later.
 
-Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` as follows:
+Use the device mapper's name you have defined in `/etc/crypttab` in `/etc/fstab` as follows:
 
  `/etc/fstab`  `/dev/mapper/externaldrive      /mnt/backup               ext4    defaults,errors=remount-ro  0  2` 
 
@@ -298,6 +298,6 @@ Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_
 
 ## Troubleshooting
 
-### System stuck on boot/password prompt doesn't show
+### System stuck on boot/password prompt does not show
 
 If you are using [Plymouth](/index.php/Plymouth "Plymouth"), make sure to use the correct modules (see: [Plymouth#The plymouth hook](/index.php/Plymouth#The_plymouth_hook "Plymouth")) or disable it. Otherwise Plymouth will swallow the password prompt, making a system boot impossible.

@@ -74,9 +74,9 @@ Esta sección se ocupa de las tareas administrativas y de gestión del sistema. 
 
 ### Usuarios y grupos
 
-Una instalación nueva deja a los usuarios con tan solo una cuenta de superusuario, más conocido como «root». El inicio de sesión como root durante prolongados periodos de tiempo, incluso exponiéndose, posiblemente, a través de un servidor [SSH](/index.php/SSH "SSH"), es considerado sumamente inseguro. En su lugar de ello, los usuarios deben crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, dejando la cuenta de root para la administración del sistema. Véase [Users and groups#Example adding a user](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") para obtener un ejemplo típico en un sistema de escritorio.
+Una instalación nueva deja a los usuarios sólo con la cuenta de superusuario, conocido como «root». El inicio de sesión como root durante prolongados periodos de tiempo, incluso exponiéndose, posiblemente, a través de un servidor [SSH](/index.php/SSH "SSH"), es considerado sumamente inseguro. En lugar de ello, los usuarios deben crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, dejando la cuenta de root para la administración del sistema. Véase [Users and groups#Example adding a user](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") para más detalles.
 
-Los usuarios y grupos se utilizan en GNU/Linux para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad a un grupo para conceder o denegar a los usuarios el acceso a los servicios y recursos del sistema. Lea el artículo [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
+Los usuarios y grupos se utilizan para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad a un grupo para conceder o denegar a los usuarios el acceso a los servicios y recursos del sistema. Lea el artículo [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
 
 ### Dosificar privilegios
 
@@ -116,7 +116,7 @@ Visite [Mirrors](/index.php/Mirrors "Mirrors") para conocer los pasos a seguir p
 
 ### Arch Build System
 
-El sistema de *Puertos* es un sistema utilizado inicialmente por las distribuciones BSD consistente en scripts de compilaciones que se encuentran en un árbol de directorios presentes en el sistema local. En pocas palabras, cada puerto contiene un script en un directorio con el nombre intuitivamente referido a la aplicación instalable de terceros.
+El sistema de *Puertos* es un sistema utilizado inicialmente por las distribuciones BSD consistente en scripts de compilaciones que se encuentran en un árbol de directorios presentes en el sistema local. En pocas palabras, cada puerto contiene un script dentro de un directorio con un nombre intuitivo que hace referencia a la aplicación instalable de terceros.
 
 El árbol [ABS](/index.php/ABS "ABS") ofrece la misma funcionalidad al proporcionar scripts de compilación llamados [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados posteriormente por [makepkg](/index.php/Makepkg "Makepkg"), el programa que actualmente genera paquetes manejables por pacman.
 

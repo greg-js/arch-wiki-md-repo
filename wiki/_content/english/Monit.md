@@ -91,7 +91,7 @@ check process smbd with pidfile /run/samba/smbd.pid
    if failed host 192.168.1.250 port 139 type TCP  then restart
    depends on smbd_bin
 
-check file smbd_bin with path /usr/sbin/smbd
+check file smbd_bin with path /usr/bin/smbd
    group samba
    if failed permission 755 then unmonitor
    if failed uid root then unmonitor
@@ -108,8 +108,8 @@ Create the file `/etc/monit.d/scripts/hdtemp.sh` as well as the `/etc/monit.d/sc
 
  `/etc/monit.d/scripts/hdtemp.sh` 
 ```
- #!/bin/sh
- HDDTP=`/usr/sbin/smartctl -a /dev/sd${1} | grep Temp | awk -F " " '{printf "%d",$10}'`
+ #!/usr/bin/sh
+ HDDTP=`/usr/bin/smartctl -a /dev/sd${1} | grep Temp | awk -F " " '{printf "%d",$10}'`
  #echo $HDDTP # for debug only
  exit $HDDTP
 ```
@@ -132,8 +132,8 @@ In this example, the `/etc/monit.d/scripts/hdtemp.sh` script assumes your drive 
 
  `/etc/monit.d/scripts/hdhealth.sh` 
 ```
- #!/bin/sh
- STATUS=`/usr/sbin/smartctl -H /dev/sd${1} | grep overall-health | awk 'match($0,"result:"){print substr($0,RSTART+8,6)}'`
+ #!/usr/bin/sh
+ STATUS=`/usr/bin/smartctl -H /dev/sd${1} | grep overall-health | awk 'match($0,"result:"){print substr($0,RSTART+8,6)}'`
  if [ "$STATUS" = "PASSED" ] 
  then
      # 1 implies PASSED

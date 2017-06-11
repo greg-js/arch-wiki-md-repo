@@ -218,8 +218,11 @@ These files are aimed at setting network configuration variables, especially for
 #### [Route]
 
 *   `Gateway=` this option is **mandatory** unless DHCP is used
+*   `Destination` the destination prefix of the route, possibly followed by a slash and the prefix length
 
-**Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `[Address]` section contains only an Address key and `[Gateway]` section contains only a Gateway key.
+If `Destination` is not present in `[Route]` section this section is treated as a default route.
+
+**Tip:** You can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `[Address]` section contains only an Address key and `[Gateway]` section contains only a Gateway key.
 
 #### [DHCP]
 

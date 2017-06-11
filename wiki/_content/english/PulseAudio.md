@@ -115,7 +115,7 @@ This file is a startup script and is used to configure modules. It is actually p
 *   Run `$ pacmd list-sinks|egrep -i 'index:|name:'` to list available sinks. The present default sink is marked with an asterisk.
 *   Edit `~/.config/pulse/default.pa` to insert/alter the set-default-sink command using the sink's name as the numbering cannot be guaranteed repeatable.
 
-#### `client.conf`
+#### client.conf
 
 This is the configuration file read by every PulseAudio client application. It is used to configure runtime options for individual clients. It can be used to set and configure the default sink and source statically as well as allowing (or disallowing) clients to automatically start the server if not currently running.
 

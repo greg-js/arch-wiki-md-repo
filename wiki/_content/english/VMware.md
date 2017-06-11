@@ -22,24 +22,27 @@ This article is about installing VMware in Arch Linux; you may also be intereste
         *   [4.3.1 Using the modified BIOS](#Using_the_modified_BIOS)
     *   [4.4 Enable 3D graphics on Intel and Optimus](#Enable_3D_graphics_on_Intel_and_Optimus)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
-    *   [5.2 /dev/vmci not found](#.2Fdev.2Fvmci_not_found)
-    *   [5.3 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [5.4 USB devices not recognized](#USB_devices_not_recognized)
-    *   [5.5 The installer fails to start](#The_installer_fails_to_start)
-        *   [5.5.1 User interface initialization failed](#User_interface_initialization_failed)
-    *   [5.6 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
-    *   [5.7 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
-    *   [5.8 Issues with ALSA output](#Issues_with_ALSA_output)
-    *   [5.9 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
-    *   [5.10 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
-    *   [5.11 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
-    *   [5.12 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
-    *   [5.13 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
-    *   [5.14 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
-    *   [5.15 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
-    *   [5.16 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
-    *   [5.17 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
+    *   [5.1 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
+    *   [5.2 USB devices not recognized](#USB_devices_not_recognized)
+    *   [5.3 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
+    *   [5.4 Issues with ALSA output](#Issues_with_ALSA_output)
+    *   [5.5 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
+    *   [5.6 Module Issues](#Module_Issues)
+        *   [5.6.1 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
+        *   [5.6.2 /dev/vmci not found](#.2Fdev.2Fvmci_not_found)
+        *   [5.6.3 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
+        *   [5.6.4 vmware modules fail to build on kernel 4.11+ and GCC 7](#vmware_modules_fail_to_build_on_kernel_4.11.2B_and_GCC_7)
+    *   [5.7 Installer Fails to Start](#Installer_Fails_to_Start)
+        *   [5.7.1 User interface initialization failed](#User_interface_initialization_failed)
+    *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
+        *   [5.8.1 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
+        *   [5.8.2 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
+        *   [5.8.3 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
+        *   [5.8.4 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
+    *   [5.9 Guest Issues](#Guest_Issues)
+        *   [5.9.1 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
+        *   [5.9.2 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
+        *   [5.9.3 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -241,35 +244,6 @@ This means the following:
 
 ## Troubleshooting
 
-### /dev/vmmon not found
-
-The full error is:
-
-```
-Could not open /dev/vmmon: No such file or directory.
-Please make sure that the kernel module 'vmmon' is loaded.
-
-```
-
-This means that at least the `vmmon` module is not loaded. See the [#systemd services](#systemd_services) section for automatic loading.
-
-### /dev/vmci not found
-
-The full error is:
-
-```
-Failed to open device "/dev/vmci": No such file or directory
-Please make sure that the kernel module 'vmci' is loaded.
-
-```
-
-Try to recompile VMware kernel modules with:
-
-```
-# vmware-modconfig --console --install-all
-
-```
-
 ### Kernel headers for version 4.x-xxxx were not found. If you installed them[...]
 
 Install the headers ([linux-headers](https://www.archlinux.org/packages/?name=linux-headers)).
@@ -295,58 +269,6 @@ To stop:
 # vmware-usbarbitrator --kill
 
 ```
-
-### The installer fails to start
-
-If you just get back to the prompt when opening the `.bundle`, then you probably have a deprecated or broken version of the VMware installer and it should removed (you may also refer to the [uninstallation](#Uninstallation) section of this article):
-
-```
-# rm -r /etc/vmware-installer/
-
-```
-
-#### User interface initialization failed
-
-You may also see an error like this:
-
-```
- Extracting VMware Installer...done.
- No protocol specified
- No protocol specified
- User interface initialization failed.  Exiting.  Check the log for details.
-
-```
-
-This can be fixed by either installing the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) dependency or temporarily allowing root access to X:
-
-```
- $ xhost +
- $ sudo ./<vmware filename>.bundle
- $ xhost -
-
-```
-
-### Unable to download VMware Tools for Guests
-
-To download the tools manually, visit the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
-
-Navigate to: "*application name* / *version* / *build ID* / linux / packages/" and download the appropriate Tools.
-
-Extract with:
-
-```
-$ tar -xvf vmware-tools-*name*-*version*-*buildID*.x86_64.component.tar
-
-```
-
-And install using the VMware installer:
-
-```
-# vmware-installer --install-component=*/path/*vmware-tools-*name*-*version*-*buildID*.x86_64.component
-
-```
-
-If the above does not work, try installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
 
 ### Incorrect login/password when trying to access VMware remotely
 
@@ -399,39 +321,40 @@ blacklist kvm-intel # For Intel CPUs
 
 ```
 
-### Segmentation fault at startup due to old Intel microcode
+### Module Issues
 
-Old Intel microcode may result in the following kind of segmentation fault at startup:
+#### /dev/vmmon not found
+
+The full error is:
 
 ```
-/usr/bin/vmware: line 31: 4941 Segmentation fault "$BINDIR"/vmware-modconfig --appname="VMware Workstation" --icon="vmware-workstation"
+Could not open /dev/vmmon: No such file or directory.
+Please make sure that the kernel module 'vmmon' is loaded.
 
 ```
 
-See [Microcode](/index.php/Microcode "Microcode") for how to update the microcode.
+This means that at least the `vmmon` module is not loaded. See the [#systemd services](#systemd_services) section for automatic loading.
 
-### Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"
+#### /dev/vmci not found
 
-This is due to [incomplete](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591) support of power management features ([Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep") and [AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")) in VMware Linux that vary the CPU frequency. In March 2012, with the release of [linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be) the maximum frequency [Performance](/index.php/CPU_frequency_governors "CPU frequency governors") governor was replaced with the dynamic *Ondemand*. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
+The full error is:
 
-To prevent this, the maximum host CPU frequency can be specified, and [Time Stamp Counter](https://en.wikipedia.org/wiki/Time_Stamp_Counter "wikipedia:Time Stamp Counter") (TSC) disabled, in the global configuration:
-
- `/etc/vmware/config` 
 ```
-host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
-host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
-ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
+Failed to open device "/dev/vmci": No such file or directory
+Please make sure that the kernel module 'vmci' is loaded.
+
 ```
 
-**Tip:** To periodically correct the time (once per minute), in the *Options* tab of VMware Tools, enable: *"Time synchronization between the virtual machine and the host operating system"*.
+Try to recompile VMware kernel modules with:
 
-### Networking on Guests not available after system restart
+```
+# vmware-modconfig --console --install-all
 
-This is likely due to the `vmnet` module not being loaded [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
+```
 
-### Kernel modules fail to build after Linux 4.9
+#### Kernel modules fail to build after Linux 4.9
 
-On VMware Workstation Pro 12.5.2, the module source needs to be modified to be successfully compiled under kernel 4.9 [[2]](http://rglinuxtech.com/?p=1847).
+On VMware Workstation Pro 12.5.2, the module source needs to be modified to be successfully compiled under kernel 4.9 [[1]](http://rglinuxtech.com/?p=1847).
 
 ```
 # cd /usr/lib/vmware/modules/source
@@ -452,56 +375,7 @@ On VMware Workstation Pro 12.5.2, the module source needs to be modified to be s
 
 ```
 
-### vmplayer/vmware fails to start from version 12.5.4
-
-As per [[3]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
-
-An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
-
-```
-# cd /usr/lib/vmware/lib/libz.so.1
-# mv libz.so.1 libz.so.1.old
-# ln -s /usr/lib/libz.so.1 .
-
-```
-
-### vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5
-
-**Note:** Use this is not required on version 12.5.6
-
-It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
-
-If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:
-
-```
-# mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
-
-```
-
-Also there is a workaround:
-
-```
-# export VMWARE_USE_SHIPPED_LIBS='yes'
-
-```
-
-### vmware 12 process terminates immediately after start, no GUI is launched
-
-Registered bug at [Mageia](https://bugs.mageia.org/show_bug.cgi?id=9739), but it seems that there are no error messages shown in terminal with arch. When inspecting the logs, which are in `/tmp/vmware-<id>`, there are `VMWARE_SHIPPED_LIBS_LIST is not set`, `VMWARE_SYSTEM_LIBS_LIST is not set`, `VMWARE_USE_SHIPPED_LIBS is not set`, `VMWARE_USE_SYSTEM_LIBS is not set` issues. Process simply terminates with `Unable to execute /usr/lib/vmware/bin/vmware-modconfig.` after vmware or vmplayer is executed. Solution is the same, as root do:
-
-```
-# mv /etc/vmware/icu/icudt44l.dat /etc/vmware/icu/icudt44l.dat.bak
-
-```
-
-Also there is a workaround:
-
-```
-# export VMWARE_USE_SHIPPED_LIBS='yes'
-
-```
-
-### vmware modules fail to build on kernel 4.11+ and GCC 7
+#### vmware modules fail to build on kernel 4.11+ and GCC 7
 
 Running vmware-modconfig yields:
 
@@ -528,6 +402,141 @@ To skip the check, use this workaround:
 # umount /proc/version && rm /tmp/version
 
 ```
+
+### Installer Fails to Start
+
+If you just get back to the prompt when opening the `.bundle`, then you probably have a deprecated or broken version of the VMware installer and it should removed (you may also refer to the [uninstallation](#Uninstallation) section of this article):
+
+```
+# rm -r /etc/vmware-installer/
+
+```
+
+#### User interface initialization failed
+
+You may also see an error like this:
+
+```
+ Extracting VMware Installer...done.
+ No protocol specified
+ No protocol specified
+ User interface initialization failed.  Exiting.  Check the log for details.
+
+```
+
+This can be fixed by either installing the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) dependency or temporarily allowing root access to X:
+
+```
+ $ xhost +
+ $ sudo ./<vmware filename>.bundle
+ $ xhost -
+
+```
+
+### VMware Fails to Start
+
+#### Segmentation fault at startup due to old Intel microcode
+
+Old Intel microcode may result in the following kind of segmentation fault at startup:
+
+```
+/usr/bin/vmware: line 31: 4941 Segmentation fault "$BINDIR"/vmware-modconfig --appname="VMware Workstation" --icon="vmware-workstation"
+
+```
+
+See [Microcode](/index.php/Microcode "Microcode") for how to update the microcode.
+
+#### vmplayer/vmware fails to start from version 12.5.4
+
+As per [[2]](https://bbs.archlinux.org/viewtopic.php?id=224667) the temporary workaround is to downgrade the package `libpng` to version 1.6.28-1 and keep it in the `IgnorePkg` parameter in [/etc/pacman.conf](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman").
+
+An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
+
+```
+# cd /usr/lib/vmware/lib/libz.so.1
+# mv libz.so.1 libz.so.1.old
+# ln -s /usr/lib/libz.so.1 .
+
+```
+
+#### vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5
+
+**Note:** Use this is not required on version 12.5.6
+
+It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
+
+If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:
+
+```
+# mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
+
+```
+
+Also there is a workaround:
+
+```
+# export VMWARE_USE_SHIPPED_LIBS='yes'
+
+```
+
+#### vmware 12 process terminates immediately after start, no GUI is launched
+
+Registered bug at [Mageia](https://bugs.mageia.org/show_bug.cgi?id=9739), but it seems that there are no error messages shown in terminal with arch. When inspecting the logs, which are in `/tmp/vmware-<id>`, there are `VMWARE_SHIPPED_LIBS_LIST is not set`, `VMWARE_SYSTEM_LIBS_LIST is not set`, `VMWARE_USE_SHIPPED_LIBS is not set`, `VMWARE_USE_SYSTEM_LIBS is not set` issues. Process simply terminates with `Unable to execute /usr/lib/vmware/bin/vmware-modconfig.` after vmware or vmplayer is executed. Solution is the same, as root do:
+
+```
+# mv /etc/vmware/icu/icudt44l.dat /etc/vmware/icu/icudt44l.dat.bak
+
+```
+
+Also there is a workaround:
+
+```
+# export VMWARE_USE_SHIPPED_LIBS='yes'
+
+```
+
+### Guest Issues
+
+#### Unable to download VMware Tools for Guests
+
+To download the tools manually, visit the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
+
+Navigate to: "*application name* / *version* / *build ID* / linux / packages/" and download the appropriate Tools.
+
+Extract with:
+
+```
+$ tar -xvf vmware-tools-*name*-*version*-*buildID*.x86_64.component.tar
+
+```
+
+And install using the VMware installer:
+
+```
+# vmware-installer --install-component=*/path/*vmware-tools-*name*-*version*-*buildID*.x86_64.component
+
+```
+
+If the above does not work, try installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
+
+#### Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"
+
+This is due to [incomplete](http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&externalId=1591) support of power management features ([Intel SpeedStep](https://en.wikipedia.org/wiki/Intel_speedstep "wikipedia:Intel speedstep") and [AMD PowerNow!](https://en.wikipedia.org/wiki/AMD_powernow "wikipedia:AMD powernow")/[Cool'n'Quiet](https://en.wikipedia.org/wiki/Cool%27n%27Quiet "wikipedia:Cool'n'Quiet")) in VMware Linux that vary the CPU frequency. In March 2012, with the release of [linux 3.3-1](https://projects.archlinux.org/svntogit/packages.git/commit/trunk/config.x86_64?h=packages/linux&id=9abe018d91a5d8c3af7523d30b8aa73f86b680be) the maximum frequency [Performance](/index.php/CPU_frequency_governors "CPU frequency governors") governor was replaced with the dynamic *Ondemand*. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
+
+To prevent this, the maximum host CPU frequency can be specified, and [Time Stamp Counter](https://en.wikipedia.org/wiki/Time_Stamp_Counter "wikipedia:Time Stamp Counter") (TSC) disabled, in the global configuration:
+
+ `/etc/vmware/config` 
+```
+host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
+host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
+ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
+```
+
+**Tip:** To periodically correct the time (once per minute), in the *Options* tab of VMware Tools, enable: *"Time synchronization between the virtual machine and the host operating system"*.
+
+#### Networking on Guests not available after system restart
+
+This is likely due to the `vmnet` module not being loaded [[3]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
 ## Uninstallation
 

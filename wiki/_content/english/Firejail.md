@@ -19,7 +19,7 @@
 
 ## Installation
 
-**Note:** The User-namespace (`CONFIG_USER_NS=Y`) isn't set in the [kernel](/index.php/Kernel "Kernel") configuration, but may be required for Firejail to function properly. See [bug #36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default.
+**Note:** The User-namespace (`CONFIG_USER_NS=Y`) is not set in the [kernel](/index.php/Kernel "Kernel") configuration, but may be required for Firejail to function properly. See [FS#36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default. User-namespaces are [enabled](/index.php/Security#Sandboxing_applications "Security") by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package.
 
 [Install](/index.php/Install "Install") the [firejail](https://www.archlinux.org/packages/?name=firejail) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
 
@@ -65,11 +65,11 @@ $ firejail --profile=/absolute/path/to/profile <program name>
 
 ```
 
-#### Creating a custom profile
+### Creating a custom profile
 
 See man(5) firejail-profile
 
-#### Private mode
+### Private mode
 
 Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute okular in private mode, do the following:
 
@@ -105,7 +105,7 @@ $ firejail --list
 
 #### Desktop files
 
-Some GUI application launchers (`.desktop` files) are coded using absolute paths to an executable, which circumvents firejail's symlink method of ensuring that it's being used. The *firecfg* tool includes an option to over-ride this on a per-user basis, by copying the `.desktop` files from `/usr/share/applications/*.desktop` to `~/.local/share/applications/` and replacing the absolute paths with simple file names.
+Some GUI application launchers (`.desktop` files) are coded using absolute paths to an executable, which circumvents firejail's symlink method of ensuring that it is being used. The *firecfg* tool includes an option to over-ride this on a per-user basis, by copying the `.desktop` files from `/usr/share/applications/*.desktop` to `~/.local/share/applications/` and replacing the absolute paths with simple file names.
 
 ```
 $ firecfg --fix

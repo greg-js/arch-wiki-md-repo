@@ -315,12 +315,7 @@ GNOME will use the Adwaita light theme by default however a dark variant of this
 
 ##### Window manager themes
 
-The window manager theme (the style of the window titlebars) can be set using the GNOME Tweak Tool or the following GSettings command:
-
-```
-$ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
-
-```
+The window manager theme (the style of the window titlebars) follows the GTK+ theme, and can *no longer* be set via `org.gnome.desktop.wm.preferences theme`, as the setting is deprecated and ignored.
 
 ###### Titlebar height
 

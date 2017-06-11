@@ -6,7 +6,7 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
 *   [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) and [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) which provide *xset* and *xinput* respectively
 *   and configuration interfaces common in [desktop environments](/index.php/Desktop_environments "Desktop environments").
 
-*   If you are using [Wayland](/index.php/Wayland "Wayland"), the events are controlled via [libinput](/index.php/Libinput "Libinput"). It is the compositor's job to expose the settings brought by libinput. There is currently not standard way to change settings across compositors.[[1]](https://www.reddit.com/r/gnome/comments/3upay2/wayland_where_are_the_mouse_acceleration_options/)
+*   If you are using [Wayland](/index.php/Wayland "Wayland"), the events are controlled via [libinput](/index.php/Libinput "Libinput"). It is the compositor's job to expose the settings brought by libinput. There is currently no standard way to change settings across compositors.[[1]](https://www.reddit.com/r/gnome/comments/3upay2/wayland_where_are_the_mouse_acceleration_options/)
 
 ## Contents
 

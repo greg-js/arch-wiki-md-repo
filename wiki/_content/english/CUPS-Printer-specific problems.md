@@ -311,7 +311,6 @@ See also [CUPS/Troubleshooting#HP issues](/index.php/CUPS/Troubleshooting#HP_iss
 Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/).
 
 | Printer | Driver/filter | Notes |
-| Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
 | DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
 | DeskJet 712C |
 | DeskJet 720C |
@@ -320,7 +319,8 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 820Cxi |
 | DeskJet 1000Cse |
 | DeskJet 1000Cxi |
-| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/). |
+| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), or [AirPrint](/index.php/CUPS#CUPS "CUPS"). |
+| Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
 | Printer | Driver/filter | Notes |
 
 ###### HPLIP Driver

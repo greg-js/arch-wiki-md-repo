@@ -58,8 +58,6 @@ synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 Intel Dual Band wifi. Should work with recent kernels. 3.10+ with iwlwifi. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.
 
-There is a kernel panic with 5GHz frequencies: [https://bugs.archlinux.org/task/53317](https://bugs.archlinux.org/task/53317) [https://bugzilla.kernel.org/show_bug.cgi?id=195299](https://bugzilla.kernel.org/show_bug.cgi?id=195299)
-
 ### Graphics
 
 As of [linux](https://www.archlinux.org/packages/?name=linux) 3.16, virtual terminals show a blank screen.

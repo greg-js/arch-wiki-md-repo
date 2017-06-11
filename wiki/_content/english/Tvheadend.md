@@ -19,7 +19,7 @@ Since v4.2.1, [tvheadend](https://aur.archlinux.org/packages/tvheadend/) has bee
 
 HDHomeRun support should be working by default in the [TVheadend](https://aur.archlinux.org/packages/TVheadend/) package.
 
-By default [Tvheadend-git](https://aur.archlinux.org/packages/Tvheadend-git/) does not have HDHomeRun support enabled. To enable it you will need to edit the PKGBUILD to add `libhdhomerun` to the depends list. In the build() list remove `--disable-hdhomerun_static` and add `--enable-hdhomerun_client`. This trick can also be used for [tvheadend](https://aur.archlinux.org/packages/tvheadend/) to link it dynamically to the most recent [libhdhomerun](https://aur.archlinux.org/packages/libhdhomerun/) instead of statically to an embedded one.
+By default the [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/) and [tvheadend](https://aur.archlinux.org/packages/tvheadend/) do not have HDHomeRun support enabled. To enable you will need to edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and add `libhdhomerun` to the [depends](/index.php/PKGBUILD#depends "PKGBUILD") list. Finally remove `--disable-hdhomerun_static` and add `--enable-hdhomerun_client` in *build*.
 
 ## Usage
 
@@ -37,4 +37,5 @@ If you want to obtain schedule data from an outside source like Schedules Direct
 
 ## Playback Clients
 
-There are a few options for Tvheadend clients. VLC can be used as a client with the [vlc-htsp-plugin-git](https://aur.archlinux.org/packages/vlc-htsp-plugin-git/) package. Kodi support can be added via the installation of [kodi-addon-hts-pvrmanager](https://aur.archlinux.org/packages/kodi-addon-hts-pvrmanager/) and either [kodi-addon-pvr-hts](https://aur.archlinux.org/packages/kodi-addon-pvr-hts/) or [kodi-addon-pvr-hts-git](https://aur.archlinux.org/packages/kodi-addon-pvr-hts-git/) (chose either the release or stable version based on which version of Kodi you have installed).
+*   [VLC](/index.php/VLC "VLC") — [vlc-htsp-plugin-git](https://aur.archlinux.org/packages/vlc-htsp-plugin-git/)
+*   [Kodi](/index.php/Kodi "Kodi") — [kodi-addon-hts-pvrmanager](https://aur.archlinux.org/packages/kodi-addon-hts-pvrmanager/), [kodi-addon-pvr-hts](https://aur.archlinux.org/packages/kodi-addon-pvr-hts/) or [kodi-addon-pvr-hts-git](https://aur.archlinux.org/packages/kodi-addon-pvr-hts-git/)

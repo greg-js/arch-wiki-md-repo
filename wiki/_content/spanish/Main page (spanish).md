@@ -22,7 +22,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	[Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 
-	Un índice con anotaciones a otros articulos conocidos y a información de referencia común.
+	Un índice con anotaciones a otros artículos conocidos e información de referencia común.
 
 	[Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
@@ -62,4 +62,4 @@ Si quiere colaborar con la wiki, de forma más específica, a través del equipo
 
 Las páginas de ArchWiki tienen sus propias convenciones específicas, por lo que si tiene problemas al leer ArchWiki o para entender algunas de sus instrucciones, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") para aclararse.
 
-Si busca información específica, pruebe a utilizar el recuadro de búsqueda del márgen superior izquierdo de esta página. También puede utilizar su motor de búsqueda favorito de la web, que probablemente le proporcione una sintaxis especial o una interfaz para limitar los resultados de búsqueda a un sitio web en particular (normalmente será suficiente añadir `site:wiki.archlinux.org` a los términos de búsqueda). Véase [Help:Searching](/index.php/Help:Searching "Help:Searching") para conocer otros trucos.
+Si busca información específica, pruebe a utilizar el recuadro de búsqueda del margen superior izquierdo de esta página. También puede utilizar su motor de búsqueda favorito de la web, que probablemente le proporcione una sintaxis especial o una interfaz para limitar los resultados de búsqueda a un sitio web en particular (normalmente será suficiente añadir `site:wiki.archlinux.org` a los términos de búsqueda). Véase [Help:Searching](/index.php/Help:Searching "Help:Searching") para conocer otros trucos.

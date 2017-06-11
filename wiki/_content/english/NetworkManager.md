@@ -459,7 +459,9 @@ It might not be obvious, but the service automatically starts through *dbus*. To
 
 ### Checking connectivity
 
-NetworkManager can try to reach a page on Internet when connecting to a network. For those behind a captive portal, the desktop manager can automatically open a window asking for credentials. To enable this feature, uncomment the [connectivity section](https://git.archlinux.org/svntogit/packages.git/tree/trunk/NetworkManager.conf?h=packages/networkmanager#n6) in `/etc/NetworkManager/NetworkManager.conf`.
+NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking edit `/etc/NetworkManager/NetworkManager.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://developer.gnome.org/NetworkManager/stable/NetworkManager.conf.html).
+
+For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
 
 ## Testing
 

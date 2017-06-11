@@ -1,6 +1,6 @@
 **Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2016-04-01**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=423847).
 
-Arch Linux es una distribución GNU/Linux independiente, de propósito general, desarrollada para i686/x86-64, que se esfuerza por mantenerse al día y, por lo general, ofrece las últimas versiones estables de la mayoría del software, basada en un modelo rolling-release. La instalación, por defecto, deja un sistema de base mínima, que el usuario configurará posteriormente mediante la adición de solo lo que requiere o desee para sus propósitos particulares.
+Arch Linux es una distribución GNU/Linux independiente, de propósito general, desarrollada para x86-64\. Se esfuerza en ofrecer las últimas versiones estables de la mayoría del software, siguiendo un modelo rolling-release (lanzamiento continuo). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
 ## Contents
 
@@ -27,11 +27,11 @@ De un modo similar, los archivos de configuración de Arch proporcionados por lo
 
 Arch Linux se esfuerza por mantener las últimas versiones estables liberadas de software, siempre y cuando no causen errores del sistema en la medida que pueda evitarse razonablemente. Se basa en un sistema [rolling-release](https://en.wikipedia.org/wiki/rolling-release "wikipedia:rolling-release"), que permite una instalación de una sola vez con actualizaciones continuas.
 
-Arch incorpora muchas de las nuevas tecnologías disponibles para los usuarios de GNU/Linux, incluyendo el sistema de inicio [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), sistemas de archivos modernos (Ext2/3/4, Reiser, XFS, JFS, BTRFS), LVM2, software RAID, soporte para udev e initcpio (con [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")), así como las últimas versiones de kernels disponibles.
+Arch incorpora muchas de las nuevas tecnologías disponibles para los usuarios de GNU/Linux, incluyendo el sistema de inicio [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), [sistemas de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") modernos, LVM2, software RAID, soporte para udev e initcpio (con [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")), así como las últimas versiones de kernels disponibles.
 
 ### Pragmatismo
 
-Arch es una distribución pragmática antes que idealista. Los principios aquí solo sirven como directrices útiles. En última instancia, las decisiones de diseño se realizan sobre una base casuística a través de un desarrollo consensuado. Las técnicas de análisis se basan en la evidencia y los debates, no en la política o las opiniones públicas.
+Arch es una distribución pragmática antes que idealista. Los principios aquí solo sirven como directrices útiles. En última instancia, las decisiones de diseño se realizan caso por caso a través de un desarrollo consensuado. Las técnicas de análisis se basan en la evidencia y los debates, no en la política o las opiniones públicas.
 
 Se ofrece un gran número de paquetes y script de compilación en los diferentes repositorios de Arch Linux tanto de software libre y de código abierto para aquellos que lo prefieran, así como de software propietario para aquellos que abrazan la *funcionalidad sobre la ideología*.
 
@@ -43,9 +43,9 @@ Todos los usuarios están invitados a [participar](/index.php/Getting_involved "
 
 ### Versatilidad
 
-Arch Linux es una distribución de propósito general. Tras la instalación, solo se proporciona un entorno de línea de órdenes: en lugar de ir eliminando paquetes innecesarios y no deseados, se ofrece al usuario la posibilidad de crear un sistema personalizado, eligiendo entre miles de paquetes de alta calidad presentes en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"), con soporte para arquitecturas [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) y [x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64").
+Arch Linux es una distribución de propósito general. Tras la instalación, solo se proporciona un entorno de línea de órdenes: en lugar de ir eliminando paquetes innecesarios y no deseados, se ofrece al usuario la posibilidad de crear un sistema personalizado, eligiendo entre miles de paquetes de alta calidad presentes en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"), con soporte para arquitectura [x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64").
 
-Arch está respaldado por [pacman](/index.php/Pacman "Pacman"), un gestor de paquetes ligero, sencillo y rápido, que permite actualizar todo el sistema con una orden. Arch también ofrece el [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), un sistema tipo puertos que hace fácil compilar e instalar paquetes desde las fuentes, que también se pueden sincronizar con una órden. Además, el *Arch User Repository* contiene muchos miles más de scripts [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") aportados por la comunidad para la elaboración de paquetes desde las fuentes de carácter inestables usando la aplicación [makepkg](/index.php/Makepkg "Makepkg"). También hace posible que los usuarios construyan y mantengan sus propios repositorios personalizados con facilidad.
+Arch está respaldado por [pacman](/index.php/Pacman "Pacman"), un gestor de paquetes ligero, sencillo y rápido, que permite actualizar todo el sistema con una orden. Arch también ofrece el [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), un sistema tipo puertos que hace fácil compilar e instalar paquetes desde las fuentes, que también se pueden sincronizar con una orden. Además, el *Arch User Repository* contiene muchos miles más de scripts [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") aportados por la comunidad para la elaboración de paquetes desde las fuentes de carácter inestables usando la aplicación [makepkg](/index.php/Makepkg "Makepkg"). También hace posible que los usuarios construyan y mantengan sus propios repositorios personalizados con facilidad.
 
 ## Historia
 

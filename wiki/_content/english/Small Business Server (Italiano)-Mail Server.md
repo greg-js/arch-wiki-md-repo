@@ -137,7 +137,7 @@ Nemmeno Amavis è nei repo. Per fortuna, ancora una volta, ci aiuta AUR. Assicur
 
 ```
 
-E procediamo ad installare Amavis con il pacchetto [amavisd-new](https://aur.archlinux.org/packages/amavisd-new/), operazione lunga perché richiede numerose librerie perl da installare.
+E procediamo ad installare Amavis con il pacchetto [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new), operazione lunga perché richiede numerose librerie perl da installare.
 
 Alla fine rientra in gioco il mio repository *radioattivo*.
 

@@ -147,6 +147,8 @@ and correct your config file accordingly.
 
 ## fancontrol
 
+**Note:** Upon upgrading/changing the kernel, running `fancontrol` may result in an error regarding changed device paths. This issue may be fixed by running `sensors-detect` again and restarting the system.
+
 Try to run *fancontrol*:
 
 ```
@@ -156,9 +158,9 @@ Try to run *fancontrol*:
 
 A properly configured setup will not error out and will take control of system fans. Users should hear system fans slowing shortly after executing this command.
 
-To make *fancontrol* start automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
+To enable starting *fancontrol* automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
 
-**Note:** Upon upgrading/changing the kernel, running fancontrol may result in an error regarding changed device paths. This issue may be fixed by running `sensors-detect` and restarting the system.
+For an unofficial GUI [install](/index.php/Install "Install") [fancontrol-gui](https://aur.archlinux.org/packages/fancontrol-gui/) or [fancontrol-kcm](https://aur.archlinux.org/packages/fancontrol-kcm/).
 
 ## i8kutils
 

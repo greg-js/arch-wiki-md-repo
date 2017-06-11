@@ -115,7 +115,6 @@ Whenever the file “some-dotfile” is checked into git, git will invoke the fi
 ```
 [filter "remove-pass"]
 clean = "sed -e 's/^password=.*/#password=TODO/'"
-
 ```
 
 ## Repositories
