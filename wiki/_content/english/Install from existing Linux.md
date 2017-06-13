@@ -298,7 +298,9 @@ On Fedora based hosts and live USBs you may encounter problems when using `genfs
 
 Before rebooting, chroot into the newly-installed system.
 
-Set a root password so that you can log in with ssh later:
+Make sure to create a user with password, so you can login via ssh. Root login is disabled by default since OpenSSH-7.1p2\.
+
+Set a root password so that you can switch to root via su later:
 
 ```
 # passwd

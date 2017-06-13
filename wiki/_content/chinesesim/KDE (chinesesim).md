@@ -254,7 +254,7 @@ $ kcmshell5 autostart
 
 #### 空间效率
 
-Plasma Netbool shell （上网本交互界面）以从 Plasma 5 中移除，请阅[此KDE论坛帖子](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899)。但是你仍然可以通过编辑 `~/.config/kwinrc`，在 `[Windows]` 区内加上 `BorderlessMaximizedWindows=true` 来实现类似的操作。
+Plasma Netbool shell （上网本交互界面）已从 Plasma 5 中移除，请阅[此KDE论坛帖子](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899)。但是你仍然可以通过编辑 `~/.config/kwinrc`，在 `[Windows]` 区内加上 `BorderlessMaximizedWindows=true` 来实现类似的操作。
 
 #### 缩略图生成
 

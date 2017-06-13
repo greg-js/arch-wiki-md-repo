@@ -2,7 +2,7 @@
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
 
-Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas; vea [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) también los tiene disponibles.
+Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas; vea [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
 
 ## Contents
 
@@ -28,11 +28,11 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
     *   [3.8 Contraseña de root](#Contrase.C3.B1a_de_root)
     *   [3.9 Instalar un gestor de arranque](#Instalar_un_gestor_de_arranque)
 *   [4 Reiniciar](#Reiniciar)
-*   [5 Posinstalación](#Posinstalaci.C3.B3n)
+*   [5 Pos-instalación](#Pos-instalaci.C3.B3n)
 
 ## Preinstalación
 
-*   Arch Linux puede ser ejecutado en cualquier máquina [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) o [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible, con un mínimo de 256 MB de RAM, o 512 MB para x86_64\. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) puede tomar alrededor de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
+*   Arch Linux puede ser ejecutado en cualquier máquina compatible con [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64"), con un mínimo de 512 MB RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) puede tomar alrededor de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
 
 *   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Iniciará sesión como usuario root en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), y se le presentará con el intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"); órdenes comunes como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) pueden ser [completadas con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
@@ -103,7 +103,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Cuanto más alto se coloca un servidor de réplica en la lista, más prioridad tendrá al descargar un paquete. Es posible que desee modificar el archivo en consecuencia y mover los servidores de réplicas geográficamente más cercanos, a la parte superior de la lista, aunque se deben tener en consideración otros criterios.
 
-*   Una copia del archivo mirrorlist se realizará, más tarde, en el nuevo sistema por *pacstrap*, por lo que vale la pena hacerlo bien en esta fase.
+*   Una copia del archivo mirrorlist se realizará más tarde en el nuevo sistema por *pacstrap*, por lo tanto vale la pena hacerlo bien en esta fase.
 
 ### Instalar los paquetes del sistema base
 
@@ -195,10 +195,10 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Opcionalmente, desmonte manualmente todas las particiones con `umount -R /mnt`: esto permite advertir cualquier partición «ocupada», y buscar su causa con [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
 
-*   Por último, reinicie el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación y, luego, iniciar sesión en el nuevo sistema con la cuenta de root.
+*   Por último, reinicie el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación e iniciar sesión en el nuevo sistema con la cuenta de root.
 
-## Posinstalación
+## Pos-instalación
 
-*   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones sobre cómo gestionar el sistema, así como tutoriales sobre qué hacer después de la instalación del sistema base (como pueden ser temas relativos a la instalación y configuración de una interfaz gráfica de usuario, la del sonido o la del panel táctil).
+*   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones de cómo gestionar el sistema y tutoriales sobre qué hacer después de la instalación del sistema base (O temas relativos a la instalación, configuración de la interfaz gráfica de usuario, sonido o panel táctil).
 
 *   Para obtener una lista de las aplicaciones que pueden ser de su interés, consulte [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)").

@@ -499,9 +499,11 @@ After making this change, reload the gpg-agent.
 
 ### Start gpg-agent with systemd user
 
-It is possible to use the [Systemd/User](/index.php/Systemd/User "Systemd/User") facilities to start the agent.
+[gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with systemd user sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
 
 The `gpg-agent.socket` unit will start the service on-demand and manage the lifetime. The `dirmngr.socket` should usually be enabled too, which is a daemon spawned to handle keyserver requests.
+
+The `gpg-agent-ssh.socket` can be used to cache ssh keys. To use `gpg-agent-ssh.socket`, `SSH_AUTH_SOCK` environment variable needs to be [configured](#SSH_agent) to point at `${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh`. When `ssh-add` is used, `gpg-agent` will cache the ssh keys.
 
 ### Unattended passphrase
 
@@ -767,9 +769,9 @@ Another user reported that *KGpg* failed to start until the `~/.gnupg` folder is
 
 ### Conflicts between gnome-keyring and gpg-agent
 
-While the Gnome keyring implements a GPG agent component, as of GnuPG version 2.1, GnuPG ignores the `GPG_AGENT_INFO` environment variable, so that Gnome keyring can no longer be used as a GPG agent.
+Although the Gnome keyring implements a GPG agent component, GnuPG ignores the `GPG_AGENT_INFO` environment variable, so that Gnome keyring can no longer be used as a GPG agent.
 
-However, since version 0.9.6 the package [pinentry](https://www.archlinux.org/packages/?name=pinentry) provides the `pinentry-gnome3` program. You may set the following option in your `gpg-agent.conf` file
+However, the package [pinentry](https://www.archlinux.org/packages/?name=pinentry) provides the `pinentry-gnome3` program. You may set the following option in your `gpg-agent.conf` file
 
 ```
  pinentry-program /usr/bin/pinentry-gnome3
@@ -778,7 +780,7 @@ However, since version 0.9.6 the package [pinentry](https://www.archlinux.org/pa
 
 in order to make use of that pinentry program.
 
-Since version 0.9.2 all pinentry programs can be configured to optionally save a passphrase with libsecret. For example, when the user is asked for a passphrase via `pinentry-gnome3`, a checkbox is shown whether to save the passphrase using a password manager.
+All pinentry programs can be configured to optionally save a passphrase with libsecret. For example, when the user is asked for a passphrase via `pinentry-gnome3`, a checkbox is shown whether to save the passphrase using a password manager.
 
 ### GNOME on Wayland overrides SSH agent socket
 
@@ -795,7 +797,7 @@ GSM_SKIP_SSH_AGENT_WORKAROUND	DEFAULT="true"
 
 ### mutt and gpg
 
-To be asked for your GnuPG password only once per session as of GnuPG 2.1, see [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821).
+To be asked for your GnuPG password only once per session, see [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821).
 
 ### "Lost" keys, upgrading to gnupg version 2.1
 

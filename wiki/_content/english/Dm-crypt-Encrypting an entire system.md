@@ -210,7 +210,7 @@ The first steps can be performed directly after booting the Arch Linux install i
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-Then create the needed partitions, at least one for `/` (e.g. `/dev/sdaX`) and `/boot` (`/dev/sdaY`), see [Partitioning](/index.php/Partitioning "Partitioning").
+Then create the needed partitions, at least one for `/` (e.g. `/dev/sdaX`) and `/boot` (`/dev/sdaY`). See [Partitioning](/index.php/Partitioning "Partitioning").
 
 ### Preparing non-boot partitions
 
@@ -274,7 +274,7 @@ cryptdevice=UUID=*<device-UUID>*:cryptroot root=/dev/mapper/cryptroot
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
-The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
 ## LVM on LUKS
 
@@ -417,7 +417,7 @@ cryptdevice=UUID=*device-UUID*:cryptolvm
 
 ```
 
-The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+The `*<device-UUID>*` refers to the UUID of `/dev/sdaX`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
 
@@ -665,7 +665,7 @@ Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda
 The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the encryption, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for details.
 
 *   Create the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") and add the key to `/dev/md0`.
-*   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot, see [dm-crypt/Device encryption#Unlocking a secondary partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
+*   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot. See [dm-crypt/Device encryption#Unlocking a secondary partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
 
 ### Configuring the system
 
@@ -755,7 +755,7 @@ We can now check a mapping entry has been made for `/dev/mapper/enc`:
 
 ```
 
-Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device, see [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
+Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
 
 ```
 # pvcreate /dev/mapper/enc
@@ -766,7 +766,7 @@ Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device,
 
 ```
 
-We format and mount them and activate swap, see [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
+We format and mount them and activate swap. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
 
 ```
 # mkfs.ext4 /dev/store/root
@@ -809,7 +809,7 @@ cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-p
 
 ```
 
-**Note:** If using sd-encrypt instead of encrypt, use `*luks.uuid*` instead of cryptdevice, see *systemd-cryptsetup-generator(8)*.
+**Note:** If using sd-encrypt instead of encrypt, use `*luks.uuid*` instead of cryptdevice. See *systemd-cryptsetup-generator(8)*.
 
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
 
@@ -992,7 +992,7 @@ GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*<device-UUID>*:lvm ..."
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaZ` (the partition which holds the lvm containing the root filesystem), see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*<device-UUID>*` refers to the UUID of `/dev/sdaZ` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file and [install](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP:
 

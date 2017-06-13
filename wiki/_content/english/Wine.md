@@ -160,7 +160,14 @@ If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)
 
 ### Fonts
 
-If Wine applications are not showing easily readable fonts, you may not have Microsoft's Truetype fonts installed. See [MS Fonts](/index.php/MS_Fonts "MS Fonts"). If this does not help, try running `winetricks corefonts` first, then `winetricks allfonts` as a last resort.
+If Wine applications are not showing easily readable fonts, you may not have any fonts installed. To easily link all of the system fonts so they are accessible from wine:
+
+```
+ cd ~/.wine/drive_c/windows/Fonts && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i" ; done
+
+```
+
+Another possibility is to install Microsoft's Truetype fonts into your wine prefix. See [MS Fonts](/index.php/MS_Fonts "MS Fonts"). If this does not help, try running `winetricks corefonts` first, then `winetricks allfonts` as a last resort.
 
 After running such programs, kill all Wine servers and run `winecfg`. Fonts should be legible now.
 

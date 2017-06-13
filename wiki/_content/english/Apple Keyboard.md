@@ -9,9 +9,8 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
 *   [5 < and > have changed place with ^ and ° (or @ and #, or ` and ~)](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0_.28or_.40_and_.23.2C_or_.60_and_.7E.29)
 *   [6 PrintScreen and SysRq](#PrintScreen_and_SysRq)
 *   [7 Treating Apple keyboards like regular keyboards](#Treating_Apple_keyboards_like_regular_keyboards)
-*   [8 Swap the Alt key and Command key (Meta/Super)](#Swap_the_Alt_key_and_Command_key_.28Meta.2FSuper.29)
-*   [9 Swap the Fn key and Left Ctrl key](#Swap_the_Fn_key_and_Left_Ctrl_key)
-*   [10 See also](#See_also)
+    *   [7.1 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
+*   [8 See also](#See_also)
 
 ## Numlock is on
 
@@ -80,31 +79,31 @@ Alternatively, follow the [Map scancodes to keycodes](/index.php/Map_scancodes_t
 
 ## Treating Apple keyboards like regular keyboards
 
-If you want to use your Apple keyboard like a regular US-layout keyboard, with `Alt` on the left side of `Meta`, you can use the [AUR](/index.php/AUR "AUR") package [un-apple-keyboard](https://aur.archlinux.org/packages/un-apple-keyboard/). Currently it only works for the aluminium USB model. The package does the following things:
+**Warning:** Another package [un-apple-keyboard](https://aur.archlinux.org/packages/un-apple-keyboard/) also provides similar functionality, but is no longer actively maintained. Thus it is advised to use the following package.
 
-*   Adds a `/etc/modprobe.d/hid_apple.conf` file which enables the `F<num>` keys by default, as in [#Function keys do not work](#Function_keys_do_not_work).
-*   Uses keyfuzz to remap `F13-15` to `PrintScreen`/`SysRq`, `Scroll Lock`, and `Pause`, respectively.
-*   Swaps the ordering of the `Alt` and `Meta` (`Command`) keys to match all other keyboards, again using `/etc/modprobe.d/hid_apple.conf`, as in [#Swap the Alt key and Command key (Meta/Super)](#Swap_the_Alt_key_and_Command_key_.28Meta.2FSuper.29).
-*   Applies these changes automatically when you plug in your keyboard, with a [udev](/index.php/Udev "Udev") rule.
+While the original `hid-apple` module doesn't have options to further customize the keyboard, like swapping `Fn` and left `Ctrl` keys or having `Alt` on the left side of `Super`, there is a [patch](https://github.com/free5lot/hid-apple-patched) adding this functionality to the module. To install the patch, [install](/index.php/Install "Install") the [hid-apple-patched-git-dkms](https://aur.archlinux.org/packages/hid-apple-patched-git-dkms/) package.
 
-You will need to add `/etc/modprobe.d/hid_apple.conf` to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). Otherwise if you boot your computer with the Apple keyboard plugged in, the the `F<num>` keys will not work by default.
+In addition to the patched kernel module, a configuration file is also provided by the package at `/etc/modprobe.d/hid_apple_pclayout.conf`, which enables PC-like layout by default:
 
-## Swap the Alt key and Command key (Meta/Super)
+*   Top-row keys are normally function keys, switchable to media keys by holding Fn key, as in [#Function keys do not work](#Function_keys_do_not_work).
+*   Four keys at the lower left corner act as `Ctrl`, `Fn`, `Super`, `Alt`, in this order.
+*   `Super` and `Alt` keys on the right are swapped.
+*   If you have an `Ejectcd` key, it will act as `Delete` key.
 
-To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `1` to `/sys/module/hid_apple/parameters/swap_opt_cmd`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `swap_opt_cmd` option to 1.
+Please refer to [https://github.com/free5lot/hid-apple-patched#configuration](https://github.com/free5lot/hid-apple-patched#configuration) for exact meaning of each configuration options and tweaking the configuration file to suit your need.
 
-## Swap the Fn key and Left Ctrl key
+**Note:** Don't forget to include the configuration file in *initramfs* otherwise it won't work automatically after boot. Refer to [Mkinitcpio#BINARIES and FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") or [Mkinitcpio#Hooks](/index.php/Mkinitcpio#Hooks "Mkinitcpio") (the hook you might need is called `modconf`) about how to do that.
 
-While the original `hid-apple` module doesn't have an option to swap the fn and left control keys, there is a [patch](https://github.com/free5lot/hid-apple-patched) adding this functionality to the module. To install the patch, [install](/index.php/Install "Install") the [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/) package.
+After installation the change is not picked up by the kernel immediately. The simplest way is to just reboot your system and the new behavior should be in effect.
 
-To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `1` to `/sys/module/hid_apple/parameters/swap_fn_leftctrl`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `swap_fn_leftctrl` option to 1.
+### Change the Behavior Without Reboot
 
-**Note:**
+**Warning:** If the builtin keyboard and touch pad are the only input device, beware that doing so might leave your computer in an inoperable state unless hard reboot when the second command failes.
 
-*   The default configuration provided in [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/) also swaps the left option and command keys so you don't have to follow [#Swap the Alt key and Command key (Meta/Super)](#Swap_the_Alt_key_and_Command_key_.28Meta.2FSuper.29) to do that.
-*   This [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/) also provides an option to use ejectcd key as the missing delete key on Apple keyboard. It is enabled by default through the `ejectcd_as_delete=1` option.
+To reload the kernel module without reboot, run `sudo rmmod hid_apple && sudo modprobe hid_apple`.
 
 ## See also
 
 *   [https://help.ubuntu.com/community/AppleKeyboard](https://help.ubuntu.com/community/AppleKeyboard)
 *   [https://github.com/hlechner/xmodmap-aluminium-pt-br](https://github.com/hlechner/xmodmap-aluminium-pt-br)
+*   [https://github.com/free5lot/hid-apple-patched](https://github.com/free5lot/hid-apple-patched)

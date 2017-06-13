@@ -222,10 +222,17 @@ nohook resolv.conf
 
 Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
 
-Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`:
+Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`, where `*dns-server-ip-addressses*` is a space separated list of DNS IP addresses.
 
 ```
-static domain_name_servers=8.8.4.4 8.8.8.8
+static domain_name_servers=*dns-server-ip-addresses*
+
+```
+
+For example, to set it to Google's DNS servers:
+
+```
+static domain_name_servers=8.8.8.8 8.8.4.4
 
 ```
 

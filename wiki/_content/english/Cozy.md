@@ -1,5 +1,7 @@
 [Cozy](https://cozy.io) is a personal cloud platform free, and self-hostable, written in [Node.js](/index.php/Node.js "Node.js").
 
+**Note:** The future version, v3, is written in Go instead.
+
 The platform aims at simplifying the use of a personal cloud and at allowing the users to take back ownership of their privacy. Its base applications' features include hosting, sharing and synchronising files, pictures, contacts and calendars, along with an email client.
 
 Third-party apps are available through a marketplace and can be used to extend Cozy's default features, with task management, blog hosting, bank account overview, etc.
@@ -7,53 +9,35 @@ Third-party apps are available through a marketplace and can be used to extend C
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Dependencies](#Dependencies)
-    *   [1.2 Pre-installation](#Pre-installation)
-    *   [1.3 Configuring CouchDB](#Configuring_CouchDB)
-    *   [1.4 Starting the controller](#Starting_the_controller)
-    *   [1.5 Creating the controller's configuration file](#Creating_the_controller.27s_configuration_file)
-    *   [1.6 Installing the Cozy stack](#Installing_the_Cozy_stack)
-    *   [1.7 Configuring](#Configuring)
-        *   [1.7.1 Configuring the domain](#Configuring_the_domain)
-        *   [1.7.2 Configuring the background](#Configuring_the_background)
+    *   [1.1 Pre-configuration](#Pre-configuration)
+    *   [1.2 Configuring CouchDB](#Configuring_CouchDB)
+    *   [1.3 Starting the controller](#Starting_the_controller)
+    *   [1.4 Installing the Cozy stack](#Installing_the_Cozy_stack)
+    *   [1.5 Configuring](#Configuring)
+        *   [1.5.1 Configuring the domain](#Configuring_the_domain)
+        *   [1.5.2 Configuring the background](#Configuring_the_background)
 *   [2 Reverse proxying](#Reverse_proxying)
     *   [2.1 Apache](#Apache)
     *   [2.2 nginx](#nginx)
     *   [2.3 Caddy](#Caddy)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 CouchDB 2.x](#CouchDB_2.x)
-        *   [3.1.1 From an old install](#From_an_old_install)
+    *   [3.1 Upgrading to CouchDB 2.x from an existing install](#Upgrading_to_CouchDB_2.x_from_an_existing_install)
 
 ## Installation
 
-### Dependencies
+Just install the [cozy](https://aur.archlinux.org/packages/cozy/) package. It provides the core (cozy-controller and cozy-monitor) plus related configuration files, as well as the required dependencies.
 
-The first step in installing Cozy is to [install](/index.php/Install "Install") its dependencies. This can be done by installing [cozy-deps](https://aur.archlinux.org/packages/cozy-deps/), which is an empty shell containing all the needed dependencies.
+**Note:** This will install Node.js version 4.x provided by [nodejs-lts-argon](https://www.archlinux.org/packages/?name=nodejs-lts-argon). While Cozy **may** totally work with newer versions (e.g. 6.x, 8.x), they are not officially supported, as Cozy officially supports only Node.js v4.x. If you still want to use the Node.js version currently in Archlinux's official repository, you will need to change the dependency in the PKGBUILD.
 
-If you do not want to use this package, you can install all the dependencies by hand: [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates), [couchdb](https://www.archlinux.org/packages/?name=couchdb), [bash](https://www.archlinux.org/packages/?name=bash), [curl](https://www.archlinux.org/packages/?name=curl), [git](https://www.archlinux.org/packages/?name=git), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick), [coffee-script](https://www.archlinux.org/packages/?name=coffee-script), [openssl](https://www.archlinux.org/packages/?name=openssl), [libxml2](https://www.archlinux.org/packages/?name=libxml2), [libxslt](https://www.archlinux.org/packages/?name=libxslt), [sqlite](https://www.archlinux.org/packages/?name=sqlite).
+### Pre-configuration
 
-**Note:** Both procedures will install Node.js version 6.x or 7.x. While Cozy **may** totally work with these versions, they are not officially supported, as Cozy officially supports only Node.js v4.x, which can be found in [nodejs-lts-argon](https://www.archlinux.org/packages/?name=nodejs-lts-argon). If you still want to use the Node.js version currently in Archlinux's official repository, you will also need [npm](https://www.archlinux.org/packages/?name=npm).
-
-### Pre-installation
-
-You will then need to install Cozy's base components: the controller to run Cozy's.
+You will need to add two users accounts manually:
 
 ```
-# npm install -g cozy-controller
-# npm install -g cozy-monitor
-
-```
-
-Cozy will also need three user accounts:
-
-```
-# useradd -MU cozy
 # useradd -MU cozy-data-system
 # useradd -MU cozy-home
 
 ```
-
-You will also need to create the `/etc/cozy` repository and give its full ownership to the `cozy` user we just created.
 
 ### Configuring CouchDB
 
@@ -61,61 +45,27 @@ We will now configure the database. Cozy stores almost everything in a [CouchDB]
 
 To create an administrator, first generate the credentials (with [pwgen](https://www.archlinux.org/packages/?name=pwgen) for example), store them, and send them to CouchDB. Do not forget to give the appropriate rights to the file.
 
-**Note:** The following curl commands only work with CouchDB from version **2.0** which is provided in Archlinux official repositories.
+**Note:** The following curl commands will setup CouchDB 2.0 in “single node” mode. If you don’t use CouchDB for anything else, this is likely what you want.
 
 ```
 # pwgen -1 > /etc/cozy/couchdb.login
 # pwgen -1 >> /etc/cozy/couchdb.login
 # chown cozy-data-system /etc/cozy/couchdb.login
 # chmod 640 /etc/cozy/couchdb.login
-# curl 127.0.0.1:5984/_cluster_setup -Hcontent-type:application/json -d "{\"action\":\"enable_cluster\", \"username\":\"$(head -n1 /etc/cozy/couchdb.login)\", \"password\":\"$(tail -n1 /etc/cozy/couchdb.login)\", \"bind_address\":\"0.0.0.0\"}"
-# curl $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_cluster_setup -XPOST -Hcontent-type:application/json -d '{"action":"finish_cluster"}'
+# curl -X PUT 127.0.0.1:5984/_node/couchdb@localhost/_config/admins/$(head -n1 /etc/cozy/couchdb.login) -d "\"$(tail -n1 /etc/cozy/couchdb.login)\""
+# curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_users
+# curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_replicator
+# curl -X PUT $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_global_changes
 
 ```
 
 ### Starting the controller
 
-Cozy needs its controller (cozy-controller from before) up and running in order to work. As it is supposed to run as a background task, it is better to run it in systemd. To do so, create the file `/etc/systemd/system/cozy-controller.service`.
-
- `**/etc/systemd/system/cozy-controller.service**` 
-```
-[Unit]
-Description=Cozy Controller
-
-[Service]
-Environment=NODE_ENV=production
-Environment=USE_SYSLOG=true
-Environment=WEBOOB_PYTHON_PATH=/usr/share/cozy-weboob/lib/python2.7/site-packages
-Environment=WEBOOB_DIR=/usr/share/cozy-weboob/lib/python2.7/site-packages
-ExecStart=/usr/bin/cozy-controller
-
-[Install]
-WantedBy=multi-user.target
-```
-
-### Creating the controller's configuration file
-
-Cozy's controller can use a JSON configuration file located at `/etc/cozy/controller.json`. If this file doesn't exist, the controller will use its own default values. One of them is restarting itself using [supervisor](https://www.archlinux.org/packages/?name=supervisor). As this install describes using systemd to start and stop the controller, we need to edit this by creating the said JSON file and setting the right restart command.
-
- `**/etc/cozy/controller.json**` 
-```
-{
-    "restart_cmd": "/bin/systemctl restart cozy-controller"
-}
-```
-
-You may want to give ownership for this file to Cozy by running
-
-```
-# chown cozy:cozy /etc/cozy/controller.json
-
-```
-
-**Note:** A documentation on the different parameters that can be set in `controller.json` is located [here](https://github.com/babolivier/cozy-controller/blob/master/doc/config.md).
+Cozy needs its controller (cozy-controller) up and running in order to work. As it is supposed to run as a background task, it is better to run it in systemd. The service file is provided by the package, and has couchdb in its dependencies so that starting/enabling cozy-controller.service is enough.
 
 ### Installing the Cozy stack
 
-You can now use the Cozy monitor to install and start each component of Cozy's base stack:
+You can now use cozy-monitor to install and start each component of Cozy's base stack:
 
 ```
 # cozy-monitor install-cozy-stack
@@ -129,7 +79,7 @@ Cozy will now need some basic configuration, in order to know the homepage's bac
 #### Configuring the domain
 
 ```
-# coffee /usr/local/cozy/apps/home/commands.coffee setdomain <your domain>
+# coffee /var/lib/cozy/apps/home/commands.coffee setdomain <your domain>
 
 ```
 
@@ -250,11 +200,7 @@ cozy.example.tld {
 
 ## Troubleshooting
 
-### CouchDB 2.x
-
-Some users are experiencing issues with CouchDB's 2.0 update.
-
-#### From an old install
+### Upgrading to CouchDB 2.x from an existing install
 
 If you are updating CouchDB from version 1.x to version 2.x, Cozy may not be able to run because of CouchDB's sharding (which is not supported by Cozy yet). This updates changes the default database directory, making Cozy's database not found by CouchDB. Here is the path to follow to make Cozy work again.
 

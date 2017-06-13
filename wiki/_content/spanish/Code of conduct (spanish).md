@@ -68,29 +68,29 @@ Las *normas mínimas necesarias* en la interacción con otras personas de la com
 
 #### Respete a los demás usuarios
 
-En pocas palabras, trate a los demás como quisiera ser tratado, respete al otro y a sus puntos de vista, incluso si no está de acuerdo con ellos. When you do find yourself disagreeing; counter the idea or the argument. Do not engage in ad hominem attacks.
+En pocas palabras, trate a los demás como quisiera ser tratado, respete al otro y sus puntos de vista, incluso si no está de acuerdo con ellos. Cuando estés en desacuerdo con alguna idea o argumento, no realice ataques ad hominem.
 
 #### Respete otros sistemas operativos y proyectos
 
-Difamar a otras distribuciones o proyectos de código abierto ([FOSS](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "w:es:Software libre y de código abierto")), o cualquier sistema operativo o a los usuarios de los mismos está prohibido. Todo el equipo de Arch está muy satisfecho del tiempo y energía que los voluntarios dedican a la distribución Arch Linux, a la documentación y a los foros. Sírvase mostrar respeto hacia los voluntarios, usuarios y comunidades de otras distribuciones y sistemas operativos también. Los puntos de vista, experiencias y opiniones son siempre bienvenidos, pero la calumnia es improductiva.
+Difamar a otras distribuciones, proyectos de código abierto ([FOSS](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "w:es:Software libre y de código abierto")), sistemas operativos o usuarios de los mismos está prohibido. Todo el equipo de Arch está muy satisfecho del tiempo y energía que los voluntarios dedican a la distribución Arch Linux, la documentación y los foros. Muestre respeto hacia los voluntarios, usuarios y comunidades de otras distribuciones y sistemas operativos. Los puntos de vista, experiencias y opiniones son bienvenidos, pero la calumnia es improductiva.
 
 #### Respete a los responsables
 
-Los [miembros del equipo técnico](https://www.archlinux.org/people/support-staff/) han sido elegidos por su capacidad de ejercer un juicio generalmente acertado y tendrán la última palabra. Tenga en cuenta que este Arch Linux no se desarrolla como una democracia. El personal técnico siempre tratará de implementar soluciones universalmente conciliadoras, pero al final, asumen la responsabilidad de mantener el orden pacífico y civilizado de la mayor parte del comunidad. Por lo tanto, no siempre se complacerá a todo el mundo con las decisiones tomadas. Por favor, ponga de su parte para contribuir a una comunidad y ambiente saludables.
+Los [miembros del equipo técnico](https://www.archlinux.org/people/support-staff/) han sido elegidos por su capacidad de ejercer un juicio generalmente acertado y tendrán la última palabra. Tenga en cuenta que Arch Linux no se desarrolla como una democracia. El personal técnico siempre tratará de implementar soluciones generales y conciliadoras, asumiendo la responsabilidad de mantener el orden y el civismo de casi toda la comunidad. Por lo tanto, no siempre se complacerá a todo el mundo con las decisiones tomadas. Por favor, ponga de su parte para contribuir a la comunidad y mantener un ambiente saludable.
 
 #### Evite el *trolling*
 
-Un *«troll»* (trola, engaño) es una persona que, intencionadamente, intenta interrumpir, causar controversia, incitar al confronte, y/o recibir atención negativa mediante la publicación de contenido deliberadamente provocativo. El término puede también referirse al acto de publicar dicho contenido, o al propio contenido.
+Un *«troll»* (trola, engaño) es una persona que, intencionadamente, intenta interrumpir, causar controversia, incitar a la confrontación o recibir atención negativa mediante la publicación de contenido provocativo. El término también puede referirse al acto de publicar dicho contenido, o al propio contenido.
 
-En general, los *«trolls»* son engañosos y, a menudo, utilizan la ambigüedad como método para, disimuladamente, insultar, intimidar o incitar a una o varias personas para satisfacer su propia orientación sádica. Eligen cuidadosamente sus palabras e intentan encubrir sus acciones de crear malestar, con frecuencia, redirigiendo la culpa a la comunidad y aparentando ser víctimas de su incomprensión. El *trolling* está estrictamente prohibido.
+En general, los *«trolls»* son engañosos y utilizan la ambigüedad como método para insultar, intimidar o incitar a las personas a satisfacer su propia orientación sádica. Eligen cuidadosamente sus palabras e intentan encubrir sus acciones de crear malestar dirigiendo la culpa a la comunidad y aparentando ser víctimas. El *trolling* está estrictamente prohibido.
 
 #### Evite el *flaming*
 
-*«Flaming»* es, en su definición más común, el responsable de comentarios negativos, falta de respeto y/o insultantes hacia alguien. Una respuesta igual o más negativa, se traduce, a menudo, en una espiral de insultos empeorando las consecuencias. El *«flaming»* entre compañeros (incluyendo al equipo de Arch) no será tolerado. Nunca recurra a los insultos personales y, por favor, evite el lenguaje sarcástico y condescendiente. *Los debates pueden ser productivos, pero peleando serán siempre destructivos.*
+*«Flaming»* es, en su definición más común, el responsable de comentarios negativos, falta de respeto e insultos hacia alguien. Una respuesta igual o más negativa, se traduce, a menudo, en una espiral de insultos empeorando las consecuencias. El *«flaming»* entre compañeros (incluyendo al equipo de Arch) no será tolerado. Nunca recurra a los insultos personales y, por favor, evite el lenguaje sarcástico y condescendiente. *Los debates pueden ser productivos, pero peleando serán siempre destructivos.*
 
 #### Sea responsable
 
-Si surge un problema interpersonal, por favor admita la posibilidad de que su comportamiento puede haber contribuido a crear el problema. Asumir la responsabilidad de nuestras acciones es, a menudo, un primer buen paso para una reconciliación pacífica.
+Si surge un problema interpersonal, por favor admita la posibilidad de que su comportamiento puede haber contribuido a crear el problema. Asumir la responsabilidad de nuestras acciones es, a menudo, un primer paso para una reconciliación pacífica.
 
 ### Legalidad
 
@@ -114,7 +114,7 @@ Otras consideraciones en esta categoría incluyen:
 
 #### Soporte *solo* para la distribución Arch Linux
 
-Las distribuciones basadas en Arch a menudo utilizan paquetes diferentes, versiones de paquetes, repositorios y configuraciones personalizadas del sistema subrepticiamente, por lo que contribuir al soporte de esos proyectos es completamente imposible en Arch Linux. El apoyo técnico de la Comunidad solo se prevé para la distribución Arch Linux y el *Arch User Repository*. Temas relativos a problemas con, y solicitudes de apoyo para, distribuciones derivadas, o sistemas operativos que no sean Arch Linux, están estrictamente prohibidos.
+Las distribuciones basadas en Arch a menudo utilizan versiones de paquetes diferentes, repositorios personalizados y configuraciones oscuras, por lo tanto contribuir al soporte de esos proyectos no es posible en Arch Linux. El apoyo técnico de la Comunidad solo se proporciona para Arch Linux y el *Arch User Repository*. Temas relativos a problemas con, y solicitudes de apoyo para, distribuciones derivadas, o sistemas operativos que no sean Arch Linux, están estrictamente prohibidos.
 
 #### Temas personales/fuera de tono
 

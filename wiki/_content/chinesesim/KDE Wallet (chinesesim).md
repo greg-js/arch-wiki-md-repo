@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 在登录时自动解锁 Kwallet](#.E5.9C.A8.E7.99.BB.E5.BD.95.E6.97.B6.E8.87.AA.E5.8A.A8.E8.A7.A3.E9.94.81_Kwallet)
-*   [2 Using the KDE Wallet to store ssh keys](#Using_the_KDE_Wallet_to_store_ssh_keys)
+*   [2 使用 KDE Wallet 存储 ssh keys](#.E4.BD.BF.E7.94.A8_KDE_Wallet_.E5.AD.98.E5.82.A8_ssh_keys)
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
 *   [5 See also](#See_also)
@@ -48,9 +48,9 @@ session         include         system-login
 
 **Note:** Currently, kwallet-pam has at least two limitations: first, it's not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, so KDE Wallet must use the standard blowfish encryption. Also, the wallet name must be "kdewallet" (that's the default name). If, for some reason, you create a new wallet, you need to use this name (so you will probably need to rename the old wallet too).
 
-## Using the KDE Wallet to store ssh keys
+## 使用 KDE Wallet 存储 ssh keys
 
-First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") running.
+首先, 你要确保你正在运行一个 [SSH agent](/index.php/SSH_agent "SSH agent")
 
 [Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 

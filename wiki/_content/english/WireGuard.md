@@ -1,0 +1,5 @@
+[WireGuard](https://www.wireguard.io/) is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it plans to be cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+
+## Installation
+
+Install [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) and [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) from the [Official repositories](/index.php/Official_repositories "Official repositories").

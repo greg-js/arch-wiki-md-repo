@@ -18,6 +18,7 @@ Táto stránka popisuje postup rozbehania čítačky a aplikácie eID klient pre
 | Model čítačky | lsusb | eID klient |
 | IDBridge CT30 | Gemalto (was Gemplus) GemPC Twin SmartCard Reader | Gemalto PC Twin Reader |
 | Bit4id - miniLector EVO | Advanced Card Systems, Ltd ACR38 SmartCard Reader | ACS ACR 38U-CCID |
+| AU9560 - USB Smart Card Reader Controller | Alcor Micro Corp. AU9540 Smartcard Reader | Alcor Micro AU9560 |
 
 ## Inštalácia
 

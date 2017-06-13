@@ -392,9 +392,9 @@
 
 ## 自己打造桌面环境
 
-Desktop environments represent the simplest means of installing a *complete* graphical environment. However, users are free to build and customize their graphical environment in any number of ways if none of the popular desktop environments meet their requirements. Generally, building a custom environment involves selection of a suitable [window manager](/index.php/Window_manager "Window manager"), a [taskbar](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") and a number of applications (a minimalist selection usually includes a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"), [file manager](/index.php/List_of_applications#File_managers "List of applications"), and [text editor](/index.php/Text_editor "Text editor")).
+桌面环境是安装完整图形环境的最简单的方法。但是，如果主流桌面环境并不能满足用户的需求，那么用户也可以通过多种方法来构建和定制他们自己的图形环境。通常，构建一个自定义的环境包括选择一个合适的[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")，一个[任务栏](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications")以及一些应用程序(一个极简的应用程序选择方案至少包括一个终端模拟器([terminal emulator](/index.php/Terminal_emulator "Terminal emulator"))，文件管理器([file manager](/index.php/File_manager "File manager"))和文本编辑器([text editor](/index.php/Text_editor "Text editor")))。
 
-Other applications that are usually provided by desktop environments are:
+通常由桌面环境提供的其它应用程序有：
 
 *   Application launcher: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
 *   Clipboard manager: [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")

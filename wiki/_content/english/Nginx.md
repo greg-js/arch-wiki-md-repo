@@ -14,6 +14,7 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
         *   [3.2.3 Server blocks](#Server_blocks)
             *   [3.2.3.1 Managing server entries](#Managing_server_entries)
         *   [3.2.4 TLS/SSL](#TLS.2FSSL)
+        *   [3.2.5 Per-User Directories](#Per-User_Directories)
     *   [3.3 FastCGI](#FastCGI)
         *   [3.3.1 PHP implementation](#PHP_implementation)
             *   [3.3.1.1 PHP configuration](#PHP_configuration)
@@ -286,6 +287,39 @@ server {
 ```
 
 [Restart](/index.php/Restart "Restart") the `nginx` service to apply any changes.
+
+#### Per-User Directories
+
+To replicate Apache-style `~user` URLs to users' `~/public_html` directories, try the following. (Note: if both rules are used, below, the more-specific PHP rule must come first.)
+
+ `/etc/nginx/nginx.conf` 
+```
+...
+server {
+    ...
+    # PHP in user directories, e.g. http://example.com/~user/test.php
+    location ~ ^/~(.+?)(/.+\.php)$ {
+        alias          /home/$1/public_html$2;
+        fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+        fastcgi_index  index.php;
+        include        fastcgi.conf;
+    }
+
+    # User directories, e.g. http://example.com/~user/
+    location ~ ^/~(.+?)(/.*)?$ {
+        alias     /home/$1/public_html$2;
+        index     index.html index.htm;
+        autoindex on;
+    }
+    ...
+}
+...
+
+```
+
+See [#PHP implementation](#PHP_implementation) for more information on PHP configuration with `nginx`.
+
+Reload or restart `nginx` service to enable the new configuration.
 
 ### FastCGI
 

@@ -30,7 +30,9 @@
     *   [6.1 OpenBLAS](#OpenBLAS)
     *   [6.2 Intel MKL](#Intel_MKL)
     *   [6.3 intel-advisor-xe](#intel-advisor-xe)
-*   [7 See also](#See_also)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Package PKI won't install](#Package_PKI_won.27t_install)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -324,6 +326,17 @@ Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur
 [intel-advisor](http://software.intel.com/en-us/intel-advisor-xe) delivers top application performance with C, C++ and Fortran compilers, libraries and analysis tools.
 
 Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-xe/) package.
+
+## Troubleshooting
+
+### Package PKI won't install
+
+The version of the PKI package currently on CRAN (0.1-3) is old and will not work with the current version of [openssl](https://www.archlinux.org/packages/?name=openssl). The work around is to install a newer version from rforge:
+
+```
+   > install.packages("PKI", repos = "[https://www.rforge.net](https://www.rforge.net)")
+
+```
 
 ## See also
 

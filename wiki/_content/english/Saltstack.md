@@ -65,7 +65,7 @@ Or in debug mode
 
 ### Salt Key
 
-Salt authenticates minion using public key encryption and authentication. For a minion to start accepting commands from the master the minion keys need to be accepted. the **salt-key** command is used to manage all of the keys on the master. To list the keys that are on the master run salt-key list command:
+Salt authenticates minion using public key encryption and authentication. For a minion to start accepting commands from the master the minion keys need to be accepted. The **salt-key** command is used to manage all of the keys on the master. To list the keys that are on the master run salt-key list command:
 
 ```
 # salt-key -L

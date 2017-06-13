@@ -73,7 +73,7 @@ These packages provide background services and default settings for Pantheon and
 *   [contractor](https://www.archlinux.org/packages/?name=contractor) or [contractor-git](https://aur.archlinux.org/packages/contractor-git/): Service for sharing data between apps
 *   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patch against [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) to support [elementary-dpms-helper-bzr](https://aur.archlinux.org/packages/elementary-dpms-helper-bzr/) and [wingpanel-indicator-power-git](https://aur.archlinux.org/packages/wingpanel-indicator-power-git/)
 *   [pantheon-print-git](https://aur.archlinux.org/packages/pantheon-print-git/): Print settings dialog
-*   [pantheon-agent-polkit-bzr](https://aur.archlinux.org/packages/pantheon-agent-polkit-bzr/): Polkit authentication agent
+*   [pantheon-polkit-agent-git](https://aur.archlinux.org/packages/pantheon-polkit-agent-git/): Polkit authentication agent
 
 ### Theme
 
@@ -101,15 +101,15 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
 *   [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player developed from [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 *   [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player developed from [audience](https://www.archlinux.org/packages/?name=audience)
-*   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/)
+*   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/), integrates default calendar with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
 *   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser, replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
 *   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client based on [geary](https://www.archlinux.org/packages/?name=geary)
-*   [screenshot-tool-bzr](https://aur.archlinux.org/packages/screenshot-tool-bzr/): Screenshot tool
+*   [pantheon-screenshot](https://aur.archlinux.org/packages/pantheon-screenshot/) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
 *   [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) or [pantheon-photos-git](https://aur.archlinux.org/packages/pantheon-photos-git/): Photo manager based on [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 *   [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/): Webcam app developed from [snap-photobooth](https://aur.archlinux.org/packages/snap-photobooth/)
 *   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
-*   [pantheon-notes-bzr](https://aur.archlinux.org/packages/pantheon-notes-bzr/): Note taking app, replacing [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/)
+*   [footnote-bzr](https://aur.archlinux.org/packages/footnote-bzr/): Note taking app
 *   [switchboard](https://aur.archlinux.org/packages/switchboard/) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/): Pluggable settings manager similar to [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
 
 ## Launching Pantheon
@@ -153,11 +153,13 @@ For applications which do not provide a [systemd unit](/index.php/Systemd#Using_
 
 *   Run once when X starts:
 
-	Add it to your [`~/.xinitrc`](#Via_xinit), before the `exec cerbere` line. This is a [Shell](/index.php/Shell "Shell") script.
+	Add it to your [`~/.xinitrc`](#Via_xinit) [Shell](/index.php/Shell "Shell") script, before the `exec cerbere` line.
 
 *   Keep running in the background:
 
-	[Add it to the dconf key](#Configuration) `org.pantheon.desktop.cerbere.monitored-processes`; should the process stop, *cerbere* will respawn it as many times as `org.pantheon.desktop.cerbere.max-crashes`.
+	Add it to the [dconf key](#Configuration) `org.pantheon.desktop.cerbere.monitored-processes`.
+
+	Should the process stop, [cerbere](https://aur.archlinux.org/packages/cerbere/) will respawn it.
 
 *   Launch from a [.desktop](/index.php/.desktop ".desktop") file:
 

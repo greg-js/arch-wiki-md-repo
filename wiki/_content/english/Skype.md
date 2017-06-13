@@ -203,19 +203,7 @@ This way, it is ensured that only the owner (normally "root") and "users" can ac
 
 ##### Access Pulseaudio controls when using Skype as a different user
 
-As the "main-user" copy /etc/pulse/default.pa to ~/.pulse/default.pa and add:
-
-```
-load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
-
-```
-
-As the skype user, create ~/.pulse/client.conf and add:
-
-```
-default-server = 127.0.0.1
-
-```
+Audio will not be functional since the special skype user can't connect to the PulseAudio daemon owned by the user which has started the desktop session. However, a socket can be exposed for the new user to connect to the PulseAudio daemon. See [PulseAudio/Examples#Allowing multiple users to use PulseAudio at the same time](/index.php/PulseAudio/Examples#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time "PulseAudio/Examples") for more information.
 
 ##### Open URLs in your user's browser
 

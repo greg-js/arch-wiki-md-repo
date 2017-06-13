@@ -19,7 +19,7 @@ Since v4.2.1, [tvheadend](https://aur.archlinux.org/packages/tvheadend/) has bee
 
 HDHomeRun support should be working by default in the [TVheadend](https://aur.archlinux.org/packages/TVheadend/) package.
 
-By default the [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/) and [tvheadend](https://aur.archlinux.org/packages/tvheadend/) do not have HDHomeRun support enabled. To enable you will need to edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and add `libhdhomerun` to the [depends](/index.php/PKGBUILD#depends "PKGBUILD") list. Finally remove `--disable-hdhomerun_static` and add `--enable-hdhomerun_client` in *build*.
+By default the [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/) and [tvheadend](https://aur.archlinux.org/packages/tvheadend/) do not have HDHomeRun support enabled. To enable you will need to edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and add `libhdhomerun` to the [depends](/index.php/PKGBUILD#depends "PKGBUILD") list. Finally remove `--disable-hdhomerun_static` and replace with `--enable-hdhomerun_client` in *build*.
 
 ## Usage
 

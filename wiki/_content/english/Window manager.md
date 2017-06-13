@@ -186,7 +186,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[https://github.com/baskerville/bspwm](https://github.com/baskerville/bspwm) || [bspwm](https://www.archlinux.org/packages/?name=bspwm)
 
-*   **EXWM** — EXWM (Emacs X Window Manager) is a full-featured tiling X window manager for Emacs built on top of XELB. It features hybrid layout modes (tiling & stacking), dynamic workspace support, multi-monitor support, built-in compositing manager, and a system tray.
+*   **[EXWM](/index.php/EXWM "EXWM")** — EXWM (Emacs X Window Manager) is a full-featured tiling X window manager for Emacs built on top of XELB. It features hybrid layout modes (tiling & stacking), dynamic workspace support, multi-monitor support, built-in compositing manager, and a system tray.
 
 	[https://github.com/ch11ng/exwm](https://github.com/ch11ng/exwm) || [emacs-exwm-git](https://aur.archlinux.org/packages/emacs-exwm-git/)
 

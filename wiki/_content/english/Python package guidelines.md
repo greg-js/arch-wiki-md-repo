@@ -19,9 +19,9 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 ## Package naming
 
-For Python 3 libraries, use `python-*modulename*`. For applications, use the program name. In either case, the package name should be entirely lowercase.
+For Python 3 libraries use `python-*modulename*`. Also use the prefix if the package provides a program that is strongly coupled to the Python ecosystem (e.g. pip or tox). For other applications, use only the program name. In either case, the package name should be entirely lowercase.
 
-Python 2 libraries should instead be named `python2-*modulename*`.
+The same applies to Python 2 only that the prefix (if needed) is `python2-`.
 
 ### Versioned packages
 

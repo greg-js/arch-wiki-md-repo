@@ -117,8 +117,8 @@ lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 virtualenv/bin/python3.6 -> python3
 Now add the following lines to your `~/.bashrc`:
 
 ```
-$ export WORKON_HOME=~/.virtualenvs
-$ source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 ```
 
@@ -129,6 +129,8 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
 
 ```
+
+The line `source /usr/bin/virtualenvwrapper.sh` can cause some slowdown when starting a new shell. To fix this try using `source /usr/bin/virtualenvwrapper_lazy.sh`, which will load virtualenvwrapper the first time a virtualenvwrapper function is called.
 
 If you are not using python3 by default (check the output of `python --version`) you need to add the following line to your `~/.bashrc` prior sourcing the `virtualenvwrapper.sh` script.
 

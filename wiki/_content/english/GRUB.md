@@ -351,37 +351,23 @@ These two commands assume the ESP Windows uses is mounted at `$esp`. There might
 
 ##### Windows installed in BIOS-MBR mode
 
-**Note:** GRUB supports booting `bootmgr` directly and chainload of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup.
+**Note:** GRUB supports booting `bootmgr` directly and chainload of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup; instructions for chainloading, however, are provided in the event that booting directly does not work.
 
 **Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually C:). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
 
-Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. First, find the UUID of the NTFS file system of the Windows's SYSTEM PARTITION where the `bootmgr` and its files reside. For example, if Windows `bootmgr` exists at `/media/SYSTEM_RESERVED/bootmgr`:
+**Booting Directly Method**
 
-For Windows Vista/7/8/8.1/10:
+Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS-MBR mode:
 
-```
-# grub-probe --target=fs_uuid /media/SYSTEM_RESERVED/bootmgr
-69B235F6749E84CE
+**Note:** These menuentries will work only in Legacy BIOS boot mode. It WILL NOT WORK in uefi installed grub(2). See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
-```
-
-```
-# grub-probe --target=hints_string /media/SYSTEM_RESERVED/bootmgr
---hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1
-
-```
-
-**Note:** For Windows XP, replace `bootmgr` with `NTLDR` in the above commands. And note that there may not be a separate SYSTEM_RESERVED partition; just probe the file NTLDR on your Windows partition.
-
-Then, add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS-MBR mode:
-
-**Note:** These menuentries will work only in Legacy BIOS boot mode. It WILL NOT WORK in uefi installed grub(2). See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows").
+*In both examples* 69B235F6749E84CE *is the partition UUID which can be found with command* lsblk --fs*.*
 
 For Windows Vista/7/8/8.1/10:
 
 ```
 if [ "${grub_platform}" == "pc" ]; then
-  menuentry "Microsoft Windows Vista/7/8/8.1 BIOS-MBR" {
+  menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS-MBR" {
     insmod part_msdos
     insmod ntfs
     insmod search_fs_uuid
@@ -409,22 +395,35 @@ fi
 
 ```
 
-In both examples *69B235F6749E84CE* is the partition UUID which can be found with command *lsblk --fs*.
-
-**Note:** In some cases, mine, I have installed GRUB before a clean Windows 8, you cannot boot Windows having an error with `\boot\bcd` (error code `0xc000000f`). You can fix it going to Windows Recovery Console (cmd from install disk) and executing:
+**Note:** In some cases, GRUB may be installed without a clean Windows 8, in which case you cannot boot Windows without having an error with `\boot\bcd` (error code `0xc000000f`). You can fix it by going to Windows Recovery Console (cmd from install disk) and executing:
 ```
 x:\> "bootrec.exe /fixboot" 
 x:\> "bootrec.exe /RebuildBcd".
 
 ```
 
-Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in Troubleshooting menu - it won't wipe out GRUB but will fix most error.
+Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in the Troubleshooting menu - it won't wipe out GRUB but will fix most errors.
 
-Also you'd better keep plugged both target harddrive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
+Also you'd better keep plugged in both the target hard drive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
 
 `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/nn_custom`. Where `nn` defines the precendence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
 
 **Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
+
+**Chainloading Method**
+
+In the case that booting directly does not work, the method for booting by chainloading is provided. This is assuming booting Windows is located on the first partition, as indicated by `(hd0,1)`. The code below should be added to `/etc/grub.d/40_custom`. Then, regenerate `grub.cfg` according the instructions above regarding `grub-mkconfig`:
+
+```
+if [ "${grub_platform}" == "pc" ]; then
+ menuentry "Microsoft Windows (Vista/7/8/8.1/10)" {
+   insmod ntfs
+   set root=(hd0,1)
+   chainloader +1
+}
+fi
+
+```
 
 ### LVM
 

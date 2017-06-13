@@ -18,6 +18,7 @@ Vagrant uses a mostly declarative `Vagrantfile` to define virtualised machines. 
     *   [5.2 Virtual machine is not network accessible from the Arch host OS](#Virtual_machine_is_not_network_accessible_from_the_Arch_host_OS)
     *   [5.3 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)](#.27vagrant_up.27_hangs_on_NFS_mounting_.28Mounting_NFS_shared_folders....29)
     *   [5.4 Error starting network 'default': internal error: Failed to initialize a valid firewall backend](#Error_starting_network_.27default.27:_internal_error:_Failed_to_initialize_a_valid_firewall_backend)
+    *   [5.5 Unable to ssh to vagrant guest](#Unable_to_ssh_to_vagrant_guest)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -49,6 +50,8 @@ $ CONFIGURE_ARGS='with-ldflags=-L/opt/vagrant/embedded/lib with-libvirt-include=
 ```
 
 A normal `vagrant up` fails with `incompatible library version` due to [bug #541](https://github.com/vagrant-libvirt/vagrant-libvirt/issues/541). As a workaround, create and run [[1]](https://gist.github.com/j883376/d90933620c7ed14daa4e0963e005377f).
+
+As of June 2017 (Vagrant version 1.9.5-1), a normal installation of this plugin fails, and the workaround presented for version 1.8.5 doesn't work on Arch Linux. [error and workaround_for_version_1.9.5-1](https://gist.github.com/j883376/d90933620c7ed14daa4e0963e005377f#gistcomment-2115266) Downgrading vagrant-substrate fixes this issue.
 
 Once the plugin is installed the `libvirt` provider will be available:
 
@@ -149,6 +152,10 @@ Installing [net-tools](https://www.archlinux.org/packages/?name=net-tools) packa
 ### Error starting network 'default': internal error: Failed to initialize a valid firewall backend
 
 Most likely the firewall dependencies were not installed. [Install](/index.php/Install "Install") the [ebtables](https://www.archlinux.org/packages/?name=ebtables) and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) packages and [restart](/index.php/Restart "Restart") the `libvirtd` systemd service.
+
+### Unable to ssh to vagrant guest
+
+Check that virtualization is enabled in your BIOS. Because vagrant reports that the vm guest is booted, you would think that all was well with virtualization, but some vagrant boxes (e.g. tantegerda1/archlinux) allow you to get all the way to the ssh stage before the lack of cpu virtualization capabilities bites you.
 
 ## See also
 

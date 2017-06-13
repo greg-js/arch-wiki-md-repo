@@ -31,4 +31,4 @@ Rsu-client is an unofficial RuneScape Unix/Linux Client and it's currently the r
 
 ### Runescape UI flicker
 
-Try toggling on/off various Interface settings - might fix the problem temporarily until next login. If anyone is wiling to test this, it would be greatly appreciated. The flickering is a real issue, and the j-mods are not responding.
+Issue has been solved by the [2017-06-11 patch](http://services.runescape.com/m=forum/l=0/sl=0/forums.ws?15,16,160,65917986).

@@ -155,7 +155,7 @@ For a system with a permanent IP address, that permanent IP address should be us
 
 ### Check the status
 
-[udev](/index.php/Udev "Udev") should detect your network interface card (see [Wikipedia:Network interface controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller")) and automatically load the necessary module at start up. Check the "Ethernet controller" entry (or similar) from the `lspci -v` output. It should tell you which kernel module contains the driver for your network device. For example:
+[udev](/index.php/Udev "Udev") should detect your [network interface controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") and automatically load the necessary module at start up. Check the "Ethernet controller" entry (or similar) from the `lspci -v` output. It should tell you which kernel module contains the driver for your network device. For example:
 
  `$ lspci -v` 
 ```

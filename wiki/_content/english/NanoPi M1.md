@@ -81,7 +81,7 @@ if load ${devtype} ${devnum}:${bootpart} 0x48000000 /boot/uImage; then
 fi
 ```
 
-Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools)
+Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools):
 
 ```
 # mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "NanoPi M1 Boot Script" -d boot.cmd mnt/boot/boot.scr

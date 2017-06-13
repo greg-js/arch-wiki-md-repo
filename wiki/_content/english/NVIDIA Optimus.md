@@ -8,6 +8,8 @@ NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete 
 
 *   using the third-party Bumblebee program to implement Optimus-like functionality, which offers GPU switching and powersaving but requires extra configuration
 
+*   using nvidia-xrun. Utility to run separate X with discrete nvidia graphics with full performance
+
 These options are explained in detail below.
 
 ## Contents
@@ -28,6 +30,7 @@ These options are explained in detail below.
     *   [3.4 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
+*   [6 Using nvidia-xrun](#Using_nvidia-xrun)
 
 ## Disabling switchable graphics
 
@@ -266,3 +269,7 @@ The open-source [nouveau](/index.php/Nouveau "Nouveau") driver ([xf86-video-nouv
 ## Using Bumblebee
 
 If you wish to use Bumblebee, which will implement powersaving and some other useful features, see the wiki article on [Bumblebee](/index.php/Bumblebee "Bumblebee").
+
+## Using nvidia-xrun
+
+Install from ([nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)),follow [https://github.com/Witko/nvidia-xrun](https://github.com/Witko/nvidia-xrun)

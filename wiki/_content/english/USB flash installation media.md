@@ -66,6 +66,8 @@ See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more 
 
 Since Rufus does not care if the drive is properly formatted or not and provides a GUI it may be the easiest and most robust tool to use.
 
+**Note:** Be sure to select **DD** mode or the image will be transferred incorrectly.
+
 ##### Using USBwriter
 
 This method does not require any workaround and is as straightforward as `dd` under Linux. Just download the Arch Linux ISO, and with local administrator rights use the [USBwriter](http://sourceforge.net/p/usbwriter/wiki/Documentation/) utility to write to your USB flash memory.

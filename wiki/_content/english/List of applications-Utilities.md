@@ -14,33 +14,34 @@
         *   [1.3.2 KMS-based](#KMS-based)
         *   [1.3.3 framebuffer-based](#framebuffer-based)
     *   [1.4 Text editors](#Text_editors)
-    *   [1.5 Integrated development environments](#Integrated_development_environments)
-    *   [1.6 Build automation](#Build_automation)
-    *   [1.7 Files](#Files)
-        *   [1.7.1 File managers](#File_managers)
-            *   [1.7.1.1 Console](#Console)
-            *   [1.7.1.2 Graphical](#Graphical)
-        *   [1.7.2 Trash management](#Trash_management)
-        *   [1.7.3 File synchronization](#File_synchronization)
-        *   [1.7.4 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [1.7.4.1 Console](#Console_2)
-            *   [1.7.4.2 Graphical](#Graphical_2)
-        *   [1.7.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [1.7.6 Batch renamers](#Batch_renamers)
-        *   [1.7.7 Search and replace](#Search_and_replace)
-        *   [1.7.8 Finders](#Finders)
-    *   [1.8 Disk cleaning](#Disk_cleaning)
-    *   [1.9 Disk usage display](#Disk_usage_display)
-    *   [1.10 Clock synchronization](#Clock_synchronization)
-    *   [1.11 System monitoring](#System_monitoring)
-    *   [1.12 System information viewers](#System_information_viewers)
-        *   [1.12.1 Console](#Console_3)
-        *   [1.12.2 Graphical](#Graphical_3)
-    *   [1.13 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [1.14 Power management](#Power_management)
-    *   [1.15 Clipboard managers](#Clipboard_managers)
-    *   [1.16 Package management](#Package_management)
-    *   [1.17 Input methods](#Input_methods)
+    *   [1.5 Hex editors](#Hex_editors)
+    *   [1.6 Integrated development environments](#Integrated_development_environments)
+    *   [1.7 Build automation](#Build_automation)
+    *   [1.8 Files](#Files)
+        *   [1.8.1 File managers](#File_managers)
+            *   [1.8.1.1 Console](#Console)
+            *   [1.8.1.2 Graphical](#Graphical)
+        *   [1.8.2 Trash management](#Trash_management)
+        *   [1.8.3 File synchronization](#File_synchronization)
+        *   [1.8.4 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [1.8.4.1 Console](#Console_2)
+            *   [1.8.4.2 Graphical](#Graphical_2)
+        *   [1.8.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [1.8.6 Batch renamers](#Batch_renamers)
+        *   [1.8.7 Search and replace](#Search_and_replace)
+        *   [1.8.8 Finders](#Finders)
+    *   [1.9 Disk cleaning](#Disk_cleaning)
+    *   [1.10 Disk usage display](#Disk_usage_display)
+    *   [1.11 Clock synchronization](#Clock_synchronization)
+    *   [1.12 System monitoring](#System_monitoring)
+    *   [1.13 System information viewers](#System_information_viewers)
+        *   [1.13.1 Console](#Console_3)
+        *   [1.13.2 Graphical](#Graphical_3)
+    *   [1.14 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [1.15 Power management](#Power_management)
+    *   [1.16 Clipboard managers](#Clipboard_managers)
+    *   [1.17 Package management](#Package_management)
+    *   [1.18 Input methods](#Input_methods)
 
 ## Utilities
 
@@ -237,6 +238,14 @@ In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer 
 ### Text editors
 
 See [List of applications/Documents#Text editors](/index.php/List_of_applications/Documents#Text_editors "List of applications/Documents").
+
+### Hex editors
+
+See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Comparison_of_hex_editors "wikipedia:Comparison of hex editors").
+
+*   **hyx** — A minimalistic but powerful (hex/ASCII, insert/replace/delete, copy/paste, undo/redo, search, colors, vim-inspired controls) console hex editor.
+
+	[https://yx7.cc/code/](https://yx7.cc/code/) || [hyx](https://aur.archlinux.org/packages/hyx/)
 
 ### Integrated development environments
 

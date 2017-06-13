@@ -34,7 +34,7 @@ Sendmail 是来自 UNIX 世界的经典 SMTP 服务器。Arch Linux 还提供了
 
 ## 添加用户
 
-为每个需要接收邮件的用户创建 [[Users and groups|Linux 用户，每个用户会拥有类似 username@your-domain.com 的电子邮件地址。但是如果你想要添加 *mail-only 账户*，即仅能处理电子邮件，但不能使用 shell 或 X 进行登录的账户，您可以按如下步骤添加该类账户：
+为每个需要接收邮件的用户创建 [Linux 用户](/index.php/Users_and_groups "Users and groups")，每个用户会拥有类似 username@your-domain.com 的电子邮件地址。但是如果你想要添加 *mail-only 账户*，即仅能处理电子邮件，但不能使用 shell 或 X 进行登录的账户，您可以按如下步骤添加该类账户：
 
 ```
 # useradd -m -s /usr/bin/nologin *username*

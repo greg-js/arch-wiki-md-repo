@@ -13,8 +13,9 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
         *   [2.1.1 Bootstrap Arch Linux i686 inside x86_64 host](#Bootstrap_Arch_Linux_i686_inside_x86_64_host)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
-    *   [2.3 Enable container on boot](#Enable_container_on_boot)
-    *   [2.4 Build and test packages](#Build_and_test_packages)
+    *   [2.3 Creating Private Users (Unprivileged Containers)](#Creating_Private_Users_.28Unprivileged_Containers.29)
+    *   [2.4 Enable container on boot](#Enable_container_on_boot)
+    *   [2.5 Build and test packages](#Build_and_test_packages)
 *   [3 Management](#Management)
     *   [3.1 machinectl](#machinectl)
     *   [3.2 systemd toolchain](#systemd_toolchain)
@@ -117,6 +118,42 @@ Unlike Arch, Debian and Ubuntu will not let you login without a password on firs
 # logout
 
 ```
+
+### Creating Private Users (Unprivileged Containers)
+
+Systemd-nspawn supports unprivileged containers, though the containers need to be booted as root. The easiest way to do this is let systemd-nspawn decide everything.
+
+Archlinux has turned off user namespaces for security reasons, hence to get this feature [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) is needed.
+
+```
+# systemd-nspawn -UD myContainer
+# passwd
+# logout
+# systemd-nspawn -bUD myContainer
+
+```
+
+Here systemd-nspawn will see if the owner of the directory is being used, if not it will use that as base and 65536 IDs above it. On the other hand if the UID/GID is in use it will randomly pick an unused range of 65536 IDs form 524288 - 1878982656 and use them.
+
+**Note:** The base of the range chosen is always a multiple of 65536.
+
+**Note:** `-U` and `--private-users=pick` is the same, if kernel supports namespaces
+
+**Note:** `--private-users=pick` also implies `--private-users-chown`
+
+You can also Specify the UID/GID of the container. This can be done as follows
+
+```
+# systemd-nspawn -D myContainer --private-users=1354956800:65536 --private-users-chown
+# passwd
+# logout
+# systemd-nspawn -bUD myContainer
+
+```
+
+**Tip:** While booting the container you could still use `--private-users=1354956800:65536` with `--private-users-chown`, but it is unnecessarily complicated, let `-U` handle it after the assigning the UIDs/GIDs
+
+**Note:** In `--private-users=1354956800:65536`, 65536 is the range of IDs to assign, it is however optional and if not specified, 65536 IDs will automatically be assigned
 
 ### Enable container on boot
 

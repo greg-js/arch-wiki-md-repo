@@ -21,8 +21,9 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
         *   [5.1.4 Unobfuscating the Database](#Unobfuscating_the_Database)
         *   [5.1.5 Syncing](#Syncing)
     *   [5.2 iPod Classic/Nano (3rd generation)](#iPod_Classic.2FNano_.283rd_generation.29)
-    *   [5.3 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
-    *   [5.4 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
+    *   [5.3 iPod Nano 5th generation](#iPod_Nano_5th_generation)
+    *   [5.4 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
+    *   [5.5 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
 *   [6 iPod management apps](#iPod_management_apps)
 *   [7 See also](#See_also)
 
@@ -284,7 +285,7 @@ You will still need to reload the MobileMusicPlayer process. If your device is n
 
 ### iPod Classic/Nano (3rd generation)
 
-You need to set up the iPod to make libgpod able to find its FireWire ID. For this, you will need to get your FireWire ID manually
+You need to set up the iPod to make libgpod able to find its Firewire ID. For this, you will need to get your FireWire ID manually
 
 1) Mount the iPod as a rw mount point. In the following example, I will use `/mnt/ipod`.
 
@@ -308,6 +309,14 @@ this should print a 16 character long string like 00A1234567891231 (it will have
 
 Your iPod can now be managed with Amarok or gtkpod.
 
+### iPod Nano 5th generation
+
+Follow the instructions below in order to set up the FirewireID then go to following URL – [http://ihash.marcansoft.com/](http://ihash.marcansoft.com/) – and enter the serial number (the one used in the previous step) on the website. It will generate a file (named *HashInfo*) which you will place under the iPod_Control/Device/ directory. Unplug the iPod device and plug it back.
+
+All credits go to [https://wired-news.blogspot.it/2012/09/ipod-nano-5g-synchronization-issues-in.html](https://wired-news.blogspot.it/2012/09/ipod-nano-5g-synchronization-issues-in.html)
+
+**Note:** I tried to follow the above 3rd generation instructions but they were not enough. I don't know if this further step is needed also for the above mentioned iPod.
+
 ### iPod Shuffle 1st and 2nd generation
 
 Due to the simple structure of the Shuffle (compared to the "big" iPods), it is possible to use the player almost like any other USB flash MP3 player. What is necessary is [rebuild_db.py](http://sourceforge.net/projects/shuffle-db/files/latest/download) file stored in the iPod's root directory. Simply copy MP3 files onto the iPod Shuffle (sub-folders are allowed too) and run:
@@ -321,7 +330,7 @@ $ python2 /path/to/rebuild_db.py
 
 ### iPod Shuffle 4th generation
 
-To use your ipod shuffle 4g under linux you can use the python based command line tool [ipod-shuffle-4g](https://aur.archlinux.org/packages/ipod-shuffle-4g/). It also provides advanced voiceover and (auto)playlist generation support.
+In order to use this version of the iPod Shuffle under linux, you can use the python based command line tool [ipod-shuffle-4g](https://aur.archlinux.org/packages/ipod-shuffle-4g/). It also provides advanced voiceover and (auto)playlist generation support.
 
 ## iPod management apps
 

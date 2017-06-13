@@ -1134,6 +1134,7 @@ El abecedario del inglés está formado por veintiseis letras. Las tablas de aba
 | `**ripper:**` | extractor de audio |
 | `**ring:**` | anillo |
 | `**roaming:**` | conexión móvil internacional, roaming |
+| `**rolling-release**` | Lanzamiento continuo |
 | `**role:**` | papel (en el contexto de desempeñar un papel) |
 | `**root:**` | raiz (referido al sistema de archivos), superusuario, root (referido a la administración del sistema) |
 | `**root exploit:**` | explotación de root |
