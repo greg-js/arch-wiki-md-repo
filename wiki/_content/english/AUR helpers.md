@@ -183,14 +183,14 @@ The columns have the following meaning:
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[5]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
-| bauerbill | Python3 | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
-| burgaur | Python3/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
+| bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
+| burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
 | cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | S | No automatic builds, regex support, sort by votes/popularity |
 | owlman | Bash/C | Yes | Yes | Yes | No | Partial | No | None | S | Wrapper for *cower* |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |
-| pbget | Python3 | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
-| PKGBUILDer | Python3 | Optional | Yes | Yes | Yes | Partial [[6]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
+| pbget | Python | Yes | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds |
+| PKGBUILDer | Python | Optional | Yes | Yes | Yes | Partial [[6]](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | None | P | Automatic builds by default, use `-F` to disable; multilingual |
 | prm | Bash | Yes [[7]](https://git.fleshless.org/prm/commit/?id=e7252333b07975ea40f526269ce995e375e627bf) | N/A | Yes | N/A | N/A | Yes | None | S | No automatic builds, ABS support |
 | repoctl | Go | Yes | N/A | Yes [[8]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | N/A | N/A | No | zsh | S | No automatic builds, local repository support |
 | spinach | Bash | No [[9]](https://github.com/floft/spinach/blob/master/spinach#L287) | Yes | No | No | No | No | None | S | - |

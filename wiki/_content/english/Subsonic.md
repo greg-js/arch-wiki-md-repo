@@ -1,4 +1,4 @@
-**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR"). As of version 6, the software is not open source anymore.
+**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR"). As of version 6, the software is not open source anymore, although an open-source fork exists ([libresonic](https://aur.archlinux.org/packages/libresonic/)).
 
 ## Contents
 
@@ -13,7 +13,8 @@
     *   [2.2 UTF-8 file names not added to the database](#UTF-8_file_names_not_added_to_the_database)
     *   [2.3 Accessing the database](#Accessing_the_database)
 *   [3 Madsonic](#Madsonic)
-*   [4 External links](#External_links)
+*   [4 Libresonic](#Libresonic)
+*   [5 External links](#External_links)
 
 ## Configuration
 
@@ -205,6 +206,10 @@ $ java -jar /usr/share/java/sqltool.jar --inlineRc=url=jdbc:hsqldb:file:db.copy/
 Madsonic is a (non-free) fork of Subsonic with extra features and is available in AUR.
 
 Once you start the server, pay close attention to the Transcoding options, as you will probably have to change the command from "Audioffmpeg" to "ffmpeg".
+
+## Libresonic
+
+[Libresonic](https://github.com/Libresonic/libresonic) is a fork of Subsonic that continues the open-source licence. It has also removed the paid-licence checks from Subsonic, hence it is also free [as in beer](https://en.wikipedia.org/wiki/Free_as_in_free_beer).
 
 ## External links
 

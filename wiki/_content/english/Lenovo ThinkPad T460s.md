@@ -81,7 +81,9 @@ video=SVIDEO-1:d
 
 ### Fingerprint Sensor
 
-The fingerprint sensor built into the T460s is currently not supported by [Fprint](/index.php/Fprint "Fprint").
+The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+
+Open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
 
 ### ALSA Beep
 
@@ -93,9 +95,9 @@ Fn+Esc to enable FnLk which will make your function keys work.
 
 ### Video Issues
 
-With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
+With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
-This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
+This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
 
 ### Smartcard Reader
 

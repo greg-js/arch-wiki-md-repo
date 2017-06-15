@@ -159,7 +159,7 @@ The sources can be patched either directly in the PKGBUILD or through `dkms.conf
 
 Loading and unloading modules should be left to the user. Consider the possibility a module may crash when loaded.
 
-Also, please note that you do not have to call `depmod` explicitly to update the dependencies of your kernel module. Pacman is now calling DKMS `dkms install` and `dkms remove` automatically as hooks. `dkms install` is making sure `depmod` is called at the end of its process. `dkms install` depends on `dkms build` (to build the source against the current kernel), which itself depends on `dkms add` (to add a symlink from `/var/lib/dkms/<package>/<version>/source` to `/usr/src/<package>`.
+Also, please note that you do not have to call `depmod` explicitly to update the dependencies of your kernel module. Pacman is now calling DKMS `dkms install` and `dkms remove` automatically as hooks. `dkms install` is making sure `depmod` is called at the end of its process. `dkms install` depends on `dkms build` (to build the source against the current kernel), which itself depends on `dkms add` (to add a symlink from `/var/lib/dkms/<package>/<version>/source` to `/usr/src/<package>`).
 
 ### namcap output
 

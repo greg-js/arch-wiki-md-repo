@@ -1,3 +1,11 @@
+## Contents
+
+*   [1 BIOS](#BIOS)
+*   [2 Installation](#Installation)
+*   [3 Networking](#Networking)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Frequent Kernel Panics](#Frequent_Kernel_Panics)
+
 ## BIOS
 
 Ensure that you have the latest BIOS and EC firmware from [MSI's website](https://www.msi.com/product/notebook/support/GT72-6QE-DOMINATOR-PRO-G.html#!type=download). Once you have updated, disable C-States and [Secure Boot](/index.php/Secure_Boot "Secure Boot") in the BIOS.
@@ -17,3 +25,11 @@ This notebook comes with "Killer" Ethernet and Wireless PCI adapters (Qualcomm A
 3.  Move both files to `/lib/firmware/ath10k/QCA6174/hw3.0/`
 
 Reboot and then the built-in wireless NIC should work.
+
+## Troubleshooting
+
+### Frequent Kernel Panics
+
+By default, the linux kernel may have issues with the Intel Skylake architecture of this notebook resulting in frequent kernel panics. To resolve this issue, add these options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+
+	`nomodeset nohz=off clocksource=tsc`

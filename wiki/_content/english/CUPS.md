@@ -20,9 +20,9 @@
     *   [5.2 Web interface](#Web_interface)
     *   [5.3 GUI applications](#GUI_applications)
 *   [6 Configuration](#Configuration)
-    *   [6.1 Allowing admin authentication through PolicyKit](#Allowing_admin_authentication_through_PolicyKit)
-    *   [6.2 cups-browsed](#cups-browsed)
-    *   [6.3 Printer sharing](#Printer_sharing)
+    *   [6.1 cups-browsed](#cups-browsed)
+    *   [6.2 Print servers and remote administration](#Print_servers_and_remote_administration)
+    *   [6.3 Allowing admin authentication through PolicyKit](#Allowing_admin_authentication_through_PolicyKit)
     *   [6.4 Without a local CUPS server](#Without_a_local_CUPS_server)
 *   [7 Troubleshooting](#Troubleshooting)
 *   [8 See also](#See_also)
@@ -320,6 +320,14 @@ The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cup
 
 By default, all logs are sent to files in `/var/log/cups/`. By changing the values of the `AccessLog`, `ErrorLog`, and `PageLog` directives in `/etc/cups/cups-files.conf` to `syslog`, CUPS can be made to log to the [systemd journal](/index.php/Systemd_journal "Systemd journal") instead. See [the fedora wiki page](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) for information on the original proposed change.
 
+### cups-browsed
+
+CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"), and start both `avahi-daemon.service` and `cups-browsed.service`. Jobs are sent directly to the printer without any processing so the created queues may not work, however driverless printers such as those supporting [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) or [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") should work out of the box.
+
+### Print servers and remote administration
+
+See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing") and [CUPS/Printer sharing#Remote administration](/index.php/CUPS/Printer_sharing#Remote_administration "CUPS/Printer sharing").
+
 ### Allowing admin authentication through PolicyKit
 
 [PolicyKit](/index.php/PolicyKit "PolicyKit") can be configured to allow users to configure printers using a GUI without the admin password.
@@ -335,14 +343,6 @@ polkit.addRule(function(action, subject) {
     } 
 });
 ```
-
-### cups-browsed
-
-CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"), and start both `avahi-daemon.service` and `cups-browsed.service`. Jobs are sent directly to the printer without any processing so the created queues may not work, however driverless printers such as those supporting [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) or [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") should work out of the box.
-
-### Printer sharing
-
-See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing").
 
 ### Without a local CUPS server
 

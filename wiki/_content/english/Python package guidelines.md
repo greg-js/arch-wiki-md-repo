@@ -38,7 +38,7 @@ However, for managing Python packages from within PKGBUILDs, the standard-provid
 A *distutils* example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto). It follows the form:
 
 ```
-*<python version>* setup.py install --root="$pkgdir/" --prefix=/usr --optimize=1
+*<python version>* setup.py install --root="$pkgdir/" --optimize=1
 
 ```
 

@@ -7,6 +7,7 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
 *   and configuration interfaces common in [desktop environments](/index.php/Desktop_environments "Desktop environments").
 
 *   If you are using [Wayland](/index.php/Wayland "Wayland"), the events are controlled via [libinput](/index.php/Libinput "Libinput"). It is the compositor's job to expose the settings brought by libinput. There is currently no standard way to change settings across compositors.[[1]](https://www.reddit.com/r/gnome/comments/3upay2/wayland_where_are_the_mouse_acceleration_options/)
+*   [Gnome](/index.php/Gnome "Gnome") manages mouse acceleration by itself. A choice between "adaptive" and "flat" profiles can be chosen by installing [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) and editing the value in org/gnome/desktop/peripherals/mouse/acceleration-profile. Alternatively, [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) can also be used to edit the org/gnome/desktop/peripherals/mouse/acceleration-profile.
 
 ## Contents
 

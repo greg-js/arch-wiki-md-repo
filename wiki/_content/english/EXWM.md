@@ -7,27 +7,29 @@ EXWM is a [window manager](/index.php/Window_manager "Window manager") based on 
     *   [2.1 Multi-monitor](#Multi-monitor)
     *   [2.2 System tray](#System_tray)
     *   [2.3 Compositing manager](#Compositing_manager)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Screen tearing in Firefox](#Screen_tearing_in_Firefox)
+*   [4 See also](#See_also)
 
 ## Installing
 
 Make sure you have [emacs](https://www.archlinux.org/packages/?name=emacs) installed. You will also need [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit).
 
-Install EXWM from within Emacs --- `M-x package-install exwm RET`.
+Install EXWM from within Emacs: `M-x package-install exwm RET`.
 
-Edit [xinitrc](/index.php/Xinitrc "Xinitrc") and add
+Edit [xinitrc](/index.php/Xinitrc "Xinitrc") and add:
 
 ```
-   exec emacs
+exec emacs
 
 ```
 
 In your emacs init file, add:
 
 ```
-   (require 'exwm)
-   (require 'exwm)
-   (exwm-config-default)
+(require 'exwm)
+(require 'exwm)
+(exwm-config-default)
 
 ```
 
@@ -47,7 +49,7 @@ EXWM is a full X window manager, so Emacs manages X windows such as your browser
 
 ### Multi-monitor
 
-EXWM can handle multi-monitor through the (optional) `exwm-randr` package. You will need to install [xrandr](https://www.archlinux.org/packages/?name=xrandr) and enable exwm-randr in your emacs configuration file before calling `(exwm-enable)`. You will need to adjust the values of "DP-1" and "DP-2" to the values your computer uses; call `xrandr` at the command line with no arguments to see available outputs.
+EXWM can handle multi-monitor through the (optional) `exwm-randr` package. You will need to install [xrandr](/index.php/Xrandr "Xrandr") and enable exwm-randr in your emacs configuration file before calling `(exwm-enable)`. You will need to adjust the values of "DP-1" and "DP-2" to the values your computer uses; call `xrandr` at the command line with no arguments to see available outputs.
 
 ```
 (require 'exwm-randr)
@@ -74,6 +76,8 @@ You may need to adjust the height afterwards; this can be adjusted with the `exw
 
 ### Compositing manager
 
+**Warning:** The compositing manager may cause issues. If EXWM slows to a crawl, try turning off the cm
+
 EXWM includes a compositing manager, but it is not enabled by default. To enable it, load the followng:
 
 ```
@@ -83,6 +87,12 @@ EXWM includes a compositing manager, but it is not enabled by default. To enable
 ```
 
 Alternatively, you may start/stop the compositing manager manually by omitting `(exwm-cm-enable)` and instead calling `exwm-cm-start` or `exwm-cm-stop` manually.
+
+## Troubleshooting
+
+### Screen tearing in Firefox
+
+Try turning off smooth scrolling in Preferences > Advanced > Use Smooth Scrolling
 
 ## See also
 

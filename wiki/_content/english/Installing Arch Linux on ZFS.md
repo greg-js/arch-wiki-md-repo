@@ -16,6 +16,7 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
 *   [5 Install and configure Arch Linux](#Install_and_configure_Arch_Linux)
 *   [6 Install and configure the bootloader](#Install_and_configure_the_bootloader)
     *   [6.1 For BIOS motherboards](#For_BIOS_motherboards)
+        *   [6.1.1 error: failed to get canonical path of](#error:_failed_to_get_canonical_path_of)
     *   [6.2 For UEFI motherboards](#For_UEFI_motherboards)
 *   [7 Unmount and restart](#Unmount_and_restart)
 *   [8 After the first boot](#After_the_first_boot)
@@ -266,59 +267,91 @@ When using systemd in the initrd, you need to install [mkinitcpio-sd-zfs](https:
 
 ### For BIOS motherboards
 
-Follow [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") to install GRUB onto your disk. `grub-mkconfig` does not properly detect the ZFS filesystem, so it is necessary to edit `grub.cfg` manually:
+Install GRUB onto your disk as instructed here: [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB"). `grub-mkconfig` fails to properly generate entries for systems hosted on ZFS. Users can either attempt to correct the output of `grub-mkconfig` or generate and edit `grub.cfg` manually. The GRUB [manual](https://www.gnu.org/software/grub/manual/grub.html#Configuration) provides detailed information on manually configuring the software which you can supplement with [GRUB](/index.php/GRUB "GRUB") and [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks").
 
- `/boot/grub/grub.cfg` 
-```
-set timeout=2
-set default=0
-
-# (0) Arch Linux
-menuentry "Arch Linux" {
-    linux /vmlinuz-linux zfs=zroot rw
-    initrd /initramfs-linux.img
-}
-
-```
-
-if you did not create a separate /boot partition, kernel and initrd paths have to be in the following format:
+When booting from ZFS, kernel and initrd paths have to be in the following format:
 
 ```
 /dataset/@/actual/path  
 
 ```
 
-Example with Arch installed on the main dataset (not recommended - this will not allow for boot environments):
+Example with Arch installed on the root dataset:
+
+ `/boot/grub/grub.cfg` 
+```
+set timeout=5
+set default=0
+
+menuentry "Arch Linux" {
+    set root='hd0,gpt2'
+    linux /@/boot/vmlinuz-linux zfs=zroot rw
+    initrd /@/boot/initramfs-linux.img
+}
 
 ```
-linux /@/boot/vmlinuz-linux zfs=zroot rw
-initrd /@/boot/initramfs-linux.img
+
+Example with Arch installed on a nested dataset:
+
+ `/boot/grub/grub.cfg` 
+```
+set timeout=5
+set default=0
+
+menuentry "Arch Linux" {
+    set root='hd0,gpt2'
+    linux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
+    initrd /ROOT/default/@/boot/initramfs-linux.img
+}
 
 ```
 
-Example with Arch installed on a separate dataset zroot/ROOT/default:
+Example with a separate non-ZFS /boot partition and Arch installed on a nested dataset:
+
+ `/boot/grub/grub.cfg` 
+```
+set timeout=5
+set default=0
+
+menuentry "Arch Linux" {
+    set root='hd0,gpt2'
+    linux /vmlinuz-linux zfs=zroot/ROOT/default rw
+    initrd /initramfs-linux.img
+}
 
 ```
-linux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
-initrd /ROOT/default/@/boot/initramfs-linux.img
+
+#### error: failed to get canonical path of
+
+[GRUB](https://www.archlinux.org/packages/?repo=Core&name=grub) is built without ZFS support resulting in grub-mkconfig and grub-install failing with the following errors:
 
 ```
+# grub-mkconfig -o /boot/grub/grub.cfg
+/usr/bin/grub-probe: error: failed to get canonical path of `/dev/bus-Your_Disk_ID-part#'
 
-[GRUB](https://www.archlinux.org/packages/?repo=Core&name=grub) is affected by an issue that results in grub-install failing with the following error while using ZFS:
+```
 
 ```
 grub-install: error: failed to get canonical path of `/dev/bus-Your_Disk_ID-part#'
 
 ```
 
-While this issue has been resolved upstream the relevant changes have not yet been included in one of GRUB’s releases. Building GRUB from a source snapshot provides a mended copy of the bootloader that installs successfully. There is a PKGBUILD available via the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") to facilitate compiling and installing GRUB using the package management toolchain: [grub-git](https://aur.archlinux.org/packages/grub-git/).
+Rebuilding GRUB with ZFS support via the [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") will ensure the tools properly support the filesystem and alleviate the errors. The [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") provides a set of tools that can be used to create and package software for installation on Arch Linux systems. [subversion](https://www.archlinux.org/packages/?name=subversion) is utilised to access the package sources and must be installed before proceeding. The base and base-devel package groups must be installed prior to building packages and GRUB also requires: autogen, fuse2, help2man, python, rsync and ttf-dejavu to be present.
 
-It is also possible to resolve this issue employing the following workaround: create a symbolic link at the location GRUB is expecting to the regular Linux device name of the partition.
-
-```
-# ln -s /dev/sda# /dev/bus-Your_Disk_ID-part#
+After satisfying all of the prerequisites, checkout and build the GRUB package from source. The ABS tools do not allow building packages as root.
 
 ```
+$ svn checkout --depth=empty svn://svn.archlinux.org/packages
+$ cd packages
+$ svn update grub
+$ mkdir grub/build
+$ cp grub/trunk/* grub/build
+$ cd grub/build
+$ makepkg
+
+```
+
+It is also possible to workaround the issue, creating a symbolic link at the location GRUB's tools fail to resolve which points to the regular Linux device name where the affected ZFS pool is hosted masks the problem.
 
 ### For UEFI motherboards
 

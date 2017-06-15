@@ -22,6 +22,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [4.2 lsusb](#lsusb)
 *   [5 Configuration](#Configuration)
     *   [5.1 Smartcard Reader](#Smartcard_Reader)
+    *   [5.2 Fingerprint Reader](#Fingerprint_Reader)
 *   [6 See also](#See_also)
 
 ## firmware (e.g. bios and peripherals)
@@ -91,6 +92,12 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 
 ```
+
+### Fingerprint Reader
+
+The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+
+Open source Linux driver is being developed by reverse engineering the Windows driver. [[2]](https://github.com/nmikhailov/Validity90)
 
 ## See also
 

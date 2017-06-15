@@ -18,10 +18,10 @@ This article contains instruction on sharing printers between systems, be it bet
             *   [2.2.3.2 Manual configuration](#Manual_configuration)
             *   [2.2.3.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
 *   [3 Remote administration](#Remote_administration)
+    *   [3.1 Kerberos](#Kerberos)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
-    *   [4.2 Unable to add/modify a printer via SAMBA](#Unable_to_add.2Fmodify_a_printer_via_SAMBA)
-    *   [4.3 Permission errors on Windows](#Permission_errors_on_Windows)
+    *   [4.2 Permission errors on Windows](#Permission_errors_on_Windows)
 *   [5 Other operating systems](#Other_operating_systems)
 
 ## Between GNU/Linux systems
@@ -61,7 +61,7 @@ Listen <hostname>:631
 
 There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](http://localhost:631/help/network.html).
 
-After making any modifications, restart CUPS.
+After making any modifications, [restart](/index.php/Restart "Restart") the `org.cups.cupsd` service.
 
 If CUPS is started using socket activation, create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `org.cups.cupsd.socket` so that socket activation also works for remote connections:
 
@@ -99,26 +99,27 @@ The `org.cups.cupsd.service` service will be automatically started when a USB pr
 
 #### Sharing via IPP
 
-The **preferred way** to connect a Windows client to a Linux print server is using [IPP](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol"). It is a standard printer protocol based on HTTP, allowing you all ways to profit from port forwarding, tunneling etc. The configuration is **very easy** and this way is less error-prone than using Samba. IPP is natively supported by Windows **since Windows 2000**.
+The **preferred way** to connect a Windows client to a Linux print server is using [IPP](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol"), as the configuration is simpler than using Samba. It is a standard printer protocol based on HTTP, allowing you to use port forwarding, tunneling etc. IPP has been natively supported by Windows since Windows 2000.
 
 **Note:** You may have to add the Internet Printing Client to Windows (*Control Panel->Programs->Turn Windows features on or off->Print and Document Services*)
 
 First, configure the server as described in the section [#Between GNU/Linux systems](#Between_GNU.2FLinux_systems).
 
-On the Windows computer, go to *Control Panel->Devices and Printers* and choose to 'Add a printer'. If on Windows 10, click "The printer that I want isn't listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
+On the Windows computer, go to *Control Panel->Devices and Printers* and choose 'Add a printer'. If on Windows 10, click "The printer that I want isn't listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
 
 ```
 http://*hostname*:631/printers/*printer_name*
 
 ```
 
-(where *hostname* is the GNU/Linux server's hostname or IP address and *printer_name* is the name of the printer being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in *cupsd.conf* for this to work).
+(where *hostname* is the GNU/Linux server's hostname or IP address and *printer_name* is the name of the print queue being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in `/etc/cups/cupsd.conf` for this to work).
 
-**Note:** The 'Add Printer' dialog in Windows is sensitive about the path. The dialogue box suggests the format `http://computername/printers/printername/.printer`, which it will not accept. Instead, use the syntax suggested above.
+**Note:**
 
-**Note:** If you are using **proxy** - check used proxy **exclusions** twice - it may result in failing to add a printer until reboot even if you will disable proxy at all afterwards (actual for Windows 7).
+*   The 'Add Printer' dialog in Windows suggests the format `http://computername/printers/printername/.printer`, which it will not accept. Instead, use the syntax suggested above.
+*   If you are using a proxy carefully check any used proxy **exclusions**. A wrong setting here may result in you being unable to add a printer until the next reboot even if you disable the proxy afterwards (at least on Windows 7).
 
-After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server is set up to use its own printer drivers, then you can just select a generic postscript printer for the Windows client(e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2'). Then test the print setup by printing a test page.
+After this, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2').
 
 #### Sharing via Samba
 
@@ -368,36 +369,29 @@ DefaultEncryption Never
 
 This should avoid the error: 426 - Upgrade Required when using the CUPS web interface from a remote machine.
 
+### Kerberos
+
+[Kerberos](/index.php/Kerberos "Kerberos") can be used to authenticate users accessing a remote CUPS server. This assumes that your machine has a keytab and it will need a ticket for "HTTP". Instead of using `http://localhost:631` you must use `https://host.example.co.uk:631` - encryption is required for auth (hence https) and the full hostname is needed so that Kerberos/Negotiate can work. In addition, the server must be configured in `/etc/cups/cupsd.conf` to use a `DefaultAuthType` of `Negotiate`.
+
+If you are using [Samba](/index.php/Samba "Samba")'s winbind NSS support, you can add an AD group name to `/etc/cups/cups-files.conf` - in the following example `sysadmin` might be an AD group:
+
+```
+SystemGroup sys root sysadmin
+
+```
+
 ## Troubleshooting
 
 See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting") for general troubleshooting tips.
 
 ### Cannot print with GTK applications
 
-If you get "getting printer information failed" when you try to print from gtk-applications, add this line to your `/etc/hosts`:
+If you get a *getting printer information failed* message when you try to print from GTK applications, add this line to your `/etc/hosts`:
 
 ```
  # serverip 	some.name.org 	ServersHostname
 
 ```
-
-### Unable to add/modify a printer via SAMBA
-
-When adding a or modifying a printer via SAMBA, the interface hangs at 100% CPU for about 30 seconds and then returns the message
-
-```
-Unable to get list of printer drivers: Success
-
-```
-
-This is a known bug in Gutenprint ([https://bugs.archlinux.org/task/43708](https://bugs.archlinux.org/task/43708)). The workaround is to uninstall Gutenprint and install only foomatic-db.
-
-```
- lpinfo -m
-
-```
-
-should then return the list of drivers instead of just the "Success" message.
 
 ### Permission errors on Windows
 

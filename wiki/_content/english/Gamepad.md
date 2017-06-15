@@ -24,18 +24,19 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.3 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
     *   [7.4 PlayStation 3/4 controller](#PlayStation_3.2F4_controller)
         *   [7.4.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
-    *   [7.5 Steam Controller](#Steam_Controller)
-        *   [7.5.1 Wine](#Wine)
-    *   [7.6 Xbox 360 controller](#Xbox_360_controller)
-        *   [7.6.1 SteamOS xpad](#SteamOS_xpad)
-        *   [7.6.2 xboxdrv](#xboxdrv)
-            *   [7.6.2.1 Multiple controllers](#Multiple_controllers)
-            *   [7.6.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
-                *   [7.6.2.2.1 Logitech Dual Action](#Logitech_Dual_Action)
-                *   [7.6.2.2.2 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
-                *   [7.6.2.2.3 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
-                *   [7.6.2.2.4 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
-                *   [7.6.2.2.5 PlayStation 4 controller](#PlayStation_4_controller)
+    *   [7.5 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
+    *   [7.6 Steam Controller](#Steam_Controller)
+        *   [7.6.1 Wine](#Wine)
+    *   [7.7 Xbox 360 controller](#Xbox_360_controller)
+        *   [7.7.1 SteamOS xpad](#SteamOS_xpad)
+        *   [7.7.2 xboxdrv](#xboxdrv)
+            *   [7.7.2.1 Multiple controllers](#Multiple_controllers)
+            *   [7.7.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
+                *   [7.7.2.2.1 Logitech Dual Action](#Logitech_Dual_Action)
+                *   [7.7.2.2.2 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
+                *   [7.7.2.2.3 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
+                *   [7.7.2.2.4 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
+                *   [7.7.2.2.5 PlayStation 4 controller](#PlayStation_4_controller)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
@@ -321,6 +322,65 @@ Alternatively, you can press the share button and the PlayStation button simulta
 Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
 **Note:** If the controller does not connect, make sure the bluetooth interface is turned on and the controllers have been trusted. (See [Bluetooth](/index.php/Bluetooth "Bluetooth"))
+
+### iPEGA-9017s and other Bluetooth gamepads
+
+If you want to use one of the widely available bluetooth gamepads, such as iPEGA-9017s designed mostly for Android and iOS devices you would need [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins), and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). You should connect it in gamepad mode (if there are different modes, choose the gamepad one). Technically it's ready to be used, but in most cases games would not recognize it, and you would have to map it individually for all application. The best way to simplify it and make it work with all applications is to mimic Microsoft X360 controller with [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/). Once connected you can create a udev rule to give it a persistent name, that would come in handy when setting it up.
+
+ `/etc/udev/rules.d/99-btjoy.rules` 
+```
+#Create a symlink to appropriate /dev/input/eventX at /dev/btjoy
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="Bluetooth Gamepad", ATTRS{uniq}=="00:17:02:01:ae:2a", SYMLINK+="btjoy"
+```
+
+Replace "Bluetooth Gampad" with your device name and "00:17:02:01:ae:2a" with your device's address.
+
+Next, create a configuration for [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/) somewhere, for example:
+
+ `~/.config/xboxdrv/ipega.conf` 
+```
+#iPEGA PG-9017S Config 
+
+[xboxdrv]
+evdev-debug = true
+evdev-grab = true
+rumble = false
+mimic-xpad = true
+
+[evdev-absmap]
+ABS_HAT0X = dpad_x
+ABS_HAT0Y = dpad_y
+
+ABS_X = X1
+ABS_Y = Y1
+
+ABS_Z  = X2
+ABS_RZ = Y2
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-keymap]
+BTN_EAST=a
+BTN_C=b
+BTN_NORTH=y
+BTN_SOUTH=x
+BTN_TR2=start
+BTN_TL2=back
+BTN_Z=rt
+BTN_WEST=lt
+
+BTN_MODE = guide
+```
+
+Refer to the xboxdrv man to see all the options.
+
+Now when you have the config and your device is connected you can start the [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/) like so:
+
+`sudo xboxdrv --evdev /dev/btjoy --config .config/xboxdrv/ipega.conf`
+
+Your games will now work with bluetooth gamepad as long as xboxdrv is running.
 
 ### Steam Controller
 

@@ -8,20 +8,17 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Notes Before Configuring](#Notes_Before_Configuring)
-    *   [2.2 Basic configuration](#Basic_configuration)
-        *   [2.2.1 GitLab](#GitLab)
-        *   [2.2.2 GitLab Shell](#GitLab_Shell)
-        *   [2.2.3 Redis](#Redis)
-            *   [2.2.3.1 Enable listen on socket](#Enable_listen_on_socket)
-    *   [2.3 Further configuration](#Further_configuration)
-        *   [2.3.1 Database backend](#Database_backend)
-        *   [2.3.2 MariaDB](#MariaDB)
-        *   [2.3.3 PostgreSQL](#PostgreSQL)
-        *   [2.3.4 Firewall](#Firewall)
-        *   [2.3.5 Initialize Gitlab database](#Initialize_Gitlab_database)
-        *   [2.3.6 Configure Git User](#Configure_Git_User)
-        *   [2.3.7 Adjust modifier bits](#Adjust_modifier_bits)
+    *   [2.1 Preliminary Notes](#Preliminary_Notes)
+    *   [2.2 GitLab](#GitLab)
+    *   [2.3 GitLab Shell](#GitLab_Shell)
+    *   [2.4 Redis](#Redis)
+    *   [2.5 Database backend](#Database_backend)
+        *   [2.5.1 MariaDB](#MariaDB)
+        *   [2.5.2 PostgreSQL](#PostgreSQL)
+    *   [2.6 Firewall](#Firewall)
+    *   [2.7 Initialize Gitlab database](#Initialize_Gitlab_database)
+    *   [2.8 Configure Git User](#Configure_Git_User)
+    *   [2.9 Adjust modifier bits](#Adjust_modifier_bits)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Upgrade database on updates](#Upgrade_database_on_updates)
 *   [5 Advanced Configuration](#Advanced_Configuration)
@@ -68,7 +65,7 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 ## Configuration
 
-### Notes Before Configuring
+### Preliminary Notes
 
 The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs GitLab's files in a manner that more closely follows standard Linux conventions:
 
@@ -79,9 +76,7 @@ The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs G
 
 **Tip:** If you are familiar with the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") you can edit the PKGBUILD and relevant files to change gitlab's home directory to a place of your liking.
 
-### Basic configuration
-
-#### GitLab
+### GitLab
 
 Edit `/etc/webapps/gitlab/gitlab.yml` and setup at least the following parameters:
 
@@ -100,7 +95,7 @@ Finally set the correct permissions to the *uploads* directory:
 
 ```
 
-#### GitLab Shell
+### GitLab Shell
 
 **Note:** You can leave the `gitlab_url` with default value if you intend to host GitLab on the same host.
 
@@ -132,19 +127,9 @@ listen "/run/gitlab/gitlab.socket", :backlog => 1024
 listen "**127.0.0.1:8080**", :tcp_nopush => true
 ```
 
-#### Redis
+### Redis
 
-Using a [Redis](/index.php/Redis "Redis") setup different from default (e.g. different address, port, unix socket) requires the environment variable *REDIS_URL* to be set accordingly for unicorn. This can be achieved by extending the systemd service file. Create a file */etc/systemd/system/gitlab-unicorn.service.d/redis.conf* that injects the *REDIS_URL* environment variable:
-
-```
-[Service]
-Environment=REDIS_URL=unix:///run/gitlab/redis.sock
-
-```
-
-##### Enable listen on socket
-
-Follow instructions describe on [Redis#Listen on socket](/index.php/Redis#Listen_on_socket "Redis"), and adjust the default configuration [[1]](https://github.com/gitlabhq/gitlabhq/issues/6100).
+In order to provide sufficient performance you will need a cache database. [Install](/index.php/Redis#Installation "Redis") and [configure](/index.php/Redis#Configure "Redis") a Redis instance, being careful to the section dedicated to listening via a socket.
 
 *   Add the user *git* and *gitlab* to the *redis* [group](/index.php/Group "Group").
 
@@ -169,9 +154,7 @@ redis:
   namespace: resque:gitlab
 ```
 
-### Further configuration
-
-#### Database backend
+### Database backend
 
 A Database backend will be required before Gitlab can be run. Currently GitLab supports [MariaDB](/index.php/MariaDB "MariaDB") and [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). By default, GitLab assumes you will use MySQL. Extra work is needed if you plan to use PostgreSQL.
 
@@ -288,7 +271,7 @@ production:
 
 For our purposes (unless you know what you are doing), you do not need to worry about configuring the other databases listed in `/etc/webapps/gitlab/database.yml`. We only need to set up the production database to get GitLab working.
 
-#### Firewall
+### Firewall
 
 If you want to give direct access to your Gitlab installation through an [iptables](/index.php/Iptables "Iptables") firewall, you may need to adjust the port and the network address:
 
@@ -306,7 +289,7 @@ To enable API-access:
 
 If you are behind a router, do not forget to forward this port to the running GitLab server host, if you want to allow WAN-access.
 
-#### Initialize Gitlab database
+### Initialize Gitlab database
 
 Start the [Redis](/index.php/Redis "Redis") server before we create the database.
 
@@ -331,7 +314,7 @@ Finally run the following commands to check your installation:
 *   If *gitlab:check* fails with *Check GitLab API access: FAILED. code: 401*, see [#401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access) and [#/etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty) of the troubleshoot section to resolve this.
 *   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
 
-#### Configure Git User
+### Configure Git User
 
 ```
 # cd /usr/share/webapps/gitlab
@@ -341,7 +324,7 @@ Finally run the following commands to check your installation:
 
 ```
 
-#### Adjust modifier bits
+### Adjust modifier bits
 
 (The gitlab check won't pass if the user and group ownership isn't configured properly)
 

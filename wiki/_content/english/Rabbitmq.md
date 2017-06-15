@@ -5,6 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Enabling MQTT](#Enabling_MQTT)
+    *   [2.2 Enabling HTTP admin](#Enabling_HTTP_admin)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Changed hostname](#Changed_hostname)
     *   [3.2 Upgraded RabbitMQ to latest version and cannot start](#Upgraded_RabbitMQ_to_latest_version_and_cannot_start)
@@ -32,6 +33,24 @@ RabbitMQ can act as MQTT server. For this functionality to work following plugin
 RabbitMQ service needs to be restarted for this change to take effect.
 
 Clients need to authenticate before they can post to topics. RabbitMQ segregates traffic via virtual hosts, you need to issue `**your_user_name:configured_vhost_name**` as user name in order bo authenticate.
+
+### Enabling HTTP admin
+
+To enable the HTTP admin page:
+
+```
+   rabbitmq-plugins enable rabbitmq_management
+
+```
+
+Then navigate to `<ip_address_of_host>:15672`. Default credentials are `username:guest password:guest`
+
+To allow remote machines to connect to the HTTP admin page edit/create `/etc/rabbitmq/rabbitmq.config`:
+
+```
+[{rabbit, [{loopback_users, []}]}].
+
+```
 
 ## Troubleshooting
 

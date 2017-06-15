@@ -242,7 +242,7 @@ The override redirect property seems to be false for most windows- having this i
 Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/) to set the background color:
 
 ```
-$ xsetroot -solid '#000000'
+$ hsetroot -solid '#000000'
 
 ```
 

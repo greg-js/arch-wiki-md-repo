@@ -2,6 +2,8 @@ This article aims on providing information on flashing your system BIOS under Li
 
 **Warning:** Flashing motherboard BIOS is a dangerous activity that can render your motherboard inoperable! While the author of this article has successfully run this procedure many times, your mileage may vary. Be careful! You may want to consider updating [microcode](/index.php/Microcode "Microcode") instead if it is supported by your system.
 
+**Note:** HP users may download Windows BIOS updater from HP website, extract *.exe file and locate ISO image for burning to a CD. Using CD, upgrade is possible from BIOS menu using 'Firmware Upgrade' without using below tools. See [this](https://h30434.www3.hp.com/t5/Notebook-Operating-System-and-Recovery/How-to-update-BIOS-on-Linux/td-p/4869835) thread for details.
+
 ## Contents
 
 *   [1 BiosDisk](#BiosDisk)

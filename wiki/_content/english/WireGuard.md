@@ -2,4 +2,4 @@
 
 ## Installation
 
-Install [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) and [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+Install the [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) and [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) packages.

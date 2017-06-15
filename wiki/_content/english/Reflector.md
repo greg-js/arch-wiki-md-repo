@@ -134,7 +134,7 @@ And then just [start](/index.php/Start "Start") the `reflector.timer`.
 
 #### AUR package
 
-[Install](/index.php/Install "Install") the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) package to run *reflector* daily, or install the [reflector-timer-weekly](https://aur.archlinux.org/packages/reflector-timer-weekly/) to run it weekly.
+[Install](/index.php/Install "Install") the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) or [reflector-timer-weekly](https://aur.archlinux.org/packages/reflector-timer-weekly/) package to run *reflector* weekly.
 
 ##### reflector-timer
 

@@ -241,6 +241,8 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 
 [putty](https://www.archlinux.org/packages/?name=putty) is also available for Linux.
 
+[moserial](https://aur.archlinux.org/packages/moserial/) is a gtk-based serial terminal, primarily intended for technical users and hardware hackers who need to communicate with embedded systems, test equipment, and serial consoles.
+
 ## Installing Arch Linux using the serial console
 
 **Note:** The Arch Linux monthly release(i.e. the installation CD)'s boot loader has been configured[[5]](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux/archiso_head.cfg#n1) to listen on 0 port(`ttyS0`/COM1) at 38400 bps, with 8 data bits, no parity bit and 1 stop bit-times.

@@ -38,7 +38,7 @@
 
 参见 [#镜像状态](#.E9.95.9C.E5.83.8F.E7.8A.B6.E6.80.81) 和 [#按速度排序](#.E6.8C.89.E9.80.9F.E5.BA.A6.E6.8E.92.E5.BA.8F) 查看帮助选择镜像的工具。
 
-**小贴士:**
+**提示：**
 
 *   取消5个你最喜欢的镜像的注释，把他们放在 mirrorlist 文件最上方。这样你就很容易找到它们并且如果第一个镜像出问题可以很容易切换。这也让合并 mirrorlist 更新更容易。
 *   HTTP 镜像比 FTP 快，因为 HTTP 可以 [保持连接](https://en.wikipedia.org/wiki/HTTP_persistent_connection "wikipedia:HTTP persistent connection")，而使用 FTP 时 *pacman*每下载一个新软件包就需要重新建立连接。
@@ -177,6 +177,7 @@ Architecture = auto
 *   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *兰州大学*
+*   [https://mirrors.nju.edu.cn/archlinux/](https://mirrors.nju.edu.cn/archlinux/) - *南京大学*
 
 ### 德国
 
