@@ -48,7 +48,7 @@ OpenLDAP è un progetto complesso, qui non fornirò nessuna informazione "supple
 La parte server di openLDAP và configurata editando una serie di file, per primo il file */etc/openldap/slapd.conf*
 
 ```
-sudo nano /etc/openldap/slapd.conf
+sudoedit /etc/openldap/slapd.conf
 
 ```
 
@@ -96,7 +96,7 @@ hosts: files dns ldap
 specifica che le funzioni di ricerca degli host dovrebbero prima guardare nel file locale /etc/hosts, di seguito fare una richiesta al servizio dei nomi di dominio [DNS](https://it.wikipedia.org/wiki/Domain_Name_System) ed infine utilizzare il server ldap. A quel punto, se nessuna corrispondenza è stata trovata, viene riportato un errore. *Questo file deve essere leggibile da ogni utente!* Dobbiamo istruire *nsswitch* al fine di fargli usare il nostro server LDAP per la risoluzione perlomeno delle password. Per ovviare ad un [fastidioso baco di udev](https://bugs.archlinux.org/task/3369) (o di nsswitch, non saprei) creiamo due file che poi scambieramo al boot (vedi più avanti). Prima il file che non utilizza ldap :
 
 ```
-sudo nano /etc/nsswitch.file
+sudoedit /etc/nsswitch.file
 
 ```
 
@@ -126,7 +126,7 @@ netgroup: db files
 e poi il file che invece lo utilizza:
 
 ```
-sudo nano /etc/nsswitch.ldap
+sudoedit /etc/nsswitch.ldap
 
 ```
 
@@ -164,7 +164,7 @@ sendmailvars:   files
 Per ovviare al [fastidioso bug](https://bugs.archlinux.org/task/3369) menzionato sopra che fà bloccare il nostro server al boot durante l'avvio di udev, applichiamo un (non molto bello) workaround che per lo meno mi permette di non buttare tutto alle ortiche. Prima editiamo il nostro file menu.lst di grub per montare il file system in scrittura al boot :
 
 ```
-sudo nano /boot/grub/menu.lst
+sudoedit /boot/grub/menu.lst
 
 ```
 
@@ -182,7 +182,7 @@ initrd /kernel26.img
 Ora editiamo il file di inizializzazione:
 
 ```
-sudo nano /etc/rc.sysinit
+sudoedit /etc/rc.sysinit
 
 ```
 
@@ -280,7 +280,7 @@ I file /etc/pam.d/su e /etc/pam.d/sudo preferisco lasciarli come stanno.
 Per ultima cosa ricordiamoci di abilitare il permesso a contattare il server attraverso il protocollo LDAP, altrimenti (come per sshd) non funzionerà niente.
 
 ```
-sudo nano /etc/hosts.allow
+sudoedit /etc/hosts.allow
 
 ```
 
@@ -311,7 +311,7 @@ Terminamo la configurazione di LDAP mettendo a punto la parte client per istruir
 Questo file definisce quale server contattare (URI) e quale struttura dell'albero (BASE)
 
 ```
-sudo nano /etc/openldap/ldap.conf
+sudoedit /etc/openldap/ldap.conf
 
 ```
 
@@ -360,7 +360,7 @@ nss_base_shadow dc=mede,dc=it?sub
 Creiamo questo file e scriviamoci la password (in chiaro) per collegarci al server LDAP nel nostro caso "archimede".
 
 ```
-sudo nano /etc/ldap.secret
+sudoedit /etc/ldap.secret
 
 ```
 

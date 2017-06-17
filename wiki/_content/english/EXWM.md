@@ -28,7 +28,7 @@ In your emacs init file, add:
 
 ```
 (require 'exwm)
-(require 'exwm)
+(require 'exwm-config)
 (exwm-config-default)
 
 ```
@@ -76,7 +76,7 @@ You may need to adjust the height afterwards; this can be adjusted with the `exw
 
 ### Compositing manager
 
-**Warning:** The compositing manager may cause issues. If EXWM slows to a crawl, try turning off the cm
+**Note:** The compositing manager may cause issues. If EXWM slows to a crawl, try turning off the cm
 
 EXWM includes a compositing manager, but it is not enabled by default. To enable it, load the followng:
 

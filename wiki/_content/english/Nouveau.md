@@ -19,7 +19,7 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
     *   [4.1 Disable MSI](#Disable_MSI)
     *   [4.2 Phantom output issue](#Phantom_output_issue)
     *   [4.3 Random lockups with kernel error messages](#Random_lockups_with_kernel_error_messages)
-    *   [4.4 NVIDIA 900 series card issues](#NVIDIA_900_series_card_issues)
+    *   [4.4 Flat Panel Table Invalid](#Flat_Panel_Table_Invalid)
 
 ## Installation
 
@@ -275,16 +275,18 @@ Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_c
 
 Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
 
-### NVIDIA 900 series card issues
+### Flat Panel Table Invalid
 
-NVIDIA's 900 series cards can cause issues including X11 being unable to start and lspci freezing indefinitely. This can break live distributions/installation media. This can be detected either by running lspci, or checking the systemd journal for the error:
+NVIDIA graphics cards with recent chipsets can cause startup issues - this includes X11 being unable to start and lspci freezing indefinitely[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1425253)[[4]](https://bbs.archlinux.org/viewtopic.php?id=192532)[[5]](https://stackoverflow.com/questions/28062458/nouveau-error-while-booting-arch)[[6]](https://bbs.archlinux.org/viewtopic.php?id=207602)[[7]](https://unix.stackexchange.com/questions/207895/how-do-i-install-antergos-with-a-gtx-970).
+
+This can break live distributions/installation media. This can be detected either by running lspci, or checking the systemd journal for the error:
 
 ```
 nouveau E[     DRM]Pointer to flat panel table invalid
 
 ```
 
-The system will start if the Nouveau driver is disabled by passing the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+The system may start if the Nouveau driver is disabled by passing the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
 modprobe.blacklist=nouveau

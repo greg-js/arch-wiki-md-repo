@@ -18,9 +18,8 @@
             *   [3.3.1.1 Delay application startup](#Delay_application_startup)
         *   [3.3.2 Lock the screen](#Lock_the_screen)
             *   [3.3.2.1 Panel lock button](#Panel_lock_button)
-        *   [3.3.3 User switching](#User_switching)
-        *   [3.3.4 Disable saved sessions](#Disable_saved_sessions)
-        *   [3.3.5 Default window manager](#Default_window_manager)
+        *   [3.3.3 Disable saved sessions](#Disable_saved_sessions)
+        *   [3.3.4 Default window manager](#Default_window_manager)
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Keyboard volume buttons](#Keyboard_volume_buttons)
@@ -58,6 +57,7 @@
     *   [5.11 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
     *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.13 Power Manager Plugin shows battery time and remaining percentage](#Power_Manager_Plugin_shows_battery_time_and_remaining_percentage)
+    *   [5.14 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -246,15 +246,6 @@ Using [light-locker](https://www.archlinux.org/packages/?name=light-locker), two
 
 *   Edit `/usr/bin/xflock4` to execute `light-locker-command -l` directly. This should not be used for multiuser systems and could get overwritten when running upgrading the package.
 *   Replace the lock button provided by Action Buttons with a custom launcher. Remove the lock button item from Action Buttons preferences, then add a launcher item to the panel, setting *Command* to `light-locker-command -l`, optionally changing the icon to `system-lock-screen`.
-
-#### User switching
-
-Xfce4 has support for user switching when used with a [Display manager](/index.php/Display_manager "Display manager") that has this functionality - examples being [LightDM](/index.php/LightDM "LightDM") and [GDM](/index.php/GDM "GDM"). Please consult your display manager's wiki page for more information. When you have a display manager installed and configured correctly you can switch users from the 'action buttons' menu item in the panel.
-
-For the User Switch action button to work without GDM, a workaround is required:
-
-*   For LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
-*   For LightDM - [LightDM#User switching under Xfce4](/index.php/LightDM#User_switching_under_Xfce4 "LightDM").
 
 #### Disable saved sessions
 
@@ -706,6 +697,15 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 Since 1.5.1 an hidden option has been introduced to configure a label on the statusbar. The new xfconf4 option `show-panel-label` of type `int` can be configured for different label formats. `show-panel-label` can be set to 0 (no label), 1 (percentage), 2 (remaining time) or 3 (both).
 
 Source: [1.5.1 release notes](https://mail.xfce.org/pipermail/xfce-announce/2015-June/000424.html)
+
+### User switching action button is greyed out
+
+The *Switch User* action button assumes that the *gdmflexiserver* executable (provided by [GDM](/index.php/GDM "GDM")) exists. Thus, if GDM is not being used then the button will be greyed out. See the [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=9307).
+
+A possible workaround is to create an executable script called *gdmflexiserver* in `/usr/bin` or `/usr/local/bin` which calls the greeter switch command provided by the [display manager](/index.php/Display_manager "Display manager") which is being used.
+
+*   For LXDM - [LXDM#Simultaneous users and switching users](/index.php/LXDM#Simultaneous_users_and_switching_users "LXDM").
+*   For LightDM - [LightDM#User switching](/index.php/LightDM#User_switching "LightDM").
 
 ## See also
 

@@ -35,9 +35,9 @@
  <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(4)</small> |
 | <small>2.14.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(3)</small> | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(7)</small> | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(19)</small> |
-| <small>2.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small> | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14)</small> |
+| <small>2.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(2)</small> | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(15)</small> |
 | <small>2.17.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small> | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
-| <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(6)</small> | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(60)</small> |
+| <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(6)</small> | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(61)</small> |
 | <small>3.1.</small> [Разработка Arch](/index.php/Category:Arch_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch development (Русский)") <small>(2) (Также в [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)"))</small> | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Разработка пакетов](/index.php/Category:Package_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package development (Русский)") <small>(9)</small> | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(49)</small> |
  <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
@@ -60,7 +60,7 @@
  <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(37)</small> |
  <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
  <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
- <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(69)</small> |
+ <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(70)</small> |
  <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
  <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
 | <small>4.8.1.</small> [Dell](/index.php/Category:Dell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Dell (Русский)") <small>(1)</small> | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(59)</small> |

@@ -33,16 +33,15 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
     *   [5.4 Poor performance from capable graphics cards](#Poor_performance_from_capable_graphics_cards)
     *   [5.5 Screen flicks with NVIDIA card](#Screen_flicks_with_NVIDIA_card)
     *   [5.6 Video tearing](#Video_tearing)
-    *   [5.7 Compiz effects not working (GConf backend)](#Compiz_effects_not_working_.28GConf_backend.29)
-    *   [5.8 Fusion Icon fails to start](#Fusion_Icon_fails_to_start)
-    *   [5.9 Alt+F4 keybinding not working (Xfce)](#Alt.2BF4_keybinding_not_working_.28Xfce.29)
-    *   [5.10 Emerald crashes when selecting a theme](#Emerald_crashes_when_selecting_a_theme)
-    *   [5.11 No system bell when Compiz is running](#No_system_bell_when_Compiz_is_running)
-    *   [5.12 Compiz crashes when enabling the Gnome Compatibility plugin (GSettings backend)](#Compiz_crashes_when_enabling_the_Gnome_Compatibility_plugin_.28GSettings_backend.29)
-    *   [5.13 Windows lose focus when unminimised](#Windows_lose_focus_when_unminimised)
-    *   [5.14 Popout windows are offset when Compiz is running](#Popout_windows_are_offset_when_Compiz_is_running)
-    *   [5.15 Alt-Tab switcher has no background (Emerald)](#Alt-Tab_switcher_has_no_background_.28Emerald.29)
-    *   [5.16 Mouse cursor invisible or X shaped on startup](#Mouse_cursor_invisible_or_X_shaped_on_startup)
+    *   [5.7 Fusion Icon fails to start](#Fusion_Icon_fails_to_start)
+    *   [5.8 Alt+F4 keybinding not working (Xfce)](#Alt.2BF4_keybinding_not_working_.28Xfce.29)
+    *   [5.9 Emerald crashes when selecting a theme](#Emerald_crashes_when_selecting_a_theme)
+    *   [5.10 No system bell when Compiz is running](#No_system_bell_when_Compiz_is_running)
+    *   [5.11 Compiz crashes when enabling the Gnome Compatibility plugin (GSettings backend)](#Compiz_crashes_when_enabling_the_Gnome_Compatibility_plugin_.28GSettings_backend.29)
+    *   [5.12 Windows lose focus when unminimised](#Windows_lose_focus_when_unminimised)
+    *   [5.13 Popout windows are offset when Compiz is running](#Popout_windows_are_offset_when_Compiz_is_running)
+    *   [5.14 Alt-Tab switcher has no background (Emerald)](#Alt-Tab_switcher_has_no_background_.28Emerald.29)
+    *   [5.15 Mouse cursor invisible or X shaped on startup](#Mouse_cursor_invisible_or_X_shaped_on_startup)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Plugins in Compiz 0.8 are not present in Compiz 0.9](#Plugins_in_Compiz_0.8_are_not_present_in_Compiz_0.9)
     *   [6.2 Xfce panel window buttons are not refreshed when a window changes viewport](#Xfce_panel_window_buttons_are_not_refreshed_when_a_window_changes_viewport)
@@ -131,7 +130,7 @@ Before starting Compiz, you should activate some plugins to provide basic window
 *   Place Windows - configure window placement options.
 *   Application Switcher - provides an `Alt+Tab` switcher - there are numerous alternative application switcher plugins, for example: Shift Switcher, Static Application Switcher and more. Not all of them use the `Alt+Tab` keybinding.
 
-To be able to switch to different [viewports](/index.php/Compiz_configuration#Workspaces_and_Viewports "Compiz configuration") you will need to enable one of the following:
+To be able to switch to different [viewports](/index.php/Compiz/Configuration#Workspaces_and_Viewports "Compiz/Configuration") you will need to enable one of the following:
 
 *   Desktop Cube & Rotate Cube - provides the spinning cube with each side being a different viewport.
 *   Desktop Wall - viewports are arranged next to each other - the animation is similar to the workspace switching animation in [Cinnamon](/index.php/Cinnamon "Cinnamon") and [GNOME](/index.php/GNOME "GNOME") Shell.
@@ -139,7 +138,7 @@ To be able to switch to different [viewports](/index.php/Compiz_configuration#Wo
 
 #### Window decoration
 
-**Tip:** For information on selecting and managing themes, see: [Compiz configuration#Window decoration themes](/index.php/Compiz_configuration#Window_decoration_themes "Compiz configuration").
+**Tip:** For information on selecting and managing themes, see: [Compiz/Configuration#Window decoration themes](/index.php/Compiz/Configuration#Window_decoration_themes "Compiz/Configuration").
 
 The window decorator is the program which provides windows with borders. Unlike window managers such as Kwin or [Xfwm](/index.php/Xfwm "Xfwm") which provide just one decorator, users of Compiz have a choice of three: GTK Window Decorator, KDE Window Decorator and Emerald. The GTK Window Decorator and the KDE Window Decorator are included in the Compiz source and can be optionally compiled whilst building Compiz. Emerald, on the other hand, is a separate, standalone decorator. The *Window Decoration* plugin in CCSM must be ticked otherwise no window decorator will be started.
 
@@ -272,7 +271,7 @@ Map the command for a [run dialog](/index.php/List_of_applications#Application_l
 
 ### Remove title bar from maximized windows
 
-As mentioned [here](http://planetkris.com/2009/07/how-to-remove-the-title-bar-with-compiz-without-losing-3-hours-of-your-life/) , enter `ccsm` --> `Window Decoration` in Effects --> `Decoration Windows` : change `any` to `!state=maxvert`.
+Start CCSM and navigate to the *Window Decoration* plugin. Then in the *Decoration Windows* field, change `any` to `!state=maxvert`. [[2]](http://planetkris.com/2009/07/how-to-remove-the-title-bar-with-compiz-without-losing-3-hours-of-your-life/)
 
 ## Troubleshooting
 
@@ -328,22 +327,6 @@ If you experience video tearing when using Compiz, try enabling the *Workarounds
 If you are using [Intel graphics](/index.php/Intel_graphics "Intel graphics") and the workaround above does not fix the video tearing, see [Intel graphics#Tear-free video](/index.php/Intel_graphics#Tear-free_video "Intel graphics").
 
 Also see, [#Poor performance from capable graphics cards](#Poor_performance_from_capable_graphics_cards).
-
-### Compiz effects not working (GConf backend)
-
-If you have installed the GTK Window Decorator, check if the GConf schema was correctly installed:
-
-```
-$ gconftool-2 -R /apps/compiz/plugins | grep plugins
-
-```
-
-Make sure that all plugins are listed. If they are not, try to install the Compiz schema manually (do **not** run this command as root):
-
-```
-$ gconftool-2 --install-schema-file=/usr/share/gconf/schemas/compiz-decorator-gtk.schemas
-
-```
 
 ### Fusion Icon fails to start
 
@@ -437,7 +420,7 @@ The *D-Bus* plugin will cause Compiz to crash if enabled in conjunction with cer
 
 ### Workspace pager and window buttons issues
 
-Only a few [panels and docks](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") are compatible with Compiz's [viewports](/index.php/Compiz_configuration#Workspaces_and_Viewports "Compiz configuration"). Incompatible panels and docks may display issues such as showing all window buttons in all workspaces or the workspace pager may only show one workspace available. The panels listed below are known to be compatible:
+Only a few [panels and docks](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") are compatible with Compiz's [viewports](/index.php/Compiz/Configuration#Workspaces_and_Viewports "Compiz/Configuration"). Incompatible panels and docks may display issues such as showing all window buttons in all workspaces or the workspace pager may only show one workspace available. The panels listed below are known to be compatible:
 
 *   [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
 *   [mate-panel](https://www.archlinux.org/packages/?name=mate-panel)

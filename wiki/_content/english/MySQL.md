@@ -60,7 +60,7 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards 
 
 ```
 
-**Note:** For security reasons, the systemd service file contains `ProtectHome=true`, which prevents MariaDB from accessing files under the `/home`, `/root` and `/run/user` hierarchies. The `datadir` has to be in an accessible location and [owned](/index.php/Chown "Chown") by the `mysql` user and group.
+**Note:** For security reasons, the systemd service file contains `ProtectHome=true`, which prevents MariaDB from accessing files under the `/home`, `/root` and `/run/user` hierarchies. The `datadir` has to be in an accessible location and [owned](/index.php/Chown "Chown") by the `mysql` user and group. You can modify this behavior by creating a supplementary service file as described here: [https://mariadb.com/kb/en/mariadb/systemd/](https://mariadb.com/kb/en/mariadb/systemd/)
 
 Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 

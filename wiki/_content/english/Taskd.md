@@ -59,7 +59,9 @@ Note the key the last command returns, the user will need it to synchronize.
 
 Make sure new group and user are readable by user taskd.
 
- `chown -R taskd:taskd /var/lib/taskd/orgs` Return to `/usr/share/doc/taskd/pki/` and run `./generate.client username` This will return username.cert.pem and username.key.pem. The username.key.pem, username.cert.pem and ca.cert.pem must be added to the user's `~/.task` directory.
+ `chown -R taskd:taskd /var/lib/taskd/orgs` Return to `/usr/share/doc/taskd/pki/` and run `./generate.client username` This will return username.cert.pem and username.key.pem.
+
+The username.key.pem, username.cert.pem and ca.cert.pem must be added to the user's `~/.task` directory.
 
 ## Client
 

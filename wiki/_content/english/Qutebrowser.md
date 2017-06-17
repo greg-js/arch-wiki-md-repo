@@ -112,7 +112,7 @@ See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2235) for mor
 
 ### dwb-like session handling
 
-To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option ("per-window" sessions, multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser).
+To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, and keeps the configuration shared.
 
 **Note:** The wrapper script defaults to the (experimental) webengine backend. You can pass `--backend webkit` to have it use the QtWebKit backend.
 

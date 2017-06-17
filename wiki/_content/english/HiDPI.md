@@ -95,11 +95,11 @@ Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. You just need to make sure that the X server is aware of your screen's pixel density. See [#X Server](#X_Server) and [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM").
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server) (currently not working). However, it seems that Gtk+ applications ignore both SDDM and X settings.
 
 #### Using KDE system settings
 
-If the solution above does not work correctly, you can use KDE's settings to fine tune font, icon, and widget scaling.
+You can use KDE's settings to fine tune font, icon, and widget scaling. This solution affects both Qt and Gtk+ applications.
 
 To adjust font, widget, and icon scaling together:
 

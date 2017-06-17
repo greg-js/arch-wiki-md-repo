@@ -150,7 +150,7 @@ The Droid, Lucida and Tahoma fonts will fail to download due to broken URLs or I
 Edit the winetricks script:
 
 ```
-sudo nano -w /usr/bin/winetricks
+sudoedit -w /usr/bin/winetricks
 
 ```
 

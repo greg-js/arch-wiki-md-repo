@@ -1,4 +1,4 @@
-**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR"). As of version 6, the software is not open source anymore, although an open-source fork exists ([libresonic](https://aur.archlinux.org/packages/libresonic/)).
+Subsonic is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR"). As of version 6, the software is not open source anymore, although an open-source fork exists ([libresonic](https://aur.archlinux.org/packages/libresonic/)).
 
 ## Contents
 
@@ -14,7 +14,7 @@
     *   [2.3 Accessing the database](#Accessing_the_database)
 *   [3 Madsonic](#Madsonic)
 *   [4 Libresonic](#Libresonic)
-*   [5 External links](#External_links)
+*   [5 See also](#See_also)
 
 ## Configuration
 
@@ -75,7 +75,7 @@ server {
 } 
 ```
 
-To run Subsonic under a different path, you have to set the following options in `/var/lib/subsonic/subsonic.sh` :
+To run Subsonic under a different path, you have to set the following options in `/var/lib/subsonic/subsonic.sh`:
 
 ```
 SUBSONIC_CONTEXT_PATH=/subsonic
@@ -154,9 +154,9 @@ $SERVER["socket"] == ":443" {
 
 ### FLAC playback
 
-The FFmpeg transcoder doesn't handle FLAC files well, and clients will often fail to play the resultant streams. (at least, on [my](/index.php?title=User:Ichimonji10&action=edit&redlink=1 "User:Ichimonji10 (page does not exist)") machine) Using FLAC and LAME instead of FFmpeg solves this issue. This workaround requires that the FLAC and LAME transcoders have been installed, as explained in [#Install transcoders](#Install_transcoders).
+The FFmpeg transcoder does not handle FLAC files well, and clients will often fail to play the resultant streams. Using FLAC and LAME instead of FFmpeg may solve this issue. This workaround requires that the FLAC and LAME transcoders have been installed, as explained in [#Install transcoders](#Install_transcoders).
 
-Start Subsonic and go to `settings > transcoding`. Ensure that the default FFmpeg transcoder does not get used on files with a "flac" extension, then add a new entry. You'll end up with something like this:
+Start Subsonic and go to `settings > transcoding`. Ensure that the default FFmpeg transcoder does not get used on files with a "flac" extension, then add a new entry. You will end up with something like this:
 
 | Name | Convert from | Convert to | Step 1 | Step 2 |
 | mp3 default | ... NOT flac ... | mp3 | ffmpeg ... |
@@ -209,8 +209,8 @@ Once you start the server, pay close attention to the Transcoding options, as yo
 
 ## Libresonic
 
-[Libresonic](https://github.com/Libresonic/libresonic) is a fork of Subsonic that continues the open-source licence. It has also removed the paid-licence checks from Subsonic, hence it is also free [as in beer](https://en.wikipedia.org/wiki/Free_as_in_free_beer).
+[Libresonic](https://github.com/Libresonic/libresonic) is a fork of Subsonic that continues the open-source licence. It has also removed the paid-licence checks from Subsonic, hence it is also free [as in beer](https://en.wikipedia.org/wiki/Free_as_in_free_beer "wikipedia:Free as in free beer").
 
-## External links
+## See also
 
 *   [Official web site](http://www.subsonic.org)

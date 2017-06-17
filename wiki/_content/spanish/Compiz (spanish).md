@@ -625,7 +625,7 @@ Una lista mas detallada puede ser encontrada en [CommonKeyboardShortcuts](http:/
 # Recursos adicionales
 
 *   [Compiz Troubleshooting](/index.php/Compiz_Troubleshooting "Compiz Troubleshooting") -- sub article
-*   [Compiz configuration](/index.php/Compiz_configuration "Compiz configuration") -- sub article
+*   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration") -- sub article
 *   [Compiz Website](http://compiz.org) -- including wiki and forum
 *   [Composite](/index.php/Composite "Composite") -- A Xorg extension required by composite managers
 *   [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") -- A simple composite manager capable of drop shadows and primitive transparency

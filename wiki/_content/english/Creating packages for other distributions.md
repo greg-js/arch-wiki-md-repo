@@ -60,6 +60,10 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 	[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)
 
+**equivs** — Circumvent Debian package dependencies
+
+	[https://launchpad.net/ubuntu/+source/equivs](https://launchpad.net/ubuntu/+source/equivs) || [equivs](https://aur.archlinux.org/packages/equivs/)
+
 **git-buildpackage** — Tools from Debian to integrate the package build system with Git
 
 	[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)
@@ -71,8 +75,6 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 **[quilt](https://en.wikipedia.org/wiki/Quilt "wikipedia:Quilt")** — Manage a series of patches by keeping track of the changes each patch makes
 
 	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
-
-**Note:** Missing tools: *lintian*, *reprepo*, *equivs*, *cdbs*, *svn-buildpackage*, *javahelper*
 
 ### Tips and Tricks
 

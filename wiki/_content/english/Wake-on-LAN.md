@@ -20,7 +20,8 @@ Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection 
     *   [4.2 Example WOL script](#Example_WOL_script)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Realtek](#Realtek)
-    *   [5.2 Suspend/Resume](#Suspend.2FResume)
+    *   [5.2 alx driver support](#alx_driver_support)
+    *   [5.3 Suspend/Resume](#Suspend.2FResume)
 *   [6 See also](#See_also)
 
 ## Hardware settings
@@ -321,6 +322,10 @@ If the link light on the network switch is enabled when the computer is turned o
 *   MSI B85M-E45 motherboard, BIOS version V10.9, onboard Realtek 8111G chipset
 
 For the `r8168` module you might need to set the `s5wol=1` [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to enable the wake on LAN functionality.
+
+### alx driver support
+
+For some newer Atheros-based NICs (such as Atheros AR8161 and Killer E2500), WOL support has been disabled in the mainline `alx` module due to a bug causing unintentional wake-up (see [this patch discussion](http://www.spinics.net/lists/netdev/msg242477.html)). A patch can be applied (or installed as a [dkms](/index.php/Dkms "Dkms") module) which both restores WOL support and fixes the underlying bug, as outlined in [this thread](https://bugzilla.kernel.org/show_bug.cgi?id=61651).
 
 ### Suspend/Resume
 

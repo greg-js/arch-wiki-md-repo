@@ -10,7 +10,7 @@
 
 ## Installation
 
-Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/) package. [eid-viewer](https://aur.archlinux.org/packages/eid-viewer/) is useful to verify a functional setup, before trying to read an eid from within a browser. Before installation, import the (continuous build) keys from [[[1]](http://files.eid.belgium.be/). See [makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg").
+Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/) package. [eid-viewer](https://aur.archlinux.org/packages/eid-viewer/) is useful to verify a functional setup, before trying to read an eid from within a browser. Before installation, import the (continuous build) keys from [[1]](https://files.eid.belgium.be/). See [makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg").
 
 As a driver for the card reader hardware is required, install the [ccid](https://www.archlinux.org/packages/?name=ccid) package. In some cases, [acsccid](https://aur.archlinux.org/packages/acsccid/) is needed instead.
 

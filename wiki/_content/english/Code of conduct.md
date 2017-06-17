@@ -154,7 +154,7 @@ In addition to the [common code](#Code_of_conduct), each of the fora has its own
 
 #### Pasting pictures and code
 
-Please use [code] tags when pasting console snippets. Please use a [pastebin client](/index.php/Pastebin#Pastebin_clients "Pastebin") when posting large amounts of code. For non-English locale users: Please prepend `LC_ALL=C` to posted commands so that the output will be in English. Do not post full screen pictures; use links to the images instead, optionally with thumbnails. Any image with dimensions greater than 250x250px or over 50Kb in size will be removed. Do **not** post screenshots of text output; post [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Please use [code] tags when pasting console snippets. Please use a [pastebin client](/index.php/Pastebin#Pastebin_clients "Pastebin") when posting large amounts of code. Do **not** use [pastebin.com](http://pastebin.com/)—it is blocked for some users and has a history of annoying issues (javascript, adverts, poor formatting, etc). For non-English locale users: Please prepend `LC_ALL=C` to posted commands so that the output will be in English. Do not post full screen pictures; use links to the images instead, optionally with thumbnails. Any image with dimensions greater than 250x250px or over 50Kb in size will be removed. Do **not** post screenshots of text output; post [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### Life is a two-way street
 
@@ -205,6 +205,8 @@ Thread hijacking is the process of replying to an existing thread with a differe
 Threads that are locked/closed because they are either already documented on the boards or Wiki or are inconsistent with the Arch Way will be moved to Dust/troll-bin. After a period of five days, the thread will be deleted. The Moderator responsible will clearly mark the thread as "Binned" or "For deletion."
 
 ### [Mailing lists](https://lists.archlinux.org//listinfo/)
+
+See [Mailing list posting style](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### Top posting
 

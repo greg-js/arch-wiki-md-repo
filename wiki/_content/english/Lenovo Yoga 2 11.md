@@ -139,7 +139,7 @@ Works out of the box. Tested using Skype.
 
 #### Power Down
 
-The power button works out of the box, however the system reboots after shutdown. This appears to be an [xhci-hcd kernel module bug](https://bugzilla.kernel.org/show_bug.cgi?id=66171) and can be worked around by unloading the xhci_hcd module before shutdown. This can be done via [systemd](/index.php/Systemd "Systemd") by creating a unit file /etc/systemd/systemd/xhci.service containing
+The power button works out of the box, however the system reboots after shutdown. This appears to be an [xhci-hcd kernel module bug](https://bugzilla.kernel.org/show_bug.cgi?id=66171) and can be worked around by unloading the xhci_hcd module before shutdown. This can be done via [systemd](/index.php/Systemd "Systemd") by creating a unit file /etc/systemd/system/xhci.service containing
 
 ```
 [Unit]

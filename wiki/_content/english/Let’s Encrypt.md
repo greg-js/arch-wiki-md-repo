@@ -39,8 +39,8 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 
 **Note:**
 
-*   For Apache use --apache or --nginx for Nginx **instead** of --webroot.
-*   The webserver must be started and accepting HTTP traffic on port 80.
+*   The Webroot method requires **HTTP on port 80** for Certbot to validate.
+    *   For Certbot to validate using **HTTPS on port 443**, the Nginx (**--nginx**) or Apache (**--apache**) plugin must be used instead of the Webroot (**--webroot**) method.
 *   The Server Name must match that of it's corresponding DNS.
 *   Permissions may need to be altered on the host to allow read-access to `[http://domain.tld/.well-know](http://domain.tld/.well-know)`.
 

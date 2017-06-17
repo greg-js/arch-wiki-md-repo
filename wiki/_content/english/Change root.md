@@ -23,6 +23,7 @@ Changing root is commonly done for performing system maintenance on systems wher
 *   Rebuilding the [initramfs image](/index.php/Mkinitcpio "Mkinitcpio").
 *   Upgrading or [downgrading packages](/index.php/Downgrading_packages "Downgrading packages").
 *   Resetting a [forgotten password](/index.php/Password_recovery "Password recovery").
+*   Building packages in a clean chroot, see [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
 
 See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Limitations "wikipedia:Chroot").
 

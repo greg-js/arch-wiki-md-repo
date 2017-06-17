@@ -102,4 +102,4 @@ symbol.ttf webdings.ttf wingding.ttf wingdng2.ttf wingdng3.ttf monotypesorts.ttf
 
 ```
 
-[AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 [ttf-microsoft](https://aur.archlinux.org/packages/ttf-microsoft/) 包含了除以上后两者之外的字体，直接安装即可。
+[AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 [ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/) 包含了除monotypesorts.ttf之外的字体，直接安装即可。

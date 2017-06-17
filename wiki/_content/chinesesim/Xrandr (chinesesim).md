@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-5-31，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=477117)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-6-16，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=477117)可以查看翻译后英文页面的改动。
 
 "xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。 当前使用的显示器用 ***** 标记，优先使用的显示器用 **+** 标记。
 
@@ -18,8 +18,8 @@
 *   [7 在VNC上使用xrandr](#.E5.9C.A8VNC.E4.B8.8A.E4.BD.BF.E7.94.A8xrandr)
 *   [8 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
     *   [8.1 添加未检测到的分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E6.A3.80.E6.B5.8B.E5.88.B0.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
-        *   [8.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
-    *   [8.2 Correction of overscan tv resolutions](#Correction_of_overscan_tv_resolutions)
+        *   [8.1.1 EDID 校验和无效](#EDID_.E6.A0.A1.E9.AA.8C.E5.92.8C.E6.97.A0.E6.95.88)
+    *   [8.2 纠正电视机分辨率过扫](#.E7.BA.A0.E6.AD.A3.E7.94.B5.E8.A7.86.E6.9C.BA.E5.88.86.E8.BE.A8.E7.8E.87.E8.BF.87.E6.89.AB)
     *   [8.3 Full RGB in HDMI](#Full_RGB_in_HDMI)
         *   [8.3.1 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
 *   [9 参见](#.E5.8F.82.E8.A7.81)
@@ -336,11 +336,9 @@ xrandr --addmode default "1024x600"r
 
 ### 添加未检测到的分辨率
 
-Due to buggy hardware or drivers, your monitor's correct resolutions may not always be detected by xrandr. For example, the EDID data block queried from the monitor may be incorrect. However, we can add the desired resolutions to xrandr.
+由于硬件以及驱动程序可能的缺陷，例如，请求的EDID数据块不正确，导致 xrandr 可能不能准确侦测到显示器的分辨率。不过我们可以手工添加期望的分辨率。
 
-First we run `gtf` or `cvt` to get the **Modeline** for the resolution we want:
-
-For some LCD screens (samsung 2343NW), the command "cvt -r" (= with reduced blanking) is to be used.
+首先，运行 `gtf` 或 `cvt` 以获取所需分辨率的 **模式行（Modeline）** ： 某些 LCD 屏幕（samsung 2343NW）需使用 "cvt -r" 命令（-r = reduced blanking）。
 
  `$ cvt 1280 1024` 
 ```
@@ -349,7 +347,7 @@ Modeline "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hs
 
 ```
 
-**Note:** If the Intel video driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) is used, it may report the desired resolution along with its properties in `/var/log/Xorg.0.log` — use that first if it is different from the output of `gtf` or `cvt`. For instance, the log and its use with xrandr:
+**注意:** 如果使用了 Intel 的显示驱动程序 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)，期望的分辨率会在 `/var/log/Xorg.0.log` 中与其他特征值一并报告——如果该值不同于 `gtf` or `cvt` 的输出应首选该值。这里给出一个log文件的报告值与 xrandr 使用值的实例：
 ```
 [    45.063] (II) intel(0): clock: 241.5 MHz   Image Size:  597 x 336 mm
 [    45.063] (II) intel(0): h_active: 2560  h_sync: 2600  h_sync_end 2632 h_blank_end 2720 h_border: 0
@@ -362,45 +360,45 @@ xrandr --newmode "2560x1440" 241.50 2560 2600 2632 2720 1440 1443 1448 1481 -hsy
 
 ```
 
-Then we create a new xrandr mode. Note that the Modeline keyword needs to be ommited.
+然后创建一个新的 xandr 模式。注意模式行中那些被忽略的关键字。
 
 ```
 $ xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
 
 ```
 
-After creating it we need an extra step to add this new mode to our current output (VGA1). We use just the name of the mode, since the parameters have been set previously.
+创建完毕还需要一个操作步骤，把这个新模式追加到当前显示输出端口（VGA1）。我们只需引用模式的名称，因为参数已经在前面设置好了。
 
 ```
 $ xrandr --addmode VGA1 1280x1024_60.00
 
 ```
 
-Now we change the resolution of the screen to the one we just added:
+现在，我们可以把屏幕分辨率切换为刚刚追加的值：
 
 ```
 $ xrandr --output VGA1 --mode 1280x1024_60.00
 
 ```
 
-Note that these settings only take effect during this session.
+注意，上述这些设置仅在本次会话中有效。
 
-If you are not sure about the resolution you will test, you may add a `sleep 5` and a safe resolution command line following, like this:
+如果你不能确保将要测试的分辨率可用，可以在后面附加一个延迟和一个安全分辨率命令行，就像这样：
 
 ```
 $ xrandr --output VGA1 --mode 1280x1024_60.00 && sleep 5 && xrandr --newmode "1024x768-safe" 65.00 1024 1048 1184 1344 768 771 777 806 -HSync -VSync && xrandr --addmode VGA1 1024x768-safe && xrandr --output VGA1 --mode 1024x768-safe
 
 ```
 
-Also, change `VGA1` to correct output name.
+还有，要把 `VGA1` 改为正确的输出端口名。
 
-#### EDID checksum is invalid
+#### EDID 校验和无效
 
-If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[1]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
+如果前述方法导致引导期间发生 `*ERROR* EDID checksum is invalid` 错误，参阅 [这里](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID "Kernel mode setting (简体中文)") 和 [这里](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
 
-Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. NVIDIA users should read [NVIDIA/Troubleshooting#xrandr BadMatch](/index.php/NVIDIA/Troubleshooting#xrandr_BadMatch "NVIDIA/Troubleshooting"). `BadMatch` could indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID.
+也许 `xrandr --addmode` 会返回错误 `X Error of failed request: BadMatch`。NVIDIA 用户请参阅 [NVIDIA/Troubleshooting#xrandr BadMatch](/index.php/NVIDIA/Troubleshooting#xrandr_BadMatch "NVIDIA/Troubleshooting")。`BadMatch` 能指示出无效的 EDID 校验和。要验证确实是这种情况，请以 verbose mode 运行 X 服务（例如：`startx -- -logverbose 6`）然后查阅 Xorg 日志中有关 EDID 错误的信息。
 
-### Correction of overscan tv resolutions
+### 纠正电视机分辨率过扫
 
 With a flat panel TV, [w:overscan](https://en.wikipedia.org/wiki/overscan "w:overscan") looks like the picture is "zoomed in" so the edges are cut off.
 

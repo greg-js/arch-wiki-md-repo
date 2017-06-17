@@ -49,7 +49,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [9.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
     *   [9.8 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
     *   [9.9 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
-    *   [9.10 Mask emergency mode on remote machine](#Mask_emergency_mode_on_remote_machine)
+    *   [9.10 Disable emergency mode on remote machine](#Disable_emergency_mode_on_remote_machine)
 *   [10 See also](#See_also)
 
 ## Basic systemctl usage
@@ -790,9 +790,9 @@ You need to [regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and
 
 **Tip:** A pacman hook can be used to automatically regenerate the initramfs every time [systemd](https://www.archlinux.org/packages/?name=systemd) is upgraded. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=215411) and [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
-### Mask emergency mode on remote machine
+### Disable emergency mode on remote machine
 
-You may want to mask emergency mode on a remote machine or it might block the machine from connecting to network.
+You may want to disable emergency mode on a remote machine, for example, a virtual machine hosted at Azure or Google Cloud. It is because if emergency mode is triggered, the machine will be blocked from connecting to network.
 
 ```
 # systemctl mask emergency.service

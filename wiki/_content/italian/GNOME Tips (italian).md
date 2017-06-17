@@ -80,7 +80,7 @@ $ sudo cp gnome.desktop other.desktop
 2\. Modificare il file modello `*.desktop` per avviare il window manager desiderato:
 
 ```
-$ sudo nano other.desktop
+$ sudoedit other.desktop
 
 ```
 
@@ -305,7 +305,7 @@ gconftool-2 -s "/desktop/gnome/thumbnailers/video@mpeg/command" -t string "/usr/
 In Ubuntu e altre distro è permesso montare i dischi interni, cliccando sulle rispettive icone senza la necessità di inserire una password. Per ottenere questo comportamento in gnome standard modificare il seguente file.
 
 ```
-sudo nano /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
+sudoedit /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
 
 ```
 

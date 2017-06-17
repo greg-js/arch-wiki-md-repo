@@ -343,6 +343,9 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 cache=$XDG_CACHE_HOME/npm
 prefix=$XDG_DATA_HOME/npm
 ```
+
+`prefix` is unnecessary (and unsupported) if Node.js is installed by [nvm](https://aur.archlinux.org/packages/nvm/).
+
  |
 | [NVIDIA](/index.php/NVIDIA "NVIDIA"), [CUDA](/index.php/CUDA "CUDA") | `~/.nv` | `$ export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME"/nv`
 
@@ -350,6 +353,7 @@ prefix=$XDG_DATA_HOME/npm
 
  |
 | [nvidia-settings](https://github.com/NVIDIA/nvidia-settings) | `~/.nvidia-settings-rc` | `$ nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings` |
+| [nvm](https://aur.archlinux.org/packages/nvm/) | `~/.nvm` | `$ export NVM_DIR="$XDG_DATA_HOME"/nvm` |
 | [openscad](http://www.openscad.org/) | `~/.OpenSCAD` | [7c3077b0f](https://github.com/openscad/openscad/commit/7c3077b0f) | [[73]](https://github.com/openscad/openscad/issues/125) | Does not fully honour XDG Base Directory Specification, see [[74]](https://github.com/openscad/openscad/issues/373)
 
 Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/PlatformUtils-posix.cc#L20) `~/.local/share`.

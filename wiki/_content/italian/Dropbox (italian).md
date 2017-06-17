@@ -66,7 +66,7 @@ Un altro metodo di usare Dropbox senza Nautilus ma con un altro gestore file com
 1\. Creare uno script in Nautilus fittizio che lanci Thunar:
 
 ```
-   $ sudo touch /usr/bin/nautilus && sudo chmod 667 /usr/bin/nautilus && sudo nano /usr/bin/nautilus
+   $ sudo touch /usr/bin/nautilus && sudo chmod 667 /usr/bin/nautilus && sudoedit /usr/bin/nautilus
 
 ```
 
@@ -88,7 +88,7 @@ Un altro metodo di usare Dropbox senza Nautilus ma con un altro gestore file com
 
 4\. Cliccare sull'icona di Dropbox nel vassoio di sistema per aprire la propria cartella di Dropbox in Thunar.
 
-**Nota:** Se si ha Nautilus installato, ma non lo si vuole usare, non occorre modificare il file esistente sotto `/usr/bin`, ma basta cambiare `/usr/bin` con `/opt/dropbox` nella fase 2 sopra, in questo modo: `$ sudo touch /opt/dropbox/nautilus && sudo chmod +x /opt/dropbox/nautilus && sudo nano /opt/dropbox/nautilus`. Dropbox controllerà questo percorso prima!
+**Nota:** Se si ha Nautilus installato, ma non lo si vuole usare, non occorre modificare il file esistente sotto `/usr/bin`, ma basta cambiare `/usr/bin` con `/opt/dropbox` nella fase 2 sopra, in questo modo: `$ sudo touch /opt/dropbox/nautilus && sudo chmod +x /opt/dropbox/nautilus && sudoedit /opt/dropbox/nautilus`. Dropbox controllerà questo percorso prima!
 
 ## Rendere sicuro il proprio Dropbox
 

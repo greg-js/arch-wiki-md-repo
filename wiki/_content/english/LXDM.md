@@ -139,18 +139,6 @@ $ lxdm -c USER_SWITCH
 
 **Note:** When the new user logs in, his/her session is now on the NEXT tty from tty7\. For example, user1 logs in and issues the USER_SWITCH command. Now user2 logs in. User2 will be on tty7 while user1 will be on tty1.
 
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
-
-```
-#!/bin/sh
-/usr/bin/lxdm -c USER_SWITCH
-
-```
-
-then user switching in Xfce should work fine also with LXDM.
-
-[XScreenSaver](/index.php/XScreenSaver "XScreenSaver") can also perform this task. For more, see the [this section](/index.php/XScreenSaver#LXDM "XScreenSaver") of the Xscreensaver article.
-
 ### Themes
 
 The LXDM themes are located in `/usr/share/lxdm/themes`.

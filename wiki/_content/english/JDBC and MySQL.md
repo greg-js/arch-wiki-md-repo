@@ -44,7 +44,7 @@ For mariadb-jdbc:
 For mysql-jdbc:
 
 ```
-# ln -s /usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar /usr/lib/jvm/default-runtmie/lib/ext/
+# ln -s /usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar /usr/lib/jvm/default-runtime/lib/ext/
 
 ```
 

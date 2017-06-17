@@ -16,6 +16,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [1.1 Greeter](#Greeter)
 *   [2 Enabling LightDM](#Enabling_LightDM)
 *   [3 Command line tool](#Command_line_tool)
+    *   [3.1 User switching](#User_switching)
 *   [4 Testing](#Testing)
 *   [5 Optional configuration and tweaks](#Optional_configuration_and_tweaks)
     *   [5.1 Changing background images/colors](#Changing_background_images.2Fcolors)
@@ -32,11 +33,10 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.7 Migrating from SLiM](#Migrating_from_SLiM)
     *   [5.8 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
     *   [5.9 NumLock on by default](#NumLock_on_by_default)
-    *   [5.10 User switching under Xfce4](#User_switching_under_Xfce4)
-    *   [5.11 Default session](#Default_session)
-    *   [5.12 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
-        *   [5.12.1 GTK+ greeter](#GTK.2B_greeter_2)
-    *   [5.13 VNC Server](#VNC_Server)
+    *   [5.10 Default session](#Default_session)
+    *   [5.11 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
+        *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
+    *   [5.12 VNC Server](#VNC_Server)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
@@ -98,7 +98,16 @@ $ dm-tool --help
 
 ```
 
+### User switching
+
 **Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use something else, e.g. from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+
+LightDM's *dm-tool* command can be used to allow multiple users to be logged in on separate ttys. The following will send a signal requesting that the current session be locked and then will initiate a switch to LightDM's greeter, allowing a new user to log in to the system.
+
+```
+$ dm-tool switch-to-greeter
+
+```
 
 ## Testing
 
@@ -303,27 +312,6 @@ Install the [numlockx](https://www.archlinux.org/packages/?name=numlockx) packag
 [Seat:*]
 greeter-setup-script=/usr/bin/numlockx on
 ```
-
-### User switching under Xfce4
-
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of the Action Button found in your Application Launcher specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
-
-```
-#!/bin/sh
-/usr/bin/dm-tool switch-to-greeter
-
-```
-
-then user switching in Xfce should work with Lightdm.
-
-Alternatively, if you use the Whisker Menu, you can go to Properties -> Commands and change the "Switch Users" command directly to:
-
-```
- dm-tool switch-to-greeter
-
-```
-
-You can also switch users from the [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") lock screen - see [XScreenSaver#LightDM](/index.php/XScreenSaver#LightDM "XScreenSaver").
 
 ### Default session
 

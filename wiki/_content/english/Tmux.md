@@ -1,6 +1,6 @@
 [tmux](http://tmux.github.io/) is a "terminal multiplexer: it enables a number of terminals (or windows), each running a separate program, to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached."
 
-tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ).
+tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://github.com/tmux/tmux/wiki/FAQ).
 
 ## Contents
 
@@ -385,7 +385,7 @@ bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
 **Note:** To use this, you need to enable mouse support
 
-There is an unofficial perl extension (mentioned in the official [FAQ](http://sourceforge.net/p/tmux/tmux-code/ci/master/tree/FAQ)) to enable copying/pasting in and out of urxvt with tmux via Middle Mouse Clicking.
+There is an unofficial perl extension ([mentioned](https://github.com/tmux/tmux/wiki/FAQ#how-do-i-copy-a-selection-from-tmux-to-the-systems-clipboard) in the official [FAQ](https://github.com/tmux/tmux/wiki/FAQ)) to enable copying/pasting in and out of urxvt with tmux via Middle Mouse Clicking.
 
 First, you will need to download the perl script and place it into urxvts perl lib:
 

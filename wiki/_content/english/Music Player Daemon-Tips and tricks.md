@@ -77,7 +77,7 @@ To autostart *mpdcron* along with *mpd*, add an entry for it into the file in wh
 
 ### mpdscribble
 
-[mpdscribble](https://aur.archlinux.org/packages/mpdscribble/) is a daemon available in the [AUR](/index.php/AUR "AUR"). This is arguably the best alternative, because it is the semi-official MPD scrobbler and uses the new "idle" feature in MPD for more accurate scrobbling. Also, you do not need root access to configure it, because it does not need any changes to `/etc` at all. Visit [the official website](http://mpd.wikia.com/wiki/Client:Mpdscribble) for more information.
+[mpdscribble](https://aur.archlinux.org/packages/mpdscribble/) is a daemon available in the [AUR](/index.php/AUR "AUR"). This is arguably the best alternative, because it is the semi-official MPD scrobbler and uses the new "idle" feature in MPD for more accurate scrobbling. Also, you do not need root access to configure it, because it does not need any changes to `/etc` at all. Visit [the official website](https://www.musicpd.org/clients/mpdscribble/) for more information.
 
 Example configuration:
 

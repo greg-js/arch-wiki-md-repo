@@ -30,6 +30,4 @@ Reboot and then the built-in wireless NIC should work.
 
 ### Frequent Kernel Panics
 
-By default, the linux kernel may have issues with the Intel Skylake architecture of this notebook resulting in frequent kernel panics. To resolve this issue, add these options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
-
-	`nomodeset nohz=off clocksource=tsc`
+By default, the linux kernel may have issues with the Intel Skylake architecture of this notebook resulting in frequent kernel panics. To resolve this issue, you may need to disable [KMS](/index.php/KMS "KMS") and the high resolution clock by adding the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"): `nomodeset nohz=off clocksource=tsc`

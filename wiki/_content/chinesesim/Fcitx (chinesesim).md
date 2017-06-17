@@ -138,7 +138,7 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 使用 Fcitx 之前，您必须先设置一些环境设定变量：
 
-如果您用 KDM, GDM, LightDM 等显示管理器，请在 `~/.xprofile` 中加入以下代码；如果您用 `startx` 或者 Slim 启动，即使用 `.xinitrc` 的场合，则改在 `~/.xinitrc` 中加入：
+如果您用 KDM, GDM, LightDM 等显示管理器，请在 `~/.xprofile` 中加入以下代码；如果您用 `startx` 或者 Slim 启动，即使用 `.xinitrc` 的场合，则改在 `~/.xinitrc` 中加入,如果你使用的是较新版本的GNOME，则请在`/etc/environment`中加入：
 
 ```
  export GTK_IM_MODULE=fcitx
@@ -386,7 +386,16 @@ gsettings set \
 
 ### Gnome On Wayland 用户无法使用 fcitx
 
-由于 wayland 无法读取 `~/.xprofile` 中的环境变量，所以 fcitx 不能在 wayland 模式下正常工作，请在登录时选择 **运行于 Xorg 的 Gnome** 。
+由于 wayland 无法读取 `~/.xprofile` 中的环境变量，所以请在`/etc/environment`中加入：
+
+```
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+```
+
+或在登录时选择 **运行于 Xorg 的 Gnome** 。
 
 ## 参见
 

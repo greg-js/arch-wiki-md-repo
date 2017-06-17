@@ -85,7 +85,7 @@ If you add more profiles in the future and would like to have them included in t
 You must now modify Terminator's desktop file so that it selects a random profile from this list at startup.
 
 ```
-sudo nano /usr/share/applications/terminator.desktop
+sudoedit /usr/share/applications/terminator.desktop
 
 ```
 

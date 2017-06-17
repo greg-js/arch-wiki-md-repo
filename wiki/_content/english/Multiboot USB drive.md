@@ -52,13 +52,13 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
 
 ## Using GRUB and loopback devices
 
-advantages:
+Advantages:
 
 *   only a single partition required
 *   all ISO files are found in one directory
 *   adding and removing ISO files is simple
 
-disadvantages:
+Disadvantages:
 
 *   not all ISO images are compatible
 *   the original boot menu for the ISO file is not shown
@@ -86,7 +86,7 @@ Create the directory /boot:
 
 ```
 
-Install grub on the USB drive:
+Install GRUB on the USB drive:
 
 ```
 # grub-install --target=i386-pc --recheck --boot-directory=/mnt/boot /dev/sdX
@@ -174,7 +174,7 @@ As an additional fallback, you can also install GRUB on your MBR-bootable data p
 
 #### Using a template
 
-There are some git projects which provide some pre-existing GRUB configuration files, and a nice generic grub.cfg which can be used to load the other boot entries on demand, showing them only if the specified ISO files - or folders containing them - are present on the drive.
+There are some git projects which provide some pre-existing GRUB configuration files, and a nice generic `grub.cfg` which can be used to load the other boot entries on demand, showing them only if the specified ISO files - or folders containing them - are present on the drive.
 
 Multiboot USB: [https://github.com/aguslr/multibootusb](https://github.com/aguslr/multibootusb)
 
@@ -184,7 +184,7 @@ GLIM (GRUB2 Live ISO Multiboot): [https://github.com/thias/glim](https://github.
 
 For the purpose of multiboot USB drive it is easier to edit `grub.cfg` by hand instead of generating it. Alternatively, make the following changes in `/etc/grub.d/40_custom` or `/mnt/boot/grub/custom.cfg` and generate `/mnt/boot/grub/grub.cfg` using [grub-mkconfig](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
 
-As it is recommend to use a [persistent name](/index.php/Persistent_block_device_naming "Persistent block device naming") instead of `/dev/sd*xY*` to identify the partition on the USB drive where the image files are located, define a variable for convenience to hold the value. If the ISO images are on the same partition as grub, use the following to read the UUID at boot time:
+As it is recommend to use a [persistent name](/index.php/Persistent_block_device_naming "Persistent block device naming") instead of `/dev/sd*xY*` to identify the partition on the USB drive where the image files are located, define a variable for convenience to hold the value. If the ISO images are on the same partition as GRUB, use the following to read the UUID at boot time:
 
  `/mnt/boot/grub/grub.cfg` 
 ```
@@ -217,7 +217,7 @@ To complete the configuration, a boot entry for each ISO image has to be added b
 
 It is assumed that the ISO images are stored in the `boot/iso/` directory on the same filesystem where GRUB is installed. Otherwise it would be necessary to prefix the path to ISO file with device identification when using the `loopback` command, for example `loopback loop **(hd1,2)**$isofile`. As this identification of devices is not [persistent](/index.php/Persistent_block_device_naming "Persistent block device naming"), it is not used in the examples in this section.
 
-One can use persistent block device naming like so. Replace the uuid according to your iso filesystem uuid.
+One can use persistent block device naming like so. Replace the UUID according to your ISO filesystem UUID.
 
 ```
 # define globally (i.e outside any menuentry)
@@ -549,7 +549,7 @@ menuentry "[loopback]tails-i386-1.5.iso" {
 
 **Warning:** Emergency memory erasure does not seem to work when booting this way.
 
-Remove the `live-media=removable` option if the iso file is not on removable media.
+Remove the `live-media=removable` option if the ISO file is not on removable media.
 
 #### Ubuntu
 
@@ -637,4 +637,4 @@ modprobe: ERROR: could not insert 'phram': Input/output error
     *   [https://help.ubuntu.com/community/Grub2/ISOBoot/Examples](https://help.ubuntu.com/community/Grub2/ISOBoot/Examples)
     *   [https://help.ubuntu.com/community/Grub2/ISOBoot](https://help.ubuntu.com/community/Grub2/ISOBoot)
 *   Syslinux:
-    *   [Boot an ISO image](http://www.syslinux.org/wiki/index.php/Boot_an_Iso_image)
+    *   [Boot an ISO image](http://www.syslinux.org/wiki/index.php?title=Boot_an_Iso_image)
