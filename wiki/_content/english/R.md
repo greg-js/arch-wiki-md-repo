@@ -32,7 +32,7 @@
     *   [6.3 intel-advisor-xe](#intel-advisor-xe)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Package PKI won't install](#Package_PKI_won.27t_install)
-*   [8 Resources](#Resources)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -338,7 +338,7 @@ The version of the PKI package currently on CRAN (0.1-3) is old and will not wor
 
 ```
 
-## Resources
+## See also
 
 *   [RSeek](http://www.rseek.org/) A Google Custom Search Engine for R related material.
 *   [R for Data Science](http://r4ds.had.co.nz/) Online version of a CCA licensed book written by Garrett Grolemund and Hadley Wickham from RStudio, 2017.

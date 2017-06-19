@@ -58,7 +58,7 @@ By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can
 
 ### Using environment variables
 
-To define default Qt toolkit, you can create `QT_SELECT` [environment variable](/index.php/Environment_variable "Environment variable"). For example, to set Qt4, do `export QT_SELECT=4` in your shell's init file (e.g. `~/.bash_profile.` or `~/.zsh_profile.`).
+To define default Qt toolkit, you can create `QT_SELECT` [environment variable](/index.php/Environment_variable "Environment variable"). For example, to set Qt4, do `export QT_SELECT=4` in your shell's init file (e.g. `~/.bash_profile` or `~/.zprofile`).
 
 ### Using configuration files
 

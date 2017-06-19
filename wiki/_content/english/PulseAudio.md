@@ -70,6 +70,7 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 *   Web volume control: [PaWebControl](https://github.com/Siot/PaWebControl)
 *   System tray icon: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
 *   KF5 plasma applet: [kmix](https://www.archlinux.org/packages/?name=kmix) and [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
+*   Xfce4 plugin: [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
 *   If you want to use Bluetooth Headsets or other Bluetooth Audio Devices together with PulseAudio see the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") Article.
 
 ## Configuration

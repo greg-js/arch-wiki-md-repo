@@ -46,7 +46,7 @@ In addition, see the following links:
 
 Firefox gained an option for [tracking protection](https://support.mozilla.org/en-US/kb/tracking-protection-firefox). It can be enabled by setting `about:config`:
 
-*   privacy.trackingprotection.enabled true
+*   `privacy.trackingprotection.enabled` `true`
 
 Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
@@ -99,14 +99,14 @@ Battery status api may be used to fingerprint the user[[3]](http://eprint.iacr.o
 
 To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
 
-*   `media.peerconnection.ice.default_address_only` to **true**
-*   `media.peerconnection.enabled` to **false**. (only if you want to completely disable WebRTC)
+*   `media.peerconnection.ice.default_address_only` to `true`
+*   `media.peerconnection.enabled` to `false`. (only if you want to completely disable WebRTC)
 
 You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
 
 ### Disable 1024-bit Diffie-Hellman primes
 
-Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to **false** in `about:config`:
+Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to `false` in `about:config`:
 
 ```
 security.ssl3.dhe_rsa_aes_128_sha
@@ -118,17 +118,17 @@ Then consider checking your SSL configuration at [https://www.howsmyssl.com/](ht
 
 ### Disable telemetry
 
-Set `toolkit.telemetry.enabled` to **false** and/or disable it under Preferences, Advanced, Data Choices.
+Set `toolkit.telemetry.enabled` to `false` and/or disable it under Preferences, Advanced, Data Choices.
 
 ### Enable Do Not Track Header (DNT)
 
 **Note:** The user has no control over whether the request is honoured or not.
 
-Set `privacy.donottrackheader.enabled` to **true** or toggle it in Preferences under Privacy, manage your Do Not Track settings.
+Set `privacy.donottrackheader.enabled` to `true` or toggle it in *Preferences > Privacy > Manage your Do Not Track settings*.
 
 ### Disable geolocation
 
-Set `geo.enabled` to **false** in `about:config`.
+Set `geo.enabled` to `false` in `about:config`.
 
 ### Disable Safe Browsing service
 
@@ -136,14 +136,14 @@ Safe Browsing offers phishing protection and malware checks, however it may send
 
 To disable the Safe Browsing service, in `about:config` set:
 
-*   Set `browser.safebrowsing.malware.enabled` to **false**
-*   Set `browser.safebrowsing.phishing.enabled` to **false**
+*   `browser.safebrowsing.malware.enabled` to `false`
+*   `browser.safebrowsing.phishing.enabled` to `false`
 
-In addition disable download checking, by setting `browser.safebrowsing.downloads.enabled` to **false**.
+In addition disable download checking, by setting `browser.safebrowsing.downloads.enabled` to `false`.
 
 ### Disable WebGL
 
-WebGL is a potential [security risk](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern). Set `webgl.disabled` to **true** in `about:config` if you want to disable it.
+WebGL is a potential [security risk](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern). Set `webgl.disabled` to `true` in `about:config` if you want to disable it.
 
 ## Extensions
 

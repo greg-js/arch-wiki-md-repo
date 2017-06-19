@@ -5,6 +5,7 @@
 *   [1 Model description](#Model_description)
     *   [1.1 Support](#Support)
     *   [1.2 Fingerprint Reader](#Fingerprint_Reader)
+    *   [1.3 Bug: Fans blowing at max speed after resuming](#Bug:_Fans_blowing_at_max_speed_after_resuming)
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
@@ -46,6 +47,10 @@ Version: ThinkPad X1 Carbon 5th
 The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
 Open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+
+### Bug: Fans blowing at max speed after resuming
+
+There is a bug in the current kernel, causing the fans to often go on full throttle non-stop after resuming from suspend-to-ram. While the issue is actively researched and different solutions are tested in [the kernel bug thread](https://bugzilla.kernel.org/show_bug.cgi?id=191181), there is yet to working patch. To work around the issue, just repeatedly suspend (<kbd>Fn+4</kbd>) and resume (<kbd>Fn</kbd>) until it resumes without the fans starting with a short burst of activity. For me, the issue arises in about 2/3 resumes, and never on cold boot.
 
 ## Configuration
 

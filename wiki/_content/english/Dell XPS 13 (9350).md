@@ -77,7 +77,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Firmware Updates
 
-Dell provides firmware updates via Linux Vendor Firmware Service (LVFS). Refer to [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux") for additional information. A package is readily available at [fwupd](https://aur.archlinux.org/packages/fwupd/).
+Dell provides firmware updates via Linux Vendor Firmware Service (LVFS). Refer to [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux") for additional information. A package is readily available at [fwupd](https://www.archlinux.org/packages/?name=fwupd).
 
 ## Thunderbolt 3 / USB 3.1
 

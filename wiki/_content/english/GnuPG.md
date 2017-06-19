@@ -763,9 +763,7 @@ Alternatively, you can use `pinentry-qt`. See [#pinentry](#pinentry).
 
 ### KGpg configuration permissions
 
-There have been issues with [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg) being able to access the `~/.gnupg/` options. One issue might be a result of a deprecated *options* file, see the [bug](https://bugs.kde.org/show_bug.cgi?id=290221) report.
-
-Another user reported that *KGpg* failed to start until the `~/.gnupg` folder is set to `drwxr-xr-x` permissions. If you require this work-around, ensure that the directory contents retain `-rw-------` permissions! Further, report it as a bug to the [developers](https://bugs.kde.org/buglist.cgi?quicksearch=kgpg).
+There have been issues with [kgpg](https://www.archlinux.org/packages/?name=kgpg) being able to access the `~/.gnupg/` options. One issue might be a result of a deprecated *options* file, see the [bug](https://bugs.kde.org/show_bug.cgi?id=290221) report.
 
 ### Conflicts between gnome-keyring and gpg-agent
 

@@ -59,7 +59,7 @@ Et voila, you got a transparent terminal the size of your choice on your Desktop
 
 ### Gnome
 
-With the use of [devilspie](http://www.burtonini.com/blog/computers/devilspie) we will have more control over the placement and the behavior over the terminal window. What is Devilspie? *Devil's Pie can be configured to detect windows as they are created, and match the window to a set of rules. If the window matches the rules, it can perform a series of actions on that window. For example, I can make all windows created by X-Chat appear on all workspaces, and the main Gkrellm1 window does not appear in the pager or task list.*
+With the use of devilspie we will have more control over the placement and the behavior over the terminal window. What is Devilspie? *Devil's Pie can be configured to detect windows as they are created, and match the window to a set of rules. If the window matches the rules, it can perform a series of actions on that window. For example, I can make all windows created by X-Chat appear on all workspaces, and the main Gkrellm1 window does not appear in the pager or task list.*
 
 #### Step 1
 

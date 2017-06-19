@@ -93,8 +93,6 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	`fatlabel /dev/XXX <label>` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
 
-	fat/vfat 
-
 	`mlabel -i /dev/XXX ::<label>` using [mtools](https://www.archlinux.org/packages/?name=mtools)
 
 	ntfs 

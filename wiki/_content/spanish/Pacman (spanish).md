@@ -1,8 +1,8 @@
 El [gestor de paquetes de pacman](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") es una de las principales características distintivas de Arch Linux. Combina un simple formato de paquetes binarios con un fácil [sistema de compilación de paquetes](/index.php/Arch_Build_System "Arch Build System"). El objetivo de pacman es hacer posible gestionar fácilmente los paquetes, si son de los [repositorios oficiales de Arch](/index.php/Official_repositories "Official repositories") o compilaciones propias del usuario.
 
-Pacman mantiene el sistema actualizado mediante la sincronización de listas de paquetes con el servidor principal. Este modelo servidor/cliente también le permite descargar/instalar paquetes con una simple orden, completado con todas las dependencias necesarias.
+Pacman mantiene el sistema actualizado y sincronizado con la listas de paquetes del servidor principal. Este modelo servidor/cliente le permite descargar e instalar paquetes con una simple orden y cubrir las dependencias necesarias.
 
-Pacman está escrito en el lenguaje de programación C y utiliza para los paquetes el formato `.pkg.tar.xz`.
+Pacman está escrito en lenguaje de programación C y usa el formato *.pkg.tar.xz* para los paquetes.
 
 **Sugerencia:** El paquete oficial [pacman](https://www.archlinux.org/packages/?name=pacman) también contiene otras herramientas útiles, tales como **makepkg**, **pactree**, **vercmp** y otros. Se puede obtener la lista completa con `pacman -Ql pacman | grep bin`
 
@@ -47,15 +47,15 @@ Pacman está escrito en el lenguaje de programación C y utiliza para los paquet
 
 ## Configuración
 
-La configuración de pacman se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de la manera deseada. Información en profundidad sobre el archivo de configuración se puede encontrar en [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
+La configuración de pacman se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de manera deseada. Información en profundidad sobre el archivo de configuración se puede encontrar en [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
 
 ### Opciones Generales
 
-Las opciones generales están en la sección `[options]`. Lea la página de man o en el `pacman.conf` predefinido para información adicional.
+Las opciones generales están en la sección `[options]`. Lea la página man o en el `pacman.conf` predefinido para información adicional.
 
 #### Evitar la actualización de un paquete
 
-Para omitir la actualización de un paquete determinado, especifíquelo en la línea apropiada:
+Para omitir la actualización de un paquete en particular especifíquelo:
 
 ```
 IgnorePkg=linux
@@ -75,7 +75,7 @@ IgnoreGroup=gnome
 
 #### Evitar la instalación de archivos en el sistema
 
-Para ignorar siempre la instalación de archivos o carpetas específicos enumérelos con `NoExtract`. Por ejemplo, para evitar la instalación de units de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") use ésto:
+Para ignorar siempre la instalación de archivos o carpetas específicos enumerarlos con `NoExtract`. Por ejemplo, para evitar la instalación de units de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") use ésto:
 
 ```
 NoExtract=usr/lib/systemd/system/*
@@ -126,17 +126,19 @@ Include = /etc/pacman.d/mirrorlist
 #Server = file:///home/custompkgs
 ```
 
-**Advertencia:** Se debe tener cuidado cuando se utiliza el repositorio [testing]. Dado que se encuentra en desarrollo contínuo, la actualización puede causar mal funcionamiento en algunos paquetes. A los usuarios que usan el repositorio [testing] se les anima a suscribirse a la [lista de correos de arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) para estar al corriente.
+**Advertencia:** Se debe tener cuidado cuando se utiliza el repositorio [testing]. Dado que se encuentra en desarrollo continuo, la actualización puede causar mal funcionamiento en algunos paquetes. A los usuarios que usan el repositorio [testing] se les anima a suscribirse a la [lista de correos de arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) para estar al corriente.
 
 ### Seguridad de los paquetes
 
-Pacman 4 soporta firmas de los paquetes, que añaden una capa adicional de seguridad a los paquetes. La configuración por defecto, `SigLevel = Required DatabaseOptional`, permite la verificación de las firmas para todos los paquetes a nivel global: esto puede ser anulado por la línea `SigLevel` de cada repositorio de los mostrados más arriba. Para conocer más detalles sobre la firma de paquetes y la verificación de firma, eche un vistazo a [pacman-key](/index.php/Pacman-key "Pacman-key").
+Pacman 4 soporta firmas de los paquetes, que añaden una capa adicional de seguridad a los paquetes. La configuración por defecto, `SigLevel = Required DatabaseOptional`, permite la verificación de las firmas para todos los paquetes a nivel global: Esto puede ser anulado por la línea `SigLevel` de los repositorio mostrados más arriba. Para conocer más detalles sobre la firma de paquetes y la verificación de firma, eche un vistazo a [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Uso
 
-Lo que sigue es solo una pequeña muestra de las operaciones que se pueden realizar con pacman. Para leer más ejemplos, consulte [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
+Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar con pacman. Para leer más ejemplos, consulte [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
 
 ### Instalar paquetes
+
+**Nota:** Los paquetes suelen tener dependencias opcionales, paquetes que proporcionan características adicionales a la aplicación, sin ser necesarios para su funcionamiento. Al instalar un paquete pacman mostrará sus dependencias opcionales sin registrarlas en pacman.log. Use el comando [pacman -Si](#Consultar_la_base_de_datos_de_paquetes) para ver las dependencias opcionales de un paquete y una descripciones breve de sus funcionalidades.
 
 #### Instalar paquetes específicos
 

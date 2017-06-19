@@ -67,7 +67,7 @@ Other alternatives include:
 
 Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases).
 
-There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-languagecode` (where `languagecode` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [this](https://www.archlinux.org/packages/?sort=&q=firefox-i18n&maintainer=&last_update=&flagged=&limit=100).
+There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [this](https://www.archlinux.org/packages/?sort=&q=firefox-i18n&maintainer=&last_update=&flagged=&limit=100).
 
 ## Add-ons
 
@@ -105,9 +105,9 @@ services.sync.prefs.sync.capability.policy.maonoscript.sites
 
 ```
 
-The boolean `noscript.sync.enabled` must be set to true to synchronize the remainder of NoScript's preferences via Firefox Sync.
+The boolean `noscript.sync.enabled` must be set to `true` to synchronize the remainder of NoScript's preferences via Firefox Sync.
 
-Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/*some name*.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
+Firefox also allows configuration for a profile via a `user.js` file: [user.js](http://kb.mozillazine.org/User.js_file) kept in the profile folder, usually `~/.mozilla/firefox/*xxxxxxxx*.default/`. For a useful starting point, see e.g [custom user.js](https://github.com/pyllyukko/user.js) which is targeted at privacy/security conscious users.
 
 One drawback of the above approach is that it is not applied system-wide. Furthermore, this is not useful as a "pre-configuration", since the profile directory is created after first launch of the browser. You can, however, let *firefox* create a new profile and, after closing it again, [copy the contents](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles#w_restoring-a-profile-backup) of an already created profile folder into it.
 
@@ -141,6 +141,15 @@ HTML5 DRM playback is supported by the Google Widevine CDM, it is however not en
 
 See [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration and enabling support for Widevine (Netflix, Amazon Video, etc.).
 
+Starting with version 54, Firefox uses [PulseAudio](/index.php/PulseAudio "PulseAudio") for audio playback and capture. For sound to work, you need to install the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package.
+
+In case, for whatver reason, [PulseAudio](/index.php/PulseAudio "PulseAudio") is not an option for you, you can use [apulse](/index.php/Advanced_Linux_Sound_Architecture#PulseAudio_compatibility "Advanced Linux Sound Architecture") instead. To make this work, it is necessary to exclude `/dev/snd/` from Firefox' sandboxing by adding it to the comma-separated list in `about:config`:
+
+```
+security.sandbox.content.write_path_whitelist
+
+```
+
 ### Dictionaries for spell checking
 
 To enable spell checking for a specific language right click on any text field and check the *Check Spelling* box. To select a language for spell checking to you have right click again and select your language from the *Languages* sub-menu.
@@ -155,7 +164,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ### KDE/GNOME integration
 
-*   To bring the [KDE](/index.php/KDE "KDE") look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
+*   To bring the [KDE](/index.php/KDE "KDE") look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to *System Settings > Application Style > GTK*. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
@@ -163,7 +172,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 *   Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
-*   To make the left mouse button warp the scrollbar instead of the middle one on KDE, go to `System Settings` -> `Application Style` -> `GTK` and set the checkbox for "Left mouse button warps scrollbar".
+*   To make the left mouse button warp the scrollbar instead of the middle one on KDE, go to *System Settings > Application Style > GTK* and set the checkbox for "Left mouse button warps scrollbar".
 
 ## Plugins
 
@@ -233,16 +242,16 @@ Firefox uses `~/Desktop` as the default place for download and upload files. To 
 Some plugins can misbehave and bypass the default settings, such as the Flash plugin. You can prevent this by doing the following:
 
 1.  Type `about:config` into the address bar.
-2.  Right-click on the page and select `New` and then `Integer`.
+2.  Right-click on the page and select *New > Integer*.
 3.  Name it `privacy.popups.disable_from_plugins`.
-4.  Set the value to 2.
+4.  Set the value to `2`.
 
 The possible values are:
 
-*   **0**: Allow all popups from plugins.
-*   **1**: Allow popups, but limit them to dom.popup_maximum.
-*   **2**: Block popups from plugins.
-*   **3**: Block popups from plugins, even on whitelisted sites.
+*   `**0**`: Allow all popups from plugins.
+*   `**1**`: Allow popups, but limit them to `dom.popup_maximum`.
+*   `**2**`: Block popups from plugins.
+*   `**3**`: Block popups from plugins, even on whitelisted sites.
 
 ### Middle-click errors
 
@@ -255,13 +264,13 @@ The URL is not valid and cannot be loaded.
 
 Another symptom is that middle-clicking results in unexpected behavior, like accessing a random web page.
 
-The reason stems from the use of the middle mouse buttons in UNIX-like operating systems. The middle mouse button is used to paste whatever text has been highlighted/added to the clipboard. Then there is the possibly conflicting feature in Firefox, which defaults to loading the URL of the corresponding text when the button is depressed. This can be easily disabled by going to `about:config` and setting the `middlemouse.contentLoadURL` option to **false**.
+The reason stems from the use of the middle mouse buttons in UNIX-like operating systems. The middle mouse button is used to paste whatever text has been highlighted/added to the clipboard. Then there is the possibly conflicting feature in Firefox, which defaults to loading the URL of the corresponding text when the button is depressed. This can be easily disabled by going to `about:config` and setting the `middlemouse.contentLoadURL` option to `false`.
 
-Alternatively, having the traditional scroll cursor on middle-click (default behavior on Windows browsers) can be achieved by searching for `general.autoScroll` and setting it to **true**.
+Alternatively, having the traditional scroll cursor on middle-click (default behavior on Windows browsers) can be achieved by searching for `general.autoScroll` and setting it to `true`.
 
 ### Backspace does not work as the 'Back' button
 
-As per [this article](https://embraceubuntu.com/2006/12/21/fix-firefox-backspace-to-take-you-to-the-previous-page/), the feature has been removed in order to fix a bug. To re-introduce the original behavior go to `about:config` and set the `browser.backspace_action` option to **0** (zero).
+As per [this article](https://embraceubuntu.com/2006/12/21/fix-firefox-backspace-to-take-you-to-the-previous-page/), the feature has been removed in order to fix a bug. To re-introduce the original behavior go to `about:config` and set the `browser.backspace_action` option to `0` (zero).
 
 ### Firefox does not remember login information
 
@@ -270,12 +279,11 @@ It may be due to a corrupted `cookies.sqlite` file in [Firefox's profile](https:
 Open a terminal of choice and type the following:
 
 ```
-$ cd ~/.mozilla/firefox/xxxxxxxx.default/
-$ rm -f cookies.sqlite
+$ rm -f ~/.mozilla/firefox/*xxxxxxxx*.default/cookies.sqlite
 
 ```
 
-**Note:** xxxxxxxx represents a random string of 8 characters.
+**Note:** *xxxxxxxx* represents a random string of 8 characters.
 
 Restart Firefox and see if it solved the problem.
 
@@ -283,7 +291,7 @@ Restart Firefox and see if it solved the problem.
 
 When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
-Another workaround is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css` or using [stylish add-on](https://addons.mozilla.org/firefox/addon/stylish/).
+Another workaround is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/*xxxxxxxx*.default/chrome/userContent.css` or using [stylish add-on](https://addons.mozilla.org/firefox/addon/stylish/).
 
 The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
 
@@ -323,8 +331,8 @@ Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
 From the [Mozilla support](https://support.mozilla.com/en-US/questions/767751) site:
 
 1.  Type `about:config` in the address bar.
-2.  Set `browser.warnOnQuit` to **true**.
-3.  Set `browser.showQuitWarning` to **true**.
+2.  Set `browser.warnOnQuit` to `true`.
+3.  Set `browser.showQuitWarning` to `true`.
 
 ### Silently fails when installing desktop apps from marketplace
 
@@ -332,7 +340,7 @@ Installation of apps from Firefox OS Marketplace will silently fail if there is 
 
 ### Firefox detects the wrong version of my plugin
 
-When you close Firefox, the latter saves the current timestamp and version of your plugins inside `pluginreg.dat` located in your profile folder, typically in `~/.mozilla/firefox/*some name*.default/`.
+When you close Firefox, the latter saves the current timestamp and version of your plugins inside `pluginreg.dat` located in your profile folder, typically in `~/.mozilla/firefox/*xxxxxxxx*.default/`.
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
@@ -366,12 +374,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 
 **Note:** Problem available in some MATE desktops
 
-Uncheck the "smooth scrolling" settings:
-
-```
-Edit > Settings > Advanced > General > Use smooth scrolling
-
-```
+Uncheck the "Use smooth scrolling" setting in *Edit > Settings > Advanced > General*.
 
 ### Tearing video in fullscreen mode
 
@@ -399,7 +402,7 @@ This can also help if you are using the PulseAudio [module-echo-cancel](/index.p
 
 ### Make Firefox 54 use more than one "Web content" process
 
-Firefox 54 supports multiple "Web Content" processes but the default installation uses only one. To solve that, go to `about:config` and set `**dom.ipc.processCount**` to `4`. The recommended maximum is four, but you can set up to seven. [[6]](https://arstechnica.com/information-technology/2017/06/firefox-multiple-content-processes/) [[7]](https://support.mozilla.org/en-US/kb/performance-settings)
+Firefox 54 supports multiple "Web Content" processes but the default installation uses only one. To solve that, go to `about:config` and set `dom.ipc.processCount` to `4`. The recommended maximum is four, but you can set up to seven. [[6]](https://arstechnica.com/information-technology/2017/06/firefox-multiple-content-processes/) [[7]](https://support.mozilla.org/en-US/kb/performance-settings)
 
 With `dom.ipc.processCount` set to `1` (Default):
 

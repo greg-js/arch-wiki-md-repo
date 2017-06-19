@@ -14,8 +14,7 @@ En este artículo se describe cómo, tanto los nuevos como experimentados usuari
     *   [1.5 Arreglar y reportar bugs](#Arreglar_y_reportar_bugs)
     *   [1.6 Crear y adoptar paquetes de AUR](#Crear_y_adoptar_paquetes_de_AUR)
     *   [1.7 Proyectos oficiales de software](#Proyectos_oficiales_de_software)
-    *   [1.8 Participar en eventos](#Participar_en_eventos)
-    *   [1.9 Donar dinero](#Donar_dinero)
+    *   [1.8 Donar dinero](#Donar_dinero)
 *   [2 Proyectos de la comunidad](#Proyectos_de_la_comunidad)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
@@ -62,10 +61,6 @@ Se puede ayudar mediante la creación y adopción de paquetes.
 ### Proyectos oficiales de software
 
 Usted puede contribuir en el desarrollo de [official Arch Linux software projects](https://projects.archlinux.org/).
-
-### Participar en eventos
-
-Hay eventos mensuales y anuales sobre solución de errores, traducción y limpieza. Se pueden encontrar los próximos eventos en el [Arch Linux Event Calendar](/index.php/Arch_Linux_Event_Calendar "Arch Linux Event Calendar").
 
 ### Donar dinero
 
@@ -129,10 +124,6 @@ Software desarrollado por la comunidad centrado en Arch Linux.
 
 	Interfaces gráficas para [pacman](/index.php/Pacman "Pacman").
 
-	[NetGUI](http://www.github.com/codywd/NetGUI)
-
-	Interfaz gráfica para [Netctl](/index.php/Netctl "Netctl").
-
 ### Navegar por ArchWiki
 
 He aquí algunos métodos diferentes para visitar ArchWiki.
@@ -160,10 +151,6 @@ Servicios específicamente diseñados para usuarios de Arch.
 	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
 
 	Correos electrónicos @archlinux.info basados en VPS.
-
-	[ProjectArch.tk](https://bbs.archlinux.org/viewtopic.php?id=206735&)
-
-	Cuentas gratis de ZNC para los usuarios de Arch Linux.
 
 ### Otros
 

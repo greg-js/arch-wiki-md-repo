@@ -288,7 +288,7 @@ The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Waylan
 
 To enable Wayland support in Qt 5, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package.
 
-To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable").
+To run a Qt 5 app with the Wayland plugin, use `-platform wayland` or set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable").
 
 ### Clutter
 

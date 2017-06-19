@@ -110,11 +110,12 @@ some-dotfile filter=remove-pass
 
 ```
 
-Whenever the file “some-dotfile” is checked into git, git will invoke the filter “remove-pass” on the file before checking it in. The filter must be defined in .git/config, e. g.:
+Whenever the file “some-dotfile” is checked into git, git will invoke the filter “remove-pass” on the file before checking it in. The filter must be defined in `.git/config`, e. g.:
 
 ```
 [filter "remove-pass"]
 clean = "sed -e 's/^password=.*/#password=TODO/'"
+
 ```
 
 ## Repositories

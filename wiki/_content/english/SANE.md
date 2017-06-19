@@ -19,6 +19,7 @@ SANE ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now
     *   [6.2 Slow startup](#Slow_startup)
     *   [6.3 Device busy](#Device_busy)
     *   [6.4 Permission problem](#Permission_problem)
+        *   [6.4.1 Parallel port scanners](#Parallel_port_scanners)
 
 ## Installation
 
@@ -265,3 +266,7 @@ Add `usb 0x03f0 0x2504` to `/etc/sane.d/hp4200.conf` so it looks like this:
 usb 0x03f0 0x2504
 
 ```
+
+#### Parallel port scanners
+
+All devices attached to a parallel port are assumed to be printers, and are given a `lp` group. Either create a [udev](/index.php/Udev "Udev") rule to mark the relevant parallel port as `libsane_matched`, or add your user to the `lp` [group](/index.php/Group "Group"). CUPS also uses the `lp` group for read-only access to configuration files, so there are potential security implications to adding users to the `lp` group - see [CUPS#Connection Interfaces](/index.php/CUPS#Connection_Interfaces "CUPS") for more information.

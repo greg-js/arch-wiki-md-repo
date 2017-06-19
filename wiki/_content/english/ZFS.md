@@ -262,25 +262,7 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 
 ### GRUB-compatible pool creation
 
-By default, *zpool* will enable all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable read-only, or non-read-only features supported by GRUB, otherwise GRUB will not be able to read the pool. As of GRUB 2.02.beta3, GRUB supports all features in ZFS-on-Linux 0.6.5.7\. However, the Git master branch of ZoL contains one extra feature, `large_dnodes` that is not yet supported by GRUB.
-
-This example line is only necessary if you are using the Git branch of ZoL:
-
-```
- # zpool create -f -d \
-                -o feature@async_destroy=enabled \
-                -o feature@empty_bpobj=enabled \
-                -o feature@lz4_compress=enabled \
-                -o feature@spacemap_histogram=enabled \
-                -o feature@enabled_txg=enabled \
-                -o feature@hole_birth=enabled \
-                -o feature@bookmarks=enabled \
-                -o feature@filesystem_limits=enabled \
-                -o feature@embedded_data=enabled \
-                -o feature@large_blocks=enabled \
-                <pool_name> <vdevs>
-
-```
+By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable features supported by GRUB, otherwise GRUB will not be able to read the pool. As of GRUB 2.02, GRUB supports all features in ZFS-on-Linux 0.6.5.10/0.7.0-rc4.
 
 ### Importing a pool created by id
 

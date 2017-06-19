@@ -4,17 +4,17 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Mount helpers](#Mount_helpers)
-    *   [3.1 udevadm monitor](#udevadm_monitor)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
-    *   [4.2 Mount loop devices](#Mount_loop_devices)
-    *   [4.3 Hide selected partitions](#Hide_selected_partitions)
-        *   [4.3.1 Example](#Example)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
-    *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
-*   [6 See also](#See_also)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Mount helpers](#Mount_helpers)
+        *   [3.1.1 udevadm monitor](#udevadm_monitor)
+    *   [3.2 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
+    *   [3.3 Mount loop devices](#Mount_loop_devices)
+    *   [3.4 Hide selected partitions](#Hide_selected_partitions)
+        *   [3.4.1 Example](#Example)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
+    *   [4.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -28,7 +28,9 @@ Actions a user can perform using udisks are restricted with [Polkit](/index.php/
 
 See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks permissions for the `storage` group, and [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example.
 
-## Mount helpers
+## Tips and tricks
+
+### Mount helpers
 
 The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications").
 
@@ -50,7 +52,7 @@ The automatic mounting of devices is easily achieved with udisks wrappers. See a
 
 **Note:** *devmon* only uses *udisks* or *udisks2* for mounting (in this order) if *udevil* or *pmount* miss the SUID permission. To remove this permission, run `chmod -s /usr/bin/*udevil*` as root.
 
-### udevadm monitor
+#### udevadm monitor
 
 You may use `udevadm monitor` to monitor block events and mount drives when a new block device is created. Stale mount points are automatically removed by *udisksd*, such that no special action is required on deletion.
 
@@ -69,8 +71,6 @@ stdbuf -oL -- udevadm monitor --udev -s block | while read -r -- _ _ event devpa
 done
 
 ```
-
-## Tips and tricks
 
 ### Mount to /media (udisks2)
 

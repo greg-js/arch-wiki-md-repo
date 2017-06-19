@@ -318,24 +318,19 @@ In practice, it could turn out something like:
 
 	Example 2
 
-	Simple data encryption (removable media), an USB drive encrypted with [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
-└──> unlocked when attached to the computer (using dedicated passphrase plus using a covert keyfile such as `~/photos/2006-09-04a.jpg`)
-
-	Example 3
-
 	Partial system encryption with each user's home directory encrypted with [ECryptfs](/index.php/ECryptfs "ECryptfs")
 └──> unlocked on respective user login, using login passphrase
 └──> `swap` and `/tmp` partitions encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), using an automatically generated per-session throwaway key
 └──> indexing/caching of contents of `/home` by *slocate* (and similar apps) disabled.
 
-	Example 4
+	Example 3
 
 	System encryption - whole hard drive except `/boot` partition (however, `/boot` can be encrypted with [GRUB](/index.php/GRUB "GRUB")) encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS")
 └──> unlocked during boot, using passphrases or USB stick with keyfiles
 └──> Maybe different passphrases/keys per user - independently revocable
 └──> Maybe encryption spanning multiple drives or partition layout flexibility with [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
 
-	Example 5
+	Example 4
 
 	Hidden/plain system encryption - whole hard drive encrypted with [plain dm-crypt](/index.php/Dm-crypt "Dm-crypt")
 └──> USB-boot, using dedicated passphrase plus USB stick with keyfile

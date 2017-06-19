@@ -6,7 +6,7 @@ Install the [apache-spark](https://aur.archlinux.org/packages/apache-spark/) pac
 
 ## Configuration
 
-Some environment variables are set in `/etc/profile.d/apache_spark.sh`.
+Some environment variables are set in `/etc/profile.d/apache-spark.sh`.
 
 | ENV | Value | Description |
 | PATH | `$PATH:/opt/apache-spark/bin` | Spark binaries |

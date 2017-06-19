@@ -31,7 +31,8 @@
     *   [5.5 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
     *   [5.6 fcitx and KDE](#fcitx_and_KDE)
     *   [5.7 Input method switched to English unintentionally](#Input_method_switched_to_English_unintentionally)
-    *   [5.8 Gnome on Wayland with Fcitx](#Gnome_on_Wayland_with_Fcitx)
+    *   [5.8 xmodmap settings being overwritten](#xmodmap_settings_being_overwritten)
+    *   [5.9 Gnome on Wayland with Fcitx](#Gnome_on_Wayland_with_Fcitx)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -279,6 +280,12 @@ At this point you should have working layouts, native KDE layouts switch icon sh
 For instance, in XMind, when the user presses Enter to create a node, input method is always switched to English, and have to be switched back to Chinese manually.
 
 To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)), switch to tab "Global Config", in dropdown menu "Share State Among Window", select "PerProgram" or "All".
+
+### xmodmap settings being overwritten
+
+Fcitx controls keyboard layout, so your xmodmap settings will be overwritten. Since 4.2.7, Fcitx will try to load ~/.Xmodmap if it exists.
+
+For more details on how you can save your xmodmap changes see [FAQ](http://fcitx-im.org/wiki/FAQ#xmodmap_settings_being_overwritten)
 
 ### Gnome on Wayland with Fcitx
 

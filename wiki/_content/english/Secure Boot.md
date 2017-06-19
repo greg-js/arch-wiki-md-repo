@@ -43,11 +43,11 @@ Booting the archiso with Secure Boot enabled is possible since the EFI applicati
 The archiso boots, and you are presented with a shell prompt, automatically logged in as root. To check if the archiso was booted with Secure Boot, use this command:
 
 ```
-$ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+$ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*
 
 ```
 
-The characters denoted by `XXXX` differ from machine to machine. To help with this, you can use tab completion or list the EFI variables.
+The characters denoted by `*XXXX*` differ from machine to machine. To help with this, you can use tab completion or list the EFI variables.
 
 If a Secure Boot is enabled, this command returns `1` as the final integer in a list of five, for example:
 
@@ -90,11 +90,11 @@ Now copy over the boot loader binary and rename it to `loader.efi`; for [systemd
 Finally, create a new NVRAM entry to boot `PreLoader.efi`:
 
 ```
-# efibootmgr --disk /dev/sd**X** --part **Y** --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
+# efibootmgr --disk /dev/sd***X*** --part ***Y*** --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
 
 ```
 
-Replace `X` with the drive letter and replace `Y` with the partition number of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+Replace `*X*` with the drive letter and replace `*Y*` with the partition number of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 This entry should be added to the list as the first to boot; check with the `efibootmgr` command and adjust the boot-order if necessary.
 
@@ -125,7 +125,7 @@ For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the 
 
 **Note:** If dual-booting with Windows, backup the original `bootmgfw.efi` first as replacing it may cause problems with Windows updates.
 
-As before, copy `HashTool.efi` and `loader.efi` to `*esp*/EFI/Microsoft/Boot`
+As before, copy `HashTool.efi` and `loader.efi` to `*esp*/EFI/Microsoft/Boot/`.
 
 When the system starts with Secure Boot enabled, follow the steps above to enroll `loader.efi` and `/vmlinuz-linux` (or whichever kernel image is being used).
 
@@ -138,12 +138,12 @@ When the system starts with Secure Boot enabled, follow the steps above to enrol
 ```
 # rm *esp*/EFI/systemd/{PreLoader,HashTool}.efi
 # rm *esp*/EFI/systemd/loader.efi
-# efibootmgr -b N -B
+# efibootmgr -b *N* -B
 # bootctl update
 
 ```
 
-Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check with the *efibootmgr* command and adjust the boot-order if necessary.
+Where `*N*` is the NVRAM boot entry created for booting `PreLoader.efi`. Check with the *efibootmgr* command and adjust the boot-order if necessary.
 
 **Note:** The above commands cover the easiest case; if you have created, copied, renamed or edited further files probably you have to handle with them, too. If PreLoader was your operational boot entry, you obviously also need to [#Disable Secure Boot](#Disable_Secure_Boot).
 
@@ -351,15 +351,15 @@ For example, if you wanted to replace your db key with a new one:
 4.  Enroll the signed certificate update file.
 
 ```
-cert-to-efi-sig-list -g "$(< GUID.txt)" *new_db*.crt *new_db*.esl
-sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
+$ cert-to-efi-sig-list -g "$(< GUID.txt)" *new_db*.crt *new_db*.esl
+$ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
 
 ```
 
 If instead of replacing your db key, you want to **add** another one to the Signature Database, you need to use the option `-a` (see sign-efi-sig-list(1)):
 
 ```
-sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
+$ sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
 
 ```
 
@@ -444,7 +444,10 @@ See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/cont
 
 #### Microsoft Windows
 
-To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates, [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows and [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
+To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates:
+
+*   [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows
+*   [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
 
 Microsoft's certificates are in DER format, convert them to PEM format with *openssl*:
 

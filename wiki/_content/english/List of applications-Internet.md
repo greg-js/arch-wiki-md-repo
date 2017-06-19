@@ -312,8 +312,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ###### Browsers based on qt5-webkit
 
-**Warning:** The following browsers are based on [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit), which is today considered insecure and outdated. A secure and up to date replacement is provided by the [qt5-webkit-ng](https://www.archlinux.org/packages/?name=qt5-webkit-ng) package.
-
 *   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — A safe WebKit Web browser.
 
 	[http://dooble.sourceforge.net/](http://dooble.sourceforge.net/) || [dooble](https://aur.archlinux.org/packages/dooble/)

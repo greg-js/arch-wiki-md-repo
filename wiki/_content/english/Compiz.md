@@ -182,7 +182,7 @@ See [Desktop environment#Custom window manager](/index.php/Desktop_environment#C
 
 ### Starting the session with a display manager
 
-A standalone Compiz session can be started from a [display manager](/index.php/Display_manager "Display manager"). For most display manager's - [LightDM](/index.php/LightDM "LightDM") for example - all that is required is to create a `.desktop` file in `/usr/share/xsessions` that executes *compiz* (with command line options if needed) or *fusion-icon*. See the article for your display manager. See [Desktop entries](/index.php/Desktop_entries "Desktop entries") for information on creating a `.desktop` file.
+A standalone Compiz session can be started from a [display manager](/index.php/Display_manager "Display manager"). For most display managers - [LightDM](/index.php/LightDM "LightDM") for example - all that is required is to create a `.desktop` file in `/usr/share/xsessions` that executes *compiz* (with command line options if needed) or *fusion-icon*. See the article for your display manager. See [Desktop entries](/index.php/Desktop_entries "Desktop entries") for information on creating a `.desktop` file.
 
 #### Autostarting programs when using a display manager
 

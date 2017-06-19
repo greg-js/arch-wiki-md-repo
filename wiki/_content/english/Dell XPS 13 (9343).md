@@ -100,7 +100,7 @@ $ hex2hcd BCM20702A1_001.002.014.1443.1572.hex
 
 ```
 
-After reboot, the firmware is available for your Bluetooth interface.
+After reboot, the firmware is available for your Bluetooth interface. If the Bluetooth can't connect the device use the KDE desktop environment,Try to use `bluetoothctl` to connect manually.
 
 ### Audio
 

@@ -96,7 +96,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines.
 
-	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://aur.archlinux.org/packages/adapta-gtk-theme/)
+	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://www.archlinux.org/packages/?name=adapta-gtk-theme)
 
 *   **Arc** — A flat theme with a modern look and transparent elements.
 

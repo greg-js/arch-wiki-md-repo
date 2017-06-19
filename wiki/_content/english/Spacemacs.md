@@ -30,6 +30,10 @@
             *   [3.2.4.1 Inline (Helm)](#Inline_.28Helm.29)
             *   [3.2.4.2 File manager (Dired)](#File_manager_.28Dired.29)
     *   [3.3 Advanced concepts](#Advanced_concepts)
+        *   [3.3.1 Layers](#Layers)
+        *   [3.3.2 File Navigation](#File_Navigation)
+            *   [3.3.2.1 File tree (Neotree)](#File_tree_.28Neotree.29)
+            *   [3.3.2.2 File manager (Ranger)](#File_manager_.28Ranger.29)
 *   [4 Configuration](#Configuration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Slow startup time](#Slow_startup_time)
@@ -299,7 +303,7 @@ Inline navigation available with `SPC f f` hotkey. It uses the window very simil
 
 ##### File manager (Dired)
 
-If you need more visual method, run built-in file manager by pressing `SPC a d` `Enter`. You can navigate, using `h j k l` keys, and press `Enter` to enter directories and open files.
+If you need more visual method, run built-in file manager by pressing `SPC a d` `Enter`. You can navigate, using `Ctrl`+`h j k l` keys, and press `Enter` to enter directories and open files.
 
 There are some hotkeys available (refer to dired documentation for more):
 
@@ -313,6 +317,32 @@ There are some hotkeys available (refer to dired documentation for more):
 ### Advanced concepts
 
 At this step you are able to open files, make changes and save them successfully. Half the way is done, and now you can choose what to master next. There are some sections you may be interested.
+
+#### Layers
+
+One of the strongest features of Spacemacs is layers. Layer is a set of packages and configuration options, that greatly extends editor functionality in some way. There are layers for different programming languages, for example, or layers, providing additional tools (like IRC messaging, or integrated web browser). The full list of layers can be found at [Layers](http://spacemacs.org/layers/LAYERS.html) documentation page.
+
+Some layers are already shipped with Spacemacs, the others can be added manually. To do this, open Spacemacs configuration file (`SPC f e d`), and find `dotspacemacs-configuration-layers` section there. Then simply add selected layer to the list and restart Spacemacs. It will download all the required files on the next start.
+
+Spacemacs will also offer you to install a new layer when you open a file with already-known extension. For example, if you open `.html` file, installation of `html` layer will be offered.
+
+You can customize layer behaviour by overriding some layer-specific variables in your Spacemacs configuration file. Check the appropriate layer documentation to get the details.
+
+#### File Navigation
+
+There are some additional tools for file navigation. They may greatly increase the way you use Spacemacs on a daily basis.
+
+##### File tree (Neotree)
+
+You can run file tree by pressing `SPC f t`. New window opens, accessible with `SPC 0`. Standard `h j k l` navigation is available there. You can change root folder with `R` and toggle hidden files with `s`. Create new files with `c` and rename the old ones with `r`. Check [Neotree](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#neotree-file-tree) documentation for the details.
+
+**Tip:** If you need to change the root to higher one, just press `R` while on the current root path (first line of the window). Inline file navigation opens, just go backward with `H` as far as you need and select `.` directory then
+
+##### File manager (Ranger)
+
+If you need a full-featured file manager then Ranger may be the best choice. A lot of useful features are available there, like an instant `h j k l` navigation, inline file preview and ability to manipulate files. It also improves default Dired behaviour (`SPC a d`) a bit. Install `ranger` layer and run it with `SPC a r`. Check [Ranger](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Btools/ranger) documentation for the details. Along with customization options, there are a lot of useful hotkeys.
+
+**Note:** If you have issues opening Ranger, try to close Neotree first
 
 ## Configuration
 

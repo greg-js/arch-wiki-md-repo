@@ -390,7 +390,9 @@ If you can't get the Steam Controller to work, see [#Steam Controller not pairin
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam.
 
-On some desktop environments the on screen keyboard might freeze when trying to input text after two characters. This is a problem with focus and can be fixed by opening Window Manager, opening focus tab and changing to 'Focus follows mouse' so you can have the keyboard on front while having focus in the background. 'Automatically give focus to newly created windows' can do this as well, but doesn't work well with Big Picture as windowed games don't come to front.
+On some desktop environments the on screen keyboard might freeze when trying to input text after two characters. This is a problem with window focus. Check the settings for your [window manager](/index.php/Window_manager "Window manager") to see if it is possible to have focus follow the mouse or automatically focus new windows.
+
+**Note:** If you use Steam without its [runtime](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting"), you might actually need to disable the overlay for the controller to work in certain games (Rocket Wars, Rocket League, Binding of Isaac, etc.). Right click on a game in your library, select "Properties", and uncheck "Enable Steam Overlay".
 
 #### Wine
 

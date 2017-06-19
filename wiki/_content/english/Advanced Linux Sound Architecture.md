@@ -8,8 +8,9 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [1.1 User privileges](#User_privileges)
     *   [1.2 ALSA Utilities](#ALSA_Utilities)
     *   [1.3 OSS compatibility](#OSS_compatibility)
-    *   [1.4 ALSA and Systemd](#ALSA_and_Systemd)
-    *   [1.5 ALSA Firmware](#ALSA_Firmware)
+    *   [1.4 PulseAudio compatibility](#PulseAudio_compatibility)
+    *   [1.5 ALSA and Systemd](#ALSA_and_Systemd)
+    *   [1.6 ALSA Firmware](#ALSA_Firmware)
 *   [2 Unmuting the channels](#Unmuting_the_channels)
     *   [2.1 Unmute with amixer](#Unmute_with_amixer)
     *   [2.2 Unmute with alsamixer](#Unmute_with_alsamixer)
@@ -73,6 +74,10 @@ If you need [high quality resampling](#High_quality_resampling) install the [als
 ALSA has some ability to intercept [OSS](/index.php/OSS "OSS") calls and re-route them through ALSA instead. This emulation layer is useful e.g. for legacy applications which try to open `/dev/dsp` and write sound data to them directly. Without OSS or the emulation library, `/dev/dsp` will be missing, and the application will not produce any sound.
 
 If you want [OSS](/index.php/OSS "OSS") applications to work with [dmix](#Dmix), install the [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss) package as well. Then load the `snd-seq-oss`, `snd-pcm-oss` and `snd-mixer-oss` [kernel modules](/index.php/Kernel_modules "Kernel modules") to enable OSS emulation.
+
+### PulseAudio compatibility
+
+[apulse](https://aur.archlinux.org/packages/apulse/) lets you use ALSA for applications that support only [PulseAudio](/index.php/PulseAudio "PulseAudio") for sound. Usage is simply `$ apulse *yourapplication*`.
 
 ### ALSA and Systemd
 

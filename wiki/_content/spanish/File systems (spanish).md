@@ -1,6 +1,6 @@
 Desde [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-	*Un sistema de archivos (o* «filesystem»*) es un medio para organizar los datos que se espera se mantengan después que un programa haya terminado, al proporcionar procedimientos para almacenar, recuperar y actualizar dichos datos, así como gestionar el espacio disponible en el dispositivo(s) que lo contiene. Un sistema de archivos organiza los datos de una manera eficiente y está sintonizado con las características específicas del dispositivo.*
+	*Un **sistema de archivos** o **sistema de ficheros** (en inglés:* filesystem*) es un medio para organizar los datos que se espera se mantengan después que un programa haya terminado, al proporcionar procedimientos para almacenar, recuperar y actualizar dichos datos, así como gestionar el espacio disponible en el dispositivo(s) que lo contiene. Un sistema de archivos organiza los datos de una manera eficiente y está sintonizado con las características específicas del dispositivo.*
 
 Cada partición individual se puede configurar mediante uno de los muchos sistemas de archivos disponibles. Cada uno tiene sus propias ventajas, desventajas e idiosincrasias únicas. A continuación se hace una breve descripción de los sistemas de archivos compatibles; se hacen, también, enlaces a páginas de Wikipedia que proporcionan mucha más información.
 

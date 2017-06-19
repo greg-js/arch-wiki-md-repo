@@ -80,7 +80,7 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 *   If option `RCS` is unset in any of the files, no configuration files will be sourced after that file.
 *   If option `GLOBAL_RCS` is unset in any of the files, no global configuration files (`/etc/zsh/*`) will be sourced after that file.
 
-When starting Zsh, it'll source the following files in this order by default:
+When starting Zsh, it will source the following files in this order by default:
 
 *   `/etc/zsh/zshenv` Used for setting system-wide [environment variables](/index.php/Environment_variables "Environment variables"); it should not contain commands that produce output or assume the shell is attached to a tty. This file will ***always*** be sourced, this cannot be overridden.
 *   `$ZDOTDIR/.zshenv` Used for setting user's environment variables; it should not contain commands that produce output or assume the shell is attached to a tty. This file will ***always*** be sourced.
@@ -97,9 +97,9 @@ When starting Zsh, it'll source the following files in this order by default:
 **Note:**
 
 *   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
-*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please set the `$PATH` variable in `$ZDOTDIR/.zprofile`.
+*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please [set the `$PATH` variable](#Configuring_.24PATH) in `$ZDOTDIR/.zprofile`.
 
-**Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it will break the integrality of other packages which provide some scripts in `/etc/profile.d`.
+**Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it will break the integrality of other packages which provide some scripts in `/etc/profile.d/`.
 
 ## Configure Zsh
 
@@ -181,7 +181,7 @@ setopt COMPLETE_ALIASES
 
 Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`. ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
-See [ZshWiki: bindkeys](http://zshwiki.org/home/zle/bindkeys) for instructions on keybinding setup.
+See [ZshWiki: zle:bindkeys](http://zshwiki.org/home/zle/bindkeys) for instructions on keybinding setup.
 
 ### History search
 

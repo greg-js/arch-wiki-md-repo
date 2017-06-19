@@ -273,7 +273,7 @@ There are additional Fn+<Key> (sequences) that are not marked at all on the keyb
 
 ## Firmware Updates
 
-Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux"). Please note if you have used a bind mount partition for /boot, you will not be able to use the fwupd utility; Instead format a USB as FAT32 and put the bios update .exe on. Reboot into the one-time-boot menu and update the BIOS flash through there.
+Dell provides firmware updates via [fwupd](https://www.archlinux.org/packages/?name=fwupd). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux"). Please note if you have used a bind mount partition for /boot, you will not be able to use the fwupd utility; Instead format a USB as FAT32 and put the bios update .exe on. Reboot into the one-time-boot menu and update the BIOS flash through there.
 
 Alternatively, the BIOS update can be downloaded from the Dell website, and placed in a location accessible to the firmware. This could be the '/boot' folder, or a FAT32 formatted USB stick. Then restart your laptop and hit F12 while starting. In the boot menu choose firmware update and select the new file!
 

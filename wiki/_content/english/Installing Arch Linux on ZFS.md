@@ -284,7 +284,7 @@ set timeout=5
 set default=0
 
 menuentry "Arch Linux" {
-    set root='hd0,gpt2'
+    search -u UUID
     linux /@/boot/vmlinuz-linux zfs=zroot rw
     initrd /@/boot/initramfs-linux.img
 }
@@ -299,7 +299,7 @@ set timeout=5
 set default=0
 
 menuentry "Arch Linux" {
-    set root='hd0,gpt2'
+    search -u UUID
     linux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
     initrd /ROOT/default/@/boot/initramfs-linux.img
 }
@@ -314,7 +314,7 @@ set timeout=5
 set default=0
 
 menuentry "Arch Linux" {
-    set root='hd0,gpt2'
+    search -u UUID
     linux /vmlinuz-linux zfs=zroot/ROOT/default rw
     initrd /initramfs-linux.img
 }

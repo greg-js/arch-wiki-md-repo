@@ -49,7 +49,7 @@ $ fc-list : file
 
 ```
 
-See `man fc-list` for more output formats.
+See fc-list(1) for more output formats.
 
 Check for Xorg's known font paths by reviewing its log:
 
@@ -460,8 +460,8 @@ This change seems however to be unnecessary for the most of the cases, because a
 
 To find out what settings are in effect, use `fc-match --verbose`. eg.
 
+ `$ fc-match --verbose Sans` 
 ```
-$ fc-match --verbose Sans
 family: "DejaVu Sans"(s)
 hintstyle: 3(i)(s)
 hinting: True(s)

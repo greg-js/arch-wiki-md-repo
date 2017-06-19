@@ -140,7 +140,7 @@ With this setup the discrete GPU is used for all rendering and the integrated GP
 
 ## Firmware updates
 
-Firwmare updates are provided by Dell and can potentially be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/) but this has not been confirmed to work. Available firmware versions can also be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
+Firwmare updates are provided by Dell and can potentially be installed with [fwupdate](https://www.archlinux.org/packages/?name=fwupdate) but this has not been confirmed to work. Available firmware versions can also be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
 
 Firmware updates can be installed by copying the firmware file to a USB key and booting into "BIOS Flash Update" from the Boot Menu.
 

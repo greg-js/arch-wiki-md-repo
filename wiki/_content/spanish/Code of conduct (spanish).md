@@ -68,7 +68,7 @@ Las *normas mínimas necesarias* en la interacción con otras personas de la com
 
 #### Respete a los demás usuarios
 
-En pocas palabras, trate a los demás como quisiera ser tratado, respete al otro y sus puntos de vista, incluso si no está de acuerdo con ellos. Cuando estés en desacuerdo con alguna idea o argumento, no realice ataques ad hominem.
+En pocas palabras, trate a los demás como quisiera ser tratado, respete al otro y sus puntos de vista, incluso si no está de acuerdo con ellos. Cuando esté en desacuerdo con alguna idea o argumento, no realice ataques ad hominem.
 
 #### Respete otros sistemas operativos y proyectos
 

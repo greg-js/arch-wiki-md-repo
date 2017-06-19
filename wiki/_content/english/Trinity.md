@@ -1,31 +1,27 @@
-**Note:** Currently the base Trinity packages can be built and installed on Arch using the PKGBUILD files on [https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD). Most components seem to work fine except arts is a bit bugged (least on VMWare) but is a work in progress. Binary packages are available for x86_64 at the moment but will provide i686 as built (See [Unofficial user repositories#trinity](/index.php/Unofficial_user_repositories#trinity "Unofficial user repositories")). You are all welcome to improve the PKGBUILD files.
+The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a fork of [KDE](/index.php/KDE "KDE") 3.5 aiming to retain the traditional desktop style.
 
-**Note:** Michael's PKGBUILD files were added 2016 March 23, after a long time without any Trinity package repository being available. They seem to build successfully on a system with the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) package group installed, despite the warning below about building without [KDE4](/index.php/KDE4 "KDE4") being present. Michael's PKGBUILD files include the ten "required" Trinity core packages described in [How_to_Build_TDE_Core_Modules#Suggested_Build_Order](https://wiki.trinitydesktop.org/How_to_Build_TDE_Core_Modules#Suggested_Build_Order), and also tdeaccessibility, tdebindings, and tdeutils. Please contribute additional Trinity core package PKGBUILD files if you are able. Also note, these Trinity applications and applets can be run just fine under other Desktop Environments, including KDE Plasma5.
-
-The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a feature rich desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style. TDE is a fast, stable and mature desktop for Linux.
+TDE still depends on an old version of Qt, which they now maintain themselves, since it is deprecated. The Trinity applications and applets should also work with other desktop environments.
 
 ## Contents
 
-*   [1 About TDE](#About_TDE)
+*   [1 Michael's PKGBUILD files](#Michael.27s_PKGBUILD_files)
 *   [2 Build from source](#Build_from_source)
 *   [3 Building with Michael's PKGBUILD files](#Building_with_Michael.27s_PKGBUILD_files)
 *   [4 Start and configuration](#Start_and_configuration)
     *   [4.1 Enable tdm.service in systemd to start tdm at boot](#Enable_tdm.service_in_systemd_to_start_tdm_at_boot)
     *   [4.2 Configure to work with startx](#Configure_to_work_with_startx)
-*   [5 Refusing to give up the Trinity "Kicker" panel](#Refusing_to_give_up_the_Trinity_.22Kicker.22_panel)
+*   [5 Trinity "Kicker" panel with other desktop environments](#Trinity_.22Kicker.22_panel_with_other_desktop_environments)
 *   [6 See also](#See_also)
 
-## About TDE
+## Michael's PKGBUILD files
 
-The current stable release of TDE (14.0.3) was released 2016 February 28\. Current development is on 14.1.0\.
+[Michael's PKGBUILD repository](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD) contains PKGBUILD files for the ten required Trinity core packages described in [How_to_Build_TDE_Core_Modules#Suggested_Build_Order](https://wiki.trinitydesktop.org/How_to_Build_TDE_Core_Modules#Suggested_Build_Order), and also *tdeaccessibility*, *tdebindings*, and *tdeutils*.
 
-Trinity is an independent fork of KDE 3.5 using a separate developer community. Continued development by the Trinity Project has polished off many rough edges that were present in the final release of KDE 3.5.10\. Many new and useful features have been added to keep the environment up-to-date.
-
-R14 is intended to be a true TDE release with all branding, artwork, and graphics changed and updated for this project rather than using holdover KDE3 stock images. The significant improvements and changes to the R14 codebase have been backported to 3.5.13-sru. The desktop functions on current graphics libs, systemd, libusbx, udisk2 and other newly implemented hardware paradigms.
+Most PKGBUILDs seem to build fine except arts is a bit bugged (at least on VMWare). They seem to build successfully on a system with the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) package group installed, despite the warning below about building with [KDE4](/index.php/KDE4 "KDE4") being present. Binary packages are available for x86_64 at the moment, see [Unofficial user repositories#trinity](/index.php/Unofficial_user_repositories#trinity "Unofficial user repositories").
 
 ## Build from source
 
-As of July, 2015, there are no Arch LInux Trinity packages, so you will need to create your own. See [Creating packages](/index.php/Creating_packages "Creating packages") for more information on how to create Arch packages.
+As of July, 2015, there are no Arch Linux Trinity packages, so you will need to create your own. See [Creating packages](/index.php/Creating_packages "Creating packages").
 
 To download the R14 source tarballs, follow the Download Source Tarballs link near the bottom of the [Trinity R14.0.0 Release](https://www.trinitydesktop.org/releases/R14.0.0/) page.
 
@@ -83,11 +79,10 @@ Trinity provides a normal `starttde`. If you've followed the Arch packaging guid
 
 Then from the command line, just type `startx`. More about [xinitrc](/index.php/Xinitrc "Xinitrc").
 
-## Refusing to give up the Trinity "Kicker" panel
+## Trinity "Kicker" panel with other desktop environments
 
-If you simply must have the Trinity "kicker" Desktop Panel and Applets while running Plasma5 or some other Desktop Environment, create this script and activate it. For Plasma5, use "System Settings -> Startup and Shutdown -> Autostart -> Add Script".
+To use the Trinity "kicker" Desktop Panel and Applets with another desktop environment, create this script and make it [executable](/index.php/Executable "Executable"). For Plasma5, use *System Settings > Startup and Shutdown > Autostart > Add Script*.
 
- `panelstart` 
 ```
 #!/bin/bash
 /opt/trinity/bin/tdeinit
@@ -96,22 +91,11 @@ If you simply must have the Trinity "kicker" Desktop Panel and Applets while run
 
 ```
 
-and
-
-```
-# chmod 755 panelstart
-
-```
-
-Yum!
-
 ## See also
 
-*   Getting Involved with Trinity Development [https://trinitydesktop.org/helpwanted.php](https://trinitydesktop.org/helpwanted.php)
-*   Main Project Site: [http://trinitydesktop.org](http://trinitydesktop.org/)
-*   TDE GIT Repository: [http://git.trinitydesktop.org/cgit/](http://git.trinitydesktop.org/cgit/)
-*   Bug Reporting: [http://bugs.trinitydesktop.org](http://bugs.trinitydesktop.org/)
-*   Mailing Lists: [http://trinitydesktop.org/mailinglist.php](http://trinitydesktop.org/mailinglist.php)
-*   Developers Web: [https://wiki.trinitydesktop.org/Category:Developers](https://wiki.trinitydesktop.org/Category:Developers)
-*   QT and TQT Tutorials and Documentation: [https://wiki.trinitydesktop.org/Category:Developers#Tutorials_and_Documentation_for_QT_and_TQT](https://wiki.trinitydesktop.org/Category:Developers#Tutorials_and_Documentation_for_QT_and_TQT)
-*   How To Build: [https://wiki.trinitydesktop.org/Category:Developers#Building_and_Distributing_Trinity](https://wiki.trinitydesktop.org/Category:Developers#Building_and_Distributing_Trinity)
+*   [TDE Git repositories](http://git.trinitydesktop.org/cgit/)
+*   [TDE Bugzilla](http://bugs.trinitydesktop.org/)
+*   [Mailing Lists](http://trinitydesktop.org/mailinglist.php)
+*   [Developers Web](https://wiki.trinitydesktop.org/Category:Developers)
+*   [QT and TQT Tutorials and Documentation](https://wiki.trinitydesktop.org/Category:Developers#Tutorials_and_Documentation_for_QT_and_TQT)
+*   [How To Build](https://wiki.trinitydesktop.org/Category:Developers#Building_and_Distributing_Trinity)
