@@ -43,7 +43,7 @@ While [Hurd](https://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under act
 
 	[https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
 
-*   **[gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip")** — gzip is both a file format and a software for compression and decompression.
+*   **[gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip")** — gzip is both a file format and a software application for compression and decompression.
 
 	[https://www.gnu.org/software/gzip/](https://www.gnu.org/software/gzip/) || [gzip](https://www.archlinux.org/packages/?name=gzip)
 

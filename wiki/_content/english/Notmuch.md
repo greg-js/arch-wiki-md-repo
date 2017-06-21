@@ -10,7 +10,8 @@
     *   [3.3 alot](#alot)
     *   [3.4 bower](#bower)
     *   [3.5 Neomutt](#Neomutt)
-    *   [3.6 ner](#ner)
+    *   [3.6 astroid](#astroid)
+    *   [3.7 ner](#ner)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
     *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
 *   [5 Integrating with NeoMutt / mutt-kz](#Integrating_with_NeoMutt_.2F_mutt-kz)
@@ -81,6 +82,10 @@ More file handlers can be configured of course.
 ### Neomutt
 
 [Neomutt](http://www.neomutt.org/) - Another mutt fork which includes many feature patches, among them the [Notmuch](http://www.neomutt.org/feature/notmuch) integration patch. Install from the [AUR](/index.php/AUR "AUR") as [neomutt](https://aur.archlinux.org/packages/neomutt/) or [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
+
+### astroid
+
+[Astroid](https://github.com/astroidmail/astroid) is a graphical MUA and interface to notmuch written using C++ and GTK+. [astroid](https://aur.archlinux.org/packages/astroid/) (stable) and [astroid-git](https://aur.archlinux.org/packages/astroid-git/) (VCS) packages are available in [AUR](/index.php/AUR "AUR"). The GUI is designed to be very fast, preview HTML and attachments, be navigable by keyboard. It is extensively configurable and you use your favorite editor either embedded or launch it externally. Check out the [Tour](https://github.com/astroidmail/astroid/wiki) to see how astroid can be used and for a description of the complete setup, or check out the [README](https://github.com/astroidmail/astroid) for more information.
 
 ### ner
 

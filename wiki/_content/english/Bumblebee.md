@@ -22,6 +22,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.3 Multiple monitors](#Multiple_monitors)
         *   [4.3.1 Outputs wired to the Intel chip](#Outputs_wired_to_the_Intel_chip)
         *   [4.3.2 Output wired to the NVIDIA chip](#Output_wired_to_the_NVIDIA_chip)
+    *   [4.4 Multiple NVIDIA Graphics Cards](#Multiple_NVIDIA_Graphics_Cards)
 *   [5 CUDA without Bumblebee](#CUDA_without_Bumblebee)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 [VGL] ERROR: Could not open display :8](#.5BVGL.5D_ERROR:_Could_not_open_display_:8)
@@ -414,6 +415,36 @@ The tool will also start bumblebee (which may be left as default install). See t
 **Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
 
 When run in a terminal, it will daemonize itself unless the `-f` switch is used. The advantage of using it in foreground mode is that once the external display is disconnected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
+
+### Multiple NVIDIA Graphics Cards
+
+If you have multiple NVIDIA graphics cards (eg. when using an eGPU with a laptop with another built in NVIDIA graphics card), you need to make a minor edit to `/etc/bumblebee/xorg.conf.nvidia`. If this change is not made the daemon may default to using the internal NVIDIA card.
+
+First, determine the BusID of the external card:
+
+ `$ lspci | grep -E "VGA|3D"` 
+```
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 530 (rev 06)
+01:00.0 3D controller: NVIDIA Corporation GM107M [GeForce GTX 960M] (rev a2)
+0b:00.0 VGA compatible controller: NVIDIA Corporation GP104 [GeForce GTX 1070] (rev a1)
+
+```
+
+In this case, the BusID is `0b:00.0`.
+
+Now edit `/etc/bumblebee/xorg.conf.nvidia` and add the following line to `Section "Device"`:
+
+ `/etc/bumblebee/xorg.conf.nvidia` 
+```
+Section "Device"
+    ...
+    BusID "PCI:11:00:0"
+    ...
+EndSection
+
+```
+
+**Note:** Notice that the hex `0b` became a base10 `11`
 
 ## CUDA without Bumblebee
 

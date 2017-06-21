@@ -226,7 +226,7 @@ Make sure you have rights on libfm configuration file:
 
 ```
 $ chmod -R 755 ~/.config/libfm
-$ chmod 777 ~/.config/libfm/libfm.conf
+$ chmod 644 ~/.config/libfm/libfm.conf
 
 ```
 

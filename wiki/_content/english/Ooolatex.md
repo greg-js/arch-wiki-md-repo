@@ -39,30 +39,15 @@ Then one needs to update the font cache (from within the fonts folder):
 
 EMF format allows better rendering of the equations by the use of scalable graphics. It performs much better than a "png" rendition and the resultant image can be re-sized without compromising visual quality.
 
-For the EMF option to work, it is particularly important to install the "libstdc++5" dependency:
+For the EMF option to work, it is particularly important to install the [install](/index.php/Install "Install") the [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) package.
 
-```
-# pacman -S libstdc++5
-
-```
-
-For 64-bit users, in addition to the above package, one also needs
-
-```
-# pacman -S lib32-libstdc++5
-
-```
+For 64-bit users, in addition to the above package, one also needs to install the [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) from the [Multilib](/index.php/Multilib "Multilib") repository.
 
 ## Initial setup
 
 After installation, one can start the macro by choosing Tools > Macros... > Run Macros and selecting the required routine from within a document. Also, an OOoLatex toolbar should be available which allows easy insertion of equations. (If it is not automatically enabled, check OOoLatex in View > Toolbars > OOoLatex.)
 
-To successfully compile the LaTeX code, one needs to supply the paths to LaTeX and ghostscript (gs) binaries to OOoLatex in the "Config" tab. The usual location for both of these is in
-
-```
-# /usr/bin
-
-```
+To successfully compile the LaTeX code, one needs to supply the paths to LaTeX and ghostscript (gs) binaries to OOoLatex in the "Config" tab. The usual location for both of these is in `/usr/bin`.
 
 ## Usage
 

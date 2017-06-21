@@ -304,6 +304,6 @@ Reboot and boot from the USB drive, follow vendor directions.
 
 fwupd is a simple daemon to allow session software to update device firmware on your local machine. It's designed for desktops, but this project is also usable on phones, tablets and on headless servers. You can either use a GUI software manager like GNOME Software to view and apply updates, the command-line tool or the system D-Bus interface directly.
 
-Large vendors including Dell will use this way to distribute firmware updates to Linux.
+Large vendors including Dell and Logitech use this way to distribute firmware updates to Linux.
 
 A list of hardware currently available in stable tree can be viewed [here](https://secure-lvfs.rhcloud.com/lvfs/devicelist).

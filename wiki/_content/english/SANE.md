@@ -1,4 +1,4 @@
-SANE ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. [Here](http://www.sane-project.org/sane-supported-devices.html) you can check if sane supports your scanner.
+[SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. [Here](http://www.sane-project.org/sane-supported-devices.html) you can check if sane supports your scanner.
 
 ## Contents
 
@@ -34,7 +34,7 @@ $ scanimage -L
 
 ```
 
-If that fails, run the command again as root to check for permission problems. If that fails as well, check that your scanner is plugged into the computer. You also might have to unplug/plug your scanner for `/etc/udev/rules.d/sane.rules` to recognize your scanner.
+If that fails, run the command again as root to check for permission problems. If that fails as well, check that your scanner is plugged into the computer. You also might have to unplug/plug your scanner for `/usr/lib/udev/rules.d/49-sane.rules` to recognize your scanner.
 
 Now you can see if it actually works
 
@@ -49,6 +49,7 @@ If the scanning fails with the message `scanimage: sane_start: Invalid argument`
 ```
 device `v4l:/dev/video0' is a Noname Video WebCam virtual device
 device `pixma:04A91749_247936' is a CANON Canon PIXMA MG5200 multi-function peripheral
+
 ```
 
 Then you would need to run
@@ -75,15 +76,15 @@ Most scanners should work out of the box. If yours does not, see [SANE/Scanner-s
 
 Firmwares usually have the **`.bin`** extension.
 
-Firstly you need to put the firmware someplace safe, it is recommended to put it in a subdirectory of `/usr/share/sane`.
+Firstly you need to put the firmware someplace safe, it is recommended to put it in a subdirectory of `/usr/share/sane/`.
 
 Then you need to tell sane where the firmware is:
 
 *   Find the name of the backend for your scanner from the [sane supported devices list](http://www.sane-project.org/sane-supported-devices.html).
-*   Open the file `/etc/sane.d/<backend-name>.conf`.
-*   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/<backend-name>.conf` file.
+*   Open the file `/etc/sane.d/*<backend-name>*.conf`.
+*   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/*<backend-name>*.conf` file.
 
-If the backend of your scanner is not part of the sane package (such as hpaio.conf which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.conf`.
+If the backend of your scanner is not part of the sane package (such as `hpaio.conf` which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.conf`.
 
 ## Install a frontend
 
@@ -111,7 +112,7 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 
 ### Sharing your scanner over a network
 
-You can share your scanner with other hosts on your network who use sane, xsane or xsane-enabled Gimp. To set up the server, first indicate which hosts on your network are allowed access.
+You can share your scanner with other hosts on your network who use *sane*, *xsane* or xsane-enabled *GIMP*. To set up the server, first indicate which hosts on your network are allowed access.
 
 Change the `/etc/sane.d/saned.conf` file to your liking, for example:
 
@@ -123,9 +124,9 @@ localhost
 
 ```
 
-If you use iptables, [insert](/index.php/Kernel_modules "Kernel modules") the `nf_conntrack_sane` module to let the firewall track saned connections.
+If you use [iptables](/index.php/Iptables "Iptables"), [insert](/index.php/Kernel_modules "Kernel modules") the `nf_conntrack_sane` module to let the firewall track `saned` connections.
 
-Now start/enable `saned.socket` [using systemd](/index.php/Systemd#Using_units "Systemd"). Your scanner is now available over the network. For more information, see [saned(8)](https://linux.die.net/man/8/saned).
+Now [start/enable](/index.php/Start/enable "Start/enable") `saned.socket`. Your scanner is now available over the network. For more information, see [saned(8)](http://www.sane-project.org/man/saned.8.html).
 
 ### Accessing your scanner from a remote workstation
 
@@ -169,61 +170,61 @@ No firmware file was provided for the used scanner (see [#Firmware](#Firmware) f
 The permissions for the used firmware file are wrong. Correct them using
 
 ```
-# chown root:scanner /usr/share/sane/SCANNER_MODEL/FIRMWARE_FILE
-# chmod ug+r /usr/share/sane/SCANNER_MODEL/FIRMWARE_FILE
+# chown root:scanner /usr/share/sane/*SCANNER_MODEL*/*FIRMWARE_FILE*
+# chmod ug+r /usr/share/sane/*SCANNER_MODEL*/*FIRMWARE_FILE*
 
 ```
 
 #### Multiple backends claim scanner
 
-It may happen, that multiple backends support (or pretend to support) your scanner, and sane chooses one that does not do after all (the scanner will not be displayed by scanimage -L then). This has happend with older Epson scanners and the `epson2` resp. `epson` backends. In this case, the solution is to comment out the unwanted backend in `/etc/sane.d/dll.conf`. In the Epson case, that would be to change
+It may happen, that multiple backends support (or pretend to support) your scanner, and sane chooses one that does not do after all (the scanner will not be displayed by `scanimage -L` then). This has happened with older Epson scanners and the `epson2` resp. `epson` backends. In this case, the solution is to comment out the unwanted backend in `/etc/sane.d/dll.conf`. In the Epson case, that would be to change
 
 ```
- epson2
- #epson
+epson2
+#epson
 
 ```
 
 to
 
 ```
- #epson2
- epson
+#epson2
+epson
 
 ```
 
-It may also be possible that the independant [iscan](https://www.archlinux.org/packages/?name=iscan) epkowa backend interferes with your snapscan backend (epson scanners). You may get this error right after using the `scanimage -L` command. Starting the scanner app (like [xsane](https://www.archlinux.org/packages/?name=xsane)) twice can also solve the problem. Otherwise check your `/etc/sane.d/epkowa.conf` for wrong configuations or remove the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
+It may also be possible that the independent [iscan](https://www.archlinux.org/packages/?name=iscan) `epkowa` backend interferes with your `snapscan` backend (epson scanners). You may get this error right after using the `scanimage -L` command. Starting the scanner app (like [xsane](https://www.archlinux.org/packages/?name=xsane)) twice can also solve the problem. Otherwise check your `/etc/sane.d/epkowa.conf` for wrong configurations or remove the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
 
 #### Communication via xHCI not working (older scanner models)
 
 Some older scanner models do not work when connected via an USB3 port. If you experience this issue, try setting the `SANE_USB_WORKAROUND=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting your frontend.[[1]](https://lists.alioth.debian.org/pipermail/sane-announce/2017/000036.html)[[2]](https://anonscm.debian.org/cgit/sane/sane-backends.git/commit/?id=1207ce5a40664c04b934bd0a6babbc1575361356)
 
-If that doesn't work, try one of the following workarounds:
+If that does not work, try one of the following workarounds:
 
 *   Use an USB2 port instead of an USB3 port, if available.
 *   Disable xHCI via BIOS/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
-*   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](https://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
+*   On (some) intel chipsets the `setpci` command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [here](https://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
 *   Connect the scanner over the network instead if it is supported.
 
 ### Slow startup
 
 If you encounter slow startup issue (e.g. `xsane` or `scanimage -L` take a lot to find scanner) it may be that more than one driver supporting it is available.
 
-Have a look at `/etc/sane.d/dll.conf` and try commenting out one (e.g. you may have epson, epson2 and epkowa enabled at the same time, try leaving only epson or epkowa uncommented)
+Have a look at `/etc/sane.d/dll.conf` and try commenting out one (e.g. you may have `epson`, `epson2` and `epkowa` enabled at the same time, try leaving only `epson` or `epkowa` uncommented).
 
-You can also try to comment out "net" driver, if there are no network scanners.
+You can also try to comment out `net` driver, if there are no network scanners.
 
-Your webcam might also be listed as scanning device and slow down detection at startup. To blacklist webcam, try commenting out all the lines in `/etc/sane.d/v4l.conf`.
+Your [webcam](/index.php/Webcam "Webcam") might also be listed as scanning device and slow down detection at startup. To blacklist webcam, try commenting out all the lines in `/etc/sane.d/v4l.conf`.
 
 ### Device busy
 
-If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the usblp kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents usblp from loading to support scanning, not needed by either CUPS or xsane and related tools). Reboot to finish. [[3]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
+If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by either CUPS or xsane and related tools). Reboot to finish. [[3]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
 
 ### Permission problem
 
 After systemd, the `scanner` and `lp` groups are deprecated. No need to add your user to those groups. See [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups") for detail.
 
-You can also try to change permissions of usb device but this is not recommended, a better solution is to fix the Udev rules so that your scanner is recognized.
+You can also try to change permissions of usb device but this is not recommended, a better solution is to fix the [Udev rules](/index.php/Udev_rules "Udev rules") so that your scanner is recognized.
 
 First check connected usb devices with `lsusb`:
 
@@ -231,11 +232,11 @@ First check connected usb devices with `lsusb`:
 Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 003 Device 003: ID 04d9:1603 Holtek Semiconductor, Inc. 
-Bus 003 Device 002: ID 04fc:0538 Sunplus Technology Co., Ltd 
+Bus 003 Device 003: ID 04d9:1603 Holtek Semiconductor, Inc.
+Bus 003 Device 002: ID 04fc:0538 Sunplus Technology Co., Ltd
 Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard 
+Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard
 Bus 001 Device 002: ID 046d:0802 Logitech, Inc. Webcam C200
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
@@ -243,7 +244,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 In our example we see the scanner: `Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard`. Here `03f0` is the *vendorID* and `2504` is the *productID*.
 
-Now open `/usr/lib/udev/rules.d/49-sane.rules` and see if there is there is a line with the vendorID and productID of your scanner. If there is not any, create the new file `/etc/udev/rules.d/49-sane-missing-scanner.rules`, with the following contents:
+Now open `/usr/lib/udev/rules.d/49-sane.rules` and see if there is there is a line with the *vendorID* and *productID* of your scanner. If there is not any, create the new file `/etc/udev/rules.d/49-sane-missing-scanner.rules`, with the following contents:
 
 ```
 ATTRS{idVendor}=="**vendorID**", ATTRS{idProduct}=="**productID**", MODE="0664", GROUP="scanner", ENV{libsane_matched}="yes"

@@ -206,6 +206,7 @@ These files are aimed at setting network configuration variables, especially for
 #### [Network]
 
 *   `DHCP=` enables the DHCP client
+*   `DHCPServer=` enables the DHCP server
 *   `DNS=` DNS server address
 *   `Bridge=` the bridge name
 *   `IPForward=` enables IP packet forwarding

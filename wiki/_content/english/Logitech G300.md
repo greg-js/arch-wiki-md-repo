@@ -31,3 +31,9 @@ fi
 Simply execute the code above to see if it's working.
 
 And you could put it into your xinitrc.d to make it load automatically.
+
+## Configuring the buttons
+
+The above script works as intended but it also disables the buttons, since we disabled the keyboard function of the g300.
+
+To make this mouse working as a mouse and being able to use the buttons, we can use [ratslap](https://aur.archlinux.org/packages/?O=0&K=ratslap) from aur for customizations (colors and buttons).

@@ -177,7 +177,7 @@ For WPA/WPA2 encryption, you will also need:
 *   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. *iwlist*), will exit without error but not produce the correct output either, which can be confusing.
 *   Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Connect_to_an_access_point](#Connect_to_an_access_point).
 
-Examples in this section assume that your wireless device interface is `*interface*` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly. To find your wireless device interface, see [#Getting some useful information](#Getting_some_useful_information).
+Examples in this section assume that your wireless device interface is `*interface*` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly.
 
 #### Get the name of the interface
 

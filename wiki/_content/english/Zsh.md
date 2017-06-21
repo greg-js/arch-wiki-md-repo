@@ -460,19 +460,19 @@ Key binds like those used in graphic file managers may come handy. The first com
  `~/.zshrc` 
 ```
 cdUndoKey() {
-  popd      > /dev/null
+  popd
   zle       reset-prompt
   echo
   ls
-  echo
+  zle       reset-prompt
 }
 
 cdParentKey() {
-  pushd .. > /dev/null
+  pushd ..
   zle      reset-prompt
   echo
   ls
-  echo
+  zle       reset-prompt
 }
 
 zle -N                 cdParentKey

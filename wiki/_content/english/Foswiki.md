@@ -31,6 +31,7 @@ The [Foswiki Installation Guide](http://foswiki.org/System/InstallationGuide) is
     *   **perl-crypt-passwdmd5**
     *   **perl-cgi-session**
     *   **perl-html-tree**
+    *   **perl-json**
     *   **perl-libwww**
 
 *   From the [Foswiki website](http://foswiki.org), determine the URL of the latest Foswiki release.

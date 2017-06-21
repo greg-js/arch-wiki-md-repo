@@ -290,7 +290,9 @@ Full out of the box HiDPI support is available in [chromium](https://www.archlin
 
  `chromium --force-device-scale-factor=2` 
 
-Using this option, a scaling factor of 1 would be normal scaling. Floating point values can be used.
+Using this option, a scaling factor of 1 would be normal scaling. Floating point values can be used. To make the change permanent, for Chromium, you can add it to `~/.config/chromium-flags.conf`:
+
+ `~/.config/chromium-flags.conf`  `--force-device-scale-factor=2` 
 
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use the [reszoom](https://chrome.google.com/webstore/detail/resolution-zoom/enjjhajnmggdgofagbokhmifgnaophmh) extension in order to automatically adjust the zoom level for the active screen.
 

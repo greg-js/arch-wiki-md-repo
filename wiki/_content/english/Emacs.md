@@ -199,18 +199,27 @@ TRAMP (Transparent Remote Access, Multiple Protocols) is an extension which, as 
 To prompt for the root password before opening /etc/hosts with root permissions:
 
 ```
-C-x C-f /su::/etc/hosts
+C-x C-f /sudo::/etc/hosts
 
 ```
 
-To connect to 'myhost' as 'myuser' via SSH and open the file ~/example.txt:
+To connect to 'remotehost' as 'you' via SSH and open the file ~/example.txt:
 
 ```
-C-x C-f /ssh:myuser@myhost:~/example.txt
+C-x C-f /ssh:you@remotehost:~/example.txt
 
 ```
 
-The path for TRAMP is typically of the form '/[protocol]:[[user@]host]:<file>'. TRAMP supports much more than the examples above might indicate. For more information refer to the TRAMP info manual, which is distributed with Emacs.
+The path for TRAMP is typically of the form '/[protocol]:[[user@]host]:<file>'.
+
+To connect to 'myhost' as 'you' and edit /etc/hosts with sudo:
+
+```
+/ssh:you@remotehost|sudo:remotehost:/etc/hosts
+
+```
+
+TRAMP supports much more than the examples above might indicate. For more information refer to the TRAMP info manual, which is distributed with Emacs.
 
 ### Using Emacs as git mergetool
 

@@ -99,7 +99,7 @@ Next time you boot with Secure Boot enabled, HashTool will launch and you will n
 
 See [refind-install(8)](http://www.rodsbooks.com/refind/refind-install.html) for more information.
 
-**Note:** The signed *HashTool* is only capable of accessing the partition it was launched from. This means if your kernel is not on the ESP, you will not be able to enrol its hash from *HashTool*. You can workaround this by using [#KeyTool](#KeyTool), since it is capable of enrolling a hash in MokList and is not limited to one partition. Remember to enrol *KeyTool'*s hash before before using it.
+**Tip:** The signed *HashTool* is only capable of accessing the partition it was launched from. This means if your kernel is not on the ESP, you will not be able to enrol its hash from *HashTool*. You can workaround this by using [#KeyTool](#KeyTool), since it is capable of enrolling a hash in MokList and is not limited to one partition. Remember to enrol *KeyTool'*s hash before before using it.
 
 ##### Using shim
 

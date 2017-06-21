@@ -34,6 +34,7 @@
         *   [3.3.2 File Navigation](#File_Navigation)
             *   [3.3.2.1 File tree (Neotree)](#File_tree_.28Neotree.29)
             *   [3.3.2.2 File manager (Ranger)](#File_manager_.28Ranger.29)
+        *   [3.3.3 Windows](#Windows)
 *   [4 Configuration](#Configuration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Slow startup time](#Slow_startup_time)
@@ -343,6 +344,22 @@ You can run file tree by pressing `SPC f t`. New window opens, accessible with `
 If you need a full-featured file manager then Ranger may be the best choice. A lot of useful features are available there, like an instant `h j k l` navigation, inline file preview and ability to manipulate files. It also improves default Dired behaviour (`SPC a d`) a bit. Install `ranger` layer and run it with `SPC a r`. Check [Ranger](https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Btools/ranger) documentation for the details. Along with customization options, there are a lot of useful hotkeys.
 
 **Note:** If you have issues opening Ranger, try to close Neotree first
+
+#### Windows
+
+Spacemacs allows you to split the screen into the separate windows. Each window has a personal number and can be accessed with `SPC *n*` hotkey, where the `*n*` is a selected number. Windows can be splitted individually, so it gives an ability to create complex layouts.
+
+Some of windows hotkeys are presented below. Check the inline help (`SPC w`) to get more.
+
+*   `SPC w 3` - focus window with number 3
+*   `SPC w s` - split window horizontally
+*   `SPC w v` - split window vertically
+*   `SPC w d` - delete window
+*   `SPC w u` - undo last window action
+*   `SPC w m` - toggle window fullscreen
+*   `SPC w .` - enter window transient state
+
+**Tip:** Transient state allows you to play with window settings, like their order and proportions. Just enter it and all the available options will be displayed.
 
 ## Configuration
 

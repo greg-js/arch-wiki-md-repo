@@ -135,6 +135,8 @@ Where XXX is the region of the installer.
 
 Follow the steps indicated on the installer menu.
 
+*Note for installing via installer: Uncheck the "Create desktop icon" and "Create start menu icon", it may causes the installer to hang. You can leave the "Run League of Legends" checkbox checked, it does not cause any issues*
+
 ##### Using an existing copy of the game
 
 There are several ways to do this, the Windows version (as long as it can run the Installer which probably requires Windows XP or newer) here are a few methods.

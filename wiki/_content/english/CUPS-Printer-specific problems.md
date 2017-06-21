@@ -11,7 +11,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [1.3 Multiple Copy Problem](#Multiple_Copy_Problem)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
-    *   [2.2 CAPT](#CAPT)
+    *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
     *   [4.1 Utilities](#Utilities)
@@ -188,17 +188,11 @@ With that, the printer will restart, and the latest firmware will be installed a
 
 ## Canon
 
-| Driver | Description |
-| [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Supports [many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php). |
-| [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) | Canon UFR II /LIPSLX Printer Driver build from source for LBP, iR & MF printers |
-| [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) | Canon UFR II/UFR II LT Printer Driver (including Canon imageCLASS MF4720w) |
-| [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Canon IJ Printer Driver (for mg4200 series) |
-| [capt-src](https://aur.archlinux.org/packages/capt-src/) | Canon CAPT Printer Driver (for Canon i-Sensys printers) |
-| [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/) | CUPS back-end for the canon printers using the proprietary USB over IP BJNP protocol |
+There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS) or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
 | iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use Canon's [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) driver, or the [TurboPrint](http://www.turboprint.info/) driver. |
-| LBP810 | [capt-src](https://aur.archlinux.org/packages/capt-src/) |
+| LBP810 | [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") |
 | LBP1120 |
 | LBP1210 |
 | LBP2900 |
@@ -232,6 +226,10 @@ With that, the printer will restart, and the latest firmware will be installed a
 | LBP7200C series |
 | LBP7210Cdn |
 | LBP9100C |
+| MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) |
+| TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Without [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) printing will fail with a filter error or you might get "Rendering Completed" and nothing will print |
+| TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
 | Printer | Driver/filter | Notes |
 
 Some Canon printers will use a similar setup to the iP4500, so consider modifying the [cnijfilter-ip4500](https://aur.archlinux.org/packages/cnijfilter-ip4500/) package for other, similar printers.
@@ -240,9 +238,9 @@ Some Canon printers will use a similar setup to the iP4500, so consider modifyin
 
 Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing System (CARPS) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/). The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
 
-### CAPT
+### USB over IP (BJNP)
 
-See [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
+Some Canon printers use Canon's proprietary USB over IP BJNP protocol to communicate over the network. There is a CUPS backend for this, which is available as [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
 
 ## Dell
 

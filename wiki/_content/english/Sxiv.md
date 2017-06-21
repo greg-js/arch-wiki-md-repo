@@ -1,4 +1,4 @@
-[sxiv](http://github.com/muennich/sxiv) , Simple [X](/index.php/X "X") Image Viewer is a lightweight and scriptable image viewer written in C.
+[sxiv](https://github.com/muennich/sxiv), Simple [X](/index.php/Xorg "Xorg") Image Viewer is a lightweight and scriptable image viewer written in C.
 
 ## Contents
 
@@ -55,7 +55,7 @@ $ mkdir ~/.trash
 
 ```
 
-**Tip:** You may want to use a [standards-compliant trashcan](http://freedesktop.org/wiki/Specifications/trash-spec/) (like [trash-cli](https://www.archlinux.org/packages/?name=trash-cli) or [bashtrash](https://aur.archlinux.org/packages/bashtrash/)) rather than `mv "$2" ~/.trash`.
+**Tip:** You may want to use a [standards-compliant trashcan](https://freedesktop.org/wiki/Specifications/trash-spec/) (like [trash-cli](https://www.archlinux.org/packages/?name=trash-cli) or [bashtrash](https://aur.archlinux.org/packages/bashtrash/)) rather than `mv "$2" ~/.trash`.
 
 ## Tips and tricks
 
@@ -103,4 +103,4 @@ echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
 ## See also
 
 *   Arch Linux [forum thread](https://bbs.archlinux.org/viewtopic.php?id=112643).
-*   Sxiv for keyboard layout [bépo](https://en.wikipedia.org/wiki/Keyboard_layout#B.C3.89PO "wikipedia:Keyboard layout") (keyboard layout in the spirit of [Dvorak](https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard "wikipedia:Dvorak Simplified Keyboard") for french speakers) : [Sxiv bépo](http://bepo.fr/wiki/Vim#Visionneuse_d.27image_Sxiv).
+*   Sxiv for keyboard layout [bépo](https://en.wikipedia.org/wiki/Keyboard_layout#B.C3.89PO "wikipedia:Keyboard layout") (keyboard layout in the spirit of [Dvorak](https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard "wikipedia:Dvorak Simplified Keyboard") for French speakers) : [Sxiv bépo](https://bepo.fr/wiki/Vim#Visionneuse_d.27image_Sxiv).

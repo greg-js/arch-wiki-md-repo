@@ -4,12 +4,17 @@ CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, su
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-*   [2 CAPT status monitor](#CAPT_status_monitor)
-    *   [2.1 Local CUPS](#Local_CUPS)
-    *   [2.2 Remote CUPS](#Remote_CUPS)
-        *   [2.2.1 Client configuration](#Client_configuration)
-        *   [2.2.2 Server configuration](#Server_configuration)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 CAPT status monitor](#CAPT_status_monitor)
+    *   [3.1 Local CUPS](#Local_CUPS)
+    *   [3.2 Remote CUPS](#Remote_CUPS)
+        *   [3.2.1 Client configuration](#Client_configuration)
+        *   [3.2.2 Server configuration](#Server_configuration)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [capt-src](https://aur.archlinux.org/packages/capt-src/) package. There is also an open source CAPT driver not described here, available as [captdriver-git](https://aur.archlinux.org/packages/captdriver-git/).
 
 ## Configuration
 
