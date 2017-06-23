@@ -25,6 +25,7 @@ The T440s has SecureBoot and UEFI enabled by default. Unless you know you want t
 | ClickPad | [libinput](/index.php/Libinput "Libinput") |
 | Wireless/Bluetooth | iwlwifi* |
 | Finger Print Reader | [Fprint](/index.php/Fprint "Fprint") since V 0.6.0 |
+| SD-Card Reader (Realtek RTS5227) | [rts5227-dkms](https://aur.archlinux.org/packages/rts5227-dkms/) |
 
 Note*: Depending on what you picked when ordering the laptop, you might have a stock ThinkPad wireless card. Check [this page](http://www.thinkwiki.org/wiki/Drivers) for more information.
 

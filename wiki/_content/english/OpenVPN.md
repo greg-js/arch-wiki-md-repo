@@ -731,7 +731,7 @@ If you copy the script into `/etc/openvpn` and mark as executable with [chmod](/
 
 ```
 script-security 2
-setenv PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+setenv PATH /usr/bin
 up /etc/openvpn/update-systemd-resolved
 down /etc/openvpn/update-systemd-resolved
 down-pre
@@ -813,7 +813,7 @@ keepalive 10 120
 
 ```
 
-In this case the server will send ping-like messages to all of its clients every `10` seconds, thus keeping the tunnel up. If the server does not receive a response within `120` seconds from a specific client, it will assume this client is down.
+In this case the server will send ping-like messages to all of its clients every 10 seconds, thus keeping the tunnel up. If the server does not receive a response within 120 seconds from a specific client, it will assume this client is down.
 
 A small ping-interval can increase the stability of the tunnel, but will also cause slightly higher traffic. Depending on your connection, also try lower intervals than 10 seconds.
 

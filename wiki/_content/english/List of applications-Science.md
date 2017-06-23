@@ -480,17 +480,29 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://wiki.gnome.org/Apps/Maps](https://wiki.gnome.org/Apps/Maps) || [gnome-maps](https://www.archlinux.org/packages/?name=gnome-maps)
 
+*   **GPSBabel** — Reads, writes, and manipulates GPS waypoints in a variety of formats.
+
+	[https://www.gpsbabel.org/](https://www.gpsbabel.org/) || [gpsbabel](https://www.archlinux.org/packages/?name=gpsbabel)
+
 *   **JOSM** — An editor for OpenStreetMap written in Java.
 
 	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
 
 *   **Marble** — Virtual Globe and World Atlas that can be used to learn more about the Earth. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
-	[https://www.kde.org/applications/education/marble](https://www.kde.org/applications/education/marble) || [marble](https://www.archlinux.org/packages/?name=marble)
+	[https://www.kde.org/applications/education/marble](https://www.kde.org/applications/education/marble) || KDE: [marble](https://www.archlinux.org/packages/?name=marble), Qt: [marble-qt](https://www.archlinux.org/packages/?name=marble-qt)
 
 *   **Merkaartor** — OpenStreetMap editor.
 
 	[http://merkaartor.be/](http://merkaartor.be/) || [merkaartor](https://www.archlinux.org/packages/?name=merkaartor)
+
+*   **QLandkarte GT** — Use your GPS with Linux.
+
+	[http://qlandkarte.org/](http://qlandkarte.org/) || [qlandkartegt](https://www.archlinux.org/packages/?name=qlandkartegt)
+
+*   **QMapShack** — Plan your next outdoor trip.
+
+	[https://bitbucket.org/maproom/qmapshack](https://bitbucket.org/maproom/qmapshack) || [qmapshack](https://www.archlinux.org/packages/?name=qmapshack)
 
 *   **Viking** — GTK+2 application to manage GPS data.
 

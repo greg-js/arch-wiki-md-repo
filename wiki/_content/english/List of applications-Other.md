@@ -14,24 +14,25 @@
     *   [1.3 Time management](#Time_management)
         *   [1.3.1 Console](#Console)
         *   [1.3.2 Graphical](#Graphical)
-    *   [1.4 Accessibility](#Accessibility)
-        *   [1.4.1 Screen reading](#Screen_reading)
-        *   [1.4.2 Speech recognition](#Speech_recognition)
-    *   [1.5 Amateur radio](#Amateur_radio)
-    *   [1.6 Display calibration](#Display_calibration)
-    *   [1.7 Display managers](#Display_managers)
-    *   [1.8 Command shells](#Command_shells)
-    *   [1.9 Terminal multiplexers](#Terminal_multiplexers)
-    *   [1.10 Desktop environments](#Desktop_environments)
-        *   [1.10.1 Window managers](#Window_managers)
-            *   [1.10.1.1 Console](#Console_2)
-            *   [1.10.1.2 Graphical](#Graphical_2)
-            *   [1.10.1.3 Composite managers](#Composite_managers)
-        *   [1.10.2 Window tilers](#Window_tilers)
-        *   [1.10.3 Taskbars](#Taskbars)
-        *   [1.10.4 Application launchers](#Application_launchers)
-        *   [1.10.5 Wallpaper setters](#Wallpaper_setters)
-        *   [1.10.6 Virtual desktop pagers](#Virtual_desktop_pagers)
+    *   [1.4 Recipe management](#Recipe_management)
+    *   [1.5 Accessibility](#Accessibility)
+        *   [1.5.1 Screen reading](#Screen_reading)
+        *   [1.5.2 Speech recognition](#Speech_recognition)
+    *   [1.6 Amateur radio](#Amateur_radio)
+    *   [1.7 Display calibration](#Display_calibration)
+    *   [1.8 Display managers](#Display_managers)
+    *   [1.9 Command shells](#Command_shells)
+    *   [1.10 Terminal multiplexers](#Terminal_multiplexers)
+    *   [1.11 Desktop environments](#Desktop_environments)
+        *   [1.11.1 Window managers](#Window_managers)
+            *   [1.11.1.1 Console](#Console_2)
+            *   [1.11.1.2 Graphical](#Graphical_2)
+            *   [1.11.1.3 Composite managers](#Composite_managers)
+        *   [1.11.2 Window tilers](#Window_tilers)
+        *   [1.11.3 Taskbars](#Taskbars)
+        *   [1.11.4 Application launchers](#Application_launchers)
+        *   [1.11.5 Wallpaper setters](#Wallpaper_setters)
+        *   [1.11.6 Virtual desktop pagers](#Virtual_desktop_pagers)
 
 ## Others
 
@@ -236,6 +237,20 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 *   **[Workrave](https://en.wikipedia.org/wiki/Workrave "wikipedia:Workrave")** — A tool to help RSI.
 
 	[http://www.workrave.org/](http://www.workrave.org/) || [workrave](https://www.archlinux.org/packages/?name=workrave)
+
+### Recipe management
+
+*   **GNOME Recipes** — Recipe management application for GNOME.
+
+	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
+
+*   **Gourmet** — A simple but powerful recipe-managing application.
+
+	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://www.archlinux.org/packages/?name=gourmet)
+
+*   **KRecipes** — A tool designed to make organizing your personal recipes collection fast and easy.
+
+	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://www.archlinux.org/packages/?name=krecipes)
 
 ### Accessibility
 

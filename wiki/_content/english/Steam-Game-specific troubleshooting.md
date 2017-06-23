@@ -689,10 +689,8 @@ A possible solution is to replace `*gamedir*/dota 2 beta/bin/libSDL2-2.0.so.0` w
 If the game fails to start with "Couldn't find Database/database.dbl!", manually extract the assets. assets003.zip will overwrite some files from the previous files.
 
 ```
-$ cd ~/.local/share/Steam/SteamApps/common/Drox\ Operative/Assets
-$ unzip assets001.zip
-$ unzip assets002.zip
-$ unzip assets003.zip
+$ cd "~/.steam/root/steamapps/common/Drox Operative/Assets"
+$ unzip assets00[123].zip
 
 ```
 

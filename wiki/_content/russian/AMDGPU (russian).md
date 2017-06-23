@@ -2,7 +2,7 @@
 
 В настоящий момент поддерживаются видекорты с архитектурой [Volcanic Islands (VI)](http://xorg.freedesktop.org/wiki/RadeonFeature/),некоторые видеокарты семейства [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) и [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) (поддержку старее Sea Islands введут только в [Xorg 1.2.0](https://lists.x.org/archives/xorg-announce/2016-November/002741.html) и Linux 4.9). AMD не планируют поддержку видеокарт c архитектуройй до GCN.
 
-Владельцы неподдерживаемых видеокарт AMD/ATI могут использовать драйвера [Radeon open source](/index.php/ATI "ATI") или [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst").
+Владельцы неподдерживаемых видеокарт AMD/ATI могут использовать драйвера [Radeon (с открытым кодом)](/index.php/ATI "ATI") или [Catalyst (проприетарный драйвер от AMD)](/index.php/AMD_Catalyst "AMD Catalyst").
 
 ## Contents
 
@@ -21,31 +21,31 @@
 
 ## Выбор правильного драйвера
 
-В зависимости от вашей карты, выберите правильный драйвер на странице [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). Здесь инструкция для **AMDGPU** и **AMDGPU PRO**.
+В зависимости от вашей карты, выберите правильный драйвер на странице [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). Здесь - инструкция для **AMDGPU** и **AMDGPU PRO**.
 
 ## Установка
 
-**Note:** If coming from the proprietary Catalyst driver, see [AMD Catalyst#Uninstallation](/index.php/AMD_Catalyst#Uninstallation "AMD Catalyst") first.
+**Note:** Если ранее был установлен проприетарный драйвер Catalyst - сначала посмотрите, как его удалить: [AMD Catalyst#Uninstallation](/index.php/AMD_Catalyst#Uninstallation "AMD Catalyst").
 
-[Install](/index.php/Install "Install") the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
+[Install](/index.php/Install "Install") пакет [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu). В нем содержится драйвер DDX для 2D ускорения, и он является зависимостью [mesa](https://www.archlinux.org/packages/?name=mesa), обесппечивающей драйвер DRI для 3D ускорения.
 
-To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
+Чтобы имелась поддержка OpenGL, также нужно установить [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). Если у Вас архитектура x86_64 и нужна поддержка 32-разрядных приложений, установите еще [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) из репозитория [multilib](/index.php/Multilib "Multilib").
 
-Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
+Поддержка [accelerated video decoding](#Enabling_video_acceleration) обеспечивается пакетами [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) и [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau).
 
-**Note:** The [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package is only used for Xorg acceleration and not strictly required.
+**Note:** Пакет [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) предназначен только для ускорения Xorg и не является строго необходимым.
 
 ### AMDGPU PRO
 
-**Warning:** Arch Linux is not officially supported.
+**Warning:** Arch Linux официально не поддерживается.
 
-AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). For a detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
+AMD поставляет проприетарный бинарный драйвер *AMDGPU PRO*, который работает поверх открытого драйвера ядра AMDGPU. Такой гибридный подход позволяет компиляцию модуля ядра мейнтейнерами Arch Linux, когда это понадобится (т.е., обновление ядра или Xorg), оставляя неизменной бинарную составляющую в пользовательском пространстве. Это должно устранить проблему несовместимости драйвера AMD с новыми сборками ядра и Xorg (что было бедой старого драйвера [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")). Вы можете ознакомиться подробнее, прочитав [эту статью](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
 
-The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. It aims to provide better performance than the open-source driver ([example benchmark](http://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)).
+AMDGPU PRO обеспечивает поддержку OpenGL, OpenCL, Vulkan и VDPAU. Он имеет более высокую производительность в сравнении со свободным драйвером ([тест производительности](http://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)).
 
-See the [release notes](http://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
+Посмотрите [заметки к выпуску](http://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx) и [ветку на форуме Phoronix](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6), чтобы узнать больше.
 
-There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/Corngood/archlinux-amdgpu](https://github.com/Corngood/archlinux-amdgpu) for issues or pull requests.
+В [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)) есть пакет с компонентами amdgpu-pro. А еще существует [репозиторий на GitHub](https://github.com/Corngood/archlinux-amdgpu).
 
 ## Configuration
 

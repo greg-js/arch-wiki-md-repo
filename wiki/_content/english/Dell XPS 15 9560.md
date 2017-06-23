@@ -17,7 +17,7 @@
 | EFI firmware updates | Not Working |
 | Fingerprint reader | Not working |
 
-This page contains recommendations for running Arch Linux on the Dell XPS 15 9650 (late 2016). With some configuration almost all the hardware is well supported. Exceptions are the fingerprint reader, occasional locks on resuming from suspend experienced by some users, and the lack of support for PRIME render offload to the discrete GPU in the Nvidia proprietary driver.
+This page contains recommendations for running Arch Linux on the Dell XPS 15 9560 (late 2016). With some configuration almost all the hardware is well supported. Exceptions are the fingerprint reader, occasional locks on resuming from suspend experienced by some users, and the lack of support for PRIME render offload to the discrete GPU in the Nvidia proprietary driver.
 
 ## Contents
 

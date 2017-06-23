@@ -8,7 +8,7 @@ There are alternatives written in Python such as [gunicorn](https://aur.archlinu
 *   [2 Configuration](#Configuration)
     *   [2.1 Web applications](#Web_applications)
         *   [2.1.1 Python](#Python)
-        *   [2.1.2 Php](#Php)
+        *   [2.1.2 PHP](#PHP)
     *   [2.2 Web server](#Web_server)
         *   [2.2.1 Nginx](#Nginx)
         *   [2.2.2 Nginx (in chroot)](#Nginx_.28in_chroot.29)
@@ -16,7 +16,7 @@ There are alternatives written in Python such as [gunicorn](https://aur.archlinu
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Socket activation](#Socket_activation)
     *   [4.2 Hardening uWSGI](#Hardening_uWSGI)
-*   [5 See Also](#See_Also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -50,27 +50,26 @@ The following is a simple example for a [Python](/index.php/Python "Python") app
 
  `/etc/uwsgi/example.ini` 
 ```
- [uwsgi]
+[uwsgi]
  chdir = /srv/http/example
  module = example
  plugins = python
-
 ```
 
 It is also possible to run uWSGI separately with the following syntax for instance:
 
-**Note:** It seems --wsgi-file option is not available from [uwsgi](https://www.archlinux.org/packages/?name=uwsgi). Official guides suggest building from sources (see [http://uwsgi-docs.readthedocs.org/en/latest/WSGIquickstart.html#installing-uwsgi-with-python-support](http://uwsgi-docs.readthedocs.org/en/latest/WSGIquickstart.html#installing-uwsgi-with-python-support)).
+**Note:** It seems --wsgi-file option is not available from [uwsgi](https://www.archlinux.org/packages/?name=uwsgi). Official guides suggest building from source. [[1]](http://uwsgi-docs.readthedocs.org/en/latest/WSGIquickstart.html#installing-uwsgi-with-python-support)
 
 ```
-uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191 --uid --gid
+$ uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191 --uid --gid
 
 ```
 
-**Note:** You should avoid running this command as root
+You should avoid running this command as root.
 
-**Note:** Pay attention to operational mode in use, preforking without --lazy-apps may cause non-obvious behavior. By default the Python plugin does not initialize the GIL. This means your app-generated threads will not run. If you need threads, remember to enable them with enable-threads. Running uWSGI in multithreading mode (with the threads options) will automatically enable threading support. This “strange” default behaviour is for performance reasons, no shame in that. (see [https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html))
+**Note:** Pay attention to operational mode in use, preforking without --lazy-apps may cause non-obvious behavior. By default the Python plugin does not initialize the GIL. This means your app-generated threads will not run. If you need threads, remember to enable them with enable-threads. Running uWSGI in multithreading mode (with the threads options) will automatically enable threading support. This "strange" default behaviour is for performance reasons, no shame in that. [[2]](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html)
 
-#### Php
+#### PHP
 
 The following is a simple example for a [PHP](/index.php/PHP "PHP") based website.
 
@@ -92,7 +91,6 @@ php-docroot = /srv/http/%n
 php-index = index.php
 ; clear environment on exit
 vacuum = true
-
 ```
 
 ### Web server
@@ -321,7 +319,7 @@ WantedBy=multi-user.target
 
 **Note:** If you want to harden your uWSGI app further, the use of namespaces is advisable. You can get a first glance on that topic in the [uWSGI namespaces documentation](http://uwsgi-docs.readthedocs.io/en/latest/Namespaces.html).
 
-## See Also
+## See also
 
 *   [Official Documentation](http://uwsgi-docs.readthedocs.org/en/latest)
 *   [uWSGI Github](https://github.com/unbit/uwsgi-docs)
@@ -329,5 +327,4 @@ WantedBy=multi-user.target
 *   [Fluffy White Stuff Benchmark](http://blog.kgriffs.com/)
 *   [Flask uWSGI deploying](http://flask.pocoo.org/docs/deploying/uwsgi/)
 *   [Django and uWSGI](https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/uwsgi/)
-*   [Flask with uWSGI and nginx video](http://www.youtube.com/watch?v=tD6UCfPCVLA)
 *   [Apache and uWSGI](http://uwsgi-docs.readthedocs.org/en/latest/Apache.html)

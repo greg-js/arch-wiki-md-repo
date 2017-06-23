@@ -1,9 +1,9 @@
-[Node.js](http://nodejs.org/) is a javascript runtime environment combined with useful libraries. It uses [Google's V8 engine](https://code.google.com/p/v8/) to execute code outside of the browser. Due to its event-driven, non-blocking I/O model, it is suitable for real-time web applications.
+[Node.js](http://nodejs.org/) is a JavaScript runtime environment combined with useful libraries. It uses [Google's V8 engine](https://code.google.com/p/v8/) to execute code outside of the browser. Due to its event-driven, non-blocking I/O model, it is suitable for real-time web applications.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Alternate Installations](#Alternate_Installations)
+    *   [1.1 Alternate installations](#Alternate_installations)
 *   [2 Node Packaged Modules](#Node_Packaged_Modules)
     *   [2.1 Managing packages with npm](#Managing_packages_with_npm)
         *   [2.1.1 Installing packages](#Installing_packages)
@@ -18,11 +18,11 @@
 
 ## Installation
 
-[nodejs](https://www.archlinux.org/packages/?name=nodejs) package is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [nodejs](https://www.archlinux.org/packages/?name=nodejs) package.
 
-### Alternate Installations
+### Alternate installations
 
-It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs. Usage is well documented on the projects github but is as simple as:
+It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs. Usage is well documented on the projects GitHub but is as simple as:
 
 ```
   $ nvm install VERSION_NUM
@@ -112,7 +112,7 @@ For the case of globally installed packages (`-g`)
 
 ```
 
-**Note:** Remember that globally installed packages require administrator privileges
+**Note:** Remember that globally installed packages require administrator privileges unless `prefix` is set to a user-writable directory
 
 ##### Updating All Packages
 

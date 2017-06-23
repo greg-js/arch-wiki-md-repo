@@ -12,7 +12,7 @@ A few starting packages for hacking the Wii on Arch Linux. Also see [Wiibrew.org
 *   [wiiload](https://aur.archlinux.org/packages/wiiload/) lets you upload games to the Homebrew Channel
 *   [devkitppc](https://aur.archlinux.org/packages/devkitppc/) for a basic toolchain (compiler) for C and C++ development.
 *   [libogc](https://aur.archlinux.org/packages/libogc/) for libraries that work with the Wii, for working with graphics, wiimote, etc.
-*   [sdl-wii-svn](https://aur.archlinux.org/packages/sdl-wii-svn/) - a library for SDL on the Wii.
+*   [sdl-wii](https://github.com/dborth/sdl-wii) - SDL port for the Wii.
 *   [libfat-ogc](https://aur.archlinux.org/packages/libfat-ogc/) - a library for FAT handling (used in USB flash drives).
 
 ## Game Hacking
@@ -34,3 +34,4 @@ A few starting packages for hacking the Wii on Arch Linux. Also see [Wiibrew.org
 
 *   [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu) - the dominant emulator for the Wii (also supports Gamecube).
 *   [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/) - development version
+*   [decaf-emu-git](https://aur.archlinux.org/packages/decaf-emu-git/) - An experimental open-source Nintendo Wii U emulator

@@ -11,6 +11,7 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
 *   [3 Configuration](#Configuration)
     *   [3.1 X config](#X_config)
     *   [3.2 HiDPI configuration](#HiDPI_configuration)
+    *   [3.3 Touchpad configuration](#Touchpad_configuration)
 
 ## Status
 
@@ -59,3 +60,17 @@ xrdb -merge ~/.Xresources
 xrandr --output eDP-1 --dpi 220
 exec i3
 ```
+
+### Touchpad configuration
+
+The touchpad may be "hijacked" by the `i2c_hid` device driver. Although the touchpad does working, its configuration is fixed to two buttons, two-finger natural scrolling and no tapping; Any changes with `xinput` or other tools have no effect.
+
+To prevent this you have to [blacklist](/index.php/Kernel_Modules#Blacklisting "Kernel Modules") `i2c_hid` by adding the following lines to a `*.conf` file in `/etc/modprobe.d` ([source](https://bbs.archlinux.org/viewtopic.php?pid=1602689#p1602689)):
+
+ `/etc/modprobe.d/touchpad.conf` 
+```
+blacklist i2c_hid
+install i2c_hid /bin/false
+```
+
+After a reboot (unloading `i2c_hid`, if possible, may be sufficient) the touchpad should be fully configurable [libinput device](/index.php/Libinput#Configuration "Libinput").

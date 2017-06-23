@@ -105,7 +105,7 @@ Vi0L0 有三个不同的 Catalyst 软件库:
 
 **注意:** *catalyst* 和 *catalyst-stable* 软件库的 URL 相同。若要启用 *catalyst-stable* ，步骤与启用 *catalyst* 相同，并在 `pacman.conf` 中将 `[catalyst]` 替换成 `[catalyst-stable]`。如果你需要某个旧版本，这儿也有并且 URL 也相同（比如 *catalyst-stable-13.4*）。
 
-**小贴士:** 有时 catalyst.wirephire.com 因为超出带宽上限而不能提供下载（曾发生过这个问题），或者你到这个服务器的连接很慢，这时，你可以尝试另外的镜像服务器：[[1]](http://mirror.hactar.bz/Vi0L0/)（goll 提供，德国）。不过。这些服务器也不保证随时可用。
+**提示：** 有时 catalyst.wirephire.com 因为超出带宽上限而不能提供下载（曾发生过这个问题），或者你到这个服务器的连接很慢，这时，你可以尝试另外的镜像服务器：[[1]](http://mirror.hactar.bz/Vi0L0/)（goll 提供，德国）。不过。这些服务器也不保证随时可用。
 
 完成后更新 pacman 数据库并[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")这些软件包（更多信息参见[#工具](#.E5.B7.A5.E5.85.B7)）：
 
@@ -681,7 +681,7 @@ $ {kdesu/gksu} amdcccle
 
 {{注意|`overlay` 非常重要，因为它能让两个显示器拥有 1 种（多种）像素。
 
-**提示:** 运行 `aticonfig --help` 了解所有可用的命令。
+**提示：** 运行 `aticonfig --help` 了解所有可用的命令。
 
 现在可编辑基本的 Xorg 配置文件（如：添加分辨率）。分辨率一定要正确，尤其是使用不同尺寸的显示器。分辨率在 "Screen" section：
 

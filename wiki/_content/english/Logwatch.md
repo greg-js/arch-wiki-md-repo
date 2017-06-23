@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Cron Job](#Cron_Job)
-*   [4 systemd support](#systemd_support)
+*   [4 systemd journal support](#systemd_journal_support)
 
 ## Installation
 
@@ -43,6 +43,8 @@ There is a helpful document supplied with the package to give further informatio
 
 The default install also includes a cron job, placed in cron.daily. This job will use the configuration settings from all the config locations, as detailed above. The script can be moved to a different cron folder for different report frequencies or set up as a custom cron job in a crontab file.
 
-## systemd support
+## systemd journal support
 
-Logwatch reads log files and does not support querying the systemd journal directly. For this reason, a logger like syslog-ng is required to duplicate the journal output into external log files (such as in `/var/log`). A [patch](http://sourceforge.net/p/logwatch/patches/34/) is under development to support the systemd journal. Alternately, a custom script could duplicate some of the logwatch functionality by directly querying the journal and sending email(s), as done in a Python script in [this blog post](https://tim.siosm.fr/blog/2014/02/24/journald-log-scanner-python/).
+Logwatch 7.4.3-3 now supports querying the systemd journal via journalctl. See [Logwatch dist.conf files for Arch Linux](https://bbs.archlinux.org/viewtopic.php?id=227516) for details
+
+Older versions of Logwatch do not support querying the systemd journal directly. For this reason, a logger like syslog-ng is required to duplicate the journal output into external log files (such as in `/var/log`). A [patch](http://sourceforge.net/p/logwatch/patches/34/) is under development to support the systemd journal. Alternately, a custom script could duplicate some of the logwatch functionality by directly querying the journal and sending email(s), as done in a Python script in [this blog post](https://tim.siosm.fr/blog/2014/02/24/journald-log-scanner-python/).

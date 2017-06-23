@@ -9,7 +9,7 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
     *   [4.1 Example adding a user](#Example_adding_a_user)
     *   [4.2 Example adding a system user](#Example_adding_a_system_user)
     *   [4.3 Other examples of user management](#Other_examples_of_user_management)
-    *   [4.4 Username change tips](#Username_change_tips)
+    *   [4.4 Change a user's login name](#Change_a_user.27s_login_name)
 *   [5 User database](#User_database)
 *   [6 Group management](#Group_management)
 *   [7 Group list](#Group_list)
@@ -183,13 +183,6 @@ With the following command a system user without shell access and without a `hom
 
 ### Other examples of user management
 
-To change a user's login name:
-
-```
-# usermod -l *newname* *oldname*
-
-```
-
 To change a user's home directory:
 
 ```
@@ -257,7 +250,14 @@ The `-r` option specifies that the user's home directory and mail spool should a
 
 **Tip:** The [adduser](https://aur.archlinux.org/packages/adduser/) script allows carrying out the jobs of *useradd*, *chfn* and *passwd* interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
 
-### Username change tips
+### Change a user's login name
+
+To change a user's login name:
+
+```
+# usermod -l *newname* *oldname*
+
+```
 
 **Warning:** Make certain that you are not logged in as the user whose name you are about to change. Open a new tty (`Ctrl+Alt+F1`) and log in as root or as another user and su to root. usermod should prevent you from doing this by mistake.
 

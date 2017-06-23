@@ -24,7 +24,7 @@ This article will show you how to configure a simple in house network enabling u
 
 ## Installation
 
-Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package.
+Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package. If you are using Cisco-based phones it is recommended to use the [asterisk-cisco](https://aur.archlinux.org/packages/asterisk-cisco/) package instead as this is prepatched with the presence patch. (See [https://issues.asterisk.org/jira/browse/ASTERISK-13145](https://issues.asterisk.org/jira/browse/ASTERISK-13145))
 
 [Start](/index.php/Start "Start") the server with `asterisk.service`.
 

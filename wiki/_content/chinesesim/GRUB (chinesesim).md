@@ -1,5 +1,3 @@
-Begi
-
 **翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-14，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=282734)可以查看翻译后英文页面的改动。
 
 [GRUB](https://www.gnu.org/software/grub/) , 是下一代 GRand Unified Bootloader (请不要和 [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")  混淆了)。 它来自下一代 GRUB 研究项目 [PUPA](http://www.nongnu.org/pupa/)，代码全部重写，实现了模块化和增强了移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).

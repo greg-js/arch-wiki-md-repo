@@ -47,10 +47,9 @@
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
     *   [7.2 Android Studio: 'failed to create the SD card'](#Android_Studio:_.27failed_to_create_the_SD_card.27)
-    *   [7.3 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
-    *   [7.4 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
-    *   [7.5 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn.27t_load_and_no_error_message_displayed)
-    *   [7.6 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
+    *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
+    *   [7.4 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn.27t_load_and_no_error_message_displayed)
+    *   [7.5 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
 
 ## Exploring Android device
 
@@ -74,7 +73,7 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 ### Android SDK core components
 
-**Note:** If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid "error: target not found: lib32-zlib" error messages.
+**Note:** If you are running a 64-bit system, make sure the [multilib](/index.php/Multilib "Multilib") repository is enabled to avoid "error: target not found: lib32-*" error messages.
 
 **Note:** If you plan to install [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you do not need to install these packages
 
@@ -131,6 +130,7 @@ $ newgrp sdkusers
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
 *   [android-platform](https://aur.archlinux.org/packages/android-platform/) (latest)
+*   [android-platform-25](https://aur.archlinux.org/packages/android-platform-25/)
 *   [android-platform-24](https://aur.archlinux.org/packages/android-platform-24/)
 *   [android-platform-23](https://aur.archlinux.org/packages/android-platform-23/)
 *   [android-platform-22](https://aur.archlinux.org/packages/android-platform-22/)
@@ -149,13 +149,13 @@ Install the desired [Android system image](https://aur.archlinux.org/packages/?O
 
 ### Development environment
 
-Android Studio is the new official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
+Android Studio is the official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
 
 #### Android Studio
 
-[Android Studio](https://developer.android.com/sdk/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). Android Studio replaces the older [Eclipse Android Developer Tools](https://developer.android.com/tools/help/adt.html) and provides integrated Android developer tools for development and debugging.
+[Android Studio](https://developer.android.com/sdk/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). It provides integrated Android developer tools for development and debugging.
 
-You can download and install it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package from the [AUR](/index.php/AUR "AUR"). If you get an error about a missing SDK, refer to the section Getting Android SDK platform API above.
+You can [install](/index.php/Install "Install") it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package. If you get an error about a missing SDK, refer to [#Android SDK platform API](#Android_SDK_platform_API) above.
 
 **Note:** If you are using a tiling window manager other than i3wm, you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
 
@@ -262,7 +262,7 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 
 #### Adding udev Rules
 
-Use the rules from [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/), install them manually from [Android developer](http://source.android.com/source/initializing.html#configuring-usb-access), or use the following template for your udev rules, just replace [VENDOR ID] and [PRODUCT ID] with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
+Use the rules from [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your udev rules, just replace [VENDOR ID] and [PRODUCT ID] with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
 
  `/etc/udev/rules.d/51-android.rules` 
 ```
@@ -352,7 +352,7 @@ Both are currently not available in the [AUR](/index.php/AUR "AUR") anymore, bec
 
 ## Building Android
 
-Please note that these instructions are based on the [official AOSP build instructions](http://source.android.com/source/building.html). Other Android-derived systems such as LineageOS will often require extra steps.
+Please note that these instructions are based on the [official AOSP build instructions](https://source.android.com/source/building). Other Android-derived systems such as LineageOS will often require extra steps.
 
 ### OS bitness
 
@@ -382,10 +382,12 @@ They can be installed with the [lineageos-devel](https://aur.archlinux.org/packa
 
 ### Java Development Kit
 
-*   For Android 7 (Nougat), OpenJDK 8 is [required](https://source.android.com/source/requirements.html), which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) package.
+The [required JDK version](https://source.android.com/source/requirements) depends on the Android version you're building:
+
+*   For Android 7 (Nougat), OpenJDK 8 is required, which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) package.
 *   For Android 5 and 6 (Lollipop and Marshmallow), OpenJDK 7 is required, which is available with the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package.
 
-Older versions [require](http://source.android.com/source/initializing.html) a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.
+Older versions require a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.
 
 *   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/) from the AUR.
 *   For Cupcake through Froyo (1.5 - 2.2), Java 5 is required, which is available as [jdk5](https://aur.archlinux.org/packages/jdk5/) from the AUR.
@@ -489,7 +491,7 @@ Android will use the /tmp directory heavily. By default the size of the partitio
 
 *   Alternatively, you can get rid of the tmpfs from [fstab](/index.php/Fstab "Fstab") all together.
 
-**Note:** From the [Android Building and Running guide](https://source.android.com/source/building-running.html#build-the-code):
+**Note:** From the [Android Building and Running guide](https://source.android.com/source/building#build-the-code):
 
 "GNU make can handle parallel tasks with a -jN argument, and it's common to use a number of tasks N that's between 1 and 2 times the number of hardware threads on the computer being used for the build. E.g. on a dual-E5520 machine (2 CPUs, 4 cores per CPU, 2 threads per core), the fastest builds are made with commands between make -j16 and make -j32."
 
@@ -519,7 +521,7 @@ In some cases, you want to return to the stock Android after flashing custom ROM
 
 ### Fastboot
 
-Fastboot (as well as [ADB](#Android_Debug_Bridge_.28ADB.29)) comes together with a package [android-tools](https://www.archlinux.org/packages/?name=android-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Fastboot (as well as [ADB](#Android_Debug_Bridge_.28ADB.29)) is included in the [android-tools](https://www.archlinux.org/packages/?name=android-tools) package.
 
 **Note:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
 
@@ -626,11 +628,7 @@ Make sure you've exported the variable `ANDROID_HOME` as explained in [#Android 
 
 ### Android Studio: 'failed to create the SD card'
 
-If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the error above, install the [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) and [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) packages from the [Multilib](/index.php/Multilib "Multilib") repository.
-
-### aapt: No such file or directory
-
-The build tools include 32-bit binaries. For this reason they require 32-bit libraries. If you happened to install the SDK manually, you will additionally need to install **multilib/lib32-libstdc++5** and **multilib/lib32-zlib**.
+If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the error above, install the [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) package from the [Multilib](/index.php/Multilib "Multilib") repository.
 
 ### ValueError: unsupported pickle protocol
 

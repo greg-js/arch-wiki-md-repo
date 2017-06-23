@@ -25,7 +25,6 @@ For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differen
     *   [5.2 uWSGI](#uWSGI)
         *   [5.2.1 Activation](#Activation)
     *   [5.3 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
-    *   [5.4 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
 *   [6 Maintenance associated with Arch package updates](#Maintenance_associated_with_Arch_package_updates)
 *   [7 Synchronization](#Synchronization)
     *   [7.1 Desktop](#Desktop)
@@ -422,37 +421,6 @@ fi
 
 If you have customized your ownCloud installation and your filepaths are different than the standard installation, then modify this script accordingly.
 
-### Protection from hacking with fail2ban
-
-Setting up [fail2ban](/index.php/Fail2ban "Fail2ban") is highly recommended. Once installed, create the following files:
-
- `/etc/fail2ban/filter.d/owncloud.conf` 
-```
-[Definition]
-failregex={"reqId":".*","remoteAddr":".*","app":"core","message":"Login failed: '.*' \(Remote IP: '<HOST>'\)","level":2,"time":".*"}
-
-ignoreregex =
-
-```
- `/etc/fail2ban/jail.local` 
-```
-[owncloud]
-enabled = true
-filter  = owncloud
-port    =  http,https
-logpath = /usr/share/webapps/owncloud/data/owncloud.log
-# optionally whitelist internal LAN IP addresses
-ignoreip = 192.168.1.1/24
-
-```
-
-[Restart](/index.php/Restart "Restart") the `fail2ban` service. One can test the configuration by running the following:
-
-```
-fail2ban-regex /usr/share/webapps/owncloud/data/owncloud.log /etc/fail2ban/filter.d/owncloud.conf -v
-
-```
-
 ## Maintenance associated with Arch package updates
 
 When the Arch nextcloud package is updated via pacman, it may become necessary to connect via the web interface to manually trigger an update of the associated files. Alternatively, one can run use `/usr/share/webapps/nextcloud/occ upgrade` from the shell but it must be run as the *http* user:
@@ -693,13 +661,7 @@ This is caused by an issue with the File Locking app, which is often not suffici
 
 ```
 
-and start Redis:
-
-```
-   systemctl enable redis.service
-   systemctl start redis.service
-
-```
+and [start/enable](/index.php/Start/enable "Start/enable") `redis.service`.
 
 Finally, disable the File Locking App, as the Transational File Locking will take care of it (and would conflict).
 
@@ -898,34 +860,49 @@ See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://gi
 
 ### Switch to Cron from AJAX
 
-Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead.
+Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [sytemd](https://www.archlinux.org/packages/?name=sytemd), so the preferred way of executing scheduled tasks is a [systemd timer](/index.php/Systemd#Timers "Systemd").
 
-To do so, first install the [cronie](https://www.archlinux.org/packages/?name=cronie) package.
+First create a service:
 
-Then create a job for `http` user:
-
+ `/etc/systemd/system/nextcloudcron.service` 
 ```
-# crontab -u http -e
+[Unit]
+Description=Nextcloud cron.php job
 
-```
+[Service]
+User=http
+ExecStart=/usr/bin/php -f /usr/share/webapps/nextcloud/cron.php
 
-This would open editor, paste this:
-
-```
-*/15  *  *  *  * php -f /usr/share/webapps/nextcloud/cron.php
-
-```
-
-Save the file and exit. Now you should [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `cronie.service`.
-
-You can verify that everything is set by running
-
-```
-# crontab -u http -l
+[Install]
+WantedBy=basic.target
 
 ```
 
-Finally, set Cron option in Nextcloud settings to Cron.
+Then create a timer for that service:
+
+ `/etc/systemd/system/nextcloudcron.timer` 
+```
+[Unit]
+Description=Run Nextcloud cron.php every 15 minutes
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=15min
+Unit=nextcloudcron.service
+
+[Install]
+WantedBy=timers.target
+
+```
+
+[Start/enable](/index.php/Start/enable "Start/enable") `nextcloudcron.timer`.
+
+Confirm that it is running by running
+
+```
+# systemctl list-timers
+
+```
 
 ### Collabora Online Office integration
 

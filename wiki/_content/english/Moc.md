@@ -31,14 +31,7 @@ If you want to use Moc with [OSS](/index.php/OSS "OSS") v4.1, see [OSS#MOC](/ind
 
 ## Usage
 
-Start *moc*:
-
-```
-$ mocp
-
-```
-
-This will start the server and interface. Some useful shortcuts (case sensitive):
+Run `mocp` to start the server and interface. Some useful shortcuts:
 
 | Start playing a track | `Enter` |
 | Pause track | `Space` or `p` |
@@ -58,11 +51,7 @@ filesystem browsing (and vice versa) | `Tab` |
 | Change volume to 20% | `meta+2` |
 | Quit player | `q` |
 
-**Note:** To shut down the server, use `Shift+q` or:
-```
-$ mocp -x
-
-```
+To shut down the server, press `Shift+q` or run `mocp -x`.
 
 ## Last.fm scrobbling
 
@@ -87,7 +76,7 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 ```
 
-In January of 2016 last.fm updated their password requirements, with all new and updated passwords requiring the inclusion of one of the following characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~, or a space". This is known to cause an authentication error with mocpscrob configurations which specify passwords not conforming to these new specifications. Changing one's password and updating the ~/.mocpscrob/config password accordingly resolves this issue.
+In January of 2016 last.fm updated their password requirements, with all new and updated passwords requiring the inclusion of one of the following characters `!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~`, or a space. This is known to cause an authentication error with mocpscrob configurations which specify passwords not conforming to these new specifications. Changing one's password and updating the `~/.mocpscrob/config` password accordingly resolves this issue.
 
 If you want to use Libre.fm instead of Last.fm it is important to change `hostname` from `post.audioscrobbler.com` to `turtle.libre.fm`.
 
