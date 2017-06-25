@@ -279,8 +279,8 @@ Se si dispone di una quantità enorme di host virtuali, sarebbe comodo poterli d
 Quindi inserire i singoli file di configurazione all'interno:
 
 ```
-sudo nano /etc/httpd/conf/vhosts/domainname1.dom
-sudo nano /etc/httpd/conf/vhosts/domainname2.dom
+sudoedit /etc/httpd/conf/vhosts/domainname1.dom
+sudoedit /etc/httpd/conf/vhosts/domainname2.dom
 ...
 ```
 

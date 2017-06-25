@@ -801,6 +801,11 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://www.3drealms.com/prey/index.html](https://www.3drealms.com/prey/index.html) || [prey](https://aur.archlinux.org/packages/prey/)
 
+*   [Red Crucible](/index.php?title=Red_Crucible&action=edit&redlink=1 "Red Crucible (page does not exist)")
+
+*   Red Crucible®: Firestorm - Free to play online FPS – [rcf](https://aur.archlinux.org/packages/rcf/)
+*   Red Crucible®: Reloaded - Free to play online FPS – [rcr](https://aur.archlinux.org/packages/rcr/)
+
 *   [Quake](https://en.wikipedia.org/wiki/Quake_(video_game) "wikipedia:Quake (video game)")
 
 *   Advanced Quake 1 game engine – [darkplaces](https://aur.archlinux.org/packages/darkplaces/)

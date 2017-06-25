@@ -1,4 +1,4 @@
-[Bioperl](http://www.bioperl.org/wiki/Main_Page) is a set of scripts in the Perl programming language to aid researchers in [Computational Biology](https://en.wikipedia.org/wiki/Computational_biology "wikipedia:Computational biology") and [Bioinformatics](https://en.wikipedia.org/wiki/Bioinformatics "wikipedia:Bioinformatics").
+[Bioperl](http://bioperl.org/) is a set of scripts in the Perl programming language to aid researchers in [Computational Biology](https://en.wikipedia.org/wiki/Computational_biology "wikipedia:Computational biology") and [Bioinformatics](https://en.wikipedia.org/wiki/Bioinformatics "wikipedia:Bioinformatics").
 
 ## Contents
 
@@ -112,4 +112,4 @@ q
 
 ## See also
 
-*   [Installing Bioperl for Unix](http://www.bioperl.org/wiki/Installing)
+*   [http://bioperl.org/INSTALL.html](http://bioperl.org/INSTALL.html)

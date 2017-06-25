@@ -136,13 +136,11 @@ Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland d
 To start on login to tty1, add the following to your `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
   XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
-
-**Note:** If this gives infinite loop as shown in [this issue](https://bugzilla.gnome.org/show_bug.cgi?id=780801), insert `&& [[ -z $XDG_SESSION_TYPE ]]` before the semicolon.
 
 ### GNOME applications in Wayland
 

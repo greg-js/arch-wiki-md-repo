@@ -324,6 +324,8 @@ By default, all logs are sent to files in `/var/log/cups/`. By changing the valu
 
 CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"), and start both `avahi-daemon.service` and `cups-browsed.service`. Jobs are sent directly to the printer without any processing so the created queues may not work, however driverless printers such as those supporting [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) or [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") should work out of the box.
 
+**Note:** Searching for network printers [may significantly increase the time it takes for your computer to boot](https://bbs.archlinux.org/viewtopic.php?pid=1720219#p1720219).
+
 ### Print servers and remote administration
 
 See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing") and [CUPS/Printer sharing#Remote administration](/index.php/CUPS/Printer_sharing#Remote_administration "CUPS/Printer sharing").

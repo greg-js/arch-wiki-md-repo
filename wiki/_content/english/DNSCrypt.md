@@ -213,14 +213,14 @@ Where *<bytes>* is a number, the default size being **1252**, with values up to 
 
 #### Test EDNS0
 
-Make use of the [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), use the *dig* command line tool from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package to issue a TXT query for the name *rs.dns-oarc.net*:
+Make use of the [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), use the *drill* command line tool to issue a TXT query for the name *rs.dns-oarc.net*:
 
 ```
-$ dig +short rs.dns-oarc.net TXT
+$ drill rs.dns-oarc.net TXT
 
 ```
 
-With **EDNS0** supported, the output should look similar to this:
+With **EDNS0** supported, the "answer section" of the output should look similar to this:
 
 ```
 rst.x3827.rs.dns-oarc.net.

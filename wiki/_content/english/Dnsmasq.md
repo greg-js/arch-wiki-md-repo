@@ -156,7 +156,7 @@ dns=dnsmasq
 
 ```
 
-Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ dig example.com` that can be installed with [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) and verifying the server and query times.
+Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
 
 #### Custom configuration
 
@@ -166,7 +166,7 @@ Custom configurations can be created for *dnsmasq* by creating configuration fil
 
 #### IPv6
 
-Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dig -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
+Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `drill -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
 
  `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
 
@@ -178,21 +178,21 @@ Another option is in NetworkManagers' settings (usually by right-clicking the ap
 
 ### Test
 
-To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*dig* is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
+To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*drill* is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
 
 ```
-$ dig archlinux.org | grep "Query time"
+$ drill archlinux.org | grep "Query time"
 
 ```
 
 Running the command again will use the cached DNS IP and result in a faster lookup time if dnsmasq is setup correctly:
 
- `$ dig archlinux.org | grep "Query time"` 
+ `$ drill archlinux.org | grep "Query time"` 
 ```
 ;; Query time: 18 msec
 
 ```
- `$ dig archlinux.org | grep "Query time"` 
+ `$ drill archlinux.org | grep "Query time"` 
 ```
 ;; Query time: 2 msec
 

@@ -37,6 +37,9 @@
     *   [1.13 Character Selector](#Character_Selector)
     *   [1.14 Stylus notes taking](#Stylus_notes_taking)
     *   [1.15 Bibliographic reference managers](#Bibliographic_reference_managers)
+    *   [1.16 Barcode generators and readers](#Barcode_generators_and_readers)
+        *   [1.16.1 Console](#Console_4)
+        *   [1.16.2 Graphical](#Graphical_4)
 
 ## Documents and texts
 
@@ -80,7 +83,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[https://www.calligra.org/words/](https://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
-*   **gLabels** — program for creating labels and business cards.
+*   **gLabels** — Program for creating labels and business cards.
 
 	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
 
@@ -880,3 +883,45 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 *   **Zotero** — Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
 
 	[http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)
+
+### Barcode generators and readers
+
+#### Console
+
+*   **barcode** — A tool to convert text strings to printed bars.
+
+	[https://www.gnu.org/software/barcode/](https://www.gnu.org/software/barcode/) || [barcode](https://www.archlinux.org/packages/?name=barcode)
+
+*   **iec16022** — Produce 2D barcodes often also referenced as DataMatrix.
+
+	[https://datenfreihafen.org/projects/iec16022.html](https://datenfreihafen.org/projects/iec16022.html) || [iec16022](https://www.archlinux.org/packages/?name=iec16022)
+
+*   **qrencode** — C library and command line tool for encoding data in a QR Code symbol.
+
+	[https://fukuchi.org/works/qrencode/](https://fukuchi.org/works/qrencode/) || [qrencode](https://www.archlinux.org/packages/?name=qrencode)
+
+*   **ZBar** — Application and library for reading bar codes from various sources.
+
+	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || [zbar](https://www.archlinux.org/packages/?name=zbar)
+
+*   **Zint** — Barcode encoding library and command line tool supporting over 50 symbologies.
+
+	[http://zint.org.uk/](http://zint.org.uk/) || [zint](https://www.archlinux.org/packages/?name=zint)
+
+#### Graphical
+
+*   **gLabels** — Program for creating labels and business cards. It also supports creating barcodes.
+
+	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
+
+*   **Qreator** — Create your own QR codes.
+
+	[http://davidplanella.org/project-showcase/qreator/](http://davidplanella.org/project-showcase/qreator/) || [qreator](https://aur.archlinux.org/packages/qreator/)
+
+*   **QtQR** — QR Code generator and decoder.
+
+	[https://launchpad.net/qr-tools](https://launchpad.net/qr-tools) || [qtqr](https://aur.archlinux.org/packages/qtqr/)
+
+*   **Zint Barcode Studio** — Barcode generator GUI.
+
+	[http://zint.org.uk/](http://zint.org.uk/) || [zint-qt](https://www.archlinux.org/packages/?name=zint-qt)

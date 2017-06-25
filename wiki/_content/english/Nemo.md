@@ -81,13 +81,13 @@ $ gsettings set org.cinnamon.desktop.default-applications.terminal exec <termina
 Nemo allows the user to add new entries to the context menu. The file `[/usr/share/nemo/actions/sample.nemo_action](https://github.com/linuxmint/nemo/blob/master/files/usr/share/nemo/actions/sample.nemo_action)` contains an example of a Nemo action. Directories to place custom action files:
 
 *   `/usr/share/nemo/actions/` for system-wide actions
-*   `$HOME/.local/share/nemo/actions/` for user actions
+*   `~/.local/share/nemo/actions/` for user actions
 
-Pay attention to the name convention. Your file has to preserve the file ending `.nemo_action`.
+Action files must have the `.nemo_action` file extension.
 
 #### Clam Scan
 
- `$HOME/.local/share/nemo/actions/clamscan.nemo_action` 
+ `clamscan.nemo_action` 
 ```
 [Nemo Action]
 Name=Clam Scan
@@ -104,7 +104,7 @@ Extensions=dir;exe;dll;zip;gz;7z;rar;
 
 #### Moving files
 
- `$HOME/.local/share/nemo/actions/archive.nemo_action` 
+ `archive.nemo_action` 
 ```
 [Nemo Action]
 Active=true
@@ -114,7 +114,7 @@ Exec=<archive.py %F>
 Selection=S
 Extensions=any;
 ```
- `$HOME/.local/share/nemo/actions/archive.py` 
+ `archive.py` 
 ```
 #! /usr/bin/python2 -OOt
 import sys
@@ -135,7 +135,7 @@ for arg in sys.argv:
 
 #### Meld compare
 
- `$HOME/.local/share/nemo/actions/compare-save-for-later.nemo_action` 
+ `compare-save-for-later.nemo_action` 
 ```
 [Nemo Action]
 Active=true
@@ -146,7 +146,7 @@ Icon-Name=meld
 Selection=S
 Extensions=any
 ```
- `$HOME/.local/share/nemo/actions/compare-with-saved.nemo_action` 
+ `compare-with-saved.nemo_action` 
 ```
 [Nemo Action]
 Active=true
@@ -157,7 +157,7 @@ Icon-Name=meld
 Selection=S
 Extensions=any
 ```
- `$HOME/.local/share/nemo/actions/compare.sh` 
+ `compare.sh` 
 ```
 #!/bin/bash
 savedfile=/var/tmp/compare-save-for-later.$USER

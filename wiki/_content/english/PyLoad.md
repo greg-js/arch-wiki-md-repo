@@ -1,11 +1,13 @@
 [pyLoad](https://pyload.net) is a fast, lightweight and full featured download manager for many One-Click-Hoster, container formats like DLC, video sites or just plain http/ftp links ([supported hosts](https://github.com/pyload/pyload/wiki/Supported-Hoster)). It aims for low hardware requirements and platform independence to be runnable on all kind of systems (desktop pc, netbook, NAS, router). Despite its strict restriction it is packed full of features just like webinterface, captcha recognition, unrar and much more.
 
-pyLoad is divided into core and clients, to make it easily remote accessible. Currently there are ([screenshots](https://github.com/pyload/pyload/wiki/Screenshots)):
+pyLoad is divided into core and clients, to make it easily remote accessible.
 
-*   a **webinterface**;
-*   a **command line interface**;
-*   a **GUI** written in **Qt**;
-*   and an **Android** client.
+Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screenshots)):
+
+*   a web interface
+*   a command line interface
+*   a GUI written in Qt
+*   and an Android client.
 
 ## Contents
 
@@ -141,14 +143,9 @@ To have it started automatically on boot, enable *pyload* service.
 
 ## Alternatives
 
-[Tucan Manager](http://tucaneando.com/index.html) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [tucan](https://aur.archlinux.org/packages/tucan/) package.
-
-[uGet](http://ugetdm.com/) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [uget](https://www.archlinux.org/packages/?name=uget) package (GTK).
-
-[JDownloader](/index.php/JDownloader "JDownloader") through [jdownloader](https://aur.archlinux.org/packages/jdownloader/) package.
-
-[plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
-
-[TuxLoad](http://tuxload.wikispaces.com/) available in AUR: [tuxload](https://aur.archlinux.org/packages/tuxload/) (CLI).
-
-[FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/) (Java).
+*   [uGet](http://ugetdm.com/) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [uget](https://www.archlinux.org/packages/?name=uget) package (GTK).
+*   [JDownloader](/index.php/JDownloader "JDownloader") through [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/) package.
+*   [plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
+*   [FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/) (Java).
+*   [Tucan Manager](http://tucaneando.com/index.html) available as [tucan](https://aur.archlinux.org/packages/tucan/) package.
+*   [TuxLoad](http://tuxload.wikispaces.com/) available in AUR: [tuxload](https://aur.archlinux.org/packages/tuxload/) (CLI).

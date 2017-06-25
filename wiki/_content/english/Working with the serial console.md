@@ -112,13 +112,16 @@ kernel /vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda3,/dev/sdb3 vga=773 console=
 
 **Note:** When the `terminal --timeout=5 serial console` line is added to your menu.lst grub configuration, your boot sequence will now show a series of "Press any key to continue" messages. If no key is pressed, the boot menu will appear on whichever (serial or console) appears first in the 'terminal' configuration line. The lines will look like this upon boot:
 
-`Press any key to continue.
+```
 Press any key to continue.
 Press any key to continue.
 Press any key to continue.
 Press any key to continue.
 Press any key to continue.
-Press any key to continue.`
+Press any key to continue.
+Press any key to continue.
+
+```
 
 Next, we have to edit `/etc/inittab` and add a new agetty line below the existing ones:
 

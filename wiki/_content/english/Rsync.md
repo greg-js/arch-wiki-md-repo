@@ -13,14 +13,16 @@
         *   [2.2.4 Automated backup with systemd and inotify](#Automated_backup_with_systemd_and_inotify)
         *   [2.2.5 Differential backup on a week](#Differential_backup_on_a_week)
         *   [2.2.6 Snapshot backup](#Snapshot_backup)
-    *   [2.3 rsync daemon](#rsync_daemon)
-*   [3 Graphical frontends](#Graphical_frontends)
+    *   [2.3 File system cloning](#File_system_cloning)
+    *   [2.4 rsync daemon](#rsync_daemon)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [rsync](https://www.archlinux.org/packages/?name=rsync) package.
 
 **Note:** *rsync* must be installed on both the source and the destination machine.
+
+The [grsync](https://www.archlinux.org/packages/?name=grsync) package provides a graphical front-end.
 
 ## Usage
 
@@ -318,6 +320,36 @@ fi
 
 To make things really, really simple this script can be run from a [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") unit.
 
+### File system cloning
+
+This article provides ways to do a copy of all data in a file system while preserving as much information as possible, including the file system metadata. It is a procedure of data cloning on a file system level where source and destination file systems don't need to be of the same type. It can be used for backing up, file system migration or data recovery.
+
+**rsync**'s *archive* mode comes close to being fit for the job, but it doesn't back up the special file system metadata such as access control lists, extended attributes or sparse file properties. For successful cloning at the file system level, some additional options need to be provided:
+
+```
+rsync -qaHAXS SOURCE_DIR DESTINATION_DIR
+
+```
+
+And their meaning is (from the manpage):
+
+```
+-H, --hard-links      preserve hard links
+-A, --acls            preserve ACLs (implies -p)
+-X, --xattrs          preserve extended attributes
+-S, --sparse          handle sparse files efficiently
+
+```
+
+Produced copy can be simply reread and checked (for example after a data recovery attempt) at the file system level with `diff`'s recursive option:
+
+```
+diff -r SOURCE_DIR DESTINATION_DIR
+
+```
+
+It is possible to do a successful file system migration by using **rsync** as described in this article and updating the [fstab](/index.php/Fstab "Fstab") and [bootloader](/index.php/Bootloader "Bootloader") as described in the [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync") and [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware") articles. This essentially provides a way to convert any root file system to another one.
+
 ### rsync daemon
 
 *rsync* can be run as daemon on a server listening on port `873`.
@@ -339,7 +371,3 @@ $ rsync *local-file* rsync://*server/share/*
 ```
 
 Consider iptables to open port `873` and user authentication.
-
-## Graphical frontends
-
-[Install](/index.php/Install "Install") the [grsync](https://www.archlinux.org/packages/?name=grsync) package.

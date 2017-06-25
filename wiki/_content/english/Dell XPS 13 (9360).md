@@ -10,7 +10,7 @@
 | Function/Multimedia Keys | Working |  ? |
 | Fingerprint sensor | Not working |  ? |
 
-The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October (pre-2017 model) in both a standard edition with Windows installed as well as both a pre-2017 model and a 2017 model (with insignificant hardware differences) Developer Edition with Ubuntu 16.04 "SP1" installed, featuring kernel 4.8 as of now. There is only minor hardware differences between them, mostly in regards to the mainboard microchip manufacturers. Just like the older versions ([Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)") and [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations as well. These fourth gen models includes Intel's Kaby Lake CPUs and advertised with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information and current specifications available provided by Dell (at least to regular customers), it is not available with the 2133 MHz RAM speed. However, some models, including those available to employees and possibly Dell partners (and/or business customers), memory speed is indeed available up to 2133 Mhz LPDDR3 (non-upgradable). [ref](https://codepaste.net/yr5n9i). The same mentioned models are also available with the Intel Core i7-7660U (aswell as i7-7560U) with the Intel 640 Iris Plus onboard graphics. Respective clock frequencies are 2.5 Ghz (up to 4GHz in Turbo-mode) and 2,4 Ghz (up to 3.8 Ghz), respectively.
+The Dell XPS 13 Late 2016 (9360) is the fourth-generation model of the XPS 13 line. The laptop is available since October (pre-2017 model) in both a standard edition with Windows installed as well as both a pre-2017 model and a 2017 model (with insignificant hardware differences) Developer Edition with Ubuntu 16.04 "SP1" installed, featuring kernel 4.8 as of now. There is only minor hardware differences between them, mostly in regards to the mainboard microchip manufacturers. Just like the older versions ([9333](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [9343](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)") and [9350](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")) it is available in different hardware configurations as well. These fourth gen models includes Intel's Kaby Lake CPUs and advertised with up to 16GB LPDDR 1866 MHz RAM and a 1TB PCI SSD. It will now also be available in Rose Gold. Prior to previous information and current specifications available provided by Dell (at least to regular customers), it is not available with the 2133 MHz RAM speed. However, some models, including those available to employees and possibly Dell partners (and/or business customers), memory speed is indeed available up to 2133 Mhz LPDDR3 (non-upgradable). [ref](https://codepaste.net/yr5n9i). The same mentioned models are also available with the Intel Core i7-7660U (aswell as i7-7560U) with the Intel 640 Iris Plus onboard graphics. Respective clock frequencies are 2.5 Ghz (up to 4GHz in Turbo-mode) and 2,4 Ghz (up to 3.8 Ghz), respectively.
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
@@ -43,7 +43,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [13.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [13.2 Not waking from suspend](#Not_waking_from_suspend)
     *   [13.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
-    *   [13.4 Popping Sound on headphones/external speakers](#Popping_Sound_on_headphones.2Fexternal_speakers)
+    *   [13.4 Popping sound on headphones/external speakers](#Popping_sound_on_headphones.2Fexternal_speakers)
     *   [13.5 Coil Whine](#Coil_Whine)
     *   [13.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
     *   [13.7 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
@@ -100,6 +100,8 @@ If the power states are enabled there should be values for ITPT and ITPS in the 
 The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
 
 If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
+
+*But there might be video issues left for this model. **Please help by contributing any feedback** about similar issues you might have experience(d) to this bugreport ([https://bugs.freedesktop.org/show_bug.cgi?id=100671](https://bugs.freedesktop.org/show_bug.cgi?id=100671)).*
 
 ### Module-based Powersaving Options
 
@@ -291,11 +293,11 @@ Update the BIOS to 1.0.7 to patch this issue.
 
 Some users recognised ~2W more power consumption after waking up from standby. Go to the UEFI Firmware Settings (tap the F2 key when the Dell logo appears) and uncheck the 'Enable Thunderbolt Boot Support'. You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/) to reproduce and check this behaviour yourself.
 
-### Popping Sound on headphones/external speakers
+### Popping sound on headphones/external speakers
 
 Power saving being enabled on the audio chip will cause the hissing and popping to appear.
 
-Have a look at [Advanced Linux Sound Architecture/Troubleshooting#Pops when starting and stopping playback](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") and [Advanced Linux Sound Architecture/Troubleshooting#Popping sound after resuming from suspension](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Popping_sound_after_resuming_from_suspension "Advanced Linux Sound Architecture/Troubleshooting").
+Have a look at [ALSA/Troubleshooting#Pops when starting and stopping playback](/index.php/ALSA/Troubleshooting#Pops_when_starting_and_stopping_playback "ALSA/Troubleshooting") and [ALSA/Troubleshooting#Popping sound after resuming from suspension](/index.php/ALSA/Troubleshooting#Popping_sound_after_resuming_from_suspension "ALSA/Troubleshooting").
 
 If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will activate power saving by default when on battery. Edit `/etc/default/tlp` and disable it.
 

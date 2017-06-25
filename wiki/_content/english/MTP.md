@@ -27,7 +27,7 @@
 
 Linux MTP support is provided by [installing](/index.php/Installing "Installing") the [libmtp](https://www.archlinux.org/packages/?name=libmtp) package. It can be installed on its own and used to access devices. However, a number of packages are available that use it as a dependency and add additional convenience (e.g. filemanager) functionalities and compatibility with particular device types - which includes improving transfer access speeds.
 
-These packages to choose from all implement a [Wikipedia:Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace"):
+These packages to choose from all implement a [Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace"):
 
 *   [mtpfs](https://www.archlinux.org/packages/?name=mtpfs)
 *   [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) - is reported to work well for newer Android 4+ devices
@@ -54,66 +54,21 @@ After installing the required package, the device should show up in the file man
 
 It might be required to create a mount-point directory first. The directory `~/mnt` is used as an example below. Also do not forget to unlock your phone's screen before connecting it to the computer.
 
+FUSE mounts can generally be unmounted using `fusermount -u *mountpoint*`.
+
 ### libmtp
 
-Detect your device:
+Run `mtp-detect` to detect your device.
 
-```
-# mtp-detect
+If an error is returned, make sure your user is in the see `uucp` [group](/index.php/Group "Group") and see [troubleshooting libmtp](#libmtp_2).
 
-```
-
-If an error is returned, see [troubleshooting libmtp](#libmtp_2).
-
-**Note:** Your regular user must be in the `uucp` [group](/index.php/Users_and_groups#Example_adding_a_user "Users and groups").
-
-Connect to your device:
-
-```
-# mtp-connect
-
-```
-
-If connection is successful, there are several switch options to use in conjunction with *mtp-connect* to access data on the device. You might want to use some stand alone commands:
-
-```
- mtp-albumart        mtp-emptyfolders    mtp-getplaylist     mtp-reset           mtp-trexist
- mtp-albums          mtp-files           mtp-hotplug         mtp-sendfile
- mtp-connect         mtp-folders         mtp-newfolder       mtp-sendtr
- mtp-delfile         mtp-format          mtp-newplaylist     mtp-thumb
- mtp-detect          mtp-getfile         mtp-playlists       mtp-tracks
-
-```
+You can transfer files using the `mtp-connect` command. Run `pacman -Ql libmtp` to see the other commands provided by *libmtp*.
 
 ### simple-mtpfs
 
-List MTP devices:
+Run `simple-mtpfs -l` to list detected devices.
 
-```
-$ simple-mtpfs -l
-
-```
-
-Your list of device(s) may look like this:
-
-```
-1: AsusZenfone 2 (MTP)
-
-```
-
-To mount the device with index 1 in the list to `~/mnt`:
-
-```
-$ simple-mtpfs --device 1 ~/mnt
-
-```
-
-Unmount device mounted on `~/mnt`:
-
-```
-$ fusermount -u ~/mnt
-
-```
+To mount the first device in the list to `~/mnt`, run `simple-mtpfs --device 1 ~/mnt`.
 
 ### jmtpfs
 
@@ -121,13 +76,6 @@ Mount device on `~/mnt`:
 
 ```
 $ jmtpfs ~/mnt
-
-```
-
-Unmount device mounted on `~/mnt`:
-
-```
-$ fusermount -u ~/mnt
 
 ```
 
@@ -172,13 +120,6 @@ $ go-mtpfs ~/mnt
 
 ```
 
-Unmount device mounted on `~/mnt`:
-
-```
-$ fusermount -u ~/mnt
-
-```
-
 ### mtpfs
 
 **Note:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").
@@ -197,13 +138,6 @@ $ mtpfs -o allow_other ~/mnt
 
 ```
 
-Unmount device mounted on `~/mnt`:
-
-```
-$ fusermount -u ~/mnt
-
-```
-
 ### Android File Transfer
 
 	FUSE interface
@@ -217,13 +151,6 @@ $ aft-mtp-mount ~/my-device
 ```
 
 If you want album art to be displayed, it must be named `albumart.xxx` and placed first in the destination folder. Then copy other files. Also, note that fuse could be 7-8 times slower than ui/cli file transfer.
-
-Unmount device mounted on `~/my-device`:
-
-```
-$ fusermount -u ~/my-device
-
-```
 
 	Qt user interface
 
@@ -385,16 +312,4 @@ This appears to be a security feature: MTP does not work when the phone is locke
 
 If you are not able to use the action "Open with File Manager", you may work around this problem by editing the file `/usr/share/apps/solid/actions/solid_mtp.desktop`.
 
-Change the line
-
-```
-Exec=kioclient exec mtp:udi=%i/
-
-```
-
-To
-
-```
-Exec=dolphin "mtp:/"
-
-```
+Change the line `Exec=kioclient exec mtp:udi=%i/` to `Exec=dolphin "mtp:/"`.

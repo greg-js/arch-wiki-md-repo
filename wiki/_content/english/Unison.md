@@ -25,12 +25,7 @@ In order to use Unison, you need to create a profile.
 
 ### GUI
 
-To configure Unison with the GUI run:
-
-```
-$ unison-gtk2
-
-```
+To configure Unison with the GUI run `unison-gtk2`.
 
 ### Manual
 

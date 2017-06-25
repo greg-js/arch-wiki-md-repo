@@ -291,7 +291,7 @@ textarea {
 
 ### 파일 연결 문제
 
-[GNOME](/index.php/GNOME "GNOME") 사용자가 아닌 경우, 파이어폭스가 파일 형식(내려받기 대화 상자에서 "Open With" 부분)을 연결하지 못할 수도 있다. [libgnome](https://www.archlinux.org/packages/?name=libgnome)를 설치하여 그 문제를 해결한다.
+[GNOME](/index.php/GNOME "GNOME") 사용자가 아닌 경우, 파이어폭스가 파일 형식(내려받기 대화 상자에서 "Open With" 부분)을 연결하지 못할 수도 있다. [libgnome](https://aur.archlinux.org/packages/libgnome/)를 설치하여 그 문제를 해결한다.
 
 ```
 pacman -S libgnome

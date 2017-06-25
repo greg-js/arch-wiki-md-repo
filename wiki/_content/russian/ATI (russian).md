@@ -704,7 +704,7 @@ Fglrx и его Catalyst Control Center сохраняют информацию 
 Если при запущенном драйвере **catalyst** и вы увидели консоль (tty1) вместо приветствия KDM, когда вышли из сессии, то вы должны сказать KDM, чтобы он перезапускал X-сервер после каждого выхода из сессии:
 
 ```
-$ sudo nano /usr/share/config/kdm/kdmrc
+$ sudoedit /usr/share/config/kdm/kdmrc
 
 ```
 

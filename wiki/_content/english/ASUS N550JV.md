@@ -35,6 +35,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.4 USB devices and sleep](#USB_devices_and_sleep)
         *   [2.4.1 Battery charging issues](#Battery_charging_issues)
     *   [2.5 Card reader does not detect cards](#Card_reader_does_not_detect_cards)
+    *   [2.6 Unstable WiFi](#Unstable_WiFi)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Fan control](#Fan_control)
         *   [3.1.1 Dual fan method](#Dual_fan_method)
@@ -154,7 +155,7 @@ Test with `xev` or try to bind something on media button. `Fn+F7` should be cont
 
 ### Touchpad
 
-See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+See [libinput](/index.php/Libinput "Libinput"). Unless you are having issues, try [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 ## Troubleshooting
 
@@ -267,6 +268,12 @@ This battery in this laptop can only be accessed by removing the bottom of the e
 ### Card reader does not detect cards
 
 Due to unknown reasons, card reader does not detect cards. To resolve this, quickly pull out the card and insert it back for several times (leave inserted afterwards) and after few seconds card will be detected in your system.
+
+### Unstable WiFi
+
+If you are using [NetworkManager](/index.php/NetworkManager "NetworkManager") and there is packet loss (you can check by running `ping 8.8.8.8` in terminal) - try to replace [NetworkManager](/index.php/NetworkManager "NetworkManager") with [Wicd](/index.php/Wicd "Wicd").
+
+**Note:** [Wicd](/index.php/Wicd "Wicd") does not support VPN and modems!
 
 ## Tips and tricks
 

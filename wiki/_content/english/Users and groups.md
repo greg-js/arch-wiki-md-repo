@@ -8,8 +8,8 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
 *   [4 User management](#User_management)
     *   [4.1 Example adding a user](#Example_adding_a_user)
     *   [4.2 Example adding a system user](#Example_adding_a_system_user)
-    *   [4.3 Other examples of user management](#Other_examples_of_user_management)
-    *   [4.4 Change a user's login name](#Change_a_user.27s_login_name)
+    *   [4.3 Change a user's login name or home directory](#Change_a_user.27s_login_name_or_home_directory)
+    *   [4.4 Other examples of user management](#Other_examples_of_user_management)
 *   [5 User database](#User_database)
 *   [6 Group management](#Group_management)
 *   [7 Group list](#Group_list)
@@ -181,7 +181,7 @@ With the following command a system user without shell access and without a `hom
 
 ```
 
-### Other examples of user management
+### Change a user's login name or home directory
 
 To change a user's home directory:
 
@@ -199,6 +199,30 @@ The `-m` option also automatically creates the new directory and moves the conte
 ```
 
 Make sure there is **no** trailing `/` on `/my/old/home`.
+
+To change a user's login name:
+
+```
+# usermod -l *newname* *oldname*
+
+```
+
+**Warning:** Make certain that you are not logged in as the user whose name you are about to change. Open a new tty (`Ctrl+Alt+F1`) and log in as root or as another user and su to root. usermod should prevent you from doing this by mistake.
+
+Changing a username is safe and easy when done properly, just use the [usermod](#Other_examples_of_user_management) command. If the user is associated to a group with the same name, you can rename this with the [groupmod](#Group_management) command.
+
+Alternatively, the `/etc/passwd` file can be edited directly, see [#User database](#User_database) for an introduction to its format.
+
+Also keep in mind the following notes:
+
+*   If you are using [sudo](/index.php/Sudo "Sudo") make sure you update your `/etc/sudoers` to reflect the new username(s) (via the visudo command as root).
+*   Personal [crontabs](/index.php/Cron#Crontab_format "Cron") need to be adjusted by renaming the user's file in `/var/spool/cron` from the old to the new name, and then opening `crontab -e` to change any relevant paths and have it adjust the file permissions accordingly.
+*   [Wine's](/index.php/Wine "Wine") personal folders/files' contents in `~/.wine/drive_c/users`, `~/.local/share/applications/wine/Programs` and possibly more need to be manually renamed/edited.
+*   Certain Thunderbird addons, like [Enigmail](https://www.enigmail.net/index.php/en/), may need to be reinstalled.
+*   Anything on your system (desktop shortcuts, shell scripts, etc.) that uses an absolute path to your home dir (i.e. `/home/oldname`) will need to be changed to reflect your new name. To avoid these problems in shell scripts, simply use the `~` or `$HOME` variables for home directories.
+*   Also do not forget to edit accordingly the configuration files in `/etc` that relies on your absolute path (i.e. Samba, CUPS, so on). A nice way to learn what files you need to update involves using the grep command this way: `grep -r {old_user} *`
+
+### Other examples of user management
 
 To add a user to other groups use (`*additional_groups*` is a comma-separated list):
 
@@ -249,30 +273,6 @@ User accounts may be deleted with the *userdel* command.
 The `-r` option specifies that the user's home directory and mail spool should also be deleted.
 
 **Tip:** The [adduser](https://aur.archlinux.org/packages/adduser/) script allows carrying out the jobs of *useradd*, *chfn* and *passwd* interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
-
-### Change a user's login name
-
-To change a user's login name:
-
-```
-# usermod -l *newname* *oldname*
-
-```
-
-**Warning:** Make certain that you are not logged in as the user whose name you are about to change. Open a new tty (`Ctrl+Alt+F1`) and log in as root or as another user and su to root. usermod should prevent you from doing this by mistake.
-
-Changing a username is safe and easy when done properly, just use the [usermod](#Other_examples_of_user_management) command. If the user is associated to a group with the same name, you can rename this with the [groupmod](#Group_management) command.
-
-Alternatively, the `/etc/passwd` file can be edited directly, see [#User database](#User_database) for an introduction to its format.
-
-Also keep in mind the following notes:
-
-*   If you are using [sudo](/index.php/Sudo "Sudo") make sure you update your `/etc/sudoers` to reflect the new username(s) (via the visudo command as root).
-*   Personal [crontabs](/index.php/Cron#Crontab_format "Cron") need to be adjusted by renaming the user's file in `/var/spool/cron` from the old to the new name, and then opening `crontab -e` to change any relevant paths and have it adjust the file permissions accordingly.
-*   [Wine's](/index.php/Wine "Wine") personal folders/files' contents in `~/.wine/drive_c/users`, `~/.local/share/applications/wine/Programs` and possibly more need to be manually renamed/edited.
-*   Certain Thunderbird addons, like [Enigmail](https://www.enigmail.net/index.php/en/), may need to be reinstalled.
-*   Anything on your system (desktop shortcuts, shell scripts, etc.) that uses an absolute path to your home dir (i.e. `/home/oldname`) will need to be changed to reflect your new name. To avoid these problems in shell scripts, simply use the `~` or `$HOME` variables for home directories.
-*   Also do not forget to edit accordingly the configuration files in `/etc` that relies on your absolute path (i.e. Samba, CUPS, so on). A nice way to learn what files you need to update involves using the grep command this way: `grep -r {old_user} *`
 
 ## User database
 

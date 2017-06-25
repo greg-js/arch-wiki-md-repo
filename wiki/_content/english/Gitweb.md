@@ -1,6 +1,6 @@
-Gitweb is the default web interface provided with [git](/index.php/Git "Git") itself and is the basis for other git scripts like [cgit](/index.php/Cgit "Cgit"), [gitosis](/index.php/Gitosis "Gitosis") and others.
+Gitweb is the default web interface that comes with [Git](/index.php/Git "Git") and is the basis for other Git scripts like [cgit](/index.php/Cgit "Cgit") and [gitosis](/index.php/Gitosis "Gitosis").
 
-Gitweb actually supports fcgi natively, so you do not need to wrap it as a cgi script. [[1]](http://repo.or.cz/w/alt-git.git?a=blob_plain;f=gitweb/INSTALL)[[2]](https://sixohthree.com/1402/running-gitweb-in-fastcgi-mode)
+Gitweb actually supports FCGI natively, so you do not need to wrap it as a CGI script. [[1]](http://repo.or.cz/w/alt-git.git?a=blob_plain;f=gitweb/INSTALL)[[2]](https://sixohthree.com/1402/running-gitweb-in-fastcgi-mode)
 
 ## Contents
 
@@ -112,15 +112,9 @@ ExecStop=/usr/bin/kill -15 $MAINPID
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
-In the end, enable and restart the services:
-
-```
-systemctl enable nginx fcgiwrap
-systemctl start nginx fcgiwrap
-```
+In the end, [start/enable](/index.php/Start/enable "Start/enable") `fcgiwrap.service`.
 
 ### Gitweb config
 
@@ -132,8 +126,7 @@ Next we need to make a gitweb config file. Open (or create if it does not exist)
 our $projectroot = "/path/to/your/repositories"; 
 
 # Base URLs for links displayed in the web interface.
-our @git_base_url_list = qw(git://<your_server> http://git@<your_server>); 
-
+our @git_base_url_list = qw(git://<your_server> [http://git@](http://git@)<your_server>);
 ```
 
 To enable "blame" view (showing the author of each line in a source file), add the following line:
@@ -143,19 +136,7 @@ $feature{'blame'}{'default'} = [1];
 
 ```
 
-Now the the configuration is done, please restart your webserver. For apache:
-
-```
-systemctl restart httpd 
-
-```
-
-Or for lighttpd:
-
-```
-systemctl restart lighttpd
-
-```
+Now the the configuration is done, restart your webserver.
 
 ### Syntax highlighting
 
@@ -163,7 +144,10 @@ To enable syntax highlighting with Gitweb, you have to first install the [highli
 
 When highlight has been installed, simply add this line to your `gitweb.conf`:
 
- `$feature{'highlight'}{'default'} = [1];` 
+```
+$feature{'highlight'}{'default'} = [1];
+
+```
 
 Save the file and highlighting should now be enabled.
 
@@ -184,7 +168,7 @@ Next open the `config` file and add this:
 
 ```
 [gitweb]
-        owner = Your Name
+owner = Your Name
 
 ```
 

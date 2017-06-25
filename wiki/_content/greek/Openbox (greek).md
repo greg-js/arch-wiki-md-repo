@@ -449,7 +449,7 @@ In the following example, [MPD](/index.php/MPD "MPD") has been configured to use
 
 ### Media player control
 
-The [playerctl](https://aur.archlinux.org/packages/playerctl/) command-line utility can be used to bind multimedia keys to player actions. It should work with most media players.
+The [playerctl](https://www.archlinux.org/packages/?name=playerctl) command-line utility can be used to bind multimedia keys to player actions. It should work with most media players.
 
 ```
 <keybind key="XF86AudioPlay">
@@ -903,7 +903,7 @@ feh --bg-scale */path/to/image.file* &
 
 #### hsetroot
 
-[hsetroot](https://www.archlinux.org/packages/?name=hsetroot) is a command-line tool specifically designed to set wallpapers. As with Feh, it will be necessary to add the full directory path and name of the image to be used as the wallpaper. To use HSetRoot as the background provider, add the following command to the `~/.config/openbox/autostart` file:
+[hsetroot](https://aur.archlinux.org/packages/hsetroot/) is a command-line tool specifically designed to set wallpapers. As with Feh, it will be necessary to add the full directory path and name of the image to be used as the wallpaper. To use HSetRoot as the background provider, add the following command to the `~/.config/openbox/autostart` file:
 
 ```
 hsetroot -fill */path/to/image.file* &

@@ -331,6 +331,8 @@ Para começar, você pode marcar pacotes como desatualizados. Se ele ficar desat
 
 Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o PKGBUILD - algumas atualizações não exigem qualquer alteração para o processo de compilação ou empacotamento, caso em que apenas atualizar o vetor `pkgver` ou `source` é suficiente.
 
+**Note:** [Pacotes VCS](/index.php/VCS_package_guidelines "VCS package guidelines") não são considerados desatualizados quando o pkgver altera, então **por favor** não sinalize-os pois o mantenedor irá simplesmente retirar a sinalização e ignorar você. Mantenedores do AUR não devem fazer commits para meramente incrementar o pkgver.
+
 ### Foo no AUR não compila quando eu executo makepkg; o que devo fazer?
 
 Provavelmente está deixando escapar alguma coisa trivial.
@@ -347,7 +349,7 @@ O melhor recurso é a página wiki sobre [criação de pacotes](/index.php/Crian
 
 ### Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?
 
-Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/IRC_channel "IRC channel"), #archlinux em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap "Namcap") para verificar erros no seu PKGBUILD e no pacote resultante.
+Se quiser ter o seu PKGBUILD criticado, publique--o para a [lista de discussão aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general) para receber feedback dos TUs e de outros membros do AUR. Você também pode conseguir ajuda do [Canal IRC](/index.php/IRC_channel "IRC channel"), #archlinux-aur em irc.freenode.net. Você também pode usar o [namcap](/index.php/Namcap "Namcap") para verificar erros no seu PKGBUILD e no pacote resultante.
 
 ### Como que faz para um PKGBUILD ir para o repositório *community*?
 

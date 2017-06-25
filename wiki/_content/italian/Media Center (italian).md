@@ -733,7 +733,7 @@ udi = '/org/freedesktop/Hal/devices/usb_device_2040_c000_4033519634_logicaldev_i
 bisogna mettere una regola ad hal in modo che cerchi nel campo info.product la stringa 'SMS IR' e blocchi il controllo di quel dispositivo
 
 ```
-sudo nano /usr/share/hal/fdi/preprobe/20thirdparty/lirc.fdi
+sudoedit /usr/share/hal/fdi/preprobe/20thirdparty/lirc.fdi
 
 ```
 

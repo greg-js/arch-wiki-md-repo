@@ -168,6 +168,4 @@ Of course, replace <amarok-user> and <amarok-db> accordingly. We need sed becaus
 
 For [reasons](/index.php/Amarok_2#SHOUTcast "Amarok 2") which have not been adequately explained, Amarok developers have removed the Shoutcast internet radio features from version 2.1.90 onwards.
 
-Amarok version 1.4 as well as [VLC](/index.php/VLC "VLC") continue to support the Shoutcast internet radio station index and streaming as before. The index is at
-
-*Playlists > Radio Streams > Shoutcast Streams*
+Amarok version 1.4 as well as [VLC](/index.php/VLC "VLC") continue to support the Shoutcast internet radio station index and streaming as before. The index is at *Playlists > Radio Streams > Shoutcast Streams*.

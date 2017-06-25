@@ -220,7 +220,7 @@ For *fdisk*, when prompted, specify the partition type, type `p` to create a pri
 
 Both start and end sectors can be specified in absolute terms as sector numbers or as positions measured in kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`); for instance, `40M` specifies a position 40MiB from the start of the disk. You can specify locations relative to the start or end of the specified default range by preceding the number by a `+` or `-` symbol, as in `+2G` to specify a point 2GiB after the default start sector, or `-200M` to specify a point 200MiB before the last available sector. Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the start sector and the end of the same block for the end sector.
 
-Select the partition's type id. The default, `Linux filesystem`, should be fine for most use. Press `l` to show the codes list.
+Select the partition's type id. The default, `Linux filesystem`, should be fine for most use. Press `l` to show the codes list. You can make the partition bootable by typing `a`.
 
 **Tip:**
 
@@ -264,8 +264,6 @@ To convert GPT to MBR use the `m` option. Note that it is not possible to conver
 # sgdisk -m /dev/sda
 
 ```
-
-If the device will be bootable you will need to set the bootable flag with *fdisk*.
 
 ### Sort partitions
 

@@ -33,6 +33,8 @@
         *   [1.11.4 Application launchers](#Application_launchers)
         *   [1.11.5 Wallpaper setters](#Wallpaper_setters)
         *   [1.11.6 Virtual desktop pagers](#Virtual_desktop_pagers)
+        *   [1.11.7 Desktop widgets](#Desktop_widgets)
+    *   [1.12 Dictionary and Thesaurus](#Dictionary_and_Thesaurus)
 
 ## Others
 
@@ -472,7 +474,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Kupfer** — Convenient command and access tool for the GNOME desktop that can launch applications, open documents and access different types of objects and act on them.
 
-	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://wiki.gnome.org/Apps/Kupfer](https://wiki.gnome.org/Apps/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **launch** — Simple command for launching applications from a terminal emulator.
 
@@ -518,7 +520,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[https://github.com/Gottox/bgs/](https://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
 
-*   **esetroot** — Eterm's root background setter, packaged separately
+*   **esetroot** — Eterm's root background setter, packaged separately.
 
 	[http://www.eterm.org/](http://www.eterm.org/) || [esetroot](https://aur.archlinux.org/packages/esetroot/)
 
@@ -526,7 +528,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[http://linuxbrit.co.uk/software/feh/](http://linuxbrit.co.uk/software/feh/) || [feh](https://www.archlinux.org/packages/?name=feh)‎
 
-*   **habak** — A background changing app
+*   **habak** — A background changing app.
 
 	[http://fvwm-crystal.sourceforge.net/](http://fvwm-crystal.sourceforge.net/) || [habak](https://www.archlinux.org/packages/?name=habak)
 
@@ -538,15 +540,19 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[http://projects.l3ib.org/nitrogen/](http://projects.l3ib.org/nitrogen/) || [nitrogen](https://www.archlinux.org/packages/?name=nitrogen)
 
-*   **pybgsetter** — Multi-backend (hsetroot, Esetroot, habak, feh) to set desktop wallpaper
+*   **pybgsetter** — Multi-backend (hsetroot, Esetroot, habak, feh) to set desktop wallpaper.
 
 	http://bbs.archlinux.org/viewtopic.php?id=88997 || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
 
-*   **wallpaperd** — A small application that takes care of setting the background image
+*   **variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
+
+	[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
+
+*   **wallpaperd** — A small application that takes care of setting the background image.
 
 	[https://projects.pekdon.net/projects/wallpaperd](https://projects.pekdon.net/projects/wallpaperd) || [wallpaperd](https://aur.archlinux.org/packages/wallpaperd/)
 
-*   **xli** — An image display program for X
+*   **xli** — An image display program for X.
 
 	[https://packages.debian.org/sid/xli](https://packages.debian.org/sid/xli) || [xli](https://aur.archlinux.org/packages/xli/)
 
@@ -575,3 +581,23 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 *   **Netwmpager** — A NetWM/EWMH compatible pager.
 
 	[http://sourceforge.net/projects/sf-xpaint/files/netwmpager/](http://sourceforge.net/projects/sf-xpaint/files/netwmpager/) || [netwmpager](https://aur.archlinux.org/packages/netwmpager/)
+
+#### Desktop widgets
+
+*   **gDesklets** — System for bringing mini programs (desklets) onto your desktop.
+
+	[https://launchpad.net/gdesklets](https://launchpad.net/gdesklets) || [gdesklets](https://www.archlinux.org/packages/?name=gdesklets)
+
+*   **GPhotoFrame** — Photo frame gadget for the GNOME Desktop.
+
+	[https://github.com/iblis17/gphotoframe](https://github.com/iblis17/gphotoframe) || [gphotoframe](https://aur.archlinux.org/packages/gphotoframe/)
+
+*   **Screenlets** — Widget framework that consists of small owner-drawn applications.
+
+	[https://launchpad.net/screenlets](https://launchpad.net/screenlets) || [screenlets-pack-basic](https://www.archlinux.org/packages/?name=screenlets-pack-basic)
+
+### Dictionary and Thesaurus
+
+*   **artha** — A free cross-platform English thesaurus that works completely off-line and is based on WordNet.
+
+	[http://artha.sourceforge.net/wiki/index.php/Home](http://artha.sourceforge.net/wiki/index.php/Home) || [artha](https://aur.archlinux.org/packages/artha/)

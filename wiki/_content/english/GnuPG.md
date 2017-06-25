@@ -33,9 +33,8 @@ According to the [official website](http://www.gnupg.org):
     *   [6.1 Configuration](#Configuration_2)
     *   [6.2 Reload the agent](#Reload_the_agent)
     *   [6.3 pinentry](#pinentry)
-    *   [6.4 Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user)
-    *   [6.5 Unattended passphrase](#Unattended_passphrase)
-    *   [6.6 SSH agent](#SSH_agent)
+    *   [6.4 Unattended passphrase](#Unattended_passphrase)
+    *   [6.5 SSH agent](#SSH_agent)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_.28PCSC_Lite.29)
@@ -444,7 +443,16 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 
 *gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client.
 
-Starting with GnuPG 2.1.0 the use of *gpg-agent* is required. *gpg-agent* is started on-demand by the GnuPG tools, so there is usually no reason to start it manually.
+Starting with GnuPG 2.1.0 the use of *gpg-agent* is required. *gpg-agent* is started on-demand by the GnuPG tools.
+
+[gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with [systemd user](/index.php/Systemd/User "Systemd/User") sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
+
+*   The main `gpg-agent.socket` is used by *gpg* to connect to the *gpg-agent* daemon.
+*   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See gpg-agent(1) for details.
+*   The `gpg-agent-ssh.socket` can be used by [SSH](/index.php/SSH "SSH") to cache [SSH keys](/index.php/SSH_keys "SSH keys") added by the *ssh-add* program. See [#SSH agent](#SSH_agent) for the necessary configuration.
+*   The `dirmngr.socket` starts a GnuPG daemon handling connections to keyservers.
+
+**Note:** If you use non-default GnuPG [#Directory location](#Directory_location), you will need to [edit](/index.php/Edit "Edit") all socket files to use the path in the socket directory that `gpgconf --create-socketdir` creates.
 
 ### Configuration
 
@@ -497,14 +505,6 @@ pinentry-program /usr/bin/pinentry-gtk-2
 
 After making this change, reload the gpg-agent.
 
-### Start gpg-agent with systemd user
-
-[gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with systemd user sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
-
-The `gpg-agent.socket` unit will start the service on-demand and manage the lifetime. The `dirmngr.socket` should usually be enabled too, which is a daemon spawned to handle keyserver requests.
-
-The `gpg-agent-ssh.socket` can be used to cache ssh keys. To use `gpg-agent-ssh.socket`, `SSH_AUTH_SOCK` environment variable needs to be [configured](#SSH_agent) to point at `${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh`. When `ssh-add` is used, `gpg-agent` will cache the ssh keys.
-
 ### Unattended passphrase
 
 Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required, which may break backwards compatibility for passphrases piped in from STDIN using the `--passphrase-fd 0` commandline option. In order to have the same type of functionality as the older releases two things must be done:
@@ -536,17 +536,6 @@ To start using GnuPG agent for your SSH keys, enable SSH support in the `~/.gnup
  `~/.gnupg/gpg-agent.conf` 
 ```
 enable-ssh-support
-
-```
-
-Next, make sure that *gpg-agent* is always started. Either follow [#Start gpg-agent with systemd user](#Start_gpg-agent_with_systemd_user), or add the following to your `.bashrc` file:
-
- `~/.bashrc` 
-```
-# Start the gpg-agent if not already running
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  gpg-connect-agent /bye >/dev/null 2>&1
-fi
 
 ```
 

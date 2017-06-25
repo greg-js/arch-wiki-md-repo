@@ -38,7 +38,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.11 VLC](#VLC)
     *   [6.12 Steam](#Steam)
     *   [6.13 Java applications](#Java_applications)
-    *   [6.14 Unsupported applications](#Unsupported_applications)
+    *   [6.14 Mono applications](#Mono_applications)
+    *   [6.15 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Mirroring](#Mirroring)
@@ -95,7 +96,29 @@ Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server) (currently not working). However, it seems that Gtk+ applications ignore both SDDM and X settings.
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. You can set the correct DPI by [#Using KDE system settings](#Using_KDE_system_settings). Alternatives are to use [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM") or the [#X Server](#X_Server) (currently not working). However, it seems that Gtk+ applications ignore both SDDM and X settings. You can fix this by creating a custom login session as follows:
+
+```
+# cp /usr/share/xsessions/plasma.desktop /usr/share/xsessions/plasma-custom.desktop
+# sed -i 's/\/usr\/bin\/startkde/\/usr\/bin\/startkde-custom/g' /usr/share/xsessions/plasma-custom.desktop
+# sed -i 's/Plasma/Plasma (custom)/g' /usr/share/xsessions/plasma-custom.desktop
+
+```
+
+Create `/usr/bin/startkde-custom` with the following contents:
+
+```
+#!/bin/bash
+export GDK_SCALE=2
+export GDK_DPI_SCALE=-1
+export XCURSOR_SIZE=48
+/usr/bin/startkde "$@"
+
+```
+
+The negative dpi scale ensures that the text is sized correctly on a 15" Retina Macbook Pro. You may need to adjust these values depending on your display.
+
+Do not forget to ensure that the script can be executed (`# chmod +x /usr/bin/startkde-custom`). Logout and choose your new custom session (you may need to restart your display manager for it to show up) and GTK+ applications should be scaled correctly.
 
 #### Using KDE system settings
 
@@ -416,6 +439,10 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ```
 
+### Mono applications
+
+According to [[4]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.
+
 ### Unsupported applications
 
 [run_scaled-git](https://aur.archlinux.org/packages/run_scaled-git/) can be used to scale applications (which uses [xpra-winswitch](https://aur.archlinux.org/packages/xpra-winswitch/) internally).
@@ -477,7 +504,7 @@ xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840)
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available.[[5]](https://bbs.archlinux.org/viewtopic.php?pid=1670840)
 
 ### Mirroring
 

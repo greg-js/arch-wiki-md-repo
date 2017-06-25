@@ -283,7 +283,7 @@
 
 *   **Kupfer** — Удобная утилита для окружения GNOME, способная запускать приложения, открывать документы и давать доступ к действиям с различными типами объектов
 
-	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **[Launchy](https://en.wikipedia.org/wiki/ru:Launchy "wikipedia:ru:Launchy")** — Очень популярная кроссплатформенная утилита запуска приложений, использующая плагины для предоставления дополнительного функционала
 

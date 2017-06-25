@@ -142,7 +142,10 @@ and send it as an attachment.
 
 Check your server's logfile again, you should get something similar to this:
 
-*May 23 00:04:08 servername postfix/smtp[2415]: A9B941F911: to=<user@your.postfix.server>, relay=127.0.0.1[127.0.0.1]:10026, delay=0.13, delays=0.08/0/0.04/0, dsn=2.0.0, status=sent (250 Virus Detected; Discarded Email)*
+```
+May 23 00:04:08 servername postfix/smtp[2415]: A9B941F911: to=<user@your.postfix.server>, relay=127.0.0.1[127.0.0.1]:10026, delay=0.13, delays=0.08/0/0.04/0, dsn=2.0.0, status=sent (250 Virus Detected; Discarded Email)
+
+```
 
 ## See also
 

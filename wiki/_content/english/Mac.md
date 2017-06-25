@@ -676,12 +676,17 @@ You can easily check what card do your MacBook have by:
 
 *   If you have the correct broadcom DKMS driver (i.e. broadcom-wl-dkms) installed and your wifi card is still not being recognised, try rebuilding the driver (See [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support")).
 
-**Note:** If your connection frequently drops, you may have to turn off Wi-Fi power management. If you are running [pm-utils](/index.php/Pm-utils "Pm-utils"), you may override wireless power management by creating an executable file `/etc/pm/wireless` with the lines:
+**Note:**
+
+*   If your connection frequently drops, you may have to turn off Wi-Fi power management. If you are running [pm-utils](/index.php/Pm-utils "Pm-utils"), you may override wireless power management by creating an executable file `/etc/pm/wireless` with the lines:
+
 ```
 #!/bin/sh
 iwconfig wlp2s0 power off
 
 ```
+
+*   Eduroam or similar may crash your network manager. Simply delaying the connection after login should do the trick
 
 ### Power management
 
@@ -1089,14 +1094,13 @@ Journaling has been disabled for volume Macintosh HD on disk0s3
 To verify it is done execute the info command again:
 
 ```
-$diskutil info /dev/disk0s3 | grep -i journal
-$
+$ diskutil info /dev/disk0s3 | grep -i journal
 
 ```
 
 If you get noting as output, then journaling is disabled.
 
-However, if you fail to disable journaling. You can change "auto,user,rw,exec" in "/etc/fstab" to "auto,user,force,rw,exec" and mount it.
+However, if you fail to disable journaling. You can change "auto,user,rw,exec" in `/etc/fstab` to "auto,user,force,rw,exec" and mount it.
 
 #### Yosemite and later
 
@@ -1392,7 +1396,7 @@ First prepare your harddisc according to your wishes. In this scenario it was a 
 
 ```
 
-The [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
+The [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) package contains the tools to handle HFS/HFS+ filesystems. The rEFInd bootloader recognizes it on its own. Usually the partition for the EFI bootloader is a FAT32 (vfat) partition. In this case I tried rEFIt first, which apparently needs the HFS+ filesystem to work, and kept it at that.
 
 The mount points are:
 
@@ -1534,7 +1538,7 @@ This is almost the same as the 2013 version, where the only known difference is 
 
 It works excellently after following the instructions for the MBA 2013 13" here and in the forum thread. Bluetooth, which has been reported not working for some people with the 2013 version, works without trouble for the 2014 version, although it should be excactly the same.
 
-**Note:** Unless you have a local repository on a USB disk, you need a USB to ethernet adaptor or a USB wireless adaptor supported natively by the kernel to easily install Arch Linux, since you have to install the [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) package to make the internal wireless adaptor work.
+**Note:** Unless you have a local repository on a USB disk, you need a USB to ethernet adaptor or a USB wireless adaptor supported natively by the kernel to easily install Arch Linux, since you have to install the [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) package to make the internal wireless adaptor work.
 
 Unresolved issues:
 
@@ -1665,7 +1669,7 @@ Brightness is either 0% or 100% after resuming from suspend. Until the kernel is
 
 ##### WiFi
 
-WiFi does not work out of the box. Install [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) to connect to a network.
+WiFi does not work out of the box. Install [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) to connect to a network.
 
 ##### Touchpad
 

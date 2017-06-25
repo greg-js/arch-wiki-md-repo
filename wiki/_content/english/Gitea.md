@@ -35,9 +35,9 @@ When running Gitea for the first time it should redirect to `[http://localhost:3
 
 **Note:** [gitea-git](https://aur.archlinux.org/packages/gitea-git/) already provides a basic configuration file of `/var/lib/gitea/custom/conf/app.ini` on first install.
 
-The user configuration file should be located at `/var/lib/gitea/custom/conf/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update. Instead copy (if not exists) `/var/lib/gitea/conf/app.ini` to `/var/lib/gitea/custom/conf/app.ini`.
+The user configuration file should be located at `/etc/gitea/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update. Instead copy (if not exists) `/var/lib/gitea/conf/app.ini` to `/etc/gitea/app.ini`.
 
-Gitea application and repository data will be saved into */var/lib/gitea*, however it is possible to set custom locations in `/var/lib/gitea/custom/conf/app.ini`.
+Gitea application and repository data will be saved into */var/lib/gitea*, however it is possible to set custom locations in `/etc/gitea/app.ini`.
 
 ### MariaDB/MySQL
 
@@ -62,7 +62,7 @@ $ mysql -u **gitea** -p -D gitea
 
 Configure MariaDB on first run or by updating `app.ini`:
 
- `/var/lib/gitea/custom/conf/app.ini` 
+ `/etc/gitea/app.ini` 
 ```
 DB_TYPE  = mysql
 HOST     = 127.0.0.1:3306 ; or /var/run/mysqld/mysqld.sock
@@ -100,7 +100,7 @@ PASSWD   = **password**
 
 *   Update `app.ini` to the running [SSH](/index.php/SSH "SSH") configuration:
 
- `/var/lib/gitea/custom/conf/app.ini` 
+ `/etc/gitea/app.ini` 
 ```
 [server]
 ; Disable SSH feature when not available

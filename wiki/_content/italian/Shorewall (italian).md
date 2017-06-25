@@ -37,7 +37,7 @@ Pacman provvederà anche ad installare correttamente le dipendenze iptables e ip
 Il file di configurazione primario di Shorewall possiamo editarlo così :
 
 ```
-sudo nano /etc/shorewall/shorewall.conf
+sudoedit /etc/shorewall/shorewall.conf
 
 ```
 

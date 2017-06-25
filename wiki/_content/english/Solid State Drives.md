@@ -6,8 +6,9 @@ This article covers special topics for operating [w:Solid State Drives](https://
     *   [1.1 TRIM](#TRIM)
         *   [1.1.1 Periodic TRIM](#Periodic_TRIM)
         *   [1.1.2 Continuous TRIM](#Continuous_TRIM)
-        *   [1.1.3 LVM](#LVM)
-        *   [1.1.4 dm-crypt](#dm-crypt)
+        *   [1.1.3 Trim an entire device](#Trim_an_entire_device)
+        *   [1.1.4 LVM](#LVM)
+        *   [1.1.5 dm-crypt](#dm-crypt)
     *   [1.2 Maximizing performance](#Maximizing_performance)
     *   [1.3 Security](#Security)
         *   [1.3.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
@@ -107,6 +108,17 @@ On the ext4 filesystem, the `discard` flag can also be set as a [default mount o
 Using the default mount options instead of an entry in `/etc/fstab` is useful for external drives, because such partition will be mounted with the default options also on other machines. There is no need to edit `/etc/fstab` on every machine.
 
 **Note:** The default mount options are not listed in `/proc/mounts`.
+
+#### Trim an entire device
+
+If you want to trim your entire SSD at once, e.g. for a new install, or you want to sell your SSD, you can use the blkdiscard command, which will instantly discard all blocks on a device.
+
+**Warning:** all data on the device will be lost!
+
+```
+# blkdiscard /dev/sd*X*
+
+```
 
 #### LVM
 

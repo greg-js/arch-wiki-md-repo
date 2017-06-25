@@ -56,12 +56,7 @@
 *   See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent).
 *   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax=conf:` to `~/.rtorrent.rc`.
 
-Before running rTorrent, find the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` and copy it to `~/.rtorrent.rc`:
-
-```
-$ cp /usr/share/doc/rtorrent/rtorrent.rc ~/.rtorrent.rc
-
-```
+Before running rTorrent, copy the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` to `~/.rtorrent.rc`.
 
 ### Performance
 

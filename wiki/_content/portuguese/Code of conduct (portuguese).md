@@ -154,7 +154,7 @@ Além do [código comum](#C.C3.B3digo_de_conduta), cada um dos fóruns possui su
 
 #### Colando imagens e código
 
-Utilize a tag [code] quando colando pedaços de informação do console. Utilize o [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") quando for postar grandes quantias de código. Para usuários de localização não-Inglesa: Prefixe o `LC_ALL=C` para postar comandos de forma que a saída será em inglês. Não poste imagens de tela cheia; ao invés disto utilize thumbnails. Quaisquer imagens com resolução maior que 250x250px e maior que 50kb de tamanho serão removidas. **Não** publique capturas de tela de saída de tela; publique [o texto](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Utilize a tag [code] quando colando pedaços de informação do console. Utilize o [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") quando for postar grandes quantias de código. **Não** use [pastebin.com](http://pastebin.com/)—ele é bloqueado por alguns usuários e tem um histórico de problemas irritantes (javascript, propagandas, formatação ruim, etc). Para usuários de localização não-Inglesa: Prefixe o `LC_ALL=C` para postar comandos de forma que a saída será em inglês. Não poste imagens de tela cheia; ao invés disto utilize thumbnails. Quaisquer imagens com resolução maior que 250x250px e maior que 50kb de tamanho serão removidas. **Não** publique capturas de tela de saída de tela; publique [o texto](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### A vida é uma via de mão dupla
 
@@ -205,6 +205,8 @@ Este processo consiste em responde um tópico existente com um outro assunto dif
 Quaisquer tópicos que estão trancados/fechados por conterem informação já documentada na Wiki ou por inconsistência com as políticas do fórum e filosofias do Arch poderão ir para o caixote de lixo(Dust/troll-bin). Após um período de cinco dias, tópicos lá depositados serão deletados. O Moderador responsável irá claramente marcar tais tópicos como "Binned" ou "For deletion".
 
 ### [Listas de discussão](https://lists.archlinux.org//listinfo/)
+
+Veja [estilo de publicação da lista de discussão](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### *Top posting*
 

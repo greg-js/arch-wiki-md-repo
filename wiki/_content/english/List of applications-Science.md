@@ -476,13 +476,25 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 ### Geography
 
+*   **BT747** — The swiss army knife for MTK GPS dataloggers.
+
+	[https://sourceforge.net/projects/bt747/](https://sourceforge.net/projects/bt747/) || [bt747](https://www.archlinux.org/packages/?name=bt747)
+
 *   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
 	[https://wiki.gnome.org/Apps/Maps](https://wiki.gnome.org/Apps/Maps) || [gnome-maps](https://www.archlinux.org/packages/?name=gnome-maps)
 
+*   **GottenGeography** — Easy to use photo geotagging application for the GNOME desktop.
+
+	[https://launchpad.net/gottengeography](https://launchpad.net/gottengeography) || [gottengeography](https://www.archlinux.org/packages/?name=gottengeography)
+
 *   **GPSBabel** — Reads, writes, and manipulates GPS waypoints in a variety of formats.
 
 	[https://www.gpsbabel.org/](https://www.gpsbabel.org/) || [gpsbabel](https://www.archlinux.org/packages/?name=gpsbabel)
+
+*   **GPX Viewer** — Simple tool to visualize tracks and waypoints stored in a gpx file.
+
+	[https://blog.sarine.nl/tag/gpxviewer/](https://blog.sarine.nl/tag/gpxviewer/) || [gpx-viewer](https://www.archlinux.org/packages/?name=gpx-viewer)
 
 *   **JOSM** — An editor for OpenStreetMap written in Java.
 
@@ -503,6 +515,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **QMapShack** — Plan your next outdoor trip.
 
 	[https://bitbucket.org/maproom/qmapshack](https://bitbucket.org/maproom/qmapshack) || [qmapshack](https://www.archlinux.org/packages/?name=qmapshack)
+
+*   **QGIS** — Geographic Information System (GIS) that supports vector, raster & database formats.
+
+	[https://qgis.org/](https://qgis.org/) || [qgis](https://aur.archlinux.org/packages/qgis/)
 
 *   **Viking** — GTK+2 application to manage GPS data.
 

@@ -316,7 +316,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 *   **Kupfer** — Conveniente comando y herramienta de acceso para el escritorio GNOME capaz de lanzar aplicaciones, abrir documentos y acceder a diferentes tipos de objetos y actuar sobre ellos.
 
-	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://aur.archlinux.org/packages/kupfer/)
+	[https://live.gnome.org/Kupfer](https://live.gnome.org/Kupfer) || [kupfer](https://www.archlinux.org/packages/?name=kupfer)
 
 *   **[Launchy](https://en.wikipedia.org/wiki/Launchy "wikipedia:Launchy")** — Lanzador de aplicaciones multiplataforma muy popular con un sistema basado en plugins usado para aportarle funcionalidades extra.
 

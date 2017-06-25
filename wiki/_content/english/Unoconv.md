@@ -1,4 +1,4 @@
-Unoconv converts documents from and to a LibreOffice supported format (e.g. `ms_nightmares.docx` to `ms_nightmares.pdf`). For more information, check it's reference manual.
+[Unoconv](http://dag.wiee.rs/home-made/unoconv/) converts documents from and to a LibreOffice supported format (e.g. `ms_nightmares.docx` to `ms_nightmares.pdf`). For more information, check it's reference manual.
 
 ## Installation
 
@@ -7,6 +7,6 @@ Unoconv converts documents from and to a LibreOffice supported format (e.g. `ms_
 ## Quickstart guide
 
 ```
- $ unoconv -f pdf `ms_nightmares.docx`
+$ unoconv -f pdf ms_nightmares.docx
 
 ```

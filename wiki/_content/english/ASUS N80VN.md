@@ -4,7 +4,7 @@ Works really good under Arch Linux.
 
 You must set the right sound card model in modprobe.d in order to make it work correctly with headphones.
 
-in /etc/modprobe.d/alsa-base:
+in `/etc/modprobe.d/alsa-base`:
 
 ```
 options snd-hda-intel model=g71v

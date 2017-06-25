@@ -9,12 +9,12 @@ This article provides an overview of the Arch Build System (ABS) along with a wa
         *   [1.3.1 SVN tree](#SVN_tree)
 *   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS.3F)
 *   [3 How to use ABS](#How_to_use_ABS)
-    *   [3.1 Prerequisites](#Prerequisites)
-    *   [3.2 Non-recursive checkout](#Non-recursive_checkout)
-    *   [3.3 Checkout a package](#Checkout_a_package)
-    *   [3.4 Configure makepkg](#Configure_makepkg)
-    *   [3.5 Build package](#Build_package)
-        *   [3.5.1 fakeroot](#fakeroot)
+    *   [3.1 Retreive PKGBUILD source](#Retreive_PKGBUILD_source)
+        *   [3.1.1 Prerequisites](#Prerequisites)
+        *   [3.1.2 Non-recursive checkout](#Non-recursive_checkout)
+        *   [3.1.3 Checkout a package](#Checkout_a_package)
+    *   [3.2 Configure makepkg](#Configure_makepkg)
+    *   [3.3 Build package](#Build_package)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Preserve modified packages](#Preserve_modified_packages)
     *   [4.2 Checkout an older version of a package](#Checkout_an_older_version_of_a_package)
@@ -96,13 +96,17 @@ ABS is not necessary to use Arch Linux, but it is useful for automating certain 
 
 ## How to use ABS
 
-### Prerequisites
+### Retreive PKGBUILD source
+
+**Tip:** An alternative method is to [install](/index.php/Install "Install") and use the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories.
+
+#### Prerequisites
 
 [Install](/index.php/Install "Install") the [subversion](https://www.archlinux.org/packages/?name=subversion) package.
 
-### Non-recursive checkout
+#### Non-recursive checkout
 
-**Warning:** Do not download the whole repo; only follow the instructions below. The entire SVN repo is huge. Not only will it take an obscene amount of disk space, but it will also tax the archlinux.org server for you to download it. If you abuse this service, your address may be blocked. Never use the public SVN for any sort of scripting.
+**Warning:** Do not download the whole repository; only follow the instructions below. The entire SVN repository is huge. Not only will it take an obscene amount of disk space, but it will also tax the archlinux.org server for you to download it. If you abuse this service, your address may be blocked. Never use the public SVN for any sort of scripting.
 
 To checkout the *core*, *extra*, and *testing* [repositories](/index.php/Repositories "Repositories"):
 
@@ -120,7 +124,7 @@ $ svn checkout --depth=empty svn://svn.archlinux.org/community
 
 In both cases, it simply creates an empty directory, but it does know that it is an svn checkout.
 
-### Checkout a package
+#### Checkout a package
 
 In the directory containing the svn repository you checked out (i.e., *packages* or *community*), do:
 
@@ -149,10 +153,6 @@ See [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") on how t
 ### Build package
 
 Copy the directory containing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") you wish to modify to a new location. Then make the desired modifications. From there, use *makepkg* as described in [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") to create and install the new package.
-
-#### fakeroot
-
-Essentially, the same steps are being executed in the traditional method (generally including the `./configure, make, make install` steps) but the software is installed into a *fake root* environment. (A *fake root* is simply a subdirectory within the build directory that functions and behaves as the system's root directory. In conjunction with the **fakeroot** program, *makepkg* creates a fake root directory, and installs the compiled binaries and associated files into it, with **root** as owner.) The *fake root*, or subdirectory tree containing the compiled software, is then compressed into an archive with the extension `.pkg.tar.xz`, or a *package*. When invoked, pacman then extracts the package (installs it) into the system's real root directory (`/`).
 
 ## Tips and tricks
 

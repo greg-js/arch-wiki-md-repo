@@ -189,7 +189,7 @@ $ [psql](http://www.postgresql.org/docs/8.3/static/app-psql.html)
 Файл настроек сервера баз данных PostgreSQL `postgresql.conf`. Этот файл находится в папке данных сервера, обычно `/var/lib/postgres/data`. В этой же папке находятся основные файлы настроек включая и `pg_hba.conf`.
 
 **Примечание:** По умолчанию эта папка не доступна даже для просмотра (или поиска) от лица обычного пользователя.
-Из-под пользователя root редактируем файл `$ sudo nano /var/lib/postgres/data/postgresql.conf` 
+Из-под пользователя root редактируем файл `$ sudoedit /var/lib/postgres/data/postgresql.conf` 
 
 В разделе connections and authentications раскомментируйте или исправьте строку `listen_addresses` по вашему желанию на
 
@@ -230,7 +230,7 @@ $ journalctl -u postgresql
 ## Настройка PostgreSQL для работы с PHP
 
 1.  Установите модуль PHP-PostgreSQL `$ pacman -S php-pgsql ` 
-2.  Откройте файл **`/etc/php/php.ini`** в удобном для вас текстовом редакторе, например, `$ sudo nano /etc/php/php.ini` 
+2.  Откройте файл **`/etc/php/php.ini`** в удобном для вас текстовом редакторе, например, `$ sudoedit /etc/php/php.ini` 
 3.  Найдите строку, начинающуюся с `;extension=pgsql.so`, и из неё уберите `;` (`;` значит, что строка закомментирована). Если вы используете PDO, сделайте то же самое с `;extension=pdo.so` и `;extension=pdo_pgsql.so`. Если этих строк нет, добавьте их (без `;`). Эти строки надо искать в разделе файла «Dynamic Extensions» (по умолчанию) или в самом конце файла.
 4.  Перезапустите веб-сервер Apache `# systemctl restart httpd` 
 5.  Либо, если у вас nginx + php-fpm, то `# systemctl reload php-fpm` 

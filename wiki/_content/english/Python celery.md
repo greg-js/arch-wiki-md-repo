@@ -488,12 +488,7 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 ```
 
-At this stage following should work:
-
-```
-# systemctl start celery
-
-```
+[Start](/index.php/Start "Start") `celery.service`.
 
 ## Troubleshooting
 

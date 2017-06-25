@@ -170,18 +170,6 @@ EndSection
 
 If you have screen artifacts when setting your screen frequency up to 120+Hz your "Memory Clock" and "GPU Clock" are certainly too low to handle the screen request.
 
-A workaround [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is available by doing the following:
-
-```
-# echo high > /sys/class/drm/card0/device/power_dpm_force_performance_level
-
-```
-
-or
-
-```
-# echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
-
-```
+A workaround [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
 There is a GUI solution [[3]](https://github.com/marazmista/radeon-profile) were you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).

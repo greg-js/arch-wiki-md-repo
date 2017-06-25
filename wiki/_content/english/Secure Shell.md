@@ -35,13 +35,14 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
         *   [3.2.2 Usage](#Usage)
     *   [3.3 Forwarding other ports](#Forwarding_other_ports)
     *   [3.4 Jump hosts](#Jump_hosts)
-    *   [3.5 Multiplexing](#Multiplexing)
-    *   [3.6 Speeding up SSH](#Speeding_up_SSH)
-    *   [3.7 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
-    *   [3.8 Keep alive](#Keep_alive)
-    *   [3.9 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
-    *   [3.10 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
-        *   [3.10.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
+    *   [3.5 Reverse SSH through a relay](#Reverse_SSH_through_a_relay)
+    *   [3.6 Multiplexing](#Multiplexing)
+    *   [3.7 Speeding up SSH](#Speeding_up_SSH)
+    *   [3.8 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
+    *   [3.9 Keep alive](#Keep_alive)
+    *   [3.10 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
+    *   [3.11 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
+        *   [3.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
     *   [4.2 SSH connection hangs after poweroff/reboot](#SSH_connection_hangs_after_poweroff.2Freboot)
@@ -578,6 +579,42 @@ $ ssh -A -t -l user1 bastion1 \
 
 ```
 
+### Reverse SSH through a relay
+
+The idea is that client connects to the server via another relay, while the server is connected to the same relay using a reverse SSH tunnel. This is for example useful when the server is behind a NAT and relay is a publicly accessible SSH server used as a proxy to which the user has access. So the prerequisite is that client's keys are authorized against both the relay and the server and server's need to be authorized against the relay as well for the reverse SSH connection.
+
+The following configuration example assumes that user1 is the user account used on client, user2 on relay and user3 on server. First the server needs to establish the reverse tunnel with:
+
+```
+ssh -R 2222:localhost:22 -N user2@relay
+
+```
+
+Which can also be automated with a startup script, systemd service or [autossh](https://www.archlinux.org/packages/?name=autossh).
+
+At the client side the connection is established with:
+
+```
+ssh user2@relay ssh user3@localhost -p 2222
+
+```
+
+The remote command to establish the connection to reverse tunnel can also be defined in relay's `~/.ssh/authorized_keys` by including the `command` field as follows:
+
+```
+command="ssh user3@localhost -p 2222" ssh-rsa KEY2 user1@client
+
+```
+
+In this case the connection is established with:
+
+```
+ssh user2@relay
+
+```
+
+Note that SCP's autocomplete function in client's terminal is not working and even the SCP transfers themselves aren't working under some configurations.
+
 ### Multiplexing
 
 The SSH daemon usually listens on port 22\. However, it is common practice for many public internet hotspots to block all traffic that is not on the regular HTTP/S ports (80 and 443, respectively), thus effectively blocking SSH connections. The immediate solution for this is to have `sshd` listen additionally on one of the whitelisted ports:
@@ -593,7 +630,7 @@ However, it is likely that port 443 is already in use by a web server serving HT
 
 ### Speeding up SSH
 
-**Tip:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[7]](https://www.psc.edu/index.php/hpn-ssh)
+**Tip:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[8]](https://www.psc.edu/index.php/hpn-ssh)
 
 There are several [client configuration](#Configuration) options which can speed up connections either globally or for specific hosts. See [ssh_config(5)](http://man7.org/linux/man-pages/man5/ssh_config.5.html) for full descriptions of these options.
 
@@ -703,7 +740,7 @@ Remember to [start](/index.php/Start "Start") and/or [enable](/index.php/Enable 
 You may also need to disable ControlMaster e.g.
 
 ```
-$ ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o TCPKeepAlive=yes foo@bar.com
+ExecStart=/usr/bin/autossh -M 0 -o ControlMaster=no -NL 2222:localhost:2222 -o TCPKeepAlive=yes foo@bar.com
 
 ```
 

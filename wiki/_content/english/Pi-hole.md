@@ -41,7 +41,7 @@ This wiki page tries to cover the need for configuration and use instructions of
 
 As a first step, you need to setup dnsmasq. It will resolve DNS queries for your lan filtering ads with pi-hole.
 
-**If you already use dnsmasq**, edit your /etc/dnsmasq.conf to uncomment last line and include new pi-hole config filed located at /etc/dnsmasq.d directory:
+**If you already use dnsmasq**, edit your `/etc/dnsmasq.conf` to uncomment last line and include new pi-hole config filed located at `/etc/dnsmasq.d` directory:
 
 ```
 # sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
@@ -71,7 +71,7 @@ Pi-hole need use of default site of your web server to redirect to it all DNS fi
 
 ##### Lighttpd
 
-[Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd). Backup original config file and copy pi-hole one:
+[Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi). Backup original config file and copy pi-hole one:
 
 ```
 # cp /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.orig
@@ -111,7 +111,7 @@ Copy the package provided default config for pi-hole:
 
 ```
 
-If necessary, [enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` `pi-hole-ftl.service`and re/start them.
+If necessary, [enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
 ### Update/Upgrade configuration
 
@@ -191,7 +191,7 @@ The Archlinux Pi-hole Standalone variant is born from the need to use pi-hole se
 
 As a first step, you need to setup dnsmasq. It will resolve DNS queries for your machine filtering ads with pi-hole.
 
-**If you already use dnsmasq**, edit your /etc/dnsmasq.conf to uncomment last line and include new pi-hole config filed located at /etc/dnsmasq.d directory:
+**If you already use dnsmasq**, edit your `/etc/dnsmasq.conf` to uncomment last line and include new pi-hole config filed located at `/etc/dnsmasq.d` directory:
 
 ```
 # sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
@@ -210,7 +210,7 @@ If necessary, [enable](/index.php/Enable "Enable") `dnsmasq.service` and re/star
 
 #### Openresolve
 
-Edit your /etc/resolvconf.conf and uncomment name_servers line (last line) and update resolvconf:
+Edit your `/etc/resolvconf.conf` and uncomment name_servers line (last line) and update resolvconf:
 
 ```
 # sed -i 's|#name_servers=127.0.0.1|name_servers=127.0.0.1|' /etc/resolvconf.conf

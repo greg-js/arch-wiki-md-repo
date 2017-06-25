@@ -243,7 +243,7 @@ select {
 
 ### مشاكل الملفات ذات الصلة
 
-للمستخدمين الذين لا يستخدمون واجهة [GNOME](/index.php/GNOME "GNOME")، متصفح firefox قد لا يقوم بربط البرامج بشكل صحيح، لحل المشكلة قم بتنصيب حزمة [libgnome](https://www.archlinux.org/packages/?name=libgnome) من المستودعات الرسمية.
+للمستخدمين الذين لا يستخدمون واجهة [GNOME](/index.php/GNOME "GNOME")، متصفح firefox قد لا يقوم بربط البرامج بشكل صحيح، لحل المشكلة قم بتنصيب حزمة [libgnome](https://aur.archlinux.org/packages/libgnome/) من المستودعات الرسمية.
 
 إذا كنت تستخدم واجهة KDE يمكنك أيضًا القيام بالتالي :
 

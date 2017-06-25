@@ -174,7 +174,7 @@ Firefox as of version 28 has the ability to control how the HTTP Referer header 
 | network.http.sendRefererHeader | 1 | 1 | 2 | Only for clicked links (0 disabled completely, 1 send referer on link click, 2 always send; incl. images) |
 | network.http.referer.XOriginPolicy | 1 | 1 | 0 | Only if base domains match (0 always send, 2 only if host matches) |
 | network.http.referer.spoofSource | true | false | false | Send target URI instead |
-| network.http.referer.trimmingPolicy | 2 | 0 | 0 | scheme, host and port (0 full; 1 scheme, host port and path) |
+| network.http.referer.trimmingPolicy | 2 | 0 | 0 | scheme, host and port (0 full; 1 scheme, host, port and path) |
 
 #### Defragment the profile's SQLite databases
 
