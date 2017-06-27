@@ -254,6 +254,8 @@ Include conf/extra/httpd-acme.conf
 
 ### Automatic renewal
 
+**Note:** Before renewing certificates you must forward port 443/tcp (https) to the server. Otherwise renewing process will fail.
+
 #### systemd
 
 Create a [systemd](/index.php/Systemd "Systemd") `certbot.service`:

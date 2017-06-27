@@ -15,6 +15,10 @@ From the [I2P](https://geti2p.net/en/) homepage:
 
 I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package providing compilation from source, and the [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) package providing a precompiled binary.
 
+The I2P homepage also provides a precompiled binary package for command line (headless) install in the users home directory. In case of this installation type I2P will auto update itself through the i2p network.
+
+A [Java](/index.php/Java "Java") Runtime Environment is required, OpenJDK is fine, for arm platform Oracle Java is recommended.
+
 ## Usage
 
 First, [start](/index.php/Start "Start") and optionally also enable the `i2prouter.service`.
@@ -28,7 +32,7 @@ This will launch the daemon under the system user `i2p`. Next, open your browser
 
 From here you can navigate to I2Ps configuration and statistics pages, and links to "Eepsites of Interest" (an [w:eepsite](https://en.wikipedia.org/wiki/eepsite "w:eepsite") being a site available only through the I2P network, similar to how .onion sites are only available through the Tor network). Also, be aware that eepsites are unavailable until the daemon has bootstrapped to the network, which can take several minutes.
 
-To enable the use of outproxies, use the following browser settings:
+In order to visit eepsite's configure your browser to use the local http proxy (not socks):
 
 ```
 HTTP  127.0.0.1 4444

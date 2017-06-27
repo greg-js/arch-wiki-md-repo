@@ -209,7 +209,7 @@ $ scp /tmp/*.crt foo@hostname-of-openvpn_server:/tmp
 
 ```
 
-On the **OpenVPN server**, move the certificates in place and reassign ownership:
+On the **OpenVPN server**, move the certificates in place and reassign ownership. For the server:
 
 ```
 # mv /tmp/servername.crt /etc/openvpn/server/
@@ -217,13 +217,15 @@ On the **OpenVPN server**, move the certificates in place and reassign ownership
 
 ```
 
-The signed client certificate can be stored anywhere since it will be used in the subsequent step of preparing the [ovpn client profile file](/index.php/OpenVPN#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29 "OpenVPN").
+For the client:
 
 ```
 # mkdir /etc/easy-rsa/pki/signed
 # mv /tmp/client1.crt /etc/easy-rsa/pki/signed
 
 ```
+
+That is it. To generate the client profile. See: [OpenVPN#ovpngen](/index.php/OpenVPN#ovpngen "OpenVPN").
 
 ## Revoking certificates and alerting the OpenVPN server
 

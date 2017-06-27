@@ -11,15 +11,12 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
     *   [4.1 Handbrake](#Handbrake)
     *   [4.2 Avidemux](#Avidemux)
     *   [4.3 Mencoder](#Mencoder)
-    *   [4.4 FFMpeg](#FFMpeg)
+    *   [4.4 FFmpeg](#FFmpeg)
 *   [5 Device specific](#Device_specific)
     *   [5.1 iPhone/iPod Touch](#iPhone.2FiPod_Touch)
-        *   [5.1.1 Introduction](#Introduction)
-        *   [5.1.2 The iFuse Way](#The_iFuse_Way)
-            *   [5.1.2.1 iPhone OS 3.x, iOS 3.x and iOS 4.x](#iPhone_OS_3.x.2C_iOS_3.x_and_iOS_4.x)
-        *   [5.1.3 Generating HashInfo file](#Generating_HashInfo_file)
-        *   [5.1.4 Unobfuscating the Database](#Unobfuscating_the_Database)
-        *   [5.1.5 Syncing](#Syncing)
+        *   [5.1.1 The iFuse Way](#The_iFuse_Way)
+        *   [5.1.2 Generating HashInfo file](#Generating_HashInfo_file)
+        *   [5.1.3 Unobfuscating the Database](#Unobfuscating_the_Database)
     *   [5.2 iPod Classic/Nano (3rd generation)](#iPod_Classic.2FNano_.283rd_generation.29)
     *   [5.3 iPod Nano 5th generation](#iPod_Nano_5th_generation)
     *   [5.4 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
@@ -75,7 +72,7 @@ Both videos and photos can be found in typically in `*<mountpoint>*/DCIM/100APPL
 
 ### HTML5 videos
 
-Typically you want to convert MOV files to a HTML5 video format like OGV using ffmpeg2theora. Note that the creation date metadata is not in the converted video, so you need to use a script like:
+Typically you want to convert MOV files to a HTML5 video format like OGV using [ffmpeg2theora](https://www.archlinux.org/packages/?name=ffmpeg2theora). Note that the creation date metadata is not in the converted video, so you need to use a script like:
 
 ```
 #!/usr/bin/sh
@@ -139,9 +136,9 @@ mencoder INPUT -o output.mp4 \
 
 ```
 
-### FFMpeg
+### FFmpeg
 
-[Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package from the official repositories.
+[Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package.
 
 Another encoder with comprehensive configuration support. Example command to encode for 5G iPod:
 
@@ -164,13 +161,11 @@ $ ffmpeg -f mp4 -vcodec mpeg4 -maxrate 1000 -b 700 -qmin 3 -qmax 5\
 
 ### iPhone/iPod Touch
 
-#### Introduction
+By default, neither the iPhone nor the iPod Touch present mass storage capability over USB, though there is a solution for accessing your files.
 
-By default, neither the iPhone nor the iPod Touch present mass storage capability over USB, though there exist two solutions for accessing your files.
+The proposed solution is to use a FUSE file system called [ifuse](https://www.archlinux.org/packages/?name=ifuse), which allows you to mount your device through USB, as you normally would. After installing ifuse, for instance, you should see your iPhone appear in the left navigation of Gnome Files and other supporting file managers.
 
-The second is to use a FUSE file system called [ifuse](https://www.archlinux.org/packages/?name=ifuse), which allows you to mount your device through USB, as you normally would. After installing ifuse, for instance, you should see your iPhone appear in the left navigation of Gnome Files and other supporting file managers. This method requires no hacking and is in general the better solution, though be aware that the software is still under heavy development. As of late, however, it has proven to be rather reliable and stable.
-
-**Note:** The current releases of [libgpod](https://www.archlinux.org/packages/?name=libgpod) and [gtkpod](https://www.archlinux.org/packages/?name=gtkpod) support the iPod Touch and the iPhone OS 3.1.x up to iOS 4.3.x. It is possible to transfer pictures and music without limitations.
+**Tip:** You can also use other [#iPod management apps](#iPod_management_apps) to transfer pictures and music.
 
 Refer to this page:[[1]](https://help.ubuntu.com/community/PortableDevices/iPhone)
 
@@ -178,7 +173,7 @@ Refer to this page:[[1]](https://help.ubuntu.com/community/PortableDevices/iPhon
 
 **Note:** If your device has a screen password, one must unlock the device to gain access through the USB interface.
 
-[Install](/index.php/Install "Install") the [ifuse](https://www.archlinux.org/packages/?name=ifuse), [usbmuxd](https://www.archlinux.org/packages/?name=usbmuxd) and [libplist](https://www.archlinux.org/packages/?name=libplist) packages.
+[Install](/index.php/Install "Install") the [ifuse](https://www.archlinux.org/packages/?name=ifuse) package.
 
 Now make sure that you have the fuse module loaded by doing `modprobe fuse`, assuming that you do not have it in `/etc/modules-load.d/` already.
 
@@ -199,48 +194,6 @@ To unmount your device:
 # umount <mountpoint>
 
 ```
-
-##### iPhone OS 3.x, iOS 3.x and iOS 4.x
-
-[Install](/index.php/Install "Install") [libplist](https://www.archlinux.org/packages/?name=libplist), [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice), [libgpod](https://www.archlinux.org/packages/?name=libgpod), [usbmuxd](https://www.archlinux.org/packages/?name=usbmuxd) and [ifuse](https://www.archlinux.org/packages/?name=ifuse) packges.
-
-Now make sure that you have the fuse module loaded by doing `modprobe fuse`. Make sure your user is in the *usbmux* [group](/index.php/Group "Group").
-
-Run as root:
-
-```
-# usbmuxd
-
-```
-
-Now you should the be able to mount your device by running
-
-```
-$ ifuse ~/ipod
-
-```
-
-or similar. Make sure the directory used exists and is accessible to your user.
-
-Mount the device and create the iTunes_Control/Device directory. Then, get your UUID. It should be in the syslog from usbmuxd, or you can find it by running
-
-```
-$ lsusb -v | egrep "iSerial.*[a-f0-9]{40}"
-
-```
-
-It should be 40 characters long. Then, run
-
-```
-$ ipod-read-sysinfo-extended <uuid> <mountpoint>. 
-
-```
-
-This should generate a file named `iTunes_Control/Device/SysInfoExtended`.
-
-Now, start up your favourite app such as [gtkpod](https://www.archlinux.org/packages/?name=gtkpod).
-
-**Note:** If gtkpod seems to work only from root/sudo while your user only gets the slash screen, you can delete your `~/.gtkpod` folder and retry. Note that gtkpod will forget your preferences.
 
 #### Generating HashInfo file
 
@@ -267,21 +220,6 @@ with:
 Then reboot your device.
 
 If syncing fails with "ERROR: Unsupported checksum type '0' in cbk file generation!", you may need to leave this at 4\. libgpod seems to [expect a hashed database.](http://gitorious.org/libgpod/libgpod/blobs/b9b83dc8b6c3d1f0c53ed32f05279ca838d54e02/src/itdb_sqlite.c#line2064)
-
-#### Syncing
-
-Use your favourite [iPod-compatible program](#iPod_management_apps). Individual configuration will vary, but in general, pointing your program to your specified mount point should yield good results.
-
-After you have synced, run `ipod-touch-umount` (or `iphone-umount`, depending on your taste) to unmount the SSHFS file system and restart the `MobileMusicPlayer` process on the device, so that the new music database is read.
-
-If you used iFuse, simply type:
-
-```
-# umount <mountpoint>
-
-```
-
-You will still need to reload the MobileMusicPlayer process. If your device is not jailbroken, then you are stuck restarting it.
 
 ### iPod Classic/Nano (3rd generation)
 

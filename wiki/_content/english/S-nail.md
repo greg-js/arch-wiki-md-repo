@@ -7,15 +7,14 @@ In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages ca
 ## Contents
 
 *   [1 Quick shot](#Quick_shot)
-*   [2 Sending Mail from a server](#Sending_Mail_from_a_server)
-*   [3 First configuration adjustments](#First_configuration_adjustments)
-*   [4 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
-*   [5 Interactive usage](#Interactive_usage)
-    *   [5.1 I'm in!](#I.27m_in.21)
-    *   [5.2 Message composition](#Message_composition)
-*   [6 Using S/MIME](#Using_S.2FMIME)
-*   [7 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
-*   [8 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
+*   [2 First configuration adjustments](#First_configuration_adjustments)
+*   [3 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
+*   [4 Interactive usage](#Interactive_usage)
+    *   [4.1 I'm in!](#I.27m_in.21)
+    *   [4.2 Message composition](#Message_composition)
+*   [5 Using S/MIME](#Using_S.2FMIME)
+*   [6 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
+*   [7 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
 
 ## Quick shot
 
@@ -91,29 +90,6 @@ x
 ' | mailx -#
   in: <SPAß> (4 bytes)
   out: <SPA%DF> (6 bytes)
-
-```
-
-## Sending Mail from a server
-
-For a quick configuration to let your server send email using an external smtp server, create a file called .mailrc in /root or /home/$USER with the following contents. Things should send and receive correctly by default.
-
-```
-   account gmail {
-      set smtp-use-starttls
-      set smtp=smtp.gmail.com:587
-      set smtp-auth=login
-      set smtp-auth-user=username
-      set smtp-auth-password=password
-      set from="root <root@gmail.com>"
-   }
-
-```
-
-Send an email like this:
-
-```
-   echo "Sample Body" | mail -v -A gmail -s "Sample Subject" user@gmail.com
 
 ```
 

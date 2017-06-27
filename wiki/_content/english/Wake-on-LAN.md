@@ -1,4 +1,4 @@
-Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection (be it the internet or intranet).
+[Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN "wikipedia:Wake-on-LAN") (WOL) is a feature to switch on a computer via a network connection (be it the internet or intranet).
 
 ## Contents
 

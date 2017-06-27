@@ -24,7 +24,9 @@ Compton is a standalone composite manager, suitable for use with [window manager
 
 ## Installation
 
-Install [compton](https://www.archlinux.org/packages/?name=compton) or its [git](/index.php/Git "Git") version, [compton-git](https://aur.archlinux.org/packages/compton-git/).
+[Install](/index.php/Install "Install") [compton](https://www.archlinux.org/packages/?name=compton) or its [git](/index.php/Git "Git") version, [compton-git](https://aur.archlinux.org/packages/compton-git/).
+
+[compton-conf](https://aur.archlinux.org/packages/compton-conf/) or [compton-conf-git](https://aur.archlinux.org/packages/compton-conf-git/) package provide [Qt](/index.php/Qt "Qt")-based GUI for Compton configuration.
 
 ## Use
 

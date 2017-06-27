@@ -296,6 +296,7 @@ E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount th
 
 `Options=` share mounting options
 
+**Note:** If you want to use a hostname for the server you want to share (instead of an IP address), add `systemd-resolved.service` to `After` and `Wants`. This might avoid mount errors at boot time that don't arise when testing the unit.
  `/etc/systemd/system/mnt-myshare.mount` 
 ```
 [Unit]

@@ -57,7 +57,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 A VGA Passthrough relies on a number of technologies that are not ubiquitous as of today and might not be available on your hardware. You will not be able to do this on your machine unless the following requirements are met :
 
 *   Your CPU must support hardware virtualization (for kvm) and IOMMU (for the passthrough itself)
-    *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](http://ark.intel.com/search/advanced?s=t&VTX=true&VTD=true)
+    *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](http://ark.intel.com/Search/FeatureFilter?productType=processors&VTD=true)
     *   [List of compatible AMD CPUs (AMD-V and AMD-Vi)](http://support.amd.com/en-us/kb-articles/Pages/GPU120AMDRVICPUsHyperVWin8.aspx)
 *   Your motherboard must also support IOMMU
     *   Both the chipset and the BIOS must support it. It is not always easy to tell at a glance whether or not this is the case, but there is a [fairly comprehensive list on the matter on the Xen wiki](http://wiki.xen.org/wiki/VTdHowTo) as well as [another one on Wikipedia](https://en.wikipedia.org/wiki/List_of_IOMMU-supporting_hardware "wikipedia:List of IOMMU-supporting hardware").

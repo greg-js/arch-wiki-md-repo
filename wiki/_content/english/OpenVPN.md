@@ -769,6 +769,8 @@ Example:
 
 The resulting `iphone.ovpn` can be edited if desired as the script does insert some commented lines.
 
+The client expects this file to be located in `/etc/openvpn/client/iphone.conf`. Note the change in file extension from 'ovpn' to 'conf' in this case.
+
 **Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
 
 ### openvpn-unroot

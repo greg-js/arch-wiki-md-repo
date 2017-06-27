@@ -389,5 +389,6 @@ and the help will be displayed in the main buffer (usually buffer 1).
 ### Guides
 
 *   [Official WeeChat quick start guide](https://weechat.org/files/doc/stable/weechat_quickstart.en.html) - a good place to start
-*   [FiXato's guide to WeeChat](https://guides.fixato.org/setting_up_weechat.html)
+*   [FiXato's guide to WeeChat](https://guides.fixato.org/weechat) - A Weechat Contributers Guide
+*   [My always up-to-date WeeChat configuration](https://gist.github.com/pascalpoitras/8406501) - r3m (weechat-dev)
 *   [Thoughtbot article on weechat and slack](https://robots.thoughtbot.com/weechat-for-slacks-irc-gateway)

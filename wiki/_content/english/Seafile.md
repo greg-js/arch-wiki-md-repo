@@ -106,7 +106,7 @@ $ echo "LANGUAGE='<yourlanguage>'" >> $HOME/example.org/conf/seahub_settings.py
 
 ```
 
-Now, copy the systemd service for seafile `seafile-server@.service` from `/usr/lib/systemd/system/` to `/etc/systemd/system` and replace the two occurences of `%h` in it with the actual $HOME for the user set up in [#Installation](#Installation).
+Now, copy the systemd service for seafile `seafile-server@.service` from `/usr/lib/systemd/system/` to `/etc/systemd/system` and replace the two occurences of `%i` in it with the actual $HOME for the user set up in [#Installation](#Installation).
 
 If you did not yet setup nginx and if you want to test out Seafile's own web-frontend-implementation seahub purely, you have to edit the systemd-service file, were you replaced the `%h` with your $HOME, and delete the `--fastcgi` parameter from the start script, as fastcgi is not supported with seahub-only.
 

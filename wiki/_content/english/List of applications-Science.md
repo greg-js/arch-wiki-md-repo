@@ -480,6 +480,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://sourceforge.net/projects/bt747/](https://sourceforge.net/projects/bt747/) || [bt747](https://www.archlinux.org/packages/?name=bt747)
 
+*   **FoxtrotGPS** — Lightweight and fast mapping application.
+
+	[https://www.foxtrotgps.org/](https://www.foxtrotgps.org/) || [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps)
+
 *   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
 	[https://wiki.gnome.org/Apps/Maps](https://wiki.gnome.org/Apps/Maps) || [gnome-maps](https://www.archlinux.org/packages/?name=gnome-maps)
@@ -492,9 +496,17 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://www.gpsbabel.org/](https://www.gpsbabel.org/) || [gpsbabel](https://www.archlinux.org/packages/?name=gpsbabel)
 
+*   **GPSCorrelate** — Correlate (geotagging) digital camera photos with GPS data in GPX format.
+
+	[https://github.com/freefoote/gpscorrelate](https://github.com/freefoote/gpscorrelate) || [gpscorrelate](https://www.archlinux.org/packages/?name=gpscorrelate)
+
 *   **GPX Viewer** — Simple tool to visualize tracks and waypoints stored in a gpx file.
 
 	[https://blog.sarine.nl/tag/gpxviewer/](https://blog.sarine.nl/tag/gpxviewer/) || [gpx-viewer](https://www.archlinux.org/packages/?name=gpx-viewer)
+
+*   **[GRASS GIS](https://en.wikipedia.org/wiki/GRASS_GIS "wikipedia:GRASS GIS")** — Geospatial data management and analysis, image processing, graphics/maps production, spatial modeling and visualization.
+
+	[https://grass.osgeo.org/](https://grass.osgeo.org/) || [grass](https://aur.archlinux.org/packages/grass/)
 
 *   **JOSM** — An editor for OpenStreetMap written in Java.
 

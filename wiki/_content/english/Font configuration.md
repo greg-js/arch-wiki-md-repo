@@ -473,7 +473,7 @@ Look up the meaning of the numbers at [http://www.freedesktop.org/software/fontc
 
 ## Applications without fontconfig support
 
-Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
+Some applications like [URxvt](/index.php/URxvt "URxvt") and [Emacs](/index.php/Emacs "Emacs") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
 
  `~/.Xresources` 
 ```

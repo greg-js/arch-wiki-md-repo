@@ -290,12 +290,12 @@ where `N` is the priority number you selected in the first step, and `/dev/sdX#`
 
 #### Using a startup.nsh script
 
-Some UEFI implementations does not retain EFI variables between cold boots (e.g. [VirtualBox](/index.php/VirtualBox "VirtualBox")) and anything set through the UEFI firmware interface is lost on poweroff.
+Some UEFI implementations do not retain EFI variables between cold boots (e.g. [VirtualBox](/index.php/VirtualBox "VirtualBox")) and anything set through the UEFI firmware interface is lost on poweroff.
 
 The [UEFI Shell Specification 2.0](http://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) establishes that a script called `startup.nsh` at the root of the ESP partition will always be interpreted and can contain arbitrary instructions; among those you can set a bootloading line. Make sure you mount the ESP partition on `/boot` and create a `startup.nsh` script that contains a kernel bootloading line. For example:
 
 ```
-vmlinuz-linux root=/dev/daX rootfs=myfs rootflags=myrootflags \
+vmlinuz-linux rw root=/dev/sdX rootfs=myfs rootflags=myrootflags \
  kernel.flag=foo mymodule.flag=bar \
  initrd=\intel-ucode.img initrd=\initramfs-linux.img
 

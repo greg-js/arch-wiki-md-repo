@@ -126,101 +126,106 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [55.1 Cannot change screen resolution](#Cannot_change_screen_resolution)
     *   [55.2 Windowed mode](#Windowed_mode)
     *   [55.3 Stuttering sound](#Stuttering_sound)
-*   [56 Lethal League](#Lethal_League)
-*   [57 Life is Strange](#Life_is_Strange)
-*   [58 Mark of the Ninja](#Mark_of_the_Ninja)
-    *   [58.1 Bad sound](#Bad_sound)
-*   [59 Metro: Last Light](#Metro:_Last_Light)
-*   [60 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
-    *   [60.1 Floating heads](#Floating_heads)
-*   [61 Multiwinia](#Multiwinia)
-    *   [61.1 Crash on startup](#Crash_on_startup)
-*   [62 Natural Selection 2](#Natural_Selection_2)
-    *   [62.1 No Sound](#No_Sound_4)
-*   [63 Nuclear Throne](#Nuclear_Throne)
-    *   [63.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
-*   [64 Penumbra: Overture](#Penumbra:_Overture)
-    *   [64.1 Windowed mode](#Windowed_mode_2)
-*   [65 The Polynomial](#The_Polynomial)
-    *   [65.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-*   [66 Portal 2](#Portal_2)
-    *   [66.1 Game does not start](#Game_does_not_start_8)
-    *   [66.2 Resolution too low](#Resolution_too_low)
-*   [67 Prison Architect](#Prison_Architect)
-    *   [67.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-*   [68 Project Zomboid](#Project_Zomboid)
-    *   [68.1 No sound](#No_sound_5)
-*   [69 Redshirt](#Redshirt)
-*   [70 Revenge of the Titans](#Revenge_of_the_Titans)
-*   [71 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-*   [72 Saints Row IV](#Saints_Row_IV)
-    *   [72.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-    *   [72.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-*   [73 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [73.1 No audio](#No_audio_2)
-*   [74 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [74.1 No audio](#No_audio_3)
-*   [75 Spacechem](#Spacechem)
-    *   [75.1 Game crash](#Game_crash)
-*   [76 Splice](#Splice)
-*   [77 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [78 The Stanley Parable](#The_Stanley_Parable)
-    *   [78.1 Game won't start](#Game_won.27t_start)
-*   [79 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [80 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [80.1 Start with black screen](#Start_with_black_screen)
-    *   [80.2 No English fonts](#No_English_fonts)
-*   [81 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [81.1 No sound](#No_sound_6)
-*   [82 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [83 Tabletop Simulator](#Tabletop_Simulator)
-    *   [83.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [84 Team Fortress 2](#Team_Fortress_2)
-    *   [84.1 HRTF setup](#HRTF_setup)
-    *   [84.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [84.3 No audio](#No_audio_4)
-    *   [84.4 Slow loading textures](#Slow_loading_textures)
-*   [85 Terraria](#Terraria)
-*   [86 This War of Mine](#This_War_of_Mine)
-    *   [86.1 Game does not start](#Game_does_not_start_9)
-    *   [86.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [87 Ticket to Ride](#Ticket_to_Ride)
-*   [88 Tomb Raider](#Tomb_Raider)
-    *   [88.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [88.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [89 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [90 Transistor](#Transistor)
-    *   [90.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [91 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [91.1 Troubleshooting](#Troubleshooting)
-*   [92 Trine 2](#Trine_2)
-    *   [92.1 Colors](#Colors)
-    *   [92.2 Sound](#Sound)
-    *   [92.3 Resolution](#Resolution)
-*   [93 Tropico 5](#Tropico_5)
-    *   [93.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [94 Unity of Command](#Unity_of_Command)
-    *   [94.1 Squares](#Squares)
-    *   [94.2 No audio](#No_audio_5)
-*   [95 Unity3D](#Unity3D)
-    *   [95.1 Locale settings](#Locale_settings)
-    *   [95.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [95.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-*   [96 Unrest](#Unrest)
-*   [97 War Thunder](#War_Thunder)
-    *   [97.1 No audio](#No_audio_6)
-    *   [97.2 Blank screen](#Blank_screen)
-*   [98 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [99 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [99.1 Game does not start](#Game_does_not_start_10)
-*   [100 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [101 World of Goo](#World_of_Goo)
-    *   [101.1 Changing resolution](#Changing_resolution)
-*   [102 XCOM](#XCOM)
-    *   [102.1 Hangs on startup](#Hangs_on_startup)
-    *   [102.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [103 Tower Unite](#Tower_Unite)
-    *   [103.1 Graphical Glitches](#Graphical_Glitches)
+*   [56 Left for Dead 2](#Left_for_Dead_2)
+    *   [56.1 Missing Chinese font](#Missing_Chinese_font)
+*   [57 Lethal League](#Lethal_League)
+*   [58 Life is Strange](#Life_is_Strange)
+*   [59 The Long Dark](#The_Long_Dark)
+    *   [59.1 Game does not start](#Game_does_not_start_8)
+*   [60 Mark of the Ninja](#Mark_of_the_Ninja)
+    *   [60.1 Bad sound](#Bad_sound)
+*   [61 Metro: Last Light](#Metro:_Last_Light)
+*   [62 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
+    *   [62.1 Floating heads](#Floating_heads)
+*   [63 Multiwinia](#Multiwinia)
+    *   [63.1 Crash on startup](#Crash_on_startup)
+*   [64 Natural Selection 2](#Natural_Selection_2)
+    *   [64.1 No Sound](#No_Sound_4)
+*   [65 Nuclear Throne](#Nuclear_Throne)
+    *   [65.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
+*   [66 Penumbra: Overture](#Penumbra:_Overture)
+    *   [66.1 Windowed mode](#Windowed_mode_2)
+*   [67 The Polynomial](#The_Polynomial)
+    *   [67.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+*   [68 Portal 2](#Portal_2)
+    *   [68.1 Game does not start](#Game_does_not_start_9)
+    *   [68.2 Resolution too low](#Resolution_too_low)
+    *   [68.3 Missing non Latin font](#Missing_non_Latin_font)
+*   [69 Prison Architect](#Prison_Architect)
+    *   [69.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+*   [70 Project Zomboid](#Project_Zomboid)
+    *   [70.1 No sound](#No_sound_5)
+*   [71 Redshirt](#Redshirt)
+*   [72 Revenge of the Titans](#Revenge_of_the_Titans)
+*   [73 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+*   [74 Saints Row IV](#Saints_Row_IV)
+    *   [74.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+    *   [74.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+*   [75 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [75.1 No audio](#No_audio_2)
+*   [76 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [76.1 No audio](#No_audio_3)
+*   [77 Spacechem](#Spacechem)
+    *   [77.1 Game crash](#Game_crash)
+*   [78 Splice](#Splice)
+*   [79 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [80 The Stanley Parable](#The_Stanley_Parable)
+    *   [80.1 Game won't start](#Game_won.27t_start)
+*   [81 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [82 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [82.1 Start with black screen](#Start_with_black_screen)
+    *   [82.2 No English fonts](#No_English_fonts)
+*   [83 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [83.1 No sound](#No_sound_6)
+*   [84 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [85 Tabletop Simulator](#Tabletop_Simulator)
+    *   [85.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [86 Team Fortress 2](#Team_Fortress_2)
+    *   [86.1 HRTF setup](#HRTF_setup)
+    *   [86.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [86.3 No audio](#No_audio_4)
+    *   [86.4 Slow loading textures](#Slow_loading_textures)
+*   [87 Terraria](#Terraria)
+*   [88 This War of Mine](#This_War_of_Mine)
+    *   [88.1 Game does not start](#Game_does_not_start_10)
+    *   [88.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [89 Ticket to Ride](#Ticket_to_Ride)
+*   [90 Tomb Raider](#Tomb_Raider)
+    *   [90.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [90.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [91 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [92 Transistor](#Transistor)
+    *   [92.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [93 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [93.1 Troubleshooting](#Troubleshooting)
+*   [94 Trine 2](#Trine_2)
+    *   [94.1 Colors](#Colors)
+    *   [94.2 Sound](#Sound)
+    *   [94.3 Resolution](#Resolution)
+*   [95 Tropico 5](#Tropico_5)
+    *   [95.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [96 Unity of Command](#Unity_of_Command)
+    *   [96.1 Squares](#Squares)
+    *   [96.2 No audio](#No_audio_5)
+*   [97 Unity3D](#Unity3D)
+    *   [97.1 Locale settings](#Locale_settings)
+    *   [97.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [97.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+*   [98 Unrest](#Unrest)
+*   [99 War Thunder](#War_Thunder)
+    *   [99.1 No audio](#No_audio_6)
+    *   [99.2 Blank screen](#Blank_screen)
+*   [100 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [101 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [101.1 Game does not start](#Game_does_not_start_11)
+*   [102 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [103 World of Goo](#World_of_Goo)
+    *   [103.1 Changing resolution](#Changing_resolution)
+*   [104 XCOM](#XCOM)
+    *   [104.1 Hangs on startup](#Hangs_on_startup)
+    *   [104.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [105 Tower Unite](#Tower_Unite)
+    *   [105.1 Graphical Glitches](#Graphical_Glitches)
 
 ## Common steps
 
@@ -672,17 +677,7 @@ The problem is caused by the font packages: [ttf-dejavu](https://www.archlinux.o
 
 ### Chinese input method problem
 
-Dota2 is not compatible with CJK IME(Input Method Editor/Enhancer), such as [Ibus](/index.php/Ibus "Ibus") and [Fcitx](/index.php/Fcitx "Fcitx"). Chinese characters cannot be typed in Dota2.
-
-A possible solution is to replace `*gamedir*/dota 2 beta/bin/libSDL2-2.0.so.0` with a self-compiled *libSDL* that supports fcitx or ibus.
-
-	[LibSDL+Ibus](https://forum.ubuntu.com.cn/viewtopic.php?f=34&t=460195)
-
-	[LibSDL+Fcitx](https://forum.ubuntu.com.cn/viewtopic.php?f=34&t=466879)
-
-	[LibSDL+Fcitx source](https://github.com/timxx/SDL-fcitx)
-
-	[The solutions issue](https://github.com/ValveSoftware/Dota-2/issues/1650) 
+Dota2 is compatible with [Ibus](/index.php/Ibus "Ibus") .
 
 ## Drox Operative
 
@@ -1009,6 +1004,24 @@ Back it up, [install](/index.php/Install "Install") [openal](https://www.archlin
 
 Then symlink the installed system library (`/usr/lib32/libopenal.so.1` or `/usr/lib/libopenal.so.1`) to `openal.so`.
 
+## Left for Dead 2
+
+### Missing Chinese font
+
+L4D2 Requires [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei). Or add the following lines to `~/.config/fontconfig/fonts.conf`
+
+```
+        <match target="pattern">
+               <test qual="any" name="family">
+                       <string>WenQuanYi Zen Hei</string>
+               </test>
+               <edit name="family" mode="assign" binding="same">
+                       <string>Source Han Sans CN</string>
+               </edit>
+       </match>
+
+```
+
 ## Lethal League
 
 Requires [lib32-glew1.10](https://www.archlinux.org/packages/?name=lib32-glew1.10).
@@ -1016,6 +1029,24 @@ Requires [lib32-glew1.10](https://www.archlinux.org/packages/?name=lib32-glew1.1
 ## Life is Strange
 
 Requires [lib32-librtmp0](https://www.archlinux.org/packages/?name=lib32-librtmp0).
+
+## The Long Dark
+
+### Game does not start
+
+The 64 bit version fails to start as-is. Either use the 32bit version *tld.x86* in the game folder or start the 64 bit version like so:
+
+```
+LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64
+
+```
+
+Optionally change your steam launch command to
+
+```
+LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0  %command%
+
+```
 
 ## Mark of the Ninja
 
@@ -1116,6 +1147,22 @@ LD_PRELOAD='/usr/$LIB/libstdc++.so.6' %command%
 ### Resolution too low
 
 When the game starts with a resolution so low that you cannot reach the game settings, start the game in windowed mode by setting the launch option `-windowed`.
+
+### Missing non Latin font
+
+Portal and Portal2 use Nimbus Sans,add the following lines to `~/.config/fontconfig/fonts.conf`
+
+```
+        <match target="pattern">
+               <test qual="any" name="family">
+                       <string>Nimbus Sans</string>
+               </test>
+               <edit name="family" mode="assign" binding="same">
+                       <string>Source Han Sans CN</string>
+               </edit>
+       </match>
+
+```
 
 ## Prison Architect
 

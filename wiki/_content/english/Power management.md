@@ -470,17 +470,13 @@ See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/
 
 ### Network interfaces
 
-[Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN "wikipedia:Wake-on-LAN") can be a useful feature, but if you are not making use of it then it is simply draining extra power waiting for a magic packet while in suspend. Disabling for all Ethernet interfaces:
+[Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") can be a useful feature, but if you are not making use of it then it is simply draining extra power waiting for a magic packet while in suspend. You can adapt a [udev rule](/index.php/Wake-on-LAN#udev "Wake-on-LAN") to disable the feature for all Ethernet interfaces.
 
- `/etc/udev/rules.d/70-disable_wol.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="eth*", RUN+="/usr/bin/ethtool -s %k wol d"` 
-**Note:** You need to install [ethtool](https://www.archlinux.org/packages/?name=ethtool) for the above to take effect.
-
-To enable powersaving on all wireless interfaces:
+To enable powersaving with [iw](https://www.archlinux.org/packages/?name=iw) on all wireless interfaces:
 
  `/etc/udev/rules.d/70-wifi-powersave.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*", RUN+="/usr/bin/iw dev %k set power_save on"` 
-**Note:** You need to install [iw](https://www.archlinux.org/packages/?name=iw) for the above to take effect.
 
-In these examples, `%k` is a specifier for the kernel name of the matched device. For example, if it finds that the rule is applicable to `wlan0`, the `%k` specifier will be replaced with `wlan0`. To apply the rules to only a particular interface, just replace the pattern `eth*` and specifier `%k` with the desired interface name. For more information, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
+In this example, `%k` is a specifier for the kernel name of the matched device. For example, if it finds that the rule is applicable to `wlan0`, the `%k` specifier will be replaced with `wlan0`. To apply the rules to only a particular interface, just replace the pattern `eth*` and specifier `%k` with the desired interface name. For more information, see [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html).
 
 **Note:** In this case, the name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Device_names "Network configuration") via `80-net-setup-link.rules` in systemd, it is important that the network powersave rules are named lexicographically before `80-net-setup-link.rules` so that they are applied before the devices are named e.g. `enp2s0`. However, be advised that commands ran with `RUN` are executed **after** all rules have been processed -- in which case the naming of the rules file is irrelevant and the persistent device names should be used (the persistent device name can be referenced by replacing `%k` with `$name`).
 

@@ -121,6 +121,7 @@ See also:
 *   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)
 *   [unigine-sanctuary](https://aur.archlinux.org/packages/unigine-sanctuary/)
 *   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/)
+*   [unigine-superposition](https://aur.archlinux.org/packages/unigine-superposition/)
 
 ### gnome-disks
 

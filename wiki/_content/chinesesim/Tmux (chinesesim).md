@@ -205,7 +205,7 @@ WantedBy=multi-user.target
 
 ## 会话初始化
 
-可以通过修改配置文件`~/.tmux.conf`来使得tmux在初始化一个sesson的时候自动新建窗口, 比如:
+可以通过修改配置文件`~/.tmux.conf`来使得tmux在初始化一个session的时候自动新建窗口, 比如:
 
 ```
 new  -n WindowName Command

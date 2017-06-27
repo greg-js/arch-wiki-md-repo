@@ -4,7 +4,8 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Compiler](#Compiler)
-    *   [1.2 Haskell development tools](#Haskell_development_tools)
+    *   [1.2 Problems with linking](#Problems_with_linking)
+    *   [1.3 Haskell development tools](#Haskell_development_tools)
 *   [2 Managing Haskell packages](#Managing_Haskell_packages)
     *   [2.1 Pros/Cons of the different methods](#Pros.2FCons_of_the_different_methods)
     *   [2.2 ArchHaskell repository](#ArchHaskell_repository)
@@ -31,7 +32,7 @@ You can try it with the following file:
 and by running:
 
 ```
-$ ghc Main.hs
+$ ghc -dynamic Main.hs
 $ ./Main 
 ```
 
@@ -39,6 +40,12 @@ $ ./Main
 Hello, World
 
 ```
+
+### Problems with linking
+
+GHC uses static linking by default and the `-dynamic` flag is used to select dynamic linking. Starting with package version [8.0.2-1](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/ghc&id=7a948cdfb808afd3ce6f93047ae0dc1778e79f9f), the Arch [ghc](https://www.archlinux.org/packages/?name=ghc) package no longer contains static versions of the GHC platform libraries. Installing the [ghc-static](https://www.archlinux.org/packages/?name=ghc-static) package is now necessary for the default compilation flags to work.
+
+Dynamic linking is used for most Haskell modules packaged through [pacman](/index.php/Pacman "Pacman") and is common for packages in the [AUR](/index.php/AUR "AUR"). Since GHC provides no [ABI](https://en.wikipedia.org/wiki/Application_binary_interface "w:Application binary interface") compatibility between compiler releases, static linking is often the preferred option for local development outside of the package system.
 
 ### Haskell development tools
 
@@ -48,7 +55,7 @@ To start developing in Haskell easily, one option is the [haskell-platform](http
 
 Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)), the Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
-*   ghc ([ghc](https://www.archlinux.org/packages/?name=ghc)) — The compiler
+*   ghc ([ghc](https://www.archlinux.org/packages/?name=ghc) and [ghc-static](https://www.archlinux.org/packages/?name=ghc-static)) — Compiler with dynamic [boot libraries](https://ghc.haskell.org/trac/ghc/wiki/Commentary/Libraries), and supplementary static boot libraries
 *   cabal-install ([cabal-install](https://www.archlinux.org/packages/?name=cabal-install)) — A command line interface for *Cabal* and *Hackage*
 *   haddock ([haskell-haddock-api](https://www.archlinux.org/packages/?name=haskell-haddock-api) and [haskell-haddock-library](https://www.archlinux.org/packages/?name=haskell-haddock-library)) — Tools for generating documentation
 *   happy ([happy](https://www.archlinux.org/packages/?name=happy)) — Parser generator

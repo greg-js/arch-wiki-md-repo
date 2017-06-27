@@ -78,7 +78,11 @@ This should work out of the box. If not, you might have to reset a custom `defau
 
 After enabling [SDDM](/index.php/SDDM "SDDM") a symlink `display-manager.service` should be set in `/etc/systemd/system/`. You may need to use `--force` to override old symlinks.
 
- `$ ls -l /etc/systemd/system/display-manager.service`  `[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/sddm.service` 
+ `$ file /etc/systemd/system/display-manager.service` 
+```
+/etc/systemd/system/display-manager.service: symbolic link to /usr/lib/systemd/system/sddm.service
+
+```
 
 ### Using systemd-logind
 

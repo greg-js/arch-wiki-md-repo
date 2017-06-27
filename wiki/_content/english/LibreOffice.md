@@ -1,4 +1,4 @@
-From [Home - LibreOffice](http://www.libreoffice.org/):
+From [Home - LibreOffice](https://www.libreoffice.org/):
 
 	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base.*
 
@@ -32,7 +32,7 @@ From [Home - LibreOffice](http://www.libreoffice.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") one of the following packages from the [official repositories](/index.php/Official_repositories "Official repositories"):
+[Install](/index.php/Install "Install") one of the following packages:
 
 *   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements.
 *   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) is the maintenance branch.
@@ -67,7 +67,7 @@ If that does not work immediately, you may need to change the icon set that is i
 
 LibreOffice is able to use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
 
-Themes can be found on [Mozilla's theme repository](https://addons.mozilla.org/en-US/firefox/themes/).
+Themes can be found on [Mozilla's theme repository](https://addons.mozilla.org/firefox/themes/).
 
 ### Disable startup logo
 
@@ -77,12 +77,12 @@ If you prefer to disable the startup logo, open `/etc/libreoffice/sofficerc`, fi
 
 ## Extension management
 
-The following additional extensions are available in the [official repositories](/index.php/Official_repositories "Official repositories"):
+The following additional extensions are available:
 
 *   [libreoffice-extension-texmaths](https://www.archlinux.org/packages/?name=libreoffice-extension-texmaths)
 *   [libreoffice-extension-writer2latex](https://www.archlinux.org/packages/?name=libreoffice-extension-writer2latex)
 
-For more extensions, check the [AUR](/index.php/AUR "AUR"), the built-in LibreOffice Extension manager, or [libreplanet](http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List).
+For more extensions, check the [AUR](/index.php/AUR "AUR"), the built-in LibreOffice Extension manager, or [libreplanet](https://libreplanet.org/wiki/Group:OpenOfficeExtensions/List).
 
 ## Language aids
 
@@ -104,15 +104,15 @@ For the thesaurus option, you will need [libmythes](https://www.archlinux.org/pa
 
 ### Grammar checking
 
-For grammar checking, several tools are available. The most common is [LanguageTool](https://www.languagetool.org/). While the [languagetool](https://www.archlinux.org/packages/?name=languagetool) is available in the [official repositories](/index.php/Official_repositories "Official repositories"), it is not packaged as a LibreOffice extension. It is thus recommended to install the LibreOffice extension manually or with the [AUR](/index.php/AUR "AUR") package [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/) instead. Even though the extension comes bundled with LanguageTool, this does not conflict with the one in the official repositories.
+For grammar checking, several tools are available. The most common is [LanguageTool](https://www.languagetool.org/). While the [languagetool](https://www.archlinux.org/packages/?name=languagetool) is available, it is not packaged as a LibreOffice extension. It is thus recommended to install the LibreOffice extension manually or with [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/) instead. Even though the extension comes bundled with LanguageTool, this does not conflict with [languagetool](https://www.archlinux.org/packages/?name=languagetool).
 
 After this extension has been installed, please make sure you have a [Java](/index.php/Java "Java") 8 runtime installed ([jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk)). Indeed, Languagetool uses Java and may slow down or briefly hang LibreOffice, particularly while opening documents. Fortunately this is usually only when initially opening a document and is usually not apparent otherwise. Once installed, you want to enable it as the default environment for LibreOffice. To do that go to "Tools" --> "Options" --> "Advanced" and select the appropiate JRE (it will be shown as 1.8.0) then press "Ok". You will be prompted to restart the LibreOffice suite. Once restarted you will be able to install Languagetools without trouble.
 
-Other grammar tools can also be found on the [LibrePlanet extension page](http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List), on the [official LibreOffice Extensions website](http://extensions.libreoffice.org/) or [OpenOffice's Website](http://lingucomponent.openoffice.org/grammar.html). Please note all OpenOffice extensions are guaranteed to work with LibreOffice.
+Other grammar tools can also be found on the [LibrePlanet extension page](https://libreplanet.org/wiki/Group:OpenOfficeExtensions/List), on the [official LibreOffice Extensions website](https://extensions.libreoffice.org/) or [OpenOffice's Website](https://www.openoffice.org/lingucomponent/grammar.html). Please note all OpenOffice extensions are guaranteed to work with LibreOffice.
 
 	French
 
-French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](http://www.dicollecte.org/grammalecte/telecharger.php) or via this [AUR](/index.php/AUR "AUR") package: [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/). In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
+French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](https://www.dicollecte.org/grammalecte/telecharger.php) or via [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/). In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
 
 ### Offline help for en-US
 
@@ -183,7 +183,7 @@ export MOZILLA_CERTIFICATE_FOLDER=$HOME/.mozilla/firefox/XXXXXX.default/
 
 ```
 
-[Certificate detection](http://wiki.openoffice.org/wiki/Certificate_Detection).
+[Certificate detection](https://wiki.openoffice.org/wiki/Certificate_Detection).
 
 ### Run .pps files in edit mode (without slideshow)
 
@@ -204,9 +204,7 @@ cp "$1" "${f}.ppt" && libreoffice "${f}.ppt" && rm -f "${f}.ppt"
 Try either of the following workarounds:
 
 *   Delete the `~/.config/libreoffice` folder. It will erase all the settings linked to LibreOffice and so, LibreOffice will recreate them on the next launch.
-
 *   Go to menu Tools > Options > LibreOffice > General and check `Use LibreOffice dialogs`.
-
 *   The GTK3 integration provided by `libvclplug_gtk3lo.so` has been identified as the cause of this problem. [[1]](https://forums.opensuse.org/showthread.php/510439-LibreOffice-crashes-when-saving) See [#Theme](#Theme) to use a different VCL, such as `gtk`.
 
 ### Media support
@@ -215,7 +213,7 @@ If embedded videos are just gray boxes, make sure to have installed the [GStream
 
 ### Default paper size in Writer and Draw
 
-If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size.
+If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size. See papersize(5).
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
@@ -229,13 +227,13 @@ As an alternative workaround, run *libreoffice* with a light theme (e.g. with en
 
 ### LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme
 
-If you don't want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in Tools > Options > LibreOffice > View > Icon Style to a readable one provided by LibreOffice.
+If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in Tools > Options > LibreOffice > View > Icon Style to a readable one provided by LibreOffice.
 
 Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK+](/index.php/GTK%2B "GTK+"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), and, if using a LibreOffice version < 5.3.0, the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
 
 Just enable "Breeze Dark" or another readable icon style in Tools > Options > LibreOffice > View > Icon Style then.
 
-If that isn't enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
+If that is not enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
 
 If this still does not work correctly, try using the `gen` interface instead. [[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)
 
