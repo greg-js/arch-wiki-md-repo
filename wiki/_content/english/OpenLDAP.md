@@ -34,7 +34,7 @@ OpenLDAP contains both a LDAP server and client. [Install](/index.php/Install "I
 
 ### The server
 
-**Note:** If you already have an OpenLDAP database on your machine, remove it by deleting everything inside `/var/lib/openldap/openldap-data/`.
+**Note:** If you already have an OpenLDAP database on your machine and would like to remove it, then it can be removed by deleting everything inside of `/var/lib/openldap/openldap-data/`. So, backup your `DB_CONFIG`.
 
 The server configuration file is located at `/etc/openldap/slapd.conf`.
 
@@ -95,6 +95,13 @@ To store the recent changes in `slapd.conf` to the new `/etc/openldap/slapd.d/` 
 
 ```
 
+Change ownership recursively on the new files and directory in /etc/openldap/slapd.d:
+
+```
+# chown -R ldap:ldap /etc/openldap/slapd.d
+
+```
+
 (if you do not have a database yet, you might need to create one by starting and stopping the `slapd.service` [using systemd](/index.php/Systemd#Using_units "Systemd") )
 
 Then we generate the new configuration with:
@@ -105,13 +112,6 @@ Then we generate the new configuration with:
 ```
 
 The above command has to be run every time you change `slapd.conf`. Check if everything succeeded. Ignore message "bdb_monitor_db_open: monitoring disabled; configure monitor database to enable".
-
-Change ownership recursively on the new files and directory in /etc/openldap/slapd.d:
-
-```
-# chown -R ldap:ldap /etc/openldap/slapd.d
-
-```
 
 **Note:** Index the directory after you populate it. You should stop slapd before doing this.
 ```

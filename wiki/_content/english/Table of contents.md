@@ -66,7 +66,7 @@
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(55)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
-| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(80)</small> |
+| <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(81)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(5)</small> |
 | <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
 | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(12)</small> |
@@ -95,7 +95,7 @@
 | <small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.8.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |
 | <small>5.9.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |
-| <small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(13)</small> |
+| <small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(14)</small> |
 | <small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.12.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(10)</small> |
 | <small>5.13.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |

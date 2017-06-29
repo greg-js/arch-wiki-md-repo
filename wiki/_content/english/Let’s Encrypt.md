@@ -254,8 +254,6 @@ Include conf/extra/httpd-acme.conf
 
 ### Automatic renewal
 
-**Note:** Before renewing certificates you must forward port 443/tcp (https) to the server. Otherwise renewing process will fail.
-
 #### systemd
 
 Create a [systemd](/index.php/Systemd "Systemd") `certbot.service`:
@@ -325,4 +323,5 @@ ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.servi
 
 ## See also
 
+*   [EFF's Certbot documentation](https://certbot.eff.org/)
 *   [List of ACME clients](https://letsencrypt.org/docs/client-options/)

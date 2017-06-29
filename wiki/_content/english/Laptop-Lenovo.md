@@ -123,6 +123,7 @@ install CD version
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
 | [Lenovo ThinkPad T560](/index.php/Lenovo_ThinkPad_T560 "Lenovo ThinkPad T560") | Yes | Yes | Yes | Yes | Yes | No* | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
+| [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes |  ? | Yes* | NA | not yet fully tested |
 
 #### W series
 

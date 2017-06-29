@@ -1,0 +1,131 @@
+**翻译状态：** 本文是英文页面 [Internet sharing](/index.php/Internet_sharing "Internet sharing") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-28，点击[这里](https://wiki.archlinux.org/index.php?title=Internet+sharing&diff=0&oldid=480589)可以查看翻译后英文页面的改动。
+
+This article explains how to share the internet connection from one machine to other(s).
+
+## Contents
+
+*   [1 Requirements](#Requirements)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Static IP address](#Static_IP_address)
+    *   [2.2 Enable packet forwarding](#Enable_packet_forwarding)
+    *   [2.3 Enable NAT](#Enable_NAT)
+    *   [2.4 Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29)
+        *   [2.4.1 Manually adding an IP](#Manually_adding_an_IP)
+*   [3 Troubleshooting](#Troubleshooting)
+*   [4 See also](#See_also)
+
+## Requirements
+
+The machine acting as server should have an additional network device. That network device requires a functional [w:data link layer](https://en.wikipedia.org/wiki/data_link_layer "w:data link layer") to the machine(s) that are going to receive internet access:
+
+*   To be able to share internet to several machines a [switch](https://en.wikipedia.org/wiki/Network_switch "wikipedia:Network switch") can provide the data link.
+*   A wireless device can share access to several machines as well, see [Software access point](/index.php/Software_access_point "Software access point") first for this case.
+*   If you are sharing to only one machine, a [crossover cable](https://en.wikipedia.org/wiki/Ethernet_crossover_cable "wikipedia:Ethernet crossover cable") is sufficient. In case one of the two computers' ethernet cards has [MDI-X](https://en.wikipedia.org/wiki/Medium_Dependent_Interface#Auto_MDI-X "w:Medium Dependent Interface") capability, a crossover cable is not necessary and a regular ethernet cable can be used. Executing `ethtool *interface* | grep MDI` as root helps to figure it.
+
+## Configuration
+
+This section assumes, that the network device connected to the client computer(s) is named ***net0*** and the network device connected to the internet as ***internet0***.
+
+**Tip:** You can rename your devices to this scheme using [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
+
+All configuration is done on the server computer, except for the final step of [#Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29).
+
+### Static IP address
+
+On the server computer, assign a static IPv4 address to the interface connected to the other machines. The first 3 bytes of this address cannot be exactly the same as those of another interface, unless both interfaces have netmasks strictly greater than /24.
+
+```
+# ip link set up dev net0
+# ip addr add 192.168.123.100/24 dev net0 # arbitrary address
+
+```
+
+To have your static ip assigned at boot, you can use a [network manager](/index.php/Network_manager "Network manager").
+
+### Enable packet forwarding
+
+Check the current packet forwarding settings:
+
+```
+# sysctl -a | grep forward
+
+```
+
+You will note that options exist for controlling forwarding per default, per interface, as well as separate options for IPv4/IPv6 per interface.
+
+Enter this command to temporarily enable packet forwarding at runtime:
+
+```
+# sysctl net.ipv4.ip_forward=1
+
+```
+
+**Tip:** To enable packet forwarding selectively for a specific interface, use `sysctl net.ipv4.conf.*interface_name*.forwarding=1` instead.
+
+**Warning:** If the system uses [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to control the network interfaces, a per-interface setting for IPv4 is not possible, i.e. systemd logic propagates any configured forwarding into a global (for all interfaces) setting for IPv4\. The advised work-around is to use a firewall to forbid forwarding again on selective interfaces. See the systemd.network(5) manual page for more information. The `IPForward=kernel` semantics introduced in a previous systemd release 220/221 to honor kernel settings does not apply anymore.[[1]](https://github.com/poettering/systemd/commit/765afd5c4dbc71940d6dd6007ecc3eaa5a0b2aa1) [[2]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
+
+Edit `/etc/sysctl.d/30-ipforward.conf` to make the previous change persistent after a reboot for all interfaces:
+
+ `/etc/sysctl.d/30-ipforward.conf` 
+```
+net.ipv4.ip_forward=1
+net.ipv6.conf.default.forwarding=1
+net.ipv6.conf.all.forwarding=1
+
+```
+
+Afterwards it is advisable to double-check forwarding is enabled as required after a reboot.
+
+### Enable NAT
+
+[Install](/index.php/Install "Install") the [iptables](https://www.archlinux.org/packages/?name=iptables) package. Use iptables to enable NAT:
+
+```
+# iptables -t nat -A POSTROUTING -o internet0 -j MASQUERADE
+# iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+# iptables -A FORWARD -i net0 -o internet0 -j ACCEPT
+
+```
+
+**Note:** Of course, this also works with a mobile broadband connection (usually called ppp0 on routing PC).
+
+Read the [iptables](/index.php/Iptables "Iptables") article for more information (especially saving the rule and applying it automatically on boot). There is also an excellent guide on iptables [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
+
+### Assigning IP addresses to the client PC(s)
+
+If you are planning to regularly have several machines using the internet shared by this machine, then is a good idea to install a [DHCP server](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP"), such as [dhcpd](/index.php/Dhcpd "Dhcpd") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Then configure a DHCP client (e.g. [dhcpcd](/index.php/Dhcpcd "Dhcpcd")) on every client PC.
+
+Incoming connections to UDP port 67 has to be allowed for DHCP server. It also necessary to allow incoming connections to UDP/TCP port 53 for DNS requests.
+
+```
+# iptables -I INPUT -p udp --dport 67 -i net0 -j ACCEPT
+# iptables -I INPUT -p udp --dport 53 -s 192.168.123.0/24 -j ACCEPT
+# iptables -I INPUT -p tcp --dport 53 -s 192.168.123.0/24 -j ACCEPT
+
+```
+
+If you are not planing to use this setup regularly, you can manually add an IP to each client instead.
+
+#### Manually adding an IP
+
+Instead of using DHCP, on each client PC, add an IP address and the default route:
+
+```
+# ip addr add 192.168.123.201/24 dev eth0  # arbitrary address, first three blocks must match the address from above
+# ip link set up dev eth0
+# ip route add default via 192.168.123.100 dev eth0   # same address as in the beginning
+
+```
+
+Configure a DNS server for each client, see [resolv.conf](/index.php/Resolv.conf "Resolv.conf") for details.
+
+That's it. The client PC should now have Internet.
+
+## Troubleshooting
+
+If you are able to connect the two PCs but cannot send data (for example, if the client PC makes a DHCP request to the server PC, the server PC receives the request and offers an IP to the client, but the client does not accept it, timing out instead), check that you do not have other [Iptables](/index.php/Iptables "Iptables") rules [interfering](https://bbs.archlinux.org/viewtopic.php?pid=1093208).
+
+## See also
+
+*   [Xyne's guide and scripts for launching a subnet with DHCP and DNS](http://xyne.archlinux.ca/notes/network/dhcp_with_dns.html)
+*   [NetworkManager](/index.php/NetworkManager "NetworkManager") can be configured for internet sharing if used.

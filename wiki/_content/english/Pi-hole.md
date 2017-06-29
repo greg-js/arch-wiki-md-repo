@@ -24,50 +24,54 @@ This wiki page tries to cover the need for configuration and use instructions of
         *   [2.2.1 Dnsmasq](#Dnsmasq_2)
         *   [2.2.2 Openresolve](#Openresolve)
     *   [2.3 Update/Upgrade configuration](#Update.2FUpgrade_configuration_2)
-*   [3 Troubleshooting](#Troubleshooting)
-*   [4 See also](#See_also)
+*   [3 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Pi-hole Server
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/) package.
-
-**Note:** You will install another AUR package: [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/), instructions are in [#FTL](#FTL) specific section.
+[Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
 
 ### First install configuration
 
 #### Dnsmasq
 
-As a first step, you need to setup dnsmasq. It will resolve DNS queries for your lan filtering ads with pi-hole.
+Setup dnsmasq which will resolve DNS queries for your lan and manage filtering ads directy by pi-hole.
 
-**If you already use dnsmasq**, edit your `/etc/dnsmasq.conf` to uncomment last line and include new pi-hole config filed located at `/etc/dnsmasq.d` directory:
+**Users already using dnsmasq**: edit `/etc/dnsmasq.conf` uncommenting the last line and including the pi-hole config filed located at `/etc/dnsmasq.d` directory:
 
 ```
 # sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
 
 ```
 
-**If you installed dnsmasq with Pi-hole for the first time**, backup original dnsmasq config file and copy pi-hole main one:
+**Users not making use of dnsmasq prior to installing Pi-hole**, copy the pi-hole-server-provided config file replacing the standard one (or simply diff the two):
 
 ```
-# cp /etc/dnsmasq.conf /etc/dnsmasq.orig
 # cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
 
 ```
 
-If necessary, [enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it:
-
-**Warning:** Point DNS resolution of your lan clients to Pi-hole machine.
+If necessary, [enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it. Pi-hole needs to be the DNS for your LAN. Likely, your router is preforming this task currently, so the primary DNS on the router needs to be redefined to use the IP address of the box running Pi-hole. Configuring the router is outside the scope of this article, but a mandatory step.
 
 #### Web Server
 
-Now you need to choose a web server for the Pi-hole web interface to work.
-Main project provide configurations and support for [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) but Archlinux package provide config files also for [nginx](https://www.archlinux.org/packages/?name=nginx).
+Users may optionally choose a web server for the Pi-hole web interface.
 
-**Note:** The use of [nginx](https://www.archlinux.org/packages/?name=nginx) is under construction
+**Note:** Pi-hole does not strictly require a web interface as many commands are possible via the CLI interface.
 
-Pi-hole need use of default site of your web server to redirect to it all DNS filtered requests. If you already have an active default site you need to reconfigure your server accordingly.
+Upstream officially supports [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and provides config files for it. The AUR package also provides config files for [nginx](https://www.archlinux.org/packages/?name=nginx), so either is supported out-of-the-box. Other web servers can also run the webUI, but are unsupported.
+
+Any webserver will require the following edit to enable the sockets extension:
+
+ `/etc/php/php.ini` 
+```
+[...]
+extension=sockets.so
+[...]
+```
 
 ##### Lighttpd
 
@@ -146,16 +150,7 @@ and re/start it.
 
 ### Web interface
 
-Before Pi-hole version 3.0, no further configuration was required to PHP installation. Since ver. 3.0 it is mandatory to enable the sockets extension in php.ini.
-
- `/etc/php/php.ini` 
-```
-[...]
-extension=sockets.so
-[...]
-```
-
-Currently, Pi-hole web interface is very complete and well done. You can configure nearly every aspect of [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), execute lots of Pi-hole available commands and monitor ads filtering. You can connect to web interface at
+The Pi-hole web interface is very complete and well done. One can use it to, configure nearly every aspect of [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), execute lots of Pi-hole available commands, control white lists and black lists, and monitor ad filtering. Connect to web interface at
 
 ```
 http://<IP/Hostname of Pi-hole machine>/admin/
@@ -171,11 +166,7 @@ or
 
 ### FTL
 
-FTL is part of Pi-hole project. It is a Database Like, Wrapper, API provider frontend to Pi-hole DNS query log. It is used by web interface since version 3.0.
-
-The FTL service is statically enabled. You only need to [start](/index.php/Start "Start") it.
-
-You can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
+FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
 
 ## Pi-hole Standalone
 
@@ -233,9 +224,13 @@ If necessary, update dnsmasq config file
 
 and re/start it.
 
-## Troubleshooting
+## Using Pi-hole together with OpenVPN
 
-There seems to be a [problem](https://github.com/pi-hole/pi-hole/issues/1434) with chrome and the web interface graphs rendering. Right now, upstream issue is closed.
+To use OpenVPN in server mode with Pi-hole, a few extra configuration steps are required.
+
+**Note:** Section under construction.
+
+## Troubleshooting
 
 ## See also
 

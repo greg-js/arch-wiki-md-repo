@@ -296,8 +296,6 @@ CLUTTER_PAINT=disable-clipped-redraws:disable-culling
 CLUTTER_VBLANK=True
 ```
 
-*   To help avoid tearing on the web and maintain site compatibility it is advisable to install Pipelight for playing media online.
-
 ## Testing
 
 Before we start modifying our login manager, we'll first start with testing out the individual seats. If these are working, then we're good to go.

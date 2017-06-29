@@ -105,7 +105,7 @@ Now visit the testapp_name website on your local machine by opening http://local
 
 **Note:** If Ruby complains about not being able to find a JavaScript runtime, install [nodejs](https://www.archlinux.org/packages/?name=nodejs).
 
-A test-page should shown greeting you "Welcome aboard".
+A test-page should be shown greeting you "Welcome aboard".
 
 ## Application servers
 

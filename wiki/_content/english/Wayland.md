@@ -312,7 +312,7 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 | Name | Type | Description |
 | GNOME | Stacking | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
-| sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [Github](https://github.com/SirCmpwn/sway) |
+| sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
 | Enlightenment | Stacking | [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
@@ -320,9 +320,9 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
 | Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
-| Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing using Virtual Reality. |
-| Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizeable (lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
-| Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/capisce/mazecompositor) is a 3D Qt based wayland compositor |
+| Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
+| Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
+| Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/capisce/mazecompositor) is a 3D Qt based Wayland compositor |
 | Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
 
 Some of installed wayland desktop clients might store information in `/usr/share/wayland-sessions/*.desktop` files about how to start them in wayland.

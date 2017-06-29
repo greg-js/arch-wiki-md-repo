@@ -100,11 +100,10 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.8 mesa-git](#mesa-git)
         *   [5.2.9 mingw-w64](#mingw-w64)
         *   [5.2.10 ownstuff](#ownstuff)
-        *   [5.2.11 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.12 pnsft-pur](#pnsft-pur)
-        *   [5.2.13 rakudo](#rakudo)
-        *   [5.2.14 rust-git](#rust-git)
-        *   [5.2.15 zrootfs](#zrootfs)
+        *   [5.2.11 pnsft-pur](#pnsft-pur)
+        *   [5.2.12 rakudo](#rakudo)
+        *   [5.2.13 rust-git](#rust-git)
+        *   [5.2.14 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -1085,18 +1084,6 @@ Server = http://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 ```
 [ownstuff]
 Server = http://martchus.no-ip.biz/repo/arch/$repo/os/$arch
-
-```
-
-#### pkgbuild-current
-
-*   **Maintainer**: [Brenton Horne](https://fusion809.github.io) (fusion809)
-*   **Description**: most of the packages in the [fusion809/PKGBUILDs](https://github.com/fusion809/PKGBUILDs) GitHub repository (please report bugs here). Full list of packages can be found [here](https://github.com/fusion809/PKGBUILDs/releases/tag/current).
-*   **Upstream page**: [https://fusion809.github.io/PKGBUILDs](https://fusion809.github.io/PKGBUILDs)
-
-```
-[pkgbuild-current]
-Server = https://github.com/fusion809/PKGBUILDs/releases/download/current
 
 ```
 

@@ -7,8 +7,9 @@ Another tool to be used for the same purpose is [RVM](/index.php/RVM "RVM").
 *   [1 Installation](#Installation)
 *   [2 Plugins](#Plugins)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Ruby 2.x.x](#Ruby_2.x.x)
-    *   [3.2 Ruby 1.9.3](#Ruby_1.9.3)
+    *   [3.1 Ruby 2.3.x](#Ruby_2.3.x)
+    *   [3.2 Ruby 2.x.x](#Ruby_2.x.x)
+    *   [3.3 Ruby 1.9.3](#Ruby_1.9.3)
 *   [4 External links](#External_links)
 
 ## Installation
@@ -20,6 +21,42 @@ You can install [rbenv](https://aur.archlinux.org/packages/rbenv/) from the [AUR
 rbenv can be extended via a plugin system, and the rbenv wiki includes a [list of useful plugins](https://github.com/sstephenson/rbenv/wiki/Plugins). The ruby-build plugin is especially useful, as it allows you to install Ruby versions with the `rbenv install` command. You can install [ruby-build](https://aur.archlinux.org/packages/ruby-build/) from the AUR.
 
 ## Troubleshooting
+
+### Ruby 2.3.x
+
+Installation of Ruby 2.3.x may break down due to openssl version and/or segmentation fault error while compilation. Both errors are described here:
+
+*   [https://stackoverflow.com/questions/44116005/openssl-error-installing-ruby-2-1-x-and-2-3-x-on-archlinux-with-ruby-install-rub](https://stackoverflow.com/questions/44116005/openssl-error-installing-ruby-2-1-x-and-2-3-x-on-archlinux-with-ruby-install-rub)
+
+```
+ ossl_ssl.c:465:38: error: ‘CRYPTO_LOCK_SSL_SESSION’ undeclared
+
+```
+
+*   [https://github.com/rbenv/ruby-build/issues/1092](https://github.com/rbenv/ruby-build/issues/1092)
+
+```
+ make: *** [uncommon.mk:655: enc.mk] Aborted (core dumped)
+
+```
+
+Here's a way how you can make a ruby compile:
+
+1\. Install **gcc-5** and **openssl-1.0** packages first:
+
+```
+ sudo pacman -Syyu openssl-1.0 gcc5
+
+```
+
+2\. Then run:
+
+```
+ CC=/usr/bin/gcc-5 \
+ PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig \
+ rbenv install 2.3.4
+
+```
 
 ### Ruby 2.x.x
 

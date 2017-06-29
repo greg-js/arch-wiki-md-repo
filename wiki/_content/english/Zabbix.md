@@ -65,7 +65,7 @@ date.timezone = "UTC"
 In this example, we create on localhost a MariaDB database called `zabbix` for the user `zabbix` identified by the password `test` and then import the database templates. This connection will be later used by the Zabbix server and web application:
 
 ```
-$ mysql -u root -p -e "create database zabbix"
+$ mysql -u root -p -e "create database zabbix character set utf8"
 $ mysql -u root -p -e "grant all on zabbix.* to zabbix@localhost identified by 'test'"
 $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/schema.sql
 $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/images.sql

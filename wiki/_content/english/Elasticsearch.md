@@ -57,7 +57,7 @@ http.port: 9200
 
 ```
 
-You may want to chance the default max. memory usage:
+You may want to chance the default initial and maximum allowed memory usage:
 
  `/etc/elasticsearch/jvm.options` 
 ```
@@ -68,6 +68,8 @@ You may want to chance the default max. memory usage:
 -Xmx512m # e.g. 256m, 1g, 2g, ..
 
 ```
+
+**Note:** Installing [elasticsearch](https://www.archlinux.org/packages/?name=elasticsearch) provides already an increased `vm.max_map_count` as in `/usr/lib/sysctl.d/elasticsearch.conf`.
 
 You might need to update the [vm.max_map_count](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/vm-max-map-count.html) system limit:
 

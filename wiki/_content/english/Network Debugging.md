@@ -31,7 +31,7 @@ This will provide an output along the lines of:
 
 ```
 
-Bringing up an interface can be done by issueing:
+Bringing up an interface can be done by issuing:
 
 ```
 # ip link set dev eth0 up

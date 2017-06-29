@@ -962,3 +962,4 @@ For some users, even if IOMMU is enabled and the core count is set to more than 
 *   [Complete tutorial for PCI passthrough](http://vfio.blogspot.com/)
 *   [VFIO users mailing list](https://www.redhat.com/archives/vfio-users/)
 *   [#vfio-users on freenode](https://webchat.freenode.net/?channels=vfio-users)
+*   [YouTube: Level1Linux - GPU Passthrough for Virtualization with Ryzen](https://www.youtube.com/watch?v=aLeWg11ZBn0)

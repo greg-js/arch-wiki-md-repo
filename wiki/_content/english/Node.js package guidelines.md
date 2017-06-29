@@ -12,7 +12,7 @@ Package names should start with a `nodejs-` prefix.
 
 ## Using npm
 
-When installing with *npm*, add it as a build dependency:
+When installing with [npm](https://www.archlinux.org/packages/?name=npm), add it as a build dependency:
 
 ```
 makedepends=('npm')

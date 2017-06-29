@@ -24,6 +24,7 @@
 *   [21 Avoid screen tearing](#Avoid_screen_tearing)
     *   [21.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
 *   [22 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
+*   [23 Poor performance after resuming from suspend](#Poor_performance_after_resuming_from_suspend)
 
 ## Corrupted screen: "Six screens" Problem
 
@@ -519,3 +520,7 @@ NVRM: at www.nvidia.com.
 This problem is caused by bad commits pertaining to PCIe power management in the Linux Kernel (as documented in [this NVIDIA DevTalk thread](https://devtalk.nvidia.com/default/topic/971733/-370-28-with-kernel-4-8-on-gt-2015-machines-driver-claims-card-not-supported-if-nvidia-is-not-primary-card/)).
 
 The workaround is to add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Note that this disables PCIe power management for all devices.
+
+## Poor performance after resuming from suspend
+
+If you are getting poor performance after resuming from suspend, you need to register the nvidia kernel module with the ACPI subsystem. This can be done by [loading](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `nvidia` module with the `NVreg_RegisterForACPIEvents=1 NVreg_EnableMSI=1` options.

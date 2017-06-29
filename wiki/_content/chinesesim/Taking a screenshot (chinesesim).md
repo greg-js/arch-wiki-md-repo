@@ -4,7 +4,7 @@
 *   [2 scrot](#scrot)
     *   [2.1 安装](#.E5.AE.89.E8.A3.85)
     *   [2.2 一般用法](#.E4.B8.80.E8.88.AC.E7.94.A8.E6.B3.95)
-    *   [2.3 高级使用](#.E9.AB.98.E7.BA.A7.E4.BD.BF.E7.94.A8)
+    *   [2.3 高级用法](#.E9.AB.98.E7.BA.A7.E7.94.A8.E6.B3.95)
 *   [3 GIMP](#GIMP)
 *   [4 xwd](#xwd)
 *   [5 KDE](#KDE)
@@ -35,13 +35,13 @@ rm /tmp/{0,1}.png
 
 **注意:** 根据 [这个帖子](http://comments.gmane.org/gmane.comp.misc.suckless/6901), [scrot](https://www.archlinux.org/packages/?name=scrot)无法与[dwm](https://www.archlinux.org/packages/?name=dwm)或[xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys)一起工作.
 
-**注意：本节scrot内容来自[Linuxtoy](http://linuxtoy.org/)上的[scrot从入门到精通](http://linuxtoy.org/archives/mastering-scrot.html)一文，为了适应archlinux的使用环境和wiki版面要求，对其部分内容和格式重新做了编排。**
+**注意：本节 scrot 内容来自[Linuxtoy](http://linuxtoy.org/)上的[scrot从入门到精通](http://linuxtoy.org/archives/mastering-scrot.html)一文，为了适应 Arch Linux 的使用环境和 Wiki 版面要求，对其部分内容和格式重新做了编排。**
 
-[scrot](http://linuxbrit.co.uk/scrot/)是屏幕抓图工具中的佼佼者，它小巧而不失为强大，精练而不缺少灵活。scrot主要用在命令行下，它使用imlib2 来抓取并保存图像。
+[scrot](http://linuxbrit.co.uk/scrot/)是屏幕抓图工具中的佼佼者，它小巧而不失为强大，精练而不缺少灵活。scrot 主要用在命令行下，它使用 imlib2 来抓取并保存图像。
 
 ### 安装
 
-使用以下命令安装
+使用以下命令安装：
 
 ```
 pacman -S scrot
@@ -53,7 +53,7 @@ pacman -S scrot
 scrot 的使用格式为：
 
 ```
-scrot [options] [file]。
+scrot [options] [file]
 
 ```
 
@@ -66,7 +66,7 @@ scrot desktop.png
 
 ```
 
-该命令将当前的整个桌面抓取下来，并保存为desktop.png文件。可以在当前的目录中找到此图像文件。
+该命令将当前的整个桌面抓取下来，并保存为 desktop.png 文件。可以在当前的目录中找到此图像文件。
 
 *   抓取窗口：
 
@@ -84,11 +84,11 @@ scrot -s rectangle.png
 
 ```
 
-在执行此命令后，使用鼠标拖曳的矩形区域将被scrot抓取下来。
+在执行此命令后，使用鼠标拖曳的矩形区域将被 scrot 抓取下来。
 
-### 高级使用
+### 高级用法
 
-对于普通的抓取使用 scrot 的基础便足以应付了。但在某些特殊情况之下，使用scrot抓取图像需要讲究一些技巧。
+对于普通的抓取使用 scrot 的基础便足以应付了。但在某些特殊情况之下，使用 scrot 抓取图像需要讲究一些技巧。
 
 *   延时抓取：
 

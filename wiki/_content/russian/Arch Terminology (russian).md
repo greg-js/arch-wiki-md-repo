@@ -21,7 +21,7 @@
 *   [17 makepkg](#makepkg)
 *   [18 namcap](#namcap)
 *   [19 package](#package)
-*   [20 Package maintainer](#Package_maintainer)
+*   [20 Мейнтейнер пакетов](#.D0.9C.D0.B5.D0.B9.D0.BD.D1.82.D0.B5.D0.B9.D0.BD.D0.B5.D1.80_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
 *   [21 pacman](#pacman)
 *   [22 pacman.conf](#pacman.conf)
 *   [23 repository/repo](#repository.2Frepo)
@@ -147,7 +147,7 @@ Arch's package manager pacman can install, update, and remove those packages. Us
 
 **Примечание:** Different GNU/Linux distributions use different packages and package managers, meaning that you cannot use pacman to install a Debian package on Arch.
 
-## Package maintainer
+## Мейнтейнер пакетов
 
 The role of the package maintainer is to update packages as new versions become available upstream and to field support questions relating to bugs in said packages. The term may be applied to any of the following:
 

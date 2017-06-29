@@ -1,9 +1,9 @@
-[cmus](http://cmus.sourceforge.net/) *(C* MUsic Player)* is a small, fast and powerful console audio player which supports most major audio formats. Various features include gapless playback, ReplayGain support, MP3 and Ogg streaming, live filtering, instant startup, customizable key-bindings, and vi-style default key-bindings.
+[cmus](https://cmus.github.io/) *(C* MUsic Player)* is a small, fast and powerful console audio player which supports most major audio formats. Various features include gapless playback, ReplayGain support, MP3 and Ogg streaming, live filtering, instant startup, customizable key-bindings, and vi-style default key-bindings.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Using cmus with alsa](#Using_cmus_with_alsa)
+    *   [1.1 Using cmus with ALSA](#Using_cmus_with_ALSA)
 *   [2 Usage](#Usage)
     *   [2.1 Starting Cmus](#Starting_Cmus)
     *   [2.2 Adding Music](#Adding_Music)
@@ -25,7 +25,7 @@
 
 [Install](/index.php/Install "Install") the [cmus](https://www.archlinux.org/packages/?name=cmus) package, or [cmus-git](https://aur.archlinux.org/packages/cmus-git/) for the development version.
 
-### Using cmus with alsa
+### Using cmus with ALSA
 
 When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. What you might encounter when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
 
@@ -139,7 +139,7 @@ fi
 
 To use the previous script in [Openbox](/index.php/Openbox "Openbox"), copy the code above into a file `~/bin/cplay`. Make the file executable using `chmod +x ~/bin/cplay`. Next edit `~/.config/openbox/rc.xml` and change the following key-bindings to look like this:
 
-**Note:** Make sure there are no conflicting keybindings in rc.xml
+**Note:** Make sure there are no conflicting keybindings in `rc.xml`
  `~/.config/openbox/rc.xml` 
 ```
   <keyboard>

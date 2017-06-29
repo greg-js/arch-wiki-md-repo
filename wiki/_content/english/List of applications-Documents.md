@@ -429,7 +429,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[LightTable](https://en.wikipedia.org/wiki/Light_Table_(software) "w:Light Table (software)")** — A modern open source text editor.
 
-	[http://lighttable.com](http://lighttable.com) || [lighttable](https://aur.archlinux.org/packages/lighttable/)
+	[http://lighttable.com](http://lighttable.com) || [lighttable-bin](https://aur.archlinux.org/packages/lighttable-bin/)[lighttable-git](https://aur.archlinux.org/packages/lighttable-git/)
 
 *   **Medit** — Programming and around-programming text editor.
 

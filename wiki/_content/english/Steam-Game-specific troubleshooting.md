@@ -132,6 +132,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [58 Life is Strange](#Life_is_Strange)
 *   [59 The Long Dark](#The_Long_Dark)
     *   [59.1 Game does not start](#Game_does_not_start_8)
+    *   [59.2 Game starts, but some overlay text is missing](#Game_starts.2C_but_some_overlay_text_is_missing)
 *   [60 Mark of the Ninja](#Mark_of_the_Ninja)
     *   [60.1 Bad sound](#Bad_sound)
 *   [61 Metro: Last Light](#Metro:_Last_Light)
@@ -1045,6 +1046,29 @@ Optionally change your steam launch command to
 
 ```
 LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0  %command%
+
+```
+
+### Game starts, but some overlay text is missing
+
+In addition to the command above, add the following to the Steam launch command:
+
+```
+-screen-fullscreen 0 -screen-width WIDTH_PIXELS -screen-height HEIGHT_PIXELS
+
+```
+
+For example, if you have a screen of resultion 1280x720 and are launching the x64 version from the terminal (within the directory which contains the binaries), the full command would be:
+
+```
+LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64 -screen-fullscreen 0 -screen-width 1280 -screen-height 720
+
+```
+
+and from Steam, the complete game launch options would be:
+
+```
+LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
 
 ```
 

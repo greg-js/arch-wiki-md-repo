@@ -295,10 +295,10 @@ Some UEFI implementations do not retain EFI variables between cold boots (e.g. [
 The [UEFI Shell Specification 2.0](http://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) establishes that a script called `startup.nsh` at the root of the ESP partition will always be interpreted and can contain arbitrary instructions; among those you can set a bootloading line. Make sure you mount the ESP partition on `/boot` and create a `startup.nsh` script that contains a kernel bootloading line. For example:
 
 ```
-vmlinuz-linux rw root=/dev/sdX rootfs=myfs rootflags=myrootflags \
- kernel.flag=foo mymodule.flag=bar \
- initrd=\intel-ucode.img initrd=\initramfs-linux.img
+vmlinuz-linux rw root=/dev/sdX [rootfs=myfs] [rootflags=myrootflags] \
+ [kernel.flag=foo] [mymodule.flag=bar] \
+ [initrd=\intel-ucode.img] initrd=\initramfs-linux.img
 
 ```
 
-This method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort.
+This method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort. **The script must be a single long line.** Sections in brackets are optional and given only as a guide. Shell style linebreaks are for visual clarification only. FAT filesystems use the backslash as path separator and in this case, the backslash declares the initramfs is located in the root of the ESP partition. Only Intel microcode is loaded in the booting parameters line; AMD microcode is read from disk later during the boot process, this is done automatically by the kernel.

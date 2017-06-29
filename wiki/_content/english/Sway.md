@@ -257,5 +257,5 @@ The current workaround is to switch to another TTY, and switch back to sway.
 
 ## See also
 
-*   [Github project](https://github.com/SirCmpwn/sway)
+*   [GitHub project](https://github.com/SirCmpwn/sway)
 *   [Website](http://swaywm.org)

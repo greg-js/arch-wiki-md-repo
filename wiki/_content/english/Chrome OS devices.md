@@ -335,7 +335,7 @@ See [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 
 ### Touchpad and touchscreen
 
-See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics"), [libinput](/index.php/Libinput "Libinput"), and and [Touchscreen](/index.php/Touchscreen "Touchscreen").
+See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics"), [libinput](/index.php/Libinput "Libinput"), and [Touchscreen](/index.php/Touchscreen "Touchscreen").
 
 #### Touchpad and touchscreen kernel modules
 

@@ -374,10 +374,11 @@ Inside each `server` block serving a PHP web application should appear a `locati
 
 ```
 location ~ \.php$ {
-     fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-     root           /usr/share/nginx/html;
-     fastcgi_index  index.php;
-     include        fastcgi.conf;
+     try_files $uri /index.php =404;
+     fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+     fastcgi_index index.php;
+     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+     include fastcgi_params;
 }
 
 ```
@@ -386,15 +387,12 @@ If it is needed to process other extensions with PHP (e.g. *.html* and *.htm*):
 
 ```
 location ~ \.(php**|html|htm**)$ {
-     fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-     root           /usr/share/nginx/html;
-     fastcgi_index  index.php;
-     include        fastcgi.conf;
+     ...
 }
 
 ```
 
-Non *.php* extension processing in php-fpm should be explicitly added in `/etc/php/php-fpm.d/www.conf`:
+Non *.php* extension processing in PHP-FPM should be explicitly added in `/etc/php/php-fpm.d/www.conf`:
 
 ```
 security.limit_extensions = .php .html .htm
@@ -415,29 +413,6 @@ fastcgi_pass 127.0.0.1:9000;
 ```
 Unix domain sockets should however be faster.
 
-The example shown below is a copy of a working configuration. Notice that in this example the `root` path is specified directly under `server`, and not inside `location` (as it is in the default config).
-
- `/etc/nginx/nginx.conf` 
-```
-server {
-    listen 80;
-    server_name localhost;
-    root /usr/share/nginx/html;
-    location / {
-        index index.html index.htm index.php;
-    }
-
-    location ~ \.php$ {
-        #fastcgi_pass 127.0.0.1:9000; (depending on your php-fpm socket configuration)
-        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-        root /usr/share/nginx/html;
-        fastcgi_index index.php;
-        include fastcgi.conf;
-    }
-}
-
-```
-
 ###### PHP configuration file
 
 If using multiple `server` blocks with enabled PHP support, it might be easier to create a PHP config file instead:
@@ -445,9 +420,7 @@ If using multiple `server` blocks with enabled PHP support, it might be easier t
  `/etc/nginx/conf/php.conf` 
 ```
 location ~ \.php$ {
-  fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-  fastcgi_index index.php;
-  include fastcgi.conf;
+     ...
 }
 
 ```
@@ -456,7 +429,7 @@ To enable PHP support for a particular server, simple include `php.conf`:
 
  `/etc/nginx/nginx.conf` 
 ```
- server = {
+ server {
      server_name example.com;
      ...
      include php.conf;
@@ -471,15 +444,11 @@ You need to [restart](/index.php/Restart "Restart") the `php-fpm` and `nginx` da
 To test the FastCGI implementation, create a new PHP file inside the `root` folder containing:
 
 ```
-<?php
-  phpinfo();
-?>
+<?php phpinfo();
 
 ```
 
 Navigate this file inside a browser and you will see the informational page with the current PHP configuration.
-
-See [#Troubleshooting](#Troubleshooting) section if you are experiencing problems with your configuration.
 
 #### CGI implementation
 

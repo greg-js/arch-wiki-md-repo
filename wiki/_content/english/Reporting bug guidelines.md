@@ -1,6 +1,6 @@
 Opening (and closing) bug reports on the [Arch Linux Bugtracker](https://bugs.archlinux.org/) is one of many possible ways to [help the community](/index.php/Getting_involved "Getting involved"). However, poorly-formed bug reports can be counter-productive. When bugs are incorrectly reported, developers waste time investigating and closing invalid reports. This document will guide anyone wanting to help the community by efficiently reporting and hunting bugs.
 
-See also: [How to Report Bugs Effectively](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) by Simon Tatham
+See also: [How to Report Bugs Effectively](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html) by Simon Tatham
 
 ## Contents
 
@@ -41,11 +41,11 @@ Search thoroughly for existing information, including:
 
 *   [Arch Linux Bugtracker](https://bugs.archlinux.org/): Your problem may have already been reported to Arch Linux developers. Duplicate bug reports are unhelpful and promptly closed. Search both **[recently closed bugs](https://bugs.archlinux.org/index.php?string=&project=1&status%5B%5D=closed&closedfrom=-1+week)** as well as open reports. Remember to mark 'search details' and/or 'search comments' under Advanced, the bug title may not contain the text you're searching for.
 
-*   [Google](http://www.google.com) or your favorite search engine: Search using the program's name, version, and a relevant part of the error message, if any.
+*   [Google](https://www.google.com) or your favorite search engine: Search using the program's name, version, and a relevant part of the error message, if any.
 
 *   **Upstream** forum, mailing list and bug tracker: If Arch Linux is not responsible for a bug, it should be reported upstream rather than the Arch Linux Bugtracker. Search both recently closed bugs as well as open reports. Bugs may have already been fixed in the program's development version.
 
-*   **Other distribution forums**: The free software community is vast; Archers are not the only users with ideas! Consider searching the [Gentoo Forums](http://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/), and [Ubuntu Forums](http://ubuntuforums.org/), for example.
+*   **Other distribution forums**: The free software community is vast; Archers are not the only users with ideas! Consider searching the [Gentoo Forums](https://forums.gentoo.org/), [FedoraForum.org](http://forums.fedoraforum.org/), and [Ubuntu Forums](https://ubuntuforums.org/), for example.
 
 ### Upstream or Arch?
 
@@ -83,7 +83,7 @@ If a bug/feature is not under Arch's responsibility, report it upstream. See als
 *   **A package which is not-up-to-date**. Use the **Flag Package Out-of-Date** feature on [Arch's packages website](https://archlinux.org/packages/).
 *   A package which does not use Fedora, Ubuntu or some other community patch. **Patches should be submitted *upstream***.
 *   A package where **non essential function** X or function Y is not activated. This is a feature request.
-*   A package which does not include a **.desktop file** or **icons** or other [freedesktop](http://www.freedesktop.org) stuff. This is not a bug if such files are not included in the source tarball, and this must be requested as a feature request *upstream*. If such files are provided by *upstream* but not used in the package then this is a bug.
+*   A package which does not include a **.desktop file** or **icons** or other [freedesktop](https://www.freedesktop.org) stuff. This is not a bug if such files are not included in the source tarball, and this must be requested as a feature request *upstream*. If such files are provided by *upstream* but not used in the package then this is a bug.
 
 #### Reasons for not being a feature
 
@@ -175,7 +175,7 @@ Here is a general usage of severities:
 
 This is maybe one of the most difficult parts of bug reporting. You have to choose from the section [#Gather useful information](#Gather_useful_information) which information you will add to your bug report. This will depend on which your problem is. If you do not know what the relevant pieces of information are, do not be shy: **it is better to give more information than needed than not enough**.
 
-A good tutorial on reporting bugs can be found at [[1]](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
+A good tutorial on reporting bugs can be found at [[1]](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
 
 However, developers or bug hunters will ask you for more information if needed. Fortunately after a few bug reports you will know what information should be given.
 

@@ -155,7 +155,9 @@ patch at [https://www.kernel.org/pub/linux/kernel/projects/rt/](https://www.kern
 
 BLD is best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
 
-Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/)
+Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/) *(old)*
+
+Github web page: [https://github.com/rmullick/bld-patches](https://github.com/rmullick/bld-patches)
 
 #### Tiny-Patches
 

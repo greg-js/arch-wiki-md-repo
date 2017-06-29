@@ -95,9 +95,9 @@ x
 
 ## First configuration adjustments
 
-Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism. In other words, you would want to edit the user-specific .mailrc file (possibly stored in /root) rather than /etc/mail.rc. Thus the following example uses the private user-specific configuration file.
+Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism, meaning that adjustments and additions should be applied to the former.
 
-**Tip:** Using the `-n` command line argument or by setting the `NAIL_NO_SYSTEM_RC` inhibits reading `mail.rc` upon startup. Coupled with setting the `MAILRC` environment variable to `/dev/null`, this ensures that no configuration file is used. The detached script example above uses this method.
+**Tip:** By using the `-n` command line option or by setting the `NAIL_NO_SYSTEM_RC` reading `/etc/mail.rc` upon startup can be inhibited. And by setting the `MAILRC` environment variable to `/dev/null` in addition it is ensured that no configuration file is loaded, so that a reproducable environment for running scripts is created, as shown by the script example above.
 
 All the remaining examples in this article are based upon this configuration template, which simply sets some security and send mode basics:
 
@@ -182,7 +182,7 @@ The above combination of SSL/TLS configuration results in the most secure end-to
 
 ## Sending mail with an external SMTP server
 
-To send messages via the builtin SMTP (Simple Mail Transfer Protocol) client to an external SMTP server, several options have to be set or adjusted. Add the following as appropriate to the configuration as above, changing bold strings. Reading the manual section "On URL syntax and credential lookup" is worthwhile.
+To send messages via the built-in SMTP (Simple Mail Transfer Protocol) client to an external SMTP server, several options have to be set or adjusted. Add the following as appropriate to the configuration as above, changing bold strings. Reading the manual section "On URL syntax and credential lookup" is worthwhile.
 
 ```
 # It can be as easy as

@@ -309,7 +309,7 @@ The numerical libraries that comes with the R (generic [blas](https://www.archli
 
 ### Intel MKL
 
-**If your processors are Intel**, it is strongly advised to use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors, with performance far superior to traditional libraries.
+**If your processors are Intel**, you can use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors.
 
 Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/) package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/) package.
 
@@ -334,7 +334,7 @@ Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-
 The version of the PKI package currently on CRAN (0.1-3) is old and will not work with the current version of [openssl](https://www.archlinux.org/packages/?name=openssl). The work around is to install a newer version from rforge:
 
 ```
-   > install.packages("PKI", repos = "[https://www.rforge.net](https://www.rforge.net)")
+> install.packages("PKI", repos = "[https://www.rforge.net](https://www.rforge.net)")
 
 ```
 

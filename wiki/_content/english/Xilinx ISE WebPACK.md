@@ -356,3 +356,19 @@ you need to prepend that with an "unset _JAVA_OPTIONS":
 $ unset _JAVA_OPTIONS && source /opt/Xilinx/14.7/ISE_DS/settings64.sh && coregen
 
 ```
+
+**Note:** This fix no longer works due to: coregen's bundled java fails to start. Workaround force using ISE bundled java6 instead of java5
+
+Backup old version
+
+```
+$ mv /opt/Xilinx/14.7/ISE_DS/ISE/java6/lin64/jre/bin/java /opt/Xilinx/14.7/ISE_DS/ISE/java6/lin64/jre/bin/java.old
+
+```
+
+Add symbolic link to java6
+
+```
+$ ln -s /opt/Xilinx/14.7/ISE_DS/ISE/java6/lin64/jre/bin/java /opt/Xilinx/14.7/ISE_DS/ISE/java/lin64/jre/bin/java
+
+```

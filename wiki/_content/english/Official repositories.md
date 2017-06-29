@@ -35,9 +35,9 @@ This repository can be found in `.../core/os/` on your favorite [mirror](/index.
 
 as well as dependencies of the above (not necessarily [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD")).
 
-*core* has fairly strict quality requirements. Developers/users need to signoff on updates before package updates are accepted. For packages with low usage, a reasonable exposure is enough: informing people about update, requesting signoffs, keeping in testing up to a week depending on the severity of the change, lack of outstanding bug reports, along with the implicit signoff of the package maintainer.
+*core* has fairly strict quality requirements. Developers/users need to signoff on updates before package updates are accepted. For packages with low usage, a reasonable exposure is enough: informing people about update, requesting signoffs, keeping in [#testing](#testing) up to a week depending on the severity of the change, lack of outstanding bug reports, along with the implicit signoff of the package maintainer.
 
-**Note:** To create a local repository with packages from *core* (or other repositories) without an internet connection see [Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips").
+**Note:** To create a local repository with packages from *core* (or other repositories) without an internet connection see [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips")
 
 ### extra
 
@@ -91,7 +91,7 @@ This repository is similar to the *testing* repository, but for packages that ar
 
 This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment, before it moves to the main *testing* repository.
 
-To enable it, add the following lines to `/etc/pacman.conf`. The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
+To enable it, add the following lines to `/etc/pacman.conf`:
 
 ```
 [gnome-unstable]
@@ -99,19 +99,23 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
+The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
+
 Please report packaging related bugs in our [bug tracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Bugzilla](https://bugzilla.gnome.org/).
 
 #### kde-unstable
 
 This repository contains the latest *beta* or *Release Candidate* of [KDE](/index.php/KDE "KDE") Plasma and Applications.
 
-To enable it, add the following lines to `/etc/pacman.conf`. The *kde-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
+To enable it, add the following lines to `/etc/pacman.conf`:
 
 ```
 [kde-unstable]
 Include = /etc/pacman.d/mirrorlist
 
 ```
+
+The *kde-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
 
 Make sure [you make bug reports](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") if you find any problems.
 

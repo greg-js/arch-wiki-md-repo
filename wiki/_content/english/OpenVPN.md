@@ -223,7 +223,7 @@ tls-crypt ta.key
 
 #### Run as unprivileged user
 
-Using the options `user nobody` and `group nobody` in the configuration file makes *OpenVPN* drop its `root` privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes are not desired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
+Using the options `user nobody` and `group nobody` in the configuration file makes *OpenVPN* drop its `root` privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes may be considered beneficial. It can also happen, however, that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
 
 As it could seem to require manual action to manage the routes, the options `user nobody` and `group nobody` might seem undesirable. Depending on setup, however, there are different ways to handle these situations:
 

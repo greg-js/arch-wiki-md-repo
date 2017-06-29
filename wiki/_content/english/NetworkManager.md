@@ -73,6 +73,7 @@
     *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
     *   [6.9 Configuring MAC Address Randomization](#Configuring_MAC_Address_Randomization)
     *   [6.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [6.11 Working with wired connections](#Working_with_wired_connections)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -864,6 +865,12 @@ You can read more about it [here](https://blogs.gnome.org/thaller/2016/08/26/mac
 ### Enable IPv6 Privacy Extensions
 
 See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
+
+### Working with wired connections
+
+By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring "no-auto-default" (see `man NetworkManager.conf`), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
+
+You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
 
 ## See also
 

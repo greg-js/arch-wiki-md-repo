@@ -120,7 +120,7 @@ In VLC choose *Tools > Preferences*: you have to show all settings. Then, go to 
 And, if you installed e.g. fluidr3 as wiki says, set the location to:
 
 ```
-/usr/share/soundfonts/FluidR3_GM2-2.sf2
+/usr/share/soundfonts/FluidR3_GM.sf2
 
 ```
 

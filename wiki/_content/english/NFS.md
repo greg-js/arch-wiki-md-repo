@@ -73,8 +73,8 @@ Add directories to be shared and limit them to a range of addresses via a CIDR o
 
  `/etc/exports` 
 ```
-/srv/nfs       192.168.1.0/24(rw,fsid=root,no_subtree_check)
-/srv/nfs/music 192.168.1.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
+/srv/nfs       192.168.1.0/24(rw,fsid=root)
+/srv/nfs/music 192.168.1.0/24(rw,nohide) # note the nohide option which is applied to mounted directories on the file system.
 
 ```
 
