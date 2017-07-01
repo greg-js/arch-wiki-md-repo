@@ -322,9 +322,9 @@ To make things really, really simple this script can be run from a [systemd/Time
 
 ### File system cloning
 
-This article provides ways to do a copy of all data in a file system while preserving as much information as possible, including the file system metadata. It is a procedure of data cloning on a file system level where source and destination file systems don't need to be of the same type. It can be used for backing up, file system migration or data recovery.
+rsync provides a way to do a copy of all data in a file system while preserving as much information as possible, including the file system metadata. It is a procedure of data cloning on a file system level where source and destination file systems don't need to be of the same type. It can be used for backing up, file system migration or data recovery.
 
-**rsync**'s *archive* mode comes close to being fit for the job, but it doesn't back up the special file system metadata such as access control lists, extended attributes or sparse file properties. For successful cloning at the file system level, some additional options need to be provided:
+rsync's *archive* mode comes close to being fit for the job, but it doesn't back up the special file system metadata such as access control lists, extended attributes or sparse file properties. For successful cloning at the file system level, some additional options need to be provided:
 
 ```
 rsync -qaHAXS SOURCE_DIR DESTINATION_DIR
@@ -348,7 +348,7 @@ diff -r SOURCE_DIR DESTINATION_DIR
 
 ```
 
-It is possible to do a successful file system migration by using **rsync** as described in this article and updating the [fstab](/index.php/Fstab "Fstab") and [bootloader](/index.php/Bootloader "Bootloader") as described in the [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync") and [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware") articles. This essentially provides a way to convert any root file system to another one.
+It is possible to do a successful file system migration by using rsync as described in this article and updating the [fstab](/index.php/Fstab "Fstab") and [bootloader](/index.php/Bootloader "Bootloader") as described in the [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware") (and [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")) articles. This essentially provides a way to convert any root file system to another one.
 
 ### rsync daemon
 

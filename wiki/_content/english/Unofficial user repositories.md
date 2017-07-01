@@ -56,9 +56,8 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.10 openrc-eudev](#openrc-eudev)
         *   [3.2.11 pantheon](#pantheon)
         *   [3.2.12 pietma](#pietma)
-        *   [3.2.13 trinity](#trinity)
-        *   [3.2.14 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.15 QOwnNotes](#QOwnNotes)
+        *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.14 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
@@ -103,7 +102,8 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.11 pnsft-pur](#pnsft-pur)
         *   [5.2.12 rakudo](#rakudo)
         *   [5.2.13 rust-git](#rust-git)
-        *   [5.2.14 zrootfs](#zrootfs)
+        *   [5.2.14 trinity](#trinity)
+        *   [5.2.15 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -601,17 +601,6 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 ```
 [pietma]
 Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch/$repo
-
-```
-
-#### trinity
-
-*   **Maintainer:** [Michael Manley](/index.php?title=User:Mmanley&action=edit&redlink=1 "User:Mmanley (page does not exist)")
-*   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
-
-```
-[trinity]
-Server = http://repo.nasutek.com/arch/contrib/trinity/$arch
 
 ```
 
@@ -1117,6 +1106,17 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 ```
 [rust-git]
 Server = https://tatsuyuki.kdns.info/archlinux/$repo/$arch
+
+```
+
+#### trinity
+
+*   **Maintainer:** [Michael Manley](/index.php?title=User:Mmanley&action=edit&redlink=1 "User:Mmanley (page does not exist)") <mmanley@nasutek.com>
+*   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
+
+```
+[trinity]
+Server = http://repo.nasutek.com/arch/contrib/trinity/x86_64
 
 ```
 

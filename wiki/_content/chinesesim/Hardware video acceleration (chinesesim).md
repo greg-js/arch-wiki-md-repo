@@ -73,7 +73,7 @@ Linux 中有多种方式可以实现视频加速:
 
 [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) 软件包为其提供支持。具体方法和注意事项参看： [在 GMA 4500 硬解 H.264](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264 "Intel (简体中文)")。
 
-运行下面的命令以查看你的GPU支持哪些功能。这个命令由 [libva](https://www.archlinux.org/packages/?name=libva) 软件包提供:
+运行下面的命令以查看你的GPU支持哪些功能。这个命令由 [libva-utils](https://www.archlinux.org/packages/?name=libva-utils) 软件包提供:
 
  `$ vainfo` 
 

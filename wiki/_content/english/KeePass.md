@@ -69,31 +69,31 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 *   [KeeFox](http://keefox.org/) ([keepass-plugin-rpc](https://aur.archlinux.org/packages/keepass-plugin-rpc/))
 
-Firefox extension that links the browser to existing or new KeePass database. KeeFox needs to be setup before it is fully functional.
+	Firefox extension that links the browser to existing or new KeePass database. KeeFox needs to be setup before it is fully functional.
 
 *   [PassIFox](https://addons.mozilla.org/en-US/firefox/addon/passifox/) ([KeepassHTTP plugin](https://github.com/pfn/keepasshttp/))
 
-Extension allowing Firefox to form-fill passwords stored in KeePass.
+	Extension allowing Firefox to form-fill passwords stored in KeePass.
 
 *   [KeePass Helper](https://addons.mozilla.org/en-us/firefox/addon/keepass-helper/)
 
-Modifies window title to assist autotype feature.
+	Modifies window title to assist autotype feature.
 
 ### Chrome/Chromium
 
 *   [ChromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) ([KeepassHTTP plugin](https://github.com/pfn/keepasshttp/))
 
-Extension allowing Google Chrome and Chromium to form-fill passwords stored in KeePass.
+	Extension allowing Google Chrome and Chromium to form-fill passwords stored in KeePass.
 
 *   [Url in title](https://chrome.google.com/webstore/detail/url-in-title/ignpacbgnbnkaiooknalneoeladjnfgb)
 
-Modifies window title to assist autotype feature. Similar to KeePass Helper for Firefox in function.
+	Modifies window title to assist autotype feature. Similar to KeePass Helper for Firefox in function.
 
 ### Nextcloud
 
 *   [Keeweb for Nextcloud](https://github.com/jhass/nextcloud-keeweb) ([nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/))
 
-Open Keepass stores inside Nextcloud
+	Open Keepass stores inside Nextcloud
 
 ### Yubikey
 

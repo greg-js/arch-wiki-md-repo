@@ -24,12 +24,12 @@ This article describes how to install and configure the Mattermost server.
 
 ## Installation
 
-**Note:** A cross-platform [Electron](/index.php/Electron "Electron")-based desktop client is available as [mattermost-desktop](https://aur.archlinux.org/packages/mattermost-desktop/).
-
 The Mattermost server can be installed in two ways:
 
 *   Using [Docker](/index.php/Docker "Docker") by following the steps described in [#With Docker](#With_Docker);
-*   Using a [AUR](/index.php/AUR "AUR") package, by following the steps described in [#With AUR](#With_AUR).
+*   Using an [AUR](/index.php/AUR "AUR") package, by following the steps described in [#With AUR](#With_AUR).
+
+An [Electron](/index.php/Electron "Electron")-based desktop client is provided by the [mattermost-desktop](https://aur.archlinux.org/packages/mattermost-desktop/) package.
 
 ### With Docker
 

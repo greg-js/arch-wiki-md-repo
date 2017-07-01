@@ -191,6 +191,7 @@ There are a variety of front-ends for sensors data.
 For specific [Desktop environments](/index.php/Desktop_environments "Desktop environments"):
 
 *   [sensors-applet](https://www.archlinux.org/packages/?name=sensors-applet) - applet for the [GNOME](/index.php/GNOME "GNOME") Panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings.
+*   [gnome-shell-extension-system-monitor-git](https://aur.archlinux.org/packages/gnome-shell-extension-system-monitor-git/) - System monitor extension for [GNOME](/index.php/GNOME "GNOME") Shell.
 *   [plasma5-applets-thermal-monitor-git](https://aur.archlinux.org/packages/plasma5-applets-thermal-monitor-git/) - Is an example of the [widgets](/index.php/KDE#Widgets "KDE") available for [KDE](/index.php/KDE "KDE") desktop.
 *   [sensors-lxpanel-plugin](https://aur.archlinux.org/packages/sensors-lxpanel-plugin/) -- A lm_sensors plugin for the [LXDE](/index.php/LXDE "LXDE") panel. lxpanel also includes a simple 'Temperature Monitor' plugin.
 *   [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) - A lm_sensors plugin for the [Xfce](/index.php/Xfce "Xfce") panel

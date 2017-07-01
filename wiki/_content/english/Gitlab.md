@@ -366,7 +366,7 @@ Afterwards, restart gitlab-related services:
 
 ```
 # systemctl daemon-reload
-# systemctl restart gitlab-sidekiq gitlab-unicorn gitlab-workhorse
+# systemctl restart gitlab-sidekiq gitlab-unicorn gitlab-workhorse gitlab-gitaly
 
 ```
 

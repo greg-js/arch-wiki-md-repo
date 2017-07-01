@@ -319,6 +319,8 @@ Labels-based access control means the extended attributes of a file are used to 
 
 The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/thestinger/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults.
 
+If you use an out-of-tree driver such as [NVIDIA](/index.php/NVIDIA "NVIDIA"), you may need to switch to its [DKMS](/index.php/DKMS "DKMS") package.
+
 #### Userspace ASLR comparison
 
 The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package provides an improved implementation of Address Space Layout Randomization for userspace processes. The [paxtest](https://www.archlinux.org/packages/?name=paxtest) command can be used to obtain an estimate of the provided entropy:

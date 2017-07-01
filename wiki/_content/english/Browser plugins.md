@@ -51,12 +51,12 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 The package you will need to install depends on the browser you use.
 
 *   The NPAPI version can be [installed](/index.php/Install "Install") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package.
-*   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+*   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) package.
 
 **Note:**
 
 *   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package in order to properly render text.
-*   The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an *experimental* adapter to use [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `~/.config/freshwrapper.conf`.
+*   The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an *experimental* adapter to use [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `~/.config/freshwrapper.conf`.
 
 #### Upgrade
 

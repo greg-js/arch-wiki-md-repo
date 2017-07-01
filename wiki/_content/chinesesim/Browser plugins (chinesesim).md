@@ -56,7 +56,7 @@
 **Note:**
 
 *   某些时候文本显示不太正常，可能需要从[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)
-*   [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) 软件包提供了 NPAPI 浏览器比如 Firefox 使用 [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) 的测试版本。可以通过将 `/usr/share/freshplayerplugin/freshwrapper.conf.example` 复制到 `/usr/share/freshplayerplugin/freshwrapper.conf` 配置硬件加速。
+*   [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) 软件包提供了 NPAPI 浏览器比如 Firefox 使用 [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) 的测试版本。可以通过将 `/usr/share/freshplayerplugin/freshwrapper.conf.example` 复制到 `/usr/share/freshplayerplugin/freshwrapper.conf` 配置硬件加速。
 
 #### 更新
 

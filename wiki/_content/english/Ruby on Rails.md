@@ -131,7 +131,7 @@ $ thin start
 
 ### Unicorn
 
-Unicorn is an application server that cannot talk directly to clients. Instead, a web server must sit between clients and Unicorn, proxying requests as needed. [Unicorn](http://unicorn.bogomips.org/) is loosely based on Mongrel. It is used by Github, and it uses an architecture that tries hard to find the best child for handling a request. [Explanation of differences between Unicorn and Mongrel](https://github.com/blog/517-unicorn).
+[Unicorn](http://unicorn.bogomips.org/) is an application server that cannot talk directly to clients. Instead, a web server must sit between clients and Unicorn, proxying requests as needed. Unicorn is loosely based on Mongrel. It is used by Github, and it uses an architecture that tries hard to find the best child for handling a request. [Explanation of differences between Unicorn and Mongrel](https://github.com/blog/517-unicorn).
 
 Install the Unicorn gem:
 

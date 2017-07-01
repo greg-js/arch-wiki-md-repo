@@ -78,7 +78,7 @@ Alternatively, install the [flashplugin](https://www.archlinux.org/packages/?nam
 
 To use Pepper flash in midori install [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) or [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/), and additionally install one of the following:
 
-*   [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)
+*   [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash)
 *   [chromium-pepper-flash-standalone](https://aur.archlinux.org/packages/chromium-pepper-flash-standalone/)
 *   [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 *   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)

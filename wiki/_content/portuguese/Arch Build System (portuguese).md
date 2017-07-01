@@ -9,11 +9,12 @@ Esse artigo fornece uma visão geral do Arch Build System (ABS) junto com um tut
         *   [1.3.1 Árvore SVN](#.C3.81rvore_SVN)
 *   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS.3F)
 *   [3 Como usar o ABS](#Como_usar_o_ABS)
-    *   [3.1 Pré-requisitos](#Pr.C3.A9-requisitos)
-    *   [3.2 Checkout não-recursivo](#Checkout_n.C3.A3o-recursivo)
-    *   [3.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
-    *   [3.4 Configurar makepkg](#Configurar_makepkg)
-    *   [3.5 Compilar pacote](#Compilar_pacote)
+    *   [3.1 Obtendo fonte de PKGBUILD](#Obtendo_fonte_de_PKGBUILD)
+        *   [3.1.1 Pré-requisitos](#Pr.C3.A9-requisitos)
+        *   [3.1.2 Checkout não-recursivo](#Checkout_n.C3.A3o-recursivo)
+        *   [3.1.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
+    *   [3.2 Configurar makepkg](#Configurar_makepkg)
+    *   [3.3 Compilar pacote](#Compilar_pacote)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Preserve pacotes modificados](#Preserve_pacotes_modificados)
     *   [4.2 Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote)
@@ -95,11 +96,15 @@ ABS não é necessário para usar o Arch Linux, mas é útil para automatizar ce
 
 ## Como usar o ABS
 
-### Pré-requisitos
+### Obtendo fonte de PKGBUILD
+
+**Tip:** Um método alternativo é [instalar](/index.php/Instalar "Instalar") e usar o pacote [asp](https://www.archlinux.org/packages/?name=asp), o qual é um fino wrapper em volta de repositórios svntogit.
+
+#### Pré-requisitos
 
 [Instale](/index.php/Instale "Instale") o pacote [subversion](https://www.archlinux.org/packages/?name=subversion).
 
-### Checkout não-recursivo
+#### Checkout não-recursivo
 
 **Warning:** Não baixe todo o repositório; siga apenas as instruções abaixo. O repositório SVN todo é gigantesco. Não apenas vai gastar uma quantidade absurda de espaço em disco, mas também vai ocupar o servidor do archlinux.org para você baixá-lo. Se você abusar desse serviço, seu endereço pode ser bloqueado. Nunca use o SVN público para qualquer tipo de *scripting*.
 
@@ -119,7 +124,7 @@ $ svn checkout --depth=empty svn://svn.archlinux.org/community
 
 Em ambos casos, ele cria um diretório vazio, mas ele sabe que é um *checkout* de svn.
 
-### Fazer checkout de um pacote
+#### Fazer checkout de um pacote
 
 No diretório contendo o repositório svn que você fez checkout (isto é, *packages* ou *community*), faça:
 

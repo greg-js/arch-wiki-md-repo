@@ -28,8 +28,6 @@ Plymouth is available from the [AUR](/index.php/AUR "AUR"): the stable package i
 
 If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/), which compiles gdm with plymouth support.
 
-Packages are also available in the unofficial [nullptr_t](/index.php/Unofficial_user_repositories#nullptr_t "Unofficial user repositories") repository.
-
 ### The plymouth hook
 
 Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). It **must** be added **after** `base` and `udev` for it to work:
@@ -49,8 +47,6 @@ After adding the `plymouth-encrypt` hook, if input goes to the background in pla
 If your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") includes the `systemd` hook, then replace `plymouth` with `sd-plymouth`. Additionally, if using hard drive encryption, use `sd-encrypt` instead of `encrypt` or `plymouth-encrypt`:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base systemd sd-plymouth [...] sd-encrypt [...]"` 
-
-It may in this case be necessary to use [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/) instead of [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
 ### The kernel command line
 

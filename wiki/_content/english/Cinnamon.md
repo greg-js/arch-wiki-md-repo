@@ -24,6 +24,7 @@
     *   [4.9 Resize windows by mouse](#Resize_windows_by_mouse)
     *   [4.10 Portable keybindings](#Portable_keybindings)
     *   [4.11 Screenshot](#Screenshot)
+    *   [4.12 Prevent Cinnamon from overriding xrandr/xinput configuration](#Prevent_Cinnamon_from_overriding_xrandr.2Fxinput_configuration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 cinnamon-settings: No module named Image](#cinnamon-settings:_No_module_named_Image)
     *   [5.2 Video tearing](#Video_tearing)
@@ -204,6 +205,25 @@ $ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/*USE
 
 ```
 
+### Prevent Cinnamon from overriding xrandr/xinput configuration
+
+The *cinnamon-settings-daemon* provides a number of plugins which can manage the display, keyboard and mouse. These plugins will override user set configuration (such as *xrandr* commands in the [xinitrc](/index.php/Xinitrc "Xinitrc") file). To stop user set configuration from being overridden, it is necessary to prevent the settings daemon plugins from being started.
+
+This can be done by copying the *.desktop* entry for the relevant settings daemon plugin (these will be located in `/etc/xdg/autostart/`) to `$HOME/.config/autostart`. Then append the line `Hidden=true` to each copied entry.
+
+**Tip:** Start your session with `cinnamon-session --debug` to see which plugins are reported to have been started.
+
+To preserve display, keyboard and mouse settings, consider disabling the following:
+
+```
+cinnamon-settings-daemon-a11y-keyboard.desktop
+cinnamon-settings-daemon-a11y-settings.desktop
+cinnamon-settings-daemon-keyboard.desktop
+cinnamon-settings-daemon-mouse.desktop
+cinnamon-settings-daemon-xrandr.desktop
+
+```
+
 ## Troubleshooting
 
 ### cinnamon-settings: No module named Image
@@ -218,7 +238,7 @@ Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon 
 
 Even if you do not use [NetworkManager](/index.php/NetworkManager "NetworkManager") and remove the *Network Manager* applet from the default panel, Cinnamon will still load *nm-applet* and display it in the system tray. You cannot uninstall the package, because it is required by [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) and [cinnamon-control-center](https://www.archlinux.org/packages/?name=cinnamon-control-center), but you can still easily disable it. To do so copy the autostart file from `/etc/xdg/autostart/nm-applet.desktop` to `~/.config/autostart/nm-applet.desktop`. Open it with your favorite text editor and add at the end `X-GNOME-Autostart-enabled=false`.
 
-Alternatively you can disable it is by creating the following symlink:
+Alternatively you can disable it by creating the following symlink:
 
 ```
 $ ln -s /bin/true /usr/local/bin/nm-applet

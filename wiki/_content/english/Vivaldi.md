@@ -22,7 +22,7 @@ See also [Wikipedia:Google Chrome Extension](https://en.wikipedia.org/wiki/Googl
 
 For additional support concerning audio and video playback, install corresponding package for your version of choice: [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/), [vivaldi-beta-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-beta-ffmpeg-codecs/) or [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/).
 
-You may install [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) to play flash media.
+You may install [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) to play flash media.
 
 ## Troubleshooting
 

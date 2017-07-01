@@ -59,9 +59,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 
 ## Install OpenVPN
 
-[Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package.
-
-**Note:** The software contained in this package supports both server and client mode, so install it on all machines that need to create VPN connections.
+[Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package, which supports both server and client mode.
 
 ## Kernel configuration
 

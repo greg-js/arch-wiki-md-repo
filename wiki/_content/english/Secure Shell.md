@@ -659,6 +659,8 @@ Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily in
 
 Please refer to the [Sshfs](/index.php/Sshfs "Sshfs") article to use sshfs to mount a remote system - accessible via SSH - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). Using sshfs instead of shfs is generally preferred as a new version of shfs has not been released since 2004.
 
+**Tip:** There is a package [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) that can be used to run autosshfs automatically at login.
+
 ### Keep alive
 
 Your ssh session will automatically log out if it is idle. To send a "keep alive" signal to the server every 120 seconds add the `ServerAliveInterval 120` option to your [client configuration](#Configuration). See also the `ServerAliveCountMax` and `TCPKeepAlive` options.

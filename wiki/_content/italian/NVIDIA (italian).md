@@ -1375,7 +1375,7 @@ Un problema con le versioni 11.2.202.228-1 e 11.2.202.233-1 di [flashplugin](htt
 2.  Patchare `vdpau_trace.so` con [questo makepkg](https://bbs.archlinux.org/viewtopic.php?pid=1078368#p1078368).
 3.  Tasto destro del mouse su un video, selezionare "Impostazioni..." e spuntare "Abilita l'accelerazione hardware". Ricaricare la pagina per fare in modo che le modifiche abbiano effetto. Si noti che viene disabilitata l'accelerazione GPU.
 4.  Effettuare un [downgrade](/index.php/Downgrading_packages_(Italiano) "Downgrading packages (Italiano)") di [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) alla versione 11.1.102.63-1 o precedente.
-5.  Utilizzare [google-chrome](https://aur.archlinux.org/packages/google-chrome/) con la nuova [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)
+5.  Utilizzare [google-chrome](https://aur.archlinux.org/packages/google-chrome/) con la nuova [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash)
 6.  Provare una delle poche alternative Flash.
 
 I meriti di ciascuno sono discussi in [questo thread](https://bbs.archlinux.org/viewtopic.php?id=137877).

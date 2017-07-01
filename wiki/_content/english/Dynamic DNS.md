@@ -13,6 +13,7 @@
     *   [2.2 FreeDns.io](#FreeDns.io)
     *   [2.3 Now-DNS](#Now-DNS)
     *   [2.4 System-NS](#System-NS)
+    *   [2.5 Loopia.se](#Loopia.se)
 
 ## Update tools
 
@@ -88,3 +89,7 @@ The following DDNS providers are not compatible with [ddclient](#ddclient) so up
 ### System-NS
 
 [System-NS](http://system-ns.com/) is a free service which can be updated via the command line. See [the official documentation](https://system-ns.com/services/dynamic).
+
+### Loopia.se
+
+If you use loopia.se as name server, you can query updates of DNS records via *curl* as described in the [official documentation](https://support.loopia.se/wiki/curl/).

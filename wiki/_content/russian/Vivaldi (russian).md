@@ -16,7 +16,7 @@ Vivaldi может быть [установлен](/index.php/%D0%A3%D1%81%D1%82
 
 Для получения дополнительной поддержки воспроизведения аудио и видео, установить соответствующий пакет на ваш выбор: [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/), [vivaldi-beta-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-beta-ffmpeg-codecs/) или [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/).
 
-Вы можете установить [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) для воспроизедения flash.
+Вы можете установить [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) для воспроизедения flash.
 
 ## Решение проблем
 

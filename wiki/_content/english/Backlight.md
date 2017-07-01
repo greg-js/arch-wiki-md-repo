@@ -19,8 +19,9 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
     *   [6.3 redshift](#redshift)
-    *   [6.4 NVIDIA settings](#NVIDIA_settings)
-    *   [6.5 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
+    *   [6.4 Clight](#Clight)
+    *   [6.5 NVIDIA settings](#NVIDIA_settings)
+    *   [6.6 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
 *   [7 External Monitors](#External_Monitors)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
@@ -234,6 +235,10 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 	[https://github.com/cotix/backlighttooler](https://github.com/cotix/backlighttooler) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
+*   **Clight** — Inspired by calise, but written in C and with many more features, its initial aim was to turn your webcam into a light sensor: it will adjust screen backlight based on ambient brightness.
+
+	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
+
 ### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
@@ -285,7 +290,7 @@ Various packages exist in the AUR that use *f.lux*.[[3]](https://aur.archlinux.o
 
 ### redshift
 
-The program [redshift](/index.php/Redshift "Redshift") in the official repositories uses `randr` to adjust the screen brightness depending on the time of day and your geographic position. It can also do RGB gamma corrections and set color temperatures. As with `xcalib`, this is very much a software solution and the look of the mouse cursor is unaffected. To execute a single quick adjustment of the brightness, try something like this:
+[Redshift](/index.php/Redshift "Redshift") uses `randr` to adjust the screen brightness depending on the time of day and your geographic position. It can also do RGB gamma corrections and set color temperatures. As with `xcalib`, this is very much a software solution and the look of the mouse cursor is unaffected. To execute a single quick adjustment of the brightness, try something like this:
 
 ```
 redshift -o -l 0:0 -b 0.8 -t 6500:6500
@@ -300,6 +305,10 @@ Example for Berkeley, CA:
 redshift-gtk -l 37.8717:-122.2728 
 
 ```
+
+### Clight
+
+[Clight](https://github.com/FedeDP/Clight), available as [clight-git](https://aur.archlinux.org/packages/clight-git/), can adjust the screen temperature depending on the current time of the day. It tries to use [geoclue2](https://www.archlinux.org/packages/?name=geoclue2) to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.
 
 ### NVIDIA settings
 

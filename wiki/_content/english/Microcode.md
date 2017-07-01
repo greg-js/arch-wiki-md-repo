@@ -92,7 +92,7 @@ objcopy ... --add-section .initrd=my_new_initrd
 Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, example:
 
 ```
-"Boot with standard options" "rw root=UUID=(...) quiet initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img"
+"Boot with standard options" "rw root=UUID=(...) quiet initrd=intel-ucode.img initrd=initramfs-linux.img"
 
 ```
 

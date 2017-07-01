@@ -181,6 +181,16 @@ EndSection
 
 ```
 
+If you have an Intel Kaby Lake chip [[1]](https://en.wikipedia.org/wiki/Kaby_Lake), and the issue is not fixed with the conf above, add to your kernel_parameters `i915.enable_rc6=0`. You can do that by editing the grub file:
+
+ `# sudo vim /etc/default/grub` 
+
+and appending `quiet i915.enable_rc6=0` to GRUB_CMDLINE_LINUX_DEFAULT. Afterwords re-generate grub file:
+
+ `# grub-mkconfig -o /boot/grub/grub.cfg` 
+
+Reboot.
+
 #### Hybrid graphics
 
 If the discrete Nvidia GPU is switched off before starting Xorg or Wayland, then the system freezes. The only possible solution is to manually disable/enable the discrete card after starting the graphical session. However there is a ACPI DSDT fix available which fixes this problem. Check the [repository](https://github.com/m4ng0squ4sh/razer_blade_14_2016_acpi_dsdt) for more information.

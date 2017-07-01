@@ -26,9 +26,9 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
 
 ### Installation
 
-**Note:** Minecraft requires [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
+Simply install the [minecraft](https://aur.archlinux.org/packages/minecraft/) package to get the official game launcher, a script to launch it and a proper `.desktop` file.
 
-[minecraft](https://aur.archlinux.org/packages/minecraft/) includes the official game launcher, a script to launch it and a proper `.desktop` file. Alternatively the plain minecraft launcher can be found at their [download page](https://minecraft.net/download).
+Though using a proper package should always be preferred, there is still the options to use the plain minecraft launcher which can be found at the [official download page](https://minecraft.net/download).
 
 ### Running
 
@@ -48,9 +48,9 @@ $ java -jar Minecraft.jar
 
 ### Firewall configuration for LAN worlds
 
-To host a LAN World you will need two ports to be open on your [firewall](/index.php/Firewall "Firewall"):
+To host a Minecraft world on the LAN you will need two ports to be open on your [firewall](/index.php/Firewall "Firewall"):
 
-*   UDP port 4445\. If this port is closed, the game will hang when you save and exit from the world;
+*   UDP port `4445`. If this port is closed, the game will hang when you save and exit from the world;
 *   the TCP port minecraft randomly picks after you open your world to LAN. If this port is closed, your friends won't be able to join your world.
 
 ### Extras
@@ -67,9 +67,9 @@ There are several [programs and editors](http://www.minecraftwiki.net/wiki/Progr
 
 ### Installation
 
-The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional systemd unit files and includes a small control script.
+The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [SystemD](/index.php/SystemD "SystemD") unit files and includes a small control script.
 
-**Note:** Except for [Cuberite](#Cuberite) which is written in C++ and Lua almost all Minecraft servers will require [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
+**Note:** Almost all Minecraft servers will require [Java](/index.php/Java "Java") in order to run, except for [Cuberite](#Cuberite) which is written in C++ and Lua. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
 
 ### Setup
 
@@ -88,7 +88,7 @@ To start the server you may either use systemd or run it directly from the comma
 
 ```
 
-**Note:** The first time you run the server, `/srv/minecraft/eula.txt` will be created. You will need to edit this file to state that you have agreed to the EULA to run the server.
+**Note:** If you run the server for the first time an [EULA](https://en.wikipedia.org/wiki/EULA "wikipedia:EULA") file residing under `/srv/minecraft/eula.txt` gets created. You will need to edit this file to state that you have agreed to the contract in order to run the server.
 
 #### Server management script
 
@@ -100,7 +100,7 @@ To easily control the server you may use the provided `minecraftd` script. It is
 
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 
-More advanced users may wish enable `IDLE_SERVER` by setting it to true in `/etc/conf.d/minecraft`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the minecraft port using `netcat` and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time, it significantly decreases the CPU and memory usage, leading to more reasonably resource/power consumption.
+More advanced users may wish enable `IDLE_SERVER` by setting it to true in `/etc/conf.d/minecraft`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using `netcat` and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time, it significantly decreases the CPU and memory usage, leading to more reasonably resource/power consumption.
 
 ### Spigot (respectively Craftbukkit)
 
@@ -112,7 +112,7 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 
 ### Cuberite
 
-[Cuberite](http://cuberite.org/) is a highly efficient minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at `port 8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
+[Cuberite](http://cuberite.org/) is a highly efficient Minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla Minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at port `8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
 
 Be sure read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever you encounter it.
 

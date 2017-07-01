@@ -149,22 +149,7 @@ The `arch` array should contain `'i686'` and/or `'x86_64'` depending on which ar
 
 ## Licenses
 
-The [license](/index.php/License "License") array is being implemented in the official repos, and it **should** be used in your packages as well. Use it as follows:
-
-*   A licenses package has been created in [core] that stores common licenses in /usr/share/licenses/common ie. /usr/share/licenses/common/GPL. If a package is licensed under one of these licenses, the licenses variable will be set to the directory name e.g. license=('GPL')
-*   If the appropriate license is not included in the official licenses package, several things must be done:
-
-1.  The license file(s) should be included in /usr/share/licenses/$pkgname/ e.g. /usr/share/licenses/dibfoo/LICENSE. One good way to do this is by using: `install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"` 
-2.  If the source tarball does NOT contain the license details and the license is only displayed on a website for example, then copy the license to a file and include it. Remember to call it something appropriate too.
-3.  Add 'custom' to the licenses array. Optionally, you can replace 'custom' with 'custom:"name of license"'.
-
-*   Once a licenses is used in two or more packages in an official repo, including [community], it becomes common
-*   The MIT, BSD, zlib/libpng and Python licenses are special cases and cannot be included in the 'common' licenses pkg. For the sake of the license variable, it is treated like a common license (license=('BSD'), license=('MIT'), license=('ZLIB') or license=('Python')) but for the sake of the filesystem, it is a custom license, because each one has its own copyright line. Each MIT, BSD, zlib/libpng or Python licensed package should have its unique license stored in /usr/share/licenses/$pkgname/.
-*   Some packages may not be covered by a single license. In these cases multiple entries may be made in the license array e.g. license=("GPL" "custom:some commercial license"). For the majority of packages these licenses apply in different cases, as opposed to applying at the same time. When pacman gets the ability to filter on licenses (so you can say, "I only want GPL and BSD licensed software") dual (or more) licenses will be treated by pacman using OR, rather than AND logic, thus pacman will consider the above example as GPL licensed software, regardless of the other licenses listed.
-*   The (L)GPL has many versions and permutations of those versions. For (L)GPL software, the convention is:
-    *   (L)GPL - (L)GPLv2 or any later version
-    *   (L)GPL2 - (L)GPL2 only
-    *   (L)GPL3 - (L)GPL3 or any later version
+See [PKGBUILD#license](/index.php/PKGBUILD#license "PKGBUILD").
 
 ## Additional guidelines
 

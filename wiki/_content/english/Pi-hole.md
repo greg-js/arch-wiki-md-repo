@@ -25,8 +25,7 @@ This wiki page tries to cover the need for configuration and use instructions of
         *   [2.2.2 Openresolve](#Openresolve)
     *   [2.3 Update/Upgrade configuration](#Update.2FUpgrade_configuration_2)
 *   [3 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
-*   [4 Troubleshooting](#Troubleshooting)
-*   [5 See also](#See_also)
+*   [4 See also](#See_also)
 
 ## Pi-hole Server
 
@@ -229,8 +228,6 @@ and re/start it.
 To use OpenVPN in server mode with Pi-hole, a few extra configuration steps are required.
 
 **Note:** Section under construction.
-
-## Troubleshooting
 
 ## See also
 

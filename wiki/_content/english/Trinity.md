@@ -4,7 +4,7 @@ TDE still depends on an old version of Qt, which they now maintain themselves, s
 
 ## Contents
 
-*   [1 Michael's PKGBUILD files](#Michael.27s_PKGBUILD_files)
+*   [1 Install binary packages](#Install_binary_packages)
 *   [2 Build from source](#Build_from_source)
 *   [3 Building with Michael's PKGBUILD files](#Building_with_Michael.27s_PKGBUILD_files)
 *   [4 Start and configuration](#Start_and_configuration)
@@ -13,17 +13,13 @@ TDE still depends on an old version of Qt, which they now maintain themselves, s
 *   [5 Trinity "Kicker" panel with other desktop environments](#Trinity_.22Kicker.22_panel_with_other_desktop_environments)
 *   [6 See also](#See_also)
 
-## Michael's PKGBUILD files
+## Install binary packages
 
-[Michael's PKGBUILD repository](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD) contains PKGBUILD files for the ten required Trinity core packages described in [How_to_Build_TDE_Core_Modules#Suggested_Build_Order](https://wiki.trinitydesktop.org/How_to_Build_TDE_Core_Modules#Suggested_Build_Order), and also *tdeaccessibility*, *tdebindings*, and *tdeutils*.
-
-Most PKGBUILDs seem to build fine except arts is a bit bugged (at least on VMWare). They seem to build successfully on a system with the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) package group installed, despite the warning below about building with [KDE4](/index.php/KDE4 "KDE4") being present. Binary packages are available for x86_64 at the moment, see [Unofficial user repositories#trinity](/index.php/Unofficial_user_repositories#trinity "Unofficial user repositories").
+As of June 29, 2017 binary packages for 14.0.4 are on the NasuTek Contrib Repos. Only x86_64 is provided since i686 is being depreciated. See [Unofficial user repositories#trinity](/index.php/Unofficial_user_repositories#trinity "Unofficial user repositories") on how to connect to this repo.
 
 ## Build from source
 
-As of July, 2015, there are no Arch Linux Trinity packages, so you will need to create your own. See [Creating packages](/index.php/Creating_packages "Creating packages").
-
-To download the R14 source tarballs, follow the Download Source Tarballs link near the bottom of the [Trinity R14.0.0 Release](https://www.trinitydesktop.org/releases/R14.0.0/) page.
+[Michael's PKGBUILD repository](https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD) contains PKGBUILD files for most Trinity packages.
 
 The sources are in a git repo. More info on cloning it is at their [GIT information](https://wiki.trinitydesktop.org/Project_GIT_Information#Using_GIT) page.
 

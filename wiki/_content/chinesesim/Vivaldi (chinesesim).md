@@ -18,7 +18,7 @@ Vivaldi 可以从 AUR 安装 [vivaldi](https://aur.archlinux.org/packages/vivald
 
 为支持额外的音视频播放功能，可以安装相应版本的 [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/) 或 [vivaldi-beta-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-beta-ffmpeg-codecs/) 或 [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/) 。
 
-要播放 flash 媒体文件应当安装 [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) 。
+要播放 flash 媒体文件应当安装 [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) 。
 
 ## 排错
 

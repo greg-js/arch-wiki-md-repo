@@ -1048,5 +1048,6 @@ You can use the following website to get your device's coordinates along with a 
 52.396330,20.931634 "nr6000000" # Legionowo, Poland
 25.016733,121.298885 "Thomas" # Taoyuan,Taiwan
 39.120383,118.351087 "Puzhou Wang" # Caofeidian,Tangshan,China
+46.596249, 7.055057 "helvethor" # Le Pâquier, Fribourg, Switzerland
 
 ```

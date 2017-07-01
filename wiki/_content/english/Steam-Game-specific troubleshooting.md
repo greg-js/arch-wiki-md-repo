@@ -1035,17 +1035,10 @@ Requires [lib32-librtmp0](https://www.archlinux.org/packages/?name=lib32-librtmp
 
 ### Game does not start
 
-The 64 bit version fails to start as-is. Either use the 32bit version *tld.x86* in the game folder or start the 64 bit version like so:
+The 64-bit version fails to start. Either use the 32-bit version `tld.x86` in the game directory or start the 64-bit version like so:
 
 ```
 LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 ./tld.x86_64
-
-```
-
-Optionally change your steam launch command to
-
-```
-LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0  %command%
 
 ```
 
@@ -1499,11 +1492,11 @@ Tomb Raider has a very heavy amount of dependency on the Steam runtime, the easi
 
 If your Steam Controller is correctly recognized and paired but still not working in-game try the following:
 
-*   In Steam, non Big Screen, go to Settings -> Account -> Beta participation -> Change... and in the dropdown select box select Steam Beta Update
+*   In Steam, non Big Screen, go to *Settings > Account > Beta participation > Change...* and in the dropdown select box select Steam Beta Update
 *   Restart Steam
 *   Go to Big Screen and start Tomb Raider
 
-Correctly recognized means you can control desktop mouse and Steam in Big Picture mode and the controller is shown in Big Picture settings
+Correctly recognized means you can control the desktop mouse and Steam in Big Picture mode and the controller is shown in the Big Picture settings.
 
 ## Towns / Towns Demo
 

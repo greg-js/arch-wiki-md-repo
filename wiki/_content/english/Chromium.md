@@ -73,7 +73,7 @@ To set Chromium as the default browser and to change which applications Chromium
 
 Flash Player is automatically installed when using Google Chrome.
 
-To install it for Chromium, [install](/index.php/Install "Install") the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+To install it for Chromium, [install](/index.php/Install "Install") the [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) package.
 
 Make sure Flash is allowed to run in `chrome://settings/content/flash`.
 

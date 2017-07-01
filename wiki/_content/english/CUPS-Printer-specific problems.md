@@ -75,6 +75,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Install Brother's driver. |
 | MFC-J885DW | [brother-mfc-j885dw](https://aur.archlinux.org/packages/brother-mfc-j885dw/) |
+| MFC-J985DW | [brother-mfc-j985dw](https://aur.archlinux.org/packages/brother-mfc-j985dw/) |
 | MFC-L2700DW | [brother-mfc-l2700dw](https://aur.archlinux.org/packages/brother-mfc-l2700dw/) | Please look also at the comments section of the AUR package page. |
 | QL-500 | [brother-ql500](https://aur.archlinux.org/packages/brother-ql500/) |
 | QL-570 | [brother-ql570](https://aur.archlinux.org/packages/brother-ql570/) |

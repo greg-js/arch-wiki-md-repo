@@ -32,6 +32,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
     *   [5.11 Addon manager not working](#Addon_manager_not_working)
     *   [5.12 Using webcam/video device](#Using_webcam.2Fvideo_device)
+    *   [5.13 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
 
 ## Overview
 
@@ -367,8 +368,37 @@ See [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[5]](https:/
 
 Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2016b)
 
+Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. See also [https://bugs.archlinux.org/task/54257](https://bugs.archlinux.org/task/54257). A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in matlabroot/R2017a/cefclient/sys/os/glnxa64, namely, as of R2017a:
+
+```
+ libgio-2.0.so
+ libglib-2.0.so
+ libgmodule-2.0.so
+ libgobject-2.0.so
+ libgthread-2.0.so
+
+```
+
+Make it so that these symlinks are pointing to your system glib libraries instead of versions located in matlabroot/R2017a/cefclient/sys/os/glnxa64
+
 ### Using webcam/video device
 
 Make sure the correct support package addons are installed (webcam or OS Generic Video Interface for example). If running matlab as a user, make sure your user has write permissions to wherever the support packages are being downloaded and installed.
 
 At least Matlab 2016b doesn't recognize webcams or imaq adapters correctly without gstreamer0.10\. The gstreamer0.10 can be found in the aur and installed as a work around.
+
+Since MATLAB R2017a, Image Acqusition Toolbox is using GStreamer library version 1.0\. It previously used version 0.10.
+
+### MATLAB hangs for several minutes when closing Help Browser
+
+Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB.
+
+To fix this issue, download latest jxbrowser from [https://www.teamdev.com/jxbrowser](https://www.teamdev.com/jxbrowser) and replace the following jars from MATLAB:
+
+```
+ matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-chromium.jar
+ matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-linux64.jar
+
+```
+
+MATLAB should automatically unpack those jars into matlabroot/sys/jxbrowser-chromium/glnxa64/chromium when first opening Help Browser. Remove matlabroot/sys/jxbrowser-chromium/glnxa64/chromium directory to make sure MATLAB uses the latest jxbrowser.

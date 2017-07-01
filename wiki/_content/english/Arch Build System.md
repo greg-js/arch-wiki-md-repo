@@ -9,7 +9,7 @@ This article provides an overview of the Arch Build System (ABS) along with a wa
         *   [1.3.1 SVN tree](#SVN_tree)
 *   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS.3F)
 *   [3 How to use ABS](#How_to_use_ABS)
-    *   [3.1 Retreive PKGBUILD source](#Retreive_PKGBUILD_source)
+    *   [3.1 Retrieve PKGBUILD source](#Retrieve_PKGBUILD_source)
         *   [3.1.1 Prerequisites](#Prerequisites)
         *   [3.1.2 Non-recursive checkout](#Non-recursive_checkout)
         *   [3.1.3 Checkout a package](#Checkout_a_package)
@@ -96,7 +96,7 @@ ABS is not necessary to use Arch Linux, but it is useful for automating certain 
 
 ## How to use ABS
 
-### Retreive PKGBUILD source
+### Retrieve PKGBUILD source
 
 **Tip:** An alternative method is to [install](/index.php/Install "Install") and use the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories.
 

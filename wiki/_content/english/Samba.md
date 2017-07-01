@@ -153,7 +153,7 @@ Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/s
 
 If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options：
 
-*   disabling shell - `usermod --shell /usr/bin/nologin --lock username`
+*   disabling shell - `# usermod --shell /usr/bin/nologin --lock username`
 *   disabling SSH logons - edit `/etc/ssh/sshd_conf`, change option `AllowUsers`
 
 Also see [Security](/index.php/Security "Security") for hardening your system.

@@ -149,25 +149,7 @@ O vetor `arch` deve conter `'i686'` e/ou `'x86_64'`, dependendo de em quais arqu
 
 ## Licenças
 
-A variável de vetor [license](/index.php/PKGBUILD_(Portugu%C3%AAs)#license "PKGBUILD (Português)") está sendo implementada nos repositórios oficiais, e ela **deve** ser usada em seus pacotes da mesma forma. Use-a da seguinte forma:
-
-*   Um pacote de licenças foi criado no [core] armazenando as licenças comuns em /usr/share/licenses/common (ex: /usr/share/licenses/common/GPL). Se um pacote está licenciado sob uma dessas licenças, a variável de licenças deve ser definido com o nome do diretório, p. ex: license=('GPL')
-*   Se a licença apropriada não estiver incluída no pacote oficial de licenças, várias coisas devem ser feitas:
-
-1.  Os arquivos de licença devem ser incluídos em /usr/share/licenses/$pkgname/. Por exemplo: /usr/share/licenses/dibfoo/LICENSE. Uma ótima forma de fazer isso é usando:
-
- `install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"` 
-
-1.  Se o tarball fonte NÃO contém os detalhes da licenças e a licença é exibida somente no site, por exemplo, então copie a licença para um arquivo e inclua-o no pacote. Lembre-se de chamar este arquivo de forma apropriada também.
-2.  Adicione "custom" no vetor de licenças. Opcionalmente, você pode substituir 'custom' com 'custom:"nome da licença"'.
-
-*   Quando uma licença é usada em um ou mais pacotes no repositório oficial, incluindo [community], ela vira uma licença comum
-*   As licenças MIT, BSD, zlib/libpng e Python são casos especiais e não podem ser incluídos no pacote de licenças "comuns". Do ponto de vista da variável de licenças, deve ser tratado com uma licença comum (license=('BSD'), license=('MIT'), license=('ZLIB') ou license=('Python')), mas do ponto de vista do sistema de arquivos, é uma variável personalizada, porque cada licença terá sua própria linha de copyright. Cada pacote licenciado com MIT, BSD, zlib/libpng ou Python devem ter seus locais únicos de armazenamento em /usr/share/licenses/$pkgname/.
-*   Alguns pacotes podem não estar cobertos por uma única licença. Nesses casos, várias entradas pode ser feitas no vetor license, p. ex.: license=("GPL" "custom:alguma-licença-comercial"). Para a maioria dos pacotes, essas licenças funcionam de em situações diferentes, ao contrário de se aplicarem ao mesmo tempo. Quando pacman tiver a habilidade de filtrar licenças (para que você possa dizer, "Eu quero somente softwares licenciados com GPL e BSD") duas (ou mais) licenças serão tratadas pelo pacman usando o operador lógico OU, ao invés de E, de forma que o pacman vai considerar o exemplo anterior como um software licenciado via GPL, independentemente das outras licenças listadas.
-*   A (L)GPL tem várias versões e permutações dessas versões. Para softwares (L)GPL, a convenção é:
-    *   (L)GPL - (L)GPLv2 ou qualquer versão posterior
-    *   (L)GPL2 - (L)GPL2 somente
-    *   (L)GPL3 - (L)GPL3 ou qualquer versão posterior
+Veja [PKGBUILD#license](/index.php/PKGBUILD_(Portugu%C3%AAs)#license "PKGBUILD (Português)").
 
 ## Diretrizes adicionais
 

@@ -13,8 +13,6 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostarting](#Autostarting)
     *   [4.2 Set the language](#Set_the_language)
-*   [5 Known issues](#Known_issues)
-    *   [5.1 Incompatibility with systemd](#Incompatibility_with_systemd)
 
 ## List of display managers
 
@@ -34,17 +32,9 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 ### Graphical
 
-*   **[Entrance](/index.php/Enlightenment "Enlightenment")** — An EFL based display manager, highly experimental.
-
-	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
-
 *   **[GDM](/index.php/GDM "GDM")** — [GNOME](/index.php/GNOME "GNOME") display manager.
 
 	[https://wiki.gnome.org/Projects/GDM](https://wiki.gnome.org/Projects/GDM) || [gdm](https://www.archlinux.org/packages/?name=gdm)
-
-*   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE")4 display manager (discontinued).
-
-	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Cross-desktop display manager, can use various front-ends written in any toolkit.
 
@@ -53,10 +43,6 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 *   **[LXDM](/index.php/LXDM "LXDM")** — [LXDE](/index.php/LXDE "LXDE") display manager. Can be used independent of the LXDE desktop environment.
 
 	[http://sourceforge.net/projects/lxdm/](http://sourceforge.net/projects/lxdm/) || [lxdm](https://www.archlinux.org/packages/?name=lxdm)
-
-*   **MDM** — MDM display manager, used in Linux Mint, a fork of GDM 2.
-
-	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
 
@@ -155,15 +141,3 @@ Language=*your_locale*
 where *your_locale* is a value such as `en_GB.UTF-8`.
 
 Restart your display manager for the changes to take effect.
-
-## Known issues
-
-### Incompatibility with systemd
-
-*Affected DMs: Entrance, MDM*
-
-Some display managers are not fully compatible with systemd, because they reuse the [PAM](/index.php/PAM "PAM") session process. It causes various problems on second login, e.g.:
-
-*   NetworkManager applet does not work,
-*   PulseAudio volume cannot be adjusted,
-*   login failed into GNOME with another user.

@@ -484,6 +484,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://www.foxtrotgps.org/](https://www.foxtrotgps.org/) || [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps)
 
+*   **Geotag** — Match date/time information from photos with location information from a GPS unit or from a map.
+
+	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://www.archlinux.org/packages/?name=geotag)
+
 *   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
 	[https://wiki.gnome.org/Apps/Maps](https://wiki.gnome.org/Apps/Maps) || [gnome-maps](https://www.archlinux.org/packages/?name=gnome-maps)
@@ -499,6 +503,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **GPSCorrelate** — Correlate (geotagging) digital camera photos with GPS data in GPX format.
 
 	[https://github.com/freefoote/gpscorrelate](https://github.com/freefoote/gpscorrelate) || [gpscorrelate](https://www.archlinux.org/packages/?name=gpscorrelate)
+
+*   **GpsPrune** — View, edit and convert coordinate data from GPS systems.
+
+	[https://activityworkshop.net/software/gpsprune/](https://activityworkshop.net/software/gpsprune/) || [gpsprune](https://www.archlinux.org/packages/?name=gpsprune)
 
 *   **GPX Viewer** — Simple tool to visualize tracks and waypoints stored in a gpx file.
 

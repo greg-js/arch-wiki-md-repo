@@ -96,6 +96,8 @@ Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-gi
 
 **Tip:** Add an `IgnorePkg` entry to [pacman.conf](/index.php/Pacman.conf "Pacman.conf") to prevent these packages from upgrading when doing a regular update.
 
+Note: Pacman does not take dependencies into consideration when rebuilding DKMS modules. This will result in build failures when pacman tries to rebuild DKMS modules after a kernel upgrade. See bug reports [FS#52901](https://bugs.archlinux.org/task/52901) and [FS#53669](https://bugs.archlinux.org/task/53669).
+
 ## Experimenting with ZFS
 
 Users wishing to experiment with ZFS on *virtual block devices* (known in ZFS terms as VDEVs) which can be simple files like `~/zfs0.img` `~/zfs1.img` `~/zfs2.img` etc. with no possibility of real data loss are encouraged to see the [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS") article. Common tasks like building a RAIDZ array, purposefully corrupting data and recovering it, snapshotting datasets, etc. are covered.
@@ -262,7 +264,21 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 
 ### GRUB-compatible pool creation
 
-By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable features supported by GRUB, otherwise GRUB will not be able to read the pool. As of GRUB 2.02, GRUB supports all features in ZFS-on-Linux 0.6.5.10/0.7.0-rc4.
+**Note:** This section frequently goes out of date with updates to GRUB and ZFS. Consult the manual pages for the most up-to-date information.
+
+By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is suitable for all the features of ZFSonLinux 0.6.5.x, but not for the 0.7.0 branch provided by the git packages.
+
+When using the git-based packages (0.7.0) and GRUB 2.02, you can create a pool with the incompatible features disabled:
+
+```
+   # zpool create -o feature@multi_vdev_crash_dump=disabled \
+                  -o feature@large_dnode=disabled           \
+                  -o feature@sha512=disabled                \
+                  -o feature@skein=disabled                 \
+                  -o feature@edonr=disabled                 \
+                  $POOL_NAME $VDEVS
+
+```
 
 ### Importing a pool created by id
 
