@@ -84,14 +84,14 @@ $db_pass = 'YOUR_PASSWORD_HERE';
 
 Finally, configure apache to run bugzilla using mod_cgi (also can be configured using mod_perl, refer this for details)
 
-First uncomment the following line in /etc/httpd/conf/httpd.conf:
+First uncomment the following line in `/etc/httpd/conf/httpd.conf`:
 
 ```
 LoadModule cgi_module modules/mod_cgi.so
 
 ```
 
-Then add the following lines to /etc/httpd/conf/httpd.conf:
+Then add the following lines to `/etc/httpd/conf/httpd.conf`:
 
 ```
 <Directory /srv/http/bugzilla>

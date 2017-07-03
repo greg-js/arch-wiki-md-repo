@@ -12,11 +12,10 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [2.2 Host network configuration](#Host_network_configuration)
     *   [2.3 Container creation](#Container_creation)
     *   [2.4 Container configuration](#Container_configuration)
-        *   [2.4.1 Basic config with static IP networking](#Basic_config_with_static_IP_networking)
-        *   [2.4.2 Basic config with DHCP networking](#Basic_config_with_DHCP_networking)
-        *   [2.4.3 Mounts within the container](#Mounts_within_the_container)
-        *   [2.4.4 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
-        *   [2.4.5 OpenVPN considerations](#OpenVPN_considerations)
+        *   [2.4.1 Basic config with networking](#Basic_config_with_networking)
+        *   [2.4.2 Mounts within the container](#Mounts_within_the_container)
+        *   [2.4.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
+        *   [2.4.4 OpenVPN considerations](#OpenVPN_considerations)
 *   [3 Managing containers](#Managing_containers)
     *   [3.1 Basic usage](#Basic_usage)
     *   [3.2 Advanced usage](#Advanced_usage)
@@ -151,7 +150,7 @@ Alternatively, create a *privileged* container, and see: [#Converting a privileg
 
 The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.id_map = u 0 100000 65536` and the `lxc.id_map = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29) section.
 
-#### Basic config with static IP networking
+#### Basic config with networking
 
 System resources to be virtualized/isolated when a process is using the container are defined in `/var/lib/lxc/CONTAINER_NAME/config`. By default, the creation process will make a minimum setup without networking support. Below is an example config with networking:
 
@@ -172,17 +171,16 @@ lxc.network.type = veth
 lxc.network.link = br0
 lxc.network.flags = up
 lxc.network.name = eth0
-lxc.network.ipv4 = 192.168.0.3/24
-lxc.network.ipv4.gateway = 192.168.0.1
 lxc.network.hwaddr = ee:ec:fa:e9:56:7d
+# uncomment the next two lines if static IP addresses are needed
+# leaving these commented will imply DHCP networking
+#
+#lxc.network.ipv4 = 192.168.0.3/24
+#lxc.network.ipv4.gateway = 192.168.0.1
 
 ```
 
-**Note:** The lxc.network.hwaddr entry is optional and if skipped, a random MAC address will be created automatically.
-
-#### Basic config with DHCP networking
-
-Users wishing to have DHCP used within the container may omit the `lxc.network.ipv4` and `lxc.network.ipv4.gateway` lines as the Arch template provides a DHCP [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") profile by default. It is advantageous to define a MAC address for the container here to allow the DHCP server to always assign the same IP to the container's NIC (beyond the scope of this article but worth mentioning).
+**Note:** The lxc.network.hwaddr entry is optional and if skipped, a random MAC address will be created automatically. It can be advantageous to define a MAC address for the container to allow the DHCP server to always assign the same IP to the container's NIC (beyond the scope of this article but worth mentioning).
 
 #### Mounts within the container
 
@@ -275,8 +273,6 @@ It works nearly the same as lxc-console, but you are automatically accessing roo
 #### LXC clones
 
 Users with a need to run multiple containers can simplify administrative overhead (user management, system updates, etc.) by using snapshots. The strategy is to setup and keep up-to-date a single base container, then, as needed, clone (snapshot) it. The power in this strategy is that the disk space and system overhead are truly minimized since the snapshots use an overlayfs mount to only write out to disk, only the differences in data. The base system is read-only but changes to it in the snapshots are allowed via the overlayfs.
-
-One caveat to this setup is that the base lxc cannot be running when snapshots are taken.
 
 For example, setup a container as outlined above. We will call it "base" for the purposes of this guide. Now create 2 snapshots of "base" which we will call "snap1" and "snap2" with these commands:
 

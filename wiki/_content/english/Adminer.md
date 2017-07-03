@@ -1,4 +1,4 @@
-[Adminer](http://www.adminer.org/) is a web-based tool for database management. It's possible to manage [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [Sqlite3](/index.php/Sqlite3 "Sqlite3"), MS SQL, [Oracle](/index.php/Oracle "Oracle") and [Elasticsearch](/index.php/Elasticsearch "Elasticsearch").
+[Adminer](http://www.adminer.org/) is a web-based database management tool written in PHP. It's possible to manage [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [Sqlite3](/index.php/Sqlite3 "Sqlite3"), MS SQL, [Oracle](/index.php/Oracle "Oracle") and [Elasticsearch](/index.php/Elasticsearch "Elasticsearch").
 
 It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). You can find more pieces of information about this project at the [official page](http://www.adminer.org/en/) or at [Wikipedia](https://en.wikipedia.org/wiki/Adminer "wikipedia:Adminer").
 

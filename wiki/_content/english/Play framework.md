@@ -47,7 +47,7 @@ Hence some global changing state command need to be run in root. It only concern
 
 The playframework AUR package install a generic daemon script `/etc/rc.d/skeleton_playapp` and a configuration example `/etc/conf.d/playapp_sample`.
 
-The idea is to create a standalone daemon foreach of your play application. See instructions bellow (also available in [/etc/conf.d/playapp_sample](https://raw.github.com/gre/play-packages/master/ArchLinux_AUR/playapp_sample)):
+The idea is to create a standalone daemon for each of your play applications. See instructions below (also available in [/etc/conf.d/playapp_sample](https://raw.github.com/gre/play-packages/master/ArchLinux_AUR/playapp_sample)):
 
 ### Instructions
 
@@ -73,7 +73,7 @@ The configuration file contains variables defining your play application instanc
  `/etc/conf.d/{appname}` 
 ```
 PLAY_APP=  # (required) Path of your play application
-PLAY_USER= # (optional) The Linux user to use to run the play server. Using root if not setted
+PLAY_USER= # (optional) The Linux user to use to run the play server. Using root if not set
 PLAY_ARGS= # (optional) The play args to run the play server with. 
            #            Setting to "--%prod" can be useful to override the play profile id
 ```

@@ -2,19 +2,19 @@ tp_smapi is a set of kernel modules that retrieves information from and conveys 
 
 ## Contents
 
-*   [1 Supported Laptops](#Supported_Laptops)
+*   [1 Supported laptops](#Supported_laptops)
 *   [2 Installation](#Installation)
 *   [3 Features](#Features)
-    *   [3.1 Control Battery Charging](#Control_Battery_Charging)
-        *   [3.1.1 General Way](#General_Way)
+    *   [3.1 Control battery charging](#Control_battery_charging)
+        *   [3.1.1 General way](#General_way)
         *   [3.1.2 Check whether settings were accepted](#Check_whether_settings_were_accepted)
-    *   [3.2 Protect the Hard Disk from Drops](#Protect_the_Hard_Disk_from_Drops)
-*   [4 Workaround for Partially Supported Laptops](#Workaround_for_Partially_Supported_Laptops)
-    *   [4.1 1st Option](#1st_Option)
-    *   [4.2 2nd Option](#2nd_Option)
-*   [5 See Also](#See_Also)
+    *   [3.2 Protect the hard disk from drops](#Protect_the_hard_disk_from_drops)
+*   [4 Workaround for partially supported laptops](#Workaround_for_partially_supported_laptops)
+    *   [4.1 1st option](#1st_option)
+    *   [4.2 2nd option](#2nd_option)
+*   [5 See also](#See_also)
 
-## Supported Laptops
+## Supported laptops
 
 First check whether your laptop is supported. Thinkwiki has a comprehensive [list of all supported Thinkpads.](http://www.thinkwiki.org/wiki/Tp_smapi#Model-specific_status) In case your TP does not support stop_threshold but only start_threshold please go here [#Workaround for Partially Supported Laptops](#Workaround_for_Partially_Supported_Laptops) for a decent workaround.
 
@@ -24,37 +24,23 @@ If you are installing on a recent Thinkpad that has an Ivy Bridge processor or l
 
 [Install](/index.php/Install "Install") the [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) package. For the custom [linux-ck](/index.php/Linux-ck "Linux-ck") kernel there is [tp_smapi-ck](https://aur.archlinux.org/packages/tp_smapi-ck/) in the [AUR](/index.php/AUR "AUR").
 
-It's providing you 3 new [Kernel modules](/index.php/Kernel_modules "Kernel modules").
+It provides you 3 [Kernel modules](/index.php/Kernel_modules "Kernel modules"):
 
-| **Kernel Module** |
-| **Name** | **Description** |
-| tp_smapi | 
-
-ThinkPad SMAPI Support
-
- |
-| hdaps | 
-
-IBM Hard Drive Active Protection System ([HDAPS](/index.php/HDAPS "HDAPS")) driver
-
- |
-| thinkpad_ec | 
-
-ThinkPad embedded controller hardware access (tp_smapi and hdaps both depend on it)
-
- |
+| tp_smapi | ThinkPad SMAPI Support |
+| hdaps | IBM Hard Drive Active Protection System ([HDAPS](/index.php/HDAPS "HDAPS")) driver |
+| thinkpad_ec | ThinkPad embedded controller hardware access (tp_smapi and hdaps both depend on it) |
 
 After a reboot, tp_smapi and its dependencies will get autoloaded and the sysfs-interface under `/sys/devices/platform/smapi` should be fully functional.
 
 ## Features
 
-Here are a couple of useful things you can do using tp_smapi. Please feel free to add your own.
+Here are a couple of useful things you can do using tp_smapi.
 
-### Control Battery Charging
+### Control battery charging
 
-[It's bad for most laptop batteries to hold a full charge for long periods of time.](http://www.thinkwiki.org/wiki/Maintenance#Battery_treatment) You should try to keep your battery in the 40-80% charged range, unless you need the battery life for extended periods of time.
+It's bad for most laptop batteries to hold a full charge for long periods of time. [[1]](http://www.thinkwiki.org/wiki/Maintenance#Battery_treatment) You should try to keep your battery in the 40-80% charged range, unless you need the battery life for extended periods of time.
 
-#### General Way
+#### General way
 
 tp_smapi lets you control the start and stop charging threshold to do just that. Run these commands to set these to good values:
 
@@ -78,7 +64,7 @@ echo ${3:-80} > /sys/devices/platform/smapi/BAT${1:-0}/stop_charge_thresh
 
 ```
 
-With this script to set a battery threshold is very simple, just type (if set_bat_thresh is the name of the script):
+Make it [executable](/index.php/Executable "Executable"). With this script to set a battery threshold is very simple, just type (if set_bat_thresh is the name of the script):
 
 ```
 set_battery_thresholds 0 96 100
@@ -86,13 +72,6 @@ set_battery_thresholds 0 96 100
 ```
 
 Or run it with no arguments to default to BAT0, and thresholds of 40% and 80%.
-
-Set it runnable:
-
-```
-[root ~]# **chmod 744 /usr/sbin/set_battery_thresholds**
-
-```
 
 Let [systemd](/index.php/Systemd "Systemd") execute the script at startup (Using rc.local from initscripts is deprecated). Thus, create `/etc/systemd/system/tp_smapi_set_battery_thresholds.service`:
 
@@ -113,7 +92,7 @@ WantedBy=multi-user.target
 Enable it in systemd:
 
 ```
-[root ~]# **systemctl enable tp_smapi_set_battery_thresholds.service**
+# systemctl enable tp_smapi_set_battery_thresholds.service
 
 ```
 
@@ -144,11 +123,11 @@ cat /sys/devices/platform/smapi/BAT0/stop_charge_thresh
 
 ```
 
-### Protect the Hard Disk from Drops
+### Protect the hard disk from drops
 
 tp_smapi includes a driver to read the accelerometer in your laptop to detect drops and other events that could cause damage to your hard drive. See the [HDAPS](/index.php/HDAPS "HDAPS") page for more information on this useful feature.
 
-## Workaround for Partially Supported Laptops
+## Workaround for partially supported laptops
 
 For partially supported laptops you can still gain control over your battery. First check what is actually supported:
 
@@ -160,9 +139,9 @@ cat /sys/devices/platform/smapi/BAT0/stop_charge_thresh
 
 If start-charge_thresh is supported but not stop_charge_thresh but you still want to have your computer stop charging your battery you have two options.
 
-Note : none of the two options works on T42p.
+Note: None of the two options works on T42p.
 
-### 1st Option
+### 1st option
 
 *   create the script `/usr/sbin/set_battery_thresholds` as above
 *   copy the original `/etc/acpi/handler.sh` to `/etc/acpi/handler.sh.start`
@@ -191,7 +170,7 @@ exit 0
 
 ```
 
-### 2nd Option
+### 2nd option
 
 To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) or [tpacpi-bat-git](https://aur.archlinux.org/packages/tpacpi-bat-git/) from the AUR.
 
@@ -207,6 +186,6 @@ The example values 40 and 80 given here are in percent of the full battery capac
 
 **Note:** See tpacpi-bat help for the list of commands: `perl /usr/lib/perl5/vendor_perl/tpacpi-bat -h`.
 
-## See Also
+## See also
 
 [tp_smapi on ThinkWiki](http://www.thinkwiki.org/wiki/Tp_smapi)

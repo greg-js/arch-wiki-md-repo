@@ -1,6 +1,8 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
-	Nextcloud is a suite of client-server software for creating file hosting services and using them. It is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.
+	Nextcloud is a suite of client-server software for creating file hosting services and using them.
+
+It is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.
 
 For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differences_from_ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
 
@@ -197,7 +199,7 @@ upstream php-handler {
 
 in the `/etc/nginx/conf.d/nextcloud.conf` file.
 
-From this point on, it is recommended to obtain a secure-certificates using [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt"), see [#Security Hardening](#Security_Hardening).
+From this point on, it is recommended to obtain a secure-certificates using [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"), see [#Security Hardening](#Security_Hardening).
 
 ##### PHP-FPM configuration
 

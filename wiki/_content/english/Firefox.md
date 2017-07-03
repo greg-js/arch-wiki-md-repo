@@ -279,11 +279,11 @@ It may be due to a corrupted `cookies.sqlite` file in [Firefox's profile](https:
 Open a terminal of choice and type the following:
 
 ```
-$ rm -f ~/.mozilla/firefox/*xxxxxxxx*.default/cookies.sqlite
+$ rm -f ~/.mozilla/firefox/<profile id>.default/cookies.sqlite
 
 ```
 
-**Note:** *xxxxxxxx* represents a random string of 8 characters.
+The profile id is a random 8 character string.
 
 Restart Firefox and see if it solved the problem.
 

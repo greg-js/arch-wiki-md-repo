@@ -60,7 +60,7 @@ esac
 
 ## Using Notion
 
-You can view Notion's man page at any time during use by pressing the F1 key and pressing the return key This will tell you the default key bindings for Notion. You can also access the man page for other programs this way by pressing F1, typing in the program's name and pressing return.
+You can view Notion's man page during use with the F1 key and pressing the return key, this will tell you the default key bindings for Notion. You can also access the man page for other programs this way by pressing F1, typing in the program's name and pressing return.
 
 ## Lua 5.2
 
@@ -79,7 +79,7 @@ replace
 
 ```
 
-to
+with
 
 ```
  function win_goto(w) return w['goto'](w) end

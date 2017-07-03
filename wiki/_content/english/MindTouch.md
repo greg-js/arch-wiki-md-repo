@@ -1,4 +1,4 @@
-MindTouch is an enterprise wiki and collaborative portal. For more information, see the [Wikipedia article](https://en.wikipedia.org/wiki/MindTouch_Core "wikipedia:MindTouch Core"), and the [SourceForge project](https://sourceforge.net/projects/dekiwiki/).
+[MindTouch](https://mindtouch.com/) is an enterprise wiki and collaborative portal.
 
 ## Installation
 
@@ -104,4 +104,5 @@ MindTouch can be configured to start using Prince if it's installed after the Mi
 
 ## More Resources
 
+*   [https://sourceforge.net/projects/dekiwiki/](https://sourceforge.net/projects/dekiwiki/)
 *   [MindTouch Community Portal](http://developer.mindtouch.com)

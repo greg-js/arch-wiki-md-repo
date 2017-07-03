@@ -2,7 +2,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [putty](https://www.archlinux.org/packages/?name=putty). For a menu item and icon, install [putty-freedesktop](https://aur.archlinux.org/packages/putty-freedesktop/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [putty](https://www.archlinux.org/packages/?name=putty).
+
+For a menu item and icon, install [putty-freedesktop](https://aur.archlinux.org/packages/putty-freedesktop/).
 
 ## Configuration
 

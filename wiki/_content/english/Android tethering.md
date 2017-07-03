@@ -23,8 +23,8 @@ Using an Android phone as a Wi-Fi access point (to a 3G/4G mobile internet conne
 
 Enable it via one of the following:
 
-*   `Settings -> Wireless & networks -> Internet tethering -> Wi-Fi access point`
-*   `Settings -> More... -> Tethering & mobile hotspot -> Mobile Wi-Fi hotspot`
+*   *Settings > Wireless & networks > Internet tethering > Wi-Fi access point*
+*   *Settings > More... > Tethering & mobile hotspot > Mobile Wi-Fi hotspot*
 
 **Note:** On some phones, this method will discharge the battery rapidly and tends to cause intense heating, unlike USB.
 
@@ -35,8 +35,8 @@ USB tethering is available for devices running Android 2.2 "Froyo" or newer.
 *   Disconnect your computer from any wireless or wired networks
 *   Connect the phone to your computer using the USB cable (the USB connection mode -- Phone Portal, Memory Card or Charge only -- is not important, but please note that you will not be able to change the USB mode during tethering)
 *   Enable the tethering option from your phone. This is usually done from one of:
-    *   `Settings -> Wireless & networks -> Internet tethering` (or `Tethering & portable hotspot`, for more recent versions)
-    *   `Settings -> More... -> Tethering & mobile hotspot -> USB tethering`
+    *   *Settings -> Wireless & networks -> Internet tethering* (or *Tethering & portable hotspot*, for more recent versions)
+    *   *Settings -> More... -> Tethering & mobile hotspot -> USB tethering*
 *   Make sure that the USB interface is recognized by the system by using the following command:
 
 	 `$ ip link` 

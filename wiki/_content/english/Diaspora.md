@@ -97,7 +97,7 @@ You can exit the Rails console by pressing `Ctrl+d`.
 
 ### GDM login screen with Diaspora
 
-GDM will insert the user diaspora in its login window because it currently considers the id range 500-1000 as normal users while Arch considers this range for system users as defined in /etc/login.defs. GDM does that probably to keep legacy normal users working. To exclude this user from the login window, add this 'Exclude' line in your /etc/gdm/custom.conf file:
+GDM will insert the user diaspora in its login window because it currently considers the id range 500-1000 as normal users while Arch considers this range for system users as defined in /etc/login.defs. GDM does that probably to keep legacy normal users working. To exclude this user from the login window, add this 'Exclude' line in your `/etc/gdm/custom.conf` file:
 
 ```
 [greeter]
@@ -107,4 +107,4 @@ Exclude=diaspora
 
 ## See also
 
-*   [Diaspora git](http://github.com/diaspora/diaspora)
+*   [https://github.com/diaspora/diaspora](https://github.com/diaspora/diaspora)

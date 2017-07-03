@@ -1,4 +1,4 @@
-XWiki is an open-source enterprise-ready wiki written in Java, with a focus on extensibility. For more information, see the [Wikipedia article](https://en.wikipedia.org/wiki/XWiki "wikipedia:XWiki"), and the [XWiki Homepage](http://www.xwiki.org).
+[XWiki](http://www.xwiki.org) is an open-source enterprise-ready wiki written in Java, with a focus on extensibility.
 
 You may also be interested in [Foswiki](/index.php/Foswiki "Foswiki"), which caters to similar needs, but is written in Perl.
 
@@ -44,7 +44,7 @@ Feel free to follow along on the [XWiki Installation Guide](http://platform.xwik
 *   Launch the XWiki application by clicking on `/xwiki` in Tomcat Manager.
 *   Download the XAR file for XWiki and upload it to populate the empty Wiki.
 
-## Nginx Proxy Configuration
+## Nginx proxy configuration
 
 I found that instructing nginx to proxy to `[http://localhost:8080/xwiki/](http://localhost:8080/xwiki/)` did not work: the generated URLs were incorrect. Contrary to what is indicated in the [XWiki documentation](http://platform.xwiki.org/xwiki/bin/view/AdminGuide/Configuration#HReverseproxysetup), I could not make the URLs correct through the use of HTTP headers.
 

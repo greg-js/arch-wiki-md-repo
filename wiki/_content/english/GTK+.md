@@ -35,6 +35,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [6.8 Thumbnail support for GTK+ 2 file dialog](#Thumbnail_support_for_GTK.2B_2_file_dialog)
     *   [6.9 Button/menu icons in some apps in GNOME Wayland session](#Button.2Fmenu_icons_in_some_apps_in_GNOME_Wayland_session)
     *   [6.10 Printers not shown in the GTK print dialog](#Printers_not_shown_in_the_GTK_print_dialog)
+    *   [6.11 Some GTK+ 2 themes only change the UI color palette](#Some_GTK.2B_2_themes_only_change_the_UI_color_palette)
 *   [7 Examples](#Examples)
 *   [8 See also](#See_also)
 
@@ -74,33 +75,33 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 **GTK+ 2 and GTK+ 3.20 or newer are supported:**
 
-*   **Breeze** — GTK+ version of KDE's default widget theme.
-
-	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
-
-*   **Deepin** — Default theme for the Deepin desktop.
-
-	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
-
-*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *HighContrast*
-
-	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
-
-*   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *BlueMenta*, *Blue-Submarine*, *ContrastHighInverse*, *Green-Submarine*, *Menta*, *TraditionalGreen*, *TraditionalOk*
-
-	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
-
-*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce).
-
-	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
-
-*   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines.
+*   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines. Includes: *Adapta*, *Adapta-Eta*, *Adapta-Nokto*, *Adapta-Nokto-Eta*
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://www.archlinux.org/packages/?name=adapta-gtk-theme)
 
-*   **Arc** — A flat theme with a modern look and transparent elements.
+*   **Arc** — A flat theme with a modern look and transparent elements. Includes: *Arc*, *Arc-Dark*, *Arc-Darker*
 
-	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme)
+	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || with transparency: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), without transparency: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
+
+*   **Breeze** — GTK+ version of KDE's default widget theme. Includes: *Breeze*, *Breeze-Dark*
+
+	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
+
+*   **Deepin** — Default theme for the Deepin desktop. Includes: *deepin*, *deepin-dark*
+
+	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
+
+*   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *Adwaita-dark*, *HighContrast*
+
+	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
+
+*   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *Blue-Submarine*, *BlueMenta*, *ContrastHighInverse*, *Green-Submarine*, *GreenLaguna*, *Menta*, *TraditionalGreen*, *TraditionalOk*
+
+	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
+
+*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: *Numix*
+
+	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
 
 *   **Blackbird** — Dark Desktop Suite for Xfce.
 
@@ -574,6 +575,10 @@ Simply set them to 0 or remove the whole file to use GNOME defaults.
 ### Printers not shown in the GTK print dialog
 
 From GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
+
+### Some GTK+ 2 themes only change the UI color palette
+
+Depending on the theme of choice's support for GTK+ 2, UI controls may still have the default Raleigh appearance, possibly with a different color palette. This is due to these themes requiring the GTK+ 2 Murrine engine, which is missing (GTK+ 2 programs should complain about it on their standard error output). Install the [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) package.
 
 ## Examples
 

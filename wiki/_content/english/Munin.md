@@ -1,17 +1,10 @@
-From the [project web page](http://munin-monitoring.org/):
+[Munin](http://munin-monitoring.org/) is a networked resource monitoring tool that can help analyze resource trends and bottlenecks. Munin has a master/node architecture in which the master regularly fetches the data from the nodes and presents the information in graphs through a web interface. A default installation provides a lot of graphs with almost no work and new graphs can be easily created added as plugins. [[1]](http://munin-monitoring.org/)
 
-	*Munin* the monitoring tool surveys all your computers and remembers what it saw. It presents all the information in graphs through a web interface. Its emphasis is on plug and play capabilities. After completing a installation a high number of monitoring plugins will be playing with no more effort.
-
-	Using Munin you can easily monitor the performance of your computers, networks, SANs, applications, weather measurements and whatever comes to mind. It makes it easy to determine "what's different today" when a performance problem crops up. It makes it easy to see how you're doing capacity-wise on any resources.
-
-	Munin uses the excellent [RRDTool](http://oss.oetiker.ch/rrdtool/) (written by Tobi Oetiker) and the framework is written in Perl, while plugins may be written in any language. Munin has a master/node architecture in which the master connects to all the nodes at regular intervals and asks them for data. It then stores the data in RRD files, and (if needed) updates the graphs. One of the main goals has been ease of creating new plugins (graphs). [[1]](http://munin-monitoring.org/)
-
-Simply put, Munin allows you to make graphs about system statistics. You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/) to see some examples of what it can do.
+You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/) for an example.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 munin and munin-node](#munin_and_munin-node)
 *   [2 Configuration](#Configuration)
     *   [2.1 Munin Master](#Munin_Master)
         *   [2.1.1 Directories](#Directories)
@@ -46,13 +39,11 @@ Simply put, Munin allows you to make graphs about system statistics. You can che
 
 ## Installation
 
-*Munin* relies on a client-server model. The client is *munin-node*, and the server is *munin* (referred as to "munin-master" in the documentation).
+[Install](/index.php/Install "Install") [munin](https://www.archlinux.org/packages/?name=munin) on the master machine and [munin-node](https://www.archlinux.org/packages/?name=munin-node) on the devices that you whish to monitor.
 
-You will only need to install *munin* on a single machine, but *munin-node* will need to be installed on all machines you wish to monitor. The *munin-node* can also be installed together with *munin* on the master so the the master machine can monitor itself. Further documentation may be found on the [Munin documentation wiki](http://munin-monitoring.org/wiki/Documentation).
+You can also install them both on the same machine so that the master machine monitors itself.
 
-### munin and munin-node
-
-[Install](/index.php/Install "Install") the [munin](https://www.archlinux.org/packages/?name=munin) (munin master) and [munin-node](https://www.archlinux.org/packages/?name=munin-node) packages.
+Further documentation may be found on the [Munin documentation wiki](http://munin-monitoring.org/wiki/Documentation).
 
 ## Configuration
 
@@ -163,7 +154,7 @@ When `graph_strategy cgi` is enabled in `/etc/munin/munin.conf` ensure the direc
 
 Once `munin-cron` is configured to run Munin will be ready to start generating graphs. Ensure the `munin-node.service` is running on each of the nodes. It may be useful to jump ahead to the Munin Node section and return here once the node are up and running.
 
-Change to the `munin` user with the following `su` command, the `-s`/`--shell` option is for specifiying the shell (in this case bash). This needs to be done from root shell, since the `munin` user doesn't have a password:
+Change to the `munin` user with the following `su` command, the `-s`/`--shell` option is for specifiying the shell (in this case bash). This needs to be done from root shell, since the `munin` user does not have a password:
 
 ```
 # su -s /bin/bash munin
@@ -292,7 +283,7 @@ LWP::UserAgent not found at /etc/munin/plugins/apache_accesses line 86.
 
 ```
 
-indicates that a [perl](/index.php?title=Perl&action=edit&redlink=1 "Perl (page does not exist)") function could not be found. To resolve the problem, [install](/index.php/Install "Install") the missing library, in this case, [perl-libwww](https://www.archlinux.org/packages/?name=perl-libwww).
+indicates that a perl function could not be found. To resolve the problem, [install](/index.php/Install "Install") the missing library, in this case, [perl-libwww](https://www.archlinux.org/packages/?name=perl-libwww).
 
 #### Permissions
 
@@ -347,91 +338,91 @@ Install [perl-cgi-fast](https://www.archlinux.org/packages/?name=perl-cgi-fast).
 
 You must enable one of these:
 
-*   **mod_cgid** (or **mod_cgi** if using mpm_prefork_module) by uncommenting the line in httpd.conf.
-*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add "**LoadModule mod_fcgid modules/mod_fcgid.so**" in httpd.conf.
+*   `mod_cgid` (or `mod_cgi` if using mpm_prefork_module) by uncommenting the line in `httpd.conf`.
+*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add `LoadModule mod_fcgid modules/mod_fcgid.so` in `httpd.conf`.
 
 ```
 <VirtualHost *:80>
-    ServerName localhost
-    ServerAdmin  root@localhost
+   ServerName localhost
+   ServerAdmin  root@localhost
 
-    DocumentRoot /srv/http/munin
+   DocumentRoot /srv/http/munin
 
-    ErrorLog /var/log/httpd/munin-error.log
-    CustomLog /var/log/httpd/munin-access.log combined
+   ErrorLog /var/log/httpd/munin-error.log
+   CustomLog /var/log/httpd/munin-access.log combined
 
-    # Rewrites
-    RewriteEngine On
+   # Rewrites
+   RewriteEngine On
 
-    # Images
-    RewriteRule ^/munin-cgi(.*) /usr/share/munin/cgi/$1 [L] 
+   # Images
+   RewriteRule ^/munin-cgi(.*) /usr/share/munin/cgi/$1 [L] 
 
-    # Ensure we can run (fast)cgi scripts
-    <Directory "/usr/share/munin/cgi">
-        Require all granted
-        Options +ExecCGI
-        <IfModule mod_fcgid.c>
-            SetHandler fcgid-script
-        </IfModule>
-        <IfModule !mod_fcgid.c>
-            SetHandler cgi-script
-        </IfModule>
-    </Directory>
+   # Ensure we can run (fast)cgi scripts
+   <Directory "/usr/share/munin/cgi">
+       Require all granted
+       Options +ExecCGI
+       <IfModule mod_fcgid.c>
+           SetHandler fcgid-script
+       </IfModule>
+       <IfModule !mod_fcgid.c>
+           SetHandler cgi-script
+       </IfModule>
+   </Directory>
 </VirtualHost>
 
 ```
 
 #### Full dynamic
 
-Use this VirtualHost if you want to set **html_strategy** and **graph_strategy** to "**cgi**". Page loads will take longer because all the HTML and PNG files will be dynamically generated, but the munin-cron run will take less time because it will not execute munin-html and munin-graph. This feature may become necessary for you if your master polls many nodes and the munin-cron risks taking more than 5 minutes.
+Use this VirtualHost if you want to set `html_strategy` and `graph_strategy` to `cgi`. Page loads will take longer because all the HTML and PNG files will be dynamically generated, but the munin-cron run will take less time because it will not execute munin-html and munin-graph. This feature may become necessary for you if your master polls many nodes and the munin-cron risks taking more than 5 minutes.
 
 Install [perl-cgi-fast](https://www.archlinux.org/packages/?name=perl-cgi-fast).
 
 You must enable one of these:
 
-*   **mod_cgid** (or **mod_cgi** if using mpm_prefork_module) by uncommenting the line in httpd.conf.
-*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add "**LoadModule mod_fcgid modules/mod_fcgid.so**" in httpd.conf.
+*   `mod_cgid` (or `mod_cgi` if using mpm_prefork_module) by uncommenting the line in `httpd.conf`.
+*   Or install [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) and add `LoadModule mod_fcgid modules/mod_fcgid.so` in `httpd.conf`.
 
 ```
 <VirtualHost *:80>
-    ServerName localhost
-    ServerAdmin  root@localhost
+   ServerName localhost
+   ServerAdmin  root@localhost
 
-    DocumentRoot /srv/http/munin
+   DocumentRoot /srv/http/munin
 
-    ErrorLog /var/log/httpd/munin-error.log
-    CustomLog /var/log/httpd/munin-access.log combined
+   ErrorLog /var/log/httpd/munin-error.log
+   CustomLog /var/log/httpd/munin-access.log combined
 
-    # Rewrites
-    RewriteEngine On
+   # Rewrites
+   RewriteEngine On
 
-    # Static content in /static
-    RewriteRule ^/favicon.ico /etc/munin/static/favicon.ico [L] 
-    RewriteRule ^/static/(.*) /etc/munin/static/$1          [L] 
+   # Static content in /static
+   RewriteRule ^/favicon.ico /etc/munin/static/favicon.ico [L] 
+   RewriteRule ^/static/(.*) /etc/munin/static/$1          [L] 
 
-    # HTML
-    RewriteCond %{REQUEST_URI} .html$ [or]
-    RewriteCond %{REQUEST_URI} =/
-    RewriteRule ^/(.*)          /usr/share/munin/cgi/munin-cgi-html/$1 [L] 
+   # HTML
+   RewriteCond %{REQUEST_URI} .html$ [or]
+   RewriteCond %{REQUEST_URI} =/
+   RewriteRule ^/(.*)          /usr/share/munin/cgi/munin-cgi-html/$1 [L] 
 
-    # Images
-    RewriteRule ^/munin-cgi(.*) /usr/share/munin/cgi/$1 [L] 
+   # Images
+   RewriteRule ^/munin-cgi(.*) /usr/share/munin/cgi/$1 [L] 
 
-    <Directory "/etc/munin/static">
-        Require all granted
-    </Directory>
+   <Directory "/etc/munin/static">
+       Require all granted
+   </Directory>
 
-    # Ensure we can run (fast)cgi scripts
-    <Directory "/usr/share/munin/cgi">
-        Require all granted
-        Options +ExecCGI
-        <IfModule mod_fcgid.c>
-            SetHandler fcgid-script
-        </IfModule>
-        <IfModule !mod_fcgid.c>
-            SetHandler cgi-script
-        </IfModule>
-    </Directory>
+   # Ensure we can run (fast)cgi scripts
+   <Directory "/usr/share/munin/cgi">
+       Require all granted
+       Options +ExecCGI
+       <IfModule mod_fcgid.c>
+           SetHandler fcgid-script
+       </IfModule>
+       <IfModule !mod_fcgid.c>
+           SetHandler cgi-script
+       </IfModule>
+   </Directory>
 </VirtualHost>
 
 ```

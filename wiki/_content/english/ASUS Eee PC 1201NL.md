@@ -10,9 +10,7 @@
 | Hibernate | **Working** | uswsusp-git |
 | Multi-input touchpad | **Only emulation** |
 
-**This is just a draft - more detailed instructions coming up soon + more detailed tests**
-
-Netbook works flawlessly with Arch Linux (if you encounter freezes see Troubleshooting below)
+Netbook works flawlessly with Arch Linux (if you encounter freezes see Troubleshooting below).
 
 ## Contents
 
@@ -28,19 +26,19 @@ Netbook works flawlessly with Arch Linux (if you encounter freezes see Troublesh
 *   [7 Tips](#Tips)
     *   [7.1 1366x768 in console with NVIDIA proprietary driver](#1366x768_in_console_with_NVIDIA_proprietary_driver)
 
-# HDD important issue
+## HDD important issue
 
 See [Laptop#Hard drive spin down problem](/index.php/Laptop#Hard_drive_spin_down_problem "Laptop").
 
-# Graphics
+## Graphics
 
-See either [NVIDIA](/index.php/NVIDIA "NVIDIA") for the proprietary driver or [nouveau](/index.php/Nouveau "Nouveau") for the open-source driver.
+See either [NVIDIA](/index.php/NVIDIA "NVIDIA") for the proprietary driver or [Nouveau](/index.php/Nouveau "Nouveau") for the open-source driver.
 
-# Wireless
+## Wireless
 
 There is native support from 3.0 kernel version with rtl8192se module.
 
-# ACPI Functions
+## ACPI Functions
 
 In order to use the function keys and extend battery life, you can set up the ACPI Driver, then install and configure the tools below.
 
@@ -60,7 +58,7 @@ FATAL: Error inserting eeepc_laptop (/lib/modules/2.6.32-ARCH/kernel/drivers/pla
 
 you need to add *acpi_osi=Linux* to kernel parameters in your bootloader configuration.
 
-## Function Keys
+### Function Keys
 
 You must have [acpid](/index.php/Acpid "Acpid") installed to use the Function keys.
 
@@ -96,23 +94,23 @@ Afterward, you must restart acipd:
 
 ```
 
-# Power management
+## Power management
 
 See [Power management](/index.php/Power_management "Power management") and [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
 
-# Troubleshooting
+## Troubleshooting
 
-## Machine does not resume after suspend2ram
+### Machine does not resume after suspend2ram
 
 You have to unload r8192se_pci module right before suspending. See Suspend2RAM section of this article for details.
 
-## After suspending the machine immediately resumes
+### After suspending the machine immediately resumes
 
 You have to unload usb module(s) before suspending. See Suspend2RAM section of this article for details.
 
-# Tips
+## Tips
 
-## 1366x768 in console with NVIDIA proprietary driver
+### 1366x768 in console with NVIDIA proprietary driver
 
 Load kernel with parameter acpi_osi=Linux
 

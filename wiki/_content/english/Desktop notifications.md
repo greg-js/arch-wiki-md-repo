@@ -40,7 +40,7 @@ You can choose one of the following implementations:
 
 	[https://github.com/linuxdeepin/deepin-notifications](https://github.com/linuxdeepin/deepin-notifications) || [deepin-notifications](https://www.archlinux.org/packages/?name=deepin-notifications)
 
-*   **Dunst** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
+*   **[Dunst](/index.php/Dunst "Dunst")** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
 	[http://www.knopwob.org/dunst/](http://www.knopwob.org/dunst/) || [dunst](https://www.archlinux.org/packages/?name=dunst)
 

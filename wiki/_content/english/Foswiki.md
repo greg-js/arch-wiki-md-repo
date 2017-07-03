@@ -1,10 +1,5 @@
 [Foswiki](http://foswiki.org) is a free enterprise collaboration platform written in Perl; developed, supported and maintained by its users and the open-source community.
 
-More information:
-
-*   [Wikipedia article](https://en.wikipedia.org/wiki/Foswiki "wikipedia:Foswiki")
-*   [The Foswiki website](http://foswiki.org)
-
 You may also be interested in [XWiki](/index.php/XWiki "XWiki"), which caters to similar needs, but is Java-based.
 
 ## Contents

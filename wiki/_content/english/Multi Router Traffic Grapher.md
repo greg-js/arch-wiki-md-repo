@@ -1,32 +1,27 @@
+[MRTG](http://oss.oetiker.ch/mrtg/) (Multi Router Traffic Grapher) monitors SNMP network devices and generates graphs showing how much traffic has passed through each interface.
+
 ## Contents
 
-*   [1 Server Setup](#Server_Setup)
+*   [1 Server setup](#Server_setup)
 *   [2 Apache configuration](#Apache_configuration)
-*   [3 MRTG Setup](#MRTG_Setup)
+*   [3 MRTG setup](#MRTG_setup)
 *   [4 mrtg.cfg Global configuration](#mrtg.cfg_Global_configuration)
-*   [5 Resource Monitoring](#Resource_Monitoring)
-    *   [5.1 CPU Monitoring](#CPU_Monitoring)
+*   [5 Resource monitoring](#Resource_monitoring)
+    *   [5.1 CPU monitoring](#CPU_monitoring)
     *   [5.2 Memory usage](#Memory_usage)
-    *   [5.3 Swap Usage](#Swap_Usage)
-    *   [5.4 number of processes](#number_of_processes)
-    *   [5.5 established connections](#established_connections)
-    *   [5.6 users count](#users_count)
-    *   [5.7 monitor mount points](#monitor_mount_points)
+    *   [5.3 Swap usage](#Swap_usage)
+    *   [5.4 Number of processes](#Number_of_processes)
+    *   [5.5 Established connections](#Established_connections)
+    *   [5.6 Users count](#Users_count)
+    *   [5.7 Monitor mount points](#Monitor_mount_points)
     *   [5.8 Index page](#Index_page)
 *   [6 Startup script](#Startup_script)
 
-## Server Setup
+## Server setup
 
-This document assumes that you already have a [Apache](/index.php/Apache_and_FastCGI "Apache and FastCGI") and [net-snmp](/index.php/Snmpd "Snmpd") working and configured properly
+This document assumes that you already have a [Apache](/index.php/Apache_and_FastCGI "Apache and FastCGI") and [net-snmp](/index.php/Snmpd "Snmpd") working and configured properly.
 
-The following should all be performed as root.
-
-*   Install the necessary programs
-
-```
-# pacman -S mrtg perl-net-snmp
-
-```
+[Install](/index.php/Install "Install") [mrtg](https://www.archlinux.org/packages/?name=mrtg) and [perl-net-snmp](https://www.archlinux.org/packages/?name=perl-net-snmp).
 
 *   create an mrtg user
 
@@ -61,7 +56,7 @@ Alias /mrtg /srv/http/mrtg/html/
 
 ```
 
-## MRTG Setup
+## MRTG setup
 
 There are many ways to configure the mrtg for your local server. Here, the easiest way to expand the application for other server and network appliances is described if needed.
 
@@ -124,7 +119,7 @@ the global configuration lines mean :
 
 	9) the interval to refresh the HTML files
 
-## Resource Monitoring
+## Resource monitoring
 
 Now that we have the global configuration set we need to add the resources and devices we want to monitor.
 
@@ -146,7 +141,7 @@ in this tutorial we are going to monitor:
 
 	8)the server interfaces
 
-### CPU Monitoring
+### CPU monitoring
 
 for monitoring the CPU we need to add the next lines :
 
@@ -190,7 +185,7 @@ Colours[localhost.memtotal]: Blue#1000ff, Black#000000, Gray#CCCCCC, Yellow#FFFF
 
 ```
 
-### Swap Usage
+### Swap usage
 
 for swap usage add the following lines :
 
@@ -213,7 +208,7 @@ Colours[localhost.swap]: Blue#1000ff,Violet#ff00ff,Black#000000, Gray#CCCCCC
 
 in the title section some calculation are made. MRTG knows to calculate the values given from the OID
 
-### number of processes
+### Number of processes
 
 for getting the number of processes running we are doing some unique here
 
@@ -248,7 +243,7 @@ print int($num);
 
 ```
 
-### established connections
+### Established connections
 
 in order to get a graph about established connections we are doing the way as the privies section :
 
@@ -278,11 +273,11 @@ print int($num);
 
 ```
 
-### users count
+### Users count
 
 for the users count once again we are using a Perl script to create an integer output
 
-for the mrtg configuration we need to add :
+for the mrtg configuration we need to add:
 
 ```
 # get number of current users
@@ -297,7 +292,7 @@ Colours[localhost.users]: Red#FF0000,White#FFFFFF,Blue#0066CC,Black#000000
 
 ```
 
-the linux_users.pl file content is :
+The linux_users.pl file content is:
 
 ```
 #!/usr/bin/perl
@@ -309,7 +304,7 @@ print int($num);
 
 ```
 
-### monitor mount points
+### Monitor mount points
 
 in order to monitor mount points we first need to make sure that SNMP is sending us the relevant information to check the mount point OID we need first to see all the mount points by the command :
 
@@ -328,7 +323,7 @@ to monitor the mount point we want we need to take the last octet from the resul
 
 ```
 
-so the mrtg.cfg section for the root FS will look like this :
+so the mrtg.cfg section for the root FS will look like this:
 
 ```
 # monitor root FS 

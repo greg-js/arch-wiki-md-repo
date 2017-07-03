@@ -1,4 +1,4 @@
-[mpv](http://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and MPlayer2\. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
+[mpv](https://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and MPlayer2\. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
 
 ## Contents
 
@@ -54,7 +54,7 @@ mpv comes with a minimal GUI called On Screen Controller (OSC), that appears whe
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 
-	[http://www.smplayer.info/](http://www.smplayer.info/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+	[https://www.smplayer.info/](https://www.smplayer.info/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **xt7-player-mpv** — Qt/Gambas GUI to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
 

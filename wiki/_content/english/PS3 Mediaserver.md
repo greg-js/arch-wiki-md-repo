@@ -1,4 +1,6 @@
-Server implemented in java. Has very good default transcoding profiles for several clients, but lacks good information for headless servers.
+[PS3 Media Server](https://github.com/ps3mediaserver/ps3mediaserver) is a cross-platform DLNA-compliant UPnP Media Server, written in [Java](/index.php/Java "Java").
+
+Has very good default transcoding profiles for several clients, but lacks good information for headless servers.
 
 ## Contents
 

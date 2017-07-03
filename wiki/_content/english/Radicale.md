@@ -18,10 +18,10 @@
 
 The main configuration file is located at `/etc/radicale/config`.
 
-Many of the configuration options can be changed by command-line:
+Many of the configuration options can be changed on the command-line:
 
 ```
-$radicale --help
+$ radicale --help
 
 ```
 

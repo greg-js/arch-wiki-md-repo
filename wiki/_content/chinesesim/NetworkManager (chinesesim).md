@@ -93,8 +93,9 @@ NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 Netwo
 通过 [AUR](/index.php/AUR "AUR"):
 
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
+*   [networkmanager-strongswan](https://aur.archlinux.org/packages/networkmanager-strongswan/)
 
-**警告:** VPN支持[不稳定](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn)，检查守护进程正确处理了通过GUI设置的选项，并对每一个发行包二次检查。[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350) [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=758772) [FS#47535](https://bugs.archlinux.org/task/47535)
+**警告:** VPN支持[不稳定](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn)，检查守护进程正确处理了通过GUI设置的选项，并对每一个发行包二次检查。[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
 ### PPPoE / DSL 支持
 
@@ -152,7 +153,7 @@ code 1.
 
 如果 `nm-applet` 在连接到 WiFi 时没有提示输入密码, 仅仅立即断开连接, 你可能需要安装 [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring)。
 
-如果托盘插件没有显示，安装[xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/)包。[[3]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
+如果托盘插件没有显示，安装[xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/)包。[[2]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
 
 ### Openbox
 
@@ -160,7 +161,7 @@ code 1.
 
 如果你想储存身份验证信息(Wireless/DSL)，请安装和配置[gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring")：
 
-`nm-applet`在`/etc/xdg/autostart/nm-applet.desktop`中安装自动启动文件. 如果你遇到问题（比如，`nm-applet`启动了两次或者根本没有启动), 参考[Openbox#autostart](/index.php/Openbox#autostart "Openbox") 或者[[4]](https://bbs.archlinux.org/viewtopic.php?pid=993738)来解决.
+`nm-applet`在`/etc/xdg/autostart/nm-applet.desktop`中安装自动启动文件. 如果你遇到问题（比如，`nm-applet`启动了两次或者根本没有启动), 参考[Openbox#autostart](/index.php/Openbox#autostart "Openbox") 或者[[3]](https://bbs.archlinux.org/viewtopic.php?pid=993738)来解决.
 
 ### 其它桌面和窗口管理器
 

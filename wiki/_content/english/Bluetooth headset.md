@@ -139,7 +139,7 @@ AutoEnable=true
 
 ### Configuration via GNOME Bluetooth
 
-**Note:** The A2DP profile will not activate using this method with pulseaudio 9/10 due to an ongoing bug, leading to possible low quality mono sound. see [#A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
+**Note:** The A2DP profile will not activate using this method with pulseaudio 9/10 due to an ongoing bug, leading to possible low quality mono sound. See [#A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio) for a possible solution.
 
 You can use [GNOME Bluetooth](/index.php/Bluetooth#GNOME_Bluetooth "Bluetooth") graphical front-end to easily configure your bluetooth headset.
 
@@ -710,15 +710,17 @@ connect [headset MAC here]
 
 #### Gnome with GDM
 
-**Note:** Below was tested with Gnome 3.22.1 and PulseAudio 10.0
+The instructions below were tested on Gnome 3.24.2 and PulseAudio 10.0 however they may still be applicable and useful for other versions.
 
 If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio :
 
-*   Prevent Pulseaudio clients from automatically starting a server if one is not running by adding the following lines to `/var/lib/gdm/.config/pulse/client.conf` :
+*   Prevent Pulseaudio clients from automatically starting a server if one is not running by adding the following:
 
+ `/var/lib/gdm/.config/pulse/client.conf` 
 ```
 autospawn = no
 daemon-binary = /bin/true
+
 ```
 
 *   Prevent systemd from starting Pulseaudio anyway with socket activation :
@@ -731,7 +733,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 
 *   Restart, and check that there is no Pulseaudio process for the `gdm` user.
 
-**Note:** Discussion about this problem can be found [here](https://bbs.archlinux.org/viewtopic.php?id=194006) and [here](https://bbs.archlinux.org/viewtopic.php?id=196689)
+Further discussion about this problem and alternative fixes can be found [here](https://bbs.archlinux.org/viewtopic.php?id=194006) and [here](https://bbs.archlinux.org/viewtopic.php?id=196689).
 
 ## Headset via Bluez5/bluez-alsa
 

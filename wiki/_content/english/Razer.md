@@ -181,15 +181,9 @@ EndSection
 
 ```
 
-If you have an Intel Kaby Lake chip [[1]](https://en.wikipedia.org/wiki/Kaby_Lake), and the issue is not fixed with the conf above, add to your kernel_parameters `i915.enable_rc6=0`. You can do that by editing the grub file:
+If you experience screen tearing while scrolling add the following line to the conf above: `Option "TearFree" "true"` and set the "AccelMethod" to "sna" and comment out "uxa"
 
- `# sudo vim /etc/default/grub` 
-
-and appending `quiet i915.enable_rc6=0` to GRUB_CMDLINE_LINUX_DEFAULT. Afterwords re-generate grub file:
-
- `# grub-mkconfig -o /boot/grub/grub.cfg` 
-
-Reboot.
+If you have an Intel Kaby Lake chip [[1]](https://en.wikipedia.org/wiki/Kaby_Lake), and the issue is not fixed with the conf above, add to `i915.enable_rc6=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 #### Hybrid graphics
 

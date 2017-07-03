@@ -10,6 +10,7 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [2.2 List of installed packages](#List_of_installed_packages)
     *   [2.3 Pacman database](#Pacman_database)
     *   [2.4 LUKS headers](#LUKS_headers)
+    *   [2.5 System and user data](#System_and_user_data)
 *   [3 Upgrading the system](#Upgrading_the_system)
     *   [3.1 Read before upgrading the system](#Read_before_upgrading_the_system)
     *   [3.2 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
@@ -59,9 +60,7 @@ See [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") for informati
 
 ## Backup
 
-Create backups of important data at regular intervals. Those data include configuration files, installed packages and directories such as `/etc`, `/home`, `/var` and for server installations, also `/srv`.
-
-See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
+Create backups of important data at regular intervals. See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
 
 Backups may be automated with [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
 
@@ -82,6 +81,10 @@ See [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the
 ### LUKS headers
 
 It can make sense to periodically check and synchronize the backups of LUKS-encrypted partition headers, especially if passphrases have been revoked. See [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+
+### System and user data
+
+See [System backup](/index.php/System_backup "System backup").
 
 ## Upgrading the system
 

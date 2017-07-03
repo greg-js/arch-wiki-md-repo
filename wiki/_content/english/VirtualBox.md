@@ -846,9 +846,9 @@ To access the raw VMDK image on a Windows host, run the VirtualBox GUI as admini
 
 ### Windows: "The specified path does not exist. Check the path and then try again."
 
-This error message often appears when running an .exe file which requires administrator priviliges from a shared folder in windows guests. See [the bug report](https://www.virtualbox.org/ticket/5732) for details. You are able to run such exe files after you copy them to virtual drive.
+This error message may appear when running an `.exe` file which requires administrator privileges from a shared folder in windows guests. [[12]](https://www.virtualbox.org/ticket/5732#comment:39)
 
-Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this does not work with Windows 7 or newer.
+As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "w:Uniform Naming Convention") (`\\vboxsvr`). See [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
 
 ### Windows 8.x error code 0x000000C4
 

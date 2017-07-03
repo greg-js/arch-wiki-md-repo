@@ -82,7 +82,7 @@ The drivers for a printer may come from any of the sources shown below. See [CUP
 
 To drive a printer, CUPS needs a PPD file and, for most printers, some [filters](https://www.cups.org/doc/man-filter.html). For details on how CUPS uses PPDs and filters, see [[1]](https://www.cups.org/doc/postscript-driver.html).
 
-The [OpenPrinting Printer List](http://www.openprinting.org/printers) provides driver recommendations for many printers. It also supplies PPD files for each printer, but most are available through [#Foomatic](#Foomatic) or the recommended driver package.
+The [OpenPrinting Printer List](http://www.openprinting.org/printers) provides driver recommendations for many printers. It also supplies PPD files for each printer, but most are available through [foomatic](#Foomatic) or the recommended driver package.
 
 When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD files and save them in `/etc/cups/ppd/`.
 
@@ -316,7 +316,7 @@ The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cup
 
 [Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
 
-[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](http://man7.org/linux/man-pages/man5/papersize.5.html).
+[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](https://www.commandlinux.com/man-page/man5/papersize.5.html).
 
 By default, all logs are sent to files in `/var/log/cups/`. By changing the values of the `AccessLog`, `ErrorLog`, and `PageLog` directives in `/etc/cups/cups-files.conf` to `syslog`, CUPS can be made to log to the [systemd journal](/index.php/Systemd_journal "Systemd journal") instead. See [the fedora wiki page](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) for information on the original proposed change.
 

@@ -3,32 +3,30 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-    *   [2.1 As a cp alternative](#As_a_cp_alternative)
-        *   [2.1.1 Trailing slash caveat](#Trailing_slash_caveat)
-    *   [2.2 As a backup utility](#As_a_backup_utility)
-        *   [2.2.1 Automated backup](#Automated_backup)
-        *   [2.2.2 Automated backup with SSH](#Automated_backup_with_SSH)
-        *   [2.2.3 Automated backup with NetworkManager](#Automated_backup_with_NetworkManager)
-        *   [2.2.4 Automated backup with systemd and inotify](#Automated_backup_with_systemd_and_inotify)
-        *   [2.2.5 Differential backup on a week](#Differential_backup_on_a_week)
-        *   [2.2.6 Snapshot backup](#Snapshot_backup)
-    *   [2.3 File system cloning](#File_system_cloning)
-    *   [2.4 rsync daemon](#rsync_daemon)
+*   [2 As a cp alternative](#As_a_cp_alternative)
+    *   [2.1 Trailing slash caveat](#Trailing_slash_caveat)
+*   [3 As a backup utility](#As_a_backup_utility)
+    *   [3.1 Automated backup](#Automated_backup)
+    *   [3.2 Automated backup with SSH](#Automated_backup_with_SSH)
+    *   [3.3 Automated backup with NetworkManager](#Automated_backup_with_NetworkManager)
+    *   [3.4 Automated backup with systemd and inotify](#Automated_backup_with_systemd_and_inotify)
+    *   [3.5 Differential backup on a week](#Differential_backup_on_a_week)
+    *   [3.6 Snapshot backup](#Snapshot_backup)
+    *   [3.7 Full system backup](#Full_system_backup)
+    *   [3.8 Restore a backup](#Restore_a_backup)
+*   [4 File system cloning](#File_system_cloning)
+*   [5 rsync daemon](#rsync_daemon)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [rsync](https://www.archlinux.org/packages/?name=rsync) package.
 
-**Note:** *rsync* must be installed on both the source and the destination machine.
+*rsync* must be installed on both the source and the destination machine.
 
 The [grsync](https://www.archlinux.org/packages/?name=grsync) package provides a graphical front-end.
 
-## Usage
-
-For more examples, search the [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) and [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) forums.
-
-### As a cp alternative
+## As a cp alternative
 
 rsync can be used as an advanced alternative for the `cp` command, especially for copying larger files:
 
@@ -59,7 +57,7 @@ Network file transfers use the SSH protocol by default.
 
 Whether transferring files locally or remotely, rsync first creates an index of block checksums of each source file. This index is used to find any identical blocks of data which might exist in the destination. Such blocks are used in-place, rather than being copied from the source. This can greatly accelerate the synchronization of large files with small changes. For more information, see [official documentation](https://rsync.samba.org/documentation.html), [how rsync works](https://rsync.samba.org/how-rsync-works.html).
 
-#### Trailing slash caveat
+### Trailing slash caveat
 
 Arch by default uses GNU cp (part of [GNU coreutils](https://www.archlinux.org/packages/?name=coreutils)). However, rsync follows the convention of BSD cp, which gives special treatment to source directories with a trailing slash "/". Although
 
@@ -99,11 +97,11 @@ exec rsync "${(@)new_args}"
 
 This script can be put somewhere in the path, and aliased to rsync in the shell init file.
 
-### As a backup utility
+## As a backup utility
 
-The rsync protocol can easily be used for backups, only transferring files that have changed since the last backup. This section describes a very simple scheduled backup script using rsync, typically used for copying to removable media. For a more thorough example and **additional options required to preserve some system files**, see [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync").
+The rsync protocol can easily be used for backups, only transferring files that have changed since the last backup. This section describes a very simple scheduled backup script using rsync, typically used for copying to removable media.
 
-#### Automated backup
+### Automated backup
 
 For the sake of this example, the script is created in the `/etc/cron.daily` directory, and will be run on a daily basis if a cron [daemon](/index.php/Daemon "Daemon") is installed and properly configured. Configuring and using [cron](/index.php/Cron "Cron") is outside the scope of this article.
 
@@ -132,7 +130,7 @@ Finally, the script must be executable:
 
 ```
 
-#### Automated backup with SSH
+### Automated backup with SSH
 
 If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this script instead:
 
@@ -154,7 +152,7 @@ rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/of/ba
 
 	groups all these options `-rlptgoD` (recursive, links, perms, times, group, owner, devices)
 
-#### Automated backup with NetworkManager
+### Automated backup with NetworkManager
 
 This script starts a backup when network connection is established.
 
@@ -183,7 +181,7 @@ fi
 
 Also, the script must have write permission for owner (root, of course) only (see [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
 
-#### Automated backup with systemd and inotify
+### Automated backup with systemd and inotify
 
 **Note:**
 
@@ -221,7 +219,7 @@ ExecStart=/usr/bin/rsync %h/./documents %h/./music -CERrltm --delete ubuntu:
 
 Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path` like a normal systemd service and it will start monitoring file changes and automatically starting `backup.service`.
 
-#### Differential backup on a week
+### Differential backup on a week
 
 This is a useful option of rsync, creating a full backup and a differential backup for each day of a week.
 
@@ -244,7 +242,7 @@ rsync -a --delete --inplace --backup --backup-dir=/location/to/backup/incr/$DAY 
 
 	implies `--partial` update destination files in-place
 
-#### Snapshot backup
+### Snapshot backup
 
 The same idea can be used to maintain a tree of snapshots of your files. In other words, a directory with date-ordered copies of the files. The copies are made using hardlinks, which means that only files that did change will occupy space. Generally speaking, this is the idea behind Apple's TimeMachine.
 
@@ -320,7 +318,45 @@ fi
 
 To make things really, really simple this script can be run from a [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") unit.
 
-### File system cloning
+### Full system backup
+
+This section is about using *rsync* to transfer a copy of the entire `/` tree, excluding a few selected folders. This approach is considered to be better than [disk cloning](/index.php/Disk_cloning "Disk cloning") with `dd` since it allows for a different size, partition table and filesystem to be used, and better than copying with `cp -a` as well, because it allows greater control over file permissions, attributes, [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") and [extended attributes](/index.php/Extended_attributes "Extended attributes").
+
+*rsync* will work even while the system is running, but files changed during the transfer may or may not be transferred, which can cause undefined behavior of some programs using the transferred files.
+
+This approach works well for migrating an existing installation to a new hard drive or [SSD](/index.php/SSD "SSD").
+
+Run the following command as root to make sure that rsync can access all system files and preserve the ownership:
+
+```
+# rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / */path/to/backup/folder*
+
+```
+
+By using the `-aAX` set of options, the files are transferred in archive mode which ensures that symbolic links, devices, permissions, ownerships, modification times, [ACLs](/index.php/ACL "ACL"), and extended attributes are preserved, assuming that the target [file system](/index.php/File_system "File system") supports the feature.
+
+The `--exclude` option causes files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp`, and `/run` are excluded in the above command, because they are populated at boot, although the folders themselves are *not* created. `/lost+found` is filesystem-specific. The command above depends on brace expansion available in both the [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) and [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion) shells. When using a different [shell](/index.php/Shell "Shell"), `--exclude` patterns should be repeated manually. Quoting the exclude patterns will avoid expansion by the [shell](/index.php/Shell "Shell"), which is necessary, for example, when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` ensures that the directories themselves are created if they do not already exist.
+
+**Note:**
+
+*   If you plan on backing up your system somewhere other than `/mnt` or `/media`, do not forget to add it to the list of exclude patterns to avoid an infinite loop.
+*   If there are any bind mounts in the system, they should be excluded as well so that the bind mounted contents is copied only once.
+*   If you use a [swap file](/index.php/Swap_file "Swap file"), make sure to exclude it as well.
+*   Consider if you want to backup the `/home/` folder. If it contains your data it might be considerably larger than the system. Otherwise consider excluding unimportant subdirectories such as `/home/*/.thumbnails/*`, `/home/*/.cache/mozilla/*`, `/home/*/.cache/chromium/*`, and `/home/*/.local/share/Trash/*`, depending on software installed on the system. If [GVFS](/index.php/GVFS "GVFS") is installed, `/home/*/.gvfs` must be excluded to prevent rsync errors.
+
+You may want to include additional **rsync** options, such as the following. See [rsync(1)](http://man7.org/linux/man-pages/man1/rsync.1.html) for the full list.
+
+*   If you use many hard links, consider adding the `-H` option, which is turned off by default due to its memory expense; however, it should be no problem on most modern machines. Many hard links reside under the `/usr/` directory.
+*   You may want to add rsync's `--delete` option if you are running this multiple times to the same backup folder. In this case make sure that the source path does not end with `/*`, or this option will only have effect on the files inside the subdirectories of the source directory, but it will have no effect on the files residing directly inside the source directory.
+*   If you use any sparse files, such as virtual disks, [Docker](/index.php/Docker "Docker") images and similar, you should add the `-S` option.
+*   The `--numeric-ids` option will disable mapping of user and group names; instead, numeric group and user IDs will be transfered. This is useful when backing up over [SSH](/index.php/SSH "SSH") or when using a live system to backup different system disk.
+*   Choosing `--info=progress2` option instead of `-v` will show the overall progress info and transfer speed instead of the list of files being transferred.
+
+### Restore a backup
+
+If you wish to restore a backup, use the same rsync command that was executed but with the source and destination reversed.
+
+## File system cloning
 
 rsync provides a way to do a copy of all data in a file system while preserving as much information as possible, including the file system metadata. It is a procedure of data cloning on a file system level where source and destination file systems don't need to be of the same type. It can be used for backing up, file system migration or data recovery.
 
@@ -348,9 +384,9 @@ diff -r SOURCE_DIR DESTINATION_DIR
 
 ```
 
-It is possible to do a successful file system migration by using rsync as described in this article and updating the [fstab](/index.php/Fstab "Fstab") and [bootloader](/index.php/Bootloader "Bootloader") as described in the [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware") (and [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")) articles. This essentially provides a way to convert any root file system to another one.
+It is possible to do a successful file system migration by using rsync as described in this article and updating the [fstab](/index.php/Fstab "Fstab") and [bootloader](/index.php/Bootloader "Bootloader") as described in [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware"). This essentially provides a way to convert any root file system to another one.
 
-### rsync daemon
+## rsync daemon
 
 *rsync* can be run as daemon on a server listening on port `873`.
 
@@ -371,3 +407,8 @@ $ rsync *local-file* rsync://*server/share/*
 ```
 
 Consider iptables to open port `873` and user authentication.
+
+## See also
+
+*   More usage examples can be searched in the [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) and [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) forums
+*   [Howto – local and remote snapshot backup using rsync with hard links](http://blog.pointsoftware.ch/index.php/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) Includes file deduplication with hard-links, MD5 integrity signature, 'chattr' protection, filter rules, disk quota, retention policy with exponential distribution (backups rotation while saving more recent backups than older)

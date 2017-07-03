@@ -1,4 +1,4 @@
-This article describes how to transfer your current Arch Linux installation in or out of a virtual environment (i.e. QEMU, VirtualBox, VMware), and is heavily based on the [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync") article. A virtual machine ("VM", for short) uses different hardware, which needs to be addressed by re-generating the initramfs image and possibly adjusting the fstab – especially if it is an [SSD](/index.php/SSD "SSD").
+This article describes how to transfer your current Arch Linux installation in or out of a virtual environment (i.e. QEMU, VirtualBox, VMware). A virtual machine ("VM", for short) uses different hardware, which needs to be addressed by re-generating the initramfs image and possibly adjusting the fstab – especially if it is an [SSD](/index.php/SSD "SSD").
 
 ## Contents
 
@@ -36,7 +36,7 @@ If you are on Windows, install [Ext2Fsd](http://www.ext2fsd.com/) to be able to 
 
 ### Transfer the system
 
-From the virtual machine, open a terminal and [transfer](/index.php/Full_system_backup_with_rsync "Full system backup with rsync") the system:
+From the virtual machine, open a terminal and [transfer](/index.php/Rsync "Rsync") the system:
 
 ```
 # rsync -aAXv /* /path/to/shared/folder --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/home/*/.gvfs}
@@ -101,7 +101,7 @@ Next, partition the `/dev/loop5` device by running your favourite [partitioning 
 
 ### Transfer the system
 
-Mount the loopback device and [transfer](/index.php/Full_system_backup_with_rsync "Full system backup with rsync") the system:
+Mount the loopback device and [transfer](/index.php/Rsync "Rsync") the system:
 
 **Note:** If the container was saved somewhere other than `/mnt` or `/media`, do not forget to add it to the exclude list.
 

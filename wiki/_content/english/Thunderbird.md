@@ -6,26 +6,17 @@ Mozilla [Thunderbird](https://www.mozilla.org/thunderbird/) is an open source em
 *   [2 Securing](#Securing)
     *   [2.1 Considerations](#Considerations)
 *   [3 Extensions](#Extensions)
-    *   [3.1 EnigMail - Encryption](#EnigMail_-_Encryption)
-        *   [3.1.1 Sharing the public key](#Sharing_the_public_key)
-        *   [3.1.2 Encrypting emails](#Encrypting_emails)
-        *   [3.1.3 Decrypting emails](#Decrypting_emails)
-        *   [3.1.4 Blank draft messages](#Blank_draft_messages)
-    *   [3.2 TorBirdy - Anonymity](#TorBirdy_-_Anonymity)
-    *   [3.3 FireTray - Tray icon](#FireTray_-_Tray_icon)
-    *   [3.4 Lightning - Calendar](#Lightning_-_Calendar)
-    *   [3.5 SOGo Connector (CardDAV)](#SOGo_Connector_.28CardDAV.29)
-    *   [3.6 Cardbook (CardDAV)](#Cardbook_.28CardDAV.29)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Setting the default browser](#Setting_the_default_browser)
-    *   [4.2 Plain Text mode and font uniformity](#Plain_Text_mode_and_font_uniformity)
-    *   [4.3 Webmail with Thunderbird](#Webmail_with_Thunderbird)
-    *   [4.4 Migrate profile to another system](#Migrate_profile_to_another_system)
-    *   [4.5 Export + Import](#Export_.2B_Import)
-    *   [4.6 Changing the default sorting order](#Changing_the_default_sorting_order)
-    *   [4.7 Maildir support](#Maildir_support)
-    *   [4.8 Spell checking](#Spell_checking)
-    *   [4.9 Native notifications](#Native_notifications)
+    *   [4.1 Config Editor](#Config_Editor)
+    *   [4.2 Setting the default browser](#Setting_the_default_browser)
+    *   [4.3 Plain Text mode and font uniformity](#Plain_Text_mode_and_font_uniformity)
+    *   [4.4 Webmail with Thunderbird](#Webmail_with_Thunderbird)
+    *   [4.5 Migrate profile to another system](#Migrate_profile_to_another_system)
+    *   [4.6 Export + Import](#Export_.2B_Import)
+    *   [4.7 Changing the default sorting order](#Changing_the_default_sorting_order)
+    *   [4.8 Maildir support](#Maildir_support)
+    *   [4.9 Spell checking](#Spell_checking)
+    *   [4.10 Native notifications](#Native_notifications)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 LDAP Segfault](#LDAP_Segfault)
     *   [5.2 Error: Incoming server already exists](#Error:_Incoming_server_already_exists)
@@ -56,86 +47,43 @@ A version overview, both past and future, can be read on the [Mozilla wiki](http
 
 Under some circumstances Thunderbird may send your system's (internal) IP address as reply to HELO/ELHO requesting SMTP servers. If you have concerns, please read [this](http://kb.mozillazine.org/Replace_IP_address_with_name_in_headers) article. You might change this for Firefox, too.
 
-If you want to hide Thunderbird for sending your system's [User Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_reference#Linux) string, then you can override the default string with an empty one:
+If you want to hide Thunderbird for sending your system's [User Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_reference#Linux) string, create a new empty string entry `general.useragent.override` in the [#Config Editor](#Config_Editor).
 
-1.  go to `Edit > Preferences > Advanced > General > Config Editor`.(*)
-2.  right-click and create new string entry `general.useragent.override` and leave the second dialog entry empty.
+While Thunderbird disables email images by default, it enables HTML rendering which may expose IP address and location. Choose *View > Message Body As > Plain Text* to disable this.
 
-While Thunderbird disables email images by default, it enables HTML rendering which may expose IP address and location. Choose `View > Message Body As > Plain Text` to disable this.
-
-JavaScript is disabled for message content but not RSS news feeds. To disable JavaScript for RSS:
-
-1.  go to `Edit > Preferences > Advanced > General > Config Editor`.
-2.  search `javascript.enabled` and double-click the value to false.
+JavaScript is disabled for message content but not RSS news feeds. To disable JavaScript for RSS set `javascript.enabled` to false in the [#Config Editor](#Config_Editor).
 
 ## Extensions
 
-### EnigMail - Encryption
+*   **[Enigmail](/index.php/Thunderbird/Enigmail "Thunderbird/Enigmail")** — Extension for writing and receiving email signed and/or encrypted with the OpenPGP standard.
 
-[EnigMail](https://www.enigmail.net) is an [extension](https://addons.mozilla.org/thunderbird/addon/enigmail/) that allows writing and receiving email signed and/or encrypted with the OpenPGP standard. It relies on the [GnuPG](/index.php/GnuPG "GnuPG").
+	[https://www.enigmail.net](https://www.enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/), [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/)
 
-Common packages include: [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/) and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/).
+*   **TorBirdy** — Extension that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network
 
-#### Sharing the public key
+	[TorBirdy AMO](https://addons.mozilla.org/thunderbird/addon/torbirdy/) ||
 
-To distribute the public key one may upload it to a [keyserver](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
+*   **FireTray** — Adds a customizable system tray icon for Thunderbird
 
-#### Encrypting emails
+	[FireTray AMO](https://addons.mozilla.org/thunderbird/addon/firetray/) ||
 
-Encryption does not always work properly with emails containing HTML. It is best to use plain text by choosing *Options > Delivery Format > Plain Text Only* in the new email window.
+*   **[Lightning](https://www.mozilla.org/projects/calendar/lightning/)** — A calendar extension that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support.
 
-Once the email is finished it can be signed through the *OpenPGP* menu.
+	[Lightning AMO](https://addons.mozilla.org/thunderbird/addon/lightning/) || [thunderbird-lightning-bin](https://aur.archlinux.org/packages/thunderbird-lightning-bin/)
 
-#### Decrypting emails
+*   **SOGo Connector** — Lets you sync address books via CardDAV
 
-Assuming that the email was encrypted properly, just trying to open it should result in a pop-up asking to type in the keyphrase.
+	[https://sogo.nu/download.html#/frontends](https://sogo.nu/download.html#/frontends) || [thunderbird-sogo-connector-bin](https://aur.archlinux.org/packages/thunderbird-sogo-connector-bin/)
 
-#### Blank draft messages
+*   **Cardbook** — A new addressbook for Thunderbird based on the CARDDav and VCARD standards.
 
-If after upgrading to [gnupg](https://www.archlinux.org/packages/?name=gnupg) v2.1 your saved draft emails have gone "blank" and show a pink bar displaying:
-
-```
-Enigmail Error - no matching private/secret key found to decrypt message; click on 'Details' button for more information
-
-```
-
-or, when you have a "Write" window open you repeatedly see a popup window with:
-
-```
-The email address or key ID 0x*key_id* cannot be matched to a valid, not expired OpenPGP key.
-Please ensure that you have a valid OpenPGP key, and that your account settings point to that key.
-
-```
-
-and `gpg --list-keys` fails to show some keys that used to be there, see [GnuPG invalid packet workaround](http://jo-ke.name/wp/?p=111).
-
-### TorBirdy - Anonymity
-
-TorBirdy is an [extension](https://addons.mozilla.org/thunderbird/addon/torbirdy/) that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network.
-
-### FireTray - Tray icon
-
-FireTray is an [extension](https://addons.mozilla.org/thunderbird/addon/firetray/) that adds a customizable system tray icon for Thunderbird. It is available in the AUR as [thunderbird-firetray](https://aur.archlinux.org/packages/thunderbird-firetray/).
-
-### Lightning - Calendar
-
-[Lightning](https://www.mozilla.org/projects/calendar/lightning/) is a calendar [extension](https://addons.mozilla.org/thunderbird/addon/lightning/) that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support.
-
-It is available in the AUR as [thunderbird-lightning-bin](https://aur.archlinux.org/packages/thunderbird-lightning-bin/).
-
-In case you are migrating a user profile (with Lightning installed there) from another platform (e.g. Windows), you may have to reinstall the Lightning addon from the mozilla addon page because Lightning is platform-dependent.
-
-### SOGo Connector (CardDAV)
-
-[SOGo Connector](http://www.sogo.nu/english/downloads/frontends.html) allows to sync addressbooks via CardDAV.
-
-It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archlinux.org/packages/thunderbird-sogo-connector-bin/).
-
-### Cardbook (CardDAV)
-
-[Cardbook](https://addons.mozilla.org/thunderbird/addon/cardbook/) (VCard Addressbook): a new addressbook for Thunderbird based on the CARDDav and VCARD standards.
+	[Cardbook AMO](https://addons.mozilla.org/thunderbird/addon/cardbook/) ||
 
 ## Tips and tricks
+
+### Config Editor
+
+Thunderbird can be extensively configured in *Edit > Preferences > Advanced > General > Config Editor*.
 
 ### Setting the default browser
 
@@ -143,7 +91,7 @@ It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archl
 
 Recent versions of Thunderbird use the default browser as defined by the [system MIME settings](/index.php/Default_applications "Default applications"). This is commonly modified by the Gnome Control Center (*Gnome Control Center > Details > Default Applications > Web*) (available in: [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)).
 
-This can be overridden in Thunderbird through *Edit > Preferences > Advanced > General > Config Editor* by searching for `network.protocol-handler.warn-external`.
+This can be overridden in the [#Config Editor](#Config_Editor) by searching for `network.protocol-handler.warn-external`.
 
 If the following three are all set to **false** (default), turn them to **true**, and Thunderbird will ask you when clicking on links which application to use (remember to also check *"Remember my choice for .. links"*).
 
@@ -227,7 +175,7 @@ If your accounts are broken or you want to join two different Thunderbird instal
 
 Thunderbird (up to at least 31.4.0-1) sorts mail by date with the oldest on top without any threading. While this can be changed per folder, it is easier to set a sane default instead as described in [this Superuser.com post](https://superuser.com/questions/13518/change-the-default-sorting-order-in-thunderbird).
 
-Go to Edit -> Preferences -> Advanced -> General -> Config Editor and set these keys:
+Set these preferences in the [#Config Editor](#Config_Editor):
 
 ```
 mailnews.default_sort_order = 2 (descending)
@@ -237,7 +185,7 @@ mailnews.default_view_flags = 1 (Threaded view)
 
 ### Maildir support
 
-The default message store format is mbox. To enable the use of Maildir, see [Mozilla wiki: Thunderbird/Maildir](https://wiki.mozilla.org/Thunderbird/Maildir). You basically have to set this preference through (Edit -> Preferences -> Advanced -> General -> Config Editor):
+The default message store format is mbox. To enable the use of Maildir, see [Mozilla wiki: Thunderbird/Maildir](https://wiki.mozilla.org/Thunderbird/Maildir). You basically have to set the following preference in the [#Config Editor](#Config_Editor):
 
 ```
 mail.serverDefaultStoreContractID = @mozilla.org/msgstore/maildirstore;1
@@ -248,11 +196,11 @@ Some limitations up to at least 31.4.0-1: only the "tmp" and "cur" directories a
 
 ### Spell checking
 
-For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. After a restart the spell checking should work.
+[Install](/index.php/Install "Install") [hunspell](https://www.archlinux.org/packages/?name=hunspell) and a [hunspell language dictionary](https://www.archlinux.org/packages/?q=hunspell+dict) and restart Thunderbird.
 
 ### Native notifications
 
-Set "mail.biff.use_system_alert" (defaults to false, toggle to true in [≡] > Preferences > Advanced > General > Config Editor).
+Enable `mail.biff.use_system_alert` in the [#Config Editor](#Config_Editor).
 
 ## Troubleshooting
 

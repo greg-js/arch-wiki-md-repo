@@ -1,4 +1,4 @@
-This document describes how to set up Ampache on an Arch Linux LAMP server. Ampache is a Web-based Audio file manager. It is implemented with MySQL, and PHP. It allows you to view, edit, and play your audio files via the web. It has support for playlists, artist and album views, album art, random play, playback via Http/On the Fly Transcoding and Downsampling, Ampache is excellent if you want to be able to listen to your music collection anywhere.
+[Ampache](http://ampache.org/) is a web based audio/video streaming application and file manager, written in PHP and using MySQL as its back-end. It allows you to view, edit, and play your audio files via the web. It has support for playlists, artist and album views, album art, random play, playback via Http/On the Fly Transcoding and Downsampling.
 
 ## Contents
 

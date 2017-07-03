@@ -64,6 +64,10 @@ These packages are not in the above mentioned groups:
 
 	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 
+*   **Games** — Simple game launcher for GNOME.
+
+	[https://wiki.gnome.org/Apps/Games](https://wiki.gnome.org/Apps/Games) || [gnome-games](https://www.archlinux.org/packages/?name=gnome-games)
+
 *   **GNOME Initial Setup** — A simple, easy, and safe way to prepare a new system.
 
 	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)

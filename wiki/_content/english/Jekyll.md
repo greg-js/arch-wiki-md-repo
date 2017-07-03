@@ -1,6 +1,6 @@
-[Jekyll](http://jekyllrb.com/) is a simple, blog aware, static site generator written in Ruby and developed by GitHub co-founder [Tom Preston-Werner](http://tom.preston-werner.com/). It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. It is the engine behind [GitHub Pages](http://pages.github.com/).
+[Jekyll](https://jekyllrb.com/) is a simple, blog aware, static site generator written in Ruby and developed by GitHub co-founder [Tom Preston-Werner](http://tom.preston-werner.com/). It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. It is the engine behind [GitHub Pages](https://pages.github.com/).
 
-Werner announced the release of Jekyll on [his website](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html) on November 17, 2008.
+Werner announced the release of Jekyll on his website on November 17, 2008\. [[1]](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html)
 
 ## Contents
 
@@ -62,7 +62,11 @@ There are numerous different markup languages that are used to define text-to-HT
 
 [Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) is a markup language used by Jekyll.
 
-**Note:** RedCloth, a module for using the Textile markup language in Ruby, fails to install with gcc 4.6.0 (see: [RedCloth Ticket 215](http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure) and [219](http://jgarber.lighthouseapp.com/projects/13054/tickets/219-427-installation-issue-on-arch-linux-x64)). It is recommended that you install the current stable version 4.2.2 by `gem install RedCloth --version 4.2.2`.
+**Note:** RedCloth, a module for using the Textile markup language in Ruby, fails to install with gcc 4.6.0
+
+(see: [RedCloth Ticket 215](http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure) and [219](http://jgarber.lighthouseapp.com/projects/13054/tickets/219-427-installation-issue-on-arch-linux-x64)).
+
+It is recommended that you install the current stable version 4.2.2 by `gem install RedCloth --version 4.2.2`.
 
 ### Markdown
 

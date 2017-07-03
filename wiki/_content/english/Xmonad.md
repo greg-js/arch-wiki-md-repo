@@ -490,7 +490,7 @@ Xmonad should now appear in the list of GDM sessions and also play nicely with g
 
 #### Compositing in GNOME and Xmonad
 
-Some applications look better (e.g. GNOME Do) when composition is enabled. This is, however not, the case in the default Xmonad window manager. To enable it add an additional .desktop file `/usr/share/xsessions/xmonad-gnome-session-composite.desktop`:
+Some applications look better (e.g. GNOME Do) when composition is enabled. This, however, is not the case in the default Xmonad window manager. To enable it add an additional .desktop file `/usr/share/xsessions/xmonad-gnome-session-composite.desktop`:
 
 ```
 [Desktop Entry]

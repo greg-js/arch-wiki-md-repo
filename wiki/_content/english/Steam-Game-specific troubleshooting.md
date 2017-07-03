@@ -33,7 +33,6 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [13 Borderlands: The Pre-Sequel](#Borderlands:_The_Pre-Sequel)
     *   [13.1 Keyboard not working](#Keyboard_not_working)
     *   [13.2 Not starting via Steam](#Not_starting_via_Steam)
-    *   [13.3 Game crashes nearly instantly](#Game_crashes_nearly_instantly_2)
 *   [14 Cities in Motion 2](#Cities_in_Motion_2)
     *   [14.1 Dialog boxes fail to display properly](#Dialog_boxes_fail_to_display_properly)
 *   [15 Cities Skylines](#Cities_Skylines)
@@ -53,9 +52,8 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [22.5 Brightness slider not working](#Brightness_slider_not_working)
     *   [22.6 Microphone not working](#Microphone_not_working)
 *   [23 Crusader Kings II](#Crusader_Kings_II)
-    *   [23.1 Locations](#Locations)
-    *   [23.2 No audio](#No_audio)
-    *   [23.3 Oddly sized starting window](#Oddly_sized_starting_window)
+    *   [23.1 No audio](#No_audio)
+    *   [23.2 Oddly sized starting window](#Oddly_sized_starting_window)
 *   [24 Death Road To Canada](#Death_Road_To_Canada)
     *   [24.1 No music](#No_music)
 *   [25 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
@@ -196,7 +194,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [90.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
 *   [91 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
 *   [92 Transistor](#Transistor)
-    *   [92.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+    *   [92.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
 *   [93 Transmissions: Element 120](#Transmissions:_Element_120)
     *   [93.1 Troubleshooting](#Troubleshooting)
 *   [94 Trine 2](#Trine_2)
@@ -232,13 +230,13 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 
 ### Prepend /usr/lib to LD_LIBRARY_PATH
 
-Add `LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### OpenSSL 1.0 setup
 
 Some Steam games are built against OpenSSL 1.0\. [[1]](https://bugs.archlinux.org/task/53618)
 
-Install [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0-compat` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Install [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0-compat` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Adobe Air setup
 
@@ -286,15 +284,9 @@ When the game refuses to launch and prints one of the following error messages:
 ```
 readlink: extra operand ‘Yet’
 Try 'readlink --help' for more information.
-
 ```
 
-or
-
-```
-This script must be run as a user with write priviledges to game directory
-
-```
+	 `This script must be run as a user with write priviledges to game directory` 
 
 Open `*gamedir*/AndYetItMovesSteam.sh` and replace the line:
 
@@ -350,7 +342,7 @@ If that does not fix the issue, try unplugging any joysticks or joystick adapter
 
 ### Game does not start, displays text window with unreadable text
 
-Add `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `MESA_GL_VERSION_OVERRIDE=4.0` and `MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Audiosurf 2
 
@@ -402,7 +394,7 @@ Borderlands 2 does not allow the `Ctrl` key to be used by default. The game seem
 
 ### Logging into SHiFT
 
-Out of the box you will not be able to log into SHiFT since the game expects certificates to be in `/usr/lib/ssl`, which is where Ubuntu stores them. Arch however uses `/etc/ssl`. To resolve the problem, add `SSL_CERT_DIR=/etc/ssl/certs` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Out of the box you will not be able to log into SHiFT since the game expects certificates to be in `/usr/lib/ssl`, which is where Ubuntu stores them. Arch however uses `/etc/ssl`. To resolve the problem, add `SSL_CERT_DIR=/etc/ssl/certs` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Game crashes nearly instantly
 
@@ -410,7 +402,7 @@ As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible so
 
 ## Borderlands: The Pre-Sequel
 
-See [#Logging into SHiFT](#Logging_into_SHiFT).
+See [#Borderlands 2](#Borderlands_2).
 
 ### Keyboard not working
 
@@ -419,10 +411,6 @@ Using [dwm](/index.php/Dwm "Dwm"), no keyboard input seems to register.
 ### Not starting via Steam
 
 If the game appears as *Running*, then syncs and closes when you launch it from Steam, try creating a `steam_appid.txt` in the game directory containing `261640`. This should resolve the issue and let you start the game directly from the game directory. If that does not work, try using the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime).
-
-### Game crashes nearly instantly
-
-As of lib32-openal version 1.18.0-1, the game crashes instantly. The possible solutions are to downgrade lib32-openal to 1.17.2-1, or to start the game with `LD_PRELOAD='$HOME/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libopenal.so.1'`.
 
 ## Cities in Motion 2
 
@@ -442,11 +430,11 @@ Workaround for the bug [FS#35039](https://bugs.archlinux.org/task/35039) is avai
 
 ### Textures not rendering properly
 
-Add `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Civilization V
 
-You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Steam#Launch_options "Steam").
+You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Launch_option "Launch option").
 
 [steam-for-linux issue #4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
@@ -465,7 +453,7 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 
 ## Civilization VI
 
-As with Civ V, you need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Steam#Launch_options "Steam").
+As with Civ V, you need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Launch_option "Launch option").
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
@@ -519,7 +507,7 @@ See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooti
 
 ### Mouse not working in-game
 
-If your mouse works in the main menu but not in-game, add `SDL_VIDEO_X11_DGAMOUSE=0` to your [launch options](/index.php/Steam#Launch_options "Steam"). [[2]](https://bbs.archlinux.org/viewtopic.php?id=184905)
+If your mouse works in the main menu but not in-game, add `SDL_VIDEO_X11_DGAMOUSE=0` to your [launch options](/index.php/Launch_option "Launch option"). [[2]](https://bbs.archlinux.org/viewtopic.php?id=184905)
 
 ### Brightness slider not working
 
@@ -572,12 +560,6 @@ $ pacmd set-source-volume *device_name* 0x6000
 x86_64 dependencies:
 
 *   [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl)
-
-### Locations
-
-The game can be started directly without running Steam by executing `./ck2` in its directory.
-
-Save files are stored in `~/.paradoxinteractive/Crusader Kings II/`. Before version 2.03 they were stored in `~/Documents/Paradox Interactive/Crusader Kings II/save games/`.
 
 ### No audio
 
@@ -641,11 +623,11 @@ Dependencies:
 
 ### In-game font is unreadable
 
-Add `MESA_GL_VERSION_OVERRIDE=2.1` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `MESA_GL_VERSION_OVERRIDE=2.1` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### The game does not start
 
-If you run the game from the terminal and, although no error is shown, try **disabling**: *Steam > Settings > In-Game > Enable Steam Community In-Game*.
+If you run the game from the terminal and, although no error is shown, try disabling: *Steam > Settings > In-Game > Enable Steam Community In-Game*.
 
 Apparently the game [#The Book of Unwritten Tales](#The_Book_of_Unwritten_Tales) has the same problem. It also describes a workaround that is untested in Dota 2.
 
@@ -662,11 +644,11 @@ SDL_GL_LoadLibrary(NULL) failed: Failed loading libGL.so.1: /usr/lib32/libxcb-dr
 
 ```
 
-See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
+See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
 
 ### Steam overlay
 
-Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting"), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
+Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues"), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
 
 ### Chinese tips and player names not shown
 
@@ -778,7 +760,7 @@ FTL may fail to run if you are using an opensource driver for your video card. T
 
 ### Game does not start
 
-You might get an error about missing `libudev.so.0`. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
+You might get an error about missing `libudev.so.0`. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
 
 ## Garry's Mod
 
@@ -813,7 +795,7 @@ The problem seems to correlate with a weak GPU and the game is timing out from t
 
 ## Gods will be watching
 
-Install [lib32-libopenssl-1.0-compat](https://aur.archlinux.org/packages/lib32-libopenssl-1.0-compat/) and add `LD_LIBRARY_PATH=/usr/lib32/openssl-1.0-compat` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## GRID Autosport
 
@@ -821,7 +803,7 @@ Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ### Black screen when trying to play
 
-Add `LC_ALL=C` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `LC_ALL=C` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Hack 'n' Slash
 
@@ -893,7 +875,7 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 
 ### The controller does not work
 
-[Install](/index.php/Install "Install") [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2) and add `LD_PRELOAD=libSDL2.so` to your [launch options](/index.php/Steam#Launch_options "Steam").
+[Install](/index.php/Install "Install") [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2) and add `LD_PRELOAD=libSDL2.so` to your [launch options](/index.php/Launch_option "Launch option").
 
 See the following Steam Community discussions:
 
@@ -904,7 +886,7 @@ It is suggested to run the *next_update* branch to get new fixes, there however 
 
 ### Missing libcurl.so.4 or version CURL_OPENSSL_3 not found
 
-[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Steam#Launch_options "Steam").
+[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## The Impossible Game
 
@@ -946,7 +928,7 @@ Requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib).
 
 ### Game does not start
 
-The game can sometimes segfault due to an incompatibility with the Steam Runtime's `libasound.so.2`. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
+The game can sometimes segfault due to an incompatibility with the Steam Runtime's `libasound.so.2`. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
 
 ## Invisible Apartment
 
@@ -1058,7 +1040,7 @@ LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-l
 
 ```
 
-and from Steam, the complete game launch options would be:
+and from Steam, the complete game [launch options](/index.php/Launch_option "Launch option") would be:
 
 ```
 LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
@@ -1079,7 +1061,7 @@ The game does not allow you to change its resolution on a multi-monitor setup on
 
 ### Floating heads
 
-Add `__GL_ShaderPortabilityWarnings=0` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `__GL_ShaderPortabilityWarnings=0` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Multiwinia
 
@@ -1105,18 +1087,13 @@ Requires [lib32-speex](https://www.archlinux.org/packages/?name=lib32-speex).
 
 If there is no sound in-game. Try installing [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl) and [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2).
 
-If this fails, try setting the game's launch options in Steam to:
-
-```
-LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH" %command%
-
-```
+If this fails, add `LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH"` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Nuclear Throne
 
 ### Missing libcurl.so.4 or version CURL_OPENSSL_3 not found
 
-[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Steam#Launch_options "Steam").
+[Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and add `LD_PRELOAD=libcurl.so.3` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Penumbra: Overture
 
@@ -1152,32 +1129,27 @@ The game segfaults during program start because of the `LD_LIBRARY_PATH` setting
 
 ### Game does not start
 
-Several OpenGL-related errors (such as `PROBLEM: You appear to have OpenGL 1.4.0, but we need at least 2.0.0!` or `libGL error: driver pointer missing`) are caused by Portal 2 bundling an old libstdc++ file. This error is especially common with open source Radeon drivers (`radeonsi`). See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
+Several OpenGL-related errors (such as `PROBLEM: You appear to have OpenGL 1.4.0, but we need at least 2.0.0!` or `libGL error: driver pointer missing`) are caused by Portal 2 bundling an old libstdc++ file. This error is especially common with open source Radeon drivers (`radeonsi`). See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
 
-A problem with libstdc can be fixed with:
-
-```
-LD_PRELOAD='/usr/$LIB/libstdc++.so.6' %command%
-
-```
+A problem with libstdc can be fixed by adding `LD_PRELOAD='/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Resolution too low
 
-When the game starts with a resolution so low that you cannot reach the game settings, start the game in windowed mode by setting the launch option `-windowed`.
+When the game starts with a resolution so low that you cannot reach the game settings, start the game in windowed mode by setting the [launch option](/index.php/Launch_option "Launch option") `-windowed`.
 
 ### Missing non Latin font
 
-Portal and Portal2 use Nimbus Sans,add the following lines to `~/.config/fontconfig/fonts.conf`
+Portal and Portal2 use Nimbus Sans, add the following lines to `~/.config/fontconfig/fonts.conf`:
 
 ```
-        <match target="pattern">
-               <test qual="any" name="family">
-                       <string>Nimbus Sans</string>
-               </test>
-               <edit name="family" mode="assign" binding="same">
-                       <string>Source Han Sans CN</string>
-               </edit>
-       </match>
+<match target="pattern">
+    <test qual="any" name="family">
+        <string>Nimbus Sans</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+        <string>Source Han Sans CN</string>
+    </edit>
+</match>
 
 ```
 
@@ -1222,17 +1194,13 @@ Requires [lib32-libcaca](https://www.archlinux.org/packages/?name=lib32-libcaca)
 
 ### Game fails to launch after update to new Nvidia drivers
 
-Set the launch options for Saints Row IV to:
-
- `LD_PRELOAD=$LD_PRELOAD:/usr/lib32/libGLX_nvidia.so %command%` 
+Add `LD_PRELOAD=$LD_PRELOAD:/usr/lib32/libGLX_nvidia.so` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Game causes GPU lockup with mesa drivers
 
 Saints Rows IV can cause a GPU lockup when trying to play on certain AMD hardware using open source drivers: [Bug 93475](https://bugs.freedesktop.org/show_bug.cgi?id=93475).
 
-A workaround is to set the launch options to:
-
- `R600_DEBUG=nosb %command%` 
+A workaround is to add `R600_DEBUG=nosb` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Serious Sam 3: BFE
 
@@ -1304,8 +1272,6 @@ To solve this just remove the three files `libSDL-1.2.so.0`, `libSDL_image-1.2.s
 
 Requires [glu](https://www.archlinux.org/packages/?name=glu).
 
-Splice comes with both x86 and x64 binaries. Steam does not have to be running to launch this game.
-
 ## Star Wars Battlefront II
 
 Star Wars Battlefront 2's Steam version running under [Wine](/index.php/Wine "Wine") has a bug which causes it to take forever to load a game. The solution is to compile a custom Wine version with the patch from this [WineHQ bug comment](https://bugs.winehq.org/show_bug.cgi?id=29582#c31).
@@ -1330,11 +1296,9 @@ Dependencies:
 
 ### Start with black screen
 
-The game tries to launch in 1024x768 resolution with fullscreen mode by default. It is impossible on some devices. (for example laptop Samsung Series9 with intel hd4000 video).
+The game by default tries to launch in fullscreen mode with a resolution of 1024x768, which doesn't work on some devices (for example the Samsung Series9 laptop with Intel hd4000 video).
 
-You can launch the game in windowed mode. To do this open game Properties in Steam, in General tab select "Set launch options..." and type "-window".
-
-Now you can change the resolution in game.
+Launch the game in windowed mode by adding `-window` to your [launch options](/index.php/Launch_option "Launch option"). Then change the resolution in-game.
 
 ### No English fonts
 
@@ -1504,27 +1468,18 @@ Requires [Java](/index.php/Java "Java").
 
 ## Transistor
 
-### Crash on launch / FMOD binding crash / Audio issues
+### Crash on launch / FMOD binding crash / audio issues
 
-Try running steam with following command
-
-```
-LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:/usr/lib/libasound.so.2' steam
+Add the following environment variable to your [launch options](/index.php/Launch_option "Launch option"):
 
 ```
-
-Alternatively, right click on Transistor, go to Properties => Set Launch Options... and enter
-
-```
-LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:/usr/lib/libasound.so.2' %command%
+LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:/usr/lib/libasound.so.2'
 
 ```
-
-This will force Steam to do the fix whenever Transistor is started, but allows Steam to be launched normally.
 
 Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[7]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
+Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
 
 ## Transmissions: Element 120
 
@@ -1587,7 +1542,7 @@ If the game resolution is wrong when using a dual monitor setup and you can't se
 
 ### Blank screen with sound only on startup
 
-Add `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Steam#Launch_options "Steam").
+Add `MESA_GL_VERSION_OVERRIDE=4.0` and `MESA_GLSL_VERSION_OVERRIDE=400` to your [launch options](/index.php/Launch_option "Launch option").
 
 ## Unity of Command
 
@@ -1622,7 +1577,7 @@ Games based on the Unity3D engine, like *War For The Overworld* or *Pixel Piracy
 
 Games made in C# often have a problem with some locales (e.g. Russian, German) because developers don't specify locale-agnostic number formatting. This can result in some game screens loading only partially, problems with online features or other bugs.
 
-To work around this, set the game's launch options to `LC_ALL=C %command%`
+To work around this, use the [launch option](/index.php/Launch_option "Launch option") `LC_ALL=C`.
 
 Some of the affected games: *FORCED*, *Gone Home*, *Ichi*, *Nimble Quest*, *Syder Arcade*.
 
@@ -1664,7 +1619,7 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 
 ### Blank screen
 
-If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Steam#Launch_options "Steam"). [[9]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[10]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Launch_option "Launch option"). [[9]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[10]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Warhammer 40,000: Dawn of War II
 
@@ -1714,8 +1669,8 @@ Requires [DOSBox](/index.php/DOSBox "DOSBox").
 
 To fix the crash at start, open `*gamedir*/dosbox_linux/launch_wizardry6.sh` and:
 
-*   comment the line `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./libs`
-*   change the beginning of the line starting with `exec ./dosbox` to `exec dosbox`
+1.  comment the line `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./libs`
+2.  change the beginning of the line starting with `exec ./dosbox` to `exec dosbox`
 
 ## World of Goo
 
@@ -1742,7 +1697,7 @@ Dependencies:
 
 ### Hangs on startup
 
-See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
+See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues").
 
 If you are running a [hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics") system, try:
 
@@ -1761,8 +1716,4 @@ XCOM may not recognize the SDL2 shared libraries shipped with the Steam runtime.
 
 ### Graphical Glitches
 
-This is a known issue, and it occurs because the shaders had not been ported to Linux yet by the developers. To minimize glitches and make the game playable use
-
- `-opengl4` 
-
-launch option, set Ocean Quality to "Potato" and Effects Quality to "Low" in game's settings.
+This is a known issue, and it occurs because the shaders had not been ported to Linux yet by the developers. To minimize glitches and make the game playable add `-opengl4` to your [launch options](/index.php/Launch_option "Launch option"), set Ocean Quality to "Potato" and Effects Quality to "Low" in the game settings.

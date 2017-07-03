@@ -25,7 +25,7 @@ It also [made an appearance](http://www.starringthecomputer.com/appearance.html?
 
 Internal speakers will not work out of the box. (See discussions on the [Linux Laptop Wiki](http://www.linlap.com/dell_xps_m2010), among other places.)
 
-A workaround is described at [https://answers.yahoo.com/question/index?qid=20110813164454AAyeJJ5](https://answers.yahoo.com/question/index?qid=20110813164454AAyeJJ5). It looks like it was originally documented at [https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3403](https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3403) but the ALSA bug tracker has since been taken down.
+A workaround is described at [[1]](https://answers.yahoo.com/question/index?qid=20110813164454AAyeJJ5). It looks like it was originally documented at [[2]](https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3403) but the ALSA bug tracker has since been taken down.
 
 For the record, the workaround involves running the following commands:
 
@@ -42,7 +42,7 @@ Speaker output works as expected after this.
 
 Using [systemd](/index.php/Systemd "Systemd"), it is possible to set up a script to run these commands automatically at boot.
 
-First, create the relevant script and save it somewhere (e.g., in */usr/local/bin*):
+First, create the relevant script and save it somewhere (e.g., in `/usr/local/bin`):
 
  `/usr/local/bin/M2010-sound` 
 ```
@@ -74,15 +74,9 @@ ExecStart=/usr/local/bin/M2010-sound
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
-Enable the new service.
-
-```
-systemctl enable M2010-sound
-
-```
+[Enable](/index.php/Enable "Enable") the new service.
 
 To test the workaround, either reboot or start the service immediately with `systemctl start M2010-sound`. However, note that running the commands a second time during the same session might cause the speakers to stop working; they should work again after a reboot.
 
@@ -98,13 +92,9 @@ i8k
 
 ```
 
-Next, specify the module load options in a .conf file in `/etc/modprobe.d`. The fan RPM values shown by default appear to be erroneous, so we change the `fan_mult` option here (see [https://bugs.launchpad.net/ubuntu/+source/sensors-applet/+bug/200449](https://bugs.launchpad.net/ubuntu/+source/sensors-applet/+bug/200449)):
+Next, specify the module load options in a .conf file in `/etc/modprobe.d`. The fan RPM values shown by default appear to be erroneous, so we change the `fan_mult` option here (see [[3]](https://bugs.launchpad.net/ubuntu/+source/sensors-applet/+bug/200449)):
 
- `/etc/modprobe.d/i8k.conf` 
-```
-options i8k force=1 fan_mult=1
-
-```
+ `/etc/modprobe.d/i8k.conf`  `options i8k force=1 fan_mult=1` 
 
 The `i8k` module should now be loaded automatically at boot.
 
@@ -116,13 +106,13 @@ Note: Within `i8k`, the left value appears to control the right fan (GPU) while 
 
 ### Keyboard
 
-The M2010 bluetooth keyboard/touchpad works out of the box.
+The M2010 Bluetooth keyboard/touchpad works out of the box.
 
 ### Graphics
 
 The ATI Mobility Radeon X1800 works with 3D acceleration using the `radeon` module.
 
-Install `xf86-video-ati` using [pacman](/index.php/Pacman "Pacman").
+[Install](/index.php/Install "Install") `xf86-video-ati`.
 
 ### Network
 
@@ -134,13 +124,13 @@ Wireless (Intel Corporation PRO/Wireless 4965 AG or AGN) works out of the box wi
 
 ### Webcam
 
-The webcam does not work out of the box (picture is garbled). [http://en.community.dell.com/support-forums/software-os/f/3525/t/18800012](http://en.community.dell.com/support-forums/software-os/f/3525/t/18800012) suggests that it is possible to get it to work; further testing is needed to get it up and running on more modern configurations.
+The webcam does not work out of the box (picture is garbled). [[4]](http://en.community.dell.com/support-forums/software-os/f/3525/t/18800012) suggests that it is possible to get it to work; further testing is needed to get it up and running on more modern configurations.
 
 ## Hardware (Untested)
 
-The following devices/functions were untested:
+The following devices/functions were not tested:
 
-*   Other bluetooth devices
+*   Other Bluetooth devices
 *   Card reader
 *   Fan control (i8k)
 *   Internal modem

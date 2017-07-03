@@ -16,6 +16,7 @@
     *   [1.11 DOM Distiller](#DOM_Distiller)
     *   [1.12 Forcing specific GPU](#Forcing_specific_GPU)
     *   [1.13 Import bookmarks from Firefox](#Import_bookmarks_from_Firefox)
+    *   [1.14 Enabling native notifications](#Enabling_native_notifications)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -189,6 +190,10 @@ If you import bookmarks from another PC, you have to export bookmarks from Firef
 `*Ctrl + Shift + O > Import and Backup > Export Bookmarks To HTML*` *in Firefox*
 
 The procedure is pretty much the same. You need to go to `chrome://settings/importData`. However, this time, in the **From** drop-down menu, select **Bookmarks HTML File** and click the **Choose File** button and upload the desired bookmark file.
+
+### Enabling native notifications
+
+Go to chrome://flags and enable the flag #enable-native-notifications. This requires version 59 or higher.
 
 ## Profile maintenance
 

@@ -13,11 +13,11 @@ From the [I2P](https://geti2p.net/en/) homepage:
 
 ## Installation
 
-I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package providing compilation from source, and the [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) package providing a precompiled binary.
+I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package providing compilation from source, and the [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) package providing a precompiled binary; both of which require a [Java](/index.php/Java "Java") Runtime Environment, OpenJDK is fine, for the ARM platform Oracle Java is recommended.
 
 The I2P homepage also provides a precompiled binary package for command line (headless) install in the users home directory. In case of this installation type I2P will auto update itself through the i2p network.
 
-A [Java](/index.php/Java "Java") Runtime Environment is required, OpenJDK is fine, for arm platform Oracle Java is recommended.
+Should these Java implementations be undesirable; [i2pd](https://aur.archlinux.org/packages/i2pd/) is a full C++ client, which may suit hardware with limited resources.
 
 ## Usage
 

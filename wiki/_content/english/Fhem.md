@@ -8,10 +8,9 @@ Install the [fhem](https://aur.archlinux.org/packages/fhem/) package.
 
 Since version 5.7, the FHEM package uses a different directory layout for its files:
 
-| Purpose | Path |
-| Perl modules and static content | `/usr/share/fhem` |
-| Logs and state files, changing content | `/var/lib/fhem` |
-| Main configuration file | `/etc/fhem.cfg` |
+*   `/usr/share/fhem` Perl modules and static content
+*   `/var/lib/fhem` logs and state files, changing content
+*   `/etc/fhem.cfg` main configuration file
 
 If you have a legacy configuration, please adjust your paths by putting these lines into `/etc/fhem.cfg`
 
@@ -38,4 +37,4 @@ Please visit the [FHEM reference documentation](http://fhem.de/commandref.html) 
 
 ### Startup
 
-Just start and / or enable `fhem.service`.
+Just [start/enable](/index.php/Start/enable "Start/enable") `fhem.service`.

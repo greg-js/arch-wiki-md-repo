@@ -280,7 +280,7 @@ nick@123.456.78.90.isp.com
 
 ```
 
-The result of a successfull vhost could be like so if you have the domain example.com available:
+The result of a successful vhost could be like so if you have the domain example.com available:
 
 ```
 nick@example.com

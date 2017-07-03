@@ -15,35 +15,37 @@ Touchegg comes with its own minimal GUI, but you can also install [touchegg-gce-
 
 ## Configuration
 
-The configuration file is found in `$HOME/.config/touchegg/touchegg.conf`.
+The configuration file is found in `~/.config/touchegg/touchegg.conf`.
 
 It is a basic XML file that defines various gestures. Please note that at this time `TAP_AND_HOLD`, `PINCH`, and `ROTATE`, do not appear to work.
 
-The list of triggers can be found [here](http://code.google.com/p/touchegg/wiki/AllGestures)
+The list of triggers can be found [here](http://code.google.com/p/touchegg/wiki/AllGestures).
 
-The list of actions can be found [here](http://code.google.com/p/touchegg/wiki/AllActions)
+The list of actions can be found [here](http://code.google.com/p/touchegg/wiki/AllActions).
 
-#### Gnome Shell
+### Gnome Shell
 
 Very basic so far. This should give you basic functionality. Hopefully we can update this for complete application support.
 
-edit `$HOME/.config/touchegg/touchegg.conf` add this:
+Edit `~/.config/touchegg/touchegg.conf`, add this:
 
 ```
 <gesture type="DRAG" fingers="1" direction="ALL">
-            <action type="DRAG_AND_DROP">BUTTON=1</action>
-        </gesture>
+    <action type="DRAG_AND_DROP">BUTTON=1</action>
+</gesture>
+
 ```
 
 and then edit this entry:
 
 ```
 <gesture type="DRAG" fingers="2" direction="ALL">
-            <action type="SCROLL">SPEED=7:INVERTED=**true**</action>
-        </gesture>
+    <action type="SCROLL">SPEED=7:INVERTED=**true**</action>
+</gesture>
+
 ```
 
-##### Start on login
+#### Start on login
 
 1.  Hit `alt-f2`;
 2.  Type `gnome-session-properties`;

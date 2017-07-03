@@ -24,8 +24,7 @@ This wiki page tries to cover the need for configuration and use instructions of
         *   [2.2.1 Dnsmasq](#Dnsmasq_2)
         *   [2.2.2 Openresolve](#Openresolve)
     *   [2.3 Update/Upgrade configuration](#Update.2FUpgrade_configuration_2)
-*   [3 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
-*   [4 See also](#See_also)
+*   [3 See also](#See_also)
 
 ## Pi-hole Server
 
@@ -46,7 +45,7 @@ Setup dnsmasq which will resolve DNS queries for your lan and manage filtering a
 
 ```
 
-**Users not making use of dnsmasq prior to installing Pi-hole**, copy the pi-hole-server-provided config file replacing the standard one (or simply diff the two):
+**Users not making use of dnsmasq prior to installing Pi-hole**: copy the pi-hole-server-provided config file replacing the standard one (or simply diff the two):
 
 ```
 # cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
@@ -222,12 +221,6 @@ If necessary, update dnsmasq config file
 ```
 
 and re/start it.
-
-## Using Pi-hole together with OpenVPN
-
-To use OpenVPN in server mode with Pi-hole, a few extra configuration steps are required.
-
-**Note:** Section under construction.
 
 ## See also
 

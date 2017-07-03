@@ -2,7 +2,7 @@
 
 LPRng is mature and stable and incorporates a flexible print filtering mechanism. It excels as a print server but can be used as a print client. It can also print from [CUPS](/index.php/CUPS "CUPS") clients installed on other machines with minor hand configuration on the CUPS side.
 
-**Note:** A disadvantage of LPRng is that Gnome3/GTK3 (ncluding chrome and chromium) and KDE do not support lpr printing from their GUI. However, printing to a file and then using lpr works, though it is inconvenient.
+**Note:** A disadvantage of LPRng is that Gnome3/GTK3 (including chrome and chromium) and KDE do not support lpr printing from their GUI. However, printing to a file and then using lpr works, though it is inconvenient.
 
 ## Contents
 

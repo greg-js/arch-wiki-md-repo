@@ -183,7 +183,7 @@ swaymsg -t get_outputs
 
 ```
 
-See [Backlight](/index.php/Backlight "Backlight") for a list of utilities to control brightness and color correction.
+To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
 
 ## Tips and tricks
 

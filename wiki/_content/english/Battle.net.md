@@ -3,12 +3,12 @@ The Battle.net client is a tool to download, update and launch games by Blizzard
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Wine config](#Wine_config)
-*   [3 Known issues](#Known_issues)
-    *   [3.1 Login region select](#Login_region_select)
-    *   [3.2 White flashing](#White_flashing)
-    *   [3.3 Login screen stuck at loading spinner (input fields disabled/greyed out)](#Login_screen_stuck_at_loading_spinner_.28input_fields_disabled.2Fgreyed_out.29)
-*   [4 See also](#See_also)
+*   [2 Known issues](#Known_issues)
+    *   [2.1 Crash after login/no 'Login' buttons](#Crash_after_login.2Fno_.27Login.27_buttons)
+    *   [2.2 Login region select](#Login_region_select)
+    *   [2.3 White flashing](#White_flashing)
+    *   [2.4 Login screen stuck at loading spinner (input fields disabled/greyed out)](#Login_screen_stuck_at_loading_spinner_.28input_fields_disabled.2Fgreyed_out.29)
+*   [3 See also](#See_also)
 
 ## Installation
 
@@ -21,9 +21,11 @@ $ winetricks corefonts
 
 ```
 
-## Wine config
-
 ## Known issues
+
+### Crash after login/no 'Login' buttons
+
+If the launcher crashes after logging in, and/or you are missing the 'Log in to Blizzard' and 'Log in with Facebook' buttons, try running `winecfg` and changing your Windows Version to Windows XP.
 
 ### Login region select
 

@@ -1,8 +1,8 @@
-[Webfs](http://linux.bytesex.org/misc/webfs.html) is a simple http server for mostly static content.
+[Webfs](http://linux.bytesex.org/misc/webfs.html) is a simple HTTP server for mostly static content.
 
 ## Installation
 
-It is available as [webfs](https://www.archlinux.org/packages/?name=webfs).
+[Install](/index.php/Install "Install") [webfs](https://www.archlinux.org/packages/?name=webfs).
 
 ## Configuration
 

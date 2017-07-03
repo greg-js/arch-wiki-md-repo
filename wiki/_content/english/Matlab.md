@@ -7,6 +7,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
 *   [1 Overview](#Overview)
 *   [2 Installation](#Installation)
     *   [2.1 Installing from the MATLAB installation software](#Installing_from_the_MATLAB_installation_software)
+        *   [2.1.1 Desktop entry](#Desktop_entry)
     *   [2.2 Installing from the AUR package](#Installing_from_the_AUR_package)
 *   [3 Activation](#Activation)
     *   [3.1 R2013b and earlier](#R2013b_and_earlier)
@@ -33,10 +34,11 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.11 Addon manager not working](#Addon_manager_not_working)
     *   [5.12 Using webcam/video device](#Using_webcam.2Fvideo_device)
     *   [5.13 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
+    *   [5.14 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
 
 ## Overview
 
-MATLAB is proprietary software produced by The MathWorks and requires a license to obtain, install, and activate. New versions of MATLAB are released twice a year (generally in March and September) with release names of R20XXa and R20XXb. The MathWorks also provide a discounted [Student Version](http://www.mathworks.com/academia/students.html) which is released once a year. Since R2012b MATLAB has only been available for 64-bit Linux. While MATLAB is officially supported on a number of [Linux distributions](http://www.mathworks.co.uk/support/sysreq/current_release/index.html?sec=linux), Arch is not officially supported. Despite the lack of official support, installing and using MATLAB on Arch is straight forward.
+MATLAB is proprietary software produced by The MathWorks and requires a license to obtain, install, and activate. New versions of MATLAB are released twice a year, release names are composed of `R`, the year of the release and `a` or `b`. Since R2012b MATLAB has only been available for 64-bit Linux. Arch Linux is not officially supported. [[1]](http://www.mathworks.co.uk/support/sysreq/current_release/index.html)
 
 ## Installation
 
@@ -55,49 +57,16 @@ During the installation, you are asked if you want symlinks to be created. If yo
 
 ```
 
-To create a menu item, we need to get a icon first:
+#### Desktop entry
 
-```
-# curl [https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png](https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png) -o /usr/share/icons/matlab.png
+Optionally create a [desktop entry](/index.php/Desktop_entry "Desktop entry"). The MIME type of MATLAB files is `text/x-matlab`.
 
-```
+Start `matlab` with:
 
-Then create a new `.desktop` file in `/usr/share/applications` with following lines (see [Desktop_entries](/index.php/Desktop_entries "Desktop entries") for more info on `.desktop` files):
+*   `-desktop` to run Matlab without a terminal.
+*   `-nosplash` to prevent the splash screen from showing up.
 
- `/usr/share/applications/matlab.desktop` 
-```
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Icon=/usr/share/icons/matlab.png
-Name=MATLAB
-Comment=Start MATLAB - The Language of Technical Computing
-Exec=matlab -desktop -nosplash
-Categories=Development;
-MimeType=text/x-matlab;
-
-```
-
-The `Exec` command line is composed as follows:
-
-*   `-desktop` is a flag needed to run Matlab without a terminal.
-*   `-nosplash` is a flag preventing the splash screen from showing and taking up a temporary space in your task bar.
-
-In order for icons to appear correctly the startup WM class needs to be added to the new `.desktop` file. While MATLAB is running, open a teminal window and enter:
-
-```
-# xprop | grep WM_CLASS
-
-```
-
-With xprop running, select the MATLAB window, and add the outputted information to the bottom of the `.desktop` file, for example:
-
-```
-StartupWMClass=MATLAB R2016a - academic use
-
-```
-
-You can also put this `.desktop` file in the `~/Desktop` directory to create a shortcut on your desktop. See also [[1]](https://help.ubuntu.com/community/MATLAB).
+In order for icons to appear correctly `StartupWMClass` needs to be set in the desktop entry. To find it out start MATLAB, run `xprop | grep WM_CLASS` and select the MATLAB window.
 
 ### Installing from the AUR package
 
@@ -117,7 +86,10 @@ In order to run MATLAB it requires a license file to be installed. The license f
 
 Up to and including R2013b the license file was linked to the MAC address of eth0\. This causes problems with the [Predictable Network Interface Names](/index.php/Network_configuration#Device_names "Network configuration") used by Arch Linux. It is possible to disable predictable network interface names by adding `net.ifnames=0` in your kernel command line or by creating a udev rule file
 
- `# ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules` 
+```
+# ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
+```
 
 It is also possible to [change the name of a device](/index.php/Network_configuration#Change_device_name "Network configuration"), but changing the name to eth0 can result in race conditions between the kernel and udev during boot. Another solution is to create a dummy network interface named eth0 with the MAC address linked to the license file. First, get that MAC address using `ip link`. Next, create the following file:
 
@@ -156,40 +128,56 @@ Finally, set the dummy module to load on boot by creating the following file:
 
 The MATLAB software is bundled with a JVM and therefore it is not necessary to install [Java](/index.php/Java "Java"). The JVM version bundled with MATLAB typically lags behind [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) from the [official repositories](/index.php/Official_repositories "Official repositories") and it is possible, although not required, to use the `MATLAB_JAVA` environment variable to specify the path of an alternative JRE. For example, to specify the [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) JRE and check the resulting version of Java, do:
 
- `$ MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre matlab -nodesktop -nosplash -r "version -java, exit" | grep Java` 
+```
+$ MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre matlab -nodesktop -nosplash -r "version -java, exit" | grep Java
+
+```
 
 Using alternative JRE would often solve some long-standing problems, such as the extra "`MEvent. CASE!`" string when doing two-finger scrolling using touchpad. Another problem that can be solved in this way is the ugly, limited fonts provided by default, especially for some Chinese characters.
 
 ### OpenGL acceleration
 
-MATLAB can take advantage of hardware based 2D and 3D OpenGL acceleration. Support for hardware acceleration needs to be configured outside of MATLAB. Appropriate [video drivers](/index.php/Video_drivers "Video drivers") need to be installed along with the OpenGL utility library [glu](https://www.archlinux.org/packages/?name=glu) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If X11 forwarding is being used, the video drivers need to be installed on both the client and server. To check if MATLAB is making use of hardware based OpenGL acceleration run:
+MATLAB can take advantage of hardware based 2D and 3D OpenGL acceleration. Support for hardware acceleration needs to be configured outside of MATLAB. Appropriate [video drivers](/index.php/Video_drivers "Video drivers") need to be installed along with the OpenGL utility library [glu](https://www.archlinux.org/packages/?name=glu) package. If X11 forwarding is being used, the video drivers need to be installed on both the client and server. To check if MATLAB is making use of hardware based OpenGL acceleration run:
 
- `$ matlab -nodesktop -nosplash -r "opengl info; exit" | grep Software` 
+```
+$ matlab -nodesktop -nosplash -r "opengl info; exit" | grep Software
 
-If "software rendering" is not "false", then there is a problem with your hardware acceleration. If this is the case make sure OpenGL is configured correctly on the system. This can be done with the `glxinfo` program from the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package from the [official repositories](/index.php/Official_repositories "Official repositories"):
+```
 
- `$ glxinfo | grep "direct rendering"` 
+If "software rendering" is not "false", then there is a problem with your hardware acceleration. If this is the case make sure OpenGL is configured correctly on the system. This can be done with the `glxinfo` program from the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package:
+
+```
+$ glxinfo | grep "direct rendering"
+
+```
 
 If "direct rendering" is not "yes", then there is likely a problem with your system configuration.
 
 If glxinfo works but not matlab, you can try to run:
 
- `$ export LD_PRELOAD=/usr/lib/libstdc++.so; export LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/; matlab -nodesktop -nosplash -r "opengl info; exit" | grep Software` 
+```
+$ export LD_PRELOAD=/usr/lib/libstdc++.so; export LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/; matlab -nodesktop -nosplash -r "opengl info; exit" | grep Software
+
+```
 
 If its works, you can edit Matlab launcher script to add:
 
 ```
 export LD_PRELOAD=/usr/lib/libstdc++.so
 export LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/
+
 ```
 
 ### Fonts for figures
 
-**Note:** This section only applies to R2014a and earlier as starting with R2014b MATLAB uses True Type Fonts. So as long as: `$ fc-match Helvetica` returns a font, figure fonts should work as expected.
+**Note:** This section only applies to R2014a and earlier as starting with R2014b MATLAB uses True Type Fonts. So as long as `fc-match Helvetica` returns a font, figure fonts should work as expected.
 
 While MATLAB can be run in a text only mode, it also provides advanced graphics capabilities. To confirm that MATLAB is making use of the system fonts run:
 
- `$ matlab -nodesktop -nosplash -r "xlabel('BIG FONT', 'FontSize', 42); ylabel('small font', 'FontSize', 12); pause; exit" > /dev/null` 
+```
+$ matlab -nodesktop -nosplash -r "xlabel('BIG FONT', 'FontSize', 42); ylabel('small font', 'FontSize', 12); pause; exit" > /dev/null
+
+```
 
 This should produce a MATLAB figure with "BIG FONT" in a large font on the abscissa and "small font" in a small font on the ordinate. If "BIG FONT" and "small font" are both the same size, refer to [Xorg fonts](/index.php/Xorg#Program_requests_.22font_.27.28null.29.27.22 "Xorg") to confirm that the correct the bitmap font package (either [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi) or [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) from the [official repositories](/index.php/Official_repositories "Official repositories")) is installed on your system.
 
@@ -197,11 +185,17 @@ This should produce a MATLAB figure with "BIG FONT" in a large font on the absci
 
 To confirm that MATLAB is able to use the default soundcard to present sounds run:
 
- `$ matlab -nodesktop -nosplash -r "load handel; sound(y, Fs); pause(length(y)/Fs); exit" > /dev/null` 
+```
+$ matlab -nodesktop -nosplash -r "load handel; sound(y, Fs); pause(length(y)/Fs); exit" > /dev/null
+
+```
 
 This should play an except from Handel's "Hallelujah Chorus." If this fails make sure [ALSA](/index.php/ALSA "ALSA") is properly configured. This can be done with the `speaker-test` program from the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
- `$ speaker-test` 
+```
+$ speaker-test
+
+```
 
 If you do not hear anything, then there is likely a problem with your system configuration.
 
@@ -209,7 +203,10 @@ If you do not hear anything, then there is likely a problem with your system con
 
 MATLAB can take advantage of [CUDA enabled GPUs](http://www.mathworks.co.uk/discovery/matlab-gpu.html) to speed up applications. In order to take advantage of a supported GPU install the [nvidia](https://www.archlinux.org/packages/?name=nvidia), [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils), [ocl-icd](https://www.archlinux.org/packages/?name=ocl-icd), [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia), and [cuda](https://www.archlinux.org/packages/?name=cuda) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). To check if MATLAB is able to utilize the GPU run:
 
- `$ matlab -nodesktop -nosplash -r "x=rand(10, 'single'); g=gpuArray(x); Success=isequal(gather(g), x), exit"  | sed -ne '/Success =/,$p'` 
+```
+$ matlab -nodesktop -nosplash -r "x=rand(10, 'single'); g=gpuArray(x); Success=isequal(gather(g), x), exit"  | sed -ne '/Success =/,$p'
+
+```
 
 ### Install supported compilers
 
@@ -222,14 +219,14 @@ To use previous versions of the the `gcc`, `g++`, and `gfortran` compilers with 
 The help browser uses valuable slots in the dynamic thread vector and causes competition with core functionality provided by libraries like the BLAS that also depend on the dynamic thread vector. The help browser can be configured to use fewer slots in the dynamic thread vector with
 
 ```
- >> webutils.htmlrenderer('basic');
+>> webutils.htmlrenderer('basic');
 
 ```
 
 This is a persistent change and to reverse it use
 
 ```
- >> webutils.htmlrenderer('default');
+>> webutils.htmlrenderer('default');
 
 ```
 
@@ -250,13 +247,18 @@ MATLAB has a number of libraries that have been compiled with static thread loca
 ```
 >> doc('help');
 >> ones(10)*randn(10);
- Error using  * 
+Error using  * 
 BLAS loading error:
-dlopen: cannot load any more object with static TLS 
+dlopen: cannot load any more object with static TLS
 
 ```
 
-is related to bugs [961964](http://www.mathworks.de/support/bugreports/961964) and [1003952](http://www.mathworks.com/support/bugreports/1003952). In some cases (e.g., bug [961964](http://www.mathworks.de/support/bugreports/961964)) patched libraries are available from [The MathWorks](http://www.mathworks.de/support/bugreports/license/accept_license/5730?fname=attachment_961964_12b_13a_13b_14a_glnxa64_2014-01-30.zip&geck_id=961964), while in others (e.g., bug [1003952](http://www.mathworks.com/support/bugreports/1003952)) work arounds exist. A more general solution of recompiling `glibc` has also been [suggested](http://stackoverflow.com/a/19468365/2787723).
+is related to the bugs:
+
+*   [961964](http://www.mathworks.de/support/bugreports/961964) for which patched libraries are available from [MathWorks](http://www.mathworks.de/support/bugreports/license/accept_license/5730?fname=attachment_961964_12b_13a_13b_14a_glnxa64_2014-01-30.zip&geck_id=961964)
+*   [1003952](http://www.mathworks.com/support/bugreports/1003952) for which workarounds exist
+
+A more general solution of recompiling `glibc` has also been suggested. [[2]](http://stackoverflow.com/a/19468365/2787723)
 
 ### MATLAB crashes when displaying graphics
 
@@ -300,9 +302,9 @@ Then start Matlab.
 
 ### Garbled or invisible text
 
-Set the environment variable `J2D_D3D` to `false`[[2]](https://stackoverflow.com/questions/22737535/swing-rendering-appears-broken-in-jdk-1-8-correct-in-jdk-1-7).
+Set the environment variable `J2D_D3D` to `false`[[3]](https://stackoverflow.com/questions/22737535/swing-rendering-appears-broken-in-jdk-1-8-correct-in-jdk-1-7).
 
-In newer versions of MATLAB (R2015b) [[3]](https://www.reddit.com/r/archlinux/comments/3yaga8/matlab_installer_bonked/) this also requires setting `MATLAB_JAVA` to something openjdk based. Example:
+In newer versions of MATLAB (R2015b) [[4]](https://www.reddit.com/r/archlinux/comments/3yaga8/matlab_installer_bonked/) this also requires setting `MATLAB_JAVA` to something openjdk based. Example:
 
 ```
 export J2D_D3D=false
@@ -362,24 +364,24 @@ opengl('save','software')
 
 ```
 
-See [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=96671) for more.
+See [[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=96671) for more.
 
 ### Addon manager not working
 
 Addon manager requires the [libselinux](https://aur.archlinux.org/packages/libselinux/) package to work. (in Matlab 2016b)
 
-Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. See also [https://bugs.archlinux.org/task/54257](https://bugs.archlinux.org/task/54257). A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in matlabroot/R2017a/cefclient/sys/os/glnxa64, namely, as of R2017a:
+Since upgrade from pango-1.40.5 to pango-1.40.6, the MATLABWindow application (responsible for Add-On Manager, Simulation Data Inspector and perhaps something else) cannot be started. [[7]](https://bugs.archlinux.org/task/54257) A workaround is to point MATLAB shipping glib libraries to those glib libraries from your system. There are 5 of those libraries in `matlabroot/R2017a/cefclient/sys/os/glnxa64`, namely, as of R2017a:
 
 ```
- libgio-2.0.so
- libglib-2.0.so
- libgmodule-2.0.so
- libgobject-2.0.so
- libgthread-2.0.so
+libgio-2.0.so
+libglib-2.0.so
+libgmodule-2.0.so
+libgobject-2.0.so
+libgthread-2.0.so
 
 ```
 
-Make it so that these symlinks are pointing to your system glib libraries instead of versions located in matlabroot/R2017a/cefclient/sys/os/glnxa64
+Make it so that these symlinks are pointing to your system glib libraries instead of versions located in `matlabroot/R2017a/cefclient/sys/os/glnxa64`.
 
 ### Using webcam/video device
 
@@ -393,12 +395,16 @@ Since MATLAB R2017a, Image Acqusition Toolbox is using GStreamer library version
 
 Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB.
 
-To fix this issue, download latest jxbrowser from [https://www.teamdev.com/jxbrowser](https://www.teamdev.com/jxbrowser) and replace the following jars from MATLAB:
+To fix this issue, download the [latest jxbrowser](https://www.teamdev.com/jxbrowser) and replace the following jars from MATLAB:
 
 ```
- matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-chromium.jar
- matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-linux64.jar
+matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-chromium.jar
+matlabroot/java/jarext/jxbrowser-chromium/jxbrowser-linux64.jar
 
 ```
 
-MATLAB should automatically unpack those jars into matlabroot/sys/jxbrowser-chromium/glnxa64/chromium when first opening Help Browser. Remove matlabroot/sys/jxbrowser-chromium/glnxa64/chromium directory to make sure MATLAB uses the latest jxbrowser.
+MATLAB should automatically unpack those jars into `matlabroot/sys/jxbrowser-chromium/glnxa64/chromium` when first opening Help Browser. Remove `matlabroot/sys/jxbrowser-chromium/glnxa64/chromium` directory to make sure MATLAB uses the latest jxbrowser.
+
+### Some dropdown menus cannot be selected
+
+In some interfaces - such as Simulation Data Inspector or Simulink Test Manager - nothing happens when choosing an item in dropdown menu (for example, when trying to change a number of subplots in Simulation Data Inspector). To work around this issue, hold down the Shift key while clicking the item in dropdown menu.

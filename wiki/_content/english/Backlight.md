@@ -203,6 +203,10 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.deb
 
 ### Other utilities
 
+*   **brightnessctl** — Lightweight brightness control tool (Wayland compatible).
+
+	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)
+
 *   **light** — Light is the successor and C-port of *LightScript*.
 
 	[https://github.com/haikarainen/light](https://github.com/haikarainen/light) || [light](https://aur.archlinux.org/packages/light/)

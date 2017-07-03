@@ -1,4 +1,4 @@
-This article describes how to set up root filesystem LVM snapshot creation during system start. Such snapshots can be used for [full system backups](/index.php/Full_System_Backup_with_tar "Full System Backup with tar") with minimal downtime or testing system updates with the option to revert them.
+This article describes how to set up root filesystem LVM snapshot creation during system start. Such snapshots can be used for [full system backups](/index.php/Full_system_backup_with_tar "Full system backup with tar") with minimal downtime or testing system updates with the option to revert them.
 
 ## Contents
 
@@ -73,7 +73,7 @@ After restarting the system with this grub entry `# lvs` should show up the newl
 
 ### Backup
 
-To use this functionality for a full system backup, restart your system with the snapshot creation target. Mount the snapshot volume (and further volumes, if required), preferably using the read only (<tt>-o</tt>) option. Then backup your system, for example with tar as described in [Full System Backup with tar](/index.php/Full_System_Backup_with_tar "Full System Backup with tar").
+To use this functionality for a full system backup, restart your system with the snapshot creation target. Mount the snapshot volume (and further volumes, if required), preferably using the read only (<tt>-o</tt>) option. Then backup your system, for example with tar as described in [Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar").
 
 During backup you can continue to use your system normally, since all changes to your regular volumes are invisible in the snapshots. Do not forget to delete the snapshot volume after the backup – changes to your regular volume will use up space in the snapshot due to the copy-on-write operations. If the snapshot space becomes fully used, and LVM is not able to automatically grow the snapshot, LVM will deny further writes to your regular volumes or drop the snapshot, which should be avoided.
 

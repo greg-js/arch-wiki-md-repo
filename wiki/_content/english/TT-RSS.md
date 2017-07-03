@@ -4,6 +4,8 @@ Tiny Tiny RSS is an open source web-based news feed (RSS/Atom) aggregator, desig
 
 Install [tt-rss](https://www.archlinux.org/packages/?name=tt-rss) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
+If you plan on using PostgreSQL, install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql)
+
 tt-rss is installed into `/usr/share/webapps/tt-rss/`; you'll need to make this directory available from your web server. The simplest way is to do :
 
 - With [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") :

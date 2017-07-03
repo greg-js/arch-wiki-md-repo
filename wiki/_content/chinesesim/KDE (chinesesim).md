@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-07，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=479270)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-01，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=479881)可以查看翻译后英文页面的改动。
 
 KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -76,9 +76,9 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
         *   [6.6.4 启用混合项（compositing）后全屏时闪烁](#.E5.90.AF.E7.94.A8.E6.B7.B7.E5.90.88.E9.A1.B9.EF.BC.88compositing.EF.BC.89.E5.90.8E.E5.85.A8.E5.B1.8F.E6.97.B6.E9.97.AA.E7.83.81)
         *   [6.6.5 Nvidia 显卡屏幕撕裂](#Nvidia_.E6.98.BE.E5.8D.A1.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
         *   [6.6.6 Plasma 光标有时显示不正确](#Plasma_.E5.85.89.E6.A0.87.E6.9C.89.E6.97.B6.E6.98.BE.E7.A4.BA.E4.B8.8D.E6.AD.A3.E7.A1.AE)
-    *   [6.7 KDE 下的声音问题](#KDE_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
+    *   [6.7 Plasma 5 下的声音问题](#Plasma_5_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
         *   [6.7.1 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
-            *   [6.7.1.1 尝试在 KDE 中播放任何声音时出现 "返回默认" 消息](#.E5.B0.9D.E8.AF.95.E5.9C.A8_KDE_.E4.B8.AD.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
+            *   [6.7.1.1 在播放任何声音时出现 "返回默认" 消息](#.E5.9C.A8.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
             *   [6.7.1.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
     *   [6.8 Inotify 文件夹监控上限](#Inotify_.E6.96.87.E4.BB.B6.E5.A4.B9.E7.9B.91.E6.8E.A7.E4.B8.8A.E9.99.90)
     *   [6.9 自动挂载NFS卷时卡死](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BDNFS.E5.8D.B7.E6.97.B6.E5.8D.A1.E6.AD.BB)
@@ -694,7 +694,7 @@ export KWIN_EXPLICIT_SYNC=0
 
 ##### 禁用桌面特效
 
-Plasma 默认启用了桌面特效，并且不是所有的游戏都会自动禁用它们。你可以通过*系统设置 > 桌面特效*禁用桌面特效。你也可以使用 `Alt+Shift+F12` 切换桌面效果。另外，您也可以在 *系统设置 > 窗口管理 > 窗口规则* 下创建自定义KWin规则，以在某个应用程序/窗口启动时自动禁用/启用混合项。
+Plasma 默认启用了桌面特效，并且不是所有的游戏都会自动禁用它们。你可以通过*系统设置 > 桌面特效* 禁用桌面特效。你也可以使用 `Alt+Shift+F12` 切换桌面效果。另外，您也可以在 *系统设置 > 窗口管理 > 窗口规则* 下创建自定义KWin规则，以在某个应用程序/窗口启动时自动禁用/启用混合项。
 
 ##### 禁用混合项（compositing）
 
@@ -733,13 +733,13 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ```
 
-### KDE 下的声音问题
+### Plasma 5 下的声音问题
 
 #### ALSA 相关的问题
 
 **注意:** 首先保证你已经安装了 [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 和 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)。
 
-##### 尝试在 KDE 中播放任何声音时出现 "返回默认" 消息
+##### 在播放任何声音时出现 "返回默认" 消息
 
 当你碰到这些消息：
 

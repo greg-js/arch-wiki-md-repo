@@ -1,3 +1,5 @@
+[RT](https://bestpractical.com/) is an enterprise-grade issue tracking system.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -15,7 +17,9 @@ This guide will help create a new RT (Request Tracker) server using [MySQL](/ind
 
 ### Install the packages
 
-Build and install the RT package from the AUR [here](https://aur.archlinux.org/packages.php?ID=53167). Be prepared to install a truckload of Perl dependencies: you'll need about 70 from the AUR and approximately 90 from the mirrors! An AUR wrapper will definitely help you out here. You will also want to install [Apache](/index.php/Apache "Apache") (also referred to as httpd) if it isn't on your server already.
+[Install](/index.php/Install "Install") the [rt](https://aur.archlinux.org/packages/rt/) package.
+
+Be prepared to install a truckload of Perl dependencies: you'll need about 70 from the AUR and approximately 90 from the mirrors! An AUR wrapper will definitely help you out here. You will also want to install [Apache](/index.php/Apache "Apache") (also referred to as httpd) if it isn't on your server already.
 
 ### Configure Apache
 

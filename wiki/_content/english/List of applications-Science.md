@@ -528,6 +528,10 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[http://merkaartor.be/](http://merkaartor.be/) || [merkaartor](https://www.archlinux.org/packages/?name=merkaartor)
 
+*   **Navit** — Modular turn-by-turn car navigation system.
+
+	[http://www.navit-project.org/](http://www.navit-project.org/) || [navit](https://www.archlinux.org/packages/?name=navit)
+
 *   **QLandkarte GT** — Use your GPS with Linux.
 
 	[http://qlandkarte.org/](http://qlandkarte.org/) || [qlandkartegt](https://www.archlinux.org/packages/?name=qlandkartegt)

@@ -39,7 +39,7 @@ unixsocket /run/redis/redis.sock
 
 ```
 
-*   Set permission to the socket to all members of the redis [group](/index.php/Group "Group"):
+*   Set permission to the socket to all members of the *redis* [group](/index.php/Group "Group"):
 
 ```
 unixsocketperm 770

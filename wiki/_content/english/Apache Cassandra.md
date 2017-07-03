@@ -1,4 +1,4 @@
-Apache Cassandra is a NoSQL database with linear scalability. For more information, see the [official documentation](http://docs.datastax.com/en/cassandra/2.0/cassandra/gettingStartedCassandraIntro.html).
+[Apache Cassandra](https://cassandra.apache.org/) is a NoSQL database with linear scalability.
 
 ## Installation
 

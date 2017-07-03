@@ -952,7 +952,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 	[http://sourceforge.net/projects/kphone/](http://sourceforge.net/projects/kphone/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=kphone)</small>
 
-*   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application that allows you to to communicate freely with people over the internet, with voice, video, and text instant messaging.
+*   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application for communicating freely with people over the internet, with voice, video, and text instant messaging.
 
 	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://www.archlinux.org/packages/?name=linphone)
 

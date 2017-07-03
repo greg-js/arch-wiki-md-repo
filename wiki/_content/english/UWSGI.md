@@ -36,7 +36,7 @@ There are alternatives written in Python such as [gunicorn](https://aur.archlinu
 
 ## Configuration
 
-Web applications (e.g. [Wordpress](/index.php/Wordpress "Wordpress"), [ownCloud](/index.php/OwnCloud "OwnCloud"), [Mailman](/index.php/Mailman "Mailman"), [cgit](/index.php/Cgit "Cgit")) served by uWSGI are configured in `/etc/uwsgi/`, where each of them requires its own configuration file (ini-style). Details can be found [in the uWSGI documentation](http://uwsgi-docs.readthedocs.org/en/latest/).
+Web applications (e.g. [Wordpress](/index.php/Wordpress "Wordpress"), [Nextcloud](/index.php/Nextcloud "Nextcloud"), [Mailman](/index.php/Mailman "Mailman"), [cgit](/index.php/Cgit "Cgit")) served by uWSGI are configured in `/etc/uwsgi/`, where each of them requires its own configuration file (ini-style). Details can be found [in the uWSGI documentation](http://uwsgi-docs.readthedocs.org/en/latest/).
 
 Alternatively, you can run uWSGI in [Emperor mode](http://uwsgi-docs.readthedocs.org/en/latest/Emperor.html) (configured in `/etc/uwsgi/emperor.ini`). It enables a single uWSGI instance to run a set of different apps (called vassals) using a single main supervisor (called emperor).
 

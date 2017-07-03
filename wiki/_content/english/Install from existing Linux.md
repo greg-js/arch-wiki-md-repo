@@ -357,4 +357,4 @@ Finally, mount the new directory for installing the intermediate system.
 
 If less than 700MB are available, examine the packages in the group base, and select only those required to get a system with internet connection up and running in the temporary partition. This will mean explicitly specifying individual packages to pacstrap, as well as passing it the -c option, to get packages downloaded to the host system to avoid filling up valuable space.
 
-Once the new Arch Linux system is installed, reboot into the newly created system, and [rsync the entire system](/index.php/Full_system_backup_with_rsync#With_a_single_command "Full system backup with rsync") to the primary partition. Fix the bootloader configuration before rebooting.
+Once the new Arch Linux system is installed, reboot into the newly created system, and [rsync the entire system](/index.php/Rsync#Full_system_backup "Rsync") to the primary partition. Fix the bootloader configuration before rebooting.

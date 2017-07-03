@@ -1,4 +1,4 @@
-[Textadept](http://foicica.com/textadept/) describes itself as a "a fast, minimalist, and remarkably extensible cross-platform text editor". With a very lightweight code base written in C, it relies on Lua for its extensibility. The editor works both in a graphical (GTK2) and in a CLI environment (Curses).
+[Textadept](https://foicica.com/textadept/) describes itself as a "a fast, minimalist, and remarkably extensible cross-platform text editor". With a very lightweight code base written in C, it relies on Lua for its extensibility. The editor works both in a graphical (GTK2) and in a CLI environment (Curses).
 
 ## Contents
 

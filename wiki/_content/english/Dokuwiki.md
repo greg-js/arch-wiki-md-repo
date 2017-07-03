@@ -1,26 +1,24 @@
-"DokuWiki is a standards-compliant, simple-to-use wiki which allows users to create rich documentation repositories. It provides an environment for individuals, teams and companies to create and collaborate using a simple yet powerful syntax that ensures data files remain structured and readable outside the wiki."
+"[DokuWiki](https://www.dokuwiki.org/dokuwiki#) is a standards-compliant, simple-to-use wiki which allows users to create rich documentation repositories. It provides an environment for individuals, teams and companies to create and collaborate using a simple yet powerful syntax that ensures data files remain structured and readable outside the wiki."
 
 "Unlimited page revisions allows restoration to any earlier page version, and with data stored in plain text files, no database is required. A powerful plugin architecture allows for extension and enhancement of the core system. See the features section for a full description of what DokuWiki has to offer."[[1]](http://wiki.splitbrain.org/wiki:dokuwiki)
 
 In other words, DokuWiki is a wiki written in PHP and requires no database.
 
-[Like to see a running example?](http://www.dokuwiki.org/)
-
 ## Contents
 
-*   [1 Initial Notes](#Initial_Notes)
+*   [1 Initial notes](#Initial_notes)
 *   [2 Installation](#Installation)
 *   [3 Configuration](#Configuration)
     *   [3.1 Apache](#Apache)
-    *   [3.2 lighttpd Specific Configuration](#lighttpd_Specific_Configuration)
+    *   [3.2 lighttpd specific configuration](#lighttpd_specific_configuration)
     *   [3.3 nginx](#nginx)
-*   [4 Post Installation](#Post_Installation)
-    *   [4.1 Cleaning Up](#Cleaning_Up)
-    *   [4.2 Installing Plugins](#Installing_Plugins)
-    *   [4.3 Backing Up](#Backing_Up)
-*   [5 Further Reading](#Further_Reading)
+*   [4 Post installation](#Post_installation)
+    *   [4.1 Cleaning up](#Cleaning_up)
+    *   [4.2 Installing plugins](#Installing_plugins)
+    *   [4.3 Backing up](#Backing_up)
+*   [5 Further reading](#Further_reading)
 
-## Initial Notes
+## Initial notes
 
 DokuWiki should work on any web server which supports PHP 5.3.3 or later. As the requirements may change over time, you should consult the [requirements page](http://www.dokuwiki.org/requirements) for DokuWiki for additional details.
 
@@ -106,7 +104,7 @@ Afterwards restart Apache:
 
 Then finish the installation by running the *dokuwiki/install.php* script in your browser.
 
-### lighttpd Specific Configuration
+### lighttpd specific configuration
 
 Edit the `/etc/lighttpd/lighttpd.conf` file as per the [dokuwiki instructions](http://www.dokuwiki.org/install:lighttpd) (might contain updated information).
 
@@ -181,9 +179,9 @@ Restart nginx
 
 ```
 
-## Post Installation
+## Post installation
 
-### Cleaning Up
+### Cleaning up
 
 **After configuring the server remove the install.php file!**
 
@@ -192,13 +190,13 @@ Restart nginx
 
 ```
 
-### Installing Plugins
+### Installing plugins
 
 Many community created plugins can be found [here](http://www.dokuwiki.org/plugins)
 
 They can be added through the web interface (as well as updated) through the Admin menu. Some plugins cannot be downloaded, if they go over ssl (e.g. git).
 
-### Backing Up
+### Backing up
 
 It is very trivial to backup DokuWiki, since there is no database. All pages are in plain text, and require only a simple tar, or [rsync](/index.php/Rsync "Rsync").
 
@@ -212,6 +210,6 @@ A quick breakdown of the directories of interest in the current (2015-08-10a) ve
 
 This may change in future releases, please consult the [DokuWiki Backup FAQ](https://www.dokuwiki.org/faq:backup) for verification.
 
-## Further Reading
+## Further reading
 
 The [DokuWiki main site](http://www.dokuwiki.org/) has all of the information and help that you could possibly need.

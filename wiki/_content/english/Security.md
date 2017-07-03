@@ -92,7 +92,7 @@ It is also very effective to combine these two techniques by saving long, comple
 
 Also consider the [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html) method, using a sufficient number of words.
 
-See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html) or [The passphrase FAQ](http://www.iusmentis.com/security/passphrasefaq/) for some additional background. Also, you can check entropy level of your chosen passphrase [here](http://rumkin.com/tools/password/passchk.php), or consulting [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength").
+See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html) or [The passphrase FAQ](https://www.iusmentis.com/security/passphrasefaq/) for some additional background. Also, you can check entropy level of your chosen passphrase [here](http://rumkin.com/tools/password/passchk.php), or consulting [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength").
 
 ### Maintaining passwords
 
@@ -190,7 +190,7 @@ For example:
 
 ```
 
-The default [Umask](/index.php/Umask "Umask") `0022` can be changed to improve security for newly created files. The [NSA RHEL5 Security Guide](http://www.nsa.gov/ia/_files/os/redhat/rhel5-guide-i731.pdf) suggests a umask of `0077` for maximum security, which makes new files not readable by users other than the owner. To change this, see [Umask#Set the mask value](/index.php/Umask#Set_the_mask_value "Umask").
+The default [Umask](/index.php/Umask "Umask") `0022` can be changed to improve security for newly created files. The [NSA RHEL5 Security Guide](https://www.nsa.gov/ia/_files/os/redhat/rhel5-guide-i731.pdf) suggests a umask of `0077` for maximum security, which makes new files not readable by users other than the owner. To change this, see [Umask#Set the mask value](/index.php/Umask#Set_the_mask_value "Umask").
 
 ## User setup
 
@@ -480,7 +480,7 @@ See [OpenSSL](/index.php/OpenSSL "OpenSSL") and [Network Security Services](/ind
 
 The default internet SSL certificate trustchains are provided by the [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) package and its dependencies. Note that Arch relies on trust-sources (e.g. [ca-certificates-cacert](https://www.archlinux.org/packages/?name=ca-certificates-cacert), [ca-certificates-mozilla](https://www.archlinux.org/packages/?name=ca-certificates-mozilla)) providing the certificates to be trusted per default by the system.
 
-There may be occasions when you want to deviate from the default. For example, you may read some [news](http://www.theregister.co.uk/2016/05/27/blue_coat_ca_certs/) and want to distrust a certificate rather than wait until the trust-source providers do. The Arch infrastructure makes such easy:
+There may be occasions when you want to deviate from the default. For example, you may read some [news](https://www.theregister.co.uk/2016/05/27/blue_coat_ca_certs/) and want to distrust a certificate rather than wait until the trust-source providers do. The Arch infrastructure makes such easy:
 
 1.  Obtain the respective certificate in .crt format (Example: [view](https://crt.sh/?id=19538258), [download](https://crt.sh/?d=19538258); in case of an existing trusted root certificate authority, you may also find it extracted in the system path),
 2.  Copy it to `/etc/ca-certificates/trust-source/blacklist/` and
@@ -490,11 +490,11 @@ To check the blacklisting works as intended, you may re-open your preferred brow
 
 ## Authenticating packages
 
-[Attacks on package managers](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](http://www.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
+[Attacks on package managers](https://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](https://www.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
 
 ## Follow NVD/CVE alerts
 
-Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](http://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team").
+Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](https://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team").
 
 **Warning:** Do not be tempted to perform [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), as they are not supported by Arch Linux and may cause instability: the whole system should be upgraded when upgrading a component. Also note that infrequent system updates can complicate the update process.
 
@@ -504,7 +504,7 @@ Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert update
 
 Physical access to a computer is root access given enough time and resources. However, a high *practical* level of security can be obtained by putting up enough barriers.
 
-An attacker can gain full control of your computer on the next boot by simply attaching a malicious IEEE 1394 (FireWire), Thunderbolt or PCI Express device as they are given full memory access.[[3]](http://www.breaknenter.org/projects/inception/) There is little you can do from preventing this, or modification of the hardware itself - such as flashing malicious firmware onto a drive. However, the vast majority of attackers will not be this knowledgeable and determined.
+An attacker can gain full control of your computer on the next boot by simply attaching a malicious IEEE 1394 (FireWire), Thunderbolt or PCI Express device as they are given full memory access.[[3]](https://www.breaknenter.org/projects/inception/) There is little you can do from preventing this, or modification of the hardware itself - such as flashing malicious firmware onto a drive. However, the vast majority of attackers will not be this knowledgeable and determined.
 
 [#Disk encryption](#Disk_encryption) will prevent access to your data if the computer is stolen, but malicious firmware can be installed to obtain this data upon your next log in by a resourceful attacker.
 
@@ -646,5 +646,5 @@ Full RELRO    Canary found         NX enabled     PIE enabled  No RPATH  No RUNP
 *   [privacytools.io Privacy Resources](https://www.privacytools.io/)
 *   [Red Hat Enterprise Linux 7 Security Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/)
 *   [Securing Debian Manual (PDF)](https://www.debian.org/doc/manuals/securing-debian-howto/securing-debian-howto.en.pdf)
-*   [The paranoid #! Security Guide](http://crunchbang.org/forums/viewtopic.php?id=24722)
+*   [The paranoid #! Security Guide](https://crunchbang.org/forums/viewtopic.php?id=24722)
 *   [UNIX and Linux Security Checklist v3.0](https://www.auscert.org.au/resources/publications/guidelines/unix-linux/unix-and-linux-security-checklist-v3.0)

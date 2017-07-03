@@ -1,4 +1,4 @@
-**Samba** is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol. It facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). This article provides instructions for users on how to setup Samba.
+[Samba](https://www.samba.org/) is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol. It facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). This article provides instructions for users on how to setup Samba.
 
 ## Contents
 

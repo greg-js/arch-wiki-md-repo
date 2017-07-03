@@ -52,7 +52,7 @@ A swap partition can be created with most GNU/Linux [partitioning tools](/index.
 To set up a partition as Linux swap area, the `mkswap` command is used. For example:
 
 ```
-# mkswap /dev/sda2
+# mkswap /dev/sd*xy*
 
 ```
 
@@ -61,7 +61,7 @@ To set up a partition as Linux swap area, the `mkswap` command is used. For exam
 To enable the device for paging:
 
 ```
-# swapon /dev/sda2
+# swapon /dev/sd*xy*
 
 ```
 
@@ -75,7 +75,7 @@ UUID=<UUID> none swap defaults 0 0
 where the <UUID> is taken from the command:
 
 ```
-lsblk -no UUID /dev/sda2
+lsblk -no UUID /dev/sd*xy*
 
 ```
 
@@ -97,7 +97,7 @@ lsblk -no UUID /dev/sda2
 To deactivate specific swap space:
 
 ```
-# swapoff /dev/sda2
+# swapoff /dev/sd*xy*
 
 ```
 

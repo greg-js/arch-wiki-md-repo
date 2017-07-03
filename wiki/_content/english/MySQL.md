@@ -317,7 +317,7 @@ $ mysqldump --single-transaction --flush-logs --master-data=2 --all-databases -u
 Decompressing the backup thus created and reloading it in the server is achieved by doing:
 
 ```
-$ gunzip all_databases.sql.gz | mysql -u root -p
+$ zcat all_databases.sql.gz | mysql -u root -p
 
 ```
 

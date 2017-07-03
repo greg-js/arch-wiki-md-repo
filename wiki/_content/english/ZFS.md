@@ -845,10 +845,7 @@ ZFS will see the encrypted data, not the plain-text abstraction, so compression 
 For example to have an encrypted home: (the two passwords, encryption and login, must be the same)
 
 ```
-# zfs create -o compression=off \
-             -o dedup=off \
-             -o mountpoint=/home/<username> \
-             <zpool>/<username>
+# zfs create -o compression=off -o dedup=off -o mountpoint=/home/<username> <zpool>/<username>
 # useradd -m <username>
 # passwd <username>
 # ecryptfs-migrate-home -u <username>

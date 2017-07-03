@@ -1,6 +1,4 @@
-ispCP is an open source project founded to build a Multi Server Control and Administration Panel aimed to be usefull to Internel Service Provider.The project is a fork of dying Virtual Hosting Control Panel (VHCS) project,but it's future goal is a complete rewritten of the original VHCS.
-
-For more detail information,please visit [ispCP Project Info](http://isp-control.net/project-info-2/).
+[ispCP](http://isp-control.net/project-info-2/) is an open source project founded to build a Multi Server Control and Administration Panel aimed to be useful to Internet Service Provider.The project is a fork of dying Virtual Hosting Control Panel (VHCS) project,but it's future goal is a complete rewritten of the original VHCS.
 
 ## Contents
 
