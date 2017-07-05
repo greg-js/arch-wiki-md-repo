@@ -4,78 +4,151 @@
 
 ## Contents
 
-*   [1 Загрузка](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
-*   [2 Перед установкой](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B4_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.BE.D0.B9)
-    *   [2.1 Установка раскладки клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [2.2 Соединение с Интернетом](#.D0.A1.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_.D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82.D0.BE.D0.BC)
-    *   [2.3 Синхронизация системных часов](#.D0.A1.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D1.85_.D1.87.D0.B0.D1.81.D0.BE.D0.B2)
-    *   [2.4 Разбиение дисков на разделы](#.D0.A0.D0.B0.D0.B7.D0.B1.D0.B8.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B8.D1.81.D0.BA.D0.BE.D0.B2_.D0.BD.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B)
-    *   [2.5 Форматирование разделов](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
-    *   [2.6 Монтирование разделов](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
-*   [3 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [3.1 Выбор зеркал для загрузки](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.B7.D0.B5.D1.80.D0.BA.D0.B0.D0.BB_.D0.B4.D0.BB.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
-    *   [3.2 Установка основных пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-    *   [3.3 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [3.4 Установка загрузчика](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA.D0.B0)
-    *   [3.5 Перезагрузка](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
+*   [1 Перед установкой](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B4_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.BE.D0.B9)
+    *   [1.1 Установка раскладки клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [1.2 Проверка загруженного режима](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0)
+    *   [1.3 Соединение с Интернетом](#.D0.A1.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_.D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82.D0.BE.D0.BC)
+    *   [1.4 Синхронизация системных часов](#.D0.A1.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D1.85_.D1.87.D0.B0.D1.81.D0.BE.D0.B2)
+    *   [1.5 Разбиение дисков на разделы](#.D0.A0.D0.B0.D0.B7.D0.B1.D0.B8.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B8.D1.81.D0.BA.D0.BE.D0.B2_.D0.BD.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B)
+    *   [1.6 Форматирование разделов](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
+    *   [1.7 Монтирование разделов](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
+*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+    *   [2.1 Выбор зеркал](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.B7.D0.B5.D1.80.D0.BA.D0.B0.D0.BB)
+    *   [2.2 Установка основных пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+*   [3 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [3.1 Fstab](#Fstab)
+    *   [3.2 Chroot](#Chroot)
+    *   [3.3 Установка загрузчика](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA.D0.B0)
+    *   [3.4 Перезагрузка](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
 *   [4 После установки](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-
-## Загрузка
-
-Загрузите наиболее свежий установочный ISO-образ Arch Linux со [страницы загрузки Arch Linux](https://www.archlinux.org/download/). Там представлен гибридный образ Arch Linux, позволяющий загружать версии x86_64 и i686 в зависимости от системной архитектуры и выбора пользователя.
-
-Обратите внимание, что никакие пакеты не включены в установочный образ: в процессе установки они будут загружены из удаленного репозитория. Таким образом, для установки потребуется активное подключение к интернету.
-
-После загрузки установочного образа, проверьте его целостность с помощью подписи PGP (выполните `pacman-key -v *inst-image.iso*.sig`) или контрольных сумм (`md5sum *inst-image.iso*`), которые указаны на странице загрузки.
-
-Теперь образ может быть записан на компакт-диск, [на флеш-накопитель](/index.php/USB_flash_installation_media_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "USB flash installation media (Русский)") или просто смонтирован.
 
 ## Перед установкой
 
-После загрузки с установочного образа потребуется выполнить некоторые шаги для предварительной подготовки к процессу установки.
+Arch Linux способен работать на любой [x86_64](https://en.wikipedia.org/wiki/ru:X86-64 "w:ru:X86-64")-совместимой машине, имеющей хотя бы 512 MB ОЗУ. Базовая установка со всеми пакетами группы [base](https://www.archlinux.org/groups/x86_64/base/) занимает меньше 800 MB дискового пространства. Поскольку для процесса установки требуется получать пакеты из удаленного репозитория, необходимо работающее интернет-соединение.
+
+Скачайте и запустите установочный образ, как это описано в статьях из категории [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)"). Вы автоматически войдете в систему от имени суперпользователя в первой [виртуальной консоли](https://en.wikipedia.org/wiki/ru:%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C "w:ru:Виртуальная консоль") и увидите перед собой приглашение интерпретатора [Zsh](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zsh (Русский)"). Вы можете использовать [автоматическую подстановку по клавише tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") для часто используемых команд, таких как, например, [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html).
+
+Чтобы в процессе установки переключиться на другую виртуальную консоль, например, чтобы посмотреть это руководство при помощи браузера [ELinks](/index.php/ELinks "ELinks"), используйте [горячие клавиши](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*стрелка*`. Для [редактирования](/index.php/Help:Reading_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C.2C_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C.2C_.D1.80.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C "Help:Reading (Русский)") файлов доступны [nano](/index.php/Nano_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Nano (Русский)"), [vi](https://en.wikipedia.org/wiki/ru:vi "w:ru:vi") and [vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Vim (Русский)").
 
 ### Установка раскладки клавиатуры
 
-По умолчанию используется американская раскладка. Другие раскладки можно загрузить командой `loadkeys *файл_keymap*`: файлы keymap вы найдете в каталоге `/usr/share/kbd/keymaps/` (путь и расширение можно опустить).
+По умолчанию используется [раскладка](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите `ls /usr/share/kbd/keymaps/**/*.map.gz`.
+
+Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите `loadkeys ru`.
+
+[Консольные шрифты](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Fonts (Русский)") расположены в каталоге `/usr/share/kbd/consolefonts/` и могут быть выбраны при помощи [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+
+### Проверка загруженного режима
+
+Если на материнской плате включен режим [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)"), [Archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)") [загрузит](/index.php/Arch_boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch boot process (Русский)") Arch Linux соответствующим образом при помощи [systemd-boot](/index.php/Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-boot (Русский)"). Чтобы в этом убедиться, посмотрите содержимое каталога [efivars](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D0.B2_UEFI "Unified Extensible Firmware Interface (Русский)"):
+
+```
+# ls /sys/firmware/efi/efivars
+
+```
+
+Если такого каталога не существует, возможно, система загружена в режиме [BIOS](https://en.wikipedia.org/wiki/ru:BIOS "w:ru:BIOS") или CSM. Для получения дополнительной информации обратитесь к руководству пользователя вашей материнской платы.
 
 ### Соединение с Интернетом
 
-Служба DHCP уже запущена при загрузке для найденных Ethernet-адаптеров (смотрите также [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети")). Для беспроводных сетевых адаптеров запустите `wifi-menu` чтобы соединиться с беспроводной сетью (смотрите также [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети")). Если необходимо настроить статический IP или использовать другие средства настройки сети, остановите службу DHCP командой `systemctl stop dhcpcd.service` и используйте [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)").
+Для [проводных](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) устройств установочный образ во время загрузки автоматически [включает](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") службу [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)"), после чего пытается установить соединение. Проверьте, что интернет работает, например, при помощи [ping](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F "Network configuration (Русский)"):
+
+```
+# ping archlinux.org
+
+```
+
+Если узел недоступен, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") службу *dhcpcd* при помощи `systemctl stop dhcpcd@<TAB>` и обратитесь к разделу [Настройка сети#Драйвер устройства](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Настройка сети").
+
+Для **беспроводных** соединений доступны iw(8), wpa_supplicant(8) и [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"). Также смотрите статью [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети").
 
 ### Синхронизация системных часов
 
-Смотрите страницу [Systemd-timesyncd (Русский)](/index.php/Systemd-timesyncd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-timesyncd (Русский)").
+Чтобы удостовериться, что время выставлено правильно, используйте [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html):
+
+```
+# timedatectl set-ntp true
+
+```
+
+Для проверки статуса службы используйте `timedatectl status`.
 
 ### Разбиение дисков на разделы
 
-Смотрите страницу [Разметка дисков](/index.php/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2 "Разметка дисков"); возможно, потребуется создать некоторые служебные разделы: смотрите [UEFI#EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") и [GRUB#GUID Partition Table (GPT) specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Если вы хотите создать блочное устройство для [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [disk encryption](/index.php/Disk_encryption "Disk encryption") или [RAID](/index.php/RAID "RAID"), сделайте это сейчас.
+Когда запущенная система распознает накопители, они становятся доступны как *блочные устройства*, например, `/dev/sda`. Чтобы посмотреть их список, используйте [lsblk](/index.php/Lsblk "Lsblk") или *fdisk*, при этом результаты, оканчивающиеся на `rom`, `loop` и `airoot`, можно игнорировать:
+
+```
+# fdisk -l
+
+```
+
+На выбранном накопителе должны присутствовать следующие *разделы* (показываются с цифрой на конце):
+
+*   Раздел для корневого каталога `/`
+*   Если включен режим [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)"), необходим [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
+
+[Пространство подкачки](/index.php/Swap "Swap") можно расположить на отдельном разделе или в [файле](/index.php/Swap#Swap_file "Swap").
+
+Для редактирования *разметки дисков* используйте [fdisk](/index.php/Fdisk "Fdisk") или [parted](/index.php/Parted "Parted"). Для получения дополнительной информации смотрите статью [Разметка дисков](/index.php/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2 "Разметка дисков").
+
+Если вы хотите создать составное блочное устройство для [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [шифрования диска](/index.php/Disk_encryption "Disk encryption") или [RAID](/index.php/RAID "RAID"), сделайте это сейчас.
 
 ### Форматирование разделов
 
-Смотрите раздел [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") и статью [Swap](/index.php/Swap "Swap").
+Когда разделы созданы, каждый из них необходимо отформатировать в подходящую [файловую систему](/index.php/File_systems "File systems"). Например, чтобы отформатировать корневой раздел `/dev/*sda1*` в `*ext4*`, выполните:
+
+```
+# mkfs.*ext4* /dev/*sda1*
+
+```
+
+Для получения дополнительной информации смотрите раздел [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems").
 
 ### Монтирование разделов
 
-Смонтируйте корневой раздел в `/mnt`. После этого вы можете создать каталоги для отдельных разделов (`/mnt/boot`, `/mnt/home` и т. д.) и смонтировать их, а также активировать ваш раздел подкачки если вы хотите, чтобы эти разделы впоследствии были определены *genfstab*.
+[Смонтируйте](/index.php/File_systems#Mount_a_filesystem "File systems") файловую систему корневого раздела в каталог `/mnt`, например:
+
+```
+# mount /dev/*sda1* /mnt
+
+```
+
+Создайте точки монтирования для всех остальных разделов и примонтируйте их, например:
+
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
+
+```
+
+В дальнейшем [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) обнаружит смонтированные файловые системы и пространство подкачки.
 
 ## Установка
 
-### Выбор зеркал для загрузки
+### Выбор зеркал
 
-Отредактируйте `/etc/pacman.d/mirrorlist` для выбора зеркал для загрузки среди доступных. Местные серверы зеркал обычно работают быстрее; однако, вы можете выбирать и по другим критериям; смотрите также страницу [Зеркала](/index.php/%D0%97%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D0%B0 "Зеркала"). Эта копия файла `mirrorlist` будет впоследствии перенесена на установленную систему, поэтому полезно сразу выбрать наиболее подходящие зеркала.
+Пакеты для установки должны скачиваться с [серверов-зеркал](/index.php/Mirrors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mirrors (Русский)"), прописанных в файле `/etc/pacman.d/mirrorlist`. В установочном образе все зеркала включены и отсортированы по статусу синхронизации и скорости в момент создания этого установочного образа.
+
+Чем выше зеркало расположено в этом списке, тем больший приоритет оно имеет при скачивании пакета. Скорее всего, вы захотите отредактировать этот файл, чтобы передвинуть наверх наиболее географически близкие к вам зеркала. При этом также учитывайте и другие критерии.
+
+Позже *pacstrap* скопирует этот файл в новую систему, так что это действительно стоит сделать.
 
 ### Установка основных пакетов
 
-Используйте скрипт [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) для установки группы пакетов [base](https://www.archlinux.org/groups/x86_64/base/):
+Используйте скрипт [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in), чтобы установить группу пакетов [base](https://www.archlinux.org/groups/x86_64/base/):
 
 ```
 # pacstrap /mnt base
 
 ```
 
-Другие пакеты или группы могут быть установлены здесь же (для этого просто укажите их имена через пробел).
+В этой группе содержатся не все инструменты, имеющиеся на установочном носителе, например, в ней нет [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) и специфичных прошивок беспроводных сетевых устройств; список можно посмотреть на странице [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both).
 
-### Настройка системы
+Чтобы [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") другие необходимые пакеты или группы, например, [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), добавьте их имена к команде *pacstrap* (разделяя их пробелом) или используйте команды [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") после шага [#Chroot](#Chroot).
+
+## Настройка системы
+
+### Fstab
 
 Сгенерируйте файл [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (используйте ключ `-U` или `-L`, чтобы для идентификации разделов использовались UUID или метки, соответственно):
 
@@ -83,6 +156,8 @@
 # genfstab -p /mnt >> /mnt/etc/fstab
 
 ```
+
+### Chroot
 
 [Перейдите к корневому каталогу](/index.php/Change_root_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Change root (Русский)") новой системы:
 

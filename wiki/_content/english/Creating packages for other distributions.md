@@ -111,7 +111,7 @@ override_dh_shlibdeps:
 
 See the [Pbuilder How-To](https://wiki.ubuntu.com/PbuilderHowto) for an introduction to *pbuilder-ubuntu*. Using *cowdancer* in addition is recommended as [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write") offers a significant performance benefit.
 
-*   [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/), [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) and [gnupg1](https://aur.archlinux.org/packages/gnupg1/) from the [AUR](/index.php/AUR "AUR") are required.
+*   [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring), [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) and [gnupg1](https://aur.archlinux.org/packages/gnupg1/) from the [AUR](/index.php/AUR "AUR") are required.
 *   *eatmydata* is available as [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) and [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/) in the [AUR](/index.php/AUR "AUR"). To prevent `LD_PRELOAD` errors, it must be installed both inside and outside the chroot. As the paths are different in Arch and Debian, create the following symbolic links:
 
 ```

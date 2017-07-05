@@ -42,7 +42,7 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 *   The Webroot method requires **HTTP on port 80** for Certbot to validate.
     *   For Certbot to validate using **HTTPS on port 443**, the Nginx (**--nginx**) or Apache (**--apache**) plugin must be used instead of the Webroot (**--webroot**) method.
 *   The Server Name must match that of it's corresponding DNS.
-*   Permissions may need to be altered on the host to allow read-access to `[http://domain.tld/.well-know](http://domain.tld/.well-know)`.
+*   Permissions may need to be altered on the host to allow read-access to `[http://domain.tld/.well-known](http://domain.tld/.well-known)`.
 
 When using the webroot method the Certbot client places a challenge response inside `/path/to/domain.tld/html/.well-known/acme-challenge/` which is used for validation.
 

@@ -6,14 +6,19 @@ From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Sxhkd Config File](#Sxhkd_Config_File)
+    *   [2.2 Systemd Service File](#Systemd_Service_File)
 *   [3 Usage](#Usage)
-*   [4 See Also](#See_Also)
+*   [4 Example](#Example)
+*   [5 See Also](#See_Also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) or [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/).
 
 ## Configuration
+
+### Sxhkd Config File
 
 sxhkd defaults to `$XDG_CONFIG_HOME/sxhkd/sxhkdrc` for its configuration file. An alternate configuration file can be specified with the `-c` option.
 
@@ -37,11 +42,60 @@ Mouse hotkeys can be defined by using one of the following special keysym names:
 
 What is actually executed is `SHELL -c COMMAND`, which means you can use environment variables in `COMMAND`. `SHELL` will be the content of the first defined environment variable in the following list: `SXHKD_SHELL`, `SHELL`. If sxhkd receives a `SIGUSR1` signal, it will reload its configuration file.
 
+### Systemd Service File
+
+Create systemd service file for the user in question
+
+ `%HOME/.config/systemd/user/sxhkd.service` 
+```
+[Unit]
+ Description=Simple X Hotkey Daemon
+ Documentation=man:sxhkd(1)
+ BindsTo=xorg.service
+ After=xorg.service
+
+ [Service]
+ ExecStart=/usr/bin/sxhkd
+ ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+
+ [Install]
+ WantedBy=graphical.target
+```
+
+Enable and start the service
+
+```
+# systemctl --user enable sxhkd.service
+# systemctl --user start sxhkd.service
+
+```
+
 ## Usage
 
 After configuring it, you may wish to setup sxhkd to [autostart](/index.php/Autostart "Autostart").
 
 **Tip:** An example [systemd](/index.php/Systemd "Systemd") service file is found [here](https://github.com/baskerville/sxhkd/blob/master/contrib/systemd/sxhkd.service).
+
+## Example
+
+Edit `$XDG_CONFIG_HOME/sxhkd/sxhkdrc`
+
+```
+# On mouse button 1 press Alt_R+F1
+button1
+ xte "keydown Alt_R" "keydown F1" "keyup Alt_R" "keyup F1"
+# On mosue button 2 pause 3 seconds then press Alt_R+F2
+button2
+ xte "sleep 3" "keydown Alt_R" "keydown F2" "keyup Alt_R" "keyup F2"
+
+```
+
+Restart user's sxhkd service
+
+```
+# systemctl --user restart sxhkd.service
+
+```
 
 ## See Also
 

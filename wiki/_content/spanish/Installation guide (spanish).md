@@ -28,7 +28,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
     *   [3.8 Contraseña de root](#Contrase.C3.B1a_de_root)
     *   [3.9 Instalar un gestor de arranque](#Instalar_un_gestor_de_arranque)
 *   [4 Reiniciar](#Reiniciar)
-*   [5 Pos-instalación](#Pos-instalaci.C3.B3n)
+*   [5 Posinstalación](#Posinstalaci.C3.B3n)
 
 ## Preinstalación
 
@@ -197,8 +197,8 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Por último, reinicie el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación e iniciar sesión en el nuevo sistema con la cuenta de root.
 
-## Pos-instalación
+## Posinstalación
 
-*   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones de cómo gestionar el sistema y tutoriales sobre qué hacer después de la instalación del sistema base (O temas relativos a la instalación, configuración de la interfaz gráfica de usuario, sonido o panel táctil).
+*   Véase el artículo [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") para obtener indicaciones de cómo gestionar el sistema y tutoriales sobre qué hacer después de la instalación del sistema base (o temas relativos a la instalación, configuración de la interfaz gráfica de usuario, sonido o panel táctil).
 
 *   Para obtener una lista de las aplicaciones que pueden ser de su interés, consulte [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)").

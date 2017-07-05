@@ -612,6 +612,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 ##### Graphical
 
+*   **Astroid** — A lightweight and blazingly fast e-mail client for [Notmuch](/index.php/Notmuch "Notmuch"). Written using C++ and the GTK+ toolkit.
+
+	[https://github.com/astroidmail/astroid](https://github.com/astroidmail/astroid) || [astroid](https://aur.archlinux.org/packages/astroid/)
+
 *   **Balsa** — Simple and light email client for GNOME.
 
 	[http://pawsa.fedorapeople.org/balsa/](http://pawsa.fedorapeople.org/balsa/) || [balsa](https://www.archlinux.org/packages/?name=balsa)

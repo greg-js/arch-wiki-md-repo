@@ -7,6 +7,7 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Show / hide desktop icons](#Show_.2F_hide_desktop_icons)
     *   [2.2 Change application for "Open in terminal" context menu entry](#Change_application_for_.22Open_in_terminal.22_context_menu_entry)
+    *   [2.3 Generate thumbnails for various video files](#Generate_thumbnails_for_various_video_files)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Nemo Actions](#Nemo_Actions)
         *   [3.1.1 Clam Scan](#Clam_Scan)
@@ -73,6 +74,19 @@ Alternatively, change the default setting with *gsettings* to the preferred term
 $ gsettings set org.cinnamon.desktop.default-applications.terminal exec <terminal-name>
 
 ```
+
+### Generate thumbnails for various video files
+
+By default, nemo does not generate thumbnails for certain video files due to licensing or patent problems (AVC encoded mp4 and mkv files for example). To generate thumbnails for those files, you can install thumbnailer packages:
+
+```
+# pacman -S ffmpegthumbnailer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good gst-plugins-ugly
+
+```
+
+This fixes the console warnings of the type `CinnamonDesktop-WARNING **: Error creating thumbnail for file:///home/username/video.mp4: Unrecognized image file format` for mp4 and other video files.
+
+These packages will also allow you to preview video files by using `nemo-preview`.
 
 ## Tips and tricks
 

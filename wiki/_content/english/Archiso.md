@@ -309,6 +309,24 @@ Furthermore it is required to edit the script `airootfs/root/customize_airootfs.
 
 Also remove persistent data such as created users or symlinks such as `/etc/sudoers`.
 
+Rebuilds can be sped up slightly by editing the pacstrap script (located at /bin/pacstrap) and changing the following at line 361:
+
+Before:
+
+```
+if ! pacman -r "$newroot" -Sy "${pacman_args[@]}"; then
+
+```
+
+After:
+
+```
+if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
+
+```
+
+This increases the speed of the initial bootstrap, since it doesn't have to download and install any of the base packages that are already installed.
+
 ## Using the ISO
 
 See the [Category:Getting and installing Arch#Installation methods](/index.php/Category:Getting_and_installing_Arch#Installation_methods "Category:Getting and installing Arch") section for various options.

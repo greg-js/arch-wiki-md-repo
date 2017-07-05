@@ -131,7 +131,7 @@ Tutte le attività di `fructose` sono disponibili su AUR come `sugar-activity-**
 *   [sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox)
 *   [sugar-activity-log](https://www.archlinux.org/packages/?name=sugar-activity-log)
 *   [sugar-activity-pippy](https://www.archlinux.org/packages/?name=sugar-activity-pippy)
-*   [sugar-activity-read](https://www.archlinux.org/packages/?name=sugar-activity-read)
+*   [sugar-activity-read](https://aur.archlinux.org/packages/sugar-activity-read/)
 *   [sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal)
 *   [sugar-activity-turtleart](https://aur.archlinux.org/packages/sugar-activity-turtleart/)
 *   [sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write)

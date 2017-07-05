@@ -91,6 +91,8 @@ These instructions assume you have the *sedutil-cli* tool installed (via the [AU
 
 ### Check if your disk supports OPAL
 
+**Note:** [NVMe disks](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") are only partially supported: The *sedutil-cli --scan* command and the Linux PBA (pre-boot-authorisation) image currently only see SATA disks. It is possible to enable self-encryption on an NVMe device by passing the name to sedutil-cli, but not possible to boot from a locked NVMe disk (the PBA image does not see it). [More details here](https://github.com/Drive-Trust-Alliance/sedutil/issues/120).
+
 ```
 # sedutil-cli --scan
 
@@ -117,8 +119,6 @@ Windows version of sedutils output:
 \\.\PhysicalDrive0 12  Samsung SSD 850 PRO 512GB                EXM02B6Q
 
 ```
-
-**Note:** [NVMe disks](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") are only partially supported: The *sedutil-cli --scan* command and the Linux PBA (pre-boot-authorisation) image currently only see SATA disks. It is possible to enable self-encryption on an NVMe device by passing the name to sedutil-cli, but not possible to boot from a locked NVMe disk (the PBA image does not see it). [More details here](https://github.com/Drive-Trust-Alliance/sedutil/issues/120).
 
 ### Download (or create) the pre-boot authorization (PBA) image
 

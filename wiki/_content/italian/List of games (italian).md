@@ -791,7 +791,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Urban Terror](/index.php/Urban_Terror "Urban Terror")** — Moderno FPS multiplayer basato sul motore ioquake3.
 
-	[http://urbanterror.info](http://urbanterror.info) || [urbanterror](https://www.archlinux.org/packages/?name=urbanterror)
+	[http://urbanterror.info](http://urbanterror.info) || [urbanterror](https://aur.archlinux.org/packages/urbanterror/)
 
 *   **[Warsow](https://en.wikipedia.org/wiki/Warsow_(game) "wikipedia:Warsow (game)")** — Veloce FPS multiplayer che si concentra sul movimento e sul trucco dei salti.
 

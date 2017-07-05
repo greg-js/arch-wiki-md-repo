@@ -231,23 +231,24 @@ $ firefox -no-remote
 
 除了SSH内建的对X11的支持之外，它也能通过本地转发和远程转发，来为任何的TCP连接建立隧道。
 
-本地转发时，会在本机打开一个端口，连接将被转发到一个远程主机，并给定一个目的地。很多时候，转发目的地和远程主机会相同，因此也提供了一个SSH，一个安全的VNC连接。本地转发可以通过`-L`来设置，后面可以指定一个地址及端口`<tunnel port>:<destination address>:<destination port>`。 如下：
+本地转发时，会在本机打开一个端口，连接将被转发到一个远程主机，并给定一个目的地。很多时候，转发目的地和远程主机会相同，因此也提供了一条SSH命令来建立一个安全的VNC连接。本地转发可以通过`-L`来设置，后面可以指定一个地址及端口`<tunnel port>:<destination address>:<destination port>`。 如下：
 
 ```
 $ ssh -L 1000:mail.google.com:25 192.168.0.100
 
 ```
 
-以上指令将会通过SSH得到一个在192.168.0.110的shell，同时也会创建一个从本机1000端口到mai.google.com上的25端口的隧道。建立之后，localhost:1000会连接到Gmail的SMTP端口。任何从192.168.0.100到Google的连接（即使不必要）都会以这样的方式建立，并且，在本机和192.168.0.100之间的数据传递都是安全的，除非你采取了别的手段。 同样：
+以上指令将会通过SSH得到一个在192.168.0.100的shell，同时也会创建一个从本机1000端口到mai.google.com上的25端口的隧道。建立之后，localhost:1000会通过192.168.0.100连接到Gmail的SMTP端口。任何从192.168.0.100到mail.google.com:25的连接（即使不必要）都会以这样的方式建立，并且，在本机和192.168.0.100之间的数据传递都是安全的，除非你采取了别的手段。 同样：
 
 ```
 $ ssh -L 2000:192.168.0.100:6001 192.168.0.100
+$ ssh -L 2000:localhost:6001 192.168.0.100
 
 ```
 
-以上指令会将到localhost：2000的连接直接转发到远程主机的6001端口。对于使用VNC服务器（tightvns包的一部分）建立的VNC连接来说，以上的例子尽管很有效，但是安全性有待商榷。
+以上指令会将到localhost:2000的连接直接转发到远程主机192.168.0.100的6001端口。对于使用VNC服务器（tightvns包的一部分）建立的VNC连接来说，以上的例子尽管很有效，但是安全性有待商榷。
 
-远程转发允许任何远程主机通过SSH隧道连接到本机，提供了和本地转发相反的功能，突破了防火墙的限制。通过{Ic|-R}}参数，以及`<tunnel port>:<destination address>:<destination>`能够实现远程转发。
+远程转发允许任何远程主机通过SSH隧道连接到本机，提供了和本地转发相反的功能，突破了防火墙的限制。通过`-R`参数，以及`<tunnel port>:<destination address>:<destination>`能够实现远程转发。
 
 如下:
 
@@ -256,9 +257,9 @@ $ ssh -R 3000:irc.freenode.net:6667 192.168.0.200
 
 ```
 
-将会在192.168.0.200上得到一个shell，同时，从192.168.0.200到它的3000端口的连接将会通过隧道发送到本机然后到irc.freenode.net的6667端口。因此，在这个例子中，在远程主机上IRC程序能够被使用，即使端口6667被阻止。
+将会在192.168.0.200上得到一个shell，同时也会创建一个从192.168.0.200上的3000端口到irc.freenode.net上的6667端口的隧道。建立之后，192.168.0.200:3000会通过本机连接到freenode的IRC端口。到192.168.0.200的3000端口的连接将会通过隧道发送到本机然后转发到irc.freenode.net的6667端口。因此，在这个例子中，在远程主机上IRC程序能够被使用，即使端口6667被阻止。
 
-Both local and remote forwarding can be used to provide a secure "gateway," allowing other computers to take advantage of an SSH tunnel, without actually running SSH or the SSH daemon by providing a bind-address for the start of the tunnel as part of the forwarding specification, e.g. `<tunnel address>:<tunnel port>:<destination address>:<destination port>`. The `<tunnel address>` can be any address on the machine at the start of the tunnel, `localhost`, `*` (or blank), which, respectively, allow connections via the given address, via the loopback interface, or via any interface. By default, forwarding is limited to connections from the machine at the "beginning" of the tunnel, i.e. the `<tunnel address>` is set to `localhost`. Local forwarding requires no additional configuration, however remote forwarding is limited by the remote server's SSH daemon configuration. See the `GatewayPorts` option in `sshd_config(5)` for more information.
+本地转发`-L`和远程转发`-R`都可以提供一个安全的"网关"，允许其他计算机无需使用SSH或者SSH daemon来使用ssh隧道。例如 `<tunnel address>:<tunnel port>:<destination address>:<destination port>`. `<tunnel address>`可以是作为网关的机器上的任何地址，例如 `localhost`(仅允许本地访问)，`192.168.0.100`(仅允许通过192.168.0.100访问)， `*`(允许所有地址访问)。 `<tunnel address>`若留空则默认设置为`localhost`，本地转发`-L`不需要额外的设置，而远程转发`-R`需要配置SSH daemon设置，请参阅`sshd_config(5)`中的`GatewayPorts`。
 
 ### 加速SSH
 

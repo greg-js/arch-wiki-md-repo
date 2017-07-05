@@ -15,7 +15,7 @@ In real production environments system and dump capture kernel will be different
 
 ## Compiling kernel
 
-System/dump capture kernel requires some configuration flags that are not set by default. Please consult [Kernel Compilation](/index.php/Kernel_Compilation "Kernel Compilation") article for more information about compiling custom kernel in Arch. Here we will emphasize on Kdump specific configuration.
+System/dump capture kernel requires some configuration flags that are not set by default. Please consult [Kernel Compilation](/index.php/Kernel_Compilation "Kernel Compilation") article for more information about compiling a custom kernel in Arch. Here we will emphasize on Kdump specific configuration.
 
 To create a kernel you need to edit kernel config (or config.x86_64) file and enable following configuration options:
 
@@ -27,13 +27,13 @@ CONFIG_PROC_VMCORE=y
 
 ```
 
-Also change package base name to something like **linux-kdump** to distinguish the kernel from the default Arch one. Compile kernel package and install it. Save *./src/linux-X.Y/vmlinux* uncompressed system kernel binary - it contains debug symbols and you will need them later when analyzing crash.
+Also change package base name to something like **linux-kdump** to distinguish the kernel from the default Arch one. Compile kernel package and install it. Save *./src/linux-X.Y/vmlinux* uncompressed system kernel binary - it contains debug symbols and you will need them later when analyzing the crash.
 
-In case if you have separate kernel for system and dump capture then it is recommended to consult [Kdump](https://www.kernel.org/doc/Documentation/kdump/kdump.txt) documentation. It has several recommendations how to make dump capture kernel smaller.
+In case if you have a separate kernel for the system and dump capture then it is recommended to consult [Kdump](https://www.kernel.org/doc/Documentation/kdump/kdump.txt) documentation. It has several recommendations how to make dump capture kernel smaller.
 
 ## Setup kdump kernel
 
-First you need to reserve memory for dump capture kernel. Edit you bootloader configuration and add `crashkernel=64M` boot option to the system kernel you just installed. For example [Syslinux](/index.php/Syslinux "Syslinux") boot entry would look like:
+First, you need to reserve memory for dump capture kernel. Edit you bootloader configuration and add `crashkernel=64M` boot option to the system kernel you just installed. For example [Syslinux](/index.php/Syslinux "Syslinux") boot entry would look like:
 
  `/boot/syslinux/syslinux.cfg` 
 ```
@@ -45,7 +45,7 @@ LABEL arch-kdump
 
 ```
 
-64M of memory should be enough to hadle crash dumps on machines with up to 12G of RAM. Some systems require more reserved memory. In case if dump capture kernel unable not load try to increase the memory to *256M* or even to *512M*, but note that this memory is unavailable to system kernel.
+64M of memory should be enough to handle crash dumps on machines with up to 12G of RAM. Some systems require more reserved memory. In case if dump capture kernel unable not load try to increase the memory to *256M* or even to *512M*, but note that this memory is unavailable to system kernel.
 
 Reboot into your system kernel. To make sure that the kernel is booted with correct options please check the `/proc/cmdline` file.
 
@@ -112,7 +112,7 @@ Once booted into dump capture kernel you can read `/proc/vmcore` file. It is rec
 
 ```
 
-or optionally you can copy the crash to other machine. Once dump is saved you should reboot machine into normal system kernel.
+or optionally you can copy the crash to another machine. Once dump is saved you should reboot the machine into normal system kernel.
 
 The crash dump can be quite big, [makedumpfile](https://aur.archlinux.org/packages/makedumpfile/) can be used to create smaller dumps by ignoring some memory regions and using compression:
 

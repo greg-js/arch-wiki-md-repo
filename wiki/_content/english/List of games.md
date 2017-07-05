@@ -854,7 +854,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Urban Terror](/index.php/Urban_Terror "Urban Terror")** — Modern multiplayer FPS based on the ioquake3 engine.
 
-	[http://urbanterror.info](http://urbanterror.info) || [urbanterror](https://www.archlinux.org/packages/?name=urbanterror)
+	[http://urbanterror.info](http://urbanterror.info) || [urbanterror](https://aur.archlinux.org/packages/urbanterror/)
 
 *   **[Warsow](https://en.wikipedia.org/wiki/Warsow_(game) "wikipedia:Warsow (game)")** — Fast paced multiplayer FPS focusing on movement and trick jumps.
 
@@ -1114,7 +1114,7 @@ Milestone 2, the current version of SuperTux in the Arch Linux community reposit
 | **The Mana World**
 - [themanaworld.org](http://themanaworld.org/) | C++ | <abbr title="Massively Multiplayer Online Role-Playing Game">MMORPG</abbr> | <abbr title="GNU Affero General Public License Version 3">AGPLv3</abbr>/<abbr title="GNU General Public License Version 3">GPLv3</abbr> | [manaplus](https://www.archlinux.org/packages/?name=manaplus) | Serious effort to create an innovative free and open-source MMORPG. |
 | **[Urban Terror](/index.php/Urban_Terror "Urban Terror")**
-- [urbanterror.info](http://urbanterror.info/) | C | <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [urbanterror](https://www.archlinux.org/packages/?name=urbanterror) | Modern multiplayer FPS based on the ioquake3 engine. |
+- [urbanterror.info](http://urbanterror.info/) | C | <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [urbanterror](https://aur.archlinux.org/packages/urbanterror/) | Modern multiplayer FPS based on the ioquake3 engine. |
 | **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")**
 - [wz2100.net](http://wz2100.net/) | C++ | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [warzone2100](https://www.archlinux.org/packages/?name=warzone2100) | 3D realtime strategy game on a future Earth. |
 

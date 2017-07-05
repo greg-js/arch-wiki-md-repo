@@ -15,16 +15,15 @@ This wiki page tries to cover the need for configuration and use instructions of
         *   [1.2.2 Web Server](#Web_Server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
-    *   [1.3 Update/Upgrade configuration](#Update.2FUpgrade_configuration)
-    *   [1.4 Web interface](#Web_interface)
-    *   [1.5 FTL](#FTL)
-*   [2 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [2.1 Installation](#Installation_2)
-    *   [2.2 First install configuration](#First_install_configuration_2)
-        *   [2.2.1 Dnsmasq](#Dnsmasq_2)
-        *   [2.2.2 Openresolve](#Openresolve)
-    *   [2.3 Update/Upgrade configuration](#Update.2FUpgrade_configuration_2)
-*   [3 See also](#See_also)
+    *   [1.3 Web interface](#Web_interface)
+    *   [1.4 FTL](#FTL)
+*   [2 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
+*   [3 Pi-hole Standalone](#Pi-hole_Standalone)
+    *   [3.1 Installation](#Installation_2)
+    *   [3.2 First install configuration](#First_install_configuration_2)
+        *   [3.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [3.2.2 Openresolve](#Openresolve)
+*   [4 See also](#See_also)
 
 ## Pi-hole Server
 
@@ -36,19 +35,21 @@ This wiki page tries to cover the need for configuration and use instructions of
 
 #### Dnsmasq
 
-Setup dnsmasq which will resolve DNS queries for your lan and manage filtering ads directy by pi-hole.
+Setup dnsmasq which will resolve DNS queries for your LAN and manage filtering ads directly by pi-hole.
 
-**Users already using dnsmasq**: edit `/etc/dnsmasq.conf` uncommenting the last line and including the pi-hole config filed located at `/etc/dnsmasq.d` directory:
+**Users already using dnsmasq**: Edit `/etc/dnsmasq.conf` and uncomment the last line:
+
+ `/etc/dnsmasq.conf` 
+```
+...
+conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
-# sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
+
+**Users not making use of dnsmasq prior to installing Pi-hole**: Copy the pi-hole-server-provided config file replacing the standard one (or simply diff the two):
 
 ```
-
-**Users not making use of dnsmasq prior to installing Pi-hole**: copy the pi-hole-server-provided config file replacing the standard one (or simply diff the two):
-
-```
-# cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
+# cp /usr/share/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
 
 ```
 
@@ -73,11 +74,10 @@ extension=sockets.so
 
 ##### Lighttpd
 
-[Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi). Backup original config file and copy pi-hole one:
+[Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
 ```
-# cp /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.orig
-# cp /etc/pihole/configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
+# cp /usr/share/pihole/configslighttpd.example.conf /etc/lighttpd/lighttpd.conf
 
 ```
 
@@ -109,42 +109,11 @@ Copy the package provided default config for pi-hole:
 
 ```
 # mkdir /etc/nginx/conf.d
-# cp /etc/pihole/configs/nginx.pi-hole.conf /etc/nginx/conf.d/
+# cp /etc/pihole/configs/nginx.example.conf /etc/nginx/conf.d/pihole.conf
 
 ```
 
 If necessary, [enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
-
-### Update/Upgrade configuration
-
-**Tip:** If updating you don't see a post install message saying that dnsmasq and/or web server config files are changed, you can skip this section.
-
-If necessary, update dnsmasq config file
-
-```
-# [ -f /etc/dnsmasq.orig ] && cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
-
-```
-
-and re/start it.
-
-If necessary, update lighttpd config file
-
-```
-# [ -f /etc/lighttpd/lighttpd.orig ] && cp /etc/pihole/configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
-
-```
-
-and re/start it.
-
-If necessary, update nginx config file
-
-```
-# cp /etc/pihole/configs/nginx.pi-hole.conf /etc/nginx/conf.d/
-
-```
-
-and re/start it.
 
 ### Web interface
 
@@ -166,6 +135,18 @@ or
 
 FTL is part of Pi-hole project. It is a database-like wrapper/API providing the frontend to Pi-hole's DNS query log. One can configure FTL in `/etc/pihole/pihole-FTL.conf`. [Read](https://github.com/pi-hole/FTL#ftls-config-file) project documentation for details.
 
+## Using Pi-hole together with OpenVPN
+
+One can use both [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) together with Pi-hole to effectively route the remote traffic from the clients though Pi-hole's DNS thus dropping ads for the clients. A reduction in cellular data usage is expected since ads are never allowed to load. Make sure `/etc/openvpn/server/server.conf` contains two key lines as illustrated below replacing the literal "xxx.xxx.xxx.xxx" with the IP address of the box running pi-hole:
+
+```
+push "redirect-gateway def1 bypass-dhcp"
+push "dhcp-option DNS xxx.xxx.xxx.xxx"
+
+```
+
+**Note:** This should be the only modified needed.
+
 ## Pi-hole Standalone
 
 The Archlinux Pi-hole Standalone variant is born from the need to use pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
@@ -178,49 +159,17 @@ The Archlinux Pi-hole Standalone variant is born from the need to use pi-hole se
 
 #### Dnsmasq
 
-As a first step, you need to setup dnsmasq. It will resolve DNS queries for your machine filtering ads with pi-hole.
-
-**If you already use dnsmasq**, edit your `/etc/dnsmasq.conf` to uncomment last line and include new pi-hole config filed located at `/etc/dnsmasq.d` directory:
-
-```
-# sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
-
-```
-
-**If you installed dnsmasq with Pi-hole for the first time**, backup original dnsmasq config file and copy pi-hole main one:
-
-```
-# cp /etc/dnsmasq.conf /etc/dnsmasq.orig
-# cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
-
-```
-
-If necessary, [enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it:
+Setup is identical to the steps described in [Pi-hole#Dnsmasq](/index.php/Pi-hole#Dnsmasq "Pi-hole").
 
 #### Openresolve
 
-Edit your `/etc/resolvconf.conf` and uncomment name_servers line (last line) and update resolvconf:
+Edit `/etc/resolvconf.conf` to uncomment the name_servers line and update resolvconf:
 
 ```
 # sed -i 's|#name_servers=127.0.0.1|name_servers=127.0.0.1|' /etc/resolvconf.conf
 # resolvconf -u
 
 ```
-
-you will now always resolve hostnames querying localhost, and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) will listen.
-
-### Update/Upgrade configuration
-
-**Tip:** If updating you don't see a post install message saying that dnsmasq config file is changed, you can skip this section.
-
-If necessary, update dnsmasq config file
-
-```
-# [ -f /etc/dnsmasq.orig ] && cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
-
-```
-
-and re/start it.
 
 ## See also
 

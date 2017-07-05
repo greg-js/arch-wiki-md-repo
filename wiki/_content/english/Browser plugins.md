@@ -187,7 +187,7 @@ See [Pipelight](/index.php/Pipelight "Pipelight").
 
 ## Multimedia playback
 
-Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framework to play multimedia inside HTML5 `<audio>` and `<video>` elements. Check the optional dependencies of the browser package (or [webkitgtk](https://www.archlinux.org/packages/?name=webkitgtk)/[webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) if using a webkit-based browser) to see which version of GStreamer is supported: this can be either `gst-*` for the current version, or `gstreamer0.10-*` for the legacy version. See [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer") for the description of each plugin.
+Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framework to play multimedia inside HTML5 `<audio>` and `<video>` elements. Check the optional dependencies of the browser package (or of the web engine, e.g. [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) or [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit)) to see if GStreamer is supported. See [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer") for the description of each plugin.
 
 ### Other plugins
 

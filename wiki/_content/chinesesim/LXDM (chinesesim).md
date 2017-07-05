@@ -117,34 +117,11 @@ Session=gnome
 如果要不输入密码就自动登录一个用户，找到 `/etc/lxdm/lxdm.conf` 中的:
 
 ```
-#autologin=username
+#autologin=dgod
 
 ```
 
-取下前面的注释，并改成要自动登录的用户名。
-
-这样 LXDM 就会在第一次启动时自动登录到指定的账户。但是如果注销了账户，下次登录的时候还是需要密码。如果密码为空，那么就没有办法再登录。要不使用密码就登录，先删除密码：
-
-```
-$ passwd -d USERNAME
-
-```
-
-然后编辑 LXDM 的 PAM 文件 `/etc/pam.d/lxdm`。此目录中的文件描述各个程序给用户的权限，将
-
-```
-auth    required    pam_unix.so
-
-```
-
-改为:
-
-```
-auth    required    pam_unix.so nullok
-
-```
-
-这样 pam_unix 认证模块就会接受空密码了。
+取消前面的注释，并将dgod改成要自动登录的用户名。
 
 ### 注销行为
 

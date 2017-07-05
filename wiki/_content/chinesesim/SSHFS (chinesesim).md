@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [SSHFS](/index.php/SSHFS "SSHFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=481165)可以查看翻译后英文页面的改动。
 
-[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting directories over [SSH](/index.php/SSH "SSH").
+[SSHFS](https://github.com/libfuse/sshfs) 是一个通过 [SSH](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 挂载基于 FUSE 的文件系统的客户端程序。
 
 ## Contents
 
@@ -16,7 +16,7 @@
 *   [5 选项](#.E9.80.89.E9.A1.B9)
 *   [6 排错](#.E6.8E.92.E9.94.99)
     *   [6.1 检查清单](#.E6.A3.80.E6.9F.A5.E6.B8.85.E5.8D.95)
-    *   [6.2 连接被对方重置（Connection reset by peer）](#.E8.BF.9E.E6.8E.A5.E8.A2.AB.E5.AF.B9.E6.96.B9.E9.87.8D.E7.BD.AE.EF.BC.88Connection_reset_by_peer.EF.BC.89)
+    *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [6.3 远程主机连接断开（Remote host has disconnected）](#.E8.BF.9C.E7.A8.8B.E4.B8.BB.E6.9C.BA.E8.BF.9E.E6.8E.A5.E6.96.AD.E5.BC.80.EF.BC.88Remote_host_has_disconnected.EF.BC.89)
     *   [6.4 冻结应用（Freezing apps (e.g. Gnome Files, Gedit)）](#.E5.86.BB.E7.BB.93.E5.BA.94.E7.94.A8.EF.BC.88Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29.EF.BC.89)
     *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
@@ -25,11 +25,11 @@
 
 ## 安装
 
-[Install](/index.php/Install "Install") the [sshfs](https://www.archlinux.org/packages/?name=sshfs) package.
+[安装](/index.php/Install "Install") [sshfs](https://www.archlinux.org/packages/?name=sshfs) 软件包。
 
 ### 挂载
 
-**Tip:** [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") can be used with sshfs for additional security.
+**提示：** sshfs 结合 [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") 使用可以提供额外的安全性。
 
 In order to be able to mount a directory the SSH user needs to be able to access it. Invoke `sshfs` to mount a remote directory:
 
@@ -47,11 +47,11 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 
 Where `-p 9876` stands for the port number, `-C` enables compression and `-o allow_other` grants non-rooted users read/write access.
 
-**Note:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
+**注意:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
 
-**Note:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
+**注意:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
-SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, read: [How to Use RSA Key Authentication with SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) or [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+必要时，SSH 将询问口令。如果你不希望频繁输入口令，可参阅：[SSH 如何使用 RSA 密钥做认证](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) 或 [SSH 密钥](/index.php/SSH_Keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH Keys (简体中文)")。
 
 ### 卸载
 
@@ -84,7 +84,7 @@ Match User someuser
 .....
 ```
 
-**Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
+**注意:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
 
 See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the manpages for `Match, ChrootDirectory` and `ForceCommand`.
 
@@ -123,7 +123,7 @@ The important mount options here are *noauto,x-systemd.automount,_netdev*.
 
 **注意:** After editing `/etc/fstab`, (re)start the required service: `systemctl daemon-reload && systemctl restart <target>` where `<target>` can be found by running `systemctl list-unit-files --type automount`
 
-**Tip:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
+**提示：** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
 
 ### 引导时挂载
 
@@ -247,7 +247,7 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 
 8\. If you know another issue for this checklist please add it the list above.
 
-### 连接被对方重置（Connection reset by peer）
+### Connection reset by peer
 
 *   If you are trying to access the remote system with a hostname, try using its IP address, as it can be a domain name solving issue. Make sure you edit `/etc/hosts` with the server details.
 *   If you are using non-default key names and are passing it as `-i .ssh/my_key`, this will not work. You have to use `-o IdentityFile=/home/user/.ssh/my_key`, with the full path to the key.
@@ -259,7 +259,7 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 *   Make sure your user can log into the server (especially when using AllowUsers)
 *   Make sure `Subsystem sftp /usr/lib/ssh/sftp-server` is enabled in `/etc/ssh/sshd_config`.
 
-**Note:** When providing more than one option for sshfs, they must be comma separated. Like so: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
+**注意:** When providing more than one option for sshfs, they must be comma separated. Like so: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
 
 ### 远程主机连接断开（Remote host has disconnected）
 
@@ -267,7 +267,7 @@ If you receive this message directly after attempting to use *sshfs*:
 
 *   First make sure that the **remote** machine has *sftp* installed! It will not work, if not.
 
-**Tip:** If your remote server is running OpenWRT: `opkg install openssh-sftp-server` will do the trick
+**提示：** If your remote server is running OpenWRT: `opkg install openssh-sftp-server` will do the trick
 
 *   Then, try checking the path of the `Subsystem` listed in `/etc/ssh/sshd_config` on the remote machine to see, if it is valid. You can check the path to it with `find / -name sftp-server`.
 
@@ -275,7 +275,7 @@ For Arch Linux the default value in `/etc/ssh/sshd_config` is `Subsystem sftp /u
 
 ### 冻结应用（Freezing apps (e.g. Gnome Files, Gedit)）
 
-**Note:** This prevents the recently used file list from being populated and may lead to possible write errors.
+**注意:** This prevents the recently used file list from being populated and may lead to possible write errors.
 
 If you experience freezing/hanging (stopped responding) applications, you may need to disable write-access to the `~/recently-used.xbel` file.
 
@@ -316,7 +316,7 @@ ssh_command=ssh\040-vv,sshfs_debug,debug
 
 ```
 
-**Note:** Here, `\040` represents a space which fstab uses to separate fields.
+**注意:** Here, `\040` represents a space which fstab uses to separate fields.
 
 To be able to run `mount -av` and see the debug output, remove the following:
 

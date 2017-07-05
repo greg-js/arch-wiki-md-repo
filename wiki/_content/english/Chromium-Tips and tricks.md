@@ -1,3 +1,5 @@
+The following tips and tricks should work for both Chromium and Chrome unless explicitly stated.
+
 ## Contents
 
 *   [1 Browsing experience](#Browsing_experience)

@@ -240,7 +240,7 @@ Run `sudo gpsd -b -N /dev/gps0`
 
 To test it `xgps`
 
-Or use e.g. [foxtrotgps](https://aur.archlinux.org/packages/foxtrotgps/) in [AUR](/index.php/AUR "AUR").
+Or use e.g. [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps) in [AUR](/index.php/AUR "AUR").
 
 See [this link](http://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) for more info.
 

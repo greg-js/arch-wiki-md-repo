@@ -10,7 +10,7 @@
 
 ## Installation
 
-Vivaldi can be [installed](/index.php/Installed "Installed") with [vivaldi](https://aur.archlinux.org/packages/vivaldi/) or [vivaldi-beta](https://aur.archlinux.org/packages/vivaldi-beta/) or [vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/). Prebuilt packages can alternatively be found in the [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories") unofficial repository.
+Vivaldi can be [installed](/index.php/Installed "Installed") with [vivaldi](https://aur.archlinux.org/packages/vivaldi/) or [vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/). Prebuilt packages can alternatively be found in the [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories") unofficial repository.
 
 ## Extensions
 
@@ -20,7 +20,7 @@ See also [Wikipedia:Google Chrome Extension](https://en.wikipedia.org/wiki/Googl
 
 ## Media playback
 
-For additional support concerning audio and video playback, install corresponding package for your version of choice: [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/), [vivaldi-beta-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-beta-ffmpeg-codecs/) or [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/).
+For additional support concerning audio and video playback, install corresponding package for your version of choice: [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/), [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/).
 
 You may install [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) to play flash media.
 

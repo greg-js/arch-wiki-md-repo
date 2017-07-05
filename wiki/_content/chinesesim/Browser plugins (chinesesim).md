@@ -215,7 +215,7 @@ See [Pipelight](/index.php/Pipelight "Pipelight").
 
 ## 视频播放插件
 
-很多浏览器支持通过 [GStreamer](/index.php/GStreamer "GStreamer") 框架播放 HTML5 `<audio>` 和 `<video>`。安装时注意查看浏览器的可选依赖关系(或 [webkitgtk](https://www.archlinux.org/packages/?name=webkitgtk)/[webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) 依赖关系)确认支持的 GStreamer 版本，可能是当前 `gst-*` 版本或老的 `gstreamer0.10-*` 版本。详情参考 [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer").
+很多浏览器支持通过 [GStreamer](/index.php/GStreamer "GStreamer") 框架播放 HTML5 `<audio>` 和 `<video>`。安装时注意查看浏览器的可选依赖关系(或 [webkitgtk](https://aur.archlinux.org/packages/webkitgtk/)/[webkitgtk2](https://aur.archlinux.org/packages/webkitgtk2/) 依赖关系)确认支持的 GStreamer 版本，可能是当前 `gst-*` 版本或老的 `gstreamer0.10-*` 版本。详情参考 [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer").
 
 ### 其它插件
 

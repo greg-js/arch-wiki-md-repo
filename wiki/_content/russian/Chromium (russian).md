@@ -55,7 +55,7 @@
 
 **pepper-flash** - это плагин, использующий новый Pepper API. Он разрабатывается в Adobe и входит в состав Google Chrome.
 
-Установить pepper-flash для Chromium можно с пакетом [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Если вы хотите использовать версию для разработчиков, установите [chromium-pepper-flash-dev](https://aur.archlinux.org/packages/chromium-pepper-flash-dev/).
+Установить pepper-flash для Chromium можно с пакетом [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Если вы хотите использовать версию для разработчиков, установите [chromium-pepper-flash-dev](https://aur.archlinux.org/packages/chromium-pepper-flash-dev/).
 
 Разрешите использование Flash тут `chrome://settings/content`.
 

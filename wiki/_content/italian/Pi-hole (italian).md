@@ -18,13 +18,14 @@ Questa pagina wiki tenta di fornire istruzioni di uso e configurazione per quest
     *   [1.3 Configurazione su aggiornamento](#Configurazione_su_aggiornamento)
     *   [1.4 Web interface](#Web_interface)
     *   [1.5 FTL](#FTL)
-*   [2 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [2.1 Installazione](#Installazione_2)
-    *   [2.2 Configurazione di prima installazione](#Configurazione_di_prima_installazione_2)
-        *   [2.2.1 Dnsmasq](#Dnsmasq_2)
-        *   [2.2.2 Openresolve](#Openresolve)
-    *   [2.3 Configurazione su aggiornamento](#Configurazione_su_aggiornamento_2)
-*   [3 Risorse](#Risorse)
+*   [2 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
+*   [3 Pi-hole Standalone](#Pi-hole_Standalone)
+    *   [3.1 Installazione](#Installazione_2)
+    *   [3.2 Configurazione di prima installazione](#Configurazione_di_prima_installazione_2)
+        *   [3.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [3.2.2 Openresolve](#Openresolve)
+    *   [3.3 Configurazione su aggiornamento](#Configurazione_su_aggiornamento_2)
+*   [4 Risorse](#Risorse)
 
 ## Pi-hole Server
 
@@ -165,6 +166,18 @@ o
 ### FTL
 
 FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. E' possibile configurare FTL attraverso il file `/etc/pihole/pihole-FTL.conf`. [Leggi](https://github.com/pi-hole/FTL#ftls-config-file) la documentazione del progetto per i dettagli.
+
+## Usare Pi-hole attraverso OpenVPN
+
+E' possibile usare [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) assieme a Pi-hole per redirigere il traffico remoto dei client al DNS di Pi-hole e rimuovere loro la pubblicità. E' logico aspettarsi una riduzione del traffico cellulare in quanto i banner pubblicitari non vengono nemmeno caricati. Assicurati che il file `/etc/openvpn/server/server.conf` contenga le due linee indicate qui sotto sostituendo "xxx.xxx.xxx.xxx" con l'indirizzo IP della macchina che esegue Pi-hole:
+
+```
+push "redirect-gateway def1 bypass-dhcp"
+push "dhcp-option DNS xxx.xxx.xxx.xxx"
+
+```
+
+**Note:** Questa dovrebbe essere l'unica modifica richiesta.
 
 ## Pi-hole Standalone
 

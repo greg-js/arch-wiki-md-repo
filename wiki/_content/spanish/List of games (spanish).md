@@ -827,7 +827,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Urban Terror](/index.php/Urban_Terror "Urban Terror")** — Juego FPS multijugador moderno basado en el motor ioquake3.
 
-	[http://urbanterror.info](http://urbanterror.info) || [urbanterror](https://www.archlinux.org/packages/?name=urbanterror)
+	[http://urbanterror.info](http://urbanterror.info) || [urbanterror](https://aur.archlinux.org/packages/urbanterror/)
 
 *   **[Warsow](https://en.wikipedia.org/wiki/Warsow_(game) "wikipedia:Warsow (game)")** — Juego FPS multijugador de ritmo rápido que se centra en trucos de movimiento y de saltos.
 

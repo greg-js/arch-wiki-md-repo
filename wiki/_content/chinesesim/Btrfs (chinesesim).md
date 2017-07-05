@@ -276,7 +276,7 @@ Btrfs支持透明压缩，这意味着分区里的每个文件都被自动压缩
 
 ```
 
-*subvolume-id* 可以通过[列出子卷列表](#Listing_subvolumes)获得.
+*subvolume-id* 可以通过[#列出子卷列表](#.E5.88.97.E5.87.BA.E5.AD.90.E5.8D.B7.E5.88.97.E8.A1.A8)获得.
 
 **Note:** 在安装了 [GRUB](/index.php/GRUB "GRUB") 的系统上,在改变默认子卷以后不要忘记运行 `grub-install` . 参见 [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 

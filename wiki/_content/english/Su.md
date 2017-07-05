@@ -4,7 +4,7 @@ The **su** command (**s**ubstitute **u**ser) is used to assume the identity of a
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-*   [3 Security](#Security)
+*   [3 Sudo, an alternative](#Sudo.2C_an_alternative)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Login shell](#Login_shell)
     *   [4.2 su and wheel](#su_and_wheel)
@@ -26,9 +26,9 @@ You will be prompted for the password of the user you are attempting to become.
 
 If no username is passed, su assumes the root user, and the password for which you are prompted will be that of root.
 
-## Security
+## Sudo, an alternative
 
-From a security perspective, it is arguably better to set up and use [sudo](/index.php/Sudo "Sudo") instead of su. The sudo system will prompt you for your own password – or no password at all, if configured in such a way – rather than that of the target user (the user account you are attempting to use). This way you do not have to share passwords between users, and if you ever need to stop a user having root access (or access to any other account, for that matter), you do not have to change the root password, which is an inconvenience to everyone else; you only need to revoke that user's sudo access.
+[sudo](/index.php/Sudo "Sudo") is a more configurable program that can provide similar functionality to su, and can be a replacement for su, depending on specific requirements and threat models. The sudo system will prompt you for your own password – or no password at all, if configured in such a way – rather than that of the target user (the user account you are attempting to use). This way you do not have to share passwords between users, and if you ever need to stop a user having root access (or access to any other account, for that matter), you do not have to change the root password, which is an inconvenience to everyone else; you only need to revoke that user's sudo access.
 
 If sudo has been configured to allow the user to run root's shell, the user can run `sudo -s` or `sudo -i` to mimic `su` or `su -l`, respectively, and supply his own password or no password rather than root's password. Similarly, `sudo -u john -i` mimics `su -l john` if you are allowed to run john's shell.
 

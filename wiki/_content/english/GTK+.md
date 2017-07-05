@@ -85,7 +85,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Breeze** — GTK+ version of KDE's default widget theme. Includes: *Breeze*, *Breeze-Dark*
 
-	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
+	[https://cgit.kde.org/breeze-gtk.git](https://cgit.kde.org/breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
 *   **Deepin** — Default theme for the Deepin desktop. Includes: *deepin*, *deepin-dark*
 

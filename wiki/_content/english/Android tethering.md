@@ -86,7 +86,7 @@ $ udevadm info /sys/class/net/enp0s26u1u2
 
 Then create the corresponding systemd-networkd file:
 
- `/etc/systemd/network/enp0s26u1u2.network` 
+ `/etc/systemd/network/50-enp0s26u1u2.network` 
 ```
 [Match]
 Name=enp0s26u1u2

@@ -11,6 +11,7 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
     *   [3.1 Configuration at boot](#Configuration_at_boot)
         *   [3.1.1 udev rule](#udev_rule)
         *   [3.1.2 systemd.path unit](#systemd.path_unit)
+        *   [3.1.3 udev hwdb entry](#udev_hwdb_entry)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
 *   [5 See also](#See_also)
@@ -106,6 +107,47 @@ ExecStart=/usr/local/bin/trackpoint_configuration.sh
 ```
 
 Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `trackpoint_parameters.path` systemd unit.
+
+#### udev hwdb entry
+
+Libinput applies its own parameters to sysfs based on entries in the [udev hardware database](https://github.com/systemd/systemd/blob/master/hwdb/70-pointingstick.hwdb). This is the behavior on systems running a Wayland compositor, as libinput is the only supported input interface in that environment. Changes made prior to the start of a Wayland compositor or X session will be overwritten.
+
+To override libinput's default settings, add a local hwdb entry:
+
+ `/etc/udev/hwdb.d/99-trackpoint.hwdb` 
+```
+evdev:name:TPPS/2 IBM TrackPoint:dmi:bvn*:bvr*:bd*:svnLENOVO:pn*:pvrThinkPad??60?:*
+  POINTINGSTICK_SENSITIVITY=250
+  POINTINGSTICK_CONST_ACCEL=1.5
+```
+
+You can find various vendor/model keys in the [udev hardware database](https://github.com/systemd/systemd/blob/master/hwdb/70-pointingstick.hwdb).
+
+Reload udev's hwdb to apply the changes:
+
+```
+# udevadm hwdb --update
+
+```
+
+To test the changes prior to restarting your compositor or X session, first find your device input node ({ic|/dev/input/eventX}} using:
+
+```
+# libinput-list-devices
+
+```
+
+Run the following to generate some debug output:
+
+```
+# udevadm trigger /sys/class/input/eventX
+# udevadm test /sys/class/input/eventX
+
+```
+
+**Note:** This will not actually apply the parameters from hwdb, but you can verify the changes in the output of the `udevadm test` command.
+
+Finally, restart your Wayland compositor or X session to apply the changes.
 
 ## Troubleshooting
 

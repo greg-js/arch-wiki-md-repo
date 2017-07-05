@@ -21,6 +21,7 @@
     *   [4.7 Put git status in prompt](#Put_git_status_in_prompt)
     *   [4.8 Evaluate ssh-agent](#Evaluate_ssh-agent)
     *   [4.9 The "command not found" hook](#The_.22command_not_found.22_hook)
+    *   [4.10 Remove a process from the list of jobs](#Remove_a_process_from_the_list_of_jobs)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -199,6 +200,18 @@ In fish, `eval (ssh-agent)` generate errors due to how variables are set. To wor
 ### The "command not found" hook
 
 [pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. This hook will be run by default if [pkgfile](/index.php/Pkgfile "Pkgfile") is installed.
+
+### Remove a process from the list of jobs
+
+*fish* terminates any jobs put into the background when fish terminates. To keep a job running after fish terminates, first use the `disown` builtin. For example, the following starts `firefox` in the background and then disowns it:
+
+```
+ $ firefox &
+ $ disown
+
+```
+
+This means firefox will not be closed when the fish process is closed. See disown(1) in *fish* for more details.
 
 ## See also
 

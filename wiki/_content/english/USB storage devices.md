@@ -12,6 +12,8 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
         *   [2.3.1 As root](#As_root)
         *   [2.3.2 As normal user with mount](#As_normal_user_with_mount)
         *   [2.3.3 As normal user with fstab](#As_normal_user_with_fstab)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 No USB storage devices are acknowledged by the system](#No_USB_storage_devices_are_acknowledged_by_the_system)
 
 ## Auto-mounting with udisks
 
@@ -77,3 +79,9 @@ If you want non-root users to be able to write to the USB stick, you can issue t
 #### As normal user with fstab
 
 See [Fstab#Writing to FAT32 as Normal User](/index.php/Fstab#Writing_to_FAT32_as_Normal_User "Fstab") if you want normal user to do the mount/unmount action.
+
+## Troubleshooting
+
+### No USB storage devices are acknowledged by the system
+
+If you have connected your USB storage device to the computer and it is not listed in `lsblk` or `dmesg`, ensure that your BIOS has both XCHI Handoff and EHCI Handoff enabled.

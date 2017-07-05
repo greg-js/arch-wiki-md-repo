@@ -23,7 +23,7 @@
 
 ### Client
 
-Urban Terror is now supported in the [official repositories](/index.php/Official_repositories "Official repositories"). Two packages should be [installed](/index.php/Pacman "Pacman"): [urbanterror](https://www.archlinux.org/packages/?name=urbanterror) and [urbanterror-data](https://www.archlinux.org/packages/?name=urbanterror-data).
+Urban Terror is now supported in the [official repositories](/index.php/Official_repositories "Official repositories"). Two packages should be [installed](/index.php/Pacman "Pacman"): [urbanterror](https://aur.archlinux.org/packages/urbanterror/) and [urbanterror-data](https://aur.archlinux.org/packages/urbanterror-data/).
 
 #### Running Urban Terror in a second X server
 

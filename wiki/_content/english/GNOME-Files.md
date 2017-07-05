@@ -133,7 +133,7 @@ On non-English installations, the templates directory might have another name. O
 
 GNOME Files lacks the ability to display metadata for music files in list view mode. A [Python](/index.php/Python "Python") script is available which adds list view columns for the artist, album, track title, bit rate and more.
 
-To use the script you first need to [install](/index.php/Install "Install") the following: [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus), [mutagen](https://www.archlinux.org/packages/?name=mutagen), [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), [kaa-metadata](https://www.archlinux.org/packages/?name=kaa-metadata) and [python2-exiv2](https://www.archlinux.org/packages/?name=python2-exiv2).
+To use the script you first need to [install](/index.php/Install "Install") the following: [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus), [mutagen](https://www.archlinux.org/packages/?name=mutagen), [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), [kaa-metadata](https://aur.archlinux.org/packages/kaa-metadata/) and [python2-exiv2](https://www.archlinux.org/packages/?name=python2-exiv2).
 
 Once the dependencies are installed, save the [bsc-v2.py](http://pastebin.com/zN69twVP) script to `~/.local/share/nautilus-python/extensions` (create the directory if it does not exist) and restart Files.
 

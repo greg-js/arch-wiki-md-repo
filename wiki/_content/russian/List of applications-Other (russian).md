@@ -339,7 +339,7 @@
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/ru:GnuCash "wikipedia:ru:GnuCash")** — Финансовое приложение, реализующее систему бухгалтерского учета с двойной записью, с функциями, полезными для ведения бухгалтерии на малых предприятиях
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/ru:Grisbi "wikipedia:ru:Grisbi")** — Персональная финансовая система, которую можно использовать, в том числе, и на предприятиях
 

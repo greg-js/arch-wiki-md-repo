@@ -492,7 +492,7 @@ Ciphers arcfour,blowfish-cbc
 
 ### Montando un Sistema de archivos Remoto con SSHFS
 
-Por favor, consulte el artículo [Sshfs](/index.php/Sshfs_(Espa%C3%B1ol) "Sshfs (Español)") para utilizar sshfs a fin de montar un sistema remoto —accesible a través de SSH— en una carpeta local, de modo que sea capaz de hacer cualquier operación en los archivos montados con cualquier herramienta (copiar, renombrar, editar con vim, etc.). Utilizar sshfs en lugar de shfs es, en general, preferible, como una nueva versión de shfs, ya que esta última no ha sido liberada desde 2004.
+Por favor, consulte el artículo [Sshfs](/index.php/SSHFS_(Espa%C3%B1ol) "SSHFS (Español)") para utilizar sshfs a fin de montar un sistema remoto —accesible a través de SSH— en una carpeta local, de modo que sea capaz de hacer cualquier operación en los archivos montados con cualquier herramienta (copiar, renombrar, editar con vim, etc.). Utilizar sshfs en lugar de shfs es, en general, preferible, como una nueva versión de shfs, ya que esta última no ha sido liberada desde 2004.
 
 ### Mantener la sesión activa
 
@@ -552,7 +552,7 @@ $ autossh -M 0 -o "ServerAliveInterval 45" -o "ServerAliveCountMax 2" username@e
 
 ```
 
-Combinado con [sshfs](/index.php/Sshfs "Sshfs"):
+Combinado con [sshfs](/index.php/SSHFS_(Espa%C3%B1ol) "SSHFS (Español)"):
 
 ```
 $ sshfs -o reconnect,compression=yes,transform_symlinks,ServerAliveInterval=45,ServerAliveCountMax=2,ssh_command='autossh -M 0' username@example.com: /mnt/example 

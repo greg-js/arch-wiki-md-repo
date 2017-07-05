@@ -12,6 +12,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 *   [1 Installation](#Installation)
     *   [1.1 Redshift](#Redshift)
         *   [1.1.1 Redshift-GTK](#Redshift-GTK)
+            *   [1.1.1.1 Alternatives](#Alternatives)
 *   [2 Configuration](#Configuration)
     *   [2.1 Autostart](#Autostart)
     *   [2.2 Quick start](#Quick_start)
@@ -33,7 +34,11 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 #### Redshift-GTK
 
-The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Redshift-GTK provides a system tray icon for controlling Redshift and requires the following packages to be installed: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg). An alternative (non-GTK solution) for [KDE](/index.php/KDE "KDE") is available as [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
+The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Redshift-GTK provides a system tray icon for controlling Redshift and requires the following packages to be installed: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg).
+
+##### Alternatives
+
+Another GTK application is [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) and alternative Qt solutions available are [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
 
 ## Configuration
 

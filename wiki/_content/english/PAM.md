@@ -19,13 +19,13 @@ This article explains the Arch Linux base set-up defaults for PAM to authenticat
 
 ## Installation
 
-The [pam](https://www.archlinux.org/packages/?name=pam) package is part of the base group of packages and, thereby, installed on the system. The PAM modules are installed into `/usr/lib/security` exclusively.
+The [pam](https://www.archlinux.org/packages/?name=pam) package is part of the base group of packages and, thereby, normally installed on an Arch system. The PAM modules are installed into `/usr/lib/security` exclusively.
 
 The repositories contain a number of optional PAM packages, the [#Configuration How-Tos](#Configuration_How-Tos) show examples.
 
 ## Configuration
 
-A number of `/etc` paths are relevant for PAM, execute `pacman -Ql pam |grep /etc` to see the default configuration files created. They relate to either [#Security parametersfor](#Security_parameters) the modules, or the [#PAM base-stack](#PAM_base-stack) configuration.
+A number of `/etc` paths are relevant for PAM, execute `pacman -Ql pam |grep /etc` to see the default configuration files created. They relate to either [#Security parameters](#Security_parameters) for the modules, or the [#PAM base-stack](#PAM_base-stack) configuration.
 
 ### Security parameters
 
@@ -33,7 +33,7 @@ The path `/etc/security` contains system-specific configuration for variables th
 
 Note Arch Linux does not provide distribution-specific configuration for these files. For example, the `/etc/security/pwquality.conf` file can be used to define system-wide defaults for password quality. Yet, to enable it the `pam_pwquality.so` module has to be added to the [#PAM base-stack](#PAM_base-stack) of modules, which is not the case per default.
 
-See [#Security parameter configurationfor](#Security_parameter_configuration) some of the possibilities.
+See [#Security parameter configuration](#Security_parameter_configuration) for some of the possibilities.
 
 ### PAM base-stack
 
@@ -90,7 +90,7 @@ Second, as the contrary example, per default configuration creating the followin
 
 results in that no user other than root may login (if root logins are allowed, another default for Arch Linux). To allow logins again, remove the file from the console you created it with.
 
-With that as background, see [#PAM stack and module configurationfor](#PAM_stack_and_module_configuration) particular use-case configuration.
+With that as background, see [#PAM stack and module configuration](#PAM_stack_and_module_configuration) for particular use-case configuration.
 
 ## Configuration How-Tos
 
