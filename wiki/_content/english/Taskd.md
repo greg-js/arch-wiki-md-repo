@@ -23,7 +23,7 @@ taskd is available in the AUR as [taskd](https://aur.archlinux.org/packages/task
 
 Once taskd is installed, you need to set it up. The first step is to `export TASKDDATA=/var/lib/taskd ` (otherwise you need to append `--data /var/lib/taskd` to every taskd command).
 
-Next, edit the `/usr/share/doc/taskd/pki/vars` file. The `CN=` line must either match the server's hostname or IP address, depending on how you connect. Once the file is edited to your heart's content, run `/usr/share/doc/taskd/pki/generate`. This will create selfsigned certificates for your server. Copy all generated *.pem-files to `/var/lib/taskd`. Note that at least the ca.cert.pem must remain in the pki folder for the user-certificate generation later on.
+Next, edit the `/usr/share/doc/taskd/pki/vars` file. The `CN=` line must either match the server's hostname or IP address, depending on how you connect. Once the file is edited to your heart's content, change to the directory `/usr/share/doc/taskd/pki/` and run `./generate`. This will create selfsigned certificates for your server. Copy all generated *.pem-files to `/var/lib/taskd`. Note that at least the ca.cert.pem must remain in the pki folder for the user-certificate generation later on.
 
 Now you need to configure the taskd config. This can be done by either using `taskd config` or editing `/var/lib/taskd/config` directly.
 

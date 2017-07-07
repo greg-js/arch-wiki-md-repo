@@ -18,9 +18,15 @@
 *   [3 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 Установка загрузчика](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA.D0.B0)
-    *   [3.4 Перезагрузка](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
-*   [4 После установки](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
+    *   [3.3 Часовой пояс](#.D0.A7.D0.B0.D1.81.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BF.D0.BE.D1.8F.D1.81)
+    *   [3.4 Локаль](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C)
+    *   [3.5 Имя хоста](#.D0.98.D0.BC.D1.8F_.D1.85.D0.BE.D1.81.D1.82.D0.B0)
+    *   [3.6 Настройка сети](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B5.D1.82.D0.B8)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Пароль суперпользователя](#.D0.9F.D0.B0.D1.80.D0.BE.D0.BB.D1.8C_.D1.81.D1.83.D0.BF.D0.B5.D1.80.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [3.9 Загрузчик](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA)
+*   [4 Перезагрузка](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
+*   [5 После установки](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
 
 ## Перед установкой
 
@@ -150,12 +156,14 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Fstab
 
-Сгенерируйте файл [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (используйте ключ `-U` или `-L`, чтобы для идентификации разделов использовались UUID или метки, соответственно):
+Сгенерируйте файл [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (используйте ключ `-U` или `-L`, чтобы для идентификации разделов использовались [UUID](/index.php/UUID "UUID") или метки, соответственно):
 
 ```
-# genfstab -p /mnt >> /mnt/etc/fstab
+# genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
+
+После этого проверьте файл `/mnt/etc/fstab` и отредактируйте его в случае необходимости.
 
 ### Chroot
 
@@ -166,57 +174,96 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ```
 
-Установите [имя хоста](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8_.D1.83.D0.B7.D0.BB.D0.B0 "Network configuration (Русский)"):
-
-```
-# echo *имя_хоста* > /etc/hostname
-
-```
+### Часовой пояс
 
 Задайте [часовой пояс](/index.php/Time_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A7.D0.B0.D1.81.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BF.D0.BE.D1.8F.D1.81 "Time (Русский)"):
 
 ```
-# ln -sf /usr/share/zoneinfo/*зона*/*субзона* /etc/localtime
+# ln -sf /usr/share/zoneinfo/*Регион*/*Город* /etc/localtime
 
 ```
 
-Включите [локали](/index.php/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Locale (Русский)"), раскомментировав их в `/etc/locale.gen`, после чего сгенерируйте их:
+Запустите [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html), чтобы сгенерировать `/etc/adjtime`:
+
+```
+# hwclock --systohc
+
+```
+
+Эта команда предполагает, что аппаратные часы настроены в формате [UTC](https://en.wikipedia.org/wiki/ru:%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B2%D1%80%D0%B5%D0%BC%D1%8F "w:ru:Всемирное координированное время"). Для получения дополнительной информации смотрите раздел [Время#Стандарты времени](/index.php/%D0%92%D1%80%D0%B5%D0%BC%D1%8F#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D1.8B_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8 "Время").
+
+### Локаль
+
+Включите `en_US.UTF-8 UTF-8` и другие необходимые [локализации](/index.php/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Locale (Русский)") (например, `ru_RU.UTF-8 UTF-8`), раскомментировав их в файле `/etc/locale.gen`, после чего сгенерируйте их:
 
 ```
 # locale-gen
 
 ```
 
-Укажите настройки локалей в `/etc/locale.conf`, и, если нужно, в `$HOME/.config/locale.conf`:
+Задайте необходимое значение [переменной](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `LANG` в файле [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html), например:
+
+ `/etc/locale.conf`  `LANG=*ru_RU.UTF-8*` 
+
+Если вы [меняли раскладку клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B), сделайте это изменение постоянным в файле [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
+
+ `/etc/vconsole.conf`  `KEYMAP=*ru*` 
+
+### Имя хоста
+
+Создайте файл [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
+
+ `/etc/hostname` 
+```
+*моёимяхоста*
 
 ```
-# echo LANG=*ваша_локаль* > /etc/locale.conf
+
+Рекомендуется также добавить соответствующую запись в файл [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+
+ `/etc/hosts` 
+```
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+**127.0.1.1	*моёимяхоста*.localdomain	*моёимяхоста***
 
 ```
 
-Добавьте [набор клавиш](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") консоли и [шрифты](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Fonts (Русский)") в `/etc/vconsole.conf`.
+Смотрите также раздел [Настройка сети#Установка имени узла](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8_.D1.83.D0.B7.D0.BB.D0.B0 "Настройка сети").
 
-Снова настройте сеть для нового окружения: смотрите страницы [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети") и [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети").
+### Настройка сети
 
-Настройте `[/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio")` если нужны дополнительные возможности *mkinitcpio*. Создайте новый ramdisk:
+В свежеустановленном окружении нет сетевых соединений, активированных по умолчанию. Чтобы их настроить, обратитесь к статье [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
+
+Для [настройки беспроводной сети](/index.php/Wireless_network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wireless network configuration (Русский)") [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакеты [iw](https://www.archlinux.org/packages/?name=iw) и [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), а также требуемые [пакеты прошивок](/index.php/Wireless_network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0.2F.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8 "Wireless network configuration (Русский)"). Если вы хотите использовать*wifi-menu*, установите пакет [dialog](https://www.archlinux.org/packages/?name=dialog).
+
+### Initramfs
+
+Как правило, создание нового образа *initramfs* не требуется, поскольку *pacstrap* автоматически запускает [mkinitcpio](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mkinitcpio (Русский)") после установки пакета [linux](https://www.archlinux.org/packages/?name=linux).
+
+Если вам нужно что-либо изменить, отредактируйте файл mkinitcpio.conf(5) и пересоздайте образ *initramfs*:
 
 ```
 # mkinitcpio -p linux
 
 ```
 
-Установите пароль суперпользователя:
+### Пароль суперпользователя
+
+Установите [пароль](/index.php/Users_and_groups_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F.D0.BC.D0.B8 "Users and groups (Русский)") суперпользователя:
 
 ```
 # passwd
 
 ```
 
-### Установка загрузчика
+### Загрузчик
 
-Смотрите статью [Загрузчики](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8 "Загрузчики").
+Чтобы узнать о всех доступных вариантах конфигурации, обратитесь к категории [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)").
 
-### Перезагрузка
+Если вы используете процессор Intel, дополнительно установите пакет [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) и [включите обновления микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)").
+
+## Перезагрузка
 
 Выйдите из окружения chroot, набрав `exit` или нажав `Ctrl+D`.
 

@@ -31,6 +31,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/aurapm/aura](https://github.com/aurapm/aura) || [aura](https://aur.archlinux.org/packages/aura/) or [aura-bin](https://aur.archlinux.org/packages/aura-bin/) (binary)
 
+*   **auracle** — An AUR client written in C++.
+
+	[https://github.com/falconindy/auracle](https://github.com/falconindy/auracle) || [auracle-git](https://aur.archlinux.org/packages/auracle-git/)
+
 *   **aurel** — Search, vote and download AUR packages from Emacs. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=177142))
 
 	[https://github.com/alezost/aurel](https://github.com/alezost/aurel) || [aurel-git](https://aur.archlinux.org/packages/aurel-git/)
@@ -180,12 +184,12 @@ The columns have the following meaning:
 | Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Shell completion | Syntax | Specificity |
 | apacman | Bash | No [[1]](https://github.com/oshazard/apacman/issues/8) | No [[2]](https://github.com/oshazard/apacman/search?utf8=%E2%9C%93&q=export) | No | No | No | No | None | P | Fork of *packer* |
 | aura | Haskell | Yes | Yes | No [[3]](https://github.com/aurapm/aura/issues/14) | No | No [[4]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Downgrade, [ABS](/index.php/ABS "ABS"), [powerpill](/index.php/Powerpill "Powerpill") support, multilingual, requires [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
+| auracle | C++ | Yes | N/A | Yes | Yes | N/A | No | N/A | S | No automatic builds |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[5]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [vifm](/index.php/Vifm "Vifm"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |
 | bauerbill | Python | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Trust management, ABS support, extends Powerpill |
 | burgaur | Python/C | Optional, with [mc](/index.php/Mc "Mc") | Yes | No | No | No | No | None | P | Wrapper for *cower* |
-| cower | C | Yes | N/A | Yes | N/A | N/A | No | bash/zsh | S | No automatic builds, regex support, sort by votes/popularity |
 | owlman | Bash/C | Yes | Yes | Yes | No | Partial | No | None | S | Wrapper for *cower* |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash/zsh | P/S | Minimizes user interaction, multilingual, sort by votes/popularity |
 | packer | Bash | No | Yes | No | No | No | No | None | P | - |

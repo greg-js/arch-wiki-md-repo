@@ -98,7 +98,7 @@ An easy flow for updating passwords.
 
 ## Advanced usage
 
-[Environment variables](/index.php/Environment_variables "Environment variables") can be used to alter where *pass* looks to do store and git operations via
+[Environment variables](/index.php/Environment_variables "Environment variables") can be used to alter where *pass* looks to do store and git operations via:
 
 ```
 PASSWORD_STORE_DIR=/path/to/store

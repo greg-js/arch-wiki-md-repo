@@ -2,7 +2,7 @@
 
 SSH 通常用于远程访问和执行命令，但是它也支持隧道，转发任意 TCP 端口以及 X11 连接；它还能够用 SFTP 或 SCP 协议来传输文件。
 
-一个 SSH 服务器，默认地，在 TCP 端口 22 进行监听。一个 SSH 客户端程序通常被用来建立一个远程连接到 **sshd** 守护进程。这两者都被广泛地存在于现代操作系统中，包括 Mac OS X，GNU/Linux，Solaris 和 OpenVMS 等。以专利的，自由软件的以及开源版本的形式和不同的复杂性和完整性存在。
+一个 SSH 服务器默认情况下，在 TCP 端口 22 进行监听。一个 SSH 客户端程序通常被用来建立一个远程连接到 **sshd** 守护进程。这两者都被广泛地存在于现代操作系统中，包括 Mac OS X，GNU/Linux，Solaris 和 OpenVMS 等。以专利的，自由软件的以及开源版本的形式和不同的复杂性和完整性存在。
 
 (来源：[维基百科 Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell"))
 
@@ -10,11 +10,11 @@ SSH 通常用于远程访问和执行命令，但是它也支持隧道，转发�
 
 *   [1 OpenSSH](#OpenSSH)
     *   [1.1 安装OpenSSH](#.E5.AE.89.E8.A3.85OpenSSH)
-    *   [1.2 配置SSH](#.E9.85.8D.E7.BD.AESSH)
-        *   [1.2.1 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [1.2.2 守护进程](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-    *   [1.3 管理 sshd 守护进程](#.E7.AE.A1.E7.90.86_sshd_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-    *   [1.4 连接到服务器](#.E8.BF.9E.E6.8E.A5.E5.88.B0.E6.9C.8D.E5.8A.A1.E5.99.A8)
+    *   [1.2 SSH客户端](#SSH.E5.AE.A2.E6.88.B7.E7.AB.AF)
+        *   [1.2.1 配置 SSH](#.E9.85.8D.E7.BD.AE_SSH)
+    *   [1.3 SSH服务端](#SSH.E6.9C.8D.E5.8A.A1.E7.AB.AF)
+        *   [1.3.1 配置 SSH守护进程](#.E9.85.8D.E7.BD.AE_SSH.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
+        *   [1.3.2 管理 sshd 守护进程](#.E7.AE.A1.E7.90.86_sshd_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
 *   [2 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [2.1 加密Socks通道](#.E5.8A.A0.E5.AF.86Socks.E9.80.9A.E9.81.93)
         *   [2.1.1 第一步：开始连接](#.E7.AC.AC.E4.B8.80.E6.AD.A5.EF.BC.9A.E5.BC.80.E5.A7.8B.E8.BF.9E.E6.8E.A5)
@@ -47,17 +47,55 @@ OpenSSH (OpenBSD Secure Shell) 是一套使用ssh协议，通过计算机网络�
 
 从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")中[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [openssh](https://www.archlinux.org/packages/?name=openssh).
 
-### 配置SSH
+### SSH客户端
 
-#### 客户端
+连接SSH服务器，运行命令
 
-SSH客户端的配置文件是`/etc/ssh/ssh_config` 或 `~/.ssh/config`.
+```
+ $ssh -p port user@server-address
 
-现在已经不需要额外设置 `Protocol 2`, 默认的协议已经是 `Protocol 2` 了([http://www.openssh.org/txt/release-5.4)。](http://www.openssh.org/txt/release-5.4)。)
+```
 
-#### 守护进程
+如果服务器仅允许使用密钥登录，请参考 [SSH Keys](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)") 。
 
-SSH 守护进程的配置文件是`/etc/ssh/ssh**d**_config`。
+#### 配置 SSH
+
+SSH客户端的配置文件是`/etc/ssh/```ssh```_config` 或 `~/.ssh/config`.
+
+现在已经不需要额外设置 `Protocol 2`, 默认的协议已经是 `Protocol 2` 了 ([http://www.openssh.org/txt/release-5.4](http://www.openssh.org/txt/release-5.4)) 。
+
+ `~/.ssh/config` 
+```
+# global options
+User *user*
+
+# host-specific options
+Host myserver
+    HostName *server-address*
+    Port     *port*
+```
+
+进行了如上的配置后，以下命令是等效的
+
+```
+$ ssh -p *port* *user*@*server-address*
+$ ssh myserver
+
+```
+
+查看 [ssh_config(5)](http://man7.org/linux/man-pages/man5/ssh_config.5.html) 获取更多信息。
+
+某些选项没有命令行参数，但是可以使用 `-o` 在命令行中配置指定选项的参数。 例如 `-o```KexAlgorithms```=+```diffie-hellman-group1-sha1````.
+
+### SSH服务端
+
+#### 配置 SSH守护进程
+
+**提示：**
+
+*   更多安全配置请参考 [SSH Keys](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")
+
+SSH 守护进程的配置文件是`/etc/ssh/```sshd```_config`。
 
 只允许某些用户访问的话，加入这一行：
 
@@ -80,14 +118,35 @@ PermitRootLogin no
 
 ```
 
-你也可以取消BANNER选项的注释，然后编辑`/etc/issue`加入友好的欢迎信息内容。
+运行以下命令以更改sshd服务监听端口：
+
+```
+ Port 39901
+
+```
 
 **提示：**
 
-*   可以考虑把默认的端口从22改成更高的端口(参考 [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).尽管ssh的运行端口可以被像nmap这样的端口扫描器侦测到，但改变它可以减少由于自动验证的尝试造成的登录日志条目。
+*   可以考虑把默认的端口从22改成更高的端口(参考 [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).尽管ssh的运行端口可以被像nmap这样的端口扫描器侦测到，但改变它可以减少由于自动验证的尝试造成的登录日志条目。有关端口号列表请参考`/etc//services`或[list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers")
 *   完全取消密码登录方式可以极大的增强安全性，(参考 [SSH Keys](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")).
 
-### 管理 sshd 守护进程
+你也可以取消BANNER选项的注释，然后编辑`/etc/issue`加入友好的欢迎信息内容。
+
+你也可以运行以下命令关联文件(如`/etc/issue`文件)到登录欢迎信息：
+
+```
+ Banner /etc/issue
+
+```
+
+ssh主机秘钥将由sshd服务文件自动配置。如果你想要自定义秘钥，运行以下命令以自定义秘钥：
+
+```
+ HostKey /etc/ssh/ssh_host_rsa_key
+
+```
+
+#### 管理 sshd 守护进程
 
 你可以使用下面的命令启动sshd：
 
@@ -114,14 +173,26 @@ PermitRootLogin no
 
 如果你使用非默认端口22，你必须在文件(/lib/systemd/system/sshd.socket)中设置"ListenStream"为相应的端口。
 
-### 连接到服务器
+[openssh](https://www.archlinux.org/packages/?name=openssh) comes with two kinds of [systemd](/index.php/Systemd "Systemd") service files:
 
-运行下面的命令：
+1.  `sshd.service`, which will keep the SSH daemon permanently active and fork for each incoming connection.[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) It is especially suitable for systems with a large amount of SSH traffic.[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
+2.  `sshd.socket` + `sshd@.service`, which spawn on-demand instances of the SSH daemon per connection. Using it implies that *systemd* listens on the SSH socket and will only start the daemon process for an incoming connection. It is the recommended way to run `sshd` in almost all cases.[[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
+
+You can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") either `sshd.service` **or** `sshd.socket` to begin using the daemon.
+
+If using the socket service, you will need to [edit](/index.php/Edit "Edit") the unit file if you want it to listen on a port other than the default 22:
+
+ `# systemctl edit sshd.socket` 
+```
+[Socket]
+ListenStream=
+ListenStream=12345
 
 ```
-$ ssh -p port user@server-address
 
-```
+**Warning:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port *and* IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`). You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
+
+**Tip:** When using socket activation neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log, but executing `# journalctl /usr/bin/sshd` does.
 
 ## 提示与技巧
 

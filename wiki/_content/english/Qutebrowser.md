@@ -8,7 +8,7 @@
     *   [2.2 Keybindings](#Keybindings)
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Use experimental webengine backend](#Use_experimental_webengine_backend)
+    *   [3.1 Use webengine backend](#Use_webengine_backend)
     *   [3.2 Minimize fingerprinting](#Minimize_fingerprinting)
         *   [3.2.1 Set a common user-agent](#Set_a_common_user-agent)
         *   [3.2.2 Set a common HTTP_ACCEPT header](#Set_a_common_HTTP_ACCEPT_header)
@@ -54,7 +54,7 @@ See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_
 
 ## Tips and tricks
 
-### Use experimental webengine backend
+### Use webengine backend
 
 To use the more secure webengine backend, use the `--backend` flag:
 
@@ -63,7 +63,7 @@ To use the more secure webengine backend, use the `--backend` flag:
 
 ```
 
-**Note:** The qutebrowser implementation of webengine is experimental and may be missing features. See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2335) for updates.
+**Note:** The qutebrowser implementation of webengine may be missing features. See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2335) for updates.
 
 ### Minimize fingerprinting
 
@@ -106,13 +106,13 @@ $ qutebrowser --qt-flag disable-reading-from-canvas
 
 See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
 
-**Note:** This will not have any effect with the QtWebKit backend. See [#Use experimental webengine backend](#Use_experimental_webengine_backend) to use the webengine backend.
+**Note:** This will not have any effect with the QtWebKit backend. See [#Use webengine backend](#Use_webengine_backend) to use the webengine backend.
 
 ### dwb-like session handling
 
-To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, and keeps the configuration shared.
+To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, while keeping the configuration shared.
 
-**Note:** The wrapper script defaults to the (experimental) webengine backend. You can pass `--backend webkit` to have it use the QtWebKit backend.
+**Note:** The wrapper script defaults to the webengine backend. You can pass `--backend webkit` to have it use the QtWebKit backend.
 
 ## See also
 

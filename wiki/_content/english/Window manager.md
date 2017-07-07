@@ -231,6 +231,10 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[http://swaywm.org/](http://swaywm.org/) || [sway](https://www.archlinux.org/packages/?name=sway)
 
+*   **[way-cooler](/index.php?title=Way-cooler&action=edit&redlink=1 "Way-cooler (page does not exist)")** — Way Cooler is a tiling Wayland window manager, written in Rust, configurable using Lua, and extendable with D-Bus.
+
+	[http://way-cooler.org/](http://way-cooler.org/) || [way-cooler](https://aur.archlinux.org/packages/way-cooler/)
+
 *   **[WMFS](/index.php/WMFS "WMFS")** — Window Manager From Scratch is a lightweight and highly configurable tiling window manager for X. It can be configured with a configuration file, supports Xft (FreeType) fonts and is compliant with the Extended Window Manager Hints (EWMH) specifications, Xinerama and Xrandr. WMFS can be driven with Vi based commands (ViWMFS).
 
 	[https://github.com/xorg62/wmfs](https://github.com/xorg62/wmfs) || [wmfs](https://aur.archlinux.org/packages/wmfs/)

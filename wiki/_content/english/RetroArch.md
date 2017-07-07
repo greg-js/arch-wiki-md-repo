@@ -17,7 +17,9 @@
 
 ## Installation
 
-Install the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
+1\. Install the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
+
+2\. Install [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) package to Show **XMB menu assets** , Properly.
 
 ## Usage
 

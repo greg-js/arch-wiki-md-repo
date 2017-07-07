@@ -78,7 +78,7 @@
 | <small>6.8.</small> [网络共享](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(5)</small> |
 | <small>6.9.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.10.</small> [远程桌面](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |
-| <small>6.11.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
+| <small>6.11.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.12.</small> [虚拟网络计算 (VNC)](/index.php/Category:Virtual_Network_Computing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Network Computing (简体中文)") <small>(1)</small> |
 | <small>6.13.</small> [虚拟专用网络 (VPN)](/index.php/Category:Virtual_Private_Network_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtual Private Network (简体中文)") <small>(4)</small> |
 | <small>6.14.</small> [网页服务器](/index.php/Category:Web_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web server (简体中文)") <small>(9)</small> |
@@ -113,7 +113,7 @@
 | <small>8.6.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(2)</small> |
 | <small>8.6.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.6.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.6.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.6.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.7.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(13)</small> |
 | <small>8.8.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(7)</small> |
 | <small>8.8.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(2)</small> |

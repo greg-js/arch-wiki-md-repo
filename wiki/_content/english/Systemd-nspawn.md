@@ -317,7 +317,14 @@ Then, any DNS lookup for hostname `foo` on the host will first consult `/etc/hos
 
 #### Use host networking
 
-To disable private networking used by containers started with `machinectl start MyContainer`, [edit](/index.php/Edit "Edit") the configuration of `systemd-nspawn@.service` with `systemctl edit systemd-nspawn@.service` and set the `ExecStart=` option without the `--network-veth` parameter unlike the original service:
+To disable private networking used by containers started with `machinectl start MyContainer` [edit](/index.php/Edit "Edit") the configuration of `systemd-nspawn@.service` with
+
+```
+# systemctl edit systemd-nspawn@.service
+
+```
+
+and set the `ExecStart=` option without the `--network-veth` parameter unlike the original service:
 
  `/etc/systemd/system/systemd-nspawn@.service.d/override.conf` 
 ```

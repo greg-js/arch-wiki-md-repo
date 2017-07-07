@@ -10,17 +10,18 @@ This wiki page tries to cover the need for configuration and use instructions of
 
 *   [1 Pi-hole Server](#Pi-hole_Server)
     *   [1.1 Installation](#Installation)
-    *   [1.2 First install configuration](#First_install_configuration)
+    *   [1.2 Initial configuration](#Initial_configuration)
         *   [1.2.1 Dnsmasq](#Dnsmasq)
-        *   [1.2.2 Web Server](#Web_Server)
-            *   [1.2.2.1 Lighttpd](#Lighttpd)
-            *   [1.2.2.2 Nginx](#Nginx)
+        *   [1.2.2 Router](#Router)
+        *   [1.2.3 Web Server](#Web_Server)
+            *   [1.2.3.1 Lighttpd](#Lighttpd)
+            *   [1.2.3.2 Nginx](#Nginx)
     *   [1.3 Web interface](#Web_interface)
     *   [1.4 FTL](#FTL)
 *   [2 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
 *   [3 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [3.1 Installation](#Installation_2)
-    *   [3.2 First install configuration](#First_install_configuration_2)
+    *   [3.2 Initial configuration](#Initial_configuration_2)
         *   [3.2.1 Dnsmasq](#Dnsmasq_2)
         *   [3.2.2 Openresolve](#Openresolve)
 *   [4 See also](#See_also)
@@ -31,29 +32,24 @@ This wiki page tries to cover the need for configuration and use instructions of
 
 [Install](/index.php/Install "Install") [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
 
-### First install configuration
+### Initial configuration
 
 #### Dnsmasq
 
-Setup dnsmasq which will resolve DNS queries for your LAN and manage filtering ads directly by pi-hole.
-
-**Users already using dnsmasq**: Edit `/etc/dnsmasq.conf` and uncomment the last line:
+Pi-hole interacts with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) to resolve DNS queries for your LAN and manage filtering ads directly by pi-hole. Insure that the following line in `/etc/dnsmasq.conf` is uncommented:
 
  `/etc/dnsmasq.conf` 
 ```
-...
+[...]
 conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
 
-**Users not making use of dnsmasq prior to installing Pi-hole**: Copy the pi-hole-server-provided config file replacing the standard one (or simply diff the two):
+[Enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it.
 
-```
-# cp /usr/share/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
+#### Router
 
-```
-
-If necessary, [enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it. Pi-hole needs to be the DNS for your LAN. Likely, your router is preforming this task currently, so the primary DNS on the router needs to be redefined to use the IP address of the box running Pi-hole. Configuring the router is outside the scope of this article, but a mandatory step.
+Pi-hole needs to be the DNS for the LAN in order to work properly. Typical home users rely on their router to resolve DNS queries. The prefered method is to simply redefine the DNS entry **on the router** to use the IP address of the box running Pi-hole. Configuring the router is outside the scope of this article. An alternative is to manually define the DNS entries for each device connecting to the router although this can be tedious. See, [How do I configure my devices to use Pi-hole as their DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245)
 
 #### Web Server
 
@@ -61,7 +57,7 @@ Users may optionally choose a web server for the Pi-hole web interface.
 
 **Note:** Pi-hole does not strictly require a web interface as many commands are possible via the CLI interface.
 
-Upstream officially supports [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and provides config files for it. The AUR package also provides config files for [nginx](https://www.archlinux.org/packages/?name=nginx), so either is supported out-of-the-box. Other web servers can also run the webUI, but are unsupported.
+The AUR package provides example config files for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also run the WebUI, but are currently unsupported.
 
 Any webserver will require the following edit to enable the sockets extension:
 
@@ -81,13 +77,13 @@ extension=sockets.so
 
 ```
 
-If necessary, [enable](/index.php/Enable "Enable") `lighttpd.service` and re/start it:
+[Enable](/index.php/Enable "Enable") `lighttpd.service` and re/start it:
 
 ##### Nginx
 
-[Install](/index.php/Install "Install") [nginx](https://www.archlinux.org/packages/?name=nginx) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
+[Install](/index.php/Install "Install") [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
 
-Edit `/etc/php/php-fpm.d/www.conf` and changing the listen directive to the following:
+Edit `/etc/php/php-fpm.d/www.conf` and change the listen directive to the following:
 
 ```
 listen = 127.0.0.1:9000  
@@ -109,11 +105,11 @@ Copy the package provided default config for pi-hole:
 
 ```
 # mkdir /etc/nginx/conf.d
-# cp /etc/pihole/configs/nginx.example.conf /etc/nginx/conf.d/pihole.conf
+# cp /usr/share/pihole/configs/nginx.example.conf /etc/nginx/conf.d/pihole.conf
 
 ```
 
-If necessary, [enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
+[Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
 ### Web interface
 
@@ -155,7 +151,7 @@ The Archlinux Pi-hole Standalone variant is born from the need to use pi-hole se
 
 [Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package.
 
-### First install configuration
+### Initial configuration
 
 #### Dnsmasq
 
@@ -163,10 +159,18 @@ Setup is identical to the steps described in [Pi-hole#Dnsmasq](/index.php/Pi-hol
 
 #### Openresolve
 
-Edit `/etc/resolvconf.conf` to uncomment the name_servers line and update resolvconf:
+Edit `/etc/resolvconf.conf` to uncomment the name_servers line:
+
+ `/etc/resolvconf.conf` 
+```
+[...]
+name_servers=127.0.0.1
 
 ```
-# sed -i 's|#name_servers=127.0.0.1|name_servers=127.0.0.1|' /etc/resolvconf.conf
+
+and update resolvconf:
+
+```
 # resolvconf -u
 
 ```

@@ -291,7 +291,7 @@ nameserver 127.0.0.1
 
 ```
 
-Set permissions and regenerate the new `/etc/resolv.conf` file
+Set permissions and regenerate the new `/etc/resolv.conf` file:
 
 ```
 # chmod 644 /etc/resolv.conf.tail
@@ -578,7 +578,7 @@ Finally, enable and start (or restart) the `dhcpd4` service.
 
 ### Transferring users from one directory to another
 
-Unfortunately, there is no built-in utility to export users from one directory to another. This is one way, albeit exceptionally ulgy, to get the user specific fields out of your existing SAM and into a suitable LDIF format for ldbmodify:
+Unfortunately, there is no built-in utility to export users from one directory to another. This is one way, albeit exceptionally ugly, to get the user specific fields out of your existing SAM and into a suitable LDIF format for ldbmodify:
 
 ```
 ldbsearch -H /var/lib/samba/private/sam.ldb \

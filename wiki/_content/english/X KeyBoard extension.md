@@ -1,8 +1,6 @@
 X KeyBoard extension, or XKB, defines the way keyboards codes are handled in X, and provides access to internal translation tables. It is the basic mechanism that allows using multiple keyboard layouts in X.
 
-Learning about XKB can be hard without some hands-on experience. This page is intended to help users to start with XKB by doing some changes to their keymaps. It is not meant as a complete guide to all XKB features. Instead, it skips over gritty details and focuses on the most practical things first.
-
-If you ended up here looking for a simple way to configure your keyboard, be sure to check [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") first.
+This article describes how to modify and create keyboard layouts. If you are looking for how to configure your keyboard, see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
 ## Contents
 
@@ -52,13 +50,11 @@ If you ended up here looking for a simple way to configure your keyboard, be sur
 
 ## Precautions and preparations
 
-It is possible (and, in fact, easy) to end up disabling some keys on your keyboard for the current X session while working with XKB. This includes modifiers, cursor arrows and Enter key, as well as C-A-Backspace and C-A-Fx combinations. Make sure you have some way to terminate the session without using your keyboard.
+It is easy to end up disabling some keys on your keyboard for the current X session while working with XKB. Make sure you have some way to terminate the session without using your keyboard.
 
 While it is rare, changing XKB configuration can sometimes hang or crash X server. Make sure you can handle it. Having some way to killall X or reboot the host remotely may be a good idea.
 
 Stop [xxkb](https://www.archlinux.org/packages/?name=xxkb), or any other layout switching applications. xxkb actively changes XKB state. Debugging both at the same time is not a good idea.
-
-And finally, be warned: it is very easy to get used to custom layout.
 
 ## Getting and setting XKB layout
 
@@ -730,7 +726,7 @@ Aside from `SetMods`, you can also use `LockMods` or `LatchMods`. `SetMods` make
 
 ### modifier_map
 
-Modifier map is a table that maps each of eight modifier bits to at most two keys:
+Modifier map is a table that maps each of eight modifier bits to at most 4 keys:
 
 ```
    modifier_map Mod1 { Alt_L, Alt_R };
@@ -988,8 +984,7 @@ Using [rules](#Using_rules) instead of static keymap configuration will give you
 
 ## See Also
 
-[http://www.x.org/wiki/XKB](http://www.x.org/wiki/XKB) and links therein, especially:
-
-*   [An Unreliable Guide To XKB Configuration](http://www.charvolant.org/~doug/xkb/html/index.html). Similar in scope to this page, with a bit different point of view. Recommended for a general picture.
+*   [http://www.x.org/wiki/XKB](http://www.x.org/wiki/XKB)
+*   [An Unreliable Guide To XKB Configuration](http://www.charvolant.org/~doug/xkb/html/index.html).
 *   [Ivan Pascal XKB docs](http://pascal.tsu.ru/en/xkb/). One of the oldest and most well-known guides. Focuses a lot on details, and explains some of exotic XKB features.
 *   [XKB protocol specification](http://www.x.org/releases/current/doc/kbproto/xkbproto.pdf). Comprehensive description of all XKB features. Extremely useful for understating how XKB works, includes a good description of virtual modifiers among other things. Some practice with xkbcomp is strongly recommended though, because the features are described on protocol level.

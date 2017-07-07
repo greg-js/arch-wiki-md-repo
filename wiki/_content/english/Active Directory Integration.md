@@ -819,7 +819,7 @@ q
 
 Now test the file by invoking:
 
- `kinit -kt username.keytab` 
+ `kinit username@EXAMPLE.COM -kt username.keytab` 
 
 It should not promt you to give your password nor should it give any other feedback. If it worked you are basically done - just put the line above into your ~./bashrc - you can now get kerberos tickets without typing a password and with that you can connect to your workstation without typing a password while being completely kerberized and able to authenticate against NFSv4 and CIFS via tickets - pretty neat.
 

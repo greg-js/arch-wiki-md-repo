@@ -38,6 +38,7 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [5.3 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
     *   [5.4 Qt4 style not respected](#Qt4_style_not_respected)
     *   [5.5 Applications using QML crash or don't work with Qt 5.8](#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8)
+    *   [5.6 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -523,6 +524,17 @@ Starting with Qt 5.8, applications that rely on QML (such as [SDDM](/index.php/S
 If you do not want to -- or cannot -- allow such execution privileges, a workaround is to set the following as appropriate in your [environment variables](/index.php/Environment_variables "Environment variables"):
 
  `QML_DISABLE_DISK_CACHE=1` 
+
+### All Qt5-based applications fail to run after Qt5 update
+
+If you get an error similar to
+
+```
+Qt FATAL: Cannot mix incompatible Qt library (version 0x50900) with this library (version 0x50901)
+
+```
+
+then you are most likely using a Qt5 platform theme or style plugin which has not been recompiled against the latest version of Qt5\. These usually use Qt private headers which means they depend on an exact version of Qt and not just a matching soname. Figure out which theme/style you are using by checking the `QT_STYLE_OVERRIDE` and `QT_QPA_PLATFORMTHEME` environment variables, and rebuild the AUR package that provides it.
 
 ## See also
 

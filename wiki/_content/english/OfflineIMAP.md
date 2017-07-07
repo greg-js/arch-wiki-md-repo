@@ -157,7 +157,7 @@ This timer by default runs OfflineIMAP every 15 minutes. This can be easily chan
  `~/.systemd/user/offlineimap.timer.d/timer.conf` 
 ```
 [Timer]
-OnUnitInactive=5m
+OnUnitInactiveSec=5m
 
 ```
 
@@ -166,7 +166,7 @@ For more robust solution it is possible to set a watchdog which will kill Offlin
  `~/.systemd/user/offlineimap.service.d/service.conf` 
 ```
 [Service]
-WatchDogSec=300
+WatchdogSec=300
 
 ```
 

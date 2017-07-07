@@ -10,21 +10,20 @@ Questa pagina wiki tenta di fornire istruzioni di uso e configurazione per quest
 
 *   [1 Pi-hole Server](#Pi-hole_Server)
     *   [1.1 Installazione](#Installazione)
-    *   [1.2 Configurazione di prima installazione](#Configurazione_di_prima_installazione)
+    *   [1.2 Configurazione iniziale](#Configurazione_iniziale)
         *   [1.2.1 Dnsmasq](#Dnsmasq)
-        *   [1.2.2 Web Server](#Web_Server)
-            *   [1.2.2.1 Lighttpd](#Lighttpd)
-            *   [1.2.2.2 Nginx](#Nginx)
-    *   [1.3 Configurazione su aggiornamento](#Configurazione_su_aggiornamento)
-    *   [1.4 Web interface](#Web_interface)
-    *   [1.5 FTL](#FTL)
+        *   [1.2.2 Router](#Router)
+        *   [1.2.3 Web Server](#Web_Server)
+            *   [1.2.3.1 Lighttpd](#Lighttpd)
+            *   [1.2.3.2 Nginx](#Nginx)
+    *   [1.3 Web interface](#Web_interface)
+    *   [1.4 FTL](#FTL)
 *   [2 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
 *   [3 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [3.1 Installazione](#Installazione_2)
-    *   [3.2 Configurazione di prima installazione](#Configurazione_di_prima_installazione_2)
+    *   [3.2 Configurazione iniziale](#Configurazione_iniziale_2)
         *   [3.2.1 Dnsmasq](#Dnsmasq_2)
         *   [3.2.2 Openresolve](#Openresolve)
-    *   [3.3 Configurazione su aggiornamento](#Configurazione_su_aggiornamento_2)
 *   [4 Risorse](#Risorse)
 
 ## Pi-hole Server
@@ -33,27 +32,24 @@ Questa pagina wiki tenta di fornire istruzioni di uso e configurazione per quest
 
 Installa [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) e [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/).
 
-### Configurazione di prima installazione
+### Configurazione iniziale
 
 #### Dnsmasq
 
-Configura dnsmasq che risolverà le richieste DNS per la tua LAN e si occuperà del filtraggio della pubblicità attraverso pi-hole.
+Pi-hole interagisce con [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) per risolvere le richieste DNS della tua LAN e si occuperà del filtraggio della pubblicità. Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
 
-**Utenti che usano già dnsmasq**: modifica `/etc/dnsmasq.conf` rimuovendo il commento all'ultima linea, includendo così i file di configurazione di pi-hole che si trovano nella directory `/etc/dnsmasq.d`:
-
+ `/etc/dnsmasq.conf` 
 ```
-# sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
-
-```
-
-**Utenti che non usavano dnsmasq prima dell'installazione Pi-hole**: copia il file di configurazione fornito dal pacchetto in sostituzione del predefinito (o semplicemente fai un diff dei due):
-
-```
-# cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
+[...]
+conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
 
-Se necessario, attiva `dnsmasq.service` e ri/avvia il servizio. Pi-hole deve essere il DNS della tua LAN. Con ogni probabilità, è il tuo router a fornire i DNS ai client della tua LAN in questo momento, quindi come DNS primario sul router dovresti impostare l'indirizzo IP della macchina che esegue pi-hole. La configurazione del router va oltre lo scopo di questo articolo, ma rimane un passo obbligatorio.
+Se necessario, attiva `dnsmasq.service` e ri/avvia il servizio.
+
+#### Router
+
+Pi-hole deve essere il DNS della LAN per poter funzionare correttamente. La tipica utenza casalinga o i piccoli uffici si affidano la proprio router per risolvere le richieste DNS. Il metodo migliore è semplicemente ridefinire i DNS **sul router** indicando di usare l'indirizzo IP della macchina che esegue Pi-hole. Configurare il router è fuori dagli scopi di questo articolo. In alternativa è possibile configurare i DNS di ogni macchina o apparato che si connette al router anche se può essere noioso. Vedi [Come configurare i miei apparati per usare Pi-hole come DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per maggiori dettagli.
 
 #### Web Server
 
@@ -61,7 +57,7 @@ Opzionalmente, è possibile scegliere un server web per usare l'interfaccia ammi
 
 **Note:** Pi-hole non richiede forzatamente l'uso dell'interfaccia web in quanto molti comandi sono disponibili via CLI.
 
-Il progetto originale supporta ufficialmente [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) offrendone già un file di configurazione. Il pacchetto AUR ne fornisce uno anche per [nginx](https://www.archlinux.org/packages/?name=nginx), rendendoli di fatto supportati entrambi. Altri server web possono tranquillamente eseguire l'interfaccia web, ma non sono supportati.
+Il pacchetto AUR fornisce file di configurazione di esempio sia per [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) che per [nginx](https://www.archlinux.org/packages/?name=nginx). Altri server web possono tranquillamente eseguire l'interfaccia web, ma non sono al momento supportati.
 
 Tutti i server web abbisognano della seguente modifica per abilitate l'estensione per i socket:
 
@@ -74,11 +70,10 @@ extension=sockets.so
 
 ##### Lighttpd
 
-Installa [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) e [php-cgi](https://www.archlinux.org/packages/?name=php-cgi). Salva i file di configurazione originali e copia quelli di pi-hole:
+Installa [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) e [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
 ```
-# cp /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.orig
-# cp /etc/pihole/configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
+# cp /usr/share/pihole/configslighttpd.example.conf /etc/lighttpd/lighttpd.conf
 
 ```
 
@@ -115,37 +110,6 @@ Copia il file di configurazione fornito dal pacchetto:
 ```
 
 Se necessario, abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
-
-### Configurazione su aggiornamento
-
-**Tip:** Se aggiornando non leggi alcun messaggio a fine installazione che avverte della modifica dei file di configurazione di dnsmasq o dei server web, puoi saltare questo passaggio.
-
-Se necessario, aggiorna il file di configurazione di dnsmasq
-
-```
-# [ -f /etc/dnsmasq.orig ] && cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
-
-```
-
-e ri/avvia il servizio.
-
-Se necessario, aggiorna il file di configurazione di lighttpd
-
-```
-# [ -f /etc/lighttpd/lighttpd.orig ] && cp /etc/pihole/configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
-
-```
-
-e ri/avvia il servizio.
-
-Se necessario, aggiorna il file di configurazione di nginx
-
-```
-# cp /etc/pihole/configs/nginx.pi-hole.conf /etc/nginx/conf.d/
-
-```
-
-e ri/avvia il servizio.
 
 ### Web interface
 
@@ -187,53 +151,29 @@ La variante Standalone di Pi-hole per Archlinux è nata dalla necessità di usar
 
 Installa il pacchetto [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/).
 
-### Configurazione di prima installazione
+### Configurazione iniziale
 
 #### Dnsmasq
 
-Come primo passo, è necessario configurare dnsmasq. Risolverà le richieste DNS per la tua macchina filtrando la pubblicità con pi-hole.
-
-**Se usi già dnsmasq**, modifica `/etc/dnsmasq.conf` rimuovendo il commento all'ultima linea, includendo così i file di configurazione di pi-hole che si trovano nella directory /etc/dnsmasq.d:
-
-```
-# sed -i 's|#conf-dir=/etc/dnsmasq.d/,\*.conf|conf-dir=/etc/dnsmasq.d/,\*.conf|' /etc/dnsmasq.conf
-
-```
-
-**Se hai installato dnsmasq con Pi-hole per la prima volta**, fai una copia di salvataggio del file di configurazione originale di dnsmasq e copia quello di pi-hole:
-
-```
-# cp /etc/dnsmasq.conf /etc/dnsmasq.orig
-# cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
-
-```
-
-Se necessario, abilita `dnsmasq.service` e ri/avvia il servizio:
+La configurazione è identica ai passaggi descritti in [Pi-hole_(Italiano)#Dnsmasq](/index.php/Pi-hole_(Italiano)#Dnsmasq "Pi-hole (Italiano)").
 
 #### Openresolve
 
-Modifica `/etc/resolvconf.conf` e rimuovi il commento alla linea name_servers (l'ultima) e aggiorna resolvconf:
+Modifica `/etc/resolvconf.conf` e rimuovi il commento alla linea name_servers:
+
+ `/etc/resolvconf.conf` 
+```
+[...]
+name_servers=127.0.0.1
 
 ```
-# sed -i 's|#name_servers=127.0.0.1|name_servers=127.0.0.1|' /etc/resolvconf.conf
+
+e aggiorna resolvconf:
+
+```
 # resolvconf -u
 
 ```
-
-ora risolverai sempre le richieste DNS attraverso localhost, e [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) sarà in ascolto.
-
-### Configurazione su aggiornamento
-
-**Tip:** Se aggiornando non leggi alcun messaggio a fine installazione che avverte della modifica dei file di configurazione di dnsmasq, puoi saltare questo passaggio.
-
-Se necessario, aggiorna il file di configurazione di dnsmasq
-
-```
-# [ -f /etc/dnsmasq.orig ] && cp /etc/pihole/configs/dnsmasq.main /etc/dnsmasq.conf
-
-```
-
-e ri/avvia il servizio.
 
 ## Risorse
 

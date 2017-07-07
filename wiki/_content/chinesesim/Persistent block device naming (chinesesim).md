@@ -185,7 +185,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ### 使用 Udev 静态设备名
 
-参考 [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
+参考 [设置静态设备名](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D "Udev (简体中文)")。
 
 ## 使用持久名称
 

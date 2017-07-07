@@ -47,6 +47,8 @@ GHC uses static linking by default and the `-dynamic` flag is used to select dyn
 
 Dynamic linking is used for most Haskell modules packaged through [pacman](/index.php/Pacman "Pacman") and is common for packages in the [AUR](/index.php/AUR "AUR"). Since GHC provides no [ABI](https://en.wikipedia.org/wiki/Application_binary_interface "w:Application binary interface") compatibility between compiler releases, static linking is often the preferred option for local development outside of the package system.
 
+This also causes issues with Cabal trying to use the default static linking. To force dynamic linking in Cabal, edit `~/.cabal/config` and add the line `executable-dynamic: True`.
+
 ### Haskell development tools
 
 To start developing in Haskell easily, one option is the [haskell-platform](http://www.haskell.org/platform/) bundle which is described as:

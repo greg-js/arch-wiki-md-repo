@@ -552,7 +552,7 @@ Copy the saved files:
 
 ```
 
-Copy the installed plugins
+Copy the installed plugins:
 
 ```
 # tar xzvf ~/redmine_plugins.tar.gz -C /usr/share/webapps/redmine/
