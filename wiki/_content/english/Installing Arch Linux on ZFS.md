@@ -20,7 +20,8 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
     *   [6.2 For UEFI motherboards](#For_UEFI_motherboards)
 *   [7 Unmount and restart](#Unmount_and_restart)
 *   [8 After the first boot](#After_the_first_boot)
-*   [9 See also](#See_also)
+*   [9 Native encryption](#Native_encryption)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -438,6 +439,36 @@ Copy it, save it as `writehostid.c` and compile it with `gcc -o writehostid writ
 ```
 
 You can now delete the two files `writehostid.c` and `writehostid`. Your system should work and reboot properly now.
+
+## Native encryption
+
+**Warning:** Encryption in ZFS is not yet merged upsteam. So do this at you own risk, since it might break.
+
+To use native ZFS encryption, you will need a patched zfs package like [zfs-encryption-dkms-git](https://aur.archlinux.org/packages/zfs-encryption-dkms-git/) and embed it into the archiso. Then just follow the normal procedure shown before with the exception that you add the following parameters when creating the dataset:
+
+```
+# zfs create -o encryption=on -o keyformat=passphrase -o mountpoint=none zroot/ROOT
+# zfs create -o encryption=on -o keyformat=passphrase -o mountpoint=none zroot/data
+
+```
+
+If you want a single passphrase for both your root and home partition, encrypt only one dataset instead:
+
+```
+# zfs create -o encryption=on -o keyformat=passphrase -o mountpoint=none zroot/encr
+# zfs create -o mountpoint=none zroot/encr/ROOT
+# zfs create -o mountpoint=none zroot/encr/data
+
+```
+
+When importing the pool use `-l`, to decrypt all datasets
+
+```
+# zpool import -d /dev/disk/by-id -R /mnt -l zroot
+
+```
+
+On reboot, you will be asked for your passphrase.
 
 ## See also
 

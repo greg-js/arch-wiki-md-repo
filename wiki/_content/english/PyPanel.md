@@ -24,7 +24,7 @@ From [PyPanel sourceforge page](http://pypanel.sourceforge.net/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pypanel](https://www.archlinux.org/packages/?name=pypanel) package.
+[Install](/index.php/Install "Install") the [pypanel](https://www.archlinux.org/packages/?name=pypanel) package.
 
 ## Configuration
 

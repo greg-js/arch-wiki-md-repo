@@ -1,10 +1,4 @@
-From the [Pi-hole README.md on GitHub](https://github.com/pi-hole/pi-hole):
-
-	The Pi-Hole™ is an advertising-aware DNS/Web server. If an ad domain is queried, a small Web page or GIF is delivered in place of the advertisement..
-
-	The gravity.sh does most of the magic. The script pulls in ad domains from many sources and compiles them into a single list of over 1.6 million entries (if you decide to use the mahakala list). This script is controlled by the pihole command. Please run pihole -h to see what commands can be run via pihole.
-
-This wiki page tries to cover the need for configuration and use instructions of this Pi-hole adaptations for Archlinux not officially supported by the main project. For bugs, issues and general reporting, plaese refer to [pi-hole-server AUR page](https://aur.archlinux.org/packages/pi-hole-server/) for server package or [pi-hole-standalone AUR page](https://aur.archlinux.org/packages/pi-hole-standalone/) for standalone package.
+Pi-hole is a shell-script based project that manages blocklists of known advertisements and malware and seamlessly interacts with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) to simply drop all any request to a known bad-actor. Pi-hole replaces your router as the LAN's DNS so all requests go through it without the need to install anything on the client-side. This setup effectively deploys network-wide adblocking (ie for all connected devices). The package comes with a nice webUI (as well as a CLI interface) and is very lightweight and scaleable.
 
 ## Contents
 
@@ -36,7 +30,7 @@ This wiki page tries to cover the need for configuration and use instructions of
 
 #### Dnsmasq
 
-Pi-hole interacts with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) to resolve DNS queries for your LAN and manage filtering ads directly by pi-hole. Insure that the following line in `/etc/dnsmasq.conf` is uncommented:
+Insure that the following line in `/etc/dnsmasq.conf` is uncommented:
 
  `/etc/dnsmasq.conf` 
 ```
@@ -73,7 +67,7 @@ extension=sockets.so
 [Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
 ```
-# cp /usr/share/pihole/configslighttpd.example.conf /etc/lighttpd/lighttpd.conf
+# cp /usr/share/pihole/configs/lighttpd.example.conf /etc/lighttpd/lighttpd.conf
 
 ```
 

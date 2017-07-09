@@ -119,7 +119,7 @@ remove offending line |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
 | Verify single package | pacman -Qk[k] | rpm -V | debsums | rpm -V | equery check |
 | Verify all packages | pacman -Qk[k] | rpm -Va | debsums | rpm -Va | equery check |
-| Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S | dnf reinstall | apt install --reinstall | zypper install --force | emerge [-a] |
+| Reinstall given Package - Will reinstall the given package without dependency hassle. | pacman -S | dnf reinstall | apt install --reinstall | zypper install --force | emerge -1O |
 | Verify dependencies of the complete system. Used if installation process was forcefully killed. | pacman -Dk | dnf repoquery --requires | apt-get check | zypper verify | emerge -uDN world |
 | Use some magic to fix broken dependencies in a system | pacman dep level - pacman -Dk, shared lib level - findbrokenpkgs or lddd | dnf repoquery --unsatisfied | apt-get --fix-broken
 aptitude install | zypper verify | revdep-rebuild |

@@ -26,10 +26,12 @@
     *   [5.4 Nvim-R](#Nvim-R)
     *   [5.5 Cantor](#Cantor)
     *   [5.6 Jupyter notebook](#Jupyter_notebook)
-*   [6 Optimized packages](#Optimized_packages)
-    *   [6.1 OpenBLAS](#OpenBLAS)
-    *   [6.2 Intel MKL](#Intel_MKL)
-    *   [6.3 intel-advisor-xe](#intel-advisor-xe)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Optimized packages](#Optimized_packages)
+        *   [6.1.1 OpenBLAS](#OpenBLAS)
+        *   [6.1.2 Intel MKL](#Intel_MKL)
+        *   [6.1.3 intel-advisor-xe](#intel-advisor-xe)
+    *   [6.2 Set CRAN mirror across R sessions](#Set_CRAN_mirror_across_R_sessions)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Package PKI won't install](#Package_PKI_won.27t_install)
 *   [8 See also](#See_also)
@@ -130,6 +132,13 @@ Or when you also need to rebuild packages which were built for an older version:
 
 ```
 > update.packages(ask=FALSE,checkBuilt=TRUE)
+
+```
+
+Or when you also need to select a specific mirror ([https://cran.r-project.org/mirrors.html](https://cran.r-project.org/mirrors.html)) to download the packages from (changing the url as need):
+
+```
+> update.packages(ask=FALSE,checkBuilt=TRUE,repos="[https://cran.cnr.berkeley.edu/](https://cran.cnr.berkeley.edu/)")
 
 ```
 
@@ -299,15 +308,17 @@ The [nvim-r](https://aur.archlinux.org/packages/nvim-r/) package allows [vim](ht
 
 [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) is a browser based notebook with support for many programming languages. R support can be added by installing the [IRkernel](https://github.com/IRkernel/IRkernel).
 
-## Optimized packages
+## Tips and tricks
+
+### Optimized packages
 
 The numerical libraries that comes with the R (generic [blas](https://www.archlinux.org/packages/?name=blas), LAPACK) do not have multithreading capabilities. Replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) package with an optimized BLAS can produce dramatic speed increases for many common computations in R. However the available optimized BLAS packages all have drawbacks such as requiring a commercial license or [potentially interfering with the standard R functionality for parallel processing](http://blog.revolutionanalytics.com/2015/10/edge-cases-in-using-the-intel-mkl-and-parallel-programming.html). If you really need faster linear algebra in R you may consider the following options.
 
-### OpenBLAS
+#### OpenBLAS
 
 [openblas](https://aur.archlinux.org/packages/openblas/) can be installed from the [AUR](/index.php/AUR "AUR"), replacing the reference [blas](https://www.archlinux.org/packages/?name=blas) from extra. If you are using the regular [r](https://www.archlinux.org/packages/?name=r) package from extra no further configuration is needed; R is configured to use the system BLAS and will use OpenBLAS once it is installed.
 
-### Intel MKL
+#### Intel MKL
 
 **If your processors are Intel**, you can use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors.
 
@@ -321,11 +332,25 @@ Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur
 
 *   here are elapsed time in sec from computing 15 tests with default GCC build and icc/MKL build: *274.93 sec* for GCC build, *21.01 sec* for icc/MKL build. See [this post](https://stat.ethz.ch/pipermail/r-help/2014-September/421574.html) for more information.
 
-### intel-advisor-xe
+#### intel-advisor-xe
 
 [intel-advisor](http://software.intel.com/en-us/intel-advisor-xe) delivers top application performance with C, C++ and Fortran compilers, libraries and analysis tools.
 
 Install the [intel-advisor-xe](https://aur.archlinux.org/packages/intel-advisor-xe/) package.
+
+### Set CRAN mirror across R sessions
+
+Instead of having R ask which CRAN mirror to use every time you install or update a package, you can set the mirror in the Rprofile file. [https://cloud.r-project.org/](https://cloud.r-project.org/) should be a good default for everywhere:
+
+ `~/.Rprofile` 
+```
+## Set CRAN mirror:
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "[https://cloud.r-project.org/](https://cloud.r-project.org/)"
+  options(repos = r)
+})
+```
 
 ## Troubleshooting
 

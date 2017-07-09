@@ -44,7 +44,7 @@ The [konsole](https://www.archlinux.org/packages/?name=konsole) terminal allows 
 
 ### CLIPBOARD in Gvim
 
-See [Vim#Clipboard_.28gvim.29](/index.php/Vim#Clipboard_.28gvim.29 "Vim").
+See [Vim#Clipboard](/index.php/Vim#Clipboard "Vim").
 
 ## Disable paste on middle mouse click
 
@@ -144,7 +144,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 ```
 
-	[https://github.com/Cloudef/xcmenu](https://github.com/Cloudef/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)
+	[https://github.com/dindon-sournois/xcmenu](https://github.com/dindon-sournois/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)
 
 *   **xsel** — Command-line program for getting and setting the contents of the X selection.
 

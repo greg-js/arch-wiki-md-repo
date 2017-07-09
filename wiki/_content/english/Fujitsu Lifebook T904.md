@@ -15,10 +15,7 @@
 
 Requires a custom module not currently avalable in the stock 3.14.4-1-ARCH kernel.
 
-```
-   See [Hardware Modules](#Wacom_Digitizer) for how to enable the digitizer
-
-```
+See [Hardware Modules](#Wacom_Digitizer) for how to enable the digitizer
 
 ### Fingerprint reader
 

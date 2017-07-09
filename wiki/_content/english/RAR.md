@@ -129,7 +129,7 @@ $ unrar *command* -*switch 1* -*switch N* *archive* *files...* *@listfiles...* *
 For a complete listing of commands and switches simply run:
 
 ```
-$ unrar --help
+$ unrar h
 
 ```
 

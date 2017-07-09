@@ -527,7 +527,7 @@ This is a module used to switch the output sound to the newly connected device. 
 If you just want to test the module then you can load it at runtime by calling:
 
 ```
-# pactl load-module module-switch-on-connect
+$ pactl load-module module-switch-on-connect
 
 ```
 
@@ -545,28 +545,28 @@ On KDE/Plasma5 you should furthermore disable module-device-manager. As soon as 
 Some sound cards present the option of multiple analog outputs, being switchable through using Pulseaudio profiles. But switching manually can become a chore, so you can use the following commands to switch it:
 
 ```
-pactl set-sink-port 'number of the card' 'port'
+$ pactl set-sink-port 'number of the card' 'port'
 
 ```
 
 This will set the default output to whatever port you chose. Example:
 
 ```
-pactl set-sink-port 0 "analog-output;output-speaker" 
+$ pactl set-sink-port 0 "analog-output;output-speaker" 
 
 ```
 
 The values can be easily obtained using:
 
 ```
-pactl list
+$ pactl list
 
 ```
 
 Current output can be obtained through:
 
 ```
-pactl list sinks | grep "active profile"| cut -d ' ' -f 3-
+$ pactl list sinks | grep "active profile"| cut -d ' ' -f 3-
 
 ```
 
@@ -574,25 +574,22 @@ This process can be automated through a simple script. This script then can be g
 
  `~/pa.sh (or anything the user wants)` 
 ```
- #!/bin/bash
- # This script uses kdialog notification to warn the user of the currently swapped to profile. User could adapt it to their needs or change it.
+#!/bin/bash
+# This script uses kdialog notification to warn the user of the currently swapped to profile. User could adapt it to their needs or change it.
 
- CURRENT_PROFILE=$(pactl list sinks | grep "active profile"| cut -d ' ' -f 3-)
+CURRENT_PROFILE=$(pactl list sinks | grep "active profile"| cut -d ' ' -f 3-)
 
- if [ "$CURRENT_PROFILE" = "analog-output;output-speaker" ] ; then
-         pactl set-sink-port 0 "analog-output;output-headphones-1"
-         kdialog --title "Pulseaudio" --passivepopup "Headphone" 2 & 
- else 
-         pactl set-sink-port 0 "analog-output;output-speaker"      
-         kdialog --title "Pulseaudio" --passivepopup  "Speaker" 2 &
- fi
-
- #Instructions
- #This script is intended to swap between two profiles. First checking the current profile then swapping it.
- #Users are required to change the field 'active profile' according to the language pactl reports.
- #Users might need to change the number of the card and the output to fit their machine.
+if [ "$CURRENT_PROFILE" = "analog-output;output-speaker" ] ; then
+        pactl set-sink-port 0 "analog-output;output-headphones-1"
+        kdialog --title "Pulseaudio" --passivepopup "Headphone" 2 & 
+else 
+        pactl set-sink-port 0 "analog-output;output-speaker"      
+        kdialog --title "Pulseaudio" --passivepopup  "Speaker" 2 &
+fi
 
 ```
+
+This script is intended to swap between two profiles. First checking the current profile then swapping it. Users are required to change the field 'active profile' according to the language pactl reports. Users might need to change the number of the card and the output to fit their machine.
 
 ## Troubleshooting
 

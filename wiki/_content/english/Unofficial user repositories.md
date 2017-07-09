@@ -168,7 +168,7 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 
 #### xyne-any
 
-*   **Maintainer:** [Xyne](https://www.archlinux.org/trustedusers/#xyne)
+*   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
 *   **Description:** A repository for Xyne's own projects containing packages for "any" architecture.
 *   **Upstream page:** [http://xyne.archlinux.ca/projects/](http://xyne.archlinux.ca/projects/)
 *   **Key-ID:** Not needed, as maintainer is a TU
@@ -216,7 +216,7 @@ Repositories with both i686 and x86_64 versions. The `$arch` variable will be se
 
 #### arcanisrepo
 
-*   **Maintainer:** [arcanis](https://www.archlinux.org/trustedusers/#arcanis)
+*   **Maintainer:** [arcanis](https://www.archlinux.org/people/trusted-users/#arcanis)
 *   **Description:** A repository with some AUR packages including packages from VCS
 *   **Key-ID:** Not needed, as maintainer is a TU
 
@@ -299,14 +299,14 @@ Server = http://mirror.hactar.xyz/Vi0L0/catalyst-hd234k/$arch
 
 #### city
 
-*   **Maintainer:** [Balló György](https://www.archlinux.org/trustedusers/#bgyorgy)
+*   **Maintainer:** [Balló György](https://www.archlinux.org/people/trusted-users/#bgyorgy)
 *   **Description:** Experimental/unpopular packages.
-*   **Upstream page:** [http://pkgbuild.com/~bgyorgy/city.html](http://pkgbuild.com/~bgyorgy/city.html)
+*   **Upstream page:** [https://pkgbuild.com/~bgyorgy/city.html](https://pkgbuild.com/~bgyorgy/city.html)
 *   **Key-ID:** Not needed, as maintainer is a TU
 
 ```
 [city]
-Server = http://pkgbuild.com/~bgyorgy/$repo/os/$arch
+Server = https://pkgbuild.com/~bgyorgy/$repo/os/$arch
 
 ```
 
@@ -401,7 +401,7 @@ Server = http://repo-ck.com/$arch
 
 #### seblu
 
-*   **Maintainer:** [Sébastien Luttringer](https://www.archlinux.org/developers/#seblu)
+*   **Maintainer:** [Sébastien Luttringer](https://www.archlinux.org/people/developers/#seblu)
 *   **Description:** All seblu useful pre-built packages, some homemade (virtualbox-ext-oracle, linux-seblu-meta, bedup).
 *   **Key-ID:** Not required, as maintainer is a Developer
 
@@ -425,7 +425,7 @@ Server = http://www.seiichiro0185.org/repo/$arch
 
 #### sergej-repo
 
-*   **Maintainer:** [Sergej Pupykin](https://www.archlinux.org/trustedusers/#spupykin)
+*   **Maintainer:** [Sergej Pupykin](https://www.archlinux.org/people/trusted-users/#spupykin)
 *   **Description:** psi-plus, owncloud-git, ziproxy, android, MySQL, and other stuff. Some packages also available for armv7h.
 *   **Key-ID:** Not required, as maintainer is a TU
 
@@ -437,7 +437,7 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 
 #### tredaelli-systemd
 
-*   **Maintainer:** [Timothy Redaelli](https://www.archlinux.org/trustedusers/#tredaelli)
+*   **Maintainer:** [Timothy Redaelli](https://www.archlinux.org/people/trusted-users/#tredaelli)
 *   **Description:** systemd rebuilt with unofficial OpenVZ patch (kernel < 2.6.32-042stab111.1)
 *   **Key-ID:** Not required, as maintainer is a TU
 
@@ -524,7 +524,7 @@ Server = http://archlinux.zoelife4u.org/cinnamon/$arch
 
 #### heftig
 
-*   **Maintainer:** [Jan Steffens](https://www.archlinux.org/developers/#heftig)
+*   **Maintainer:** [Jan Steffens](https://www.archlinux.org/people/developers/#heftig)
 *   **Description:** Includes pulseaudio-git, pavucontrol-git, and firefox-developer-edition
 *   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
@@ -583,7 +583,7 @@ Server=ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
 
 #### pantheon
 
-*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/trustedusers/#alucryd)
+*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
 *   **Description:** Repository containing Pantheon-related packages
 
 ```
@@ -632,7 +632,7 @@ Server = http://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Ex
 
 #### xyne-i686
 
-*   **Maintainer:** [Xyne](https://www.archlinux.org/trustedusers/#xyne)
+*   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
 *   **Description:** A repository for Xyne's own projects containing packages for the "i686" architecture.
 *   **Upstream page:** [http://xyne.archlinux.ca/projects/](http://xyne.archlinux.ca/projects/)
 *   **Key-ID:** Not required, as maintainer is a TU
@@ -903,7 +903,7 @@ Server = http://qutebrowser.org/qt-debug/$arch
 
 #### quarry
 
-*   **Maintainer:** [anatolik](https://www.archlinux.org/developers/#anatolik)
+*   **Maintainer:** [anatolik](https://www.archlinux.org/people/developers/#anatolik)
 *   **Description:** Arch binary repository for [Rubygems](http://rubygems.org/) packages. See [forum announcement](https://bbs.archlinux.org/viewtopic.php?id=182729) for more information.
 *   **Sources:** [https://github.com/anatol/quarry](https://github.com/anatol/quarry)
 *   **Key-ID:** Not needed, as maintainer is a developer
@@ -942,7 +942,7 @@ Server = http://smoothware.net/$repo/$arch
 
 #### xyne-x86_64
 
-*   **Maintainer:** [Xyne](https://www.archlinux.org/trustedusers/#xyne)
+*   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
 *   **Description:** A repository for Xyne's own projects containing packages for the "x86_64" architecture.
 *   **Upstream page:** [http://xyne.archlinux.ca/projects/](http://xyne.archlinux.ca/projects/)
 *   **Key-ID:** Not required, as maintainer is a TU
@@ -961,7 +961,7 @@ Server = http://xyne.archlinux.ca/repos/xyne
 
 #### alucryd
 
-*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/trustedusers/#alucryd)
+*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
 *   **Description:** Various packages Maxime Gauduin maintains (or not) in the AUR.
 
 ```
@@ -972,7 +972,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/x86_64
 
 #### alucryd-multilib
 
-*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/trustedusers/#alucryd)
+*   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/people/trusted-users/#alucryd)
 *   **Description:** Various packages needed to run Steam without its runtime environment.
 
 ```
@@ -995,7 +995,7 @@ Server = http://repo.andrwe.org/x86_64
 
 #### brtln
 
-*   **Maintainer:** [Bartłomiej Piotrowski](https://www.archlinux.org/trustedusers/#bpiotrowski)
+*   **Maintainer:** [Bartłomiej Piotrowski](https://www.archlinux.org/people/trusted-users/#bpiotrowski)
 *   **Description:** Some VCS packages.
 
 ```

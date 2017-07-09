@@ -10,6 +10,7 @@ Document viewer uses the poppler library as a backend.
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Printer does not show up](#Printer_does_not_show_up)
     *   [2.2 Zoom-in is limited](#Zoom-in_is_limited)
+    *   [2.3 PDF texts is not show correctly](#PDF_texts_is_not_show_correctly)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -31,7 +32,16 @@ Increasing Evince's page cache size allows you to zoom in further, which is hand
 The following command increases the page cache size to one gigabyte:
 
 ```
-dconf write /org/gnome/evince/page-cache-size "uint32 1000"
+$ gsettings set org.gnome.Evince page-cache-size 'uint32 1000'
+
+```
+
+### PDF texts is not show correctly
+
+try setting `override-restrictions` parameter to false:
+
+```
+$ gsettings set org.gnome.Evince override-restrictions false
 
 ```
 

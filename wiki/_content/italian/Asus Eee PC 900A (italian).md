@@ -25,22 +25,19 @@ Questa guida è adattabile anche al modello 901 e successivi, con hardware simil
 
 # Specifiche hardware
 
-```
-   * CPU: 1.6GHz N270 Intel Atom
-   * RAM: 1024 MB, DDR2 667 MHz
-   * ports: 3x USB 2.0, VGA
-   * LAN/ethernet: Atheros L1e 10/100 Mbit
-   * WLAN: Wi-Fi 802.11 a/b/g
-   * Webcam 0.3 Mpix
-   * Card reader: SD, SDHC, MMC
-   * touchpad: "Multi-touch" elantech
-   * display: 1024x600 8.9"
-   * weight: 0,99 kg
-   * battery: Li-ion, 4 Hours, 4400mAh
-   * SDD: 8GB
-   * Graphics: Intel 945GME chipset
-
-```
+*   CPU: 1.6GHz N270 Intel Atom
+*   RAM: 1024 MB, DDR2 667 MHz
+*   ports: 3x USB 2.0, VGA
+*   LAN/ethernet: Atheros L1e 10/100 Mbit
+*   WLAN: Wi-Fi 802.11 a/b/g
+*   Webcam 0.3 Mpix
+*   Card reader: SD, SDHC, MMC
+*   touchpad: "Multi-touch" elantech
+*   display: 1024x600 8.9"
+*   weight: 0,99 kg
+*   battery: Li-ion, 4 Hours, 4400mAh
+*   SDD: 8GB
+*   Graphics: Intel 945GME chipset
 
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GME Express Memory Controller Hub (rev 03)

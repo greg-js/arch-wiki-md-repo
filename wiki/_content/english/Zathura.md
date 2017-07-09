@@ -13,13 +13,10 @@
 
 Available plugin packages are:
 
-[zathura-pdf-poppler](https://www.archlinux.org/packages/?name=zathura-pdf-poppler) or [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) for PDF support
-
-[zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu) for DjVu support
-
-[zathura-ps](https://www.archlinux.org/packages/?name=zathura-ps) for PostScript support
-
-[zathura-cb](https://www.archlinux.org/packages/?name=zathura-cb) for comic book support
+*   [zathura-pdf-poppler](https://www.archlinux.org/packages/?name=zathura-pdf-poppler) or [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) for PDF support
+*   [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu) for DjVu support
+*   [zathura-ps](https://www.archlinux.org/packages/?name=zathura-ps) for PostScript support
+*   [zathura-cb](https://www.archlinux.org/packages/?name=zathura-cb) for comic book support
 
 ## Features
 

@@ -15,6 +15,8 @@ Dedicated article for common problems and solutions.
     *   [2.5 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
     *   [2.6 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
     *   [2.7 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
+        *   [2.7.1 NFSv4](#NFSv4)
+        *   [2.7.2 NFSv3 and earlier](#NFSv3_and_earlier)
     *   [2.8 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
     *   [2.9 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
 *   [3 Performance issues](#Performance_issues)
@@ -138,6 +140,12 @@ If you copy large files from your client machine to the NFS server, the transfer
 Try adding <tt>sync</tt> as a mount option on the client (e.g. in <tt>/etc/fstab</tt>) to fix this problem.
 
 ### mount.nfs: Operation not permitted
+
+#### NFSv4
+
+If you use Kerberos (sec=krb5*), make sure the client and server clocks are correct. Using ntpd or systemd-timesyncd is recommended.
+
+#### NFSv3 and earlier
 
 *nfs-utils* versions 1.2.1-2 or higher use NFSv4 by default, resulting in NFSv3 shares failing on upgrade. The problem can be solved by using either mount option `'vers=3'` or `'nfsvers=3'` on the command line:
 

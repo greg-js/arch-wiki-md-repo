@@ -62,7 +62,7 @@ Follow [fsck#Boot time checking](/index.php/Fsck#Boot_time_checking "Fsck"). Rem
 
 ## Installing Arch Linux ARM
 
-See the [Arch Linux ARM Pi documentation](http://archlinuxarm.org/platforms/armv6/raspberry-pi) or [Arch Linux ARM Pi2 documentation](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2) or [Arch Linux ARM Pi3 documentation](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3).
+See the [Arch Linux ARM Pi documentation](http://archlinuxarm.org/platforms/armv6/raspberry-pi) or [Arch Linux ARM RPi2 documentation](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2) or [Arch Linux ARM RPi3 documentation](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3).
 
 **Note:** Although the RPi3 can run either ARMv7 (32-bit) or AArch64 (64-bit) architectures, there is currently no support for the vendor-provided libraries, extensions, or related software for AArch64 and some hardware on the board may not work, or may perform poorly. ARMv7 is recommended at this time.
 
@@ -288,7 +288,7 @@ loglevel=5
 
 ```
 
-**Note:** The Pi3 requires `enable_uart=1` be added to `/boot/config.txt` in order to display boot messages.
+**Note:** The RPi3 requires `enable_uart=1` be added to `/boot/config.txt` in order to display boot messages in some kernel versions. In others (such as 4.9.35), this line prevents proper booting, so as of June 2017 it seems that this bug is still not resolved.
 
 If the default speed of 115200 does not work properly, try changing it to 38400:
 

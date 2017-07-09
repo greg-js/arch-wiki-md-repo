@@ -42,7 +42,7 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 *   **Resumable**: the synchronization can be resumed without restarting it if interrupted.
 *   **Handles renames**: moved/renamed files are detected and not stored or transferred twice; it typically means that a checksum is computed for files or chunks thereof.
 *   **Version control**: the old version of files are backed up (**reverse incremental backup**).
-*   **Conflict resolution**: the application handles file conflicts, either automatically or interactively, i.e. it does not silently discard conflicting files.
+*   **Conflict resolution**: the application handles file conflicts, either automatically or interactively, i.e. it does not silently discard conflicting files. This attribute does not apply to applications that only propagate changes in one direction.
 *   **Multidirectional**: *more* than 2 locations can be kept in sync together.
 *   **FS monitoring**: the application listens to file system events to trigger the synchronization.
 *   **CLI**: the application is command-line driven, i.e. it is scriptable.
@@ -61,13 +61,13 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 | [Jotasync](https://trixon.se/projects/jotasync/) | [jotasync](https://aur.archlinux.org/packages/jotasync/) | Java gui for rsync | rsync | rsync |  ? |  ? |  ? |  ? |  ? | No |  ? | limited | Swing | Apache v2 | OS X, Windows | Yes | Integrated scheduler. |
 | [luckyBackup](http://luckybackup.sourceforge.net/index.html) | [luckybackup](https://aur.archlinux.org/packages/luckybackup/) | C++ | rsync [[7]](http://luckybackup.sourceforge.net/features.html) | rsync [[8]](http://luckybackup.sourceforge.net/features.html) |  ? |  ? |  ? | Yes |  ? | No |  ? | limited [[9]](http://luckybackup.sourceforge.net/manual.html#terminal) | Qt | GPLv3 | frozen [[10]](http://luckybackup.sourceforge.net/index.html) |
 | [osync.sh](http://www.netpower.fr/osync) | [osync](https://aur.archlinux.org/packages/osync/) | Shell | rsync | rsync |  ? | Yes |  ? | Yes |  ? | Yes | optional [[11]](https://github.com/deajan/osync#daemon-mode) | Yes | No | BSD | Yes |
-| [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | Python 2 | Yes | Yes | Yes |  ? | No | Yes | preview changes | No | No | Yes | No | GPL | Win32 |  ? |
+| [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | Python 2 | Yes | Yes | Yes |  ? | No | Yes | n/a | No | No | Yes | No | GPL | Win32 |  ? |
 | [rsync](http://rsync.samba.org/) | [rsync](/index.php/Rsync "Rsync") | C | Yes | SSH or native protocol | Yes | Yes | No | 
 
 *   `--link-dest` with hard links [[12]](http://www.ibm.com/developerworks/aix/library/au-spunix_rsync/index.html#backup)
 *   `--backup`
 
- | preview changes | No | No | Yes | grsync | GPLv3 | Win32 | Yes | Standard install on all Linux distributions. |
+ | n/a | No | No | Yes | grsync | GPLv3 | Win32 | Yes | Standard install on all Linux distributions. |
 | [SparkleShare](http://sparkleshare.org/) | [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare) | C# |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? | No | Yes | GPLv3 | Windows, OS X |  ? |
 | [Syncthing](https://syncthing.net/) | [Syncthing](/index.php/Syncthing "Syncthing") | Go | Yes [[13]](http://docs.syncthing.net/users/faq.html#is-synchronization-fast) | Yes [[14]](http://docs.syncthing.net/users/security.html) | partial [[15]](http://docs.syncthing.net/users/faq.html#what-things-are-synced) |  ? |  ? | Yes [[16]](http://docs.syncthing.net/users/versioning.html), previous versions moved to archive folder | renames one file [[17]](https://docs.syncthing.net/users/faq.html#what-if-there-is-a-conflict) | Yes | Yes with [syncthing-inotify](https://github.com/syncthing/syncthing-inotify) | Yes | Web, GTK | MPL v2 | Windows, OS X, Android, BSD, Solaris | Yes | P2P sync |
 | [Synkron](http://synkron.sourceforge.net/) | [synkron](https://aur.archlinux.org/packages/synkron/) | C++ |  ? |  ? |  ? |  ? |  ? |  ? |  ? | Yes |  ? | No | Qt | GPLv2 | Windows, OS X | [No](https://sourceforge.net/projects/synkron/) |

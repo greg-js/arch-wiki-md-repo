@@ -58,6 +58,8 @@ As a result:
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS on Linux](#Encryption_in_ZFS_on_Linux)
+        *   [8.2.1 Using dm-crypt](#Using_dm-crypt)
+        *   [8.2.2 Native encryption](#Native_encryption)
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
@@ -816,6 +818,8 @@ Complete [Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") to finally 
 
 ### Encryption in ZFS on Linux
 
+#### Using dm-crypt
+
 ZFS on linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
 
 dm-crypt, possibly via LUKS, creates devices in `/dev/mapper` and their name is fixed. So you just need to change `zpool create` commands to point to that names. The idea is configuring the system to create the `/dev/mapper` block devices and import the zpools from there. Since zpools can be created in multiple devices (raid, mirroring, striping, ...), it is important all the devices are encrypted otherwise the protection might be partially lost.
@@ -850,6 +854,40 @@ For example to have an encrypted home: (the two passwords, encryption and login,
 # passwd <username>
 # ecryptfs-migrate-home -u <username>
 <log in user and complete the procedure with ecryptfs-unwrap-passphrase>
+
+```
+
+#### Native encryption
+
+**Warning:** Encryption in ZFS is not yet merged upsteam. So do this at you own risk!
+
+To use native ZFS encryption, you will need a patched zfs package like [zfs-encryption-dkms-git](https://aur.archlinux.org/packages/zfs-encryption-dkms-git/)
+
+To create an encrypted dataset just specify the encryption type and keyformat:
+
+```
+# zfs create -o encryption=on -o keyformat=passphrase -o mountpoint=none pool/encr
+
+```
+
+*   Supported encryption options: `aes-128-ccm`, `aes-192-ccm`, `aes-256-ccm`, `aes-128-gcm`, `aes-192-gcm` and `aes-256-gcm`. When encryption is set to `on`, `aes-256-ccm` will be used.
+*   Supported keyformats: `passphrase`, `raw`, `hex`
+
+You can also specify iterations of PBKDF2 with `-o pbkdf2iters <n>` (Time it takes to decrypt the key)
+
+When importing a pool that contains encrypted datasets: ZFS will by default not decrypt these datasets. To do this use `-l`
+
+```
+# zpool import -l pool
+
+```
+
+You can also manually load the keys and then mount the encrypted dataset
+
+```
+# zfs load-key pool/dataset # load key for a specific dataset
+# zfs load-key -a # load all keys
+# zfs load-key -r zpool/dataset # load all keys in a dataset
 
 ```
 

@@ -26,8 +26,8 @@
     *   [2.2 Anders Bergh](#Anders_Bergh)
     *   [2.3 Andrea Scarpino](#Andrea_Scarpino)
     *   [2.4 Angel Velasquez](#Angel_Velasquez)
-    *   [2.5 Bartłomiej Piotrowski](#Bart.C5.82omiej_Piotrowski)
-    *   [2.6 György Balló](#Gy.C3.B6rgy_Ball.C3.B3)
+    *   [2.5 Balló György](#Ball.C3.B3_Gy.C3.B6rgy)
+    *   [2.6 Bartłomiej Piotrowski](#Bart.C5.82omiej_Piotrowski)
     *   [2.7 Jakob Gruber](#Jakob_Gruber)
     *   [2.8 Jaroslav Lichtblau](#Jaroslav_Lichtblau)
     *   [2.9 Laurent Carlier](#Laurent_Carlier)
@@ -151,13 +151,13 @@ id@archlinux/trusteduser/nickname
 
 | IRC | angvp |
 
+### Balló György
+
+| IRC | City-busz |
+
 ### Bartłomiej Piotrowski
 
 | IRC | Barthalion |
-
-### György Balló
-
-| IRC | City-busz |
 
 ### Jakob Gruber
 

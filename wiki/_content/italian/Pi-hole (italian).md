@@ -1,10 +1,4 @@
-Dal file [README.md del repository GitHub di Pi-hole](https://github.com/pi-hole/pi-hole):
-
-	The Pi-Hole™ è un DNS/Web server con gestione della pubblicità. Se viene richiesto un dominio contenente pubblicità, una piccola pagina o una GIF viene offerta in sostituzione.
-
-	Lo script gravity.sh esegue la maggior parte del lavoro. Lo script raccoglie i domini pubblicitari da più sorgenti e li compila in una singola lista di più di 1.6 milioni di voci (se decidi di usare la lista di mahakala). Lo script è controllato dal comando pihole. Esegui pihole -h per leggere quali comandi sono disponibili.
-
-Questa pagina wiki tenta di fornire istruzioni di uso e configurazione per questo adattamento per Archlinux di Pi-hole non ufficialmente supportato dal progetto principale. Per bug, problemi e comunicazioni varie, rivolgiti alla [pagina AUR di pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/) per il pacchetto server o alla [pagina AUR di pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) per il pacchetto standalone.
+Pi-hole è un progetto basato su script di shell che gestisce liste di blocco di pubblicità e malware conosciuti e interagisce trasparentemente con dnsmasq per reindirizzare ogni richiesta verso un sostituto. Pi-hole rimpiazza il tuo router come DNS di rete e quindi tutti le richieste saranno gestire da lui senza il bisogno di installare nulla sul lato client. Questa configurazione implementa efficacemente il blocco della pubblicità a livello di rete (es. tutti gli apparati connessi). Il pacchetto offre una ben fatta webUI (unitamente ad una interfaccia CLI) ed è particolarmente leggero e scalabile.
 
 ## Contents
 
@@ -45,7 +39,7 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
 
-Se necessario, attiva `dnsmasq.service` e ri/avvia il servizio.
+Abilita `dnsmasq.service` e ri/avvia il servizio.
 
 #### Router
 
@@ -73,15 +67,15 @@ extension=sockets.so
 Installa [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) e [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
 ```
-# cp /usr/share/pihole/configslighttpd.example.conf /etc/lighttpd/lighttpd.conf
+# cp /usr/share/pihole/configs/lighttpd.example.conf /etc/lighttpd/lighttpd.conf
 
 ```
 
-Se necessario, abilita `lighttpd.service` e ri/avvia il servizio.
+Abilita `lighttpd.service` e ri/avvia il servizio.
 
 ##### Nginx
 
-[Install](/index.php/Install "Install") [nginx](https://www.archlinux.org/packages/?name=nginx) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
+Installa [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) e [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
 
 Modifica `/etc/php/php-fpm.d/www.conf` e cambia la direttiva di ascolto come segue:
 
@@ -109,7 +103,7 @@ Copia il file di configurazione fornito dal pacchetto:
 
 ```
 
-Se necessario, abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
+Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 
 ### Web interface
 

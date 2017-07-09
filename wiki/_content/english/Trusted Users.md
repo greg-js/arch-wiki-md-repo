@@ -46,7 +46,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [Barthalion](https://aur.archlinux.org/packages.php?K=Barthalion&SeB=m) | Bartłomiej Piotrowski | spam@bpiotrowski.pl |
 | [BlackIkeEagle](https://aur.archlinux.org/packages.php?K=BlackIkeEagle&SeB=m) | [Ike Devolder](/index.php/User:BlackEagle "User:BlackEagle") | ike DOT devolder AT gmail DOT com |
 | [Bluewind](https://aur.archlinux.org/packages.php?K=bluewind&SeB=m) | Florian Pritz | bluewind@xinu.at |
-| [City-busz](https://aur.archlinux.org/packages.php?K=City-busz&SeB=m) | György Balló | ballogyor+arch at gmail dot com |
+| [City-busz](https://aur.archlinux.org/packages.php?K=City-busz&SeB=m) | Balló György | ballogyor+arch at gmail dot com |
 | [ConnorBehan](https://aur.archlinux.org/packages.php?K=ConnorBehan&SeB=m) | Connor Behan | connor.behan@gmail.com |
 | [cryptocrack](https://aur.archlinux.org/packages.php?K=cryptocrack&SeB=m) | Lukas Fleischer | archlinux at cryptocrack dot de |
 | [eworm](https://aur.archlinux.org/packages.php?K=eworm&SeB=m) | Christian Hesse | mail@eworm.de |

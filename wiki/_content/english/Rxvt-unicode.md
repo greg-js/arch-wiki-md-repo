@@ -282,7 +282,14 @@ Install [urxvt-resize-font-git](https://aur.archlinux.org/packages/urxvt-resize-
 
 ```
 
-and add some key bindings, for example like this:
+The default keybindings are
+
+*   `Ctrl++` (or `Ctrl+Shift+=`) to increase size
+*   `Ctrl+-` to decrease size
+*   `Ctrl+=` to reset size
+*   `Ctrl+?` to see current size
+
+You can also change key bindings, for example like this:
 
 ```
  URxvt.resize-font.smaller: C-Down

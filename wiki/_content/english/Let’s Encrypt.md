@@ -29,7 +29,7 @@ The official client is called **Certbot**, which allows to request valid X.509 c
 Plugins are available for automated configuration and installation of the issued certificates in web servers:
 
 *   The experimental plugin for [Nginx](/index.php/Nginx "Nginx") is provided with the [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) package.
-*   Although a package [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) exists, automated installation using the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") is currently only supported on Debian and derivatives.
+*   Automated installation using the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") is enabled via the [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) package.
 
 ## Configuration
 

@@ -226,7 +226,7 @@ WantedBy=default.target
 
 ### Example with variables
 
-The following is an example of a user version of `sickbeard.service`, which takes into account variable home directories where SickBeard can find certain files:
+The following is an example of a user version of `sickbeard.service`, which takes into account variable home directories where [SickBeard](/index.php/SickBeard "SickBeard") can find certain files:
 
  `~/.config/systemd/user/sickbeard.service` 
 ```

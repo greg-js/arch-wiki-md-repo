@@ -17,18 +17,17 @@ For more information, please visit the xmonad website: [http://xmonad.org/](http
     *   [5.1 X-Selection-Paste](#X-Selection-Paste)
     *   [5.2 Keyboard shortcuts](#Keyboard_shortcuts)
     *   [5.3 Targeting unbound keys:](#Targeting_unbound_keys:)
-    *   [5.4 Complementary applications](#Complementary_applications)
-    *   [5.5 Increase the number of workspaces](#Increase_the_number_of_workspaces)
-    *   [5.6 Making room for Conky or tray apps](#Making_room_for_Conky_or_tray_apps)
-    *   [5.7 Using xmobar with xmonad](#Using_xmobar_with_xmonad)
-        *   [5.7.1 Quick, less flexible](#Quick.2C_less_flexible)
-        *   [5.7.2 More configurable](#More_configurable)
-        *   [5.7.3 Verify XMobar config](#Verify_XMobar_config)
-    *   [5.8 Controlling xmonad with external scripts](#Controlling_xmonad_with_external_scripts)
-    *   [5.9 Launching another window manager within xmonad](#Launching_another_window_manager_within_xmonad)
-    *   [5.10 KDE and xmonad](#KDE_and_xmonad)
-    *   [5.11 IM Layout for Skype](#IM_Layout_for_Skype)
-    *   [5.12 Example configurations](#Example_configurations)
+    *   [5.4 Increase the number of workspaces](#Increase_the_number_of_workspaces)
+    *   [5.5 Making room for docks/panels/trays (Xmobar, Tint2, Conky, etc)](#Making_room_for_docks.2Fpanels.2Ftrays_.28Xmobar.2C_Tint2.2C_Conky.2C_etc.29)
+    *   [5.6 Using xmobar with xmonad](#Using_xmobar_with_xmonad)
+        *   [5.6.1 Quick, less flexible](#Quick.2C_less_flexible)
+        *   [5.6.2 More configurable](#More_configurable)
+        *   [5.6.3 Verify XMobar config](#Verify_XMobar_config)
+    *   [5.7 Controlling xmonad with external scripts](#Controlling_xmonad_with_external_scripts)
+    *   [5.8 Launching another window manager within xmonad](#Launching_another_window_manager_within_xmonad)
+    *   [5.9 KDE and xmonad](#KDE_and_xmonad)
+    *   [5.10 IM Layout for Skype](#IM_Layout_for_Skype)
+    *   [5.11 Example configurations](#Example_configurations)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 GNOME 3 and xmonad](#GNOME_3_and_xmonad)
         *   [6.1.1 Compositing in GNOME and Xmonad](#Compositing_in_GNOME_and_Xmonad)
@@ -47,9 +46,9 @@ For more information, please visit the xmonad website: [http://xmonad.org/](http
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package, and possibly [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) for third party tiling algorithms, configurations, scripts, etc.
+[Install](/index.php/Install "Install") the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package which provides a very basic configuration, ideally install [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) for tiling algorithms, configurations, scripts, etc.
 
-Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/) if wanted.
+Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/).
 
 **Note:** If you choose to use the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") repositories, you need to install the *haskell-xmonad* package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad), as they have different dependencies.
 
@@ -199,21 +198,9 @@ If you use Xmonad as a stand alone window manager, you can edit the xmonad.hs to
 
 ```
 
-### Complementary applications
-
-There are number of complementary utilities that work well with xmonad. The most common of these include:
-
-*   **[xmobar](/index.php/Xmobar "Xmobar")** — A lightweight, text-based, status bar written in Haskell.
-
-	[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)
-
-*   **xmonad-log-applet** — [https://github.com/alexkay/xmonad-log-applet](https://github.com/alexkay/xmonad-log-applet)
-
-	An applet for the GNOME, MATE or xfce panel. || [xmonad-log-applet-xfce4-git](https://aur.archlinux.org/packages/xmonad-log-applet-xfce4-git/), [xmonad-log-applet-gnome-git](https://aur.archlinux.org/packages/xmonad-log-applet-gnome-git/)
-
 ### Increase the number of workspaces
 
-By default, xmonad uses 9 workspaces. You can increase this by using something like this:
+By default, xmonad uses a set of 9 workspaces. You can change this by changing the **workspaces** parameter:
 
  `xmonad.hs` 
 ```
@@ -243,7 +230,7 @@ myAdditionalKeys =
 
 ```
 
-### Making room for Conky or tray apps
+### Making room for docks/panels/trays (Xmobar, Tint2, Conky, etc)
 
 Wrap your layouts with avoidStruts from XMonad.Hooks.ManageDocks for automatic dock/panel/trayer spacing:
 
@@ -642,3 +629,4 @@ to use the general (QT) UI.
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers") - Arch wiki article providing an overview of mainstream tiling window managers
 *   [Share your xmonad desktop!](https://bbs.archlinux.org/viewtopic.php?id=94969)
 *   [xmonad hacking thread](https://bbs.archlinux.org/viewtopic.php?id=40636)
+*   [xmonad-log-applet](https://github.com/alexkay/xmonad-log-applet) - An applet for the GNOME, MATE or xfce panel.

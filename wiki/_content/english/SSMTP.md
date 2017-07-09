@@ -125,6 +125,40 @@ Set the SGID bit on the *ssmtp* binary.
 
 ```
 
+Finally add a pacman hook to always set the file permissions on `/usr/bin/ssmtp` after the package has been upgraded:
+
+ `/root/bin/ssmtp-set-permissions` 
+```
+#!/bin/bash
+
+chown :ssmtp /usr/bin/ssmtp
+chmod g+s /usr/bin/ssmtp
+
+```
+
+Make the file executable:
+
+```
+# chmod u+x /root/bin/ssmtp-set-permissions
+
+```
+
+Now add the pacman hook:
+
+ `/usr/share/libalpm/hooks/ssmtp-set-permissions.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = ssmtp
+
+[Action]
+Description = Set ssmtp permissions for security
+When = PostTransaction
+Exec = /root/bin/set-ssmtp-permissions
+```
+
 Now, all the regular users can still send email using the terminal, but none can read the `ssmtp.conf` file.
 
 ## Sending email

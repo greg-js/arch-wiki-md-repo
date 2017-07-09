@@ -7,19 +7,18 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [1.1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
         *   [1.1.2 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
         *   [1.1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
-        *   [1.1.4 Network settings](#Network_settings)
-        *   [1.1.5 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-        *   [1.1.6 Turn off OCSP validation](#Turn_off_OCSP_validation)
-        *   [1.1.7 Turn off the disk cache](#Turn_off_the_disk_cache)
-        *   [1.1.8 Longer interval to save session](#Longer_interval_to_save_session)
-        *   [1.1.9 Immediate rendering of pages](#Immediate_rendering_of_pages)
-        *   [1.1.10 Referer header control](#Referer_header_control)
-        *   [1.1.11 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-        *   [1.1.12 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-        *   [1.1.13 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-        *   [1.1.14 Enable Electrolysis](#Enable_Electrolysis)
-        *   [1.1.15 Enable HTTP Cache](#Enable_HTTP_Cache)
-        *   [1.1.16 Disable Pocket](#Disable_Pocket)
+        *   [1.1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+        *   [1.1.5 Turn off OCSP validation](#Turn_off_OCSP_validation)
+        *   [1.1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
+        *   [1.1.7 Longer interval to save session](#Longer_interval_to_save_session)
+        *   [1.1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
+        *   [1.1.9 Referer header control](#Referer_header_control)
+        *   [1.1.10 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+        *   [1.1.11 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+        *   [1.1.12 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+        *   [1.1.13 Enable Electrolysis](#Enable_Electrolysis)
+        *   [1.1.14 Enable HTTP Cache](#Enable_HTTP_Cache)
+        *   [1.1.15 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -108,16 +107,6 @@ Go to `about:config`, accept the warning, right click and create a new boolean v
 
 To verify restart firefox then go to `about:support` and search for AzureCanvasAccelerated which should be set to 1.
 
-#### Network settings
-
-Advanced network settings can be found on the `about:config` page (try searching for *network*).
-
-<caption>Suggested values</caption>
-| Key | Value | Description |
-| network.http.pipelining | true | Enable [HTTP pipelining](https://en.wikipedia.org/wiki/HTTP_pipelining "w:HTTP pipelining") for normal connections |
-| network.http.pipelining.ssl | true | Enable HTTP pipelining for SSL connections |
-| network.http.proxy.pipelining | true | Enable HTTP pipelining for proxy connections |
-
 #### Stop urlclassifier3.sqlite from being created again
 
 Removing all `urlclassifier*` files can prevent the use of megabytes of storage in your firefox profile. If you remove all the `urlclassifier*` files, you may find out that `urlclassifier3.sqlite` keeps growing again after a certain time. Here is a simple solution to avoid it for now and ever.
@@ -201,7 +190,7 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 
 #### Enable Electrolysis
 
-In firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[3]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
+In firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
 
 To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
@@ -227,7 +216,7 @@ Modifying the following value can help improve the way fonts looks in Firefox if
 
 Note that the above method only affects the Firefox user interface's DPI settings. Web page contents still use a DPI value of 96, which may look ugly or, in the case of high-resolution displays, may be rendered too small to read. A solution is to change `layout.css.devPixelsPerPx` to system's DPI divided by 96\. For example, if your system's DPI is 144, then the value to add is 144/96 = 1.5\. Changing `layout.css.devPixelsPerPx` to **1.5** makes web page contents use a DPI of 144, which looks much better.
 
-See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[4]](https://www.sven.de/dpi/) for calculating the DPI.
+See also [HiDPI#Firefox](/index.php/HiDPI#Firefox "HiDPI") for information about HiDPI displays and [[3]](https://www.sven.de/dpi/) for calculating the DPI.
 
 #### Default font settings from Microsoft Windows
 
@@ -598,7 +587,7 @@ x-scheme-handler/magnet=kde4-ktorrent.desktop
 
 ```
 
-See [[5]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
+See [[4]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
 
 ### Prevent accidental closing
 

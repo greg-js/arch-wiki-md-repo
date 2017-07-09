@@ -277,6 +277,8 @@ network={
 }
 ```
 
+**Tip:** The same configuration, but for a wireless adapter, would require changing `IEEE8021X` to `WPA-EAP` and removing the `ap_scan=0` line
+
 Since this file is storing a plaintext password, [chown](/index.php/Chown "Chown") it to `root:root` and [chmod](/index.php/Chmod "Chmod") it to `600`.
 
 Before running the `wpa_supplicant-wired@*adapter*.service` service, make sure to set the device down:
