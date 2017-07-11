@@ -54,7 +54,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Compiz](/index.php/Compiz "Compiz")** — OpenGL compositing manager that uses GLX_EXT_texture_from_pixmap for binding redirected top-level windows to texture objects. It has a flexible plug-in system and it is designed to run well on most graphics hardware.
 
-	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
+	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/), [compiz-core](https://aur.archlinux.org/packages/compiz-core/)
 
 *   **cwm** — Originally deriving from evilwm, but later re-written from scratch. cwm aims to be simple, and offers helpful features such as searching for windows.
 

@@ -44,7 +44,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
 
 ## Skype for Linux
 
-There is a new [Skype for Linux Beta](https://community.skype.com/t5/Linux/Skype-5-0-for-Linux-Beta-is-here/td-p/4609846), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (group video chat is not yet working).
+There is a new *Skype for Linux Beta*, which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (group video chat is not yet working).
 
 [Install](/index.php/Install "Install") it with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) or [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
 

@@ -74,6 +74,8 @@ Works out-of-the-box:
 *   The [systemd-backlight.service](/index.php/Backlight#systemd-backlight_service "Backlight") takes care of both eDP panel and keyboard backlight (and any other external device) status, saving at shutdown and restoring their values at boot.
 *   Hardware Function keys (`Fn-F10` to `Fn-F12`) works without any operation, as well.
 
+**Note:** By default, the keyboard backlight automatically turns off after 60 seconds of inactivity. You can change the default behaviour by editing the related *sysfs* entry `/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout`.
+
 ### SSD
 
 This laptop series comes with a SSD as storage device; this technology needs some configuration in order to achieve the best operative conditions. See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for information.
@@ -104,15 +106,15 @@ After reboot, the firmware is available for your Bluetooth interface. If the Blu
 
 ### Audio
 
-**Note:** Proper audio support is dependent on having the latest BIOS update. If you have not yet updated to BIOS A02 or newer, please do that first.
+**Note:** Proper audio support is dependent on having the latest BIOS update. If you have not yet updated to BIOS A02 or newer, please perform [#BIOS updates](#BIOS_updates) first.
 
-The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode", meaning it supports both the [HDA standard](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio") and the [I2S standard](https://en.wikipedia.org/wiki/I%C2%B2S "wikipedia:I²S"). The embedded controller in the XPS 13 uses the [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") _REV value provided by the OS you use to determine which mode the sound chipset should be initialized in at boot.
+The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode", meaning it supports both the [HDA standard](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio") and the [I2S standard](https://en.wikipedia.org/wiki/I%C2%B2S "wikipedia:I²S"). The embedded controller in the XPS 13 uses the [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") _REV value provided by the OS itself to determine which mode the sound chipset should be initialized in at boot.
 
 #### HDA mode
 
-With BIOS A02+ and official Arch Linux kernel **4.3 or older**, the sound card will be initialized in HDA mode.
+With BIOS A02+ and official Arch Linux kernels **older than 4.4** and again starting **from version 4.11.5**, the sound card will be initialized in HDA mode.
 
-To use HDA mode on newer kernels, compile your kernel with the option `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y`. This will force HDA mode on; you will not be able to use I2S mode by using that kernel.
+**Note:** To use HDA mode on excluded kernels, compile it with the option `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y`. This will force HDA mode on.
 
 ##### Setting the default sound card
 
@@ -120,11 +122,13 @@ By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
-Note that if you are dual-booting with Windows, you will have to do a cold boot twice before HDA sound will work in Linux and vice-versa. This is not necessary in I2S mode.
+Note that if you are dual-booting with Windows, you will have to do a cold boot twice before to have sound working in Linux and vice-versa.
+
+**Note:** This is not necessary in I2S mode.
 
 #### I2S mode
 
-With BIOS A02+ and official Arch Linux kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer. (I2S support was broken in mainline kernel 4.5, and fixed in Arch kernel 4.5.2 and mainline 4.8.[[4]](https://bugs.archlinux.org/task/48936)[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e))
+With BIOS A02+ and official Arch Linux kernels **from 4.4 to 4.11.4**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer. (I2S support was broken in mainline kernel 4.5, and fixed in Arch kernel 4.5.2 and mainline 4.8.[[4]](https://bugs.archlinux.org/task/48936)[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e))
 
 ##### Enabling the microphone
 
@@ -145,7 +149,7 @@ By default Jack recognises four capture ports and is unusable because the transp
 
 ### Touchpad
 
-With the latest BIOS, the touchpad should work out-of-the-box with either the synaptics or libinput drivers.
+With the latest BIOS, the touchpad should work out-of-the-box with either the synaptics or libinput drivers. The second is suggested over the former.
 
 #### Synaptics driver
 
@@ -155,7 +159,7 @@ If the touchpad freezes when you use more than one finger, try enabling Clickpad
 
 #### Libinput driver
 
-For better multi-touch support, you can use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The libinput driver supports nearly all button layouts out of the box with few additional settings.
+For better multi-touch support, you can use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The libinput driver supports nearly all button layouts out-of-the-box with few additional settings.
 
  `/etc/X11/xorg.conf.d/50-libinput.conf` 
 ```
@@ -179,10 +183,10 @@ You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [po
 
 **Note:**  
 
-*   With kernel 4.6+, frame-buffer compression (FBC) is enabled by default, so `i915.enable_fbc` is no longer needed.
-*   Panel self refresh (PSR) causes the XPS 13's display to flicker, so it is disabled by default as of kernel 4.9.[[7]](https://bugs.freedesktop.org/show_bug.cgi?id=95176)
-*   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to IRC #intel-gfx, "there is a new auto-downclock for eDP panels in recent kernels and it is enabled by default if available, so do not use."
-*   `i915.enable_rc6=7` is useless on Broadwell (Gen8) systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on Gen7+ hardware.[[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[9]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
+*   With kernel 4.6+, frame-buffer compression (**FBC**) is enabled by default, so `i915.enable_fbc` is no longer needed.
+*   Panel self refresh (**PSR**) causes the display to flicker, so it has been disabled by default as of kernel 4.9 [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=95176).
+*   `i915.lvds_downclock=1` for **LVDS downclock** is no longer needed. According to IRC #intel-gfx, *"[...] there is a new auto-downclock for eDP panels in recent kernels and it is enabled by default if available, [...]"*.
+*   `i915.enable_rc6=7` is useless on Broadwell (**Gen8**) systems because the deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on **Gen7+** hardware [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[9]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html).
 
 ### Calibrated ICC profile
 
@@ -200,11 +204,11 @@ This profile has been made with the spectrophotometer's high resolution spectral
 
 ### Pink & green artifacts in video or webcam output
 
-Update [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) if you haven't already; this should fix the issue.
+Update [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) to latest version. This should fix the issue.
 
 ### Graphical artifacting/instability after S3 resume
 
-If you encounter some artifacts and/or an unusable graphical environment after resuming from a suspend, you may want to [switch your Intel graphics acceleration from SNA to UXA](/index.php/Intel_graphics#SNA_issues "Intel graphics"). Switching to UXA, however, will result in decreased performance. Switching to xf86-video-modesetting (glamor acceleration) should not decrease performance much, however it is still not known if will fix resume.
+If you encounter some artifacts and/or an unusable graphical environment after resuming from a suspend, you may want to [switch your Intel graphics acceleration from SNA to UXA](/index.php/Intel_graphics#SNA_issues "Intel graphics"). Switching to UXA, however, will result in worse performance. Switching to xf86-video-modesetting (Glamor acceleration) should not decrease performance considerably,however it is still not known if will fix the resume issue.
 
 ### Connection issues with Broadcom wireless
 
@@ -220,17 +224,23 @@ As of version A07, the BIOS does not pass any boot parameters to the kernel. Use
 
 ### Random kernel hangs at boot
 
-See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems to only affect those with touchscreens. The fix consists in removing "keyboard" from the HOOKS in /etc/mkinitcpio.conf and instead using MODULES="atkbd usbhid hid-generic" (if you need the keyboard hook). You will have to run `mkinitcpio -p linux` as root afterwards.
+See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems to affect only touchscreen model owners. The fix consists in removing "keyboard" from the HOOKS array in /etc/mkinitcpio.conf. If you need the keyboard at boot, edit the MODULES array as follow MODULES="atkbd usbhid hid-generic". You will have to run `mkinitcpio -p linux` as root afterwards.
 
 ### Sound doesn't work after upgrading to kernel 4.4+
 
-You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the stock Linux 4.4 kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode.
+You need to do two cold boots (**NOT** a simple reboot, shut it down and turn it back on again) to make sound working again.
 
-Refer to the Audio section above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch Linux bug report](https://bugs.archlinux.org/task/47989).
+Refer to the [#HDA Mode](#HDA_Mode) above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch Linux bug report](https://bugs.archlinux.org/task/47989).
 
 ### Loud cracks/noise during boot or audio playback
 
-Some users have reported above sound outputs, as described e.g. in [this BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208496). [Disabling audio powersafe](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") may work for people using the **HDA** audio mode. However, it is still unknown how to solve this issue for the **I2S** audio mode. For further reference, see the corresponding [kernel bug record](https://bugzilla.kernel.org/show_bug.cgi?id=112611).
+Some users have reported the above sound problems, as described [here](https://bbs.archlinux.org/viewtopic.php?id=208496) for example.
+
+[Disabling audio powersafe](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") may work for people using the **HDA** audio mode.
+
+However, it is still unknown how to solve this issue for the **I2S** audio mode.
+
+For further reference, see the corresponding [kernel bug entry](https://bugzilla.kernel.org/show_bug.cgi?id=112611).
 
 ## See also
 

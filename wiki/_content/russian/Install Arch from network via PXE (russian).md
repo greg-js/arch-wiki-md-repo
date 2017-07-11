@@ -175,4 +175,4 @@ Now make sure the dhcpd and tftpd daemons are running on the server.
 
 Boot your destination machine over PXE (usually something like F12 (on Dells) or F11 (on Supermicro's), or enable it in the BIOS).
 
-When you get the PXEBoot prompt, type 'arch' or hit return to start the installer. The install should now progress the same as if you booted from CD. You can continue installation by following the [Руководство для начинающих](/index.php/Beginners%27_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Beginners' guide (Русский)") or the [Руководство по установке](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Installation guide (Русский)").
+When you get the PXEBoot prompt, type 'arch' or hit return to start the installer. The install should now progress the same as if you booted from CD. You can continue installation by following the [Руководство по установке](/index.php/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D0%BE_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B5 "Руководство по установке").

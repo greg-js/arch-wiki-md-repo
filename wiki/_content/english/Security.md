@@ -29,6 +29,8 @@ This article contains recommendations and best practices for hardening an Arch L
 *   [7 Kernel hardening](#Kernel_hardening)
     *   [7.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_.2F_exploit_mitigation)
         *   [7.1.1 Userspace ASLR comparison](#Userspace_ASLR_comparison)
+            *   [7.1.1.1 64-bit processes](#64-bit_processes)
+            *   [7.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_.28on_an_x86_64_kernel.29)
     *   [7.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
     *   [7.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
     *   [7.4 Keep BPF JIT compiler disabled](#Keep_BPF_JIT_compiler_disabled)
@@ -325,6 +327,8 @@ If you use an out-of-tree driver such as [NVIDIA](/index.php/NVIDIA "NVIDIA"), y
 
 The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package provides an improved implementation of Address Space Layout Randomization for userspace processes. The [paxtest](https://www.archlinux.org/packages/?name=paxtest) command can be used to obtain an estimate of the provided entropy:
 
+##### 64-bit processes
+
  `linux-hardened` 
 ```
 Anonymous mapping randomization test     : 32 quality bits (guessed)
@@ -360,6 +364,47 @@ Offset to library randomisation (ET_EXEC): 28 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 28 quality bits (guessed)
 Randomization under memory exhaustion @~0: 28 bits (guessed)
 Randomization under memory exhaustion @0 : 28 bits (guessed)
+```
+
+##### 32-bit processes (on an x86_64 kernel)
+
+ `linux-hardened` 
+```
+Anonymous mapping randomization test     : 16 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 22 quality bits (guessed)
+Heap randomization test (PIE)            : 27 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 18 quality bits (guessed)
+Shared library randomization test        : 16 quality bits (guessed)
+VDSO randomization test                  : 16 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 24 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 24 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 28 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 28 quality bits (guessed)
+Offset to library randomisation (ET_EXEC): 18 quality bits (guessed)
+Offset to library randomisation (ET_DYN) : 16 quality bits (guessed)
+Randomization under memory exhaustion @~0: 18 bits (guessed)
+Randomization under memory exhaustion @0 : 18 bits (guessed)
+
+```
+ `linux` 
+```
+Anonymous mapping randomization test     : 8 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 13 quality bits (guessed)
+Heap randomization test (PIE)            : 13 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 8 quality bits (guessed)
+Shared library randomization test        : 8 quality bits (guessed)
+VDSO randomization test                  : 8 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 19 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 19 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 11 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 11 quality bits (guessed)
+Offset to library randomisation (ET_EXEC): 8 quality bits (guessed)
+Offset to library randomisation (ET_DYN) : 13 quality bits (guessed)
+Randomization under memory exhaustion @~0: No randomization
+Randomization under memory exhaustion @0 : No randomization
+
 ```
 
 ### Restricting access to kernel logs

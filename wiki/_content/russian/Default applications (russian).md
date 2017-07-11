@@ -1,53 +1,53 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Default applications](/index.php/Default_applications "Default applications"). Дата последней синхронизации: 7 Декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Default_applications&diff=0&oldid=458712).
+**Состояние перевода:** На этой странице представлен перевод статьи [Default applications](/index.php/Default_applications "Default applications"). Дата последней синхронизации: 31 мая 2017‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Default_applications&diff=0&oldid=478783).
 
-There is frequently more than one application able to handle data of a certain type, so users and even some packages assemble lists of default applications for each [MIME type](#MIME_types). While the base install of Arch Linux does not define default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
+Часто используется несколько приложений, способных обрабатывать данные определенного типа, поэтому пользователи и даже некоторые пакеты собирают списки приложений по умолчанию для каждого типа [#MIME type](#MIME_types). Хотя стандартная установка Arch Linux не определяет приложения по умолчанию, [окружение рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") может это сделать. Некоторые окружения рабочего стола также предоставляют графический интерфейс или файловый менеджер, которые могут интерактивно настраивать приложения по умолчанию. Если вы не используете окружение рабочего стола, вам может потребоваться установить дополнительное программное обеспечение для удобного управления приложениями по умолчанию.
 
 ## Contents
 
-*   [1 MIME types](#MIME_types)
-    *   [1.1 MIME database](#MIME_database)
-        *   [1.1.1 New MIME types](#New_MIME_types)
-    *   [1.2 Desktop entries](#Desktop_entries)
-*   [2 Set default applications](#Set_default_applications)
-    *   [2.1 Environment variables](#Environment_variables)
-    *   [2.2 XDG standard](#XDG_standard)
-        *   [2.2.1 Format](#Format)
+*   [1 MIME-типы](#MIME-.D1.82.D0.B8.D0.BF.D1.8B)
+    *   [1.1 База данных MIME](#.D0.91.D0.B0.D0.B7.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_MIME)
+        *   [1.1.1 Новый тип MIME](#.D0.9D.D0.BE.D0.B2.D1.8B.D0.B9_.D1.82.D0.B8.D0.BF_MIME)
+    *   [1.2 Ярлыки приложений](#.D0.AF.D1.80.D0.BB.D1.8B.D0.BA.D0.B8_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+*   [2 Установка приложений по умолчанию](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
+    *   [2.1 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [2.2 Стандарт XDG](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG)
+        *   [2.2.1 Формат](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82)
     *   [2.3 mailcap](#mailcap)
-*   [3 Utilities](#Utilities)
+*   [3 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
     *   [3.1 xdg-utils](#xdg-utils)
-    *   [3.2 xdg-open alternatives](#xdg-open_alternatives)
+    *   [3.2 Альтернативы xdg-open](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D1.8B_xdg-open)
         *   [3.2.1 perl-file-mimeinfo](#perl-file-mimeinfo)
         *   [3.2.2 mimeo](#mimeo)
         *   [3.2.3 whippet](#whippet)
-        *   [3.2.4 Naive replacements](#Naive_replacements)
+        *   [3.2.4 Собственные замены](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B)
     *   [3.3 lsdesktopf](#lsdesktopf)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Missing .desktop file](#Missing_.desktop_file)
-    *   [4.2 Missing association](#Missing_association)
-    *   [4.3 Non-default application](#Non-default_application)
-    *   [4.4 Nonstandard association](#Nonstandard_association)
-    *   [4.5 Variables in .desktop files that affect application launch](#Variables_in_.desktop_files_that_affect_application_launch)
+*   [4 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [4.1 Отсутствует файл .desktop](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D1.84.D0.B0.D0.B9.D0.BB_.desktop)
+    *   [4.2 Отсутствует ассоциация](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.B0.D1.81.D1.81.D0.BE.D1.86.D0.B8.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [4.3 Нет приложения по умолчанию](#.D0.9D.D0.B5.D1.82_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
+    *   [4.4 Нестандартная ассоциация](#.D0.9D.D0.B5.D1.81.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D0.B0.D1.8F_.D0.B0.D1.81.D1.81.D0.BE.D1.86.D0.B8.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [4.5 Переменные в файлах .desktop, которые влияют на запуск приложения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B2_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D1.85_.desktop.2C_.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.B2.D0.BB.D0.B8.D1.8F.D1.8E.D1.82_.D0.BD.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
 
-## MIME types
+## MIME-типы
 
-Before setting the default application per file type, the file type must be detected. There are two common ways that this detection is done:
+Перед установкой приложения по умолчанию для каждого типа файла, тип файла должен быть обнаружен. Существует два распространенных способа проверить это:
 
-*   using the file name extension e.g. *.html* or *.jpeg*
-*   using a [magic number](https://en.wikipedia.org/wiki/List_of_file_signatures "w:List of file signatures") in the first few bytes of the file
+*   используя расширение имени файла, например .html или .jpeg
+*   используя [магическое число](https://en.wikipedia.org/wiki/List_of_file_signatures "w:List of file signatures") в первых байтах файла
 
-However it is possible that a single file type is identified by several different magic numbers and file name extensions, therefore [MIME types](https://en.wikipedia.org/wiki/MIME_type "w:MIME type") are used to represent distinct file types. MIME types are specified by two parts separated by a slash: `*type*/*subtype*`. The type describes the general category of the content, while the subtype identifies the specific data type. For example, `image/jpeg` is the MIME type for [JPEG](https://en.wikipedia.org/wiki/JPEG "w:JPEG") images, while `video/H264` is the MIME type for [H.264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC "w:H.264/MPEG-4 AVC") video.
+Однако возможно, что один тип файла идентифицируется несколькими различными магическими числами и расширениями имен файлов, поэтому [типы MIME](https://en.wikipedia.org/wiki/ru:MIME-%D1%82%D0%B8%D0%BF%D1%8B "w:ru:MIME-типы") используются для представления различных типов файлов. Типы MIME определяются двумя частями, разделенными косой чертой: `*тип*/*подтип*`. Тип описывает общую категорию содержимого, тогда как подтип идентифицирует конкретный тип данных. Например, `изображение/jpeg` является типом MIME для [JPEG](https://en.wikipedia.org/wiki/ru:JPEG "w:ru:JPEG") изображений, тогда как `видео/H264` является типом MIME для [H.264](https://en.wikipedia.org/wiki/ru:H.264 "w:ru:H.264") видео.
 
-Technically, every MIME type should be registered with the [IANA](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority "w:Internet Assigned Numbers Authority")[[1]](http://www.iana.org/assignments/media-types/media-types.xhtml), however many applications use unofficial MIME types; these often have a type starting with `x-`, for example `x-scheme-handler/https` for a HTTPS URL. For local use, the [#MIME database](#MIME_database) can be used by other packages to register new MIME types.
+Технически каждый тип MIME должен быть зарегистрирован в [IANA](https://en.wikipedia.org/wiki/ru:IANA "w:ru:IANA")[[1]](http://www.iana.org/assignments/media-types/media-types.xhtml), однако многие приложения используют неофициальные типы MIME; они часто имеют тип, начинающийся с `x-`, например `x-scheme-handler/https` для HTTPS URL. Для локального использования, [#база данных MIME](#.D0.B1.D0.B0.D0.B7.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_MIME) может использоваться другими пакетами для регистрации новых типов MIME.
 
-### MIME database
+### База данных MIME
 
-The system maintains a database of recognized MIME types: the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). The database is built from the XML files installed by packages in `/usr/share/mime/packages` using the tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package.
+Система поддерживает базу данных распознанных типов MIME: [Общая база данных MIME-info](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). База данных построена из файлов XML, установленных пакетами в `/usr/share/mime/packages`, используя инструменты из пакета [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info).
 
-The files in `/usr/share/mime/` should not be directly edited, however it is possible to maintain a separate database on a per-user basis in the `~/.local/share/mime/` tree.
+Файлы в `/usr/share/mime/` не должны редактироваться напрямую, однако их можно сохранить в отдельную базу данных для каждого пользователя в `~/.local/share/mime/`.
 
-#### New MIME types
+#### Новый тип MIME
 
-This example defines a new MIME type `application/x-foobar` and assigns it to any file with a name ending in *.foo*. Simply create the following file:
+В этом примере определяется новый тип MIME `application/x-foobar` и присваивается любому файлу с именем, заканчивающимся на *.foo*. Просто создайте следующий файл:
 
  `~/.local/share/mime/packages/application-x-foobar.xml` 
 ```
@@ -62,57 +62,51 @@ This example defines a new MIME type `application/x-foobar` and assigns it to an
 </mime-info>
 ```
 
-And then update the MIME database
+И затем обновите база данных MIME
 
 ```
 $ update-mime-database ~/.local/share/mime
 
 ```
 
-Of course this will not have any affect if no desktop entries are associated with the MIME type. You may need to create new [desktop entries](/index.php/Desktop_entries "Desktop entries") or modify [mimeapps.list](#XDG_standard).
+Конечно, это не повлияет, если ярлыки приложения не связаны с типом MIME. Вам может потребоваться создать новые [ярлыки приложений](/index.php/Desktop_entries "Desktop entries") или изменить [#mimeapps.list](#XDG_standard).
 
-### Desktop entries
+### Ярлыки приложений
 
-Each package can use [desktop entries](/index.php/Desktop_entries "Desktop entries") to provide information about the MIME types that can be handled by the packaged software. In order to provide fast search in the reverse direction, the system uses the tools from the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package to analyze the desktop files and to create an inverse mapping stored in the `/usr/share/applications/mimeinfo.cache` file. This is the only file that programs need to read to find all desktop files that might be used to handle given MIME type. Using the database is easier and faster than reading hundreds of *.desktop* files directly.
+Каждый пакет может использовать [ярлыки приложений](/index.php/Desktop_entries "Desktop entries") для предоставления информации о типах MIME, которые могут обрабатываться с помощью программного обеспечения. Чтобы обеспечить быстрый поиск в обратном направлении, система использует инструменты из пакета [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) для анализа файлов рабочего стола и создания обратного сопоставления, хранящегося в `/usr/share/applications/mimeinfo.cache`. Это единственный файл, который программы должны прочитать, чтобы найти все файлы рабочего стола, которые могут использоваться для обработки данного типа MIME. Это единственный файл, который программы должны прочитать, чтобы найти все файлы рабочего стола, которые могут использоваться для обработки данного типа MIME. *.desktop* напрямую.
 
-The files in `/usr/share/applications/` should not be edited directly, it is possible to maintain a separate database on a per-user basis in the `~/.local/share/applications/` tree. See [Desktop entries](/index.php/Desktop_entries "Desktop entries") for details.
+Файлы в `/usr/share/applications/` не должны редактироваться напрямую, можно поддерживать отдельную базу данных для каждого пользователя в `~/.local/share/applications/`. Подробнее смотрите [ярлыки приложений](/index.php/Desktop_entries "Desktop entries").
 
-## Set default applications
+## Установка приложений по умолчанию
 
-The configuration of default applications depends on which launcher is used. Unfortunately there are multiple incompatible standards and many programs even have their own custom formats.
+Настройка приложений по умолчанию зависит от используемого лаунчера. К сожалению, существует несколько несовместимых стандартов, и многие программы даже имеют свои собственные форматы.
 
-The most common standards are explained below for manual editing. You can also use some [utility](#Utilities) to do the job, which may be using some of these standards internally or its own configuration format.
+Наиболее распространенные стандарты описаны ниже для ручного редактирования. Также существует несколько [#Утилит](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B), которые могут сделать работу, которая может или не может реализовать следующие стандарты.
 
-### Environment variables
+### Переменные окружения
 
-Console programs in particular are configured by setting an appropriate [environment variable](/index.php/Environment_variable "Environment variable"), e.g. `BROWSER` or `EDITOR`. See [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables").
+Консольные программы, в частности, настраиваются путем установки соответствующей [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)"), например `БРАУЗЕР` или `РЕДАКТОР`. Смотрите [Environment variables (Русский)#Примеры](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B "Environment variables (Русский)").
 
-### XDG standard
+### Стандарт XDG
 
-The [XDG standard](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) is the most common for configuring desktop environments. Default applications for each MIME type are stored in `mimeapps.list` files, which can be stored in several locations. They are searched in the following order, with earlier associations taking precedence over later ones:
+[Стандарт XDG](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) является наиболее распространенным при настройке окружения рабочего стола. Приложения по умолчанию для каждого типа MIME хранятся в файлах `mimeapps.list`, которые могут храниться в нескольких местах. Их проверяют в следующем порядке, причем более ранние ассоциации имеют приоритет над более поздними:
 
-| Path | Usage |
-| `~/.config/mimeapps.list` | user overrides |
-| `/etc/xdg/mimeapps.list` | system-wide overrides |
-| `~/.local/share/applications/mimeapps.list` | (**deprecated**) user overrides |
+| Путь | Применение |
+| `~/.config/mimeapps.list` | пользовательские переопределения |
+| `/etc/xdg/mimeapps.list` | общесистемные переопределения |
+| `~/.local/share/applications/mimeapps.list` | (**Устаревшее**) пользовательские переопределения |
 | `/usr/local/share/applications/mimeapps.list`
-`/usr/share/applications/mimeapps.list` | distribution-provided defaults |
+`/usr/share/applications/mimeapps.list` | переопределения предоставляемые дистрибутивом по умолчанию |
 
-Additionally, it is possible to define [desktop-environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [Xfce](/index.php/Xfce "Xfce"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
+Кроме того, можно определить [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") по умолчанию для конкретных приложений в файле с именем `*desktop*-mimeapps.list` где `*desktop*` это имя рабочего стола (Из переменной окружения `XDG_CURRENT_DESKTOP`). Например, `/etc/xdg/xfce-mimeapps.list` определяет общесистемные переопределения приложений по умолчанию для [Xfce](/index.php/Xfce_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xfce (Русский)"). Эти переопределения для рабочего стола имеют приоритет над соответствующим файлом, не относящимся к окружению рабочему столу. Например, `/etc/xdg/xfce-mimeapps.list` имеет приоритет над `/etc/xdg/mimeapps.list` но по-прежнему переопределяется `~/.config/mimeapps.list`.
 
-**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it
-```
-$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list 
+**Совет:** Несмотря на то, что несколько устаревших приложений все еще читают/записывают в `~/.local/share/applications/mimeapps.list`. Чтобы облегчить обслуживание, просто соедините его ссылкой `$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list` . Обратите внимание, что символическая ссылка должна быть в этом направлении, потому что [#xdg-utils](#xdg-utils) удаляет и воссоздает `~/.local/share/applications/mimeapps.list` когда он записывает в него, что приведет к поломке любых символических/жестких ссылок на `~/.config/mimeapps.list`.
 
-```
+**Примечание:** Вы также можете найти файлы в этих местах с именем `defaults.list`. Этот файл похож на `mimeapps.list`, за исключением того, что он отображает только приложения по умолчанию (не добавленные/удаленные ассоциации). Сейчас он устарел и должен быть вручную объединен с `mimeapps.list`.
 
-the reverse symlink unfortunately does not work because of how `xdg-mime` writes to this file.
+#### Формат
 
-**Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
-
-#### Format
-
-Consider the following example:
+Рассмотрим следующий пример:
 
  `mimeapps.list` 
 ```
@@ -125,17 +119,17 @@ video/H264=baz.desktop
 image/jpeg=foo.desktop
 ```
 
-Each section assigns one or more desktop entries to MIME types.
+Каждый раздел назначает один или несколько ярлыков приложений типам MIME.
 
-*   **Added Associations** indicates that the applications support opening that MIME type. For example, `bar.desktop` and `baz.desktop` can open JPEG images. This might affect the application list you see when right-clicking a file in a file browser.
-*   **Removed Associations** indicates that the applications *do not* support that MIME type. For example, `baz.desktop` cannot open H.264 video.
-*   **Default Applications** indicates that the applications should be the default choice for opening that MIME type. For example, JPEG images should be opened with `foo.desktop`. This implicitly adds an association between the application and the MIME type. If there are multiple applications, they are tried in order.
+*   **Добавленные ассоциации** указывают, что приложения поддерживают открытие этого типа MIME. Например, `bar.desktop` и `baz.desktop` могут открывать изображения JPEG. Это может повлиять на список приложений, который вы видите при щелчке правой кнопкой мыши по файлу в файловом менеджере.
+*   **Удаленные ассоциации** указывают, что приложения *не* поддерживают этот тип MIME. Например, `baz.desktop` не может открыть видео H.264.
+*   **Приложения по умолчанию** указывают, что приложения должны выбираться по умолчанию для открытия этого типа MIME. Например, изображения JPEG должны быть открыты с помощью `foo.desktop`. Это неявно добавляет связь между приложением и типом MIME. Если есть несколько приложений, они проверяются по порядку.
 
-Each section is optional and can be omitted if unneeded.
+Каждый раздел является необязательным и может быть опущен, если он не нужен.
 
 ### mailcap
 
-The [mailcap(4)](http://linux.die.net/man/4/mailcap) file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) to open non-text files. To have those programs use [xdg-open](#xdg-utils), edit `~/.mailcap`:
+Формат [mailcap(4)](http://linux.die.net/man/4/mailcap) используется почтовыми программами, такими как [mutt](https://www.archlinux.org/packages/?name=mutt) и [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) для открытия нетекстовых файлов. Чтобы эти программы использовали [xdg-open](#xdg-utils), отредактируйте `~/.mailcap`:
 
  `~/.mailcap` 
 ```
@@ -143,170 +137,173 @@ The [mailcap(4)](http://linux.die.net/man/4/mailcap) file format is used by mail
 
 ```
 
-**Warning:** If you use [run-mailcap](https://aur.archlinux.org/packages/run-mailcap/), it is possible for `xdg-open` to delegate to it. This will cause an infinite loop if you configured your `.mailcap` as described above.
+**Важно:** Если вы используете [run-mailcap](https://aur.archlinux.org/packages/run-mailcap/), для него может быть делегирован `xdg-open`. Это вызовет бесконечный цикл, если вы настроили свой `.mailcap`, как описано выше.
 
-## Utilities
+## Утилиты
 
-While it is possible to configure default applications and MIME types by directly editing [mimeapps.list](#XDG_standard) and the [#MIME database](#MIME_database), there are many tools that can simplify the process. These tools are also important because applications may delegate opening of files to these tools rather than trying to implement the MIME type standard themselves.
+Хотя можно настроить приложения по умолчанию и типы MIME путем прямого редактирования [#mimeapps.list](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG) и [#База данных MIME](#.D0.91.D0.B0.D0.B7.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_MIME), существует множество инструментов, которые могут упростить процесс. Эти инструменты также важны, поскольку приложения могут делегировать открытие файлов этими инструментами, а не пытаться реализовать стандарт типа MIME.
 
-If you use a [desktop environment](/index.php/Desktop_environment "Desktop environment") you should first check if it provides its own utility. That should be preferred over these alternatives.
+Если вы используете [окружения рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"), вы должны сначала проверить, предоставляет ли он свою собственную утилиту. Это должно быть предпочтительнее этих альтернатив.
 
 ### xdg-utils
 
-[xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) provides the official utilities for managing MIME types and default applications according to the [#XDG standard](#XDG_standard). Most importantly, it provides `/usr/bin/xdg-open` which many applications use to open a file with its default application. It is desktop-environment-independent in the sense that it attempts to use each environment's native default application tool and provides its own mechanism if no known environment is detected. Examples:
+[xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) предоставляет официальные утилиты для управления типами MIME и приложениями по умолчанию в соответствии со [стандартом XDG](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG). Самое главное, что предоставляет `/usr/bin/xdg-open`, который используют многие приложения, чтобы открыть файл с помощью приложения по умолчанию. Он не зависящий от окружения рабочего стола, в том смысле, что он пытается использовать собственный инструмент приложения по умолчанию для каждой среды и предоставляет свой собственный механизм, если неизвестная среда не обнаружена. Примеры:
 
 ```
-# determine a file's MIME type
+# определение типа MIME файла
 $ xdg-mime query filetype photo.jpeg
 image/jpeg
 
-# determine the default application for a MIME type
+# определение приложения по умолчанию для типа MIME
 $ xdg-mime query default image/jpeg
 gimp.desktop
 
-# change the default application for a MIME type
+# изменение приложения по умолчанию для типа MIME
 $ xdg-mime default feh.desktop image/jpeg
 
-# open a file with its default application
+# открытие файла со своим стандартным приложением
 $ xdg-open photo.jpeg
 
-# shortcut to open all web MIME types with a single application
+# ярлык для открытия всех веб-MIME-типов с помощью одного приложения
 $ xdg-settings set default-web-browser firefox.desktop
 
-# shortcut for setting the default application for a URL scheme
+# ярлык для установки приложения по умолчанию для схемы URL
 $ xdg-settings set default-url-scheme-handler irc xchat.desktop
 
 ```
 
-**Tip:** If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to work properly without a desktop environment, you will need to install [#perl-file-mimeinfo](#perl-file-mimeinfo) or another [xdg-open alternative](#xdg-open_alternatives).
+**Совет:** Если окружение рабочего стола не обнаружено, обнаружение типа MIME возвращается к использованию [file](https://www.archlinux.org/packages/?name=file) который—по иронии судьбы—не реализует стандарт XDG. Если вы хотите, чтобы [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) работал нормально без среды рабочего стола, вам необходимо установить [#perl-file-mimeinfo](#perl-file-mimeinfo) или одну из [альтернатив xdg-open](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D1.8B_xdg-open).
 
-### xdg-open alternatives
+### Альтернативы xdg-open
 
-Because of the complexity of the [#xdg-utils](#xdg-utils) version of `xdg-open`, it can be difficult to debug when the wrong default application is being opened. Because of this, there are many alternatives that attempt to improve upon it. Several of these alternatives replace the `/usr/bin/xdg-open` binary, thus changing the default application behavior of most applications. Others simply provide an alternative method of choosing default applications.
+Из-за сложности [#xdg-utils](#xdg-utils) версии `xdg-open` может быть сложно отлаживать, когда открывается неправильное приложение по умолчанию. Из-за этого существует множество альтернатив, которые пытаются улучшить его. Некоторые из этих альтернатив заменяют двоичный файл `/usr/bin/xdg-open`, тем самым изменяя поведение приложений по умолчанию для большинства приложений. Другие просто предоставляют альтернативный метод выбора приложений по умолчанию.
 
 #### perl-file-mimeinfo
 
-[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) provides the tools `mimeopen` and `mimetype`. These have a slightly nicer interface than their [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) equivalents:
+[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) предоставляет инструменты `mimeopen` и `mimetype`. Они имеют немного более приятный интерфейс, чем их эквиваленты [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils):
 
 ```
-# determine a file's MIME type
+# определение типа MIME файла
 $ mimetype photo.jpeg
 photo.jpeg: image/jpeg
 
-# choose the default application for this file
+# выбор приложения по умолчанию для этого файла
 $ mimeopen -d photo.jpeg
-Please choose an application
+Пожалуйста, выберите приложение
 
     1) Feh (feh)
     2) GNU Image Manipulation Program (gimp)
     3) Pinta (pinta)
 
-use application #
+```
 
-# open a file with its default application
+для использования приложения #
+
+```
+# открытие файла со своим стандартным приложением
 $ mimeopen -n photo.jpeg
 
 ```
 
-Most importantly, [#xdg-utils](#xdg-utils) apps will actually call `mimetype` instead of `file` for MIME type detection, if possible. This is important because `file` does not follow the [#XDG standard](#XDG_standard).
+Самое главное, что приложения [#xdg-utils](#xdg-utils) на самом деле вызывают `mimetype` вместо `file` для обнаружения типа MIME, если он не обнаруживает ваше [окружение рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"). Это важно, потому что `file` не следует за [стандартом XDG](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG).
 
-**Note:** But [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) does not *entirely* follow the [#XDG standard](#XDG_standard). For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
+**Примечание:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 не *полностью* соответствует [стандарту XDG](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG). Например, он не считывает [переопределения предоставляемые дистрибутивом по умолчанию](https://github.com/mbeijen/File-MimeInfo/issues/20) и сохраняет конфигурацию в [устаревших местах](https://github.com/mbeijen/File-MimeInfo/issues/8).
 
 #### mimeo
 
-[mimeo](https://aur.archlinux.org/packages/mimeo/) provides the tool `mimeo`, which unifies the functionality of `xdg-open` and `xdg-mime`.
+[mimeo](https://aur.archlinux.org/packages/mimeo/) предоставляет инструмент `mimeo` который объединяет функции `xdg-open` и `xdg-mime`.
 
 ```
-# determine a file's MIME type
+# определение типа MIME файла
 $ mimeo -m photo.jpeg
 photo.jpeg
   image/jpeg
 
-# choose the default application for this MIME type
+# выбор приложения по умолчанию для этого типа MIME
 $ mimeo --add image/jpeg feh.desktop
 
-# open a file with its default application
+# открытие файла со своим стандартным приложением
 $ mimeo photo.jpeg
 
 ```
 
-However a big difference with *xdg-utils* is that mimeo also supports custom "association files" that allow for more complex associations. For example, passing specific command line arguments based on a regular expression match:
+Однако большая разница с *xdg-utils* заключается в том, что mimeo также поддерживает пользовательские "файлы ассоциаций", которые допускают более сложные ассоциации. Например, передача определенных аргументов командной строки на основе регулярного выражения соответствует:
 
 ```
-# open youtube links in VLC without opening a new instance
+# открытие ссылки на YouTube в VLC, не открывая новый экземпляр
 vlc --one-instance --playlist-enqueue %U
   ^https?://(www.)?youtube.com/watch\?.*v=
 
 ```
 
-[xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) patches *xdg-utils* so that `xdg-open` falls back to mimeo if no desktop environment is detected.
+[xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) исправляет *xdg-utils* так что `xdg-open` возвращается в mimeo, если окружение рабочего стола не обнаружено.
 
 #### whippet
 
-[whippet](https://aur.archlinux.org/packages/whippet/) provides the tool `whippet`, which is similar to `xdg-open`. It has X11 integration by using [libnotify](https://www.archlinux.org/packages/?name=libnotify) to display errors and [dmenu](https://www.archlinux.org/packages/?name=dmenu) to display choices between applications to open.
+[whippet](https://aur.archlinux.org/packages/whippet/) предоставляет инструмент `whippet`, который похож на `xdg-open`. Он имеет интеграцию X11, используя [libnotify](https://www.archlinux.org/packages/?name=libnotify) для отображения ошибок и [dmenu](https://www.archlinux.org/packages/?name=dmenu) для отображения вариантов между открываемыми приложениями.
 
 ```
-# open a file with its default application
+# открытие файла со своим стандартным приложением
 $ whippet -M photo.jpeg
 
-# choose from all possible applications for opening a file (without setting a default)
+# выбор из всех возможных приложений для открытия файла (без установки значения по умолчанию)
 $ whippet -m photo.jpeg
 
 ```
 
-In addition to the standard [mimeapps.list](#XDG_standard), *whippet* can also use a SQlite database of weighted application/MIME type/regex associations to determine which app to use.
+В дополнение к стандарту [#mimeapps.list](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG), *whippet* также может использовать базу данных SQlite ассоциаций весового приложения MIME типа regex, чтобы определить, какое приложение использовать.
 
-#### Naive replacements
+#### Собственные замены
 
-The following packages replace [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) however they only provide an `xdg-open` script. These versions of `xdg-open` do not do any delegation to desktop-environment-specific tools and do not read/write the standard [mimeapps.list](#XDG_standard) config file (each has its own custom config), so they may not integrate well with other programs that manipulate default applications. However you may find them simpler to use if you do not use a desktop environment.
+Следующие пакеты заменяют [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), однако они предоставляют только сценарий `xdg-open`. Эти версии `xdg-open` не выполняют каких-либо делегирования для инструментов, ориентированных на окружение рабочего стола и не читают/не записывают стандартный файл [#mimeapps.list](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG) (каждый из них имеет свой собственный пользовательский конфиг), поэтому они не могут хорошо интегрироваться с другими программами, которые управляют приложениями по умолчанию. Однако вы можете найти их более простыми в использовании, если вы не используете окружение рабочего стола.
 
-**Warning:** If you need any `xdg-*` binaries from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) other than `xdg-open` you should not use these applications, since they do not provide them.
+**Важно:** Если вам нужны какие-либо `xdg-*` двоичные файлы из [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), отличные `xdg-open`, вы не должны использовать эти приложения, так как они не предоставляют их.
 
-| Package | Features |
-| [linopen](https://aur.archlinux.org/packages/linopen/) | Allows regex rules, can specify fallback file opener |
-| [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | Can change command arguments for each MIME type |
-| [busking-git](https://aur.archlinux.org/packages/busking-git/) | similar to *mimi* but also supports regex rules |
-| [sx-open](https://aur.archlinux.org/packages/sx-open/) | uses a simple shell-based config file |
+| Пакет | Особенности |
+| [linopen](https://aur.archlinux.org/packages/linopen/) | Разрешает правила регулярного выражения, может указывать резервный открыватель файлов |
+| [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | Может изменять аргументы команды для каждого типа MIME |
+| [busking-git](https://aur.archlinux.org/packages/busking-git/) | Аналогично *mimi* но также поддерживает правила регулярных выражений |
+| [sx-open](https://aur.archlinux.org/packages/sx-open/) | Использует простой конфигурационный файл на основе оболочки |
 
 ### lsdesktopf
 
-[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) provides several methods of searching the MIME database and desktop MIME entries.
+[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) предоставляет несколько способов поиска в базе данных MIME и записей MIME на рабочем столе.
 
-For example, to see all MIME extensions in the system's *.desktop* files that have MIME type `video` you can use `lsdesktopf --gm -gx video` or to search in the XML database files use `lsdesktopf --gdx -gx video`. To get a quick overview of how many and which *.desktop* files can be associated with a certain MIME type, use `lsdesktopf --gen-mimeapps`. To see all file name extensions in XML database files, use `lsdesktopf --gdx -gfx`.
+Например, чтобы увидеть все расширения MIME в файлах *.desktop* в системе, которые имеют тип MIME `video`, вы можете использовать `lsdesktopf --gm -gx video` или для поиска в файлах базы данных XML, используйте `lsdesktopf --gdx -gx video`. Чтобы получить краткий обзор того, сколько и какие файлы *.desktop* fмогут быть связаны с определенным типом MIME, используйте `lsdesktopf --gen-mimeapps`. Чтобы просмотреть все расширения имен файлов в файлах базы данных XML, используйте `lsdesktopf --gdx -gfx`.
 
-## Troubleshooting
+## Исправление проблем
 
-If a file is not being opened by your desired default application, there are several possible causes. You may need to check each case.
+Если файл не открывается вашим желаемым приложением по умолчанию, существует несколько возможных причин. Вам может потребоваться проверить каждый случай.
 
-### Missing .desktop file
+### Отсутствует файл .desktop
 
-A [desktop entry](/index.php/Desktop_entry "Desktop entry") is required in order to associate an application with a MIME type. Ensure that such an entry exists and can be used to (manually) open files in the application.
+Для связывания приложения с типом MIME требуется [ярлыки приложений](/index.php/Desktop_entry "Desktop entry"). Убедитесь, что такая запись существует и может использоваться для (вручную) открытия файлов в приложении.
 
-### Missing association
+### Отсутствует ассоциация
 
-If the application's desktop entry does not specify the MIME type under its `MimeType` key, it will not be considered when an application is needed to open that type. Edit [mimeapps.list](#XDG_standard) to add an association between the .desktop file and the MIME type.
+Если в ярлыке приложения не указан тип MIME под его ключом `MimeType`, он не будет учитываться, когда приложение необходимо для открытия этого типа. Измените [#mimeapps.list](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG), чтобы добавить связь между файлом .desktop и типом MIME.
 
-### Non-default application
+### Нет приложения по умолчанию
 
-If the desktop entry is associated with the MIME type, it may simply not be set as the default. Edit [mimeapps.list](#XDG_standard) to set the default association.
+Если ярлык приложения связан с типом MIME, его просто нельзя установить как значение по умолчанию. Измените [#mimeapps.list](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG), чтобы установить связь по умолчанию.
 
-### Nonstandard association
+### Нестандартная ассоциация
 
-Applications are free to ignore or only partially implement the [#XDG standard](#XDG_standard). Check for usage of deprecated files such as `~/.local/share/applications/mimeapps.list` and `~/.local/share/applications/defaults.list`. If you are attempting to open the file from another application (e.g. a web browser or file manager) check if that application has its own method of selecting default applications.
+Приложения могут игнорировать или частично реализовывать [стандарт XDG](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82_XDG). Проверьте использование устаревших файлов, таких как `~/.local/share/applications/mimeapps.list` и `~/.local/share/applications/defaults.list`. Если вы пытаетесь открыть файл из другого приложения (например, веб-браузера или файлового менеджера), проверьте, имеет ли это приложение собственный способ выбора приложений по умолчанию.
 
-### Variables in .desktop files that affect application launch
+### Переменные в файлах .desktop, которые влияют на запуск приложения
 
-Desktop environments and file managers supporting the specifications launch programs according to definition in the *.desktop* files. See [Desktop entries#Application entry](/index.php/Desktop_entries#Application_entry "Desktop entries").
+Окружения рабочего стола и файловые менеджеры, поддерживающие программы запуска спецификаций в соответствии с определением в файлах *.desktop*. Смотрите [Ярлыки приложений](/index.php/Desktop_entries#Application_entry "Desktop entries").
 
-Usually, configuration of the packaged *.desktop* files is not required, but it may not be bug-free. Even if an application containing necessary MIME type description in the *.desktop* file `MimeType` variable that is used for association, it can fail to start correctly, not start at all or start without opening a file.
+Как правило, конфигурация упакованных файлов *.desktop* не требуется, но может не быть без ошибок. Даже если приложение, содержащее необходимое описание типа MIME в файле *.desktop* `MimeType`, которая используется для ассоциации, может не запускаться правильно, не запускаться вообще или запускаться без открытия файла.
 
-This may happen, for example, if the `Exec` variable is missing internal options needed for how to open a file, or how the application is shown in the menu. The `Exec` variable usually begins with `%`; for its currently supported options, see [exec-variables](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables).
+Это может произойти, например, если в переменной `Exec` отсутствуют внутренние параметры, необходимые для открытия файла или того, как приложение отображается в меню. Переменная `Exec` обычно начинается с `%`; для поддерживаемых в настоящее время параметров смотрите [exec-переменные](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables).
 
-The following table lists the main variable entries of *.desktop* files that affect how an application starts, if it has a MIME type associated with it.
+В следующей таблице перечислены основные записи переменных файлов *.desktop* которые влияют на запуск приложения, если у него есть тип MIME, связанный с ним.
 
-| Variable names | Example 1 content | Example 2 content | Description |
-| DBusActivatable | DBusActivatable=true | DBusActivatable=false | Application interact with [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/).
-See also configuration: [D-Bus](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus). |
-| MimeType | MimeType=application/vnd.oasis.opendocument.text | MimeType=application/vnd.sun.xml.math | List of MIME types supported by application |
-| StartupWMClass | StartupWMClass=google-chrome | StartupWMClass=xpad | Associate windows with the owning application |
-| Terminal | Terminal=true | Terminal=false | Start in default terminal |
+| Имена переменных | Пример 1 | Пример 2 | Описание |
+| DBusActivatable | DBusActivatable=true | DBusActivatable=false | Приложение взаимодействует с [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/).
+Смотрите также настройки: [D-Bus](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus). |
+| MimeType | MimeType=application/vnd.oasis.opendocument.text | MimeType=application/vnd.sun.xml.math | Список типов MIME, поддерживаемых приложением |
+| StartupWMClass | StartupWMClass=google-chrome | StartupWMClass=xpad | Связывает окна с владельцем приложения |
+| Terminal | Terminal=true | Terminal=false | Запуск в терминале по умолчанию |

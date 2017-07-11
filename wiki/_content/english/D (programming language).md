@@ -54,7 +54,7 @@ which will simply compile and run without leaving any object files in the direct
 
 ## Considerations
 
-There are however possible choices regarding the compiler you choose. The standard (reference one) is dmd, but [gdc](https://www.archlinux.org/packages/?name=gdc) (GNU D Compiler) and [ldc](https://www.archlinux.org/packages/?name=ldc) (LLVM D Compiler) are also popular. Those are also in [community].
+There are however possible choices regarding the compiler you choose. The standard (reference one) is dmd, but [gdc](https://aur.archlinux.org/packages/gdc/) (GNU D Compiler) and [ldc](https://www.archlinux.org/packages/?name=ldc) (LLVM D Compiler) are also popular. Those are also in [community].
 
 The main difference is that the dmd's back end is not FOSS (licensed from Symantec), while the others compilers are completely FOSS. All 3 compilers share same front-end code and thus have almost identical support for language features (assuming same front-end version).
 
@@ -74,7 +74,7 @@ collect2: error: ld returned 1 exit status
 There are few possible workarounds:
 
 *   uninstall [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper)
-*   use [gdc](https://www.archlinux.org/packages/?name=gdc) compiler which is compiled with PIC support
+*   use [gdc](https://aur.archlinux.org/packages/gdc/) compiler which is compiled with PIC support
 
 ```
 gdc app.d 

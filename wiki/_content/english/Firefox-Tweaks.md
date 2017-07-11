@@ -103,9 +103,11 @@ To confirm the default Azure backend go to `about:support` and under the "Graphi
 
 #### Enable Accelerated Azure Canvas
 
-Go to `about:config`, accept the warning, right click and create a new boolean value. Set the name as `gfx.canvas.azure.accelerated` and set it to true.
+**Warning:** Accelerated Azure Canvas may cause invalid/corrupt rendering of images on unsupported devices and/or drivers, see [#Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29).
 
-To verify restart firefox then go to `about:support` and search for AzureCanvasAccelerated which should be set to 1.
+Go to `about:config`, accept the warning, right click and create a new boolean value. Set the name as `gfx.canvas.azure.accelerated` and set it to *true*.
+
+To verify restart Firefox then go to `about:support` and search for `AzureCanvasAccelerated` which should be set to *1*.
 
 #### Stop urlclassifier3.sqlite from being created again
 

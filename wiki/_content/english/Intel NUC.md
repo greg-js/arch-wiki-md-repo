@@ -11,6 +11,7 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
     *   [1.3 Wireless](#Wireless)
 *   [2 Performance](#Performance)
     *   [2.1 Boot](#Boot)
+    *   [2.2 4K](#4K)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Audio plug](#Audio_plug)
     *   [3.2 TPM](#TPM)
@@ -48,6 +49,10 @@ Most NUC wireless adapters should work out of the box. Make sure relevant firmwa
 ### Boot
 
 Fastest boot times are achieved with [UEFI](/index.php/UEFI "UEFI") boot and disabling legacy boot in the BIOS settings.
+
+### 4K
+
+If you want to use 4K graphic output, open the BIOS settings and set *Devices and Peripherals* -> *Video* -> *IGD Minimum Memory* to 512 MB and *IGD Aperture Size* to 1024 MB.
 
 ## Troubleshooting
 

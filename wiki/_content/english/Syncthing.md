@@ -71,9 +71,15 @@ Next, you can either change the configuration of the default node (click its nam
 
 ### Use inotify
 
-[Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") the syncthing service (user or system) for changes to take effect.
+**Note:** There is no need to [enable](/index.php/Enable "Enable") the `syncthing-inotify` service when using the `syncthing` service.
+
+[Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") the `syncthing` [service](/index.php?title=Service&action=edit&redlink=1 "Service (page does not exist)") for changes to take effect.
 
 Alternatively, *inotify* support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case *inotify* will only work while the GUI is running.
+
+Increase the default `fs.inotify.max_user_watches` value to prevent errors like *Too many open files*, by [appending](/index.php/Append "Append") the following line:
+
+ `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
 
 ### Run a Relay
 

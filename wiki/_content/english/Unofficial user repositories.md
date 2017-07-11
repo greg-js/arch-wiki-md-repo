@@ -142,9 +142,9 @@ Server = https://mirror.archstrike.org/$arch/$repo
 *   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
 *   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
-*   **Key-ID:** 436BB513
+*   **Key-ID:** [53065C70](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xDD4D0AEFDDAF29CCE3B5865D30C4A2E653065C70)
 
-**Note:** I mantain 'any', 'i686' and 'x86_64' repos. Each of them includes packages from 'any'. $arch can be replaced with any of the three
+**Note:** I maintain **any** and **x86_64** repos. **x86_64** includes packages from **any**. **$arch** can be overridden by both.
 
 ```
 [ivasilev]
@@ -353,7 +353,9 @@ Server = http://repo.herecura.be/$repo/$arch
 *   **Maintainer:** [Ianis G. Vasilev](https://ivasilev.net)
 *   **Description:** A variety of packages, mostly my own software and AUR builds.
 *   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
-*   **Key-ID:** 436BB513
+*   **Key-ID:** [53065C70](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xDD4D0AEFDDAF29CCE3B5865D30C4A2E653065C70)
+
+**Note:** I maintain **any** and **x86_64** repos. **x86_64** includes packages from **any**. **$arch** can be overridden by both.
 
 ```
 [ivasilev]

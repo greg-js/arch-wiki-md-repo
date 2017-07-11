@@ -210,6 +210,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [97.1 Locale settings](#Locale_settings)
     *   [97.2 Unity 5 sound problems](#Unity_5_sound_problems)
     *   [97.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [97.4 Missing Chinese/Japanese/Korea fonts](#Missing_Chinese.2FJapanese.2FKorea_fonts)
 *   [98 Unrest](#Unrest)
 *   [99 War Thunder](#War_Thunder)
     *   [99.1 No audio](#No_audio_6)
@@ -1139,12 +1140,12 @@ When the game starts with a resolution so low that you cannot reach the game set
 
 ### Missing non Latin font
 
-Portal and Portal2 use Nimbus Sans, add the following lines to `~/.config/fontconfig/fonts.conf`:
+Portal and Portal2 use Helvetica, add the following lines to `~/.config/fontconfig/fonts.conf`:
 
 ```
 <match target="pattern">
     <test qual="any" name="family">
-        <string>Nimbus Sans</string>
+        <string>Helvetica</string>
     </test>
     <edit name="family" mode="assign" binding="same">
         <string>Source Han Sans CN</string>
@@ -1607,6 +1608,14 @@ Some of the affected games: *Cities: Skylines*, *Tablestop Simulator*, *Assault 
 
 Be aware that some games do not support setting that parameter, it will simply be ignored. This is the case for *Pillars of Eternity*, *Kentucky Route Zero*, *Sunless Sea*.
 
+### Missing Chinese/Japanese/Korea fonts
+
+It is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[9]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
+
+Ask the developer to rebuild the game.
+
+Some of the affected games: *Cities: Skylines*,*Streets of Rogue*,*Beholder*.
+
 ## Unrest
 
 Requires [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
@@ -1619,7 +1628,7 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 
 ### Blank screen
 
-If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Launch_option "Launch option"). [[9]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[10]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Launch_option "Launch option"). [[10]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[11]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Warhammer 40,000: Dawn of War II
 

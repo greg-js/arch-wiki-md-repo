@@ -142,26 +142,14 @@ WantedBy=default.target
 
 ```
 
-You need to enable the unit so that it gets started on every boot (note - DO *NOT* run these commands as root - we want them for our user, not for the root user):
+You need to start and enable the unit so that it gets started on every boot (note - DO *NOT* run this as root - we want them for our user, not for the root user):
 
 ```
-$ systemctl --user enable emacs
-
-```
-
-To actually use the unit, either reboot or start the unit manually:
-
-```
-$ systemctl --user start emacs
+$ systemctl --user enable --now emacs
 
 ```
 
-Unfortunately, systemd user units are not run from a login shell and do not inherit its environment. This means private bin directories or settings like python's WORKON_HOME (normally done in ~/.profile) will be missing. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for some suggestions on dealing with that. A simpler hack is just to alter your ExecStart line to run emacs --daemon in a bash login shell.
-
-```
-ExecStart=/bin/bash -l -c '/usr/bin/emacs --daemon'
-
-```
+Note that systemd user units do not inherit environment variables from a login shell (like `~/.bash_profile`), so you may want to set the variables in `~/.pam_environment` instead. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for more information.
 
 ## Usage
 

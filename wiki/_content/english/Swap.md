@@ -171,7 +171,7 @@ Finally remove the relevant entry from `/etc/fstab`.
 
 #### systemd-swap
 
-[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Uncomment the lines containing `swapf` in the swap file section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
+[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfu_enabled=1` in the *Swap File Universal* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
 
 ## Swap with USB device
 

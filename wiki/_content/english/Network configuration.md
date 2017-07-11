@@ -248,8 +248,6 @@ To check the result for the interface `eth0`:
 
 See [#Network managers](#Network_managers) for a list of options in setting a dynamic IP address.
 
-Alternatively, [install](/index.php/Install "Install") the [dhclient](https://www.archlinux.org/packages/?name=dhclient) package, which is the Internet Systems Consortium DHCP client. Then, [enable](/index.php/Enable "Enable") the `dhclient@*interface*.service`, where `*interface*` is a wired [device name](#Device_names). See dhclient(8) and dhclient.conf(5) for details.
-
 ### Static IP address
 
 A static IP address can be configured with most standard [network managers](#Network_managers). Independently of the tool you choose, you will probably need to be prepared with the following information:

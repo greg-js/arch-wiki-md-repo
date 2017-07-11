@@ -132,7 +132,7 @@ set my_name = "John Doe"
 
 #### Native IMAP support
 
-The [mutt](https://www.archlinux.org/packages/?name=mutt) package is compiled with IMAP support. At the very least you need to have 4 lines in your muttrc file to be able to access your mail.
+The [mutt](https://www.archlinux.org/packages/?name=mutt) package is compiled with IMAP support. At the very least you need to have four lines in your muttrc file to be able to access your mail.
 
 ##### imap_user
 
@@ -190,7 +190,7 @@ set spoolfile=+INBOX
 
 ##### mailboxes
 
-Any imap folders that should be checked regularly for new mail should be listed here:
+Any IMAP folders that should be checked regularly for new mail should be listed here:
 
 ```
 mailboxes =INBOX =family
@@ -232,10 +232,10 @@ set message_cachedir = "~/.cache/mutt"
 # Specify where to save and/or look for postponed messages.
 set postponed = +[Gmail]/Drafts
 
-# Allow Mutt to open new imap connection automatically.
+# Allow Mutt to open a new IMAP connection automatically.
 unset imap_passive
 
-# Keep IMAP connection alive by polling intermittently (time in seconds).
+# Keep the IMAP connection alive by polling intermittently (time in seconds).
 set imap_keepalive = 300
 
 # How often to check for new mail (time in seconds).

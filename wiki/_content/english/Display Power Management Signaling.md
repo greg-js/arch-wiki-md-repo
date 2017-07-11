@@ -72,6 +72,8 @@ Example commands:
 | xset dpms force standby | Standby screen |
 | xset dpms force suspend | Suspend screen |
 
+**Note:** `dpms 0 0 0`, which sets all the DPMS timeouts to zero, could be a better way to "disable" DPMS, since the effect of `-dpms` would be reverted when, for example, turning off the screen with `xset dpms force off`.
+
 To query the current settings:
 
  `$ xset q` 

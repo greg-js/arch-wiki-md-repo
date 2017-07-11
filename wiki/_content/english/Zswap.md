@@ -27,7 +27,7 @@ zswap.enabled=1
 
 ```
 
-**Tip:** You can use the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package to enable and [configure](#Customizing_zswap) zswap.
+**Tip:** You can use the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package to enable zswap. [Configure zswap](#Customizing_zswap) in `/etc/systemd/swap.conf`.
 
 ## Customizing zswap
 

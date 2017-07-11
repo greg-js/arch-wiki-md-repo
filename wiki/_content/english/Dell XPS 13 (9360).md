@@ -320,6 +320,31 @@ You may also run the equivalent command:
 
 ```
 
+PulseAudio will rewrite these ALSA settings. So if you use PulseAudio you should change its config to make them permanent:
+
+```
+   # vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf
+
+   [Element Headphone Mic Boost]
+   required-any = any
+   switch = select
+   # Replace "volume = merge" by:
+   volume = 1
+   override-map.1 = all
+   override-map.2 = all-left,all-right
+
+```
+
+```
+   # vi /usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf
+
+   [Element Headphone Mic Boost]
+   switch = off
+   # Replace "volume = off" by:
+   volume = 1
+
+```
+
 ## See Also
 
 *   [Arch Forum thread for Dell XPS 13 (9360)](https://bbs.archlinux.org/viewtopic.php?id=217865)

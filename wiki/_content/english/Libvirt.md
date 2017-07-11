@@ -34,6 +34,7 @@ Some of the major libvirt features are:
         *   [4.4.2 Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager)
         *   [4.4.3 Manage a domain](#Manage_a_domain)
     *   [4.5 Networks](#Networks)
+        *   [4.5.1 IPv6](#IPv6)
     *   [4.6 Snapshots](#Snapshots)
         *   [4.6.1 Create a snapshot](#Create_a_snapshot)
     *   [4.7 Other management](#Other_management)
@@ -435,7 +436,7 @@ $ virsh edit *domain*
 
 A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
 
-By default, when the `libvirtd` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (warning see: [#"default" network bug](#.22default.22_network_bug)). For other network connectivity needs, four network types exist that can be created to connect a domain to:
+By default, when the `libvirtd` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (IPv4-only). For other network connectivity needs, four network types exist that can be created to connect a domain to:
 
 *   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has *static* networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficking, and the domain is running on a *system*-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
 *   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has *dynamic* networking (e.g. NetworkManager), or using wireless.
@@ -445,6 +446,19 @@ By default, when the `libvirtd` systemd service is started, a NAT bridge is crea
 `virsh` has the ability to create networking with numerous options for most users, however, it is easier to create network connectivity with a graphic user interface (like `virt-manager`), or to do so on [creation with virt-install](#Create_a_new_domain_using_virt-install).
 
 **Note:** libvirt handles DHCP and DNS with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), launching a separate instance for every virtual network. It also adds iptables rules for proper routing, and enables the `ip_forward` kernel parameter. This also means that having dnsmasq running on the host system is not necessary to support libvirt requirements (and could interfere with libvirt dnsmasq instances).
+
+#### IPv6
+
+When adding an IPv6 address though any of the configuration tools, you will likely receive the following error:
+
+```
+Check the host setup: enabling IPv6 forwarding with RA routes without accept_ra set to 2 is likely to cause routes loss. Interfaces to look at: *eth0*
+
+```
+
+Fix this by creating the following file (replace `*eth0*` with the name of your physical interface). Reboot your machine afterwards.
+
+ `/etc/sysctl.d/libvirt-bridge.conf`  `net.ipv6.conf.eth0.accept_ra = 2` 
 
 ### Snapshots
 

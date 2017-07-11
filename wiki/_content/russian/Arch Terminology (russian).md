@@ -116,9 +116,7 @@ AUR находится здесь [здесь](https://aur.archlinux.org).
 
 ## initrd
 
-The special file `/dev/initrd` is a read-only block device. Device `/dev/initrd` is a RAM disk that is initialized (e.g. loaded) by the boot loader before the kernel is started. The kernel then can use the block device `/dev/initrd`'s contents for a two phased system boot-up.
-
-In the first boot-up phase, the kernel starts up and mounts an initial root file-system from the contents of `/dev/initrd` (e.g. RAM disk initialized by the boot loader). In the second phase, additional drivers or other modules are loaded from the initial root device's contents. After loading the additional modules, a new root file system (i.e. the normal root file system) is mounted from a different device.
+Устарело. В настоящее время используется как синоним initramfs
 
 ## makepkg
 

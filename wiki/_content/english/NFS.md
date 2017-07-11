@@ -132,7 +132,7 @@ Even though idmapd may be running, it may not be fully enabled. Verify by checki
 Set this to survive reboots by adding an option to the nfs kernel module:
 
 ```
-# echo "options nfs nfs4_disable_idmapping=0" | sudo tee -a /etc/modprobe.d/nfs.conf
+# echo "options nfsd nfs4_disable_idmapping=0" | sudo tee -a /etc/modprobe.d/nfs.conf
 
 ```
 

@@ -23,7 +23,7 @@ For a standalone version install [evince-no-gnome](https://aur.archlinux.org/pac
 
 ### Printer does not show up
 
-Simply install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends).
+See [GTK+#Printers not shown in the GTK print dialog](/index.php/GTK%2B#Printers_not_shown_in_the_GTK_print_dialog "GTK+").
 
 ### Zoom-in is limited
 

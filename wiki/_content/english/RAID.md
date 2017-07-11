@@ -164,14 +164,14 @@ Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [offici
 If the device is being reused or re-purposed from an existing array, erase any old RAID configuration information:
 
 ```
-# mdadm --zero-superblock /dev/<drive>
+# mdadm --misc --zero-superblock /dev/<drive>
 
 ```
 
 or if a particular partition on a drive is to be deleted:
 
 ```
-# mdadm --zero-superblock /dev/<partition>
+# mdadm --misc --zero-superblock /dev/<partition>
 
 ```
 

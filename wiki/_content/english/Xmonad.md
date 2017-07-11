@@ -46,7 +46,7 @@ For more information, please visit the xmonad website: [http://xmonad.org/](http
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package which provides a very basic configuration, ideally install [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) for tiling algorithms, configurations, scripts, etc.
+[Install](/index.php/Install "Install") the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package which provides a very basic configuration, ideally also install [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) for most notably a more useful desktop configuration as well as additional tiling algorithms, configurations, scripts, etc.
 
 Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/).
 
@@ -156,9 +156,7 @@ It can be added like so:
 import XMonad
 import XMonad.Config.Desktop
 
-baseConfig = desktopConfig
-
-main = xmonad baseConfig
+main = xmonad desktopConfig
     { terminal    = "urxvt"
     , modMask     = mod4Mask
     }

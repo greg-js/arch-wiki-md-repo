@@ -335,7 +335,7 @@ main = do
 
 **IronPython**
 
-*   Dependencies: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3), [ironpython](https://www.archlinux.org/packages/?name=ironpython)
+*   Dependencies: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3), [ironpython](https://aur.archlinux.org/packages/ironpython/)
 *   Run with: `ipy hello_world.py`
 
  `hello_world.py` 

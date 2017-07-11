@@ -1,4 +1,4 @@
-**CDM** is a minimalistic, yet full-featured replacement for login-managers like [SLiM](/index.php/SLiM "SLiM"), [KDM](/index.php/KDM "KDM"), [GDM](/index.php/GDM "GDM") and [qingy](/index.php/Qingy "Qingy") that provides a fast, dialog-based login system without the overhead of the X Window System or the instability of qingy. Written in pure bash, CDM has almost no dependencies, yet supports multiple users/sessions and can start virtually any DE/WM.
+**CDM** is a minimalistic, yet full-featured replacement for login-managers like [SLiM](/index.php/SLiM "SLiM"), [KDM](/index.php/KDM "KDM") and [GDM](/index.php/GDM "GDM") that provides a fast, dialog-based login system without the overhead of the X Window System. Written in pure bash, CDM has almost no dependencies, yet supports multiple users/sessions and can start virtually any DE/WM.
 
 ## Contents
 
@@ -23,7 +23,7 @@ For example, if you were using the Gnome Display Manager, you would stop it from
 
 ```
 
-There is no need to enable a systemd service for CDM. Rather, a script called zzz-cdm.sh will be placed into `/etc/profile.d`. This script (along with the rest of the scripts in /etc/profile.d) is run when you login to a login shell. However, in order to prevent a scenario where a broken configuration prevents a user from accessing both their desktop and a virtual terminal, the script checks to see which virtual terminal it is being run on, and will by default only run on tty1.
+There is no need to enable a systemd service for CDM. Rather, a script called `zzz-cdm.sh` will be placed into `/etc/profile.d`. This script (along with the rest of the scripts in `/etc/profile.d`) is run when you login to a login shell. However, in order to prevent a scenario where a broken configuration prevents a user from accessing both their desktop and a virtual terminal, the script checks to see which virtual terminal it is being run on, and will by default only run on tty1.
 
 Since the script is placed in the global `/etc/profile.d` directory, CDM will be run for all users who login on tty1\. If you would rather it only run for you, take away executable permissions from `/etc/profile.d/zzz-cdm.sh` and copy the contents of that file into your `~/.bash_profile` for bash, or `~/.zprofile` for zsh.
 
@@ -72,4 +72,3 @@ If you want to add entries for power operations, like shutdown, reboot etc., you
 
 *   [The Console Display Manager](https://bbs.archlinux.org/viewtopic.php?id=84408) - Archlinux Forums thread about CDM
 *   [GitHub page](https://github.com/ghost1227/cdm)
-*   [GitHub page of an updated fork](https://github.com/pale3/cdm)

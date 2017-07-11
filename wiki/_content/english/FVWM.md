@@ -1,4 +1,4 @@
-[FVWM](http://fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[1]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
+[FVWM](http://fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[2]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
 
 ## Contents
 
@@ -95,7 +95,7 @@ As of version 2.6.7, FVWM ships with a new default configuration, located in `/u
 
 ### The virtual desktop
 
-For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[2]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
+For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[3]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
 
 Pages in FVWM are arranged in a grid. The number of pages used can be defined with the `DesktopSize` command. For instance, adding `DesktopSize 3x3` to your configuration file will give you 9 pages, arranged in a 3x3 grid. Pages can be navigated using the [pager module](#FvwmPager) or with the `GoToPage` command which could be mapped to a keyboard shortcut or menu entry. For instance, the command `GoToPage -1p +0p` will move the viewport 1 page to the left of the current page.
 
@@ -260,7 +260,7 @@ AddToFunc MyFunc
 
 ### Modules
 
-**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[3]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7)
+**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[4]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7)
 
 Modules are separate programs, spawned by FVWM that can add extra functionality. Modules can be spawned using the following syntax: `Module *ModuleName* (*identifier*) *ModuleArgs*`.
 

@@ -247,9 +247,9 @@ VirtualBox использует `ifconfig` и `route`, чтобы назначи
 
 ### Установка Arch Linux в виртуальную машину
 
-**Примечание:** Хостам с ОС Windows возможно придется отключить Hyper-V для того, чтобы использовать возможности виртуализации устройств и создания 64-битных виртуальных машин в VirtualBox. Чтобы узнать, как отключить или снова включить Hyper-V [посмотрите пост на StackOverflow](http://superuser.com/questions/684966/switch-off-hyper-v-without-disable-functionality-in-windows-8-1).
+**Примечание:** Хостам с ОС Windows, возможно, придется отключить Hyper-V для того, чтобы использовать возможности виртуализации устройств и создания 64-битных виртуальных машин в VirtualBox. Чтобы узнать, как отключить или снова включить Hyper-V, [посмотрите пост на StackOverflow](http://superuser.com/questions/684966/switch-off-hyper-v-without-disable-functionality-in-windows-8-1).
 
-Загрузите установочный носитель Arch через один из виртуальных дисков виртуальной машины. Затем совершите установку базовой системы Arch, как описано в [руководстве для начинающих](/index.php/Beginners%27_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Beginners' guide (Русский)") или [руководстве по установке](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Installation guide (Русский)"), без установки графических драйверов: мы будем устанавливать драйвера, поставляемые VirtualBox на следующем этапе.
+Загрузите установочный носитель Arch через один из виртуальных дисков виртуальной машины. Затем совершите установку базовой системы Arch, как описано в [руководстве по установке](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Installation guide (Русский)"), без установки графических драйверов: мы будем устанавливать драйвера, поставляемые VirtualBox на следующем этапе.
 
 #### Установка в режиме EFI
 
@@ -1054,15 +1054,15 @@ $ VBoxManage storageattach machineA --storagectl "SATA Controller" --port 0 --de
 
 **Важно:**
 
-*   Для BIOS и MBR дисков, не устанавливайте загрузчик внутри виртуальной машины - он не будет работать, так как MBR не связан с MBR вашей реальной машины и виртуальный диск только отображается в реальном разделе без MBR.
-*   Для UEFI систем без [CSM](https://en.wikipedia.org/wiki/Compatibility_Support_Module#CSM "wikipedia:Compatibility Support Module") и GPT дискf, установка не будет работать вообще, так как:
+*   Для BIOS и MBR дисков: не устанавливайте загрузчик внутри виртуальной машины - он не будет работать, так как MBR не связан с MBR вашей реальной машины, и виртуальный диск отображается только в реальном разделе без MBR
+*   Для UEFI систем без [CSM](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#Compatibility_Support_Module "wikipedia:Unified Extensible Firmware Interface") и GPT дискa установка не будет работать вообще, так как:
 
-*   [ESP](https://en.wikipedia.org/wiki/EFI_System_partition для более подробной информации);
-*   и efivars, если вы устанавливаете Arch Linux используя режим EFI через VirtualBox, не загрузит ни одну из ваших реальных систем: записи Bootmanager не смогут быть зарегистрированы.
+*   [ESP](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") не отображается на виртуальный диск и Arch Linux требует, чтобы ядро Linux было на нём, чтобы загрузиться в качестве приложения EFI (смотрите статью [EFISTUB (Русский)](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)"))
+*   и efivars, если вы устанавливаете Arch Linux через VirtualBox, используя режим EFI, не загрузит ни одну из ваших реальных систем: записи Bootmanager не смогут быть зарегистрированы
 
-*   Вот почему рекомендуется создавать разделы в родной установке. В противном случае разделы, не будут приниматься во внимание в MBR / GPT таблице разделов.
+*   Вот почему рекомендуется создавать разделы в родной установке. В противном случае разделы не будут приниматься во внимание в MBR / GPT таблице разделов
 
-После завершения установки, загрузите компьютер сперва с установочного носителя GNU/Linux (будь то Arch Linux или нет), [chroot](/index.php/Beginners%27_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#chroot_.D0.B8_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D0.B7.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B "Beginners' guide (Русский)") в установленной Arch Linux и [установите](/index.php/Beginners%27_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA.D0.B0 "Beginners' guide (Русский)") и настройте загрузчик.
+После завершения установки загрузите компьютер сперва с установочного носителя GNU/Linux (будь то Arch Linux или нет), выполните [chroot](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Chroot "Installation guide (Русский)") в установленной Arch Linux и установите и настройте [загрузчик](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA "Installation guide (Русский)").
 
 ### Перемещение физически установленного Windows в виртуальную машину
 

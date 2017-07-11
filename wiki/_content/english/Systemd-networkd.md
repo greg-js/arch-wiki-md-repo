@@ -97,7 +97,7 @@ Gateway=10.1.10.1
 
 ```
 
-You may specify multiple IP addresses. Add an IPv6 address with another `Address=` line. See the `systemd.network(5)` man page for more network options such as specifying DNS servers and a broadcast address.
+`Address=` can be used more than once to configure multiple IPv4 or IPv6 addresses. See [#network files](#network_files) or [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) for more options.
 
 #### Wireless adapter
 

@@ -163,7 +163,7 @@ If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)
 If Wine applications are not showing easily readable fonts, you may not have any fonts installed. To easily link all of the system fonts so they are accessible from wine:
 
 ```
- cd ~/.wine/drive_c/windows/Fonts && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i" ; done
+ cd ${WINEPREFIX:-~/.wine}/drive_c/windows/Fonts && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i" ; done
 
 ```
 

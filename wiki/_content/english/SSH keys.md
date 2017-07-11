@@ -360,7 +360,7 @@ WantedBy=*default*.target
 
 ```
 
-Add `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"` to your shell's startup file, for example `.bash_profile` for [Bash](/index.php/Bash "Bash"). Then [enable](/index.php/Enable "Enable") or [start](/index.php/Start "Start") the service.
+Add `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` to `~/.pam_environment`. Then [enable](/index.php/Enable "Enable") or [start](/index.php/Start "Start") the service.
 
 #### ssh-agent as a wrapper program
 

@@ -32,6 +32,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [5.6 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
     *   [5.7 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
     *   [5.8 OpenRC fails to start MySQL](#OpenRC_fails_to_start_MySQL)
+    *   [5.9 Specified key was too long; max key length is 767 bytes](#Specified_key_was_too_long.3B_max_key_length_is_767_bytes)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -516,6 +517,49 @@ You should now be able to start MySQL using:
 
 ```
 # rc-service mysql start
+
+```
+
+### Specified key was too long; max key length is 767 bytes
+
+This may happen because of the character limit that is in use [[3]](http://mechanics.flite.com/blog/2014/07/29/using-innodb-large-prefix-to-avoid-error-1071/) [[4]](https://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_large_prefix) [[5]](https://easyengine.io/tutorials/mysql/enable-innodb-file-per-table/).
+
+Execute the following commands to allow long in InnoDB indexes before importing data:
+
+```
+mysql> set global innodb_file_format = BARRACUDA;
+Query OK, 0 rows affected (0.00 sec)
+
+```
+
+```
+mysql> set global innodb_large_prefix = ON;
+Query OK, 0 rows affected (0.00 sec)
+
+```
+
+Add the following lines in `/etc/mysql/my.cfg` to always allow long index formats:
+
+```
+[mysqld]
+innodb_file_per_table = 1
+innodb_file_format = barracuda
+
+```
+
+[Restart](/index.php/Restart "Restart") `mysqld` to apply the changes.
+
+On table creating append the `ROW_FORMAT` as seen in the example:
+
+```
+mysql> create table if not exists utf8_test (
+   ->   day date not null,
+   ->   product_id int not null,
+   ->   dimension1 varchar(500) character set utf8 collate utf8_bin not null,
+   ->   dimension2 varchar(500) character set utf8 collate utf8_bin not null,
+   ->   unique index unique_index (day, product_id, dimension1, dimension2)
+   -> ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+Query OK, 0 rows affected (0.02 sec)
 
 ```
 

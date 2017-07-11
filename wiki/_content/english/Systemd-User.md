@@ -86,6 +86,8 @@ systemctl --user import-environment PATH
 
 ```
 
+Note that this will not affect systemd services started before `~/.bash_profile` is sourced.
+
 #### pam_environment
 
 Environment variables can be made available through use of the `pam_env.so` module. Create the file `~/.pam_environment`, for example:

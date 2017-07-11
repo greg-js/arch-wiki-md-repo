@@ -261,9 +261,10 @@ To allow remote SSH connections (on port 22):
 
 ```
 
-To accept incoming UDP streams on port 53 for a DNS server:
+To accept incoming TCP/UDP requests for a DNS server (port 53):
 
 ```
+# iptables -A TCP -p tcp --dport 53 -j ACCEPT
 # iptables -A UDP -p udp --dport 53 -j ACCEPT
 
 ```

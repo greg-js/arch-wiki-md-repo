@@ -178,7 +178,7 @@ Another option is in NetworkManagers' settings (usually by right-clicking the ap
 
 ### Test
 
-To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*drill* is part of the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package):
+To do a lookup speed test choose a website that has not been visited since dnsmasq has been started (*drill* is part of the [ldns](https://www.archlinux.org/packages/?name=ldns) package):
 
 ```
 $ drill archlinux.org | grep "Query time"

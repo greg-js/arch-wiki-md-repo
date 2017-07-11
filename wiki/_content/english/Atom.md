@@ -8,6 +8,7 @@
     *   [3.1 Environment variables not sourced](#Environment_variables_not_sourced)
     *   [3.2 Unable to delete files](#Unable_to_delete_files)
     *   [3.3 Black window content on startup](#Black_window_content_on_startup)
+    *   [3.4 Spell Checker not working](#Spell_Checker_not_working)
 
 ## Installation
 
@@ -63,3 +64,7 @@ At the time of writing, [Electron](/index.php/Electron "Electron") supports `kio
 ### Black window content on startup
 
 With some video devices, such as the one for [VirtualBox](/index.php/VirtualBox "VirtualBox") guests, Atom wont render the window content without GPU acceleration disabled by starting it with the `--disable-gpu` flag, or by editing `.atom/config.cson` and adding/changing the config parameter `useHardwareAcceleration: false` under the `editor` section.
+
+### Spell Checker not working
+
+Make sure you have hunspell installed with a [suitable dictionary pack](https://www.archlinux.org/packages/?sort=&q=hunspell&maintainer=&flagged=).

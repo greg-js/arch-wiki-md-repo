@@ -12,6 +12,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
+    *   [2.3 UFR II/UFR II LT Driver Troubles](#UFR_II.2FUFR_II_LT_Driver_Troubles)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
     *   [4.1 Utilities](#Utilities)
@@ -242,6 +243,47 @@ Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing 
 ### USB over IP (BJNP)
 
 Some Canon printers use Canon's proprietary USB over IP BJNP protocol to communicate over the network. There is a CUPS backend for this, which is available as [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/).
+
+### UFR II/UFR II LT Driver Troubles
+
+On some printers, while using the UFR II/UFR II LT/LIPSLX protocol (available from [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/)), there may be printing errors, where the document will be sent, the printer receives it but may not print anything and wait for something.
+
+In that case, the problem may be that the libjpeg used is too recent.
+
+One way to confirm this is is to set 'LogLevel' in `/etc/cups/cupsd.conf` to:
+
+```
+LogLevel debug2
+
+```
+
+And then viewing the output from `/var/log/cups/error_log` like this:
+
+```
+# tail -n 100 -f /var/log/cups/error_log
+
+```
+
+On line may appear, that will say something like this:
+
+```
+D [10/Jul/2017:15:30:16 +0200] [Job 6] Wrong JPEG library version: library is 80, caller expects 62
+
+```
+
+You can also use grep to only see if this line is present in the debug file:
+
+```
+cat /var/log/cups/error_log | grep Wrong
+
+```
+
+To solve the problem, just install the libjpeg6 package:
+
+```
+pacman -S libjpeg6-turbo lib32-libjpeg6-turbo
+
+```
 
 ## Dell
 

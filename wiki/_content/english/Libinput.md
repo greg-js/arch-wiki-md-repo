@@ -40,7 +40,7 @@ For [Xorg](/index.php/Xorg "Xorg"), a default configuration file for the wrapper
 First, execute:
 
 ```
-# libinput-list-devices 
+# libinput list-devices 
 
 ```
 
