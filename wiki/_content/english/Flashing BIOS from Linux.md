@@ -16,8 +16,9 @@ This article aims on providing information on flashing your system BIOS under Li
     *   [3.1 Unetbootin](#Unetbootin)
     *   [3.2 Gentoo](#Gentoo)
     *   [3.3 Prebuilt images](#Prebuilt_images)
-    *   [3.4 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
-    *   [3.5 Usage](#Usage_3)
+    *   [3.4 Using a FreeDOS-provided Disk Image + USB stick](#Using_a_FreeDOS-provided_Disk_Image_.2B_USB_stick)
+    *   [3.5 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
+    *   [3.6 Usage](#Usage_3)
 *   [4 Bootable optical disk emulation](#Bootable_optical_disk_emulation)
     *   [4.1 Installation](#Installation_3)
     *   [4.2 Usage](#Usage_4)
@@ -131,6 +132,43 @@ Check out [FreeDOS Flash Drive](https://wiki.gentoo.org/wiki/BIOS_Update#FreeDOS
 ### Prebuilt images
 
 Yet another simple solution: [FreeDOS prebuilt bootable USB flash drive image by Christian Taube](http://chtaube.eu/computers/freedos/bootable-usb/)
+
+### Using a FreeDOS-provided Disk Image + USB stick
+
+As of writing (2017-07-11), [unetbootin](https://www.archlinux.org/packages/?name=unetbootin) doesn't support versions of FreeDOS more recent than 1.0 (current version is 1.2). The following procedure worked to upgrade an Inspiron 17-3737 to the A09 BIOS. (Dell offers this as a possibility [on their site](http://www.dell.com/support/article/ca/en/cabsdt1/SLN171755/updating-the-dell-bios-in-linux-and-ubuntu-environments?lang=EN#Creating%20a%20USB%20Bootable%20Storage%20Device))
+
+Some notes before starting:
+
+*   You can check your current BIOS version with [dmidecode](https://www.archlinux.org/packages/?name=dmidecode). You might already be at the latest version.
+*   Ensure that your hardware vendor has verified this method works (use of FreeDOS to run BIOS update `.exe`)
+*   Laptop users should not attempt this without AC power
+*   This is dangerous, and you assume all risk for following this procedure.
+
+Procedure:
+
+1.  Grab the latest USB installer from the [FreeDOS Download Page](http://www.freedos.org/download/)
+    *   author note: used the "Full" version on suspicion that it might include more drivers, etc (pure speculation)
+2.  Extract the archive, you get a `.img` file
+3.  Determine which of `/dev/sdX` is your USB stick (use `fdisk -l`)
+4.  Write the image directly to the block device:
+    *   `dd if=FD12FULL.img of=/dev/sdX status=progress` (where `X` is the letter representing your USB stick as a block device, don't write the image to a partition)
+5.  Double-check that the image copying worked:
+    *   `fdisk -l` (you should see a single partition on a DOS disk with the bootable ("boot") flag set)
+6.  Mount the partition, and copy over the `.exe` used to update your firmware
+    *   Stay on the safe side and limit the filename to 8 characters (without extension), upper case
+    *   Ensure that you verified any checksums provided by your hardware vendor
+7.  Unmount and reboot. Do whatever is needed to boot from the USB drive
+
+Now you will find yourself in the FreeDOS live installation environment.
+
+1.  Select your language
+2.  You will be prompted to install FreeDOS
+    *   Select "No - Return to DOS"
+3.  You should see a prompt (`C:\>`)
+4.  Run `dir /w` and verify that your firmware upgrade tool is present
+5.  Run the executable
+    *   author note: in the case of the Dell tool, the machine displayed a spash screen and then rebooted. Upon reboot, it started the firmware upgrade automatically, and ran for about 2 minutes with the fan at full speed)
+6.  Once the process specific to your vendor completes, optionally verify through the BIOS setup screen, as well as by running [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) when you're back in linux
 
 ### Images that are too large for a floppy
 

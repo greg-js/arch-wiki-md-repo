@@ -73,17 +73,17 @@ location ^~ /.well-known {
 
 #### Obtain certificate(s)
 
-Request a certificate for `domain.tld` using `/path/to/domain.tld/html/` as public accessible path:
+Request a certificate for `domain.tld` using `/var/lib/letsencrypt/` as public accessible path:
 
 ```
-# certbot certonly --email **email@example.com** --webroot -w **/path/to/domain.tld/html/** -d **domain.tld**
+# certbot certonly --email **email@example.com** --webroot -w **/var/lib/letsencrypt/** -d **domain.tld**
 
 ```
 
 To add a (sub)domain, include all registered domains used on the current setup:
 
 ```
-# certbot certonly --email **email@example.com** --webroot -w **/path/to/sub.domain.tld/html/** -d **domain.tld,sub.domain.tld**
+# certbot certonly --email **email@example.com** --webroot -w **/var/lib/letsencrypt/** -d **domain.tld,sub.domain.tld**
 
 ```
 

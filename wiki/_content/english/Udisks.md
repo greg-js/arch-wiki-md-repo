@@ -38,7 +38,7 @@ The automatic mounting of devices is easily achieved with udisks wrappers. See a
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — Automatic disk mounting service using *udisks2*, with support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [details](https://github.com/coldfix/udiskie/wiki/Usage)
+*   **udiskie** — *udisks2* automounter with optional notifications, tray icon and support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [details](https://github.com/coldfix/udiskie/wiki/Usage)
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 

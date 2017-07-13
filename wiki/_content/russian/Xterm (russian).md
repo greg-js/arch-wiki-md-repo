@@ -1,6 +1,6 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xterm](/index.php/Xterm "Xterm"). Дата последней синхронизации: 12 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xterm&diff=0&oldid=425206).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xterm](/index.php/Xterm "Xterm"). Дата последней синхронизации: 28 апреля 2017‎ . Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xterm&diff=0&oldid=475326).
 
-**xterm** это стандартный [эмулятор терминала](https://en.wikipedia.org/wiki/%D0%AD%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0 "wikipedia:Эмулятор терминала") для [системы окон X](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"). Он широко настраиваемый и имеет много полезных и необычных черт.
+**xterm** - это стандартный [эмулятор терминала](https://en.wikipedia.org/wiki/ru:%D0%AD%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0 "w:ru:Эмулятор терминала") для [системы окон X](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"). Он широко настраиваемый и имеет множество полезных и необычных функций.
 
 ## Contents
 
@@ -8,7 +8,9 @@
     *   [1.1 Настройка файла ресурсов](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.BE.D0.B2)
         *   [1.1.1 Переменная окружения TERM](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_TERM)
         *   [1.1.2 UTF-8](#UTF-8)
-        *   [1.1.3 Исправление клавиши 'Alt'](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.27Alt.27)
+        *   [1.1.3 Клавиша «Alt» ведет себя как на других эмуляторах терминала](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0_.C2.ABAlt.C2.BB_.D0.B2.D0.B5.D0.B4.D0.B5.D1.82_.D1.81.D0.B5.D0.B1.D1.8F_.D0.BA.D0.B0.D0.BA_.D0.BD.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D1.8D.D0.BC.D1.83.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D0.B0.D1.85_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B0)
+        *   [1.1.4 Исправление клавиши 'Backspace'](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.27Backspace.27)
+        *   [1.1.5 Привязка клавиш](#.D0.9F.D1.80.D0.B8.D0.B2.D1.8F.D0.B7.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
     *   [1.2 Прокрутка](#.D0.9F.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B0)
         *   [1.2.1 Полоса прокрутки](#.D0.9F.D0.BE.D0.BB.D0.BE.D1.81.D0.B0_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B8)
     *   [1.3 Меню](#.D0.9C.D0.B5.D0.BD.D1.8E)
@@ -27,12 +29,13 @@
     *   [3.3 Шрифты CJK](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B_CJK)
 *   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
     *   [4.1 Автоматическая прозрачность](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B7.D1.80.D0.B0.D1.87.D0.BD.D0.BE.D1.81.D1.82.D1.8C)
-    *   [4.2 Enable bell urgency](#Enable_bell_urgency)
+    *   [4.2 Включить срочность звонка](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D1.81.D1.80.D0.BE.D1.87.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B7.D0.B2.D0.BE.D0.BD.D0.BA.D0.B0)
     *   [4.3 Советы по шрифтам](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.BF.D0.BE_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.B0.D0.BC)
         *   [4.3.1 Используйте цвета вместо жирного и курсивного](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B9.D1.82.D0.B5_.D1.86.D0.B2.D0.B5.D1.82.D0.B0_.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.BE_.D0.B6.D0.B8.D1.80.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B8_.D0.BA.D1.83.D1.80.D1.81.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE)
         *   [4.3.2 Отрегулируйте расстояние между строками](#.D0.9E.D1.82.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D1.83.D0.B9.D1.82.D0.B5_.D1.80.D0.B0.D1.81.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D0.B6.D0.B4.D1.83_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B0.D0.BC.D0.B8)
     *   [4.4 Удалите чёрную границу](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B8.D1.82.D0.B5_.D1.87.D1.91.D1.80.D0.BD.D1.83.D1.8E_.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.83)
     *   [4.5 Демонстрация Tek 4014](#.D0.94.D0.B5.D0.BC.D0.BE.D0.BD.D1.81.D1.82.D1.80.D0.B0.D1.86.D0.B8.D1.8F_Tek_4014)
+    *   [4.6 Защитите от отслеживания входа X11](#.D0.97.D0.B0.D1.89.D0.B8.D1.82.D0.B8.D1.82.D0.B5_.D0.BE.D1.82_.D0.BE.D1.82.D1.81.D0.BB.D0.B5.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_X11)
 *   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [5.1 Мерцание при прокрутке](#.D0.9C.D0.B5.D1.80.D1.86.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B5)
 *   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
@@ -41,13 +44,18 @@
 
 ### Настройка файла ресурсов
 
-Есть несколько опций, которые вы можете задать в файле [Ресурсы Х](/index.php/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B_%D0%A5 "Ресурсы Х"), они помогут сделать этот эмулятор терминала гораздо проще в использовании. Смотрите полный список `man xterm`.
+Есть несколько опций, которые вы можете задать в файле [Ресурсы Х](/index.php/X_resources_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "X resources (Русский)"), они помогут сделать этот эмулятор терминала гораздо проще в использовании. Смотрите полный список `man xterm`.
 
 #### Переменная окружения TERM
 
-Allow xterm to report the **TERM** variable correctly. **Do not** set the TERM variable from your *~/.bashrc* or *~/.bash_profile* or similar file. The terminal itself should report the correct TERM to the system so that the proper *terminfo* file will be used. Two usable terminfo files are *xterm,* and *xterm-256color.*
+Разрешите xterm правильно сообщать о переменной TERM. **Не** устанавливайте переменную TERM из *~/.bashrc* или *~/.bash_profile* или похожего файла. Сам терминал должен сообщить правильную TERM в систему, чтобы использовать надлежащий *terminfo*. Два используемых имени terminfo - *xterm* and *xterm-256color*. Чтобы установить имя, используйте ресурс
 
-Without setting TERM explicitly, xterm should report `$TERM` as `xterm`. You can check this from within xterm using either of these commands:
+```
+XTerm.termName: xterm-256color
+
+```
+
+Вы можете проверить результат в xterm с помощью любой из следующих команд:
 
 ```
 $ echo $TERM
@@ -55,278 +63,304 @@ $ tset -q
 
 ```
 
-When TERM is not set explicitly, color schemes for some programs, such as *vim,* may not appear until a key is pressed or some other input occurs. This can be remedied with this resource setting:
-
-```
-xterm*termName: xterm-256color
-
-```
-
 #### UTF-8
 
-Make certain your locale settings are correct for UTF-8\. Adding the following line to your resource file will then make xterm interpret all incoming data as UTF-8 encoded:
+Убедитесь, что ваша [локаль](/index.php/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Locale (Русский)") настроена на UTF-8\. Если вы не используете UTF-8, вам может понадобиться заставить xterm более строго следовать вашей локале, установив
 
 ```
-XTerm*locale: true
+XTerm.vt100.locale: true
 
 ```
 
-#### Исправление клавиши 'Alt'
+#### Клавиша «Alt» ведет себя как на других эмуляторах терминала
 
-If you use the `Alt` key for keyboard shortcuts, you will need this in your resource file:
-
-```
-XTerm*metaSendsEscape: true
+Поведение клавиши `Alt` по умолчанию в xterm является модификатором для отправки восьмибитных входных символов, например для вставки `æ` нажмите клавиши `Alt+f`. Чтобы вместо `Alt` отправить команду `^[` (escape) (как в gnome-terminal и konsole), установите
 
 ```
+XTerm.vt100.metaSendsEscape: true
+
+```
+
+#### Исправление клавиши 'Backspace'
+
+На Arch Linux xterm отправляет `^H` при нажатии клавиши 'Backspace'. Это разрывает комбинацию кнопок `Ctrl+H` на [Emacs](/index.php/Emacs "Emacs"). Обходной путь заключается в том, чтобы отправить `^?`, когда нажата клавиша backspace, задав ресурсы
+
+```
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+
+```
+
+#### Привязка клавиш
+
+xterm определяет целый набор "действий" для управления терминалом, например `copy-selection()`, `hard-reset()`, `scroll-back()`и т.д. Эти действия могут быть сопоставлены с мышкой/сочетаниями клавиш с помощью `translations` ресурса. Например, можно сопоставить клавиши `Ctrl+M` и `Ctrl+R` для развертывания/восстановления окна:
+
+```
+XTerm.vt100.translations: #override 
+\
+    Ctrl <Key>M: maximize() 
+\
+    Ctrl <Key>R: restore()
+
+```
+
+`#override` указывает на то, что эти привязки клавиш должны переопределить любые существующие (вы почти всегда хотите этого для пользовательских сочетаний клавиш). Каждая привязка должна быть отделена escape-последовательностью `
+`. Если вы хотите вставить литеральную новую строку, она также должна быть escaped (следовательно `
+\`). Смотрите раздел **KEY BINDINGS** `man xterm` для полного списка действий и множество примеров.
+
+**Совет:** Вы можете также иметь отдельные наборы комбинаций клавиш, между которыми можете переключаться. Смотрите действие `keymap()` на man-странице.
 
 ### Прокрутка
 
-As new lines are written to the bottom of the xterm window, older lines disappear from the top. To scroll up and down through the off-screen lines one can use the mouse wheel, the key combinations `Shift+PageUp` and `Shift+PageDown`, or the scrollbar.
+Когда новые строки записываются в нижней части окна xterm, старые строки исчезают сверху. Для прокрутки вверх и вниз по строкам можно использовать колесико мыши, комбинации клавиш `Shift+PageUp` и `Shift+PageDown`, или полосу прокрутки.
 
-By default, 1024 lines are saved. You can change the number of saved lines with the `saveLines` resource,
-
-```
-Xterm*saveLines: 4096
+По умолчанию сохраняется 1024 строки. Вы можете изменить сохраняемое количество строк ресурсом `saveLines`,
 
 ```
+XTerm.vt100.saveLines: 4096
 
-Other X resources that affect scrolling are `jumpScroll`, set to `true` by default, and `multiScroll` and `fastScroll`, both of which default to `false`. To scroll inside an [alternate screen](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT), set `alternateScroll` to `true`.
+```
+
+Другие ресурсы X, влияющие на прокрутку - это `jumpScroll`, `multiScroll`, и `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html)). Для прокрутки внутри [#альтернативного экрана](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT "Xterm (Русский)") установите для параметра `alternateScroll` значение `true`.
 
 #### Полоса прокрутки
 
-The scrollbar is not shown by default. It can be made visible by a menu selection, by command line options, or by setting resource values. It can be made to appear to the left or right of the window and its visual appearance can be modified through resource settings.
+Полоса прокрутки по умолчанию не отображается. Она может быть включена, а ее внешний вид изменен настройками ресурсов (обратите внимание на различную капитализацию "полосы прокрутки"!)
 
-The scrollbar operates differently from what you may be accustomed to using.
+```
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 8
 
-*   To scroll down:
+```
 
-	– Click on the scrollbar with the left mouse button.
+Смотрите `man xterm` для других ресурсов прокрутки.
 
-	– Click on the scrollbar below the *thumb* with the middle mouse button.
+Полоса прокрутки управляется иначе, от того что вы может быть привыкли использовать
 
-*   To scroll up:
+*   Для прокрутки вниз:
 
-	– Click on the scrollbar with the right mouse button.
+	– Нажмите на полосу прокрутки левой кнопкой мыши или
 
-	– Click on the scrollbar above the *thumb* with the middle mouse button.
+	– Нажмите на полосу прокрутки внизу средней кнопкой мыши.
 
-*   To position text, moving in either direction:
+*   Для прокрутки вверх:
 
-	– Grab the *thumb* and use "click-and-drag" with the middle mouse button.
+	– Нажмите на полосу прокрутки правой кнопкой мыши или
+
+	– Нажмите на полосу прокрутки вверху средней кнопкой мыши.
+
+*   Чтобы разместить текст, двигаясь в любом направлении:
+
+	– Наведите на край и используйте «щелчок и перетаскивание» с помощью средней кнопки мыши
 
 ### Меню
 
-The Archlinux version of xterm is compiled with the *toolbar,* or *menubar,* disabled. The menus are still available as *popups* when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
+[xterm](https://www.archlinux.org/packages/?name=xterm) компилируется с отключенным *toolbar,* или *menubar*. Меню по-прежнему доступно как *всплывающие окна* при нажатии сочетания клавиш `Ctrl+MouseButton` в окне xterm. Действия, вызываемые элементами меню, часто могут выполняться с использованием параметров командной строки или путем задания значений ресурсов.
 
-**Совет:** If the popup menu windows show only as small boxes, it is probably because you have a line similar to this, `xterm*geometry: 80x32`, in your resources file. This *does* start xterm in an 80 column by 32 row main window, but it also forces the menu windows to be 80 pixels by 32 pixels! Replace the incorrect line with this: `xterm*VT100.geometry: 80x32` 
+**Совет:** Если окна всплывающего меню отображаются только как маленькие поля, это, вероятно, потому, что у вас есть строка, подобная этой, `XTerm*geometry: 80x32`, в вашем файле ресурсов. Это *запускает* основное окно xterm с размерами 80 столбцов и 32 строками каждый из них, но также заставляет окно меню составлять 80 пикселей на 32 пикселя! Вот почему вы должны полностью указать ресурс: `XTerm.vt100.geometry: 80x32` 
 
-Some of the menu options are discussed below.
+Некоторые из опций меню обсуждаются ниже.
 
 #### Главные опции меню
 
 ***Ctrl + LeftMouse***
 
-*   `Secure Keyboard` attempts to ensure only the xterm window, and no other application, receives your keystrokes. The display changes to reverse video when it is invoked. If the display is not in reverse video, the *Secure Keyboard* mode is not in effect. Please read the "SECURITY" section of the xterm man page for this option's limitations.
+*   `Secure Keyboard` пытается обеспечить, чтобы только окно xterm получало ваши нажатия, а никакие другие приложения. Дисплей переключается на обратное видео при его вызове. Если на дисплее нет обратного видео, режим *Secure Keyboard* не действует. Пожалуйста, прочитайте раздел "БЕЗОПАСНОСТЬ" man-страницы xterm для ограничений этого параметра.
 
-*   `Allow SendEvents` allows other processes to send keypress and mouse events to the xterm window. Because of the security risk, do not enable this unless you are very sure you know what you are doing.
+*   `Allow SendEvents` позволяет другим процессам отправлять нажатия клавиш и события мыши в окно xterm. Из-за угрозы безопасности не включайте его, если вы не уверены, что знаете с этим параметром делать.
 
-*   `Log to File` – The log file will be named `Xterm.log.hostname.yyyy.mm.dd.hh.mm.ss.XXXXXX`. This file will contain all the printed output *and all cursor movements.* Logging may be a security risk.
+*   `Log to File` – Файл журнала будет иметь имя `Xterm.log.hostname.yyyy.mm.dd.hh.mm.ss.XXXXXX`. Этот файл будет содержать весь напечатанный вывод *и все перемещения курсора.* Ведение журнала может иметь риск для безопасности.
 
-*   The six `Send *** Signal` menu items are not often useful, except when your keyboard fails. `HUP`, `TERM` and `KILL` will close the xterm window. `KILL` should be avoided, as it does not allow any cleanup code to run.
+*   Шесть пунктов меню `Send *** Signal` не всегда полезны, за исключением, когда ваша клавиатура неисправна. `HUP`, `TERM` и `KILL` закроют окно xterm. `KILL` следует избегать, так как он не позволяет запускать код очистки.
 
-*   The `Quit` menu item will also close the xterm window – it is the same as sending a `HUP` signal. Most users will use the keyboard combination `Ctrl+d` or will type `exit` to close an xterm instance.
+*   Пункт меню `Quit` также закроет окно xterm - это то же самое, что и отправка сигнала `HUP`. Большинство пользователей будут использовать комбинацию клавиш `Ctrl+d` или наберут `exit`, чтобы закрыть экземпляр xterm.
 
 #### Опции меню VT
 
 ***Ctrl + MiddleMouse***
 
-*   `Select to Clipboard` – Normally, selected text is stored in PRIMARY, to be pasted with `Shift+Insert` or by using the middle mouse button. By toggling this option to *on,* selected text will use CLIPBOARD, allowing you to paste the text selected in an xterm window into a GUI application using `Ctrl+v`. The corresponding XTerm resource is `selectToClipboard`.
+*   `Select to Clipboard` – Обычно выбранный текст сохраняется в PRIMARY, который должен быть вставлен с помощью `Shift+Insert` или с помощью средней кнопки мыши. Переключив эту опцию в *on,* выбранный текст будет использовать CLIPBOARD, позволяющий вставлять текст, выбранный в окне xterm, в приложение GUI с помощью `Ctrl+v`. Соответствующим ресурсом является `XTerm.vt100.selectToClipboard`.
 
-*   `Show Alternate Screen` – When you use an a terminal application such as *vim,* or *less,* the alternate screen is opened. The main VT window, now hidden, remains in memory. You can view this main window, but not issue any commands in it, by toggling this menu option. You are able to select and copy text from this main window.
+*   `Show Alternate Screen` – Когда вы используете приложение терминала, такое как *vim,* или *less,* открывается альтернативный экран. Главное окно VT, которое сейчас скрыто, остается в памяти. Вы можете просмотреть это главное окно, но не вызывать никаких команд в нем, переключив этот пункт меню. Вы можете выбрать и скопировать текст из этого главного окна.
 
-**Совет:** Suspending the process running in the Alternate Screen and then resuming it provides more functionality than using `Show Alternate Screen`. With a *bash* shell, pressing `Ctrl+z` suspends the process; issuing the command `fg` then resumes it.
+**Совет:** Приостановка процесса, выполняющегося на альтернативном экране, а затем возобновление его работы обеспечивает больше функциональности, чем при использовании `Show Alternate Screen`. С оболочкой *bash* нажатие `Ctrl+z` приостанавливает процесс; затем выдает команду `fg` и возобновляет ее.
 
-*   `Show Tek Window` and `Switch to Tek Mode` – The [Tektronix 4014](https://en.wikipedia.org/wiki/Tektronix_4010 "wikipedia:Tektronix 4010") was a graphics terminal from the 1970s used for CAD and plotting applications. The command line program `graph`, from [plotutils](https://www.archlinux.org/packages/?name=plotutils), and the application [gnuplot](https://www.archlinux.org/packages/?name=gnuplot) can be made to use xterm's Tek emulation; most people will prefer more modern display options for charting data. See the [#Tek 4014 demonstration](#Tek_4014_demonstration), below.
+*   `Show Tek Window` и `Switch to Tek Mode` – The [Tektronix 4014](https://en.wikipedia.org/wiki/Tektronix_4010 "wikipedia:Tektronix 4010") был графическим терминалом 1970-х годов, используемым для САПР и построения приложений. Программа командной строки `graph` из [plotutils](https://www.archlinux.org/packages/?name=plotutils) и приложение [gnuplot](https://www.archlinux.org/packages/?name=gnuplot) могут быть использованы для использования эмуляции Tek; большинство людей предпочтут более современные варианты отображения данных. Смотрите [демонстрацию Tek 4014](#.D0.94.D0.B5.D0.BC.D0.BE.D0.BD.D1.81.D1.82.D1.80.D0.B0.D1.86.D0.B8.D1.8F_Tek_4014) ниже.
 
 #### Шрифты меню VT
 
 ***Ctrl + RightMouse***
 
-*   When using XLFD fonts, the first seven menu items will change the font face and the font size used in the current xterm window. If you are using an Xft font, only the font size will change, the font face will not change with the different selections, .
+*   При использовании XLFD-шрифтов первые семь пунктов меню будут изменять шрифт и его размер, который используется в текущем окне xterm. Если вы используете шрифт Xft, изменится только размер шрифта, начертания шрифт не изменится с разными вариантами выбора.
 
-**Совет:** `Unreadable` and `Tiny` are useful if you wish to keep an eye on a process but do not want to devote a large amount of screen space to the terminal window. An example use might be a lengthy compilation process when you only want to see that the operation completes.
+**Совет:** `Unreadable` и `Tiny` полезны, если вы хотите следить за процессом, но не хотите выделять большое количество пространства экрана в окно терминала. Пример использования может быть длительным процессом компиляции, когда вы хотите только увидеть, что операция завершена.
 
-*   `Selection`, when using XLFD font names, allows you to switch to the font name stored in the PRIMARY selection (or CLIPBOARD).
+*   `Selection` при использовании имен шрифтов XLFD позволяет переключиться на имя шрифта, сохраненное в выборе PRIMARY (или CLIPBOARD).
 
 #### Опции меню Tek
 
-From the **Tek Window,** ***Ctrl + MiddleMouse***
+Из окна **Tek Window,** ***Ctrl + MiddleMouse***
 
-The first section's options allow you to change the Tek window font size. The second set of options are used to move the focus between the Tek emulation window and the main, or *VT,* window and to close or hide the Tek window.
+Параметры первого раздела позволяют изменять размер шрифта окна Tek. Второй набор опций используется для перемещения фокуса между окном эмуляции Tek и основным или *VT,* а также закрытием или скрытием окна Tek.
 
 ### Копирование и вставка
 
-First, highlighting text using the mouse in an xterm (or alternatively another application) will select the text to copy, then clicking the mouse middle-button will paste that highlighted text. Also the key combination `Shift+Insert` will paste highlighted text, but only within an xterm.
+Выделение текста выполняется с помощью мыши в xterm (или, как альтернатива, в другом приложении), сначала выберите текст для копирования, а затем нажмите среднюю кнопку мыши, чтобы вставить выделенный текст. Также комбинация клавиш `Shift+Insert` вставляет выделенный текст, но только внутри xterm
 
 #### PRIMARY или CLIPBOARD
 
-By default, xterm, and many other applications running under X, copy highlighted text into a buffer called the PRIMARY selection. The PRIMARY selection is short-lived; the text is immediately replaced by a new PRIMARY selection as soon as another piece of text is highlighted. Some applications will allow you to paste PRIMARY selections by using the middle-mouse, but not `Shift+Insert`, and some other applications may not allow pasting from PRIMARY entirely.
+По умолчанию xterm и многие другие приложения, работающие под X, копируют выделенный текст в буфер, называемый PRIMARY выбором. PRIMARY выбор недолговечен; текст сразу заменяется новым выбором PRIMARY, как только выделяется другой фрагмент текста. Некоторые приложения позволят вам вставлять PRIMARY выборы, используя среднюю мышь, но не `Shift+Insert`, а некоторые другие приложения могут полностью не вставлять вставки из PRIMARY.
 
-There is another buffer used for copied text called the CLIPBOARD selection. The text in the CLIPBOARD is long-lived, remaining available until a user actively overwrites it. Applications that use `Ctrl+c` and `Ctrl+x` for text copying and cutting operations, and `Ctrl+v` for pasting, are using the CLIPBOARD.
+Существует еще один буфер, используемый для скопированного текста, называемый CLIPBOARD выбор. Текст в CLIPBOARD долговечен, оставаясь доступным до тех пор, пока пользователь не перезапишет его. Приложения, использующие `Ctrl+c` и `Ctrl+x` для операций копирования и вырезания текста и `Ctrl+v` для вставки, используют CLIPBOARD.
 
-The fleeting nature of the PRIMARY selection, where copied text is lost as soon as another selection is highlighted, annoys some users. Xterm allows the user to switch between the use of PRIMARY and CLIPBOARD using `Select to Clipboard` on the [#VT Options menu](#VT_Options_menu) or with the `selectToClipboard` resource.
+Мимолетный характер PRIMARY выбора, где скопированный текст теряется, как только выделяется другой, раздражает некоторых пользователей. Xterm позволяет пользователю переключаться между использованием PRIMARY и CLIPBOARD с помощью `Select to Clipboard` в меню [VT](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT) или с ресурсом `XTerm.vt100.selectToClipboard`.
 
 #### PRIMARY и CLIPBOARD
 
-With the above setting you can select if you want to use PRIMARY or CLIPBOARD, but to use both you need a 'hack'. For example, put this in your .Xresources:
+С приведенной выше настройкой вы можете выбрать, хотите ли вы использовать PRIMARY или CLIPBOARD, но вы также можете взломать его, чтобы добавить выделение в оба. Просто отмените [привязку клавиш](#.D0.9F.D1.80.D0.B8.D0.B2.D1.8F.D0.B7.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88) для отпускания левой кнопки мыши:
 
 ```
-XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+<Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+
+```
+
+Вы можете добавить [привязки клавиш](#.D0.9F.D1.80.D0.B8.D0.B2.D1.8F.D0.B7.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88) похожие на поведение копирования/вставки других терминалов (например, терминал gnome):
+
+```
+Ctrl Shift <Key>C: copy-selection(CLIPBOARD) 
+\
+Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
 
 ```
 
 #### Выбор текста
 
-The new user usually discovers that text may be selected using a "click-and-drag" with the left mouse button. Double-clicking will select a word, where a word is defined as consecutive alphabetic characters plus the underscore, or the Basic Regular Expression (BRE) `[A-Za-z_]`. Triple-clicking selects a line, with a "tab" character usually copied as multiple "space" characters.
+Новый пользователь обычно обнаруживает, что текст может быть выбран с помощью "щелчка мышью и перетаскивания" левой кнопки мыши. Двойным щелчком выбирается слово, в котором слово определяется как последовательные буквенные символы плюс символ подчеркивания или основное регулярное выражение (BRE) `[A-Za-z_]`. Трехкратное нажатие выбирает строку с символом "tab", который обычно копируется как несколько "пробельных" символов.
 
-Another way of selecting text, especially useful when copying more than one full screen, is:
+Другой способ выбора текста, особенно полезный при копировании более одного полного экрана, заключается в следующем:
 
-1.  Left-click at the start of the intended selection.
-2.  Scroll to where the end of the selection is visible.
-3.  Right-click at the end of the selection.
+1.  Щелкните левой кнопкой мыши в начале предполагаемого выбора.
+2.  Прокрутите список до тех пор, пока не будет выделен конец выделения.
+3.  Щелкните правой кнопкой мыши в конце выделения.
 
-You do not have to be precise immediately with the right-click – any highlighted selection may be extended or shortened by using a right-click.
+Вы не обязаны сразу попасть в нужное вам место щелчком правой кнопки мыши - любой выделенный фрагмент может быть расширен или сокращен с помощью правой кнопки мыши.
 
-You can clear any selected text by left-clicking once, anywhere within the xterm window.
+Вы можете удалить любой выделенный текст, щелкнув левой кнопкой мыши один раз, в любом месте окна xterm.
+
+Когда в xterm запускается приложение на основе символов, ему разрешено принимать события мыши. Это может быть проблемой, если программа не может взаимодействовать с буфером обмена X11\. Чтобы передать эти события в основной xterm, они должны сопровождаться клавишей `Shift`. Например, в [ссылке(1)](https://www.archlinux.org/packages/?q=links) (не `xlinks -g`) можно щелкнуть среднюю кнопкой мыши по URL-адресам и пунктам меню, но при этом ничего не выбирется и не вставится. Чтобы скопировать, нажмите клавишу `Shift`, а затем выполните щелчки мыши (клавиша должна быть нажата только во время щелчка, поэтому нет необходимости удерживать ее при перетаскивании мыши, чтобы выбрать, например, текстовый блок).
 
 ## Цвета
 
-Xterm defaults to black text, the *foreground* color, on a white *background.* The foreground and background colors can be reversed using the [Опции меню VT](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT) or with the `-rv` command line option.
+Xterm по умолчанию имеет черный текст, цвет *переднего плана*, на белом *фоне.* Цвета переднего плана и фона могут быть отменены путем установки ресурса
 
 ```
-$ xterm -rv
-
-```
-
-Alternatively, the same thing can be accomplished with the following [Параметры ресурсов X](/index.php/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B_%D0%A5 "Ресурсы Х") (do not forget to [reread the new resource afterwards](/index.php/X_resources#Parsing_.Xresources "X resources")!):
-
-```
-XTerm*reverseVideo: on
+XTerm.vt100.reverseVideo: true
 
 ```
 
-Xterm's foreground color (the text color) and the background color may be set from the command line, using the options `-fg` and `-bg` respectively.
+Кроме того, вы можете напрямую изменять цвета переднего плана и фона (а также первые шестнадцать цветов терминала) с использованием ресурсов:
 
 ```
-xterm -fg PapayaWhip -bg "rgb:00/00/80"
+XTerm.vt100.foreground: white
+XTerm.vt100.background: black
+XTerm.vt100.color0: rgb:28/28/28
+! ...
+XTerm.vt100.color15: rgb:e4/e4/e4
 
 ```
 
-The first sixteen terminal colors, as well as the foreground and background colors, may be set from an [Ресурсы Х](/index.php/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B_%D0%A5 "Ресурсы Х") file:
+**Примечание:** Цвета для приложений, которые используют библиотеки X, могут быть указаны разными способами.
 
-```
-XTerm*foreground: rgb:b2/b2/b2
-XTerm*background: rgb:08/08/08
-XTerm*color0: rgb:28/28/28
+Некоторые цвета могут быть указаны назначенными именами. Если [emacs](https://www.archlinux.org/packages/?name=emacs) или [vim](https://www.archlinux.org/packages/?name=vim) установлены, вы можете изучить `/usr/share/emacs/*/etc/rgb.txt` или `/usr/share/vim/*/rgb.txt` чтобы просмотреть список названий цветов с их десятичными значениями RGB. Цвета могут также указываться с использованием шестнадцатеричных значений RGB с форматом `rgb:RR/GG/BB`, или более старым и не поощряемым синтаксисом `#RRGGBB`.
 
-! ...Lines omitted...
+Цвет `PapayaWhip` совпадает с `rgb:ff/ef/d5`, который такой же, как и `#ffefd5`.
 
-XTerm*color15: rgb:e4/e4/e4
-```
+Смотрите [X(7)](ftp://www.x.org/pub/current/doc/man/man7/X.7.xhtml) из [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), для более полного описания синтаксиса цвета
 
-**Примечание:** Colors for applications that use the X libraries may be specified in many different ways.
+Многие предложения по цветовым схемам можно просмотреть в разделе форума, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
 
-Some colors can be specified by assigned names. If [emacs](https://www.archlinux.org/packages/?name=emacs) or [vim](https://www.archlinux.org/packages/?name=vim) has been installed, you can examine `/usr/share/emacs/*/etc/rgb.txt` or `/usr/share/vim/*/rgb.txt` to view the list of color names with their decimal RGB values. Colors may also be specified using hexadecimal RGB values with the format `rgb:RR/GG/BB`, or the older and not encouraged syntax `#RRGGBB`.
-
-The color `PapayaWhip` is the same as `rgb:ff/ef/d5`, which is the same as `#ffefd5`.
-
-See **man(7) X,** from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
-
-Many suggestions for color schemes can be viewed in the forum thread, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
-
-**Совет:** Many people specify colors in their X resources files without specifying an application class or application instance:
+**Совет:** Многие люди задают цвета в своих файлах ресурсов X без указания класса приложения или экземпляра приложения:
 ```
 *foreground: rgb:b2/b2/b2
 *background: rgb:08/08/08
+
 ```
-The above example sets the foreground and background color values for all *Xlib* applications (xclock, xfontsel, and others) that use these resources. This is a nice, easy way to achieve a unified color scheme.
+В приведенном выше примере устанавливаются значения переднего плана и заднего фона для всех приложений *Xlib* (xclock, xfontsel и другие), которые используют эти ресурсы. Это хороший и простой способ достижения единой цветовой схемы.
 
 ## Шрифты
 
 ### Стандартные шрифты
 
-Xterm's default font is the bitmap font named by the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description") alias `fixed`, often resolving to
+По умолчанию шрифт xterm - это шрифт растрового изображения, названный `фиксированным` псевдонимом [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description"), часто разрешающими
 
 ```
 -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-?
 
 ```
 
-This font, also aliased to the name `6x13`, has remakably wide coverage for unicode glyphs. The default "TrueType" font is the 14‑point font matched by the name `mono`. The *FreeType* font that will be used can be found with this command:
+Этот шрифт также псевдоним имени `6x13`, имеет очень широкий охват символов Unicode. По умолчанию шрифт TrueType - это 14-точечный шрифт, сопоставляемый именем `mono`. С помощью этой команды можно найти шрифт *FreeType* , который будет использоваться:
 
 ```
 $ fc-match mono
 
 ```
 
-Fonts can be specified from the command line, with the options `-fn` for bitmap font names and `-fa` for Xft names. The example below allows you to alternate between the two fonts by toggling `TrueType Fonts` from the [#VT Fonts menu](#VT_Fonts_menu).
-
- `$ xterm -fn 7x13 -fa "Liberation Mono:size=10:antialias=false"` 
-
-For a more permanent change, the default fonts may be set in an [Ресурсы Х](/index.php/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B_%D0%A5 "Ресурсы Х") file:
+Шрифты могут быть указаны в ваших ресурсах в зависимости от шрифта TrueType или нет:
 
 ```
-xterm*faceName: Liberation Mono:size=10:antialias=false
-xterm*font: 7x13
+XTerm.vt100.faceName: Liberation Mono:size=10:antialias=false
+XTerm.vt100.font: 7x13
+
 ```
 
-**Примечание:** There is a long-standing bug in xterm that prevents the command line option `-fn` working correctly when `faceName` has been set in a resource file. One solution is to set the resource `renderFont` to `false` on the command line.
+Чтобы проверить, вы также можете установить шрифт в командной строке: `-fa` для `faceName`, `-fn` для `font`. Если вы устанавливаете оба типа шрифтов, вы можете чередовать их между собой двумя способами: `TrueType Fonts` из [меню VT](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B_.D0.BC.D0.B5.D0.BD.D1.8E_VT). Вы также можете выбрать значение по умолчанию со следующим ресурсом
+
 ```
-$ xterm -fn 8x13                             # If this command does not set the font,
-$ xterm -fn 8x13 -xrm "*renderFont:false"    # set the 'renderFont' resource to 'false'.
+! start with TrueType fonts disabled
+XTerm.vt100.renderFont: false
+
 ```
-Perhaps easier, you can just toggle `TrueType Fonts` from the [#VT Fonts menu](#VT_Fonts_menu) in the terminal window.
 
 ### Жирные и подчеркнутые шрифты
 
-Italic fonts are shown as underlined characters when using XLFD names in xterm. TrueType fonts should use an oblique typeface.
+Курсивные шрифты отображаются как подчеркнутые символы при использовании имен XLFD в xterm. Шрифты TrueType должны использовать наклонный шрифт.
 
-If you do not specify a bold font at the command line, `-fb`, or through the `boldFont` resource, xterm will attempt to find a bold font matching the normal font. If a matching font is not found, the bold font will be created by "overstriking" the normal font.
+Если вы не укажете жирный шрифт в командной строке `-fb` или через ресурс `XTerm.vt100.boldFont`, xterm попытается найти жирный шрифт, соответствующий нормальному шрифту. Если соответствующий шрифт не найден, жирный шрифт будет создан путем "чрезмерного" обычного шрифта.
 
 ### Шрифты CJK
 
-Many fonts do not contain glyphs for the double width Chinese, Japanese and Korean languages. Other terminal emulators such as [urxvt](/index.php/Urxvt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Urxvt (Русский)") may be better suited if you frequently work with these languages.
+Многие шрифты не содержат глифов для двукратного китайского, японского и корейского языков. Другие эмуляторы терминала, такие как [urxvt](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)"), могут лучше подходить, если вы часто работаете с этими языками.
 
-Using bitmapped XLFD fonts with CJK has many pitfalls in xterm. It is much easier to use TrueType fonts for CJK display, using the `faceNameDoublesize` resource. This example uses *DejaVu Sans Mono* as the normal font and *WenQuanYi Bitmap Song* as the double width font:
+Использование растровых XLFD-шрифтов с CJK несет много ошибок в xterm. Гораздо проще использовать шрифты TrueType для отображения CJK, используя ресурс `faceNameDoublesize`. В этом примере используется *DejaVu Sans Mono* как обычный шрифт и *WenQuanYi Bitmap Song* в качестве шрифта двойной ширины:
 
 ```
-xterm*faceName: DejaVu Sans Mono:style=Book:antialias=false
-xterm*faceNameDoublesize: WenQuanYi Bitmap Song
-xterm*faceSize: 8
+XTerm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=false
+XTerm.vt100.faceNameDoublesize: WenQuanYi Bitmap Song
+XTerm.vt100.faceSize: 8
+
 ```
 
 ## Советы и хитрости
 
 ### Автоматическая прозрачность
 
-Install the package [transset-df](https://www.archlinux.org/packages/?name=transset-df) and a [Композитный менеджер окон](https://en.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80_%D0%BE%D0%BA%D0%BE%D0%BD "wikipedia:Композитный менеджер окон") such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). Then add the following line to your `~/.bashrc`:
+Установите пакет [transset-df](https://www.archlinux.org/packages/?name=transset-df) и [композитный менеджер](https://en.wikipedia.org/wiki/ru:%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80_%D0%BE%D0%BA%D0%BE%D0%BD "w:ru:Композитный менеджер окон"), такой как [Xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)"). Затем добавьте следующую строку в `~/.bashrc`:
 
 ```
-[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
 ```
 
-Now, each time you launch a shell in an xterm and a composite manager is running, the xterm window will be transparent. The test in front of `transset-df` keeps transet from executing if `XTERM_VERSION` is not defined. Note that your terminal will not be transparent if you launch a program other than a shell this way. It is probably possible to work around this if you want the functionality.
+Теперь, каждый раз, когда вы запускаете оболочку в xterm и запущен композитный менеджер, окно xterm будет прозрачным. Проверка перед `transset-df` запрещает выполнение transet, если параметр `XTERM_VERSION` не определен. Обратите внимание, что ваш терминал не будет прозрачным, если вы запускаете программу, отличную от оболочки. Вероятно, это можно обойти, если вы хотите использовать эту функциональность.
 
-Also see [Per-application transparency](/index.php/Per-application_transparency "Per-application transparency").
+Смотрите также [прозрачность для каждого приложения](/index.php/Per-application_transparency "Per-application transparency").
 
-### Enable bell urgency
+### Включить срочность звонка
 
-Add the following line to your `~/.Xresources` file:
+Чтобы символ колокола уведомил оконный менеджер срочности, установите:
 
 ```
-xterm*bellIsUrgent: true
+XTerm.vt100.bellIsUrgent: true
 
 ```
 
@@ -334,31 +368,35 @@ xterm*bellIsUrgent: true
 
 #### Используйте цвета вместо жирного и курсивного
 
-When using small font sizes, bold or italic characters may be difficult to read. One solution is to turn off bolding and underlining or italics and use color instead. This example does just that:
+При использовании небольших размеров шрифта, жирным шрифтом или курсивом возможно будет затруднительно читать. Одно из решений - отключить выделение жирным шрифтом, подчеркивание или курсив и использовать цвет вместо этого. Этот пример делает именно это:
 
 ```
-! Forbid bold font faces; bold type is light blue.
-XTerm*colorBDMode: true
-XTerm*colorBD: rgb:82/a4/d3
-! Do not underscore text, underlined text is white.
-XTerm*colorULMode: true
-XTerm*colorUL: rgb:e4/e4/e4
+! отключаем жирный шрифт и вместо него делаем текст синим.
+XTerm.vt100.colorBDMode: true
+XTerm.vt100.colorBD: rgb:82/a4/d3
+! отключаем подчеркнутый текст и вместо него делаем его белым.
+XTerm.vt100.colorULMode: true
+XTerm.vt100.colorUL: rgb:e4/e4/e4
+! аналогично использовать colorIT для курсива
+
 ```
+
+Смотрите [цвет](#.D0.A6.D0.B2.D0.B5.D1.82.D0.B0) для форматирования информации.
 
 #### Отрегулируйте расстояние между строками
 
-Lines of text can sometimes be too close together, or they may appear to be too widely spaced. For one example, using *DejaVu Sans Mono,* the low underscore glyph may butt against CJK glyphs or the cursor block in the line below. Line spacing, called *leading* by typographers, can be adjusted using the `scaleHeight` resource. Here, the line spacing is widened:
+Строки текста иногда могут быть слишком близко находиться друг к другу, или они могут оказаться слишком далеко друг от друга. Например, используя *DejaVu Sans Mono,* низкий символ подчеркивания может приклеиваться к глифам CJK или курсорному блоку в строке ниже. Межстрочный интервал, называемый *ведущим* по типографам, может быть отрегулирован с помощью следующего ресурса, например, чтобы расширить интервал:
 
 ```
-XTerm*scaleHeight: 1.01
+XTerm.scaleHeight: 1.01
 
 ```
 
-Valid values for `scaleHeight` range from `0.9` to `1.5`, with `1.0` being the default.
+Допустимые значения этого диапазона от `0.9` до `1.5`, при этом `1.0` является значением по умолчанию.
 
 ### Удалите чёрную границу
 
-Xterm has a black border in some cases, you can disable this by adding the following line to your `~/.Xresources` file.
+В некоторых случаях Xterm имеет черную границу, вы можете отключить ее, добавив следующую строку в ваш файл `~/.Xresources`.
 
 ```
 xterm*borderWidth: 0
@@ -367,29 +405,38 @@ xterm*borderWidth: 0
 
 ### Демонстрация Tek 4014
 
-If you have [plotutils](https://www.archlinux.org/packages/?name=plotutils) installed, you can use xterm's Tektronix 4014 emulation to view some of the plotutils package's test files. Open the Tek window from the [#VT Options menu](#VT_Options_menu) menu item `Switch to Tek Mode` or start a new xterm instance using this command:
+Если у вас установлен [plotutils](https://www.archlinux.org/packages/?name=plotutils), вы можете использовать эмуляцию Tektronix 4014 для просмотра некоторых тестовых файлов пакета plotutils. Откройте окно Tek из пункта меню [VT](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT) `Switch to Tek Mode` или запустите новый экземпляр xterm, используя следующую команду:
 
 ```
 $ xterm -t -tn tek4014
 
 ```
 
-Your PS1 prompt will not render correctly, if it appears at all. In the new window, enter the command,
+Ваш запрос PS1 не будет отображаться правильно, если он вообще появится. В новом окне введите команду,
 
 ```
 cat /usr/share/tek2plot/dmerc.tek
 
 ```
 
-A world map will appear in the Tek window. You can also view other `*.tek` files from that same directory. To close the Tek window, one can use the xterm menus.
+В окне Tek появится карта мира. Вы также можете просмотреть другие файлы `*.tek` из того же каталога. Чтобы закрыть окно Tek, вы можете использовать меню xterm.
+
+### Защитите от отслеживания входа X11
+
+Возможно неудобно активировать режим **Secure Keyboard** из [главного меню](#.D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E). Вместо этого вы можете вызвать действие `secure()` с помощью [привязки клавиш](#.D0.9F.D1.80.D0.B8.D0.B2.D1.8F.D0.B7.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88):
+
+```
+Ctrl Alt <Key>S: secure()
+
+```
 
 ## Решение проблем
 
 ### Мерцание при прокрутке
 
-**Важно:** Double buffering may cause non-bitmap fonts to render incorrectly.
+**Важно:** Двойная буферизация может привести к неправильному отображению растровых изображений.
 
-Rebuild xterm using [ABS](/index.php/ABS "ABS") and include the `--enable-double-buffer` flag:
+Перестройте xterm с использованием [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") и включите флаг `--enable-double-buffer`:
 
 ```
 ./configure --prefix=/usr \
@@ -399,9 +446,10 @@ Rebuild xterm using [ABS](/index.php/ABS "ABS") and include the `--enable-double
 
 ```
 
-See [Xterm modifications](https://bbs.archlinux.org/viewtopic.php?id=146023) for details.
+Подробнее смотрите в [Xterm изменениях](https://bbs.archlinux.org/viewtopic.php?id=146023).
 
 ## Смотрите также
 
-*   [Hidden gems of Xterm](http://lukas.zapletalovi.com/2013/07/hidden-gems-of-xterm.html)
-*   [Commented XTerm resources](http://www.in-ulm.de/~mascheck/X11/XTerm)
+*   [Скрытые драгоценные камни Xterm](http://lukas.zapletalovi.com/2013/07/hidden-gems-of-xterm.html)
+*   [Комментарии ресурсов XTerm](http://www.in-ulm.de/~mascheck/X11/XTerm)
+*   [Внедрение XTerm и настройка шрифтов TrueType](http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/)

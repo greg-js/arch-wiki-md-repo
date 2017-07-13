@@ -43,12 +43,13 @@
     *   [4.8 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
     *   [4.9 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
     *   [4.10 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
-    *   [4.11 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
-    *   [4.12 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
-    *   [4.13 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
-        *   [4.13.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
-        *   [4.13.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
-        *   [4.13.3 Verify folder access by guest](#Verify_folder_access_by_guest)
+    *   [4.11 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
+    *   [4.12 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
+    *   [4.13 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
+    *   [4.14 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
+        *   [4.14.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
+        *   [4.14.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
+        *   [4.14.3 Verify folder access by guest](#Verify_folder_access_by_guest)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -766,6 +767,10 @@ You are probably passing wrong server name to `smbclient`. To find out the serve
 ### Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)
 
 Make sure that the server has started. The shared directories should exist and be accessible.
+
+### Protocol negotiation failed: NT_STATUS_CONNECTION_RESET
+
+Probably the server is configured not to accept protocol SMB1\. Add option `client max protocol = SMB2` in `/etc/samba/smb.conf`. Or just pass argument `-m SMB2` to `smbclient`.
 
 ### Password Error when correct credentials are given (error 1326)
 

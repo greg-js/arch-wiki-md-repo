@@ -93,7 +93,14 @@ By default RetroArch will attempt to find cores in `~/.config/retroarch/cores`. 
 
 ### Input devices do not operate
 
-It is likely to encounter problems if running on a CLI or a display server other than [Xorg](/index.php/Xorg "Xorg"), because /dev/input nodes are limited to root-only access. This is solved by manually adding a rule in `/etc/udev/rules.d/99-evdev.rules`, with `KERNEL=="event*", NAME="input/%k", MODE="666"` as its contents. Reload udev rules by running:
+You may encounter problems if running on a CLI or a display server other than [Xorg](/index.php/Xorg "Xorg") or if you use the [udev](/index.php/Udev "Udev") input driver, because /dev/input nodes are limited to root-only access. Try adding your user to the "input" group then logging in again, e.g.
+
+```
+# usermod -a -G input *username*
+
+```
+
+Alternatively, manually add a rule in `/etc/udev/rules.d/99-evdev.rules`, with `KERNEL=="event*", NAME="input/%k", MODE="666"` as its contents. Reload udev rules by running:
 
 ```
 # udevadm control --reload-rules
@@ -104,13 +111,6 @@ If rebooting the system or replugging the devices are not options, permissions m
 
 ```
 # chmod 666 /dev/input/event*
-
-```
-
-Alternatively, add your user to the "input" group, e.g.
-
-```
- # usermod -a -G input user
 
 ```
 

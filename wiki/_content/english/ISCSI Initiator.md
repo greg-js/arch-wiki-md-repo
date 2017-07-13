@@ -2,7 +2,7 @@ With [Wikipedia:iSCSI](https://en.wikipedia.org/wiki/iSCSI "wikipedia:iSCSI") yo
 
 The exported storage entity is the **[target](/index.php/ISCSI_Target "ISCSI Target")** and the importing entity is the **initiator**.
 
-This article describes how to access an iSCSI target with the [Open-iSCSI](http://open-iscsi.org/) initiator.
+This article describes how to access an iSCSI target with the [Open-iSCSI](https://github.com/open-iscsi/open-iscsi) initiator.
 
 ## Contents
 
@@ -26,7 +26,7 @@ This article describes how to access an iSCSI target with the [Open-iSCSI](http:
 
 ## Overview
 
-The following diagram shows how the Components work together. A more detailed version can be found here: [Open-iSCSI modules](http://www.open-iscsi.org/docs/open-iscsi-0.jpg)
+The following diagram shows how the Components work together. A more detailed version can be found here: [Open-iSCSI modules](https://archive.is/HHYKR/90a7a1c178a2c069a7cbc0b578b6fb5854f827fa.jpg)
 
 ```
  +-------------------------------------------------------+             
@@ -50,7 +50,7 @@ The following diagram shows how the Components work together. A more detailed ve
 
 ```
 
-From the Open-iSCSI [README](http://www.open-iscsi.org/docs/README):
+From the Open-iSCSI [README](https://github.com/open-iscsi/open-iscsi):
 
 Persistent configuration is implemented as a DBM database, which contains two tables:
 

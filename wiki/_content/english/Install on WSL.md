@@ -18,6 +18,8 @@ to delete the existing installation entirely (you might want to save some data f
 
 ## Installation
 
+**Note:** You can also install Ubuntu from the [Windows Store](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6), although you need to be a Windows Insider (or running the upcoming Fall Creators Update). [More information](https://blogs.msdn.microsoft.com/commandline/2017/07/10/ubuntu-now-available-from-the-windows-store/).
+
 Open a command prompt and install the official Ubuntu version:
 
 ```

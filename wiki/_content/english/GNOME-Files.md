@@ -38,7 +38,7 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 	[http://foldercolor.tuxfamily.org/](http://foldercolor.tuxfamily.org/) || [folder-color-nautilus-bzr](https://aur.archlinux.org/packages/folder-color-nautilus-bzr/)
 
 **Tip:** This extension works only with these icon-themes which contain additional colored icons, eg:
-[numix-icon-theme-git](https://aur.archlinux.org/packages/numix-icon-theme-git/), [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/), [vivacious-folder-colors-addon](https://aur.archlinux.org/packages/vivacious-folder-colors-addon/), [humanitycolors-icon-theme](https://aur.archlinux.org/packages/humanitycolors-icon-theme/)
+[numix-icon-theme-git](https://aur.archlinux.org/packages/numix-icon-theme-git/), [vibrancy-colors](https://aur.archlinux.org/packages/vibrancy-colors/), [vivacious-colors-icon-theme](https://aur.archlinux.org/packages/vivacious-colors-icon-theme/), [humanity-icon-theme](https://aur.archlinux.org/packages/humanity-icon-theme/), [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/)
 
 *   **File Manager Actions** — Configures programs to be launched when files are selected in Files
 

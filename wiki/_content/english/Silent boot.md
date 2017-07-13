@@ -10,7 +10,7 @@ This page is for those who prefer to limit the verbosity of their system to a st
 
 ## Kernel parameters
 
-Change the kernel parameters using the configuration options of your boot loader, to include the following parameters:
+Change the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") using the configuration options of your boot loader, to include the following parameters:
 
 ```
 quiet vga=current

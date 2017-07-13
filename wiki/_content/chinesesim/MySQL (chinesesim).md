@@ -55,7 +55,7 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 
 ```
 
-为了简化管理过程，可用的管理前端有 [dbeaver](https://aur.archlinux.org/packages/dbeaver/), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), [Adminer](/index.php/Adminer "Adminer") 或 [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) 和 MariaDB 并不完全兼容，但是可以执行基本任务。
+为了简化管理过程，可用的管理前端有 [dbeaver](https://www.archlinux.org/packages/?name=dbeaver), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), [Adminer](/index.php/Adminer "Adminer") 或 [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) 和 MariaDB 并不完全兼容，但是可以执行基本任务。
 
 ### 升级
 

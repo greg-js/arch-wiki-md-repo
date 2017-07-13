@@ -57,3 +57,4 @@ When you just close the session window and RDP connection, you can access the sa
 ## See also
 
 *   [TigerVNC](/index.php/TigerVNC "TigerVNC") - VNC, an alternative to RDP, also used as backend here
+*   [freerdp](https://www.archlinux.org/packages/?name=freerdp) a rdesktop fork that supports RDP 7.1 features including network level authentication (NLA). See also [[1]](http://askubuntu.com/a/97932/217269).

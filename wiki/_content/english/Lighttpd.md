@@ -59,7 +59,7 @@ Example configuration files are available in `/usr/share/doc/lighttpd/`.
 Lighttpd can write out both errors and access to log files. To enable both of the logging options, edit `/etc/lighttpd/lighttpd.conf` as follows:
 
 ```
-server.modules = (
+server.modules += (
    "mod_access",
    "mod_accesslog",
 )

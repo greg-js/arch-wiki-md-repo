@@ -48,7 +48,7 @@ Rust follows a regular six week release cycle, similar to the release cycle of F
 
 To [install](/index.php/Install "Install") the latest stable version of Rust from the official Arch Linux software repository, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package. This will install the rustc compiler. You can choose to install the [cargo](https://www.archlinux.org/packages/?name=cargo) package as well.
 
-There's also development version of the Rust compiler available from [AUR](/index.php/AUR "AUR"). Use [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) for prebuilt generic binraies or [rust-git](https://aur.archlinux.org/packages/rust-git/) to build the compiler with system libraries. Prebuilt, periodically updated rust-git packages are also available from the [unofficial repo](/index.php/Unofficial_user_repositories#rust-git "Unofficial user repositories").
+There's also development version of the Rust compiler available from [AUR](/index.php/AUR "AUR"). Use [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) for prebuilt generic binaries or [rust-git](https://aur.archlinux.org/packages/rust-git/) to build the compiler with system libraries. Prebuilt, periodically updated rust-git packages are also available from the [unofficial repo](/index.php/Unofficial_user_repositories#rust-git "Unofficial user repositories").
 
 ### Official Rustup Installation
 

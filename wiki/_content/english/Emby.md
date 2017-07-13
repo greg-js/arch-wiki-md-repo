@@ -4,8 +4,10 @@ Emby is an open source personal media server and client infrastructure. It is us
 
 [Install](/index.php/Install "Install") the [emby-server](https://www.archlinux.org/packages/?name=emby-server) package.
 
-## Setup
+## Usage
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `emby-server.service`.
 
-Then access the setup through your browser by navigating to [http://localhost:8096/](http://localhost:8096/)
+Access Emby through the browser by navigating to [http://localhost:8096/](http://localhost:8096/)
+
+Emby runs under the [user](/index.php/User "User") and [group](/index.php/Group "Group") `emby`, [change ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") of library folders and/or files to `emby` allowing scanning, importing, etc.

@@ -311,7 +311,7 @@ main = do
 
 ### IronPython
 
-*   Dependencies: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3), [ironpython](https://www.archlinux.org/packages/?name=ironpython)
+*   Dependencies: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3), [ironpython](https://aur.archlinux.org/packages/ironpython/)
 *   Run with: `ipy hello_world.py`
 
  `hello_world.py` 

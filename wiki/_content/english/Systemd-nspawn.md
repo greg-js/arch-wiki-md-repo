@@ -119,6 +119,16 @@ Unlike Arch, Debian and Ubuntu will not let you login without a password on firs
 
 ```
 
+If the above didn't work. One can start the container and use these commands instead:
+
+```
+# systemd-nspawn -b -D myContainer  #Starts the container
+# machinectl shell root@myContainer /bin/bash  #Get a root bash shell
+# passwd
+# logout
+
+```
+
 ### Creating Private Users (Unprivileged Containers)
 
 Systemd-nspawn supports unprivileged containers, though the containers need to be booted as root. The easiest way to do this is let systemd-nspawn decide everything.

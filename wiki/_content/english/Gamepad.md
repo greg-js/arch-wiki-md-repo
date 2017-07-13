@@ -388,7 +388,7 @@ The [steam](https://www.archlinux.org/packages/?name=steam) package (starting fr
 
 If you can't get the Steam Controller to work, see [#Steam Controller not pairing](#Steam_Controller_not_pairing).
 
-Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam.
+Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam or [sc-controller](https://aur.archlinux.org/packages/sc-controller/) for a versatile graphical configuration tool simillar to what is provided by the steam client.
 
 On some desktop environments the on screen keyboard might freeze when trying to input text after two characters. This is a problem with window focus. Check the settings for your [window manager](/index.php/Window_manager "Window manager") to see if it is possible to have focus follow the mouse or automatically focus new windows.
 

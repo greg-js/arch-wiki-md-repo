@@ -690,33 +690,23 @@ d.tracker.insert="8","udp://tracker.ccc.de:80"
 
 ### CA certificates
 
-To use rTorrent with a tracker that uses HTTPS, do the following as root:
+By default rTorrent will work with trackers that use HTTPS with valid certificates. If an HTTPS tracker is being rejected because it has a custom or unusual certificate you may need to download it and validate it separately.
+
+Once you have done that you can inform rTorrent of the new certificate via
 
 ```
-# cd /etc/ssl/certs
-# wget --no-check-certificate https://www.geotrust.com/resources/root_certificates/certificates/Equifax_Secure_Global_eBusiness_CA-1.cer
-# mv Equifax_Secure_Global_eBusiness_CA-1.cer Equifax_Secure_Global_eBusiness_CA-1.pem
-# c_rehash
-
-```
-
-And from now on run rTorrent with:
-
-```
-$ rtorrent -o http_capath=/etc/ssl/certs
+$ rtorrent -o http_capath=/etc/ssl/certs/www.your-tracker.com.pem
 
 ```
 
-If you use GNU Screen, update the `.screenrc` configuration file to reflect this change:
+For more information see:
 
-```
-$ screen -t rtorrent rtorrent -o http_capath=/etc/ssl/certs
+*   [rTorrent + SSL guide](https://forums.gentoo.org/viewtopic-t-710876-start-0.html) Full instructions for downloading and validating a new HTTPS certificate.
+*   [rTorrent Error & CA Certificate](https://bbs.archlinux.org/viewtopic.php?pid=331850)
+*   [rTorrent Certificates Problem](https://bbs.archlinux.org/viewtopic.php?id=45800)
+*   [rtorrent setup](https://github.com/pyroscope/rtorrent-ps/blob/master/docs/DebianInstallFromSource.md#optional-root-setup-steps)
 
-```
-
-In rTorrent 0.8.9, set `network.http.ssl_verify_peer.set=0` to [fix the problem](https://bbs.archlinux.org/viewtopic.php?pid=981832#p981832).
-
-For more information see: [rTorrent Error & CA Certificate](https://bbs.archlinux.org/viewtopic.php?pid=331850) and [rTorrent Certificates Problem](https://bbs.archlinux.org/viewtopic.php?id=45800)
+In rTorrent 0.8.9 and up you can disable HTTPS checking completely by setting `network.http.ssl_verify_peer.set=0` and `network.http.ssl_verify_host.set=0`, [source](https://bbs.archlinux.org/viewtopic.php?pid=981832#p981832).
 
 ### Locked directories
 

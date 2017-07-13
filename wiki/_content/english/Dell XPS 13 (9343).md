@@ -13,7 +13,7 @@
 
 The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of Dell's XPS 13 line. Like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team[[1]](https://bartongeorge.io/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/). They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
 
-The installation process for Arch Linux on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
+The installation process for Arch Linux on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI") pages. This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
 As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary. However, some manual configuration is still recommended to get the best experience.
 
@@ -39,14 +39,15 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
     *   [2.9 Calibrated ICC profile](#Calibrated_ICC_profile)
         *   [2.9.1 QHD+ model](#QHD.2B_model)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
-    *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
-    *   [3.3 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
-    *   [3.4 rfkill issues with KDE](#rfkill_issues_with_KDE)
-    *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
-    *   [3.8 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
+    *   [3.1 DE can't connect Bluetooth devices](#DE_can.27t_connect_Bluetooth_devices)
+    *   [3.2 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
+    *   [3.3 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
+    *   [3.4 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
+    *   [3.5 rfkill issues with KDE](#rfkill_issues_with_KDE)
+    *   [3.6 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
+    *   [3.8 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
+    *   [3.9 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -55,7 +56,7 @@ Although the XPS 13 is sold in a variety of configurations in most markets, thos
 
 Users with QHD+ displays should use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI").
 
-Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 works out-of-the-box thanks to mainline kernel support, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
+Regarding the Wi-Fi adapter, both cards work in Arch Linux. If the Intel one works out-of-the-box thanks to mainline kernel support, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are reported in the proper below section.
 
 There are no exclusive hardware differences between the *Developer Edition* and the standard Windows edition, so this guide is equally applicable to both models.
 
@@ -63,13 +64,13 @@ There are no exclusive hardware differences between the *Developer Edition* and 
 
 ### BIOS updates
 
-The latest BIOS update is [A12](http://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=W57K8) and was released on 24th May 2017\. With A02 or newer, almost everything should work out-of-the-box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
+The latest BIOS update is [A12](http://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=W57K8) and was released on 24th May 2017\. With version A02 or newer, almost everything should work out-of-the-box and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
 
-BIOS upgrade is easy, thanks to the EFI implementation: store the update binary on the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
+BIOS upgrade is easy, thanks to the EFI implementation: place the update binary in the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
 
 ### Backlight
 
-Works out-of-the-box:
+Backlight and its control work out-of-the-box:
 
 *   The [systemd-backlight.service](/index.php/Backlight#systemd-backlight_service "Backlight") takes care of both eDP panel and keyboard backlight (and any other external device) status, saving at shutdown and restoring their values at boot.
 *   Hardware Function keys (`Fn-F10` to `Fn-F12`) works without any operation, as well.
@@ -78,17 +79,19 @@ Works out-of-the-box:
 
 ### SSD
 
-This laptop series comes with a SSD as storage device; this technology needs some configuration in order to achieve the best operative conditions. See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for information.
+This laptop series comes with a SSD as storage device, connected via SATA. This technology needs some configuration in order to achieve the best operative conditions. See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for further information.
 
 ### Wi-Fi
 
-Most configurations feature the Dell DW1560 802.11ac adapter (based on the Broadcom BCM4352 chip) which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) (in this case, remember to install `linux-headers` too, even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
+Most configurations sport the Dell DW1560 802.11ac adapter (based on the Broadcom BCM4352 chip) which requires [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) (in this case, remember to install `linux-headers` too, even if it is listed as an optional dependency) to be installed. See the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for more details and/or assistance.
 
-Some higher-end models do not use the Dell-branded Broadcom adapter but instead they use an Intel Wireless 7265 card, which is supported by the mainline kernel. This card is widely available as an after-market purchase for those wishing to replace the Broadcom adapter in their laptop. This wireless adapter, other than an enviable driver support, for both Wi-Fi and Bluetooth, that makes installation easier, compared to the Broadcom card, it has a 2-3 times wider reception range and a much higher throughput [citation needed], making it an worthwhile upgrade should you decide to do so.
+Some higher-end models do not use the Dell-branded Broadcom adapter, instead they use an Intel Wireless 7265 card which is supported by the mainline kernel.
+
+**Note:** This card is widely available as an after-market purchase for those wishing to replace the Broadcom adapter in their laptop. This wireless adapter, other than an enviable driver support for both Wi-Fi and Bluetooth that makes installation easier, compared to the Broadcom card, it has a 2-3 times wider reception range and a much higher throughput, making it an worthwhile upgrade you should decide to do.
 
 ### Bluetooth
 
-**Note:** users with Intel wireless adapter with both Wi-Fi and Bluetooth, the Bluetooth interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+**Note:** For uers with Intel wireless adapter with both Wi-Fi and Bluetooth, the Bluetooth interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
 The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you need to install [bcm20702a1-firmware](https://aur.archlinux.org/packages/bcm20702a1-firmware/) and reboot if you want to use Bluetooth.
 
@@ -102,41 +105,40 @@ $ hex2hcd BCM20702A1_001.002.014.1443.1572.hex
 
 ```
 
-After reboot, the firmware is available for your Bluetooth interface. If the Bluetooth can't connect the device use the KDE desktop environment,Try to use `bluetoothctl` to connect manually.
+After reboot, the firmware is available for your Bluetooth interface.
 
 ### Audio
 
 **Note:** Proper audio support is dependent on having the latest BIOS update. If you have not yet updated to BIOS A02 or newer, please perform [#BIOS updates](#BIOS_updates) first.
 
-The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode", meaning it supports both the [HDA standard](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio") and the [I2S standard](https://en.wikipedia.org/wiki/I%C2%B2S "wikipedia:I²S"). The embedded controller in the XPS 13 uses the [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") _REV value provided by the OS itself to determine which mode the sound chipset should be initialized in at boot.
+The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode", meaning it supports both the [HDA standard](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio") and the [I2S standard](https://en.wikipedia.org/wiki/I%C2%B2S "wikipedia:I²S"). The embedded controller in the XPS 13 uses the [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") _REV value provided by the OS itself to determine in which mode the sound chipset should be initialized in at boot.
 
 #### HDA mode
 
 With BIOS A02+ and official Arch Linux kernels **older than 4.4** and again starting **from version 4.11.5**, the sound card will be initialized in HDA mode.
 
-**Note:** To use HDA mode on excluded kernels, compile it with the option `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y`. This will force HDA mode on.
+**Note:** To use HDA mode on excluded kernels, re-compile them with the option `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y`. This will force HDA mode on.
 
 ##### Setting the default sound card
 
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+By default, ALSA does not output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
-
-Note that if you are dual-booting with Windows, you will have to do a cold boot twice before to have sound working in Linux and vice-versa.
+**Note:** If you are dual-booting with Windows, you will have to do a cold boot twice before to have sound working in Linux and vice-versa.
 
 **Note:** This is not necessary in I2S mode.
 
 #### I2S mode
 
-With BIOS A02+ and official Arch Linux kernels **from 4.4 to 4.11.4**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer. (I2S support was broken in mainline kernel 4.5, and fixed in Arch kernel 4.5.2 and mainline 4.8.[[4]](https://bugs.archlinux.org/task/48936)[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e))
+With BIOS A02+ and official Arch Linux kernels **from 4.4 to 4.11.4**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer. (I2S support was broken in mainline kernel 4.5, and fixed in Arch kernel 4.5.2 and mainline 4.8[[4]](https://bugs.archlinux.org/task/48936)[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e)).
 
 ##### Enabling the microphone
 
-**Note:** The microphone appears to be enabled by default as of official Arch Linux kernel 4.5.3, so these instructions may be unnecessary.[[6]](https://bugs.archlinux.org/task/47989#comment146876)
+**Note:** The microphone appears to be enabled by default as of official Arch Linux kernel 4.5.3, so these instructions may be unnecessary [[6]](https://bugs.archlinux.org/task/47989#comment146876).
 
-In I2S mode, the built-in microphone is muted by default. To enable it you have to unmute `Mic` item; follow the instructions below in order to achieve the goal:
+In I2S mode, the built-in microphone is muted by default. To enable it you have to unmute the `Mic` item. Follow the instructions below in order to achieve the goal:
 
-*   open `alsamixer` (an utility included into the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
+*   open `alsamixer` (an utility included in the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
 *   press `F6` and select the ***broadwell-rt286*** sound card
 *   press `F4` to switch to the *Capture view* and ensure that **ADC0** has the *CAPTURE* label. If it doesn't, toggle over to it with your arrow keys and press the spacebar to turn it on *CAPTURE*
 *   finally, toggle over to the **Mic** item and raise the volume to 100.
@@ -149,7 +151,7 @@ By default Jack recognises four capture ports and is unusable because the transp
 
 ### Touchpad
 
-With the latest BIOS, the touchpad should work out-of-the-box with either the synaptics or libinput drivers. The second is suggested over the former.
+With the latest BIOS, the touchpad should work out-of-the-box with either the synaptics or libinput drivers. The second is recommended over the former.
 
 #### Synaptics driver
 
@@ -161,19 +163,9 @@ If the touchpad freezes when you use more than one finger, try enabling Clickpad
 
 For better multi-touch support, you can use [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The libinput driver supports nearly all button layouts out-of-the-box with few additional settings.
 
- `/etc/X11/xorg.conf.d/50-libinput.conf` 
-```
-Section "InputClass"
-	Identifier "touchpad"
-	MatchProduct "DLL0665:01 06CB:76AD Touchpad"
-	Driver "libinput"
-	Option	"Tapping"	"on"
-	Option	"AccelSpeed"	"1"
-EndSection
+Refer to the specific [libinput](/index.php/Libinput "Libinput") page for more details.
 
-```
-
-Refer to `man libinput` for more configurable options (e.g. NaturalScrolling, MiddleEmulation.)
+For further configurable options (e.g. NaturalScrolling, MiddleEmulation), see `man libinput`.
 
 ### Powersaving
 
@@ -194,13 +186,17 @@ You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [po
 
 **Warning:** This profile is only for QHD+ model. Do not use it if you have the FHD one.
 
-An [ICC profile](/index.php/ICC_profiles "ICC profiles") is a binary file which contains precise data regarding the colour attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document. The following ICC profile is made with dispcalGUI ( [displaycal](https://www.archlinux.org/packages/?name=displaycal)), ArgyllCMS ( [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)) and a spectrophotometer for absolute colour accuracy; even if it is possible to achieve better results by calibrating your own monitor by yourself, in general this profile is definitively an improvement over the stock profile.
+An [ICC profile](/index.php/ICC_profiles "ICC profiles") is a binary file which contains precise data regarding the colour attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document. The following ICC profile is made with dispcalGUI ( [displaycal](https://www.archlinux.org/packages/?name=displaycal)) ArgyllCMS ( [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)) and a spectrophotometer for absolute colour accuracy; even if it is possible to achieve better results by calibrating your own monitor by yourself, in general this profile is definitively an improvement over the stock profile.
 
 This profile has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on for at least 30 minutes prior to start the calibration.
 
 *   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
 
 ## Troubleshooting
+
+### DE can't connect Bluetooth devices
+
+If the Bluetooth GUI can't connect the device, try to use `bluetoothctl` to connect manually.
 
 ### Pink & green artifacts in video or webcam output
 

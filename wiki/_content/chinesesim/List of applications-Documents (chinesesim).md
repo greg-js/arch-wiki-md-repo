@@ -733,7 +733,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **XMind** — Brainstorming and mind mapping application. It provides a rich set of different visualization styles, and allows sharing of created mind maps via their website.
 
-	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://www.archlinux.org/packages/?name=xmind)
+	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
 
 ### 字符选择器
 

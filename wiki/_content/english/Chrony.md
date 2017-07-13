@@ -110,9 +110,9 @@ In conclusion, do not forget the user guide at `/usr/share/doc/chrony/chrony.txt
 
 ### Starting chronyd
 
-The package provides `chrony.service`, see [systemd](/index.php/Systemd "Systemd") for details.
+The package provides `chronyd.service`, see [systemd](/index.php/Systemd "Systemd") for details.
 
-**Note:** `systemd-timesyncd.service` is in conflict with `chrony`, so you need to [disable](/index.php/Disable "Disable") it first if you want to [enable](/index.php/Enable "Enable") `chrony` properly.
+**Note:** `systemd-timesyncd.service` is in conflict with `chronyd`, so you need to [disable](/index.php/Disable "Disable") it first if you want to [enable](/index.php/Enable "Enable") `chronyd` properly.
 
 ### Synchronising chrony hardware clock from the system clock
 

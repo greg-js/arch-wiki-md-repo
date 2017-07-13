@@ -1,4 +1,4 @@
-Network Information Service (NIS) is a protocol developed by Sun to allow one to defer user authentication to a server. The server software is in the [ypserv](https://www.archlinux.org/packages/?name=ypserv) package, and the client software is in the [yp-tools](https://www.archlinux.org/packages/?name=yp-tools) package. [ypbind-mt](https://www.archlinux.org/packages/?name=ypbind-mt) is also available, which is a multi threaded version of the client daemon.
+Network Information Service (NIS) is a protocol developed by Sun to allow one to defer user authentication to a server. The server software is in the [ypserv](https://aur.archlinux.org/packages/ypserv/) package, and the client software is in the [yp-tools](https://aur.archlinux.org/packages/yp-tools/) package. [ypbind-mt](https://aur.archlinux.org/packages/ypbind-mt/) is also available, which is a multi threaded version of the client daemon.
 
 **Note:** This article somewhat unfinished. In the future that will change, but in the meantime check the [More resources section](#More_resources).
 
@@ -30,7 +30,7 @@ Network Information Service (NIS) is a protocol developed by Sun to allow one to
 
 ### Install Packages
 
-[Install](/index.php/Install "Install") the [ypbind-mt](https://www.archlinux.org/packages/?name=ypbind-mt), [ypserv](https://www.archlinux.org/packages/?name=ypserv), and [yp-tools](https://www.archlinux.org/packages/?name=yp-tools) packages.
+[Install](/index.php/Install "Install") the [ypbind-mt](https://aur.archlinux.org/packages/ypbind-mt/), [ypserv](https://aur.archlinux.org/packages/ypserv/), and [yp-tools](https://aur.archlinux.org/packages/yp-tools/) packages.
 
 ### Configuration
 

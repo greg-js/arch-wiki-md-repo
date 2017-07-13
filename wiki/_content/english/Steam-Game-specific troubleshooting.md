@@ -1614,7 +1614,7 @@ It is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170
 
 Ask the developer to rebuild the game.
 
-Some of the affected games: *Cities: Skylines*,*Streets of Rogue*,*Beholder*.
+Some of the affected games: *Cities: Skylines*,*Streets of Rogue*,*Beholder*,*Onraid*.
 
 ## Unrest
 

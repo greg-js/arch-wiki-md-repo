@@ -566,6 +566,10 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://wiki.gnome.org/Apps/Rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox) || [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox)
 
+*   **Sayonara** — Sayonara is a small, clear and fast audio player for Linux written in C++, supported by the Qt framework.
+
+	[https://sayonara-player.com/](https://sayonara-player.com/) || [sayonara-player](https://aur.archlinux.org/packages/sayonara-player/)
+
 *   **[Spotify](/index.php/Spotify "Spotify")** — Proprietary music streaming service. It supports local playback and streaming from Spotify's vast library (requires a free account).
 
 	[https://www.spotify.com/](https://www.spotify.com/) || [spotify](https://aur.archlinux.org/packages/spotify/)

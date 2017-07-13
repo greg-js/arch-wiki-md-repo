@@ -125,6 +125,8 @@ o
 
 FTL è parte del progetto Pi-hole. E' un interfaccia simil-database/fornitore di API sul log delle richieste DNS di Pi-hole. E' possibile configurare FTL attraverso il file `/etc/pihole/pihole-FTL.conf`. [Leggi](https://github.com/pi-hole/FTL#ftls-config-file) la documentazione del progetto per i dettagli.
 
+`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
+
 ## Usare Pi-hole attraverso OpenVPN
 
 E' possibile usare [OpenVPN](/index.php/OpenVPN "OpenVPN") (server) assieme a Pi-hole per redirigere il traffico remoto dei client al DNS di Pi-hole e rimuovere loro la pubblicità. E' logico aspettarsi una riduzione del traffico cellulare in quanto i banner pubblicitari non vengono nemmeno caricati. Assicurati che il file `/etc/openvpn/server/server.conf` contenga le due linee indicate qui sotto sostituendo "xxx.xxx.xxx.xxx" con l'indirizzo IP della macchina che esegue Pi-hole:

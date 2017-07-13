@@ -195,7 +195,7 @@ Si ninguno de los comandos mencionados devuelven una respuesta, quiere decir que
 Para llevar a cabo la paravirtualización tenemos que instalar:
 
 *   [kernel26-xen](https://aur.archlinux.org/packages.php?ID=16087)
-*   (opcional) [xe-guest-utilities](https://www.archlinux.org/packages/?name=xe-guest-utilities)
+*   (opcional) [xe-guest-utilities](https://aur.archlinux.org/packages/xe-guest-utilities/)
 
 Cambiamos al modo PV por comandos (en dom0):
 

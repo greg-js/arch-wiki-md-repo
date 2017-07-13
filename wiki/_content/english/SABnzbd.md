@@ -12,13 +12,18 @@ From [sabnzbd.org](http://sabnzbd.org/):
     *   [2.2 Starting SABnzbd as user](#Starting_SABnzbd_as_user)
     *   [2.3 Stopping SABnzbd](#Stopping_SABnzbd)
     *   [2.4 Accessing the web-interface](#Accessing_the_web-interface)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Enable SSL-support for news servers](#Enable_SSL-support_for_news_servers)
-*   [4 See also](#See_also)
+*   [3 See also](#See_also)
 
 ## Installation
 
 Install the [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) or [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) package.
+
+Install [python2-pyopenssl](https://www.archlinux.org/packages/?name=python2-pyopenssl) to enable SSL support for news servers.
+
+The usage of SSL connections is recommend (if supported by the news server):
+
+*   Transmission of data from the server to the NNTP client is encrypted, protecting your privacy.
+*   Decreasing the chance of throttling NNTP traffic by the ISP.
 
 ## Usage
 
@@ -66,17 +71,6 @@ $ curl "http(s)://host:port/sabnzbd/api?mode=shutdown&apikey=API-key"
 *   SABnzbd listens on port `8080`. Change `port = 8080` in `sabnzbd.ini` to the preferred port.
 
 After starting SABnzbd, access the web-interface by browsing to [http://127.0.0.1:8080](http://127.0.0.1:8080).
-
-## Tips and tricks
-
-### Enable SSL-support for news servers
-
-Install [python2-pyopenssl](https://www.archlinux.org/packages/?name=python2-pyopenssl) to enable SSL support for news servers.
-
-The usage of SSL connections is recommend (if supported by the news server):
-
-*   Transmission of data from the server to the NNTP client is encrypted, protecting your privacy.
-*   Decreasing the chance of throttling NNTP traffic by the ISP.
 
 ## See also
 

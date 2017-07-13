@@ -356,13 +356,11 @@ There are many solutions to choose from, but remember that all of them are mutua
 wired connection | Official
 GUI | [Archiso](/index.php/Archiso "Archiso") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Console tools | Systemd units |
 | [Connman](/index.php/Connman "Connman") | Yes | No | No | `connmanctl` | `connman.service` |
-| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/))* | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
 | [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | No | `nmcli`,`nmtui` | `NetworkManager.service` |
 | [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
-
-*The `dhcpcd@*interface*.service` is enabled on the Arch Linux ISO.
 
 See [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 

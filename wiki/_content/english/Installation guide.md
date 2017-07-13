@@ -38,9 +38,7 @@ To switch to a different console—for example, to view this guide with [ELinks]
 
 ### Set the keyboard layout
 
-The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). To list available layouts, run `ls /usr/share/kbd/keymaps/**/*.map.gz`.
-
-To modify the layout, append a file name to [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
+The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). To list available layouts, run `ls /usr/share/kbd/keymaps/**/*.map.gz`. To modify the layout, append a corresponding file name to [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
 
 [Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
@@ -57,14 +55,14 @@ If the directory does not exist, the system may be booted in [BIOS](https://en.w
 
 ### Connect to the Internet
 
-The installation image [enables](/index.php/Enable "Enable") the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon on boot for [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) devices, and will attempt to start a connection. Verify internet connectivity is available, for example with [ping](/index.php/Ping "Ping"):
+The installation image [enables](/index.php/Enable "Enable") the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon on boot for [wired](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) network devices. The connection may be checked with:
 
 ```
 # ping archlinux.org
 
 ```
 
-If none is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
+If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@`, `Tab` and see [Network configuration](/index.php/Network_configuration "Network configuration").
 
 For **wireless** connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 

@@ -138,7 +138,7 @@ Include conf/extra/httpd-ssl.conf
 
 ```
 
-Don't forget to add Port 443 to your listen ports in `/etc/httpd/conf/httpd.conf`
+Don't forget to add Port 443 to your listen ports in `/etc/httpd/conf/httpd.conf` and/or [#Virtual hosts](#Virtual_hosts):
 
 ```
 Listen 443
@@ -255,16 +255,15 @@ A very basic vhost file will look like this:
     DocumentRoot "/home/user/http/domainname1.dom"
     ServerName domainname1.dom:443
     ServerAlias domainname1.dom:443
+    SSLEngine on
+    SSLCertificateFile "/etc/httpd/conf/server.crt"
+    SSLCertificateKeyFile "/etc/httpd/conf/server.key"
     ErrorLog "/var/log/httpd/domainname1.dom-error_log"
     CustomLog "/var/log/httpd/domainname1.dom-access_log" common
 
     <Directory "/home/user/http/domainname1.dom">
         Require all granted
     </Directory>
-
-    SSLEngine on
-    SSLCertificateFile "/etc/httpd/conf/apache.crt"
-    SSLCertificateKeyFile "/etc/httpd/conf/apache.key"
 </VirtualHost>
 ```
 

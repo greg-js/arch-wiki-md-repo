@@ -191,7 +191,7 @@ $ xm create -c dom01
 Чтобы использовать паравиртуализацию нужно установить:
 
 *   [kernel26-xen](https://aur.archlinux.org/packages.php?ID=16087)
-*   (optional) [xe-guest-utilities](https://www.archlinux.org/packages/?name=xe-guest-utilities)
+*   (optional) [xe-guest-utilities](https://aur.archlinux.org/packages/xe-guest-utilities/)
 
 Измените режим на PV с помощью команд: (в dom0):
 

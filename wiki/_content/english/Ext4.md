@@ -43,7 +43,7 @@ From [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html):
 
 Creating a new file, directory, symlink etc. requires at least one free [inode](https://en.wikipedia.org/wiki/Inode "wikipedia:Inode"). If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
 
-Because it is not possible to change either the bytes-per-inode ratio or the inode count after the filesystem is created, `mkfs.ext4` uses by default a rather low ratio of one inode every 16384 bytes (16 Kb) to avoid this situation.
+Because it is not possible to change either the bytes-per-inode ratio or the inode count after the filesystem is created, `mkfs.ext4` uses by default a rather low ratio of one inode every 16384 bytes (16 KiB) to avoid this situation.
 
 However, for partitions with size in the hundreds or thousands of GB and average file size in the megabyte range, this usually results in a much too large inode number because the number of files created never reaches the number of inodes.
 
