@@ -118,17 +118,25 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 ### VPN clients
 
-*   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — To connect to OpenVPN VPNs.
-
-	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
-
 *   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
 
+*   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — To connect to OpenVPN VPNs.
+
+	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
+
 *   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
+
+*   **[strongSwan](/index.php/StrongSwan "StrongSwan")** — IPsec-based VPN Solution.
+
+	[https://www.strongswan.org/](https://www.strongswan.org/) || [strongswan](https://www.archlinux.org/packages/?name=strongswan)
+
+*   **[Vpnc](/index.php/Vpnc "Vpnc")** — To connect to Cisco 3000 VPN Concentrators.
+
+	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
 
 ### Anonymizing networks
 
@@ -165,10 +173,6 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 *   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
 
 	[http://lynx.invisible-island.net/](http://lynx.invisible-island.net/) || [lynx](https://www.archlinux.org/packages/?name=lynx)
-
-*   **retawq** — Interactive, multi-threaded network client (web browser) for text terminals.
-
-	[http://retawq.sourceforge.net/](http://retawq.sourceforge.net/) || [retawq](https://aur.archlinux.org/packages/retawq/)
 
 *   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images.
 
@@ -222,7 +226,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
-*   **Ungoogled chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
+*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
 
 	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
 
@@ -286,6 +290,10 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ###### Browsers based on webkit2gtk
 
+*   **Eolie** — Simple web browser for GNOME.
+
+	[https://gnumdk.github.io/eolie-web/](https://gnumdk.github.io/eolie-web/) || [eolie](https://aur.archlinux.org/packages/eolie/)
+
 *   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
 	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
@@ -294,9 +302,17 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://www.uninformativ.de/projects/lariza/](https://www.uninformativ.de/projects/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
+*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
+
+	[http://luakit.org/](http://luakit.org/) || [luakit-git](https://aur.archlinux.org/packages/luakit-git/)
+
 *   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
+
+*   **Poseidon** — Fast, minimal and lightweight browser.
+
+	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon-browser-git](https://aur.archlinux.org/packages/poseidon-browser-git/)
 
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -305,10 +321,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **[Uzbl](/index.php/Uzbl "Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
 
 	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
-
-*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua. The original luakit is insecure and should not be used. An updated fork using GTK+ 3 and WebKit2GTK+ is available on the [AUR](/index.php/AUR "AUR").
-
-	[http://luakit.org/](http://luakit.org/) || [luakit-git](https://aur.archlinux.org/packages/luakit-git/)
 
 ###### Browsers based on qt5-webkit
 
@@ -636,9 +648,9 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
-*   **N1** — A new mail client, built on the modern web and designed to be extended.
+*   **Nylas Mail** — A new mail client, built on the modern web and designed to be extended.
 
-	[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1-git](https://aur.archlinux.org/packages/n1-git/)
+	[https://www.nylas.com/nylas-mail/](https://www.nylas.com/nylas-mail/) || [nylas-mail-bin](https://aur.archlinux.org/packages/nylas-mail-bin/), [nylas-mail-git](https://aur.archlinux.org/packages/nylas-mail-git/)
 
 *   **openWMail** — The missing desktop client for Gmail & Google Inbox.
 

@@ -23,9 +23,7 @@
 
 ## Installation
 
-To use the up-to-date fork, [install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR").
-
-**Warning:** The original luakit is based on a WebKit port that is today considered insecure and outdated. It's recommended to use the up-to-date fork or [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+To use the up-to-date branch, [install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR").
 
 With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
 

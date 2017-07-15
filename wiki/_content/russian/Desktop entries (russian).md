@@ -1,95 +1,95 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Desktop entries](/index.php/Desktop_entries "Desktop entries"). Дата последней синхронизации: 30 марта 2017‎‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=472619).
+**Состояние перевода:** На этой странице представлен перевод статьи [Desktop entries](/index.php/Desktop_entries "Desktop entries"). Дата последней синхронизации: 12 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=481786).
 
-The freedesktop [Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) provides a standard for applications to integrate into a [desktop environment](/index.php/Desktop_environment "Desktop environment"). Desktop entries are the configuration files that describe how an application is launched and which data it can handle. They also configure how an application appears in a menu with an icon, which is subject to the related [menu specification](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) standard.
+Спецификация freedesktop [ярлык приложения](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) предусматривает стандарт для приложений для интеграции в [среду рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"). Ярлыки приложений - это файлы конфигурации, описывающие, как запускается приложение, и какие данные оно может обрабатывать. Они также настраивают, как появляются приложения в меню со значком, на который распространяется соответствующий стандарт [спецификации меню](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html).
 
-The most common desktop entries are the `.desktop` and `.directory` files. This article explains briefly how to create useful and standard compliant desktop entries. It is mainly intended for package contributors and maintainers, but may also be useful for software developers and others.
+Наиболее распространенные ярлыки приложений представлены файлами `.desktop` и `.directory`. В этой статье кратко объясняется, как создавать полезные и соответствующие стандарту ярлыки приложений. Она в основном предназначена для разработчиков и сопровождающих пакетов(ы), но может также быть полезна разработчикам программного обеспечения и другим.
 
-There are roughly three types of desktop entries:
+Существует примерно три типа ярлыков приложений:
 
-	Application 
+	Приложение
 
-	a shortcut to an application
+	ярлык приложения
 
-	Link 
+	Ссылка
 
-	a shortcut to a web link.
+	ярлык на веб-ссылку
 
-	Directory 
+	Каталог
 
-	a container of meta data of a menu entry
+	контейнер метаданных в меню
 
-The following sections will roughly explain how these are created and validated.
+В следующих разделах будет примерно показано, как они создаются и проверяются.
 
-Related to this content, and also defined in `.desktop` files, are MIME-type associations for data files. [Default applications](/index.php/Default_applications "Default applications") describes how these are configured.
+Связанное с этим материалом, а также определенные в файлах `.desktop`, являются ассоциациями типа MIME для файлов данных. [Приложения по умолчанию](/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Default applications (Русский)") описывают, как они настроены.
 
 ## Contents
 
-*   [1 Application entry](#Application_entry)
-    *   [1.1 File example](#File_example)
-    *   [1.2 Key definition](#Key_definition)
-        *   [1.2.1 Deprecation](#Deprecation)
-*   [2 Icons](#Icons)
-    *   [2.1 Common image formats](#Common_image_formats)
-    *   [2.2 Converting icons](#Converting_icons)
-    *   [2.3 Obtaining icons](#Obtaining_icons)
-*   [3 Tools](#Tools)
+*   [1 Ярлык приложения](#.D0.AF.D1.80.D0.BB.D1.8B.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [1.1 Пример файла](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0)
+    *   [1.2 Определение ключа](#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BB.D1.8E.D1.87.D0.B0)
+        *   [1.2.1 Осуждение](#.D0.9E.D1.81.D1.83.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5)
+*   [2 Значки](#.D0.97.D0.BD.D0.B0.D1.87.D0.BA.D0.B8)
+    *   [2.1 Распространенные форматы изображений](#.D0.A0.D0.B0.D1.81.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D1.8B_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [2.2 Преобразование значков](#.D0.9F.D1.80.D0.B5.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.BA.D0.BE.D0.B2)
+    *   [2.3 Получение значков](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.BA.D0.BE.D0.B2)
+*   [3 Инструменты](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
     *   [3.1 gendesk](#gendesk)
-        *   [3.1.1 How to use](#How_to_use)
-    *   [3.2 List or search in .desktop files](#List_or_search_in_.desktop_files)
+        *   [3.1.1 Как использовать](#.D0.9A.D0.B0.D0.BA_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C)
+    *   [3.2 Список или поиск в файлах .desktop](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B8.D0.BB.D0.B8_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA_.D0.B2_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D1.85_.desktop)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Hide desktop entries](#Hide_desktop_entries)
-    *   [4.2 Autostart](#Autostart)
-    *   [4.3 Modify environment variables](#Modify_environment_variables)
-*   [5 See also](#See_also)
+*   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+    *   [4.1 Скрытие ярлыков приложений](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.8F.D1.80.D0.BB.D1.8B.D0.BA.D0.BE.D0.B2_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [4.2 Автозапуск](#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
+    *   [4.3 Изменение переменных среды](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D1.81.D1.80.D0.B5.D0.B4.D1.8B)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
-## Application entry
+## Ярлык приложения
 
-Desktop entries for applications, or `.desktop` files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in `/usr/share/applications` or `/usr/local/share/applications` for applications installed system-wide, or `~/.local/share/applications` for user-specific applications. User entries take precedence over system entries.
+Ярлыки для приложений или файлов `.desktop`, как правило, представляют собой комбинацию метаинформационных ресурсов и ярлыков приложений. Эти файлы обычно находятся в `/usr/share/applications` или `/usr/local/share/applications` для приложений, установленных в системе, или `~/.local/share/applications` для пользовательских приложений. Пользовательские ярлыки имеют приоритет над системными ярлыками.
 
-### File example
+### Пример файла
 
-Following is an example of its structure with additional comments. The example is only meant to give a quick impression, and does not show how to utilize all possible entry keys. The complete list of keys can be found in the [freedesktop.org specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys).
+Ниже приведен пример его структуры с дополнительными комментариями. Этот пример предназначен только для быстрого ознакомления и не показывает, как использовать все возможные ключи ввода. Полный список ключей можно найти в [спецификация freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys).
 
 ```
 [Desktop Entry]
 
-# The type as listed above
+# Определение типа ярлыка приложений
 Type=Application
 
-# The version of the desktop entry specification to which this file complies
+# Версия спецификации ярлыков приложений, которой соответствует этот файл
 Version=1.0
 
-# The name of the application
+# Название приложения
 Name=jMemorize
 
-# A comment which can/will be used as a tooltip
+# Комментарий, который может/будет использоваться в качестве подсказки
 Comment=Flash card based learning tool
 
-# The path to the folder in which the executable is run
+# Путь к папке, в которой выполняется исполняемый файл
 Path=/opt/jmemorise
 
-# The executable of the application, possibly with arguments.
+# Исполняемый файл приложения, возможно с аргументами.
 Exec=jmemorize
 
-# The name of the icon that will be used to display this entry
+# Имя значка, который будет использоваться для отображения этого ярлыка.
 Icon=jmemorize
 
-# Describes whether this application needs to be run in a terminal or not
+# Описывает, должно ли это приложение запускаться в терминале или нет
 Terminal=false
 
-# Describes the categories in which this entry should be shown
+# Описывает категории, в которых должна отображаться этот ярлык
 Categories=Education;Languages;Java;
 
 ```
 
-### Key definition
+### Определение ключа
 
-All Desktop recognized desktop entries can be found on the [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys) site. For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
+Все признанные Desktop ярлыки приложений можно найти на сайте [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys). Например, ключ `Type` определяет три типа ярлыков: Приложение (тип 1), Ссылка (тип 2) и Каталог (тип 3).
 
-*   `Version` key does not stand for the version of the application, but for the version of the desktop entry specification to which this file complies.
+*   Ключ `Version` обозначает версию спецификации ярлыка приложения, которая соответствует этому файлу, но не как не версию приложения.
 
-*   `Name`, `GenericName` and `Comment` often contain redundant values in the form of combinations of them, like:
+*   `Name`, `GenericName` и `Comment` часто содержат избыточные значения в виде комбинаций из них, например:
 
 ```
 Name=Pidgin Internet Messenger
@@ -97,7 +97,7 @@ GenericName=Internet Messenger
 
 ```
 
-or
+или
 
 ```
 Name=NoteCase notes manager
@@ -105,49 +105,49 @@ Comment=Notes Manager
 
 ```
 
-This should be avoided, as it will only be confusing to users. The `Name` key should only contain the name, or maybe an abbreviation/acronym if available.
+Этого следует избегать, поскольку это только будет запутывать пользователей. Ключ `Name` должен содержать только имя или хотя бы аббревиатуру/акроним, если они доступны.
 
-*   `GenericName` should state what you would generally call an application that does what this specific application offers (i.e. Firefox is a "Web Browser").
-*   `Comment` is intended to contain any usefull additional information.
+*   `GenericName` должен указывать на категорию приложения, которая обозначает особый признак этого конкретного приложения (например Firefox является "веб-браузером").
+*   `Comment` должен содержать любую полезную дополнительную информацию.
 
-#### Deprecation
+#### Осуждение
 
-There are quite some keys that have become deprecated over time as the standard has matured. The best/simplest way is to use the tool `desktop-file-validate` which is part of the package [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils). To validate, run
-
-```
-$ desktop-file-validate <your desktop file>
+Существует много ключей, которые стали устаревшими с течением времени по мере созревания стандарта. Лучший/самый простой способ - использовать инструмент `desktop-file-validate`, который является частью пакета [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils). Чтобы проверить, выполните
 
 ```
+$ desktop-file-validate <твой desktop-файл>
 
-This will give you very verbose and useful warnings and error messages.
+```
 
-## Icons
+Это даст вам очень подробные и полезные предупреждения и сообщения об ошибках.
 
-See also the [Icon Theme Specification](https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html).
+## Значки
 
-### Common image formats
+Смотрите также [спецификация тем значков](https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html).
 
-Here is a short overview of image formats commonly used for icons.
+### Распространенные форматы изображений
 
-<caption>Support for image formats for icons as specified by the freedesktop.org standard.</caption>
-| Extension | Full Name and/or Description | Graphics Type | Container Format | Supported |
-| .[png](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes |
-| .[svg(z)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics "wikipedia:Scalable Vector Graphics") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/Vector_graphics "wikipedia:Vector graphics") | No | Yes (optional) |
-| .[xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | Yes (deprecated) |
-| .[gif](https://en.wikipedia.org/wiki/Graphics_Interchange_Format "wikipedia:Graphics Interchange Format") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | No | No |
-| .[ico](https://en.wikipedia.org/wiki/ICO_(icon_image_file_format) | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
-| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "wikipedia:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics") | Yes | No |
+Ниже приведен краткий обзор форматов изображений, обычно используемых для значков.
 
-### Converting icons
+<caption>Поддержка форматов изображений для значков, указанных в стандарте freedesktop.org.</caption>
+| Расширение | Полное имя и/или описание | Тип графики | Формат контейнера | Поддерживаемый |
+| .[png](https://en.wikipedia.org/wiki/ru:PNG "w:ru:PNG") | Portable Network Graphics | [Raster](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0 "w:ru:Растровая графика") | Нет | Да |
+| .[svg(z)](https://en.wikipedia.org/wiki/ru:SVG "w:ru:SVG") | Scalable Vector Graphics | [Vector](https://en.wikipedia.org/wiki/ru:%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0 "w:ru:Векторная графика") | Нет | Да (опционально) |
+| .[xpm](https://en.wikipedia.org/wiki/ru:X_Pixmap "w:ru:X Pixmap") | X PixMap | [Raster](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0 "w:ru:Растровая графика") | Нет | Да (устаревший) |
+| .[gif](https://en.wikipedia.org/wiki/ru:GIF "w:ru:GIF") | Graphics Interchange Format | [Raster](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0 "w:ru:Растровая графика") | Нет | Нет |
+| .[ico](https://en.wikipedia.org/wiki/ru:ICO_(%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2) "w:ru:ICO (формат файлов)") | MS Windows Icon Format | [Raster](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0 "w:ru:Растровая графика") | Да | Нет |
+| .[icns](https://en.wikipedia.org/wiki/Apple_Icon_Image "w:Apple Icon Image") | Apple Icon Image | [Raster](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0 "w:ru:Растровая графика") | Да | Нет |
 
-If you stumble across an icon which is in a format that is not supported by the freedesktop.org standard (like `gif` or `ico`), you can use the *convert* tool (which is part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package) to convert it to a supported/recommended format, e.g.:
+### Преобразование значков
+
+Если вы наткнулись на значок, который находится в формате, который не поддерживается стандартом freedesktop.org (например, `gif` или `ico`), вы можете использовать инструмент *преобразования* (который является частью пакета [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)), чтобы преобразовать его в поддерживаемый/рекомендованный формат, например:
 
 ```
 $ convert <icon name>.gif <icon name>.png
 
 ```
 
-If you convert from a container format like `ico`, you will get all images that were encapsulated in the `ico` file in the form `<icon name>-<number>.png`. If you want to know the size of the image, or the number of images in a container file like `ico` you can use the *identify* tool (also part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package):
+Если вы преобразуете из формата контейнера, такого как `ico`, вы получите все изображения, которые были инкапсулированы в файл `ico` в форме `<icon name>-<number>.png`. Если вы хотите узнать размер изображения или количество изображений в файле контейнера, например `ico`, вы можете использовать инструмент *идентификации* (также часть пакета [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)):
 
  `$ identify /usr/share/vlc/vlc48x48.ico` 
 ```
@@ -160,70 +160,70 @@ If you convert from a container format like `ico`, you will get all images that 
 
 ```
 
-As you can see, the example *ico* file, although its name might suggest a single image of size 48x48, contains no less than 6 different sizes, of which one is even greater than 48x48, namely 128x128.
+Как вы можете видеть, на примере файла *ico*, что по названию можно предположить одно изображение размером 48x48, но на самом деле оно содержит не менее 6 разных размеров, из которых один больше 48x48, а именно 128x128.
 
-Alternatively, you can use *icotool* (from [icoutils](https://www.archlinux.org/packages/?name=icoutils)) to extract png images from ico container:
+Кроме того, вы можете использовать *icotool* (из [icoutils](https://www.archlinux.org/packages/?name=icoutils)) для извлечения png-изображений из контейнера ico:
 
 ```
 $ icotool -x <icon name>.ico
 
 ```
 
-For extracting images from .icns container, you can use *icns2png* (provided by [libicns](https://aur.archlinux.org/packages/libicns/)):
+Для извлечения изображений из контейнера .icns вы можете использовать *icns2png* (предоставленный [libicns](https://aur.archlinux.org/packages/libicns/)):
 
 ```
 $ icns2png -x <icon name>.icns
 
 ```
 
-### Obtaining icons
+### Получение значков
 
-Although packages that already ship with a .desktop-file most certainly contain an icon or a set of icons, there is sometimes the case when a developer has not created a .desktop-file, but may ship icons, nonetheless. So a good start is to look for icons in the source package. You can i.e. first filter for the extension with **find** and then use **grep** to filter further for certain buzzwords like the package name, "icon", "logo", etc, if there are quite a lot of images in the source package.
+Хотя пакеты, которые уже поставляются с файлом .desktop, наверняка содержат значок или набор значков, иногда бывает, что разработчик не создал файл .desktop, но тем не менее может отправить значки. Поэтому неплохо начать поиск значков в исходном пакете. Вы можете, например, сначала фильтровать расширение с помощью **find**, а затем использовать **grep** для дальнейшей фильтрации по определенным ключевым словам, таких как имя пакета, "значок", "логотип" и т.д., если изображений достаточно много в исходном пакете.
 
 ```
 $ find /path/to/source/package -regex ".*\.\(svg\|png\|xpm\|gif\|ico\)$"
 
 ```
 
-If the developers of an application do not include icons in their source packages, the next step would be to search on their web sites. Some projects, like i.e. *tvbrowser* have an [artwork/logo page](http://enwiki.tvbrowser.org/index.php/Banners,_Logos_and_other_Promotion_Material) where additional icons may be found. If a project is multi-platform, there may be the case that even if the linux/unix package does not come with an icon, the Windows package might provide one. If the project uses a [Version control system](https://en.wikipedia.org/wiki/Version_control_system "wikipedia:Version control system") like CVS/SVN/etc. and you have some experience with it, you also might consider browsing it for icons. If everything fails, the project might simply have no icon/logo yet.
+Если разработчики приложения не включают значки в свои исходные пакеты, тогда следующим шагом будет поиск значков на их сайте. В некоторых проектах, например, *tvbrowser*, есть [страница с изображением/логотипом](http://enwiki.tvbrowser.org/index.php/Banners,_Logos_and_other_Promotion_Material), где могут быть найдены дополнительные значки. Если проект мультиплатформенный, может случиться так, что в пакете linux/unix отсутствует значок, тогда пакет Windows может предоставить его. Если в проекте используется [система управления версиями](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F%D0%BC%D0%B8 "w:ru:Система управления версиями"), например CVS/SVN и т.д., и у вас есть некоторый опыт работы с ней, вы также можете рассмотреть возможность просмотра ее для значков. Если все не удастся, проект может просто не иметь значка/логотипа еще.
 
-## Tools
+## Инструменты
 
 ### gendesk
 
-[gendesk](https://www.archlinux.org/packages/?name=gendesk) started as an Arch Linux-specific tool for generating .desktop files by fetching the needed information directly from PKGBUILD files. Now it is a general tool that takes command-line arguments.
+[gendesk](https://www.archlinux.org/packages/?name=gendesk) стартовал как инструмент, специально предназначенный для Arch Linux для генерации файлов .desktop, путем сбора необходимой информации непосредственно из файлов PKGBUILD. Теперь это общий инструмент, который принимает аргументы командной строки.
 
-Icons can be automatically downloaded from [openiconlibrary](http://openiconlibrary.sourceforge.net/), if available. (The source for icons can easily be changed in the future).
+Значки могут быть автоматически загружены из [openiconlibrary](http://openiconlibrary.sourceforge.net/), если они доступны. (Источник значков можно легко изменить в будущем).
 
-#### How to use
+#### Как использовать
 
-*   Add `gendesk` to makedepends
+*   Добавьте `gendesk` в makedepends
 
-*   Start the `prepare()` function with:
+*   Запустите функцию `prepare()` с:
 
  `gendesk --pkgname "$pkgname" --pkgdesc "$pkgdesc"` 
 
-*   Alternatively, if an icon is already provided ($pkgname.png, for instance). The `-n` flag is for not downloading an icon or using the default icon. Example:
+*   Альтернативно, если значок уже предоставлен (например, $pkgname.png). Флаг `-n` предназначен для не загрузки значка или использования значка по умолчанию. Пример:
 
  `gendesk -n --pkgname "$pkgname" --pkgdesc "$pkgdesc"` 
 
-*   `$srcdir/$pkgname.desktop` will be created and can be installed in the `package()` function with:
+*   `$srcdir/$pkgname.desktop` будет создан и может быть установлен в функции `package()` с:
 
  `install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"` 
 
-*   The icon can be installed with:
+*   Значок можно установить с помощью:
 
  `install -Dm644 "$pkgname.png" "$pkgdir/usr/share/pixmaps/$pkgname.png"` 
 
-*   Use `--name='Program Name'` for choosing a name for the menu entry.
+*   Используйте `--name='Program Name'` для выбора имени для входа в меню..
 
-*   Use `--exec='/opt/some_app/elf --with-ponies'` for setting the exec field.
+*   Для установки поля exec используйте `--exec='/opt/some_app/elf --with-ponies'`.
 
-*   See the [gendesk project](https://github.com/xyproto/gendesk) for more information.
+*   Смотрите [проект gendesk](https://github.com/xyproto/gendesk) для получения дополнительной информации.
 
-### List or search in .desktop files
+### Список или поиск в файлах .desktop
 
-[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) can list available *.desktop* files or search their contents.
+[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) может отображать доступные файлы *.desktop* или искать их содержимое.
 
 ```
 $ lsdesktopf
@@ -232,13 +232,13 @@ $ lsdesktopf --list gtk zh_TW,zh_CN,en_GB
 
 ```
 
-It can also perform MIME-type-related searches. See [Default applications#lsdesktopf](/index.php/Default_applications#lsdesktopf "Default applications").
+Он также может выполнять поиск по типу MIME. Смотрите [приложения по умолчанию#lsdesktopf](/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#lsdesktopf "Default applications (Русский)").
 
 ### fbrokendesktop
 
-The [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) bash script using command *which* to detect broken `Exec` that points to not existing path. Without any parameters it uses preset folders in `DskPath` array. It shows only broken *.desktop* with full path and filename that is missing.
+Скрипт [fbrokendesktop](https://aur.archlinux.org/packages/fbrokendesktop/) с использованием команды *which* для обнаружения сломанного `Exec`, который указывает на не существующий путь. Без каких-либо параметров он использует предварительно установленные каталоги в массиве `DskPath`. Он показывает только сломанный *.desktop* с полным отсутствием пути и имени файла.
 
-Examples
+Примеры
 
 ```
 $ fbrokendesktop
@@ -247,42 +247,42 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 ```
 
-## Tips and tricks
+## Советы и хитрости
 
-### Hide desktop entries
+### Скрытие ярлыков приложений
 
-Firstly, copy the desktop entry file in question to `~/.local/share/applications` to avoid your changes being overwritten.
+Во-первых, скопируйте ярлык приложения в `~/.local/share/applications`, чтобы ваши изменения не были перезаписаны.
 
-Then, to hide the entry in all environments, open the desktop entry file in a text editor and add the following line: `NoDisplay=true`.
+Затем, чтобы скрыть ярлык приложения во всех средах, откройте его в текстовом редакторе и добавьте следующую строку: `NoDisplay=true`.
 
-To hide the entry in a specific desktop, add the following line to the desktop entry file: `NotShowIn=*desktop-name*`
+Чтобы скрыть ярлык приложения на конкретной среде рабочего стола добавьте следующую строку в него: `NotShowIn=*desktop-name*`
 
-where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop entry can be hidden in more than desktop at once - simply separate the desktop names with a semi-colon.
+где *desktop-name* может быть таким, как *GNOME*, *Xfce*, *KDE* и т.д. Ярлык приложения может быть скрытым более, чем в одной среде рабочего стола сразу - просто разделяйте имена сред рабочего стола точкой с запятой.
 
-### Autostart
+### Автозапуск
 
-If you use an XDG-compliant desktop environment, such as GNOME or KDE, the desktop environment will automatically start [*.desktop](/index.php/Desktop_entries "Desktop entries") files found in the following directories:
+Если вы используете среду рабочего стола, совместимую с XDG, например GNOME или KDE, то она автоматически запускает файлы [*.desktop](/index.php/Desktop_entries "Desktop entries"), найденные в следующих каталогах:
 
-*   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
+*   Общесистемный: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` по умолчанию)
 
-*   GNOME also starts files found in `/usr/share/gnome/autostart/`
+*   GNOME также запускает файлы, найденные в `/usr/share/gnome/autostart/`
 
-*   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
+*   Пользовательский: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` по умолчанию)
 
-Users can override system-wide `*.desktop` files by copying them into the user-specific `~/.config/autostart/` folder.
+Пользователи могут переопределять общесистемные файлы `*.desktop` скопировав их в пользовательский каталог `~/.config/autostart/`.
 
-For a more specific description of directories used, [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
+Для более конкретного описания используемых каталогов смотрите [спецификацию автозапуска ярлыков приложений](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
 
-**Note:** This method is supported only by XDG-compliant desktop environments. Tools like [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex), or [fbautostart](https://aur.archlinux.org/packages/fbautostart/) can be used to offer XDG autostart in unsupported desktop environments as long as some other autostart mechanism exists. Use the existing mechanism to start the xdg compliant autostart tool.
+**Примечание:** Этот способ поддерживается только средами рабочего стола, совместимыми с XDG. Такие инструменты, как [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex) или [fbautostart](https://aur.archlinux.org/packages/fbautostart/), могут использоваться для предоставления автозапуска XDG в неподдерживаемых средах рабочего стола, если существует какой-либо другой механизм автозапуска. Используйте существующий механизм, чтобы запустить инструмент автозапуска, совместимый с xdg.
 
-### Modify environment variables
+### Изменение переменных среды
 
-Edit the `Exec` command by prepending `env`, for example:
+Отредактируйте команду `Exec`, добавив `env`, например:
 
  `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
-## See also
+## Смотрите также
 
-*   [DeveloperWiki:Removal of desktop files](/index.php/DeveloperWiki:Removal_of_desktop_files "DeveloperWiki:Removal of desktop files")
-*   [desktop wikipedia article](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
-*   [information for developers](http://freedesktop.org/wiki/Howto_desktop_files)
+*   [DeveloperWiki:Удаление файлов desktop](/index.php/DeveloperWiki:Removal_of_desktop_files "DeveloperWiki:Removal of desktop files")
+*   [Ярлык (компьютер)](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
+*   [Информация для разработчиков](http://freedesktop.org/wiki/Howto_desktop_files)

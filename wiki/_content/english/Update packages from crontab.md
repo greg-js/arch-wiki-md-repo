@@ -3,15 +3,12 @@
 ## Contents
 
 *   [1 Do not try this at home!](#Do_not_try_this_at_home.21)
-*   [2 Do try this at home!](#Do_try_this_at_home.21)
-*   [3 Using systemd](#Using_systemd)
-*   [4 Manual set up of auto-update](#Manual_set_up_of_auto-update)
-    *   [4.1 Update notifier](#Update_notifier)
-    *   [4.2 Download updates](#Download_updates)
-    *   [4.3 Download and install updates from short list](#Download_and_install_updates_from_short_list)
-    *   [4.4 Download and install at night](#Download_and_install_at_night)
-    *   [4.5 Update packages from the AUR](#Update_packages_from_the_AUR)
-    *   [4.6 Update the mirrorlist file](#Update_the_mirrorlist_file)
+*   [2 Manual set up of auto-update](#Manual_set_up_of_auto-update)
+    *   [2.1 Download updates](#Download_updates)
+    *   [2.2 Download and install updates from short list](#Download_and_install_updates_from_short_list)
+    *   [2.3 Download and install at night](#Download_and_install_at_night)
+    *   [2.4 Update packages from the AUR](#Update_packages_from_the_AUR)
+    *   [2.5 Update the mirrorlist file](#Update_the_mirrorlist_file)
 
 ## Do not try this at home!
 
@@ -39,13 +36,7 @@ To check every */time you must use e.g. `*/2` to check every 2 min or any other 
 
 If you want to automatically reboot your computer upon a successful upgrade, append '&& reboot' to the above line.
 
-## Do try this at home!
-
-Instead of using `pacman -Syuq` above, use `pacman -Syuwq`. The '-w' will cause pacman to "retrieve all packages from the server, but do not install/upgrade anything." While you will still have to manually update your system, you will not have to wait (as long) for packages to download while doing so.
-
-## Using systemd
-
-Instead of installing and configuring cron, you can directly use [systemd](/index.php/Systemd "Systemd"). [Here](http://www.techrapid.co.uk/2017/04/automatically-update-arch-linux-with-systemd.html) is an article on how to do it.
+**Note:** Instead of using `pacman -Syuq` above, use `pacman -Syuwq`. The '-w' will cause pacman to "retrieve all packages from the server, but do not install/upgrade anything." While you will still have to manually update your system, you will not have to wait (as long) for packages to download while doing so.
 
 ## Manual set up of auto-update
 
@@ -57,50 +48,6 @@ Instead of installing and configuring cron, you can directly use [systemd](/inde
 *   You must create a backup of [pacman database](/index.php/Pacman/Tips_and_tricks#Back-up_the_pacman_database "Pacman/Tips and tricks") before giving computer to user.
 
 If you want to set up Arch Linux for home user and still keep system up to date you will need to make work in background without distraction of user.
-
-### Update notifier
-
-There are many programs such as [zenity](https://www.archlinux.org/packages/?name=zenity) that can show GUI messages from program or scripts that runs in console. In this example you will see a dialog with list with file names and size for each of them that need to be downloaded for installation. By clicking Yes it will return exit code 0 respective 1 for No that will be placed in the [$?](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html) variable.
-
-```
-$ zenity --question --text="$(pacman -Qu|awk '//{if(index($0,"[ignored]") == 0 )print $1  }'|pacman -Si -|grep '^[a-Z]'| \
- sed 's/ //g'|  awk -F':' '//{ZZ=ZZ+1;XX[ZZ]=$1;SS[ZZ]=$2;}   
- END{AA=ZZ/18;for(i=1;i <= AA;i++){print XX[i*18-16]": "SS[18*i-16]" | "XX[i*18-4]": "SS[i*18-4];}}' )"
-```
-
-For a long list of updates is better to use this example and `zenity` can also read data from stdin.
-
-```
-$ pacman -Qu |awk '//{if(index($0,"[ignored]") == 0 )print $1  }'|pacman -Si -|grep '^[a-Z]'|\
-  sed 's/ //g'|awk -F':' '//{ZZ=ZZ+1;XX[ZZ]=$1;SS[ZZ]=$2;}
-  END{AA=ZZ/18;for(i=1;i <= AA;i++){print XX[i*18-16]": "SS[18*i-16]" | "XX[i*18-4]": "SS[i*18-4];}}' | zenity --text-info --title=Uppdateringar
-```
-
-Is suitable to use after updates has been downloaded.
-
-This will show progress bar. Depends on amount of repositories you will need to calculate correct step size, you can do it simply by dividing 100 with amount of lines printed by [pacman](/index.php/Pacman "Pacman") or use `LCount=$(grep ^"\[" /etc/pacman.conf -c);echo $((100/LCount))` to calculate and pass it to the [awk](https://www.gnu.org/software/gawk/manual/html_node/Using-Shell-Variables.html) command.
-
-```
-$ pacman -Sy --noprogressbar |awk '{AA=AA+16.7;system("echo "AA)}' | zenity --progress --no-cancel
-
-```
-
-In comparison to [zenity](https://www.archlinux.org/packages/?name=zenity) the program `xmessage` from [xorg-xmessage](https://www.archlinux.org/packages/?name=xorg-xmessage) package shows much smaller windows but does not support UTF and has some more limitations but here we will not discuss them, it is just a perfect light notifier.
-
-```
-...........
-...........
-STARTit=$(date '+%M-%S')
-xmessage -timeout 2 "Starting downloading of updates" & disown
-...........
-...........
-ENDit="$(date '+%M-%S')"
-xmessage -timeout 3 "${STARTit}"' * '"${ENDit}" & disown
-...........
-...........
-```
-
-See also: [How to show a message box from a bash script in Linux](http://stackoverflow.com/questions/7035/how-to-show-a-message-box-from-a-bash-script-in-linux).
 
 ### Download updates
 
@@ -258,19 +205,7 @@ This example shows how to start "makepkg" as root, for that you should have crea
 
 ### Update the mirrorlist file
 
-This can be scheduled to update mirrors once a week or few times in a month only for countries you want:
-
-```
-rm  /etc/pacman.d/mirrorlist
-for Cnt in China Iran Russia Korea;
- do 
-awk -v GG=$Cnt '{if(index($0,GG) != 0)AA=1;if(AA == 1)
-   {if( match($0,"#") != "0"){SS=$0;sub("#","",SS);print SS ;}else AA=0} }' \
- /etc/pacman.d/mirrorlist.pacnew >> /etc/pacman.d/mirrorlist;
-
-done
-
-```
+This can be scheduled to update mirrors once a week or few times in a month only for countries you want. See [reflector](/index.php/Reflector "Reflector").
 
 **Note:** It is assumed that the `/etc/pacman.d/mirrorlist.pacnew` file exists, usually created by the [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) after update.
 

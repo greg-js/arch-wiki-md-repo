@@ -63,7 +63,7 @@ For a user-wide installation you can configure `npm` to use a local folder inste
 
 First method is not recommended since you need to remember the location and give it as the parameter each time you do an operation.
 
-For the second method simply add the following lines to your shell configuration file (e.g. `.bash_profile`).
+For the second method simply add the following lines as [Environment variable](/index.php/Environment_variable "Environment variable"):
 
 ```
 PATH="$HOME/.node_modules/bin:$PATH"

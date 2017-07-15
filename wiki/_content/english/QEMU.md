@@ -1104,6 +1104,8 @@ For improved support for multiple monitors, clipboard sharing, etc. the followin
 *   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
 
+Enable `spice-vdagentd.service` after installation.
+
 ##### Password authentication with SPICE
 
 If you want to enable password authentication with SPICE you need to remove `disable-ticketing` from the `-spice` argument and instead add `password=*yourpassword*`. For example:

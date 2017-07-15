@@ -68,26 +68,27 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [4.2.4 linux-pae](#linux-pae)
 *   [5 x86_64 only](#x86_64_only)
     *   [5.1 Signed](#Signed_4)
-        *   [5.1.1 archzfs](#archzfs)
-        *   [5.1.2 ashleyis](#ashleyis)
-        *   [5.1.3 atom](#atom)
-        *   [5.1.4 aurpackages](#aurpackages)
-        *   [5.1.5 aur-archlinux](#aur-archlinux)
-        *   [5.1.6 boyska64](#boyska64)
-        *   [5.1.7 coderkun-aur](#coderkun-aur)
-        *   [5.1.8 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.9 decryptedepsilon](#decryptedepsilon)
-        *   [5.1.10 eatabrick](#eatabrick)
-        *   [5.1.11 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.12 holo](#holo)
-        *   [5.1.13 jrpi](#jrpi)
-        *   [5.1.14 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.15 markzz](#markzz)
-        *   [5.1.16 qt-debug](#qt-debug)
-        *   [5.1.17 quarry](#quarry)
-        *   [5.1.18 siosm-aur](#siosm-aur)
-        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.1 archsec](#archsec)
+        *   [5.1.2 archzfs](#archzfs)
+        *   [5.1.3 ashleyis](#ashleyis)
+        *   [5.1.4 atom](#atom)
+        *   [5.1.5 aurpackages](#aurpackages)
+        *   [5.1.6 aur-archlinux](#aur-archlinux)
+        *   [5.1.7 boyska64](#boyska64)
+        *   [5.1.8 coderkun-aur](#coderkun-aur)
+        *   [5.1.9 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.10 decryptedepsilon](#decryptedepsilon)
+        *   [5.1.11 eatabrick](#eatabrick)
+        *   [5.1.12 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.13 holo](#holo)
+        *   [5.1.14 jrpi](#jrpi)
+        *   [5.1.15 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.16 markzz](#markzz)
+        *   [5.1.17 qt-debug](#qt-debug)
+        *   [5.1.18 quarry](#quarry)
+        *   [5.1.19 siosm-aur](#siosm-aur)
+        *   [5.1.20 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.21 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -697,6 +698,21 @@ Server = http://pae.archlinux.ca/
 ## x86_64 only
 
 ### Signed
+
+#### archsec
+
+*   **Maintainer:** [The ArchSec Team](https://archsec.info)
+*   **Description:** A repository of binaries compiled from a hardened toolchain
+*   **Upstream page:** [https://archsec.info/](https://archsec.info/)
+*   **Key-ID:** 500773F3B282BEDB4D960B0F3C6F2219257C9E23
+
+**Note:** ArchSec-specific instructions can be found at [https://archsec.info/docs/config/](https://archsec.info/docs/config/)
+
+```
+[archsec]
+Server = https://archsec.info/$repo/$arch
+
+```
 
 #### archzfs
 

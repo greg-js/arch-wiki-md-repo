@@ -63,7 +63,7 @@ wifi-menu
 
 #### Battery monitoring
 
-Works but currently requires [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html). His kernel will also fix "Not charging when the power cable gets plugged in after boot" and "Only drawing max 0.5A from the charger, charging slowly if at all".
+Works out of the box since kernel 4.12. Earlier kernels require [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html). His kernel will also fix "Not charging when the power cable gets plugged in after boot" and "Only drawing max 0.5A from the charger, charging slowly if at all".
 
 #### Rotating X Session
 

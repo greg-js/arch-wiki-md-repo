@@ -1,88 +1,90 @@
-From [Unity - Game engine, tools and multiplatform](https://unity3d.com/unity):
+**Состояние перевода:** На этой странице представлен перевод статьи [Unity3D](/index.php/Unity3D "Unity3D"). Дата последней синхронизации: 13 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unity3D&diff=0&oldid=481838).
 
-	*Unity is a flexible and powerful development platform for creating multiplatform 3D and 2D games and interactive experiences. It's a complete ecosystem for anyone who aims to build a business on creating high-end content and connecting to their most loyal and enthusiastic players and customers.*
+Из [Unity - игровой движок, инструменты и многоплатформенность](https://unity3d.com/unity):
 
-Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
+	*Редактор Unity — это общее место для творчества художников, дизайнеров, разработчиков и многих других. Редактор доступен для Windows, Mac, Linux; в него входят инструменты для создания 2D- и 3D-сцен, режим мгновенного тестирования для ускорения работы и проверки версий, а также мощная система анимации.*
 
-**Note:** The Linux Editor is currently experimental. Please report all bugs to the [Unity forums](http://forum.unity3d.com/forums/linux-editor-support-feedback-experimental.93/)!
+Не путать с Canonical's [Unity](/index.php/Unity "Unity").
+
+**Примечание:** Редактор для Linux в настоящее время является экспериментальным. Пожалуйста, сообщайте обо всех ошибках на [форуме Unity](http://forum.unity3d.com/forums/linux-editor-support-feedback-experimental.93/)!
 
 ## Contents
 
-*   [1 Installation](#Installation)
+*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
 *   [2 Android Remote](#Android_Remote)
-    *   [2.1 Prepare computer](#Prepare_computer)
-        *   [2.1.1 Install packages](#Install_packages)
-        *   [2.1.2 Configure the Editor](#Configure_the_Editor)
-    *   [2.2 Prepare Android](#Prepare_Android)
-    *   [2.3 Test](#Test)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before.2Fwhile_signing_in)
-    *   [3.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
-    *   [3.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
+    *   [2.1 Подготовка компьютера](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80.D0.B0)
+        *   [2.1.1 Установка пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+        *   [2.1.2 Настройка редактора](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80.D0.B0)
+    *   [2.2 Подготовка Android](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_Android)
+    *   [2.3 Проверка](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
+*   [3 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [3.1 Unity падает при первом запуске до/при входа(е) в систему](#Unity_.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B2.D0.BE.D0.BC_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B4.D0.BE.2F.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0.28.D0.B5.29_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+    *   [3.2 Unity падает при попытке загрузить проект](#Unity_.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82)
+    *   [3.3 Unity падает, если отсутствует ~/.config/user-dirs.dirs](#Unity_.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82.2C_.D0.B5.D1.81.D0.BB.D0.B8_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.7E.2F.config.2Fuser-dirs.dirs)
 
-## Installation
+## Установка
 
-**Warning:** The Unity package is **huge**. For a successful installation you'll need about 8GiB of free space for the package building, and another 3.5GiB for it to install.
+**Важно:** Пакет Unity - **огромный**. Для успешной установки вам понадобится около 8 ГБ свободного места для сборки пакета и еще 3.5 ГБ для его установки.
 
-Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/) or [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) for the beta version.
+Просто установите [AUR](/index.php/AUR "AUR") пакет [unity-editor](https://aur.archlinux.org/packages/unity-editor/) или [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) для бета-версии.
 
 ## Android Remote
 
-[Unity Remote](http://docs.unity3d.com/Manual/UnityRemote5.html) is an Android app to help test input for Android devices. It achieves this by sending a compressed screenshot to the device each frame.
+[Unity Remote](http://docs.unity3d.com/Manual/UnityRemote5.html) - приложение для Android, которое позволяет получить хорошее представление о том, как ваша игра действительно выглядит и обрабатывается на целевом Android устройстве. Это достигается благодаря отправки визуального вывода из редактора на экран устройства, а при этом входные данные с устройства отправляются обратно в запущенный проект в Unity.
 
-### Prepare computer
+### Подготовка компьютера
 
-#### Install packages
+#### Установка пакетов
 
-[Install](/index.php/Install "Install") the [android-udev](https://www.archlinux.org/packages/?name=android-udev) package, which will ensure you have correct [udev](/index.php/Udev "Udev") rules for your device.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [android-udev](https://www.archlinux.org/packages/?name=android-udev), который обеспечит правильные правила [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") для вашего устройства.
 
-Install the [android-sdk](https://aur.archlinux.org/packages/android-sdk/) package and one of the packages from the [java-environment](https://www.archlinux.org/packages/?name=java-environment) group, preferably JDK7, though it's reported to (and should) work with OpenJDK too.
+Установите пакет [android-sdk](https://aur.archlinux.org/packages/android-sdk/) и один из пакетов из группы [java-environment](https://www.archlinux.org/packages/?name=java-environment), предпочтительно JDK7, хотя сообщается, что он должен работать с OpenJDK тоже.
 
-#### Configure the Editor
+#### Настройка редактора
 
-Open the editor, navigate to *Edit -> Preferences* and set the correct paths to the Android SDK and the JDK.
+Откройте редактор, перейдите к *Edit -> Preferences* и установите правильные пути к Android SDK и JDK.
 
-**Tip:**
+**Совет:**
 
-*   The Android SDK is usually in `/opt/android-sdk`.
-*   The JDK varies by the version you are using, if you want to use the default set it to `/usr/lib/jvm/default`.
+*   Android SDK обычно находится в `/opt/android-sdk`.
+*   Местоположение JDK зависит от используемой вами версии, если вы хотите использовать значение установленное по умолчанию, тогда смотрите его в `/usr/lib/jvm/default`.
 
-The navigate to *Edit -> Project Settings -> Editor* and set `Unity Remote Device` to `Any Android Device`.
+Перейдите в *Edit -> Project Settings -> Editor* и установите `Unity Remote Device` на `любое устройство Android`.
 
-For more help see the [Unity documentation](http://docs.unity3d.com/Manual/android-sdksetup.html).
+Дополнительную информацию можно найти в [документации Unity](http://docs.unity3d.com/Manual/android-sdksetup.html).
 
-### Prepare Android
+### Подготовка Android
 
-Install [Unity Remote 5](https://play.google.com/store/apps/details?id=com.unity3d.genericremote) from the Play Store. Alternatively you can download and build it yourself from the Asset Store.
+Установите [Unity Remote 5](https://play.google.com/store/apps/details?id=com.unity3d.genericremote) из Play Маркета. Также вы можете загрузить и собрать его самостоятельно из Asset Store.
 
-It is also [recommended](http://www.howtogeek.com/192732/android-usb-connections-explained-mtp-ptp-and-usb-mass-storage/) to set your Android device to PTP mode.
+Также [рекомендуется](http://www.howtogeek.com/192732/android-usb-connections-explained-mtp-ptp-and-usb-mass-storage/)[[1]](http://last24.info/read/2014/10/31/7/8174) установить Android-устройство в режим PTP.
 
-**Note:** Don’t forget to turn on “USB Debugging” on your device. Go to *Settings -> Developer* options, then enable USB debugging. As of Android Jelly Bean 4.2 the Developer options are hidden by default. To enable them tap on *Settings -> About Phone -> Build Version* multiple times. Then you will be able to access the *Settings -> Developer* options.
+**Примечание:** Не забудьте включить “USB-отладку” на вашем устройстве. Перейдите в раздел *Настройки -> Для разработчиков*, затем включите USB-отладку. Начиная с Android Jelly Bean 4.2 раздел "Для разработчиков" скрыт по умолчанию. Чтобы показать его, нажмите *Найстройки -> Об устройстве -> Номер сборки* несколько раз. Затем вы сможете получить доступ к параметрам *Настройки -> Для разработчиков*.
 
-For more help see the [Unity documentation](http://docs.unity3d.com/Manual/UnityRemote5.html).
+Для получения дополнительной информации смотрите [документацию Unity](http://docs.unity3d.com/Manual/UnityRemote5.html).
 
-### Test
+### Проверка
 
-If you have Unity opened, close it.
+Если у вас открыт Unity, закройте его.
 
-Connect the phone to the computer and launch Unity Remote.
+Подключите телефон к компьютеру и запустите Unity Remote.
 
-Open the Editor and press play. You should now see your game transmitted to your Android device.
+Откройте редактор и нажмите кнопку воспроизведения. Теперь вы должны увидеть, как ваша игра передается на ваше Android-устройство.
 
-If it doesn't work or you have questions, see the [Unity Documentation](http://docs.unity3d.com/Manual/UnityRemote5.html).
+Если он не работает или у вас есть вопросы, смотрите [документацию Unity](http://docs.unity3d.com/Manual/UnityRemote5.html).
 
-## Troubleshooting
+## Исправление проблем
 
-### Unity crashes on first launch before/while signing in
+### Unity падает при первом запуске до/при входа(е) в систему
 
-This is a rare bug where Unity's configuration gets created wrongly. You can try resetting it by:
+Это редкая ошибка, когда конфигурация Unity создается неправильно. Вы можете попробовать выполнить сброс:
 
  `$ rm -rf ~/.config/unity3d/{*.prefs,*.log,Preferences} ` 
 
-### Unity crashes when trying to load project
+### Unity падает при попытке загрузить проект
 
-Users have [reported](http://forum.unity3d.com/threads/unity-on-arch-manjaro-linux.350315/page-3#post-2271637) that unsetting `GTK_IM_MODULE` prevents the crash.
+Пользователи [сообщают](http://forum.unity3d.com/threads/unity-on-arch-manjaro-linux.350315/page-3#post-2271637), что отключение `GTK_IM_MODULE` предотвращает сбой.
 
-### Unity crashes if ~/.config/user-dirs.dirs is missing
+### Unity падает, если отсутствует ~/.config/user-dirs.dirs
 
-See how to generate the xdg files here: [XDG user directories](/index.php/XDG_user_directories "XDG user directories")
+Посмотрите, как сгенерировать файлы xdg здесь: [Каталоги пользователей XDG](/index.php/XDG_user_directories "XDG user directories")

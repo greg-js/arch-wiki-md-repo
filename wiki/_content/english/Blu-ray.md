@@ -59,7 +59,7 @@ If libaacs finds a valid processing key for the disc MKB version as well as a va
 
 Thankfully, in case no valid Processing key is available and/or the Host certificate has been revoked, libaacs has an alternative way to decrypt a disc: by providing a valid VUK in the `KEYDB.cfg` file. This allows libaacs to skip directly to step 3\. Contrary to the Processing keys, VUKs are disc specific. Therefore this is less efficient as the user will have to get the VUK from a third party. But the great advantage is that VUKs cannot be revoked. Note that if libaacs is able to perform step 2 (with a valid Host key/certificate), then it stores the VUK calculated in step 3 in `~/.cache/aacs/vuk`. At subsequent viewings of the same disc, libaacs can reuse the stored VUK. Thus it may be a good idea to backup these VUKs, or even better, to upload them to [[7]](http://www.labdv.com/aacs/).
 
-There have been several efforts to compile VUKs from various sources. Early attempts include forum threads, such as available at [[8]](http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904) or [[9]](http://forum.doom9.org/showthread.php?p=1525922#post1525922). Recently, a centralised VUK database has been made available at [[10]](http://www.labdv.com/aacs/), with nearly 21,000 published VUKs. This is the most comprehensive source of public VUKs available.
+There have been several efforts to compile VUKs from various sources. Early attempts include forum threads, such as available at [[8]](http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904) or [[9]](http://forum.doom9.org/showthread.php?p=1525922#post1525922). Recently, a centralised VUK database has been made available at [[10]](http://www.labdv.com/aacs/), with more than 24,000 published VUKs. This is the most comprehensive source of public VUKs available.
 
 #### BD+
 
@@ -72,7 +72,7 @@ BD+ is an additional but optional component of the Blu-ray DRM. In December 2013
 ### Preparation
 
 1.  [Install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs) from the [official repositories](/index.php/Official_repositories "Official repositories").
-2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[13]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for nearly 21,000 discs.
+2.  Download the [`KEYDB.cfg`](http://www.labdv.com/aacs/KEYDB.cfg) file from [[13]](http://www.labdv.com/aacs/) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for more than 24,000 discs.
 3.  If necessary (*i.e.* if volumes are not mounted automatically on your system), mount the disc to a directory, *e.g.*: `# mount /dev/sr0 /media/blurays` 
 
 ### Decryption process

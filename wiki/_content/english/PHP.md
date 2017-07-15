@@ -266,6 +266,13 @@ You would need other plugins for JavaScript support and DB query.
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [composer](https://www.archlinux.org/packages/?name=composer) package.
 
+Add `$HOME/.config/composer/vendor/bin` as [environment variable](/index.php/Environment_variable "Environment variable") to execute global (e.g. `composer global require "package/name"`) installed packages:
+
+```
+PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+```
+
 ### Box
 
 [Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/) package.

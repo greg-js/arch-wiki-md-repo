@@ -307,6 +307,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.ibiblio.org/mc/](http://www.ibiblio.org/mc/) || [mc](https://www.archlinux.org/packages/?name=mc)
 
+*   **micro** — A modern and intuitive terminal-based text editor, written in go and extensible through plugins
+
+	[https://micro-editor.github.io](https://micro-editor.github.io) || [micro](https://aur.archlinux.org/packages/micro/)
+
 *   **[MicroEmacs](https://en.wikipedia.org/wiki/MicroEMACS "wikipedia:MicroEMACS")** — Ncurses-based text editor. Includes a console version (me -n) and an X-window version (me).
 
 	[http://www.jasspa.com/](http://www.jasspa.com/) || [jasspa-me](https://aur.archlinux.org/packages/jasspa-me/)

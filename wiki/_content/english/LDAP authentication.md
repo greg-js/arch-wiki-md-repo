@@ -383,6 +383,7 @@ account required pam_time.so
 password required pam_unix.so try_first_pass nullok sha512 shadow
 password optional pam_permit.so
 
+**session     required      pam_mkhomedir.so skel=/etc/skel/ umask=0077**
 session required pam_limits.so
 session required pam_unix.so
 **session optional pam_sss.so**

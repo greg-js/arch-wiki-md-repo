@@ -374,7 +374,7 @@ Inside each `server` block serving a PHP web application should appear a `locati
 
 ```
 location ~ \.php$ {
-     try_files $uri /index.php =404;
+     try_files $uri $document_root$fastcgi_script_name =404;
      fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
      fastcgi_index index.php;
      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -417,7 +417,7 @@ Unix domain sockets should however be faster.
 
 If using multiple `server` blocks with enabled PHP support, it might be easier to create a PHP config file instead:
 
- `/etc/nginx/conf/php.conf` 
+ `/etc/nginx/php.conf` 
 ```
 location ~ \.php$ {
      ...

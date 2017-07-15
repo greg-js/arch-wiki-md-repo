@@ -50,7 +50,11 @@ Open source Linux driver is being developed by reverse engineering the Windows d
 
 ### Bug: Fans blowing at max speed after resuming
 
-There is a bug in the current kernel, causing the fans to often go on full throttle non-stop after resuming from suspend-to-ram. While the issue is actively researched and different solutions are tested in [the kernel bug thread](https://bugzilla.kernel.org/show_bug.cgi?id=191181), there is yet to working patch. To work around the issue, just repeatedly suspend (<kbd>Fn+4</kbd>) and resume (<kbd>Fn</kbd>) until it resumes without the fans starting with a short burst of activity. For me, the issue arises in about 2/3 resumes, and never on cold boot.
+There is a bug in the current kernel, causing the fans to often go on full throttle non-stop after resuming from suspend-to-ram.
+
+**There is now a set of patches available:** [https://bugzilla.kernel.org/show_bug.cgi?id=196129#c26](https://bugzilla.kernel.org/show_bug.cgi?id=196129#c26)
+
+Until this patch is upstream, you need to work around the issue by repeatedly suspend (<kbd>Fn+4</kbd>) and resume (<kbd>Fn</kbd>) until it resumes without the fans starting with a short burst of activity. For me, the issue arises in about 2/3 resumes, and never on cold boot.
 
 ## Configuration
 

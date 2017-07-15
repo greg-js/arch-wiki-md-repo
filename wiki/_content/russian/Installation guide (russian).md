@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Installation guide](/index.php/Installation_guide "Installation guide"). Дата последней синхронизации: 9 июля 2017‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=481580).
+**Состояние перевода:** На этой странице представлен перевод статьи [Installation guide](/index.php/Installation_guide "Installation guide"). Дата последней синхронизации: 13 июля 2017‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=481833).
 
 Этот документ является руководством по установке [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)") из-под системы, запущенной с официального установочного образа. Перед установкой рекомендуется посмотреть [часто задаваемые вопросы](/index.php/%D0%A7%D0%B0%D1%81%D1%82%D0%BE_%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B "Часто задаваемые вопросы"). Чтобы получить разъяснения по понятиям, используемым на этой странице, смотрите статью [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение").
 
@@ -40,9 +40,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Установка раскладки клавиатуры
 
-По умолчанию используется [раскладка](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите `ls /usr/share/kbd/keymaps/**/*.map.gz`.
-
-Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите `loadkeys ru`.
+По умолчанию используется [раскладка](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите `ls /usr/share/kbd/keymaps/**/*.map.gz`. Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите `loadkeys ru`.
 
 [Консольные шрифты](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Fonts (Русский)") расположены в каталоге `/usr/share/kbd/consolefonts/` и могут быть выбраны при помощи [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
@@ -59,14 +57,14 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Соединение с Интернетом
 
-Для [проводных](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) устройств установочный образ во время загрузки автоматически [включает](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") службу [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)"), после чего пытается установить соединение. Проверьте, что интернет работает, например, при помощи [ping](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F "Network configuration (Русский)"):
+Для [проводных](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) сетевых устройств установочный образ во время загрузки автоматически [включает](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") службу [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)"). Соединение можно проверить:
 
 ```
 # ping archlinux.org
 
 ```
 
-Если узел недоступен, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") службу *dhcpcd* при помощи `systemctl stop dhcpcd@<TAB>` и обратитесь к разделу [Настройка сети#Драйвер устройства](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Настройка сети").
+Если узел недоступен, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") службу *dhcpcd* при помощи `systemctl stop dhcpcd@`, `Tab` и обратитесь к разделу [Настройка сети#Драйвер устройства](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Настройка сети").
 
 Для **беспроводных** соединений доступны iw(8), wpa_supplicant(8) и [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"). Также смотрите статью [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети").
 

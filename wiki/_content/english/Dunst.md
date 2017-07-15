@@ -10,20 +10,15 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package.
+[Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package. There is no need to start or enable dunst; it is called by systemd when programs send notifications through dbus.
 
 An example configuration file is included at `/usr/share/dunst/dunstrc`.
 
-Copy this file to ~/.config/dunst/dunstrc and edit it accordingly.
-
-```
-$ cp /usr/share/dunst/dunstrc ~/.config/dunst/dunstrc
-
-```
+Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.
 
 ## Appearance
 
-Dunst allows for the use of html markup in notifications. Some examples are bold, italics, strikethrough and underline. For a complete reference see [https://developer.gnome.org/pango/stable/PangoMarkupFormat.html](https://developer.gnome.org/pango/stable/PangoMarkupFormat.html). HTML can be stripped from notifications if `allow_markup` is set to `no`.
+Dunst allows for the use of html markup in notifications. Some examples are bold, italics, strikethrough and underline. For a complete reference see [[1]](https://developer.gnome.org/pango/stable/PangoMarkupFormat.html). HTML can be stripped from notifications if `markup` is set to `none`.
 
 The formatting of the notification can be specified. Options are as follows:
 

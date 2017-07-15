@@ -74,7 +74,7 @@ See the articles for details.
 
 [Mozc](http://code.google.com/p/mozc/) is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
 
-Custom package [mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
+Custom package [mozc-ut2](https://aur.archlinux.org/packages/mozc-ut2/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html). The dictionary adds over 350,000 words into original.
 
 #### libkkc
 

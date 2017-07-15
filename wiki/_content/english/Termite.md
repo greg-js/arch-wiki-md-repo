@@ -28,6 +28,13 @@ Termite starts in insert mode by default. Text may be selected using the mouse, 
 
 Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file is in *ini* format, with three sections: *options*, *colors*, and *hints*.
 
+To start customizing termite copy the base example file to your home dir first:
+
+```
+ cp /etc/xdg/termite.cfg ~/.config/termite/config
+
+```
+
 ### Font
 
 Fonts are specified in the format `font=<font_name> <font_size>` under the *options* section. `<font_name>` is specified according to [fontconfig](/index.php/Fontconfig "Fontconfig"), not [Xft](/index.php/X_Logical_Font_Description "X Logical Font Description"). Use `fc-list` to see which fonts are available on the system (see also [Font configuration#Font paths](/index.php/Font_configuration#Font_paths "Font configuration")).
@@ -43,6 +50,8 @@ font = Droid Sans Mono 8
 ### Colors
 
 Colors consist of either a 24-bit hex value (e.g. `#4a32b1`), or an rgba vector (e.g. `rgba(16, 32, 64, 0.5)`). Valid properties for colors are `foreground`, `foreground_bold`, `foreground_dim`, `background`, `cursor`, and `colorN` (where N is an integer from zero through 254; used to assign a 24-bit color value to terminal colorN).
+
+An amazing collection of termite color schemes can be found here: [https://github.com/khamer/base16-termite/tree/master/themes](https://github.com/khamer/base16-termite/tree/master/themes)
 
  `~/.config/termite/config` 
 ```

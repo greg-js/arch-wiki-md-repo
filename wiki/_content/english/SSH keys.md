@@ -608,16 +608,16 @@ $ chmod 600 ~/.ssh/authorized_keys
 
 If that does not solve the problem you may try temporarily setting `StrictModes` to `no` in `sshd_config`. If authentication with StrictModes off is successful, it is likely an issue with file permissions persists.
 
-**Tip:** Do not forget to set `StrictModes` to `yes` for added security.
-
-Make sure the remote machine supports the type of keys you are using. Try using RSA or DSA keys instead [#Generating an SSH key pair](#Generating_an_SSH_key_pair)
+Make sure the remote machine supports the type of keys you are using:
 
 ```
-Some servers do not support ECDSA keys. 
+Some servers do not support ECDSA keys.
 
 ```
 
-Failing this, run the sshd in debug mode and monitor the output while connecting:
+Try using RSA or DSA keys instead, see [#Generating an SSH key pair](#Generating_an_SSH_key_pair).
+
+You may want to use debug mode and monitor the output while connecting:
 
 ```
 # /usr/bin/sshd -d

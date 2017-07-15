@@ -36,6 +36,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.12 Skylake support](#Skylake_support)
     *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
     *   [6.14 Screen flickering](#Screen_flickering)
+    *   [6.15 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -466,6 +467,26 @@ The following power saving features used by intel iGPUs are known to cause flick
 *   Rc6 sleep modes (see [#RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)), can be disabled with `i915.enable_rc6=0`.
 
 *   Panel Self Refresh (PSR) [FS#49628](https://bugs.archlinux.org/task/49628) [FS#49371](https://bugs.archlinux.org/task/49371) [FS#50605](https://bugs.archlinux.org/task/50605), enabled by default since kernel mainline 4.6\. To disable this feature use the option `i915.enable_psr=0`.
+
+### OpenGL 2.1 with i915 driver
+
+The update of [mesa](https://www.archlinux.org/packages/?name=mesa) from version 13.x to 17 may break support for OpenGL 2.1 on third gen Intel GPUs (GMA3100, see [here](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Third_generation)), as described in this [article](http://www.phoronix.com/scan.php?page=news_item&px=Mesa-i915-OpenGL-2-Drop), reverting it back to OpenGL 1.4\. However this could be restored manually by setting `/etc/drirc` or `~/.drirc` options like :
+
+ `/etc/drirc` 
+```
+<driconf>
+...
+    <device driver="i915">
+        <application name="Default">
+            <option name="**stub_occlusion_query**" value="**true**" />
+            <option name="**fragment_shader**" value="**true**" />
+        </application>
+    </device>
+...
+</driconf>
+```
+
+**Note:** the reason of this step back was Chromium and other apps bad experience. If needed, you might edit the drirc file in a "app-specific" style, see [here](https://dri.freedesktop.org/wiki/ConfigurationInfrastructure/), to disable gl2.1 on executable chromium for instance.
 
 ## See also
 

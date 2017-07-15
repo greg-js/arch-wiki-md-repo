@@ -197,7 +197,7 @@ Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for t
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/dockerd --data-root */path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
 ```
 
 ## Images

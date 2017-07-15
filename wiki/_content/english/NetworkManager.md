@@ -86,12 +86,49 @@ NetworkManager can be [installed](/index.php/Install "Install") with the package
 
 NetworkManager VPN support is based on a plug-in system. If you need VPN support via NetworkManager, you have to install one of the following packages:
 
-*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect)
-*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
-*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
-*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
-*   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
-*   [networkmanager-strongswan](https://aur.archlinux.org/packages/networkmanager-strongswan/)
+*   **NetworkManager-openconnect** — Connect to Cisco AnyConnect, Juniper VPNs.
+
+	[https://git.gnome.org/browse/network-manager-openconnect](https://git.gnome.org/browse/network-manager-openconnect) || [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect)
+
+*   **NetworkManager-openvpn** — Connect to OpenVPN VPNs.
+
+	[https://git.gnome.org/browse/network-manager-openvpn](https://git.gnome.org/browse/network-manager-openvpn) || [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
+
+*   **NetworkManager-pptp** — Connect to PPTP VPNs, Microsoft compatible.
+
+	[https://git.gnome.org/browse/network-manager-pptp](https://git.gnome.org/browse/network-manager-pptp) || [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
+
+*   **NetworkManager-vpnc** — Connect to IPsec VPNs, Cisco compatible.
+
+	[https://git.gnome.org/browse/network-manager-vpnc](https://git.gnome.org/browse/network-manager-vpnc) || [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
+
+*   **NetworkManager-strongswan** — Connect to IKEv2 IPsec VPNs with support for EAP, PSK and certificate authentication.
+
+	[https://wiki.strongswan.org/projects/strongswan/wiki/NetworkManager](https://wiki.strongswan.org/projects/strongswan/wiki/NetworkManager) || [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan)
+
+*   **NetworkManager-fortisslvpn** — Connect to Fortinet SSLVPN VPNs.
+
+	[https://git.gnome.org/browse/network-manager-fortisslvpn](https://git.gnome.org/browse/network-manager-fortisslvpn) || [networkmanager-fortisslvpn-git](https://aur.archlinux.org/packages/networkmanager-fortisslvpn-git/)
+
+*   **NetworkManager-iodine** — Tunnel IP traffic via DNS using Iodine.
+
+	[https://honk.sigxcpu.org/piki/projects/network-manager-iodine/](https://honk.sigxcpu.org/piki/projects/network-manager-iodine/) || [networkmanager-iodine-git](https://aur.archlinux.org/packages/networkmanager-iodine-git/)
+
+*   **NetworkManager-libreswan** — Connect to IPsec IKEv1 VPNs, Cisco compatible.
+
+	[https://git.gnome.org/browse/network-manager-libreswan](https://git.gnome.org/browse/network-manager-libreswan) || [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
+
+*   **NetworkManager-l2tp** — L2TP compatible VPN plugin .
+
+	[https://github.com/nm-l2tp/network-manager-l2tp](https://github.com/nm-l2tp/network-manager-l2tp) || [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
+
+*   **NetworkManager-ssh** — Connect using OpenSSH's Tunnel capability.
+
+	[https://github.com/danfruehauf/NetworkManager-ssh](https://github.com/danfruehauf/NetworkManager-ssh) || [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
+
+*   **NetworkManager-sstp** — SSTP compatible VPN plugin.
+
+	[http://sstp-client.sourceforge.net/#Network_Manager_Plugin](http://sstp-client.sourceforge.net/#Network_Manager_Plugin) || [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 

@@ -5,7 +5,7 @@
 *   [1 Installation Instructions](#Installation_Instructions)
     *   [1.1 Lunar](#Lunar)
     *   [1.2 Kinetic](#Kinetic)
-*   [2 Rebuild when Boost is updated](#Rebuild_when_Boost_is_updated)
+*   [2 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
 
 ## Installation Instructions
 
@@ -26,12 +26,10 @@ alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INC
 
 ```
 
-## Rebuild when Boost is updated
+## Rebuild when shared libraries are updated
 
-When you update a library that ROS depends on, e.g. Boost, then you need to rebuild all the packages that link to it. You can determine which ROS packages depend on Boost with a command similar to the one below.
+When you update a library that ROS depends on (e.g. Boost), all packages that link to it must be rebuilt. Most AUR helpers will not detect this situation. The following script will generate a list of all packages that are linked to missing so files:
 
-```
-export LANG=C;pacman -Qi boost | grep "Required By" | tr " " "
-" | grep -e "^ros"
+[https://seangreenslade.com/h/snippets/ros-find-outofdate.py](https://seangreenslade.com/h/snippets/ros-find-outofdate.py)
 
-```
+(Note that the script requires [pyalpm](https://www.archlinux.org/packages/?name=pyalpm) to be installed.)

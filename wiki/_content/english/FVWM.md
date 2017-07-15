@@ -1,4 +1,4 @@
-[FVWM](http://fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[2]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
+[FVWM](http://fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[1]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
 
 ## Contents
 
@@ -89,13 +89,13 @@ The following configuration locations are supported as of version 2.6.7, but may
 *   `/usr/local/share/fvwm/system.fvwm2rc`
 *   `/etc/system.fvwm2rc`
 
-As of version 2.6.7, FVWM ships with a new default configuration, located in `/usr/share/fvwm/default-config`. As such, the older sample configuration files are no longer provided. However, they can still be viewed on [GitHub](https://github.com/fvwmorg/fvwm/tree/4fc2bf68493c098da54af63cff3ebf3c58882a8d/sample.fvwmrc). The [fvwm-themes](http://fvwm-themes.sourceforge.net/) project also provides ready-made configurations.
+As of version 2.6.7, FVWM ships with a new default configuration, located in `/usr/share/fvwm/default-config`. As such, the older sample configuration files are no longer provided. However, they can still be viewed on [GitHub](https://github.com/fvwmorg/fvwm/tree/4fc2bf68493c098da54af63cff3ebf3c58882a8d/sample.fvwmrc). The [fvwm-themes](http://fvwm-themes.sourceforge.net/) project also provides ready-made configurations though it should be noted that these have not been updated since 2003 and may require modifications to work correctly with more recent FVWM versions.
 
 **Tip:** You can split up your configuration into multiple files and then source those files from the main configuration file using the `read` command. The syntax is `read /path/to/file`.
 
 ### The virtual desktop
 
-For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[3]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
+For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[2]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
 
 Pages in FVWM are arranged in a grid. The number of pages used can be defined with the `DesktopSize` command. For instance, adding `DesktopSize 3x3` to your configuration file will give you 9 pages, arranged in a 3x3 grid. Pages can be navigated using the [pager module](#FvwmPager) or with the `GoToPage` command which could be mapped to a keyboard shortcut or menu entry. For instance, the command `GoToPage -1p +0p` will move the viewport 1 page to the left of the current page.
 
@@ -153,9 +153,11 @@ The style argument can be one of the following:
 *   Pixmap - fills the button with a given pixmap - see also the following variants: AdjustedPixmap, ShrunkPixmap, StretchedPixmap, TiledPixmap.
 *   MiniIcon - fills the button with the window's mini icon.
 
-A number of vector styles are documented [here](https://web.archive.org/web/20150905091146/http://www.fvwm.org/screenshots/vectorbuttons/). You can also create your own vector buttons using this [vector buttons viewer](http://gromnitsky.users.sourceforge.net/js/fvwm-vector/). See [this page](https://web.archive.org/web/20150905124404/http://www.fvwm.org/screenshots/windowdecors/) for some example decoration configurations that use pixmaps.
+A number of vector styles are documented [here](http://fvwmforums.org/wiki/Config/VectorButtons/). You can also create your own vector buttons using this [vector buttons viewer](http://gromnitsky.users.sourceforge.net/js/fvwm-vector/). Finally, see [this page](http://fvwmforums.org/wiki/Decor/) for some example decoration configurations that use pixmaps, including imitations of Crux (a Sawfish theme), Mac OS and Windows 98.
 
 The flag affects the state for a button. Some examples of flags include *Raised*, *Sunk* and *Flat*. For more information, see `man fvwm` and look for the ButtonStyle section.
+
+**Tip:** To give the buttons the same background as the title, use the `UseTitleStyle` flag.
 
 #### Title and border styles
 
@@ -260,7 +262,7 @@ AddToFunc MyFunc
 
 ### Modules
 
-**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[4]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7)
+**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[3]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7)
 
 Modules are separate programs, spawned by FVWM that can add extra functionality. Modules can be spawned using the following syntax: `Module *ModuleName* (*identifier*) *ModuleArgs*`.
 
@@ -454,7 +456,7 @@ Ensure that [perl-tk](https://www.archlinux.org/packages/?name=perl-tk) and [per
 
 ### Window tiling
 
-The following functions can tile a window to the left half, right half, top half or bottom half of the screen respectively when called and return the window to its original position when called again.
+The following functions can tile a window to the left half, right half, top half or bottom half of the screen, or to each corner of the screen, when called and return the window to its original position and size when called again.
 
 ```
 AddToFunc TileLeft
@@ -472,6 +474,22 @@ AddToFunc TileTop
 AddToFunc TileBottom
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+AddToFunc TileTopLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+AddToFunc TileTopRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+AddToFunc TileBottomLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+AddToFunc TileBottomRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 ```
 
 ## See also

@@ -264,12 +264,7 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 If you receive this message directly after attempting to use *sshfs*:
 
 *   First make sure that the **remote** machine has *sftp* installed! It will not work, if not.
-
-**Tip:** If your remote server is running OpenWRT: `opkg install openssh-sftp-server` will do the trick
-
-*   Then, try checking the path of the `Subsystem` listed in `/etc/ssh/sshd_config` on the remote machine to see, if it is valid. You can check the path to it with `find / -name sftp-server`.
-
-For Arch Linux the default value in `/etc/ssh/sshd_config` is `Subsystem sftp /usr/lib/ssh/sftp-server`.
+*   Then, check that the path of the `Subsystem sftp` in `/etc/ssh/sshd_config` on the remote machine is valid.
 
 ### Freezing apps (e.g. Gnome Files, Gedit)
 
@@ -296,7 +291,7 @@ After=network.target
 [Service]
 RemainAfterExit=yes
 ExecStart=-/bin/true
-ExecStop=-/usr/bin/pkill sshfs
+ExecStop=-/usr/bin/pkill -x sshfs
 
 [Install]
 WantedBy=multi-user.target

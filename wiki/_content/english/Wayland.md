@@ -410,16 +410,21 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### Input grabbing in games, remote desktop and VM windows
 
-In contrast to Xorg, Wayland does not allow exclusive input device grabbing (e.g. [keyboard](https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html), [mouse](https://tronche.com/gui/x/xlib/input/XGrabPointer.html)), instead, it depends on the Wayland compositor to pass keyboard shortcuts (extensions in development) and confine the pointer device to the application window.
+In contrast to Xorg, Wayland does not allow exclusive input device grabbing (e.g. [keyboard](https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html), [mouse](https://tronche.com/gui/x/xlib/input/XGrabPointer.html)), instead, it depends on the Wayland compositor to pass keyboard shortcuts and confine the pointer device to the application window.
 
 This change in input grabbing breaks current applications' behavior, meaning:
 
 *   Hotkey combinations and modifiers will be caught by the compositor and won't be sent to remote desktop and virtual machine windows.
 *   The mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window of the virtual machine or remote desktop is displaced from the host's mouse pointer.
 
-Wayland protocol extensions for keyboard handling were recently added in [wayland-protocols 1.9](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034459.html) for both [XWayland](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034457.html) and [native Wayland clients](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034458.html), there are already extensions for handling of pointer devices ([relative pointer motion events](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml) and [pointer constraints](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml)) and similar support [already been added to XWayland](https://lists.x.org/archives/xorg-devel/2016-September/050975.html).
+Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to Wayland compositors, XWayland and in the case of native Wayland clients to widget toolkits (e.g GTK, QT) and probably also to the applications themselves. ATM there is no Wayland compositor which support all of these extensions.
 
-Support for these extensions needs to be added to the Wayland compositor, XWayland, and in the case of native Wayland clients probably also to the widgets toolkit (e.g. GTK, QT) and the application itself. Currently, there are no known compositors supporting all of these extensions.
+The related extensions are:
+
+*   [XWayland keyboard grabbing protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/xwayland-keyboard-grab/xwayland-keyboard-grab-unstable-v1.xml), added in [wayland-protocols 1.9](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034459.html), there's [a suggested patch for XWayland](https://lists.x.org/archives/xorg-devel/2017-July/054078.html) (probably will be included in xorg-server 1.20)
+*   [Compositor shortcuts inhibit protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml) (native Wayland only), added in [wayland-protocols 1.9](https://lists.freedesktop.org/archives/wayland-devel/2017-July/034459.html)
+*   [Relative pointer protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/relative-pointer/relative-pointer-unstable-v1.xml), added in [wayland-protocols 1.1](https://lists.freedesktop.org/archives/wayland-devel/2016-February/027029.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2016-September/050975.html) in [xorg-server 1.19](https://lists.x.org/archives/xorg-announce/2016-October/002734.html)
+*   [Pointer constraints protocol](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml), added in [wayland-protocols 1.1](https://lists.freedesktop.org/archives/wayland-devel/2016-February/027029.html), XWayland support [already been added](https://lists.x.org/archives/xorg-devel/2016-September/050975.html) in [xorg-server 1.19](https://lists.x.org/archives/xorg-announce/2016-October/002734.html)
 
 ## See also
 
