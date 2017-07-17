@@ -20,7 +20,7 @@
 
 ## Installation
 
-Install the [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox) package.
+[Install](/index.php/Install "Install") the [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox) package.
 
 ## Tips
 

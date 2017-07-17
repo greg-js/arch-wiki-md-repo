@@ -212,7 +212,7 @@ You can define your own compose key combinations by copying the default file to 
 
 However, GTK does not use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") by default and therefore does not follow `~/.XCompose` keys. This can be fixed by forcing GTK to use XIM by adding `export GTK_IM_MODULE=xim` and/or `export XMODIFIERS="@im=none"` to `~/.xprofile`.
 
-**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method"), [uim](https://en.wikipedia.org/wiki/Uim "wikipedia:Uim"), [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") etc. See [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") for details.
+**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](/index.php?title=Smart_Common_Input_Method&action=edit&redlink=1 "Smart Common Input Method (page does not exist)"), [uim](https://en.wikipedia.org/wiki/Uim "wikipedia:Uim"), [IBus](/index.php/IBus "IBus"), etc. See [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") for details.
 
 **Note:** XIM will prevent insertion of Unicode characters with the `Ctrl+Shift+u` combination.
 

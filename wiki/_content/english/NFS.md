@@ -73,8 +73,8 @@ Add directories to be shared and limit them to a range of addresses via a CIDR o
 
  `/etc/exports` 
 ```
-/srv/nfs       192.168.1.0/24(rw,fsid=root)
-/srv/nfs/music 192.168.1.0/24(rw,nohide) # note the nohide option which is applied to mounted directories on the file system.
+/srv/nfs       192.168.1.0/24(rw,fsid=root,crossmnt)
+/srv/nfs/music 192.168.1.0/24(rw) # Use whatever export options you see fit
 
 ```
 
@@ -339,7 +339,7 @@ In order to get the most out of NFS, it is necessary to tune the `rsize` and `ws
 In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS server (default max block size) varies depending on RAM size, with a maximum of 1M (1048576 bytes), the max block size of th server will be used even if nfs clients requires bigger `rsize` and `wsize`. See [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html) It is possible to change the default max block size allowed by the server by writing to the /proc/fs/nfsd/max_block_size file before starting nfsd. For example, the following command restores the previous default iosize of 32k:
 
 ```
-~]# echo 32767 >/proc/fs/nfsd/max_block_size
+# echo 32767 > /proc/fs/nfsd/max_block_size
 
 ```
 

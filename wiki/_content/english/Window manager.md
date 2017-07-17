@@ -56,9 +56,9 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/), [compiz-core](https://aur.archlinux.org/packages/compiz-core/)
 
-*   **cwm** — Originally deriving from evilwm, but later re-written from scratch. cwm aims to be simple, and offers helpful features such as searching for windows.
+*   **[cwm](/index.php/Cwm "Cwm")** — Originally deriving from evilwm, but later re-written from scratch. cwm aims to be simple, and offers helpful features such as searching for windows.
 
-	[http://monkey.org/~marius/cwm/cwm.1.a](http://monkey.org/~marius/cwm/cwm.1.a) || [cwm](https://aur.archlinux.org/packages/cwm/)
+	[https://github.com/chneukirchen/cwm](https://github.com/chneukirchen/cwm) || [cwm](https://aur.archlinux.org/packages/cwm/)
 
 *   **eggwm** — A lightweight QT4/QT5 window manager
 

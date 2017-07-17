@@ -342,7 +342,7 @@ Once connected via SSH, leave that xterm or shell window open since it is acting
 Using the matched ports on the server/client:
 
 ```
-$ vncviewer localhost:1
+$ vncviewer localhost:5901
 
 ```
 

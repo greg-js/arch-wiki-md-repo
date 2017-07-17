@@ -8,6 +8,7 @@ This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetoo
     *   [3.1 Mouse lag](#Mouse_lag)
     *   [3.2 Problems with the USB dongle](#Problems_with_the_USB_dongle)
     *   [3.3 Mouse always disconnect](#Mouse_always_disconnect)
+    *   [3.4 Failed to set power on: org.bluez.Error.Blocked](#Failed_to_set_power_on:_org.bluez.Error.Blocked)
 
 ## Installation
 
@@ -73,3 +74,13 @@ and searching for devices as shown above.
 ### Mouse always disconnect
 
 If the mouse stops working but works again after restarting bluetooth, you may need to [disable USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management") for the selected device.
+
+### Failed to set power on: org.bluez.Error.Blocked
+
+Check rfkill block list and unblock if necessary:
+
+```
+$ rfkill list
+$ rfkill unblock #
+
+```

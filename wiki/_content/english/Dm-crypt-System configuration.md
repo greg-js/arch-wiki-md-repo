@@ -174,7 +174,7 @@ In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters
 
 **Tip:** If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`.
 
-**Note:** If you use `luks.*` kernel parameters for the rootfs while also using /etc/crypttab for the swap then systemd will complain about "Not creating device 'swap' because it was not specified on the kernel command line.". To fix this issue just use `rd.luks.*` parameters instead.
+**Note:** If you use `luks.*` kernel parameters for the rootfs while also using `/etc/crypttab` for the swap then [systemd](/index.php/Systemd "Systemd") will complain about "Not creating device 'swap' because it was not specified on the kernel command line.". To fix this issue just use `rd.luks.*` parameters instead.
 
 #### luks.uuid
 
@@ -210,9 +210,18 @@ luks.options=*options*
 
 ```
 
-Specify options for the device listed after `UUID` or, if not specified, for all UUIDs not specified elsewhere (e.g., cryptab).
+Specify options for the device listed after `UUID` or, if not specified, for all UUIDs not specified elsewhere (e.g., crypttab).
 
 This is roughly equivalent to the third parameter of `encrypt`'s `cryptdevice`.
+
+Follows a similar format to options in crypttab - options are separated by commas, options with values are specified using `*option*=*value*`.
+
+For example:
+
+```
+luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
+
+```
 
 #### luks.key
 

@@ -25,7 +25,7 @@ De un modo similar, los archivos de configuración de Arch proporcionados por lo
 
 ### Modernidad
 
-Arch Linux se esfuerza por mantener las últimas versiones estables liberadas de software, siempre y cuando no causen errores del sistema en la medida que pueda evitarse razonablemente. Se basa en un sistema [rolling-release](https://en.wikipedia.org/wiki/rolling-release "wikipedia:rolling-release"), que permite una instalación de una sola vez con actualizaciones continuas.
+Arch Linux se esfuerza por mantener las últimas versiones estables liberadas de software, siempre y cuando no causen errores del sistema en la medida que pueda evitarse razonablemente. Se basa en un sistema [rolling-release](https://en.wikipedia.org/wiki/rolling_release "wikipedia:rolling release"), que permite una instalación de una sola vez con actualizaciones continuas.
 
 Arch incorpora muchas de las nuevas tecnologías disponibles para los usuarios de GNU/Linux, incluyendo el sistema de inicio [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), [sistemas de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") modernos, LVM2, software RAID, soporte para udev e initcpio (con [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")), así como las últimas versiones de kernels disponibles.
 

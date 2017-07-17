@@ -2,117 +2,46 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 ## Contents
 
-*   [1 Cosmetic and convenience](#Cosmetic_and_convenience)
-    *   [1.1 Graphical front-ends](#Graphical_front-ends)
-    *   [1.2 Utilities](#Utilities)
-*   [2 Maintenance](#Maintenance)
-    *   [2.1 Listing packages](#Listing_packages)
-        *   [2.1.1 With size](#With_size)
-        *   [2.1.2 By date](#By_date)
-        *   [2.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
-    *   [2.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
-    *   [2.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
-    *   [2.4 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
-    *   [2.5 Removing everything but base group](#Removing_everything_but_base_group)
-    *   [2.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
-    *   [2.7 Listing changed backup files](#Listing_changed_backup_files)
-    *   [2.8 Back-up the pacman database](#Back-up_the_pacman_database)
-    *   [2.9 Check changelogs easily](#Check_changelogs_easily)
-*   [3 Installation and recovery](#Installation_and_recovery)
-    *   [3.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
-    *   [3.2 Custom local repository](#Custom_local_repository)
-    *   [3.3 Network shared pacman cache](#Network_shared_pacman_cache)
-        *   [3.3.1 Read-only cache](#Read-only_cache)
-        *   [3.3.2 Read-write cache](#Read-write_cache)
-        *   [3.3.3 two-way with rsync](#two-way_with_rsync)
-        *   [3.3.4 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
-        *   [3.3.5 Synchronize pacman package cache using synchronization programs](#Synchronize_pacman_package_cache_using_synchronization_programs)
-        *   [3.3.6 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
-    *   [3.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
-    *   [3.5 List of installed packages](#List_of_installed_packages)
-    *   [3.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
-    *   [3.7 Reinstalling all packages](#Reinstalling_all_packages)
-    *   [3.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
-    *   [3.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
-    *   [3.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
-    *   [3.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
-*   [4 Performance](#Performance)
-    *   [4.1 Database access speeds](#Database_access_speeds)
-    *   [4.2 Download speeds](#Download_speeds)
-        *   [4.2.1 Powerpill](#Powerpill)
-        *   [4.2.2 wget](#wget)
-        *   [4.2.3 aria2](#aria2)
-        *   [4.2.4 Other applications](#Other_applications)
-
-## Cosmetic and convenience
-
-### Graphical front-ends
-
-*   **Arch-Update** — Update indicator for Gnome-Shell.
-
-	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
-
-*   **Arch-Update-Notifier** — Update indicator for KDE.
-
-	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
-
-*   **Discover** — A collection of package management tools for KDE, using PackageKit.
-
-	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
-
-*   **GNOME packagekit** — GTK based package management tool
-
-	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
-
-*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
-
-	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
-
-*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
-
-	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
-
-*   **pcurses** — Package management in a curses frontend
-
-	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
-
-*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
-
-	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
-
-### Utilities
-
-*   **Lostfiles** — Script that identifies files not owned by any package.
-
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
-
-*   **Pacmatic** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
-
-	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
-
-*   **pacutils** — Helper library for libalpm based programs.
-
-	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
-
-*   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
-
-	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
-
-*   **pkgtools** — Collection of scripts for Arch Linux packages.
-
-	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
-
-*   **repoctl** — Tool to help manage local repositories.
-
-	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
-
-*   **repose** — An Arch Linux repository building tool.
-
-	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
-
-*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
-
-	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+*   [1 Maintenance](#Maintenance)
+    *   [1.1 Listing packages](#Listing_packages)
+        *   [1.1.1 With size](#With_size)
+        *   [1.1.2 By date](#By_date)
+        *   [1.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
+    *   [1.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
+    *   [1.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
+    *   [1.4 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
+    *   [1.5 Removing everything but base group](#Removing_everything_but_base_group)
+    *   [1.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
+    *   [1.7 Listing changed backup files](#Listing_changed_backup_files)
+    *   [1.8 Back-up the pacman database](#Back-up_the_pacman_database)
+    *   [1.9 Check changelogs easily](#Check_changelogs_easily)
+*   [2 Installation and recovery](#Installation_and_recovery)
+    *   [2.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
+    *   [2.2 Custom local repository](#Custom_local_repository)
+    *   [2.3 Network shared pacman cache](#Network_shared_pacman_cache)
+        *   [2.3.1 Read-only cache](#Read-only_cache)
+        *   [2.3.2 Read-write cache](#Read-write_cache)
+        *   [2.3.3 two-way with rsync](#two-way_with_rsync)
+        *   [2.3.4 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
+        *   [2.3.5 Synchronize pacman package cache using synchronization programs](#Synchronize_pacman_package_cache_using_synchronization_programs)
+        *   [2.3.6 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
+    *   [2.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
+    *   [2.5 List of installed packages](#List_of_installed_packages)
+    *   [2.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
+    *   [2.7 Reinstalling all packages](#Reinstalling_all_packages)
+    *   [2.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
+    *   [2.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
+    *   [2.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
+    *   [2.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
+*   [3 Performance](#Performance)
+    *   [3.1 Database access speeds](#Database_access_speeds)
+    *   [3.2 Download speeds](#Download_speeds)
+        *   [3.2.1 Powerpill](#Powerpill)
+        *   [3.2.2 wget](#wget)
+        *   [3.2.3 aria2](#aria2)
+        *   [3.2.4 Other applications](#Other_applications)
+*   [4 Utilities](#Utilities)
+    *   [4.1 Graphical front-ends](#Graphical_front-ends)
 
 ## Maintenance
 
@@ -656,3 +585,73 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 *   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (please read the [documentation on the Github project page](https://github.com/huydx/hget) for more info)
+
+## Utilities
+
+*   **Lostfiles** — Script that identifies files not owned by any package.
+
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+
+*   **Pacmatic** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
+*   **pacutils** — Helper library for libalpm based programs.
+
+	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
+
+*   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
+
+	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
+
+*   **pkgtools** — Collection of scripts for Arch Linux packages.
+
+	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
+
+*   **repoctl** — Tool to help manage local repositories.
+
+	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
+
+*   **repose** — An Arch Linux repository building tool.
+
+	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
+
+*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
+
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+
+### Graphical front-ends
+
+**Warning:** Some front-ends such as [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) [[2]](https://github.com/manjaro/pamac/search?utf8=%E2%9C%93&q=start_refresh&type=) and [octopi](https://aur.archlinux.org/packages/octopi/) [[3]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") unattended.
+
+*   **Arch-Update** — Update indicator for Gnome-Shell.
+
+	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
+
+*   **Arch-Update-Notifier** — Update indicator for KDE.
+
+	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
+
+*   **Discover** — A collection of package management tools for KDE, using PackageKit.
+
+	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+
+*   **GNOME packagekit** — GTK based package management tool
+
+	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+
+*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+
+	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+
+*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
+
+	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
+
+*   **pcurses** — Package management in a curses frontend
+
+	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
+
+*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
+
+	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)

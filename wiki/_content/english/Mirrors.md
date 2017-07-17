@@ -159,9 +159,8 @@ The 2016.12.01 installation ISO supplies a mirror list that can easily be filter
 Can be useful to automate update of the mirror list only for a specific countries instead of making a speed test each time. Assumed that `mirrorlist.pacnew` exist, the file creates after installation of the [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) update.
 
 ```
-Cnt="China";
-awk -v GG="$Cnt" '{if(match($0,GG) != "0")AA="1";if(AA == "1"){if( length($2) != "0"  )print substr($0,2) ;else AA="0"} }' \
- /etc/pacman.d/mirrorlist.pacnew
+awk '/^## China$/ {f=1} f==0 {next} /^$/ {exit} {print substr($0, 2)}' \
+    /etc/pacman.d/mirrorlist.pacnew
 ```
 
 ## Troubleshooting

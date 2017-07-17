@@ -42,15 +42,16 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 
 ## Installation
 
-**Note:** Installing a JDK will automatically pull its JRE dependency.
+**Note:**
 
-**Note:** After installation, the Java environment will need to be recognized by the shell (`$PATH` variable). This can be done by sourcing `/etc/profile` from the command line or by logging out/in again of a Desktop Environment.
+*   Installing a JDK will automatically pull its JRE dependency.
+*   After installation, the Java environment will need to be recognized by the shell (`$PATH` variable). This can be done by sourcing `/etc/profile` from the command line or by logging out/in again of a Desktop Environment.
 
 Two *common* packages named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) are automatically pulled as dependency and provide environment file `/etc/profile.d/jre.sh`. This file contains all JVM common environment variables. Package [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) also provides a utility script `archlinux-java` that can display and change the default Java environment. This script sets links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` to point at a valid non-conflicting Java environment installed and Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}. Most executables provided by the Java environment set have direct links from `/usr/bin`, others are available in `$PATH`.
 
 **Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
 
-The following packages are available in the [official repositories](/index.php/Official_repositories "Official repositories"):
+The following packages are available:
 
 ### OpenJDK 7
 

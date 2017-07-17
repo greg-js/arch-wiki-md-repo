@@ -165,7 +165,7 @@ A clever little hack allows you to pass the url of an article to an external com
 For example, if you subscribe to a youtube channel and you would like to open the video with [mpv](/index.php/Mpv "Mpv"), do the following:
 
 ```
-macro y set browser "mpv %u"; open-in-browser ; set browser "elinks %u"
+macro y set browser "mpv %u" ; open-in-browser ; set browser "elinks %u"
 
 ```
 

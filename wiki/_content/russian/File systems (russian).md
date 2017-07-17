@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [File systems](/index.php/File_systems "File systems"). Дата последней синхронизации: 16 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_systems&diff=0&oldid=482095).
+
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
 	In computing, a file system (or filesystem) is used to control how data is stored and retrieved. Without a file system, information placed in a storage medium would be one large body of data with no way to tell where one piece of information stops and the next begins. By separating the data into pieces and giving each piece a name, the information is easily isolated and identified.

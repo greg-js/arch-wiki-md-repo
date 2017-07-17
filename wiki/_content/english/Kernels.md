@@ -105,6 +105,10 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
 
+	[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)/[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
+
+	The Linux kernel with live patching support.
+
 ## Patches and Patchsets
 
 There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as reiser4 file system support. Other reasons might include fun and to see how it is done and what the improvements are.

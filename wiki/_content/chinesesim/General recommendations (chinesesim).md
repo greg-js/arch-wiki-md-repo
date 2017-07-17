@@ -416,9 +416,13 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 [WPS Office (简体中文)](/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPS Office (简体中文)")
 
-[ms office online](https://www.office.com/)
-
 [LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)")
+
+一些在线办公套件网站可以提供基础的办公功能:
+
+[Office Online](https://en.wikipedia.org/wiki/Office_Online): Microsoft提供的Office办公套件的网页版
+
+[Google Docs, Sheets and Slides](https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides): Google提供的在线文字处理、电子制表和演示程序。
 
 ### 中文输入法
 
@@ -456,6 +460,41 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/racaljk/hosts/master/h
  `hosts` 
 
 即可。
+
+现有一个racaljk提供的方便更新的hosts小工具[lhosts](https://raw.githubusercontent.com/racaljk/hosts/master/tools/lhosts)
+
+```
+提示:
+  1\. 可以使用 crontab 定时执行脚本 (root 身份运行或 sudo 免密码);
+
+  2\. 使用 $myname 下载的 hosts 会被加上范围标记，每次更新**仅保留范围外**的
+     全部内容 (请勿在标记范围内添加自定义内容)。
+
+  3\. 更新前，本地 hosts 备份至 $BACKUP_FILE
+
+用法: $myname [选项]...
+
+选项:
+  -m, --mirror           从镜像仓库获取 hosts (下载更快)
+  -q, --quiet            静默模式
+  -r, --range <range>    范围模式 (无视范围标记)
+  -u, --url <url>        自定义 hosts 源地址
+  -h, --help             显示帮助信息并退出
+
+退出状态：
+  0  正常
+  1  命令行参数错误
+  2  文件下载失败
+
+范围模式：
+    将本地 hosts 指定范围的内容，保存到下载的 hosts 内，例如：
+
+    $myname -mr "1,20"  更新时，本地 hosts 1~20 行保存到下载的 hosts 中
+
+自定义源：
+    $myname -u $MIRROR
+
+```
 
 ### 即时通讯工具
 

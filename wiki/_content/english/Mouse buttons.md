@@ -480,7 +480,14 @@ The line that ends with "fill this in!" can be copied into the config file which
 "Microsoft Trackball Explorer®" "/dev/input/event*" any key/276 "XKey/2"
 ```
 
-The 'event1' was changed to 'event*' in case udev gives it a different device number at boot. The 'none' was changed to 'any' so that the rule works even if any modifier keys are pressed when the button is pressed. See `man 1 evrouter` for a full explanation of the fields.
+The 'event1' was changed to 'event*' in case udev gives it a different device number at boot. The 'none' was changed to 'any' so that the rule works even if any modifier keys are pressed when the button is pressed. To determine the key codes (in brackets) you can use
+
+```
+# xmodmap -pk
+
+```
+
+See `man 1 evrouter` for a full explanation of the fields.
 
 **Tip:** Rules can apply only to specific windows, see `man 1 evrouter` for details.
 

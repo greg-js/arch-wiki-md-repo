@@ -7,84 +7,81 @@
 ## Contents
 
 *   [1 Internet](#Internet)
-    *   [1.1 Network managers](#Network_managers)
-    *   [1.2 VPN clients](#VPN_clients)
-    *   [1.3 Anonymizing networks](#Anonymizing_networks)
-    *   [1.4 Web browsers](#Web_browsers)
-        *   [1.4.1 Console](#Console)
-        *   [1.4.2 Graphical](#Graphical)
-            *   [1.4.2.1 Gecko-based](#Gecko-based)
-            *   [1.4.2.2 Blink-based](#Blink-based)
-                *   [1.4.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
-                *   [1.4.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.4.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
-            *   [1.4.2.3 WebKit-based](#WebKit-based)
-                *   [1.4.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
-                *   [1.4.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
-            *   [1.4.2.4 Other](#Other)
-    *   [1.5 File sharing](#File_sharing)
-        *   [1.5.1 Download managers](#Download_managers)
-        *   [1.5.2 Cloud storage servers](#Cloud_storage_servers)
-        *   [1.5.3 FTP](#FTP)
-            *   [1.5.3.1 FTP clients](#FTP_clients)
-            *   [1.5.3.2 FTP servers](#FTP_servers)
-        *   [1.5.4 SSH/SFTP](#SSH.2FSFTP)
-            *   [1.5.4.1 SFTP servers](#SFTP_servers)
-            *   [1.5.4.2 SFTP clients](#SFTP_clients)
-        *   [1.5.5 Distributed file systems](#Distributed_file_systems)
-        *   [1.5.6 BitTorrent clients](#BitTorrent_clients)
-            *   [1.5.6.1 Console](#Console_2)
-                *   [1.5.6.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.5.6.1.2 Console Interface](#Console_Interface)
-            *   [1.5.6.2 Graphical Interface](#Graphical_Interface)
-                *   [1.5.6.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.5.6.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.5.6.2.3 others](#others)
-        *   [1.5.7 Other P2P networks](#Other_P2P_networks)
-        *   [1.5.8 Video downloaders](#Video_downloaders)
-    *   [1.6 Communication](#Communication)
-        *   [1.6.1 Email clients](#Email_clients)
-            *   [1.6.1.1 Console](#Console_3)
-            *   [1.6.1.2 Graphical](#Graphical_2)
-        *   [1.6.2 Mail servers](#Mail_servers)
-        *   [1.6.3 Instant messaging](#Instant_messaging)
-            *   [1.6.3.1 IRC clients](#IRC_clients)
-                *   [1.6.3.1.1 Console](#Console_4)
-                *   [1.6.3.1.2 Graphical](#Graphical_3)
-            *   [1.6.3.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
-                *   [1.6.3.2.1 Console](#Console_5)
-                *   [1.6.3.2.2 Graphical](#Graphical_4)
-            *   [1.6.3.3 XMPP servers](#XMPP_servers)
-            *   [1.6.3.4 Other](#Other_2)
-            *   [1.6.3.5 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.6.3.5.1 Console](#Console_6)
-                *   [1.6.3.5.2 Graphical](#Graphical_5)
-            *   [1.6.3.6 Lan messengers](#Lan_messengers)
-        *   [1.6.4 VoIP / Softphone](#VoIP_.2F_Softphone)
-            *   [1.6.4.1 Clients](#Clients)
-                *   [1.6.4.1.1 SIP](#SIP)
-                *   [1.6.4.1.2 Other](#Other_3)
-                *   [1.6.4.1.3 Multi-protocol](#Multi-protocol)
-            *   [1.6.4.2 Voice servers](#Voice_servers)
-            *   [1.6.4.3 Utilities](#Utilities)
-    *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
-        *   [1.7.1 News aggregators](#News_aggregators)
-            *   [1.7.1.1 Console](#Console_7)
-            *   [1.7.1.2 Graphical](#Graphical_6)
-        *   [1.7.2 Podcast clients](#Podcast_clients)
-        *   [1.7.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
-        *   [1.7.4 Blog engines](#Blog_engines)
-        *   [1.7.5 Microblogging clients](#Microblogging_clients)
-    *   [1.8 Remote desktop](#Remote_desktop)
-        *   [1.8.1 Remote desktop clients](#Remote_desktop_clients)
-        *   [1.8.2 Remote desktop servers](#Remote_desktop_servers)
-    *   [1.9 Pastebin clients](#Pastebin_clients)
-    *   [1.10 Bitcoin](#Bitcoin)
-    *   [1.11 LAMP stack](#LAMP_stack)
+    *   [1.1 Network connection](#Network_connection)
+        *   [1.1.1 Network managers](#Network_managers)
+        *   [1.1.2 VPN clients](#VPN_clients)
+        *   [1.1.3 Anonymizing networks](#Anonymizing_networks)
+    *   [1.2 Web browsers](#Web_browsers)
+        *   [1.2.1 Console](#Console)
+        *   [1.2.2 Graphical](#Graphical)
+            *   [1.2.2.1 Gecko-based](#Gecko-based)
+                *   [1.2.2.1.1 Firefox spin-offs](#Firefox_spin-offs)
+            *   [1.2.2.2 Blink-based](#Blink-based)
+                *   [1.2.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
+                *   [1.2.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+                *   [1.2.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
+            *   [1.2.2.3 WebKit-based](#WebKit-based)
+                *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
+                *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
+            *   [1.2.2.4 Other](#Other)
+    *   [1.3 Web servers](#Web_servers)
+    *   [1.4 File sharing](#File_sharing)
+        *   [1.4.1 Download managers](#Download_managers)
+            *   [1.4.1.1 Console](#Console_2)
+            *   [1.4.1.2 Graphical](#Graphical_2)
+        *   [1.4.2 Cloud storage servers](#Cloud_storage_servers)
+        *   [1.4.3 File transfer clients](#File_transfer_clients)
+        *   [1.4.4 File transfer servers](#File_transfer_servers)
+        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.5.1 Console](#Console_3)
+            *   [1.4.5.2 Graphical](#Graphical_3)
+                *   [1.4.5.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.5.2.2 Other](#Other_2)
+        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.7 Video downloaders](#Video_downloaders)
+        *   [1.4.8 Pastebin clients](#Pastebin_clients)
+    *   [1.5 Communication](#Communication)
+        *   [1.5.1 Email clients](#Email_clients)
+            *   [1.5.1.1 Console](#Console_4)
+            *   [1.5.1.2 Graphical](#Graphical_4)
+        *   [1.5.2 Mail servers](#Mail_servers)
+        *   [1.5.3 Instant messaging](#Instant_messaging)
+            *   [1.5.3.1 IRC clients](#IRC_clients)
+                *   [1.5.3.1.1 Console](#Console_5)
+                *   [1.5.3.1.2 Graphical](#Graphical_5)
+            *   [1.5.3.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
+                *   [1.5.3.2.1 Console](#Console_6)
+                *   [1.5.3.2.2 Graphical](#Graphical_6)
+            *   [1.5.3.3 XMPP servers](#XMPP_servers)
+            *   [1.5.3.4 Other](#Other_3)
+            *   [1.5.3.5 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.5.3.5.1 Console](#Console_7)
+                *   [1.5.3.5.2 Graphical](#Graphical_7)
+            *   [1.5.3.6 Lan messengers](#Lan_messengers)
+        *   [1.5.4 VoIP / Softphone](#VoIP_.2F_Softphone)
+            *   [1.5.4.1 Clients](#Clients)
+                *   [1.5.4.1.1 SIP](#SIP)
+                *   [1.5.4.1.2 Other](#Other_4)
+                *   [1.5.4.1.3 Multi-protocol](#Multi-protocol)
+            *   [1.5.4.2 Voice servers](#Voice_servers)
+            *   [1.5.4.3 Utilities](#Utilities)
+    *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
+        *   [1.6.1 News aggregators](#News_aggregators)
+            *   [1.6.1.1 Console](#Console_8)
+            *   [1.6.1.2 Graphical](#Graphical_8)
+        *   [1.6.2 Podcast clients](#Podcast_clients)
+        *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
+        *   [1.6.4 Blog engines](#Blog_engines)
+        *   [1.6.5 Microblogging clients](#Microblogging_clients)
+    *   [1.7 Remote desktop](#Remote_desktop)
+        *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
+        *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
 
 ## Internet
 
-### Network managers
+### Network connection
+
+#### Network managers
 
 *   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
 
@@ -116,7 +113,7 @@
 
 See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration") and [Wireless network configuration#Automatic setup](/index.php/Wireless_network_configuration#Automatic_setup "Wireless network configuration") for feature comparisons.
 
-### VPN clients
+#### VPN clients
 
 *   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
 
@@ -138,7 +135,7 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
 
-### Anonymizing networks
+#### Anonymizing networks
 
 *   **[Freenet](/index.php/Freenet "Freenet")** — An encrypted network without censorship.
 
@@ -192,13 +189,23 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[https://mozilla.com/firefox](https://mozilla.com/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
-
-	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
-
 *   **[SeaMonkey](https://en.wikipedia.org/wiki/SeaMonkey "wikipedia:SeaMonkey")** — Continuation of the Mozilla Internet Suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+
+###### Firefox spin-offs
+
+*   **[Cliqz](https://en.wikipedia.org/wiki/Cliqz "wikipedia:Cliqz")** — Firefox-based privacy aware web browser.
+
+	[https://cliqz.com/](https://cliqz.com/) || [cliqz](https://aur.archlinux.org/packages/cliqz/) or [cliqz-bin](https://aur.archlinux.org/packages/cliqz-bin/)
+
+*   **Cyberfox** — Fast and privacy oriented fork of Mozilla Firefox.
+
+	[https://cyberfox.8pecxstudios.com/](https://cyberfox.8pecxstudios.com/) || [cyberfox-bin](https://aur.archlinux.org/packages/cyberfox-bin/)
+
+*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
+
+	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
 
 ##### Blink-based
 
@@ -226,13 +233,13 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
-*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
-
-	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
-
 *   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
+
+*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
@@ -272,7 +279,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Muon](https://github.com/brave/muon) platform.
 
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/) or [brave-bin](https://aur.archlinux.org/packages/brave-bin/)
 
 *   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
 
@@ -312,21 +319,33 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **Poseidon** — Fast, minimal and lightweight browser.
 
-	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon-browser-git](https://aur.archlinux.org/packages/poseidon-browser-git/)
+	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon](https://aur.archlinux.org/packages/poseidon/)
 
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
 
+*   **Surfer** — Simple keyboard based web browser.
+
+	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer](https://aur.archlinux.org/packages/surfer/)
+
 *   **[Uzbl](/index.php/Uzbl "Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
 
 	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+
+*   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
+
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb-git](https://aur.archlinux.org/packages/vimb-git/)
 
 ###### Browsers based on qt5-webkit
 
 *   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — A safe WebKit Web browser.
 
 	[http://dooble.sourceforge.net/](http://dooble.sourceforge.net/) || [dooble](https://aur.archlinux.org/packages/dooble/)
+
+*   **OSPKit** — Webkit based html browser for printing.
+
+	[http://osp.kitchen/tools/ospkit/](http://osp.kitchen/tools/ospkit/) || [ospkit-git](https://aur.archlinux.org/packages/ospkit-git/)
 
 *   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
@@ -335,6 +354,10 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
 
 	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+
+*   **WCGBrowser** — A web browser for kiosk systems.
+
+	[http://www.alandmoore.com/wcgbrowser/wcgbrowser.html](http://www.alandmoore.com/wcgbrowser/wcgbrowser.html) || [wcgbrowser-git](https://aur.archlinux.org/packages/wcgbrowser-git/)
 
 ##### Other
 
@@ -350,19 +373,59 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/)
 
+### Web servers
+
+See [Server#HTTP](/index.php/Server#HTTP "Server") for more information.
+
 ### File sharing
 
 #### Download managers
 
-*   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — Download manager for GNOME.
+##### Console
+
+*   **[Aria2](/index.php/Aria2 "Aria2")** — Download utility that supports HTTP, FTP, SFTP, BitTorrent and Metalink.
+
+	[https://aria2.github.io/](https://aria2.github.io/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
+
+*   **[cURL](https://en.wikipedia.org/wiki/cURL "wikipedia:cURL")** — An URL retrieval utility and library. Supports HTTP, FTP and SFTP.
+
+	[https://curl.haxx.se/](https://curl.haxx.se/) || [curl](https://www.archlinux.org/packages/?name=curl)
+
+*   **[LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp")** — Sophisticated file transfer program. Supports HTTP, FTP, SFTP, FISH, and BitTorrent.
+
+	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
+
+*   **snarf** — Command-line URL retrieval tool. Supports HTTP and FTP.
+
+	[http://www.xach.com/snarf/](http://www.xach.com/snarf/) || [snarf](https://www.archlinux.org/packages/?name=snarf)
+
+*   **[Wget](https://en.wikipedia.org/wiki/Wget "wikipedia:Wget")** — A network utility to retrieve files from the Web. Supports HTTP and FTP.
+
+	[https://www.gnu.org/software/wget/](https://www.gnu.org/software/wget/) || [wget](https://www.archlinux.org/packages/?name=wget)
+
+##### Graphical
+
+*   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
+
+	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
+
+*   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — Download manager for GNOME. Supports HTTP and FTP.
 
 	[https://projects.gnome.org/gwget/](https://projects.gnome.org/gwget/) || [gwget](https://www.archlinux.org/packages/?name=gwget)
 
-*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE that supports HTTP(S), FTP and BitTorrent. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
+*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — Download manager for KDE. Supports HTTP, FTP, BitTorrent and Metalink. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
 	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
 
-*   **uGet** — GTK+ download manager featuring download classification and HTML import.
+*   **Persepolis** — Graphical front-end for aria2 download manager with lots of features. Supports HTTP and FTP.
+
+	[https://persepolisdm.github.io/](https://persepolisdm.github.io/) || [persepolis](https://aur.archlinux.org/packages/persepolis/)
+
+*   **Steadyflow** — Simple download manager for GNOME. Supports HTTP and FTP.
+
+	[https://launchpad.net/steadyflow](https://launchpad.net/steadyflow) || [steadyflow](https://www.archlinux.org/packages/?name=steadyflow)
+
+*   **uGet** — GTK+ download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent and Metalink.
 
 	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
@@ -376,19 +439,13 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://github.com/haiwen/seafile-server](https://github.com/haiwen/seafile-server) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
 
-#### FTP
-
-##### FTP clients
+#### File transfer clients
 
 See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
 
 *   **[CurlFtpFS](/index.php/CurlFtpFS "CurlFtpFS")** — Filesystem for accessing FTP hosts; based on FUSE and libcurl.
 
 	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
-
-*   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent, RapidShare and more.
-
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
 *   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — Fast and reliable FTP, FTPS and SFTP client.
 
@@ -398,13 +455,13 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
 
-*   **[LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp")** — Sophisticated command-line FTP client.
-
-	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
-
 *   **ncftp** — A set of free application programs implementing FTP.
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
+
+*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
+
+	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
 *   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
 
@@ -412,7 +469,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
 
-##### FTP servers
+#### File transfer servers
 
 See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/List_of_FTP_server_software "wikipedia:List of FTP server software").
 
@@ -432,53 +489,15 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
 
-#### SSH/SFTP
-
-##### SFTP servers
-
 *   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
-
-##### SFTP clients
-
-*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
-
-	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
-
-#### Distributed file systems
-
-*   **[Ceph](/index.php/Ceph "Ceph")** — Distributed object store and file system designed to provide excellent performance, reliability and scalability.
-
-	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
-
-*   **GlusterFS** — Cluster file system capable of scaling to several peta-bytes.
-
-	[http://www.gluster.org/](http://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
-
-*   **[OpenAFS](/index.php/OpenAFS "OpenAFS")** — Open source implementation of the AFS distributed file system
-
-	[http://www.openafs.org](http://www.openafs.org) || [openafs](https://aur.archlinux.org/packages/openafs/)
-
-*   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
-
-	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
-
-	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
-
-*   **IPFS** — A peer-to-peer hypermedia protocol to make the web faster, safer, and more open. IPFS aims replace HTTP and build a better web for all of us. Uses blocks to store parts of a file, each network node stores only content it is interested, provides deduplication, distribution, scalable system limited only by users. (currently in aplha)
-
-	[https://ipfs.io/](https://ipfs.io/) || [go-ipfs](https://www.archlinux.org/packages/?name=go-ipfs)
 
 #### BitTorrent clients
 
 See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
 
 ##### Console
-
-###### Command line / backend
 
 Can be used as-is via command line, but all have a choice of front-end options as well.
 
@@ -494,17 +513,15 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
-*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version, GTK+, Qt GUI, web and CLI front-ends.
-
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) (includes backend, daemon, command-line interface, and a Web UI interface)
-
-###### Console Interface
-
 *   **[rTorrent](/index.php/RTorrent "RTorrent")** — Simple and lightweight ncurses BitTorrent client. Requires [libtorrent](https://www.archlinux.org/packages/?name=libtorrent) backend.
 
 	[https://rakshasa.github.io/rtorrent/](https://rakshasa.github.io/rtorrent/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
 
-##### Graphical Interface
+*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version, GTK+, Qt GUI, web and CLI front-ends.
+
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) (includes backend, daemon, command-line interface, and a Web UI interface)
+
+##### Graphical
 
 ###### libtorrent-rasterbar backend
 
@@ -512,7 +529,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 	[http://deluge-torrent.org/](http://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
 
-*   **FatRat** — Qt4 based download manager with support for HTTP, FTP, SFTP, BitTorrent, rapidshare and more. Written in C++.
+*   **FatRat** — Qt based download manager with support for HTTP, FTP, SFTP, BitTorrent, rapidshare and more. Written in C++.
 
 	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
@@ -524,13 +541,11 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
 
-###### libktorrent backend
+###### Other
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
 	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
-
-###### others
 
 *   **Tixati** — P2P client that uses the BitTorrent protocol.
 
@@ -577,6 +592,60 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 *   **You-Get** — Dumb downloader that scrapes the web.
 
 	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
+
+#### Pastebin clients
+
+See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
+
+Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
+
+**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
+
+**Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
+
+*   **Elmer** — Pastebin client similar to wgetpaste and curlpaste, except written in Perl and usable with wget or curl. Servers: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
+
+	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
+
+*   **Fb-client** — Client for the [paste.xinu.at](http://paste.xinu.at/) pastebin.
+
+	[http://paste.xinu.at](http://paste.xinu.at) || [fb-client](https://www.archlinux.org/packages/?name=fb-client)
+
+*   **Gist** — Command-line interface for the [gist.github.com](https://gist.github.com/) pastebin service.
+
+	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
+
+*   **imgur** — A CLI client which can upload image to [imgur.com](http://imgur.com) image sharing service.
+
+	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
+
+*   **Ix** — Client for the ix.io pastebin.
+
+	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
+
+*   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](http://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
+
+	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
+
+*   **paste-binouse** — C++ standalone pastebin web server
+
+	[https://github.com/abique/paste-binouse](https://github.com/abique/paste-binouse) || [paste-binouse-git](https://aur.archlinux.org/packages/paste-binouse-git/)
+
+*   **[pbpst](/index.php/Pbpst "Pbpst")** — A small tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)).
+
+	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst) [pbpst-git](https://aur.archlinux.org/packages/pbpst-git/)
+
+*   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
+
+	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/) [ruby-haste-git](https://aur.archlinux.org/packages/ruby-haste-git/)
+
+*   **Uppity** — The pastebin client with an attitude.
+
+	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)
+
+*   **Wgetpaste** — Bash script that automates pasting to a number of pastebin services. Servers: [pastebin.ca](http://pastebin.ca/), [codepad.org](http://codepad.org/), [dpaste.com](http://dpaste.com/) and [pastebin.osuosl.org](http://pastebin.osuosl.org/).
+
+	[http://wgetpaste.zlin.dk/](http://wgetpaste.zlin.dk/) || [wgetpaste](https://www.archlinux.org/packages/?name=wgetpaste)
 
 ### Communication
 
@@ -1299,65 +1368,3 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 *   **[X2Go](/index.php/X2Go "X2Go") Server** — An open source remote desktop software that uses the [NX technology](https://en.wikipedia.org/wiki/NX_technology "w:NX technology") protocol.
 
 	[http://wiki.x2go.org/doku.php](http://wiki.x2go.org/doku.php) || [x2goserver](https://www.archlinux.org/packages/?name=x2goserver)
-
-### Pastebin clients
-
-See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
-
-Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
-
-**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
-
-**Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
-
-*   **Elmer** — Pastebin client similar to wgetpaste and curlpaste, except written in Perl and usable with wget or curl. Servers: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
-
-	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
-
-*   **Fb-client** — Client for the [paste.xinu.at](http://paste.xinu.at/) pastebin.
-
-	[http://paste.xinu.at](http://paste.xinu.at) || [fb-client](https://www.archlinux.org/packages/?name=fb-client)
-
-*   **Gist** — Command-line interface for the [gist.github.com](https://gist.github.com/) pastebin service.
-
-	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
-
-*   **imgur** — A CLI client which can upload image to [imgur.com](http://imgur.com) image sharing service.
-
-	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
-
-*   **Ix** — Client for the ix.io pastebin.
-
-	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
-
-*   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](http://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
-
-	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
-
-*   **paste-binouse** — C++ standalone pastebin web server
-
-	[https://github.com/abique/paste-binouse](https://github.com/abique/paste-binouse) || [paste-binouse-git](https://aur.archlinux.org/packages/paste-binouse-git/)
-
-*   **[pbpst](/index.php/Pbpst "Pbpst")** — A small tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)).
-
-	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst) [pbpst-git](https://aur.archlinux.org/packages/pbpst-git/)
-
-*   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
-
-	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/) [ruby-haste-git](https://aur.archlinux.org/packages/ruby-haste-git/)
-
-*   **Uppity** — The pastebin client with an attitude.
-
-	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)
-
-*   **Wgetpaste** — Bash script that automates pasting to a number of pastebin services. Servers: [pastebin.ca](http://pastebin.ca/), [codepad.org](http://codepad.org/), [dpaste.com](http://dpaste.com/) and [pastebin.osuosl.org](http://pastebin.osuosl.org/).
-
-	[http://wgetpaste.zlin.dk/](http://wgetpaste.zlin.dk/) || [wgetpaste](https://www.archlinux.org/packages/?name=wgetpaste)
-
-### Bitcoin
-
-See [Bitcoin#Bitcoin software](/index.php/Bitcoin#Bitcoin_software "Bitcoin").
-
-### LAMP stack
-
-See [Server](/index.php/Server "Server") for more information.

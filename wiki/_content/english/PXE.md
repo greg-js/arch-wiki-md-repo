@@ -49,6 +49,8 @@ Bring up your wired NIC, and assign it an address appropriately.
 
 You will need both a DHCP and TFTP server to configure networking on the install target and to facilitate the transfer of files between the PXE server and client; *dnsmasq* does both, and is extremely easy to set up.
 
+[Install](/index.php/Install "Install") the [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) package, and [Start](/index.php/Start "Start") `tftpd.service`.
+
 [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package.
 
 Configure *dnsmasq*:
@@ -68,6 +70,8 @@ tftp-root=/mnt/archiso
 ```
 
 [Start](/index.php/Start "Start") `dnsmasq.service`.
+
+Note that it is important to start `tftpd.service` before `dnsmasq.service`, or else you may run into an error message.
 
 ### HTTP
 

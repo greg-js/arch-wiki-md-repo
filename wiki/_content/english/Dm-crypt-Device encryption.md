@@ -716,6 +716,8 @@ This is a keyfile containing a simple passphrase. The benefit of this type of ke
 
 Example: 1234
 
+**Note:** The keyfile containing the passphrase must not have a newline in it. One option is to create it using `# echo -n 'your_passphrase' > /path/to/<keyfile> `  `# chown root:root /path/to/<keyfile>; chmod 400 /path/to/<keyfile>` Prepend the commands with a space to avoid saving them in the shell history
+
 #### randomtext
 
 This is a keyfile containing a block of random characters. The benefit of this type of keyfile is that it is much more resistant to dictionary attacks than a simple passphrase. An additional strength of keyfiles can be utilized in this situation which is the length of data used. Since this is not a string meant to be memorized by a person for entry, it is trivial to create files containing thousands of random characters as the key. The disadvantage is that if this file is lost or changed, it will most likely not be possible to access the encrypted volume without a backup passphrase.

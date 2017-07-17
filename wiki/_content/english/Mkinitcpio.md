@@ -65,16 +65,11 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: `/boot/initramfs-linux.img` and `/boot/initramfs-linux-fallback.img`. The *fallback* image utilizes the same configuration file as the *default* image, except the **autodetect** hook is skipped during creation, thus including a full range of modules. The **autodetect** hook detects required modules and tailors the image for specific hardware, shrinking the initramfs.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p` switch specifies a *preset* to utilize.
 
-Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified in the respective [boot loader](/index.php/Boot_loader "Boot loader") configuration file. After changes are made to the mkinitcpio configuration file, the image must be regenerated. For the stock Arch Linux kernel, the [linux](https://www.archlinux.org/packages/?name=linux) package, this is done by running this command with root privileges:
+An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
 
-```
-# mkinitcpio -p linux
-
-```
-
-The `-p` switch specifies a *preset* to utilize; most kernel packages provide a related mkinitcpio preset file, found in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time.
+Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified in the respective [boot loader](/index.php/Boot_loader "Boot loader") configuration file.
 
 **Warning:** *preset* files are used to automatically regenerate the initramfs after a kernel update; be careful when editing them.
 

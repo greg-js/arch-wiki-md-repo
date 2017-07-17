@@ -506,10 +506,10 @@ Please report issues on GitHub: [https://github.com/archlinuxhardened/selinux/is
 ## See also
 
 *   [Security Enhanced Linux](https://en.wikipedia.org/wiki/Security-Enhanced_Linux "wikipedia:Security-Enhanced Linux")
-*   [Gentoo SELinux Handbook](http://www.gentoo.org/proj/en/hardened/selinux/selinux-handbook.xml)
-*   [Fedora Project's SELinux Wiki](http://fedoraproject.org/wiki/SELinux)
-*   [NSA's Official SELinux Homepage](http://www.nsa.gov/research/selinux/index.shtml)
-*   [Reference Policy Homepage](http://oss.tresys.com/projects/refpolicy)
-*   [SELinux Userspace Homepage](http://userspace.selinuxproject.org/trac/)
-*   [SETools Homepage](http://oss.tresys.com/projects/setools)
+*   [Gentoo SELinux Handbook](https://wiki.gentoo.org/wiki/SELinux)
+*   [Fedora Project's SELinux Wiki](https://fedoraproject.org/wiki/SELinux)
+*   [NSA's Official SELinux Homepage](https://www.nsa.gov/what-we-do/research/selinux/)
+*   [SELinux Userspace Homepage](http://userspace.selinuxproject.org/)
+    *   [Reference Policy Homepage](http://oss.tresys.com/projects/refpolicy)
+    *   [SETools Homepage](http://oss.tresys.com/projects/setools)
 *   [ArchLinux, SELinux and You (archived)](https://web.archive.org/web/20140816115906/http://jamesthebard.net/archlinux-selinux-and-you-a-trip-down-the-rabbit-hole/)

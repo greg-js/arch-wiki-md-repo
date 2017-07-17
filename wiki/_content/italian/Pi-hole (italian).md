@@ -43,7 +43,7 @@ Abilita `dnsmasq.service` e ri/avvia il servizio.
 
 #### Router
 
-Pi-hole deve essere il DNS della LAN per poter funzionare correttamente. La tipica utenza casalinga o i piccoli uffici si affidano la proprio router per risolvere le richieste DNS. Il metodo migliore è semplicemente ridefinire i DNS **sul router** indicando di usare l'indirizzo IP della macchina che esegue Pi-hole. Configurare il router è fuori dagli scopi di questo articolo. In alternativa è possibile configurare i DNS di ogni macchina o apparato che si connette al router anche se può essere noioso. Vedi [Come configurare i miei apparati per usare Pi-hole come DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per maggiori dettagli.
+Pi-hole deve essere il DNS della LAN per poter funzionare correttamente. La tipica utenza casalinga o i piccoli uffici si affidano al proprio router per risolvere le richieste DNS. Il metodo migliore è semplicemente ridefinire i DNS **sul router** indicando di usare l'indirizzo IP della macchina che esegue Pi-hole. Configurare il router è fuori dagli scopi di questo articolo. In alternativa è possibile configurare i DNS di ogni macchina o apparato che si connette al router anche se può essere noioso. Vedi [Come configurare i miei apparati per usare Pi-hole come DNS server?](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) per maggiori dettagli.
 
 #### Web Server
 

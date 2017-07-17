@@ -272,12 +272,7 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 Если это сообщение появляется непосредственно после попытки использовать *sshfs*:
 
 *   Сначала убедитесь, что на удаленном компьютере установлен *sftp*! Ничего не будет работать, пока пакет не будет установлен.
-
-**Совет:** Если удаленный сервер работает под управлением OpenWRT, `opkg install openssh-sftp-server` сделает все нужное.
-
-*   Затем попробуйте проверить корректность пути к `Subsystem`, указанного в `/etc/ssh/sshd_config` на удаленной машине. Вы можете проверить путь посредством `find / -name sftp-server`.
-
-Для Arch Linux значением по умолчанию в `/etc/ssh/sshd_config` является `Subsystem sftp /usr/lib/ssh/sftp-server`.
+*   Затем попробуйте проверить корректность пути к `Subsystem sftp`, указанного в `/etc/ssh/sshd_config` на удаленной машине.
 
 ### Зависание приложений (например, Gnome Files, Gedit)
 
@@ -304,7 +299,7 @@ After=network.target
 [Service]
 RemainAfterExit=yes
 ExecStart=-/bin/true
-ExecStop=-/usr/bin/pkill sshfs
+ExecStop=-/usr/bin/pkill -x sshfs
 
 [Install]
 WantedBy=multi-user.target
