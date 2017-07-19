@@ -292,7 +292,7 @@ $ cp /usr/share/e16/config/bindings.cfg ~/.e16
 
 #### Start/Restart/Stop Scripts
 
-Create an Init, a Start and a Stop folder in your `~/.e16` folder: any .sh script found there will either be executed at Startup (from Init folder), at each Restart (from Start folder), or at Shutdown (from Stop folder); provided you allowed it trough the MMB / settings / session / <enable scripts> button and made them executable with `chmod +x *yourscript.sh*`. Typical examples involves starting pulseaudio or your favorite network manager applet.
+Create an Init, a Start and a Stop folder in your `~/.e16` folder: any .sh script found there will either be executed at Startup (from Init folder), at each Restart (from Start folder), or at Shutdown (from Stop folder); provided you allowed it through the MMB / settings / session / <enable scripts> button and made them executable with `chmod +x *yourscript.sh*`. Typical examples involves starting pulseaudio or your favorite network manager applet.
 
 #### Compositor
 

@@ -7,9 +7,9 @@ JDownloader is a Download Manager written in Java. JDownloader can download norm
 *   [2 Configuration](#Configuration)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Making JDownloader faster](#Making_JDownloader_faster)
-*   [4 Alternatives](#Alternatives)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -37,20 +37,12 @@ Choose General and then turn the logging level to OFF.
 
 Choose User Interface and then switch the style to Light(GTK). (If you're using GNOME).
 
-## Alternatives
-
-[Tucan Manager](http://tucaneando.com/index.html) available in the AUR through the [tucan](https://aur.archlinux.org/packages/tucan/) package.
-
-[uGet](http://ugetdm.com/) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [uget](https://www.archlinux.org/packages/?name=uget) package (GTK).
-
-[pyLoad](/index.php/PyLoad "PyLoad") available in AUR: [pyload](https://aur.archlinux.org/packages/pyload/).
-
-[plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
-
-[FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/) (Java).
-
 ## Troubleshooting
 
 ### Application not resizing with WM, menus immediately closing
 
 see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java")
+
+## See also
+
+[List of applications/Internet#Web content downloaders](/index.php/List_of_applications/Internet#Web_content_downloaders "List of applications/Internet")

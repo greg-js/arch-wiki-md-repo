@@ -17,6 +17,8 @@ First of all we must create a [bootable usb](/index.php/USB_flash_installation_m
 
 The first issue that we can find is that the distribution does not boot but gets stuck into a nouveau loop or a black screen. If this happens, we must change the kernel parameters to get ArchLinux to boot. Try to erase all default parameters and use only `nomodeset`.
 
+The Kaby lake R3 suffers from a X lockup when either trying to start X or running `lspci` when the discrete GPU is off. There are [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=156341) and [bumblebee bug](https://github.com/Bumblebee-Project/Bumblebee/issues/764) open to track this issue. In the meantime you can add the following to your kernel commandline at boot: `acpi_osi=! acpi_osi="Windows 2009"`
+
 ## Touchpad
 
 If the touchpad does not work, try to unload the `i2c_hid` module:

@@ -18,8 +18,7 @@ The `mount` command will use fstab, if just one of either directory or device is
     *   [3.2 External devices](#External_devices)
     *   [3.3 Filepath spaces](#Filepath_spaces)
     *   [3.4 atime options](#atime_options)
-    *   [3.5 Writing to FAT32 as Normal User](#Writing_to_FAT32_as_Normal_User)
-    *   [3.6 Remounting the root partition](#Remounting_the_root_partition)
+    *   [3.5 Remounting the root partition](#Remounting_the_root_partition)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -208,34 +207,6 @@ Since kernel 4.0 there is another related option:
 **Warning:** In the event of a system crash, the access and modification times on disk might be out of date by up to 24 hours.
 
 Note that the `lazytime` option works **in combination** with the aforementioned `*atime` options, not as an alternative. That is `relatime` by default, but can be even `strictatime` with the same or less cost of disk writes as the plain `relatime` option.
-
-### Writing to FAT32 as Normal User
-
-To write on a FAT32 partition, you must make a few changes to your `/etc/fstab` file.
-
- `/etc/fstab`  `/dev/sd*xY*    /mnt/some_folder  vfat   **user**,rw,umask=000              0  0` 
-
-The `user` flag means that any user (even non-root) can mount and unmount the partition `/dev/sd*X*`. `rw` gives read-write access; `umask` option removes selected rights - for example `umask=111` remove executable rights. The problem is that this entry removes executable rights from directories too, so we must correct it by `dmask=000`. See also [Umask](/index.php/Umask "Umask").
-
-Without these options, all files will be executable. You can use the option `showexec` instead of the umask and dmask options, which shows all Windows executables (com, exe, bat) in executable colours.
-
-For example, if your FAT32 partition is on `/dev/sda9`, and you wish to mount it to `/mnt/fat32`, then you would use:
-
- `/etc/fstab`  `/dev/sda9    /mnt/fat32        vfat   **user**,rw,umask=111,dmask=000    0  0` 
-
-Now, any user can mount it with:
-
-```
-$ mount /mnt/fat32
-
-```
-
-And unmount it with:
-
-```
-$ umount /mnt/fat32
-
-```
 
 ### Remounting the root partition
 

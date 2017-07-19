@@ -320,39 +320,13 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 	[http://rclone.org/](http://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
 
-### Custom infrastructure
-
-*   **[Cozy](/index.php/Cozy "Cozy")** — A personal cloud you can hack, host and delete.
-
-	[https://cozy.io](https://cozy.io) || [cozy-standalone](https://aur.archlinux.org/packages/cozy-standalone/) [cozy-nginx](https://aur.archlinux.org/packages/cozy-nginx/) [cozy-apache](https://aur.archlinux.org/packages/cozy-apache/)
-
-*   **[OpenStack](/index.php/OpenStack "OpenStack")** — Controls large pools of compute, storage, and networking resources throughout a datacenter, managed through a dashboard or via the OpenStack API. OpenStack works with popular enterprise and open source technologies making it ideal for heterogeneous infrastructure.
-
-	[http://www.openstack.org/](http://www.openstack.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[ownCloud](/index.php/OwnCloud "OwnCloud")** — Software suite that provides a location-independent storage area for data.
-
-	[http://owncloud.org/](http://owncloud.org/) || [owncloud](https://www.archlinux.org/packages/?name=owncloud)
-
-*   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — Fork of ownCloud.
-
-	[http://nextcloud.com/](http://nextcloud.com/) || [nextcloud](https://www.archlinux.org/packages/?name=nextcloud)
-
-*   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
-
-	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)
-
-*   **[Seafile](/index.php/Seafile "Seafile")** — Open source cloud storage system, with advanced support for file syncing, privacy protection and teamwork.
-
-	[http://seafile.com/](http://seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/) [seafile-client](https://aur.archlinux.org/packages/seafile-client/) [seafile-client-cli](https://aur.archlinux.org/packages/seafile-client-cli/) [seafile-client-qt5](https://aur.archlinux.org/packages/seafile-client-qt5/)
-
-*   **StackSync** — Open-source scalable Personal Cloud that can adapt to the necessities of organizations. It puts a special emphasis on security by encrypting data on the client side before it is sent to the server.
-
-	[http://stacksync.org/](http://stacksync.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 *   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
 
 	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)
+
+### Custom infrastructure
+
+See [List of applications/Internet#Cloud storage servers](/index.php/List_of_applications/Internet#Cloud_storage_servers "List of applications/Internet")
 
 ## Version control systems
 
@@ -404,6 +378,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 *   [Wikipedia:List of backup software](https://en.wikipedia.org/wiki/List_of_backup_software "wikipedia:List of backup software")
 *   [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software")
+*   [Exhaustive list of backup solutions for Linux](https://github.com/restic/others)
 *   [Backing up Linux and other Unix(-like) systems](http://www.halfgaar.net/backing-up-unix)
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)

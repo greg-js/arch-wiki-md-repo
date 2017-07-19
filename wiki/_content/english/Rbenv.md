@@ -70,7 +70,7 @@ Installation of Ruby 2.0.0, 2.1.4, 2.1.6, 2.1.7, 2.2.2 and 2.2.3 may show this e
 This can be solved using the patch as described [here](https://github.com/rbenv/ruby-build/issues/834#issuecomment-160627207)
 
 ```
- curl -fsSL https://gist.github.com/mislav/055441129184a1512bb5.txt | rbenv install --patch 2.2.3
+ curl -fsSL https://gist.github.com/mislav/055441129184a1512bb5.txt | PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig rbenv install --patch 2.2.3
 
 ```
 

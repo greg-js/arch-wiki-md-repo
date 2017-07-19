@@ -1642,6 +1642,8 @@ These are with 2013-06 ISO, 3.9.7-1 2013 x86_64 kernel.
 
 [dmesg](http://pastebin.com/SdAcHuKh)
 
+**Note:** Same problem in 2017 with a Macbook Air early 2014\. Updating the firmware (via migration to macOS Sierra) solved the issue.
+
 ##### Marvell ATA suspend bugs
 
 If you have 2013 MacBook Air with a Marvell 128 or 256 GB drive, you might get the following ata errors instead after pm-suspend/resumes:

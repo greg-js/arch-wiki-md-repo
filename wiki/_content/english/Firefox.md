@@ -298,7 +298,7 @@ The following sets input fields to standard black text / white background; both 
 **Note:** If you want `urlbar` and `searchbar` to be `white` remove the two first `:not` css selectors.
 
 ```
-input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']) {
+input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']):not([type='radio']) {
     -moz-appearance: none !important;
     background-color: white;
     color: black;

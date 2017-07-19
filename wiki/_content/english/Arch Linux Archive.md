@@ -22,10 +22,6 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
 
 The Arch Linux Archive is available at [https://archive.archlinux.org/](https://archive.archlinux.org/).
 
-Previous locations listed below are deprecated and will be closed soon:
-
-*   [http://ala.seblu.net/](http://ala.seblu.net/)
-
 The [source code](https://github.com/seblu/archivetools) is also available for setting up your own mirror.
 
 ## Directories

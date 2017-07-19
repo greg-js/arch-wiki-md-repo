@@ -13,8 +13,9 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [2.4 Disable remote access](#Disable_remote_access)
     *   [2.5 Enable auto-completion](#Enable_auto-completion)
     *   [2.6 Using UTF8MB4](#Using_UTF8MB4)
-    *   [2.7 Using a TMPFS for tmpdir](#Using_a_TMPFS_for_tmpdir)
-    *   [2.8 Time zone tables](#Time_zone_tables)
+    *   [2.7 Increase character limit](#Increase_character_limit)
+    *   [2.8 Using a TMPFS for tmpdir](#Using_a_TMPFS_for_tmpdir)
+    *   [2.9 Time zone tables](#Time_zone_tables)
 *   [3 Database maintenance](#Database_maintenance)
     *   [3.1 Upgrade databases on major releases](#Upgrade_databases_on_major_releases)
     *   [3.2 Checking, optimizing and repairing databases](#Checking.2C_optimizing_and_repairing_databases)
@@ -32,7 +33,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [5.6 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
     *   [5.7 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
     *   [5.8 OpenRC fails to start MySQL](#OpenRC_fails_to_start_MySQL)
-    *   [5.9 Specified key was too long; max key length is 767 bytes](#Specified_key_was_too_long.3B_max_key_length_is_767_bytes)
+    *   [5.9 Specified key was too long](#Specified_key_was_too_long)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -177,7 +178,7 @@ The MySQL client completion feature is disabled by default. To enable it system-
 
 **Note:** UTF8MB4 is recommended over UTF-8 since it allows full Unicode support [[1]](https://mathiasbynens.be/notes/mysql-utf8mb4) [[2]](https://stackoverflow.com/questions/30074492/what-is-the-difference-between-utf8mb4-and-utf8-charsets-in-mysql).
 
-Add the following values to the main configuration file located at `/etc/mysql/my.cnf`:
+[Append](/index.php/Append "Append") the following values to the main configuration file located at `/etc/mysql/my.cnf`:
 
 ```
 [client]
@@ -191,6 +192,58 @@ skip-character-set-client-handshake
 
 [mysql]
 default-character-set = utf8mb4
+
+```
+
+See [#Database maintenance](#Database_maintenance) to optimize and check the database health.
+
+### Increase character limit
+
+The character-limit depends on the character-set in use [[3]](http://mechanics.flite.com/blog/2014/07/29/using-innodb-large-prefix-to-avoid-error-1071/) [[4]](https://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_large_prefix) [[5]](https://easyengine.io/tutorials/mysql/enable-innodb-file-per-table/).
+
+For InnoDB execute the following commands to support a higher character-limit:
+
+```
+mysql> set global innodb_file_format = BARRACUDA;
+Query OK, 0 rows affected (0.00 sec)
+
+```
+
+```
+mysql> set global innodb_file_per_table = ON;
+Query OK, 0 rows affected (0.00 sec)
+
+```
+
+```
+mysql> set global innodb_large_prefix = ON;
+Query OK, 0 rows affected (0.00 sec)
+
+```
+
+[Append](/index.php/Append "Append") the following lines to `/etc/mysql/my.cfg` always use a higher character-limit:
+
+```
+[mysqld]
+innodb_file_format = barracuda
+innodb_file_per_table = 1
+innodb_large_prefix = 1
+
+```
+
+[Restart](/index.php/Restart "Restart") `mysqld` to apply the changes.
+
+On table creating append the `ROW_FORMAT` as seen in the example:
+
+```
+mysql> create table if not exists products (
+   ->   day date not null,
+   ->   product_id int not null,
+   ->   dimension1 varchar(500) not null,
+   ->   dimension2 varchar(500) not null,
+   ->   unique index unique_index (day, product_id, dimension1, dimension2)
+   -> ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
+Query OK, 0 rows affected (0.02 sec)
 
 ```
 
@@ -520,48 +573,9 @@ You should now be able to start MySQL using:
 
 ```
 
-### Specified key was too long; max key length is 767 bytes
+### Specified key was too long
 
-This may happen because of the character limit that is in use [[3]](http://mechanics.flite.com/blog/2014/07/29/using-innodb-large-prefix-to-avoid-error-1071/) [[4]](https://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_large_prefix) [[5]](https://easyengine.io/tutorials/mysql/enable-innodb-file-per-table/).
-
-Execute the following commands to allow long in InnoDB indexes before importing data:
-
-```
-mysql> set global innodb_file_format = BARRACUDA;
-Query OK, 0 rows affected (0.00 sec)
-
-```
-
-```
-mysql> set global innodb_large_prefix = ON;
-Query OK, 0 rows affected (0.00 sec)
-
-```
-
-Add the following lines in `/etc/mysql/my.cfg` to always allow long index formats:
-
-```
-[mysqld]
-innodb_file_per_table = 1
-innodb_file_format = barracuda
-
-```
-
-[Restart](/index.php/Restart "Restart") `mysqld` to apply the changes.
-
-On table creating append the `ROW_FORMAT` as seen in the example:
-
-```
-mysql> create table if not exists utf8_test (
-   ->   day date not null,
-   ->   product_id int not null,
-   ->   dimension1 varchar(500) character set utf8 collate utf8_bin not null,
-   ->   dimension2 varchar(500) character set utf8 collate utf8_bin not null,
-   ->   unique index unique_index (day, product_id, dimension1, dimension2)
-   -> ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-Query OK, 0 rows affected (0.02 sec)
-
-```
+See [#Increase character limit](#Increase_character_limit).
 
 ## See also
 

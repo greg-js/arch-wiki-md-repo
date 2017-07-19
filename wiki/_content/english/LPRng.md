@@ -1,6 +1,6 @@
 *The LPRng software is an enhanced, extended, and portable implementation of the Berkeley LPR print spooler functionality. While providing the same interface and meeting RFC1179 requirements, the implementation is completely new and provides support for the following features: lightweight (no databases needed) lpr, lpc, and lprm programs; dynamic redirection of print queues; automatic job holding; highly verbose diagnostics; multiple printers serving a single queue; client programs do not need to run SUID root; greatly enhanced security checks; and a greatly improved permission and authorization mechanism.*[[1]](http://www.lprng.org/)
 
-LPRng is mature and stable and incorporates a flexible print filtering mechanism. It excels as a print server but can be used as a print client. It can also print from [CUPS](/index.php/CUPS "CUPS") clients installed on other machines with minor hand configuration on the CUPS side.
+[LPRng](http://www.lprng.com/) is mature and stable and incorporates a flexible print filtering mechanism. It excels as a print server but can be used as a print client. It can also print from [CUPS](/index.php/CUPS "CUPS") clients installed on other machines with minor hand configuration on the CUPS side.
 
 **Note:** A disadvantage of LPRng is that Gnome3/GTK3 (including chrome and chromium) and KDE do not support lpr printing from their GUI. However, printing to a file and then using lpr works, though it is inconvenient.
 
@@ -9,23 +9,23 @@ LPRng is mature and stable and incorporates a flexible print filtering mechanism
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Control files](#Control_files)
-        *   [2.1.1 Local Configuration](#Local_Configuration)
-        *   [2.1.2 Remote Configuration](#Remote_Configuration)
-        *   [2.1.3 Server Configuration](#Server_Configuration)
-    *   [2.2 Configure Printer Settings (filters)](#Configure_Printer_Settings_.28filters.29)
+        *   [2.1.1 Local configuration](#Local_configuration)
+        *   [2.1.2 Remote configuration](#Remote_configuration)
+        *   [2.1.3 Server configuration](#Server_configuration)
+    *   [2.2 Configure printer settings (filters)](#Configure_printer_settings_.28filters.29)
         *   [2.2.1 Postscript printers](#Postscript_printers)
         *   [2.2.2 Foomatic system](#Foomatic_system)
         *   [2.2.3 Ghostscript drivers](#Ghostscript_drivers)
-    *   [2.3 Printcap File](#Printcap_File)
+    *   [2.3 Printcap file](#Printcap_file)
         *   [2.3.1 Examples](#Examples)
-        *   [2.3.2 Network Printing Advice](#Network_Printing_Advice)
+        *   [2.3.2 Network printing advice](#Network_printing_advice)
     *   [2.4 Start the lpd daemon](#Start_the_lpd_daemon)
 *   [3 Usage](#Usage)
 *   [4 CUPS and LPRng](#CUPS_and_LPRng)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Gnome2/GTK2](#Gnome2.2FGTK2)
     *   [5.2 LXDE](#LXDE)
-    *   [5.3 Postscript Printing](#Postscript_Printing)
+    *   [5.3 Postscript printing](#Postscript_printing)
         *   [5.3.1 Double-Sided PS](#Double-Sided_PS)
 
 ## Installation
@@ -49,7 +49,7 @@ Configuration consists of the following steps:
 
 ### Control files
 
-#### Local Configuration
+#### Local configuration
 
 Two control files must be configured:
 
@@ -59,7 +59,7 @@ Two control files must be configured:
 
 ```
 
-#### Remote Configuration
+#### Remote configuration
 
 The default configurations in `/usr/share/doc/lprng` are adequate for a client computer printing to a remote printer. Copy these to `/etc/lprng/lpd/`
 
@@ -70,13 +70,13 @@ cp /usr/share/doc/lprng /etc/lprng/lpd/
 
 and edit it.
 
-#### Server Configuration
+#### Server configuration
 
 For a server receiving requests across the Internet, uncomment the last line in `/etc/lprng/lpd/lpd.conf` and configure permissions as documented in the comments of `/etc/lprng/lpd/lpd.perms`.
 
 **Note:** The files `lpd.conf.sample` and `lpd.perms.sample`, located in `/usr/share/doc/lprng`, document more complex situations.
 
-### Configure Printer Settings (filters)
+### Configure printer settings (filters)
 
 It's fine if you just pick one of the following filter (settings) instructions. Just decide which way you want to go.
 
@@ -92,7 +92,7 @@ If you wish to have separate single-sided and double-sided print queues, make tw
 
 Another mechanism for print filtering is via the Foomatic system. This system used by [CUPS](/index.php/CUPS "CUPS"). Install [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/) as the `foomatic-rip` program in the CUPS installation has been modified to remove LPRng support).
 
-Use `foofilter` as described above, editing for your desired {ic|.ppd file}}. Install the `.ppd` file in conformance with the path specified in `foofilter`. (`/etc/lprng/lpd` is a good location.)
+Use `foofilter` as described above, editing for your desired `.ppd file`. Install the `.ppd` file in conformance with the path specified in `foofilter`. (`/etc/lprng/lpd` is a good location.)
 
 To use Hewlett Packard printers, install [hplip](https://www.archlinux.org/packages/?name=hplip) from the main distribution. This package has `.ppd` files for virtually all Hewlett Packard printers.
 
@@ -104,7 +104,7 @@ If you have a printer that has a Ghostscript driver, copy and edit `gsfilter` as
 
 Note that support for various printer features is typically limited and out of date with this option.
 
-### Printcap File
+### Printcap file
 
 The `/etc/lprng/printcap` file tells LPRng about the printers you have and the print filters that need to be used.
 
@@ -130,7 +130,7 @@ HL2035:\
 
 ```
 
-#### Network Printing Advice
+#### Network printing advice
 
 Generally, one computer should be designated as the server for one or more printers. Other client computers should send their print jobs to the server rather than the printer directly.
 
@@ -183,7 +183,7 @@ Gnome2/GTK2 applications (including Firefox, Mate, LXDE, and XFCE4) still suppor
 
 LXDE may create its own `~/.gtkrc-2.0` file if the look and feel of the desktop are altered -- look in this file for instructions as to how to proceed.
 
-### Postscript Printing
+### Postscript printing
 
 The filter `pdftops` from the [poppler](https://www.archlinux.org/packages/?name=poppler) package is used to create Postscript from PDF files in the print filters.
 

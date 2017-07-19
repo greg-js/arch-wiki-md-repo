@@ -98,7 +98,7 @@ Further information on options is available on the [user guide](https://docs.doc
 To open the Remote API to port `4243` manually, run:
 
 ```
-# docker daemon -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+# /usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 ```
 

@@ -11,7 +11,7 @@
 
 ## Installation
 
-[inkscape](https://www.archlinux.org/packages/?name=inkscape) can be installed from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version is available in the [AUR](/index.php/AUR "AUR") as [inkscape-bzr](https://aur.archlinux.org/packages/inkscape-bzr/).
+[inkscape](https://www.archlinux.org/packages/?name=inkscape) can be installed from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version is available in the [AUR](/index.php/AUR "AUR") as [inkscape-git](https://aur.archlinux.org/packages/inkscape-git/).
 
 ## Troubleshooting
 

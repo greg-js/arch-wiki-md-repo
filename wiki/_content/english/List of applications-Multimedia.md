@@ -190,6 +190,10 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://siyanpanayotov.com/project/viewnior/](http://siyanpanayotov.com/project/viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
 
+*   **Vimiv** — An image viewer with vim-like keybindings. It is written in python3 using the Gtk3 toolkit.
+
+	[http://karlch.github.io/vimiv](http://karlch.github.io/vimiv) || [vimiv](https://aur.archlinux.org/packages/vimiv/)
+
 *   **Xloadimage** — Classic X image viewer.
 
 	[http://sioseis.ucsd.edu/xloadimage.html](http://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)

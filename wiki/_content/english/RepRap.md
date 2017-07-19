@@ -37,7 +37,7 @@ Connect your 3D printer to your computer and run the host software. Use the host
 
 #### Cura
 
-*   Install [cura](https://www.archlinux.org/packages/?name=cura) from [AUR](/index.php/AUR "AUR").
+*   Install [cura](https://www.archlinux.org/packages/?name=cura).
 
 Run cura
 

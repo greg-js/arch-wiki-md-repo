@@ -75,24 +75,21 @@ There are various ways to set the cursor theme.
 
 This method applies to both [X11](/index.php/X11 "X11") and [Wayland](/index.php/Wayland "Wayland") cursor themes.
 
-For *user-specific* configuration, create or edit `~/.icons/default/index.theme`. For *system-wide* configuration, one can edit `/usr/share/icons/default/index.theme`.
+Edit `/usr/share/icons/default/index.theme` with root privilege.
 
 Define the theme directory name:
 
- `~/.icons/default/index.theme` 
+ `/usr/share/icons/default/index.theme` 
 ```
 [icon theme] 
 Inherits=*theme-name*
 ```
 
-**Warning:** Creating a symbolic link with `ln -s /usr/share/icons/*theme-name*/ ~/.icons/default` is not sufficient for a consistent cursor theme.
+Then edit `~/.config/gtk-3.0/settings.ini`.
 
-Then, create a symbolic link to the respective cursor directory (in case of a system-wide theme):
+Edit the following line and replace the *theme-name* with the theme directory name:
 
-```
-ln -s /usr/share/icons/*theme-name*/cursors ~/.icons/default/cursors
-
-```
+ `~/.config/gtk-3.0/settings.ini`  `gtk-cursor-theme-name=*theme-name*` 
 
 Re-login for the changes to take effect.
 

@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Archboot](/index.php/Archboot "Archboot"). Дата последней синхронизации: 11 января 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=463642).
+
 Archboot представляет собой набор скриптов для генерации загрузочного носителя для CD/USB/PXE, предназначенного для установки или восстановления системы.
 
 Образ работает только в оперативной памяти, без каких-либо специальных файловых систем, таких как SquashFS, таким образом ограничиваясь только объёмом оперативной памяти, установленной в Вашей системе.
@@ -5,17 +7,17 @@ Archboot представляет собой набор скриптов для 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 The difference to the archiso install media](#The_difference_to_the_archiso_install_media)
-*   [3 Archboot ISO Releases](#Archboot_ISO_Releases)
+*   [2 Отличия от установочного образа archiso](#.D0.9E.D1.82.D0.BB.D0.B8.D1.87.D0.B8.D1.8F_.D0.BE.D1.82_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_archiso)
+*   [3 Релизы Archboot ISO](#.D0.A0.D0.B5.D0.BB.D0.B8.D0.B7.D1.8B_Archboot_ISO)
     *   [3.1 Гибридный образ](#.D0.93.D0.B8.D0.B1.D1.80.D0.B8.D0.B4.D0.BD.D1.8B.D0.B9_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7)
-    *   [3.2 PXE booting / Rescue system](#PXE_booting_.2F_Rescue_system)
-    *   [3.3 Поддерживаемые Archboot режимы загрузки](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_Archboot_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D1.8B_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+    *   [3.2 Загрузка PXE / Восстановление системы](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_PXE_.2F_.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [3.3 Поддерживаемые режимы загрузки Archboot](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D1.8B_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_Archboot)
     *   [3.4 Как сделать удаленную установку через SSH?](#.D0.9A.D0.B0.D0.BA_.D1.81.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D1.83.D1.8E_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D1.83_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_SSH.3F)
     *   [3.5 Возможности интерактивной настройки](#.D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B9_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
     *   [3.6 FAQ, известные проблемы и ограничения](#FAQ.2C_.D0.B8.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B8_.D0.BE.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D1.8F)
     *   [3.7 История](#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F)
     *   [3.8 Баги](#.D0.91.D0.B0.D0.B3.D0.B8)
-*   [4 Archboot BETA ISO Release](#Archboot_BETA_ISO_Release)
+*   [4 Релиз Archboot BETA ISO](#.D0.A0.D0.B5.D0.BB.D0.B8.D0.B7_Archboot_BETA_ISO)
 *   [5 Ссылки](#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
 *   [6 Руководство по созданию образов](#.D0.A0.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B4.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D0.BE_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8E_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.BE.D0.B2)
     *   [6.1 Требования](#.D0.A2.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
@@ -25,65 +27,65 @@ Archboot представляет собой набор скриптов для 
 
 ## Установка
 
-[Установите](/index.php/Install "Install") пакет [archboot](https://www.archlinux.org/packages/?name=archboot).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [archboot](https://www.archlinux.org/packages/?name=archboot).
 
-## The difference to the archiso install media
+## Отличия от установочного образа archiso
 
-*   It provides an additional interactive setup and quickinst script.
-*   It contains [core] repository on media.
-*   It runs a modified Arch Linux system in initramfs.
-*   It is restricted to RAM usage, everything which is not necessary like
+*   Он предоставляет дополнительную интерактивную настройку и быстрый скрипт.
+*   Он содержит [core] репозиторий на носителях.
+*   Он запускает модифицированную систему Arch Linux в initramfs.
+*   Он ограничен использованием ОЗУ, все, что не нужно, как
 
-	man or info pages etc. is not provided.
+	man или информационные страницы и т.д. не предоставляются.
 
-*   It doesn't mount anything during boot process.
-*   It supports remote installation through ssh.
+*   Во время загрузки он ничего не монтирует.
+*   Он поддерживает удаленную установку через ssh.
 
-## Archboot ISO Releases
+## Релизы Archboot ISO
 
-*   Hybrid image files and torrents are provided, which include i686/x86_64 and [core] repository,
+*   Предоставляются гибридные образы и торренты, в том числе i686/x86_64 и [core] репозиторий,
 
-	network labeled images don't include [core] repository.
+	сетевые помеченные образы не включают [основной] репозиторий.
 
-*   Please check md5sum before using it.
-*   [Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2015.09-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   Пожалуйста, проверьте md5sum перед его использованием.
+*   [Скачать 2016.12 „2k16-R3“](https://downloads.archlinux.de/iso/archboot/2016.12) / [Изменения](ftp://ftp.archlinux.org/iso/archboot/Changelog-2016.12-1.txt) / [Тема на форуме](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-	kernel: 4.2.0-3
+	ядро: 4.8.13-1
 
-	pacman: 4.2.1-3
+	pacman: 5.0.1-4
 
-	systemd: 226-1
+	systemd: 232-6
 
-	RAM recommendations: 600 MB
+	рекомендации по ОЗУ: 800 МБ
 
 ### Гибридный образ
 
 Файл гибридного образа можно прожечь на CD или использовать raw образ диска.
 
-*   Can be burned to CD(RW) media using most CD-burning utilities.
-*   Can be raw-written to a drive using 'dd' or similar utilities. Этот метод предназначен для записи на флэш-накопители USB.
+*   Может записываться на CD(RW) с использованием большинства утилит для записи компакт-дисков.
+*   Может быть raw-written на диск с использованием 'dd' или подобных утилит. Этот способ предназначен для использования с флэш-накопителем USB.
 
  `'dd if=<imagefile> of=/dev/<yourdevice> bs=1M'` 
 
-### PXE booting / Rescue system
+### Загрузка PXE / Восстановление системы
 
-[Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09/boot) needed files from the directory.
+[Загрузите 2016.12 „2k16-R3“](https://downloads.archlinux.de/iso/archboot/2016.12/boot) необходимые файлы из каталога.
 
 *   vmlinuz_i686 + initramfs_i686.img (i686)
 *   vmlinuz_x86_64 + initramfs_x86_64.img(x86_64)
 *   intel-ucode.img (x86_64/i686)
-*   For PXE booting add the kernel and initrd to your tftp setup and you will get a running installation/rescue system.
-*   For Rescue booting add an entry to your bootloader pointing to the kernel and initrd.
+*   Для загрузки PXE добавьте ядро и initrd в настройку tftp, и вы получите запущенную систему установки/восстановления.
+*   Для восстановления добавьте запись в ваш загрузчик, указывающий на ядро и initrd.
 
-### Поддерживаемые Archboot режимы загрузки
+### Поддерживаемые режимы загрузки Archboot
 
-*   It supports BIOS booting with syslinux.
-*   It supports UEFI/UEFI_CD booting with [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [EFISTUB](/index.php/EFISTUB "EFISTUB").
-*   It support UEFI_MIX_MODE booting with grub.
-*   It supports Secure Boot with prebootloader.
-*   It supports grub(2)'s iso loopback support.
+*   Он поддерживает загрузку BIOS с помощью syslinux.
+*   Он поддерживает загрузку UEFI/UEFI_CD с помощью [systemd-boot](/index.php/Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-boot (Русский)") и [EFISTUB](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)").
+*   Он поддерживает загрузку UEFI_MIX_MODE с помощью grub.
+*   Он поддерживает безопасную загрузку с помощью prebootloader.
+*   Он поддерживает grub(2)'s iso loopback поддержку.
 
-	variables used (below for example):
+	используемые переменные (ниже, например):
 
 	iso_loop_dev=PARTUUID=XXXX
 
@@ -97,7 +99,7 @@ initrd (loop)/boot/initramfs_x86_64.img
 }
 ```
 
-*   It supports booting using syslinux's memdisk (only in BIOS mode).
+*   Он поддерживает загрузку с использованием syslinux's memdisk (только в режиме BIOS).
 
 ```
 menuentry "Archboot Memdisk" {
@@ -109,83 +111,81 @@ menuentry "Archboot Memdisk" {
 ### Как сделать удаленную установку через SSH?
 
 *   Во время загрузки все сетевые интерфейсы попытаются получить IP-адрес через DHCP.
-*   Пароль пользователя root по умолчанию не установлен! Для обеспечения безопасность установите пароль.
+*   Пароль суперпользователя по умолчанию не установлен! Если вам нужна конфиденциальность во время установки, установите пароль.
 
  `'ssh root@<yourip>'` 
 
 ### Возможности интерактивной настройки
 
-*   Media and Network installation mode
-*   Changing keymap and consolefont
-*   Changing time and date
-*   Setup network with netctl
-*   Preparing storage disk, like auto-prepare, partitioning, GUID (gpt) support, 4k sector drive support etc.
-*   Creation of software raid/raid partitions, lvm2 devices and luks encrypted devices
-*   Supports standard linux,raid/raid_partitions,dmraid/fakeraid,lvm2 and encrypted devices
-*   Filesystem support: ext2/3/4, btrfs, f2fs, nilfs2, reiserfs,xfs,jfs,ntfs-3g,vfat
-*   Name scheme support: PARTUUID, PARTLABEL, FSUUID, FSLABEL and KERNEL
-*   Mount support of grub(2) loopback and memdisk installation media
-*   Package selection support
-*   hwdetect script is used for preconfiguration
-*   Auto/Preconfiguration of fstab, kms mode, ssd, mkinitcpio.conf, systemd, crypttab and mdadm.conf
-*   Configuration of basic system files
-*   Setting root password
-*   grub(2) (BIOS and UEFI), refind-efi, systemd-boot, syslinux (BIOS and UEFI) bootloader support
+*   Режим установки мультимедиа и сети
+*   Изменение раскладки клавиатуры и фона консоли
+*   Изменение времени и даты
+*   Настройка сети с netctl
+*   Подготовка диска для хранения, например, автоматическая подготовка, разбиение на разделы,поддержка GUID (gpt), поддержка 4K секторов диска и т.д.
+*   Создание программных raid/raid разделов, устройств lvm2 и зашифрованных устройств luks
+*   Поддерживает стандартный linux, raid/raid_разделы, dmraid/fakeraid, lvm2 и зашифрованные устройства
+*   Поддержка файловых систем ext2/3/4, btrfs, f2fs, nilfs2, reiserfs, xfs, jfs, ntfs-3g, vfat
+*   Поддержка схемы имен: PARTUUID, PARTLABEL, FSUUID, FSLABEL и KERNEL
+*   Поддержка монтирования установочных носителей grub (2) loopback и memdisk
+*   Поддержка выбора пакетов
+*   Скрипт hwdetect используется для предварительной настройки
+*   Автоматическая/Предварительная конфигурация fstab, режима kms, ssd, mkinitcpio.conf, systemd, crypttab и mdadm.conf
+*   Конфигурация основных системных файлов
+*   Настройка пароля суперпользователя
+*   Поддержка загрузчиков: grub(2) (BIOS и UEFI), refind-efi, systemd-boot, syslinux (BIOS и UEFI)
 
 ### FAQ, известные проблемы и ограничения
 
-*   Release specific known issues and workarounds are posted in changelog files.
-*   Check also the forum threads for posted fixes and workarounds.
-*   Why screen stays blank or other weird screen issues happen?
+*   Релиз определенных известных проблем и обходных путей публикуются в файлах изменений.
+*   Проверьте также темы форума для опубликованных исправлений и обходных решений.
+*   Почему экран остается пустым или возникают другие странные проблемы с экраном?
 
-	Some hardware doesn't like the KMS activation, use radeon.modeset=0, i915.modeset=0 or nouveau.modeset=0 on boot prompt.
+	Некоторым аппаратным средствам не нравится активация KMS, используйте radeon.modeset=0, i915.modeset=0 или nouveau.modeset=0 в приглашении загрузки.
 
-*   dmraid/fakeraid might be broken on some boards, support is not perfect here.
+*   dmraid/fakeraid может быть сломан на некоторых платах, поддержка здесь не идеальна.
 
-	The reason is there are so many different hardware components out there. At the moment 1.0.0rc16 is included, with latest fedora patchset, development has been stopped.
+	Причина в том, что существует так много различных аппаратных компонентов. В настоящий момент включен 1.0.0rc16, с последним набором патчей fedora, разработка была остановлена.
 
-	mdadm supports some isw and ddf fakeraid chipsets, but assembling during boot is deactivated in /etc/mdadm.conf!
+	Mdadm поддерживает некоторые чипсеты isw и ddf fakeraid, но сборка во время загрузки отключится в /etc/mdadm.conf!
 
-*   grub2 cannot detect correct bios boot order:
+*   Grub2 не может определить правильный порядок загрузки BIOS:
 
-	It may happen that hd(x,x) entries are not correct, thus first reboot may not work.
+	Может случиться, что записи hd(x,x) неверны, поэтому первая перезагрузка может не работать.
 
-	Reason: grub cannot detect bios boot order.
+	Исправление: либо изменить порядок загрузки BIOS, либо изменить menu.lst для исправления записей после успешной загрузки. Это не может быть исправлено, это ограничение в grub2!
 
-	Fix: Either change bios boot order or change menu.lst to correct entries after successful boot. This cannot be fixed it is a restriction in grub2!
+*   Почему parted используются в установки, вместо cfdisk в режиме таблицы разделов msdos?
 
-*   Why is parted used in setup routine, instead of cfdisk in msdos partitiontable mode?
+	parted - единственная программа разделов Linux, которая может обрабатывать все типы вещей, предлагаемые программой настройки.
 
-	parted is the only linux partition program that can handle all type of things the setup routine offers.
+	cfdisk не может обрабатывать GPT/GUID, а также не может разрешать разделы с 1 МБ пространствами для 4k секторных дисков.
 
-	cfdisk cannot handle GPT/GUID nor it can allign partitions correct with 1MB spaces for 4k sector disks.
+	cfdisk - хороший инструмент, но он слишком ограничен, чтобы быть стандартным расширителем.
 
-	cfdisk is a nice tool but is too limited to be the standard partitioner anymore.
-
-	cfdisk is still included but has to be run in an other terminal.
+	cfdisk по-прежнему включен, но должен быть запущен в другом терминале.
 
 ### История
 
-History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot/history).
+Историю старых релизов можно найти [здесь](ftp://ftp.archlinux.org/iso/archboot/history).
 
 ### Баги
 
-[Багтрекер Arch Linux](https://bugs.archlinux.org)
+[Arch Linux Bugtracker](https://bugs.archlinux.org)
 
-## Archboot BETA ISO Release
+## Релиз Archboot BETA ISO
 
-*   Hybrid image file is provided, which only supports network installation.
-*   Please read the according Changelog files for RAM limitations.
-*   Please check md5sum before using it.
-*   No beta ISO available at the moment.
+*   Предоставляется файл гибридного образа, который поддерживает только сетевую установку.
+*   Пожалуйста, прочитайте соответствующие файлы Changelog для ограничений RAM.
+*   Пожалуйста, проверьте md5sum перед его использованием.
+*   На данный момент нет доступных бета-версий ISO.
 
 ## Ссылки
 
-*   [GIT репозитарий](https://projects.archlinux.org/archboot.git/)
+*   [Репозиторий GIT](https://projects.archlinux.org/archboot.git/)
 
 ## Руководство по созданию образов
 
-(Быстрый генерация установочного носителя с последними доступными версиями базовых пакетов)
+(Быстрая генерация установочного носителя с последними доступными версиями базовых пакетов)
 
 ### Требования
 
@@ -227,14 +227,14 @@ History of old releases can be found [here](ftp://ftp.archlinux.org/iso/archboot
 
 ### Установка archboot и обновление пакетов
 
-Install in both chroots archboot:
+Установка в chroot-окружении archboot:
 
 ```
 # pacman -S archboot
 
 ```
 
-Update in both chroots to latest available packages:
+Обновление в chroot-окружений до последних доступных пакетов:
 
 ```
 # pacman -Syu
@@ -251,6 +251,6 @@ archboot-allinone.sh -g
 
 ```
 
-*   Finished you get a bunch of images.
+*   Закончено, вы получите кучу образов
 
-Have fun! tpowa (Archboot Developer)
+Повеселись! tpowa (Разработчик Archboot)

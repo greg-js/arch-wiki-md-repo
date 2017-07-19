@@ -7,9 +7,8 @@ This guide will give you an overview for the most common server options in exist
     *   [1.2 Arch Linux as a server OS](#Arch_Linux_as_a_server_OS)
 *   [2 Requirements](#Requirements)
 *   [3 Basic set-up](#Basic_set-up)
-    *   [3.1 HTTP](#HTTP)
-    *   [3.2 SSH](#SSH)
-    *   [3.3 LAMP](#LAMP)
+    *   [3.1 SSH](#SSH)
+    *   [3.2 HTTP](#HTTP)
 *   [4 Additional web-services](#Additional_web-services)
     *   [4.1 E-Mail](#E-Mail)
     *   [4.2 FTP](#FTP)
@@ -66,55 +65,21 @@ So what is a "basic" set-up:
 We want to be able to remotely log-on to our server to perform several administrative tasks. When your server is located elsewhere or does not have a monitor attached: removing or adding files, changing configuration options and server rebooting are all tasks which are impossible to do without a way to log on to your server remotely. SSH nicely provides this functionality.
 
 *   Your Arch **L**inux server.
-*   A http server (**A**pache), required for serving web pages.
+*   A HTTP server (**A**pache), required for serving web pages.
 *   A database server (**M**ySql/**M**ariaDB), often required for storing data of address book-, forum- or blog scripts.
 *   The **P**HP scripting language, a highly popular internet scripting language used in blogs, forums, content management systems and many other web-scripts.
 
-As the bold letters suggest, there is a name for this combination of applications: LAMP.
+As the bold letters suggest, there is a name for this combination of applications: **LAMP**.
 
 The following sections will guide you through the installation and configuration of the above mentioned basic set-up features.
 
-### HTTP
-
-You may choose from several HTTP servers, for example:
-
-*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
-
-	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
-
-*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
-
-	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
-
-*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
-
-	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
-
-*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
-
-	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
-
-*   **[Webfs](/index.php/Webfs "Webfs")** — Simple and instant http server for mostly static content.
-
-	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
-
-See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "w:Comparison of web server software").
-
 ### SSH
 
-SSH stands for **S**ecure **Sh**ell. SSH enables you to log on to your server through an SSH client, presenting you with a recognizable terminal-like interface. Users available on the system can be given access to log on remotely though SSH, thereby enabling remote administration of your server.
+[SSH](/index.php/SSH "SSH") stands for **S**ecure **Sh**ell. SSH enables you to log on to your server through an SSH client, presenting you with a recognizable terminal-like interface. Users available on the system can be given access to log on remotely though SSH, thereby enabling remote administration of your server.
 
-The [Arch wiki SSH page](/index.php/SSH "SSH") covers Installation and Configuration nicely.
+### HTTP
 
-### LAMP
-
-A [LAMP](/index.php/LAMP "LAMP") server is a reasonably standard web server.
-
-There are often disputes as to what the 'P' stands for, some people say it is [PHP](/index.php/PHP "PHP") some people say it is Perl while others say it is [Python](/index.php/Python "Python"). For the purposes of this guide I am going to make it PHP, although there are some nice Perl and Python modules for Linux so you may wish to install Perl or Python as well.
-
-Having said that, it is by no means simple so there may be a lot to take in here.
-
-Please refer to the [LAMP](/index.php/LAMP "LAMP") wiki page for instructions on installation and configuration.
+You may choose from several web servers. Please refer to the [List of applications/Internet#Web servers](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet") for instructions on installation and configuration.
 
 ## Additional web-services
 
@@ -128,7 +93,7 @@ FTP stands for **F**ile **T**ransfer **P**rotocol. FTP is a service that can pro
 
 FTP access will be related to user accounts available on the system, allowing simple rights management. FTP is a much used tool for adding files to a web server from a remote locations.
 
-There are several FTP daemons available. See [List of applications#FTP servers](/index.php/List_of_applications#FTP_servers "List of applications") for a list of them.
+There are several FTP daemons available. See [List of applications#File transfer servers](/index.php/List_of_applications#File_transfer_servers "List of applications") for a list of them.
 
 There is also the option of FTP over SSH, or [SFTP](/index.php/SFTP "SFTP").
 

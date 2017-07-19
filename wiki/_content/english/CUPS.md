@@ -86,6 +86,8 @@ The [OpenPrinting Printer List](http://www.openprinting.org/printers) provides d
 
 When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD files and save them in `/etc/cups/ppd/`.
 
+Note that the cups service needs a restart after a new driver has been installed!
+
 ### CUPS
 
 CUPS provides a few PPDs and filter binaries by default, which should work out of the box. CUPS also provides support for [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") and [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) printers.

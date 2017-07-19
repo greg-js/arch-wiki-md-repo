@@ -45,13 +45,13 @@
 
 ### Optional packages
 
-*   For a command-line interface, install [dropbox-cli](https://aur.archlinux.org/packages/dropbox-cli/) from the [AUR](/index.php/AUR "AUR").
-*   For integration with GNOME Files, install [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/) from the AUR. The Files plugin will start Dropbox automatically.
-*   For integration with Nemo, install [nemo-dropbox](https://aur.archlinux.org/packages/nemo-dropbox/) from the AUR.
-*   For integration with [Thunar](/index.php/Thunar "Thunar"), install [thunar-dropbox](https://aur.archlinux.org/packages/thunar-dropbox/) from the AUR.
-*   For integration with [Dolphin](/index.php/Dolphin "Dolphin"), install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins)
-*   For [KDE](/index.php/KDE "KDE") users, there is a KDE client available: [kfilebox](https://aur.archlinux.org/packages/kfilebox/) from the AUR.
-*   For integration with Caja, install [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/) from the AUR.
+| command-line interface | [dropbox-cli](https://aur.archlinux.org/packages/dropbox-cli/) |
+| [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") integration | [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/) |
+| [Nemo](/index.php/Nemo "Nemo") integration | [nemo-dropbox](https://aur.archlinux.org/packages/nemo-dropbox/) |
+| [Thunar](/index.php/Thunar "Thunar") integration | [thunar-dropbox](https://aur.archlinux.org/packages/thunar-dropbox/) |
+| [Dolphin](/index.php/Dolphin "Dolphin") integration | [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins) |
+| Caja integration | [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/) |
+| [KDE](/index.php/KDE "KDE") client | [kfilebox](https://aur.archlinux.org/packages/kfilebox/) |
 
 ## Automatically starting Dropbox
 

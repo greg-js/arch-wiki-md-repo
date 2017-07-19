@@ -205,17 +205,19 @@ EndSection
 
 ### 多台显示器
 
-To activate dual screen support, you just need to edit the `/etc/X11/xorg.conf.d/10-monitor.conf` file which you made before.
+修改 `/etc/X11/xorg.conf.d/10-monitor.conf` 即可启用多显示器支持.
 
-Per each physical monitor, add one Monitor, Device, and Screen Section entry, and then a ServerLayout section to manage it. Be advised that when Xinerama is enabled, the NVIDIA proprietary driver automatically disables compositing. If you desire compositing, you should comment out the `Xinerama` line in "`ServerLayout`" and use TwinView (see below) instead.
+给每一个物理显示器添加 Monitor, Device 和 Screen ,然后添加一个 ServerLayout 来管理他们.
+
+若启用了 Xinerama ,Nvidia专用驱动则会自动禁用多显示器的画面拼接. 若想启用拼接,请注释"`ServerLayout`"中的`Xinerama`,并且启用TwinView.
 
  `/etc/X11/xorg.conf.d/10-monitor.conf` 
 ```
 Section "ServerLayout"
     Identifier     "DualSreen"
     Screen       0 "Screen0"
-    Screen       1 "Screen1" RightOf "Screen0" #Screen1 at the right of Screen0
-    Option         "Xinerama" "1" #To move windows between screens
+    Screen       1 "Screen1" RightOf "Screen0" #Screen1 在 Screen0 的右边
+    Option         "Xinerama" "1" #在屏幕之间移动窗口
 EndSection
 
 Section "Monitor"
@@ -267,7 +269,9 @@ EndSection
 
 #### TwinView
 
-You want only one big screen instead of two. Set the `TwinView` argument to `1`. This option should be used instead of Xinerama (see above), if you desire compositing.
+若你想用一个大屏幕,而卜是两个屏幕.将`TwinView`设为`1`.
+
+如果想要拼接应该使用此方法而不是上面的Xinerama
 
 ```
 Option "TwinView" "1"

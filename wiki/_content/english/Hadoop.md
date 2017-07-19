@@ -12,17 +12,17 @@
 
 ## Installation
 
-Install the [hadoop](https://aur.archlinux.org/packages/hadoop/) package which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [hadoop](https://aur.archlinux.org/packages/hadoop/) package.
 
 ## Configuration
 
 By default, hadoop is already configured for pseudo-distributed operation. Some environment variables are set in `/etc/profile.d/hadoop.sh` with different values than traditional hadoop.
 
 | ENV | Value | Description | Permission |
-| HADOOP_CONF_DIR | `/etc/hadoop` | `Where configuration files are stored.` | Read |
-| HADOOP_LOG_DIR | `/tmp/hadoop/log` | `Where log files are stored.` | Read and Write |
-| HADOOP_SLAVES | `/etc/hadoop/slaves` | `File naming remote slave hosts.` | Read |
-| HADOOP_PID_DIR | `/tmp/hadoop/run` | `Where pid files are stored.` | Read and Write |
+| HADOOP_CONF_DIR | `/etc/hadoop` | Where configuration files are stored. | Read |
+| HADOOP_LOG_DIR | `/tmp/hadoop/log` | Where log files are stored. | Read and Write |
+| HADOOP_SLAVES | `/etc/hadoop/slaves` | File naming remote slave hosts. | Read |
+| HADOOP_PID_DIR | `/tmp/hadoop/run` | Where pid files are stored. | Read and Write |
 
 You also should set up the following files correctly.
 

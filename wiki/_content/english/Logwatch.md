@@ -9,14 +9,9 @@
 
 ## Installation
 
-Logwatch can be installed from the community repo via pacman:
+[Install](/index.php/Install "Install") [logwatch](https://www.archlinux.org/packages/?name=logwatch).
 
-```
-# pacman -S logwatch
-
-```
-
-In addition to the logwatch binaries, scripts and config files, the pacman package also includes a cron job that is installed as /etc/cron.daily/0logwatch. Also note that logwatch scripts use perl, which is a dependency of the logwatch package.
+In addition to the logwatch binaries, scripts and config files, the pacman package also includes a cron job that is installed as `/etc/cron.daily/0logwatch`. Also note that logwatch scripts use perl, which is a dependency of the logwatch package.
 
 ## Configuration
 

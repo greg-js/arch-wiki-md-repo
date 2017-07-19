@@ -60,6 +60,7 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [12.3 Denying console login as root](#Denying_console_login_as_root)
     *   [12.4 Automatic logout](#Automatic_logout)
     *   [12.5 Block TTY access from X](#Block_TTY_access_from_X)
+    *   [12.6 Protect against rogues USB devices](#Protect_against_rogues_USB_devices)
 *   [13 Rebuilding packages](#Rebuilding_packages)
     *   [13.1 Custom hardening flags](#Custom_hardening_flags)
 *   [14 See also](#See_also)
@@ -611,6 +612,10 @@ Note that this will not work if there is some command running in the shell (eg.:
 ### Block TTY access from X
 
 See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg").
+
+### Protect against rogues USB devices
+
+Install [Usbguard](/index.php/Usbguard "Usbguard"), which is a software framework that helps to protect your computer against rogue USB devices (a.k.a. [BadUSB](https://srlabs.de/badusb), [PoisonTap](https://github.com/samyk/poisontap) or [LanTurtle](https://lanturtle.com/)) by implementing basic whitelisting and blacklisting capabilities based on device attributes.
 
 ## Rebuilding packages
 

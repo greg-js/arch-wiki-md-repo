@@ -102,6 +102,29 @@ CONTROL_CPU_THROTTLING=0
 
 ```
 
+A laptop using a modern Intel CPU controls CPU frequency with the module **intel_pstate** by default. To make the laptop more power-saving, add `intel_pstate=disable` to your kernel line, and edit the following lines in `cpufreq.conf`.
+
+```
+# cpufreq.conf
+# ThinkPad T40/T42/T60 Example
+#
+BATT_CPU_MAXFREQ=fastest
+BATT_CPU_MINFREQ=slowest
+BATT_CPU_GOVERNOR=powersave
+BATT_CPU_IGNORE_NICE_LOAD=1
+LM_AC_CPU_MAXFREQ=fastest
+LM_AC_CPU_MINFREQ=slowest
+LM_AC_CPU_GOVERNOR=performance
+LM_AC_CPU_IGNORE_NICE_LOAD=1
+NOLM_AC_CPU_MAXFREQ=fastest
+NOLM_AC_CPU_MINFREQ=slowest
+NOLM_AC_CPU_GOVERNOR=performance
+NOLM_AC_CPU_IGNORE_NICE_LOAD=0
+
+```
+
+If you care more about productivity of your laptop on battery, you can go with the default **intel_pstate**.
+
 ### Device and bus
 
 #### Intel SATA

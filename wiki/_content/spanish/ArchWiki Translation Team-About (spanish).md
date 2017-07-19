@@ -21,7 +21,7 @@
 
 ### Justificación
 
-Como sabemos, [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") es un fondo documental sobre [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") en constante cambio y crecimiento, fruto de un esfuerzo colaborativo, serio y desinteresado, por divulgar el conocimiento y facilitar el uso de [esta distribución](https://en.wikipedia.org/wiki/es:Arch_Linux "wikipedia:es:Arch Linux") en particular y del [software libre](https://en.wikipedia.org/wiki/es:Software_libre "wikipedia:es:Software libre") en general.
+Como sabemos, [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") es un profundo documental sobre [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") en constante cambio y crecimiento, fruto de un esfuerzo colaborativo, serio y desinteresado, por divulgar el conocimiento y facilitar el uso de [esta distribución](https://en.wikipedia.org/wiki/es:Arch_Linux "wikipedia:es:Arch Linux") en particular y del [software libre](https://en.wikipedia.org/wiki/es:Software_libre "wikipedia:es:Software libre") en general.
 
 En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana, nace la idea de crear un proyecto de equipo a través del cual impulsar, mantener, mejorar y ampliar las traducciones de los artículos de la wiki al español, a fin de que el acceso al conocimiento sobre Arch Linux sea una realidad cada vez más universal y amigable.
 
@@ -85,6 +85,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 ### Activos
 
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
+*   [Knight](/index.php/User:DKS "User:DKS")
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - Traducción cada Domingo y Miércoles (*en principio*)
 *   [Raine](/index.php/User:Raine "User:Raine") - [enviar email](/index.php/Special:EmailUser/Raine "Special:EmailUser/Raine")

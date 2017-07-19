@@ -37,16 +37,13 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) package that is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) package.
 
 ### Unofficial packages
 
 *   [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) - Git [master branch](https://github.com/rakshasa/rtorrent) package
-
 *   [rtorrent-ps](https://aur.archlinux.org/packages/rtorrent-ps/) - Release package with [rtorrent-ps patchset](https://github.com/pyroscope/rtorrent-ps)
-
 *   [rtorrent-pyro-git](https://aur.archlinux.org/packages/rtorrent-pyro-git/) - Git [feature-bind branch](https://github.com/rakshasa/rtorrent/tree/feature-bind) package with [rtorrent-ps patchset](https://github.com/pyroscope/rtorrent-ps)
-
 *   [rtorrent-vi-color](https://aur.archlinux.org/packages/rtorrent-vi-color/) - Release package with vi-like key bindings
 
 ## Configuration

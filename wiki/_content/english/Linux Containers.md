@@ -291,6 +291,8 @@ The snapshots can be started/stopped like any other container. Users can optiona
 
 ```
 
+Systemd units and wrapper scripts to manage snapshots for [pi-hole](/index.php/Pi-hole "Pi-hole") and [openvpn](/index.php/Openvpn "Openvpn") are available to automate the process. See [lxc-snapshot-scripts](https://github.com/graysky2/lxc-snapshot-scripts).
+
 ### Converting a privileged container to an unprivileged container
 
 Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29)), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.

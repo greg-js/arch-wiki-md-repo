@@ -42,7 +42,7 @@ You may want to authorize Guix to download and use binary packages (‘substitut
 
 ```
 
-### Building packages outside of `/tmp`
+### Building packages outside of /tmp
 
 The unit file may need to be extended to use a different `TMPDIR` for building if `/tmp` does not provide enough space (see the [Guix manual](https://www.gnu.org/software/guix/manual/html_node/Build-Environment-Setup.html#Build-Environment-Setup) for details). To use `*/tmpdir*` for building instead of `/tmp`, run
 

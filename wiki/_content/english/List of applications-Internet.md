@@ -30,33 +30,36 @@
             *   [1.4.1.1 Console](#Console_2)
             *   [1.4.1.2 Graphical](#Graphical_2)
         *   [1.4.2 Cloud storage servers](#Cloud_storage_servers)
-        *   [1.4.3 File transfer clients](#File_transfer_clients)
-        *   [1.4.4 File transfer servers](#File_transfer_servers)
-        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.5.1 Console](#Console_3)
-            *   [1.4.5.2 Graphical](#Graphical_3)
-                *   [1.4.5.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.5.2.2 Other](#Other_2)
-        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.7 Video downloaders](#Video_downloaders)
-        *   [1.4.8 Pastebin clients](#Pastebin_clients)
+        *   [1.4.3 Cloud synchronization clients](#Cloud_synchronization_clients)
+        *   [1.4.4 File transfer clients](#File_transfer_clients)
+        *   [1.4.5 File transfer servers](#File_transfer_servers)
+        *   [1.4.6 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.6.1 Console](#Console_3)
+            *   [1.4.6.2 Graphical](#Graphical_3)
+                *   [1.4.6.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.6.2.2 Other](#Other_2)
+        *   [1.4.7 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.8 Web content downloaders](#Web_content_downloaders)
+            *   [1.4.8.1 Console](#Console_4)
+            *   [1.4.8.2 Graphical](#Graphical_4)
+        *   [1.4.9 Pastebin clients](#Pastebin_clients)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
-            *   [1.5.1.1 Console](#Console_4)
-            *   [1.5.1.2 Graphical](#Graphical_4)
+            *   [1.5.1.1 Console](#Console_5)
+            *   [1.5.1.2 Graphical](#Graphical_5)
         *   [1.5.2 Mail servers](#Mail_servers)
         *   [1.5.3 Instant messaging](#Instant_messaging)
             *   [1.5.3.1 IRC clients](#IRC_clients)
-                *   [1.5.3.1.1 Console](#Console_5)
-                *   [1.5.3.1.2 Graphical](#Graphical_5)
+                *   [1.5.3.1.1 Console](#Console_6)
+                *   [1.5.3.1.2 Graphical](#Graphical_6)
             *   [1.5.3.2 XMPP (Jabber) clients](#XMPP_.28Jabber.29_clients)
-                *   [1.5.3.2.1 Console](#Console_6)
-                *   [1.5.3.2.2 Graphical](#Graphical_6)
+                *   [1.5.3.2.1 Console](#Console_7)
+                *   [1.5.3.2.2 Graphical](#Graphical_7)
             *   [1.5.3.3 XMPP servers](#XMPP_servers)
             *   [1.5.3.4 Other](#Other_3)
             *   [1.5.3.5 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.3.5.1 Console](#Console_7)
-                *   [1.5.3.5.2 Graphical](#Graphical_7)
+                *   [1.5.3.5.1 Console](#Console_8)
+                *   [1.5.3.5.2 Graphical](#Graphical_8)
             *   [1.5.3.6 Lan messengers](#Lan_messengers)
         *   [1.5.4 VoIP / Softphone](#VoIP_.2F_Softphone)
             *   [1.5.4.1 Clients](#Clients)
@@ -67,8 +70,8 @@
             *   [1.5.4.3 Utilities](#Utilities)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_8)
-            *   [1.6.1.2 Graphical](#Graphical_8)
+            *   [1.6.1.1 Console](#Console_9)
+            *   [1.6.1.2 Graphical](#Graphical_9)
         *   [1.6.2 Podcast clients](#Podcast_clients)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
         *   [1.6.4 Blog engines](#Blog_engines)
@@ -375,17 +378,43 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ### Web servers
 
-See [Server#HTTP](/index.php/Server#HTTP "Server") for more information.
+See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "w:Comparison of web server software").
+
+*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
+
+	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
+
+*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
+
+	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
+
+*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
+
+	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
+
+*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
+
+	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
+
+*   **[Webfs](/index.php/Webfs "Webfs")** — Simple and instant http server for mostly static content.
+
+	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 
 ### File sharing
 
 #### Download managers
+
+See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wiki/Comparison_of_download_managers "wikipedia:Comparison of download managers").
 
 ##### Console
 
 *   **[Aria2](/index.php/Aria2 "Aria2")** — Download utility that supports HTTP, FTP, SFTP, BitTorrent and Metalink.
 
 	[https://aria2.github.io/](https://aria2.github.io/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
+
+*   **Axel** — Light command line download accelerator. Supports HTTP and FTP.
+
+	[https://github.com/eribertomota/axel](https://github.com/eribertomota/axel) || [axel](https://www.archlinux.org/packages/?name=axel)
 
 *   **[cURL](https://en.wikipedia.org/wiki/cURL "wikipedia:cURL")** — An URL retrieval utility and library. Supports HTTP, FTP and SFTP.
 
@@ -429,15 +458,81 @@ See [Server#HTTP](/index.php/Server#HTTP "Server") for more information.
 
 	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
+*   **Xtreme Download Manager** — Powerful tool to increase download speed up-to 500%. Supports HTTP and FTP.
+
+	[http://xdman.sourceforge.net/](http://xdman.sourceforge.net/) || [xdman](https://aur.archlinux.org/packages/xdman/)
+
 #### Cloud storage servers
+
+*   **[Cozy](/index.php/Cozy "Cozy")** — A personal cloud you can hack, host and delete.
+
+	[https://cozy.io/](https://cozy.io/) || [cozy](https://aur.archlinux.org/packages/cozy/)
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — A cloud server to store your files centrally on a hardware controlled by you.
 
 	[https://nextcloud.com](https://nextcloud.com) || [nextcloud](https://www.archlinux.org/packages/?name=nextcloud)
 
-*   **[Seafile](/index.php/Seafile "Seafile")** — An online file storage and collaboration tool.
+*   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
 
-	[https://github.com/haiwen/seafile-server](https://github.com/haiwen/seafile-server) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
+	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)
+
+*   **[Seafile](/index.php/Seafile "Seafile")** — An online file storage and collaboration tool with advanced support for file syncing, privacy protection and teamwork.
+
+	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
+
+#### Cloud synchronization clients
+
+*   **aws-cli** — Command Line interface for Amazon Web Services, including efficient file transfers to and from Amazon S3.
+
+	[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) || [aws-cli](https://www.archlinux.org/packages/?name=aws-cli)
+
+*   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop application to sync the files stored in your Cozy with your laptop and/or your desktop.
+
+	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop-gui](https://aur.archlinux.org/packages/cozy-desktop-gui/)
+
+*   **[CrashPlan](/index.php/CrashPlan "CrashPlan") Drive** — Online/offsite backup solution for CrashPlan file hosting service.
+
+	[https://www.crashplan.com/](https://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)
+
+*   **[Dropbox](/index.php/Dropbox "Dropbox")** — Proprietary desktop client for Dropbox file hosting service.
+
+	[https://www.dropbox.com/](https://www.dropbox.com/) || [dropbox](https://aur.archlinux.org/packages/dropbox/)
+
+*   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — Desktop client to sync files with Mega file hosting service.
+
+	[https://mega.nz/](https://mega.nz/) || [megasync](https://aur.archlinux.org/packages/megasync/)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client to keep your files synchronized between your Nextcloud server and your desktop.
+
+	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/)
+
+*   **Nutstore** — Desktop application to sync your files with the Nutstore file hosting service.
+
+	[https://www.jianguoyun.com/](https://www.jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
+
+*   **OneDrive** — Unofficial command line tool to interact with [OneDrive](https://onedrive.live.com/about/) file hosting service.
+
+	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive-git](https://aur.archlinux.org/packages/onedrive-git/)
+
+*   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop application to keep your files synchronized in real-time with Pydio.
+
+	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
+
+*   **S3cmd** — Unofficial command line tool and client for uploading, retrieving and managing data in Amazon S3.
+
+	[http://s3tools.org/s3cmd](http://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
+
+*   **[Seafile](/index.php/Seafile "Seafile") Client** — GUI client for synchronizing your local files with Seafile server.
+
+	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
+
+*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary secure file backup, sync and sharing client for SpiderOak One file hosting service.
+
+	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
+
+*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Proprietary command line tool to sync with Yandex Disk file hosting service.
+
+	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
 
 #### File transfer clients
 
@@ -583,15 +678,47 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)
 
-#### Video downloaders
+#### Web content downloaders
 
-*   **youtube-dl** — Download videos from YouTube and many other platforms.
+##### Console
 
-	[http://rg3.github.io/youtube-dl](http://rg3.github.io/youtube-dl) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
+*   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
 
-*   **You-Get** — Dumb downloader that scrapes the web.
+	[https://pyload.net/](https://pyload.net/) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
+
+*   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
+
+	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
+
+*   **[Streamlink](/index.php/Streamlink "Streamlink")** — Launch streams from various streaming services in a custom video player.
+
+	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
+
+*   **youtube-dl** — Download videos from YouTube and many other web sites.
+
+	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
+
+*   **You-Get** — Download media contents (videos, audios, images) from the Web.
 
 	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
+
+##### Graphical
+
+*   **4K Video Downloader** — Quickly download videos from YouTube in high-quality..
+
+	[https://www.4kdownload.com/products/product-videodownloader](https://www.4kdownload.com/products/product-videodownloader) || [4kvideodownloader](https://aur.archlinux.org/packages/4kvideodownloader/)
+
+*   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
+
+	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
+
+*   **FreeRapid** — Java-based downloader that supports downloading from file-sharing services.
+
+	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
+
+*   **[JDownloader](/index.php/JDownloader "JDownloader")** — Java-based downloader for one-click hosting sites.
+
+	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
 
 #### Pastebin clients
 

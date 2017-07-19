@@ -202,9 +202,9 @@ La categoría [Multimedia](/index.php/Category:Multimedia "Category:Multimedia")
 
 El [sonido](/index.php/Sound "Sound") es proporcionado por los controladores de sonido del kernel:
 
-*   [ALSA](/index.php/ALSA "ALSA") se incluye con el kernel y se recomienda porque, por lo general, funciona sin necesidad configuración adicional (basta con [activar el sonido](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
+*   [ALSA](/index.php/ALSA "ALSA") se incluye con el kernel y se recomienda; por lo general, funciona sin necesidad configuración adicional (basta con [activar el sonido](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
 
-*   [OSS](/index.php/OSS "OSS") es una alternativa viable para el caso de que ALSA no funcione.
+*   [OSS](/index.php/OSS "OSS") es una alternativa viable en caso de que ALSA no funcione.
 
 Los usuarios, además, pueden instalar y configurar un [servidor de sonido](/index.php/Sound#Sound_servers "Sound"). Para conocer requisitos de audio avanzados, vea [Pro Audio](/index.php/Pro_Audio "Pro Audio").
 

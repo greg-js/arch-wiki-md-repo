@@ -21,7 +21,7 @@ Available clients ([screenshots](https://github.com/pyload/pyload/wiki/Screensho
     *   [3.1 Essential](#Essential)
     *   [3.2 Interfacing with pyLoadCore](#Interfacing_with_pyLoadCore)
 *   [4 Daemon](#Daemon)
-*   [5 Alternatives](#Alternatives)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -141,11 +141,6 @@ To start pyload start *pyload* service.
 
 To have it started automatically on boot, enable *pyload* service.
 
-## Alternatives
+## See also
 
-*   [uGet](http://ugetdm.com/) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [uget](https://www.archlinux.org/packages/?name=uget) package (GTK).
-*   [JDownloader](/index.php/JDownloader "JDownloader") through [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/) package.
-*   [plowshare](https://github.com/mcrapet/plowshare) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
-*   [FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/) (Java).
-*   [Tucan Manager](http://tucaneando.com/index.html) available as [tucan](https://aur.archlinux.org/packages/tucan/) package.
-*   [TuxLoad](http://tuxload.wikispaces.com/) available in AUR: [tuxload](https://aur.archlinux.org/packages/tuxload/) (CLI).
+[List of applications/Internet#Web content downloaders](/index.php/List_of_applications/Internet#Web_content_downloaders "List of applications/Internet")

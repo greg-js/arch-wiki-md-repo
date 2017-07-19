@@ -33,7 +33,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.5 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
     *   [3.6 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
     *   [3.7 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [3.8 Pulseaudio](#Pulseaudio)
+    *   [3.8 PulseAudio](#PulseAudio)
     *   [3.9 Album art and images are missing, show up as squares](#Album_art_and_images_are_missing.2C_show_up_as_squares)
     *   [3.10 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
     *   [3.11 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
@@ -84,14 +84,14 @@ Once the application is successfully installed you may run Spotify by using one 
 If you use a x86_64 copy of Arch Linux, you will have to run it like this:
 
 ```
-$ wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Spotify/spotify.exe
+$ wine "$HOME/.wine/drive_c/Program Files (x86)/Spotify/spotify.exe"
 
 ```
 
 If you use a x86 copy of Arch Linux, you can use this command just fine:
 
 ```
-$ wine ~/.wine/drive_c/Program\ Files/Spotify/spotify.exe
+$ wine "$HOME/.wine/drive_c/Program Files/Spotify/spotify.exe"
 
 ```
 
@@ -478,7 +478,7 @@ Restart Spotify. Note that several causes appear to exist for this problem, and 
 
 **Note:** This issue has multiple causes, so keep track of what you change while researching this. Update this section with additional scenarios and fixes.
 
-### Pulseaudio
+### PulseAudio
 
 See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
 

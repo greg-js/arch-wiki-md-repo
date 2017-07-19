@@ -3,3 +3,26 @@
 ## Installation
 
 Install the [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) and [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) packages.
+
+## Troubleshooting
+
+### DKMS module not available
+
+If the following command does not list any module after you installed [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms),
+
+```
+# lsmod | grep wireguard
+
+```
+
+or if creating a new link returns
+
+```
+$ sudo ip link add dev wg0 type wireguard
+RTNETLINK answers: Operation not supported
+
+```
+
+you probably miss the linux headers.
+
+These headers are available in [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) depending of the kernel installed on your system.

@@ -184,7 +184,7 @@ If everything is fine, add the following line to your `rc.lua`:
  `.config/awesome/rc.lua` 
 ```
 ...
-awful.util.spawn_with_shell("~/.config/awesome/autorun.sh")
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 ...
 ```
 
@@ -219,7 +219,14 @@ beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 ```
 
-See also [[1]](http://awesome.naquadah.org/wiki/Beautiful) and [[2]](http://awesome.naquadah.org/wiki/Beautiful_themes).
+See also [[1]](https://awesomewm.org/apidoc/libraries/beautiful.html) for additional theming options. To add a useless gap for example, add
+
+```
+beautiful.useless_gap = 5
+
+```
+
+At the bottom of the theming section in your `rc.lua`.
 
 #### Wallpaper
 
@@ -242,7 +249,16 @@ end
 
 ```
 
-For a random background image, add [[3]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) to `rc.lua` (v3.5+). To automatically fetch images from a given directory use [[4]](https://gist.github.com/anonymous/9072154f03247ab6e28c) instead.
+For a random background image, add [[2]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) to `rc.lua` (v3.5+). To automatically fetch images from a given directory use [[3]](https://gist.github.com/anonymous/9072154f03247ab6e28c) instead.
+
+To simply specify the wallpaper in your `rc.lua`, add the following line to the theming section:
+
+```
+beautiful.wallpaper = awful.util.get_configuration_dir() .. "path/to/wallpaper.png"
+
+```
+
+The optional `awful.util.get_configuration_dir()` simply returns the path to your `rc.lua`.
 
 ## Tips and tricks
 
@@ -402,7 +418,7 @@ Note that the `.desktop` files are re-read each time awesome starts, thereby slo
 
 ### Pop-up menus
 
-There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
+There is a simple menu by default in awesome 3, simplifying custom menus. [[4]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
 
 ### Applications menu
 
@@ -435,7 +451,7 @@ awful.titlebar.hide(c)
 
 ### Battery notification
 
-See [[6]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
+See [[5]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
 
 ### Media Controls
 
@@ -569,7 +585,7 @@ keysym Caps_Lock = Super_L Caps_Lock
 
 ### Fix Java (GUI appears gray only)
 
-See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[7]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
+See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[6]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
 
 ### Eclipse: cannot resize/move main window
 
@@ -617,7 +633,7 @@ or:
 
 ```
 
-See [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
+See [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
 
 ### Prevent the mouse scroll wheel from changing tags
 

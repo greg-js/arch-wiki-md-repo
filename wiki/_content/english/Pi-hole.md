@@ -30,7 +30,7 @@ Pi-hole is a shell-script based project that manages blocklists of known adverti
 
 #### Dnsmasq
 
-Insure that the following line in `/etc/dnsmasq.conf` is uncommented:
+Ensure that the following line in `/etc/dnsmasq.conf` is uncommented:
 
  `/etc/dnsmasq.conf` 
 ```

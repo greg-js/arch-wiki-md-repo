@@ -7,7 +7,7 @@
 *   [5 Fonty](#Fonty)
 *   [6 Externé zdroje](#Extern.C3.A9_zdroje)
 
-# O tomto dokumente
+## O tomto dokumente
 
 Tento dokument ponúka informácie o tom, ako nastaviť v Arch linuxe slovenské prostredie.
 
@@ -17,7 +17,7 @@ OpenI18N Diagram:
 
 ```
 
-# Bootovacia konzola
+## Bootovacia konzola
 
 V Súbore /etc/locale.gen odkomentujte znakovu sadu:
 
@@ -50,7 +50,7 @@ KEYMAP="sk-qwerty.map.gz"
 
 ```
 
-# Nastavenie slovenského prostredia (Locale)
+## Nastavenie slovenského prostredia (Locale)
 
 (a) Pre všetkých použivateľov: V súbore /etc/profile prepíšte:
 
@@ -68,7 +68,7 @@ export LC_ALL="sk_SK.utf8"
 
 ```
 
-# Klávesnica
+## Klávesnica
 
 Pre xorg7, v súbore /etc/X11/xorg.conf napíšte:
 
@@ -96,7 +96,7 @@ Poznámka: Uvedený príklad umožní slovenskú klávesnicu typu QWERTY.
 
 Poznámka: Option "XkbRules" musí byť nastavený na hodnotu "xorg" (nie "xfree86").
 
-# Fonty
+## Fonty
 
 Pre X postačia klasické fonty:
 
@@ -105,6 +105,6 @@ xorg-fonts-type1, xorg-fonts-100dpi (resp. 75dpi), xorg-fonts-misc, zíde sa i t
 
 ```
 
-# Externé zdroje
+## Externé zdroje
 
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)

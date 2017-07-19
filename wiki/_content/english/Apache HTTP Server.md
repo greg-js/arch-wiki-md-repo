@@ -23,7 +23,8 @@ Apache is often used together with a scripting language such as PHP and database
     *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
     *   [4.3 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
     *   [4.4 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
-    *   [4.5 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
+    *   [4.5 AH00072: make_sock: could not bind to address](#AH00072:_make_sock:_could_not_bind_to_address)
+    *   [4.6 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -514,6 +515,32 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 ```
 
 Also check [the above](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.) if more errors occur afterwards.
+
+### AH00072: make_sock: could not bind to address
+
+This can be caused by multiple things. Most common issue being that something is already listening on a given port, check via netstat that this is not happening:
+
+```
+# netstat -lnp | grep -e :80 -e :443
+
+```
+
+If you get any output, stop the given service that's taking up the port or kill the runaway process that is causing the port to be bound, and try again.
+
+Another issue could be that Apache is not starting as root for some reason - try starting it manually and see if you still get the AH0072 error.
+
+```
+# httpd -k start
+
+```
+
+Finally, you can also have an error with your config and you are listening twice on the given port. Following is an example of a bad config that will trigger this issue:
+
+```
+Listen 0.0.0.0:80
+Listen [::]:80
+
+```
 
 ### Changing the max_execution_time in php.ini has no effect
 

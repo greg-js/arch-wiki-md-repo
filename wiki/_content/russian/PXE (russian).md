@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [PXE](/index.php/PXE "PXE"). Дата последней синхронизации: 12 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PXE&diff=0&oldid=481798).
+**Состояние перевода:** На этой странице представлен перевод статьи [PXE](/index.php/PXE "PXE"). Дата последней синхронизации: 17 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PXE&diff=0&oldid=482113).
 
 Ваш ноутбук поставляется без дисковода, и не позволяет загружаться с USB-накопителя? Не бойтесь, вы можете загрузиться с помощью PXE.
 
@@ -65,6 +65,8 @@
 
 Для настройки сети на целевой установке вам потребуется как DHCP, так и TFTP-сервер, чтобы облегчить передачу файлов между сервером PXE и клиентом; *dnsmasq* делает и то, и другое, и очень прост в настройке.
 
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") `tftpd.service`.
+
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq).
 
 Настройте *dnsmasq*:
@@ -84,6 +86,8 @@ tftp-root=/mnt/archiso
 ```
 
 [Запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") `dnsmasq.service`.
+
+Обратите внимание, что перед `dnsmasq.service` важно запустить `tftpd.service`, иначе вы можете столкнуться с сообщением об ошибке.
 
 ### HTTP
 

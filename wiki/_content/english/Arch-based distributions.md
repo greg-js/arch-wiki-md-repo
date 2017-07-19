@@ -1,12 +1,10 @@
 **Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
 
-This is a listing of Linux distributions which are derived from Arch Linux **either in whole or in part**. This page is here to serve as a useful reference; for a detailed comparison, see [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
+This is a listing of Linux distributions which are [derived](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") from Arch Linux **either in whole or in part**.
 
 ## Contents
 
 *   [1 Active](#Active)
-    *   [1.1 Desktop](#Desktop)
-    *   [1.2 Others](#Others)
 *   [2 Inactive](#Inactive)
     *   [2.1 2016](#2016)
     *   [2.2 2015](#2015)
@@ -24,13 +22,10 @@ This is a listing of Linux distributions which are derived from Arch Linux **eit
 
 ## Active
 
-Actively developed Arch derived Linux distributions.
-
-### Desktop
-
-The following distributions include a pre-installed [Desktop environment](/index.php/Desktop_environment "Desktop environment").
-
+*   [Alpine Linux](http://alpinelinux.org/)
 *   [Antergos](https://sourceforge.net/projects/antergos/)
+*   [Arch Linux ARM](http://archlinuxarm.org/)
+*   [Arch-Anywhere](http://arch-anywhere.org/)
 *   [ArchBang](https://sourceforge.net/projects/archbang/)
 *   [ArchBox](https://archbox-linux.github.io/)
 *   [ArchEX](https://sourceforge.net/projects/archex/)
@@ -42,24 +37,18 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Frugalware](http://frugalware.org/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
+*   [LinHES](http://linhes.org/)
 *   [Obarun](http://www.obarun.org/index.html)
 *   [OBRevenge](http://obrevenge.weebly.com/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
+*   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](https://nurunner.org/)
+*   [PacBSD](https://www.pacbsd.org/)
+*   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [Velt OS](https://velt.io)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)
-
-### Others
-
-*   [Alpine Linux](http://alpinelinux.org/)
-*   [Arch Linux ARM](http://archlinuxarm.org/)
-*   [Arch-Anywhere](http://arch-anywhere.org/)
-*   [LinHES](http://linhes.org/)
-*   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
-*   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [UBOS](http://ubos.net/)
-*   [PacBSD](https://www.pacbsd.org/)
 
 ## Inactive
 

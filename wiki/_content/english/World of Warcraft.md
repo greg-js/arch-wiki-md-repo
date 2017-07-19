@@ -18,11 +18,13 @@ Some of this information was provided by [http://wowpedia.org/World_of_Warcraft_
     *   [3.5 Sound Issues](#Sound_Issues)
         *   [3.5.1 Configuring the buffer](#Configuring_the_buffer)
 *   [4 Performance tweaks](#Performance_tweaks)
-    *   [4.1 For Nvidia users](#For_Nvidia_users)
-        *   [4.1.1 Direct3D mode](#Direct3D_mode)
-        *   [4.1.2 GLXUnsupportedPrivateRequest problem](#GLXUnsupportedPrivateRequest_problem)
-    *   [4.2 AMD CPU users](#AMD_CPU_users)
-    *   [4.3 CPU/I-O schedulers](#CPU.2FI-O_schedulers)
+    *   [4.1 Disable OpenGL Vertex Buffer Object](#Disable_OpenGL_Vertex_Buffer_Object)
+    *   [4.2 For Nvidia users](#For_Nvidia_users)
+        *   [4.2.1 Direct3D mode](#Direct3D_mode)
+        *   [4.2.2 GLXUnsupportedPrivateRequest problem](#GLXUnsupportedPrivateRequest_problem)
+    *   [4.3 AMD CPU users](#AMD_CPU_users)
+    *   [4.4 CPU/I-O schedulers](#CPU.2FI-O_schedulers)
+    *   [4.5 Enable CSMT](#Enable_CSMT)
 *   [5 Links](#Links)
 
 ## Installing Wine
@@ -123,6 +125,8 @@ SET SoundBufferSize "100"
 
 ## Performance tweaks
 
+### Disable OpenGL Vertex Buffer Object
+
 1\. Here is a performance tweak that can boost your FPS significantly (everything without quotes):
 
 ```
@@ -138,8 +142,6 @@ SET SoundBufferSize "100"
 That was it, close the registry editor again, your changes will be saved automatically.
 
 2\. If you are finding it annoying that turning your character by let us say 90 degree takes n seconds normally, but n+m seconds in pupolated areas (in other words: that the polygon count of your surroundings affects the camera turning speed), apply something to "GL_ARB_vertex_buffer_object", like let us say a "2", so it looks like this: "GL_ARB_vertex_buffer_object2". You will still have the performance boost of the above tweak, but with a smoother feeling.
-
-You can also find [this](http://appdb.winehq.org/objectManager.php?bIsQueue=false&bIsRejected=false&sClass=comment&sAction=add&sReturnTo=http%3A%2F%2Fappdb.winehq.org%2FobjectManager.php%3FsClass%3Dversion%26amp%3BiId%3D25610&sTitle=Post+new+comment&iVersionId=25610&iThread=80686) comment on WineHQ very useful. It can double your FPS.
 
 ### For Nvidia users
 
@@ -198,7 +200,11 @@ You can greatly increase World of Warcraft performance by choosing the right sch
 
 ```
 
-This is a temporary fix (it does not set deadline permanently), but you may gain an additional 5-30fps, by enabling deadline as the I/O scheduler. Moreover, feel free to play around with other schedulers to pick the one which runs best on your machine, especially if you have an SSD
+This is a temporary fix (it does not set deadline permanently), but you may gain an additional 5-30fps, by enabling deadline as the I/O scheduler. Moreover, feel free to play around with other schedulers to pick the one which runs best on your machine, especially if you have an SSD.
+
+### Enable CSMT
+
+If you're using Direct3D 9 (no effect on OpenGL) you can use [CSMT](https://github.com/wine-compholio/wine-staging/wiki/CSMT) (making wine use multithreading) for a significant performance boost. You will need to install [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing branch of wine) and open *winecfg* and enable CSMT in the "Staging" tab.
 
 ## Links
 

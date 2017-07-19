@@ -44,7 +44,7 @@ For the GPU driver and Wayland composer to be compatible they must support the s
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
-| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [Sway](/index.php/Sway "Sway") |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [Sway](/index.php/Sway "Sway"), [Grefsen](/index.php?title=Grefsen&action=edit&redlink=1 "Grefsen (page does not exist)") |
 
 ## Weston
 

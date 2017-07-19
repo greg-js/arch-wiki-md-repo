@@ -1,6 +1,6 @@
 摘自 [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
 
-	In computing, an optical disc drive (ODD) is a disk drive that uses laser light or electromagnetic waves within or near the visible light spectrum as part of the process of reading or writing data to or from optical discs. Some drives can only read from discs, but recent drives are commonly both readers and recorders, also called burners or writers. Compact discs, DVDs, and Blu-ray discs are common types of optical media which can be read and recorded by such drives. Optical drive is the generic name; drives are usually described as "CD" "DVD", or "Blu-ray", followed by "drive", "writer", etc.
+	在计算机中，光盘驱动器（ODD）指使用激光或可见光谱内或附近的电磁波来从光盘写入或读取数据的驱动器。有的光盘驱动器只能读取，但现在的驱动器都普遍能够读取和记录，也叫做烧录或写入。小型光盘，DVD和蓝光碟都是可以用这类驱动器读取写入的光学介质。光驱是普遍叫法；驱动器往往被描述成“CD” “DVD”，或者“Blu-ray”，后面跟上“drive” “write”，等等。
 
 ## Contents
 

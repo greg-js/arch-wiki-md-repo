@@ -461,7 +461,7 @@ An easier workaround is to make VMWare use the system's version of zlib instead 
 
 #### vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5
 
-**Note:** Use this is not required on version 12.5.6
+**Note:** Use this is not required on version 12.5.6, but a workaround may be necessary for 12.5.7\. See below.
 
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
 
@@ -492,6 +492,22 @@ Also there is a workaround:
 
 ```
 # export VMWARE_USE_SHIPPED_LIBS='yes'
+
+```
+
+If it happens on **12.5.7** and moving `icudt44l.dat` or setting `VMWARE_USE_SHIPPED_LIBS` to `yes` has no effect or if executing `vmplayer` on terminal shows no message, try as root:
+
+```
+# cd /usr/lib/vmware/lib/libz.so.1
+# mv libz.so.1 libz.so.1.old
+# ln -s /usr/lib/libz.so.1 .
+
+```
+
+Despite setting the VMWARE_USE_SHIPPED_LIBS variable, VMWare may still fail to find certain libraries. An example is the libfontconfig.so.1 library. Check vmware logs in the tmp directory to see which libraries are still not found. Copy them to the appropriate path with libraries existing on the system:
+
+```
+# cp /usr/lib/libfontconfig.so.1 /usr/lib/vmware/lib/libfontconfig.so.1/
 
 ```
 

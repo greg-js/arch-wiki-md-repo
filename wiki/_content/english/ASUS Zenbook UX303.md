@@ -214,6 +214,8 @@ Microphone works out of the box. If you cannot record or use VoIP, make sure the
 
 ## Function Keys
 
+As of kernel version 4.10 all function keys, except for automatic brightness seem to work out of the box (UX303LN)
+
 All function keys except the backlight and "plane" mode seem to work out of the box (as of kernel 3.17). To fix, add `acpi_osi=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Example line from `/etc/default/grub`:
 
  `GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi="` 

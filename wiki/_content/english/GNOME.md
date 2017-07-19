@@ -426,6 +426,13 @@ The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shel
 
 Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
 
+Listing currently enabled extensions can be achieved with:
+
+```
+$ gsettings get org.gnome.shell enabled-extensions
+
+```
+
 #### Input methods
 
 GNOME has integrated support for input methods through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.

@@ -256,7 +256,7 @@ chmod +x /usr/local/bin/hdmi_sound_toggle.sh
 
 ```
 
-Create a udev rule to run this script when the status of the HDMI change:
+Create a [udev](/index.php/Udev "Udev") rule to run this script when the status of the HDMI change:
 
 **Note:** udev rule can't directly run a script, a workaround is to use a .service to run this script
  `/etc/udev/rules.d/99-hdmi_sound.rules`  `KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/systemctl start hdmi_sound_toggle.service"` 
@@ -291,7 +291,7 @@ systemctl daemon-reload
 
 ```
 
-A reboot can be required.
+A reboot might be required.
 
 ## Surround sound systems
 
