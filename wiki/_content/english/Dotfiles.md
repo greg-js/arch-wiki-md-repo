@@ -123,6 +123,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | Author | Shell (shell framework) | WM / DE | Editor | Terminal | Multiplexer | Audio | Monitor | Mail | IRC |
 | [Ambrevar](https://bitbucket.org/ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | sakura | tmux | i3status | The Lounge |
+| [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | claws-mail/mutt | irssi |
 | [bamos](https://github.com/bamos/dotfiles) | zsh | i3/xmonad | vim/emacs | rxvt-unicode | tmux | mpv/cmus | conky/xmobar | mutt | ERC |
 | [brisbin33](https://github.com/pbrisbin/dotfiles) | [zsh](https://github.com/pbrisbin/oh-my-zsh) | [xmonad](https://github.com/pbrisbin/xmonad-config) | [vim](https://github.com/pbrisbin/vim-config) | rxvt-unicode | screen | dzen | [mutt](https://github.com/pbrisbin/mutt-config) | [irssi](https://github.com/pbrisbin/irssi-config) |
 | [bstaletic](https://github.com/bstaletic) | [zsh](https://github.com/bstaletic/dotfiles/blob/master/.zshrc) | [dwm](https://github.com/bstaletic/dotfiles/blob/master/dwm/config.h) | [vim](https://github.com/bstaletic/dotfiles/blob/master/.vimrc) | terminator | screen | [ncmpcpp](https://github.com/bstaletic/blob/master/.ncmpcpp/config) | [conky](https://github.com/bstaletic/dotfiles/blob/master/.conkyrc) |

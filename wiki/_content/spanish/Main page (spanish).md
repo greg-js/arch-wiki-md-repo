@@ -46,7 +46,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	Un breve tutorial sobre cómo editar y colaborar con la wiki de Arch Linux.
 
-	[Comunidades internacionales](/index.php/International_communities "International communities")
+	[Comunidades internacionales](/index.php/Comunidades_internacionales "Comunidades internacionales")
 
 	Recolección de enlaces a las comunidades de Arch Linux del resto del mundo.
 

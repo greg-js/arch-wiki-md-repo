@@ -168,6 +168,8 @@ If your WiFi card supports Bluetooth, then the BT interface should be available 
 
 Bluetooth should work right away. Load the module `btusb` and `bluetooth` if it was not already and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `bluetooth.service`. Refer to [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information and configuration options.
 
+**Note:** The Broadcom `brcmfmac` kernel module causes issues with Dell USB-C docks. Notably, the USB ports and ethernet connection will stop working when there are WiFi connection issues.
+
 #### Wireless headset: strange bluetooth behavior
 
 If your Bluetooth behaves unstable, such as connection loss, stuttering sound. being able to connect but not to listen through it, etc. you probably need the proprietary firmware.

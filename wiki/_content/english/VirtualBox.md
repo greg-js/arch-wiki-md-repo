@@ -174,8 +174,8 @@ VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provid
 
 Both packages will make you choose a package to provide guest modules:
 
-*   for [linux](https://www.archlinux.org/packages/?name=linux) kernel choose [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch)
-*   for other [kernels](/index.php/Kernels "Kernels") choose [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+*   for the default [linux](https://www.archlinux.org/packages/?name=linux) kernel choose [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch)
+*   for non-default [kernels](/index.php/Kernels "Kernels") choose [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
 
 To compile the virtualbox modules provided by [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms), it will also be necessary to install the appropriate headers package(s) for your installed kernel(s) (e.g. [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the [DKMS](/index.php/DKMS "DKMS") Pacman hook.
 

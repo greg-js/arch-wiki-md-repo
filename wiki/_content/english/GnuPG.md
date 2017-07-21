@@ -58,6 +58,7 @@ According to the [official website](http://www.gnupg.org):
     *   [9.8 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
     *   [9.9 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
     *   [9.10 Smartcard not detected](#Smartcard_not_detected)
+    *   [9.11 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -821,6 +822,10 @@ ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0
 ```
 
 One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above example is for a YubikeyNEO.
+
+### gpg: WARNING: server 'gpg-agent' is older than us (x < y)
+
+This warning appears if `gnupg` is updated but the old (pre-update) gpg-agent still runs (e.g. `pacman -Syu` without rebooting). Kill the old gpg-agent with `gpgconf --kill gpg-agent`, other gpg tools will spawn it again on demand ([#gpg-agent](#gpg-agent))
 
 ## See also
 

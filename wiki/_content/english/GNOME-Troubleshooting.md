@@ -3,30 +3,31 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 ## Contents
 
 *   [1 Shell freezes](#Shell_freezes)
-*   [2 Incorrect application defaults](#Incorrect_application_defaults)
-*   [3 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
-*   [4 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
-*   [5 Empathy does not use GNOME Online Accounts](#Empathy_does_not_use_GNOME_Online_Accounts)
-*   [6 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
-*   [7 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
-*   [8 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
-*   [9 Extensions disabled at every system startup](#Extensions_disabled_at_every_system_startup)
-*   [10 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
-*   [11 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
-*   [12 Consistent cursor theme](#Consistent_cursor_theme)
-*   [13 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
-*   [14 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
-*   [15 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
-*   [16 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
-*   [17 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
-*   [18 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
-*   [19 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
-*   [20 Mouse cursor missing](#Mouse_cursor_missing)
-*   [21 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
-*   [22 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
-*   [23 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
-*   [24 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
-*   [25 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
+*   [2 Shell segfaults](#Shell_segfaults)
+*   [3 Incorrect application defaults](#Incorrect_application_defaults)
+*   [4 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
+*   [5 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
+*   [6 Empathy does not use GNOME Online Accounts](#Empathy_does_not_use_GNOME_Online_Accounts)
+*   [7 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
+*   [8 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
+*   [9 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
+*   [10 Extensions disabled at every system startup](#Extensions_disabled_at_every_system_startup)
+*   [11 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
+*   [12 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
+*   [13 Consistent cursor theme](#Consistent_cursor_theme)
+*   [14 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
+*   [15 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
+*   [16 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
+*   [17 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
+*   [18 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
+*   [19 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
+*   [20 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
+*   [21 Mouse cursor missing](#Mouse_cursor_missing)
+*   [22 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
+*   [23 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
+*   [24 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+*   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
+*   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
 
 ## Shell freezes
 
@@ -35,6 +36,73 @@ In the event of a Shell freeze (which might be caused by certain appearance twea
 In this case, try switching to another TTY (**Ctrl** + **Alt** + **F2**) and entering the following command: `pkill -HUP gnome-shell`. It may take a few seconds before the Shell successfully restarts. On X11 restarting the shell in this fashion should not log the user out but it is a good idea to try and ensure that all work is saved anyway; on Wayland (currently the default) restartung the shell kills the whole session, so everything will be lost.
 
 If this fails, the [Xorg](/index.php/Xorg "Xorg") server will need to be restarted either by: `pkill X` for console logins or: `systemctl restart gdm` for GDM logins. Bear in mind that restarting the Xorg server will log the user out so try to ensure that all work is saved before attempting this.
+
+## Shell segfaults
+
+If you experience gnome-shell disappearing and reappearing, it means that it has sefgaulted (probably because of an extension). Gnome-shell extensions use javascript; to enable debugging of extensions, it is necessary to
+
+1) rebuild gjs with CXXFLAGS='-g -O0'
+
+```
+packages/gjs/trunk$ svn diff PKGBUILD 
+Index: PKGBUILD
+===================================================================
+--- PKGBUILD	(révision 300688)
++++ PKGBUILD	(copie de travail)
+@@ -26,7 +26,8 @@
+
+ build() {
+   cd $pkgname
+-  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib
++  export CXXFLAGS='-g -O0'
++  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib --enable-debug-symbols=-gdwarf-2
+   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+   make
+ }
+```
+
+2) rebuild js38 with debug enabled:
+
+```
+packages/js38/trunk$ svn diff PKGBUILD 
+Index: PKGBUILD
+===================================================================
+--- PKGBUILD	(révision 300681)
++++ PKGBUILD	(copie de travail)
+@@ -10,7 +10,7 @@
+ license=(MPL)
+ depends=(nspr gcc-libs readline zlib icu libffi)
+ makedepends=(python2 libffi zip)
+-options=(!staticlibs)
++options=(!staticlibs debug)
+ source=(https://ftp.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.bz2
+         mozjs38-fix-tracelogger.patch
+         mozjs38-shell-version.patch
+```
+
+Once the gjs and js38-debug packages are installed and gnome-shell restarted (Alt+F2 + r), whenever gnome-shell crashes the debug symbols will be available.
+
+After the crash:
+
+```
+$ coredumpctl -1
+TIME                            PID   UID   GID SIG COREFILE  EXE
+Mon 2017-07-17 15:34:49 CEST  27368  1000  1000  11 present   /usr/bin/gnome-shell
+$ coredumpctl gdb 27368
+(gdb) bt
+#0  0x00007fbc7b997945 in js::GCMethods<JSObject*>::needsPostBarrier(JSObject*) (v=0x7fbc0a9548c0) at /usr/include/mozjs-38/js/RootingAPI.h:663
+#1  0x00007fbc7b997945 in JS::Heap<JSObject*>::set(JSObject*) (newPtr=0x0, this=0x254c260) at /usr/include/mozjs-38/js/RootingAPI.h:296
+#2  0x00007fbc7b997945 in JS::Heap<JSObject*>::operator=(JSObject* const&) (p=<optimized out>, this=0x254c260) at /usr/include/mozjs-38/js/RootingAPI.h:266
+#3  0x00007fbc7b997945 in GjsMaybeOwned<JSObject*>::reset() (this=0x254c250) at ./gjs/jsapi-util-root.h:267
+#4  0x00007fbc7b997945 in closure_clear_idle(void*) (data=0x254c220) at gi/closure.cpp:133
+#5  0x00007fbc79abd8c5 in g_main_context_dispatch () at /usr/lib/libglib-2.0.so.0
+#6  0x00007fbc79abdc88 in  () at /usr/lib/libglib-2.0.so.0
+#7  0x00007fbc79abdfa2 in g_main_loop_run () at /usr/lib/libglib-2.0.so.0
+#8  0x00007fbc7b27508c in meta_run () at /usr/lib/libmutter-0.so.0
+#9  0x0000000000401ff7 in main ()
+```
+
+You can then report the bug on the [gnome bugzilla](https://bugzilla.gnome.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=NEEDINFO&list_id=233614&product=gnome-shell&query_format=advanced).
 
 ## Incorrect application defaults
 

@@ -126,7 +126,7 @@ enable_huc=1
 
 ```
 
-HuC is also an binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). As of kernel 4.11, HuC remains unsupported.
+HuC is also an binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). As of kernel 4.12, HuC remains unsupported.
 
 ```
 enable_psr=1 disable_power_well=0 OR enable_psr=2 

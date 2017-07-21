@@ -400,6 +400,18 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 
+*   **darkhttpd** — A small and secure static webserver
+
+	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
+
+*   **yaws** — Web server/framework written in Erlang
+
+	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
+
+*   **shttpd** — Supported fork of the thttpd web server
+
+	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://www.archlinux.org/packages/?name=shttpd)
+
 ### File sharing
 
 #### Download managers
@@ -501,6 +513,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — Desktop client to sync files with Mega file hosting service.
 
 	[https://mega.nz/](https://mega.nz/) || [megasync](https://aur.archlinux.org/packages/megasync/)
+
+*   **Megatools** — Unofficial command line client for Mega file hosting service.
+
+	[https://megatools.megous.com/](https://megatools.megous.com/) || [megatools](https://aur.archlinux.org/packages/megatools/)
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client to keep your files synchronized between your Nextcloud server and your desktop.
 

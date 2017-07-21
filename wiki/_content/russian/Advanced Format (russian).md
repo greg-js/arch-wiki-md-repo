@@ -1,16 +1,17 @@
-The [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format "wikipedia:Advanced Format") is a generic term pertaining to any disk sector format used to store data on magnetic disks in [hard disk drives](https://en.wikipedia.org/wiki/hard_disk_drives "w:hard disk drives") (HDDs) that uses 4 kilobyte sectors instead of the traditional 512 byte sectors. The main idea behind using 4096-byte sectors is to increase the bit density on each track by reducing the number of gaps which hold Sync/DAM and ECC (Error Correction Code) information between data sectors. The old format gave a format efficiency of 88.7%, whereas Advanced Format results in a format efficiency of 97.3%.
+**Состояние перевода:** На этой странице представлен перевод статьи [Advanced Format](/index.php/Advanced_Format "Advanced Format"). Дата последней синхронизации: 3 июня 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Advanced_Format&diff=0&oldid=479186).
+[Расширенный формат](https://en.wikipedia.org/wiki/ru:Advanced_Format "w:ru:Advanced Format") это общий термин, относящийся к любому формату сектора диска, используемому для хранения данных на магнитных дисках на [жестких дисках](https://en.wikipedia.org/wiki/ru%D0%96%D1%91%D1%81%D1%82%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D1%81%D0%BA "w:ruЖёсткий диск"), которые используют 4 килобайтные сектора вместо традиционных 512-байтовых секторов. Основная идея использования 4096-байтовых секторов заключается в увеличении плотности битов на каждой дорожке за счет уменьшения количества пробелов, которые содержат информацию о синхронизации / DAM и ECC (Error Correction Code) между секторами данных. Старый формат дал формат эффективности 88,7%, в то время как расширенный формат приводит к эффективности формата 97,3%.
 
 ## Contents
 
-*   [1 How to determine if HDD employ a 4k sector](#How_to_determine_if_HDD_employ_a_4k_sector)
-*   [2 Aligning Partitions](#Aligning_Partitions)
-    *   [2.1 Check your partitions alignment](#Check_your_partitions_alignment)
-    *   [2.2 GPT (Recommended)](#GPT_.28Recommended.29)
-*   [3 See also](#See_also)
+*   [1 Как определить, использует ли HDD сектор 4k](#.D0.9A.D0.B0.D0.BA_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B8.D1.82.D1.8C.2C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BB.D0.B8_HDD_.D1.81.D0.B5.D0.BA.D1.82.D0.BE.D1.80_4k)
+*   [2 Выравнивание разделов](#.D0.92.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
+    *   [2.1 Проверка выравнивания разделов](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.B2.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
+    *   [2.2 GPT (рекомендуется)](#GPT_.28.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D1.83.D0.B5.D1.82.D1.81.D1.8F.29)
+*   [3 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
-## How to determine if HDD employ a 4k sector
+## Как определить, использует ли HDD сектор 4k
 
-The physical and logical sector size of hard disk /dev/sd*X* can be determined by reading the following sysfs entries:
+Размер физического и логического сектора жесткого диска /dev/sd*X* можно определить, прочитав следующие записи sysfs:
 
 ```
 $ cat /sys/class/block/sd*X*/queue/physical_block_size
@@ -18,30 +19,30 @@ $ cat /sys/class/block/sd*X*/queue/logical_block_size
 
 ```
 
-Tools which will report the physical sector of a drive (provided the drive will report it correctly) includes
+Инструменты, которые будут сообщать о физическом секторе диска (при условии, что диск сообщит об этом правильно) включает
 
-*   smartmontools (since 5.41 ; <tt>smartmontools -a</tt>, in information section)
-*   hdparm (since 9.12 ; <tt>hdparm -I</tt>, in configuration section)
+*   smartmontools (начиная с 5.41 ; <tt>smartmontools -a</tt>, в разделе информации)
+*   hdparm (начиная с 9.12 ; <tt>hdparm -I</tt>, в разделе конфигурации)
 
-Note that both works even for USB-attached discs (if the USB bridge supports SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
+Обратите внимание, что оба они работают даже для USB-подключенных дисков (если USB-мост поддерживает SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
 
-## Aligning Partitions
+## Выравнивание разделов
 
-**Note:** This should no longer require manual intervention. Any tools using recent libblkid versions are capable of handling Advanced Format automatically.
+**Примечание:** Это больше не требует ручного вмешательства. Любые инструменты, использующие последние версии libblkid, могут автоматически обрабатывать расширенный формат.
 
-Versions with this support include:
+Версии с этой поддержкой включают:
 
-*   fdisk, since util-linux >= 2.15\. You should start with ‘-c -u’ to disable DOS compatibility and use sectors instead of cylinders.
-*   parted, since parted >= 2.1.
-*   mdadm, since util-linux >= 2.15
-*   lvm2, since util-linux >= 2.15
-*   mkfs.{ext,xfs,gfs2,ocfs2} all support libblkid directly.
+*   fdisk, с util-linux >= 2.15\. Вы должны запускать с ‘-c -u’ , чтобы отключить совместимость с DOS и использовать сектора вместо цилиндров.
+*   parted, с parted >= 2.1.
+*   mdadm, с util-linux >= 2.15
+*   lvm2, с util-linux >= 2.15
+*   mkfs.{ext,xfs,gfs2,ocfs2} полная поддержка libblkid напрямую.
 
-Refer to [this page](https://www.tolaris.com/2011/07/21/libblkid-or-why-you-dont-need-to-worry-about-4k-disk-format/) for further information.
+Для получения дополнительной информации смотрите [эту страницу](https://www.tolaris.com/2011/07/21/libblkid-or-why-you-dont-need-to-worry-about-4k-disk-format/).
 
-### Check your partitions alignment
+### Проверка выравнивания разделов
 
-**Note:** This only works with [MBR](/index.php/MBR "MBR"), not [GPT](/index.php/GPT "GPT").
+**Примечание:** Это работает только с [MBR](/index.php/MBR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MBR (Русский)"), а не с [GPT](/index.php/GPT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GPT (Русский)").
 
 ```
 # fdisk -lu /dev/sda
@@ -51,14 +52,14 @@ Refer to [this page](https://www.tolaris.com/2011/07/21/libblkid-or-why-you-dont
 
 ```
 
-2048 (default since fdisk 2.17.2) means that your HDD is aligned correctly. Any other value divisible by 8 is good as well.
+2048 (по умолчанию, так как fdisk 2.17.2) означает, что ваш жесткий диск правильно выровнен. Любое другое значение, делящееся на 8, также хорошо.
 
-### GPT (Recommended)
+### GPT (рекомендуется)
 
-When using [GPT](/index.php/GPT "GPT") partition tables, one need only use gdisk to create partitions which are aligned by default. For an example, see [SSD#Detailed Usage Example](/index.php/SSD#Detailed_Usage_Example "SSD").
+При использовании таблиц разделов [GPT](/index.php/GPT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GPT (Русский)") необходимо использовать gdisk для создания разделов, которые по умолчанию выравниваются. Пример смотрите в [SSD#Detailed Usage Example](/index.php/SSD#Detailed_Usage_Example "SSD").
 
-## See also
+## Смотрите также
 
-*   [Western Digital’s Advanced Format: The 4K Sector Transition Begins](http://www.anandtech.com/Show/Index/2888)
-*   [White paper entitled "Advanced Format Technology."](http://www.wdc.com/wdproducts/library/WhitePapers/ENG/2579-771430.pdf)
-*   Failure to align one's HDD results in poor read/write performance. See [this article](http://www.linuxconfig.org/linux-wd-ears-advanced-format) for specific examples.
+*   [Расширенный формат Western Digital: начинается переход на сектора 4K](http://www.anandtech.com/Show/Index/2888)
+*   [Белая книга под названием "Advanced Format Technology."](http://www.wdc.com/wdproducts/library/WhitePapers/ENG/2579-771430.pdf)
+*   Несоблюдение правил обращения с жестким диском приводит к ухудшению производительности чтения/записи. Смотрите [эту статью](http://www.linuxconfig.org/linux-wd-ears-advanced-format) для конкретных примеров.

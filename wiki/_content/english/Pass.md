@@ -72,6 +72,15 @@ $ pass -c archlinux.org/wiki/username
 
 **Note:** Users preferring the classical middle-click/paste can add the following to their respective ~/.shellrc for this behavior: `export PASSWORD_STORE_X_SELECTION=primary`
 
+pass comes with a dmenu wrapper to enable easy searching/copying. To use it, install the optional dependency [dmenu](https://www.archlinux.org/packages/?name=dmenu) and run:
+
+```
+$ passmenu
+
+```
+
+Then selecting an entry will copy its password to the clipboard. See `man dmenu` for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
+
 ## Migrating to pass
 
 There are multiple scripts listed on the [pass-project page](http://www.zx2c4.com/projects/password-store/) to import passwords from other programs

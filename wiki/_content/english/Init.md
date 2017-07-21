@@ -1,4 +1,4 @@
-**Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). [[1]](https://lists.archlinux.org/pipermail/arch-general/2015-July/039460.html) When using a different init system, please mention so in support requests.
+**Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). [[2]](https://lists.archlinux.org/pipermail/arch-general/2015-July/039460.html) When using a different init system, please mention so in support requests.
 
 [Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init") is the first process started during system boot. It is a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.
 
@@ -111,7 +111,7 @@ $ systemctl list-units --state=running "*.service" > daemons.list
 
 ```
 
-then configure the [#Init scripts](#Init_scripts) accordingly. See also [[3]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
+and configure the [#Init scripts](#Init_scripts) accordingly. See also [[3]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
 
 Temporary files (*systemd-tmpfiles*), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
 
@@ -123,14 +123,14 @@ Temporary files (*systemd-tmpfiles*), [kernel modules](/index.php/Kernel_modules
 
 #### Device permissions
 
-Add users to the correct [groups](/index.php/Users_and_groups#Group_list "Users and groups") for device access, and reboot. Current group membership should first be checked with `id *user*`. For example:
+Add users to respective [groups](/index.php/Groups "Groups") for device access and reboot. Current group membership should first be checked with `id *user*`.
 
 ```
 # usermod -a -G video,audio,power,disk,storage,optical,lp,scanner *user*
 
 ```
 
-See [Policykit#Bypass password prompt](/index.php/Policykit#Bypass_password_prompt "Policykit") to create group rules for use with Policykit.
+See also [Users_and_groups#Pre-systemd_groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups"). To create group rules for use with [Polkit](/index.php/Polkit "Polkit"), see [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
 
 #### Rootless X (1.16)
 

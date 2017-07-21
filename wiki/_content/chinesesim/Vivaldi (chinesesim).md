@@ -13,7 +13,7 @@
 
 ## 安装
 
-可以从 AUR 安装 Vivaldi 的正式版（[vivaldi](https://aur.archlinux.org/packages/vivaldi/)）或快照版（[vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/)）。 或者也可以添加 [Unofficial user repositories#herecura herecura 的非官方源]，安装预构建的包。
+可以从 AUR 安装 Vivaldi 的正式版（[vivaldi](https://aur.archlinux.org/packages/vivaldi/)）或快照版（[vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/)）。 或者也可以添加 [Unofficial user repositories#herecura|herecura 的非官方源]，安装预构建的包。
 
 ## 扩展程序
 

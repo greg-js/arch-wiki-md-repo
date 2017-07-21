@@ -6,6 +6,7 @@ A VPN based on OpenVPN and operated by activists and hacktivists in defence of n
     *   [1.1 Using the all in one config file](#Using_the_all_in_one_config_file)
     *   [1.2 Using seperate keys and certs](#Using_seperate_keys_and_certs)
         *   [1.2.1 Sample configuration](#Sample_configuration)
+*   [2 ipv6 leak](#ipv6_leak)
 
 ## Configuring OpenVPN to connect as a client to an AirVPN server
 
@@ -108,3 +109,10 @@ comp-lzo
 verb 3
 
 ```
+
+## ipv6 leak
+
+AirVPN does not yet support ipv6, so you may be inadvertently leaking your IP when connecting over ipv6, even if you have successfully established a connection to AirVPN otherwise. Two ways of working around it are:
+
+*   Disable the ipv6 stack altogether, see [Disable ipv6](/index.php/Disable_ipv6 "Disable ipv6")
+*   Use Eddie ([airvpn-bin](https://aur.archlinux.org/packages/airvpn-bin/)) and activate the network lock mode

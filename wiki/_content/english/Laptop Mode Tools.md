@@ -71,7 +71,7 @@ With the `CONTROL_MOUNT_OPTIONS` variable (default on), laptop-mode-tools automa
 
 #### Solid state drives
 
-From the [official, upstream FAQ](http://samwel.tk/laptop_mode/faq):
+From the [official, upstream FAQ](https://github.com/rickysarraf/laptop-mode-tools/wiki/FAQ#i-have-a-solid-state-disk-ssd-in-my-machine-should-i-enable-any-of-the-disk-related-parts-of-laptop-mode-tools-or-are-they-irrelevant):
 
 **Question:** I have a solid-state disk (SSD) in my machine. Should I enable any of the disk-related parts of laptop-mode-tools, or are they irrelevant?
 

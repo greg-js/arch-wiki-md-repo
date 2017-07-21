@@ -8,6 +8,7 @@ If you already have a Diablo II installation (for example, installed under Windo
 *   [2 Playing](#Playing)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Error "ACCESS_VIOLATION" on start](#Error_.22ACCESS_VIOLATION.22_on_start)
+    *   [3.2 Sound option is greyed out](#Sound_option_is_greyed_out)
 
 ## Installing
 
@@ -38,3 +39,7 @@ $ wine ~/.wine/drive_c/Program\ Files/Diablo\ II/Game.exe
 ### Error "ACCESS_VIOLATION" on start
 
 Try setting `dsoundhw=Emulation`. This can be done by starting winetricks *Select the default wineprefix* and then choose *Change settings* and check the box in front of *dsoundhw=Emulation*. Another thing to try is to add `-w` at the end of the command line. It will launch the game in windowed mode but it should work where fullscreen does not.
+
+### Sound option is greyed out
+
+Fix with: `pacman -S mpg123 lib32-mpg123`

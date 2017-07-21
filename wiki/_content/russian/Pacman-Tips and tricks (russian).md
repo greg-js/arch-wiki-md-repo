@@ -25,7 +25,7 @@
     *   [3.2 Собственный локальный репозиторий](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9)
     *   [3.3 Общий кэш pacman](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BA.D1.8D.D1.88_pacman)
         *   [3.3.1 Только для чтения](#.D0.A2.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_.D1.87.D1.82.D0.B5.D0.BD.D0.B8.D1.8F)
-        *   [3.3.2 Read-write cache](#Read-write_cache)
+        *   [3.3.2 Чтение-запись](#.D0.A7.D1.82.D0.B5.D0.BD.D0.B8.D0.B5-.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8C)
         *   [3.3.3 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
         *   [3.3.4 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
         *   [3.3.5 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
@@ -384,17 +384,19 @@ $ repo-add /путь/до/repo.db.tar.gz /путь/до/имя_пакета-1.0-
 
 Если вы ищете быстрое решение, то можете просто запустить сервер, который смогут использовать другие компьютеры, как первое зеркало: `darkhttpd /var/cache/pacman/pkg`. Просто добавьте этот сервер в верхней части списка зеркал. Помните, что вы можете получить много ошибок 404 из-за отсутствия кэша, но pacman попробует следующие (настоящие) зеркала, когда это случится.
 
-#### Read-write cache
+#### Чтение-запись
 
-**Совет:** See [pacserve](/index.php/Pacserve "Pacserve") for an alternative (and probably simpler) solution than what follows.
+**Совет:** Смотрите [pacserve](/index.php/Pacserve "Pacserve") для альтернативного (и, возможно, более простого) решения.
 
-In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use shfs or sshfs to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
+Чтобы обмениваться пакетами между несколькими компьютерами, просто расшарьте `/var/cache/pacman/`, используя любой протокол монтирования на основе сети. Этот раздел показывает, как использовать shfs или sshfs, чтобы передавать кэш пакетов плюс связанные библиотеки-директории между несколькими компьютерами в локальной сети. Имейте в виду, что общий сетевой кэш может быть медленным в зависимости от выбранной файловой системы.
 
-First, install any network-supporting filesystem; for example [sshfs](/index.php/Sshfs "Sshfs"), [shfs](/index.php/Shfs "Shfs"), ftpfs, [smbfs](/index.php/Smbfs "Smbfs") or [nfs](/index.php/Nfs "Nfs").
+Сначала установите любую сетевую файловую систему, например [sshfs](/index.php/Sshfs "Sshfs"), [shfs](/index.php/Shfs "Shfs"), ftpfs, [smbfs](/index.php/Smbfs "Smbfs") или [nfs](/index.php/Nfs "Nfs").
 
-**Совет:** To use sshfs or shfs, consider reading [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+**Совет:** Чтобы использовать sshfs или shfs, вам, возможно, стоит прочитать [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
 
-Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
+Затем, чтобы поделиться текущими пакетами, примонтируйте `/var/cache/pacman/pkg` с сервера в `/var/cache/pacman/pkg` на каждой компьютере клиента.
+
+**Примечание:** Не делайте `/var/cache/pacman/pkg` или любого из его родителей (например, `/var`) символической ссылкой. Pacman ожидает, что это будут директории. Когда pacman переустановит или обновит себя, он удалит символические ссылки и создаст вместо них пустые директории. Однако во время операции pacman опирается на некоторые файлы, расположенные там, что нарушает процесс обновления. Подробнее: [FS#50298](https://bugs.archlinux.org/task/50298).
 
 #### Dynamic reverse proxy cache using nginx
 

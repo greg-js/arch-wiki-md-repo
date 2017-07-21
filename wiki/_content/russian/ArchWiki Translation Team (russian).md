@@ -156,6 +156,7 @@
 **Важно:** Пожалуйста, не просите помощи с переводом, если вы собираетесь самостоятельно его завершить. У других участников ArchWiki всегда есть то, чем необходимо заняться
 
 | Страница | Локализованный заголовок | Сопроводитель | Заметки |
+| [Archiso (Русский)](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Aria2 (Русский)](/index.php/Aria2_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Aria2 (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [awesome (Русский)](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Autostarting (Русский)](/index.php/Autostarting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Autostarting (Русский)") | [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
@@ -187,6 +188,7 @@
 | [OpenRC (Русский)](/index.php/OpenRC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "OpenRC (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Powerpill (Русский)](/index.php/Powerpill_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Powerpill (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Python (Русский)](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") | Не требуется | [Kycok](/index.php/User:Kycok "User:Kycok") | - |
+| [Remastering the Install ISO (Русский)](/index.php/Remastering_the_Install_ISO_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Remastering the Install ISO (Русский)") | [Ремастеринг установочного ISO-образа](/index.php/%D0%A0%D0%B5%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B3_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_ISO-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B0 "Ремастеринг установочного ISO-образа") | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Rxvt-unicode (Русский)](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Rxvt-unicode/Tips and tricks (Русский)](/index.php/Rxvt-unicode/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode/Tips and tricks (Русский)") | [Rxvt-unicode/Советы и приёмы](/index.php/Rxvt-unicode/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Rxvt-unicode/Советы и приёмы") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [SpaceFM (Русский)](/index.php/SpaceFM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SpaceFM (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
@@ -194,6 +196,7 @@
 | [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [systemd/Timers (Русский)](/index.php/Systemd/Timers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Timers (Русский)") | [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Udisks (Русский)](/index.php/Udisks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udisks (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [Unity3D (Русский)](/index.php/Unity3D_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unity3D (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Xcompmgr (Русский)](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |

@@ -202,7 +202,7 @@ While the libinput driver already contains logic to process advanced multitouch 
 
 #### libinput-gestures
 
-For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The program reads libinput gestures (through `libinput-debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
+For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The program reads libinput gestures (through `libinput debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
 
 To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package. You can use the default system-wide configured swipe and pinch gestures or define your own in a personal configuration file, see the [README](https://github.com/bulletmark/libinput-gestures/blob/master/README.md) for details.
 
@@ -212,7 +212,7 @@ For deeper integration with GNOME, there is [GnomeExtendedGestures](https://gith
 
 ## Troubleshooting
 
-First, see whether the packaged *libinput-debug-events* tool can support you in debugging the problem. Executing `libinput-debug-events --help` shows options it covers.
+First, see whether executing `libinput debug-events` can support you in debugging the problem, see [libinput-debug-events(1)](https://www.mankier.com/1/libinput-debug-events) for options.
 
 Some inputs require kernel support. The tool *evemu-describe* from the [evemu](https://www.archlinux.org/packages/?name=evemu) package can be used to check:
 

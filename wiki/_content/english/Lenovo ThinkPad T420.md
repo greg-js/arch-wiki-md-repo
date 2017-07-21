@@ -40,7 +40,7 @@ All hardware works out of the box except the following:
 
 Fingerprint reader works great with fprint and PAM (installation of fingerprint-gui recommended).
 
-See [Fprint#Setup fingerprint-gui](/index.php/Fprint#Setup_fingerprint-gui "Fprint") for more information.
+See [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui") for more information.
 
 ### Some Media keys
 

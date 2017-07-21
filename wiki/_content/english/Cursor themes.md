@@ -75,15 +75,17 @@ There are various ways to set the cursor theme.
 
 This method applies to both [X11](/index.php/X11 "X11") and [Wayland](/index.php/Wayland "Wayland") cursor themes.
 
-Edit `/usr/share/icons/default/index.theme` with root privilege.
+If you are not using [LXAppearance](https://wiki.archlinux.org/index.php/Cursor_themes#LXAppearance), edit `~/.icons/default/index.theme`.
 
 Define the theme directory name:
 
- `/usr/share/icons/default/index.theme` 
+ `~/.icons/default/index.theme` 
 ```
 [icon theme] 
 Inherits=*theme-name*
 ```
+
+If you are using LXAppearance, just launch it and select your desired cursor theme and apply.
 
 Then edit `~/.config/gtk-3.0/settings.ini`.
 

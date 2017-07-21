@@ -1,6 +1,6 @@
-Most programs require libraries to function. Libraries can be integrated into a program once, by a linker, when it is compiled (static linking) or they can be integrated when the program is run by a loader, (dynamic linking). Dynamic linking has advantages in code size and management, but every time a program is run, the loader needs to find the relevant libraries. Because the libraries can move around in memory, this causes a performance penalty, and the more libraries that need to be resolved, the greater the penalty. Prelink reduces this penalty by using the system's dynamic linker to reversibly perform this linking in advance ("prelinking" the executable file) by relocating. Afterward, the program only needs to spend time finding the relevant libraries on being run if, for some reason (perhaps an upgrade), the libraries have changed since being prelinked.
+**Warning:** Using prelink may corrupt system libraries, resulting in an unbootable system: [FS#54820](https://bugs.archlinux.org/task/54820). Performance benefits are neglible. [[1]](https://pagure.io/fesco/issue/1183) [[2]](http://lwn.net/Articles/341244/)
 
-**Warning:** There are some arguments against using Prelink presented in [Fedora bug #1183](https://fedorahosted.org/fesco/ticket/1183). As summed up in the linked [LWN article](http://lwn.net/Articles/341244/): "overall, pre-linking is a bit of a hack, and it is far from clear that its benefits are substantial enough to overcome that".
+Most programs require libraries to function. Libraries can be integrated into a program once, by a linker, when it is compiled (static linking) or they can be integrated when the program is run by a loader, (dynamic linking). Dynamic linking has advantages in code size and management, but every time a program is run, the loader needs to find the relevant libraries. Because the libraries can move around in memory, this causes a performance penalty, and the more libraries that need to be resolved, the greater the penalty. [Prelink](https://en.wikipedia.org/wiki/Prelink "w:Prelink") reduces this penalty by using the system's dynamic linker to reversibly perform this linking in advance ("prelinking" the executable file) by relocating. Afterward, the program only needs to spend time finding the relevant libraries on being run if, for some reason (perhaps an upgrade), the libraries have changed since being prelinked.
 
 ## Contents
 
@@ -16,7 +16,7 @@ Most programs require libraries to function. Libraries can be integrated into a 
 
 ## Installing
 
-Install the [prelink](https://aur.archlinux.org/packages/prelink/) package.
+[Install](/index.php/Install "Install") the [prelink](https://aur.archlinux.org/packages/prelink/) package.
 
 ## Configuration
 
@@ -28,7 +28,7 @@ All settings are in `/etc/prelink.conf`.
 
 ### Prelinking
 
-The following command prelinks all the binaries in the directories given by /etc/prelink.conf:
+The following command prelinks all the binaries in the directories given by `/etc/prelink.conf`:
 
 ```
 # prelink -amR
@@ -87,29 +87,42 @@ Remove prelinking from all binaries:
 
 ## Daily cron job
 
-This is recommended (and included in other distros packages) as it has to be done in order to get speed benefits from updates. Save as `/etc/cron.daily/prelink`
+This is recommended (and included in other distros packages) as it has to be done in order to get speed benefits from updates.
 
  `/etc/cron.daily/prelink` 
 ```
-#!/bin/bash
-[[ -x /usr/bin/prelink ]] && /usr/bin/prelink -amR &>/dev/null
+#!/bin/sh
+if [ -x /usr/bin/prelink ]; then
+  /usr/bin/prelink -amR >/dev/null 2>&1
+fi
+
 ```
 
 and give it the necessary ownership and permissions:
 
-`# chmod 755 /etc/cron.daily/prelink`
+```
+# chmod 755 /etc/cron.daily/prelink
 
-Alternatively, there's a [prelink-systemd](https://aur.archlinux.org/packages/prelink-systemd/) package in the AUR that installs a daily systemd timer unit with the same effect as the above cron script.
+```
+
+Alternatively, install the [prelink-systemd](https://aur.archlinux.org/packages/prelink-systemd/) package for a daily [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") with the same effect as the above cron script.
 
 ## KDE
 
 KDE knows about prelinking and it will start faster if you tell it you have it. It is best to stick this in where all the users can use it.
 
- `/etc/profile.d/kde-is-prelinked.sh`  `export KDE_IS_PRELINKED=1` 
+ `/etc/profile.d/kde-is-prelinked.sh` 
+```
+export KDE_IS_PRELINKED=1
+
+```
 
 and give it the necessary ownership and permissions:
 
-`# chmod 755 /etc/profile.d/kde-is-prelinked.sh`
+```
+# chmod 755 /etc/profile.d/kde-is-prelinked.sh
+
+```
 
 ## See also
 

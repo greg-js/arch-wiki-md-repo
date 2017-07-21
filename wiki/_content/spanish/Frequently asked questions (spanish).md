@@ -80,7 +80,7 @@ Véase también [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch t
 
 ### ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo?
 
-Arch no está diseñado para un tipo de uso particular. Más bien, está diseñado para un tipo particular de *usuario*. Arch está dirigido a usuarios competentes que disfrutan de su naturaleza do-it-yourself, y que además la aprovechan para moldear el sistema para satisfacer sus peculiares necesidades. Por lo tanto, moldeado según los propósitos del usuario, Arch se puede utilizar para virtualmente cualquier propósito. Muchos utilizan Arch tanto en los equipos de sobremesa como en estaciones de trabajo. Y por supuesto, archlinux.org se ejecuta en Arch.
+Arch no está diseñado para un tipo de uso particular. Más bien, está diseñado para un tipo particular de *usuario*. Arch está dirigido a usuarios competentes que disfrutan de su naturaleza do-it-yourself, y que además la aprovechan para moldear el sistema y satisfacer sus necesidades. Por lo tanto, moldeado según los propósitos del usuario, Arch se puede utilizar prácticamente para cualquier propósito. Muchos utilizan Arch tanto en equipos de sobremesa como en estaciones de trabajo. Y por supuesto, archlinux.org se ejecuta en Arch.
 
 ### A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la *«funcionalidad X»*
 
@@ -92,7 +92,7 @@ Los lanzamientos de Arch Linux son simplemente un entorno live para la instalaci
 
 ### ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?
 
-Es *el usuario*, en última instancia, el responsable de la estabilidad de su propio sistema rolling release. El usuario decide el momento de actualizar, e integra los cambios necesarios cuando se requiere. Si el usuario accede a la comunidad en busca de ayuda, a menudo se le presta de manera oportuna. La diferencia entre Arch y otras distribuciones, a este respecto, es que Arch es verdaderamente una distribución «do-it-yourself» ; las denuncias de ruptura son equivocadas e improductivas, cuando se debe a los cambios en las aplicaciones por los desarrolladores de las mismas, los cuales no son responsabilidad de los desarrolladores de Arch.
+Es *el usuario*, en última instancia, el responsable de la estabilidad de su propio sistema rolling release. El usuario decide el momento de actualizar, e integra los cambios necesarios cuando se requiere. Si el usuario accede a la comunidad en busca de ayuda, a menudo se le presta de manera oportuna. La diferencia entre Arch y otras distribuciones es que Arch es verdaderamente una distribución «do-it-yourself» ; las denuncias de ruptura son equivocadas e improductivas, cuando se debe a los cambios hechos a las aplicaciones por los desarrolladores de las mismas, sin ser responsabilidad del equipo que desarrolla Arch.
 
 Vea el artículo [System maintenance](/index.php/System_maintenance "System maintenance") para obtener consejos sobre cómo hacer que un sistema Arch Linux sea lo más estable posible.
 

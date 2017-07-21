@@ -239,7 +239,7 @@ For [Wireless configuration](/index.php/Wireless_configuration "Wireless configu
 
 Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [linux](https://www.archlinux.org/packages/?name=linux) package with *pacstrap*.
 
-For special configurations, modify the mkinitcpio.conf(5) file and recreate the initramfs image:
+For special configurations, modify the [mkinitcpio.conf(5)](https://git.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.conf.5.txt) file and recreate the initramfs image:
 
 ```
 # mkinitcpio -p linux

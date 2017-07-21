@@ -483,29 +483,11 @@ Then retry:
 
 ```
 
-2\. If it is down:
-
-```
-dhcpcd[261]: wlan0: ipv4_sendrawpacket: Network is down
-
-```
-
-One way to solve this is to use a different DHCP client, for example [dhclient](https://www.archlinux.org/packages/?name=dhclient). After installing the package configure *netctl* to use it:
+2\. If the error continues, try again after adding the `ForceConnect` option:
 
  `/etc/netctl/wlan0-ssid` 
 ```
 ...
-DHCPClient='dhclient'
-
-```
-
-Adding the `ForceConnect` option may also be helpful:
-
- `/etc/netctl/wlan0-ssid` 
-```
-
-...
-
 ForceConnect=yes
 
 ```
