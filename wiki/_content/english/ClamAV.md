@@ -127,7 +127,12 @@ Enable and start the service.
 
 ## OnAccessScan
 
-On-access scanning require the kernel to be compiled with *fanotify* (kernel >= 3.8).
+On-access scanning require the kernel to be compiled with *fanotify* (kernel >= 3.8). Check if *fanotify* has been enabled before enabling on-access scanning.
+
+```
+$ cat /proc/config.gz | gunzip | grep FANOTIFY=y
+
+```
 
 On-access scanning will scan the file while reading, writing or executing it.
 

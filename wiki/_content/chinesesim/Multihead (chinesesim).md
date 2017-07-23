@@ -1,34 +1,34 @@
-**翻译状态：** 本文是英文页面 [Multihead](/index.php/Multihead "Multihead") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-18，点击[这里](https://wiki.archlinux.org/index.php?title=Multihead&diff=0&oldid=482215)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Multihead](/index.php/Multihead "Multihead") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-22，点击[这里](https://wiki.archlinux.org/index.php?title=Multihead&diff=0&oldid=482215)可以查看翻译后英文页面的改动。
 
-**Multi-head**, **multi-screen**, **multi-display** or **multi-monitor** represent a setup when multiple display devices are attached to a computer. This article provides general description of multiple multi-head setup methods, and provides some examples of configuration.
+**多头（Multi-head）**、**多屏（multi-screen）**、**多显（multi-display）**或**多监视器（multi-monitor）**是指同一台计算机上连接了多个显示设备的配置场景。本文提供多种多头的配置方式，并给出若干设置实例。
 
-**Note:** The terms used in this article are very specific to avoid confusion:
+**注意:** 为避免混淆，下列名词在本文中有各自专属的含义：
 
-*   **Monitor** refers to a physical display device, such as an LCD panel.
-*   **Screen** refers to an X-Window screen (that is: a **monitor** attached to a **display**).
-*   **Display** refers to a collection of **screens** that are in use at the same time showing parts of a single desktop (you can drag windows among all **screens** in a single **display**).
+*   **监视器（Monitor）**专指某个物理显示设备，如液晶平板显示器。
+*   **屏幕（Screen）**专指一个 X-窗口屏幕（既是说：一个**监视器（monitor）**连接到一个**显示区（display）（原文如此，疑应为 Screen）**）。
+*   **显示区（Display）**专指一组 **屏幕（screens）**，它们各自同时展示同一个桌面的某一部分（可以在同一个**显示区（display）**的所有**屏幕（screens）**之间拖动窗口）。
 
 ## Contents
 
-*   [1 Historical background](#Historical_background)
-*   [2 Separate screens](#Separate_screens)
-*   [3 TwinView](#TwinView)
+*   [1 历史背景](#.E5.8E.86.E5.8F.B2.E8.83.8C.E6.99.AF)
+*   [2 独立的屏幕](#.E7.8B.AC.E7.AB.8B.E7.9A.84.E5.B1.8F.E5.B9.95)
+*   [3 双显（TwinView）](#.E5.8F.8C.E6.98.BE.EF.BC.88TwinView.EF.BC.89)
 *   [4 RandR](#RandR)
-    *   [4.1 Configuration using xrandr](#Configuration_using_xrandr)
-        *   [4.1.1 VGA1 left of HDMI1 at their preferred resolutions](#VGA1_left_of_HDMI1_at_their_preferred_resolutions)
+    *   [4.1 用 xrandr 设置](#.E7.94.A8_xrandr_.E8.AE.BE.E7.BD.AE)
+        *   [4.1.1 HDMI1 设定于最佳分辨率且 VGA1 位于它左面](#HDMI1_.E8.AE.BE.E5.AE.9A.E4.BA.8E.E6.9C.80.E4.BD.B3.E5.88.86.E8.BE.A8.E7.8E.87.E4.B8.94_VGA1_.E4.BD.8D.E4.BA.8E.E5.AE.83.E5.B7.A6.E9.9D.A2)
         *   [4.1.2 VGA1 right of HDMI1 at fixed resolutions](#VGA1_right_of_HDMI1_at_fixed_resolutions)
     *   [4.2 Configuration using xorg.conf](#Configuration_using_xorg.conf)
         *   [4.2.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
         *   [4.2.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
         *   [4.2.3 Example: dualhead configuration using absolute coordinates](#Example:_dualhead_configuration_using_absolute_coordinates)
 *   [5 Xinerama](#Xinerama)
-*   [6 Application support](#Application_support)
-    *   [6.1 Window managers](#Window_managers)
-    *   [6.2 Display managers](#Display_managers)
-    *   [6.3 Full screen games](#Full_screen_games)
+*   [6 应用程序支持](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.94.AF.E6.8C.81)
+    *   [6.1 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [6.2 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [6.3 全屏幕游戏](#.E5.85.A8.E5.B1.8F.E5.B9.95.E6.B8.B8.E6.88.8F)
 *   [7 See also](#See_also)
 
-## Historical background
+## 历史背景
 
 X Window System is the underlying graphical interface of most if not all Unix/Linux computers providing a GUI. It was developed in 1984 at MIT. After about 35 years of development, tweaking and adding of new features and ideas, it is generally acknowledged to be a bit of a beast. It should be remembered that the common configuration at time of development was a single running X providing individual views to Xterminals in a [time-sharing](https://en.wikipedia.org/wiki/Time-sharing "wikipedia:Time-sharing") system. Nowadays the standard is X providing a single screen on a desktop or laptop.
 
@@ -36,7 +36,7 @@ X Window System is the underlying graphical interface of most if not all Unix/Li
 
 All of this means that there are many ways of achieving the same thing and many slightly different things that can meet the same purpose. In modern X versions sometimes you can get away with limited or no configuration. In the last few years the boast is that X is self configuring. Certainly the best practice rule of thumb is less configuration is better - that is *only configure what is wrong*.
 
-## Separate screens
+## 独立的屏幕
 
 This is the original way of configuring multiple monitors with X, and it has been around for decades. Each physical monitor is assigned as an X screen, and while you can move the mouse between them, they are more or less independent.
 
@@ -54,7 +54,7 @@ Alternatively if you have a terminal on each screen launching programs will inhe
 
 Working this way does have certain advantages, such as windows popping up on one screen won't steal the focus away from you if you are working on another screen - each screen is quite independent.
 
-## TwinView
+## 双显（TwinView）
 
 TwinView is nVidia's extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However if you only have two monitors and they are both connected to the same nVidia card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
 
@@ -72,13 +72,13 @@ RandR can be configured for the current session via the [xrandr](/index.php/Xran
 
 **Note:** There are multiple ways to configure the same thing, you might have to experiment a little before you find the best configuration.
 
-### Configuration using xrandr
+### 用 xrandr 设置
 
-**Note:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
+**注意:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
 
 You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See `man xrandr` for details. Some frequently used settings are described below.
 
-#### VGA1 left of HDMI1 at their preferred resolutions
+#### HDMI1 设定于最佳分辨率且 VGA1 位于它左面
 
 ```
 $ xrandr --output VGA1 --auto --output HDMI1 --auto --right-of VGA1
@@ -338,14 +338,14 @@ EndSection
 
 ```
 
-## Application support
+## 应用程序支持
 
 This section lists tips for individual applications.
 
 *   mplayer: use `-xineramascreen 1` to make the video play on screen #1 (the second screen.) Add `xineramascreen=1` to `~/.mplayer/config` to make it permanent.
 *   Xonotic: if you are playing across multiple screens and you are unable to turn left/right properly, set `vid_stick_mouse` to 1 in `~/.xonotic/data/config.cfg`
 
-### Window managers
+### 窗口管理器
 
 This section lists window managers and how they cope with multiple monitors.
 
@@ -358,14 +358,14 @@ This section lists window managers and how they cope with multiple monitors.
 *   [Spectrwm](/index.php/Spectrwm "Spectrwm") - Works (screens are different workspaces, both accessible and switching is possible by both keyboard and mouse) - as of March 2015
 *   [Xmonad](/index.php/Xmonad "Xmonad") - Works (screens are different workspaces, both accessible and switching is possible by both keyboard and mouse) - as of April 2014
 
-### Display managers
+### 显示管理器
 
 *   [GDM](/index.php/GDM "GDM"): gdm is not configured by gnome display settings, resulting in the login screen not being displayed on the primary monitor. A workaround is explained [here](https://bbs.archlinux.org/viewtopic.php?pid=1262282#p1262282). It just consists in copying the user monitor configuration file to gdm's.
 *   [KDM](/index.php/KDM "KDM"): works
 
 Users may prefer to use `startx` and `~/.xinitrc` instead of a display manager due to the lack of working support with multiple displays.
 
-### Full screen games
+### 全屏幕游戏
 
 Many games require their window to appear at (0,0) when running in full-screen. If the screen you have at (0,0) - the left-most one - is not one you wish to game on, it is almost impossible to move a full-screen game onto a different screen.
 
@@ -385,7 +385,7 @@ EndSection
 
 ```
 
-**Tip:** While it's easiest to just reuse the existing screen definitions, you can of course define new ones if you wish to have a different set of screen resolutions available.
+**提示：** While it's easiest to just reuse the existing screen definitions, you can of course define new ones if you wish to have a different set of screen resolutions available.
 
 To use this new layout, launch the game via the `startx` script:
 

@@ -72,7 +72,7 @@ Until this patch is upstream, you need to manually patch the kernel or work arou
 There are two options for displays:
 
 *   14" FHD IPS (1920 x 1080): Works
-*   14" WQHD (2560 x 1440): ??
+*   14" WQHD (2560 x 1440): Works
 
 ### TrackPoint Scrolling
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [SysVinit/runlevels](/index.php?title=SysVinit/runlevels&redirect=no "SysVinit/runlevels")
+*   [Init/SysVinit](/index.php?title=Init/SysVinit&action=edit&redlink=1 "Init/SysVinit (page does not exist)")

@@ -131,9 +131,9 @@ If the above didn't work. One can start the container and use these commands ins
 
 ### Creating Private Users (Unprivileged Containers)
 
-Systemd-nspawn supports unprivileged containers, though the containers need to be booted as root. The easiest way to do this is let systemd-nspawn decide everything.
+systemd-nspawn supports unprivileged containers, though the containers need to be booted as root. The easiest way to do this is let systemd-nspawn decide everything.
 
-Archlinux has turned off user namespaces for security reasons, hence to get this feature [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) is needed.
+Arch Linux has turned off user namespaces for security reasons, hence to get this feature [linux-userns](https://aur.archlinux.org/packages/linux-userns/) or [linux-lts-userns](https://aur.archlinux.org/packages/linux-lts-userns/) is needed.
 
 ```
 # systemd-nspawn -UD myContainer

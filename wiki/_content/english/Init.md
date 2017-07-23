@@ -54,7 +54,7 @@ These components combine to the init *system*. Some inits include the service ma
 
 	[https://bitbucket.org/TZ86/initscripts-fork/overview](https://bitbucket.org/TZ86/initscripts-fork/overview) || [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)
 
-*   **[minirc](/index.php/Minirc "Minirc")** — Minimal init script designed for BusyBox.
+*   **minirc** — Minimal init script designed for BusyBox.
 
 	[https://github.com/hut/minirc/](https://github.com/hut/minirc/) || [minirc-git](https://aur.archlinux.org/packages/minirc-git/)
 

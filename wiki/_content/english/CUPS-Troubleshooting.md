@@ -128,7 +128,7 @@ And restart CUPS (as pointed out in gutenprint's post-install message)
 
 ### Printers are not present in the print dialog for GTK3 applications
 
-A recent upgrade of GTK3 (3.22) requires the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package for printers to be listed in GTK3 print dialogs. This stops printing from applications like [gedit](/index.php/Gedit "Gedit") and [Firefox](/index.php/Firefox "Firefox"), but printers still appear in the CUPS web interface and lpstat, and you can print from the command line and GTK2 applications like GIMP.
+A recent upgrade of GTK3 (3.22) requires the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package for printers to be listed in GTK3 print dialogs. This stops printing from applications like [gedit](/index.php/Gedit "Gedit"), [Chromium](/index.php/Chromium "Chromium"), and [Firefox](/index.php/Firefox "Firefox"), but printers still appear in the CUPS web interface and lpstat, and you can print from the command line and GTK2 applications like GIMP.
 
 ## Networking issues
 

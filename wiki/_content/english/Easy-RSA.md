@@ -28,7 +28,8 @@ One can think of the key-based authentication in terms similar to that of how [S
 *   [5 Revoking certificates and alerting the OpenVPN server](#Revoking_certificates_and_alerting_the_OpenVPN_server)
     *   [5.1 Revoke a certificate](#Revoke_a_certificate)
     *   [5.2 Alert the OpenVPN server](#Alert_the_OpenVPN_server)
-*   [6 See also](#See_also)
+*   [6 Abbreviated example specifically for containerized Openvpn](#Abbreviated_example_specifically_for_containerized_Openvpn)
+*   [7 See also](#See_also)
 
 ## Certificate Authority (CA)
 
@@ -271,6 +272,55 @@ crl-verify /etc/openvpn/server/crl.pem
 .
 
 ```
+
+## Abbreviated example specifically for containerized Openvpn
+
+This section is specifically for users wanting to run Openvpn in a [LXC](/index.php/LXC "LXC") (Linux container). The code below can be easily pasted into a root shell (the standard hash has been omitted to allow for easy copy/paste operations. It is recommended to have two different shell windows open, one for the host and one for the container.
+
+**Note:**
+
+*   It is assumed that the CA machine is the host and the server machine is the container.
+*   Both the host and contain need to have both [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) installed.
+*   The container needs to be running.
+*   Define the name of the container in the CONTAINERNAME variable below.
+
+On the host:
+
+```
+CONTAINERNAME=foo
+/etc/easy-rsa
+easyrsa init-pki && easyrsa build-ca
+cp /etc/easy-rsa/pki/ca.crt /var/lib/lxc/$CONTAINERNAME/rootfs/etc/openvpn/server/
+
+```
+
+**Note:** One may substitute other names in the 2nd line of this code (the for loop). At a minimum, one needs to generate a key for the server and for at least 1 client. The generic words "server" and "client" as shown but in reality these can by any words such as the hostname of the container or the name of the intended user. As well, one can add additional words to the for loop if more than 2 keys are needed. If that is the case, just be sure to add corresponding lines to the subsequent steps for each of them.
+
+In the container:
+
+```
+cd /etc/easy-rsa && easyrsa init-pki
+for i in server client; do easyrsa gen-req $i nopass; done
+cp /etc/easy-rsa/pki/private/server.key /etc/openvpn/server/
+openssl dhparam -out /etc/openvpn/server/dh.pem 2048
+openvpn --genkey --secret /etc/openvpn/server/ta.key
+
+```
+
+Back on the host:
+
+```
+easyrsa import-req /var/lib/lxc/$CONTAINERNAME/rootfs/etc/easy-rsa/pki/reqs/junk.req junk
+easyrsa import-req /var/lib/lxc/$CONTAINERNAME/rootfs/etc/easy-rsa/pki/reqs/client.req client
+easyrsa sign-req client client
+easyrsa sign-req server server
+mkdir /var/lib/lxc/$CONTAINERNAME/rootfs/etc/easy-rsa/pki/issued/
+mkdir /var/lib/lxc/$CONTAINERNAME/rootfs/etc/easy-rsa/pki/signed/
+cp /etc/easy-rsa/pki/issued/*.crt /var/lib/lxc/$CONTAINERNAME/rootfs/etc/easy-rsa/pki/issued/
+
+```
+
+That will provide the needed files to make an OpenVPN compatible tunnel profile for the client, and the needed server key files for the server. To generate a client profile, refer to [OpenVPN#ovpngen](/index.php/OpenVPN#ovpngen "OpenVPN").
 
 ## See also
 

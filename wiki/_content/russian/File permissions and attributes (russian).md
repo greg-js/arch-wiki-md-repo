@@ -1,8 +1,8 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Дата последней синхронизации: 16 марта 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=471033).
 
-[File systems](/index.php/File_systems "File systems") use [permissions](https://en.wikipedia.org/wiki/File_system_permissions "w:File system permissions") and [attributes](https://en.wikipedia.org/wiki/File_attribute "w:File attribute") to regulate the level of interaction that system processes can have with files and directories.
+[Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы") use [права доступа](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%B0%D0%B2%D0%B0_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0 "w:ru:Права доступа") and [атрибуты](https://en.wikipedia.org/wiki/ru:%D0%90%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0 "w:ru:Атрибут файла") to regulate the level of interaction that system processes can have with files and directories.
 
-**Warning:** When used for security purposes, permissions and attributes only defend against attacks launched from the booted system. To protect the stored data from attackers with physical access to the machine, one must also implement [disk encryption](/index.php/Disk_encryption "Disk encryption").
+**Важно:** When used for security purposes, permissions and attributes only defend against attacks launched from the booted system. To protect the stored data from attackers with physical access to the machine, one must also implement [disk encryption](/index.php/Disk_encryption "Disk encryption").
 
 ## Contents
 

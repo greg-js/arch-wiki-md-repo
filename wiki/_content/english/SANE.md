@@ -128,6 +128,8 @@ If you use [iptables](/index.php/Iptables "Iptables"), [insert](/index.php/Kerne
 
 Now [start/enable](/index.php/Start/enable "Start/enable") `saned.socket`. Your scanner is now available over the network. For more information, see [saned(8)](http://www.sane-project.org/man/saned.8.html).
 
+**Note:** saned intentionally refuses to share scanners that use the net: backend (which includes some USB scanners). There's a [crude patch to allow this](https://bugs.archlinux.org/task/54786), but note it may cause problems on some networks. Check output of "scanimage -L" on the server to see the scanner url.
+
 ### Accessing your scanner from a remote workstation
 
 **Note:** Some network scanners require a different approach. See [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems").

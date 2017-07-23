@@ -1,9 +1,9 @@
-GNU Parted is a program for creating and manipulating partition tables. [GParted](/index.php/GParted "GParted") is a GUI frontend.
+GNU Parted is a program for creating and manipulating partition tables. GParted is a GUI frontend.
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
+*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+*   [2 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [2.1 Command line mode](#Command_line_mode)
     *   [2.2 Interactive mode](#Interactive_mode)
 *   [3 Rounding](#Rounding)
@@ -17,18 +17,18 @@ GNU Parted is a program for creating and manipulating partition tables. [GParted
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
 *   [5 Warnings](#Warnings)
-    *   [5.1 Alignment](#Alignment)
+    *   [5.1 Выравнивание](#.D0.92.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Dual booting with Windows XP](#Dual_booting_with_Windows_XP)
     *   [6.2 Fixing messed-up partition order](#Fixing_messed-up_partition_order)
-    *   [6.3 Check alignment](#Check_alignment)
+    *   [6.3 Проверка выравнивания](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.B2.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
 *   [7 See also](#See_also)
 
-## Installation
+## Установка
 
-[Install](/index.php/Install "Install") the [parted](https://www.archlinux.org/packages/?name=parted) package. For a graphical interface, [install](/index.php/Install "Install") the [gparted](https://www.archlinux.org/packages/?name=gparted) package, the graphical frontend to *parted*.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [parted](https://www.archlinux.org/packages/?name=parted). Если вам нужен графический интерфейс, установите также [gparted](https://www.archlinux.org/packages/?name=gparted).
 
-## Usage
+## Использование
 
 Parted has two modes: command line and interactive. Parted should always be started with:
 
@@ -316,7 +316,7 @@ Where `*device*` is the device that holds the partition, `*number*` is the numbe
 
 Parted will always warn you before doing something that is potentially dangerous, unless the command is one of those that is inherently dangerous (viz., rm, mklabel and mkpart).
 
-### Alignment
+### Выравнивание
 
 When creating a partition, *parted* might warn about improper partition alignment but does not hint about proper alignment. For example:
 
@@ -355,7 +355,7 @@ See [Fdisk#Sort partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
 
 **Note:** You must run **partprobe** as root or reboot the system in order for the kernel to read the new partition table!
 
-### Check alignment
+### Проверка выравнивания
 
 On an already partitioned disk, you can use *parted* to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on `/dev/sda`:
 

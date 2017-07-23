@@ -109,7 +109,7 @@ Currently, the following browsers are auto-detected and managed:
 *   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
 *   [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
 *   [Epiphany](/index.php/Epiphany "Epiphany")
-*   [Firefox](/index.php/Firefox "Firefox") (all flavors including stable, beta, and aurora)
+*   [Firefox](/index.php/Firefox "Firefox") (all flavors including stable, beta, and nightly)
 *   [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 *   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
 *   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)

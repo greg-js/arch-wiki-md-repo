@@ -39,9 +39,9 @@ If this fails, the [Xorg](/index.php/Xorg "Xorg") server will need to be restart
 
 ## Shell segfaults
 
-If you experience gnome-shell disappearing and reappearing, it means that it has sefgaulted (probably because of an extension). Gnome-shell extensions use javascript; to enable debugging of extensions, it is necessary to
+If you experience gnome-shell disappearing and reappearing, it means that it has segfaulted (probably because of an extension). Gnome-shell extensions use javascript; to enable debugging of extensions, it is necessary to
 
-1) rebuild gjs with CXXFLAGS='-g -O0'
+1) rebuild [gjs](https://www.archlinux.org/packages/?name=gjs) with CXXFLAGS='-g -O0'
 
 ```
 packages/gjs/trunk$ svn diff PKGBUILD 
@@ -51,17 +51,18 @@ Index: PKGBUILD
 +++ PKGBUILD	(copie de travail)
 @@ -26,7 +26,8 @@
 
- build() {
-   cd $pkgname
+build() {
+  cd $pkgname
 -  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib
 +  export CXXFLAGS='-g -O0'
 +  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib --enable-debug-symbols=-gdwarf-2
    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
    make
  }
+
 ```
 
-2) rebuild js38 with debug enabled:
+2) rebuild [js38](https://www.archlinux.org/packages/?name=js38) with debug enabled:
 
 ```
 packages/js38/trunk$ svn diff PKGBUILD 
@@ -75,12 +76,13 @@ Index: PKGBUILD
  makedepends=(python2 libffi zip)
 -options=(!staticlibs)
 +options=(!staticlibs debug)
- source=(https://ftp.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.bz2
-         mozjs38-fix-tracelogger.patch
-         mozjs38-shell-version.patch
+ source=([https://ftp.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.bz2](https://ftp.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.bz2)
+        mozjs38-fix-tracelogger.patch
+        mozjs38-shell-version.patch
+
 ```
 
-Once the gjs and js38-debug packages are installed and gnome-shell restarted (Alt+F2 + r), whenever gnome-shell crashes the debug symbols will be available.
+Once the gjs and js38-debug packages are installed and gnome-shell restarted (`Alt`+ `F2` + `r`), whenever gnome-shell crashes the debug symbols will be available.
 
 After the crash:
 

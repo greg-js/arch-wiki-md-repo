@@ -1,177 +1,175 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [File systems](/index.php/File_systems "File systems"). Дата последней синхронизации: 16 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_systems&diff=0&oldid=482095).
+**Состояние перевода:** На этой странице представлен перевод статьи [File systems](/index.php/File_systems "File systems"). Дата последней синхронизации: 22 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_systems&diff=0&oldid=482617).
 
-From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
+Из [Википедии](https://en.wikipedia.org/wiki/ru:%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0 "w:ru:Файловая система"):
 
-	In computing, a file system (or filesystem) is used to control how data is stored and retrieved. Without a file system, information placed in a storage medium would be one large body of data with no way to tell where one piece of information stops and the next begins. By separating the data into pieces and giving each piece a name, the information is easily isolated and identified.
+	Файловая система (англ. file system) — порядок, определяющий способ организации, хранения и именования данных на носителях информации в компьютерах, а также в другом электронном оборудовании: цифровых фотоаппаратах, мобильных телефонах и т.п. Файловая система определяет формат содержимого и способ физического хранения информации, которую принято группировать в виде файлов. Конкретная файловая система определяет размер имен файлов и (каталогов), максимальный возможный размер файла и раздела, набор атрибутов файла. Некоторые файловые системы предоставляют сервисные возможности, например, разграничение доступа или шифрование файлов.
 
-	Taking its name from the way paper-based information systems are named, each group of data is called a "file". The structure and logic rules used to manage the groups of information and their names is called a "file system".
-
-Individual drive partitions can be setup using one of the many different available filesystems. Each has its own advantages, disadvantages, and unique idiosyncrasies. A brief overview of supported filesystems follows; the links are to Wikipedia pages that provide much more information.
+Отдельные разделы дисков можно настроить с использованием одной из множества доступных файловых систем. У каждой есть свои преимущества, недостатки и уникальные особенности. Ниже приведен краткий обзор поддерживаемых файловых систем; также и ссылки на страницы Википедии, которые предоставляют гораздо больше информации.
 
 ## Contents
 
-*   [1 Types of file systems](#Types_of_file_systems)
-    *   [1.1 Journaling](#Journaling)
-    *   [1.2 FUSE-based file systems](#FUSE-based_file_systems)
-    *   [1.3 Stackable file systems](#Stackable_file_systems)
-    *   [1.4 Read-only file systems](#Read-only_file_systems)
-    *   [1.5 Clustered file systems](#Clustered_file_systems)
-*   [2 Identify existing file systems](#Identify_existing_file_systems)
-*   [3 Create a file system](#Create_a_file_system)
-*   [4 Mount a filesystem](#Mount_a_filesystem)
-    *   [4.1 List mounted file systems](#List_mounted_file_systems)
-    *   [4.2 Umount a file system](#Umount_a_file_system)
-*   [5 See also](#See_also)
+*   [1 Типы файловых систем](#.D0.A2.D0.B8.D0.BF.D1.8B_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC)
+    *   [1.1 Журналирование](#.D0.96.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+    *   [1.2 Файловые системы на основе FUSE](#.D0.A4.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.BD.D0.B0_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B5_FUSE)
+    *   [1.3 Штабелируемые файловые системы](#.D0.A8.D1.82.D0.B0.D0.B1.D0.B5.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [1.4 Файловые системы только для чтения](#.D0.A4.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_.D1.87.D1.82.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [1.5 Кластерные файловые системы](#.D0.9A.D0.BB.D0.B0.D1.81.D1.82.D0.B5.D1.80.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+*   [2 Определение существующих файловых систем](#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC)
+*   [3 Создание файловой системы](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+*   [4 Монтирование файловой системы](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [4.1 Список смонтированных файловых систем](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC)
+    *   [4.2 Размонтирование файловой системы](#.D0.A0.D0.B0.D0.B7.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
-## Types of file systems
+## Типы файловых систем
 
-See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
+Смотрите [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) для общего обзора и [Википедию:Сравнение файловых систем](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC "w:ru:Сравнение файловых систем") для подробного сравнения функций. Файловые системы, поддерживаемые ядром, перечислены в `/proc/filesystems`.
 
-| File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
-| [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
-| [VFAT](/index.php/VFAT "VFAT") | [mkfs.vfat(8)](https://linux.die.net/man/8/mkfs.vfat) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
-| [exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT") | mkfs.exfat(8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Optional | N/A (FUSE-based) |
-| [F2FS](/index.php/F2FS "F2FS") | mkfs.f2fs(8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Flash-based devices |
-| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
-| [ext4](/index.php/Ext4 "Ext4") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
-| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) | Optional | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") file system |
-| [JFS](/index.php/JFS "JFS") | mkfs.jfs(8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
-| [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | mkfs.nilfs2(8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Yes | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
-| [NTFS](/index.php/NTFS "NTFS") | [mkfs.ntfs(8)](https://linux.die.net/man/8/mkfs.ntfs) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") file system |
-| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | No |
-| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS") | mkfs.reiserfs(8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
-| [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
+| Файловая система | Команда создания | Утилиты пользовательского пространства | [Archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Документация ядра [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Заметки |
+| [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Да | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Статус стабильности](https://btrfs.wiki.kernel.org/index.php/Status) |
+| [VFAT](/index.php/FAT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "FAT (Русский)") | [mkfs.vfat(8)](https://linux.die.net/man/8/mkfs.vfat) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Да | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
+| [exFAT](https://en.wikipedia.org/wiki/ru:exFAT "w:ru:exFAT") | mkfs.exfat(8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Опционально | N/A (на основе FUSE) |
+| [F2FS](/index.php/F2FS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "F2FS (Русский)") | mkfs.f2fs(8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Да | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Флэш-устройства |
+| [ext3](/index.php/Ext3_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext3 (Русский)") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
+| [ext4](/index.php/Ext4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext4 (Русский)") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
+| [HFS](https://en.wikipedia.org/wiki/ru:HFS "w:ru:HFS") | mkfs.hfsplus(8) | [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) | Опционально | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | Файловая система [MacOS](https://en.wikipedia.org/wiki/ru:macOS "w:ru:macOS") |
+| [JFS](/index.php/JFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "JFS (Русский)") | mkfs.jfs(8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [NILFS2](https://en.wikipedia.org/wiki/ru:NILFS "w:ru:NILFS") | mkfs.nilfs2(8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Да | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
+| [NTFS](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") | [mkfs.ntfs(8)](https://linux.die.net/man/8/mkfs.ntfs) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Да | N/A (на основе FUSE) | Файловая система [Windows](https://en.wikipedia.org/wiki/ru:Windows "w:ru:Windows") |
+| [Reiser4](/index.php/Reiser4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Reiser4 (Русский)") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | Нет |
+| [ReiserFS](https://en.wikipedia.org/wiki/ru:ReiserFS "w:ru:ReiserFS") | mkfs.reiserfs(8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) |
+| [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)") | [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
 
 [xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
 [xfs-delayed-logging-design.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-delayed-logging-design.txt)
 [xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
 
  |
-| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | No | N/A ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS") port) |
+| [ZFS](/index.php/ZFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ZFS (Русский)") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | Нет | N/A (порт [OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS")) |
 
-**Note:** The kernel has its own NTFS driver (see [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), but it has limited support for writing files.
+**Примечание:** У ядра есть свой собственный драйвер NTFS (смотрите [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), но он имеет ограниченную поддержку на запись файлов.
 
-### Journaling
+### Журналирование
 
-All the above filesystems with the exception of ext2, FAT16/32, Btrfs and ZFS, use [journaling](https://en.wikipedia.org/wiki/Journaling_file_system "wikipedia:Journaling file system"). Journaling provides fault-resilience by logging changes before they are committed to the filesystem. In the event of a system crash or power failure, such file systems are faster to bring back online and less likely to become corrupted. The logging takes place in a dedicated area of the filesystem.
+Все вышеупомянутые файловые системы, за исключением ext2, FAT16/32, Btrfs и ZFS, используют [ведение журнала](https://en.wikipedia.org/wiki/ru:%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%B0%D1%8F_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0 "w:ru:Журналируемая файловая система"). Журналирование обеспечивает отказоустойчивость путем регистрации изменений до того, как они будут привязаны к файловой системе. В случае сбоя системы или сбоя питания такие файловые системы быстрее возвращаются в сеть и реже становятся поврежденными. Ведение журнала происходит в выделенной области файловой системы.
 
-Not all journaling techniques are the same. Ext3 and ext4 offer data-mode journaling, which logs both data and meta-data, as well as possibility to journal only meta-data changes. Data-mode journaling comes with a speed penalty and is not enabled by default. In the same vein, [Reiser4](/index.php/Reiser4 "Reiser4") offers so-called ["transaction models"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), which include pure journaling (equivalent to ext4's data-mode journaling), pure Copy-on-Write approach (equivalent to btrfs' default) and a combined approach which heuristically alternates between the two former.
+Не все методы ведения журнала одинаковы. Ext3 и ext4 предлагают журналирование в режиме данных, в котором регистрируются как данные, так и метаданные, а также возможность вести журнал только изменений метаданных. Журналирование в режиме данных имеет ограничение скорости и не включено по умолчанию. В том же ключе [Reiser4](/index.php/Reiser4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Reiser4 (Русский)") предлагает так называемые ["модели транзакций"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), которые включают в себя чистое ведение журнала (эквивалентное журнальному ведению журнала данных ext4), чистый подход копировать-на-запись (эквивалент по умолчанию btrfs) и комбинированный подход, который эвристически чередуется между двумя бывшими.
 
-**Note:** Reiser4 does not provide an equivalent to ext4's default journaling behavior (meta-data only).
+**Примечание:** Reiser4 не обеспечивает эквивалент поведения журналирования по умолчанию ext4 (только для метаданных).
 
-The other filesystems provide ordered-mode journaling, which only logs meta-data. While all journaling will return a filesystem to a valid state after a crash, data-mode journaling offers the greatest protection against corruption and data loss. There is a compromise in system performance, however, because data-mode journaling does two write operations: first to the journal and then to the disk. The trade-off between system speed and data safety should be considered when choosing the filesystem type.
+Другие файловые системы обеспечивают упорядоченное ведение журнала, которое регистрирует только метаданные. Хотя все журналирование вернет файловую систему в допустимое состояние после сбоя, журналирование в режиме данных обеспечивает максимальную защиту от повреждений и потери данных. Однако есть компромисс в производительности системы, поскольку журналирование в режиме данных выполняет две операции записи: сначала в журнал, а затем на диск. При выборе типа файловой системы следует учитывать компромисс между скоростью системы и безопасностью данных.
 
-While CoW based filesystem, including Btrfs and ZFS, never updates their metadata in-place, but do Copy-on-Write update. So they have no need to use traditional journal to protect metadata. For data modification, it's CoWed by default, so still no need to use journal to protect data for Btrfs/ZFS. Although Btrfs still has a journal-like log tree, which is only used to speedup fdatasync/fsync.
+В то время как файловая система на основе копирование-на-запись, включая Btrfs и ZFS, никогда не обновляет свои метаданные на месте, но делает обновление копировать-на-запись. Поэтому им не нужно использовать традиционный журнал для защиты метаданных. Для изменения данных по умолчанию используется копировать-на-запись, поэтому до сих пор нет необходимости использовать журнал для защиты данных для Btrfs/ZFS. Хотя Btrfs все еще имеет журнальное дерево журналов, которое используется только для ускорения fdatasync/fsync.
 
-### FUSE-based file systems
+### Файловые системы на основе FUSE
 
-[Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (FUSE) is a mechanism for Unix-like operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in *user space*, while the FUSE kernel module provides only a "bridge" to the actual kernel interfaces.
+[Файловая система в пользовательском пространстве](https://en.wikipedia.org/wiki/ru:FUSE_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D1%8F%D0%B4%D1%80%D0%B0) "w:ru:FUSE (модуль ядра)") (FUSE) - это механизм для Unix-подобных операционных систем, который позволяет не-привилегированным пользователям создавать свои собственные файловые системы без редактирования кода ядра. Это достигается путем запуска кода файловой системы в *пространстве пользователя*, в то время как модуль ядра FUSE предоставляет только "мост" для реальных интерфейсов ядра.
 
-Some FUSE-based file systems:
+Некоторые файловые системы на основе FUSE:
 
-*   **adbfs-git** — Mount an Android device filesystem.
+*   **adbfs-git** — монтирует файловую систему Android
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
-*   **[EncFS](/index.php/EncFS "EncFS")** — EncFS is a userspace stackable cryptographic file-system.
+*   **[EncFS](/index.php/EncFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EncFS (Русский)")** — это пользовательская наращиваемая криптографическая файловая система.
 
 	[https://vgough.github.io/encfs/](https://vgough.github.io/encfs/) || [encfs](https://www.archlinux.org/packages/?name=encfs)
 
-*   **fuseiso** — Mount an ISO as a regular user.
+*   **fuseiso** — монтирует ISO в качестве обычного пользователя.
 
 	[http://sourceforge.net/projects/fuseiso/](http://sourceforge.net/projects/fuseiso/) || [fuseiso](https://www.archlinux.org/packages/?name=fuseiso)
 
-*   **[gitfs](/index.php/Gitfs "Gitfs")** — gitfs is a FUSE file system that fully integrates with git.
+*   **[gitfs](/index.php/Gitfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gitfs (Русский)")** — файловая система FUSE, которая полностью интегрируется с git.
 
 	[https://www.presslabs.com/gitfs/](https://www.presslabs.com/gitfs/) || [gitfs](https://aur.archlinux.org/packages/gitfs/)
 
-*   **xbfuse-git** — Mount an Xbox (360) ISO.
+*   **xbfuse-git** — монтирует Xbox (360) ISO.
 
 	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)
 
-*   **xmlfs** — Represent an XML file as a directory structure for easy access.
+*   **xmlfs** — представляет файл XML в качестве структуры каталогов для легкого доступа.
 
 	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)
 
-*   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
+*   **vdfuse** — монтирует образы дисков VirtualBox (VDI/VMDK/VHD).
 
 	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
-See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
+Для получения допольнительной информации смотрите [Википедия:Файловая система в пространстве пользователей#Примеры использования](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace").
 
-### Stackable file systems
+### Штабелируемые файловые системы
 
-*   **aufs** — Advanced Multi-layered Unification Filesystem, a FUSE based union filesystem, a complete rewrite of Unionfs, was rejected from Linux mainline and instead OverlayFS was merged into the Linux Kernel.
+*   **aufs** — усовершенствованная многоуровневая файловая система унификации, объединенная файловая система на основе FUSE, полностью переписанная Unionfs, отклоненная от основной линии Linux, и вместо этого OverlayFS был объединен в ядро Linux.
 
 	[http://aufs.sourceforge.net](http://aufs.sourceforge.net) || [aufs](https://aur.archlinux.org/packages/aufs/)
 
-*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — The Enterprise Cryptographic Filesystem is a package of disk encryption software for Linux. It is implemented as a POSIX-compliant filesystem-level encryption layer, aiming to offer functionality similar to that of GnuPG at the operating system level.
+*   **[eCryptfs](/index.php/ECryptfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ECryptfs (Русский)")** — корпоративная криптографическая файловая система представляет собой пакет программного обеспечения для шифрования диска Linux. Он реализует шифрование на уровне файловой системы, совместимый с POSIX, с целью предложить функциональность, аналогичную функции GnuPG на уровне операционной системы.
 
 	[http://ecryptfs.org](http://ecryptfs.org) || [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils)
 
-*   **mergerfs** — a FUSE based union filesystem.
+*   **mergerfs** — объединенная файловая система на основе FUSE.
 
 	[https://github.com/trapexit/mergerfs](https://github.com/trapexit/mergerfs) || [mergerfs](https://aur.archlinux.org/packages/mergerfs/)
 
-*   **mhddfs** — Multi-HDD FUSE filesystem, a FUSE based union filesystem.
+*   **mhddfs** — файловая система Multi-HDD FUSE, объединенная на основе FUSE.
 
 	[http://mhddfs.uvw.ru](http://mhddfs.uvw.ru) || [mhddfs](https://aur.archlinux.org/packages/mhddfs/)
 
-*   **[overlayfs](/index.php/Overlayfs "Overlayfs")** — OverlayFS is a filesystem service for Linux which implements a union mount for other file systems.
+*   **[overlayfs](/index.php/Overlay_filesystem_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Overlay filesystem (Русский)")** — это служба файловой системы для Linux, которая реализует объединение для монтирования других файловых систем.
 
 	[https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **Unionfs** — Unionfs is a filesystem service for Linux, FreeBSD and NetBSD which implements a union mount for other file systems.
+*   **Unionfs** — это служба файловой системы для Linux, FreeBSD и NetBSD, которая реализует объединение монтирования для других файловых систем.
 
 	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **unionfs-fuse** — A user space Unionfs implementation.
+*   **unionfs-fuse** — реализация пользовательского пространства Unionfs.
 
 	[https://github.com/rpodgorny/unionfs-fuse](https://github.com/rpodgorny/unionfs-fuse) || [unionfs-fuse](https://www.archlinux.org/packages/?name=unionfs-fuse)
 
-### Read-only file systems
+### Файловые системы только для чтения
 
-*   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — SquashFS is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
+*   **[SquashFS](https://en.wikipedia.org/wiki/ru:Squashfs "w:ru:Squashfs")** — сжимающая файловая система для GNU/Linux, предоставляющая доступ к данным в режиме "только для чтения". Squashfs сжимает файлы, индексные дескрипторы и каталоги, а также поддерживает блоки размером до 1024 Кбайт для лучшего сжатия.
 
 	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
 
-### Clustered file systems
+### Кластерные файловые системы
 
-*   **[Ceph](/index.php/Ceph "Ceph")** — Unified, distributed storage system designed for excellent performance, reliability and scalability.
+*   **[Ceph](/index.php/Ceph_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ceph (Русский)")** — унифицированная распределенная система хранения, предназначенная для отличной производительности, надежности и масштабируемости.
 
 	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 
-*   **[GlusterFS](/index.php/GlusterFS "GlusterFS")** — Cluster file system capable of scaling to several peta-bytes.
+*   **[GlusterFS](/index.php/Glusterfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Glusterfs (Русский)")** — кластерная файловая система способна масштабироваться до нескольких пета-байт.
 
 	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
 
-*   **[IPFS](/index.php/IPFS "IPFS")** — A peer-to-peer hypermedia protocol to make the web faster, safer, and more open. IPFS aims replace HTTP and build a better web for all of us. Uses blocks to store parts of a file, each network node stores only content it is interested, provides deduplication, distribution, scalable system limited only by users. (currently in aplha)
+*   **[IPFS](/index.php/IPFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "IPFS (Русский)")** — одноранговый протокол гипермедиа, чтобы сделать Интернет более быстрым, безопасным и открытым. IPFS нацелена на замену HTTP и создание лучшей сети для всех нас. Использует блоки для хранения частей файла, каждый сетевой узел хранит только интересующий контент, обеспечивает дедупликацию, распространение, масштабируемую систему, ограниченную только пользователями. (В настоящее время в aplha)
 
 	[https://ipfs.io/](https://ipfs.io/) || [go-ipfs](https://www.archlinux.org/packages/?name=go-ipfs)
 
-*   **[MooseFS](https://en.wikipedia.org/wiki/MooseFS "wikipedia:MooseFS")** — MooseFS is a fault tolerant, highly available and high performance scale-out network distributed file system.
+*   **[MooseFS](https://en.wikipedia.org/wiki/ru:Moose_File_System "w:ru:Moose File System")** — это отказоустойчивая, высокодоступная и высокопроизводительная сетевая распределенная файловая система.
 
 	[https://www.gluster.org/](https://www.gluster.org/) || [moosefs](https://www.archlinux.org/packages/?name=moosefs)
 
-*   **[OpenAFS](/index.php/OpenAFS "OpenAFS")** — Open source implementation of the AFS distributed file system
+*   **[OpenAFS](/index.php/OpenAFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "OpenAFS (Русский)")** — реализация с открытым исходным кодом распределенной файловой системы AFS
 
 	[http://www.openafs.org](http://www.openafs.org) || [openafs](https://aur.archlinux.org/packages/openafs/)
 
-*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — OrangeFS is a scale-out network file system designed for transparently accessing multi-server-based disk storage, in parallel. Has optimized MPI-IO support for parallel and distributed applications. Simplifies the use of parallel storage not only for Linux clients, but also for Windows, Hadoop, and WebDAV. POSIX-compatible. Part of Linux kernel since version 4.6\.
+*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — это масштабируемая сетевая файловая система, предназначенная для прозрачного доступа к дисковой памяти на нескольких серверах параллельно. Имеет оптимизированную поддержку MPI-IO для параллельных и распределенных приложений. Упрощает использование параллельного хранения не только для клиентов Linux, но и для Windows, Hadoop и WebDAV. POSIX-совместимая. Часть ядра Linux, начиная с версии 4.6.
 
 	[http://www.orangefs.org/](http://www.orangefs.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
+*   **Sheepdog** — распределенная система хранения объектов для объемных и контейнерных сервисов и разумно управляет дисками и узлами.
 
 	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
+*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — файловая система Thahoe Least-Authority - это бесплатное и открытое, безопасное, децентрализованное, отказоустойчивое, одноранговое распределенное хранилище данных и распределенная файловая система.
 
 	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
 
-## Identify existing file systems
+## Определение существующих файловых систем
 
-To identify existing file systems, you can use [lsblk](/index.php/Lsblk "Lsblk"):
+Чтобы определить существующие файловые системы, вы можете использовать [lsblk](/index.php/Lsblk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Lsblk (Русский)"):
 
  `$ lsblk -f` 
 ```
@@ -180,20 +178,20 @@ sdb
 └─sdb1 vfat   Transcend 4A3C-A9E9
 ```
 
-An existing file system, if present, will be shown in the `FSTYPE` column. If [mounted](/index.php/Mount "Mount"), it will appear in the `MOUNTPOINT` column.
+Существующая файловая система, если она есть, будет показана в столбце `FSTYPE`. Если она с[монтирова](/index.php/%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0 "Монтирова")на, тогда появится в столбце `MOUNTPOINT`.
 
-## Create a file system
+## Создание файловой системы
 
-File systems are usually created on a [partition](/index.php/Partition "Partition"), inside logical containers such as [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), or on a regular file (see [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). This section describes the partition case.
+Файловые системы обычно создаются на [раздел](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB "Раздел")е, внутри логических контейнеров, таких как [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [RAID](/index.php/RAID_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RAID (Русский)") и [dm-crypt](/index.php/Dm-crypt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dm-crypt (Русский)"), или в обычном файле (смотрите [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). В этом разделе описывается случай раздела.
 
-**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
+**Примечание:** Файловые системы могут быть записаны непосредственно на диск, называемый [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) или *безраздельным диском*. С этим методом связаны определенные ограничения, особенно при [загрузке](/index.php/Arch_boot_process "Arch boot process") с такого диска. Для примеров смотрите [Btrfs#Безраздельный диск Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.91.D0.B5.D0.B7.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.B4.D0.B8.D1.81.D0.BA_Btrfs "Btrfs (Русский)").
 
-**Warning:**
+**Важно:**
 
-*   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
-*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Boot_loader "Boot loader").
+*   После создания новой файловой системы данные, ранее сохраненные на этом разделе, вряд ли будут восстановлены. **Создайте резервную копию любых данных, которые вы хотите сохранить**.
+*   Цель данного раздела может ограничить выбор файловой системы. Например, [системный раздел EFI](/index.php/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB_EFI "Системный раздел EFI") должен содержать файловую систему FAT32 (`mkfs.vfat`), а файловая система, содержащая каталог `/boot`, должна поддерживаться с помощью [загрузчик](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA "Загрузчик")а.
 
-Before continuing, [identify the device](/index.php/Lsblk "Lsblk") where the file system will be created and whether or not it is mounted. For example:
+Прежде чем продолжить, [определите устройство](/index.php/Lsblk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Lsblk (Русский)"), в котором будет создана файловая система, и независимо от того, монтируется ли она. Например:
 
  `$ lsblk -f` 
 ```
@@ -205,105 +203,105 @@ sda
 
 ```
 
-Mounted file systems **must** be [unmounted](#Umount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
+Перед продолжением **необходимо** [размонтировать](#.D0.A0.D0.B0.D0.B7.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B) файловые системы. В приведенном выше примере существующая файловая система находится на `/dev/sda2` и монтируется в `/mnt`. Он будет размонтирован командой:
 
 ```
 # umount /dev/sda2
 
 ```
 
-To find just mounted file systems, see [#List mounted file systems](#List_mounted_file_systems).
+Чтобы найти только смонтированные файловые системы, смотрите [#Список смонтированных файловых систем](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC).
 
-To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
+Чтобы создать новую файловую систему, используйте [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). Смотрите [#Типы файловых систем](#.D0.A2.D0.B8.D0.BF.D1.8B_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC) для точного типа, а также утилиты пользовательского пространства, которые вы, возможно, захотите установить для конкретной файловой системы.
 
-For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions) on `/dev/sda1`, run:
+Например, чтобы создать новую файловую систему типа [ext4](/index.php/Ext4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext4 (Русский)") (обычно для разделов данных Linux) на `/dev/sda1`, запустите:
 
 ```
 # mkfs.ext4 /dev/sda1
 
 ```
 
-**Tip:**
+**Совет:**
 
-*   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e2label* can be used to change the label on an existing file system.
-*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") filesystem's size can be increased, but it cannot reduced. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "w:Comparison of file systems") and the respective file system documentation for details.
+*   Используйте флаг `-L` *mkfs.ext4*, чтобы указать [метку файловой системы](/index.php/Persistent_block_device_naming_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.BC.D0.B5.D1.82.D0.BA.D0.B0 "Persistent block device naming (Русский)"). *e2label* можно использовать для изменения метки в существующей файловой системе.
+*   Файловые системы могут быть *изменены* после создания с определенными ограничениями. Например, размер файловой системы [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)") может быть увеличен, но он не может быть уменьшен. Для получения допольнительной информации смотрите [Возможности изменения размера](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC#.D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0 "w:ru:Сравнение файловых систем") и соответствующую документацию файловой системы.
 
-The new file system can now be mounted to a directory of choice.
+Новая файловая система теперь может быть смонтирована в выбранный каталог.
 
-## Mount a filesystem
+## Монтирование файловой системы
 
-To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html). This example mounts `/dev/sda1` to `/mnt`.
+Чтобы вручную смонтировать файловую систему, расположенную на устройстве (например, раздел) к каталогу, используйте [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html). В этом примере монтируется `/dev/sda1` в `/mnt`.
 
 ```
 # mount /dev/sda1 /mnt
 
 ```
 
-This attaches the filesystem on `/dev/sda1` at the directory `/mnt`, making the contents of the filesystem visible. Any data that existed at `/mnt` before this action is made invisible until the device is unmounted.
+Это прикрепляет файловую систему раздела `/dev/sda1` в каталог `/mnt`, делая содержимое файловой системы видимым. Любые данные, существовавшие в `/mnt` перед этим действием, становятся невидимыми до тех пор, пока устройство не будет размонтировано.
 
-[fstab](/index.php/Fstab "Fstab") contains information on how devices should be automatically mounted if present. See the [fstab](/index.php/Fstab "Fstab") article for more information on how to modify this behavior.
+[fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") содержит информацию о том, как устройства должны автоматически монтироваться, если они присутствуют. Для получения дополнительной информации о том, как изменить это поведение, смотрите статью [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)").
 
-If a device is specified in `/etc/fstab` and only the device or mount point is given on the command line, that information will be used in mounting. For example, if `/etc/fstab` contains a line indicating that `/dev/sda1` should be mounted to `/mnt`, then the following will automatically mount the device to that location:
+Если устройство указано в `/etc/fstab`, и в командной строке указывается только устройство или точки монтирования, эта информация будет использоваться при монтирование. Например, если `/etc/fstab` содержит строку, указывающую, что `/dev/sda1` должен быть смонтирован в `/mnt`, тогда он автоматически будет монтировать это устройство к этому месту:
 
 ```
 # mount /dev/sda1
 
 ```
 
-Or
+Или
 
 ```
 # mount /mnt
 
 ```
 
-*mount* contains several options, many of which depend on the file system specified. The options can be changed, either by:
+*mount* содержит несколько параметров, многие из которых зависят от указанной файловой системы. Параметры могут быть изменены:
 
-*   using flags on the command line with *mount*
-*   editing [fstab](/index.php/Fstab "Fstab")
-*   creating [udev](/index.php/Udev "Udev") rules
-*   [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System")
-*   or using filesystem-specific mount scripts (located at `/usr/bin/mount.*`).
+*   использование флагов в командной строке с *mount*
+*   редактирование [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
+*   создание правил [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)")
+*   [самостоятельно компилировать ядро](/index.php/Arch_Build_System "Arch Build System")
+*   или используя скрипты монтирования файловой системы (расположенные по адресу `/usr/bin/mount.*`).
 
-See these related articles and the article of the filesystem of interest for more information.
+Более подробную информацию смотрите в связанных статьях и статье интересующей файловой системы.
 
-### List mounted file systems
+### Список смонтированных файловых систем
 
-To list all mounted file systems, use [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html):
+Чтобы просмотреть все смонтированные файловые системы, используйте [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html):
 
 ```
 $ findmnt
 
 ```
 
-*findmnt* takes a variety of arguments which can filter the output and show additional information. For example, it can take a device or mount point as an argument to show only information on what is specified:
+*findmnt* принимает множество аргументов, которые могут фильтровать вывод и отображать дополнительную информацию. Например, в качестве аргумента может принимать устройство или точку монтирования для отображения только информации о том, что указывается:
 
 ```
 $ findmnt /dev/sda1
 
 ```
 
-*findmnt* gathers information from `/etc/fstab`, `/etc/mtab`, and `/proc/self/mounts`.
+*findmnt* собирает информацию из `/etc/fstab`, `/etc/mtab` и `/proc/self/mounts`.
 
-### Umount a file system
+### Размонтирование файловой системы
 
-To unmount a file system use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Either the device containing the file system (e.g., `/dev/sda1`) or the mount point (e.g., `/mnt`) can be specified:
+Чтобы размонтировать файловую систему, используйте [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Можно указать либо устройство, содержащее файловую систему (например, `/dev/sda1`), либо точку монтирования (например, `/mnt`):
 
 ```
 # umount /dev/sda1
 
 ```
 
-Or
+Или
 
 ```
 # umount /mnt
 
 ```
 
-## See also
+## Смотрите также
 
 *   [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html)
-*   [Documentation of file systems supported by linux](https://www.kernel.org/doc/Documentation/filesystems/)
-*   [Wikipedia:File systems](https://en.wikipedia.org/wiki/File_systems "wikipedia:File systems")
-*   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
+*   [Документация файловых систем, поддерживаемых linux](https://www.kernel.org/doc/Documentation/filesystems/)
+*   [Википедия:Файловая система](https://en.wikipedia.org/wiki/ru:%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0 "w:ru:Файловая система")
+*   [Википедия:mount](https://en.wikipedia.org/wiki/ru:mount "w:ru:mount")

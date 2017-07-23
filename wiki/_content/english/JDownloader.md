@@ -6,7 +6,8 @@ JDownloader is a Download Manager written in Java. JDownloader can download norm
     *   [1.1 Running](#Running)
 *   [2 Configuration](#Configuration)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Making JDownloader faster](#Making_JDownloader_faster)
+    *   [3.1 Downloading files without creating a subdirectory](#Downloading_files_without_creating_a_subdirectory)
+    *   [3.2 Changing preferences for individual sites](#Changing_preferences_for_individual_sites)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
 *   [5 See also](#See_also)
@@ -29,13 +30,13 @@ If you enable the Light(GTK) theme and the fonts appear to lack anti-aliasing, m
 
 ## Tips and tricks
 
-### Making JDownloader faster
+### Downloading files without creating a subdirectory
 
-In its default configuration, JDownloader is very slow and uses a lot of resources. You can atleast make it a bit faster by applying the following changes in the Settings Tab.
+By default jdownloader will create a subdirectory for each file you download in your destination folder. To stop this behaviour go to Settings > Packagiser and untick the predefined rules as desired.
 
-Choose General and then turn the logging level to OFF.
+### Changing preferences for individual sites
 
-Choose User Interface and then switch the style to Light(GTK). (If you're using GNOME).
+Preferences for individual sites can be found by going to Settings > Plugins. For example, by changing settings on the youtube.com plugin you could tell jdownloader to only download the audio from youtube links.
 
 ## Troubleshooting
 

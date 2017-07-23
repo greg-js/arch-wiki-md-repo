@@ -120,7 +120,7 @@ On host, enable nested feature for `kvm_intel`:
 
 To make it permanent (see [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")):
 
- `/etc/modprobe.d/modprobe.conf` 
+ `/etc/modprobe.d/kvm_intel.conf` 
 ```
 options kvm_intel nested=1
 

@@ -18,6 +18,7 @@ This article links to various methods to launch scripts or applications automati
     *   [5.7 LXQt](#LXQt)
     *   [5.8 Fluxbox](#Fluxbox)
     *   [5.9 Openbox](#Openbox)
+    *   [5.10 Awesome](#Awesome)
 
 ## Daemons
 
@@ -86,3 +87,7 @@ See [Fluxbox#Autostart programs](/index.php/Fluxbox#Autostart_programs "Fluxbox"
 ### Openbox
 
 See [Openbox#autostart](/index.php/Openbox#autostart "Openbox").
+
+### Awesome
+
+See [Awesome#Autorun_programs](/index.php/Awesome#Autorun_programs "Awesome").

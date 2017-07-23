@@ -42,6 +42,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [OBRevenge](http://obrevenge.weebly.com/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
+*   [Netrunner Rolling](http://www.netrunner.com/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](https://nurunner.org/)
 *   [PacBSD](https://www.pacbsd.org/)

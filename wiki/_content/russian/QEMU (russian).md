@@ -22,7 +22,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
     *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
-    *   [5.3 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
+    *   [5.3 Монтирование раздела внутри образа диска raw](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B8_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_raw)
         *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
         *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
         *   [5.3.3 With kpartx](#With_kpartx)
@@ -304,7 +304,7 @@ Then, in the guest, you will be able to access the shared directory on the host 
 *   If you are using sharing options multiple times like `-net user,smb=*shared_dir_path1* -net user,smb=*shared_dir_path2*` or `-net user,smb=*shared_dir_path1*,smb=*shared_dir_path2*` then it will share only the last defined one.
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
 
-### Mounting a partition inside a raw disk image
+### Монтирование раздела внутри образа диска raw
 
 When the virtual machine is not running, it is possible to mount partitions that are inside a raw disk image file by setting them up as loopback devices. This does not work with disk images in special formats, such as qcow2, although those can be mounted using `qemu-nbd`.
 

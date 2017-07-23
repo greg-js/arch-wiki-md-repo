@@ -1,4 +1,4 @@
-GNU Parted is a program for creating and manipulating partition tables. [GParted](/index.php/GParted "GParted") is a GUI frontend.
+GNU Parted is a program for creating and manipulating partition tables. GParted is a GUI frontend.
 
 ## Contents
 

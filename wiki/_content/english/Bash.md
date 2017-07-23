@@ -14,6 +14,9 @@
         *   [2.2.1 History completion](#History_completion)
         *   [2.2.2 Shorter history](#Shorter_history)
     *   [2.3 Mimic Zsh run-help ability](#Mimic_Zsh_run-help_ability)
+    *   [2.4 Additional completion keybindings](#Additional_completion_keybindings)
+        *   [2.4.1 Variable expansion](#Variable_expansion)
+        *   [2.4.2 Wildcard expansion](#Wildcard_expansion)
 *   [3 Aliases](#Aliases)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Prompt customization](#Prompt_customization)
@@ -154,6 +157,16 @@ bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 ```
 
 This assumes are you using the (default) Emacs [editing mode](/index.php/Readline#Editing_mode "Readline").
+
+### Additional completion keybindings
+
+#### Variable expansion
+
+Variable name can be completed with `tab` key. However, expanding variable to its value is done with `C-M-e` key combination.
+
+#### Wildcard expansion
+
+Wildcard `*` can be expanded using `C-x *`, i.e. pressing `Control+x` then pressing `*`.
 
 ## Aliases
 

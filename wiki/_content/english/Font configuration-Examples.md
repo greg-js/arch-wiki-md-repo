@@ -11,6 +11,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [5 Disable bold font](#Disable_bold_font)
 *   [6 Default fonts](#Default_fonts)
     *   [6.1 Japanese](#Japanese)
+    *   [6.2 Chinese](#Chinese)
 *   [7 Patched packages](#Patched_packages)
 *   [8 See also](#See_also)
 
@@ -243,6 +244,145 @@ Example fonts.conf which also specifies a default font for the Japanese locale (
  </alias>
 
  <dir>~/.fonts</dir>
+</fontconfig>
+
+```
+
+### Chinese
+
+```
+~/.config/fontconfig/fonts.conf
+or
+/etc/fonts/local.conf
+```
+
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+
+	<match target="font">
+		<edit name="embeddedbitmap" mode="assign">
+			<bool>false</bool>
+		</edit>
+	</match>
+
+	<match>
+		<test qual="any" name="family">
+			<string>serif</string>
+		</test>
+		<edit name="family" mode="prepend" binding="strong">
+			<string>Noto Serif</string>
+		</edit>
+	</match>
+	<match target="pattern">
+		<test qual="any" name="family">
+			<string>sans-serif</string>
+		</test>
+		<edit name="family" mode="prepend" binding="strong">
+			<string>Roboto</string>
+		</edit>
+	</match>
+	<match target="pattern">
+		<test qual="any" name="family">
+			<string>monospace</string>
+		</test>
+		<edit name="family" mode="prepend" binding="strong">
+			<string>DejaVu Sans Mono</string>
+		</edit>
+	</match>
+
+	<match>
+		<test name="lang" compare="contains">
+			<string>zh</string>
+		</test>
+		<test name="family">
+			<string>serif</string>
+		</test>
+		<edit name="family" mode="prepend">
+			<string>Source Han Serif CN</string>
+		</edit>
+	</match>
+	<match>
+		<test name="lang" compare="contains">
+			<string>zh</string>
+		</test>
+		<test name="family">
+			<string>sans-serif</string>
+		</test>
+		<edit name="family" mode="prepend">
+			<string>Source Han Sans CN</string>
+		</edit>
+	</match>
+	<match>
+		<test name="lang" compare="contains">
+			<string>zh</string>
+		</test>
+		<test name="family">
+			<string>monospace</string>
+		</test>
+		<edit name="family" mode="prepend">
+			<string>Noto Sans Mono CJK SC</string>
+		</edit>
+	</match>
+
+<!--Windows & Linux Chinese fonts. -->
+	<match target="pattern">
+		<test qual="any" name="family">
+			<string>WenQuanYi Zen Hei</string>
+		</test>
+		<edit name="family" mode="assign" binding="same">
+			<string>Source Han Sans CN</string>
+		</edit>
+	</match>
+	<match target="pattern">
+                <test qual="any" name="family">
+                        <string>WenQuanYi Micro Hei</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+	</match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>WenQuanYi Micro Hei Light</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+        </match>
+	<match target="pattern">
+                <test qual="any" name="family">
+                        <string>Microsoft YaHei</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+        </match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>SimHei</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+        </match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>SimSun</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Serif CN</string>
+                </edit>
+        </match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>SimSun-18030</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Serif CN</string>
+                </edit>
+        </match>
 </fontconfig>
 
 ```

@@ -6,8 +6,8 @@ The display server is accompanied by a *cursor theme* that helps various aspects
     *   [1.1 Packages](#Packages)
     *   [1.2 Manually](#Manually)
 *   [2 Configuration](#Configuration)
-    *   [2.1 LXAppearance](#LXAppearance)
-    *   [2.2 XDG specification](#XDG_specification)
+    *   [2.1 XDG specification](#XDG_specification)
+    *   [2.2 LXAppearance](#LXAppearance)
     *   [2.3 Desktop environments](#Desktop_environments)
         *   [2.3.1 GNOME](#GNOME)
         *   [2.3.2 MATE](#MATE)
@@ -67,15 +67,11 @@ If the package includes an `index.theme` file, check if there is an "Inherits" l
 
 There are various ways to set the cursor theme.
 
-### LXAppearance
-
-[LXAppearance](/index.php/LXDE#Cursors "LXDE") sets the default cursor by creating an `index.theme` file as specified in [#XDG specification](#XDG_specification).
-
 ### XDG specification
 
 This method applies to both [X11](/index.php/X11 "X11") and [Wayland](/index.php/Wayland "Wayland") cursor themes.
 
-If you are not using [LXAppearance](https://wiki.archlinux.org/index.php/Cursor_themes#LXAppearance), edit `~/.icons/default/index.theme`.
+For *user-specific* configuration, create or edit `~/.icons/default/index.theme`; for *system-wide* configuration, one can edit `/usr/share/icons/default/index.theme`.
 
 Define the theme directory name:
 
@@ -85,15 +81,15 @@ Define the theme directory name:
 Inherits=*theme-name*
 ```
 
-If you are using LXAppearance, just launch it and select your desired cursor theme and apply.
-
-Then edit `~/.config/gtk-3.0/settings.ini`.
-
-Edit the following line and replace the *theme-name* with the theme directory name:
+You should then edit `~/.config/gtk-3.0/settings.ini`. Edit the following line and replace the `*theme-name*` with the theme directory name:
 
  `~/.config/gtk-3.0/settings.ini`  `gtk-cursor-theme-name=*theme-name*` 
 
 Re-login for the changes to take effect.
+
+### LXAppearance
+
+[LXAppearance](/index.php/LXDE#Cursors "LXDE") sets the default cursor by creating an `~/.icons/default/index.theme` file: if you edited that file manually, LXAppearance will overwrite it. Remember to also edit `~/.config/gtk-3.0/settings.ini` manually as specified in [#XDG specification](#XDG_specification), because applications like Firefox use this setting instead.
 
 ### Desktop environments
 

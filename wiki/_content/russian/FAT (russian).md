@@ -1,12 +1,12 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [FAT](/index.php/FAT "FAT"). Дата последней синхронизации: 17 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=FAT&diff=0&oldid=482185).
+**Состояние перевода:** На этой странице представлен перевод статьи [FAT](/index.php/FAT "FAT"). Дата последней синхронизации: 23 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=FAT&diff=0&oldid=482700).
 
-From [Wikipedia:File Allocation Table](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"):
+Из [Википедии:Таблица размещения файлов](https://en.wikipedia.org/wiki/ru:FAT "w:ru:FAT"):
 
-	File Allocation Table (FAT) is a computer file system architecture and a family of industry-standard file systems utilizing it. The FAT file system is a legacy file system which is simple and robust.[3] It offers good performance even in light-weight implementations, but cannot deliver the same performance, reliability and scalability as some modern file systems. It is, however, supported for compatibility reasons by nearly all currently developed operating systems for personal computers and many mobile devices and embedded systems, and thus is a well-suited format for data exchange between computers and devices of almost any type and age from 1981 up to the present.
+	Таблица размещения файлов (FAT) - это классическая архитектура файловой системы компьютера и семейство стандартных файловых систем, использующих ее. Файловая система FAT представляет собой устаревшую файловую систему, которая проста и надежна. Она обеспечивает хорошую производительность даже в облегченных реализациях, но не может обеспечить такую же производительность, надежность и масштабируемость, как некоторые современные файловые системы. Тем не менее, она поддерживается по соображениям совместимости почти всеми разрабатываемыми в настоящее время операционными системами для персональных компьютеров и многих мобильных устройств и встроенных систем и, таким образом, является хорошо подходящим форматом для обмена данными между компьютерами и устройствами практически любого типа и возраста с 1981 года до настоящего времени.
 
-## Kernel configurations
+## Конфигурации ядра
 
-Here is an example of the default *mount* configuration in the kernel:
+Ниже приведен пример конфигурации *монтирования* по умолчанию в ядре:
 
  `$ zgrep -e FAT -e DOS /proc/config.gz | sort -r ` 
 ```
@@ -21,14 +21,14 @@ CONFIG_FAT_DEFAULT_IOCHARSET="iso8859-1"
 CONFIG_NCPFS_SMALLDOS=y
 ```
 
-A short description of the options:
+Краткое описание этих параметров:
 
-*   Language settings: CONFIG_FAT_DEFAULT_CODEPAGE, CONFIG_FAT_DEFAULT_IOCHARSET
-*   All filenames to lower letters on a FAT partitions if enabled: CONFIG_NCPFS_SMALLDOS
-*   Enables support of the FAT file systems: CONFIG_FAT_FS, CONFIG_MSDOS_FS, CONFIG_VFAT_FS
-*   Enables support of a FAT partitioned harddisks on 86x PCs: CONFIG_MSDOS_PARTITION
+*   Настройки языка: CONFIG_FAT_DEFAULT_CODEPAGE, CONFIG_FAT_DEFAULT_IOCHARSET
+*   Все имена файлов в нижнем регистре букв на разделах FAT, если они включены: CONFIG_NCPFS_SMALLDOS
+*   Включает поддержку файловых систем FAT: CONFIG_FAT_FS, CONFIG_MSDOS_FS, CONFIG_VFAT_FS
+*   Включает поддержку разметки жестких дисков FAT на компьютерах 86x: CONFIG_MSDOS_PARTITION
 
-If the partition type detected by mount is VFAT then it will run the `/usr/bin/mount.vfat` script.
+Если тип раздела, обнаруженный монтированием, является VFAT, тогда запускается скрипт `/usr/bin/mount.vfat`.
 
  `/usr/bin/mount.vfat` 
 ```
@@ -39,34 +39,34 @@ If the partition type detected by mount is VFAT then it will run the `/usr/bin/m
 mount -i -t vfat -oiocharset=utf8,fmask=0000,dmask=0000 "$@"
 ```
 
-## Writing to FAT32 as Normal User
+## Запись на FAT32 в качестве обычного пользователя
 
-To write on a FAT32 partition, you must make a few changes to the [fstab](/index.php/Fstab "Fstab") file.
+Чтобы записать на раздел FAT32, вы должны внести несколько изменений в файл [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)").
 
  `/etc/fstab`  `/dev/sd*xY*    /mnt/some_folder  vfat   **user**,rw,umask=000              0  0` 
 
-The `user` flag means that any user (even non-root) can mount and unmount the partition `/dev/sd*X*`. `rw` gives read-write access; `umask` option removes selected rights - for example `umask=111` remove executable rights. The problem is that this entry removes executable rights from directories too, so we must correct it by `dmask=000`. See also [Umask](/index.php/Umask "Umask").
+Флаг `user` означает, что любой пользователь (даже не root) может монтировать и размонтировать раздел `/dev/sd*X*`. Флаг `rw` дает доступ на чтение и запись; параметр `umask` удаляет выбранные права - например `umask=111` удаляет исполняемые права. Проблема в том, что эта запись также удаляет исполняемые права из каталогов, поэтому мы должны исправить ее с помощью `dmask=000`. Для получения допольнительной информации смотрите [Umask](/index.php/Umask_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Umask (Русский)").
 
-Without these options, all files will be executable. You can use the option `showexec` instead of the umask and dmask options, which shows all Windows executables (com, exe, bat) in executable colours.
+Без этих параметров все файлы будут исполняемыми. Вы можете использовать опцию `showexec` вместо параметров umask и dmask, которые отображают все исполняемые файлы Windows (com, exe, bat) в исполняемых цветах.
 
-For example, if your FAT32 partition is on `/dev/sda9`, and you wish to mount it to `/mnt/fat32`, then you would use:
+Например, если ваш раздел FAT32 находится на `/dev/sda9`, и вы хотите смонтировать его на `/mnt/fat32`, вы должны использовать:
 
  `/etc/fstab`  `/dev/sda9    /mnt/fat32        vfat   **user**,rw,umask=111,dmask=000    0  0` 
 
-Now, any user can mount it with:
+Теперь любой пользователь может смонтировать его с помощью:
 
 ```
 $ mount /mnt/fat32
 
 ```
 
-And unmount it with:
+И размонтировать его с помощью:
 
 ```
 $ umount /mnt/fat32
 
 ```
 
-## See also
+## Смотрите также
 
-*   [MountFATFileSystems](http://www.nslu2-linux.org/wiki/HowTo/MountFATFileSystems)
+*   [Монтирование файловой системы FAT](http://www.nslu2-linux.org/wiki/HowTo/MountFATFileSystems)

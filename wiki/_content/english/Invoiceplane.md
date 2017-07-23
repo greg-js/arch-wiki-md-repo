@@ -15,7 +15,7 @@
 
 ## Installation
 
-Install the [invoiceplane](https://aur.archlinux.org/packages/invoiceplane/) package.
+[Install](/index.php/Install "Install") the [invoiceplane](https://aur.archlinux.org/packages/invoiceplane/) package.
 
 ## Configuration
 

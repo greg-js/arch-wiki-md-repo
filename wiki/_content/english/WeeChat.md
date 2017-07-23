@@ -324,6 +324,13 @@ ln -s ../notify_send.py autoload/
 
 The script uses [libnotify](https://www.archlinux.org/packages/?name=libnotify) and is known to work with both KDE and Gnome.
 
+Another alternative with the built-in `trigger` plugin is to set a value for `trigger.trigger.beep.command`.
+
+```
+ /set trigger.trigger.beep.command "/print -beep;/exec -bg notify-send -i '/usr/share/icons/hicolor/32x32/apps/weechat.png' 'IRC Notification' "${tg_tag_nick}: ${tg_message_nocolor}""
+
+```
+
 ### Mobile device notifications
 
 To receive notifications for mentions or private messages to an Android mobile device, you can use the [IrssiNotifier](https://irssinotifier.appspot.com/) port to WeeChat from [here](https://www.weechat.org/files/scripts/irssinotifier.py). This script requires a Google Account, and a registration step with the service provider to obtain an API key. Then, install the plugin

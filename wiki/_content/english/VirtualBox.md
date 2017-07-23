@@ -539,14 +539,14 @@ $ VBoxManage createhd -filename *new.vdi* --size *10000*
 
 where size is in MiB, in this example 10000MiB ~= 10GiB, and *new.vdi* is name of new hard drive to be created.
 
+**Note:** By default, this command uses the *Standard* (corresponding to dynamic allocated) file format variant and thus will not use the same file format variant as your source virtual disk. If your *old.vdi* has a fixed size and you want to keep this variant, add the parameter `--variant Fixed`.
+
 Next, the old virtual disk needs to be cloned to the new one which this may take some time:
 
 ```
 $ VBoxManage clonehd *old.vdi* *new.vdi* --existing
 
 ```
-
-**Note:** By default, this command uses the *Standard* (corresponding to dynamic allocated) file format variant and thus will not use the same file format variant as your source virtual disk. If your *old.vdi* has a fixed size and you want to keep this variant, add the parameter `--variant Fixed`.
 
 Detach the old hard drive and attach new one, replace all mandatory italic arguments by your own:
 

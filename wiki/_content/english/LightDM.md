@@ -406,6 +406,16 @@ If you are using multiple monitors, LightDM may display in the wrong one (e.g. i
 
 Replace *HDMI1* with your real monitor ID, which you can find from **xrandr** command output.
 
+Alternatively, if you are using the GTK+ greeter, you can edit `/etc/lightdm/lightdm-gtk-greeter.conf` and add the *active-monitor* parameter like this:
+
+ `/etc/lightdm/lightdm-gtk-greeter.conf` 
+```
+[greeter]
+active-monitor=0
+```
+
+Replace 0 with the desired display number.
+
 ### LightDM does not appear
 
 It may happen that your system boots so fast that LightDM service is started before your graphics drivers are properly loaded. If this is your case, you will want to add the following config to your lightdm.conf file:

@@ -103,8 +103,6 @@ This section describes the tags which relate to incorrect permissions of files o
 
 ### Miscellaneous
 
-*   **mime-cache-not-updated** (*error*) The package installs mime files but does not call update-mime-database to update them.
-*   **hicolor-icon-cache-not-updated** (*error*) There are files in */usr/share/icons/hicolor* but the hicolor icon cache has not been updated. One should use *gtk-update-icon-cache* (for packages depending on *gtk*) or *xdg-icon-resource* to update the icon cache. If you use *xdg-icon-resource* then you should declare a dependency on [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils).
 *   **insecure-rpath** (*error*) An RPATH (for an executable) is outside */usr/lib*. An RPATH to an insecure location is a potential security issue. See [FS#14049](https://bugs.archlinux.org/task/14049) for discussion.
 
 ### PKGBUILDs

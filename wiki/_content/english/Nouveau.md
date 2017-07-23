@@ -107,10 +107,9 @@ $ dmesg
 
 ### Installing the latest development packages
 
-To get the latest Nouveau improvements, there is currently only one approved kernel tree by Nouveau that is assured to contain the latest modules designed to work with the latest drivers, so it is recommended you make sure you have these modules first, should you wish to use the git versions. Instructions can be found at [https://nouveau.freedesktop.org/wiki/InstallNouveau/](https://nouveau.freedesktop.org/wiki/InstallNouveau/) for getting them.
+To get the latest Nouveau improvements
 
-To do this, you could modify the [linux-git](https://aur.archlinux.org/packages/linux-git/) PKGBUILD to use the Nouveau tree at [https://github.com/skeggsb/linux/](https://github.com/skeggsb/linux/), instead of making a package from scratch. You can then install:
-
+*   [linux-git](https://aur.archlinux.org/packages/linux-git/) PKGBUILD to use the Nouveau tree at [https://github.com/skeggsb/linux/](https://github.com/skeggsb/linux/), instead of making a package from scratch.
 *   [libdrm-git](https://aur.archlinux.org/packages/libdrm-git/)
 *   [lib32-libdrm-git](https://aur.archlinux.org/packages/lib32-libdrm-git/)
 *   [lib32-mesa-git](https://aur.archlinux.org/packages/lib32-mesa-git/)

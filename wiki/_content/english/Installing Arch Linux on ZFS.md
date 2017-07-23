@@ -4,7 +4,6 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
 
 *   [1 Installation](#Installation)
     *   [1.1 Embedding archzfs into archiso](#Embedding_archzfs_into_archiso)
-    *   [1.2 Arch ZFS installation scripts](#Arch_ZFS_installation_scripts)
 *   [2 Partition the destination drive](#Partition_the_destination_drive)
     *   [2.1 Partition scheme](#Partition_scheme)
     *   [2.2 Example parted commands](#Example_parted_commands)
@@ -31,19 +30,15 @@ See [ZFS#Installation](/index.php/ZFS#Installation "ZFS") for installing the ZFS
 
 See [ZFS](/index.php/ZFS#Embed_the_archzfs_packages_into_an_archiso "ZFS") article.
 
-### Arch ZFS installation scripts
-
-Manually installing Arch using ZFS is quite an involved undertaking but thankfully there are scripts to simplify the process such as [ALEZ](https://github.com/danboid/ALEZ) and [install-raidz](https://bitbucket.org/avi9526/install-raidz/src).
-
 ## Partition the destination drive
 
 Review [Partitioning](/index.php/Partitioning "Partitioning") for information on determining the partition table type to use for ZFS. ZFS supports GPT and MBR partition tables.
 
 ZFS manages its own partitions, so only a basic partition table scheme is required. The partition that will contain the ZFS filesystem should be of the type `bf00`, or "Solaris Root".
 
-When using GRUB as your bootloader with an MBR partition table there is no need for a BIOS boot partition. Drives larger than 2TB require a GPT partition table and you should use [parted](https://www.archlinux.org/packages/?name=parted) to create the partitions for GPT. BIOS/GPT and UEFI/GPT configurations require a small (1/2MB) BIOS boot partition to store the bootloader. If you are using a UEFI-only bootloader you should use GPT.
+Drives larger than 2TB require a GPT partition table. GRUB on BIOS/GPT configurations require a small (1~2MiB) BIOS boot partition to embed its image of boot code.
 
-Depending upon your choice of bootloader you may or may not require an EFI partition. GRUB, when installed on a BIOS machine (or a UEFI machine booting in legacy mode) using either MBR or GPT doesn't require an EFI partition. Consult [Boot loaders](/index.php/Boot_loaders "Boot loaders") for more info.
+Depending upon your machine's firmware or your choice of boot mode, booting may or may not require an EFI partition. On a BIOS machine (or a UEFI machine booting in legacy mode) EFI partition is not required. Consult [Boot loaders](/index.php/Boot_loaders "Boot loaders") for more info.
 
 ### Partition scheme
 
@@ -71,9 +66,8 @@ Another example, this time using a UEFI-specific bootloader (such as [rEFInd](/i
 ```
 Part     Size   Type
 ----     ----   -------------------------
-   1       2M   BIOS boot partition (ef02)
-   2     100M   EFI boot partition (ef00)
-   3     XXXG   Solaris Root (bf00)
+   1     100M   EFI boot partition (ef00)
+   2     XXXG   Solaris Root (bf00)
 
 ```
 

@@ -146,10 +146,10 @@ gpg's main usage is to ensure confidentiality of exchanged messages via public-k
 
 So, in order for others to send encrypted messages to you, they need your public key.
 
-To generate an ASCII version of your public key (*e.g.* to distribute it by e-mail):
+To generate an ASCII version of a user's public key to file `*public.key*` (e.g. to distribute it by e-mail):
 
 ```
-$ gpg --output *public.key* --armor --export *user-id* 
+$ gpg --output *public.key* --armor --export *user-id*
 
 ```
 
@@ -344,7 +344,7 @@ At this point, you can now use `/tmp/subkey.altpass.gpg` on your other devices.
 
 If you have set your subkeys to expire after a set time, you can create new ones. Do this a few weeks in advance to allow others to update their keyring.
 
-**Note:** You do not need to create a new key simply because it is expired. You can extend the expiration date.
+**Tip:** You do not need to create a new key simply because it is expired. You can extend the expiration date.
 
 Create new subkey (repeat for both signing and encrypting key)
 
@@ -370,7 +370,7 @@ $ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 
 ```
 
-**Note:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
+**Tip:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
 
 ## Signatures
 
@@ -442,11 +442,7 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 
 ## gpg-agent
 
-*gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client.
-
-Starting with GnuPG 2.1.0 the use of *gpg-agent* is required. *gpg-agent* is started on-demand by the GnuPG tools.
-
-[gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with [systemd user](/index.php/Systemd/User "Systemd/User") sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
+*gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. [gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with [systemd user](/index.php/Systemd/User "Systemd/User") sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
 
 *   The main `gpg-agent.socket` is used by *gpg* to connect to the *gpg-agent* daemon.
 *   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See gpg-agent(1) for details.
@@ -825,7 +821,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 
 ### gpg: WARNING: server 'gpg-agent' is older than us (x < y)
 
-This warning appears if `gnupg` is updated but the old (pre-update) gpg-agent still runs (e.g. `pacman -Syu` without rebooting). Kill the old gpg-agent with `gpgconf --kill gpg-agent`, other gpg tools will spawn it again on demand ([#gpg-agent](#gpg-agent))
+This warning appears if `gnupg` is upgraded and the old gpg-agent is still running. [Restart](/index.php/Restart "Restart") the *user'*s `gpg-agent.socket` (i.e., use the `--user` flag when restarting).
 
 ## See also
 

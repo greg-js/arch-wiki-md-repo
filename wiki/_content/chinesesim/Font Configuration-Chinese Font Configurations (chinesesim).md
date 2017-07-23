@@ -1,54 +1,178 @@
-选择喜欢的一种显示效果的配置，加入/etc/fonts/local.conf 的<fontconfig>......</fontconfig>之间
+全局修改字体配置，修改`/etc/fonts/local.conf`, 配置用户字体，修改`$XDG_CONFIG_HOME/fontconfig/fonts.conf`.
 
-把下面的配置加入/etc/fonts/local.conf
+## Contents
+
+*   [1 Android显示效果的字体参考配置](#Android.C2.AE.E6.98.BE.E7.A4.BA.E6.95.88.E6.9E.9C.E7.9A.84.E5.AD.97.E4.BD.93.E5.8F.82.E8.80.83.E9.85.8D.E7.BD.AE)
+    *   [1.1 安装字体](#.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
+    *   [1.2 添加配置文件](#.E6.B7.BB.E5.8A.A0.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+*   [2 Windows显示效果的字体参考配置](#Windows.C2.AE.E6.98.BE.E7.A4.BA.E6.95.88.E6.9E.9C.E7.9A.84.E5.AD.97.E4.BD.93.E5.8F.82.E8.80.83.E9.85.8D.E7.BD.AE)
+    *   [2.1 安装 MS core fonts](#.E5.AE.89.E8.A3.85_MS_core_fonts)
+    *   [2.2 加入配置](#.E5.8A.A0.E5.85.A5.E9.85.8D.E7.BD.AE)
+*   [3 Anti-aliasing效果的字体参考配置](#Anti-aliasing.E6.95.88.E6.9E.9C.E7.9A.84.E5.AD.97.E4.BD.93.E5.8F.82.E8.80.83.E9.85.8D.E7.BD.AE)
+
+## Android显示效果的字体参考配置
+
+### 安装字体
 
 ```
-<match target="font">
-        <edit name="embeddedbitmap">
-                <bool>true</bool>
-        </edit>
-</match>
+pacman -S ttf-roboto noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts ttf-dejavu
 
 ```
 
-例如
+### 添加配置文件
+
+```
+~/.config/fontconfig/fonts.conf
+or
+/etc/fonts/local.conf
+```
 
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<!-- /etc/fonts/local.conf file for local customizations -->
 <fontconfig>
-.
-.
-.
-.
-.
-.
-        <match target="font">
-                <edit name="embeddedbitmap">
-                        <bool>true</bool>
+
+<!-- 关闭内嵌点阵字体 -->
+	<match target="font">
+		<edit name="embeddedbitmap" mode="assign">
+			<bool>false</bool>
+		</edit>
+	</match>
+
+<!-- 英文默认字体使用 Roboto 和 Noto Serif ,终端使用 DejaVu Sans Mono. -->
+	<match>
+		<test qual="any" name="family">
+			<string>serif</string>
+		</test>
+		<edit name="family" mode="prepend" binding="strong">
+			<string>Noto Serif</string>
+		</edit>
+	</match>
+	<match target="pattern">
+		<test qual="any" name="family">
+			<string>sans-serif</string>
+		</test>
+		<edit name="family" mode="prepend" binding="strong">
+			<string>Roboto</string>
+		</edit>
+	</match>
+	<match target="pattern">
+		<test qual="any" name="family">
+			<string>monospace</string>
+		</test>
+		<edit name="family" mode="prepend" binding="strong">
+			<string>DejaVu Sans Mono</string>
+		</edit>
+	</match>
+
+<!-- 中文默认字体使用思源黑体和思源宋体,不使用　Noto Sans CJK SC 是因为这个字体会在特定情况下显示片假字. -->
+	<match>
+		<test name="lang" compare="contains">
+			<string>zh</string>
+		</test>
+		<test name="family">
+			<string>serif</string>
+		</test>
+		<edit name="family" mode="prepend">
+			<string>Source Han Serif CN</string>
+		</edit>
+	</match>
+	<match>
+		<test name="lang" compare="contains">
+			<string>zh</string>
+		</test>
+		<test name="family">
+			<string>sans-serif</string>
+		</test>
+		<edit name="family" mode="prepend">
+			<string>Source Han Sans CN</string>
+		</edit>
+	</match>
+	<match>
+		<test name="lang" compare="contains">
+			<string>zh</string>
+		</test>
+		<test name="family">
+			<string>monospace</string>
+		</test>
+		<edit name="family" mode="prepend">
+			<string>Noto Sans Mono CJK SC</string>
+		</edit>
+	</match>
+
+<!--Windows & Linux Chinese fonts. -->
+<!--把所有常见的中文字体映射到思源黑体和思源宋体，这样当这些字体未安装时会使用思源黑体和思源宋体.
+解决特定程序指定使用某字体，并且在字体不存在情况下不会使用fallback字体导致中文显示不正常的情况. -->
+	<match target="pattern">
+		<test qual="any" name="family">
+			<string>WenQuanYi Zen Hei</string>
+		</test>
+		<edit name="family" mode="assign" binding="same">
+			<string>Source Han Sans CN</string>
+		</edit>
+	</match>
+	<match target="pattern">
+                <test qual="any" name="family">
+                        <string>WenQuanYi Micro Hei</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+	</match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>WenQuanYi Micro Hei Light</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
                 </edit>
         </match>
-.
-.
-.
-.
-.
-.
+	<match target="pattern">
+                <test qual="any" name="family">
+                        <string>Microsoft YaHei</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+        </match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>SimHei</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Sans CN</string>
+                </edit>
+        </match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>SimSun</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Serif CN</string>
+                </edit>
+        </match>
+        <match target="pattern">
+                <test qual="any" name="family">
+                        <string>SimSun-18030</string>
+                </test>
+                <edit name="family" mode="assign" binding="same">
+                        <string>Source Han Serif CN</string>
+                </edit>
+        </match>
 </fontconfig>
 
 ```
 
-## 一. Windows(R)-Like 显示效果的字体参考配置
+## Windows显示效果的字体参考配置
 
-1\. 安装 MS core fonts
+### 安装 MS core fonts
 
 ```
 pacman -S ttf-ms-fonts
 
 ```
 
-2\. 加入配置
+### 加入配置
 
 ```
 
@@ -295,7 +419,7 @@ pacman -S ttf-ms-fonts
 
 ```
 
-## 二. Anti-aliasing效果的字体参考配置
+## Anti-aliasing效果的字体参考配置
 
 ```
 
