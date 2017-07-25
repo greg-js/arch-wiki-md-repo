@@ -8,13 +8,13 @@
     *   [2.1 Managing packages with npm](#Managing_packages_with_npm)
         *   [2.1.1 Installing packages](#Installing_packages)
         *   [2.1.2 Updating packages](#Updating_packages)
-            *   [2.1.2.1 Updating All Packages](#Updating_All_Packages)
+            *   [2.1.2.1 Updating all packages](#Updating_all_packages)
         *   [2.1.3 Removing packages](#Removing_packages)
         *   [2.1.4 Listing packages](#Listing_packages)
     *   [2.2 Managing packages with pacman](#Managing_packages_with_pacman)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 node-gyp python errors](#node-gyp_python_errors)
-*   [4 Additional Resources](#Additional_Resources)
+*   [4 Additional resources](#Additional_resources)
 
 ## Installation
 
@@ -25,13 +25,13 @@
 It is not uncommon to need or desire to work in different versions of [nodejs](https://www.archlinux.org/packages/?name=nodejs). A preferred method among node users is to use [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) allows for cheap and easy alternative installs. Usage is well documented on the projects GitHub but is as simple as:
 
 ```
-  $ nvm install VERSION_NUM
+$ nvm install VERSION_NUM
 
 ```
 
 ## Node Packaged Modules
 
-[npm](https://www.npmjs.org/) is the official package manager for node.js. Since [nodejs](https://www.archlinux.org/packages/?name=nodejs) 0.12.2-4, `npm` is no longer included in the package. It is available as [npm](https://www.archlinux.org/packages/?name=npm) in the [official repositories](/index.php/Official_repositories "Official repositories").
+[npm](https://www.npmjs.org/) is the official package manager for node.js. It can be [installed](/index.php/Install "Install") with the [npm](https://www.archlinux.org/packages/?name=npm) package.
 
 ### Managing packages with npm
 
@@ -114,7 +114,7 @@ For the case of globally installed packages (`-g`)
 
 **Note:** Remember that globally installed packages require administrator privileges unless `prefix` is set to a user-writable directory
 
-##### Updating All Packages
+##### Updating all packages
 
 However, sometimes you may just wish to update all packages. Be it locally or globally. Leaving off the packageName `npm` will attempt to update all the packages
 
@@ -193,11 +193,10 @@ $ sudo npm install --unsafe-perm -g node-inspector
 
 ```
 
-## Additional Resources
+## Additional resources
 
-For further information on [nodejs](https://www.archlinux.org/packages/?name=nodejs) and use of its official package manager [npm](https://www.npmjs.org/) you may wish to consult the following external resources
+For further information on Node.js and use of its official package manager NPM you may wish to consult the following external resources
 
-*   [NodeJs Documentation](http://nodejs.org/documentation/) Documentation and Tutorials for Node
-*   [NodeJS Community](http://nodejs.org/community/) Webpage
-*   [API Documentation](https://www.npmjs.org/doc/) Official `npm` API documentation
+*   [Node.js documentation](https://nodejs.org/en/docs/)
+*   [NPM documentation](https://docs.npmjs.com/)
 *   IRC channel #node.js on irc.freenode.net

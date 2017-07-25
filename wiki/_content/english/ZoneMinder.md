@@ -1,4 +1,4 @@
-ZoneMinder is an integrated set of applications which provide a complete surveillance solution allowing capture, analysis, recording and monitoring of any CCTV or security cameras attached to a Linux based machine. It is designed to run on distributions which support the Video For Linux (V4L) interface and has been tested with video cameras attached to BTTV cards, various USB cameras and also supports most IP network cameras.
+[ZoneMinder](https://www.zoneminder.com/) is an integrated set of applications which provide a complete surveillance solution allowing capture, analysis, recording and monitoring of any CCTV or security cameras attached to a Linux based machine. It is designed to run on distributions which support the Video For Linux (V4L) interface and has been tested with video cameras attached to BTTV cards, various USB cameras and also supports most IP network cameras.
 
 ## Contents
 
@@ -18,7 +18,7 @@ ZoneMinder is an integrated set of applications which provide a complete surveil
 
 ## Installation
 
-**Note:** It is very important that [LAMP](/index.php/LAMP "LAMP") stack is installed and properly configured in order for ZoneMinder to work.
+**Note:** It is very important that a [LAMP](/index.php/LAMP "LAMP") stack is installed and properly configured in order for ZoneMinder to work.
 
 [Install](/index.php/Install "Install") the [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package. The development branch is also available with [zoneminder-git](https://aur.archlinux.org/packages/zoneminder-git/).
 

@@ -415,7 +415,7 @@ While bwrap provides some very nice isolation for sandboxed application, there i
 
 There are however some workarounds that use xpra or xephyr to run in a new X11 environment. This would work with bwrap as well.
 
-To test X11 isolation, run 'xinput test <id>' where <id> is your keyboard id shich you can find with 'xinput list' When run without additional X11 isolation, this will show that any application with X11 access can capture keyboard input of any other application, which is basically what a keylogger would do.
+To test X11 isolation, run 'xinput test <id>' where <id> is your keyboard id which you can find with 'xinput list' When run without additional X11 isolation, this will show that any application with X11 access can capture keyboard input of any other application, which is basically what a keylogger would do.
 
 ### New Session
 

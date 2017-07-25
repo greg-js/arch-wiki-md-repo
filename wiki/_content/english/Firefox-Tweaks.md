@@ -3,28 +3,26 @@ This page contains advanced Firefox configuration options and performance tweaks
 ## Contents
 
 *   [1 Performance](#Performance)
-    *   [1.1 Advanced Firefox options](#Advanced_Firefox_options)
-        *   [1.1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
-        *   [1.1.2 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
-        *   [1.1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
-        *   [1.1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-        *   [1.1.5 Turn off OCSP validation](#Turn_off_OCSP_validation)
-        *   [1.1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
-        *   [1.1.7 Longer interval to save session](#Longer_interval_to_save_session)
-        *   [1.1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
-        *   [1.1.9 Referer header control](#Referer_header_control)
-        *   [1.1.10 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-        *   [1.1.11 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-        *   [1.1.12 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-        *   [1.1.13 Enable Electrolysis](#Enable_Electrolysis)
-        *   [1.1.14 Enable HTTP Cache](#Enable_HTTP_Cache)
-        *   [1.1.15 Disable Pocket](#Disable_Pocket)
+    *   [1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
+    *   [1.2 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
+    *   [1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
+    *   [1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+    *   [1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
+    *   [1.6 Longer interval to save session](#Longer_interval_to_save_session)
+    *   [1.7 Immediate rendering of pages](#Immediate_rendering_of_pages)
+    *   [1.8 Referrer header control](#Referrer_header_control)
+    *   [1.9 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+    *   [1.10 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+    *   [1.11 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+    *   [1.12 Enable Electrolysis](#Enable_Electrolysis)
+    *   [1.13 Enable HTTP Cache](#Enable_HTTP_Cache)
+    *   [1.14 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
         *   [2.1.2 Default font settings from Microsoft Windows](#Default_font_settings_from_Microsoft_Windows)
     *   [2.2 General user interface CSS settings](#General_user_interface_CSS_settings)
-        *   [2.2.1 Change the font](#Change_the_font)
+        *   [2.2.1 Change the interface font](#Change_the_interface_font)
         *   [2.2.2 Hide button icons](#Hide_button_icons)
         *   [2.2.3 Hiding various tab buttons](#Hiding_various_tab_buttons)
         *   [2.2.4 Horizontal tabs](#Horizontal_tabs)
@@ -56,7 +54,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.14 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
     *   [3.15 Enable touchscreen gestures](#Enable_touchscreen_gestures)
     *   [3.16 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
-    *   [3.17 Make URL bar behave like Firefox on Windows regarding mouse clicks](#Make_URL_bar_behave_like_Firefox_on_Windows_regarding_mouse_clicks)
+    *   [3.17 Make URL bar behave like on Windows regarding mouse clicks](#Make_URL_bar_behave_like_on_Windows_regarding_mouse_clicks)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -65,19 +63,15 @@ Improving Firefox's performance is divided into parameters that can be inputted 
 
 **Note:** Listed options may only be available for the latest version of Firefox.
 
-### Advanced Firefox options
+This section contains advanced Firefox options for performance tweaking. For additional information see [these MozillaZine articles](http://kb.mozillazine.org/Category:Tweaking_preferences).
 
-This section contains advanced Firefox options for performance tweaking. For additional information see [these Mozillazine forum posts](http://kb.mozillazine.org/Category:Tweaking_preferences).
-
-#### Enable OpenGL Off-Main-Thread Compositing (OMTC)
+### Enable OpenGL Off-Main-Thread Compositing (OMTC)
 
 **Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
 
 **Note:** Since Firefox version 40 basic software OMTC is enabled by default except on machines mentioned above.
 
-To enable OpenGL OMTC go to `about:config` and set:
-
-*   `layers.acceleration.force-enabled true`
+To enable OpenGL OMTC go to `about:config` and enable `layers.acceleration.force-enabled`.
 
 Restart Firefox for changes to take effect.
 
@@ -87,9 +81,9 @@ If the above changes do not enable GPU acceleration, try setting the environment
 
 For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
 
-#### Set AzureContentBackend to Skia instead of Cairo
+### Set AzureContentBackend to Skia instead of Cairo
 
-**Note:** Since Firefox 51 skia is the default content backend
+**Note:** Since Firefox 51 skia is the default content backend.
 
 [Skia](https://skia.org/) is a 2D open-source graphics library to eventually supersede Cairo as the default Azure backend on Linux.
 
@@ -101,7 +95,7 @@ Restart Firefox for changes to take effect.
 
 To confirm the default Azure backend go to `about:support` and under the "Graphics" section look for "AzureContentBackend" and check if it reports "skia".
 
-#### Enable Accelerated Azure Canvas
+### Enable Accelerated Azure Canvas
 
 **Warning:** Accelerated Azure Canvas may cause invalid/corrupt rendering of images on unsupported devices and/or drivers, see [#Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29).
 
@@ -109,7 +103,7 @@ Go to `about:config`, accept the warning, right click and create a new boolean v
 
 To verify restart Firefox then go to `about:support` and search for `AzureCanvasAccelerated` which should be set to *1*.
 
-#### Stop urlclassifier3.sqlite from being created again
+### Stop urlclassifier3.sqlite from being created again
 
 Removing all `urlclassifier*` files can prevent the use of megabytes of storage in your firefox profile. If you remove all the `urlclassifier*` files, you may find out that `urlclassifier3.sqlite` keeps growing again after a certain time. Here is a simple solution to avoid it for now and ever.
 
@@ -122,33 +116,25 @@ $ chmod 400 urlclassifier3.sqlite
 
 This effectively makes the file empty and then read-only so Firefox cannot write to it anymore.
 
-#### Turn off OCSP validation
-
-OCSP validation may cause Firefox [to become slower](http://news.netcraft.com/archives/2013/04/16/certificate-revocation-and-the-performance-of-ocsp.html) for each (HTTPS) connection to a new server. This is worse, recently, where web gadgets are included in pages via HTTPS (e.g., "like" buttons of the social networks), resulting in many connections for a single URL.
-
-*   Turn off the following option under Preferences -> Advanced -> Certificates -> *"Requests: Use the Online Certificate Status Protocol (OCSP) to confirm the current validity of certificates"*.
-
-**Warning:** Disabling OCSP causes vulnerabilities to man-in-the-middle attacks. If you are using a potentially vulnerable connection such as Wi-Fi or VPN, it is strongly advised to leave OCSP on.
-
-#### Turn off the disk cache
+### Turn off the disk cache
 
 Every object loaded (html pages, jpeg images, css stylesheets, gif banners) is saved in the Firefox cache, to be loaded in the future without to download it again from the server, but only fraction of these objects will be really reused without download (usually the 30%). This because of too short expiration times for the objects, updates or simply the user behavior (to load new pages instead the ones already visited). The Firefox cache is divided in memory and disk cache and using the disk cache results to frequent disk writes, because every time an object loaded it is written to the disk and some older object is removed.
 
 *   Turn on the following option under Preferences -> Advanced -> Network -> *"Cached Web Content: Override automatic cache management"* and specify zero in *"Limit cache to"*.
 
-#### Longer interval to save session
+### Longer interval to save session
 
 The Firefox session store automatically saves the current status (opened urls, cookies, history and bookmarks) to the disk every 15 seconds. It may be too frequent for the user needs, resulting in a frequent disk access.
 
 This setting can be found on the `about:config` page (try searching for *sessionstore*).
 
-*   browser.sessionstore.interval 300000
+*   `browser.sessionstore.interval` 300000
 
 If you want to disable this feature, then you will need to change the following setting from true to false.
 
-*   browser.sessionstore.resume_from_crash false
+*   `browser.sessionstore.resume_from_crash` false
 
-#### Immediate rendering of pages
+### Immediate rendering of pages
 
 Mozilla applications render web pages incrementally - they display what has been received of a page before the entire page has been downloaded. Since the start of a web page normally does not have much useful information to display, Mozilla applications will wait a short interval before first rendering a page. This preference controls that interval. Note that if you are on slower connections (dial up) changing this setting might make web pages load for longer times even though the page appears faster.
 
@@ -156,18 +142,11 @@ This setting can be created in the `about:config` page as
 
 *   nglayout.initialpaint.delay with a value of 0.
 
-#### Referer header control
+### Referrer header control
 
-Firefox as of version 28 has the ability to control how the HTTP Referer header is send. The options are hidden from the GUI configuration, but available through `about:config`. There are [four related keys](http://security.stackexchange.com/a/80194). The source post mentions recommended and default settings. A short description of the recommended setting is given in table, as well as the values to achieve a perfect score on [ip-check.info](https://ip-check.info).
+The HTTP `Referer` header can be extensively configured via `about:config`. See [Security/Referrer](https://wiki.mozilla.org/Security/Referrer) on the Mozilla wiki for the available preferences.
 
-<caption>Suggested values</caption>
-| Key | Recommended | [ip-check.info](https://ip-check.info) | Default | Description |
-| network.http.sendRefererHeader | 1 | 1 | 2 | Only for clicked links (0 disabled completely, 1 send referer on link click, 2 always send; incl. images) |
-| network.http.referer.XOriginPolicy | 1 | 1 | 0 | Only if base domains match (0 always send, 2 only if host matches) |
-| network.http.referer.spoofSource | true | false | false | Send target URI instead |
-| network.http.referer.trimmingPolicy | 2 | 0 | 0 | scheme, host and port (0 full; 1 scheme, host, port and path) |
-
-#### Defragment the profile's SQLite databases
+### Defragment the profile's SQLite databases
 
 **Warning:** This procedure may damage the databases in such a way that sessions are not saved properly.
 
@@ -182,25 +161,25 @@ You can use [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner
 
 Recent (as of H2 2016) versions of Firefox, provide a tool to defragment and optimize the places database, which is the source of most slowdowns and profile corruptions. To access this tool, open the `about:support` page. In the resulting page, search for `Places Database` and click the `Verify Integrity` button.
 
-#### Cache the entire profile into RAM via tmpfs
+### Cache the entire profile into RAM via tmpfs
 
 If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox_on_RAM "Firefox on RAM"), which might result in increased Firefox responsiveness.
 
-#### Turn off sponsored content and tiles
+### Turn off sponsored content and tiles
 
 In `about:config`, set the string value to a blank for both of these: `browser.newtabpage.directory.source` and `browser.newtabpage.directory.ping`. Consider also disabling the tile feature from the tools on a new tab page. A [Wireshark](/index.php/Wireshark "Wireshark") session demonstrates the level of chatter created by these features.
 
-#### Enable Electrolysis
+### Enable Electrolysis
 
-In firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
+In Firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
 
 To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
-#### Enable HTTP Cache
+### Enable HTTP Cache
 
-In `about:config`, set `browser.cache.use_new_backend` from value 0 to 1.
+In `about:config`, set `browser.cache.use_new_backend` to 1.
 
-#### Disable Pocket
+### Disable Pocket
 
 If you don't use the Pocket-service, you may want to disable it by setting `extensions.pocket.enabled` to *false* in `about:config`.
 
@@ -240,7 +219,7 @@ Firefox's user interface can be modified by editing the `userChrome.css` and `us
 
 This section only deals with the `userChrome.css` file which modifies Firefox's user interface, and not web pages.
 
-#### Change the font
+#### Change the interface font
 
 The setting effectively overrides the global GTK+ font preferences, and does not affect webpages, only the user interface itself:
 
@@ -498,8 +477,6 @@ Warning about video displayed in full screen mode ("… is now fullscreen") can 
 
 ## Miscellaneous
 
-Other tips and tweaks.
-
 ### Enable additional media codecs
 
 Before continuing, remember there is a reason some of these variables are not enabled by default, e.g. stability, memory leaks, etc. Go to `about:config` and check the following options:
@@ -674,13 +651,13 @@ Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change per
 
 If you are using the PulseAudio [module-echo-cancel](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation), you probably don't want Firefox to do additional audio post processing.
 
-<caption>To disable audio post processing, set the following parameters</caption>
-| Key | Value | Description |
-| media.getusermedia.aec_enabled | false | AEC = Acoustic Echo Cancellation |
-| media.getusermedia.agc_enabled | false | AGC = Automatic Gain Control |
-| media.getusermedia.noise_enabled | false | Noise suppression. BEWARE: Disabling noise suppression in Firefox may lead to a "Mickey Mouse voice" |
+To disable audio post processing, disable the following preferences:
 
-### Make URL bar behave like Firefox on Windows regarding mouse clicks
+*   `media.getusermedia.aec_enabled` (Acoustic Echo Cancellation)
+*   `media.getusermedia.agc_enabled` (Automatic Gain Control)
+*   `media.getusermedia.noise_enabled` Noise suppression. BEWARE: Disabling noise suppression in Firefox may lead to a "Mickey Mouse voice"
+
+### Make URL bar behave like on Windows regarding mouse clicks
 
 In `about:config`, set the following settings:
 
@@ -696,5 +673,5 @@ This will make a single click in the URL bar select everything, a double click s
 ## See also
 
 *   [MozillaZine Wiki](http://kb.mozillazine.org/Knowledge_Base)
-*   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
+*   [about:config entries MozillaZine article](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)

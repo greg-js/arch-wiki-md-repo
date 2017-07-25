@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Fluxbox](/index.php/Fluxbox "Fluxbox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-07，点击[这里](https://wiki.archlinux.org/index.php?title=Fluxbox&diff=0&oldid=402698)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Fluxbox](/index.php/Fluxbox "Fluxbox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-24，点击[这里](https://wiki.archlinux.org/index.php?title=Fluxbox&diff=0&oldid=462899)可以查看翻译后英文页面的改动。
 
-Fluxbox 是另一个 X11 下的窗口管理器。它基于 Blackbox（现在停止开发） 0.61.1 的代码构建，现在依然在开发中，并且功能显著增强。Fluxbox 占用资源少，速度快，并且提供切换和分组等有趣的窗口管理工具。配置文件简单易懂，便于编辑，有上百种的美化桌面的“主题”。Archlinux 和 Fluxbox 可以让一台 Pentium 800 和 256M 内存的电脑焕发活力。
+Fluxbox 是一个 X11 下的窗口管理器。它基于 Blackbox（现在停止开发） 0.61.1 的代码构建，现在依然在开发中，并且功能显著增强。Fluxbox 占用资源少，速度快，并且提供切换和分组等有趣的窗口管理工具。配置文件简单易懂，便于编辑，有上百种的美化桌面的“主题”。Archlinux 和 Fluxbox 可以让一台 Pentium 800 和 256M 内存的电脑焕发活力。
 
 ## Contents
 
@@ -14,6 +14,7 @@ Fluxbox 是另一个 X11 下的窗口管理器。它基于 Blackbox（现在停�
         *   [3.1.4 手动创建/编辑菜单](#.E6.89.8B.E5.8A.A8.E5.88.9B.E5.BB.BA.2F.E7.BC.96.E8.BE.91.E8.8F.9C.E5.8D.95)
     *   [3.2 Init 文件](#Init_.E6.96.87.E4.BB.B6)
     *   [3.3 热键](#.E7.83.AD.E9.94.AE)
+        *   [3.3.1 声音](#.E5.A3.B0.E9.9F.B3)
     *   [3.4 工作区](#.E5.B7.A5.E4.BD.9C.E5.8C.BA)
     *   [3.5 切换和分组](#.E5.88.87.E6.8D.A2.E5.92.8C.E5.88.86.E7.BB.84)
     *   [3.6 壁纸](#.E5.A3.81.E7.BA.B8)
@@ -32,7 +33,7 @@ Fluxbox 是另一个 X11 下的窗口管理器。它基于 Blackbox（现在停�
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [fluxbox](https://www.archlinux.org/packages/?name=fluxbox)。同时需要安装 [Xorg](/index.php/Xorg "Xorg")。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [fluxbox](https://www.archlinux.org/packages/?name=fluxbox)。
 
 ## 启动 Fluxbox
 
@@ -143,7 +144,7 @@ $ mmaker -f --no-legacy --no-debian FluxBox
 
 ### 热键
 
-Fluxbox 提供基本的热键功能。Fluxbox 热键文件位于 `~/.fluxbox/keys`。 Control 键代表 "Control"。Mod1 对应 Alt 键，Mod4对应 Meta 键（Meta 键不是一个标准按键，经常被映射到 "Win" 键）。当 Fluxbox 安装完成后第一次运行时，Fluxbox 提供一组几乎完成的非常有用的热键。细读精研 `~/.fluxbox/keys` 文件可以增强 Fluxbox 体验。
+Fluxbox 提供基本的热键功能。Fluxbox 热键文件位于 `~/.fluxbox/keys`。 Control 键代表 "Control"。 `Mod1` 对应 Alt 键，`Mod4` 对应 Super 键（Super 键不是一个标准按键，经常被映射到 "Win" 键）。当 Fluxbox 安装完成后第一次运行时，Fluxbox 提供一组几乎完成的非常有用的热键。细读精研 `~/.fluxbox/keys` 文件可以增强 Fluxbox 体验。
 
 例子：快捷的方式来控制扬声器音量：
 
@@ -152,6 +153,10 @@ Control Mod1 Up :Exec amixer set Master,0 5%+
 Control Mod1 Down :Exec amixer set Master,0 5%-
 
 ```
+
+#### 声音
+
+参考 [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture") 和 [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio")。
 
 ### 工作区
 
@@ -165,7 +170,7 @@ Fluxbox 默认提供四个工作区。可以通过 Ctrl+F1-F4 快捷键访问，
 
 在 Fluxbox 种设置壁纸一直很复杂，特别是透明度问题。请参阅 Fluxbox wiki 中 [壁纸设置](http://fluxbox-wiki.org/category/howtos/en/Howto_set_the_background.html) 章节。
 
-在 Archlinux 中设置壁纸最简单的方式是首先检查计算机中是否有壁纸设置程序。
+检查计算机中是否有壁纸设置程序。
 
 ```
 $ fbsetbg -i
@@ -276,7 +281,7 @@ background.colorTo:
 
 Archlinux [AUR](/index.php/AUR "AUR") 中有一套很漂亮的 Fluxbox 主题—"fluxmod-styles"。从 [这里](https://aur.archlinux.org/packages/fluxmod-styles/) 获得。正确安装后将会在 Fluxbox 菜单中的 Fluxbox -> Styles section 中显示。
 
-想要创建自己的 Fluxbox 主题，请参阅 [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide") 和 [主题指南](http://tenr.de/howto/style_fluxbox/style_fluxbox.html)。
+想要创建自己的 Fluxbox 主题，请参阅 [fluxbox-style(5)](http://fluxbox.org/help/man-fluxbox-style.php)， [Fluxbox/Style guide](/index.php/Fluxbox/Style_guide "Fluxbox/Style guide") 和 [主题指南](http://tenr.de/howto/style_fluxbox/style_fluxbox.html)。
 
 如果使用
 
@@ -299,7 +304,7 @@ $ mmaker -f FluxBox
 
 ### Slit
 
-Fluxbox，WindowMaker 和一些轻量的窗口管理器都有 "Slit"，可以是所有程序 "dock" 化。一个 "dock" 化的程序可以锚定在任何工作区上，可以被轻松移动，并且不受任何窗口操作的影响，它基本上是一个小部件，将时钟，系统监视器，天气等 "dock" 化非常有用。参阅 [dockapps.windowmaker.org](http://dockapps.windowmaker.org/)。
+Fluxbox，WindowMaker 和一些轻量的窗口管理器都有 "Slit"，可以是所有程序 "dock" 化。一个 "dock" 化的程序可以锚定在任何工作区上，可以被轻松移动，并且不受任何窗口操作的影响，它基本上是一个小部件，将时钟，系统监视器，天气等 "dock" 化非常有用。参阅 [dockapps.net](http://www.dockapps.net/)。
 
 ### 自启动程序
 
@@ -368,8 +373,7 @@ setxkbmap us -variant intl & # 在 us 键盘中添加特殊字符支持 (类似 
 *   [Fluxbox Homepage](http://fluxbox.org/)
 *   [Fluxbox wiki](http://fluxbox-wiki.org/)
 *   [Gentoo Wiki about Fluxbox](http://wiki.gentoo.org/wiki/Fluxbox)
-*   [Themes for Fluxbox](http://box-look.org/index.php?xcontentmode=7400)
-*   [Fluxbox Style Guide](/index.php/Fluxbox_Style_Guide "Fluxbox Style Guide")
+*   [Themes for Fluxbox](https://www.box-look.org/browse/cat/139/ord/latest/)
 *   [Narada's Fluxbox Guide](https://bbs.archlinux.org/viewtopic.php?id=77729)
 *   The Fluxbox man pages: fluxbox, fluxbox-menu, fluxbox-style, fluxbox-keys, fluxbox-apps, fluxbox-remote, fbsetroot, fbsetbg, fbrun, startfluxbox.
 *   [Arch Linux Fluxbox screenshots](https://bbs.archlinux.org/viewtopic.php?id=90260)

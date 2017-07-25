@@ -74,7 +74,7 @@ El canal actualmente está +q $~a. Esto significa que tienes que registrarte e i
 6.  No pregunte si hay alguien o si alguien usa el programa, solo haz tu pregunta.
 7.  [Haz preguntas inteligentes](http://www.catb.org/~esr/faqs/smart-questions.html). Es más fácil para nosotros ayudar cuando haces preguntas buenas/inteligentes.
 8.  No exijas ayuda, pídela. Espera unos minutos antes de repetir las preguntas. Muchas preguntas son resueltas simplemente por 'otro usuario' como tu.
-9.  No tengas vergüenza, siéntete liber de ayudar a otros, cada usuario tiene algo con lo que contribuir. El canal es un proyecto de la comunidad para dar soporte, y depende de sus voluntarios.
+9.  No tengas vergüenza, siéntete libre de ayudar a otros; cada usuario puede contribuir con algo. El canal es un proyecto de la comunidad para dar soporte, y depende de sus voluntarios.
 10.  Ayúdate a ti mismo antes de preguntar. Usa la [búsqueda del wiki](/index.php/Special:Search "Special:Search"), usa la [búsqueda en el foro](https://bbs.archlinux.org/search.php), lee [páginas de manual (man pages)](/index.php/Man_page "Man page") y prueba con [Google](http://www.google.es). Este método te dará una respuesta más rápida y te enseñará más.
 11.  Cuando pidas ayuda, responde siempre a la gente que te pida más información; si no conoces la respuesta, dilo.
 12.  Da buen ejemplo. La actitud de cada usuario afecta a todos los usuarios en el canal. Se amistoso y educado para mantener un clima placentero y profesional.

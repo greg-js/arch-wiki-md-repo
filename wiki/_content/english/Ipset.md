@@ -4,9 +4,10 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Blocking a list of addresses](#Blocking_a_list_of_addresses)
-    *   [2.2 Making ipset persistent](#Making_ipset_persistent)
-    *   [2.3 Blocking With PeerGuardian and Other Blocklists](#Blocking_With_PeerGuardian_and_Other_Blocklists)
+    *   [2.1 Blocking a list of network](#Blocking_a_list_of_network)
+    *   [2.2 Blocking a list of network](#Blocking_a_list_of_network_2)
+    *   [2.3 Making ipset persistent](#Making_ipset_persistent)
+    *   [2.4 Blocking With PeerGuardian and Other Blocklists](#Blocking_With_PeerGuardian_and_Other_Blocklists)
 *   [3 Other Commands](#Other_Commands)
 *   [4 Optimization](#Optimization)
 
@@ -16,12 +17,19 @@
 
 ## Configuration
 
-### Blocking a list of addresses
+### Blocking a list of network
 
 Start by creating a new "set" of network addresses. This creates a new "hash" set of "net" network addresses named "myset".
 
 ```
 # ipset create myset hash:net
+
+```
+
+or
+
+```
+# ipset -N myset nethash
 
 ```
 
@@ -31,6 +39,7 @@ Add any IP address that you'd like to block to the set.
 # ipset add myset 14.144.0.0/12
 # ipset add myset 27.8.0.0/13
 # ipset add myset 58.16.0.0/15
+# ipset -A myset 1.1.1.0/24
 
 ```
 
@@ -38,6 +47,30 @@ Finally, configure [iptables](/index.php/Iptables "Iptables") to block any addre
 
 ```
 # iptables -I INPUT -m set --match-set myset src -j DROP
+
+```
+
+### Blocking a list of network
+
+Start by creating a new "set" of ip addresses. This creates a new "hash" set of "ip" addresses named "myset-ip".
+
+```
+# ipset create myset-ip hash:ip
+
+```
+
+or
+
+```
+# ipset -N myset-ip iphash
+
+```
+
+Add any IP address that you'd like to block to the set.
+
+```
+# ipset add myset 1.1.1.1
+# ipset -A myset 2.2.2.2
 
 ```
 
@@ -67,10 +100,24 @@ To view the sets:
 
 ```
 
+or
+
+```
+# ipset -L
+
+```
+
 To delete a set named "myset":
 
 ```
 # ipset destroy myset
+
+```
+
+or
+
+```
+# ipset -X myset
 
 ```
 

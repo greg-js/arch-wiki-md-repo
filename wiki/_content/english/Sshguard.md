@@ -79,7 +79,7 @@ To save the rules:
 
 ### systemd
 
-[Enable](/index.php/Enable "Enable") and start the `sshguard.service`. The provided systemd unit uses a blacklist located at `/var/db/sshguard/blacklist.db` and pipes journalctl into sshguard for monitoring.
+[Enable](/index.php/Enable "Enable") and start the `sshguard.service`.
 
 ### syslog-ng
 

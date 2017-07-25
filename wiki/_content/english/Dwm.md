@@ -28,7 +28,7 @@
 
 ## Installation
 
-**Note:** If dwm is not compiled from source, opportunities for customization are lost since dwm's configuration is performed by editing its source code. See [#Configuration](#Configuration) for more information.
+**Note:** Using the precompiled package disallows configuration, since dwm is configured by editing its source code . See [#Configuration](#Configuration) for more information.
 
 [Install](/index.php/Install "Install") the [dwm](https://www.archlinux.org/packages/?name=dwm) package. Alternatively, make changes to the source code, then compile dwm using [ABS](/index.php/ABS "ABS") or the [dwm-git](https://aur.archlinux.org/packages/dwm-git/) package for the development version.
 

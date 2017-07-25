@@ -56,8 +56,8 @@ Other prototypes are found in `/usr/share/pacman` from the pacman and abs packag
 ## Package etiquette
 
 *   Packages should **never** be installed to `/usr/local`
-*   **Do not introduce new variables** into `PKGBUILD` build scripts, unless the package cannot be built without doing so, as these could possibly **conflict** with variables used in makepkg itself.
-*   If a new variable is absolutely required, **prefix the variable name with an underscore** (`_`), e.g. `_customvariable=` 
+*   **Do not introduce new variables or functions** into `PKGBUILD` build scripts, unless the package cannot be built without doing so, as these could possibly **conflict** with variables and functions used in makepkg itself.
+*   If a new variable or a new function is absolutely required, **prefix its name with an underscore** (`_`), e.g. `_customvariable=` 
 *   **Avoid** using `/usr/libexec/` for anything. Use `/usr/lib/$pkgname/` instead.
 *   The `packager` field from the package meta file can be **customized** by the package builder by modifying the appropriate option in the `/etc/makepkg.conf` file, or alternatively override it by creating `~/.makepkg.conf`.
 *   All important messages should be echoed during install using an **.install file**. For example, if a package needs extra setup to work, directions should be included.

@@ -275,12 +275,12 @@ crl-verify /etc/openvpn/server/crl.pem
 
 ## Abbreviated example specifically for containerized Openvpn
 
-This section is specifically for users wanting to run Openvpn in a [LXC](/index.php/LXC "LXC") (Linux container). The code below can be easily pasted into a root shell (the standard hash has been omitted to allow for easy copy/paste operations. It is recommended to have two different shell windows open, one for the host and one for the container.
+This section is specifically for users wanting to run Openvpn in a Linux container ([LXC](/index.php/LXC "LXC")). The code below is designed to be pasted into a root shell; the standard hash has been omitted to allow for easy copy/paste operations. It is recommended to have two different shell windows open, one for the host and one for the container.
 
 **Note:**
 
 *   It is assumed that the CA machine is the host and the server machine is the container.
-*   Both the host and contain need to have both [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) installed.
+*   Both the host and container need to have both [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [easy-rsa](https://www.archlinux.org/packages/?name=easy-rsa) installed.
 *   The container needs to be running.
 *   Define the name of the container in the CONTAINERNAME variable below.
 
@@ -294,7 +294,7 @@ cp /etc/easy-rsa/pki/ca.crt /var/lib/lxc/$CONTAINERNAME/rootfs/etc/openvpn/serve
 
 ```
 
-**Note:** One may substitute other names in the 2nd line of this code (the for loop). At a minimum, one needs to generate a key for the server and for at least 1 client. The generic words "server" and "client" as shown but in reality these can by any words such as the hostname of the container or the name of the intended user. As well, one can add additional words to the for loop if more than 2 keys are needed. If that is the case, just be sure to add corresponding lines to the subsequent steps for each of them.
+**Note:** One may substitute other names in the 2nd line of this code (the for loop). At a minimum, one needs to generate a key for the server and for at least 1 client. The generic words "server" and "client" are shown, but in reality, these can by any words such as the hostname of the container or the name of the intended user. As well, one can add additional words to the for loop if more than 2 keys are needed. If that is the case, just be sure to add corresponding lines to the subsequent steps for each of them.
 
 In the container:
 

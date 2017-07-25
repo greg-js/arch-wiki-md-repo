@@ -1,10 +1,14 @@
-**DAVfs** is a Linux file system driver that allows you to mount a WebDAV server as a disk drive. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources, defined in RFC 4918.
+**DAVfs** is a Linux file system driver that allows you to [mount](/index.php/Mount "Mount") a [WebDAV](/index.php/WebDAV "WebDAV") resource. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources, defined in RFC 4918.
 
 ## Contents
 
 *   [1 Installing DAVfs](#Installing_DAVfs)
-*   [2 Mounting the partition](#Mounting_the_partition)
-*   [3 Mounting as regular user](#Mounting_as_regular_user)
+*   [2 Mount WebDAV-resource](#Mount_WebDAV-resource)
+    *   [2.1 Using command-line](#Using_command-line)
+    *   [2.2 Using systemd](#Using_systemd)
+    *   [2.3 Using fstab](#Using_fstab)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Storing credentials](#Storing_credentials)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Creating/copying files not possible](#Creating.2Fcopying_files_not_possible)
 *   [5 See also](#See_also)
@@ -13,79 +17,97 @@
 
 [Install](/index.php/Install "Install") [davfs2](https://www.archlinux.org/packages/?name=davfs2) from [official repositories](/index.php/Official_repositories "Official repositories").
 
-## Mounting the partition
+## Mount WebDAV-resource
 
-Examples:
-
-```
-# mount.davfs http://localhost:8080/ /mnt/dav
-# mount -t davfs http://localhost:8080/ /mnt/dav
+To list all available mount options:
 
 ```
-
-## Mounting as regular user
-
-Add yourself to network group (where username is replaced with your username):
-
-```
-# usermod -a -G network username
+$ mount.davfs -h
 
 ```
 
-Add webdav entry to /etc/fstab (again, replacing username with your actual username):
+Configuration files are stored under `/etc/davfs2/davfs2.conf` and/or `~/.davfs2/davfs2.conf`.
+
+### Using command-line
 
 ```
-https://webdav.example.com /home/username/webdav davfs user,noauto,uid=username,file_mode=600,dir_mode=700 0 1
-
-```
-
-Create secrets file in your home:
-
-```
-$ mkdir ~/.davfs2/
-$ echo "https://webdav.example.com webdavuser webdavpassword" >> ~/.davfs2/secrets 
-$ chmod 0600 ~/.davfs2/secrets
+# mount.davfs http(s)://address:<port>/path /mount/point
+# mount -t davfs http(s)://addres:<port>/path /mount/point
 
 ```
 
-If you want to mount the webdav directory as root user you have to change ~/.davfs2/secrets in /etc/davfs2/secrets in the second line above.
+### Using systemd
 
-For nextcloud and owncloud the url is:
+To use [systemd mounting](/index.php/Systemd#Mounting "Systemd"):
 
+ `/etc/systemd/system/mnt-webdav-service.mount` 
 ```
-https://webdav.example.com/remote.php/webdav
+[Unit]
+Description=Mount WebDAV Service
+After=network-online.target
+Wants=network-online.target
 
-```
+[Mount]
+What=http(s)://address:<port>/path
+Where=/mnt/webdav/service
+Options=uid=1000,gid=1000,file_mode=0664,dir_mode=2775,grpid
+Type=davfs
+TimeoutSec=15
 
-For box.com, the url is:
-
-```
-https://dav.box.com/dav
-
-```
-
-For STACK, the url is (replace username with your username):
-
-```
-https://username.stackstorage.com/remote.php/webdav
-
-```
-
-If you want to mount several disks from same server, you need specify mount points of this disks instead of server address in file ~/.davfs2/secrets, remember to put the password in double quotes.
-
-```
-/home/username/disk1 webdavuser1 "webdavpassword1"
-/home/username/disk2 webdavuser1 "webdavpassword2"
-.........
-/home/username/diskN webdavuserN "webdavpasswordN" 
+[Install]
+WantedBy=multi-user.target
 
 ```
 
-Now you should be able to mount and unmount ~/webdav:
+See [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") for more tips and tricks when using systemd mount units.
+
+### Using fstab
+
+[Append](/index.php/Append "Append") the following [fstab](/index.php/Fstab "Fstab") entry:
 
 ```
-# mount ~/webdav
-# fusermount -u ~/webdav
+[https://webdav.example/path](https://webdav.example/path) /mnt/webdav davfs uid=username,file_mode=0664,dir_mode=2775 0 0
+
+```
+
+To mount as [user](/index.php/User "User"), add yourself to the *network* [group](/index.php/Group "Group"). Replace *username* with the name of the user:
+
+```
+# gpasswd network -a *username*
+
+```
+
+Mount as user example:
+
+```
+[https://webdav.example/path](https://webdav.example/path) /mnt/webdav davfs user,noauto,uid=username,file_mode=0664,dir_mode=2775 0 0
+
+```
+
+## Tips and tricks
+
+### Storing credentials
+
+Create a *secrets file* to store credentials for a WebDAV-service using `~/.davfs2/secrets` for *user*, and `/etc/davfs2/secrets` for *root*:
+
+ `/etc/davfs2/secrets` 
+```
+http(s)://address:<port>/path username password
+
+```
+
+Make sure the *secrets file* contains the correct [permissions](/index.php/Permissions "Permissions"):
+
+```
+# chmod 600 /etc/davfs2/secrets
+# chown root:root /etc/davfs2/secrets
+
+```
+
+For user mouting:
+
+```
+$ chmod 600 ~/.davfs2/secrets
 
 ```
 
@@ -93,16 +115,9 @@ Now you should be able to mount and unmount ~/webdav:
 
 ### Creating/copying files not possible
 
-If creating/copying files is not possible, while the same operations work on directories, edit `/etc/davfs2/davfs2.conf` and change the following line accordingly:
-
- `/etc/davfs2/davfs2.conf` 
-```
-[...]
-use_locks 0
-[...]
-
-```
+If creating/copying files is not possible, while the same operations work on directories, edit the [configuration file](#Mount_WebDAV-resource) to use `use_locks 0` as option.
 
 ## See also
 
-[http://doc.owncloud.org/server/6.0/user_manual/files/files.html](http://doc.owncloud.org/server/6.0/user_manual/files/files.html)
+*   [http://doc.owncloud.org/server/6.0/user_manual/files/files.html](http://doc.owncloud.org/server/6.0/user_manual/files/files.html)
+*   [http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi/](http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi/)

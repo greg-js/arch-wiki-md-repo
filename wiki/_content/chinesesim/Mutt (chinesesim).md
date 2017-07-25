@@ -1,7 +1,16 @@
+Mutt是一个基于文本的邮件客户端，因其强大的功能而闻名。 Mutt虽然已诞生二十多年了，但仍然是大量用户的首选邮件客户端。
+
+Mutt主要侧重于作为邮件用户代理（MUA），最初是为了查看邮件而编写的。 与其他邮件应用程序相比，稍后实现的功能（检索，发送和过滤邮件）比较简单，因此用户可能希望使用外部应用程序来扩展Mutt的功能。
+
+尽管如此，Arch Linux [mutt](https://www.archlinux.org/packages/?name=mutt)软件包编译支持IMAP，POP3和SMTP协议，从而消除了外部应用程序的必要性。
+
+本文内容包括使用本地IMAP发送和检索邮件，设置如何使用[OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")或[getmail](/index.php/Getmail "Getmail")（POP3协议）来检索邮件，使用[procmail](/index.php/Procmail "Procmail")通过POP3协议过滤邮件，使用[msmtp](/index.php/Msmtp "Msmtp")发送邮件。
+
 ## Contents
 
-*   [1 简介](#.E7.AE.80.E4.BB.8B)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 NeoMutt](#NeoMutt)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
 *   [3 IMAP](#IMAP)
     *   [3.1 内置IMAP](#.E5.86.85.E7.BD.AEIMAP)
     *   [3.2 OfflineIMAP](#OfflineIMAP)
@@ -19,40 +28,59 @@
     *   [7.5 附件的中文文件名显示乱码](#.E9.99.84.E4.BB.B6.E7.9A.84.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E6.98.BE.E7.A4.BA.E4.B9.B1.E7.A0.81)
     *   [7.6 编码问题](#.E7.BC.96.E7.A0.81.E9.97.AE.E9.A2.98)
 
-## 简介
-
-Mutt是一个基于ncurse的Email客戶端。
-
-本文使用：
-
-*   offlineimap 下载IMAP协议的邮件(Mutt内置的IMAP协议无法下载)
-*   [getmail](http://pyropus.ca/software/getmail/) 下载POP3协议的邮件
-*   procmail 过滤邮件
-*   msmtp 发送邮件
-
 ## 安装
 
-通过下列命令进行安装。
+安装 [mutt](https://www.archlinux.org/packages/?name=mutt) 包，或者考虑使用 [#NeoMutt](#NeoMutt) 包代替。
 
- `# pacman -S mutt offlineimap getmail procmail msmtp` 
+可以考虑为IMAP程序安装外部帮助程序，例如 [isync](/index.php/Isync "Isync")，[OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") 或者 [msmtp](/index.php/Msmtp "Msmtp")。
 
-修改配置文件
+如果使用 POP3，安装 [getmail](https://www.archlinux.org/packages/?name=getmail)， [fetchmail](https://www.archlinux.org/packages/?name=fetchmail) 或者 [fdm](https://www.archlinux.org/packages/?name=fdm) 和 [procmail](https://www.archlinux.org/packages/?name=procmail)。
 
- `~/.muttrc` 
+**注意:**
+
+*   如果仅仅使用明文登录认证方式，[libsasl](https://www.archlinux.org/packages/?name=libsasl) 包可以满足要求。
+*   如果使用 CRAM-MD5, GSSAPI 或者 DIGEST-MD5, 安装 [cyrus-sasl-gssapi](https://www.archlinux.org/packages/?name=cyrus-sasl-gssapi) 包。
+*   如果使用 Gmail 作为 SMTP 服务器, 需要安装 [cyrus-sasl](https://www.archlinux.org/packages/?name=cyrus-sasl) 包。
+
+### NeoMutt
+
+[NeoMutt](http://www.neomutt.org/) 项目旨在汇集 Mutt 的所有补丁。它增加了很多[功能](http://www.neomutt.org/feature.html)。许多旧的 Mutt 补丁已经被更新，整理和记录。
+
+AUR 中有许多不同的 mutt 包，每个都提供了不同的补丁，NeoMutt 计划在未来通过适当的编译选项来替代它们。现在，可以在AUR中通过 [neomutt](https://aur.archlinux.org/packages/neomutt/) 和 [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/) 找到NeoMutt。
+
+## 配置
+
+本章节包含 [#IMAP](#IMAP), [#POP3](#POP3), [#Maildir](#Maildir) 和 [#SMTP](#SMTP) 的配置。
+
+Mutt 默认识别两个位置的配置文件： `〜/ .muttrc` 和 `〜/ .mutt / muttrc`。 任何一个配置文件都可以工作。 如果决定将初始化文件放在其他地方，使用
+
 ```
-set mbox_type=Maildir
-set folder=$HOME/.mail
-set spoolfile=~/.mail/
-set header_cache=~/.mail/.hcache
+ `$ mutt -F /path/to/.muttrc`。
+
 ```
 
-spoolfile里要有cur，new和tmp三个文件夹。
+You should also know some prerequisite for Mutt configuration. Its syntax is very close to the Bourne Shell. For example, you can get the content of another config file:
 
- `$ mkdir -p ~/.mail/{cur,new,tmp} ` 
+```
+source /path/to/other/config/file
 
-这是一个最精简的配置文件，能让你访问你的Maildir，并在收件箱（INBOX）中检查新Email。
+```
 
-spoolfile告诉Mutt从本地哪个目录来得到新Email。这里我们改到用户目录下。你还可以添加更多的Spoolfiles，例如邮件列表所在的目录。
+Mutt 配置的语法非常接近Bourne Shell。 例如，可以获取另一个配置文件的内容：
+
+```
+source /path/to/other/config/file
+
+```
+
+可以使用变量并将 shell 命令的结果赋值给变量。
+
+```
+set editor=`echo \$EDITOR`
+
+```
+
+`$` 符号被转义，这样在传递给 shell 之前它不会被 Mutt 替换。 还要注意使用反引号，因为 bash 语法 `$（...）` 不起作用。 Mutt 有很多预定义的变量，但是也可以自己定义变量。用户变量 **必须以 "my" 开头**！
 
 ## IMAP
 

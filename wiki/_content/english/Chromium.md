@@ -18,6 +18,7 @@
     *   [4.4 Distorted GUI](#Distorted_GUI)
     *   [4.5 Disable keyring password prompt](#Disable_keyring_password_prompt)
     *   [4.6 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
+    *   [4.7 Losing cookies when switching between desktop environments](#Losing_cookies_when_switching_between_desktop_environments)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -136,6 +137,10 @@ See [GNOME/Keyring#Passwords are not remembered](/index.php/GNOME/Keyring#Passwo
 ### Chromecasts in the network are not discovered
 
 You will need to enable the Media Router Component Extension in `chrome://flags/#load-media-router-component-extension`.
+
+### Losing cookies when switching between desktop environments
+
+See [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
 
 ## See also
 

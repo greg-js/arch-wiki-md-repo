@@ -1,7 +1,5 @@
 [GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) is "a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications."
 
-**Note:** There are some [#Known issues](#Known_issues).
-
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -30,7 +30,7 @@ Alternatively you can use [WineGW2](http://boxedfox.org/projects/winegw2/) which
 
 ### Radeon gpu users
 
-In case the default [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) driver does yeld low fps you can try catalyst drivers. For installation instructions see [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"). (On HD6670 catalyst drivers give higher fps - 40-50 in open-world and there are no graphical glitches) .
+In case the default [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) driver does yield low fps you can try catalyst drivers. For installation instructions see [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"). (On HD6670 catalyst drivers give higher fps - 40-50 in open-world and there are no graphical glitches) .
 
 As well as that, you will need to install wine with CSMT patch-set applied [wine-staging](https://github.com/wine-compholio/wine-staging/wiki/Installation#-arch-linux) as mouselook in game without it is extremely laggy. After installing you should create 32bit WINEPREFIX and enable CSMT, run:
 
@@ -39,7 +39,7 @@ As well as that, you will need to install wine with CSMT patch-set applied [wine
 
 ```
 
-When winecfg launches, select **staging** tab, and check the checbox "Enable CSMT for better graphic performance", click apply and exit. Run the game by executing launcher with -dx9single flag which fixes various launcher issues:
+When winecfg launches, select **staging** tab, and check the checkbox "Enable CSMT for better graphic performance", click apply and exit. Run the game by executing launcher with -dx9single flag which fixes various launcher issues:
 
 ```
    wine Gw2.exe -dx9single
@@ -71,7 +71,7 @@ if use a 64bit client
 
 ### Patcher/launcher crashes with assertion failed on "m_ioCount"
 
-The best known "fix" for this is to just let it crash and restart it, it should continue on where it left off. Some people reports that the installer crashes when approximately 1 GB has been downloaded but some other people reports crashes every few minutes. This however is rarely a problem when installing patches and only the initial installation poses a challenge, reason why some people just copy the Gw2 installation directory or the Gw2.dat from a Windows installation into the GW2 installation directory in Linux (/wineprefix/GuildWars2/drive_c/Program Files/ArenaNet/Guild Wars 2/) when installing the game.
+The best known "fix" for this is to just let it crash and restart it, it should continue on where it left off. Some people reports that the installer crashes when approximately 1 GB has been downloaded but some other people reports crashes every few minutes. This however is rarely a problem when installing patches and only the initial installation poses a challenge, reason why some people just copy the Gw2 installation directory or the Gw2.dat from a Windows installation into the GW2 installation directory in Linux (`/wineprefix/GuildWars2/drive_c/Program Files/ArenaNet/Guild Wars 2/`) when installing the game.
 
 The percent of the download resets every time the launcher is started, but the amount that has already downloaded is not accounted into this number; just what remains is. The best number correlates with the total download progress is the **Files Remaining**.
 

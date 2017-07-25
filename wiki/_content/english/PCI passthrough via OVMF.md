@@ -147,13 +147,17 @@ This is fine so long as only your guest GPU is included in here, such as above. 
 
 ## Isolating the GPU
 
-Due to their size and complexity, GPU drivers do not tend to support dynamic rebinding very well, so you cannot just have some GPU you use on the host be transparently passed to a VM without consequences. It is generally preferable to bind them with a placeholder driver instead. This will stop other drivers from attempting to claim it, and will force the GPU to remain inactive while a VM is not running. There are two methods for doing this, but it is recommended to use vfio-pci if your kernel supports it.
+In order to assign a device to a virtual machine, this device and all those sharing the same IOMMU group must have their driver replaced by a stub driver or a VFIO driver in order to prevent the host machine from interacting with them. In the case of most devices, this can be done on the fly right before the VM starts.
+
+However, due to their size and complexity, GPU drivers do not tend to support dynamic rebinding very well, so you cannot just have some GPU you use on the host be transparently passed to a VM without having both drivers conflict with each other. Because of this, it is generally advised to bind those placeholder drivers manually before starting the VM, in order to stop other drivers from attempting to claim it.
+
+The following section details how to configure a GPU so those placeholder drivers are bound early during the boot process, which makes said device inactive until a VM claims it or the driver is switched back. This is the prefered method, considering it has less caveats than switching drivers once the system is fully online.
 
 **Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this.
 
 ### Using vfio-pci
 
-Starting with Linux 4.1, the kernel includes vfio-pci, which is functionally similar to pci-stub with a few added bonuses, such as switching devices into their D3 state when they are not in use. If your system supports it, which you can try by running the following command, you should use it. If it returns en error, you will have to rely on pci-stub instead.
+Starting with Linux 4.1, the kernel includes vfio-pci. This is a VFIO driver, meaning it fulfills the same role as pci-stub, but it can also control devices to an extent, such as by switching them into their D3 state when they are not in use. If your system supports it, which you can try by running the following command, you should use it. If it returns an error, use pci-stub instead.
 
  `$ modinfo vfio-pci` 
 ```
@@ -219,7 +223,7 @@ It isn't necessary for all devices (or even expected device) from vfio.conf to b
 
 ### Using pci-stub (legacy method, pre-4.1 kernels)
 
-If your kernel does not support vfio-pci, you can use the pci-stub module instead.
+If your kernel does not support vfio-pci, you can use the pci-stub module instead, which is a dummy driver used to claim a device and prevent other drivers from using it.
 
 Pci-stub normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you would want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
 

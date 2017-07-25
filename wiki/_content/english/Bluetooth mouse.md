@@ -9,6 +9,8 @@ This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetoo
     *   [3.2 Problems with the USB dongle](#Problems_with_the_USB_dongle)
     *   [3.3 Mouse always disconnect](#Mouse_always_disconnect)
     *   [3.4 Failed to set power on: org.bluez.Error.Blocked](#Failed_to_set_power_on:_org.bluez.Error.Blocked)
+    *   [3.5 Apple Magic Mouse scroll speed](#Apple_Magic_Mouse_scroll_speed)
+    *   [3.6 Apple Magic Mouse middle click](#Apple_Magic_Mouse_middle_click)
 
 ## Installation
 
@@ -84,3 +86,33 @@ $ rfkill list
 $ rfkill unblock #
 
 ```
+
+### Apple Magic Mouse scroll speed
+
+If the scroll speed is too slow, you can try
+
+```
+# rmmod hid_magicmouse
+# modprobe hid_magicmouse croll_acceleration=1 scroll_speed=55
+
+```
+
+Scroll speed can be set from 0 to 63.
+
+If the speed suits you, you can make the change permanent in `/etc/modprobe.d/`
+
+ ` /etc/modprobe.d/hid_magicmouse.conf `  `options hid_magicmouse croll_acceleration=1 scroll_speed=55` 
+
+### Apple Magic Mouse middle click
+
+If you find the middle click to be too finicky, you can disable it
+
+```
+# rmmod hid_magicmouse
+# modprobe hid_magicmouse emulate_3button=0
+
+```
+
+If this setting suits you, you can make the change permantent in `/etc/modprobe.d/`
+
+ ` /etc/modprobe.d/hid_magicmouse.conf `  `options hid_magicmouse emulate_3button=0`

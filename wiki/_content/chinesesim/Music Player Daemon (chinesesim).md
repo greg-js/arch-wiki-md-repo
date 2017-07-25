@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Music_Player_Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-01-17，点击[这里](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&diff=0&oldid=352912)可以查看翻译后英文页面的改动。
 
-**[MPD](http://mpd.wikia.com)** (**m**usic **p**layer **d**aemon) 是一个服务器-客户端架构的音频播放器. 功能包括音频播放, 播放列表管理和音乐库维护，所有功能占用的资源都很少. 你需要一个独立的[客户端](#Clients) 与它进行交互
+**[MPD](http://mpd.wikia.com)** (**m**usic **p**layer **d**aemon) 是一个服务器-客户端架构的音频播放器. 功能包括音频播放, 播放列表管理和音乐库维护，所有功能占用的资源都很少. 你需要一个独立的 [客户端](#Clients) 与它进行交互。
 
 ## Contents
 
@@ -29,7 +29,7 @@
 
 安装 [mpd](https://www.archlinux.org/packages/?name=mpd)，或者开发版本—[mpd-git](https://aur.archlinux.org/packages/mpd-git/)。
 
-**注意:** [Mopidy](http://www.mopidy.com) 是另一个选择，其基于插件实现。可以通过 [mopidy](https://www.archlinux.org/packages/?name=mopidy) 和 [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/)获得。注意这不是一个完全的 MPD [代替品](http://docs.mopidy.com/en/latest/ext/mpd/#limitations)。
+**注意:** [Mopidy](http://www.mopidy.com) 是另一个选择，使用 Python 实现。可以通过 [mopidy](https://www.archlinux.org/packages/?name=mopidy) 和 [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/)获得。注意这不是一个完全的 MPD [代替品](http://docs.mopidy.com/en/latest/ext/mpd/#limitations)。Mopidy 与 MPD 相比的优势在于它具有从 Spotify，SoundCloud 和 Google Play Music 等云服务播放音乐的插件。然而，mopidy 项目不是那么活跃，并且许多插件在一段时间内会变得不可用或者很奇怪。
 
 ## 设置
 
@@ -50,21 +50,16 @@ MPD 的配置文件是 `mpd.conf`，运行方式不同，文件的位置也不�
 
 **警告:** 使用 PulseAudio 并且将 mpd 设置为全局配置的用户可能需要 [一个小技巧](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") 来作为自己的用户运行 mpd！
 
-默认的 `/etc/mpd.conf` 将配置保存在 `/var/lib/mpd`，使用 **mpd** 作为默认的用户，然而，默认 `/var/lib/mpd` 的拥有者是 **root** ,我们需要改变拥有者，使 **mpd** 可以写这里：
+The default /etc/mpd.conf keeps the setup in /var/lib/mpd which is assigned to user as well as primary group mpd.
 
-```
-# chown -R mpd /var/lib/mpd
+#### 音乐目录
 
-```
-
-编辑 `/etc/mpd.conf`，将你的音乐目录加入到 `music_directory`：
+音乐目录需要通过 `/etc/mpd.conf` 文件中的 `music_directory` 参数来设置：
 
 ```
 music_directory "/path/to/music"
 
 ```
-
-#### 音乐目录
 
 MPD需要拥有 **所有** 音乐收藏父目录的 `+x` 权限并且可以读包含音乐的目录，这经常与用户的音乐目录的默认设置冲突。
 
@@ -81,7 +76,7 @@ $ chmod 710 /home/<your home dir>
 
 *   采取以下方式将音乐集合放到不同的路径
 
-（a）完全移动 （b）绑定挂载 （c）使用 [Btrfs 子卷](/index.php/Btrfs#Subvolumes "Btrfs")（需要将这一永久改变写入 `/etc/fstab` 中）
+（a）完全移动 （b）绑定挂载 （c）使用 [Btrfs 子卷](/index.php/Btrfs#Subvolumes "Btrfs")（需要将这一永久改变写入 `/etc/fstab` 中）。可以使用 [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") 调整备用目录的权限。
 
 MPD 配置必须仅包含一个目录，如果音乐集包含在多个目录下，那么在 `/var/lib/mpd` 的主音乐目录下创建符号链接。记得为被链接的目录设置相应的权限。
 
@@ -97,33 +92,9 @@ MPD 配置必须仅包含一个目录，如果音乐集包含在多个目录下�
 
 如果你希望监听不同的 UNIX 套接字或者网络端口（甚至是每个类型的多个套接字），或者你完全不希望监听网络端口。你需要 **添加/编辑/删除** `mpd.socket` 文件中 `[Socket]` 章节下的 `"ListenStream="` 行，**并且**更改 `/etc/mpd.conf` 文件中的相应行（具体查看 `man 5 mpd.conf`）。
 
-如果你使用不同（甚至是多种）网络或者本地套接字，或者不希望使用网络套接字，只需要简单的添加，更改或者删除 `[Socket]` 章节下的以 `"ListenStream="` 开头的行。
-
- `/etc/systemd/system/mpd.socket` 
-```
-[Unit]
-Description=Music Player Daemon Sockets
-
-[Socket]
-ListenStream=/var/run/mpd/socket
-ListenStream=6600
-
-[Install]
-WantedBy=sockets.target
-
-```
-
 #### 配置音频
 
-要使 MPD 的声音和其他程序的声音相独立，在 mpd.conf 中取消此开关的注释或添加此开关：
-
- `/etc/mpd.conf` 
-```
-mixer_type			"software"
-
-```
-
-[ALSA](/index.php/ALSA "ALSA") 用户需要做以下设备定义，以便 MPD 客户端和其他程序可以各自单独控制声音。
+[ALSA](/index.php/ALSA "ALSA") 用户需要做以下设备定义，使用声卡名字或者 pcm (aplay --list-pcms) 代替下面的 `My Sound Card` 字段。
 
  `/etc/mpd.conf` 
 ```
@@ -133,6 +104,8 @@ audio_output {
         mixer_type      "software"      # optional
 }
 ```
+
+`mixer_type "software"` 选项告诉 'mpd' 使用自己的独立软件音量控制。
 
 [PulseAudio](/index.php/PulseAudio "PulseAudio") 用户需要做以下修改：
 

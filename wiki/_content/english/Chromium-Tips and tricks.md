@@ -3,7 +3,7 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
 ## Contents
 
 *   [1 Browsing experience](#Browsing_experience)
-    *   [1.1 chrome://xxx](#chrome:.2F.2Fxxx)
+    *   [1.1 chrome:// URLs](#chrome:.2F.2F_URLs)
     *   [1.2 Chromium task manager](#Chromium_task_manager)
     *   [1.3 Chromium overrides/overwrites Preferences file](#Chromium_overrides.2Foverwrites_Preferences_file)
     *   [1.4 Search engines](#Search_engines)
@@ -32,14 +32,15 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
         *   [3.4.2 ScriptSafe](#ScriptSafe)
         *   [3.4.3 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
     *   [3.5 Do Not Track](#Do_Not_Track)
+    *   [3.6 Force a password store](#Force_a_password_store)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
 ## Browsing experience
 
-### chrome://xxx
+### chrome:// URLs
 
-A number of tweaks can be accessed via typing *chrome://xxx* in the URL field. A complete list is available by typing **chrome://chrome-urls** into the URL field. Some of note are listed below:
+A number of tweaks can be accessed via Chrome URLs. See **chrome://chrome-urls** for a complete list.
 
 *   **chrome://flags** - access experimental features such as WebGL and rendering webpages with GPU, etc.
 *   **chrome://extensions** - view, enable and disable the currently used Chromium extensions.
@@ -55,7 +56,7 @@ Shift+ESC can be used to bring up the browser task manager wherein memory, CPU, 
 
 ### Chromium overrides/overwrites Preferences file
 
-If you enabled syncing with a Google Account, then Chromium will override any direct edits to the Preferences file found under `$HOME/.config/chromium/Default/Preferences`. To work around this, start Chromium with the `--disable-sync-preferences` switch:
+If you enabled syncing with a Google Account, then Chromium will override any direct edits to the Preferences file found under `~/.config/chromium/Default/Preferences`. To work around this, start Chromium with the `--disable-sync-preferences` switch:
 
 ```
 $ chromium --disable-sync-preferences
@@ -79,7 +80,7 @@ Make sites like [wiki.archlinux.org](https://wiki.archlinux.org) and [wikipedia.
 
 #### Cache in tmpfs
 
-**Note:** Chromium actually keeps its cache directory **separate** from its browser profile directory.
+**Note:** Chromium stores its cache separate from its browser profile directory.
 
 To limit Chromium from writing its cache to a physical disk, one can define an alternative location via the `--disk-cache-dir=/foo/bar` flag:
 
@@ -345,6 +346,23 @@ Extension is available in the Chrome Web Store: [Vanilla Cookie Manager](https:/
 Chromium's 'Do Not Track' option is turned off by default. To enable it, visit `chrome://settings`, scroll down to **Show advanced settings...** and under **Privacy**, check **Send a "Do Not Track" request with your browsing traffic**.
 
 **Note:** DNT isn't going to stop all web tracking. So even if you turn this feature on, your data may be still collected and analyzed.
+
+### Force a password store
+
+Chromium uses a password store to store your passwords and the *Chromium Safe Storage* key, which is used to encrypt cookie values. [[3]](https://codereview.chromium.org/24734007)
+
+By default Chromium auto-detects which password store to use, which can lead to you apparently losing your passwords and cookies when switching to another desktop environment or window manager.
+
+You can force Chromium to use a specific password store by launching it with the `--password-store` flag with one of following the values [[4]](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_password_storage.md):
+
+*   `gnome`, uses [Gnome Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   `kwallet`, uses [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet")
+*   `basic`, saves the passwords and the cookies' encryption key as plain text in the file `Login Data`
+*   `detect`, the default auto-detect behavior
+
+For example, to force Chromium to use Gnome Keyring in another desktop or WM use `--password-store=gnome`, see [#Making flags persistent](#Making_flags_persistent) for making it permanent.
+
+When using a password store of another desktop environment you probably also want to unlock it automatically see: [GNOME/Keyring#Using the keyring outside GNOME](/index.php/GNOME/Keyring#Using_the_keyring_outside_GNOME "GNOME/Keyring") and [KDE Wallet#Unlock KDE Wallet automatically on login](/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login "KDE Wallet").
 
 ## Making flags persistent
 

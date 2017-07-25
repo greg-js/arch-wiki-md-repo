@@ -1,4 +1,4 @@
-Este artículo pretende ayudar al usuario a crear sus propios paquetes usando el sistema de empaquetado “tipo ports” de Arch Linux. Cubre la creación de un archivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") – un archivo de descripción del paquete empaquetado acompañado del archivo `makepkg` que sirve para crear un archivo binario desde las fuentes. Si ya tiene un [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), favor de leer la wiki de [makepkg](/index.php/Makepkg "Makepkg").
+Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paquetes utilizando el [sistema de compilación](/index.php/Arch_Build_System "Arch Build System") de Arch Linux, asi como subirlos en [AUR](/index.php/AUR "AUR"). Cubre la creación de un [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") - un archivo de descripción de compilación de paquetes originado por `makepkg` para crear un paquete binario desde los archivos fuentes. Si ya está posee un archivo `PKGBUILD`, vea [makepkg](/index.php/Makepkg "Makepkg"). Para obtener instrucciones sobre las normas existentes y las formas de mejorar la calidad del paquete, consulte [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
 
 ## Contents
 
@@ -13,9 +13,10 @@ Este artículo pretende ayudar al usuario a crear sus propios paquetes usando el
         *   [3.2.1 prepare()](#prepare.28.29)
         *   [3.2.2 pkgver()](#pkgver.28.29)
         *   [3.2.3 build()](#build.28.29)
-    *   [3.3 Guías adicionales.](#Gu.C3.ADas_adicionales.)
-*   [4 Probando el PKGBUILD y el paquete](#Probando_el_PKGBUILD_y_el_paquete)
-    *   [4.1 Ldd y namcap](#Ldd_y_namcap)
+        *   [3.2.4 check()](#check.28.29)
+        *   [3.2.5 package()](#package.28.29)
+*   [4 Prueba del PKGBUILD y del paquete](#Prueba_del_PKGBUILD_y_del_paquete)
+    *   [4.1 Comprobación de la sanidad del paquete](#Comprobaci.C3.B3n_de_la_sanidad_del_paquete)
 *   [5 Subir paquetes a AUR](#Subir_paquetes_a_AUR)
 *   [6 Resumen](#Resumen_2)
     *   [6.1 Advertencias](#Advertencias)
@@ -141,33 +142,62 @@ make
 
 **Nota:** : Si su software no necesita construir nada, NO utilice la función `build()`. La función `build()` no es necesaria, pero la La función `package()` si lo es.
 
-### Guías adicionales.
+#### check()
 
-Por favor lea los estándares de empaquetado de Arch para mejores prácticas y consideraciones adicionales.
+Momento para llamar a `make check` para hacer chequeos y rutinas similares de prueba. Es muy recomendable tener `check()`, ya que ayuda a asegurar que el software se ha construido correctamente y funciona bien con sus dependencias.
 
-## Probando el PKGBUILD y el paquete
+Usuarios que no lo necesitan (Y ocasionalmente los mantenedores que no pueden arreglar un paquete para que esto pase) puede inhabilitarlo usando `BUILDENV+=('!check')` en el PKGBUILD/makepkg.conf o llamar `makepkg` con flag `--nocheck`.
 
-Mientras escribe la función `build()` deberá probar los cambios con frecuencia para asegurarse de que no haya fallas. Puede hacerlo utilizando el comando `makepkg` en el directorio donde se encuentre el archivo `PKGBUILD`. Con un `PKGBUILD` correctamente compuesto `makepkg` será capaz de crear un paquete, con un `PKGBUILD` incorrecto o roto `PKGBUILD` mostrara un error.
+#### package()
 
-Si `makepkg` finaliza correctamente, creara un archivo llamado `pkgname-pkgver.pkg.tar.xz` en su directorio de trabajo. Este paquete puede ser instalado con el comando `pacman -U`. Sin embargo solo por que un paquete haya sido correctamente construido esto no implica que sea completamente funcional, es concebible que contenga solo el directorio y ningún archivo si por ejemplo, un prefijo fue especificado incorrectamente. Puede utilizar las herramientas de consulta de pacman para ver la lista de archivos contenidos en el paquete y las dependencias que puede requerir con `pacman -Qlp [nombre del paquete]` y `pacman -Qip [nombre del paquete]`
-
-Si el paquete se ve sano, entonces ha terminado!, sin embargo si va a publicar el `PKGBUILD`, es imperativo que revise y vuelva a revisar el contenido de la variable depends.
-
-También asegúrese de que el software ejecute sin ningún fallo. Es molesto que al publicar un paquete que contenga todos los archivos necesarios deje de funcionar por alguna opción en alguna configuración obsoleta que ya no funciona en relación con el resto del sistema. Si solo va a compilar paquetes solo para su sistema, entonces no tendrá que preocuparse mucho de este procedimiento de seguranza de calidad, al final de cuentas solo usted sufrirá las consecuencias de una mala configuración.
-
-### `Ldd` y `namcap`
-
-Las dependencias incumplidas son el error más común del empaquetado. Hay dos excelentes herramientas para verificar el cumplimiento de las dependencias. La primera es *ldd* que mostrara las dependencias compartidas de librerías de ejecutables:
+El paso final es poner los archivos compilados en un directorio donde *makepkg* puede recuperarlos para crear un paquete. Por defecto es el directorio `pkg` - un simple entorno fakeroot. El directorio `pkg` replica la jerarquía del sistema de archivos raíz de las rutas de instalación del software. Si tiene que colocar manualmente los directorios raíz de su sistema de archivos, debe instalarlos en el directorio `pkg` bajo la misma estructura de directorios. Por ejemplo, si desea instalar un archivo en `/usr/bin`, debe colocarse en `$pkgdir/usr/bin`. Muy pocos procedimientos de instalación requieren que el usuario copie docenas de archivos manualmente. En su lugar, la mayoría de software `make install` lo hará. La última línea debe ser similar a la siguiente para poder instalar correctamente el software en el directorio `pkg`:
 
 ```
-$ ldd gcc
-linux-gate.so.1 =>  (0xb7f33000)
-libc.so.6 => /lib/libc.so.6 (0xb7de0000)
-/lib/ld-linux.so.2 (0xb7f34000)
+make DESTDIR="$pkgdir/" install
 
 ```
 
-La otra herramienta es *namcap*, que solo verifica por las dependencias y no por la sanidad del todo el paquete en si. Por favor lea el artículo sobre namcap para mayores referencias.
+**Nota:** : A veces está el caso en que `DESTDIR` no se utiliza en el `Makefile`; puede que tenga que usar `prefix` en su lugar. Si el paquete está construido con *autoconf* / *automake*, use `DESTDIR`; esto es lo que se documenta en los [manuales](https://www.gnu.org/software/automake/manual/automake.html#Install). Si `DESTDIR` no funciona, trate de construir con `make prefix="$pkgdir/usr/" install`. Si eso no funciona, tendrá que buscar más en los comandos de instalación que son ejecutados por "`make <...> install`".
+
+En algunos casos raros, el software espera ejecutarse desde un único directorio. En tales casos, es aconsejable simplemente copiarlos `$pkgdir/opt`.
+
+A menudo, el proceso de instalación del software creará subdirectorios debajo del directorio `pkg`. Si no lo hace, *makepkg* generará muchos errores y necesitará crear manualmente subdirectorios añadiendo los comandos apropiados de `mkdir -p` en la función `build()` antes de ejecutar el procedimiento de instalación.
+
+En los paquetes antiguos, no había ninguna función `package()`. Por lo tanto, los archivos se colocaban en el directorio *pkg* al final de la función `build()`. Si `package()` no está presente, `build()` se ejecuta a través de *fakeroot*. En paquetes nuevos, `package()` es necesario y se ejecuta a través de *fakeroot* en su lugar, y `build()` se ejecuta sin privilegios especiales.
+
+`makepkg --repackage` ejecuta sólo la función `package()`, por lo que crea un archivo `*.pkg.*` archivo sin compilar el paquete. Esto puede ahorrar tiempo, e.g. si acaba de cambiar las variables `depends` del paquete.
+
+**Nota:** La función `package()` es la única función requerida en un PKGBUILD. Si sólo debe copiar archivos en sus respectivos directorios para instalar un programa, no lo ponga en la función `build()`, póngalo en la función `package()`.
+
+**Nota:** Crear enlaces simbólicos es un proceso un poco incómodo en la función `package()`. Utilizando el enfoque ingenuo `ln -s "${pkgdir}/from/foo" "${pkgdir}/to/goo"` resultará en un enlace simbólico roto al directorio de compilación. La manera correcta de crear una link es crearlo apuntando a una fuente inicialmente rota, `ln -s "/from/foo" "${pkgdir}/to/goo"`. Una vez instalado el paquete, el enlace apuntará al lugar correcto.
+
+## Prueba del PKGBUILD y del paquete
+
+Al escribir la función `build()`, querrá probar sus cambios frecuentemente para asegurarse de que no haya errores. Puedes hacerlo usando el comando `makepkg` en el directorio que contiene el archivo `PKGBUILD`. Con un `PKGBUILD` correctamente formateado, makepkg creará un paquete; con un `PKGBUILD` roto o inacabado, provocará un error.
+
+Si makepkg finaliza correctamente, colocará un archivo denominado `pkgname-pkgver.pkg.tar.xz` en su directorio de trabajo. Este paquete puede ser instalado con el comando `pacman -U`. Sin embargo, sólo porque un archivo de paquete fue construido no implica que es totalmente funcional. Eso 11 Posiblemente sólo contenga el directorio y ningún archivo en si, por ejemplo, un prefijo se especificó incorrectamente. Puedes usar las funciones de consulta de pacman para mostrar una lista de archivos contenidos en el paquete y las dependencias que requiere con p`pacman -Qlp [package file]` y `pacman -Qip [package file]`, respectivamente.
+
+¡Si el paquete parece sano, entonces usted a terminado! Sin embargo, si planea liberar el archivo `PKGBUILD`, es imperativo que compruebe y compruebe de nuevo el contenido de la matriz de `dependencias`.
+
+También asegúrese de que los binarios del paquete realmente *funcionan* perfectamente! Es molesto liberar un paquete que contiene todos los archivos necesarios, pero se bloquea Debido a alguna opción de configuración poco clara que no funciona bien con el resto del sistema. Si solo va a compilar paquetes para su propio sistema, entonces usted no necesita preocuparse demasiado sobre este paso de aseguramiento de calidad, después de todo es la única persona que sufre de errores.
+
+### Comprobación de la sanidad del paquete
+
+Después de comprobar la funcionalidad del paquete, compruebe si hay errores con namcap:
+
+```
+$ namcap PKGBUILD
+$ namcap *<package file name>*.pkg.tar.xz
+
+```
+
+Namcap deberá:
+
+1.  Comprobar el contenido de PKGBUILD para buscar errores comunes y la jerarquía de archivos de paquetes para archivos innecesarios/extraviados.
+2.  Escanea todos los archivos ELF en el paquete usando ldd, informando automáticamente qué paquetes con las bibliotecas compartidas requeridas faltan de las dependencias y que se pueden omitir como dependencias transitivas.
+3.  Búsqueda heurística de dependencias perdidas y redundantes.
+
+y mucho más. Adquiera el hábito de revisar sus paquetes con namcap para evitar tener que arreglar los errores más simples después de la subida del paquete.
 
 ## Subir paquetes a AUR
 
@@ -184,4 +214,5 @@ Por favor lea [Arch User Repository#Submitting packages](/index.php/Arch_User_Re
 
 ### Advertencias
 
-Antes de automatizar el proceso de construcción de paquetes, deberá haberlo hecho por lo menos una vez de manera manual para saber de antemano exactamente lo que esta haciendo. Desafortunadamente muchos autores de paquetes se apegan al proceso de 3 pasos de `./configure, make make install`, este no es siempre el caso y puede quedar un paquete en muy malas condiciones si no aplica el cuidado necesario para que todo funcione bien. En algunos pocos casos, los paquetes no son disponibles en código fuente y habrá que recurrir a scripts como `sh instalador.run` para poder ejecutarlo, habrá de hacer una extensa investigación acerca de otros `PKGBUILD`, leer los `README`, buscar información del creador del programa, o buscar `EBUILDS` de Gentoo para poder ejecutar la instalación, recuerde que makepkg debe ser completamente automático y sin intervención del usuario.
+*   Antes de automatizar el proceso de construcción de paquetes, deberá haberlo hecho por lo menos una vez de manera manual para saber de antemano exactamente lo que esta haciendo. Desafortunadamente muchos autores de paquetes se apegan al proceso de 3 pasos de `./configure, make make install`, este no es siempre el caso y puede quedar un paquete en muy malas condiciones si no aplica el cuidado necesario para que todo funcione bien.
+*   En algunos pocos casos, los paquetes no son disponibles en código fuente y habrá que recurrir a scripts como `sh instalador.run` para poder ejecutarlo, habrá de hacer una extensa investigación acerca de otros `PKGBUILD`, leer los `README`, buscar información del creador del programa, o buscar `EBUILDS` de Gentoo para poder ejecutar la instalación, recuerde que makepkg debe ser completamente automático y sin intervención del usuario.

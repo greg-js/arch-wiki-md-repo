@@ -55,7 +55,7 @@ If you are interested in taking a class on a particular topic, list it below.
 
 If you want to teach a class, the first thing you need is a topic. There is no limit other than it should be interesting to Arch Linux users and that it can be presented over IRC. See the list of requested classes on this page for ideas. You can also teach the same topic as one of the previous classes.
 
-If you are interested in teaching, contact one of the [coordinators](https://archwomen.org/wiki/projects:classroom:start#coordinators), or [User:Meskarune](/index.php/User:Meskarune "User:Meskarune") who will guide you in creating a class. The following sections outline the process. Also see the [administration page](https://archwomen.org/wiki/projects:classroom:start) on the Arch Women wiki.
+If you are interested in teaching, contact one of the [coordinators](https://archwomen.org/wiki/projects:classroom:admin#coordinators), or [User:Meskarune](/index.php/User:Meskarune "User:Meskarune") who will guide you in creating a class. The following sections outline the process. Also see the [administration page](https://archwomen.org/wiki/projects:classroom:start) on the Arch Women wiki.
 
 ### Create content
 

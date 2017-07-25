@@ -1,5 +1,3 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [JFS](/index.php/JFS "JFS"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=JFS&diff=0&oldid=482820).
-
 This article introduces the reader to the JFS file system. In particular, procedures for implementation, maintenance and optimization will be presented along with background information on the file system itself and some cautionary notes on precarious implementations.
 
 ## Contents

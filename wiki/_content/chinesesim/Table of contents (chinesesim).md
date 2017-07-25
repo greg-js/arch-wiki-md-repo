@@ -20,7 +20,7 @@
 | <small>2.6.</small> [文件管理器](/index.php/Category:File_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File managers (简体中文)") <small>(3)</small> |
 | <small>2.7.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(6)</small> |
 | <small>2.8.</small> [图形和排版](/index.php/Category:Graphics_and_desktop_publishing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (简体中文)") <small>(4)</small> |
-| <small>2.9.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(15) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>2.9.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>2.9.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
 | <small>2.9.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
 | <small>2.9.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
@@ -68,7 +68,7 @@
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(2)</small> |
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
-| <small>6.4.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(15) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
+| <small>6.4.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
 | <small>6.4.1.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
 | <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
 | <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
@@ -99,7 +99,7 @@
 | <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(26)</small> |
 | <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(25)</small> |
 | <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(7)</small> |
-| <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(25)</small> |
+| <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(26)</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(5)</small> |
 | <small>8.1.</small> [音频/视频](/index.php/Category:Audio/Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio/Video (简体中文)") <small>(12)</small> |
 | <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(13)</small> |

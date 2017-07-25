@@ -53,7 +53,7 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)
 
-*   **maim** — A simple command line utility that takes screenshots using imlib2\. It's meant to replace scrot and performs better than scrot in many ways.
+*   **maim** — A simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
 
 	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
 

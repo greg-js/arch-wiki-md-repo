@@ -123,7 +123,7 @@ Sometimes called "newbie distros", the beginner-friendly distributions share a l
 
 *   [Linux Mint](http://www.linuxmint.com/) was born as an [Ubuntu](#Ubuntu) derivative, and later added the LMDE (Linux Mint Debian Edition) that is instead based on [#Debian](#Debian). On the other hand, Arch is an independent distribution that relies on its own [build system](/index.php/ABS "ABS") and [repositories](/index.php/Repositories "Repositories").
 *   Mint includes several graphical tools for easier maintenance, called *MintTools*. Arch only provides simple command-line tools like [pacman](/index.php/Pacman "Pacman") and leaves system management to be organized by the user.
-*   Mint mainly ships with [Cinnamon](/index.php/Cinnamon "Cinnamon") or [MATE](/index.php/MATE "MATE") as its GUI, and alternatively [KDE](/index.php/KDE "KDE") or [Xfce4](/index.php/Xfce4 "Xfce4"), plus codecs, flash, DVD playback and MP3 support, some of which are proprietary software.
+*   Mint mainly ships with [Cinnamon](/index.php/Cinnamon "Cinnamon") or [MATE](/index.php/MATE "MATE") as its GUI, and alternatively [KDE](/index.php/KDE "KDE") or [Xfce4](/index.php/Xfce4 "Xfce4").
 *   New versions of Mint are released every six months, about a month after Ubuntu. Each release is based on the most recent Ubuntu LTS and is supported for five years. Linux Mint Debian Edition (LMDE) is based on Debian Stable and only receives updates in Mint packages and security updates. Arch is instead a full rolling-release distribution.
 
 ### openSUSE

@@ -211,7 +211,7 @@ From the preferences for Cookie Monster select "Block All Cookies". Once this is
 
 To do this open RefControl's preferences and change the setting for "Default for sites not listed:" to <Block>.
 
-**Note:** Firefox has options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referer header control](/index.php/Firefox_tweaks#Referer_header_control "Firefox tweaks").
+**Note:** Firefox has options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referrer header control](/index.php/Firefox_tweaks#Referrer_header_control "Firefox tweaks").
 
 ### RequestPolicy
 

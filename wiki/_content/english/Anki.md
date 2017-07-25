@@ -3,6 +3,7 @@
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Older versions](#Older_versions)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Kanji stroke support](#Kanji_stroke_support)
     *   [2.2 Asian language support](#Asian_language_support)
@@ -11,6 +12,10 @@
 ## Installation
 
 [Install](/index.php/Install "Install") the [anki](https://www.archlinux.org/packages/?name=anki) package.
+
+For the development version, install the [anki-git](https://aur.archlinux.org/packages/anki-git/) package.
+
+### Older versions
 
 If you prefer to use version 1.2, [install](/index.php/Install "Install") the [anki12](https://aur.archlinux.org/packages/anki12/) package, or if you prefer to use version 2.0, [install](/index.php/Install "Install") the [anki20-bin](https://aur.archlinux.org/packages/anki20-bin/) package.
 

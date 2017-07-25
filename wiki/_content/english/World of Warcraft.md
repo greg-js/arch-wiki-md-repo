@@ -33,11 +33,11 @@ See [Wine](/index.php/Wine "Wine").
 
 ## Installing the game
 
-Install the Battle.net client, as described in [Battle.net](/index.php/Battle.net "Battle.net"). You can then install World of Warcraft from within the client.
+Install the Blizzard App, as described in [Blizzard App](/index.php/Blizzard_App "Blizzard App"). You can then install World of Warcraft from within the client.
 
 ### Using an existing installation
 
-After installing the Battle.net client, you can choose "Locate the game" in the bottom of the screen, and point to the existing install location. You can also point to an installation on a mounted Windows drive.
+After installing the Blizzard App, you can choose "Locate the game" in the bottom of the screen, and point to the existing install location. You can also point to an installation on a mounted Windows drive.
 
 ### New installation from DVD
 

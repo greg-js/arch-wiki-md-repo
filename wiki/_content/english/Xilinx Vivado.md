@@ -13,6 +13,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 libncurses.so.5 not found](#libncurses.so.5_not_found)
     *   [4.2 Synthesis segfaults](#Synthesis_segfaults)
+    *   [4.3 Vivado HLS testbench error with GCC](#Vivado_HLS_testbench_error_with_GCC)
 
 ## Prerequisites
 
@@ -149,3 +150,19 @@ After obtaining the package, simply extract `/usr/lib/libncurses.*` to `/opt/Xil
 See [https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-performing-synthesis/td-p/706847](https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-performing-synthesis/td-p/706847)
 
 You'll need to recompile glibc (just take the PKGBUILD from the abs) with `--disable-lock-elision`. Instead of patching the system libc in /usr/lib, copy the newly compiled `libpthread-2.25.so` and `libc-2.25.so` to `/opt/Xilinx/Vivado/2016.4/ids_lite/ISE/lib/lin64` Don't forget to repeat this when glibc gets upgraded.
+
+### Vivado HLS testbench error with GCC
+
+See [https://forums.xilinx.com/t5/High-Level-Synthesis-HLS/Testbench-error-with-gcc/td-p/756773](https://forums.xilinx.com/t5/High-Level-Synthesis-HLS/Testbench-error-with-gcc/td-p/756773)
+
+This error has been observed in Vivado 2016.4, 2017.1, and 2017.2.
+
+Download an older version of GCC of GCC (2.17 or 2.18) and unpack it. Copy `glibc-2.17/misc/sys/cdefs.h` to `$HLS_install_directory/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/sys/` directory.
+
+Open `$HLS_install_directory/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h` and add the following:
+
+ `$HLS_install_directory/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h` 
+```
+/* Whether to use feature set F.  */
+#define __GLIBC_USE(F)  __GLIBC_USE_ ## F
+```

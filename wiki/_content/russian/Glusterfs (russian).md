@@ -1,60 +1,60 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Glusterfs](/index.php/Glusterfs "Glusterfs"). Дата последней синхронизации: 28 февраля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Glusterfs&diff=0&oldid=469318).
+**Состояние перевода:** На этой странице представлен перевод статьи [Glusterfs](/index.php/Glusterfs "Glusterfs"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Glusterfs&diff=0&oldid=482799).
 
-[Glusterfs](https://www.gluster.org/) is a scalable network [filesystem](/index.php/Filesystem "Filesystem").
+[Glusterfs](https://www.gluster.org/) - это масштабируемая сетевая [файловая система.](/index.php/File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "File systems (Русский)").
 
-## Installation
+## Установка
 
-[Install](/index.php/Install "Install") the package [glusterfs](https://www.archlinux.org/packages/?name=glusterfs).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [glusterfs](https://www.archlinux.org/packages/?name=glusterfs).
 
-## Configuration
+## Настройка
 
-Glusterfs can be setup to run in many different configurations depending operating needs, including distributed and replicated. For the example below, a two node replicated server is being created, with nodes gluster1 and gluster2 each have two disks, one containing the OS sda, the other to be shared by glusterfs sdb. Unless stated all setup is carried on gluster1
+Glusterfs можно настроить для работы во многих различных конфигурациях в зависимости от потребностей, включая распределенные и реплицированные. В приведенном ниже примере создается реплицируемый сервер с двумя узлами, каждый из которых имеет узлы gluster1 и gluster2, каждый из которых имеет два диска, один из которых содержит ОС sda, а другой - совместно используемый glusterfs sdb. Если не указано, что все настройки выполняются на gluster1
 
-*   [Start/enable](/index.php/Start/enable "Start/enable") the gluster daemon `glusterd.service` on both servers.
+*   [Запустите/включите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5/%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Запустите/включите") демон gluster `glusterd.service` на обоих серверах.
 
-*   Connect the servers
+*   Подключитесь к серверам
 
 ```
  # gluster peer probe gluster2
 
 ```
 
-*   Partition and format the glusterfs drive on both servers
-    *   The upstream advises creating a single partition and formatting this as xfs
+*   Разметка и форматирование диска glusterfs на обоих серверах
+    *   Upstream советует создать один раздел и отформатировать его как xfs
 
-*   On both servers automount the drives by [appending](/index.php/Append "Append") `/etc/fstab` to include the following line, where `/dev/sd*XY*` is the appropriate device (e.g., `/dev/sdb1`).
+*   На обоих серверах автомонтируйте диски, [добавив](/index.php/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D1%8C%D1%82%D0%B5 "Добавьте") `/etc/fstab`, чтобы включить следующую строку, где `/dev/sd*XY*` является подходящим устройством (например, `/dev/sdb1`).
 
  `/etc/fstab`  `/dev/sd*XY* /export/sd*XY* xfs defaults 0 0` 
 
-*   On both servers [mount](/index.php/Mount "Mount") the drives. Then create a "brick":
+*   На обоих серверах [смонтируйте](/index.php/%D0%A1%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5 "Смонтируйте") диски. Затем создайте "brick":
 
 ```
  # mkdir -p /export/sd*XY*/brick
 
 ```
 
-*   Enable replication on primary server
+*   Включите репликацию на основном сервере
 
 ```
  # gluster volume create gv0 replica 2 gluster1.mydomain.net:/export/sdb1/brick gluster2.mydomain.net:/export/sdb1/brick
 
 ```
 
-*   Ensure volume is created correctly
+*   Убедитесь, что том создан правильно
 
 ```
  # gluster volume info
 
 ```
 
-*   Start volume
+*   Запустите том
 
 ```
  # gluster volume start gv0
 
 ```
 
-## See also
+## Смотрите также
 
-*   [Official glusterfs installation guide](http://gluster.readthedocs.io/en/latest/Install-Guide/Overview/)
-*   [Blog covering the setup of Glusterfs on Arch Linux](https://blog.bastelfreak.de/2016/05/short-tip-setup-glusterfs-share-on-arch-linux/)
+*   [Официальное руководство по установке glusterfs](http://gluster.readthedocs.io/en/latest/Install-Guide/Overview/)
+*   [Блог, посвященный настройке Glusterfs на Arch Linux](https://blog.bastelfreak.de/2016/05/short-tip-setup-glusterfs-share-on-arch-linux/)

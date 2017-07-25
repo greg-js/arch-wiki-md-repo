@@ -11,10 +11,6 @@
         *   [4.2.1 SQLite](#SQLite)
         *   [4.2.2 PostgreSQL](#PostgreSQL)
         *   [4.2.3 MariaDB](#MariaDB)
-    *   [4.3 SMTP](#SMTP)
-    *   [4.4 oAuth](#oAuth)
-    *   [4.5 Logging](#Logging)
-    *   [4.6 Caching](#Caching)
 *   [5 Theme](#Theme)
 *   [6 Restart after Upgrade](#Restart_after_Upgrade)
 *   [7 SSH port](#SSH_port)
@@ -83,14 +79,6 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb) and setup a 
 ```
 
 On the installation page select **mysql** and insert your configured user, password and database name.
-
-### SMTP
-
-### oAuth
-
-### Logging
-
-### Caching
 
 ## Theme
 

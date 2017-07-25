@@ -194,3 +194,5 @@ If you like crontabs just because they provide a unified view of all scheduled j
 *   **systemd-cron** — provides systemd units to run cron scripts; using *systemd-crontab-generator* to convert crontabs
 
 	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)
+
+*   [Freedesktop's Systemd Wiki Page](https://www.freedesktop.org/software/systemd/man/systemd.timer.html) on *timer unit configurations*

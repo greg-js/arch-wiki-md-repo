@@ -181,7 +181,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 	[http://wiki.lxde.org/en/LXAppearance](http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
-*   **Oo-mox** — Graphical application for generating different color variations of Numix theme (GTK2, GTK3) and gnome-colors icon theme.
+*   **Oo-mox** — Graphical application for generating different color variations of Numix theme (GTK2, GTK3), Archdroid and gnome-colors icon themes.
 
 	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox](https://aur.archlinux.org/packages/oomox/)
 

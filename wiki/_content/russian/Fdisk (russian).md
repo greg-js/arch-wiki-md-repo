@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Fdisk](/index.php/Fdisk "Fdisk"). Дата последней синхронизации: 22 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=482659).
+
 [util-linux fdisk](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table.
 
 [GPT fdisk](http://www.rodsbooks.com/gdisk/), as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
