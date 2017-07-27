@@ -268,7 +268,7 @@ If you receive this message directly after attempting to use *sshfs*:
 
 ### Freezing apps (e.g. Gnome Files, Gedit)
 
-**Note:** This prevents the recently used file list from being populated and may lead to possible write errors.
+**Warning:** This prevents the recently used file list from being populated and may lead to possible write errors.
 
 If you experience freezing/hanging (stopped responding) applications, you may need to disable write-access to the `~/recently-used.xbel` file.
 

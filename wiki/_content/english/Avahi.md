@@ -18,7 +18,7 @@ From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software)
         *   [3.2.1 NFS](#NFS)
         *   [3.2.2 Samba](#Samba)
         *   [3.2.3 Vsftpd](#Vsftpd)
-    *   [3.3 Airprint from Mobile Devices](#Airprint_from_Mobile_Devices)
+    *   [3.3 AirPrint from Mobile Devices](#AirPrint_from_Mobile_Devices)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -97,9 +97,9 @@ Alternatively, run `avahi-autoipd`:
 
 Avahi advertises the services whose `*.service` files are found in `/etc/avahi/services`. If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own.
 
-As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per [RFC 865](//tools.ietf.org/html/rfc865) on TCP port `17` which you are running on your machine
+As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per RFC 865 on TCP port `17` which you are running on your machine
 
-The first thing to do is to determine the `<type>`. avahi.service(5) indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and [RFC 865](//tools.ietf.org/html/rfc865)) is `17`.
+The first thing to do is to determine the `<type>`. avahi.service(5) indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC 865) is `17`.
 
 Our service file is thus:
 
@@ -183,7 +183,7 @@ Create a `.service` file in `/etc/avahi/services` with the following contents:
 
 The FTP server should now be advertised by Avahi. You should now be able to find the FTP server from a file manager on another computer in your network. You might need to enable [#Hostname resolution](#Hostname_resolution) on the client.
 
-### Airprint from Mobile Devices
+### AirPrint from Mobile Devices
 
 Avahi along with [CUPS](/index.php/CUPS "CUPS") also provides the capability to print to just about any printer from airprint compatible mobile devices. In order to enable print capability from your device, simply create an Avahi service file for your printer in `/etc/avahi/services/`. An example of a generic services file for an HP-Laserjet printer would be similar to the following with the `name`, `rp`, `ty`, `adminurl` and `note` fields changed.
 

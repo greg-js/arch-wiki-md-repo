@@ -10,8 +10,10 @@
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
     *   [2.3 TrackPoint Scrolling](#TrackPoint_Scrolling)
-    *   [2.4 Lenovo ThinkPad USB-C Dock](#Lenovo_ThinkPad_USB-C_Dock)
-    *   [2.5 Thunderbolt 3 Dock](#Thunderbolt_3_Dock)
+    *   [2.4 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
+        *   [2.4.1 Ethernet](#Ethernet)
+        *   [2.4.2 USB](#USB)
+    *   [2.5 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
 
 ## Model description
 
@@ -80,7 +82,7 @@ TrackPoint Scrolling is working out of the box in GNOME and MATE. In some Window
 
  `xinput set-prop "ImPS/2 Generic Wheel Mouse" "libinput Scroll Method Enabled" 0 0 1` 
 
-### Lenovo ThinkPad USB-C Dock
+### Lenovo ThinkPad Thunderbolt 3 Dockingstation
 
 The USB-C Dock is a Thunderbolt 3 device. Plugging it in results in a whole lot of PCI entries:
 
@@ -94,7 +96,11 @@ The USB-C Dock is a Thunderbolt 3 device. Plugging it in results in a whole lot 
 
 ```
 
-It works nearly perfect out of the box with Kernel 4.10.13\. The only thing that did not work is the r8152 based USB Ethernet Port, which gives the message:
+The dock works nearly perfect out of the box with Kernel 4.10.13\. Even hot plugging works: unplugging the dock while a display is connected just lets all the devices disappear. Replugging it later works, all the USB devices come back up automagically, thought you might need to issue a xrandr to get the display showing again (tested with Xorg based i3 setup).
+
+#### Ethernet
+
+The r8152 based USB Ethernet Port does not work out of the box. It gives the message:
 
 ```
 [    7.574773] r8152 4-1.1:1.0 (unnamed net_device) (uninitialized): Unknown version 0x6010
@@ -103,8 +109,10 @@ It works nearly perfect out of the box with Kernel 4.10.13\. The only thing that
 
 Installing [r8152-dkms](https://aur.archlinux.org/packages/r8152-dkms/) fixes this (the DKMS module adds the version 0x6010 to the module).
 
-Even hot plugging works: unplugging the dock while a display is connected just lets all the devices disappear. Replugging it later works, all the USB devices come back up automagically, thought you might need to issue a xrandr to get the display showing again (tested with Xorg based i3 setup).
+#### USB
 
-### Thunderbolt 3 Dock
+Remember to enable USB over Thunderbolt in BIOS under "Config", or USB peripherals connected to the dock won't work.
+
+### HP Thunderbolt 3 Dock
 
 The HP Thunderbolt 3 Dock is working out of the box.

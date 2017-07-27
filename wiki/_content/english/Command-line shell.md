@@ -30,9 +30,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 *   **Oh** — Unix shell written in Go. It is similar in spirit but different in detail from other Unix shells. Oh extends the shell's programming language features without sacrificing the shell's interactive features.
 
-	[https://github.com/michaelmacinnis/oh](https://github.com/michaelmacinnis/oh) || [oh](https://aur.archlinux.org/packages/oh/)
+	[https://github.com/michaelmacinnis/oh](https://github.com/michaelmacinnis/oh) || [oh-git](https://aur.archlinux.org/packages/oh-git/)
 
-*   **[Powershell](https://en.wikipedia.org/wiki/Windows_Powershell "wikipedia:Windows Powershell")** — PowerShell is an object-oriented programming language and interactive command line shell, originally written for and exclusive to Windows. Later on, it was open sourced and ported to Mac OS X and Linux.
+*   **[Powershell](https://en.wikipedia.org/wiki/Powershell "wikipedia:Powershell")** — PowerShell is an object-oriented programming language and interactive command line shell, originally written for and exclusive to Windows. Later on, it was open sourced and ported to Mac OS X and Linux.
 
 	[https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) || [powershell-git](https://aur.archlinux.org/packages/powershell-git/)
 

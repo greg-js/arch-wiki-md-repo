@@ -108,6 +108,7 @@ Some good examples of rc.lua would be as follows:
 
 *   [https://github.com/setkeh/Awesome-3.5](https://github.com/setkeh/Awesome-3.5) - [Setkeh](/index.php/User:Setkeh "User:Setkeh")'s 3.5 Configuration.
 *   [http://awesome.naquadah.org/wiki/User_Configuration_Files](http://awesome.naquadah.org/wiki/User_Configuration_Files) - Collection of user configurations on the awesome homepage.
+*   [https://github.com/copycat-killer/awesome-copycats](https://github.com/copycat-killer/awesome-copycats) - User configuration that supports different themes, including a status bar
 
 ### Extensions
 

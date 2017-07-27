@@ -67,6 +67,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
             *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
             *   [9.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
         *   [9.2.2 Network drivers](#Network_drivers)
+        *   [9.2.3 Balloon driver](#Balloon_driver)
     *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
 *   [10 QEMU Monitor](#QEMU_Monitor)
     *   [10.1 Accessing the monitor console](#Accessing_the_monitor_console)
@@ -1338,6 +1339,14 @@ $ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -n
 ```
 
 Windows will detect the network adapter and try to find a driver for it. If it fails, go to the *Device Manager*, locate the network adapter with an exclamation mark icon (should be open), click *Update driver* and select the virtual CD-ROM. Do not forget to select the checkbox which says to search for directories recursively.
+
+#### Balloon driver
+
+If you want to track you guest memory state (for example via `virsh` command `dommemstat`) or change guest's memory size in runtime (you still won't be able to change memory size, but can limit memory usage via inflating balloon driver) you will need to install guest balloon driver.
+
+For this you will need to go to *Device Manager*, locate *PCI standard RAM Controller* in *System devices* (or unrecognized PCI controller from *Other devices*) and choose *Update driver*. In opened window you will need to choose *Browse my computer...* and select the CD-ROM (and don't forget the *Include subdirectories* checkbox). Reboot after installation. This will install the driver and you will be able to inflate the balloon (for example via hmp command `balloon *memory_size*`, which will cause balloon to take as much memory as possible in order to shrink the guest's available memory size to *memory_size*). However, you still won't be able to track guest memory state. In order to do this you will need to install *Balloon* service properly. For that open command line as administrator, go to the CD-ROM, *Balloon* directory and deeper, depending on your system and architecture. Once you are in *amd64* (*x86*) directory, run `blnsrv.exe -i` which will do the installation. After that `virsh` command `dommemstat` should be outputting all supported values.
+
+**Note:** In windows command line you are not able to `cd` to other disk. In order to change disk simply type `Disk_letter:` (in my case `E:` and you will be free to `cd`.
 
 ### Preparing a FreeBSD guest
 

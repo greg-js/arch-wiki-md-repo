@@ -35,7 +35,7 @@ By design, zswap has relatively few customizable parameters. zswap does not use 
 
 ### Customize the maximum allowed size
 
-If you want to put a maximum bound on the percentage of memory that zswap can use, add this to your kernel boot parameters:
+If you want to put a maximum bound on the percentage (20 by default) of memory that zswap can use, add this to your kernel boot parameters:
 
 ```
   zswap.max_pool_percent=25

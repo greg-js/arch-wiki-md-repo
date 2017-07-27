@@ -8,22 +8,25 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
 
 ## Contents
 
-*   [1 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [1.1 Opções gerais](#Op.C3.A7.C3.B5es_gerais)
-        *   [1.1.1 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [1.1.2 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [1.1.3 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
-    *   [1.2 Repositórios](#Reposit.C3.B3rios)
-    *   [1.3 Segurança de pacotes](#Seguran.C3.A7a_de_pacotes)
-*   [2 Uso](#Uso)
-    *   [2.1 Instalando Pacotes](#Instalando_Pacotes)
-        *   [2.1.1 Instalando pacotes específicos](#Instalando_pacotes_espec.C3.ADficos)
-        *   [2.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
-    *   [2.2 Removendo pacotes](#Removendo_pacotes)
-    *   [2.3 Atualizando pacotes](#Atualizando_pacotes)
-    *   [2.4 Consultando bancos de dados do pacote](#Consultando_bancos_de_dados_do_pacote)
-    *   [2.5 Comandos adicionais](#Comandos_adicionais)
-    *   [2.6 Atualizações parciais não são suportadas](#Atualiza.C3.A7.C3.B5es_parciais_n.C3.A3o_s.C3.A3o_suportadas)
+*   [1 Uso](#Uso)
+    *   [1.1 Instalando Pacotes](#Instalando_Pacotes)
+        *   [1.1.1 Instalando pacotes específicos](#Instalando_pacotes_espec.C3.ADficos)
+        *   [1.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
+    *   [1.2 Removendo pacotes](#Removendo_pacotes)
+    *   [1.3 Atualizando pacotes](#Atualizando_pacotes)
+    *   [1.4 Consultando bancos de dados do pacote](#Consultando_bancos_de_dados_do_pacote)
+        *   [1.4.1 Estrutura do banco de dados](#Estrutura_do_banco_de_dados)
+    *   [1.5 Limpeza do cache do pacote](#Limpeza_do_cache_do_pacote)
+    *   [1.6 Comandos adicionais](#Comandos_adicionais)
+    *   [1.7 Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o)
+    *   [1.8 Atualizações parciais não são suportadas](#Atualiza.C3.A7.C3.B5es_parciais_n.C3.A3o_s.C3.A3o_suportadas)
+*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+    *   [2.1 Opções gerais](#Op.C3.A7.C3.B5es_gerais)
+        *   [2.1.1 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
+        *   [2.1.2 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_n.C3.A3o_serem_atualizados)
+        *   [2.1.3 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
+    *   [2.2 Repositórios](#Reposit.C3.B3rios)
+    *   [2.3 Segurança de pacotes](#Seguran.C3.A7a_de_pacotes)
 *   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
     *   [3.1 Uma atualização para o pacote XYZ quebrou meu sistema!](#Uma_atualiza.C3.A7.C3.A3o_para_o_pacote_XYZ_quebrou_meu_sistema.21)
     *   [3.2 Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!](#Eu_sei_que_uma_atualiza.C3.A7.C3.A3o_para_o_pacote_ABC_foi_lan.C3.A7ada.2C_mas_pacman_diz_que_o_meu_sistema_est.C3.A1_atualizado.21)
@@ -43,93 +46,6 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [3.16 Como posso ter Pacman para minhas configurações de proxy?](#Como_posso_ter_Pacman_para_minhas_configura.C3.A7.C3.B5es_de_proxy.3F)
     *   [3.17 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?](#Como_fa.C3.A7o_para_reinstalar_todos_os_pacotes.2C_mantendo_informa.C3.A7.C3.B5es_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_depend.C3.AAncia.3F)
 *   [4 Veja também](#Veja_tamb.C3.A9m)
-
-## Configuração
-
-Os ajustes do Pacman estão localizados em `/etc/pacman.conf`. Este é o local onde o usuário configura o programa para funcionar da forma desejada. Informações detalhadas sobre o arquivo de configuração pode ser encontrada em [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
-
-### Opções gerais
-
-Opções gerais estão na seção `[options]`. Leia a página de manual ou olhe no padrão `pacman.conf` para obter informações sobre o que pode ser feito aqui.
-
-#### Pular pacotes para não serem atualizados
-
-Para pular a atualização de um pacote específico, faça:
-
-```
-IgnorePkg=linux
-
-```
-
-Para vários pacotes use uma lista separada por espaço, ou use adicionais linhas `IgnorePkg`.
-
-#### Pular um grupos de pacotes para não serem atualizados
-
-Tal como acontece com os pacotes, pular um grupo de pacote inteiro também é possível:
-
-```
-IgnoreGroup=gnome
-
-```
-
-#### Pular arquivos para não serem instalados no sistema
-
-Para pular sempre a instalação de lista de diretórios sob `NoExtract`. Por exemplo, para evitar a instalação de units [systemd](/index.php/Systemd "Systemd") use:
-
-```
-NoExtract=usr/lib/systemd/system/*
-
-```
-
-### Repositórios
-
-A seção define quais [repositórios](/index.php/Official_repositories "Official repositories") usar, como referido no `/etc/pacman.conf`. Podem ser mencionados aqui diretamente ou incluídos de outro arquivo (como `/etc/pacman.d/mirrorlist`), tornando-se assim necessário manter apenas uma lista. Veja [aqui](/index.php/Mirrors "Mirrors") para configuração de espelho.
-
- `/etc/pacman.conf` 
-```
-#[testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-[core]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-[extra]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-#[community-testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-[community]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/mirrorlist
-
-# If you want to run 32 bit applications on your x86_64 system,
-# enable the multilib repositories as required here.
-
-#[multilib-testing]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-#[multilib]
-#SigLevel = PackageRequired
-#Include = /etc/pacman.d/mirrorlist
-
-# An example of a custom package repository.  See the pacman manpage for
-# tips on creating your own repositories.
-#[custom]
-#SigLevel = Optional TrustAll
-#Server = file:///home/custompkgs
-```
-
-Cuidados devem ser tomados ao usar o repositório [testing]. Ele está em desenvolvimento ativo e a atualização pode fazer que alguns pacotes parem de funcionar. As pessoas que usam o repositório [testing] são encorajadas a se increver em [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) para obter informações atualizadas.}}
-
-### Segurança de pacotes
-
-Pacman suporta 4 assinaturas de pacotes, que adiciona um nível extra de segurança para os pacotes. A configuração padrão, `SigLevel = Required DatabaseOptional`, habilita a verificação de assinaturas para todos os pacotes em um nível global: este pode ser substituido por linhas por repositório `SigLevel`, como mostrado acima. Para mais detalhes sobre pacote de assinatura e verificação de assinatura, dê uma olhada em [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Uso
 
@@ -341,61 +257,134 @@ $ whoneeds *package_name*
 
 ```
 
-### Comandos adicionais
-
-Atualizar o sistema e instalar uma lista de pacotes:
+Ou a flag inversa para *pactree*:
 
 ```
-# pacman -Syu *package_name1* *package_name2* ...
+$ pactree -r *package_name*
 
 ```
 
-Baixe um pacote sem instalá-lo:
+#### Estrutura do banco de dados
+
+Os bancos de dados do pacman estão normalmente localizadas em `/var/lib/pacman/sync`. Para cada repositório especificado em `/etc/pacman.conf` haverá um arquivo de banco de dados correspondente localizado lá. Os arquivos dos bancos de dados são arquivos tar-gzipped contendo um diretório para cada pacote, por exemplo, para o pacote [which](https://www.archlinux.org/packages/?name=which):
 
 ```
-# pacman -Sw *package_name*
-
-```
-
-Instale um pacote 'local' que não é de um repositório remoto (ex., o pacote é do [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"):
-
-```
-# pacman -U /path/to/package/package_name-version.pkg.tar.xz
+% tree which-2.20-6 
+which-2.20-6
+|-- depends
+`-- desc
 
 ```
 
-**Dica:** Para manter uma cópia do pacote local no cache do pacman, use:
-```
-# pacman -U file://path/to/package/package_name-version.pkg.tar.xz
+O arquivo `depends` lista os pacotes que este pacote depende, enquanto a `desc` possui uma descrição do pacote, como o tamanho do arquivo e o hash do MD5.
 
-```
+### Limpeza do cache do pacote
 
-Instalar um pacote 'remoto' (não de um repositório indicado nos arquivos de configuração do pacman):
+O *pacman* armazena seus pacotes baixados em `/var/cache/pacman/pkg/` e não remove as versões antigas ou desinstaladas automaticamente, portanto, é necessário limpar deliberadamente essa pasta periodicamente para impedir que essa pasta cresça indefinidamente em tamanho.
 
-```
-# pacman -U http://www.example.com/repo/example.pkg.tar.xz
-
-```
-
-Limpe o cache de pacotes que não estão instalados (`/var/cache/pacman/pkg`):
-
-**Dica:** Só faça isso se tem certeza que os pacotes instalados são estáveis ​​e que o [downgrade](/index.php/Downgrading_packages "Downgrading packages") não será necessário, já que removerá todas as versões anteriores da pasta cache, deixando apenas as versões dos pacotes que estão instalados atualmente. Tendo versões mais antigas de pacote vem a calhar no caso de uma futura atualização provocar um erro.
+A opção interna para remover todos os pacotes em cache que não estão instalados atualmente é:
 
 ```
 # pacman -Sc
 
 ```
 
-Limpe o cache do pacote inteiro:
+**Atenção:**
 
-**Dica:** Este limpa todo o cache de pacote. Fazer isso é considerado uma má prática, que evita a possibilidade de downgrade de alguma coisa diretamente da pasta cache. Os usuários serão forçados a ter que usar uma fonte alternativa de pacotes obsoletos tais como o [Arch Rollback Machine](/index.php/Downgrading_packages#ARM "Downgrading packages").
+*   Apenas faça isso quando estiver certeza de que as versões anteriores dos pacotes não são mais necessárias, por exemplo, para um [downgrade](/index.php/Downgrade "Downgrade") posterior. `pacman -Sc` deixa as versões dos pacotes atualmente instalados, as versões antigas teriam que ser recuperadas por outros meios, como o [Archive](/index.php/Archive "Archive") (*Arch Linux Archive*).
+*   É possível esvaziar completamente a pasta cache com `pacman -Scc`. Além disso, isso também impede a reinstalação de um pacote diretamente da pasta de cache em caso de necessidade, exigindo um novo download. Isso deve ser evitado a menos que seja necessário ter espaço em disco imediatamente.
+
+Devido às limitações acima, considere uma alternativa para ter mais controle sobre quais pacotes e quantos são excluídos do cache:
+
+O script *paccache*, fornecido pelo próprio pacote [pacman](https://www.archlinux.org/packages/?name=pacman), exclui todas as versões em cache de cada pacote independentemente de estarem instalados ou não, exceto os 3 mais recentes, por padrão:
 
 ```
-# pacman -Scc
+# paccache -r
 
 ```
 
-**Dica:** Como alternativa tanto para o `-Sc` e `-Scc`, considere usar `paccache` do [pacman](https://www.archlinux.org/packages/?name=pacman). Isso oferece mais controle sobre o que e quantos pacotes são apagados. Execute `paccache -h` para obter instruções.
+**Dica:** Você pode criar [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") para executar isso automaticamente após cada transação do pacman. Veja [[este tópico](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743)] para obter exemplos.
+
+Você pode definir quantas versões recentes deseja manter:
+
+```
+# paccache -rk 1
+
+```
+
+Para remover todas as versões em cache de pacotes desinstalados, execute novamente *paccache* com:
+
+```
+# paccache -ruk0
+
+```
+
+Veja `paccache -h` para mais opções.
+
+[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) e [pacleaner](https://aur.archlinux.org/packages/pacleaner/) são duas alternativas.
+
+### Comandos adicionais
+
+Faça o download de um pacote sem instalá-lo:
+
+```
+# pacman -Sw *package_name*
+
+```
+
+Instale um pacote local que não seja de um repositório remoto (ex., o pacote é do [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"):
+
+```
+# pacman -U */path/to/package/package_name-version.pkg.tar.xz*
+
+```
+
+Para manter uma cópia do pacote local no cache do pacman, use:
+
+```
+# pacman -U *file:///path/to/package/package_name-version.pkg.tar.xz*
+
+```
+
+Instalar um pacote 'remoto' (não de um repositório indicado nos arquivos de configuração do pacman):
+
+```
+# pacman -U *http://www.example.com/repo/example.pkg.tar.xz*
+
+```
+
+Para inibir as ações `-S`, `-U` e `-R`, `-p` pode ser usado.
+
+O *pacman* sempre lista os pacotes a serem instalados ou removidos e pede permissão antes de executar.
+
+### Motivo de instalação
+
+O banco de dados do *pacman* distingue os pacotes instalados em dois grupos de acordo com o motivo pelo qual eles foram instalados:
+
+*   **Instalados explicitamente**: Os pacotes que foram literalmente instalados com os comandos *pacman* `-S` ou `-U`;
+*   **Dependências**: Os pacotes que, apesar de nunca (em geral) terem sido instalados explicitamente através de um comando de instalação do *pacman*, foram instalados implicitamente porque é [exigido](/index.php/Dependency "Dependency") por outro pacote que foi explicitamente instalado.
+
+Ao instalar um pacote, é possível forçar o motivo da instalação da *dependência* com:
+
+```
+# pacman -S --asdeps *package_name*
+
+```
+
+Quando reinstalar um pacote, o motivo dessa instalação atual é preservado por padrão.
+
+A lista de pacotes instalados explicitamente pode ser vista com `pacman -Qe`, enquanto a lista de dependências instaladas pode ser vista com `pacman -Qd`.
+
+Para alterar o motivo da instalação de um pacote já instalado, execute:
+
+```
+# pacman -D -asdeps *package_name*
+
+```
+
+Use `--asexplicit` para a operação oposta.
+
+**Dica:** A instalação de dependências opcionais com o `--asdeps` o causará de tal forma que, se você remover pacotes órfãos, o pacman também removerá as dependências opcionais.
 
 ### Atualizações parciais não são suportadas
 
@@ -404,6 +393,93 @@ Arch é um rolling release, e novas versões de [bibliotecas](https://en.wikiped
 Isso significa que as atualizações parciais são **não suportadas**. Não use `pacman -Sy package` ou equivalente como `pacman -Sy` e depois `pacman -S package`. Sempre atualize antes de instalar um pacote -- especialmente se o pacman atualizou as sincronização de repositórios. Tenha muito cuidado ao usar `IgnorePkg` e `IgnoreGroup`, pelo mesmo motivo.
 
 Se um cenário de atualização parcial foi criado e os binários estão quebrados porque não conseguem encontrar as bibliotecas que estão ligadas, **não "conserte" o problema simplesmente pelo symlinking**. Bibliotecas recebem colisões [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") quando elas **não são compatíveis**. Um simples `pacman -Syu` para um espelho devidamente sincronizado resolverá o problema, desde que pacman não esteja quebrado.
+
+## Configuração
+
+Os ajustes do Pacman estão localizados em `/etc/pacman.conf`. Este é o local onde o usuário configura o programa para funcionar da forma desejada. Informações detalhadas sobre o arquivo de configuração pode ser encontrada em [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
+
+### Opções gerais
+
+Opções gerais estão na seção `[options]`. Leia a página de manual ou olhe no padrão `pacman.conf` para obter informações sobre o que pode ser feito aqui.
+
+#### Pular pacotes para não serem atualizados
+
+Para pular a atualização de um pacote específico, faça:
+
+```
+IgnorePkg=linux
+
+```
+
+Para vários pacotes use uma lista separada por espaço, ou use adicionais linhas `IgnorePkg`.
+
+#### Pular um grupos de pacotes para não serem atualizados
+
+Tal como acontece com os pacotes, pular um grupo de pacote inteiro também é possível:
+
+```
+IgnoreGroup=gnome
+
+```
+
+#### Pular arquivos para não serem instalados no sistema
+
+Para pular sempre a instalação de lista de diretórios sob `NoExtract`. Por exemplo, para evitar a instalação de units [systemd](/index.php/Systemd "Systemd") use:
+
+```
+NoExtract=usr/lib/systemd/system/*
+
+```
+
+### Repositórios
+
+A seção define quais [repositórios](/index.php/Official_repositories "Official repositories") usar, como referido no `/etc/pacman.conf`. Podem ser mencionados aqui diretamente ou incluídos de outro arquivo (como `/etc/pacman.d/mirrorlist`), tornando-se assim necessário manter apenas uma lista. Veja [aqui](/index.php/Mirrors "Mirrors") para configuração de espelho.
+
+ `/etc/pacman.conf` 
+```
+#[testing]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/mirrorlist
+
+[core]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+
+#[community-testing]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/mirrorlist
+
+[community]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+
+# If you want to run 32 bit applications on your x86_64 system,
+# enable the multilib repositories as required here.
+
+#[multilib-testing]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/mirrorlist
+
+#[multilib]
+#SigLevel = PackageRequired
+#Include = /etc/pacman.d/mirrorlist
+
+# An example of a custom package repository.  See the pacman manpage for
+# tips on creating your own repositories.
+#[custom]
+#SigLevel = Optional TrustAll
+#Server = file:///home/custompkgs
+```
+
+Cuidados devem ser tomados ao usar o repositório [testing]. Ele está em desenvolvimento ativo e a atualização pode fazer que alguns pacotes parem de funcionar. As pessoas que usam o repositório [testing] são encorajadas a se increver em [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public) para obter informações atualizadas.}}
+
+### Segurança de pacotes
+
+Pacman suporta 4 assinaturas de pacotes, que adiciona um nível extra de segurança para os pacotes. A configuração padrão, `SigLevel = Required DatabaseOptional`, habilita a verificação de assinaturas para todos os pacotes em um nível global: este pode ser substituido por linhas por repositório `SigLevel`, como mostrado acima. Para mais detalhes sobre pacote de assinatura e verificação de assinatura, dê uma olhada em [pacman-key](/index.php/Pacman-key "Pacman-key").
 
 ## Solução de problemas
 
@@ -481,7 +557,7 @@ Instale [pkgfile](/index.php/Pkgfile "Pkgfile") que usa um banco de dados separa
 
 ### Pacman está completamente quebrado! Como faço para reinstalá-lo?
 
-No caso de pacman está quebrado sem possibilidade de reparo, baixe manualmente os pacotes necessários ([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), e [pacman](https://www.archlinux.org/packages/?name=pacman)) e extraia eles no root. O binário pacman será restaurado juntamente com seu arquivo de configuração padrão. Depois disso, reinstale esses pacotes com pacman para manter a integridade do banco de dados do pacote. Informações adicionais e um exemplo de script (desatualizado) que automatiza o processo está disponível nesta [[2]](https://bbs.archlinux.org/viewtopic.php?id=95007) mensagem.
+No caso de pacman está quebrado sem possibilidade de reparo, baixe manualmente os pacotes necessários ([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), e [pacman](https://www.archlinux.org/packages/?name=pacman) e extraia eles no root. O binário pacman será restaurado juntamente com seu arquivo de configuração padrão. Depois disso, reinstale esses pacotes com pacman para manter a integridade do banco de dados do pacote. Informações adicionais e um exemplo de script (desatualizado) que automatiza o processo está disponível nesta [[2]](https://bbs.archlinux.org/viewtopic.php?id=95007) mensagem.
 
 ### Depois de atualizar meu sistema, eu recebo um erro "não é possível encontrar o dispositivo root" depois de reiniciar e o meu sistema não mais inicializará.
 

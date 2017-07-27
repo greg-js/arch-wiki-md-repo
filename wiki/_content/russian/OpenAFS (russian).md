@@ -1,32 +1,32 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [OpenAFS](/index.php/OpenAFS "OpenAFS"). Дата последней синхронизации: 28 декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=OpenAFS&diff=0&oldid=460328).
+**Состояние перевода:** На этой странице представлен перевод статьи [OpenAFS](/index.php/OpenAFS "OpenAFS"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=OpenAFS&diff=0&oldid=482800).
 
-AFS is a distributed filesystem product, pioneered at Carnegie Mellon University and supported and developed as a product by Transarc Corporation (now IBM Pittsburgh Labs). It offers a client-server architecture for federated file sharing and replicated read-only content distribution, providing location independence, scalability, security, and transparent migration capabilities. AFS is available for a broad range of heterogeneous systems including UNIX, Linux, MacOS X, and Microsoft Windows.
+AFS - это продукт распределенной файловой системы, впервые внедренный в Университете Карнеги-Меллона и поддерживаемый и разработанный как продукт корпорации Transarc (теперь IBM Pittsburgh Labs). Он предлагает архитектуру клиент-сервер для совместного использования файлов и репликации контента только для чтения, обеспечивая независимость от местоположения, масштабируемость, безопасность и прозрачные возможности миграции. AFS доступен для широкого спектра гетерогенных систем, включая UNIX, Linux, MacOS X и Microsoft Windows.
 
-IBM branched the source of the AFS product, and made a copy of the source available for community development and maintenance. They called the release OpenAFS.
+IBM разветвила источник продукта AFS и сделала копию источника, доступного для развития и поддержки сообщества. Они назвали выпуск OpenAFS.
 
-This page describes only the client side.
+На этой странице описывается только клиентская сторона.
 
 ## Contents
 
-*   [1 Client installation](#Client_installation)
-*   [2 Troubleshooting](#Troubleshooting)
+*   [1 Установка клиента](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D0.B0)
+*   [2 Устранение неполадок](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BF.D0.BE.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA)
     *   [2.1 aklog: a pioctl failed while obtaining tokens for cell ...](#aklog:_a_pioctl_failed_while_obtaining_tokens_for_cell_...)
-*   [3 See also](#See_also)
+*   [3 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
-## Client installation
+## Установка клиента
 
-Install openafs client with the [openafs](https://aur.archlinux.org/packages/openafs/) and [openafs-modules](https://aur.archlinux.org/packages/openafs-modules/) packages.
+Установите клиент openafs с пакетами [openafs](https://aur.archlinux.org/packages/openafs/) и [openafs-modules](https://aur.archlinux.org/packages/openafs-modules/).
 
-Edit `/etc/openafs/ThisCell` and put default cell there. You can check for the cells in `/etc/openafs/CellServDB`.
+Отредактируйте `/etc/openafs/ThisCell` и поместите ячейку по умолчанию. Вы можете проверить ячейки в `/etc/openafs/CellServDB`.
 
-[Start](/index.php/Start "Start") the `openafs-client` service.
+[Запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") службу `openafs-client`.
 
-## Troubleshooting
+## Устранение неполадок
 
 ### aklog: a pioctl failed while obtaining tokens for cell ...
 
-Your afs client is probably not running. Start it as described in [#Client installation](#Client_installation).
+Возможно, ваш afs-клиент не работает. Запустите его, как описано в [#Установка клиента](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D0.B0).
 
-## See also
+## Смотрите также
 
-*   Official site [https://www.openafs.org/](https://www.openafs.org/)
+*   Официальный сайт [https://www.openafs.org/](https://www.openafs.org/)

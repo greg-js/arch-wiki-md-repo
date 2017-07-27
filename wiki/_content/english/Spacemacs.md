@@ -287,7 +287,7 @@ You can also use some hotkeys from **normal state** to control buffers:
 *   `SPC TAB` - switch to last viewed buffer
 *   `SPC b n` - switch to next buffer (one forward)
 *   `SPC b p` - switch to previous buffer (one backward)
-*   `SPC f s` - save current buffer
+*   `SPC f s` - save the current buffer to file
 *   `SPC b d` - close current buffer
 
 **Tip:** If you want to save a new buffer, you should choose a file for it. Refer to the next section for details.

@@ -413,7 +413,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameter needs to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*device-UUID*:cryptolvm
+cryptdevice=UUID=*device-UUID*:cryptolvm root=/dev/mapper/MyVol-root
 
 ```
 

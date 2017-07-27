@@ -57,7 +57,7 @@ Una de las herramientas clave para la construcción de paquetes es [makepkg](/in
 2.  Descarga el(los) archivo(s) fuente desde el(los) servidor(es) especificado(s).
 3.  Desempaque el(los) archivo(s) fuente(s).
 4.  Compila el software y lo instala en un entorno fakeroot.
-5.  Quita símbolos de los binarios y de las librerías.
+5.  Despojar de símbolos los binarios y las librerías.
 6.  Genera el archivo del metapaquete que se incluye con cada paquete.
 7.  Comprime el entorno fakeroot en un archivo de paquete.
 8.  Almacena el archivo de paquete en el directorio de destino configurado, que es el directorio de trabajo actual de forma predeterminada.

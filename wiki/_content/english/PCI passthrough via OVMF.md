@@ -58,7 +58,8 @@ A VGA Passthrough relies on a number of technologies that are not ubiquitous as 
 
 *   Your CPU must support hardware virtualization (for kvm) and IOMMU (for the passthrough itself)
     *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](http://ark.intel.com/Search/FeatureFilter?productType=processors&VTD=true)
-    *   [List of compatible AMD CPUs (AMD-V and AMD-Vi)](http://support.amd.com/en-us/kb-articles/Pages/GPU120AMDRVICPUsHyperVWin8.aspx)
+    *   All AMD CPUs from the Bulldozer generation and up (including Zen) should be compatible.
+        *   CPUs from the K10 generation (2007) don't have an IOMMU, so you **need** to have a motherboard with a [890FX](http://support.amd.com/TechDocs/43403.pdf#page=18) or [990FX](http://support.amd.com/TechDocs/48691.pdf#page=21) chipset to make it work, as those have their own IOMMU.
 *   Your motherboard must also support IOMMU
     *   Both the chipset and the BIOS must support it. It is not always easy to tell at a glance whether or not this is the case, but there is a [fairly comprehensive list on the matter on the Xen wiki](http://wiki.xen.org/wiki/VTdHowTo) as well as [another one on Wikipedia](https://en.wikipedia.org/wiki/List_of_IOMMU-supporting_hardware "wikipedia:List of IOMMU-supporting hardware").
 *   Your guest GPU ROM must support UEFI

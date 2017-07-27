@@ -28,7 +28,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 *   [3 Power Saving](#Power_Saving)
     *   [3.1 Disable discrete GPU](#Disable_discrete_GPU)
     *   [3.2 Standard power saving configuration](#Standard_power_saving_configuration)
-    *   [3.3 Disable touchscreen](#Disable_touchscreen)
+    *   [3.3 Disable/autosuspend of touchscreen](#Disable.2Fautosuspend_of_touchscreen)
     *   [3.4 Enable NVME APST](#Enable_NVME_APST)
     *   [3.5 Enable power saving features for the i915 kernel module](#Enable_power_saving_features_for_the_i915_kernel_module)
     *   [3.6 Wifi and Bluetooth](#Wifi_and_Bluetooth)
@@ -106,9 +106,9 @@ $ [    4.256651] bbswitch: disabling discrete graphics
 
 It is a good idea to install a tool to tune common settings to save power. See [Power management#Userspace tools](/index.php/Power_management#Userspace_tools "Power management"). One caveat on versions of TLP prior to 1.0 is that enabling PCIE runtime power management results in [bbswitch not working](https://github.com/Bumblebee-Project/bbswitch/issues/140). A workaround is to disable PCIE runtime power management for the Nvidia GPU. For example for [TLP](/index.php/TLP "TLP"), edit `/etc/default/tlp` to have `RUNTIME_PM_BLACKLIST="01:00.0"`. This is done by default in later versions of tlp, such as [tlp-git](https://aur.archlinux.org/packages/tlp-git/). Alternatively, PCIE runtime power management can be disabled for all devices using the kernel parameter `pcie_port_pm=off`.
 
-### Disable touchscreen
+### Disable/autosuspend of touchscreen
 
-Disabling the touchscreen can be done in the UEFI settings and results in significant power savings.
+Disabling the touchscreen can be done in the UEFI settings and results in significant power savings. If touchscreen is required it can be placed into autosuspend by [TLP](/index.php/TLP "TLP") by adding `04f3:24a1` to `USB_WHITELIST` in tlp config file. This will leave touchscreen enabled for usage and will consume much less battery.
 
 ### Enable NVME APST
 

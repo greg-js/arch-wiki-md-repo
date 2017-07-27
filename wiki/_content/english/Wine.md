@@ -15,6 +15,7 @@
         *   [2.7.1 Creating menu entries for Wine utilities](#Creating_menu_entries_for_Wine_utilities)
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
     *   [2.8 Mono and Gecko](#Mono_and_Gecko)
+    *   [2.9 Printing](#Printing)
 *   [3 Using Windows applications](#Using_Windows_applications)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
@@ -277,6 +278,10 @@ to prevent wine from asking to install mono and gecko start wine like this:
 WINEDLLOVERRIDES=mscoree=d;mshtml=d wine somewineapp
 
 ```
+
+### Printing
+
+In order to use your installed printers (both local and network) with wine applications in *win32 prefixes* (e.g. MS Word), install the [lib32-libcups](https://www.archlinux.org/packages/?name=lib32-libcups) package, reboot wine (*wineboot*) and restart your wine application.
 
 ## Using Windows applications
 

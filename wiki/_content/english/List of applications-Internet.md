@@ -690,6 +690,10 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
 
+*   **Nicotine+** — A graphical client for the Soulseek P2P network.
+
+	[https://www.nicotine-plus.org/](https://www.nicotine-plus.org/) || [nicotine-plus-git](https://aur.archlinux.org/packages/nicotine-plus-git/)
+
 *   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
 
 	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)

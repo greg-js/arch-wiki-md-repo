@@ -26,7 +26,6 @@ Many tools can be used to determine system performance, the following provides a
     *   [2.2 IOzone](#IOzone)
     *   [2.3 HardInfo](#HardInfo)
     *   [2.4 Phoronix Test Suite](#Phoronix_Test_Suite)
-    *   [2.5 PTS Desktop Live](#PTS_Desktop_Live)
 *   [3 Flash media](#Flash_media)
 *   [4 See also](#See_also)
 
@@ -253,17 +252,6 @@ See also [Author's site](http://wiki.hardinfo.org/HomePage).
 *The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities.*
 
 This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
-
-### PTS Desktop Live
-
-**Warning:** The live image does not look like it has been maintained since 2010.
-
-As an alternative to the installation of the Phoronix Test Suite to the system, Phoronix also provides a Live-CD. This Live-CD offers all the features of the Phoronix Test Suite and includes the latest [ATI](/index.php/ATI "ATI") and [NVIDIA](/index.php/NVIDIA "NVIDIA") binary drivers. It will allow you to run 40+ benchmarks from a live environment without the need to store anything on your hard drive and includes a working GUI interface.
-
-See also:
-
-*   [Official link](http://www.phoronix-test-suite.com/?k=pts_desktop_live)
-*   [Documentation](http://www.phoronix-test-suite.com/documentation/2.4/pts_desktop_live.html)
 
 ## Flash media
 

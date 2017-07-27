@@ -5,6 +5,7 @@
 *   [1 Installation Instructions](#Installation_Instructions)
     *   [1.1 Lunar](#Lunar)
     *   [1.2 Kinetic](#Kinetic)
+    *   [1.3 Configure the build tool](#Configure_the_build_tool)
 *   [2 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
 
 ## Installation Instructions
@@ -18,6 +19,8 @@ ROS Lunar is available in AUR packages and seems to be working quite nicely alth
 Kinetic packages on the AUR are a work in progress. There are [some issues regarding opencv3](https://github.com/bchretien/arch-ros-stacks/issues/57#issuecomment-228612399) that have not been fully resolved yet. That said, installing a metapackage such as [ros-kinetic-ros-core](https://aur.archlinux.org/packages/ros-kinetic-ros-core/) or [ros-kinetic-robot](https://aur.archlinux.org/packages/ros-kinetic-robot/) should bring in all required dependencies (see [[1]](https://paste.xinu.at/YXIz/) for the correct order).
 
 Packages are being added on an as-needed basis. Please send package requests to <aur AT seangreenslade DOT com>, and post any issues with the current packages in their respective AUR comments section.
+
+### Configure the build tool
 
 Note that catkin uses python2, and therefore catkin_make may fail unless it it explicitly pointed to the python2 install. To do so, add the following alias to your .bashrc (or equivalent):
 

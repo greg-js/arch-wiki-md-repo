@@ -1,4 +1,4 @@
-Hardware-based full-disk encryption (FDE) is now available from many hard disk drive (HDD) vendors, becoming increasingly common especially for solid-state drives (SSD). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE).
+Hardware-based full-disk encryption (FDE) is now available from many hard disk (HDD) vendors, becoming increasingly common especially for [solid state drives](/index.php/Solid_State_Drives "Solid State Drives"). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE). [OPAL](https://en.wikipedia.org/wiki/Opal_Storage_Specification "wikipedia:Opal Storage Specification") is a set of specifications for self-encrypting drives developed by the Trusted Computing Group.
 
 ## Contents
 
@@ -90,8 +90,6 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 These instructions assume you have the *sedutil-cli* tool installed (via the [AUR](https://aur.archlinux.org/packages/sedutil), or by other means)
 
 ### Check if your disk supports OPAL
-
-**Note:** [NVMe disks](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") are only partially supported: The *sedutil-cli --scan* command and the Linux PBA (pre-boot-authorisation) image currently only see SATA disks. It is possible to enable self-encryption on an NVMe device by passing the name to sedutil-cli, but not possible to boot from a locked NVMe disk (the PBA image does not see it). [More details here](https://github.com/Drive-Trust-Alliance/sedutil/issues/120).
 
 ```
 # sedutil-cli --scan

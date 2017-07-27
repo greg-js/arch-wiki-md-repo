@@ -40,6 +40,10 @@ If UFW is installed and enabled, it must be given the ability to pass along DROP
 **Note:** Users running sshd on a non-standard port should substitute that in the final line above (where 22 is the standard).
  `/etc/ufw/before.rules` 
 ```
+# allow all on loopback
+-A ufw-before-input -i lo -j ACCEPT
+-A ufw-before-output -o lo -j ACCEPT
+
 # hand off control for sshd to sshguard
 -N sshguard
 -A ufw-before-input -p tcp --dport 22 -j sshguard

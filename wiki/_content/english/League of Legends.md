@@ -43,7 +43,7 @@
 2.  Install from [https://lutris.net/games/league-of-legends/](https://lutris.net/games/league-of-legends/)
 3.  Once intalled and logged in, in the top right gear of the client, check "low spec mode" and uncheck "close client during game"
 
-	Here is an outdated video from the creator of the Lutris script that could be useful in case of doubt/trobleshooting [https://www.youtube.com/watch?v=2snNhq1hRf4](https://www.youtube.com/watch?v=2snNhq1hRf4)
+	Here is an outdated video from the creator of the Lutris script that could be useful in case of doubt/trobleshooting [https://youtu.be/sWisCfj_fA0](https://youtu.be/sWisCfj_fA0)
 
 ### PlayonLinux Method
 

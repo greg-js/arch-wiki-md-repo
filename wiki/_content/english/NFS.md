@@ -65,7 +65,7 @@ To make it stick across reboots, add the bind mount to `fstab`:
 
 ```
 
-**Note:** The permissions on the server filesystem is what NFS will honor so insure that connecting users have the desired access.
+**Note:** The permissions on the server filesystem is what NFS will honor so ensure that connecting users have the desired access.
 
 **Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
 

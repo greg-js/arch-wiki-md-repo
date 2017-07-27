@@ -64,6 +64,7 @@ server {
 # ACME challenge
 location ^~ /.well-known {
   allow all;
+  auth_basic off;
   alias /var/lib/letsencrypt/.well-known/;
   default_type "text/plain";
   try_files $uri =404;

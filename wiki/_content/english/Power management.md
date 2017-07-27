@@ -143,7 +143,7 @@ Before=sleep.target
 
 [Service]
 User=%I
-Type=simple
+Type=forking
 Environment=DISPLAY=:0
 ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop ; /usr/bin/mysql -e 'slave stop'
 ExecStart=/usr/bin/sflock

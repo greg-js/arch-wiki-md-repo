@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Google_Authenticator](/index.php/Google_Authenticator "Google Authenticator") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-26，点击[这里](https://wiki.archlinux.org/index.php?title=Google_Authenticator&diff=0&oldid=475188)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Google_Authenticator](/index.php/Google_Authenticator "Google Authenticator") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-26，点击[这里](https://wiki.archlinux.org/index.php?title=Google_Authenticator&diff=0&oldid=482958)可以查看翻译后英文页面的改动。
 
-[Google Authenticator](https://github.com/google/google-authenticator) 使用一次性密码(**O**ne-**t**ime **P**asscodes)来进行两步验证. OTP生成器应用可运行在 iOS, Android甚至 Blackberry。与 [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") 类似，两步验证将集成在Linux的 [PAM](/index.php/PAM "PAM") 系统中。此指南显示了此两步验证的安装与配置。
+[Google Authenticator](https://github.com/google/google-authenticator) 使用一次性密码(**O**ne-**t**ime **P**asscodes)进行两步验证。iOS、Android 甚至 Blackberry 上都提供了 OTP 生成器应用。与 [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") 类似，两步验证将集成在Linux的 [PAM](/index.php/PAM "PAM") 系统中。此指南显示了此两步验证的安装与配置。
 
 ## Contents
 
@@ -14,11 +14,11 @@
 
 ## 安装
 
-安装来自 [AUR](/index.php/AUR "AUR") 的 [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) 软件包。开发者版本 [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/)。
+安装 [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) 软件包或开发者版本 [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/)。
 
 ## 设置插入式验证模块(**P**luggable **A**uthentication **M**odules)
 
-**Warning:** 若通过SSH进行Google Authenticator的所有配置，在完成所有配置并测试正常之前，请勿关闭SSH会话，否则可能会无法登录。此外，最好在激活PAM之前生成密钥文件。
+**Warning:** 若通过 SSH 进行 Google Authenticator 的所有配置，在完成所有配置并测试正常之前，请勿关闭 SSH 会话，否则可能会无法登录。此外，最好在激活 PAM 之前生成密钥文件。
 
 通常远程登录才需要设置两步验证。PAM的配置是在文件`/etc/pam.d/sshd`内。如果想全局使用谷歌两步身份验证，请**小心**的修改`/etc/pam.d/sshd`，以免锁定自己从而不能登录。在本指南中，我们将在本地会话中安全的编辑文件`/etc/pam.d/sshd`。
 
@@ -51,7 +51,7 @@
 
 ```
 
-最后 重启 `sshd`服务
+最后 [重新加载](/index.php/Reload "Reload") `sshd`服务
 
 **Warning:** 如果设置使用密钥登陆并禁止密码登录，OpenSSH 会忽略如上所有的配置。但是在 OpenSSh 6.2 版本以后，允许使用基于密钥和两步验证的验证。请参阅 [Secure Shell#Two-factor authentication and public keys](/index.php/Secure_Shell#Two-factor_authentication_and_public_keys "Secure Shell")
 
@@ -142,7 +142,7 @@ $ chown root.root /**PATH_FILE**/**SECRET_KEY_FILES**
 
 ## 用于桌面登陆
 
-谷歌两步认证插件可以同时用于控制台与GNOME桌面登录。只需要在文件 `/etc/pam.d/login` 或 `/etc/pam.d/gdm-password` 内加入
+谷歌两步认证插件可以同时用于控制台与 GNOME 桌面登录。只需要在文件 `/etc/pam.d/login` 或 `/etc/pam.d/gdm-password` 内加入
 
 ```
    auth required pam_google_authenticator.so

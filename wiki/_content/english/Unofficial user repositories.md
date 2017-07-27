@@ -82,13 +82,14 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.12 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.13 holo](#holo)
         *   [5.1.14 jrpi](#jrpi)
-        *   [5.1.15 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.16 markzz](#markzz)
-        *   [5.1.17 qt-debug](#qt-debug)
-        *   [5.1.18 quarry](#quarry)
-        *   [5.1.19 siosm-aur](#siosm-aur)
-        *   [5.1.20 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.21 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.15 jrpi-haskell](#jrpi-haskell)
+        *   [5.1.16 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.17 markzz](#markzz)
+        *   [5.1.18 qt-debug](#qt-debug)
+        *   [5.1.19 quarry](#quarry)
+        *   [5.1.20 siosm-aur](#siosm-aur)
+        *   [5.1.21 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.22 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -869,13 +870,28 @@ Server = https://repo.holocm.org/archlinux/x86_64
 #### jrpi
 
 *   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
+*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositórios](https://jrpi.mooo.com/Programação?lang=en#Repositórios)
 *   **Description:** Some packages from the AUR, patched official packages and old packages.
-*   **Package list:** [https://jrpi.mooo.com/repo/](https://jrpi.mooo.com/repo/)
+*   **Package list:** [https://jrpi.mooo.com/Repositórios/principal/](https://jrpi.mooo.com/Repositórios/principal/)
 *   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
 
 ```
 [jrpi]
-Server = https://jrpi.mooo.com/repo/
+Server = https://jrpi.mooo.com/Repositórios/principal/
+
+```
+
+#### jrpi-haskell
+
+*   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
+*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositórios](https://jrpi.mooo.com/Programação?lang=en#Repositórios)
+*   **Description:** Haskell packages (created with cblrepo but not available in haskell-core).
+*   **Package list:** [https://jrpi.mooo.com/Repositórios/haskell/](https://jrpi.mooo.com/Repositórios/haskell/)
+*   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
+
+```
+[jrpi-haskell]
+Server = https://jrpi.mooo.com/Repositórios/haskell/
 
 ```
 

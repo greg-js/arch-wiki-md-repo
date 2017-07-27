@@ -14,20 +14,22 @@ If that's not an option, you basically have two things to try: either run the de
 
 ## Music streaming
 
-If you wish to use the music streaming feature of AirPort Express base stations, look for "raop" in the [AUR](/index.php/AUR "AUR"). Googling suggests that you can install [paprefs](https://www.archlinux.org/packages/?name=paprefs) and a RAOP plugin for [PulseAudio](/index.php/PulseAudio "PulseAudio"), but I haven't tried this, so I can't offer any advice. Try Googling.
+If you wish to use the music streaming feature of AirPort Express base stations, look for "raop" in the [AUR](/index.php/AUR "AUR").
 
 ## Printing
 
-The first step is to scan the Airport Express station. It seems that there are different addresses depending on the model:
+**Note:** Although it is possible to configure [CUPS](/index.php/CUPS "CUPS") to use [Avahi](/index.php/Avahi "Avahi") for automatic printer configuration, it tends to be unreliable and can significantly increase boot time. It is therefore recommended that AirPort printers be configured manually.
+
+Scan the Airport Express station to determine which port is used for printing.
 
  `# nmap 192.168.0.4` 
 ```
-Starting Nmap 4.20 ( http://insecure.org ) at 2007-06-26 00:50 CEST
+Starting Nmap 4.20 ( [http://insecure.org](http://insecure.org) ) at 2007-06-26 00:50 CEST
 Interesting ports on 192.168.0.4:
 Not shown: 1694 closed ports
 PORT      STATE SERVICE
 5000/tcp  open  UPnP
-9100/tcp  open  jetdirect
+**9100/tcp  open  jetdirect**
 10000/tcp open  snet-sensor-mgmt
 MAC Address: 00:14:51:70:D5:66 (Apple Computer)
 
@@ -35,8 +37,9 @@ Nmap finished: 1 IP address (1 host up) scanned in 25.815 seconds
 
 ```
 
-The Airport station is accessed like an HP JetDirect printer. Note the port of the **jetdirect** service, and edit `printer.conf`. The **DeviceURI** entry should be **socket://**, followed by your station IP address, a colon, and the **jetdirect** port number.
+Note the port of the **jetdirect** service, and edit `printer.conf`. The **DeviceURI** entry should be **socket://**, followed by your station IP address, a colon, and the **jetdirect** port number.
 
+**Note:** In order for this technique to work reliably, the AirPort should have a static local IP address using DHCP settings at the router.
  `/etc/cups/printer.conf` 
 ```
 # Printer configuration file for CUPS v1.2.11
@@ -44,7 +47,7 @@ The Airport station is accessed like an HP JetDirect printer. Note the port of t
 <Printer LaserSim>
 Info SAMSUNG ML-1510 gdi
 Location SomoStation
-DeviceURI socket://192.168.0.4:9100
+**DeviceURI socket://192.168.0.4:9100**
 State Idle
 StateTime 1182811465
 Accepting Yes
@@ -58,4 +61,4 @@ ErrorPolicy stop-printer
 </Printer>
 ```
 
-See the [CUPS](/index.php/CUPS "CUPS") wiki page for more information.
+See the [CUPS](/index.php/CUPS "CUPS") for more information.

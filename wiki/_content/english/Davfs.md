@@ -10,7 +10,7 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Storing credentials](#Storing_credentials)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Creating/copying files not possible](#Creating.2Fcopying_files_not_possible)
+    *   [4.1 Creating/copying files not possible and/or freezes](#Creating.2Fcopying_files_not_possible_and.2For_freezes)
 *   [5 See also](#See_also)
 
 ## Installing DAVfs
@@ -113,9 +113,9 @@ $ chmod 600 ~/.davfs2/secrets
 
 ## Troubleshooting
 
-### Creating/copying files not possible
+### Creating/copying files not possible and/or freezes
 
-If creating/copying files is not possible, while the same operations work on directories, edit the [configuration file](#Mount_WebDAV-resource) to use `use_locks 0` as option.
+If creating/copying files is not possible and/or freezes occur, edit the [configuration file](#Mount_WebDAV-resource) to use `use_locks 0` as option.
 
 ## See also
 

@@ -80,7 +80,7 @@ Removing a VLAN interface is significantly less convoluted
 
 #### systemd-networkd single interface
 
-Use the following configuration files:
+Use the following configuration files (Remember that systemd config files are case sensitive!):
 
  `/etc/systemd/network/*eno1*.network` 
 ```
@@ -89,6 +89,7 @@ Name=eno1
 
 [Network]
 DHCP=ipv4
+;these are arbitrary names, but must match the *.netdev and *.network files
 VLAN=eno1.100
 VLAN=eno1.200
 
@@ -114,7 +115,30 @@ Id=200
 
 ```
 
-You'll have to have associated .network files for each .netdev to handle addressing and routing.
+You'll have to have associated .network files for each .netdev to handle addressing and routing. For example, to set the eno1.100 interface with a static IP and the eno1.200 interface with DHCP (but ignoring the supplied default route), use:
+
+ `/etc/systemd/network/*eno1.100*.netdev` 
+```
+[Match]
+Name=eno1.100
+
+[Network]
+DHCP=no
+Address=192.168.0.25/24
+
+```
+ `/etc/systemd/network/*eno1.200*.netdev` 
+```
+[Match]
+Name=eno1.200
+
+[Network]
+DHCP=yes
+
+[DHCP]
+UseRoutes=false
+
+```
 
 Then [enable](/index.php/Enable "Enable") `systemd-networkd.service`. See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") for details.
 

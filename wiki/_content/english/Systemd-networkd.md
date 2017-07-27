@@ -47,7 +47,7 @@ The [systemd](https://www.archlinux.org/packages/?name=systemd) package is part 
 
 To use *systemd-networkd*, [start/enable](/index.php/Start/enable "Start/enable") both `systemd-networkd.service` and `systemd-resolved.service`.
 
-**Tip:** *systemd-resolved* is required only if you are specifying DNS entries in *.network* files or if you want to obtain DNS addressesfrom networkd's DHCP client. Alternatively you may manually manage `/etc/resolv.conf`
+**Tip:** *systemd-resolved* is required only if you are specifying DNS entries in *.network* files or if you want to obtain DNS addresses from the network DHCP client. Alternatively you may manually manage `/etc/resolv.conf`.
 
 For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), delete or rename the existing file and create the following symbolic link when using *systemd-resolved*:
 
