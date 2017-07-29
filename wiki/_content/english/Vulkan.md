@@ -23,7 +23,7 @@ To run a Vulkan application, you will need to [install](/index.php/Install "Inst
 
 *   [Intel](/index.php/Intel "Intel"): [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"): [nvidia](https://www.archlinux.org/packages/?name=nvidia)
-*   AMD: [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) ([radeon](/index.php/Radeon "Radeon")) or [amdgpu-pro-vulkan](https://aur.archlinux.org/packages/amdgpu-pro-vulkan/) ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO"))
+*   AMD: [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) ([radeon](/index.php/Radeon "Radeon"), [AMDGPU](/index.php/AMDGPU "AMDGPU") [[3]](https://www.phoronix.com/scan.php?page=news_item&px=RADV-Vulkan-CTS-Conformant)) or [amdgpu-pro-vulkan](https://aur.archlinux.org/packages/amdgpu-pro-vulkan/) ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO"))
 
 Other drivers may be installed manually instead:
 
@@ -40,7 +40,7 @@ The [Vulkan Hardware Database](http://vulkan.gpuinfo.org/) provides user reporte
 
 ### Error - vulkan: No DRI3 support
 
-If you get the message above, make sure to create the following file with the given content and restart your X. This should not be necessary on Wayland.
+If you get the message above and using [Intel graphics](/index.php/Intel_graphics "Intel graphics"), you may need to force DRI3 and restart [Xorg](/index.php/Xorg "Xorg"):
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```

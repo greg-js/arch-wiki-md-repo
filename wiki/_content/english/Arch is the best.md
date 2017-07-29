@@ -1989,7 +1989,7 @@ b0917f66d05278106808d25f51001b038856fa7171b935d450b4bcbf1e8b82ed6a5a2f49d99734e1
 
 ```
 
-	Upside Down
+	Rotated 180°
 
 ```
 ¡ʇsǝq ǝɥʇ s! ɥɔɹ∀

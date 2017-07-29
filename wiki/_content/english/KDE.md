@@ -408,7 +408,7 @@ In order to search using Baloo on the Plasma desktop, start krunner (default key
 
 By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click.
 
-Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)). Additionally the `balooctl` process can also be used. In order to disable Baloo run `balooctl disable`.
+Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)). Additionally the `balooctl` process can also be used. In order to disable Baloo run `balooctl stop` and `balooctl disable`.
 
 Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
 

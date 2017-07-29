@@ -1,20 +1,23 @@
-Arch Linux uses the BSD Mail descendant S-nail as its POSIX mailx incarnation. Mailx is the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). S-nail is MIME capable and has extensions for line editing, S/MIME, SMTP and POP3, among others. In Arch Linux it supports direct mail delivery via SMTP, so that messages can be sent directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the *system side*. Note, however, that it does not have a mail-queue mechanism, but simply tries to send the message over SMTP once and directly.
+Arch Linux uses S-nail as its POSIX `mailx` incarnation. S-nail is MIME capable and has extensions for line editing, S/MIME, SMTP, IMAP, POP3, and more. Mailx is the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). S-nail can also send directly to external SMTP servers, so no local MTA is required.
 
 ## Contents
 
-*   [1 Quick shot](#Quick_shot)
+*   [1 Quickstart](#Quickstart)
 *   [2 First configuration adjustments](#First_configuration_adjustments)
 *   [3 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
 *   [4 Interactive usage](#Interactive_usage)
-    *   [4.1 I'm in!](#I.27m_in.21)
+    *   [4.1 Using it](#Using_it)
     *   [4.2 Message composition](#Message_composition)
 *   [5 Using S/MIME](#Using_S.2FMIME)
 *   [6 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
 *   [7 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
+*   [8 See also](#See_also)
 
-## Quick shot
+## Quickstart
 
-The [s-nail](https://www.archlinux.org/packages/?name=s-nail) package is part of the Arch Linux [base](https://www.archlinux.org/groups/x86_64/base/) group and therefore hopefully installed already. v14.9.0 brought a lot of changes and improvements, reading the [announcement](https://www.sdaoden.eu/code-nail-ann.html) may be helpful.
+The [s-nail](https://www.archlinux.org/packages/?name=s-nail) package is part of the Arch Linux [base](https://www.archlinux.org/groups/x86_64/base/) group, and should be installed for most users.
+
+Version 14.9.0 released in July 2017 brought a lot of changes and improvements, reading the [announcement](https://www.sdaoden.eu/code-nail-ann.html) may be helpful.
 
 Because the systemwide configuration file (`/etc/mail.rc`) brings in some useful standards, sending mail over an installed local mail-transfer-agent (MTA), such as [sendmail](/index.php/Sendmail "Sendmail") or [postfix](/index.php/Postfix "Postfix"), can be as easy as follows:
 
@@ -23,7 +26,9 @@ Because the systemwide configuration file (`/etc/mail.rc`) brings in some useful
 
 ```
 
-Using the `-d`ebug flag results in a sandbox dry-run. You can adjust the program which is used as a MTA by setting the variable `mta` (fine-tuning via `mta-arguments`, `mta-no-default-arguments`, `mta-argv0`. See the manual, "On sending mail, and non-interactive mode"):
+Using the `-d`ebug flag results in a sandbox dry-run. You can adjust the program which is used as a MTA by setting the variable `mta` (fine-tuning via `mta-arguments`, `mta-no-default-arguments`, `mta-argv0`.
+
+See the manual, "On sending mail, and non-interactive mode"):
 
 ```
 # < /etc/passwd LC_ALL=C mailx -d -:/ -Ssendwait -Sttycharset=utf8 -Smta=/usr/bin/sendmail -s 'My password file!' -. 'Back <side@book>'
@@ -35,9 +40,7 @@ By default message delivery is asynchronous, and mailx will exit as soon as the 
 
 The `-.` command line option will forcefully terminate option processing and turn on message send mode.
 
-As shown in the previous example scripts can (and should) detach from environmental settings and configuration files via`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`and `-:/`, and use explicit `-S` and `-X` command line flags to create their own reproducible setup.
+As shown in the previous example scripts can (and should) detach from environmental settings and configuration files via `LC_ALL=C` and `-:/`, and use explicit `-S` and `-X` command line flags to create their own reproducible setup.
 
 Sending messages to file and command "addresses" (not over the MTA) is possible if the `expandaddr` option is set:
 
@@ -303,33 +306,33 @@ commandalias ps !ps axu
 
 Once you're in it use **list** to print all available builtin commands. Typing `?X' tries to expand "X" and print a help string; since mailx allows abbreviations of all commands this is sometimes handy, try, e.g., **?h**, **?he** and **?hel** ... The command **help** will print a short summary of the most frequent used commands, more so if the variable `verbose` is set.
 
-### I'm in!
+### Using it
 
-When starting into interactive mode a summary of the content of the initially opened mailbox is printed, as via the **headers** command. In the header display messages are given numbers (starting at 1) which uniquely identify messages. Messages can be printed with the **print** command, or short: **p**. Whereas **p** honours **retain**ed (or **ignore**d) list of headers to be displayed, the **P**rint command will not and display all headers; the **Sh**ow command will print raw message content.
+When starting into interactive mode a summary of the content of the initially opened mailbox is printed, as via the `headers` command. In the header display messages are given numbers (starting at 1) which uniquely identify messages. Messages can be printed with the `print` command, or short: `p` Whereas `p` honours `retain`ed (or `ignore`d) list of headers to be displayed, the `P`rint command will not and display all headers; the `Sh`ow command will print raw message content.
 
-By default the current message (dot) is printed, but just like with many other commands it is possible to specify lists of messages, as is documented in the manual section "Specifying messages"; e.g., **p:u** will display all unread messages, **p.** will print the dot, **p 1 5** will print the messages 1 and 5 and **p-** and **p+** will print the last and the next message, respectively. Note that simply typing RETURN in an empty line acts like **next** (**n**), and thus prints the next message.
+By default the current message (dot) is printed, but just like with many other commands it is possible to specify lists of messages, as is documented in the manual section "Specifying messages"; e.g., `p:u` will display all unread messages, `p.` will print the dot, `p 1 5` will print the messages 1 and 5 and `p-` and `p+` will print the last and the next message, respectively. Note that simply typing RETURN in an empty line acts like `next` (`n`) and thus prints the next message.
 
-The command **from** is nice for an overview, e.g., **f '@<@arch linux'** will print the header summary of all messages that contain the string "arch linux" in some message header, whereas **f '@arch linux'** will only match those with "arch linux" in their subject; finally, the regular expression **f @^A[^[:space:]]+** finds... That is, be aware that quoting may be necessary when there is whitespace in search expressions etc.
+The command `from` is nice for an overview, e.g., `f '@<@arch linux` will print the header summary of all messages that contain the string "arch linux" in some message header, whereas `f '@arch linux` will only match those with "arch linux" in their subject; finally, the regular expression `f @^A[^[:space:]]+` finds... That is, be aware that quoting may be necessary when there is whitespace in search expressions etc.
 
-*   **file** and **File** open a new mailbox, the latter in readonly mode
-*   **newmail** (dependent on the mailbox, checks for new mail and) prints a listing of new messages
-*   **he** (headers) reprints the message list
-*   **z-**, **z+**, **z0**, **z$** scroll through the header display (dependent on the terminal you are using the Home/End/PageUp/PageDown keys will be working aliases)
-*   **folders** shows a listing of mailboxes under the currently set *folder*
-*   **r** replies to all addressees of the given message(s)
-*   **R** replies to the sender of the given message(s)
-*   **Lreply** "mailing-list" reply to the given message(s)
-*   **move** or **mv** moves (a) message(s)
-*   **(un)flag** marks (a) message(s) as (un)flagged
-*   **new** marks (a) message(s) unread
-*   **seen** marks (a) message(s) read
-*   **P** prints (a) message(s) with all headers
-*   **p** prints (a) message(s) and all non-ignored headers.
-*   **show** prints the raw message of content of (a) message(s)
+*   `file` and `File` open a new mailbox, the latter in readonly mode
+*   `newmail` (dependent on the mailbox, checks for new mail and) prints a listing of new messages
+*   `he` (headers) reprints the message list
+*   `z-` `z+` `z0` `z$` scroll through the header display (dependent on the terminal you are using the Home/End/PageUp/PageDown keys will be working aliases)
+*   `folders` shows a listing of mailboxes under the currently set `folder`
+*   `r` replies to all addressees of the given message(s)
+*   `R` replies to the sender of the given message(s)
+*   `Lreply` "mailing-list" reply to the given message(s)
+*   `move` or `mv` moves (a) message(s)
+*   `un)flag` marks (a) message(s) as (un)flagged
+*   `new` marks (a) message(s) unread
+*   `seen` marks (a) message(s) read
+*   `P` prints (a) message(s) with all headers
+*   `p` prints (a) message(s) and all non-ignored headers.
+*   `show` prints the raw message of content of (a) message(s)
 
 ### Message composition
 
-Composition is started by typing **mail user@host** or by replying to a message. When you return from *$EDITOR* (assuming *editalong* is set) you'll find yourself in the native editor, where many operations can be performed using tilde escapes (short help available via **~?**). Of particular interest is **~@**, which either allows interactive editing of the attachment list, or, when given arguments, to add a(n) (comma-separated list of) additional attachment(s), as well as """~^""", which is a multiplexer command which offers some control about the message, e.g., to create custom headers.
+Composition is started by typing `mail user@host` or by replying to a message. When you return from `$EDITOR` (assuming `editalong` is set) you'll find yourself in the native editor, where many operations can be performed using tilde escapes (short help available via `~?`). Of particular interest is `~@`, which either allows interactive editing of the attachment list, or, when given arguments, to add a(n) (comma-separated list of) additional attachment(s), as well as `~^`, which is a multiplexer command which offers some control about the message, e.g., to create custom headers.
 
 To send the mail, signal EOT with `Ctrl+d` or type `~.` on its own line.
 
@@ -351,11 +354,11 @@ set smime-sign-cert=~/pair.pem \
 
 ```
 
-From now any message that is sent will be signed. The default message digest would be SHA1, as mandated by RFC 5751. Note that S/MIME always works relative to the setting of the variable *from*, so it seems best to instead place the above settings in an **account**. The **verify** command verifies S/MIME messages, but note that S/MIME decryption and verification is solely based upon OpenSSL for now, which only supports messages with a simplicistic MIME structure. Sorry. By the way, if you miss hyperlinks and a table-of-content to get yourself going, the manual on the projects' website offers this; and the manual that ships with ArchLinux does, too, but needs the mdocmx(7) extension to be visible.
+From now any message that is sent will be signed. The default message digest would be SHA1, as mandated by RFC 5751. Note that S/MIME always works relative to the setting of the variable *from*, so it seems best to instead place the above settings in an `account`. The `verify` command verifies S/MIME messages, but note that S/MIME decryption and verification is solely based upon OpenSSL for now, which only supports messages with a simplicistic MIME structure. Sorry. By the way, if you miss hyperlinks and a table-of-content to get yourself going, the manual on the projects' website offers this; and the manual that ships with ArchLinux does, too, but needs the mdocmx(7) extension to be visible.
 
 ## Workaround missing OpenPGP support
 
-S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at least automatically verify inline *--clearsign*ed messages, and using command ghosts their usage becomes handy: e.g., use the following in resource file and you will be able to verify a clearsigned message by just typing **V**:
+S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at least automatically verify inline `--clearsign`ed messages, and using command ghosts their usage becomes handy: e.g., use the following in resource file and you will be able to verify a clearsigned message by just typing `V`:
 
 ```
  define V {
@@ -407,3 +410,7 @@ shortcut myimap "**imaps://USER:PASS@server:port"**
 set inbox=myimap
 
 ```
+
+## See also
+
+*   [S-nail website](https://www.sdaoden.eu/code.html)

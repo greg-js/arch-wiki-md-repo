@@ -14,8 +14,8 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
         *   [1.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
     *   [1.2 Removendo pacotes](#Removendo_pacotes)
     *   [1.3 Atualizando pacotes](#Atualizando_pacotes)
-    *   [1.4 Consultando bancos de dados do pacote](#Consultando_bancos_de_dados_do_pacote)
-        *   [1.4.1 Estrutura do banco de dados](#Estrutura_do_banco_de_dados)
+    *   [1.4 Consultando base de dados do pacote](#Consultando_base_de_dados_do_pacote)
+        *   [1.4.1 Estrutura da base de dados](#Estrutura_da_base_de_dados)
     *   [1.5 Limpeza do cache do pacote](#Limpeza_do_cache_do_pacote)
     *   [1.6 Comandos adicionais](#Comandos_adicionais)
     *   [1.7 Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o)
@@ -31,7 +31,7 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [3.1 Uma atualização para o pacote XYZ quebrou meu sistema!](#Uma_atualiza.C3.A7.C3.A3o_para_o_pacote_XYZ_quebrou_meu_sistema.21)
     *   [3.2 Eu sei que uma atualização para o pacote ABC foi lançada, mas pacman diz que o meu sistema está atualizado!](#Eu_sei_que_uma_atualiza.C3.A7.C3.A3o_para_o_pacote_ABC_foi_lan.C3.A7ada.2C_mas_pacman_diz_que_o_meu_sistema_est.C3.A1_atualizado.21)
     *   [3.3 Eu recebo um erro durante a atualização: "o arquivo já existe no sistema de arquivos"!](#Eu_recebo_um_erro_durante_a_atualiza.C3.A7.C3.A3o:_.22o_arquivo_j.C3.A1_existe_no_sistema_de_arquivos.22.21)
-    *   [3.4 Eu recebo um erro ao instalar um pacote: "não econtrou em sincronia com banco de dados"](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22n.C3.A3o_econtrou_em_sincronia_com_banco_de_dados.22)
+    *   [3.4 Eu recebo um erro ao instalar um pacote: "não encontrou em sincronia com base de dados"](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22n.C3.A3o_encontrou_em_sincronia_com_base_de_dados.22)
     *   [3.5 Eu recebo um erro ao instalar um pacote: "alvo não foi encontrado"](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22alvo_n.C3.A3o_foi_encontrado.22)
     *   [3.6 Pacman está atualizando várias vezes o mesmo pacote!](#Pacman_est.C3.A1_atualizando_v.C3.A1rias_vezes_o_mesmo_pacote.21)
     *   [3.7 Pacman falha durante uma atualização!](#Pacman_falha_durante_uma_atualiza.C3.A7.C3.A3o.21)
@@ -49,9 +49,15 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
 
 ## Uso
 
-O que se segue é apenas uma pequena amostra das operações que o pacman pode executar. Para ler mais exemplos, consulte [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
+O que se segue é apenas uma pequena amostra das operações que o pacman pode executar. Para ler mais exemplos, consulte [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html#_examples).
+
+**Dica:** Para usuários que utilizaram outras distribuições linux antes, ver o artigo [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") será útil.
 
 ### Instalando Pacotes
+
+**Nota:** Alguns pacotes muitas vezes têm uma série de [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para a aplicação, embora não seja estritamente necessário para executá-lo. Ao instalar um pacote, o *pacman* irá listar suas dependências opcionais entre as mensagens de saída, porém elas não serão encontrados no arquivo `pacman.log`: utilize o comando [pacman -Si](#Consultando_base_de_dados_do_pacote) para visualizar as dependências opcionais de um pacote, juntamente com uma breve descrição das funcionalidades de cada um.
+
+**Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Eu_recebo_um_erro_ao_instalar_um_pacote:_.22n.C3.A3o_encontrou_em_sincronia_com_base_de_dados.22) nos repositórios oficiais). Na prática, execute o comando `pacman -Sy**u** *nome_pacote*` em vez de `pacman -Sy *nome_pacote*`, pois isso pode levar a problemas de dependências.
 
 #### Instalando pacotes específicos
 
@@ -169,23 +175,23 @@ Antes de atualizar, é aconselhável visitar [a página Arch Linux Brasil](https
 
 Se alguém encontrar problemas que não podem ser resolvidos por estas instruções, certifique-se de pesquisar no fórum. É provável que os outros já tenham encontrado o mesmo problema e publicaram as instruções para resolvê-lo.
 
-### Consultando bancos de dados do pacote
+### Consultando base de dados do pacote
 
-Pacman consulta o banco de dados do pacote local com a flag `-Q`, veja:
+Pacman consulta a base de dados do pacote local com a flag `-Q`, veja:
 
 ```
 $ pacman -Q --help
 
 ```
 
-e consulte o bancos de dados de sincronização com a flag `-S`, veja:
+e consulte a base de dados de sincronização com a flag `-S`, veja:
 
 ```
 $ pacman -S --help
 
 ```
 
-Pacman pode pesquisar por pacotes no banco de dados, pesquisando nomes e descrições dos pacotes:
+Pacman pode pesquisar por pacotes na base de dados, pesquisando nomes e descrições dos pacotes:
 
 ```
 $ pacman -Ss *string1* *string2* ...
@@ -229,7 +235,7 @@ $ pacman -Ql *package_name*
 
 Para pacotes não instalados, use [pkgfile](/index.php/Pkgfile "Pkgfile").
 
-Pode-se também consultar o banco de dados para saber qual pacote um arquivo no arquivo do sistema pertence:
+Pode-se também consultar a base de dados para saber qual pacote um arquivo no arquivo do sistema pertence:
 
 ```
 $ pacman -Qo */path/to/file_name*
@@ -264,9 +270,9 @@ $ pactree -r *package_name*
 
 ```
 
-#### Estrutura do banco de dados
+#### Estrutura da base de dados
 
-Os bancos de dados do pacman estão normalmente localizadas em `/var/lib/pacman/sync`. Para cada repositório especificado em `/etc/pacman.conf` haverá um arquivo de banco de dados correspondente localizado lá. Os arquivos dos bancos de dados são arquivos tar-gzipped contendo um diretório para cada pacote, por exemplo, para o pacote [which](https://www.archlinux.org/packages/?name=which):
+As bases de dados do pacman estão normalmente localizadas em `/var/lib/pacman/sync`. Para cada repositório especificado em `/etc/pacman.conf` haverá um arquivo de base de dados correspondente localizado lá. Os arquivos das bases de dados são arquivos tar-gzipped contendo um diretório para cada pacote, por exemplo, para o pacote [which](https://www.archlinux.org/packages/?name=which):
 
 ```
 % tree which-2.20-6 
@@ -359,7 +365,7 @@ O *pacman* sempre lista os pacotes a serem instalados ou removidos e pede permis
 
 ### Motivo de instalação
 
-O banco de dados do *pacman* distingue os pacotes instalados em dois grupos de acordo com o motivo pelo qual eles foram instalados:
+A base de dados do *pacman* distingue os pacotes instalados em dois grupos de acordo com o motivo pelo qual eles foram instalados:
 
 *   **Instalados explicitamente**: Os pacotes que foram literalmente instalados com os comandos *pacman* `-S` ou `-U`;
 *   **Dependências**: Os pacotes que, apesar de nunca (em geral) terem sido instalados explicitamente através de um comando de instalação do *pacman*, foram instalados implicitamente porque é [exigido](/index.php/Dependency "Dependency") por outro pacote que foi explicitamente instalado.
@@ -388,7 +394,7 @@ Use `--asexplicit` para a operação oposta.
 
 ### Atualizações parciais não são suportadas
 
-Arch é um rolling release, e novas versões de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) serão colocadas nos repositórios. Os desenvolvedores e usuários confiáveis reconstruirão todos os pacotes nos repositórios que precisam ser reconstruídos com as bibliotecas. Se o sistema tem pacotes instalados localmente (tal como pacotes [[Arch User Repository (Português)]), os usuários deverão recontruí-los quando suas dependências receberem uma colisão [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
+Arch é um rolling release, e novas versões de [bibliotecas](https://en.wikipedia.org/wiki/Library_(computing) serão colocadas nos repositórios. Os desenvolvedores e usuários confiáveis reconstruirão todos os pacotes nos repositórios que precisam ser reconstruídos com as bibliotecas. Se o sistema tem pacotes instalados localmente (tal como pacotes [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), os usuários deverão recontruí-los quando suas dependências receberem uma colisão [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname").
 
 Isso significa que as atualizações parciais são **não suportadas**. Não use `pacman -Sy package` ou equivalente como `pacman -Sy` e depois `pacman -S package`. Sempre atualize antes de instalar um pacote -- especialmente se o pacman atualizou as sincronização de repositórios. Tenha muito cuidado ao usar `IgnorePkg` e `IgnoreGroup`, pelo mesmo motivo.
 
@@ -519,7 +525,7 @@ Cada pacote instalado fornece arquivo `/var/lib/pacman/local/$package-$version/f
 
 **Não** execute `pacman -Syu --force`.
 
-### Eu recebo um erro ao instalar um pacote: "não econtrou em sincronia com banco de dados"
+### Eu recebo um erro ao instalar um pacote: "não encontrou em sincronia com base de dados"
 
 Primeiramente, verifique se o pacote realmente existe (e fique atento para os erros de digitação!). Se o determinado pacote existe sua lista de pacotes pode estar desatualizada ou seus repositórios podem estar configurados incorretamente. Tente executar `pacman-Syy.` para forçar uma atualização de todas as listas de pacotes
 
@@ -538,11 +544,11 @@ Solução: eliminar a entrada em `/var/lib/pacman/local/`.
 
 ### Pacman falha durante uma atualização!
 
-No caso de colisão do pacman com um erro de "escrita de banco de dados" equanto remove um pacote, e falha ao reinstalar ou atualizar pacotes:
+No caso de colisão do pacman com um erro de "escrita de base de dados" enquanto remove um pacote, e falha ao reinstalar ou atualizar pacotes:
 
 1.  Inicialize usando a mídia de instalação do Arch
 2.  Monte seu sistema de arquivos root.
-3.  Atualize o banco de dados do pacman via `pacman -Syy`.
+3.  Atualize a base de dados do pacman via `pacman -Syy`.
 4.  Reinstale o pacote quebrado via `pacman -r /path/to/root -S package`.
 
 ### Eu instalei programa usando "make install"; esses arquivos não pertencem a nenhum pacote!

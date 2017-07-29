@@ -50,6 +50,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
     *   [10.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
     *   [10.9 VM only uses one core](#VM_only_uses_one_core)
+    *   [10.10 "BAR 3: can't reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_can.27t_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -958,6 +959,27 @@ This can be fixed by [explicitly telling Chromium which GPU you want to use](/in
 ### VM only uses one core
 
 For some users, even if IOMMU is enabled and the core count is set to more than 1, the VM still only uses one CPU core and thread. To solve this enable "Manually set CPU topology" in `virt-manager` and set it to the desirable amount of CPU sockets, cores and threads. Keep in mind that "Threads" refers to the thread count per CPU, not the total count.
+
+### "BAR 3: can't reserve [mem]" error in dmesg after starting VM
+
+With respect to [this article](http://www.linuxquestions.org/questions/linux-kernel-70/kernel-fails-to-assign-memory-to-pcie-device-4175487043/):
+
+Find out a PCI Bridge your graphic card is connected to:
+
+```
+$ lspci -t
+
+```
+
+This will give actual hierarchy of devices. And before starting VM run following lines replacing IDs with actual from previous output.
+
+```
+# echo 1 > /sys/bus/pci/devices/0000\:00\:03.1/remove
+# echo 1 > /sys/bus/pci/rescan
+
+```
+
+**Note:** Probably setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") video=efifb:off is required as well. [Source](https://pve.proxmox.com/wiki/Pci_passthrough#BAR_3:_can.27t_reserve_.5Bmem.5D_error)
 
 ## See also
 

@@ -383,6 +383,10 @@ libgthread-2.0.so
 
 Make it so that these symlinks are pointing to your system glib libraries instead of versions located in `matlabroot/R2017a/cefclient/sys/os/glnxa64`.
 
+Relinking of "libfreetype.so.6" is also necessary to open these interfaces. This is found in `matlabroot/R2017a/bin/glnxa64/`.
+
+If the window opens but is blank, consider switching the html renderer to: " webutils.htmlrenderer('basic');" as described in [#Help browser](#Help_browser) .
+
 ### Using webcam/video device
 
 Make sure the correct support package addons are installed (webcam or OS Generic Video Interface for example). If running matlab as a user, make sure your user has write permissions to wherever the support packages are being downloaded and installed.

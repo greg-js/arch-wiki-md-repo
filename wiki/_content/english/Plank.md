@@ -1,5 +1,7 @@
 Plank is a lightweight and minimal dock.
 
+**Warning:** Plank will not work if you are using Wayland.
+
 ## Contents
 
 *   [1 Installation](#Installation)

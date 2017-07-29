@@ -41,24 +41,39 @@ If this fails, the [Xorg](/index.php/Xorg "Xorg") server will need to be restart
 
 If you experience gnome-shell disappearing and reappearing, it means that it has segfaulted (probably because of an extension). Gnome-shell extensions use javascript; to enable debugging of extensions, it is necessary to
 
-1) rebuild [gjs](https://www.archlinux.org/packages/?name=gjs) with CXXFLAGS='-g -O0'
+1) rebuild [gjs](https://www.archlinux.org/packages/?name=gjs) with the following additions:
 
 ```
-packages/gjs/trunk$ svn diff PKGBUILD 
-Index: PKGBUILD
-===================================================================
---- PKGBUILD	(révision 300688)
-+++ PKGBUILD	(copie de travail)
-@@ -26,7 +26,8 @@
+packages/gjs/trunk$ svn diff
+ Index: PKGBUILD
+ ===================================================================
+ --- PKGBUILD	(révision 300688)
+ +++ PKGBUILD	(copie de travail)
+ @@ -11,8 +11,8 @@
+depends=(cairo gobject-introspection-runtime js38 gtk3)
+makedepends=(gobject-introspection git gnome-common)
+_commit=43c5d7839630dd166372f2c404a9a72c87fd102a  # tags/1.48.5^0
+source=("git+[https://git.gnome.org/browse/gjs#commit=$_commit](https://git.gnome.org/browse/gjs#commit=$_commit)")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+ @@ -21,12 +21,15 @@
+
+prepare() {
+  cd $pkgname
+  NOCONFIGURE=1 ./autogen.sh
+}
 
 build() {
   cd $pkgname
--  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib
-+  export CXXFLAGS='-g -O0'
-+  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib --enable-debug-symbols=-gdwarf-2
-   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-   make
- }
+ -  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib
+ +  export CXXFLAGS='-g -O0'
+ +  export CPPFLAGS='-D_FORITFY_SOURCE=0'
+ +  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib --enable-debug-symbols=-gdwarf-2
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
 
 ```
 

@@ -24,7 +24,6 @@
     *   [6.2 Using VirtualBox](#Using_VirtualBox)
     *   [6.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
     *   [6.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
-    *   [6.5 Extraneous cursor after logging in with gdm](#Extraneous_cursor_after_logging_in_with_gdm)
 *   [7 See also](#See_also)
 
 ## Status
@@ -91,6 +90,15 @@ Comment=SirCmpwn's Wayland window manager with the British Colemak keyboard layo
 Exec=sway-gb-ck
 Type=Application
 ```
+
+If none of the above solutions worked for you, you may want to add
+
+```
+$ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101
+
+```
+
+to either your `.bash_profile` or `.zprofile`.
 
 ### Statusbar
 
@@ -248,12 +256,6 @@ To avoid this error, run the command outside of a multiplexer.
 Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The compositor [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
 
 You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries ([see Kernel Mode Setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
-
-### Extraneous cursor after logging in with gdm
-
-If you use gdm as your login manager, an extraneous cursor will be left after logging in (see [issue #759](https://github.com/SirCmpwn/sway/issues/759)).
-
-The current workaround is to switch to another TTY, and switch back to sway.
 
 ## See also
 

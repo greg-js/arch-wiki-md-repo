@@ -1,4 +1,4 @@
-The [Trusted Users](https://www.archlinux.org/trustedusers/) serve the following purposes:
+The [Trusted Users](https://www.archlinux.org/people/trusted-users/) serve the following purposes:
 
 1.  Maintain the *community* repository as an intermediary between Arch Linux's [official repositories](/index.php/Official_repositories "Official repositories") and the unsupported package collection in the [AUR](/index.php/AUR "AUR").
 2.  Maintain, manage, and watch over the operation of the [AUR](/index.php/AUR "AUR").

@@ -47,7 +47,7 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (mainline branch : new features, updates, bugfixes) or [nginx](https://www.archlinux.org/packages/?name=nginx) (stable branch : major bufixes only). Using the mainline branch is recommended.
+[Install](/index.php/Install "Install") the package [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (mainline branch : new features, updates, bugfixes) or [nginx](https://www.archlinux.org/packages/?name=nginx) (stable branch : major bugfixes only). Using the mainline branch is recommended.
 
 The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in new features[[1]](https://www.nginx.com/blog/nginx-1-6-1-7-released/).
 
@@ -100,7 +100,7 @@ http {
 
 #### Processes and connections
 
-You should choose a fitting value for `worker_processes`. This settings ultimately defines how many connection nginx will accept and how many processors it will be able to make use of. Generally, making it the number of hardware threads in your system is a good start. Alternatively, `worker_processes` accepts the `auto` value since versions 1.3.8 and 1.2.5, which will try to autodetect the optimal value ([source](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)).
+You should choose a fitting value for `worker_processes`. This setting ultimately defines how many connections nginx will accept and how many processors it will be able to make use of. Generally, making it the number of hardware threads in your system is a good start. Alternatively, `worker_processes` accepts the `auto` value since versions 1.3.8 and 1.2.5, which will try to autodetect the optimal value ([source](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)).
 
 The maximum connections nginx will accept is given by `max_clients = worker_processes * worker_connections`.
 
@@ -456,7 +456,7 @@ This implementation is needed for CGI applications.
 
 ##### fcgiwrap
 
-[Install](/index.php/Install "Install") the [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap). The configuration file is `/usr/lib/systemd/system/fcgiwrap.socket`. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `fcgiwrap.socket`.
+[Install](/index.php/Install "Install") [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap). The configuration file is `/usr/lib/systemd/system/fcgiwrap.socket`. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `fcgiwrap.socket`.
 
 ###### Multiple worker threads
 
@@ -841,7 +841,7 @@ This is because the FastCGI server has not been started, or the socket used has 
 
 Try [out this answer](https://stackoverflow.com/questions/4252368/nginx-502-bad-gateway/16497957#16497957) to fix the 502 error.
 
-In Archlinux, the configure file mentioned in above link is `/etc/php/php-fpm.conf`.
+In Archlinux, the configuration file mentioned in above link is `/etc/php/php-fpm.conf`.
 
 On some condition, `fcgiwrap.socket` may not start properly and create a useless unix domain socket `/run/fcgiwrap.sock`.
 
@@ -968,11 +968,11 @@ WantedBy=default.target
 
 [Enable](/index.php/Enable "Enable") the created `nginx.path` and change the `WantedBy=default.target` to `WantedBy=nginx.path` in `/etc/systemd/system/nginx.service`.
 
-The `PIDFile` in unit file allows systemd to monitor process (absolute path required). If it is undesired, you can change to default one-shoot type, and delete the reference from the unit file.
+The `PIDFile` in unit file allows systemd to monitor process (absolute path required). If it is undesired, you can change to default one-shot type, and delete the reference from the unit file.
 
 ## See also
 
-*   [nginix configuration pitfalls](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
+*   [nginx configuration pitfalls](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
 *   [Using SSL certificates generated with Let's Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt")

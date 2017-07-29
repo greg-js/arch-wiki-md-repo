@@ -125,7 +125,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[http://parcellite.sourceforge.net/](http://parcellite.sourceforge.net/) || [parcellite](https://www.archlinux.org/packages/?name=parcellite)
 
-*   **Pasteall** — Clipboard monitor simple and functional(with notifications in Portugese).
+*   **Pasteall** — Clipboard monitor simple and functional (with notifications in Portuguese).
 
 	[https://github.com/ShyPixie/Pasteall](https://github.com/ShyPixie/Pasteall) || [pasteall](https://aur.archlinux.org/packages/pasteall/)
 

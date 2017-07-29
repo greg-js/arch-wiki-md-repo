@@ -248,7 +248,7 @@ where `/dev/sdXY` is the partition containing the bootloader.
 
 **Note:** The config file for UEFI is `*esp*/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
 
-**Note:** When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/efi/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `*esp*/EFI/syslinux/* -> *esp*/EFI/BOOT/*` and `*esp*/EFI/syslinux/syslinux.efi -> *esp*/EFI/BOOT/bootx64.efi`
+**Note:** When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/EFI/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `*esp*/EFI/syslinux/* -> *esp*/EFI/BOOT/*` and `*esp*/EFI/syslinux/syslinux.efi -> *esp*/EFI/BOOT/bootx64.efi`
 
 ## Configuration
 
@@ -267,6 +267,7 @@ The bootloader will look for either `syslinux.cfg` (preferred) or `extlinux.conf
 
 *   Any configuration file found in the examples needs to be edited to set the proper kernel parameters. See section [#Kernel parameters](#Kernel_parameters).
 *   Please, pay close attention to the paths. The examples may not be suitable for your installation, especially when using UEFI.
+*   The following examples assume that the kernel and initrd files are located one directory level up in relation to the location of `syslinux.cfg` (or, more precisely, one level up from the working directory).
 
 #### Boot prompt
 
@@ -274,7 +275,11 @@ This is a simple configuration file that will show a `boot:` prompt and will aut
 
 Configuration:
 
- `/boot/syslinux/syslinux.cfg` 
+```
+* BIOS: /boot/syslinux/syslinux.cfg
+* UEFI: *esp*/EFI/syslinux/syslinux.cfg
+```
+
 ```
  PROMPT 1
  TIMEOUT 50
@@ -305,7 +310,11 @@ Copying additional `lib*.c32` library modules might be needed too.
 
 Configuration:
 
- `/boot/syslinux/syslinux.cfg` 
+```
+* BIOS: /boot/syslinux/syslinux.cfg
+* UEFI: *esp*/EFI/syslinux/syslinux.cfg
+```
+
 ```
  UI menu.c32
  PROMPT 0
@@ -347,7 +356,11 @@ This configuration uses the same menu design as the Arch Install CD, its config 
 
 Configuration:
 
- `/boot/syslinux/syslinux.cfg` 
+```
+* BIOS: /boot/syslinux/syslinux.cfg
+* UEFI: *esp*/EFI/syslinux/syslinux.cfg
+```
+
 ```
  UI vesamenu.c32
  DEFAULT arch
@@ -398,7 +411,11 @@ To center the menu and adjust resolution, use `MENU RESOLUTION`, `MENU HSHIFT $N
 
 To move the menu to the center, add or edit these values:
 
- `/boot/syslinux/syslinux.cfg` 
+```
+* BIOS: /boot/syslinux/syslinux.cfg
+* UEFI: *esp*/EFI/syslinux/syslinux.cfg
+```
+
 ```
 MENU RESOLUTION 800 600 # or whatever your screen resolution is
 MENU WIDTH 78           # width of the menu also required to bring the menu box to size

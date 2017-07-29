@@ -33,7 +33,9 @@ In your emacs init file, add:
 
 ```
 
-to use the default settings. If you want to use your own settings, use `(exwm-enable)` instead of `(exwm-config-default)` (and you may not need to `(require 'exwm-config)`).
+to use the default settings. If you want to use your own settings, use `(exwm-enable)` instead of `(exwm-config-default)` (and you do not need to `(require 'exwm-config)`).
+
+It's also possible to start emacs in server mode and to start EXWM from commandline. See [https://github.com/ch11ng/exwm/issues/284](https://github.com/ch11ng/exwm/issues/284).
 
 ## Configuration
 

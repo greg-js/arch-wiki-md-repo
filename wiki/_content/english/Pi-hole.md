@@ -137,7 +137,7 @@ push "dhcp-option DNS xxx.xxx.xxx.xxx"
 
 ```
 
-**Note:** This should be the only modified needed.
+**Note:** This should be the only modification needed.
 
 ## Pi-hole Standalone
 

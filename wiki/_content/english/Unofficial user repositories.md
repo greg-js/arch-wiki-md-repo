@@ -870,7 +870,7 @@ Server = https://repo.holocm.org/archlinux/x86_64
 #### jrpi
 
 *   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
-*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositórios](https://jrpi.mooo.com/Programação?lang=en#Repositórios)
+*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositories](https://jrpi.mooo.com/Programação?lang=en#Repositories)
 *   **Description:** Some packages from the AUR, patched official packages and old packages.
 *   **Package list:** [https://jrpi.mooo.com/Repositórios/principal/](https://jrpi.mooo.com/Repositórios/principal/)
 *   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
@@ -884,7 +884,7 @@ Server = https://jrpi.mooo.com/Repositórios/principal/
 #### jrpi-haskell
 
 *   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
-*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositórios](https://jrpi.mooo.com/Programação?lang=en#Repositórios)
+*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositories](https://jrpi.mooo.com/Programação?lang=en#Repositories)
 *   **Description:** Haskell packages (created with cblrepo but not available in haskell-core).
 *   **Package list:** [https://jrpi.mooo.com/Repositórios/haskell/](https://jrpi.mooo.com/Repositórios/haskell/)
 *   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F

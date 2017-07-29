@@ -150,7 +150,7 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 
 ## Equipe de Traducão:
 
-[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden"), [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr")
+[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden"), [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr"), [Marcelo Ari Wiebbelling](/index.php/User:Hrevil_wiki "User:Hrevil wiki")
 
 ## Equipe de Revisão:
 

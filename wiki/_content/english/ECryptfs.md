@@ -48,6 +48,10 @@ Before using eCryptfs, the following disadvantages should be checked for applica
 
 	The [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) package provides several different ways of setting up eCryptfs. The high-level "Ubuntu tools" are the easiest to use, but they hard-code the lower directory path and other settings, limiting their usefulness. The package also includes low-level tools which are fully configurable, but they are somewhat more difficult to use compared to alternatives like [EncFS](/index.php/EncFS "EncFS").
 
+*   File name length
+
+	File names longer than 143 characters cannot be encrypted: this can break some programs in your home directory (for example [Symfony](https://en.wikipedia.org/wiki/Symfony "wikipedia:Symfony") caching).
+
 *   Network storage mounts
 
 	eCryptfs has long-standing [bugs](https://bugs.launchpad.net/ecryptfs/+bug/277578) when used on top of NFS and possibly other networked filesystems. It is always possible to use eCryptfs on a local directory and then copy the encrypted files from the local directory to a network host. However, if you want to set up eCryptfs directly on top of an NFS mount, with no local copy of the files, eCryptfs may crash or behave incorrectly. If in doubt, [EncFS](/index.php/EncFS "EncFS") may be a better choice in this case.
@@ -334,7 +338,7 @@ $ mount.ecryptfs_private secret
 
 ```
 
-When you're done, unmount it:
+When you are done, unmount it:
 
 ```
 $ umount.ecryptfs_private secret
@@ -381,9 +385,9 @@ so that the followng mount command succeeds:
 *   `ecryptfs_unlink_sigs` will remove the passphrase(s) from the keyring when you unmount, so you have to add the passphrase(s) back again in order to re-mount the filesystem.
 *   There are a few other options listed in the `ecryptfs` man page.
 
-**Tip:** There is a `mount.ecryptfs` tool, which you can run as root to enter the mount settings interactively. Once you've used it to mount eCryptfs, you can check `/etc/mtab` to find out what options it used.
+**Tip:** There is a `mount.ecryptfs` tool, which you can run as root to enter the mount settings interactively. Once you have used it to mount eCryptfs, you can check `/etc/mtab` to find out what options it used.
 
-Once you've chosen the right mount options, you can add an entry to `/etc/fstab` so regular users can mount eCryptfs on these directories. Copy the mount options to a new `/etc/fstab` entry and add the options `user` and `noauto`. The full entry will look similar to (bold entries added):
+Once you have chosen the right mount options, you can add an entry to `/etc/fstab` so regular users can mount eCryptfs on these directories. Copy the mount options to a new `/etc/fstab` entry and add the options `user` and `noauto`. The full entry will look similar to (bold entries added):
 
  `/etc/fstab`  `/home/*username*/.secret /home/*username*/secret ecryptfs **noauto**,**user**,ecryptfs_sig=7c5d3dd8a1b49db0,ecryptfs_fnek_sig=7c5d3dd8a1b49db0,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_unlink_sigs **0 0**` 
 

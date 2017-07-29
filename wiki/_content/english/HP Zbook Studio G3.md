@@ -57,13 +57,15 @@ If you are using a desktop environments such as gnome or KDE, they should have t
  `~/.xinitrc` 
 ```
 xrdb -merge ~/.Xresources
-xrandr --output eDP-1 --dpi 220
+xrandr --output eDP-1 --dpi 288
 exec i3
 ```
 
+The name of the output device depends on the graphics adapter and driver. Use [xrandr](/index.php/Xrandr "Xrandr") to find out the actual name.
+
 ### Touchpad configuration
 
-The touchpad may be "hijacked" by the `i2c_hid` device driver. Although the touchpad does working, its configuration is fixed to two buttons, two-finger natural scrolling and no tapping; Any changes with `xinput` or other tools have no effect.
+The touchpad may be "hijacked" by the `i2c_hid` device driver. Although the touchpad is working, its configuration is fixed to two buttons, two-finger natural scrolling and no tapping; Any changes with `xinput` or other tools will have no effect.
 
 To prevent this you have to [blacklist](/index.php/Kernel_Modules#Blacklisting "Kernel Modules") `i2c_hid` by adding the following lines to a `*.conf` file in `/etc/modprobe.d` ([source](https://bbs.archlinux.org/viewtopic.php?pid=1602689#p1602689)):
 

@@ -229,7 +229,7 @@ Another *sysctl* parameter that affects swap performance is `vm.vfs_cache_pressu
 
 ### Priority
 
-If you have more than one swap file or swap partition you should consider assigning a priority value (0 to 32767) for each swap area. The system will use swap areas of higher priority before using swap areas of lower priority. For example, if you have a faster disk (`/dev/sda`) and a slower disk (`/dev/sdb`), assign a higher priority to the swap area located on the faster device. Priorities can be assigned in fstab via the `pri` parameter:
+If you have more than one swap file or swap partition you should consider assigning a priority value (0 to 32767) for each swap area. The system will use swap areas of higher priority before using swap areas of lower priority. For example, if you have a faster disk (`/dev/sda`) and a slower disk (`/dev/sdb`), assign a higher priority to the swap area located on the faster device. Priorities can be assigned in [fstab](/index.php/Fstab "Fstab") via the `pri` parameter:
 
 ```
 /dev/sda1 none swap defaults,pri=100 0 0

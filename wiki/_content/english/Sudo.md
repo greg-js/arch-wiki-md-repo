@@ -71,12 +71,14 @@ The configuration file for sudo is `/etc/sudoers`. It should **always** be edite
 
 The default editor for visudo is `vi`. sudo from the core repository is compiled with `--with-env-editor` by default and honors the use of the `VISUAL` and `EDITOR` variables. `EDITOR` is not used when `VISUAL` is set.
 
-To establish nano as the **visudo** editor for the duration of the current shell session, set and export the `EDITOR` variable before calling **visudo**.
+To establish nano as the **visudo** editor for the duration of the current shell session, set the `EDITOR` variable before calling **visudo**:
 
 ```
 # EDITOR=nano visudo
 
 ```
+
+Alternatively you may edit a copy of the `/etc/sudoers` file and check it using `visudo -c -f */copy/of/sudoers*`. This might come in handy in case you want to circumvent locking the file with visudo.
 
 To change the editor permanently, see [Environment variables#Per user](/index.php/Environment_variables#Per_user "Environment variables"). To change the editor of choice permanently system-wide only for `visudo`, add the following to `/etc/sudoers` (assuming `nano` is your preferred editor):
 

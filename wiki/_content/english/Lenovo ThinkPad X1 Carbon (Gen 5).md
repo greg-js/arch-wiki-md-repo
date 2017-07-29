@@ -111,7 +111,7 @@ Installing [r8152-dkms](https://aur.archlinux.org/packages/r8152-dkms/) fixes th
 
 #### USB
 
-Remember to enable USB over Thunderbolt in BIOS under "Config", or USB peripherals connected to the dock won't work.
+In order for the internal USB hub in the dock to work without having to boot with the dock connected to your computer, you need to set "Security Level" to "No Security" under Thuderbolt settings in BIOS. Also remember to enable the "Support in pre boot environment" for USB peripherals connected to the dock to work at all.
 
 ### HP Thunderbolt 3 Dock
 
