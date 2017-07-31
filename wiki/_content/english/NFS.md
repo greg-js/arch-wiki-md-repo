@@ -2,7 +2,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 	*Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed.*
 
-**Note:** NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
+**Note:**
+
+*   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
+*   Unlike [Samba](/index.php/Samba "Samba"), NFS doesn't have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
 
 ## Contents
 
@@ -18,11 +21,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
             *   [2.1.2.5 NFSv2 compatibility](#NFSv2_compatibility)
             *   [2.1.2.6 Firewall configuration](#Firewall_configuration)
     *   [2.2 Client](#Client)
-        *   [2.2.1 Error from systemd](#Error_from_systemd)
-        *   [2.2.2 Manual mounting](#Manual_mounting)
-        *   [2.2.3 Mount using /etc/fstab](#Mount_using_.2Fetc.2Ffstab)
-        *   [2.2.4 Mount using /etc/fstab with systemd](#Mount_using_.2Fetc.2Ffstab_with_systemd)
-        *   [2.2.5 Mount using autofs](#Mount_using_autofs)
+        *   [2.2.1 Manual mounting](#Manual_mounting)
+        *   [2.2.2 Mount using /etc/fstab](#Mount_using_.2Fetc.2Ffstab)
+        *   [2.2.3 Mount using /etc/fstab with systemd](#Mount_using_.2Fetc.2Ffstab_with_systemd)
+        *   [2.2.4 Mount using autofs](#Mount_using_autofs)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Performance tuning](#Performance_tuning)
     *   [3.2 Automounting shares with systemd-networkd](#Automounting_shares_with_systemd-networkd)
@@ -122,27 +124,18 @@ Restarting the service will apply the changes immediately.
 
 ##### Ensure NFSv4 idmapping is fully enabled
 
-Even though idmapd may be running, it may not be fully enabled. Verify by checking `cat /sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `N`. If not:
+Even though idmapd may be running, it may not be fully enabled. Verify if `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `N`, on disabled run:
 
 ```
 # echo "N" | sudo tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
 
 ```
 
-Set this to survive reboots by adding an option to the nfs kernel module:
+Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, e.g.:
 
+ `/etc/modprobe.d/nfsd.conf` 
 ```
-# echo "options nfsd nfs4_disable_idmapping=0" | sudo tee -a /etc/modprobe.d/nfs.conf
-
-```
-
-(See [this forum reply](https://bbs.archlinux.org/viewtopic.php?pid=1530693#p1530693) for more information.)
-
-If journalctl reports lines like the following when starting nfs-server.service and nfs-idmapd.service, then this may be the solution.
-
-```
-rpc.idmapd[25010]: nfsdcb: authbuf=192.168.0.0/16 authtype=user
-rpc.idmapd[25010]: nfsdcb: bad name in upcall
+options nfsd nfs4_disable_idmapping=0
 
 ```
 
@@ -237,17 +230,6 @@ ExecStart=
 ExecStart=/usr/sbin/rpc.gssd -f
 ```
 
-#### Error from systemd
-
-Users experiencing the following may consider turning off the service using system's masking feature: "Dependency failed for pNFS block layout mapping daemon."
-
-Example:
-
-```
-# systemctl mask nfs-blkmap.service
-
-```
-
 #### Manual mounting
 
 For NFSv3 use this command to show the server's exported file systems:
@@ -274,7 +256,7 @@ Then mount omitting the server's NFS export root:
 If mount fails try including the server's export root (required for Debian/RHEL/SLES, some distributions need `-t nfs4` instead of `-t nfs`):
 
 ```
-# mount -t nfs -o vers=4 servername:/full/path/to/music /mountpoint/on/client
+# mount -t nfs -o vers=4 servername:/srv/nfs/music /mountpoint/on/client
 
 ```
 
@@ -336,21 +318,16 @@ Using [autofs](/index.php/Autofs "Autofs") is useful when multiple machines want
 
 In order to get the most out of NFS, it is necessary to tune the `rsize` and `wsize` mount options to meet the requirements of the network configuration.
 
-In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS server (default max block size) varies depending on RAM size, with a maximum of 1M (1048576 bytes), the max block size of th server will be used even if nfs clients requires bigger `rsize` and `wsize`. See [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html) It is possible to change the default max block size allowed by the server by writing to the /proc/fs/nfsd/max_block_size file before starting nfsd. For example, the following command restores the previous default iosize of 32k:
+In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS server (default max block size) varies depending on RAM size, with a maximum of 1M (1048576 bytes), the max block size of th server will be used even if nfs clients requires bigger `rsize` and `wsize`. See [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html) It is possible to change the default max block size allowed by the server by writing to the `/proc/fs/nfsd/max_block_size` before starting *nfsd*. For example, the following command restores the previous default iosize of 32k:
 
 ```
 # echo 32767 > /proc/fs/nfsd/max_block_size
 
 ```
 
-To make the change permanent add
+To make the change permanent, create a [systemd-tmpfile](/index.php/Systemd#Temporary_files "Systemd"):
 
-```
-ExecStartPre=/usr/bin/bash -c '/usr/bin/echo 32768 > /proc/fs/nfsd/max_block_size'
-
-```
-
-to /etc/systemd/system/multi-user.target.wants/nfs-server.service or create a systemd service as explained here: [https://bbs.archlinux.org/viewtopic.php?id=203893](https://bbs.archlinux.org/viewtopic.php?id=203893)
+ `/etc/tmpfiles.d/nfsd-block-size.conf`  `w /proc/fs/nfsd/max_block_size - - - - 32768` 
 
 ### Automounting shares with systemd-networkd
 
@@ -369,7 +346,6 @@ This trick is useful for laptops that require nfs shares from a local wireless n
 
 Make sure that the NFS mount points are correctly indicated in `/etc/fstab`:
 
- `$ cat /etc/fstab` 
 ```
 lithium:/mnt/data           /mnt/data	        nfs noauto,noatime,rsize=32768,wsize=32768 0 0
 lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsize=32768 0 0

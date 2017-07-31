@@ -44,7 +44,6 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
     *   [6.5 LightDM does not appear](#LightDM_does_not_appear)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
-    *   [6.7 Tap to click using touchpad not working](#Tap_to_click_using_touchpad_not_working)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -431,14 +430,6 @@ This setting will tell LightDM to wait until graphics devices are ready before s
 ### Pulseaudio not starting automatically
 
 See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
-
-### Tap to click using touchpad not working
-
-Tap to click may not work on some configurations. If you are using [Libinput](/index.php/Libinput "Libinput"), edit `/etc/lightdm/lightdm.conf` and set the *greeter-setup-script* option to enable touchpad clicks using xinput like this:
-
- `/etc/lightdm/lightdm.conf`  `greeter-setup-script=xinput set-prop ***device_number option_number setting_value***` 
-
-Relevant information on using `xinput` to configure input device properties at runtime can be found at [Libinput#Configuration](/index.php/Libinput#Configuration "Libinput").
 
 ## See also
 

@@ -1,6 +1,6 @@
 **pkgfile** is a tool for searching files from packages in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-**Tip:** since [pacman](https://www.archlinux.org/packages/?name=pacman) version 5.0 [a similar functionality is built in](/index.php/Pacman#Search_for_a_package_that_contains_a_specific_file "Pacman").
+**Tip:** [pacman](https://www.archlinux.org/packages/?name=pacman) has [a similar functionality is built in](/index.php/Pacman#Search_for_a_package_that_contains_a_specific_file "Pacman").
 
 ## Contents
 
@@ -11,7 +11,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) from the official repositories, or [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) package. Alternatively, install the development version with the [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) package.
 
 The *pkgfile* database can then be synced with:
 

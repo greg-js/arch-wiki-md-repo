@@ -25,7 +25,7 @@ Linux kernel 已经支持这个标准，但是用户需要配置加密密钥。I
 
 ## 安装
 
-安装软件包 [strongswan](https://aur.archlinux.org/packages/strongswan/)。
+安装软件包 [strongswan](https://www.archlinux.org/packages/?name=strongswan)。
 
 ## 证书
 

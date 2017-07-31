@@ -110,7 +110,7 @@ First, create a script containing the appropriate command options:
  `/etc/cron.daily/backup` 
 ```
 #!/bin/bash
-rsync -a --delete /folder/to/backup /location/of/backup &> /dev/null
+rsync -a --delete --quiet /folder/to/backup /location/of/backup
 ```
 
 	`-a` 
@@ -137,7 +137,8 @@ If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this scrip
  `/etc/cron.daily/backup` 
 ```
 #!/bin/bash
-rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/of/backup &> /dev/null
+rsync -a --delete --quiet -e ssh /folder/to/backup remoteuser@remotehost:/location/of/backup
+
 ```
 
 	`-e ssh` 
@@ -203,6 +204,7 @@ PathChanged=%h/music
 
 [Install]
 WantedBy=default.target
+
 ```
 
 Then create a `systemd.service` file that will be activated when it detects a change. By default a service file of the same name as the path unit (in this case `backup.path`) will be activated, except with the `.service` extension instead of `.path` (in this case `backup.service`).
@@ -215,6 +217,7 @@ Description=Backs up files
 
 [Service]
 ExecStart=/usr/bin/rsync %h/./documents %h/./music -CERrltm --delete ubuntu:
+
 ```
 
 Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path` like a normal systemd service and it will start monitoring file changes and automatically starting `backup.service`.
@@ -235,7 +238,7 @@ if [ -e /location/to/backup/incr/$DAY ] ; then
   rm -fr /location/to/backup/incr/$DAY
 fi
 
-rsync -a --delete --inplace --backup --backup-dir=/location/to/backup/incr/$DAY /folder/to/backup/ /location/to/backup/full/ &> /dev/null
+rsync -a --delete --quiet --inplace --backup --backup-dir=/location/to/backup/incr/$DAY /folder/to/backup/ /location/to/backup/full/
 ```
 
 	`--inplace` 
@@ -269,7 +272,7 @@ rsync $OPT $LINK $SRC ${SNAP}$date
 rm -f $LAST
 
 # Create new symlink to latest snapshot for the next backup to hardlink
-ln -s ${SNAP}$date $LAST 
+ln -s ${SNAP}$date $LAST
 
 ```
 

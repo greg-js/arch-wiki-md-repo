@@ -7,6 +7,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
 *   [1 Users' setups](#Users.27_setups)
     *   [1.1 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K.2C_GA-Z170X-UD3.2C_GTX_1070)
     *   [1.2 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130.27s_Virtual_Gaming_Machine)
+    *   [1.3 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -35,9 +36,9 @@ Configuration:
 Hardware:
 
 *   **CPU**: Intel Core i7-6850K
-*   **Motherboard**: Gigabyte x99-Ultra Gaming-CF (Revision 1.0, BIOS/UEFI Version: F4)
-*   **Host GPU**: AMD Radeon HD6950
-*   **Guest GPU**: AMD R9 390
+*   **Motherboard**: Gigabyte x99-Ultra Gaming (Revision 1.0, BIOS/UEFI Version: F4)
+*   **Host GPU**: AMD Radeon HD6950 1GB
+*   **Guest GPU**: AMD R9 390 8GB
 *   **RAM**: 32GB G-Skill Ripjaws DDR4 3333MHz
 
 Configuration:
@@ -46,14 +47,34 @@ Configuration:
 *   Using **libvirt QEMU/KVM with OVMF**: link to domain XMLs/scripts/notes: [https://github.com/manbearpig3130/MBP-VT-d-gaming-machine](https://github.com/manbearpig3130/MBP-VT-d-gaming-machine)
 *   **Host OS**: Arch Linux
 *   **Guest OS**: Windows 10 Pro
-*   2x 480GB SSDs set up in LVM striped mode formatted to ext4 are mounted in linux which contains the guest's qcow2 virtual VirtIO disk.
+*   2x 480GB SSDs set up in LVM striped mode (with mdadm) formatted to ext4 are mounted in linux which contains the guest's qcow2 virtual VirtIO disk.
 *   USB Host controller is passed through, giving most USB ports to the VM, leaving my USB 3.1 controller with attached USB hub for the host.
-*   Motherboard has two NICs, one is passed into VM (Works after installing Killer NIC Driver).
-*   To get HDMI audio working in windows I have to roll back the HDMI audio drivers from AMD back to the default Windows driver in device manager for some reason.
-*   Sometimes doesn't boot properly, and have to restart the VM, sometimes a few times before it boots properly. I think it may have something to do with how Windows handles shutdown?
+*   Motherboard has two NICs, one is passed into VM (Works perfectly after installing Killer NIC Driver).
 *   VM gets dedicated 16GB RAM via static hugepages.
 *   CPU pinning increased performance considerably.
-*   Windows boots straight into Steam big picture mode on it's primary display (43" Sony Bravia). Overall an awesome gaming machine that meets my gaming needs and lust for GNU/Linux at the same time.
+*   Windows boots straight into Steam big picture mode on primary display (43" Sony Bravia). Overall an awesome gaming machine that meets my gaming needs and lust for GNU/Linux at the same time.
+*   **Quirks**:
+*   I sometimes have to reinstall the AMD drivers in Windows to get HDMI audio working properly, and also when applications refuse to launch due to driver errors sometimes after booting
+*   Sometimes doesn't boot properly, and have to force reset the VM, sometimes a few times before it boots properly. I think it may have something to do with how Windows handles shutdown?
+
+### Bretos' Virtual Gaming Setup
+
+Hardware:
+
+*   **CPU**: Intel Core i7-7700k
+*   **Motherboard**: Z270 GAMING M3 (MS-7A62)
+*   **GPU**: ASUS GeForce GTX960
+*   **RAM**: Kingston HyperX 3x8GB DDR4 2.4GHz
+*   **Storage**: 2x Corsair MP500 m.2 240G SSDs in mdadm RAID0, 1x WD Black 1TB for storage. 100GB LVM volume as writeback cache for HDD
+
+Configuration:
+
+*   **Kernel**: vanilla
+*   **Host OS**: Arch Linux
+*   **Guest OS**: Windows 10 Pro
+*   Using **libvirt/QEMU**: GitHub config repository: [[1]](https://github.com/Bretos/vfio)
+*   Issues you've encountered: AUDIO. Had to get USB audio adapter and pass it through.
+*   No issues other than audio. Works like a charm.
 
 ## Adding your own setup
 

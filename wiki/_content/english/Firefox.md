@@ -168,7 +168,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
-*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde5-wallet-password-integrati/), [GNotifier](https://addons.mozilla.org/firefox/addon/gnotifier/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/) (or e10s compatible [firefox-extension-unity-launcher-api-e10s](https://aur.archlinux.org/packages/firefox-extension-unity-launcher-api-e10s/)), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
+*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde5-wallet-password-integrati/), [GNotifier](https://addons.mozilla.org/firefox/addon/gnotifier/) (soon to be [discontinued](https://github.com/mkiol/GNotifier/issues/162)), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/) (or e10s compatible [firefox-extension-unity-launcher-api-e10s](https://aur.archlinux.org/packages/firefox-extension-unity-launcher-api-e10s/)), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
 
 *   Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
@@ -384,7 +384,7 @@ If you are using the Xorg Intel or Nouveau drivers and experience tearing video 
 
 **Note:** Firefox has removed GTK2 support in version 53 and will support an ESR 52 version until mid 2018.
 
-Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-esr-gtk2](https://aur.archlinux.org/packages/firefox-esr-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") or [archlinuxcn's](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") (x86_64 only) for pre-built GTK2 Firefox packages.
+Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-esr-gtk2](https://aur.archlinux.org/packages/firefox-esr-gtk2/). Alternatively, you may use the [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") repository (x86_64 only) for pre-built GTK2 Firefox packages.
 
 ### Firefox WebRTC module cannot detect a microphone
 

@@ -87,6 +87,19 @@ CONSOLEMAP=""
 
 ```
 
+Если возникают проблемы со шрифтом ter-v16v можно использовать конфигурацию файла /etc/vconsole.conf приведенную ниже:
+
+```
+LOCALE=ru_RU.UTF-8
+KEYMAP=ru
+FONT=ter-u16b
+CONSOLEMAP=
+TIMEZONE=Europe/Moscow
+HARDWARECLOCK=UTC
+USECOLOR=yes
+
+```
+
 Обратите внимание, что поиск шрифта происходит в `/usr/share/kbd/consolefonts`.
 
 Можно обойтись и без terminus, установив:

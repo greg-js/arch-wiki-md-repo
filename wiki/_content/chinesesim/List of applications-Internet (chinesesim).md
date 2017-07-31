@@ -439,7 +439,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 

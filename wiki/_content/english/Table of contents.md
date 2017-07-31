@@ -7,7 +7,7 @@
 | <small>1.2.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.3.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.4.</small> [Events](/index.php/Category:Events "Category:Events") <small>(5)</small> |
-| <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(34)</small> |
+| <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(33)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(22)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |
@@ -34,12 +34,12 @@
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(19)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(15)</small> |
-| <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
+| <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(19)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(61)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
-| <small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(21)</small> |
+| <small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(22)</small> |
 | <small>3.3.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(17)</small> |
 | <small>3.4.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |
@@ -127,7 +127,7 @@
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(39)</small> |
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(22)</small> |
-| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(74)</small> |
+| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(73)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |
 | <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

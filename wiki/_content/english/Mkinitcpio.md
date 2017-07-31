@@ -65,16 +65,7 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time.
-
-For most of us who use `/etc/mkinitcpio.d/linux.preset` (it's the preset that the stock Arch Linux kernel, the linux package uses) by default, this is done by running this command with root privileges:
-
-```
-# mkinitcpio -p linux
-
-```
-
-The `-p` switch specifies a *preset* to utilize.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p` switch specifies a *preset* to utilize, for example `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
 An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
 

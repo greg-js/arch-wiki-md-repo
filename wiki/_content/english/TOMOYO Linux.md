@@ -133,10 +133,14 @@ The implementation of TOMOYO Linux 2.x into the Linux mainline kernel is not yet
 
 ### Installation
 
-TOMOYO Linux 2.x is part of the Linux mainline kernel and, in addition to those previously mentioned, requires the following kernel configuration:
+TOMOYO Linux 2.x is part of the Linux mainline kernel and requires the following kernel configuration:
 
 ```
-CONFIG_SECURITY_TOMOYO=y
+CONFIG_SECURITY=y
+CONFIG_SECURITYFS=y
+CONFIG_SECURITY_NETWORK=y [disabled in the Arch Linux kernel]
+CONFIG_SECURITY_PATH=y
+CONFIG_SECURITY_TOMOYO=y [disabled in the Arch Linux kernel]
 
 ```
 
@@ -268,16 +272,17 @@ The learning profile can be used to analyse the system or a specific application
 
 ## References
 
-*   [TOMOYO Linux SourceForge page](http://tomoyo.sourceforge.jp/)
-*   [TOMOYO Linux Wiki](http://tomoyo.sourceforge.jp/wiki-e/)
-*   [AKARI SourceForge page](http://akari.sourceforge.jp/index.html.en)
-*   [AKARI documentation](http://akari.sourceforge.jp/index.html.en)
-*   [TOMOYO Linux 1.8.x documentation](http://tomoyo.sourceforge.jp/1.8/index.html.en)
-*   [TOMOYO Linux 2.5.x documentation](http://tomoyo.sourceforge.jp/2.5/index.html.en)
+*   [TOMOYO Linux Home Page](http://tomoyo.osdn.jp/)
+*   [TOMOYO Linux Wiki](http://tomoyo.osdn.jp/wiki-e/)
+*   [AKARI Home Page](http://akari.osdn.jp/index.html.en)
+*   [AKARI Ddocumentation](http://akari.osdn.jp/documentation.html.en)
+*   [AKARI/TOMOYO functionality comparison table](http://akari.osdn.jp/comparison.html)
+*   [TOMOYO Linux 1.8.x : The Official Guide](http://tomoyo.osdn.jp/1.8/index.html.en)
+*   [TOMOYO Linux 2.5.x : The Official Guide](http://tomoyo.osdn.jp/2.5/index.html.en)
 *   [TOMOYO Linux Security Goal](http://lwn.net/Articles/263179/)
 *   [Policy sample](http://tomoyo.sourceforge.jp/cgi-bin/lxr/source/centos5.5/domain_policy.conf?v=policy-sample)
 *   [TOMOYO Linux on the Embedded Linux Wiki](http://elinux.org/TomoyoLinux)
-*   [Presentation slides from PacSec 2007](http://sourceforge.jp/projects/tomoyo/document/PacSec2007-en-demo.pdf)
+*   [Presentation slides from PacSec 2007](https://osdn.net/projects/tomoyo/docs/PacSec2007-en-demo.pdf)
 
 ## See also
 

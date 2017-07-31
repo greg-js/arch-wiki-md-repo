@@ -133,7 +133,7 @@ Here is a list of places to get all sorts of vagrant base boxes for different pu
 *   [Vagrant Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/)
     It has been there since Jan, 2013\. For some reason Canonical has NOT officially promoted it yet, may be still in beta. Remember these are vanilla images, NOT very useful without Chef or Puppet.
 
-*   [packer-arch project on Github](https://github.com/elasticdog/packer-arch) provides configuration files to build light Arch Linux Vagrant images from the official iso image, using [packer-io](https://aur.archlinux.org/packages/packer-io/)
+*   [packer-arch project on Github](https://github.com/elasticdog/packer-arch) provides configuration files to build light Arch Linux Vagrant images from the official iso image, using [packer-io](https://www.archlinux.org/packages/?name=packer-io)
 
 ## Troubleshooting
 

@@ -410,7 +410,7 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 *   **shttpd** — Supported fork of the thttpd web server
 
-	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://www.archlinux.org/packages/?name=shttpd)
+	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://aur.archlinux.org/packages/shttpd/)
 
 ### File sharing
 
@@ -470,7 +470,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
-*   **Xtreme Download Manager** — Powerful tool to increase download speed up-to 500%. Supports HTTP and FTP.
+*   **Xtreme Download Manager** — Powerful tool to increase download speed up-to 500%. Supports HTTP and FTP. Video grabber works in a general way and is not limited to certain websites.
 
 	[http://xdman.sourceforge.net/](http://xdman.sourceforge.net/) || [xdman](https://aur.archlinux.org/packages/xdman/)
 
@@ -704,7 +704,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 *   **Plowshare** — A set of command-line tools designed for managing file-sharing websites (aka Hosters).
 
-	[https://pyload.net/](https://pyload.net/) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
+	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)
 
 *   **[pyLoad](/index.php/PyLoad "PyLoad")** — Downloader written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
 
@@ -738,7 +738,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 *   **[JDownloader](/index.php/JDownloader "JDownloader")** — Java-based downloader for one-click hosting sites.
 
-	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
+	[http://jdownloader.org/](http://jdownloader.org/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
 
 #### Pastebin clients
 
@@ -816,7 +816,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 

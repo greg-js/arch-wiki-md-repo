@@ -77,7 +77,6 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [7.11 pactl "invalid option" error with negative percentage arguments](#pactl_.22invalid_option.22_error_with_negative_percentage_arguments)
     *   [7.12 Fallback device is not respected](#Fallback_device_is_not_respected)
     *   [7.13 RTP/UDP packet flood](#RTP.2FUDP_packet_flood)
-    *   [7.14 No sound after suspend in KDE](#No_sound_after_suspend_in_KDE)
 
 ## Volume
 
@@ -1176,16 +1175,3 @@ load-module module-stream-restore restore_device=false
 ### RTP/UDP packet flood
 
 In some cases the default configuration might flood the network with UDP packets.[[4]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[5]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
-
-### No sound after suspend in KDE
-
-If there is no sound after suspending and if KMix doesn't show audio devices which should be there, restarting plasmeshell and pulseaudio may help:
-
-```
-$ killall plasmashell
-$ systemctl --user restart pulseaudio.service
-$ plasmashell
-
-```
-
-Some applications may also need to be restarted in order for sound to play from them again.

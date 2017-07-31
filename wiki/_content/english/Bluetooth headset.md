@@ -10,13 +10,12 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
     *   [1.2 Configuration via GNOME Bluetooth](#Configuration_via_GNOME_Bluetooth)
     *   [1.3 Troubleshooting](#Troubleshooting)
         *   [1.3.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
-        *   [1.3.2 Failure while running power on / connect](#Failure_while_running_power_on_.2F_connect)
-        *   [1.3.3 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
-        *   [1.3.4 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
-        *   [1.3.5 Connecting works, but there're sound glitches all the time](#Connecting_works.2C_but_there.27re_sound_glitches_all_the_time)
-        *   [1.3.6 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
-        *   [1.3.7 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
-        *   [1.3.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
+        *   [1.3.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
+        *   [1.3.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
+        *   [1.3.4 Connecting works, but there're sound glitches all the time](#Connecting_works.2C_but_there.27re_sound_glitches_all_the_time)
+        *   [1.3.5 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
+        *   [1.3.6 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.3.7 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -49,6 +48,8 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 ## Headset via Bluez5/PulseAudio
 
 PulseAudio 5.x supports A2DP per default. Make sure the following packages are [installed](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Without [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) you will not be able to connect after the next pairing and you will not get any usable error messages.
+
+**Note:** Before continuing, ensure that the bluetooth device is not blocked by [rfkill](/index.php/Rfkill "Rfkill").
 
 ### Configuration via CLI
 
@@ -157,25 +158,6 @@ Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you
 Deceptively, this menu is available before the device has been connected; annoyingly it will have no effect. The menu seems to be created as soon as the receiver recognizes the device.
 
 Make sure to run bluetoothctl (with sudo/as root) and connect the device manually. There may be configuration options to remove the need to do this each time, but neither pairing nor trusting induce automatic connecting for me.
-
-#### Failure while running power on / connect
-
-If you see an error message like in *bluetoothctl* like `Failed to set power on: org.bluez.Error.Blocked` while powering on [[1]](https://bbs.archlinux.org/viewtopic.php?id=172261) or `Failed to connect: org.bluez.Error.NotReady`. Check if there are any error messages as follows:
-
-```
-$ systemctl status bluetooth.service 
-● bluetooth.service - Bluetooth service
-...
-Jul 23 08:30:00 localhost bluetoothd[801]: Failed to set mode: Blocked through rfkill (0x12)
-
-```
-
-This can be fixed by running:
-
-```
-$ rfkill unblock bluetooth
-
-```
 
 #### Pairing fails with AuthenticationFailed
 
@@ -309,7 +291,7 @@ This message is a very common one and can be ignored.
 
 This might be due to the device not supporting bluetooth LE for pairing.
 
-Try setting `ControllerMode = bredr` in `/etc/bluetooth/main.conf`. See [[3]](http://unix.stackexchange.com/questions/292189/pairing-bose-qc-35-over-bluetooth-on-fedora).
+Try setting `ControllerMode = bredr` in `/etc/bluetooth/main.conf`. See [[2]](http://unix.stackexchange.com/questions/292189/pairing-bose-qc-35-over-bluetooth-on-fedora).
 
 ## Legacy method: ALSA-BTSCO
 

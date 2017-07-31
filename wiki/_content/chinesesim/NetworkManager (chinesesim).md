@@ -93,7 +93,7 @@ NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 Netwo
 通过 [AUR](/index.php/AUR "AUR"):
 
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
-*   [networkmanager-strongswan](https://aur.archlinux.org/packages/networkmanager-strongswan/)
+*   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan)
 
 **警告:** VPN支持[不稳定](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn)，检查守护进程正确处理了通过GUI设置的选项，并对每一个发行包二次检查。[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 

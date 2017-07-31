@@ -256,7 +256,7 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 Your system may work perfectly out-of-the-box without needing any configuration. Therefore it’s a good idea to start with this section to see it that’s is the case.
 
-**Tip:** [mpv](/index.php/Mpv#Hardware_Decoding "Mpv") is great for testing hardware acceleration in practice.
+**Tip:** [mpv](/index.php/Mpv#Hardware_decoding "Mpv") is great for testing hardware acceleration in practice.
 
 ### Verifying VA-API
 

@@ -81,7 +81,7 @@ gdc app.d
 
 ```
 
-or for [dub](https://www.archlinux.org/packages/?name=dub)
+or for [dub](https://aur.archlinux.org/packages/dub/)
 
 ```
 dub --compiler=gdc

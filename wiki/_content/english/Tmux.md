@@ -16,31 +16,31 @@ tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU S
     *   [2.4 Other Settings](#Other_Settings)
     *   [2.5 Autostart with systemd](#Autostart_with_systemd)
 *   [3 Session initialization](#Session_initialization)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Scrolling issues](#Scrolling_issues)
-    *   [4.2 Mouse scrolling](#Mouse_scrolling)
-    *   [4.3 Terminal emulator does not support UTF-8 mouse events](#Terminal_emulator_does_not_support_UTF-8_mouse_events)
-    *   [4.4 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
-*   [5 X clipboard integration](#X_clipboard_integration)
-    *   [5.1 Urxvt middle click](#Urxvt_middle_click)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Start tmux with default session layout](#Start_tmux_with_default_session_layout)
-        *   [6.1.1 Get the default layout values](#Get_the_default_layout_values)
-        *   [6.1.2 Define the default tmux layout](#Define_the_default_tmux_layout)
-        *   [6.1.3 Autostart tmux with default tmux layout](#Autostart_tmux_with_default_tmux_layout)
-        *   [6.1.4 Alternate approach for default session](#Alternate_approach_for_default_session)
-    *   [6.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
-    *   [6.3 Start tmux on every shell login](#Start_tmux_on_every_shell_login)
-        *   [6.3.1 Bash](#Bash)
-    *   [6.4 Start a non-login shell](#Start_a_non-login_shell)
-    *   [6.5 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
-    *   [6.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
-    *   [6.7 Correct the TERM variable according to terminal type](#Correct_the_TERM_variable_according_to_terminal_type)
-    *   [6.8 Reload an updated configuration without restarting tmux](#Reload_an_updated_configuration_without_restarting_tmux)
-    *   [6.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
-    *   [6.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
-    *   [6.11 Automatic layouting](#Automatic_layouting)
-    *   [6.12 Vim friendly configuration](#Vim_friendly_configuration)
+*   [4 X clipboard integration](#X_clipboard_integration)
+    *   [4.1 Urxvt middle click](#Urxvt_middle_click)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Start tmux with default session layout](#Start_tmux_with_default_session_layout)
+        *   [5.1.1 Get the default layout values](#Get_the_default_layout_values)
+        *   [5.1.2 Define the default tmux layout](#Define_the_default_tmux_layout)
+        *   [5.1.3 Autostart tmux with default tmux layout](#Autostart_tmux_with_default_tmux_layout)
+        *   [5.1.4 Alternate approach for default session](#Alternate_approach_for_default_session)
+    *   [5.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
+    *   [5.3 Start tmux on every shell login](#Start_tmux_on_every_shell_login)
+        *   [5.3.1 Bash](#Bash)
+    *   [5.4 Start a non-login shell](#Start_a_non-login_shell)
+    *   [5.5 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
+    *   [5.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
+    *   [5.7 Correct the TERM variable according to terminal type](#Correct_the_TERM_variable_according_to_terminal_type)
+    *   [5.8 Reload an updated configuration without restarting tmux](#Reload_an_updated_configuration_without_restarting_tmux)
+    *   [5.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
+    *   [5.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
+    *   [5.11 Automatic layouting](#Automatic_layouting)
+    *   [5.12 Vim friendly configuration](#Vim_friendly_configuration)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Scrolling issues](#Scrolling_issues)
+    *   [6.2 Mouse scrolling](#Mouse_scrolling)
+    *   [6.3 Terminal emulator does not support UTF-8 mouse events](#Terminal_emulator_does_not_support_UTF-8_mouse_events)
+    *   [6.4 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -287,70 +287,6 @@ bind F source-file ~/.tmux/foo
 bind B source-file ~/.tmux/bar
 
 ```
-
-## Troubleshooting
-
-### Scrolling issues
-
-If you have issues scrolling with Shift-Page Up/Down in your terminal, the following will remove the smcup and rmcup capabilities for any term that reports itself as anything beginning with `xterm`:
-
-```
-set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
-
-```
-
-This tricks the terminal emulator into thinking tmux is a full screen application like pico or mutt[[2]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using tmux's native scrollback instead.
-
-### Mouse scrolling
-
-**Note:** This interferes with selection buffer copying and pasting. To copy/paste to/from the selection buffer hold the shift key.
-
-If you want to scroll with your mouse wheel, ensure mode-mouse is on in .tmux.conf
-
-```
-set -g mouse on
-
-```
-
-You can set scroll History with:
-
-```
-set -g history-limit 30000
-
-```
-
-For mouse wheel scrolling as from tmux 2.1 try adding one or both of these to ~/.tmux.conf
-
-```
-   bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
-   bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
-
-```
-
-Though the above will only scroll one line at a time, add this solution to scroll an entire page instead
-
-```
-   bind -t vi-copy    WheelUpPane   page-up
-   bind -t vi-copy    WheelDownPane page-down
-   bind -t emacs-copy WheelUpPane   page-up
-   bind -t emacs-copy WheelDownPane page-down
-
-```
-
-### Terminal emulator does not support UTF-8 mouse events
-
-When the terminal emulator does not support the UTF-8 mouse events and the `mouse on` tmux option is set, left-clicking inside the terminal window might paste strings like `[M#` or `[Ma` into the promt.
-
-To solve this issue set:
-
-```
-set -g mouse-utf8 off
-
-```
-
-### Shift+F6 not working in Midnight Commander
-
-See [Midnight Commander#Broken shortcuts](/index.php/Midnight_Commander#Broken_shortcuts "Midnight Commander").
 
 ## X clipboard integration
 
@@ -682,7 +618,7 @@ setw -g aggressive-resize on
 
 added to `~/.tmux.conf`. It causes tmux to resize a window based on the smallest client actually viewing it, not on the smallest one attached to the entire session.
 
-An alternative taken from [[3]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/2632) is to put the following ~/.bashrc:
+An alternative taken from [[2]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/2632) is to put the following ~/.bashrc:
 
  `.bashrc` 
 ```
@@ -801,7 +737,7 @@ bind-key -n M-n split-window \; select-layout
 
 ### Vim friendly configuration
 
-See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
+See [[3]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
 
 With tmux 2.4 change:
 
@@ -822,6 +758,70 @@ bind-key -T copy-mode-vi 'Space' send -X halfpage-down
 bind-key -T copy-mode-vi 'Bspace' send -X halfpage-up
 
 ```
+
+## Troubleshooting
+
+### Scrolling issues
+
+If you have issues scrolling with Shift-Page Up/Down in your terminal, the following will remove the smcup and rmcup capabilities for any term that reports itself as anything beginning with `xterm`:
+
+```
+set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
+
+```
+
+This tricks the terminal emulator into thinking tmux is a full screen application like pico or mutt[[4]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using tmux's native scrollback instead.
+
+### Mouse scrolling
+
+**Note:** This interferes with selection buffer copying and pasting. To copy/paste to/from the selection buffer hold the shift key.
+
+If you want to scroll with your mouse wheel, ensure mode-mouse is on in .tmux.conf
+
+```
+set -g mouse on
+
+```
+
+You can set scroll History with:
+
+```
+set -g history-limit 30000
+
+```
+
+For mouse wheel scrolling as from tmux 2.1 try adding one or both of these to ~/.tmux.conf
+
+```
+   bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+   bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+
+```
+
+Though the above will only scroll one line at a time, add this solution to scroll an entire page instead
+
+```
+   bind -t vi-copy    WheelUpPane   page-up
+   bind -t vi-copy    WheelDownPane page-down
+   bind -t emacs-copy WheelUpPane   page-up
+   bind -t emacs-copy WheelDownPane page-down
+
+```
+
+### Terminal emulator does not support UTF-8 mouse events
+
+When the terminal emulator does not support the UTF-8 mouse events and the `mouse on` tmux option is set, left-clicking inside the terminal window might paste strings like `[M#` or `[Ma` into the promt.
+
+To solve this issue set:
+
+```
+set -g mouse-utf8 off
+
+```
+
+### Shift+F6 not working in Midnight Commander
+
+See [Midnight Commander#Broken shortcuts](/index.php/Midnight_Commander#Broken_shortcuts "Midnight Commander").
 
 ## See also
 

@@ -77,7 +77,7 @@ More file handlers can be configured of course.
 
 ### bower
 
-[bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](https://mercurylang.org/).
+[bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](https://mercurylang.org/). It is available from [AUR](/index.php/AUR "AUR") as [bower-mail](https://aur.archlinux.org/packages/bower-mail/).
 
 ### Neomutt
 

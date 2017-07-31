@@ -62,7 +62,7 @@ Run `sudo -ll` to print out the current sudo configuration, or `sudo -lU *user*`
 
 ### Using visudo
 
-The configuration file for sudo is `/etc/sudoers`. It should **always** be edited with the `visudo` command. `visudo` locks the `sudoers` file, saves edits to a temporary file, and checks that file's grammar before copying it to `/etc/sudoers`.
+The configuration file for sudo is `/etc/sudoers`. It should **always** be edited with the [visudo(8)](https://linux.die.net/man/8/visudo) command. `visudo` locks the `sudoers` file, saves edits to a temporary file, and checks that file's grammar before copying it to `/etc/sudoers`.
 
 **Warning:**
 
@@ -71,7 +71,7 @@ The configuration file for sudo is `/etc/sudoers`. It should **always** be edite
 
 The default editor for visudo is `vi`. sudo from the core repository is compiled with `--with-env-editor` by default and honors the use of the `VISUAL` and `EDITOR` variables. `EDITOR` is not used when `VISUAL` is set.
 
-To establish nano as the **visudo** editor for the duration of the current shell session, set the `EDITOR` variable before calling **visudo**:
+To establish nano as the **visudo** editor for the duration of the current shell session export `EDITOR=nano`; to use a different editor just once simply set the variable before calling **visudo**:
 
 ```
 # EDITOR=nano visudo

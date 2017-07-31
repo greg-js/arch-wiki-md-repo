@@ -666,7 +666,7 @@ to `/etc/pam.d/su` and `/etc/pam.d/su-l`. `pam_xauth` will then properly set env
 
 ### X failed to start: Keyboard initialization failed
 
-If your hard disk (specifically `/tmp`) is full, `startx` will fail. `/var/log/Xorg.0.log` will end with:
+If the filesystem (specifically `/tmp`) is full, `startx` will fail. `/var/log/Xorg.0.log` will end with:
 
 ```
 (EE) Error compiling keymap (server-0)
@@ -685,7 +685,7 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 ```
 
-Make some free space on the partition containing `/tmp` and X will start.
+Make some free space on the relevant filesystem and X will start.
 
 ### Rootless Xorg (v1.16)
 

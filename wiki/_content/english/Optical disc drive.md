@@ -657,7 +657,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
-	[https://code.google.com/archive/p/rubyripper/](https://code.google.com/archive/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[https://code.google.com/archive/p/rubyripper/](https://code.google.com/archive/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **shnsplit** — Splits .wav and .flac files according to a CUE sheet and encodes the resulting pieces. A useful companion to ABCDE.
 

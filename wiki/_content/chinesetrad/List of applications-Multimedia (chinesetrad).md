@@ -538,7 +538,7 @@ See also: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FD
 
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper for GNOME.
 

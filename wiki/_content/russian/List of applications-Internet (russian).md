@@ -444,7 +444,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **mu/mu4e** — Индексатор электронной почты (mu) и клиент для emacs (mu4e). Основан на Xapian для быстрого поиска
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Небольшой, но очень мощный консольный почтовый клиент
 

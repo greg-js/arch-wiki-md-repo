@@ -36,6 +36,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [Chakra](https://sourceforge.net/projects/chakra/)
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Frugalware](http://frugalware.org/)
+*   [Happy Hacking Linux](http://kodfabrik.com/happy-hacking-linux)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [LinHES](http://linhes.org/)
 *   [Obarun](http://www.obarun.org/index.html)

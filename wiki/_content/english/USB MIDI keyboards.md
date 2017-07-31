@@ -103,7 +103,7 @@ Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up
 #### Qsynth
 
 1.  Install [qsynth](https://www.archlinux.org/packages/?name=qsynth).
-2.  Start QSynth and go to **Setup**, where you need to load soundfont in SF2 format. You can get free SoundFonts from [http://soundfonts.narod.ru/](http://soundfonts.narod.ru/) (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.
+2.  Start QSynth and go to **Setup**, where you need to load soundfont in SF2 format. You can get free SoundFonts from [fluidplug-git](https://aur.archlinux.org/packages/fluidplug-git/), or from [http://soundfonts.narod.ru/](http://soundfonts.narod.ru/) (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.
 3.  Type `aconnect -o` to list all MIDI output ports. Find the one that contains `FLUID Synth` and note the client number.
 4.  Type `aconnect -i` to list all MIDI input ports. Note the Keyboard client number.
 5.  Assuming *out* is the output client number and *in* is the input client number (72 in our example), type `aconnect *in* *out*`. Now you can play your keyboard and QSynth should produce sounds.

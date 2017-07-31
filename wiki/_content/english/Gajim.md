@@ -19,7 +19,7 @@
 
 ## Enabling DBus remote control Support
 
-As of version 0.16.6, DBus support is disabled, in order to activate it, enable *remote_control* in the 'Advanced Configuration Editor' (Preferences -> Advanced -> 'Advanced Configuration Editor'), then restart Gajim.
+As of version 0.16.6, DBus support is disabled, in order to activate it, enable *remote_control* in the 'Advanced Configuration Editor' *Preferences > Advanced > Advanced Configuration Editor*), then restart Gajim.
 
 ## Enabling OpenPGP
 

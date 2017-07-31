@@ -70,7 +70,6 @@ See [Security#Kernel hardening](/index.php/Security#Kernel_hardening "Security")
 ```
 # reuse/recycle time-wait sockets
 net.ipv4.tcp_tw_reuse = 1
-net.ipv4.tcp_tw_recycle = 1
 
 ```
 

@@ -105,7 +105,7 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
 
-	[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)/[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
+	[linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/)
 
 	The Linux kernel with live patching support.
 

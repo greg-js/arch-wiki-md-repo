@@ -76,9 +76,10 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.6.5 Screen tearing with Nvidia](#Screen_tearing_with_Nvidia)
         *   [6.6.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
     *   [6.7 Sound problems under Plasma 5](#Sound_problems_under_Plasma_5)
-        *   [6.7.1 ALSA related problems](#ALSA_related_problems)
-            *   [6.7.1.1 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
-            *   [6.7.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+        *   [6.7.1 No sound after suspend in KDE](#No_sound_after_suspend_in_KDE)
+        *   [6.7.2 ALSA related problems](#ALSA_related_problems)
+            *   [6.7.2.1 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
+            *   [6.7.2.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.8 Inotify folder watch limit](#Inotify_folder_watch_limit)
     *   [6.9 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [6.10 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
@@ -290,7 +291,7 @@ It migh or it might not be necessary to append `.local` to the hostname.
 
 ### Power saving
 
-Plasma has an integrated power saving service called "**Powerdevil Power Management**" that may adjust the power saving profile of the system and/or the brightness of the screen (if supported).
+[Install](/index.php/Install "Install") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) for an integrated power saving service called "**Powerdevil Power Management**", that may adjust the power saving profile of the system and/or the brightness of the screen (if supported).
 
 **Note:** Powerdevil may not [inhibit](/index.php/Power_management#Power_managers "Power management") all logind settings (such as the lid close action for laptops). In these cases, the logind setting itself will need to be changed - see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 
@@ -632,8 +633,6 @@ $ kbuildsycoca5 --noincremental
 
 ```
 
-Hopefully, your problems are now fixed.
-
 ### Clean akonadi configuration to fix KMail
 
 First, make sure that KMail is not running. Then backup configuration:
@@ -730,6 +729,19 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ### Sound problems under Plasma 5
 
+#### No sound after suspend in KDE
+
+If there is no sound after suspending and if KMix doesn't show audio devices which should be there, restarting plasmeshell and pulseaudio may help:
+
+```
+$ killall plasmashell
+$ systemctl --user restart pulseaudio.service
+$ plasmashell
+
+```
+
+Some applications may also need to be restarted in order for sound to play from them again.
+
 #### ALSA related problems
 
 **Note:** First make sure you have [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) and [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed.
@@ -762,15 +774,14 @@ KDE Baloo Filewatch service reached the inotify folder watch limit. File changes
 Then you will need to increase the inotify folder watch limit:
 
 ```
-# echo 10000 > /proc/sys/fs/inotify/max_user_watches
+# echo 524288 > /proc/sys/fs/inotify/max_user_watches
 
 ```
 
-To make changes permanent, create `/etc/sysctl.d/90-inotify.conf` with
+To make changes permanent, create `/etc/sysctl.d/40-max-user-watches.conf` with:
 
 ```
-#increase inotify watch limit
-fs.inotify.max_user_watches = 10000
+fs.inotify.max_user_watches=524288
 
 ```
 

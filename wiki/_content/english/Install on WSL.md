@@ -2,10 +2,10 @@ Windows 10 has a subsystem that emulates the Linux kernel interface to allow ord
 
 ## Preparation
 
-You must be running the Windows 10 creator's update. If you have not used the Windows Subsystem for Linux yet, follow the instructions [here](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide) to enable it. Basically you enable:
+You must be running the Windows 10 Creator's Update. If you have not used the Windows Subsystem for Linux yet, follow the instructions [here](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide) to enable it. Basically you enable:
 
 *   Developer mode in *Settings > Update and Security > For developers* and
-*   Windows Subsystem for Linux (beta) in *Turn Windows features on or off*.
+*   Windows Subsystem for Linux in *Turn Windows features on or off*.
 
 If you already have it installed use:
 

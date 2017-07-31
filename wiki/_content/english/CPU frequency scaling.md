@@ -61,7 +61,7 @@ The configuration file for *cpupower* is located in `/etc/default/cpupower`. Thi
 To see a full list of available modules, run:
 
 ```
-$ ls /lib/modules/$(uname -r)/kernel/drivers/cpufreq/
+$ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 
 ```
 

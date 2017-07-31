@@ -117,7 +117,7 @@ Id=200
 
 You'll have to have associated .network files for each .netdev to handle addressing and routing. For example, to set the eno1.100 interface with a static IP and the eno1.200 interface with DHCP (but ignoring the supplied default route), use:
 
- `/etc/systemd/network/*eno1.100*.netdev` 
+ `/etc/systemd/network/*eno1.100*.network` 
 ```
 [Match]
 Name=eno1.100
@@ -127,7 +127,7 @@ DHCP=no
 Address=192.168.0.25/24
 
 ```
- `/etc/systemd/network/*eno1.200*.netdev` 
+ `/etc/systemd/network/*eno1.200*.network` 
 ```
 [Match]
 Name=eno1.200

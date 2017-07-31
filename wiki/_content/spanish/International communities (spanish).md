@@ -29,7 +29,7 @@
 
 ## Comunidades Internacionales
 
-Esta lista no está en ninguna manera completa. Si sabe de una comunidad que no estés en la lista, por favor, no dude en añadirla. Si está buscando una comunidad y no existe, inicie una o visite los foros internacionales.
+Esta lista no está en ninguna manera completa. Si sabe de una comunidad que no esté en la lista, por favor, no dude en añadirla. Si está buscando una comunidad y no existe, inicie una o visite los foros internacionales.
 
 ### Brasil
 

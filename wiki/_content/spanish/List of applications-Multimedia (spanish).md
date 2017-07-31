@@ -552,7 +552,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **rubyripper** — Extractor de audio que intenta entregar un registro seguro a través de múltiples extracciones de la misma pista y la corrección de cualquier diferencia.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — Extractor de CD para GNOME.
 

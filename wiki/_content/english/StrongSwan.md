@@ -23,7 +23,7 @@ They are typically implemented in userspace daemons on the server side. [strongS
 
 ## Installation
 
-First, install the [strongswan](https://aur.archlinux.org/packages/strongswan/) package.
+First, install the [strongswan](https://www.archlinux.org/packages/?name=strongswan) package.
 
 ## Certificates
 

@@ -4,36 +4,56 @@
 
 *   [1 Instalação](#Instala.C3.A7.C3.A3o)
 *   [2 Configução](#Configu.C3.A7.C3.A3o)
-*   [3 Iniciando](#Iniciando)
-*   [4 Dicas](#Dicas)
-    *   [4.1 DNSCrypt com cache DNS local](#DNSCrypt_com_cache_DNS_local)
-        *   [4.1.1 Configuração para Unbound](#Configura.C3.A7.C3.A3o_para_Unbound)
-        *   [4.1.2 Configuração para dnsmasq](#Configura.C3.A7.C3.A3o_para_dnsmasq)
-    *   [4.2 Enable EDNS0](#Enable_EDNS0)
-        *   [4.2.1 Teste EDNS0](#Teste_EDNS0)
+    *   [2.1 Escolher resolvedor DNS](#Escolher_resolvedor_DNS)
+    *   [2.2 Modificando o resolv.conf](#Modificando_o_resolv.conf)
+    *   [2.3 Iniciando o serviço Systemd](#Iniciando_o_servi.C3.A7o_Systemd)
+*   [3 Dicas](#Dicas)
+    *   [3.1 DNSCrypt com cache DNS local](#DNSCrypt_com_cache_DNS_local)
+        *   [3.1.1 Configuração para Unbound](#Configura.C3.A7.C3.A3o_para_Unbound)
+        *   [3.1.2 Configuração para dnsmasq](#Configura.C3.A7.C3.A3o_para_dnsmasq)
+    *   [3.2 Enable EDNS0](#Enable_EDNS0)
+        *   [3.2.1 Teste EDNS0](#Teste_EDNS0)
 
 ## Instalação
 
 Instale [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) dos [repositórios oficiais](/index.php/Official_repositories "Official repositories").
 
+**Dica:** [dnscrypt-proxy-gui](https://aur.archlinux.org/packages/dnscrypt-proxy-gui/) fornece uma GUI escrita em QT para configurar o servidor DNS usado pelo DNSCrypt
+
 ## Configução
 
-**Dica:** Para configurar e escolher um provedor DNS reverso automaticamente use [dnscrypt-autoinstall](https://aur.archlinux.org/packages/dnscrypt-autoinstall/) do [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
+**Dica:** Um exemplo de arquivo de configuração, `/etc/dnscrypt-proxy.conf.example` é fornecido, mas note que o systemd substitui a opção `LocalAddress` por um arquivo socket.
 
-Por padrão, *dnscrypt-proxy* é pré-configurado em `/etc/conf.d/dnscrypt-proxy` e serve de parâmetro de configuração para `dnscrypt-proxy.service` para aceitar requisições em `127.0.0.1` para um servidor [OpenDNS](https://opendns.com). Veja esta [lista de servidores DNS reverso](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv) para alternativas.
+Para configurar o dnscrypt-proxy, execute as seguintes etapas:
 
-Com esta configuração será necessário alterar seu arquivo `resolv.conf` e alterar sua atual lista de DNS reverso por *localhost*:
+### Escolher resolvedor DNS
+
+Escolha um resolvedor DNS no arquivo `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` e edit `/etc/dnscrypt-proxy.conf`, usando o nome curto da primeira coluna do arquivo csv, `Name`. Por exemplo, para selecionar *dnscrypt.eu-nl* como resolvedor DNS:
+
+```
+ResolverName dnscrypt.eu-nl
+
+```
+
+**Dica:**
+
+*   Uma lista mais potencialmente mais atualizada está disponível diretamente na [página oficial](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
+*   Nesta fase, você também pode adicionar um usuário não privilegiado para executar o dnscrypt. Veja [#dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges).
+
+### Modificando o resolv.conf
+
+Depois de selecionar um resolvedor DNS do dnscrypt, modifique o arquivo [resolv.conf](/index.php/Resolv.conf "Resolv.conf") e substituia o conjunto atual de endereços para o endereço do *localhost*:
 
 ```
 nameserver 127.0.0.1
 
 ```
 
-Você deve prevenir que outros programas reescrevam-no, veja [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") (*em inglês*) para detalhes.
+outros programas podem substituir esta configuração. Veja [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") para mais detalhes.
 
-## Iniciando
+### Iniciando o serviço Systemd
 
-Disponível como um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"): `dnscrypt-proxy.service`
+Finalmente, [inicie e habilite](https://wiki.archlinux.org/index.php/Systemd_(Português)#Usando_units) o `dnscrypt-proxy.service`
 
 ## Dicas
 

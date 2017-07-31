@@ -680,7 +680,7 @@ Nero Linux предоставляет следующие возможности:
 
 *   **rubyripper** — Риппер аудиодисков, который выдаёт качественную запись путём многократного чтения, обнаружения и исправления различий.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/ru:Sound_Juicer "wikipedia:ru:Sound Juicer")** — CD риппер для GNOME.
 

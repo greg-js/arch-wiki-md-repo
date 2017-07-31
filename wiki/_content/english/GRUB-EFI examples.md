@@ -73,6 +73,8 @@ Shell> bcfg boot add 0 fs1:\EFI\arch_grub\grubx64.efi "Arch Linux (GRUB2)"
 
 where `fs1` is the mapping corresponding to the UEFI System Partition and `\EFI\arch_grub\grubx64.efi` is the the from the `--bootloader-id` from the `grub-install` command above.
 
+**Note:** The above path may need to be something like "fs1:\EFI\**grub**\grubx64.efi", Ex: Shell> bcfg boot add 0 fs***n***:\EFI\grub\grubx64.efi
+
 This will temporarily add a UEFI boot option for the next boot to get into Arch. Once in Arch, modprobe `efivars` and confirm that `efibootmgr` creates no errors (no errors meaning you successfully booted in UEFI mode). Then [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") can be performed again and should successfully permanently add a boot entry in the UEFI menu.
 
 ### ux32vd

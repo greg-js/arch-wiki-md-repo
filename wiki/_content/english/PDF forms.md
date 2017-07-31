@@ -3,17 +3,12 @@ This article is meant to guide (Arch)linux users to use PDF forms. Some of the i
 ## Contents
 
 *   [1 Usage](#Usage)
-    *   [1.1 Cabaret Stage](#Cabaret_Stage)
-    *   [1.2 flpsed](#flpsed)
-    *   [1.3 Inkscape](#Inkscape)
-    *   [1.4 Master PDF Editor](#Master_PDF_Editor)
-    *   [1.5 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
+    *   [1.1 flpsed](#flpsed)
+    *   [1.2 Inkscape](#Inkscape)
+    *   [1.3 Master PDF Editor](#Master_PDF_Editor)
+    *   [1.4 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
 
 ## Usage
-
-### Cabaret Stage
-
-[Cabaret Stage](https://www.cabaret-solutions.com/pdf-produkte/cabaret-stage) claims to be able to read, fill, and save PDF forms.
 
 ### flpsed
 
@@ -37,9 +32,9 @@ See [inkscape](/index.php/Inkscape "Inkscape") for more info.
 
 [Master PDF Editor](https://code-industry.net/) is a PDF editing program that is able to read properly PDF files that "require Adobe Reader 8 or higher" (this is the message that Evince would display when trying to open such files). It is free for non-commercial use.
 
-Version build 3.7.10 could open and fill in forms for Swedish Tax Authority (requiring Adobe Reader 8 or higher) and also save and print the files.
+Version 4.x can open, fill, save and submit PDF forms. In effect it provides the same PDF form functionality as the free version of Adobe Reader on Windows and additionally it can be used to create PDF forms and form elements. Some other PDF features are however disabled in the free version, see its [functionality comparison table](https://code-industry.net/free-pdf-editor/).
 
-Changes are preserved on saved files and can be modified again in Master PDF Editor. However, when opening the saved file with Evince, one would get a blank page, so corruption of the original file is likely (but this was not tested). The simple and safe workaround is to print to PDF and send the "flat" PDF file if one needs sending across a file.
+Changes are preserved on saved files and can be modified again in Master PDF Editor. However, when opening the saved file with Evince 3.2x, due to bugs in Evince one would get blank parts instead of form elements created or edited with Master PDF. Okular 1.1 shows the form elements correctly but has other general bugs in filling/using form elements.
 
 The package can be [installed](/index.php/Install "Install") with [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/) and gives the executable pdfeditor.
 

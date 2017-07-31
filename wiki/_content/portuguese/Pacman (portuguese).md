@@ -75,6 +75,20 @@ Para instalar um único pacote ou lista de pacotes (incluindo dependências), ex
 
 ```
 
+Para instalar um grupo de pacotes que compartilham padrões em sua nomenclatura, mas sem instalar o grupo inteiro, por exemplo, se for instalar o [plasma](https://www.archlinux.org/groups/x86_64/plasma/), mas apenas alguns pacotes como o plasma-desktop e o plasma-mediacenter, pode se utilizar o comando:
+
+```
+# pacman -S *plasma-{desktop,mediacenter}*
+
+```
+
+O comando acima também pode ser usado em subniveis como:
+
+```
+# pacman -S *plasma-{workspace{,-wallpapers},pa}*
+
+```
+
 #### Instalando grupos de pacotes
 
 Alguns pacotes pertencem a um grupo de pacotes que podem ser instalados simultaneamente. Por exemplo, o comando:
@@ -113,7 +127,7 @@ Também visite [https://www.archlinux.org/groups/](https://www.archlinux.org/gro
 
 **Nota:** Se um pacote na lista já está instalado no sistema, ele será reinstalado mesmo se já estiver atualizado. Este comportamento pode ser substituído com a opção `--needed`.
 
-**Dica:** Ao instalar os pacotes, *não* atualiza a lista de pacotes sem [atualização](#Upgrading_packages) do sistema (ex. `pacman -Sy *package_name*`), isso pode ocasinar erros de dependêcias. Veja [#Partial upgrades are unsupported](#Partial_upgrades_are_unsupported) e [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**Dica:** Ao instalar os pacotes, *não* atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (ex. `pacman -Sy *package_name*`), isso pode ocasinar erros de dependêcias. Veja [#Atualizações parciais não são suportadas](#Atualiza.C3.A7.C3.B5es_parciais_n.C3.A3o_s.C3.A3o_suportadas) e [https://bbs.archlinux.org/viewtopic.php?id=89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 ### Removendo pacotes
 
@@ -133,7 +147,7 @@ Para remover um pacote e suas dependências que não são exigidas por qualquer 
 
 Para remover um pacote, suas dependências e todos os pacotes que dependem deste pacote:
 
-**Dica:** Esta operação é recursiva, e deve ser usada com cuidado, pois pode remover muitos pacotes potencialmente necessários.
+**Atenção:** Esta operação é recursiva, e deve ser usada com cuidado, pois pode remover muitos pacotes potencialmente necessários.
 
 ```
 # pacman -Rsc *package_name*
@@ -158,7 +172,12 @@ O pacman salva arquivos de configuração importantes ao remover certos aplicati
 
 ### Atualizando pacotes
 
-Pacman pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório *e* atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
+**Atenção:**
+
+*   Os usuários devem seguir as orientações em [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") para atualizar os seus sistemas regularmente e nao executar o seguinte comando as cegas.
+*   Arch suporta apenas atualizações completa de sistema. Veja [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") e [#Instalando Pacotes](#Instalando_Pacotes) para mais detalhes.
+
+*Pacman* pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório *e* atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
 
 ```
 # pacman -Syu
@@ -167,11 +186,11 @@ Pacman pode atualizar todos os pacotes no sistema com apenas um comando. Isso po
 
 **Dica:** Em vez de logo que as atualizações estiverem disponíveis, os usuários devem reconhecer que, devido à natureza Arch's rolling release, uma atualização pode ter consequências imprevisíveis. Isso significa que não é prudente atualizar se, por exemplo, tem alguma tarefa importante para fazer. Preferencialmente, atualize durante o tempo livre e esteja preparado para lidar com quaisquer problemas que possam surgir.
 
-Pacman é uma ferramenta de gerenciamento de pacotes poderosa, mas não tenta lidar com todos os casos. Leia [The Arch Way (Português)](/index.php/The_Arch_Way_(Portugu%C3%AAs) "The Arch Way (Português)") se estiver confuso. Os usuários devem estar atentos e ter a responsabilidade pela manutenção do seu próprio sistema. **Ao realizar uma atualização do sistema, é essencial que os usuários leiam todas as saídas de informações do pacman e usem o bom senso.** Se um arquivo de configuração do modificado pelo usuário precisa ser atualizado para uma nova versão de um pacote, um arquivo `.pacnew` será criado para evitar a substituição de configurações alteradas pelo usuário. Pacman pedirá ao usuário para juntá-las. Esses arquivos requerem intervenção manual do usuário e é uma boa prática para lidar com eles logo após cada atualização ou remoção do pacote. Veja [Pacnew e arquivos Pacsave](/index.php?title=Pacnew_e_arquivos_Pacsave&action=edit&redlink=1 "Pacnew e arquivos Pacsave (page does not exist)") para mais informações.
+O Pacman é uma ferramenta de gerenciamento de pacotes poderosa, ao atualizar o sistema, os usuários devem estar atentos e ter a responsabilidade pela manutenção do seu próprio sistema. **Ao realizar uma atualização do sistema, é essencial que os usuários leiam todas as saídas de informações do pacman e usem o bom senso.** Se um arquivo de configuração que foi modificado pelo usuário precisar ser atualizado para uma nova versão de um pacote, um arquivo `.pacnew` será criado para evitar a substituição de configurações alteradas pelo usuário, então, o Pacman pedirá ao usuário para juntá-las. Esses arquivos requerem intervenção manual do usuário e é uma boa prática para lidar com eles logo após cada atualização ou remoção do pacote.
 
 **Dica:** Lembre-se que a saída do pacman é registrada no `/var/log/pacman.log`.
 
-Antes de atualizar, é aconselhável visitar [a página Arch Linux Brasil](https://http://www.archlinux-br.org/) para verificar as últimas notícias (alternativamente assinar o [[1]](http://www.archlinux-br.org/feeds/news/), [arco-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), ou seguir [@ archlinux](https://twitter.com/archlinux) no Twitter), quando atualizações exigem a intervenção do usuário (mais do que isso pode ser tratada simplesmente seguindo as instruções dadas pelo pacman), uma mensagem de notícias no site será criada.
+Antes de atualizar, é aconselhável visitar [a página Arch Linux Brasil](https://www.archlinux-br.org/) para verificar as últimas notícias (alternativamente assinar o [[1]](http://www.archlinux-br.org/feeds/news/), [arco-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), ou seguir [@archlinux](https://twitter.com/archlinux) no Twitter), quando atualizações exigem a intervenção do usuário (mais do que isso pode ser tratada simplesmente seguindo as instruções dadas pelo pacman), uma mensagem de notícias no site será criada.
 
 Se alguém encontrar problemas que não podem ser resolvidos por estas instruções, certifique-se de pesquisar no fórum. É provável que os outros já tenham encontrado o mesmo problema e publicaram as instruções para resolvê-lo.
 
@@ -205,6 +224,13 @@ $ pacman -Qs *string1* *string2* ...
 
 ```
 
+Para procurar nomes de pacotes em pacotes remotos:
+
+```
+$ pacman -Fs *string1* *string2* ...
+
+```
+
 Para exibir informações detalhadas sobre um determinado pacote:
 
 ```
@@ -226,7 +252,7 @@ $ pacman -Qii *package_name*
 
 ```
 
-Para obter uma lista dos arquivos instalados por um pacote
+Para obter uma lista dos arquivos instalados por um pacote:
 
 ```
 $ pacman -Ql *package_name*
@@ -235,6 +261,22 @@ $ pacman -Ql *package_name*
 
 Para pacotes não instalados, use [pkgfile](/index.php/Pkgfile "Pkgfile").
 
+Para obter uma lista dos arquivos instalados por um pacote remoto:
+
+```
+$ pacman -Fl *package_name*
+
+```
+
+Para verificar a presença dos arquivos instalados por um pacote:
+
+```
+$ pacman -Qk *package_name*
+
+```
+
+Usando duas flags `k`, irá ser realizado uma verificação mais aprofundada.
+
 Pode-se também consultar a base de dados para saber qual pacote um arquivo no arquivo do sistema pertence:
 
 ```
@@ -242,10 +284,24 @@ $ pacman -Qo */path/to/file_name*
 
 ```
 
-Para listar todos os pacotes não são exigidos como dependências (órfãos):
+Para consultar o banco de dados para saber de qual pacote remoto um arquivo pertence:
+
+```
+$ pacman -Fo /path/to/file_name
+
+```
+
+Para listar todos os pacotes que não são exigidos como dependências (órfãos):
 
 ```
 $ pacman -Qdt
+
+```
+
+Para listar todos os pacotes explicitamente instalados e que não são necessários como dependências:
+
+```
+$ pacman -Qet
 
 ```
 
@@ -269,6 +325,8 @@ Ou a flag inversa para *pactree*:
 $ pactree -r *package_name*
 
 ```
+
+veja [pacman tips](/index.php/Pacman_tips "Pacman tips") para mais exemplos.
 
 #### Estrutura da base de dados
 

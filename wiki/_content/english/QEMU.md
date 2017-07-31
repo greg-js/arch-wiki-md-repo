@@ -1346,8 +1346,6 @@ If you want to track you guest memory state (for example via `virsh` command `do
 
 For this you will need to go to *Device Manager*, locate *PCI standard RAM Controller* in *System devices* (or unrecognized PCI controller from *Other devices*) and choose *Update driver*. In opened window you will need to choose *Browse my computer...* and select the CD-ROM (and don't forget the *Include subdirectories* checkbox). Reboot after installation. This will install the driver and you will be able to inflate the balloon (for example via hmp command `balloon *memory_size*`, which will cause balloon to take as much memory as possible in order to shrink the guest's available memory size to *memory_size*). However, you still won't be able to track guest memory state. In order to do this you will need to install *Balloon* service properly. For that open command line as administrator, go to the CD-ROM, *Balloon* directory and deeper, depending on your system and architecture. Once you are in *amd64* (*x86*) directory, run `blnsrv.exe -i` which will do the installation. After that `virsh` command `dommemstat` should be outputting all supported values.
 
-**Note:** In windows command line you are not able to `cd` to other disk. In order to change disk simply type `Disk_letter:` (in my case `E:` and you will be free to `cd`).
-
 ### Preparing a FreeBSD guest
 
 Install the `emulators/virtio-kmod` port if you are using FreeBSD 8.3 or later up until 10.0-CURRENT where they are included into the kernel. After installation, add the following to your `/boot/loader.conf` file:

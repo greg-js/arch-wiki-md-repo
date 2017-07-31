@@ -518,7 +518,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **rubyripper** — Applicazione che cerca di fornire una registrazione sicura attraverso un ripping multiplo della stessa traccia. Effettua la correzione di eventuali differenze.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://aur.archlinux.org/packages/rubyripper/)
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper per GNOME.
 

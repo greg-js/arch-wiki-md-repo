@@ -856,19 +856,19 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 ### Stylus notes taking
 
-*   **Write** — a word processor for hand writing.
+*   **Write** — A word processor for hand writing.
 
 	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
 
-*   **Gournal** — note-taking application written for usage on Tablet-PC, written in perl.
+*   **Gournal** — Note-taking application written for usage on Tablet-PC, written in perl.
 
 	[http://www.adebenham.com/old-stuff/gournal/](http://www.adebenham.com/old-stuff/gournal/) || [gournal](https://aur.archlinux.org/packages/gournal/)
 
-*   **Xournal** — an application for notetaking, sketching, keeping a journal using a stylus.
+*   **Xournal** — An application for notetaking, sketching, keeping a journal using a stylus.
 
 	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
 
-*   **Xournal++** — Xournal++ is not Xournal! It is a ground-up rewrite of Xournal in a different language (C++ instead of C). The purpose was to create a more flexible application that significantly extends the functionality of Xournal.
+*   **Xournal++** — A C++ rewrite of Xournal.
 
 	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
 

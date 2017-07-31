@@ -235,7 +235,7 @@ See also [Pacnew and Pacsave files](/index.php/Pacnew_and_Pacsave_files "Pacnew 
 
 ### options
 
-This array allows overriding some of the default behavior of *makepkg*, defined in `/etc/makepkg.conf`. To set an option, include the name in the array. To reverse the default behavior, place an **`!`** at the front.
+This array allows overriding some of the default behavior of *makepkg*, defined in `/etc/makepkg.conf`. To set an option, include the name in the array. To disable an option, place an **`!`** before it.
 
 The full list of the available options can be found in [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html).
 

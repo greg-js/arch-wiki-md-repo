@@ -905,19 +905,7 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 ### Working with wired connections
 
-By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. The procedure is as follows:
-
-1\. NN sees an ethernet network interface and the interface is to be managed by NM
-
-2\. The interface has no current IP configuration (in that case, NM would instead generate a different kind of connection, to not modify the interface. That generated connection behaves differently, and it is usually named like "eth0" -- contrary to "Wired connection 1")
-
-3\. The interface has no persistent connection on disk that could be used.
-
-4\. Neither no-auto-default config nor /var/lib/NM/no-auto-default.state prevents NM from generating a connection
-
-After following this procedure, NM generates the connection and will auto-activate it. It's in memory-only, but on next boot, NM will do the same again. This is all done, so you can start NM the first time and it will automatically connect the ethernet.
-
-At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring "no-auto-default" (see `man NetworkManager.conf`), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again in the file "/var/lib/NetworkManager/no-auto-default.state".
+By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring "no-auto-default" (see `man NetworkManager.conf`), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
 
 You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
 

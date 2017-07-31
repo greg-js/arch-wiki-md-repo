@@ -173,7 +173,7 @@ First [enable](/index.php/Enable "Enable") the `machines.target` target, then `s
 
 **Tip:**
 
-*   To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See `systemd-nspawn(1)` for all options.
+*   To customize the startup of a container, [edit](/index.php/Edit "Edit") the `systemd-nspawn@*myContainer*` unit instance. See [systemd-nspawn(1)](http://man7.org/linux/man-pages/man1/systemd-nspawn.1.html) for all options.
 
 ### Build and test packages
 
@@ -185,7 +185,7 @@ See [Creating packages for other distributions](/index.php/Creating_packages_for
 
 **Note:** The *machinectl* tool requires [systemd](/index.php/Systemd "Systemd") and [dbus](https://www.archlinux.org/packages/?name=dbus) to be installed in the container. See [[1]](https://github.com/systemd/systemd/issues/685) for detailed discussion.
 
-Managing your containers is essentially done with the `machinectl` command. See `machinectl(1)` for details.
+Managing your containers is essentially done with the `machinectl` command. See [machinectl(1)](http://man7.org/linux/man-pages/man1/machinectl.1.html) for details.
 
 Examples:
 
@@ -276,7 +276,7 @@ See [Firefox tweaks](/index.php/Firefox_tweaks#Run_Firefox_inside_an_nspawn_cont
 
 ### Access host filesystem
 
-See `--bind` and `--bind-ro` in `man systemd-nspawn`.
+See `--bind` and `--bind-ro` in [systemd-nspawn(1)](http://man7.org/linux/man-pages/man1/systemd-nspawn.1.html).
 
 If both the host and the container are Arch Linux, then one could, for example, share the pacman cache:
 
@@ -362,12 +362,7 @@ See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
 ### Specify per-container settings
 
-To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[2]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the ".nspawn" file definition can be used [[3]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#)
-
-```
- man systemd.nspawn
-
-```
+To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[2]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the *.nspawn* file definition can be used [[3]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#), refer to [systemd.nspawn(5)](http://man7.org/linux/man-pages/man5/systemd.nspawn.5.html) for details.
 
 ### Use Btrfs subvolume as container root
 

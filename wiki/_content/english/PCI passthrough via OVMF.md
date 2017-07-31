@@ -42,6 +42,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+        *   [10.1.1 "BAR 3: can't reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_can.27t_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
     *   [10.2 UEFI (OVMF) Compatability in VBIOS](#UEFI_.28OVMF.29_Compatability_in_VBIOS)
     *   [10.3 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
     *   [10.4 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
@@ -50,7 +51,6 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.7 X doesnt start after enabling vfio_pci](#X_doesnt_start_after_enabling_vfio_pci)
     *   [10.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
     *   [10.9 VM only uses one core](#VM_only_uses_one_core)
-    *   [10.10 "BAR 3: can't reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_can.27t_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -768,6 +768,34 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 ...
 ```
 
+#### "BAR 3: can't reserve [mem]" error in dmesg after starting VM
+
+With respect to [this article](http://www.linuxquestions.org/questions/linux-kernel-70/kernel-fails-to-assign-memory-to-pcie-device-4175487043/):
+
+If you still have code 43 check dmesg for memory reservation errors after starting up VM, if you have similar it could be the case:
+
+```
+vfio-pci 0000:09:00.0: BAR 3: can't reserve [mem 0xf0000000-0xf1ffffff 64bit pref]
+
+```
+
+Find out a PCI Bridge your graphic card is connected to. This will give actual hierarchy of devices:
+
+```
+$ lspci -t
+
+```
+
+Before starting VM run following lines replacing IDs with actual from previous output.
+
+```
+# echo 1 > /sys/bus/pci/devices/0000\:00\:03.1/remove
+# echo 1 > /sys/bus/pci/rescan
+
+```
+
+**Note:** Probably setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") video=efifb:off is required as well. [Source](https://pve.proxmox.com/wiki/Pci_passthrough#BAR_3:_can.27t_reserve_.5Bmem.5D_error)
+
 ### UEFI (OVMF) Compatability in VBIOS
 
 With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible):
@@ -959,27 +987,6 @@ This can be fixed by [explicitly telling Chromium which GPU you want to use](/in
 ### VM only uses one core
 
 For some users, even if IOMMU is enabled and the core count is set to more than 1, the VM still only uses one CPU core and thread. To solve this enable "Manually set CPU topology" in `virt-manager` and set it to the desirable amount of CPU sockets, cores and threads. Keep in mind that "Threads" refers to the thread count per CPU, not the total count.
-
-### "BAR 3: can't reserve [mem]" error in dmesg after starting VM
-
-With respect to [this article](http://www.linuxquestions.org/questions/linux-kernel-70/kernel-fails-to-assign-memory-to-pcie-device-4175487043/):
-
-Find out a PCI Bridge your graphic card is connected to:
-
-```
-$ lspci -t
-
-```
-
-This will give actual hierarchy of devices. And before starting VM run following lines replacing IDs with actual from previous output.
-
-```
-# echo 1 > /sys/bus/pci/devices/0000\:00\:03.1/remove
-# echo 1 > /sys/bus/pci/rescan
-
-```
-
-**Note:** Probably setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") video=efifb:off is required as well. [Source](https://pve.proxmox.com/wiki/Pci_passthrough#BAR_3:_can.27t_reserve_.5Bmem.5D_error)
 
 ## See also
 

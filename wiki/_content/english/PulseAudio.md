@@ -446,7 +446,7 @@ And then either restarting PulseAudio or your computer will only idle the input 
 
 ### Keyboard volume control
 
-Map the following commands, for example with [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"), to your volume keys: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`
+Map the following commands to your volume keys: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`. See [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg") for details.
 
 First find out which sink corresponds to the audio output you'd like to control. To list available sinks:
 

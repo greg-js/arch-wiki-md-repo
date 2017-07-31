@@ -465,7 +465,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[Anki](/index.php/Anki "Anki")** — Anki is a program which makes remembering things easy.
 
-	[http://ankisrs.net/](http://ankisrs.net/) || [anki](https://aur.archlinux.org/packages/anki/)
+	[http://ankisrs.net/](http://ankisrs.net/) || [anki](https://www.archlinux.org/packages/?name=anki)
 
 *   **iGNUit** — Memorization aid based on the Leitner flashcard system.
 

@@ -20,6 +20,8 @@ Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paq
 *   [5 Subir paquetes a AUR](#Subir_paquetes_a_AUR)
 *   [6 Resumen](#Resumen_2)
     *   [6.1 Advertencias](#Advertencias)
+*   [7 Directrices más detalladas](#Directrices_m.C3.A1s_detalladas)
+*   [8 Ver también](#Ver_tambi.C3.A9n)
 
 ## Resumen
 
@@ -216,3 +218,17 @@ Por favor lea [Arch User Repository#Submitting packages](/index.php/Arch_User_Re
 
 *   Antes de automatizar el proceso de construcción de paquetes, deberá haberlo hecho por lo menos una vez de manera manual para saber de antemano exactamente lo que esta haciendo. Desafortunadamente muchos autores de paquetes se apegan al proceso de 3 pasos de `./configure, make make install`, este no es siempre el caso y puede quedar un paquete en muy malas condiciones si no aplica el cuidado necesario para que todo funcione bien.
 *   En algunos pocos casos, los paquetes no son disponibles en código fuente y habrá que recurrir a scripts como `sh instalador.run` para poder ejecutarlo, habrá de hacer una extensa investigación acerca de otros `PKGBUILD`, leer los `README`, buscar información del creador del programa, o buscar `EBUILDS` de Gentoo para poder ejecutar la instalación, recuerde que makepkg debe ser completamente automático y sin intervención del usuario.
+
+## Directrices más detalladas
+
+**[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
+
+* * *
+
+[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+
+## Ver también
+
+*   [How to correctly create a patch file](https://bbs.archlinux.org/viewtopic.php?id=91408).
+*   [Arch Linux Classroom IRC Logs of classes about creating PKGBUILDs](https://archwomen.org/media/project_classroom/classlogs/).
+*   [Fakeroot approach for package installation](http://www.linuxfromscratch.org/hints/downloads/files/fakeroot.txt)
