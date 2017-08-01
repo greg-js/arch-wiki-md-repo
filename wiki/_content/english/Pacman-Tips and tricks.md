@@ -285,21 +285,23 @@ Server = file:///mnt/repo/Packages
 
 ### Custom local repository
 
-Use the *repo-add* script included with Pacman to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. Simply store all of the built packages to be included in the repository in one directory, and execute the following command (where *repo* is the name of the custom repository):
+Use the *repo-add* script included with pacman to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. To add a new package to the database, or to replace the old version of an existing package in the database, run:
 
 ```
-$ repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz
+$ repo-add */path/to/repo.db.tar.gz /path/to/package-1.0-1-x86_64.pkg.tar.xz*
 
 ```
 
-**Note:** A package database is a tar file, optionally compressed. Valid extensions are “.db” or “.files” followed by an archive extension of “.tar”, “.tar.gz”, “.tar.bz2”, “.tar.xz”, or “.tar.Z”. The file does not need to exist, but all parent directories must exist. Furthermore when using `repo-add` keep in mind that the database and the packages do not need to be in the same directory. But when using pacman with that database, they should be together.
+**Note:** A package database is a tar file, optionally compressed. Valid extensions are “.db” or “.files” followed by an archive extension of “.tar”, “.tar.gz”, “.tar.bz2”, “.tar.xz”, or “.tar.Z”. The file does not need to exist, but all parent directories must exist.
 
-To add a new package to the database, or to replace the old version of an existing package in the database, run:
-
-```
-$ repo-add /path/to/repo.db.tar.gz /path/to/packagetoadd-1.0-1-i686.pkg.tar.xz
+The database and the packages do not need to be in the same directory when using *repo-add*, but keep in mind that when using pacman with that database, they should be together. Storing all the built packages to be included in the repository in one directory also allows to use shell glob expansion to add or update multiple packages at once:
 
 ```
+$ repo-add */path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz*
+
+```
+
+**Warning:** *repo-add* adds the entries into the database in the same order as passed on the command line. If multiple versions of the same package are involved, care must be taken to ensure that the correct version is added last. In particular, note that lexical order used by the shell depends on the locale and differs from the [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) ordering used by pacman.
 
 *repo-remove* is used in the exact same manner as *repo-add*, except that the packages listed on the command line are removed from the repository database.
 

@@ -1,15 +1,17 @@
+**翻译状态：** 本文是英文页面 [Install on WSL](/index.php/Install_on_WSL "Install on WSL") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-01，点击[这里](https://wiki.archlinux.org/index.php?title=Install+on+WSL&diff=0&oldid=483162)可以查看翻译后英文页面的改动。
+
 Windows 10 包含一个模拟 Linux 内核的子系统，使得 windows 可以运行 Linux 原生应用程序。这个子系统有点像反过来的 [Wine](/index.php/Wine "Wine")，但是它比 Wine 更加底层。默认情况下，此子系统使用 Ubuntu 用户空间，但是它可以被替换成 Arch。你需要使用一个现有的 Arch 安装去构建一些软件包，这篇说明基于[这篇教程](https://www.reddit.com/r/bashonubuntuonwindows/comments/5vnne8/howto_installing_arch_on_wsl_manually/)。
 
 ## 准备
 
-你必须安装 Windows 10 创造者更新。如果你还没有使用过 Linux 子系统，请按照[这里](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide)安装。 简单来说，你需要打开：
+你必须安装 Windows 10 创造者更新。如果还没有使用过 Linux 子系统，请按照[官方安装指南](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide)进行安装。简单来说，需要启用：
 
-*   开发人员模式，位于 *设置 > 更新和安全 > 针对开发人员*；
-*   适用于 Linux 的 Windows 子系统(Beta)，位于 *启用或关闭 Windows 功能*。
+*   *设置 > 更新和安全 > 针对开发人员*中的开发人员模式，以及
+*   位于 *启用或关闭 Windows 功能* 的适用于 Linux 的 Windows 子系统，。
 
-**注意:** 如果你正在使用 Windows Insider 预览版，或者将来你安装了 Windows 10 2017年内秋季的创造者更新，你可以在[Windows 应用商店](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6)安装 Ubuntu。[详情请见](https://blogs.msdn.microsoft.com/commandline/2017/07/10/ubuntu-now-available-from-the-windows-store/)。
+**注意:** 如果正在使用 Windows Insider 预览版，或者将来安装了 Windows 10 2017年内秋季的创造者更新，你可以在[Windows 应用商店](https://www.microsoft.com/en-us/store/p/ubuntu/9nblggh4msv6)安装 Ubuntu。[详情请见](https://blogs.msdn.microsoft.com/commandline/2017/07/10/ubuntu-now-available-from-the-windows-store/)。
 
-如果你已经开始使用，可以使用以下的命令完全删除已有的安装（在此之前，你可能需要保存你的数据）:
+如果已经开始使用 wsl，可以使用以下的命令完全删除已有的安装（在此之前，你可能需要保存你的数据）:
 
 ```
 > lxrun /uninstall /full /y

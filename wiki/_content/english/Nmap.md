@@ -273,7 +273,7 @@ For other timing and parallelization options, see `man nmap`.
 
 ### Specify targets input from a list file
 
-Often it is necessary to scan a large number of non-adjuscent addresses. Passing them on the command line is usually not convenient. For this reason Nmap supports **i**nput from a **l**ist file (`-iL`):
+Often it is necessary to scan a large number of non-adjacent addresses. Passing them on the command line is usually not convenient. For this reason Nmap supports **i**nput from a **l**ist file (`-iL`):
 
  `addresses.txt` 
 ```

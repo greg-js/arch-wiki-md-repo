@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [ZeroNet](/index.php/ZeroNet "ZeroNet") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=ZeroNet&diff=0&oldid=482432)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [ZeroNet](/index.php/ZeroNet "ZeroNet") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-01，点击[这里](https://wiki.archlinux.org/index.php?title=ZeroNet&diff=0&oldid=483448)可以查看翻译后英文页面的改动。
 
-From [ZeroNet](https://zeronet.io/) gives access to "open, free and uncensorable websites, using Bitcoin cryptography and BitTorrent network".
+[ZeroNet](https://zeronet.io/) 可以“利用比特币加密和 BitTorrent 网络创建公开、自由和不受审查的网站”。
 
 ## Contents
 
@@ -46,14 +46,14 @@ CookieAuthFile /var/lib/tor-auth/control_auth_cookie
 
 ## 创建 ZeroNet 站点
 
-All operations, including editing ZeroNet site files, should be done as user `zeronet` and configuration must be passed for data directory to be selected to `/var/lib/zeronet`. For example:
+所有操作，包括 ZeroNet 站点文件的编辑，都应该以 `zeronet` 用户执行。使用 `--config_file` 选项可以指定要使用的配置文件。`/var/lib/zeronet` 中默认的数据文件目录是`/var/lib/zeronet`。示例:
 
 ```
 $ sudo -u zeronet python2 zeronet.py --config_file /etc/zeronet.conf
 
 ```
 
-Or
+或
 
 ```
 $ sudo su - zeronet
@@ -62,9 +62,8 @@ $ python2 zeronet.py --config_file /etc/zeronet.conf
 
 ```
 
-All zites you create will have their initial data folder setup in /var/lib/zeronet/[address]. For more information on how to create a Zite, please follow the guidelines on the [Zeronet FAQ](http://zeronet.readthedocs.io/en/latest/using_zeronet/create_new_site/).
+创建的站点的初始数据位于 `/var/lib/zeronet/[address]` 中，关于创建 Zeronet 站点的更多信息，请阅读 [Zeronet FAQ](http://zeronet.readthedocs.io/en/latest/using_zeronet/create_new_site/).
 
 ## 参阅
 
-*   [Official ZeroNet website](https://zeronet.io/)
-*   [ZeroNet - Read the Docs](https://zeronet.readthedocs.io/en/latest/)
+*   [ZeroNet 文档](https://zeronet.readthedocs.io/en/latest/)

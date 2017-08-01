@@ -19,7 +19,8 @@ The main use-case is to enable server-side hardware-accelerated 3D rendering for
     *   [5.3 Problem: vglrun fails with ld.so errors](#Problem:_vglrun_fails_with_ld.so_errors)
     *   [5.4 Problem: vglrun fails with ERROR: Could not connect to VGL client.](#Problem:_vglrun_fails_with_ERROR:_Could_not_connect_to_VGL_client.)
     *   [5.5 Problem: Error messages about /etc/opt/VirtualGL/vgl_xauth_key not existing](#Problem:_Error_messages_about_.2Fetc.2Fopt.2FVirtualGL.2Fvgl_xauth_key_not_existing)
-    *   [5.6 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches.2C_unusually_poor_performance.2C_or_application_errors)
+    *   [5.6 Problem: vglrun fails with ERROR: VirtualGL attempted to load the real glXCreatePbuffer function and got the fake one instead.](#Problem:_vglrun_fails_with_ERROR:_VirtualGL_attempted_to_load_the_real_glXCreatePbuffer_function_and_got_the_fake_one_instead.)
+    *   [5.7 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches.2C_unusually_poor_performance.2C_or_application_errors)
 *   [6 See also](#See_also)
 
 ## Installation and setup
@@ -269,6 +270,10 @@ display-setup-script=/usr/bin/vglgenkey
 ```
 
 so it only runs on the first X server fixed my problem.
+
+### Problem: vglrun fails with ERROR: VirtualGL attempted to load the real glXCreatePbuffer function and got the fake one instead.
+
+This means that VirtualGL is trying to load a function from the wrong library. You can specify which OpenGL library to use by setting `LD_PRELOAD` to the path of the library. `/usr/lib/libGL.so` appears to work for 64-bit applications. Keep in mind that 32-bit applications (like Steam or Wine) will require 32-bit OpenGL. If you need to use both 32-bit and 64-bit libraries, you can load them both with `LD_PRELOAD="/path/to/libGL.so /path/to/lib32/libGL.so"`.
 
 ### Problem: rendering glitches, unusually poor performance, or application errors
 

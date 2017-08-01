@@ -22,6 +22,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [4.1 NVIDIA Corporation GM204M [GeForce GTX 965M]](#NVIDIA_Corporation_GM204M_.5BGeForce_GTX_965M.5D)
 *   [5 Control of the light colors](#Control_of_the_light_colors)
 *   [6 Issues](#Issues)
+    *   [6.1 Alienware 15 R3](#Alienware_15_R3)
 
 ## Hardware overview
 
@@ -189,3 +190,16 @@ to
 /etc/modprobe.d/alsa-base.conf
 
 ```
+
+### Alienware 15 R3
+
+Xorg freezes when starting with discrete graphics card OFF
+
+For fix: Add
+
+```
+ acpi_osi=! acpi_osi="Windows 2009"
+
+```
+
+to Kernel options.

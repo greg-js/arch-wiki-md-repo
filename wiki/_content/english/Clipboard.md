@@ -85,7 +85,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://extensions.gnome.org/extension/779/clipboard-indicator/](https://extensions.gnome.org/extension/779/clipboard-indicator/) || [https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator](https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator)
 
-*   **ClipIt** — Fork of Parcellite.
+*   **ClipIt** — Fork of Parcellite.It has both a command line and GUI mode available.
 
 	[https://sourceforge.net/projects/gtkclipit/](https://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
@@ -121,7 +121,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://userbase.kde.org/Klipper](https://userbase.kde.org/Klipper) || [plasma-workspace](https://www.archlinux.org/packages/?name=plasma-workspace)
 
-*   **Parcellite** — Lightweight yet feature-rich clipboard manager.
+*   **Parcellite** — Lightweight yet feature-rich clipboard manager. It has both a command line and GUI mode available.
 
 	[http://parcellite.sourceforge.net/](http://parcellite.sourceforge.net/) || [parcellite](https://www.archlinux.org/packages/?name=parcellite)
 
@@ -137,12 +137,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://github.com/astrand/xclip](https://github.com/astrand/xclip) || [xclip](https://www.archlinux.org/packages/?name=xclip)
 
-*   **xcmenu** — Clipboard synchronizer developed for window manager
-
-```
- users.
-
-```
+*   **xcmenu** — Clipboard synchronizer developed for window manager users.
 
 	[https://github.com/dindon-sournois/xcmenu](https://github.com/dindon-sournois/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)
 

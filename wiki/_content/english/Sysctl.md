@@ -68,7 +68,7 @@ See [Security#Kernel hardening](/index.php/Security#Kernel_hardening "Security")
 **Warning:** This may cause dropped frames with load-balancing and NATs, only use this for a server that communicates only over your local network.
 
 ```
-# reuse/recycle time-wait sockets
+# reuse time-wait sockets
 net.ipv4.tcp_tw_reuse = 1
 
 ```

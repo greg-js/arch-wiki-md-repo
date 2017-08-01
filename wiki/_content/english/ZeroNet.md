@@ -44,7 +44,7 @@ CookieAuthFile /var/lib/tor-auth/control_auth_cookie
 
 ## Creating ZeroNet sites
 
-All operations, including editing ZeroNet site files, should be done as user `zeronet` and configuration must be passed for data directory to be selected to `/var/lib/zeronet`. For example:
+All operations, including editing ZeroNet site files, should be done as user `zeronet`. Use `--config_file` to specify the configuration file. `/etc/zeronet.conf` use `/var/lib/zeronet` as data directory by defaul. For example:
 
 ```
 $ sudo -u zeronet python2 zeronet.py --config_file /etc/zeronet.conf

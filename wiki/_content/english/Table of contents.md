@@ -127,7 +127,7 @@
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(39)</small> |
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(22)</small> |
-| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(73)</small> |
+| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |
 | <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

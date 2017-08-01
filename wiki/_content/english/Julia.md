@@ -1,12 +1,17 @@
-Julia is a high-level, high-performance dynamic programming language for numerical computing. It provides a sophisticated compiler, distributed parallel execution, numerical accuracy, and an extensive mathematical function library.
+[Julia](https://julialang.org/) is a high-level, high-performance dynamic programming language for numerical computing. It provides a sophisticated compiler, distributed parallel execution, numerical accuracy, and an extensive mathematical function library.
 
 ## Contents
 
-*   [1 Integration with editors](#Integration_with_editors)
-    *   [1.1 Vim](#Vim)
-        *   [1.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
-        *   [1.1.2 Linting](#Linting)
-*   [2 Performance](#Performance)
+*   [1 Installation](#Installation)
+*   [2 Integration with editors](#Integration_with_editors)
+    *   [2.1 Vim](#Vim)
+        *   [2.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
+        *   [2.1.2 Linting](#Linting)
+*   [3 Performance](#Performance)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [julia](https://www.archlinux.org/packages/?name=julia) package. To learn and use Julia, please read [upstream documents](https://docs.julialang.org/en/stable/).
 
 ## Integration with editors
 

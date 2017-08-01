@@ -83,7 +83,11 @@ Inherits=*theme-name*
 
 You should then edit `~/.config/gtk-3.0/settings.ini`. Edit the following line and replace the `*theme-name*` with the theme directory name:
 
- `~/.config/gtk-3.0/settings.ini`  `gtk-cursor-theme-name=*theme-name*` 
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-cursor-theme-name=*theme-name*
+```
 
 Re-login for the changes to take effect.
 

@@ -1476,7 +1476,7 @@ Bluetooth is fully supported starting from kernel-4.4.0.
 
 ##### Suspend & Power Off (11,4+)
 
-The 11,4 and 11,5 MacBook Pros do not shutdown or suspend correctly with the default kernel. This issue is being addressed in [Bug 103211](https://bugzilla.kernel.org/show_bug.cgi?id=103211) and a temporary patch is currently available in [linux-macbook](https://aur.archlinux.org/packages/linux-macbook/).
+The 11,4 and 11,5 MacBook Pros do not shutdown or suspend correctly with the default kernel. This issue is being addressed in [Bug 103211](https://bugzilla.kernel.org/show_bug.cgi?id=103211) and a temporary patch is currently available in [linux-macbook](https://aur.archlinux.org/packages/linux-macbook/). Note that [Linux 4.13.0](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/arch/x86/pci/fixup.c?h=v4.13-rc1&id=13cfc732160f7bc7e596128ce34cda361c556966) has this patch included, and will be released shortly.
 
 ##### Keyboard & Trackpad
 
