@@ -68,7 +68,7 @@ The thermometer on the discrete Nvidia GPU can be monitored with the `nvidia-smi
 
 ### Disable discrete GPU
 
-The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). ~~To disable it when not in use it is necessary to build a custom kernel with the `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE` flag set, follow Arch Kernel Bug [53281](https://bugs.archlinux.org/task/53281) to check if the flag has been set in the main package. See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").~~ The flag CONFIG_ACPI_REV_OVERRIDE_POSSIBLE has been added in the [ArchLinux kernel package](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/linux&id=0e9b0dcf10e65293c75dc893ce90deb90a1f57f3). When running such a kernel, install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot.
+The discrete Nvidia GTX 1050 GPU is on by default and cannot be disabled in the UEFI settings. Even when idle, it uses a significant amount of power (about 7W). To disable it when not in use it is necessary to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) and [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), add `acpi_rev_override=1` to the [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), [enable](/index.php/Enable "Enable") `bumblebeed.service`, and reboot.
 
 ```
 $ cat /proc/acpi/bbswitch

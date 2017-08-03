@@ -26,7 +26,7 @@ From the project [home page](http://zim-wiki.org/):
 
 ## Installation
 
-You can install [zim](https://www.archlinux.org/packages/?name=zim) from the [official repositories](/index.php/Official_repositories "Official repositories"). There is also an AUR package called [zim-bzr](https://aur.archlinux.org/packages/zim-bzr/) which provides the latest developer snapshot.
+[Install](/index.php/Install "Install") the [zim](https://www.archlinux.org/packages/?name=zim) package. There is also an AUR package called [zim-bzr](https://aur.archlinux.org/packages/zim-bzr/) which provides the latest developer snapshot.
 
 ## Usage
 

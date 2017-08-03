@@ -107,7 +107,17 @@ $ netctl stop vpn
 
 ```
 
-Note that this relies on `LOCAL_USERNAME` having a [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") running, with the passphrase for the PGP key already cached, as it is not possible for [pass](/index.php/Pass "Pass") to trigger an interactive query from this environment.
+Note that this relies on `LOCAL_USERNAME` having a [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") running, with the passphrase for the PGP key already cached.
+
+If [pass](/index.php/Pass "Pass")’ interactive query is wanted, use the following line for `PASSWORD`:
+
+```
+DISPLAY=":0"
+PASSWORD="`su ${LOCAL_USERNAME} -c "DISPLAY=${DISPLAY} pass ${REMOTE_USERNAME}" | head -n 1`"
+
+```
+
+Adjust the `DISPLAY` variable as necessary.
 
 ## See also
 

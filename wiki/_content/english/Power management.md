@@ -273,8 +273,6 @@ WantedBy=sleep.target
 
 The `Before` and `Conflicts` options ensure it only is run for suspension and not hibernation--otherwise the service will run twice if delayed hibernation is triggered. The `WantedBy` and `StopWhenUnneeded` options are so it is started before sleep and stops upon resume. (Note that the `suspend.target` and `hibernate.target` targets do not stop when unneeded, but `sleep.target` does). [Enable](/index.php/Enable "Enable") the service.
 
-With recent systemd release, you must also [edit](/index.php/Edit "Edit") the `suspend.target` file by adding a *Requires=suspend-to-hibernate.service* line to the `[Unit]` section ([source](https://bbs.archlinux.org/viewtopic.php?id=204346))
-
 #### Hooks in /usr/lib/systemd/system-sleep
 
 *systemd* runs all executables in `/usr/lib/systemd/system-sleep/`, passing two arguments to each of them:

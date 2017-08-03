@@ -1,15 +1,9 @@
-**[CherryMusic](http://www.fomori.org/cherrymusic/)** is a music streaming server based on [CherryPy](http://www.cherrypy.org/) and [jPlayer](http://jplayer.org/). It can be run remotely or on a single computer and is designed to handle huge music libraries (3 TB and more) but also works well with small collections. In contrast to [MPD](/index.php/MPD "MPD"), [Icecast](/index.php/Icecast "Icecast") and the like, CherryMusic allows multiple users to (individually) login via HTTP/HTTPS using a web browser, browse/search the music database and create/edit playlists and stream music to the browser. From the [website](http://www.fomori.org/cherrymusic/):
-
-"CherryMusic is a standalone music server written in python based on CherryPy and jPlayer. It is intended to be an alternative to Last.fm, Spotify, Grooveshark... you name it."
-
-The project is developed on [GitHub](https://github.com/devsnd/cherrymusic).
+[CherryMusic](http://www.fomori.org/cherrymusic/) is a web application that lets you remotely stream, browse and manage your music collection. It is intended to be an alternative to streaming services like Last.fm, Spotify and Grooveshark.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Stable version](#Stable_version)
-    *   [1.2 Git version](#Git_version)
-    *   [1.3 Optional dependencies](#Optional_dependencies)
+    *   [1.1 Optional dependencies](#Optional_dependencies)
 *   [2 Configuration](#Configuration)
     *   [2.1 Quick start](#Quick_start)
     *   [2.2 Manual setup](#Manual_setup)
@@ -22,7 +16,7 @@ The project is developed on [GitHub](https://github.com/devsnd/cherrymusic).
     *   [3.5 Bind CherryMusic to ports less than 1024 (without root access)](#Bind_CherryMusic_to_ports_less_than_1024_.28without_root_access.29)
 *   [4 3rd Party Extensions](#3rd_Party_Extensions)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Missing module `wsgiserver2` when using pip for installation](#Missing_module_.60wsgiserver2.60_when_using_pip_for_installation)
+    *   [5.1 Missing module wsgiserver2 when using pip for installation](#Missing_module_wsgiserver2_when_using_pip_for_installation)
     *   [5.2 Deactivate flash blocker](#Deactivate_flash_blocker)
     *   [5.3 CherryMusic does not load on Android Chrome](#CherryMusic_does_not_load_on_Android_Chrome)
     *   [5.4 Track scrolling not working behind Nginx](#Track_scrolling_not_working_behind_Nginx)
@@ -30,19 +24,9 @@ The project is developed on [GitHub](https://github.com/devsnd/cherrymusic).
 
 ## Installation
 
-CherryMusic is available in the [AUR](/index.php/AUR "AUR"). There are two packages, the [stable release](#Stable_version) and the [development version](#Git_version). If you do not depend on a completely stable version, the development version is recommended, but needs [Git](/index.php/Git "Git") for installation.
-
-### Stable version
-
-The latest stable version of [cherrymusic](https://aur.archlinux.org/packages/cherrymusic/) is available in the [AUR](/index.php/AUR "AUR").
-
-### Git version
-
-For a more up-to-date version of CherryMusic with experimental features, install [cherrymusic-devel-git](https://aur.archlinux.org/packages/cherrymusic-devel-git/) from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [cherrymusic](https://aur.archlinux.org/packages/cherrymusic/) package, or [cherrymusic-devel-git](https://aur.archlinux.org/packages/cherrymusic-devel-git/) for the development version.
 
 ### Optional dependencies
-
-Optional dependencies are:
 
 *   Live transcoding: [lame](https://www.archlinux.org/packages/?name=lame), [vorbis-tools](https://www.archlinux.org/packages/?name=vorbis-tools), [flac](https://www.archlinux.org/packages/?name=flac), [faad2](https://www.archlinux.org/packages/?name=faad2), [mpg123](https://www.archlinux.org/packages/?name=mpg123), [opus-tools](https://www.archlinux.org/packages/?name=opus-tools) or [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) (which replaces the aforementioned codecs plus adds WMA decoding)
 *   Automatic image resizing on displayed cover art: [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
@@ -92,12 +76,7 @@ port = 8080
 
 ```
 
-Open the address "localhost:8080" in your browser (e.g. with [Firefox](/index.php/Firefox "Firefox")) to create an admin account:
-
-```
- $ firefox localhost:8080
-
-```
+Open the address [http://localhost:8080](http://localhost:8080) in your browser to create an admin account.
 
 After logging in, populate the search database by clicking *Update Music Library* in the *Admin* panel.
 
@@ -107,19 +86,7 @@ There are many more options to configure, please see [this section](#Fine_tuning
 
 ### Fine tuning
 
-CherryMusic comes with well-documented manpages. see
-
-```
- $ man cherrymusic
-
-```
-
-or
-
-```
- $ man cherrymusic.conf
-
-```
+See the man pages `cherrymusic` and `cherrymusic.conf`.
 
 ## Tips & Tricks
 
@@ -204,20 +171,20 @@ For more information, see these references:
 
 ## Troubleshooting
 
-### Missing module `wsgiserver2` when using pip for installation
+### Missing module wsgiserver2 when using pip for installation
 
 If the error
 
 ```
-   ImportError: No module named wsgiserver2
+ImportError: No module named wsgiserver2
 
 ```
 
 occurs when starting CherryMusic, probably a broken CherryPy package from pip (versions `3.2.6` and `3.4.0` seem to be affected) is used. Here is a [description of the problem](http://alessiofanelli.com/cherrypy-pip-package-not-working-properly-frustration/). To fix this, uninstall CherryPy and reinstall:
 
 ```
-   $ pip uninstall cherrypy
-   $ pip install --no-use-wheel cherrypy
+$ pip uninstall cherrypy
+$ pip install --no-use-wheel cherrypy
 
 ```
 
@@ -245,7 +212,7 @@ proxy_http_version 1.1;
 
 ## See also
 
+*   [GitHub repository](https://github.com/devsnd/cherrymusic)
 *   [https://github.com/devsnd/cherrymusic/wiki/Setup-guide](https://github.com/devsnd/cherrymusic/wiki/Setup-guide)
 *   [http://fomori.org/blog/?p=687](http://fomori.org/blog/?p=687)
 *   [CherryMusic website](http://www.fomori.org/cherrymusic/)
-*   [CherryMusic on GitHub](https://github.com/devsnd/cherrymusic)

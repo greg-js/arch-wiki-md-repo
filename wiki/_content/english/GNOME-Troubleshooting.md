@@ -28,6 +28,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [24 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
 *   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
 *   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
+*   [27 No suspend on LID closure](#No_suspend_on_LID_closure)
 
 ## Shell freezes
 
@@ -344,3 +345,14 @@ Attempting to install the gnome-extra group while a gnome environment is running
 ## No H264 Video in Gnome Video Player (Totem)
 
 [See Codecs](/index.php/Codecs#Tips_and_tricks "Codecs")
+
+## No suspend on LID closure
+
+GNOME defaults to this behaviour about suspension:
+
+*   No external monitor attached, computer goes in suspension when LID closes.
+*   External monitor attached, computer does not go in suspension when LID closes.
+
+Currently [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) is not able to modify the behaviour on the second case, when a monitor is connected to the computer. While it can inhibit suspension with no monitor attached.
+
+**Note:** Behaviour on LID closure is controlled also by systemd. See [Power_management#Power_management_with_systemd](/index.php/Power_management#Power_management_with_systemd "Power management").

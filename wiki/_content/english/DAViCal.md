@@ -1,4 +1,4 @@
-[DAViCal](http://www.davical.org/) is a server implementing the CalDAV and CardDAV protocol. It's solely a server, with minimal direct user interaction, instead relying on using CalDav clients, such as Apple's iCal.app, iOS (iPhone, iPad, iPod), Thunderbird with Sunbird, or Evolution.
+[DAViCal](https://www.davical.org/) is a server implementing the CalDAV and CardDAV protocol. It's solely a server, with minimal direct user interaction, instead relying on using CalDav clients, such as Apple's iCal.app, iOS (iPhone, iPad, iPod), Thunderbird with Sunbird, or Evolution.
 
 ## Installation
 

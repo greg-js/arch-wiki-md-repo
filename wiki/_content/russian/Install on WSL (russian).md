@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Install on WSL](/index.php/Install_on_WSL "Install on WSL"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Install_on_WSL&diff=0&oldid=482801).
+**Состояние перевода:** На этой странице представлен перевод статьи [Install on WSL](/index.php/Install_on_WSL "Install on WSL"). Дата последней синхронизации: 29 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Install_on_WSL&diff=0&oldid=483162).
 
 В Windows 10 есть подсистема, которая эмулирует интерфейс ядра Linux, позволяя запускать обычные приложения Linux. Это похоже на противоположность [Wine](/index.php/Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wine (Русский)"), но на более низком уровне. По умолчанию она поставляется с пользовательским пространством Ubuntu, но ее можно заменить на Arch. Чтобы она работала исправно, для создания некоторых пакетов вам потребуется доступ к существующей установке Arch. Эти инструкции основаны на [этом руководстве](https://www.reddit.com/r/bashonubuntuonwindows/comments/5vnne8/howto_installing_arch_on_wsl_manually/).
 
@@ -7,7 +7,7 @@
 Вы должны запустить Windows 10 creator's update. Если вы еще не используюте подсистему Linux в Windows, следуйте инструкциям [здесь](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide), чтобы включить ее. В основном она включается так:
 
 *   Режим разработчика в *Настройки > Обновление и безопасность > Для разработчиков* и
-*   Подсистема Linux в Windows (бета) в разделе *"Включить или отключить функции Windows"*.
+*   Подсистема Linux в Windows в разделе *"Включить или отключить функции Windows"*.
 
 Если вы уже установили ее, используйте:
 

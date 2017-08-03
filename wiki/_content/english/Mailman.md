@@ -6,9 +6,9 @@ Only the Mailman installation will be covered in this article. You can refer to 
 
 For this guide we are going to suppose that you are using a machine called "arch" and you want to setup mailing lists for the organizations "a", "b" and "c", with example domains "a.org", "b.org" and "c.org" that point to "arch". For each domain,
 
-*   Mailman's **web interface** will be accessible from *lists.[organization_name].org* and
-*   the **lists' archives** under *lists.[organization_name].org/archives*.
-*   **Lists addresses** will look like *[list_name]@[organization_name].org*.
+*   Mailman's **web interface** will be accessible from `lists.*example*.org` and
+*   the **lists' archives** under `lists.*example*.org/archives`.
+*   **Lists addresses** will look like `*list*@*example*.org`.
 
 **A caveat**: you can use a Mailman installation to manage lists for several domains, but two lists cannot have the same name even though its domains are different!
 

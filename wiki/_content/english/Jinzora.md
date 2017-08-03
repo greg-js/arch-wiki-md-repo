@@ -1,4 +1,4 @@
-[Jinzora](http://sourceforge.net/projects/jinzora/) is a GPL web based multimedia application. It serves as a streaming server as well as a media management platform. This article will show you how to install and configure Jinzora.
+[Jinzora](https://sourceforge.net/projects/jinzora/) is a GPL web based multimedia application. It serves as a streaming server as well as a media management platform. This article will show you how to install and configure Jinzora.
 
 ## Contents
 

@@ -16,6 +16,7 @@ This article contains recommendations and best practices for hardening an Arch L
 *   [4 User setup](#User_setup)
     *   [4.1 Lockout user after three failed login attempts](#Lockout_user_after_three_failed_login_attempts)
     *   [4.2 Limit amount of processes](#Limit_amount_of_processes)
+    *   [4.3 Run Xorg rootless](#Run_Xorg_rootless)
 *   [5 Restricting root](#Restricting_root)
     *   [5.1 Use sudo instead of su](#Use_sudo_instead_of_su)
         *   [5.1.1 Editing files using sudo](#Editing_files_using_sudo)
@@ -205,14 +206,14 @@ To further heighten the security it is possible to lockout a user after a specif
 
  `/etc/pam.d/system-login` 
 ```
-auth required pam_tally.so deny=2 unlock_time=600 onerr=succeed file=/var/log/faillog
+auth required pam_tally2.so deny=2 unlock_time=600 onerr=succeed file=/var/log/faillog
 #auth required pam_tally.so onerr=succeed file=/var/log/faillog
 ```
 
 If you do not comment the second line every failed login attempt will be counted twice. That is all there is to it. If you feel adventurous, make three failed login attempts. Then you can see for yourself what happens. To unlock a user manually do:
 
 ```
-# pam_tally --user *username* --reset
+# pam_tally2 --user *username* --reset
 
 ```
 
@@ -227,6 +228,12 @@ On systems with many, or untrusted users, it is important to limit the number of
 * hard nproc 200
 
 ```
+
+### Run Xorg rootless
+
+[Xorg](/index.php/Xorg "Xorg") often is considered as insecure. Thus it is recommended to avoid running Xorg as root, like it is usually the default configuration.
+
+See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg") for more details how to run Xorg sessions without root privileges for Xorg process.
 
 ## Restricting root
 

@@ -1,4 +1,4 @@
-MythTV is an application suite designed to provide an amazing multimedia experience. It provides PVR functionality to a Linux based computer and also supports other media types. Combined with a nice, quiet computer and a decent TV, it makes an excellent centerpiece to a home theater system.
+[MythTV](https://www.mythtv.org/) is an application suite designed to provide an amazing multimedia experience. It provides PVR functionality to a Linux based computer and also supports other media types. Combined with a nice, quiet computer and a decent TV, it makes an excellent centerpiece to a home theater system.
 
 ## Contents
 
@@ -78,18 +78,7 @@ If the purpose of the box is a stand-alone system, consider making a dedicated u
 
 ## Installing MythTV
 
-[Install](/index.php/Install "Install") the [mythtv](https://www.archlinux.org/packages/?name=mythtv) package and any desired plugins:
-
-*   mythplugins-mytharchive - Create DVDs or archive recorded shows in MythTV
-*   mythplugins-mythbrowser - Mini web browser for MythTV
-*   mythplugins-mythgallery - Image gallery plugin for MythTV
-*   mythplugins-mythgame - Game emulator plugin for MythTV
-*   mythplugins-mythmusic - Music playing plugin for MythTV
-*   mythplugins-mythnetvision - MythNetvision plugin for MythTV
-*   mythplugins-mythnews - News checking plugin for MythTV
-*   mythplugins-mythweather - Weather checking plugin for MythTV
-*   mythplugins-mythweb - Web interface for the MythTV scheduler
-*   mythplugins-mythzoneminder - View CCTV footage from zoneminder in MythTV
+[Install](/index.php/Install "Install") the [mythtv](https://www.archlinux.org/packages/?name=mythtv) package and [any desired plugins](https://www.archlinux.org/packages/?q=mythplugins-).
 
 At this point a generic MythTV installation is present that must be refined into a backend, a frontend, or both.
 

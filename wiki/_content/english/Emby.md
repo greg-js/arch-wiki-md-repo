@@ -1,4 +1,4 @@
-Emby is an open source personal media server and client infrastructure. It is used to organize personal home media, as well as play back on other devices. There are a large amount of channels that are supported by the community, and can even be used with PVR and Tuner cards to provide TV streaming remotely.
+[Emby](https://emby.media/) is an open source personal media server, which has clients for many platforms. It is used to organize personal home media, as well as play back on other devices. There are a large amount of channels that are supported by the community, and can even be used with PVR and Tuner cards to provide TV streaming remotely.
 
 ## Installation
 

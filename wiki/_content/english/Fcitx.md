@@ -289,7 +289,16 @@ For more details on how you can save your xmodmap changes see [FAQ](http://fcitx
 
 ### Gnome on Wayland with Fcitx
 
-Since Wayland can not read the environment variables stored in `~/.xprofile`, Fcitx can not work properly in Wayland. Please select Xorg from the display manager's session menu.
+Since Wayland can not read the environment variables stored in `~/.xprofile`, you need to add them manually in `/etc/environment`.
+
+```
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+```
+
+Or use "Gnome on Xorg" from the display manager's session menu.
 
 ## See also
 

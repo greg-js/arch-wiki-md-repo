@@ -16,7 +16,7 @@ This guide will give you an overview for the most common server options in exist
     *   [4.4 WebDAV](#WebDAV)
     *   [4.5 DLNA](#DLNA)
     *   [4.6 Web cache](#Web_cache)
-*   [5 Local Network Services](#Local_Network_Services)
+*   [5 Local network services](#Local_network_services)
     *   [5.1 Zeroconf](#Zeroconf)
     *   [5.2 CUPS (printing)](#CUPS_.28printing.29)
     *   [5.3 DHCP](#DHCP)
@@ -39,7 +39,7 @@ In essence, a server is a computer that runs services that involve clients worki
 
 ### Arch Linux as a server OS
 
-You may have seen the comments or claims: *Arch Linux was never intended as a server operating system!* This is correct: there is no server installation disc available, *per se*, such as those you may find for other distributions. This is because Arch Linux comes as a minimal (but solid) base system, with very few desktop or server features pre-installed. This does not mean Arch Linux is a bad server system; **quite the contrary**. Arch's core installation is a secure and capable foundation. Since only a small number of features come pre-installed, this core installation can easily be used as a basis for a Linux server. All the popular server software ([Apache](/index.php/Apache "Apache"), [MySQL](/index.php/MySQL "MySQL")/[MariaDB](/index.php/MariaDB "MariaDB"), [PHP](/index.php/PHP "PHP"), [Samba](/index.php/Samba "Samba"), and plenty more) are available in the official repository, and even more are available on the [AUR](/index.php/AUR "AUR"). The wiki also contains much detailed documentation regarding how to get set up with this software.
+Arch Linux comes as a minimal (but solid) base system, that can be easily turned into a server. You just need to install the desired server software and configure it. All the popular server software is available in the [official repositories](/index.php/Official_repositories "Official repositories"), and even more in the [AUR](/index.php/AUR "AUR"). The wiki also contains much detailed documentation regarding how to set up server software.
 
 ## Requirements
 
@@ -113,7 +113,7 @@ There is also the option of FTP over SSH, or [SFTP](/index.php/SFTP "SFTP").
 
 [Squid](/index.php/Squid "Squid") is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator.
 
-## Local Network Services
+## Local network services
 
 ### Zeroconf
 

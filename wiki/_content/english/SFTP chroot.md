@@ -1,144 +1,192 @@
-OpenSSH 4.9+ includes a built-in chroot for sftp, but requires a few tweaks to the normal install.
+[OpenSSH](/index.php/OpenSSH "OpenSSH") 4.9+ includes a built-in chroot for sftp, but requires a few tweaks to the normal install.
 
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Alternatives](#Alternatives)
+        *   [1.1.1 Secure copy protocol (SCP)](#Secure_copy_protocol_.28SCP.29)
+            *   [1.1.1.1 Scponly](#Scponly)
+            *   [1.1.1.2 Adding a chroot jail](#Adding_a_chroot_jail)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Change chroot directory rights](#Change_chroot_directory_rights)
-    *   [2.2 Fixing path for authorized_keys](#Fixing_path_for_authorized_keys)
-    *   [2.3 Adding new chrooted users](#Adding_new_chrooted_users)
-*   [3 Logging](#Logging)
-    *   [3.1 Create sub directory](#Create_sub_directory)
-    *   [3.2 Syslog-ng configuration](#Syslog-ng_configuration)
-    *   [3.3 sshd configuration](#sshd_configuration)
-    *   [3.4 Restart service](#Restart_service)
-*   [4 Testing your chroot](#Testing_your_chroot)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 Write access to chroot dir](#Write_access_to_chroot_dir)
-*   [7 See also](#See_also)
+    *   [2.1 Setup the filesystem](#Setup_the_filesystem)
+    *   [2.2 Create an unprivileged user](#Create_an_unprivileged_user)
+    *   [2.3 Configure OpenSSH](#Configure_OpenSSH)
+        *   [2.3.1 Fixing path for authorized_keys](#Fixing_path_for_authorized_keys)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Write permissions](#Write_permissions)
+    *   [3.2 Logging](#Logging)
+        *   [3.2.1 Create sub directory](#Create_sub_directory)
+        *   [3.2.2 Syslog-ng configuration](#Syslog-ng_configuration)
+        *   [3.2.3 OpenSSH configuration](#OpenSSH_configuration)
+        *   [3.2.4 Restart service](#Restart_service)
+*   [4 See also](#See_also)
 
 ## Installation
 
-This package is available in the core repository. To install it, run
+[Install](/index.php/Install "Install") and configure [OpenSSH](/index.php/OpenSSH "OpenSSH"). Once running, SFTP is available by default.
+
+Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FTP clients](/index.php/List_of_applications#File_transfer_clients "List of applications") should work as well.
+
+### Alternatives
+
+#### Secure copy protocol (SCP)
+
+Installing [openssh](https://www.archlinux.org/packages/?name=openssh) provides the *scp* command to transfer files. SCP may be faster than using SFTP [[1]](https://superuser.com/questions/134901/whats-the-difference-between-scp-and-sftp).
+
+[Install](/index.php/Install "Install") [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) as alternative shell solutions.
+
+##### Scponly
+
+[install](/index.php/Install "Install") [scponly](https://www.archlinux.org/packages/?name=scponly).
+
+For existing users, simply set the user's shell to scponly:
 
 ```
-# pacman -S openssh
+# usermod -s /usr/bin/scponly *username*
 
 ```
+
+See [the Scponly Wiki](https://github.com/scponly/scponly/wiki) for more details.
+
+##### Adding a chroot jail
+
+The package comes with a script to create a chroot. To use it, run:
+
+```
+# /usr/share/doc/scponly/setup_chroot.sh
+
+```
+
+*   Provide answers
+*   Check that `/path/to/chroot` has `root:root` owner and `r-x` for others
+*   Change the shell for selected user to `/usr/bin/scponlyc`
+*   sftp-server may require some libnss modules such as libnss_files. Copy them to chroot's `/lib` path.
 
 ## Configuration
 
-First, we need to create the `sftponly` group
+### Setup the filesystem
+
+Bind mount the live [filesystem](/index.php/Filesystem "Filesystem") to be shared to this directory. In this example, `/mnt/data/share` is to be used, owned by [user](/index.php/User "User") `root` and has octal [permissions](/index.php/Permissions "Permissions") of `755`:
+
+```
+# chown root:root /mnt/data/share
+# chmod 755 /mnt/data/share
+# mkdir -p /srv/ssh/jail
+# mount -o bind /mnt/data/share /srv/ssh/jail
+
+```
+
+Add entries to [fstab](/index.php/Fstab "Fstab") to make the bind mount survive on a reboot:
+
+```
+/mnt/data/share /srv/ssh/jail  none   bind   0   0
+
+```
+
+**Note:** Readers may select a file access scheme on their own. For example, optionally create a subdirectory for an incoming (writable) space and/or a read-only space. This need not be done directly under `/srv/ssh/jail` - it can be accomplished on the live partition which will be mounted via a bind mount as well.
+
+### Create an unprivileged user
+
+**Note:** You don't need to create a group, it is possible to `Match User` instead of `Match Group`.
+
+First, we need to create the `sftponly` [group](/index.php/Group "Group"):
 
 ```
 # groupadd sftponly 
 
 ```
 
-Following changes to the SSH daemon configure permissions for the `sftponly` group
+Create a [user](/index.php/User "User") (and use `sftponly` as it's main group):
 
+```
+# useradd -g sftponly -d */srv/ssh/jail* *username*
+
+```
+
+Set a (complex) password - you may want to disable SSH user password login (e.g. `PasswordAuthentication no`):
+
+```
+# passwd *username*
+
+```
+
+### Configure OpenSSH
+
+**Note:** Use `Match User` instead of `Match Group` when not using the given group.
  `/etc/ssh/sshd_config` 
 ```
 Match Group sftponly
   ChrootDirectory %h
   ForceCommand internal-sftp
   AllowTcpForwarding no
-  PermitTunnel no
   X11Forwarding no
+  PasswordAuthentication no
 
 ```
 
-Or for a single user:
+[Restart](/index.php/Restart "Restart") `sshd.service` to confirm the changes.
+
+#### Fixing path for authorized_keys
+
+**Tip:** Use the [debug mode](/index.php/SSH_keys#Key_ignored_by_the_server "SSH keys") of OpenSSH on the client and server in case of `(pre)auth` error(s).
+
+With the standard path of *AuthorizedKeysFile*, the [SSH keys](/index.php/SSH_keys "SSH keys") authentication will fail for chrooted-users. To fix this, [append](/index.php/Append "Append") a root-owned directory on *AuthorizedKeysFile* to `/etc/openssh/sshd_config` e.g. `/etc/ssh/authorized_keys`, as example:
 
  `/etc/ssh/sshd_config` 
 ```
-Match User username
-  ChrootDirectory %h
-  ForceCommand internal-sftp
-  AllowTcpForwarding no
-  PermitTunnel no
-  X11Forwarding no
+AuthorizedKeysFile */etc/ssh/authorized_keys/%u* .ssh/authorized_keys
+PermitRootLogin no
+PasswordAuthentication no
+PermitEmptyPasswords no
+Subsystem sftp /usr/lib/ssh/sftp-server
 
 ```
 
-### Change chroot directory rights
-
-The chroot directory must be owned by root.
-
-```
- # chown root:root /home/username
-
-```
-
-Add the '*sftponly* group to each user with remote access rights
-
-```
- # gpasswd -a USER sftponly
-
-```
-
-### Fixing path for authorized_keys
-
-With the standard path of *AuthorizedKeysFile*, the public key authentication will fail for chrooted-users. To fix this, we set the *AuthorizedKeysFile* to a root-owned, non-worldwritable directory and move existing users' keys.
-
-**Note:** This has the side effect of improving overall security with the tradeoff of root intervention for revocation in case a user changes their key or their key gets lost or stolen.
-
-```
-AuthorizedKeysFile      /etc/ssh/authorized_keys/%u
-
-```
-
-Create *authorized_keys* directory and move existing users' authorized_keys:
+Create *authorized_keys* folder, generate a [SSH-key](/index.php/SSH_keys#Choosing_the_key_location_and_passphrase "SSH keys") on the client, [copy](/index.php/SSH_keys#Manual_method "SSH keys") the contents of the key to `/etc/ssh/authorized_keys` (or any other preferred method) of the server and [set correct permissions](/index.php/SSH_keys#Key_ignored_by_the_server "SSH keys"):
 
 ```
 # mkdir /etc/ssh/authorized_keys
-# bash -c 'for user in /home/*; do mv ${user}/.ssh/authorized_keys /etc/ssh/authorized_keys/${user#/home/}; done'
+# chown root:root /etc/ssh/authorized_keys
+# chmod 755 /etc/ssh/authorized_keys
+# echo 'ssh-rsa <key> <username@host>' >> */etc/ssh/authorized_keys/username*
+# chmod 644 /etc/ssh/authorized_keys/*username*
 
 ```
-
-**Warning:** Be careful during this step not to lock yourself out of the machine you're working on. Always have a secondary method of access, such as an additional ssh session open or console access should things go awry
 
 [Restart](/index.php/Restart "Restart") `sshd.service`.
 
-### Adding new chrooted users
+## Tips and tricks
 
-If using the group method above, ensure all sftp users are put in the appropriate group, i.e.:
+### Write permissions
 
-```
-# usermod -g sftponly username
-
-```
-
-Also, set their shell to */usr/bin/false* to prevent a normal ssh login:
+The `bind` path of the chroot user needs to be fully owned by `root`, however files/directories inside don't have to be. In the following example the user *backup* uses `/root/backups` (fully owned by *root*) as home-directory:
 
 ```
-# usermod -s /bin/false username
+# mkdir /root/backups/share
+# chown backup:sftponly /root/backups/share
+# chmod 775 /root/backups/share
+# touch /root/backups/share/file
+# chmod 664 /root/backups/share/file
 
 ```
 
-Their chroot will be the same as their home directory. The permissions are not the same as a normal home, though. Their home directory must be owned as root and not writable by another user or group. This includes the path leading to the directory.
-
-**Warning:** Make sure that */bin/false* exists in */etc/shells* as well. Otherwise the login will fail with an *invalid password error*.
-
-Note that since this is only for sftp, a proper chroot environment with a shell and */dev* doesn't need to be created. However, if you would like to log access, follow the instructions in the logging section below.
-
-## Logging
+### Logging
 
 The user will not be able to access `/dev/log`. This can be seen by running `strace` on the process once the user connects and attempts to download a file.
 
-### Create sub directory
+#### Create sub directory
 
 Create the sub-directory `dev` in the `ChrootDirectory`, for example:
 
 ```
- sudo mkdir /usr/local/chroot/theuser/dev
- sudo chmod 755 /usr/local/chroot/theuser/dev
+# mkdir /usr/local/chroot/user/dev
+# chmod 755 /usr/local/chroot/user/dev
 
 ```
 
 `syslog-ng` will create the device `/usr/local/chroot/theuser/dev/log` once configured.
 
-### Syslog-ng configuration
+#### Syslog-ng configuration
 
 Add to `/etc/syslog-ng/syslog-ng.conf` a new source for the log and add the configuration, for example change the section:
 
@@ -185,80 +233,15 @@ log { source(src); filter(f_ssh); destination(ssh); };
 
 (From [Syslog-ng#Move log to another file](/index.php/Syslog-ng#Move_log_to_another_file "Syslog-ng"))
 
-### sshd configuration
+#### OpenSSH configuration
 
 Edit `/etc/ssh/sshd_config` to replace all instances of `internal-sftp` with `internal-sftp -f AUTH -l VERBOSE`
 
-### Restart service
+#### Restart service
 
 [Restart](/index.php/Restart "Restart") service `syslog-ng` and `sshd`.
 
 `/usr/local/chroot/theuser/dev/log` should now exist.
-
-## Testing your chroot
-
-```
-# ssh username@localhost
-
-```
-
-should refuse the connection or fail on login. The response varies, possibly due to the version of OpenSSH used.
-
-```
-# sftp username@localhost
-
-```
-
-should place you in the chroot'd environment.
-
-## Troubleshooting
-
-Error while trying to connect
-
-```
-Write failed: Broken pipe                                                                                               
-Couldn't read packet: Connection reset by peer
-
-```
-
-If you also find similar message in /var/log/auth.log
-
-```
-sshd[12399]: fatal: bad ownership or modes for chroot directory component "/path/of/chroot/directory/"  
-
-```
-
-This is a `ChrootDirectory` ownership problem. sshd will reject SFTP connections to accounts that are set to chroot into any directory that has ownership/permissions that sshd considers insecure. sshd's strict ownership/permissions requirements dictate that every directory in the chroot path must be owned by root and only writable by the owner. So, for example, if the chroot environment is /home must be owned by root. See below for possible alternatives.
-
-The reason for this is to [prevent a user from escalating their privileges](http://lists.mindrot.org/pipermail/openssh-unix-dev/2009-May/027651.html) and becoming root, escaping the chroot environment.
-
-If chroot environment is in user's home directory, make sure user have access to it's home directory, or user would not be able to access it's publickey, produce following error
-
-```
-Permission denied (publickey).
-
-```
-
-## Write access to chroot dir
-
-As above, if a user is able to write to the chroot directory then it is possible for them to escalate their privileges to root and escape the chroot. One way around this is to give the user two home directories - one "real" home they can write to, and one SFTP home that is locked down to keep sshd happy and your system secure. By using `mount --bind` you can make the real home directory appear as a subdirectory inside the SFTP home directory, allowing them full access to their real home directory.
-
-This can also be used to achieve other goals. For example, a user's home directory can be locked down per the sshd chroot rules, and bind mounts used to provide users access to other directories:
-
-```
-# mkdir /home/user/web
-# mount --bind /srv/web/example.com /home/user/web
-
-```
-
-Optional add an entry to `/etc/fstab`:
-
-```
-# echo '/srv/web/example.com/ /home/user/web        none    bind' >> /etc/fstab
-
-```
-
-Now the user can log in with SFTP, they are chrooted to `/home/user`, but they see a folder called "web" they can access to manipulate files on a web site (assuming they have correct permissions in `/srv/web/example.com`.
 
 ## See also
 

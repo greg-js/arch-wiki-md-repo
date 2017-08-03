@@ -13,7 +13,7 @@ From [Wikipedia:Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch "wiki
 
 Elasticsearch requires at least OpenJDK 7, see [Java](/index.php/Java "Java").
 
-Install the [elasticsearch](https://www.archlinux.org/packages/?name=elasticsearch) package.
+[Install](/index.php/Install "Install") the [elasticsearch](https://www.archlinux.org/packages/?name=elasticsearch) package.
 
 ## Running
 

@@ -10,8 +10,9 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
 
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)
-    *   [2.1 UFW](#UFW)
-    *   [2.2 iptables](#iptables)
+    *   [2.1 FirewallD](#FirewallD)
+    *   [2.2 UFW](#UFW)
+    *   [2.3 iptables](#iptables)
 *   [3 Usage](#Usage)
     *   [3.1 systemd](#systemd)
     *   [3.2 syslog-ng](#syslog-ng)
@@ -33,6 +34,36 @@ sshguard works by monitoring `/var/log/auth.log`, syslog-ng or the systemd journ
 Both temporary and permanent bans are done by adding an entry into the "sshguard" chain in iptables that drops all packets from the offender. The ban is then logged to syslog and ends up in `/var/log/auth.log`, or the systemd journal, if systemd is being used. To make the ban only affect port 22, simply do not send packets going to other ports through the "sshguard" chain.
 
 You must configure a firewall to be used with sshguard in order for blocking to work.
+
+#### FirewallD
+
+Starting with version 2.0, sshguard can work with Firewalld. Make sure you have firewalld enabled, configured and setup first. To make sshguard write to your zone of preference, issue the following commands:
+
+```
+# firewallctl zone "<zone name>" --permanent add rich-rule "rule source ipset=sshguard4 drop"
+
+```
+
+If you use ipv6, you can issue the same command but substitute sshguard4 with sshguard6\. Finish with
+
+```
+# firewall-cmd --reload
+
+```
+
+You can verify the above with
+
+```
+# firewall-cmd --info-ipset=sshguard4
+
+```
+
+Finally, in /etc/sshguard.conf, find the line for BACKEND and change it as follows
+
+```
+BACKEND="/usr/lib/sshguard/sshg-fw-firewalld"
+
+```
 
 #### UFW
 

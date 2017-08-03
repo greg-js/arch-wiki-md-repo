@@ -17,8 +17,9 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
             *   [1.3.3.1 Force public key authentication](#Force_public_key_authentication)
             *   [1.3.3.2 Two-factor authentication and public keys](#Two-factor_authentication_and_public_keys)
             *   [1.3.3.3 Protecting against brute force attacks](#Protecting_against_brute_force_attacks)
-                *   [1.3.3.3.1 Using iptables](#Using_iptables)
-                *   [1.3.3.3.2 Anti-brute-force tools](#Anti-brute-force_tools)
+                *   [1.3.3.3.1 Using ufw](#Using_ufw)
+                *   [1.3.3.3.2 Using iptables](#Using_iptables)
+                *   [1.3.3.3.3 Anti-brute-force tools](#Anti-brute-force_tools)
             *   [1.3.3.4 Limit root login](#Limit_root_login)
                 *   [1.3.3.4.1 Deny](#Deny)
                 *   [1.3.3.4.2 Restrict](#Restrict)
@@ -157,7 +158,7 @@ To help select a port review the [list of TCP and UDP port numbers](https://en.w
 
 **Note:** OpenSSH can also listen on multiple ports simply by having multiple **Port x** lines in the config file.
 
-It is also recommended to disable password logins entirely. This will greatly increase security, see [#Force public key authentication](#Force_public_key_authentication) for more information.
+It is also recommended to disable password logins entirely. This will greatly increase security, see [#Force public key authentication](#Force_public_key_authentication) for more information. See [#Protection](#Protection) for more recommend security methods.
 
 #### Daemon management
 
@@ -246,6 +247,10 @@ session   include   system-remote-login
 ##### Protecting against brute force attacks
 
 Brute forcing is a simple concept: One continuously tries to log in to a webpage or server log-in prompt like SSH with a high number of random username and password combinations.
+
+###### Using ufw
+
+See [ufw#Rate limiting with ufw](/index.php/Ufw#Rate_limiting_with_ufw "Ufw").
 
 ###### Using iptables
 
@@ -774,7 +779,9 @@ Check these simple issues before you look any further.
 2.  Check that the client's public key (e.g. `id_rsa.pub`) is in `~/.ssh/authorized_keys` on the server.
 3.  Check that you did not limit SSH access with `AllowUsers` or `AllowGroups` in the [server config](#Configuration_2).
 4.  Check if the user has set a password. Sometimes new users who have not yet logged in to the server do not have a password.
-5.  [Restart](/index.php/Restart "Restart") `sshd` and logout/login on both client and server.
+5.  [Append](/index.php/Append "Append") `LogLevel DEBUG` to `/etc/ssh/sshd_config`.
+6.  Use `# journalctl -xe` for possible (error) messages.
+7.  [Restart](/index.php/Restart "Restart") `sshd` and logout/login on both client and server.
 
 ### SSH connection hangs after poweroff/reboot
 

@@ -115,6 +115,8 @@ Please see and follow [the complete installation guide for Arch Linux](https://g
 
 Here is a list of places to get all sorts of vagrant base boxes for different purposes: development, testing, or even production.
 
+*   The [official Arch Linux vagrant boxes](https://app.vagrantup.com/archlinux/boxes/archlinux). The corresponding [GitHub project](https://github.com/archlinux/arch-boxes) contains the packerfile used for building along with provisioning scripts.
+
 *   A well maintained up-to-date [Arch Linux x86_64](https://github.com/terrywang/vagrantboxes/blob/master/archlinux-x86_64.md) base box for Vagrant
 
 *   The same Arch Linux x86_64 base box can also be obtained via Vagrant Cloud by running: `vagrant init terrywang/archlinux`

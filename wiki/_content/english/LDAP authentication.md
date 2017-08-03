@@ -47,6 +47,7 @@ You can read about installation and basic configuration in the [OpenLDAP](/index
 
 To make sure that no-one can read the (encrypted) passwords from the LDAP server, but still allowing users to edit some of their own select attributes (such as own password and photo), add the following to `/etc/openldap/slapd.conf` and restart `slapd.service` afterwards:
 
+**Note:** If you have a different domain name then alter "example" and "org" to your needs
  `slapd.conf` 
 ```
 access to attrs=userPassword,givenName,sn,photo
@@ -65,7 +66,6 @@ access to *
 
 Create a temporarily file called `base.ldif` with the following text.
 
-**Note:** If you have a different domain name then alter "example" and "org" to your needs
  `base.ldif` 
 ```
 # example.org

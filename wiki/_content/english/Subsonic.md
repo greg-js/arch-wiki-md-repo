@@ -1,20 +1,27 @@
-Subsonic is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR"). As of version 6, the software is not open source anymore, although an open-source fork exists ([libresonic](https://aur.archlinux.org/packages/libresonic/)).
+[Subsonic](http://www.subsonic.org/pages/index.jsp) is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications.
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-    *   [1.1 Install transcoders](#Install_transcoders)
-    *   [1.2 HTTPS Setup](#HTTPS_Setup)
-        *   [1.2.1 With Subsonic](#With_Subsonic)
-        *   [1.2.2 With nginx](#With_nginx)
-        *   [1.2.3 With lighttpd](#With_lighttpd)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 FLAC playback](#FLAC_playback)
-    *   [2.2 UTF-8 file names not added to the database](#UTF-8_file_names_not_added_to_the_database)
-    *   [2.3 Accessing the database](#Accessing_the_database)
-*   [3 Madsonic](#Madsonic)
-*   [4 Libresonic](#Libresonic)
-*   [5 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Install transcoders](#Install_transcoders)
+    *   [2.2 HTTPS Setup](#HTTPS_Setup)
+        *   [2.2.1 With Subsonic](#With_Subsonic)
+        *   [2.2.2 With nginx](#With_nginx)
+        *   [2.2.3 With lighttpd](#With_lighttpd)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 FLAC playback](#FLAC_playback)
+    *   [3.2 UTF-8 file names not added to the database](#UTF-8_file_names_not_added_to_the_database)
+    *   [3.3 Accessing the database](#Accessing_the_database)
+*   [4 Madsonic](#Madsonic)
+*   [5 Libresonic](#Libresonic)
+*   [6 See also](#See_also)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [subsonic](https://aur.archlinux.org/packages/subsonic/) package.
+
+As of version 6, the software is not open source anymore, although an open-source fork exists ([libresonic](https://aur.archlinux.org/packages/libresonic/)).
 
 ## Configuration
 

@@ -10,7 +10,7 @@
 
 ## Directories that must be used
 
-All users should use **only** ~/packages for storing packages builds and ~/svn-packages. These directories are excluded from backups and all other directories are automatically backed up.
+All users should use **only** `~/packages` for storing packages builds and `~/svn-packages`. These directories are excluded from backups and all other directories are automatically backed up.
 
 ## Creating chroots and building packages
 

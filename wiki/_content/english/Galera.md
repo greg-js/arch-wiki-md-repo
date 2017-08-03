@@ -1,4 +1,4 @@
-Galera is a synchronous multi-master cluster for MySQL/InnoDB databases. For more information about the product and its features, please visit the [official webpage](http://codership.com/content/using-galera-cluster).
+[Galera](http://galeracluster.com/) is a synchronous multi-master cluster for MySQL/InnoDB databases.
 
 **Note:** Currently replication is supported only for InnoDB tables.
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Overlay filesystem](/index.php/Overlay_filesystem "Overlay filesystem"). Дата последней синхронизации: 27 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Overlay_filesystem&diff=0&oldid=483001).
+**Состояние перевода:** На этой странице представлен перевод статьи [Overlay filesystem](/index.php/Overlay_filesystem "Overlay filesystem"). Дата последней синхронизации: 29 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Overlay_filesystem&diff=0&oldid=483209).
 
 Из [the initial kernel commit](https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c)
 

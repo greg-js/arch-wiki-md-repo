@@ -10,7 +10,7 @@
 *   [5 Network scanning](#Network_scanning)
     *   [5.1 Sharing your scanner over a network](#Sharing_your_scanner_over_a_network)
     *   [5.2 Accessing your scanner from a remote workstation](#Accessing_your_scanner_from_a_remote_workstation)
-    *   [5.3 Sane Windows client](#Sane_Windows_client)
+    *   [5.3 Windows clients](#Windows_clients)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Invalid argument](#Invalid_argument)
         *   [6.1.1 Missing firmware file](#Missing_firmware_file)
@@ -156,9 +156,9 @@ $ scanimage -L
 
 The network scanner should now also show up in any [front-end](#Install_a_frontend).
 
-### Sane Windows client
+### Windows clients
 
-Since win32 port of SANE seems to be [unsupported, outdated and difficult to get](http://www.xsane.org/xsane-download.html), you can try [SaneTwain](http://sanetwain.ozuzo.net/) instead. Installer is provided and configuration is done via graphical user interface.
+Since the Windows port of SANE seems to be [unsupported, outdated and difficult to get](http://www.xsane.org/xsane-download.html), you can try [SaneTwain](http://sanetwain.ozuzo.net/) instead.
 
 ## Troubleshooting
 

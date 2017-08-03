@@ -6,8 +6,8 @@
     *   [1.1 Пакеты](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
     *   [1.2 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 LXAppearance](#LXAppearance)
-    *   [2.2 Спецификация XDG](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_XDG)
+    *   [2.1 Спецификация XDG](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_XDG)
+    *   [2.2 LXAppearance](#LXAppearance)
     *   [2.3 Среда рабочего стола](#.D0.A1.D1.80.D0.B5.D0.B4.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
         *   [2.3.1 GNOME](#GNOME)
         *   [2.3.2 Mate](#Mate)
@@ -67,10 +67,6 @@ find /usr/share/icons ~/.icons -type d -name "cursors"
 
 Существуют различные способы настройки установленных тем.
 
-### LXAppearance
-
-LXAppearance устанавливает курсор по умолчанию путем создания файла `index.theme`, как указано в [#Спецификации XDG](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_XDG)
-
 ### Спецификация XDG
 
 Этот метод применим к [X11](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") и [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
@@ -89,9 +85,17 @@ Inherits=*имя-темы*
 
 Измените в следующей строчке *имя-темы* на имя директории темы:
 
- `~/.config/gtk-3.0/settings.ini`  `gtk-cursor-theme-name=*имя-темы*` 
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-cursor-theme-name=*имя-темы*
+```
 
 Перелогинтесь, чтобы изменения вступили в силу.
+
+### LXAppearance
+
+[LXAppearance](/index.php/LXDE#Cursors "LXDE") устанавливает курсор по умолчанию путем создания файла `~/.icons/default/index.theme`. LXAppearance перезапишет любые изменения, сделанные вручную. Не забудьте отредактировать `~/.config/gtk-3.0/settings.ini`, как это указано в [Спецификации XDG](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_XDG), потому что некоторые приложения, например Firefox, используют эти настройки.
 
 ### Среда рабочего стола
 
@@ -201,14 +205,14 @@ $ ln -s left_ptr_watch 08e8e1c95fe2fc01f976f1e063a24ccd
 
 Если вышеуказанные действия не помогают, просмотрите директорию `/usr/share/icons/whiteglass/cursors` для того, чтобы увидеть каких курсоров не хватает в вашей теме и добавьте ссылки на них.
 
-**Совет:** Вы можете удалить ненужные курсоры. Например, удалить курсоры "watch", "left_ptr_watch" и заменить их курсором "left_ptr":
+**Совет:** Также вы можете удалить ненужные курсоры. Например, удаление курсора "watch":
 ```
 $ cd ~/.icons/*тема*/cursors/
 $ rm watch left_ptr_watch
 $ ln -s left_ptr watch
+$ ln -s left_ptr left_ptr_watch
 
 ```
-$ ln -s left_ptr left_ptr_watch
 
 ### Замена недостающих курсоров
 

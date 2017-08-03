@@ -190,7 +190,7 @@ becomes:
 This result string can be obtained by running the following command:
 
 ```
-$ python2 -c 'import urllib; print "smb://" + urllib.quote("BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6")'
+$ python -c 'from urllib.parse import quote; print("smb://" + quote("BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6"))'
 
 ```
 

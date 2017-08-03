@@ -264,7 +264,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
         HOOKS="base udev autodetect ... **wifi** net ... dropbear encryptssh ..."
         ```
 
-2.  Create the `wifi` hook in `/lib/initcpio/hooks/wifi`:
+2.  Create the `wifi` hook in `/etc/initcpio/hooks/wifi`:
     ```
     run_hook ()
     {
@@ -299,7 +299,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
     }
     ```
 
-3.  Create the hook installation file in `/lib/initcpio/install/wifi`:
+3.  Create the hook installation file in `/etc/initcpio/install/wifi`:
     ```
     build ()
     {

@@ -1,4 +1,4 @@
-**Note:** MediaTomb is unmaintained, users may wish to checkout [Gerbera](http://gerbera.io/), which is build upon MediaTomb 12.1.
+**Note:** MediaTomb is unmaintained, users may wish to checkout [Gerbera](https://gerbera.io/), which is build upon MediaTomb 12.1.
 
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
 

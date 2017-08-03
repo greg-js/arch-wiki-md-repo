@@ -1,4 +1,4 @@
-[Notion](http://notion.sf.net) is a tiling, tabbed [window manager](/index.php/Window_manager "Window manager") for X.
+[Notion](http://notion.sourceforge.net/) is a tiling, tabbed [window manager](/index.php/Window_manager "Window manager") for X.
 
 ## Contents
 

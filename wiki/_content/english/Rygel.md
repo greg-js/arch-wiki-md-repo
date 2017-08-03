@@ -8,26 +8,10 @@ Install the [rygel](https://www.archlinux.org/packages/?name=rygel) package.
 
 After having installed Rygel on a GNOME environment, the "Share media" option will be available along the Sharing settings.
 
-Rygel can be configured globally (`/etc/rygel.conf`) or per-user (`$HOME/.config/rygel.conf`). The default `/etc/rygel.conf` is well documented.
+Rygel can be configured globally (`/etc/rygel.conf`) or per-user (`~/.config/rygel.conf`). The default `/etc/rygel.conf` is well documented.
 
 More information on these and other configuration options can be found with `man rygel.conf`.
 
 ## Troubleshooting
 
 When starting Rygel from the command line, there are several options that might help you troubleshoot any strange behaviour. Find out more about these options with `man rygel`.
-
-	`-g, --log-level=LIST`
-
-	Comma-separated list of of DOMAIN:LEVEL pairs. DOMAIN can be "*", "rygel" or the name of a plugin. Levels are 1 for critical, 2 for error, 3 for warning, 4 for info and 5 for debug.
-
-	`-d, --disable-plugin=PLUGIN`
-
-	Disable PLUGIN
-
-	`-t, --disable-transcoding`
-
-	Disable transcoding.
-
-	`-c, --config=CONFIG_FILE`
-
-	Load the specified config file instead of /etc/rygel.conf or $HOME/.config/rygel.conf

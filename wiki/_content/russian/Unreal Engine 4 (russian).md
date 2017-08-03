@@ -1,66 +1,69 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4"). Дата последней синхронизации: 9 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&diff=0&oldid=481576).
+**Состояние перевода:** На этой странице представлен перевод статьи [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unreal_Engine_4&diff=0&oldid=482795).
 
-Unreal Engine 4 is the latest version of the videogame Engine Created By Epic Games
+Unreal Engine 4 - последняя версия движка для видеоигр, созданная Epic Games
 
-The content of this article was originally written on [this page](https://wiki.unrealengine.com/Building_On_Linux) and adapted specifically for Arch Linux.
+Содержимое этой статьи было первоначально написано на [этой странице](https://wiki.unrealengine.com/Building_On_Linux) и адаптировано специально для Arch Linux.
 
 ## Contents
 
-*   [1 Minimum requirements](#Minimum_requirements)
-*   [2 Installation](#Installation)
-    *   [2.1 Register to get the source code](#Register_to_get_the_source_code)
-    *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
-    *   [2.3 Compile from source code](#Compile_from_source_code)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Compilation problems](#Compilation_problems)
-    *   [3.2 Runtime problems](#Runtime_problems)
-    *   [3.3 C++ code project problems](#C.2B.2B_code_project_problems)
-    *   [3.4 Disable Tooltips](#Disable_Tooltips)
-    *   [3.5 Random freeze under KDE](#Random_freeze_under_KDE)
-*   [4 Additional Content](#Additional_Content)
-    *   [4.1 Starter Content](#Starter_Content)
-    *   [4.2 Marketplace Apps](#Marketplace_Apps)
+*   [1 Минимальные требования](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.82.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
+*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+    *   [2.1 Установка из AUR](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.B7_AUR)
+    *   [2.2 Установка из исходного кода](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.B7_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0)
+        *   [2.2.1 Получение](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5)
+        *   [2.2.2 Компиляция](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F)
+*   [3 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [3.1 Проблемы с компиляцией](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D0.B5.D0.B9)
+    *   [3.2 Проблемы во время выполнения](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D0.B2.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [3.3 Проблемы с проектом кода на C++](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.BE.D0.BC_.D0.BA.D0.BE.D0.B4.D0.B0_.D0.BD.D0.B0_C.2B.2B)
+    *   [3.4 Отключение всплывающих подсказок](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.BF.D0.BB.D1.8B.D0.B2.D0.B0.D1.8E.D1.89.D0.B8.D1.85_.D0.BF.D0.BE.D0.B4.D1.81.D0.BA.D0.B0.D0.B7.D0.BE.D0.BA)
+    *   [3.5 Случайное зависание под KDE](#.D0.A1.D0.BB.D1.83.D1.87.D0.B0.D0.B9.D0.BD.D0.BE.D0.B5_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4_KDE)
+*   [4 Дополнительный контент](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BA.D0.BE.D0.BD.D1.82.D0.B5.D0.BD.D1.82)
+    *   [4.1 Стартовый контент](#.D0.A1.D1.82.D0.B0.D1.80.D1.82.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BA.D0.BE.D0.BD.D1.82.D0.B5.D0.BD.D1.82)
+    *   [4.2 Приложения marketplace](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_marketplace)
 
-## Minimum requirements
+## Минимальные требования
 
-*   Intel or Amd CPU@2.5GHz Quad Core **64 Bits**
-*   GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
+*   Intel или Amd CPU@2.5GHz Quad Core **64 бит**
+*   GPU: NVIDIA GeForce GTX 470 или AMD Radeon 6870 HD series
 *   RAM: 8 GB
 
-## Installation
+## Установка
 
-#### Register to get the source code
+### Установка из AUR
 
-First, register at [UnrealEngine.com](https://www.unrealengine.com/) and link your GitHub account to your Epic Games account. Once registered, you should be able to [browse the source code](https://github.com/EpicGames/UnrealEngine).
+Unreal Engine 4 доступен в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") как пакет [unreal-engine](https://aur.archlinux.org/packages/unreal-engine/).
 
-### Installing from the AUR
+Пакет вешает 22 ГБ после установки, поэтому для сборки требуется около 100 ГБ свободного места. Существует около 7 ГБ исходных файлов для загрузки, а компиляция может занять несколько часов.
 
-Unreal Engine 4 is available in the [AUR](/index.php/AUR "AUR") as the [unreal-engine](https://aur.archlinux.org/packages/unreal-engine/) package.
+Поскольку репозиторий является приватным, вы можете [настроить SSH-ключ](https://help.github.com/articles/generating-an-ssh-key/), чтобы ваша учетная запись GitHub использовалась для загрузки источника.
 
-The package is 22 GiB once installed, so it needs about 100 GiB free space to build. There is about 7 GiB of source files to download, and the compilation might take a few hours.
+Для уменьшения размера загрузки, вы можете [скачать релиз как tar.gz](https://github.com/EpicGames/UnrealEngine/releases) после входа в github.com, а затем использовать этот файл в качестве источника в PKGBUILD.
 
-Since the repository is private, you can [set up an SSH key](https://help.github.com/articles/generating-an-ssh-key/) so your GitHub account is used to download the source.
+### Установка из исходного кода
 
-For a smaller download, you can [download the release as a tar.gz](https://github.com/EpicGames/UnrealEngine/releases) after logging into github.com, then use that file as the source in the PKGBUILD.
+#### Получение
 
-### Compile from source code
+Сначала зарегистрируйтесь на [UnrealEngine.com](https://www.unrealengine.com/) и перечислите свою учетную запись GitHub в свою учетную запись Epic Games. После регистрации вы сможете [просмотреть исходный код](https://github.com/EpicGames/UnrealEngine).
 
-To compile manually, refer to [the official instructions to build on Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
+#### Компиляция
 
-## Troubleshooting
+Для компиляции вручную смотрите [официальные инструкции по сборке на Linux](https://wiki.unrealengine.com/Building_On_Linux#Building).
 
-### Compilation problems
+## Исправление проблем
 
-If the compilation fails you should try building the Editor using the Debug profile:
+### Проблемы с компиляцией
+
+Если компиляция не удалась, попробуйте собрать редактор с помощью профиля Debug:
 
 ```
 $ make UE4Editor-Linux-Debug
 
 ```
 
-### Runtime problems
+### Проблемы во время выполнения
 
-If the editor doesn't start from the menu, or something doesn't work right, start it in a console and check the output for errors.
+Если редактор не запускается из меню, или что-то не работает правильно, запустите его в консоли и проверьте вывод на наличие ошибок.
 
 ```
 $ cd /opt/unreal-engine/Engine/Binaries/Linux/
@@ -68,31 +71,31 @@ $ ./UE4Editor
 
 ```
 
-### C++ code project problems
+### Проблемы с проектом кода на C++
 
-After creating a code project, the new project opens in a text editor instead of in UE4Editor as it should. After re-launching the editor, the new project shows up and can be opened, but on the first run, it takes a half-hour or so to compile, and since this happens in the background (no GUI) it might not seem to be doing anything. The CPU usage should show that it's still compiling, and you may want to launch the editor from a console to see progress.
+После создания проекта кода новый проект открывается в текстовом редакторе, а не в UE4Editor, как это должно быть. После повторного запуска редактора новый проект появляется и может быть открыт, но при первом запуске для компиляции требуется около получаса, и поскольку это происходит в фоновом режиме (без GUI), это может показаться недействительным. Использование ЦП должно показывать, что оно все еще компилируется, и вы можете запустить редактор с консоли, чтобы увидеть прогресс.
 
-### Disable Tooltips
+### Отключение всплывающих подсказок
 
-UE4's mouse-over tooltips might be rendered very slow. They can be disabled by adding to
+Наведение указателя мыши на всплывающие подсказки UE4 может оказаться очень медленной процедурой. Их можно отключить, добавив
 
  `Engine/Config/ConsoleVariables.ini`  `Slate.AllowToolTips=0` 
 
-### Random freeze under KDE
+### Случайное зависание под KDE
 
-Disable index file content in the KDE file search options.
+Отключите содержимое индексного файла в параметрах поиска файлов KDE.
 
-## Additional Content
+## Дополнительный контент
 
-### Starter Content
+### Стартовый контент
 
-The StarterContent project is installed to /opt/unreal-engine/Samples/StarterContent/StarterContent.uproject, you can browse to it from the launcher.
+Проект StarterContent установлен в /opt/unreal-engine/Samples/StarterContent/StarterContent.uproject, вы можете перейти к нему с панели запуска.
 
-### Marketplace Apps
+### Приложения marketplace
 
-The launcher with the Unreal Marketplace is not available for Linux yet[[1]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[2]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
+Лаунчер с Unreal Marketplace недоступен для Linux еще [[1]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), поэтому приложения, такие как проект ContentExamples, не могут быть установлены из Linux[[2]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
 
-The marketplace apps can be downloaded using the [launcher](https://www.unrealengine.com/download) on Windows (Mac may also work), they are stored in:
+Приложения marketplace можно загрузить с помощью [лаунчера](https://www.unrealengine.com/download) в Windows (в Mac также может работать), они хранятся в:
 
 ```
    /Program Files (x86)/Epic Games/Launcher/VaultCache/

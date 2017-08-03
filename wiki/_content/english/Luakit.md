@@ -27,14 +27,19 @@ To use the up-to-date branch, [install](/index.php/Install "Install") [luakit-gi
 
 With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
 
-First, copy the configuration files to:
+First, remove any personal configuration from an outdated version of luakit, or back it up first.
+
+This is sufficient for use. If you would like to configure luakit, however, then the next step is to copy the main configuration file to your personal config directory:
 
 ```
-$ cp -r /etc/xdg/luakit ~/.config
+$ mkdir -p ~/.config/luakit
+$ cp /etc/xdg/luakit/rc.lua ~/.config/luakit/rc.lua
 
 ```
 
-Now you can edit any of these files to make your browser fits your needs. Even if you do not know much about Lua, the configuration is simple and well commented enough to make it straightforward.
+**Note:** It is inadvisable to copy the full set of configuration files, as was previously encouraged. This makes it harder for you to upgrade luakit, as you have more files to merge upstream changes into, and you are more likely to experience errors caused by such upstream changes (until those changes are merged with your personal configuration).
+
+The majority of this configuration file is a set of `require` statements that import other desired modules. This makes it easy to remove any unwanted features. You can also add code snippets to this file or set module options to customize browser behavior. Even if you do not know much about Lua, the configuration is simple and well commented enough to make it straightforward.
 
 ## Basic usage
 

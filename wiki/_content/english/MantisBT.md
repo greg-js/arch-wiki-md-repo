@@ -1,4 +1,4 @@
-[mantisbt](https://mantisbt.org) (abbreviation for Mantis Bug Tracker) is a bug tracker written in [PHP](https://php.net). For a list of features, visit its website.
+[MantisBT](https://mantisbt.org) (Mantis Bug Tracker) is a bug tracker written in [PHP](/index.php/PHP "PHP"). For a list of features, visit its website.
 
 ## Contents
 

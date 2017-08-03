@@ -30,7 +30,7 @@ While squid works wonderfully in large corporations and schools, it can also ben
 
 ## Installation
 
-[Install](/index.php/Install "Install") [squid](https://www.archlinux.org/packages/?name=squid) available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [squid](https://www.archlinux.org/packages/?name=squid) package.
 
 ## Configuration
 

@@ -16,7 +16,7 @@ See [LAMP](/index.php/LAMP "LAMP") for a guide to setting up Apache, MySQL, and 
 
 ## Installation
 
-Install the package [phpldapadmin](https://www.archlinux.org/packages/?name=phpldapadmin) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [phpldapadmin](https://www.archlinux.org/packages/?name=phpldapadmin) package.
 
 ## Configuration
 

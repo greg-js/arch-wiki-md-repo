@@ -187,7 +187,7 @@ Group=systemd-journal
 ## Смотрите также
 
 *   [systemd.timer(5)](http://man7.org/linux/man-pages/man5/systemd.timer.5.html)
-*   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) на *systemd* calendar timers (Англ.)
+*   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) в *systemd* calendar timers (Англ.)
 *   [Раздел Gentoo wiki](https://wiki.gentoo.org/wiki/Systemd/ru#.D0.A1.D0.B5.D1.80.D0.B2.D0.B8.D1.81.D1.8B_.D1.82.D0.B0.D0.B9.D0.BC.D0.B5.D1.80.D0.BE.D0.B2) Сервисы таймеров *systemd*
 *   **systemd-cron-next** — утилита для создания таймеров/служб из файлов crontab и anacrontab
 
@@ -196,3 +196,5 @@ Group=systemd-journal
 *   **systemd-cron** — предоставляет юнитам systemd запускать скрипты cron; используя *systemd-crontab-generator* для конвертации crontab'ов
 
 	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)
+
+*   [Freedesktop's Systemd Wiki Page](https://www.freedesktop.org/software/systemd/man/systemd.timer.html) в *timer unit configurations*

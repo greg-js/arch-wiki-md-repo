@@ -12,7 +12,7 @@ PowerDNS is a DNS server, written in C++ and licensed under the GPL. PowerDNS fe
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [powerdns](https://www.archlinux.org/packages/?name=powerdns) package which can be found in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [powerdns](https://www.archlinux.org/packages/?name=powerdns) package.
 
 Next you can review the configuration file located at `/etc/powerdns/pdns.conf`.
 

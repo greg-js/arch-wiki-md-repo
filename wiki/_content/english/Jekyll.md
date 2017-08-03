@@ -28,7 +28,7 @@ Jekyll can be installed in Arch Linux with the [RubyGems](https://en.wikipedia.o
 
 **Note:** RubyGems 1.8 and above are displaying [numerous uncritical warnings](https://github.com/rspec/rspec-core/issues/345).
 
-The best way to install Jekyll is with [RubyGems](/index.php/Ruby#RubyGems "Ruby"), a package manager for the [Ruby](/index.php/Ruby "Ruby") programming language. RubyGems is installed alongside the [ruby](https://www.archlinux.org/packages/?name=ruby) package, which is located in the [official repositories](/index.php/Official_repositories "Official repositories"). Jekyll can then be installed for all users on the machine using the `gem` command as root. Alternative installation methods are available on the [Ruby](/index.php/Ruby#RubyGems "Ruby") page.
+The best way to install Jekyll is with [RubyGems](/index.php/Ruby#RubyGems "Ruby"), which is a package manager for the [Ruby](/index.php/Ruby "Ruby") programming language. RubyGems comes with the [ruby](https://www.archlinux.org/packages/?name=ruby) package. Jekyll can then be installed for all users on the machine using the `gem` command as root. Alternative installation methods are available on the [Ruby](/index.php/Ruby#RubyGems "Ruby") page.
 
 Before installing Jekyll make sure to update RubyGems.
 
@@ -62,9 +62,7 @@ There are numerous different markup languages that are used to define text-to-HT
 
 [Textile](https://en.wikipedia.org/wiki/Textile_(markup_language) is a markup language used by Jekyll.
 
-**Note:** RedCloth, a module for using the Textile markup language in Ruby, fails to install with gcc 4.6.0
-
-(see: [RedCloth Ticket 215](http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure) and [219](http://jgarber.lighthouseapp.com/projects/13054/tickets/219-427-installation-issue-on-arch-linux-x64)).
+**Note:** RedCloth, a module for using the Textile markup language in Ruby, fails to install with gcc 4.6.0 (see: [RedCloth Ticket 215](http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure) and [219](http://jgarber.lighthouseapp.com/projects/13054/tickets/219-427-installation-issue-on-arch-linux-x64)).
 
 It is recommended that you install the current stable version 4.2.2 by `gem install RedCloth --version 4.2.2`.
 
@@ -192,7 +190,7 @@ title: sample title
 
 ### Creating a post
 
-The content of each blog post will be contained within a file inside of the `_posts` directorys. To use the default naming convention each file should be saved with the year, month, date, post title and end with the *.md or *.textile depending on the markup language used (e.g. `2010-02-13-early-userspace-in-arch-linux.textile`). The date defined in the filename will be used as the published date in the post. Additionally, the filename will be used to generate the permalink (i.e. /categories/year/month/day/title.html). To use an alternate permalink style or create your own review the explanation on [GitHub](https://github.com/mojombo/jekyll/wiki/Permalinks).
+The content of each blog post will be contained within a file inside of the `_posts` directorys. To use the default naming convention each file should be saved with the year, month, date, post title and end with the *.md or *.textile depending on the markup language used (e.g. `2010-02-13-early-userspace-in-arch-linux.textile`). The date defined in the filename will be used as the published date in the post. Additionally, the filename will be used to generate the permalink (i.e. `/categories/year/month/day/title.html`). To use an alternate permalink style or create your own review the explanation on [GitHub](https://github.com/mojombo/jekyll/wiki/Permalinks).
 
 ## Test
 

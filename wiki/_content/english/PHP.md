@@ -1,4 +1,4 @@
-[PHP](http://www.php.net/) is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
+[PHP](https://secure.php.net/) is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
 
 ## Contents
 

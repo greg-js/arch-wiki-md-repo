@@ -1,35 +1,35 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Unreal Tournament 4](/index.php/Unreal_Tournament_4 "Unreal Tournament 4"). Дата последней синхронизации: 19 апреля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unreal_Tournament_4&diff=0&oldid=474569).
+**Состояние перевода:** На этой странице представлен перевод статьи [Unreal Tournament 4](/index.php/Unreal_Tournament_4 "Unreal Tournament 4"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unreal_Tournament_4&diff=0&oldid=482797).
 
-Unreal Tournament 4 is a first-person shooter by Epic Games based on [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4").
+Unreal Tournament 4 - шутер от первого лица от Epic Games, основанный на [Unreal Engine 4](/index.php/Unreal_Engine_4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unreal Engine 4 (Русский)").
 
 ## Contents
 
-*   [1 Minimum requirements](#Minimum_requirements)
-*   [2 Installation](#Installation)
-    *   [2.1 Register to get the source code](#Register_to_get_the_source_code)
-    *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
-    *   [2.3 More Information](#More_Information)
+*   [1 Минимальные требования](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.82.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
+*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+    *   [2.1 Получение исходного кода](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0)
+    *   [2.2 Установка из AUR](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.B7_AUR)
+    *   [2.3 Больше информации](#.D0.91.D0.BE.D0.BB.D1.8C.D1.88.D0.B5_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.B8)
 
-## Minimum requirements
+## Минимальные требования
 
-*   Intel or Amd CPU@2.5GHz Quad Core **64 Bits**
-*   GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
+*   Intel или Amd CPU@2.5GHz Quad Core **64 бит**
+*   GPU: NVIDIA GeForce GTX 470 или AMD Radeon 6870 HD series
 *   RAM: 8 GB
 
-## Installation
+## Установка
 
-#### Register to get the source code
+### Получение исходного кода
 
-Register at [UnrealEngine.com](https://www.unrealengine.com/) and link your GitHub account to your Epic Games account. Once registered, you should be able to [browse the source code](https://github.com/EpicGames/UnrealTournament).
+Сначала зарегистрируйтесь на [UnrealEngine.com](https://www.unrealengine.com/) и перечислите свою учетную запись GitHub в свою учетную запись Epic Games. После регистрации вы сможете [просмотреть исходный код](https://github.com/EpicGames/UnrealTournament).
 
-### Installing from the AUR
+### Установка из AUR
 
-Unreal Tournament 4 can be compiled from source by using the [unreal-tournament-4](https://aur.archlinux.org/packages/unreal-tournament-4/) package in [AUR](/index.php/AUR "AUR") or you can download a compiled version from their forum and install it with the [unrealtournament4](https://aur.archlinux.org/packages/unrealtournament4/) package.
+Unreal Tournament 4 может быть скомпилирован из исходников с помощью пакета [unreal-tournament-4](https://aur.archlinux.org/packages/unreal-tournament-4/) в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") или вы можете скачать скомпилированную версию с их форума и установить ее с помощью пакета [unrealtournament4](https://aur.archlinux.org/packages/unrealtournament4/).
 
-The package needs about 100 GiB free space to build, with 10 GiB of source files to download, and the compilation might take a few hours.
+Пакет требует около 100 GiB свободного места для сборки, с загружаемыми 10 GiB исходными файлами, и компиляция может занять несколько часов.
 
-Since the repository is private, you can [set up an SSH key](https://help.github.com/articles/generating-an-ssh-key/) so your GitHub account is used to download the source.
+Поскольку репозиторий является приватным, вы можете [настроить SSH-ключ](https://help.github.com/articles/generating-an-ssh-key/), чтобы ваша учетная запись GitHub использовалась для загрузки источника.
 
-### More Information
+### Больше информации
 
-The build instructions and troubleshooting for [Unreal Engine 4](/index.php/Unreal_Engine_4 "Unreal Engine 4") are mostly applicable.
+Инструкции по сборке и устранение неполадок для [Unreal Engine 4](/index.php/Unreal_Engine_4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unreal Engine 4 (Русский)") в основном применимы и здесь.

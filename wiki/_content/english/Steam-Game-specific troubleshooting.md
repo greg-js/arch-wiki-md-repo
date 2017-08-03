@@ -133,6 +133,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [60 The Long Dark](#The_Long_Dark)
     *   [60.1 Game does not start](#Game_does_not_start_8)
     *   [60.2 Game starts, but some overlay text is missing](#Game_starts.2C_but_some_overlay_text_is_missing)
+    *   [60.3 Cursor disappears](#Cursor_disappears)
 *   [61 Mark of the Ninja](#Mark_of_the_Ninja)
     *   [61.1 Bad sound](#Bad_sound)
 *   [62 Metro: Last Light](#Metro:_Last_Light)
@@ -1060,6 +1061,10 @@ and from Steam, the complete game [launch options](/index.php/Launch_option "Lau
 LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
 
 ```
+
+### Cursor disappears
+
+Go to Options > Controls, and set mouse locking to unlocked.
 
 ## Mark of the Ninja
 

@@ -1,4 +1,4 @@
-Graphviz is a package to draw graphs. It generates images in various formats from a text file written in DOT language.
+[Graphviz](http://www.graphviz.org/) is a package to draw graphs. It generates images in various formats from a text file written in DOT language.
 
 ## Contents
 

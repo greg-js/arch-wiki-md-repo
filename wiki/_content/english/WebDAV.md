@@ -1,4 +1,4 @@
-WebDAV (**Web** **D**istributed **A**uthoring and **V**ersioning) is an extension of HTTP 1.1 and therefore can be considered to be a procotol. It contains a set of concepts and accompanying extension methods to allow read and write across the HTTP 1.1 protocol. Instead of using [NFS](/index.php/NFS "NFS") or [SMB](/index.php/SMB "SMB"), WebDAV offers file transfers via HTTP.
+WebDAV (Web Distributed Authoring and Versioning) is an extension of HTTP 1.1 and therefore can be considered to be a procotol. It contains a set of concepts and accompanying extension methods to allow read and write across the HTTP 1.1 protocol. Instead of using [NFS](/index.php/NFS "NFS") or [SMB](/index.php/SMB "SMB"), WebDAV offers file transfers via HTTP.
 
 The goal of this how to is to setup a simple WebDAV configuration using a [web server](/index.php/Category:Web_server "Category:Web server").
 

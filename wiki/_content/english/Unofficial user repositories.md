@@ -35,14 +35,15 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.11 haskell-web](#haskell-web)
         *   [3.1.12 herecura](#herecura)
         *   [3.1.13 ivasilev](#ivasilev_2)
-        *   [3.1.14 llvm-svn](#llvm-svn)
-        *   [3.1.15 miffe](#miffe)
-        *   [3.1.16 repo-ck](#repo-ck)
-        *   [3.1.17 seblu](#seblu)
-        *   [3.1.18 seiichiro](#seiichiro)
-        *   [3.1.19 sergej-repo](#sergej-repo)
-        *   [3.1.20 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.21 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+        *   [3.1.14 jrpi-haskell](#jrpi-haskell)
+        *   [3.1.15 llvm-svn](#llvm-svn)
+        *   [3.1.16 miffe](#miffe)
+        *   [3.1.17 repo-ck](#repo-ck)
+        *   [3.1.18 seblu](#seblu)
+        *   [3.1.19 seiichiro](#seiichiro)
+        *   [3.1.20 sergej-repo](#sergej-repo)
+        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.22 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 archlinuxfr](#archlinuxfr)
         *   [3.2.2 archlinuxgr](#archlinuxgr)
@@ -82,14 +83,13 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.12 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.13 holo](#holo)
         *   [5.1.14 jrpi](#jrpi)
-        *   [5.1.15 jrpi-haskell](#jrpi-haskell)
-        *   [5.1.16 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.17 markzz](#markzz)
-        *   [5.1.18 qt-debug](#qt-debug)
-        *   [5.1.19 quarry](#quarry)
-        *   [5.1.20 siosm-aur](#siosm-aur)
-        *   [5.1.21 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.22 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.15 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.16 markzz](#markzz)
+        *   [5.1.17 qt-debug](#qt-debug)
+        *   [5.1.18 quarry](#quarry)
+        *   [5.1.19 siosm-aur](#siosm-aur)
+        *   [5.1.20 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.21 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -362,6 +362,20 @@ Server = http://repo.herecura.be/$repo/$arch
 ```
 [ivasilev]
 Server = https://ivasilev.net/pacman/$arch
+
+```
+
+#### jrpi-haskell
+
+*   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
+*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositories](https://jrpi.mooo.com/Programação?lang=en#Repositories)
+*   **Description:** Haskell packages (created with cblrepo but not available in haskell-core).
+*   **Package list:** [https://jrpi.mooo.com/Repositórios/haskell/](https://jrpi.mooo.com/Repositórios/haskell/)
+*   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
+
+```
+[jrpi-haskell]
+Server = https://jrpi.mooo.com/Repositórios/haskell/
 
 ```
 
@@ -878,20 +892,6 @@ Server = https://repo.holocm.org/archlinux/x86_64
 ```
 [jrpi]
 Server = https://jrpi.mooo.com/Repositórios/principal/
-
-```
-
-#### jrpi-haskell
-
-*   **Maintainer:** [João Miguel](/index.php/User:JMCF125 "User:JMCF125")
-*   **Upstream page:** [https://jrpi.mooo.com/Programação?lang=en#Repositories](https://jrpi.mooo.com/Programação?lang=en#Repositories)
-*   **Description:** Haskell packages (created with cblrepo but not available in haskell-core).
-*   **Package list:** [https://jrpi.mooo.com/Repositórios/haskell/](https://jrpi.mooo.com/Repositórios/haskell/)
-*   **Key-ID:** 300F3A7E6DE3712674AF1BA3C734821C2C9A679F
-
-```
-[jrpi-haskell]
-Server = https://jrpi.mooo.com/Repositórios/haskell/
 
 ```
 

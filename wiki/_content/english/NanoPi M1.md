@@ -22,9 +22,7 @@ This NanoPi M1 boots from a single ext4 partition, imaged with Das U-Boot. An Ar
 Create a directory system to store the development files:
 
 ```
-$ mkdir nanopi_arch
-$ cd nanopi_arch
-$ mkdir mnt
+$ mkdir -p nanopi_arch/mnt
 
 ```
 
