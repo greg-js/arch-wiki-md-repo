@@ -271,9 +271,9 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 
 **Note:** This section frequently goes out of date with updates to GRUB and ZFS. Consult the manual pages for the most up-to-date information.
 
-By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is suitable for all the features of ZFSonLinux 0.6.5.x, but not for the 0.7.0 branch provided by the git packages.
+By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is not suitable for all the features of ZFSonLinux 0.7.0, and must have unsupported features disabled.
 
-When using the git-based packages (0.7.0) and GRUB 2.02, you can create a pool with the incompatible features disabled:
+You can create a pool with the incompatible features disabled:
 
 ```
    # zpool create -o feature@multi_vdev_crash_dump=disabled \

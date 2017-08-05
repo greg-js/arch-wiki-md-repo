@@ -10,7 +10,7 @@
 
 ## Main channels
 
-**Warning:** Channel statistics are logged for [#archlinux](https://theos.kyriasis.com/~kyrias/stats/archlinux.html) and [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Speak to [demize](/index.php/User:Kyrias "User:Kyrias") (#archlinux) or dunz0r (#archlinux-offtopic) if you would like to opt-out permanently.
+**Warning:** Channel statistics are logged for [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Speak to dunz0r if you would like to opt-out permanently.
 
 This section is about **#archlinux**, the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and **#archlinux-offtopic**, the main Arch Linux social channel, both available on the [Freenode](https://www.freenode.net/) network.
 

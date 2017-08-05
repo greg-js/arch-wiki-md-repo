@@ -43,7 +43,7 @@ Check if the mongod.lock lock file is empty or not:
 
 ```
 
-If it does, stop `mongodb.service`. Run a repair on the database, specifying the dbpath (/var/lib/mongodb/ is the default --dbpath in Arch Linux):
+If it is, stop `mongodb.service`. Run a repair on the database, specifying the dbpath (/var/lib/mongodb/ is the default --dbpath in Arch Linux):
 
 ```
 # mongod --dbpath /var/lib/mongodb/ --repair

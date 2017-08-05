@@ -115,6 +115,10 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://kde.org/applications/system/konsole/](http://kde.org/applications/system/konsole/) || [konsole](https://www.archlinux.org/packages/?name=konsole)
 
+*   **kitty** — A modern, hackable, featureful, OpenGL based terminal emulator
+
+	[https://github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) || [kitty-git](https://aur.archlinux.org/packages/kitty-git/)
+
 *   **mlterm** — A multi-lingual terminal emulator supporting various character sets and encodings in the world.
 
 	[http://sourceforge.net/projects/mlterm/](http://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)

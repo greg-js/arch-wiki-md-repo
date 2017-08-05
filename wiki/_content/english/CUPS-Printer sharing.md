@@ -196,7 +196,7 @@ $ python -c 'from urllib.parse import quote; print("smb://" + quote("BEN-DESKTOP
 
 #### Sharing via LPD
 
-Windows 7 has a built-in LPD server - using it will probably be the easiest approach as it does neither require an installation of *Samba* on the client nor heavy configuration on the server. It can be activated in the *Control Panel* under *Programs* -> *Activate Windows functions* in the section *Print services*. The printer must have *shared* activated in its properties. Use a share name without any special characters like spaces, commas, etc.
+Windows 7, 8 and 10 have a built-in LPD server - using it will probably be the easiest approach as it does neither require an installation of *Samba* on the client nor heavy configuration on the server. It can be activated in the *Control Panel* under *Programs* -> *Activate Windows functions* in the section *Print services*. The printer must have *shared* activated in its properties. Use a share name without any special characters like spaces, commas, etc.
 
 Then the printer can be added in CUPS, choosing LPD protocol. The printer address will look like this:
 
@@ -209,9 +209,7 @@ Before adding the printer, you will most likely have to install an appropriate p
 
 #### Sharing via IPP
 
-As above, IPP is also the **preferred** protocol for printer sharing. However this way might be a bit **more difficult** than the native Samba approach below, since you need a greater effort to set up an IPP-Server on Windows. The commonly chosen server software is Microsoft's Internet Information Services (IIS).
-
-**Note:** This section is incomplete. Here is a description how to set up IIS in Windows XP and Windows 2000, unfortunately in German [[1]](http://www.heise.de/netze/artikel/Ueberall-drucken-221652.html)
+As above, IPP is also the **preferred** protocol for printer sharing although it **only works with Windows Server versions**. Windows Server versions (e.g. Server 2016) include IPP support ("Print and Document Services" role, "Internet Printing" service). Client versions (e.g. Windows 10), only include the IPP client, and **do no support sharing through IPP**.
 
 #### Sharing via Samba
 

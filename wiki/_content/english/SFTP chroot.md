@@ -103,10 +103,17 @@ Create a [user](/index.php/User "User") (and use `sftponly` as it's main group):
 
 ```
 
-Set a (complex) password - you may want to disable SSH user password login (e.g. `PasswordAuthentication no`):
+Set a (complex) password - to prevent `account is locked` error:
 
 ```
 # passwd *username*
+
+```
+
+To deny [shell](/index.php/Shell "Shell") login access:
+
+```
+# usermod -s /sbin/nologin *username*
 
 ```
 

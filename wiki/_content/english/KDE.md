@@ -285,6 +285,8 @@ Make it permanent:
 
 It migh or it might not be necessary to append `.local` to the hostname.
 
+An easier solution is to use [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/), which offers basically the same functionality via an easy to use option located at *System Settings* > *Network Drivers*.
+
 ### KDE Desktop activities
 
 [KDE Desktop Activities](https://userbase.kde.org/Plasma#Activities) are special workspaces where you can select specific settings for each activity that apply only when you are using said activity.

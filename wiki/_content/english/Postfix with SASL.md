@@ -44,18 +44,18 @@ Note that this also enables SSL, so if you do not have a SSL certificate, keep t
 
 The three restriction options (client, helo, sender) can also be left commented out, since smtpd_recipient_restrictions already handles SASL users.
 
-Setup Postfix as you normally would and [start](/index.php/Daemons#Starting_manually "Daemons") it. If you want to start it at boot time see [Daemons#Starting on boot](/index.php/Daemons#Starting_on_boot "Daemons").
-
-SASL can use different authentication methods. The default one is PAM (as configured in `/etc/conf.d/saslauthd`), but to set it up properly you have to create `/usr/lib/sasl2/smtpd.conf`:
+SASL can use different authentication methods. The default one is PAM (as configured in `/etc/conf.d/saslauthd`), but to set it up properly you have to create `/etc/sasl2/smtpd.conf`:
 
 ```
 pwcheck_method: saslauthd
-mech_list: plain
+mech_list: PLAIN LOGIN
 log_level: 7
 
 ```
 
-Now [restart](/index.php/Restart "Restart") postfix and saslauthd services.
+[Start/enable](/index.php/Start/enable "Start/enable") the `saslauthd.service`.
+
+[Restart](/index.php/Restart "Restart") the `postfix.service`.
 
 Hopefully you should be able to telnet to your Postfix server with:
 

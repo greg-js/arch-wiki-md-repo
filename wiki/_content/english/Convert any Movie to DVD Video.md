@@ -334,7 +334,7 @@ spumux -s1 sub_fre.xml <movie_ita_sub.mpg >movie_ita_sub__fre_sub.mpg
 
 ### Subtitles from another DVD video
 
-If you want to extract the subtitles from another DVD you have to use **tccat** and **tcextract** (of **transcode** package) to get the subtitle raw stream. After you convert the raw stream with **subtitle2pgm** (also of **transcode** package) to pictures and a control file. The control file is understood by **spumux**.
+If you want to extract the subtitles from another DVD you have to use **tccat** and **tcextract** (of [transcode](https://www.archlinux.org/packages/?name=transcode) package) to get the subtitle raw stream. After you convert the raw stream with **subtitle2pgm** (also of [transcode](https://www.archlinux.org/packages/?name=transcode) package) to pictures and a control file. The control file is understood by **spumux**.
 
 Assuming the dvd device is **/dev/sr0** and the video track is the first we detect the subtitles available with **mplayer**:
 

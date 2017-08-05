@@ -1,5 +1,7 @@
 The Yubikey is a small [USB token](https://en.wikipedia.org/wiki/Security_token "wikipedia:Security token") that generates [One-Time Passwords](https://en.wikipedia.org/wiki/One-time_password "wikipedia:One-time password") (OTP). It is manufactured by [Yubico](http://www.yubico.com/).
 
+A small section of this article also works for *Fido U2F* USB keys : [#Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
+
 One of its strengths is that it emulates a USB keyboard to send the OTP as text, and thus requires only USB HID drivers found on practically all desktop computers.
 
 ## Contents

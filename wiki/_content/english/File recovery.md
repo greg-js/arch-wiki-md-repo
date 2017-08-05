@@ -140,11 +140,11 @@ TestDisk and Photorec are both open-source data recovery utilities licensed unde
 
 ### Installation
 
-[testdisk](https://www.archlinux.org/packages/?name=testdisk) from the [official repositories](/index.php/Official_repositories "Official repositories") provides both TestDisk and PhotoRec.
+[Install](/index.php/Install "Install") the [testdisk](https://www.archlinux.org/packages/?name=testdisk) package, which provides both TestDisk and PhotoRec.
 
 ### Usage
 
-After running e.g. ddrescue to create image.img, `photorec image.img` will open a terminal UI where you can select what file types to search for and where to put the recovered files.
+After running e.g. [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) to create image.img, `photorec image.img` will open a terminal UI where you can select what file types to search for and where to put the recovered files.
 
 ### Files recovered by photorec
 

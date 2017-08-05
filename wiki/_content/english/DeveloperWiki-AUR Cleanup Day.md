@@ -21,6 +21,8 @@ The AUR has a large number of obsolete packages which could use cleaning up. Exa
 
 Post suggestions of packages on the AUR Cleanup Day pages below. Trusted Users will get together and go though the list in a couple of weeks after the event and confirm which packages should be removed.
 
+Join [#archlinux-aur](/index.php/IRC_channel "IRC channel") to collaborate and chat.
+
 ## Template (Package list)
 
 **Add new packages here** - check for the package in the sorted lists below before adding

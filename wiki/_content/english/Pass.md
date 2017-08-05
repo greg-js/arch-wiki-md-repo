@@ -12,7 +12,8 @@ pass is a simple password manager for the command line. Pass is a shell script t
 *   [4 Extensions](#Extensions)
 *   [5 Advanced usage](#Advanced_usage)
 *   [6 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
-*   [7 See also](#See_also)
+*   [7 Integration into git](#Integration_into_git)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -145,6 +146,12 @@ Add these for bash-completion to your `*~/.bash_completion*` and make sure [bash
 ```
 
 Now you can initialize into `*~/.pass/red*` and `*~/.pass/blue*` and have two pass contexts with the `*passred*` and `*passblue*` aliases. You can generalize this further into as many contexts as you like.
+
+## Integration into git
+
+You can use `pass` as a credentials helper for `git`. [Install](/index.php/Install "Install") the [pass-git-helper](https://aur.archlinux.org/packages/pass-git-helper/) or [pass-git-helper-git](https://aur.archlinux.org/packages/pass-git-helper-git/) package.
+
+Usage is described in detail in the [github README file](https://github.com/languitar/pass-git-helper).
 
 ## See also
 

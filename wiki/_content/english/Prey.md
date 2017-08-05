@@ -1,4 +1,4 @@
-[Prey](http://preyproject.com/) is a set of scripts that helps you track your computer when it is stolen.
+[Prey](https://www.preyproject.com/) is a set of scripts that helps you track your computer when it is stolen.
 
 This guide shows you how to install Prey.
 

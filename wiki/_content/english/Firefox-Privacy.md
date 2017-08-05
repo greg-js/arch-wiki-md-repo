@@ -6,7 +6,7 @@ This article overviews configuration settings and some useful extensions which e
     *   [1.1 Enable tracking protection](#Enable_tracking_protection)
     *   [1.2 Change browser time zone](#Change_browser_time_zone)
     *   [1.3 Change user agent and platform](#Change_user_agent_and_platform)
-    *   [1.4 Disable battery api](#Disable_battery_api)
+    *   [1.4 Disable battery API](#Disable_battery_API)
     *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [1.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
     *   [1.7 Disable telemetry](#Disable_telemetry)
@@ -50,7 +50,7 @@ Firefox gained an option for [tracking protection](https://support.mozilla.org/e
 
 Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
-Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet "List of applications/Internet").
+Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet").
 
 ### Change browser time zone
 
@@ -65,16 +65,11 @@ Or, set a script to launch the above (for example, at `/usr/local/bin/firefox`).
 
 ### Change user agent and platform
 
-To change the user agent in firefox, add the following `string` key in `about:config`:
-
-```
-general.useragent.override
-
-```
+You can override Firefox's user agent with the `general.useragent.override` preference in `about:config`.
 
 The value for the key is your browser's user agent. Select a known common one.
 
-**Tip:** The value `Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0` is used as the user agent for the Tor browser, thus being very common.
+**Tip:** The value `Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0` is used as the user agent for the Tor browser, thus being very common.
 
 **Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
 
@@ -89,11 +84,11 @@ Select a known common platform that corresponds with your user agent.
 
 **Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
 
-### Disable battery api
+### Disable battery API
 
-Firefox is disabling the battery api for web content starting with Firefox 52, the api will still be available for add-ons [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[2]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
+Firefox is disabling the battery API for web content starting with Firefox 52, the API will still be available for add-ons [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[2]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
 
-Battery status api may be used to fingerprint the user[[3]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
+Battery status API may be used to fingerprint the user[[3]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
 
 ### WebRTC exposes LAN IP address
 
@@ -143,7 +138,7 @@ In addition disable download checking, by setting `browser.safebrowsing.download
 
 ### Disable WebGL
 
-WebGL is a potential [security risk](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern). Set `webgl.disabled` to `true` in `about:config` if you want to disable it.
+WebGL is a potential security risk.[[4]](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern) Set `webgl.disabled` to `true` in `about:config` if you want to disable it.
 
 ## Extensions
 
@@ -165,7 +160,7 @@ uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](ht
 
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[4]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
+[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[5]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
 ### Privacy Badger
 

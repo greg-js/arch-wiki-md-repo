@@ -18,7 +18,7 @@ Article on utilizing video memory for system swap.
 
 A graphics card with GDDR SDRAM or DDR SDRAM may be used as swap by using the MTD subsystem of the kernel. Systems with dedicated graphics memory of 256 MB or greater which also have limited amounts of system memory (DDR SDRAM) may benefit the most from this type of setup.
 
-**Note:** Using legacy AGP (Accelerated Graphics Bus) card may limit reads to approximately 8 MB per second. AGP bus has a limited amount of bus bandwidth.
+**Note:** Using legacy AGP (Accelerated Graphics Port) card may limit reads to approximately 8 MB per second (but port speed is from 266MB/s to 2133MB/s so may it work fast). AGP bus has a limited amount of bus bandwidth.
 
 ## Kernel requirements
 

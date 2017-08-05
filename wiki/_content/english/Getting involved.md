@@ -38,7 +38,7 @@ One of the easiest ways to get involved is participating in the [Arch Linux Foru
 
 ### Join the chatroom
 
-You can help other users to solve problems on the [IRC channel](/index.php/IRC_channel "IRC channel"). It is of vital importance however, that you read the [channel rules](/index.php/Code_of_conduct#IRC "Code of conduct") before participating. [Further channels](/index.php/IRC_channel#Other_channels "IRC channel") are available for specific topics.
+You can help other users solve problems on the [IRC channel](/index.php/IRC_channel "IRC channel"). It is of vital importance however, that you read the [channel rules](/index.php/Code_of_conduct#IRC "Code of conduct") before participating. [Further channels](/index.php/IRC_channel#Other_channels "IRC channel") are available for specific topics.
 
 ### Report installed packages
 

@@ -54,10 +54,10 @@ It supports split configuration files using the `#include "foo.cfg"` directive w
 Some modifications are required to use the correct paths for Arch packages:
 
 ```
-assets_directory = "/usr/share/libretro/assets"
+assets_directory = "/usr/share/retroarch/assets"
 libretro_info_path = "/usr/share/libretro/info"
 libretro_directory = "/usr/lib/libretro"
-joypad_autoconfig_dir = "/usr/share/libretro/autoconfig"
+joypad_autoconfig_dir = "/usr/share/retroarch/autoconfig"
 
 ```
 

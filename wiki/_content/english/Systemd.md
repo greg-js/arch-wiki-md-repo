@@ -170,6 +170,13 @@ $ systemctl is-enabled *unit*
 
 ```
 
+**Enable** a unit to be started on **bootup** and **Start** immediately:
+
+```
+# systemctl enable --now *unit*
+
+```
+
 **Disable** a unit to not start during bootup:
 
 ```

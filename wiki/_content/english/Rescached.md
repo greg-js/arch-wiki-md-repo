@@ -1,4 +1,4 @@
-*rescached* is a daemon to cache internet name and address resolution in local memory when running and in a disk cache when not running.
+[rescached](https://github.com/shuLhan/rescached) is a daemon to cache internet name and address resolution in local memory when running and in a disk cache when not running.
 
 *rescached* is not a reimplementation of a DNS server like BIND. The primary goal of *rescached* is only to cache DNS queries and answers to minimize unneeded traffic to the outside network. It is intended for personal systems or serving a small group of users.
 
@@ -20,20 +20,11 @@
 
 Each query and answer data pair in the cache is enriched with statistical usage to define how the cache will be ordered in memory. The frequently queried hostnames will be at the top of the cache list, and less queried hostnames will be at the bottom of the cache list. This, obviously, results in a cache list based on user's habits (frequently accessed hosts) and speeds up resolving accordingly.
 
-```
-+-----+------------------+
-| #   | host-name        |
-+-----+------------------+
-| 529 | www.reddit.com   |
-+-----+------------------+
-| 233 | www.google.com   |
-+-----+------------------+
-| ... |        ...       |
-+-----+------------------+
-| 1   | www.kilabit.info |
-+-----+------------------+
-
-```
+| # | host-name |
+| 529 | www.reddit.com |
+| 233 | www.google.com |
+| ... | ... |
+| 1 | www.kilabit.info |
 
 The number of cache entries that rescached holds in memory depends on the value of *cache.max* in the configuration file. When the *cache.max* limit is reached, the daemon will remove all cached entries which are accessed less frequently than set in *cache.threshold*.
 

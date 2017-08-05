@@ -12,7 +12,7 @@ Often when reporting bugs encountered with projects such as Mesa or Linux kernel
 
 ## Reverting to an older release
 
-It might be useful to confirm that it is the new package release that is causing the problem. [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages") on Arch can be accomplished trivially as long as an older version of the package is still stored as cache on your system, or you can use [Arch Rollback Machine](/index.php/Downgrading_packages#Arch_Rollback_Machine "Downgrading packages").
+It might be useful to confirm that it is the new package release that is causing the problem. [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages") on Arch can be accomplished trivially as long as an older version of the package is still stored as cache on your system, or you can use [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
 
 **Note:** Even if the older version fixes the problem it is still possible that is not a bug within the program, but a problem with the packages as provided by Arch.
 

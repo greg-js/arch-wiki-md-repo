@@ -37,7 +37,7 @@ You must configure a firewall to be used with sshguard in order for blocking to 
 
 #### FirewallD
 
-Starting with version 2.0, sshguard can work with Firewalld. Make sure you have firewalld enabled, configured and setup first. To make sshguard write to your zone of preference, issue the following commands:
+sshguard can work with Firewalld. Make sure you have firewalld enabled, configured and setup first. To make sshguard write to your zone of preference, issue the following commands:
 
 ```
 # firewallctl zone "<zone name>" --permanent add rich-rule "rule source ipset=sshguard4 drop"

@@ -28,9 +28,7 @@ Currently, Metasploit requires to setup and configure Postgresql on target syste
 
 ## Installation
 
-Install package [metasploit](https://www.archlinux.org/packages/?name=metasploit) from the official repositories. It is optional to follow the RVM setup instructions below, ruby is pulled as a dependency.
-
-For latest development version, install [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/) instead.
+Install package [metasploit](https://www.archlinux.org/packages/?name=metasploit). It is optional to follow the RVM setup instructions below, ruby is For latest development version, install [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/) instead.
 
 ### Armitage
 
@@ -152,8 +150,6 @@ Everything (scripts, files, programs etc) in Metasploit is a module. There are 6
 *   `nop` - *NOP* generators. *NOP* is an assembly language instruction which simply does nothing. The machine code of this instruction is different on each hardware architecture. *NOP* instructions are useful for filling the void in executables.
 
 ### Searching for exploits
-
-**Note:** Currently the `search` command [does not work properly](#Bugs). Refer to [#Searching from the database](#Searching_from_the_database) for a workaround.
 
 To discover what operating system and software version a target runs, perform a [port scan](/index.php/Nmap "Nmap"). With this information, use the `search` command to search for available exploits.
 

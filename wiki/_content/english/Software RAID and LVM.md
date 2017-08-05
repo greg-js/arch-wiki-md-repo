@@ -453,11 +453,8 @@ For further information on how to maintain your software RAID or LVM review the 
 
 ## See also
 
-*   [Setup Arch Linux on top of raid, LVM2 and encrypted partitions](http://yannickloth.be/blog/2010/08/01/installing-archlinux-with-software-raid1-encrypted-filesystem-and-lvm2/) by Yannick Loth
-*   [RAID vs. LVM](http://stackoverflow.com/questions/237434/raid-verses-lvm) on [Stack Overflow](https://en.wikipedia.org/wiki/Stack_Overflow "wikipedia:Stack Overflow")
 *   [What is better LVM on RAID or RAID on LVM?](http://serverfault.com/questions/217666/what-is-better-lvm-on-raid-or-raid-on-lvm) on [Server Fault](https://en.wikipedia.org/wiki/Server_Fault "wikipedia:Server Fault")
 *   [Managing RAID and LVM with Linux (v0.5)](http://www.gagme.com/greg/linux/raid-lvm.php) by Gregory Gulik
-*   [Gentoo Linux x86 with Software Raid and LVM2 Quick Install Guide](http://www.gentoo.org/doc/en/gentoo-x86+raid+lvm2-quickinstall.xml)
 *   2011-09-08 - Arch Linux - [LVM & RAID (1.2 metadata) + SYSLINUX](https://bbs.archlinux.org/viewtopic.php?id=126172)
 *   2011-04-20 - Arch Linux - [Software RAID and LVM questions](https://bbs.archlinux.org/viewtopic.php?pid=965357)
 *   2011-03-12 - Arch Linux - [Some newbie questions about installation, LVM, grub, RAID](https://bbs.archlinux.org/viewtopic.php?id=114965)

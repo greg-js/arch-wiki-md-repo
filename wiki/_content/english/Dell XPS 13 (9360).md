@@ -47,7 +47,8 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [13.5 Coil Whine](#Coil_Whine)
     *   [13.6 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
     *   [13.7 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
-*   [14 See Also](#See_Also)
+*   [14 Fingerprint sensor](#Fingerprint_sensor)
+*   [15 See Also](#See_Also)
 
 ## Content adaptive brightness control
 
@@ -345,6 +346,10 @@ PulseAudio will rewrite these ALSA settings. So if you use PulseAudio you should
    volume = 1
 
 ```
+
+## Fingerprint sensor
+
+Dell officially does not support fingerprint reader functionality [[2]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[3]](https://github.com/nmikhailov/Validity90).
 
 ## See Also
 

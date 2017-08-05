@@ -1,4 +1,4 @@
-[Lantern](https://getlantern.org) is a free peer-to-peer internet censorship circumvention software.
+[Lantern](https://getlantern.org/en_US/) is a free peer-to-peer internet censorship circumvention software.
 
 ## Contents
 
@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lantern-newest](https://aur.archlinux.org/packages/lantern-newest/) package.
+[Install](/index.php/Install "Install") the [lantern-bin](https://aur.archlinux.org/packages/lantern-bin/) package.
 
 ## Setup
 

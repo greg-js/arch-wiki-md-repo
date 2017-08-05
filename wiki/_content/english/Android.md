@@ -36,11 +36,12 @@
     *   [5.1 Android File Transfer](#Android_File_Transfer)
     *   [5.2 adb-sync](#adb-sync)
     *   [5.3 AirDroid](#AirDroid)
-    *   [5.4 AndroidScreencast](#AndroidScreencast)
-    *   [5.5 FTP](#FTP)
-    *   [5.6 KDE Connect](#KDE_Connect)
-    *   [5.7 SSH Server](#SSH_Server)
-    *   [5.8 Samba](#Samba)
+    *   [5.4 Send Anywhere](#Send_Anywhere)
+    *   [5.5 AndroidScreencast](#AndroidScreencast)
+    *   [5.6 FTP](#FTP)
+    *   [5.7 KDE Connect](#KDE_Connect)
+    *   [5.8 SSH Server](#SSH_Server)
+    *   [5.9 Samba](#Samba)
 *   [6 Tips & Tricks](#Tips_.26_Tricks)
     *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
@@ -579,7 +580,11 @@ which means that your device is visible to Odin & Windows operating system and i
 
 ### AirDroid
 
-[AirDroid](http://goo.gl/EZQ9GQ) is an Android app to access files from your web browser.
+[AirDroid](https://play.google.com/store/apps/details?id=com.sand.airdroid) is an Android app to access files from your web browser.
+
+### Send Anywhere
+
+[sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) is a truly cross-platform file transfer solution, which focuses on speed & simplicity.
 
 ### AndroidScreencast
 

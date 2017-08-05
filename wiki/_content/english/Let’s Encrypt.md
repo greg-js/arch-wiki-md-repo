@@ -56,19 +56,18 @@ server {
   listen [::]:80;
   server_name domain.tld;
   root /usr/share/nginx/html;
-
   location / {
     index index.htm index.html;
   }
+}
 
-  # ACME challenge
-  location ^~ /.well-known {
-    allow all;
-    auth_basic off;
-    alias /var/lib/letsencrypt/.well-known/;
-    default_type "text/plain";
-    try_files $uri =404;
-  }
+# ACME challenge
+location ^~ /.well-known {
+  allow all;
+  auth_basic off;
+  alias /var/lib/letsencrypt/.well-known/;
+  default_type "text/plain";
+  try_files $uri =404;
 }
 
 ```
