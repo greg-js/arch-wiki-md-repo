@@ -1,4 +1,4 @@
-Pytvshows is a python script for downloading .torrent files from trvrss.net or eztv.it. The configuration is very easy and pytvshows remembers the series you already watched.
+[PyTVShows](https://sourceforge.net/projects/pytvshows/) is a Python script for downloading .torrent files from trvrss.net or eztv.it. The configuration is very easy and PyTVShows remembers the series you already watched.
 
 ## Contents
 

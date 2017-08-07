@@ -9,21 +9,9 @@
 
 ## Installation and Setup
 
-You can install [freenet](https://aur.archlinux.org/packages/freenet/) from the the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [freenet](https://aur.archlinux.org/packages/freenet/) package.
 
-Then, add freenet to the list of services activated at boot:
-
-```
-# systemctl enable freenet
-
-```
-
-Finally, you can either restart your computer or start the daemon manually:
-
-```
-# systemctl start freenet
-
-```
+[Start/enable](/index.php/Start/enable "Start/enable") `freenet.service`.
 
 ## Configuration
 

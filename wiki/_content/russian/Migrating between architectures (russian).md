@@ -1,16 +1,16 @@
-This page documents two potential methods of migrating installed systems from i686 (32-bit) to x86_64 (64-bit) architectures. The methods avoid a *complete* reinstall (i.e. wiping the hard drive). One method uses a liveCD, the other modifies the system from within.
+[Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") На этой странице описаны два возможных способа миграции установленных систем с 64-разрядных (32-разрядных) на x86_64 (64-разрядных) архитектуры. Методы избегают «полной» переустановки (т. Е. Очистки жесткого диска). Один метод использует liveCD, другой изменяет систему изнутри.
 
-**Note:** Technically this process still involves "reinstalling" since every package on the system must be replaced. These methods simply attempt to preserve as much as they can from your existing system.
+**Note:** Технически этот процесс по-прежнему включает «переустановку», поскольку каждый пакет в системе должен быть заменен. Эти методы просто пытаются сохранить как можно больше из вашей существующей системы.
 
-**Warning:** Unless explicitly stated, all these methods are **untested** and may irreparably damage your system. Continue at your own risk.
+**Warning:** Если не указано явно, все эти методы «непроверены» и могут нанести непоправимый урон вашей системе. Продолжайте на свой страх и риск.
 
 ## Contents
 
-*   [1 General preparation](#General_preparation)
-    *   [1.1 Confirm 64-bit architecture](#Confirm_64-bit_architecture)
-    *   [1.2 Disk space](#Disk_space)
-    *   [1.3 Power supply](#Power_supply)
-    *   [1.4 Fallback packages](#Fallback_packages)
+*   [1 Общая подготовка](#.D0.9E.D0.B1.D1.89.D0.B0.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0)
+    *   [1.1 Проверить 64-битную архитектуру](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.B8.D1.82.D1.8C_64-.D0.B1.D0.B8.D1.82.D0.BD.D1.83.D1.8E_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80.D1.83)
+    *   [1.2 Дисковое пространство](#.D0.94.D0.B8.D1.81.D0.BA.D0.BE.D0.B2.D0.BE.D0.B5_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.81.D1.82.D0.B2.D0.BE)
+    *   [1.3 Источник питания](#.D0.98.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA_.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D1.8F)
+    *   [1.4 Пакеты резервных копий](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D1.8B.D1.85_.D0.BA.D0.BE.D0.BF.D0.B8.D0.B9)
 *   [2 Method 1: using the Arch LiveCD](#Method_1:_using_the_Arch_LiveCD)
 *   [3 Method 2: from a running system](#Method_2:_from_a_running_system)
     *   [3.1 Package preparation](#Package_preparation)
@@ -34,38 +34,35 @@ This page documents two potential methods of migrating installed systems from i6
     *   [5.4 Mutt issues with cache enabled](#Mutt_issues_with_cache_enabled)
 *   [6 See also](#See_also)
 
-## General preparation
+## Общая подготовка
 
-### Confirm 64-bit architecture
+### Проверить 64-битную архитектуру
 
-In order to run 64-bit software, you must have a 64-bit capable CPU. Most modern CPUs are capable of running 64-bit software. You may check your CPU with the following command:
+Для запуска 64-разрядного программного обеспечения у вас должен быть 64-разрядный процессор. Большинство современных процессоров способны запускать 64-битное программное обеспечение. Вы можете проверить свой процессор с помощью следующей команды:
 
-```
 grep --color -w lm /proc/cpuinfo
 
-```
+Для процессоров, поддерживающих x86_64, это вернет `lm` flag (“long mode”). Остерегайтесь того, что 'lahf_lm' - это другой флаг и не указывает на 64-битные возможности.
 
-For CPUs that support x86_64, this will return the `lm` flag (“long mode”) highlighted. Beware that *lahf_lm* is a different flag and does not indicate 64-bit capability itself.
+### Дисковое пространство
 
-### Disk space
+Вы должны быть готовы к `/var/cache/pacman/pkg` увеличению размера, примерно в два раза превышает его текущий размер. Предполагается, что только пакеты, которые в настоящее время установлены, находятся в кеше, как будто “pacman -Sc” (clean) был недавно запущен. Увеличение дискового пространства связано с дублированием между версиями i686 и x86_64 каждого пакета.
 
-You should be prepared for `/var/cache/pacman/pkg` to grow approximately twice its current size during the migration. This is assumes only packages that are currently installed are in the cache, as if “pacman -Sc” (clean) was recently run. The disk space increase is due to duplication between the i686 and x86_64 versions of each package.
+Если у вас недостаточно диска, используйте [GParted](/index.php/GParted "GParted"), чтобы изменить размер соответствующего раздела или установить другой раздел в `/var/cache/pacman`.
 
-If you have not enough disk, please use [GParted](/index.php/GParted "GParted") to resize the relevant partition, or mount another partition to `/var/cache/pacman`.
+Не удаляйте пакеты старой архитектуры из кеша, пока система не будет полностью работать в новой архитектуре. Снятие пакетов слишком рано может оставить вас неспособными отступить и вернуть изменения.
 
-Please do not remove packages of the old architecture from the cache until the system is fully operating in the new architecture. Removing the packages too early may leave you unable to fall back and revert changes.
+### Источник питания
 
-### Power supply
+Миграция может занять значительное количество времени, и было бы неудобно прерывать процесс. Вы должны планировать как минимум час, в зависимости от количества и размера установленных пакетов и скорости интернет-соединения (хотя вы можете загрузить все, прежде чем запускать критическую часть). Убедитесь, что вы подключены к стабильному источнику питания, предпочтительно с каким-либо отказоустойчивостью или резервным аккумулятором.
 
-The migration may take a substantial amount of time, and it would be inconvenient to interrupt the process. You should plan on at least an hour, depending on the number and size of your installed packages and internet connection speed (although you can download everything before starting the critical part). Please make sure you are connected to a stable power source, preferably with some sort of failover or battery backup.
+### Пакеты резервных копий
 
-### Fallback packages
+Если миграция завершилась неудачно, есть пакеты, которые могут помочь разобраться в ситуации, но они должны быть установлены до переноса основных пакетов. Подробнее об использовании их в разделе [#Troubleshooting](#Troubleshooting) ниже.
 
-If the migration fails halfway through, there are packages that can help sort out the situation, but they should be installed before the main packages are migrated. More details about using them under [#Troubleshooting](#Troubleshooting) below.
+Один пакет [busybox](https://www.archlinux.org/packages/?name=busybox), который можно использовать для возврата изменений. Он статически связан и не зависит от каких-либо библиотек. Должна быть установлена 32-разрядная версия (i686).
 
-One package is [busybox](https://www.archlinux.org/packages/?name=busybox), which can be used to revert changes. It is statically linked and does not depend on any libraries. The 32-bit (i686) version should be installed.
-
-Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), from the [Multilib](/index.php/Multilib "Multilib") x86_64 repository. It is probably only useful when migrating *away* from 32 bits; in any case you may safely skip this package. You can use the package to run 32 bit programs by explicitly calling `/lib/ld-linux.so.2`.
+Другой пакет [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), из [Multilib](/index.php/Multilib "Multilib") x86_64 репозитория. Вероятно, это полезно, когда вы переносите «долой» из 32 бит; В любом случае вы можете безопасно пропустить этот пакет. Вы можете использовать пакет для запуска 32-битных программ, явно вызывая `/lib/ld-linux.so.2`.
 
 ## Method 1: using the Arch LiveCD
 

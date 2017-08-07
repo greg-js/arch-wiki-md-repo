@@ -1,6 +1,6 @@
-[Carddavmate](http://www.inf-it.com/) is a carddav client that runs in a web browser using javascript. It is useful when you have a carddav server and want to access the contacts on this server with only a web browser.
+[Carddavmate](http://www.inf-it.com/) is a CardDAV client that runs in a web browser using JavaScript. It is useful when you have a CardDAV server and want to access the contacts on this server with only a web browser.
 
-This guide shows you how to install carddavmate to use with davical
+This guide shows you how to install carddavmate to use with davical.
 
 ## Contents
 

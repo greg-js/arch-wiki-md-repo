@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Init/SysVinit](/index.php/Init/SysVinit "Init/SysVinit")
+*   [SysVinit](/index.php/SysVinit "SysVinit")

@@ -11,9 +11,11 @@
     *   [3.3 Mount loop devices](#Mount_loop_devices)
     *   [3.4 Hide selected partitions](#Hide_selected_partitions)
         *   [3.4.1 Example](#Example)
+    *   [3.5 Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
     *   [4.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
+    *   [4.3 Broken standby timer (udisks2)](#Broken_standby_timer_.28udisks2.29)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -136,6 +138,22 @@ ENV{ID_FS_UUID}=="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX", ENV{UDISKS_IGNORE}="1"
 
 The above line is also useful to hide multi device btrfs filesystems, as all the devices from a single btrtfs filesystem will share the same UUID across the devices but will have different SUB_UUID for each individual device.
 
+### Apply ATA settings (udisks2)
+
+At start-up and when a drive is connected, udisksd will apply configuration stored in the file `/etc/udisks2/*IDENTIFIER*.conf` where *IDENTIFIER* is the value of the Drive:Id property for the drive. Currently ATA settings are supported. See `man udisks` for available options. These settings have essentially the same effect as those of [hdparm](/index.php/Hdparm "Hdparm"), but they are persistent as long as the udisks daemon is autostarted.
+
+For example, to set standby timeout to 240 (20 minutes) for a drive, add the following:
+
+ `/etc/udisks/*DriveId*.conf` 
+```
+[ATA]
+StandbyTimeout=240
+```
+
+To obtain the DriveId for your drive, use `$ udevadm info --query=all --name=/dev/*sdx* | grep ID_SERIAL`
+
+Alternatively, use a GUI utility to manage the configuration file, such as [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility).
+
 ## Troubleshooting
 
 ### Hidden devices (udisks2)
@@ -170,6 +188,14 @@ or for all devices:
 ```
 
 See `man udisks` for more information.
+
+### Broken standby timer (udisks2)
+
+The udisks daemon polls [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") data from drives regularly. Hard drives with a longer standby timeout than the polling interval may fail to enter standby. Drives that are already spun down are usually not effected. There seems no way to disable polling or change the interval as for [udisks2](https://www.archlinux.org/packages/?name=udisks2) by now. See [[4]](https://bugs.launchpad.net/ubuntu/+source/udisks2/+bug/1281588), [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=26508).
+
+However, Standby timeout applied by udisks2 seems to be unaffected. To set standby timeout via udisks, see [#Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29).
+
+Other possible workarounds could be setting the timeout below the polling interval (10 minutes) or forcing a manaul spindown using `hdparm -y /dev/*sdx*`.
 
 ## See also
 

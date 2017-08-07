@@ -18,13 +18,8 @@
         *   [5.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
         *   [5.2.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
         *   [5.2.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-            *   [5.2.4.1 Encrypted GNU/Linux menuentry](#Encrypted_GNU.2FLinux_menuentry)
-        *   [5.2.5 FreeBSD menu entry](#FreeBSD_menu_entry)
-            *   [5.2.5.1 Loading the kernel directly](#Loading_the_kernel_directly)
-            *   [5.2.5.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
-            *   [5.2.5.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
-        *   [5.2.6 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
-        *   [5.2.7 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
+        *   [5.2.5 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
+        *   [5.2.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
     *   [5.3 LVM](#LVM)
     *   [5.4 RAID](#RAID)
     *   [5.5 Multiple entries](#Multiple_entries)
@@ -213,7 +208,7 @@ See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for mo
 
 The best way to add other entries is editing the `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added after rerunning `grub-mkconfig`.
 
-##### "Shutdown" menu entry
+#### "Shutdown" menu entry
 
 ```
 menuentry "System shutdown" {
@@ -222,7 +217,7 @@ menuentry "System shutdown" {
 }
 ```
 
-##### "Restart" menu entry
+#### "Restart" menu entry
 
 ```
 menuentry "System restart" {
@@ -231,7 +226,7 @@ menuentry "System restart" {
 }
 ```
 
-##### "Firmware setup" menu entry (UEFI only)
+#### "Firmware setup" menu entry (UEFI only)
 
 ```
 menuentry "Firmware setup" {
@@ -239,7 +234,7 @@ menuentry "Firmware setup" {
 }
 ```
 
-##### GNU/Linux menu entry
+#### GNU/Linux menu entry
 
 Assuming that the other distro is on partition `sda2`:
 
@@ -266,61 +261,11 @@ menuentry "Other Linux" {
 }
 ```
 
-###### Encrypted GNU/Linux menuentry
-
-```
-menuentry "Other Linux (Encrypted)"{
-      insmod luks
-      cryptomount (hd0,2)
-      set root=(crypto0)
-      linux /boot/vmlinuz cryptdevice=/dev/sda2:cryptroot root=/dev/mapper/cryptroot (add more options if required)
-      initrd /boot/initrd.img (If the other kernel uses/needs one)
-}
-```
-
-##### FreeBSD menu entry
-
-The following three methods require that FreeBSD is installed on a single partition with UFS(v2). Assuming the nested BSD partition table is on `sda4`:
-
-###### Loading the kernel directly
-
-```
-menuentry 'FreeBSD' {
-	insmod ufs2
-	set root='hd0,gpt4,bsd1'
-	## or 'hd0,msdos4,bsd1', if using an IBM-PC (MS-DOS) style partition table
-	kfreebsd /boot/kernel/kernel
-	kfreebsd_loadenv /boot/device.hints
-	set kFreeBSD.vfs.root.mountfrom=ufs:/dev/ada0s4a
-	set kFreeBSD.vfs.root.mountfrom.options=rw
-}
-```
-
-###### Chainloading the embedded boot record
-
-```
-menuentry 'FreeBSD' {
-	insmod ufs2
-	set root='hd0,gpt4,bsd1'
-	chainloader +1
-}
-```
-
-###### Running the traditional BSD 2nd stage loader
-
-```
-menuentry 'FreeBSD' {
-  insmod ufs2
-  set root='(hd0,4)'
-  kfreebsd /boot/loader
-}
-```
-
-##### Windows installed in UEFI-GPT Mode menu entry
+#### Windows installed in UEFI-GPT Mode menu entry
 
 This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
 
-**Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It **WILL NOT WORK** in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more info.
+**Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It will not work in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more info.
 
 ```
 if [ "${grub_platform}" == "efi" ]; then
@@ -349,17 +294,15 @@ The `$hints_string` command will determine the location of the EFI partition, in
 
 These two commands assume the ESP Windows uses is mounted at `$esp`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
 
-##### Windows installed in BIOS-MBR mode
+#### Windows installed in BIOS-MBR mode
 
-**Note:** GRUB supports booting `bootmgr` directly and chainload of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup; instructions for chainloading, however, are provided in the event that booting directly does not work.
+**Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup.
 
 **Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually C:). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
 
-**Booting Directly Method**
-
 Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS-MBR mode:
 
-**Note:** These menuentries will work only in Legacy BIOS boot mode. It WILL NOT WORK in uefi installed grub(2). See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
+**Note:** These menuentries will work only in Legacy BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
 *In both examples* 69B235F6749E84CE *is the partition UUID which can be found with command* lsblk --fs*.*
 
@@ -402,28 +345,13 @@ x:\> "bootrec.exe /RebuildBcd".
 
 ```
 
-Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in the Troubleshooting menu - it won't wipe out GRUB but will fix most errors.
+Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in the Troubleshooting menu - it will not wipe out GRUB but will fix most errors.
 
-Also you'd better keep plugged in both the target hard drive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
+Also you would better keep plugged in both the target hard drive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
 
 `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/nn_custom`. Where `nn` defines the precendence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
 
 **Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
-
-**Chainloading Method**
-
-In the case that booting directly does not work, the method for booting by chainloading is provided. This is assuming booting Windows is located on the first partition, as indicated by `(hd0,1)`. The code below should be added to `/etc/grub.d/40_custom`. Then, regenerate `grub.cfg` according the instructions above regarding `grub-mkconfig`:
-
-```
-if [ "${grub_platform}" == "pc" ]; then
- menuentry "Microsoft Windows (Vista/7/8/8.1/10)" {
-   insmod ntfs
-   set root=(hd0,1)
-   chainloader +1
-}
-fi
-
-```
 
 ### LVM
 
@@ -871,7 +799,7 @@ GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons
 
 ### grub-reboot not resetting
 
-GRUB seems to be unable to write to root BTRFS partitions [[5]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (don't forget `grub-mkconfig -o /boot/grub/grub.cfg`).
+GRUB seems to be unable to write to root BTRFS partitions [[5]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (do not forget `grub-mkconfig -o /boot/grub/grub.cfg`).
 
 ### Old BTRFS prevents installation
 
@@ -879,7 +807,7 @@ If a drive is formatted with BTRFS without creating a partition table (eg. /dev/
 
 ```
 # grub-install: warning: Attempting to install GRUB to a disk with multiple partition labels. This is not supported yet..
-# grub-install: error: filesystem `btrfs' doesn't support blocklists.
+# grub-install: error: filesystem `btrfs' does not support blocklists.
 
 ```
 

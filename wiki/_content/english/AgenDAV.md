@@ -1,8 +1,8 @@
-From [[1]](http://agendav.org/): "AgenDAV is an open source multilanguage CalDAV web client which features a rich AJAX interface with shared calendars support".
+[AgenDAV](http://agendav.org/) is an open source multilanguage CalDAV web application, written in PHP, which features a rich AJAX interface with shared calendars support.
 
 ## Installation
 
-Install the AgenDAV package [agendav](https://aur.archlinux.org/packages/agendav/) (AUR).
+[Install](/index.php/Install "Install") the [agendav](https://aur.archlinux.org/packages/agendav/) package.
 
 ### Database
 

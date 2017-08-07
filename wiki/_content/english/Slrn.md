@@ -1,4 +1,4 @@
-Slrn is a text-based news client. It runs through a textual user interface and is highly customizable. It uses the S-Lang library.
+[slrn](http://slrn.sourceforge.net/) is a text-based news client. It runs through a textual user interface and is highly customizable. It uses the S-Lang library.
 
 ## Contents
 
@@ -96,5 +96,5 @@ misc.test: 1-210917
 
 ## See also
 
-*   [slrn](http://slrn.sourceforge.net/index.html) Official slrn website.
+*   [slrn](http://slrn.sourceforge.net/) Official slrn website.
 *   [slrn FAQ](http://slrn.sourceforge.net/docs/slrn-FAQ.html#toc3) slrn frequently asked questions

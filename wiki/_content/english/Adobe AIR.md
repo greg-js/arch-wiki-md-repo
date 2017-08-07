@@ -1,4 +1,4 @@
-[Adobe Integrated Runtime (AIR)](https://en.wikipedia.org/wiki/Adobe_Integrated_Runtime "wikipedia:Adobe Integrated Runtime") is a cross-platform runtime environment developed by Adobe Systems for building rich Internet applications using Adobe Flash, Adobe Flex, HTML, or Ajax, that can be deployed as desktop applications.
+[Adobe AIR](https://en.wikipedia.org/wiki/Adobe_AIR "w:Adobe AIR") is a cross-platform runtime environment developed by Adobe Systems for building rich Internet applications using Adobe Flash, Adobe Flex, HTML, or Ajax, that can be deployed as desktop applications.
 
 ## Contents
 

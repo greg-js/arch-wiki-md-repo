@@ -22,7 +22,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   [6.4 Clight](#Clight)
     *   [6.5 NVIDIA settings](#NVIDIA_settings)
     *   [6.6 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
-*   [7 External Monitors](#External_Monitors)
+*   [7 External monitors](#External_monitors)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
     *   [8.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_.28Intel_i915_only.29)
@@ -329,11 +329,9 @@ $ xrandr --output *output_name* --brightness 2
 
 This will set the brightness level to 200%. It will cause higher power usage and sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
 
-## External Monitors
+## External monitors
 
-DDC/CI (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C.
-
-DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC.
+DDC/CI (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C. DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC.
 
 [ddcutil](http://www.ddcutil.com/) can be used to query and set brightness settings:
 

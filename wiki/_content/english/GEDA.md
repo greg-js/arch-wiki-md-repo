@@ -7,14 +7,11 @@ The gEDA project was started because of the lack of free EDA tools for POSIX sys
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 First PCB](#First_PCB)
-    *   [3.1 Create schematic symbol](#Create_schematic_symbol)
-        *   [3.1.1 Schematic Search Path](#Schematic_Search_Path)
-    *   [3.2 Create PCB footprint](#Create_PCB_footprint)
-    *   [3.3 Create schematic](#Create_schematic)
-    *   [3.4 Create and route PCB](#Create_and_route_PCB)
-    *   [3.5 Export to gerber](#Export_to_gerber)
+*   [2 First PCB](#First_PCB)
+    *   [2.1 Create schematic symbol](#Create_schematic_symbol)
+        *   [2.1.1 Schematic search path](#Schematic_search_path)
+    *   [2.2 Create schematic](#Create_schematic)
+    *   [2.3 Create and route PCB](#Create_and_route_PCB)
 
 ## Installation
 
@@ -23,8 +20,6 @@ Installing [geda-gaf](https://www.archlinux.org/packages/?name=geda-gaf) will gi
 Installing [pcb](https://www.archlinux.org/packages/?name=pcb) will give you the PCB editor, available from the [AUR](/index.php/AUR "AUR").
 
 Also you can install [xgsch2pcb](https://aur.archlinux.org/packages/xgsch2pcb/) ([AUR](/index.php/AUR "AUR")), graphical interface to the gsch2pcb command-line tool for converting *.sch to *.pcb.
-
-## Configuration
 
 ## First PCB
 
@@ -46,7 +41,7 @@ $ gsymcheck -vv mysymbol.sym
 
 ```
 
-#### Schematic Search Path
+#### Schematic search path
 
 Do not forget to place your symbol within the search path of gschem. It may also be helpful to extend this path to a folder in your own project by creating a file named `gafrc` in the project folder with the following content
 ```
@@ -55,8 +50,6 @@ Do not forget to place your symbol within the search path of gschem. It may also
 ```
 
 and then copy all symbols required by the project into a subfolder called "symbols".
-
-### Create PCB footprint
 
 ### Create schematic
 
@@ -105,5 +98,3 @@ $ gsch2pcb -f firstpcb.prj
 ```
 
 gsch2pcb will tell you what to do next or if there were any errors.
-
-### Export to gerber

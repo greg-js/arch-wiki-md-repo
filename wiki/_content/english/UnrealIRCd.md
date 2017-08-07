@@ -1,4 +1,4 @@
-**[UnrealIRCd](https://www.unrealircd.org/)** (Unreal IRC daemon) is an Open Source IRC Server. Development of UnrealIRCd began in May of 1999\. Unreal was created from the Dreamforge IRCd that was formerly used by the DALnet IRC Network. Over the years, many new and exciting features have been added to Unreal. It is hard to even see a resemblance between the current Unreal and Dreamforge.
+**[UnrealIRCd](https://www.unrealircd.org/)** (Unreal IRC daemon) is an open source IRC Server. Development of UnrealIRCd began in May of 1999\. Unreal was created from the Dreamforge IRCd that was formerly used by the DALnet IRC Network. Over the years, many new and exciting features have been added to Unreal. It is hard to even see a resemblance between the current Unreal and Dreamforge.
 
 ## Installing UnrealIRCd
 

@@ -10,11 +10,11 @@
     *   [4.1 Inbound filter](#Inbound_filter)
     *   [4.2 Outbound filter](#Outbound_filter)
 
-# What is it?
+## What is it?
 
 It is digital email signing/verification technology, which included into RFCs and already supported by many mail servers. (For example yahoo, google, etc).
 
-## How it works?
+### How it works?
 
 Sender signs email with private key.
 
@@ -24,13 +24,13 @@ So you can check who actualy sent this email.
 
 For more info see [RFC 4870](http://tools.ietf.org/html/rfc4870)
 
-# Installation
+## Installation
 
 [Install](/index.php/Install "Install") the [dkfilter](https://www.archlinux.org/packages/?name=dkfilter) package.
 
 By default, you should add dkfilter user and group. If you do not want to do this, edit /etc/conf.d/dkfilter and change DKFILTER_USER and DKFILTER_GROUP.
 
-# Generic configuration
+## Generic configuration
 
 *   Generate key:
 
@@ -50,9 +50,9 @@ server1._domainkey IN TXT "k=rsa; p=MHwwDQYJK ... OprwIDAQAB; t=y"
 
 *   Run it with /etc/rc.d/dkfilter start or add it to DAEMONS in /etc/rc.conf
 
-# Postfix integration
+## Postfix integration
 
-## Inbound filter
+### Inbound filter
 
 Inbound filter gets connection from port 10025 and output filtered data to port 10026\. (Inbound filter does not remove any data, it just adds verification result into mail)
 
@@ -81,7 +81,7 @@ smtp      inet  n       -       n       -       -       smtpd
     -o receive_override_options=no_unknown_recipient_checks
 ```
 
-## Outbound filter
+### Outbound filter
 
 Outbound filter gets connection from port 10027 and output signed data to port 10028.
 

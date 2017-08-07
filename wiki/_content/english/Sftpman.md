@@ -12,15 +12,11 @@ With sftpman, you first setup (define) your remote filesystems and then you moun
     *   [3.1 Mounting/Unmounting](#Mounting.2FUnmounting)
     *   [3.2 Removing defined filesystems](#Removing_defined_filesystems)
     *   [3.3 Learning more](#Learning_more)
-    *   [3.4 Troubleshooting](#Troubleshooting)
-*   [4 Other Resources](#Other_Resources)
-*   [5 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
 
 ## Prerequisite
 
 In order to use *sftpman* or it's GTK frontend *sftpman-gtk*, you'll first need to have a working [SSHFS](/index.php/SSHFS "SSHFS") setup.
-
-[SSHFS](/index.php/SSHFS "SSHFS") and FUSE are installed as dependencies, so you may just need to add *fuse* to your module-list in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` to auto-load at boot.
 
 ## Installation
 
@@ -101,7 +97,7 @@ To see a list of more commands and options that *sftpman* supports, consult the 
 
 ```
 
-### Troubleshooting
+## Troubleshooting
 
 *sftpman* can perform some basic checks on the environment, which may catch some potential problems:
 
@@ -117,16 +113,3 @@ If the GUI application does not ask you for a password while mounting (when usin
 When doing authentication using keys, start small and make sure SSHing actually works by trying it manually, before trying to use sshfs. Some common problems can be solved by consulting [Using SSH Keys#Troubleshooting](/index.php/Using_SSH_Keys#Troubleshooting "Using SSH Keys").
 
 Also see [SSHFS#Troubleshooting](/index.php/SSHFS#Troubleshooting "SSHFS").
-
-## Other Resources
-
-[sftpman](https://github.com/spantaleev/sftpman) - sftpman (source code, issue tracker) at github
-
-[sftpman-gtk](https://github.com/spantaleev/sftpman-gtk) - sftpman-gtk (source code, issue tracker) at github
-
-[PKGBUILDs](https://github.com/spantaleev/PKGBUILDs) - Package files (source code, issue tracker) for *sftpman* and *sftpman-gtk* at github
-
-## See also
-
-*   [SSH](/index.php/SSH "SSH")
-*   [SSHFS](/index.php/SSHFS "SSHFS")

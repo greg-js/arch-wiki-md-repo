@@ -1,4 +1,4 @@
-Poclbm (Python OpenCL Bitcoin miner) is a python program/script made by m0mchil on Github ([https://github.com/m0mchil/poclbm](https://github.com/m0mchil/poclbm)), it mines Bitcoins using an OpenCL capable device. Here's how to install and use it as a systemd service.
+[Poclbm](https://github.com/m0mchil/poclbm) (Python OpenCL Bitcoin miner) is a Python script that mines Bitcoins using an OpenCL capable device.
 
 ## Contents
 

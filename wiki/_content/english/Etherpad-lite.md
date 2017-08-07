@@ -1,4 +1,4 @@
-[Etherpad-Lite](http://etherpad.org) or just Etherpad, is a collaborative, multi-user web-editor based on NodeJS with the ability to import/export various office file formats.
+[Etherpad-Lite](http://etherpad.org) or just Etherpad, is a collaborative, multi-user web-editor based on [Node.js](/index.php/Node.js "Node.js") with the ability to import/export various office file formats.
 
 ## Contents
 
@@ -14,7 +14,7 @@
 
 ## Installation
 
-Install [etherpad-lite](https://aur.archlinux.org/packages/etherpad-lite/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [etherpad-lite](https://aur.archlinux.org/packages/etherpad-lite/) package.
 
 ## Configuration
 

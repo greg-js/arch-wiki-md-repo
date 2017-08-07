@@ -1028,7 +1028,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 ###### Graphical
 
-*   **[Gajim](https://en.wikipedia.org/wiki/Gajim "wikipedia:Gajim")** — Jabber client written in PyGTK.
+*   **[Gajim](/index.php/Gajim "Gajim")** — Jabber client written in PyGTK.
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
@@ -1440,9 +1440,9 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[http://www.rainbowstream.org/](http://www.rainbowstream.org/) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
 
-*   **ttytter** — Easily scriptable Twitter client written in Perl.
+*   **oysttyer** — (official fork of ttytter) An interactive console text-based command-line Twitter client written in Perl.
 
-	[http://www.floodgap.com/software/ttytter/](http://www.floodgap.com/software/ttytter/) || [ttytter](https://aur.archlinux.org/packages/ttytter/)
+	[https://github.com/oysttyer/oysttyer](https://github.com/oysttyer/oysttyer) || [oysttyer-git](https://aur.archlinux.org/packages/oysttyer-git/)
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 

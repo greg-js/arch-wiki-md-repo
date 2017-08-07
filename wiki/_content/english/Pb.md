@@ -1,4 +1,4 @@
-[https://github.com/ptpb/pb](https://github.com/ptpb/pb)
+[pb](https://github.com/ptpb/pb) is a lightweight pastebin and URL shortener built, written in Python using Flask.
 
 ## Contents
 

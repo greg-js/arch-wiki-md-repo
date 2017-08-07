@@ -1,4 +1,4 @@
-JDownloader is a Download Manager written in Java. JDownloader can download normal files, but also files from online file hosting services like Rapidshare.com.
+[JDownloader](http://jdownloader.org/) is a Download Manager written in Java. JDownloader can download normal files, but also files from online file hosting services like Rapidshare.com.
 
 ## Contents
 

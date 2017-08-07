@@ -1,4 +1,4 @@
-This article is about **Dolphin**, the default [file manager](/index.php/Category:File_managers "Category:File managers") of the [K Desktop Environment](/index.php/K_Desktop_Environment "K Desktop Environment"). For the game emulator, see [Dolphin emu](/index.php/Dolphin_emu "Dolphin emu").
+[Dolphin](https://www.kde.org/applications/system/dolphin/) is the default file manager of [KDE](/index.php/KDE "KDE"). For the game emulator, see [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator").
 
 ## Contents
 

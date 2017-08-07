@@ -15,6 +15,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [1 Hardware overview](#Hardware_overview)
     *   [1.1 Alienware 15(early 2015)](#Alienware_15.28early_2015.29)
     *   [1.2 Alienware 15 R2](#Alienware_15_R2)
+    *   [1.3 Alienware 15 R3](#Alienware_15_R3)
 *   [2 Networking](#Networking)
     *   [2.1 Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter](#Qualcomm_Atheros_QCA6174_802.11ac_Wireless_Network_Adapter)
 *   [3 Input](#Input)
@@ -22,7 +23,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [4.1 NVIDIA Corporation GM204M [GeForce GTX 965M]](#NVIDIA_Corporation_GM204M_.5BGeForce_GTX_965M.5D)
 *   [5 Control of the light colors](#Control_of_the_light_colors)
 *   [6 Issues](#Issues)
-    *   [6.1 Alienware 15 R3](#Alienware_15_R3)
+    *   [6.1 Alienware 15 R3](#Alienware_15_R3_2)
 
 ## Hardware overview
 
@@ -107,6 +108,53 @@ Bus 001 Device 004: ID 1bcf:2b8c Sunplus Innovation Technology Inc.
 Bus 001 Device 003: ID 0cf3:e300 Atheros Communications, Inc. 
 Bus 001 Device 002: ID 187c:0528 Alienware Corporation 
 Bus 001 Device 005: ID 04d9:a070 Holtek Semiconductor, Inc. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+### Alienware 15 R3
+
+lspci:
+
+```
+00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 07)
+00:01.0 PCI bridge: Intel Corporation Skylake PCIe Controller (x16) (rev 07)
+00:01.2 PCI bridge: Intel Corporation Skylake PCIe Controller (x4) (rev 07)
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 530 (rev 06)
+00:04.0 Signal processing controller: Intel Corporation Skylake Processor Thermal Subsystem (rev 07)
+00:14.0 USB controller: Intel Corporation Sunrise Point-H USB 3.0 xHCI Controller (rev 31)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-H Thermal subsystem (rev 31)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-H CSME HECI #1 (rev 31)
+00:17.0 SATA controller: Intel Corporation Sunrise Point-H SATA controller [AHCI mode] (rev 31)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #1 (rev f1)
+00:1c.4 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #5 (rev f1)
+00:1c.5 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #6 (rev f1)
+00:1d.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #9 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-H LPC Controller (rev 31)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-H PMC (rev 31)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-H HD Audio (rev 31)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-H SMBus (rev 31)
+01:00.0 VGA compatible controller: NVIDIA Corporation GP104M [GeForce GTX 1070 Mobile] (rev ff)
+3c:00.0 Ethernet controller: Qualcomm Atheros Killer E2400 Gigabit Ethernet Controller (rev 10)
+3d:00.0 Network controller: Intel Corporation Wireless 8260 (rev 3a)
+3e:00.0 Non-Volatile memory controller: Toshiba America Info Systems Device 0115 (rev 01)
+
+```
+
+lsusb:
+
+```
+Bus 002 Device 003: ID 2109:0812 VIA Labs, Inc. VL812 Hub
+Bus 002 Device 002: ID 2109:0812 VIA Labs, Inc. VL812 Hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 007: ID 0bda:58c2 Realtek Semiconductor Corp. 
+Bus 001 Device 005: ID 8087:0a2b Intel Corp. 
+Bus 001 Device 003: ID 187c:0530 Alienware Corporation 
+Bus 001 Device 009: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 001 Device 008: ID 062a:4102 MosArt Semiconductor Corp. 
+Bus 001 Device 006: ID 2109:2812 VIA Labs, Inc. VL812 Hub
+Bus 001 Device 004: ID 258a:1006  
+Bus 001 Device 002: ID 2109:2812 VIA Labs, Inc. VL812 Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```

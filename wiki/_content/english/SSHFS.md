@@ -27,12 +27,10 @@
 
 ### Mounting
 
-**Tip:** [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") can be used with sshfs for additional security.
-
 In order to be able to mount a directory the SSH user needs to be able to access it. Invoke `sshfs` to mount a remote directory:
 
 ```
-$ sshfs [user@]host:[dir] mountpoint [options]
+$ sshfs *[user@]host:[dir] mountpoint [options]*
 
 ```
 
@@ -43,20 +41,23 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 
 ```
 
-Where `-p 9876` stands for the port number, `-C` enables compression and `-o allow_other` grants non-rooted users read/write access.
+Where `-p 9876` specifies the port number, `-C` enables compression and `-o allow_other` grants non-rooted users read/write access.
 
-**Note:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
+**Note:**
 
-**Note:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
+*   The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
+*   Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
-SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, read: [How to Use RSA Key Authentication with SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) or [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, see [SSH keys](/index.php/SSH_keys "SSH keys").
+
+**Tip:** [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") can be used with sshfs for additional security.
 
 ### Unmounting
 
 To unmount the remote system:
 
 ```
-$ fusermount -u *LOCAL_MOUNT_POINT*
+$ fusermount -u *local_mount_point*
 
 ```
 

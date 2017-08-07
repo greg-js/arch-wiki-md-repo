@@ -270,12 +270,14 @@ The default settings disallow remote connections. Change the "allow_remote" sett
 
 **Note:**
 
-`$HOME/.config/deluge/core.conf` is automatically created at the first configuration change, if it does not exist you can set the value via `deluge-console`:
+1\. `$HOME/.config/deluge/core.conf` is automatically created at the first configuration change, if it does not exist you can set the value via `deluge-console`:
 
 ```
 config --set allow_remote true
 
 ```
+
+2\. Changes made while the service is running won't be read into the daemon, therefore, stop the service before making changes to this file.
 
 ### Firewall
 

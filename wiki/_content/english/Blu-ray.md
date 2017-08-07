@@ -240,6 +240,8 @@ Try to generate the VolumeID with [DumpVID](http://forum.doom9.org/showthread.ph
 
  `Usage: aacskeys [options] <mountpath> [volume id / binding nonce]` 
 
+Note: the DumpVID does not seem to be available anymore, so an alternative is to use makemkv or other shareware applications. makemkv apparently has an official (or maybe stolen) decryption key and is able to generate decrypted MKV files.
+
 ## See also
 
 For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) package supplies the needed decryption libs. Below are some options for Blu-ray/HD-DVD decryption. Users can employ to backup a commercial Blu-ray movie under Fair Use guidelines:

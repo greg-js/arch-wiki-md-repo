@@ -18,6 +18,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Files is no longer the default file manager](#Files_is_no_longer_the_default_file_manager)
     *   [4.2 Thumbnailing not working for video files](#Thumbnailing_not_working_for_video_files)
+    *   [4.3 Freezes for a few seconds after every copy operation](#Freezes_for_a_few_seconds_after_every_copy_operation)
 
 ## Installation
 
@@ -152,3 +153,7 @@ If this does not solve the issue, see [File manager functionality#Directories ar
 ### Thumbnailing not working for video files
 
 There is an ongoing issue with [totem](https://www.archlinux.org/packages/?name=totem) (the video thumbnailer for Nautilus) on computers with Intel GPUs. It will crash if [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) is installed. Until this issue is resolved, it is recommended to remove this package.
+
+### Freezes for a few seconds after every copy operation
+
+In case you have [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) installed in your system, the problem might be caused by its file sharing module. Deactivate file sharing, and it should stop happening.

@@ -1,4 +1,4 @@
-Lilypond is a Free Software score writing application. Its input is a plain text file in the lilypond music writing format, and its output is in either postscript or Portable Document Format.
+[LilyPond](http://lilypond.org/) is a free score writing application. Its input is a plain text file in the lilypond music writing format, and its output is in either postscript or Portable Document Format.
 
 ## Contents
 
@@ -11,7 +11,7 @@ Lilypond is a Free Software score writing application. Its input is a plain text
 
 ## Installation
 
-[Install](/index.php/Install "Install") [lilypond](https://www.archlinux.org/packages/?name=lilypond) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [lilypond](https://www.archlinux.org/packages/?name=lilypond) package.
 
 ## Example Score
 

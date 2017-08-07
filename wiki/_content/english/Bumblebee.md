@@ -527,7 +527,7 @@ It could be also necessary to comment the driver line in `/etc/X11/xorg.conf.d/1
 
 If you're using the `nouveau` driver you could try switching to the `nvidia` driver.
 
-You might need to define the NVIDIA card somewhere (e.g. file `/etc/X11/xorg.conf.d`), using the correct `BusID` according to `lspci` output:
+You might need to define the NVIDIA card somewhere (e.g. file `/etc/bumblebee/xorg.conf.nvidia`), using the correct `BusID` according to `lspci` output:
 
 ```
 Section "Device"

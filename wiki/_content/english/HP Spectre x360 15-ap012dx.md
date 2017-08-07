@@ -24,6 +24,7 @@ This article is based on my personal experience with this laptop using Arch x86_
     *   [3.1 KDE scaling](#KDE_scaling)
     *   [3.2 Screen Rotation](#Screen_Rotation)
     *   [3.3 TTY font](#TTY_font)
+    *   [3.4 Mute Button LED](#Mute_Button_LED)
 
 ## Hardware info
 
@@ -139,3 +140,12 @@ To make this permanent,
 *   Edit `/etc/vconsole.conf` to "FONT=ter-m24b"
 *   Add `consolefont` to HOOKS="..."
 *   Run `mkinitcpio -p linux`
+
+### Mute Button LED
+
+In order to get the LED Indicator on the mute button to function, you must add the following line to `/etc/modprobe.d/alsa-base.conf` (create `alsa-base.conf` if it doesn't exist) and then reboot. The LED should now be toggled on or off depending on the mute state.
+
+```
+options snd-hda-intel model=mute-led-gpio
+
+```

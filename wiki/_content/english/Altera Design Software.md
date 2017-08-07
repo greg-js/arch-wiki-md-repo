@@ -1,3 +1,7 @@
+From [altera.com Design Software - FPGA Design](https://www.altera.com/products/design-software/fpga-design.html):
+
+	The Quartus® Prime design software is a multiplatform design environment that easily adapts to your specific needs in all phases of FPGA, CPLD, and SoC designs. The Quartus Prime software delivers the highest performance and productivity for Intel® FPGAs, CPLDs, and SoCs.
+
 This tutorial shows how to download, install, and configure the following software from Altera:
 
 *   Quartus Prime Standard Edition

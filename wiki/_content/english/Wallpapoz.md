@@ -1,4 +1,4 @@
-Wallpapoz is a tool that provides dynamic wallpapers for the [GNOME](/index.php/GNOME "GNOME") and [Xfce](/index.php/Xfce "Xfce") desktops. Moreover different wallpapers can be used for different desktops. This article will explain how to install, configure and use Wallpapoz.
+[Wallpapoz](https://vajrasky.wordpress.com/) is a tool that provides dynamic wallpapers for the [GNOME](/index.php/GNOME "GNOME") and [Xfce](/index.php/Xfce "Xfce") desktops. Moreover different wallpapers can be used for different desktops. This article will explain how to install, configure and use Wallpapoz.
 
 ## Contents
 

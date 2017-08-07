@@ -1,4 +1,4 @@
-Modoboa is a mail hosting and management platform including a modern and simplified Web User Interface. It provides useful components such as an administration panel or a webmail.
+[Modoboa](https://modoboa.org/en/) is a mail hosting and management platform including a modern and simplified Web User Interface. It provides useful components such as an administration panel or a webmail.
 
 Modoboa integrates with well known software such as [Postfix](/index.php/Postfix "Postfix") and/or [Dovecot](/index.php/Dovecot "Dovecot"). A SQL database ([MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")) is used as a central point of communication between all components. Modoboa is developed with modularity in mind, expanding it is really easy. Actually, all current features are extensions.
 

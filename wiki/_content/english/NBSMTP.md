@@ -1,5 +1,3 @@
-## Introduction
-
 From nbSMTP manpage: nbSMTP is a lightweight SMTP client. It simply takes a message from STDIN and sends it to a relayhost. A relayhost is meant to be a full SMTP server and it will really send the message.
 
 ## Installation
@@ -39,6 +37,7 @@ hello email world
 
 and then run:
 
+```
 /usr/bin/nbsmtp < testemail
 
-Enjoy
+```

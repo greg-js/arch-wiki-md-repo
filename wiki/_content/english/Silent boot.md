@@ -95,9 +95,9 @@ See [this](http://www.freedesktop.org/software/systemd/man/systemd-fsck@.service
 
 ## Remove console cursor blinking
 
-The console cursor at boot keeps blinking if you follow these instructions. This can be solved by passing vt.global_cursor_default=0 to the kernel ([source](http://www.friendlyarm.net/forum/topic/2998)).
+The console cursor at boot keeps blinking if you follow these instructions. This can be solved by passing `vt.global_cursor_default=0` to the kernel [[2]](http://www.friendlyarm.net/forum/topic/2998).
 
-To recover the cursor in ttys run:
+To recover the cursor in the TTY, run:
 
 ```
 # setterm -cursor on >> /etc/issue

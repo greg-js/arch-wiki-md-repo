@@ -245,6 +245,7 @@ Description=Delayed hibernation trigger
 Documentation=https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279
 Documentation=https://wiki.archlinux.org/index.php/Power_management
 Conflicts=hibernate.target hybrid-sleep.target
+Before=sleep.target
 StopWhenUnneeded=true
 
 [Service]

@@ -1,4 +1,4 @@
-[R](http://www.r-project.org/) is a "free software environment for statistical computing and graphics ([http://www.r-project.org/](http://www.r-project.org/))."
+[R](https://www.r-project.org/) is a "free software environment for statistical computing and graphics."
 
 ## Contents
 

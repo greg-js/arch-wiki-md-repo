@@ -6,11 +6,6 @@
 *   [2 First Time Setup](#First_Time_Setup)
 *   [3 Gui Interface](#Gui_Interface)
 *   [4 JSON/CLI Interface](#JSON.2FCLI_Interface)
-    *   [4.1 Creating Users](#Creating_Users)
-    *   [4.2 Creating and Viewing Posts](#Creating_and_Viewing_Posts)
-    *   [4.3 Private Messages](#Private_Messages)
-    *   [4.4 Profile Management](#Profile_Management)
-    *   [4.5 Help](#Help)
 
 ## Installation
 
@@ -18,19 +13,7 @@ The [twister-core-git](https://aur.archlinux.org/packages/twister-core-git/) pac
 
 ## First Time Setup
 
-Start the daemon with
-
-```
-# systemctl start twister
-
-```
-
-Enable the daemon to start on system boot
-
-```
-# systemctl enable twister
-
-```
+[Start/enable](/index.php/Start/enable "Start/enable") `twister.service`.
 
 This will by default load both the twister-core daemon, and the twister-html gui.
 
@@ -67,63 +50,4 @@ The twister-html aur package contains a web based gui interface, which can be ac
 
 ## JSON/CLI Interface
 
-Twisterd comes with a command line based utility, that can be used run and configure twister. However, this interface is an overlay on the JSON-RPC interface, and therefore is mostly useful for debugging and development. See the following page for the full documentation of this interface [http://twister.net.co/?page_id=58](http://twister.net.co/?page_id=58). A brief summary of this interface is as follows.
-
-### Creating Users
-
-The following command creates a new username on Twister
-
-```
-# twisterd createwalletuser myname
-
-```
-
-The following command propagates the user to the network
-
-```
-# twisterd sendnewusertransaction myname
-
-```
-
-### Creating and Viewing Posts
-
-```
-# twisterd newpostmsg myname 1 "hello world"
-
-```
-
-```
-# twisterd getposts 5 '[{"username":"myname"},{"username":"myfriend"}]'
-
-```
-
-### Private Messages
-
-```
-# twisterd newdirectmsg myname 2 myfriend "secret message"
-
-```
-
-```
-# twisterd getdirectmsgs myname 10 '[{"username":"myfriend"}]'
-
-```
-
-### Profile Management
-
-```
-# twisterd dhtput myname profile s '{"fullname":"My Name","bio":"just another user","location":"nowhere","url":"twister.net.co"}' myname 1
-
-```
-
-```
-# twisterd dhtget myfriend profile s
-
-```
-
-### Help
-
-```
-# twisterd help
-
-```
+Twisterd comes with a command line based utility, that can be used run and configure twister. However, this interface is an overlay on the JSON-RPC interface, and therefore is mostly useful for debugging and development. See the following page for the full documentation of this interface [http://twister.net.co/?page_id=58](http://twister.net.co/?page_id=58).

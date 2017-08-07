@@ -52,6 +52,7 @@ Identify the name of your webcam (using, for example, `lsusb`) and find a proper
 *   Logitech Quickcam Pro 4000
 *   Philips ToUCams (not confirmed at the moment, but it is using the pwc driver if I remember correctly)
 *   Philips SPC900NC
+*   Philips (or NXP) PCVC690K
 
 ### qc-usb
 

@@ -11,6 +11,11 @@ Xpra is '[screen](/index.php/Screen "Screen") for X': it allows you to run X pro
 
 *   [1 Installation](#Installation)
 *   [2 Use](#Use)
+    *   [2.1 run applications](#run_applications)
+    *   [2.2 run whole desktop environment](#run_whole_desktop_environment)
+    *   [2.3 shadow remote desktop](#shadow_remote_desktop)
+    *   [2.4 as xorg sandbox](#as_xorg_sandbox)
+    *   [2.5 more](#more)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Start at boot](#Start_at_boot)
         *   [3.1.1 Server](#Server)
@@ -27,6 +32,8 @@ Install the package [xpra-winswitch](https://aur.archlinux.org/packages/xpra-win
 **Tip:** If you intend to run Xpra locally under a existing Xorg session with graphic drivers such as `nvidia` or `ATi` you will need to modify the default xpra config. Xpra fetches `-configdir` from `xorg-server-xvfb` which will be `/etc/X11/xorg.conf.d`, there for you need to change this by following the three bottom steps of [1333056#p1333056](https://bbs.archlinux.org/viewtopic.php?pid=1333056#p1333056) in order to run xpra locally.
 
 ## Use
+
+### run applications
 
 Start an xpra server on the machine where you want to run the applications (we are using display number **7** here):
 
@@ -67,6 +74,57 @@ You can stop the server with:
 on the machine where the server is running, or remotely:
 
  `$ xpra stop ssh:user@example.com:7` 
+
+### run whole desktop environment
+
+To run whole desktop (on the server side):
+
+ `$ xpra start-desktop :7 --start-child=xfce4-session --exit-with-children` 
+
+where:
+
+*   `:7` is a number of xorg DISPLAY session
+*   `--start-child=xfce4-session` run xfce4 session as child on xpra server
+*   `--exit-with-children` mean that server will be closed after session logout (children exit)
+
+To attach it (on the server side):
+
+ `$ xpra attach :7` 
+
+To attach it (on the client side):
+
+ `$ xpra attach ssh:user@example.com:7` 
+
+To detach press ctrl+c on terminal or run:
+
+ `$ xpra detach :7` 
+**Tip:** Screen resolution can be changed with [xrandr](/index.php/Xrandr "Xrandr").
+
+### shadow remote desktop
+
+To clone:
+
+*   display must be auth by this same user as ssh login to
+*   display must be shown on remote screen
+
+To shadow desktop run this on the client side:
+
+ `$ xpra shadow ssh:DISPLAY_user@example.com:DISPLAY_number` 
+
+### as xorg sandbox
+
+Sandox can be achieved with [firejail](/index.php/Firejail "Firejail"):
+
+*   for application sandbox (change `eth0` to your interface name or to `none`):
+
+ `$ firejail --x11=xpra --net=eth0 firefox` 
+
+*   xpra attach, etc:
+
+ `$ firejail --net=eth0 xpra [...]` 
+**Note:** `--net=eth0` create separate namespace for network, this is necessary to hide all xorg or system sockets from xpra, otherwise sanbox is most likely ineffective ([issue-54#153757284](https://github.com/netblue30/firejail/issues/57#issuecomment-153757284)).
+
+### more
 
 For a complete manual, check `man xpra`.
 

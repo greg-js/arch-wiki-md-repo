@@ -1,14 +1,5 @@
 FiSH is a plugin/module that facilitates encrypted chatting over IRC. It's available for mIRC, xChat and Irssi.
 
-## Contents
-
-*   [1 Adding FiSH to mIRC](#Adding_FiSH_to_mIRC)
-*   [2 Adding FiSH to xChat](#Adding_FiSH_to_xChat)
-*   [3 Adding FiSH to Irssi](#Adding_FiSH_to_Irssi)
-*   [4 See also](#See_also)
-
-## Adding FiSH to mIRC
-
 ## Adding FiSH to xChat
 
 There is a package in the AUR called [xchat-fish](https://aur.archlinux.org/packages/xchat-fish/). Note that the package builds and installs only the plugin—you’ll need to create and install the `~/.xchat2/blow.ini` file yourself.

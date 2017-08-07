@@ -29,11 +29,11 @@ The first option is the recommended default, and what you will end up with if yo
 
 ### Forcing the check
 
-You can also force fsck at boot time by passing `fsck.mode=force`, as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). This will check every filesystem you have on the machine.
+If you use the `base` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook, you can force fsck at boot time by passing `fsck.mode=force` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). This will check every filesystem you have on the machine.
+
+Alternatively, systemd provides [systemd-fsck@.service(8)](http://man7.org/linux/man-pages/man8/systemd-fsck%40.service.8.html), which checks all configured file systems, which were not checked in the initramfs. However, checking the root filesystem this way causes a delay in the boot process, because the file system has to be remounted.
 
 **Note:** For those accustomed to use other GNU/Linux distributions, the old tricks consisting in writing a file with the name `forcefsck` to the root of each filesystem or using the command `shutdown` with the `-F` flag were only working for the old [SysVinit](/index.php/SysVinit "SysVinit") and early versions of [Upstart](https://en.wikipedia.org/wiki/Upstart "wikipedia:Upstart") and are not working with [systemd](/index.php/Systemd "Systemd"). The aforementioned solution is thus the only one working for Arch Linux.
-
-What is more you can pass additional parameter `fsck.repair=yes`, this will try repair your filesystem without asking. If you don't pass this parameter fsck will repair only safe errors. So be careful with this option! *More information can be found here [[2]](https://www.freedesktop.org/software/systemd/man/systemd-fsck@.service.html).*
 
 ## Tips and tricks
 

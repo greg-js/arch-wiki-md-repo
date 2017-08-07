@@ -1,4 +1,4 @@
-From [ZeroNet](https://zeronet.io/) gives access to "open, free and uncensorable websites, using Bitcoin cryptography and BitTorrent network".
+[ZeroNet](https://zeronet.io/) gives access to "open, free and uncensorable websites, using Bitcoin cryptography and the BitTorrent network".
 
 ## Contents
 

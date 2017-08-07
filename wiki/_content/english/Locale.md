@@ -222,6 +222,8 @@ It is possible that the environment variables are redefined in other files than 
 
 If you're using a desktop environment, such as [GNOME](/index.php/GNOME "GNOME"), its language settings may be overriding the settings in `locale.conf`.
 
+[KDE](/index.php/KDE "KDE") Plasma also allows to change the UI's language through the system settings. If the desktop environment is still using the default language after the modification, [deleting the file at](https://bbs.archlinux.org/viewtopic.php?pid=1435219#p1435219) `~/.config/plasma-locale-settings.sh` should resolve the issue.
+
 ## See also
 
 *   [Gentoo Linux Localization Guide](http://www.gentoo.org/doc/en/guide-localization.xml)

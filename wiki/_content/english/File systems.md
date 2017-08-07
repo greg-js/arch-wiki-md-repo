@@ -59,7 +59,7 @@ Not all journaling techniques are the same. Ext3 and ext4 offer data-mode journa
 
 The other filesystems provide ordered-mode journaling, which only logs meta-data. While all journaling will return a filesystem to a valid state after a crash, data-mode journaling offers the greatest protection against corruption and data loss. There is a compromise in system performance, however, because data-mode journaling does two write operations: first to the journal and then to the disk. The trade-off between system speed and data safety should be considered when choosing the filesystem type.
 
-While CoW based filesystem, including Btrfs and ZFS, never updates their metadata in-place, but do Copy-on-Write update. So they have no need to use traditional journal to protect metadata. For data modification, it's CoWed by default, so still no need to use journal to protect data for Btrfs/ZFS. Although Btrfs still has a journal-like log tree, which is only used to speedup fdatasync/fsync.
+Filesystems based on copy-on-write, such as Btrfs and ZFS, have no need to use traditional journal to protect metadata, because they are never updated in-place. Although Btrfs still has a journal-like log tree, it is only used to speed-up fdatasync/fsync.
 
 ### FUSE-based file systems
 

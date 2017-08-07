@@ -576,6 +576,8 @@ Server = http://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Ar
 
 #### noware
 
+**Note:** As of August 2017 both website and repositories at [http://direct.noware.systems](http://direct.noware.systems) are down due to server-side hardware problems. This might be resolved at some point in the future.
+
 *   **Maintainer:** Alexandru Thirtheu (alex_giusi_tiri2@yahoo.com) ([Forums](https://bbs.archlinux.org/profile.php?id=65036)) ([Wiki](/index.php?title=User:AGT&action=edit&redlink=1 "User:AGT (page does not exist)")) ([Web Site](http://direct.noware.systems.:2))
 *   **Description:** Software which I prefer being present in a repository, than being compiled each time. It eases software maintenance, I find. Almost anything goes.
 

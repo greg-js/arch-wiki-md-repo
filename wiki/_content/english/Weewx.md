@@ -1,4 +1,4 @@
-[Weewx](http://weewx.com/) is a free, open source, software program, written in Python, which interacts with your weather station to produce graphs, reports, and HTML pages.
+[Weewx](http://weewx.com/) is a free, open source, Python program, which interacts with your weather station to produce graphs, reports, and HTML pages.
 
 ## Contents
 

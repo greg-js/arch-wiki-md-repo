@@ -172,6 +172,7 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 | **Device** | **Ports** | **Status** |
 | [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
 | [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
+| [Apple 87W USB-C Power Adapter](https://www.apple.com/uk/shop/product/MNF82B/A/87w-usb-c-power-adapter?fnode=8b) | USB-C Power | Working |
 | [Aukey USB C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
 | [Belkin USB-C to VGA Adapter](http://www.belkin.com/us/p/P-F2CU037/) | VGA | Working |
 | [Dell DA200](https://www.amazon.com/dp/B012DT6KW2) | USB-A, Ethernet, HDMI, VGA | Working |

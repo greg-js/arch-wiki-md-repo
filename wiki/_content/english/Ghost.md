@@ -1,4 +1,4 @@
-Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
+[Ghost](https://ghost.org/) is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
 ## Contents
 
@@ -10,7 +10,7 @@ Ghost is a free and open source blogging platform written in JavaScript and dist
 
 ## AUR installation
 
-[Install](/index.php/Install "Install") [Ghost](https://aur.archlinux.org/packages/Ghost/), and modify `/etc/webapps/ghost/config.js`. Then [start](/index.php/Start "Start") `ghost.service`. If you are happy with it, [enable](/index.php/Enable "Enable") it for automatic start when the system boots.
+[Install](/index.php/Install "Install") [ghost](https://aur.archlinux.org/packages/ghost/), and modify `/etc/webapps/ghost/config.js`. Then [start](/index.php/Start "Start") `ghost.service`. If you are happy with it, [enable](/index.php/Enable "Enable") it for automatic start when the system boots.
 
 Visit [http://127.0.0.1:2368/ghost](http://127.0.0.1:2368/ghost) for final configuration.
 

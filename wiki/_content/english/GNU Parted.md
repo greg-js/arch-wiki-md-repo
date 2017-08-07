@@ -12,7 +12,6 @@ GNU Parted is a program for creating and manipulating partition tables. GParted 
     *   [4.2 Partition schemes](#Partition_schemes)
         *   [4.2.1 UEFI/GPT examples](#UEFI.2FGPT_examples)
         *   [4.2.2 BIOS/MBR examples](#BIOS.2FMBR_examples)
-        *   [4.2.3 BIOS/GPT example](#BIOS.2FGPT_example)
     *   [4.3 Resizing Partitions](#Resizing_Partitions)
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
@@ -233,21 +232,6 @@ In the final example below, separate `/boot` (100MiB), `/` (20GiB), swap (4GiB),
 (parted) mkpart primary ext3 100MiB 20GiB
 (parted) mkpart primary linux-swap 20GiB 24GiB
 (parted) mkpart primary ext3 24GiB 100%
-
-```
-
-#### BIOS/GPT example
-
-This example assumes you are using [GRUB](/index.php/GRUB "GRUB") as your bootloader.
-
-Unlike in the BIOS/MBR case, a special 2 MiB partition [is required for the extra grub code.](http://askubuntu.com/questions/500359/efi-boot-partition-and-biosgrub-partition) The third partition can be further divided to include a swap partition or a separate partition for `/home`.
-
-```
-(parted) mkpart primary 1MiB 3MiB
-(parted) set 1 bios_grub on
-(parted) mkpart primary ext2 3MiB 200MiB
-(parted) set 2 boot on
-(parted) mkpart primary ext4 200MiB 100%
 
 ```
 

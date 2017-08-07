@@ -1,10 +1,10 @@
-**Note:** GROMACS should not be used as a [black box](https://en.wikipedia.org/wiki/black_box "wikipedia:black box"). The user is strongly encouraged to read and study the scientific papers related to the methods and force fields that are employed by GROMACS.
-
 According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 	a versatile package to perform [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics "wikipedia:Molecular dynamics"), i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
 
 	It is primarily designed for biochemical molecules like proteins, lipids and nucleic acids that have a lot of complicated bonded interactions, but since GROMACS is extremely fast at calculating the nonbonded interactions (that usually dominate simulations) many groups are also using it for research on non-biological systems, e.g. polymers.
+
+**Note:** GROMACS should not be used as a [black box](https://en.wikipedia.org/wiki/black_box "wikipedia:black box"). The user is strongly encouraged to read and study the scientific papers related to the methods and force fields that are employed by GROMACS.
 
 ## Contents
 

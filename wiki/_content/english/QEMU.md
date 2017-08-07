@@ -251,7 +251,6 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 **Note:**
 
-*   If you get permission errors from KVM add your user to the `kvm` group.
 *   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
 *   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
 
@@ -1503,9 +1502,10 @@ WantedBy=multi-user.target
 
 ```
 
-**Note:** According to `systemd.service(5)` and `systemd.kill(5)` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
+**Note:**
 
-**Note:** It is necessary to use the `PIDFile` option. Otherwise `systemd` cannot tell whether the main qemu process was terminated and your quest system will not be able to shutdown correctly. On host shutdown it will proceed without waiting for the VM to shutdown.
+*   According to [systemd.service(5)](http://man7.org/linux/man-pages/man5/systemd.service.5.html) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
+*   It is necessary to use the `PIDFile` option. Otherwise systemd cannot tell whether the main qemu process was terminated and your quest system will not be able to shutdown correctly. On host shutdown it will proceed without waiting for the VM to shutdown.
 
 Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the following variables set:
 

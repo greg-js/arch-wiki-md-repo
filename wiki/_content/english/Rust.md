@@ -161,7 +161,7 @@ The [unofficial repo archlinuxcn](/index.php/Unofficial_user_repositories#archli
 
 ## Cargo
 
-[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-nightly-bin](https://aur.archlinux.org/packages/cargo-nightly-bin/). If you use [rustup](https://www.archlinux.org/packages/?name=rustup), it already includes cargo.
+[Cargo](https://crates.io/), Rust's package manager, is part of the [rust](https://www.archlinux.org/packages/?name=rust) package. The nightly version is available in the AUR as [cargo-nightly-bin](https://aur.archlinux.org/packages/cargo-nightly-bin/). If you use [rustup](https://www.archlinux.org/packages/?name=rustup), it already includes cargo.
 
 Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build. You're encouraged to read the [official guide](http://doc.crates.io/guide.html).
 

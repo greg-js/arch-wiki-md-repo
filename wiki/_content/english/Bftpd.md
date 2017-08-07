@@ -1,4 +1,4 @@
-**bftpd** is a small, easy-to-configure FTP server for UNIX-like systems.
+[bftpd](http://bftpd.sourceforge.net/) is a small, easy-to-configure FTP server for UNIX-like systems.
 
 ## Installation
 

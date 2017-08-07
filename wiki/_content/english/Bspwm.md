@@ -68,7 +68,7 @@ bspc monitor DP-1 -d VIII IX X
 
 You can use `xrandr -q` or `bspc query -M` to find the monitor names.
 
-The total number of desktops were maintained at ten in the above example. This is so that each desktop can still be addressed with 'super + {1-9,0}' in the sxhkdrc.
+The total number of desktops were maintained at ten in the above example. This is so that each desktop can still be addressed with `super + {1-9,0}` in the sxhkdrc.
 
 ### Rules
 

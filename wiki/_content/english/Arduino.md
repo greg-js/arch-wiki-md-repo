@@ -1,4 +1,4 @@
-Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It is intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments. More information is available on the [Arduino HomePage](http://www.arduino.cc/).
+[Arduino](https://www.arduino.cc/) is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It is intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
 
 ## Contents
 

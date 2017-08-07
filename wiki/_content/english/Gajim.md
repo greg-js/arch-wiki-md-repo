@@ -1,4 +1,4 @@
-[Gajim](https://gajim.org/index.php?lang=en) is a full featured and easy to use Jabber/XMPP client.
+[Gajim](https://gajim.org/index.php?lang=en) is a full featured and easy to use XMPP client.
 
 ## Contents
 
@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gajim](https://www.archlinux.org/packages/?name=gajim) package. Then, restart Gajim.
+[Install](/index.php/Install "Install") the [gajim](https://www.archlinux.org/packages/?name=gajim) package.
 
 ## Enabling DBus remote control Support
 

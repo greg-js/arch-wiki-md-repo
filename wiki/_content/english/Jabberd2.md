@@ -1,4 +1,4 @@
-jabberd2 is an [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") server, written in the C language and licensed as Free software under the GNU General Public License. It was inspired by jabberd14.
+[jabberd2](http://jabberd2.org/) is an [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") server, written in the C language and licensed as free software under the GNU General Public License. It was inspired by jabberd14.
 
 ## Contents
 

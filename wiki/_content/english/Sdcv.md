@@ -1,4 +1,4 @@
-[sdcv](https://www.archlinux.org/packages/?name=sdcv) is a command line dictionary. It provides access to dictionaries in StarDict's format.
+[Sdcv](https://dushistov.github.io/sdcv/) is a command line dictionary. It provides access to dictionaries in StarDict's format.
 
 ## Contents
 

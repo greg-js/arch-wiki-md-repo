@@ -1,4 +1,4 @@
-isync is a command line application which synchronizes mailboxes; currently Maildir and IMAP4 mailboxes are supported. New messages, message deletions and flag changes can be propagated both ways.
+[isync](http://isync.sourceforge.net/) is a command line application which synchronizes mailboxes; currently Maildir and IMAP4 mailboxes are supported. New messages, message deletions and flag changes can be propagated both ways.
 
 Synchronization is based on unique message identifiers (UIDs), so no identification conflicts can occur (as opposed to some other mail synchronizers). Synchronization state is kept in one local text file per mailbox pair; multiple replicas of a mailbox can be maintained.
 

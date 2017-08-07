@@ -98,7 +98,7 @@ Add this to your .xinitrc to load at login.
 *   [xkeyboard-config](https://www.archlinux.org/packages/?name=xkeyboard-config) provides a <tt>chromebook</tt> model which can be specified, for example, with <tt>localectl set-x11-keymap us chromebook</tt> but when using [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland") the model is not recognized. The media keys still behave as function keys and <tt>setxkbmap -print -verbose 10</tt> doesn't show the <tt>chromebook</tt> model being used.
 *   Occasional lockup on booting into GDM using Wayland 1.12.0-1, GDM 3.22.1-1, and linux 4.9-1.
 *   It would be nice if touchscreen behaved more like the touchpad so that the touchscreen could be used for scrolling.
-*   Touchpad occasionally doesn't work after waking from sleep using linux 4.9-1.
+*   Touchpad occasionally doesn't work after waking from sleep using linux 4.9-1+. If this happens, reloading the touchpad driver via <tt>sudo modprobe -r atmel_mxt_ts && sudo modprobe atmel_mxt_ts</tt> usually restores touchpad functionality.
 
 ## External Links
 

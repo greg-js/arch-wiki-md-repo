@@ -13,7 +13,7 @@
 
 Press Esc to get to the boot menu.
 
-You are able to use [efibootmgr](/index.php/EFISTUB#Using_UEFI_directly_.28efibootmgr.29 "EFISTUB") for adding bootloaders or even [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels.
+You are able to use [efibootmgr](/index.php/EFISTUB#efibootmgr "EFISTUB") for adding bootloaders or even [EFISTUB](/index.php/EFISTUB "EFISTUB") kernels.
 
 ### Booting without Secure Boot
 

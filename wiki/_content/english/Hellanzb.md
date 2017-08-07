@@ -1,4 +1,4 @@
-Hellanzb is a console based usenet binary downloader written in python. It can be run in daemon mode and several GUI or PHP frontends are available.
+[Hellanzb](https://github.com/pjenvey/hellanzb) is a console based Usenet binary downloader written in Python. It can be run in daemon mode and several GUI or PHP frontends are available.
 
 **Note:** hellanzb is no longer under active development, although the last release (0.13) is considered stable by the developers and testing team.
 

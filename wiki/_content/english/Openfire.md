@@ -1,6 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/Openfire "wikipedia:Openfire"):
-
-	Openfire (previously known as Wildfire, and Jive Messenger) is an instant messaging (IM) and groupchat server that uses [XMPP](/index.php/XMPP "XMPP") server written in [Java](/index.php/Java "Java") and licensed under the Apache License 2.0.
+[Openfire](http://www.igniterealtime.org/projects/openfire/) (previously known as Wildfire, and Jive Messenger) is an [XMPP](/index.php/XMPP "XMPP") server written in [Java](/index.php/Java "Java").
 
 ## Contents
 

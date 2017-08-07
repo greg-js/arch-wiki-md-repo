@@ -1,6 +1,6 @@
 **Warning:** Guix is **not** the [official package manager of Arch](/index.php/Pacman "Pacman"). It is also still under heavy development. Some packages may currently fail to build on Arch.
 
-**GNU Guix** is a package manager that offers transactional, reproducible, per-user package management. While Guix can be used stand-alone and provide a full GNU distribution and a kernel by itself, you can install the Guix package manager on top of Arch to make Guix available to users while using a more traditional and mature Unix-like system as a base.
+[GNU Guix](https://www.gnu.org/software/guix/) is a package manager that offers transactional, reproducible, per-user package management. While Guix can be used stand-alone and provide a full GNU distribution and a kernel by itself, you can install the Guix package manager on top of Arch to make Guix available to users while using a more traditional and mature Unix-like system as a base.
 
 See the [Guix manual](https://www.gnu.org/software/guix/manual) for information on what per-user packaging commands Guix makes available to users.
 

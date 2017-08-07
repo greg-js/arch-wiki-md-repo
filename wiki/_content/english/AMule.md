@@ -1,4 +1,4 @@
-aMule is an eMule-like client for the eD2k and Kademlia networks, supporting multiple platforms.
+[aMule](http://www.amule.org/) is an eMule-like client for the [eDonkey Network](https://en.wikipedia.org/wiki/eDonkey_Network "w:eDonkey Network") and [Kademlia](https://en.wikipedia.org/wiki/Kademlia "w:Kademlia") networks, supporting multiple platforms.
 
 ## Contents
 
@@ -13,7 +13,7 @@ aMule is an eMule-like client for the eD2k and Kademlia networks, supporting mul
 
 ## Installation
 
-aMule can be installed with package [amule](https://www.archlinux.org/packages/?name=amule), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [amule](https://www.archlinux.org/packages/?name=amule) package.
 
 `amuled` is a full featured aMule daemon, running without any user interface (GUI). It is controlled by remote access through aMuleGUI (GTK+), aMuleWeb, or aMuleCmd.
 

@@ -23,7 +23,7 @@
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(28)</small> |
+| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(29)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(48)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(21)</small> |
@@ -33,13 +33,13 @@
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(3)</small> |
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(19)</small> |
-| <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(15)</small> |
+| <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(16)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(19)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(58)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
-| <small>3.2.</small> [Issue tracking system](/index.php/Category:Issue_tracking_system "Category:Issue tracking system") <small>(6) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>3.2.</small> [Issue tracking system](/index.php?title=Category:Issue_tracking_system&action=edit&redlink=1 "Category:Issue tracking system (page does not exist)") <small>(6) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>3.3.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(22)</small> |
 | <small>3.4.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
 | <small>3.5.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
@@ -77,9 +77,9 @@
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
 | <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(20)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
+| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(24)</small> |
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
-| <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(20)</small> |
+| <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(19)</small> |
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
@@ -104,11 +104,11 @@
 | <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(15) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(6)</small> |
 | <small>5.16.</small> [Web](/index.php/Category:Web "Category:Web") <small>(1)</small> |
-| <small>5.16.1.</small> [Content management system](/index.php/Category:Content_management_system "Category:Content management system") <small>(4)</small> |
-| <small>5.16.2.</small> [Issue tracking system](/index.php/Category:Issue_tracking_system "Category:Issue tracking system") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>5.16.3.</small> [Web admin interface](/index.php/Category:Web_admin_interface "Category:Web admin interface") <small>(5)</small> |
+| <small>5.16.1.</small> [Content management system](/index.php?title=Category:Content_management_system&action=edit&redlink=1 "Category:Content management system (page does not exist)") <small>(4)</small> |
+| <small>5.16.2.</small> [Issue tracking system](/index.php?title=Category:Issue_tracking_system&action=edit&redlink=1 "Category:Issue tracking system (page does not exist)") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>5.16.3.</small> [Web admin interface](/index.php?title=Category:Web_admin_interface&action=edit&redlink=1 "Category:Web admin interface (page does not exist)") <small>(5)</small> |
 | <small>5.16.4.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
-| <small>5.16.5.</small> [Web framework](/index.php/Category:Web_framework "Category:Web framework") <small>(4)</small> |
+| <small>5.16.5.</small> [Web framework](/index.php?title=Category:Web_framework&action=edit&redlink=1 "Category:Web framework (page does not exist)") <small>(4)</small> |
 | <small>5.16.6.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(39) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>5.16.7.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(7)</small> |
 | <small>5.17.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(39) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
@@ -146,4 +146,4 @@
 | <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
 | <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(23)</small> |
 | <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
-| <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(64)</small> |
+| <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(63)</small> |

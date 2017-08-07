@@ -2,7 +2,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
-*pacman* is written in the C programming language and uses the *.pkg.tar.xz* package format.
+*pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
 **Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains other useful tools such as [makepkg](/index.php/Makepkg "Makepkg"), **pactree**, **vercmp**, and [checkupdates](/index.php/Checkupdates "Checkupdates"). Run `pacman -Qlq pacman | grep bin` to see the full list.
 
@@ -193,19 +193,7 @@ To remove a package, which is required by another package, without removing the 
 
 ### Querying package databases
 
-*pacman* queries the local package database with the `-Q` flag; see:
-
-```
-$ pacman -Q --help
-
-```
-
-and queries the sync databases with the `-S` flag; see:
-
-```
-$ pacman -S --help
-
-```
+*pacman* queries the local package database with the `-Q` flag, the sync database with the `-S` flag and the files database with the `-F` flag. See `pacman -Q --help`, `pacman -S --help` and `pacman -F --help` for the respective suboptions of each flag.
 
 *pacman* can search for packages in the database, searching both in packages' names and descriptions:
 

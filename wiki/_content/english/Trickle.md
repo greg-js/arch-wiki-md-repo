@@ -1,4 +1,4 @@
-[trickle](https://www.archlinux.org/packages/?name=trickle) is a portable lightweight userspace bandwidth shaper, that either runs in collaborative mode (together with trickled) or in stand alone mode.
+[trickle](https://monkey.org/~marius/trickle/) is a portable lightweight userspace bandwidth shaper, that either runs in collaborative mode (together with trickled) or in stand alone mode.
 
 It works by preloading its own socket library wrappers, that limit traffic by delaying data.
 

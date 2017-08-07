@@ -1,4 +1,4 @@
-[Open-Xchange](http://ox.io) is a groupware solution providing Mail facilities, Calendaring, shared Contacts and Google-Docs-like text editing.
+[Open-Xchange](http://ox.io) is a groupware solution providing mail facilities, calendaring, shared contacts and Google-Docs-like text editing.
 
 ## Contents
 

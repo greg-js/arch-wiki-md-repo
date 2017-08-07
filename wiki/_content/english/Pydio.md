@@ -1,4 +1,4 @@
-[Pydio](https://pydio.com/) (formerly AjaXplorer) is a mature open source web application for file sharing and synchronization.
+[Pydio](https://pydio.com/) (formerly AjaXplorer) is an open source web application, written in PHP, for file sharing and synchronization.
 
 ## Installation
 

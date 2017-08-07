@@ -1,4 +1,4 @@
-Streamlink is a command-line utility written in [Python](/index.php/Python "Python") which allows you to watch online video streams in popular video players, such as [VLC](/index.php/VLC "VLC"), [MPlayer](/index.php/MPlayer "MPlayer") or [mpv](/index.php/Mpv "Mpv"); see [Player compatibility](https://streamlink.github.io/players.html#player-compatibility) for the full list.
+[Streamlink](https://github.com/streamlink/streamlink) is a command-line utility written in [Python](/index.php/Python "Python") which allows you to watch online video streams in popular video players, such as [VLC](/index.php/VLC "VLC"), [MPlayer](/index.php/MPlayer "MPlayer") or [mpv](/index.php/Mpv "Mpv"); see [Player compatibility](https://streamlink.github.io/players.html#player-compatibility) for the full list.
 
 This project was forked from [Livestreamer](/index.php/Livestreamer "Livestreamer"), which is no longer maintained.
 

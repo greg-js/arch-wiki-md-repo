@@ -55,6 +55,7 @@
     *   [5.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
     *   [5.17 Systemd Bottleneck](#Systemd_Bottleneck)
     *   [5.18 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [5.19 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
         *   [6.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
@@ -717,6 +718,12 @@ NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-w
 There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
 
 Alternatively, if roaming is not important, the periodic scanning behavior can be disabled by locking the BSSID of the access point in the WiFi connection profile.
+
+### Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)
+
+There is an issue with the `ideapad_laptop` module on some Lenovo models due to the wi-fi driver incorrectly reporting a soft block. The card can still be manipulated with `netctl`, but managers like NetworkManager break. You can verify that this is the problem by checking the output of `rfkill list` after toggling your hardware switch and seeing that the soft block persists.
+
+[Unloading](/index.php/Modprobe "Modprobe") the `ideapad_laptop` module should fix this. (**warning**: this may disable the laptop keyboard and touchpad also!).
 
 ## Tips and tricks
 

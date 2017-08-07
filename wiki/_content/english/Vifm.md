@@ -25,7 +25,7 @@ If you use [vi](/index.php/Vi "Vi"), Vifm gives you complete keyboard control ov
 
 ## Installation
 
-[Install](/index.php/Install "Install") [vifm](https://www.archlinux.org/packages/?name=vifm) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [vifm](https://www.archlinux.org/packages/?name=vifm) package.
 
 ## Help file
 

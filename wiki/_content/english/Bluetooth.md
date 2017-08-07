@@ -6,7 +6,6 @@
 *   [2 Configuration via the CLI](#Configuration_via_the_CLI)
     *   [2.1 Bluetoothctl](#Bluetoothctl)
         *   [2.1.1 Auto power-on after boot](#Auto_power-on_after_boot)
-        *   [2.1.2 Deprecated method using hciconfig](#Deprecated_method_using_hciconfig)
 *   [3 Configuration with a graphical front-end](#Configuration_with_a_graphical_front-end)
     *   [3.1 GNOME Bluetooth](#GNOME_Bluetooth)
     *   [3.2 Bluedevil](#Bluedevil)
@@ -115,37 +114,6 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 AutoEnable=true
 ```
 
-#### Deprecated method using hciconfig
-
-In order to have the device active after a reboot, a udev rule is needed:
-
- `/etc/udev/rules.d/10-local.rules` 
-```
-# Set bluetooth power up
-ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig %k up"
-```
-
-**Tip:** Replace `KERNEL=="hci0"` with `KERNEL=="hci[0-9]*"` to match all interfaces.
-
-After a suspend/resume-cycle, the device can be powered on automatically using a custom *systemd* service:
-
- `/etc/systemd/system/bluetooth-auto-power@.service` 
-```
-[Unit]
-Description=Bluetooth auto power on
-After=bluetooth.service sys-subsystem-bluetooth-devices-%i.device suspend.target
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/hciconfig %i up
-
-[Install]
-WantedBy=suspend.target
-
-```
-
-[Enable](/index.php/Enable "Enable") an instance of the unit using your bluetooth device name, for example `bluetooth-auto-power@hci0.service`.
-
 ## Configuration with a graphical front-end
 
 The following packages allow for a graphical interface to customize Bluetooth.
@@ -248,7 +216,6 @@ Enable=Source
 
 More info in:
 
-*   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
 *   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
 *   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
 
