@@ -815,7 +815,7 @@ When using HD Audio devices, you often find disorganized mixer controls, that do
 
 #### Solution
 
-Open `ossxmix` and try to change every mixer control in the **middle area**, that contains the sound card specific controls, as explained in the [OSS#Volume Control Mixer](/index.php/OSS#Volume_Control_Mixer "OSS") section.
+Open `ossxmix` and try to change every mixer control in the **middle area**, that contains the sound card specific controls, as explained in the [#Volume Control Mixer](#Volume_Control_Mixer) section.
 
 You will probably want to setup a program to record/play continuously in the background (e.g. `ossrecord - | ossplay -` for recording or `osstest -lV` for playing), while changing mixer settings in `ossxmix` in the foreground.
 

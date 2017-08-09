@@ -486,7 +486,7 @@ de red | Itinerancia
 o cambia de lugar) | Soporte para [PPP](https://en.wikipedia.org/wiki/es:Point-to-Point_Protocol "wikipedia:es:Point-to-Point Protocol")
 (por ejemplo, modem 3G) | GUI
 Oficial | Herramientas de consola |
-| [Connman](/index.php/Connman "Connman") | Sí | Sí | Sí | No | `connmanctl` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Sí | Sí | Sí | No | `connmanctl` |
 | [Netctl](/index.php/Netctl "Netctl") | Sí | Sí | Sí | No | `netctl`,`wifi-menu` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Sí | Sí | Sí | Sí | `nmcli` |
 | [Wicd](/index.php/Wicd "Wicd") | Sí | Sí | No | Sí | `wicd-curses` |

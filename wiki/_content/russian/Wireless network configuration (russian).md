@@ -481,7 +481,7 @@ WantedBy=multi-user.target
 или изменилось местоположение) | Поддержка [PPP](https://en.wikipedia.org/wiki/ru:PPP_(%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB) "wikipedia:ru:PPP (сетевой протокол)")
 (например, 3G-модемов) | Официальный
 графический интерфейс | Консольные утилиты |
-| [Connman](/index.php/Connman "Connman") | Да | Да | Да | Нет | `connmanctl` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Да | Да | Да | Нет | `connmanctl` |
 | [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") | Да | Да | Да | Нет | `netctl`,`wifi-menu` |
 | [NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)") | Да | Да | Да | Да | `nmcli` |
 | [Wicd](/index.php/Wicd "Wicd") | Да | Да | Нет | Да | `wicd-curses` |
@@ -490,7 +490,7 @@ WantedBy=multi-user.target
 
 *ConnMan* - это альтернатива *NetworkManager* и *Wicd*, разработанная так, чтобы быть нетребовательной к ресурсам, что делает ее идеальной для нетбуков и других мобильных устройств. Он модульный, что даёт преимущество перед dbus API и предоставляет требуемую абстракцию над *wpa_supplicant*.
 
-Смотрите статью [Connman](/index.php/Connman "Connman").
+Смотрите статью [ConnMan](/index.php/ConnMan "ConnMan").
 
 #### netctl
 

@@ -110,7 +110,7 @@ Untuk konfigurasi BIOS-GPT, buat sebuah partisi sebesar 2 MiB menggunaka cgdisk 
 
 Biasa post-MBR (setelah 512 byte area MBR dan sebelum dimulainya partisi pertama) di banyak sistem pemartisian MBR (atau msdos disklabel) adalah 32 KiB ketika kompabilitas DOS telah terpenuhi. Akan tetapi sebuah post-MBR sejumlah 1 atau 2 MiB direkomendasikan untuk memberikan ruang yang cukup untuk core.img yang terembed ([FS#24103](https://bugs.archlinux.org/task/24103) ). Disarankan untuk menggunakan pemartisi yang mendukung alokasi partisi 1 MiB untuk mendapat ruang dalam memenuhi sektor non-512 byte. (yang tidak berelasi untuk embed core.img).
 
-Jika anda tidak melakukan dual-boot dengan MS Windows (semua versi) di sistem BIOS, disarankan untuk menggunakan partisi GPT - [GUID_Partition_Table#Convert_from_MBR_to_GPT_without_data_loss](/index.php/GUID_Partition_Table#Convert_from_MBR_to_GPT_without_data_loss "GUID Partition Table")
+Jika anda tidak melakukan dual-boot dengan MS Windows (semua versi) di sistem BIOS, disarankan untuk menggunakan partisi GPT - [GUID Partition Table#Convert_from_MBR_to_GPT_without_data_loss](/index.php/GUID_Partition_Table#Convert_from_MBR_to_GPT_without_data_loss "GUID Partition Table")
 
 **Catatan:** Membuat partisi 2MiB telah disebut diatas SEBELUM anda mengkonversi ke GPT. Jika tidak, gparted tidak akan merubah ukuran partisi boot untuk mengizinkan pembuatannya dan ketika anda reboot grub2 tidak tahu dimana untuk memulai.
 
@@ -118,7 +118,7 @@ Jika anda tidak melakukan dual-boot dengan MS Windows (semua versi) di sistem BI
 
 ##### Membuat dan the UEFI SYSTEM PARTITION
 
-Ikuti instruksi [Unified_Extensible_Firmware_Interface#Create_an_UEFI_SYSTEM_PARTITION_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_SYSTEM_PARTITION_in_Linux "Unified Extensible Firmware Interface") dalam membuat sebuah UEFI SYSTEM PARTITION. Lalu mount UEFI SYSTEM PARTITION di `/boot/efi`. harus mempunya format FAT32 dan lebih besar dari >=200 MiB ukurannya. jika kamu telah mount partisi UEFISYS di mountpoint yang lain, ganti `/boot/efi` dengan command di bawah ini:
+Ikuti instruksi [Unified Extensible Firmware Interface#Create_an_UEFI_SYSTEM_PARTITION_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_SYSTEM_PARTITION_in_Linux "Unified Extensible Firmware Interface") dalam membuat sebuah UEFI SYSTEM PARTITION. Lalu mount UEFI SYSTEM PARTITION di `/boot/efi`. harus mempunya format FAT32 dan lebih besar dari >=200 MiB ukurannya. jika kamu telah mount partisi UEFISYS di mountpoint yang lain, ganti `/boot/efi` dengan command di bawah ini:
 
 ```
 # mkdir -p /boot/efi
@@ -285,9 +285,9 @@ Also load the device-mapper kernel module without which grub-probe does not reli
 
 There are 3 ways to install grub2 boot files in BIOS booting：
 
-*   [#Install_to_440-byte_MBR_boot_code_region](#Install_to_440-byte_MBR_boot_code_region) (recommended) ,
-*   [#Install_to_Partition_or_Partitionless_Disk](#Install_to_Partition_or_Partitionless_Disk) (not recommended),
-*   [#Generate_core.img_alone](#Generate_core.img_alone) (safest method, but requires another BIOS bootloader like [grub-legacy](/index.php/Grub-legacy "Grub-legacy") or [syslinux](/index.php/Syslinux "Syslinux") to be installed to chainload `/boot/grub/core.img` ).
+*   [#Install to 440-byte MBR boot code region](#Install_to_440-byte_MBR_boot_code_region) (recommended) ,
+*   [#Install to Partition or Partitionless Disk](#Install_to_Partition_or_Partitionless_Disk) (not recommended),
+*   [#Generate core.img alone](#Generate_core.img_alone) (safest method, but requires another BIOS bootloader like [grub-legacy](/index.php/Grub-legacy "Grub-legacy") or [syslinux](/index.php/Syslinux "Syslinux") to be installed to chainload `/boot/grub/core.img` ).
 
 ###### Install to 440-byte MBR boot code region
 
@@ -376,7 +376,7 @@ Finally, generate a configuration for grub2 (this is explained in greater detail
 
 The GRUB_PREFIX env variable is supported in extra/grub2-common >=1:1.99-6 package.
 
-If grub2 complains about "no suitable mode found" while booting, go to [#Correct_GRUB2_No_Suitable_Mode_Found_Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error).
+If grub2 complains about "no suitable mode found" while booting, go to [#Correct GRUB2 No Suitable Mode Found Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error).
 
 If `grub-mkconfig` fails, convert your `/boot/grub/menu.lst` file to `/boot/grub/grub.cfg` using:
 
@@ -597,13 +597,13 @@ In all the cases the UEFI SYSTEM PARTITION should be mounted for grub_efi_x86_64
 
 If you notice carefully, there is no <device_path> option (Eg: `/dev/sda`) at the end of the `grub_efi_x86_64-install` command unlike the case of setting up grub2 for BIOS systems. Any <device_path> provided will be ignored by the install script as UEFI bootloaders do not use MBR or Partition boot sectors at all.
 
-You may now be able to UEFI boot your system by creating a grub.cfg file by following [#Generate_GRUB2_UEFI_Config_file](#Generate_GRUB2_UEFI_Config_file) and [#Create_GRUB2_entry_in_the_Firmware_Boot_Manager](#Create_GRUB2_entry_in_the_Firmware_Boot_Manager).
+You may now be able to UEFI boot your system by creating a grub.cfg file by following [#Generate GRUB2 UEFI Config file](#Generate_GRUB2_UEFI_Config_file) and [#Create GRUB2 entry in the Firmware Boot Manager](#Create_GRUB2_entry_in_the_Firmware_Boot_Manager).
 
 ##### Create GRUB2 entry in the Firmware Boot Manager
 
 ###### Non-Mac UEFI systems
 
-grub_efi_${UEFI_ARCH}-install will ensure that `/boot/efi/efi/arch_grub/grubx64.efi` is launched by default if it detects `efibootmgr` and if it is able to access UEFI Runtime Services. Follow [Unified_Extensible_Firmware_Interface#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface") for more info.
+grub_efi_${UEFI_ARCH}-install will ensure that `/boot/efi/efi/arch_grub/grubx64.efi` is launched by default if it detects `efibootmgr` and if it is able to access UEFI Runtime Services. Follow [Unified Extensible Firmware Interface#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface") for more info.
 
 If you have problems running GRUB2 in UEFI mode you can try the following (worked on an ASUS Z68 mainboard):
 
@@ -678,7 +678,7 @@ If you used `--boot-directory=/boot` :
 
 This is independent of the value of --bootloader-id option. The `GRUB_PREFIX` env variable is supported in extra/grub2-common >=1:1.99-6 package.
 
-If grub2-uefi complains about "no suitable mode found" while booting, try [#Correct_GRUB2_No_Suitable_Mode_Found_Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error).
+If grub2-uefi complains about "no suitable mode found" while booting, try [#Correct GRUB2 No Suitable Mode Found Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error).
 
 ##### Create GRUB2 Standalone UEFI Application
 
@@ -888,7 +888,7 @@ kernel      /boot/grub/core.img
 
 ### Visual Configuration
 
-In GRUB2 it is possible, by default, to change the look of the menu. Make sure to initialize, if not done already, grub2 graphical terminal, gfxterm, with proper video mode, gfxmode, in grub2\. This can be seen in the section [#Correct_GRUB2_No_Suitable_Mode_Found_Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error). This video mode is passed by grub2 to the linux kernel via 'gfxpayload' so any visual configurations need this mode in order to be in effect.
+In GRUB2 it is possible, by default, to change the look of the menu. Make sure to initialize, if not done already, grub2 graphical terminal, gfxterm, with proper video mode, gfxmode, in grub2\. This can be seen in the section [#Correct GRUB2 No Suitable Mode Found Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error). This video mode is passed by grub2 to the linux kernel via 'gfxpayload' so any visual configurations need this mode in order to be in effect.
 
 #### Setting the framebuffer resolution
 

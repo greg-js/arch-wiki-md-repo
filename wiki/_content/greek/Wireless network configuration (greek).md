@@ -497,7 +497,7 @@ support | Roaming
 or changed location) | [PPP](https://en.wikipedia.org/wiki/point-to-point_protocol "wikipedia:point-to-point protocol") support
 (e.g. 3G modem) | Official
 GUI | Console tools |
-| [Connman](/index.php/Connman "Connman") | Yes | Yes | Yes | No | `connmanctl` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | Yes | Yes | No | `connmanctl` |
 | [Netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | No | `netctl`,`wifi-menu` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | Yes | `wicd-curses` |

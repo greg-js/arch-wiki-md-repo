@@ -78,7 +78,7 @@ $ cryptsetup benchmark
 
 can give guidance on deciding for an algorithm and key-size prior to installation. If certain AES ciphers excel with a considerable higher throughput, these are probably the ones with hardware support in the CPU.
 
-**Tip:** You may want to practise encrypting a virtual hard drive in a [virtual machine](/index.php/Category:Virtualization "Category:Virtualization") when learning.
+**Tip:** You may want to practise encrypting a virtual hard drive in a [virtual machine](/index.php/Virtual_machine "Virtual machine") when learning.
 
 ### Cryptsetup passphrases and keys
 
@@ -101,7 +101,7 @@ The other ones are
 
 *   `--type plain` for using dm-crypt plain mode,
 *   `--type loopaes` for a loopaes legacy mode, and
-*   `--type tcrypt` for a [Truecrypt](/index.php/Truecrypt "Truecrypt") compatibility mode.
+*   `--type tcrypt` for a [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") compatibility mode.
 
 The basic cryptographic options for encryption cipher and hashes available can be used for all modes and rely on the kernel cryptographic backend features. All that are loaded at runtime can be viewed with
 
@@ -135,7 +135,7 @@ is all that is needed to create a new LUKS device with default parameters (`-v` 
 Defaults are compared with a cryptographically higher specification example in the table below, with accompanying comments:
 
 | Options | Cryptsetup 1.7.0 defaults | Example | Comment |
-| --cipher, -c | `aes-xts-plain64` | `aes-xts-plain64` | [Release 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) changed the defaults to an AES [cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") in [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") mode (see item 5.16 [of the FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). It is advised against using the previous default `--cipher aes-cbc-essiv` because of its known [issues](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29) and practical [attacks](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) against them. |
+| --cipher, -c | `aes-xts-plain64` | `aes-xts-plain64` | [Release 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) changed the defaults to an AES [cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") in [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") mode (see item 5.16 [of the FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). It is advised against using the previous default `--cipher aes-cbc-essiv` because of its known [issues](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") and practical [attacks](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) against them. |
 | --key-size, -s | `256` | `512` | By default a 256 bit key-size is used. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so to use AES-256 instead of AES-128 you have to set the XTS key-size to `512`. |
 | --hash, -h | `sha256` | `sha512` | Hash algorithm used for [key derivation](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Release 1.7.0 changed defaults from `sha1` to `sha256` "*not for security reasons [but] mainly to prevent compatibility problems on hardened systems where SHA1 is already [being] phased out*"[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). The former default of `sha1` can still be used for compatibility with older versions of *cryptsetup* since it is [considered secure](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (see item 5.20). |
 | --iter-time, -i | `2000` | `5000` | Number of milliseconds to spend with PBKDF2 passphrase processing. Release 1.7.0 changed defaults from `1000` to `2000` to "*try to keep PBKDF2 iteration count still high enough and also still acceptable for users.*"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). This option is only relevant for LUKS operations that set or change passphrases, such as *luksFormat* or *luksAddKey*. Specifying 0 as parameter selects the compiled-in default.. |
@@ -230,7 +230,7 @@ See [#Keyfiles](#Keyfiles) for instructions on how to generate and manage keyfil
 
 Once the LUKS partitions have been created, they can then be unlocked.
 
-The unlocking process will map the partitions to a new device name using the device mapper. This alerts the kernel that `*device*` is actually an encrypted device and should be addressed through LUKS using the `/dev/mapper/*dm_name*` so as not to overwrite the encrypted data. To guard against accidental overwriting, read about the possibilities to [backup the cryptheader](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption") after finishing setup.
+The unlocking process will map the partitions to a new device name using the device mapper. This alerts the kernel that `*device*` is actually an encrypted device and should be addressed through LUKS using the `/dev/mapper/*dm_name*` so as not to overwrite the encrypted data. To guard against accidental overwriting, read about the possibilities to [backup the cryptheader](#Backup_and_restore) after finishing setup.
 
 In order to open an encrypted LUKS partition execute:
 
@@ -268,7 +268,7 @@ To close the luks container, unmount the partition and do:
 
 ### Encrypting devices with plain mode
 
-The creation and subsequent access of a *dm-crypt* plain mode encryption both require not more than using the *cryptsetup* `open` action with correct [parameters](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption"). The following shows that with two examples of non-root devices, but adds a quirk by stacking both (i.e. the second is created inside the first). Obviously, stacking the encryption doubles overhead. The usecase here is simply to illustrate another example of the cipher option usage.
+The creation and subsequent access of a *dm-crypt* plain mode encryption both require not more than using the *cryptsetup* `open` action with correct [parameters](#Encryption_options_for_plain_mode). The following shows that with two examples of non-root devices, but adds a quirk by stacking both (i.e. the second is created inside the first). Obviously, stacking the encryption doubles overhead. The usecase here is simply to illustrate another example of the cipher option usage.
 
 A first mapper is created with *cryptsetup's* plain-mode defaults, as described in the table's left column above
 
@@ -796,18 +796,18 @@ Use the `--key-file` option when opening the LUKS device:
 
 ### Unlocking a secondary partition at boot
 
-If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). Following on from the first example above
+If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). Following on from the first example above
 
  `/etc/crypttab`  `home    /dev/sda2    /etc/mykeyfile` 
 
 is all needed for unlocking, and
 
  `/etc/fstab`  `/dev/mapper/home        /home   ext4        defaults        0       2` for mounting the LUKS blockdevice with the generated keyfile.
-**Tip:** If you prefer to use a `--plain` mode blockdevice, the encryption options necessary to unlock it are specified in `/etc/crypttab`. Take care to apply the systemd workaround mentioned in [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") in this case.
+**Tip:** If you prefer to use a `--plain` mode blockdevice, the encryption options necessary to unlock it are specified in `/etc/crypttab`. Take care to apply the systemd workaround mentioned in [crypttab](/index.php/Crypttab "Crypttab") in this case.
 
 ### Unlocking the root partition at boot
 
-This is simply a matter of configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to include the necessary modules or files and configuring the [cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") to know where to find the keyfile.
+This is simply a matter of configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to include the necessary modules or files and configuring the [cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to know where to find the keyfile.
 
 Two cases will be covered:
 

@@ -165,7 +165,7 @@ Vedi [questo articolo](http://www.linuxjournal.com/article/2770) ( in inglese) s
 
 ### D) Dov'è finito tutto il mio spazio libero?
 
-**R)** La risposta a questa domanda dipende esclusivamente dal proprio sistema. Ci sono alcuni [tools](/index.php/Common_Applications_(Italiano)#Programmi_per_la_visualizzazione_dell.27uso_del_Disco "Common Applications (Italiano)") che possono aiutare molto.
+**R)** La risposta a questa domanda dipende esclusivamente dal proprio sistema. Ci sono alcuni [toolsche](/index.php/Common_Applications_(Italiano)#Programmi_per_la_visualizzazione_dell.27uso_del_Disco "Common Applications (Italiano)") possono aiutare molto.
 
 ## Gestione Pacchetti
 

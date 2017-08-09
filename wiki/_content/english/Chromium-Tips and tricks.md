@@ -355,7 +355,7 @@ By default Chromium auto-detects which password store to use, which can lead to 
 
 You can force Chromium to use a specific password store by launching it with the `--password-store` flag with one of following the values [[4]](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_password_storage.md):
 
-*   `gnome`, uses [Gnome Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   `gnome`, uses [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring")
 *   `kwallet`, uses [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet")
 *   `basic`, saves the passwords and the cookies' encryption key as plain text in the file `Login Data`
 *   `detect`, the default auto-detect behavior

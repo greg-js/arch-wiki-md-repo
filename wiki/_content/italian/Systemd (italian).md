@@ -220,7 +220,7 @@ $ systemctl hybrid-sleep
 
 ## Avviare DM con systemd
 
-Per avviare il login grafico, abilitare il demone del suo [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)") corrispondente (per esempio [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)")). Attualmente esistono i .service per [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)"), [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)"), [XDM](/index.php/XDM "XDM") and [LXDM](/index.php/LXDM "LXDM") e [LightDM](/index.php/LightDM "LightDM").
+Per avviare il login grafico, abilitare il demone del suo [Display Manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)") corrispondente (per esempio [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)")). Attualmente esistono i .service per [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)"), [SLiM](/index.php/SLiM_(Italiano) "SLiM (Italiano)"), [XDM](/index.php/XDM "XDM") and [LXDM](/index.php/LXDM "LXDM") e [LightDM](/index.php/LightDM "LightDM").
 
 ```
 # systemctl enable kdm
@@ -556,7 +556,7 @@ Systemd avvia tutti gli eseguibili in `/usr/lib/systemd/system-sleep/` e passa d
 
 Al contrario di [Pm-utils](/index.php/Pm-utils_(Italiano) "Pm-utils (Italiano)"), systemd avvierà questi scripts contemporaneamente e non uno dopo l'altro.
 
-L'output di ogni script personalizzato sarà registrato da `systemd-suspend.service`, `systemd-hibernate.service` oppure `systemd-hybrid-sleep.service` cosicché sarà possibile vedere i propri outputs nel [journal](/index.php/Systemd_(Italiano)#Il_Journal "Systemd (Italiano)"):
+L'output di ogni script personalizzato sarà registrato da `systemd-suspend.service`, `systemd-hibernate.service` oppure `systemd-hybrid-sleep.service` cosicché sarà possibile vedere i propri outputs nel [journal](#Il_Journal):
 
 ```
 # journalctl -b -u systemd-suspend

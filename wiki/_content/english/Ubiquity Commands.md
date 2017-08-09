@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Ubiquity commands](/index.php?title=Ubiquity_commands&redirect=no "Ubiquity commands")
+*   [Firefox/Ubiquity commands](/index.php/Firefox/Ubiquity_commands "Firefox/Ubiquity commands")

@@ -77,7 +77,7 @@ Kernel 4.11.2-1-ARCH FN+f5 lowers brightness, fn+f6 increases brightness, fn+f11
 
 ## See also
 
-*   [Asus Zenbook UX330UA](https://wiki.archlinux.org/index.php/Asus_Zenbook_UX330UA)
+*   **Asus Zenbook UX330UA**
 *   [https://forums.linuxmint.com/viewtopic.php?t=243645](https://forums.linuxmint.com/viewtopic.php?t=243645)
 *   [https://www.reddit.com/r/linuxhardware/comments/6aylzz/asus_zenbook_ux330uaah5q_good_for_gnulinux/](https://www.reddit.com/r/linuxhardware/comments/6aylzz/asus_zenbook_ux330uaah5q_good_for_gnulinux/)
 *   [https://www.reddit.com/r/linuxhardware/comments/5eqpyt/asus_ux330uaah54_anyone_running_linux_on_this_one/](https://www.reddit.com/r/linuxhardware/comments/5eqpyt/asus_ux330uaah54_anyone_running_linux_on_this_one/)

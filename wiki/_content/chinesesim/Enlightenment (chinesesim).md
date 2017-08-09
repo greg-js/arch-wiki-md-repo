@@ -95,7 +95,7 @@ Enlightenment 提供了一个精巧的配置系统，可以从主菜单中选择
 
 **ConnMan**
 
-Enlightenment 首选的网络管理器是 [ConnMan](/index.php/Connman "Connman") ，包名： [connman](https://www.archlinux.org/packages/?name=connman) 。配置方法参见：[Connman](/index.php/Connman "Connman")。
+Enlightenment 首选的网络管理器是 [ConnMan](/index.php/ConnMan "ConnMan") ，包名： [connman](https://www.archlinux.org/packages/?name=connman) 。配置方法参见：[ConnMan](/index.php/ConnMan "ConnMan")。
 
 为实现更多的配置，还可以安装 Econnman （AUR 中的 [econnman](https://aur.archlinux.org/packages/econnman/) 或 [econnman-git](https://aur.archlinux.org/packages/econnman-git/)）及其相关依赖包。
 

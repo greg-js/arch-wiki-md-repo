@@ -344,8 +344,8 @@ Hybrid镜像是一个CD和硬盘镜像。
 
 ### UEFI 参考
 
-*   [Create UEFI bootable USB from ISO](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Archboot)
-*   [Remove UEFI boot support from ISO](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Archboot_2)
+*   [Create UEFI bootable USB from ISO](/index.php/Unified_Extensible_Firmware_Interface#Archboot "Unified Extensible Firmware Interface")
+*   [Remove UEFI boot support from ISO](/index.php/Unified_Extensible_Firmware_Interface#Archboot_2 "Unified Extensible Firmware Interface")
 
 ### Bugs
 

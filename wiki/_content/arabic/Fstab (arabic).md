@@ -68,7 +68,7 @@
 *   `suid` - Allow the operation of suid, and sgid bits. They are mostly used to allow users on a computer system to execute binary executables with temporarily elevated privileges in order to perform a specific task.
 *   `nosuid` - Block the operation of suid, and sgid bits.
 *   `noatime` - Don't update inode access times on the filesystem. Can help performance (see [atime options](#atime_options)).
-*   `nodiratime` - Do not update directory inode access times on the filesystem. Can help performance (see [atime options](#atime_.D8.AE.D9.8A.D8.A7.D8.B1.D8.A7.D8.AA)).
+*   `nodiratime` - Do not update directory inode access times on the filesystem. Can help performance (see [atime options](#.D8.AE.D9.8A.D8.A7.D8.B1.D8.A7.D8.AA_atime)).
 *   `relatime` - Update inode access times relative to modify or change time. Access time is only updated if the previous access time was earlier than the current modify or change time. (Similar to noatime, but doesn't break mutt or other applications that need to know if a file has been read since the last time it was modified.) Can help performance (see [atime options](/index.php/Fstab#atime_options "Fstab")).
 *   `flush` - The `vfat` option to flush data more often, thus making copy dialogs or progress bars to stay up until all data is written.
 *   `defaults` - the default mount options for the filesystem to be used. The default options for `ext4` are: `rw`, `suid`, `dev`, `exec`, `auto`, `nouser`, `async`.

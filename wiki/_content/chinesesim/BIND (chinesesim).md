@@ -1,11 +1,15 @@
-**翻译状态：** 本文是英文页面 [BIND](/index.php/BIND "BIND") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-22，点击[这里](https://wiki.archlinux.org/index.php?title=BIND&diff=0&oldid=431453)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [BIND](/index.php/BIND "BIND") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-07，点击[这里](https://wiki.archlinux.org/index.php?title=BIND&diff=0&oldid=474888)可以查看翻译后英文页面的改动。
 
-伯克利互联网名称服务 (Berkeley Internet Name Daemon，简称 BIND) 是 DNS 协议的一个参考实现。
+伯克利互联网名称服务 (Berkeley Internet Name Daemon，简称 [BIND](https://www.isc.org/downloads/bind/)) 是 DNS 协议的一个参考实现。
+
+**注意:** 开发 BIND 的组织在发现安全漏洞之后，会先通知付费客户，四天以后才会通知 Linux 发行版和大众。[[1]](https://kb.isc.org/article/AA-00861/0/ISC-Software-Defect-and-Security-Vulnerability-Disclosure-Policy.html)
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 缓存 DNS 服务器](#.E7.BC.93.E5.AD.98_DNS_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+*   [2 Configuration](#Configuration)
+    *   [2.1 只允许本地访问](#.E5.8F.AA.E5.85.81.E8.AE.B8.E6.9C.AC.E5.9C.B0.E8.AE.BF.E9.97.AE)
+    *   [2.2 DNS 转发](#DNS_.E8.BD.AC.E5.8F.91)
 *   [3 权威 DNS 服务器](#.E6.9D.83.E5.A8.81_DNS_.E6.9C.8D.E5.8A.A1.E5.99.A8)
     *   [3.1 1\. 创建一个 zonefile](#1._.E5.88.9B.E5.BB.BA.E4.B8.80.E4.B8.AA_zonefile)
     *   [3.2 2\. 配置主服务器](#2._.E9.85.8D.E7.BD.AE.E4.B8.BB.E6.9C.8D.E5.8A.A1.E5.99.A8)
@@ -19,9 +23,19 @@
 
 ## 安装
 
-以下步骤可以协助您安装 BIND 并将其配置成一个本地缓存服务器。
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 软件包 [bind](https://www.archlinux.org/packages/?name=bind)。
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")[官方源](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")中的 [bind](https://www.archlinux.org/packages/?name=bind)。
+要使用 BIND 提供系统 DNS 服务，修改 [resolv.conf](/index.php/Resolv.conf "Resolv.conf")，将`nameserver 127.0.0.1`放到最前面。
+
+[开始/启用](/index.php/Start/enable "Start/enable") `named.service` 服务。
+
+## Configuration
+
+BIND 的配置文件是 `/etc/named.conf`. `named.conf` man 手册页介绍了所有选项。
+
+[Reload](/index.php/Reload "Reload") the `named.service` unit to apply configuration changes.
+
+### 只允许本地访问
 
 如果希望只允许本地网络访问，编辑 `/etc/named.conf` 并将这行配置加入到 **options** 区域。
 
@@ -30,21 +44,12 @@ listen-on { 127.0.0.1; };
 
 ```
 
-修改 [resolv.conf](/index.php/Resolv.conf "Resolv.conf") 以使用本地的 DNS 服务器，127.0.0.1。
+### DNS 转发
 
-开始 `named.service` 服务。
-
-## 缓存 DNS 服务器
-
-当 BIND 被配置为缓存服务器的时候，它只会回应已缓存的请求，并将所有其他的请求转发到上游的 DNS 服务器（例如说您的 ISP 的服务器，或者 Google、OpenNIC 等知名的服务）。
-
-将以下配置加入到 `/etc/named.conf` 的 global 或特定的域名区域中，并根据个人情况修改相应 IP 地址。
+要将 DNS 请求请求转发到上游 DNS 服务器（例如说您的 ISP 的服务器，或者 Google、OpenNIC 等知名的服务）。将下面字段加入配置文件的 options 中。.
 
 ```
-options {
- listen-on { 192.168.66.1; };
  forwarders { 8.8.8.8; 8.8.4.4; };
-};
 
 ```
 
@@ -105,9 +110,7 @@ zone "domain.tld" IN {
 
 ```
 
-开始/启用 `named.service` 即可。如果已经运行了的话，可以直接重新加载配置文件。
-
-最后一个参数可以确保 DNS 服务在配置文件被修改的情况下依旧可以继续运行。
+[重新加载](/index.php/Reload "Reload") `named.service` 服务。
 
 ### 3\. 将其设置为默认 DNS 服务器
 
@@ -129,7 +132,12 @@ allow-recursion { 192.168.0.0/24; 127.0.0.1; };
 
 ## 配置 DNSSEC
 
-参见 [DNSSEC#BIND (serving signed DNS zones)](/index.php/DNSSEC#BIND_.28serving_signed_DNS_zones.29 "DNSSEC")。
+*   [http://www.dnssec.net/practical-documents](http://www.dnssec.net/practical-documents)
+    *   [http://www.cymru.com/Documents/secure-bind-template.html](http://www.cymru.com/Documents/secure-bind-template.html) **(configuration template!)**
+    *   [http://www.bind9.net/manuals](http://www.bind9.net/manuals)
+    *   [http://www.bind9.net/BIND-FAQ](http://www.bind9.net/BIND-FAQ)
+*   [http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/](http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/)
+*   Or use an external mechanisms such as OpenDNSSEC (fully-automatic key rollover)
 
 ## 自动监听新的网络接口
 
@@ -159,6 +167,7 @@ interface-interval <扫描间隔>;
  # Copy over required system files
  cp -av /etc/{localtime,named.conf} /srv/named/etc/
  cp -av /usr/lib/engines/* /srv/named/usr/lib/engines/
+ cp -av /var/named/* /srv/named/var/named/.
  # Set up required dev nodes
  mknod /srv/named/dev/null c 1 3
  mknod /srv/named/dev/random c 1 8
@@ -191,6 +200,7 @@ interface-interval <扫描间隔>;
 
 ## 参见
 
+*   [BIND 9 Administrator Reference Manual](https://www.isc.org/downloads/bind/doc/)
 *   [BIND 9 DNS Administration Reference Book](http://www.reedmedia.net/books/bind-dns/)
 *   [DNS and BIND by Cricket Liu and Paul Albitz](http://shop.oreilly.com/product/9780596100575.do)
 *   [Pro DNS and BIND](http://www.netwidget.net/books/apress/dns/intro.html)

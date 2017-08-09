@@ -409,7 +409,7 @@ systemd 提供了自己的日誌系統（logging system），稱為 [journald](/
 
 預設情況下（當 `Storage=` 在檔案 `/etc/systemd/journald.conf` 中被設定為 `auto`），日誌記錄将被寫入 `/var/log/journal/`。該目錄是 [systemd](https://www.archlinux.org/packages/?name=systemd) 軟體包的一部分。若被删除，systemd **不會**自動創建它，直到下次升級軟體包时重建該目錄。如果該目錄缺失，systemd 會將日誌記錄寫入 `/run/systemd/journal`。這意味著，系統重啟後日誌將丟失。
 
-**Tip:** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 檔案系統，應該考慮對這個目錄禁用寫入時複製（COW，Copy On Write），參閱[Btrfs#Copy-On-Write (CoW)](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs").
+**Tip:** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 檔案系統，應該考慮對這個目錄禁用寫入時複製（COW，Copy On Write），參閱[Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs").
 
 ### 過濾輸出
 

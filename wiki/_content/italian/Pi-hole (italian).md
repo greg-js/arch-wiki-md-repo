@@ -151,7 +151,7 @@ Installa il pacchetto [pi-hole-standalone](https://aur.archlinux.org/packages/pi
 
 #### Dnsmasq
 
-La configurazione è identica ai passaggi descritti in [Pi-hole_(Italiano)#Dnsmasq](/index.php/Pi-hole_(Italiano)#Dnsmasq "Pi-hole (Italiano)").
+La configurazione è identica ai passaggi descritti in [#Dnsmasq](#Dnsmasq).
 
 #### Openresolve
 

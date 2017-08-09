@@ -331,7 +331,7 @@ grub-install: error: failed to get canonical path of `/dev/bus-Your_Disk_ID-part
 
 ```
 
-Rebuilding GRUB with ZFS support via the [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") will ensure the tools properly support the filesystem and alleviate the errors. The [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") provides a set of tools that can be used to create and package software for installation on Arch Linux systems. [subversion](https://www.archlinux.org/packages/?name=subversion) is utilised to access the package sources and must be installed before proceeding. The base and base-devel package groups must be installed prior to building packages and GRUB also requires: autogen, fuse2, help2man, python, rsync and ttf-dejavu to be present.
+Rebuilding GRUB with ZFS support via the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") will ensure the tools properly support the filesystem and alleviate the errors. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") provides a set of tools that can be used to create and package software for installation on Arch Linux systems. [subversion](https://www.archlinux.org/packages/?name=subversion) is utilised to access the package sources and must be installed before proceeding. The base and base-devel package groups must be installed prior to building packages and GRUB also requires: autogen, fuse2, help2man, python, rsync and ttf-dejavu to be present.
 
 After satisfying all of the prerequisites, checkout and build the GRUB package from source. The ABS tools do not allow building packages as root.
 

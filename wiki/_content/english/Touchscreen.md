@@ -130,7 +130,7 @@ In Firefox's URL bar type `about:config`, and set these values:
 
 ```
 
-Additionally, you'll need to set your [environment_variables](/index.php/Environment_variables "Environment variables"):
+Additionally, you'll need to set your [environment variables](/index.php/Environment_variables "Environment variables"):
 
 ```
  export MOZ_USE_XINPUT2=1

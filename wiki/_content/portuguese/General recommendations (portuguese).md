@@ -82,7 +82,7 @@ O comano [su](/index.php/Su "Su") (abreviação de *substitute user* ou "substit
 
 ### Gerenciamento de serviço
 
-Arch Linux usa [systemd](/index.php/Systemd "Systemd") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd#Basic systemctl uso](/index.php/Systemd#Basic_systemctl_uso "Systemd") para mais informações.
+Arch Linux usa [systemd](/index.php/Systemd "Systemd") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd#Basic systemctl usage](/index.php/Systemd#Basic_systemctl_usage "Systemd") para mais informações.
 
 ### Manutenção de sistema
 

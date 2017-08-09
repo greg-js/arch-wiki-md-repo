@@ -77,7 +77,7 @@ Ci sono due modi per configurare una stampante:
 
 ## Installare il server
 
-Sono richiesti i seguenti pacchetti che sono tutti [installabili](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repositories ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)").
+Sono richiesti i seguenti pacchetti che sono tutti [installabili](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repositories ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 *   [cups](https://www.archlinux.org/packages/?name=cups) - Il software CUPS vero e proprio (demone)
 *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) - L'interprete per il linguaggio PostScript
@@ -628,7 +628,7 @@ Assicurarsi d'aver installato dbus e di averlo avviato. Se ci fossero ancora pro
 
 Provare ad aggiungere la stampante come Stampante di Rete (Network Printer) usando il protocollo http://. Generare l'URI della stampante con `hp-makeuri`.
 
-**Nota:** C'è la possibilità che si renda necessario cambiare i permessi di CUPS. Si segua quanto scritto [qui](/index.php/CUPS_(Italiano)#Permessi_del_device_node "CUPS (Italiano)").
+**Nota:** C'è la possibilità che si renda necessario cambiare i permessi di CUPS. Si segua quanto scritto [qui](#Permessi_del_device_node).
 
 #### HPLIP tutti i lavori vengono segnati come ultimati ma non si è riusciti a stampare niente
 

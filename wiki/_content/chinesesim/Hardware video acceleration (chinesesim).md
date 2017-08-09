@@ -199,7 +199,7 @@ $ export DRI_PRIME=1
 
 	[https://bomi-player.github.io](https://bomi-player.github.io) || [bomi](https://aur.archlinux.org/packages/bomi/) [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 
-*   **[Mpv](/index.php/Mpv "Mpv")** — 见 [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv").
+*   **[Mpv](/index.php/Mpv "Mpv")** — 见 [Mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv").
 
 	|| [mpv](https://www.archlinux.org/packages/?name=mpv)
 

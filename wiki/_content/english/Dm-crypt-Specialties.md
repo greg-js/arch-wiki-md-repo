@@ -145,11 +145,11 @@ This hook requires [grub](https://www.archlinux.org/packages/?name=grub) release
 
 #### Installation
 
-[Install](/index.php/Install "Install") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) and edit `/etc/default/chkcryptoboot.conf`. If you want the ability of detecting if your boot partition was bypassed, edit the `CMDLINE_NAME` and `CMDLINE_VALUE` variables, with values known only to you. You can follow the advice of using two hashes as is suggested right after the installation. Also, be sure to make the appropriate changes to the [kernel command line](/index.php/Kernel_parameters "Kernel parameters") in `/etc/default/grub`. Edit the `HOOKS=` line in `/etc/mkinitcpio.conf`, and insert the `chkcryptoboot` hook **before** `encrypt`. When finished, [rebuild](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs.
+[Install](/index.php/Install "Install") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) and edit `/etc/default/chkcryptoboot.conf`. If you want the ability of detecting if your boot partition was bypassed, edit the `CMDLINE_NAME` and `CMDLINE_VALUE` variables, with values known only to you. You can follow the advice of using two hashes as is suggested right after the installation. Also, be sure to make the appropriate changes to the [kernel command line](/index.php/Kernel_command_line "Kernel command line") in `/etc/default/grub`. Edit the `HOOKS=` line in `/etc/mkinitcpio.conf`, and insert the `chkcryptoboot` hook **before** `encrypt`. When finished, [rebuild](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") the initramfs.
 
 #### Technical Overview
 
-[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) consists of an install hook and a run-time hook for mkinitcpio. The install hook runs every time the initramfs is rebuilt, and hashes the GRUB [EFI](/index.php/UEFI "UEFI") stub (`$esp/EFI/grub_uefi/grubx64.efi`) (in the case of [UEFI](/index.php/UEFI "UEFI") systems) or the first 446 bytes of the disk on which GRUB is installed (in the case of BIOS systems), and stores that hash inside the initramfs located inside the encrypted `/boot` partition. When the system is booted, GRUB prompts for the `/boot` password, then the run-time hook performs the same hashing operation and compares the resulting hashes before prompting for the root partition password. If they do not match, the hook will print an error like this:
+[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) consists of an install hook and a run-time hook for mkinitcpio. The install hook runs every time the initramfs is rebuilt, and hashes the GRUB [EFI](/index.php/EFI "EFI") stub (`$esp/EFI/grub_uefi/grubx64.efi`) (in the case of [UEFI](/index.php/UEFI "UEFI") systems) or the first 446 bytes of the disk on which GRUB is installed (in the case of BIOS systems), and stores that hash inside the initramfs located inside the encrypted `/boot` partition. When the system is booted, GRUB prompts for the `/boot` password, then the run-time hook performs the same hashing operation and compares the resulting hashes before prompting for the root partition password. If they do not match, the hook will print an error like this:
 
 ```
 CHKCRYPTOBOOT ALERT!
@@ -234,7 +234,7 @@ The recommended hooks are: `base autodetect modconf block filesystems keyboard f
 
 Another package combination providing remote logins to the initcpio is [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.
 
-1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine). If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of using [Ed25519 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
+1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine). If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of using [Ed25519 keys](/index.php/SSH_keys#Ed25519 "SSH keys").
 2.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file.
     **Tip:** This method can later be used to add other SSH public keys as needed; In the case of simply copying the content of the remote's `~/.ssh/authorized_keys`, be sure to verify that it only contains keys you intend to be using to unlock the remote machine. When adding additional keys, regenerate your initrd as well using `mkinitcpio`. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
 
@@ -243,7 +243,7 @@ Another package combination providing remote logins to the initcpio is [mkinitcp
 
 4.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments. For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be using: `ip=192.168.1.1:::::eth0:none` 
     **Note:** As of version 0.0.4 of [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/), you can nest multiple `ip=` parameters in order to configure multiple interfaces. You cannot mix it with `ip=dhcp` (`ip=:::::eth0:dhcp`) alone. An interface needs to be specified.
-     `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` For a detailed description have a look at the [according mkinitcpio section](/index.php/Mkinitcpio#Using_net "Mkinitcpio"). When finished, update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders").
+     `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` For a detailed description have a look at the [according mkinitcpio section](/index.php/Mkinitcpio#Using_net "Mkinitcpio"). When finished, update the configuration of your [bootloader](/index.php/Bootloader "Bootloader").
 5.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Client_usage "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of installing [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) so you can use the same keys as your [openssh](https://www.archlinux.org/packages/?name=openssh) installation (currently only Ed25519 keys). In either case, you should have run [the ssh daemon](/index.php/Secure_Shell#Daemon_management "Secure Shell") at least once, using the provided systemd units, so the keys can be generated first. After rebooting the machine, you should be prompted for the passphrase to unlock the root device. Afterwards, the system will complete its boot process and you can ssh to it [as you normally would](/index.php/Secure_Shell#Client_usage "Secure Shell") (with the remote user of your choice).
 
 **Tip:** If you would simply like a nice solution to mount other encrypted partitions (such as `/home`) remotely, you may want to look at [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=880484).
@@ -318,7 +318,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
 6.  [Regenerate the intiramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader").
 
-Remember to setup [wifi](/index.php/Wireless_network_configuration "Wireless network configuration"), so you are able to login once the system is fully booted. In case you are unable to connect to the wifi network, try increasing the sleep times a bit.
+Remember to setup [wifi](/index.php/Wifi "Wifi"), so you are able to login once the system is fully booted. In case you are unable to connect to the wifi network, try increasing the sleep times a bit.
 
 ## Discard/TRIM support for solid state drives (SSD)
 
@@ -436,7 +436,7 @@ It is possible to modify the encrypt hook to allow multiple hard drive decrypt r
 
 ```
 
-Add `cryptdevice2=` to your boot options (and `cryptkey2=` if needed), and add the `encrypt2` hook to your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") before rebuilding it. See [Dm-crypt/System_configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration").
+Add `cryptdevice2=` to your boot options (and `cryptkey2=` if needed), and add the `encrypt2` hook to your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") before rebuilding it. See [dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration").
 
 #### Multiple non-root partitions
 
@@ -549,7 +549,7 @@ if resolved=$(resolve_device "${cryptdev}" ${rootdelay}); then
         dopassphrase=1
 ```
 
-Now edit the [mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio") to add the `encrypt2` and `lvm2` hooks, the `header.img` to `FILES` and the `loop` to `MODULES`, apart from other configuration the system requires:
+Now edit the [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to add the `encrypt2` and `lvm2` hooks, the `header.img` to `FILES` and the `loop` to `MODULES`, apart from other configuration the system requires:
 
  `/etc/mkinitcpio.conf` 
 ```

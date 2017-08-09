@@ -67,7 +67,7 @@ Filesystems based on copy-on-write, such as Btrfs and ZFS, have no need to use t
 
 Some FUSE-based file systems:
 
-*   **adbfs-git** — Mount an Android device filesystem.
+*   **adbfs-git** — Mount an Android device connected via USB.
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
@@ -139,7 +139,7 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 
 	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 
-*   **[GlusterFS](/index.php/GlusterFS "GlusterFS")** — Cluster file system capable of scaling to several peta-bytes.
+*   **[Glusterfs](/index.php/Glusterfs "Glusterfs")** — Cluster file system capable of scaling to several peta-bytes.
 
 	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
 

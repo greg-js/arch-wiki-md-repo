@@ -62,7 +62,7 @@ Andy Lutomirski has created a patchset which fixes power saving for NVME devices
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
 
-For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_parameters "Kernel parameters").
+For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
 
 For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all PS-States is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). For the 1TB SSD this valued should be increased to 180000 instead. To check if all states are enabled you can use the [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) package, which provides the `nvme-cli` command:
 
@@ -194,16 +194,76 @@ Also disabling or reducing power of wifi may help: [http://en.community.dell.com
 
 ### Thunderbolt Firmware updates
 
-The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories, the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware, but unfortunately, does not provide the updated payload files. These can be extracted from the Windows firmware update files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
+The thunderbolt controller in the laptop has an embedded firmware. The laptop ships with firmware version NVM 18, and the most recent available version from Dell's website is NVM 21\. If encountering compatibility problems with Thunderbolt accessories (such as the DA-200), the firmware may need to be updated. Dell maintains a [Github repository](https://github.com/dell/thunderbolt-nvm-linux) explaining the process to update the firmware, but unfortunately, does not provide the updated payload files. These can be extracted from the Windows firmware update files. Mainline support for the firmware update process is pending the inclusion of [these patches](https://github.com/01org/thunderbolt-software-kernel-tree/tree/networking) into the Linux kernel.
 
-Here is a short list of steps to update the Thunderbolt-Firmware (use at your own risk):
+Here is a short list of steps to update the Thunderbolt-Firmware on linux 4.12+ (use at your own risk):
 
-*   Install [thunderbolt-icm-dkms-git](https://aur.archlinux.org/packages/thunderbolt-icm-dkms-git/), [thunderboltd-git](https://aur.archlinux.org/packages/thunderboltd-git/), [libtbtfwu-git](https://aur.archlinux.org/packages/libtbtfwu-git/) and [tbtfwucli-git](https://aur.archlinux.org/packages/tbtfwucli-git/)
-*   Load the thunderbolt-icm kernel module and start thunderbolt.service
+*   Install [libsmbios](https://www.archlinux.org/packages/?name=libsmbios) and [efivar](https://www.archlinux.org/packages/?name=efivar)
+*   Clone [dell Thunderbolt Force Tool](https://github.com/dell/thunderbolt-nvm-linux)
+*   Build the Dell Force tool
+
+```
+# gcc -o force_dell_tbt force_dell_tbt.c -I /usr/include/efivar/ -lsmbios_c -lefivar
+
+```
+
+*   Force the controller to accept updates
+
+```
+# ./force_dell_tbt 1
+
+```
+
+*   Install [thunderbolt-dkms-git](https://aur.archlinux.org/packages/thunderbolt-dkms-git/)
+*   Load the thunderbolt module (the controller *must* be in force mode before this step)
+
+```
+# modprobe thunderbolt
+
+```
+
 *   Download the Intel_TBT3_FW_UPDATE_*.exe from Dell's website
-*   Unpack the exe with 7z x Intel_TBT3_FW_UPDATE_*.exe
-*   Follow the update instructions at [Dell's TB Github repository](https://github.com/dell/thunderbolt-nvm-linux), Using the correct Firmware file from the extracted exe (Intel/0x075B.bin for the 9360 according to the info in Dell's Repository
-*   Hope everything goes well and reboot after finishing the update
+*   Unpack the exe with
+
+```
+# 7z x Intel_TBT3_FW_UPDATE_*.exe
+
+```
+
+*   Flash the 9360 firmware to a non active NVME memory spot
+
+```
+# dd if=0x075B_secure.bin of=/sys/bus/thunderbolt/devices/0-0/nvm_non_active0/nvmem
+
+```
+
+*   Trigger the update process
+
+```
+# echo 1 > /sys/bus/thunderbolt/devices/0-0/nvm_authenticate
+
+```
+
+*   At this point, your screen should flickr a couple of time. Verify that the update is done by checking that authenticate returns 0
+
+```
+# cat /sys/bus/thunderbolt/devices/0-0/nvm_authenticate
+
+```
+
+*   Verify the new nvme version (it should return 21.0)
+
+```
+# cat /sys/bus/thunderbolt/devices/0-0/nvm_version
+
+```
+
+*   Put the controller back in normal mode
+
+```
+# ./force_dell_tbt 0
+
+```
 
 ## SATA controller
 

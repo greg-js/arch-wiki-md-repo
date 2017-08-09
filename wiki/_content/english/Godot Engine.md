@@ -20,7 +20,7 @@ If you want to install from the AUR, use the package [godot-git](https://aur.arc
 
 ### Export templates
 
-To be able to export your project, you will need prebuilt binaries. If using the Git version, you will need to compile them yourself as described seperately for each platform on [the wiki](http://godotengine.org/projects/godot-engine/wiki/). If you're using the stable version, you can install the export templates provided by Godot. Install them by clicking on the engine settings icon in the top right corner, and then press "Install export templates" and provide the downloaded templates.
+To be able to export your project, you will need prebuilt binaries. If using the Git version, you will need to compile them yourself as described seperately for each platform on [the wiki](http://docs.godotengine.org/en/stable/development/compiling/introduction_to_the_buildsystem.html#export-templates). If you're using the stable version, you can install the export templates provided by Godot. Install them by clicking on the engine settings icon in the top right corner, and then press "Install export templates" and provide the downloaded templates.
 
 ## See also
 

@@ -134,8 +134,9 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [60 Life is Strange](#Life_is_Strange)
 *   [61 The Long Dark](#The_Long_Dark)
     *   [61.1 Game does not start](#Game_does_not_start_8)
-    *   [61.2 Game starts, but some overlay text is missing](#Game_starts.2C_but_some_overlay_text_is_missing)
-    *   [61.3 Cursor disappears](#Cursor_disappears)
+    *   [61.2 Game starts, but some overlay text is missing and cutscenes shows black screen](#Game_starts.2C_but_some_overlay_text_is_missing_and_cutscenes_shows_black_screen)
+    *   [61.3 Cutscenes are still black](#Cutscenes_are_still_black)
+    *   [61.4 Cursor disappears](#Cursor_disappears)
 *   [62 Mark of the Ninja](#Mark_of_the_Ninja)
     *   [62.1 Bad sound](#Bad_sound)
 *   [63 Metro: Last Light](#Metro:_Last_Light)
@@ -161,76 +162,78 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [72.1 No sound](#No_sound_6)
 *   [73 Redshirt](#Redshirt)
 *   [74 Revenge of the Titans](#Revenge_of_the_Titans)
-*   [75 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-*   [76 Saints Row IV](#Saints_Row_IV)
-    *   [76.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-    *   [76.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-*   [77 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [77.1 No audio](#No_audio_2)
-*   [78 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [78.1 No audio](#No_audio_3)
-*   [79 Spacechem](#Spacechem)
-    *   [79.1 Game crash](#Game_crash)
-*   [80 Splice](#Splice)
-*   [81 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [82 The Stanley Parable](#The_Stanley_Parable)
-    *   [82.1 Game won't start](#Game_won.27t_start)
-*   [83 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-*   [84 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [84.1 Start with black screen](#Start_with_black_screen)
-    *   [84.2 No English fonts](#No_English_fonts)
-*   [85 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [85.1 No sound](#No_sound_7)
-*   [86 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-*   [87 Tabletop Simulator](#Tabletop_Simulator)
-    *   [87.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [88 Team Fortress 2](#Team_Fortress_2)
-    *   [88.1 HRTF setup](#HRTF_setup)
-    *   [88.2 Loading screen freeze](#Loading_screen_freeze)
-    *   [88.3 No audio](#No_audio_4)
-    *   [88.4 Slow loading textures](#Slow_loading_textures)
-*   [89 Terraria](#Terraria)
-*   [90 This War of Mine](#This_War_of_Mine)
-    *   [90.1 Game does not start](#Game_does_not_start_10)
-    *   [90.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-*   [91 Ticket to Ride](#Ticket_to_Ride)
-*   [92 Tomb Raider](#Tomb_Raider)
-    *   [92.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [92.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-*   [93 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-*   [94 Transistor](#Transistor)
-    *   [94.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
-*   [95 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [95.1 Troubleshooting](#Troubleshooting)
-*   [96 Trine 2](#Trine_2)
-    *   [96.1 Colors](#Colors)
-    *   [96.2 Sound](#Sound)
-    *   [96.3 Resolution](#Resolution)
-*   [97 Tropico 5](#Tropico_5)
-    *   [97.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [98 Unity of Command](#Unity_of_Command)
-    *   [98.1 Squares](#Squares)
-    *   [98.2 No audio](#No_audio_5)
-*   [99 Unity3D](#Unity3D)
-    *   [99.1 Locale settings](#Locale_settings)
-    *   [99.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [99.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-    *   [99.4 Missing Chinese/Japanese/Korea fonts](#Missing_Chinese.2FJapanese.2FKorea_fonts)
-*   [100 Unrest](#Unrest)
-*   [101 War Thunder](#War_Thunder)
-    *   [101.1 No audio](#No_audio_6)
-    *   [101.2 Blank screen](#Blank_screen)
-*   [102 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-*   [103 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [103.1 Game does not start](#Game_does_not_start_11)
-*   [104 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-*   [105 World of Goo](#World_of_Goo)
-    *   [105.1 Changing resolution](#Changing_resolution)
-*   [106 XCOM](#XCOM)
-    *   [106.1 Hangs on startup](#Hangs_on_startup)
-    *   [106.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
-*   [107 Tower Unite](#Tower_Unite)
-    *   [107.1 Graphical Glitches](#Graphical_Glitches)
+*   [75 Risk of Rain](#Risk_of_Rain)
+*   [76 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+*   [77 Saints Row IV](#Saints_Row_IV)
+    *   [77.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+    *   [77.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+*   [78 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+    *   [78.1 No audio](#No_audio_2)
+*   [79 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [79.1 No audio](#No_audio_3)
+*   [80 Spacechem](#Spacechem)
+    *   [80.1 Game crash](#Game_crash)
+*   [81 Splice](#Splice)
+*   [82 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [83 The Stanley Parable](#The_Stanley_Parable)
+    *   [83.1 Game won't start](#Game_won.27t_start)
+*   [84 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+*   [85 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [85.1 Start with black screen](#Start_with_black_screen)
+    *   [85.2 No English fonts](#No_English_fonts)
+*   [86 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [86.1 No sound](#No_sound_7)
+*   [87 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [88 Tabletop Simulator](#Tabletop_Simulator)
+    *   [88.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [89 Team Fortress 2](#Team_Fortress_2)
+    *   [89.1 HRTF setup](#HRTF_setup)
+    *   [89.2 Loading screen freeze](#Loading_screen_freeze)
+    *   [89.3 No audio](#No_audio_4)
+    *   [89.4 Slow loading textures](#Slow_loading_textures)
+*   [90 Terraria](#Terraria)
+*   [91 This War of Mine](#This_War_of_Mine)
+    *   [91.1 Game does not start](#Game_does_not_start_10)
+    *   [91.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+*   [92 Ticket to Ride](#Ticket_to_Ride)
+*   [93 Tomb Raider](#Tomb_Raider)
+    *   [93.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [93.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+*   [94 Tower Unite](#Tower_Unite)
+    *   [94.1 Graphical Glitches](#Graphical_Glitches)
+*   [95 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+*   [96 Transistor](#Transistor)
+    *   [96.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_audio_issues)
+*   [97 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [97.1 Troubleshooting](#Troubleshooting)
+*   [98 Trine 2](#Trine_2)
+    *   [98.1 Colors](#Colors)
+    *   [98.2 Sound](#Sound)
+    *   [98.3 Resolution](#Resolution)
+*   [99 Tropico 5](#Tropico_5)
+    *   [99.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [100 Unity of Command](#Unity_of_Command)
+    *   [100.1 Squares](#Squares)
+    *   [100.2 No audio](#No_audio_5)
+*   [101 Unity3D](#Unity3D)
+    *   [101.1 Locale settings](#Locale_settings)
+    *   [101.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [101.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+    *   [101.4 Missing Chinese/Japanese/Korea fonts](#Missing_Chinese.2FJapanese.2FKorea_fonts)
+*   [102 Unrest](#Unrest)
+*   [103 War Thunder](#War_Thunder)
+    *   [103.1 No audio](#No_audio_6)
+    *   [103.2 Blank screen](#Blank_screen)
+*   [104 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+*   [105 Worms W.M.D](#Worms_W.M.D)
+*   [106 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [106.1 Game does not start](#Game_does_not_start_11)
+*   [107 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+*   [108 World of Goo](#World_of_Goo)
+    *   [108.1 Changing resolution](#Changing_resolution)
+*   [109 XCOM](#XCOM)
+    *   [109.1 Hangs on startup](#Hangs_on_startup)
+    *   [109.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Common steps
 
@@ -690,7 +693,7 @@ The problem is caused by the font packages: [ttf-dejavu](https://www.archlinux.o
 
 ### Chinese input method problem
 
-Dota2 is compatible with [Ibus](/index.php/Ibus "Ibus") .
+Dota2 is compatible with [IBus](/index.php/IBus "IBus") .
 
 ## Drox Operative
 
@@ -1054,7 +1057,7 @@ LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-l
 
 ```
 
-### Game starts, but some overlay text is missing
+### Game starts, but some overlay text is missing and cutscenes shows black screen
 
 In addition to the command above, add the following to the Steam launch command:
 
@@ -1077,9 +1080,15 @@ LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-l
 
 ```
 
+### Cutscenes are still black
+
+Turn off Vertical Sync in the Display options, and/or set POST FX to Low in the Quality options, and/or turn global Quality options down a notch.
+
 ### Cursor disappears
 
 Go to Options > Controls, and set mouse locking to unlocked.
+
+The options is visible only if you're navigating using your (invisible) mouse. It will not show up when navigating with a controller. One solution is to go to Options -> Controls with a controller before switching to the mouse and trying to blindly it the setting.
 
 ## Mark of the Ninja
 
@@ -1219,6 +1228,15 @@ Requires [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpuls
 ## Revenge of the Titans
 
 Requires [libxtst](https://www.archlinux.org/packages/?name=libxtst) and [lib32-libxtst](https://www.archlinux.org/packages/?name=lib32-libxtst).
+
+## Risk of Rain
+
+Requires [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat). Then symlink it with this command :
+
+```
+$ ln -s /usr/lib32/libcurl.so.3 ~/.steam/steam/steamapps/common/Risk\ of\ Rain/lib/libcurl.so.4
+
+```
 
 ## Rock Boshers DX: Directors Cut
 
@@ -1496,6 +1514,12 @@ If your Steam Controller is correctly recognized and paired but still not workin
 
 Correctly recognized means you can control the desktop mouse and Steam in Big Picture mode and the controller is shown in the Big Picture settings.
 
+## Tower Unite
+
+### Graphical Glitches
+
+This is a known issue, and it occurs because the shaders had not been ported to Linux yet by the developers. To minimize glitches and make the game playable add `-opengl4` to your [launch options](/index.php/Launch_option "Launch option"), set Ocean Quality to "Potato" and Effects Quality to "Low" in the game settings.
+
 ## Towns / Towns Demo
 
 Requires [Java](/index.php/Java "Java").
@@ -1685,6 +1709,21 @@ with:
 
  `LD_PRELOAD_ADDITIONS="/usr/lib64/libasound.so.2:${LD_PRELOAD_ADDITIONS}"` 
 
+## Worms W.M.D
+
+The game includes several workarounds in the `Run.sh` script, however these may not work and it is easy to get the game running without this script.
+
+First, try running the game directly from its SteamApps directory (usually `~/.steam/steam/steamapps/common/WormsWMD/Worms W.M.Dx64`). If you get a "No such file or directory" error about libcurl-gnutls, install [libcurl-gnutls](https://www.archlinux.org/packages/?name=libcurl-gnutls). If the game crashes after playing the intro movies, add the Steam Runtime dbus libraries to the game's library directory:
+
+```
+$ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbus* ~/.steam/steam/steamapps/common/WormsWMD/lib
+
+```
+
+Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[12]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[13]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
+
+On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
+
 ## Witcher 2: Assassin of Kings
 
 Dependencies:
@@ -1752,10 +1791,4 @@ __GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
 
 XCOM may not recognize the SDL2 shared libraries shipped with the Steam runtime. Check if the binary finds all required files and install missing packages if necessary ([sdl2](https://www.archlinux.org/packages/?name=sdl2) and [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image)).
 
- `ldd ~/.steam/root/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
-
-## Tower Unite
-
-### Graphical Glitches
-
-This is a known issue, and it occurs because the shaders had not been ported to Linux yet by the developers. To minimize glitches and make the game playable add `-opengl4` to your [launch options](/index.php/Launch_option "Launch option"), set Ocean Quality to "Potato" and Effects Quality to "Low" in the game settings.
+ `ldd ~/.steam/root/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 `

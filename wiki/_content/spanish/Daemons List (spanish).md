@@ -15,7 +15,7 @@ La columna *Paquete* contiene un enlace a la página de ArchWiki relativa a cada
 | [CDemu](/index.php/CDemu "CDemu") | cdemud | cdemu-daemon.service | Emulador de dispositivo CD/DVD-ROM. |
 | [ClamAV](/index.php/ClamAV "ClamAV") | clamav | clamd.service
 freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
-| [Connman](/index.php/Connman "Connman") | connmand | connman.service | Administrador de conexiones de red cableadas e inalámbricas. |
+| [ConnMan](/index.php/ConnMan "ConnMan") | connmand | connman.service | Administrador de conexiones de red cableadas e inalámbricas. |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Ajusta el gobernador de [cpufreq](/index.php/CPU_frequency_scaling "CPU frequency scaling") y otros parámetros en el arranque. |
  craftbukkit | *aún no implementado* | Servidor CraftBukkit Minecraft. |
 | [Cron](/index.php/Cron "Cron") | crond | cronie.service (si se usa [cronie](https://www.archlinux.org/packages/?name=cronie)) o dcron.service (si se una [dcron](https://aur.archlinux.org/packages/dcron/)) | Demonio para programar y temporizar eventos. El nombre del demonio *crond* es usado, al menos, por dos paquetes: [cronie](https://www.archlinux.org/packages/?name=cronie) y [dcron](https://aur.archlinux.org/packages/dcron/). |

@@ -172,7 +172,7 @@ TFTP-сервер будет использоваться для передач�
 
 #### NBD
 
-Пакет [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/) должен быть установлен на клиенте. Соберите его с помощью *makepkg* и установите его:
+Пакет [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/) должен быть установлен на клиенте. Соберите его с помощью *[makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")* и установите его:
 
 ```
 # pacman --root "$root" --dbpath "$root/var/lib/pacman" -U mkinitcpio-nbd-0.4-1-any.pkg.tar.xz

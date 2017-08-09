@@ -367,7 +367,8 @@ O script *paccache*, fornecido pelo próprio pacote [pacman](https://www.archlin
 
 ```
 
-**Dica:** Você pode criar [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") para executar isso automaticamente após cada transação do pacman. Veja [[este tópico](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743)] para obter exemplos.
+**Dica:**
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
 
 Você pode definir quantas versões recentes deseja manter:
 

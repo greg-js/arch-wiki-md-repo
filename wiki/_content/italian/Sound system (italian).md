@@ -9,8 +9,7 @@
     *   [2.2 PulseAudio](#PulseAudio)
     *   [2.3 NAS](#NAS)
 *   [3 Programmi Audio](#Programmi_Audio)
-*   [4 Latenza](#Latenza)
-*   [5 Articoli Correlati](#Articoli_Correlati)
+*   [4 Articoli Correlati](#Articoli_Correlati)
 
 ## Driver
 
@@ -56,10 +55,7 @@ Chiamato anche JACK-mp è la prossima versione di JACK, con supporto per sistemi
 
 ## Programmi Audio
 
-*   [Riproduttori audio leggeri](/index.php/Lightweight_Applications_(Italiano)#Audio_Players "Lightweight Applications (Italiano)")
-*   [Applicazioni audio comuni (riproduttori, visualizzazione, editor)](/index.php/Common_Applications_(Italiano)#Audio "Common Applications (Italiano)")
-
-## Latenza
+*   [Riproduttori audio leggeri](/index.php/Lightweight_Applications_(Italiano)#Audio_Players "Lightweight Applications (Italiano)")*[Applicazioni audio comuni (riproduttori, visualizzazione, editor)](/index.php/Common_Applications_(Italiano)#Audio "Common Applications (Italiano)")==Latenza==
 
 *   irqbalance
 *   linux-rt

@@ -1,4 +1,4 @@
-*systemd-firstboot* allows for the setting of basic system settings before or during the first boot of a newly created system image. The four manipulable settings are the system [timezone](/index.php/Time "Time"), [locale](/index.php/Locale "Locale"), [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"), the root password, as well as automated generation of a machine id.
+*systemd-firstboot* allows for the setting of basic system settings before or during the first boot of a newly created system image. The four manipulable settings are the system [timezone](/index.php/Time "Time"), [locale](/index.php/Locale "Locale"), [hostname](/index.php/Hostname "Hostname"), the root password, as well as automated generation of a machine id.
 
 As *systemd-firstboot* interacts with the filesystem directly, and doesn't make use of related systemd services (such as timedatectl, hostnamectl or localectl), it should not be executed on an already running system.
 
@@ -28,7 +28,7 @@ A default Arch Linux installation will set most variables *systemd-firstboot* is
 
 Allowing *systemd-firstboot* to manipulate a previously un-booted Arch Linux installation is particularly useful in situations where installation is undertaken by an individual other than the eventual end user, such as in the distribution of laptops with a pre-loaded install.
 
-The following steps should be appended to the end of the [Configure the system section](/index.php/Installation_Guide#Configure_the_system "Installation Guide") of the [Installation Guide](/index.php/Installation_Guide "Installation Guide"), before the target partitions are unmounted, thus taking place within the chroot of the new installation. Make sure all locales you want available have been generated, non-generated ones will not be offered as a possible setting.
+The following steps should be appended to the end of the [Configure the system section](/index.php/Installation_guide#Configure_the_system "Installation guide") of the [Installation guide](/index.php/Installation_guide "Installation guide"), before the target partitions are unmounted, thus taking place within the chroot of the new installation. Make sure all locales you want available have been generated, non-generated ones will not be offered as a possible setting.
 
 #### Delete existing settings
 

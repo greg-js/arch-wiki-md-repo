@@ -49,7 +49,7 @@
 Остальные пакеты, которые вам могут понадобиться доступны в [AUR](/index.php/AUR "AUR"):
 
 *   [traverso](https://aur.archlinux.org/packages/traverso/)
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (смотрите также [Linuxsampler](/index.php/Linuxsampler "Linuxsampler"))
+*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (смотрите также [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
 *   [carla](https://aur.archlinux.org/packages/carla/)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)

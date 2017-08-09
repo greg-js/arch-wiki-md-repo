@@ -144,7 +144,7 @@ Finally, you can also use [phpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBo
 
 Refer to the [VirtualBox manual](https://www.virtualbox.org/manual) to learn how to create virtual machines.
 
-**Warning:** If you intend to store virtual disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, before creating any images, you should consider disabling [copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the destination directory of these images.
+**Warning:** If you intend to store virtual disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, before creating any images, you should consider disabling [copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the destination directory of these images.
 
 ## Installation steps for Arch Linux guests
 

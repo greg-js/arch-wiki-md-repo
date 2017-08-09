@@ -588,11 +588,7 @@ Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/m
 
 ### 独立章节
 
-```
-中文乱码解决：
-zh.reg
-
-```
+中文乱码解决，新建一个reg文件（例如 zh.reg）添加如下内容：
 
 ```
  REGEDIT4
@@ -600,20 +596,22 @@ zh.reg
  [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
  "Lucida Sans Unicode"="wqy-microhei.ttc"
  "Microsoft Sans Serif"="wqy-microhei.ttc"
+ "Microsoft YaHei"="SourceHanSansCN-Medium.otf"
  "MS Sans Serif"="wqy-microhei.ttc"
  "Tahoma"="wqy-microhei.ttc" 
  "Tahoma Bold"="wqy-microhei.ttc"
  "SimSun"="wqy-microhei.ttc"
  "Arial"="wqy-microhei.ttc"
  "Arial Black"="wqy-microhei.ttc"
+ "宋体"="SourceHanSansCN-Medium.otf"
+ "新細明體"="SourceHanSansCN-Medium.otf"
 
 ```
 
-**Note:** 需要将上面的字体复制到WINEPREFIX目录下的drive_c/windows/Fonts/
+保存文件后后运行：
 
 ```
-然后运行：
-regedit zh.reg
+ $regedit zh.reg
 
 ```
 

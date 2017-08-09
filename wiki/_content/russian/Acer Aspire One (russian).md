@@ -772,7 +772,7 @@ echo "action=/sbin/poweroff" >> /etc/acpi/events/power
 
 ### Программы для работы в текстовом режиме
 
-В текстовом режиме можно редактировать текст - vi ( [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") обычно уже установлен в базовом варианте), отправлять и принимать почту - , слушать музыку и смотреть видео - mplayer (его установку см. [здесь](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)")), серфить - [lynx](http://ru.wikipedia.org/wiki/Lynx) (установка: `pacman -S lynx`), работать в файл менеджером - mc (установка [Midnight Commander](http://ru.wikipedia.org/wiki/Midnight_Commander): `pacman -S mc`).
+В текстовом режиме можно редактировать текст - vi ( [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") обычно уже установлен в базовом варианте), отправлять и принимать почту - , слушать музыку и смотреть видео - mplayer (его установку см. [здесь](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)")), серфить - [lynx](https://ru.wikipedia.org/wiki/Lynx) (установка: `pacman -S lynx`), работать в файл менеджером - mc (установка [Midnight Commander](https://ru.wikipedia.org/wiki/Midnight_Commander): `pacman -S mc`).
 
 #### Установка универсального проигрывателя
 
@@ -1235,7 +1235,7 @@ A list of games working on your One and configuration tips for those can be foun
 
 ### Настройка внешнего порта VGA
 
-Внешний порт VGA работает без дополнительных модификаций конфига, если внешний монитор подключен до загрузки ArchLinux. Если подключение случилось позже, то порт VGA активизируется настройками в xrandr. Смотреть секцию [Дополнительные функциональные клавиши](/index.php/Acer_Aspire_One_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8 "Acer Aspire One (Русский)").
+Внешний порт VGA работает без дополнительных модификаций конфига, если внешний монитор подключен до загрузки ArchLinux. Если подключение случилось позже, то порт VGA активизируется настройками в xrandr. Смотреть секцию [Дополнительные функциональные клавиши](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8).
 
 ### Обновление ядра
 
@@ -1365,7 +1365,7 @@ none                   /var/tmp      tmpfs     defaults,size=20M   0      0
 
 ```
 
-Зарубежные арчелюбители предлагают вместо [Ext2](http://ru.wikipedia.org/wiki/Ext2) пользовать [XFS](http://ru.wikipedia.org/wiki/XFS).
+Зарубежные арчелюбители предлагают вместо [Ext2](https://ru.wikipedia.org/wiki/Ext2) пользовать [XFS](https://ru.wikipedia.org/wiki/XFS).
 
 Перезагрузить нетбук, набрав в командной строке: `reboot`
 

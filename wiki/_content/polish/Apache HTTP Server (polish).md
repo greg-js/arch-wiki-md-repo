@@ -2,7 +2,7 @@
 
 Z tego artykułu dowiesz się jak zainstalować oraz wstępnie skonfigurować serwer apache bazę danych [MYSQL](/index.php?title=MYSQL&action=edit&redlink=1 "MYSQL (page does not exist)") i środowisko [PHP](/index.php/PHP "PHP") .
 
-Jeśli potrzebujesz serwer środowisko do prowadzenia testów polecam prostsze rozwiązanie jakim jest [Xampp](/index.php/Xampp "Xampp")
+Jeśli potrzebujesz serwer środowisko do prowadzenia testów polecam prostsze rozwiązanie jakim jest [XAMPP](/index.php/XAMPP "XAMPP")
 
 ## Instalacja
 

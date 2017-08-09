@@ -604,7 +604,7 @@ pcm.!default {
 }
 ```
 
-If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work with the above configuration. The configuration below enables sound in flash, but you have to specify the sound card manually in the line `pcm "hw:0,0"` (use `aplay -l` to list the available sound card and relative card and device number):
+If you have a x86_64-system and are using [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) the sound in flash will not work with the above configuration. The configuration below enables sound in flash, but you have to specify the sound card manually in the line `pcm "hw:0,0"` (use `aplay -l` to list the available sound card and relative card and device number):
 
  `/etc/asound.conf` 
 ```

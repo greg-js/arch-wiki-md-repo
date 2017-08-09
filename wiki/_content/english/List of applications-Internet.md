@@ -86,7 +86,7 @@
 
 #### Network managers
 
-*   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
@@ -1438,7 +1438,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Rainbowstream** — A powerful and fully-featured console Twitter client written in Python.
 
-	[http://www.rainbowstream.org/](http://www.rainbowstream.org/) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
+	[https://github.com/orakaro/rainbowstream](https://github.com/orakaro/rainbowstream) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
 
 *   **oysttyer** — (official fork of ttytter) An interactive console text-based command-line Twitter client written in Perl.
 

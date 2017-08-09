@@ -163,6 +163,6 @@ esac
 
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 *   [NetworkManager](/index.php/NetworkManager "NetworkManager")
-*   [connman](/index.php/Connman "Connman")
+*   [ConnMan](/index.php/ConnMan "ConnMan")
 *   [python-pia GitHub](https://github.com/flamusdiu/python-pia/)
 *   [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/)

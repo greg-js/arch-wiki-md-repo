@@ -77,7 +77,7 @@
 
 ### Gerenciadores de Rede
 
-*   **[Connman](/index.php/Connman "Connman")** — Daemon para gerenciar conexões com a internet dentro de dispositivos embarcados rodando o sistema operacional Linux. Vem com um cliente de linha de comando, além do Enlightenment, ncurses, os clientes do GTK e dmenu estão disponíveis.
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Daemon para gerenciar conexões com a internet dentro de dispositivos embarcados rodando o sistema operacional Linux. Vem com um cliente de linha de comando, além do Enlightenment, ncurses, os clientes do GTK e dmenu estão disponíveis.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 

@@ -53,7 +53,7 @@ outros programas podem substituir esta configuração. Veja [resolv.conf#Preserv
 
 ### Iniciando o serviço Systemd
 
-Finalmente, [inicie e habilite](https://wiki.archlinux.org/index.php/Systemd_(Português)#Usando_units) o `dnscrypt-proxy.service`
+Finalmente, [inicie e habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `dnscrypt-proxy.service`
 
 ## Dicas
 

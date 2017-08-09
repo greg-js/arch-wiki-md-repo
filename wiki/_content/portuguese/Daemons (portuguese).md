@@ -22,7 +22,7 @@ A coluna do *Pacote* contem um link para a Wiki relacionada daquele daemon(ou pa
 | [CDemu](/index.php/CDemu "CDemu") | cdemud | cdemu-daemon.service | Emulador de CD/DVD-ROM. |
 | [ClamAV](/index.php/ClamAV "ClamAV") | clamav | clamd.service
 freshclamd.service | Anti-virus para Unix. |
-| [Connman](/index.php/Connman "Connman") | connmand | connman.service | Gerenciador de redes sem fio. |
+| [ConnMan](/index.php/ConnMan "ConnMan") | connmand | connman.service | Gerenciador de redes sem fio. |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Configura governador de [frequência de cpu](/index.php/Cpufreq "Cpufreq") e outros parâmetros de inicialização. |
  craftbukkit | craftbukkit.service | Servidor de Minecraft CraftBukkit . |
 | [Cron](/index.php/Cron "Cron") | crond | cronie.service (se usando [cronie](https://www.archlinux.org/packages/?name=cronie)) ou dcron.service (se usando [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon para agendamento de eventos baseados em horário. O nome *crond* é utilizado por pelo menos dois pacotes, [cronie](https://www.archlinux.org/packages/?name=cronie) e [dcron](https://aur.archlinux.org/packages/dcron/). |

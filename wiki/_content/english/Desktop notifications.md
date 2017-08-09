@@ -575,7 +575,7 @@ Hello.show
 
 Using [notify-rust](https://crates.io/crates/notify-rust).
 
-*   Makedependency: [cargo](https://www.archlinux.org/packages/?name=cargo)
+*   Makedependency: [rust](https://www.archlinux.org/packages/?name=rust)
 *   Build with: `cargo build`
 *   Run with: `target/debug/hello_world` or `cargo run`
 

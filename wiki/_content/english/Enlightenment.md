@@ -93,7 +93,7 @@ Enlightenment has a sophisticated configuration system that can be accessed from
 
 **ConnMan**
 
-Enlightenment's preferred network manager is [ConnMan](/index.php/Connman "Connman") which can be installed from the [connman](https://www.archlinux.org/packages/?name=connman) package. Follow the instructions on [Connman](/index.php/Connman "Connman") to do the configuration.
+Enlightenment's preferred network manager is [ConnMan](/index.php/ConnMan "ConnMan") which can be installed from the [connman](https://www.archlinux.org/packages/?name=connman) package. Follow the instructions on [ConnMan](/index.php/ConnMan "ConnMan") to do the configuration.
 
 For extended configuration, you may also install Econnman (available in AUR as [econnman](https://aur.archlinux.org/packages/econnman/) or [econnman-git](https://aur.archlinux.org/packages/econnman-git/)) and its associated dependencies.
 

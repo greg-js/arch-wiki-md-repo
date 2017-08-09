@@ -134,7 +134,7 @@ Swap:         1537          0       1537
 
 ### أين اختفت كل مساحة جهازي الخالية؟
 
-الجواب على هذا السؤال يعتمد على نظامك، هناك بعض الأدوات الجيدة [fine utilities](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications") التي قد تساعدك في العثور على الجواب.
+الجواب على هذا السؤال يعتمد على نظامك، هناك بعض الأدوات الجيدة [fine utilities](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications")التي قد تساعدك في العثور على الجواب.
 
 ## إدارة الحزم
 

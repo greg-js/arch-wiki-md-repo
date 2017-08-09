@@ -45,7 +45,7 @@ Private Internet Access has an installation script that sets up [NetworkManager]
 
 	[https://www.privateinternetaccess.com/](https://www.privateinternetaccess.com/) || [pia-nm](https://aur.archlinux.org/packages/pia-nm/)
 
-*   **[Private Internet Access VPN](/index.php/Private_Internet_Access_VPN "Private Internet Access VPN")** — Installs profiles for [NetworkManager](/index.php/NetworkManager "NetworkManager"), [Connman](/index.php/Connman "Connman"), and [OpenVPN](/index.php/OpenVPN "OpenVPN").
+*   **[Private Internet Access VPN](/index.php/Private_Internet_Access_VPN "Private Internet Access VPN")** — Installs profiles for [NetworkManager](/index.php/NetworkManager "NetworkManager"), [ConnMan](/index.php/ConnMan "ConnMan"), and [OpenVPN](/index.php/OpenVPN "OpenVPN").
 
 	[https://www.privateinternetaccess.com/](https://www.privateinternetaccess.com/) || [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/)
 

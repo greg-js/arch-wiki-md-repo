@@ -17,16 +17,50 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Hardware](#Hardware)
-    *   [2.1 Audio](#Audio)
-    *   [2.2 Video](#Video)
-    *   [2.3 Keyboard](#Keyboard)
-    *   [2.4 Touchpad](#Touchpad)
-    *   [2.5 Touchscreen](#Touchscreen)
-    *   [2.6 Wireless](#Wireless)
-    *   [2.7 HDMI/Monitor](#HDMI.2FMonitor)
-    *   [2.8 USB, SD card slot, HDMI, webcam](#USB.2C_SD_card_slot.2C_HDMI.2C_webcam)
+*   [1 Hardware Details](#Hardware_Details)
+*   [2 Installation](#Installation)
+*   [3 Hardware](#Hardware)
+    *   [3.1 Audio](#Audio)
+    *   [3.2 Video](#Video)
+    *   [3.3 Keyboard](#Keyboard)
+    *   [3.4 Touchpad](#Touchpad)
+    *   [3.5 Touchscreen](#Touchscreen)
+    *   [3.6 Wireless](#Wireless)
+    *   [3.7 HDMI/Monitor](#HDMI.2FMonitor)
+    *   [3.8 USB, SD card slot, HDMI, webcam](#USB.2C_SD_card_slot.2C_HDMI.2C_webcam)
+
+## Hardware Details
+
+lspci:
+
+```
+00:00.0 Host bridge: Intel Corporation Device 5904 (rev 02)
+00:02.0 VGA compatible controller: Intel Corporation Device 5916 (rev 02)
+00:04.0 Signal processing controller: Intel Corporation Skylake Processor Thermal Subsystem (rev 02)
+00:13.0 Non-VGA unclassified device: Intel Corporation Device 9d35 (rev 21)
+00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem (rev 21)
+00:15.0 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller #0 (rev 21)
+00:15.1 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller #1 (rev 21)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-LP CSME HECI #1 (rev 21)
+00:17.0 SATA controller: Intel Corporation Sunrise Point-LP SATA Controller [AHCI mode] (rev 21)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #5 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Device 9d58 (rev 21)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
+00:1f.3 Audio device: Intel Corporation Device 9d71 (rev 21)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)
+01:00.0 Network controller: Intel Corporation Wireless 3165 (rev 79)
+```
+
+lsusb:
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 005: ID 04f3:2494 Elan Microelectronics Corp. 
+Bus 001 Device 003: ID 8087:0a2a Intel Corp. 
+Bus 001 Device 002: ID 0bda:58c6 Realtek Semiconductor Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
 
 ## Installation
 

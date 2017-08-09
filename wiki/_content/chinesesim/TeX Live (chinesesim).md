@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [TeXLive](/index.php/TeXLive "TeXLive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-05，点击[这里](https://wiki.archlinux.org/index.php?title=TeXLive&diff=0&oldid=439503)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [TeXLive](/index.php/TeXLive "TeXLive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-07，点击[这里](https://wiki.archlinux.org/index.php?title=TeXLive&diff=0&oldid=478813)可以查看翻译后英文页面的改动。
 
 [TeX Live](https://www.tug.org/texlive/)是"安装和运行[TeX](/index.php/Category:TeX "Category:TeX")文档制作系统的简单方式。它提供了一个全面的Tex系统，提供的二进制文件适用于大多数Unix风格操作系统(包括GNU/Linux)的二进制文件，当然也有Windows。它包含了全部主要的Tex相关的属于自由软件的程序，宏包，字体，还有对世界上很多语种的支持。"
 
@@ -9,26 +9,22 @@ Tex Live是[LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX")， [Co
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 texlive-most](#texlive-most)
-    *   [1.2 texlive-lang](#texlive-lang)
-    *   [1.3 手动安装TeXLive](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85TeXLive)
+    *   [1.1 手动安装TeXLive](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85TeXLive)
 *   [2 使用](#.E4.BD.BF.E7.94.A8)
-*   [3 重要信息](#.E9.87.8D.E8.A6.81.E4.BF.A1.E6.81.AF)
-    *   [3.1 纸张大小](#.E7.BA.B8.E5.BC.A0.E5.A4.A7.E5.B0.8F)
-    *   [3.2 升级时出现 "formats not generated" 错误](#.E5.8D.87.E7.BA.A7.E6.97.B6.E5.87.BA.E7.8E.B0_.22formats_not_generated.22_.E9.94.99.E8.AF.AF)
-    *   [3.3 字体](#.E5.AD.97.E4.BD.93)
-*   [4 中文化](#.E4.B8.AD.E6.96.87.E5.8C.96)
-*   [5 TeXLive Local Manager](#TeXLive_Local_Manager)
-    *   [5.1 "langukenglish" 错误](#.22langukenglish.22_.E9.94.99.E8.AF.AF)
-*   [6 安装 .sty 文件](#.E5.AE.89.E8.A3.85_.sty_.E6.96.87.E4.BB.B6)
-    *   [6.1 手工安装](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85)
-    *   [6.2 使用 PKGBUILD 安装](#.E4.BD.BF.E7.94.A8_PKGBUILD_.E5.AE.89.E8.A3.85)
-*   [7 更新 babelbib 语言定义](#.E6.9B.B4.E6.96.B0_babelbib_.E8.AF.AD.E8.A8.80.E5.AE.9A.E4.B9.89)
-*   [8 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
+    *   [2.1 纸张大小](#.E7.BA.B8.E5.BC.A0.E5.A4.A7.E5.B0.8F)
+    *   [2.2 升级时出现 "formats not generated" 错误](#.E5.8D.87.E7.BA.A7.E6.97.B6.E5.87.BA.E7.8E.B0_.22formats_not_generated.22_.E9.94.99.E8.AF.AF)
+    *   [2.3 字体](#.E5.AD.97.E4.BD.93)
+*   [3 中文化](#.E4.B8.AD.E6.96.87.E5.8C.96)
+*   [4 TeXLive Local Manager](#TeXLive_Local_Manager)
+*   [5 安装 .sty 文件](#.E5.AE.89.E8.A3.85_.sty_.E6.96.87.E4.BB.B6)
+    *   [5.1 手工安装](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85)
+    *   [5.2 使用 PKGBUILD 安装](#.E4.BD.BF.E7.94.A8_PKGBUILD_.E5.AE.89.E8.A3.85)
+*   [6 更新 babelbib 语言定义](#.E6.9B.B4.E6.96.B0_babelbib_.E8.AF.AD.E8.A8.80.E5.AE.9A.E4.B9.89)
+*   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 
 ## 安装
 
-Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official repositories")的两个软件包中:
+Tex Live 主要在[官方仓库](/index.php/Official_repositories "Official repositories")的两个软件组中:
 
 *   [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) 包括Tex Live应用
 *   [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) 提供个性化的设置和非英语特性
@@ -39,44 +35,6 @@ Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official
   /var/lib/texmf-var/arch/installedpkgs/<package>_<revnr>.pkgs
 
 ```
-
-### texlive-most
-
-| 
-
-*   [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin)
-*   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)
-*   [texlive-bibtexextra](https://www.archlinux.org/packages/?name=texlive-bibtexextra)
-*   [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra)
-*   [texlive-formatsextra](https://www.archlinux.org/packages/?name=texlive-formatsextra)
-*   [texlive-games](https://www.archlinux.org/packages/?name=texlive-games)
-
- | 
-
-*   [texlive-genericextra](https://www.archlinux.org/packages/?name=texlive-genericextra)
-*   [texlive-htmlxml](https://www.archlinux.org/packages/?name=texlive-htmlxml)
-*   [texlive-humanities](https://www.archlinux.org/packages/?name=texlive-humanities)
-*   [texlive-latexextra](https://www.archlinux.org/packages/?name=texlive-latexextra)
-*   [texlive-music](https://www.archlinux.org/packages/?name=texlive-music)
-
- | 
-
-*   [texlive-pictures](https://www.archlinux.org/packages/?name=texlive-pictures)
-*   [texlive-plainextra](https://www.archlinux.org/packages/?name=texlive-plainextra)
-*   [texlive-pstricks](https://www.archlinux.org/packages/?name=texlive-pstricks)
-*   [texlive-publishers](https://www.archlinux.org/packages/?name=texlive-publishers)
-*   [texlive-science](https://www.archlinux.org/packages/?name=texlive-science)
-
- |
-
-### texlive-lang
-
-*   [texlive-langchinese](https://www.archlinux.org/packages/?name=texlive-langchinese)
-*   [texlive-langcyrillic](https://www.archlinux.org/packages/?name=texlive-langcyrillic)
-*   [texlive-langgreek](https://www.archlinux.org/packages/?name=texlive-langgreek)
-*   [texlive-langjapanese](https://www.archlinux.org/packages/?name=texlive-langjapanese)
-*   [texlive-langkorean](https://www.archlinux.org/packages/?name=texlive-langkorean)
-*   [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra)
 
 **注意:** [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) 提供了对 African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan 和 Vietnamese 的语言支持.
 
@@ -96,33 +54,7 @@ $ pdftex '\empty Hello world!\bye'
 
 可以分别生成 DVI 和 PDF 文件.
 
-[TeX editor 汇总](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")了可用的图形界面.
-
-下面一些在线服务可以不用 TeX Live 就编辑 TeX 文档:
-
-*   **Authorea** — Online collaborative editor for scientific, academic, and technical documents.
-
-	[https://www.authorea.com/](https://www.authorea.com/) ||
-
-*   **ShareLaTeX** — An open source online LaTeX editor. You can either run your own local version where you can host, edit, collaborate in real-time, and compile your LaTeX documents, or simply use the version hosted on the official website.
-
-	[https://www.sharelatex.com/](https://www.sharelatex.com/) ||
-
-*   **Overleaf** — (Previously writeLaTeX) Online collaborative LaTeX editor with integrated real-time preview.
-
-	[https://www.overleaf.com/](https://www.overleaf.com/) ||
-
-*   **cloudTeX** — Social TeX in the cloud.
-
-	[https://cloud-tex.com/](https://cloud-tex.com/) ||
-
-*   **Papeeria** — Online LaTeX editor.
-
-	[http://papeeria.com/](http://papeeria.com/) ||
-
-更多信息请查看 [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
-
-## 重要信息
+[TeX editor 汇总](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")了可用的图形界面. 一些在线服务可以不用 TeX Live 就编辑 TeX 文档，请参考[LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 
 *   处理updmap字体映射的方法已经在2009年6月得到改善，安装应该比过去更加可靠。同时，如果你遇到关于不可用的字体映射文件的错误信息，简单地手工移除 `updmap.cfg` 文件 (最好使用 `updmap-sys --edit`)。你也可以运行 `updmap-sys --syncwithtrees` 自动地注释掉配置文件中的有关map的行。
 
@@ -132,7 +64,7 @@ $ pdftex '\empty Hello world!\bye'
 
 *   TeX Live (上游) 现在提供了一个升级CTAN中包的工具。在此基础上，我们也计划定期升级我们的包(我们已经写了几乎自动完成这个任务的工具)。
 
-*   有些包含在TeX Live中的工具和实用程序依赖 [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)，[perl](https://www.archlinux.org/packages/?name=perl)，and [ruby](https://www.archlinux.org/packages/?name=ruby)。
+*   有些包含在TeX Live中的工具和实用程序依赖 [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)，[perl](https://www.archlinux.org/packages/?name=perl)，[python2](https://www.archlinux.org/packages/?name=python2) 和 [ruby](https://www.archlinux.org/packages/?name=ruby)。
 
 *   寻求有关TeX Live的支持参见：[http://tug.org/texlive/doc.html](http://tug.org/texlive/doc.html) and [http://tug.org/texlive/doc/texlive-en/texlive-en.html](http://tug.org/texlive/doc/texlive-en/texlive-en.html)
 
@@ -254,78 +186,7 @@ CTeX宏包现在已经在texlive2011中，确保安装需要的中文字体如�
 
 ## TeXLive Local Manager
 
-现在有一个Firmicus提供的用来方便在archlinux上管理TeXLive的新工具。 参见 [AUR](/index.php/AUR "AUR") 中的 [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/)。
-
-```
-Usage: tllocalmgr  
-       tllocalmgr [options] [command] [args]
-
-       Running tllocalmgr alone starts the TeXLive local manager shell 
-       for Arch Linux。This shell is capable of command-line completion!
-       There you can look at the available updates with the command 'status' 
-       and you can install individual CTAN packages using 'install' or 'update'
-       under $TEXMFLOCAL。This is done by creating a package texlive-local-<pkg>
-       and installing it with pacman。Note that this won’t interfere with your 
-       standard texlive installation，but files under $TEXMFLOCAL will take
-       precedence。 
-
-       Here are the commands available in the shell:
-
-Commands:       
-              status   --   Current status of TeXLive installation
-           shortinfo * --   Print a one-liner description of CTAN packages
-                info * --   Print info on CTAN packages
-              update * --   Locally update CTAN packages
-             install * --   Locally install new CTAN packages
-          installdoc * --   Locally install documentation of CTAN packages
-          installsrc * --   Locally install sources of CTAN packages
-           listfiles * --   List all files in CTAN packages
-              search * --   Search info on CTAN packages
-         searchfiles * --   Search for files in CTAN packages
-             texhash   --   Refresh the TeX file database
-               clean   --   Clean local build tree
-                help   --   Print helpful information
-                quit   --   Quit tllocalmgr
-
-        The commands followed by * take one of more package names as arguments.
-        Note that these can be completed automatically by pressing TAB.
-
-        You can also run tllocalmgr as a standard command-line program，with
-        one of the above commands as argument，then the corresponding task will
-        be performed and the program will exit (except when the command is 'status').
-
-        tllocalmgr accepts the following options:
-
-Options:     --help          Shows this help
-             --version       Show the version number
-             --forceupdate   Force updating the TeXLive database
-             --skipupdate    Skip updating the TeXLive database
-             --localsearch   Search only installed packages
-             --location      #TODO?
-             --mirror        CTAN mirror to use (default is mirror.ctan.org)
-             --nocolor       #TODO
-
-```
-
-### "langukenglish" 错误
-
-当运行`tllocalmgr` 命令遇到以下问题,
-
-```
-Cannot get object for collection-langukenglish at /usr/bin/tllocalmgr line 103
-
-```
-
-参见 ary0在aur的解决方案: [texlive-localmanager](https://aur.archlinux.org/packages/texlive-localmanager/)。总之，编辑 `/usr/share/texmf-var/arch/tlpkg/TeXLive/Arch.pm` 并且将 "langukenglish" 从显示的部分移除:
-
-```
-my @core_colls =
-qw/ basic context genericrecommended fontsrecommended langczechslovak
-langdutch langfrench langgerman langitalian langpolish langportuguese
-langspanish **langukenglish** latex latexrecommended luatex mathextra metapost
-texinfo xetex /;
-
-```
+[texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/)提供了一个在 archlinux 上管理 TeXLive 的新工具。详情请参考[用法说明](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809)。
 
 ## 安装 .sty 文件
 

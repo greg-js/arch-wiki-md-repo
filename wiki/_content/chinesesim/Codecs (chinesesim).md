@@ -4,7 +4,7 @@
 
 通常来说，编解码器被多媒体应用程序用来编码或解码音频视频流。为了播放编码过的流媒体，用户必须确保安装了合适的编解码器。
 
-本文仅仅关心解码器和应用程序后端。参见 [Common Applications](/index.php/Common_Applications#Multimedia "Common Applications") 查看媒体播放器列表 ([MPlayer](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MPlayer (简体中文)") 和 [VLC](/index.php/VLC_media_player "VLC media player") 是常用的选择。)
+本文仅仅关心解码器和应用程序后端。参见 [Common Applications](/index.php/Common_Applications#Multimedia "Common Applications")查看媒体播放器列表 ([MPlayer](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MPlayer (简体中文)") 和 [VLC](/index.php/VLC_media_player "VLC media player") 是常用的选择。)
 
 ## Contents
 

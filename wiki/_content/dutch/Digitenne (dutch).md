@@ -768,7 +768,7 @@ Called cSascDvbDevice::SetCaDescr
 
 ## Integratie met mythtv
 
-Installeer mythtv zoals hier beschreven: [https://wiki.archlinux.org/index.php/MythTV_HOWTO](https://wiki.archlinux.org/index.php/MythTV_HOWTO)
+Installeer mythtv zoals hier beschreven: [MythTV HOWTO](/index.php/MythTV_HOWTO "MythTV HOWTO")
 
 ### Mythtv-setup
 

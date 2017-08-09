@@ -67,7 +67,7 @@ The name of the output device depends on the graphics adapter and driver. Use [x
 
 The touchpad may be "hijacked" by the `i2c_hid` device driver. Although the touchpad is working, its configuration is fixed to two buttons, two-finger natural scrolling and no tapping; Any changes with `xinput` or other tools will have no effect.
 
-To prevent this you have to [blacklist](/index.php/Kernel_Modules#Blacklisting "Kernel Modules") `i2c_hid` by adding the following lines to a `*.conf` file in `/etc/modprobe.d` ([source](https://bbs.archlinux.org/viewtopic.php?pid=1602689#p1602689)):
+To prevent this you have to [blacklist](/index.php/Blacklist "Blacklist") `i2c_hid` by adding the following lines to a `*.conf` file in `/etc/modprobe.d` ([source](https://bbs.archlinux.org/viewtopic.php?pid=1602689#p1602689)):
 
  `/etc/modprobe.d/touchpad.conf` 
 ```

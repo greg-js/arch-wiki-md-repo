@@ -274,7 +274,7 @@ Plasma Netbool shell （上网本交互界面）已从 Plasma 5 中移除，请�
 
 如果你想使用 Windows 服务，安装 [Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)") ([samba](https://www.archlinux.org/packages/?name=samba) 软件包)。
 
-Dophin 的共享服务需要 [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) 软件包以及 usershares。关于如何配置usershares（`smb.conf`未启动它），详见 [Samba (简体中文)#建立 Usershare_路径](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BB.BA.E7.AB.8B_Usershare_.E8.B7.AF.E5.BE.84 "Samba (简体中文)")。在重新启动Samba之后，Dolphin的共享应该无需进一步配置。
+Dophin 的共享服务需要 [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) 软件包以及 usershares。关于如何配置usershares（`smb.conf`未启动它），详见 [Samba (简体中文)#建立 Usershare 路径](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BB.BA.E7.AB.8B_Usershare_.E8.B7.AF.E5.BE.84 "Samba (简体中文)")。在重新启动Samba之后，Dolphin的共享应该无需进一步配置。
 
 Plasma 访问 SMB 共享的能力有限。写入到 Windows 共享存在问题，打开 Windows 共享内文件（例：大的视频文件）会让 Plasma 先将整个文件先复制到本地系统。要解决这个问题，您可以安装类似 [thunar](https://www.archlinux.org/packages/?name=thunar) 加 [gvfs](https://www.archlinux.org/packages/?name=gvfs) 和 [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb)（和 [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) 用于保存登录凭据）的基于GTK的文件浏览器，以更有效的方式访问 SMB 共享。 另一种可能的解决方法则是通过 {Pkg|cifs-utils}} 来 [挂载](/index.php/File_systems#Mount_a_filesystem "File systems") Samba 共享从而让 Plasma 把 SMB 共享当成一个普通的本地文件夹从而正常访问。对于公共共享的写入访问，mount命令可能如下所示：
 
@@ -801,7 +801,7 @@ fs.inotify.max_user_watches = 10000
 
 ### 保存凭据和持续显示 KWallet 对话框的问题
 
-不建议在用户设置中关闭 KWallet 密码保存系统，因为需要它为每个用户保存加密凭证（如WiFi密码）。持续显示的 KWallet 对话框可能是关闭它的后果。如果你嫌每当应用程序想要访问 Kwallet 时需要解锁烦，你可以让登录管理器 SDDM 和 LightDM 在登录时自动解锁 KWallet，请参阅 [KDE_Wallet_(简体中文)](/index.php/KDE_Wallet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE Wallet (简体中文)")。第一个钱包需要由 KWallet 生成（而不是“用户生成”），以便用于系统程序凭据。如果你不希望让钱包凭据在内存内为每个应用打开，可以通过 [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) 在KWallet设置中限制应用程序访问它。如果您根本不关心凭证加密，您可以在创建钱包，KWallet 要求输入密码时，将密码留空。这样，应用程序将可以在不解锁钱包的情况下访问密码。
+不建议在用户设置中关闭 KWallet 密码保存系统，因为需要它为每个用户保存加密凭证（如WiFi密码）。持续显示的 KWallet 对话框可能是关闭它的后果。如果你嫌每当应用程序想要访问 Kwallet 时需要解锁烦，你可以让登录管理器 SDDM 和 LightDM 在登录时自动解锁 KWallet，请参阅 [KDE Wallet (简体中文)](/index.php/KDE_Wallet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE Wallet (简体中文)")。第一个钱包需要由 KWallet 生成（而不是“用户生成”），以便用于系统程序凭据。如果你不希望让钱包凭据在内存内为每个应用打开，可以通过 [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) 在KWallet设置中限制应用程序访问它。如果您根本不关心凭证加密，您可以在创建钱包，KWallet 要求输入密码时，将密码留空。这样，应用程序将可以在不解锁钱包的情况下访问密码。
 
 ## 参见
 

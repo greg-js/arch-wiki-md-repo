@@ -75,9 +75,7 @@ Muchas otras herramientas opcionales GNU se encuentran disponibles en los [repos
 
 **hoja de cálculo:** [Gnumeric](/index.php/Gnumeric "Gnumeric")
 
-**editor de imágenes:** [GIMP](/index.php/Multimedia#GIMP "Multimedia")
-
-**administrador de ventanas a pantalla completa:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
+**editor de imágenes:** [GIMP](/index.php/Multimedia#GIMP "Multimedia")**administrador de ventanas a pantalla completa:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 
 ## Enlaces
 

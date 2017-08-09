@@ -11,6 +11,8 @@ From [MATE homepage](http://mate-desktop.org/):
 *   [3 Starting MATE](#Starting_MATE)
 *   [4 Configuration](#Configuration)
     *   [4.1 Accessibility](#Accessibility)
+    *   [4.2 Notifications](#Notifications)
+        *   [4.2.1 Battery discharging](#Battery_discharging)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Enabling compositing](#Enabling_compositing)
     *   [5.2 Enabling new window centering](#Enabling_new_window_centering)
@@ -136,6 +138,12 @@ $ gsettings set org.mate.interface accessibility true
 ```
 
 Once you start MATE, you can configure the accessibility applications via *System > Preferences > Assistive Technologies*, although if you need Orca, you will need to run it from the `Alt-F2` run window in order to start getting speech.
+
+### Notifications
+
+#### Battery discharging
+
+To disable the notification on battery discharge, open [dconf-editor](/index.php/Dconf-editor "Dconf-editor") and set org.mate.power-manager.notify-discharging to false.
 
 ## Tips and tricks
 

@@ -11,7 +11,9 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 *   [3 Usage](#Usage)
     *   [3.1 Basics](#Basics)
     *   [3.2 Securing SSH Keys](#Securing_SSH_Keys)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 tcsd.service failed to start](#tcsd.service_failed_to_start)
+*   [5 See also](#See_also)
 
 ## Versions
 
@@ -139,6 +141,18 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 ```
 
 **Note:** This method currently does not allow for multiple keys to be generated and used.
+
+## Troubleshooting
+
+### tcsd.service failed to start
+
+The `tcsd.service` service may not start correctly due to permissions issues. [[1]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It's possible to fix this using:
+
+```
+$ chown tss:tss /dev/tpm*
+$ chown -R tss:tss /var/lib/tpm
+
+```
 
 ## See also
 

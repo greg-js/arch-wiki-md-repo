@@ -181,4 +181,4 @@ You can update your bios either [manually](http://www.dell.com/support/article/h
 | [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
 | [CHOETECH USB-C to DisplayPort Cable (4K@60Hz)](https://www.amazon.co.uk/DisplayPort-CHOETECH-Thunderbolt-Compatible-ChromeBook/dp/B01N5RFAI4) | DisplayPort | Working |
 
-[This chart](https://wiki.archlinux.org/index.php/Dell_XPS_13_(9360)#USB-C_Compatibility_Chart) may also be helpful.
+[This chart](/index.php/Dell_XPS_13_(9360)#USB-C_Compatibility_Chart "Dell XPS 13 (9360)") may also be helpful.

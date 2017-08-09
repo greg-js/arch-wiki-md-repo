@@ -17,7 +17,10 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 *   [4 Wine 模拟](#Wine_.E6.A8.A1.E6.8B.9F)
     *   [4.1 Wine QQ](#Wine_QQ)
     *   [4.2 Wine QQ 轻聊版](#Wine_QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
-    *   [4.3 Wine TM](#Wine_TM)
+    *   [4.3 Wine TIM](#Wine_TIM)
+        *   [4.3.1 安装前的准备](#.E5.AE.89.E8.A3.85.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
+        *   [4.3.2 安装及配置](#.E5.AE.89.E8.A3.85.E5.8F.8A.E9.85.8D.E7.BD.AE)
+        *   [4.3.3 相关问题解决](#.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
     *   [4.4 CrossOver TM2013](#CrossOver_TM2013)
     *   [4.5 Awesome 下的配置](#Awesome_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
     *   [4.6 i3 下的配置](#i3_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
@@ -184,40 +187,97 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 
 ```
 
-### Wine TM
+### Wine TIM
 
-对于仍然能用的 TM 版本（TM2009Beta3.4、TM2013preview1），使用[以下方案](http://blog.lilydjwg.me/2013/3/24/run-tencent-messenger-with-wine.38382.html)可以成功：
+[TIM](http://im.qq.com/download/)是腾讯推出的主打办公协同的QQ版本。
+
+#### 安装前的准备
+
+可参考[Wine_(简体中文)](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)")
+
+*   安装[wine](https://www.archlinux.org/packages/?name=wine)、[wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono)
 
 ```
-$ winetricks riched20 ie6 mfc42
+$ pacman -S wine wine_gecko wine-mono
 
 ```
 
-然后运行 winecfg，切换到「函数库」选项卡，在「已有的函数库顶替」中编辑「urlmon.dll」项，设置其使用「内建」版本。
+*   使用内建函数库
 
-将 ie6 替换成 ie7 亦可。可能需要安装相关字体支持，比如安装 simsun.ttc 字体。
+打开winecfg，在函数库一项中的”新增函数库顶替“中选择添加riched20，也可也执行以下命令添加：
 
-在 Wine 1.7.6 之后，**登录后片刻状态自动变成离开的问题已经修复**。但是此离开状态检测是在 Wine 环境内部的（和全局快捷键一样），也就是如果没有用户操作传递给此 Wine 环境中的任意程序，**即使用户在 Linux 上做其它事情，在指定时间之后 TM 仍然会转变成离开状态**。因此建议在「在线状态」设置中禁用自动将状态切换为「离开」的功能。
+```
+$ winetricks riched20
 
-已知可以正常使用的功能：
+```
 
-*   基本聊天
-*   截图、粘贴剪贴板中的图像
-*   文件传输
-*   群共享
-*   远程协助（作为求助方和协助方均可）
+*   字体替换
 
-已知问题：
+解决中文乱码问题。新建一个reg文件，例如名为wine-fonts.reg，写入如下内容：
 
-*   GIF 动画显示不正常
-*   输入法光标跟随无效。输入法的提示窗口总是位于输入框下方
-*   截图仅能截取一个屏幕，在双显示器时会有问题。快捷键仅在 Wine 程序拥有焦点时可以工作
-*   偶尔可能会假死或者崩溃（在 CrossOver 版本中非常少见）
-*   在 [Awesome](/index.php/Awesome "Awesome") 下（特别是双显示器的扩展屏上时），鼠标拖动窗口上边缘可能导致窗口乱跑
-*   安装界面部分文本在点击后、鼠标经过时变为白色
-*   托盘右键菜单弹出后，点击 Wine 之外的程序它并不会自动消失
+```
+ REGEDIT4
 
-Wine TM2013 的 Wine 环境大小为 227.8MiB，[7z](/index.php/P7zip "P7zip") 压缩后为 67.1MiB。
+ [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+ "Lucida Sans Unicode"="wqy-microhei.ttc"
+ "Microsoft Sans Serif"="wqy-microhei.ttc"
+ "Microsoft YaHei"="SourceHanSansCN-Medium.otf"
+ "MS Sans Serif"="wqy-microhei.ttc"
+ "Tahoma"="wqy-microhei.ttc" 
+ "Tahoma Bold"="wqy-microhei.ttc"
+ "SimSun"="wqy-microhei.ttc"
+ "Arial"="wqy-microhei.ttc"
+ "Arial Black"="wqy-microhei.ttc"
+ "宋体"="SourceHanSansCN-Medium.otf"
+ "新細明體"="SourceHanSansCN-Medium.otf"
+
+```
+
+保存后运行：
+
+```
+ $gedit wine-fonts.reg
+
+```
+
+也打开regedit图形界面，点击注册表-导入注册表文件，然后选择wine-fonts.reg即可。
+
+#### 安装及配置
+
+*   安装tim
+
+使用wine安装tim。可以使用右键菜单中的“运行程”序运行tim的exe文件进行安装，也可以使用命令行：
+
+```
+ $ wine tim.exe
+
+```
+
+*   增加启动菜单项
+
+安装的tim可能没有在程序列表中生成图标。自行添加图标，新建一个名为tim.desktop的文件，写入以下内容：
+
+```
+ [Desktop Entry]
+ Encoding=UTF-8
+ Version=1
+ Name=TIM
+ Comment=Tencent TIM
+ Exec=wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
+ Icon=~/.wine/drive_c/Program Files/Tencent/TIM/TIMUninst.ico
+ Terminal=false
+ Type=Application
+ Categories=Network;
+
+```
+
+其中comment是程序介绍，Exec是执行命令，Icon是要显示的图表，可以根据实际情况进行修改。（自带的ico图表不太清晰，可下载[该图标文件](https://sqimg.qq.com/qq_product_operations/eim/site/img/share.png)更换） 将tim.desktop移动到~/.local/share/applications或/usr/share/applications文件夹下即可。
+
+#### 相关问题解决
+
+*   文件被占用
+
+打开进程管理器，搜索tx、qq、tim等关键字，杀掉这些进程（如tim.exe、TXPlatform.exe、QQExternal.exe、QQProctect.exe等等）即可。 原因是退出tim后，某些相关进程仍然在后台运行。
 
 ### CrossOver TM2013
 

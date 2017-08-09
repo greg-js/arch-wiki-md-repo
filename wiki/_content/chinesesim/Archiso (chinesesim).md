@@ -5,7 +5,7 @@
 ## Contents
 
 *   [1 安装和配置](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE)
-*   [2 配置我们的Live介质](#.E9.85.8D.E7.BD.AE.E6.88.91.E4.BB.AC.E7.9A.84Live.E4.BB.8B.E8.B4.A8)
+*   [2 配置 Live 介质](#.E9.85.8D.E7.BD.AE_Live_.E4.BB.8B.E8.B4.A8)
     *   [2.1 安装包](#.E5.AE.89.E8.A3.85.E5.8C.85)
         *   [2.1.1 自定义本地库](#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.9C.AC.E5.9C.B0.E5.BA.93)
         *   [2.1.2 避免安装属于base组的包](#.E9.81.BF.E5.85.8D.E5.AE.89.E8.A3.85.E5.B1.9E.E4.BA.8Ebase.E7.BB.84.E7.9A.84.E5.8C.85)
@@ -18,7 +18,7 @@
     *   [3.1 重建ISO](#.E9.87.8D.E5.BB.BAISO)
 *   [4 使用ISO](#.E4.BD.BF.E7.94.A8ISO)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 在沒有互联网连接的情况下安装Archiso](#.E5.9C.A8.E6.B2.92.E6.9C.89.E4.BA.92.E8.81.94.E7.BD.91.E8.BF.9E.E6.8E.A5.E7.9A.84.E6.83.85.E5.86.B5.E4.B8.8B.E5.AE.89.E8.A3.85Archiso)
+    *   [5.1 在沒有互联网连接的情况下安装 Archiso](#.E5.9C.A8.E6.B2.92.E6.9C.89.E4.BA.92.E8.81.94.E7.BD.91.E8.BF.9E.E6.8E.A5.E7.9A.84.E6.83.85.E5.86.B5.E4.B8.8B.E5.AE.89.E8.A3.85_Archiso)
         *   [5.1.1 安装 archiso 到新的根](#.E5.AE.89.E8.A3.85_archiso_.E5.88.B0.E6.96.B0.E7.9A.84.E6.A0.B9)
         *   [5.1.2 Chroot 并配置基本系统](#Chroot_.E5.B9.B6.E9.85.8D.E7.BD.AE.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F)
             *   [5.1.2.1 恢复 journald 的配置](#.E6.81.A2.E5.A4.8D_journald_.E7.9A.84.E9.85.8D.E7.BD.AE)
@@ -67,7 +67,7 @@ Archiso 附带2个预定义配置（ profiles ）: *releng* 和*baseline*。
 
 *   如果您使用 `baseline` 配置文件创建一个简易映像，那么你不需要做任何定制，并可以直接继续到 [#构建ISO](#.E6.9E.84.E5.BB.BAISO).
 
-## 配置我们的Live介质
+## 配置 Live 介质
 
 本节详细介绍该如何配置您将创建的映像，允许您定义哪些包以及配置将被您的 Live 映像所包含。 在 [#安装和配置](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE) 中创建的`*archlive*`目录中有许多文件和目录; 我们只关注其中一部分，主要是
 
@@ -344,11 +344,11 @@ See the [Category:Getting and installing Arch#Installation methods](/index.php/C
 
 ## Tips and tricks
 
-### 在沒有互联网连接的情况下安装Archiso
+### 在沒有互联网连接的情况下安装 Archiso
 
 若你想在没有互联网连接或者你不想重复下载你想要的包的情况下安装 archiso（例如[官方的每月发布版](https://www.archlinux.org/download/)）：
 
-首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[#建立网络连接](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BB.BA.E7.AB.8B.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5 "Installation guide (简体中文)")），直到[#安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)")之前。
+首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.9B.A0.E7.89.B9.E7.BD.91 "Installation guide (简体中文)")），直到[#安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)")之前。
 
 #### 安装 archiso 到新的根
 

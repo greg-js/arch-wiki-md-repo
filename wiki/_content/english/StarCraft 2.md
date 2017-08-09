@@ -49,7 +49,7 @@ Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D* (right-click on Wine and New ->
 
 Recent SC2 versions require the [Blizzard App](http://eu.battle.net/en/app/) to be installed, as it replaced the launchers for all Blizzard games. Furthermore, recent patches massively changed the file structure in their newer games - if you have a fast enough internet connection, it might be faster to download a new copy from the Blizzard App than trying to install the game from DVD. Simply install the app, select your region, log in with a Blizzard Account, then select StarCraft II on the left and click Install. You'll be able to select your game language and installation location. (Installing the game on a native Linux filesystem instead of NTFS might improve loading times.)
 
-**Note:** You need to install [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) in order to use the online-mode of the [Blizzard App](/index.php/Battle.net "Battle.net").
+**Note:** You need to install [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) in order to use the online-mode of the [Blizzard App](/index.php/Blizzard_App "Blizzard App").
 
 #### Installing from DVD
 

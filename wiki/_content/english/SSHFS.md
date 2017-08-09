@@ -5,29 +5,29 @@
 *   [1 Installation](#Installation)
     *   [1.1 Mounting](#Mounting)
     *   [1.2 Unmounting](#Unmounting)
-*   [2 Chrooting](#Chrooting)
-*   [3 Helpers](#Helpers)
+*   [2 Options](#Options)
+*   [3 Chrooting](#Chrooting)
 *   [4 Automounting](#Automounting)
     *   [4.1 On demand](#On_demand)
     *   [4.2 On boot](#On_boot)
     *   [4.3 Secure user access](#Secure_user_access)
-*   [5 Options](#Options)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Checklist](#Checklist)
-    *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
-    *   [6.3 Remote host has disconnected](#Remote_host_has_disconnected)
-    *   [6.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
-    *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
-    *   [6.6 fstab mounting issues](#fstab_mounting_issues)
-*   [7 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Checklist](#Checklist)
+    *   [5.2 Connection reset by peer](#Connection_reset_by_peer)
+    *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
+    *   [5.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
+    *   [5.5 fstab mounting issues](#fstab_mounting_issues)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [sshfs](https://www.archlinux.org/packages/?name=sshfs) package.
 
+**Tip:** If you often need to mount sshfs filesystems you may be interested in using an sshfs helper, such as [qsshfs](https://aur.archlinux.org/packages/qsshfs/), [sftpman](/index.php/Sftpman "Sftpman"), [sshmnt](https://aur.archlinux.org/packages/sshmnt/) or [fmount.py](https://github.com/lahwaacz/Scripts/blob/master/fmount.py).
+
 ### Mounting
 
-In order to be able to mount a directory the SSH user needs to be able to access it. Invoke `sshfs` to mount a remote directory:
+In order to be able to mount a directory the SSH user needs to be able to access it. Invoke *sshfs* to mount a remote directory:
 
 ```
 $ sshfs *[user@]host:[dir] mountpoint [options]*
@@ -37,16 +37,13 @@ $ sshfs *[user@]host:[dir] mountpoint [options]*
 For example:
 
 ```
-$ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
+$ sshfs myuser@mycomputer:/remote/path /local/path -C -p 9876
 
 ```
 
-Where `-p 9876` specifies the port number, `-C` enables compression and `-o allow_other` grants non-rooted users read/write access.
+Here `-p 9876` specifies the port number and `-C` enables compression. For more options see the [#Options](#Options) section.
 
-**Note:**
-
-*   The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
-*   Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
+When not specified, the remote path defaults to the remote user home directory. Default user names and options can be predefined on a host-by-host basis in `~/.ssh/config` to simplify the *sshfs* usage. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
 SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, see [SSH keys](/index.php/SSH_keys "SSH keys").
 
@@ -68,40 +65,46 @@ $ fusermount -u /mnt/sessy
 
 ```
 
+## Options
+
+*sshfs* can automatically convert between local and remote user IDs. Use the `idmap=user` option to translate the UID of the connecting user to the remote user `myuser` (GID remains unchanged):
+
+```
+$ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
+
+```
+
+If you need more control over UID and GID translation, look at the options `idmap=file`, `uidfile` and `gidfile`.
+
 ## Chrooting
 
-You may want to jail a (specific) user to a directory by editing `/etc/ssh/sshd_config`:
+You may want to restrict a specific user to a specific directory on the remote system. This can be done by editing `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
 ```
 .....
-Match User someuser 
-       ChrootDirectory /chroot/%u
-       ForceCommand internal-sftp #to restrict the user to sftp only
+Match User *someuser* 
+       ChrootDirectory */chroot/%u*
+       ForceCommand internal-sftp
        AllowTcpForwarding no
        X11Forwarding no
 .....
+
 ```
 
 **Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
 
-See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the manpages for `Match, ChrootDirectory` and `ForceCommand`.
-
-## Helpers
-
-If you often need to mount sshfs filesystems you may be interested in using an sshfs helper, such as [sftpman](/index.php/Sftpman "Sftpman").
-
-It provides a command-line and a GTK frontend, to make mounting and unmounting a simple one click/command process.
+See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
 
 ## Automounting
 
-Automounting can happen on boot, or on demand (when accessing the directory). For both, the setup happens in `/etc/[fstab](/index.php/Fstab "Fstab")`.
+Automounting can happen on boot, or on demand (when accessing the directory). For both, the setup happens in the [fstab](/index.php/Fstab "Fstab").
 
-**Note:** Be mindful that automounting is done through the root user, therefore you cannot use Hosts configured in `.ssh/config` of your normal user.
+**Note:** Keep in mind that automounting is done through the root user, therefore you cannot use hosts configured in `.ssh/config` of your normal user.
 
-To let root user use an SSH key of a normal user, specify its full path in option `IdentityFile`.
+To let the root user use an SSH key of a normal user, specify its full path in the `IdentityFile` option.
 
-**And most importantly**, use each sshfs mount at least once manually **while root** so the host's signature is added to the `.ssh/known_hosts` file.
+**And most importantly**, use each sshfs mount at least once manually **while root** so the host's signature is added to the `/root/.ssh/known_hosts` file.
 
 ### On demand
 
@@ -126,7 +129,7 @@ The important mount options here are *noauto,x-systemd.automount,_netdev*.
 
 ### On boot
 
-An example on how to use sshfs to mount a remote filesystem through `/etc/[fstab](/index.php/Fstab "Fstab")`
+An example on how to use sshfs to mount a remote filesystem through `/etc/fstab`
 
 ```
 USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs  defaults,_netdev  0  0
@@ -153,7 +156,7 @@ Again, it is important to set the *_netdev* mount option to make sure the networ
 
 ### Secure user access
 
-When automounting via `/etc/[fstab](/index.php/Fstab "Fstab")`, the filesystem will generally be mounted by root. By default, this produces undesireable results if you wish access as an ordinary user and limit access to other users.
+When automounting via [fstab](/index.php/Fstab "Fstab"), the filesystem will generally be mounted by root. By default, this produces undesireable results if you wish access as an ordinary user and limit access to other users.
 
 An example mountpoint configuration:
 
@@ -167,19 +170,6 @@ Summary of the relevant options:
 *   *allow_other* - Allow other users than the mounter (i.e. root) to access the share.
 *   *default_permissions* - Allow kernel to check permissions, i.e. use the actual permissions on the remote filesystem. This allows prohibiting access to everybody otherwise granted by *allow_other*.
 *   *uid*, *gid* - set reported ownership of files to given values; *uid* is the numeric user ID of your user, *gid* is the numeric group ID of your user.
-
-## Options
-
-sshfs can automatically convert your local and remote user IDs.
-
-Add the *idmap* option with *user* value to translate UID of connecting user:
-
-```
-# sshfs -o idmap=user sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
-
-```
-
-This will map UID of the remote user "sessy" to the local user, who runs this process ("root" in the above example) and GID remains unchanged. If you need more precise control over UID and GID translation, look at the options *idmap=file* and *uidfile* and *gidfile*.
 
 ## Troubleshooting
 
@@ -279,27 +269,6 @@ If you experience freezing/hanging (stopped responding) applications, you may ne
 ```
 
 See the following [bug report](https://bugs.archlinux.org/task/40260) for more details and/or solutions.
-
-### Shutdown hangs when sshfs is mounted
-
-Systemd may hang on shutdown if an sshfs mount was mounted manually and not unmounted before shutdown. To solve this problem, create this file (as root):
-
- `/etc/systemd/system/killsshfs.service` 
-```
-[Unit]
-After=network.target
-
-[Service]
-RemainAfterExit=yes
-ExecStart=-/bin/true
-ExecStop=-/usr/bin/pkill -x sshfs
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Then enable the service: `systemctl enable killsshfs.service`
 
 ### fstab mounting issues
 

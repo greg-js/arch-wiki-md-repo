@@ -61,7 +61,7 @@ polkit.addRule(function(action, subject) {
 
 ## Помощники монтирования
 
-Автоматическое монтирование устройств легко достигается с [оболочками udisks](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Udisks "Список приложений"). См. также [Список приложений#Монтирование](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Список приложений") и [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+Автоматическое монтирование устройств легко достигается с [оболочками udisks](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Udisks "Список приложений"). См. также [Список приложений#Монтирование](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Список приложений")и [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
 
 ### Devmon
 

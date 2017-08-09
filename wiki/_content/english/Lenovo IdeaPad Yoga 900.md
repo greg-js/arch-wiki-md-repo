@@ -169,7 +169,7 @@ Sometimes you will see the following kernel message:
 
 **Note:** This fix has an unintended consequence that needs more research. The mapping will work and it disables the trackpad when you go into tablet mode. The issue is the trackpad will be automatically disabled if you close the laptop lid and re-open it. This requires you to hit F6 to re-enable it. Not mapping this key will leave the trackpad enabled in tablet mode, but otherwise all other operations are normal.
 
-The trackpad key (F6) is not mapped correctly to toggle the trackpad. Using UDEV to [Map_scancodes_to_keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes") will restore this function. This is a custom hwdb file to restore the feature.
+The trackpad key (F6) is not mapped correctly to toggle the trackpad. Using UDEV to [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes") will restore this function. This is a custom hwdb file to restore the feature.
 
 ```
 # Lenovo YOGA 900-13ISK

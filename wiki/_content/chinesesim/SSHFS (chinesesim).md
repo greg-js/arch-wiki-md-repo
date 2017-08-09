@@ -51,7 +51,7 @@ Where `-p 9876` stands for the port number, `-C` enables compression and `-o all
 
 **注意:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
 
-必要时，SSH 将询问口令。如果你不希望频繁输入口令，可参阅：[SSH 如何使用 RSA 密钥做认证](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) 或 [SSH 密钥](/index.php/SSH_Keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH Keys (简体中文)")。
+必要时，SSH 将询问口令。如果你不希望频繁输入口令，可参阅：[SSH 如何使用 RSA 密钥做认证](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) 或 [SSH 密钥](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")。
 
 ### 卸载
 

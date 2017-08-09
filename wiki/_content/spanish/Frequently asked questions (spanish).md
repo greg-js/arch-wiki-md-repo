@@ -64,7 +64,7 @@ Usted puede **no** querer usar Arch, si:
 
 ### ¿Qué arquitecturas soporta Arch?
 
-Arch sólo soporta x86_64 (a veces llamado amd64). El soporte para i686 será descartado y eliminado por completo en noviembre del 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/). Si todavía está ejecutando un sistema de 32-bit puede estar interesado en leer [¿Cómo puedo saber si mi procesador es compatible con x86_64?](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFC.C3.B3mo_puedo_saber_si_mi_procesador_es_compatible_con_x86_64.3F "Frequently asked questions (Español)")
+Arch sólo soporta x86_64 (a veces llamado amd64). El soporte para i686 será descartado y eliminado por completo en noviembre del 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/). Si todavía está ejecutando un sistema de 32-bit puede estar interesado en leer [¿Cómo puedo saber si mi procesador es compatible con x86_64?](#.C2.BFC.C3.B3mo_puedo_saber_si_mi_procesador_es_compatible_con_x86_64.3F)
 
 ### ¿Tiene Arch soporte para CPU ARM?
 
@@ -132,7 +132,7 @@ Consulte [este maravilloso artículo](http://www.linuxjournal.com/article/2770) 
 
 ### ¿De dónde vino todo mi espacio libre?
 
-La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de disco](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications") que pueden ayudarle a encontrar la respuesta.
+La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de discoque](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications") pueden ayudarle a encontrar la respuesta.
 
 ## Gestión de paquetes
 

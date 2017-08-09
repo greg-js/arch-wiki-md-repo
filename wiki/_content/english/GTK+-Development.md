@@ -513,7 +513,7 @@ Hello.run
 Using [Gtk-rs](http://gtk-rs.org/).
 
 *   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3)
-*   Makedependency: [cargo](https://www.archlinux.org/packages/?name=cargo)
+*   Makedependency: [rust](https://www.archlinux.org/packages/?name=rust)
 *   Build with: `cargo build`
 *   Run with: `target/debug/hello_world` or `cargo run`
 

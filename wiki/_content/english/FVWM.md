@@ -392,7 +392,7 @@ Windows in FVWM can be iconified (minimized). This means that the window will di
 
 The program itself will supply the icon. One can also set a default icon to be used, in case a program does not have an icon to supply: `Style "*" Icon /path/to/default/icon.png`.
 
-To disable icons altogether, use the following style: `Style "*" NoIcons`. This means that the window will simply disappear when iconified.
+To disable icons altogether, use the following style: `Style "*" NoIcon`. This means that the window will simply disappear when iconified.
 
 The positioning of icons can be controlled using the `IconBox` style - note that this is not the same thing as the FvwmIconBox module - along with the `IconFill` style. Use `Style "*" IconBox none` to disable the IconBox. This means that icons will be placed at the position of the top left corner of the window. Else, use `Style "*" IconBox l t r b` where *l t r b* stand for *left*, *top*, *right* and *bottom* respectively. These arguments should be the number of pixels away from the screen edge that the IconBox edge should be. Hence, arguments of `+0 +0 -0 -0` means that the IconBox will fill the entire screen.
 

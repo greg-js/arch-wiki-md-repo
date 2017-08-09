@@ -48,7 +48,7 @@ A complete copy of the MATLAB software must be obtained before it can be install
 
 The MATLAB installation software is self contained and does not require any additional packages to install in silent mode. To install with the GUI a working [Xorg](/index.php/Xorg "Xorg") graphical display is necessary. The installation is handled by the `install` script. You can run the script as root to install MATLAB system-wide or your user to install it only for you.
 
-MATLAB 2016a and earlier is not compatible with [ncurses](https://www.archlinux.org/packages/?name=ncurses) 6, so you must install the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [#Segmentation Fault on startup](#Segmentation_Fault_on_startup) for more info.
+MATLAB 2016a and earlier is not compatible with [ncurses](https://www.archlinux.org/packages/?name=ncurses) 6, so you must install the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [#Segmentation fault on startup](#Segmentation_fault_on_startup) for more info.
 
 During the installation, you are asked if you want symlinks to be created. If you did not choose to do so, you can now manually create a symlink in `/usr/local/bin` to make it easier to launch in terminal:
 
@@ -385,7 +385,7 @@ Make it so that these symlinks are pointing to your system glib libraries instea
 
 Relinking of "libfreetype.so.6" is also necessary to open these interfaces. This is found in `matlabroot/R2017a/bin/glnxa64/`.
 
-If the window opens but is blank, consider switching the html renderer to: " webutils.htmlrenderer('basic');" as described in [#Help browser](#Help_browser) .
+If the window opens but is blank, consider switching the html renderer to: " webutils.htmlrenderer('basic');" as described in [#Help browser](#Help_browser).
 
 ### Using webcam/video device
 

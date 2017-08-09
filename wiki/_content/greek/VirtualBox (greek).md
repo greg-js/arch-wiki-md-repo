@@ -123,7 +123,7 @@
 
 ```
 
-Για νά φορτώσετε τη μονάδα δίσκου VirtualBox driver από την αρχή, ανατρέξτε στο [Kernel_modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") και χρησιμοποιήστε το όνομα αρχείου `virtualbox.conf`
+Για νά φορτώσετε τη μονάδα δίσκου VirtualBox driver από την αρχή, ανατρέξτε στο [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") και χρησιμοποιήστε το όνομα αρχείου `virtualbox.conf`
 
 **Σημείωση:** Προκειμένου να αποφύγετε μηνύματα λάθους του είδους `no such file or directory` κατά τη φόρτωση του `vboxdrv`, ίσως χρειαστεί να ενημερώσετε τη βάση δεδομένων με τα αρθρώματα του πυρήνα, μέσω της `depmod -a`.
 
@@ -234,7 +234,7 @@ vboxvideo
 
 ### Χρήση USB webcam / μικροφώνου
 
-**Σημείωση:** Απαιτείται να έχετε εγκατεστημένο το πακέτο επεκτάσεων του VirtualBox πριν ακολουθήσετε τα βήματα που περιγράφονται παρακάτω. Δείτε το [VirtualBox_Extras#Extension_pack](/index.php/VirtualBox_Extras#Extension_pack "VirtualBox Extras") για περισσότερες λεπτομέρειες.
+**Σημείωση:** Απαιτείται να έχετε εγκατεστημένο το πακέτο επεκτάσεων του VirtualBox πριν ακολουθήσετε τα βήματα που περιγράφονται παρακάτω. Δείτε το [VirtualBox Extras#Extension pack](/index.php/VirtualBox_Extras#Extension_pack "VirtualBox Extras") για περισσότερες λεπτομέρειες.
 
 1.  Βεβαιωθείτε ότι δεν τρέχει η εικονική μηχανή σας και ότι δεν είναι σε χρήση η webcam και/ή το μικρόφωνό σας.
 2.  Ανοίξτε το κεντρικό παράθυρο του VirtualBox και πηγαίνετε στις ρυθμίσεις για τη μηχανή του Arch. Πηγαίνετε στο πεδίο USB.
@@ -429,7 +429,7 @@ $ VBoxManage controlvm <your virtual machine name> poweroff
 
 ```
 
-Για να φορτώνονται αυτά τα αρθρώματα αυτόματα κατά την εκκίνηση, δείτε το άρθρο [Kernel_modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") και χρησιμοποιήστε ένα όνομα προγράμματος του `virtualbox`.
+Για να φορτώνονται αυτά τα αρθρώματα αυτόματα κατά την εκκίνηση, δείτε το άρθρο [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") και χρησιμοποιήστε ένα όνομα προγράμματος του `virtualbox`.
 
 ### WinXP: Το βάθος χρώματος δεν μπορεί να είναι μεγαλύτερο από 16 bits
 

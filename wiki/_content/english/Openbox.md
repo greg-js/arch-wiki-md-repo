@@ -515,7 +515,7 @@ It is important to note that a substantial range of both **Openbox-specific** an
 
 ### Configuration
 
-[obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) should be used to select and configure available GTK themes. See [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox").
+[obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) should be used to select and configure available GTK themes. See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox").
 
 ### Installation: official and AUR
 
@@ -544,7 +544,7 @@ Where expected files and directories are present and correct, then on occasion i
 
 #### Theme looks broken
 
-Of course, the first line of enquiry would be to check that it is not just a badly made, broken theme! Otherwise, ensure that the [Openbox GTK fix](/index.php/Openbox#GTK.2B_2 "Openbox") has been implemented, and then re-start the session. Unfortunately some older themes can simply break if not maintained sufficiently to keep pace with the changes incurred by [GTK](/index.php/GTK "GTK") updates. To avoid such occurrences, it is best to check that desired themes have recently been created or at least updated / patched.
+Of course, the first line of enquiry would be to check that it is not just a badly made, broken theme! Otherwise, ensure that the [Openbox GTK fix](#GTK.2B_2) has been implemented, and then re-start the session. Unfortunately some older themes can simply break if not maintained sufficiently to keep pace with the changes incurred by [GTK](/index.php/GTK "GTK") updates. To avoid such occurrences, it is best to check that desired themes have recently been created or at least updated / patched.
 
 ### Edit or create new themes
 
@@ -570,11 +570,11 @@ Openbox does not natively support the use of desktop icons or wallpapers. As a c
 
 Some file managers have the capacity to fully **manage the desktop**, meaning that they may be used to provide wallpapers and enable the use of icons on the desktop. The [LXDE](/index.php/LXDE "LXDE") desktop environment itself uses PCManFM for this purpose.
 
-See [PCManFM#Desktop_management](/index.php/PCManFM#Desktop_management "PCManFM") and [SpaceFM#Desktop_management](/index.php/SpaceFM#Desktop_management "SpaceFM").
+See [PCManFM#Desktop management](/index.php/PCManFM#Desktop_management "PCManFM") and [SpaceFM#Desktop management](/index.php/SpaceFM#Desktop_management "SpaceFM").
 
 ### Wallpaper
 
-See [List_of_applications#Wallpaper_setters](/index.php/List_of_applications#Wallpaper_setters "List of applications")
+See [List of applications#Wallpaper_setters](/index.php/List_of_applications#Wallpaper_setters "List of applications")
 
 ### Icon programs
 

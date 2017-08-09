@@ -840,7 +840,7 @@ The latter approach (using catia or fruit) has the drawback of filtering files w
 
 This section presupposes:
 
-1.  Usershares are configured following [previous section](https://wiki.archlinux.org/index.php/Samba#Creating_usershare_path)
+1.  Usershares are configured following [previous section](#Creating_usershare_path)
 2.  A shared folder has been created as a non-root user from GUI
 3.  Guests access has been set to shared folder during creation
 4.  Samba service has been restarted at least once since last `/etc/samba/smb.conf` file modification

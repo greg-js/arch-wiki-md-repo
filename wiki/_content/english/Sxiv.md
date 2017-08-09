@@ -1,4 +1,4 @@
-[sxiv](https://github.com/muennich/sxiv), Simple [X](/index.php/Xorg "Xorg") Image Viewer is a lightweight and scriptable image viewer written in C.
+[sxiv](https://github.com/muennich/sxiv), Simple [X](/index.php/X "X") Image Viewer is a lightweight and scriptable image viewer written in C.
 
 ## Contents
 

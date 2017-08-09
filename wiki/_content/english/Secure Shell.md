@@ -46,23 +46,22 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
         *   [3.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
-    *   [4.2 SSH connection hangs after poweroff/reboot](#SSH_connection_hangs_after_poweroff.2Freboot)
-    *   [4.3 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
-        *   [4.3.1 Port forwarding](#Port_forwarding)
-        *   [4.3.2 Is SSH running and listening?](#Is_SSH_running_and_listening.3F)
-        *   [4.3.3 Are there firewall rules blocking the connection?](#Are_there_firewall_rules_blocking_the_connection.3F)
-        *   [4.3.4 Is the traffic even getting to your computer?](#Is_the_traffic_even_getting_to_your_computer.3F)
-        *   [4.3.5 Your ISP or a third party blocking default port?](#Your_ISP_or_a_third_party_blocking_default_port.3F)
-            *   [4.3.5.1 Diagnosis](#Diagnosis)
-            *   [4.3.5.2 Possible solution](#Possible_solution)
-        *   [4.3.6 Read from socket failed: connection reset by peer](#Read_from_socket_failed:_connection_reset_by_peer)
-    *   [4.4 "[your shell]: No such file or directory" / ssh_exchange_identification problem](#.22.5Byour_shell.5D:_No_such_file_or_directory.22_.2F_ssh_exchange_identification_problem)
-    *   [4.5 "Terminal unknown" or "Error opening terminal" error message](#.22Terminal_unknown.22_or_.22Error_opening_terminal.22_error_message)
-        *   [4.5.1 TERM hack](#TERM_hack)
-    *   [4.6 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_.5Bpreauth.5D)
-    *   [4.7 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
-    *   [4.8 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
-    *   [4.9 tmux/screen session killed when disconnecting from SSH](#tmux.2Fscreen_session_killed_when_disconnecting_from_SSH)
+    *   [4.2 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
+        *   [4.2.1 Port forwarding](#Port_forwarding)
+        *   [4.2.2 Is SSH running and listening?](#Is_SSH_running_and_listening.3F)
+        *   [4.2.3 Are there firewall rules blocking the connection?](#Are_there_firewall_rules_blocking_the_connection.3F)
+        *   [4.2.4 Is the traffic even getting to your computer?](#Is_the_traffic_even_getting_to_your_computer.3F)
+        *   [4.2.5 Your ISP or a third party blocking default port?](#Your_ISP_or_a_third_party_blocking_default_port.3F)
+            *   [4.2.5.1 Diagnosis](#Diagnosis)
+            *   [4.2.5.2 Possible solution](#Possible_solution)
+        *   [4.2.6 Read from socket failed: connection reset by peer](#Read_from_socket_failed:_connection_reset_by_peer)
+    *   [4.3 "[your shell]: No such file or directory" / ssh_exchange_identification problem](#.22.5Byour_shell.5D:_No_such_file_or_directory.22_.2F_ssh_exchange_identification_problem)
+    *   [4.4 "Terminal unknown" or "Error opening terminal" error message](#.22Terminal_unknown.22_or_.22Error_opening_terminal.22_error_message)
+        *   [4.4.1 TERM hack](#TERM_hack)
+    *   [4.5 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_.5Bpreauth.5D)
+    *   [4.6 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
+    *   [4.7 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
+    *   [4.8 tmux/screen session killed when disconnecting from SSH](#tmux.2Fscreen_session_killed_when_disconnecting_from_SSH)
 *   [5 See also](#See_also)
 
 ## OpenSSH
@@ -671,7 +670,7 @@ Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily in
 
 ### Mounting a remote filesystem with SSHFS
 
-Please refer to the [Sshfs](/index.php/Sshfs "Sshfs") article to use sshfs to mount a remote system - accessible via SSH - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). Using sshfs instead of shfs is generally preferred as a new version of shfs has not been released since 2004.
+Please refer to the [SSHFS](/index.php/SSHFS "SSHFS") article to use sshfs to mount a remote system - accessible via SSH - to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). Using sshfs instead of shfs is generally preferred as a new version of shfs has not been released since 2004.
 
 **Tip:** There is a package [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) that can be used to run autosshfs automatically at login.
 
@@ -713,7 +712,7 @@ $ autossh -M 0 -o "ServerAliveInterval 45" -o "ServerAliveCountMax 2" username@e
 
 ```
 
-Combined with [sshfs](/index.php/Sshfs "Sshfs"):
+Combined with [SSHFS](/index.php/SSHFS "SSHFS"):
 
 ```
 $ sshfs -o reconnect,compression=yes,transform_symlinks,ServerAliveInterval=45,ServerAliveCountMax=2,ssh_command='autossh -M 0' username@example.com: /mnt/example 
@@ -782,16 +781,6 @@ Check these simple issues before you look any further.
 5.  [Append](/index.php/Append "Append") `LogLevel DEBUG` to `/etc/ssh/sshd_config`.
 6.  Use `# journalctl -xe` for possible (error) messages.
 7.  [Restart](/index.php/Restart "Restart") `sshd` and logout/login on both client and server.
-
-### SSH connection hangs after poweroff/reboot
-
-SSH connections hang after poweroff or reboot if systemd stops the network before sshd. To fix this, change the `After` statement for user sessions:
-
- `# systemctl edit systemd-user-sessions.service` 
-```
-[Unit]
-After=network.target
-```
 
 ### Connection refused or timeout problem
 

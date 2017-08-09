@@ -131,7 +131,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)") | 完成 | skysailing | 无 |
 | [AUR helpers (简体中文)](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)") | 进行中 | Stonex | 无 |
 | [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") | 进行中 | Cael | 无 |
-| [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 完成 | Dargasia | SteamFish 未完成翻译，2016-06-22 重新开始。请求校对。 |
+| [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 完成 | Dargasia |
 | [Bumblebee (简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)") | 完成 | Peter | 无 |
 | [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)") | 翻译中 | Bobby | 部分未翻译 |
 | [Ceph (简体中文)](/index.php/Ceph_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ceph (简体中文)") | 翻译中 | Aaron Chen | 部分未翻译 |

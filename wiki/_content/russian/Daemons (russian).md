@@ -21,7 +21,7 @@
 | [CDemu](/index.php/CDemu "CDemu") | cdemud | cdemu-daemon.service | Эмулятор устройств CD/DVD-ROM. |
 | [ClamAV](/index.php/ClamAV "ClamAV") | clamav | clamd.service
 freshclamd.service | Антивирус для Unix. |
-| [Connman](/index.php/Connman "Connman") | connmand | connman.service | Менеджер беспроводного доступа в сеть интернет |
+| [ConnMan](/index.php/ConnMan "ConnMan") | connmand | connman.service | Менеджер беспроводного доступа в сеть интернет |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Sets [cpufreq](/index.php/Cpufreq "Cpufreq") governor and other parameters on startup. |
  craftbukkit | *not yet implemented* | Сервер CraftBukkit Minecraft. |
 | [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon to schedule and time events. The daemon name *crond* is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/). |

@@ -61,7 +61,7 @@ install CD version
 | [Lenovo ThinkPad Edge E335](/index.php/Lenovo_ThinkPad_Edge_E335 "Lenovo ThinkPad Edge E335") | NA | Yes | Yes | Yes | Yes | NA | Yes | NA |
 | Lenovo ThinkPad Edge E420s | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA | SDcard (Yes), Webcam (Yes), Trackpoint (No) |
 | [Lenovo ThinkPad Edge E430](/index.php/Lenovo_ThinkPad_Edge_E430 "Lenovo ThinkPad Edge E430") | Yes | Yes | Yes* | Yes* | Not tested | Yes | NA | NA | SD card (yes) |
-| [Lenovo Thinkpad Edge E455](/index.php/Lenovo_Thinkpad_Edge_E455 "Lenovo Thinkpad Edge E455") | 2015.04.01 | Yes* | Yes | Yes | Yes | Yes | Yes | NA |
+| [Lenovo ThinkPad Edge E455](/index.php/Lenovo_ThinkPad_Edge_E455 "Lenovo ThinkPad Edge E455") | 2015.04.01 | Yes* | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo ThinkPad Edge E530 | Yes | Yes | Yes* | Yes* | Yes | Yes | NA | NA | SD card (yes), Finger Print (not tested) |
 | Lenovo ThinkPad Edge E540 | 2015.08.01 | Yes | Yes | Yes | Yes | Yes | Yes* | NA | SD card (yes), Finger Print (yes), touch pad and trackpoint (yes), Webcam (yes) |
 
@@ -151,11 +151,13 @@ install CD version
 | [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
 | [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes) |
 | [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (yes) |
+| [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (yes) |
 | [Lenovo ThinkPad X270](/index.php?title=Lenovo_ThinkPad_X270&action=edit&redlink=1 "Lenovo ThinkPad X270 (page does not exist)") | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (yes) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
+| [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 
 #### Yoga Series
 
@@ -163,7 +165,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| [Lenovo Thinkpad Yoga 260](/index.php/Lenovo_Thinkpad_Yoga_260 "Lenovo Thinkpad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
+| [Lenovo ThinkPad Yoga 260](/index.php/Lenovo_ThinkPad_Yoga_260 "Lenovo ThinkPad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
 
 ## Lenovo
 
@@ -178,7 +180,7 @@ install CD version
 | [Lenovo IdeaPad S400 Touch](/index.php/Lenovo_IdeaPad_S400_Touch "Lenovo IdeaPad S400 Touch") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
 | Lenovo IdeaPad U430p | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
 | Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes* | Yes | Yes | Yes | Not tested | NA | Trackpad - [buggy](https://unix.stackexchange.com/questions/362165/lenovo-y700-elantech-touchpad-query-0x01-failed) | [Trackpad requires pata_legacy to be blacklisted](https://bugzilla.kernel.org/show_bug.cgi?id=151681) |
-| [Lenovo Ideapad Z580](/index.php/Lenovo_Ideapad_Z580 "Lenovo Ideapad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
+| [Lenovo IdeaPad Z580](/index.php/Lenovo_IdeaPad_Z580 "Lenovo IdeaPad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 
 ### B series
 

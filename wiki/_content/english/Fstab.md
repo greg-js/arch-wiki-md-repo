@@ -33,7 +33,7 @@ A simple `/etc/fstab`, using kernel name descriptors:
 /dev/sda3              /home         ext4      defaults,noatime      0      2
 ```
 
-*   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying_filesystems](#Identifying_filesystems).
+*   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
 *   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS).
 *   `<dump>` is checked by the [dump(8)](http://linux.die.net/man/8/dump) utility.
 *   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](http://man7.org/linux/man-pages/man8/fsck.8.html).

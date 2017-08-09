@@ -319,15 +319,7 @@ As an example, we will activate the `low` profile (replace `low` with any of the
 
 #### Persistent configuration
 
-The activation described above is not persistent, it will not last when the computer is rebooted. To make it persistent, you can use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") (example for [#Dynamic frequency switching](#Dynamic_frequency_switching)):
-
- `/etc/tmpfiles.d/radeon-pm.conf` 
-```
-w /sys/class/drm/card0/device/power_method - - - - dynpm
-
-```
-
-Alternatively, you may use this [udev](/index.php/Udev "Udev") rule instead (example for [#Profile-based frequency switching](#Profile-based_frequency_switching)):
+The activation described above is not persistent, you may use this [udev](/index.php/Udev "Udev") rule (example for [#Profile-based frequency switching](#Profile-based_frequency_switching)):
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
 ```
@@ -383,24 +375,9 @@ Then set your desired fan speed from 0 to 255, which corresponds to 0-100% fan s
 
 ```
 
-For persistence, use systemd-tmpfiles as shown above by the example with power profiles. If the latter doesn't work (see the note in [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") for the reason) you can use a udev rule to issue the commands when the card becomes active. Here is an example of a possible rule `/etc/udev/rules.d/99-gpupower`:
+For persistence, see the example in [#Persistent configuration](#Persistent_configuration).
 
-```
-KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$HOME/.Xauthority", RUN+="/sbin/sh /etc/conf.d/gpupower"
-
-```
-
-with a possible script `/etc/conf.d/gpupower`:
-
-```
-echo battery > /sys/class/drm/card0/device/power_dpm_state
-echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
-echo 1 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
-echo 55 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
-
-```
-
-If a fixed speed-value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in `/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input`).
+If a fixed value is not desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in `/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input`).
 
 A GUI solution is available by installing [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/).
 

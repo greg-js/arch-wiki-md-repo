@@ -452,7 +452,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 (自动连接和重连) | [PPP](https://en.wikipedia.org/wiki/point-to-point_protocol "wikipedia:point-to-point protocol") 支持
 (3G modem) | 官方
 GUI | 控制台工具 |
-| [Connman](/index.php/Connman "Connman") | Yes | Yes | Yes | No | `connmanctl` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | Yes | Yes | No | `connmanctl` |
 | [Netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | No | `netctl`,`wifi-menu` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli`,`nmtui` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | Yes | `wicd-curses` |
@@ -462,7 +462,7 @@ GUI | 控制台工具 |
 
 ConnMan 可以替代 NetworkManager 或 Wicd, 设计上考虑低资源消耗，以上网本和其它移动设备为目标。模块化设计并利用 dbus API，提供了 wpa_supplicant 抽象.
 
-参阅: [Connman](/index.php/Connman "Connman")
+参阅: [ConnMan](/index.php/ConnMan "ConnMan")
 
 #### Netctl
 
@@ -529,7 +529,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### connman
 
-[connman](/index.php/Connman "Connman") needs a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. See connman-service.config(5) and [Connman#Connecting to eduroam](/index.php/Connman#Connecting_to_eduroam "Connman") for details.
+[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See connman-service.config(5) and [ConnMan#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam "ConnMan") for details.
 
 #### netctl
 

@@ -82,6 +82,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [tensor5](https://aur.archlinux.org/packages.php?K=tensor5&SeB=m) | Nicola Squartini | tensor5@gmail.com |
 | [thestinger](https://aur.archlinux.org/packages.php?K=thestinger&SeB=m) | Daniel Micay | [danielmicay@gmail.com](mailto:danielmicay@gmail.com) |
 | [tredaelli](https://aur.archlinux.org/packages.php?K=tredaelli&SeB=m) | Timothy Redaelli | timothy.redaelli@gmail.com |
+| [wild](https://aur.archlinux.org/packages.php?K=wild&SeB=m) | [Dan Printzell](/index.php/User:Vild "User:Vild") | [arch@vild.io](mailto:arch@vild.io) |
 | [Xyne](https://aur.archlinux.org/packages.php?K=Xyne&SeB=m) | Xyne | ca . archlinux @ xyne, in reverse order |
 | [xyproto](https://aur.archlinux.org/packages.php?K=xyproto&SeB=m) | Alexander Rødseth | rodseth@gmail.com |
 | [zorun](https://aur.archlinux.org/packages.php?K=zorun&SeB=m) | Baptiste Jonglez | archlinux bitsofnetworks org |

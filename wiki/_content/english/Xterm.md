@@ -273,7 +273,7 @@ Some colors can be specified by assigned names. If [emacs](https://www.archlinux
 
 The color `PapayaWhip` is the same as `rgb:ff/ef/d5`, which is the same as `#ffefd5`.
 
-See [X(7)](ftp://www.x.org/pub/current/doc/man/man7/X.7.xhtml) from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
+See [X(7)](https://www.x.org/archive/current/doc/man/man7/X.7.xhtml) from [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), for a more complete description of color syntax.
 
 Many suggestions for color schemes can be viewed in the forum thread, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
 

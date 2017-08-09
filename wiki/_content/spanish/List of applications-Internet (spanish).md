@@ -607,7 +607,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 ### Gestores de conexiones de red
 
-*   **[Connman](/index.php/Connman "Connman")** — Demonio para la gestión de las conexiones a Internet en dispositivos integrados que ejecutan el sistema operativo Linux. El gestor de conexión está diseñado para ser liviano y utilizar la menor cantidad posible de recursos, lo que lo hace fácilmente integrable.
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Demonio para la gestión de las conexiones a Internet en dispositivos integrados que ejecutan el sistema operativo Linux. El gestor de conexión está diseñado para ser liviano y utilizar la menor cantidad posible de recursos, lo que lo hace fácilmente integrable.
 
 	[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
 

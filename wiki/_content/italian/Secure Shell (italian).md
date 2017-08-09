@@ -709,11 +709,11 @@ Leggere anche [la discussione](http://www.gossamer-threads.com/lists/openssh/dev
 
 ### "[nome della shell in uso]: No such file or directory" / ssh_exchange_identification Problem
 
-Una possibile causa di questo errore, è causata da alcuni client SSH che necessitano di un cammino assoluto (può essere ottenuto con il comando `whereis -b [nome della shell in uso]`, ad esempio) nella variabile `$SHELL`, anche se l'eseguibile della shell si trova all'interno di uno dei percorsi specificati nella variabile `$PATH`. Un altra ragione può essere che l'utente non appartiene al [gruppo](/index.php/Users_and_Groups_(Italiano)#Gruppi "Users and Groups (Italiano)") `network`.
+Una possibile causa di questo errore, è causata da alcuni client SSH che necessitano di un cammino assoluto (può essere ottenuto con il comando `whereis -b [nome della shell in uso]`, ad esempio) nella variabile `$SHELL`, anche se l'eseguibile della shell si trova all'interno di uno dei percorsi specificati nella variabile `$PATH`. Un altra ragione può essere che l'utente non appartiene al [gruppo](/index.php/Users_and_groups_(Italiano)#Gruppi "Users and groups (Italiano)") `network`.
 
 ## Altre risorse
 
-*   [Chiavi SSH](/index.php/SSH_Keys_(Italiano) "SSH Keys (Italiano)")
+*   [Chiavi SSH](/index.php/SSH_keys_(Italiano) "SSH keys (Italiano)")
 *   [Pam_abl](/index.php/Pam_abl "Pam abl")
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [sshguard](/index.php/Sshguard "Sshguard")

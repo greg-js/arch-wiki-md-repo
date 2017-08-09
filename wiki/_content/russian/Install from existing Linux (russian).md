@@ -146,7 +146,7 @@
 
 #### Установка
 
-Следуйте [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide") и [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide").
+Следуйте [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide") и [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide").
 
 ##### Хост Debian
 

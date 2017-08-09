@@ -735,10 +735,10 @@ One possible cause for this is the need of certain SSH clients to find an absolu
 ## See Also
 
 *   [SSH keys](/index.php/SSH_keys "SSH keys")
-*   [Pam abl](/index.php/Pam_abl "Pam abl")
+*   [pam_abl](/index.php/Pam_abl "Pam abl")
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [sshguard](/index.php/Sshguard "Sshguard")
-*   [Sshfs](/index.php/Sshfs "Sshfs")
+*   [SSHFS](/index.php/SSHFS "SSHFS")
 
 ## Links & References
 

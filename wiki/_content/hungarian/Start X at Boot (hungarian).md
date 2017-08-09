@@ -33,6 +33,6 @@ fi
 
 ```
 
-Ezzel a módszerrel, az X automatikusan indul, amikor a parancshéjba lépsz. Továbbá kiléphetsz belőle, ha az X-et a `Ctrl+Alt+Backspace` billentyűkombinációval állítod meg. Ha pedig a [mingetty techniquem](/index.php/Automatic_login_to_virtual_console#Using_mingetty "Automatic login to virtual console")ódszert használod belépésre, vedd ki a fenti beállításokból a "logout" parancsot.
+Ezzel a módszerrel, az X automatikusan indul, amikor a parancshéjba lépsz. Továbbá kiléphetsz belőle, ha az X-et a `Ctrl+Alt+Backspace` billentyűkombinációval állítod meg. Ha pedig a [mingetty technique](/index.php/Automatic_login_to_virtual_console#Using_mingetty "Automatic login to virtual console")módszert használod belépésre, vedd ki a fenti beállításokból a "logout" parancsot.
 
 Lásd még: [https://bbs.archlinux.org/viewtopic.php?id=6182](https://bbs.archlinux.org/viewtopic.php?id=6182)

@@ -13,7 +13,6 @@
     *   [2.3 Desktop environments](#Desktop_environments)
         *   [2.3.1 Xfce](#Xfce)
         *   [2.3.2 Mate](#Mate)
-        *   [2.3.3 KDE](#KDE)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Use D-Bus for power operations](#Use_D-Bus_for_power_operations)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -64,10 +63,6 @@ For a login manager, [lxdm-consolekit](https://aur.archlinux.org/packages/lxdm-c
 [Install](/index.php/Install "Install") [mate-session-manager-upower](https://aur.archlinux.org/packages/mate-session-manager-upower/) and [mate-power-manager-upower](https://aur.archlinux.org/packages/mate-power-manager-upower/).
 
 If you use [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/) as a login manager and have trouble logging in, edit `/etc/pam.d/mdm`, comment out `session required pam_systemd.so` and restart `mdm`. Additionally append `session optional pam_ck_connector.so nox11` if you have [consolekit](https://aur.archlinux.org/packages/consolekit/) installed.
-
-#### KDE
-
-The kdebase-workspace package needs to be recompiled for use with consolekit ([kdebase-workspace-consolekit](https://aur.archlinux.org/packages/kdebase-workspace-consolekit/) is available from the AUR).
 
 ## Tips and tricks
 

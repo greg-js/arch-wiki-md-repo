@@ -175,7 +175,7 @@ For WPA/WPA2 encryption, you will also need:
 **Note:**
 
 *   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. *iwlist*), will exit without error but not produce the correct output either, which can be confusing.
-*   Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Connect_to_an_access_point](#Connect_to_an_access_point).
+*   Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Connect to an access point](#Connect_to_an_access_point).
 
 Examples in this section assume that your wireless device interface is `*interface*` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly.
 
@@ -337,7 +337,7 @@ support | Roaming
 or changed location) | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
 (e.g. 3G modem) | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Official
 GUI | Console tools | Systemd units |
-| [Connman](/index.php/Connman "Connman") | Yes | Yes | Yes | No | No | `connmanctl` | `connman.service` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | Yes | Yes | No | No | `connmanctl` | `connman.service` |
 | [netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | No | `netctl`,`wifi-menu` | `netctl-auto@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | No | Yes | `nmcli`,`nmtui` | `NetworkManager.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | No | Yes | `wicd-curses` | `wicd.service` |
@@ -382,7 +382,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### connman
 
-[connman](/index.php/Connman "Connman") needs a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. See connman-service.config(5) and [Connman#Connecting to eduroam](/index.php/Connman#Connecting_to_eduroam "Connman") for details.
+[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See connman-service.config(5) and [ConnMan#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam "ConnMan") for details.
 
 #### netctl
 

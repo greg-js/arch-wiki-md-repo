@@ -287,7 +287,7 @@ There are many solutions to choose from, but remember that all of them are mutua
 | Connection manager | Automatically handles
 wired connection | Official
 GUI | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Console tools | Systemd units |
-| [Connman](/index.php/Connman "Connman") | Yes | No | No | `connmanctl` | `connman.service` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | Yes | No | No | `connmanctl` | `connman.service` |
 | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
 | [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | No | `nmcli`,`nmtui` | `NetworkManager.service` |

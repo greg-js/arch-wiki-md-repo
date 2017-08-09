@@ -649,7 +649,7 @@ Run `export MOZ_USE_XINPUT2=1` before launching Firefox. To make this change per
 
 ### Disable WebRTC audio post processing
 
-If you are using the PulseAudio [module-echo-cancel](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation), you probably don't want Firefox to do additional audio post processing.
+If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancelation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
 
 To disable audio post processing, disable the following preferences:
 

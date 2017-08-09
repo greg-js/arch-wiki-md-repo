@@ -152,7 +152,7 @@ In order to mount zfs pools automatically on boot you need to enable the followi
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.
 
-**Note:** If some or all device have been used in a software RAID set it is paramount to erase any old RAID configuration information. ([Mdadm#Prepare_the_Devices](/index.php/Mdadm#Prepare_the_Devices "Mdadm"))
+**Note:** If some or all device have been used in a software RAID set it is paramount to erase any old RAID configuration information. ([Mdadm#Prepare the Devices](/index.php/Mdadm#Prepare_the_Devices "Mdadm"))
 
 **Warning:** For Advanced Format Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations), [1.15 How does ZFS on Linux handle Advanced Format disks?](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
 
@@ -594,15 +594,15 @@ Keep in mind the Hibernate hook must be loaded before filesystems, so using ZVOL
 
 #### ZFS Automatic Snapshot Service for Linux
 
-The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot-git/) package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a shell script to automate the management of snapshots, with each named by date and label (hourly, daily, etc), giving quick and convenient snapshotting of all ZFS datasets. The package also installs cron tasks for quarter-hourly, hourly, daily, weekly, and monthly snapshots. Optionally adjust the --keep parameter from the defaults depending on how far back the snapshots are to go (the monthly script by default keeps data for up to a year).
+The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot-git/) package from [AUR](/index.php/AUR "AUR") provides a shell script to automate the management of snapshots, with each named by date and label (hourly, daily, etc), giving quick and convenient snapshotting of all ZFS datasets. The package also installs cron tasks for quarter-hourly, hourly, daily, weekly, and monthly snapshots. Optionally adjust the --keep parameter from the defaults depending on how far back the snapshots are to go (the monthly script by default keeps data for up to a year).
 
 To prevent a dataset from being snapshotted at all, set `com.sun:auto-snapshot=false` on it. Likewise, set more fine-grained control as well by label, if, for example, no monthlies are to be kept on a snapshot, for example, set `com.sun:auto-snapshot:monthly=false`.
 
-**Note:** zfs-auto-snapshot-git will not create snapshots during scrubbing ([scrub](/index.php/ZFS#Scrub "ZFS")). It is possible to override this by editing provided systemd unit ([Systemd#Editing_provided_units](/index.php/Systemd#Editing_provided_units "Systemd")) and removing `--skip-scrub` from `ExecStart` line. Consequences not known, someone please edit.
+**Note:** zfs-auto-snapshot-git will not create snapshots during scrubbing ([scrub](#Scrub)). It is possible to override this by editing provided systemd unit ([Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd")) and removing `--skip-scrub` from `ExecStart` line. Consequences not known, someone please edit.
 
 #### ZFS Snapshot Manager
 
-The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/) package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a python service that takes daily snapshots from a configurable set of ZFS datasets and cleans them out in a ["Grandfather-father-son"](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son "wikipedia:Backup rotation scheme") scheme. It can be configured to e.g. keep 7 daily, 5 weekly, 3 monthly and 2 yearly snapshots.
+The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/) package from [AUR](/index.php/AUR "AUR") provides a python service that takes daily snapshots from a configurable set of ZFS datasets and cleans them out in a ["Grandfather-father-son"](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son "wikipedia:Backup rotation scheme") scheme. It can be configured to e.g. keep 7 daily, 5 weekly, 3 monthly and 2 yearly snapshots.
 
 The package also supports configurable replication to other machines running ZFS by means of `zfs send` and `zfs receive`. If the destination machine runs this package as well, it could be configured to keep these replicated snapshots for a longer time. This allows a setup where a source machine has only a few daily snapshots locally stored, while on a remote storage server a much longer retention is available.
 

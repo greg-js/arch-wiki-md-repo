@@ -19,9 +19,8 @@ This guide will give you an overview for the most common server options in exist
 *   [5 Local network services](#Local_network_services)
     *   [5.1 Zeroconf](#Zeroconf)
     *   [5.2 CUPS (printing)](#CUPS_.28printing.29)
-    *   [5.3 DHCP](#DHCP)
-    *   [5.4 Samba (Windows-compatible file and printer sharing)](#Samba_.28Windows-compatible_file_and_printer_sharing.29)
-    *   [5.5 DNS](#DNS)
+    *   [5.3 Samba (Windows-compatible file and printer sharing)](#Samba_.28Windows-compatible_file_and_printer_sharing.29)
+    *   [5.4 DNS](#DNS)
 *   [6 Security](#Security)
     *   [6.1 Firewall](#Firewall)
     *   [6.2 Protecting SSH](#Protecting_SSH)
@@ -124,10 +123,6 @@ There is also the option of FTP over SSH, or [SFTP](/index.php/SFTP "SFTP").
 CUPS, or **C**ommon **U**NIX **P**rinting **S**ystem, can provide a central point via which a number of users can print. For instance, you have several (say 3) printers and several people on a local network that wish to print. You can either add all these printers to every user's computer, or add all printers to a server running CUPS, and then simply adding the server to all clients. This allows for a central printing system that can be online 24/7, which is especially nice for printers that do not have networking capabilities.
 
 Please refer to the [CUPS](/index.php/CUPS "CUPS") wiki page for instructions on installation and configuration.
-
-### DHCP
-
-**Note:** dhcp v4 does not currently work due to IPv6 issues, this part of the guide will be written when that issue is resolved.
 
 ### Samba (Windows-compatible file and printer sharing)
 

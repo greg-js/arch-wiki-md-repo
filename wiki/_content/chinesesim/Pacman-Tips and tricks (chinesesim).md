@@ -369,7 +369,7 @@ $ repo-add /path/to/repo.db.tar.gz /path/to/packagetoadd-1.0-1-i686.pkg.tar.xz
 
 要在多机间共享软件包，使用任何网络协议共享`/var/cache/pacman/`目录即可。本节介绍如何使用shfs或sshfs，在局域网内的多机间分享软件包及相关库文件目录。注意，网络间共享可能速度缓慢，取决于所选文件系统等因素。
 
-首先，在服务器安装任意网络文件系统：[sshfs](/index.php/Sshfs "Sshfs")，[shfs](/index.php/Shfs "Shfs")，[ftpfs](/index.php?title=Ftpfs&action=edit&redlink=1 "Ftpfs (page does not exist)")，[smbfs](/index.php/Smbfs "Smbfs")或[nfs](/index.php/Nfs "Nfs")。
+首先，在服务器安装任意网络文件系统：[SSHFS](/index.php/SSHFS "SSHFS")，[shfs](/index.php/Shfs "Shfs")，[ftpfs](/index.php?title=Ftpfs&action=edit&redlink=1 "Ftpfs (page does not exist)")，[smbfs](/index.php/Smbfs "Smbfs")或[NFS](/index.php/NFS "NFS")。
 
 **提示：** 使用sshfs或shfs前，先阅读[Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys")。
 
@@ -520,7 +520,7 @@ Pacman将所有软件包的信息放在一一对应的许多小文件中。通�
 
 #### 使用 Powerpill
 
-Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下载功能，加速下载过程。Pacman 一次只下载一个软件包，完成后才开始下一个下载。 Powerpill 同时下载多个软件包。 [Powerpill wiki 页面](/index.php/Powerpill "Powerpill")提供了基本的配置和使用方法。
+Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下载功能，加速下载过程。Pacman 一次只下载一个软件包，完成后才开始下一个下载。 Powerpill 同时下载多个软件包。[Powerpill wiki 页面](/index.php/Powerpill "Powerpill")提供了基本的配置和使用方法。
 
 #### 使用wget
 
@@ -539,7 +539,7 @@ XferCommand = /usr/bin/wget -c --passive-ftp -c %u
 
 [aria2](/index.php/Aria2 "Aria2")是一个具有断点续传和分块下载功能的轻量级下载软件，支持HTTP/HTTPS/FTP协议。[aria2](http://aria2.sourceforge.net/)可以多线程通过HTTP/HTTPS和FTP协议连接镜像服务器，显著提高下载速度。
 
-**注意:** 在Pacman的XferCommand使用 aria2c **不会**导致并行下载多个包。因为Pacman调用XferCommand时是一次一个包调用的，等待下载完成才会启动下一个。想要并行下载多个包，参见下面的 [powerpill-light](#.E4.BD.BF.E7.94.A8_powerpill-light) 部分。
+**注意:** 在Pacman的XferCommand使用 aria2c **不会**导致并行下载多个包。因为Pacman调用XferCommand时是一次一个包调用的，等待下载完成才会启动下一个。想要并行下载多个包，参见下面的 [powerpill-light](#.E4.BD.BF.E7.94.A8_Powerpill) 部分。
 
 ##### 安装
 

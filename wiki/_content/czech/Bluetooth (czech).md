@@ -254,7 +254,7 @@ $> hidd --connect XX:XX:XX:XX:XX:XX
 
 ```
 
-Pro konfiguraci automatického připojení myši použijte svého desktopového průvodce. Pokud ve vašem prostředí nemáte tuto možnost, koukněte na [Bluetooth_myš](/index.php/Bluetooth_my%C5%A1 "Bluetooth myš").
+Pro konfiguraci automatického připojení myši použijte svého desktopového průvodce. Pokud ve vašem prostředí nemáte tuto možnost, koukněte na [Bluetooth myš](/index.php/Bluetooth_my%C5%A1 "Bluetooth myš").
 
 ### Motorola V900
 
@@ -547,7 +547,7 @@ May  2 23:36:41 tatooine hcid[8109]: Device hci0 has been activated
 
 ```
 
-Pro seznam podporovaného hardware pokračujte do sekce [zdroje](/index.php/Bluetooth_(%C4%8Cesky)#Zdroje "Bluetooth (Česky)") na této stránce. Pokud vidíte pouze dvě první řádky logu výše, znamená to, že zařízení bylo nalezeno, ale musí se ješte zapnout. Příklad:
+Pro seznam podporovaného hardware pokračujte do sekce [zdroje](#Zdroje) na této stránce. Pokud vidíte pouze dvě první řádky logu výše, znamená to, že zařízení bylo nalezeno, ale musí se ješte zapnout. Příklad:
 
 ```
 hciconfig -a hci0

@@ -90,4 +90,4 @@ See [Openbox#autostart](/index.php/Openbox#autostart "Openbox").
 
 ### Awesome
 
-See [Awesome#Autorun_programs](/index.php/Awesome#Autorun_programs "Awesome").
+See [Awesome#Autorun programs](/index.php/Awesome#Autorun_programs "Awesome").

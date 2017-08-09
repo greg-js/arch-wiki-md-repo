@@ -183,7 +183,7 @@ EndSection
 
 If you experience screen tearing while scrolling add the following line to the conf above: `Option "TearFree" "true"` and set the "AccelMethod" to "sna" and comment out "uxa"
 
-If you have an Intel Kaby Lake chip [[1]](https://en.wikipedia.org/wiki/Kaby_Lake), and the issue is not fixed with the conf above, add to `i915.enable_rc6=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+If you have an Intel Kaby Lake chip [wikipedia:Kaby_Lake](https://en.wikipedia.org/wiki/Kaby_Lake "wikipedia:Kaby Lake"), and the issue is not fixed with the conf above, add to `i915.enable_rc6=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 #### Hybrid graphics
 
@@ -195,7 +195,7 @@ Suspending (Close laptop lid) does not seem to work with a basic installation. T
 
 A [bug](https://bugzilla.kernel.org/show_bug.cgi?id=187271) was filed against the kernel ACPI driver in November 2016\. It contains a fair amount of documentation on the issue along with a workaround which seems to solve the problem.
 
-To work around the issue, add the following to your [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters"):
+To work around the issue, add the following to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
 button.lid_init_state=open
@@ -301,7 +301,7 @@ Feature still not working: pinch to zoom, 3rd mouse button.
 
 [Source](http://forum.notebookreview.com/razer/729380-razer-blade-pro-under-linux.html)
 
-*   SwitchBlade UI doesn't work due to lack of drivers.
+*   SwitchBlade UI does not work due to lack of drivers.
 *   ~~Trackpad scrolling does not work.~~
 
 #### Possible trackpad solution

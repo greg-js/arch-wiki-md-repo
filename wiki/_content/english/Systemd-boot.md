@@ -62,7 +62,7 @@ Unlike the previous separate *gummiboot* package, which updated automatically on
 
 #### Manually
 
-*systemd-boot* ([bootctl(1)](https://www.freedesktop.org/software/systemd/man/bootctl.html), [systemd-efi-boot-generator(8)](http://man7.org/linux/man-pages/man8/systemd-efi-boot-generator.8.html)) assumes that your EFI System Partition is mounted on `/boot`.
+*systemd-boot* ([bootctl(1)](http://man7.org/linux/man-pages/man1/bootctl.1.html), [systemd-efi-boot-generator(8)](http://man7.org/linux/man-pages/man8/systemd-efi-boot-generator.8.html)) assumes that your EFI System Partition is mounted on `/boot`.
 
 ```
 # bootctl update

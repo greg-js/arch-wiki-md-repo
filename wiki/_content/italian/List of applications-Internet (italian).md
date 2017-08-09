@@ -575,7 +575,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 ### Gestori di rete
 
-*   **[Connman](/index.php/Connman "Connman")** — Demone per la gestione delle connessioni internet nel raggio di dispositivi embedded che eseguono il sistema operativo Linux . Il Connection Manager è progettato per essere leggero e per utilizzare il minor numero di risorse possibili, in modo che possa essere facilmente integrato
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Demone per la gestione delle connessioni internet nel raggio di dispositivi embedded che eseguono il sistema operativo Linux . Il Connection Manager è progettato per essere leggero e per utilizzare il minor numero di risorse possibili, in modo che possa essere facilmente integrato
 
 	[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
 

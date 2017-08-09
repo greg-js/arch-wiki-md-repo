@@ -86,7 +86,7 @@ Alternatively you may choose to disable the kernel modules required by AppArmor 
 
 ### Auditing and generating profiles
 
-To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](http://linux.die.net/man/8/auditctl) will suffice:
+To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](http://man7.org/linux/man-pages/man8/auditctl.8.html) will suffice:
 
 ```
 # auditctl -a exit,always -F arch=b64 -S all -F path=/usr/bin/chromium -F key=MonitorChromium

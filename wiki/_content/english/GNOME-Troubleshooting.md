@@ -355,4 +355,4 @@ GNOME defaults to this behaviour about suspension:
 
 Currently [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) is not able to modify the behaviour on the second case, when a monitor is connected to the computer. While it can inhibit suspension with no monitor attached.
 
-**Note:** Behaviour on LID closure is controlled also by systemd. See [Power_management#Power_management_with_systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
+**Note:** Behaviour on LID closure is controlled also by systemd. See [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").

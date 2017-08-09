@@ -420,9 +420,9 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 一些在线办公套件网站可以提供基础的办公功能:
 
-[Office Online](https://en.wikipedia.org/wiki/Office_Online): Microsoft提供的Office办公套件的网页版
+[Office Online](https://en.wikipedia.org/wiki/Office_Online "wikipedia:Office Online"): Microsoft提供的Office办公套件的网页版
 
-[Google Docs, Sheets and Slides](https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides): Google提供的在线文字处理、电子制表和演示程序。
+[Google Docs, Sheets and Slides](https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides "wikipedia:Google Docs, Sheets and Slides"): Google提供的在线文字处理、电子制表和演示程序。
 
 ### 中文输入法
 

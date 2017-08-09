@@ -87,7 +87,7 @@ La compilazione di pacchetti tramite ABS consta dei seguenti passaggi:
 
 ### Strumenti d'installazione
 
-Per utilizzare ABS, bisogna innanzitutto [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [abs](https://www.archlinux.org/packages/?name=abs) dai [repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)")
+Per utilizzare ABS, bisogna innanzitutto [installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [abs](https://www.archlinux.org/packages/?name=abs) dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)")
 
 Ciò installerà gli script di sincronizzazione di ABS, vari script di compilazione, ed [rsync](/index.php/Rsync "Rsync") (come dipendenza, nel caso non fosse già installato).
 

@@ -226,7 +226,7 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 
 You need to do two cold boots (**NOT** a simple reboot, shut it down and turn it back on again) to make sound working again.
 
-Refer to the [#HDA Mode](#HDA_Mode) above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch Linux bug report](https://bugs.archlinux.org/task/47989).
+Refer to the [#HDA mode](#HDA_mode) above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch Linux bug report](https://bugs.archlinux.org/task/47989).
 
 ### Loud cracks/noise during boot or audio playback
 

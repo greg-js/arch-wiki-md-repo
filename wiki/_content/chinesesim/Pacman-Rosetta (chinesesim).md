@@ -1,13 +1,10 @@
-**翻译状态：** 本文是英文页面 [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-06，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FRosetta&diff=0&oldid=464653)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-07，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FRosetta&diff=0&oldid=481490)可以查看翻译后英文页面的改动。
 
 这个页面用表格展示一些流行的 Linux 发行版[包管理器](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager")命令的对应关系。这是受到 [openSUSE's Software Management Command Line Comparison](http://old-en.opensuse.org/Software_Management_Command_Line_Comparison) 的启发而成的。
 
 **Tip:** Arch 用户在临时处理其他发行版时可以用 [pacapt](https://github.com/icy/pacapt)，它是对其它包管理器的简单包装。
 
-**Note:**
-
-*   这里描述的一些工具只针对特定版本的 pacman。其中的 -Qk 选项是在 pacman 4.1 中新实现的。
-*   您可以在 [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) 中找到 `pkgfile` 命令。
+**Note:** 这里描述的一些工具只针对特定版本的 pacman。其中的 -Qk 选项是在 pacman 4.1 中新实现的。
 
 ## Contents
 
@@ -25,7 +22,7 @@
 
 | **<font color="#707070">动作</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
 | 按名安装包 | pacman -S | dnf install | apt install | zypper install
-zypper in | emerge [-a] |
+zypper in | emerge -1O |
 | 按名移除包 | pacman -Rs | dnf remove | apt remove | zypper remove
 zypper rm | emerge -C |
 | 通过软件名、描述、简短描述来搜索包。默认搜索域依工具不同而异。Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search
@@ -53,12 +50,12 @@ apt-get download (bypass the package cache) | zypper --download-only | emerge --
 | 显示本地包信息，包括包名、版本、描述等。 | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
 | 显示远程包信息，包括包名、版本、描述等。 | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
 | 显示本地包提供的文件。 | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
-| 显示远程包提供的文件。 | pkgfile -l | dnf repoquery -l | apt-file list $pattern | pfl |
+| 显示远程包提供的文件。 | pacman -Fl | dnf repoquery -l | apt-file list $pattern | pfl |
 | 查询提供某个文件的包。 | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) | dpkg -S / dlocate | zypper search -f | equery belongs |
 | 列出包中的文件。其他更复杂的命令亦可以提供该功能。 | pacman -Ql
-pkgfile -l | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
-| 查出文件是由哪一个包提供的，主要是为了检索特定文件。其他工具亦可通过搜索命令提供该功能。 | pkgfile | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
-| 在所有包中查找包含指定文件的包。auto-apt 提供该功能。 | pkgfile -s | dnf provides | apt-file search | zypper search -f | equery belongs |
+pacman -Fl | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
+| 查出文件是由哪一个包提供的，主要是为了检索特定文件。其他工具亦可通过搜索命令提供该功能。 | pacman -Fo | dnf provides | apt-file search | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
+| 在所有包中查找包含指定文件的包。auto-apt 提供该功能。 | pacman -Fs | dnf provides | apt-file search | zypper search -f | equery belongs |
 | 显示包的更新日志。 | pacman -Qc | rpm -q --changelog | apt-get changelog | rpm -q --changelog | equery changes -f |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 

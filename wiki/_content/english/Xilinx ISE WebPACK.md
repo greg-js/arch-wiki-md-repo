@@ -240,14 +240,14 @@ $ sudo make lib32
 And install driver (replace 14.7 to your version):
 
 ```
-$ ./setup_pcusb /opt/Xilinx/14.7/ISE_DS/ISE/
+$ ./setup_pcusb /opt/Xilinx/14.7/ISE_DS/ISE
 
 ```
 
 Or in older versions:
 
 ```
-$ ./setup_pcusb /opt/Xilinx/10.x/ISE/
+$ ./setup_pcusb /opt/Xilinx/10.x/ISE
 
 ```
 

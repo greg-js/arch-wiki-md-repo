@@ -112,9 +112,9 @@ Xorg should run smoothly without closed source drivers, which are typically need
 
 | GPU architecture | Radeon cards | Open-source driver | Proprietary driver |
 | GCN 4
-and newer | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
+and newer | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
 | GCN 3 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
-[AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
+[AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
 | GCN 2* | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | GCN 1* | [AMDGPU](/index.php/AMDGPU "AMDGPU") / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
@@ -242,7 +242,7 @@ See main article [Multihead](/index.php/Multihead "Multihead") for general infor
 See also GPU-specific instructions:
 
 *   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
-*   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
+*   [Nouveau#Dual head](/index.php/Nouveau#Dual_head "Nouveau")
 *   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
 *   [ATI#Multihead setup](/index.php/ATI#Multihead_setup "ATI")
 
@@ -643,7 +643,7 @@ and use what is closer to the shown value.
 If Xorg is set to boot up automatically and for some reason you need to prevent it from starting up before the login/display manager appears (if the system is wrongly configured and Xorg does not recognize your mouse or keyboard input, for instance), you can accomplish this task with two methods.
 
 *   Change default target to rescue.target. See [systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
-*   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Follow the [installation guide](/index.php/Installation_guide#Mount_the_partitions "Installation guide") about how to mount and chroot into the installed Arch Linux. Alternatively try to switch into another [tty](/index.php/Getty "Getty") with `Ctrl+Alt` + function key (usually from `F1` to `F7` depending on which is not used by X), login as root and follow steps below.
+*   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Follow the [installation guide](/index.php/Installation_guide#Format_the_partitions "Installation guide") about how to mount and chroot into the installed Arch Linux. Alternatively try to switch into another [tty](/index.php/Getty "Getty") with `Ctrl+Alt` + function key (usually from `F1` to `F7` depending on which is not used by X), login as root and follow steps below.
 
 Depending on setup, you will need to do one or more of these steps:
 

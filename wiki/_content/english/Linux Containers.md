@@ -291,7 +291,7 @@ The snapshots can be started/stopped like any other container. Users can optiona
 
 ```
 
-Systemd units and wrapper scripts to manage snapshots for [pi-hole](/index.php/Pi-hole "Pi-hole") and [openvpn](/index.php/Openvpn "Openvpn") are available to automate the process in [lxc-snapshots](https://aur.archlinux.org/packages/lxc-snapshots/).
+Systemd units and wrapper scripts to manage snapshots for [pi-hole](/index.php/Pi-hole "Pi-hole") and [OpenVPN](/index.php/OpenVPN "OpenVPN") are available to automate the process in [lxc-snapshots](https://aur.archlinux.org/packages/lxc-snapshots/).
 
 ### Converting a privileged container to an unprivileged container
 

@@ -329,7 +329,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  |
 | [ncmpc](http://www.musicpd.org/clients/ncmpc/) | `~/.ncmpc` | `ncmpc -f "$XDG_CONFIG_HOME"/ncmpc/config` |
-| [NetBeans](/index.php/NetBeans "NetBeans") | `~/.netbeans` | [[70]](https://netbeans.org/bugzilla/show_bug.cgi?id=215961) | `$ netbeans --userdir "${XDG_CONFIG_HOME}"/netbeans` |
+| [Netbeans](/index.php/Netbeans "Netbeans") | `~/.netbeans` | [[70]](https://netbeans.org/bugzilla/show_bug.cgi?id=215961) | `$ netbeans --userdir "${XDG_CONFIG_HOME}"/netbeans` |
 | [notmuch](/index.php/Notmuch "Notmuch") | `~/.notmuch-config` | [[71]](http://notmuchmail.org/pipermail/notmuch/2011/007007.html) | `$ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc`
 
 `$ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug`

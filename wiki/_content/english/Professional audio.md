@@ -53,7 +53,7 @@ The following packages are a good start to build a full-featured pro audio syste
 
 Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
 
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [Linuxsampler](/index.php/Linuxsampler "Linuxsampler"))
+*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [LinuxSampler](/index.php/LinuxSampler "LinuxSampler"))
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
 *   [carla](https://aur.archlinux.org/packages/carla/)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)

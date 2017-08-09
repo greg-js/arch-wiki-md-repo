@@ -1,8 +1,8 @@
-[Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") На этой странице описаны два возможных способа миграции установленных систем с 64-разрядных (32-разрядных) на x86_64 (64-разрядных) архитектуры. Методы избегают «полной» переустановки (т. Е. Очистки жесткого диска). Один метод использует liveCD, другой изменяет систему изнутри.
+[Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") На этой странице описаны два возможных способа миграции установленных систем с 64-разрядных (32-разрядных) на x86_64 (64-разрядные) архитектуры. Методы избегают «полной» переустановки (т. е. очистки жесткого диска). Один метод использует liveCD, другой изменяет систему изнутри.
 
 **Note:** Технически этот процесс по-прежнему включает «переустановку», поскольку каждый пакет в системе должен быть заменен. Эти методы просто пытаются сохранить как можно больше из вашей существующей системы.
 
-**Warning:** Если не указано явно, все эти методы «непроверены» и могут нанести непоправимый урон вашей системе. Продолжайте на свой страх и риск.
+**Warning:** Если не указано явно, все эти методы «не проверены» и могут нанести непоправимый урон вашей системе. Продолжайте на свой страх и риск.
 
 ## Contents
 
@@ -11,26 +11,26 @@
     *   [1.2 Дисковое пространство](#.D0.94.D0.B8.D1.81.D0.BA.D0.BE.D0.B2.D0.BE.D0.B5_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.81.D1.82.D0.B2.D0.BE)
     *   [1.3 Источник питания](#.D0.98.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA_.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D1.8F)
     *   [1.4 Пакеты резервных копий](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D1.8B.D1.85_.D0.BA.D0.BE.D0.BF.D0.B8.D0.B9)
-*   [2 Method 1: using the Arch LiveCD](#Method_1:_using_the_Arch_LiveCD)
-*   [3 Method 2: from a running system](#Method_2:_from_a_running_system)
-    *   [3.1 Package preparation](#Package_preparation)
-        *   [3.1.1 Cache old packages](#Cache_old_packages)
-        *   [3.1.2 Install busybox](#Install_busybox)
-        *   [3.1.3 Change Pacman architecture](#Change_Pacman_architecture)
-        *   [3.1.4 Download new packages](#Download_new_packages)
-    *   [3.2 Package installation](#Package_installation)
-        *   [3.2.1 Install kernel (64-bit)](#Install_kernel_.2864-bit.29)
-        *   [3.2.2 Install lib32-glibc](#Install_lib32-glibc)
-        *   [3.2.3 Reboot](#Reboot)
-        *   [3.2.4 Switch to Console Terminal](#Switch_to_Console_Terminal)
-        *   [3.2.5 Install Pacman](#Install_Pacman)
-        *   [3.2.6 Install remaining packages](#Install_remaining_packages)
-*   [4 Cleanup](#Cleanup)
-    *   [4.1 Makepkg compiler flags](#Makepkg_compiler_flags)
-*   [5 Troubleshooting](#Troubleshooting)
+*   [2 Метод 1: с использованием Arch LiveCD](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_1:_.D1.81_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_Arch_LiveCD)
+*   [3 Метод 2: из работающей системы](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_2:_.D0.B8.D0.B7_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+    *   [3.1 Подготовка пакетов](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+        *   [3.1.1 Кеширование старых пакетов](#.D0.9A.D0.B5.D1.88.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D1.82.D0.B0.D1.80.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+        *   [3.1.2 Установка busybox](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_busybox)
+        *   [3.1.3 Изменение архитектуры Pacman](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D1.80.D1.85.D0.B8.D1.82.D0.B5.D0.BA.D1.82.D1.83.D1.80.D1.8B_Pacman)
+        *   [3.1.4 Скачайте новые пакеты](#.D0.A1.D0.BA.D0.B0.D1.87.D0.B0.D0.B9.D1.82.D0.B5_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
+    *   [3.2 Установка пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+        *   [3.2.1 Установка ядра (64-bit)](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.8F.D0.B4.D1.80.D0.B0_.2864-bit.29)
+        *   [3.2.2 Установка lib32-glibc](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_lib32-glibc)
+        *   [3.2.3 Перезагрузка](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
+        *   [3.2.4 Переключение в консольный терминал](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB)
+        *   [3.2.5 Установка Pacman](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Pacman)
+        *   [3.2.6 Установка остальных пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D1.81.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+*   [4 Очистка](#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0)
+    *   [4.1 Флаги компиляции Makepkg](#.D0.A4.D0.BB.D0.B0.D0.B3.D0.B8_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D0.B8_Makepkg)
+*   [5 Устранение проблем](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [5.1 Busybox](#Busybox)
     *   [5.2 Lib32-glibc](#Lib32-glibc)
-    *   [5.3 KDE does not start after switching from 32-bit to 64-bit](#KDE_does_not_start_after_switching_from_32-bit_to_64-bit)
+    *   [5.3 KDE не запускается после миграции с 32-bit на 64-bit](#KDE_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BC.D0.B8.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D1.81_32-bit_.D0.BD.D0.B0_64-bit)
     *   [5.4 Mutt issues with cache enabled](#Mutt_issues_with_cache_enabled)
 *   [6 See also](#See_also)
 
@@ -46,7 +46,7 @@ grep --color -w lm /proc/cpuinfo
 
 ### Дисковое пространство
 
-Вы должны быть готовы к `/var/cache/pacman/pkg` увеличению размера, примерно в два раза превышает его текущий размер. Предполагается, что только пакеты, которые в настоящее время установлены, находятся в кеше, как будто “pacman -Sc” (clean) был недавно запущен. Увеличение дискового пространства связано с дублированием между версиями i686 и x86_64 каждого пакета.
+Вы должны быть готовы к увеличению размера `/var/cache/pacman/pkg` примерно в два раза. Предполагается, что в кеше находятся только установленные в данный момент, как будто “pacman -Sc” (clean) был недавно запущен. Увеличение дискового пространства связано с дублированием каждого пакета для версии i686 и x86_64.
 
 Если у вас недостаточно диска, используйте [GParted](/index.php/GParted "GParted"), чтобы изменить размер соответствующего раздела или установить другой раздел в `/var/cache/pacman`.
 
@@ -54,7 +54,7 @@ grep --color -w lm /proc/cpuinfo
 
 ### Источник питания
 
-Миграция может занять значительное количество времени, и было бы неудобно прерывать процесс. Вы должны планировать как минимум час, в зависимости от количества и размера установленных пакетов и скорости интернет-соединения (хотя вы можете загрузить все, прежде чем запускать критическую часть). Убедитесь, что вы подключены к стабильному источнику питания, предпочтительно с каким-либо отказоустойчивостью или резервным аккумулятором.
+Миграция может занять значительное количество времени, и было бы неудобно прерывать процесс. Вы должны планировать как минимум час, в зависимости от количества и размера установленных пакетов и скорости интернет-соединения (хотя вы можете загрузить все, прежде чем запускать критическую часть). Убедитесь, что вы подключены к стабильному источнику питания, предпочтительно с какой-либо отказоустойчивостью или резервным аккумулятором.
 
 ### Пакеты резервных копий
 
@@ -62,16 +62,16 @@ grep --color -w lm /proc/cpuinfo
 
 Один пакет [busybox](https://www.archlinux.org/packages/?name=busybox), который можно использовать для возврата изменений. Он статически связан и не зависит от каких-либо библиотек. Должна быть установлена 32-разрядная версия (i686).
 
-Другой пакет [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), из [Multilib](/index.php/Multilib "Multilib") x86_64 репозитория. Вероятно, это полезно, когда вы переносите «долой» из 32 бит; В любом случае вы можете безопасно пропустить этот пакет. Вы можете использовать пакет для запуска 32-битных программ, явно вызывая `/lib/ld-linux.so.2`.
+Другой пакет [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), из [Multilib](/index.php/Multilib "Multilib") x86_64 репозитория, может пригодиться только при миграции с 32 бит. Вы можете безопасно пропустить этот пакет, а для запуска 32-битных программ явно вызывать `/lib/ld-linux.so.2`.
 
-## Method 1: using the Arch LiveCD
+## Метод 1: с использованием Arch LiveCD
 
-1.  [Download](https://www.archlinux.org/download/) and burn the latest Arch Linux ISO.
-2.  Boot the Arch LiveCD in x86_64 mode.
-3.  Configure your network on the LiveCD.
-4.  Mount your existing installation. For example: `mount /dev/sda1 /mnt`.
-5.  Edit the LiveCD `/etc/pacman.conf` repositories to match the existing `/mnt/etc/pacman.conf` repositories.
-6.  Use the following commands to update the local pacman database and clear the cache directory.
+1.  [Скачайте](https://www.archlinux.org/download/) и запишите свежий образ Arch Linux ISO.
+2.  Загрузите Arch LiveCD в режиме x86_64.
+3.  Настройте доступ к сети.
+4.  Примонтируйте текущую установку. Например: `mount /dev/sda1 /mnt`.
+5.  Отредактируйте репозитории LiveCD `/etc/pacman.conf` для соответствия текущим репозиториям `/mnt/etc/pacman.conf`.
+6.  Обновите базу pacman и очистите кэш при помощи команд:
 
 ```
  # pacman --root /mnt -Syy
@@ -79,23 +79,23 @@ grep --color -w lm /proc/cpuinfo
 
 ```
 
-	6\. You might first re-install the [base](https://www.archlinux.org/groups/x86_64/base/) group alone, then install any package that triggered an install error, identified using `pacman --root /mnt -Qo <error file>`. Then repeat the [base](https://www.archlinux.org/groups/x86_64/base/) group install, until it installs cleanly without errors.
+	6\. Сначала попробуйте переустановить только группу [base](https://www.archlinux.org/groups/x86_64/base/), затем каждый пакет, при установке которого возникла ошибка. Найти эти пакеты можно при помощи `pacman --root /mnt -Qo <error file>`. Затем повторяйте установку группы [base](https://www.archlinux.org/groups/x86_64/base/) до тех пор, пока установка не закончится без ошибок.
 
 ```
  # pacman --root /mnt -S base
 
 ```
 
-	7\. Use the following command to get a list of all your installed packages and then reinstall them.
+	7\. Получить список всех установленных пакетов и переустановить их можно при помощи команды:
 
 ```
  # pacman --root /mnt -Qnq | pacman --root /mnt -S -
 
 ```
 
-	8\. You could run the command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture. Or you can make note of any individual package-re-install that throws an error and then go back after the upgrade completes to re-install just those packages. Also, if you see an error about not enough disk space, you can filter the package list alphabetically and upgrade in stages, with for instance `...| grep '^[a-k]' |...`, then perhaps `'^l'` and `'^[m-z]'`. In this case you would also have to run `pacman --root /mnt -Scc` after each install stage to free disk space.
+	8\. Команду следует запускать дважды, потому что при первом запуске многие пакеты не смогут выполнить пост-установочные скрипты из-за неверной архитектуры. К примеру, sed, grep, perl и другие. Либо вы можете записать пакеты, установка которых завершилась ошибкой, а затем вернуться к ним после окончания миграции и переустановить. Если же при установке закончилось свободное место, вы можете отфильтровать пакеты по алфавиту и обновлять их группами. Например, сначала `...| grep '^[a-k]' |...`, затем `'^l'` и в конце `'^[m-z]'`. Также не забывайте запускать после каждой установки `pacman --root /mnt -Scc` для освобождения места.
 
-	9\. Finally, run
+	9\. И в конце запустите
 
 ```
  # arch-chroot /mnt 
@@ -103,106 +103,106 @@ grep --color -w lm /proc/cpuinfo
 
 ```
 
-	10\. Also, see if your boot loader needs to be migrated. For instance:
+	10\. Также обратите внимание на загрузчик, который тоже может потребовать миграции. К примеру:
 
 ```
  # grub-install --recheck /dev/sda
 
 ```
 
-	11\. After rebooting to your new 64-bit system, edit and then move `/etc/makepkg.conf.pacnew` to `/etc/makepkg.conf`, to migrate the cpu architecture. Then rebuild the "foreign" packages, which will include packages from the AUR.
+	11\. После перезагрузки в новую 64-битную систему отредактируйте `/etc/makepkg.conf.pacnew` и переместите в `/etc/makepkg.conf` для подготовки к миграции на новую архитектуру сторонних пакетов, включая AUR. Затем их необходимо пересобрать.
 
-	You might first want to remove certain orphaned foreign packages before trying to rebuild them. Run this command to find out what 32-bit binaries you still have and reinstall them:
+	Перед пересборкой может потребоваться удаление orphaned пакетов. Для поиска 32-битных пакетов воспользуйтесь:
 
 ```
  $ pacman -Qo `find /usr/bin -type f -exec bash -c 'file "{}" | grep 32-bit' \; | cut -d':' -f1` | cut -d' ' -f5 | sort | uniq | tee list
 
 ```
 
-## Method 2: from a running system
+## Метод 2: из работающей системы
 
-Ensure that your system is fully updated and functioning before proceeding.
+Убедитесь, что ваша система полностью обновлена и работоспособна.
 
 ```
 # pacman -Syu
 
 ```
 
-### Package preparation
+### Подготовка пакетов
 
-#### Cache old packages
+#### Кеширование старых пакетов
 
-**Note:** If you have any packages installed from the [AUR](/index.php/AUR "AUR") or third-party repositories without new architecture availability, pacman will let you know it cannot find a suitable replacement. Make a list of these packages so you may re-install them after the update process and then remove them using `pacman -Rsn package_name`.
+**Note:** Если вы устанавливали пакеты без поддержки новой архитектуры из [AUR](/index.php/AUR "AUR") или сторонних репозиториев, pacman уведомит, если не сможет найти замену. Запишите их, после миграции переустановите, а затем удалите при помощи `pacman -Rsn package_name`.
 
-If you do not have all your installed packages in your cache, download them (for the old architecture) for fallback purposes.
+Если у вас нет в кэше всех установленных пакетов, загрузите их (для старой архитектуры) для возможности восстановления.
 
 ```
 # pacman -Qqn | pacman -Sw -
 
 ```
 
-or use bacman from [pacman](https://www.archlinux.org/packages/?name=pacman) package to generate them.
+или используйте bacman из [pacman](https://www.archlinux.org/packages/?name=pacman).
 
-#### Install busybox
+#### Установка busybox
 
-If you are migrating from 32 bits to 64 bits, now is the time to install 32-bit [busybox](https://www.archlinux.org/packages/?name=busybox).
+Если вы мигрируете с 32 бит на 64 бита, самое время установить 32-битный [busybox](https://www.archlinux.org/packages/?name=busybox)
 
 ```
 # pacman -S busybox
 
 ```
 
-#### Change Pacman architecture
+#### Изменение архитектуры Pacman
 
-Edit the `/etc/pacman.conf` file and change *Architecture* from `auto` to `x86_64`.
+Отредактируйте `/etc/pacman.conf` и измените *Architecture* с `auto` на `x86_64`.
 
-Make sure the server lists in `/etc/pacman.conf` and `/etc/pacman.d/mirrorlist` use `$arch` instead of explicitly specifying `i686` or `x86_64`. Now force Pacman to synchronize with the new repositories:
-
-```
-# pacman -Syy                     # force sync new architecture repositories
+Убедитесь, что в списках серверов в `/etc/pacman.conf` и `/etc/pacman.d/mirrorlist` используется `$arch` вместо принудительно заданных `i686` или `x86_64`. Затем принудительно синхронизируйте Pacman с репозиториями:
 
 ```
-
-#### Download new packages
-
-Download the new architecture versions of all our currently installed packages:
+# pacman -Syy                     # принудительная синхронизация с новой архитектурой
 
 ```
-# pacman -Sw $(pacman -Qqn|sed '/^lib32-/ d')  # download new package versions
+
+#### Скачайте новые пакеты
+
+Скачайте для всех установленных пакетов версию для новой архитектуры:
+
+```
+# pacman -Sw $(pacman -Qqn|sed '/^lib32-/ d')  # скачать пакеты для новой архитектуры
 
 ```
 
 If migrating to 32 bits, install the 32-bit [busybox](https://www.archlinux.org/packages/?name=busybox) fallback now that Pacman has been configured with the 32-bit architecture.
 
-**Warning:** Do not install the *lib32-glibc* package now. After a *ldconfig*, when you install *linux*, the generated image will have libraries like *librt.so* in '`/usr/lib32`, where binaries during boot will not search, resulting in a boot failure.
+**Warning:** Не устанавливайте сразу пакет*lib32-glibc*. После*ldconfig*, при установке *linux*, созданный образ будет включать библиотеки вида *librt.so* в '`/usr/lib32`, которые при загрузке не будут найдены и процесс загрузки прервется.
 
-### Package installation
+### Установка пакетов
 
-#### Install kernel (64-bit)
+#### Установка ядра (64-bit)
 
-Upgrading the kernel to 64 bits (x86_64) is safe and straightforward: 32 bit and 64 bit applications run equally well under a 64-bit kernel.
+Обновить ядро до 64-битного (x86_64) просто и безопасно: 32-битные и 64-битные приложения работают с 64-битным ядром одинаково хорошо.
 
-Install the [linux](https://www.archlinux.org/packages/?name=linux) package.
+Установите пакет [linux](https://www.archlinux.org/packages/?name=linux).
 
 ```
 # pacman -S linux
 
 ```
 
-#### Install lib32-glibc
+#### Установка lib32-glibc
 
-Install the [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) fallback. You will need to add the [multilib](/index.php/Multilib "Multilib") repository in `/etc/pacman.conf` if you have not done so already.
+Установите [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) на всякий случай. Для этого может потребоваться включить репозиторий [multilib](/index.php/Multilib "Multilib") в `/etc/pacman.conf`, если вы еще не сделали это ранее.
 
 ```
 # pacman -S lib32-glibc
 
 ```
 
-**Note:** If this fails due to an existing file from a differently named package, use pacman's `--force` option.
+**Note:** Если установка прервется из-за найденного файла из-за пакета с другим именем, используйте pacman с опцией `--force`
 
-#### Reboot
+#### Перезагрузка
 
-Verify that you are running the x86_64 architecture:
+После перезагрузки убедитесь, что работаете в архитектуре x86_64:
 
  `$ uname -m` 
 ```
@@ -210,74 +210,74 @@ x86_64
 
 ```
 
-#### Switch to Console Terminal
+#### Переключение в консольный терминал
 
-Switch to a text-mode virtual console (e.g. Ctrl+Alt+F1) for the rest of the process, if possible. If you receive an error trying to use the 1st console, use the 2nd one (Ctrl-Alt+F2) instead. Pseudo-terminals like SSH should work, but direct access is recommended as a precaution. There will be several packages removed and replaced during the update process that may cause X11 desktops to become unstable and leave your system in an unbootable state.
+Для продолжения по возможности переключитесь в текстовую виртуальную консоль (напр. при помощи Ctrl+Alt+F1). Если при использовании первой консоли возникают проблемы, используйте вместо нее вторую (Ctrl-Alt+F2). Псевдо-терминалы вроде SSH должны работать, но в целях предосторожности рекомендуется прямой доступ. В процессе миграции некоторые пакеты будут заменены, что может сказаться на X11 и загрузить систему будет невозможно.
 
-#### Install Pacman
+#### Установка Pacman
 
-**Warning:** Once you start updating pacman and its dependencies it must not be interrupted! Pacman and all of its dependencies must be installed at the same time in a single command line.
+**Warning:** После запуска обновления pacman и его зависимостей нельзя прерывать процесс! Pacman и все зависимости должны быть установлены одновременно и одной командой.
 
-**Warning:** Immediately following this command only Busybox, Bash and Pacman will be executable until the other packages are migrated below. If you are using sudo, you should obtain root previlige prior to next command
+**Warning:** После выполнения этой команды только Busybox, Bash и Pacman останутся исполняемыми до момента миграции остальных пакетов. При использовании sudo вы должны получить привилегии root перед следующей командой.
 
-Use pactree to install Pacman and all its dependencies:
+Воспользуйтесь pactree для установки Pacman и всех его зависимостей:
 
 ```
 # pactree -l pacman | pacman -S -
 
 ```
 
-Errors may be printed but they will not cause a problem as long as Pacman works.
+В процессе могут возникать ошибки, но они не страшны пока Pacman продолжает работать.
 
-**Warning:** You must not reboot your system until the following commands have been completed. If you failed to do so, you should continue installing by [chrooting](/index.php/Chroot "Chroot") from another linux environment(e.g. from live install medium)
+**Warning:** До окончания выполнения команды не перезагружайтесь. Если вы все-таки решитесь перезагрузиться, продолжить установку можно из другого Linux-окружения (например, установочного образа)
 
-#### Install remaining packages
+#### Установка остальных пакетов
 
-Install all of the previously downloaded replacements for the new architecture. (Go get a drink and make a sandwich; this could take a while.)
+Установите все предварительно скачанные пакеты для новой архитектуры. (Сварите кофе и намажьте пару бутербродов красной икрой, это небыстрый процесс)
 
 ```
 # pacman -Qqn | pacman -S -
 
 ```
 
-If some packages did not install correctly, you should now be able to reinstall them successfully; if you are lazy, you can just re-run the last command to reinstall everything.
+Если при установке каких-либо пакетов возникнут проблемы, их необходимо переустановить вручную. Если вам лень, то можно просто перезапускать эту команду до успешного завершения.
 
-After this step the migration in either direction should be complete and it should be safe to reboot the computer.
+После этого этапа миграция будет окончена, можно безопасно перезагузить систему.
 
-However, if you have any AUR packages on your system, you must reinstall all of them. A list of those can be obtained by executing:
+Однако если были установлены пакеты из AUR, необходимо их переустановить отдельно. Список можно получить командой:
 
 ```
 $ pacman -Qqm
 
 ```
 
-## Cleanup
+## Очистка
 
-You are now free to remove **busybox** and *lib32-glibc*.
+Теперь можно безопасно удалить **busybox** и *lib32-glibc*.
 
-#### Makepkg compiler flags
+#### Флаги компиляции Makepkg
 
-During the upgrade the new version of `/etc/makepkg.conf` may be stored as `/etc/makepkg.conf.pacnew`. If so, you will have to replace the old version or modify it in order to compile anything with [makepkg](/index.php/Makepkg "Makepkg") in the future.
+При обновлении новая версия `/etc/makepkg.conf` может быть сохранена как `/etc/makepkg.conf.pacnew`. Если это произошло, то необходимо заменить прежнюю версию на новую или отредактировать ее для сборки при помощи [makepkg](/index.php/Makepkg "Makepkg") в будущем.
 
 ```
 # mv /etc/makepkg.conf /etc/makepkg.conf.backup && mv /etc/makepkg.conf.pacnew /etc/makepkg.conf
 
 ```
 
-It might also be a good idea to just get a list of "new" additions to `/etc`. You can get a list with the following command:
+Неплохо бы было проверить вообще все "new" файлы в `/etc` при помощи:
 
 ```
 # find /etc/ -type f -name \*.pac\*
 
 ```
 
-## Troubleshooting
+## Устранение проблем
 
-During the upgrade, when glibc is replaced by the new architecture version, old architecture versions of many programs will not run. If problems occur, you can solve them with [busybox](https://www.archlinux.org/packages/?name=busybox) and [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc).
+При замене glibc на версию для новой архитектуры в процессе обновления многие приложения для старой архитектуры могут не запуститься. Проблему можно решить при помощи [busybox](https://www.archlinux.org/packages/?name=busybox) и [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc).
 
 ### Busybox
 
-In Arch, Busybox is statically linked; it can run without any libraries. There are many commands available to you. For example, to extract an i686 version of Pacman from a cached package:
+В Arch Busybox статически связан. Он может быть запущен без библиотек и предоставить вам массу команд. Например, для извлечения i686-версии Pacman из пакета в кеше можно воспользоваться:
 
 ```
 # busybox tar xf /var/cache/pacman/pkg/pacman-3.3.2-1-i686.pkg.tar.gz -C <some folder>
@@ -286,16 +286,16 @@ In Arch, Busybox is statically linked; it can run without any libraries. There a
 
 ### Lib32-glibc
 
-Example run 32 bit `/bin/ls`:
+Пример запуска 32-битного `/bin/ls`:
 
 ```
 # /lib/ld-linux.so.2 /bin/ls
 
 ```
 
-### KDE does not start after switching from 32-bit to 64-bit
+### KDE не запускается после миграции с 32-bit на 64-bit
 
-KDE will crash when starting after switching from 32-bit to 64-bit. The cause are some leftover cached files from the 32 bit KDE packages in /var/tmp To fix this remove all kdecache folders in with
+KDE будет падать после перехода с 32-bit на 64-bit из-за некоторых 32-битных пакетов в /var/tmp. Для решения проблемы достаточно удалить все папки с кешем.
 
 ```
 # rm -rf /var/tmp/kdecache-*

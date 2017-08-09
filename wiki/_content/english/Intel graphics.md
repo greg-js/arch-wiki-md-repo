@@ -434,7 +434,7 @@ The following power saving features used by intel iGPUs are known to cause flick
 
 ### OpenGL 2.1 with i915 driver
 
-The update of [mesa](https://www.archlinux.org/packages/?name=mesa) from version 13.x to 17 may break support for OpenGL 2.1 on third gen Intel GPUs (GMA3100, see [here](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Third_generation)), as described in this [article](http://www.phoronix.com/scan.php?page=news_item&px=Mesa-i915-OpenGL-2-Drop), reverting it back to OpenGL 1.4\. However this could be restored manually by setting `/etc/drirc` or `~/.drirc` options like :
+The update of [mesa](https://www.archlinux.org/packages/?name=mesa) from version 13.x to 17 may break support for OpenGL 2.1 on third gen Intel GPUs (GMA3100, see [here](https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units#Third_generation "wikipedia:List of Intel graphics processing units")), as described in this [article](http://www.phoronix.com/scan.php?page=news_item&px=Mesa-i915-OpenGL-2-Drop), reverting it back to OpenGL 1.4\. However this could be restored manually by setting `/etc/drirc` or `~/.drirc` options like :
 
  `/etc/drirc` 
 ```

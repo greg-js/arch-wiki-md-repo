@@ -385,7 +385,7 @@ Quindi quando si usano periferiche HDAudio, spesso si troveranno controlli mixer
 
 #### Come risolvere
 
-Aprire <tt>ossxmix</tt> e provare a cambiare ogni configurazione del mixer nell' *area centrale*, che contiene i controlli specifici della scheda audio, come spiegato nella precedente sezione "[Regolazione del Volume](/index.php/OSS_(Italiano)#Regolazione_del_Volume "OSS (Italiano)")".
+Aprire <tt>ossxmix</tt> e provare a cambiare ogni configurazione del mixer nell' *area centrale*, che contiene i controlli specifici della scheda audio, come spiegato nella precedente sezione "[Regolazione del Volume](#Regolazione_del_Volume)".
 
 Probabilmente si vorrà impostare un programma per registrare/riprodurre continuamente in background (e.g. `ossrecord -` per registrare oppure `osstest -lV` per riprodurre), mentre si stanno cambiando le impostazioni del mixer.
 

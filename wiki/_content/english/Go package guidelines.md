@@ -30,8 +30,6 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
 
 *   For applications written in Go, use the name of the application as the package name, in lowercase.
     *   Be creative if the name is already taken.
-*   For libraries written in Go, use `go-*modulename*`, in lowercase.
-    *   If the name already starts with `go-`, do not call the package `go-*go-modulename*`, but just `go-*modulename*`.
 *   For PKGBUILDS that uses the "go" tool to download the package, only add "-git" to the package name if it is not built from a tarball or a from a tagged release (but from trunk/HEAD).
     *   Similarly for mercurial packages, only add "-hg" to the package name if it is not a release-revision.
     *   Extend this pattern for other version control systems.
@@ -49,7 +47,6 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
     *   Use license=('unknown') and report an issue to the developer if a license file is missing.
     *   Use version "0.1", "1" or the git-revision (or equivalent for other version control systems) if the version number is missing.
     *   Alternatively, use the current date as the version number, in this form `YYYYMMDD`.
-*   Since Go applications are usually statically compiled, it is hard to envision reasons for packaging Go libraries instead of just Go applications.
 
 ## Sample PKGBUILDs
 

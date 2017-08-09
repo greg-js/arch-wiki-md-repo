@@ -172,7 +172,6 @@ Section "InputClass"
         MatchIsKeyboard "on"
 	Option "XkbLayout" "us,ru"
 	Option "XkbModel" "pc105"
-	Option "XkbLayout" "us,ru"
 	Option "XkbVariant" "os_winkeys"
 	Option "XKbOptions" "grp:menu_toggle,grp_led:scroll,ctrl:swapcaps,compose:ralt"
 EndSection

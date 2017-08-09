@@ -3,10 +3,6 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Alternatives](#Alternatives)
-        *   [1.1.1 Secure copy protocol (SCP)](#Secure_copy_protocol_.28SCP.29)
-            *   [1.1.1.1 Scponly](#Scponly)
-            *   [1.1.1.2 Adding a chroot jail](#Adding_a_chroot_jail)
 *   [2 Configuration](#Configuration)
     *   [2.1 Setup the filesystem](#Setup_the_filesystem)
     *   [2.2 Create an unprivileged user](#Create_an_unprivileged_user)
@@ -19,48 +15,17 @@
         *   [3.2.2 Syslog-ng configuration](#Syslog-ng_configuration)
         *   [3.2.3 OpenSSH configuration](#OpenSSH_configuration)
         *   [3.2.4 Restart service](#Restart_service)
-*   [4 See also](#See_also)
+*   [4 Alternatives to SFTP](#Alternatives_to_SFTP)
+    *   [4.1 Secure copy protocol (SCP)](#Secure_copy_protocol_.28SCP.29)
+        *   [4.1.1 Scponly](#Scponly)
+        *   [4.1.2 Adding a chroot jail](#Adding_a_chroot_jail)
+*   [5 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") and configure [OpenSSH](/index.php/OpenSSH "OpenSSH"). Once running, SFTP is available by default.
 
 Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FTP clients](/index.php/List_of_applications#File_transfer_clients "List of applications") should work as well.
-
-### Alternatives
-
-#### Secure copy protocol (SCP)
-
-Installing [openssh](https://www.archlinux.org/packages/?name=openssh) provides the *scp* command to transfer files. SCP may be faster than using SFTP [[1]](https://superuser.com/questions/134901/whats-the-difference-between-scp-and-sftp).
-
-[Install](/index.php/Install "Install") [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) as alternative shell solutions.
-
-##### Scponly
-
-[install](/index.php/Install "Install") [scponly](https://www.archlinux.org/packages/?name=scponly).
-
-For existing users, simply set the user's shell to scponly:
-
-```
-# usermod -s /usr/bin/scponly *username*
-
-```
-
-See [the Scponly Wiki](https://github.com/scponly/scponly/wiki) for more details.
-
-##### Adding a chroot jail
-
-The package comes with a script to create a chroot. To use it, run:
-
-```
-# /usr/share/doc/scponly/setup_chroot.sh
-
-```
-
-*   Provide answers
-*   Check that `/path/to/chroot` has `root:root` owner and `r-x` for others
-*   Change the shell for selected user to `/usr/bin/scponlyc`
-*   sftp-server may require some libnss modules such as libnss_files. Copy them to chroot's `/lib` path.
 
 ## Configuration
 
@@ -87,7 +52,7 @@ Add entries to [fstab](/index.php/Fstab "Fstab") to make the bind mount survive 
 
 ### Create an unprivileged user
 
-**Note:** You don't need to create a group, it is possible to `Match User` instead of `Match Group`.
+**Note:** You do not need to create a group, it is possible to `Match User` instead of `Match Group`.
 
 First, we need to create the `sftponly` [group](/index.php/Group "Group"):
 
@@ -166,7 +131,7 @@ Create *authorized_keys* folder, generate a [SSH-key](/index.php/SSH_keys#Choosi
 
 ### Write permissions
 
-The `bind` path of the chroot user needs to be fully owned by `root`, however files/directories inside don't have to be. In the following example the user *backup* uses `/root/backups` (fully owned by *root*) as home-directory:
+The `bind` path of the chroot user needs to be fully owned by `root`, however files/directories inside do not have to be. In the following example the user *backup* uses `/root/backups` (fully owned by *root*) as home-directory:
 
 ```
 # mkdir /root/backups/share
@@ -228,7 +193,7 @@ log { source(src); filter(f_sftp); destination(sftp); };
 
 ```
 
-(Optional) If you'd like to similarly log SSH messages to it's own file:
+(Optional) If you would like to similarly log SSH messages to its own file:
 
 ```
 #sshd configuration
@@ -249,6 +214,41 @@ Edit `/etc/ssh/sshd_config` to replace all instances of `internal-sftp` with `in
 [Restart](/index.php/Restart "Restart") service `syslog-ng` and `sshd`.
 
 `/usr/local/chroot/theuser/dev/log` should now exist.
+
+## Alternatives to SFTP
+
+### Secure copy protocol (SCP)
+
+Installing [openssh](https://www.archlinux.org/packages/?name=openssh) provides the *scp* command to transfer files. SCP may be faster than using SFTP [[1]](https://superuser.com/questions/134901/whats-the-difference-between-scp-and-sftp).
+
+[Install](/index.php/Install "Install") [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) as alternative shell solutions.
+
+#### Scponly
+
+[install](/index.php/Install "Install") [scponly](https://www.archlinux.org/packages/?name=scponly).
+
+For existing users, simply set the user's shell to scponly:
+
+```
+# usermod -s /usr/bin/scponly *username*
+
+```
+
+See [the Scponly Wiki](https://github.com/scponly/scponly/wiki) for more details.
+
+#### Adding a chroot jail
+
+The package comes with a script to create a chroot. To use it, run:
+
+```
+# /usr/share/doc/scponly/setup_chroot.sh
+
+```
+
+*   Provide answers
+*   Check that `/path/to/chroot` has `root:root` owner and `r-x` for others
+*   Change the shell for selected user to `/usr/bin/scponlyc`
+*   sftp-server may require some libnss modules such as libnss_files. Copy them to chroot's `/lib` path.
 
 ## See also
 

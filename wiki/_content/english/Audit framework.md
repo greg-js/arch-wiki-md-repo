@@ -98,7 +98,7 @@ auditctl -a entry,always -S chmod
 
 For a list of all syscalls : [syscalls(7)](http://man7.org/linux/man-pages/man2/syscalls.2.html)
 
-A lot of rules and posibilities are available, see [auditctl(8)](http://linux.die.net/man/8/auditctl) and [audit.rules(7)](http://linux.die.net/man/7/audit.rules).
+A lot of rules and posibilities are available, see [auditctl(8)](http://man7.org/linux/man-pages/man8/auditctl.8.html) and [audit.rules(7)](http://man7.org/linux/man-pages/man7/audit.rules.7.html).
 
 ## Search the logs
 
@@ -144,13 +144,13 @@ The easiest way to use `aureport` is :
 
 ```
 
-aureport can be used to generate custom reports, see [aureport(8)](http://linux.die.net/man/8/aureport).
+aureport can be used to generate custom reports, see [aureport(8)](http://man7.org/linux/man-pages/man8/aureport.8.html).
 
 ## Which files or syscalls are worth-auditing ?
 
 Keep in mind that each audit rule added will generate logs, so you must be ready to treat this amount of information. Basically, each security-related event/file must be monitored, like ids, ips, anti-rootkits etc. On the other side, it's totally useless to track every write syscall, the smallest compilation will fill your logs with this event.
 
-More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](http://linux.die.net/man/8/auditctl).
+More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](http://man7.org/linux/man-pages/man8/auditctl.8.html).
 
 ## Gather logs from different hosts
 

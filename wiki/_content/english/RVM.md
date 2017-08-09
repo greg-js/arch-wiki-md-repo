@@ -634,4 +634,4 @@ $ rvm install 2.3.4 -C --with-openssl-dir=$HOME/.rvm/usr
 ## See Also
 
 *   [RVM project website](http://rvm.io/).
-*   [The Perfect Rails Setup](/index.php/RubyOnRails#Option_C:_The_Perfect_Rails_Setup "RubyOnRails").
+*   [The Perfect Rails Setup](/index.php/RubyOnRails#The_Perfect_Rails_Setup "RubyOnRails").

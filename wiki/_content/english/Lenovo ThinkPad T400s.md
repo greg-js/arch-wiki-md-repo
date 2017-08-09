@@ -374,7 +374,7 @@ See:
 
 *   [Hard Drive Active Protection System Installation Guide](/index.php/HDAPS "HDAPS")
 *   General Arch Linux related [installation information on latops](/index.php/Laptop "Laptop")
-*   [Thinkpad Fan Control Guide](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control")
+*   [Thinkpad Fan Control Guide](/index.php/ThinkPad_Fan_Control "ThinkPad Fan Control")
 *   [Thinkpad OSD Guide](/index.php/ThinkPad_OSD "ThinkPad OSD")
 *   [Thinkpad Fingerprintreader Guide](/index.php/ThinkFinger "ThinkFinger")
 *   [Thinkpad Smart API Guide](/index.php/Tp_smapi "Tp smapi")

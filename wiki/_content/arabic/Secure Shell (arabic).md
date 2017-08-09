@@ -528,7 +528,7 @@ alias ssh='ssh -C4c arcfour,blowfish-cbc'
 
 ### وصل نظام ملفات خاص بحاسب بعيد عن طريق sshfs
 
-يرجى الرجوع الى مقال [Sshfs](/index.php/Sshfs "Sshfs") لمعرفة المزيد حول وصل نظام الملفات خاص بحاسب بعيد -قابل للوصول عبر ssh- الى مجلد محلي. يمكنك القيام بأي تعليمة وبأي أداة على الملفات الموصولة (نسخ، إعداة تسمية، تعديل بمُحرر vim...الخ). استخدم sshfs عوضًا عن shfs (لم يتم إصدار نسخة جديدة منه منذ 2004 !).
+يرجى الرجوع الى مقال [SSHFS](/index.php/SSHFS "SSHFS") لمعرفة المزيد حول وصل نظام الملفات خاص بحاسب بعيد -قابل للوصول عبر ssh- الى مجلد محلي. يمكنك القيام بأي تعليمة وبأي أداة على الملفات الموصولة (نسخ، إعداة تسمية، تعديل بمُحرر vim...الخ). استخدم sshfs عوضًا عن shfs (لم يتم إصدار نسخة جديدة منه منذ 2004 !).
 
 ### إبقاء الإتصال مفتوحًا
 
@@ -586,7 +586,7 @@ $ autossh -M 0 -o "ServerAliveInterval 45" -o "ServerAliveCountMax 2" username@e
 
 ```
 
-مدمجة مع خدمة [sshfs](/index.php/Sshfs "Sshfs") :
+مدمجة مع خدمة [SSHFS](/index.php/SSHFS "SSHFS"):
 
 ```
 $ sshfs -o reconnect,compression=yes,transform_symlinks,ServerAliveInterval=45,ServerAliveCountMax=2,ssh_command='autossh -M 0' username@example.com: /mnt/example 
@@ -698,7 +698,7 @@ ssh: connect to host www.inet.hr port 22: Connection refused
 
 ```
 
-فهذا لا يعني أن المنفذ قم تم حجبه من قبل مزود الخدمة، بل أن الخادم لا يُشغل خدمة SSH على هذا المنفذ(راجع [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity)).
+فهذا لا يعني أن المنفذ قم تم حجبه من قبل مزود الخدمة، بل أن الخادم لا يُشغل خدمة SSH على هذا المنفذ(راجع [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity")).
 
 أما إذا واجهت رسالة كالرسالة التالية :
 
@@ -795,10 +795,10 @@ MACs hmac-md5,hmac-sha1,hmac-ripemd160
 ## شاهد أيضًا
 
 *   [SSH keys](/index.php/SSH_keys "SSH keys")
-*   [Pam abl](/index.php/Pam_abl "Pam abl")
+*   [pam_abl](/index.php/Pam_abl "Pam abl")
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [sshguard](/index.php/Sshguard "Sshguard")
-*   [Sshfs](/index.php/Sshfs "Sshfs")
+*   [SSHFS](/index.php/SSHFS "SSHFS")
 *   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng") : لإرسال log الخاص بـ ssh الى ملف
 
 ## Links & references

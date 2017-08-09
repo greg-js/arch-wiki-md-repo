@@ -130,7 +130,7 @@ Add users to respective [groups](/index.php/Groups "Groups") for device access a
 
 ```
 
-See also [Users_and_groups#Pre-systemd_groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups"). To create group rules for use with [Polkit](/index.php/Polkit "Polkit"), see [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
+See also [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups"). To create group rules for use with [Polkit](/index.php/Polkit "Polkit"), see [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
 
 #### Rootless X (1.16)
 

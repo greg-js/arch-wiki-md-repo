@@ -110,7 +110,7 @@ Follow [Power management#Power management with systemd](/index.php/Power_managem
 
 ### ACPI / Fan control
 
-[Acpid](/index.php/Acpid "Acpid") works, just follow general guidelines. For Fan control use [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/) (**tpfan-admin** for GUI interface). Follow instructions on [Thinkpad Fan Control](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control").
+[Acpid](/index.php/Acpid "Acpid") works, just follow general guidelines. For Fan control use [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/) (**tpfan-admin** for GUI interface). Follow instructions on [ThinkPad Fan Control](/index.php/ThinkPad_Fan_Control "ThinkPad Fan Control").
 
 ### Kernel Mode Setting (KMS)
 

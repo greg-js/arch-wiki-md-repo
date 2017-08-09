@@ -14,7 +14,7 @@
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
 | Power Management | Modify |
-| EFI firmware updates | Not Working |
+| EFI firmware updates | Working |
 | Fingerprint reader | Not working |
 
 This page contains recommendations for running Arch Linux on the Dell XPS 15 9560 (late 2016). With some configuration almost all the hardware is well supported. Exceptions are the fingerprint reader, occasional locks on resuming from suspend experienced by some users, and the lack of support for PRIME render offload to the discrete GPU in the Nvidia proprietary driver.
@@ -140,9 +140,9 @@ With this setup the discrete GPU is used for all rendering and the integrated GP
 
 ## Firmware updates
 
-Firwmare updates are provided by Dell and can potentially be installed with [fwupdate](https://www.archlinux.org/packages/?name=fwupdate) but this has not been confirmed to work. Available firmware versions can also be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
+Firmware updates are provided by Dell and can be installed with [fwupdate](https://www.archlinux.org/packages/?name=fwupdate) or [fwupd](https://www.archlinux.org/packages/?name=fwupd). Available firmware versions can be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
 
-Firmware updates can be installed by copying the firmware file to a USB key and booting into "BIOS Flash Update" from the Boot Menu.
+Alternatively, firmware updates can be installed by copying the MS-DOS executable firmware file to a FAT32-formatted USB key and booting into "BIOS Flash Update" from the Boot Menu.
 
 ## Fingerprint reader
 

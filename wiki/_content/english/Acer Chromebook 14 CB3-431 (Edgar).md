@@ -61,7 +61,7 @@ Before selecting the reboot option and proceeding to the next part, ensure an Ar
 
 During the white "OS verification disabled" screen, toggle `Ctrl+l` to enter SeaBios. Then press the `Esc` key to load the boot menu, and select your external installation media.
 
-Unless the installation media runs on a Linux version 4.8.14 or prior, the internal keyboard, sound, and trackpad will not function during the installation. From this point on, proceed with the official [Arch Linux Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide).
+Unless the installation media runs on a Linux version 4.8.14 or prior, the internal keyboard, sound, and trackpad will not function during the installation. From this point on, proceed with the official [Arch Linux Installation Guide](/index.php/Installation_guide "Installation guide").
 
 **Note:** If SeaBios has immediately attempted to load from the internal disk, or simply ignored the `Esc` key boot menu request, the device has been fully shut down prior to the SeaBios load. SeaBios must be entered on reboot from ChromeOS to enter the Boot Menu
 

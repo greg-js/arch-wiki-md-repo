@@ -163,4 +163,4 @@ While many people are happy with the traditional beep sound, some may like to ch
 
 ## See also
 
-*   [xset(1)](http://man7.org/linux/man-pages/man1/xset.1.html), [setterm(1)](http://man7.org/linux/man-pages/man1/setterm.1.html), [readline(1)](http://man7.org/linux/man-pages/man1/readline.1.html)
+*   [xset(1)](https://www.x.org/releases/X11R7.7/doc/man/man1/xset.1.xhtml), [setterm(1)](http://man7.org/linux/man-pages/man1/setterm.1.html), [readline(3)](http://man7.org/linux/man-pages/man3/readline.3.html)

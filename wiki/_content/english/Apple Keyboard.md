@@ -92,7 +92,7 @@ In addition to the patched kernel module, a configuration file is also provided 
 
 Please refer to [https://github.com/free5lot/hid-apple-patched#configuration](https://github.com/free5lot/hid-apple-patched#configuration) for exact meaning of each configuration options and tweaking the configuration file to suit your need.
 
-**Note:** Don't forget to include the configuration file in *initramfs* otherwise it won't work automatically after boot. Refer to [Mkinitcpio#BINARIES and FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") or [Mkinitcpio#Hooks](/index.php/Mkinitcpio#Hooks "Mkinitcpio") (the hook you might need is called `modconf`) about how to do that.
+**Note:** Don't forget to include the configuration file in *initramfs* otherwise it won't work automatically after boot. Refer to [Mkinitcpio#BINARIES and FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") or [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") (the hook you might need is called `modconf`) about how to do that.
 
 After installation the change is not picked up by the kernel immediately. The simplest way is to just reboot your system and the new behavior should be in effect.
 

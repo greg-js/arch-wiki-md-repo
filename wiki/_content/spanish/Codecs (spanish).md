@@ -4,7 +4,7 @@ Desde [wikipedia](https://en.wikipedia.org/wiki/es:C%C3%B3dec "wikipedia:es:Cód
 
 En general, los codecs son utilizados por aplicaciones multimedia para codificar o decodificar flujos de audio o vídeo. Con el fin de reproducir secuencias codificadas, los usuarios deben tener instalado un códec apropiado.
 
-En este artículo se tratará solamente de los codecs y de las aplicaciones que trabajan como backends; véase [Common Applications](/index.php/Common_Applications#Multimedia "Common Applications") para obtener una lista de reproductores multimedia (como [MPlayer](/index.php/MPlayer "MPlayer") y [VLC](/index.php/VLC_media_player "VLC media player")).
+En este artículo se tratará solamente de los codecs y de las aplicaciones que trabajan como backends; véase [Common Applicationspara](/index.php/Common_Applications#Multimedia "Common Applications") obtener una lista de reproductores multimedia (como [MPlayer](/index.php/MPlayer "MPlayer") y [VLC](/index.php/VLC_media_player "VLC media player")).
 
 ## Contents
 

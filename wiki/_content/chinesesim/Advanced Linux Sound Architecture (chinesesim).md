@@ -457,7 +457,7 @@ ALSA_RAWMIDI_DEVICE # rawmidi.default rawmidi.hw
 
 #### 另外一种方式
 
-**提示:** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+**提示：** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 首先，运行 `aplay -l`，获取声卡的声卡ID和设备ID：
 

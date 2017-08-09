@@ -485,7 +485,7 @@ You can also create an entry for this in `/etc/fstab`
 
 **Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [Davfs#Mounting as regular user](/index.php/Davfs#Mounting_as_regular_user "Davfs").
 
-**Note:** If creating/copying files is not possible, while the same operations work on directories, see [Davfs#Creating/copying files not possible](/index.php/Davfs#Creating.2Fcopying_files_not_possible "Davfs").
+**Note:** If creating/copying files is not possible, while the same operations work on directories, see [Davfs#Creating/copying files not possible and/or freezes](/index.php/Davfs#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs").
 
 ### Android
 
@@ -862,7 +862,7 @@ See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://gi
 
 ### Switch to Cron from AJAX
 
-Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a [systemd timer](/index.php/Systemd#Timers "Systemd").
+Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a[systemd timer](/index.php/Systemd#Timers "Systemd").
 
 First create a service:
 

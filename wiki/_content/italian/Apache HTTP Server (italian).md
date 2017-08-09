@@ -1,6 +1,6 @@
 [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) costituisce una combinazione comune di vari software utilizzati in molti server web: **L**inux, **A**pache, **M**ySQL, e **P**HP. Questo documento descrive i passi necessari per configurare un [Apache HTTP Server](http://httpd.apache.org) su un sistema Arch Linux. Spiega inoltre come installare [PHP](/index.php/PHP "PHP") e [MySQL](/index.php/MySQL "MySQL") ed integrarli con il server Apache.
 
-Avendo bisogno di solo un server web per sviluppo e test, [Xampp](/index.php/Xampp "Xampp") potrebbe essere la scelta migliore, oltre che la più facile.
+Avendo bisogno di solo un server web per sviluppo e test, [XAMPP](/index.php/XAMPP "XAMPP") potrebbe essere la scelta migliore, oltre che la più facile.
 
 ## Contents
 
@@ -639,7 +639,7 @@ a
 *   [MySQL](/index.php/MySQL "MySQL") - Articolo wiki per MySQL
 *   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") - Interfaccia web per MySQL tipica degli ambienti LAMP
 *   [Adminer](/index.php/Adminer "Adminer") - Un completo strumento di gestione dei database disponibile per MySQL, PostgreSQL, SQLite, MS SQL e Oracle
-*   [Xampp](/index.php/Xampp "Xampp") - Server-web autonomo che supporta PHP, Perl e MySQL
+*   [XAMPP](/index.php/XAMPP "XAMPP") - Server-web autonomo che supporta PHP, Perl e MySQL
 
 ## Collegamenti esterni
 

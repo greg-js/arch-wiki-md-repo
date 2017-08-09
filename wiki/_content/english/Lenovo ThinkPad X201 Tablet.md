@@ -128,7 +128,7 @@ BAT0 is the main battery attached to your laptop. BAT1 is the battery attached t
 
 There are some discussions concerning overheating-related shutdowns when running under full load (video encoding, etc) ([[1]](http://forums.lenovo.com/t5/X-Series-ThinkPad-Laptops/x201-random-shutdown/td-p/227471) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/751689)).
 
-[Thinkpad Fan Control](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control") contains instructions to install tpfand as a custom replacement for hardware (bios-) fan control.
+[ThinkPad Fan Control](/index.php/ThinkPad_Fan_Control "ThinkPad Fan Control") contains instructions to install tpfand as a custom replacement for hardware (bios-) fan control.
 
 **Warning:** Wrong settings may damage your machine! Use with caution!
 

@@ -666,7 +666,7 @@ Feb 20 15:00:25 hostname bluetoothd[4568]: Adapter /org/bluez/4568/hci0 has been
 
 ```
 
-Per una lista di hardware supportato consultare la sezione [fonti](/index.php/Bluetooth_(Italiano)#Fonti "Bluetooth (Italiano)") in questa pagina.
+Per una lista di hardware supportato consultare la sezione [fonti](#Fonti) in questa pagina.
 
 Se si ottengono solo le prime due righe, si può osservare che il dispositivo è stato rilevato, ma è necessario "attivarlo". Esempio:
 

@@ -121,7 +121,7 @@ XTerm.vt100.saveLines: 4096
 
 ```
 
-Другие ресурсы X, влияющие на прокрутку - это `jumpScroll`, `multiScroll`, и `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html)). Для прокрутки внутри [#альтернативного экрана](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT "Xterm (Русский)") установите для параметра `alternateScroll` значение `true`.
+Другие ресурсы X, влияющие на прокрутку - это `jumpScroll`, `multiScroll`, и `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html)). Для прокрутки внутри [#альтернативного экрана](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT) установите для параметра `alternateScroll` значение `true`.
 
 #### Полоса прокрутки
 

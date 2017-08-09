@@ -75,7 +75,7 @@ Drupal preporucuje izvrsavanje cron poslova na svaki sat. Cron se moze izvrsiti 
 
 ### Xampp kompatibilnost
 
-5.x i 6.x serije Drupal-a ne podrzavaju PHP 5.3 i kao rezultat su nekompatibilne sa zadnjim verzijama [Xampp](/index.php/Xampp "Xampp")-a. Trenutno, zadnja Drupal-kompatibilna verzija Xampp-a je 1.7.1.
+5.x i 6.x serije Drupal-a ne podrzavaju PHP 5.3 i kao rezultat su nekompatibilne sa zadnjim verzijama [XAMPP](/index.php/XAMPP "XAMPP")-a. Trenutno, zadnja Drupal-kompatibilna verzija Xampp-a je 1.7.1.
 
 Note: Xampp-ov PHP memorijski limit je trenutno po difoltu 8MB. Takodje, Xampp ignorise php.ini fajlove u Drupal direktorijumu. Da ispravite ovo:
 

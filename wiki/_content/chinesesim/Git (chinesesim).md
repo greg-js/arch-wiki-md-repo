@@ -291,7 +291,7 @@ PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 ```
 
-**Note:** For information about coloring your bash prompt see [Color_Bash_Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt")
+**Note:** For information about coloring your bash prompt see [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt")
 
 *   For zsh:
 

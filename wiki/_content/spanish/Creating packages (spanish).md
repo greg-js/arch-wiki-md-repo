@@ -41,9 +41,9 @@ Un paquete de Arch no es más que un archivo tar o 'tarball', comprimido usando 
 
 ### Metapaquetes y grupos
 
-Un grupo de paquetes es un conjunto de paquetes relacionados, definido por el empaquetador, que se pueden instalar o desinstalar simultáneamente utilizando el nombre de grupo como un sustituto para cada nombre de paquete individual. Si bien un grupo no es un paquete, puede instalarse de manera similar a un paquete, vea [Pacman#Instalando grupos de paquetes](/index.php/Pacman#Instalando_grupos_de_paquetes "Pacman") y [PKGBUILD#grupos](/index.php/PKGBUILD#grupos "PKGBUILD").
+Un grupo de paquetes es un conjunto de paquetes relacionados, definido por el empaquetador, que se pueden instalar o desinstalar simultáneamente utilizando el nombre de grupo como un sustituto para cada nombre de paquete individual. Si bien un grupo no es un paquete, puede instalarse de manera similar a un paquete, vea [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") y [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
 
-Un metapaquete a menudo (aunque no siempre) titulado con -meta sufijo, proporciona funcionalidad similar a un grupo de paquetes que permite que se instalen o desinstalen simultáneamente varios paquetes relacionados. Los metapaquetes pueden ser instalados como cualquier otro paquete, vea [Pacman#Instalando paquetes específicos](/index.php/Pacman#Instalando_paquetes_espec.C3.ADficos "Pacman"). La única diferencia entre un paquete meta y un paquete regular es que una metapaquete está vacío y existe puramente para vincular paquetes relacionados a través de dependencias.
+Un metapaquete a menudo (aunque no siempre) titulado con -meta sufijo, proporciona funcionalidad similar a un grupo de paquetes que permite que se instalen o desinstalen simultáneamente varios paquetes relacionados. Los metapaquetes pueden ser instalados como cualquier otro paquete, vea [Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman"). La única diferencia entre un paquete meta y un paquete regular es que una metapaquete está vacío y existe puramente para vincular paquetes relacionados a través de dependencias.
 
 La ventaja de un metapaquete, en comparación con un grupo, es que cualquier nuevo miembro del paquete se instalará cuando el propio metapaquete sea actualizado con un nuevo conjunto de dependencias. Esto contrasta con un grupo en el que los nuevos miembros del grupo no se instalarán automáticamente. La desventaja de un metapaquete es que no es tan flexible como un grupo - puede elegir los miembros del grupo que desea instalar pero no puede elegir qué dependencias del metapaquete desea instalar. Asimismo, puede desinstalar los miembros del grupo sin tener que quitar el grupo entero, sin embargo no se pueden quitar dependencias del metapaquete sin tener que desinstalar el metapaquete en sí mismo.
 
@@ -51,7 +51,7 @@ La ventaja de un metapaquete, en comparación con un grupo, es que cualquier nue
 
 ### Programas necesarios
 
-Asegúrese primero de que las herramientas necesarias estén instaladas. [Instalando](https://wiki.archlinux.org/index.php/Help:Reading#Installation_of_packages) el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) debe ser suficiente; incluye **make** y herramientas adicionales necesarias para compilar desde el codigo fuente.
+Asegúrese primero de que las herramientas necesarias estén instaladas. [Instalando](/index.php/Help:Reading#Installation_of_packages "Help:Reading") el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) debe ser suficiente; incluye **make** y herramientas adicionales necesarias para compilar desde el codigo fuente.
 
 Una de las herramientas clave para la construcción de paquetes es [makepkg](/index.php/Makepkg "Makepkg") (proporcionado por [pacman](/index.php/Pacman "Pacman")), que hace lo siguiente:
 

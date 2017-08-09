@@ -60,7 +60,7 @@ In `/etc/fstab` sono contenuti i seguenti campi separati da spazi o tabulazioni:
 *   `async` - tutto l'I/O sul file system deve essere asincrono.
 *   `dev` - Interpreta le periferiche a blocchi o periferiche speciali all'interno del filesystem.
 *   `nodev` - Impedisce l'interpretazione di periferiche a blocchi o periferiche speciali all'interno del filesystem.
-*   `suid` - Consente l'uso di operazioni di suid e sgid. Sono comunemente usate per permettere agli utenti di un sistema di eseguire programmi elevando temporaneamente i privilegi [[1]](http://it.wikipedia.org/wiki/Suid).
+*   `suid` - Consente l'uso di operazioni di suid e sgid. Sono comunemente usate per permettere agli utenti di un sistema di eseguire programmi elevando temporaneamente i privilegi [[1]](https://it.wikipedia.org/wiki/Suid).
 *   `nosuid` - Impedisce le operazioni di suid e sgid.
 *   `noatime` - Non aggiorna l'inode con i tempi di accesso al file system. Può aumentare le prestazioni (vedi [l'opzione `atime`](#opzione_atime)).
 *   `nodiratime` - Non aggiorna l'inode delle directory sui tempi di accesso al file system. Può aumentare le prestazioni (vedi [l'opzione `atime`](#opzione_atime)).
@@ -95,7 +95,7 @@ sdc
 
 Eseguire `lsblk -f` per elencare le partizioni, ed aggiungere il percorso `/dev` ai nomi visualizzati.
 
-Vedere il [file d'esempio](/index.php/Fstab_(Italiano)#Esempio "Fstab (Italiano)").
+Vedere il [file d'esempio](#Esempio).
 
 ### Etichette
 
@@ -194,7 +194,7 @@ L'uso di `noatime`, `nodiratime` o `relatime` può aumentare le prestazioni del 
 
 Alcune directory dove è comunemente usato tmpfs senza problemi sono [/tmp](http://www.pathname.com/fhs/2.2/fhs-3.15.html), [/var/lock](http://www.pathname.com/fhs/2.2/fhs-5.9.html) ed [/var/run](http://www.pathname.com/fhs/2.2/fhs-5.13.html). NON usare tmpfs per [/var/tmp](http://www.pathname.com/fhs/2.2/fhs-5.15.html), perché questa cartella contiene dei file che devono essere conservati dopo il riavvio. Arch utilizza la cartella `/run` come tmpfs, essa comprende anche `/var/run` e `/var/lock` creati come link simbolici per compatibilità. tmpfs è utilizzata anche per `/tmp` nella configurazione di default del file `/etc/fstab`.
 
-**Nota:** Utilizzando [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"), i file e le cartelle temporanee in tmpfs possono essere ricreati all'avvio utilizzando [tmpfiles.d](/index.php/Systemd_(Italiano)#I_files_temporanei "Systemd (Italiano)").
+**Nota:** Utilizzando [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)"), i file e le cartelle temporanee in tmpfs possono essere ricreati all'avvio utilizzando [tmpfiles.d](/index.php/Systemd_(Italiano)#File_temporanei "Systemd (Italiano)").
 
 Per default, la partizione tmpfs è impostata della dimensione di metà della RAM totale, ma può essere modificata. Notare che l'effettivo uso di memoria/swap dipende da quanto vengono riempite, la partizione tmpfs non richiede memoria fino a che non viene usata.
 

@@ -61,7 +61,7 @@
 
 ### 網路管理員
 
-*   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, GTK and Dmenu clients are available.
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, GTK and Dmenu clients are available.
 
 	[https://connman.net/](https://connman.net/) || [connman](https://www.archlinux.org/packages/?name=connman)
 

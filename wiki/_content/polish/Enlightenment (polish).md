@@ -140,7 +140,7 @@ Settings -> Settings Panel -> Apps -> Startup Applications -> System -> Network
 
 ### connman
 
-Another available network manager is [Connman](/index.php/Connman "Connman"), you can download it from AUR [connman](https://www.archlinux.org/packages/?name=connman). You do not need to follow any of the other instructions on the [Connman wiki page](/index.php/Connman "Connman"). The current build of ConnMan already includes network policy group section (although with only one statement, not three).
+Another available network manager is [ConnMan](/index.php/ConnMan "ConnMan"), you can download it from AUR [connman](https://www.archlinux.org/packages/?name=connman). You do not need to follow any of the other instructions on the [Connman wiki page](/index.php/ConnMan "ConnMan"). The current build of ConnMan already includes network policy group section (although with only one statement, not three).
 
 Next, edit your `/etc/rc.conf`. Remove **network** from your DAEMONS line. Add **connmand** (do not forget the **d**) *after* **dbus** and **hal**.
 

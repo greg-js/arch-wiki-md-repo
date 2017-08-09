@@ -404,7 +404,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 详情参见`systemd-tmpfiles(8)` 和 `man 5 tmpfiles.d`。
 
-**注意:** 该方法不能向 `/sys` 中的配置文件添加参数，因为 `systemd-tmpfiles-setup` 有可能在相关模块加载前运行。这种情况下，需要首先通过 `modinfo <模块名>` 确认需要的参数，然后在 [`/etc/modprobe.d` 目录下的配置文件](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.80.89.E9.A1.B9 "Kernel modules (简体中文)")中修改配置参数。另外，还可以使用 [udev 规则](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev.E8.A7.84.E5.88.99 "Udev (简体中文)")，在设备就绪时设置相应属性。
+**注意:** 该方法不能向 `/sys` 中的配置文件添加参数，因为 `systemd-tmpfiles-setup` 有可能在相关模块加载前运行。这种情况下，需要首先通过 `modinfo <模块名>` 确认需要的参数，然后在 [`/etc/modprobe.d` 目录下的配置文件](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.80.89.E9.A1.B9 "Kernel modules (简体中文)")中修改配置参数。另外，还可以使用 [udev 规则](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev_.E8.A7.84.E5.88.99 "Udev (简体中文)")，在设备就绪时设置相应属性。
 
 ## 定时器
 
@@ -427,7 +427,7 @@ systemd 提供了自己的日志系统（logging system），称为 journal。�
 
 默认情况下（当 `Storage=` 在文件 `/etc/systemd/journald.conf` 中被设置为 `auto`），日志记录将被写入 `/var/log/journal/`。该目录是 [systemd](https://www.archlinux.org/packages/?name=systemd) 软件包的一部分。若被删除，systemd **不会**自动创建它，直到下次升级软件包时重建该目录。如果该目录缺失，systemd 会将日志记录写入 `/run/systemd/journal`。这意味着，系统重启后日志将丢失。
 
-**提示：** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 文件系统，应该考虑对这个目录禁用写入时复制，方法参阅[Btrfs#Copy-On-Write (CoW)](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs")。
+**提示：** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 文件系统，应该考虑对这个目录禁用写入时复制，方法参阅[Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
 
 Systemd 日志事件提示信息的记录分级方式符合经典的 BSD syslog 协议风格（[维基百科](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog")，[RFC 5424](https://tools.ietf.org/html/rfc5424)）。详情请参阅 [Facility](#Facility)、[Priority level](#Priority_level)等章节，用例请参阅 [Filtering output](#Filtering_output)。
 

@@ -26,6 +26,7 @@
     *   [3.15 youtube-dl audio with search](#youtube-dl_audio_with_search)
     *   [3.16 Use mpv with a compositor](#Use_mpv_with_a_compositor)
     *   [3.17 Creating a single screenshot](#Creating_a_single_screenshot)
+    *   [3.18 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -245,6 +246,10 @@ $ mpv --no-audio --start=00:01:30 --frames=1 /path/to/video/file --o=/path/to/sc
 ```
 
 Screenshots will be saved in /path/to/screenshot.png.
+
+### GNOME Blank screen (Wayland)
+
+MPV may not suspend GNOME's Power Saving Settings if using Wayland (resulting in screen saver turning off the monitor while video is playing for example). A workaround is to add `gnome-session-inhibit` to the beginning of the `Exec=` line in `mpv.desktop`.
 
 ## Vapoursynth
 

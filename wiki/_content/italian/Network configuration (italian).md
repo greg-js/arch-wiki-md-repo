@@ -378,7 +378,7 @@ In alternativa, abilitando`net-auto-wired.service` ifplugd si dovrebbe avviare a
 
 ### Bonding o LAG
 
-Sarà necessario installare [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) dai [Repository ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)"), così come il pacchetto [netcfg-bonding](https://aur.archlinux.org/packages/netcfg-bonding/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
+Sarà necessario installare [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) dai [Repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), così come il pacchetto [netcfg-bonding](https://aur.archlinux.org/packages/netcfg-bonding/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
 Modificare/creare ciascuno dei seguenti files:
 
@@ -463,7 +463,7 @@ Per utilizzare l'IP aliasing da [*netcfg*](/index.php/Netcfg_(Italiano) "Netcfg 
 
 #### Esempio
 
-Sarà necessario [netcfg](https://aur.archlinux.org/packages/netcfg/), disponibile nei [Repository Ufficiali](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)")
+Sarà necessario [netcfg](https://aur.archlinux.org/packages/netcfg/), disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)")
 
  `# pacman -S netcfg` 
 
@@ -513,7 +513,7 @@ Non è più possibile cambiare il proprio MAC address tramite `/etc/rc.conf`. Ve
 
 La maggior parte degli ISP (videotron for example) ha il modem via cavo configurato per riconoscere un solo PC client, attraverso il MAC Address della sua interfaccia di rete. Una volta che il modem via cavo ha acquisito il MAC Address del primo PC, o della relativa periferica, non risponderà in alcun modo ad un altro MAC Address. Pertanto, se si cambia un PC con un altro (o router), il nuovo PC (o router) non funzionerà con il modem via cavo, in quanto ha un MAC Address diverso dal precedente. Per effettuare il reset del modem via cavo in modo che riconosca il nuovo PC, è necessario spegnerlo e riaccenderlo. Una volta che il modem via cavo si è riavviato ed è ritornato completamente in linea (le spie luminose sono stabili), riavviare il nuovo computer in modo da effettuare una nuova richiesta DHCP, o effettuarla manualmente.
 
-Se questo metodo non funziona, è necessario clonare il MAC Address del pc originario. Vedere quindi [Configuring Network (Italiano)#Cambiare MAC/hardware address](/index.php/Configuring_Network_(Italiano)#Cambiare_MAC.2Fhardware_address "Configuring Network (Italiano)").
+Se questo metodo non funziona, è necessario clonare il MAC Address del pc originario. Vedere quindi [#Cambiare MAC/hardware address](#Cambiare_MAC.2Fhardware_address).
 
 ### Il problema del TCP Window Scaling
 
@@ -647,7 +647,7 @@ DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
 
 ```
 
-**Nota:** Se si utilizza [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >=4.0.2 il flag `–R` è obsoleto. Si prega di vedere la sezione [Per l'indirizzo IP assegnato da DHCP](/index.php/Configuring_Network_(Italiano)#Per_l.27indirizzo_IP_assegnato_da_DHCP "Configuring Network (Italiano)") per informazioni su come utilizzare e modificare il file `/etc/resolv.conf`
+**Nota:** Se si utilizza [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >=4.0.2 il flag `–R` è obsoleto. Si prega di vedere la sezione [Per l'indirizzo IP assegnato da DHCP](#Per_l.27indirizzo_IP_assegnato_da_DHCP) per informazioni su come utilizzare e modificare il file `/etc/resolv.conf`
 
 Salvare e chiudere il file, poi aprire `/etc/resolv.conf`. Si dovrebbe visualizzare un singolo nameserver (molto probabilmente 10.1.1.1). Questo è il gateway al router, a cui è necessario per ottenere i server DNS del proprio ISP. Incollare l'indirizzo IP nel browser ed effettuare il login al proprio router. Andando nella sezione DNS si dovrebbe vedere un indirizzo IP alla voce Primary DNS Server (Server DNS preferito), copiarlo ed incollarlo come voce nameserver, **SOPRA** il gateway corrente.
 

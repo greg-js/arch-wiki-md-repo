@@ -211,7 +211,7 @@ Installarli con:
 
 ### L'installer non parte
 
-Se si torna subito al prompt quando si apre il file `.bundle`, allore probabilmente è installata una versione vecchia del `vmware installer` e sarebbe opportuno rimuoverla (si può prendere spunto anche dalla sezione [Disinstallazione](https://wiki.archlinux.org/index.php/VMware_(Italiano)#Disinstallazione) di questo articolo):
+Se si torna subito al prompt quando si apre il file `.bundle`, allore probabilmente è installata una versione vecchia del `vmware installer` e sarebbe opportuno rimuoverla (si può prendere spunto anche dalla sezione [Disinstallazione](#Disinstallazione) di questo articolo):
 
 ```
 # rm -r /etc/vmware-installer

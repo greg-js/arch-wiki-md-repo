@@ -83,7 +83,7 @@
 
 ### Мережеві менеджери
 
-*   **[Connman](/index.php/Connman "Connman")** — Демон для управління інтернет-з'єднаннями в межах вбудованих пристроїв, що працюють під управлінням операційної системи Linux. Поставляється з консольним, Enlightenment, ncurses, GTK і Dmenu клієнтами.
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Демон для управління інтернет-з'єднаннями в межах вбудованих пристроїв, що працюють під управлінням операційної системи Linux. Поставляється з консольним, Enlightenment, ncurses, GTK і Dmenu клієнтами.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 

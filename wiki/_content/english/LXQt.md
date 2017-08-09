@@ -25,7 +25,7 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
 
 For additional functionality, you may wish to install the following:
 
-*   **LXQt Connman applet** — LXQt system-tray applet for [Connman](/index.php/Connman "Connman").
+*   **LXQt Connman applet** — LXQt system-tray applet for [ConnMan](/index.php/ConnMan "ConnMan").
 
 	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
 

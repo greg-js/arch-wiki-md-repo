@@ -42,7 +42,7 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 
 ### KMS 早启动
 
-**提示：** 如果你有分辨率方面的问题，可以参考一下 [强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID "Kernel mode setting (简体中文)") ，也许会有帮助。
+**提示：** 如果你有分辨率方面的问题，可以参考一下 [强设模式](#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID) ，也许会有帮助。
 
 KMS通常是在[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process")之后开始初始化，但是你也可以在initramfs的阶段启用KMS:
 

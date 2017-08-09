@@ -59,7 +59,7 @@ In `/etc/httpd/conf/httpd.conf`, also uncomment the `LoadModule rewrite_module m
 
 Edit `/usr/share/webapps/drupal/.htaccess` and replace `Require all denied` by `Require all granted`.
 
-Finally, [restart](/index.php/Systemd#Using_units "Systemd") Apache (`httpd.service`). You can now access the Drupal installation at [http://localhost/drupal](http://localhost/drupal) .
+Finally, [restart](/index.php/Restart "Restart") Apache (`httpd.service`). You can now access the Drupal installation at [http://localhost/drupal](http://localhost/drupal) .
 
 ## Commandline tools
 

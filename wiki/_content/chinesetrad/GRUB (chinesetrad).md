@@ -122,7 +122,7 @@ For a BIOS-GPT configuration, create a 2 MiB partition using cgdisk or GNU Parte
 
 Usually the post-MBR gap (after the 512 byte MBR region and before the start of the 1st partition) in many MBR (or msdos disklabel) partitioned systems is 31 KiB when DOS compatibility cylinder alignment issues are satisfied in the partition table. However a post-MBR gap of about 1 to 2 MiB is recommended to provide sufficient room for embedding GRUB2's `core.img` ([FS#24103](https://bugs.archlinux.org/task/24103)). It is advisable to use a partitioner which supports 1 MiB partition alignment to obtain this space as well as satisfy other non-512 byte sector issues (which are unrelated to embedding of `core.img`).
 
-如果你沒有在BIOS系統中雙啟動到MS Windows (any version), 轉換到 GPT partitioning - [GUID_Partition_Table#Convert_from_MBR_to_GPT](/index.php/GUID_Partition_Table#Convert_from_MBR_to_GPT "GUID Partition Table")是很適合的。
+如果你沒有在BIOS系統中雙啟動到MS Windows (any version), 轉換到 GPT partitioning - [GUID Partition Table#Convert_from_MBR_to_GPT](/index.php/GUID_Partition_Table#Convert_from_MBR_to_GPT "GUID Partition Table")是很適合的。
 
 **Warning:** Create the 2MiB partition mentioned above BEFORE you convert to GPT. If you do not, gparted will not resize your boot partition to allow its creation, and when you reboot GRUB2 will not know where to look.
 
@@ -130,9 +130,9 @@ Usually the post-MBR gap (after the 512 byte MBR region and before the start of 
 
 ##### 創建並掛載到UEFI系統分割區(Create and Mount the UEFI SYSTEM PARTITION)
 
-**注意:** 建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
+**注意:** 建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
 
-遵循 [Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") 中創建 UEFI SYSTEM PARTITION的指引. 接在將 UEFI SYSTEM PARTITION（也就是ESP分割區） 掛載在 `/boot/efi`. 如果您已經將 UEFI System Partition 掛載在其他掛載點, 以此掛載點置換在下面指引中的 {ic|/boot/efi}} :
+遵循 [Unified Extensible Firmware Interface#Create_an_UEFI_System_Partition_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") 中創建 UEFI SYSTEM PARTITION的指引. 接在將 UEFI SYSTEM PARTITION（也就是ESP分割區） 掛載在 `/boot/efi`. 如果您已經將 UEFI System Partition 掛載在其他掛載點, 以此掛載點置換在下面指引中的 {ic|/boot/efi}} :
 
 ```
 # mkdir -p /boot/efi
@@ -191,8 +191,8 @@ GRUB(2)套件可以用pacman安裝 (安裝完將會取代 [grub-legacy](https://
 
 要達到BIOS啟動有三種安裝 GRUB(2)方法:
 
-*   [#安裝到440位元組MBR啟動區(Install_to_440-byte_MBR_boot_code_region)](#.E5.AE.89.E8.A3.9D.E5.88.B0440.E4.BD.8D.E5.85.83.E7.B5.84MBR.E5.95.9F.E5.8B.95.E5.8D.80.28Install_to_440-byte_MBR_boot_code_region.29) (建議) ,
-*   [#Install_to_Partition_or_Partitionless_Disk](#Install_to_Partition_or_Partitionless_Disk) (不建議),
+*   [#安裝到440位元組MBR啟動區(Install to 440-byte MBR boot code region)](#.E5.AE.89.E8.A3.9D.E5.88.B0440.E4.BD.8D.E5.85.83.E7.B5.84MBR.E5.95.9F.E5.8B.95.E5.8D.80.28Install_to_440-byte_MBR_boot_code_region.29) (建議) ,
+*   [#Install to Partition or Partitionless Disk](#Install_to_Partition_or_Partitionless_Disk) (不建議),
 *   [#Generate_core.img_alone](#Generate_core.img_alone) (最安全的方法,但需要安裝其他的BIOS引導程式像是 [grub-legacy](/index.php/Grub-legacy "Grub-legacy") 或 [syslinux](/index.php/Syslinux "Syslinux") 來連鎖啟動 (chainload) `/boot/grub/i386-pc/core.img`).
 
 ##### 安裝到440位元組MBR啟動區(Install to 440-byte MBR boot code region)
@@ -294,7 +294,7 @@ You can then chainload GRUB2's `core.img` from GRUB Legacy or syslinux as a Linu
 
 **注意:** 檔案路徑是 `/boot/grub/grub.cfg`, **不是** `/boot/grub/i386-pc/grub.cfg`.
 
-如果 grub(2) 在啟動是出現 "no suitable mode found" 訊息, 前往到 [#Correct_GRUB2_No_Suitable_Mode_Found_Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error). 如果 `grub-mkconfig` 失敗了, 使用下列指令將你的 `/boot/grub/menu.lst` 轉換成 `/boot/grub/grub.cfg` :
+如果 grub(2) 在啟動是出現 "no suitable mode found" 訊息, 前往到 [#Correct GRUB2 No Suitable Mode Found Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error). 如果 `grub-mkconfig` 失敗了, 使用下列指令將你的 `/boot/grub/menu.lst` 轉換成 `/boot/grub/grub.cfg` :
 
 ```
 # grub-menulst2cfg /boot/grub/menu.lst /boot/grub/grub.cfg
@@ -357,7 +357,7 @@ sh:grub> legacy_configfile ${prefix}/menu.lst
 
 **注意:** GRUB(2) 支援直接啟動 `bootmgr`檔案和分割區啟動區的連鎖載入 (chainload of partition boot sector)，因此不需要BIOS-MBR設定來啟動Windows
 
-**警告:** 需要注意是具有bootmgr檔案的系統分割區, 而不一定是安裝有Windows的分割區, 也就是說:當你用blkid這個指令顯示出所有UUID's，他將是有著 LABEL="SYSTEM RESERVED" 且大小約為 100 mb-200 mb，更像是Arch的 /boot 分割區. 觀看 [http://en.wikipedia.org/wiki/System_partition_and_boot_partition](http://en.wikipedia.org/wiki/System_partition_and_boot_partition) for some more info.
+**警告:** 需要注意是具有bootmgr檔案的系統分割區, 而不一定是安裝有Windows的分割區, 也就是說:當你用blkid這個指令顯示出所有UUID's，他將是有著 LABEL="SYSTEM RESERVED" 且大小約為 100 mb-200 mb，更像是Arch的 /boot 分割區. 觀看 [wikipedia:System_partition_and_boot_partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for some more info.
 
 找到放置著`bootmgr`的NTFS格式Windows系統分割區的UUID . 舉例來說, 如果 Windows `bootmgr` 置放在 `/media/Windows/bootmgr`:
 
@@ -396,7 +396,7 @@ menuentry "Microsoft Windows XP" {
 
 ### UEFI系統(UEFI systems)
 
-**Note:** 在閱讀這個部份前，建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
+**Note:** 在閱讀這個部份前，建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
 
 #### 安裝grub-uefi套件(Install grub-uefi package)
 
@@ -517,13 +517,13 @@ In all the cases the UEFI SYSTEM PARTITION should be mounted for `grub-install` 
 
 If you notice carefully, there is no <device_path> option (Eg: `/dev/sda`) at the end of the `grub-install` command unlike the case of setting up GRUB(2) for BIOS systems. Any <device_path> provided will be ignored by the install script as UEFI bootloaders do not use MBR or Partition boot sectors at all.
 
-You may now be able to UEFI boot your system by creating a `grub.cfg` file by following [#Generate_GRUB2_UEFI_Config_file](#Generate_GRUB2_UEFI_Config_file) and [#Create_GRUB2_entry_in_the_Firmware_Boot_Manager](#Create_GRUB2_entry_in_the_Firmware_Boot_Manager).
+You may now be able to UEFI boot your system by creating a `grub.cfg` file by following [#Generate_GRUB2_UEFI_Config_file](#Generate_GRUB2_UEFI_Config_file) and [#Create GRUB2 entry in the Firmware Boot Manager](#Create_GRUB2_entry_in_the_Firmware_Boot_Manager).
 
 #### Create GRUB2 entry in the Firmware Boot Manager
 
 ##### Non-Mac UEFI systems
 
-`grub-install` will ensure that `/boot/efi/EFI/arch_grub/grubx64.efi` is launched by default if it detects `efibootmgr` and if it is able to access UEFI Runtime Services. Follow [Unified_Extensible_Firmware_Interface#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface") for more info.(Before trying these steps, be sure to create a grub.cfg ([Grub2#Generate_GRUB2_UEFI_Config_file](/index.php/Grub2#Generate_GRUB2_UEFI_Config_file "Grub2")) because you will need it to boot into Arch after grub is loaded)
+`grub-install` will ensure that `/boot/efi/EFI/arch_grub/grubx64.efi` is launched by default if it detects `efibootmgr` and if it is able to access UEFI Runtime Services. Follow [Unified Extensible Firmware Interface#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface") for more info.(Before trying these steps, be sure to create a grub.cfg ([Grub2#Generate_GRUB2_UEFI_Config_file](/index.php/Grub2#Generate_GRUB2_UEFI_Config_file "Grub2")) because you will need it to boot into Arch after grub is loaded)
 
 If you have problems running GRUB2 in UEFI mode you can try the following (worked on an ASUS Z68 mainboard):
 
@@ -548,7 +548,7 @@ or
 
 After this launch the UEFI Shell from the UEFI setup/menu (in ASUS UEFI BIOS, switch to advanced mode, press Exit in the top right corner and choose "Launch EFI shell from filesystem device"). The GRUB2 menu will show up and you can boot into your system. Afterwards you can use efibootmgr to setup a menu entry (see above).
 
-If your motherboard has no such option (or even if it does), you can use UEFI shell ([Unified_Extensible_Firmware_Interface#UEFI_Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) to create a UEFI boot option for the Arch partition temporarily.
+If your motherboard has no such option (or even if it does), you can use UEFI shell ([Unified Extensible Firmware Interface#UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) to create a UEFI boot option for the Arch partition temporarily.
 
 Once you boot into the EFI shell, add a UEFI boot menu entry:
 
@@ -617,7 +617,7 @@ If you used `--boot-directory=/boot/efi/EFI`:
 
 This is independent of the value of `--bootloader-id` option.
 
-If GRUB2 complains about "no suitable mode found" while booting, try [#Correct_GRUB2_No_Suitable_Mode_Found_Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error).
+If GRUB2 complains about "no suitable mode found" while booting, try [#Correct GRUB2 No Suitable Mode Found Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error).
 
 #### Create GRUB2 Standalone UEFI Application
 
@@ -852,7 +852,7 @@ kernel      /boot/grub/i386-pc/core.img
 
 ### Visual Configuration
 
-In GRUB2 it is possible, by default, to change the look of the menu. Make sure to initialize, if not done already, GRUB2 graphical terminal, gfxterm, with proper video mode, gfxmode, in GRUB2\. This can be seen in the section [#Correct_GRUB2_No_Suitable_Mode_Found_Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error). This video mode is passed by GRUB2 to the linux kernel via 'gfxpayload' so any visual configurations need this mode in order to be in effect.
+In GRUB2 it is possible, by default, to change the look of the menu. Make sure to initialize, if not done already, GRUB2 graphical terminal, gfxterm, with proper video mode, gfxmode, in GRUB2\. This can be seen in the section [#Correct GRUB2 No Suitable Mode Found Error](#Correct_GRUB2_No_Suitable_Mode_Found_Error). This video mode is passed by GRUB2 to the linux kernel via 'gfxpayload' so any visual configurations need this mode in order to be in effect.
 
 #### Setting the framebuffer resolution
 
@@ -923,7 +923,7 @@ GRUB2 comes with support for background images and bitmap fonts in `pf2` format.
 
 圖像支援格式有 tga, png and jpeg. 解析度最大支援取決於您的硬體.
 
-Make sure you have set up the proper [framebuffer resolution](https://wiki.archlinux.org/index.php/GRUB2#Setting_the_framebuffer_resolution).
+Make sure you have set up the proper [framebuffer resolution](/index.php/GRUB2#Setting_the_framebuffer_resolution "GRUB2").
 
 編輯 `/etc/default/grub` :
 
@@ -1461,7 +1461,7 @@ grub-setup: error: If you really want blocklists, use --force.
 
 ```
 
-This error may occur when you try installing GRUB2 in a VMware container. Read more about it [here](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). It happens when the first partition starts just after the MBR (block 63), without the usual space of 1 MiB (2048 blocks) before the first partition. Read [#MBR_aka_msdos_partitioning_specific_instructions](#MBR_aka_msdos_partitioning_specific_instructions)
+This error may occur when you try installing GRUB2 in a VMware container. Read more about it [here](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). It happens when the first partition starts just after the MBR (block 63), without the usual space of 1 MiB (2048 blocks) before the first partition. Read [#MBR aka msdos partitioning specific instructions](#MBR_aka_msdos_partitioning_specific_instructions)
 
 ### UEFI GRUB2 drops to shell
 

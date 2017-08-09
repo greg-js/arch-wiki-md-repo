@@ -26,7 +26,7 @@
 
 你还可以安装以下附加功能包：
 
-*   **LXQt Connman applet** — LXQt [Connman](/index.php/Connman "Connman") 的系统托盘小程序。
+*   **LXQt Connman applet** — LXQt [ConnMan](/index.php/ConnMan "ConnMan") 的系统托盘小程序。
 
 	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
 

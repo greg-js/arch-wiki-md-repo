@@ -529,4 +529,4 @@ $lsinitcpio -a /boot/initramfs-linux.imq
 
 *   Documentación del kernel de Linux: [initramfs](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
 *   Documentación del kernel de Linux: [initrd](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
-*   Artículo de Wikipedia: [initrd](http://es.wikipedia.org/wiki/initrd)
+*   Artículo de Wikipedia: [initrd](https://es.wikipedia.org/wiki/initrd)

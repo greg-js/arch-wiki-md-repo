@@ -151,7 +151,7 @@ The Archlinux Pi-hole Standalone variant is born from the need to use pi-hole se
 
 #### Dnsmasq
 
-Setup is identical to the steps described in [Pi-hole#Dnsmasq](/index.php/Pi-hole#Dnsmasq "Pi-hole").
+Setup is identical to the steps described in [#Dnsmasq](#Dnsmasq).
 
 #### Openresolve
 

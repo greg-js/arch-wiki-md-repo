@@ -469,7 +469,7 @@ set my_pass = " *password*"
 
 **Note:** Remember that user defined variables **must** start with `my_`.
 
-Then [encrypt](/index.php/GnuPG#Encrypt_and_decrypt "GnuPG") this file, setting yourself as the recipient and move it into an accessible location. In this example the encrypted file resides at $HOME/.my-pwds.gpg.
+Then [encrypt](/index.php/Encrypt "Encrypt") this file, setting yourself as the recipient and move it into an accessible location. In this example the encrypted file resides at $HOME/.my-pwds.gpg.
 
 In your mutt configuration file add the following before any account:
 
@@ -685,7 +685,7 @@ This starts Mutt in read-only mode, and you can browse other emails at your conv
 
 **Note:** When changing folders (with `c` or `y`) the read-only mode is not preserved. Instead `Esc c` has to be used.
 
-**Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a keyboard shortcut (see [Extra Keyboard Keys](/index.php/Extra_Keyboard_Keys "Extra Keyboard Keys") for details):
+**Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a keyboard shortcut (see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for details):
 ```
 $TERMINAL -e mutt -R
 

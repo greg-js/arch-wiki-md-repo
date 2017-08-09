@@ -11,6 +11,7 @@ Document viewer uses the poppler library as a backend.
     *   [2.1 Printer does not show up](#Printer_does_not_show_up)
     *   [2.2 Zoom-in is limited](#Zoom-in_is_limited)
     *   [2.3 PDF texts is not show correctly](#PDF_texts_is_not_show_correctly)
+    *   [2.4 Inverse search with SyncTeX doesn't work](#Inverse_search_with_SyncTeX_doesn.27t_work)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -44,6 +45,10 @@ try setting `override-restrictions` parameter to false:
 $ gsettings set org.gnome.Evince override-restrictions false
 
 ```
+
+### Inverse search with SyncTeX doesn't work
+
+Check that [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) is installed. After that ctrl+click should work.
 
 ## See also
 

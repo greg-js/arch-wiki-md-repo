@@ -231,7 +231,7 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 
 ```
 
-**Note:** If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
+**Note:** If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult [#Restore pacman's local database](#Restore_pacman.27s_local_database).
 
 **Tip:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
 
@@ -323,7 +323,7 @@ If you are looking for a quick and dirty solution, you can simply run a standalo
 
 In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use shfs or sshfs to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
 
-First, install any network-supporting filesystem; for example [sshfs](/index.php/Sshfs "Sshfs"), [shfs](/index.php/Shfs "Shfs"), ftpfs, [smbfs](/index.php/Smbfs "Smbfs") or [nfs](/index.php/Nfs "Nfs").
+First, install any network-supporting filesystem; for example [SSHFS](/index.php/SSHFS "SSHFS"), [shfs](/index.php/Shfs "Shfs"), ftpfs, [smbfs](/index.php/Smbfs "Smbfs") or [NFS](/index.php/NFS "NFS").
 
 **Tip:**
 
@@ -336,7 +336,7 @@ Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the serve
 
 #### two-way with rsync
 
-Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable the [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for the rsync protocol.
+Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable the [Rsync#rsync daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for the rsync protocol.
 
 Draft example for a client, uname -m in share name ensures architecture depended sync:
 
@@ -467,7 +467,7 @@ Pacman preserves the [installation reason](/index.php/Installation_reason "Insta
 
 ### Restore pacman's local database
 
-See [Pacman/Restore_local_database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
+See [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database").
 
 ### Recovering a USB key from existing install
 

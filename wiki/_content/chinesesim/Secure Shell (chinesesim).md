@@ -589,10 +589,10 @@ MACs hmac-md5,hmac-sha1,hmac-ripemd160
 ## See Also
 
 *   [SSH keys](/index.php/SSH_keys "SSH keys")
-*   [Pam abl](/index.php/Pam_abl "Pam abl")
+*   [pam_abl](/index.php/Pam_abl "Pam abl")
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [sshguard](/index.php/Sshguard "Sshguard")
-*   [Sshfs](/index.php/Sshfs "Sshfs")
+*   [SSHFS](/index.php/SSHFS "SSHFS")
 *   [A Cure for the Common SSH Login Attack](http://www.soloport.com/iptables.html)
 *   [使用SSH密钥](/index.php/%E4%BD%BF%E7%94%A8SSH%E5%AF%86%E9%92%A5 "使用SSH密钥")
 *   [Defending against brute force ssh attacks](http://www.la-samhna.de/library/brutessh.html)

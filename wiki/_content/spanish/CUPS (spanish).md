@@ -691,7 +691,7 @@ Instale CUPS antes de ejecutar hp-setup.
 
 #### Qt instalado, pero hp-setup informa: "Qt/PyQt 4 initialization failed" (*«no se puede iniciar Qt/PyQt 4»*)
 
-«hp-check -t» no le dará información útil para encontrar el paquete necesario. Hay que instalar todos los «paquetes dependientes» que contengan el prefijo «python2» en [https://www.archlinux.org/packages/extra/x86_64/hplip/](https://www.archlinux.org/packages/extra/x86_64/hplip/)
+«hp-check -t» no le dará información útil para encontrar el paquete necesario. Hay que instalar todos los «paquetes dependientes» que contengan el prefijo «python2» en [hplip](https://www.archlinux.org/packages/?name=hplip)
 
 #### hp-setup encuentra la impresora automáticamente, pero informa que "Unable to communicate with device" (*«No se puede comunicar con el dispositivo»*) inmediatamente después de imprimir la página de prueba
 
@@ -707,7 +707,7 @@ Si se ejecuta hp-toolbox como un usuario normal se obtiene:
 
 ```
 
-o, «`Unable to communicate with device`», entonces puede ser necesario [añadir al usuario al grupo lp y sys](/index.php/Users_and_Groups_(Espa%C3%B1ol)#Gesti.C3.B3n_de_grupos "Users and Groups (Español)").
+o, «`Unable to communicate with device`», entonces puede ser necesario [añadir al usuario al grupo lp y sys](/index.php/Users_and_groups_(Espa%C3%B1ol)#Gesti.C3.B3n_de_grupos "Users and groups (Español)").
 
 Esto también puede ser causado por las impresoras P1102 que proporiconan una unidad CD-ROM virtual con el controlador para MS-Windows. El dispositivo lp aparece y luego desaparece. En ese caso, pruebe los paquetes **usb-modeswitch** y **usb-modeswitch-data**, que permiten intercambiar la «Smart Drive» (reglas de udev incluidas en dichos paquetes).
 
@@ -729,7 +729,7 @@ PID 5771 (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 ```
 
-asegúrese que [hplip](https://www.archlinux.org/packages/?name=hplip) se ha instalado, además de [los paquetes mencionados arriba](/index.php/CUPS_(Espa%C3%B1ol)#Instalaci.C3.B3n "CUPS (Español)"). Consulte [este mensaje en el foro](https://bbs.archlinux.org/viewtopic.php?id=65615).
+asegúrese que [hplip](https://www.archlinux.org/packages/?name=hplip) se ha instalado, además de [los paquetes mencionados arriba](#Instalaci.C3.B3n). Consulte [este mensaje en el foro](https://bbs.archlinux.org/viewtopic.php?id=65615).
 
 ```
 # pacman -S hplip

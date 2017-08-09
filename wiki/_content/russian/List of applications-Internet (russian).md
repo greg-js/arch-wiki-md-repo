@@ -68,7 +68,7 @@
 
 ### Управление подключениями
 
-*   **[Connman](/index.php/Connman "Connman")** — Демон для управления интернет-подключениями со встраиваемых устройств в операционной системе Linux. Имеет консольную версию, а также версии Enlightenment, GTK и Dmenu
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Демон для управления интернет-подключениями со встраиваемых устройств в операционной системе Linux. Имеет консольную версию, а также версии Enlightenment, GTK и Dmenu
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 

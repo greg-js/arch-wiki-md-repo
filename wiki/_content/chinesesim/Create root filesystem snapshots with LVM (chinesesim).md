@@ -1,4 +1,4 @@
-本文描述如何在系统启动时为root文件系统做LVM快照，这些快照可以用来在最短时间内进行[全系统备份](/index.php/Full_System_Backup_with_tar "Full System Backup with tar")，或者是测试系统的更新以便于按需回滚。
+本文描述如何在系统启动时为root文件系统做LVM快照，这些快照可以用来在最短时间内进行[全系统备份](/index.php/Full_system_backup_with_tar "Full system backup with tar")，或者是测试系统的更新以便于按需回滚。
 
 ## Contents
 
@@ -73,7 +73,7 @@ menuentry 'Arch GNU/Linux, make snapshots' --class arch --class gnu-linux --clas
 
 ### 备份
 
-如要进行全系统的备份，首先以上述创建快照的target重启系统，挂载快照卷（and further volumes, if required)，最好以只读的方式 (<tt>-o</tt>) 挂载，便可以进行全系统备份，例如可以采用[Full System Backup with tar](/index.php/Full_System_Backup_with_tar "Full System Backup with tar")文章中的办法进行备份。
+如要进行全系统的备份，首先以上述创建快照的target重启系统，挂载快照卷（and further volumes, if required)，最好以只读的方式 (<tt>-o</tt>) 挂载，便可以进行全系统备份，例如可以采用[Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar")文章中的办法进行备份。
 
 在备份的过程中并不影响现有系统的使用，因为所有正常卷的修改都反应在了快照里了。备份完后不要忘记删除这个快照，copy-on-write的快照模式会使正常root卷的所有修改用光你的快照卷空间。如果快照卷空间用光，LVM并不能自动增长快照空间，则LVM会拒绝进一步向正常卷中写入数据或者直接丢掉快照，都应该避免。
 
