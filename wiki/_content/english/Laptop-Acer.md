@@ -120,20 +120,34 @@ USB:
 *   1x USB 3.1 Type-C: Untested
 
  | (BIOS v1.15) After UEFI installation, must set Supervisor password, add bootloader as trusted, and boot with SecureBoot. BIOS v1.25 reportedly has problems on similar E5 models that were fixed in 1.31 onward. |
-| Acer Aspire E5-575G-5538 | 2017.02.01 | OK, Nvidia GeForce 940MX (NVIDIA Device 179c), [Bumblebee](/index.php/Bumblebee "Bumblebee") dkms version, proprietary Nvidia drivers dkms version.
-Nouveau crashes with drm error -22. | OK, HDA-Intel | Works, needed to set MAC in a profile in NetworkManager settings. | OK, Qualcomm Atheros | Pairing works
-Sending files works. Receiving files works.
-Bluetooth PAN works. | Suspend to RAM: Yes
-Disk: Untested
-Battery: Yes, but battery life is not great
-CPU frequency scaling: Yes | Untested | Webcam: OK
-Hot keys: OK
-Touchpad: Works with synaptics/libinput. Libinput is recommended (supports gestures).
-HDMI: OK
-USB:
+| Acer Aspire E5-575G-5538 | 2017.02.01 | OK, Nvidia GeForce 940MX (NVIDIA Device 179c),
 
-*   1x USB 2.0: OK
-*   2x USB 3.0: OK
-*   1x USB 3.1 Type-C: OK
+*   works with proprietary [Nvidia](/index.php/Nvidia "Nvidia") drivers dkms version, [Bumblebee](/index.php/Bumblebee "Bumblebee") dkms version,
+*   [Nouveau](/index.php/Nouveau "Nouveau") works too, gives better battery life but significantly less performance as of 10 Aug 2017
 
- | USB drive detection took some work (looking in the BIOS, disabling trusted boot). Installation was not successful on the first try. |
+ | OK, HDA-Intel | OK, Realtek, needed to set MAC in a profile in NetworkManager settings | OK, Qualcomm Atheros | 
+
+*   Pairing works
+*   Sending files works
+*   Receiving files works
+*   Bluetooth PAN works
+
+ | 
+
+*   Suspend to RAM: Yes
+*   Disk: Untested
+*   Battery: Yes, but battery life is not great, needs [tlp](/index.php/Tlp "Tlp") installed for better battery life
+*   CPU frequency scaling: Yes
+
+ | Untested, USB modems should work out of the box | 
+
+*   Webcam: OK
+*   Hot keys: OK
+*   Touchpad: Works with [synaptics](/index.php/Synaptics "Synaptics")/[Libinput](/index.php/Libinput "Libinput"). [Libinput](/index.php/Libinput "Libinput") works the best (and supports gestures).
+*   HDMI: OK
+*   USB:
+    *   1x USB 2.0: OK
+    *   2x USB 3.0: OK
+    *   1x USB 3.1 Type-C: OK
+
+ | USB drive detection took some work (looking in the BIOS, disabling secure boot). Installation was not successful on the first try. In order to boot I enabled secureboot, cleared trusted bootloaders at secureboot settings, saved, rebooted, entered BIOS, added GRUB as trusted UEFI file, saved, rebooted, entered BIOS, disabled secureboot. Grub will appear in the boot order list even if secureboot is disabled. Must be done at each firmware update. |

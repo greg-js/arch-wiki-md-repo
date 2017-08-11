@@ -145,7 +145,7 @@
 | 1 | [systemd/Пользователь](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь") | 1, 2/6 | Синхронизирована. Переводит Ilya -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 11:43, 9 Декабря 2016 |
 | 1 | [pacman/Советы и приёмы](/index.php/Pacman/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Pacman/Советы и приёмы") | 1-3.3.1; 3.7; 4.2.2-4.2.4 | Нужно синхронизировать и перевести. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 12:43, 30 октября 2016 |
 | 1 | [Приложения по умолчанию](/index.php/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E "Приложения по умолчанию") | 4/4 |
-| 1 | [Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") | 0/6 | Добавлена 28.01.17 |
+| 1 | [Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") | 5/6 | Добавлена 28.01.17 |
 
 ## Список страниц с сопроводителем
 

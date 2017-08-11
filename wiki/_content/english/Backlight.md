@@ -78,7 +78,7 @@ The brightness can be set by writing a number to `brightness`. Attempting to set
 
 ### Kernel command-line options
 
-Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). On Nvidia Optimus laptops, the kernel parameter nomodeset can interfere with the ability to adjust the backlight. Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+Sometimes, ACPI does not work well due to different motherboard implementations and ACPI quirks, resulting in, for instance, inaccurate brightness notifications. This includes some laptops with dual graphics (e.g. Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
 acpi_backlight=video
@@ -91,6 +91,7 @@ If you find that changing the `acpi_video0` backlight does not actually change t
 
 **Tip:**
 
+*   On Nvidia Optimus laptops, the kernel parameter `nomodeset` can interfere with the ability to adjust the backlight.
 *   On an Asus notebooks you might also need to load the `asus-nb-wmi` [kernel module](/index.php/Kernel_module "Kernel module").
 *   Disabling legacy boot on Dell XPS13 breaks backlight support.
 

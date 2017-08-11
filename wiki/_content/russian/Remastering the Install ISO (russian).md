@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&diff=0&oldid=482843).
+**Состояние перевода:** На этой странице представлен перевод статьи [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO"). Дата последней синхронизации: 5 августа 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&diff=0&oldid=483855).
 
 Ремастеринг официального установочного ISO образа Arch Linux не является необходимым для большинства приложений. Однако, это может быть желательно в некоторых случаях.
 
@@ -215,7 +215,7 @@ Unsquash `airootfs.sfs` (для `squashfs-root`):
 
 ### Создание нового ISO
 
-Создайте новый образ ISO с `genisoimage`, который является частью пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools).
+Создайте новый образ ISO с `genisoimage`, который является частью пакета [cdrtools](https://www.archlinux.org/packages/?name=cdrtools), в качестве символической ссылки на `mkisofs`.
 
 ```
 $ genisoimage -l -r -J -V "ARCH_201209" -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -c isolinux/boot.cat -o ../arch-custom.iso ./

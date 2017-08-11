@@ -39,4 +39,4 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 
 [xbindkeys](/index.php/Xbindkeys "Xbindkeys") allows advanced mapping of keysyms to actions independently of the Desktop Environment.
 
-**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/) from the [AUR](/index.php/AUR "AUR").
+**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) from the [AUR](/index.php/AUR "AUR").

@@ -35,11 +35,10 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.8 IntelliJ IDEA](#IntelliJ_IDEA)
     *   [6.9 NetBeans](#NetBeans)
     *   [6.10 Gimp 2.8](#Gimp_2.8)
-    *   [6.11 VLC](#VLC)
-    *   [6.12 Steam](#Steam)
-    *   [6.13 Java applications](#Java_applications)
-    *   [6.14 Mono applications](#Mono_applications)
-    *   [6.15 Unsupported applications](#Unsupported_applications)
+    *   [6.11 Steam](#Steam)
+    *   [6.12 Java applications](#Java_applications)
+    *   [6.13 Mono applications](#Mono_applications)
+    *   [6.14 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Mirroring](#Mirroring)
@@ -225,24 +224,20 @@ This will make the font render properly in most toolkits and applications, it wi
 
 ### Qt 5
 
-If you failed to fix your DPI on your X server, there is a way to get your Qt applications to look good on HiDPI anyway.
-
-Since Qt 5.6, Qt 5 applications can be instructed to disregard faulty screen DPI by setting the `QT_AUTO_SCREEN_SCALE_FACTOR` environment variable, for example by creating a file `/etc/profile.d/qt-hidpi.sh` (Note; this variable is unset in the startkde script, as KDE prefers the solution where the proper DPI was set on the actual X-server).
+Since Qt 5.6, Qt 5 applications can be instructed to honor screen DPI by setting the `QT_AUTO_SCREEN_SCALE_FACTOR` environment variable:
 
 ```
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 ```
 
-And set the executable bit on it.
+If automatic detection of DPI does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
 
-If automatic detection of hi-DPI screens does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
+**Note:**
 
-Note if you manually set the screen factor, it's important to set QT_AUTO_SCREEN_SCALE_FACTOR=0 otherwise some applications which explicitly force high DPI enabling get scaled twice. This is why KDE disables this way of scaling.
-
-QT_SCALE_FACTOR will scale fonts QT_SCREEN_SCALE_FACTORS will *not* scale fonts
-
-If you also set the font DPI manually in xrdb to support other toolkits - QT_SCALE_FACTORS will give you a huge fonts.
+*   If you manually set the screen factor, it is important to set `QT_AUTO_SCREEN_SCALE_FACTOR=0` otherwise some applications which explicitly force high DPI enabling get scaled twice.
+*   `QT_SCALE_FACTOR` scales fonts, but `QT_SCREEN_SCALE_FACTORS` does not scale fonts.
+*   If you also set the font DPI manually in *xrdb* to support other toolkits, `QT_SCALE_FACTORS` will give you huge fonts.
 
 ### GDK 3 (GTK+ 3)
 
@@ -292,18 +287,6 @@ Open Firefox advanced preferences page (`about:config`) and set parameter `layou
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen.
 
 From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be taken into account.[[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=975919)
-
-If the menus and url-bar fonts are still tiny you can create a userChrome.css file for your profile that explicitly sets the font-size. The file needs to be placed in your $HOME/.mozilla/firefox/*.default/chrome/ folder. You likely need to create the chrome folder, do not try to put it in a chrome folder that already exists in another place, that will not work.
-
-The content should be something like following. Please make sure that the namespace part is included as that is important.
-
-```
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
-* { font-size: 16px !important; }
-
-```
-
-If the preferences pages are still tiny, you should try setting a minimum font size in your preferences -> Content -> Font&Colors -> Advanced.
 
 Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
 
@@ -355,30 +338,6 @@ $ spotify --force-device-scale-factor=1.5
 
 ```
 
-You can also override Spotify's `.desktop` file. Simply copy the file:
-
-```
-$ cp /usr/share/applications/spotify.desktop ~/.local/share/applications/
-
-```
-
-Then edit it and add the `--force-device-scale-factor` option:
-
-```
-[Desktop Entry]
-Name=Spotify
-GenericName=Music Player
-Comment=Spotify streaming music client
-Icon=spotify-client
-Exec=spotify %U --force-device-scale-factor=1.5
-TryExec=spotify
-Terminal=false
-Type=Application
-Categories=Audio;Music;Player;AudioVideo;
-MimeType=x-scheme-handler/spotify;
-
-```
-
 ### Zathura document viewer
 
 No modifications required for document viewing.
@@ -414,13 +373,7 @@ The output window fontsize can be controlled from Tools → Options → Miscelan
 
 Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icons-on-hidpi-screen?pid=39113#pid39113) `gtkrc` of an existing theme. (Change all occurrences of the size `button` to `dialog`, for example `GimpToolPalette::tool-icon-size`.)
 
-There's also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
-
-### VLC
-
-As of 2017-03-17, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve most of the problems.
-
-Qt5 may detect that you have a HiDPI display and if so the video will be played in one corner of the window with lots of black space around it, even in fullscreen. You can start vlc with `QT_AUTO_SCREEN_SCALE_FACTOR=0` to workaround the problem, although the interface elements will be smaller. ([source](https://trac.videolan.org/vlc/ticket/17484))
+There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 ### Steam
 

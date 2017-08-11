@@ -297,9 +297,10 @@ Systemd units and wrapper scripts to manage snapshots for [pi-hole](/index.php/P
 
 Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29)), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
 
-**Warning:** It is recommended to backup the existing image before using this utility!
+**Warning:**
 
-**Warning:** This util will not shift uid/gid in facl, if your rootfs have any files configured with facl (like archlinux), you need shift to it by your own
+*   It is recommended to backup the existing image before using this utility!
+*   This utility will not shift UIDs and GIDs in [ACL](/index.php/ACL "ACL"), you will need to shift them on your own.
 
 Invoke the utility to convert over like so:
 
@@ -390,11 +391,11 @@ And then assign your IP through your preferred method **inside** the container, 
 
 ### Cannot start unprivileged LXC due to newuidmap execution failure
 
-Unprivileged LXC cannot start with current shadow in official package, because of newuidmap and newgidmap is not setuid
+Unprivileged LXC cannot start with the current [shadow](https://www.archlinux.org/packages/?name=shadow) package, because the *newuidmap* and *newgidmap* binaries do not have the *setuid* bit.
 
 ```
-chmod u+s /usr/bin/newuidmap
-chmod u+s /usr/bin/newgidmap
+$ chmod u+s /usr/bin/newuidmap
+$ chmod u+s /usr/bin/newgidmap
 
 ```
 

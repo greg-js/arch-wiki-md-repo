@@ -7,13 +7,14 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Usage examples](#Usage_examples)
-    *   [3.1 Bash](#Bash)
-    *   [3.2 dhcpcd](#dhcpcd)
-    *   [3.3 Unbound](#Unbound)
-    *   [3.4 Desktop](#Desktop)
-    *   [3.5 MuPDF](#MuPDF)
-    *   [3.6 p7zip](#p7zip)
-    *   [3.7 Filesystem isolation](#Filesystem_isolation)
+    *   [3.1 No-op](#No-op)
+    *   [3.2 Bash](#Bash)
+    *   [3.3 dhcpcd](#dhcpcd)
+    *   [3.4 Unbound](#Unbound)
+    *   [3.5 Desktop](#Desktop)
+    *   [3.6 MuPDF](#MuPDF)
+    *   [3.7 p7zip](#p7zip)
+    *   [3.8 Filesystem isolation](#Filesystem_isolation)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Using X11](#Using_X11)
     *   [4.2 Sandboxing X11](#Sandboxing_X11)
@@ -31,6 +32,17 @@
 bubblewrap can be called directly from the command-line and/or within [shell scripts](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh) as part of a [complex wrapper](https://github.com/projectatomic/bubblewrap/blob/master/demos/flatpak-run.sh). Unlike applications such as [Firejail](/index.php/Firejail "Firejail") which automatically set `/var` and `/etc` to read-only within the sandbox, bubblewrap makes no such operating assumptions. It is up to the user to determine which configuration options to pass in accordance to the application being sandboxed. bubblewrap does not automatically create user namespaces when running with setuid privileges and can accomodate typical environment variables including `$HOME` and `$USER`.
 
 ## Usage examples
+
+### No-op
+
+A no-op bubblewrap invocation is as follows:
+
+```
+$ bwrap --dev-bind / / bash
+
+```
+
+This will spawn a bash process which should behave exactly as outside a sandbox. If a sandboxed program misbehaves, you may want to start from the above no-op invocation, and work your way towards a more secure configuration step-by-step.
 
 ### Bash
 

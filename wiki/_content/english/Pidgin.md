@@ -135,12 +135,7 @@ Pidgin uses Libpurple 2 which stores passwords unencrypted (in plaintext) in $HO
 
 ## Privacy
 
-Pidgin has some privacy rules set by default. Namely, the whole world cannot send you messages; only your contacts or people selected from a list. Adjust this, and other settings through:
-
-```
-Tools > Privacy
-
-```
+Pidgin has some privacy rules set by default. Namely, the whole world cannot send you messages; only your contacts or people selected from a list. Adjust this, and other settings in *Tools > Privacy*.
 
 ### Pidgin-OTR
 

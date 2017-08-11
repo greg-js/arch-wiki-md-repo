@@ -157,7 +157,7 @@ A number of vector styles are documented [here](http://fvwmforums.org/wiki/Confi
 
 The flag affects the state for a button. Some examples of flags include *Raised*, *Sunk* and *Flat*. For more information, see `man fvwm` and look for the ButtonStyle section.
 
-**Tip:** To give the buttons the same background as the title, use the `UseTitleStyle` flag.
+**Note:** To give the buttons the same background as the title, use the `UseTitleStyle` flag. Alternatively, specify your button backgrounds using the `ButtonStyle` command and then follow this with an `AddButtonStyle` command to specify the vector or pixmap image. `AddButtonStyle` takes the same syntax as `ButtonStyle`.
 
 #### Title and border styles
 
@@ -376,7 +376,7 @@ The following [styles](#Style_command) might be useful:
 
 Colorsets in FVWM are a set of four colors (a foreground color, a background color, a shadow color and a highlight color) as well as an optional background pixmap. Any part of FVWM that uses a particular colorset will be affected if that colorset is changed.
 
-All colorsets are identified by a number. The first 40 colorsets, 0-39, are reserved. Those colorsets are documented on [sourceforge](http://fvwm-themes.sourceforge.net/doc/colorsets).
+All colorsets are identified by a number. Any numbering convention can be used; the fvwm-themes project documents one such convention that uses the first 40 colorsets (0-39). See [[4]](http://fvwm-themes.sourceforge.net/doc/colorsets).
 
 Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See `man fvwm` - the Colorsets section - for more information.
 

@@ -225,7 +225,7 @@ Install [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-wi
 *   This plugin is not required when using Chromium
 *   Hangouts calling doesn't work in Firefox as of March 2017.[[2]](https://gsuiteupdates.googleblog.com/2017/02/google-hangouts-temporary-issues-with-firefox.html)
 
-Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
+Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously, or share your screen with others.
 
 ## MozPlugger
 

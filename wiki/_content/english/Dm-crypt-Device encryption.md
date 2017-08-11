@@ -84,7 +84,7 @@ can give guidance on deciding for an algorithm and key-size prior to installatio
 
 An encrypted blockdevice is protected by a key. A key is either:
 
-*   a passphrase: see [Disk encryption#Choosing a strong passphrase](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
+*   a passphrase: see [Security#Passwords](/index.php/Security#Passwords "Security").
 *   a keyfile, see [#Keyfiles](#Keyfiles).
 
 Both key types have default maximum sizes: passphrases can be up to 512 characters and keyfiles up to 8192kiB.

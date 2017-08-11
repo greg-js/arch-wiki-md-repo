@@ -16,7 +16,7 @@ Individual drive partitions can be setup using one of the many different availab
     *   [1.5 Clustered file systems](#Clustered_file_systems)
 *   [2 Identify existing file systems](#Identify_existing_file_systems)
 *   [3 Create a file system](#Create_a_file_system)
-*   [4 Mount a filesystem](#Mount_a_filesystem)
+*   [4 Mount a file system](#Mount_a_file_system)
     *   [4.1 List mounted file systems](#List_mounted_file_systems)
     *   [4.2 Umount a file system](#Umount_a_file_system)
 *   [5 See also](#See_also)
@@ -228,7 +228,7 @@ For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") 
 
 The new file system can now be mounted to a directory of choice.
 
-## Mount a filesystem
+## Mount a file system
 
 To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html). This example mounts `/dev/sda1` to `/mnt`.
 

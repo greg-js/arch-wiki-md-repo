@@ -59,7 +59,7 @@ Rebuild your initial ramdisk image (see [mkinitcpio](/index.php/Mkinitcpio "Mkin
 
 See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for how to change your console font to a large font. The Terminus font ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) is available in many sizes, such as `ter-132n` which is larger.
 
-Alternatively, disabling KMS by appending `nomodeset` as a kernel parameter will also make fonts readable.
+Alternatively, [disabling modesetting](#Disabling_modesetting) might switch to lower resolution and make fonts appear larger.
 
 ### Problem upon bootloading and dmesg
 
@@ -106,8 +106,6 @@ For the four built-in resolutions, see table below for the name to specify:
 | 1600x1200 (kernel 3.10 or higher) | edid/1600x1200.bin |
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
-
-You can also find some binaries EDID [here](https://gitlab.com/corossig/edid-database/tree/master).
 
 If you are doing early KMS, you must include the custom EDID file in the [initramfs](#Early_KMS_start) or you will run into problems.
 

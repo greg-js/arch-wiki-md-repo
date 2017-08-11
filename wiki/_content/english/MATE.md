@@ -12,7 +12,6 @@ From [MATE homepage](http://mate-desktop.org/):
 *   [4 Configuration](#Configuration)
     *   [4.1 Accessibility](#Accessibility)
     *   [4.2 Notifications](#Notifications)
-        *   [4.2.1 Battery discharging](#Battery_discharging)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Enabling compositing](#Enabling_compositing)
     *   [5.2 Enabling new window centering](#Enabling_new_window_centering)
@@ -141,9 +140,18 @@ Once you start MATE, you can configure the accessibility applications via *Syste
 
 ### Notifications
 
-#### Battery discharging
+	Battery discharge
 
-To disable the notification on battery discharge, open [dconf-editor](/index.php/Dconf-editor "Dconf-editor") and set org.mate.power-manager.notify-discharging to false.
+To disable the notification on battery discharge, run:
+
+```
+$ gsettings set org.mate.power-manager.notify-discharging false
+
+```
+
+	Brightness
+
+See [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-line_options "Backlight").
 
 ## Tips and tricks
 

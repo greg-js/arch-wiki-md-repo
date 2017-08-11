@@ -161,7 +161,14 @@ Redshift has a brightness adjustment setting, but it does not work the way most 
 
 Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) but, please see [Backlight#xbacklight](/index.php/Backlight#xbacklight "Backlight") as there are some limitations and you may have to find another method of controlling the backlight depending on your hardware.
 
-You need to create a file in `~/.config/redshift/hooks` and make it executable. You can use and edit this example.
+You need to create a file in `~/.config/redshift/hooks` and make it executable. You can use and edit the following example:
+
+```
+$ mkdir -p ~/.config/redshift/hooks
+
+```
+
+Create and adjust the following script:
 
  `~/.config/redshift/hooks/brightness.sh` 
 ```
@@ -192,6 +199,22 @@ case $1 in
 		esac
 		;;
 esac
+```
+
+Make it executable:
+
+```
+$ chmod +x ~/.config/redshift/hooks/brightness.sh
+
+```
+
+[Restart](/index.php/Restart "Restart") the `redshift.service` [user](/index.php/User "User") to apply changes.
+
+Check the service status as it should **not** contain the following message:
+
+```
+redshift[..]: No outputs have backlight property
+
 ```
 
 ## Troubleshooting

@@ -17,8 +17,9 @@
     *   [5.2 Automatic lm_sensors deployment](#Automatic_lm_sensors_deployment)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 K10Temp module](#K10Temp_module)
-    *   [6.2 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
-    *   [6.3 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
+    *   [6.2 Asus Z97/Z190 motherboards](#Asus_Z97.2FZ190_motherboards)
+    *   [6.3 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
+    *   [6.4 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
 
 ## Installation
 
@@ -466,6 +467,22 @@ options k10temp force=1
 ```
 
 This will allow the module to load at boot.
+
+### Asus Z97/Z190 motherboards
+
+With some recent Asus motherboards, fan and voltage sensor access may require the NCT6775 module:
+
+```
+ # modprobe nct6775
+
+```
+
+and add to the kernel boot parameters:
+
+```
+ acpi_enforce_resources=lax
+
+```
 
 ### Gigabyte GA-J1900N-D3V
 

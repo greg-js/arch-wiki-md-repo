@@ -14,7 +14,8 @@
         *   [3.3.4 Notes](#Notes)
 *   [4 Firetools](#Firetools)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 PulseAudio](#PulseAudio)
+    *   [5.1 General](#General)
+    *   [5.2 PulseAudio](#PulseAudio)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -26,6 +27,8 @@
 ## Configuration
 
 Most users will not require any custom configuration, and can proceed to the usage section, below.
+
+**Warning:** The default firejail profiles operate on a blacklist instead of a whitelist. This means that anything not explicitly forbidden by the profile will be accessible to the application. For example, if you have btrfs snapshots available in `/mnt/btrfs`, a jailed program may be forbidden from accessing `$HOME/.ssh`, but would be able to access `/mnt/btrfs/@some-snapshot/$HOME/.ssh`. Make sure to audit your profiles using e.g. `firejail --profile=/etc/firejail/firefox.profile /bin/bash`.
 
 Firejail uses profiles to set the security protections for each of the applications executed inside of it - you can find the default profiles in `/etc/firejail/*application*.profile`. Should you require custom profiles for applications not included, or wish to modify the defaults, you may place new rules or copies of the defaults in the `~/.config/firejail/` directory. You may have multiple custom profile files for a single application, and you may share the same profile file among several applications.
 
@@ -130,6 +133,14 @@ A GUI application for use with Firejail is also available, [firetools](https://a
 
 ## Troubleshooting
 
+### General
+
+1\. If you are depending upon `firecfg` to have generated a symlink, ie. you followed the instructions for [Firejail#Using Firejail by default](/index.php/Firejail#Using_Firejail_by_default "Firejail"), double-check that the symlink was actually created. You may need to create one manually.
+
+2\. If the symlink exists, you may need to run `sudo updatedb` to update the location database.
+
+3\. You may need to re-initialize the hash for the executable, ie. `hash -d <command_name>`.
+
 ### PulseAudio
 
 If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
@@ -139,3 +150,4 @@ If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://fi
 ## See also
 
 *   [Firejail GitHub project page](https://github.com/netblue30/firejail)
+*   [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), a minimal alternative to Firejail

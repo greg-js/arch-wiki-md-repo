@@ -31,7 +31,7 @@
 | <small>12.</small> [소프트웨어](/index.php/Category:Software_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Software (한국어)") <small>(0)</small> |
 | <small>12.1.</small> [패키지 관리](/index.php/Category:Package_management_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Package management (한국어)") <small>(3)</small> |
 | <small>12.2.</small> [유틸리티](/index.php/Category:Utilities_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Utilities (한국어)") <small>(2)</small> |
-| <small>12.3.</small> [X 서버](/index.php/Category:X_server_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:X server (한국어)") <small>(1)</small> |
+| <small>12.3.</small> [X 서버](/index.php/Category:X_server_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:X server (한국어)") <small>(2)</small> |
 | <small>13.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Stacking WMs (한국어)") <small>(3)</small> |
 | <small>14.</small> [시스템 관리](/index.php/Category:System_administration_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:System administration (한국어)") <small>(1)</small> |
 | <small>14.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Audio/Video (한국어)") <small>(1)</small> |

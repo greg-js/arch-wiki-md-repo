@@ -8,7 +8,6 @@ If you ever tried to set up a touchscreen device in linux, you might have notice
     *   [3.1 Calibration](#Calibration)
 *   [4 Using a touchscreen in a multi-head setup](#Using_a_touchscreen_in_a_multi-head_setup)
 *   [5 Touchegg](#Touchegg)
-*   [6 Firefox](#Firefox)
 
 ## Introduction
 
@@ -115,24 +114,3 @@ Also, the mapping will be lost if the touchscreen is disconnected and re-connect
 ## Touchegg
 
 [Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, recognizes gestures, and translates them to more conventional events such as mouse wheel movements, so that you can for example use two fingers to scroll. But it also interferes with applications or window managers which already do their own gesture recognition. If you have both a touchpad and a touchscreen, and if the touchpad driver (such as synaptics or libinput) has been configured not to recognize gestures itself, but to pass through the multi-touch events, then Touchegg will recognize gestures on both: this cannot be configured. In fact it does a better job of recognizing gestures than either the synaptics or libinput touchpad drivers; but on the touchscreen, it's generally better for applications to respond to touch in their own unique ways. Some Qt and GTK applications do that, but they will not be able to if you have Touchegg "eating" the touch events. So, Touchegg is useful when you are running mainly legacy applications which do not make their own use of touch events.
-
-## Firefox
-
-[Firefox](/index.php/Firefox "Firefox") does not enable touch support by default, but you can enable it yourself if you run [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/).
-
-In Firefox's URL bar type `about:config`, and set these values:
-
-```
- browser.gesture.pinch.in=cmd_fullZoomReduce
- browser.gesture.pinch.out=cmd_fullZoomEnlarge
- browser.gesture.pinch.threshold=150
- apz.overscroll.enabled=true
-
-```
-
-Additionally, you'll need to set your [environment variables](/index.php/Environment_variables "Environment variables"):
-
-```
- export MOZ_USE_XINPUT2=1
-
-```

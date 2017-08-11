@@ -83,69 +83,21 @@ Restart lighttpd and browse to [http://localhost/phppgadmin/index.php](http://lo
 
 #### Nginx
 
-Create a symbolic link to the /usr/share/webapps/phppgadmin directory from whichever directory your vhost is serving files from, e.g. /srv/http/<domain>/public_html/
+Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") with separate configuration file for PHP as shown in [nginx#PHP configuration file](/index.php/Nginx#PHP_configuration_file "Nginx").
+
+Using this method, you will access PhpPgAdmin as `phpmyadmin.<domain>`.
+
+You can setup a sub domain (or domain) with a server block such as:
 
 ```
- sudo ln -s /usr/share/webapps/phppgadmin /srv/http/<domain>/public_html/phppgadmin
+server {
+    server_name     phppgadmin.<domain.tld>;
+    root    /usr/share/webapps/phppgadmin;
+    index   index.php;
+    include php.conf;
+}
 
 ```
-
-You can also setup a sub domain with a server block like so (if using php-fpm):
-
-Also, you need to use at less php-fpm (you need it), you have to make it running first (if you not do it, you will have a "502 bad gateway" error instead of the phpPgadmin first page).
-
-For make it running after install the package, make a "systemctl start php-fpm" (and enable it if you want to use it all the time and/or after reboot, by "systemctl enable php-fpm)
-
-```
- server {
-         server_name     phppgadmin.<domain.tld>;
-         access_log      /srv/http/<domain>/logs/phppgadmin.access.log;
-         error_log       /srv/http/<domain.tld>/logs/phppgadmin.error.log;
-
-         location / {
-                 root    /srv/http/<domain.tld>/public_html/phppgadmin;
-                 index   index.html index.htm index.php;
-         }
-
-         location ~ \.php$ {
-                 root            /srv/http/<domain.tld>/public_html/phppgadmin;
-                 fastcgi_pass    unix:/var/run/php-fpm/php-fpm.sock;
-                 fastcgi_index   index.php;
-                 fastcgi_param   SCRIPT_FILENAME  /srv/http/<domain.tld>/public_html/phppgadmin/$fastcgi_script_name;
-                 include         fastcgi_params;
-         }
- }
-
-```
-
-but there is an other simple way to do it running (also, if you need some other web apps, it would be easy more after):
-
-```
- server {
-     listen 80;
-     server_name localhost default_server;
-     root /srv/http/www/public_html;
-     index index.html index.html index.php;
-     location ~ \.php$ {
-         try_files $uri =404;
-         include fastcgi_params;
-         fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
-         fastcgi_index index.php;
-         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; } }
-
-```
-
-with this config, your phppgadmin will be accessible at [http://localhost/phppgadmin](http://localhost/phppgadmin) directly and you will be able also to add some other web apps easy in the same way
-
-(just have to paste/link them under public_html directory and find it at localhost/your_webapps)
-
-this config make working all php file inside your localhost directly
-
-(also it is a good idea to allow a user http http in the top of this nginx file and make directory srv/http/ under http owner/group)
-
-the "server" serve only if you want to create some other server name designed only for this...
-
-also, make a root inside the location of php is not a simple way to do and make the config file in trouble...
 
 ### phpPgAdmin configuration
 

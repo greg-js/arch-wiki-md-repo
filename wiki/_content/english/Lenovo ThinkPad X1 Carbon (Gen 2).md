@@ -20,6 +20,7 @@
     *   [2.5 Keyboard backlight](#Keyboard_backlight)
         *   [2.5.1 Automatically turn on backlight when typing](#Automatically_turn_on_backlight_when_typing)
     *   [2.6 Audio](#Audio)
+    *   [2.7 Processor](#Processor)
 *   [3 Add ALSA-Preamplifier](#Add_ALSA-Preamplifier)
     *   [3.1 Network](#Network)
         *   [3.1.1 Wired](#Wired)
@@ -453,6 +454,10 @@ In /etc/modprobe.d/alsa-base.conf include the following line:
 
 options snd_hda_intel index=1
 
+### Processor
+
+See [Microcode#Enabling_Intel_microcode_updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode") how to update to processor's microcode.
+
 ## Add ALSA-Preamplifier
 
 It is a common problem on laptops running linux that the sound, even on maximum, is not loud enough. This can be fixed by adding an ALSA preamplifier. Install alsa-utils:
@@ -602,6 +607,13 @@ Works out of the box after enabling bluetooth.service.
 ### Docking
 
 This model comes with a OneLink dock port, next to the power adaptor. Out of the box, it is covered with a rubber cap that can be removed easily. Tested with OneLink Pro dock.
+
+Since Kernel 4.12 the touchpad and mousenipple stops working when the notebook is disconnected from the Dockingstation. A temporary solution is to reload the mouse kernel module:
+
+```
+$ rmmod psmouse && modprobe psmouse
+
+```
 
 #### Audio
 

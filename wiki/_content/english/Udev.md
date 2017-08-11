@@ -23,7 +23,6 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
     *   [4.5 Setting static device names](#Setting_static_device_names)
         *   [4.5.1 Video devices](#Video_devices)
         *   [4.5.2 Printers](#Printers)
-        *   [4.5.3 USB flash device](#USB_flash_device)
     *   [4.6 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
     *   [4.7 Triggering events](#Triggering_events)
     *   [4.8 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
@@ -284,56 +283,6 @@ ENV{ID_PATH}=="?*", SYMLINK+="lp/by-path/$env{ID_PATH}"
 LABEL="persistent_printer_end"
 
 ```
-
-#### USB flash device
-
-USB flash devices usually contain partitions, and partition labels are one way to have a static naming for a device. Another way is to create a *udev* rule to add symlinks in /dev/.
-
-Get the serial number and USB ids from the USB flash drive (if you use multiple of the same make, you might have to check the serial is indeed unique). This command walks from partition up the chain of devices. A rule to match can be composed by the attributes of the device and the attributes from one single parent device:
-
- `# udevadm info --name=/dev/sdc1 --attribute-walk` 
-```
-  looking at device '/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2/2-4.2:1.0/host3/target3:0:0/3:0:0:0/block/sdc/sdc1':
-    KERNEL=="sdc1"
-    SUBSYSTEM=="block"
-    ATTR{partition}=="1"
-    ...
-  looking at parent device '/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2':
-    KERNELS=="2-4.2"
-    SUBSYSTEMS=="usb"
-    DRIVERS=="usb"
-    ...
-    ATTRS{idProduct}=="1000"
-    ATTRS{idVendor}=="8564"
-    ATTRS{manufacturer}=="JetFlash"
-    ATTRS{serial}=="08CV4HPEF7S8RT1"
-
-```
-
-Create a *udev* rule for it by adding the following to a file in `/etc/udev/rules.d/`, such as `8-usbstick.rules`:
-
-```
-KERNEL=="sd*", ATTRS{idProduct}=="1000", ATTRS{idVendor}=="8564", ATTRS{manufacturer}=="JetFlash", ATTRS{serial}=="08CV4HPEF7S8RT1", SYMLINK+="sdUSBstick%n"
-
-```
-
-`%n` will expand to the partition number. For example, if the device has two partitions, two symlinks will be created. You do not need to go with the 'serial' attribute. If you have a custom rule of your own, you can put it in as well (e.g. using the vendor name).
-
-Rescan sysfs:
-
-```
-udevadm control --reload-rules && udevadm trigger
-
-```
-
-Now check the contents of `/dev`:
-
-```
-ls /dev
-
-```
-
-It should show the device with the desired name.
 
 ### Waking from suspend with USB device
 

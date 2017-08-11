@@ -65,7 +65,7 @@ unixsocketperm 770
 
 ```
 
-*   Persist the directory which contains the socket:
+*   Create a [tmpfile](/index.php/Tmpfile "Tmpfile") to persist the directory which contains the socket:
 
  `/etc/tmpfiles.d/redis.conf`  `d /run/redis 0755 redis redis -` 
 

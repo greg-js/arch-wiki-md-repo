@@ -193,7 +193,7 @@ A web-client is also provided should users not want GTK or shell-based access to
 
 **Tip:** For the highest level of security, running `deluge-web` via the systemd system service (`deluge-web.service`) is recommended since the deluge user has no shell access (limited account) or other group affiliation on the host system. In addition to the security benefits of running as the non-privileged deluge user, the system service can also run at boot without the need to start Xorg or a client.
 
-When the web client s initially started, it will create `$HOME/.config/deluge/web.conf`. The password in this file is hashed with SHA1 and salted. The default password is "deluge".
+The [python2-mako](https://www.archlinux.org/packages/?name=python2-mako) dependency is needed for the web client to work. When the web client is initially started, it will create `$HOME/.config/deluge/web.conf`. The password in this file is hashed with SHA1 and salted. The default password is "deluge".
 
 Several things to note:
 

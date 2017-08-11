@@ -23,7 +23,7 @@ Go through the wizard and setup your preferences.
 
 **Warning:** Do not edit configuration files manually in a text editor while ZNC is running. There is a very good chance you will lose your configuration. Use the webadmin or controlpanel modules to change settings on-the-fly. They are both included in the package.
 
-[Enable](/index.php/Enable "Enable") `znc.service` to make it start on boot. Start and stop the ZNC daemon as usual with [systemd](/index.php/Systemd "Systemd").
+[Start/enable](/index.php/Start/enable "Start/enable") `znc.service`.
 
 ## Configuration
 

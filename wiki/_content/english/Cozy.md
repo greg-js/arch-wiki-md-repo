@@ -1,6 +1,4 @@
-[Cozy](https://cozy.io) is a personal cloud platform free, and self-hostable, written in [Node.js](/index.php/Node.js "Node.js").
-
-**Note:** The future version, v3, is written in Go instead.
+[Cozy](https://cozy.io) is a personal cloud platform free, and self-hostable, written in [Node.js](/index.php/Node.js "Node.js") (the future version, v3, will be written in [Go](/index.php/Go "Go") instead).
 
 The platform aims at simplifying the use of a personal cloud and at allowing the users to take back ownership of their privacy. Its base applications' features include hosting, sharing and synchronising files, pictures, contacts and calendars, along with an email client.
 

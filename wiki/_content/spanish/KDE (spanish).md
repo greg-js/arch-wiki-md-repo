@@ -1,137 +1,98 @@
+KDE es un proyecto de software que comprende actualmente un [desktop environment](/index.php/Desktop_environment "Desktop environment") conocido como Plasma, una colección de bibliotecas y Frameworks (KDE Frameworks) y varias aplicaciones (KDE Applications). KDE upstream tiene un [UserBase wiki](https://userbase.kde.org/) bien mantenido. Allí se puede encontrar información detallada sobre la mayoría de las aplicaciones de KDE.
+
 ## Contents
 
-*   [1 Información General](#Informaci.C3.B3n_General)
-*   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Plasma Desktop](#Plasma_Desktop)
-    *   [2.2 Aplicaciones de KDE y paquete de lenguaje](#Aplicaciones_de_KDE_y_paquete_de_lenguaje)
-*   [3 Iniciar Plasma](#Iniciar_Plasma)
-    *   [3.1 Usando xinitrc](#Usando_xinitrc)
-*   [4 Configuración](#Configuraci.C3.B3n)
-    *   [4.1 Personalización](#Personalizaci.C3.B3n)
-        *   [4.1.1 Escritorio Plasma](#Escritorio_Plasma)
-            *   [4.1.1.1 Temas](#Temas)
-                *   [4.1.1.1.1 Qt y GTK+ Aplicaciones y Apariencias](#Qt_y_GTK.2B_Aplicaciones_y_Apariencias)
-*   [5 EN CONSTRUCCIÓN](#EN_CONSTRUCCI.C3.93N)
-    *   [5.1 Widgets](#Widgets)
-    *   [5.2 Decoración de ventanas](#Decoraci.C3.B3n_de_ventanas)
-    *   [5.3 Integración de KDE 4 con aplicaciones GTK](#Integraci.C3.B3n_de_KDE_4_con_aplicaciones_GTK)
-        *   [5.3.1 Procedimiento automático](#Procedimiento_autom.C3.A1tico)
-        *   [5.3.2 Procedimiento manual](#Procedimiento_manual)
-        *   [5.3.3 Iconos](#Iconos)
-    *   [5.4 Temas de iconos](#Temas_de_iconos)
-    *   [5.5 Logo de Arch Linux en el menu de Kicker](#Logo_de_Arch_Linux_en_el_menu_de_Kicker)
-    *   [5.6 Fuentes](#Fuentes)
-    *   [5.7 Eficacia de espacio](#Eficacia_de_espacio)
-        *   [5.7.1 Todo tipo de * barras](#Todo_tipo_de_.2A_barras)
-        *   [5.7.2 Plasma](#Plasma)
-        *   [5.7.3 KWin](#KWin)
-    *   [5.8 NetworkManager](#NetworkManager)
-    *   [5.9 Impresión](#Impresi.C3.B3n)
-    *   [5.10 Soporte Samba/Windows](#Soporte_Samba.2FWindows)
-    *   [5.11 Powersaving](#Powersaving)
-        *   [5.11.1 Como habilitar Cpufreq](#Como_habilitar_Cpufreq)
-    *   [5.12 Registro de cambios en archivos y directorios](#Registro_de_cambios_en_archivos_y_directorios)
-    *   [5.13 Administración del sistema](#Administraci.C3.B3n_del_sistema)
-        *   [5.13.1 Establecer distribución del teclado](#Establecer_distribuci.C3.B3n_del_teclado)
-            *   [5.13.1.1 Terminar servidor Xorg mediante atajo de teclado de KDE](#Terminar_servidor_Xorg_mediante_atajo_de_teclado_de_KDE)
-    *   [5.14 Problemas conocidos](#Problemas_conocidos)
-    *   [5.15 KDEmod](#KDEmod)
-    *   [5.16 Soporte para Java](#Soporte_para_Java)
-    *   [5.17 Bajando de versión a kdemod3 o kde3-legacy desde KDE 4.3](#Bajando_de_versi.C3.B3n_a_kdemod3_o_kde3-legacy_desde_KDE_4.3)
-    *   [5.18 Archivo Xserver de KDM](#Archivo_Xserver_de_KDM)
-    *   [5.19 GPG y SSH](#GPG_y_SSH)
-    *   [5.20 Kdebindings](#Kdebindings)
-    *   [5.21 Cambiando el DPI para KDM](#Cambiando_el_DPI_para_KDM)
-    *   [5.22 Bugs y errores](#Bugs_y_errores)
-    *   [5.23 Enlaces externos](#Enlaces_externos)
-
-## Información General
-
-KDE es un proyecto de software que comprende actualmente de un entorno de escritorio [desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") conocido como plasma (o Plasma Workspaces), una colección de bibliotecas y framework o módulos de software concretos (KDE framework) y varias aplicaciones (aplicaciones de KDE) también. KDE tiene una buena base de conocimiento [y wiki](http://userbase.kde.org/). La información detallada sobre la mayoría de las aplicaciones de KDE se puede encontrar allí.
-
-**Nota:** En 2014, el proyecto KDE cambió la forma en que nombra y se organiza. El más viejo término *KDE Software Compilation* se suspendió y las versiones y ciclos desarrollo del los framework y las aplicaciones se desliga del escritorio Plasma.
+*   [1 Instalación](#Instalaci.C3.B3n)
+    *   [1.1 Plasma Desktop](#Plasma_Desktop)
+    *   [1.2 Aplicaciones de KDE y paquetes de idiomas](#Aplicaciones_de_KDE_y_paquetes_de_idiomas)
+    *   [1.3 Lanzamientos inestables](#Lanzamientos_inestables)
+*   [2 Iniciar Plasma](#Iniciar_Plasma)
+    *   [2.1 Gráficamente](#Gr.C3.A1ficamente)
+    *   [2.2 Manual](#Manual)
+*   [3 Configuración](#Configuraci.C3.B3n)
+    *   [3.1 Personalización](#Personalizaci.C3.B3n)
+        *   [3.1.1 Escritorio Plasma](#Escritorio_Plasma)
+            *   [3.1.1.1 Temas](#Temas)
+                *   [3.1.1.1.1 Qt y GTK+ Aplicaciones y Apariencias](#Qt_y_GTK.2B_Aplicaciones_y_Apariencias)
+*   [4 EN CONSTRUCCIÓN](#EN_CONSTRUCCI.C3.93N)
+    *   [4.1 Widgets](#Widgets)
+    *   [4.2 Decoración de ventanas](#Decoraci.C3.B3n_de_ventanas)
+    *   [4.3 Integración de KDE 4 con aplicaciones GTK](#Integraci.C3.B3n_de_KDE_4_con_aplicaciones_GTK)
+        *   [4.3.1 Procedimiento automático](#Procedimiento_autom.C3.A1tico)
+        *   [4.3.2 Procedimiento manual](#Procedimiento_manual)
+        *   [4.3.3 Iconos](#Iconos)
+    *   [4.4 Temas de iconos](#Temas_de_iconos)
+    *   [4.5 Logo de Arch Linux en el menu de Kicker](#Logo_de_Arch_Linux_en_el_menu_de_Kicker)
+    *   [4.6 Fuentes](#Fuentes)
+    *   [4.7 Eficacia de espacio](#Eficacia_de_espacio)
+        *   [4.7.1 Todo tipo de * barras](#Todo_tipo_de_.2A_barras)
+        *   [4.7.2 Plasma](#Plasma)
+        *   [4.7.3 KWin](#KWin)
+    *   [4.8 NetworkManager](#NetworkManager)
+    *   [4.9 Impresión](#Impresi.C3.B3n)
+    *   [4.10 Soporte Samba/Windows](#Soporte_Samba.2FWindows)
+    *   [4.11 Powersaving](#Powersaving)
+        *   [4.11.1 Como habilitar Cpufreq](#Como_habilitar_Cpufreq)
+    *   [4.12 Registro de cambios en archivos y directorios](#Registro_de_cambios_en_archivos_y_directorios)
+    *   [4.13 Administración del sistema](#Administraci.C3.B3n_del_sistema)
+        *   [4.13.1 Establecer distribución del teclado](#Establecer_distribuci.C3.B3n_del_teclado)
+            *   [4.13.1.1 Terminar servidor Xorg mediante atajo de teclado de KDE](#Terminar_servidor_Xorg_mediante_atajo_de_teclado_de_KDE)
+    *   [4.14 Problemas conocidos](#Problemas_conocidos)
+    *   [4.15 KDEmod](#KDEmod)
+    *   [4.16 Soporte para Java](#Soporte_para_Java)
+    *   [4.17 Bajando de versión a kdemod3 o kde3-legacy desde KDE 4.3](#Bajando_de_versi.C3.B3n_a_kdemod3_o_kde3-legacy_desde_KDE_4.3)
+    *   [4.18 Archivo Xserver de KDM](#Archivo_Xserver_de_KDM)
+    *   [4.19 GPG y SSH](#GPG_y_SSH)
+    *   [4.20 Kdebindings](#Kdebindings)
+    *   [4.21 Cambiando el DPI para KDM](#Cambiando_el_DPI_para_KDM)
+    *   [4.22 Bugs y errores](#Bugs_y_errores)
+    *   [4.23 Enlaces externos](#Enlaces_externos)
 
 ## Instalación
 
 ### Plasma Desktop
 
-**Nota:**
+Antes de instalar Plasma, asegúrese de tener una instalación funcional de [Xorg](/index.php/Xorg "Xorg") en su sistema.
 
-*   Plasma 5 no es co-instalable con KDE 4 Workspace, proporcionado por [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/).
-*   KDE 4 Plasma Desktop está sin mantenimiento desde agosto de 2015\. [[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php)
+Instale -[Install](/index.php/Install "Install")- el metapaquete [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o el grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). Para conocer las diferencias entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) y el grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/) refierace a [Creating packages#Meta packages and groups](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"). Alternativamente, para una instalación de Plasma mínima, instale el paquete [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
 
-Antes de instalar plasma, asegúrese de tener un [Xorg](/index.php/Xorg "Xorg") instalado y trabajando en el sistema. Instale [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) meta-paquete o [plasma](https://www.archlinux.org/groups/x86_64/plasma/) grupo . para ver diferencias entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) y grupos de [plasma](https://www.archlinux.org/groups/x86_64/plasma/) mire en [KDE Packages](/index.php/KDE_Packages "KDE Packages"). Como alternativa, para una instalación más mínima de Plasma, instale el paquete [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
+Para habilitar el soporte para [Wayland](/index.php/Wayland "Wayland") en Plasma, también instale el paquete [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session).
 
-Para el meta-paquete de plasma instale con:
+### Aplicaciones de KDE y paquetes de idiomas
 
-```
-# pacman -S plasma-meta
+Para instalar el conjunto completo de aplicaciones KDE, instale el grupo [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) o el metapaquete [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta). Tenga en cuenta que esto sólo instalará aplicaciones, no instalará ninguna versión de Plasma.
 
-```
+La mayoría de los paquetes de KDE contienen sus propias traducciones. La excepción son los paquetes KDE-4 basicos de kde-applications. Si necesita archivos de idioma para estos paquetes, instale `kde-l10n-***yourlanguagehere***` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) para el idioma alemán). Para obtener una lista completa de idiomas disponibles, consulte el paquete dividido de [kde-l10n split package](https://www.archlinux.org/packages/extra/any/kde-l10n/)..
 
-### Aplicaciones de KDE y paquete de lenguaje
+### Lanzamientos inestables
 
-Para instalar el conjunto completo de aplicaciones de KDE, instale el grupo de aplicaciones [kde-aplicactions](https://www.archlinux.org/groups/x86_64/kde-aplicactions/) o el meta-paquetes de KDE [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta paquete para instalar módulos específicos. **Tenga en cuenta que esto sólo va a instalar aplicaciones, no va a instalar cualquier versión del escritorio Plasma.**
-
-Para instalar el conjunto de complemento de aplicaciones de KDE, por ejemplo instale:
-
-```
-# pacman -S kde-applications 
-
-```
-
-Y puede dejar por defecto todos,
-
-Si necesita instalar el archivos de idioma, instale `kde-l10n - *'yourlanguagehere'* `(por ejemplo, [kde-l10n-es](https://www.archlinux.org/packages/?name=kde-l10n-es) para el idioma español). Para obtener una lista completa de los idiomas disponibles ver [este enlace](https://www.archlinux.org/packages/extra/any/kde-l10n/).
-
-```
-# pacman -S  kde-l10n-es 
-
-```
+Vea [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")
 
 ## Iniciar Plasma
 
-**Tip:**
+**Nota:** Aunque es posible lanzar Plasma en [Wayland](/index.php/Wayland "Wayland"), hay algunas características que faltan y problemas conocidos con Plasma 5.10\. Vea [Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland) para una lista de problemas y el [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) para el estado actual de desarrollo. Utilice [Xorg](/index.php/Xorg "Xorg") para la experiencia más completa y estable.
 
-*   El gestor de inicio [KDM](/index.php/KDM "KDM") ya no esta disponible en Plasma 5\. KDE upstream [recomienda](http://blog.davidedmundson.co.uk/blog/display_managers_finale) usar [SDDM](/index.php/SDDM "SDDM") el gestor de pantalla ya ya que proporciona integración con plasma 5 tema.
-*   Para integrar mejor SDDM con plasma, se recomienda editar `/etc/sddm.conf` para utilizar el tema breeze. Consulte [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") para obtener instrucciones.
+Plasma se puede iniciar de forma gráfica, utilizando un [display manager](/index.php/Display_manager "Display manager"), o manualmente desde la consola.
 
-Si no tiene instalado SDDM, lo puede instalar.
+### Gráficamente
 
-```
-# pacman -S sddm
+**Sugerencia:** Para integrar mejor [SDDM](/index.php/SDDM "SDDM") con Plasma, se recomienda (forzar) seleccionar el tema breeze. La configuración relacionada se encuentra en Configuración del sistema> Inicio y apagado. Ver configuraciones del tema [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
 
-```
+Uso de un gestor de visualización [Display manager](/index.php/Display_manager "Display manager"):
 
-Activarlo con
+*   Seleccione *Plasma* para iniciar una nueva sesión en [Xorg](/index.php/Xorg "Xorg").
+*   Instale [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) y seleccione *Plasma (Wayland)* para lanzar una nueva sesión en [Wayland](/index.php/Wayland "Wayland").
 
-```
-# systemctl enable sddm.service
+**Nota:** La implementación del controlador propietario de [NVIDIA](/index.php/NVIDIA "NVIDIA") para Wayland requiere EGLStreams. KDE no ha implementado EGLStreams en su implementación Wayland [implementation](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not).
 
-```
+Las soluciones siguientes están disponibles:
 
-Y reiniciar el sistema
+*   Uso del controlador Nouveau.
+*   Uso de la sesión (predeterminada) de Xorg.
 
-Para iniciar una sesión de plasma 5, elija *plasma* en el menú del gestor de pantalla o inicio. Ya que tiene otras opciones.
+### Manual
 
-### Usando xinitrc
-
-Alternativamente, puede iniciar plasma con *startx* (desde la consola o terminal), añadiendo `exec startkde` a su {archivo {ic | .xinitrc}}. Si quieres iniciar sesión desde la consola, por favor ver [Start X at login](/index.php/Start_X_at_login "Start X at login").
-
-*El significado y el uso de**xinitrc** está muy bien descrito[aquí](/index.php/Xinitrc "Xinitrc").*
-
-Edita **`/home/`**`*tu-nombre*`**`/.xinitrc`**. Despues descomenta:
-
-```
-exec startkde 
-
-```
-
-Después de reiniciar el sistema y / o iniciar sesión, cada ejecución de Xorg ('*startx **o** *xinit') iniciará KDE automáticamente.
-
-**Advertencia:** De este modo pueden tener las funciones de reinicio/apagado deshabilitadas en el menú de KDE.
-
-**Nota:** Si quieres iniciar Xorg en el inicio, por favor lee [Start X at Boot (Español)](/index.php/Start_X_at_Boot_(Espa%C3%B1ol) "Start X at Boot (Español)").
+Para iniciar Plasma con [xinit](/index.php/Xinit "Xinit")/*startx*, añada `exec startkde` a su archivo `.xinitrc`. Si desea iniciar Xorg en el inicio de sesión, consulte arrancar X al iniciar sesión [Start X at login](/index.php/Start_X_at_login "Start X at login"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `startplasmacompositor`.
 
 ## Configuración
 

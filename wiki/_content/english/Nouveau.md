@@ -168,7 +168,7 @@ You can also pass the resolution to nouveau with the `video=` kernel line option
 
 ### Power management
 
-The lack of proper power management in the nouveau driver is one of the most important causes of performance issue, since most card will remain in their lower power state with lower clocks during their use. Experimental support for GPU reclocking is available for some cards (See the [Nouveau PowerManagement page](https://nouveau.freedesktop.org/wiki/PowerManagement)) and since kernel 4.5 can be controlled through a debugfs interface located at `/sys/kernel/debug/dri/*/pstate`.
+The lack of proper power management in the nouveau driver is one of the most important causes of performance issues, since most cards will remain in their lower power state with lower clocks during their use. Experimental support for GPU reclocking is available for some cards (see the [Nouveau PowerManagement page](https://nouveau.freedesktop.org/wiki/PowerManagement)) and since kernel 4.5 can be controlled through a debugfs interface located at `/sys/kernel/debug/dri/*/pstate`.
 
 For example, to check the available power states and the current setting for the first card in your system, run:
 

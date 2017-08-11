@@ -17,12 +17,10 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
         *   [3.2.5 Per-User Directories](#Per-User_Directories)
     *   [3.3 FastCGI](#FastCGI)
         *   [3.3.1 PHP implementation](#PHP_implementation)
-            *   [3.3.1.1 PHP configuration](#PHP_configuration)
-                *   [3.3.1.1.1 MariaDB](#MariaDB)
-            *   [3.3.1.2 nginx configuration](#nginx_configuration)
-                *   [3.3.1.2.1 Adding to main configuration](#Adding_to_main_configuration)
-                *   [3.3.1.2.2 PHP configuration file](#PHP_configuration_file)
-            *   [3.3.1.3 Test configuration](#Test_configuration)
+            *   [3.3.1.1 nginx configuration](#nginx_configuration)
+                *   [3.3.1.1.1 Adding to main configuration](#Adding_to_main_configuration)
+                *   [3.3.1.1.2 PHP configuration file](#PHP_configuration_file)
+            *   [3.3.1.2 Test configuration](#Test_configuration)
         *   [3.3.2 CGI implementation](#CGI_implementation)
             *   [3.3.2.1 fcgiwrap](#fcgiwrap)
                 *   [3.3.2.1.1 Multiple worker threads](#Multiple_worker_threads)
@@ -329,42 +327,11 @@ FastCGI technology is introduced into nginx to work with many external tools, i.
 
 #### PHP implementation
 
-[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for PHP.
-
-##### PHP configuration
-
-[Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) packages.
-
-Make sure [open_basedir](/index.php/PHP#Configuration "PHP") allows the directories containing PHP files to be accessed (starting with PHP 7.0 it is [unset by default](https://www.archlinux.org/news/php-70-packages-released/), so no change is required).
-
-Next, configure modules you need. For example, if you want to use sqlite3, install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) then enable it in `/etc/php/php.ini` by uncommenting following line:
-
-```
-extension=sqlite3.so
-
-```
+[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for PHP. [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) packages and configure PHP as described on the [PHP](/index.php/PHP "PHP") page.
 
 The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the systemd unit `php-fpm.service`.
 
 **Note:** If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing.
-
-###### MariaDB
-
-Configure MySQL/MariaDB as described in [MariaDB](/index.php/MariaDB "MariaDB").
-
-Uncomment [at least one](http://www.php.net/manual/en/mysqlinfo.api.choosing.php) of the following lines in `/etc/php/php.ini`:
-
-```
-extension=pdo_mysql.so
-extension=mysqli.so
-
-```
-
-**Warning:** `mysql.so` was [removed](http://php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
-
-You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
-
-**Tip:** You may want to install a tool like [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"), [Adminer](/index.php/Adminer "Adminer") or [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) to work with your databases.
 
 ##### nginx configuration
 

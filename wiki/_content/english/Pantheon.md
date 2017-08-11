@@ -99,7 +99,7 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) or [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/): Terminal emulator
 *   [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) or [scratch-text-editor-git](https://aur.archlinux.org/packages/scratch-text-editor-git/): Text editor
 *   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
-*   [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player developed from [noise-player](https://www.archlinux.org/packages/?name=noise-player)
+*   [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player developed from [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) (ex Noise Player)
 *   [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player developed from [audience](https://www.archlinux.org/packages/?name=audience)
 *   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar developed from [maya-calendar](https://aur.archlinux.org/packages/maya-calendar/), integrates default calendar with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
 *   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser, replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)

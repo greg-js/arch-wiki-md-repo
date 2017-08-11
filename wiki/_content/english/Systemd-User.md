@@ -59,6 +59,8 @@ The user instance of systemd does not inherit any of the [environment variables]
 
 One variable you may want to set is `PATH`.
 
+After configuration, the command `systemctl --user show-environment` can be used to verify that the values are correct.
+
 #### Service example
 
 Create the [drop-in](/index.php/Systemd#Drop-in_files "Systemd") directory `/etc/systemd/system/user@.service.d/` and inside create a file that has the extension `.conf` (e.g. `local.conf`):
@@ -90,23 +92,7 @@ Note that this will not affect systemd services started before `~/.bash_profile`
 
 #### pam_environment
 
-Environment variables can be made available through use of the `pam_env.so` module. Create the file `~/.pam_environment`, for example:
-
- `~/.pam_environment` 
-```
-XDG_CONFIG_HOME DEFAULT=@{HOME}/.local/config
-XDG_DATA_HOME   DEFAULT=@{HOME}/.local/data
-```
-
-For details about the syntax of the `.pam_environment` file see [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
-
- `$ systemctl --user show-environment` 
-```
-...
-XDG_CONFIG_HOME=/home/*user*/.local/config
-XDG_DATA_HOME=/home/*user*/.local/data
-...
-```
+Environment variables can be made available through use of the `pam_env.so` module. See [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables") for configuration details.
 
 ### Automatic start-up of systemd user instances
 

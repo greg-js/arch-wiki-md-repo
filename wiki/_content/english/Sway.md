@@ -210,7 +210,7 @@ fi
 
 ### Using i3-dmenu-desktop
 
-i3-dmenu-desktop is not usable directly from sway, but a patch is available here : [https://github.com/i3/i3/pull/2265/files](https://github.com/i3/i3/pull/2265/files) Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases.
+i3-dmenu-desktop is not usable directly from sway, but a patch is available here: [https://github.com/i3/i3/pull/2265/files](https://github.com/i3/i3/pull/2265/files) Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases.
 
 See here for more information: [https://github.com/SirCmpwn/sway/issues/521](https://github.com/SirCmpwn/sway/issues/521)
 

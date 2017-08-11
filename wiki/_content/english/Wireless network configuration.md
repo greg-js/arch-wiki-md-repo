@@ -50,10 +50,8 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [6.1.5 rt5572](#rt5572)
     *   [6.2 Realtek](#Realtek)
         *   [6.2.1 rtl8192cu](#rtl8192cu)
-        *   [6.2.2 rtl8192e](#rtl8192e)
-        *   [6.2.3 rtl8188eu](#rtl8188eu)
-        *   [6.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [6.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
+        *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [6.2.3 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
     *   [6.3 Atheros](#Atheros)
         *   [6.3.1 ath5k](#ath5k)
         *   [6.3.2 ath9k](#ath9k)
@@ -655,36 +653,6 @@ The driver is now in the kernel, but many users have reported being unable to ma
 
 [8192cu-dkms](https://aur.archlinux.org/packages/8192cu-dkms/) includes many patches, try this if it does not work fine with the driver in kernel.
 
-#### rtl8192e
-
-The driver is part of the current kernel package. The module initialization may fail at boot giving this error message:
-
-```
-rtl819xE:ERR in CPUcheck_firmware_ready()
-rtl819xE:ERR in init_firmware() step 2
-rtl819xE:ERR!!! _rtl8192_up(): initialization is failed!
-r8169 0000:03:00.0: eth0: link down
-
-```
-
-A workaround is to simply unload the module:
-
-```
-# modprobe -r r8192e_pci
-
-```
-
-and reload the module (after a pause):
-
-```
-# modprobe r8192e_pci
-
-```
-
-#### rtl8188eu
-
-Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In Linux 3.12 the driver [has been moved](http://lwn.net/Articles/564798/) to kernel staging source tree. For older kernels use out-of-tree driver sources built with [DKMS](/index.php/DKMS "DKMS") - install [8188eu-dkms](https://aur.archlinux.org/packages/8188eu-dkms/). At the times of 3.15 kernel rtl8188eu driver is buggy and has many stability issues.
-
 #### rtl8723ae/rtl8723be
 
 The `rtl8723ae` and `rtl8723be` modules are included in the mainline Linux kernel.
@@ -701,8 +669,6 @@ If you have very poor signal maybe your device has only one antenna connected an
 
 #### rtl8812au/rtl8821au
 
-Newer 802.11 a/b/g/n/ac USB2.0/USB3.0 adapters, such as the Glam Hobby AC600 (Ourlink) or the [Edimax AC1200 (EW-7822UAC)](http://www.edimax.com/edimax/merchandise/merchandise_detail/data/edimax/global/wireless_adapters_ac1200_dual-band/ew-7822uac) may require rtl8812 or rtl8821 drivers before working.
-
 The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) (driver version 4), or [rtl8812au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8812au-v5-dkms-git/) (driver version 5).
 
 ```
@@ -710,7 +676,7 @@ The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/p
 
 ```
 
-If that does not work (like for the AC600 dongles), try the 8812/8821 module [rtl8812au_rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/).
+If that does not work, try the 8812/8821 module [rtl8812au_rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/).
 
 ```
 # modprobe rtl8812au_rtl8821au
