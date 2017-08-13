@@ -359,7 +359,7 @@ See [Init#systemd-nspawn](/index.php/Init#systemd-nspawn "Init").
 
 ### Specify per-container settings
 
-To specify per-container settings and not overrides for all (e.g. bind a directory to only one container)[[2]](https://github.com/systemd/systemd/issues/3442#issuecomment-223837408), the *.nspawn* file definition can be used [[3]](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html#), refer to [systemd.nspawn(5)](http://man7.org/linux/man-pages/man5/systemd.nspawn.5.html) for details.
+To specify per-container settings and not overrides for all (e.g. bind a directory to only one container), the *.nspawn* files can be used. See [systemd.nspawn(5)](http://man7.org/linux/man-pages/man5/systemd.nspawn.5.html) for details.
 
 ### Use Btrfs subvolume as container root
 
@@ -413,7 +413,7 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 ```
 
-Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[4]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[5]](https://github.com/systemd/systemd/issues/852).
+Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[2]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[3]](https://github.com/systemd/systemd/issues/852).
 
 ### Unable to upgrade some packages on the container
 

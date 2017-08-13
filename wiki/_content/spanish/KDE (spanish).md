@@ -13,40 +13,38 @@ KDE es un proyecto de software que comprende actualmente un [desktop environment
     *   [3.1 Personalización](#Personalizaci.C3.B3n)
         *   [3.1.1 Escritorio Plasma](#Escritorio_Plasma)
             *   [3.1.1.1 Temas](#Temas)
-                *   [3.1.1.1.1 Qt y GTK+ Aplicaciones y Apariencias](#Qt_y_GTK.2B_Aplicaciones_y_Apariencias)
-*   [4 EN CONSTRUCCIÓN](#EN_CONSTRUCCI.C3.93N)
-    *   [4.1 Widgets](#Widgets)
-    *   [4.2 Decoración de ventanas](#Decoraci.C3.B3n_de_ventanas)
-    *   [4.3 Integración de KDE 4 con aplicaciones GTK](#Integraci.C3.B3n_de_KDE_4_con_aplicaciones_GTK)
-        *   [4.3.1 Procedimiento automático](#Procedimiento_autom.C3.A1tico)
-        *   [4.3.2 Procedimiento manual](#Procedimiento_manual)
-        *   [4.3.3 Iconos](#Iconos)
-    *   [4.4 Temas de iconos](#Temas_de_iconos)
-    *   [4.5 Logo de Arch Linux en el menu de Kicker](#Logo_de_Arch_Linux_en_el_menu_de_Kicker)
-    *   [4.6 Fuentes](#Fuentes)
-    *   [4.7 Eficacia de espacio](#Eficacia_de_espacio)
-        *   [4.7.1 Todo tipo de * barras](#Todo_tipo_de_.2A_barras)
-        *   [4.7.2 Plasma](#Plasma)
-        *   [4.7.3 KWin](#KWin)
-    *   [4.8 NetworkManager](#NetworkManager)
-    *   [4.9 Impresión](#Impresi.C3.B3n)
-    *   [4.10 Soporte Samba/Windows](#Soporte_Samba.2FWindows)
-    *   [4.11 Powersaving](#Powersaving)
-        *   [4.11.1 Como habilitar Cpufreq](#Como_habilitar_Cpufreq)
-    *   [4.12 Registro de cambios en archivos y directorios](#Registro_de_cambios_en_archivos_y_directorios)
-    *   [4.13 Administración del sistema](#Administraci.C3.B3n_del_sistema)
-        *   [4.13.1 Establecer distribución del teclado](#Establecer_distribuci.C3.B3n_del_teclado)
-            *   [4.13.1.1 Terminar servidor Xorg mediante atajo de teclado de KDE](#Terminar_servidor_Xorg_mediante_atajo_de_teclado_de_KDE)
-    *   [4.14 Problemas conocidos](#Problemas_conocidos)
-    *   [4.15 KDEmod](#KDEmod)
-    *   [4.16 Soporte para Java](#Soporte_para_Java)
-    *   [4.17 Bajando de versión a kdemod3 o kde3-legacy desde KDE 4.3](#Bajando_de_versi.C3.B3n_a_kdemod3_o_kde3-legacy_desde_KDE_4.3)
-    *   [4.18 Archivo Xserver de KDM](#Archivo_Xserver_de_KDM)
-    *   [4.19 GPG y SSH](#GPG_y_SSH)
-    *   [4.20 Kdebindings](#Kdebindings)
-    *   [4.21 Cambiando el DPI para KDM](#Cambiando_el_DPI_para_KDM)
-    *   [4.22 Bugs y errores](#Bugs_y_errores)
-    *   [4.23 Enlaces externos](#Enlaces_externos)
+                *   [3.1.1.1.1 Apariencia de aplicaciones Qt y GTK +](#Apariencia_de_aplicaciones_Qt_y_GTK_.2B)
+            *   [3.1.1.2 Widgets](#Widgets)
+            *   [3.1.1.3 Applet de sonido en la bandeja del sistema](#Applet_de_sonido_en_la_bandeja_del_sistema)
+            *   [3.1.1.4 Desactivar la sombra del panel](#Desactivar_la_sombra_del_panel)
+        *   [3.1.2 Decoraciones para ventanas](#Decoraciones_para_ventanas)
+        *   [3.1.3 Temas de iconos](#Temas_de_iconos)
+        *   [3.1.4 Fuentes](#Fuentes)
+            *   [3.1.4.1 Las fuentes en una sesión de Plasma lucen pobres](#Las_fuentes_en_una_sesi.C3.B3n_de_Plasma_lucen_pobres)
+            *   [3.1.4.2 Las fuentes son enormes o parecen desproporcionadas](#Las_fuentes_son_enormes_o_parecen_desproporcionadas)
+            *   [3.1.4.3 Eficiencia del espacio](#Eficiencia_del_espacio)
+            *   [3.1.4.4 Generación de miniaturas](#Generaci.C3.B3n_de_miniaturas)
+    *   [3.2 Impresión](#Impresi.C3.B3n)
+    *   [3.3 Soporte de Samba/Windows](#Soporte_de_Samba.2FWindows)
+    *   [3.4 Actividades de KDE Desktop](#Actividades_de_KDE_Desktop)
+    *   [3.5 Ahorro de energía](#Ahorro_de_energ.C3.ADa)
+    *   [3.6 Aplicaciones de autoarranque](#Aplicaciones_de_autoarranque)
+    *   [3.7 Phonon](#Phonon)
+        *   [3.7.1 ¿Qué backend debo elegir?](#.C2.BFQu.C3.A9_backend_debo_elegir.3F)
+*   [4 Aplicaciones](#Aplicaciones)
+*   [5 Administración del sistema](#Administraci.C3.B3n_del_sistema)
+    *   [5.1 Establecer distribución del teclado](#Establecer_distribuci.C3.B3n_del_teclado)
+        *   [5.1.1 Terminar servidor Xorg mediante atajo de teclado de KDE](#Terminar_servidor_Xorg_mediante_atajo_de_teclado_de_KDE)
+*   [6 Problemas conocidos](#Problemas_conocidos)
+*   [7 KDEmod](#KDEmod)
+*   [8 Soporte para Java](#Soporte_para_Java)
+*   [9 Bajando de versión a kdemod3 o kde3-legacy desde KDE 4.3](#Bajando_de_versi.C3.B3n_a_kdemod3_o_kde3-legacy_desde_KDE_4.3)
+*   [10 Archivo Xserver de KDM](#Archivo_Xserver_de_KDM)
+*   [11 GPG y SSH](#GPG_y_SSH)
+*   [12 Kdebindings](#Kdebindings)
+*   [13 Cambiando el DPI para KDM](#Cambiando_el_DPI_para_KDM)
+*   [14 Bugs y errores](#Bugs_y_errores)
+*   [15 Enlaces externos](#Enlaces_externos)
 
 ## Instalación
 
@@ -96,14 +94,19 @@ Para iniciar Plasma con [xinit](/index.php/Xinit "Xinit")/*startx*, añada `exec
 
 ## Configuración
 
-La mayoría de las configuraciones para las aplicaciones de KDE 4 se almacenan en la carpeta oculta `~/.kde4` y otras también en la carpeta oculta, `~/.config` Sin embargo, la configuración de KDE se realiza principalmente a través de la *'aplicación' Configuración del sistema* . Se puede iniciar desde un terminal ejecutando *systemsettings* .
+La mayoría de las configuraciones para las aplicaciones de KDE se almacenan en `~/.config`, pero algunas aplicaciones más antiguas pueden usar `~/.kde4`. Sin embargo, la configuración de KDE se realiza principalmente a través de la aplicación **Configuración del sistema**. Se puede iniciar desde un terminal ejecutando `systemsettings5`.
 
-**Nota:** La configuración de KDE se realiza principalmente en ' **Configuración del sistema '**. Hay también algunas otras opciones disponibles para el escritorio en 'Preferencias de escritorio' cuando haces click derecho en el escritorio.
+Algunas aplicaciones del Frameworks 5 pueden usar la configuración de KDElibs 4, después de mover los archivos de configuración a la nueva ubicación. Los ejemplos son:
 
-Las aplicaciones de Frameworks 5 (espacio de plasma 5) pueden utilizar la configuración de KDE 4 sin embargo, puede esperar que los archivos de configuración se encuentran en diferentes lugares. Para permitir que las aplicaciones de frameworks 5 se ejecutan en KDE 4, y para compartir las mismas configuraciones, y compatibilidad se hacen enlaces simbólicos, de las nuevas configuraciones a .KDE4\. Por ejemplo:
+```
+* Los perfiles de Konsole de `~/.kde4/share/apps/konsole` a `~/.local/share/konsole/`
 
-*   Perfiles de Konsole de `~/.kde4/share/apps/konsole` a `~ /.local/share/Konsole/`
-*   Apariencia de la aplicación de `~/.kde4/share/config/kdeglobals` a `~/.config/kdeglobals`
+```
+
+```
+* Apariencia de la aplicación desde `~/.kde4/share/config/kdeglobals` a `~/.config/kdeglobals` 
+
+```
 
 ### Personalización
 
@@ -111,304 +114,214 @@ Las aplicaciones de Frameworks 5 (espacio de plasma 5) pueden utilizar la config
 
 ##### Temas
 
-**Nota:** Si en algunos casos el tema del cursor plasma es incorrecta, consulte el siguiente [mensaje del foro](https://bbs.archlinux.org/viewtopic.php?pid=1533071#p1533071) para una solución
+Los [de Plasma](https://store.kde.org/browse/cat/104/%7Ctemas) definen la apariencia de paneles y plasmoides. Para una instalación fácil en todo el sistema, algunos de estos temas están disponibles tanto en los [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
 
-En [temas de Plasma](http://kde-look.org/index.php?xcontentmode=76) hay vista de de aspecto de los paneles y plasmoides. Para facilitar la instalación de todo el sistema, algunos de estos temas están disponibles en los repositorios oficiales y en [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
+La forma más fácil de instalar temas es ir a través de la *Configuración del sistema> Tema del espacio de trabajo> Tema de escritorio> Obtener nuevos temas*.
 
-La forma más fácil de instalar temas es ir a través de preferencias del sistema==Aspecto/temas del espacio de trabajo== Tema de escritorio:
+Se mostrará una interfaz agradable de [https://store.kde.org/](https://store.kde.org/) que le permite instalar, desinstalar o actualizar scripts plasmoid de terceros literalmente un solo clic.
 
-```
- Tema del espacio de trabajo > Tema de escritorio > Obtener nuevos temas
+Las pantallas Splash y Lock no están disponibles actualmente, por lo que para personalizar estas pantallas debe modificar el tema original que se encuentra en `/usr/share/plasma/look-and-feel/`. Vea [this thread](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) en los foros de Kubuntu.
 
-```
+Tenga en cuenta que la pantalla de inicio de sesión [SDDM](/index.php/SDDM "SDDM") no forma parte de este tema.
 
-Esto presentará un buen principio y fin para [kde-look.org](http://www.kde-look.org/) que permita instalar, des-instalar o actualizar los scripts plasmoides de terceros con literalmente, un sólo clic.
+###### Apariencia de aplicaciones Qt y GTK +
 
-La pantallas de inicio y de bloqueo no están disponibles las manera de personalizar estas pantallas. Por lo que hay que modificar el tema original que se encuentra en `/usr/share/plasma/look-and-feel/`. ver [este hilo](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) en los foros de Kubuntu.
-
-Tome nota que [SDDM](/index.php/SDDM "SDDM") gestor de inicio de sesión no es parte de este tema.
-
-###### Qt y GTK+ Aplicaciones y Apariencias
-
-**Tip:** Para que Qt y GTK tengan consistencia con el tema, ver [Uniform look for Qt and GTK applications (Español)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
-, y/o en ingles en caso de estar des-actualizada
+**Sugerencia:** Para la coherencia de los temas de Qt y GTK, consulte Uniform look for Qt y GTK applications.
 
 	Qt4
 
-Para aplicaciones Qt4 oara que tengan una apariencia consistente, es necesario instalar [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) y luego recoger Breeze como interfaz gráfica de usuario Style en `qtconfig-qt4`.
+Para que las aplicaciones Qt4 tengan una apariencia consistente, hay dos opciones:
 
-# EN CONSTRUCCIÓN
+Instale [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) y luego selecciona Breeze como estilo GUI en `qtconfig-qt4`; o instale [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) y seleccione GTK + como estilo GUI.
 
-Esta pagina esta en construcción, y por lo pronto no borro lo que estaba en la wiki, por lo que estos artículos siguientes pueden estar des-actualizados
+	GTK +
+
+El tema recomendado para una apariencia agradable en aplicaciones GTK + es [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) o [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), un tema GTK + diseñado para imitar la aparición del tema Breeze de Plasma. Instale [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) y seleccione el tema GTK instalado para GTK2/GTK3-Theme en *Configuración del sistema> Estilo de aplicaciones> Estilo de aplicación de GNOME*.
+
+En algunos temas, las sugerencias de las aplicaciones GTK + tienen texto blanco sobre fondos blancos, por lo que es difícil de leer. Para cambiar los colores en las aplicaciones de GTK2, busque la sección de información sobre herramientas en el archivo `.gtkrc-2.0` y cámbiela. Para la aplicación GTK3 hay que cambiar dos archivos; `gtk.css` y `settings.ini`. También puede ayudar desmarcar la opción de *Aplicar colores a aplicaciones que no sean Qt* en *Configuración del sistema > Colores* .
+
+Algunos programas de GTK2 como [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) todavía no se pueden utilizar debido a las casillas de verificación invisibles con el tema Breeze o Adwaita en una sesión de plasma. Para solucionar este problema, instale y seleccione, por ejemplo, la piel Numix-Frost-Light del tema [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) en *Configuración del sistema > Estilo de aplicación > Estilo de aplicación GNOME (GTK)* > *Seleccione un tema GTK2:*. Numix-Frost-Light similar a Breeze.
 
 ##### Widgets
 
-Los Plasmoides son pequeños script o código de las aplicaciones de KDE que mejoran la funcionalidad de tu escritorio. Existen dos tipos, plasmoides scripts y plasmoides binarios.
+Los plasmoides son pequeños scripts (plasmoid scripts) o codigos de (plasmoid binaries) aplicaciones KDE diseñados para mejorar la funcionalidad de su escritorio.
 
-Los plasmoides binarios deben ser instalados usando PKGBUILDS desde [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v). O escribiendo tu propio PKGBUILD.
+La forma más fácil de instalar scripts de plasmoides es haciendo clic con el botón derecho en un panel o en el escritorio y eligiendo *Añadir Widgets> Obtener nuevos Widgets> Descargar Widgets*. Esto mostrará un interfaz agradable de [https://store.kde.org/](https://store.kde.org/) que le permite instalar, desinstalar o actualizar scripts de plasmoides de terceros literalmente con un solo clic.
 
-La forma más fácil de instalar plasmoides scripts es haciendo clic derecho sobre un panel o en el escritorio:
+Muchos binarios Plasmoid están disponibles en la [available from the AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v).
 
-```
-Añadir elementos graficos -> Obtener nuevos elementos -> Descargar Widgets
+##### Applet de sonido en la bandeja del sistema
 
-```
+[Instale](/index.php/Install "Install") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) o [kmix](https://www.archlinux.org/packages/?name=kmix) (inicie Kmix desde el Lanzador de aplicaciones). [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) ahora se instala por defecto con [plasma](https://www.archlinux.org/groups/x86_64/plasma/), no se necesita ninguna configuración adicional.
 
-Esto presentará una interfaz agradable para [kde-look.org](http://www.kde-look.org/) y te permite (des)instalar o actualizar los plasmoides script de terceros con un solo clic.
+**Nota:** Para ajustar el tamaño [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), agregue por ejemplo `VolumePercentageStep=1` en la sección `[Global]` de `~/.config/kmixrc`.
 
-La mayoría de plasmoides no se crean de forma oficial por los desarrolladores de KDE. También puedes tratar de instalar widgets de Mac OS X , Microsoft Windows Vista/7, Google, e incluso widgets de SuperKaramba.
+##### Desactivar la sombra del panel
 
-#### Decoración de ventanas
-
-La[Decoración de ventanas](http://kde-look.org/index.php?xcontentmode=75) puede cambiarse en:
+Cuando el panel de plasma está en la parte superior de otras ventanas, su sombra se dibuja sobre ellas. [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) Para deshabilitar este comportamiento sin afectar a otras sombras, [instale](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) y ejecute:
 
 ```
-Preferencias del sistema -> Apariencia del espacio de trabajo -> Decoración de ventanas
+ $ Xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-Aquí también se pueden descargar e instalar más temas con un solo clic y podemos encontrar algunos disponibles en [AUR](https://aur.archlinux.org/packages.php?O=0&K=kdestyle&do_Search=Go&PP=25&SO=d&SB=v).
+A continuación, seleccione el panel con el boton de signo mas. [[2]](https://forum.kde.org/viewtopic.php?f=285&t=121592) Para automatizar dicha configuración, instale [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) y cree la siguiente secuencia de comandos:
 
-#### Integración de KDE 4 con aplicaciones GTK
-
-Para integrar mejor los temas de GTK y KDE4, puedes usar **QtCurve**
-
+ `/usr/local/bin/kde-no-shadow` 
 ```
- pacman -S qtcurve-gtk2 qtcurve-kde4 gtk-kde4
-
-```
-
-o **oxygen-gtk**
-
-```
- pacman -S oxygen-gtk
+#!/bin/bash
+for WID in $(xwininfo -root -tree | sed '/"Plasma": ("plasmashell" "plasmashell")/!d; s/^  *\([^ ]*\) .*/\1/g'); do
+   xprop -id $WID -remove _KDE_NET_WM_SHADOW
+done
 
 ```
 
-o puede descargar un tema GTK que coincida con su tema de KDE [aquí](http://kde-look.org/content/show.php?content=103741). Este tema se parece al Oxygen original y se actualiza con frecuencia.
-
-##### Procedimiento automático
-
-Para cambiar el tema GTK a QtCurve o alguna otra cosa están disponible las siguientes aplicaciones:
+El script se puede ejecutar en inicio de sesión con *Añadir script* en *Autoarranque*:
 
 ```
- pacman -S lxappearance
- pacman -S gtk-theme-switch2
- pacman -S gtk-chtheme
+ $ Kcmshell5 autostart
 
 ```
 
-A continuación, cambie al tema de su elección en la aplicación correspondiente:
+#### Decoraciones para ventanas
 
-```
-lxappearance
-gtk-theme-switch2
-gtk-chtheme
+Las [decoraciones de ventana](https://store.kde.org/browse/cat/114/) se pueden cambiar en *Configuración del sistema > Estilo de aplicación> Decoraciones de ventana*.
 
-```
-
-##### Procedimiento manual
-
-Para cambiar manualmente el tema GTK al QtCurve, tiene que crear el archivo `~/.gtkrc-2.0-kde4` con el siguiente contenido:
-
-```
-include "/usr/share/themes/QtCurve/gtk-2.0/gtkrc"
-include "/etc/gtk-2.0/gtkrc"
-
-style "user-font"
-{
-    font_name="Sans Serif"
-}
-widget_class "*" style "user-font" 
-gtk-theme-name="QtCurve"
-
-```
-
-A continuación, debe crear el vínculo simbólico `~/.gtkrc-2.0`:
-
-```
-ln -s .gtkrc-2.0-kde4 .gtkrc-2.0
-
-```
-
-Si desea especificar una fuente, puede añadir (y adaptar) la siguiente línea al archivo:
-
-```
- gtk-font-name="Sans Serif 9"
-
-```
-
-##### Iconos
-
-Si utiliza los iconos oxygen y desea un aspecto coherente en los cuadros de diálogo Abrir y guardar de GTK, puede instalar [oxygenrefit2](https://aur.archlinux.org/packages.php?O=0&K=oxygenrefit2-icon-theme&do_Search=Go) un tema de iconos de AUR y configurarlo como tema de iconos de GTK.Añadiendo el tema en el archivo ~/.gtkrc-2.0 o puede utilizar lxappearance para configurarlo.
-
-```
-gtk-icon-theme-name="OxygenRefit2"
-
-```
-
-Hay también un par de temas GTK construidos que pueden hacer esto [gtk-kde42-oxygen-theme Oxygen style](https://aur.archlinux.org/packages.php?ID=24329).
+Allí también puede descargar e instalar directamente más temas con un solo clic, y algunos están disponibles en el [AUR](https://aur.archlinux.org/packages.php?O=0&K=kdestyle&do_Search=Go&PP=25&SO=d&SB=v).
 
 #### Temas de iconos
 
-No existen muchos temas de iconos diponibles para todo sistema en KDE 4\. Puede abrir **configuración del sistema > apariencia de aplicación > iconos** y buscar nuevos o instalarlos manualmente. Muchos de ellos pueden encontrarse en [kde-look.org](http://www.kde-look.org/).
+Los temas de iconos se pueden instalar y cambiar en A*justes del sistema> Iconos*.
 
-#### Logo de Arch Linux en el menu de Kicker
-
-Haga clic derecho en el botón de menú de Kicker, pulse **Preferencias del lanzador de aplicaciones** y, a continuación, pulse el icono la**derecha**. Ahora puedes elegir el icono de ArchLinux o cualquier otro icono para reemplazar a la opción por defecto. Los iconos oficiales de Arch se encuentran en [archlinux-artwork](https://aur.archlinux.org/packages/archlinux-artwork/) , puedes encontrarlo después de instalar en
-
-```
-/usr/share/archlinux/icons
-
-```
+**Nota:** Aunque todos los modernos escritorios de Linux comparten el mismo formato de tema de iconos, los escritorios como [GNOME](/index.php/GNOME "GNOME") utilizan menos iconos (especialmente en los menús y las barras de herramientas). Los temas desarrollados para tales escritorios carecen generalmente de iconos requeridos por las aplicaciones de Plasma y KDE. En su lugar, se recomienda instalar temas de iconos compatibles con Plasma.
 
 #### Fuentes
 
-Por defecto, las fuentes de KDE son pobres, prueba instalando los paquetes [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) y [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
+##### Las fuentes en una sesión de Plasma lucen pobres
 
-Después de la instalación, asegúrete de cerrar y volver a iniciar sesión. No deberías tener que modificar ninguna configuración en la sección "Fuentes" de la configuración del sistema de KDE.
+Intente instalar los paquetes [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) y [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
 
-Si ha configurado personalmente cómo procesar sus [fuentes](/index.php/Fuentes "Fuentes"), tenga en cuenta que la configuración del sistema puede alterar su apariencia. Cuando cambias **configuración del sistema > aspecto > fuentes** probablemente se modificará el archivo de configuración de la fuente (`fonts.conf`).
+Después de la instalación, asegúrese de cerrar y volver a iniciar sesión. No debería tener que modificar nada en *Configuración del sistema > Fuentes*. Si está utilizando [qt5ct](https://www.archlinux.org/packages/?name=qt5ct), la configuración de Qt5 Configuration Tool puede anular la configuración de fuente en Configuración del sistema.
 
-Tenga en cuenta también que las preferencias de fuente de gnome también lo hará si utiliza ambos entornos de escritorio.
+Si ha configurado personalmente cómo se renderizan las [fuentes](/index.php/Fonts "Fonts"), tenga en cuenta que la configuración del sistema puede alterar su apariencia. Cuando vaya a *Configuración del sistema> Fuentes*, Configuración del sistema probablemente alterará el archivo de configuración de las fuentes (`fonts.conf`).
 
-#### Eficacia de espacio
+No hay manera de evitar esto, pero si establece los valores para que coincidan con el archivo `fonts.conf`, se devolverá el renderizado de fuentes esperado (requerirá reiniciar la aplicación o, en algunos casos, reiniciar el escritorio). Tenga en cuenta que las Preferencias de fuente de Gnome también lo hacen.
 
-KDE es a menudo**criticado**por estar hinchado.
+##### Las fuentes son enormes o parecen desproporcionadas
 
-El usuario puede obtener esta percepción de ver ' *muchas barras de herramientas y los iconos con escalados muy grandes en las aplicaciones **. Esta situación se mejoró con el nuevo tema de Kwin que viene con KDE SC 4.4\. * con botones más elegantes que puedes cambiar de tamaño.** Las aplicaciones de KDE permiten ocultar muchas barras de herramientas, barras de menús y barras de estado*.
+Intente forzar la fuente DPI a `**96**` en *Configuración del sistema> Fuentes*.
 
-##### Todo tipo de * barras
+Si eso no funciona, intente establecer el DPI directamente en su configuración de Xorg como se documenta en [Xorg#Setting DPI manually](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
-La mayoría de las barras de herramientas de un programa se puede quitar de la barra, en el menú de "Configuración'***". Ahí a menudo se pueden ocultar la barra de estado y todas las barras de herramientas. Por último tambien se puede la propia barra de menú a través de**Ctrl + M'*.
+##### Eficiencia del espacio
 
-Si no desea quitar las barras puede hacerlas más pequeñas o eliminar el texto de esta forma:
+El Plasma Netbook shell ha sido eliminado del Plasma 5, vea lo siguiente [KDE forum post](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899). Sin embargo, puede conseguir algo similar editando el archivo `~/.config/kwinrc` añadiendo `BorderlessMaximizedWindows=true` en la sección `[Windows]`.
 
-```
-Configuración del sistema-> apariencia de la aplicación-> estilo-> ajustes-> (texto de barra de herramientas principal / texto secundario de la barra de herramientas)
+##### Generación de miniaturas
 
-```
+Para permitir la generación de miniaturas de archivos multimedia o de documentos en el escritorio y en Dolphin, instale [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers), [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs) y [kde-thumbnailer-odf](https://aur.archlinux.org/packages/kde-thumbnailer-odf/).
 
-##### Plasma
+A continuación, habilite las categorías de miniaturas para el escritorio mediante el *botón derecho* sobre el *fondo del escritorio > Configurar el escritorio > Iconos > Más opciones de vista previa ....*
 
-También hay algunos ajustes y modificaciones que se pueden aplicar a sus plasmoides para hacer perder el menor espacio posible a KDE
-
-Por ejemplo, el "Reloj Digital" desperdicia más espacio que el "reloj analógico". El pequeño icono de plasma ("Cashew") que se puede ver en el panel se puede ocultar mediante el bloqueo de los widgets haciendo click derecho en el panel.
-
-Si tienes muchas tareas en el administrador de tareas puedes utilizar *Smooth-tasks* para ganar espacio.
-
-Este administrador de tareas alternativo permite mostrar los iconos de una tarea usando menos espacio pero manteniendo la capacidad del usuario para distinguir las diferentes tareas.
-
-Instalación [smooth-tasks](https://aur.archlinux.org/packages.php?ID=29410) desde[AUR](/index.php/AUR "AUR").
-
-Después de instalarlo y sustituir el administrador de tareas original debes fijarte en las opciones de configuración que ahora son mucho más amplias.
-
-Para netbooks hay un espacio de trabajo especial, llamado Plasma Netbook, que hace un mejor uso de la pantalla:
-
-```
-Configuración del sistema-> comportamiento de espacio de trabajo-> espacio de trabajo-> tipo de espacio de trabajo
-
-```
-
-##### KWin
-
-El decorador de ventanas puede redimensionar los botones de las ventanas y cambiar el borde de las mismas, para hacer los cambios mirar:
-
-```
-Configuración del sistema-> apariencia-> decoraciones de ventana -> configurar decoración...-> tamaño de botón
-
-```
-
-También puede quitar el borde de la ventana:
-
-```
-Configuración del sistema-> área de apariencia-> ventana decoraciones-> configurar decoración...-> tamaño del borde
-
-```
-
-### NetworkManager
-
-Se ha agregado soporte NetworkManager en KDE SC. Para obtener más información, consulte[NetworkManager](/index.php/NetworkManager#KDE4 "NetworkManager").
-
-También puedes usar [wicd-client-kde](https://aur.archlinux.org/packages.php?ID=40666/).
+En *Dolphin*, vaya a *Control > General > Previsualizaciones*.
 
 ### Impresión
 
-**Tip:** Usa la interfaz web de [CUPS](/index.php/CUPS "CUPS") para configurar rápidamente.
+**Sugerencia:** Utilice la interfaz web de CUPS para una configuración más rápida. Las impresoras configuradas de esta manera pueden utilizarse en aplicaciones KDE.
 
-Las impresoras configuradas en este modo puede encontrarse en las aplicaciones de KDE.
+También puede configurar impresoras en *Configuración del sistema> Impresoras*. Para utilizar este método, primero debe instalar [print-manager](https://www.archlinux.org/packages/?name=print-manager) y [cups](https://www.archlinux.org/packages/?name=cups). Consulte Configuración de CUPS [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS").
 
-También puede elegir la configuración de la impresora a través de **configuración del sistema -> configuración de impresora** . Para utilizar este método, primero debe instalar los paquetes:
+### Soporte de Samba/Windows
 
+Si desea tener acceso a los servicios de Windows, instale [Samba](/index.php/Samba "Samba") (paquete [samba](https://www.archlinux.org/packages/?name=samba)).
+
+La funcionalidad de compartir de Dolphin requiere el paquete [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) y usershares, que el archivo `smb.conf` no ha habilitado. Las instrucciones para agregarlas se encuentran en [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba"), después de lo cual compartir en Dolphin debería funcionar fuera del espacio de trabajo después de reiniciar Samba.
+
+Sin embargo, las habilidades de Plasma para acceder a las acciones de las PYMES son limitadas. Escribir en las particiones de Windows es problemático y abrir archivos de dichas particiones, por ejemplo, vídeos de gran tamaño, hace que Plasma copie todo el archivo al sistema local primero. Para solucionar esto, puede instalar un explorador de archivos basado en GTK como [thunar](https://www.archlinux.org/packages/?name=thunar) con [gvfs](https://www.archlinux.org/packages/?name=gvfs) y [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (y [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) para guardar las credenciales de inicio de sesión) para acceder a los recursos compartidos SMB de una manera más capaz. Otra posible solución consiste en [montar](/index.php/Mount "Mount") un recurso de Samba a través de [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) para que le parezca a Plasma que el recurso compartido SMB fuera sólo una carpeta local normal y, por lo tanto, se puede acceder normalmente. El comando mount podría ser similar al siguiente para el acceso de escritura a un recurso compartido público:
+
+1.  mount -t cifs -o username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 //networkhost/share/ /home/user/localmountpoint/
+
+Make it permanent:
+
+ `/etc/fstab` 
 ```
-# pacman -S kdeadmin-system-config-printer-kde cups
-
-```
-
-### Soporte Samba/Windows
-
-Si desea tener acceso a los servicios de Windows:
-
-```
-pacman -S samba
-
-```
-
-A continuación, puede configurar sus acciones de Samba a través de:
-
-```
- Configuración del sistema-> compartir-> Samba
+//networkhost/share/ /home/user/localmountpoint/ cifs defaults,username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 0 2
 
 ```
 
-### Powersaving
+Es posible que no sea necesario añadir `.local` al nombre de host.
 
-KDE ha integrado el servicio de Ahorro de energía llamado " *'Powerdevil* '" que puede ajustar el perfil de energía del sistema o / y el brillo de la pantalla (si es compatible).
+Una solución más fácil es usar [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/), que ofrece básicamente la misma funcionalidad a través de una opción fácil de usar ubicada en *Configuración del sistema > Controladores de red*.
 
-#### Como habilitar Cpufreq
+### Actividades de KDE Desktop
 
-Desde KDE 4.5, [PowerDevil no maneja combinaciones de energía de la CPU a través de Cpufreq](http://lists.kde.org/?l=kde-devel&m=126800277431817&w=2).
+[KDE Desktop Activities|Las actividades de escritorio de KDE](https://userbase.kde.org/Plasma#Activities) son espacios de trabajo especiales donde puede seleccionar configuraciones específicas para cada actividad, que se aplican sólo cuando está utilizando dicha actividad.
 
-**Nota:** En Arch el gobernador por defecto es "**performance**" y no "**ondemand**", por lo que el usuario tiene que instalar el paquete cpufrequtils y añadir el modulo "**cpufreq_ondemand**" en su rc.conf.
+### Ahorro de energía
 
-Puede utilizar fácilmente los gobernadores deseados mediante los comandos de cpufreq.
+[Instale](/index.php/Install "Install") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) para integrar el servicio de ahorro de energía llamado "**Powerdevil Power Management**", que puede ajustar el perfil de ahorro de energía del sistema y / o el brillo de la pantalla (si está soportado).
 
-Para ello, sige estos pasos:
+**Nota:** Powerdevil no puede [inhibir](/index.php/Power_management#Power_managers "Power management") todos los ajustes de inicio de sesión (como la acción de cierre de la tapa para ordenadores portátiles). En estos casos, el ajuste de inicio de sesión tendrá que cambiarse - vea [Administración de energía con systemd.](/index.php/Power_management#Power_management_with_systemd "Power management")
 
-1\. Instala cpufrequtils
+### Aplicaciones de autoarranque
 
-```
-pacman -S cpufrequtils
+Plasma puede autoarrancar aplicaciones y ejecutar scripts en el inicio y apagado del sistema. Para iniciar automáticamente una aplicación, vaya a *Configuración del sistema> Inicio y apagado> Inicio automático* y agregue el programa o la secuencia de comandos de shell de su elección. Para las aplicaciones, se creará un archivo `.desktop`, para los scripts de shell, se creará un enlace simbólico.
 
-```
+**Nota:**
 
-y asegúrese de que tiene módulo cpufreq de su CPU cargado. Para más información sobre esto, visita [este articulo](/index.php/Cpufreq "Cpufreq").
+*   Los programas pueden autoarrancar en el inicio de sesión, mientras que los scripts de shell también se pueden ejecutar en el apagado o incluso antes de que el propio Plasma se inicie.
+*   Los scripts de Shell sólo se ejecutarán si están marcados como ejecutables.
 
-2\. Entonces, en **configuración del sistema > administración de energía** , vaya al menú "Perfiles de energía".
+Coloque las [entradas del escritorio](/index.php/Desktop_entries "Desktop entries") (por ejemplo, archivos `.desktop`) aquí:
 
-Ahora puede crear un perfil nuevo o editar los anteriores.
+	`~/.config/autostart`
 
-Si desea que cpufrequtils sea el software que administrará el comportamiento del ahorro de energia del CPU , escriba el siguiente comando en el cuadro de texto "Script":
+	Para iniciar las aplicaciones al inicio de sesión.
 
-```
-cpufreq-set -g ondemand
+Coloque o escriba scripts de shell de enlace simbólico en uno de los siguientes directorios:
 
-```
+	`~/.config/plasma-workspace/env`
 
-3\. Ahora seleccione el perfil de "Performance" y escriba este comando en el cuadro de texto "Script":
+	Para ejecutar scripts en el inicio de sesión antes de iniciar Plasma.
 
-```
- cpufreq-set -g performance
+	`~/.config/autostart-scripts`
 
-```
+	Para ejecutar scripts al iniciar sesión.
 
-No tienes que habilitar la casilla "Habilitar el ahorro de energía del sistema" para este perfil.
+	`~/.config/plasma-workspace/shutdown`
 
-**Nota:** KDE 4.6 introdujo un nuevo marco de gestión de energía y "solid-powermanagement", que podía ser utilizado previamente, **ya no es un comando válido**.Si está satisfecho con el uso del gobernador ondemand todo el tiempo, puede tener este comando ejecutado al inicio colocándolo en "/ etc/rc.local".
+	Para ejecutar scripts en el apagado.
 
-### Registro de cambios en archivos y directorios
+### Phonon
 
-KDE utiliza **inotify** directamente desde el núcleo utilizando **kdirwatch** (incluido en kdelibs), por lo tanto no son necesarios Gamin o FAM. Puede que desee instalar este paquete ([kdirwatch](https://aur.archlinux.org/packages/kdirwatch/)de AUR) que es un entorno GUI para kdirwatch.
+De [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
+
+	*“Phonon es la API multimedia proporcionada por KDE y es la abstracción estándar para manejar corrientes multimedia dentro del software de KDE y también utilizada por varias aplicaciones Qt.*
+
+Phonon fue creado originalmente para permitir que el software KDE y Qt fuera independiente de cualquier framework multimedia como GStreamer o xine y proporcionar una API estable y mayor vida útil de una versión principal.”
+
+**Phonon** se utiliza ampliamente en KDE, tanto para audio (por ejemplo, las notificaciones del sistema o las aplicaciones de audio de KDE) como para el vídeo (por ejemplo, las miniaturas de vídeo de Dolphin).
+
+#### ¿Qué backend debo elegir?
+
+Puede elegir entre backends basados en [GStreamer](/index.php/GStreamer "GStreamer") y [VLC](/index.php/VLC "VLC") – cada uno disponible en versiones para aplicaciones Qt4 y aplicaciones Qt5 ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
+
+[Upstream prefers VLC|Upstream prefiere VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM), pero las distribuciones Linux destacadas (Kubuntu y Fedora-KDE por ejemplo) prefieren GStreamer porque eso les permite fácilmente descartar los codecs MPEG patentados de la instalación por defecto. Ambos backends tienen un conjunto de características ligeramente diferente. [features set](https://community.kde.org/Phonon/FeatureMatrix).
+
+En el pasado, otros backends también se desarrollaron, pero ya no se mantienen y sus paquetes AUR han sido eliminados.
+
+**Nota:**
+
+*   Se pueden instalar múltiples backends a la vez y se priorizan en *Configuración del sistema> Multimedia> Backend*.
+*   Según los [foros de KDE](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), el backend de VLC carece de soporte para [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain")
+*   Si elige el backend de vlc, es posible que experimente fallos cada vez que kde quiera enviarle una advertencia audible (y en bastantes casos también, consulte [[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956)).
+*   Una posible solución es ejecutar
+
+ `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
+
+## Aplicaciones
+
+El proyecto KDE proporciona un conjunto de aplicaciones que se integran con el escritorio de plasma. Consulte el grupo de aplicaciones kde para obtener una lista completa de las aplicaciones disponibles. Véase también Categoría: KDE para páginas de aplicación de KDE relacionadas. Aparte de los programas proporcionados en las aplicaciones de KDE, hay muchas otras aplicaciones disponibles que pueden complementar el escritorio de plasma. Algunas de ellas se discuten a continuación.
 
 ## Administración del sistema
 

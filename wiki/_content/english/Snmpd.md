@@ -14,10 +14,7 @@
 
 There is one package for net-snmp in Arch Linux which contains both the snmpd daemon, and the accompanying utilities.
 
-```
-# pacman -S net-snmp
-
-```
+[Install](/index.php/Install "Install") the [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) package.
 
 ## Configuration
 
@@ -25,12 +22,7 @@ Note that it is crucial that the snmpd service is not running while editing conf
 
 ### Daemon
 
-Enable the daemon
-
-```
-systemctl enable snmpd
-
-```
+[Enable](/index.php/Enable "Enable") `snmpd.service`.
 
 ### SNMP 1 and 2c
 

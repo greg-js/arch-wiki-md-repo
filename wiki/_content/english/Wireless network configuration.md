@@ -14,7 +14,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [2.1.5 Set operating mode](#Set_operating_mode)
         *   [2.1.6 Connect to an access point](#Connect_to_an_access_point)
         *   [2.1.7 Get an IP address](#Get_an_IP_address)
-        *   [2.1.8 Example](#Example)
+            *   [2.1.7.1 Example](#Example)
     *   [2.2 Automatic setup](#Automatic_setup)
 *   [3 WPA2 Enterprise](#WPA2_Enterprise)
     *   [3.1 eduroam](#eduroam)
@@ -288,9 +288,9 @@ Regardless of the method used, you can check if you have associated successfully
 
 #### Get an IP address
 
-Follow the instructions in [Network configuration#Configure the IP address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration").
+Follow the instructions in [Network configuration#Manual assignment](/index.php/Network_configuration#Manual_assignment "Network configuration") for more information on the following examples.
 
-#### Example
+##### Example
 
 Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
 
@@ -308,7 +308,7 @@ And then to close the connection, you can simply disable the interface:
 
 ```
 
-For a static IP, you would replace the dhcpcd command with
+For a static IP, you would replace the *dhcpcd* invocation with
 
 ```
 # ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlan0

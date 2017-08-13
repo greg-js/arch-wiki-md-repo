@@ -84,12 +84,10 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 
 ### Activos
 
-*   [Arlesy](/index.php?title=User:Arlesy&action=edit&redlink=1 "User:Arlesy (page does not exist)") - [enviar email](/index.php/Special:EmailUser/Arlesy "Special:EmailUser/Arlesy")
+*   [Arlesy](/index.php/User:Arlesy "User:Arlesy") - [enviar email](/index.php/Special:EmailUser/Arlesy "Special:EmailUser/Arlesy")
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 *   [Knight](/index.php/User:DKS "User:DKS")
-*   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - Traducción cada Domingo y Miércoles (*en principio*)
-*   [Raine](/index.php/User:Raine "User:Raine") - [enviar email](/index.php/Special:EmailUser/Raine "Special:EmailUser/Raine")
 
 ### Inactivos
 
@@ -102,3 +100,5 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 *   [Son_link](/index.php?title=User:Son_link&action=edit&redlink=1 "User:Son link (page does not exist)") - Mi ingles es básico, pero puedo traducir entradas fáciles de entender o no muy largas.
 *   [Zap](/index.php?title=User:Zap&action=edit&redlink=1 "User:Zap (page does not exist)")
 *   [Miguel](/index.php/User:Zodiac_es "User:Zodiac es") - Mi inglés va mejorando, reviso artículos traducidos e intento iniciar algunas traducciones. [Enviar Email](/index.php/Special:EmailUser/zodiac_es "Special:EmailUser/zodiac es")
+*   [Raine](/index.php/User:Raine "User:Raine") - [enviar email](/index.php/Special:EmailUser/Raine "Special:EmailUser/Raine")
+*   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")

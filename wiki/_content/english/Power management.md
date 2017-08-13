@@ -484,12 +484,6 @@ Additional power saving functions of Intel wireless cards with `iwlwifi` driver 
 
 ```
  options iwlwifi power_save=1 d0i3_disable=0 uapsd_disable=0
-
-```
-
-And another one to the `/etc/modprobe.d/iwldvm.conf` file:
-
-```
  options iwldvm force_cam=0
 
 ```

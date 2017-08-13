@@ -900,7 +900,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
 
-*   **Dovecot** — An IMAP and POP3 server written with security primarily in mind.
+*   **[Dovecot](/index.php/Dovecot "Dovecot")** — An IMAP and POP3 server written with security primarily in mind.
 
 	[http://dovecot.org/](http://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
 

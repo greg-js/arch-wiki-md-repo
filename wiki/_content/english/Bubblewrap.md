@@ -18,7 +18,8 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Using X11](#Using_X11)
     *   [4.2 Sandboxing X11](#Sandboxing_X11)
-    *   [4.3 New Session](#New_Session)
+    *   [4.3 Opening URLs from wrapped applications](#Opening_URLs_from_wrapped_applications)
+    *   [4.4 New Session](#New_Session)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -428,6 +429,26 @@ While bwrap provides some very nice isolation for sandboxed application, there i
 There are however some workarounds that use xpra or xephyr to run in a new X11 environment. This would work with bwrap as well.
 
 To test X11 isolation, run 'xinput test <id>' where <id> is your keyboard id which you can find with 'xinput list' When run without additional X11 isolation, this will show that any application with X11 access can capture keyboard input of any other application, which is basically what a keylogger would do.
+
+### Opening URLs from wrapped applications
+
+When a wrapped IRC or email client attempts to open a URL, it will usually attempt to launch a browser process, which will run within the same sandbox as the wrapped application. With a well-wrapped application, this will likely not work. The approach used by [Firejail](/index.php/Firejail "Firejail") is to [give wrapped applications all the privileges of the browser as well](https://github.com/netblue30/firejail/blob/b1479a3730a361221c271226cc56d0724ee109c4/etc/thunderbird.profile#L31-L33), however this implies a good amount of permission creep.
+
+A better solution to this problem is to communicate opened URLs to outside the sandbox. This can be done using `snapd-xdg-open` as follows:
+
+1.  Install [snapd-xdg-open-git](https://aur.archlinux.org/packages/snapd-xdg-open-git/)
+2.  On your `bwrap` command line, add:
+
+```
+$ bwrap ... \
+  --ro-bind /run/user/$UID/bus /run/user/$UID/bus \
+  --ro-bind /usr/lib/snapd-xdg-open/xdg-open /usr/bin/xdg-open \
+  --ro-bind /usr/lib/snapd-xdg-open/xdg-open /usr/bin/chromium \
+  ...
+
+```
+
+The `/usr/bin/chromium` bind is only necessary for programs not using XDG conventions, such as Mozilla Thunderbird.
 
 ### New Session
 

@@ -921,9 +921,12 @@ See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), `man 3 s
 
 #### Display recipient instead of sender in "Sent" folder view
 
-By default Mutt will display the sender in the index view. It is fine for most folders, but rather useless for the one where you store a copy of your sent e-mails since it will always display your name.
+By default Mutt uses the `%L` format string in the `index_format` variable, which will display:
 
-The easiest way to fix this is to set up your [alternative email addresses](https://dev.mutt.org/trac/wiki/UseCases/MultiAccounts#Settinguptheaddresses:alternates) in muttrc. If the sender address matches with one of your alternative email addresses, Mutt will automatically display "To <recipient>" in the index.
+*   "To <list-name>", tf an address in the "To:" or "Cc:" header field matches an address defined by the user's `subscribe` command.
+*   Otherwise it displays the author name, or recipient name if the message is from you.
+
+If you use multiple email addresses in the same mailbox, make sure to configure the [alternates variable](https://dev.mutt.org/trac/wiki/UseCases/MultiAccounts#Settinguptheaddresses:alternates), so that Mutt knows which messages were from you.
 
 #### Variable column width
 

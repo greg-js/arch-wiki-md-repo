@@ -135,7 +135,11 @@ $ svn update *package-name*
 
 This will pull the package you requested into your checkout. From now on, any time you *svn update* at the top level, this will be updated as well.
 
-If you specify a package that does not exist, svn will not warn you. It will just print something like "At revision 115847", without creating any files. If that happens, check your spelling of the package name and that the package has not been moved to another repository (i.e. from community to the main repository).
+If you specify a package that does not exist, svn will not warn you. It will just print something like "At revision 115847", without creating any files. If that happens:
+
+*   check your spelling of the package name
+*   check that the package has not been moved to another repository (i.e. from community to the main repository)
+*   check [https://www.archlinux.org/packages](https://www.archlinux.org/packages) to see if the package is built from another base package (for example, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) is built from the [tensorflow](https://www.archlinux.org/packages/?name=tensorflow) PKGBUILD)
 
 **Tip:** To checkout an older version of a package, see [#Checkout an older version of a package](#Checkout_an_older_version_of_a_package).
 

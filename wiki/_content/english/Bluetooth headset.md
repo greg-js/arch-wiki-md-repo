@@ -12,7 +12,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.3.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
         *   [1.3.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
         *   [1.3.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
-        *   [1.3.4 Connecting works, but there're sound glitches all the time](#Connecting_works.2C_but_there.27re_sound_glitches_all_the_time)
+        *   [1.3.4 Connecting works, but there are sound glitches all the time](#Connecting_works.2C_but_there_are_sound_glitches_all_the_time)
         *   [1.3.5 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
         *   [1.3.6 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
         *   [1.3.7 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
@@ -218,9 +218,26 @@ module-bluez5-discover
 
 ```
 
-#### Connecting works, but there're sound glitches all the time
+#### Connecting works, but there are sound glitches all the time
 
-This is very likely to occur when the bluetooth and the wifi share the same chip as they share the same physical anthena and possibly band range (2.4GHz). Although this works seamlessly on windows, this is not the case on linux. One possible solution is to move your wifi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your wifi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
+This is very likely to occur when the Bluetooth and the WiFi share the same chip as they share the same physical antenna and possibly band range (2.4GHz). Although this works seamlessly on Windows, this is not the case on Linux.
+
+In order to fix this, the btcoex_enable flag of the Bluetooth module needs to be set. You can see the name of this module by checking lsmod:
+
+```
+$ lsmod | grep bluetooth
+bluetooth             479232  32 btrtl,btintel,bnep,btbcm,rfcomm,ath3k,btusb
+
+```
+
+You'll need the athNk (where N is a number). Then use modprobe to set the flag:
+
+```
+# sudo modprobe ath3k btcoex_enable=1
+
+```
+
+Another possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
 
 #### Connecting works, but I cannot play sound
 

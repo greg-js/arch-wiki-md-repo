@@ -33,7 +33,7 @@ The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of
 
 ## Running
 
-To start the daemon for the daemon for *all* network interfaces, [start/enable](/index.php/Start/enable "Start/enable") `dhcpcd.service`.
+To start the daemon for *all* network interfaces, [start/enable](/index.php/Start/enable "Start/enable") `dhcpcd.service`.
 
 To start the daemon for a specific interface alone, [start/enable](/index.php/Start/enable "Start/enable") the template unit `dhcpcd@*interface*.service`, where *interface* can be found with [Network configuration#Get current device names](/index.php/Network_configuration#Get_current_device_names "Network configuration").
 

@@ -27,7 +27,7 @@ By default, a tmpfs partition has its maximum size set to half your total RAM, b
 
 To explicitly set a maximum size, in this example to override the default `/tmp` mount, use the `size` mount option:
 
- `/etc/fstab`  `tmpfs   /tmp         tmpfs   nodev,nosuid,size=2G          0  0` 
+ `/etc/fstab`  `tmpfs   /tmp         tmpfs   rw,nodev,nosuid,size=2G          0  0` 
 
 Here is a more advanced example showing how to add tmpfs mounts for users. This is useful for websites, mysql tmp files, `~/.vim/`, and more. It's important to try and get the ideal mount options for what you are trying to accomplish. The goal is to have as secure settings as possible to prevent abuse. Limiting the size, and specifying uid and gid + mode is very secure. For more information on this subject, follow the links listed in the [#See also](#See_also) section.
 

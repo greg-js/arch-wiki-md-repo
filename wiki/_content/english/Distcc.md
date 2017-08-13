@@ -71,7 +71,7 @@ Edit `/etc/makepkg.conf` in the following three sections:
 2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
 3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
 
-**Note:** It is common practice although optional to define the number of threads as the number of physical core+hyperhtreaded cores (if they exist) plus 1\. Do this on a per-server basis, NOT in the MAKEFLAGS!
+**Note:** The number of threads is commonly set as the number of cores plus 1\. Do this on a per-server basis, *not* in the `MAKEFLAGS` variable.
 
 Example using relevant lines:
 
@@ -82,9 +82,9 @@ DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 
 ```
 
-If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not setup on the systems, set the DISTCC_SSH variable to ignore checking for authenticated hosts, i.e. DISTCC_SSH="ssh -i"
+If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not set up on the systems, set the `DISTCC_SSH` variable to ignore checking for authenticated hosts, e.g. `DISTCC_SSH="ssh -i"`.
 
-**Warning:** Make sure that neither the **CFLAGS** and **CXXFLAGS** have -march=native set or else distccd will not distribute work to other machines! Using the Arch defaults for these variables is recommended.
+**Warning:** The `-march=native` flag cannot be used in the `CFLAGS` and `CXXFLAGS` variables, otherwise distccd will not distribute work to other machines.
 
 #### For use without makepkg
 

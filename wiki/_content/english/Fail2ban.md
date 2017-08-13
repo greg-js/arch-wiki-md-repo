@@ -93,7 +93,7 @@ before = paths-archlinux.conf
 
 Edit `/etc/fail2ban/jail.d/jail.conf`, add this section and update the list of trusted IP addresses.
 
-If your firewall is iptables:
+If your firewall is [iptables](/index.php/Iptables "Iptables"):
 
 ```
 [DEFAULT]
@@ -110,24 +110,7 @@ maxretry = 5
 
 ```
 
-If your firewall is shorewall:
-
-```
-[DEFAULT]
-bantime = 864000
-ignoreip = 127.0.0.1/8
-
-[ssh-shorewall]
-enabled  = true
-filter   = sshd
-action   = shorewall
-           sendmail-whois[name=SSH, dest=your@mail.org, sender=fail2ban@mail.com]
-backend  = systemd
-maxretry = 5
-
-```
-
-**Note:** You can set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf` otherwise the rule added to ban an IP address will affect only new connections.
+**Note:** If your firewall is [shorewall](/index.php/Shorewall "Shorewall"), replace `iptables[name=SSH, port=ssh, protocol=tcp]` with `shorewall`. You can also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
 
 Also do not forget to add/change:
 

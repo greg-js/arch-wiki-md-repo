@@ -19,11 +19,11 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
         *   [1.2.2 systemd-swap](#systemd-swap)
 *   [2 Swap with USB device](#Swap_with_USB_device)
 *   [3 Swap encryption](#Swap_encryption)
-*   [4 Performance Tuning](#Performance_Tuning)
+*   [4 Performance](#Performance)
     *   [4.1 Swappiness](#Swappiness)
     *   [4.2 Priority](#Priority)
     *   [4.3 Using zswap or zram](#Using_zswap_or_zram)
-*   [5 Striping](#Striping)
+    *   [4.4 Striping](#Striping)
 
 ## Swap space
 
@@ -171,7 +171,7 @@ Finally remove the relevant entry from `/etc/fstab`.
 
 #### systemd-swap
 
-[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfu_enabled=1` in the *Swap File Universal* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
+[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfu_enabled=1` in the *Swap File Universal* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommend configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
 ## Swap with USB device
 
@@ -197,7 +197,7 @@ This guide will work for other memory such as SD cards, etc.
 
 See [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
-## Performance Tuning
+## Performance
 
 Swap values can be adjusted to help performance.
 
@@ -250,6 +250,6 @@ If two or more areas have the same priority, and it is the highest priority avai
 
 [Zswap](/index.php/Zswap "Zswap") is a Linux kernel feature providing a compressed write-back cache for swapped pages. This increases the performance and decreases the IO-Operations. [ZRAM](/index.php/ZRAM "ZRAM") creates a virtual compressed Swap-file in memory as alternative to a swapfile on disc.
 
-## Striping
+### Striping
 
 There is no necessity to use [RAID](/index.php/RAID "RAID") for swap performance reasons. The kernel itself can stripe swapping on several devices, if you just give them the same priority in the `/etc/fstab` file. Refer to [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3) for details.

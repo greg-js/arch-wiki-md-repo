@@ -1,4 +1,4 @@
-Grafana is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports graphite, influxdb or opentsdb as backends.
+[Grafana](https://grafana.com/) is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports graphite, [InfluxDB](/index.php/InfluxDB "InfluxDB") or opentsdb as backends.
 
 ## Contents
 
@@ -54,4 +54,4 @@ curl -i -XPOST '[http://localhost:8086/write?db=example'](http://localhost:8086/
 
 ## See also
 
-*   [Official homepage](http://grafana.org/)
+*   [Official homepage](https://grafana.org/)

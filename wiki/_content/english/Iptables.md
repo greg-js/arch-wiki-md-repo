@@ -411,3 +411,4 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [Official iptables web site](http://www.netfilter.org/projects/iptables/index.html)
 *   [iptables Tutorial 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) by Oskar Andreasson
 *   [iptables Debian](http://wiki.debian.org/iptables) Debian wiki
+*   [Secure use of connection tracking helpers](https://home.regit.org/netfilter-en/secure-use-of-helpers/)

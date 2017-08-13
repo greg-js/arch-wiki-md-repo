@@ -7,12 +7,12 @@ It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" me
 ## Contents
 
 *   [1 UEFI versions](#UEFI_versions)
-*   [2 UEFI Firmware bitness](#UEFI_Firmware_bitness)
+*   [2 UEFI firmware bitness](#UEFI_firmware_bitness)
     *   [2.1 Non Macs](#Non_Macs)
     *   [2.2 Apple Macs](#Apple_Macs)
-*   [3 Linux Kernel Config options for UEFI](#Linux_Kernel_Config_options_for_UEFI)
-*   [4 UEFI Variables](#UEFI_Variables)
-    *   [4.1 UEFI Variables Support in Linux Kernel](#UEFI_Variables_Support_in_Linux_Kernel)
+*   [3 Linux kernel config options for UEFI](#Linux_kernel_config_options_for_UEFI)
+*   [4 UEFI variables](#UEFI_variables)
+    *   [4.1 UEFI variables support in Linux kernel](#UEFI_variables_support_in_Linux_kernel)
     *   [4.2 Requirements for UEFI variable support](#Requirements_for_UEFI_variable_support)
         *   [4.2.1 Mount efivarfs](#Mount_efivarfs)
     *   [4.3 Userspace tools](#Userspace_tools)
@@ -20,19 +20,19 @@ It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" me
 *   [5 UEFI Shell](#UEFI_Shell)
     *   [5.1 Obtaining UEFI Shell](#Obtaining_UEFI_Shell)
     *   [5.2 Launching UEFI Shell](#Launching_UEFI_Shell)
-    *   [5.3 Important UEFI Shell Commands](#Important_UEFI_Shell_Commands)
+    *   [5.3 Important UEFI Shell commands](#Important_UEFI_Shell_commands)
         *   [5.3.1 bcfg](#bcfg)
         *   [5.3.2 map](#map)
         *   [5.3.3 edit](#edit)
-*   [6 UEFI Linux Hardware Compatibility](#UEFI_Linux_Hardware_Compatibility)
+*   [6 UEFI Linux hardware compatibility](#UEFI_Linux_hardware_compatibility)
 *   [7 UEFI Bootable Media](#UEFI_Bootable_Media)
     *   [7.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
-    *   [7.2 Remove UEFI boot support from Optical Media](#Remove_UEFI_boot_support_from_Optical_Media)
+    *   [7.2 Remove UEFI boot support from optical media](#Remove_UEFI_boot_support_from_optical_media)
 *   [8 Testing UEFI in systems without native support](#Testing_UEFI_in_systems_without_native_support)
-    *   [8.1 OVMF for Virtual Machines](#OVMF_for_Virtual_Machines)
+    *   [8.1 OVMF for virtual machines](#OVMF_for_virtual_machines)
     *   [8.2 DUET for BIOS only systems](#DUET_for_BIOS_only_systems)
 *   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Windows 7 will not boot in UEFI Mode](#Windows_7_will_not_boot_in_UEFI_Mode)
+    *   [9.1 Windows 7 will not boot in UEFI mode](#Windows_7_will_not_boot_in_UEFI_mode)
     *   [9.2 Windows changes boot order](#Windows_changes_boot_order)
     *   [9.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
     *   [9.4 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
@@ -49,7 +49,7 @@ It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" me
 
 The latest UEFI Specification can be found at [http://uefi.org/specifications](http://uefi.org/specifications).
 
-## UEFI Firmware bitness
+## UEFI firmware bitness
 
 Under UEFI, every program whether it is an OS loader or a utility (e.g. a memory testing app or recovery tool), should be a UEFI Application corresponding to the EFI firmware bitness/architecture.
 
@@ -76,7 +76,7 @@ $ ioreg -l -p IODeviceTree | grep firmware-abi
 
 If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it returns EFI64 then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x Specification.
 
-## Linux Kernel Config options for UEFI
+## Linux kernel config options for UEFI
 
 The required Linux Kernel configuration options for UEFI systems are :
 
@@ -114,7 +114,7 @@ CONFIG_EFI_PARTITION=y
 
 Retrieved from [https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt) .
 
-## UEFI Variables
+## UEFI variables
 
 UEFI defines variables through which an operating system can interact with the firmware. UEFI Boot Variables are used by the boot-loader and used by the OS only for early system start-up. UEFI Runtime Variables allow an OS to manage certain settings of the firmware like the UEFI Boot Manager or managing the keys for UEFI Secure Boot Protocol etc. You can get the list using
 
@@ -123,7 +123,7 @@ $ efivar -l
 
 ```
 
-### UEFI Variables Support in Linux Kernel
+### UEFI variables support in Linux kernel
 
 Linux kernel exposes EFI variables data to userspace via **efivarfs** (**EFI** **VAR**iable **F**ile**S**ystem) interface (`CONFIG_EFIVAR_FS`) - mounted using `efivarfs` kernel module at `/sys/firmware/efi/efivars` - it has no maximum per-variable size limitation and supports UEFI Secure Boot variables. Introduced in kernel 3.8.
 
@@ -248,7 +248,7 @@ Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded U
 
 **Note:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a FAT32 USB pen drive with `Shell.efi` copied as `(USB)/efi/boot/bootx64.efi`. This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
 
-### Important UEFI Shell Commands
+### Important UEFI Shell commands
 
 UEFI Shell commands usually support `-b` option which makes output pause after each page. Run `help -b` to list available commands.
 
@@ -342,7 +342,7 @@ Shell> edit FS0:\EFI\refind\refind.conf
 
 Type `Ctrl-E` for help.
 
-## UEFI Linux Hardware Compatibility
+## UEFI Linux hardware compatibility
 
 See [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware") for more information.
 
@@ -352,7 +352,7 @@ See [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensib
 
 Follow [USB flash installation media#BIOS and UEFI bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_bootable_USB "USB flash installation media")
 
-### Remove UEFI boot support from Optical Media
+### Remove UEFI boot support from optical media
 
 **Note:** This section mentions removing UEFI boot support from a **CD/DVD only** (Optical Media), not from a USB flash drive.
 
@@ -385,7 +385,7 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 ## Testing UEFI in systems without native support
 
-### OVMF for Virtual Machines
+### OVMF for virtual machines
 
 [OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware and a separate non-volatile variable store for QEMU.
 
@@ -421,7 +421,7 @@ You can also try [http://sourceforge.net/projects/cloverefiboot/](http://sourcef
 
 ## Troubleshooting
 
-### Windows 7 will not boot in UEFI Mode
+### Windows 7 will not boot in UEFI mode
 
 If you have installed Windows to a different hard disk with GPT partitioning and still have a MBR partitioned hard disk in your computer, then it is possible that the firmware (UEFI) is starting its CSM support (for booting MBR partitions) and therefore Windows will not boot. To solve this merge your MBR hard disk to GPT partitioning or disable the SATA port where the MBR hard disk is plugged in or unplug the SATA connector from this hard disk.
 
@@ -466,7 +466,7 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 
- `grub.cfg for Official ISO` 
+ `grub.cfg for official ISO` 
 ```
 insmod part_gpt
 insmod part_msdos

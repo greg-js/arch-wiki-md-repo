@@ -56,7 +56,7 @@ An optional global directive is available when building a split package. `pkgbas
 
 ### pkgname
 
-The name(s) of the package(s). This should consist of lowercase alphanumerics and any of the following characters: `@`, `.`, `_`, `+`, `-` (at symbol, dot, underscore, plus, hyphen). Names are not allowed to start with hyphens. For the sake of consistency, `pkgname` should match the name of the source tarball of the software: for instance, if the software is in `foobar-2.5.tar.gz`, use `pkgname=foobar`. The name of the directory containing the PKGBUILD should also match the `pkgname`.
+The name(s) of the package(s). This should consist of lowercase alphanumerics and any of the following characters: `@`, `.`, `_`, `+`, `-` (at symbol, dot, underscore, plus, hyphen). Names are not allowed to start with hyphens or dots. For the sake of consistency, `pkgname` should match the name of the source tarball of the software: for instance, if the software is in `foobar-2.5.tar.gz`, use `pkgname=foobar`. The name of the directory containing the PKGBUILD should also match the `pkgname`.
 
 Split packages should be defined as an array, e.g. `pkgname=('foo' 'bar')`.
 

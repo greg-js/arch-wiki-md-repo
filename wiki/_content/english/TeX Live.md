@@ -8,7 +8,7 @@ TeX Live is one of the most popular distributions for [LaTeX](https://en.wikiped
     *   [1.1 Manual installation](#Manual_installation)
 *   [2 Usage](#Usage)
 *   [3 Important information](#Important_information)
-    *   [3.1 Paper Size](#Paper_Size)
+    *   [3.1 Paper size](#Paper_size)
     *   [3.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
     *   [3.3 Fonts](#Fonts)
 *   [4 TeXLive Local Manager](#TeXLive_Local_Manager)
@@ -71,16 +71,9 @@ You will probably want a [TeX editor](/index.php/List_of_applications/Documents#
 
 *   A skeleton of a local texmf tree is at `/usr/local/share/texmf`: this directory is writable for members of the group **tex**.
 
-### Paper Size
+### Paper size
 
-If you would like to set the default page size to something other than A4 (such as "Letter"), run the following command:
-
-```
-$ texconfig
-
-```
-
-This command is also capable of changing other useful settings.
+If you would like to set the default page size to something other than A4 (such as "Letter"), run the `texconfig` command. This command is also capable of changing other useful settings.
 
 ### Error with "formats not generated" upon update
 
@@ -158,7 +151,7 @@ Alternatively, sty files that are intended only for a particular user should go 
 
 ### Manual Installation
 
-Normally, new .sty files go in `/usr/share/texmf-dist/tex/latex/<package name>/*`. Create this directory if you do not have it. This directory will automatically be searched when *tex is executed. Further discussion can be found here: [https://bbs.archlinux.org/viewtopic.php?id=85757](https://bbs.archlinux.org/viewtopic.php?id=85757)
+You should **not** manually install files into `/usr/share/texmf-dist/tex/latex/<package name>/*`. Instead, install local *.sty* files in `TEXMFLOCAL`, if they should be available to all users, or into `TEXMFHOME`, if they are specific to you. Use `kpsewhich -var TEXMFLOCAL` to get the local directory and install into `<local directory>/tex/latex/<package name>/`. The `TEXMFHOME` directory will automatically be searched when TeX tools are executed. If you use `TEXMFLOCAL`, you need to update the database as described above in order for the files to be found.
 
 ### Using PKGBUILDs
 

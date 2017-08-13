@@ -98,7 +98,7 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 ```
 
-Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like. [This blog post](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized) and the page [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") (not bash-specific!) also help.
+Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like. [This blog post](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized) and the page [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") also help.
 
 **Note:** The `LESS_TERMCAP_*xx*` variables are currently undocumented in [less(1)](http://man7.org/linux/man-pages/man1/less.1.html). For a detailed explanation, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
 

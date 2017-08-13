@@ -175,8 +175,6 @@
 
 ```
 
-If migrating to 32 bits, install the 32-bit [busybox](https://www.archlinux.org/packages/?name=busybox) fallback now that Pacman has been configured with the 32-bit architecture.
-
 **Важно:** Не устанавливайте сразу пакет*lib32-glibc*. После *ldconfig*, при установке *linux*, созданный образ будет включать библиотеки вида *librt.so* в `/usr/lib32`, которые при загрузке не будут найдены и процесс загрузки прервется.
 
 ### Установка пакетов

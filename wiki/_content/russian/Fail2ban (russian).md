@@ -1,15 +1,15 @@
 **Важно:** Использование блокировки по IP защитит только от тривиальных атак, но для работы потребуется дополнительный демон и правильно настроенное логирование (раздел /var может переполниться, особенно если злоумышленник целенаправленно ломает сервер). К тому же, если злоумышленники узнают ваш IP адрес, они могут послать пакеты с подменёнными заголовками отправителя и отберут у вас доступ к серверу. [SSH keys](/index.php/SSH_keys "SSH keys") предоставляют элегантное решение проблемы брут форса без перечисленных проблем.
 
-[Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) scans various textual log files and bans IP that makes too many password failures by updating firewall rules to reject the IP address, similar to [Sshguard](/index.php/Sshguard "Sshguard").
+[Fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) сканирует различные текстовые лог-файлы и блокирует IP, которые делают слишком много ошибок ввода пароля, обновляя правила файрвола для отклонения IP-адреса, сходно с [Sshguard](/index.php/Sshguard "Sshguard").
 
-**Warning:** For correct function it is essential that the tool parses the IP addresses in the log correctly. You should always **test** the log filters work as intended per application you want to protect.
+**Важно:** Для корректной работы инструмент должен правильно парсить IP-адреса в лог-файлах. Всегда **проверяйте** лог-фильтры для каждого приложения, требующего защиты.
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
     *   [1.1 systemd](#systemd)
-*   [2 Hardening](#Hardening)
-    *   [2.1 Capabilities](#Capabilities)
+*   [2 Укрепление](#.D0.A3.D0.BA.D1.80.D0.B5.D0.BF.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [2.1 Возможности](#.D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
     *   [2.2 Filesystem Access](#Filesystem_Access)
 *   [3 SSH jail](#SSH_jail)
 *   [4 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
@@ -24,11 +24,11 @@
 
 Используйте юнит сервис `fail2ban.service`, в соответствии с инструкциями [systemd](/index.php/Systemd "Systemd").
 
-## Hardening
+## Укрепление
 
-Currently, fail2ban requires to run as root, therefore you may wish to consider some additional hardening on the process with systemd. Ref:[systemd for Administrators, Part XII](http://0pointer.de/blog/projects/security.html)
+На данный момент fail2ban требует запуска от имени root, следовательно, вы можете дополнительно укрепить процесс с помощью systemd. Ссылка: [systemd for Administrators, Part XII](http://0pointer.de/blog/projects/security.html)
 
-### Capabilities
+### Возможности
 
 For added security consider limiting fail2ban capabilities by specifying `CapabilityBoundingSet` in the [drop-in configuration file](/index.php/Systemd#Editing_provided_units "Systemd") for the provided `fail2ban.service`:
 

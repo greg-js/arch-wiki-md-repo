@@ -145,7 +145,7 @@ $ ip link
 
 Note that `lo` is the [W:Loop_device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device") and not used in making network connections.
 
-Wireless device names can also be retrieved using `iw dev`. See [Wireless network configuration#Getting some useful information](/index.php/Wireless_network_configuration#Getting_some_useful_information "Wireless network configuration") for details.
+Wireless device names can also be retrieved using `iw dev`. See also [Wireless network configuration#Get the name of the interface](/index.php/Wireless_network_configuration#Get_the_name_of_the_interface "Wireless network configuration").
 
 **Tip:** To change the device names, see [#Change device name](#Change_device_name) and [#Revert to traditional device names](#Revert_to_traditional_device_names).
 

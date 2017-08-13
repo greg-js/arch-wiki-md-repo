@@ -5,6 +5,8 @@
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
     *   [1.1 Графические оболочки](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [2.1 Пример файла input.conf](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_input.conf)
+    *   [2.2 mpv и управление PulseAudio/ALSA mixer'ом с версии 0.18.1](#mpv_.D0.B8_.D1.83.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_PulseAudio.2FALSA_mixer.27.D0.BE.D0.BC_.D1.81_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D0.B8_0.18.1)
 *   [3 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
     *   [3.1 Аппаратное декодирование](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.B4.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
     *   [3.2 Воспроизведение с предыдущего места](#.D0.92.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_.D0.BF.D1.80.D0.B5.D0.B4.D1.8B.D0.B4.D1.83.D1.89.D0.B5.D0.B3.D0.BE_.D0.BC.D0.B5.D1.81.D1.82.D0.B0)
@@ -47,7 +49,37 @@
 
 ## Настройка
 
-Настройки Mpv находятся в файлах `mpv.conf` (общие) и `input.conf` (сочетания клавиш). Если не установлена [переменная окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `XDG_CONFIG_HOME`, будут использоваться файлы настроек пользователя, расположенные в каталоге `~/.config/mpv`. Системные файлы настроек располагаются в `/etc/mpv`.
+Настройки *mpv* находятся в файлах `mpv.conf` (общие), `input.conf` (сочетания клавиш) и `lua-settings/osc.conf` (наэкранное меню). Полный список параметров доступен в [mpv(1)](https://mpv.io/manual/master/) или [GitHub docs](https://github.com/mpv-player/mpv/tree/master/DOCS/man). Если не установлена [переменная окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `XDG_CONFIG_HOME`, будут использоваться файлы настроек пользователя, расположенные в каталоге `~/.config/mpv`. Системные файлы настроек располагаются в `/etc/mpv`.
+
+### Пример файла input.conf
+
+Скопировав следующее в `~/.config/mpv/input.conf`, можно добавить ряд полезных сочетаний клавиш в mpv, таких как поворот видео на 90 градусов, масштабирование и панорамирование.
+
+```
+Alt+RIGHT add video-rotate 90
+Alt+LEFT add video-rotate -90
+Alt+- add video-zoom -0.25
+Alt+= add video-zoom 0.25
+Alt+j add video-pan-x -0.05
+Alt+l add video-pan-x 0.05
+Alt+i add video-pan-y 0.05
+Alt+k add video-pan-y -0.05
+
+```
+
+### mpv и управление PulseAudio/ALSA mixer'ом с версии 0.18.1
+
+Данная опция применима только если вы используете pulseaudio с mpv (`-ao=pulse` или `ao=pulse` в `mpv.conf`) или если вы хотите управлять громкостью ALSA mixer с помощью mpv.
+
+Добавьте следующее в `~/.config/mpv/input.conf`, чтобы изменять громкость приложения в PulseAudio / ALSA посредством клавиш в mpv (и наоборот):
+
+```
+/ add ao-volume -2
+SHIFT+* add ao-volume 2
+
+```
+
+Опционально измените клавиши громкости выше на любые другие.
 
 ## Советы и рекомендации
 

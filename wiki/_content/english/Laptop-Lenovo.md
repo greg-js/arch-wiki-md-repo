@@ -64,6 +64,7 @@ install CD version
 | [Lenovo ThinkPad Edge E455](/index.php/Lenovo_ThinkPad_Edge_E455 "Lenovo ThinkPad Edge E455") | 2015.04.01 | Yes* | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo ThinkPad Edge E530 | Yes | Yes | Yes* | Yes* | Yes | Yes | NA | NA | SD card (yes), Finger Print (not tested) |
 | Lenovo ThinkPad Edge E540 | 2015.08.01 | Yes | Yes | Yes | Yes | Yes | Yes* | NA | SD card (yes), Finger Print (yes), touch pad and trackpoint (yes), Webcam (yes) |
+| Lenovo ThinkPad Edge E545 | NA | Yes | Yes | Yes | Yes* | Not tested | Yes | NA | SD card (yes), touch pad and trackpoint (yes) Webcam (yes) | wifi works only with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |
 
 #### L series
 

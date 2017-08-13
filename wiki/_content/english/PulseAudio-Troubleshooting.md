@@ -27,6 +27,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
         *   [2.5.3 Setting the sound card's sampling rate into PulseAudio configuration (3/5)](#Setting_the_sound_card.27s_sampling_rate_into_PulseAudio_configuration_.283.2F5.29)
         *   [2.5.4 Restart PulseAudio to apply the new settings (4/5)](#Restart_PulseAudio_to_apply_the_new_settings_.284.2F5.29)
         *   [2.5.5 Finally check by recording and playing it back (5/5)](#Finally_check_by_recording_and_playing_it_back_.285.2F5.29)
+        *   [2.5.6 Another Possible Cause](#Another_Possible_Cause)
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
 *   [3 Audio quality](#Audio_quality)
@@ -423,6 +424,35 @@ $ aplay test-mic.wav
 ```
 
 Now hopefully, there is no static noise in microphone recording anymore.
+
+#### Another Possible Cause
+
+Another possible cause is that your mic has two channels but only one channel can provide a valid sound signal. Some information can be found [here](https://github.com/MaartenBaert/ssr/issues/323#issuecomment-268230548). The solution is to remap the stereo input to a mono input:
+
+1\. Find your source name from the following command; mine is `alsa_input.pci-0000_00_1f.3.analog-stereo`
+
+```
+pacmd list-sources | grep 'name:.*input'
+
+```
+
+2\. Edit `/etc/pulse/default.pa` and add the following lines, where INPUT_NAME is name of the input source from above step:
+
+```
+load-module module-remap-source source_name=record_mono master=INPUT_NAME master_channel_map=front-left channel_map=mono
+set-default-source record_mono
+
+```
+
+3\. Restart PulseAudio:
+
+```
+pulseaudio -k
+pulseaudio --start
+
+```
+
+Now `arecord` hopefully works. You may still need to change the `RecordStream from` setting to `Remapped Built-in Audio Analog Stereo` of a specific application in the `Recording` tab of `pavucontrol`.
 
 ### No microphone on Steam or Skype with enable-remixing = no
 

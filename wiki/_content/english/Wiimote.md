@@ -36,7 +36,7 @@ Thanks to cwiid you can scan for your Wiimote now:
 
 ```
 (press the 1 and 2 buttons on your Wiimote)
-$ hcitool scan
+$ bluetoothctl scan on
 Scanning ...
        <MAC address>       Nintendo RVL-CNT-01
 

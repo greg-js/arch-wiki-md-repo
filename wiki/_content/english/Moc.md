@@ -49,7 +49,8 @@ filesystem browsing (and vice versa) | `Tab` |
 | Decrease volume 1% | `<` |
 | Change volume to 10% | `meta+1` |
 | Change volume to 20% | `meta+2` |
-| Quit player | `q` |
+| Detach MOC from the server | `q` |
+| Quit | `Q` |
 
 To shut down the server, press `Shift+q` or run `mocp -x`.
 

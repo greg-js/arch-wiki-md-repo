@@ -30,6 +30,10 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 	[https://github.com/spanezz/nodm](https://github.com/spanezz/nodm) || [nodm](https://www.archlinux.org/packages/?name=nodm)
 
+*   **[Ly](/index.php/Ly "Ly")** — Experimental ncurses display manager.
+
+	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
+
 ### Graphical
 
 *   **[GDM](/index.php/GDM "GDM")** — [GNOME](/index.php/GNOME "GNOME") display manager.

@@ -11,7 +11,7 @@
 
 Install [naemon](https://aur.archlinux.org/packages/naemon/) from the [AUR](/index.php/AUR "AUR").
 
-Copy /etc/naemon/examples/* to /etc/naemon/conf.d/ if you want some example hosts and services to start with.
+Copy `/etc/naemon/examples/*` to `/etc/naemon/conf.d/` if you want some example hosts and services to start with.
 
 Install the plugins from [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) as well as [fping](https://www.archlinux.org/packages/?name=fping).
 

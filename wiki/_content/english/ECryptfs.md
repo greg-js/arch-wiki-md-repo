@@ -50,7 +50,7 @@ Before using eCryptfs, the following disadvantages should be checked for applica
 
 *   File name length
 
-	File names longer than 143 characters cannot be encrypted: this can break some programs in your home directory (for example [Symfony](https://en.wikipedia.org/wiki/Symfony "wikipedia:Symfony") caching).
+	File names longer than 143 characters cannot be encrypted (with the `FNEK` option).[[1]](https://bugs.launchpad.net/ecryptfs/+bug/344878) This can break some programs in your home directory (for example [Symfony](https://en.wikipedia.org/wiki/Symfony "wikipedia:Symfony") caching).
 
 *   Network storage mounts
 
@@ -228,7 +228,7 @@ for the user's encrypted directory. It should be perfectly readable at `~$HOME/P
 
 The latter should be automatically unmounted and made unavailable when the user logs off.
 
-**Warning:** Unfortunately the automatic unmounting is susceptible to [break](https://bbs.archlinux.org/viewtopic.php?id=194509) with systemd and bugs are filed against it.[[1]](https://bugs.freedesktop.org/show_bug.cgi?id=72759) [[2]](https://nwrickert2.wordpress.com/2013/12/16/systemd-user-manager-ecryptfs-and-opensuse-13-1/) [[3]](https://bugs.launchpad.net/ubuntu/+source/ecryptfs-utils/+bug/313812/comments/43) [[4]](http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2014-October/004088.html) If you experience this problem, you can test it by commenting out `-session optional pam_systemd.so` in `/etc/pam.d/system-login`. However, this is no solution because commenting out will break other systemd functionalities.
+**Warning:** Unfortunately the automatic unmounting is susceptible to [break](https://bbs.archlinux.org/viewtopic.php?id=194509) with systemd and bugs are filed against it.[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=72759) [[3]](https://nwrickert2.wordpress.com/2013/12/16/systemd-user-manager-ecryptfs-and-opensuse-13-1/) [[4]](https://bugs.launchpad.net/ubuntu/+source/ecryptfs-utils/+bug/313812/comments/43) [[5]](http://lists.alioth.debian.org/pipermail/pkg-systemd-maintainers/2014-October/004088.html) If you experience this problem, you can test it by commenting out `-session optional pam_systemd.so` in `/etc/pam.d/system-login`. However, this is no solution because commenting out will break other systemd functionalities.
 
 ### ecryptfs-simple
 

@@ -120,7 +120,7 @@ For more information on how this can be used to support multiple pass repositori
 
 ## Multiple pass Contexts (e.g. Teaming)
 
-One can use aliases to set up different pass contexts, which helps when collaborating with different teams. We've gotten this working in bash as follows:
+One can use aliases to set up different pass contexts, which helps when collaborating with different teams. We have gotten this working in bash as follows:
 
 Add aliases to your `*~/.bashrc*`:
 

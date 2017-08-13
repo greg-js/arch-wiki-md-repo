@@ -103,7 +103,7 @@ If the Wii Remote is showing button presses in the `xwiishow` tool but not regis
 
 ### X.Org Input Driver
 
-There is an X.Org input driver [[2]](http://github.com/dvdhrm/xf86-input-xwiimote) available in AUR [xf86-input-xwiimote](https://aur.archlinux.org/packages/xf86-input-xwiimote/) which automatically provides an input device to your X clients. Install it and read the related man-page for more information:
+There is an X.Org input driver [[2]](http://github.com/dvdhrm/xf86-input-xwiimote) available in AUR [xf86-input-xwiimote-git](https://aur.archlinux.org/packages/xf86-input-xwiimote-git/) which automatically provides an input device to your X clients. Install it and read the related man-page for more information:
 
 ```
 $ man xorg-xwiimote

@@ -2,22 +2,23 @@ Arch Linux uses S-nail as its POSIX `mailx` incarnation. S-nail is MIME capable 
 
 ## Contents
 
-*   [1 Quickstart](#Quickstart)
-*   [2 First configuration adjustments](#First_configuration_adjustments)
-*   [3 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
-*   [4 Interactive usage](#Interactive_usage)
-    *   [4.1 Using it](#Using_it)
-    *   [4.2 Message composition](#Message_composition)
-*   [5 Using S/MIME](#Using_S.2FMIME)
-*   [6 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
-*   [7 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
-*   [8 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Example usage](#Example_usage)
+*   [3 Configuration](#Configuration)
+*   [4 Sending mail with an external SMTP server](#Sending_mail_with_an_external_SMTP_server)
+*   [5 Interactive usage](#Interactive_usage)
+    *   [5.1 Usage](#Usage)
+    *   [5.2 Message composition](#Message_composition)
+*   [6 Using S/MIME](#Using_S.2FMIME)
+*   [7 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
+*   [8 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
+*   [9 See also](#See_also)
 
-## Quickstart
+## Installation
 
 The [s-nail](https://www.archlinux.org/packages/?name=s-nail) package is part of the Arch Linux [base](https://www.archlinux.org/groups/x86_64/base/) group, and should be installed for most users.
 
-Version 14.9.0 released in July 2017 brought a lot of changes and improvements, reading the [announcement](https://www.sdaoden.eu/code-nail-ann.html) may be helpful.
+## Example usage
 
 Because the systemwide configuration file (`/etc/mail.rc`) brings in some useful standards, sending mail over an installed local mail-transfer-agent (MTA), such as [sendmail](/index.php/Sendmail "Sendmail") or [postfix](/index.php/Postfix "Postfix"), can be as easy as follows:
 
@@ -94,7 +95,7 @@ x
 
 ```
 
-## First configuration adjustments
+## Configuration
 
 Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism, thus volatile and not the right place for modifications. All the remaining examples in this article are based upon this configuration template, which simply sets some security and send mode basics:
 
@@ -306,7 +307,7 @@ commandalias ps !ps axu
 
 Once you're in it use **list** to print all available builtin commands. Typing `?X' tries to expand "X" and print a help string; since mailx allows abbreviations of all commands this is sometimes handy, try, e.g., **?h**, **?he** and **?hel** ... The command **help** will print a short summary of the most frequent used commands, more so if the variable `verbose` is set.
 
-### Using it
+### Usage
 
 When starting into interactive mode a summary of the content of the initially opened mailbox is printed, as via the `headers` command. In the header display messages are given numbers (starting at 1) which uniquely identify messages. Messages can be printed with the `print` command, or short: `p` Whereas `p` honours `retain`ed (or `ignore`d) list of headers to be displayed, the `P`rint command will not and display all headers; the `Sh`ow command will print raw message content.
 

@@ -89,7 +89,9 @@ More file handlers can be configured of course.
 
 ### ner
 
-[ner](http://the-ner.org/) - notmuch email reader - is yet another CLI interface, apparently written in C++.
+**Note:** Ner does not seem to be actively developed anymore. The latest commit on github is from May 2012.
+
+[ner](https://github.com/pioto/ner) - notmuch email reader - is yet another CLI interface, apparently written in C++.
 
 [ner-git](https://aur.archlinux.org/packages/ner-git/) is available from the [AUR](/index.php/AUR "AUR").
 

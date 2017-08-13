@@ -38,16 +38,14 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
     *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
     *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
     *   [6.4 Error: No input file specified](#Error:_No_input_file_specified)
-    *   [6.5 Error: "File not found" in browser or "Primary script unknown" in log file](#Error:_.22File_not_found.22_in_browser_or_.22Primary_script_unknown.22_in_log_file)
-    *   [6.6 Error: chroot: '/usr/sbin/nginx' No such file or directory](#Error:_chroot:_.27.2Fusr.2Fsbin.2Fnginx.27_No_such_file_or_directory)
-    *   [6.7 Alternative script for systemd](#Alternative_script_for_systemd)
+    *   [6.5 Alternative script for systemd](#Alternative_script_for_systemd)
 *   [7 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (mainline branch : new features, updates, bugfixes) or [nginx](https://www.archlinux.org/packages/?name=nginx) (stable branch : major bugfixes only). Using the mainline branch is recommended.
+[Install](/index.php/Install "Install") the package [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (mainline branch: new features, updates, bugfixes) or [nginx](https://www.archlinux.org/packages/?name=nginx) (stable branch: major bugfixes only).
 
-The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in new features[[1]](https://www.nginx.com/blog/nginx-1-6-1-7-released/).
+Using the mainline branch is recommended. The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in new features [[1]](https://www.nginx.com/blog/nginx-1-6-1-7-released/).
 
 For a Ruby on Rails setup with nginx, see [Ruby on Rails#The Perfect Rails Setup](/index.php/Ruby_on_Rails#The_Perfect_Rails_Setup "Ruby on Rails").
 
@@ -57,7 +55,7 @@ For a chroot-based installation for additional security, see [#Installation in a
 
 [Start/enable](/index.php/Start/enable "Start/enable") `nginx.service`.
 
-The default served page at [http://127.0.0.1](http://127.0.0.1) is `/usr/share/nginx/html/index.html`.
+The default page served at [http://127.0.0.1](http://127.0.0.1) is `/usr/share/nginx/html/index.html`.
 
 ## Configuration
 
@@ -772,7 +770,7 @@ Now we should be good to go. Go ahead and [start](/index.php/Start "Start") ngin
 
 #### Nginx Beautifier
 
-Nginx beautifier is a commandline tool used to beautify and format nginx configuration files, it is available on AUR [nginxbeautifier](https://aur.archlinux.org/packages/nginxbeautifier/)
+[nginxbeautifier](https://aur.archlinux.org/packages/nginxbeautifier/) is a commandline tool used to beautify and format nginx configuration files.
 
 ## Troubleshooting
 
@@ -810,24 +808,6 @@ Try [out this answer](https://stackoverflow.com/questions/4252368/nginx-502-bad-
 
 In Archlinux, the configuration file mentioned in above link is `/etc/php/php-fpm.conf`.
 
-On some condition, `fcgiwrap.socket` may not start properly and create a useless unix domain socket `/run/fcgiwrap.sock`.
-
-Try [stop](/index.php/Stop "Stop") the `fcgiwrap.socket` service, and remove the default unix domain socket file:
-
-```
-`# rm /run/fcgiwrap.sock`
-
-```
-
-Then [start](/index.php/Start "Start") `fcgiwrap.service` instead. Check the status of `fcgiwrap.service` and the new unix domain socket `/run/fcgiwrap.sock`:
-
-```
-$ systemctl status fcgiwrap.service
-$ ls /run/fcgiwrap.sock
-```
-
-If it work, [disable](/index.php/Disable "Disable") `fcgiwrap.socket` and [enable](/index.php/Enable "Enable") `fcgiwrap.service`.
-
 ### Error: No input file specified
 
 1\. Verify that variable `open_basedir` in `/etc/php/php.ini` contains the correct path specified as `root` argument in `nginx.conf` (usually `/usr/share/nginx/`). When using [PHP-FPM](http://php-fpm.org/) as FastCGI server for PHP, you may add `fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/:/tmp/:/proc/";` in the `location` block which aims for processing php file in `nginx.conf`.
@@ -855,38 +835,6 @@ or you should create a group and user to start the php-cgi:
 ```
 
 5\. If you are running php-fpm with chrooted nginx ensure `chroot` is set correctly within `/etc/php-fpm/php-fpm.d/www.conf` (or `/etc/php-fpm/php-fpm.conf` if working on older version)
-
-### Error: "File not found" in browser or "Primary script unknown" in log file
-
-Ensure you have specified a `root` and `index` in your `server` or `location` directive:
-
-```
-location ~ \.php$ {
-     root           /srv/http/root_dir;
-     index          index.php;
-     fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-     include        fastcgi.conf;
-}
-
-```
-
-### Error: chroot: '/usr/sbin/nginx' No such file or directory
-
-If you encounter this error when running the *nginx* daemon using chroot, this is likely due to missing 64 bit libraries in the jailed environment.
-
-If you are running chroot in `/srv/http` you need to add the required 64-bit libraries.
-
-First, set up the directories:
-
-```
-# mkdir /srv/http/usr/lib64
-# cd /srv/http; ln -s usr/lib64 lib64
-
-```
-
-Then copy the required 64 bit libraries listed with `ldd /usr/sbin/nginx` to `/srv/http/usr/lib64`.
-
-If run as root, permissions for the libraries should be read and executable for all users, so no modification is required.
 
 ### Alternative script for systemd
 

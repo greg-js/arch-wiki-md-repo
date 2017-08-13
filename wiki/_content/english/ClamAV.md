@@ -1,4 +1,4 @@
-[Clam AntiVirus](http://www.clamav.net) is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops it primarily detects Windows viruses and malware.
+[Clam AntiVirus](http://www.clamav.net) is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
 
 ## Contents
 
@@ -7,6 +7,8 @@
 *   [3 Starting the daemon](#Starting_the_daemon)
 *   [4 Testing the software](#Testing_the_software)
 *   [5 Adding more databases/signatures repositories](#Adding_more_databases.2Fsignatures_repositories)
+    *   [5.1 Set up clamav-unofficial-sigs](#Set_up_clamav-unofficial-sigs)
+        *   [5.1.1 MalwarePatrol database](#MalwarePatrol_database)
 *   [6 Scan for viruses](#Scan_for_viruses)
 *   [7 Using the milter](#Using_the_milter)
 *   [8 OnAccessScan](#OnAccessScan)
@@ -67,9 +69,53 @@ Otherwise; read the Troubleshooting part or ask for help in the [Arch Forums](ht
 
 ClamAV can use databases/signature from other repositories or security vendors.
 
-To add the most important ones in a single step install [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/) and configure it in `/etc/clamav-unofficial-sigs/user.conf`.
+To add the most important ones in a single step, install [clamav-unofficial-sigs](https://aur.archlinux.org/packages/clamav-unofficial-sigs/) and configure it in `/etc/clamav-unofficial-sigs/user.conf`.
 
-This will add signatures/databases from e.g. MalwarePatrol, SecuriteInfo, Yara, Linux Malware Detect,...
+This will add signatures/databases from e.g. MalwarePatrol, SecuriteInfo, Yara, Linux Malware Detect, etc. For the full list of databases, [see the description of the GitHub repository](https://github.com/extremeshok/clamav-unofficial-sigs#description).
+
+### Set up clamav-unofficial-sigs
+
+First, edit the configuration in `/etc/clamav-unofficial-sigs/user.conf`, and change the following line:
+
+```
+# Uncomment the following line to enable the script
+user_configuration_complete="yes"
+
+```
+
+To enable the unofficial signature service (which includes manpages, log rotation, and a cron job), run the following:
+
+```
+# clamav-unofficial-sigs.sh --install-all
+
+```
+
+Note that you still must have the `clamd` service running in order to have signature updates from ClamAV themselves.
+
+This will refresh the signatures from the databases used in the clamav-unofficial-sigs script and extra ones as configured in each configuration file in the `/etc/clamav-unofficial-sigs` folder. To refresh signatures from these databases manually, run the following:
+
+```
+# clamav-unofficial-sigs.sh
+
+```
+
+To stop the cron job from running, delete this file: `/etc/cron.d/clamav-unofficial-sigs`.
+
+#### MalwarePatrol database
+
+If you would like to use the MalwarePatrol database, sign up for an account at [https://www.malwarepatrol.net/](https://www.malwarepatrol.net/).
+
+In `/etc/clamav-unofficial-sigs/user.conf`, change the following to enable this functionality:
+
+```
+malwarepatrol_receipt_code="YOUR-RECEIPT-NUMBER" # enter your receipt number here
+malwarepatrol_product_code="8" # Use 8 if you have a Free account or 15 if you are a Premium customer.
+malwarepatrol_list="clamav_basic" # clamav_basic or clamav_ext
+malwarepatrol_free="yes" # Set to yes if you have a Free account or no if you are a Premium customer.
+
+```
+
+Source: [https://www.malwarepatrol.net/clamav-configuration-guide/](https://www.malwarepatrol.net/clamav-configuration-guide/)
 
 ## Scan for viruses
 
@@ -127,7 +173,7 @@ Enable and start the service.
 
 ## OnAccessScan
 
-On-access scanning require the kernel to be compiled with *fanotify* (kernel >= 3.8). Check if *fanotify* has been enabled before enabling on-access scanning.
+On-access scanning requires the kernel to be compiled with the *fanotify* kernel module (kernel >= 3.8). Check if *fanotify* has been enabled before enabling on-access scanning.
 
 ```
 $ cat /proc/config.gz | gunzip | grep FANOTIFY=y
@@ -136,11 +182,11 @@ $ cat /proc/config.gz | gunzip | grep FANOTIFY=y
 
 On-access scanning will scan the file while reading, writing or executing it.
 
-Is it possibile to enable the **OnAccessScan** editing the `/etc/clamav/clamd.conf`:
+First, edit the `/etc/clamav/clamd.conf` configuration file by adding the following to the end of the file (you can also change the individual options):
 
  `/etc/clamav/clamd.conf` 
 ```
-# Enable son-access scan, required clamd service running
+# Enables on-access scan, requires clamd service running
 ScanOnAccess true
 
 # Set the mount point where to recursively perform the scan,
@@ -149,17 +195,17 @@ OnAccessMountPath /usr
 OnAccessMountPath /home/
 OnAccessExcludePath /var/log/
 
-# flag fanotify to block any events on monitored files to perform the scan
+# Flag fanotify to block any events on monitored files to perform the scan
 OnAccessPrevention false
 
-# perform scans on newly created, moved, or renamed files
+# Perform scans on newly created, moved, or renamed files
 OnAccessExtraScanning true
 
-# check the UID from the event of fanotify
+# Check the UID from the event of fanotify
 OnAccessExcludeUID 0
 
-# action to perform when clamav detects a malicious file
-# it is possibile to specify ad inline command too
+# Specify an action to perform when clamav detects a malicious file
+# it is possible to specify an inline command too
 VirusEvent /etc/clamav/detected.zsh
 
 # WARNING: clamd should run as root
@@ -167,7 +213,7 @@ User root
 
 ```
 
-Create:
+Next, create the file `/etc/clamav/detected.zsh` and add the following. This allows you to change/specify the debug message when a virus has been detected by clamd's on-access scanning service:
 
  `/etc/clamav/detected.zsh` 
 ```
@@ -184,7 +230,7 @@ fi
 
 ```
 
-If you are using [AppArmor](/index.php/AppArmor "AppArmor") it is necessary to allow clamd to run as root:
+If you are using [AppArmor](/index.php/AppArmor "AppArmor"), it is also necessary to allow clamd to run as root:
 
 ```
 # aa-complain clamd
@@ -222,7 +268,7 @@ LocalSocket /var/lib/clamav/clamd.sock
 
 ```
 
-Save the file and [restart the daemon](/index.php/Daemons "Daemons")
+Save the file and [restart the daemon](/index.php/Daemons "Daemons") with `systemctl restart clamd.service`.
 
 ### Error: No supported database files found
 

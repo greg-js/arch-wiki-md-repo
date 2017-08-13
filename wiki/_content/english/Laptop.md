@@ -47,17 +47,17 @@ Battery state can be read using ACPI utilities from the terminal. ACPI command l
 
 #### hibernate on low battery level
 
-**If** your battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, you can use this udev rule to automatically hibernate the system when battery level is critical, and thus prevent all unsaved work from being lost.
+If your battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, you can use this udev rule to automatically hibernate the system when battery level is critical, and thus prevent all unsaved work from being lost.
 
-**Note:** Not all batteries report discharge events. Test by running `udevadm monitor --property` while on battery and see if any events are reported. You should wait at least 1% drop. If no events are reported and `/sys/class/power_supply/BAT0/alarm` is non-zero then the battery will likely trigger an event when `BAT0/energy_now` drops below the alarm value, and the udev rule will work as long as the percentage math works out
-
-**Note:** This rule will be repeated whenever the condition is set. As such, when resuming from hibernate when the battery is critical, the computer will hibernate directly. Some laptops do not boot beyond a certain battery level, so the rule below could be adjusted accordingly.
+**Note:** Not all batteries report discharge events. Test by running `udevadm monitor --property` while on battery and see if any events are reported. You should wait at least 1% drop. If no events are reported and `/sys/class/power_supply/BAT0/alarm` is non-zero then the battery will likely trigger an event when `BAT0/energy_now` drops below the alarm value, and the udev rule will work as long as the percentage math works out.
  `/etc/udev/rules.d/99-lowbat.rules` 
 ```
 # Suspend the system when battery level drops to 5% or lower
 SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="/usr/bin/systemctl hibernate"
 
 ```
+
+This rule will be repeated whenever the condition is set. As such, when resuming from hibernate when the battery is critical, the computer will hibernate directly. Some laptops do not boot beyond a certain battery level, so the rule could be adjusted accordingly.
 
 Batteries can jump to a lower value instead of discharging continuously, therefore a udev string matching pattern for all capacities 0 through 5 is used.
 

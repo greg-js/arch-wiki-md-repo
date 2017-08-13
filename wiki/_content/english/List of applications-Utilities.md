@@ -611,6 +611,10 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 	[http://fileroller.sourceforge.net/](http://fileroller.sourceforge.net/) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
 
+*   **p7zip-gui** — The GUI belonging to the p7zip software.
+
+	[http://p7zip.sourceforge.net/](http://p7zip.sourceforge.net/) || [p7zip-gui](https://aur.archlinux.org/packages/p7zip-gui/)
+
 *   **[PeaZip](https://en.wikipedia.org/wiki/PeaZip "wikipedia:PeaZip")** — Open source file and archive manager.
 
 	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/) [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)

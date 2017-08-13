@@ -26,6 +26,7 @@ id@archlinux/developer/nickname
 | Felix Yan | felixonmars |
 | Hugo Doria | hdoria |
 | Giovanni Scafora | voidnull |
+| Guillaume Alaux | galaux |
 | Ionuț Bîru | wonder or ioni |
 | Jeff Mickey | codemac |
 | Pierre Schmitz | pierres |

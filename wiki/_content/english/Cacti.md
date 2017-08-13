@@ -1,20 +1,20 @@
-[Cacti](http://www.cacti.net/) is a web-based system monitoring and graphing solution.
+[Cacti](https://www.cacti.net/) is a web-based system monitoring and graphing solution.
 
 ## Contents
 
-*   [1 Server Setup](#Server_Setup)
-*   [2 Cacti Setup](#Cacti_Setup)
+*   [1 Server setup](#Server_setup)
+*   [2 Cacti setup](#Cacti_setup)
 *   [3 MySQL setup](#MySQL_setup)
 *   [4 Spine](#Spine)
 *   [5 Systemd](#Systemd)
-*   [6 Web Configuration](#Web_Configuration)
-*   [7 External Links](#External_Links)
+*   [6 Web configuration](#Web_configuration)
+*   [7 External links](#External_links)
 
-## Server Setup
+## Server setup
 
 This article assumes that you already have a working [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP) server.
 
-## Cacti Setup
+## Cacti setup
 
 [Install](/index.php/Install "Install") the [cacti](https://www.archlinux.org/packages/?name=cacti), [php-snmp](https://www.archlinux.org/packages/?name=php-snmp) and [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) packages. Ensure LAMP services (`httpd`, `mysqld`) are [started](/index.php/Start "Start") and [enabled](/index.php/Enable "Enable"). If it is necessary for Cacti to monitor the machine that it is running on, configure [snmpd](/index.php/Snmpd "Snmpd").
 
@@ -149,7 +149,7 @@ Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.40
 Sep 27 15:50:01 hoom php[4072]: 09/27/2015 03:50:01 PM - SYSTEM STATS: Time:0.6176 Method:cmd.php Processes:1 Threads:N/A Hosts:5 HostsPerProcess:5 DataSources:169 RRDsProcessed:15
 ```
 
-## Web Configuration
+## Web configuration
 
 Open a browser and go to http://your_server/cacti/. You should be welcomed with the cacti installer.
 
@@ -167,6 +167,6 @@ Open a browser and go to http://your_server/cacti/. You should be welcomed with 
     *   Select the Paths tab.
     *   Set Spine Poller File Path to /usr/bin/spine and click Save.
 
-## External Links
+## External links
 
-*   [http://cacti.net](http://cacti.net)
+*   [https://cacti.net](https://cacti.net)

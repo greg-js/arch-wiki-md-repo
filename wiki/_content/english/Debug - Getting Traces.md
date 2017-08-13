@@ -69,17 +69,6 @@ options=(debug !strip)
 
 ```
 
-**Note:** `debug` in addition to DEBUG_* conterparts, would also add flags from CFLAGS and CXXFLAGS, which might not be what you want, as these flags usually contains optimisations. One way to mitigate this [is by putting](https://bugs.archlinux.org/task/50861#comment151164)
-```
-CFLAGS=""
-CXXFLAGS=""
-
-```
-
-at the beginning of the `PKGBUILD` file. This way isn't documented, and may break at some point though.
-
-Another one is to use a separate config file instead of the `/etc/makepkg.conf`, by pointing at it like `makepkg --config my-other-config`.
-
 Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debugging information will then be stripped from the main package and placed in a separate `*foo*-debug` package.
 
 **Note:** It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbols files are installed under `/usr/lib/debug`. See the [GDB documentation](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) for more information about debug packages.

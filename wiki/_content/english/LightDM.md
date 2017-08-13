@@ -331,7 +331,7 @@ position=200,start 50%,center
 
 ### VNC Server
 
-Lightdm can also be used to connect to via vnc. Make sure to install [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) on the server side and optional as your vncclient on the client PC.
+Lightdm can also be used to connect to via VNC. Make sure to install [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) on the server side and optionally as your VNC client on the client PC.
 
 Setup an authentication password on the server as root:
 
@@ -340,7 +340,7 @@ Setup an authentication password on the server as root:
 
 ```
 
-Edit the lightdm configuration file as shown below. Note that `listen-address` configures the vnc to only listen to connections from localhost. This is used to only allow connections via [ssh and port forwarding](/index.php/TigerVNC#On_the_client "TigerVNC"). On the SSH client, make sure that you use "localhost:5900" for the tunnel destination; using "127.0.0.1:5900" or "::1:5900" is not reliable on dual stack network connections. If you want to allow insecure connections you can disable this setting.
+Edit the LightDM configuration file as shown below. Note that `listen-address` configures the VNC to only listen to connections from localhost. This is used to only allow connections via [SSH and port forwarding](/index.php/TigerVNC#On_the_client "TigerVNC"). On the SSH client, make sure that you use `localhost:5900` for the tunnel destination; using `127.0.0.1:5900` or `::1:5900` is not reliable on dual stack network connections. If you want to allow insecure connections you can disable this setting.
 
  `/etc/lightdm/lightdm.conf` 
 ```
@@ -354,9 +354,9 @@ height=768
 depth=24
 ```
 
-Now open an ssh tunnel and connect to localhost as described in [TigerVNC#On the client](/index.php/TigerVNC#On_the_client "TigerVNC").
+Now open an SSH tunnel and connect to localhost as described in [TigerVNC#On the client](/index.php/TigerVNC#On_the_client "TigerVNC").
 
-**Note:** If you get a blank screen upon opening the VNC connection, try a different lightdm greeter.
+**Note:** If you get a blank screen upon opening the VNC connection, try a different LightDM greeter.
 
 ## Troubleshooting
 

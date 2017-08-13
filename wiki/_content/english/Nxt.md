@@ -1,4 +1,4 @@
-From [nxt.org](http://nxt.org/):
+From [nxt.org](https://nxt.org/):
 
 	*Nxt is a radically enhanced cryptocurrency built from scratch, delivering a unique and decentralized financial platform. Not only does it open up new possibilities – from digital money to transfer of shares – but it addresses all of the most serious deficiencies in existing cryptocurrencies.*
 

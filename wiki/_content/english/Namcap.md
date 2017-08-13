@@ -23,7 +23,6 @@ If you have a patch (fixing a bug or a new namcap module), then you can send it 
     *   [4.7 Unreleased](#Unreleased)
 *   [5 Making a namcap module](#Making_a_namcap_module)
 *   [6 Namcap reports](#Namcap_reports)
-*   [7 Trivia](#Trivia)
 
 ## Installation
 
@@ -193,7 +192,3 @@ How it works:
 *   namcap is run against the entire [ABS](/index.php/ABS "ABS") tree to make `namcap.log`.
 *   The packages in core, extra and community are put in files named core, extra and community respectively (using `pacman -Slq`).
 *   `namcap-report.py` takes the code and prepares the report and RSS feeds, which is then copied to the webserver.
-
-## Trivia
-
-*   The name *namcap* is *pacman* spelled backwards.

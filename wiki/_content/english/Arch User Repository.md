@@ -285,7 +285,7 @@ Removal requests can be disapproved, in which case you will likely be advised to
 
 **Note:** aur-mirror is no longer available
 
-The [AUR Archive](https://github.com/aur-archive) on GitHub has a repository for every package that was in AUR 3 during the migration to AUR 4.
+The [AUR Archive](https://github.com/aur-archive) on GitHub has a repository for every package that was in AUR 3 during the migration to AUR 4 in August 2015.
 
 ## Web interface translation
 
