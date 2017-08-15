@@ -825,7 +825,7 @@ Server = http://arch.coderkun.de/$repo/$arch/
 *   **Description:** AUR packages with audio-related (realtime kernels, lv2-plugins, …) software. Supporting package deltas and package and database signing.
 *   **Upstream page:** [https://www.coderkun.de/arch](https://www.coderkun.de/arch)
 *   **Key-ID:** A6BEE374
-*   **Keyfile:** [https://www.coderkun.de/coderkun.asc](https://www.coderkun.de/coderkun.asc)
+*   **Keyfile:** [https://www.coderkun.de/coderkun.key](https://www.coderkun.de/coderkun.key)
 
 ```
 [coderkun-aur-audio]

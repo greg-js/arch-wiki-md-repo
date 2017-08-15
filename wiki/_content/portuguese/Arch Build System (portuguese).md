@@ -135,7 +135,11 @@ $ svn update *nome-pacote*
 
 Isso vai obter o pacote que você requisitou em seu checkout. Daqui para frente, toda vez que você executar *svn update* no nível superior, esse também será atualizado.
 
-Se você especifica um pacote que não existe, svn não vai avisar você. Ele só vai mostrar algo como "At revision 115847", sem criar quaisquer arquivos. Se isso acontecer, verifique se o nome do pacote está escrito corretamente e que o pacote não foi movido para outro repositório (ex. do da *community* para o repositório principal).
+Se você especifica um pacote que não existe, svn não vai avisar você. Ele só vai mostrar algo como "At revision 115847", sem criar quaisquer arquivos. Se isso acontecer:
+
+*   verifique se o nome do pacote está escrito corretamente
+*   verifique se o pacote não foi movido para outro repositório (ex. do repositório *community* para o repositório principal)
+*   acesse [https://www.archlinux.org/packages](https://www.archlinux.org/packages) para ver se o pacote é compilado a partir de outro pacote base (por exemplo, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) é compilado no PKGBUILD do [tensorflow](https://www.archlinux.org/packages/?name=tensorflow))
 
 **Tip:** Para fazer *checkout* uma versão mais antiga de um pacote, veja [#Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote).
 

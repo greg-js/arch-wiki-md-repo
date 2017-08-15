@@ -17,6 +17,7 @@
     *   [8.4 Enabling SLI](#Enabling_SLI)
     *   [8.5 Enabling overclocking](#Enabling_overclocking)
         *   [8.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
+        *   [8.5.2 Allow change to highest Performance Mode](#Allow_change_to_highest_Performance_Mode)
 
 ## Fixing terminal resolution
 
@@ -385,3 +386,23 @@ Set the following string in the `Device` section to enable PowerMizer at its max
 Option "RegistryDwords" "PerfLevelSrc=0x2222"
 
 ```
+
+#### Allow change to highest Performance Mode
+
+Since changing Performance Mode and Overclocking Memory Rate has little to no effect in nvidia-settings, try this:
+
+- Setting Coolbits to 24 or 28 and remove Powermizer RegistryDwords -> Restart X - find out max. Clock and Memory rate. (this can be LOWER than what your gfx card reports after booting!):
+
+```
+nvidia-smi -q -d SUPPORTED_CLOCKS
+
+```
+
+- set rates for GPU 0:
+
+```
+sudo nvidia-smi -i 0 -ac memratemax,clockratemax
+
+```
+
+After setting the rates the max. Performance Mode works in nvidia-settings and you can overclock graphics-clock and Memory Transfer Rate.

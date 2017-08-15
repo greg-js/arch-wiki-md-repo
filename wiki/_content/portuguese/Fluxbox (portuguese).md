@@ -39,7 +39,7 @@ A instalação é tão fácil quanto:
 
 ### Método 1: Gerenciadores de Login KDM/GDM/LightDM
 
-Usuários do [KDM](/index.php?title=KDM_(Portugu%C3%AAs)&action=edit&redlink=1 "KDM (Português) (page does not exist)"), [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") e [LightDM](/index.php/LightDM_(Portugu%C3%AAs) "LightDM (Português)") deverão encontrar uma nova entrada referente ao fluxbox de forma automática na lista de sessões disponíveis. Apenas selecione o fluxbox quando logando.
+Usuários do KDM, [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") e LightDM deverão encontrar uma nova entrada referente ao fluxbox de forma automática na lista de sessões disponíveis. Apenas selecione o fluxbox quando logando.
 
 ### Método 2: ~/.xinitrc
 

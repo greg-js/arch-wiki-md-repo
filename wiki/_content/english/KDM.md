@@ -1,6 +1,6 @@
 KDM (KDE Display Manager) is the login manager of [KDE](/index.php/KDE "KDE"). It supports themes, auto-logging, session type choice, and numerous other features.
 
-**Note:** **KDM** is not available anymore in Plasma 5\. Using [SDDM](/index.php/SDDM "SDDM") as DM is recommended, as it provides better integration with the Plasma 5 theme.
+**Note:** <a class="mw-selflink selflink">KDM</a> is not available anymore in Plasma 5\. Using [SDDM](/index.php/SDDM "SDDM") as DM is recommended, as it provides better integration with the Plasma 5 theme.
 
 ## Contents
 

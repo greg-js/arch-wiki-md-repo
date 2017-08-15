@@ -224,6 +224,8 @@ Now that the certificate files have been created copy them to `/etc/openldap/ssl
 
 Edit the daemon configuration file (`/etc/openldap/slapd.conf`) to tell LDAP where the certificate files reside by adding the following lines:
 
+**Note:** Current versions of OpenLDAP appear to use GnuTLS and don't know how to handle the DEFAULT TLSCipherSuite, failing to start with an obscure error message `TLS init def ctx failed: -1`. A similar directive for GnuTLS appears to be `NORMAL`
+
 ```
 # Certificate/SSL Section
 TLSCipherSuite DEFAULT

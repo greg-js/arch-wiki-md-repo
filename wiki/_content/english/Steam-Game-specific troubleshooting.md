@@ -63,7 +63,8 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [27 Defender's Quest: Valley of the Forgotten](#Defender.27s_Quest:_Valley_of_the_Forgotten)
 *   [28 Dirt](#Dirt)
 *   [29 Divinity: Original Sin - Enhanced Edition](#Divinity:_Original_Sin_-_Enhanced_Edition)
-    *   [29.1 Game doesn't start when using Bumblebee optirun or primusrun](#Game_doesn.27t_start_when_using_Bumblebee_optirun_or_primusrun)
+    *   [29.1 Game does not start when using Bumblebee optirun or primusrun](#Game_does_not_start_when_using_Bumblebee_optirun_or_primusrun)
+    *   [29.2 Game does not work with amdgpu](#Game_does_not_work_with_amdgpu)
 *   [30 Don't Starve](#Don.27t_Starve)
     *   [30.1 No sound](#No_sound_3)
 *   [31 Dota 2](#Dota_2)
@@ -624,7 +625,7 @@ Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
 ## Divinity: Original Sin - Enhanced Edition
 
-### Game doesn't start when using Bumblebee optirun or primusrun
+### Game does not start when using Bumblebee optirun or primusrun
 
 Edit `*gamedir*/runner.sh` to use primusrun:
 
@@ -632,6 +633,40 @@ Edit `*gamedir*/runner.sh` to use primusrun:
 LD_LIBRARY_PATH="." primusrun ./EoCApp
 
 ```
+
+### Game does not work with amdgpu
+
+It is a known bug and they have no intention of fixing it, see [the bug](https://bugs.freedesktop.org/show_bug.cgi?id=93551).
+
+Workaround:
+
+Get the following file: [https://bugs.freedesktop.org/attachment.cgi?id=125302](https://bugs.freedesktop.org/attachment.cgi?id=125302) and rename it to `shim.c`
+
+Then execute
+
+```
+$ gcc -shared -fpic shim.c -o divhack.so
+
+```
+
+Next, start *steam* and open a console, change to the diviniti directory with
+
+```
+$ cd ~/.steam/steam/steamapps/common/Divinity Original Sin Enhanced Edition
+
+```
+
+Edit the contained `runner.sh` as follows:
+
+```
+export MESA_GL_VERSION_OVERRIDE=4.2
+export MESA_GLSL_VERSION_OVERRIDE=420
+export LD_PRELOAD=/path/to/divhack.so
+export LD_LIBRARY_PATH="."
+./EoCApp
+```
+
+Then just start the game.
 
 ## Don't Starve
 

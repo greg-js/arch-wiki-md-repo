@@ -279,8 +279,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [Pantheon Calculator](https://launchpad.net/pantheon-calculator)
 [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) | [Scratch](https://launchpad.net/scratch)
 [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Pantheon Photos](https://launchpad.net/pantheon-photos)
-[pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) | [Audience](https://launchpad.net/audience)
-[audience](https://www.archlinux.org/packages/?name=audience) | [Epiphany](/index.php/Epiphany "Epiphany")
+[pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) | Pantheon Videos
+[pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) | [Epiphany](/index.php/Epiphany "Epiphany")
 [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
 | [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3

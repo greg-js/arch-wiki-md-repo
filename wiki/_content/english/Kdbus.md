@@ -1,4 +1,4 @@
-kdbus is an alternative in-kernel implementation of [D-Bus](/index.php/D-Bus "D-Bus").
+[kdbus](https://www.freedesktop.org/wiki/Software/systemd/kdbus/) is an alternative in-kernel implementation of [D-Bus](/index.php/D-Bus "D-Bus").
 
 ## Installation
 

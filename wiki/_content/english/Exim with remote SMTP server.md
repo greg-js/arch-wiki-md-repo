@@ -6,11 +6,7 @@ This document describes how to set up Exim (a mail transfer agent) to use a remo
 *   [2 Configuration](#Configuration)
     *   [2.1 Hide machine name](#Hide_machine_name)
 *   [3 Update: 11-Feb-05](#Update:_11-Feb-05)
-*   [4 Update: 10-Feb-08](#Update:_10-Feb-08)
-*   [5 Update 10-Oct-15](#Update_10-Oct-15)
-*   [6 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 451 Temporary local problem](#451_Temporary_local_problem)
+*   [4 Update 10-Oct-15](#Update_10-Oct-15)
 
 ## Installation
 
@@ -20,17 +16,10 @@ This document describes how to set up Exim (a mail transfer agent) to use a remo
 
 Edit `/etc/mail/exim.conf` and add or change the following:
 
-In Main Configuration Settings uncomment `primary_hostname` and add the hostname of your box (see the `/etc/hostname` file):
-
-```
-primary_hostname = myhostname          # change to your hostname
-
-```
-
 At the end of the Routers Configuration section add:
 
 ```
-pass*on*to_isp:
+smarthost:
   driver = manualroute
   domains = !+local_domains
   transport = remote_smtp
@@ -65,11 +54,7 @@ By the way, I should note: my Exim server does not receive any emails directly f
 
 Anyway, here is what worked for me.
 
-I did not need to update `primary_hostname`. If you leave it commented out, like this:
-
- `# primary_hostname =` 
-
-then exim will just automatically use whatever your system's `hostname` command outputs. (i.e., the `HOSTNAME` that you have set in rc.conf.) I very much DID need to update this line:
+I very much DID need to update this line:
 
  `domainlist local_domains = @` 
 
@@ -116,7 +101,7 @@ That router might be desired in some configurations, but not this one. That will
 #  ignore*target*hosts = 0.0.0.0 : 127.0.0.0/8
 #  no_more
 
-pass*on*to_isp:
+smarthost:
   driver = manualroute
   domains = !+local_domains
   transport = remote_smtp
@@ -137,28 +122,6 @@ And uncomment and add your local user account to the `root:` line:
 # Person who should get root's mail
 root: johndoe
 
-```
-
-Hope this all spares someone some hair-pulling and lost sleep down the road. I wish I had read an entry like this before I started - I would not be so tired right now!
-
-## Update: 10-Feb-08
-
-```
-pass*on*to_isp:
-  driver = manualroute
-  domains = !+local_domains
-  transport = remote_smtp
-  route_list = * smtp.myisp.com        # change to the desired smtp server
-```
-
-should be changed to
-
-```
-send_to_gateway:
-  driver = manualroute
-  domains = !+local_domains
-  transport = remote_smtp
-  route_list = * smtp.myisp.com        # change to the desired smtp server
 ```
 
 ## Update 10-Oct-15
@@ -200,62 +163,3 @@ I found the information here a little confusing and may be out of date. The foll
 ```
 
 I.e. just comment out the dnslookup block and add the smarthost block plus the single rewrite rule (last line above). That line is added just after the "begin rewrite" section. I was getting DNS timeouts for the "require verify = sender" for most messages so I had to disable that also. Restart exim and it is good to go.
-
-## Using Gmail as smarthost
-
-In the beginning of the exim conf file, you must enable TLS using
-
- `tls_advertise_hosts = +local_network : *.gmail.com` 
-
-or to advertise tls to all hosts
-
- `tls_advertise_hosts = *` 
-
-More information about TLS can be found in the [exim documentation](http://www.exim.org/exim-html-current/doc/html/spec_html/ch-encrypted_smtp_connections_using_tlsssl.html).
-
-**Note:** The following must be put in the appropriate sections of the configuration file, eg, after **begin authenticators**.
-
-Add a router before or instead of the dnslookup router:
-
-```
-gmail_route:
-  driver = manualroute
-  transport = gmail_relay
-  route_list = * smtp.gmail.com
-```
-
-Add a transport:
-
-```
-gmail_relay:
-  driver = smtp
-  port = 587
-  tls_verify_certificates = /etc/ssl/certs/ca-certificates.crt
-  # this forces host verification.
-  tls_verify_hosts = smtp.gmail.com
-  hosts_require_auth = <; $host_address
-  hosts_require_tls = <; $host_address
-```
-
-Because of host verification, your exim log might contain
-
- `SSL verify error: certificate name mismatch: "/C=US/ST=California/L=Mountain View/O=Google Inc/CN=smtp.gmail.com"` 
-
-But this has no effect on mail-delivery and can be ignored. Add an authenticator (replacing myaccount@gmail.com and mypassword with your own account details):
-
-```
-gmail_login:
-  driver = plaintext
-  public_name = LOGIN
-  hide client_send = : myaccount@gmail.com : mypassword
-```
-
-`$host_address` is used for `hosts_require_auth` and `hosts_require_tls` instead of smtp.gmail.com to avoid occasional 530 5.5.1 Authentication Required errors. These are caused by the changing IP addresses in DNS queries for smtp.gmail.com. `$host_address` will expand to the particular IP address that was resolved by the `gmail_route` router.
-
-For added security, use a per-application password. This works with Google Apps accounts as well.
-
-## Troubleshooting
-
-### 451 Temporary local problem
-
-If you are getting a "451 Temporary Local Problem" when testing SMTP, you are probably sending as root. By default Exim will not allow you to send as root.

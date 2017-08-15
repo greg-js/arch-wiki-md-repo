@@ -271,18 +271,15 @@ The service is available with [systemd](https://www.archlinux.org/packages/?name
 
 For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools), and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
 
-If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to `man 1 systemd-nspawn` for an exhaustive list of options.
+If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to [systemd-nspawn(1)](http://man7.org/linux/man-pages/man1/systemd-nspawn.1.html) for an exhaustive list of options.
 
-Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See `systemd-resolved.service(8)` for more details.
+Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See [systemd-resolved.service(8)](http://man7.org/linux/man-pages/man8/systemd-resolved.service.8.html) for more details.
 
 **Tip:** Before you start to configure your container network, it is useful to:
 
-*   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with `systemd-networkd` and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
-*   disable the `systemd-nspawn@.service` and use the `systemd-nspawn -bnD /path_to/your_container/` command as root to boot the container. To log off and shutdown inside the container `systemctl poweroff` is used as root. Once the network setting meets your requirements, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-nspawn@.service`
-*   disable the `dhcpcd.service` if enabled on your system, since it activates *dhcpcd* on **all** interfaces
-*   make sure you have no [netctl](/index.php/Netctl "Netctl") profiles activated in the container, and ensure that `systemd-networkd.service` is neither enabled nor started
+*   disable all your [netctl](/index.php/Netctl "Netctl") (host and container), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (host and container), <a class="mw-selflink selflink">systemd-networkd</a> (container only) and `systemd-nspawn@.service` (host only) services to avoid potential conflicts and to ease debugging
+*   make sure [packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") is enabled if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   make sure you do not have any [iptables](/index.php/Iptables "Iptables") rules which can block traffic
-*   make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
 
 **Note:** For the set-up described below,
@@ -340,7 +337,7 @@ If you did not want to configure a DNS in `/etc/resolv.conf` and want to rely on
 
 ```
 
-See `systemd-resolved.service(8)` for more details.
+See [systemd-resolved.service(8)](http://man7.org/linux/man-pages/man8/systemd-resolved.service.8.html) for more details.
 
 **Note:** Users accessing a system partition via `/usr/bin/arch-chroot` from [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), will need to create the symlink outside of the chroot, on the mounted partition. This is due to arch-chroot linking the file to the live environment.
 
@@ -442,7 +439,7 @@ As we want to give a separate IP for host and container, we need to *Disconnect*
 
 #### Notice
 
-*   we have now one IP address for Br0 on the host, and one for host0 in the container
+*   we have now one IP address for `br0` on the host, and one for `host0` in the container
 *   two new interfaces have appeared: `vb-*MyContainer*` in the host and `host0` in the container. This comes as a result of the `--network-bridge=br0` option. This option *implies* another option, `--network-veth`. This means a *virtual Ethernet link* has been created between host and container.
 *   the DHCP address on `host0` comes from the system `/usr/lib/systemd/network/80-container-host0.network` file.
 *   on host

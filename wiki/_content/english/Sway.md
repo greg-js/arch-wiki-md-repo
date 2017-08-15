@@ -7,9 +7,8 @@
 *   [1 Status](#Status)
 *   [2 Installation](#Installation)
 *   [3 Starting sway](#Starting_sway)
-    *   [3.1 From a terminal](#From_a_terminal)
+    *   [3.1 From a TTY](#From_a_TTY)
     *   [3.2 Using a display manager](#Using_a_display_manager)
-    *   [3.3 From X](#From_X)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
     *   [4.2 Statusbar](#Statusbar)
@@ -45,17 +44,13 @@ A detailed accounting of what features have been implemented and what features a
 
 **Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
 
-### From a terminal
+### From a TTY
 
-You can start sway by simply typing `sway` in a terminal.
+You can start sway by simply typing `sway` from your TTY.
 
 ### Using a display manager
 
 The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by modern display managers like [GDM](/index.php/GDM "GDM") and [SDDM](/index.php/SDDM "SDDM").
-
-### From X
-
-If you want to start *sway* in an X session for testing purposes it is possible to start it as a regular program.
 
 ## Configuration
 

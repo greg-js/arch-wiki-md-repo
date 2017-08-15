@@ -327,7 +327,7 @@ In `/dev/sd**x1**` you must replace **x** with the first free letter after the l
 
 First, download the program from [here](http://sourceforge.net/projects/win32diskimager/). Next, extract the archive and run the executable. Now, select the Arch Linux ISO under the `Image File` section and the USB flash device letter (for example, [D:\]) under the `Device` section. Finally, click `Write` when ready.
 
-**Note:** After installation, you may need to restore the USB flash drive following a process as outlined [here](#How_to_restore_the_USB_drive).
+**Note:** After installation, you may need to restore the USB flash drive following a process as outlined in [#Using dd](#Using_dd).
 
 #### USBWriter for Windows
 

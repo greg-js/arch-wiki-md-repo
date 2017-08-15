@@ -283,7 +283,7 @@ Requisições de remoção podem ser negadas, caso em que você provavelmente se
 
 **Note:** aur-mirror não está mais disponível
 
-O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4.
+O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4 em Agosto de 2015.
 
 ## Tradução da interface web
 

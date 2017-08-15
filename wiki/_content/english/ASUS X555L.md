@@ -14,15 +14,24 @@
 *   WLAN ―requires [Broadcom Classic Firmware from the AUR](https://aur.archlinux.org/packages/b43-firmware-classic/) to be installed and modprobed, as well as any other WLAN drivers to be blacklisted.
 *   [FN] F5 and F6 keys for internal display brightness ―special thanks to [Erkexzcx](/index.php/User:Erkexzcx "User:Erkexzcx") who advised me of his [page for the Asus N550JV](/index.php/ASUS_N550JV "ASUS N550JV"). Edit /etc/default/grub so that the line
 
-> GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+
+```
 
 becomes
 
-> GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi= "
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi= "
+
+```
 
 Yes, there is a blank space in "acpi_osi= ". Next, rebuild your grub:
 
-> sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+```
 
 and reboot.
 

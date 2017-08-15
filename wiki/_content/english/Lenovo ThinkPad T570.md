@@ -4,6 +4,7 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 CPU](#CPU)
     *   [2.2 Bumblebee](#Bumblebee)
+    *   [2.3 Poweroff](#Poweroff)
 
 ## Installation
 
@@ -18,3 +19,7 @@ Install [this BIOS update](http://pcsupport.lenovo.com/de/de/downloads/ds120370)
 ### Bumblebee
 
 [Until bbswitch is updated to support the new power management method](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee"), add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+### Poweroff
+
+If poweroff does not work, try adding `acpi=noirq` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and boot once. (Then you can remove it again.) Please report here if it helps or not.

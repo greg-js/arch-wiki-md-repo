@@ -78,7 +78,7 @@ If you want non-root users to be able to write to the USB stick, you can issue t
 
 #### As normal user with fstab
 
-See [Fstab#Writing to FAT32 as Normal User](/index.php/Fstab#Writing_to_FAT32_as_Normal_User "Fstab") if you want normal user to do the mount/unmount action.
+See [Writing on a FAT32 partition as a normal user](/index.php/Writing_on_a_FAT32_partition_as_a_normal_user "Writing on a FAT32 partition as a normal user") if you want normal user to do the mount/unmount action.
 
 ## Troubleshooting
 

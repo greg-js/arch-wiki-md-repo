@@ -222,22 +222,7 @@ module-bluez5-discover
 
 This is very likely to occur when the Bluetooth and the WiFi share the same chip as they share the same physical antenna and possibly band range (2.4GHz). Although this works seamlessly on Windows, this is not the case on Linux.
 
-In order to fix this, the btcoex_enable flag of the Bluetooth module needs to be set. You can see the name of this module by checking lsmod:
-
-```
-$ lsmod | grep bluetooth
-bluetooth             479232  32 btrtl,btintel,bnep,btbcm,rfcomm,ath3k,btusb
-
-```
-
-You'll need the athNk (where N is a number). Then use modprobe to set the flag:
-
-```
-# sudo modprobe ath3k btcoex_enable=1
-
-```
-
-Another possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
+A possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
 
 #### Connecting works, but I cannot play sound
 

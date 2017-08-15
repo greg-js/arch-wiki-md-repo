@@ -19,7 +19,7 @@ It is recommended that it is used in conjunction with [Midnight Commander](https
 
 #### Configure needed kernel modules
 
-Refer to [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") and make sure the modules `usbserial` and `usb_storage` are loaded.
+Refer to [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules") to make sure the modules `usbserial` and `usb_storage` are loaded.
 
 #### Install iRiver driver/manager software
 

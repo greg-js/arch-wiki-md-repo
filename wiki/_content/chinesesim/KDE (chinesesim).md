@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-01，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=479881)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-13，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=483740)可以查看翻译后英文页面的改动。
 
-KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
+KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成的软件项目。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
 ## Contents
 
@@ -77,9 +77,10 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
         *   [6.6.5 Nvidia 显卡屏幕撕裂](#Nvidia_.E6.98.BE.E5.8D.A1.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
         *   [6.6.6 Plasma 光标有时显示不正确](#Plasma_.E5.85.89.E6.A0.87.E6.9C.89.E6.97.B6.E6.98.BE.E7.A4.BA.E4.B8.8D.E6.AD.A3.E7.A1.AE)
     *   [6.7 Plasma 5 下的声音问题](#Plasma_5_.E4.B8.8B.E7.9A.84.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
-        *   [6.7.1 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
-            *   [6.7.1.1 在播放任何声音时出现 "返回默认" 消息](#.E5.9C.A8.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
-            *   [6.7.1.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
+        *   [6.7.1 KDE 睡眠后没声音](#KDE_.E7.9D.A1.E7.9C.A0.E5.90.8E.E6.B2.A1.E5.A3.B0.E9.9F.B3)
+        *   [6.7.2 ALSA 相关的问题](#ALSA_.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
+            *   [6.7.2.1 在播放任何声音时出现 "返回默认" 消息](#.E5.9C.A8.E6.92.AD.E6.94.BE.E4.BB.BB.E4.BD.95.E5.A3.B0.E9.9F.B3.E6.97.B6.E5.87.BA.E7.8E.B0_.22.E8.BF.94.E5.9B.9E.E9.BB.98.E8.AE.A4.22_.E6.B6.88.E6.81.AF)
+            *   [6.7.2.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
     *   [6.8 Inotify 文件夹监控上限](#Inotify_.E6.96.87.E4.BB.B6.E5.A4.B9.E7.9B.91.E6.8E.A7.E4.B8.8A.E9.99.90)
     *   [6.9 自动挂载NFS卷时卡死](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BDNFS.E5.8D.B7.E6.97.B6.E5.8D.A1.E6.AD.BB)
     *   [6.10 没有挂起/休眠选项](#.E6.B2.A1.E6.9C.89.E6.8C.82.E8.B5.B7.2F.E4.BC.91.E7.9C.A0.E9.80.89.E9.A1.B9)
@@ -108,7 +109,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
 
 ## 启动 Plasma
 
-**注意:** 虽然可以使用 [Wayland](/index.php/Wayland "Wayland") 启动 Plasma，Plasma 5.10 任存在一些缺失的特性和已知问题。详见[Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland)。使用 [Xorg](/index.php/Xorg "Xorg") 获得最完整和稳定的体验。
+**注意:** 虽然可以使用 [Wayland](/index.php/Wayland "Wayland") 启动 Plasma，Plasma 5.10 任存在一些缺失的特性和已知问题。问题清单详见 [Plasma 5.10 Errata](https://community.kde.org/Plasma/5.10_Errata#Wayland)，当前开发状况详见 [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg "Xorg") 获得最完整和稳定的体验。
 
 Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") 以图形方式启动,也可从控制台手动启动。
 
@@ -291,7 +292,9 @@ Plasma 访问 SMB 共享的能力有限。写入到 Windows 共享存在问题�
 
 ```
 
-可能有必要也可能没必要将 `.local` 附加到 hostname。（原文就是这样，我也会绝望）
+可能有必要也可能没必要将 `.local` 附加到 hostname。
+
+另一种简单的解决办法则是使用 [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/)。它在 *系统设置* > *网络驱动* 中提供了基本相同的功能。
 
 ### KDE 桌面活动
 
@@ -299,7 +302,7 @@ KDE 桌面活动是类似于“虚拟桌面”的 Plasma 组件，你可以独�
 
 ### 节能
 
-KDE 集成了一个名为 "**电源管理**"的节能服务，它可以调整系统的节能配置文件及/或（如果支持的话）屏幕的亮度。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) 以便使用 KDE 内置的 "**PowerDevil 电源管理**"的节能服务，它可以调整系统的节能配置文件和/或（如果支持的话）屏幕的亮度。
 
 **注意:** Powerdevil 可能无法 [覆盖](/index.php/Power_management#Power_managers "Power management") 所有的 logind 设置(例如笔记本翻盖动作). 请修改 [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 
@@ -422,7 +425,7 @@ KDE 使用 Baloo 实现文件索引和查找。
 
 在默认情况下，桌面搜索的 KCM 仅显示两个选项：一个将文件夹放入黑名单的面板以及一种一次点击来禁用它的方法。
 
-或者你可以编辑 `~/.config/baloofilerc` 文件[[5]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl disable`。
+或者你可以编辑 `~/.config/baloofilerc` 文件[[5]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl stop` 和 `balooctl disable`。
 
 将文件夹添加到黑名单或完全禁用了Baloo之后，`baloo_file_cleaner` 进程将会自动删除所有不需要的索引文件。它们被存储在 `~/.local/share/baloo/` 。
 
@@ -637,8 +640,6 @@ $ kbuildsycoca5 --noincremental
 
 ```
 
-但愿你的故障已被修复。
-
 ### 清理 akonadi 配置来修复 kmail
 
 首先确保 KMail 不在运行。然后备份配置文件：
@@ -735,6 +736,19 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ### Plasma 5 下的声音问题
 
+#### KDE 睡眠后没声音
+
+如果睡眠后没有声音并且 Kmix 没有显示应该显示的音频设备，可以尝试重新启动 plasmeshell 和 pulseaudio：
+
+```
+$ killall plasmashell
+$ systemctl --user restart pulseaudio.service
+$ plasmashell
+
+```
+
+某些应用程序也可能需要重新启动才能再次播放声音。
+
 #### ALSA 相关的问题
 
 **注意:** 首先保证你已经安装了 [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 和 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)。
@@ -769,25 +783,25 @@ Falling back to default
 
 ### Inotify 文件夹监控上限
 
-如果看到下面警告:
+如果收到以下错误:
 
 ```
 KDE Baloo Filewatch service reached the inotify folder watch limit. File changes may be ignored.
 
 ```
 
-就需要增加 inotify 文件夹监控上限：
+您就需要增加 inotify 文件夹监控上限：
 
 ```
-# echo 10000 > /proc/sys/fs/inotify/max_user_watches
+# echo 524288 > /proc/sys/fs/inotify/max_user_watches
 
 ```
 
-永久设置可以创建文件`/etc/sysctl.d/90-inotify.conf`：
+永久设置可以创建文件`/etc/sysctl.d/40-max-user-watches.conf`：
 
 ```
 #increase inotify watch limit
-fs.inotify.max_user_watches = 10000
+fs.inotify.max_user_watches = 524288
 
 ```
 

@@ -254,7 +254,7 @@ Proprietários de mouses avançados ou incomuns podem descobrir que nem todos os
 
 ### Touchpads de laptop
 
-Muitos laptops usam dispositivos de ponteiro "touchpad" [Synaptics](http://www.synaptics.com/) ou [ALPS](http://www.alps.com/). Esses, e vários outros modelos de touchpad, usam o driver de entrada do Synaptics; veja [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") para detalhes de instalação e configuração.
+Muitos laptops usam dispositivos de ponteiro "touchpad" [Synaptics](https://www.synaptics.com/) ou [ALPS](http://www.alps.com/). Esses, e vários outros modelos de touchpad, usam o driver de entrada do Synaptics; veja [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") para detalhes de instalação e configuração.
 
 ### TrackPoints
 

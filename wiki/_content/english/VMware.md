@@ -580,4 +580,4 @@ Remember to also [disable](/index.php/Disable "Disable") and remove the services
 
 ```
 
-You may also want to have a look at the module directories in `/usr/lib/modules/*kernel_name*/misc/` for any leftovers.
+You may also want to have a look at the module directories in `/usr/lib/modules/*kernel_name*/misc/` for any leftovers, and remove `/etc/init.d/` if now empty.

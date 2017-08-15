@@ -876,9 +876,11 @@ See [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq") to ena
 
 ### Configuring MAC Address Randomization
 
-As of version 1.4.0, NetworkManager supports two types MAC Address Randomization: randomization during scanning, and stable randomization. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf`.
+MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
-Randomization during Wi-Fi scanning is enabled by default starting on version 1.2.0, and it can be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf`:
+NetworkManager supports two types MAC Address Randomization: randomization during scanning, and for network connections. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf` or by creating a separate configuration file in `/etc/NetworkManager/conf.d` which is recommended since the aforementioned config file may be overwritten by NetworkManager.
+
+Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`. This results in a randomly generated MAC address being used when probing for wireless networks.
 
 ```
 [device]
@@ -886,21 +888,22 @@ wifi.scan-rand-mac-address=no
 
 ```
 
-**Tip:** Disabling MAC address randomization may be needed for stable connection, see e.g. [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101).
+**Tip:** Disabling MAC address randomization may be needed for stable connection. See [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101).
 
-In contrast, stable randomization generates a different MAC address for each different connection. This is specially useful when, for example, a portal remembers your login status based on your MAC address. To enable this mode, you can use the option
+MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
 
-```
-[connection]
-wifi.cloned-mac-address=random
+In terms of MAC randomization the most important modes are stable and random. Stable generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, random will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`.
 
 ```
+[device-mac-randomization]
+# "yes" is already the default for scanning
+wifi.scan-rand-mac-address=yes
 
-or
-
-```
-[connection]
+[connection-mac-randomization]
+# Randomize MAC for every ethernet connection
 ethernet.cloned-mac-address=random
+# Generate a random MAC for each WiFi and associate the two permanently.
+wifi.cloned-mac-address=stable
 
 ```
 
@@ -908,7 +911,7 @@ You can read more about it [here](https://blogs.gnome.org/thaller/2016/08/26/mac
 
 ### Enable IPv6 Privacy Extensions
 
-See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
+See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
 
 ### Working with wired connections
 

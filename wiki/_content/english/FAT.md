@@ -37,7 +37,7 @@ If the partition type detected by mount is VFAT then it will run the `/usr/bin/m
 mount -i -t vfat -oiocharset=utf8,fmask=0000,dmask=0000 "$@"
 ```
 
-## Writing to FAT32 as Normal User
+## Writing to FAT32 as normal user
 
 To write on a FAT32 partition, you must make a few changes to the [fstab](/index.php/Fstab "Fstab") file.
 

@@ -49,10 +49,10 @@ function proxy_on() {
             return 1
         fi
 
-        export http_proxy="http://$1/"
-        export https_proxy=$http_proxy
-        export ftp_proxy=$http_proxy
-        export rsync_proxy=$http_proxy
+        export http_proxy="http://$1/" \
+               https_proxy=$http_proxy \
+               ftp_proxy=$http_proxy \
+               rsync_proxy=$http_proxy
         echo "Proxy environment variable set."
         return 0
     fi
@@ -66,21 +66,19 @@ function proxy_on() {
 
     echo -n "server: "; read server
     echo -n "port: "; read port
-    export http_proxy="http://$pre$server:$port/"
-    export https_proxy=$http_proxy
-    export ftp_proxy=$http_proxy
-    export rsync_proxy=$http_proxy
-    export HTTP_PROXY=$http_proxy
-    export HTTPS_PROXY=$http_proxy
-    export FTP_PROXY=$http_proxy
-    export RSYNC_PROXY=$http_proxy
+    export http_proxy="http://$pre$server:$port/" \
+           https_proxy=$http_proxy \
+           ftp_proxy=$http_proxy \
+           rsync_proxy=$http_proxy \
+           HTTP_PROXY=$http_proxy \
+           HTTPS_PROXY=$http_proxy \
+           FTP_PROXY=$http_proxy \ 
+           RSYNC_PROXY=$http_proxy
 }
 
 function proxy_off(){
-    unset http_proxy
-    unset https_proxy
-    unset ftp_proxy
-    unset rsync_proxy
+    unset http_proxy https_proxy ftp_proxy rsync_proxy \
+          HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY
     echo -e "Proxy environment variable removed."
 }
 
@@ -97,7 +95,7 @@ As an alternative, you may want to use the following script. Change the strings 
    PROXY_ENV="http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY"
    for envar in $PROXY_ENV
    do
-     export $envar=$1
+      export $envar=$1
    done
    for envar in "no_proxy NO_PROXY"
    do
@@ -106,7 +104,11 @@ As an alternative, you may want to use the following script. Change the strings 
  }
 
  clrProxy(){
-   assignProxy "" # This is what 'unset' does.
+    PROXY_ENV="http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY"
+    for envar in $PROXY_ENV
+    do
+       unset $envar
+    done
  }
 
  myProxy(){

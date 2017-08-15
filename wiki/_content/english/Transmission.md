@@ -156,7 +156,7 @@ Choose how you want to run `transmission`:
 
 By default, *transmission* creates a user and a group `transmission`, with its home files at `/var/lib/transmission/`, and runs as this "user". This is a security precaution, so *transmission*, and its downloads, have no access to files outside of `/var/lib/transmission/`. Configuration, operation, and access to downloads needs to be done with "root" privileges (e.g. by using [sudo](/index.php/Sudo "Sudo")).
 
-*   Under the user's own user name.
+*   Under your own user.
 
 To set this up, [override](/index.php/Systemd#Editing_provided_units "Systemd") the provided service file and specify your username:
 

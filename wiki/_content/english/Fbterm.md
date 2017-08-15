@@ -1,4 +1,4 @@
-Fbterm (*F*rame *b*uffer *term*inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg"). Keep in mind that its development has stopped.
+[Fbterm](https://code.google.com/archive/p/fbterm/) (*F*rame *b*uffer *term*inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg"). Keep in mind that its development has stopped.
 
 ## Contents
 

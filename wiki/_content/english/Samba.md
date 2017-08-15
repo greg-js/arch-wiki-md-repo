@@ -178,6 +178,8 @@ For a lightweight method (without support for listing public shares, etc.), only
 
 Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See `man smbclient` for commonly used commands.
 
+**Note:** [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires an /etc/samba/smb.conf file which the utility, touch, can generate (as an empty file), or if [samba](https://www.archlinux.org/packages/?name=samba) is installed, it can be copied from the default [#smb.conf](#smb.conf).
+
 Depending on the [desktop environment](/index.php/Desktop_environment "Desktop environment"), GUI methods may be available. See [#File manager configuration](#File_manager_configuration) for use with a file manager.
 
 **Note:** After installing [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) or [smbclient](https://www.archlinux.org/packages/?name=smbclient), load the `cifs` [kernel module](/index.php/Kernel_module "Kernel module") or reboot to prevent mount fails.

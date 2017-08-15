@@ -821,7 +821,7 @@ If you accidentally install GRUB to a Windows partition, GRUB will write some in
 
 To fix this you will need to use the Windows Recovery Console for your Windows release. Because many computer manufacturers do not include this with their product (many choose to use a recovery partition) Microsoft has made them available for download. If you use XP, look at [this page](http://tips.vlaurie.com/2006/05/recovery-console-for-those-without-an-xp-disk/) to be able to turn the floppy disks to a Recovery CD. Boot the Recovery CD (or enable Windows Recovery mode) and run `fixboot` to repair the partition boot sector. After this, you will have to install GRUB again---this time, to the MBR, not to the Windows partition---to boot Linux.
 
-See [further discussion here](/index.php/MBR#Restoring_a_Windows_boot_record "MBR").
+See [Dual boot with Windows#Restoring a Windows boot record](/index.php/Dual_boot_with_Windows#Restoring_a_Windows_boot_record "Dual boot with Windows") for more information.
 
 ### Edit GRUB entries in the boot menu
 

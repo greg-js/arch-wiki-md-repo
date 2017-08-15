@@ -223,7 +223,7 @@ Para permitir la generación de miniaturas de archivos multimedia o de documento
 
 A continuación, habilite las categorías de miniaturas para el escritorio mediante el *botón derecho* sobre el *fondo del escritorio > Configurar el escritorio > Iconos > Más opciones de vista previa ....*
 
-En *Dolphin*, vaya a *Control > General > Previsualizaciones*.
+En *Dolphin*, vaya a *Control > Configurar Dophin > General > Vistas previas*.
 
 ### Impresión
 

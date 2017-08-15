@@ -16,6 +16,9 @@
 *   [4 Configuring user databases](#Configuring_user_databases)
     *   [4.1 Active Directory](#Active_Directory)
     *   [4.2 MySQL/MariaDB](#MySQL.2FMariaDB_2)
+        *   [4.2.1 Prerequisites](#Prerequisites_2)
+        *   [4.2.2 Creation of the sogo_users table](#Creation_of_the_sogo_users_table)
+        *   [4.2.3 Modify SOGo config file](#Modify_SOGo_config_file)
     *   [4.3 OpenLDAP](#OpenLDAP)
     *   [4.4 PostgreSQL](#PostgreSQL_2)
 *   [5 Dovecot configurtion](#Dovecot_configurtion)
@@ -330,7 +333,98 @@ Finally, with Samba after 4.3.8 or 4.2.2, non-encrypted communication is disable
 
 ### MySQL/MariaDB
 
-To be added...
+Following procedure is valid for mariadb 10.1.25-1 but should also work for MySQL. For debugging purposes, enable all debugging switches, so problems can be identified. In */etc/sogo/sogo.conf* set
+
+```
+ /* Debug */
+ SOGoDebugRequests = YES;
+ SoDebugBaseURL = YES;  
+ ImapDebugEnabled = YES;
+ LDAPDebugEnabled = YES;
+ PGDebugEnabled = YES;
+ MySQL4DebugEnabled = YES;
+ SOGoUIxDebugEnabled = YES;
+ WODontZipResponse = YES;
+ WOLogFile = /var/log/sogo/sogo.log;
+
+```
+
+If problems occure, check via *journalctl -xe*
+
+#### Prerequisites
+
+1.  Ensure the sogo user is created in the database (see [https://wiki.archlinux.org/index.php/SOGo#MySQL.2FMariaDB](https://wiki.archlinux.org/index.php/SOGo#MySQL.2FMariaDB)).
+2.  Ensure that there is a database named sogo with the database scheme utf8 (and not utf8mb4). This is necessary because the automatic creation of the *sogo_sessions_folder* table will fail otherwise:
+
+```
+ SQL: SELECT count(*) FROM sogo_sessions_folder;
+ ERROR: Table 'sogo.sogo_sessions_folder' doesn't exist
+ SQL: CREATE TABLE sogo_sessions_folder ( c_id VARCHAR(255) PRIMARY KEY, c_value VARCHAR(255) NOT NULL, c_creationdate INT NOT NULL, c_lastseen INT NOT NULL);
+ ERROR: Specified key was too long; max key length is 767 bytes          <-- This happens because VARCHAR(255) is too big as primary key for utf8mb4
+
+```
+
+Scheme can be altered via
+
+```
+ ALTER SCHEMA `sogo`  DEFAULT CHARACTER SET utf8
+
+```
+
+#### Creation of the sogo_users table
+
+The *sogo_users* table has to be created manually:
+
+Change user and create table with comments, explaining what each column is (see [https://sogo.nu/files/docs/SOGoInstallationGuide.html#_authentication_using_sql](https://sogo.nu/files/docs/SOGoInstallationGuide.html#_authentication_using_sql))
+
+```
+ USE sogo;
+ CREATE TABLE `sogo`.`sogo_users` (
+ `c_uid` VARCHAR(128) NOT NULL COMMENT 'c_uid: will be used for authentication - it’s a username or username@domain.tld',  
+ `c_name` VARCHAR(128) NOT NULL COMMENT 'c_name: will be used to uniquely identify entries - which can be identical to c_uid',
+ `c_password` VARCHAR(128) NOT NULL COMMENT 'c_password: password of the user, plain text, crypt, md5 or sha encoded',
+ `c_cn` VARCHAR(128) NULL COMMENT 'c_cn: the user’s common name',
+ `mail` VARCHAR(128) NOT NULL COMMENT 'mail: the user’s email address',  PRIMARY KEY (`c_uid`));
+
+```
+
+Create a user
+
+*   Generate the MD5 sum of the password (MD5 is still safe for password checking as of August 2017\. On top of that, webaccess should be done via SSL anyways).
+
+```
+ echo -n 'mypassword' | md5sum
+ 34819d7beeabb9260a5c854bc85b3e44  -
+
+```
+
+*   Create the entry for this user
+
+```
+ INSERT INTO `sogo`.`sogo_users` (`c_uid`, `c_name`, `c_password`, `c_cn`, `mail`) VALUES ('username', 'username', '34819d7beeabb9260a5c854bc85b3e44', 'Archie Username', 'archie@example.com');
+
+```
+
+#### Modify SOGo config file
+
+Insert or modify in */etc/sogo/sogo.conf* (change the password to the chosen password for the sogo mysql user):
+
+```
+  SOGoUserSources =
+    (
+      {
+        type = sql;
+        id = directory;
+        viewURL = "mysql://sogo:**yoursogopassword**@127.0.0.1:3306/sogo/sogo_users";
+        canAuthenticate = YES;
+        isAddressBook = YES;
+        userPasswordAlgorithm = md5;
+      }
+    );
+
+```
+
+Alternatively, a view can be used instead of the table directly. More information about which values are available for *SOGoUserSources* can be found here: [https://sogo.nu/files/docs/SOGoInstallationGuide.html#_authentication_using_sql](https://sogo.nu/files/docs/SOGoInstallationGuide.html#_authentication_using_sql)
 
 ### OpenLDAP
 

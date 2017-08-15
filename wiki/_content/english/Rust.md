@@ -216,7 +216,7 @@ Atom supports Rust programming with the available [Tokamak IDE](https://vertexcl
 
 #### IntelliJ IDEA
 
-[IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA") has a [Rust plugin](https://github.com/intellij-rust/intellij-rust). The same plugin also works with CLion. When configuring the toolchain, use rustup to download the source (`rustup component add rust-src`), and then select `~/.rustup/toolchains/<your toolchain>/bin` as the toolchain location.
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) has a [Rust plugin](https://github.com/intellij-rust/intellij-rust). The same plugin also works with CLion. When configuring the toolchain, use rustup to download the source (`rustup component add rust-src`), and then select `~/.rustup/toolchains/<your toolchain>/bin` as the toolchain location.
 
 #### Visual Studio Code
 

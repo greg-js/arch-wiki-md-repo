@@ -14,7 +14,7 @@
 
 ## Installation
 
-[Install](/index.php/Pacman#Installing_packages "Pacman") [hexchat](https://www.archlinux.org/packages/?name=hexchat). The development version [hexchat-git](https://aur.archlinux.org/packages/hexchat-git/) is available in the [AUR](/index.php/AUR "AUR"). For the legacy version, install [xchat](https://www.archlinux.org/packages/?name=xchat).
+[Install](/index.php/Pacman#Installing_packages "Pacman") [hexchat](https://www.archlinux.org/packages/?name=hexchat). The development version [hexchat-git](https://aur.archlinux.org/packages/hexchat-git/) is available in the [AUR](/index.php/AUR "AUR"). For another fork of the legacy version, install [xchat-se](https://aur.archlinux.org/packages/xchat-se/).
 
 ## Configuration
 

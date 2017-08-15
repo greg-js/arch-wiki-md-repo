@@ -62,7 +62,7 @@ Due to the Arch Linux has not been support officially,there are some addition wo
 
 ```
 
-**2\. Edit `/etc/httpd/conf/httpd.conf`**
+**2\. Edit /etc/httpd/conf/httpd.conf**
 
 Add the following lines at the end of the file
 
@@ -81,7 +81,7 @@ Make sure the following lines commented or deleted. Apache now is in cgi mode, p
 
 ```
 
-**3\. Edit `/etc/conf.d/apache`**
+**3\. Edit /etc/conf.d/apache**
 
 Uncomment the following line
 
@@ -90,7 +90,7 @@ Uncomment the following line
 
 ```
 
-**4\. Edit `/etc/services`**
+**4\. Edit /etc/services**
 
 Append the following lines to the end of the file.
 
@@ -100,19 +100,19 @@ Append the following lines to the end of the file.
 
 ```
 
-**5\. Edit `/etc/conf.d/postgrey`**
+**5\. Edit /etc/conf.d/postgrey**
 
 Change port from 10030 to 10023
 
-**6\. Edit `/etc/logrotate.d/httpd`**
+**6\. Edit /etc/logrotate.d/httpd**
 
 Comment all lines.
 
-**7\. Edit `/etc/logrotate.d/proftpd`**
+**7\. Edit /etc/logrotate.d/proftpd**
 
 Comment all lines.
 
-**8\. Edit `/etc/rc.conf`**
+**8\. Edit /etc/rc.conf**
 
 Add "named mysqld proftpd saslauthd authdaemond postfix pop3d !pop3d-ssl imapd !imapd-ssl postgrey policyd-weight ispcp_daemon ispcp_network httpd" to DAEMONS array if you want a autostart.
 

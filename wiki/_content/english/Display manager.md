@@ -91,13 +91,12 @@ To add/remove entries to your display manager's session list; create/remove the 
 
 ```
 [Desktop Entry]
-Encoding=UTF-8
 Name=Openbox
 Comment=Log in using the Openbox window manager (without a session manager)
 Exec=/usr/bin/openbox-session
 TryExec=/usr/bin/openbox-session
 Icon=openbox.png
-Type=XSession
+Type=Application
 
 ```
 
@@ -111,12 +110,12 @@ You can also launch an application without any decoration, desktop, or window ma
 
 ```
 [Desktop Entry]
-Encoding=UTF-8
 Name=Web Browser
 Comment=Use a web browser as your session
 Exec=/usr/bin/google-chrome --auto-launch-at-startup
 TryExec=/usr/bin/google-chrome --auto-launch-at-startup
 Icon=google-chrome
+Type=Application
 
 ```
 

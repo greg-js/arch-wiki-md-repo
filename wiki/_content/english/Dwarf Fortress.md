@@ -75,14 +75,14 @@ Alternatively, you can just give that permission to dwarftherapist:
 
 ### quickfort
 
-Quickfort is a utility for Dwarf Fortress that helps you build fortresses from "blueprint" .CSV, .XLS, and .XLSX files.
+[Quickfort](http://www.joelpt.net/quickfort/) is a utility for Dwarf Fortress that helps you build fortresses from "blueprint" .CSV, .XLS, and .XLSX files.
 
 *   [quickfort](https://aur.archlinux.org/packages/quickfort/)
 *   [quickfort-git](https://aur.archlinux.org/packages/quickfort-git/)
 
 ### StoneSense
 
-StoneSense is an isometric world visualizer for Dwarf Fortress, and can be installed with the [dfhack](https://aur.archlinux.org/packages/dfhack/) [AUR](/index.php/AUR "AUR") package.
+[StoneSense](http://dwarffortresswiki.org/index.php/Utility:Stonesense) is an isometric world visualizer for Dwarf Fortress, and can be installed with the [dfhack](https://aur.archlinux.org/packages/dfhack/) [AUR](/index.php/AUR "AUR") package.
 
 If you choose to install StoneSense manually instead of using the AUR package, you'll need the following dependencies:
 

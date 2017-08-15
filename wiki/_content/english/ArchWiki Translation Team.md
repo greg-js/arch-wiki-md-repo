@@ -3,7 +3,7 @@
 1.  If you do not know how to edit wiki pages, read [Help:Editing](/index.php/Help:Editing "Help:Editing").
 2.  Read [Help:i18n](/index.php/Help:I18n "Help:I18n"), which contains comprehensive guidelines for ArchWiki internationalization and localization.
 3.  [Login](/index.php/Special:UserLogin "Special:UserLogin") to be able to edit the wiki.
-4.  Choose a page to translate. You can use the [random page function](/index.php/Special:Random "Special:Random") or translate a page in the [list of priority pages](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Let us take this very page as an example: **ArchWiki Translation Team**.
+4.  Choose a page to translate. You can use the [random page function](/index.php/Special:Random "Special:Random") or translate a page in the [list of priority pages](/index.php/ArchWiki_Translation_Day#List_of_priority_pages "ArchWiki Translation Day"). Let us take this very page as an example: <a class="mw-selflink selflink">ArchWiki Translation Team</a>.
 5.  At the top of the page, click the "edit" tab in the horizontal menu.
 6.  Add an interlanguage link for the language you are going to create. See [Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n").
 7.  Copy the entire page's source code.
@@ -23,7 +23,7 @@
 List here articles that only exist in non-English languages, or that exist in English but are either not fully translated, or are in a worse state than the non-English version. Keep alphabetical order.
 
 | Page | Language | Notes |
-| [1C Enterprise (Русский)](/index.php/1C_Enterprise_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "1C Enterprise (Русский)") | Russian | [1C Enterprise](/index.php/1C_Enterprise "1C Enterprise") exists untranslated |
+| [1C Enterprise (Русский)](/index.php/1C_Enterprise_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "1C Enterprise (Русский)") | Russian |
 | [Asus M50Vm (Русский)](/index.php/Asus_M50Vm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Asus M50Vm (Русский)") | Russian | in Russian only |
 | [CloudCross (Русский)](/index.php/CloudCross_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CloudCross (Русский)") | Russian |
 | [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | Spanish |

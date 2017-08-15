@@ -8,7 +8,7 @@
 
 The configuration file is `/etc/conf.d/webfsd`.
 
-It is set up for systemd. Use systemctl to start, stop, enable, disable webfsd.service.
+It is set up for systemd. Use systemctl to start, stop, enable, disable `webfsd.service`.
 
 An example `/etc/conf.d/webfsd`.
 

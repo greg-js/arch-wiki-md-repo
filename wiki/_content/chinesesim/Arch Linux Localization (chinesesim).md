@@ -125,6 +125,7 @@ export LC_CTYPE=en_US.UTF-8
 *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai)
 *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming)
 *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)
+*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk)
 
 系统字体将默认安装到`/usr/share/fonts`。如果没有root权限或只打算自己使用某些字体，可以直接复制这些字体到`~/.fonts`目录（或其子目录）下面，并把该路径加入/etc/fonts/local.conf中。具体参见后面章节。
 
@@ -136,7 +137,59 @@ export LC_CTYPE=en_US.UTF-8
 
 fontconfig是字体选择的接口，你可以用它去控制单个字体或者字体族的属性，比如hint或者autohint。
 
-另外每个程序中可以设置不同的默认字体，比如Arial或者Tohamo。这些字体的属性由fontconfig控制。所以当字体显示不满意时，首先需要判断是调整字体的种类还是字体的属性。
+另外每个程序中可以设置不同的默认字体，比如Arial或者Tohamo。这些字体的属性由fontconfig控制。所以当字体显示不满意时，首先需要判断是调整字体的种类还是字体的属性。prefer 是据地区代码以A-Z字母表顺序成默认排序，由于 ja-JP 在 zh_{CN,HK,SG,TW} 之前，故优先显示日文字形。
+
+*   修正 Noto Sans CJK 或 adobe source han sans otc fonts/adobe source han serif otc fonts 简体中文显示为异体（日文）字形
+
+安装思源黑体/宋体（adobe source han sans/serif otc fonts)或Google Noto Sans CJK后，在某些情况下（框架未定义地区）汉字字形与标准形态不符，例如门、关、复等字字形与规范中文不符，这是因为日文 prefer（优先度）高于中文导致的，即同一个字的多个字形，由于优先度的关系使日文字形默认显示。
+
+解决方法：
+
+1.安装思源的简体中文字体部分如[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)而非中日韩（CJK)整包。
+
+2.在 locale.conf 中设置中文为默认语言（LANG=zh_{CN,HK,SG,TW}.UTF-8），则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。
+
+3.如果安装的是思源黑体/宋体cjk包或者noto fonts cjk，则手动调整 prefer，即，将中文字形调整到日文字形之前。[[3]](http://tieba.baidu.com/p/4879946717)
+
+以noto fonts 为例，修改文件 /etc/fonts/conf.avail/64-language-selector-prefer.conf 如下，无此文件则创建：
+
+```
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+ <alias>
+ <family>sans-serif</family>
+ <prefer>
+ <family>Noto Sans CJK SC</family>
+ <family>Noto Sans CJK TC</family>
+ <family>Noto Sans CJK JP</family>
+ </prefer>
+ </alias>
+ <alias>
+ <family>monospace</family>
+ <prefer>
+ <family>Noto Sans Mono CJK SC</family>
+ <family>Noto Sans Mono CJK TC</family>
+ <family>Noto Sans Mono CJK JP</family>
+ </prefer>
+ </alias>
+ </fontconfig>
+
+```
+
+保存文件后，若 /etc/fonts 目录下有 conf.d/ 目录，则在该目录中创建指向 /etc/fonts/conf.avail/64-language-selector-prefer.conf 的同名软链接：
+
+```
+ $ sudo ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
+
+```
+
+然后更新字体缓存即可生效：
+
+```
+ $ fc-cache -fv
+
+```
 
 #### fontconfig设置
 
@@ -150,7 +203,7 @@ fontconfig的设置文件是`~/.fonts.conf`（用户）或者`/etc/fonts/conf.d`
 
 *   [fontconfig用户手册](http://www.chinalinuxpub.com/read.php?wid=634)
 *   [Debian中文支持](http://wiki.linux.org.hk/w/Make_Debian_support_Chinese)
-*   [[3]](http://www.higherorder.org/wiki/Fontconfig)
+*   [[4]](http://www.higherorder.org/wiki/Fontconfig)
 
 ### 中文输入法
 
@@ -252,7 +305,7 @@ mplayer xxx.avi -sub xxxxx.srt
 
 #### xine
 
-xine也可以显示中文字幕，但需要制作自己的中文字体。具体可以参考：[[4]](http://forum.ubuntu.org.cn/about2760.html)。
+xine也可以显示中文字幕，但需要制作自己的中文字体。具体可以参考：[[5]](http://forum.ubuntu.org.cn/about2760.html)。
 
 #### gstreamer
 
@@ -260,7 +313,7 @@ xine也可以显示中文字幕，但需要制作自己的中文字体。具体�
 
 ### LaTeX
 
-首先需要安装CJK包，然后需要安装合适的字体。具体可以参考：[[5]](http://www.ctex.org)。
+首先需要安装CJK包，然后需要安装合适的字体。具体可以参考：[[6]](http://www.ctex.org)。
 
 ## 其他中文化问题
 
@@ -345,7 +398,7 @@ pacman -S stardict
 
 ```
 
-stardict默认是不带字典的，需要去[[6]](http://stardict.sourceforge.net/)下载字典安装。安装方法如下：
+stardict默认是不带字典的，需要去[[7]](http://stardict.sourceforge.net/)下载字典安装。安装方法如下：
 
 ```
 tar -xjvf testdict.tar.bz2

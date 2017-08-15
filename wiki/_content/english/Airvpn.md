@@ -1,4 +1,4 @@
-A VPN based on OpenVPN and operated by activists and hacktivists in defence of net neutrality, privacy and against censorship.
+[AirVPN](https://airvpn.org/) is a VPN based on OpenVPN and operated by activists and hacktivists in defence of net neutrality, privacy and against censorship.
 
 ## Contents
 
