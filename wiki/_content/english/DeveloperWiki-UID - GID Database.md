@@ -77,6 +77,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
  smtpf | 93 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | nobody | 99 |
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
+| [minio](https://www.archlinux.org/packages/?name=minio) | minio | 103 |
  nm-openconnect | 104 |
  gitlab | 105 |
  cherokee | 106 |
@@ -216,6 +217,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | nobody | 99 |
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | users | 100 |
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
+| [minio](https://www.archlinux.org/packages/?name=minio) | minio | 103 |
  nm-openconnect | 104 |
  gitlab | 105 |
  cherokee | 106 |

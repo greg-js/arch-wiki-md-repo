@@ -1,4 +1,4 @@
-The Ident service as specified by [RFC 1413](//tools.ietf.org/html/rfc1413) is mostly used by various IRC networks and the occasional old FTP server to ask a remote server which user is making a connection. This method is quite untrustworthy, as the remote host can simply choose to lie.
+The Ident service as specified by RFC 1413 is mostly used by various IRC networks and the occasional old FTP server to ask a remote server which user is making a connection. This method is quite untrustworthy, as the remote host can simply choose to lie.
 
 So you have two choices:
 

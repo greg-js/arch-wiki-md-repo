@@ -47,7 +47,7 @@ Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon]
 
 The following workarounds are available:
 
-*   Set `amdgpu` as first to load in the [Mkinitcpio#Modules](/index.php/Mkinitcpio#Modules "Mkinitcpio") array, e.g. `MODULES="amdgpu radeon"`.
+*   Set `amdgpu` as first to load in the [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES="amdgpu radeon"`.
 *   [Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
 ### AMDGPU PRO

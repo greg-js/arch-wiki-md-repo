@@ -23,6 +23,8 @@ Include = /etc/pacman.d/mirrorlist
 
 Then [upgrade](/index.php/Upgrade "Upgrade") the system.
 
+**Tip:** Run `pacman -Sl multilib` to list all packages in the *multilib* repository. 32-bit library package names begin with `lib32-`.
+
 ## Disabling
 
 To revert to a pure 64-bit system:

@@ -5,18 +5,20 @@ This article gives a quick overview on the configuration of an exim mail server.
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Basic Configuration](#Basic_Configuration)
-    *   [2.1 Main Parameters](#Main_Parameters)
-    *   [2.2 TLS, Security & Authentification](#TLS.2C_Security_.26_Authentification)
-    *   [2.3 Routing, Transport & Retry](#Routing.2C_Transport_.26_Retry)
+*   [2 Basic configuration](#Basic_configuration)
+    *   [2.1 Main parameters](#Main_parameters)
+    *   [2.2 TLS, security & authentification](#TLS.2C_security_.26_authentification)
+    *   [2.3 Routing, transport & retry](#Routing.2C_transport_.26_retry)
+        *   [2.3.1 Use manualroute](#Use_manualroute)
     *   [2.4 ACL: Access Control Lists](#ACL:_Access_Control_Lists)
-    *   [2.5 Startup](#Startup)
+    *   [2.5 Hide machine name](#Hide_machine_name)
+    *   [2.6 Startup](#Startup)
 *   [3 Advanced ACL configuration](#Advanced_ACL_configuration)
 *   [4 Dovecot LMTP delivery & SASL authentification](#Dovecot_LMTP_delivery_.26_SASL_authentification)
-*   [5 DKIM&DNSSEC](#DKIM.26DNSSEC)
+*   [5 DKIM & DNSSEC](#DKIM_.26_DNSSEC)
 *   [6 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
 *   [7 Hardening](#Hardening)
-    *   [7.1 Rate Limits](#Rate_Limits)
+    *   [7.1 Rate limits](#Rate_limits)
     *   [7.2 fail2ban](#fail2ban)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 451 Temporary local problem](#451_Temporary_local_problem)
@@ -25,11 +27,11 @@ This article gives a quick overview on the configuration of an exim mail server.
 
 Install the [exim](https://www.archlinux.org/packages/?name=exim) package.
 
-## Basic Configuration
+## Basic configuration
 
 Exim comes with a bulky default configuration file which is located in `/etc/mail/exim.conf`. Many options in there aren't necessary in a regular use case. By default configuration is done in a single file containing several chapters. Below is a very basic configuration, which provides: local delivers to system users (Maildir format) and authorized relaying to MX hosts. The description is based on a domain "mydomain.tld" served on a host "hostname.mydomain.tld". It is highly recommended to consult the official documentation before using the given documentation below.
 
-### Main Parameters
+### Main parameters
 
 Main parameters contain some basic options. Using solely those options would open ports for connections but still no mail would be accepted nor relayed anywhere.
 
@@ -58,7 +60,7 @@ timeout_frozen_after = 7d
 
 ```
 
-### TLS, Security & Authentification
+### TLS, security & authentification
 
 The first part of the following options are still part of the first configuration section in exim. Starting with "begin authenticators" the first special section in exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authentificatior using a user password lookup is introduced.
 
@@ -103,7 +105,7 @@ begin authenticators
 
 **Note:** Exim loads certificate files during mail processing with the low privilege user exim. While it is good to run an internet facing process with such a user, it is somewhat strange to give access to a private key to such user. If your server serves multiple purposes (e.g. http, imap, smtp) with multiple dns aliases (cname or several names pointing to a single ip) it may be wise to request multiple certificates. If the exim certificate gets lost, damage is limited to smtp.
 
-### Routing, Transport & Retry
+### Routing, transport & retry
 
 For each receipient of a message routing is performed as follows: routers are tested in their order given in the routing section. For each router, conditions may apply (e.g. `domains = ! +local_domains`). Only if all conditions apply, the message will be handed over to the defined transport (e.g. `transport = smtp`). If transport fails or not all conditions of a router are fulfilled, the next router is tested.
 
@@ -154,6 +156,32 @@ begin retry
 
 ```
 
+#### Use manualroute
+
+If you wang to use manualroute instead, comment out the dnslookup block and add the smarthost block.
+
+```
+#dnslookup:
+    # the router type
+    # driver = dnslookup
+    # the domains served on this router: not the local domain
+    # domains = ! +local_domains
+    # the transport to be used (see transport section below)
+    # transport = remote_delivery
+    # localhost is to be ignored if dns gives such result
+    # ignore_target_hosts = <; 0.0.0.0 ; 127.0.0.0/8 ; ::1
+    # a router list is processed until matched and successful transported.
+    # if transport fails, we don't want the next router to be used
+    # no_more
+
+smarthost:
+  driver = manualroute
+  domains = !+local_domains
+  transport = remote_delivery
+  route_list = * smtp.myisp.com        # change to the desired smtp server
+  ignore_target_hosts = <; 0.0.0.0 ; 127.0.0.0/8 ; ::1
+```
+
 ### ACL: Access Control Lists
 
 Access Control Lists are at the heart of exim. They are required for basic checks and may be used for sophisticated message processing. In general the overal message processing in exim is:
@@ -194,6 +222,19 @@ begin acl
 		accept
 
 ```
+
+### Hide machine name
+
+If you have a laptop, or a machine in a smarthost configuration, where you do not want the name of the machine to appear in the outgoing email then you must enable exim's rewriting facilities.
+
+In the Rewriting section you should have something like:
+
+```
+*@*machine*.*mydomain* $1@*mydomain*
+
+```
+
+where `*machine*` is the hostname of your laptop or PC and `*mydomain*` is the domain name of the machine and the outgoing mail. To rewrite only sender domain, add special flag (F) in the line end. See [upstream document](http://www.exim.org/exim-html-current/doc/html/spec_html/ch-address_rewriting.html) for detail
 
 ### Startup
 
@@ -270,11 +311,9 @@ Since Dovecot is configured to provide a unix socket for the exim user, you may 
 deliver_drop_privilege = true
 ```
 
-## DKIM&DNSSEC
+## DKIM & DNSSEC
 
 ## Using Gmail as smarthost
-
-The following content is been taken from the [Exim with remote SMTP server](/index.php/Exim_with_remote_SMTP_server "Exim with remote SMTP server") page.
 
 In the beginning of the exim conf file, you must enable TLS using
 
@@ -329,7 +368,7 @@ For added security, use a per-application password. This works with Google Apps 
 
 ## Hardening
 
-### Rate Limits
+### Rate limits
 
 Security breaches happen. In case you don't have any service that submits local mail (receiving mail from localhost on a port is not considered local submission), completely disable local submission. Do so by adding `acl_not_smtp = acl_local` to the main section and add the following simple ACL to the acl section.
 

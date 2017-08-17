@@ -1,4 +1,4 @@
-**Warning:** Nenhuma dessas ferramentas possuem suporte [oficial](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) pelo Arch Linux. É recomendado se tornar familiar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas por conta própria.
+**Atenção:** Nenhuma dessas ferramentas possuem suporte [oficial](https://bbs.archlinux.org/viewtopic.php?pid=828254#p828254) pelo Arch Linux. É recomendado se tornar familiar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas por conta própria.
 
 Auxiliares do AUR são escritos para automatizar certas tarefas para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
 

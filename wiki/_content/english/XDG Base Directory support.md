@@ -559,7 +559,11 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 `~/.sqliterc`
 
  | [[110]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[111]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
-| [Steam](/index.php/Steam "Steam") | `~/.steam` | [[112]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) |
+| [Steam](/index.php/Steam "Steam") | `~/.steam`
+
+`~/.steampath` `~/.steampid`
+
+ | [[112]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
 | [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[113]](https://bugzil.la/735285) |

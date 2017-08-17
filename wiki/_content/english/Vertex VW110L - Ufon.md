@@ -10,11 +10,11 @@ This article details the configuration and use of the Vertex VW110L modem for th
 ## Getting modem device
 
 *   Install usb_modeswitch and usbutils package.
-*   Comment or remove line from **/lib/udev/rules.d/61-option-modem-modeswitch.rules** where **idVendor is 05c6 and idProduct is 1000** (keep eye on it after udev update)
+*   Comment or remove line from `/lib/udev/rules.d/61-option-modem-modeswitch.rules` where **idVendor is 05c6 and idProduct is 1000** (keep eye on it after udev update)
 *   reload udev rules - **udevadm control --reload-rules** and **udevadm trigger**
 *   Plug Vertex modem in and wait for few second until red LED on the edge of modem change color to **blue**
 
-Now you should be able to access **/dev/ttyACM0** device.
+Now you should be able to access `/dev/ttyACM0` device.
 
 Try screen or minicom to send AT commands to your modem.
 
@@ -27,8 +27,7 @@ Try screen or minicom to send AT commands to your modem.
 
 Create necessary files:
 
-**/etc/ppp/ufon**
-
+ `/etc/ppp/ufon` 
 ```
 TIMEOUT 8
 ABORT BUSY
@@ -39,9 +38,7 @@ OK ATD#777
 CONNECT \d\c
 
 ```
-
-**/etc/ppp/peers/ufon**
-
+ `/etc/ppp/peers/ufon` 
 ```
 connect "chat -v -f /etc/ppp/ufon"
 ttyACM0
@@ -60,12 +57,12 @@ and manage connection with **pon ufon** for connecting and **poff ufon** for dis
 
 ## vwmfdiag
 
-Provides diagnostic interface **/dev/ttyUSB1**.
+Provides diagnostic interface `/dev/ttyUSB1`.
 
 Files in vwmfdiag zipfile from ufon website and from newer CDs seems to be corrupted.
 
 *   Download the old [one](http://uloz.to/5064294/linux.zip)
-*   unzip and **comment line nr 111** in file **vwmfdiag.c**
+*   unzip and **comment line nr 111** in file `vwmfdiag.c`
 
 ```
 //.shutdown =		vwmfdiag_shutdown,
@@ -73,12 +70,12 @@ Files in vwmfdiag zipfile from ufon website and from newer CDs seems to be corru
 ```
 
 *   compile module - **make**
-*   cp ./vwmfdiag.ko /lib/modules/`uname -r`/misc/
+*   `cp ./vwmfdiag.ko /lib/modules/`uname -r`/misc/` 
 *   update modules.dep and map files - **depmod -a**
 *   Plug Vertex modem in and wait for few second until red LED on the edge of modem change color to **blue**
 
-Try screen or minicom to get an informations from **/dev/ttyUSB1**.
+Try screen or minicom to get an informations from `/dev/ttyUSB1`.
 
 * * *
 
-If something doesn't work, see /var/log/messages for more information.
+If something doesn't work, see `/var/log/messages` for more information.

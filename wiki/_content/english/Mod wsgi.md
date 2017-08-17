@@ -40,12 +40,7 @@ As indicated during installation, add the following line to the configuration fi
 
  `/etc/httpd/conf/httpd.conf`  `LoadModule wsgi_module modules/mod_wsgi.so` 
 
-Restart Apache:
-
-```
-systemctl restart httpd
-
-```
+[Restart](/index.php/Restart "Restart") `httpd.service`.
 
 Check that Apache is running properly. If the previous command returned nothing, it means that the launch of Apache went well. Otherwise, you can see errors with the following command:
 

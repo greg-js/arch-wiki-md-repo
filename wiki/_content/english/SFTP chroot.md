@@ -23,7 +23,13 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") and configure [OpenSSH](/index.php/OpenSSH "OpenSSH"). Once running, SFTP is available by default.
+[Install](/index.php/Install "Install") and configure [OpenSSH](/index.php/OpenSSH "OpenSSH"). Once running, make sure `sftp-server` has been set correctly:
+
+ `/etc/ssh/sshd_config` 
+```
+Subsystem sftp /usr/lib/ssh/sftp-server
+
+```
 
 Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FTP clients](/index.php/List_of_applications#File_transfer_clients "List of applications") should work as well.
 
@@ -52,16 +58,16 @@ Add entries to [fstab](/index.php/Fstab "Fstab") to make the bind mount survive 
 
 ### Create an unprivileged user
 
-**Note:** You do not need to create a group, it is possible to `Match User` instead of `Match Group`.
+**Note:** You do not need to create a group, it is possible to use `Match User` instead of `Match Group`.
 
-First, we need to create the `sftponly` [group](/index.php/Group "Group"):
+Create the `sftponly` [group](/index.php/Group "Group"):
 
 ```
 # groupadd sftponly 
 
 ```
 
-Create a [user](/index.php/User "User") (and use `sftponly` as it's main group):
+Create a [user](/index.php/User "User") that uses `sftponly` as main group:
 
 ```
 # useradd -g sftponly -d */srv/ssh/jail* *username*
@@ -75,7 +81,7 @@ Set a (complex) password - to prevent `account is locked` error:
 
 ```
 
-To deny [shell](/index.php/Shell "Shell") login access:
+You many to deny [shell](/index.php/Shell "Shell") login access for the user:
 
 ```
 # usermod -s /sbin/nologin *username*
@@ -84,9 +90,11 @@ To deny [shell](/index.php/Shell "Shell") login access:
 
 ### Configure OpenSSH
 
-**Note:** Use `Match User` instead of `Match Group` when not using the given group.
+**Note:** You may want to use `Match User` instead of `Match Group` as been given in the previous step.
  `/etc/ssh/sshd_config` 
 ```
+Subsystem sftp /usr/lib/ssh/sftp-server
+
 Match Group sftponly
   ChrootDirectory %h
   ForceCommand internal-sftp
@@ -131,16 +139,16 @@ Create *authorized_keys* folder, generate a [SSH-key](/index.php/SSH_keys#Choosi
 
 ### Write permissions
 
-The `bind` path of the chroot user needs to be fully owned by `root`, however files/directories inside do not have to be. In the following example the user *backup* uses `/root/backups` (fully owned by *root*) as home-directory:
+The [bind](#Setup_the_filesystem) path needs to be fully owned by `root`, however files and/or subdirectories don't have to be. In the following example the [user](/index.php/User "User") *www-demo* uses `/srv/ssh/www/demo` as the jail-directory:
 
 ```
-# mkdir /root/backups/share
-# chown backup:sftponly /root/backups/share
-# chmod 775 /root/backups/share
-# touch /root/backups/share/file
-# chmod 664 /root/backups/share/file
+# mkdir /srv/ssh/www/demo/public_html
+# chown www-demo:sftponly /srv/ssh/www/demo/public_html
+# chmod 775 /srv/ssh/www/demo/public_html
 
 ```
+
+The user should now be able to create files/subdirectories inside this directory. See [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") for more information.
 
 ### Logging
 

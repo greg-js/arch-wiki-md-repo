@@ -22,4 +22,4 @@ Install [this BIOS update](http://pcsupport.lenovo.com/de/de/downloads/ds120370)
 
 ### Poweroff
 
-If poweroff does not work, try adding `acpi=noirq` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and boot once. (Then you can remove it again.) Please report here if it helps or not.
+Poweroff after shutdown does not work reliably. No workaround is known.

@@ -1,4 +1,8 @@
-## Ethereum Wallet
+The [Ethereum](https://github.com/ethereum/go-ethereum) project provides an open-source, distributed, blockchain-based platform for so-called [wikipedia:Smart contracts](https://en.wikipedia.org/wiki/Smart_contracts "wikipedia:Smart contracts").
+
+## Clients
+
+### Ethereum Wallet
 
 The Ethereum Wallet is currently not in the Arch repositories.
 

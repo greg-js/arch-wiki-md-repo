@@ -85,6 +85,7 @@ Once this is working then if you are running [unbound](/index.php/Unbound "Unbou
 ```
 do-not-query-localhost: no
 local-zone: "*example.com*" nodefault
+domain-insecure: "*example.com*"
 
 ```
 

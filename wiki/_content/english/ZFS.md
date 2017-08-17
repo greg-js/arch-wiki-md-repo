@@ -271,7 +271,7 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 
 **Note:** This section frequently goes out of date with updates to GRUB and ZFS. Consult the manual pages for the most up-to-date information.
 
-By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is not suitable for all the features of ZFSonLinux 0.7.0, and must have unsupported features disabled.
+By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is not suitable for all the features of ZFSonLinux 0.7.1, and must have unsupported features disabled.
 
 You can create a pool with the incompatible features disabled:
 
@@ -284,6 +284,8 @@ You can create a pool with the incompatible features disabled:
                   $POOL_NAME $VDEVS
 
 ```
+
+When running the git version of ZFS on Linux, make sure to also add `-o feature@encryption=disabled`.
 
 ### Importing a pool created by id
 
@@ -823,7 +825,7 @@ Complete [Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") to finally 
 
 #### Using dm-crypt
 
-ZFS on linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
+The release version of ZFS on Linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
 
 dm-crypt, possibly via LUKS, creates devices in `/dev/mapper` and their name is fixed. So you just need to change `zpool create` commands to point to that names. The idea is configuring the system to create the `/dev/mapper` block devices and import the zpools from there. Since zpools can be created in multiple devices (raid, mirroring, striping, ...), it is important all the devices are encrypted otherwise the protection might be partially lost.
 
@@ -862,9 +864,7 @@ For example to have an encrypted home: (the two passwords, encryption and login,
 
 #### Native encryption
 
-**Warning:** Encryption in ZFS is not yet merged upsteam. So do this at you own risk!
-
-To use native ZFS encryption, you will need a patched zfs package like [zfs-encryption-dkms-git](https://aur.archlinux.org/packages/zfs-encryption-dkms-git/)
+To use native ZFS encryption, you will need a recent enough zfs package like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) 0.7.0.r26 or newer.
 
 To create an encrypted dataset just specify the encryption type and keyformat:
 

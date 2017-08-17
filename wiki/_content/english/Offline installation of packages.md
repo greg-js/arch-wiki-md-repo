@@ -95,7 +95,7 @@ This can be done on any Archlinux machine which has up-to-date repository data b
 
 ```
 
-The file nvidia.list will contain links to the listed packages and any others which they depend on which are not already installed on Al. Unless you have cleared your cache the packages you have installed will be in your cache location. Tou can check /etc/pacman.conf for the location. It is probably something like /var/cache/pacman/pkg/
+The file nvidia.list will contain links to the listed packages and any others which they depend on which are not already installed on Al. Unless you have cleared your cache the packages you have installed will be in your cache location. You can check /etc/pacman.conf for the location. It is probably something like /var/cache/pacman/pkg/
 
 #### Download/copy the packages and their dependencies
 

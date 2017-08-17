@@ -24,6 +24,13 @@ rbenv can be extended via a plugin system, and the rbenv wiki includes a [list o
 
 ### Ruby 2.3.x
 
+Before compiling, make sure you have all the dependencies needed:
+
+```
+ pacman -S --needed gcc5 base-devel libffi libyaml openssl zlib
+
+```
+
 Installation of Ruby 2.3.x may break down due to openssl version and/or segmentation fault error while compilation. Both errors are described here:
 
 *   [https://stackoverflow.com/questions/44116005/openssl-error-installing-ruby-2-1-x-and-2-3-x-on-archlinux-with-ruby-install-rub](https://stackoverflow.com/questions/44116005/openssl-error-installing-ruby-2-1-x-and-2-3-x-on-archlinux-with-ruby-install-rub)

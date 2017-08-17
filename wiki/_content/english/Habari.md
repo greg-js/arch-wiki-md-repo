@@ -1,4 +1,4 @@
-This document describes how to set up the Habari open source blogging engine on an Arch Linux system. It also tells how to enable your .htaccess file and required php modules that would prevent install errors from occurring.
+This document describes how to set up the [Habari](http://habariproject.org/en/) open source blogging engine on an Arch Linux system. It also tells how to enable your .htaccess file and required php modules that would prevent install errors from occurring.
 
 ## Contents
 

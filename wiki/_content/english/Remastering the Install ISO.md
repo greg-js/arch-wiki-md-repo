@@ -14,13 +14,9 @@ As these ISOs are bootable, they can also be used for system rescue, testing, pr
     *   [2.2 Extracting the ISO](#Extracting_the_ISO)
     *   [2.3 Customization](#Customization)
         *   [2.3.1 Modifying the x86_64 system](#Modifying_the_x86_64_system)
-        *   [2.3.2 Modifying the i686 system](#Modifying_the_i686_system)
-        *   [2.3.3 Modifying the EFI boot image](#Modifying_the_EFI_boot_image)
+        *   [2.3.2 Modifying the EFI boot image](#Modifying_the_EFI_boot_image)
     *   [2.4 Create a new ISO](#Create_a_new_ISO)
-*   [3 larch](#larch)
-*   [4 poison-livecd-creator](#poison-livecd-creator)
-*   [5 Linux-pf](#Linux-pf)
-*   [6 See also](#See_also)
+*   [3 See also](#See_also)
 
 ## Archiso
 
@@ -30,9 +26,9 @@ It is often preferable to rebuild the installation ISO with [Archiso](/index.php
 
 ### How it works
 
-The installer ISO contains two separate archlinux systems. One for 32 bit (i686) and one for 64 bit (x86_64). The root filesystems of those systems are stored in `arch/i686/airootfs.sfs` and `arch/x86_64/airootfs.sfs`. The kernels and initramfs are in `arch/boot/i686` and `arch/boot/x86_64`. This means in order to fully remaster the ISO, you have to do your changes for both the 32 bit and the 64 bit system.
+The installer ISO used to contain two separate archlinux systems. One for 32 bit (i686) and one for 64 bit (x86_64). Now only 64 bit system is supported. The root filesystems of this system is stored in `arch/x86_64/airootfs.sfs`. The kernel and initramfs are in `arch/boot/x86_64`.
 
-When booting, the initramfs will search for the device it was booted from via its label, `ARCH_201410` for example, and will mount the root filesystem for the correct architecture.
+When booting, the initramfs will search for the device it was booted from via its label, `ARCH_201410` for example, and will mount the root filesystem for the architecture.
 
 ### Extracting the ISO
 
@@ -170,20 +166,6 @@ Now update the MD5 checksum of `airootfs.sfs`:
 
 ```
 
-#### Modifying the i686 system
-
-Follow the same steps as for the x86_64 system but with the following differences:
-
-1.  In every command use `i686` instead of `x86_64`
-2.  When doing the chroot, use this command instead:
-
-```
- # setarch i686 arch-chroot squashfs-root /bin/bash
-
-```
-
-**Note:** If you do not have the arch-chroot script, put `setarch i686` before the line where you do `chroot`
-
 #### Modifying the EFI boot image
 
 If you have updated the kernel or the initramfs and wish to boot on EFI systems, update the EFI boot image. You will need [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) as the EFI boot image is a `FAT16` filesystem.
@@ -262,29 +244,6 @@ If the original ISO supports bootability via EFI, this can be activated in the n
 The file /EFI/archiso/efiboot.img is a FAT filesystem image file. If it is missing in the original ISO, then there was no EFI support in that ISO.
 
 The newly created ISO image `arch-custom.iso` is found in the home directory. You can write the ISO image to a USB stick as explained in [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media"). Alternatively you can burn the ISO image on a CD, DVD, or BD with your preferred software. On Arch, that is covered in the [article about burning an ISO image](/index.php/Optical_disc_drive#Burning_an_ISO_image_to_CD.2C_DVD.2C_or_BD "Optical disc drive").
-
-## larch
-
-[larch](/index.php/Larch "Larch") aims to provide a more desktop-based approach, and it does not require an Arch Linux host system.
-
-**Note:**
-
-*   As of version 2.6.39, the vanilla kernel no longer supports aufs, making a custom kernel a necessity.
-*   [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/) is an AUFS version of the arch kernel, and larch maintains an i686 build, you need not compile anything unless you want 64 bit.
-
-## poison-livecd-creator
-
-It is a very simple live CD creator. It uses just a Makefile to build live CD images, and uses pacman to install base and additional packages to the live CD. You can choose your packages and build them into a live CD. Moreover, it uses [GRUB](/index.php/GRUB "GRUB") to boot the live CD in order to add more flexibility. This means that it is much easier to make a live USB stick without formating it. For that, you just need to install GRUB into your USB pen drive and copy the files in the ISO to your root directory in the pen drive. It relies on an Arch Linux host system and [pacman](/index.php/Pacman "Pacman").
-
-[poison-livecd-creator](https://aur.archlinux.org/packages/poison-livecd-creator/).
-
-## Linux-pf
-
-It supports aufs among other things, making it an option for live CDs.
-
-[linux-pf](https://aur.archlinux.org/packages/linux-pf/).
-
-**Note:** As of version 2.6.39, the vanilla kernel no longer supports aufs, making a custom kernel a necessity.
 
 ## See also
 

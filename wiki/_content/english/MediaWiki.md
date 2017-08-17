@@ -88,7 +88,6 @@ To get MediaWiki working with [Nginx](/index.php/Nginx "Nginx"), create the foll
 
  `/etc/nginx/mediawiki.conf` 
 ```
-
 location / {
    index index.php;
    try_files $uri $uri/ @mediawiki;

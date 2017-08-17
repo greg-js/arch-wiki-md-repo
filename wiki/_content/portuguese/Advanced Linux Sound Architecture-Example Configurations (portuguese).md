@@ -1,6 +1,6 @@
 Este artigo deve servir como um guia para configurações mais avançadas do [ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)"). A configuração fica armazenada em `/etc/asound.conf` como mencionado no artigo principal. Nenhuma das configurações abaixo tem a garantia de funcionar.
 
-**Note:** A maioria das coisas discutidas aqui são muito mais fácil de se fazer usando plugins do alsa como upmix, que são explicadas no artigo principal.
+**Nota:** A maioria das coisas discutidas aqui são muito mais fácil de se fazer usando plugins do alsa como upmix, que são explicadas no artigo principal.
 
 ## Upmixagem de fontes stereo para 7.1 usando dmix enquanto fontes saturadas não fican upmixadas
 

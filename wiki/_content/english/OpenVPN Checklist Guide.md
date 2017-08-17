@@ -24,19 +24,19 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 *   Create the "certificate authority" key
 
- `# easyrsa build-ca` 
+ `# easyrsa build-ca nopass` 
 
 *   Create certificate and private key for the server
 
- `# easyrsa build-server-full *<server-name>*` 
+ `# easyrsa build-server-full *<server-name>* nopass` 
 
-*   Create the Diffie-Hellman pem file for the server. Do not enter a challenge password or company name when you set these up.
+*   Create the Diffie-Hellman pem file for the server.
 
  `# easyrsa gen-dh` 
 
 *   Create a certificate for each client.
 
- `# easyrsa build-client-full *<client-name>*` 
+ `# easyrsa build-client-full *<client-name>* nopass` 
 
 All certificates are stored in `keys` directory. If you mess up, you can start all over by doing a `easyrsa clean-all`
 
@@ -52,10 +52,10 @@ port *<port>*
 proto tcp
 dev tun0
 
-ca /etc/openvpn/easy-rsa/keys/ca.crt
-cert /etc/openvpn/easy-rsa/keys/*<server-name>*.crt
-key /etc/openvpn/easy-rsa/keys/*<server-name>*.key
-dh /etc/openvpn/easy-rsa/keys/*<your pem file>*
+ca /etc/openvpn/easy-rsa/pki/ca.crt
+cert /etc/openvpn/easy-rsa/pki/issued/*<server-name>*.crt
+key /etc/openvpn/easy-rsa/pki/private/*<server-name>*.key
+dh /etc/openvpn/easy-rsa/pki/*<your pem file>*
 
 server *<desired base ip>* 255.255.255.0
 ifconfig-pool-persist ipp.txt

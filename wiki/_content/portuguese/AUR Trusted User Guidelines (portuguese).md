@@ -88,7 +88,7 @@ ssh orion.archlinux.org /community/db-remove community arch pkgname
 
 Aqui e no texto seguinte, *arch* pode ser *i686* ou *x86_64*, que são as duas arquiteturas às quais o Arch Linux oferece suporte.
 
-**Note:** Se você está editando pacotes da arquitetura *any*, você pode executar os scripts x64 que também vão funcionar.
+**Nota:** Se você está editando pacotes da arquitetura *any*, você pode executar os scripts x64 que também vão funcionar.
 
 Quando você tiver finalizado a edição do PKGBUILD, etc, você deve fazer um **commit** das alterações (`svn commit`).
 

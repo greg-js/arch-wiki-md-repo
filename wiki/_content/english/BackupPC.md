@@ -52,14 +52,14 @@ Next, we need to add a users file and set the admin password:
 The BackupPC-Webfrontend is initially configured so that you can only access it from the localhost. If you want to access it from all machines in your network, you have to edit `/etc/httpd/conf/extra/backuppc.conf`. Edit the line:
 
 ```
-allow from 127.0.0.1
+Require ip 127.0.0.1
 
 ```
 
 to:
 
 ```
-allow from 127.0.0.1 192.168.0
+Require ip 127.0.0.1 192.168.0
 
 ```
 

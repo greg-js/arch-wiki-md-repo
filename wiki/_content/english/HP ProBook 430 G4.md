@@ -1,10 +1,10 @@
 | **Device** | **Working** |
 | Intel graphics | Yes |
-| HDMI | Not tested |
-| VGA | Not tested |
+| HDMI | Yes |
+| VGA | Yes |
 | Audio | Yes |
 | USB 3.0 | Yes |
-| Ethernet | Not tested |
+| Ethernet | Yes |
 | WLAN | Yes |
 | Bluetooth | Yes |
 | Touchpad | Yes |
@@ -12,7 +12,7 @@
 | Function keys | Yes |
 | Hardware switches | Yes |
 | Card reader | Yes |
-| Webcam | Not tested |
+| Webcam | Yes |
 | USB 3.0 Type-C™ port | Yes |
 | Fingerprint Reader | No |
 

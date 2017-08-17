@@ -19,14 +19,11 @@ extension=gd.so
 date.timezone = UTC
 ```
 
-In this configuration, we will configure the [Nginx](/index.php/Nginx "Nginx") web server to serve Sonerezh on localhost in the root location without SSL enabled (even though it's recommended to use it with SSL). First, place a copy of the Sonerezh Nginx configuration
+In this configuration, we will configure the [Nginx](/index.php/Nginx "Nginx") web server to serve Sonerezh on localhost in the root location without SSL enabled (even though it's recommended to use it with SSL). First, place a copy of the Sonerezh Nginx configuration.
 
-```
-cp /usr/share/doc/sonerezh/example_nginx_vhost.conf /etc/webapps/sonerezh/nginx.conf
+Copy `/usr/share/doc/sonerezh/example_nginx_vhost.conf` to `/etc/webapps/sonerezh/nginx.conf`.
 
-```
-
-replace the domain name
+Replace the domain name:
 
 ```
 sed -i 's/pydio.example.com/localhost/g' /etc/webapps/pydio/nginx.conf
@@ -55,11 +52,6 @@ FLUSH PRIVILEGES;
 
 ```
 
-Do not forget to (re)start your services!
-
-```
-systemctl restart nginx php-fpm
-
-```
+Do not forget to [restart](/index.php/Restart "Restart") your services (`nginx.service` and `php-fpm.service`).
 
 Visit the installation wizard page at [http://sonerezh.localhost/install](http://sonerezh.localhost/install) and follow the instructions.

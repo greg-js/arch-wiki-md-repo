@@ -39,7 +39,7 @@ You may consider to build a *linux-custom* package to run SystemTap, but rebuild
 
 ### Prepare
 
-First, run `cd ~/ && mkdir build && cd build/ && ASPROOT=. asp checkout linux && cd linux/` to get the original kernel build files. Then use `makepkg --verifysource` to get the additional files. By performing the verification, you can safely **skip** the steps on "Update checksum".
+First, run `cd ~/ && mkdir build && cd build/ && ASPROOT=. asp checkout linux && cd linux/trunk` to get the original kernel build files. Then use `makepkg --verifysource` to get the additional files. By performing the verification, you can safely **skip** the steps on "Update checksum".
 
 ### modify config
 

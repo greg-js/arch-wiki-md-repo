@@ -177,6 +177,8 @@ Also, there exists a function "pasteSelection" in XMonad.Util.Paste that can be 
 
  `xmonad.hs` 
 ```
+  import XMonad.Util.Paste -- Remember to include this line
+
   -- X-selection-paste buffer
   , ((0, xK_Insert), pasteSelection)
 ```

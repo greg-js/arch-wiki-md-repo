@@ -82,12 +82,12 @@ pacman -S terminus-font
 ```
 LOCALE="ru_RU.UTF-8"
 KEYMAP="ru" # Или ru-mab для раскладки с переключением по Ctrl-Shift
-FONT="ter-v16v" # Можно поэкспериментировать с другими шрифтами ter-v* из /usr/share/kbd/consolefonts
+FONT="ter-v16n" # Можно поэкспериментировать с другими шрифтами ter-v* из /usr/share/kbd/consolefonts
 CONSOLEMAP=""
 
 ```
 
-Если возникают проблемы со шрифтом ter-v16v можно использовать конфигурацию файла /etc/vconsole.conf приведенную ниже:
+Если возникают проблемы со шрифтом ter-v16n можно использовать конфигурацию файла /etc/vconsole.conf приведенную ниже:
 
 ```
 LOCALE=ru_RU.UTF-8

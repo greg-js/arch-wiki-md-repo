@@ -7,7 +7,6 @@ Cisco Packet Tracer is a powerful network simulation program that allows student
     *   [2.1 32-bit systems](#32-bit_systems)
     *   [2.2 64-bit systems](#64-bit_systems)
     *   [2.3 Assessment environment check](#Assessment_environment_check)
-    *   [2.4 Video supplements](#Video_supplements)
 *   [3 See also](#See_also)
 
 ## Disclaimer
@@ -40,10 +39,6 @@ Finally, please read the EULA at `/usr/share/licenses/packettracer/eula.txt` and
 
 See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now, only download and extract the tarball for [packettracer](https://aur.archlinux.org/packages/packettracer/) from the [AUR](/index.php/AUR "AUR")
 
-You will need to enable the [Multilib](/index.php/Multilib "Multilib") repository to continue. Ensure to update the package list and upgrade with `pacman -Syu`
-
-[Install](/index.php/Install "Install") [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl), [lib32-qt4](https://aur.archlinux.org/packages/lib32-qt4/), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng), and [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) from the [official repositories](/index.php/Official_repositories "Official repositories"). Answer yes if you are asked to remove gcc-libs.
-
 You will need to have access to the file `Cisco Packet Tracer 6.0.1 for Linux (with tutorials)` to continue with the installation. For your convenience, the sha1sum and md5sum of this file is provided below.
 
 ```
@@ -62,20 +57,11 @@ Finally, please read the EULA at `/usr/share/licenses/packettracer/eula.txt` and
 
 ### Assessment environment check
 
-*This applies to both 32-bit and 64-bit systems.*
-
 The Cisco Packet Tracer-based Assessment Environment Check is used to confirm that students can start packet tracer activities for assessments such as practice and final exams. It is critical that you have a working version of [Java](/index.php/Java "Java") installed. Perform the check at [this page](http://skills.netacad.net/check/check.html) to confirm whether or not this ability is functional.
-
-### Video supplements
-
-You may use these videos as supplements to the installation to either ease or visualize the installation process.
-
-[PacketTracer -- Archlinux 32-bit](https://youtu.be/XBPLOxuXvAw)
-
-[PacketTracer -- Archlinux 64-bit](https://youtu.be/NPJpQrZ1C_s)
 
 ## See also
 
 *   [GNS3](/index.php/GNS3 "GNS3")
 *   [Cisco Packet Tracer - Networking Academy](https://www.netacad.com/web/about-us/cisco-packet-tracer)
 *   [Cisco Packet Tracer-based Assessment Environment Check](http://skills.netacad.net/check/check.html)
+*   [PacketTracer -- video visualizing the installation process](https://youtu.be/NPJpQrZ1C_s)

@@ -47,6 +47,29 @@ From the project [home page](http://www.ffmpeg.org/):
 
 For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/), which is built with as many optional features enabled as possible.
 
+**Tip:** Many users may wish to skip the package or AUR and compile FFmpeg themselves from its git master directly, and add `/usr/local/lib` to `/etc/ld.so.conf`. This can cause the `/usr/bin/ffmpeg` tool provided by [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) to crash or work improperly due to the library version mismatch. (Frequently [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) is still installed as a dependency.) One fix for this is to add `/usr/lib` to the rpath of `/usr/bin/ffmpeg` with a tool such as [patchelf](https://www.archlinux.org/packages/?name=patchelf):
+```
+# patchelf --set-rpath /usr/lib /usr/bin/ffmpeg
+
+```
+
+This will be revoked whenever ffmpeg is reinstalled or upgraded, so adding a pacman hook might be prudent:
+
+ `/etc/pacman.d/hooks/ffmpeg.hook` 
+```
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Type=Package
+Target=ffmpeg
+
+[Action]
+Description=Adding /usr/lib to ffmpeg rpath...
+Depends=patchelf
+When=PostTransaction
+Exec=/usr/bin/patchelf --set-rpath /usr/lib /usr/bin/ffmpeg
+```
+
 ## Encoding examples
 
 **Note:**
@@ -61,16 +84,16 @@ FFmpeg includes the [x11grab](http://www.ffmpeg.org/ffmpeg-devices.html#x11grab)
 To create `test.mkv` with lossless encoding:
 
 ```
-$ ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv
+$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac grab.mkv
 
 ```
 
 where `-video_size` specifies the size of the area to capture. Check the FFmpeg manual for examples of how to change the screen or position of the capture area.
 
-To implicitely encode to a shareable size use :
+To implicitly encode to a shareable size use :
 
 ```
-$ ffmpeg -f x11grab -s 1920x1080 -r 25 -i $DISPLAY   -f alsa -i default   -c:v libx264 -b:v 200k -s 1280x720 test.mp4
+$ ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i default -r 30 -s 1280x720 -c:v libx264 -preset:v veryfast -b:v 2000k -c:a libopus -b:a 128k grab.mkv
 
 ```
 
@@ -81,29 +104,28 @@ You may want to adjust the parameters (left-to-right): input **f**ormat, [input]
 FFmpeg supports grabbing input from Video4Linux2 devices. The following command will record a video from the webcam, assuming that the webcam is correctly recognized under `/dev/video0`:
 
 ```
-$ ffmpeg -f v4l2 -s 640x480 -i /dev/video0 *output*.mpg
+$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 output.mkv
 
 ```
 
 The above produces a silent video. It is also possible to include audio sources from a microphone. The following command will include a stream from the default [ALSA](/index.php/ALSA "ALSA") recording device into the video:
 
 ```
-$ ffmpeg -f alsa -i default -f v4l2 -s 640x480 -i /dev/video0 *output*.mpg
+$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default output.mkv
 
 ```
 
 To use [PulseAudio](/index.php/PulseAudio "PulseAudio") with an ALSA backend:
 
 ```
-$ ffmpeg -f alsa -i pulse -f v4l2 -s 640x480 -i /dev/video0 *output*.mpg
+$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i pulse output.mkv
 
 ```
 
-For a higher quality capture, try encoding the output using higher quality codecs:
+For a higher quality capture, try encoding the output using higher quality settings:
 
 ```
-$ ffmpeg -f alsa -i default -f v4l2 -s 640x480 -i /dev/video0 -acodec flac \
--vcodec libx264 *output*.mkv
+$ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default -c:v libx264 -crf:v 18 -c:a flac output.mkv
 
 ```
 
@@ -133,6 +155,8 @@ $ ffmpeg -i input -c:v libx264 -preset veryslow -qp 0 -c:a copy output
 ```
 
 Both examples will provide the same quality output.
+
+**Tip:** If your computer is able to handle `-preset superfast` in realtime, you should use that instead of `-preset ultrafast`. Ultrafast is *far* less efficient compression than superfast.
 
 ### x265
 

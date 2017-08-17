@@ -12,7 +12,7 @@ From the [documentation](https://backintime.readthedocs.io/en/latest/):
 
 ## Installation
 
-Stable releases of Back In Time can be installed as [backintime](https://aur.archlinux.org/packages/backintime/) from the [AUR](/index.php/AUR "AUR") (or [backintime-cli](https://aur.archlinux.org/packages/backintime-cli/) for a CLI only interface). An unstable branch exists with [backintime-git](https://aur.archlinux.org/packages/backintime-git/).
+[Install](/index.php/Install "Install") [backintime](https://aur.archlinux.org/packages/backintime/), [backintime-cli](https://aur.archlinux.org/packages/backintime-cli/) for a CLI-only version, or [backintime-git](https://aur.archlinux.org/packages/backintime-git/) for the development version.
 
 Alternatively, pre-compiled binary packages can be installed from [coderkun's repo](https://coderkun.de/arch/).
 

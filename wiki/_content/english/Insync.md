@@ -24,12 +24,7 @@ Insync can be started with the `insync start` command and stopped with the `insy
 
 ### Running as a systemd service
 
-You can run insync automatically from boot using the systemd service.
-
-```
- # systemctl enable insync@<user>
-
-```
+[Enable](/index.php/Enable "Enable") `insync@<user>.service`.
 
 ### Cinnamon
 

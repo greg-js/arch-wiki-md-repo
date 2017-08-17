@@ -1,4 +1,6 @@
-[Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") На этой странице описаны два возможных способа миграции установленных систем с 64-разрядных (32-разрядных) на x86_64 (64-разрядные) архитектуры. Методы избегают «полной» переустановки (т. е. очистки жесткого диска). Один метод использует liveCD, другой изменяет систему изнутри.
+**Состояние перевода:** На этой странице представлен перевод статьи [Migrating between architectures](/index.php/Migrating_between_architectures "Migrating between architectures"). Дата последней синхронизации: 2017-08-16\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Migrating_between_architectures&diff=0&oldid=466972).
+
+На этой странице описаны два возможных способа миграции установленных систем с 64-разрядных (32-разрядных) на x86_64 (64-разрядные) архитектуры. Методы избегают «полной» переустановки (т. е. очистки жесткого диска). Один метод использует liveCD, другой изменяет систему изнутри.
 
 **Примечание:** Технически этот процесс по-прежнему включает «переустановку», поскольку каждый пакет в системе должен быть заменен. Эти методы просто пытаются сохранить как можно больше из вашей существующей системы.
 
@@ -31,7 +33,7 @@
     *   [5.1 Busybox](#Busybox)
     *   [5.2 Lib32-glibc](#Lib32-glibc)
     *   [5.3 KDE не запускается после миграции с 32-bit на 64-bit](#KDE_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BC.D0.B8.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D1.81_32-bit_.D0.BD.D0.B0_64-bit)
-    *   [5.4 Mutt issues with cache enabled](#Mutt_issues_with_cache_enabled)
+    *   [5.4 Проблемы Mutt при включенном кеше](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_Mutt_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.B5.D1.88.D0.B5)
 *   [6 See also](#See_also)
 
 ## Общая подготовка
@@ -303,9 +305,9 @@ KDE будет падать после перехода с 32-bit на 64-bit и
 
 ```
 
-### Mutt issues with cache enabled
+### Проблемы Mutt при включенном кеше
 
-If, after completion, you find that mutt hangs on opening mail folders, try renaming the cache directory. If this works, the renamed one can be deleted as mutt will have recreated a new one.
+Если после завершения миграции [Mutt](/index.php/Mutt "Mutt") зависает на открытии папок, попробуйте переименовать папку с кешем. Если это решит проблему - переименованную папку можно удалить, Mutt сам создаст новую.
 
 ## See also
 

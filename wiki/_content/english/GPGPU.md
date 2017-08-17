@@ -100,6 +100,7 @@ $ ls /etc/OpenCL/vendors
 *   **[Mono/.NET](/index.php/Mono "Mono")**: [Open Toolkit](http://sourceforge.net/projects/opentk/)
 *   **[Go](/index.php/Go "Go")**: [OpenCL bindings for Go](https://github.com/samuel/go-opencl)
 *   **Racket**: Racket has a native interface [on PLaneT](http://planet.racket-lang.org/display.ss?owner=jaymccarthy&package=opencl.plt) that can be installed via raco.
+*   **[Rust](/index.php/Rust "Rust")**: [ocl](https://github.com/cogciprocate/ocl)
 
 ## CUDA
 

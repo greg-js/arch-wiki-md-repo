@@ -67,6 +67,8 @@ GPU-intensive applications should be rendered on the more powerful discrete card
 
 **Note:** This setting is no longer necessary when using the default intel/modesetting driver from the official repos, as they have DRI3 enabled by default and will therefore automatically make these assignments. Explicitly setting them again does no harm, though.
 
+**Note:** GPU offloading is not supported by the closed-source drivers. To get PRIME to work you have to use the discrete card as the primary GPU. For GPU switching, see [Bumblebee](/index.php/Bumblebee "Bumblebee").
+
 Example:
 
 ```

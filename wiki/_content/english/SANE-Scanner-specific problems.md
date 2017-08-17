@@ -21,6 +21,8 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 *   [7 Mustek](#Mustek)
     *   [7.1 BearPaw 2400CU](#BearPaw_2400CU)
 *   [8 Samsung](#Samsung)
+*   [9 Agfa](#Agfa)
+    *   [9.1 Snapscan e40](#Snapscan_e40)
 
 ## BenQ/Acer
 
@@ -258,3 +260,11 @@ tcp xx.xx.xx.xx
 ```
 
 where xx.xx.xx.xx is the static ip address of the printer.
+
+## Agfa
+
+### Snapscan e40
+
+Firmware Snape40.bin needed. Found it [here](https://sites.google.com/site/rameyarnaud/media/books/agfa-scanners-with-linux).
+
+The scanner doesn't like usb autosuspend. If it need to be turned off and on again for each scan disable autosuspend. (using eg. powertop)

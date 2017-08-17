@@ -1,4 +1,4 @@
-**Note:** Não edite a [página em inglês](/index.php/IRC_channel "IRC channel") a menos que você seja um operador de canal no #archlinux. Você é bem-vindo para usar a [página de discussão](/index.php/Talk:IRC_channel "Talk:IRC channel").
+**Nota:** Não edite a [página em inglês](/index.php/IRC_channel "IRC channel") a menos que você seja um operador de canal no #archlinux. Você é bem-vindo para usar a [página de discussão](/index.php/Talk:IRC_channel "Talk:IRC channel").
 
 ## Contents
 
@@ -10,13 +10,13 @@
 
 ## Canais principais
 
-**Warning:** Estatísticas de canal são registrados para [#archlinux](https://theos.kyriasis.com/~kyrias/stats/archlinux.html) e [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Fale com [demize](/index.php/User:Kyrias "User:Kyrias") (#archlinux) ou dunz0r (#archlinux-offtopic) se você gostaria de se retirar permanentemente.
+**Atenção:** Estatísticas de canal são registrados para [#archlinux-offtopic](http://www.hax0r.se/aotstats.html). Fale com [demize](/index.php/User:Kyrias "User:Kyrias") (#archlinux) ou dunz0r (#archlinux-offtopic) se você gostaria de se retirar permanentemente.
 
 Essa seção é sobre **#archlinux**, o canal [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat") principal do Arch Linux, e **#archlinux-offtopic**, o canal social principal do Arch Linux, ambos disponíveis na rede [Freenode](https://www.freenode.net/).
 
 O tópico central de **#archlinux** é suporte e discussão geral sobre o Arch Linux. Para uma lista de regras, veja o [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta") e [Código de conduta#IRC](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta"). Para uma lista de abreviações comumente usadas, veja [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch") e [Jargão do IRC](http://leonardo.spidernet.net/Copernicus/831/mirc/tips5/jarg.html).
 
-**Note:** Por causa de abuso de vários gateways e clientes web podem ser banidos por alguns tempo. Se você experimentar problema use um cliente irc "adequado" ou peça a um dos operadores uma exceção de banimento (+e)
+**Nota:** Por causa de abuso de vários gateways e clientes web podem ser banidos por alguns tempo. Se você experimentar problema use um cliente irc "adequado" ou peça a um dos operadores uma exceção de banimento (+e)
 
 Para se juntar aos canais, você precisa um cliente IRC. O ambiente de [instalação](/index.php/Instala%C3%A7%C3%A3o "Instalação") inclui o cliente [Irssi](/index.php/Irssi "Irssi"). Veja [List of applications/Internet#IRC clients](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet") ou [Comparação dos clientes de IRC](https://en.wikipedia.org/wiki/pt:Compara%C3%A7%C3%A3o_dos_clientes_de_IRC "wikipedia:pt:Comparação dos clientes de IRC") para uma lista.
 
@@ -34,14 +34,14 @@ Para registrar com NickServ, siga o [FAQ do freenode](https://freenode.net/kb/an
 
 Se você não está registrado e identificado, você será encaminhado para **#archlinux-unregistered**. Você pode obter uma lista de pessoas que podem lhe ajudar digitando `/msg chanserv access #archlinux list`, ou ingresse no #freenode e pergunte lá.
 
-**Note:**
+**Nota:**
 
 *   Se `/query` acabar por não funcionar em seu cliente, você pode tentar usar `/quote nickserv <comando>` ou `/msg nickserv <comando>`.
 *   Alguns clientes IRC têm uma condição de corrida na qual eles tentam ingressar automaticamente em canais antes de você ser identificado com NickServ e, para resolver isso, você precisa habilitar SASL. Olhe a documentação do seu cliente IRC ou olhe a [página SASL](https://freenode.net/kb/answer/sasl) do freenode para encontrar instruções sobre como habilitá-lo.
 
 ### Operadores do canal
 
-**Note:** Operadores do Arch são operadores em ambos **#archlinux** e **#archlinux-offtopic**. Veja abaixo a lista ou execute `/msg phrik listops` no freenode.
+**Nota:** Operadores do Arch são operadores em ambos **#archlinux** e **#archlinux-offtopic**. Veja abaixo a lista ou execute `/msg phrik listops` no freenode.
 
 Se você, por algum motivo, precisar de ajuda de um operador, não seja tímido para nos `/query` ou `/msg`. Aqui está a lista de operadores até 8 de fevereiro de 2016:
 
