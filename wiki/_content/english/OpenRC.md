@@ -7,24 +7,23 @@
 *   [1 Installation](#Installation)
     *   [1.1 Booting](#Booting)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Preparation](#Preparation)
-    *   [2.2 Services](#Services)
-    *   [2.3 Network](#Network)
-    *   [2.4 Boot logs](#Boot_logs)
-    *   [2.5 Hostname](#Hostname)
-    *   [2.6 Kernel modules](#Kernel_modules)
-    *   [2.7 Locale](#Locale)
-    *   [2.8 DM-Crypt](#DM-Crypt)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Quiet booting](#Quiet_booting)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Error while unmounting /tmp](#Error_while_unmounting_.2Ftmp)
-    *   [4.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
-    *   [4.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
-    *   [4.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
-    *   [4.5 opentmpfiles-setup failed to start](#opentmpfiles-setup_failed_to_start)
-*   [5 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
-*   [6 See also](#See_also)
+    *   [2.1 Services](#Services)
+    *   [2.2 Network](#Network)
+    *   [2.3 Boot logs](#Boot_logs)
+    *   [2.4 Hostname](#Hostname)
+    *   [2.5 Kernel modules](#Kernel_modules)
+    *   [2.6 Locale](#Locale)
+*   [3 Usage](#Usage)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Quiet booting](#Quiet_booting)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Error while unmounting /tmp](#Error_while_unmounting_.2Ftmp)
+    *   [5.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
+    *   [5.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
+    *   [5.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
+    *   [5.5 opentmpfiles-setup failed to start](#opentmpfiles-setup_failed_to_start)
+*   [6 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -48,9 +47,7 @@ For general information on configuring OpenRC, see:
 *   [OpenRC migration](http://www.gentoo.org/doc/en/openrc-migration.xml)
 *   [gentoo wiki](http://wiki.gentoo.org/wiki/OpenRC).
 
-### Preparation
-
-See [Init#Configuration](/index.php/Init#Configuration "Init").
+For instructions when migrating from [systemd](/index.php/Systemd "Systemd"), see [Init#Configuration](/index.php/Init#Configuration "Init").
 
 ### Services
 
@@ -79,7 +76,7 @@ ifup_eth0="ip link set \$int mtu 1500"
 
 The network service is added to the boot runlevel by default, so no further action is required. See [Network configuration](/index.php/Network_configuration "Network configuration") for general networking information.
 
-**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. *netcfg* mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). You could consult the [official documentation](https://www.archlinux.org/netcfg/features.html) or [old wiki documentation](https://wiki.archlinux.org/index.php?title=Netcfg&oldid=243178) (be aware of consulting version later than [2012-05-13](https://www.archlinux.org/news/netcfg-282-release/))
+**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. *netcfg* mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). See [netcfg features](https://www.archlinux.org/netcfg/features.html).
 
 ### Boot logs
 
@@ -112,9 +109,19 @@ Keyboard layout can be configured via `/etc/openrc/conf.d/keymaps` and `/etc/ope
 
 See [[3]](http://wiki.gentoo.org/wiki/Localization/HOWTO#Keyboard_layout_for_the_console) and [Locale](/index.php/Locale "Locale") for details.
 
-### DM-Crypt
+## Usage
 
-See [DM-Crypt - Gentoo-en](http://gentoo-en.vfose.ru/wiki/DM-Crypt) for automatically mounting encrypted LVM or other block devices.
+This section draws a parallel between [systemd](/index.php/Systemd "Systemd") and other [init](/index.php/Init "Init") systems.
+
+You can omit the `.service` and `.target` extensions, especially if temporarily editing the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+| systemd | SysVinit | OpenRC | Description |
+| `systemctl list-units` | `rc.d list` | `rc-status` | List running services status |
+| `systemctl --failed` | `rc-status --crashed` | Check failed services |
+| `systemctl --all` | `rc-update -v show` | Display all available services. |
+| `systemctl (start, stop, restart, status) daemon.service` | `rc.d (start, stop, restart) daemon` | `rc-service (start, stop, restart, status) daemon` | Change service state. |
+| `systemctl (enable, disable) daemon.service` | `chkconfig daemon (on, off)` | `rc-update (add, del) daemon` | Turn service on or off. |
+| `systemctl daemon-reload` | `chkconfig daemon --add` | Create or modify configuration. |
 
 ## Tips and tricks
 
@@ -214,6 +221,15 @@ If using *OpenRC* with a [desktop environment](/index.php/Desktop_environment "D
 ```
 
 See [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") for more information.
+
+Begin with OpenRC 0.28 SysVinit is replaced with openrc-init, shutdown is replaced with openrc-shutdown, by using consolekit the system may hang up when shuting down from desktop session. So use [elogind-openrc](https://aur.archlinux.org/packages/elogind-openrc/) instead. Enable it with:
+
+```
+# rc-update add elogind default
+
+```
+
+Also you need to replace polkit-consolekit with [polkit-elogind](https://aur.archlinux.org/packages/polkit-elogind/), or the system will alarm "not authorized to perform operation" when mounting usb device, and can't reboot or shutdown from the desktop session.
 
 ## See also
 

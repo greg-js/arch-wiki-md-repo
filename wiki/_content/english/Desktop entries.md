@@ -259,7 +259,7 @@ where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop
 
 ### Autostart
 
-If you use an XDG-compliant desktop environment, such as GNOME or KDE, the desktop environment will automatically start ***.desktop** files found in the following directories:
+If you use an XDG-compliant desktop environment, such as GNOME or KDE, the desktop environment will automatically start <a class="mw-selflink selflink">*.desktop</a> files found in the following directories:
 
 *   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
 

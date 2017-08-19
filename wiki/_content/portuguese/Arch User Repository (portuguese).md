@@ -147,8 +147,6 @@ Uma das atividades mais fáceis para **todos** os usuários do Arch é navegar n
 
 ## Compartilhando e mantendo pacotes
 
-**Note:** Por favor veja a discussão sobre [escopo da seção AUR4](/index.php/Talk:Arch_User_Repository#Scope_of_the_AUR4_section "Talk:Arch User Repository") antes de fazer alterações nesta seção.
-
 Usuários podem **compartilhar** PKGBUILDs usando o Arch User Repository, o qual não contém pacote binário algum, mas permite aos usuários enviar PKGBUILDs, que podem ser baixados por outros. Esses PKGBUILDs são totalmente não-oficiais e não foram examinados completamente, então eles devem ser usados por sua conta e risco.
 
 ### Enviando pacotes

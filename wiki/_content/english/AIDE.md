@@ -13,7 +13,7 @@ AIDE only does file integrity checks. It does not check for rootkits or parse lo
 
 ## Installation
 
-[Install](/index.php/Install "Install") [aide](https://www.archlinux.org/packages/?name=aide) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [aide](https://www.archlinux.org/packages/?name=aide) package.
 
 ## Configuration
 

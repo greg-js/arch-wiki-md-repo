@@ -24,9 +24,10 @@ The installation should be going without any problems, if you follow the followi
 *   [4 Display Calibration](#Display_Calibration)
 *   [5 NVM Express SSD](#NVM_Express_SSD)
     *   [5.1 linux-nvme](#linux-nvme)
-*   [6 Troubleshoothing](#Troubleshoothing)
-    *   [6.1 Backlight](#Backlight)
-    *   [6.2 WiFi](#WiFi)
+*   [6 Hardware information](#Hardware_information)
+*   [7 Troubleshoothing](#Troubleshoothing)
+    *   [7.1 Backlight](#Backlight)
+    *   [7.2 WiFi](#WiFi)
 
 ## Pre-Installation System Settings
 
@@ -119,6 +120,39 @@ Andy Lutomirski has created a patchset which fixes powersaving for NVME devices 
 **linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
+
+## Hardware information
+
+The output of *lspci* is
+
+```
+00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Host Bridge/DRAM Registers (rev 08)
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 520 (rev 07)
+00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-LP CSME HECI #1 (rev 21)
+00:17.0 SATA controller: Intel Corporation Sunrise Point-LP SATA Controller [AHCI mode] (rev 21)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #1 (rev f1)
+00:1c.4 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #5 (rev f1)
+00:1d.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #9 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-LP LPC Controller (rev 21)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio (rev 21)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)
+01:00.0 3D controller: NVIDIA Corporation GM108M [GeForce 940MX] (rev ff)
+02:00.0 Network controller: Intel Corporation Wireless 8260 (rev 3a)
+03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller SM951/PM951 (rev 01)
+
+```
+
+The output of *lsusb* is
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 8087:0a2b Intel Corp.
+Bus 001 Device 002: ID 05c8:03a2 Cheng Uei Precision Industry Co., Ltd (Foxlink)
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
 
 ## Troubleshoothing
 

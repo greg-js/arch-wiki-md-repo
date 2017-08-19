@@ -147,7 +147,7 @@ One of the easiest activities for **all** Arch users is to browse the AUR and **
 
 ## Sharing and maintaining packages
 
-**Note:** Please see [Talk:Arch User Repository#Scope of the AUR4 section](/index.php/Talk:Arch_User_Repository#Scope_of_the_AUR4_section "Talk:Arch User Repository") before making changes to this section.
+**Note:** Please see [Talk:Arch User Repository#Scope of the AUR4 section](https://wiki.archlinux.org/index.php?title=Talk:Arch_User_Repository&oldid=484964#Scope_of_the_AUR4_section) before making changes to this section.
 
 Users can **share** PKGBUILDs using the Arch User Repository. It does not contain any binary packages but allows users to upload PKGBUILDs that can be downloaded by others. These PKGBUILDs are completely unofficial and have not been thoroughly vetted, so they should be used at your own risk.
 

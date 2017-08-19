@@ -203,7 +203,7 @@ From this point on, it is recommended to obtain a secure-certificates using [Let
 
 ##### PHP-FPM configuration
 
-Make sure PHP-FPM has been configured correctly as described in [Nginx#PHP configuration](/index.php/Nginx#PHP_configuration "Nginx").
+Make sure PHP-FPM has been configured correctly as described in [Nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx").
 
 Uncomment `env[PATH] = /usr/local/bin:/usr/bin:/bin` in `/etc/php/php-fpm.d/www.conf` and [restart](/index.php/Restart "Restart") `php-fpm.service` to apply the changes.
 

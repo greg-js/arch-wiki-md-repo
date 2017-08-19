@@ -19,7 +19,7 @@
 
 ## Installation
 
-ClamAV can be [installed](/index.php/Install "Install") with package [clamav](https://www.archlinux.org/packages/?name=clamav).
+[Install](/index.php/Install "Install") the [clamav](https://www.archlinux.org/packages/?name=clamav) package.
 
 ## Updating database
 

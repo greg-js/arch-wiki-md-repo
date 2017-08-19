@@ -937,7 +937,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 ## Strategy
 
-*   **[0 A.D.](/index.php/0_A.D. "0 A.D.")** — 3D and historically-based real-time strategy game, alpha stage.
+*   **0 A.D.** — 3D and historically-based real-time strategy game, alpha stage.
 
 	[https://play0ad.com/](https://play0ad.com/) || [0ad](https://www.archlinux.org/packages/?name=0ad)
 

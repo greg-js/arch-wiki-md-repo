@@ -456,7 +456,7 @@ options snd_hda_intel index=1
 
 ### Processor
 
-See [Microcode#Enabling_Intel_microcode_updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode") how to update to processor's microcode.
+See [Microcode#Enabling Intel microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode") how to update to processor's microcode.
 
 ## Add ALSA-Preamplifier
 

@@ -8,8 +8,7 @@ This article was written to assist you with getting archlinux run on the Lenovo 
     *   [1.1 BIOS-Update:](#BIOS-Update:)
     *   [1.2 Creating an installation medium](#Creating_an_installation_medium)
 *   [2 Installation](#Installation)
-    *   [2.1 WLAN driver installation](#WLAN_driver_installation)
-        *   [2.1.1 Deauthentication Issues](#Deauthentication_Issues)
+    *   [2.1 WLAN deauthentication issues](#WLAN_deauthentication_issues)
     *   [2.2 Audio](#Audio)
     *   [2.3 Video](#Video)
     *   [2.4 Touchpad](#Touchpad)
@@ -76,11 +75,7 @@ which will/should behave like a regular bootable CD-Rom in addition to a capable
 
 ## Installation
 
-### WLAN driver installation
-
-See [Wireless network configuration#rtl8192s](/index.php/Wireless_network_configuration#rtl8192s "Wireless network configuration").
-
-#### Deauthentication Issues
+### WLAN deauthentication issues
 
 If you are using the rtl8192ce module, you may experience some intermittent deauthentication issues with newer kernels (tested on 3.4.4-2-ARCH). The reason is because the BIOS is turning off the wireless card when the BIOS deems it to be "inactive." This is the case if `dmesg` reports
 

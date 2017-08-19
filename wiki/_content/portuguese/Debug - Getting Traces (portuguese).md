@@ -1,22 +1,22 @@
-This article aims to help in creating a debugging Arch package and using it to provide trace and debug information for reporting software bugs to developers.
+Esse artigo visa ajudar na criação de um pacote de depuração do Arch e usá-lo para fornecer informações de rastro e depuração para relatar bugs de software para desenvolvedores.
 
 ## Contents
 
-*   [1 Package names](#Package_names)
+*   [1 Nomes de pacotes](#Nomes_de_pacotes)
 *   [2 PKGBUILD](#PKGBUILD)
-*   [3 Compilation settings](#Compilation_settings)
-    *   [3.1 General](#General)
+*   [3 Configurações de compilação](#Configura.C3.A7.C3.B5es_de_compila.C3.A7.C3.A3o)
+    *   [3.1 Geral](#Geral)
     *   [3.2 Qt4](#Qt4)
     *   [3.3 Qt5](#Qt5)
-    *   [3.4 CMAKE (KDE) applications](#CMAKE_.28KDE.29_applications)
-*   [4 Building and installing the package](#Building_and_installing_the_package)
-*   [5 Getting the trace](#Getting_the_trace)
-*   [6 Conclusion](#Conclusion)
-*   [7 See also](#See_also)
+    *   [3.4 Aplicativos CMAKE (KDE)](#Aplicativos_CMAKE_.28KDE.29)
+*   [4 Compilando e instalando o pacote](#Compilando_e_instalando_o_pacote)
+*   [5 Obtendo o rastro](#Obtendo_o_rastro)
+*   [6 Conclusão](#Conclus.C3.A3o)
+*   [7 Veja também](#Veja_tamb.C3.A9m)
 
-## Package names
+## Nomes de pacotes
 
-When looking at debug messages, such as:
+Ao procurar por mensagens de depuração, tal como:
 
 ```
 [...]
@@ -35,25 +35,25 @@ Using host libthread_db library "/lib/libthread_db.so.1".
 
 ```
 
-`??` shows where debugging info is missing, as well as the name of library or executable which called the function. Similarly, when `(no debugging symbols found)` appears, you should look for the stated file names. For example, with [pacman](/index.php/Pacman "Pacman"):
+`??` mostra onde a informação de depuração está faltando, assim como o nome da biblioteca ou executável que chamou a função. Similarmente, quando `(no debugging symbols found)` aparece, você deve procurar pelos nomes de arquivos mencionados. Por exemplo, com [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"):
 
 ```
 $ pacman -Qo /lib/libthread_db.so.1
-/lib/libthread_db.so.1 is owned by *glibc* 2.5-8
+/lib/libthread_db.so.1 pertence a *glibc* 2.5-8
 
 ```
 
-The package is called [glibc](https://www.archlinux.org/packages/?name=glibc) in version 2.5-8\. Repeat this step for every package that needs debugging.
+O pacote é chamado [glibc](https://www.archlinux.org/packages/?name=glibc) na versão 2.5-8\. Repita essa etapa para todo pacote que precisa de depuração.
 
 ## PKGBUILD
 
-In order to build a package from source, the PKGBUILD file is required. See [ABS](/index.php/ABS "ABS") for packages in the [official repositories](/index.php/Official_repositories "Official repositories"), and [AUR#Acquire build files](/index.php/AUR#Acquire_build_files "AUR") for packages in the [AUR](/index.php/AUR "AUR").
+Para compilar um pacote a partir do fonte, o arquivo PKGBUILD file é necessário. Veja [ABS (Português)](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") para pacotes nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), e [AUR (Português)#Obtendo arquivos de compilação](/index.php/AUR_(Portugu%C3%AAs)#Obtendo_arquivos_de_compila.C3.A7.C3.A3o "AUR (Português)") para pacotes no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
-## Compilation settings
+## Configurações de compilação
 
-At this stage, you can modify the global configuration file of `makepkg` if you will be using it only for debug purposes. In other cases, you should modify package's PKGBUILD file only for each package you would like to rebuild.
+Neste estágio, você pode modificar o arquivo de configuração global do `makepkg` se você for usá-lo apenas para propósito de depuração. Nos demais casos, você deve modificar o arquivo PKGBUILD do pacote apenas para cada pacote que você gostaria de recompilar.
 
-### General
+### Geral
 
 As of pacman 4.1, `/etc/makepkg.conf` has debug compilation flags in `DEBUG_CFLAGS` and `DEBUG_CXXFLAGS`. To use them, enable the `debug` makepkg option, and disable `strip`.
 
@@ -102,11 +102,11 @@ In addition to the previous general settings, pass `-developer-build` option to 
 
 The [qt-debug](/index.php/Unofficial_user_repositories#qt-debug "Unofficial user repositories") repository contains pre-built Qt/PyQt packages with debug symbols. See also [upstream](http://doc.qt.io/qt-5/debug.html) instructions.
 
-### CMAKE (KDE) applications
+### Aplicativos CMAKE (KDE)
 
 [KDE](/index.php/KDE "KDE") and related programs typically use [cmake](https://www.archlinux.org/packages/?name=cmake). To enable debug information and disable optimisations, change `-DCMAKE_BUILD_TYPE` to `Debug`. To enable debug information while keeping optimisations enabled, change `-DCMAKE_BUILD_TYPE` to `RelWithDebInfo`.
 
-## Building and installing the package
+## Compilando e instalando o pacote
 
 Build the package from source using `makepkg` while in the PKGBUILD's directory. This could take some time:
 
@@ -122,7 +122,7 @@ Then install the built package:
 
 ```
 
-## Getting the trace
+## Obtendo o rastro
 
 The actual backtrace (or stack trace) can now be obtained via e.g. [gdb](https://www.archlinux.org/packages/?name=gdb), the GNU Debugger. Run it either via:
 
@@ -186,13 +186,12 @@ You can also debug an already running application, e.g.:
 
 ```
 
-## Conclusion
+## Conclusão
 
 Use the complete stack trace to inform developers of a bug you have discovered before. This will be highly appreciated by them and will help to improve your favorite program.
 
-## See also
+## Veja também
 
-*   [Debian - How To Get a Backtrace](https://wiki.debian.org/HowToGetABacktrace)
 *   [Gentoo Wiki - Backtraces with Gentoo](https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces)
 *   [Fedora - StackTraces](http://fedoraproject.org/wiki/StackTraces)
 *   [GNOME - Getting Stack Traces](https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces/Details#obtain-a-stacktrace)

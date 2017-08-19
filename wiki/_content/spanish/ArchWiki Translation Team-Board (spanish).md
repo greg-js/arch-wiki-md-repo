@@ -1,6 +1,6 @@
 <center>**Navegación**</center>
 
-<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — **Tablas de traducciones** — [Glosario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")</center>
+<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — <a class="mw-selflink selflink">Tablas de traducciones</a> — [Glosario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")</center>
 
 * * *
 
@@ -210,7 +210,7 @@ creado en un intento de recopilar información sobre Arch Linux en prensa hispan
 | [Disable clearing of boot messages (Español)](/index.php/Disable_clearing_of_boot_messages_(Espa%C3%B1ol) "Disable clearing of boot messages (Español)") | Configuración del sistema | `2011-03` |
 | [Disable PC speaker beep (Español)](/index.php/Disable_PC_speaker_beep_(Espa%C3%B1ol) "Disable PC speaker beep (Español)") | Sonido | `2013-09` |
 | [dmenu (Español)](/index.php/Dmenu_(Espa%C3%B1ol) "Dmenu (Español)") | Lanzador de menú | `2008-05` |
-| [Dokuwiki (Español)](/index.php/Dokuwiki_(Espa%C3%B1ol) "Dokuwiki (Español)") | Wiki | `2013-09` |
+| [DokuWiki (Español)](/index.php/DokuWiki_(Espa%C3%B1ol) "DokuWiki (Español)") | Wiki | `2013-09` |
 | [DOSBox (Español)](/index.php/DOSBox_(Espa%C3%B1ol) "DOSBox (Español)") | Emulador de PC | `2011-03` |
 | [Dotpac (Español)](/index.php/Dotpac_(Espa%C3%B1ol) "Dotpac (Español)") | Gestión de paquetes | `2008-07` | Versión inglesa propuesta para su eliminación |
 | [Downgrading packages (Español)](/index.php/Downgrading_packages_(Espa%C3%B1ol) "Downgrading packages (Español)") | Gestión de paquetes | `2011-03` | Sin contenido alguno (tan solo el título).
@@ -366,7 +366,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | Página | Observaciones |
 | [ArchWiki Translation Team (Español)](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") |
 | [ArchWiki Translation Team/About (Español)](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") |
-| **ArchWiki Translation Team/Board (Español)** |
+| <a class="mw-selflink selflink">ArchWiki Translation Team/Board (Español)</a> |
 | [ArchWiki Translation Team/Contributing (Español)](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") |
 | [ArchWiki Translation Team/Glossary (Español)](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)") |
 | [ArchWiki Translation Team/Style (Español)](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") |

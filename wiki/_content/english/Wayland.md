@@ -410,7 +410,7 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### Input grabbing in games, remote desktop and VM windows
 
-In contrast to Xorg, Wayland does not allow exclusive input device grabbing (e.g. [keyboard](https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html), [mouse](https://tronche.com/gui/x/xlib/input/XGrabPointer.html)), instead, it depends on the Wayland compositor to pass keyboard shortcuts and confine the pointer device to the application window.
+In contrast to Xorg, Wayland does not allow exclusive input device grabbing, also known as active or explicit grab (e.g. [keyboard](https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html), [mouse](https://tronche.com/gui/x/xlib/input/XGrabPointer.html)), instead, it depends on the Wayland compositor to pass keyboard shortcuts and confine the pointer device to the application window.
 
 This change in input grabbing breaks current applications' behavior, meaning:
 

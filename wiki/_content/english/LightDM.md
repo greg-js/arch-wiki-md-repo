@@ -37,6 +37,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.11 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
         *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
     *   [5.12 VNC Server](#VNC_Server)
+    *   [5.13 Lock the screen using light-locker](#Lock_the_screen_using_light-locker)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
@@ -99,7 +100,7 @@ $ dm-tool --help
 
 ### User switching
 
-**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use something else, e.g. from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use [light-locker](/index.php/LightDM#Lock_the_screen_using_light-locker "LightDM") or something from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 LightDM's *dm-tool* command can be used to allow multiple users to be logged in on separate ttys. The following will send a signal requesting that the current session be locked and then will initiate a switch to LightDM's greeter, allowing a new user to log in to the system.
 
@@ -357,6 +358,17 @@ depth=24
 Now open an SSH tunnel and connect to localhost as described in [TigerVNC#On the client](/index.php/TigerVNC#On_the_client "TigerVNC").
 
 **Note:** If you get a blank screen upon opening the VNC connection, try a different LightDM greeter.
+
+### Lock the screen using light-locker
+
+[light-locker](https://www.archlinux.org/packages/?name=light-locker) is a simple screen locker using LightDM to authenticate the user. Once it is installed and running you can lock your session using
+
+```
+$ light-locker-command -l
+
+```
+
+This requires `light-locker` to be started at the beginning of your session. Therefore the file `/etc/xdg/autostart/light-locker.desktop` is created during the installation. This file is loaded automatically by any XDG-compliant desktop environment (see [Desktop_entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries")). However, if you are just using a window manager which does not load it automatically, add `light-locker` to the [xprofile](/index.php/Xprofile "Xprofile") file.
 
 ## Troubleshooting
 

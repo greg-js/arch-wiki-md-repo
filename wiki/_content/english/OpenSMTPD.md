@@ -23,11 +23,11 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
 
 ## Installation
 
-[Install](/index.php/Install "Install") [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) package.
 
 ## Configuration
 
-[opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) is configured in `/etc/smtpd`.
+OpenSMTPD is configured in `/etc/smtpd`.
 
 ### Local mail
 

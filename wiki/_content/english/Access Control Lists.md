@@ -14,7 +14,7 @@
 
 ## Installation
 
-The required package [acl](https://www.archlinux.org/packages/?name=acl) is a dependency of [systemd](/index.php/Systemd "Systemd"), it should already be installed.
+The [acl](https://www.archlinux.org/packages/?name=acl) package is a dependency of [systemd](/index.php/Systemd "Systemd"), it should already be installed.
 
 ## Configuration
 

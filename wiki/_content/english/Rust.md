@@ -28,6 +28,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
         *   [7.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
         *   [7.2.3 Visual Studio Code](#Visual_Studio_Code)
         *   [7.2.4 Vim](#Vim)
+        *   [7.2.5 Emacs](#Emacs)
 *   [8 See also](#See_also)
 
 ### Rust Core Library
@@ -225,6 +226,10 @@ Support for Rust can be obtained by installing the [Rust](https://marketplace.vi
 #### Vim
 
 Vim support for Rust is enabled via the official [rust.vim](https://github.com/rust-lang/rust.vim) plugin.
+
+#### Emacs
+
+Emacs support for Rust is enabled via the offical [rust-mode](https://github.com/rust-lang/rust-mode) plugin or the [emacs-rust-mode](https://aur.archlinux.org/packages/emacs-rust-mode/) package.
 
 ## See also
 

@@ -1,5 +1,5 @@
 | [Laptop main page](/index.php/Laptop "Laptop") |
-| **Acer** - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
+| <a class="mw-selflink selflink">Acer</a> - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
 
 ## Model List
 
@@ -122,7 +122,7 @@ USB:
  | (BIOS v1.15) After UEFI installation, must set Supervisor password, add bootloader as trusted, and boot with SecureBoot. BIOS v1.25 reportedly has problems on similar E5 models that were fixed in 1.31 onward. |
 | Acer Aspire E5-575G-5538 | 2017.02.01 | OK, Nvidia GeForce 940MX (NVIDIA Device 179c),
 
-*   works with proprietary [Nvidia](/index.php/Nvidia "Nvidia") drivers dkms version, [Bumblebee](/index.php/Bumblebee "Bumblebee") dkms version,
+*   works with proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers dkms version, [Bumblebee](/index.php/Bumblebee "Bumblebee") dkms version,
 *   [Nouveau](/index.php/Nouveau "Nouveau") works too, gives better battery life but significantly less performance as of 10 Aug 2017
 
  | OK, HDA-Intel | OK, Realtek, needed to set MAC in a profile in NetworkManager settings | OK, Qualcomm Atheros | 
@@ -136,7 +136,7 @@ USB:
 
 *   Suspend to RAM: Yes
 *   Disk: Untested
-*   Battery: Yes, but battery life is not great, needs [tlp](/index.php/Tlp "Tlp") installed for better battery life
+*   Battery: Yes, but battery life is not great, needs [TLP](/index.php/TLP "TLP") installed for better battery life
 *   CPU frequency scaling: Yes
 
  | Untested, USB modems should work out of the box | 

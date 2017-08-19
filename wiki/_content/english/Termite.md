@@ -1,4 +1,4 @@
-[Termite](https://www.github.com/thestinger/termite) is a minimal [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators") designed for use with tiling [window managers](/index.php/Window_manager "Window manager"). It is a *modal* application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and command mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
+[Termite](https://www.github.com/thestinger/termite) is a minimal VTE-based [terminal emulator](/index.php/Category:Terminal_emulators "Category:Terminal emulators"). It is a *modal* application, similar to [Vim](/index.php/Vim "Vim"), with an insert mode and command mode where keybindings have different functions. Termite is based on the [VTE](https://developer.gnome.org/vte/unstable/) library.
 
 The configuration file allows to change colors and set some options. Termite supports transparency along with both the 256 color and true color (16 million colors) palettes. It has a similar look and feel to [urxvt](/index.php/Urxvt "Urxvt").
 

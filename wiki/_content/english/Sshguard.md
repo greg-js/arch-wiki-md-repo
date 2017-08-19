@@ -156,6 +156,15 @@ BLACKLIST_FILE=10:/var/db/sshguard/blacklist.db
 
 Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
 
+To prevent multiple authentication attempts during a single connection, you may also want to change /etc/ssh/sshd_config by defining:
+
+```
+MaxAuthTries 1
+
+```
+
+You will have to [restart](/index.php/Restart "Restart") the `sshd.service` unit for this change to take effect.
+
 ## Tips and Tricks
 
 ### Unbanning

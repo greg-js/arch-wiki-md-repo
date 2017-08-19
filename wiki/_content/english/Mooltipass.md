@@ -92,8 +92,6 @@ For scripting purpose there is [moolticute-cli](https://aur.archlinux.org/packag
 
 Last client implementation is [mooltipy](https://github.com/osquat/mooltipy) that implement both some CLI tools and an Python module that could be used for scripting.
 
-**Note:** This tools is being packaged and should pop on [AUR](/index.php/AUR "AUR") as soon as some fixes as been issued for supporting Python3.
-
 ## See also
 
 *   [The making of a secure open source password keeper (FOSDEM 2017)](https://fosdem.org/2017/schedule/event/password_keeper/)

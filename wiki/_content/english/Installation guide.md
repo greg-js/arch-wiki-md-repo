@@ -44,7 +44,7 @@ The default [console keymap](/index.php/Keyboard_configuration_in_console "Keybo
 
 ### Verify the boot mode
 
-If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will [boot](/index.php/Boot "Boot") Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/UEFI#UEFI_Variables "UEFI") directory:
+If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will [boot](/index.php/Boot "Boot") Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/UEFI#UEFI_variables "UEFI") directory:
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -110,7 +110,7 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 
 ### Mount the file systems
 
-[Mount](/index.php/File_systems#Mount_a_filesystem "File systems") the file system on the root partition to `/mnt`, for example:
+[Mount](/index.php/File_systems#Mount_a_file_system "File systems") the file system on the root partition to `/mnt`, for example:
 
 ```
 # mount /dev/*sda1* /mnt

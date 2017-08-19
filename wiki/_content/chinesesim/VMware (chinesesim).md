@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [VMware](/index.php/VMware "VMware") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-11，点击[这里](https://wiki.archlinux.org/index.php?title=VMware&diff=0&oldid=479547)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VMware](/index.php/VMware "VMware") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-18，点击[这里](https://wiki.archlinux.org/index.php?title=VMware&diff=0&oldid=485222)可以查看翻译后英文页面的改动。
 
 本文是关于在 Arch 中安装 VMware，你也许想寻找的是 [在 VMware 中安装 Arch Linux](/index.php/Installing_Arch_Linux_in_VMware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux in VMware (简体中文)")
 
@@ -463,7 +463,7 @@ $ xhost -
 
 #### 版本号为12.5.3-12.5.5的vmplayer/vmware无法启动
 
-**注意:** 无需在12.5.6上执行该解决方案
+**注意:** 无需在12.5.6上执行该解决方案，但对于12.5.7来说，解决方案可能是必要的。见下文。
 
 这貌似是文件`/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`中的问题，`CXXABI_1.3.8`缺失。
 
@@ -494,6 +494,22 @@ $ xhost -
 
 ```
 # export VMWARE_USE_SHIPPED_LIBS='yes'
+
+```
+
+如果在版本**12.5.7**上出现问题，并且移动`icudt44l.dat`或者设置`VMWARE_USE_SHIPPED_LIBS`为`yes`不起作用，或者在终端内执行`vmplayer`无输出，尝试以root权限执行：
+
+```
+# cd /usr/lib/vmware/lib/libz.so.1
+# mv libz.so.1 libz.so.1.old
+# ln -s /usr/lib/libz.so.1 .
+
+```
+
+尽管设置了VMWARE_USE_SHIPPED_LIBS变量，VMware仍有可能找不到某些库文件，比如libfontconfig.so.1。查看VMware位于tmp目录中的日志来检查哪些库文件未被找到，并将对应的系统库文件拷贝至合适的路径：
+
+```
+# cp /usr/lib/libfontconfig.so.1 /usr/lib/vmware/lib/libfontconfig.so.1/
 
 ```
 
@@ -566,4 +582,4 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 ```
 
-你可能还需要清理在`/usr/lib/modules/*kernel_name*/misc/`下的冗余文件。
+你可能还需要清理在`/usr/lib/modules/*kernel_name*/misc/`下的冗余文件，并且如果目录`/etc/init.d/`是空的话，删除它。

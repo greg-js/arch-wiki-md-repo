@@ -90,7 +90,7 @@ Due to CK's patchset defaults, BFQ is built into [linux-ck](/index.php/AUR "AUR"
 
 ### Enable BFQ for all devices
 
-If compiling from the AUR, simply set the BFQ flag to "y" in the PKGBUILD prior to building
+If compiling from the [AUR](/index.php/AUR "AUR"), simply set the BFQ flag to "y" in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") prior to building:
 
 ```
 _BFQ_enable_="y"

@@ -154,8 +154,6 @@ $ makepkg -si
 
 ## 分享和维护软件包
 
-**Note:** 编辑这一节时请注意 [Talk:Arch User Repository#Scope of the AUR4 section](/index.php/Talk:Arch_User_Repository#Scope_of_the_AUR4_section "Talk:Arch User Repository") 的相关内容.
-
 AUR不包含任何编译过的二进制包，用户上传[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")，供其他用户下载使用。所有软件包都是非官方的，使用风险自担。
 
 ### 提交软件包

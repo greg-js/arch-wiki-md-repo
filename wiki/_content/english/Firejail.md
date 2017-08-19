@@ -135,7 +135,7 @@ A GUI application for use with Firejail is also available, [firetools](https://a
 
 ### General
 
-1\. If you are depending upon `firecfg` to have generated a symlink, ie. you followed the instructions for [Firejail#Using Firejail by default](/index.php/Firejail#Using_Firejail_by_default "Firejail"), double-check that the symlink was actually created. You may need to create one manually.
+1\. If you are depending upon `firecfg` to have generated a symlink, ie. you followed the instructions for [#Using Firejail by default](#Using_Firejail_by_default), double-check that the symlink was actually created. You may need to create one manually.
 
 2\. If the symlink exists, you may need to run `sudo updatedb` to update the location database.
 

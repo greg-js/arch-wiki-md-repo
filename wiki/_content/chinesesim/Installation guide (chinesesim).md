@@ -50,7 +50,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ### 验证启动模式
 
-如果以在 UEFI 主板上启用 [UEFI](/index.php/UEFI "UEFI") 模式, [Archiso](/index.php/Archiso "Archiso") 将会使用 [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") 来[启动](/index.php/Boot "Boot") Arch Linux。可以列出 [efivars](/index.php/UEFI#UEFI_Variables "UEFI") 目录以验证启动模式:
+如果以在 UEFI 主板上启用 [UEFI](/index.php/UEFI "UEFI") 模式, [Archiso](/index.php/Archiso "Archiso") 将会使用 [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") 来[启动](/index.php/Boot "Boot") Arch Linux。可以列出 [efivars](/index.php/UEFI#UEFI_variables "UEFI") 目录以验证启动模式:
 
 ```
 # ls /sys/firmware/efi/efivars

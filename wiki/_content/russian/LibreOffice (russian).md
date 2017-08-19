@@ -64,9 +64,9 @@ gtk3 > gtk > kde4 > generic
 
 Чтобы принудительно использовать определенный интерфейс VCL UI, используйте одну из `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde4`, `SAL_USE_VCLPLUGIN=gtk` или `SAL_USE_VCLPLUGIN=gtk3` переменных среды ([environment variables (Русский)](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)")). Можно снять комментирование с этих переменных в `/etc/profile.d/libreoffice-fresh.sh` или `/etc/profile.d/libreoffice-still.sh`.
 
-However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
+Однако, если в программе всё похоже на использование значков Windows 95/98, перейдите в меню *Tools > Options...*, (в котором представлено диалоговое окно Options), затем выберите *LibreOffice > Accessibility* и снимите флажок *Automatically detect high-contrast mode of operating system*.
 
-Если это не сработает сразу, вам может потребоваться изменить набор значков, который используется; this is also in the Options Dialog, under *LibreOffice > View* with two pop-up boxes for "Icon size and style" (the latter pop-up box should be changed to something other than "High-contrast").
+Если это не сработает сразу, вам может потребоваться изменить набор значков, который используется; это также находится в диалоговом окне Options в разделе *LibreOffice > View* с двумя всплывающими окнами для *Icon size and style* (последнее всплывающее окно должно быть изменено на нечто иное, чем "High-contrast").
 
 ### Темы Firefox
 
@@ -184,14 +184,14 @@ Base (интерфейс СУБД)
     *   Снизьте число шагов, на которое можно вернуться при редактировании, например 20 или 30.
     *   Установить *Использовать для LibreOffice* равным 128МБ
     *   Установите *Памяти на объект* равным 20МБ
-    *   Если Вы часто применяете LibreOffice, проверьте, что используется Quickstarter.
-*   В закладке *Java*, снимите галочку с Use a Java runtime environment.
+    *   Если Вы часто применяете LibreOffice, проверьте, что используется Quickstarter (использовать быстрый запуск).
+*   В закладке *Расширенные возможности*, снимите галочку с Use a Java runtime environment (использовать виртуальную машину java).
 
 ## Устранение несправностей
 
 ### Шрифт подстановки
 
-Его можно изменить в опциях LibreOffice. Из выпадающего меню выберите *Tools > Options > LibreOffice > Fonts*. Поставьте галочку в поле *Apply Replacement Table*. Выберите шрифт `Andale Sans UI` и выберите желаемый шрифт для опции *Replace with*. Когда закончите, нажмите *checkmark*. Затем выберите опции *Always* и *Screen only*. Нажимайте ОК. Затем Вам нужно перейти в меню *Tools > Options > LibreOffice > View* и снять галочку с опции "Use system font for user interface". Если Вы используете несглаженный шрифт, например, Arial, также придется убрать опцию "Screen font antialiasing".
+Его можно изменить в опциях LibreOffice. Из выпадающего меню выберите *Tools > Options > LibreOffice > Fonts* (Сервис > Параметры > LibreOffice > Шрифты). Поставьте галочку в поле *Apply Replacement Table* (применить таблицу замен). Выберите шрифт `Andale Sans UI` и выберите желаемый шрифт для опции *Replace with* (заменить на). Когда закончите, нажмите *checkmark* (галочку). Затем выберите опции *Always*(всегда) и *Screen only* (экран). Нажимайте ОК. Затем Вам нужно перейти в меню *Tools > Options > LibreOffice > View* (Сервис > Параметры > LibreOffice > Вид) и снять галочку с опции "Use system font for user interface". Если Вы используете несглаженный шрифт, например, Arial, также придется убрать опцию "Screen font antialiasing" (использовать сглаживание).
 
 ### Сглаживание
 

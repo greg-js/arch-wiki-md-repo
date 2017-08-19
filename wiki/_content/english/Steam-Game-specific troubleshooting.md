@@ -733,7 +733,7 @@ Dota2 is compatible with [IBus](/index.php/IBus "IBus") .
 
 ## Devil Daggers
 
-Refer to [#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found).
+Refer to [#Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found).
 
 ## Drox Operative
 

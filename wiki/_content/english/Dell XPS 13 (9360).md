@@ -120,21 +120,14 @@ enable_guc_loading=1 enable_guc_submission=1
 
 ```
 
-These arguments are used to enable GuC updates. GuC is a small proprietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the official repository.
+These arguments are used to enable GuC updates. GuC is a small proprietary binary blob released by intel to update the GuC binary in faster intervals than the kernel release does. It is used for graphics workload scheduling on the various graphics parallel engines. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). The GuC binary for kaby lake is included since firmware release linux-firmware 20170217 in the official repository. HuC is also a binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. As of kernel 4.12, HuC is loaded if GuC is enabled. One can check with 'cat /sys/kernel/debug/dri/0/i915_huc_load_status' and 'cat /sys/kernel/debug/dri/0/i915_guc_load_status'.
 
 ```
-enable_huc=1
-
-```
-
-HuC is also an binary blob from intel. It's designed to offload some of the media functions from the CPU to GPU. More details at ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)). As of kernel 4.12, HuC remains unsupported.
-
-```
-enable_psr=1 disable_power_well=0 OR enable_psr=2 
+enable_psr=1
 
 ```
 
-Enable psr level 2 is working, while level 1 has a lot of problems. Setting it on level 2 doesn't give much energy saving at the moment. It's said that 'disable_power_well=0 enable_psr=1' is working in this combination.
+Panel Self Refresh (PSR) is working for eDP 1.3 an up and does stop the creation of new frames when the screen content is static to save energy.
 
 ```
 NOT WORKING: semaphores=1 

@@ -29,8 +29,8 @@
 
 1.  為頁面打上適當的[頁面狀態模版](/index.php/Help:Template#Article_status_templates "Help:Template") (例如： 可刪除 `{{Deletion}}`, 過期 `{{Out of date}}`, 待翻譯 `{{Translateme}}`)
 2.  [歸檔殘缺頁面](/index.php/Special:WhatLinksHere/Template:Stub "Special:WhatLinksHere/Template:Stub")和[擴展未完成或書寫質量差的頁面](/index.php/Special:WhatLinksHere/Template:Expansion "Special:WhatLinksHere/Template:Expansion")。
-3.  [合並重復頁面](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge")。
-4.  [減少分類（Category）](/index.php/Special:Categories "Special:Categories")——檢索wiki並合並多餘的分類頁，使之更具有導航作用。
+3.  [合併重複頁面](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge")。
+4.  [減少分類（Category）](/index.php/Special:Categories "Special:Categories")——檢索wiki並合併多餘的分類頁，使之更具有導航作用。
 5.  [歸類未分類頁面](/index.php/Special:UncategorizedPages "Special:UncategorizedPages")。
 6.  [為頁面增加概覽（Summary）框](/index.php/Writing_Article_Overviews "Writing Article Overviews")。
 7.  [更新FAQ](/index.php/FAQ "FAQ")——從論壇摘取常見問題，刪除過時內容。
@@ -42,9 +42,9 @@
 *   [多重重定向](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
 *   [內容過短](/index.php/Special:ShortPages "Special:ShortPages")
 
-長遠來看，我們的目標是建設專業並易於查詢的wiki系統，因此需要檔案員維護頁面。盡管有社區成員的努力，但維護是枯燥且吃力的工作。所以，當你編輯頁面時，請盡量遵守以下規則：
+長遠來看，我們的目標是建設專業並易於查詢的wiki系統，因此需要檔案員維護頁面。儘管有社區成員的努力，但維護是枯燥且吃力的工作。所以，當你編輯頁面時，請盡量遵守以下規則：
 
-1.  無錯別字，語法規范，語句通順。
+1.  無錯別字，語法規範，語句通順。
     *   刪除多餘內容和鏈接，文章簡明易懂。
     *   不添加個人信息（「我喜歡……」，「我的電腦……」），保持內容專業性。
     *   保持所有頁面統一風格、布局。

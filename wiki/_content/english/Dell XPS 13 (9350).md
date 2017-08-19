@@ -69,7 +69,7 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 The most convenient way to install Arch Linux is by disabling "Secure Boot" (Secure Boot > Disable). However it is possible to self-sign your kernel and boot with it enabled. For further information have a look at the [Secure Boot](/index.php/Secure_Boot "Secure Boot") article.
 
-In case your `efivars` are not properly set it is most likely due to you not being booted into [UEFI](/index.php/UEFI "UEFI"). Should the problem persist be sure to consult the [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") section.
+In case your `efivars` are not properly set it is most likely due to you not being booted into [UEFI](/index.php/UEFI "UEFI"). Should the problem persist be sure to consult the [UEFI#UEFI variables](/index.php/UEFI#UEFI_variables "UEFI") section.
 
 ### Updates
 

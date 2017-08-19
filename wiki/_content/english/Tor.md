@@ -18,6 +18,8 @@
 *   [7 Web browsing](#Web_browsing)
     *   [7.1 Firefox](#Firefox)
     *   [7.2 Chromium](#Chromium)
+        *   [7.2.1 Debug](#Debug)
+        *   [7.2.2 Extension](#Extension)
     *   [7.3 Luakit](#Luakit)
 *   [8 HTTP proxy](#HTTP_proxy)
     *   [8.1 Firefox](#Firefox_2)
@@ -86,7 +88,7 @@ There are potential conflicts between configurations in `torrc` and those in `to
 
 The maximum file descriptor number that can be opened by Tor can be set with `LimitNOFILE` in `tor.service`. Fast relays may want to increase this value.
 
-If your computer is not running a webserver, and you have not set `AccountingMax`, consider changing your `ORPort` to `443` and/or your `DirPort` to `80`. Many Tor users are stuck behind firewalls that only let them browse the web, and this change will let them reach your Tor relay. If you are already using ports 80 and 443, other useful ports are 22, 110, and 143.[[1]](https://www.torproject.org/docs/tor-relay-debian) But since these are privileged ports, to do so Tor must be run as root, by setting `User=root` in `tor.service` and `User tor` in `torrc`.
+If your computer is not running a webserver, and you have not set `AccountingMax`, consider changing your `ORPort` to `443` and/or your `DirPort` to `80`. Many Tor users are stuck behind firewalls that only let them browse the web, and this change will let them reach your Tor relay. If you are already using ports `80` and `443`, other useful ports are `22`, `110`, and `143`.[[1]](https://www.torproject.org/docs/tor-relay-debian) But since these are privileged ports, to do so Tor must be run as root, by setting `User=root` in `tor.service` and `User tor` in `torrc`.
 
 You may wish to review [Lifecycle of a New Relay](https://blog.torproject.org/blog/lifecycle-of-a-new-relay) Tor documentation.
 
@@ -245,7 +247,7 @@ See [#Running a Tor server](#Running_a_Tor_server).
 
 Start/enable `tor.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Alternatively, launch it with `sudo -u tor /usr/bin/tor`.
 
-To use a program over tor, configure it to use 127.0.0.1 or localhost as a SOCKS5 proxy, with port 9050 (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
+To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOCKS5 proxy, with port `9050` (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
 
 ## Web browsing
 
@@ -262,23 +264,25 @@ In *Preferences > Advanced > Network tab > Settings* manually set Firefox to use
 You can simply run:
 
 ```
-$ chromium --proxy-server="socks5://myproxy:8080" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE myproxy"
+$ chromium --proxy-server="socks5://myproxy:8080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"
 
 ```
 
-The --proxy-server="socks5://myproxy:8080" flag tells Chrome to send all http:// and https:// URL requests through the SOCKS proxy server "myproxy:8080", using version 5 of the SOCKS protocol. The hostname for these URLs will be resolved by the proxy server, and not locally by Chrome.
+The `--proxy-server="socks5://myproxy:8080"` flag tells Chrome to send all `http://` and `https://` URL requests through the SOCKS proxy server `"myproxy:8080"`, using version 5 of the SOCKS protocol. The hostname for these URLs will be resolved by the proxy server, and not locally by Chrome.
 
-NOTE: proxying of ftp:// URLs through a SOCKS proxy is not yet implemented.
+**Warning:** Proxying of `ftp://` URLs through a SOCKS proxy is not yet implemented.
 
-The --proxy-server flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher".Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since once needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE myproxy", is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address 0.0.0.0\. The "EXCLUDE" clause make an exception for "myproxy", because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with PROXY_CONNECTION_FAILED.
+The `--proxy-server` flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher". Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since once needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, `--host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"`, is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address `~NOTFOUND` (think of it as `0.0.0.0`). The `"EXCLUDE"` clause make an exception for `"myproxy"`, because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with `PROXY_CONNECTION_FAILED`.
 
-Debug:
+#### Debug
 
-The first thing to check when debugging is look at the Proxy tab on about:net-internals, and verify what the effective proxy settings are: chrome://net-internals/#proxy
+The first thing to check when debugging is look at the Proxy tab on about:net-internals, and verify what the effective proxy settings are: `chrome://net-internals/#proxy`
 
-Next, take a look at the DNS tab of about:net-internals to make sure Chrome isn't issuing local DNS resolves: chrome://net-internals/#dns
+Next, take a look at the DNS tab of `about:net-internals` to make sure Chrome isn't issuing local DNS resolves: `chrome://net-internals/#dns`
 
-Note that in versions of Chrome after r186548, you can do this more concisely by mapping to ~NOTFOUND rather than 0.0.0.0. Just as with Firefox, you can setup a fast switch for example through [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm).
+#### Extension
+
+Just as with Firefox, you can setup a fast switch for example through [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm).
 
 Once installed enter in its configuration page. Under the tab *Proxy Profiles* add a new profile *Tor*, if ticked untick the option *Use the same proxy server for all protocols*, then add *localhost* as SOCKS Host, *9050* to the respective port and select *SOCKS v5*.
 

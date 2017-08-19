@@ -111,11 +111,12 @@ $ qutebrowser --qt-flag disable-reading-from-canvas
 
 ```
 
-See [this issue](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
+See [issue #2235](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
 
-**Warning:** Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly. [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
+**Note:**
 
-**Note:** This will not have any effect with the QtWebKit backend. See [#Use webengine backend](#Use_webengine_backend) to use the webengine backend.
+*   Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
+*   This will not have any effect with the QtWebKit backend. See [#Use webengine backend](#Use_webengine_backend) to use the webengine backend.
 
 ### dwb-like session handling
 

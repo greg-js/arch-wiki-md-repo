@@ -212,3 +212,31 @@ parsoidConfig.setInterwiki( 'localhost', 'http://localhost/mediawiki/api.php' );
 ```
 
 After that [enable](/index.php/Enable "Enable") and start `parsoid.service`.
+
+Alternatively, one may also use the [parsoid](https://aur.archlinux.org/packages/parsoid/) package, and configure the service via the yaml file, where the following lines should be present:
+
+ `/usr/share/webapps/parsoid/config.yaml` 
+```
+
+uri: `'http://localhost/mediawiki/api.php'`
+domain: 'localhost'
+
+```
+
+The matching part in the mediawiki settings:
+
+ `/usr/share/webapps/mediawiki/LocalSettings.php` 
+```
+
+$wgVirtualRestConfig['modules']['parsoid'] = array(
+	// URL to the Parsoid instance
+	// Use port 8142 if you use the Debian package
+	'url' => 'http://localhost:8000',
+	// Parsoid "domain", see below (optional)
+	'domain' => 'localhost',
+	// Parsoid "prefix", see below (optional)
+	'prefix' => 'localhost'
+
+```
+
+After configuration, the `parsoid` service may be started (restarted) and (if not done yet) enabled.

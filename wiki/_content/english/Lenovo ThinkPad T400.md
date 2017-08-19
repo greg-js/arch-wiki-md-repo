@@ -70,8 +70,6 @@ See [Wireless network configuration#Intel](/index.php/Wireless_network_configura
 
 See [http://www.thinkwiki.org/wiki/ThinkPad_11b/g/n_Wireless_LAN_Mini-PCI_Express_Adapter_II](http://www.thinkwiki.org/wiki/ThinkPad_11b/g/n_Wireless_LAN_Mini-PCI_Express_Adapter_II) for more details.
 
-See [Wireless network configuration#rtl8192s](/index.php/Wireless_network_configuration#rtl8192s "Wireless network configuration").
-
 ### Modem
 
 There is a module "hsfmodem" provided by [http://www.linuxant.com/](http://www.linuxant.com/).

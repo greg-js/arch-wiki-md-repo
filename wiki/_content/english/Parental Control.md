@@ -77,7 +77,7 @@ You may sometimes even set up your router to use OpenDNS, therefore allowing pro
 
 ## Editing /etc/hosts
 
-You may configure your [/etc/hosts](https://en.wikipedia.org/wiki/Hosts_(file) file to block access to certain domains. A more draconian approach is to only allow domains explicitly stated in /etc/hosts, as described [here](https://help.ubuntu.com/community/ParentalControls#Do_It_Yourself_Whitelisting). If you do this, please remember that this will affect your whole system, so for example pacman may be unable to connect to the update server unless you make a proper binding in your /etc/hosts.
+You may configure your [/etc/hosts](https://en.wikipedia.org/wiki/Hosts_(file) file to block access to certain domains. A more draconian approach is to only allow domains explicitly stated in `/etc/hosts`, as described [here](https://help.ubuntu.com/community/ParentalControls#Do_It_Yourself_Whitelisting). If you do this, please remember that this will affect your whole system, so for example pacman may be unable to connect to the update server unless you make a proper binding in your `/etc/hosts`.
 
 ## Browser add-ons
 

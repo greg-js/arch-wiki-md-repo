@@ -36,7 +36,7 @@ Adminer can now be accessed by browsing to [http://localhost/adminer](http://loc
 
 ### Nginx
 
-Ensure that the [php FastCGI interface](/index.php/Nginx#PHP_configuration "Nginx") is configured correct.
+Ensure that the [PHP FastCGI interface](/index.php/Nginx#FastCGI "Nginx") is configured correctly.
 
 Then add the following `server` block to your `/etc/nginx/nginx.conf` or place it in a file under `/etc/nginx/servers-available/` and [enable](/index.php/Nginx#Managing_server_entries "Nginx") it:
 
@@ -73,7 +73,7 @@ Afterwards [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Ngi
 
 ### Hiawatha
 
-Ensure that the [php FastCGI interface](/index.php/Hiawatha#PHP "Hiawatha") is configured correct.
+Ensure that the [PHP FastCGI interface](/index.php/Hiawatha#PHP "Hiawatha") is configured correctly.
 
 Then add the following `VirtualHost` block to your `/etc/hiawatha/hiawatha.conf`.
 

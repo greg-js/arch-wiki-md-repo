@@ -14,14 +14,14 @@
 
 Ion3 is no longer in any of the repositories as mentioned in this news item [[1]](https://www.archlinux.org/news/374/). So you will have to [install](/index.php/Install "Install") it using the package [ion3](https://aur.archlinux.org/packages/ion3/).
 
-Copy the configurationfiles to your home directory:
+Copy the configuration files to your home directory:
 
 ```
 cp /etc/ion3/* ~/.ion3
 
 ```
 
-To start Ion3 just append the following line in **`~/.xinitrc`** :
+To start Ion3 just append the following line in `~/.xinitrc`:
 
 ```
 exec ion3

@@ -16,7 +16,7 @@
     *   [3.2 查看密钥](#.E6.9F.A5.E7.9C.8B.E5.AF.86.E9.92.A5)
     *   [3.3 导出公钥](#.E5.AF.BC.E5.87.BA.E5.85.AC.E9.92.A5)
     *   [3.4 导入公共密钥](#.E5.AF.BC.E5.85.A5.E5.85.AC.E5.85.B1.E5.AF.86.E9.92.A5)
-    *   [3.5 Use a keyserver](#Use_a_keyserver)
+    *   [3.5 使用公钥服务器](#.E4.BD.BF.E7.94.A8.E5.85.AC.E9.92.A5.E6.9C.8D.E5.8A.A1.E5.99.A8)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
 *   [4 密钥维护](#.E5.AF.86.E9.92.A5.E7.BB.B4.E6.8A.A4)
     *   [4.1 Edit your key](#Edit_your_key)
@@ -149,7 +149,7 @@ $ gpg --output *public.key* --armor --export *<user-id>*
 
 ```
 
-此外，还可以通过 [密钥服务器](#.E4.BD.BF.E7.94.A8.E5.AF.86.E9.92.A5.E6.9C.8D.E5.8A.A1.E5.99.A8) 分发公钥.
+此外，还可以通过 [密钥服务器](#.E4.BD.BF.E7.94.A8.E5.85.AC.E9.92.A5.E6.9C.8D.E5.8A.A1.E5.99.A8)分发公钥.
 
 **Tip:** 使用 `--no-emit-version` 可以避免打印版本号，通过配置文件也可以进行此设置。
 
@@ -164,23 +164,23 @@ $ gpg --import *public.key*
 
 此外，还可以通过密钥服务器导入公钥。
 
-### Use a keyserver
+### 使用公钥服务器
 
-You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
+你可以将你的公钥注册到一个公共的密钥服务器，这样其他人不用联系你就能获取到你的公钥：
 
 ```
 $ gpg --send-keys *<key-id>*
 
 ```
 
-To find out details of a key on the keyserver, without importing it, do:
+要查询公钥的详细信息而不是导入，执行：
 
 ```
 $ gpg --search-keys *<key-id>*
 
 ```
 
-To import a key from a key server:
+要导入一个公钥：
 
 ```
 $ gpg --recv-keys *<key-id>*

@@ -182,7 +182,7 @@ Shell> bcfg boot add 3 fs0:\EFI\Arch_Grub\grubx64.efi "Arch_Grub"
 
 此处 `fs0` 映射到 UEFI 系统分区，`3` 是0启动项目录。
 
-**注意:** UEFI Shell 命令通常支持 `-b` 选项，它用来在每页输出完后暂停。`map` 列出识别的文件系统 (`fs0`, ...) 和数据存储设备 (`blk0`, ...). 运行 `help -b` 以列出可用命令。 [Unified Extensible Firmware Interface#Important UEFI Shell Commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_Commands "Unified Extensible Firmware Interface")
+**注意:** UEFI Shell 命令通常支持 `-b` 选项，它用来在每页输出完后暂停。`map` 列出识别的文件系统 (`fs0`, ...) 和数据存储设备 (`blk0`, ...). 运行 `help -b` 以列出可用命令。 [Unified Extensible Firmware Interface#Important UEFI Shell commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_commands "Unified Extensible Firmware Interface")
 
 列出目前启动条目，运行:
 

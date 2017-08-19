@@ -28,7 +28,16 @@ The following desktop environments use their own implementations to display noti
 
 ### Standalone
 
-In other desktop environments, the notification server needs to be launched using your WM's/DE's "autostart" option. (It *can* be launched on the first call via DBus, but that's not very desirable as it needs global configuration.)
+In other desktop environments, the notification server needs to be launched using your WM's/DE's "autostart" option.
+
+It can also be launched on the first call via [D-Bus](/index.php/D-Bus "D-Bus"), adding the following configuration to its services directory `/usr/share/dbus-1/services` respectively `$XDG_DATA_HOME/dbus-1/services`, e.g.
+
+ `org.freedesktop.Notifications.service` 
+```
+[D-BUS Service]
+Name=org.freedesktop.Notifications
+Exec=/usr/lib/notification-daemon-1.0/notification-daemon
+```
 
 You can choose one of the following implementations:
 

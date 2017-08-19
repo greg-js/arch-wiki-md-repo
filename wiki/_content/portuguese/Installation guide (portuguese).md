@@ -46,7 +46,7 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://m
 
 ### Verificar o modo de inicialização
 
-Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") vai [inicializar](/index.php/Boot "Boot") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_Variables "UEFI"):
+Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") vai [inicializar](/index.php/Boot "Boot") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -112,7 +112,7 @@ Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_s
 
 ### Montar os sistemas de arquivos
 
-[Monte](/index.php/File_systems#Mount_a_filesystem "File systems") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
+[Monte](/index.php/File_systems#Mount_a_file_system "File systems") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
 ```
 # mount /dev/*sda1* /mnt

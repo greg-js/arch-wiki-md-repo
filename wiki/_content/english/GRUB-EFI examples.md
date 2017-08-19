@@ -186,7 +186,7 @@ Shell> bcfg boot add 3 fs0:\EFI\Arch_Grub\grubx64.efi "Arch_Grub"
 
 where `fs0` is the mapping corresponding to the UEFI System Partition and `3` is the zero based boot entry index.
 
-**Note:** UEFI Shell commands usually support `-b` option which makes output pause after each page. `map` lists recognized filesystems (`fs0`, ...) and data storage devices (`blk0`, ...). Run `help -b` to list available commands. [Unified Extensible Firmware Interface#Important UEFI Shell Commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_Commands "Unified Extensible Firmware Interface")
+**Note:** UEFI Shell commands usually support `-b` option which makes output pause after each page. `map` lists recognized filesystems (`fs0`, ...) and data storage devices (`blk0`, ...). Run `help -b` to list available commands. [Unified Extensible Firmware Interface#Important UEFI Shell commands](/index.php/Unified_Extensible_Firmware_Interface#Important_UEFI_Shell_commands "Unified Extensible Firmware Interface")
 
 To list the current boot entries you can run:
 

@@ -7,6 +7,7 @@
 *   [2 Node Packaged Modules](#Node_Packaged_Modules)
     *   [2.1 Managing packages with npm](#Managing_packages_with_npm)
         *   [2.1.1 Installing packages](#Installing_packages)
+            *   [2.1.1.1 Allow user-wide installations](#Allow_user-wide_installations)
         *   [2.1.2 Updating packages](#Updating_packages)
             *   [2.1.2.1 Updating all packages](#Updating_all_packages)
         *   [2.1.3 Removing packages](#Removing_packages)
@@ -53,17 +54,20 @@ For a system-wide installation global switch `-g` can be used:
 
 ```
 
-By default this command installs the package under `/usr/lib/node_modules/npm` and requires admin privileges to do so.
+By default this command installs the package under `/usr/lib/node_modules/npm` and requires root privileges to do so.
 
-For a user-wide installation you can configure `npm` to use a local folder instead. This can be done in various ways:
+##### Allow user-wide installations
 
-*   Manually with the `--prefix` command line flag (e.g. `npm -g install packageName --prefix ~/.node_modules`).
-*   Using the `npm_config_prefix` environment variable.
-*   Using a user config file `~/.npmrc`.
+To allow *global* package installations for the current [user](/index.php/User "User") you want to specify the `--prefix` parameter, e.g.:
 
-First method is not recommended since you need to remember the location and give it as the parameter each time you do an operation.
+```
+$ npm -g install packageName --prefix ~/.node_modules
 
-For the second method simply add the following lines as [Environment variable](/index.php/Environment_variable "Environment variable"):
+```
+
+This is however **not** recommended since you need to remember the location and give it as the parameter each time you do an operation.
+
+To overrule the default location, use [environment variables](/index.php/Environment_variables "Environment variables") instead:
 
 ```
 PATH="$HOME/.node_modules/bin:$PATH"
@@ -71,30 +75,7 @@ export npm_config_prefix=~/.node_modules
 
 ```
 
-Do not forget to log out and log back in or restart your shell accordingly.
-
-For the third method you can use the command:
-
-```
-$ npm config edit
-
-```
-
-You can then find the `prefix` option and set a desired location:
-
-```
-prefix=~/.node_modules
-
-```
-
-Do not forget to delete the preceding `;` on the line or it will be read as a comment. You can now add the location of your executables to your shell configuration file (e.g. `.bash_profile`).
-
-```
-export PATH="$HOME/.node_modules/bin:$PATH"
-
-```
-
-Again do not forget to log out and log back in or restart your shell accordingly.
+Re-login or *source* to update changes.
 
 #### Updating packages
 

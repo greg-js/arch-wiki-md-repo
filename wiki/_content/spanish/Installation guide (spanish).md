@@ -48,7 +48,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Verificar el modo de arranque
 
-*   Si el modo UEFI está activado en una placa base [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") [arrancará](/index.php/Boot "Boot") en consecuencia a través de [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para comprobar esto, enumere el contenido del directorio [efivars](/index.php/UEFI#UEFI_Variables "UEFI"): `# ls /sys/firmware/efi/efivars` 
+*   Si el modo UEFI está activado en una placa base [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") [arrancará](/index.php/Boot "Boot") en consecuencia a través de [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para comprobar esto, enumere el contenido del directorio [efivars](/index.php/UEFI#UEFI_variables "UEFI"): `# ls /sys/firmware/efi/efivars` 
 
 *   Si no existe el directorio, el sistema se iniciará en modo [BIOS](https://en.wikipedia.org/wiki/es:BIOS "w:es:BIOS") (o CSM). Referirse al manual de su tarjeta madre para detalles.
 

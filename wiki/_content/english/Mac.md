@@ -1367,19 +1367,17 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 
 #### April 2016 12" - Version 9,1
 
-*   Booting from USB via EFI works fine, when giving the `noapic` kernel option. (On Ubuntu, also `noacpi nomodeset` seem to be necessary.) Remember to hold the Alt key on booting.
+*   Booting from USB via EFI works fine, when giving the `intremap=nosid` kernel option. (On Ubuntu, also `noacpi nomodeset` seem to be necessary.) Remember to hold the Alt key on booting to enter the boot menu.
 
 *   The wireless card works out of the box with `brcmfmac`.
 
-*   Suspend / hibernate does not work.
+*   Suspend / hibernate does not work. The problem seems to be the NVMe that does not wake up. When booting from an external drive, suspend / hibernate works out of the box.
 
-*   The built-in flash drive does *not* work with kernel 4.5.4-1-ARCH, but it *does* work with kernel 4.6.0-mainline (install [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)). As long as a [rather trivial patch](http://lists.infradead.org/pipermail/linux-nvme/2016-May/004618.html) is not merged into the kernel, either this patch must be applied locally or one puts `modprobe nvme; echo 106b 2003 > /sys/bus/pci/drivers/nvme/new_id` into a mkinitcpio hook (to be started after the udev hook). The reason is that the NVMe controller of the flash drive doesn't advertise itself with the correct PCI device class. Note that with the patch, a short sleep still seems to be necessary.
+*   Audio recording works out of the box. Audio playback works, but the built-in speakers don't (no solution yet).
 
-*   Audio recording works out of the box. Audio playback doesn't work (still looking for a solution).
+*   The keyboard and the touchpad do *not* work out of the box. There is a work-in-progress driver available that works well: [macbook12-spi-driver-dkms](https://aur.archlinux.org/packages/macbook12-spi-driver-dkms/). Sometimes the touchpad does not work after booting but this can be fixed by reloading the driver with `rmmod applespi && modprobe applespi`.
 
-*   The keyboard and the touchpad do *not* work (still looking for a solution).
-    *   There's a WIP driver [here](https://github.com/cb22/macbook12-spi-driver) that sort of works with a DSDT hack (the previous problem with this driver related to battery drain has been fixed now).
-    *   The keyboard backlight cannot be enabled [[4]](https://bbs.archlinux.org/viewtopic.php?id=219631)
+*   The keyboard backlight does not work (no solution yet).
 
 #### Mid 2007 13" - Version 2,1
 
@@ -1667,7 +1665,7 @@ There are more steps on how to resolve this issue in [this thread on the Arch fo
 
 ##### Suspend/Resume
 
-Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[5]](https://github.com/patjak/mba6x_bl).
+Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[4]](https://github.com/patjak/mba6x_bl).
 
 ##### WiFi
 

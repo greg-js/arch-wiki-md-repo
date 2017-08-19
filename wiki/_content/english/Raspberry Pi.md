@@ -470,7 +470,7 @@ Finally, read the sensor output:
 
 ## Compiling on the RPi
 
-Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can greatly improve compilation times if other nodes are on the network. For users with x86_64 or i686 boxes, [Distcc#Arch ARM](/index.php/Distcc#Arch_ARM "Distcc") describes the proper setup for distcc to use these resources.
+Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can greatly improve compilation times if other nodes are on the network. For users with x86_64 or i686 boxes, [Distcc#Arch Linux ARM](/index.php/Distcc#Arch_Linux_ARM "Distcc") describes the proper setup for distcc to use these resources.
 
 ## QEMU chroot
 

@@ -35,9 +35,9 @@ Esse repositório pode ser localizado em `.../core/os/` de seu [mirror](/index.p
 
 assim como as dependências deles (não necessariamente [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)")).
 
-*core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no *testing* por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
+*core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no [#testing](#testing) por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 
-**Note:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [Instalando pacotes de um CD/DVD ou USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips").
+**Nota:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips")
 
 ### extra
 
@@ -61,7 +61,7 @@ Para mais informações, veja [Multilib](/index.php/Multilib "Multilib").
 
 ### testing
 
-**Warning:** Cuidado ao ativar o repositório *testing*. Seu sistema pode não funcionar adequadamente ao realizar uma atualização. Apenas usuários experientes que sabem como lidar com falhas de sistema em potencial devem usá-lo.
+**Atenção:** Cuidado ao ativar o repositório *testing*. Seu sistema pode não funcionar adequadamente ao realizar uma atualização. Apenas usuários experientes que sabem como lidar com falhas de sistema em potencial devem usá-lo.
 
 Esse repositório pode ser localizado em `.../multilib/os/` de seu *mirror* favorito.
 
@@ -75,7 +75,7 @@ Novos pacotes vão para o *testing* se:
 
 *testing* é o único repositório que pode ter colisões nos nomes com outros repositórios oficiais. Se ativo, ele tem de ser o primeiro repositório listado em seu arquivo `/etc/pacman.conf`.
 
-**Note:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+**Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
 Se você habilitar *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar *testing*.
 
@@ -91,7 +91,7 @@ Esse repositório é similar ao repositório *testing*, mas para pacotes que sã
 
 Esse repositório contém a versão mais recente do ambiente gráfico do [GNOME](/index.php/GNOME "GNOME"), antes de ser movido para o repositório principal de teste *testing*.
 
-Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`. A entrada *gnome-unstable* deve estar primeiro na lista de repositórios (*i.e.*, acima da entrada *testing*).
+Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`:
 
 ```
 [gnome-unstable]
@@ -99,19 +99,23 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
+A entrada *gnome-unstable* deve estar primeiro na lista de repositórios (*i.e.*, acima da entrada *testing*).
+
 Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Bugzilla do GNOME](https://bugzilla.gnome.org/).
 
 #### kde-unstable
 
 Esse repositório contém o *beta* mais recente ou *Release Candidate* dos aplicativos e Plasma do [KDE](/index.php/KDE "KDE").
 
-Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`. A entrada *kde-unstable* deve estar primeiro na lista de repositórios (*i.e.*, em cima da entrada *testing*).
+Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`:
 
 ```
 [kde-unstable]
 Include = /etc/pacman.d/mirrorlist
 
 ```
+
+A entrada *kde-unstable* deve estar primeiro na lista de repositórios (*i.e.*, em cima da entrada *testing*).
 
 Certifique-se de [fazer relatórios de erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") se você descobrir algum problema.
 
@@ -120,7 +124,7 @@ Certifique-se de [fazer relatórios de erros](/index.php/Reporting_bug_guideline
 Se você habilitou repositórios de teste, mas posteriormente decidir desabilitá-los, você deve:
 
 1.  Remover (comentar) eles do `/etc/pacman.conf`
-2.  Realizar um `# pacman -Syyuu` para "retroceder" suas atualizações para esses repositórios.
+2.  Realizar um `# pacman -Syuu` para "retroceder" suas atualizações para esses repositórios.
 
 O segundo item é opcional, mas tenha-o em mente que cas você tenha algum problema.
 
@@ -136,6 +140,6 @@ Por volta das versões 0.5 e 0.6, havia muitos pacotes que os desenvolvedores n�
 
 Isso funcionou por algum tempo, mas não quando os tais usuários confiados estavam entediados com seus repositórios e quando usuários não-confiados queriam compartilhar seus próprios pacotes. Isso levou ao desenvolvimento do [AUR](https://aur.archlinux.org/). Os TUs foram conglomerados em um grupo bastante restrito denominado Trusted Users e hoje eles mantêm o repositório **community**. Os TUs ainda são um grupo separado dos desenvolvedores do Arch Linux e há muita comunicação entre eles. Porém, pacotes populares ainda são por vezes promovidos do *community* para *extra*. O [AUR](https://aur.archlinux.org/) também permite que os demais usuários (não-TUs)enviem seus PKGBUILDs.
 
-Após um kernel no *core* [quebrar o sistema de muitos usuários](https://www.archlinux.org/news/please-avoid-kernel-261614-1/), a *"core signoff policy"* ("política de assinatura do core") foi introduzida. Desde então, todas as atualizações de pacotes para o *core* precisam passar pelo repositório *testing* primeiro e apenas após múltiplas assinaturas de outros desenvolvedores eles podem ser movidos. Ao longo do tempo, foi notado que vários pacotes do *core* tinham pouco uso, e signoffs de usuários ou até mesmo falta de relatórios de erros se tornaram informalmente aceitos como critério para aceitar tais pacotes.
+Após um kernel no *core* [quebrar o sistema de muitos usuários](https://www.archlinux.org/news/please-avoid-kernel-261614-1/), a *"core signoff policy"* ("política de assinatura do core") foi introduzida. Desde então, todas as atualizações de pacotes para o *core* precisam passar pelo repositório *testing* primeiro e apenas após múltiplas assinaturas de outros desenvolvedores que, então, são permitidos mover. Ao longo do tempo, foi notado que vários pacotes do *core* tinham pouco uso, e signoffs de usuários ou até mesmo falta de relatórios de erros se tornaram informalmente aceitos como critério para aceitar tais pacotes.
 
 No final de 2009 e o início de 2010, com o advento de novos sistemas de arquivos, o desejo de oferecer suporte durante a instalação e com a percepção de que o *core* nunca foi claramente definido (apenas "pacotes importantes, escolhido a mão pelos desenvolvedores"), o repositório recebeu uma descrição mais precisa.

@@ -121,7 +121,7 @@ Restart Apache (`httpd.service`).
 
 **Warning:** This is an example config of RoundCube running in an subdirectory of the web root and has been compiled based on experiments with information from multiple sources, proceed with caution
 
-**Note:** This assumes you already have a working [nginx](/index.php/Nginx "Nginx") server setup with [php-fpm](/index.php/Nginx#PHP_configuration "Nginx")
+**Note:** This assumes you already have a working [nginx](/index.php/Nginx "Nginx") server setup with [php-fpm](/index.php/Nginx#FastCGI "Nginx").
 
 Add a location block for RoundCube
 

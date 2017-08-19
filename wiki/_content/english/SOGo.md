@@ -353,7 +353,7 @@ If problems occure, check via *journalctl -xe*
 
 #### Prerequisites
 
-1.  Ensure the sogo user is created in the database (see [https://wiki.archlinux.org/index.php/SOGo#MySQL.2FMariaDB](https://wiki.archlinux.org/index.php/SOGo#MySQL.2FMariaDB)).
+1.  Ensure the sogo user is created in the database (see [#MySQL/MariaDB](#MySQL.2FMariaDB)).
 2.  Ensure that there is a database named sogo with the database scheme utf8 (and not utf8mb4). This is necessary because the automatic creation of the *sogo_sessions_folder* table will fail otherwise:
 
 ```
@@ -370,6 +370,8 @@ Scheme can be altered via
  ALTER SCHEMA `sogo`  DEFAULT CHARACTER SET utf8
 
 ```
+
+Update: There seems to be a way around this and utf8mb4 could be used. Check page 33 ff of SOGo installation guide pdf.
 
 #### Creation of the sogo_users table
 

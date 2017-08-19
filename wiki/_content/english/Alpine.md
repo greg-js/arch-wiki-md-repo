@@ -11,7 +11,8 @@ Right now, this article is just a quick and dirty guide for configuring Alpine t
 *   [5 Built in help](#Built_in_help)
 *   [6 What else can you configure?](#What_else_can_you_configure.3F)
 *   [7 Printing from alpine](#Printing_from_alpine)
-*   [8 See also](#See_also)
+*   [8 Tips and Tricks](#Tips_and_Tricks)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -156,6 +157,15 @@ personal-print-category=3
 ```
 
 Replace *YOURPRINTER* with the name of your printer. Note that these settings can also be applied in the setup UI of Alpine. See the manpage of `a2ps` for more configuration options.
+
+## Tips and Tricks
+
+There is no direct command for updating the inbox, however, as documented in the manual;
+
+```
+New mail checking and notification occurs automatically every 2.5 minutes and after certain commands, e.g. refresh-screen (Ctrl-L).
+
+```
 
 ## See also
 

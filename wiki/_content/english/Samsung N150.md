@@ -5,19 +5,13 @@ This article describes the installation and configuration of 64-bit Arch Linux o
 *   [1 Hardware overview](#Hardware_overview)
 *   [2 Installation](#Installation)
 *   [3 Device configuration](#Device_configuration)
-    *   [3.1 Ethernet (wired)](#Ethernet_.28wired.29)
-    *   [3.2 Wireless networking](#Wireless_networking)
-        *   [3.2.1 Atheros AR9285](#Atheros_AR9285)
-        *   [3.2.2 Realtek 8192E](#Realtek_8192E)
-        *   [3.2.3 Broadcom BCM4313 (Samsung N150-Plus)](#Broadcom_BCM4313_.28Samsung_N150-Plus.29)
-    *   [3.3 Graphics](#Graphics)
-        *   [3.3.1 Backlight](#Backlight)
-    *   [3.4 Audio](#Audio)
-    *   [3.5 Suspend to RAM (S3 sleep)](#Suspend_to_RAM_.28S3_sleep.29)
-    *   [3.6 Suspend to disk (hibernate)](#Suspend_to_disk_.28hibernate.29)
-    *   [3.7 Touchpad](#Touchpad)
-*   [4 CPU frequency scaling](#CPU_frequency_scaling)
-*   [5 Fn keys](#Fn_keys)
+    *   [3.1 Graphics](#Graphics)
+        *   [3.1.1 Backlight](#Backlight)
+    *   [3.2 Audio](#Audio)
+    *   [3.3 Suspend to RAM (S3 sleep)](#Suspend_to_RAM_.28S3_sleep.29)
+    *   [3.4 Suspend to disk (hibernate)](#Suspend_to_disk_.28hibernate.29)
+    *   [3.5 Touchpad](#Touchpad)
+*   [4 Fn keys](#Fn_keys)
 
 ## Hardware overview
 
@@ -48,102 +42,6 @@ EOF
 After initializing the drive with an empty partition table, cfdisk will work properly in the Arch installer.
 
 ## Device configuration
-
-### Ethernet (wired)
-
-The Marvell 88E8040 wired 10/100 Ethernet adapter works out of the box with the default kernel. By installing [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) and delaying network initialization until after the GUI is displayed, the boot process can be expedited.
-
-### Wireless networking
-
-The Samsung N150 is sold with two different wireless cards: the Atheros AR9285 and the Realtek 8192E.
-
-Note: the Samsung N150-Plus model can also be equipped with a Broadcom BCM4313 WiFi card.
-
-#### Atheros AR9285
-
-This wireless adapter also works out of the box, including full WPA2-PSK support via NetworkManager. Power to the transmitter can be toggled if the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package is installed, if the following script is installed in /usr/local/sbin/rftoggle
-
-```
-#!/bin/sh
-
-blocked=$(rfkill list wlan | grep "Soft blocked: yes")
-
-if [ -z "$blocked" ]; then
-        rfkill block wlan
-else
-        rfkill unblock wlan
-fi
-
-```
-
-Also, this is the script that can do same function and more:
-
-```
-#!/bin/sh
-
-case "$1" in
-toggle)
-        $0 &> /dev/null
-        case "$2" in
-        on)
-                if [ $? -eq 1 ]; then
-                        rfkill unblock wifi
-                        $0 &> /dev/null
-                        if [ $? -eq 0 ]; then
-                                echo "Wi-Fi toggled on"
-                        else
-                                echo "Can't toggle Wi-Fi on"
-                                exit 2
-                        fi
-                else
-                        echo "Wi-Fi already toggled on"
-                fi
-        ;;
-        off)
-                if [ $? -eq 0 ]; then
-                        rfkill block wifi
-                        $0 &> /dev/null
-                        if [ $? -eq 1 ]; then
-                                echo "Wi-Fi toggled off"
-                        else
-                                echo "Can't toggle Wi-Fi off"
-                                exit 3
-                        fi
-                else
-                        echo "Wi-Fi already toggled off"
-                fi
-        ;;
-        *)
-                if [ $? -eq 1 ]; then
-                        $0 toggle on
-                else
-                        $0 toggle off
-                fi
-        ;;
-    esac
-;;
-*)
-    rfkill list wifi | grep ': yes' &> /dev/null
-    if [ $? -eq 1 ]; then
-            echo "Wi-Fi is on"
-    else
-            echo "Wi-Fi is off"
-            exit 1
-    fi
-;;
-esac
-
-```
-
-#### Realtek 8192E
-
-The [RTL8192E](/index.php/Wireless_network_configuration#rtl8192e "Wireless network configuration") driver is in the Arch kernel, but firmware is required. It is in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
-
-#### Broadcom BCM4313 (Samsung N150-Plus)
-
-Samsung N150-Plus has a newer Broadcom BCM4313 adapter with built-in bluetooth. As of kernel v2.6.37, this card works out of the box thanks to the open-source brcm80211 driver. However, on older kernels you'll need a proprietary driver (AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or if you want to compile manually: [http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php)). Bluetooth also works fine with either driver.
-
-For more information: [Broadcom wireless](/index.php/Broadcom_wireless#Wi-Fi_card_does_not_work_or_show_up_since_kernel_upgrade_.28brcmsmac.29 "Broadcom wireless")
 
 ### Graphics
 
@@ -280,69 +178,6 @@ For n220 owners (these parameters haven't been tested on n150 but it migth work)
                 </match>
         </device>
 </deviceinfo>
-
-```
-
-## CPU frequency scaling
-
-To improve power management to some degree, CPU frequency scaling can be enabled. This mechanism requires a few modules, like *acpi-cpufreq*, *cpufreq-ondemand* and *cpufreq-powersave*, to be loaded at boot time from `/etc/modules-load.d/` as described in [Kernel modules](/index.php/Kernel_modules#Loading "Kernel modules").
-
-Toggling between the performance, ondemand, and powersave governors can be accomplished via the following script, installed to `/usr/local/bin/cpufreq_toggle`
-
-```
-#!/bin/bash
-
-current=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
-future=unknown
-
-if [ "$current" == "performance" ]; then
-        future="ondemand"
-elif [ "$current" == "ondemand" ]; then
-        future="powersave"
-else
-        future="performance"
-fi
-
-echo "$future" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo "$future" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-
-echo "$future"
-
-```
-
-For reporting the current governor choice via an on-screen display (useful if enabling the `Fn+F8` performance switching shortcut), the following wrapper script can be installed as `/usr/local/bin/cpufreq_toggle_osd`
-
-```
-#!/bin/bash
-
-FONT='-adobe-helvetica-bold-*-*-*-34-*-*-*-*-*-*-*'
-DELAY=1
-
-state=$(sudo /usr/local/bin/cpufreq_toggle)
-message="CPU Performance State Unknown"
-
-if [ "$state" == "performance" ]; then
-        message="Performance Mode"
-elif [ "$state" == "powersave" ]; then
-        message="Low Power Mode"
-elif [ "$state" == "ondemand" ]; then
-        message="Automatic Mode"
-fi
-
-osd_cat -A center -p middle -f $FONT -d $DELAY << EOF
-$message
-EOF
-
-exit 0
-
-```
-
-By default, the system will boot with CPU frequency scaling set to use the performance governor. To enable the ondemand governor at the end of the boot process, create a [tmpfile](/index.php/Tmpfile "Tmpfile"):
-
- `/etc/tmpfiles.d/cpu_scaling.conf` 
-```
-w /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor - - - - ondemand
-w /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor - - - - ondemand
 
 ```
 
