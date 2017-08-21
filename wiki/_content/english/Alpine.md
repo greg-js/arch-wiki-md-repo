@@ -160,7 +160,7 @@ Replace *YOURPRINTER* with the name of your printer. Note that these settings ca
 
 ## Tips and Tricks
 
-There is no direct command for updating the inbox, however, as documented in the manual;
+There is no direct, or immediately apparent command for arbitrarily invoking an update of the inbox, however, as indirectly referenced in the manual;
 
 ```
 New mail checking and notification occurs automatically every 2.5 minutes and after certain commands, e.g. refresh-screen (Ctrl-L).

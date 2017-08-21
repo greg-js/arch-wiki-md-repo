@@ -480,7 +480,7 @@ There are three options for setting the frame buffer (kernel mode setting, uvesa
 
 ##### Kernel mode setting (KMS)
 
-Follow the instructions here: [Intel#Kernel mode setting (KMS)](/index.php/Intel#Kernel_mode_setting_.28KMS.29 "Intel")
+Follow the instructions in [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting").
 
 ##### uvesafb
 

@@ -26,6 +26,7 @@ Many tools can be used to determine system performance, the following provides a
     *   [2.2 IOzone](#IOzone)
     *   [2.3 HardInfo](#HardInfo)
     *   [2.4 Phoronix Test Suite](#Phoronix_Test_Suite)
+    *   [2.5 S](#S)
 *   [3 Flash media](#Flash_media)
 *   [4 See also](#See_also)
 
@@ -252,6 +253,14 @@ See also [Author's site](http://wiki.hardinfo.org/HomePage).
 *The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities.*
 
 This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
+
+### S
+
+S, an *I/O Benchmark Suite*, is a small collection of programs to measure storage I/O performance.[[1]](https://github.com/Algodev-github/S)
+
+It has been developed by the same group of the BFQ scheduler, lead by Paolo Valente.[[2]](http://algogroup.unimore.it/algodev/)
+
+Download or clone the project, install its dependencies and run it as root (superuser privileges needed to change disk scheduler).
 
 ## Flash media
 

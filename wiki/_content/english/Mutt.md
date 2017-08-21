@@ -62,6 +62,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
         *   [3.7.1 Address aliases](#Address_aliases)
         *   [3.7.2 Abook](#Abook)
         *   [3.7.3 Goobook](#Goobook)
+        *   [3.7.4 Khard](#Khard)
     *   [3.8 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
     *   [3.9 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
     *   [3.10 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
@@ -1064,6 +1065,10 @@ bind editor <Tab> complete-query
 ```
 
 When composing an email message within mutt, `Tab` will now search your Google contacts. While viewing messages `a` will add the sender to Google contacts.
+
+#### Khard
+
+[khard](https://aur.archlinux.org/packages/khard/) is a command-line addressbook that is able to sync with CardDAV-servers.
 
 ### Manage multiple sender accounts
 

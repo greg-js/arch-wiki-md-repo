@@ -19,6 +19,8 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   [13 Shooters (FPS, third person)](#Shooters_.28FPS.2C_third_person.29)
 *   [14 Simulation](#Simulation)
 *   [15 Strategy](#Strategy)
+    *   [15.1 Real-time](#Real-time)
+    *   [15.2 Turn-based](#Turn-based)
 *   [16 Tycoon/management games](#Tycoon.2Fmanagement_games)
 *   [17 Visual novels](#Visual_novels)
 *   [18 Comparison table](#Comparison_table)
@@ -937,37 +939,23 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 ## Strategy
 
-*   **0 A.D.** — 3D and historically-based real-time strategy game, alpha stage.
+### Real-time
+
+*   **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D. "wikipedia:0 A.D.")** — 3D and historically-based real-time strategy game, alpha stage. Based on the Age of Empires series.
 
 	[https://play0ad.com/](https://play0ad.com/) || [0ad](https://www.archlinux.org/packages/?name=0ad)
-
-*   **Advanced Strategic Command** — Turn based strategy game in the tradition of the Battle Isle series.
-
-	[http://www.asc-hq.org/](http://www.asc-hq.org/) || [advanced-strategic-command](https://aur.archlinux.org/packages/advanced-strategic-command/)
 
 *   **Dark Oberon** — Open source real-time strategy game similar to Warcraft II.
 
 	[http://dark-oberon.sourceforge.net/](http://dark-oberon.sourceforge.net/) || [dark-oberon](https://aur.archlinux.org/packages/dark-oberon/)
 
-*   **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "wikipedia:Endgame: Singularity")** — Turn based single player strategy/simulation about a AI hiding, growing and evolving.
-
-	[http://www.emhsoft.com/singularity/](http://www.emhsoft.com/singularity/) || [singularity](https://www.archlinux.org/packages/?name=singularity)
-
-*   **Factorio** — A game about mining resources, planning and building factories, automating production and fighting alien enemies.
+*   **Factorio** — A proprietary game about mining resources, planning and building factories, automating production and fighting alien enemies.
 
 	[http://www.factorio.com/](http://www.factorio.com/) || [factorio](https://aur.archlinux.org/packages/factorio/)
 
-*   **Factorio demo** — A game about mining resources, planning and building factories, automating production and fighting alien enemies. (Demo)
+*   **Factorio demo** — A proprietary game about mining resources, planning and building factories, automating production and fighting alien enemies. (Demo)
 
 	[http://www.factorio.com/](http://www.factorio.com/) || [factorio-demo](https://aur.archlinux.org/packages/factorio-demo/)
-
-*   **[Freeciv](https://en.wikipedia.org/wiki/Freeciv "wikipedia:Freeciv")** — Multiuser clone of the famous Microprose game of Civilization.
-
-	[http://freeciv.wikia.com/wiki/Main_Page](http://freeciv.wikia.com/wiki/Main_Page) || [freeciv](https://www.archlinux.org/packages/?name=freeciv)
-
-*   **[FreeCol](https://en.wikipedia.org/wiki/FreeCol "wikipedia:FreeCol")** — Turn-based strategy game based on Colonization.
-
-	[http://www.freecol.org/](http://www.freecol.org/) || [freecol](https://www.archlinux.org/packages/?name=freecol)
 
 *   **[FTL: Faster Than Light](https://en.wikipedia.org/wiki/FTL:_Faster_Than_Light "wikipedia:FTL: Faster Than Light")** — Popular rogue-like space-sim released to positive reception in 2012.
 
@@ -981,14 +969,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://heroesofnewerth.com/](https://heroesofnewerth.com/) || [hon](https://aur.archlinux.org/packages/hon/)
 
-*   **KReversi** — A *reversi* implementation. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
-
-	[https://www.kde.org/applications/games/kreversi/](https://www.kde.org/applications/games/kreversi/) || [kdegames-kreversi](https://www.archlinux.org/packages/?name=kdegames-kreversi)
-
-*   **KsirK** — A *risk*-styled game in which players try to conquer the world by deciding which area to be invaded next. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
-
-	[https://www.kde.org/applications/games/ksirk/](https://www.kde.org/applications/games/ksirk/) || [kdegames-ksirk](https://www.archlinux.org/packages/?name=kdegames-ksirk)
-
 *   **[Kernel Panic](https://en.wikipedia.org/wiki/Spring_Engine#Kernel_Panic "wikipedia:Spring Engine")** — A game based around combat inside a computer, with 3 unique sides: the System, the Hacker and the Network waging war in a matrix of DOOM! No resource economy exists in KP, with the only constraints being time and space.
 
 	[https://springrts.com/wiki/Kernel_Panic](https://springrts.com/wiki/Kernel_Panic) || [spring-kp](https://www.archlinux.org/packages/?name=spring-kp)
@@ -997,37 +977,67 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://github.com/megaglest](https://github.com/megaglest) || [megaglest](https://www.archlinux.org/packages/?name=megaglest)
 
-*   **[Netpanzer](https://en.wikipedia.org/wiki/Netpanzer "wikipedia:Netpanzer")** — Realtime Strategy game like Command and Conquer but without building bases.
+*   **[Netpanzer](https://en.wikipedia.org/wiki/Netpanzer "wikipedia:Netpanzer")** — Real-time strategy game like Command and Conquer but without building bases.
 
 	[http://www.netpanzer.org/](http://www.netpanzer.org/) || [netpanzer](https://aur.archlinux.org/packages/netpanzer/)
+
+*   **[OpenRA](https://en.wikipedia.org/wiki/OpenRA "wikipedia:OpenRA")** — Real-time strategy game written in C# and based on the Command & Conquer game franchise
+
+	[http://www.openra.net/](http://www.openra.net/) || [openra](https://www.archlinux.org/packages/?name=openra)
 
 *   **[Spring:1944](https://en.wikipedia.org/wiki/Spring_Engine#Spring:1944 "wikipedia:Spring Engine")** — A WWII themed game with four fully functional sides (US, Germany, USSR, Britain), period-accurate units and strengths. Realism comes second only to creating a game that is fun and accessible to play.
 
 	[http://spring1944.org/](http://spring1944.org/) || [spring-1944](https://www.archlinux.org/packages/?name=spring-1944)
 
-*   **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "wikipedia:The Battle for Wesnoth")** — Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat.
-
-	[https://www.wesnoth.org/](https://www.wesnoth.org/) || [wesnoth](https://www.archlinux.org/packages/?name=wesnoth)
-
-*   **UFO Alien Invasion** — Fight aliens trying to capture Earth.
-
-	[http://ufoai.ninex.info/wiki/index.php/News](http://ufoai.ninex.info/wiki/index.php/News) || [ufoai](https://www.archlinux.org/packages/?name=ufoai)
-
-*   **[Unknown Horizons](https://en.wikipedia.org/wiki/Unknown_Horizons "wikipedia:Unknown Horizons")** — 2.5D isometric realtime strategy simulation with an emphasis on economy and city building. Expand your small settlement to a strong and wealthy colony, collect taxes and supply your inhabitants with valuable goods. Increase your power with a well balanced economy and with strategic trade and diplomacy.
+*   **[Unknown Horizons](https://en.wikipedia.org/wiki/Unknown_Horizons "wikipedia:Unknown Horizons")** — 2.5D isometric real-time strategy simulation with an emphasis on economy and city building. Expand your small settlement to a strong and wealthy colony, collect taxes and supply your inhabitants with valuable goods. Increase your power with a well balanced economy and with strategic trade and diplomacy.
 
 	[http://www.unknown-horizons.org/](http://www.unknown-horizons.org/) || [unknown-horizons-git](https://aur.archlinux.org/packages/unknown-horizons-git/)
-
-*   **[Widelands](https://en.wikipedia.org/wiki/Widelands "wikipedia:Widelands")** — Slow-paced strategy like "the Settlers 2".
-
-	[https://widelands.org](https://widelands.org) || [widelands](https://www.archlinux.org/packages/?name=widelands)
 
 *   **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")** — You command the forces of The Project in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with over 400 different technologies, combined with the unit design system, allows for a wide variety of possible units and tactics.
 
 	[https://wz2100.net/](https://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
 
+*   **[Widelands](https://en.wikipedia.org/wiki/Widelands "wikipedia:Widelands")** — Slow-paced strategy like "the Settlers 2".
+
+	[https://widelands.org](https://widelands.org) || [widelands](https://www.archlinux.org/packages/?name=widelands)
+
 *   **[Zero-K](https://en.wikipedia.org/wiki/Zero-K "wikipedia:Zero-K")** — Zero-K is a free multi-platform open source real-time strategy computer game. Initially based on content from Total Annihilation on the open source Spring Engine, it was forked and all proprietary content replaced, and evolved into a completely new game with unique features. It can be easily installed by installing the flobby client from the AUR or alternatively (and preferably) by installing the official mono package and downloading and running the Zero-K lobby from the official website.
 
 	[http://zero-k.info/](http://zero-k.info/) || [flobby-git](https://aur.archlinux.org/packages/flobby-git/)
+
+### Turn-based
+
+*   **Advanced Strategic Command** — Turn-based strategy game in the tradition of the Battle Isle series.
+
+	[http://www.asc-hq.org/](http://www.asc-hq.org/) || [advanced-strategic-command](https://aur.archlinux.org/packages/advanced-strategic-command/)
+
+*   **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "wikipedia:Endgame: Singularity")** — Turn-based single player strategy/simulation about a AI hiding, growing and evolving.
+
+	[http://www.emhsoft.com/singularity/](http://www.emhsoft.com/singularity/) || [singularity](https://www.archlinux.org/packages/?name=singularity)
+
+*   **[Freeciv](https://en.wikipedia.org/wiki/Freeciv "wikipedia:Freeciv")** — Multiuser clone of the famous Microprose game of Civilization.
+
+	[http://freeciv.wikia.com/wiki/Main_Page](http://freeciv.wikia.com/wiki/Main_Page) || [freeciv](https://www.archlinux.org/packages/?name=freeciv)
+
+*   **[FreeCol](https://en.wikipedia.org/wiki/FreeCol "wikipedia:FreeCol")** — Turn-based strategy game based on Colonization.
+
+	[http://www.freecol.org/](http://www.freecol.org/) || [freecol](https://www.archlinux.org/packages/?name=freecol)
+
+*   **KReversi** — A *reversi* implementation. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kreversi/](https://www.kde.org/applications/games/kreversi/) || [kdegames-kreversi](https://www.archlinux.org/packages/?name=kdegames-kreversi)
+
+*   **KsirK** — A *risk*-styled game in which players try to conquer the world by deciding which area to be invaded next. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/ksirk/](https://www.kde.org/applications/games/ksirk/) || [kdegames-ksirk](https://www.archlinux.org/packages/?name=kdegames-ksirk)
+
+*   **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "wikipedia:The Battle for Wesnoth")** — Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat.
+
+	[https://www.wesnoth.org/](https://www.wesnoth.org/) || [wesnoth](https://www.archlinux.org/packages/?name=wesnoth)
+
+*   **UFO: Alien Invasion** — Fight aliens trying to capture Earth.
+
+	[http://ufoai.ninex.info/wiki/index.php/News](http://ufoai.ninex.info/wiki/index.php/News) || [ufoai](https://www.archlinux.org/packages/?name=ufoai)
 
 ## Tycoon/management games
 
@@ -1074,7 +1084,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 | Name | Written in | Genre | License | Package | Description |
 | **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D._(video_game) "w:0 A.D. (video game)")**
 - [play0ad.com](https://play0ad.com/) | C/C++ | Strategy | <abbr title="GNU Lesser General Public License">LGPL</abbr>/<abbr title="GNU General Public License Version 2">GPLv2</abbr> | [0ad](https://www.archlinux.org/packages/?name=0ad) | 3D and historically-based real-time strategy game. |
-| **Abuse**
+| [**Abuse**](https://en.wikipedia.org/wiki/Abuse_(game) "w:Abuse (game)")
 - [abuse.zoy.org](http://abuse.zoy.org) | C++ | Action | <abbr title="Public Domain">PD</abbr>/<abbr title="GNU General Public License">GPL</abbr>/<abbr title="Do What the Fuck You Want To Public License">WTFPL</abbr> | [abuse](https://www.archlinux.org/packages/?name=abuse) | Side-scroller action game that pits you against ruthless alien killers. |
 | **[ADOM](https://en.wikipedia.org/wiki/ADOM "w:ADOM")**
 - [adom.de](http://adom.de) | C | Rogue-Like | Freemium | [adom](https://aur.archlinux.org/packages/adom/) | Ancient Domains Of Mystery. |

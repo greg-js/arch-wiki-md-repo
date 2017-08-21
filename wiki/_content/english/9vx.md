@@ -1,4 +1,4 @@
-9vx is an implementation of the simple x86 virtual machine vx32 specifically designed for running real Plan9 on other host systems.
+9vx is an implementation of the simple x86 virtual machine [vx32](https://pdos.csail.mit.edu/~baford/vm/) specifically designed for running real Plan9 on other host systems.
 
 ## Contents
 

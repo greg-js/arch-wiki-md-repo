@@ -1,4 +1,4 @@
-Clover EFI is a bootloader developed to boot OS X (Hackintoshes), Windows and Linux in legacy or UEFI mode.
+[Clover EFI](https://sourceforge.net/projects/cloverefiboot/) is a bootloader developed to boot OS X (Hackintoshes), Windows and Linux in legacy or UEFI mode.
 
 The main advantages of Clover are:
 

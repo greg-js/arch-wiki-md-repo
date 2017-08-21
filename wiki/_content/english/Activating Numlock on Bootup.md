@@ -6,19 +6,16 @@
     *   [1.3 Bash alternative](#Bash_alternative)
 *   [2 X.org](#X.org)
     *   [2.1 startx](#startx)
-    *   [2.2 KDM](#KDM)
-    *   [2.3 KDE Plasma Users](#KDE_Plasma_Users)
-        *   [2.3.1 Alternate Method](#Alternate_Method)
-        *   [2.3.2 Alternate Method 2](#Alternate_Method_2)
-    *   [2.4 GDM](#GDM)
-    *   [2.5 GNOME](#GNOME)
-    *   [2.6 Xfce](#Xfce)
-    *   [2.7 SDDM](#SDDM)
-    *   [2.8 SLiM](#SLiM)
-    *   [2.9 OpenBox](#OpenBox)
-    *   [2.10 LightDM](#LightDM)
-    *   [2.11 LXDM](#LXDM)
-    *   [2.12 LXQt](#LXQt)
+    *   [2.2 KDE Plasma Users](#KDE_Plasma_Users)
+    *   [2.3 GDM](#GDM)
+    *   [2.4 GNOME](#GNOME)
+    *   [2.5 Xfce](#Xfce)
+    *   [2.6 SDDM](#SDDM)
+    *   [2.7 SLiM](#SLiM)
+    *   [2.8 OpenBox](#OpenBox)
+    *   [2.9 LightDM](#LightDM)
+    *   [2.10 LXDM](#LXDM)
+    *   [2.11 LXQt](#LXQt)
 
 ## Console
 
@@ -102,64 +99,9 @@ exec window_manager
 
 ```
 
-### KDM
-
-If you use KDM as a login manager, add:
-
-```
-numlockx on
-
-```
-
-to the `/usr/share/config/kdm/Xsetup`, or the `/opt/kde/share/config/kdm/Xsetup` for KDM3.
-
-Note that this file will be overwritten on update without creating a `.pacnew` file. To prevent this, add the following line to `/etc/pacman.conf` file (omit the leading slash in the path):
-
-```
-NoUpgrade = usr/share/config/kdm/Xsetup
-
-```
-
 ### KDE Plasma Users
 
 Go to System Settings, under the Hardware/Input Devices/Keyboard item you will find an option to select the behavior of NumLock.
-
-#### Alternate Method
-
-Alternatively, add the script the `~/.kde4/Autostart/numlockx.sh` containing:
-
-```
-#!/bin/sh
-numlockx on
-
-```
-
-And make it executable:
-
-```
-$ chmod +x ~/.kde4/Autostart/numlockx.sh
-
-```
-
-#### Alternate Method 2
-
-This method enables num lock in KDM login screen (e.g. numeric password)
-
-1) Disable "Themed Greeter" in System Settings -> Login Screen
-
-2) in file /usr/share/config/kdm/kdmrc find section
-
-```
- [X-*-Greeter]
-
-```
-
-Right after that line, add this:
-
-```
- NumLock=On
-
-```
 
 ### GDM
 

@@ -35,7 +35,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://etherape.sourceforge.net/](http://etherape.sourceforge.net/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
 
-*   **Honeyd** — Tool that allows the user to set up and run multiple virtual hosts on a computer network.
+*   **[Honeyd](/index.php/Honeyd "Honeyd")** — Tool that allows the user to set up and run multiple virtual hosts on a computer network.
 
 	[http://www.honeyd.org/](http://www.honeyd.org/) || [honeyd](https://aur.archlinux.org/packages/honeyd/)
 
@@ -101,7 +101,7 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
 
-*   **Nessus** — Comprehensive vulnerability scanning program.
+*   **[Nessus](/index.php/Nessus "Nessus")** — Comprehensive vulnerability scanning program.
 
 	[http://www.nessus.org/products/nessus](http://www.nessus.org/products/nessus) || [nessus](https://aur.archlinux.org/packages/nessus/)
 

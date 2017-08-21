@@ -27,20 +27,21 @@ zypper in | emerge [-a] |
 zypper rm | emerge -C |
 | Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search
 zypper se [-s] | emerge -S |
-| Upgrade Packages - Install packages which have an older version already installed | pacman -Syu | dnf upgrade | apt update; apt upgrade | zypper update zypper up | emerge -u world |
-| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | pacman -Syu | dnf distro-sync | apt full-upgrade | zypper dup | emerge -uDN world |
+| Upgrade Packages - Install packages which have an older version already installed | pacman -Syu | dnf upgrade | apt update && apt upgrade | zypper update zypper up | emerge -u world |
+| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | pacman -Syu | dnf distro-sync | apt update && apt dist-upgrade | zypper dup | emerge -uDN world |
 | Clean up all local caches. Options might limit what is actually cleaned. Autoclean removes only unneeded, obsolete information. | pacman -Sc
-pacman -Scc | dnf clean all | apt-get clean / apt-get autoclean / aptitude clean | zypper clean | eclean distfiles |
-| Remove dependencies that are no longer needed, because e.g. the package which needed the dependencies was removed. | pacman -Qdtq | pacman -Rs - | dnf autoremove | apt-get autoremove | zypper rm -u | emerge --depclean |
+pacman -Scc | dnf clean all | apt autoclean
+apt clean | zypper clean | eclean distfiles |
+| Remove dependencies that are no longer needed, because e.g. the package which needed the dependencies was removed. | pacman -Qdtq | pacman -Rs - | dnf autoremove | apt autoremove | zypper rm -u | emerge --depclean |
 | Remove packages no longer included in any repositories. | pacman -Qm | pacman -Rs - | package-cleanup --orphans | aptitude purge '~o' |
 | Mark a package previously installed as a dependency as explicitly required. | pacman -D --asexplicit | dnf mark install | apt-mark manual | emerge --select |
-| Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | dnf install => dnf mark remove | aptitude install '$package&M' | emerge -1 |
-| Only downloads the given package(s) without unpacking or installing them | pacman -Sw | dnf download | apt-get install --download-only (into the package cache)
-apt-get download (bypass the package cache) | zypper --download-only | emerge --fetchonly |
+| Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | dnf install => dnf mark remove | apt-mark auto | emerge -1 |
+| Only downloads the given package(s) without unpacking or installing them | pacman -Sw | dnf download | apt install --download-only (into the package cache)
+apt download (bypass the package cache) | zypper --download-only | emerge --fetchonly |
 | Start a shell to enter multiple commands in one session | apt-config shell | zypper shell |
 | Show a log of actions taken by the software management. | cat /var/log/pacman.log | dnf history | cat /var/log/dpkg.log | cat /var/log/zypp/history | located in /var/log/portage |
 | Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | (see /var/lib/pacman/local) | (see /var/lib/rpm/Packages) | apt-cache stats | n/a | emerge --info |
-| e-mail delivery of package changes | apt-get install apt-listchanges |
+| e-mail delivery of package changes | apt install apt-listchanges |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 
 ## Querying specific packages

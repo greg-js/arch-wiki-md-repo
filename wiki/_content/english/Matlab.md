@@ -35,6 +35,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.12 Using webcam/video device](#Using_webcam.2Fvideo_device)
     *   [5.13 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
     *   [5.14 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
+    *   [5.15 Not starting - licensing error](#Not_starting_-_licensing_error)
 
 ## Overview
 
@@ -412,3 +413,31 @@ MATLAB should automatically unpack those jars into `matlabroot/sys/jxbrowser-chr
 ### Some dropdown menus cannot be selected
 
 In some interfaces - such as Simulation Data Inspector or Simulink Test Manager - nothing happens when choosing an item in dropdown menu (for example, when trying to change a number of subplots in Simulation Data Inspector). To work around this issue, hold down the Shift key while clicking the item in dropdown menu.
+
+### Not starting - licensing error
+
+In case MATLAB will not start from a [desktop environment](/index.php/Desktop_environment "Desktop environment") by the call of its [desktop file](/index.php/Desktop_entries "Desktop entries") one should see the output as you start it from the terminal. For a *Licensing error* such as:
+
+ `# matlab` 
+```
+MATLAB is selecting SOFTWARE OPENGL rendering.
+License checkout failed.
+License Manager Error -9
+This error may occur when: 
+-The hostid of this computer does not match the hostid in the license file. 
+-A Designated Computer installation is in use by another user. 
+If no other user is currently running MATLAB, you may need to activate.
+
+Troubleshoot this issue by visiting: 
+[http://www.mathworks.com/support/lme/R2017a/9](http://www.mathworks.com/support/lme/R2017a/9)
+
+Diagnostic Information:
+Feature: MATLAB 
+License path: /home/<USER>/.matlab/R2017a_licenses/license_<NUM>_R2017a.lic:/home/<USER>/.matlab/R2017a_licenses/lice
+nse_Darkness_<NUM>_R2017a.lic:/opt/MATLAB/R2017a/licenses/license.dat:/opt/MATLAB/R2017a/licenses/*
+.lic 
+Licensing error: -9,57.
+
+```
+
+a re-[activation](/index.php/Matlab#Activation "Matlab") might solve the problem.

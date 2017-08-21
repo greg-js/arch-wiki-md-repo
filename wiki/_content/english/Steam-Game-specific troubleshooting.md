@@ -245,9 +245,9 @@ Add `LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"` to your [launch options](/inde
 
 ### OpenSSL 1.0 setup
 
-Some Steam games are built against OpenSSL 1.0\. [[1]](https://bugs.archlinux.org/task/53618)
+Some Steam games are built against OpenSSL 1.0\. ([FS#53618](https://bugs.archlinux.org/task/53618))
 
-Install [libopenssl-1.0-compat](https://aur.archlinux.org/packages/libopenssl-1.0-compat/) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0-compat` to your [launch options](/index.php/Launch_option "Launch option").
+Install [lib32-openssl-1.0](https://aur.archlinux.org/packages/lib32-openssl-1.0/) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Adobe Air setup
 
@@ -529,7 +529,7 @@ See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooti
 
 ### Mouse not working in-game
 
-If your mouse works in the main menu but not in-game, add `SDL_VIDEO_X11_DGAMOUSE=0` to your [launch options](/index.php/Launch_option "Launch option"). [[2]](https://bbs.archlinux.org/viewtopic.php?id=184905)
+If your mouse works in the main menu but not in-game, add `SDL_VIDEO_X11_DGAMOUSE=0` to your [launch options](/index.php/Launch_option "Launch option"). [[1]](https://bbs.archlinux.org/viewtopic.php?id=184905)
 
 ### Brightness slider not working
 
@@ -717,7 +717,7 @@ See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues
 
 ### Steam overlay
 
-Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues"), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
+Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [Steam runtime issues](/index.php/Steam_runtime_issues "Steam runtime issues"), [[2]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
 
 ### Chinese tips and player names not shown
 
@@ -865,6 +865,8 @@ While in the process of joining a server, downloading resources, etc, the game s
 This issue arises more often when joining servers with many addons like DarkRP servers specifically.
 
 The problem seems to correlate with a weak GPU and the game is timing out from the server, so if the GPU is the problem, lowering the graphics settings to the minimum should fix the problem.
+
+The problem seems to be related to RAM usage, once you hit around 2GB of RAM used, the game will crash. Servers with many addons have much more RAM usage, and lowering graphics settings to the minimum lowers RAM usage and mitigates crashes.
 
 ## Gods will be watching
 
@@ -1160,7 +1162,7 @@ If Multiwinia crashes on startup on X64 systems, force launching the 32-bit exec
 
 ```
 
-See [[5]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+See [[4]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
 
 ## Natural Selection 2
 
@@ -1455,7 +1457,7 @@ Dependencies:
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) if you use PulseAudio
 
-The game bundles an outdated version of libstdc++ which prevents the game from starting. [[6]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
+The game bundles an outdated version of libstdc++ which prevents the game from starting. [[5]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
 
 ```
 libGL error: unable to load driver: i965_dri.so
@@ -1575,9 +1577,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 ```
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[7]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[6]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
+Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
 
 ## Transmissions: Element 120
 
@@ -1707,7 +1709,7 @@ Be aware that some games do not support setting that parameter, it will simply b
 
 ### Missing Chinese/Japanese/Korea fonts
 
-It is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[9]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
+It is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
 
 Ask the developer to rebuild the game.
 
@@ -1725,7 +1727,7 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 
 ### Blank screen
 
-If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Launch_option "Launch option"). [[10]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[11]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, add `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` to your [launch options](/index.php/Launch_option "Launch option"). [[9]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[10]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Warhammer 40,000: Dawn of War II
 
@@ -1760,7 +1762,7 @@ $ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbu
 
 ```
 
-Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[12]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[13]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
+Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[11]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[12]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
 
 On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
 

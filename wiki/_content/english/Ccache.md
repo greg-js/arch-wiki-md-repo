@@ -84,6 +84,10 @@ $ export CCACHE_DIR=/ramdisk/ccache
 
 ```
 
+Or to change the location by default:
+
+ `/home/*user*/.ccache/ccache.conf`  `cache_dir = /ramdisk/ccache` 
+
 ### Set maximum cache size
 
 The default value is 5 gigabyte, however it is possible to use a lower or even a higher value:

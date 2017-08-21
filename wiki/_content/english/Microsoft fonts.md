@@ -27,7 +27,7 @@ If there is a Windows partition mounted, its fonts can be used by linking to the
 Then regenerate the fontconfig cache:
 
 ```
-# fc-cache
+# fc-cache -f
 
 ```
 
@@ -43,7 +43,7 @@ Alternatively, copy the Windows fonts to `/usr/share/fonts`:
 Then regenerate the fontconfig cache:
 
 ```
-# fc-cache
+# fc-cache -f
 
 ```
 

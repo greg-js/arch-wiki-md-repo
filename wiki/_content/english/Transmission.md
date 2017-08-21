@@ -48,13 +48,13 @@ The commands for *transmission-cli* are:
 
 	*transmission-remote*: invokes the [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface") for the daemon, whether local or remote, followed by the command you want the daemon to execute.
 
-	*transmission-cli*: (deprecated) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
-
 	*transmission-show*: returns information on a given torrent file.
 
 	*transmission-create*: creates a new torrent.
 
 	*transmission-edit*: add, delete, or replace a tracker's announce URL.
+
+	*transmission-cli*: ([deprecated](https://github.com/transmission/transmission/commit/950387ab5a443629598f93c057f41150707866ab)) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
 
 	*transmission-remote-cli*: (requires [transmission-remote-cli-git](https://aur.archlinux.org/packages/transmission-remote-cli-git/)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
 

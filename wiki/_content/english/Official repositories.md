@@ -77,7 +77,9 @@ New packages go into *testing* if:
 
 **Note:** *testing* is not for the "newest of the new" package versions. Part of its purpose is to hold package updates that have the potential to break the system, either by being part of the *core* set of packages, or by being critical in other ways. As such, users of *testing* are strongly encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), watch the [testing repository forum](https://bbs.archlinux.org/viewforum.php?id=49), and to [report all bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
-If you enable *testing*, you must also enable *community-testing*. If you enable any other testing repository listed in the following subsections, you must also enable *testing*.
+If any of the testing repositories listed in the following subsections are enabled, you must also enable both *testing* and *community-testing*.
+
+**Warning:** Just in case this wasn't clear enough yet, if you enable for example the *testing* and *multilib-testing* repositories and do not enable *community-testing*, you will join the group of users who had to be directed to this page and asked "why did you not read this?"
 
 #### community-testing
 

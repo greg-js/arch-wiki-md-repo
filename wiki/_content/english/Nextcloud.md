@@ -33,8 +33,9 @@ For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differen
         *   [7.1.1 Calendar](#Calendar)
         *   [7.1.2 Contacts](#Contacts)
         *   [7.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
-    *   [7.2 Android](#Android)
-    *   [7.3 SABnzbd](#SABnzbd)
+    *   [7.2 Mounting files in Gnome Nautilus](#Mounting_files_in_Gnome_Nautilus)
+    *   [7.3 Android](#Android)
+    *   [7.4 SABnzbd](#SABnzbd)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
     *   [8.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
@@ -483,9 +484,13 @@ You can also create an entry for this in `/etc/fstab`
 
 ```
 
-**Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [Davfs#Mounting as regular user](/index.php/Davfs#Mounting_as_regular_user "Davfs").
+**Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [Davfs#Storing_credentials](/index.php/Davfs#Storing_credentials "Davfs").
 
 **Note:** If creating/copying files is not possible, while the same operations work on directories, see [Davfs#Creating/copying files not possible and/or freezes](/index.php/Davfs#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs").
+
+### Mounting files in Gnome Nautilus
+
+You can access the files directly in Nautilus ('+ Other Locations') through WebDAV protocol - use the link as shown in your Nextcloud installation Web GUI (typically: [https://example.org/remote.php/webdav/](https://example.org/remote.php/webdav/)) but replace the protocol name from 'https' to 'davs'. Nautilus will ask for user name and password when trying to connect.
 
 ### Android
 

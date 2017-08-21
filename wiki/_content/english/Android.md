@@ -263,7 +263,7 @@ Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
 
 #### Adding udev Rules
 
-Use the rules from [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your udev rules, just replace [VENDOR ID] and [PRODUCT ID] with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
+Use the rules from [android-udev](https://www.archlinux.org/packages/?name=android-udev) (or [android-udev-git](https://aur.archlinux.org/packages/android-udev-git/)), install them manually from [Android developer](https://source.android.com/source/initializing#configuring-usb-access), or use the following template for your udev rules, just replace [VENDOR ID] and [PRODUCT ID] with yours. Copy these rules into `/etc/udev/rules.d/51-android.rules`:
 
  `/etc/udev/rules.d/51-android.rules` 
 ```

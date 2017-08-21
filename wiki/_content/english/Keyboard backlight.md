@@ -65,3 +65,5 @@ WantedBy=multi-user.target
 ```
 
 You are now able to use a keyboard backlight changer script. For an example, see [ASUS G55VW#keyboard backlight script](/index.php/ASUS_G55VW#keyboard_backlight_script "ASUS G55VW").
+
+For an example of how you might set up a tiny daemon (running as root) that edits these files, hook it up to [dbus](/index.php/Dbus "Dbus"), and map the keyboard brightness keys to [dbus](/index.php/Dbus "Dbus") method calls, see [[1]](https://github.com/GambolingPangolin/KbdBacklight).

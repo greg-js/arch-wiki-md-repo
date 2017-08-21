@@ -111,6 +111,8 @@ Pay attention to formatting. This is the first reason why it may not work.
 
 When I first installed xorg, I installed [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) as the only input driver. This caused the touchpad to react like a disembodied touchscreen. I then replaced [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) with [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) this caused the touchpad to work fine but the keyboard stopped working once I started X. With both [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) installed, the keyboard and touchpad both work fine.
 
+If your touchpad stops working after suspend, it might be due to a [problem with the i8042 module](https://bbs.archlinux.org/viewtopic.php?pid=1550691#p1550691).
+
 ### Camera
 
 The camera worked without effort on my part. I tested by installing running guvcview.

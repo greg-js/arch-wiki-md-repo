@@ -160,6 +160,8 @@ To check that Postfix is listening on port `10025` do the same operations as the
 
 ## SpamAssassin support
 
+Install [spamassassin](https://www.archlinux.org/packages/?name=spamassassin)
+
 Spamassassin is integrated in Amavis so you do not have to start `spamassassin.service`. To enable support for Spamassassin comment the following line in `/etc/amavis/amavis.conf` like this:
 
 ```
@@ -179,7 +181,7 @@ $penpals_threshold_high = $sa_kill_level_deflt;  # do not waste time on hi spam
 $bounce_killer_score = 100;  # spam score points to add for joe-jobbed bounces
 ```
 
-Now you just need to [restart](/index.php/Restart "Restart") `amavisd` service.
+Before you [restart](/index.php/Restart "Restart") the `amavisd` service, run `sa-update`.
 
 ## Final test
 

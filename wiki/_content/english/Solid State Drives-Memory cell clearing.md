@@ -20,7 +20,7 @@ On occasion, users may wish to completely reset an SSD's cells to the same virgi
 Issue the following command:
 
 ```
-# hdparm -I /dev/sdX
+# hdparm -I /dev/sdX | grep frozen
 
 ```
 

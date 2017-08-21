@@ -151,7 +151,7 @@ In order for packets to be properly send and received it is necessary to transla
 COMMIT
 ```
 
-The router should now be fully functioning and route your traffic. However since it is facing the public internet it makes sense to additionally guard it using a [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `iptables.service`. The router should now be fully functioning and route your traffic. However since it is facing the public internet it makes sense to additionally guard it using a [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
 ## IPv6 tips
 

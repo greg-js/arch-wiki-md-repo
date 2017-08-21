@@ -2,7 +2,7 @@
 
 * * *
 
-[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – **Other**
+[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – <a class="mw-selflink selflink">Other</a>
 
 ## Contents
 
@@ -126,9 +126,17 @@ See also [Wikipedia:List_of_flashcard_software](https://en.wikipedia.org/wiki/Li
 
 #### Console
 
-*   **Calcurse** — Text-based ncurses calendar and scheduling system.
+*   **Calcurse** — Text-based ncurses calendar and scheduling system (supports CalDAV)
 
 	[http://calcurse.org/](http://calcurse.org/) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
+
+*   **khal** — Command-line (non-interactive) and ncurses (interactive) calendar system (supports CalDAV)
+
+	[https://github.com/pimutils/khal](https://github.com/pimutils/khal) || [khal](https://aur.archlinux.org/packages/khal/)
+
+*   **todoman** — Command-line To-do list manager (supports CalDAV)
+
+	[https://github.com/pimutils/todoman](https://github.com/pimutils/todoman) || [todoman](https://aur.archlinux.org/packages/todoman/)
 
 *   **Pal** — Very lightweight calendar with both interactive and non-interactive interfaces.
 

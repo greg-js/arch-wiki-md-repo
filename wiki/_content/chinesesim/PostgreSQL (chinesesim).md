@@ -38,8 +38,8 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 启动PostgreSQL，(可选)，添加 PostgreSQL 到daemons列表里作为守护进程同时启动：
 
 ```
-# systemctl start postgresql.service
 # systemctl enable postgresql.service
+# systemctl start postgresql.service
 
 ```
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Activating_Numlock_on_Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-16，点击[这里](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=250957)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Activating_Numlock_on_Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-21，点击[这里](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=486084)可以查看翻译后英文页面的改动。
 
 ## Contents
 
@@ -8,15 +8,16 @@
     *   [1.3 Bash alternative](#Bash_alternative)
 *   [2 X window](#X_window)
     *   [2.1 startx](#startx)
-    *   [2.2 KDM](#KDM)
-    *   [2.3 KDE4](#KDE4)
-    *   [2.4 GDM](#GDM)
-    *   [2.5 GNOME](#GNOME)
-    *   [2.6 Xfce](#Xfce)
-    *   [2.7 SDDM](#SDDM)
-    *   [2.8 SLiM](#SLiM)
-    *   [2.9 OpenBox](#OpenBox)
-    *   [2.10 LightDM](#LightDM)
+    *   [2.2 KDE Plasma 用户](#KDE_Plasma_.E7.94.A8.E6.88.B7)
+    *   [2.3 GDM](#GDM)
+    *   [2.4 GNOME](#GNOME)
+    *   [2.5 Xfce](#Xfce)
+    *   [2.6 SDDM](#SDDM)
+    *   [2.7 SLiM](#SLiM)
+    *   [2.8 OpenBox](#OpenBox)
+    *   [2.9 LightDM](#LightDM)
+    *   [2.10 LXDM](#LXDM)
+    *   [2.11 LXQt](#LXQt)
 
 ## 控制台
 
@@ -24,7 +25,7 @@
 
 **Tip:** 这些步骤可以被[install](/index.php/Install "Install") [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) 并 [enabling](/index.php/Enabling "Enabling") `numLockOnTty` service替代.
 
-首先创造一个将numlock与TTYs相关联的脚本：
+首先创造在相关 TTY 上设置 numlock 的脚本：
 
  `/usr/bin/numlock` 
 ```
@@ -37,7 +38,7 @@ done
 
 ```
 
-然后创建并 [enable](/index.php/Enable "Enable") systemd service:
+然后创建并 [enable](/index.php/Enable "Enable") systemd 服务:
 
  `/etc/systemd/system/numlock.service` 
 ```
@@ -55,16 +56,23 @@ WantedBy=multi-user.target
 
 ### 扩展`getty@.service`
 
-创建目录：
+这个方法比使用单独服务简单，不需要在脚本中写入 VT 编号。在原始 gettty unit 文件上添加一段扩展：
 
- `# mkdir /etc/systemd/system/getty@.service.d` 
-
-在新建的目录中加入如下文件：
-
- `activate-numlock.conf` 
+ `# systemctl edit getty\@.service` 
 ```
 [Service]
-ExecStartPost=/bin/sh -c 'setleds +num < /dev/%I'
+ExecStartPre=/bin/sh -c 'setleds +num < /dev/%I'
+
+```
+
+要禁用登录屏幕上打数字键启用提示，编辑 getty@tty1.service，添加 `--nohints` 到 agetty 选项:
+
+ `# systemctl edit getty@tty1.service` 
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --nohints --noclear %I $TERM
+
 ```
 
 ### Bash alternative
@@ -92,16 +100,7 @@ exec your_window_manager
 
 ```
 
-### KDM
-
-如果你使用KDM作为登录管理器，可以在`/opt/kde/share/config/kdm/Xsetup`中加入这行：
-
-```
-numlockx on
-
-```
-
-### KDE4
+### KDE Plasma 用户
 
 系统设置的硬件/输入设备/键盘一项中，包含了 NumLock 行为的配置方法。
 
@@ -118,7 +117,7 @@ fi
 
 ### GNOME
 
-不使用 GDM 的时候，可以将 `numlockx` 加入 GNOME 的启动程序中。 先从[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [numlockx](https://www.archlinux.org/packages/?name=numlockx)。然后，添加一个启动命令来启动 numlockx：
+不使用 GDM 的时候，可以将 `numlockx` 加入 GNOME 的启动程序中。 先 [安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [numlockx](https://www.archlinux.org/packages/?name=numlockx)。然后，添加一个启动命令来启动 numlockx：
 
 ```
 $ gnome-session-properties
@@ -174,3 +173,21 @@ numlockx &
 ### LightDM
 
 参见 [LightDM (简体中文)#默认打开小键盘](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.BB.98.E8.AE.A4.E6.89.93.E5.BC.80.E5.B0.8F.E9.94.AE.E7.9B.98 "LightDM (简体中文)").
+
+### LXDM
+
+在 `/etc/lxdm/lxdm.conf` 中设置:
+
+```
+numlock=1
+
+```
+
+### LXQt
+
+在 `~/.config/lxqt/session.conf` 中设置:
+
+```
+numlock=true
+
+```

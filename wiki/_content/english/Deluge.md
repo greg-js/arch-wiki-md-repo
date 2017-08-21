@@ -156,7 +156,7 @@ Enter the `help` command for a list of available commands.
 
 ### GTK+
 
-**Note:** It is wise to disable Classic Mode in *Edit -> Preferences -> Interface* for daemon (server) setups.
+**Note:** It is necessary to disable Classic Mode in *Edit -> Preferences -> Interface* for daemon (server) setups.
 
 The GTK+ client can be run with:
 

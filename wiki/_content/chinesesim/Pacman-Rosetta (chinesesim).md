@@ -27,20 +27,21 @@ zypper in | emerge -1O |
 zypper rm | emerge -C |
 | 通过软件名、描述、简短描述来搜索包。默认搜索域依工具不同而异。Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search
 zypper se [-s] | emerge -S |
-| 升级包（安装已有包的更新版本） | pacman -Syu | dnf upgrade | apt update; apt upgrade | zypper update zypper up | emerge -u world |
-| 升级包（更新命令的另一种形式，可以进行更复杂形式的更新，例如发行版升级。当通常的更新命令会忽略软件更新时——例如依赖改变——本命令可以进行这些更新） | pacman -Syu | dnf distro-sync | apt full-upgrade | zypper dup | emerge -uDN world |
+| 升级包（安装已有包的更新版本） | pacman -Syu | dnf upgrade | apt update && apt upgrade | zypper update zypper up | emerge -u world |
+| 升级包（更新命令的另一种形式，可以进行更复杂形式的更新，例如发行版升级。当通常的更新命令会忽略软件更新时——例如依赖改变——本命令可以进行这些更新） | pacman -Syu | dnf distro-sync | apt update && apt dist-upgrade | zypper dup | emerge -uDN world |
 | 清除本地缓存（可能允许通过选项控制要清除拿些东西；autoclean 只清除过时的信息） | pacman -Sc
-pacman -Scc | dnf clean all | apt-get clean / apt-get autoclean / aptitude clean | zypper clean | eclean distfiles |
-| 移除不再需要的依赖（例如当依赖某包的软件被移除） | pacman -Qdtq | pacman -Rs - | dnf autoremove | apt-get autoremove | zypper rm -u | emerge --depclean |
+pacman -Scc | dnf clean all | apt autoclean
+apt clean | zypper clean | eclean distfiles |
+| 移除不再需要的依赖（例如当依赖某包的软件被移除） | pacman -Qdtq | pacman -Rs - | dnf autoremove | apt autoremove | zypper rm -u | emerge --depclean |
 | 移除不再处于任何仓库中的包 | pacman -Qm | pacman -Rs - | package-cleanup --orphans | aptitude purge '~o' |
 | 将作为依赖安装的包指定为手动安装 | pacman -D --asexplicit | dnf mark install | apt-mark manual | emerge --select |
-| 将包作为依赖安装 | pacman -S --asdeps | dnf install => dnf mark remove | aptitude install '$package&M' | emerge -1 |
-| 仅下载而不解包或安装 | pacman -Sw | dnf download | apt-get install --download-only (into the package cache)
-apt-get download (bypass the package cache) | zypper --download-only | emerge --fetchonly |
+| 将包作为依赖安装 | pacman -S --asdeps | dnf install => dnf mark remove | apt-mark auto | emerge -1 |
+| 仅下载而不解包或安装 | pacman -Sw | dnf download | apt install --download-only (下载到缓存)
+apt download (下载到当前目录) | zypper --download-only | emerge --fetchonly |
 | 启动一个 shell 以便在一个会话中输入多个命令 | apt-config shell | zypper shell |
 | 查看日志 | cat /var/log/pacman.log | dnf history | cat /var/log/dpkg.log | cat /var/log/zypp/history | located in /var/log/portage |
 | 获取当前系统所有软件包的状态 | (see /var/lib/pacman/local) | (see /var/lib/rpm/Packages) | apt-cache stats | n/a | emerge --info |
-| 包变更时发送邮件 | apt-get install apt-listchanges |
+| 包变更时发送邮件 | apt install apt-listchanges |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 
 ## 查询某个包的信息

@@ -163,7 +163,7 @@ $ qemu-img create -o backing_file=*img1.raw*,backing_fmt=*raw* -f *qcow2* *img1.
 After that you can run your QEMU VM as usual (see [#Running virtualized system](#Running_virtualized_system)):
 
 ```
-$ qemu-system-i386 *img1.cow*
+$ qemu-system-x86_64 *img1.cow*
 
 ```
 
@@ -213,7 +213,7 @@ This is the first time you will need to start the emulator. To install the opera
 For example on i386 guests, to install from a bootable ISO file as CD-ROM and a raw disk image:
 
 ```
-$ qemu-system-i386 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,format=raw
+$ qemu-system-x86_64 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,format=raw
 
 ```
 
@@ -233,7 +233,7 @@ After the operating system has finished installing, the QEMU image can be booted
 `qemu-system-*` binaries (for example `qemu-system-i386` or `qemu-system-x86_64`, depending on guest's architecture) are used to run the virtualized guest. The usage is:
 
 ```
-$ qemu-system-i386 *options* *disk_image*
+$ qemu-system-x86_64 *options* *disk_image*
 
 ```
 
@@ -289,7 +289,7 @@ QEMU's documentation says it has a "built-in" SMB server, but actually it just s
 To enable this feature, start QEMU with a command like:
 
 ```
-$ qemu-system-i386 *disk_image* -net nic -net user,smb=*shared_dir_path*
+$ qemu-system-x86_64 *disk_image* -net nic -net user,smb=*shared_dir_path*
 
 ```
 
@@ -383,7 +383,7 @@ QEMU supports loading [Linux kernels](/index.php/Kernels "Kernels") and [init ra
 **Note:** In this example, it is the **host's** images that are being used, not the guest's. If you wish to use the guest's images, either mount `/dev/sda3` read-only (to protect the file system from the host) and specify the `/full/path/to/images` or use some kexec hackery in the guest to reload the guest's kernel (extends boot time).
 
 ```
-$ qemu-system-i386 -kernel /boot/vmlinuz-linux -initrd /boot/initramfs-linux.img -append root=/dev/sda /dev/sda3
+$ qemu-system-x86_64 -kernel /boot/vmlinuz-linux -initrd /boot/initramfs-linux.img -append root=/dev/sda /dev/sda3
 
 ```
 
@@ -444,7 +444,7 @@ Now, create a single primary partition corresponding to `/dev/hda*N*`. It should
 Finally, 'w'rite the result to the file: you are done. You now have a partition you can mount directly from your host, as well as part of a QEMU disk image:
 
 ```
-$ qemu-system-i386 -hdc /dev/md0 *[...]*
+$ qemu-system-x86_64 -hdc /dev/md0 *[...]*
 
 ```
 
@@ -480,7 +480,7 @@ nbd-server \
 The `.0` and `.1` suffixes are essential; the rest can be changed. After running the above script (which you may need to do as root to make sure nbd-server is able to access the partition), you can launch QEMU with:
 
 ```
-qemu-system-i386 -drive file=nbd:127.713705:10809:exportname=wrap *[...]*
+qemu-system-x86_64 -drive file=nbd:127.713705:10809:exportname=wrap *[...]*
 
 ```
 
@@ -497,7 +497,7 @@ By giving the `-net nic` argument to QEMU, it will, by default, assign a virtual
 Make sure that each virtual machine has a unique link-level address, but it should always start with `52:54:`. Use the following option, replace *X* with arbitrary hexadecimal digit:
 
 ```
-$ qemu-system-i386 -net nic,macaddr=52:54:*XX:XX:XX:XX* -net vde *disk_image*
+$ qemu-system-x86_64 -net nic,macaddr=52:54:*XX:XX:XX:XX* -net vde *disk_image*
 
 ```
 
@@ -507,7 +507,7 @@ Generating unique link-level addresses can be done in several ways:
 2.  Generate random link-level address each time the virtual machine is run. Practically zero probability of collisions, but the downside is that the DHCP server will assign a different IP address each time. You can use the following command in a script to generate random link-level address in a `macaddr` variable:
     ```
     printf -v macaddr "52:54:%02x:%02x:%02x:%02x" $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff )) $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff ))
-    qemu-system-i386 -net nic,macaddr="$macaddr" -net vde *disk_image*
+    qemu-system-x86_64 -net nic,macaddr="$macaddr" -net vde *disk_image*
     ```
 
 3.  Use the following script `qemu-mac-hasher.py` to generate the link-level address from the virtual machine name using a hashing function. Given that the names of virtual machines are unique, this method combines the benefits of the aforementioned methods: it generates the same link-level address each time the script is run, yet it preserves the practically zero probability of collisions. `qemu-mac-hasher.py` 
@@ -531,7 +531,7 @@ Generating unique link-level addresses can be done in several ways:
 
     ```
     vm_name="*VM Name*"
-    qemu-system-i386 -name "$vm_name" -net nic,macaddr=$(qemu-mac-hasher.py "$vm_name") -net vde *disk_image*
+    qemu-system-x86_64 -name "$vm_name" -net nic,macaddr=$(qemu-mac-hasher.py "$vm_name") -net vde *disk_image*
 
     ```
 
@@ -622,14 +622,14 @@ allow *bridge1*
 Now start the VM. The most basic usage would be:
 
 ```
-$ qemu-system-i386 -net nic -net bridge,br=*bridge0* *[...]*
+$ qemu-system-x86_64 -net nic -net bridge,br=*bridge0* *[...]*
 
 ```
 
 With multiple taps, the most basic usage requires specifying the VLAN for all additional NICs:
 
 ```
-$ qemu-system-i386 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge,vlan=1,br=*bridge1* *[...]*
+$ qemu-system-x86_64 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge,vlan=1,br=*bridge1* *[...]*
 
 ```
 
@@ -710,7 +710,7 @@ printf -v macaddr "52:54:%02x:%02x:%02x:%02x" $(( $RANDOM & 0xff)) $(( $RANDOM &
 # Instead, uncomment and edit this line to set a static MAC address. The benefit is that the DHCP server will assign the same IP address.
 # macaddr='52:54:be:36:42:a9'
 
-qemu-system-i386 -net nic,macaddr=$macaddr -net tap,ifname="$IFACE" $*
+qemu-system-x86_64 -net nic,macaddr=$macaddr -net tap,ifname="$IFACE" $*
 
 sudo ip link set dev $IFACE down &> /dev/null
 sudo ip tuntap del $IFACE mode tap &> /dev/null
@@ -839,7 +839,7 @@ The interface is plugged in but not configured yet. To configure it, run this co
 Now, you just have to run KVM with these `-net` options as a normal user:
 
 ```
-$ qemu-system-i386 -net nic -net vde -hda *[...]*
+$ qemu-system-x86_64 -net nic -net vde -hda *[...]*
 
 ```
 
@@ -951,7 +951,7 @@ If the above method does not work or you do not want to mess with kernel configs
 Then, to start the VM with a connection to the network of the host:
 
 ```
-$ qemu-system-i386 -net nic,macaddr=52:54:00:00:EE:03 -net vde *disk_image*
+$ qemu-system-x86_64 -net nic,macaddr=52:54:00:00:EE:03 -net vde *disk_image*
 
 ```
 
@@ -1053,7 +1053,7 @@ SPICE can only be used when using QXL as the graphical output.
 The following is example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
 ```
-$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
+$ qemu-system-x86_64 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
 
 ```
 
@@ -1181,7 +1181,7 @@ This is like a PC that has no VGA card at all. You would not even be able to acc
 Given that you used the `-nographic` option, you can add the `-vnc display` option to have QEMU listen on `display` and redirect the VGA display to the VNC session. There is an example of this in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section's example configs.
 
 ```
-$ qemu-system-i386 -vga std -nographic -vnc :0
+$ qemu-system-x86_64 -vga std -nographic -vnc :0
 $ gvncviewer :0
 
 ```
@@ -1233,7 +1233,7 @@ QEMU offers guests the ability to use paravirtualized block and network devices 
 *   A virtio block device requires the option `-drive` instead of the simple `-hd*` plus `if=virtio`:
 
 ```
-$ qemu-system-i386 -boot order=c -drive file=*disk_image*,if=virtio
+$ qemu-system-x86_64 -boot order=c -drive file=*disk_image*,if=virtio
 
 ```
 
@@ -1242,7 +1242,7 @@ $ qemu-system-i386 -boot order=c -drive file=*disk_image*,if=virtio
 *   Almost the same goes for the network:
 
 ```
-$ qemu-system-i386 -net nic,model=virtio
+$ qemu-system-x86_64 -net nic,model=virtio
 
 ```
 
@@ -1279,7 +1279,7 @@ The floppy disk option is difficult because you will need to press F6 (Shift-F6 
 The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
 
 ```
-$ qemu-system-i386 ... \
+$ qemu-system-x86_64 ... \
 -drive file=*/path/to/primary/disk.img*,index=0,media=disk,if=virtio \
 -drive file=*/path/to/installer.iso*,index=2,media=cdrom \
 -drive file=*/path/to/virtio.iso*,index=3,media=cdrom \
@@ -1313,7 +1313,7 @@ $ qemu-img create -f qcow2 *fake.qcow2* 1G
 Run the original Windows guest (with the boot disk still in IDE mode) with the fake disk (in virtio mode) and a CD-ROM with the driver.
 
 ```
-$ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
+$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
 
 ```
 
@@ -1322,7 +1322,7 @@ Windows will detect the fake disk and try to find a driver for it. If it fails, 
 When the installation is successful, you can turn off the virtual machine and launch it again, now with the boot disk attached in virtio mode:
 
 ```
-$ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
+$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
 
 ```
 
@@ -1333,7 +1333,7 @@ $ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
 Installing virtio network drivers is a bit easier, simply add the `-net` argument as explained above.
 
 ```
-$ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
+$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
 
 ```
 
@@ -1554,7 +1554,7 @@ To set which virtual machines will start on boot-up, [enable](/index.php/Enable 
 To prevent the mouse from being grabbed when clicking on the guest operating system's window, add the option `-usbdevice tablet`. This means QEMU is able to report the mouse position without having to grab the mouse. This also overrides PS/2 mouse emulation when activated. For example:
 
 ```
-$ qemu-system-i386 -hda *disk_image* -m 512 -vga std -usbdevice tablet
+$ qemu-system-x86_64 -hda *disk_image* -m 512 -vga std -usbdevice tablet
 
 ```
 
@@ -1654,7 +1654,7 @@ Fast Startup may also need to be disabled for changes to the `-smp` option to be
 If you use a MS Windows guest, you might want to use RDP to connect to your guest VM. If you are using a VLAN or are not in the same network as the guest, use:
 
 ```
-$ qemu-system-i386 -nographic -net user,hostfwd=tcp::5555-:3389
+$ qemu-system-x86_64 -nographic -net user,hostfwd=tcp::5555-:3389
 
 ```
 
@@ -1679,7 +1679,7 @@ There are a number of techniques that you can use to improve the performance of 
 *   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:
 
 ```
-$ qemu-system-i386 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=*disk_image*,media=disk,if=virtio
+$ qemu-system-x86_64 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=*disk_image*,media=disk,if=virtio
 
 ```
 
@@ -1688,21 +1688,21 @@ $ qemu-system-i386 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=
 *   If you have a raw disk image, you may want to disable the cache:
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,if=virtio,**cache=none**
+$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio,**cache=none**
 
 ```
 
 *   Use the native Linux AIO:
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
+$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
 
 ```
 
 *   If you use a qcow2 disk image, I/O performance can be improved considerably by ensuring that the L2 cache is of sufficient size. The [formula](https://blogs.igalia.com/berto/2015/12/17/improving-disk-io-performance-in-qemu-2-5-with-the-qcow2-l2-cache/) to calculate L2 cache is: l2_cache_size = disk_size * 8 / cluster_size. Assuming the qcow2 image was created with the default cluster size of 64K, this means that for every 8 GB in size of the qcow2 image, 1 MB of L2 cache is best for performance. Only 1 MB is used by QEMU by default; specifying a larger cache is done on the QEMU command line. For instance, to specify 4 MB of cache (suitable for a 32 GB disk with a cluster size of 64K):
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
+$ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 
 ```
 
@@ -1711,7 +1711,7 @@ $ qemu-system-i386 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 *   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
 
 ```
-$ qemu-system-i386 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
+$ qemu-system-x86_64 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
 
 ```
 
@@ -1745,7 +1745,7 @@ Replace `-usbdevice tablet` with `-usb` as QEMU option.
 Should you find that some of your keys do not work or "press" the wrong key (in particular, the arrow keys), you likely need to specify your keyboard layout as an option. The keyboard layouts can be found in `/usr/share/qemu/keymaps`.
 
 ```
-$ qemu-system-i386 -k *keymap* *disk_image*
+$ qemu-system-x86_64 -k *keymap* *disk_image*
 
 ```
 
