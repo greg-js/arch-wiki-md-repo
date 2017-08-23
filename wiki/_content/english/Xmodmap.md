@@ -90,7 +90,7 @@ $ xmodmap ~/.Xmodmap
 
 ### Activating the custom table
 
-With [GDM](/index.php/GDM "GDM"), [XDM](/index.php/XDM "XDM"), [KDM](/index.php/KDM "KDM") or [LightDM](/index.php/LightDM "LightDM") there is no need to source `~/.Xmodmap`. For [startx](/index.php/Startx "Startx"), use:
+With [GDM](/index.php/GDM "GDM"), [XDM](/index.php/XDM "XDM") or [LightDM](/index.php/LightDM "LightDM") there is no need to source `~/.Xmodmap`. For [startx](/index.php/Startx "Startx"), use:
 
  `~/.xinitrc` 
 ```

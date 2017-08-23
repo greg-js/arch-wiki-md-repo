@@ -91,7 +91,7 @@ Xorg debería funcionar sin problemas y sin necesidad de controladores privativo
 
 *Consulte también: [Start X at Login](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)")*
 
-**Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") como [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
+**Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") como [GDM](/index.php/GDM "GDM") o [SLiM](/index.php/SLiM "SLiM").
 
 Si desea arrancar X sin un gestor de pantalla, instale el paquete [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opcionalmente, los paquetes [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [xterm](https://www.archlinux.org/packages/?name=xterm) permiten un entorno por defecto, como se describe a continuación.
 
@@ -363,8 +363,6 @@ Las siguientes opciones tienen que ser añadidos a la variable `"defaultserverar
 -deferglyphs 16
 
 ```
-
-**Nota:** Si se inicia X con kdm, parece ser que el script startx no se ejecuta. Estas opciones de X deben ser añadidas a la variable `"ServerArgsLocal"` en el archivo `/usr/share/config/kdm/kdmrc`.
 
 ### Sesión anidada de X
 

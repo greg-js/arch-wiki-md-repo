@@ -4,11 +4,10 @@ Nesta sessão será informada, quais as documentações que estão em tradução
 
 *   [1 Crie uma nova página e sua tradução](#Crie_uma_nova_p.C3.A1gina_e_sua_tradu.C3.A7.C3.A3o)
 *   [2 AUR](#AUR)
-*   [3 Man pages](#Man_pages)
-*   [4 Pacman (libalpm, makepkg e repo-add)](#Pacman_.28libalpm.2C_makepkg_e_repo-add.29)
-*   [5 Wiki](#Wiki)
-*   [6 Equipe de Traducão:](#Equipe_de_Traduc.C3.A3o:)
-*   [7 Equipe de Revisão:](#Equipe_de_Revis.C3.A3o:)
+*   [3 Pacman (libalpm, makepkg e repo-add)](#Pacman_.28libalpm.2C_makepkg_e_repo-add.29)
+*   [4 Wiki](#Wiki)
+*   [5 Equipe de Traducão:](#Equipe_de_Traduc.C3.A3o:)
+*   [6 Equipe de Revisão:](#Equipe_de_Revis.C3.A3o:)
 
 ## Crie uma nova página e sua tradução
 
@@ -17,39 +16,30 @@ Nesta sessão será informada, quais as documentações que estão em tradução
 3.  Faça [login](/index.php/Special:UserLogin "Special:UserLogin") para ser capaz de editar o wiki.
 4.  Escolha uma página para traduzir. Você pode usar a [função de página aleatória](/index.php/Special:Random "Special:Random"). Vamos usar exatamente esta página como um exemplo: <a class="mw-selflink selflink">ArchWiki Translation Team (Português)</a> (já está traduzido, mas somente um exemplo hipotético).
 5.  No topo da página, clique na aba "editar" no menu horizontal.
-6.  Adicione um link interlíngua para o idioma para o qual você pretende traduzir. Veja [Links interlínguas](/index.php/Help:I18n#Interlanguage_links "Help:I18n").
+6.  Adicione um link interlíngua para o idioma para o qual você pretende traduzir. Veja [Links interlínguas](/index.php/Help:I18n_(Portugu%C3%AAs)#Links_interl.C3.ADnguas "Help:I18n (Português)").
 7.  Copie todo o código-fonte da página.
 8.  Salve a página com o novo link interlíngua.
-9.  Visite o link interlíngua que você criou que você seria levado para [ArchWiki Translation Team (Idioma)](/index.php?title=ArchWiki_Translation_Team_(Idioma)&action=edit&redlink=1 "ArchWiki Translation Team (Idioma) (page does not exist)"), sendo "Idioma" o [nome do idioma](/index.php/Help:I18n#Languages "Help:I18n") associado com a tradução que você está criando. Ao traduzir para Português, seria <a class="mw-selflink selflink">ArchWiki Translation Team (Português)</a>
+9.  Visite o link interlíngua que você criou que você seria levado para [ArchWiki Translation Team (Idioma)](/index.php?title=ArchWiki_Translation_Team_(Idioma)&action=edit&redlink=1 "ArchWiki Translation Team (Idioma) (page does not exist)"), sendo "Idioma" o [nome do idioma](/index.php/Help:I18n_(Portugu%C3%AAs)#Idiomas "Help:I18n (Português)") associado com a tradução que você está criando. Ao traduzir para Português, seria <a class="mw-selflink selflink">ArchWiki Translation Team (Português)</a>
 10.  Já que a nova página não existe, crie-o clicando em "criar" no menu horizontal.
 11.  Você verá uma editor de texto simples. Cole aqui o código-fonte da página que você copiou anteriormente.
-12.  Altere os links "Category" para suas versões localizadas. Por exemplo, altere `[[Category:ArchWiki]]` para `[[Category:ArchWiki (Idioma)]]`. Para português, seria `[[Category:ArchWiki (Português)]]`. Veja [Help:Category](/index.php/Help:Category "Help:Category") para mais informações.
+12.  Altere os links "Category" para suas versões localizadas. Por exemplo, altere `[[Category:ArchWiki]]` para `[[Category:ArchWiki (Idioma)]]`. Para português, seria `[[Category:ArchWiki (Português)]]`. Veja [Help:Category (Português)](/index.php/Help:Category_(Portugu%C3%AAs) "Help:Category (Português)") para mais informações.
 13.  Altere o link interlíngua que você criou anteriormente para o artigo *original*, que você está traduzindo.
-14.  Traduza o texto da página copiada e salve tudo, adicionando um [sumário da edição](/index.php/Help:Style_(Portugu%C3%AAs)#Sum.C3.A1rio_de_edi.C3.A7.C3.A3o "Help:Style (Português)") tal como `translate [[ArchWiki Translation Team]]`.
+14.  Traduza o texto da página copiada e salve tudo, adicionando um [resumo da edição](/index.php/Help:Style_(Portugu%C3%AAs)#Resumo_de_edi.C3.A7.C3.A3o "Help:Style (Português)") tal como `translate [[ArchWiki Translation Team]]`.
 15.  Atualize as listas de link interlíngua de todas outras traduções do artigo (se houver) para incluir o link de interlíngua da tradução recentemente criada.
 16.  No final da página traduzida, haverá uma lista de categorias de página que está inserida. Certifique-se que todas as categorias existam, isto é, os links não devem estar vermenlhos. Se estiver, crie todas as categorias em falta seguindo os links vermelhos - categorias são criadas da mesma forma que páginas normais.
 17.  (opcional) Crie uma outra página com o título traduzido, como [Equipe de Tradução do ArchWiki](/index.php/Equipe_de_Tradu%C3%A7%C3%A3o_do_ArchWiki "Equipe de Tradução do ArchWiki"), cujo título seja uma versão traduzida de <a class="mw-selflink selflink">ArchWiki Translation Team (Português)</a>. Insira `#REDIRECT [[ArchWiki_Translation_Team_(Português)]]` como seu único conteúdo e salva-a.
 
 ## AUR
 
-Instruções sobre como traduzir o AUR podem ser vistas [aqui](/index.php/AUR_(Portugu%C3%AAs)#Tradu.C3.A7.C3.A3o_da_interface_web "AUR (Português)").
+É possível traduzir as mensagens da [interface web do AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), o repositório de usuário do Arch. Instruções sobre como traduzir podem ser vistas [aqui](/index.php/AUR_(Portugu%C3%AAs)#Tradu.C3.A7.C3.A3o_da_interface_web "AUR (Português)").
 
 **Tradutores:** [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr")
 
 **Revisores:**
 
-## Man pages
-
-| Título | Descrição | Responsável | Status |
-| Man:abs | Manpage do ABS | Não Alocado | Não iniciado |
-| Man:pacman | Manpage do pacman | Não Alocado | Não iniciado |
-| Man:libalpm | Manpage da libalpm | Não alocado | Não iniciado |
-| Man:makepkg | Manpage do makepkg | [Albino Biasutti Neto](/index.php/User:Bino28 "User:Bino28") | Revisão |
-| Man:repo-add | Manpage do repo-add | Não alocado | Não iniciado |
-
 ## Pacman (libalpm, makepkg e repo-add)
 
-Informações [aqui](https://www.archlinux.org/pacman/translation-help.html)
+É possível traduzir as mensagens dos executáveis *pacman*, *makepkg* e outros pedaços do gerenciamento de pacotes do Arch Linux. Informações sobre como traduzir podem ser vistas [aqui](https://www.archlinux.org/pacman/translation-help.html)
 
 **Tradutores:** [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr")
 
@@ -86,7 +76,6 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [AutoFS](/index.php/Autofs "Autofs") | Guia de instalação e utilização do Autofs, uma alternativa ao hal. [Documento Original](/index.php/AutoFS_HowTo "AutoFS HowTo") | [Leandro Pincini](/index.php?title=User:Redpill&action=edit&redlink=1 "User:Redpill (page does not exist)") / [Cainã Costa](/index.php?title=User:CainaCosta&action=edit&redlink=1 "User:CainaCosta (page does not exist)") | Concluído |
 | [nVidia](/index.php/NVIDIA "NVIDIA") | Guia de Instalação do driver da Nvidia - [Documento Original](/index.php/NVIDIA "NVIDIA") | [Pianista](/index.php?title=User:Pianista&action=edit&redlink=1 "User:Pianista (page does not exist)") [DenisFalqueto](/index.php?title=User:DenisFalqueto&action=edit&redlink=1 "User:DenisFalqueto (page does not exist)") | Concluido |
 | [Skype](/index.php/Skype "Skype") | Tradução do [Documento original](/index.php/Skype "Skype") | [Pianista](/index.php?title=User:Pianista&action=edit&redlink=1 "User:Pianista (page does not exist)") | Concluido |
-| [Moonlight](/index.php?title=Moonlight&action=edit&redlink=1 "Moonlight (page does not exist)") | Moonlight - [Documento original](/index.php?title=Moonlight&action=edit&redlink=1 "Moonlight (page does not exist)") | [tati](/index.php?title=User:Thatysx&action=edit&redlink=1 "User:Thatysx (page does not exist)") | Concluído |
 | [Opera](/index.php/Opera "Opera") | Tradução do [Documento original](/index.php/Opera "Opera") | [tati](/index.php?title=User:Thatysx&action=edit&redlink=1 "User:Thatysx (page does not exist)") | Concluído |
 | [Msmtp](/index.php/Msmtp "Msmtp") | Tradução do [Documento original](/index.php/Msmtp "Msmtp") | [tati](/index.php?title=User:Thatysx&action=edit&redlink=1 "User:Thatysx (page does not exist)") | Concluído |
 | [.xinitrc](/index.php/.xinitrc ".xinitrc") | Tradução do [Documento original](/index.php/.xinitrc ".xinitrc") | [Gilfran Ribeiro](/index.php?title=User:Gilfran&action=edit&redlink=1 "User:Gilfran (page does not exist)") | Concluído |
@@ -132,8 +121,12 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Main page](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)") | Tradução do [Documento Original](/index.php/Main_page "Main page") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [AUR helpers](/index.php/AUR_helpers_(Portugu%C3%AAs) "AUR helpers (Português)") | Tradução do [Documento Original](/index.php/AUR_helpers "AUR helpers") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)") | Tradução do [Documento Original](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
+| [Help:Category](/index.php/Help:Category_(Portugu%C3%AAs) "Help:Category (Português)") | Tradução do [Documento Original](/index.php/Help:Category "Help:Category") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [Help:Editing](/index.php/Help:Editing_(Portugu%C3%AAs) "Help:Editing (Português)") | Tradução do [Documento Original](/index.php/Help:Editing "Help:Editing") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [Help:Procedures](/index.php/Help:Procedures_(Portugu%C3%AAs) "Help:Procedures (Português)") | Tradução do [Documento Original](/index.php/Help:Procedures "Help:Procedures") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
+| [Help:Style](/index.php/Help:Style_(Portugu%C3%AAs) "Help:Style (Português)") | Tradução do [Documento original](/index.php/Help:Style "Help:Style") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
+| [Help:Template](/index.php/Help:Template_(Portugu%C3%AAs) "Help:Template (Português)") | Tradução do [Documento Original](/index.php/Help:Template "Help:Template") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
+| [Template:Template](/index.php/Template:Template_(Portugu%C3%AAs) "Template:Template (Português)") | Tradução do [Documento Original](/index.php/Template:Template "Template:Template") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Concluído |
 | [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | GDM - [Documento Original](/index.php/GDM "GDM") | [Albino Biasutti Neto](/index.php/User:Bino28 "User:Bino28") | Revisão |
 | [List of Aplications Internet](/index.php/List_of_applications/Internet_(Portugu%C3%AAs) "List of applications/Internet (Português)") | Tradução do [Documento original](/index.php/List_of_applications/Internet "List of applications/Internet") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Em andamento |
 | [Daemon](https://wiki.archlinux.org/index.php?title=Daemon_(Português)) | Tradução do [Documento original](https://wiki.archlinux.org/index.php?title=Daemon) | [Victor Viana](/index.php?title=User:Victor&action=edit&redlink=1 "User:Victor (page does not exist)") | Em andamento |
@@ -145,7 +138,7 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") | Tradução adaptada do [Documento Original](/index.php/Touchpad_Synaptics "Touchpad Synaptics") | [Xitus](/index.php?title=User:Xitus&action=edit&redlink=1 "User:Xitus (page does not exist)") | Em andamento |
 | [Hellanzb](/index.php/Hellanzb "Hellanzb") | Tradução do [Documento original](/index.php/Hellanzb "Hellanzb") | [tati](/index.php?title=User:Thatysx&action=edit&redlink=1 "User:Thatysx (page does not exist)") | Em andamento |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Tradução do [Documento original](/index.php/NetworkManager "NetworkManager") | [Clécio Oliveira](/index.php?title=User:Cleciooliveira&action=edit&redlink=1 "User:Cleciooliveira (page does not exist)") | Em andamento |
-| [Help:Style (Português)](/index.php/Help:Style_(Portugu%C3%AAs) "Help:Style (Português)") | Tradução do [Documento original](/index.php/Help:Style "Help:Style") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Em andamento |
+| [Man page](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") | Tradução do [Documento Original](/index.php/Man_page "Man page") | [Rafael Fontenelle](/index.php/User:Josephgbr "User:Josephgbr") | Em andamento |
 | [Wmii](/index.php/Wmii "Wmii") | Guia de instalação e utilização do Wmii. [Documento Original](/index.php/Wmii "Wmii") | [Cainã Costa](/index.php?title=User:CainaCosta&action=edit&redlink=1 "User:CainaCosta (page does not exist)") | Não iniciada |
 | [KDE](/index.php/KDE "KDE") | Tradução do guia do ambiente KDE | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Não iniciado |
 | [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") | Tradução do [Documento original](/index.php/ATI_Catalyst "ATI Catalyst") | [Robson Berthelsen](/index.php?title=User:Nosbor868&action=edit&redlink=1 "User:Nosbor868 (page does not exist)") | Não iniciado |

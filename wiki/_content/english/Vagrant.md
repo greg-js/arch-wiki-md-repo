@@ -149,7 +149,7 @@ As of version 1.8.4, Vagrant appears to use the deprecated `route` command to co
 
 ### 'vagrant up' hangs on NFS mounting (Mounting NFS shared folders...)
 
-Installing [net-tools](https://www.archlinux.org/packages/?name=net-tools) package may solve this problem.
+Installing [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package may solve this problem.
 
 ### Error starting network 'default': internal error: Failed to initialize a valid firewall backend
 

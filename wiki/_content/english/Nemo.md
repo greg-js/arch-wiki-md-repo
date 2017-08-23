@@ -15,6 +15,7 @@
         *   [3.1.4 Filenames containing spaces](#Filenames_containing_spaces)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Thumbnail generation errors shown in the console](#Thumbnail_generation_errors_shown_in_the_console)
+    *   [4.2 Desktop icons not shown](#Desktop_icons_not_shown)
 
 ## Installation
 
@@ -191,3 +192,7 @@ for mp4 and other video files.
 To fix this, ensure that you have a thumbnailer for video files installed - see [File manager functionality#Thumbnail previews](/index.php/File_manager_functionality#Thumbnail_previews "File manager functionality") - and also ensure you have the necessary [GStreamer](/index.php/GStreamer "GStreamer") packages installed that will allow the video file to be played.
 
 **Tip:** Once thumbnail generation for video files is working, you can use `nemo-preview` to preview video files.
+
+### Desktop icons not shown
+
+Since Nero v3.4.2, the desktop is managed by `nemo-desktop`. This can be configured to auto start by copying the file `/usr/share/applications/nemo-autostart.desktop` to `~/.config/autostart/nemo-autostart.desktop` and removing the line "OnlyShowIn=X-Cinnamon;".

@@ -169,7 +169,7 @@ pacman -S kdebase-workspace kdebase-konsole
 
 ### 使用 KDM (KDE Display Manager)
 
-*It is highly recommended to get familiar with the [full article](/index.php/Display_manager "Display manager") concerning display managers, before you make any changes. See also [KDM](/index.php/KDM "KDM") Wiki page.*
+*It is highly recommended to get familiar with the [full article](/index.php/Display_manager "Display manager") concerning display managers, before you make any changes.*
 
 #### 作為一個守護進程啟動 KDM
 

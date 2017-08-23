@@ -14,20 +14,21 @@
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
 | <small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(12)</small> |
 | <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(13)</small> |
-| <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(17)</small> |
+| <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(16)</small> |
 | <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(4)</small> |
 | <small>2.7.</small> [Emulators](/index.php/Category:Emulators "Category:Emulators") <small>(11)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
 | <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(46)</small> |
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(38)</small> |
 | <small>2.10.1.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(8)</small> |
-| <small>2.10.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(2)</small> |
-| <small>2.10.3.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
-| <small>2.10.4.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(17)</small> |
-| <small>2.10.5.</small> [News aggregators](/index.php/Category:News_aggregators "Category:News aggregators") <small>(3)</small> |
-| <small>2.10.6.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
-| <small>2.10.7.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>2.10.8.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
+| <small>2.10.2.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(3)</small> |
+| <small>2.10.3.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(2)</small> |
+| <small>2.10.4.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
+| <small>2.10.5.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(17)</small> |
+| <small>2.10.6.</small> [News aggregators](/index.php/Category:News_aggregators "Category:News aggregators") <small>(3)</small> |
+| <small>2.10.7.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
+| <small>2.10.8.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>2.10.9.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(28)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(48)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
@@ -81,7 +82,7 @@
 | <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(18)</small> |
 | <small>4.9.18.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(1)</small> |
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(20)</small> |
+| <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
@@ -123,9 +124,9 @@
 | <small>6.1.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(9)</small> |
 | <small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(14)</small> |
 | <small>6.3.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(24)</small> |
-| <small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(12)</small> |
+| <small>6.3.1.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(11)</small> |
 | <small>6.3.2.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(10)</small> |
-| <small>6.3.3.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12)</small> |
+| <small>6.3.3.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(11)</small> |
 | <small>6.3.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(1)</small> |
 | <small>6.3.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(14)</small> |
 | <small>6.3.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(18)</small> |

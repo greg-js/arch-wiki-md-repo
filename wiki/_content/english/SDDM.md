@@ -17,6 +17,7 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 Configuration GUI](#Configuration_GUI)
     *   [2.7 DPI settings](#DPI_settings)
+    *   [2.8 SDDM and Gnome-keyring](#SDDM_and_Gnome-keyring)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
@@ -130,6 +131,33 @@ For example:
 [X11]
 ServerArguments=-nolisten tcp -dpi 94
 ```
+
+### SDDM and Gnome-keyring
+
+To automatically unlock the [Gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring") upon login in KDM add the following line to your `/etc/pam.d/sddm` right after the `auth include system-login` line:
+
+```
+auth            optional        pam_gnome_keyring.so
+
+```
+
+and add
+
+```
+session         optional        pam_gnome_keyring.so auto_start
+
+```
+
+after `session include system-login`
+
+To automatically re-unlock the keyring when you unlock your screensaver open `/etc/pam.d/kscreensaver` and add
+
+```
+auth            optional        pam_gnome_keyring.so
+
+```
+
+as the last line.
 
 ## Troubleshooting
 

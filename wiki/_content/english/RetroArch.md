@@ -7,7 +7,6 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Paths](#Paths)
 *   [4 Online updater](#Online_updater)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No cores found](#No_cores_found)
@@ -49,18 +48,6 @@ $ cp /etc/retroarch.cfg ~/.config/retroarch/retroarch.cfg
 
 It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig /path/to/config` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various implementations.
 
-### Paths
-
-Some modifications are required to use the correct paths for Arch packages:
-
-```
-assets_directory = "/usr/share/retroarch/assets"
-libretro_info_path = "/usr/share/libretro/info"
-libretro_directory = "/usr/lib/libretro"
-joypad_autoconfig_dir = "/usr/share/retroarch/autoconfig"
-
-```
-
 **Tip:** RetroArch is capable of loading *[bsnes xml filters](https://gitorious.org/bsnes/xml-shaders)* and *[cg shaders](https://github.com/libretro/common-shaders)* that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
 
 **Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
@@ -89,7 +76,13 @@ These cores and assets are kept up to date and can be pulled from the updater at
 
 ### No cores found
 
-By default RetroArch will attempt to find cores in `~/.config/retroarch/cores`. The packages in the official repositories install the cores in `/usr/lib/libretro/` and the core info files in `/usr/share/libretro/info`. The settings can be changed to look in these directories; see [#Paths](#Paths) above.
+By default RetroArch will attempt to find cores in `/usr/lib/libretro`. Cores downloaded using the built-in Online Updater will fail to save unless retroarch is run as root (not recommended, as it may overwrite cores installed by pacman), since the user does not have permission to modify this directory. To use cores from the Online Updater, edit these lines:
+
+ `~/.config/retroarch/retroarch.cfg` 
+```
+libretro_directory = "~/.config/retroarch/cores"
+libretro_info_path = "~/.config/retroarch/cores/info"
+```
 
 ### Input devices do not operate
 

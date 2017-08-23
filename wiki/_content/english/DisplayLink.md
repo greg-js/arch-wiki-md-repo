@@ -13,12 +13,14 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [2.2 Configuring X Server](#Configuring_X_Server)
         *   [2.2.1 xrandr](#xrandr)
         *   [2.2.2 Enabling DVI output on startup](#Enabling_DVI_output_on_startup)
+        *   [2.2.3 Switching between displaylink and nvidia/nouveau driver](#Switching_between_displaylink_and_nvidia.2Fnouveau_driver)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Not working configuration](#Not_working_configuration)
     *   [3.2 Screen redraw is broken](#Screen_redraw_is_broken)
     *   [3.3 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
     *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw.2FUnresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
     *   [3.5 Impossible to activate displaylink's screen](#Impossible_to_activate_displaylink.27s_screen)
+    *   [3.6 Suspend problem](#Suspend_problem)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -155,6 +157,37 @@ Avoid placing these commands in `~/.xprofile` as this breaks the display configu
 
 **Note:** If you have additional providers, specify the name of the provider instead of using indexes. The name of the DisplayLink device will be `modesetting`
 
+#### Switching between displaylink and nvidia/nouveau driver
+
+Currently (displaylink version 1.3.54-1) it is not possible to use displaylink device and nvidia/nouveau driver simultaniously on optimus based laptops. To be able to use displaylink device, you can create file with the following contents:
+
+ `/usr/share/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+  Identifier "Intel Graphics"
+  Driver "Intel"
+  Option "AccelMethod" "sna"
+  Option "TearFree" "true"
+  Option "TripleBuffer" "true"
+  Option "MigrationHeuristic" "greedy"
+  Option "Tiling" "true"
+  Option "Pageflip" "true"
+  Option "ExaNoComposite" "false"
+  Option "Tiling" "true"
+  Option "Pageflip" "true"
+EndSection
+```
+
+Then reboot.
+
+After that, you should be able to use displaylink device. This method worked with kernel 4.12.8-1-ARCH and installed [evdi-git](https://aur.archlinux.org/packages/evdi-git/) package.
+
+**Note:** When you type this to 20-intel.conf, then bumblebee service is running, but it cannot work. Also, laptop's fans are becoming very noisy and laptop's temperature becomes very high.
+
+When you want to switch back to activate nvidia driver, comment everything in that file and reboot.
+
+To check which driver is used for your discrete video card run `lspci -nnk -s xx:xx.x` (replace xx:xx.x with your nvidia gpu pci id).
+
 ## Troubleshooting
 
 ### Not working configuration
@@ -226,6 +259,10 @@ blacklist nouveau
 options nouveau modeset=0
 
 ```
+
+### Suspend problem
+
+Displaylink is not working after suspend. Reboot your system and then you are able to use displaylink again.
 
 ## See Also
 

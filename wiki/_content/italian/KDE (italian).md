@@ -51,8 +51,7 @@ Il progetto KDE fornisce a monte un ottimo [UserBase wiki](http://userbase.kde.o
     *   [7.2 KDE Telepathy](#KDE_Telepathy)
 *   [8 Trucchi e Consigli](#Trucchi_e_Consigli)
     *   [8.1 Utilizzare Openbox in KDE](#Utilizzare_Openbox_in_KDE)
-        *   [8.1.1 Quando si utilizza KDM](#Quando_si_utilizza_KDM)
-        *   [8.1.2 Riattivare gli effetti del compositing](#Riattivare_gli_effetti_del_compositing)
+        *   [8.1.1 Riattivare gli effetti del compositing](#Riattivare_gli_effetti_del_compositing)
     *   [8.2 Integrare Android con il desktop KDE](#Integrare_Android_con_il_desktop_KDE)
     *   [8.3 Ricevere le notifiche per gli aggiornamenti software](#Ricevere_le_notifiche_per_gli_aggiornamenti_software)
     *   [8.4 Configurare KWin per utilizzare le OpenGL ES](#Configurare_KWin_per_utilizzare_le_OpenGL_ES)
@@ -107,7 +106,7 @@ Il progetto KDE fornisce a monte un ottimo [UserBase wiki](http://userbase.kde.o
 
 *   Plasma 5 non è installabile con Plasma 4.
 *   Il desktop Plasma 4 è fuori manutenzione dall' Agosto 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) Non è più nei repository ufficiali dal Dicembre 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
-*   [KDM](/index.php/KDM "KDM") non è più disponibile per Plasma 5\. KDE [raccomanda](http://blog.davidedmundson.co.uk/blog/display_managers_finale) di usare il display manager [SDDM](/index.php/SDDM "SDDM") poichè supporta l'integrazione con il tema di Plasma 5.
+*   KDM non è più disponibile per Plasma 5\. KDE [raccomanda](http://blog.davidedmundson.co.uk/blog/display_managers_finale) di usare il display manager [SDDM](/index.php/SDDM "SDDM") poichè supporta l'integrazione con il tema di Plasma 5.
 
 Prima di installare Plasma, assicurati di avere un' installazione funzionante di [Xorg](/index.php/Xorg "Xorg") nel tuo sistema.
 
@@ -492,10 +491,6 @@ Per avviare manualmente KDE con Openbox come window manager - come sessione pred
 exec openbox-kde-session
 
 ```
-
-#### Quando si utilizza KDM
-
-Per utilizzare [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)") come gestore di finestre predefinito quando si accede a [KDM](/index.php/KDM_(Italiano) "KDM (Italiano)") basta andare su *Applicazioni predefinite -> Gestore delle finestre -> Usa un altro gestore delle finestre*, quindi selezionare Openbox all'interno della casella a discesa.
 
 #### Riattivare gli effetti del compositing
 

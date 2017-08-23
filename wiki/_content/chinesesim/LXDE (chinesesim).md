@@ -87,7 +87,7 @@ cp /etc/xdg/openbox/{menu.xml,rc.xml,autostart} ~/.config/openbox
 
 ### 显示管理器
 
-如果你用一个像[GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM"), 或者 [SLiM](/index.php/SLiM "SLiM")的 [显示管理器](/index.php/Display_manager "Display manager") 启动LXDE. 请参考display manager的页面.
+如果你用一个像[GDM](/index.php/GDM "GDM"), [SDDM](/index.php/SDDM "SDDM"), 或者 [SLiM](/index.php/SLiM "SLiM")的 [显示管理器](/index.php/Display_manager "Display manager") 启动 LXDE. 请参考display manager的页面.
 
 介绍[LXDM](/index.php/LXDM "LXDM"),一个LXDE项目中的据试验性的显示管理器被放在 [这里了](/index.php/LXDE#LXDM "LXDE").
 

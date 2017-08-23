@@ -2,7 +2,7 @@
 
 * * *
 
-**Internet** – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
+<a class="mw-selflink selflink">Internet</a> – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
 
 ## Contents
 
@@ -77,7 +77,7 @@
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Cliente BitTorrent simple y fácil de usar con una versión demonio, GTK+, interfaz Qt, front-ends web y CLI .
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (los clientes remotos trabajan con el demonio del paquete -cli)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (los clientes remotos trabajan con el demonio del paquete -cli)
 
 #### Interfez gráfica
 
@@ -281,7 +281,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **Psi+** — Versión mejorada del cliente Jabber Psi con nuevas [características](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Cliente XMPP, rico en características y fácil de hackear, del autor del servidor XMPP ejabberd.
 
@@ -431,7 +431,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt con soporte para videoconferencia (desde la versión 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Software de telefonía que permite realizar llamadas de voz y vídeo gratis de PC a PC, e integrar todos los contactos de mensajería instantánea en un solo lugar (antes llamado Wengo Phone).
 

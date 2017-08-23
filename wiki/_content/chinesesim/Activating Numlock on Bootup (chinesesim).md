@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Activating_Numlock_on_Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-21，点击[这里](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=486084)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Activating_Numlock_on_Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=486330)可以查看翻译后英文页面的改动。
 
 ## Contents
 
@@ -106,7 +106,9 @@ exec your_window_manager
 
 ### GDM
 
-GDM用户可以将以下代码加入到/etc/gdm/Init/Default：
+**注意:** GDM 已经不再执行 `/etc/gdm/Init` 中的脚本.
+
+安装 [numlockx](https://www.archlinux.org/packages/?name=numlockx) 并将下面内容加入 [~/.xprofile](/index.php/Xprofile "Xprofile"):
 
 ```
 if [ -x /usr/bin/numlockx ]; then

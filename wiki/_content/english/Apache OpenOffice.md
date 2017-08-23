@@ -103,8 +103,6 @@ Check [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_
 
 #### Use different configuration from general theme
 
-You may wish to set the Xorg server dots-per-inch in the [KDM](/index.php/KDM "KDM") configuration.
-
 Do **not** select *Use my KDE style in GTK applications*. Instead choose a native syle and font for GTK+ 2 applications.
 
 Use a program like [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme) to select a style (in general different from KDE) and a font (may be the same as your KDE general system font). There are also other GTK+ engine packages available.

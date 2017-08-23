@@ -256,11 +256,11 @@ This suite can be [installed](/index.php/Pacman "Pacman") with the package [phor
 
 ### S
 
-S, an *I/O Benchmark Suite*, is a small collection of programs to measure storage I/O performance.[[1]](https://github.com/Algodev-github/S)
+[S](https://github.com/Algodev-github/S), an I/O Benchmark Suite, is a small collection of scripts to measure storage I/O performance.
 
-It has been developed by the same group of the BFQ scheduler, lead by Paolo Valente.[[2]](http://algogroup.unimore.it/algodev/)
+It has been developed by [algodev](http://algogroup.unimore.it/algodev/), the team behind the BFQ scheduler.
 
-Download or clone the project, install its dependencies and run it as root (superuser privileges needed to change disk scheduler).
+Download or clone the project, install its dependencies and run it as root (privileges needed to change disk scheduler).
 
 ## Flash media
 

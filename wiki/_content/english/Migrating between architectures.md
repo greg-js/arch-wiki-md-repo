@@ -96,7 +96,7 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ```
 
-	8\. You could run the command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture. Or you can make note of any individual package-re-install that throws an error and then go back after the upgrade completes to re-install just those packages. Also, if you see an error about not enough disk space, you can filter the package list alphabetically and upgrade in stages, with for instance `...| grep '^[a-k]' |...`, then perhaps `'^l'` and `'^[m-z]'`. In this case you would also have to run `pacman --root /mnt -Scc` after each install stage to free disk space.
+	8\. You could run the command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture. Or you can make note of any individual package-re-install that throws an error and then go back after the upgrade completes to re-install just those packages. Also, if you see an error about not enough disk space, you can filter the package list alphabetically and upgrade in stages, with for instance `...| grep '^[a-k]' |...`, then perhaps `'^l'` and `'^[m-z]'`. In this case you would also have to run `pacman --root /mnt -Scc` after each install stage to free disk space. Or since all package are downloaded in the livecd ramfs , you can also mount a partition or make a symlink pointing to /var/cache/pacman/pkg (ex: `ln -s /mnt/var/cache/pacman/pkg /var/cache/pacman/pkg`)
 
 	9\. Finally, run
 

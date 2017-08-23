@@ -4,7 +4,7 @@
 
 * * *
 
-**Интернет** – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – [Документы](/index.php/List_of_applications/Documents_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Documents (Русский)") – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – [Другие](/index.php/List_of_applications/Other_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Other (Русский)")
+<a class="mw-selflink selflink">Интернет</a> – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – [Документы](/index.php/List_of_applications/Documents_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Documents (Русский)") – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – [Другие](/index.php/List_of_applications/Other_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Other (Русский)")
 
 ## Contents
 
@@ -392,7 +392,7 @@
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Простой и легкий в использовании клиент BitTorrent, который может работать как демон или через фронтенды GTK+, Qt GUI, web и CLI
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (клиент удаленного доступа работает с демоном, доступным в пакете -cli)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (клиент удаленного доступа работает с демоном, доступным в пакете -cli)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/ru:Vuze "wikipedia:ru:Vuze")** — Клиент BitTorrent с богатым функционалом, написанный на Java (прежнее название - Azureus)
 

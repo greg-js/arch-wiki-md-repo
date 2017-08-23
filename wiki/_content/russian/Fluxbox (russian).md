@@ -5,7 +5,7 @@ Fluxbox - это еще один оконный менеджер для X-ов. 
 *   [1 Установка Fluxbox](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Fluxbox)
 *   [2 Полное руководство](#.D0.9F.D0.BE.D0.BB.D0.BD.D0.BE.D0.B5_.D1.80.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B4.D1.81.D1.82.D0.B2.D0.BE)
 *   [3 Запуск Fluxbox](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Fluxbox)
-    *   [3.1 Способ № 1: Логин менеджеры KDM/GDM/LightDM](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.E2.84.96_1:_.D0.9B.D0.BE.D0.B3.D0.B8.D0.BD_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D1.8B_KDM.2FGDM.2FLightDM)
+    *   [3.1 Способ № 1: Логин менеджеры GDM/LightDM](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.E2.84.96_1:_.D0.9B.D0.BE.D0.B3.D0.B8.D0.BD_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D1.8B_GDM.2FLightDM)
     *   [3.2 Способ № 2: ~/.xinitrc](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.E2.84.96_2:_.7E.2F.xinitrc)
 *   [4 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [4.1 Меню](#.D0.9C.D0.B5.D0.BD.D1.8E)
@@ -43,9 +43,9 @@ Fluxbox - это еще один оконный менеджер для X-ов. 
 
 ## Запуск Fluxbox
 
-### Способ № 1: Логин менеджеры KDM/GDM/LightDM
+### Способ № 1: Логин менеджеры GDM/LightDM
 
-Если у вас установлен экранный менеджер [KDM](/index.php/KDM "KDM"), [GDM](/index.php/GDM "GDM") или [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)"), то fluxbox будет автоматически добавлен в его меню. Далее, для запуска fluxbox, будет достаточно просто выбрать соответствующий пункт в меню. Инструкции по настройке менеджеров можно найти [здесь](/index.php/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0_%D0%B2%D1%85%D0%BE%D0%B4%D0%B0_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83_(KDM,_GDM_%D0%B8%D0%BB%D0%B8_XDM)_%D0%B2_%D0%B0%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83 "Добавление экранного менеджера входа в систему (KDM, GDM или XDM) в автозагрузку").
+Если у вас установлен экранный менеджер [GDM](/index.php/GDM "GDM") или [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)"), то fluxbox будет автоматически добавлен в его меню. Далее, для запуска fluxbox, будет достаточно просто выбрать соответствующий пункт в меню. Инструкции по настройке менеджеров можно найти [здесь](/index.php?title=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0_%D0%B2%D1%85%D0%BE%D0%B4%D0%B0_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83_(GDM_%D0%B8%D0%BB%D0%B8_XDM)_%D0%B2_%D0%B0%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83&action=edit&redlink=1 "Добавление экранного менеджера входа в систему (GDM или XDM) в автозагрузку (page does not exist)").
 
 ### Способ № 2: ~/.xinitrc
 

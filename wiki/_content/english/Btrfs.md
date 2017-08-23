@@ -116,6 +116,8 @@ By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/c
 
 To disable copy-on-write for newly created files in a mounted subvolume, use the `nodatacow` mount option. This will only affect newly created files. Copy-on-write will still happen for existing files.
 
+**Note:** From Btrfs Wiki [Mount options](https://btrfs.wiki.kernel.org/index.php/Mount_options): within a single file system, it is not possible to mount some subvolumes with `nodatacow` and others with `datacow`. The mount option of the first mounted subvolume applies to any other subvolumes.
+
 To disable copy-on-write for single files/directories do:
 
 ```

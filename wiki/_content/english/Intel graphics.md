@@ -76,8 +76,8 @@ However, to take advantage of some driver options, you will need to create a Xor
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
 Section "Device"
-   Identifier  "Intel Graphics"
-   Driver      "intel"
+  Identifier  "Intel Graphics"
+  Driver      "intel"
 EndSection
 ```
 
@@ -293,8 +293,8 @@ Alternatively, try to disable the 3D acceleration only with the `DRI` option:
 If you experience crashes and have
 
 ```
-Option "TearFree" "true"
-Option "AccelMethod" "sna"
+  Option "TearFree" "true"
+  Option "AccelMethod" "sna"
 
 ```
 
@@ -310,7 +310,7 @@ to your boot parameters.
 If you are using kernel 4.0.X or above on Baytrail architecture and frequently encounter complete system freezes (especially when watching video or using GFX intensivelly), you should try adding the following kernel option as a workaround, until [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=109051) will be fixed permanently.
 
 ```
- intel_idle.max_cstate=1
+intel_idle.max_cstate=1
 
 ```
 

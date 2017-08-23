@@ -39,7 +39,7 @@ exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-sessi
 
 This starts [Openbox](/index.php/Openbox "Openbox") with proper environment variables so it and its children are able to use ConsoleKit.
 
-[Display managers](/index.php/Display_manager "Display manager") like [KDM](/index.php/KDM "KDM"), [GDM](/index.php/GDM "GDM"), [LXDM](/index.php/LXDM "LXDM") and [SLiM](/index.php/SLiM "SLiM") start ConsoleKit automatically with each X session.
+[Display managers](/index.php/Display_manager "Display manager") like [GDM](/index.php/GDM "GDM"), [LXDM](/index.php/LXDM "LXDM") and [SLiM](/index.php/SLiM "SLiM") start ConsoleKit automatically with each X session.
 
 **Note:**
 

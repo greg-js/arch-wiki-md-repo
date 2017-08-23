@@ -301,7 +301,7 @@ Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/inde
 
 ### Login using ~/.xinitrc
 
-Although migrating to an [xprofile](/index.php/Xprofile "Xprofile") is the preferred method of using a custom start script, it is possible to use your [xinitrc](/index.php/Xinitrc "Xinitrc") by installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/). This provides the necessary file in `/usr/share/xsessions/`, so the option will become available on a restart of lightdm.
+See [Display Manager#Run ~/.xinitrc as a session](/index.php/Display_Manager#Run_.7E.2F.xinitrc_as_a_session "Display Manager").
 
 ### NumLock on by default
 
@@ -368,7 +368,7 @@ $ light-locker-command -l
 
 ```
 
-This requires `light-locker` to be started at the beginning of your session. Therefore the file `/etc/xdg/autostart/light-locker.desktop` is created during the installation. This file is loaded automatically by any XDG-compliant desktop environment (see [Desktop_entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries")). However, if you are just using a window manager which does not load it automatically, add `light-locker` to the [xprofile](/index.php/Xprofile "Xprofile") file.
+This requires `light-locker` to be started at the beginning of your session - see [Autostarting](/index.php/Autostarting "Autostarting").
 
 ## Troubleshooting
 

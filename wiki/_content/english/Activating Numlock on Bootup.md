@@ -105,7 +105,9 @@ Go to System Settings, under the Hardware/Input Devices/Keyboard item you will f
 
 ### GDM
 
-First make sure that you have [numlockx](https://www.archlinux.org/packages/?name=numlockx) (from extra) installed then add the following code to `/etc/gdm/Init/Default`:
+**Note:** GDM does not execute scripts in `/etc/gdm/Init` anymore.
+
+Make sure that you have [numlockx](https://www.archlinux.org/packages/?name=numlockx) installed then add the following code to [~/.xprofile](/index.php/Xprofile "Xprofile"):
 
 ```
 if [ -x /usr/bin/numlockx ]; then

@@ -4,27 +4,25 @@
 *   [2 '/dev/nvidia0' input/output error](#.27.2Fdev.2Fnvidia0.27_input.2Foutput_error)
 *   [3 Crashing in general](#Crashing_in_general)
 *   [4 Bad performance after installing a new driver version](#Bad_performance_after_installing_a_new_driver_version)
-*   [5 CPU spikes with 400 series cards](#CPU_spikes_with_400_series_cards)
-*   [6 Laptops: X hangs on login/out, worked around with Ctrl+Alt+Backspace](#Laptops:_X_hangs_on_login.2Fout.2C_worked_around_with_Ctrl.2BAlt.2BBackspace)
-*   [7 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop.2FNVIDIA_Optimus)
-    *   [7.1 Possible Workaround](#Possible_Workaround)
-*   [8 Screen(s) found, but none have a usable configuration](#Screen.28s.29_found.2C_but_none_have_a_usable_configuration)
-*   [9 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_.2F_Machine_poweroff_at_X_shutdown)
-*   [10 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
-*   [11 Full system freeze using Flash](#Full_system_freeze_using_Flash)
-*   [12 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
-*   [13 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
-*   [14 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
-*   [15 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
-*   [16 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
-*   [17 Flash video players crashes](#Flash_video_players_crashes)
-*   [18 xrandr BadMatch](#xrandr_BadMatch)
-*   [19 Override EDID](#Override_EDID)
-*   [20 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
-*   [21 Avoid screen tearing](#Avoid_screen_tearing)
-    *   [21.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
-*   [22 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
-*   [23 Poor performance after resuming from suspend](#Poor_performance_after_resuming_from_suspend)
+*   [5 Avoid screen tearing](#Avoid_screen_tearing)
+    *   [5.1 Multi-monitor](#Multi-monitor)
+    *   [5.2 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+*   [6 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
+*   [7 Poor performance after resuming from suspend](#Poor_performance_after_resuming_from_suspend)
+*   [8 CPU spikes with 400 series cards](#CPU_spikes_with_400_series_cards)
+*   [9 Full system freeze or crashes when using Flash](#Full_system_freeze_or_crashes_when_using_Flash)
+*   [10 Laptops: X hangs on login/out, worked around with Ctrl+Alt+Backspace](#Laptops:_X_hangs_on_login.2Fout.2C_worked_around_with_Ctrl.2BAlt.2BBackspace)
+*   [11 Screen(s) found, but none have a usable configuration](#Screen.28s.29_found.2C_but_none_have_a_usable_configuration)
+*   [12 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_.2F_Machine_poweroff_at_X_shutdown)
+*   [13 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
+*   [14 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
+*   [15 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
+*   [16 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
+*   [17 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
+*   [18 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
+*   [19 xrandr BadMatch](#xrandr_BadMatch)
+*   [20 Override EDID](#Override_EDID)
+*   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 
 ## Corrupted screen: "Six screens" Problem
 
@@ -82,7 +80,7 @@ More information about troubleshooting the driver can be found in the [NVIDIA fo
 
 ## Bad performance after installing a new driver version
 
-If FPS have dropped in comparison with older drivers, first check if direct rendering is turned on (glxinfo is included in [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)):
+If FPS have dropped in comparison with older drivers, check if direct rendering is enabled (`glxinfo` is included in [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)):
 
 ```
 $ glxinfo | grep direct
@@ -96,9 +94,129 @@ direct rendering: No
 
 ```
 
-then that could be an indication for the sudden FPS drop.
-
 A possible solution could be to regress to the previously installed driver version and rebooting afterwards.
+
+## Avoid screen tearing
+
+**Note:** This has been reported to reduce the performance of some OpenGL applications and may produce issues in WebGL.
+
+Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, run:
+
+```
+$ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+
+```
+
+Or click on the *Advanced* button that is available on the *X Server Display Configuration* menu option. Select either *Force Composition Pipeline* or *Force Full Composition Pipeline* and click on *Apply*.
+
+In order to make the change permanent, it must be added to the `"Screen"` section of the [Xorg](/index.php/Xorg "Xorg") configuration file. When making this change, `TripleBuffering` should be enabled and `AllowIndirectGLXProtocol` should be disabled in the driver configuration as well. See example configuration below:
+
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Device"
+        Identifier "Nvidia Card"
+        Driver     "nvidia"
+        VendorName "NVIDIA Corporation"
+        BoardName  "GeForce GTX 1050 Ti"
+EndSection
+
+Section "Screen"
+    Identifier     "Screen0"
+    Device         "Device0"
+    Monitor        "Monitor0"
+    Option         "metamodes" "nvidia-auto-select +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+EndSection
+
+```
+
+If you do not have an Xorg configuration file, you can create one for your present hardware using `nvidia-xconfig` (see [NVIDIA#Automatic configuration](/index.php/NVIDIA#Automatic_configuration "NVIDIA")) and move it from `/etc/X11/xorg.conf` to the preferred location `/etc/X11/xorg.conf.d/20-nvidia.conf`.
+
+**Note:** Many of the configuration options produced in `20-nvidia.conf` by using `nvidia-xconfig` are set automatically by the driver and are not needed. To only use this file for enabling composition pipeline, only the section `"Screen"` containing lines with values for `Identifier` and `Option` are necessary. Other sections may be removed from this file.
+
+### Multi-monitor
+
+For multi-monitor setup you will need to specify `ForceCompositionPipleline=On` for each display. For example:
+
+```
+$ nvidia-settings --assign CurrentMetaMode="DP-2: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, DP-4: nvidia-auto-select +3840+0 {ForceCompositionPipeline=On}"
+
+```
+
+Without doing this, the `nvidia-settings` command will disable your secondary display.
+
+The above line is for two 3840x2160 monitors connected to DP-2 and DP-4\. You will need to read the correct `CurrentMetaMode` by exporting `xorg.conf` and append `ForceCompositionPipleline` to each of your displays. Setting `ForceCompositionPipleline` only affects the targeted display.
+
+**Tip:** Multi monitor setups using different model monitors may have slightly different refresh rates. If vsync is enabled by the driver it will sync to only one of these refresh rates which can cause the appearance of screen tearing on incorrectly synced monitors. Select to sync the display device which is the primarily used monitor as others will not sync properly. This is configurable in `~/.nvidia-settings-rc` as `0/XVideoSyncToDisplayID=` or by installing [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) and using the graphical configuration options.
+
+### Avoid screen tearing in KDE (KWin)
+
+If `ForceFullCompositionPipeline` described above does not help:
+
+ `/etc/profile.d/kwin.sh` 
+```
+export KWIN_TRIPLE_BUFFER=1
+
+```
+
+If you enable triple buffering make sure to enable `TripleBuffering` for the driver itself.
+
+ `/etc/X11/xorg.conf or /etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Device"
+    [...]
+    Option         "TripleBuffer" "on"
+    [...]
+EndSection
+
+```
+
+Also make sure to select OpenGL >= 2.0 as rendering backend under *Systemsettings*, *Display and Monitor*, *Compositor*.
+
+If the above does not help, then try this, however you could have huge performance loss in games since this option will put the GL threads to sleep:
+
+ `/etc/profile.d/kwin.sh` 
+```
+export __GL_YIELD="USLEEP"
+
+```
+
+**Warning:** Do not have both of the above enabled at the same time [[2]](https://bugs.kde.org/show_bug.cgi?id=322060).
+
+## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
+
+With linux 4.8, one can get the following errors when trying to use the discrete card:
+
+ `$ modprobe nvidia -vv` 
+```
+modprobe: INFO: custom logging function 0x409c10 registered
+modprobe: INFO: Failed to insert module '/lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz': No such device
+modprobe: ERROR: could not insert 'nvidia': No such device
+modprobe: INFO: context 0x24481e0 released
+insmod /lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz 
+
+```
+ `$ dmesg` 
+```
+...
+NVRM: The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:139b)
+NVRM: installed in this system is not supported by the 370.28
+NVRM: NVIDIA Linux driver release.  Please see 'Appendix
+NVRM: A - Supported NVIDIA GPU Products' in this release's
+NVRM: README, available on the Linux driver download page
+NVRM: at www.nvidia.com.
+...
+
+```
+
+This problem is caused by bad commits pertaining to PCIe power management in the Linux Kernel (as documented in [this NVIDIA DevTalk thread](https://devtalk.nvidia.com/default/topic/971733/-370-28-with-kernel-4-8-on-gt-2015-machines-driver-claims-card-not-supported-if-nvidia-is-not-primary-card/)).
+
+The workaround is to add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Note that this disables PCIe power management for all devices.
+
+## Poor performance after resuming from suspend
+
+If you are getting poor performance after resuming from suspend, you need to register the nvidia kernel module with the ACPI subsystem. This can be done by [loading](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `nvidia` module with the `NVreg_RegisterForACPIEvents=1 NVreg_EnableMSI=1` options.
 
 ## CPU spikes with 400 series cards
 
@@ -106,6 +224,19 @@ If you are experiencing intermittent CPU spikes with a 400 series card, it may b
 
 ```
  Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x3322; PowerMizerDefaultAC=0x1"
+
+```
+
+## Full system freeze or crashes when using Flash
+
+If you experience occasional full system freezes using [[[Flash]], a possible workaround is to disable Hardware Acceleration:
+
+ `/etc/adobe/mms.cfg`  `EnableLinuxHWVideoDecode=0` 
+
+Or, if you want to keep Hardware acceleration enabled but allowing a higher chance of screen tearing, you may try to before starting a browser:
+
+```
+export VDPAU_NVIDIA_NO_OVERLAY=1
 
 ```
 
@@ -135,39 +266,9 @@ Note that `NVreg_Mobile` needs to be changed according to the laptop:
 
 See [NVIDIA Driver's README: Appendix K](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt) for more information.
 
-## No screens found on a laptop/NVIDIA Optimus
-
-On a laptop, if the NVIDIA driver cannot find any screens, you may have an NVIDIA Optimus setup : an Intel chipset connected to the screen and the video outputs, and a NVIDIA card that does all the hard work and writes to the chipset's video memory.
-
-Check if `$ lspci | grep VGA` outputs something similar to:
-
-```
-00:02.0 VGA compatible controller: Intel Corporation Core Processor Integrated Graphics Controller (rev 02)
-01:00.0 VGA compatible controller: nVidia Corporation Device 0df4 (rev a1)
-
-```
-
-NVIDIA drivers now offer Optimus support since 319.12 Beta [[2]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
-
-Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
-
-### Possible Workaround
-
-Enter the BIOS and changed the default graphics setting from 'Optimus' to 'Discrete' and the install NVIDIA drivers (295.20-1 at time of writing) recognized the screens.
-
-Steps:
-
-1.  Enter BIOS.
-2.  Find Graphics Settings (should be in tab *Config > Display*).
-3.  Change 'Graphics Device' to 'Discrete Graphics' (Disables Intel integrated graphics).
-4.  Change OS Detection for Nvidia Optimus to "Disabled".
-5.  Save and exit.
-
-Tested on a Lenovo W520 with a Quadro 1000M and Nvidia Optimus
-
 ## Screen(s) found, but none have a usable configuration
 
-Sometimes NVIDIA and X have trouble finding the active screen. If your graphics card has multiple outputs try plugging your monitor into the other ones. On a laptop it may be because your graphics card has vga/tv outs. Xorg.0.log will provide more info.
+Sometimes NVIDIA and X have trouble finding the active screen. If your graphics card has multiple outputs try plugging your monitor into the other ones. On a laptop it may be because your graphics card has VGA/TV out. Xorg.0.log will provide more info.
 
 Another thing to try is adding invalid `"ConnectedMonitor" Option` to `Section "Device"` to force Xorg throws error and shows you how correct it. [Here](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html) more about ConnectedMonitor setting.
 
@@ -177,7 +278,7 @@ After re-run X see Xorg.0.log to get valid CRT-x,DFP-x,TV-x values.
 
 ## Blackscreen at X startup / Machine poweroff at X shutdown
 
-If you have installed an update of Nvidia and your screen stays black after launching Xorg, or if shutting down Xorg causes a machine poweroff, try the below workarounds. Alternatively, use the [Nouveau](/index.php/Nouveau "Nouveau") driver.
+If you have installed an update of Nvidia and your screen stays black after launching Xorg, or if shutting down Xorg causes a machine poweroff, try the below workarounds:
 
 *   Use the `rcutree.rcu_idle_gp_delay=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
@@ -209,29 +310,6 @@ Alternatively, xrandr is able to disable and re-enable monitor outputs without r
 xrandr --output DP-1 --off; read -n1; xrandr --output DP-1 --auto
 
 ```
-
-## Full system freeze using Flash
-
-If you experience occasional full system freezes (only the mouse is moving) using flashplugin and get:
-
- `/var/log/errors.log` 
-```
-NVRM: Xid (0000:01:00): 31, Ch 00000007, engmask 00000120, intr 10000000
-
-```
-
-A possible workaround is to switch off Hardware Acceleration in Flash, setting
-
- `/etc/adobe/mms.cfg`  `EnableLinuxHWVideoDecode=0` 
-
-Or, if you want to keep Hardware acceleration enabled, you may try to::
-
-```
-export VDPAU_NVIDIA_NO_OVERLAY=1
-
-```
-
-...before starting the browser. Note that this may introduce tearing.
 
 ## Xorg fails to load or Red Screen of Death
 
@@ -320,14 +398,6 @@ After=dev-dri-card0.device
 
 If you have additional cards needed for the desktop then list them in Wants and After seperated by spaces.
 
-## Flash video players crashes
-
-If you are getting frequent crashes of Flash video players, try to switch off Hardware Acceleration:
-
- `/etc/adobe/mms.cfg`  `EnableLinuxHWVideoDecode=0` 
-
-(This problem appeared after installing the proprietary nvidia driver, and was fixed by changing this setting.)
-
 ## xrandr BadMatch
 
 If you are trying to configure a WQHD monitor such as DELL U2515H using [xrandr](/index.php/Xrandr "Xrandr") and `xrandr --addmode` gives you the error `X Error of failed request: BadMatch`, it might be because the proprietary NVIDIA driver clips the pixel clock maximum frequency of HDMI output to 225 MHz or lower. To set the monitor to maximum resolution you have to install [nouveau](/index.php/Nouveau "Nouveau") drivers. You can force nouveau to use a specific pixel clock frequency by setting `nouveau.hdmimhz=297` (or `330`) in your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
@@ -335,6 +405,8 @@ If you are trying to configure a WQHD monitor such as DELL U2515H using [xrandr]
 Alternatively, it may be that your monitor's EDID is incorrect. See [#Override EDID](#Override_EDID).
 
 ## Override EDID
+
+**Note:** See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for more information.
 
 If your monitor is providing wrong EDID information, the nvidia-driver will pick a very small solution. Nvidia's driver options change, this guide refers to nvidia 346.47-11.
 
@@ -413,114 +485,3 @@ Example to set multiple variables at once(Overclock on performance level [3] by 
  nvidia-setting -a GPUGraphicsClockOffset[3]=50 -a GPUMemoryTransferRateOffset[3]=50 -a GPUOverVoltageOffset=100
 
 ```
-
-## Avoid screen tearing
-
-Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, run:
-
-```
-$ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-
-```
-
-This however has been reported to reduce the performance of some OpenGL applications and may produce issues in WebGL.
-
-In order to make the change permanent, it must be added to the `"Screen"` section of your Xorg configuration file. When making this change, `TripleBuffering` should be enabled and `AllowIndirectGLXProtocol` should be disabled in the driver configuration as well. See example configuration below:
-
- `/etc/X11/xorg.conf.d/20-nvidia.conf` 
-```
-Section "Screen"
-    Identifier     "Screen0"
-    Option         "metamodes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-    Option         "AllowIndirectGLXProtocol" "off"
-    Option         "TripleBuffer" "on"
-EndSection
-
-```
-
-If you do not have an Xorg configuration file, you can create one for your present hardware using `nvidia-xconfig` (see [NVIDIA#Automatic configuration](/index.php/NVIDIA#Automatic_configuration "NVIDIA")) and move it from `/etc/X11/xorg.conf` to the preferred location `/etc/X11/xorg.conf.d/20-nvidia.conf`.
-
-For multi-monitor setups you will need to specify ForceCompositionPipleline=On for each display. For example:
-
-```
-$ nvidia-settings --assign CurrentMetaMode="DP-2: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, DP-4: nvidia-auto-select +3840+0 {ForceCompositionPipeline=On}"
-
-```
-
-Without doing this, the nvidia-settings command will disable your secondary display.
-
-The above line is for two 3840x2160 monitors connected to DP-2 and DP-4\. You will need to read the correct `CurrentMetaMode` by exporting `xorg.conf` and append `ForceCompositionPipleline` to each of your displays. Setting `ForceCompositionPipleline` only affects the targeted display.
-
-**Note:** Many of the configuration options produced in `20-nvidia.conf` by using `nvidia-xconfig` are set automatically by the driver and are not needed. To only use this file for enabling composition pipeline, only the section `"Screen"` containing lines with values for `Identifier` and `Option` are necessary. Other sections may be removed from this file.
-
-**Tip:** Multi monitor setups using different model monitors may have slightly different refresh rates. If vsync is enabled by the driver it will sync to only one of these refresh rates which can cause the appearance of screen tearing on incorrectly synced monitors. Select to sync the display device which is the primarily used monitor as others will not sync properly. This is configurable in `~/.nvidia-settings-rc` as `0/XVideoSyncToDisplayID=` or by installing [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) and using the graphical configuration options.
-
-### Avoid screen tearing in KDE (KWin)
-
-If `ForceFullCompositionPipeline` described above does not help:
-
- `/etc/profile.d/kwin.sh` 
-```
-export KWIN_TRIPLE_BUFFER=1
-
-```
-
-If you enable triple buffering make sure to enable `TripleBuffering` for the driver itself.
-
- `/etc/X11/xorg.conf or /etc/X11/xorg.conf.d/20-nvidia.conf` 
-```
-Section "Device"
-    [...]
-    Option         "TripleBuffer" "True"
-    [...]
-EndSection
-
-```
-
-Also make sure to select OpenGL >= 2.0 as rendering backend under Systemsettings > Display and Monitor > Compositor.
-
-If the above does not help, then try this, however you could have huge performance loss in games since this option will put the GL threads to sleep:
-
- `/etc/profile.d/kwin.sh` 
-```
-export __GL_YIELD="USLEEP"
-
-```
-
-**Warning:** Do not have both of the above enabled at the same time.
-
-Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)
-
-## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
-
-With linux 4.8, one can get the following errors when trying to use the discrete card:
-
- `$ modprobe nvidia -vv` 
-```
-modprobe: INFO: custom logging function 0x409c10 registered
-modprobe: INFO: Failed to insert module '/lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz': No such device
-modprobe: ERROR: could not insert 'nvidia': No such device
-modprobe: INFO: context 0x24481e0 released
-insmod /lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz 
-
-```
- `$ dmesg` 
-```
-...
-NVRM: The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:139b)
-NVRM: installed in this system is not supported by the 370.28
-NVRM: NVIDIA Linux driver release.  Please see 'Appendix
-NVRM: A - Supported NVIDIA GPU Products' in this release's
-NVRM: README, available on the Linux driver download page
-NVRM: at www.nvidia.com.
-...
-
-```
-
-This problem is caused by bad commits pertaining to PCIe power management in the Linux Kernel (as documented in [this NVIDIA DevTalk thread](https://devtalk.nvidia.com/default/topic/971733/-370-28-with-kernel-4-8-on-gt-2015-machines-driver-claims-card-not-supported-if-nvidia-is-not-primary-card/)).
-
-The workaround is to add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Note that this disables PCIe power management for all devices.
-
-## Poor performance after resuming from suspend
-
-If you are getting poor performance after resuming from suspend, you need to register the nvidia kernel module with the ACPI subsystem. This can be done by [loading](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `nvidia` module with the `NVreg_RegisterForACPIEvents=1 NVreg_EnableMSI=1` options.

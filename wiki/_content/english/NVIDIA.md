@@ -7,8 +7,8 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
     *   [1.2 Custom kernel](#Custom_kernel)
     *   [1.3 Pure Video HD](#Pure_Video_HD)
     *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
-        *   [1.4.1 Pacman hook](#Pacman_hook)
     *   [1.5 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
+        *   [1.5.1 Pacman hook](#Pacman_hook)
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
@@ -45,7 +45,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package (both based on Nvidia's short lived branch). If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support. There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
+*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia), [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (for [DKMS](/index.php/DKMS "DKMS") support) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package (both based on Nvidia's short lived branch). If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support. There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 *   For GeForce 8000/9000, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package.
 *   For GeForce 6000/7000 series cards [NV4x and NV6x] from around 2004-2006, [install](/index.php/Install "Install") the [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) package.
 
@@ -61,7 +61,7 @@ Once the driver has been installed, continue to [#Configuration](#Configuration)
 
 If you have a GeForce 5 FX series card or older, Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [Nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
 
-However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade Xorg:
+However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade [Xorg](/index.php/Xorg "Xorg"):
 
 *   For GeForce 5 FX series cards [NV30-NV36], install the [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/) package. Last supported Xorg version is 1.15.
 *   For GeForce 2/3/4 MX/Ti series cards [NV11, NV17-NV28], install the [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/) package. Last supported Xorg version is 1.12.
@@ -80,17 +80,21 @@ At least a video card with second generation [PureVideo HD](https://en.wikipedia
 
 ### DRM kernel mode setting
 
-**Warning:** Enabling KMS causes [GDM](/index.php/GDM "GDM") and [GNOME](/index.php/GNOME "GNOME") to default to Wayland, which currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284).
+**Warning:** Enabling KMS causes [GDM](/index.php/GDM "GDM") and [GNOME](/index.php/GNOME "GNOME") to default to [Wayland](/index.php/Wayland "Wayland"), which currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284). A workaround is to use the *GNOME on Xorg* session instead.
 
 **Note:** The NVIDIA driver does **not** provide an `fbdev` driver for the high-resolution console for the kernel compiled-in `vesafb` module. However, the kernel compiled-in `efifb` module supports high-resolution nvidia console on EFI systems.[[1]](http://forums.fedoraforum.org/showthread.php?t=306271) Another option to get high-resolution consoles is to use GRUB, see [NVIDIA/Tips and tricks#Fixing terminal resolution](/index.php/NVIDIA/Tips_and_tricks#Fixing_terminal_resolution "NVIDIA/Tips and tricks") and [[2]](https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/).
 
 [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 adds support for DRM [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). To enable this feature, add the `nvidia-drm.modeset=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), and add `nvidia`, `nvidia_modeset`, `nvidia_uvm` and `nvidia_drm` to your [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs").
 
-**Warning:** Do not forget to run mkinitcpio every time you update driver. See [#Pacman hook](#Pacman_hook) for how to automate this.
+**Warning:** Do not forget to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") every time there is a [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver update. See [#Pacman hook](#Pacman_hook) to automate these steps.
+
+### Hardware accelerated video decoding with XvMC
+
+Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for details.
 
 #### Pacman hook
 
-To avoid the possibility of forgetting to update your initramfs after an nvidia upgrade, you can use a [pacman hook](/index.php/Pacman#Hooks "Pacman"), like so:
+To avoid the possibility of forgetting to update [initramfs](/index.php/Initramfs "Initramfs") after an NVIDIA driver upgrade, you may want to use a [pacman hook](/index.php/Pacman#Hooks "Pacman"):
 
  `/etc/pacman.d/hooks/nvidia.hook` 
 ```
@@ -107,17 +111,13 @@ When=PostTransaction
 Exec=/usr/bin/mkinitcpio -P
 ```
 
-Make sure the `Target` package set in this hook is the one you've installed in steps above (eg. `nvidia`, `nvidia-lts` or `nvidia-ck-something`).
-
-### Hardware accelerated video decoding with XvMC
-
-Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for details.
+Make sure the `Target` package set in this hook is the one you've installed in steps above (e.g. `nvidia`, `nvidia-dkms`, `nvidia-lts` or `nvidia-ck-something`).
 
 ## Configuration
 
 It is possible that after installing the driver it may not be needed to create an Xorg server configuration file. You can run [a test](/index.php/Xorg#Running "Xorg") to see if the Xorg server will function correctly without a configuration file. However, it may be required to create a configuration file (prefer `/etc/X11/xorg.conf.d/20-nvidia.conf` over `/etc/X11/xorg.conf`) in order to adjust various settings. This configuration can be generated by the NVIDIA Xorg configuration tool, or it can be created manually. If created manually, it can be a minimal configuration (in the sense that it will only pass the basic options to the [Xorg](/index.php/Xorg "Xorg") server), or it can include a number of settings that can bypass Xorg's auto-discovered or pre-configured options.
 
-**Note:** For manual configuration see [NVIDIA/Tips and tricks#Manual configuration](/index.php/NVIDIA/Tips_and_tricks#Manual_configuration "NVIDIA/Tips and tricks").
+**Tip:** For more configuration options see [NVIDIA/Tips and tricks#Manual configuration](/index.php/NVIDIA/Tips_and_tricks#Manual_configuration "NVIDIA/Tips and tricks") and [NVIDIA/Troubleshooting](/index.php/NVIDIA/Troubleshooting "NVIDIA/Troubleshooting") section.
 
 ### Minimal configuration
 
@@ -129,10 +129,7 @@ Section "Device"
         Identifier "Nvidia Card"
         Driver "nvidia"
         VendorName "NVIDIA Corporation"
-        Option "NoLogo" "true"
-        #Option "UseEDID" "false"
-        #Option "ConnectedMonitor" "DFP"
-        # ...
+        BoardName "GeForce GTX 1050 Ti"
 EndSection
 
 ```
@@ -156,8 +153,6 @@ If there are instances of DRI, ensure they are commented out:
 ```
 
 Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizontal sync, vertical refresh, and resolutions are acceptable.
-
-**Warning:** That may still not work properly with Xorg-server 1.8
 
 ### NVIDIA Settings
 

@@ -47,11 +47,11 @@ Choose which client you would prefer. The Linux client is receiving good reviews
 
 ### Third-party clients
 
-*   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Able of streaming from Spotify with a premium account after activating (downloading) a plugin in the settings.
+*   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Able to stream from Spotify with a premium account after activating (downloading) a plugin in the settings.
 
 	[http://www.clementine-player.org/](http://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
-*   **Mopidy** — An alternative plug-in based implementation of [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") is able of streaming from Spotify with an extension.
+*   **Mopidy** — An alternative plug-in based implementation of [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") is able to stream from Spotify with an extension.
 
 	[https://www.mopidy.com/](https://www.mopidy.com/) || [mopidy](https://www.archlinux.org/packages/?name=mopidy)+ [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)
 

@@ -202,7 +202,7 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 #### RC6
 
-`i915.enable_rc6=1` seems to be stable, setting the value to a higher number will be ignored is therefore confusing, the deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[1]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[2]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html).
+`i915.enable_rc6=1` seems to be stable, setting the value to a number higher than 1, will be ignored. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[1]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[2]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html).
 
 #### Panel Self Refresh
 

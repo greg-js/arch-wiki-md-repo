@@ -9,7 +9,7 @@ xprofile 文件在语法和概念上类似 [xinitrc (简体中文)](/index.php/X
 xprofile 和 [xinitrc](/index.php/Xinitrc "Xinitrc") 文件在原生情况下会被以下显示管理器引用:
 
 *   [GDM](/index.php/GDM "GDM") - `/etc/gdm/Xsession`
-*   [KDM](/index.php/KDM "KDM") - `/usr/share/config/kdm/Xsession`
+*   KDM - `/usr/share/config/kdm/Xsession`
 *   [LightDM](/index.php/LightDM "LightDM") - `/etc/lightdm/Xsession`
 *   [LXDM](/index.php/LXDM "LXDM") - `/etc/lxdm/Xsession`
 

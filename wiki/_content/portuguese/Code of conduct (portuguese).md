@@ -257,7 +257,7 @@ Diretrizes para o [wiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:Ab
 
 *   [ArchWiki:Contributing (Português)#As 3 regras fundamentais](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs)#As_3_regras_fundamentais "ArchWiki:Contributing (Português)")
 *   [Help:Style (Português)](/index.php/Help:Style_(Portugu%C3%AAs) "Help:Style (Português)")
-*   [Help:Discussion](/index.php/Help:Discussion "Help:Discussion")
+*   [Help:Discussion (Português)](/index.php/Help:Discussion_(Portugu%C3%AAs) "Help:Discussion (Português)")
 
 ### [Rastreador de erros](https://bugs.archlinux.org/)
 

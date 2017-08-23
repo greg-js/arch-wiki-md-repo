@@ -47,7 +47,7 @@ Bootchart-render 如果无法生成 'bootchart.png' 图片并显示如下错误�
 
 ```
 
-主要原因是 bootchartd 无法检测到启动过程何时停止。例如使用非 [KDM](/index.php/KDM "KDM") 或 GDM 的启动管理器如 [SLIM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)") 或 entrance 时会发生这个问题。可以打开 `/sbin/bootchartd` 脚本并将这些程序加到 `exit_proc` 变量中：
+主要原因是 bootchartd 无法检测到启动过程何时停止。如该使用非 KDM 或 GDM 的启动管理器如 [SLIM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)") 或 entrance 时会发生这个问题。可以打开 `/sbin/bootchartd` 脚本并将这些程序加到 `exit_proc` 变量中：
 
 ```
 # The processes we have to wait for

@@ -15,18 +15,17 @@ Tento článek vás naučí, jak nainstalovat a nastavit různé součásti desk
     *   [5.6 Automatické připojování záznamových jednotek](#Automatick.C3.A9_p.C5.99ipojov.C3.A1n.C3.AD_z.C3.A1znamov.C3.BDch_jednotek)
         *   [5.6.1 NTFS s čínskými znaky](#NTFS_s_.C4.8D.C3.ADnsk.C3.BDmi_znaky)
     *   [5.7 LXNM](#LXNM)
-    *   [5.8 Sezení LXDE v KDM](#Sezen.C3.AD_LXDE_v_KDM)
-    *   [5.9 lxpanel - přidání programu do launch baru](#lxpanel_-_p.C5.99id.C3.A1n.C3.AD_programu_do_launch_baru)
-    *   [5.10 lxpanel - přidáni lokace do launch baru](#lxpanel_-_p.C5.99id.C3.A1ni_lokace_do_launch_baru)
-    *   [5.11 Ikony/Kurzory](#Ikony.2FKurzory)
-        *   [5.11.1 Kurzory](#Kurzory)
-        *   [5.11.2 Ikony pro lxpanel](#Ikony_pro_lxpanel)
-        *   [5.11.3 Ikona My Documents](#Ikona_My_Documents)
-    *   [5.12 Náhrada správce oken](#N.C3.A1hrada_spr.C3.A1vce_oken)
-    *   [5.13 Vypnutí a restart z LXDE](#Vypnut.C3.AD_a_restart_z_LXDE)
-    *   [5.14 Problémy po upgradu lxsession na verzi 0.4.1](#Probl.C3.A9my_po_upgradu_lxsession_na_verzi_0.4.1)
-    *   [5.15 LXsession - plná verze](#LXsession_-_pln.C3.A1_verze)
-    *   [5.16 Použití aplikací KDEmod3 v LXDE](#Pou.C5.BEit.C3.AD_aplikac.C3.AD_KDEmod3_v_LXDE)
+    *   [5.8 lxpanel - přidání programu do launch baru](#lxpanel_-_p.C5.99id.C3.A1n.C3.AD_programu_do_launch_baru)
+    *   [5.9 lxpanel - přidáni lokace do launch baru](#lxpanel_-_p.C5.99id.C3.A1ni_lokace_do_launch_baru)
+    *   [5.10 Ikony/Kurzory](#Ikony.2FKurzory)
+        *   [5.10.1 Kurzory](#Kurzory)
+        *   [5.10.2 Ikony pro lxpanel](#Ikony_pro_lxpanel)
+        *   [5.10.3 Ikona My Documents](#Ikona_My_Documents)
+    *   [5.11 Náhrada správce oken](#N.C3.A1hrada_spr.C3.A1vce_oken)
+    *   [5.12 Vypnutí a restart z LXDE](#Vypnut.C3.AD_a_restart_z_LXDE)
+    *   [5.13 Problémy po upgradu lxsession na verzi 0.4.1](#Probl.C3.A9my_po_upgradu_lxsession_na_verzi_0.4.1)
+    *   [5.14 LXsession - plná verze](#LXsession_-_pln.C3.A1_verze)
+    *   [5.15 Použití aplikací KDEmod3 v LXDE](#Pou.C5.BEit.C3.AD_aplikac.C3.AD_KDEmod3_v_LXDE)
 *   [6 Zdroje](#Zdroje)
 
 ## Vlastnosti
@@ -102,7 +101,7 @@ Další programy jsou uvedeny v článku [Lightweight Applications](/index.php/L
 
 ## Spuštění desktopu
 
-LXDE lze spustit několika odlišnými způsoby. Pokud používáte přihlašovací manažer - např. [SLiM](/index.php/SLiM "SLiM"), [GDM](/index.php/GDM "GDM") nebo [KDM](/index.php/KDM "KDM"), zvolte si v nich LXDE v možnostech sezení. Pro spuštění z konzole existují další možnosti.
+LXDE lze spustit několika odlišnými způsoby. Pokud používáte přihlašovací manažer - např. [SLiM](/index.php/SLiM "SLiM") nebo [GDM](/index.php/GDM "GDM"), zvolte si v nich LXDE v možnostech sezení. Pro spuštění z konzole existují další možnosti.
 
 Pro spuštění příkazem **startx** je nutné nadefinovat LXDE v souboru [`~/.xinitrc`](/index.php/Xinit "Xinit"):
 
@@ -269,15 +268,6 @@ yaourt -S lxnm
 ```
 
 Hlavní skript je nutné spustit jako root. Pokud jej budete chtít používat trvale, vložte jej do souboru `/etc/rc.conf`. LXNM funguje s appletem Network Status Monitor v Lxpanelu, takže si jej na panel přidejte. LXNM většinu času funguje korektně, občas mu může chvilku trvat, než se připojí.
-
-### Sezení LXDE v KDM
-
-Od verze KDE 4.3.3 KDM nerozpozná sezení desktopu LXDE. Změnit to lze příkazem:
-
-```
-# cp /usr/share/xsessions/LXDE.desktop /usr/share/apps/kdm/sessions/
-
-```
 
 ### lxpanel - přidání programu do launch baru
 

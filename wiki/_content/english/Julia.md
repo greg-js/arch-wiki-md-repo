@@ -1,3 +1,5 @@
+**Note:** [https://julialang.org/](https://julialang.org/) has beautiful and open-source documentation, non-Arch-specific information should be contributed there.
+
 [Julia](https://julialang.org/) is a high-level, high-performance dynamic programming language for numerical computing. It provides a sophisticated compiler, distributed parallel execution, numerical accuracy, and an extensive mathematical function library.
 
 ## Contents

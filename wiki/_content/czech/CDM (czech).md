@@ -1,11 +1,10 @@
-**[CDM](http://cdm.ghost1227.com)** je minimalistická, přesto plně vybavená náhrada přihlašovacích manažerů, jako je [SLiM](/index.php/SLiM "SLiM"), [KDM](/index.php/KDM "KDM"), [GDM](/index.php/Automatic_login_manager_startup#Installation "Automatic login manager startup") a [Qingy](/index.php/Qingy "Qingy"), která poskytuje rychlý, na dialozích založený přihlašovací systém bez nutnosti použít X Window System nebo nestabilní Qingy. CDM je napsáno je v čistém bash, nemá žádné závislosti, podporuje víceuživatelská sezení a umožňuje spouštět prakticky každé DE/WM.
+**[CDM](http://cdm.ghost1227.com)** je minimalistická, přesto plně vybavená náhrada přihlašovacích manažerů, jako je [SLiM](/index.php/SLiM "SLiM"),[GDM](/index.php/GDM "GDM") a [Qingy](/index.php/Qingy "Qingy"), která poskytuje rychlý, na dialozích založený přihlašovací systém bez nutnosti použít X Window System nebo nestabilní Qingy. CDM je napsáno je v čistém bash, nemá žádné závislosti, podporuje víceuživatelská sezení a umožňuje spouštět prakticky každé DE/WM.
 
 Balíček je dostupný v repozitáři [AUR](https://aur.archlinux.org/packages.php?K=cdm).
 
 ## Contents
 
 *   [1 Konfigurace](#Konfigurace)
-    *   [1.1 /etc/inittab or /etc/rc.conf](#.2Fetc.2Finittab_or_.2Fetc.2Frc.conf)
 *   [2 Spouštění X](#Spou.C5.A1t.C4.9Bn.C3.AD_X)
 *   [3 Vlastní příkazy](#Vlastn.C3.AD_p.C5.99.C3.ADkazy)
 *   [4 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
@@ -24,31 +23,6 @@ wmdisplist=(Awesome Openbox **KDE Xfce Gnome**)
 ```
 
 A jakékoliv další DE/WM, které používáte.
-
-### /etc/inittab or /etc/rc.conf
-
-Po instalaci a konfiguraci CDM si v souborech `/etc/inittab` nebo `/etc/rc.conf` ověřte, zda se nespouští další display managery.
-
-*   `/etc/inittab`
-
-```
-#x:5:respawn:/usr/bin/xdm -nodaemon
-#x:5:respawn:/usr/sbin/gdm -nodaemon
-#x:5:respawn:/usr/bin/kdm -nodaemon
-#x:5:respawn:/usr/bin/slim >& /dev/null
-
-```
-
-Vše by mělo být zakomentováno.
-
-*   `/etc/rc.conf`
-
-```
-DAEMONS=(... !gdm)
-
-```
-
-gdm (nebo kdm, nebo xdm, ...) by měly být zakomentovány nebo odstraněny z řetězce DAEMONS.
 
 ## Spouštění X
 

@@ -139,11 +139,10 @@ The Laptop comes with an nVidia and an Intel chip. The Nouveau [xf86-video-nouve
 Since this device comes with a Retina (HiDPI) display, things may be really small with native resolution for some desktop environments. There are different ways to work around this "issue":
 
 1.  Increase the DPI value to get larger fonts (other things like icons may not look great that way)
-2.  Some desktop managers like [KDM](/index.php/KDM "KDM") offer fine grained control over the size of icons, fonts, window controls, panels, etc...
     *   KDM is a great choice because the stock UI elements are vectors (not rasters which look terrible on Retina and do not scale infinitely). In addition the [KWin compositor](/index.php/Wayland "Wayland") does a remarkable job on the Retina display.
-3.  Lower the screen resolution to 1680x1050 (works fine at least with nouveau drivers), but things look a little bit blurry, of course
-4.  Use xrandr scale option with nvidia driver to scale the resolution down to what you want. Take a look at: [http://linuxmacbookproretina.blogspot.no/](http://linuxmacbookproretina.blogspot.no/)
-5.  See [HiDPI](/index.php/HiDPI "HiDPI") for more tweaks.
+2.  Lower the screen resolution to 1680x1050 (works fine at least with nouveau drivers), but things look a little bit blurry, of course
+3.  Use xrandr scale option with nvidia driver to scale the resolution down to what you want. Take a look at: [http://linuxmacbookproretina.blogspot.no/](http://linuxmacbookproretina.blogspot.no/)
+4.  See [HiDPI](/index.php/HiDPI "HiDPI") for more tweaks.
 
 #### Nouveau backlight
 

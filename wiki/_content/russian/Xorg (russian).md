@@ -52,15 +52,14 @@
         *   [8.7.1 AltGR (Compose клавиша) не работает правильно](#AltGR_.28Compose_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0.29_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE)
         *   [8.7.2 Невозможно установить раскладку командой setxkbmap](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D1.83_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BE.D0.B9_setxkbmap)
         *   [8.7.3 Настройка франко-канадской раскладки (бывшая ca_enhanced)](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.84.D1.80.D0.B0.D0.BD.D0.BA.D0.BE-.D0.BA.D0.B0.D0.BD.D0.B0.D0.B4.D1.81.D0.BA.D0.BE.D0.B9_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.28.D0.B1.D1.8B.D0.B2.D1.88.D0.B0.D1.8F_ca_enhanced.29)
-    *   [8.8 KDM/GDM не работают](#KDM.2FGDM_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
-    *   [8.9 Отсутствующие библиотеки](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
-    *   [8.10 Некоторые пакеты не собираются, жалуясь на отсутствующие X11 includes](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D1.8E.D1.82.D1.81.D1.8F.2C_.D0.B6.D0.B0.D0.BB.D1.83.D1.8F.D1.81.D1.8C_.D0.BD.D0.B0_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_X11_includes)
-    *   [8.11 Невозможно загрузить шрифт '(null)'](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27)
-    *   [8.12 Иконки KDE в панели задач и на Десктопе не работают](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_KDE_.D0.B2_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87_.D0.B8_.D0.BD.D0.B0_.D0.94.D0.B5.D1.81.D0.BA.D1.82.D0.BE.D0.BF.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
-    *   [8.13 Обновление с testing до current (отсутствующие файлы)](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_testing_.D0.B4.D0.BE_current_.28.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B.29)
-    *   [8.14 Проблемы с MIME типами в различных DE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_MIME_.D1.82.D0.B8.D0.BF.D0.B0.D0.BC.D0.B8_.D0.B2_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_DE)
-    *   [8.15 DRI перестало работать с картами Matrox](#DRI_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox)
-    *   [8.16 Не выставляется нужное разрешение экрана](#.D0.9D.D0.B5_.D0.B2.D1.8B.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
+    *   [8.8 Отсутствующие библиотеки](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
+    *   [8.9 Некоторые пакеты не собираются, жалуясь на отсутствующие X11 includes](#.D0.9D.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D1.8E.D1.82.D1.81.D1.8F.2C_.D0.B6.D0.B0.D0.BB.D1.83.D1.8F.D1.81.D1.8C_.D0.BD.D0.B0_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_X11_includes)
+    *   [8.10 Невозможно загрузить шрифт '(null)'](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27)
+    *   [8.11 Иконки KDE в панели задач и на Десктопе не работают](#.D0.98.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_KDE_.D0.B2_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87_.D0.B8_.D0.BD.D0.B0_.D0.94.D0.B5.D1.81.D0.BA.D1.82.D0.BE.D0.BF.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
+    *   [8.12 Обновление с testing до current (отсутствующие файлы)](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_testing_.D0.B4.D0.BE_current_.28.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B.29)
+    *   [8.13 Проблемы с MIME типами в различных DE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_MIME_.D1.82.D0.B8.D0.BF.D0.B0.D0.BC.D0.B8_.D0.B2_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_DE)
+    *   [8.14 DRI перестало работать с картами Matrox](#DRI_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox)
+    *   [8.15 Не выставляется нужное разрешение экрана](#.D0.9D.D0.B5_.D0.B2.D1.8B.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
 *   [9 Полезные ссылки](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
 
 ## Установка
@@ -112,7 +111,7 @@ $ pacman -Ss xf86-video
 
 *См. также: [Запуск X при загрузке](/index.php/Start_X_at_Boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Start X at Boot (Русский)")*
 
-**Совет:** Самый простой способ запустить X — воспользоваться [экранным менеджером](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), например [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") или [SLiM](/index.php/SLiM "SLiM").
+**Совет:** Самый простой способ запустить X — воспользоваться [экранным менеджером](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), например [GDM](/index.php/GDM "GDM") или [SLiM](/index.php/SLiM "SLiM").
 
 Если вы хотите запустить X без менеджера дисплея, установите пакет [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Можно установить [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) и [xterm](https://www.archlinux.org/packages/?name=xterm), чтобы запустилась среда, установленная по умолчанию.
 
@@ -589,8 +588,6 @@ man Xserver
 
 ```
 
-Если вы запускаете X с помощью kdm, то скрипт startx не выполняется. Эти опции могут быть добавлены к переменной "ServerCmd" в файле /opt/kde/share/config/kdm/kdmrc.
-
 ## Изменения в модульном Xorg
 
 ### Самые распространённые пакеты
@@ -835,47 +832,6 @@ setxkbmap sk qwerty
 
 То же самое, видимо, и с другими подобными раскладками. Вы можете обратиться к Gentoo HowTo по этому вопросу: [http://www.gentoo.org/proj/en/desktop/x/x11/modular-x-howto.xml](http://www.gentoo.org/proj/en/desktop/x/x11/modular-x-howto.xml)
 
-### KDM/GDM не работают
-
-KDM/GDM не может запуститься, так как ищет X в неверном месте.
-
-*   **Исправления в конфигурационных файлах:** отредактируйте соответствующие конфигурационные файлы для KDM/GDM (наверное, лучшее решение).
-
-Для GDM измените файл gdm.conf, заменив все встречающиеся упоминания /usr/X11R6/bin/X на /usr/bin/X
-
-```
-vim /opt/gnome/etc/gdm/gdm.conf
-
-```
-
-Команда замены для vi
-
-```
-:%s/\/usr\/X11R6\/bin\/X/\/usr\/bin\/X/g
-
-```
-
-Для KDM надо изменить файл /opt/kde/share/kdm/kdmrc.
-
-*   **Метод символических ссылок:** вам надо запустить следующие команды для исправления ситуации:
-
-```
-mkdir -p /usr/X11R6/bin/
-ln -s /usr/bin/X /usr/X11R6/bin/X
-
-```
-
-попробуйте снова, должно заработать.
-
-Если вышеуказанная команда не сработала, попробуйте так:
-
-```
- ln -s /usr/bin/ /usr/X11R6/bin
-
-```
-
-Возможно, потребуется перезагрузка.
-
 ### Отсутствующие библиотеки
 
 *   **Помогите! Постоянно вываливается окно с сообщением об ошибке запуска моей любимой программы: "libXчто-то" не существует!**
@@ -962,7 +918,7 @@ Option "OldDmaInit" "On"
 
 ## Полезные ссылки
 
-*   [Добавление экранного менеджера входа в систему (KDM, GDM или XDM) в автозагрузку](/index.php/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0_%D0%B2%D1%85%D0%BE%D0%B4%D0%B0_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83_(KDM,_GDM_%D0%B8%D0%BB%D0%B8_XDM)_%D0%B2_%D0%B0%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83 "Добавление экранного менеджера входа в систему (KDM, GDM или XDM) в автозагрузку")
+*   [Добавление экранного менеджера входа в систему (GDM или XDM) в автозагрузку](/index.php?title=%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0_%D0%B2%D1%85%D0%BE%D0%B4%D0%B0_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83_(GDM_%D0%B8%D0%BB%D0%B8_XDM)_%D0%B2_%D0%B0%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D1%83&action=edit&redlink=1 "Добавление экранного менеджера входа в систему (GDM или XDM) в автозагрузку (page does not exist)")
 *   [Запуск X при загрузке](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B5 "Запуск X при загрузке")
 *   [Xorg Font Configuration (Русский)](/index.php/Xorg_Font_Configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg Font Configuration (Русский)")
 *   Проприетарные видеодрайверы

@@ -28,6 +28,7 @@ These options are explained in detail below.
     *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
     *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
     *   [3.4 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
+    *   [3.5 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop.2FNVIDIA_Optimus)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
 *   [6 Using nvidia-xrun](#Using_nvidia-xrun)
@@ -261,6 +262,20 @@ Applies to: newer laptops with GTX 965M or alike when bbswitch (e.g. via Bumbleb
 When the dGPU power resource is turned on, it may fail to do so and hang in ACPI code ([kernel bug 156341](https://bugzilla.kernel.org/show_bug.cgi?id=156341)).
 
 For known model-specific workarounds, see [this issue](https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238). In other cases you can try to boot with `acpi_osi="!Windows 2015"` or `acpi_osi=! acpi_osi="Windows 2009"` added to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). (Consider reporting your laptop to that issue.)
+
+### No screens found on a laptop/NVIDIA Optimus
+
+Check if `$ lspci | grep VGA` outputs something similar to:
+
+```
+00:02.0 VGA compatible controller: Intel Corporation Core Processor Integrated Graphics Controller (rev 02)
+01:00.0 VGA compatible controller: nVidia Corporation Device 0df4 (rev a1)
+
+```
+
+NVIDIA drivers now offer Optimus support since 319.12 Beta [[4]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
+
+Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 
 ## Using nouveau
 

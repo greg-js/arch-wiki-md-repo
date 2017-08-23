@@ -41,7 +41,7 @@ Be sure to load the latest [microcode](/index.php/Microcode "Microcode") alongsi
 
 ## Module Configuration
 
-Warning: Before trying out below fixes run pacman -Syu
+Before trying out the fixed below make sure you system is completely up to date by [updating your system](/index.php/Pacman#Upgrading_packages "Pacman").
 
 To fix noise headphone noise create `/etc/modprobe.d/alsa-base.conf` containing:
 
@@ -50,7 +50,7 @@ options snd-hda-intel model=dell-headset-multi
 
 ```
 
-**Warning:** Restoring the laptop from suspend will bring the noise back.
+Restoring the laptop from suspend will bring the noise back. In order to fix this use [https://github.com/dakatapetrov/zenbook-pro-ux501vw-sound-fix](https://github.com/dakatapetrov/zenbook-pro-ux501vw-sound-fix).
 
 To enable power-saving functionality for the Intel graphics card create `/etc/modprobe.d/i915.conf` containing:
 

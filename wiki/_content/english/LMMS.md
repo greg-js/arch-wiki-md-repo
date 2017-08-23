@@ -1,4 +1,4 @@
-LMMS is a free cross-platform software which allows you to produce music with your computer. This covers creating melodies and beats, synthesizing and mixing sounds and arranging samples. You can have fun with your MIDI keyboard and much more – all in a user-friendly and modern interface. Furthermore LMMS comes with many ready-to-use instrument and effect plugins, presets and samples.
+[LMMS](https://lmms.io/) is a free cross-platform software which allows you to produce music with your computer. This covers creating melodies and beats, synthesizing and mixing sounds and arranging samples. You can have fun with your MIDI keyboard and much more – all in a user-friendly and modern interface. Furthermore LMMS comes with many ready-to-use instrument and effect plugins, presets and samples.
 
 ## Installation
 

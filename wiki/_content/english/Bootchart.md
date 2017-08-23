@@ -51,7 +51,7 @@ Bootchart-render cannot generate a 'bootchart.png' image and shows the error mes
 
 ```
 
-It mostly means that bootchartd was unable to detect when the booting process was finished. This can happen when you are using different login manager than [KDM](/index.php/KDM "KDM") or GDM such as [SLiM](/index.php/SLiM "SLiM") or entrance. You have to open `/usr/bin/bootchartd` script and append those applications to `exit_proc` variable, for example:
+It mostly means that bootchartd was unable to detect when the booting process was finished. This can happen when you are using different login manager than KDM or GDM such as [SLiM](/index.php/SLiM "SLiM") or entrance. You have to open `/usr/bin/bootchartd` script and append those applications to `exit_proc` variable, for example:
 
 ```
 # The processes we have to wait for

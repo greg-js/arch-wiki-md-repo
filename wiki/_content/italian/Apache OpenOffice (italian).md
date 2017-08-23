@@ -192,8 +192,6 @@ into /etc/profile.d/openoffice.sh. In KDE4 systemsettings, make sure "use my KDE
 
 #### Alternative configuration
 
-You may wish to set the Xorg server dots-per-inch in the [KDM](/index.php/KDM "KDM") configuration.
-
 Do not select "use my KDE style in GTK applications". Instead choose a native syle and font for GTK2 applications.
 
 ```

@@ -4,8 +4,9 @@
 
 *   [1 Creating a F2FS partition](#Creating_a_F2FS_partition)
 *   [2 Mounting a F2FS partition](#Mounting_a_F2FS_partition)
-*   [3 Install Arch Linux on F2FS partition](#Install_Arch_Linux_on_F2FS_partition)
-*   [4 Checking and repair](#Checking_and_repair)
+*   [3 Grow an F2FS partition](#Grow_an_F2FS_partition)
+*   [4 Install Arch Linux on F2FS partition](#Install_Arch_Linux_on_F2FS_partition)
+*   [5 Checking and repair](#Checking_and_repair)
 
 ## Creating a F2FS partition
 
@@ -28,6 +29,23 @@ The partition can then be mounted manually or via other mechanisms:
 # mount /dev/sdxY /mnt/foo
 
 ```
+
+## Grow an F2FS partition
+
+When the filesystem is unmounted, it can be grown if the partition is expanded. [Shrinking is not currently supported](https://www.mail-archive.com/linux-f2fs-devel@lists.sourceforge.net/msg04247.html).
+
+First use a [partition tool](/index.php/Partitioning#Partitioning_tools "Partitioning") to resize the partition. This can be done, for example, by deleting the old partition and creating a new one with with the same type, the same start sector, and a new end position.
+
+Then expand the filesystem to fill the new partition using:
+
+```
+# resize.f2fs /dev/sdxY
+
+```
+
+where `*/dev/sdxY*` is the target F2FS volume to grow.
+
+**Note:** If you're using GPT, the partition's GUID (seen in /dev/disk/by-partuuid/*) might change, but the filesystem UUID (seen in /dev/disk/by-uuid) should stay the same.
 
 ## Install Arch Linux on F2FS partition
 

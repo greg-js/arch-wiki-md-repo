@@ -38,6 +38,7 @@
 *   [19 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [20 Very slow app download speed](#Very_slow_app_download_speed)
 *   [21 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
+*   [22 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
 
 ## Debugging Steam
 
@@ -463,3 +464,7 @@ For steam to work, disable dri3 in xorg config file or as a workaround run steam
  LIBGL_DRI3_DISABLE=1 steam
 
 ```
+
+## Launching games on nvidia optimus laptops
+
+To be able to play games which require using nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while steam is already running will not restart it. You should explicitly exit and then start steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.

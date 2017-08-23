@@ -4,7 +4,7 @@
     *   [1.1 安裝](#.E5.AE.89.E8.A3.9D)
     *   [1.2 執行](#.E5.9F.B7.E8.A1.8C)
         *   [1.2.1 透過 startx](#.E9.80.8F.E9.81.8E_startx)
-        *   [1.2.2 透過 KDM/GDM](#.E9.80.8F.E9.81.8E_KDM.2FGDM)
+        *   [1.2.2 透過 Display manager](#.E9.80.8F.E9.81.8E_Display_manager)
 *   [2 設定](#.E8.A8.AD.E5.AE.9A)
     *   [2.1 選單管理](#.E9.81.B8.E5.96.AE.E7.AE.A1.E7.90.86)
         *   [2.1.1 透過 fluxbox-generate_menu](#.E9.80.8F.E9.81.8E_fluxbox-generate_menu)
@@ -55,9 +55,9 @@ exec fluxbox
 
 如果無法順利啟動，透過設定 LC_ALL 為預設的 "C" ，也許能夠避免這個情形。 [1](https://bbs.archlinux.org/viewtopic.php?t=25797).
 
-### 透過 KDM/GDM
+### 透過 Display manager
 
-安裝 fluxbox之後，[KDM](/index.php/KDM "KDM") 或 [GDM](/index.php/GDM "GDM") 將會在 session 選單當中自動增加 fluxbox 的選項。在登入時選取 fluxbox就行了。
+安裝 fluxbox之後，[Display manager](/index.php/Display_manager "Display manager") 將會在 session 選單當中自動增加 fluxbox 的選項。在登入時選取 fluxbox就行了。
 
 # 設定
 

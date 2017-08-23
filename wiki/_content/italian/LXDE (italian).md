@@ -28,10 +28,9 @@ From [LXDE.org | Lightweight X11 Desktop Environment](http://lxde.org/):
     *   [3.14 Spegnimento e Riavvio con LXDE](#Spegnimento_e_Riavvio_con_LXDE)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS e caratteri Cinesi](#NTFS_e_caratteri_Cinesi)
-    *   [4.2 KDM e sessioni LXDE](#KDM_e_sessioni_LXDE)
-    *   [4.3 Problemi GTK+ con l'aggiornamento alla versione 0.4.1 di lxsession](#Problemi_GTK.2B_con_l.27aggiornamento_alla_versione_0.4.1_di_lxsession)
-    *   [4.4 LXsession completo](#LXsession_completo)
-    *   [4.5 Usare applicazioni KDEmod3 sotto LXDE](#Usare_applicazioni_KDEmod3_sotto_LXDE)
+    *   [4.2 Problemi GTK+ con l'aggiornamento alla versione 0.4.1 di lxsession](#Problemi_GTK.2B_con_l.27aggiornamento_alla_versione_0.4.1_di_lxsession)
+    *   [4.3 LXsession completo](#LXsession_completo)
+    *   [4.4 Usare applicazioni KDEmod3 sotto LXDE](#Usare_applicazioni_KDEmod3_sotto_LXDE)
 *   [5 Risorse esterne](#Risorse_esterne)
 
 ## Installazione
@@ -88,7 +87,7 @@ Si noti che alcuni pacchetti per LXDE sono sperimentali e sarà necessario insta
 
 ### Display Manager
 
-Si si utilizza un display manager come [SLiM](/index.php/SLiM "SLiM"), [GDM](/index.php/GDM "GDM"), o [KDM](/index.php/KDM "KDM"), lo si configuri per avviare una sessione di LXDE. Per ulteriori informazioni fare riferimento alla pagina wiki del proprio display manaqger.
+Si si utilizza un display manager come [SLiM](/index.php/SLiM "SLiM") o [GDM](/index.php/GDM "GDM"), lo si configuri per avviare una sessione di LXDE. Per ulteriori informazioni fare riferimento alla pagina wiki del proprio display manaqger.
 
 ### Console
 
@@ -477,15 +476,6 @@ Se si vuole utilizzare un disco removibile con un filesystem NTFS, deve essere i
 
 ```
 NoUpgrade = sbin/mount.ntfs-3
-
-```
-
-### KDM e sessioni LXDE
-
-Dalla versione di KDE 4.3.3, KDM non riesce a rintracciare la sessione desktop di LXDE. Per risolvere il problema:
-
-```
-# cp /usr/share/xsessions/LXDE.desktop /usr/share/apps/kdm/sessions/
 
 ```
 

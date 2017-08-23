@@ -247,7 +247,7 @@ Add `LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"` to your [launch options](/inde
 
 Some Steam games are built against OpenSSL 1.0\. ([FS#53618](https://bugs.archlinux.org/task/53618))
 
-Install [lib32-openssl-1.0](https://aur.archlinux.org/packages/lib32-openssl-1.0/) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0` to your [launch options](/index.php/Launch_option "Launch option").
+Install [lib32-openssl-1.0](https://www.archlinux.org/packages/?name=lib32-openssl-1.0) and add `LD_LIBRARY_PATH=/usr/lib/openssl-1.0` to your [launch options](/index.php/Launch_option "Launch option").
 
 ### Adobe Air setup
 
@@ -1713,7 +1713,7 @@ It is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170
 
 Ask the developer to rebuild the game.
 
-Some of the affected games: *Cities: Skylines*,~~*Streets of Rogue*~~,*Beholder*,*Onraid*,*Rimworld*.
+Some of the affected games: *Cities: Skylines*,~~*Streets of Rogue*~~,*Beholder*,*Onraid*,*Rimworld*,*The Escapists 2*.
 
 ## Unrest
 

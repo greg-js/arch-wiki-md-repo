@@ -10,7 +10,6 @@ XScreenSaver is a screen saver and locker for the X Window System.
     *   [3.2 User switching from the lock screen](#User_switching_from_the_lock_screen)
         *   [3.2.1 LXDM](#LXDM)
         *   [3.2.2 LightDM](#LightDM)
-        *   [3.2.3 KDM](#KDM)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Disable during media playback](#Disable_during_media_playback)
         *   [4.1.1 mplayer/mpv](#mplayer.2Fmpv)
@@ -78,7 +77,7 @@ See [Power management#xss-lock](/index.php/Power_management#xss-lock "Power mana
 
 **Warning:** When switching users using a display manager such as GDM or LightDM, XScreenSaver will not lock the original session - it can be accessed without a password simply by switching TTY's to the session in question. If you are using LightDM, as a workaround, install [light-locker](https://www.archlinux.org/packages/?name=light-locker) and run it alongside XscreenSaver. Alternatively, use a different screen locking program altogether - see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
-By default, XScreenSaver's *New Login* button in the lock screen will call `/usr/bin/gdmflexiserver` to switch users. Other [display managers](/index.php/Display_manager "Display manager") than [GDM](/index.php/GDM "GDM") or [KDM](/index.php/KDM "KDM") that support user switching (such as [LightDM](/index.php/LightDM "LightDM")) require a different command.
+By default, XScreenSaver's *New Login* button in the lock screen will call `/usr/bin/gdmflexiserver` to switch users. Other [display managers](/index.php/Display_manager "Display manager") than [GDM](/index.php/GDM "GDM") or KDM that support user switching (such as [LightDM](/index.php/LightDM "LightDM")) require a different command.
 
 **Tip:** Adding *xscreensaver.newLoginCommand:* to `~/.Xresources` whilst leaving the argument blank will make the *New Login* button disappear.
 
@@ -103,15 +102,6 @@ xscreensaver.newLoginCommand: dm-tool switch-to-greeter
 ```
 
 **Note:** If you use this to switch to an already-logged-in user, you might have to enter the password twice (once for LightDM, and once for the XScreenSaver dialog of the user you logged in to).
-
-#### KDM
-
-To use [KDM](/index.php/KDM "KDM")'s switching mode:
-
-```
-xscreensaver.newLoginCommand: kdmctl reserve
-
-```
 
 ## Tips and tricks
 

@@ -358,8 +358,7 @@ This section lists window managers and how they cope with multiple monitors.
 
 ### Display managers
 
-*   [GDM](/index.php/GDM "GDM"): gdm is not configured by gnome display settings, resulting in the login screen not being displayed on the primary monitor. A workaround is explained [here](https://bbs.archlinux.org/viewtopic.php?pid=1262282#p1262282). It just consists in copying the user monitor configuration file to gdm's.
-*   [KDM](/index.php/KDM "KDM"): works
+[GDM](/index.php/GDM "GDM"): see [GDM#Setup default monitor settings](/index.php/GDM#Setup_default_monitor_settings "GDM").
 
 Users may prefer to use `startx` and `~/.xinitrc` instead of a display manager due to the lack of working support with multiple displays.
 

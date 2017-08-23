@@ -27,7 +27,7 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de 
 
 	[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/) || [gdm](https://www.archlinux.org/packages/?name=gdm)
 
-*   **[KDM](/index.php/KDM "KDM")** — Gestor de inicio de sesión de [KDE](/index.php/KDE "KDE")
+*   **KDM** — Gestor de inicio de sesión de [KDE](/index.php/KDE "KDE")4
 
 	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
@@ -49,7 +49,7 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de 
 
 *   **SDDM** — Gestor de pantalla basado en QML
 
-	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm), [sddm-qt5](https://aur.archlinux.org/packages/sddm-qt5/)
+	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
 *   **[SLiM](/index.php/SLiM "SLiM") (Simple Login Manager)** — Solución de acceso gráfico para el inicio de sesión elegante y ligero
 
@@ -61,10 +61,10 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de 
 
 ## Cargar el gestor de inicio de sesión
 
-Para activar el acceso gráfico, ejecute el demonio del **gestor de pantallas** preferido (por ejemplo, [KDM](/index.php/KDM "KDM")).
+Para activar el acceso gráfico, ejecute el demonio del <a class="mw-selflink selflink">gestor de pantallas</a> preferido (por ejemplo, [SDDM](/index.php/SDDM "SDDM")).
 
 ```
-# systemctl enable kdm
+# systemctl enable sddm
 
 ```
 
@@ -79,9 +79,9 @@ Bastaría con eliminar el enlace simbólico y *systemd* utilizará su *default.t
 
 ```
 
-Después de activar kdm debe mostrarse un enláce simbólico de «display-manager.service» establecido en /etc/systemd/system/
+Después de activar sddm debe mostrarse un enláce simbólico de «display-manager.service» establecido en /etc/systemd/system/
 
- `$ ls -l /etc/systemd/system/display-manager.service`  `/etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/kdm.service` 
+ `$ ls -l /etc/systemd/system/display-manager.service`  `/etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/sddm.service` 
 
 ### Utilizar systemd-logind
 

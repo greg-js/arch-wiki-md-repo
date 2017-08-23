@@ -1,6 +1,6 @@
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)").
 
-Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page "Man page") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
+Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
 ## Contents
 
@@ -57,14 +57,14 @@ Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](htt
 
 ### Conectar à Internet
 
-A imagem de instalação [habilita](/index.php/Enable "Enable") o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos [cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) e vai tentar iniciar uma conexão. Verifique se a conectividade da internet está disponível, por exemplo com [ping](/index.php/Ping "Ping"):
+A imagem de instalação [habilita](/index.php/Habilita "Habilita") o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") na inicialização para dispositivos [cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) e vai tentar iniciar uma conexão. Verifique se a conectividade da internet está disponível, por exemplo com [ping](/index.php/Ping "Ping"):
 
 ```
 # ping archlinux.org
 
 ```
 
-Se nenhum estiver disponível, [pare](/index.php/Stop "Stop") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
+Se nenhum estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
 
 Para conexões **sem fio** (*wireless*), iw(8), wpa_supplicant(8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
 
@@ -150,7 +150,7 @@ Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/
 
 Esse grupo não inclui todas as ferramentas da instalação *live*, tal como [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ou firmware de rede sem fio específico; veja [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para comparação.
 
-Para [instalar](/index.php/Install "Install") pacotes e outros grupos, tal como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), anexe os nomes ao *pacstrap* (separados por espaço) ou a comandos [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa do [#Chroot](#Chroot).
+Para [instalar](/index.php/Instalar "Instalar") pacotes e outros grupos, tal como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), anexe os nomes ao *pacstrap* (separados por espaço) ou a comandos [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa do [#Chroot](#Chroot).
 
 ## Configurar o sistema
 
@@ -242,7 +242,7 @@ Veja também [Configuração de rede#Configurando um hostname](/index.php/Config
 
 O recém-instalado ambiente possui nenhuma conectividade de rede ativada por padrão. Veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para configurar uma.
 
-Para [Configuração sem fio](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Install "Install") os pacotes [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), assim como [pacotes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") que se fizerem necessários. Opcionalmente, instale [dialog](https://www.archlinux.org/packages/?name=dialog) para uso de *wifi-menu*.
+Para [Configuração sem fio](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Instale "Instale") os pacotes [iw](https://www.archlinux.org/packages/?name=iw) e [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), assim como [pacotes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") que se fizerem necessários. Opcionalmente, instale [dialog](https://www.archlinux.org/packages/?name=dialog) para uso de *wifi-menu*.
 
 ### Initramfs
 

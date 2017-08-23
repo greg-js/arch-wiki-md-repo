@@ -19,7 +19,6 @@ NVIDIA Optimus是一种允许 Intel 集成 GPU 和 NVIDIA GPU 建成并通过一
     *   [2.1 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
         *   [2.1.1 LightDM](#LightDM)
         *   [2.1.2 SDDM](#SDDM)
-        *   [2.1.3 KDM](#KDM)
     *   [2.2 检验 3D](#.E6.A3.80.E9.AA.8C_3D)
     *   [2.3 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 *   [3 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
@@ -131,10 +130,6 @@ display-setup-script=/etc/lightdm/display_setup.sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 ```
-
-#### KDM
-
-对于 KDE 的 [KDM](/index.php/KDM "KDM"), 添加 xrandr 命令到 `/usr/share/config/kdm/Xsetup` 中去。
 
 ### 检验 3D
 

@@ -10,6 +10,7 @@
     *   [2.2 mpv and PulseAudio/ALSA mixer controls since 0.18.1](#mpv_and_PulseAudio.2FALSA_mixer_controls_since_0.18.1)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Hardware decoding](#Hardware_decoding)
+        *   [3.1.1 In GNOME Wayland](#In_GNOME_Wayland)
     *   [3.2 High quality video output](#High_quality_video_output)
     *   [3.3 Save position on quit](#Save_position_on_quit)
     *   [3.4 Volume is too low](#Volume_is_too_low)
@@ -116,6 +117,10 @@ When hardware decoding is used, the video output should generally be set to `ope
 If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
 By default, hardware decoding is enabled for codecs h264, vc1, wmv3, hevc, mpeg2video and vp9\. It is however possible to specify codecs (e.g. `--hwdec-codecs=h264,mpeg2video`) or allow all codecs (`hwdec-codecs=all`) to use hardware decoding.
+
+#### In GNOME Wayland
+
+Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`. To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland` [[2]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### High quality video output
 

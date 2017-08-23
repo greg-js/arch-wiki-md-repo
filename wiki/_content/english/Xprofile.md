@@ -7,7 +7,7 @@ The xprofile file is similar in style to [xinitrc](/index.php/Xinitrc "Xinitrc")
 The xprofile files are natively sourced by the following display managers:
 
 *   [GDM](/index.php/GDM "GDM") - `/etc/gdm/Xsession`
-*   [KDM](/index.php/KDM "KDM") - `/usr/share/config/kdm/Xsession`
+*   KDM - `/usr/share/config/kdm/Xsession`
 *   [LightDM](/index.php/LightDM "LightDM") - `/etc/lightdm/Xsession`
 *   [LXDM](/index.php/LXDM "LXDM") - `/etc/lxdm/Xsession`
 *   [SDDM](/index.php/SDDM "SDDM") - `/usr/share/sddm/scripts/Xsession`

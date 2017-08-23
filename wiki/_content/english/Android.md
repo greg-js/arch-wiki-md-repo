@@ -19,14 +19,13 @@
         *   [2.5.7 Notes & Troubleshooting](#Notes_.26_Troubleshooting)
     *   [2.6 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
 *   [3 Building Android](#Building_Android)
-    *   [3.1 OS bitness](#OS_bitness)
-    *   [3.2 Required packages](#Required_packages)
-    *   [3.3 Java Development Kit](#Java_Development_Kit)
-    *   [3.4 Setting up the build environment](#Setting_up_the_build_environment)
-    *   [3.5 Downloading the source code](#Downloading_the_source_code)
-    *   [3.6 Building the code](#Building_the_code)
-    *   [3.7 Testing the build](#Testing_the_build)
-    *   [3.8 Creating a Flashable Image](#Creating_a_Flashable_Image)
+    *   [3.1 Required packages](#Required_packages)
+    *   [3.2 Java Development Kit](#Java_Development_Kit)
+    *   [3.3 Setting up the build environment](#Setting_up_the_build_environment)
+    *   [3.4 Downloading the source code](#Downloading_the_source_code)
+    *   [3.5 Building the code](#Building_the_code)
+    *   [3.6 Testing the build](#Testing_the_build)
+    *   [3.7 Creating a Flashable Image](#Creating_a_Flashable_Image)
 *   [4 Restoring Android](#Restoring_Android)
     *   [4.1 Fastboot](#Fastboot)
     *   [4.2 Samsung devices](#Samsung_devices)
@@ -355,10 +354,6 @@ Both are currently not available in the [AUR](/index.php/AUR "AUR") anymore, bec
 
 Please note that these instructions are based on the [official AOSP build instructions](https://source.android.com/source/building). Other Android-derived systems such as LineageOS will often require extra steps.
 
-### OS bitness
-
-Android 2.2.x (Froyo) and below are the only versions of Android that will build on a 32-bit system. For 2.3.x (Gingerbread) and above, you will need a 64-bit installation.
-
 ### Required packages
 
 To build any version of Android, you need to install these packages:
@@ -385,7 +380,7 @@ They can be installed with the [lineageos-devel](https://aur.archlinux.org/packa
 
 The [required JDK version](https://source.android.com/source/requirements) depends on the Android version you're building:
 
-*   For Android 7 (Nougat), OpenJDK 8 is required, which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) package.
+*   For Android 7 and 8 (Nougat and Oreo), OpenJDK 8 is required, which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) package.
 *   For Android 5 and 6 (Lollipop and Marshmallow), OpenJDK 7 is required, which is available with the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package.
 
 Older versions require a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.

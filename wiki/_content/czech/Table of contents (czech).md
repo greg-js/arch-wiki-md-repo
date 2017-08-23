@@ -30,7 +30,7 @@
 | <small>6.1.</small> [Bootovací proces](/index.php/Category:Boot_process_(%C4%8Cesky) "Category:Boot process (Česky)") <small>(9)</small> |
 | <small>6.2.</small> [Démoni a systémové služby](/index.php/Category:Daemons_and_system_services_(%C4%8Cesky) "Category:Daemons and system services (Česky)") <small>(2)</small> |
 | <small>6.3.</small> [Desktopová prostředí](/index.php/Category:Desktop_environments_(%C4%8Cesky) "Category:Desktop environments (Česky)") <small>(11)</small> |
-| <small>6.3.1.</small> [Display manažeři](/index.php/Category:Display_managers_(%C4%8Cesky) "Category:Display managers (Česky)") <small>(5)</small> |
+| <small>6.3.1.</small> [Display manažeři](/index.php/Category:Display_managers_(%C4%8Cesky) "Category:Display managers (Česky)") <small>(4)</small> |
 | <small>6.4.</small> [Eye candy](/index.php/Category:Eye_candy_(%C4%8Cesky) "Category:Eye candy (Česky)") <small>(2)</small> |
 | <small>6.5.</small> [Souborové systémy](/index.php/Category:File_systems_(%C4%8Cesky) "Category:File systems (Česky)") <small>(2)</small> |
 | <small>6.6.</small> [Zmezinárodnění](/index.php/Category:Internationalization_(%C4%8Cesky) "Category:Internationalization (Česky)") <small>(1)</small> |

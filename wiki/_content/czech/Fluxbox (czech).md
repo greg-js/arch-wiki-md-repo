@@ -4,7 +4,7 @@
     *   [1.1 Úplný návod](#.C3.9Apln.C3.BD_n.C3.A1vod)
     *   [1.2 Jak nainstalovat Fluxbox](#Jak_nainstalovat_Fluxbox)
     *   [1.3 Spuštění Fluxboxu](#Spu.C5.A1t.C4.9Bn.C3.AD_Fluxboxu)
-        *   [1.3.1 Metoda 1: KDM/GDM](#Metoda_1:_KDM.2FGDM)
+        *   [1.3.1 Metoda 1: Display manager](#Metoda_1:_Display_manager)
         *   [1.3.2 Metoda 2: ~/.xinitrc](#Metoda_2:_.7E.2F.xinitrc)
 *   [2 Konfigurace](#Konfigurace)
     *   [2.1 Úprava menu](#.C3.9Aprava_menu)
@@ -43,9 +43,9 @@ pacman -S fluxbox fluxconf menumaker
 
 ## Spuštění Fluxboxu
 
-### Metoda 1: KDM/GDM
+### Metoda 1: [Display manager](/index.php/Display_manager "Display manager")
 
-O přidání nabídky do správce přihlášení [KDM](/index.php/KDM "KDM") nebo [GDM](/index.php/GDM "GDM") se automaticky postará instalátor. Při přihlašování vyberte fluxbox.
+O přidání nabídky do správce přihlášení [Display manager](/index.php/Display_manager "Display manager") se automaticky postará instalátor. Při přihlašování vyberte fluxbox.
 
 ### Metoda 2: ~/.xinitrc
 

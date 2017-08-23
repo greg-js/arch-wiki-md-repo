@@ -68,7 +68,7 @@ exec enlightenment_start
 
 ```
 
-Pokud jako přihlašovací manažer chcete použít *entrance* (náhradou za [KDM](/index.php/KDM "KDM")/[GDM](/index.php/GDM "GDM")), lze to nastavit v souboru:
+Pokud jako přihlašovací manažer chcete použít *entrance* (náhradou za [GDM](/index.php/GDM "GDM")), lze to nastavit v souboru:
 
 *   **/etc/rc.conf** - přihlašovací manažer bude dostupný pouze po startu systému, nikoliv po stisku kláves CTRL+ALT+BACKSPACE
 

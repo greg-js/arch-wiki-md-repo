@@ -91,7 +91,7 @@ $ pacman -Ss xf86-video | less
 
 *参见: [Start X at Login (简体中文)](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")*
 
-**提示：** 最简单的方法是使用 [登录管理器](/index.php/%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%99%A8 "登录管理器") 例如 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)"), [KDM](/index.php/KDM "KDM") or [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)").
+**提示：** 最简单的方法是使用 [登录管理器](/index.php/%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%99%A8 "登录管理器") 例如 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") 或 [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)").
 
 如果不用登陆管理器启动 X，需要安装软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit)。
 
@@ -411,12 +411,6 @@ $ man Xserver
 
 ```
 
-**注意:** 如果你用kdm启动x, 则不会执行startx脚本。上述这些选项必须加在`/usr/share/config/kdm/kdmrc`文件的`"ServerArgsLocal"`或者`"ServerCmd"`变量中. 缺省kdm的选项是
-```
-ServerArgsLocal=-nolisten tcp 
-ServerCmd=/usr/bin/X
-```
-
 ### Virtual X session
 
 To start another X session in, for example, `Ctrl+Alt+F8`, you need to type this on a console:
@@ -426,7 +420,7 @@ xinit /path/to/wm -- :1
 
 ```
 
-Change "/path/to/wm" to your window manager start file or to your login manager like gdm, kdm, or slim.
+Change "/path/to/wm" to your window manager start file or to your login manager like gdm or slim.
 
 ### Nested X session
 

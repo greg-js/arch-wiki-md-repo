@@ -169,8 +169,6 @@ v souboru /etc/profile.d/openoffice.sh. V nastavení KDE4 musí být zvoleno "po
 
 #### Alternativní konfigurace
 
-Můžete si přát nastavit DPI z Xorg serveru v konfiguraci [KDM](/index.php/KDM "KDM").
-
 Nevybírejte "použít můj styl KDE v aplikacích GTK". Místo toho zvolte nativní styl a font pro GTK2 aplikace.
 
 ```

@@ -2,7 +2,7 @@
 
 * * *
 
-**Інтернет** – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – [Утиліти](/index.php/List_of_applications/Utilities_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Utilities (Українська)") – [Документи](/index.php/List_of_applications/Documents_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Documents (Українська)") – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
+<a class="mw-selflink selflink">Інтернет</a> – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – [Утиліти](/index.php/List_of_applications/Utilities_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Utilities (Українська)") – [Документи](/index.php/List_of_applications/Documents_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Documents (Українська)") – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
 
 ## Contents
 
@@ -501,7 +501,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with daemon version, GTK+, Qt GUI, web and CLI front-ends.
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (remote clients work with the daemon in the -cli package)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) (remote clients work with the daemon in the -cli package)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Feature-rich BitTorrent client written in Java (formerly Azureus).
 

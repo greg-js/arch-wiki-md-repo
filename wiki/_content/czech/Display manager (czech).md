@@ -38,13 +38,6 @@ Zvolte si a nainstalujte preferovaný přihlašovací manažer:
 
 ```
 
-**[KDM](/index.php/KDM "KDM"):** [KDE](/index.php/KDE "KDE") Display Manager
-
-```
-# pacman -S kdebase kdebase-workspace
-
-```
-
 **[SLiM](/index.php/SLiM "SLiM"):** Simple Login Manager
 
 ```
@@ -78,7 +71,7 @@ Jsou dva jednoduché způsoby, jak nechat systém zavést přihlašovací manaž
 
 	[Daemon](/index.php/Daemon "Daemon") metoda
 
-	přihlašovací manažer se zavede automaticky během startu jako daemon. (V současnosti to funguje pouze s Entrance, GDM, KDM a SLiM).
+	přihlašovací manažer se zavede automaticky během startu jako daemon. (V současnosti to funguje pouze s Entrance, GDM a SLiM).
 
 Metoda `inittab` je z různých důvodů doporučována. Jedním z nich je, že vám dovolí z [GRUB](/index.php/GRUB "GRUB") nabootovat přímo do framebuffer režimu. Toto je například výhodou, když v X spadne ovladač grafické karty, jelikož nebudete nuceni opravovat systém z živého CD nebo pomocí jiných zbytečně složitých prostředků.
 
@@ -139,13 +132,6 @@ x:5:respawn:/usr/sbin/gdm -nodaemon
 
 ```
 
-**KDM:**
-
-```
-x:5:respawn:/usr/bin/kdm -nodaemon
-
-```
-
 **SLiM:**
 
 ```
@@ -173,7 +159,7 @@ DAEMONS=(syslogd klogd !pcmcia network netfs crond) # toto je pole daemonů
 
 ```
 
-Přidejte na konec jméno daemona vámi zvoleného přihlašovacího manažeru (`entranced`, `gdm`, `kdm`, nebo `slim`):
+Přidejte na konec jméno daemona vámi zvoleného přihlašovacího manažeru (`entranced`, `gdm`, nebo `slim`):
 
 ```
 DAEMONS=(syslogd klogd !pcmcia network netfs crond **entranced**)

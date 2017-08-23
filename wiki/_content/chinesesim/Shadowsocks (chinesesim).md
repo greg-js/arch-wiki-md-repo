@@ -1,4 +1,6 @@
-[Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，有多种实现方式。
+**翻译状态：** 本文是英文页面 [Shadowsocks](/index.php/Shadowsocks "Shadowsocks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Shadowsocks&diff=0&oldid=472909)可以查看翻译后英文页面的改动。
+
+[Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，最初用 Python 编写。
 
 ## Contents
 
@@ -19,16 +21,11 @@
 
 ## 安装
 
-可自[community]中安装已打包好的shadowsocks。
-
-| [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)或[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks) | shadowsocks基本包 |
-| [libsodium](https://www.archlinux.org/packages/?name=libsodium)
-[python2-numpy](https://www.archlinux.org/packages/?name=python2-numpy)
-[python2-salsa20](https://www.archlinux.org/packages/?name=python2-salsa20) | [Salsa20和Chacha20](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)支持； |
+可[install|安装] [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)。
 
 ## 配置
 
-shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配置文件格式，以下是一个样例：
+shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配置文件格式，以下是安装包中的样例：
 
  `/etc/shadowsocks/config.json` 
 ```
@@ -46,25 +43,34 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 ```
 
-**提示：** shadowsocks: 若需同时指定多个服务端ip，可参考`"server":["1.1.1.1","2.2.2.2"],`
+**提示：** shadowsocks: 若需同时指定多个服务端ip，使用如下例的语法`"server":["1.1.1.1","2.2.2.2"],`
 
-**提示：** shadowsocks-libev: 若需同时指定多个服务端ip或利用多处理器核心提高sockets处理性能，可启用多个shadowsocks-libev实例并绑定同一个端口，因为其支持SO_REUSEPORT（内核级CPU负载平衡）
+**提示：** 要找出在你的机器上运行最快的方式，可以运行[这个脚本](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)
 
+| Name | Explanation |
 | server | 服务端监听地址(IPv4或IPv6) |
 | server_port | 服务端端口，一般为`443` |
 | local_address | 本地监听地址，缺省为`127.0.0.1` 可用-b参数设置 |
 | local_port | 本地监听端口，一般为`1080` |
 | password | 用以加密的密匙 |
 | timeout | 超时时间（秒） |
-| method | 加密方法，默认的`table`是一种不安全的加密。建议使用`chacha20-ietf`。 |
+| method | 参阅 [加密](https://github.com/shadowsocks/shadowsocks/wiki/Encryption) |
 | fast_open | 是否启用[TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open) |
 | wokers | worker数量，如果不理解含义请不要改 |
+
+要更改日志等级，应添加 `"verbose": *value*` 选项并赋予下列某一个值：
+
+*   2: full logging
+*   1: debug
+*   0: default
+*   -1: warnings
+*   -2: errors
 
 ### 客户端
 
 #### 命令行
 
-在`config.json`所在目录下运行`sslocal`（shadowsocks-libev 使用 `ss-local`）即可；若需指定配置文件的位置：
+运行 `ss-local` 启动客户端；若需指定配置文件的位置：
 
  `# sslocal -c /etc/shadowsocks/config.json` 
 **注意:** 有用户报告无法成功在运行时加载`config.json`

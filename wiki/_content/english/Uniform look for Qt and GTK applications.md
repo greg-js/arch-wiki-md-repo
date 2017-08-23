@@ -101,7 +101,7 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 
 ### KDE file dialogs for GTK+ applications
 
-**Warning:** Some GTK+ applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash (e.g. [Firefox](/index.php/Firefox "Firefox")) and even other applications like [KDM](/index.php/KDM "KDM") (when used with e.g. [Thunderbird](/index.php/Thunderbird "Thunderbird")).
+**Warning:** Some GTK+ applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash ([Firefox](/index.php/Firefox "Firefox") or [Thunderbird](/index.php/Thunderbird "Thunderbird")).
 
 [kgtk](https://aur.archlinux.org/packages/kgtk/) from the [AUR](/index.php/AUR "AUR") is a wrapper script which uses `LD_PRELOAD` to force KDE file dialogs in GTK+ 2.x apps. Once installed you can run GTK+ 2.x applications with `kgtk-wrapper` in two ways (using [GIMP](/index.php/GIMP "GIMP") in the examples):
 

@@ -1,230 +1,564 @@
-Para o GNOME 3, os desenvolvedores começaram do zero e criaram um novo complemento, um ambiente de trabalho moderno para os usuários e as tecnologias recentes. Algumas das características implementadas:
-
-*   Novo tema e visual, bem como fontes modernas.
-*   O modo de visualização das atividades fornece uma maneira mais fácil de acessar janelas e aplicativos.
-*   Recurso de pesquisa rápida (entre configurações, programas e arquivos) junto à visualização de atividades.
-*   Um novo aplicativo de Configuração do Sistema.
-*   Sistema de notificação mais sutil e um painel mais discreto.
-*   Serviço de mensagens integrado.
-*   E muito mais recursos: window tiling (semelhante ao Aero Snap), gerenciador de arquivos Nautilus aperfeiçoado etc.
-
-[mais detalhes no site do [GNOME 3](http://www.gnome3.org/)]
+[GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Desktop_environment "Desktop environment"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](https://en.wikipedia.org/wiki/pt:Projeto_GNU "wikipedia:pt:Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg "Xorg").
 
 ## Contents
 
-*   [1 Introdução](#Introdu.C3.A7.C3.A3o)
-*   [2 Atualização do GNOME 2.32 atual](#Atualiza.C3.A7.C3.A3o_do_GNOME_2.32_atual)
-*   [3 Instalação do GNOME 3 como novo ambiente de trabalho](#Instala.C3.A7.C3.A3o_do_GNOME_3_como_novo_ambiente_de_trabalho)
-    *   [3.1 Daemons e modulos necessários ao GNOME](#Daemons_e_modulos_necess.C3.A1rios_ao_GNOME)
-    *   [3.2 Executando o GNOME](#Executando_o_GNOME)
-*   [4 Usando o shell](#Usando_o_shell)
-*   [5 Customizando](#Customizando)
-    *   [5.1 Usando Gnome-tweak-tool](#Usando_Gnome-tweak-tool)
-        *   [5.1.1 Wallpaper](#Wallpaper)
-        *   [5.1.2 Desligar Som](#Desligar_Som)
-        *   [5.1.3 Alterar o layout do teclado no GDM](#Alterar_o_layout_do_teclado_no_GDM)
-    *   [5.2 Alterando o GTK3 usando o tema settings.ini](#Alterando_o_GTK3_usando_o_tema_settings.ini)
-    *   [5.3 Redimensionar a barra de título Massive](#Redimensionar_a_barra_de_t.C3.ADtulo_Massive)
-    *   [5.4 Configurando tema para o ícone](#Configurando_tema_para_o_.C3.ADcone)
+*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+    *   [1.1 Pacotes adicionais](#Pacotes_adicionais)
+*   [2 Sessões do GNOME](#Sess.C3.B5es_do_GNOME)
+*   [3 Iniciando o GNOME](#Iniciando_o_GNOME)
+    *   [3.1 Graficamente](#Graficamente)
+    *   [3.2 Manualmente](#Manualmente)
+        *   [3.2.1 Sessões Xorg](#Sess.C3.B5es_Xorg)
+        *   [3.2.2 Sessões Wayland](#Sess.C3.B5es_Wayland)
+    *   [3.3 Aplicativos do GNOME no Wayland](#Aplicativos_do_GNOME_no_Wayland)
+*   [4 Navegação](#Navega.C3.A7.C3.A3o)
+    *   [4.1 Nomes legados](#Nomes_legados)
+*   [5 Configuração](#Configura.C3.A7.C3.A3o)
+    *   [5.1 Configurações do sistema](#Configura.C3.A7.C3.B5es_do_sistema)
+        *   [5.1.1 Cor](#Cor)
+        *   [5.1.2 Data & hora](#Data_.26_hora)
+        *   [5.1.3 Aplicativos padrões](#Aplicativos_padr.C3.B5es)
+        *   [5.1.4 Mouse e touchpad](#Mouse_e_touchpad)
+        *   [5.1.5 Rede](#Rede)
+        *   [5.1.6 Contas on-line](#Contas_on-line)
+        *   [5.1.7 Pesquisa](#Pesquisa)
+    *   [5.2 Configurações avançadas](#Configura.C3.A7.C3.B5es_avan.C3.A7adas)
+        *   [5.2.1 Aparência](#Apar.C3.AAncia)
+            *   [5.2.1.1 Temas GTK+ e temas de ícone](#Temas_GTK.2B_e_temas_de_.C3.ADcone)
+                *   [5.2.1.1.1 Tema global escuro](#Tema_global_escuro)
+            *   [5.2.1.2 Temas de gerenciador de janelas](#Temas_de_gerenciador_de_janelas)
+                *   [5.2.1.2.1 Altura da barra de título](#Altura_da_barra_de_t.C3.ADtulo)
+                *   [5.2.1.2.2 Ordem de botão de barra de título](#Ordem_de_bot.C3.A3o_de_barra_de_t.C3.ADtulo)
+                *   [5.2.1.2.3 Ocultar barra de título quando maximizado](#Ocultar_barra_de_t.C3.ADtulo_quando_maximizado)
+            *   [5.2.1.3 Temas do GNOME Shell](#Temas_do_GNOME_Shell)
+            *   [5.2.1.4 Ícones no menu](#.C3.8Dcones_no_menu)
+        *   [5.2.2 Área de trabalho](#.C3.81rea_de_trabalho)
+            *   [5.2.2.1 Ícones na área de trabalho](#.C3.8Dcones_na_.C3.A1rea_de_trabalho)
+            *   [5.2.2.2 Tela de bloqueio e plano de fundo](#Tela_de_bloqueio_e_plano_de_fundo)
+        *   [5.2.3 Extensões](#Extens.C3.B5es)
+        *   [5.2.4 Métodos de entrada](#M.C3.A9todos_de_entrada)
+        *   [5.2.5 Fontes](#Fontes)
+        *   [5.2.6 Inicialização de aplicativos](#Inicializa.C3.A7.C3.A3o_de_aplicativos)
+        *   [5.2.7 Energia](#Energia)
+            *   [5.2.7.1 Configurar o comportamento do fechamento da tela de notebook](#Configurar_o_comportamento_do_fechamento_da_tela_de_notebook)
+            *   [5.2.7.2 Alterar ação de nível crítico da bateria](#Alterar_a.C3.A7.C3.A3o_de_n.C3.ADvel_cr.C3.ADtico_da_bateria)
+        *   [5.2.8 Ordenar aplicativos em pastas de aplicativo (app)](#Ordenar_aplicativos_em_pastas_de_aplicativo_.28app.29)
+*   [6 Veja também](#Veja_tamb.C3.A9m)
 
-## Introdução
+## Instalação
 
-O GNOME 3 vem com **duas** interfaces, **gnome-shell**, o novo layout padrão, e o modo **fallback**. *Gnome-session* detectará se o computador é capaz de rodar o *gnome-shell*, do contrário iniciará no modo *fallback*.
+Dois grupos estão disponíveis:
 
-O modo **fallback** é muito similar ao layout do GNOME 2.x (enquanto usa o gnome-panel e metacity, alternativas ao gnome-shell e Mutter).
+*   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) contém o ambiente base do GNOME e um subconjunto de [aplicativos](https://wiki.gnome.org/Apps) bem integrados;
+*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) contém mais aplicativos do GNOME, incluindo um gerenciador de pacote, gerenciador de disco, [editor de texto](/index.php/Gedit "Gedit") e um conjunto de jogos. Note que esse grupo compila no grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
-Caso esteja no modo fallback, pode-se escolher o gerenciamento de janelas preferido.
+O ambiente base consiste no [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell "wikipedia:GNOME Shell"), um plug-in para o gerenciador de janelas [Mutter](https://en.wikipedia.org/wiki/Mutter_(software) "wikipedia:Mutter (software)"). Ele pode ser instalado separadamente com [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
 
-## Atualização do GNOME 2.32 atual
+**Nota:** *mutter* age como um gerenciador de composição para o ambiente, empregando aceleração gráfica de hardware para fornecer efeitos mirando reduzir desordem da tela. O gerenciador de sessão do GNOME detecta automaticamente se seu driver de vídeo é capaz de executar o GNOME Shell e se não, retrocede para renderização de software usando *llvmpipe*.
 
-**Atenção:** A sessão pode falhar durante a atualização e recomendado que você execute o comando no outra sessão, de outra DE ou VM, ou tty.
+### Pacotes adicionais
 
-```
-# pacman -Syu 
+Esses pacotes não estão nos grupos mencionados acima:
 
-```
+*   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — Uma interface de usuário simples para acessar máquinas virtuais [libvirt](/index.php/Libvirt "Libvirt").
 
-**Importante**: Apenas o GNOME 3.x modo **falback** estará instalado neste momento. Para instalar o novo shell:
+	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 
-```
-# pacman -S gnome-shell
+*   **Games** — Inicializador simples de jogos para o GNOME.
 
-```
+	[https://wiki.gnome.org/Apps/Games](https://wiki.gnome.org/Apps/Games) || [gnome-games](https://www.archlinux.org/packages/?name=gnome-games)
 
-## Instalação do GNOME 3 como novo ambiente de trabalho
+*   **Definições iniciais do GNOME** — Uma forma simples, fácil e segura de preparar um novo sistema.
 
-GNOME 3 está no [extra]. Deve-se executar o seguinte comando para instalá-lo:
+	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
 
-```
-# pacman -Syu gnome
+*   **GNOME MultiWriter** — Escreve um arquivo ISO para múltiplos dispositivos USB de uma só vez.
 
-```
+	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
 
-Para adquirir aplicações adicionais:
+*   **GNOME PackageKit** — Coleção de ferramentas gráficas para o PackageKit ser usado no ambiente GNOME.
 
-```
-# pacman -Syu gnome-extra
+	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-```
+*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — Um depurador de C/C++.
 
-### Daemons e modulos necessários ao GNOME
+	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
 
-O desktop GNOME requer um daemon o **DBUS** para uma operação adequada.
+*   **Recipes** — Aplicativo de gerenciamento de receitas para GNOME.
 
-Para iniciar o DBUS no daemon:
+	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
 
-```
-# /etc/rc.d/dbus start
+*   **Simple Scan** — Utilitário simples para digitalização.
 
-```
+	[https://launchpad.net/simple-scan](https://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
 
-Ou adicione o **DAEMONS** diretamente no diretório `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")` irão iniciar no boot:
+*   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — Permite que você instale e atualize aplicativos e extensões de sistema.
 
-```
-DAEMONS=(syslog-ng **dbus** network crond)
+	[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-```
+## Sessões do GNOME
 
-**GVFS** permite protocolos para acesso de arquivos remotos, como FTP ou SMB, para uso em aplicativos diversos como o gerenciandor de arquivos Nautilus. Isso é feito pelo **FUSE**: o espaço virtual no sistema de arquivos na camada de módulos do kernel.
+GNOME possui três sessões disponíveis, todos usando o GNOME Shell.
 
-Para carregar o módulo do kernel:
+*   **GNOME** é o padrão que usa Wayland. Aplicativos X tradicionais são executados pelo Xwayland.
+*   **GNOME Clássico** é uma disposição do ambiente tradicional com uma interface similar à do GNOME 2, usando extensões e parâmetros pré-ativados. [[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) Portanto, é mais um GNOME Shell personalizado do que um modo realmente distinto.
+*   **GNOME sobre Xorg** executa o GNOME Shell usando o Xorg.
 
-```
-# modprobe fuse
+## Iniciando o GNOME
 
-```
+O GNOME pode ser iniciado tanto graficamente, usando um [gerenciador de exibição](/index.php/Display_manager "Display manager"), ou manualmente pelo console.
 
-Ou adicione o módulo em **MODULES** no diretório `/etc/rc.conf` para que sejam iniciado no boot, exemplo:
+**Nota:** Suporte para bloqueio de tela no GNOME é fornecido pelo GDM. Se o GNOME não for iniciado usando o GDM, você terá que usar outro bloqueador de tela para fornecer esta funcionalidade - veja [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
-```
-MODULES=(**fuse** usblp)
+### Graficamente
 
-```
+Selecione a sessão: *GNOME*, *GNOME Clássico* ou *GNOME sobre Xorg* a partir do menu de sessões do gerenciador de exibição.
 
-**Nota:** FUSE é um módulo do kernel, não um daemon.
+### Manualmente
 
-### Executando o GNOME
+#### Sessões Xorg
 
-Para o melhor integrar no desktop **GDM** é recomendado (mas outros gerenciadores de login, tais como SLiM também funcionam consulte a seleção Policykit).
+*   Para a sessão do GNOME sobre Xorg, adicione ao arquivo `~/.xinitrc`: `exec gnome-session`.
+*   Para a sessão do GNOME Clássico, adicione ao arquivo `~/.xinitrc`:
+    ```
+    export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
+    export GNOME_SHELL_SESSION_MODE=classic
+    exec gnome-session --session=gnome-classic
+    ```
 
-```
-# pacman -S gdm
+Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `startx` (veja [xinitrc](/index.php/Xinitrc "Xinitrc") para detalhes adicionais, tal como preservar a sessão de logind). Após configurar o arquivo `~/.xinitrc`, também é possível ser arranjado para [Iniciar o X na autenticação](/index.php/Start_X_at_login "Start X at login").
 
-```
+#### Sessões Wayland
 
-Confira o [Display manager](/index.php/Display_manager "Display manager") para iniciá-lo corretamente.
+**Nota:**
 
-Se você preferir iniciar pelo console, adicione a linha no seu diretório `~/.xinitrc`, certifique-se a última linha e inicia com *exec* (veja [xinitrc](/index.php/Xinitrc "Xinitrc")):
+*   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland").
+*   Wayland com o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA") atualmente sofre de um desempenho muito ruim: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-```
-exec gnome-session
+Iniciar manualmente uma sessão Wayland é possível com `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 
-```
-
-Agora o GNOME inciará quando digitar o comando:
-
-```
-$ startx
-
-```
-
-## Usando o shell
-
-Veja [https://live.gnome.org/GnomeShell/CheatSheet](https://live.gnome.org/GnomeShell/CheatSheet)
-
-## Customizando
-
-### Usando Gnome-tweak-tool
-
-```
-# pacman -S gnome-tweak-tool
-
-```
-
-Este customização da fonte, themas, o botão minimizar e maximizar e algumas configurações como qual ação é tomada quando é fechado.
-
-Uma boa customização o tutorial é [http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html) que explora a gsettings.
-
-#### Wallpaper
-
-```
-$ GSETTINGS_BACKEND=dconf gsettings get org.gnome.desktop.background picture-uri
-$ GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.background picture-uri "file:///usr/share/backgrounds/gnome/SundownDunes.jpg"
+Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 
 ```
-
-Você preicisa apontar para um arquivo onde o usuário gdm para permissão de ler, e não em seu diretório home.
-
-#### Desligar Som
-
-```
-$ GSETTINGS_BACKEND=dconf gsettings com org.gnome.desktop.sound event-sounds false
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
+  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+fi
 
 ```
 
-Insirá um "1" de volta /etc/shadow para desabilitar o login do usuário gdm.
+### Aplicativos do GNOME no Wayland
 
-#### Alterar o layout do teclado no GDM
+Quando a sessão *GNOME* é usada, aplicativos do GNOME serão executados usando o Wayland. Veja o status atual do Wayland para aplicativos do GNOMEem [Aplicativos do GNOME sob Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/). Para casos de depuração, o [manual do GTK+](https://developer.gnome.org/gtk3/stable/gtk-running.html) lista opções e variáveis de ambiente.
 
-Desde do GDM 3 a configuração do layout do teclado não importa o gnome, você tem que configurar no Xorg.
+## Navegação
 
-### Alterando o GTK3 usando o tema settings.ini
+Para aprender como usar o GNOME Shell efetivamente, leia a [folha de dicas do GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet); ela realça os recursos e atalhos de teclado do GNOME Shell. Recursos incluem realce de tarefa, uso de teclado, controle de janela, o painel, modo de visão geral e mais. Alguns dos atalhos são:
 
-Similar para `~/.gtkrc-2.0` GTK2+ é possível definir o GTK3 (Gnome 3) atrávez do tema `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini`. Por default `${XDG_CONFIG_HOME}` é interpretado como `~/.config`.
+*   `Super` + `m`: mostra a área de notificação
+*   `Super` + `a`: mostra o menu de aplicativos
+*   `Alt-` + `Tab`: alterna entre aplicativos ativos
+*   `Alt-` + ``` (a tecla logo acima de `Tab` nos teclados americanos): alterna entre janelas do aplicativo em primeiro plano
+*   `Alt` + `F2`, e depois insira `r` ou `restart`: reinicia o shell no caso de problemas no shell gráfico (apenas no modo X/legado, não no modo Wayland).
 
-Apenas o tema Adwaita existe neste momento para gtk3 e é disponível no pacote **gnome-themes-standard**.
+### Nomes legados
 
-Exemplo:
+**Nota:** Alguns programas do GNOME sofreram alteração de nomes, casos em que o nome do aplicativo na documentação e diálogos de "sobre" foram alterados, mas o nome do executável não foi. Alguns poucos aplicativos estão listados na tabela abaixo.
 
-```
- [Configurações]
- gtk-theme-name = Adwaita
- gtk-fallback-icon-theme = gnome
- # next option is applicable only if selected theme supports it
- gtk-application-prefer-dark-theme = true
- # set font name and dimension
- gtk-font-name = Sans 10
+**Dica:** Pesquisar pelo nome legado de um aplicativo na barra de pesquisa do Shell retornará com sucesso o aplicativo em questão. Por exemplo, pesquisar por *nautilus* vai retornar *Arquivos*.
 
-```
+| Atual | Legado |
+| [Arquivos](/index.php/Files "Files") | Nautilus |
+| [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
+| Vídeos | Totem |
+| Menu principal | Alacarte |
+| Visualizador de documentos | Evince |
+| Analisador de uso de disco | Baobab |
+| Visualizador de imagens | EoG (Eye of GNOME) |
+| [Chaves e senhas](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
 
-Pode ser necessário reiniciar o DE ou WM para aplicar as configurações.
+## Configuração
 
-**Nota:** Mais opções podem ser encontradas: [GtkSettings documentation](http://developer.gnome.org/gtk3/3.0/GtkSettings.html#GtkSettings.properties)
+O painel Configurações do sistema do GNOME (*gnome-control-center*) e os aplicativos do GNOME usam o sistema de configuração [dconf](https://en.wikipedia.org/wiki/Dconf "wikipedia:Dconf") para armazenar suas configurações.
 
-### Redimensionar a barra de título Massive
+Você pode acessar diretamente o banco de dados dconf usando as ferramentas de linha de comando `gsettings` ou `dconf`. Isso também permite que você alterar as configurações não expostas pelas interfaces de usuário.
 
-```
-# sed -i "/title_vertical_pad/s/value=\"[0-9]\{1,2\}\"/value=\"0\"/g" /usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml
-
-```
-
-`Alt` + `F2` e *reiniciar* seguido de `Enter`
-
-Isso vai alterar o title_vertical_pad para de 14 para 0 colocando mas elegância nas janelas.
-
-Para restaurar as configurações originais:
+Até o GNOME 3.24, as configurações eram aplicadas por um daemon de configurações do GNOME, os quais poderiam estar fora de uma sessão do GNOME usando:
 
 ```
-sudo pacman -S gnome-themes-standard
+$ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ```
 
-### Configurando tema para o ícone
+GNOME 3.24, porém, substituiu o daemon de configurações do GNOME com diversos outros plug-ins `/usr/lib/gnome-settings-daemon/gsd-*` separados. Esses plug-ins são agora controlados via arquivos desktop sob `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Para executar esses plug-ins fora de uma sessão do GNOME, você agora precisará copiar/editar as [entradas desktop](/index.php/Desktop_entries "Desktop entries") apropriadas para `~/.config/autostart`.
 
-**Nota:** Com o gnome-tweak-tool na versão 3.0.3 e superior, você deve adicionar os temas dos ícones dentro de ~/.icons.
+A configuração geralmente é realizada para cada usuário, essa seção não cobre o como criar modelos de configuração para múltiplos usuários.
 
-Útil, o Gnome 3 pode usar os ícones do Gnome 2, assim não fica preso no padrão definido. Para isso, você pode copiar o seu ícone preferido para ~/.icons. Exemplo:
+### Configurações do sistema
+
+As configurações do painel de controle de nota.
+
+#### Cor
+
+O daemon `colord` lê o EDID da tela e extrai o perfil de cor apropriado. A maioria dos perfis de cor são precisos e nenhuma configuração é necessária; porém, para aqueles que não forem precisos, ou para telas antigas, perfis de cores podem ser colocadas em `~/.local/share/icc/` e direcionado para ele.
+
+#### Data & hora
+
+Se o sistema possuir o [daemon de Network Time Protocol](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") configurado, ele será usado pelo GNOME também. A sincronização pode ser definida para controle manual pelo menu, se necessário.
+
+Para mostrar a data na barra superior, execute:
 
 ```
-$ cp -R /home/user/Desktop/my_new_icon_theme ~/.icons
+$ gsettings set org.gnome.desktop.interface clock-show-date true
 
 ```
 
-The new icon theme 'my_new_icon_theme' will now be selectable using the gnome-tweak-tool (under 'Interface'), otherwise it can be set with no need of gnome-tweak-tool by adding the gtk-icon-theme-name entry inside ${XDG_CONFIG_HOME}/gtk-3.0/settings.ini.
+Adicionalmente, para mostrar números da semana no calendário aberto na barra superior, execute:
 
- `${XDG_CONFIG_HOME}/gtk-3.0/settings.ini` 
 ```
-.....
-gtk-icon-theme-name = my_new_icon_theme
-.....
+$ gsettings set org.gnome.desktop.calendar show-weekdate true
+
 ```
+
+#### Aplicativos padrões
+
+Ao instalar o GNOME pela primeira vez, você pode descobrir que os aplicativos errados estão lidando com certos protocolos. Por exemplo, *totem* abre vídeos em vez de o previamente usado [VLC](/index.php/VLC "VLC"). Algumas das associações podem ser definidas pelas configurações do sistema via: *Sistema* > *Detalhes* > *Aplicativos padrões*.
+
+Para outros protocolos e métodos, veja [Default applications](/index.php/Default_applications "Default applications") para configuração.
+
+#### Mouse e touchpad
+
+Para ajudar a reduzir interferência do touchpad, você pode preferir implementar as configurações abaixo via *gnome-control-center*:
+
+*   Desabilitar touchpad enquanto digita
+*   Desabilitar rolagem
+*   Desabilitar toque para clicar
+
+Dependendo de seu dispositivo, outras configurações podem estar disponíveis, mas não expostas via GUI padrão. Por exemplo, um `click-method` diferente de touchpad
+
+ `$ gsettings range org.gnome.desktop.peripherals.touchpad click-method` 
+```
+
+enum
+'default'
+'none'
+'areas'
+'fingers'
+```
+
+a ser definido manualmente:
+
+```
+$ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
+
+```
+
+Ou via *gnome-tweak-tool*.
+
+**Nota:** O driver [synaptics](/index.php/Synaptics "Synaptics") não possui suporte no GNOME. Em vez disso, você deve usar [libinput](/index.php/Libinput "Libinput"). Veja [esse relatório de erro](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
+
+#### Rede
+
+[NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") é a ferramenta nativa do projeto GNOME para controlar as configurações de rede pelo Shell. [Instale](/index.php/Instale "Instale") o pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) e [habilite](/index.php/Habilite "Habilite") a unit do systemd `NetworkManager.service`.
+
+Enquanto qualquer outro [gerenciador de rede](/index.php/Network_manager "Network manager") pode ser usado, NetworkManager fornece a integração completa via configurações de rede shell e um miniaplicativo indicador de status [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (não exigido para o GNOME).
+
+#### Contas on-line
+
+Backends para o aplicativo de mensagem do GNOME [empathy](https://www.archlinux.org/packages/?name=empathy), assim como a seção de Contas On-line do GNOME do painel de Configurações de sistema, são fornecidos em um grupo separado: [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/). Veja [Impossibilidade de adicionar contas no Empathy e Contas on-line GNOME](/index.php/GNOME/Troubleshooting#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts "GNOME/Troubleshooting"). Algumas contas on-line, tal como [ownCloud](/index.php/OwnCloud "OwnCloud"), exige que [gvfs-goa](https://www.archlinux.org/packages/?name=gvfs-goa) esteja instalado par funcionalidade completa nos aplicativos do GNOME tal como [GNOME Arquivos](/index.php/GNOME_Files "GNOME Files") e GNOME Documentos [[2]](https://wiki.gnome.org/ThreePointSeven/Features/Owncloud).
+
+#### Pesquisa
+
+O shell do GNOME possui uma pesquisa que possa ser rapidamente acessada pressionando a tecla `Super` e comece a digitar. O pacote [tracker](https://www.archlinux.org/packages/?name=tracker) é instalado por padrão como parte do grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) e fornece um aplicativo de indexação e banco de dados de metadados. Ele pode ser configurado com o item de menu *Pesquisa e indexação*; monitore o status com *tracker-control*. É iniciado automaticamente pelo *gnome-session* quando o usuário inicia a sessão. Indexação pode ser iniciada manualmente com `tracker-control -s`. As configurações de pesquisa também podem ser configuradas no painel *Configurações de sistema*.
+
+O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql*. Veja sua página de manual com `man tracker-sparql` para mais informações.
+
+### Configurações avançadas
+
+Como anotado acima, muitas opções de configuração tal como alterar o tema do [GTK+](/index.php/GTK%2B "GTK+") ou o tema do [gerenciador de janelas](/index.php/Window_manager "Window manager"), não são expostas no painel de Configurações do sistema (*gnome-control-center*). Aqueles usuários que desejem alterar essas configurações pode desejar usar a Ferramenta de Ajustes do GNOME ([gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), uma ferramenta gráfica conveniente que expõe muitas das configurações.
+
+Configurações do GNOME (que são armazenadas no banco de dados DConf) também podem ser alteradas usando o [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (uma ferramenta gráfica de configuração de DConf) ou a ferramenta de linha de comando [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html). A Ferramenta de Ajustes do GNOME não faz nada no plano de fundo do GUI; note que você não encontrará nela todas as configurações descritas nas seções a seguir.
+
+#### Aparência
+
+##### Temas GTK+ e temas de ícone
+
+Para instalar um novo tema ou conjunto de ícone, adicione `~/.local/share/themes` ou `~/.local/share/icons` relevantes, respectivamente (adicione a `/usr/share/` em vez de `~/.local/share/` para temas estarem disponíveis para todo sistema). Eles e outras configurações de GUI também pode ser definida em `~/.config/gtk-3.0/settings.ini`:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-theme-name = Adwaita
+# próxima opção é aplicável apenas se o tema selecionado oferecer suporte
+gtk-application-prefer-dark-theme = true
+# define o nome e dimensão da fonte
+gtk-font-name = Sans 10
+
+```
+
+Localizações adicionais de tema:
+
+*   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
+*   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
+*   [Temas do GTK+ 3 no AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
+*   [Temas de cursor no AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
+*   [Temas de ícones no AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
+
+Uma vez instalados, eles podem ser selecionados usando a Ferramenta de Ajustes do GNOME ou GSettings - veja abaixo por comandos do GSettings:
+
+Para o tema do GTK+:
+
+```
+$ gsettings set org.gnome.desktop.interface gtk-theme *nome-do-tema*
+
+```
+
+Para o tema de ícones:
+
+```
+$ gsettings set org.gnome.desktop.interface icon-theme *nome-do-tema*
+
+```
+
+###### Tema global escuro
+
+GNOME vai usar o tema leve do Adwaita por padrão, porém uma variante escura deste tema (chamada de *Tema global escuro*) também existe e pode ser selecionada usando a Ferramenta de Ajustes ou editando o arquivo de configurações do GTK+ 3 - veja [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Alguns aplicativos, tal como o Visualizador de imagens (*eog*), usam o tema escuro por padrão. Deve-se observar que o tema global escuro só funciona com aplicativos GTK+ 3; alguns aplicativos GTK+ 3 só podem ter suporte parcial para o tema global escuro. Suporte no Qt e no GTK+ 2 ao tema global escuro podem ser adicionados no futuro.
+
+##### Temas de gerenciador de janelas
+
+O tema do gerenciador de janelas segue o tema do GTK+. O uso de `org.gnome.desktop.wm.preferences theme` está obsoleto e é ignorado.
+
+###### Altura da barra de título
+
+**Nota:** Aplicar essa configuração reduz a barra de título do terminal do GNOME e do Chromium, mas não parece ter efeito sobre o tamanho da barra de título do Nautilus.
+ `~/.config/gtk-3.0/gtk.css` 
+```
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.6em;
+}
+
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
+}
+
+```
+
+Veja [[3]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) para mais informações.
+
+###### Ordem de botão de barra de título
+
+Para definir a ordem para o gerenciador de janelas do GNOME (Mutter, Metacity):
+
+```
+$ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+
+```
+
+**Dica:** O caractere de dois pontos indica em qual lado da barra de título os botões de janela aparecerão.
+
+###### Ocultar barra de título quando maximizado
+
+*   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) ou [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
+
+*   [Instale](/index.php/Instale "Instale") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Isso altera a configuração padrão no gerenciador de janelas, assim como oculta automaticamente a barra de título em aplicativos legados (sem barra de título) quando eles são maximizados ou colados lado a lado na lateral.
+
+*   [Instale](/index.php/Instale "Instale") [maximus](https://aur.archlinux.org/packages/maximus/). Para começar o aplicativo, execute *maximus* de um terminal. Ao executar, o daemon vai maximizar janelas automaticamente. Isso vai retirar decoração de janelas maximizadas e vai redecorá-las quando elas tiverem seu tamanho anterior restaurado. Se você não deseja que todas as janelas iniciem maximizadas, execute `maximus -m`. Note que isso só vai funcionar com janelas decoradas pelo gerenciador de janelas; aplicativos que usam decoração no lado do cliente, tal como o [GNOME Arquivos](/index.php/GNOME_Files "GNOME Files"), não terão decoração retirada ao maximizar.
+
+##### Temas do GNOME Shell
+
+O tema do GNOME Shell em si é configurável. Para usar um tema de Shell, primeiro assegure-se de que você tenha o pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) instalado. Então, habilite a extensão *User Themes*, pela Ferramenta de Ajustes do GNOME ou pela página web [GNOME Shell Extensions](https://extensions.gnome.org). Temas de shell podem então ser carregadas e selecionadas usando a Ferramenta de Ajustes do GNOME.
+
+Há vários temas de GNOME Shell disponíveis [no AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
+
+Temas de shell também pode ser baixados do [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+
+##### Ícones no menu
+
+O esquema padrão do GNOME não exibe qualquer ícone nos menus. Para exibir ícones nos menus, execute o seguinte comando.
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
+
+```
+
+#### Área de trabalho
+
+Various Desktop settings can be applied.
+
+##### Ícones na área de trabalho
+
+See [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
+
+##### Tela de bloqueio e plano de fundo
+
+When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
+
+For the desktop background:
+
+```
+$ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/picture.jpg'
+
+```
+
+For the lock screen background
+
+```
+$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
+
+```
+
+#### Extensões
+
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/) and the appropriate browser extension.
+
+GNOME Shell can be customized with extensions per user or system-wide.
+
+The catalogue of extensions is available at [extensions.gnome.org](https://extensions.gnome.org). By a user they can be installed and activated in the browser by setting the switch in the top left of the screen to **ON** and clicking **Install** on the resulting dialog (if the extension in question is not installed). After installation it is shown in the [extensions.gnome.org/local/](https://extensions.gnome.org/local/) tab, which has to be visited as well to check for available updates. Installed extensions can also be enabled or disabled using [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+
+More information about GNOME shell extensions is available on the [GNOME Shell Extensions about page](https://extensions.gnome.org/about/).
+
+[Installing](/index.php/Installing "Installing") extensions via a package makes them available for all users of the system and automates the update process.
+
+The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session).
+
+Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
+
+Listing currently enabled extensions can be achieved with:
+
+```
+$ gsettings get org.gnome.shell enabled-extensions
+
+```
+
+#### Métodos de entrada
+
+GNOME has integrated support for input methods through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.
+
+#### Fontes
+
+**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
+
+Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweak Tool for the relevant options.
+
+For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+
+#### Inicialização de aplicativos
+
+To start certain applications on login, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`.
+
+The [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) allows managing autostart-entries.
+
+**Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+
+**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+
+#### Energia
+
+When you are using a laptop you might want to alter the following settings:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout *3600*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout *1800*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action *suspend*
+$ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
+
+```
+
+To keep the monitor active when the lid is closed:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
+
+```
+
+GNOME 3.24 deprecated the following settings:
+
+```
+org.gnome.settings-daemon.plugins.power button-hibernate
+org.gnome.settings-daemon.plugins.power button-power
+org.gnome.settings-daemon.plugins.power button-sleep
+org.gnome.settings-daemon.plugins.power button-suspend
+org.gnome.settings-daemon.plugins.power critical-battery-action
+
+```
+
+##### Configurar o comportamento do fechamento da tela de notebook
+
+The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweak tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+
+If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+
+##### Alterar ação de nível crítico da bateria
+
+The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+
+ `/etc/UPower/UPower.conf` 
+```
+PercentageLow=10
+PercentageCritical=3
+PercentageAction=2
+CriticalPowerAction=HybridSleep
+```
+
+#### Ordenar aplicativos em pastas de aplicativo (app)
+
+**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
+
+In the **dconf-editor** navigate to `org.gnome.desktop.app-folders` and set the value of `folder-children` to an array of comma separated folder names:
+
+```
+['Utilities', 'Sundry']
+
+```
+
+Add applications using `gsettings`:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
+
+```
+
+This adds the applications `alacarte.desktop` and `dconf-editor.desktop` to the Sundry folder. This will also create the folder `org.gnome.desktop.app-folders.folders.Sundry`.
+
+To name the folder (if it has no name that appears at the top of the applications):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
+
+```
+
+Applications can also be sorted by their category (specified in their *.desktop* file):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
+
+```
+
+If certain applications matching a category are not wanted in a certain folder, exclusions can be set:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
+
+```
+
+For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
+
+## Veja também
+
+*   [The Official Website of GNOME](https://www.gnome.org/)
+*   [Extensions for GNOME-shell](https://extensions.gnome.org/)
+*   [GNOME Shell Cheat Sheet](https://wiki.gnome.org/Projects/GnomeShell/CheatSheet), commands, keyboard shortcuts and other tips for using GNOME Shell.
+*   Themes, icons, and backgrounds:
+    *   [Personalize GNOME](https://wiki.gnome.org/Personalization)
+    *   [GNOME Look](https://www.gnome-look.org/)
+*   GTK+/GNOME programs:
+    *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
+*   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
+*   GNOME Source/Mirrors:
+    *   [GNOME Git Repository](https://git.gnome.org/browse/)
+    *   [GNOME Github Mirror](https://github.com/GNOME)

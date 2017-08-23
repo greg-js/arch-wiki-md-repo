@@ -28,6 +28,7 @@ There are many UPnP or DLNA-compliant server and you can use Mpd too. Some of th
 And here is a list of DLNA controller applications. These can be used to control a DLNA renderer and server:
 
 *   [Upplay](http://www.lesbonscomptes.com/upplay/) ([upplay](https://aur.archlinux.org/packages/upplay/))
+*   [Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server") - the web interface allows pushing content to DLNA renderers
 
 #### Deprecated / No Longer in Development
 

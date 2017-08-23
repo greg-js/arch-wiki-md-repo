@@ -95,7 +95,7 @@ Xorg dovrebbe funzionare senza problemi senza i driver "closed source", che in g
 
 	*Si veda anche: [Avviare X al login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")*
 
-**Suggerimento:** Il modo più semplice per avviare X è quello di utilizzare un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)"), come [GDM](/index.php/GDM "GDM"), [KDM](/index.php/KDM "KDM") o [SLiM](/index.php/SLiM "SLiM").
+**Suggerimento:** Il modo più semplice per avviare X è quello di utilizzare un [display manager](/index.php/Display_manager_(Italiano) "Display manager (Italiano)"), come [GDM](/index.php/GDM "GDM") o [SLiM](/index.php/SLiM "SLiM").
 
 Se si desidera avviare X senza l'ausilio di un display manager, si installi il pacchetto [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opzionalmente anche i pacchetti [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) e [xterm](https://www.archlinux.org/packages/?name=xterm), che permettono di avere un ambiente di lavoro predefinito, come descritto in seguito.
 
@@ -374,12 +374,6 @@ Le seguenti opzioni devono essere aggiunte alla variabile `"defaultserverargs"` 
 ```
 -deferglyphs 16
 
-```
-
-**Nota:** Se si avvia X con kdm, sembra che lo script startx non venga eseguito. Queste opzioni devono essere aggiunte alla variabile `"ServerArgsLocal"` o `"ServerCmd"` nel file `/usr/share/config/kdm/kdmrc`. Le opzioni di kdm predefinite sono:
-```
-ServerArgsLocal=-nolisten tcp
-ServerCmd=/usr/bin/X
 ```
 
 ### Sessioni di X una dentro l'altra

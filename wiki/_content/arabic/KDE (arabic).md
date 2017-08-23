@@ -110,7 +110,7 @@ The KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/)
 
 #### KDM (مدير عرض كدي)
 
-*طالع صفحة [KDM](/index.php/KDM "KDM") لمعلومات أكثر.*
+*طالع صفحة KDM لمعلومات أكثر.*
 
 [مكّن/ابدأ](/index.php/Systemd_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)#.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85_.D8.A7.D9.84.D9.88.D8.AD.D8.AF.D8.A7.D8.AA "Systemd (العربية)") `kdm.service` لبدء مدير العرض.
 
@@ -458,7 +458,7 @@ exec openbox-kde-session
 
 #### عند استخدام KDM
 
-لاستخدام [أوبن بوكس](/index.php/Openbox "Openbox") كمدير نوافذ افتراضيًّا عند الولوج بـ [KDM](/index.php/KDM "KDM")، اذهب فقط إلى Default Applications -> Window Manager -> Use a different windows manager ثمَّ اختر Openbox من صندوق dropdown.
+لاستخدام [أوبن بوكس](/index.php/Openbox "Openbox") كمدير نوافذ افتراضيًّا عند الولوج بـ KDM، اذهب فقط إلى Default Applications -> Window Manager -> Use a different windows manager ثمَّ اختر Openbox من صندوق dropdown.
 
 #### إعادة تمكين تأثيرات التركيب
 

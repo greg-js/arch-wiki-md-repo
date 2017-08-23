@@ -84,7 +84,7 @@ exec startxfce4
 
 ### 多用户环境
 
-如果你使用了[登录管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") (比如 [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)"), [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)"), [KDM](/index.php/KDM "KDM"))，启动XScreenSaver最好是通过登录管理器提供的接口，从而实现多用户之间的切换。例如，使用的是[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")，则安装 [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver) 和 [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)，然后仅激活`gnome-screensaver` ，这样当用户离开，屏幕锁定之后，其他用户可以通过XScreenSaver锁屏窗口切换登录。
+如果你使用了[登录管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")，启动XScreenSaver最好是通过登录管理器提供的接口，从而实现多用户之间的切换。例如，使用的是[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")，则安装 [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver) 和 [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)，然后仅激活`gnome-screensaver` ，这样当用户离开，屏幕锁定之后，其他用户可以通过XScreenSaver锁屏窗口切换登录。
 
 **注意:** 登录管理器的screensaver可能不具备某些原生XScreenSaver自带功能（例如截屏，使用预定义路径下的照片等）
 

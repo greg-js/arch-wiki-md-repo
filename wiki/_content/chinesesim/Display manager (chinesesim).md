@@ -43,7 +43,7 @@
 	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
 
 *   [GDM](/index.php/GDM "GDM"): [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 显示管理器 。[http://projects.gnome.org/gdm/](http://projects.gnome.org/gdm/)[gdm](https://www.archlinux.org/packages/?name=gdm)
-*   [KDM](/index.php/KDM "KDM"): [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")4 显示管理器 ([kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/))(已经停止开发，请使用SDDM).
+*   KDM: [KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")4 显示管理器 ([kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/))(已经停止开发，请使用[SDDM](/index.php/SDDM "SDDM")).
 *   [LightDM](/index.php/LightDM "LightDM"):跨桌面的显示管理器，可以使用各种前端写的任何工具。[http://www.freedesktop.org/wiki/Software/LightDM](http://www.freedesktop.org/wiki/Software/LightDM)[lightdm](https://www.archlinux.org/packages/?name=lightdm)||[lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/)
 *   [LXDM](/index.php/LXDM "LXDM"): [LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)") 显示管理器 (独立于桌面环境) ([lxdm](https://www.archlinux.org/packages/?name=lxdm))
 *   **MDM** — 使用在Linux Mint中的显示管理器,GDM2的分支项目。
@@ -61,7 +61,7 @@
 
 ## 加载显示管理器
 
-通过启动登录管理器（或称显示管理器），即可进行图形界面登录。目前，Arch 提供了 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)")、[KDM](/index.php/KDM "KDM")、[SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)")、[XDM](/index.php/XDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XDM (简体中文)")、[LXDM](/index.php/LXDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDM (简体中文)")、[LightDM](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LightDM (简体中文)") 和 [sddm](https://www.archlinux.org/packages/?name=sddm) 的 systemd 服务文件。以 [SDDM](/index.php/SDDM "SDDM") 为例，配置开机启动：
+通过启动登录管理器（或称显示管理器），即可进行图形界面登录。目前，Arch 提供了 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)")、[SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)")、[XDM](/index.php/XDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XDM (简体中文)")、[LXDM](/index.php/LXDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDM (简体中文)")、[LightDM](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LightDM (简体中文)") 和 [sddm](https://www.archlinux.org/packages/?name=sddm) 的 systemd 服务文件。以 [SDDM](/index.php/SDDM "SDDM") 为例，配置开机启动：
 
 ```
 # systemctl enable sddm.service

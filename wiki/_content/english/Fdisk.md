@@ -182,7 +182,7 @@ Start either *fdisk* or *gdisk* as instructed in the following sections. Then co
 
 #### fdisk
 
-Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. The latest *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
+Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
 Start *fdisk* against your drive as root. In this example we are using `/dev/sda`:
 

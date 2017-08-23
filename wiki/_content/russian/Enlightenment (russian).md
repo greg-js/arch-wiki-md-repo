@@ -95,7 +95,7 @@ exec enlightenment_start
 
 ```
 
-Более продвинутые экранные менеджеры, такие как [GDM](/index.php/GDM "GDM") и [KDM](/index.php/KDM "KDM") автоматически обнаружат E17 благодаря файлу `/usr/share/xsessions/enlightenment.desktop` из пакета `e-svn`.
+Более продвинутые экранные менеджеры, такие как [GDM](/index.php/GDM "GDM") и KDM автоматически обнаружат E17 благодаря файлу `/usr/share/xsessions/enlightenment.desktop` из пакета `e-svn`.
 
 ## Установка тем
 

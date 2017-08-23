@@ -226,9 +226,9 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 [kdebase-dolphin](https://www.archlinux.org/packages/?name=kdebase-dolphin) | [KCalc](http://www.kde.org/applications/utilities/kcalc/)
 [kdeutils-kcalc](https://www.archlinux.org/packages/?name=kdeutils-kcalc) | [KWrite/Kate](http://kate-editor.org/)
 [kdebase-kwrite](https://www.archlinux.org/packages/?name=kdebase-kwrite) [kdesdk-kate](https://www.archlinux.org/packages/?name=kdesdk-kate) | [Gwenview](http://gwenview.sourceforge.net/)
-[kdegraphics-gwenview](https://www.archlinux.org/packages/?name=kdegraphics-gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
+[gwenview](https://www.archlinux.org/packages/?name=gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | [KDM](/index.php/KDM "KDM")
+[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | [SDDM](/index.php/SDDM "SDDM")
 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) |
 | [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)") | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
