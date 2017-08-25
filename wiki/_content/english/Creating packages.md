@@ -140,7 +140,7 @@ make
 
 ```
 
-**Note:** If your software does not need to build anything, DO NOT use the `build()` function. The `build()` function is not required, but the `package()` function is.
+**Note:** If your software does not need to build anything, do not use the `build()` function. The `build()` function is not required, but the `package()` function is.
 
 #### check()
 
@@ -159,17 +159,7 @@ make DESTDIR="$pkgdir/" install
 
 **Note:** It is sometimes the case where `DESTDIR` is not used in the `Makefile`; you may need to use `prefix` instead. If the package is built with *autoconf* / *automake*, use `DESTDIR`; this is what is [documented](https://www.gnu.org/software/automake/manual/automake.html#Install) in the manuals. If `DESTDIR` does not work, try building with `make prefix="$pkgdir/usr/" install`. If that does not work, you will have to look further into the install commands that are executed by "`make <...> install`".
 
-In some odd cases, the software expects to be run from a single directory. In such cases, it is wise to simply copy these to `$pkgdir/opt`.
-
-More often than not, the installation process of the software will create sub-directories below the `pkg` directory. If it does not, however, *makepkg* will generate a lot of errors and you will need to manually create sub-directories by adding the appropriate `mkdir -p` commands in the `build()` function before the installation procedure is run.
-
-In old packages, there was no `package()` function. So, files were put into the *pkg* directory at the end of the `build()` function. If `package()` is not present, `build()` runs via *fakeroot*. In new packages, `package()` is required and runs via *fakeroot* instead, and `build()` runs without any special privileges.
-
-`makepkg --repackage` runs only the `package()` function, so it creates a `*.pkg.*` file without compiling the package. This may save time e.g. if you just have changed the `depends` variable of the package.
-
-**Note:** The `package()` function is the only required function in a PKGBUILD. If you must only copy files into their respective directories to install a program, do not put it in the `build()` function, put that in the `package()` function.
-
-**Note:** Creating symlinks is a slightly awkward process in the `package()` function. Using the naive approach `ln -s "${pkgdir}/from/foo" "${pkgdir}/to/goo"` will result in a broken symlink to the build directory. The way to create a proper link is to create it pointing to an initially-broken source, `ln -s "/from/foo" "${pkgdir}/to/goo"`. Once the package is installed, the link will point to the right place.
+`makepkg --repackage` runs only the `package()` function, so it creates a package without building. This may save time e.g. if you have changed just the `depends` variable of the package.
 
 ## Testing the PKGBUILD and package
 
@@ -219,7 +209,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 
 ## More detailed guidelines
 
-****Package creation guidelines****
+**<a class="mw-selflink selflink">Package creation guidelines</a>**
 
 * * *
 

@@ -21,9 +21,9 @@ htpasswd -nb user password
 
 ```
 
-Replace user:PSfNpHTkpTx1M with the output of htpasswd in /etc/flumotion/managers/default/planet.xml
+Replace `user:PSfNpHTkpTx1M` with the output of htpasswd in `/etc/flumotion/managers/default/planet.xml`.
 
-Next, place your user and password in the proper places in /etc/flumotion/workers/default.xml
+Next, place your user and password in the proper places in `/etc/flumotion/workers/default.xml`.
 
 ## Starting the manager
 
@@ -32,7 +32,7 @@ flumotion-manager -d 3 /etc/flumotion/managers/default/planet.xml
 
 ```
 
-**Note:** You can specify a different PEM certificate file by passing the --certificate parameter to the manager.
+You can specify a different PEM certificate file by passing the `--certificate` parameter to the manager.
 
 ## Starting the worker
 

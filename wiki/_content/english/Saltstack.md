@@ -17,7 +17,7 @@ From [docs.saltstack.com](http://docs.saltstack.com/):
 
 ## Installation
 
-Salt is available in [official repositories](/index.php/Official_repositories "Official repositories") as [salt](https://www.archlinux.org/packages/?name=salt).
+[Install](/index.php/Install "Install") the [salt](https://www.archlinux.org/packages/?name=salt) package.
 
 ## Components of Salt Stack
 

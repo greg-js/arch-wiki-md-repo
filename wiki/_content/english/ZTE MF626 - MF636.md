@@ -144,8 +144,6 @@ Now just run wvdial to connect
 
 If you see output reporting your PPP local and endpoint IP addresses, then it worked.
 
-==
-
 ## Tips & Tricks
 
 All steps above may be obsolete if the modem stick is supported by [sakis3g](http://www.sakis3g.org/) which is an all in one command line script and automatises all the steps above. The installation steps are as follows:
@@ -162,10 +160,7 @@ chmod +x sakis3g
 
 Thanks to the following webpages that gave me all this information:
 
-```
-   * [http://www.zeroflux.org/blog/post/255](http://www.zeroflux.org/blog/post/255)
-   * [http://www.matt-barrett.com/?p=5](http://www.matt-barrett.com/?p=5)
-   * [http://ubuntuforums.org/showthread.php?t=1005910](http://ubuntuforums.org/showthread.php?t=1005910)
-   * [http://ubuntuforums.org/showthread.php?t=1065934](http://ubuntuforums.org/showthread.php?t=1065934)
-
-```
+*   [http://www.zeroflux.org/blog/post/255](http://www.zeroflux.org/blog/post/255)
+*   [http://www.matt-barrett.com/?p=5](http://www.matt-barrett.com/?p=5)
+*   [http://ubuntuforums.org/showthread.php?t=1005910](http://ubuntuforums.org/showthread.php?t=1005910)
+*   [http://ubuntuforums.org/showthread.php?t=1065934](http://ubuntuforums.org/showthread.php?t=1065934)

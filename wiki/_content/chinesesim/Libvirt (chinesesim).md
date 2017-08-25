@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=454633)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-23，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=482115)可以查看翻译后英文页面的改动。
 
 Libvirt 是一组软件的汇集，提供了管理虚拟机和其它虚拟化功能（如：存储和网络接口等）的便利途径。这些软件包括：一个长期稳定的 C 语言 API、一个守护进程（libvirtd）和一个命令行工具（virsh）。Libvirt 的主要目标是提供一个单一途径以管理多种不同虚拟化方案以及虚拟化主机，包括：[KVM/QEMU](/index.php/QEMU "QEMU")，[Xen](/index.php/Xen "Xen")，[LXC](/index.php/LXC "LXC")，[OpenVZ](http://openvz.org) 或 [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") （[详见这里](http://libvirt.org/drivers.html)）。
 
@@ -36,6 +36,7 @@ Libvirt 的一些主要功能如下：
         *   [4.4.2 用 virt-manager 新建虚拟机](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA)
         *   [4.4.3 管理虚拟机](#.E7.AE.A1.E7.90.86.E8.99.9A.E6.8B.9F.E6.9C.BA)
     *   [4.5 网络](#.E7.BD.91.E7.BB.9C)
+        *   [4.5.1 IPv6](#IPv6)
     *   [4.6 快照](#.E5.BF.AB.E7.85.A7)
         *   [4.6.1 创建快照](#.E5.88.9B.E5.BB.BA.E5.BF.AB.E7.85.A7)
     *   [4.7 其他管理操作](#.E5.85.B6.E4.BB.96.E7.AE.A1.E7.90.86.E6.93.8D.E4.BD.9C)
@@ -69,9 +70,9 @@ Libvirt 的一些主要功能如下：
 
 客户端是用于管理和访问虚拟机的用户界面。
 
-*   *virsh* 用于管理和配置虚拟机（域）的命令行程序；它包含在 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 中。
+*   *virsh* 是用于管理和配置虚拟机（域）的命令行程序；它包含在 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 中。
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) 用于管理虚拟机的图形用户界面。
-*   [virtviewer](https://www.archlinux.org/packages/?name=virtviewer) 轻量级界面，用于显示并与虚拟化客户机操作系统进行交互
+*   [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) 轻量级界面，用于显示并与虚拟化客户机操作系统进行交互
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) 简单的 GNOME 3 程序，访问远程虚拟系统
 *   [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)
 *   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/) 应用程序沙箱工具包
@@ -96,18 +97,18 @@ Libvirt 的一些主要功能如下：
 
 **注意:** 为使 `polkit` 认证工作正常，应该重启一次系统。
 
-*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种 [操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.93.8D.E4.BD.9C "Polkit (简体中文)")策略：
+*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种**策略**（参阅：[Polkit_(简体中文)#操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.93.8D.E4.BD.9C "Polkit (简体中文)")）：
 
 *   `org.libvirt.unix.manage` 面向完全的管理访问（读写模式后台 socket），以及
 *   `org.libvirt.unix.monitor` 面向仅监视察看访问（只读 socket）。
 
 默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
 
-Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅[管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
+Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅：[Polkit_(简体中文)#管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
 
-**注意:** 要求口令的提示由系统中的[认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")给出。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
+**注意:** 要求口令的提示由系统中的认证代理给出（参阅：[Polkit_(简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")）。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
 
-**提示：** 如果要配置无口令认证，参阅[跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)")。
+**提示：** 如果要配置无口令认证，参阅 [Polkit_(简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)")。
 
 从 libvirt 1.2.16 版开始（提案见：[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 组的成员用户默认可以无口令访问读写模式 socket。最简单的判断方法就是看 libvirt 组是否存在并且用户是否该组成员。如果要把 kvm 组访问读写模式后台 socket 的认证策略改为免认证模式，可创建下面的文件：
 
@@ -158,7 +159,7 @@ polkit.addRule(function(action, subject) {
 ```
 listen_tls = 0
 listen_tcp = 1
-auth_tcp=none
+auth_tcp="none"
 
 ```
 
@@ -202,25 +203,25 @@ $ virsh -c qemu:///session
 
 ### virsh
 
-Visrsh 用于管理客户*域*（即 虚拟机），在脚本式虚拟化管理环境中工作良好。Though most virsh commands require root privileges to run due to the communication channels used to talk to the hypervisor, typical management, creation, and running of domains (like that done with VirtualBox) can be done as a regular user.
+Visrsh 用于管理客户*域*（译注：即虚拟机），在脚本式虚拟化管理环境中工作良好。由于需要通过通讯管道与超级管理程序通讯，绝大部分 virsh 命令需要管理员权限。尽管如此，一些典型的管理操作如虚拟机的创建、运行等则如 VirtualBox 那样也可以以普通用户身份执行。
 
-Virsh includes an interactive terminal that can be entered if no commands are passed (options are allowed though): `virsh`. The interactive terminal has support for tab completion.
+Virsh 允许带命令行选项执行。如果不带则进入其内置的交互式终端：`virsh`。交互式终端支持 tab 键命令补全。
 
-From the command line:
-
-```
-$ virsh [option] <command> [argument]...
+从命令行执行：
 
 ```
-
-From the interactive terminal:
-
-```
-virsh # <command> [argument]...
+$ virsh [可选项] <命令> [参数]...
 
 ```
 
-Help is available:
+在交互式终端里运行：
+
+```
+virsh # <命令> [参数]...
+
+```
+
+帮助也是可用的：
 
 ```
 $ virsh help [option*] or [group-keyword*]
@@ -229,11 +230,11 @@ $ virsh help [option*] or [group-keyword*]
 
 ### 存储池
 
-A pool is a location where storage *volumes* can be kept. What libvirt defines as *volumes* others may define as "virtual disks" or "virtual machine images". Pool locations may be a directory, a network filesystem, or partition (this includes a [LVM](/index.php/LVM "LVM")). Pools can be toggled active or inactive and allocated for space.
+存储池是指保存*卷*的位置。Libvirt 中*卷*的定义相当于其他系统中*虚拟磁盘*或*虚拟机镜像*的概念。存储池应该是一个目录、一个网络文件系统或一个分区（此处包括 [LVM](/index.php/LVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LVM (简体中文)")）。存储池可以在活动与不活动之间切换，可以为其分配存储空间。
 
-On the *system*-level, `/var/lib/libvirt/images/` will be activated by default; on a user-*session*, `virt-manager` creates `$HOME/VirtualMachines`.
+在*系统*级别，默认被激活的存储池是 `/var/lib/libvirt/images/`；在用户*会话*级别，`virt-manager` 将存储池创建在 `$HOME/VirtualMachines` 目录。
 
-Print active and inactive storage pools:
+列出活动和不活动的存储池的命令：
 
 ```
 $ virsh pool-list --all
@@ -267,9 +268,9 @@ $ virsh pool-undefine  *poolname*
 
 ```
 
-**Tip:** For LVM storage pools:
+**提示：** 对于 LVM 存储池而言：
 
-*   It is a good practice to dedicate a volume group to the storage pool only.
+*   最佳实践是仅把一个卷组分配给一个存储池。
 *   Choose a LVM volume group that differs from the pool name, otherwise when the storage pool is deleted the LVM group will be too.
 
 #### 用 virt-manager 新建存储池
@@ -437,7 +438,7 @@ $ virsh edit *domain*
 
 [这里](https://jamielinux.com/docs/libvirt-networking-handbook/)是有关 libvirt 网络的一个正宗的概述。
 
-默认情况下，当 `libvirtd` 服务启动后，即创建了一个名为 *default* 的 NAT 网桥与外部网络联通（警告：参阅 [#"default" 网络的 bug](#.22default.22_.E7.BD.91.E7.BB.9C.E7.9A.84_bug)）。对于其他的网络连接需求，可创建下列四种类型的网络以连接到虚拟机：
+默认情况下，当 `libvirtd` 服务启动后，即创建了一个名为 *default* 的 NAT 网桥与外部网络联通（仅 IPv4）。对于其他的网络连接需求，可创建下列四种类型的网络以连接到虚拟机：
 
 *   bridge — 这是一个虚拟设备，它通过一个物理接口直接共享数据。使用场景为：宿主机有 *静态* 网络、虚拟机不需与其它虚拟机连接、虚拟机要占用全部进出流量，并且虚拟机运行于 *系统* 层级。有关如何在现有默认网桥时增加另一个网桥的方法，请参阅 [网桥](/index.php/%E7%BD%91%E6%A1%A5 "网桥")。网桥创建后，需要将它指定到相应客户机的 `.xml` 配置文件中。
 *   network — 这是一个虚拟网络，它可以与其它虚拟机共用。使用场景为：宿主机有 *动态* 网络（例如：NetworkManager）或使用无线网络。
@@ -447,6 +448,19 @@ $ virsh edit *domain*
 绝大多数用户都可以通过 `virsh` 的各种可选项创建具有各种功能的网络，一般来说比通过 GUI 程序（像 `virt-manager` 之类）更容易做到。也可以按 [#用 virt-install 新建虚拟机](#.E7.94.A8_virt-install_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA) 所述实现。
 
 **注意:** libvirt 通过 [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 处理 DHCP 和 DNS 请求，以启动每个虚拟网络的不同实例。也会为特定的路由添加 iptables 规则并启用 `ip_forward` 内核参数。This also means that having dnsmasq running on the host system is not necessary to support libvirt requirements (and could interfere with libvirt dnsmasq instances).
+
+#### IPv6
+
+When adding an IPv6 address through any of the configuration tools, you will likely receive the following error:
+
+```
+Check the host setup: enabling IPv6 forwarding with RA routes without accept_ra set to 2 is likely to cause routes loss. Interfaces to look at: *eth0*
+
+```
+
+Fix this by creating the following file (replace `*eth0*` with the name of your physical interface). Reboot your machine afterwards.
+
+ `/etc/sysctl.d/libvirt-bridge.conf`  `net.ipv6.conf.eth0.accept_ra = 2` 
 
 ### 快照
 

@@ -18,13 +18,15 @@ With kernel >= 4.9.0, seems the newest silead_ts driver has added support for si
 
 ## Installation
 
-Just Install Arch Linux in a normal way, however, for [SSD](/index.php/SSD "SSD") you should better refer [ArchWiki Solid_State_Drives](/index.php/Solid_State_Drives "Solid State Drives").
+Just Install Arch Linux in a normal way, however, for SSD you should better refer to [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives").
 
-## [Calibrating Touch Screen](/index.php/Calibrating_Touchscreen#Your_screen "Calibrating Touchscreen")
+## Calibrating touch screen
 
-Unfortunately there is no solution found for [Wayland](/index.php/Wayland "Wayland") :( (so if you are using GNOME with gdm, disable Wayland in "/etc/gdm/custom.conf" which is enabled by dafault and login with the option "Gnome on Xorg". )
+See [Calibrating Touchscreen#Your screen](/index.php/Calibrating_Touchscreen#Your_screen "Calibrating Touchscreen").
 
-Then create "/etc/X11/xorg.conf.d/99-calibration.conf"
+Unfortunately there is no solution found for [Wayland](/index.php/Wayland "Wayland"). (so if you are using GNOME with gdm, disable Wayland in `/etc/gdm/custom.conf` which is enabled by dafault and login with the option "Gnome on Xorg". )
+
+Then create `/etc/X11/xorg.conf.d/99-calibration.conf`.
 
  `/etc/X11/xorg.conf.d/99-calibration.conf` 
 ```

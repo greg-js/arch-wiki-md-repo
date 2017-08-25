@@ -10,13 +10,13 @@
 
 ## Installation
 
-Download and extract the [nessus](https://aur.archlinux.org/packages/nessus/) tarball available in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [nessus](https://aur.archlinux.org/packages/nessus/) package.
 
 **Note:** As of April 26, 2016, it is no longer required to agree and download the Nessus rpm. A script will run and download the rpm from the Nessus site automatically. If it appears that nothing is happening, please be patient as the script runs wget silently. The installation will proceed after the rpm is downloaded.
 
 ## Post-installation setup
 
-Register your email at [http://www.tenable.com/products/nessus/nessus-plugins/obtain-an-activation-code](http://www.tenable.com/products/nessus/nessus-plugins/obtain-an-activation-code) and wait for your key to be emailed to you.
+Register your email at [[1]](http://www.tenable.com/products/nessus/nessus-plugins/obtain-an-activation-code) and wait for your key to be emailed to you.
 
 ## Usage
 

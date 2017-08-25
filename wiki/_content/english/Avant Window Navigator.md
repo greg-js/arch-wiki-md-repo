@@ -14,8 +14,7 @@
 
 ## Installation
 
-*   **Avant Window Navigator** can be installed with the package [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   To get additional applets to use with AWN you will need to install [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/).
+[Install](/index.php/Install "Install") the [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/) package. The [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/) package provides additional applets.
 
 ### Additional dependencies
 

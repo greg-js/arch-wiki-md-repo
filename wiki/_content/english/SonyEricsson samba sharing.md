@@ -2,30 +2,25 @@ You can have acess to Sony Ericsson phones and phone cards via samba sharing. It
 
 ## Contents
 
-*   [1 Supported Phones](#Supported_Phones)
-*   [2 Setting Up Phone](#Setting_Up_Phone)
-*   [3 Setting Up Computer](#Setting_Up_Computer)
-*   [4 External Links](#External_Links)
+*   [1 Supported phones](#Supported_phones)
+*   [2 Set up phone](#Set_up_phone)
+*   [3 Set up computer](#Set_up_computer)
+*   [4 External links](#External_links)
 
-## Supported Phones
+## Supported phones
 
 *   Se C702
 
-## Setting Up Phone
+## Set up phone
 
 *   Settings > Connectivity > USB > USB network > USB Network type > Via Computer
 *   Settings > Connectivity > Network sharing > set up name and password
 *   Settings > Connectivity > Sreaming settings > Connect using > USB Ethernet (set ip adress eg. 192.168.0.50, mask 255.255.255.0)
 *   Settings > Connectivity > Sreaming settings > Connect using > USB Ethernet > Allow local connection > Yes
 
-## Setting Up Computer
+## Set up computer
 
-*   you must have installed samba:
-
-```
-# pacman -S samba smbclient
-
-```
+*   You must have installed [Samba](/index.php/Samba "Samba").
 
 *   start samba:
 
@@ -58,6 +53,6 @@ smb://192.168.0.50
 
 enter name and password you choosed in phone
 
-## External Links
+## External links
 
 [Czech-language wiki](http://www.abclinuxu.cz/poradna/hardware/show/250631)

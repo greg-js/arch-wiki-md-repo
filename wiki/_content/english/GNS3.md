@@ -31,12 +31,7 @@ When creating your topology (your virtual network), you most likely want to add 
 
 #### Install VirtualBox
 
-To use VirtualBox-machines for your topology you need to install [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) and [virtualbox-sdk](https://www.archlinux.org/packages/?name=virtualbox-sdk). To avoid any problems with GNS3 not finding virtualbox it is recommended to install virtualbox AFTER you install GNS3\. If you already have virtualbox installed, you should be able to just reinstall it.
-
-```
-# pacman -S virtualbox virtualbox-sdk
-
-```
+To use VirtualBox-machines for your topology you need to [install](/index.php/Install "Install") [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) and [virtualbox-sdk](https://www.archlinux.org/packages/?name=virtualbox-sdk). To avoid any problems with GNS3 not finding virtualbox it is recommended to install virtualbox AFTER you install GNS3\. If you already have virtualbox installed, you should be able to just reinstall it.
 
 If you don't install the [virtualbox-sdk](https://www.archlinux.org/packages/?name=virtualbox-sdk) package you will not get the `vboxapi.py` script and GNS3s `vboxwrapper.py` needs this to connect the VMs.
 

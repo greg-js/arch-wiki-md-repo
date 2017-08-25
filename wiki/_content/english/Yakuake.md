@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [yakuake](https://www.archlinux.org/packages/?name=yakuake), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [yakuake](https://www.archlinux.org/packages/?name=yakuake) package.
 
 ## Usage
 
@@ -75,7 +75,7 @@ qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "ssh work"
 You can replace *qdbus* bundled with [Qt](/index.php/Qt "Qt") with more common *dbus-send*. For example, to show/hide Yakuake:
 
 ```
-$ dbus-send  --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.yakuake.toggleWindowState
+$ dbus-send --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.yakuake.toggleWindowState
 
 ```
 

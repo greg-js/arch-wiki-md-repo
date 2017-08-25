@@ -56,13 +56,7 @@ yourtunnelbearpassword
 
 ```
 
-Start & add it to systemd boot process
-
-```
-$ sudo systemctl start openvpn-client@TunnelBearJapan.service
-$ sudo systemctl enable openvpn-client@TunnelBearJapan.service
-
-```
+[Start/enable](/index.php/Start/enable "Start/enable") `openvpn-client@TunnelBearJapan.service`.
 
 ## References
 

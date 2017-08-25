@@ -1,4 +1,4 @@
-**Note:** This is not meant to be installed through [pip](https://aur.archlinux.org/packages/pip/) directly. See [Package not installable by pip #30](https://github.com/flamusdiu/python-pia/issues/30) for more information.
+**Note:** This is not meant to be installed through [pip](https://aur.archlinux.org/packages/pip/) directly. See [[1]](https://github.com/flamusdiu/python-pia/issues/30) for more information.
 
 This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private Internet Access](/index.php/Private_Internet_Access "Private Internet Access").
 

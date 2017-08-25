@@ -10,10 +10,7 @@
 
 ## Install 2014 update
 
-```
-# pacman -S wine winetricks wine_gecko wine-mono lib32-ncurses
-
-```
+[Install](/index.php/Install "Install") [winetricks](https://www.archlinux.org/packages/?name=winetricks), [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko), [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) and [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses).
 
 create a 32 bit wineprefix e.g. directory win32
 

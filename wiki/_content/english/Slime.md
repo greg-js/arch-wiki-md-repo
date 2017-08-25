@@ -23,7 +23,7 @@ The components required are:
 
 *From the [.INSTALL](http://pkgbuild.com/git/aur-mirror.git/plain/slime-cvs/slime.install) file.*
 
-To make use of slime, add the following lines to your [init file](/index.php/Emacs#Customization "Emacs"):
+To make use of slime, add the following lines to your [init file](http://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Init-File):
 
 ```
 (setq inferior-lisp-program "/path/to/lisp-executable")

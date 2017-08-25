@@ -6,7 +6,7 @@ See *man xhost* for the full info.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) package.
 
 ## Usage
 

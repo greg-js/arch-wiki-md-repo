@@ -4,32 +4,25 @@ Plasma 5 doesn't contain default way to specify krunner search only by active wi
 
 #### Full list of windows with search by titles
 
-This approach will require `xdotool` installed.
+This approach will require [xdotool](https://www.archlinux.org/packages/?name=xdotool).
 
-1.  Go to System Settings -> Workspace -> Shortcuts -> Custom Shortcuts
+1.  Go to *System Settings > Workspace > Shortcuts > Custom Shortcuts*.
 2.  Create new Global shortcut -> Command/URL (by right click)
-3.  Tick the checkbox to the right of the name
-4.  In Trigger tab select desired key combination
+3.  Tick the checkbox to the right of the name.
+4.  In Trigger tab select the desired key combination.
 5.  In Action tab type `/usr/local/bin/krunner-search-by-windows.sh`
-6.  Create file `/usr/local/bin/krunner-search-by-windows.sh` with following content:
+6.  Create file `/usr/local/bin/krunner-search-by-windows.sh` with the following content:
+    ```
+    #!/bin/bash
+    qdbus org.kde.krunner /App querySingleRunner windows "" 
+    sleep 0.2
+    xdotool type 'window '
+    xdotool key "shift+BackSpace"
+    ```
 
-```
-   #!/bin/bash
-   qdbus org.kde.krunner /App querySingleRunner windows "" 
-   sleep 0.2
-   xdotool type 'window '
-   xdotool key "shift+BackSpace"
+7.  Make file executable and give run permission to all `chmod a+x /usr/local/bin/krunner-search-by-windows.sh` 
 
-```
-
-1.  Make file executable and give run permission to all
-
-```
-  chmod a+x /usr/local/bin/krunner-search-by-windows.sh
-
-```
-
-Note the space after 'window'.
+Note the space after `window`.
 
 Now you're able to get list of opened windows by specified shortcut and search by this list as you type;
 
@@ -37,7 +30,7 @@ Now you're able to get list of opened windows by specified shortcut and search b
 
 This approach is more limited but far less ugly.
 
-1.  Go to System Settings -> Workspace -> Shortcuts -> Custom Shortcuts
+1.  Go to *System Settings > Workspace > Shortcuts > Custom Shortcuts*.
 2.  Create new Global shortcut -> D-bus Command (by right click)
 3.  Tick the checkbox to the right of the name
 4.  In Trigger tab select desired key combination
@@ -50,5 +43,3 @@ This approach is more limited but far less ugly.
   - Arguments          : windows ""
 
 ```
-
-1.  Done

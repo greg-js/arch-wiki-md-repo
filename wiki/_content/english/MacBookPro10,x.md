@@ -411,4 +411,4 @@ Here are a couple of interesting threads:
 
 ## See also
 
-*   A [Puppet](/index.php/Puppet "Puppet") module for installing and configuring Arch (optionally with KDE) on the MBP Retina 10,2, along with initial install instructions, is available at [https://github.com/jantman/puppet-archlinux-macbookretina](https://github.com/jantman/puppet-archlinux-macbookretina). It is updated quite frequently, and run daily on its author's laptop.
+*   A [Puppet](/index.php/Puppet "Puppet") module for installing and configuring Arch (optionally with KDE) on the MBP Retina 10,2, along with initial install instructions, is available at [[2]](https://github.com/jantman/puppet-archlinux-macbookretina). It is updated quite frequently, and run daily on its author's laptop.

@@ -1,4 +1,4 @@
-[Ubiquity](https://wiki.mozilla.org/Labs/Ubiquity) was an experimental Firefox extension by Mozilla that got discontinued in 2009. The extension is however still available.[[1]](https://addons.mozilla.org/en-US/firefox/addon/mozilla-labs-ubiquity/)
+[Ubiquity](https://wiki.mozilla.org/Labs/Ubiquity) was an experimental Firefox extension by Mozilla that got discontinued in 2009. The extension is however still available.[[2]](https://addons.mozilla.org/en-US/firefox/addon/mozilla-labs-ubiquity/)
 
 ## Contents
 

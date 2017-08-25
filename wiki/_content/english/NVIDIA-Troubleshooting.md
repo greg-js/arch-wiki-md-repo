@@ -146,7 +146,7 @@ $ nvidia-settings --assign CurrentMetaMode="DP-2: nvidia-auto-select +0+0 {Force
 
 Without doing this, the `nvidia-settings` command will disable your secondary display.
 
-The above line is for two 3840x2160 monitors connected to DP-2 and DP-4\. You will need to read the correct `CurrentMetaMode` by exporting `xorg.conf` and append `ForceCompositionPipleline` to each of your displays. Setting `ForceCompositionPipleline` only affects the targeted display.
+The above line is for two 3840x2160 monitors connected to DP-2 and DP-4\. You will need to read the correct `CurrentMetaMode` by exporting `xorg.conf` and append `ForceCompositionPipeline` to each of your displays. Setting `ForceCompositionPipeline` only affects the targeted display.
 
 **Tip:** Multi monitor setups using different model monitors may have slightly different refresh rates. If vsync is enabled by the driver it will sync to only one of these refresh rates which can cause the appearance of screen tearing on incorrectly synced monitors. Select to sync the display device which is the primarily used monitor as others will not sync properly. This is configurable in `~/.nvidia-settings-rc` as `0/XVideoSyncToDisplayID=` or by installing [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) and using the graphical configuration options.
 

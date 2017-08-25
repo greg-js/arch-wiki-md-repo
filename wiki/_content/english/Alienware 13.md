@@ -8,7 +8,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [2 Touchpad](#Touchpad)
 *   [3 Wireless](#Wireless)
 *   [4 Switchable graphics](#Switchable_graphics)
-*   [5 Keyboard Lights](#Keyboard_Lights)
+*   [5 Keyboard lights](#Keyboard_lights)
 *   [6 OLED screen brightness](#OLED_screen_brightness)
 
 ## Getting Linux to boot
@@ -111,7 +111,7 @@ With this we have the graphics card working ondemand
 
 It is to be noted that some alienware laptop (AlienWare 13 R3) shows this [issue](/index.php/Bumblebee#Lockup_issue_.28lspci_hangs.29 "Bumblebee") where lspci / startx / any command hangs and freeze the system when probing inactive discrete nvidia gpu.
 
-## Keyboard Lights
+## Keyboard lights
 
 To get access to the keyboard lights they can be controlling by sending data to the correct usb.
 

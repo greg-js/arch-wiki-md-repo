@@ -20,17 +20,11 @@ Cdist is a configuration management system. The author of cdist is also using Ar
 
 Get the [cdist repository with Nico's modifications](http://git.schottelius.org/?p=cdist-nico;a=summary):
 
-```
 [git://git.schottelius.org/cdist-nico](git://git.schottelius.org/cdist-nico)
-
-```
 
 If you want to start brewing your own configuration tree, it is recommended to get the clean upstream version:
 
-```
 [git://git.schottelius.org/cdist](git://git.schottelius.org/cdist)
-
-```
 
 (you should probably read the documentation on the first in any case)
 

@@ -396,7 +396,7 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
 
-*   **[Webfs](/index.php/Webfs "Webfs")** — Simple and instant http server for mostly static content.
+*   **[Webfs](/index.php?title=Webfs&action=edit&redlink=1 "Webfs (page does not exist)")** — Simple and instant http server for mostly static content.
 
 	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 
@@ -501,10 +501,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop application to sync the files stored in your Cozy with your laptop and/or your desktop.
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop-gui](https://aur.archlinux.org/packages/cozy-desktop-gui/)
-
-*   **[CrashPlan](/index.php/CrashPlan "CrashPlan") Drive** — Online/offsite backup solution for CrashPlan file hosting service.
-
-	[https://www.crashplan.com/](https://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)
 
 *   **[Dropbox](/index.php/Dropbox "Dropbox")** — Proprietary desktop client for Dropbox file hosting service.
 

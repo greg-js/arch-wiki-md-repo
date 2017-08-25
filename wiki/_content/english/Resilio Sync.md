@@ -1,4 +1,4 @@
-[Resilio Sync](https://www.resilio.com/individuals/) (formerly: [BitTorrent Sync (BTSync)](https://www.getsync.com/) is a proprietary file sharing system that relies on the [BitTorrent](https://en.wikipedia.org/wiki/Bittorrent "wikipedia:Bittorrent") protocol.
+[Resilio Sync](https://www.resilio.com/individuals/) (formerly: BitTorrent Sync or BTSync) is a proprietary file sharing system that relies on the [BitTorrent](https://en.wikipedia.org/wiki/Bittorrent "wikipedia:Bittorrent") protocol.
 
 Peer-to-peer (P2P) sync, instead of having a central server which archives every file, uses peer-to-peer connections between the devices themselves therefore there is no limit on data storage and/or transfer speed. The user's data is exclusively stored on the devices with which the user chose to be in sync with, hence it is required to have at least two user devices, or "nodes" to be online. If many devices are connected simultaneously, files are shared between them in a mesh networking topology.
 

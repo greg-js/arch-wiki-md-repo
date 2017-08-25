@@ -23,7 +23,7 @@ Vagrant uses a mostly declarative `Vagrantfile` to define virtualised machines. 
 
 ## Installation
 
-Install package [vagrant](https://www.archlinux.org/packages/?name=vagrant).
+[Install](/index.php/Install "Install") the [vagrant](https://www.archlinux.org/packages/?name=vagrant) package.
 
 ## Plugins
 

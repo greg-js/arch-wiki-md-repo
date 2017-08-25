@@ -68,12 +68,7 @@ If the [*acpi-cpufreq*](/index.php/CPU_frequency_scaling#CPU_frequency_driver "C
 
 The [phc-intel](https://aur.archlinux.org/packages/phc-intel/) package uses DKMS to automatically update the module after a kernel update. This is done at shutdown time to ensure that the kernel and kernel-headers are in sync (which is not necessarily the case during a system upgrade, depending on the order at which updates are installed).
 
-To enable the systemd service, type:
-
-```
-# systemctl enable dkms-phc-intel
-
-```
+[Enable](/index.php/Enable "Enable") `dkms-phc-intel.service`.
 
 ## Configuration
 

@@ -63,6 +63,8 @@ To adjust the logging level, the option `"verbose": *value*` may be added, with 
 
 ### Client
 
+**Note:** When you use the [SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS") proxy directly, you may need to use [privoxy](/index.php/Privoxy "Privoxy") or other auxiliary programs, because the browser will usually leak your DNS request, which reduces your anonymity.
+
 #### From the command line
 
 The client is started with the `ss-local` command. To start it using the configuration file `/etc/shadowsocks/config.json`:

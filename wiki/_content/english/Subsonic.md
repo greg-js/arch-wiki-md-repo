@@ -21,7 +21,7 @@
 
 [Install](/index.php/Install "Install") the [subsonic](https://aur.archlinux.org/packages/subsonic/) package.
 
-As of version 6, the software is not open source anymore, although an open-source fork exists ([libresonic](https://aur.archlinux.org/packages/libresonic/)).
+As of version 6, the software is not open source anymore, although open-source forks exist ([libresonic](https://aur.archlinux.org/packages/libresonic/), [airsonic](https://aur.archlinux.org/packages/airsonic/)).
 
 ## Configuration
 

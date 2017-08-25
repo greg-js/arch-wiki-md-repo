@@ -1,3 +1,5 @@
+**Warning:** Le informazioni di questa pagina sono attualmente obsolete. Per ora, fare riferimento alla [versione inglese](/index.php/Network_Configuration "Network Configuration").
+
 Una semplice guida per la configurazione di rete e risoluzione di problemi annessi.
 
 ## Contents

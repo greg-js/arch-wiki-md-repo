@@ -45,10 +45,7 @@ This way, both user and glenda will be able to write to the plan9 root system an
 
 Recent advances in 9front and possibly 9atom makes those distributions possible to install and boot under virtualbox. Things that may be needed to make them work:
 
-```
- * Use the PIIX3 IDE controller
- * install support for USB v2.
-
-```
+*   Use the PIIX3 IDE controller
+*   install support for USB v2.
 
 Also, for the CWFS of 9front, you need to make a disk image of at least 12 GiB.

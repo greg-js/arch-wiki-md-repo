@@ -26,7 +26,7 @@ The volume of the speakers are just incredible low (even at maximum volume). It 
 
 ## Install
 
-The [installation](/index.php/Installation "Installation") is fairly standard using a pendrive.
+Follow the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Graphics Card
 

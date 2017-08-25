@@ -12,7 +12,7 @@ GNU Parted is a program for creating and manipulating partition tables. GParted 
     *   [4.2 Partition schemes](#Partition_schemes)
         *   [4.2.1 UEFI/GPT examples](#UEFI.2FGPT_examples)
         *   [4.2.2 BIOS/MBR examples](#BIOS.2FMBR_examples)
-    *   [4.3 Resizing Partitions](#Resizing_Partitions)
+    *   [4.3 Resizing partitions](#Resizing_partitions)
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
 *   [5 Warnings](#Warnings)
@@ -235,7 +235,7 @@ In the final example below, separate `/boot` (100MiB), `/` (20GiB), swap (4GiB),
 
 ```
 
-### Resizing Partitions
+### Resizing partitions
 
 **Warning:** Partitions that are being resized must be unmounted and not in use. If it cannot be done (e.g. the partition that mounts to `/`), use a live media/rescue system.
 

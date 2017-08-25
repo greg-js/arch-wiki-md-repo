@@ -1,5 +1,5 @@
 | [Laptop main page](/index.php/Laptop "Laptop") |
-| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - **HP** - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
+| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - <a class="mw-selflink selflink">HP</a> - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
 
 ## Model List
 
@@ -165,6 +165,14 @@ Display dimming: Works
  | --- | Hotkeys: Works
 Webcam: Works
 Card reader: Works | The wifi signal is weak. It is better to use module from lwfinger's rtlwifi_new repo [[2]](https://github.com/lwfinger/rtlwifi_new) with ant_sel=2 option for the module [[rtlwifi_new-dkms](https://aur.archlinux.org/packages/rtlwifi_new-dkms/)] |
+| HP Stream 11-y008nf | 2017.08 | Intel Celeron N3060, Intel HD 400 | Intel sound card: *snd-hda-intel* | No | Intel Wireless 7265 (*iwlwifi*) | Yes (*btusb*) | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: not tested
+Battery: works
+Display dimming: works
+ | No | Hotkeys: works
+Webcam: works
+Card reader: not tested | Can't set mute-key led light. |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

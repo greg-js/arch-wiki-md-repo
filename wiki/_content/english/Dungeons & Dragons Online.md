@@ -18,7 +18,7 @@ This guide will show you how to install and run Dungeons & Dragons Online using 
 
 First, install [Wine](/index.php/Wine "Wine").
 
-If you have already installed DDO on Windows, you can just mount that partition and run `wine Dungeons\ \&\ Dragons\ Online/TurbineLauncher.exe`.
+If you have already installed DDO on Windows, you can just mount that partition and run `wine 'Dungeons & Dragons Online/TurbineLauncher.exe'`.
 
 You will need an account to play. Sign up for an account on the [Dungeons & Dragons Online website](https://www.ddo.com/). After you have gotten an account, download the Windows client from the website and start it:
 
@@ -37,7 +37,7 @@ To use PyLOTRO, [install](/index.php/Install "Install") the [pylotro-git](https:
 
 ### DirectX 9
 
-As of Wine 2.0 (January 2017), only the DirectX 9 mode works. If you have accidentally set it to DirectX 10 or 11, open `~/Documents/Dungeons\ and\ Dragons\ Online/UserPreferences.ini` and set `GraphicsCore=D3D9`.
+As of Wine 2.0 (January 2017), only the DirectX 9 mode works. If you have accidentally set it to DirectX 10 or 11, open `~/Documents/Dungeons and Dragons Online/UserPreferences.ini` and set `GraphicsCore=D3D9`.
 
 (With [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) 2.0, D3D10 and D3D11 *do* work, but with lots of graphics artifact, making the game unplayable.)
 

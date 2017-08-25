@@ -1,8 +1,8 @@
-[k10ctl](http://www.ztex.de/misc/k10ctl.e.html) allows you to overclock and undervolt an AMD K10 processor (e.g. Phenom, Phenom II) by changing its P-States.
+[k10ctl](https://sourceforge.net/projects/k10ctl/) allows you to overclock and undervolt an AMD K10 processor (e.g. Phenom, Phenom II) by changing its P-States.
 
 Lowering the voltage saves energy and leads to less heat and noise.
 
-**Warning:** USE THIS PROGRAM AT YOU OWN RISK. IT MAY DAMAGE YOUR HARDWARE.
+**Warning:** Use this program at your own risk. It may damage your hardware.
 
 ## Contents
 

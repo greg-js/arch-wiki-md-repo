@@ -1,4 +1,4 @@
-The [irssi-otr](http://irssi-otr.tuxfamily.org/) module brings [Off-the-Record Messaging](http://www.cypherpunks.ca/otr/) to your [favorite IRC client](http://irssi.org/).
+The [irssi-otr](http://irssi-otr.tuxfamily.org/) module adds [Off-the-Record Messaging](http://www.cypherpunks.ca/otr/) support to [irssi](/index.php/Irssi "Irssi").
 
 ## Contents
 

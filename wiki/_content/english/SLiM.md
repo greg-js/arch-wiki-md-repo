@@ -1,4 +1,4 @@
-**Warning:** The SliM project has been abandoned (the [project homepage](http://slim.berlios.de/) is down, leaving a [github mirror](https://github.com/data-modul/slim)), and is not fully compatible with [systemd](/index.php/Systemd "Systemd"), including *logind* sessions. Consider using a different [Display manager](/index.php/Display_manager "Display manager") or [Xinitrc](/index.php/Xinitrc "Xinitrc").
+**Warning:** The SliM project has been abandoned (last release was 2013, the [project homepage](http://slim.berlios.de/) is down), and is not fully compatible with [systemd](/index.php/Systemd "Systemd"), including *logind* sessions. Consider using a different [Display manager](/index.php/Display_manager "Display manager") or [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
 [SLiM](http://sourceforge.net/projects/slim.berlios/) is an acronym for **S**imple **L**og**i**n **M**anager. Lightweight and easily configurable, SLiM requires minimal dependencies, and none from the [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") desktop environments. It therefore contributes towards a lightweight system for users that also like to use lightweight desktops such as [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), and [Fluxbox](/index.php/Fluxbox "Fluxbox").
 
@@ -190,7 +190,7 @@ cursor   left_ptr
 
 This will give you a normal arrow instead. This setting is forwarded to `xsetroot -cursor_name`. You can look up the possible cursor names [here](http://cvsweb.xfree86.org/cvsweb/*checkout*/xc/lib/X11/cursorfont.h?rev=HEAD&content-type=text/plain) or in `/usr/share/icons/<your-cursor-theme>/cursors/`.
 
-To change the cursor theme being used at the login screen, see [Cursor themes#Using an index.theme file .28recommended.29](/index.php/Cursor_themes#Using_an_index.theme_file_.28recommended.29 "Cursor themes").
+To change the cursor theme being used at the login screen, see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
 
 ### Match SLiM and Desktop Wallpaper
 

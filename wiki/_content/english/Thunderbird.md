@@ -1,4 +1,4 @@
-Mozilla [Thunderbird](https://www.mozilla.org/thunderbird/) is an open source email, news, and chat client developed by the [Mozilla Foundation](https://www.mozilla.org/).
+[Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) is an open source email, news, and chat client developed by the [Mozilla Foundation](https://www.mozilla.org/).
 
 ## Contents
 

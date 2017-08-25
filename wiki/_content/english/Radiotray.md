@@ -11,9 +11,4 @@ gstdecodebin2.c(3679): gst_decode_bin_expose (): /GstPlayBin2:player/GstURIDecod
 
 ```
 
-Install the missing dependency
-
-```
-pacman -S gstreamer0.10-ugly-plugins
-
-```
+[Install](/index.php/Install "Install") the [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) package.

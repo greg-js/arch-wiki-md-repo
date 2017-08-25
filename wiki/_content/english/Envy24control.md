@@ -223,7 +223,7 @@ This example assumes you have a mono audio source plugged into your card's analo
 #### Ardour settings
 
 *   Create a normal mono track. For this example, it will be called "Audio 1."
-*   Under *Options > Monitoring*, ensure that *Ardour does monitoring* is selected. **VERY IMPORTANT!**
+*   Under *Options > Monitoring*, **ensure** that *Ardour does monitoring* is selected.
 *   Ensure "Auto Input" is enabled; you can find the button in the upper right-hand corner. This will cause the signal for your track to toggle between the recorded track and the input signal, depending on whether or not the track is "armed" for recording.
 *   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in Ardour, using the "Audio 1" meter.
 

@@ -21,7 +21,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-Then [upgrade](/index.php/Upgrade "Upgrade") the system and install the desired multilib packages (e.g. **gcc-multilib**, **gcc-fortran-multilib**, etc.).
+Then [upgrade](/index.php/Upgrade "Upgrade") the system and install the desired multilib packages.
 
 **Tip:** Run `pacman -Sl multilib` to list all packages in the *multilib* repository. 32-bit library package names begin with `lib32-`.
 

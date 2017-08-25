@@ -1,4 +1,4 @@
-[Dasom](http://dasom-im.github.io) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
+[Dasom](https://dasom-im.github.io) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
 
 ## Contents
 

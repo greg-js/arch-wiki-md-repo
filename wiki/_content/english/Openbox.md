@@ -1,6 +1,4 @@
-Openbox is a lightweight, powerful, and highly configurable *stacking* [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
-
-A comprehensive list of features are documented at the [official Openbox website](http://openbox.org/). This article pertains to specifically installing Openbox under Arch Linux.
+[Openbox](http://openbox.org/wiki/Main_Page) is a lightweight, powerful, and highly configurable *stacking* [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
 
 ## Contents
 
@@ -509,7 +507,7 @@ A xdg compliant menu is based on the freedesktop.org standard. The menu is defin
 
 ## Desktop theming
 
-**Tip:** It is **strongly advised** to install the [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) GUI applications to configure visual settings and theming. The latter is particularly important as it is responsible for generating the `~/.gtkrc-2.0` file (see [GTK+#GTK+ 2.x](/index.php/GTK%2B#GTK.2B_2.x "GTK+")).
+**Tip:** It is **strongly advised** to install the [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) GUI applications to configure visual settings and theming. The latter is particularly important as it is responsible for generating the `~/.gtkrc-2.0` file (see [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+")).
 
 It is important to note that a substantial range of both **Openbox-specific** and generalised, **Openbox-compatible** [GTK](/index.php/GTK "GTK") themes are available to change the look of window decorations and the desktop menu. *Generalised* themes are designed to be simultaneously compatible with a range of popular desktop environments and/or window managers, commonly including Openbox. See these [package descriptions](https://aur.archlinux.org/packages/?O=0&C=0&SeB=n&K=gtk-theme-&outdated=&SB=n&SO=a&PP=50&do_Search=Go) for examples.
 

@@ -32,7 +32,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq).
+[Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package.
 
 ## Configuration
 

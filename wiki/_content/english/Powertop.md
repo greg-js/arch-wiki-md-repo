@@ -11,7 +11,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") package [powertop](https://www.archlinux.org/packages/?name=powertop), available in [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [powertop](https://www.archlinux.org/packages/?name=powertop) package.
 
 PowerTOP features are detailed on the release notes for each version on the [PowerTOP blog](https://01.org/powertop/blogs).
 

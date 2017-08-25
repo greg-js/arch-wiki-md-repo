@@ -242,8 +242,9 @@ See [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 The lock button in the Action Buttons panel directly executes `/usr/bin/xflock4`, which ignores the above `/general/LockCommand` setting and the aliasing strategy outlined [in this thread](https://bbs.archlinux.org/viewtopic.php?id=189484).
 
-Using [light-locker](https://www.archlinux.org/packages/?name=light-locker), two easy solutions include:
+Using [light-locker](https://www.archlinux.org/packages/?name=light-locker), three easy solutions include:
 
+*   Change the command executed by the whisker menu's lock button. Right click on the Whisker Menu, click properties, go to the "Commands" tab, and set the "Lock Screen" command to `light-locker-command -l`.
 *   Edit `/usr/bin/xflock4` to execute `light-locker-command -l` directly. This should not be used for multiuser systems and could get overwritten when running upgrading the package.
 *   Replace the lock button provided by Action Buttons with a custom launcher. Remove the lock button item from Action Buttons preferences, then add a launcher item to the panel, setting *Command* to `light-locker-command -l`, optionally changing the icon to `system-lock-screen`.
 

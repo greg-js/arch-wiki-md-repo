@@ -20,7 +20,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xfwm4](https://www.archlinux.org/packages/?name=xfwm4).
+[Install](/index.php/Install "Install") the [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) package.
 
 ### Starting Xfwm
 

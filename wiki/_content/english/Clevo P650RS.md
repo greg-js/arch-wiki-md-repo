@@ -1,4 +1,4 @@
-The P650RS is a device by the taiwanese OEM manufacturer Clevo. It is also sold as Sager NP8153-S and many other names. The hardware is configurable and includes an Intel Skylake Core i7, NVIDIA 1070M graphics, USB-C connectors, a fingerprint reader, mini DisplayPort as well as HDMI connections, and more.
+The P650RS is a device by the Taiwanese OEM manufacturer Clevo. It is also sold as Sager NP8153-S and many other names. The hardware is configurable and includes an Intel Skylake Core i7, NVIDIA 1070M graphics, USB-C connectors, a fingerprint reader, mini DisplayPort as well as HDMI connections, and more.
 
 ## Contents
 

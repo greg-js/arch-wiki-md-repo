@@ -2,21 +2,21 @@
 
 ## Contents
 
-*   [1 Installing FluidSynth](#Installing_FluidSynth)
-*   [2 How to use FluidSynth](#How_to_use_FluidSynth)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
     *   [2.1 Standalone mode](#Standalone_mode)
     *   [2.2 ALSA daemon mode](#ALSA_daemon_mode)
 *   [3 How to convert MIDI to MP3/OGG](#How_to_convert_MIDI_to_MP3.2FOGG)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Conflicting with PulseAudio](#Conflicting_with_PulseAudio)
 
-## Installing FluidSynth
+## Installation
 
 The first step is to [install](/index.php/Install "Install") the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) package.
 
 **However, FluidSynth will not produce any sound yet**. This is because FluidSynth does not include any instrument samples. To produce sound, instrument patches and/or soundfonts need to be installed and fluidsynth configured so it knows where to find them. You can install [SoundFont sample](/index.php/Timidity#SoundFonts "Timidity").
 
-## How to use FluidSynth
+## Usage
 
 There are two ways to use FluidSynth. Either as MIDI player or as daemon adding MIDI support to ALSA.
 
@@ -69,7 +69,7 @@ $ aplaymidi -p128:0 example.midi
 
 Requires [soundfont-fluid](https://www.archlinux.org/packages/?sort=&q=soundfont-fluid&maintainer=&flagged=) or any other soundfont of your choice.
 
-/usr/share/soundfonts is the default location of FluidR3_GM
+`/usr/share/soundfonts` is the default location of FluidR3_GM
 
 Simple command lines to convert midi to mp3:
 

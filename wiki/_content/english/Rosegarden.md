@@ -11,7 +11,7 @@
 
 ## Installation
 
-[rosegarden](https://www.archlinux.org/packages/?name=rosegarden) is available in the [extra] repository. Be sure to install a [MIDI](/index.php/MIDI "MIDI") setup first.
+[Install](/index.php/Install "Install") the [rosegarden](https://www.archlinux.org/packages/?name=rosegarden) package. Be sure to install a [MIDI](/index.php/MIDI "MIDI") setup first.
 
 ## Configuration
 

@@ -1,4 +1,4 @@
-PowerDNS is a DNS server, written in C++ and licensed under the GPL. PowerDNS features a large number of different backends ranging from simple BIND style zonefiles to relational databases and load balancing/failover algorithms.
+[PowerDNS](https://www.powerdns.com/) is a DNS server, written in C++ and licensed under the GPL. PowerDNS features a large number of different backends ranging from simple BIND style zonefiles to relational databases and load balancing/failover algorithms.
 
 ## Contents
 
@@ -20,7 +20,7 @@ Next you can review the configuration file located at `/etc/powerdns/pdns.conf`.
 
 To configure PowerDNS to use specific backend you will need to set then `launch` option in configuration file. Also depending on particular backend you use, you will have to configure it.
 
-For PostgreSQL, MySQL and SQLite you can find database table creation SQL files located at `/usr/share/doc/powerdns`.
+For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [MySQL](/index.php/MySQL "MySQL") and [SQLite](/index.php/SQLite "SQLite") you can find database table creation SQL files located at `/usr/share/doc/powerdns`.
 
 ### PostgreSQL backend
 

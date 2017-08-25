@@ -12,7 +12,7 @@ Stalonetray is a stand-alone freedesktop.org and KDE system tray for the [X Wind
 
 ## Installation
 
-[Install](/index.php/Install "Install") [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) from the [official repositories](/index.php/Official_repositories "Official repositories"). Once installed, copy the `stalonetrayrc` file to your home directory. Note that you should do this as a regular user.
+[Install](/index.php/Install "Install") the [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) package. Once installed, copy the `stalonetrayrc` file to your home directory. Note that you should do this as a regular user.
 
 ```
 $ cp /etc/stalonetrayrc ~/.stalonetrayrc

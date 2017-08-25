@@ -1,4 +1,4 @@
-Private Internet Access is a subscription-based VPN service. See its [How It Works](https://www.privateinternetaccess.com/pages/how-it-works/) page for more information.
+[Private Internet Access](https://www.privateinternetaccess.com/) is a subscription-based VPN service.
 
 ## Contents
 

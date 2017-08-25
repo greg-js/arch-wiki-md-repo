@@ -1,4 +1,4 @@
-**Note:** As **uShare** is unmaintained, users may wish to use [ReadyMedia](/index.php/ReadyMedia "ReadyMedia"), which is actively developed and just as simple to set up, and does not require manually refreshing its database.
+**Note:** As <a class="mw-selflink selflink">uShare</a> is unmaintained, users may wish to use [ReadyMedia](/index.php/ReadyMedia "ReadyMedia"), which is actively developed and just as simple to set up, and does not require manually refreshing its database.
 
 [uShare](http://ushare.geexbox.org/) is a UPnP program developed by GeeXboX that allows you to stream media from your computer to your Xbox 360 or PlayStation 3 along with other media devices. While there are other UPnP programs available, such as [FUPPES](https://github.com/uvoelkel/fuppes), [ps3mediaserver](https://github.com/ps3mediaserver/ps3mediaserver), [MediaTomb](/index.php/MediaTomb "MediaTomb") and [ReadyMedia](/index.php/ReadyMedia "ReadyMedia") (each of which are available in [community] or the [AUR](/index.php/AUR "AUR") if you so choose), uShare is relatively easy to configure and works well *out of the box*.
 
@@ -13,7 +13,7 @@
 
 ## Shortcomings
 
-Note that uShare is a minimalist server; it keeps all media metadata in memory, and therefore needs to re-scan all your files at start. If you have lots of files (e.g. music), this can take a while. Also, as packaged in Arch now, uShare runs as ushare user (see USHARE_USER in /etc/conf.d/ushare). uShare is currently unmaintained.
+Note that uShare is a minimalist server; it keeps all media metadata in memory, and therefore needs to re-scan all your files at start. If you have lots of files (e.g. music), this can take a while. Also, as packaged in Arch now, uShare runs as ushare user (see USHARE_USER in `/etc/conf.d/ushare`). uShare is currently unmaintained.
 
 ## Installation
 
@@ -110,4 +110,4 @@ The tcp/USHARE_PORT and udp/1900 need to be added to your firewall. It is recomm
 
 ### xvid/divx
 
-If you have problems with xvid/divx files, a possible work around would be to change mime types from avi files from /usr/share/mime/packages/freedesktop.xml from "video/x-msvideo" to "video/x-ms-wmv", update database with `update-mime-database /usr/share/mime/` and restart ushare. This procedure was taken from [This blog post](http://salinasv.blogspot.com/2010/06/stream-divxxvid-from-linux-to-your-xbox.html) and [this mail](https://lists.ubuntu.com/archives/ubuntu-us-nm/2007-December/000368.html).
+If you have problems with xvid/divx files, a possible work around would be to change mime types from avi files from `/usr/share/mime/packages/freedesktop.xml` from "video/x-msvideo" to "video/x-ms-wmv", update database with `update-mime-database /usr/share/mime/` and restart ushare. This procedure was taken from [this blog post](http://salinasv.blogspot.com/2010/06/stream-divxxvid-from-linux-to-your-xbox.html) and [this mail](https://lists.ubuntu.com/archives/ubuntu-us-nm/2007-December/000368.html).

@@ -63,10 +63,7 @@ Another guide at [Linux Home Server HOWTO - Domain name system (BIND): Adding yo
 
 ### 1\. Creating a zonefile
 
-```
-# nano /var/named/domain.tld.zone
-
-```
+Create `/var/named/domain.tld.zone`.
 
 ```
 $TTL 7200

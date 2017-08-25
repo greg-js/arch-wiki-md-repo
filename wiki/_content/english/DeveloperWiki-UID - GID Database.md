@@ -124,6 +124,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [toxcore](https://www.archlinux.org/packages/?name=toxcore) | tox-bootstrapd | 199 |
 | [kubernetes](https://aur.archlinux.org/packages/kubernetes/) | kubernetes | 205 |
 | [kibana](https://www.archlinux.org/packages/?name=kibana) | kibana | 206 |
+| [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
  ldap | 439 |
  oprofile | 492 |
  alias | 7790 |
@@ -279,6 +280,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [grsec-common](https://www.archlinux.org/packages/?name=grsec-common) | socket-deny-server | 204 |
 | [kubernetes](https://aur.archlinux.org/packages/kubernetes/) | kubernetes | 205 |
 | [kibana](https://www.archlinux.org/packages/?name=kibana) | kibana | 206 |
+| [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
  ldap | 439 |
  oprofile | 492 |
  qmail | 2107 |

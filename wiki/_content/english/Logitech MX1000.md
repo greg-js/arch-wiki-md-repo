@@ -2,19 +2,19 @@ Disclaimer: this information is current as of Arch Linux 2007.08 (Don't Panic). 
 
 ## Contents
 
-*   [1 Quick Overview](#Quick_Overview)
-*   [2 Get, Install evdev](#Get.2C_Install_evdev)
-*   [3 Modify xorg.conf to Use evdev as Your Mouse Driver](#Modify_xorg.conf_to_Use_evdev_as_Your_Mouse_Driver)
-*   [4 Modify Xorg ServerLayout to Use Your evdev Mouse](#Modify_Xorg_ServerLayout_to_Use_Your_evdev_Mouse)
-*   [5 Map The Mouse Buttons to the Desired Functions](#Map_The_Mouse_Buttons_to_the_Desired_Functions)
-*   [6 A Brief Digression - Moving Functions Amongst Mouse Buttons](#A_Brief_Digression_-_Moving_Functions_Amongst_Mouse_Buttons)
-*   [7 Enable Thumb Button Forward and Back](#Enable_Thumb_Button_Forward_and_Back)
-*   [8 Enable Scroll Wheel Tilt Horizontal Scrolling](#Enable_Scroll_Wheel_Tilt_Horizontal_Scrolling)
-*   [9 Enable Scroll Wheel Front, Back Button Scrolling](#Enable_Scroll_Wheel_Front.2C_Back_Button_Scrolling)
-*   [10 One Button Left](#One_Button_Left)
+*   [1 Quick overview](#Quick_overview)
+*   [2 Install evdev](#Install_evdev)
+*   [3 Modify xorg.conf to use evdev as your mouse driver](#Modify_xorg.conf_to_use_evdev_as_your_mouse_driver)
+*   [4 Modify Xorg ServerLayout to use zour evdev mouse](#Modify_Xorg_ServerLayout_to_use_zour_evdev_mouse)
+*   [5 Map the mouse buttons to the desired functions](#Map_the_mouse_buttons_to_the_desired_functions)
+*   [6 A brief digression - moving functions amongst mouse buttons](#A_brief_digression_-_moving_functions_amongst_mouse_buttons)
+*   [7 Enable thumb button forward and back](#Enable_thumb_button_forward_and_back)
+*   [8 Enable scroll wheel tilt horizontal scrolling](#Enable_scroll_wheel_tilt_horizontal_scrolling)
+*   [9 Enable scroll wheel front, back button scrolling](#Enable_scroll_wheel_front.2C_back_button_scrolling)
+*   [10 One button left](#One_button_left)
 *   [11 Summary](#Summary)
 
-## Quick Overview
+## Quick overview
 
 This Wiki page will show you how to get your MX1000 mouse working as desired. This is defined as:
 
@@ -50,7 +50,7 @@ This will setup your MX1000 so that it works as desired.
 
 That's the overview. Now onto the details of each step.
 
-## Get, Install evdev
+## Install evdev
 
 First, use evdev as the Xorg mouse driver. evdev is a newer driver that allows you to effectively use mice with more than 7 buttons. Get this module, install it, and make sure it is loaded each time you run Linux.
 
@@ -63,7 +63,7 @@ For Arch, this means:
 
 and adding "evdev" to the modules list in /etc/rc.conf.
 
-## Modify xorg.conf to Use evdev as Your Mouse Driver
+## Modify xorg.conf to use evdev as your mouse driver
 
 Next, in /etc/X11/xorg.conf, create an evdev-based input device that specifies your mouse (if your mouse does not work after changing to the evdev driver, it might be because evdev needs the "Device" option, fx 'Option "Device" "/dev/input/event4"', see [http://www.linux-gamers.net/modules/wiwimod/index.php?page=HOWTO+Mouse+Buttons&back=HOWTO+INDEX+Hardware](http://www.linux-gamers.net/modules/wiwimod/index.php?page=HOWTO+Mouse+Buttons&back=HOWTO+INDEX+Hardware) for details):
 
@@ -88,7 +88,7 @@ Note that none of the usual "Buttons" and "ZAxisMapping" statements are not need
 
 In the case of the Logitech MX1000 mouse, which is wireless, it is: "Logitech USB Receiver". Make sure you add the "Name" option to your InputDevice section for the mouse.
 
-## Modify Xorg ServerLayout to Use Your evdev Mouse
+## Modify Xorg ServerLayout to use zour evdev mouse
 
 Now modify the Xorg server layout to use this mouse entry:
 
@@ -102,7 +102,7 @@ EndSection
 
 ```
 
-## Map The Mouse Buttons to the Desired Functions
+## Map the mouse buttons to the desired functions
 
 To get all of the buttons working and doing what you want them to, you need to use xev to map out the buttons: what buttons are recognized via evdev and what function each of the recognized buttons performs. Your job then is to move functions around between buttons, via xmodmap, if some functions are showing up on buttons you do not want them on (and presumably not showing on the buttons you DO want them on) and then add in any remaining functions via xbindkeys. The net result of this work should be a set of buttons on your MX1000 that do what you want.
 
@@ -162,7 +162,7 @@ Note that xev button numbers 6 and 7 are not defined by the above. evdev does no
 
 Looking at the above, we see that we have no desired functions showing up on the wrong buttons, but we do have several desired functions that simply do not show up at all. So, the good news is that we do not need to fiddle with the infamous xmodmap command at all to get our MX1000 doing what we want it to.
 
-## A Brief Digression - Moving Functions Amongst Mouse Buttons
+## A brief digression - moving functions amongst mouse buttons
 
 A brief digression in the interests of completeness. What if we DID have functions showing up on the wrong buttons? How would we re-arrange them so that the desired functions showed up on the desired buttons? This is where xmodmap comes into play. In general, xmodmap maps logical buttons onto physical buttons. In the below:
 
@@ -184,7 +184,7 @@ As you can see, this statement maps logical button 8 into the position of physic
 
 This ends the digression. In case you ever do need to do this with another mouse, you now know how to use xmodmap to move logical functions around between buttons on your mouse.
 
-## Enable Thumb Button Forward and Back
+## Enable thumb button forward and back
 
 Back to the MX1000\. As we discovered from our mapping exercise, there are no functions showing up on the wrong mouse buttons, just several functions that are not showing up at all. We will use xbindkeys to resolve this, by discovering the keystrokes that cause the browser to do the desired function, and then mapping those keystrokes onto the mouse buttons of interest.
 
@@ -220,7 +220,7 @@ and add the following to your .xinitrc, or somewhere where it will be executed e
 
 At this point, the MX1000's Forward and Back buttons should be doing your bidding in at least Firefox. Now what about horizontal scrolling?
 
-## Enable Scroll Wheel Tilt Horizontal Scrolling
+## Enable scroll wheel tilt horizontal scrolling
 
 The MX1000 comes with a tilting scroll wheel. If you tilt it to the left, the intent is that the screen should scroll to the left. Tilt it to the right and the screen should scroll to the right. To get this function working in Firefox, we need to discover the keystrokes that cause Firefox to scroll left and right and then map those onto MX1000 physical buttons 13 and 14 respectively (the scroll wheel's tilt left and right button numbers, as we discovered above when we mapped the mouse in its "raw" state via xev.
 
@@ -238,7 +238,7 @@ m:0x0 + b:14
 
 That is it. Restart X and you will find that left and right scrolling now work just fine!
 
-## Enable Scroll Wheel Front, Back Button Scrolling
+## Enable scroll wheel front, back button scrolling
 
 The MX1000 has a button immediately in front of the scroll wheel and one immediately behind the scroll wheel. These are intended to be a click-able way of scrolling up and down in addition to the "roll the scroll wheel" way. Per the above initial mapping of the mouse, we have seen that evdev reports these as buttons 11 and 12.
 
@@ -254,7 +254,7 @@ m:0x0 + b:12
 
 ```
 
-## One Button Left
+## One button left
 
 There is a button on the MX1000 in the middle between the Forward and Back thumb buttons that I believe Logitech calls the Tasks button. I have never found a use for this particular button, but as we saw above, evdev reports it as button 10:
 

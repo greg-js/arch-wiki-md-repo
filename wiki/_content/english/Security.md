@@ -213,7 +213,7 @@ auth required pam_tally2.so deny=2 unlock_time=600 onerr=succeed file=/var/log/f
 If you do not comment the second line every failed login attempt will be counted twice. That is all there is to it. If you feel adventurous, make three failed login attempts. Then you can see for yourself what happens. To unlock a user manually do:
 
 ```
-# pam_tally2 --user *username* --reset
+# pam_tally2 --file /var/log/faillog --user *username* --reset
 
 ```
 

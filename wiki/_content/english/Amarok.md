@@ -1,4 +1,4 @@
-[Amarok](http://amarok.kde.org/) is a music player and organizer for Linux with an intuitive [Qt](/index.php/Qt "Qt") interface that integrates very well with [KDE](/index.php/KDE "KDE").
+[Amarok](https://amarok.kde.org/) is a music player and organizer for Linux with an intuitive [Qt](/index.php/Qt "Qt") interface that integrates very well with [KDE](/index.php/KDE "KDE").
 
 Amarok 2 has not yet and will not implement all features from [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4")[[1]](http://amarok.kde.org/blog/archives/809-Missing-features-in-Amarok-2.html), so if you are not satisfied with the new version and would rather have the old one back, refer to that article.
 
@@ -10,17 +10,17 @@ Amarok 2 has not yet and will not implement all features from [Amarok 1.4](/inde
     *   [2.2 Scripts and applets](#Scripts_and_applets)
     *   [2.3 Moodbar](#Moodbar)
 *   [3 SHOUTcast](#SHOUTcast)
-*   [4 Ampache/MP3 Streaming](#Ampache.2FMP3_Streaming)
+*   [4 Ampache/MP3 streaming](#Ampache.2FMP3_streaming)
 *   [5 Collection database](#Collection_database)
     *   [5.1 MySQL](#MySQL)
     *   [5.2 PostgreSQL](#PostgreSQL)
-*   [6 Audio CD Playback](#Audio_CD_Playback)
+*   [6 Audio CD playback](#Audio_CD_playback)
 *   [7 Firefly/Daap share](#Firefly.2FDaap_share)
 *   [8 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [amarok](https://www.archlinux.org/packages/?name=amarok) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [amarok](https://www.archlinux.org/packages/?name=amarok) package.
 
 Amarok now depends on Phonon, so you will have to have a working back-end selected for it. See [KDE#Phonon](/index.php/KDE#Phonon "KDE"). You may also need to install a few [codecs](/index.php/Codecs "Codecs") for use by the chosen back-end.
 
@@ -54,7 +54,7 @@ You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok
 
 See also: [How can I use Amarok to stream to my own radio station?](https://userbase.kde.org/Amarok/Manual/Various/FAQ/en#How_can_I_use_Amarok_to_stream_to_my_own_radio_station.3F), which recommends [Internet DJ Console](http://giss.tv/sahabuntu/doc/idjc.html), available in the AUR ([idjc](https://aur.archlinux.org/packages/idjc/)).
 
-## Ampache/MP3 Streaming
+## Ampache/MP3 streaming
 
 If you are streaming MP3s directly or with the Ampache plugin, you are not able to seek in tracks if you are not using the [GStreamer](/index.php/GStreamer "GStreamer") backend. Install the needed packages: [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) [gstreamer0.10](https://aur.archlinux.org/packages/gstreamer0.10/) [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/) [gst-libav](https://www.archlinux.org/packages/?name=gst-libav). Then go inside Amarok to *Settings > Configure Amarok > Playback > Configure Phonon >* *tab* *Backend. Here make GStreamer the prefered backend*
 
@@ -91,7 +91,7 @@ To configure amarok to use MySQL, enter the Configure Amarok screen, choose Data
 
 Not yet supported, [see more](http://amarok.kde.org/blog/archives/812-MySQL-in-Amarok-2-The-Reality.html)
 
-## Audio CD Playback
+## Audio CD playback
 
 If you are not using KDE as your Desktop Environment, Amarok may not have the utilities it needs to play back Audio CDs. [Install](/index.php/Install "Install") [kdemultimedia-audiocd-kio](https://aur.archlinux.org/packages/kdemultimedia-audiocd-kio/) from the [official repositories](/index.php/Official_repositories "Official repositories") to obtain this functionality.
 

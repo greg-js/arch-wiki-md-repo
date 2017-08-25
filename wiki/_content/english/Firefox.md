@@ -53,7 +53,7 @@ Other alternatives include:
 
 *   **Firefox Developer Edition** — for developers
 
-	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/)
+	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/) or [firefox-dev](https://aur.archlinux.org/packages/firefox-dev/)
 
 *   **Firefox Nightly** — nightly builds for testing ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
 

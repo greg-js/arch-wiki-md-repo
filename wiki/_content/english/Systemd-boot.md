@@ -19,8 +19,9 @@ It is simple to configure but it can only start EFI executables such as the Linu
         *   [2.2.4 btrfs subvolume root installations](#btrfs_subvolume_root_installations)
         *   [2.2.5 ZFS root installations](#ZFS_root_installations)
         *   [2.2.6 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
-    *   [2.3 Support hibernation](#Support_hibernation)
-    *   [2.4 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
+    *   [2.3 Preparing kernels for EFI\Linux](#Preparing_kernels_for_EFI.5CLinux)
+    *   [2.4 Support hibernation](#Support_hibernation)
+    *   [2.5 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
@@ -127,7 +128,8 @@ editor   0
 
 **Note:**
 
-*   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
+*   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time, as well as specially prepared kernel files found in `\EFI\Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be automatically generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
+
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 *   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable.
 *   You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.
@@ -254,6 +256,26 @@ efi    /EFI/shellx64_v1.efi
 title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi
 ```
+
+### Preparing kernels for EFI\Linux
+
+*EFI\Linux* is searched for specially prepared kernel files, which bundle the kernel, the initrd, the kernel command line and /etc/os-release into one file. This file can be easily signed for secure boot.
+
+Create the bundle file like this:
+
+ `Kernel packaging command:` 
+```
+objcopy \
+    --add-section .osrel="/usr/lib/os-release" --change-section-vma .osrel=0x20000 \
+    --add-section .cmdline="kernel command line" --change-section-vma .cmdline=0x30000 \
+    --add-section .linux="vmlinuz-file" --change-section-vma .linux=0x40000 \
+    --add-section .initrd="initrd-file" --change-section-vma .initrd=0x3000000 \
+    "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" "linux.efi"
+```
+
+Optionally sign *linux.efi* now (e.g. using *sbsigntools* from AUR).
+
+Copying *linux.efi* into `esp*\EFI\Linux*`.
 
 ### Support hibernation
 

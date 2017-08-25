@@ -36,11 +36,13 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Sound problems](#Sound_problems)
     *   [7.2 Mouse problems](#Mouse_problems)
-        *   [7.2.1 Missing buttons](#Missing_buttons)
     *   [7.3 Boot problems](#Boot_problems)
         *   [7.3.1 Slow boot time](#Slow_boot_time)
         *   [7.3.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
     *   [7.4 Window resolution autofit problems](#Window_resolution_autofit_problems)
+        *   [7.4.1 Potential solution 1](#Potential_solution_1)
+        *   [7.4.2 Potential solution 2](#Potential_solution_2)
+        *   [7.4.3 Potential solution 3](#Potential_solution_3)
     *   [7.5 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
     *   [7.6 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
     *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
@@ -231,7 +233,7 @@ to give permission for loading drivers.
 
 Share a folder by selecting *Edit virtual machine settings > Options > Shared Folders > Always enabled*, and creating a new share.
 
-You should be able to see the shared folders by running vmware-hgfsclient command:
+You should be able to see the shared folders with:
 
 ```
 $ vmware-hgfsclient
@@ -318,7 +320,7 @@ Make sure the `vmhgfs` driver is loaded:
 
 ```
 
-You should be able to see the shared folders by running vmware-hgfsclient command:
+You should be able to see the shared folders with:
 
 ```
 $ vmware-hgfsclient
@@ -470,9 +472,9 @@ If you do not have these settings in your virtual machine configuration you can 
 
  ` cat /etc/mkinitcpio.conf` 
 ```
-`...`
-MODULES="`...` vmw_pvscsi"
-`...`
+...
+MODULES="... vmw_pvscsi"
+...
 ```
 
 Rebuild your ramdisk:
@@ -495,7 +497,7 @@ VMware offers [multiple network adapters](http://kb.vmware.com/kb/1001805) for t
 
 For [much more performance and additional features](http://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/) (such as multiqueue support), the VMware native `vmxnet3` network adapter can be used.
 
-Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected, check by running `$ lsmod | grep vmxnet3` to see if it is loaded), shutdown and change the network adapter type in your *.vmx* file to the following:
+Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected, check by running `lsmod | grep vmxnet3` to see if it is loaded), shutdown and change the network adapter type in your *.vmx* file to the following:
 
 ```
 ethernet0.virtualDev = "vmxnet3"
@@ -526,7 +528,7 @@ sched.mem.pshare.enable = "FALSE"
 ```
 
 *   **mainMem.useNamedFile**: This will only work for Windows hosts and you can use this parameter if you experience high disk activity on shutting down the virtual machine. This will prevent VMware from creating a *.vmem* file. Use *mainmem.backing = "swap"* on Linux hosts instead.
-*   **MemTrimRate**: This setting prevents that memory whichc was released by the guest is released on the host also.
+*   **MemTrimRate**: This setting prevents that memory which was released by the guest is released on the host also.
 *   **prefvmx.useRecommendedLockedMemSize**: Unfortunately there does not seem to exist a proper explanation for this setting. This setting seems to prevent the host system from swapping parts of the guest memory.
 *   **MemAllowAutoScaleDown**: Prevents that VMware adjusts the memory size of the virtual machine in case it cannot allocate enough memory.
 *   **sched.mem.pshare.enable**: If several virtual machines are running simultaneously VMware will try to locate identical pages and share these between the virtual machines. This can be very I/O intensive.
@@ -559,6 +561,7 @@ If unacceptably loud and annoying sounds occur, then it may be related to the [P
 The following problems may occur with mouse:
 
 *   The automatic grab/ungrab feature will not automatically grab input when cursor enters the window
+*   Missing buttons
 *   Input lag
 *   Clicks are not registered in some applications
 *   Mouse cursor jumps when entering/leaving virtual machine
@@ -572,10 +575,9 @@ You can try to add these settings to your `.vmx` configuration file ([Mouse posi
 ```
 mouse.vusb.enable = "TRUE"
 mouse.vusb.useBasicMouse = "FALSE"
-usb.generic.allowHID = "TRUE"
-
-VMware attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
 ```
+
+VMware also attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
 
 Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `60-libinput.conf` may be needed:
 
@@ -588,16 +590,6 @@ Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg5393
 #        Driver "libinput"
 #EndSection
 
-```
-
-#### Missing buttons
-
-If not by default, all mouse buttons should be working after adding `[mouse.vusb.useBasicMouse = "FALSE"](https://communities.vmware.com/thread/457313?start=15&tstart=0)` to the `.vmx`.
-
- `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx` 
-```
-mouse.vusb.enable = "TRUE"
-mouse.vusb.useBasicMouse = "FALSE"
 ```
 
 ### Boot problems
@@ -627,17 +619,17 @@ TimeoutStopSec=1
 
 Autofit means that when you resize the VMWare window in the host, ArchLinux should automatically follow and readjust its resolution to fit the new size of the host window.
 
-**Potential solution 1**
+#### Potential solution 1
 
 Make sure you have enabled autofit.
 
 For VMware Worksation you can find the setting in: *View -> Autosize -> Autofit Guest*
 
-**Potential solution 2**
+#### Potential solution 2
 
 For some reason autofit requires packages **gtkmm** and **gtk2**, so you should check that you have them installed. If you don't have X windows installed or you are using a non GTK-based desktop environment such as KDE, you might have to install them manually.
 
-**Potential solution 3**
+#### Potential solution 3
 
 You may need to add the modules to mkinitcpio.conf.
 

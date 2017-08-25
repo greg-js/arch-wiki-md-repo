@@ -1,4 +1,4 @@
-Liri is a desktop environment with modern design and features. Liri is the merge between [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) and the [Liri Project](https://github.com/liri-project).
+[Liri](https://liri.io/) is a desktop environment with modern design and features. Liri is the merge between [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) and the [Liri Project](https://github.com/liri-project).
 
 **Warning:** Liri is currently in alpha stage and there might be issues.
 

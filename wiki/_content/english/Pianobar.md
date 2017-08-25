@@ -22,7 +22,7 @@
 
 ## Installation
 
-Pianobar can be installed from the [Official repositories](/index.php/Official_repositories "Official repositories") with the package [pianobar](https://www.archlinux.org/packages/?name=pianobar).
+[Install](/index.php/Install "Install") the [pianobar](https://www.archlinux.org/packages/?name=pianobar) package.
 
 ## Configuration
 

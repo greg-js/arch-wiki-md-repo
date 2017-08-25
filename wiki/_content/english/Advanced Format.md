@@ -2,7 +2,7 @@ The [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format "wikipedia:A
 
 ## How to determine if HDD employ a 4k sector
 
-The physical and logical sector size of hard disk /dev/sd*X* can be determined by reading the following sysfs entries:
+The physical and logical sector size of hard disk `/dev/sd*X*` can be determined by reading the following sysfs entries:
 
 ```
 $ cat /sys/class/block/sd*X*/queue/physical_block_size
@@ -16,20 +16,6 @@ Tools which will report the physical sector of a drive (provided the drive will 
 *   hdparm (since 9.12 ; <tt>hdparm -I</tt>, in configuration section)
 
 Note that both works even for USB-attached discs (if the USB bridge supports SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
-
-## Aligning Partitions
-
-**Note:** This should no longer require manual intervention. Any tools using recent libblkid versions are capable of handling Advanced Format automatically.
-
-Versions with this support include:
-
-*   fdisk, since util-linux >= 2.15\. You should start with ‘-c -u’ to disable DOS compatibility and use sectors instead of cylinders.
-*   parted, since parted >= 2.1.
-*   mdadm, since util-linux >= 2.15
-*   lvm2, since util-linux >= 2.15
-*   mkfs.{ext,xfs,gfs2,ocfs2} all support libblkid directly.
-
-Refer to [this page](https://www.tolaris.com/2011/07/21/libblkid-or-why-you-dont-need-to-worry-about-4k-disk-format/) for further information.
 
 ## See also
 

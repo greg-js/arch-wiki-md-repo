@@ -30,7 +30,7 @@ The number of cache entries that rescached holds in memory depends on the value 
 
 ## Installation
 
-Install the [rescached-git](https://aur.archlinux.org/packages/rescached-git/) package.
+[Install](/index.php/Install "Install") the [rescached-git](https://aur.archlinux.org/packages/rescached-git/) package.
 
 ## Post-installation configuration
 
@@ -62,4 +62,4 @@ Finally, [start](/index.php/Start "Start") and possibly [enable](/index.php/Enab
 *   For more information and configuration see the manpage of rescached
 *   For non-technical explanation you can read it [here](http://kilabit.info/journal/2009/12/04__rescached_is_here/index.html)
 *   For user documentation you can read it [here](http://kilabit.info/projects/rescached/doc/user/index.html)
-*   Report bug and feature requests are preferred on the [github](https://github.com/shuLhan/rescached/issues)
+*   Report bug and feature requests are preferred on the [GitHub](https://github.com/shuLhan/rescached/issues)

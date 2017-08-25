@@ -55,7 +55,7 @@ The wireless chip works out of the box, both with network and network-manager. H
 
 Simply install [bluez](/index.php/Bluez "Bluez"), and whatever front-end (or lack thereof) you like. Enable on startup with systemd by running
 
- `# systemctl enable bluetooth.service` 
+[Enable](/index.php/Enable "Enable") `bluetooth.service`.
 
 ## Buttons
 

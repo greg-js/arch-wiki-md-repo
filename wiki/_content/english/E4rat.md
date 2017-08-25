@@ -1,7 +1,5 @@
 [e4rat](http://e4rat.sourceforge.net/) stands for e4 'reduced access time' (ext4 file system only) and is a project by Andreas Rid and Gundolf Kiefer. The [e4rat range of tools](http://e4rat.sourceforge.net/) are comprised of e4rat-collect, e4rat-realloc and e4rat-preload.
 
-Current version is 0.2.3
-
 ## Contents
 
 *   [1 Process](#Process)

@@ -52,12 +52,7 @@ The pn533 driver together with nfc driver is used by libnfc. This instruction is
 
 ## Install Touchatag
 
-First install this:
-
-```
-# pacman -S pcsclite ccid
-
-```
+First [install](/index.php/Install "Install") [ccid](https://www.archlinux.org/packages/?name=ccid).
 
 ## Test Touchatag
 

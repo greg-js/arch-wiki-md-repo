@@ -11,7 +11,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [getmail](https://www.archlinux.org/packages/?name=getmail) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [getmail](https://www.archlinux.org/packages/?name=getmail) package.
 
 ## Configuration
 

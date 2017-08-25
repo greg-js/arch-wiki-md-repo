@@ -14,7 +14,7 @@ The full upstream documentation is available [here](https://aif.square-r00t.net/
 
 AIF(-NG) (Arch Install Framework, "Next-Generation") is a means to automatically install Arch Linux. Think of it as something akin to [Kickstart](https://en.wikipedia.org/wiki/Kickstart_(Linux) "wikipedia:Kickstart (Linux)").
 
-It is written in python 3 and uses an XML configuration file that is remotely fetched and supports "hook scripts" for modular functionality. It can be useful as a tool to quickly turn up new Arch Linux installs.
+It is written in Python 3 and uses an XML configuration file that is remotely fetched and supports "hook scripts" for modular functionality. It can be useful as a tool to quickly turn up new Arch Linux installs.
 
 AIF-NG is not an official Arch Linux project (though this will hopefully change when the project reaches a level of maturity ready for inclusion). Support information is available in the [original documentation](https://aif.square-r00t.net/#further_information) ([bugs](https://aif.square-r00t.net/#bugs) | [feature requests](https://aif.square-r00t.net/#feature_requests) | [patches](https://aif.square-r00t.net/#patches)). It is highly unadvised that you go to the Arch Linux forums for support for this while its status is unofficial, and instead contact the author directly. This is to ensure possible bugs are dealt with.
 
@@ -44,7 +44,7 @@ aif &
 
 ```
 
-AIF-NG will then run silently in the background, logging to /root/aif.log.<TIMESTAMP>.
+AIF-NG will then run silently in the background, logging to `/root/aif.log.<TIMESTAMP>`.
 
 ## Configuration
 

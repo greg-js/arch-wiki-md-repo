@@ -77,37 +77,7 @@ Choose an appropriate name for the key. If there is for example a text label on 
 
 *   Keycode
 
-Use one of the keycodes listed below. It actually doesn’t matter which keycode you choose. However it is recommended that you choose a keycode that matches the best the function of the key. A keycode may only be used once in a keyboard ﬁle.
-
-```
-AGAIN               EJECTCLOSECD        MAIL              REFRESH
-ALTERASE            EMAIL               MEDIA             REWIND
-BACK                EXIT                MENU              RIGHTMETA
-BASSBOOST           FASTFORWARD         MOVE              SCROLLDOWN
-BOOKMARKS           FILE                MSDOS             SCROLLUP
-BRIGHTNESSDOWN      FINANCE             MUTE              SEARCH
-BRIGHTNESSUP        FIND                NEXTSONG          SENDFILE
-CALC                FORWARD             OPEN              SETUP
-CAMERA              FRONT               PASTE             SHOP
-CANCEL              HANGUEL             PAUSE             SLEEP
-CHAT                HANJA               PAUSECD           SOUND
-CLOSE               HELP                PHONE             SPORT
-CLOSECD             HOMEPAGE            PLAY              STOP
-COFFEE              HP                  PLAYCD            STOPCD
-COMPOSE             ISO                 PLAYPAUSE         SUSPEND
-COMPUTER            KBDILLUMDOWN        POWER             SWITCHVIDEOMODE
-CONFIG              KBDILLUMTOGGLE      PREVIOUSSONG      UNDO
-CONNECT             KBDILLUMUP          PRINT             VOLUMEDOWN
-COPY                KPCOMMA             PROG1             VOLUMEUP
-CUT                 KPEQUAL             PROG2             WAKEUP
-CYCLEWINDOWS        KPLEFTPAREN         PROG3             WWW
-DELETEFILE          KPPLUSMINUS         PROG4             XFER
-DIRECTION           KPRIGHTPAREN        PROPS             YEN
-EDIT                LEFTMETA            QUESTION
-EJECTCD             MACRO               RECORD
-```
-
-You can find the correct keycodes from the [official keycodes list](http://keytouch.sourceforge.net/keytouch_editor/node7.html).
+Use one of the keycodes listed in the [official keycodes list](http://keytouch.sourceforge.net/keytouch_editor/node7.html). It actually doesn’t matter which keycode you choose. However it is recommended that you choose a keycode that matches the best the function of the key. A keycode may only be used once in a keyboard ﬁle.
 
 *   Default action
 

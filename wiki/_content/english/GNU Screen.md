@@ -27,7 +27,7 @@
 
 ## Installation
 
-GNU Screen can be [installed](/index.php/Pacman "Pacman") using the [screen](https://www.archlinux.org/packages/?name=screen) package.
+[Install](/index.php/Install "Install") the [screen](https://www.archlinux.org/packages/?name=screen) package.
 
 ## Usage
 

@@ -6,6 +6,7 @@
     *   [1.1 Support](#Support)
     *   [1.2 Fingerprint Reader](#Fingerprint_Reader)
     *   [1.3 Bug: Fans blowing at max speed after resuming](#Bug:_Fans_blowing_at_max_speed_after_resuming)
+    *   [1.4 Bug: Trackpoint/Trackpad not working](#Bug:_Trackpoint.2FTrackpad_not_working)
 *   [2 Configuration](#Configuration)
     *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [2.2 Display](#Display)
@@ -59,6 +60,24 @@ There is a bug in the current kernel, causing the fans to often go on full throt
 Set of patches available for older version: [https://bugzilla.kernel.org/show_bug.cgi?id=196129#c26](https://bugzilla.kernel.org/show_bug.cgi?id=196129#c26)
 
 If you have an older version of the kernel, you need to manually patch the kernel or work around the issue by repeatedly suspend (<kbd>Fn+4</kbd>) and resume (<kbd>Fn</kbd>) until it resumes without the fans starting with a short burst of activity. For me, the issue arises in about 2/3 resumes without the patches and never with kernel 4.12.0-2 with patches.
+
+### Bug: Trackpoint/Trackpad not working
+
+There is a bug in Synaptics drivers that prevent both Trackpoint and Trackpad to function properly if Trackpoint is enabled at boot.
+
+You are affected by the bug if you see those with dmesg
+
+```
+kernel: psmouse serio1: TouchPad at isa0060/serio1/input0 lost sync at byte 1
+kernel: psmouse serio1: TouchPad at isa0060/serio1/input0 lost sync at byte 1
+kernel: psmouse serio1: TouchPad at isa0060/serio1/input0 lost sync at byte 1
+kernel: psmouse serio1: TouchPad at isa0060/serio1/input0 lost sync at byte 1
+kernel: psmouse serio1: TouchPad at isa0060/serio1/input0 lost sync at byte 1
+kernel: psmouse serio1: issuing reconnect request
+
+```
+
+Installing [linux-tp-x1-carbon-5th](https://aur.archlinux.org/packages/linux-tp-x1-carbon-5th/) fixes this, see [https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4](https://gist.github.com/ursm/6d1007f44a1d6beeb670b3c3a6a78ea4) .
 
 ## Configuration
 

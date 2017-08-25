@@ -492,7 +492,7 @@ if you want to check your mouse buttons number use xev. Don't forget to type cap
 
 This will work great for X servers, but it seems not to work in some specific situations, like in Enemy Territory game. So I will describe a bit more advanced configuration, which work with my logitech G5 buttons - I can use all my 5 additional buttons along with 3 standard and a scroll, which gives overall 10 events to use in Enemy Territory. So here we go:
 
-**Note:** **Update:** evrouter can now simulate X11 key events so it is now possible to skip [kbde](/index.php/Get_All_Mouse_Buttons_Working#kbde "Get All Mouse Buttons Working") and only use [evrouter](/index.php/Get_All_Mouse_Buttons_Working#evrouter "Get All Mouse Buttons Working") to bind keyboard buttons to your mouse.
+**Note:** **Update:** evrouter can now simulate X11 key events so it is now possible to skip to [#kbde](#kbde) and only use [evrouter](/index.php/Get_All_Mouse_Buttons_Working#evrouter "Get All Mouse Buttons Working") to bind keyboard buttons to your mouse.
 
 #### kbde
 

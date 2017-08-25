@@ -18,7 +18,7 @@
 
 ## Installation
 
-Install the [tint2](https://www.archlinux.org/packages/?name=tint2) package.
+[Install](/index.php/Install "Install") the [tint2](https://www.archlinux.org/packages/?name=tint2) package.
 
 ## Configuration
 
@@ -185,7 +185,7 @@ To force tint2 to stay on top of the application(overlay), you need to set the p
 
 ### Third Party Extensions
 
-Its also possible to extend tint2 with other applications. To add third party extensions, check the "Pages" section in the Official Wiki link below.
+It is also possible to extend tint2 with other applications. To add third party extensions, check the "Pages" section in the Official Wiki link below.
 
 ## See Also
 

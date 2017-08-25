@@ -13,9 +13,9 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Hal](#Hal)
     *   [4.2 Route](#Route)
-*   [5 Links](#Links)
+*   [5 See also](#See_also)
 
-# Introduction
+## Introduction
 
 Marketed by various telecommunications companies in several countries, the [E220](https://en.wikipedia.org/wiki/Huawei_E220 "wikipedia:Huawei E220") is a 3.5G HSDPA USB modem used mainly for wireless Internet access via mobile telephony networks. Technically it is a modem, USB and (due to the CDFS format) CD-ROM device. With a kernel version older than 2.6.20, getting Linux to recognize the device as a modem and accessing its functions requires a workaround.
 
@@ -23,11 +23,11 @@ Marketed by various telecommunications companies in several countries, the [E220
 
 However, as support for it was added in 2.6.20 via modules *usb-storage* and *usbserial*, getting it to work is as simple as plugging it in and dialling up (the above statement is of no concern to us as we can load and unload modules at will, it was probably meant for pre-packaged GNU and Linux distributions). In fact, using the modem under Linux proves to be more reliable as there are no uncalled-for disconnections. This is probably due to the fact that we are communicating directly with the modem, whereas in Windows or Mac OS X drivers are installed on first run (that is what the storage portion is for) and connection is achieved through a thick software layer every time, leaving room for possible interferences and conflicts.
 
-# Plugging In
+## Plugging In
 
-## Quick Start
+### Quick Start
 
-### Easy Install using Network Manager
+#### Easy Install using Network Manager
 
 If you are using network-manager then this modem should be plug 'n play. I tested using Huawei E270, but since lsusb said that my modem is E220/E270, I assume it is the same. (Note: You can follow these instructions too if lsusb detects your Huawei E180 as E220.)
 
@@ -39,7 +39,7 @@ Activate the connection by choosing it on the Network Manager applet. If it is n
 
 For *Vodafone* brands of this device, you can use [vodafone-mccd](https://aur.archlinux.org/packages.php?ID=32986) which is the [Vodafone Mobile Connect Card Driver for Linux](http://forge.vodafonebetavine.net/projects/vodafonemobilec/). The official name is very long, yes.
 
-### Bare Naked
+#### Bare Naked
 
 You can just try *Plug 'n Dial* first to see if it works (I will give you free beer if it does!). After hooking up to the USB port (some say an upright position is best; let it hang over the edge of the desk), check to make sure it is detected.
 
@@ -66,7 +66,7 @@ You should see three renditions of **ttyUSB**. If not, we will get to that later
 
 Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdial "Wvdial"), so install it. You should have *ppp* already, if not just pull them both in by [installing](/index.php/Install "Install") the [wvdial](https://www.archlinux.org/packages/?name=wvdial) and [ppp](https://www.archlinux.org/packages/?name=ppp) packages.
 
-### Configure n' Dial
+#### Configure n' Dial
 
 Most SIM and data services provided together with the device do not require special settings and work with similar configuration to get connected. They are almost "Plug n' Play", a special trait of Linux. Edit */etc/wvdial.conf* and use something like the following:
 
@@ -88,7 +88,7 @@ Modem Type = Analog Modem
 
 For providers that do require a specific Init string and user/password combination, [mkwvconf-git](https://aur.archlinux.org/packages/mkwvconf-git/) in AUR can help generate a wvdial configuration (based on the [mobile-broadband-provider-info-git](https://aur.archlinux.org/packages/mobile-broadband-provider-info-git/) package).
 
-### If using PIN code add this before Init2
+#### If using PIN code add this before Init2
 
 ```
  Init1 = AT+CPIN=9999
@@ -111,7 +111,7 @@ You can now connect immediately, but probably only as root, which is **not** a d
 
 ```
 
-## Slow Start
+### Slow Start
 
 *Edit: This section is nullified if you have UDEV and HAL workarounds, or a script, or a package from AUR.*
 
@@ -150,11 +150,11 @@ $ cd ~/huawei-e220
 
 Now it is easier.
 
-# Extras
+## Extras
 
 *Note: It seems some people get it to work using ttyUSB1, which should not be the case, but rest assured that at least on recent kernels and systems ttyUSB0 is the correct port to dial with.*
 
-## Port Testing
+### Port Testing
 
 To check if the device is functioning alright on a particular serial port, there is a program for probing serial devices. [Install](/index.php/Install "Install") the [minicom](https://www.archlinux.org/packages/?name=minicom).
 
@@ -167,9 +167,9 @@ Now run it.
 
 Change the serial port to */dev/ttyUSB1* and exit from the page, this will open the main program. When it initializes the modem, issue the command *AT*. The answer should be *OK*, which means the modem is working well on that port.
 
-# Troubleshooting
+## Troubleshooting
 
-## Hal
+### Hal
 
 The hald daemon detects the SCSI CD-ROM drive and because of that it will try to change the modem to storage mode. To prevent this you need to create a Hal policy so it ignores the device.
 
@@ -191,7 +191,7 @@ Create a file the /usr/share/hal/fdi/preprobe/20thirdparty/10-huawei-e220.fdi an
 
 With this, for my experience, only two USB serial ports are created and them vodafone-mccd doesn't recognize correctly the modem but you can connect correctly with wvdial.
 
-## Route
+### Route
 
 If problem with connection through ppp0 one might need to add the network manually:
 
@@ -211,7 +211,7 @@ Then you add default route and dns as usually:
 
 (change to remote adress recieved and viewed with command `ip a`)
 
-# Links
+## See also
 
 [http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/](http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/)
 [http://oozie.fm.interia.pl/pro/huawei-e220/](http://oozie.fm.interia.pl/pro/huawei-e220/)

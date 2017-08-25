@@ -31,6 +31,7 @@
     *   [4.6 Stop modifiers from interfering with mouse and key bindings](#Stop_modifiers_from_interfering_with_mouse_and_key_bindings)
     *   [4.7 Use ClickToFocus](#Use_ClickToFocus)
     *   [4.8 Window tiling](#Window_tiling)
+    *   [4.9 Transfer focus on page or desk switch](#Transfer_focus_on_page_or_desk_switch)
 *   [5 See also](#See_also)
 
 ## Installing
@@ -181,6 +182,8 @@ See [#Button styles](#Button_styles) for the *state*, *style* and *flag* argumen
 
 ### Menus
 
+**Note:** The `AddToMenu` command is cumulative, meaning that if it is used twice on the same menu, the items specified in the second command will be appended to the menu in its current state instead of overwriting the previous menu configuration. For this reason, it is good practice to call `DestroyMenu *menu-name*` before calling `AddToMenu` unless the cumulative behavior is desired.
+
 Menus can be created with the `AddToMenu` command. This takes the following syntax:
 
 ```
@@ -234,7 +237,9 @@ The `Style` command allows one to configure various aspects of the window manage
 
 ### Functions
 
-FVWM provides many built in functions, examples being `Close` to close a window or `Exec` which allows the execution of an external command. Users can also define their own functions or add to existing functions using the `AddToFunc` command. This uses the following syntax: `AddToFunc *function-name* I|M|C|H|D *action*`. The letter codes stand for the following: **I** - execute immediately, **M** - execute when the user moves the mouse, **C** - execute on mouse click, **H** - execute when the user holds the mouse button, **D** - execute when the user double clicks the mouse button. Below is a trivial example of a function:
+**Note:** The `AddToFunc` command is cumulative, meaning that if it is used twice on the same fuction, the items specified in the second command will be appended to the function in its current state instead of overwriting the previous function configuration. For this reason, it is good practice to call `DestroyFunc *func-name*` before calling `AddToFunc` unless the cumulative behavior is desired.
+
+FVWM provides many built in functions, examples being `Close` to close a window or `Exec` which allows the execution of an external command. Users can also define their own functions or add to existing functions using the `AddToFunc` command. This uses the following syntax: `AddToFunc *func-name* I|M|C|H|D *action*`. The letter codes stand for the following: **I** - execute immediately, **M** - execute when the user moves the mouse, **C** - execute on mouse click, **H** - execute when the user holds the mouse button, **D** - execute when the user double clicks the mouse button. Below is a trivial example of a function:
 
 ```
 AddToFunc VolumeFunc
@@ -459,37 +464,82 @@ Ensure that [perl-tk](https://www.archlinux.org/packages/?name=perl-tk) and [per
 The following functions can tile a window to the left half, right half, top half or bottom half of the screen, or to each corner of the screen, when called and return the window to its original position and size when called again.
 
 ```
+DestroyFunc TileLeft
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileRight
 AddToFunc TileRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
+DestroyFunc TileTop
 AddToFunc TileTop
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileBottom
 AddToFunc TileBottom
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
+DestroyFunc TileTopLeft
 AddToFunc TileTopLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileTopRight
 AddToFunc TileTopRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
+DestroyFunc TileBottomLeft
 AddToFunc TileBottomLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
+DestroyFunc TileBottomRight
 AddToFunc TileBottomRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
+```
+
+### Transfer focus on page or desk switch
+
+If you are using ClickToFocus, you might wish to automatically transfer keyboard focus when switching pages or desks to the previously focused window in that page or desk. Otherwise, you will have to click on the window you wish to interact with on every page or desk switch.
+
+For desk switching, you can use the following function:
+
+```
+DestroyFunc GoToDesk-and-Focus
+AddToFunc GoToDesk-and-Focus
++ I GoToDesk $0
++ I All (CurrentDesk, Focused) FlipFocus
++ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) FlipFocus
+```
+
+This function will switch desks to the one provided in the argument. It will then try and call the `FlipFocus` command on the already focused window. The purpose of this is to initiate a page switch if the focused window happens to be in a different page to the one you are currently in. If no window in that desk is focused, the `FlipFocus` command will be called on the previously focused window in that desk - again, this will initiate a page switch to the page that window is currently located in. If you wish to avoid the page switch and only transfer the keyboard focus, append the `NoWarp` argument to the `FlipFocus` commands.
+
+For page switching, you can use the following function:
+
+```
+DestroyFunc GoToPage-and-Focus
+AddToFunc GoToPage-and-Focus
++ I GoToPage $0 $1
++ I All (CurrentPage, Focused) FlipFocus
++ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) FlipFocus
+```
+
+This function will switch pages to the one provided in the argument. It will then try and call the `FlipFocus` command on the already focused window. The purpose of this is to prevent the focus from cycling between windows in that page if the page contains multiple windows. If no window in that page is focused, the `FlipFocus` command will be called on the previously focused window in that page.
+
+Note that the `FlipFocus` command will not raise the affected window, it will only transfer keyboard focus to it. In some cases, it might be necessary to raise the focused window to the top of the stack. For instance, if a window is move to another desk where the focused window for that desk happens to be in the same page as the moved window, then the focused window will end up being lower in the stack than the window that has been moved. To work around this, call something like the following function instead of calling `FlipFocus` on its own:
+
+```
+DestroyFunc Focus-and-Raise
+AddToFunc Focus-and-Raise
++ I FlipFocus
++ I Raise
 ```
 
 ## See also

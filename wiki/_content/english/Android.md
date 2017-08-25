@@ -170,21 +170,11 @@ export ANDROID_HOME=/opt/android-sdk
 
 #### Netbeans
 
-If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and want to develop Android applications, download the [NBAndroid](http://www.nbandroid.org) by going to:
-
-```
-Tools -> Plugins -> Settings
-
-```
+If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and want to develop Android applications, download the [NBAndroid](http://www.nbandroid.org) by going to *Tools > Plugins > Settings*.
 
 Add the following URL: [http://nbandroid.org/release81/updates/updates.xml](http://nbandroid.org/release81/updates/updates.xml)
 
-Then go to **Available Plugins** and install the **Android** and **JUnit** plugins. Once you have installed go to:
-
-```
-Tools -> Options -> Miscellaneous -> Android
-
-```
+Then go to **Available Plugins** and install the **Android** and **JUnit** plugins. Once you have installed go to *Tools > Options > Miscellaneous > Android*.
 
 and select the path where the SDK is installed (/opt/android-sdk by default). That is it, now you can create a new Android project and start developing using Netbeans.
 
@@ -201,12 +191,7 @@ The official, but deprecated, [Eclipse ADT](http://developer.android.com/sdk/ecl
 *   if you are in real trouble, it is also possible to download Android SDK and use the bundled Eclipse. This usually works without problems.
 *   if you need to install extra SDK plugins not found in the AUR, you must change the file ownership of /opt/android-sdk first. You can do this with `# chgrp -R users /opt/android-sdk ; chmod -R 0775 /opt/android-sdk` (see [File Permissions](/index.php/File_Permissions "File Permissions") for more details).
 
-Enter the path to the Android SDK Location in
-
-```
-Windows -> Preferences -> Android
-
-```
+Enter the path to the Android SDK Location in *Windows > Preferences > Android*.
 
 **Note:**
 

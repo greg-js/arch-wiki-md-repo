@@ -9,14 +9,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [zathura](https://www.archlinux.org/packages/?name=zathura) package as well as those packages that provide the wanted file formats:
-
-Available plugin packages are:
-
-*   [zathura-pdf-poppler](https://www.archlinux.org/packages/?name=zathura-pdf-poppler) or [zathura-pdf-mupdf](https://www.archlinux.org/packages/?name=zathura-pdf-mupdf) for PDF support
-*   [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu) for DjVu support
-*   [zathura-ps](https://www.archlinux.org/packages/?name=zathura-ps) for PostScript support
-*   [zathura-cb](https://www.archlinux.org/packages/?name=zathura-cb) for comic book support
+[Install](/index.php/Install "Install") the [zathura](https://www.archlinux.org/packages/?name=zathura) package along with the desired optional dependencies.
 
 ## Features
 

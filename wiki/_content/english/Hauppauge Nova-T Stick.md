@@ -10,14 +10,14 @@ The Hauppauge Nova-T Stick is an USB2.0 DVB-T tuner with an additional antenna p
     *   [3.3 Watch TV](#Watch_TV)
 *   [4 External Links](#External_Links)
 
-# Features
+## Features
 
 *   Microtune MT2060 tuner
 *   Dibcom DVB-T demodulator
 *   USB 2.0 controller
 *   Remote control
 
-# Installation
+## Installation
 
 Since kernel 2.6.19 nearly all Nova-T sticks are recognized correctly. So if you just plug in your Nova-T Stick and run *dmesg* you should see something like this:
 
@@ -52,9 +52,9 @@ dvb-usb: Hauppauge Nova-T Stick successfully initialized and connected.
 
 Perfect! Our usb stick is now ready to do its service.
 
-# Configuration
+## Configuration
 
-## User permissions
+### User permissions
 
 In order to have access to our usb stick as a normal user you'll have to add you to the *video* group. Run this command as root:
 
@@ -65,7 +65,7 @@ gpasswd -a USER video
 
 Replace USER with the name of the user which you want to grant access. Afterwards either reboot or relogin.
 
-## Getting channels
+### Getting channels
 
 Now that we have setup our usb stick and it's working fine, let's scan for channels. Therefore I recommend the linuxtv-dvb-apps package which you can find in the community repository.
 
@@ -92,13 +92,13 @@ scan de-Leipzig > leipzig.conf
 
 After a few seconds the scan has finished and all found channels have been written into our *leipzig.conf*.
 
-## Watch TV
+### Watch TV
 
 Now there are a lot of ways to watch TV, for example with [Kaffeine](http://kaffeine.sourceforge.net/), xine, mplayer, [VLC](http://www.videolan.org/vlc) and so on. Also some of these programs provide EPG, Time shafting and things like that.
 
 A fast way is to just open your *leipzig.conf* with VLC and enjoy watching!
 
-# External Links
+## External Links
 
 *   [Official LinuxTV site](http://linuxtv.org/)
 *   [Hauppauge Germany product page](http://www.hauppauge.de/pages/products/data_novatstick.html)

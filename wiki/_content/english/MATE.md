@@ -44,13 +44,13 @@ From [MATE homepage](http://mate-desktop.org/):
 MATE is largely composed of GNOME 2 applications and utilities, forked and renamed to avoid conflicting with their GNOME 3 counterparts. Below is a list of common GNOME applications which have been renamed in MATE.
 
 | Application | GNOME 2 | MATE |
-| menu editor | Alacarte | Mozo |
-| file manager | Nautilus | Caja |
-| window manager | Metacity | Marco |
-| text editor | Gedit | Pluma |
-| image viewer | Eye of GNOME | Eye of MATE |
-| document viewer | Evince | Atril |
-| archive manager | File Roller | Engrampa |
+| menu editor | Alacarte | [mozo](https://www.archlinux.org/packages/?name=mozo) |
+| file manager | Nautilus | [caja](https://www.archlinux.org/packages/?name=caja) |
+| window manager | Metacity | [marco](https://www.archlinux.org/packages/?name=marco) |
+| text editor | Gedit | [pluma](https://www.archlinux.org/packages/?name=pluma) |
+| image viewer | Eye of GNOME | Eye of MATE ([eom](https://www.archlinux.org/packages/?name=eom)) |
+| document viewer | Evince | [atril](https://www.archlinux.org/packages/?name=atril) |
+| archive manager | File Roller | [engrampa](https://www.archlinux.org/packages/?name=engrampa) |
 
 Other applications and core components prefixed with GNOME (such as GNOME Terminal, GNOME Panel, GNOME Menus, etc.) have had the prefix changed to MATE so they become MATE Panel, MATE Menus etc.
 

@@ -272,7 +272,7 @@ Alternatively, a number of tools are available to automate the process:
 
 	[http://pastebin.com/019G2rCy](http://pastebin.com/019G2rCy) || see [mkwlppr](http://pastebin.com/019G2rCy)
 
-*   **[Wallpapoz](/index.php/Wallpapoz "Wallpapoz")** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
+*   **Wallpapoz** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
 
 	[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)
 

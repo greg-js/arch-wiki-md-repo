@@ -1,6 +1,6 @@
 **Warning:** 2bwm is still in alpha stage and should be used cautiously. At the moment, 2bwm is only for advanced users.
 
-[2bwm](https://aur.archlinux.org/packages/2bwm/) is a fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
+[2bwm](https://github.com/venam/2bwm) is a fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
 
 ## Contents
 

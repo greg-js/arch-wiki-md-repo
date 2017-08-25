@@ -134,7 +134,7 @@ Para poder añadir sonido a programas de 32 bit sobre Arch x86_64 (como Wine), t
 Para prevenir que las aplicaciones utilicen la emulación OSS de ALSA en lugar de PulseAudio (impedirían que otras aplicaciones reprodujeran sonido), debemos remover el módulo `snd-pcm-oss` ejecutando:
 
 ```
-# rnmod snd-pcm-oss
+# rmmod snd-pcm-oss
 
 ```
 

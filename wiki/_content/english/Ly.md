@@ -4,7 +4,7 @@
 
 [Install](/index.php/Install "Install") the [ly-git](https://aur.archlinux.org/packages/ly-git/) package.
 
-Now ensure no other display managers get started by disabling their systemd services with `systemctl disable`.
+Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
 
 For example, if you were using the Gnome Display Manager, you would stop it from starting at boot by running
 

@@ -184,7 +184,7 @@ The comments are enclosed as such:
 
 ## Generating via aif-config
 
-The [aif](https://aur.archlinux.org/packages/aif/) and [aif-git](https://aur.archlinux.org/packages/aif-git/) packages provide **/usr/bin/aif-config**, which can be used to generate a configuration file, convert a configuration file from JSON, or validate an existing configuration file.
+The [aif](https://aur.archlinux.org/packages/aif/) and [aif-git](https://aur.archlinux.org/packages/aif-git/) packages provide `/usr/bin/aif-config`, which can be used to generate a configuration file, convert a configuration file from JSON, or validate an existing configuration file.
 
 To create a new configuration file, simply run:
 

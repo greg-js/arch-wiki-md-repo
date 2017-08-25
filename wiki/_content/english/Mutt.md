@@ -1252,7 +1252,7 @@ macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/personal<ent
 
 ```
 
-This macro tells Mutt to sync (which is a write operation) before switching. Either use the [sidebar](#Mutt-Sidebar) or set another macro:
+This macro tells Mutt to sync (which is a write operation) before switching. Either use the [sidebar](#Sidebar) or set another macro:
 
 ```
 macro index,pager <f3> '<enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'

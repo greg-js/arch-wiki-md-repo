@@ -11,7 +11,7 @@ The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [fuseiso](https://www.archlinux.org/packages/?name=fuseiso) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [fuseiso](https://www.archlinux.org/packages/?name=fuseiso) package.
 
 ## Basic functions
 

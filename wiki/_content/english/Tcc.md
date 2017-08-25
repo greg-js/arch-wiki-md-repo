@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install [tcc](https://www.archlinux.org/packages/?name=tcc) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [tcc](https://www.archlinux.org/packages/?name=tcc) package.
 
 ## Usage
 

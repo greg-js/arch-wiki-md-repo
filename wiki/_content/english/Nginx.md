@@ -329,7 +329,10 @@ FastCGI technology is introduced into nginx to work with many external tools, i.
 
 The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the systemd unit `php-fpm.service`.
 
-**Note:** If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing.
+**Note:**
+
+*   If you [run nginx under different user](#Running_under_different_user), make sure that the PHP-FPM socket file is accessible by this user, or use a TCP socket.
+*   If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing.
 
 ##### nginx configuration
 

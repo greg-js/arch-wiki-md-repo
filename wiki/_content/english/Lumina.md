@@ -1,3 +1,5 @@
+**Warning:** Lumina DE is primarily targeted at FreeBSD, not Linux.
+
 The Lumina Desktop Environment (Lumina for short) is a lightweight, XDG-compliant, BSD-licensed desktop environment that focuses specifically on streamlining the ability to get work done while minimizing system overhead. As of version 0.8.0+, it requres Qt 5, the Fluxbox window manager, and uses a small number of X utilities for various tasks, such as numlockx and xscreensaver.
 
 Lumina's features include:
@@ -22,9 +24,7 @@ Lumina's features include:
 
 ## Installation
 
-**Warning:** Lumina DE is primarily targeted at FreeBSD, not Linux.
-
-To install the Lumina Desktop environment, simply install [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/) or [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/) from the AUR.
+Install [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/) or [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/) from the AUR.
 
 ## Launching the Lumina Desktop Environment
 
@@ -40,7 +40,7 @@ exec start-lumina-desktop
 
 ## Reporting bugs
 
-Bugs should be reported to Lumina's repository on [Github](https://github.com/pcbsd/lumina).
+Bugs should be reported to Lumina's repository on [GitHub](https://github.com/pcbsd/lumina).
 
 ## See also
 

@@ -41,26 +41,24 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
 
 Specifically, the procedure for installing Arch Linux on a MacBook is:
 
-1.  **[Firmware updates](#Firmware_updates)**: It always helps to start from a clean, backed up, and up-to-date install of OS X.
-2.  **[Partitioning](#Partitioning)**: Resizing or deleting the OS X partition to create partitions for Arch Linux.
-3.  **[Setup bootloader](#Setup_bootloader)**: Making sure that the new partition is bootable.
-4.  **[Install Arch Linux](#Installation)**: Actually installing Arch Linux.
-5.  **[Post-installation](#Post_installation)**: MacBook-specific configuration.
+1.  [#Firmware updates](#Firmware_updates): It always helps to start from a clean, backed up, and up-to-date install of OS X.
+2.  [#Partitioning](#Partitioning): Resizing or deleting the OS X partition to create partitions for Arch Linux.
+3.  [#Setup bootloader](#Setup_bootloader): Making sure that the new partition is bootable.
+4.  [#Installation](#Installation): Actually installing Arch Linux.
+5.  [#Post installation](#Post_installation): MacBook-specific configuration.
 
 ## Firmware updates
 
-Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X. In OS X, open the App Store and check for updates. If your mac finds and installs any updates, make sure to **reboot** your computer, and then check again for updates to make sure that you installed everything.
+Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X. In OS X, open the App Store and check for updates. If your Mac finds and installs any updates, make sure to **reboot** your computer, and then check again for updates to make sure that you installed everything.
 
 **Note:** If you uninstalled OS X or want to reinstall it, [Apple](https://support.apple.com/en-us/HT204904) has great instructions.
 
-It is advisable to keep OS X installed, because MacBook firmware updates can only be installed using OS X. However, if you plan to remove OS X completely, make backups of these files, which you will need in Linux for adjusting the [color profile](#Color_Profile):
+It is advisable to keep OS X installed, because MacBook firmware updates can only be installed using OS X. However, if you plan to remove OS X completely, make backups of these files, which you will need in Linux for adjusting the color profile:
 
 ```
 /Library/ColorSync/Profiles/Displays/*
 
 ```
-
-Continue to [#Partitioning](#Partitioning)
 
 ## Partitioning
 
@@ -203,7 +201,7 @@ $ cd grub-git
 
 ```
 
-Get the patch from here: [http://lists.gnu.org/archive/html/grub-devel/2013-12/msg00442.html](http://lists.gnu.org/archive/html/grub-devel/2013-12/msg00442.html)
+Get the patch from [[2]](http://lists.gnu.org/archive/html/grub-devel/2013-12/msg00442.html).
 
 Put the patch contents into a file labeled something like "apple.patch"
 
@@ -298,7 +296,7 @@ EndSection
 
 #### Ctrl-Click as Right-Click
 
-Using this SuperUser receipt [[2]](http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac) I got Ctrl-click working as right-click. I had to increase the sleep time to 0.1 though.
+Using this SuperUser receipt [[3]](http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac) I got Ctrl-click working as right-click. I had to increase the sleep time to 0.1 though.
 
 #### input-mtrack
 

@@ -17,6 +17,7 @@
     *   [2.4 Trackpad](#Trackpad)
         *   [2.4.1 Lock-ups on click](#Lock-ups_on_click)
         *   [2.4.2 Tweaking trackpad behavior](#Tweaking_trackpad_behavior)
+        *   [2.4.3 Touchpad not working after wake up from sleep](#Touchpad_not_working_after_wake_up_from_sleep)
     *   [2.5 Keyboard backlight](#Keyboard_backlight)
         *   [2.5.1 Automatically turn on backlight when typing](#Automatically_turn_on_backlight_when_typing)
     *   [2.6 Audio](#Audio)
@@ -260,6 +261,10 @@ If you are using gnome-shell, you may need to tell the settings app not to overw
 gsettings set org.gnome.settings-daemon.plugins.mouse active false
 
 ```
+
+#### Touchpad not working after wake up from sleep
+
+See here: [Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend](/index.php/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend "Touchpad Synaptics")
 
 ### Keyboard backlight
 

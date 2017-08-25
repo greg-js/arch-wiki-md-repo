@@ -205,18 +205,6 @@ An array of additional packages that the software provides the features of (or a
 
 An array of packages that conflict with, or cause problems with the package, if installed. All these packages and packages providing this item will need to be removed. The version properties of the conflicting packages can also be specified in the same format as the `depends` array.
 
-This means when you write a package for which an alternate version is available (be it in the official packages or in the AUR) and your package conflicts that version, you need to put the other versions in your `conflicts` array as well. Specifying conflict is not only for packages in the official repositories; if another AUR package conflicts with yours, you need to put that AUR package in your `conflicts` array as well.
-
-However, there is an exception to this. If your package provides a package name and the other packages, conflicting with yours, provide the same package, you do not need to specify that conflicting package in your `conflicts` array. Let us take a concrete example:
-
-*   [netbeans](https://www.archlinux.org/packages/?name=netbeans) provides `netbeans`
-*   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) provides `netbeans` and conflicts `netbeans`
-*   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) provides `netbeans` and conflicts `netbeans` but does not need to conflicts [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) since pacman is smart enough to figure out these packages are incompatible since they provide the same feature and are in conflict with it.
-
-	The same applies in the reverse order: [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) does not need to conflict with [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) as well, because they provide the same package.
-
-Even this is not recommended, in practise, putting the conflicting packages in all directions is not always applicable especially if all these packages are maintained by different people. This exception is useful and comes thus in handy. That way you know you do not need to contact all package maintainers for which you package is in conflict to ask them to include your package name in their `conflicts` array.
-
 ### replaces
 
 An array of obsolete packages that are replaced by the package, e.g. [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) uses `replaces=('wireshark')`. When syncing, *pacman* will immediately replace an installed package upon encountering another package with the matching `replaces` in the repositories. If providing an alternate version of an already existing package or uploading to the [AUR](/index.php/AUR "AUR"), use the `conflicts` and `provides` arrays, which are only evaluated when actually installing the conflicting package.

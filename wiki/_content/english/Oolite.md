@@ -11,12 +11,7 @@
 
 ## Installation
 
-Oolite used to be in AUR, but has been moved to Community repo, use:
-
-```
-pacman -Syu oolite
-
-```
+[Install](/index.php/Install "Install") the [oolite](https://www.archlinux.org/packages/?name=oolite) package.
 
 ## Troubleshooting
 

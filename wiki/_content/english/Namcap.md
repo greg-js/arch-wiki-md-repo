@@ -1,4 +1,4 @@
-Namcap is a tool to check binary packages and source PKGBUILDs for common packaging mistakes, which can also be automatically enabled. It was created by [Jason Chu](https://www.archlinux.org/fellows/#jason).
+Namcap is a tool to check binary packages and source PKGBUILDs for common packaging mistakes, which can also be automatically enabled. It was created by [Jason Chu](https://www.archlinux.org/people/developer-fellows/#jason).
 
 **Changes**: The [NEWS](https://git.archlinux.org/namcap.git/tree/NEWS) file in the git repository contains the changes from the previous version concisely.
 

@@ -8,20 +8,20 @@ This article describes how to set up a Logitech Formula Force GP Racing Wheel wi
 *   [2 Configuration](#Configuration)
 *   [3 References](#References)
 
-# Installing
+## Installing
 
-## Identifying
+### Identifying
 
 When the wheel is plugged in, the following commands can be used to identify the wheel:
 
 ```
-$dmesg
+$ dmesg
 usb 5-2: new low speed USB device using uhci_hcd and address 6
 
 ```
 
 ```
-$lsusb
+$ lsusb
 Bus 005 Device 006: ID 046d:c293 Logitech, Inc. WingMan Formula Force GP
 
 ```
@@ -42,7 +42,7 @@ B: FF=1 40000 0 0
 
 ```
 
-## Testing
+### Testing
 
 Testing can be done with the Linux Force Feedback Library. This package can be found in aur: [https://aur.archlinux.org/packages.php?ID=50236](https://aur.archlinux.org/packages.php?ID=50236)
 
@@ -101,7 +101,7 @@ ffcfstress can be used to test the force feedback. The wheel should start to osc
 
 ```
 
-# Configuration
+## Configuration
 
 The Wheel works without any wine configuration in flatout2\. Just the following in-game configuration is needed:
 
@@ -116,6 +116,6 @@ The Wheel works without any wine configuration in flatout2\. Just the following 
 *   Steer left: X-axis left
 *   Steer right"X-axis right
 
-# References
+## References
 
 [Sourceforge wiki: CheckForceFeedback](http://sourceforge.net/apps/mediawiki/libff/index.php?title=CheckForceFeedback)

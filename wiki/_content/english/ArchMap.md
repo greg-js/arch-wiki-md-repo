@@ -14,13 +14,13 @@ The **ArchMap** project creates a map of Arch Linux users all over the world.
 
 ## History
 
-**ArchMap** was originally created by [xterminus](/index.php/User:Xterminus "User:Xterminus"). He created jpeg files that could be downloaded from this page. However, he didn't have the time to maintain them anymore, so he dropped the project.
+**ArchMap** was originally created by [User:xterminus](/index.php/User:Xterminus "User:Xterminus"). He created jpeg files that could be downloaded from this page. However, he didn't have the time to maintain them anymore, so he dropped the project.
 
-When Google Earth for Linux was released, [brain0](/index.php/User:Brain0 "User:Brain0") recreated the project.
+When Google Earth for Linux was released, [User:brain0](/index.php/User:Brain0 "User:Brain0") recreated the project.
 
 The third version of ArchMap was based on Google Maps.
 
-The current version was started by [alux](/index.php/User:Alux "User:Alux") with help from [kyrias](/index.php/User:Kyrias "User:Kyrias") and [fsckd](/index.php/User:Fsckd "User:Fsckd").
+The current version was started by [User:Alux](/index.php/User:Alux "User:Alux") with help from [User:Kyrias](/index.php/User:Kyrias "User:Kyrias") and [User:Fsckd](/index.php/User:Fsckd "User:Fsckd").
 
 ### Screenshots
 

@@ -682,7 +682,7 @@ Check if the permissions are set correctly for `/var/cache/samba/` and restart t
 
 Possible solutions:
 
-*   Append the mount option `nodfs` to the `/etc/fstab` [entry](#Add_Share_to_.2Fetc.2Ffstab).
+*   Append the mount option `nodfs` to the `/etc/fstab` [entry](#As_mount_entry).
 *   Add `msdfs root = no` to the `[global]` section of the server's `/etc/samba/smb.conf`.
 
 ### Windows clients keep asking for password even if Samba shares are created with guest permissions

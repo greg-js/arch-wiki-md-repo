@@ -89,7 +89,7 @@ Si può tornare in modalità comando, in qualsiasi momento premendo `Esc`.
 
 ### Spostamento
 
-In vim, è possibile spostare il cursore usando le frecce della tastiera, ma questa non è considerata la **vim way**. Si dovrebbe spostare la mano tropo a destra dalla normale posizione di battitura per raggiungere le frecce, e poi ritornare in posizione. Non è divertente.
+In vim, è possibile spostare il cursore usando le frecce della tastiera, ma questa non è considerata la **vim way**. Si dovrebbe spostare la mano troppo a destra dalla normale posizione di battitura per raggiungere le frecce, e poi ritornare in posizione. Non è divertente.
 
 In vim ci si può spostare in basso premendo `j`. Si può ricordare perché la lettera "j" punta verso il basso. Per spostare il cursore in alto premendo `k`. A sinistra con `h` (si trova a sinistra di "j"), ed a destra con `l` (**L** minuscolo).
 
