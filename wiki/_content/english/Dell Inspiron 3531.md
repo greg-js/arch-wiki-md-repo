@@ -143,7 +143,7 @@ A test device Huawei E173 (connected via a USB hub) was detected and worked fine
 
 ### Audio
 
-Built-in microphone does not work out of the box. To enable, create a file /etc/modeprobe.acpi_backlight=vendord/modeprobe.conf with a line
+Built-in microphone does not work out of the box. To enable, create a file /etc/modeprobe.d/modeprobe.conf with a line
 
 ```
 options snd-hda-intel model=laptop

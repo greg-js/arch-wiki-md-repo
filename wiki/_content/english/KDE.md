@@ -439,7 +439,7 @@ By default every removable device is blacklisted. You just have to remove your d
 
 ### PIM
 
-KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc.
+KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kde-meta-kdepim](https://www.archlinux.org/packages/?name=kde-meta-kdepim).
 
 #### Akonadi
 

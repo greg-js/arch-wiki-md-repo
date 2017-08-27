@@ -130,7 +130,14 @@ For currently disabled windows, please see [here](https://projects.archlinux.org
 
 ## Multihead
 
-If a [multihead](/index.php/Multihead "Multihead") configuration is used without xinerama - meaning that X server is started with more than one screen - then compton will start on only one screen by default. It can be started on all screens by using the `-d` argument. For example, compton can be executed for 4 monitors with the following command:
+If a [multihead](/index.php/Multihead "Multihead") configuration is used without xinerama - meaning that X server is started with more than one screen - then compton will start on only one screen by default. It can be started on all screens by using the `-d` argument. For example, to run on X screen 0 in the background:
+
+```
+ compton -b -d :0
+
+```
+
+The above should work on all monitors, but if it doesn't try an older method that manually specifies each one:
 
 ```
 seq 0 3 | xargs -l1 -I@ compton -b -d :0.@

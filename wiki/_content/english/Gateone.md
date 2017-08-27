@@ -2,7 +2,7 @@ From [Gate One ✈ Web Terminal Emulator and SSH Client](http://liftoffsoftware.
 
 	*Gate One™ is a web-based Terminal Emulator and SSH client that brings the power of the command line to the web. It requires no browser plugins and is built on top of a powerful plugin system that allows every aspect of its appearance and functionality to be customized.*
 
-Gate One enables users to access SSH servers over the web. alternatives exist, such as [Guacamole](http://guac-dev.org/). One of Gate One's distinguishing features is the ability to resume sessions from other browsers or to replay sessions.
+[Gate One](https://github.com/liftoff/GateOne) is an HTML5-powered terminal emulator and SSH client. One of Gate One's distinguishing features is the ability to resume sessions from other browsers or to replay sessions.
 
 This guide covers Gate One setup behind [nginx](/index.php/Nginx "Nginx") as reverse proxy.
 

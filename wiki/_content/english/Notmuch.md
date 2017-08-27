@@ -147,7 +147,7 @@ set virtual_spoolfile=yes
 source ~/.mailboxes
 ```
 
-At this point, mutt will still list your mailboxes as empty, because your mails are not yet tagged and thus, notmuch querys are empty. To fill your vitual mailboxes, you need to initially tag the messages in your maildir. A very simple approach is to create a shell script like the following:
+At this point, mutt will still list your mailboxes as empty, because your mails are not yet tagged and thus, notmuch querys are empty. To fill your virtual mailboxes, you need to initially tag the messages in your maildir. A very simple approach is to create a shell script like the following:
 
  `~/.scripts/notmuch-hook.sh` 
 ```

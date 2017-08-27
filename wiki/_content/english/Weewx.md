@@ -101,7 +101,7 @@ cd /home/weewx
 
 ### As a Simple Service
 
-Create a new file /etc/systemd/system/weewx.service containing:
+Create a new file `/etc/systemd/system/weewx.service` containing:
 
 ```
 [Unit]
@@ -117,9 +117,7 @@ WantedBy=multi-user.target
 
 ```
 
-This file is meant for the RaspberryPi - because the RPi has no system clock, systemctl will not start this service until after the ntp service has started, giving the system chance to sync the time before weewx starts up.
-
- `systemctl start weewx` 
+This file is meant for the RaspberryPi - because the RPi has no system clock, systemctl will not start this service until after the ntp service has started, giving the system chance to sync the time before weewx starts up. [Start](/index.php/Start "Start") `weewx.service`.
 
 ### As a Forking Service
 

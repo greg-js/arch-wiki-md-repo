@@ -63,7 +63,7 @@ To adjust the logging level, the option `"verbose": *value*` may be added, with 
 
 ### Client
 
-**Note:** When you use the [SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS") proxy directly, you may need to use [privoxy](/index.php/Privoxy "Privoxy") or other auxiliary programs, because the browser will usually leak your DNS request, which reduces your anonymity.
+**Warning:** The [udns](https://www.archlinux.org/packages/?name=udns) package is used as a stub resolver for DNS. In order to prevent DNS request leaking of client applications (like browsers), further applications must be employed. For example, [privoxy](/index.php/Privoxy "Privoxy") or a full DNS resolver on the client.[[2]](https://github.com/shadowsocks/shadowsocks-libev/issues/1542) [[3]](https://github.com/shadowsocks/shadowsocks-libev/issues/1641)
 
 #### From the command line
 

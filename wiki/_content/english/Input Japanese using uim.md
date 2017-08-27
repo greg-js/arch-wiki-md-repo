@@ -548,7 +548,7 @@ You can choose icons for darker background (uim 1.6.0 or later).
 
 	uim
 
-	[uim official document](http://code.google.com/p/uim/wiki/OfficialUserDocument)
+	[uim official document](https://github.com/uim/uim/wiki/OfficialUserDocument)
 
 	[uim on wikibooks](http://en.wikibooks.org/wiki/Uim)
 

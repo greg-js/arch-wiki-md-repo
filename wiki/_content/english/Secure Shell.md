@@ -664,7 +664,7 @@ where `~/.ssh/sockets` can be any directory not writable by other users.
 
 Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
 
-**Warning:** [ssh(1)](http://man7.org/linux/man-pages/man1/ssh.1.html) states that "*Compression is desirable on modem lines and other slow connections, but will only slow down things on fast networks*". This tip might be counterproductive depending on your network configuration.
+**Note:** [ssh(1)](http://man7.org/linux/man-pages/man1/ssh.1.html) states that "[c]ompression is desirable on modem lines and other slow connections, but will only slow down things on fast networks." This tip might be counterproductive depending on your network configuration.
 
 Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
 
@@ -684,7 +684,7 @@ Conversely, to keep incoming connections alive, set the `ClientAliveInterval` op
 
 [systemd](/index.php/Systemd "Systemd") can automatically start SSH connections on boot/login *and* restart them when they fail. This makes it a useful tool for maintaining SSH tunnels.
 
-The following service can start an SSH tunnel on login using the connection settings in your [ssh config](#Saving_connection_data_in_ssh_config). If the connection closes for any reason, it waits 10 seconds before restarting it:
+The following service can start an SSH tunnel on login using the connection settings in your [ssh configuration](#Configuration). If the connection closes for any reason, it waits 10 seconds before restarting it:
 
  `~/.config/systemd/user/tunnel.service` 
 ```

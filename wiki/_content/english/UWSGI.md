@@ -58,8 +58,6 @@ The following is a simple example for a [Python](/index.php/Python "Python") app
 
 It is also possible to run uWSGI separately with the following syntax for instance:
 
-**Note:** It seems --wsgi-file option is not available from [uwsgi](https://www.archlinux.org/packages/?name=uwsgi). Official guides suggest building from source. [[1]](http://uwsgi-docs.readthedocs.org/en/latest/WSGIquickstart.html#installing-uwsgi-with-python-support)
-
 ```
 $ uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191 --uid --gid
 
@@ -67,7 +65,7 @@ $ uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master -
 
 You should avoid running this command as root.
 
-**Note:** Pay attention to operational mode in use, preforking without --lazy-apps may cause non-obvious behavior. By default the Python plugin does not initialize the GIL. This means your app-generated threads will not run. If you need threads, remember to enable them with enable-threads. Running uWSGI in multithreading mode (with the threads options) will automatically enable threading support. This "strange" default behaviour is for performance reasons, no shame in that. [[2]](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html)
+**Note:** Pay attention to operational mode in use, preforking without --lazy-apps may cause non-obvious behavior. By default the Python plugin does not initialize the GIL. This means your app-generated threads will not run. If you need threads, remember to enable them with enable-threads. Running uWSGI in multithreading mode (with the threads options) will automatically enable threading support. This "strange" default behaviour is for performance reasons, no shame in that. [[1]](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html)
 
 #### PHP
 

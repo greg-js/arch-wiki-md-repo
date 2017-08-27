@@ -139,13 +139,6 @@ Include conf/extra/httpd-ssl.conf
 
 ```
 
-Don't forget to add Port 443 to your listen ports in `/etc/httpd/conf/httpd.conf` and/or [#Virtual hosts](#Virtual_hosts):
-
-```
-Listen 443
-
-```
-
 For TLS/SSL, you will need a key and certificate. If you own a public domain, you can use [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") to obtain a certificate for free, otherwise follow [#Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate).
 
 After obtaining a key and certificate, make sure the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in `/etc/httpd/conf/extra/httpd-ssl.conf` point to the key and certificate. If a concatenated chain of CA certificates was also generated, add that filename against `SSLCertificateChainFile`.

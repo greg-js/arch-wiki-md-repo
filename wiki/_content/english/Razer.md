@@ -160,6 +160,8 @@ Reboot and test.
 
 Alternatively, if you prefer using the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver, [install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
 
+If you have issues with the touchpad not working after resuming from sleep, restarting the module i2c_hid seems to work.
+
 #### Touchscreen
 
 While the touchscreen will provide basic functionality out of the box, it is best to use [touchegg](https://aur.archlinux.org/packages/touchegg/) to configure multitouch gestures. These include two-finger scrolling, right-click, etc.

@@ -624,7 +624,7 @@ There are other downloading applications that you can use with Pacman. Here they
 
 ### Graphical front-ends
 
-**Warning:** Some front-ends such as [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) [[2]](https://github.com/manjaro/pamac/search?utf8=%E2%9C%93&q=start_refresh&type=) and [octopi](https://aur.archlinux.org/packages/octopi/) [[3]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") unattended.
+**Warning:** Some front-ends, such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266), perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
 
 *   **Arch-Update** — Update indicator for Gnome-Shell.
 
@@ -649,6 +649,10 @@ There are other downloading applications that you can use with Pacman. Here they
 *   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
+
+*   **pamac-aur** — A DBus daemon and Gtk3 frontend for libalpm written in Vala
+
+	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
 
 *   **pcurses** — Package management in a curses frontend
 

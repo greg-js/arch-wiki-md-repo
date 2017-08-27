@@ -1,4 +1,4 @@
-This document describes a method to configure halevt and traydevice in order to mount removable media.
+This document describes a method to configure [halevt](http://www.nongnu.org/halevt/) and [traydevice](https://savannah.nongnu.org/projects/traydevice) in order to mount removable media.
 
 ## Contents
 

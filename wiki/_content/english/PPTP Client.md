@@ -1,5 +1,7 @@
 pptpclient is a program implementing the Microsoft PPTP protocol. As such, it can be used to connect to a Microsoft VPN network (or any PPTP-based VPN) provided by a school or workplace.
 
+**Warning:** The PPTP protocol is inherently insecure. See [http://poptop.sourceforge.net/dox/protocol-security.phtml](http://poptop.sourceforge.net/dox/protocol-security.phtml) for details.
+
 ## Contents
 
 *   [1 Installing PPTP Client](#Installing_PPTP_Client)

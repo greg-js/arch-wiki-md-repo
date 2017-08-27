@@ -1,4 +1,4 @@
-ArchLinux is not officially supported by Lattice Diamond, but as happens with other HDL suites like [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK") or [Xilinx Vivado](/index.php/Xilinx_Vivado "Xilinx Vivado"), most of its features can be used with a bit of hacking.
+ArchLinux is not officially supported by [Lattice Diamond](http://www.latticesemi.com/), but as happens with other HDL suites like [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK") or [Xilinx Vivado](/index.php/Xilinx_Vivado "Xilinx Vivado"), most of its features can be used with a bit of hacking.
 
 ## Contents
 

@@ -626,7 +626,7 @@ Install [Usbguard](/index.php/Usbguard "Usbguard"), which is a software framewor
 
 ## Rebuilding packages
 
-Packages can be rebuilt and stripped of undesired functions and features as a means to reduce attack surface. For example, [bzip2](https://www.archlinux.org/packages/?name=bzip2) can be rebuilt without `bzip2recover` in an attempt to circumvent [CVE-2016-3189](https://security.archlinux.org/CVE-2016-3189). Custom hardening flags can also be applied either manually or via [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper).
+Packages can be rebuilt and stripped of undesired functions and features as a means to reduce attack surface. For example, [bzip2](https://www.archlinux.org/packages/?name=bzip2) can be rebuilt without `bzip2recover` in an attempt to circumvent [CVE-2016-3189](https://security.archlinux.org/CVE-2016-3189). Custom hardening flags can also be applied either manually or via a wrapper.
 
 ### Custom hardening flags
 

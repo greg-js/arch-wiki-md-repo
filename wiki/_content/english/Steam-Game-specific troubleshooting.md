@@ -268,7 +268,12 @@ $ echo 2 > ~/.appdata/Adobe/AIR/eulaAccepted
 
 ## Alien Isolation
 
-Symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/x86_64/libpcre.so.3`, otherwise the game will fail to start.
+Symlink `/usr/lib/libpcre.so` to `*gamedir*/lib/x86_64/libpcre.so.3`, and add the following line to [launch options](/index.php/Launch_option "Launch option"), otherwise the game will fail to start.
+
+```
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/.local/share/Steam/SteamApps/common/Alien Isolation/lib/x86_64" %command%
+
+```
 
 ## Amnesia: The Dark Descent
 

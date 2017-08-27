@@ -45,7 +45,7 @@ See also: [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "w
 
 *   **[IBus](/index.php/IBus "IBus")** — Next Generation Input Bus for Linux.
 
-	[http://ibus.googlecode.com](http://ibus.googlecode.com) || [ibus](https://www.archlinux.org/packages/?name=ibus)
+	[https://github.com/ibus/ibus/wiki](https://github.com/ibus/ibus/wiki) || [ibus](https://www.archlinux.org/packages/?name=ibus)
 
 *   **[Rime IME](/index.php/Rime_IME "Rime IME")** — Rime input method engine.
 

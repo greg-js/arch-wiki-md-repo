@@ -62,9 +62,9 @@ Without *rngd*, the above command will take lots of time to run. With *rngd* wor
 
 A speed of around **50 kB/s** in *dd*'s output shows that everything is working properly. For comparison, without *rngd* you probably would get 0.0 kB/s (since the speed is too low).
 
-Another interesting test is to run **rngtest**, to check the randomness of data using [FIPS 140-2 tests](https://en.wikipedia.org/wiki/FIPS_140-2 "wikipedia:FIPS 140-2"):
+Another interesting test is to run **rngtest**, to check the data using [FIPS 140-2 tests](https://en.wikipedia.org/wiki/FIPS_140-2 "wikipedia:FIPS 140-2"):
 
- `$ cat /dev/random | rngtest -c 1000` 
+ `$ rngtest -c 1000 </dev/random` 
 ```
 rngtest 5
 Copyright (c) 2004 by Henrique de Moraes Holschuh

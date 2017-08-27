@@ -1,4 +1,4 @@
-[Demlo](http://ambrevar.bitbucket.io/demlo/) is a batch music tagger and library organizer powered by Lua and FFmpeg. It supports transcoding, case checking, cue sheets, online tagging with MusicBrainz, manual tag editing with you favorite editor, cover downloading and processing, and more.
+[Demlo](http://ambrevar.bitbucket.io/demlo/) is a batch music tagger and library organizer powered by Lua and [FFmpeg](/index.php/FFmpeg "FFmpeg"). It supports transcoding, case checking, cue sheets, online tagging with MusicBrainz, manual tag editing with you favorite editor, cover downloading and processing, and more.
 
 ## Contents
 

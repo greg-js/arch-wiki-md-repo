@@ -37,6 +37,7 @@ This guide was started for *USB* based Wacom tablets, so much of the info in her
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Unknown device_type](#Unknown_device_type)
     *   [4.2 System freeze](#System_freeze)
+    *   [4.3 Tablet recognized but xsetwacom and similar tools do not display it](#Tablet_recognized_but_xsetwacom_and_similar_tools_do_not_display_it)
 *   [5 References](#References)
 
 ## Installation
@@ -689,6 +690,14 @@ Download and install the for-4.4 branch from [SourceForge](http://sourceforge.ne
 ### System freeze
 
 If your system freezes when your tablet gets activated by the stylus, then you will need to [patch](/index.php/Patch "Patch") your kernel with the patch from [LKML](https://lkml.org/lkml/2015/11/20/690).
+
+### Tablet recognized but xsetwacom and similar tools do not display it
+
+Your logs indicate that the correct driver is selected, and the tablet works. However, when running `xsetwacom --list devices` or use similar tools that depend on the correct driver, you get an empty list.
+
+A reason might be the execution order of your xorg configuration. `/usr/share/X11/xorg.conf.d` gets executed first, then `/etc/X11/xorg.conf.d`. The package [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) contains the file `/usr/share/X11/xorg.conf.d/70-wacom.conf`. If there is a catchall for tablets, executed after this file, the previously selected `wacom` driver will be overwritten with a generic one that does not work with xsetwacom et. al.
+
+To make sure, check the rules contained in the files executed after `/usr/share/X11/xorg.conf.d/70-wacom.conf` for anything that looks like graphics tablets.
 
 ## References
 

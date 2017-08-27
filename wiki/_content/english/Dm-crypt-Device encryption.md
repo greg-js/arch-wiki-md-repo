@@ -838,7 +838,7 @@ Generate a new initramfs image:
 
 ##### Configuring the kernel parameters
 
-Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") if using the `encrypt` hook. If using `sd-encrypt` see [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration").
+Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") if using the `encrypt` hook. If using `sd-encrypt` see [Dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
 
 ```
 cryptdevice=/dev/*<partition1>*:root cryptkey=/dev/*<partition2>*:<fstype>:<path>

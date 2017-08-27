@@ -74,7 +74,7 @@ date.timezone = Europe/Berlin
 *   If you want to display errors to debug your PHP code, change `display_errors` to `On` in `/etc/php/php.ini`:
 
 ```
-display_errors=On
+display_errors = On
 
 ```
 

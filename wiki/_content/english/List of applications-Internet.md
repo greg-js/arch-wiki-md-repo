@@ -396,7 +396,7 @@ See also [w:Comparison of web server software](https://en.wikipedia.org/wiki/Com
 
 	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
 
-*   **[Webfs](/index.php?title=Webfs&action=edit&redlink=1 "Webfs (page does not exist)")** — Simple and instant http server for mostly static content.
+*   **Webfs** — Simple and instant http server for mostly static content.
 
 	[http://linux.bytesex.org/misc/webfs.html/](http://linux.bytesex.org/misc/webfs.html/) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 

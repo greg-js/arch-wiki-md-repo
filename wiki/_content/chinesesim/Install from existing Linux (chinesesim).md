@@ -75,7 +75,7 @@
 从[镜像站](https://www.archlinux.org/download)下载 bootstrap 镜像：
 
 ```
- $ curl -O [http://mirror.bjtu.edu.cn/archlinux/iso/2015.10.01/archlinux-bootstrap-2015.10.01-x86_64.tar.gz](http://mirror.bjtu.edu.cn/archlinux/iso/2015.10.01/archlinux-bootstrap-2015.10.01-x86_64.tar.gz)
+ $ curl -O [https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2017.08.01/archlinux-bootstrap-2017.08.01-x86_64.tar.gz](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2017.08.01/archlinux-bootstrap-2017.08.01-x86_64.tar.gz)
 
 ```
 
@@ -83,7 +83,7 @@
 
 ```
  # cd /tmp
- # tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2015.10.01-x86_64.tar.gz
+ # tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2017.08.01-x86_64.tar.gz
 
 ```
 

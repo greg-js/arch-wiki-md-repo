@@ -171,7 +171,7 @@ For changing this behavior, see above.
 To check the current zone defined for the system:
 
 ```
-$ timedatectl
+$ timedatectl status
 
 ```
 

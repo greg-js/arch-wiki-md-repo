@@ -35,9 +35,8 @@ This article provides information on basic system diagnostics relating to perfor
     *   [3.2 Frequency scaling](#Frequency_scaling)
     *   [3.3 Alternative CPU scheduler](#Alternative_CPU_scheduler)
     *   [3.4 Adjusting priorities of processes](#Adjusting_priorities_of_processes)
-        *   [3.4.1 Verynice](#Verynice)
-        *   [3.4.2 Ananicy](#Ananicy)
-        *   [3.4.3 cgroups](#cgroups)
+        *   [3.4.1 Ananicy](#Ananicy)
+        *   [3.4.2 cgroups](#cgroups)
     *   [3.5 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
@@ -335,10 +334,6 @@ The default CPU scheduler in the mainline Linux kernel is [CFS](https://en.wikip
 An alternative scheduler designed to be used on desktop computers is MuQSS, developed by [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/), which is focused on desktop interactivity and responsiveness. MuQSS is available either as a stand-alone patch or as part of a wider patchset, the **-ck** patchset. See [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information on the patchset.
 
 ### Adjusting priorities of processes
-
-#### Verynice
-
-[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [verynice](https://aur.archlinux.org/packages/verynice/) package, for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as *goodexe* in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as *badexe*. This prioritization greatly improves system responsiveness under heavy load.
 
 #### Ananicy
 

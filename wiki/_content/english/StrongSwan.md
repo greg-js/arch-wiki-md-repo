@@ -17,9 +17,10 @@ They are typically implemented in userspace daemons on the server side. [strongS
     *   [3.3 IPSec/L2TP](#IPSec.2FL2TP)
 *   [4 Secrets](#Secrets)
 *   [5 Networking](#Networking)
-    *   [5.1 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
-*   [6 Troubleshooting](#Troubleshooting)
-*   [7 See also](#See_also)
+*   [6 Starting](#Starting)
+    *   [6.1 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
+*   [7 Troubleshooting](#Troubleshooting)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -35,31 +36,22 @@ Let us start by creating a self-signed root CA certificate:
 
 ```
 $ cd /etc/ipsec.d/
-$ ipsec pki --gen --type rsa --size 4096 \
-	   --outform pem \
-	   > private/strongswanKey.pem
+$ ipsec pki --gen --type rsa --size 4096 --outform pem > private/strongswanKey.pem
 $ chmod 600 private/strongswanKey.pem
-$ ipsec pki --self --ca --lifetime 3650 \
-	   --in private/strongswanKey.pem --type rsa \
-	   --dn "C=CH, O=strongSwan, CN=strongSwan Root CA" \
-	   --outform pem \
-    > cacerts/strongswanCert.pem
+$ ipsec pki --self --ca --lifetime 3650 --outform pem
+            --in private/strongswanKey.pem --type rsa \
+            --dn "C=CH, O=strongSwan, CN=strongSwan Root CA" \
+      > cacerts/strongswanCert.pem
 
 ```
 
-The result is a 4096 bit RSA private key `strongswanKey.pem` (line 4) and a self-signed CA certificate `strongswanCert.pem` (line 10) with a validity of 10 years (3650 days). The files are stored in PEM encoded format.
+The result is a 4096 bit RSA private key `strongswanKey.pem` (line 2) and a self-signed CA certificate `strongswanCert.pem` (line 7) with a validity of 10 years (3650 days). The files are stored in PEM encoded format.
 
 You can change the Distinguished Name (DN) to more relevant values for country (C), organization (O), and common name (CN), but you do not have to.
 
 To list the properties of your newly generated certificate, type in the following command:
 
-```
-$ ipsec pki --print --in cacerts/strongswanCert.pem
-
-```
-
-Output:
-
+ `$ ipsec pki --print --in cacerts/strongswanCert.pem` 
 ```
 cert:      X509
 subject:  "C=CH, O=strongSwan, CN=strongSwan Root CA"
@@ -73,7 +65,6 @@ subjkeyId: 45:30:11:da:a4:0e:0b:0a:a3:41:a5:81:41:ab:d8:04:7a:40:6c:c0
 pubkey:    RSA 4096 bits
 keyid:     dc:15:91:95:04:07:a5:13:69:5f:77:65:26:d7:02:3f:60:ec:73:c8
 subjkey:   45:30:11:da:a4:0e:0b:0a:a3:41:a5:81:41:ab:d8:04:7a:40:6c:c0
-
 ```
 
 **Warning:** The private key `/etc/ipsec.d/private/strongswanKey.pem` of the CA should be moved somewhere safe, possibly to a special signing host without access to the Internet. Theft of this master signing key would completely compromise your public key infrastructure.
@@ -84,24 +75,22 @@ This certificate will be used to authenticate the VPN server. Run the following 
 
 ```
 $ cd /etc/ipsec.d/
-$ ipsec pki --gen --type rsa --size 2048 \
-  	--outform pem \
-  	> private/vpnHostKey.pem
+$ ipsec pki --gen --type rsa --size 2048 --outform pem > private/vpnHostKey.pem
 $ chmod 600 private/vpnHostKey.pem
 $ ipsec pki --pub --in private/vpnHostKey.pem --type rsa | \
-	 ipsec pki --issue --lifetime 730 \
-	  --cacert cacerts/strongswanCert.pem \
-	  --cakey private/strongswanKey.pem \
-	  --dn "C=CH, O=strongSwan, CN=vpn.example.com" \
-	  --san vpn.example.com \
-	  --flag serverAuth --flag ikeIntermediate \
-	  --outform pem > certs/vpnHostCert.pem
+      ipsec pki --issue --lifetime 730 --outform pem \
+                --cacert cacerts/strongswanCert.pem \
+                --cakey private/strongswanKey.pem \
+                --dn "C=CH, O=strongSwan, CN=**vpn.example.com**" \
+                --san **vpn.example.com** \
+                --flag serverAuth --flag ikeIntermediate \
+          > certs/vpnHostCert.pem
 
 ```
 
-The result is a 2048 bit RSA private key `vpnHostKey.pem` (line 4). In line 6 we extract its public key and pipe it over to issue `vpnHostCert.pem` (line 13), a host certificate signed by your CA. The certificate has a validity of two years (730 days). It identifies the VPN host by its Fully Qualified Domain Name (FQDN) (here: `vpn.example.com`).
+The result is a 2048 bit RSA private key `vpnHostKey.pem` (line 2). In line 4 we extract its public key and pipe it over to issue `vpnHostCert.pem` (line 11), a host certificate signed by your CA. The certificate has a validity of two years (730 days). It identifies the VPN host by its Fully Qualified Domain Name (FQDN) (here: `vpn.example.com`).
 
-**Warning:** The domain name or IP address of your VPN server, which is later entered in the client's connection properties, MUST be contained either in the subject Distinguished Name (here in CN, line 10) and/or in a subject Alternative Name (line11), but preferably in both. Make sure both times to replace vpn.example.com with your VPN's hostname – or else the connection between client and server will fail!
+**Warning:** The domain name or IP address of your VPN server, which is later entered in the client's connection properties, MUST be contained either in the subject Distinguished Name (`CN=`) and/or in a subject Alternative Name (`--san`), but preferably in both. Make sure both times to replace `**vpn.example.com**` with your VPN's hostname – or else the connection between client and server will fail!
 
 **Note:** If you are going to use the built-in VPN client of Windows 7, you MUST add the `serverAuth` extended key usage flag to your host certificate as shown above, or the client will refuse to connect.
 
@@ -111,13 +100,7 @@ Since the addition of these two flags probably will not hurt anyone, you should 
 
 Let us take a look at the properties of our newly generated certificate.
 
-```
-$ ipsec pki --print --in certs/vpnHostCert.pem
-
-```
-
-Output:
-
+ `$ ipsec pki --print --in certs/vpnHostCert.pem` 
 ```
 cert:      X509
 subject:  "C=CH, O=strongSwan, CN=vpn.example.com"
@@ -125,14 +108,13 @@ issuer:   "C=CH, O=strongSwan, CN=strongSwan Root CA"
 validity:  not before Nov 22 21:16:51 2013, ok
            not after  Nov 22 21:16:51 2015, ok (expires in 729 days)
 serial:    0c:05:d7:d5:57:0e:d9:48
-altNames:  vpn.zeitgeist.se
+altNames:  vpn.example.com
 flags:     serverAuth iKEIntermediate 
 authkeyId: 9b:57:35:fb:cd:9e:2d:20:37:1d:61:4c:e7:c4:5b:5e:dc:64:ad:fc
 subjkeyId: 5f:12:c2:06:ee:2b:1e:cc:5f:78:54:ff:f0:f3:7b:a0:2b:c0:b4:d6
 pubkey:    RSA 2048 bits
 keyid:     6f:a7:99:60:27:27:09:96:02:c1:b9:d9:7d:c1:b0:10:e3:e1:d5:45
 subjkey:   5f:12:c2:06:ee:2b:1e:cc:5f:78:54:ff:f0:f3:7b:a0:2b:c0:b4:d6
-
 ```
 
 ### Client Certificate
@@ -141,26 +123,24 @@ Any client will require a personal certificate in order to use the VPN. The proc
 
 ```
 $ cd /etc/ipsec.d/
-$ ipsec pki --gen --type rsa --size 2048 \
-	  --outform pem \
-	  > private/ClientKey.pem
+$ ipsec pki --gen --type rsa --size 2048 --outform pem > private/ClientKey.pem
 $ chmod 600 private/ClientKey.pem
 $ ipsec pki --pub --in private/ClientKey.pem --type rsa | \
-	 ipsec pki --issue --lifetime 730 \
-	  --cacert cacerts/strongswanCert.pem \
-	  --cakey private/strongswanKey.pem \
-	  --dn "C=CH, O=strongSwan, CN=myself@example.com" \
-	  --san myself@example.com \
-	  --outform pem > certs/ClientCert.pem
+      ipsec pki --issue --lifetime 730 --outform pem \
+                --cacert cacerts/strongswanCert.pem \
+                --cakey private/strongswanKey.pem \
+                --dn "C=CH, O=strongSwan, CN=myself@example.com" \
+                --san myself@example.com \
+          > certs/ClientCert.pem
 $ openssl pkcs12 -export -inkey private/ClientKey.pem \
-	  -in certs/ClientCert.pem -name "My own VPN client certificate" \
-	  -certfile cacerts/strongswanCert.pem \
-	  -caname "strongSwan Root CA" \
-	  -out Client.p12
+                 -in certs/ClientCert.pem -name "My own VPN client certificate" \
+                 -certfile cacerts/strongswanCert.pem \
+                 -caname "strongSwan Root CA" \
+                 -out Client.p12
 
 ```
 
-The result is a 2048 bit RSA private key `ClientKey.pem` (line 4). In line 6 we extract its public key and pipe it over to issue `ClientCert.pem` (line 12), the first client certificate signed by your CA. The certificate has a validity of two years (730 days) and identifies the client by his e-mail address (here: `myself@example.com`). The last command bundles all needed certificates and keys into a PKCS#12 file with a passphrase, which is the most convenient format for clients.
+The result is a 2048 bit RSA private key `ClientKey.pem` (line 2). In line 6 we extract its public key and pipe it over to issue `ClientCert.pem` (line 10), the first client certificate signed by your CA. The certificate has a validity of two years (730 days) and identifies the client by his e-mail address (here: `myself@example.com`). The last command bundles all needed certificates and keys into a PKCS#12 file with a passphrase, which is the most convenient format for clients.
 
 ## VPN Variants
 
@@ -245,20 +225,15 @@ strongSwan needs to know which clients are allowed to connect to the VPN. This i
 
  `/etc/ipsec.secrets` 
 ```
-# This file holds shared secrets or RSA private keys for authentication.
+# RSA private key for this host
+: RSA vpnHostKey.pem
 
-# RSA private key for this host, authenticating it to any other host
-# which knows the public part.  Suitable public keys, for ipsec.conf, DNS,
-# or configuration of other implementations, can be extracted conveniently
-# with "ipsec showhostkey".
-
+# RSA private key for clients
 : RSA ClientKey.pem
-user1 : EAP "topsecretpassword"
-user2 : XAUTH "evenmoretopsecretpassword"
 
 ```
 
-Whenever you edit /etc/ipsec.secrets while strongSwan is running, you must reload the file:
+Whenever you edit `/etc/ipsec.secrets` while strongSwan is running, you must reload the file:
 
 ```
 $ ipsec rereadsecrets
@@ -295,7 +270,9 @@ You may also need to allow the following protocols in your firewall:
 *   UDP 4500: IPSec traffic in "NAT Traversal" mode
 *   UDP 500: Key exchanges (IKE)
 
-Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `strongswan` service.
+## Starting
+
+Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `strongswan.service`.
 
 ### Running Strongswan in a Container
 

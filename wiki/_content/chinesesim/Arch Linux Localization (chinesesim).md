@@ -5,7 +5,6 @@
 *   [Google](http://www.google.com/ncr)等搜索引擎
 *   [Arch官方论坛](https://bbs.archlinux.org/)
 *   [Ubuntu中文论坛Arch专区](http://forum.ubuntu.org.cn/viewforum.php?f=155)
-*   [Linuxsir论坛Arch讨论区](http://www.linuxsir.org/bbs/forum96.html)
 *   [IRC频道:#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)
 
 ## Contents

@@ -154,6 +154,8 @@ See `man make` for a complete list of available options.
 
 ### Package hardening
 
+See [Security#Rebuilding packages](/index.php/Security#Rebuilding_packages "Security").
+
 [Install](/index.php/Install "Install") the [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper) package. This wraps gcc, g++, etc. such that there are context-dependent hardening flags. These flags can be controlled in `/etc/hardening-wrapper.conf`.
 
 To enable all hardening flags:
@@ -237,6 +239,17 @@ Run the following command in the same directory as the PKGBUILD file to generate
 $ updpkgsums
 
 ```
+
+Beware of Windows-style newlines (`\r
+`). Git replaces those with UNIX-style `
+` newlines in text files, which causes a difference in checksum. If checksum verification fails for your package on the AUR, try stripping the `\r`s from each file with
+
+```
+$ sed -i 's/\r//g' <filename>
+
+```
+
+before calculating the checksums.
 
 ### Use other compression algorithms
 

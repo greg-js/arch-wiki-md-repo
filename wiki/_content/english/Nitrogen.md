@@ -11,7 +11,7 @@
 
 ## Installation
 
-Nitrogen can be [installed](/index.php/Pacman "Pacman") with the package [nitrogen](https://www.archlinux.org/packages/?name=nitrogen), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [nitrogen](https://www.archlinux.org/packages/?name=nitrogen) package.
 
 ## Usage
 

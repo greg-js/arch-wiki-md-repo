@@ -1,4 +1,4 @@
-**Alpine** is based on pine, a text-based E-mail and newsclient that was originally released by the University of Washington in 1991\. It is an easier to use alternative to [mutt](/index.php/Mutt "Mutt"), a more lightweight approach to the mail reader concept.
+[Alpine](http://www.washington.edu/alpine/) is based on pine, a text-based E-mail and newsclient that was originally released by the University of Washington in 1991\. It is an easier to use alternative to [mutt](/index.php/Mutt "Mutt"), a more lightweight approach to the mail reader concept.
 
 Right now, this article is just a quick and dirty guide for configuring Alpine to use a remote mailserver with IMAP.
 

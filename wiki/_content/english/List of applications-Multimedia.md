@@ -366,9 +366,13 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[http://www.artofillusion.org/](http://www.artofillusion.org/) || [aoi](https://aur.archlinux.org/packages/aoi/)
 
-*   **[Blender](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Blender (software)")** — fully integrated 3D graphics creation suite capable of 3D modeling, texturing, and animation, among other things.
+*   **[Blender](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Blender (software)")** — Fully integrated 3D graphics creation suite capable of 3D modeling, texturing, and animation, among other things.
 
 	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
+
+*   **Goxel** — Open Source 3D voxel editor.
+
+	[https://guillaumechereau.github.io/goxel/](https://guillaumechereau.github.io/goxel/) || [goxel](https://aur.archlinux.org/packages/goxel/)
 
 *   **[MakeHuman™](https://en.wikipedia.org/wiki/MakeHuman "wikipedia:MakeHuman")** — Parametrical modeling program for creating human bodies.
 
@@ -377,6 +381,10 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 *   **[POV-Ray](https://en.wikipedia.org/wiki/POV-Ray "wikipedia:POV-Ray")** — Script-based raytracer for creating 3D graphics.
 
 	[http://www.povray.org/](http://www.povray.org/) || [povray](https://www.archlinux.org/packages/?name=povray)
+
+*   **VoxelShop** — Extremely intuitive and powerful software to modify and create voxel objects.
+
+	[https://blackflux.com/node/11](https://blackflux.com/node/11) || [voxelshop](https://aur.archlinux.org/packages/voxelshop/)
 
 *   **[Wings 3D](https://en.wikipedia.org/wiki/Wings3d "wikipedia:Wings3d")** — Advanced subdivision modeler that is both powerful and easy to use.
 

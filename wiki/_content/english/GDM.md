@@ -323,6 +323,8 @@ Layout=de   nodeadkeys # change to your keyboard layout
 
 To change the GDM language, ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start *gnome-control-center* and choose *Region & Language*. In the header bar, check the *Login Screen* toggle button. Finally, click on *Language* and choose your language from the list. You will be prompted for your root password.
 
+**Tip:** By adding 2 different input languages, logging out then selecting your default language GDM will remember your choice once the second option is removed.
+
 Alternatively, edit the file `/var/lib/AccountsService/users/gdm` and change the language line using the correct UTF-8 value for your language. You should see something similar to the text below:
 
  `/var/lib/AccountsService/users/gdm` 

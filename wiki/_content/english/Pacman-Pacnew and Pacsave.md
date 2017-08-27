@@ -4,6 +4,7 @@ When *pacman* removes a package that has a configuration file, it normally creat
 
 *   [1 Why these files are created](#Why_these_files_are_created)
 *   [2 Package backup files](#Package_backup_files)
+    *   [2.1 Systemwide backup files](#Systemwide_backup_files)
 *   [3 Types explained](#Types_explained)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
@@ -37,6 +38,17 @@ A package's `PKGBUILD` file specifies which files should be preserved or backed 
 backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 ```
+
+### Systemwide backup files
+
+To prevent any package from overwriting a certain file, add the following line to `/etc/pacman.conf`:
+
+```
+NoUpgrade = absolute/path/to/file
+
+```
+
+Note that the path must not start with a slash.
 
 ## Types explained
 

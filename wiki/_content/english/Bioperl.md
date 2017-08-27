@@ -10,7 +10,7 @@
 
 ## Installation
 
-Install [bioperl](https://aur.archlinux.org/packages/bioperl/) from the [AUR](/index.php/AUR "AUR").
+Install [bioperl-live-git](https://aur.archlinux.org/packages/bioperl-live-git/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
