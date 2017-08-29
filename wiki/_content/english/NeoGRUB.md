@@ -1,6 +1,6 @@
-NeoGRUB is an implementation of GRUB4DOS provided by the EasyBCD bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub) from EasyBCD, it embeds an implementation of GRUB Legacy *inside the Windows Bootloader*. This implementation can boot Arch Linux and other Linuxes *directly, without chainloading a Linux bootloader installed on the linux's /boot.*
+[NeoGRUB](https://neosmart.net/wiki/easybcd/neogrub/) is an implementation of GRUB4DOS provided by the [EasyBCD](https://neosmart.net/EasyBCD/) bootloader-configurator for Windows. When installed to the Windows bootloader (via Add New Entry - NeoGrub) from EasyBCD, it embeds an implementation of GRUB Legacy *inside the Windows Bootloader*. This implementation can boot Arch Linux and other Linuxes *directly, without chainloading a Linux bootloader installed on the linux's /boot.*
 
-This can be helpful if you find that updates to Arch are breaking your Arch's GRUB or Syslinux.
+This can be helpful if you find that updates to Arch are breaking your Arch's [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux").
 
 One caveat: NeoGRUB is only known to support the following filesystems: FAT16, FAT32, MINIX fs, ext2, ReiserFS, JFS, XFS that means that your /boot partition must be one of these filesystems if you use NeoGRUB. Your root partition and the others are not restricted to these filesystems.
 

@@ -37,6 +37,7 @@ This article provides information on basic system diagnostics relating to perfor
     *   [3.4 Adjusting priorities of processes](#Adjusting_priorities_of_processes)
         *   [3.4.1 Ananicy](#Ananicy)
         *   [3.4.2 cgroups](#cgroups)
+        *   [3.4.3 Cpulimit](#Cpulimit)
     *   [3.5 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
@@ -342,6 +343,15 @@ An alternative scheduler designed to be used on desktop computers is MuQSS, deve
 #### cgroups
 
 See [cgroups](/index.php/Cgroups "Cgroups").
+
+#### Cpulimit
+
+[Cpulimit](https://github.com/opsengine/cpulimit) is a program to limit the CPU usage percentage of a specific process. After installing [cpulimit](https://www.archlinux.org/packages/?name=cpulimit), you may limit the CPU usage of a processes' PID using a scale of 0 to 100 times the number of CPU cores that the computer has. For example, with eight CPU cores the precentage range will be 0 to 800\. Usage:
+
+```
+$ cpulimit -l 50 -p 5081
+
+```
 
 ### irqbalance
 

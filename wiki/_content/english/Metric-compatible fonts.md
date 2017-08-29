@@ -5,6 +5,7 @@
 *   [1 List of metric-compatible fonts](#List_of_metric-compatible_fonts)
 *   [2 Generic Families](#Generic_Families)
     *   [2.1 PostScript](#PostScript)
+        *   [2.1.1 Garamond](#Garamond)
     *   [2.2 Microsoft](#Microsoft)
 *   [3 Metric-compatible font projects](#Metric-compatible_font_projects)
     *   [3.1 TeX Gyre](#TeX_Gyre)
@@ -71,6 +72,10 @@ In the following table, commonly-specified families are shown in **bold**. This 
 The PostScript language defines [35 core fonts](https://en.wikipedia.org/wiki/PostScript_fonts#Core_Font_Set "wikipedia:PostScript fonts") in PostScript 2\. URW released open-source versions of these 35 fonts for [w:ghostscript](https://en.wikipedia.org/wiki/ghostscript "w:ghostscript"). Projects including GUST's [TeX Gyre](#TeX_Gyre) and [GNU FreeFont](#GNU_FreeFont) release enhanced versions of these fonts.
 
 PostScript 3 defines an additional 101 fonts, many of which are made available by URW in [GhostPDL](http://svn.ghostscript.com/ghostscript/trunk/ghostpdl/urwfonts/).
+
+#### Garamond
+
+URW's Garamond No.8 only provides one optical size (8pt). You may use [EB Garamond](http://www.georgduffner.at/ebgaramond/) for more OpenType features, including the 12pt size.
 
 ### Microsoft
 

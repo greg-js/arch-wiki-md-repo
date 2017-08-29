@@ -68,7 +68,7 @@ Before installing Bumblebee, check your BIOS and activate Optimus (older laptops
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
-*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) - Install appropriate NVIDIA driver. For more information read [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
+*   An appropriate version of the NVIDIA driver, see [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
 *   Optionally install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
 
 For 32-bit ([Multilib](/index.php/Multilib "Multilib") must be enabled) applications support on 64-bit machines, install:
@@ -264,7 +264,7 @@ Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you won't have to
 
 ### Power management
 
-The goal of the power management feature is to turn off the NVIDIA card when it is not used by Bumblebee any more. If [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (or [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms)) is installed, it will be detected automatically when the Bumblebee daemon starts. No additional configuration is necessary. However, [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is for [Optimus laptops only and will not work on desktop computers](https://bugs.launchpad.net/ubuntu/+source/bbswitch/+bug/1338404/comments/6). So, Bumblebee power management is not available for desktop computers, and there is no reason to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) on a desktop. (Nevertheless, the other features of Bumblebee do work on some desktop computers.)
+The goal of the power management feature is to turn off the NVIDIA card when it is not used by Bumblebee any more. If [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (for [linux](https://www.archlinux.org/packages/?name=linux)), [bbswitch-lts](https://www.archlinux.org/packages/?name=bbswitch-lts) (for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)) or [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms) (for custom kernel) is installed, it will be detected automatically when the Bumblebee daemon starts. No additional configuration is necessary. However, [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is for [Optimus laptops only and will not work on desktop computers](https://bugs.launchpad.net/ubuntu/+source/bbswitch/+bug/1338404/comments/6). So, Bumblebee power management is not available for desktop computers, and there is no reason to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) on a desktop. (Nevertheless, the other features of Bumblebee do work on some desktop computers.)
 
 #### Default power state of NVIDIA card using bbswitch
 

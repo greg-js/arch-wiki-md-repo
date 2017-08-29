@@ -897,9 +897,9 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://icculus.org/freespace2/](https://icculus.org/freespace2/) || [fs2_open](https://aur.archlinux.org/packages/fs2_open/)
 
-*   **[Minetest](/index.php/Minetest "Minetest")** — Voxel-based sandbox game engine and game.
+*   **Minetest** — Voxel-based sandbox game engine and game.
 
-	[http://www.minetest.net/](http://www.minetest.net/) || [minetest](https://www.archlinux.org/packages/?name=minetest)
+	[http://www.minetest.net/](http://www.minetest.net/) || [minetest](https://www.archlinux.org/packages/?name=minetest) [minetest-server](https://www.archlinux.org/packages/?name=minetest-server)
 
 *   **Naev** — Open source, 2D space trading and combat game, taking inspiration from the Escape Velocity series.
 
@@ -993,9 +993,9 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.unknown-horizons.org/](http://www.unknown-horizons.org/) || [unknown-horizons-git](https://aur.archlinux.org/packages/unknown-horizons-git/)
 
-*   **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")** — You command the forces of The Project in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with over 400 different technologies, combined with the unit design system, allows for a wide variety of possible units and tactics.
+*   **Warzone 2100** — You command the forces of The Project in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with over 400 different technologies, combined with the unit design system, allows for a wide variety of possible units and tactics. The AUR package installs its videos ([FS#55310](https://bugs.archlinux.org/task/55310)).
 
-	[https://wz2100.net/](https://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100)
+	[https://wz2100.net/](https://wz2100.net/) || [warzone2100](https://www.archlinux.org/packages/?name=warzone2100) [warzone2100-sequences](https://aur.archlinux.org/packages/warzone2100-sequences/)
 
 *   **[Widelands](https://en.wikipedia.org/wiki/Widelands "wikipedia:Widelands")** — Slow-paced strategy like "the Settlers 2".
 

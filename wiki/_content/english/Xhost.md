@@ -33,6 +33,6 @@ xhost + >/dev/null
 
 ```
 
-into your ~/.bashrc file. This way, each time you fire up the terminal, the command gets executed. If you do not yet have a .bashrc file in your home directory, it's OK to create one with just this line in it. If you do not add *>/dev/null* then each time you fire a terminal, you will see a non-disruptive message saying: *access control disabled, clients can connect from any host*, which is your confirmation that you can now *sudo <your soft>* without issue.
+to your `~/.bashrc` file. This way, each time you fire up the terminal, the command gets executed. If you do not yet have a .bashrc file in your home directory, it's OK to create one with just this line in it. If you do not add *>/dev/null* then each time you fire a terminal, you will see a non-disruptive message saying: *access control disabled, clients can connect from any host*, which is your confirmation that you can now *sudo <your soft>* without issue.
 
 **Warning:** This command disables access control, meaning that any user on the system, or on your network if X is listening on the network, has access to your $DISPLAY without any authentication. This opens a security hole on your system that allows other users to launch applications (including key loggers) on your X server.

@@ -120,9 +120,9 @@ After you are all done, click on the '...' button next to *Output Profile File* 
 
 You can save your created profiles anywhere you want, but the common locations for color profiles are:
 
-*   /usr/share/color/icc (used by Scribus and Separate plugin for The GIMP)
-*   /usr/lib/scribus/profiles (used by Scribus)
-*   /home/(your_user_name)/.color/icc (used by Scribus)
+*   `/usr/share/color/icc` (used by Scribus and Separate plugin for The GIMP)
+*   `/usr/lib/scribus/profiles` (used by Scribus)
+*   `~/.color/icc` (used by Scribus)
 
 None of the locations seem to be standard. It is recommended that you put your profiles in /usr/share/color/icc, and keep copies in a non-hidden directory in your home directory.
 

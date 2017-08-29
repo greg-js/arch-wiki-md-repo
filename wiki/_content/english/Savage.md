@@ -11,18 +11,11 @@ Savage is a video chipset that was manufactured by S3 and VIA. This driver suppo
 
 ### Installation
 
-If you already have installed [Xorg](/index.php/Xorg "Xorg") you only need to install [xf86-video-savage](https://aur.archlinux.org/packages/xf86-video-savage/) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+If you have [Xorg](/index.php/Xorg "Xorg") installed you only need to install [xf86-video-savage](https://aur.archlinux.org/packages/xf86-video-savage/) from the [AUR](/index.php/AUR "AUR").
 
 ### Configuration
 
-Create a configuration file in /etc/X11/xorg.conf.d/ named 99-savage.conf (or a name you prefer):
-
-```
-# nano /etc/X11/xorg.conf.d/99-savage.conf
-
-```
-
-Paste following text and save the file:
+Create a configuration file in `/etc/X11/xorg.conf.d/` named `99-savage.conf` (or a name you prefer) with the following content:
 
 ```
 Section "Device"

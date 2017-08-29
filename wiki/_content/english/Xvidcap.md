@@ -14,7 +14,7 @@ Quoted from the [xvidcap sourceforge page](http://xvidcap.sourceforge.net/):
 
 ## Installation
 
-Install [xvidcap](https://aur.archlinux.org/packages/xvidcap/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [xvidcap](https://aur.archlinux.org/packages/xvidcap/) package from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 

@@ -18,7 +18,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
 
 ## Installation
 
-The tools to manage XFS partions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package from the [official repositories](/index.php/Official_repositories "Official repositories"), which is included in the default base installation.
+The tools to manage XFS partions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package, which is included in the default base installation.
 
 ## Data corruption
 

@@ -4,6 +4,8 @@
 
 [Install](/index.php/Install "Install") the [gimp](https://www.archlinux.org/packages/?name=gimp) package.
 
+**Tip:** The GIMP implements a plug-in system and the repositories ([official](https://www.archlinux.org/packages/?sort=&q=gimp&maintainer=&flagged=), [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=gimp&outdated=off&SB=n&SO=a&PP=50&do_Search=Go)) contain more plug-ins than listed in the package's optional depends.
+
 ## Troubleshooting
 
 ### GIMP PDF editing doesn't work

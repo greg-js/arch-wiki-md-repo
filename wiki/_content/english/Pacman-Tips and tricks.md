@@ -624,7 +624,7 @@ There are other downloading applications that you can use with Pacman. Here they
 
 ### Graphical front-ends
 
-**Warning:** Some front-ends, such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266), perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
 
 *   **Arch-Update** — Update indicator for Gnome-Shell.
 
@@ -650,7 +650,7 @@ There are other downloading applications that you can use with Pacman. Here they
 
 	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
 
-*   **pamac-aur** — A DBus daemon and Gtk3 frontend for libalpm written in Vala
+*   **pamac** — A DBus daemon and Gtk3 frontend for libalpm written in Vala.
 
 	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
 

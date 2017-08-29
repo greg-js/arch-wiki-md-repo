@@ -7,21 +7,22 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 SteamCMD](#SteamCMD)
-*   [2 Usage](#Usage)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Directory structure](#Directory_structure)
-    *   [3.2 Launch options](#Launch_options)
-    *   [3.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
-    *   [3.4 Steam skins](#Steam_skins)
-        *   [3.4.1 Creating skins](#Creating_skins)
-    *   [3.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
-        *   [3.5.1 Use a skin](#Use_a_skin)
-        *   [3.5.2 Live patching](#Live_patching)
-    *   [3.6 In-Home Streaming](#In-Home_Streaming)
-    *   [3.7 Finding a games AppID](#Finding_a_games_AppID)
-*   [4 Troubleshooting](#Troubleshooting)
-*   [5 See also](#See_also)
+*   [2 Alternative Flatpak Installation](#Alternative_Flatpak_Installation)
+    *   [2.1 SteamCMD](#SteamCMD)
+*   [3 Usage](#Usage)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Directory structure](#Directory_structure)
+    *   [4.2 Launch options](#Launch_options)
+    *   [4.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [4.4 Steam skins](#Steam_skins)
+        *   [4.4.1 Creating skins](#Creating_skins)
+    *   [4.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [4.5.1 Use a skin](#Use_a_skin)
+        *   [4.5.2 Live patching](#Live_patching)
+    *   [4.6 In-Home Streaming](#In-Home_Streaming)
+    *   [4.7 Finding a games AppID](#Finding_a_games_AppID)
+*   [5 Troubleshooting](#Troubleshooting)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -39,6 +40,24 @@ The following fixes are needed to get Steam functioning properly on Arch Linux:
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
 *   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.
 *   In case that you are using Arch Linux in your local language, make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")). Otherwise Steam client wont start with **invalid pointer** error.
+
+## Alternative Flatpak Installation
+
+Currently does not support themes.
+
+Install [flatpak](https://www.archlinux.org/packages/?name=flatpak)
+
+Add the flatpak [flathub](https://flathub.org/) repository
+
+`flatpak remote-add --if-not-exists flathub [https://flathub.org/repo/flathub.flatpakrepo](https://flathub.org/repo/flathub.flatpakrepo)`
+
+Install the Steam flatpak
+
+`flatpak install flathub com.valvesoftware.Steam`
+
+By default steam won't be able to see your home folder, we can specify it to use the home folder so it behaves identically to as it would be on Ubuntu or SteamOS by specifying that with
+
+`flatpak override com.valvesoftware.Steam --filesystem=/home/USERNAME`
 
 ### SteamCMD
 

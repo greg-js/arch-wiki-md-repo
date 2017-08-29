@@ -79,11 +79,14 @@ Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch Us
 *   [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases (with support of newer kernel versions).
 *   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) for stable releases for LTS kernels.
 *   [zfs-linux-lts-git](https://aur.archlinux.org/packages/zfs-linux-lts-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for LTS kernels.
-*   [zfs-linux-hardened](https://aur.archlinux.org/packages/zfs-linux-hardened/) for stable releases for the hardened kernels.
-*   [zfs-linux-hardened-git](https://aur.archlinux.org/packages/zfs-linux-hardened-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for the hardened kernels.
+*   [zfs-linux-hardened](https://aur.archlinux.org/packages/zfs-linux-hardened/) for stable releases for hardened kernels.
+*   [zfs-linux-hardened-git](https://aur.archlinux.org/packages/zfs-linux-hardened-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for hardened kernels.
+*   [zfs-linux-zen](https://aur.archlinux.org/packages/zfs-linux-zen/) for stable releases for zen kernels.
+*   [zfs-linux-zen-git](https://aur.archlinux.org/packages/zfs-linux-zen-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for zen kernels.
 *   [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) for versions with dynamic kernel module support.
+*   [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases for versions with dynamic kernel module support.
 
-These branches have (according to them) dependencies on the `zfs-utils`, `spl-linux`, `spl-utils-linux` packages. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
+These branches have (according to them) dependencies on the `zfs-utils`, `spl`, `spl-utils` packages. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
 Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
 

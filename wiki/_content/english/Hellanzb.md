@@ -9,7 +9,6 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 hellanzb.conf](#hellanzb.conf)
     *   [3.2 /etc/conf.d/hellanzb](#.2Fetc.2Fconf.d.2Fhellanzb)
-*   [4 See also](#See_also)
 
 ## Main Features
 
@@ -20,7 +19,7 @@
 
 ## Installing
 
-Hellanzb is available in the [AUR](/index.php/AUR "AUR") package [hellanzb](https://aur.archlinux.org/packages/hellanzb/).
+Hellanzb is available in the [AUR](/index.php/AUR "AUR") package [hellanzb-git](https://aur.archlinux.org/packages/hellanzb-git/).
 
 ## Configuration
 
@@ -48,7 +47,3 @@ HELLANZB_USER="username"
 HELLANZB_CONF="/home/${HELLANZB_USER}/.config/hellanzb.conf"
 
 ```
-
-## See also
-
-*   [Screen Tips](/index.php/Screen_Tips "Screen Tips")

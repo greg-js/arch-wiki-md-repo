@@ -118,7 +118,7 @@ PunkBuster (PB for short) is no longer supporting Enemy Territory. As a result y
 This can be solved by manually updating your PB client to the latest version:
 
 1.  Download the latest PB files from here: [http://etkey.org/pages/punkbuster/manual-installation.php](http://etkey.org/pages/punkbuster/manual-installation.php). This is not an official PB site, so use it at your own risk.
-2.  Go to: `$HOME/.etwolf/`
+2.  Go to: `~/.etwolf/`
 3.  Create a directory named `pb` (if it does not exist).
 4.  Extract to contents of the downloaded file into the directory mentioned above. The `pb` directory should contain at least 2 directories (`dll` and `htm`) plus a number of `so` files.
 5.  Open your CFG file and add the following line:

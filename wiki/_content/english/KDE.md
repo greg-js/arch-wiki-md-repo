@@ -373,10 +373,6 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-*   **kcm-gtk** — A GTK appearance KConfig Module.
-
-	[https://launchpad.net/kcm-gtk](https://launchpad.net/kcm-gtk) || [kcm-gtk](https://aur.archlinux.org/packages/kcm-gtk/)
-
 *   **KCM Qt Graphics System** — This KCM allows you to easily configure the standard Qt graphics system.
 
 	[https://www.linux-apps.com/p/1127857/](https://www.linux-apps.com/p/1127857/) || [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)

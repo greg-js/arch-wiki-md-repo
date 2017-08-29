@@ -1,4 +1,4 @@
-[wmii](http://wmii.suckless.org/) (window manager improved 2) is a dynamic window manager for X11\. It supports classic and dynamic window management with extended keyboard, mouse, and filesystem based remote control. It replaces the workspace paradigm with a new tagging approach.
+[wmii](https://code.google.com/archive/p/wmii/) (window manager improved 2) is a dynamic window manager for X11\. It supports classic and dynamic window management with extended keyboard, mouse, and filesystem based remote control. It replaces the workspace paradigm with a new tagging approach.
 
 The following tips are intended to help the user get started with wmii. While wmii can be configured in almost any language, this article will focus on using the **wmiirc** configuration file, which is simply a shell script. Please see the [ruby-wmii](/index.php/Ruby-wmii "Ruby-wmii") article to see how to configure wmii in ruby.
 
@@ -112,32 +112,36 @@ Colors of unselected window are in NORMCOLORS variable. Colors of selected windo
 
 If you are not familiar with tiling WMs, it's not really easy to begin with it. You must learn a few basic hotkeys to launch programs and place or resize windows. It is a good idea to write the basic hotkeys on paper and stick these on your monitor until you memorize them. By default, the "Mod" key is Alt. Some default hotkeys are :
 
-```
-   * Mod+Enter -> Terminal
-   * Mod+p -> wimenu : a menu appears, just type the beginning of the name of the application 
-     to open it.
-   * Mod+d -> default layout : windows are divided on screen
-   * Mod+s -> stacked layout : the selected window take all the screen, we just see the title 
-     bar of the others.
-   * Mod+j -> select the window below
-   * Mod+k -> select the window above
-   * Shift+Mod+j -> move the window down
-   * Shift+Mod+k -> move the window up
-   * Mod+a -> Actions menu : choose "quit" to quit
+*   Mod+Enter -> Terminal
+*   Mod+p -> wimenu : a menu appears, just type the beginning of the name of the application
 
 ```
+ to open it.
+
+```
+
+*   Mod+d -> default layout : windows are divided on screen
+*   Mod+s -> stacked layout : the selected window take all the screen, we just see the title
+
+```
+ bar of the others.
+
+```
+
+*   Mod+j -> select the window below
+*   Mod+k -> select the window above
+*   Shift+Mod+j -> move the window down
+*   Shift+Mod+k -> move the window up
+*   Mod+a -> Actions menu : choose "quit" to quit
 
 N.B. For commonly used programs you can make use of *history.progs*, Mod+p and up/down arrow keys to select previous entries.
 
 By default, only one column is used by the desktop (i.e. the entire screen). It's possible to use several columns with h and l :
 
-```
-   * Mod+Shift+h : move the selected window left
-   * Mod+Shift+l : move the selected window right
-   * Mod+h : select the column on the left
-   * Mod+l : select the column on the right 
-
-```
+*   Mod+Shift+h : move the selected window left
+*   Mod+Shift+l : move the selected window right
+*   Mod+h : select the column on the left
+*   Mod+l : select the column on the right
 
 Columns are created automatically, with your placements of the windows. You can make them bigger or smaller, clicking beetween two columns.
 
@@ -145,33 +149,34 @@ Columns are created automatically, with your placements of the windows. You can 
 
 You begin in "default" layout : all windows take the same space. You can make them bigger or smaller by clicking in the little square in the title bar of a window.
 
-```
-   * "default" layout (Mod+d) : all windows take the same space.
-   * "stacked" layout (Mod+s) : the selected window takes the entire column, but you can see 
-      the title bar of other windows.
-   * "maximum" layout (Mod+m) : the selected window takes the entire column, you do not see 
-      other windows.
-   * "fullscreen" layout (Mod+f) : the selected window takes runs in full screen.
+*   "default" layout (Mod+d) : all windows take the same space.
+*   "stacked" layout (Mod+s) : the selected window takes the entire column, but you can see
 
 ```
+  the title bar of other windows.
+
+```
+
+*   "maximum" layout (Mod+m) : the selected window takes the entire column, you do not see
+
+```
+  other windows.
+
+```
+
+*   "fullscreen" layout (Mod+f) : the selected window takes runs in full screen.
 
 #### Floating layout
 
 You can place your windows like a classic window manager. It's called floating layout. It's useful for some applications, like the Gimp, mplayer, vlc etc.
 
-```
-   * Mod+Shift+Space : Move selected window in floating layout.
-   * Mod+Space : switch between floating layout and normal layout. 
-
-```
+*   Mod+Shift+Space : Move selected window in floating layout.
+*   Mod+Space : switch between floating layout and normal layout.
 
 In the floating layout, we can select a window with Mod+j and Mod+k. We can change dimensions of the window, by dragging, like in any other window manager. But we can use hotkeys for that as well :
 
-```
-   * Mod+Left click : move window
-   * Mod+Right click : change dimensions of the window (you can use it in other layouts too)
-
-```
+*   Mod+Left click : move window
+*   Mod+Right click : change dimensions of the window (you can use it in other layouts too)
 
 ### Views and Tagging
 
@@ -179,31 +184,38 @@ Tagging in wmii is very similar to the concept of virtual desktops in other wind
 
 By default, when you first start up wmii you will see the word 'nil' in the lower left corner. You are at the 'nil' view. The first application you start (such as a terminal: Mod+Enter) will automatically be tagged with a "1" and you will be automatically switched to view "1". Views can be navigated or changed with built in keybindings:
 
-```
-   * Mod+Shift+2 : tag selected window to view "2"
-   * Mod+2 : this switches you to view "2" where you can see all windows tagged with "2"
-
-```
+*   Mod+Shift+2 : tag selected window to view "2"
+*   Mod+2 : this switches you to view "2" where you can see all windows tagged with "2"
 
 It's the same thing for all numbers, from 0 to 9\. But you can also use names :
 
+*   Mod+t : views menu : you can select a tag with right and left keys, or type the name
+
 ```
-   * Mod+t : views menu : you can select a tag with right and left keys, or type the name 
-     of the tag (or just a part of the name, if it was created).
+ of the tag (or just a part of the name, if it was created).
 
-   * Mod+Shift+t : this retags the currently selected window with whatever you type into 
-     the menu.
+```
 
-   * N.B If using plan9port a *history.tags* file is generated in .wmii-*/. You can use 
-     up/down arrow keys to recall previous entries for simple re-tagging/window viewing.
+*   Mod+Shift+t : this retags the currently selected window with whatever you type into
+
+```
+ the menu.
+
+```
+
+*   N.B If using plan9port a *history.tags* file is generated in .wmii-*/. You can use
+
+```
+ up/down arrow keys to recall previous entries for simple re-tagging/window viewing.
 
 ```
 
 You can tag windows with multiple views by using a '+' between the tag names :
 
+*   Mod+Shift+t foo+bar+2 : this tags the currently selected window to the views "foo",
+
 ```
-   * Mod+Shift+t foo+bar+2 : this tags the currently selected window to the views "foo",
-     "bar" and "2".
+ "bar" and "2".
 
 ```
 

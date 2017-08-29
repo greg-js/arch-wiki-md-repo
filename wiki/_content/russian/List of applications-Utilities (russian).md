@@ -522,7 +522,7 @@
 
 *   **[Strigi](https://en.wikipedia.org/wiki/ru:Strigi "wikipedia:ru:Strigi")** — Быстрый поисковый движок с интерфейсом Qt
 
-	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://www.archlinux.org/packages/?name=strigi)
+	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://aur.archlinux.org/packages/strigi/)
 
 *   **[Tracker](https://en.wikipedia.org/wiki/ru:Tracker_(%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B8%D0%BA) "wikipedia:ru:Tracker (локальный поисковик)")** — Все в одном: индексатор, поисковая утилита и база метаданных
 

@@ -6,8 +6,6 @@ In order to use these repositories, you will have to add them to `/etc/pacman.co
 
 If you want to create your own custom repository, follow [pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips").
 
-**Tip:** To get a list of all servers listed in this page: `curl -s 'https://wiki.archlinux.org/index.php/Unofficial_user_repositories' | awk '/^Server =/ { print $3 }' ` 
-
 ## Contents
 
 *   [1 Adding your repository to this page](#Adding_your_repository_to_this_page)
@@ -23,27 +21,26 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
     *   [3.1 Signed](#Signed_2)
         *   [3.1.1 arcanisrepo](#arcanisrepo)
-        *   [3.1.2 arch-openrc](#arch-openrc)
-        *   [3.1.3 archlinuxcn](#archlinuxcn)
-        *   [3.1.4 blackeagle-pre-community](#blackeagle-pre-community)
-        *   [3.1.5 catalyst](#catalyst)
-        *   [3.1.6 catalyst-hd234k](#catalyst-hd234k)
-        *   [3.1.7 city](#city)
-        *   [3.1.8 gustawho](#gustawho)
-        *   [3.1.9 haskell-core](#haskell-core)
-        *   [3.1.10 haskell-happstack](#haskell-happstack)
-        *   [3.1.11 haskell-web](#haskell-web)
-        *   [3.1.12 herecura](#herecura)
-        *   [3.1.13 ivasilev](#ivasilev_2)
-        *   [3.1.14 jrpi-haskell](#jrpi-haskell)
-        *   [3.1.15 llvm-svn](#llvm-svn)
-        *   [3.1.16 miffe](#miffe)
-        *   [3.1.17 repo-ck](#repo-ck)
-        *   [3.1.18 seblu](#seblu)
-        *   [3.1.19 seiichiro](#seiichiro)
-        *   [3.1.20 sergej-repo](#sergej-repo)
-        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.22 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+        *   [3.1.2 archlinuxcn](#archlinuxcn)
+        *   [3.1.3 blackeagle-pre-community](#blackeagle-pre-community)
+        *   [3.1.4 catalyst](#catalyst)
+        *   [3.1.5 catalyst-hd234k](#catalyst-hd234k)
+        *   [3.1.6 city](#city)
+        *   [3.1.7 gustawho](#gustawho)
+        *   [3.1.8 haskell-core](#haskell-core)
+        *   [3.1.9 haskell-happstack](#haskell-happstack)
+        *   [3.1.10 haskell-web](#haskell-web)
+        *   [3.1.11 herecura](#herecura)
+        *   [3.1.12 ivasilev](#ivasilev_2)
+        *   [3.1.13 jrpi-haskell](#jrpi-haskell)
+        *   [3.1.14 llvm-svn](#llvm-svn)
+        *   [3.1.15 miffe](#miffe)
+        *   [3.1.16 repo-ck](#repo-ck)
+        *   [3.1.17 seblu](#seblu)
+        *   [3.1.18 seiichiro](#seiichiro)
+        *   [3.1.19 sergej-repo](#sergej-repo)
+        *   [3.1.20 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.21 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 archlinuxfr](#archlinuxfr)
         *   [3.2.2 archlinuxgr](#archlinuxgr)
@@ -54,11 +51,10 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.2.7 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
         *   [3.2.8 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
         *   [3.2.9 noware](#noware)
-        *   [3.2.10 openrc-eudev](#openrc-eudev)
-        *   [3.2.11 pantheon](#pantheon)
-        *   [3.2.12 pietma](#pietma)
-        *   [3.2.13 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.14 QOwnNotes](#QOwnNotes)
+        *   [3.2.10 pantheon](#pantheon)
+        *   [3.2.11 pietma](#pietma)
+        *   [3.2.12 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.13 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
@@ -229,20 +225,6 @@ Server = http://repo.arcanis.me/repo/$arch
 ```
 
 (It is also available via FTP with the same url.)
-
-#### arch-openrc
-
-*   **Maintainer:** [Chris Cromer](https://bbs.archlinux.org/profile.php?id=84785)
-*   **Description:** Packages to install and maintain OpenRC with sysvinit for Arch Linux.
-*   **Upstream sources page:** [https://github.com/cromerc/packages-openrc](https://github.com/cromerc/packages-openrc)
-*   **Upstream packages/ISO page:** [https://sourceforge.net/projects/archopenrc/files/arch-openrc/](https://sourceforge.net/projects/archopenrc/files/arch-openrc/)
-*   **Key-ID:** 97BEEEC2
-
-```
-[arch-openrc]
-Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
-
-```
 
 #### archlinuxcn
 
@@ -584,20 +566,6 @@ Server = http://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Ar
 ```
 [noware]
 Server = http://direct.$repo.systems.:2/repository/arch/$arch
-
-```
-
-#### openrc-eudev
-
-*   **Maintainer:** [nous](/index.php/User:Nous "User:Nous")
-*   **Description:** OpenRC init system, initscripts, eudev and nosystemd packages from the AUR.
-*   **Upstream page:** [https://sourceforge.net/projects/archopenrc](https://sourceforge.net/projects/archopenrc)
-*   **Upstream sources:** [https://github.com/cromerc/arch-openrc](https://github.com/cromerc/arch-openrc), [https://github.com/cromerc/arch-nosystemd](https://github.com/cromerc/arch-nosystemd) and the AUR
-
-```
-[openrc-eudev]
-Server=http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
-Server=ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
 
 ```
 
@@ -1147,7 +1115,7 @@ Server = https://tatsuyuki.kdns.info/archlinux/$repo/$arch
 
 #### trinity
 
-*   **Maintainer:** [Michael Manley](/index.php?title=User:Mmanley&action=edit&redlink=1 "User:Mmanley (page does not exist)") <mmanley@nasutek.com>
+*   **Maintainer:** Michael Manley <mmanley@nasutek.com>
 *   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
 
 ```

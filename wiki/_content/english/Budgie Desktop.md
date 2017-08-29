@@ -1,4 +1,4 @@
-Budgie is the default desktop of Solus Operating System, written from scratch. Besides a more modern design, Budgie can emulate the look and feel of the GNOME 2 desktop.
+[Budgie](https://budgie-desktop.org/home/) is the default desktop of Solus Operating System, written from scratch. Besides a more modern design, Budgie can emulate the look and feel of the GNOME 2 desktop.
 
 At this time Budgie is heavily under development, so you can expect minor bugs and new features to be added as time goes on.
 

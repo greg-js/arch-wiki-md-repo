@@ -21,9 +21,9 @@ The [xrdp](https://aur.archlinux.org/packages/xrdp/) package contains service fi
 
 [Install](/index.php/Install "Install") the [xorgxrdp-git](https://aur.archlinux.org/packages/xorgxrdp-git/) package.
 
-Add allowed_users=anybody to /etc/X11/Xwrapper.config to allow anybody to start X
+Add `allowed_users=anybody` to `/etc/X11/Xwrapper.config` to allow anybody to start X
 
-Edit ~/.xinitrc or /etc/X11/xinit/xinitrc to launch your DE.
+Edit `~/.xinitrc` or `/etc/X11/xinit/xinitrc` to launch your DE.
 
 ### Running with Vino (Gnome VNC-Server for root session)
 

@@ -39,6 +39,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [15.1 Textures not rendering properly](#Textures_not_rendering_properly)
 *   [16 Civilization V](#Civilization_V)
     *   [16.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
+    *   [16.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
 *   [17 Civilization: Beyond earth](#Civilization:_Beyond_earth)
 *   [18 Civilization VI](#Civilization_VI)
 *   [19 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
@@ -457,6 +458,12 @@ You need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [l
 ### Stuttering sound with PulseAudio
 
 See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooting#Laggy_sound "PulseAudio/Troubleshooting").
+
+### Game crashes seconds after loading a map
+
+If you have a CPU with more than 8 threads (such as AMD Ryzen), set `MaxSimultaneousThreads` to `16` in `config.ini` in game directory.
+
+The solution was found [here](https://www.reddit.com/r/civ5/comments/5z77jr/game_crashes_randomly_on_linux_amd_ryzen/).
 
 ## Civilization: Beyond earth
 

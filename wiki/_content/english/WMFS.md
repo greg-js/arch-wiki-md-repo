@@ -14,7 +14,6 @@ Rest of this page can be applied only to older version of WMFS.
         *   [2.3.1 Scratchpad](#Scratchpad)
     *   [2.4 Statusbar configuration](#Statusbar_configuration)
     *   [2.5 Conky](#Conky)
-    *   [2.6 WMFS Status Toolkit](#WMFS_Status_Toolkit)
 *   [3 Usage](#Usage)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Status bar not working in last git version](#Status_bar_not_working_in_last_git_version)
@@ -195,10 +194,6 @@ You can use [Conky](/index.php/Conky "Conky") to pipe output to the wmfs statusb
 conky | while read -r; do wmfs -s -name "$REPLY"; done
 
 ```
-
-### WMFS Status Toolkit
-
-[https://aur.archlinux.org/packages.php?ID=38463](https://aur.archlinux.org/packages.php?ID=38463)
 
 ## Usage
 

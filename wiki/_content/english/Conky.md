@@ -6,30 +6,29 @@
     *   [1.1 AUR packages](#AUR_packages)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Config file syntax changed](#Config_file_syntax_changed)
-    *   [2.2 Enable real transparency in KDE4 and Xfce4](#Enable_real_transparency_in_KDE4_and_Xfce4)
-    *   [2.3 Autostart with Xfce4](#Autostart_with_Xfce4)
+    *   [2.2 Enable real transparency](#Enable_real_transparency)
+    *   [2.3 Autostart](#Autostart)
     *   [2.4 Prevent flickering](#Prevent_flickering)
     *   [2.5 Custom colors](#Custom_colors)
     *   [2.6 Dual Screen](#Dual_Screen)
     *   [2.7 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
-    *   [2.8 Integrate with GNOME](#Integrate_with_GNOME)
-    *   [2.9 Integrate with Razor-qt](#Integrate_with_Razor-qt)
-    *   [2.10 Display package update information](#Display_package_update_information)
-    *   [2.11 Display weather forecast](#Display_weather_forecast)
-    *   [2.12 Display a countdown timer](#Display_a_countdown_timer)
-    *   [2.13 Display RSS feeds](#Display_RSS_feeds)
-    *   [2.14 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [2.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [2.16 Display number of new emails](#Display_number_of_new_emails)
-        *   [2.16.1 Gmail](#Gmail)
-            *   [2.16.1.1 method 1](#method_1)
-            *   [2.16.1.2 method 2](#method_2)
-            *   [2.16.1.3 method 3](#method_3)
-            *   [2.16.1.4 method 4](#method_4)
-        *   [2.16.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
-        *   [2.16.3 IMAP using PHP](#IMAP_using_PHP)
-    *   [2.17 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
-    *   [2.18 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
+    *   [2.8 Integrate with GNOME Shell](#Integrate_with_GNOME_Shell)
+    *   [2.9 Display package update information](#Display_package_update_information)
+    *   [2.10 Display weather forecast](#Display_weather_forecast)
+    *   [2.11 Display a countdown timer](#Display_a_countdown_timer)
+    *   [2.12 Display RSS feeds](#Display_RSS_feeds)
+    *   [2.13 Display rTorrent stats](#Display_rTorrent_stats)
+    *   [2.14 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
+    *   [2.15 Display number of new emails](#Display_number_of_new_emails)
+        *   [2.15.1 Gmail](#Gmail)
+            *   [2.15.1.1 method 1](#method_1)
+            *   [2.15.1.2 method 2](#method_2)
+            *   [2.15.1.3 method 3](#method_3)
+            *   [2.15.1.4 method 4](#method_4)
+        *   [2.15.2 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [2.15.3 IMAP using PHP](#IMAP_using_PHP)
+    *   [2.16 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
+    *   [2.17 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
 *   [3 User-contributed configuration examples](#User-contributed_configuration_examples)
     *   [3.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
 *   [4 A note about symbolic fonts](#A_note_about_symbolic_fonts)
@@ -117,20 +116,22 @@ If in doubt, or something doesn't work at all, you can start with the default co
 
 ```
 
-### Enable real transparency in KDE4 and Xfce4
+### Enable real transparency
 
-Since version 1.8.0 *conky* supports real transparency. To enable it add this line to `conky.conf`:
+To enable real transparency, add this line to `conky.conf`:
 
 ```
 own_window_transparent = true,
 
 ```
 
-The above option is not desired with the `OWN_WINDOW_ARGB_VISUAL yes` option. This replaces the [feh](https://www.archlinux.org/packages/?name=feh) method described below.
+The above option is not desired with the `own_window_argb_visual = true` option.
+
+If transparency doesn't work you might need to follow [#Universal method to enable true transparency](#Universal_method_to_enable_true_transparency).
 
 **Note:** [Xfce](/index.php/Xfce "Xfce") requires enabled compositing, see [[1]](https://forum.xfce.org/viewtopic.php?pid=25939).
 
-### Autostart with Xfce4
+### Autostart
 
 In `conky.conf` file:
 
@@ -151,18 +152,14 @@ The `override` takes *conky* out of the control of your window manager.
 
 Add a `~/.config/autostart/conky.desktop`:
 
+ `conky.desktop` 
 ```
 [Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
 Type=Application
 Name=conky
-Comment=
 Exec=conky -d
 StartupNotify=false
 Terminal=false
-Hidden=false
-
 ```
 
 You may want to add *-p 10* to the *Exec* parameter so that it starts drawing *conky* after the desktop is up (*-p 10* means pause for 10 seconds at startup before doing anything).
@@ -226,39 +223,24 @@ own_window_type = 'desktop',
 
 Refer to *conky*s man page for the exact differences. But the latter option enables you to snap windows to *conky*s border using resize key-binds in e.g. Openbox, which the first one does not.
 
-### Integrate with GNOME
+### Integrate with GNOME Shell
 
 Some have experienced problems with *conky* showing up under [GNOME](/index.php/GNOME "GNOME").
 
-*   Add these lines to `conky.conf`:
+Add these lines to `conky.conf`:
 
 ```
-own_window yes
-own_window_type conky
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window = true,
+own_window_type = 'desktop',
 
 ```
 
-If you still experience problems with transparency. You could add these lines.
+For transparency, also add these:
 
 ```
-own_window_argb_visual yes
-own_window_argb_value 255
-
-```
-
-### Integrate with Razor-qt
-
-With *conky'*s default configuration, its window might disappear from the desktop when you click on the latter. Add these lines to:
-
- `conky.conf` 
-```
-own_window yes
-own_window_class Conky
-own_window_type normal
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_transparent yes
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_argb_value = 255,
 
 ```
 
@@ -306,71 +288,86 @@ This can be achieved by using the in python written extension named [ConkyPress]
 
 #### Gmail
 
+If you use 2-factor authentication, you need to use an [App Password](https://myaccount.google.com/apppasswords).
+
+For method 1, 2 and 3:
+
+Create one of the following files in a convenient location (for example in `~/.scripts/`).
+
+Then add the following string to your `conky.conf` in order the check your Gmail account for new email every five minutes (300 seconds) and display:
+
+```
+${execpi 300 python ~/.scripts/gmail.py}
+
+```
+
 ##### method 1
 
-Create a file named `gmail.py` in a convenient location (this example uses `~/.scripts/`) with the following [Python](/index.php/Python "Python") code:
+This script uses retrieves the number of new email via Gmail's Atom API.
 
  `gmail.py` 
 ```
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from urllib.request import FancyURLopener
+import urllib.request
 
-email = 'your email' # @gmail.com can be left out
-password  = 'your password'
+email = 'your email'
+password = 'your password'
 
-url = 'https://%s:%s@mail.google.com/mail/feed/atom' % (email, password)
+# Set up authentication for gmail
+auth_handler = urllib.request.HTTPBasicAuthHandler()
+auth_handler.add_password(realm='mail.google.com',
+                          uri='https://mail.google.com/',
+                          user=email,
+                          passwd=password)
+opener = urllib.request.build_opener(auth_handler)
+# ...and install it globally so it can be used with urlopen.
+urllib.request.install_opener(opener)
 
-opener = FancyURLopener()
-page = opener.open(url)
-
-contents = page.read().decode('utf-8')
+gmailurl = 'https://mail.google.com/gmail/feed/atom'
+with urllib.request.urlopen(gmailurl) as page:
+    contents = page.read().decode('utf-8')
 
 ifrom = contents.index('<fullcount>') + 11
 ito   = contents.index('</fullcount>')
 
 fullcount = contents[ifrom:ito]
 
-print(fullcount + ' new')
+print('{} new emails'.format(fullcount))
 
 ```
 
 ##### method 2
 
-The following script does less "by hand", and uses more of the capabilities of Python.
+Same as method 1, but does proper XML parsing.
 
  `gmail.py` 
 ```
-#! /usr/bin/env python
+#!/usr/bin/env python3
 
 import urllib.request
 from xml.etree import ElementTree as etree
 
-# Enter your username and password below within quotes below, in place of ****.
+email = 'your email'
+password = 'your password'
+
 # Set up authentication for gmail
 auth_handler = urllib.request.HTTPBasicAuthHandler()
 auth_handler.add_password(realm='mail.google.com',
                           uri='https://mail.google.com/',
-                          user= '****',
-                          passwd= '****')
+                          user=email,
+                          passwd=password)
 opener = urllib.request.build_opener(auth_handler)
 # ...and install it globally so it can be used with urlopen.
 urllib.request.install_opener(opener)
 
-gmail = 'https://mail.google.com/gmail/feed/atom'
+gmailurl = 'https://mail.google.com/gmail/feed/atom'
 NS = '{http://purl.org/atom/ns#}'
-with urllib.request.urlopen(gmail) as source:
+with urllib.request.urlopen(gmailurl) as source:
     tree = etree.parse(source)
 fullcount = tree.find(NS + 'fullcount').text
 
-print(fullcount + ' new')
-
-```
-
-Add the following string to your `conky.conf` in order the check your Gmail account for new email every five minutes (300 seconds) and display:
-
-```
-${execpi 300 python ~/.scripts/gmail.py}
+print('{} new emails'.format(fullcount))
 
 ```
 
@@ -378,8 +375,11 @@ ${execpi 300 python ~/.scripts/gmail.py}
 
 The same way, but with using `curl`, `grep` and `sed`:
 
+ `gmail.sh` 
 ```
-$ curl -s -u '''email''':'''password''' https://mail.google.com/mail/feed/atom | grep fullcount | sed 's/<[^0-9]*>//g'
+#!/usr/bin/sh
+
+curl -s -u **email**:**password** https://mail.google.com/mail/feed/atom | grep fullcount | sed 's/<[^0-9]*>//g'
 
 ```
 
@@ -424,12 +424,13 @@ Here I used `*` as the password for *conky* to ask for it at start, but you do *
 
 *Conky* has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/) and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
 
-Create a file named `imap.pl` in a location to be read by *conky*. In this file, add (with the appropriate changes):
+Create a file named `imap.pl` in a location to be read by *conky* (for example in `~/.scripts/`). In this file, add (with the appropriate changes):
 
+ `imap.pl` 
 ```
 #!/usr/bin/perl
 
-# gimap.pl by gxmsgx
+# by gxmsgx
 # description: get the count of unread messages on imap
 
 use strict;
@@ -453,11 +454,11 @@ my $client = Mail::IMAPClient->new(
  or die "new(): $@";
 
 if ($client->IsAuthenticated()) {
-   my $msgct;
+  my $msgct;
 
-   $client->select("INBOX");
-   $msgct = $client->unseen_count||'0';
-   print "$msgct
+  $client->select("INBOX");
+  $msgct = $client->unseen_count||'0';
+  print "$msgct
 ";
 }
 
@@ -468,7 +469,7 @@ $client->logout();
 Add to `conky.conf`:
 
 ```
-${execpi 300 ~/.conky/imap.pl} 
+${execpi 300 ~/.scripts/imap.pl} 
 
 ```
 
@@ -482,7 +483,7 @@ Alternatively, you can use stunnel as shown above: [#Gmail](#Gmail)
 
 Another alternative using PHP. PHP needs to be installed and `extension=imap.so` must be uncommented in `/etc/php/php.ini`.
 
-Then create a file named `imap.php` in a location to be read by *conky*. Make the file executable:
+Then create a file named `imap.php` in a location to be read by *conky* (for example in `~/.scripts/`). Make the file executable:
 
 ```
 $ chmod +x imap.php
@@ -491,10 +492,11 @@ $ chmod +x imap.php
 
 In this file, add (with the appropriate changes):
 
+ `imap.php` 
 ```
 #!/usr/bin/php
 <?php
-// See [http://php.net/manual/function.imap-open.php](http://php.net/manual/function.imap-open.php) for more information about
+// See http://php.net/manual/function.imap-open.php for more information about
 // the mailbox string in the first parameter of imap_open.
 // This example is ready to use with Office 365 Exchange Mails,
 // just replace your username (=email address) and the password.
@@ -506,7 +508,7 @@ $nrTotal = imap_num_msg($mbox);
 // Number of unseen emails. There are other ways using imap_status to count
 // unseen messages, but they don't work with Office 365 Exchange. This one does.
 $unseen = imap_search($mbox, 'UNSEEN');
-$nrUnseen = $unseen ? count($unseen) : 0;
+$nrUnseen = $unseen ? count($unseen) : 0;
 
 // Display the result, format as you like.
 echo $nrUnseen.'/'.$nrTotal;
@@ -521,7 +523,7 @@ imap_close($mbox);
 Add to `conky.conf`:
 
 ```
-${execpi 300 ~/.conky/imap.php} 
+${execpi 300 ~/.scripts/imap.php} 
 
 ```
 

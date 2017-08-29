@@ -14,7 +14,7 @@
 
 ## About
 
-Catwm is a small, light weight window manager created by pyknite. It was first announced in this ([https://bbs.archlinux.org/viewtopic.php?id=100215](https://bbs.archlinux.org/viewtopic.php?id=100215)) forum post.
+Catwm is a small, lightweight tiling window manager created by pyknite. It was first announced in this ([https://bbs.archlinux.org/viewtopic.php?id=100215](https://bbs.archlinux.org/viewtopic.php?id=100215)) forum post.
 
 ## Installation
 

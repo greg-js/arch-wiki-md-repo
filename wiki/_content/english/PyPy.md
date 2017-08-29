@@ -17,7 +17,7 @@
 
 For Python 2.7, install the [pypy](https://www.archlinux.org/packages/?name=pypy) package from the [official repositories](/index.php/Official_repositories "Official repositories"). For Python 3, install the [pypy3](https://www.archlinux.org/packages/?name=pypy3) package.
 
-PyPy is installed in /opt/pypy/ or /opt/pypy3 and the main pypy executable is bin/pypy-c
+PyPy is installed in `/opt/pypy/` or `/opt/pypy3` and the main pypy executable is `bin/pypy-c`.
 
 ## Usage
 

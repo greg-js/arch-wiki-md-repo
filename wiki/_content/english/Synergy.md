@@ -8,28 +8,26 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
     *   [1.1 Arch Linux](#Arch_Linux)
     *   [1.2 Windows and macOS](#Windows_and_macOS)
 *   [2 Pre-configuration](#Pre-configuration)
-    *   [2.1 Arch Linux](#Arch_Linux_2)
-        *   [2.1.1 Enable Encryption](#Enable_Encryption)
 *   [3 Server configuration](#Server_configuration)
-    *   [3.1 Arch Linux](#Arch_Linux_3)
-        *   [3.1.1 Use Encryption](#Use_Encryption)
+    *   [3.1 Arch Linux](#Arch_Linux_2)
+        *   [3.1.1 Use encryption](#Use_encryption)
     *   [3.2 Windows](#Windows)
     *   [3.3 macOS](#macOS)
     *   [3.4 Configuration examples](#Configuration_examples)
 *   [4 Clients configuration](#Clients_configuration)
-    *   [4.1 Arch Linux](#Arch_Linux_4)
-        *   [4.1.1 Use Encryption](#Use_Encryption_2)
+    *   [4.1 Arch Linux](#Arch_Linux_3)
+        *   [4.1.1 Use encryption](#Use_encryption_2)
         *   [4.1.2 Autostart](#Autostart)
     *   [4.2 Windows](#Windows_2)
     *   [4.3 macOS](#macOS_2)
-*   [5 Known Issues](#Known_Issues)
+*   [5 Known issues](#Known_issues)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Keyboard AltGr](#Keyboard_AltGr)
     *   [6.2 Keyboard repeat](#Keyboard_repeat)
     *   [6.3 Keyboard mapping](#Keyboard_mapping)
-    *   [6.4 No Cursor in Gnome3](#No_Cursor_in_Gnome3)
+    *   [6.4 No cursor in Gnome](#No_cursor_in_Gnome)
     *   [6.5 Client is returning "failed to verify server certificate fingerprint"](#Client_is_returning_.22failed_to_verify_server_certificate_fingerprint.22)
-*   [7 External Links](#External_Links)
+*   [7 External links](#External_links)
 
 ## Installation
 
@@ -58,22 +56,6 @@ First determine the IP addresses and [host names](/index.php/Network_configurati
 
 **Note:** Check that the clients can reach the server.
 
-### Arch Linux
-
-#### Enable Encryption
-
-Synergy version 1.7 replaced their own transport encryption with SSL.
-
-**Note:** Since release of version **1.8.4** the plugin [got merged into the core-binary](https://github.com/symless/synergy/issues/5627). Encryption will be automaticly build in.
-
-To install the SSL plugin, copy or symlink it to the plugins directory, which is `~/.synergy/plugins` by default.
-
-```
-$ mkdir -p ~/.synergy/plugins
-$ ln -s /usr/lib/synergy/libns.so ~/.synergy/plugins/libns.so
-
-```
-
 ## Server configuration
 
 In synergy, the computer with keyboard and mouse you want to share is called server. See [Synergy Configuration File Format](https://github.com/symless/synergy/wiki/Text-Config) for a detailed description of all available sections and options.
@@ -93,11 +75,11 @@ If you experience problems and you wish to run the server in the foreground, you
 
 ```
 
-The synergy server process needs to attach to your user's X session, which means it needs to run as your user. [Enable](/index.php/Enable "Enable") `synergys` with `--user` option.
+The synergy server process needs to attach to your user's X session, which means it needs to run as your user. [Enable](/index.php/Enable "Enable") `synergys.service` with `--user` option.
 
 **Tip:** You can enable `synergys.socket` to start the server when a client tries to connect instead. This is useful when the service can't connect to an X server on boot.
 
-#### Use Encryption
+#### Use encryption
 
 To generate a certificate and fingerprint for the server to use.
 
@@ -280,9 +262,9 @@ $ synergyc -f server-host-name
 
 Here, `server-host-name` is the host name of the server.
 
-#### Use Encryption
+#### Use encryption
 
-If you use the synergy command line client, copy the file containing the fingerprint **`~/.synergy/SSL/Fingerprints/Local.txt`** from the server into the clients home directory **`~/.synergy/SSL/Fingerprints/TrustedServers.txt`**. To start the synergy command line client with encryption, type:
+If you use the synergy command line client, copy the file containing the fingerprint <a class="mw-selflink selflink">`~/.synergy/SSL/Fingerprints/Local.txt`</a> from the server into the clients home directory <a class="mw-selflink selflink">`~/.synergy/SSL/Fingerprints/TrustedServers.txt`</a>. To start the synergy command line client with encryption, type:
 
 ```
 $ synergyc --enable-crypto
@@ -370,7 +352,7 @@ Locate the synergyc program in the synergyc folder and drag it onto the terminal
 
 Then press `Enter`.
 
-## Known Issues
+## Known issues
 
 If Arch is being used as a client in a Synergy installation, the server may not be able to wake the client monitor. There are some workarounds, such as executing the following via [SSH](/index.php/SSH "SSH"), if ACPI is enabled (see: [Modifying DPMS and ScreenSaver settings with xset](/index.php/Display_Power_Management_Signaling#Modifying_DPMS_and_screensaver_settings_using_xset "Display Power Management Signaling")):
 
@@ -409,9 +391,9 @@ If you experience problems with the keyboard mapping when using the server's key
 
 ```
 
-### No Cursor in Gnome3
+### No cursor in Gnome
 
-When Gnome 3 doesn't detect a mouse, it will default to touchscreen mode and hide the cursor. To enable run:
+When [GNOME](/index.php/GNOME "GNOME") doesn't detect a mouse, it will default to touchscreen mode and hide the cursor. To enable run:
 
 ```
 # dconf write /org/gnome/settings-daemon/plugins/cursor/active false
@@ -429,7 +411,7 @@ This can be added to an init script or systemd unit:
 
 You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt" into client's "~/.synergy/SSL/Fingerprints/TrustedServers.txt".
 
-## External Links
+## External links
 
 *   Synergy website: [https://symless.com/synergy/](https://symless.com/synergy/)
 *   Official documentation: [https://github.com/symless/synergy/wiki/User-Guide](https://github.com/symless/synergy/wiki/User-Guide)

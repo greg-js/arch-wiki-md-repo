@@ -1,4 +1,4 @@
-XScreenSaver is a screen saver and locker for the X Window System.
+[XScreenSaver](https://www.jwz.org/xscreensaver/) is a screen saver and locker for the X Window System.
 
 ## Contents
 

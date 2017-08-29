@@ -1,4 +1,4 @@
-Configure your Arch Linux machine so you can connect to it via the serial console port (com port). This will enable you to administer the machine even if it has no keyboard, mouse, monitor, or network attached to it (a headless server).
+Configure your Arch Linux machine so you can connect to it via the serial console port. This will enable you to administer the machine even if it has no keyboard, mouse, monitor, or network attached to it (a headless server).
 
 As of Arch Linux 2007.x, installation of Arch Linux is possible via the serial console as well.
 
@@ -63,12 +63,7 @@ After a reboot, getty will be listening on `/dev/ttyS0`, expecting 38400 baud, 8
 
 Ignore this entire section if you have configured GRUB2 to listen on the serial interface. If you do not want GRUB2 to listen on the serial device, but only want getty listening after boot then follow these steps.
 
-To start getty listening on `/dev/ttyS0` use systemctl:
-
-```
-# systemctl start getty@ttyS0.service
-
-```
+To start getty listening on `/dev/ttyS0` [start/enable](/index.php/Start/enable "Start/enable") `getty@ttyS0.service`.
 
 You can check to see the speed(s) getty is using with systemctl, but should be 38400 8N1:
 
@@ -77,14 +72,7 @@ You can check to see the speed(s) getty is using with systemctl, but should be 3
 
 ```
 
-To have getty listening on `/dev/ttyS0` every boot, enable the service for that specific port:
-
-```
-# systemctl enable serial-getty@ttyS0.service
-
-```
-
-Now, after a reboot, getty will be listening on device `/dev/ttyS0` expecting 38400 baud, 8 data bits, no parity and one stop bit-times.
+Getty will be listening on device `/dev/ttyS0` expecting 38400 baud, 8 data bits, no parity and one stop bit-times.
 
 #### GRUB v1 and No systemd
 

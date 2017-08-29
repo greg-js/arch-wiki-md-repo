@@ -9,7 +9,9 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
 *   [5 < and > have changed place with ^ and ° (or @ and #, or ` and ~)](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0_.28or_.40_and_.23.2C_or_.60_and_.7E.29)
 *   [6 PrintScreen and SysRq](#PrintScreen_and_SysRq)
 *   [7 Treating Apple keyboards like regular keyboards](#Treating_Apple_keyboards_like_regular_keyboards)
-    *   [7.1 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
+    *   [7.1 Use a patch to hid-apple](#Use_a_patch_to_hid-apple)
+    *   [7.2 Use un-apple-keyboard](#Use_un-apple-keyboard)
+    *   [7.3 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
 *   [8 See also](#See_also)
 
 ## Numlock is on
@@ -79,7 +81,9 @@ Alternatively, follow the [Map scancodes to keycodes](/index.php/Map_scancodes_t
 
 ## Treating Apple keyboards like regular keyboards
 
-**Warning:** Another package [un-apple-keyboard](https://aur.archlinux.org/packages/un-apple-keyboard/) also provides similar functionality, but is no longer actively maintained. Thus it is advised to use the following package.
+Depending on the customisations you want to accomplish, there are two solutions available. You need to choose one of the other.
+
+### Use a patch to hid-apple
 
 While the original `hid-apple` module doesn't have options to further customize the keyboard, like swapping `Fn` and left `Ctrl` keys or having `Alt` on the left side of `Super`, there is a [patch](https://github.com/free5lot/hid-apple-patched) adding this functionality to the module. To install the patch, [install](/index.php/Install "Install") the [hid-apple-patched-git-dkms](https://aur.archlinux.org/packages/hid-apple-patched-git-dkms/) package.
 
@@ -95,6 +99,19 @@ Please refer to [https://github.com/free5lot/hid-apple-patched#configuration](ht
 **Note:** Don't forget to include the configuration file in *initramfs* otherwise it won't work automatically after boot. Refer to [Mkinitcpio#BINARIES and FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") or [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") (the hook you might need is called `modconf`) about how to do that.
 
 After installation the change is not picked up by the kernel immediately. The simplest way is to just reboot your system and the new behavior should be in effect.
+
+### Use un-apple-keyboard
+
+If you do not need all of these customizations and you do not want to compile a new module manually or using dkms, there is an AUR package [un-apple-keyboard](https://aur.archlinux.org/packages/un-apple-keyboard/) which does not rely on a new kernel module, but rather just to mappings. It enables the following features:
+
+*   The keyboard is considered as an ISO keyboard (e.g. `<` and `>` located at the right of the `Left Shift` key are working like expected).
+*   The function keys are disabled by default. You need to press the `Fn` key in combination to trigger them. By default, the behavior are thus keys `F1` to `F12`
+*   The `Alt` and `Cmd` keys are swapped.
+*   `F13` is mapped to `SYSRQ`, `F14` to `Scroll Lock` and `F15` to `Pause`.
+
+The first 3 aforementioned features are brought to you using the default linux kernel module `hid-apple`.
+
+The last one is provided by providing a mapping to [keyfuzz](https://aur.archlinux.org/packages/keyfuzz/).
 
 ### Change the Behavior Without Reboot
 

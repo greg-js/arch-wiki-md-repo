@@ -4,15 +4,9 @@ VeryNice is a daemon, available in the [AUR](/index.php/AUR "AUR"), for dynamica
 
 **Note:** VeryNice hasn't been updated since 2014 and the official homepage is down. Try [ananicy-git](https://aur.archlinux.org/packages/ananicy-git/) for alternative.
 
-Install [verynice](https://aur.archlinux.org/packages/verynice/).
+[Install](/index.php/Install "Install") the [verynice](https://aur.archlinux.org/packages/verynice/) package from the [AUR](/index.php/AUR "AUR").
 
-To start verynice:
-
- `# systemctl start verynice.service` 
-
-To enable it to run on boot:
-
- `# systemctl enable verynice.service` 
+[Start/enable](/index.php/Start/enable "Start/enable") `verynice.service`.
 
 ## Configuration
 

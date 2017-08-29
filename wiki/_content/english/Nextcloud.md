@@ -4,7 +4,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
 It is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.
 
-For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differences_from_ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
+For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differences from ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
 
 ## Contents
 
@@ -52,7 +52,7 @@ For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differen
     *   [9.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [9.2 Docker](#Docker)
     *   [9.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
-    *   [9.4 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
+    *   [9.4 Defining Background Jobs](#Defining_Background_Jobs)
     *   [9.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
 *   [10 See also](#See_also)
 
@@ -865,7 +865,7 @@ See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://gi
 
 [shareLinkCreator](https://github.com/schiesbn/shareLinkCreator) provides the ability to upload a file to OwnCloud via a supported file manager and receive a link to the uploaded file which can then be emailed or shared in another way.
 
-### Switch to Cron from AJAX
+### Defining Background Jobs
 
 Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a[systemd timer](/index.php/Systemd#Timers "Systemd").
 

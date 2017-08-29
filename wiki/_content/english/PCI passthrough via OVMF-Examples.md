@@ -8,6 +8,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.1 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K.2C_GA-Z170X-UD3.2C_GTX_1070)
     *   [1.2 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130.27s_Virtual_Gaming_Machine)
     *   [1.3 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
+    *   [1.4 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -75,6 +76,49 @@ Configuration:
 *   Using **libvirt/QEMU**: GitHub config repository: [[1]](https://github.com/Bretos/vfio)
 *   Issues you've encountered: AUDIO. Had to get USB audio adapter and pass it through.
 *   No issues other than audio. Works like a charm.
+
+### Skeen's Virtual Gaming Rack Machine
+
+Still work in progress.
+
+Hardware:
+
+*   **CPU**: AMD FX(tm)-8350
+*   **Motherboard**: MSI 970A SLI Krait Edition (MS-7693) (Revision 5.0, BIOS/UEFI Version: 25.4)
+*   **Host GPU**: ASUS GeForce GTX 480 1536MB
+*   **Guest GPU**: ASUS GeForce GTX 480 1536MB
+*   **RAM**: 2x8GB Kingston HyperX Fury White DDR3 1866MHz
+*   **Storage**: 2x250GB Samsung EVO (MZ-75E250) set up in LVM striped mode (with mdadm), 2x1TB WD Blue (WDC_WD10SPCX) for storage. 250GB LVM volume as writeback cache for HDD.
+
+Configuration:
+
+*   **Host Kernel**: Linux 4.9.0-3 (No ACS)
+*   **Host OS**: Debian Stretch
+*   **Guest OS**: Windows 10 Home (10_1703_N, International Edition)
+*   Using **libvirt QEMU/KVM with OVMF**: See [Github](https://github.com/Skeen/libvirt-gpu-passthrough)
+
+Issues you've encountered:
+
+*   Identifical GPUs; solved [using this section on the wiki](/index.php/PCI_passthrough_via_OVMF#Using_identical_guest_and_host_GPUs "PCI passthrough via OVMF"), but with the script from the [corresponding discussion page](/index.php/Talk:PCI_passthrough_via_OVMF#Using_identical_guest_and_host_GPUs_-_did_not_work_for_me. "Talk:PCI passthrough via OVMF"). Several adaptations for Debian were required too, but aren't applicable for this forum.
+*   "Error 43: Driver failed to load";
+    *   Spoofing vendor_id caused Windows to crash during boot-up.
+    *   Linux VMs complain unable to find GPU from Grub2, and booted into blind-mode, but would still pick up the graphics card during the boot process, and would remain functional until VM reboot.
+    *   Vendor_id spoofing turned out to work after solving the real problem (Missing UEFI compatability in VBIOS).
+*   Missing UEFI (OVMF) compatability in VBIOS;
+    *   Requested a GOP/UEFI compatible VBIOS upgrade from ASUS, but ASUS could neither understand the request, or provide the upgrade (The only thing supplied was standard support answers).
+    *   No compatible VBIOS was found at [TechPowerUp](https://www.techpowerup.com/vgabios/).
+    *   Finally solved by manually hacking GOP/UEFI support into the ROM, using [GOPupd](http://www.win-raid.com/t892f16-AMD-and-Nvidia-GOP-update-No-requests-DIY.html). Current rom was dumped within a Windows 10 VM using GPU-Z, then modified using GOPupd, pulled to Linux, and provided using the rom file parameter in the VM XML file.
+*   VM only uses one core (even with mode=host-passthrough): solved [using this section on the wiki](/index.php/PCI_passthrough_via_OVMF#VM_only_uses_one_core "PCI passthrough via OVMF").
+
+Quirks:
+
+*   The GPU that is being passed through, [does not support resetting](/index.php/PCI_passthrough_via_OVMF#Passing_through_a_device_that_does_not_support_resetting "PCI passthrough via OVMF"), and thus doing a hard-reboot / shutdown of the VM locks the GPU.
+    *   The VM cannot be started again unless the Host machine is rebooted.
+        *   When doing a clean reboot / shutdown, allows the VM to start up as expected without reboot..
+    *   Removing and rescanning the PCI device, does not change anything.
+    *   No further attempts at powercycling the GPU from the host has been done (Yet).
+*   [Passing VM audio to host via PulseAudio](/index.php/PCI_passthrough_via_OVMF#Passing_VM_audio_to_host_via_PulseAudio "PCI passthrough via OVMF") results in heavy crackling.
+    *   Using [Message-Signaled Interrupts](/index.php/PCI_passthrough_via_OVMF#Slowed_down_audio_pumped_through_HDMI_on_the_video_card "PCI passthrough via OVMF") have not been attempted (Yet).
 
 ## Adding your own setup
 

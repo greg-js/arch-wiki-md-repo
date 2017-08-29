@@ -1,4 +1,4 @@
-From the [project home page](http://wmfs.info/):
+From the [home page](https://github.com/xorg62/wmfs):
 
 	*WMFS is a lightweight and highly configurable tiling window manager for X written in C. WMFS is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable.*
 
@@ -41,11 +41,11 @@ WMFS can be [installed](/index.php/Installed "Installed") via the [wmfs2-git](ht
 
 WMFS primarily differs from the original WMFS in the way windows are managed. While in the previous version windows were arranged according to predefined layouts - as they are in window managers such as DWM and Awesome - WMFS features key and mouse bindings allowing the user to manually configure layouts on each tag - as is the case with wmii, i3 and others.
 
-If one opens, say, multiple instances of a terminal (by default, **Super+Enter** opens [urxvt](/index.php/Urxvt "Urxvt")), they will be arranged in a diminishing "spiral" on the screen, with each one opening on the left side in smaller and smaller sizes. These can then be rotated, changing the orientation of the *master window* (the one that takes up have the screen on its own) and *slave windows* (the ones that shrink as you open more). Also, windows may be "tabbed" together, maximizing all clients and placing independent tabs in a single titlebar at the top of the window. This keeps the focused window maximized while placing the others "behind" it, and allowing the user to cycle through them using a key binding, thus preventing the need to click on a taskbar or dock to repeatedly minimize/maximize individual windows.
+If one opens, say, multiple instances of a terminal (by default, `Super+Enter` opens [urxvt](/index.php/Urxvt "Urxvt")), they will be arranged in a diminishing "spiral" on the screen, with each one opening on the left side in smaller and smaller sizes. These can then be rotated, changing the orientation of the *master window* (the one that takes up have the screen on its own) and *slave windows* (the ones that shrink as you open more). Also, windows may be "tabbed" together, maximizing all clients and placing independent tabs in a single titlebar at the top of the window. This keeps the focused window maximized while placing the others "behind" it, and allowing the user to cycle through them using a key binding, thus preventing the need to click on a taskbar or dock to repeatedly minimize/maximize individual windows.
 
 Individual clients can be rearranged using keyboard shortcuts; alternatively, a window can be clicked-and-dragged by its titlebar, or may be clicked-and-dragged from any point in the client while holding down a mod key such as **Alt** or **Super** (the "Windows" key). Finally, they may also be toggled into "free" or "floating" mode, and moved around like stacked windows on a traditional desktop.
 
-Both key and mouse bindings are specified under the **[keys]** section of `wmfsrc`, and the [keybindings](https://github.com/xorg62/wmfs/wiki/Configuration-wmfsrc) and possible [functions](https://github.com/xorg62/wmfs/wiki/functions) are explained on the WMFS wiki.
+Both key and mouse bindings are specified under the `[keys]` section of `wmfsrc`, and the [keybindings](https://github.com/xorg62/wmfs/wiki/Configuration-wmfsrc) and possible [functions](https://github.com/xorg62/wmfs/wiki/functions) are explained on the WMFS wiki.
 
 ## Configuration
 

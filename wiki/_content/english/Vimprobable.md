@@ -104,6 +104,5 @@ exec vimprobable2 -e $(</tmp/tabbed.xid) $( [[  "$1"  ]] && echo "$1") &
 
 ## Resources
 
-*   [Vimprobable](http://www.vimprobable.org/) website
 *   [tabbed](http://tools.suckless.org/tabbed) a suckless program for managing tabs
 *   [A screencast](http://vimeo.com/53829053) introduction to Vimprobable

@@ -92,7 +92,7 @@ The result is a 2048 bit RSA private key `vpnHostKey.pem` (line 2). In line 4 we
 
 **Warning:** The domain name or IP address of your VPN server, which is later entered in the client's connection properties, MUST be contained either in the subject Distinguished Name (`CN=`) and/or in a subject Alternative Name (`--san`), but preferably in both. Make sure both times to replace `**vpn.example.com**` with your VPN's hostname – or else the connection between client and server will fail!
 
-**Note:** If you are going to use the built-in VPN client of Windows 7, you MUST add the `serverAuth` extended key usage flag to your host certificate as shown above, or the client will refuse to connect.
+**Note:** If you are going to use the built-in VPN client of Windows 7, you [MUST](https://wiki.strongswan.org/projects/strongswan/wiki/Win7CertReq) add the `serverAuth` extended key usage flag to your host certificate as shown above, or the client will refuse to connect.
 
 In addition, OS X 10.7.3 or older requires the `ikeIntermediate` flag, which we also added here.
 
@@ -132,15 +132,22 @@ $ ipsec pki --pub --in private/ClientKey.pem --type rsa | \
                 --dn "C=CH, O=strongSwan, CN=myself@example.com" \
                 --san myself@example.com \
           > certs/ClientCert.pem
-$ openssl pkcs12 -export -inkey private/ClientKey.pem \
-                 -in certs/ClientCert.pem -name "My own VPN client certificate" \
+
+```
+
+The result is a 2048 bit RSA private key `ClientKey.pem` (line 2). In line 6 we extract its public key and pipe it over to issue `ClientCert.pem` (line 10), the first client certificate signed by your CA. The certificate has a validity of two years (730 days) and identifies the client by his e-mail address (here: `myself@example.com`).
+
+Finally we will bundle all needed certificates and keys into a PKCS#12 file with a passphrase, which is the most convenient format for clients.
+
+```
+$ openssl pkcs12 -export -name "My own VPN client certificate" \
+                 -inkey private/ClientKey.pem \
+                 -in certs/ClientCert.pem  \
                  -certfile cacerts/strongswanCert.pem \
                  -caname "strongSwan Root CA" \
                  -out Client.p12
 
 ```
-
-The result is a 2048 bit RSA private key `ClientKey.pem` (line 2). In line 6 we extract its public key and pipe it over to issue `ClientCert.pem` (line 10), the first client certificate signed by your CA. The certificate has a validity of two years (730 days) and identifies the client by his e-mail address (here: `myself@example.com`). The last command bundles all needed certificates and keys into a PKCS#12 file with a passphrase, which is the most convenient format for clients.
 
 ## VPN Variants
 

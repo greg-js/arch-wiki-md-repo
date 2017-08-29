@@ -2,25 +2,25 @@ This guide is to help Arch users with Palm(R) devices. While installation in Arc
 
 ## Contents
 
-*   [1 Installing Packages](#Installing_Packages)
-*   [2 Finding your Device](#Finding_your_Device)
+*   [1 Installing packages](#Installing_packages)
+*   [2 Finding your device](#Finding_your_device)
     *   [2.1 tty* based sync](#tty.2A_based_sync)
     *   [2.2 libusb based sync](#libusb_based_sync)
-*   [3 Setting up the Software](#Setting_up_the_Software)
+*   [3 Setting up the software](#Setting_up_the_software)
 *   [4 Hotsync over Bluetooth](#Hotsync_over_Bluetooth)
 *   [5 Palm T|X](#Palm_T.7CX)
 *   [6 Palm Centro](#Palm_Centro)
 *   [7 Troubleshooting](#Troubleshooting)
 
-## Installing Packages
+## Installing packages
 
 You will need to [install](/index.php/Install "Install") one of the various Personal Information Management (PIM) software packages:
 
 *   [jpilot](https://aur.archlinux.org/packages/jpilot/) – a desktop organizer software for the Palm Pilot
-*   [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
+*   [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/) – a group of several KDE packages
 *   [gnome-pilot](https://www.archlinux.org/packages/?name=gnome-pilot)
 
-## Finding your Device
+## Finding your device
 
 You can sync in two ways, either by using libusb (preferred) or by using ttyUSB*/ttyS*
 
@@ -48,7 +48,7 @@ Just press Sync button in J-Pilot and then hotsync in your Palm.
 
 Works every time with the most troublesome Palm: T|X.
 
-## Setting up the Software
+## Setting up the software
 
 Open up JPilot (or other software), either from the 'Office' menu (for Gnome) or by typing:
 
@@ -61,13 +61,13 @@ gnome-pilot
 
 in the terminal.
 
-Open the settings menu. On JPilot, this is File -> Preferences -> Settings. On KPilot or Kontact it is Settings -> Configure KPilot -> Device.
+Open the settings menu. On JPilot, this is *File > Preferences > Settings*. On KPilot or Kontact it is *Settings > Configure KPilot > Device*.
 
-The Device setting should be /dev/palm or /dev/pilot, as noted above.
+The Device setting should be `/dev/palm` or `/dev/pilot`, as noted above.
 
-Next, on JPilot go to File -> Install User and type the username on your palm. In KPilot simply set the Pilot User setting in the Device area.
+Next, on JPilot go to *File > Install User* and type the username on your palm. In KPilot simply set the Pilot User setting in the Device area.
 
-Now, first start a hotsync on your palm, then click the hotsync button in JPilot or KPilot. If all goes well, it will connect and start synchronizing. This will be quick, as it just does contacts, addresses, etc. The standards. There are no special conduits in the standard Jpilot, such as Documents-To-Go, so either find those on the Internet (if they exist) or make them yourself. :)
+Now, first start a hotsync on your palm, then click the hotsync button in JPilot or KPilot. If all goes well, it will connect and start synchronizing. This will be quick, as it just does contacts, addresses, etc. The standards. There are no special conduits in the standard Jpilot, such as Documents-To-Go, so either find those on the Internet (if they exist) or make them yourself.
 
 Next, do the same thing, but click the button below, for backup. On first run, this will take a long time, but well worth while.
 

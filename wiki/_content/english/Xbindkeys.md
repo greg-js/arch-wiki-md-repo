@@ -17,14 +17,7 @@ Xbindkeys is a program that allows to bind commands to certain keys or key combi
 
 ## Configuration
 
-Create a file named `.xbindkeysrc` in your home directory:
-
-```
-$ touch ~/.xbindkeysrc
-
-```
-
-Alternatively, you can create a sample file (Note this includes some bindings such as `Ctrl+f`, which you may want to edit or remove):
+Create a blank `~/.xbindkeysrc`, or you can create a sample file (Note this includes some bindings such as `Ctrl+f`, which you may want to edit or remove):
 
 ```
 $ xbindkeys -d > ~/.xbindkeysrc

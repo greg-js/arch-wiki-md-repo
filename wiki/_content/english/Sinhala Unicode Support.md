@@ -21,13 +21,7 @@ For Sinhala support, you can install any of these fonts.
 
 ## Guide to install Sinhala Unicode Font
 
-Download and Install **[lklug.ttf](http://sinhala.sourceforge.net/files/lklug.ttf)** Sinhala Unicode font file
-
-```
-sudo pacman -S wget
-sudo wget -P /usr/share/fonts [http://sinhala.sourceforge.net/files/lklug.ttf](http://sinhala.sourceforge.net/files/lklug.ttf)
-
-```
+Download [http://sinhala.sourceforge.net/files/lklug.ttf](http://sinhala.sourceforge.net/files/lklug.ttf) and place it in `/usr/share/fonts`.
 
 Then Run the following command
 

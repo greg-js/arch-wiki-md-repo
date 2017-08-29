@@ -89,17 +89,34 @@ $ asfxload /path/to/any/file.sf2
 
 The .SF2 file can be any SoundFont. If you have access to *2GMGSMT.SF2* on Windows, you can use that one.
 
-You should be all set now. If you want to play your .mid files in [Audacious](/index.php/Audacious "Audacious"), you will need to configure it as follows:
+You should be all set now. To play your .mid files with `aplaymidi`, you will have to do as follows:
 
-*   *File > Preferences > Plugins > Input > AMIDI-Plug > Preferences*
-    *   *AMIDI PLug (tab) > Backend selection > ALSA Backend*
-    *   ALSA Backend (tab)
-        *   17:0 Emu10k1 WaveTable Emu10k1 Port 0
-        *   17:1 Emu10k1 WaveTable Emu10k1 Port 1
-        *   17:2 Emu10k1 WaveTable Emu10k1 Port 2
-        *   17:3 Emu10k1 WaveTable Emu10k1 Port 3
-        *   *Mixer settings > Soundcard > SB Audigy 1 [SB0092]*
-        *   *Mixer control > Synth*
+Get a list of the available MIDI ports by running
+
+```
+$ aplaymidi -l
+
+```
+
+Sample output:
+
+```
+Port    Client name                      Port name
+14:0    Midi Through                     Midi Through Port-0
+28:0    SB Live! 5.1 [SB0060]            EMU10K1 MPU-401 (UART)
+29:0    Emu10k1 WaveTable                Emu10k1 Port 0
+29:1    Emu10k1 WaveTable                Emu10k1 Port 1
+29:2    Emu10k1 WaveTable                Emu10k1 Port 2
+29:3    Emu10k1 WaveTable                Emu10k1 Port 3
+
+```
+
+Then, pick an available "Emu10k1 WaveTable" MIDI port, in this case 29:0, and specify it as such:
+
+```
+$ aplaymidi -p 29:0 midi_file.mid
+
+```
 
 ### Software
 

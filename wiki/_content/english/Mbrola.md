@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [mbrola](https://aur.archlinux.org/packages/mbrola/).
+[Install](/index.php/Install "Install") the [mbrola](https://aur.archlinux.org/packages/mbrola/) package.
 
 ### Add voices
 

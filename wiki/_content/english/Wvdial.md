@@ -1,18 +1,23 @@
-WvDial is a Point-to-Point Protocol dialer: it dials a modem and starts pppd in order to connect to the Internet.
+WvDial is a Point-to-Point Protocol dialer: it dials a modem and starts [ppp](/index.php/Ppp "Ppp") in order to connect to the Internet.
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-*   [2 Using wvdial](#Using_wvdial)
-    *   [2.1 Using suid](#Using_suid)
-    *   [2.2 Using a dialout group](#Using_a_dialout_group)
-    *   [2.3 Using sudo](#Using_sudo)
-*   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 Low connection speed](#Low_connection_speed)
-        *   [3.1.1 QoS parameter](#QoS_parameter)
-        *   [3.1.2 Baud parameter](#Baud_parameter)
-    *   [3.2 Auto Reconnect](#Auto_Reconnect)
-    *   [3.3 Multiple devices](#Multiple_devices)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 Using wvdial](#Using_wvdial)
+    *   [3.1 Using suid](#Using_suid)
+    *   [3.2 Using a dialout group](#Using_a_dialout_group)
+    *   [3.3 Using sudo](#Using_sudo)
+*   [4 Tips and Tricks](#Tips_and_Tricks)
+    *   [4.1 Low connection speed](#Low_connection_speed)
+        *   [4.1.1 QoS parameter](#QoS_parameter)
+        *   [4.1.2 Baud parameter](#Baud_parameter)
+    *   [4.2 Auto Reconnect](#Auto_Reconnect)
+    *   [4.3 Multiple devices](#Multiple_devices)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [wvdial](https://www.archlinux.org/packages/?name=wvdial) package.
 
 ## Configuration
 

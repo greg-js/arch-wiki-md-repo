@@ -11,7 +11,7 @@ From the language's [home page](http://dartlang.org):
 
 ## Installation
 
-The latest version of Dart is available in the [official repositories](/index.php/Official_repositories "Official repositories") as [dart](https://www.archlinux.org/packages/?name=dart). The bleeding edge version of Dart is available in the [AUR](/index.php/AUR "AUR") as [dart-trunk](https://aur.archlinux.org/packages/dart-trunk/).
+[Install](/index.php/Install "Install") the [dart](https://www.archlinux.org/packages/?name=dart) package.
 
 ## Example
 

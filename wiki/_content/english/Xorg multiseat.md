@@ -2,7 +2,6 @@ Multiseat is a certain setup where multiple users work simultaneously on one com
 
 *   Less power consumption (only one computer)
 *   Less hardware to purchase
-*   All the cool kids do it
 
 ## Contents
 

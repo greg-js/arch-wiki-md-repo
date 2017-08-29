@@ -5,7 +5,8 @@
 *   [1 Installation](#Installation)
     *   [1.1 Compiler](#Compiler)
     *   [1.2 Problems with linking](#Problems_with_linking)
-    *   [1.3 Haskell development tools](#Haskell_development_tools)
+    *   [1.3 Building statically linked packages with Cabal (without using shared libraries)](#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29)
+    *   [1.4 Haskell development tools](#Haskell_development_tools)
 *   [2 Managing Haskell packages](#Managing_Haskell_packages)
     *   [2.1 Pros/Cons of the different methods](#Pros.2FCons_of_the_different_methods)
     *   [2.2 ArchHaskell repository](#ArchHaskell_repository)
@@ -43,11 +44,41 @@ Hello, World
 
 ### Problems with linking
 
-GHC uses static linking by default and the `-dynamic` flag is used to select dynamic linking. Starting with package version [8.0.2-1](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/ghc&id=7a948cdfb808afd3ce6f93047ae0dc1778e79f9f), the Arch [ghc](https://www.archlinux.org/packages/?name=ghc) package no longer contains static versions of the GHC platform libraries. Installing the [ghc-static](https://www.archlinux.org/packages/?name=ghc-static) package is now necessary for the default compilation flags to work.
+GHC uses static linking by default and the `-dynamic` flag is needed to select dynamic linking. Since version [8.0.2-1](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/ghc&id=7a948cdfb808afd3ce6f93047ae0dc1778e79f9f), the Arch [ghc](https://www.archlinux.org/packages/?name=ghc) package no longer contains static versions of the GHC boot libraries by default, nor do any of the `haskell-*` packages . Static versions of the GHC boot libraries may be installed separately through the [ghc-static](https://www.archlinux.org/packages/?name=ghc-static) package, but no such equivalent exists for the `haskell-*` packages. Therefore, without `-dynamic` Haskell code and packages will generally fail to link unless the program depends only on boot packages and locally installed packages and [ghc-static](https://www.archlinux.org/packages/?name=ghc-static) is installed.
+
+This also causes issues with Cabal trying to use the default static linking. To force dynamic linking in Cabal, edit `~/.cabal/config` and add the line `executable-dynamic: True`.
 
 Dynamic linking is used for most Haskell modules packaged through [pacman](/index.php/Pacman "Pacman") and is common for packages in the [AUR](/index.php/AUR "AUR"). Since GHC provides no [ABI](https://en.wikipedia.org/wiki/Application_binary_interface "w:Application binary interface") compatibility between compiler releases, static linking is often the preferred option for local development outside of the package system.
 
-This also causes issues with Cabal trying to use the default static linking. To force dynamic linking in Cabal, edit `~/.cabal/config` and add the line `executable-dynamic: True`.
+### Building statically linked packages with Cabal (without using shared libraries)
+
+This section explains how to install `cabal-install` but from [Hackage](https://hackage.haskell.org/package/cabal-install) instead of the official [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) package from the repositories. This `cabal-install` will build Haskell packages without using [shared libraries](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/shared_libs.html) as [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) is configured to do so by default.
+
+**Note:** This section is about how [ghc](https://www.archlinux.org/packages/?name=ghc) is able to build Haskell code into shared libraries allowing pre-compiled code to be shared between several programs, mind that it isn't related to generating completely statically linked ELF binaries on Linux.
+
+To avoid linking [errors](https://bugs.archlinux.org/task/54563#comment158826), it's also especially important to not to mix statically and dynamically Haskell packages installed on the same system, as Cabal doesn't fetch a required package once it has been globally registered (check them with the command `ghc-pkg list`) in one of its forms and not the other (independently of the linking type of the package that it's needed).
+
+For these reasons, **you have to make sure** that the only two related Haskell packages you have installed are [ghc](https://www.archlinux.org/packages/?name=ghc) and [ghc-static](https://www.archlinux.org/packages/?name=ghc-static) (not [stack](https://www.archlinux.org/packages/?name=stack), [cabal-helper](https://www.archlinux.org/packages/?name=cabal-helper), [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) and none of the `haskell-*` dynamic libraries [available](https://www.archlinux.org/packages/?q=haskell-) in the official repositories).
+
+You can use [Stack](https://www.haskellstack.org/) as an alternative build tool for Haskell packages, which will link statically by default, but if you still want to use Cabal to build using static linking follow the next steps of this section to install your own compiled `cabal-install` from Hackage.
+
+First you have to [install Stack](https://docs.haskellstack.org/en/stable/README/#how-to-install) from upstream because you'll use it to bootstrap the compilation of your own Cabal and you don't want to pull as dependencies those packages from the official repositories containing the `haskell-*` dynamic libraries.
+
+Then download a GHC compiler with Stack:
+
+```
+$ stack setup
+
+```
+
+Now install your own **cabal-instal**:
+
+```
+$ stack install cabal-install
+
+```
+
+This newly installed `cabal-install` has been compiled without shared libraries and won't use them when building packages.
 
 ### Haskell development tools
 
@@ -109,7 +140,17 @@ To run installed executables without specifying the path, the cabal binary folde
 
 ```
 $ cabal update
+
+$ # When using ghc-static
 $ cabal install <pkg>
+
+$ # When using ghc
+$ cabal install\
+	--enable-shared
+	--enable-executable-dynamic
+	--ghc-options≈-dynamic
+	<pkg>
+
 ```
 
 It is possible to install a package system–wide with the `--global` flag, but this is **strongly discouraged**. With the user–wide install, all files are kept in `~/.cabal` and libraries are registered to `~/.ghc`, offering the possibility to do a clean-up easily by simply removing these folders. With system–wide install, the files will be dispersed in the file system and difficult to manage.

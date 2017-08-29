@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-13，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=483740)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-27，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=487258)可以查看翻译后英文页面的改动。
 
 KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成的软件项目。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -42,7 +42,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environ
             *   [4.2.1.1 使用及配置 Baloo](#.E4.BD.BF.E7.94.A8.E5.8F.8A.E9.85.8D.E7.BD.AE_Baloo)
             *   [4.2.1.2 如何把可移动设备加入索引？](#.E5.A6.82.E4.BD.95.E6.8A.8A.E5.8F.AF.E7.A7.BB.E5.8A.A8.E8.AE.BE.E5.A4.87.E5.8A.A0.E5.85.A5.E7.B4.A2.E5.BC.95.EF.BC.9F)
     *   [4.3 Web 浏览器](#Web_.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [4.4 PIM](#PIM)
+    *   [4.4 个人信息管理](#.E4.B8.AA.E4.BA.BA.E4.BF.A1.E6.81.AF.E7.AE.A1.E7.90.86)
         *   [4.4.1 Akonadi](#Akonadi)
             *   [4.4.1.1 安装](#.E5.AE.89.E8.A3.85_2)
             *   [4.4.1.2 禁用 Akonadi](#.E7.A6.81.E7.94.A8_Akonadi)
@@ -387,10 +387,6 @@ KCM 意为 KDE 控制模块（**KC**onfig **M**odule）。这些模块在系统�
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-*   **kcm-gtk** — GTK 外观设置组件。
-
-	[https://launchpad.net/kcm-gtk](https://launchpad.net/kcm-gtk) || [kcm-gtk](https://aur.archlinux.org/packages/kcm-gtk/)
-
 *   **KCM Qt Graphics System** — 该 KCM 让您轻松配置标准的Qt图形系统。
 
 	[https://www.linux-apps.com/p/1127857/](https://www.linux-apps.com/p/1127857/) || [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)
@@ -451,9 +447,9 @@ KDE 使用 Baloo 实现文件索引和查找。
 
 	[https://mozilla.org/firefox](https://mozilla.org/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-### PIM
+### 个人信息管理
 
-KDE 提供了其自己的个人信息管理应用储存，包括电子邮件，联系人，日历等。
+KDE 提供了其自己的个人信息管理应用储存，包括电子邮件，联系人，日历等。可以使用 [kde-meta-kdepim](https://www.archlinux.org/packages/?name=kde-meta-kdepim) 元软件包安装所有相关的软件包。
 
 #### Akonadi
 

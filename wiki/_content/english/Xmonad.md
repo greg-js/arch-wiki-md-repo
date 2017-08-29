@@ -4,8 +4,6 @@ xmonad is written, configured and extensible in [Haskell](http://haskell.org/). 
 
 Layouts are applied dynamically, and different layouts may be used on each workspace. [Xinerama](https://en.wikipedia.org/wiki/Xinerama "wikipedia:Xinerama") is fully supported, allowing windows to be tiled on several physical screens.
 
-For more information, please visit the xmonad website: [http://xmonad.org/](http://xmonad.org/)
-
 ## Contents
 
 *   [1 Installation](#Installation)

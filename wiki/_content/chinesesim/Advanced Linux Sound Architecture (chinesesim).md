@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Advanced_Linux_Sound_Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-18，点击[这里](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&diff=0&oldid=393090)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Advanced_Linux_Sound_Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-28，点击[这里](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&diff=0&oldid=484694)可以查看翻译后英文页面的改动。
 
-[高级 Linux 声音体系](https://en.wikipedia.org/wiki/zh:ALSA "wikipedia:zh:ALSA")（Advanced Linux Sound Architecture，**ALSA**）是Linux中提供声音设备驱动的内核组件，用来代替原来的开放声音系统（Open Sound System，OSSv3）。除了声音设备驱动，**ALSA**还包含一个用户空间的函数库，以方便开发者通过高级API使用驱动功能，而不必直接与内核驱动交互。
+[高级 Linux 声音体系](https://en.wikipedia.org/wiki/zh:ALSA "wikipedia:zh:ALSA")（Advanced Linux Sound Architecture，**ALSA**）是Linux中提供声音设备驱动的内核组件，用来代替原来的开放声音系统（Open Sound System，OSSv3）。除了声音设备驱动，**ALSA**还包含一个用户空间的函数库，开发者可以通过这些高级 API 使用驱动，不必直接与内核驱动进行交互。
 
 **注意:** 关于另一种声音体系，请阅读[开放声音系统（OSS）](/index.php/Open_Sound_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Open Sound System (简体中文)")的页面。
 
@@ -10,7 +10,9 @@
     *   [1.1 用户权限](#.E7.94.A8.E6.88.B7.E6.9D.83.E9.99.90)
     *   [1.2 ALSA 工具](#ALSA_.E5.B7.A5.E5.85.B7)
     *   [1.3 OSS 兼容性](#OSS_.E5.85.BC.E5.AE.B9.E6.80.A7)
-    *   [1.4 ALSA 和 Systemd](#ALSA_.E5.92.8C_Systemd)
+    *   [1.4 PulseAudio compatibility](#PulseAudio_compatibility)
+    *   [1.5 ALSA 和 Systemd](#ALSA_.E5.92.8C_Systemd)
+    *   [1.6 ALSA Firmware](#ALSA_Firmware)
 *   [2 解除各声道的静音](#.E8.A7.A3.E9.99.A4.E5.90.84.E5.A3.B0.E9.81.93.E7.9A.84.E9.9D.99.E9.9F.B3)
     *   [2.1 测试你改变的设置](#.E6.B5.8B.E8.AF.95.E4.BD.A0.E6.94.B9.E5.8F.98.E7.9A.84.E8.AE.BE.E7.BD.AE)
     *   [2.2 附加注释](#.E9.99.84.E5.8A.A0.E6.B3.A8.E9.87.8A)
@@ -73,6 +75,7 @@
     *   [8.27 ALSA 与 SDL 协同工作的问题](#ALSA_.E4.B8.8E_SDL_.E5.8D.8F.E5.90.8C.E5.B7.A5.E4.BD.9C.E7.9A.84.E9.97.AE.E9.A2.98)
     *   [8.28 Low Sound Workaround](#Low_Sound_Workaround)
     *   [8.29 暂停后继续播放发出噼叭声](#.E6.9A.82.E5.81.9C.E5.90.8E.E7.BB.A7.E7.BB.AD.E6.92.AD.E6.94.BE.E5.8F.91.E5.87.BA.E5.99.BC.E5.8F.AD.E5.A3.B0)
+    *   [8.30 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
 *   [9 配置文件范例](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E8.8C.83.E4.BE.8B)
 *   [10 相关阅读](#.E7.9B.B8.E5.85.B3.E9.98.85.E8.AF.BB)
 
@@ -82,19 +85,17 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 [udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在系统启动时自动检测硬件，并加载相应的声音设备驱动模块。这时，你的声卡已经可以工作了，只是所有声道默认都被设置成静音了。
 
-在本地登录（通过虚拟终端或登录管理器）的用户，都有权限播放音频并调整音量。要让远程登录的用户拥有这些权限，必须把用户[加入](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)") `audio` 用户组。该组的成员可以直接访问声音设备，会导致某些程序独占音频输出（破坏软件混音），还可能影响用户快速切换和拖机（multiseat）。因此，除非真的有某些[特殊需求](https://wiki.ubuntu.com/Audio/TheAudioGroup)，**不建议**把用户加入 `audio` 用户组。
-
 ### 用户权限
 
-一般情况下，本地用户有权限播放音频和改变音频的音质
+一般情况下，本地用户（通过虚拟终端或登录管理器）有权限播放音频和改变音频的音质。
 
-为了允许远程用户使用ALSA，你必须选择将用户 [添加](/index.php/Users_and_groups#Group_management "Users and groups") `audio` 组。
+要让远程登录的用户拥有这些权限，必须把用户[加入](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)") `audio` 用户组。
 
-**Note:** Adding users to the `audio` group allows direct access to devices. Keep in mind, that this allows applications to exclusively reserve output devices. This may break software mixing or fast-user-switching on multi-seat systems. Therefore, adding a user to the `audio` group is **not** recommended by default; unless you specifically need to [[1]](https://wiki.ubuntu.com/Audio/TheAudioGroup).
+**注意:** 该组的成员可以直接访问声音设备，会导致某些程序独占音频输出。这会让软件混音或快速用户切换无法工作。因此，除非真的有某些[特殊需求](https://wiki.ubuntu.com/Audio/TheAudioGroup)，**不建议**把用户加入 `audio` 用户组。
 
 ### ALSA 工具
 
-从 [官方仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") [安装](/index.php/Pacman "Pacman") [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) 软件包，其中包含的 `alsamixer` 工具允许用户在控制台或终端中配置声音设备。 如果你需要 [高质量重采样](#.E9.AB.98.E8.B4.A8.E9.87.8F.E9.87.8D.E9.87.87.E6.A0.B7) 、 [软件模拟环绕立体声](#Upmixing.2FDownmixing) 和其他高级特性的话 ，请另外安装 [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) 软件包。
+[安装](/index.php/Pacman "Pacman") 软件包 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)，其中包含的 `alsamixer` 工具允许用户在控制台或终端中配置声音设备。 如果你需要 [高质量重采样](#.E9.AB.98.E8.B4.A8.E9.87.8F.E9.87.8D.E9.87.87.E6.A0.B7) 、 [#上混和缩混](#.E4.B8.8A.E6.B7.B7.E5.92.8C.E7.BC.A9.E6.B7.B7)和其他高级特性的话 ，请另外安装 [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) 软件包。
 
 ### OSS 兼容性
 
@@ -102,15 +103,23 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 ALSA能够截获[OSS](/index.php/OSS "OSS")调用，然后转而在ALSA中重新发送他们。例如，对于试图打开`/dev/dsp`并向里面写入声音数据的传统应用，这个模仿层很有用。没有OSS或者这个模仿库的话，会缺少`/dev/dsp`，应用程序从而不会产生任何声音。
 
-如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#Dmix)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
+如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#.E7.BC.A9.E6.B7.B7)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
+
+### PulseAudio compatibility
+
+[apulse](https://aur.archlinux.org/packages/apulse/) lets you use ALSA for applications that support only [PulseAudio](/index.php/PulseAudio "PulseAudio") for sound. Usage is simply `$ apulse *yourapplication*`.
 
 ### ALSA 和 Systemd
 
-The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-store.service` by default.
+The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-state.service` by default.
 
 These are automatically installed and activated during installation. Therefore, there is no further action needed. Though, you can check their status using `systemctl`.
 
 **Note:** For reference, ALSA stores its settings in `/var/lib/alsa/asound.state`
+
+### ALSA Firmware
+
+The [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) package contains firmware that may be required for certain sound cards (e.g. Creative SB0400 Audigy2).
 
 ## 解除各声道的静音
 
@@ -134,7 +143,7 @@ $ amixer sset Master unmute
 
 使用 `←` 和 `→` 方向键，选中 `Master` 和 `PCM` 声道。按下 `m` 键解除静音。使用 `↑` 方向键增加音量，直到增益值为`0`。该值显示在左上方 `Item:` 字段后。过高的增益值会导致声音失真。
 
-要想得到完整的 5.1 或 7.1 环绕立体声，还得解除 Front、Surround、Center、LFE (subwoofer) 和 Side 这些声道的静音（上述名称是 Intel HD Audio 声卡使用的声道名，可能因设备不同而有所差异）。注意，仅有这些设置，系统不会自动将立体声源（多数音乐）提升（upmix）成环绕立体声。如果需要这些功能，请阅读[#Upmixing/Downmixing](#Upmixing.2FDownmixing)。
+要想得到完整的 5.1 或 7.1 环绕立体声，还得解除 Front、Surround、Center、LFE (subwoofer) 和 Side 这些声道的静音（上述名称是 Intel HD Audio 声卡使用的声道名，可能因设备不同而有所差异）。注意，仅有这些设置，系统不会自动将立体声源（多数音乐）提升（upmix）成环绕立体声。如果需要这些功能，请阅读[#上混和缩混](#.E4.B8.8A.E6.B7.B7.E5.92.8C.E7.BC.A9.E6.B7.B7)。
 
 要启用麦克风，切换至 Capture 选项卡，按下 `F4`，按下 `空格` 启用其中一个声道即可。
 
@@ -166,7 +175,7 @@ $ speaker-test -c 8
 If audio is being outputted to the wrong device, try manually specifying it with the argument `-D`.
 
 ```
-$ speaker-test -D default -c 8
+$ speaker-test -D default:PCH -c 8
 
 ```
 
@@ -174,7 +183,7 @@ $ speaker-test -D default -c 8
 
  `$ aplay -L | grep :CARD` 
 ```
-default:CARD=PCH  # 'default' is the PCM channel name
+default:CARD=PCH  # 'default:PCH' is the PCM channel name for -D
 sysdefault:CARD=PCH
 front:CARD=PCH,DEV=0
 surround21:CARD=PCH,DEV=0
@@ -202,6 +211,8 @@ surround71:CARD=PCH,DEV=0
 *   如果重起以后，你的声音调整似乎丢失了，尝试以root运行alsamixer。
 
 ## 配置
+
+系统配置文件是 `/etc/asound.conf`, 每个用户的配置文件是 `~/.asoundrc`.
 
 ### 基本语法
 
@@ -420,6 +431,8 @@ options snd-ice1724 index=2 model=prodigy71hifi vid=1412 pid=1724
 
 #### 使用环境变量选择默认PCM设备
 
+**Tip:** An explanation of the terminology of a "card", "device", "subdevice" (a "card" is not a "device") and "PCM" can be found on [wikipedia:Advanced Linux Sound Architecture#Concepts](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture#Concepts "wikipedia:Advanced Linux Sound Architecture").
+
 在你的设置文件中，最好是以全局方式加入以下命令:
 
 ```
@@ -542,7 +555,7 @@ The 'pcm' options affect which card and device will be used for audio playback w
 The changes should take effect as soon as you (re-)start an application (MPlayer etc.). You can also test with a command like *aplay*.
 
 ```
-$ aplay -D default *your_favourite_sound.wav*
+$ aplay -D default:PCH *your_favourite_sound.wav*
 
 ```
 
@@ -570,7 +583,7 @@ snd_page_alloc         7017    2  snd_hda_intel,snd_pcm
 
 如果你的输出和上面类似，那就说明声卡已经被正确识别。
 
-**注意:** 从[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")的171版本开始，默认情况下 OSS 仿真模块（`snd_seq_oss`、`snd_pcm_oss`、`snd_mixer_oss`）不再自动加载。如有需要，请[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A3.85.E5.85.A5 "Kernel modules (简体中文)")。
+**注意:** 从[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")的171版本开始，默认情况下 OSS 仿真模块（`snd_seq_oss`、`snd_pcm_oss`、`snd_mixer_oss`）不再自动加载。如有需要，请[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")。
 
 还可以检查一下 `/dev/snd/` 目录，看看是否有这些设备文件：
 
@@ -596,9 +609,9 @@ crw-rw----  1 root audio 116, 33 Apr  8 14:17 timer
 如果出现问题，声卡模块没有正确加载，那么请尝试手动加载模块：
 
 *   确定声卡对应的驱动模块：[ALSA Soundcard Matrix](http://www.alsa-project.org/main/index.php/Matrix:Main)。这些模块都会有一个”snd-“前缀（例如：`snd-via82xx`）。
-*   [加载模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A3.85.E5.85.A5 "Kernel modules (简体中文)")。
+*   [加载模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")。
 *   检查 `/dev/snd` 目录中的设备文件（参见上文）；或者，检查 `alsamixer` 或 `amixer` 的输出是否正确。
-*   修改配置，使 `snd-<模块名>` 和 `snd-pcm-oss` 模块[开机自动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A3.85.E5.85.A5 "Kernel modules (简体中文)")。
+*   修改配置，使 `snd-<模块名>` 和 `snd-pcm-oss` 模块[开机自动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")。
 
 ### 启用 SPDIF 输出
 
@@ -626,8 +639,6 @@ amixer -c 0 cset name='IEC958 Playback Switch' on
 
 从 [AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 安装 [alsaequal](https://aur.archlinux.org/packages/alsaequal/)。
 
-**注意:** 如果使用的是64位系统，而又安装了32位的 Flash 插件，这里的设置会导致 Flash 无声。如果发生了这种情况，请禁用 alsaequal 或编译32位版本的 alsaequal。
-
 安装后，把下列内容添加到 ALSA 配置文件（`~/.asoundrc` 或 `/etc/asound.conf`）：
 
 ```
@@ -653,6 +664,34 @@ pcm.!default {
   slave.pcm plugequal;
 }
 
+```
+
+如果使用的是64位系统，而又安装了32位的 Flash 插件，这里的设置会导致 Flash 无声。you have to specify the sound card manually in the line `pcm "hw:0,0"` (use `aplay -l` to list the available sound card and relative card and device number):
+
+ `/etc/asound.conf` 
+```
+pcm.dmixer {
+    type dmix
+    ipc_key 2048
+    slave {
+        pcm "hw:0,0"
+        buffer_size 16384
+    }
+}
+
+ctl.equal {
+    type equal;
+}
+
+pcm.equalizer {
+    type equal
+    slave.pcm "plug:dmixer"
+}
+
+pcm.!default {
+    type plug
+    slave.pcm equalizer
+}
 ```
 
 设置好后，切换均衡器：
@@ -845,7 +884,7 @@ pcm.!surround40 {
 
 ```
 
-**Note:** 如果这不能让 缩混 工作，请参见 [[2]](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=541786) 。所以，你也许需要添加 `pcm.!default "plug:surround51"` 或是 `pcm.!default "plug:surround40"`。只有一个 `vdownmix` 插件能够使用；如果你有7.1声道音响，你需要使用 `surround71` 来代替上面所述的配置文件。一个让 `vdownmix` 和 `dmix` 同时工作的配置文件的示例可以在 [这里](https://bbs.archlinux.org/viewtopic.php?id=167275) 找到。
+**Note:** 如果这不能让 缩混 工作，请参见 [[1]](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=541786) 。所以，你也许需要添加 `pcm.!default "plug:surround51"` 或是 `pcm.!default "plug:surround40"`。只有一个 `vdownmix` 插件能够使用；如果你有7.1声道音响，你需要使用 `surround71` 来代替上面所述的配置文件。一个让 `vdownmix` 和 `dmix` 同时工作的配置文件的示例可以在 [这里](https://bbs.archlinux.org/viewtopic.php?id=167275) 找到。
 
 ## 混音
 
@@ -1338,7 +1377,7 @@ options snd_hda_intel power_save=0 power_save_controller=N
 
 对于 VIA VT1708S 板载声卡（使用 snd_hda_intel 模块）等一些声卡，即使把 power_save 参数设置为0可能仍会有噪音。还得在 alsamixer 中把“Line”声道激活才能生效，只要激活并调到一个非0的音量即可（1即可，不要太高）。
 
-内核模块文档：[[3]](https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
+内核模块文档：[[2]](https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
 对于笔记本，即使在 `/etc/modprobe.d` 设置了 `power_save` 参数，当切换电池时 pm-utils 仍会将该值重置为1。需要禁用相关的脚步才行（详情参见：[Pm-utils#Disabling a hook](/index.php/Pm-utils#Disabling_a_hook "Pm-utils")）：
 
@@ -1356,7 +1395,7 @@ options snd_hda_intel power_save=0 power_save_controller=N
 
 ```
 
-每次开机都需要重新设置。如果嫌麻烦，可以自己写一个 [systemd 服务](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.B7.B1.E7.BC.96.E5.86.99_.service_.E6.96.87.E4.BB.B6 "Systemd (简体中文)")。
+每次开机都需要重新设置。如果嫌麻烦，可以自己写一个 [systemd 服务](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")。
 
 ### HDMI 输出无效
 
@@ -1553,6 +1592,47 @@ After the changes are loaded successfully, you will see a `Pre-Amp` section in a
 ### 暂停后继续播放发出噼叭声
 
 如果你在暂停后继续播放听到噼叭声，那么你可以通过修改 `/etc/pm/sleep.d/90alsa` 中的 `aplay -d 1 /dev/zero`行来修复错误。
+
+### Virtual sound device using snd-aloop
+
+You might want a jack alternative to create a virtual recording or play device in order to mix different sources, using the snd-aloop module:
+
+```
+modprobe snd-aloop
+
+```
+
+List your new virtual devices using:
+
+```
+aplay -l
+
+```
+
+now you can for example using ffmpeg:
+
+```
+ffmpeg -f alsa -i hw:1,1,0 -f alsa -i hw:1,1,1 -filter_complex amerge output.mp3
+
+```
+
+In the hw:R,W,N format R is your virtual card device number, W 1 recording devices 0 for writing, R is your sub device you can use all the virtual devices available and play/stop using applications like mplayer:
+
+```
+mplayer -ao alsa:device=hw=1,0,0 fileA
+mplayer -ao alsa:device=hw=1,0,1 fileB 
+
+```
+
+Another thing you could do with this approach, is using festival to generate a voice into a recording stream using an script like this:
+
+```
+#!/bin/bash
+echo $1|iconv -f utf-8 -t iso-8859-1| text2wave  > "_tmp_.wav";   
+mplayer -ao alsa:device=hw=2,0,0 "_tmp.wav";
+rm "_tmp.wav";
+
+```
 
 ## 配置文件范例
 

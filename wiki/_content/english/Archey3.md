@@ -72,4 +72,4 @@ A sample config file, with comments showing all of the possible options for conf
 
 ## See also
 
-	[Project Homepage](https://lclarkmichalek.github.io/archey3/)
+*   [Project Homepage](https://lclarkmichalek.github.io/archey3/)

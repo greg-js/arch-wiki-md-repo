@@ -21,7 +21,7 @@ Configuration is performed in `/etc/wgetrc`. Not only is the default configurati
 
 ### FTP automation
 
-Normally, [SSH](/index.php/SSH "SSH") is used to securely transfer files among a network. However, FTP is lighter on resources compared to scp and [rsyncing](/index.php/Rsync "Rsync") over SSH. FTP is not as secure, but when transfering large amounts of data inside a firewall protected environment on CPU-bound systems, using FTP can prove beneficial.
+Normally, [SSH](/index.php/SSH "SSH") is used to securely transfer files among a network. However, FTP is lighter on resources compared to scp and [rsyncing](/index.php/Rsync "Rsync") over SSH. FTP is not secure, but when transfering large amounts of data inside a firewall protected environment on CPU-bound systems, using FTP can prove beneficial.
 
 ```
 wget ftp://root:somepassword@10.13.X.Y//ifs/home/test/big/"*.tar"
@@ -69,10 +69,10 @@ This section explains some of the use case scenarios for Wget.
 
 ### Basic usage
 
-One of the most basic and common use cases for Wget is to download a file from the internet. For example, to download [a picture of a gnu from Wikipedia](https://upload.wikimedia.org/wikipedia/commons/f/fb/Blue_Wildebeest%2C_Ngorongoro.jpg), you can type:
+One of the most basic and common use cases for Wget is to download a file from the internet.
 
 ```
-$ wget https://upload.wikimedia.org/wikipedia/commons/f/fb/Blue_Wildebeest%2C_Ngorongoro.jpg
+$ wget <url>
 
 ```
 

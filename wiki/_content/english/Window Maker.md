@@ -1,4 +1,4 @@
-Window Maker is a [window manager](/index.php/Window_manager "Window manager") (WM) for the X Window System. It is designed to emulate the NeXT user interface as an OpenStep-compatible environment, and is characterized by low memory demands and high flexibility. As one of the lighter WMs, it is well suited for machines with modest performance specifications.
+[Window Maker](http://windowmaker.org/) is a [window manager](/index.php/Window_manager "Window manager") (WM) for the X Window System. It is designed to emulate the NeXT user interface as an OpenStep-compatible environment, and is characterized by low memory demands and high flexibility. As one of the lighter WMs, it is well suited for machines with modest performance specifications.
 
 ## Contents
 

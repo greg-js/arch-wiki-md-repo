@@ -70,10 +70,7 @@ Use Ctrl-C to quit.
 
 FastCGI is a great way of interfacing with Bottle (from lighttpd, nginx, etc). To use it however we must hook Bottle into something. For a simple example, let's use FLUP (for python2.x)
 
-```
-pacman -S python-flup
-
-```
+[Install](/index.php/Install "Install") the [python-flup](https://www.archlinux.org/packages/?name=python-flup) package.
 
 And now for our hello world application:
 

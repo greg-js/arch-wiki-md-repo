@@ -1,4 +1,4 @@
-**Vino** is a VNC (Virtual Network Computing) server allowing remote connection to your actual desktop. It is a default component of the [GNOME](/index.php/GNOME "GNOME") [Desktop environment](/index.php/Desktop_environment "Desktop environment").
+[Vino](https://wiki.gnome.org/Projects/Vino) is a VNC (Virtual Network Computing) server allowing remote connection to your actual desktop. It is a default component of the [GNOME](/index.php/GNOME "GNOME") [Desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 ## Contents
 
@@ -12,7 +12,7 @@
 
 ### GNOME
 
-[Install](/index.php/Install "Install") the package [vino](https://www.archlinux.org/packages/?name=vino), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [vino](https://www.archlinux.org/packages/?name=vino) package.
 
 You need to restart GNOME so that `vino-server` is started automatically when enabling the remote desktop feature. The remote desktop feature can usually be enabled in Settings > Sharing, however this only seems to be functional when [NetworkManager](/index.php/NetworkManager "NetworkManager") is installed and functional.
 

@@ -1,4 +1,4 @@
-Idesk is a simple program for adding icons to your X desktop. It can also manage your wallpaper with a built in changer similar to that found in Windows 7.
+[Idesk](http://idesk.sourceforge.net/html/index.html) is a simple program for adding icons to your X desktop. It can also manage your wallpaper with a built in changer similar to that found in Windows 7.
 
 ## Contents
 

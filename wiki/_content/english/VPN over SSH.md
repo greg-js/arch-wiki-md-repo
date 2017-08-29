@@ -57,9 +57,7 @@ Name=tun5
 Address=192.168.200.2/24
 ```
 
-Once these files are created, enable them by restarting systemd-networkd
-
- `# systemctl restart systemd-networkd.service` 
+Once these files are created, enable them by [restarting](/index.php/Restart "Restart") `systemd-networkd.service`.
 
 Also you may manage tun interfaces with 'ip tunnel' command.
 

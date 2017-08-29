@@ -1,147 +1,297 @@
-W nowym wydaniu Archa AIF (Arch Installation Framework) nie jest już dostarczany wraz z [Nośnikiem instalacyjnym 2012.07.15](https://www.archlinux.org/news/install-media-20120715-released/). W miejsce przestarzałego rozwiązania wprowadzone nowe [skrypty instalacyjne Archa](https://github.com/falconindy/arch-install-scripts), których zadaniem jest pomoc w instalacji nowego systemu. Ten artykuł stworzony jest po to, by przybliżyć proces korzystania z tych skryptów. Aby uzyskać opis procesu instalacji i postinstalacji nakierowany na początkującego użytkownika, zapoznaj się z [Poradnikiem początkującego](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)").
+Ten dokument jest przewodnikiem do instalacji [Arch Linuxa](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)") z sytemu live uruchomionego oficjalnym obrazem instalacyjnym. Przed instalacją, zalecane jest przejrzenie [najczęściej zadawanych pytań (FAQ)](/index.php/FAQ "FAQ"). Dla konwencji użytych w tym dokumencie, zobacz stronę [Help:Reading](/index.php/Help:Reading "Help:Reading"). Należy również wziąć pod uwagę, że wszystkie linki na tej stronie prowadzą do ich angielskich wersji.
+
+Dla dokładniejszych instrukcji, zobacz odpowiednie artykuły [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") lub [strony podręcznika](/index.php/Man_page "Man page") poszczególnych programów, oba podlinkowane w tym przewodniku. Zobacz stronę podręcznika [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) dla ogólny opis konfiguracji. Dla interaktywnej pomocy, dostępne jest [forum](https://bbs.archlinux.org/) oraz [kanał IRC](/index.php/IRC_Channel "IRC Channel").
 
 ## Contents
 
-*   [1 Pobieranie](#Pobieranie)
-*   [2 Układ klawiatury](#Uk.C5.82ad_klawiatury)
-*   [3 Partycjonowanie dysku](#Partycjonowanie_dysku)
-*   [4 Formatowanie partycji](#Formatowanie_partycji)
-*   [5 Montowanie partycji](#Montowanie_partycji)
-*   [6 Podłączenie do sieci](#Pod.C5.82.C4.85czenie_do_sieci)
-    *   [6.1 Sieć bezprzewodowa](#Sie.C4.87_bezprzewodowa)
-*   [7 Instalacja systemu podstawowego](#Instalacja_systemu_podstawowego)
-*   [8 Instalacja programu rozruchowego](#Instalacja_programu_rozruchowego)
-    *   [8.1 GRUB](#GRUB)
-    *   [8.2 Syslinux](#Syslinux)
-*   [9 Konfiguracja systemu](#Konfiguracja_systemu)
-*   [10 Zakończenie instalacji](#Zako.C5.84czenie_instalacji)
+*   [1 Przed instalacją](#Przed_instalacj.C4.85)
+    *   [1.1 Układ klawiatury](#Uk.C5.82ad_klawiatury)
+        *   [1.1.1 Polski układ klawiatury](#Polski_uk.C5.82ad_klawiatury)
+    *   [1.2 Zweryfikuj tryb uruchomionego systemu](#Zweryfikuj_tryb_uruchomionego_systemu)
+    *   [1.3 Połącz się z Internetem](#Po.C5.82.C4.85cz_si.C4.99_z_Internetem)
+    *   [1.4 Zaktualizuj systemowy zegar](#Zaktualizuj_systemowy_zegar)
+    *   [1.5 Partycjonuj dyski](#Partycjonuj_dyski)
+    *   [1.6 Formatowanie partycji](#Formatowanie_partycji)
+    *   [1.7 Zamontuj system plików](#Zamontuj_system_plik.C3.B3w)
+*   [2 Instalacja](#Instalacja)
+    *   [2.1 Wybierz serwery lustrzane](#Wybierz_serwery_lustrzane)
+    *   [2.2 Instalacja pakietów z grupy *base*](#Instalacja_pakiet.C3.B3w_z_grupy_base)
+*   [3 Konfiguracja systemu](#Konfiguracja_systemu)
+    *   [3.1 Fstab](#Fstab)
+    *   [3.2 Chroot](#Chroot)
+    *   [3.3 Strefa czasowa](#Strefa_czasowa)
+    *   [3.4 Język](#J.C4.99zyk)
+    *   [3.5 Nazwa hosta](#Nazwa_hosta)
+    *   [3.6 Konfiguracja sieci](#Konfiguracja_sieci)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Hasło użytkownika root](#Has.C5.82o_u.C5.BCytkownika_root)
+    *   [3.9 Program rozruchowy](#Program_rozruchowy)
+*   [4 Uruchom ponownie](#Uruchom_ponownie)
+*   [5 Po instalacji](#Po_instalacji)
 
-## Pobieranie
+## Przed instalacją
 
-Nowy obraz ISO dystrybucji Arch Linux możesz pobrać ze [strony pobierania Archa](https://www.archlinux.org/download/).
+Arch Linux powinien być uruchamiany na dowolnej maszynie [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") z minimalną ilością 512 MB pamięci RAM. Podstawowa instalacja pakietów z grupy [base](https://www.archlinux.org/groups/x86_64/base/) powinna zająć mniej, niż 800 MB miejsca na dysku. Jako iż proces instalacji musi pobrać pakiety z zewnętrznego repozytorium, wymagane jest działające połączenie internetowe.
 
-*   Zamiast sześciu różnych obrazów instalacyjnych, dostarczamy teraz jedynie jeden obraz, który pozwala na uruchomienie środowiska instalacyjnego (zarówno i686 jak i x86_64), które to z kolei pozwoli nam na zainstalowanie naszego systemu, pobierając niezbędne pakiety z sieci. Medium instalacyjne zawierające repozytoria [core] nie jest już dostępne.
-*   Obrazy instalacyjne posiadają podpis i mocno zalecane jest sprawdzenie ich przed pierwszym użyciem. Jeśli posiadasz już dystrybucję Arch, możesz to zrobić wpisując w konsoli `pacman-key -v <iso-file>.sig` .
-*   Pobrany obraz możesz wypalić na płycie CD, możesz go zamontować jako obraz ISO lub zapisać na pamięci przenośnej przy pomocy narzędzi takich jak `dd`. Jest to zalecane jedynie w przypadku nowych instalacji, użytkownicy posiadający już system Arch Linux mogą wykonać aktualizację systemu przy użyciu komendy `pacman -Syu`.
+Pobierz i uruchom dysk instalacyjny jak opisane w kategorii [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Zostaniesz zalogowany na pierwszej [wirtualnej konsoli](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") jako użytkownik root z shell'em [Zsh](/index.php/Zsh "Zsh"); podstawowe komendy takie jak [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) mogą zostać [automatycznie dokończone po naciśnięciu przycisku TAB](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-## Układ klawiatury
+By przejść do innej konsoli, by np. zobaczyć ten przewodnik programem [ELinks](/index.php/ELinks "ELinks") podczas instalacji użyj [skrótu](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*strzałka*`. By [edytować](/index.php/Textedit "Textedit") pliki konfiguracyjne, możesz użyć programów [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") i [vim](/index.php/Vim#Usage "Vim").
 
-Dla wielu różnych krajów oraz różnych języków dostępne są różne mapy klawiatur. Przy pomocy polecenia `loadkeys pl` ustawisz standardowy polski typ klawiatury. Jeśli jesteś zainteresowany innym układem klawiatury, niezbędne pliki znajdziesz w `/usr/share/kbd/keymaps/` (możesz pominąć podawanie ścieżki i rozszerzenia pliku gdy używasz komendy `loadkeys`).
+### Układ klawiatury
 
-## Partycjonowanie dysku
+Domyślny [zestaw znaków w konsoli](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") to [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). By wyświetlić dostępne układy, wpisz w konsoli `ls /usr/share/kbd/keymaps/**/*.map.gz`. Aby zmodyfikować układ użyj odpowiedniej nazwy pliki w poleceniu [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), odrzucając ścieżkę i rozszerzenie. Dla przykładu, wpisz `loadkeys de-latin1`, by wybrać [niemiecki](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") układ klawiatury
 
-Zajrzyj do działu [Partycjonowanie dysku](/index.php/Partitioning_(Polski) "Partitioning (Polski)") w celu zasięgnięcia dodatkowych informacji.
+[Czcionki konsolowe](/index.php/Console_fonts "Console fonts") są zlokalizowane w `/usr/share/kbd/consolefonts/` i mogą być w podobny sposób ustawione poleceniem [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
-## Formatowanie partycji
+#### Polski układ klawiatury
 
-Zajrzyj do działu [Formatowanie partycji](/index.php/File_systems_(Polski)#Formatowanie_partycji "File systems (Polski)") w celu zasięgnięcia dodatkowych informacji.
+Aby ustawić polski układ klawiatury, wpisz `loadkeys pl`. Jeśli polskie znaki nie wyświetlają się poprawnie, wpisz `setfont Lat2-Terminus16.psfu.gz -m 8859-2`, by ustawić odpowiednią czcionkę w konsoli. W późniejszej części artykułu opisany zostanie sposób, by permanentnie ustawić polski układ i odpowiednią czcionkę.
 
-Jeśli używasz (U)EFI, prawdopodobnie będziesz potrzebować dodatkowej partycji, na której będziesz mógł umieścić systemową partycję UEFI. Więcej możesz przeczytać w artykule [UEFI](/index.php?title=Unified_Extensible_Firmware_Interface_(Polski)&action=edit&redlink=1 "Unified Extensible Firmware Interface (Polski) (page does not exist)").
+### Zweryfikuj tryb uruchomionego systemu
 
-## Montowanie partycji
-
-Następnym krokiem jest zamontowanie głównej partycji w `/mnt`, najprostszym sposobem jest wpisanie w konsoli `mount /dev/sdXY /mnt`, gdzie X jest literą dysku, a Y numerem partycji. Dodatkowo musimy utworzyć nowe katalogi dla pozostałych partycji (`/mnt/boot`, `/mnt/home`, itp.), jeśli chcesz, by zostały wykryte przez `genfstab`.
-
-## Podłączenie do sieci
-
-Zakładając, że masz do czynienia z połączeniem przewodowym, uruchomienie `dhclient` lub `dhcpcd` powinno być wystarczające do nawiązania połączenia. W przypadku występowania problemów, więcej informacji znajdziesz w dziale [Konfiguracja sieci](/index.php?title=Configuring_network_(Polski)&action=edit&redlink=1 "Configuring network (Polski) (page does not exist)").
-
-### Sieć bezprzewodowa
-
-W przypadku sieci bezprzewodowych zapoznaj się z artykułem [Sieci bezprzewodowe](/index.php?title=Wireless_Setup_(Polski)&action=edit&redlink=1 "Wireless Setup (Polski) (page does not exist)") oraz z [Netcfg](/index.php/Netcfg#Configuration_.28Polski.29 "Netcfg"), w celu uzyskania informacji na temat uzyskania połączenia ze swoim punktem dostępowym.
-
-## Instalacja systemu podstawowego
-
-Przed rozpoczęciem instalacji możesz zechcieć dostosować plik `/etc/pacman.d/mirrorlist` umieszczając najlepsze serwery lustrzane na szczycie listy. Kopia tego pliku zostanie zainstalowana przy użyciu `pacstrap`, więc gra jest warta świeczki. Edytować ten plik możesz także już po skończonej instalacji przy użyciu narzędzia `rankmirrors`.
-
-Używając skryptu [pacstrap](https://github.com/falconindy/arch-install-scripts/blob/master/pacstrap.in) zainstalujemy system bazowy. Jeśli jesteś zainteresowany korzystaniem z [AUR](/index.php/AUR_(Polski) "AUR (Polski)") lub [ABS](/index.php?title=ABS_(Polski)&action=edit&redlink=1 "ABS (Polski) (page does not exist)"), możesz także zainstalować rozszerzenie systemu bazowego dla deweloperów - "base devel".
+Jeśli tryb UEFI jest uruchomiony na płycie głównej [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") [uruchomi](/index.php/Boot "Boot") Arch Linux z pomocą [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). By to zweryfikować, sprawdź zawartość folderu [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
 
 ```
-# pacstrap /mnt base base-devel
+# ls /sys/firmware/efi/efivars
 
 ```
 
-Pozostałe pakiety także mogą być zainstalowane przy pomocy powyższej komendy (poszczególne pakiety powinny być oddzielone spacją).
+Jeśli ten folder nie istnieje, system może być uruchomiony w [w:BIOS|BIOSie]] lub trybie CSM. Odnieś się do podręcznika twojej płyty głównej dla detali.
 
-## Instalacja programu rozruchowego
+### Połącz się z Internetem
 
-### [GRUB](/index.php?title=GRUB2_(Polski)&action=edit&redlink=1 "GRUB2 (Polski) (page does not exist)")
-
-*   Dla BIOS-u:
+Obraz instalacyjny [uruchamia](/index.php/Enable "Enable") [dhcpcd](/index.php/Dhcpcd "Dhcpcd") dla połączenia [przewodowego](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules). Możesz sprawdzić połączenie poleceniem:
 
 ```
-# pacstrap /mnt grub-bios
+# ping archlinux.org
 
 ```
 
-*   Dla UEFI (w rzadkich przypadkach musisz użyć `grub-efi-i386` zamiast):
+Jeśli nie masz połączenia, [zatrzymaj](/index.php/Stop "Stop") usługę *dhcpcd* poleceniem `systemctl stop dhcpcd@`, `Tab` i sprawdź stronę [Network configuration](/index.php/Network_configuration "Network configuration").
+
+Dla bezprzewodowych połączeń, iw(8), wpa_supplicant(8) i [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") są dostępne. Zobacz stronę [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+
+### Zaktualizuj systemowy zegar
+
+Użyh [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html) by sprawdzić, czy systemowy zegar jest dokładny:
 
 ```
-# pacstrap /mnt grub-efi-x86_64
+# timedatectl set-ntp true
 
 ```
 
-*   Instalacja GRUB-a ma miejsce po wchrootowaniu się do systemu.
+By sprawdzić stan usługi, użyj `timedatectl status`.
 
-### [Syslinux](/index.php?title=Syslinux_(Polski)&action=edit&redlink=1 "Syslinux (Polski) (page does not exist)")
+### Partycjonuj dyski
+
+Gdy rozpoznane przez system live, dyski są przypisane do *urządzeń blokowych (block devices)* takich jak `/dev/sda`. By zidentyfikować je, użyj [lsblk](/index.php/Lsblk "Lsblk") lub *fdisk* — wyniki koczące się `rom`, `loop` lub `airoot` mogą zostać zignorowane:
 
 ```
-# pacstrap /mnt syslinux
+# fdisk -l
 
 ```
+
+Następujące *partycje* (zakończone liczbą) są wymagane dla wybranego urządzenia:
+
+*   Jedna partycja jako katalog główny (filesystem root) `/`.
+*   Jeśli [UEFI](/index.php/UEFI "UEFI") jest włączone, [partycja systemowa EFI](/index.php/EFI_System_Partition "EFI System Partition").
+
+[Przestrzeń wymiany](/index.php/Swap_space "Swap space") może być ustawiona na oddzielnej partycji lub [pliku wymiany](/index.php/Swap_file "Swap file").
+
+By modyfikowć *tablice partycji*, użyj [fdisk](/index.php/Fdisk "Fdisk") lub [parted](/index.php/Parted "Parted"). Zobacz stronę [Partitioning](/index.php/Partitioning "Partitioning") po więcej informacji.
+
+Jesli chcesz stworzyć *stacked block device* dla [LVM](/index.php/LVM "LVM"), [szyfrowania dysku](/index.php?title=Szyfrowania_dysku&action=edit&redlink=1 "Szyfrowania dysku (page does not exist)") lub [RAID](/index.php/RAID "RAID"), zrób to teraz.
+
+### Formatowanie partycji
+
+Po stworzeniu partycji, każda musi być sformatowana odpowiednim [systemem plików](/index.php/File_system "File system"). Na przykład, by sformatować partycję główną (/) na `/dev/*sda1*` na `*ext4*`, uruchom:
+
+```
+# mkfs.*ext4* /dev/*sda1*
+
+```
+
+Zobacz [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") po więcej informacji.
+
+### Zamontuj system plików
+
+[Zamontuj](/index.php/File_systems#Mount_a_file_system "File systems") system plikow na partycji głównej (/) na `/mnt`, na przykład:
+
+```
+# mount /dev/*sda1* /mnt
+
+```
+
+Stwórz punkty montowania dla pozostałych partycji i je zamontuj, na przykład:
+
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
+
+```
+
+[genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) wykryje później zamontowane systemy plików i przestrzeń wymiany.
+
+## Instalacja
+
+### Wybierz serwery lustrzane
+
+Pakiety do instalacji muszą być pobrane z [serwerów lustrzanych](/index.php/Mirrors "Mirrors"), które są zdefiniowane w pliku `/etc/pacman.d/mirrorlist`. W systemie live wszystkie serwery lustrzane są włączone i są sortowane przez ich status synchronizacji i szybkości w czasie, gdy obraz instalacyjny został utworzony.
+
+Im wyżej serwer jest położony na liście, tym ma wyższy priorytet gdy pobierany jest pakiet. Możesz zedytować ten plik w odpowiedni sposób i przenieść najbliższy geograficznie serwer na górę listy, jednak powinno się wziąć pod uwagę inne krytria.
+
+Ten plik zostanie później skopiowany do nowego systemu przez skrypt *pacstrap*, więc warto jest go dobrze skonfigurować.
+
+### Instalacja pakietów z grupy *base*
+
+Użyj skryptu [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) by zainstalować grupę pakietów [base](https://www.archlinux.org/groups/x86_64/base/):
+
+```
+# pacstrap /mnt base
+
+```
+
+Ta grupa nie obejmuje wszystkich narzędzi ze środowiska live, takich jak [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs), czy specyficznego oprogramowania dla urządzeń bezprzewodowych; zobacz [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) dla porównania.
+
+By [zainstalować](/index.php/Install "Install") pakiety i inne grupy takie jak [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), dodaj ich nazwy do polecenia *pacstrap* (rozdzielone spacją) lub do indywidualnych komend [menedżera pakietów pacman](/index.php/Pacman "Pacman") po wejściu w do środowiska [#Chroot](#Chroot).
 
 ## Konfiguracja systemu
 
-Wygeneruj plik [fstab](/index.php?title=Fstab_(Polski)&action=edit&redlink=1 "Fstab (Polski) (page does not exist)") przy użyciu poniższej komendy (jeśli preferujesz używanie UUID lub etykiet, użyj odpowiednio parametrów `-U` lub `-L`):
+### Fstab
+
+Wygeneruj plik [fstab](/index.php/Fstab "Fstab") (użyj `-U` lub `-L` by zdefiniować wpisy przez [UUID](/index.php/UUID "UUID") lub etykiety):
 
 ```
-# genfstab -p /mnt >> /mnt/etc/fstab
+# genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
 
-Następnie chrootujemy się do naszego nowo zainstalowanego środowiska:
+Sprawdź gotowy plik w `/mnt/etc/fstab` i zedytuj go w razie błędów.
+
+### Chroot
+
+[Wejdź przez chroot](/index.php/Change_root "Change root") do nowego systemu:
 
 ```
 # arch-chroot /mnt
 
 ```
 
-*   Wprowadź nazwę hosta do `/etc/hostname`.
-*   Podlinkuj `/etc/localtime` do `/usr/share/zoneinfo/Strefa/Podstrefa`. Zamień `Strefa` oraz `Podstrefa` zgodnie ze swoimi wymaganiami. Dla przykładu:
+### Strefa czasowa
+
+Ustaw [strefę czasową](/index.php/Time_zone "Time zone"):
 
 ```
-# ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
-
-```
-
-*   Usuń znak komentarza `#` w odpowiednich miejscach w pliku `/etc/locale.gen`, a następnie wygeneruj locale przy użyciu `locale-gen`.
-*   Zmień ustawienia [locale](/index.php/Locale#Setting_system-wide_locale_.28Polski.29 "Locale") w pliku `/etc/locale.conf`.
-*   Ustaw polską czcionkę i układ klawiatury w `/etc/vconsole.conf`. Standardowe ustawienie dla klawiatury qwerty:
-
-```
-KEYMAP=pl2
-FONT=Lat2-Terminus16
+# ln -sf /usr/share/zoneinfo/*Region*/*City* /etc/localtime
 
 ```
 
-*   Wedle własnych potrzeb skonfiguruj plik `/etc/mkinitcpio.conf` (zobacz [mkinitcpio](/index.php?title=Mkinitcpio_(Polski)&action=edit&redlink=1 "Mkinitcpio (Polski) (page does not exist)")), a następnie wygeneruj początkowy RAM przy pomocy polecenia:
+Dla Polski polecenie będzie wyglądało w następujący sposób:
+
+```
+# ln -sf /usr/share/zoneinfo/Europe/Poland /etc/localtime
+
+```
+
+Uruchom [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) by wygenerować `/etc/adjtime`:
+
+```
+# hwclock --systohc
+
+```
+
+Ta komenda zakłada, że zegar sprzętowy komputera jest ustawiony w [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Zobacz [Time#Time standard](/index.php/Time#Time_standard "Time") dla większej ilości informacji.
+
+### Język
+
+Odkomentuj `en_US.UTF-8 UTF-8`, `pl_PL.UTF-8 UTF-8` i inne wymagane [lokalizacje](/index.php/Locale "Locale") w pliku `/etc/locale.gen` i wygeneruj je poleceniem:
+
+```
+# locale-gen
+
+```
+
+Ustaw [zmienną](/index.php/Variable "Variable") `LANG` w pliku [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) odpowiednio, na przykład:
+
+ `/etc/locale.conf`  `LANG=*pl_PL.UTF-8*` 
+
+Jeśli zmieniłeś układ klawiatury, zapisz te zmiany w pliku [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
+
+ `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
+
+Jeżeli chcesz, by w konsoli była możliwość wprowadzania polskich znaków, plik [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html) ma wygladać w następujący sposób:
+
+ `/etc/vconsole.conf` 
+```
+KEYMAP=pl
+FONT=Lat2-Terminus16.psfu.gz
+FONT_MAP=8859-2
+```
+
+### Nazwa hosta
+
+Stwórz plik [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
+
+ `/etc/hostname` 
+```
+*mojanazwahosta*
+
+```
+
+Przemyśl dodanie wpisu do pliku [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+
+ `/etc/hosts` 
+```
+127.0.0.1       localhost.localdomain               localhost
+::1             localhost.localdomain               localhost
+**127.0.1.1	*mojanazwahosta*.localdomain	    *mojanazwahosta***
+
+```
+
+Zobacz również: [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
+
+### Konfiguracja sieci
+
+Nowo zainstalowany system nie ma żadnego połączenia z siecią uruchomionego domyślnie. Zobacz [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+
+Dla [sieci bezprzewodowych](/index.php/Wireless_configuration "Wireless configuration"), [zainstaluj](/index.php/Install "Install") pakiety [iw](https://www.archlinux.org/packages/?name=iw) i {{Pkg|wpa_supplicant} i wymagane [pakiety firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Opcjonalnie zainstaluj [dialog](https://www.archlinux.org/packages/?name=dialog) dla użycia *wifi-menu*.
+
+### Initramfs
+
+Stworzenie nowego *initramfs* jest zazwyczaj nie wymagane, gdyż polecenie [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") było uruchomione podczas instalacji pakietu [linux](https://www.archlinux.org/packages/?name=linux) poleceniem *pacstrap*.
+
+Dla specjalnych konfiguracji, zmodyfikuj plik [mkinitcpio.conf(5)](https://git.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.conf.5.txt) i stwórz obraz initramfs:
 
 ```
 # mkinitcpio -p linux
 
 ```
 
-*   Skonfiguruj program rozruchowy. Jeśli potrzebujesz pomocy, zajrzyj do poradnika [GRUB2](/index.php/GRUB2 "GRUB2"); jeśli korzystasz z innego bootloadera, skorzystaj z opcji „szukaj”.
+### Hasło użytkownika root
 
-*   Ustaw hasło dla użytkownika root przy pomocy polecenia `passwd`.
-
-## Zakończenie instalacji
-
-Jeśli wciąż jesteś w środowisku chroot, wpisz w konsoli `exit` lub skorzystaj z kombinacji klawiszy `Ctrl+D`. Poprzednio montowaliśmy potrzebne partycje, przed wykonaniem resetu systemu należy je odmontować. Możesz to zrobić wpisując polecenie:
+Ustaw [hasło](/index.php/Password "Password") dla użytkownika root:
 
 ```
-# umount /mnt/{boot,home,}
+# passwd
 
 ```
 
-Uruchom ponownie komputer i Twój system jest wstępnie gotowy. Teraz możesz go skonfigurować zgodnie z [Poradnikiem początkującego](/index.php/Beginners%27_Guide/Post-Installation_(Polski) "Beginners' Guide/Post-Installation (Polski)").
+### Program rozruchowy
+
+Zobacz [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") dla możliwych wyborów i konfiguracji.
+
+Jeśli posiadasz procesor Intela, zainstaluj pakiet [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) i [uruchom aktualizacje mikrokodu](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode")
+
+## Uruchom ponownie
+
+Opuść środowisko chroot poleceniem `exit` lub naciskając `Ctrl+D`.
+
+Opcjonalnie manualnie odmontuj wszystkie partycje poleceniem `unmount -R /mnt`: to pozwoli na sprawdzenie "zajętych" partycji i znalezienia przyczyny poleceniem [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
+
+Na koniec, uruchom ponownie maszynę wpisując `reboot`: pozostałe partycje pozostaną odmontowane automatycznie przez *systemd*. Pamiętaj, by usunąć medium instalacyjne i wtedy zaloguj się do nowego systemu jako użytkownik root.
+
+## Po instalacji
+
+Zobacz [General recommendations](/index.php/General_recommendations "General recommendations") dla możliwości zarządzania system i poradników po instalacji (takich jak instlacja graficznego interfejsu użytkownika, dźwięku, czy gładzika).
+
+Dla listy aplikacji, które mogą się okazać przydatne, zobacz artykuł [List of applications](/index.php/List_of_applications "List of applications").

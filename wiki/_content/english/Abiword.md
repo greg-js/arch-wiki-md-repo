@@ -4,7 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Templates](#Templates)
-*   [3 Grammar Checking](#Grammar_Checking)
+*   [3 Grammar checking](#Grammar_checking)
 *   [4 Change keybindings](#Change_keybindings)
 *   [5 LaTeX fonts](#LaTeX_fonts)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -18,19 +18,22 @@ To fix tiny cursor and misaligned text issues, install either [ttf-liberation](h
 
 ## Templates
 
-If you want to change the default styles in Abiword, you should open a new document, change it to your own needs, and save it as the template name *normal.awt* in the `$HOME/.AbiSuite/templates` directory. After that, your new documents will follow the template.
+If you want to change the default styles in Abiword, you should open a new document, change it to your own needs, and save it as the template name *normal.awt* in the `~/.AbiSuite/templates` directory. After that, your new documents will follow the template.
 
 The instructions above don't work for Abiword 3.0\. The following does work:
 
-In a new document, choose Format -> Create and Modify Styles... from the menu, adjust the Normal style to what you'd prefer, and save it as ~/normal.awt then:
+In a new document, choose *Format > Create and Modify Styles...* from the menu, adjust the Normal style to what you'd prefer, and save it as `~/normal.awt` then:
 
+```
 sudo mv ~/normal.awt /usr/share/abiword-3.0/templates/
 
-Other styles in /usr/share/abiword-3.0/templates/ can be modified as well.
+```
 
-## Grammar Checking
+Other styles in `/usr/share/abiword-3.0/templates/` can be modified as well.
 
-Enable grammar checking from *Edit>Preferences>Spell Checking>Automatic grammar checking*.
+## Grammar checking
+
+Enable grammar checking from *Edit > Preferences > Spell Checking > Automatic grammar checking*.
 
 ## Change keybindings
 

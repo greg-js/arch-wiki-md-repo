@@ -75,9 +75,17 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/rmarquis/pacaur](https://github.com/rmarquis/pacaur) || [pacaur](https://aur.archlinux.org/packages/pacaur/)
 
+*   **pacget** — A wrapper around pacaur to mimic yaourt's search feature.
+
+	[https://github.com/neurobin/pacget](https://github.com/neurobin/pacget) || [pacget](https://aur.archlinux.org/packages/pacget/)
+
 *   **packer** — Wrapper for pacman and the AUR. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=88115))
 
 	[https://github.com/keenerd/packer](https://github.com/keenerd/packer) || [packer](https://aur.archlinux.org/packages/packer/)
+
+*   **pamac** — A DBus daemon and Gtk3 frontend for libalpm written in Vala.
+
+	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
 
 *   **pbget** — Retrieve source files from the Arch SVN and CVS web interface, the AUR, and the ABS rsync server.
 

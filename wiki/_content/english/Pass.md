@@ -13,6 +13,10 @@ pass is a simple password manager for the command line. Pass is a shell script t
 *   [5 Advanced usage](#Advanced_usage)
 *   [6 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
 *   [7 Integration into git](#Integration_into_git)
+    *   [7.1 Usage](#Usage)
+        *   [7.1.1 git Configuration](#git_Configuration)
+        *   [7.1.2 Mapping File](#Mapping_File)
+        *   [7.1.3 Password Store Layout](#Password_Store_Layout)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -151,7 +155,38 @@ Now you can initialize into `*~/.pass/red*` and `*~/.pass/blue*` and have two pa
 
 You can use `pass` as a credentials helper for `git`. [Install](/index.php/Install "Install") the [pass-git-helper](https://aur.archlinux.org/packages/pass-git-helper/) or [pass-git-helper-git](https://aur.archlinux.org/packages/pass-git-helper-git/) package.
 
-Usage is described in detail in the [github README file](https://github.com/languitar/pass-git-helper).
+### Usage
+
+Detail are described in the [github README file](https://github.com/languitar/pass-git-helper).
+
+#### `git` Configuration
+
+Install `pass-git-helper` as a git credentials helper by calling
+
+```
+git config --global credential.helper /usr/bin/pass-git-helper
+
+```
+
+#### Mapping File
+
+Create the file `~/.config/pass-git-helper/git-pass-mapping.ini`. It is used to map git remote hosts to your `pass` database. The format is something like this:
+
+```
+[github.com]
+target=dev/github
+
+[*.fooo-bar.*]
+target=dev/fooo-bar
+```
+
+You can use wildcards in the host part, as shown in the example.
+
+#### Password Store Layout
+
+As usual with pass, the helper assumes that the password is contained in the first line of the passwordstore entry. Additionally, if a second line is present, this line is interpreted as the username.
+
+For this to work, you have to use `pass insert --multiline` to create a multi line password store entry.
 
 ## See also
 

@@ -9,7 +9,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [vnstat](https://www.archlinux.org/packages/?name=vnstat) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [vnstat](https://www.archlinux.org/packages/?name=vnstat) package.
 
 ## Configuration
 

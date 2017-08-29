@@ -2,22 +2,19 @@ From the [official website](http://www.maplesoft.com/products/maple/):
 
 	*Maple is a high-level language and interactive environment for numerical computation, visualization, and programming. Using Maple, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java.*
 
+Maple is proprietary software produced by Maplesoft and requires a license to obtain, install, and activate. Arch is not officially supported, but the installer provided by Maplesoft may work in some cases.
+
 ## Contents
 
-*   [1 Overview](#Overview)
-*   [2 Installation](#Installation)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Failed to determine Host ID of license server](#Failed_to_determine_Host_ID_of_license_server)
-    *   [3.2 Blank main window with tiling window managers](#Blank_main_window_with_tiling_window_managers)
-    *   [3.3 3D plots failing](#3D_plots_failing)
-
-## Overview
-
-Maple is proprietary software produced by Maplesoft and requires a license to obtain, install, and activate. Arch is not officially supported, but the installer provided by Maplesoft may work in some cases.
+*   [1 Installation](#Installation)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Failed to determine Host ID of license server](#Failed_to_determine_Host_ID_of_license_server)
+    *   [2.2 Blank main window with tiling window managers](#Blank_main_window_with_tiling_window_managers)
+    *   [2.3 3D plots failing](#3D_plots_failing)
 
 ## Installation
 
-Maplesoft provides an installer script that may work on some Arch Linux installations. Make sure that you have a working [Java](/index.php/Java "Java") installation before beginning.
+Maplesoft provides an installer script that may work on some Arch Linux installations. Version 18 is supported by [maple18](https://aur.archlinux.org/packages/maple18/). Make sure that you have a working [Java](/index.php/Java "Java") installation before beginning.
 
 After purchasing your license, [download](http://www.maplesoft.com/support/downloads/) the appropriate Maple release package and unpack it in a location of your choosing. Open a terminal, change to the directory in which you unpacked the files, and run the installer script as a normal user. Installing the program's files inside of a user's home directory is the default option, and allows for easy removal of all components at a later time.
 

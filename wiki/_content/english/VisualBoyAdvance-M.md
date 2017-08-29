@@ -12,17 +12,7 @@ It is a fork of VisualBoyAdvance, a now closed project. VBA-M combines features 
 
 ## Installation
 
-*   **VBA-M (GTK)** — Nintendo GameBoy Advance emulator - GTK version
-
-	[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk](https://www.archlinux.org/packages/?name=vbam-gtk)
-
-*   **VBA-M (wx)** — Nintendo GameBoy Advance emulator - wx version
-
-	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
-
-*   **VBA-M (SDL)** — Nintendo GameBoy Advance emulator - SDL version
-
-	[http://vba-m.com/](http://vba-m.com/) || [vbam-sdl](https://www.archlinux.org/packages/?name=vbam-sdl)
+VBA-M is available in three different versions: [vbam-gtk](https://www.archlinux.org/packages/?name=vbam-gtk), [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx) and [vbam-sdl](https://www.archlinux.org/packages/?name=vbam-sdl).
 
 ## Usage
 

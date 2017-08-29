@@ -10,7 +10,7 @@
 
 ## Goals
 
-The goal of this how to use simple authentication with WebDAV. Please refer to [WebDav](/index.php?title=WebDav&action=edit&redlink=1 "WebDav (page does not exist)") on setting up WebDAV.
+The goal of this how to use simple authentication with WebDAV. Please refer to [WebDAV](/index.php/WebDAV "WebDAV") on setting up WebDAV.
 
 ### Required packages
 
