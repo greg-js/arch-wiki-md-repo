@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [AMule](/index.php/AMule "AMule") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-06-10，点击[这里](https://wiki.archlinux.org/index.php?title=AMule&diff=0&oldid=262103)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [AMule](/index.php/AMule "AMule") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=AMule&diff=0&oldid=484054)可以查看翻译后英文页面的改动。
 
-aMule是一个跨平台的eD2k和Kademlia网络客户端，类似于eMule，即电驴客户端。
+[aMule](http://www.amule.org/) 是一个跨平台的 eD2k 和 Kademlia 网络客户端，类似于eMule，即电驴客户端。
 
 ## Contents
 
@@ -9,24 +9,19 @@ aMule是一个跨平台的eD2k和Kademlia网络客户端，类似于eMule，即�
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 amuleweb](#amuleweb)
         *   [3.1.1 创建配置文件](#.E5.88.9B.E5.BB.BA.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-*   [4 使用](#.E4.BD.BF.E7.94.A8)
+*   [4 amulegui](#amulegui)
+    *   [4.1 配置通知](#.E9.85.8D.E7.BD.AE.E9.80.9A.E7.9F.A5)
 *   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-[官方源](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")提供了软件包[amule](https://www.archlinux.org/packages/?name=amule)。另外，[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中的[amule-dlp-git](https://aur.archlinux.org/packages/amule-dlp-git/)软件包支持动态吸血保护。
+[安装](/index.php/Install "Install") 软件包 [amule](https://www.archlinux.org/packages/?name=amule)。
 
 **amuled**是aMule的后台守护进程。其前端有GTK的aMuleGUI、网页版的aMuleWeb、命令行的aMuleCmd。
 
 ## 服务
 
-软件包提供了两个 *systemd* [服务](/index.php/Daemon "Daemon")： amuled 和 amuleweb：
-
-```
-# systemctl start amuled
-# systemctl start amuleweb
-
-```
+软件包提供了两个 *systemd* [服务](/index.php/Daemon "Daemon")： amuled 和 amuleweb。先进行配置，设置外部访问的密码和 `amuleweb` 管理员密码，然后按照需要启动/启用 `amuled` 和 `amuleweb` 服务
 
 **amulweb**启动后可以通过`[http://127.0.0.1:4711](http://127.0.0.1:4711)`访问，外部地址也可以访问。默认的管理员密码是**amule**.
 
@@ -55,6 +50,13 @@ AcceptExternalConnections=1
 ECPassword=<encrypted password>
 ```
 
+Do not forget that all files under `/var/lib/amule` should be owned by **amule** user.
+
+```
+# chown amule:amule -R /var/lib/amule
+
+```
+
 ### amuleweb
 
 **注意:** 较之amulegui，amuleweb功能单薄，输出的下载信息也少，而且经常要求输入密码（让浏览器记住密码会好一些）。基于以上原因，建议使用amulegui，并忽略本节。
@@ -72,19 +74,20 @@ $ amuleweb --write-config --password=*<这里是密码>* --admin-pass=<这个是
 
 **Tip:** 如果 Kad nodes.dat 用的默认 URL 无法连接，可以使用在 [[1]](http://nodes-dat.com)获取 URL.
 
-## 使用
+## amulegui
 
-启动amuled、amuleweb（如果需要）：
+Amulegui 是 aMule 的 GTK+ 前端。
+
+### 配置通知
+
+Settings → Events 包含自动触发的命令. 核心命令是 *notify-send* (需要安装 [libnotify](https://www.archlinux.org/packages/?name=libnotify))，可以用 amule 参数设置通知。例如在 *Download completed* 中设置如下值会在下载完成后显示下载大小：:
 
 ```
-# rc.d start amuled
-# rc.d start amuleweb
+notify-send -i amule "%NAME completed (%SIZE bytes)"
 
 ```
 
-然后，可以访问地址http://127.0.0.1:4711链接amuleweb，或者使用`amulegui`或`amulecmd`控制amule。
-
-**提示：** 如果默认获取KAD节点（nodes.dat）的地址无效，可以从如下地址获取： [http://nodes-dat.com](http://nodes-dat.com) 。
+"-i amule" 选项是设置包含 amule 图标。
 
 ## 参阅
 

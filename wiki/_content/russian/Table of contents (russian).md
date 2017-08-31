@@ -33,7 +33,7 @@
 | <small>2.11.</small> [Математика и наука](/index.php/Category:Mathematics_and_science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mathematics and science (Русский)") <small>(1)</small> | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(13)</small> | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(47)</small> |
  <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
- <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(21)</small> |
+ <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(20)</small> |
  <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(17)</small> |
 | <small>2.13.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small> |
  <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(17)</small> |
@@ -118,9 +118,9 @@
  <small>5.15.4.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(29) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>5.15.5.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>5.15.6.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(4)</small> |
- <small>5.15.7.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(30) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+ <small>5.15.7.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(29) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>5.15.8.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(7)</small> |
-| <small>5.14.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small> | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(30) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>5.14.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small> | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(29) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>5.15.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small> | <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(7)</small> |
 | <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(8)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(27)</small> |
 | <small>6.1.</small> [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)") <small>(28)</small> | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(31)</small> |

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")
+*   [File systems](/index.php/File_systems "File systems")
+*   [tmpfs](/index.php/Tmpfs "Tmpfs")
+*   [swap](/index.php/Swap "Swap")
+
 The [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html) file can be used to define how disk partitions, various other block devices, or remote filesystems should be mounted into the filesystem.
 
 Each filesystem is described in a separate line. These definitions will be converted into [systemd](/index.php/Systemd "Systemd") mount units dynamically at boot, and when the configuration of the system manager is reloaded. The default setup will automatically [fsck](/index.php/Fsck "Fsck") and mount filesystems before starting services that need them to be mounted. For example, systemd automatically makes sure that remote filesystem mounts like [NFS](/index.php/NFS "NFS") or [Samba](/index.php/Samba "Samba") are only started after the network has been set up. Therefore, local and remote filesystem mounts specified in `/etc/fstab` should work out of the box. See [systemd.mount(5)](http://man7.org/linux/man-pages/man5/systemd.mount.5.html) for details.

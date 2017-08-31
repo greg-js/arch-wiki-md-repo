@@ -21,7 +21,7 @@
 
 ## 安装
 
-可[install|安装] [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)。
+可[安装](/index.php/Install "Install") [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)。
 
 ## 配置
 

@@ -59,8 +59,9 @@ The benefits to using the Rustup toolchain manager instead of the standalone pre
 
 One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by archlinux wiki
 
-1.  Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `vim ./rust.sh`, and run the script `./rust.sh` to start rustup installation. To update rustup afterwards, run `rustup self update`.
-2.  [rustup](https://www.archlinux.org/packages/?name=rustup) is also available on the Arch Linux software repository. Note that `rustup self update` will **not** work when installed this way, the package needs to be updated by pacman.
+1.  Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `vim ./rust.sh`, and run the script `./rust.sh` to start rustup installation. The script makes PATH changes only to login shell [configuration files](/index.php/Bash#Invocation "Bash"). You need to `source $HOME/.cargo/env` until you logout and login back into the system.
+2.  To update rustup afterwards, run `rustup self update`.
+3.  [rustup](https://www.archlinux.org/packages/?name=rustup) is also available on the Arch Linux software repository. Note that `rustup self update` will **not** work when installed this way, the package needs to be updated by pacman.
 
 By default, only the stable channel from your architecture will be installed. It will however not be usable right away, you need to specify the installed stable channel as default for it to work.
 

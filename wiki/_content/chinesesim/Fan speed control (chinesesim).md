@@ -1,4 +1,8 @@
-**翻译状态：** 本文是英文页面 [Fan speed control](/index.php/Fan_speed_control "Fan speed control") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-07，点击[这里](https://wiki.archlinux.org/index.php?title=Fan+speed+control&diff=0&oldid=466874)可以查看翻译后英文页面的改动。
+Related articles
+
+*   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
+
+**翻译状态：** 本文是英文页面 [Fan speed control](/index.php/Fan_speed_control "Fan speed control") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Fan+speed+control&diff=0&oldid=466874)可以查看翻译后英文页面的改动。
 
 Fancontrol, 是[lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)的一部分，可以被用于控制CPU以及其他风扇的转速。本文阐述了如何安装，配置它。
 
@@ -8,7 +12,7 @@ Fancontrol, 是[lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)
 
 *   [1 传感器驱动](#.E4.BC.A0.E6.84.9F.E5.99.A8.E9.A9.B1.E5.8A.A8)
     *   [1.1 lm-sensors](#lm-sensors)
-        *   [1.1.1 Increasing fan_div](#Increasing_fan_div)
+        *   [1.1.1 增加 fan_div](#.E5.A2.9E.E5.8A.A0_fan_div)
 *   [2 Configuration](#Configuration)
     *   [2.1 Tweaking](#Tweaking)
 *   [3 fancontrol](#fancontrol)
@@ -50,11 +54,11 @@ temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal di
 
 如果不能正确地显示风扇转速，你可能需要增加风扇参数。
 
-#### Increasing fan_div
+#### 增加 fan_div
 
-The first line of the sensors output is the chipset used by the motherboard for readings of temperatures and voltages.
+Sensors输出的第一行是被主板用来读取温度和电压的chipset。
 
-Create a file in `/etc/sensors.d/`:
+在 `/etc/sensors.d/`中创建文件:
 
  `/etc/sensors.d/fan-speed-control.conf` 
 ```
@@ -62,18 +66,18 @@ chip "*coretemp-isa-**"
 set fan*X*_div 4
 ```
 
-Replacing *coretemp-isa-* with name of the chipset and *X* with the number of the CPU fan to change.
+把*coretemp-isa-*替换为chipset的名称，并把`X`改成CPU风扇的编号。
 
-Save the file, and run as root:
+保存文件，并以root身份运行:
 
 ```
 # sensors -s
 
 ```
 
-which will reload the configuration files.
+那将会重载配置文件。
 
-Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!
+再次运行 `sensors` ，看一下有没有读出RPM的值。如果没有，把`_div`后面的数增加到8, 16, 或32。重复尝试！
 
 ## Configuration
 

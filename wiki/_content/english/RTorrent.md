@@ -51,9 +51,9 @@
 **Note:**
 
 *   See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent).
-*   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax=conf:` to `~/.rtorrent.rc`.
+*   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax=conf:` to `~/.rtorrent.rc`, or install [rtorrent-syntax-file](https://github.com/vim-scripts/rtorrent-syntax-file).
 
-Before running rTorrent, copy the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` to `~/.rtorrent.rc`.
+Before running rTorrent, copy the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` to `~/.rtorrent.rc`, and check out [the related rTorrent wiki page](https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template) that has a *modern* basic configuration file.
 
 ### Performance
 
@@ -468,10 +468,7 @@ To enable it, add the following to your `~/rtorrent.rc`:
 
 ### Manage completed files
 
-**Note:**
-
-*   Currently, this part requires either the git version of rtorrent/libtorrent or having applied the patch to 0.8.6 that adds 'equal'.
-*   If you are having trouble with this tip, it is probably easier to follow [this](http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks#Movecompletedtorrentstodifferentdirectorydependingonwatchdirectory).
+**Note:** If you are having trouble with this tip, it is probably easier to follow [this](https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent#move-completed-torrents-to-a-fixed-location).
 
 It is possible to have rtorrent sort completed torrent data to specific folders based on which 'watch' folder you drop the *.torrent into while continuing to seed. Many examples show how to do this with torrents downloaded by rtorrent. The problem is when you try to drop in 100% done torrent data and then have rtorrent check the data and resume, it will not be sorted.
 
@@ -553,7 +550,7 @@ system.method.insert=movedir1,simple,"d.set_directory=$d.get_custom1=;execute=mv
 system.method.set_key=event.download.hash_done,move_hashed1,"branch={$movecheck1=,movedir1=}"
 ```
 
-Also see [pyroscope](http://code.google.com/p/pyroscope/) especially the rtcontrol examples. There is an AUR package.
+Also see [completion moving via a bash script](https://rtorrent-docs.readthedocs.io/en/latest/use-cases.html#versatile-move-on-completion), and via [pyrocore's rtcontrol](https://pyrocore.readthedocs.io/en/latest/howto.html#moving-all-data-for-selected-items-to-a-new-location) (there is an AUR package).
 
 #### Notification with Google Mail
 
@@ -713,7 +710,9 @@ Per the error message, the file called "**rtorrent.lock**" can be found within t
 
 ### Event failed: bad return code
 
-This is caused by there being spaces in your system.method.* lines. Remove the spaces and it will work.
+This is most often caused by there being spaces in your *system.method.** lines, or by event handlers that call out to external scripts which are either simply not installed, or return a non-zero exit code.
+
+For the first, remove any spurious spaces, or else quote path etc. where they are intentional, and it will work.
 
 ## Web interface
 
@@ -723,7 +722,7 @@ There are numerous web interfaces and front ends for rTorrent including:
 *   [nTorrent](http://code.google.com/p/ntorrent/) is a graphical user interface client to rtorrent written in Java.
 *   [rTWi](https://rtwi.jmk.hu/) is a simple rTorrent web interface written in PHP.
 *   [Rtgui](/index.php/Rtgui "Rtgui") is a web based front end for rTorrent written in PHP and uses XML-RPC to communicate with the rTorrent client.
-*   [rutorrent](https://github.com/Novik/ruTorrent) and [Forum](http://forums.rutorrent.org/) - A web-based front-end with an interface very similar to uTorrent which supports many plugins and advanced features (see also: [ruTorrent](/index.php/RuTorrent "RuTorrent") and [Guide on forum](https://bbs.archlinux.org/viewtopic.php?pid=897577#p897577)).
+*   [rutorrent](https://github.com/Novik/ruTorrent) - A web-based front-end with an interface very similar to uTorrent which supports many plugins and advanced features (see also: [ruTorrent](/index.php/RuTorrent "RuTorrent") and [Guide on forum](https://bbs.archlinux.org/viewtopic.php?pid=897577#p897577)).
 *   [flood](https://github.com/jfurrow/flood) is a web interface for rtorrent written in Node.js using XMLRPC.
 
 **Note:** rTorrent is currently built using [XML-RPC for C/C++](http://xmlrpc-c.sourceforge.net/), which is required for some web interfaces (e.g. ruTorrent).
@@ -738,6 +737,10 @@ scgi_port = localhost:5000
 ```
 
 For more information see: [Using XMLRPC with rtorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
+
+**Note:** **SECURITY HINT**
+
+Using TCP allows **any** *local* user to **execute arbitrary commands** as the user owning the rTorrent process. Use UNIX domain sockets for sane opsec, by way of setting UNIX permissions on the socket file.
 
 ### Saving magnet links as torrent files in watch folder
 
@@ -798,7 +801,7 @@ $ magnet2torrent -m <magnet link> -o [torrent file]
 
 ### Installation
 
-Use the various packages available in the AUR, or alternatively create a package using the build script from the GitHub repository, which additionally builds pre-tested dependency versions and may help avoid known issues.
+Use the various packages available in the AUR, or alternatively create a package using the build script from the GitHub repository, which additionally builds pre-tested dependency versions and may help avoid known issues. See [the docs](https://rtorrent-ps.readthedocs.io/en/latest/install.html#installation-on-arch-linux) for details.
 
 ### Configuration
 
@@ -824,7 +827,7 @@ Follow the [official documentation](https://pyrocore.readthedocs.io/) for instal
 *   [pyrocore](https://github.com/pyroscope/pyrocore) - Collection of command line tools for rTorrent. It provides commands for creating and modifying torrent files, moving data on completion without having multiple watch folders, and mass-controlling download items via rTorrent's XML-RPC interface: searching, start/stop, deleting items with or without their data, etc. It also offers a documented [Python](/index.php/Python "Python") API.
 *   [ruTorrent with Lighttpd](/index.php/Rutorrent_with_lighttpd "Rutorrent with lighttpd")
 *   [How-to install rTorrent and Hellanzb on CentOS 5 64-bit VPS](http://wiki.theaveragegeek.com/howto/installing_rtorrent_and_hellanzb_on_centos5_64-bit_vps)
-*   [Installation guide for rTorrent and Pyroscope on Debian](http://code.google.com/p/pyroscope/wiki/DebianInstallFromSource) - Collection of tools for the BitTorrent protocol and especially the rTorrent client
+*   [Installation guide for rTorrent and Pyroscope on Linux](https://rtorrent-ps.readthedocs.io/en/latest/install.html#manual-turn-key-system-setup) - Collection of tools for the BitTorrent protocol and especially the rTorrent client
 *   [mktorrent](http://mktorrent.sourceforge.net/) - Command line application used to generate torrent files, which is available as [mktorrent](https://www.archlinux.org/packages/?name=mktorrent) in the [official repositories](/index.php/Official_repositories "Official repositories").
 *   [docktorrent](https://github.com/kfei/docktorrent) - Using Docker, rTorrent and ruTorrent to run a full-featured BitTorrent box.
 *   [reptyr](https://github.com/nelhage/reptyr) - another tool to take over a program's TTY (it is in the standard repos). The process may have started being attached to a terminal or to a socket in tmux, screen or dtach.

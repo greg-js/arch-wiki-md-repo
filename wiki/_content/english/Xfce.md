@@ -1,3 +1,12 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Xfwm](/index.php/Xfwm "Xfwm")
+*   [Thunar](/index.php/Thunar "Thunar")
+*   [LXDE](/index.php/LXDE "LXDE")
+*   [GNOME](/index.php/GNOME "GNOME")
+
 [Xfce](http://www.xfce.org) is a lightweight and modular [Desktop environment](/index.php/Desktop_environment "Desktop environment") currently based on GTK+ 2\. To provide a complete user experience, it includes a window manager, a file manager, desktop and panel.
 
 ## Contents
@@ -195,7 +204,7 @@ $ xdotool getwindowfocus windowkill
 Alternatively:
 
 ```
-$ xkill -id "$(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.*$//g p')"
+$ sh -c "xkill -id $(xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.*$//g p')"
 
 ```
 

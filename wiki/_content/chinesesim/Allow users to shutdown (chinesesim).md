@@ -1,11 +1,31 @@
-**翻译状态：** 本文是英文页面 [Allow_Users_to_Shutdown](/index.php/Allow_Users_to_Shutdown "Allow Users to Shutdown") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-12-15，点击[这里](https://wiki.archlinux.org/index.php?title=Allow_Users_to_Shutdown&diff=0&oldid=239434)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Allow_Users_to_Shutdown](/index.php/Allow_Users_to_Shutdown "Allow Users to Shutdown") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-29，点击[这里](https://wiki.archlinux.org/index.php?title=Allow_Users_to_Shutdown&diff=0&oldid=463509)可以查看翻译后英文页面的改动。
+
+## 按键和翻转屏幕事件
+
+睡眠、休眠和关机按键的事件以及笔记本屏幕翻转事件由 *logind* 处理，请参考 [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ## 使用 systemd-logind
 
-如果你正在使用Arch的默认 [systemd](/index.php/Systemd "Systemd")，非远程会话中的用户可以使用电源相关的命令只要安装了 [polkit](https://www.archlinux.org/packages/?name=polkit) 并且 [会话不中断](/index.php/Xinitrc#Preserving_the_session "Xinitrc")。关机命令：
+如果使用 Arch 默认的 [systemd](/index.php/Systemd "Systemd")，安装了 [polkit](https://www.archlinux.org/packages/?name=polkit)，只要会话[没有中断](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")，非远程用户就可以使用电源相关的命令。
+
+要检查会话是否活跃：
 
 ```
-# systemctl poweroff
+$ loginctl show-session $XDG_SESSION_ID --property=Active
+
+```
+
+关机命令：
+
+```
+$ systemctl poweroff
+
+```
+
+重启命令:
+
+```
+$ systemctl reboot
 
 ```
 
@@ -13,31 +33,11 @@
 
 ## 使用 sudo
 
-首先安装 sudo：
+首先安装 [sudo](https://www.archlinux.org/packages/?name=sudo), 给用户 [sudo 权限](/index.php/Sudo "Sudo") 或者设置用户仅能执行关机命令，以 root 用户执行 `visudo` 修改 [/etc/sudoers](/index.php/Sudo "Sudo")，替换 *user* 和 *hostname*。
 
 ```
-# pacman -S sudo
-
-```
-
-然后，在 root 用户下用 `visudo` 命令添加以下到 `/etc/sudoers` 文件的末端。替换其中的 `**user**` 为你的用户名， `**hostname**` 为你的主机名。
-
-```
-**user** **hostname** =NOPASSWD: /sbin/shutdown -h now,/sbin/halt,/sbin/poweroff,/sbin/reboot
+*user* *hostname* =NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
 
 ```
 
-现在你的用户可以用 `sudo shutdown -h now` 命令关机， `sudo reboot` 命令重启了。用户也可以使用 `poweroff` 或 `halt` 关闭系统。如果你不想被提示输入密码，使用`NOPASSWD:`标记。
-
-为了方便起见，如果你已经启用了 `~/.bashrc`，你可以把这些[别名](/index.php/Bash#Aliases "Bash")添加到里面（或者添加到 `/etc/bash.bashrc` 使全系统生效）：
-
-```
-alias reboot="sudo reboot"
-alias poweroff="sudo poweroff"
-alias halt="sudo halt"
-
-```
-
-## 使用 acpid
-
-使用[acpid](/index.php/Acpid "Acpid")可以允许任何人通过电源按钮物理关机。
+现在这个用户可以用 `sudo shutdown -h now` 命令关机， `sudo reboot` 命令重启了。用户也可以使用 `poweroff` 或 `halt` 关闭系统。

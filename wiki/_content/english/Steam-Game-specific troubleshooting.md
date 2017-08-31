@@ -1721,11 +1721,9 @@ Be aware that some games do not support setting that parameter, it will simply b
 
 ### Missing Chinese/Japanese/Korea fonts
 
-It is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
+Probably it is a Unity3D bug,which is fixed in up-to-date version ( above 1:5.6.2f1+20170628-1 ) of [unity-editor](https://aur.archlinux.org/packages/unity-editor/).[[8]](https://issuetracker.unity3d.com/issues/linux-simplified-chinese-characters-are-not-supported-on-linux)
 
-Ask the developer to rebuild the game.
-
-Some of the affected games: *Cities: Skylines*,~~*Streets of Rogue*~~,*Beholder*,*Onraid*,*Rimworld*,*The Escapists 2*.
+Some of the affected games: *Cities: Skylines*,~~*Streets of Rogue*~~,*Beholder*,*Onraid*,*Rimworld*,*The Escapists 2*,*Candle*,*Human:Fall Flat*.
 
 ## Unrest
 

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
+*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
+*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
+*   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
+
 This article explains some methods for general troubleshooting. For application specific issues, please reference the particular wiki page for that program.
 
 ## Contents
@@ -168,11 +175,12 @@ See [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_i
 
 ### Debugging hardware
 
-See [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+*   You can display extra debugging information about your hardware by following [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+*   Ensure that [Microcode](/index.php/Microcode "Microcode") updates are applied on your system.
+*   Test your device's RAM with [Memtest86+](http://www.memtest.org/). Unstable RAM may lead to some extremely odd issues, ranging from random crashes to data corruption.
 
 ### See also
 
-*   [Memtest86+](http://www.memtest.org/)
 *   [List of Tools for UBCD](http://wiki.ultimatebootcd.com/index.php?title=Tools) - Can be added to custom menu.lst like memtest
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [QA/Sysrq](https://fedoraproject.org/wiki/QA/Sysrq) - Using sysrq

@@ -1,12 +1,17 @@
 **翻译状态：** 本文是英文页面 [AMD_Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-17，点击[这里](https://wiki.archlinux.org/index.php?title=AMD_Catalyst&diff=0&oldid=434789)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")
+*   [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+
 AMD 的显卡驱动有两种：一是官方私有驱动 ([catalyst](https://aur.archlinux.org/packages/catalyst/))，二是开源驱动（较旧的显卡参见 [ATI](/index.php/ATI "ATI")，较新的显卡参见 [AMDGPU](/index.php/AMDGPU "AMDGPU")）。本文主要介绍私有驱动。
+
+**Warning:** 官方仓库不再提供 Catalyst。 AMD 已经不再更新这个软件包，而且此软件包与最新的 Xorg 不兼容，需要先安装老的 Xorg 才能使用。
 
 AMD 的 Linux 驱动软件包 *catalyst* 驱动曾被命名为 *fglrx* (**F**ire**GL** and **R**adeon **X**)。现在虽然改变了软件包名称，但内核模块文件名依然为以前的 *fglrx.ko*。因此，下文中任何提及 fglrx 都是指*内核模块*,而**不是指软件包**.
 
-**官方仓库不再提供Catalyst。**Catalyst [曾被移出 Arch 官方支持](https://www.archlinux.org/news/ati-catalyst-support-dropped/)，原因是对其质量与开发速度的不满。在短暂的回到官方支持后，该项目于2013年4月再次被丢弃，截止现在还没有进一步的消息。
-
-与开源驱动相比，Catalyst 在 2D 与 3D 渲染和电源管理上更胜一筹，但缺乏高效的多显支持。Catalyst 支持芯片组 R600 及以上（Radeon HD 2xxx 或者更新）的 [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") 显卡。*model* 名称（如 X1900，HD4850）与 *chip* 名称（分别是R580，RV770）间的对照请参见 Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) 或者[这个表格](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units")。
+与开源驱动相比，Catalyst 在 2D 上表现比较差，在 3D 上与开源驱动差不多，但缺乏高效的多显支持。Catalyst 支持芯片组 R600 及以上（Radeon HD 2xxx 或者更新）的 [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") 显卡。*model* 名称（如 X1900，HD4850）与 *chip* 名称（分别是R580，RV770）间的对照请参见 Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) 或者[这个表格](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units")。
 
 ## Contents
 

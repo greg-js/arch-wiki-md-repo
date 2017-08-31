@@ -57,7 +57,7 @@ http.port: 9200
 
 ```
 
-You may want to chance the default initial and maximum allowed memory usage:
+You may want to change the default initial and maximum allowed memory usage:
 
  `/etc/elasticsearch/jvm.options` 
 ```

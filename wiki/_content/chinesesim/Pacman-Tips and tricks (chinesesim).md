@@ -1,170 +1,62 @@
-**翻译状态：** 本文是英文页面 [Pacman_tips](/index.php/Pacman_tips "Pacman tips") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-05-17，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman_tips&diff=0&oldid=201509)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [Mirrors (简体中文)](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)")
+*   [创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)")
+
+**翻译状态：** 本文是英文页面 [Pacman_tips](/index.php/Pacman_tips "Pacman tips") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-29，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman_tips&diff=0&oldid=487415)可以查看翻译后英文页面的改动。
+
+Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilities](/index.php/Core_utilities "Core utilities") 和 [Bash](/index.php/Bash "Bash").
 
 ## Contents
 
-*   [1 修饰和便利](#.E4.BF.AE.E9.A5.B0.E5.92.8C.E4.BE.BF.E5.88.A9)
-    *   [1.1 彩色输出](#.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA)
-    *   [1.2 快捷方式](#.E5.BF.AB.E6.8D.B7.E6.96.B9.E5.BC.8F)
-        *   [1.2.1 配置 shell](#.E9.85.8D.E7.BD.AE_shell)
-        *   [1.2.2 用法](#.E7.94.A8.E6.B3.95)
-        *   [1.2.3 注解](#.E6.B3.A8.E8.A7.A3)
-    *   [1.3 巧用 Bash 语法](#.E5.B7.A7.E7.94.A8_Bash_.E8.AF.AD.E6.B3.95)
-*   [2 维护](#.E7.BB.B4.E6.8A.A4)
-    *   [2.1 显示所有软件包及其大小](#.E6.98.BE.E7.A4.BA.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.8F.8A.E5.85.B6.E5.A4.A7.E5.B0.8F)
-        *   [2.1.1 查找不属于任何软件包的文件](#.E6.9F.A5.E6.89.BE.E4.B8.8D.E5.B1.9E.E4.BA.8E.E4.BB.BB.E4.BD.95.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E6.96.87.E4.BB.B6)
-    *   [2.2 删除孤立软件包](#.E5.88.A0.E9.99.A4.E5.AD.A4.E7.AB.8B.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [2.3 删除base软件包组以外的所有软件包](#.E5.88.A0.E9.99.A4base.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.84.E4.BB.A5.E5.A4.96.E7.9A.84.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [2.4 仅显示正式安装的软件包](#.E4.BB.85.E6.98.BE.E7.A4.BA.E6.AD.A3.E5.BC.8F.E5.AE.89.E8.A3.85.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [3 安装和修复](#.E5.AE.89.E8.A3.85.E5.92.8C.E4.BF.AE.E5.A4.8D)
-    *   [3.1 从 CD/DVD/ISO 安装软件包](#.E4.BB.8E_CD.2FDVD.2FISO_.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [3.1.1 从 Arch 的 core 镜像安装软件包](#.E4.BB.8E_Arch_.E7.9A.84_core_.E9.95.9C.E5.83.8F.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.2 自建本地仓库](#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93)
-    *   [3.3 在网络上共享pacman缓存](#.E5.9C.A8.E7.BD.91.E7.BB.9C.E4.B8.8A.E5.85.B1.E4.BA.ABpacman.E7.BC.93.E5.AD.98)
-        *   [3.3.1 避免过度清理缓存](#.E9.81.BF.E5.85.8D.E8.BF.87.E5.BA.A6.E6.B8.85.E7.90.86.E7.BC.93.E5.AD.98)
-    *   [3.4 备份和恢复已安装软件包](#.E5.A4.87.E4.BB.BD.E5.92.8C.E6.81.A2.E5.A4.8D.E5.B7.B2.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.5 列出所有不属于base或base-devel的已安装软件包](#.E5.88.97.E5.87.BA.E6.89.80.E6.9C.89.E4.B8.8D.E5.B1.9E.E4.BA.8Ebase.E6.88.96base-devel.E7.9A.84.E5.B7.B2.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.6 重新安装所有软件包](#.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.7 从已有安装修复 USB 系统](#.E4.BB.8E.E5.B7.B2.E6.9C.89.E5.AE.89.E8.A3.85.E4.BF.AE.E5.A4.8D_USB_.E7.B3.BB.E7.BB.9F)
-    *   [3.8 解压缩软件包](#.E8.A7.A3.E5.8E.8B.E7.BC.A9.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [4 性能](#.E6.80.A7.E8.83.BD)
-    *   [4.1 提高数据库访问速度](#.E6.8F.90.E9.AB.98.E6.95.B0.E6.8D.AE.E5.BA.93.E8.AE.BF.E9.97.AE.E9.80.9F.E5.BA.A6)
-    *   [4.2 加快下载速度](#.E5.8A.A0.E5.BF.AB.E4.B8.8B.E8.BD.BD.E9.80.9F.E5.BA.A6)
-        *   [4.2.1 使用 Powerpill](#.E4.BD.BF.E7.94.A8_Powerpill)
-        *   [4.2.2 使用wget](#.E4.BD.BF.E7.94.A8wget)
-    *   [4.3 使用aria2](#.E4.BD.BF.E7.94.A8aria2)
-        *   [4.3.1 安装](#.E5.AE.89.E8.A3.85)
-        *   [4.3.2 配置](#.E9.85.8D.E7.BD.AE)
-        *   [4.3.3 参数细节 =](#.E5.8F.82.E6.95.B0.E7.BB.86.E8.8A.82_.3D)
-            *   [4.3.3.1 其他解释](#.E5.85.B6.E4.BB.96.E8.A7.A3.E9.87.8A)
-        *   [4.3.4 使用其它程序](#.E4.BD.BF.E7.94.A8.E5.85.B6.E5.AE.83.E7.A8.8B.E5.BA.8F)
-
-## 修饰和便利
-
-### 彩色输出
-
-pacman 4.1.0 开始支持彩色输出，只需要在`/etc/pacman.conf`中取消 Color 行前面的注释即可使用。
-
-### 快捷方式
-
-使用命令别名简化常用pacman命令，方便使用和记忆。
-
-#### 配置 shell
-
-下面是个范例，将其加入shell配置文件即，同时适用于[Bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")和[Zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")：
-
-```
-# Pacman 别名示例
-alias pacupg='sudo pacman -Syu'        # 同步软件仓库信息然后升级系统
-alias pacin='sudo pacman -S'           # 从软件仓库安装软件包
-alias pacins='sudo pacman -U'          # 从本地文件安装软件包
-alias pacre='sudo pacman -R'           # 删除软件包，保留配置和依赖
-alias pacrem='sudo pacman -Rns'        # 彻底删除软件包，清除配置，删除无用依赖
-alias pacrep='pacman -Si'              # 显示软件仓库中某软件包的信息
-alias pacreps='pacman -Ss'             # 在软件仓库搜索软件包
-alias pacloc='pacman -Qi'              # 显示本地数据库中某软件包的信息
-alias paclocs='pacman -Qs'             # 在本地数据库搜索软件包
-
-```
-
-```
-# 更多示例
-alias pacupd='sudo pacman -Sy && sudo abs'     # 同步软件仓库信息并更新abs
-alias pacinsd='sudo pacman -S --asdeps'        # 将某软件包作为其它软件包的依赖安装
-alias pacmir='sudo pacman -Syy'                # 强制刷新软件仓库信息
-
-```
-
-#### 用法
-
-就像使用普通命令一样使用这些别名即可。例如，要同步软件仓库信息然后升级系统：
-
-```
-$ pacupg
-
-```
-
-从软件仓库安装软件包：
-
-```
-$ pacin <软件包1> <软件包2> <软件包3>
-
-```
-
-安装软件包文件：
-
-```
-$ pacins /path/to/<软件包路径>
-
-```
-
-彻底删除软件包：
-
-```
-$ pacrem <软件包>
-
-```
-
-在软件仓库搜索软件包：
-
-```
-$ pacreps <关键字>
-
-```
-
-显示软件仓库中某软件包的信息（比如：占用空间，依赖关系）：
-
-```
-$ pacrep <keywords>
-
-```
-
-#### 注解
-
-上面提供的只是一个例子。按照上面的格式，可以自己编写命令别名，比如：
-
-```
-alias pacrem='sudo pacman -Rns'
-alias pacout='sudo pacman -Rns'
-
-```
-
-上面的例子中，`pacrem`和`pacout`代表同样的命令：`sudo pacman -Rns`。你可以使用自己喜欢的名称代替这些命令。
-
-### 巧用 Bash 语法
-
-下面应用[Bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")技巧，实现复杂的pacman功能。
-
-*   安装多个名称部分相同的软件包（而非安装整个软件包组），以[kde](https://www.archlinux.org/groups/x86_64/kde/)为例：
-
-```
- pacman -S kde-{applets,theme,tools}
-
-```
-
-*   也可以嵌套使用：
-
-```
- pacman -S kde-{ui-kde,kdeartwork}
-
-```
-
-*   使用`-s`搜索时会匹配软件包描述，从而导致很多不需要的结果。限制只匹配软件包名称：
-
-```
- pacman -Ss '^vim-'
-
-```
-
-*   pacman的`-q`操作会输出所有本地软件包名称。利用该输出、以及简单的shell技巧，重新安装所有名称包含“compiz”的软件包：
-
-```
- pacman -S $(pacman -Qq | grep compiz)
-
-```
+*   [1 维护](#.E7.BB.B4.E6.8A.A4)
+    *   [1.1 查询软件包](#.E6.9F.A5.E8.AF.A2.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [1.2 显示所有软件包及其大小](#.E6.98.BE.E7.A4.BA.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.8F.8A.E5.85.B6.E5.A4.A7.E5.B0.8F)
+        *   [1.2.1 获取大小](#.E8.8E.B7.E5.8F.96.E5.A4.A7.E5.B0.8F)
+        *   [1.2.2 按日期查询](#.E6.8C.89.E6.97.A5.E6.9C.9F.E6.9F.A5.E8.AF.A2)
+        *   [1.2.3 查找不属于任何软件包的文件](#.E6.9F.A5.E6.89.BE.E4.B8.8D.E5.B1.9E.E4.BA.8E.E4.BB.BB.E4.BD.95.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E6.96.87.E4.BB.B6)
+    *   [1.3 删除孤立软件包](#.E5.88.A0.E9.99.A4.E5.AD.A4.E7.AB.8B.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [1.4 删除base软件包组以外的所有软件包](#.E5.88.A0.E9.99.A4base.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.84.E4.BB.A5.E5.A4.96.E7.9A.84.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [1.5 仅显示正式安装的软件包](#.E4.BB.85.E6.98.BE.E7.A4.BA.E6.AD.A3.E5.BC.8F.E5.AE.89.E8.A3.85.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+*   [2 安装和修复](#.E5.AE.89.E8.A3.85.E5.92.8C.E4.BF.AE.E5.A4.8D)
+    *   [2.1 从 CD/DVD/ISO 安装软件包](#.E4.BB.8E_CD.2FDVD.2FISO_.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
+        *   [2.1.1 从 Arch 的 core 镜像安装软件包](#.E4.BB.8E_Arch_.E7.9A.84_core_.E9.95.9C.E5.83.8F.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [2.2 自建本地仓库](#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93)
+    *   [2.3 在网络上共享pacman缓存](#.E5.9C.A8.E7.BD.91.E7.BB.9C.E4.B8.8A.E5.85.B1.E4.BA.ABpacman.E7.BC.93.E5.AD.98)
+        *   [2.3.1 避免过度清理缓存](#.E9.81.BF.E5.85.8D.E8.BF.87.E5.BA.A6.E6.B8.85.E7.90.86.E7.BC.93.E5.AD.98)
+    *   [2.4 备份和恢复已安装软件包](#.E5.A4.87.E4.BB.BD.E5.92.8C.E6.81.A2.E5.A4.8D.E5.B7.B2.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [2.5 列出所有不属于base或base-devel的已安装软件包](#.E5.88.97.E5.87.BA.E6.89.80.E6.9C.89.E4.B8.8D.E5.B1.9E.E4.BA.8Ebase.E6.88.96base-devel.E7.9A.84.E5.B7.B2.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [2.6 重新安装所有软件包](#.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [2.7 从已有安装修复 USB 系统](#.E4.BB.8E.E5.B7.B2.E6.9C.89.E5.AE.89.E8.A3.85.E4.BF.AE.E5.A4.8D_USB_.E7.B3.BB.E7.BB.9F)
+    *   [2.8 解压缩软件包](#.E8.A7.A3.E5.8E.8B.E7.BC.A9.E8.BD.AF.E4.BB.B6.E5.8C.85)
+*   [3 性能](#.E6.80.A7.E8.83.BD)
+    *   [3.1 提高数据库访问速度](#.E6.8F.90.E9.AB.98.E6.95.B0.E6.8D.AE.E5.BA.93.E8.AE.BF.E9.97.AE.E9.80.9F.E5.BA.A6)
+    *   [3.2 加快下载速度](#.E5.8A.A0.E5.BF.AB.E4.B8.8B.E8.BD.BD.E9.80.9F.E5.BA.A6)
+        *   [3.2.1 使用 Powerpill](#.E4.BD.BF.E7.94.A8_Powerpill)
+        *   [3.2.2 使用wget](#.E4.BD.BF.E7.94.A8wget)
+    *   [3.3 使用aria2](#.E4.BD.BF.E7.94.A8aria2)
+        *   [3.3.1 安装](#.E5.AE.89.E8.A3.85)
+        *   [3.3.2 配置](#.E9.85.8D.E7.BD.AE)
+        *   [3.3.3 参数细节 =](#.E5.8F.82.E6.95.B0.E7.BB.86.E8.8A.82_.3D)
+            *   [3.3.3.1 其他解释](#.E5.85.B6.E4.BB.96.E8.A7.A3.E9.87.8A)
+        *   [3.3.4 使用其它程序](#.E4.BD.BF.E7.94.A8.E5.85.B6.E5.AE.83.E7.A8.8B.E5.BA.8F)
+*   [4 工具](#.E5.B7.A5.E5.85.B7)
+    *   [4.1 图形前端](#.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
 
 ## 维护
 
-保持系统干净，遵循 [Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。
+保持系统干净，遵循 [Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。参考 [System maintenance](/index.php/System_maintenance "System maintenance").
+
+### 查询软件包
+
+要获取已经的软件包以及它们的版本：
+
+*   所有明确安装的软件包: `pacman -Qe`.
+*   所有明确安装的，存在于数据库而且不是直接或可选依赖的软件包: `pacman -Qent`.
+*   所有外部软件包 (通常是手动下载安装，或者已经从数据库中删除): `pacman -Qm`.
+*   所有从数据库中安装的软件包: `pacman -Qn`.
+*   按正则表打折查询软件包: `pacman -Qs *regex*`.
+*   按正则表达式查询软件包，自定义输出格式：`expac -s "%-30n %v" *regex*` (需要安装 [expac](https://www.archlinux.org/packages/?name=expac)).
 
 ### 显示所有软件包及其大小
 
@@ -172,6 +64,43 @@ alias pacout='sudo pacman -Rns'
 
 *   安装 [expac](https://www.archlinux.org/packages/?name=expac) 并运行 `expac -s "%-30n %m"`
 *   用 [community] 中的 [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) 加 -c 选项可以生成所有安装的软件包及其大小.
+
+#### 获取大小
+
+要按大小排序安装的软件包：
+
+*   安装 [expac](https://www.archlinux.org/packages/?name=expac) 并运行 `expac -H M '%m\t%n' | sort -h`.
+*   以 `-c` 参数执行 [pacgraph](https://www.archlinux.org/packages/?name=pacgraph).
+
+查询软件包的下载大小(不加 `*packages*` 将查询所有软件包):
+
+```
+$ expac -S -H M '%k\t%n' *packages*
+
+```
+
+查询不属于 [base](https://www.archlinux.org/groups/x86_64/base/) 或 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 的软件包，带大小和描述：
+
+```
+$ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
+
+```
+
+#### 按日期查询
+
+用 [expac](https://www.archlinux.org/packages/?name=expac) 查询最近安装的 20 个软件包：
+
+```
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+
+```
+
+用从 epoch(1970-01-01 UTC) 开始的秒数：
+
+```
+$ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
+
+```
 
 #### 查找不属于任何软件包的文件
 
@@ -217,17 +146,9 @@ $ pacman-disowned > non-db.txt
 
 ```
 
-下面命令可以插入 `$HOME/.bashrc` 并在找到孤立软件包时进行删除：
+如果没有孤立软件包，将显示错误 `error: no targets specified`. 这个是正常的，因为 `pacman -Rns` 没有收到任何参数.
 
-```
-orphans() {
-  if [[ ! -n $(pacman -Qdt) ]]; then
-    echo no orphans to remove
-  else
-    sudo pacman -Rs $(pacman -Qdtq)
-  fi
-}
-```
+**Note:** `-Qt` 仅显示真的孤立包，要包含可选依赖，请使用 `-Qtt` .
 
 ### 删除base软件包组以外的所有软件包
 
@@ -638,3 +559,77 @@ XferCommand = /usr/bin/wget -c --passive-ftp -c %u
 *   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+
+## 工具
+
+*   **Lostfiles** — Script that identifies files not owned by any package.
+
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+
+*   **Pacmatic** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
+*   **pacutils** — Helper library for libalpm based programs.
+
+	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
+
+*   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
+
+	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
+
+*   **pkgtools** — Collection of scripts for Arch Linux packages.
+
+	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
+
+*   **repoctl** — Tool to help manage local repositories.
+
+	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
+
+*   **repose** — An Arch Linux repository building tool.
+
+	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
+
+*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
+
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+
+### 图形前端
+
+**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+
+*   **Arch-Update** — Update indicator for Gnome-Shell.
+
+	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
+
+*   **Arch-Update-Notifier** — Update indicator for KDE.
+
+	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
+
+*   **Discover** — A collection of package management tools for KDE, using PackageKit.
+
+	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+
+*   **GNOME packagekit** — GTK based package management tool
+
+	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+
+*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+
+	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+
+*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
+
+	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
+
+*   **pamac** — A DBus daemon and Gtk3 frontend for libalpm written in Vala.
+
+	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
+
+*   **pcurses** — Package management in a curses frontend
+
+	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
+
+*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
+
+	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)

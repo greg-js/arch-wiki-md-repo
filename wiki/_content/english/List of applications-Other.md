@@ -556,6 +556,10 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	http://bbs.archlinux.org/viewtopic.php?id=88997 || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
 
+*   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, termials)
+
+	[https://github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal) || [python-pywal](https://aur.archlinux.org/packages/python-pywal/)
+
 *   **variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
 
 	[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)

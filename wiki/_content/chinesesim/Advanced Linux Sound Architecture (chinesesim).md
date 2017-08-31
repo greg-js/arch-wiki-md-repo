@@ -1,3 +1,8 @@
+相关文章
+
+*   [Sound system](/index.php/Sound_system "Sound system")
+*   [Disable PC speaker beep (简体中文)](/index.php/Disable_PC_speaker_beep_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disable PC speaker beep (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Advanced_Linux_Sound_Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-28，点击[这里](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&diff=0&oldid=484694)可以查看翻译后英文页面的改动。
 
 [高级 Linux 声音体系](https://en.wikipedia.org/wiki/zh:ALSA "wikipedia:zh:ALSA")（Advanced Linux Sound Architecture，**ALSA**）是Linux中提供声音设备驱动的内核组件，用来代替原来的开放声音系统（Open Sound System，OSSv3）。除了声音设备驱动，**ALSA**还包含一个用户空间的函数库，开发者可以通过这些高级 API 使用驱动，不必直接与内核驱动进行交互。
@@ -111,15 +116,15 @@ ALSA能够截获[OSS](/index.php/OSS "OSS")调用，然后转而在ALSA中重新
 
 ### ALSA 和 Systemd
 
-The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-state.service` by default.
+[alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) 软件包提供了 [systemd](/index.php/Systemd "Systemd") unit 配置文件 `alsa-restore.service` 和 `alsa-state.service`。
 
-These are automatically installed and activated during installation. Therefore, there is no further action needed. Though, you can check their status using `systemctl`.
+这两个服务会在安装的时候自动启用，不需要额外的操作。可以通过 `systemctl` 检查服务的状态。
 
-**Note:** For reference, ALSA stores its settings in `/var/lib/alsa/asound.state`
+**Note:** ALSA 将设置保存在 `/var/lib/alsa/asound.state`
 
 ### ALSA Firmware
 
-The [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) package contains firmware that may be required for certain sound cards (e.g. Creative SB0400 Audigy2).
+[alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) 软件包提供了一些声卡需要的固件，比如 Creative SB0400 Audigy2 就需要此软件包。
 
 ## 解除各声道的静音
 
@@ -172,14 +177,14 @@ $ speaker-test -c 8
 
 ```
 
-If audio is being outputted to the wrong device, try manually specifying it with the argument `-D`.
+如果声音输出到了错误的设备，可以试试用 `-D` 参数手动指定。
 
 ```
 $ speaker-test -D default:PCH -c 8
 
 ```
 
-`-D` accepts PCM channel names as values, which can be retrieved by running the following:
+`-D` 的值应该是 PCM 通道的名字，可以通过下面命令获得：
 
  `$ aplay -L | grep :CARD` 
 ```
@@ -195,8 +200,6 @@ surround71:CARD=PCH,DEV=0
 ```
 
 如果没有正常工作，请继续阅读 [#配置](#.E9.85.8D.E7.BD.AE) 以及 [#疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94) 部分。和 [ALSA/Troubleshooting](/index.php/ALSA/Troubleshooting "ALSA/Troubleshooting") 页面。
-
-[alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) 软件包提供了两个配置 alsa 的服务：`alsa-restore.service` 和 `alsa-store.service`。它们分别在开机和关机时自动运行。
 
 ### 附加注释
 

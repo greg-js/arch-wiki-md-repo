@@ -6,8 +6,9 @@
 *   [2 Fast word movement](#Fast_word_movement)
 *   [3 History](#History)
 *   [4 Faster completion](#Faster_completion)
-*   [5 Macros](#Macros)
-*   [6 Disabling control echo](#Disabling_control_echo)
+*   [5 Colorized completion](#Colorized_completion)
+*   [6 Macros](#Macros)
+*   [7 Disabling control echo](#Disabling_control_echo)
 
 ## Editing mode
 
@@ -121,6 +122,25 @@ Or you can set it such that a single tab will perform both steps: partially comp
  `~/.inputrc` 
 ```
 set show-all-if-ambiguous on
+
+```
+
+## Colorized completion
+
+You can enable coloring of completion of filenames with the `colored-stats` option. You can also color the identical prefix of completion-lists with `colored-completion-prefix`. For example:
+
+ `~/.inputrc` 
+```
+# Color files by types
+set colored-stats On
+# Append char to indicate type
+set visible-stats On
+# Mark symlinked directories
+set mark-symlinked-directories On
+# Color the common prefix
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
 
 ```
 

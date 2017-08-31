@@ -1,3 +1,7 @@
+Related articles
+
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 [FVWM](http://fvwm.org/) is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[1]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
 
 ## Contents
@@ -18,6 +22,7 @@
     *   [3.7 Modules](#Modules)
         *   [3.7.1 FvwmPager](#FvwmPager)
         *   [3.7.2 FvwmButtons](#FvwmButtons)
+        *   [3.7.3 FvwmEvent](#FvwmEvent)
     *   [3.8 Colors](#Colors)
         *   [3.8.1 Colorsets](#Colorsets)
     *   [3.9 Fonts](#Fonts)
@@ -367,6 +372,31 @@ Note that a container is created by defining a certain number of columns and row
 
 For a full list of options, see `man fvwmbuttons`.
 
+#### FvwmEvent
+
+FvwmEvent is a module which can be used to bind a [function](#Functions) or an audio file to a window manager event (such as the closing of a window). In the case of an audio file, the audio will be played when the event that it is bound to occurs. FvwmEvent can be spawned from within Fvwm by adding the following to your `StartFunction`:
+
+```
++ I Module FvwmEvent
+
+```
+
+FvwmEvent can also be spawned with an identifier - see [#Modules](#Modules). Once spawned, FvwmEvent will run in the background, waiting for events that it has been configured to recognize. Events can be configured in the following form:
+
+```
+* FvwmEvent: windowshade Lower
+
+```
+
+where `windowshade` is the event and `Lower` is the command to be executed when that event occurs. In the case where you wish to execute a function with arguments, that function and its arguments need to be quoted - see below:
+
+```
+* FvwmEvent: new_page "Exec xterm"
+
+```
+
+For a full list of events, see `man fvwmevent`.
+
 ### Colors
 
 FVWM color styles can take a number of color code types such as hexcolors (`#ffffff` for instance), rbg colors (`rgb:ff/ff/ff` for instance) as well as the pre-defined [X11 colors](https://en.wikipedia.org/wiki/X11_color_names "wikipedia:X11 color names").
@@ -507,39 +537,27 @@ AddToFunc TileBottomRight
 
 ### Transfer focus on page or desk switch
 
-If you are using ClickToFocus, you might wish to automatically transfer keyboard focus when switching pages or desks to the previously focused window in that page or desk. Otherwise, you will have to click on the window you wish to interact with on every page or desk switch.
+**Note:** The approach of using FvwmEvent allows for a window in a page to be automatically focused when clicking on that page in the FvwmPager. However, it breaks the right-click and drag panning functionality of the pager. For this reason, you might prefer to call `GoToPage/GoToDesk` and `Focus-Previous` from within another function which can be bound to a hotkey and dispense with FvwmEvent entirely.
 
-For desk switching, you can use the following function:
+If you are using ClickToFocus, you might wish to automatically transfer keyboard focus when switching pages or desks to the previously focused window in that page or desk. Otherwise, you will have to click on the window you wish to interact with on every page or desk switch. This can be accomplished by using the [FvwmEvent](#FvwmEvent) module to bind a function which focuses the currently or previous focused window to the `new_page` and `new_desk` events.
 
-```
-DestroyFunc GoToDesk-and-Focus
-AddToFunc GoToDesk-and-Focus
-+ I GoToDesk $0
-+ I All (CurrentDesk, Focused) FlipFocus
-+ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) FlipFocus
-```
-
-This function will switch desks to the one provided in the argument. It will then try and call the `FlipFocus` command on the already focused window. The purpose of this is to initiate a page switch if the focused window happens to be in a different page to the one you are currently in. If no window in that desk is focused, the `FlipFocus` command will be called on the previously focused window in that desk - again, this will initiate a page switch to the page that window is currently located in. If you wish to avoid the page switch and only transfer the keyboard focus, append the `NoWarp` argument to the `FlipFocus` commands.
-
-For page switching, you can use the following function:
+Below is an example of such a function:
 
 ```
-DestroyFunc GoToPage-and-Focus
-AddToFunc GoToPage-and-Focus
-+ I GoToPage $0 $1
-+ I All (CurrentPage, Focused) FlipFocus
-+ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) FlipFocus
+DestroyFunc Focus-Previous
+AddToFunc Focus-Previous
++ I All ($0, Focused) FlipFocus $1
++ I TestRc (NoMatch) Prev ($0, AcceptsFocus) FlipFocus $1
 ```
 
-This function will switch pages to the one provided in the argument. It will then try and call the `FlipFocus` command on the already focused window. The purpose of this is to prevent the focus from cycling between windows in that page if the page contains multiple windows. If no window in that page is focused, the `FlipFocus` command will be called on the previously focused window in that page.
+The `$0` argument should be either `CurrentPage` or `CurrentDesk`. The `$1` argument is for supplying the `NoWarp` argument to `FlipFocus` - by default, FlipFocus will initiate a page switch to the page containing the focused window. This behaviour is useful when switching desks but must be disabled when switching pages because windows can span more than one page.
 
-Note that the `FlipFocus` command will not raise the affected window, it will only transfer keyboard focus to it. In some cases, it might be necessary to raise the focused window to the top of the stack. For instance, if a window is move to another desk where the focused window for that desk happens to be in the same page as the moved window, then the focused window will end up being lower in the stack than the window that has been moved. To work around this, call something like the following function instead of calling `FlipFocus` on its own:
+With the function appropriately configured, ensure that FvwmEvent is started and then bind it to the required events as show below:
 
 ```
-DestroyFunc Focus-and-Raise
-AddToFunc Focus-and-Raise
-+ I FlipFocus
-+ I Raise
+* FvwmEvent: new_page "Focus-Previous CurrentPage NoWarp"
+* FvwmEvent: new_desk "Focus-Previous CurrentDesk"
+
 ```
 
 ## See also

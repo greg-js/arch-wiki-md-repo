@@ -99,6 +99,8 @@ Support for external screens either using an USB-C to HDMI or USB-C to Mini Disp
 *   have no image at all;
 *   being flickering after a few minutes to the extent this is basically unusable.
 
+In some cases intermittent external monitor connection may be caused by WiFi interference with the 9350's USB-C port--particularly when the lid is closed. Reducing WiFi power via iw or iwconfig may allow a steady external monitor connection.
+
 Refer to the [according Arch Forum entry](https://bbs.archlinux.org/viewtopic.php?id=205147) for an exhaustive discussion about working adapters and the [Dell forum entry](http://en.community.dell.com/techcenter/os-applications/f/4613/t/19988851).
 
 ## SATA controller

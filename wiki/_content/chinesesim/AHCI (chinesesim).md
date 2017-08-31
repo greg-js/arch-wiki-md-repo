@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [AHCI](/index.php/AHCI "AHCI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-29，点击[这里](https://wiki.archlinux.org/index.php?title=AHCI&diff=0&oldid=462312)可以查看翻译后英文页面的改动。
+
 **AHCI**, *A*dvanced *H*ost *C*ontroller *I*nterface 的缩写，意思是 高级主机控制器接口, 这是一种SATA设备特有的工作模式.通常AHCI需要通过BIOS来开启或关闭，通过BIOS启用AHCI有两大好处：热插拔SATA驱动器（模拟USB驱动器的行为）和NCQ。该特性在 Linux kernel 2.6.19 以后开始提供支持,现在的 Arch 内核会自动加载 ahci 模块.
 
 ## 设置BIOS
@@ -46,10 +48,6 @@ and for NCQ:
 ata2.00: 625142448 sectors, multi 16: LBA48 NCQ (depth 31/32)
 
 ```
-
-## Pitfalls
-
-*   Windows XP does not have stock AHCI drivers. A user with SATA drives wishing to enable AHCI mode and dual-boot into Windows XP will need AHCI drivers for their motherboard. This issue does not affect Windows Vista onwards.
 
 ## 参阅
 

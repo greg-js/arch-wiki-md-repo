@@ -1,3 +1,10 @@
+Related articles
+
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")
+*   [Mirrors](/index.php/Mirrors "Mirrors")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+
 Para métodos generales para mejorar la flexibilidad de las sugerencias proporcionadas o del propio pacman, consulte [Core utilities](/index.php/Core_utilities "Core utilities") y [Bash](/index.php/Bash "Bash").
 
 ## Contents

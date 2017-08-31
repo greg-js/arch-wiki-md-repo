@@ -21,6 +21,7 @@
     *   [2.4 N series](#N_series)
     *   [2.5 S series](#S_series)
     *   [2.6 U Series](#U_Series)
+    *   [2.7 V Series](#V_Series)
 *   [3 Special Notes (*):](#Special_Notes_.28.2A.29:)
     *   [3.1 Lenovo U31-70](#Lenovo_U31-70)
     *   [3.2 Lenovo B50-70](#Lenovo_B50-70)
@@ -224,6 +225,14 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo U31-70 | 2015.10.01 | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (Yes), Touchpad (Yes), Webcam (Yes) |
+
+### V Series
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Lenovo V110-15 |  ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Not Tested) |
 
 ## Special Notes (*):
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise")
+
 [wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) is a cross-platform [supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) with support for WEP, WPA and WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN (Robust Secure Network)). It is suitable for desktops, laptops and embedded systems.
 
 *wpa_supplicant* is the IEEE 802.1X/WPA component that is used in the client stations. It implements key negotiation with a WPA authenticator and it controls the roaming and IEEE 802.11 authentication/association of the wireless driver.
@@ -240,7 +246,7 @@ followed by a method to obtain an ip address manually as indicated in the [#Over
 
 **Tip:**
 
-*   *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+*   *dhcpcd* has a hook that can launch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
 *   While testing arguments/configuration it may be helpful to launch *wpa_supplicant* in the foreground (i.e. *without* the `-B` option) for better debugging messages.
 
 #### At boot (systemd)
@@ -256,7 +262,7 @@ To enable wireless at boot, enable an instance of one of the above services on a
 
 Now choose and [enable](/index.php/Enable "Enable") an instance of a service to obtain an ip address for the particular *interface* as indicated in the [#Overview](#Overview). For example, [enable](/index.php/Enable "Enable") the `dhcpcd@*interface*` systemd unit.
 
-**Tip:** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+**Tip:** *dhcpcd* has a hook that can launch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
 
 ##### 802.1x/radius
 

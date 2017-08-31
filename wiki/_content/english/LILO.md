@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+
 The *LI*nux *LO*ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out thanks to the advent of [GRUB](/index.php/GRUB "GRUB"), an alternative boot loader offering easier configuration and less chance of rendering systems unbootable. As of January 2016, [LILO is no longer actively developed](https://lists.alioth.debian.org/pipermail/lilo-devel/2015-December/000083.html).
 
 ## Contents
@@ -103,7 +108,7 @@ Save `lilo.conf`, run `lilo` as root, and reboot and see how it looks!
 
 ### Read write error message whilst booting
 
-This error message is caused by a recent [change](https://projects.archlinux.org/mkinitcpio.git/commit/?id=449b3e543c) in mkinitcpio which was in response to this [Systemd](/index.php/Systemd "Systemd") [commit](https://github.com/systemd/systemd/commit/956eaf2b8d6c9999024705ddadc7393bc707de02). The change causes partitions to be fsck'ed twice when mounted read only. To fix this error edit `/etc/lilo.conf` and change the 'read only' line to 'read write' for both arch entries.
+This error message is caused by a [change](https://projects.archlinux.org/mkinitcpio.git/commit/?id=449b3e543c) in mkinitcpio which was in response to this [Systemd](/index.php/Systemd "Systemd") [commit](https://github.com/systemd/systemd/commit/956eaf2b8d6c9999024705ddadc7393bc707de02). The change causes partitions to be fsck'ed twice when mounted read only. To fix this error edit `/etc/lilo.conf` and change the 'read only' line to 'read write' for both arch entries.
 
 See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1303683#p1303683) for more information.
 

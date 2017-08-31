@@ -65,7 +65,7 @@ $ git clone [https://github.com/syl20bnr/spacemacs](https://github.com/syl20bnr/
 
 ```
 
-**Note:** This command should be runt from your user account.
+**Note:** This command should be run from your user account.
 
 ### Install Adobe Source Pro fonts (optional)
 

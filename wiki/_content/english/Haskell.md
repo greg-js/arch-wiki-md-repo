@@ -52,33 +52,33 @@ Dynamic linking is used for most Haskell modules packaged through [pacman](/inde
 
 ### Building statically linked packages with Cabal (without using shared libraries)
 
-This section explains how to install `cabal-install` but from [Hackage](https://hackage.haskell.org/package/cabal-install) instead of the official [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) package from the repositories. This `cabal-install` will build Haskell packages without using [shared libraries](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/shared_libs.html) as [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) is configured to do so by default.
+This section explains how to install `cabal-install` but from [Hackage](https://hackage.haskell.org/package/cabal-install) instead of the official [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) package from the repositories. This `cabal-install` will build Haskell packages without using [shared libraries](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/shared_libs.html) unlike the official [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) which requires you to link dynamically.
 
-**Note:** This section is about how [ghc](https://www.archlinux.org/packages/?name=ghc) is able to build Haskell code into shared libraries allowing pre-compiled code to be shared between several programs, mind that it isn't related to generating completely statically linked ELF binaries on Linux.
+**Note:** In the context of this section, static linking does not mean generating completely static ELF binaries. Only Haskell code will be linked statically into a single ELF binary, which may be dynamically linked to other system libraries such as *glibc*.
 
-To avoid linking [errors](https://bugs.archlinux.org/task/54563#comment158826), it's also especially important to not to mix statically and dynamically Haskell packages installed on the same system, as Cabal doesn't fetch a required package once it has been globally registered (check them with the command `ghc-pkg list`) in one of its forms and not the other (independently of the linking type of the package that it's needed).
+In theory with any `cabal-install` you could choose between both methods, static and dynamic, for linking your Haskell code. In practice because in Arch some basic Haskell libraries (`haskell-*` packages) are provided as shared objects (`.so` files) and those libraries are globally registered in Cabal, it has trouble using the same libraries for static linking. To avoid linking [errors](https://bugs.archlinux.org/task/54563#comment158826), it's also especially important to not to mix statically and dynamically Haskell packages installed on the same system, as Cabal doesn't fetch a required package once it has been globally registered (check them with the command `ghc-pkg list`) in one of its forms and not the other (independently of the linking type of the package that it's needed).
 
-For these reasons, **you have to make sure** that the only two related Haskell packages you have installed are [ghc](https://www.archlinux.org/packages/?name=ghc) and [ghc-static](https://www.archlinux.org/packages/?name=ghc-static) (not [stack](https://www.archlinux.org/packages/?name=stack), [cabal-helper](https://www.archlinux.org/packages/?name=cabal-helper), [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) and none of the `haskell-*` dynamic libraries [available](https://www.archlinux.org/packages/?q=haskell-) in the official repositories).
+For these reasons, **you have to make sure** that the only two related Haskell packages you have installed are [ghc](https://www.archlinux.org/packages/?name=ghc), the compiler, and [ghc-static](https://www.archlinux.org/packages/?name=ghc-static), the boot libraries on its static form, (not [stack](https://www.archlinux.org/packages/?name=stack), [cabal-helper](https://www.archlinux.org/packages/?name=cabal-helper), [cabal-install](https://www.archlinux.org/packages/?name=cabal-install) and none of the `haskell-*` dynamic libraries [available](https://www.archlinux.org/packages/?q=haskell-) in the official repositories).
 
-You can use [Stack](https://www.haskellstack.org/) as an alternative build tool for Haskell packages, which will link statically by default, but if you still want to use Cabal to build using static linking follow the next steps of this section to install your own compiled `cabal-install` from Hackage.
+You can also use [Stack](https://www.haskellstack.org/) as an alternative build tool for Haskell packages, which will link statically by default. But if you still want to use Cabal to build using static linking, follow the next steps of this section to install your own compiled `cabal-install` from Hackage. For this purpose we are going to use the tool [Stack](https://haskellstack.org/) that will help us fetching all the dependencies required and building your own `cabal-install`.
 
-First you have to [install Stack](https://docs.haskellstack.org/en/stable/README/#how-to-install) from upstream because you'll use it to bootstrap the compilation of your own Cabal and you don't want to pull as dependencies those packages from the official repositories containing the `haskell-*` dynamic libraries.
+First you have to install [stack-static](https://aur.archlinux.org/packages/stack-static/) because you'll use it to bootstrap the compilation of your own Cabal and you don't want to pull as dependencies those packages from the official Arch repositories containing the `haskell-*` dynamic libraries.
 
-Then download a GHC compiler with Stack:
-
-```
-$ stack setup
+Then prepare Stack downloading the package index. Stack will be used with the only purpose of bootstrapping the compilation of your own `cabal-install` but using the already installed [ghc](https://www.archlinux.org/packages/?name=ghc) compiler:
 
 ```
-
-Now install your own **cabal-instal**:
-
-```
-$ stack install cabal-install
+$ stack setup --system-ghc
 
 ```
 
-This newly installed `cabal-install` has been compiled without shared libraries and won't use them when building packages.
+Now install your own `cabal-install`:
+
+```
+$ stack install --system-ghc cabal-install
+
+```
+
+This newly installed `cabal-install` has been compiled without shared libraries and won't use them when building packages by default. Also, this `cabal-install` will use the installed [ghc](https://www.archlinux.org/packages/?name=ghc) compiler.
 
 ### Haskell development tools
 

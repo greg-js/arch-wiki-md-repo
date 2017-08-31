@@ -1,3 +1,8 @@
+Related articles
+
+*   [pacman-key](/index.php/Pacman-key "Pacman-key")
+*   [Official repositories](/index.php/Official_repositories "Official repositories")
+
 This article lists binary repositories freely created and shared by the community, often providing pre-built versions of PKGBUILDS found in the [AUR](/index.php/AUR "AUR").
 
 **Warning:** Neither the official Arch Linux Developers nor the Trusted Users perform tests of any sort to verify the contents of these repositories; it is up to each user to decide whether to trust their maintainers, and take full responsibility for whatever their decision brings.
@@ -102,6 +107,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.13 rust-git](#rust-git)
         *   [5.2.14 trinity](#trinity)
         *   [5.2.15 zrootfs](#zrootfs)
+        *   [5.2.16 neo_chen](#neo_chen)
 
 ## Adding your repository to this page
 
@@ -1134,5 +1140,18 @@ Server = http://repo.nasutek.com/arch/contrib/trinity/x86_64
 ```
 [zrootfs]
 Server = https://www.izzette.com/izzi/zrootfs-old
+
+```
+
+#### neo_chen
+
+*   **Maintainer:** Kolei Chen (Neo_Chen) <chenkolei@gmail.com>
+*   **Description:** Some uncommon AUR Package
+
+**Note:** This repo runs on a unstable Desktop.
+
+```
+[neo_chen]
+Server = https://neolinuxworkstation.nerdpol.ovh/~neo_chen/neo_chen_repo/
 
 ```

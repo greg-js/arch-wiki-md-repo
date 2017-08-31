@@ -49,8 +49,6 @@ launcher_item_app = /some/where/anotherapplication.desktop
 
 ```
 
-The option `launcher_icon_theme` seems not to be documented yet.
-
 `panel_items` is a new configuration option which defines which items tint2 shows and in what order:
 
 	L

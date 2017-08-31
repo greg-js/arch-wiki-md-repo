@@ -1,5 +1,10 @@
 **翻译状态：** 本文是英文页面 [Rsync](/index.php/Rsync "Rsync") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=Rsync&diff=0&oldid=450999)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+
 [rsync](http://samba.anu.edu.au/rsync/) 是一个开源工具，可以进行快速的增量的文件传输。
 
 ## Contents
@@ -172,7 +177,7 @@ fi
 
 	`--files-from` 
 
-	read the relative path of */folder/to/backup* from this file
+	从文件中读取到备份路径/folder/to/backup的相对路径
 
 	`--bwlimit` 
 
@@ -220,7 +225,7 @@ Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path`
 
 #### 一个星期差异备份
 
-This is a useful option of rsync, creating a full backup and a differential backup for each day of a week.
+这个 rsync 选项很有用，可以每日创建全量或增量备份。
 
 首先，创建一个包含相应命令选项的脚本：
 
@@ -319,4 +324,4 @@ To make things really, really simple this script can be run from a [systemd/Time
 
 ## 图形前端
 
-[安装](/index.php/Pacman "Pacman") the [grsync](https://www.archlinux.org/packages/?name=grsync) package.
+[安装](/index.php/Pacman "Pacman") [grsync](https://www.archlinux.org/packages/?name=grsync) 。

@@ -79,7 +79,7 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Bluetooth
 
-[Install](/index.php/Install "Install") the package [bluez](https://www.archlinux.org/packages/?name=bluez), start and/or enable `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+[Install](/index.php/Install "Install") the package [bluez](https://www.archlinux.org/packages/?name=bluez), [start](/index.php/Start "Start") `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
 
 ## Fingerprint
 
