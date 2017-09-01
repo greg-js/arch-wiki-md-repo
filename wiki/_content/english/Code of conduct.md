@@ -147,6 +147,7 @@ In addition to the [common code](#Code_of_conduct), each of the fora has its own
 *   When asking questions, provide as much information as possible, including error messages, terminal output, logs, what you have previously tried, what documentation and searches you have attempted, and related configuration files.
 *   Choose one topic per thread. Long threads are typically discouraged in the technical issue subforums.
 *   Post your question in only one subforum; pick the most relevant, and post there.
+*   Do not post tutorials or "how to's": documentation belongs on the wiki, where it can be maintained.
 *   When responding to an existing thread, always read the original post and attempt to focus on the original topic.
 *   Finally, when a solution is found, mark your thread as solved by editing the first post and prepending the tag [SOLVED] to the title in the "Subject" field.
     Note that you should avoid using [CLOSED], which is instead used by the system to mark a thread which is no longer accessible for new posts.

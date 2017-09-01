@@ -1,3 +1,14 @@
+Related articles
+
+*   [systemd/User](/index.php/Systemd/User "Systemd/User")
+*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+*   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
+*   [init](/index.php/Init "Init")
+*   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
+*   [udev](/index.php/Udev "Udev")
+*   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
+*   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
+
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 	*systemd* is a suite of basic building blocks for a Linux system. It provides a system and service manager that runs as PID 1 and starts the rest of the system. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), maintains mount and automount points, and implements an elaborate transactional dependency-based service control logic. *systemd* supports SysV and LSB init scripts and works as a replacement for sysvinit. Other parts include a logging daemon, utilities to control basic system configuration like the hostname, date, locale, maintain a list of logged-in users and running containers and virtual machines, system accounts, runtime directories and settings, and daemons to manage simple network configuration, network time synchronization, log forwarding, and name resolution.
@@ -376,7 +387,7 @@ RestartSec=30
 
 ## Targets
 
-*systemd* uses *targets* which serve a similar purpose as runlevels but act a little different. Each *target* is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some *target*s are implemented by inheriting all of the services of another *target* and adding additional services to it. There are *systemd* *target*s that mimic the common SystemVinit runlevels so you can still switch *target*s using the familiar `telinit RUNLEVEL` command.
+*systemd* uses *targets* which serve a similar purpose as [runlevels](https://en.wikipedia.org/wiki/Runlevel "wikipedia:Runlevel") but act a little different. Each *target* is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some *target*s are implemented by inheriting all of the services of another *target* and adding additional services to it. There are *systemd* *target*s that mimic the common SystemVinit runlevels so you can still switch *target*s using the familiar `telinit RUNLEVEL` command.
 
 ### Get current targets
 

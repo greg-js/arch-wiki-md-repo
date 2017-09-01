@@ -65,13 +65,41 @@ See [Security#Kernel hardening](/index.php/Security#Kernel_hardening "Security")
 
 ### Improving performance
 
-**Warning:** This may cause dropped frames with load-balancing and NATs, only use this for a server that communicates only over your local network.
+```
+net.core.netdev_max_backlog = 65536
+net.core.optmem_max = 65536
+net.core.somaxconn = 16384
+net.core.rmem_default = 1048576
+net.core.wmem_default = 1048576
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
 
 ```
-# reuse time-wait sockets
+
+```
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 65536 16777216
+net.ipv4.tcp_ecn = 0
+net.ipv4.tcp_fastopen = 3
+net.ipv4.tcp_max_syn_backlog = 65536
+net.ipv4.tcp_max_tw_buckets = 65536
+net.ipv4.tcp_slow_start_after_idle = 0
 net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_fin_timeout = 15
+net.ipv4.tcp_keepalive_intvl = 60
+net.ipv4.tcp_keepalive_probes = 5
+net.ipv4.tcp_mtu_probing = 1
+net.ipv4.tcp_timestamps = 0
 
 ```
+
+```
+net.ipv4.udp_rmem_min = 16384
+net.ipv4.udp_wmem_min = 16384
+
+```
+
+*   You can use [http://www.speedtest.net](http://www.speedtest.net) to benchmark internetwork performance before/after the change
 
 ### TCP/IP stack hardening
 

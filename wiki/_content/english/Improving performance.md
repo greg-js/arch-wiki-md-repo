@@ -1,3 +1,14 @@
+Related articles
+
+*   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
+*   [Pacman/Tips and tricks#Performance](/index.php/Pacman/Tips_and_tricks#Performance "Pacman/Tips and tricks")
+*   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
+*   [LibreOffice#Speed up LibreOffice](/index.php/LibreOffice#Speed_up_LibreOffice "LibreOffice")
+*   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
+*   [Laptop](/index.php/Laptop "Laptop")
+*   [Preload](/index.php/Preload "Preload")
+*   [Cpulimit](/index.php/Cpulimit "Cpulimit")
+
 This article provides information on basic system diagnostics relating to performance as well as steps that may be taken to reduce resource consumption or to otherwise optimize the system with the end-goal being either perceived or documented improvements to a system's performance.
 
 ## Contents
@@ -454,7 +465,11 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 ## Network
 
-Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached").
+- See [Sysctl#Improving_performance](/index.php/Sysctl#Improving_performance "Sysctl")
+
+- See [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
+
+- Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached").
 
 ## Watchdogs
 

@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")
+*   [NTFS Write Support](/index.php/NTFS_Write_Support "NTFS Write Support")
+*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")
+
 El archivo [/etc/fstab](https://en.wikipedia.org/wiki/es:Fstab "wikipedia:es:Fstab") es usado para definir cómo las particiones, distintos dispositivos de bloques o sistemas de archivos remotos deben ser montados e integrados en el sistema.
 
 Cada sistema de archivos se describe en una línea separada. Estas definiciones se convertirán con [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") en unidades montadas de forma dinámica en el arranque, y cuando se recargue la configuración del administrador del sistema.

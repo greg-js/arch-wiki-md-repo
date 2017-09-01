@@ -133,7 +133,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") | 进行中 | Cael | 无 |
 | [BIND (简体中文)](/index.php/BIND_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "BIND (简体中文)") | 完成 | Dargasia |
 | [Bumblebee (简体中文)](/index.php/Bumblebee_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bumblebee (简体中文)") | 完成 | Peter | 无 |
-| [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)") | 翻译中 | Bobby | 部分未翻译 |
+| [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)") | 完成 | Bobby | 无 |
 | [Ceph (简体中文)](/index.php/Ceph_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ceph (简体中文)") | 翻译中 | Aaron Chen | 部分未翻译 |
 | [Cinnamon (简体中文)](/index.php/Cinnamon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cinnamon (简体中文)") | 部分翻译 | Bobby | 部分未翻译 |
 | [Common Applications (简体中文)](/index.php/Common_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications (简体中文)") | 部分翻译 | DavidChen | 翻译中 |

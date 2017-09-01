@@ -1,3 +1,7 @@
+Related articles
+
+*   [xinitrc](/index.php/Xinitrc "Xinitrc")
+
 Файлы xprofile, `~/.xprofile` и `/etc/xprofile`, позволяют выполнять команды при старте сессии пользователя X. До старта [оконного менеджера](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)").
 
 Файл xprofile схож по стилю с [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
@@ -7,7 +11,7 @@
 Следующие экранные менеджеры имеют встроенную поддержку xprofile:
 
 *   [GDM](/index.php/GDM "GDM") - `/etc/gdm/Xsession`
-*   [KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)") - `/usr/share/config/kdm/Xsession`
+*   KDM - `/usr/share/config/kdm/Xsession`
 *   [LightDM](/index.php/LightDM "LightDM") - `/etc/lightdm/Xsession`
 *   [LXDM](/index.php/LXDM "LXDM") - `/etc/lxdm/Xsession`
 *   [SDDM](/index.php/SDDM "SDDM") - `/usr/share/sddm/scripts/Xsession`

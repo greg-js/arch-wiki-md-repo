@@ -1,3 +1,14 @@
+Related articles
+
+*   [SSH keys](/index.php/SSH_keys "SSH keys")
+*   [Pam abl](/index.php/Pam_abl "Pam abl")
+*   [fail2ban](/index.php/Fail2ban "Fail2ban")
+*   [sshguard](/index.php/Sshguard "Sshguard")
+*   [Sshfs](/index.php/Sshfs "Sshfs")
+*   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng")
+*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
+*   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
+
 Secure Shell (SSH) is a network protocol that allows data to be exchanged over a secure channel between two computers. Encryption provides confidentiality and integrity of data. SSH uses public-key cryptography to authenticate the remote computer and allow the remote computer to authenticate the user, if necessary.
 
 SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding arbitrary TCP ports and X11 connections; file transfer can be accomplished using the associated SFTP or SCP protocols.
@@ -474,7 +485,10 @@ On the remote system:
     *   set `X11Forwarding` to *yes*
 *   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Daemon_management).
 
-On the client's side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
+On the client side:
+
+*   Install [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) (needed for the `xhost` command)
+*   enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
 
 **Tip:** You can enable the `ForwardX11Trusted` option (`-Y` switch on the command line) if GUI is drawing badly or you receive errors; this will prevent X11 forwardings from being subjected to the [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) controls. Be sure you have read [the warning](#X11_forwarding) at the beginning of this section if you do so.
 

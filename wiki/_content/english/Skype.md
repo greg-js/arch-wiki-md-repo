@@ -1,9 +1,6 @@
 There are two official Linux versions of Skype available:
 
-*   The new Skype for Linux (version 5.x, currently in beta): see [#Skype for Linux](#Skype_for_Linux)
-
-	It is basically the web version in a wrapper.
-
+*   The new Skype for Linux: see [#Skype for Linux](#Skype_for_Linux)
 *   The old Skype (version 4.x, final release in June 2014): see [#Legacy Skype](#Legacy_Skype)
 
 	Legacy Skype does not support calling to some newer clients.[[1]](https://blogs.skype.com/news/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/) **Should have stopped working on 1 July 2017**[[2]](http://www.omgubuntu.co.uk/2017/06/skype-4-3-linux-stop-working-july-2017) but is still working as of 5 July 2017.
@@ -44,7 +41,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
 
 ## Skype for Linux
 
-The new *Skype for Linux Beta* is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It also has working group video chat [since version 5.4](https://answers.microsoft.com/en-us/skype/forum/skype_linux-skype_startms-skype_installms/whats-new-in-skype-54-for-linux-beta/8cd9c2e4-536f-4151-9af2-53f526d1d0f2).
+The new *Skype for Linux* has full functionality, including group video chat and [screen sharing](http://www.omgubuntu.co.uk/2017/08/skype-redesign-everyone-hates-now-available-linux).
 
 [Install](/index.php/Install "Install") it with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) or [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
 

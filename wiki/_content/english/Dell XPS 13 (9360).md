@@ -144,7 +144,30 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 The Killer 1535 Wirless Adapter is functional and the ath10k firmware is included in recent linux kernel versions. The connection speed reported by iw is limited to 1-6Mbits/s. However this is just the output being wrong. The real connection speed is not limited to this value.
 
-Some users are experiencing issues, where the connection is dropped under heavy load but reconnects within a brief moment. This might not be noticed during browsing at all but becomes apparent in online games. There is no know solution so far.
+[[Some users are experiencing issues](http://en.community.dell.com/support-forums/network-internet-wireless/f/3324/t/19998908?pi41127=3)], where the connection is dropped under heavy load but reconnects within a brief moment. This might not be noticed during browsing at all but becomes apparent in online games. There is [[a firmware update proposed by DELL](http://en.community.dell.com/techcenter/os-applications/f/4613/p/20002634/20994007#20994007)] to fix the issue, but it might not fix all the issues. In at least one case the new firmware did not fix the connection loss / low connection speed problem. Signs of this problem seems to be two kinds of messages in dmesg:
+
+```
+pcieport 0000:00:1c.4: AER: Corrected error received: id=00e4
+pcieport 0000:00:1c.4: PCIe Bus Error: severity=Corrected, type=Data Link Layer, id=00e4(Transmitter ID)
+pcieport 0000:00:1c.4:   device [8086:9d14] error status/mask=00001000/00002000
+pcieport 0000:00:1c.4:    [12] Replay Timer Timeout  
+
+```
+
+And also:
+
+```
+CPU: 3 PID: 1410 Comm: irq/133-ath10k_ Not tainted 
+Hardware name: Dell Inc. XPS 13 9360/0839Y6, BIOS 2.1.0 08/02/2017
+Call Trace:
+  <IRQ>
+  dump_stack+0x63/0x82
+  __warn+0xcb/0xf0
+  warn_slowpath_null+0x1d/0x20
+  net_rx_action+0x274/0x3a0
+  ? irq_finalize_oneshot.part.35+0xe0/0xe0
+
+```
 
 ## Bluetooth
 

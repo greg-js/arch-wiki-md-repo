@@ -1,3 +1,12 @@
+相关文章
+
+*   [udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")
+*   [NTFS Write Support](/index.php/NTFS_Write_Support "NTFS Write Support")
+*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+
 **翻译状态：** 本文是英文页面 [fstab](/index.php/Fstab "Fstab") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-09-20，点击[这里](https://wiki.archlinux.org/index.php?title=fstab&diff=0&oldid=223040)可以查看翻译后英文页面的改动。
 
 文件[/etc/fstab](https://en.wikipedia.org/wiki/Fstab "wikipedia:Fstab")包含了静态文件系统信息，定义了存储设备和分区整合到整个系统的方式。`mount` 命令会读取这个文件，确定设备和分区的挂载选项。

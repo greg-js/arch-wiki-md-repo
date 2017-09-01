@@ -200,9 +200,30 @@ If you are using ReadyMedia to "broadcast" on a bridged device (such as an OpenV
 
 ```
 
-This should make the server visible to the clients *immediately*, but the change will be lost on reboot. If this works, you can make it a permanent change by issuing the following command:
+This should make the server visible to the clients *immediately*, but the change will be lost on reboot. If this works, you can make it a permanent change by using a systemd service file. Edit the file `/etc/systemd/system/multicas_snooping.service` with the following content:
 
 ```
-# echo 'net.br0.bridge.multicast_snooping=0' > /etc/sysctl.d/35-minidlna_no_snoop.conf
+[Unit]
+Description=Set multicast snoop to off
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c "echo 0 >> /sys/devices/virtual/net/br0/bridge/multicast_snooping"
+RemainAfterExit=true
+ExecStop=/usr/bin/bash -c "echo 1 >> /sys/devices/virtual/net/br0/bridge/multicast_snooping"
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
 
 ```
+
+Now all you have to do is enable the service file:
+
+```
+# systemct enable multicast_snooping.service
+
+```
+
+This approach should disable multicast_snooping on every boot.

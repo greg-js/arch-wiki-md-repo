@@ -1,3 +1,16 @@
+Related articles
+
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines")
+*   [Official repositories](/index.php/Official_repositories "Official repositories")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
+
 The Arch User Repository (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community](/index.php/Community "Community") repository. This document explains how users can access and utilize the AUR.
 
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
@@ -282,8 +295,6 @@ $ git push
 Removal requests can be disapproved, in which case you will likely be advised to disown the package for a future packager's reference.
 
 ## Git repositories for AUR3 packages
-
-**Note:** aur-mirror is no longer available
 
 The [AUR Archive](https://github.com/aur-archive) on GitHub has a repository for every package that was in AUR 3 during the migration to AUR 4 in August 2015.
 

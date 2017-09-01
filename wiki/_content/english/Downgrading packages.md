@@ -1,3 +1,10 @@
+Related articles
+
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
+
 Before downgrading a single or multiple packages, consider why you wish to do so. If it is due to a bug, search the [bug tracker](https://bugs.archlinux.org/) for existing tasks. If there is none, add a new task; it is better to correct bugs, or at least warn other users of possible issues.
 
 **Warning:**
@@ -61,9 +68,9 @@ If the package is unavailable, find the correct [PKGBUILD](/index.php/PKGBUILD "
 
 For packages from the [official repositories](/index.php/Official_repositories "Official repositories"), retrieve the PKGBUILD with [ABS](/index.php/ABS "ABS") and change the software version. Alternatively, find the package on the [Packages](https://www.archlinux.org/packages) website, click "View Changes", and navigate to the desired version. The files are available through a `.tar.gz` snapshot, and via the *Tree* view.
 
-See also [Getting PKGBUILDs from SVN#Checkout an older version of a package](/index.php/Getting_PKGBUILDs_from_SVN#Checkout_an_older_version_of_a_package "Getting PKGBUILDs from SVN").
+See also [Arch Build System#Checkout an older version of a package](/index.php/Arch_Build_System#Checkout_an_older_version_of_a_package "Arch Build System").
 
-Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/). See [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository") for details.
+Old AUR packages can be built by checking out an old commit in the AUR package Git repository. For pre-2015 AUR3 PKGBUILDs, see [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository").
 
 #### vABS - Versioned Arch Build System
 

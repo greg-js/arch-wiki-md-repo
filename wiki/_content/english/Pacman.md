@@ -1,3 +1,18 @@
+Related articles
+
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
+*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
+*   [pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")
+*   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
+*   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
+*   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+*   [FAQ#Package management](/index.php/FAQ#Package_management "FAQ")
+*   [System maintenance](/index.php/System_maintenance "System maintenance")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Official repositories](/index.php/Official_repositories "Official repositories")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+
 The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of *pacman* is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
 
 *pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
@@ -202,7 +217,7 @@ $ pacman -Ss *string1* *string2* ...
 
 ```
 
-Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
+Sometimes, `-s`'s builtin ERE (Extended Regular Expressions) can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
 
 ```
 $ pacman -Ss '^vim-'

@@ -1,4 +1,11 @@
-**翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-02，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=447735)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [Chromium Tips and Tweaks (简体中文)](/index.php/Chromium_Tips_and_Tweaks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium Tips and Tweaks (简体中文)")
+*   [Browser Plugins (简体中文)](/index.php/Browser_Plugins_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Browser Plugins (简体中文)")
+*   [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")
+*   [Opera](/index.php/Opera "Opera")
+
+**翻译状态：** 本文是英文页面 [Chromium](/index.php/Chromium "Chromium") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium&diff=0&oldid=447735)可以查看翻译后英文页面的改动。
 
 [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) 是一款来自 "The Chromium Project" 的开源图形网络浏览器，基于 [WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit")渲染引擎。
 
@@ -8,7 +15,7 @@
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 设置成默认浏览器](#.E8.AE.BE.E7.BD.AE.E6.88.90.E9.BB.98.E8.AE.A4.E6.B5.8F.E8.A7.88.E5.99.A8)
     *   [2.2 Flash播放器](#Flash.E6.92.AD.E6.94.BE.E5.99.A8)
-    *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
+    *   [2.3 Widevine内容解密插件](#Widevine.E5.86.85.E5.AE.B9.E8.A7.A3.E5.AF.86.E6.8F.92.E4.BB.B6)
     *   [2.4 在Chromium中打开pdf文件](#.E5.9C.A8Chromium.E4.B8.AD.E6.89.93.E5.BC.80pdf.E6.96.87.E4.BB.B6)
     *   [2.5 证书管理](#.E8.AF.81.E4.B9.A6.E7.AE.A1.E7.90.86)
 *   [3 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
@@ -82,13 +89,13 @@
 
 并且要在`chrome://settings/content`中启用Flash。
 
-### Widevine Content Decryption Module plugin
+### Widevine内容解密插件
 
-Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It comes bundled with Chrome.
+Widevine 是Google的 Encrypted Media Extensions (媒体加密拓建，即EME) 内容解密组件。它用来看Netflix这一类的付费的视频内容，并已经内置在Chrome中。
 
-To install the Widevine CDM for Chromium, install the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package.
+要安装Chromium的Widevine CDM，安装 [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) 软件包。
 
-Make sure the plugin is enabled in `chrome://plugins`.
+请确保 `chrome://plugins` 中的插件已经启用。
 
 ### 在Chromium中打开pdf文件
 

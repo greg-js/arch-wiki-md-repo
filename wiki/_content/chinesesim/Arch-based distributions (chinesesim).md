@@ -6,14 +6,16 @@ Related articles
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
-**Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
+**翻译状态：** 本文是英文页面 [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Arch-based+distributions&diff=0&oldid=488263)可以查看翻译后英文页面的改动。
 
-This is a listing of Linux distributions which are [derived](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") from Arch Linux **either in whole or in part**.
+**警告:** 基于 Arch 的发行版，**并不被** Arch 社区或开发者支持，请参考 [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
+
+下面是一些[基于](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") Arch Linux 发行版的列表。
 
 ## Contents
 
-*   [1 Active](#Active)
-*   [2 Inactive](#Inactive)
+*   [1 活跃发行版](#.E6.B4.BB.E8.B7.83.E5.8F.91.E8.A1.8C.E7.89.88)
+*   [2 不活跃](#.E4.B8.8D.E6.B4.BB.E8.B7.83)
     *   [2.1 2016](#2016)
     *   [2.2 2015](#2015)
     *   [2.3 2014](#2014)
@@ -28,7 +30,7 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
     *   [2.12 2005](#2005)
     *   [2.13 2004](#2004)
 
-## Active
+## 活跃发行版
 
 *   [Alpine Linux](https://alpinelinux.org/)
 *   [Antergos](https://sourceforge.net/projects/antergos/)
@@ -58,9 +60,9 @@ This is a listing of Linux distributions which are [derived](/index.php/Develope
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/)
 *   [UBOS](http://ubos.net/)
 
-## Inactive
+## 不活跃
 
-These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
+下面发行版已经不再开发：
 
 ### 2016
 

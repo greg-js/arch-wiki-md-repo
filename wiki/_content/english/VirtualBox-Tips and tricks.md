@@ -30,6 +30,10 @@ See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
     *   [9.3 Tasks on GNU/Linux](#Tasks_on_GNU.2FLinux)
     *   [9.4 Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader)
     *   [9.5 Known limitations](#Known_limitations)
+*   [10 Run a Windows partition in VirtualBox](#Run_a_Windows_partition_in_VirtualBox)
+    *   [10.1 Configure udev to give VirtualBox access to Windows partitions](#Configure_udev_to_give_VirtualBox_access_to_Windows_partitions)
+    *   [10.2 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
+    *   [10.3 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
 
 ## Import/export VirtualBox virtual machines from/to other hypervisors
 
@@ -472,3 +476,23 @@ Partition number (''1-3'', default ''3''): ''1''
 *   Your virtual machine can sometimes hang and overrun your RAM, this can be caused by conflicting drivers still installed inside your Windows virtual machine. Good luck to find them!
 *   Additional software expecting a given driver beneath may either not be disabled/uninstalled or needs to be uninstalled first as the drivers that are no longer available.
 *   Your Windows installation must reside on the first partition for the above process to work. If this requirement is not met, the process might be achieved too, but this had not been tested. This will require either copying the MBR and editing in hexadecimal see [VirtualBox: booting cloned disk](http://superuser.com/questions/237782/virtualbox-booting-cloned-disk/253417#253417) or will require to fix the partition table [manually](http://gparted.org/h2-fix-msdos-pt.php) or by repairing Windows with the recovery disk you created in a previous step. Let us consider our Windows installation on the second partition; we will copy the MBR, then the second partition where to the disk image. `VBoxManage convertfromraw` needs the total number of bytes that will be written: calculated thanks to the size of the MBR (the start of the first partition) plus the size of the second (Windows) partition. `{ dd if=/dev/sda bs=512 count=$(cat /sys/block/sda/sda1/start) ; dd if=/dev/sda2 bs=512 count=$(cat /sys/block/sda/sda2/size) ; } | VBoxManage convertfromraw stdin windows.vdi $(( ($(cat /sys/block/sda/sda1/start) + $(cat /sys/block/sda/sda2/size)) * 512 ))`.
+
+## Run a Windows partition in VirtualBox
+
+**Note:** The technique outlined in this section only applies to [UEFI](/index.php/UEFI "UEFI") systems.
+
+In some cases, it is useful to be able to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") *and* access the partition in a virtual machine. This process is significantly different from [#Move a native Windows installation to a virtual machine](#Move_a_native_Windows_installation_to_a_virtual_machine) in several ways:
+
+*   The Windows partition is not copied to a virtual disk image. Instead, a raw VMDK file is created
+*   Changes in the VM will be mirrored in the partition, and vice versa
+*   OEM licenses should still be satisfied, since the Windows partition still boots directly on the hardware
+
+**Warning:** Some of the commands used here can corrupt either the Windows partition, the Arch Linux partition, or both. Use extreme caution when executing commands, and double check that they are being run in the correct shell. It would be a good idea to have a backup of the entire drive ready before beginning this process.
+
+**Tip:** It will be useful to have the [Arch install ISO](https://www.archlinux.org/download/) readily available, as it will be used the configure the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") in the VM. It is also worth having access to Windows installation media (such as the [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO)) in case the Windows partition is corrupted.
+
+### Configure udev to give VirtualBox access to Windows partitions
+
+### Set up a separate ESP in VirtualBox
+
+### Configure the virtual UEFI firmware to use the Windows bootloader

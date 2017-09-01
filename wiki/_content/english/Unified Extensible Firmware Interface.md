@@ -1,4 +1,13 @@
-**Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations *may* carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
+*   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
+*   [UEFI/Hardware](/index.php/UEFI/Hardware "UEFI/Hardware")
+
+**Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations *may* carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular motherboard model before proceeding.
 
 The [Unified Extensible Firmware Interface](http://www.uefi.org/) (EFI or UEFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 

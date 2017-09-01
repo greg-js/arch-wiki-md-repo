@@ -1,4 +1,13 @@
-**翻译状态：** 本文是英文页面 [Apache_HTTP_Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-15，点击[这里](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&diff=0&oldid=436671)可以查看翻译后英文页面的改动。
+Related articles
+
+*   [PHP](/index.php/PHP "PHP")
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
+*   [Adminer](/index.php/Adminer "Adminer")
+*   [XAMPP](/index.php/XAMPP "XAMPP")
+*   [mod_perl](/index.php/Mod_perl "Mod perl")
+
+**翻译状态：** 本文是英文页面 [Apache_HTTP_Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Apache_HTTP_Server&diff=0&oldid=487235)可以查看翻译后英文页面的改动。
 
 LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,MySQL/MariaDB以及PHP。
 
@@ -17,13 +26,15 @@ LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,My
 *   [3 扩展](#.E6.89.A9.E5.B1.95)
     *   [3.1 PHP](#PHP)
         *   [3.1.1 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)
+        *   [3.1.2 使用 php-fpm 和 mod_proxy_fcgi](#.E4.BD.BF.E7.94.A8_php-fpm_.E5.92.8C_mod_proxy_fcgi)
     *   [3.2 MariaDB](#MariaDB)
     *   [3.3 HTTP2](#HTTP2)
 *   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
     *   [4.1 Apache 的状态和日志](#Apache_.E7.9A.84.E7.8A.B6.E6.80.81.E5.92.8C.E6.97.A5.E5.BF.97)
     *   [4.2 启动后出现 Error: PID file /run/httpd/httpd.pid not readable](#.E5.90.AF.E5.8A.A8.E5.90.8E.E5.87.BA.E7.8E.B0_Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable)
     *   [4.3 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
-    *   [4.4 php.ini 中的 max_execution_time 设置无效](#php.ini_.E4.B8.AD.E7.9A.84_max_execution_time_.E8.AE.BE.E7.BD.AE.E6.97.A0.E6.95.88)
+    *   [4.4 AH00072: make_sock: could not bind to address](#AH00072:_make_sock:_could_not_bind_to_address)
+    *   [4.5 php.ini 中的 max_execution_time 设置无效](#php.ini_.E4.B8.AD.E7.9A.84_max_execution_time_.E8.AE.BE.E7.BD.AE.E6.97.A0.E6.95.88)
 *   [5 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -136,7 +147,7 @@ Include conf/extra/httpd-ssl.conf
 
 TLS/SSL 需要密钥和认证，如果你有公开域名，可以使用 [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") 免费获取认证，如果没有，请参考 [#创建密钥并自签名](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.B9.B6.E8.87.AA.E7.AD.BE.E5.90.8D).
 
-获取密钥和认证之后，请将 `/etc/httpd/conf/extra/httpd-ssl.conf` 中的 `SSLCertificateFile` 和 `SSLCertificateKeyFile` 指向对应的文件。
+获取密钥和认证之后，请将 `/etc/httpd/conf/extra/httpd-ssl.conf` 中的 `SSLCertificateFile` 和 `SSLCertificateKeyFile` 指向对应的文件。如果还生成了 CA 认证链，请将文件名设置到 `SSLCertificateChainFile`.
 
 重启 `httpd.service`.
 
@@ -169,7 +180,7 @@ TLS/SSL 需要密钥和认证，如果你有公开域名，可以使用 [Let's E
 
 ### Virtual Hosts
 
-**Note:** You will need to add a separate <VirtualHost dommainame:443> section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
+**Note:** You will need to add a separate <VirtualHost *:443> section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
 
 如果需要不止一个主机，在 `/etc/httpd/conf/httpd.conf`中注释掉:
 
@@ -225,7 +236,7 @@ Include conf/vhosts/domainname2.dom
 
  `/etc/httpd/conf/vhosts/domainname1.dom` 
 ```
-<VirtualHost domainname1.dom:80>
+<VirtualHost *:80>
     ServerAdmin webmaster@domainname1.dom
     DocumentRoot "/home/user/http/domainname1.dom"
     ServerName domainname1.dom
@@ -238,21 +249,20 @@ Include conf/vhosts/domainname2.dom
     </Directory>
 </VirtualHost>
 
-<VirtualHost domainname1.dom:443>
+<VirtualHost *:443>
     ServerAdmin webmaster@domainname1.dom
     DocumentRoot "/home/user/http/domainname1.dom"
     ServerName domainname1.dom:443
     ServerAlias domainname1.dom:443
+    SSLEngine on
+    SSLCertificateFile "/etc/httpd/conf/apache.crt"
+    SSLCertificateKeyFile "/etc/httpd/conf/apache.key"
     ErrorLog "/var/log/httpd/domainname1.dom-error_log"
     CustomLog "/var/log/httpd/domainname1.dom-access_log" common
 
     <Directory "/home/user/http/domainname1.dom">
         Require all granted
     </Directory>
-
-    SSLEngine on
-    SSLCertificateFile "/etc/httpd/conf/apache.crt"
-    SSLCertificateKeyFile "/etc/httpd/conf/apache.key"
 </VirtualHost>
 ```
 
@@ -288,10 +298,11 @@ httpd.service: control process exited, code=exited status=1
 
 要启用 PHP，在 `/etc/httpd/conf/httpd.conf` 中添加如下行：
 
-*   将这一行放在`LoadModule`列表中 `LoadModule dir_module modules/mod_dir.so` 之后的任意地方：
+*   将这一行放在`LoadModule` 的末尾：
 
 ```
  LoadModule php7_module modules/libphp7.so
+ AddHandler php7-script php
 
 ```
 
@@ -381,6 +392,54 @@ Include conf/extra/php7_module.conf
 
 [重启](/index.php/Restart "Restart") `httpd.service`.
 
+#### 使用 php-fpm 和 mod_proxy_fcgi
+
+**Note:** Unlike the widespread setup with ProxyPass, the proxy configuration with SetHandler respects other Apache directives like DirectoryIndex. This ensures a better compatibility with software designed for libphp7, mod_fastcgi and mod_fcgid. If you still want to try ProxyPass, experiment with a line like this: `ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/srv/http/$1` 
+
+[Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
+
+Enable proxy modules:
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
+
+```
+
+Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
+
+ `/etc/httpd/conf/extra/php-fpm.conf` 
+```
+<FilesMatch \.php$>
+    SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
+</FilesMatch>
+
+```
+
+And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
+
+```
+Include conf/extra/php-fpm.conf
+
+```
+
+**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)
+
+You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
+
+**Note:**
+
+If you have added the following lines to `httpd.conf`, remove them, as they are no longer needed:
+
+```
+LoadModule php7_module modules/libphp7.so
+Include conf/extra/php7_module.conf
+
+```
+
+[Restart](/index.php/Restart "Restart") `httpd.service` and `php-fpm.service`.
+
 ### MariaDB
 
 按照[PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP") 配置 MySQL/MariaDB。
@@ -429,6 +488,32 @@ Apache 默认的系统日志位于 `/var/log/httpd/`。
  `/etc/httpd/conf/httpd.conf` 
 ```
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+```
+
+### AH00072: make_sock: could not bind to address
+
+多种都可能导致此问题，最常见的问题是已经有程序监听了设置的端口，通过下面命令确认：
+
+```
+# netstat -lnp | grep -e :80 -e :443
+
+```
+
+如该能查到结果，关闭占用端口的程序，然后重试。
+
+还有一个原因是 Apache 没有以 root 执行，运行下面命令看看问题是否依然发生：
+
+```
+# httpd -k start
+
+```
+
+最后，可能配置有问题，导致程序同时监听了端口两次，例如下面的配置就有这个问题：
+
+```
+Listen 0.0.0.0:80
+Listen [::]:80
 
 ```
 

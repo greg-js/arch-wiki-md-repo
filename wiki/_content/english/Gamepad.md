@@ -152,23 +152,23 @@ Use the `/dev/input/by-id/*-joystick` device names in case you use multiple cont
 
 ### evdev API deadzones
 
-Currently there is no standalone application that allows changing calibration for `evdev` API, but there is `G25manage` distributed together with VDrift game that can change the center deadzone.
+The `evdev-joystick` tool from the [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) package can be used to view and change deadzones and calibration for `evdev` API devices.
 
-The easiest way to get it is to go to VDrift [github](https://github.com/VDrift/vdrift/tree/master/tools/G25manage), download all files in the folder and build them using `make`.
-
-After that, you should be able to see your device configuration by using:
+To view your device configuration:
 
 ```
-$ ./G25manage --showcalibration /dev/input/by-id/usb-*-event-joystick
+$ evdev-joystick --showcal /dev/input/by-id/usb-*-event-joystick
 
 ```
 
-To change deadzones of any of the axes, you use the following command:
+To change the deadzone for a particular axis, use a command like:
 
 ```
-$ ./G25manage --evdev /dev/input/by-id/usb-*-event-joystick --axis 0 --deadzone 0
+$ evdev-joystick --evdev /dev/input/by-id/usb-*-event-joystick --axis 0 --deadzone 0
 
 ```
+
+To set the same deadzone for all axes at once, omit the "--axis 0" option.
 
 Use udev rules file to set them automatically when the controller is connected.
 
@@ -176,7 +176,7 @@ Note that inside the kernel, the value is called `flatness` and is set using the
 
 Default configuration will look like similar to this:
 
- `$ ./G25manage --showcalibration /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick` 
+ `$ evdev-joystick --showcal /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick` 
 ```
 Supported Absolute axes:
    Absolute axis 0x00 (0) (X Axis) (min: 0, max: 65535, flatness: 4095 (=6.25%), fuzz: 255)
@@ -188,7 +188,7 @@ Supported Absolute axes:
 
 While a more reasonable setting would be achieved with something like this (repeat for other axes):
 
- `$ ./G25manage --evdev /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick --axis 0 --deadzone 512` 
+ `$ evdev-joystick --evdev /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick --axis 0 --deadzone 512` 
 ```
 Event device file: /dev/input/by-id/usb-Madcatz_Saitek_Pro_Flight_X-55_Rhino_Stick_G0000090-event-joystick
  Axis index to deal with: 0

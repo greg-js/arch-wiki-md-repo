@@ -1,4 +1,8 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [FAT](/index.php/FAT "FAT"). Дата последней синхронизации: 23 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=FAT&diff=0&oldid=482700).
+Ссылки по теме
+
+*   [Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы")
+
+**Состояние перевода:** На этой странице представлен перевод статьи [FAT](/index.php/FAT "FAT"). Дата последней синхронизации: 14 августа 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=FAT&diff=0&oldid=485344).
 
 Из [Википедии:Таблица размещения файлов](https://en.wikipedia.org/wiki/ru:FAT "w:ru:FAT"):
 

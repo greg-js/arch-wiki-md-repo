@@ -1,4 +1,16 @@
-**翻译状态：** 本文是英文页面 [Arch_Boot_Process](/index.php/Arch_Boot_Process "Arch Boot Process") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Boot_Process&diff=0&oldid=441771)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
+*   [Master Boot Record (简体中文)](/index.php/Master_Boot_Record_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Master Boot Record (简体中文)")
+*   [GUID Partition Table (简体中文)](/index.php/GUID_Partition_Table_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GUID Partition Table (简体中文)")
+*   [Unified Extensible Firmware Interface (简体中文)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")
+*   [mkinitcpio (简体中文)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")
+*   [init](/index.php/Init "Init")
+*   [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")
+*   [fstab (简体中文)](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")
+*   [Autostarting](/index.php/Autostarting "Autostarting")
+
+**翻译状态：** 本文是英文页面 [Arch_Boot_Process](/index.php/Arch_Boot_Process "Arch Boot Process") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Boot_Process&diff=0&oldid=477810)可以查看翻译后英文页面的改动。
 
 为了启动 Arch Linux，一个与 Linux 兼容的 [启动引导器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")，比如 [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") 或者 [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 必须事先被安装到[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")或者 [GUID 分区表](/index.php/GUID_Partition_Table_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GUID Partition Table (简体中文)")。启动引导程序负责在初始化启动进程之前，加载好内核和 [initial ramdisk](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")。具体过程因 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 和 [UEFI](/index.php/UEFI "UEFI") 系统而异，细节在正文中给出。
 
@@ -85,7 +97,7 @@ initramfs 之所以存在，是为了帮系统访问真正的根文件系统（�
 
 ## Getty
 
-[init](/index.php/Init "Init") 为每一个 [虚拟终端](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") 调用 [getty](/index.php/Getty "Getty")，前者一般有六个，每个虚拟终端都会初始化 tty 并请求输入用户名和密码。当在某虚拟终端输入用户名和密码后，其 getty 会通过 `/etc/passwd` 检查是否正确，如果正确，就接着调用 [login](#Login), 即为用户启动一个「会话」，接着根据 `/etc/passwd` 文件启动用户专用 shell。此外，getty 也可能会改启动一个显示管理器。
+[init](/index.php/Init "Init") 为每一个 [虚拟终端](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") 调用 [getty](/index.php/Getty "Getty")，前者一般有六个，每个虚拟终端都会初始化 tty 并请求输入用户名和密码。当在某虚拟终端输入用户名和密码后，其 getty 会通过 `/etc/passwd` 检查是否正确，如果正确，就接着调用 [login](#Login), 此外 getty 也可能会改启动一个显示管理器。
 
 ## 显示管理器
 

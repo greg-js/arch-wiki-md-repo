@@ -1,3 +1,11 @@
+Articoli correlati
+
+*   [Persistent block device naming (Italiano)](/index.php/Persistent_block_device_naming_(Italiano) "Persistent block device naming (Italiano)")
+*   [NTFS Write Support (Italiano)](/index.php/NTFS_Write_Support_(Italiano) "NTFS Write Support (Italiano)")
+*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
+*   [Boot Debugging](/index.php/Boot_Debugging "Boot Debugging")
+*   [udev (Italiano)](/index.php/Udev_(Italiano) "Udev (Italiano)")
+
 Il file [/etc/fstab](https://en.wikipedia.org/wiki/it:Fstab "wikipedia:it:Fstab") contiene le informazioni sul filesystem. In esso viene definito come le partizioni e le periferiche di archiviazione saranno montate all'interno del sistema. Questo file verrà letto dal comando `mount` per determinare quali opzioni utilizzare per montare una specifica periferica o una partizione.
 
 ## Contents

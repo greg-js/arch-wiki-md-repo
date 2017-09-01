@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=EFI_System_Partition&diff=0&oldid=482803).
+**Состояние перевода:** На этой странице представлен перевод статьи [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Дата последней синхронизации: 16 августа 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=EFI_System_Partition&diff=0&oldid=485489).
 
 [Системный раздел EFI](https://en.wikipedia.org/wiki/EFI_System_partition "w:EFI System partition") (также называемый ESP или EFISYS) представляет собой физический раздел в формате FAT32 (в основной таблице разделов диска, а не под LVM или программным RAID и т.д.), откуда прошивка [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)") запускает загрузчик и приложение UEFI.
 
@@ -33,8 +33,8 @@
 
 **Выберите один** из следующих способов создания ESP для диска GPT с разделами:
 
-*   [fdisk/gdisk](/index.php/Fdisk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fdisk (Русский)"): Создайте раздел с типом раздела EFI System (`EFI System` в *fdisk* или `EF00` в *gdisk*). Перейдите к [#Форматирование раздела](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0).
-*   [GNU Parted](/index.php/GNU_Parted_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Parted (Русский)"): Создайте раздел FAT32 и в Parted установите/активируйте флаг `boot` (**не** флаг `legacy_boot`) на этом разделе. Перейдите к [#Монтирование раздела](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0).
+*   [fdisk/gdisk](/index.php/Fdisk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fdisk (Русский)"): Создайте раздел с типом раздела EFI System (`EFI System` в *fdisk* или `EF00` в *gdisk*). Перейдите к разделу [#Форматирование раздела](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0) ниже.
+*   [GNU Parted](/index.php/GNU_Parted_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Parted (Русский)"): Создайте раздел FAT32 и в Parted установите/активируйте флаг `boot` (**не** флаг `legacy_boot`) на этом разделе. Перейдите к разделу [#Монтирование раздела](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0) ниже.
 
 ### Разметка дисков MBR
 

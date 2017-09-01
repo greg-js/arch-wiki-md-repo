@@ -1,3 +1,12 @@
+Related articles
+
+*   [Bash/Functions](/index.php/Bash/Functions "Bash/Functions")
+*   [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization")
+*   [Environment variables](/index.php/Environment_variables "Environment variables")
+*   [Readline](/index.php/Readline "Readline")
+*   [Fortune](/index.php/Fortune "Fortune")
+*   [Pkgfile](/index.php/Pkgfile "Pkgfile")
+
 **Bash** (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor: the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
 
 ## Contents
@@ -280,7 +289,7 @@ To allow higher values, you have to use the IGNOREEOF variable.
 For example:
 
 ```
- export IGNOREEOF=100
+export IGNOREEOF=100
 
 ```
 

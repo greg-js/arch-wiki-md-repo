@@ -1,3 +1,11 @@
+Related articles
+
+*   [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")
+*   [NTFS Write Support](/index.php/NTFS_Write_Support "NTFS Write Support")
+*   [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [udev](/index.php/Udev "Udev")
+
 Az [/etc/fstab](https://en.wikipedia.org/wiki/Fstab "wikipedia:Fstab") fájl határozza meg, hogy a lemezek partícióit, más blokkeszközöket, vagy távoli fájlrendszereket hogyan csatolunk a fájlrendszerünkbe.
 
 Minden csatolandó fájlrendszert különálló sor ír le. Ezek a leírások rendszer indításakor dinamikusan [systemd](/index.php/Systemd "Systemd") csatolási egységgé (mount unit) konvertálódnak, valamint akkor, amikor a rendszerkezelőt újratöltjük. Az alapértelmezett beállítások automatikusan ellenőrzik (fsck) és csatolják a fájlrendszereket, mielőtt az azok felcsatolását igénylő szolgáltatások elindulnának. Például a systemd magától megbizonyosodik róla, hogy a távoli fájlrendszerek, mint az [NFS](/index.php/NFS "NFS") vagy a [Samba](/index.php/Samba "Samba") csak azután induljanak, hogy a hálózatunk már működőképes. Ezért a helyi és távoli fájlrendszer-csatolások, melyek az `/etc/fstab`-ban szerepelnek, külső beavatkozás nélkül is működőképesek. Lásd a `man 5 systemd.mount` leírást részletekért.

@@ -1,3 +1,7 @@
+Related articles
+
+*   [NFS/Troubleshooting](/index.php/NFS/Troubleshooting "NFS/Troubleshooting")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"):
 
 	*Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed.*
@@ -551,4 +555,4 @@ There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshootin
 *   HOWTO: [Diskless network boot NFS root](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
 *   [NFS Performance Management](http://publib.boulder.ibm.com/infocenter/pseries/v5r3/index.jsp?topic=/com.ibm.aix.prftungd/doc/prftungd/nfs_perf.htm)
 *   [Microsoft Services for Unix NFS Client info](http://blogs.msdn.com/sfu/archive/2008/04/14/all-well-almost-about-client-for-nfs-configuration-and-performance.aspx)
-*   [NFS on Snow Leopard](https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard)
+*   [NFS on Snow Leopard](https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard) (Dead Link => [Archive.org Mirror](https://web.archive.org/web/20151212160906/https://blogs.oracle.com/jag/entry/nfs_on_snow_leopard))
