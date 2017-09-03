@@ -1,3 +1,11 @@
+Related articles
+
+*   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
+*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
+*   [Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")
+*   [SSH](/index.php/SSH "SSH")
+*   [sftpman](/index.php/Sftpman "Sftpman")
+
 [SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting directories over [SSH](/index.php/SSH "SSH").
 
 ## Contents
@@ -17,6 +25,7 @@
     *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
     *   [5.4 Freezing apps (e.g. Gnome Files, Gedit)](#Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29)
     *   [5.5 fstab mounting issues](#fstab_mounting_issues)
+    *   [5.6 Git doesn't work in a mounted directory](#Git_doesn.27t_work_in_a_mounted_directory)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -287,6 +296,19 @@ To be able to run `mount -av` and see the debug output, remove the following:
  noauto,x-systemd.automount
 
 ```
+
+### Git doesn't work in a mounted directory
+
+When executing some operations in a Git repository which is mounted via SSHFS, you might get the following error:
+
+```
+fatal: cannot update the ref 'HEAD': unable to append to '.git/logs/HEAD': Invalid argument
+
+```
+
+This can be fixed by appending the `-o writeback_cache=no` flag to the sshfs mount command.
+
+This was introduced in sshfs 3.2 and seems to be considered a feature and not a bug. See [FS#55242](https://bugs.archlinux.org/task/55242) and [sshfs#82](https://github.com/libfuse/sshfs/issues/82) for more information.
 
 ## See also
 

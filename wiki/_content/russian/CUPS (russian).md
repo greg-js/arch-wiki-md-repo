@@ -1,4 +1,14 @@
-"*Common UNIX Printing System ([CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS"), общая UNIX система печати) - это кроссплатформенное решение для печати для всех UNIX систем. Оно основано на "Internet Printing Protocol" (IPP, интернет-протокол печати) и предоставляет полный спектр возможностей для печати для большинства Postscript и растровых принтеров. CUPS распространяется под GNU GPL....*"
+Ссылки по теме
+
+*   [CUPS/Printer sharing (Русский)](/index.php/CUPS/Printer_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CUPS/Printer sharing (Русский)")
+*   [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems")
+*   [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting")
+*   [Samba (Русский)](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)")
+*   [LPRng](/index.php/LPRng "LPRng")
+
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS](/index.php/CUPS "CUPS"). Дата последней синхронизации: 19 августа 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS&diff=0&oldid=485933).
+
+	"*Common UNIX Printing System ([CUPS](https://en.wikipedia.org/wiki/ru:Common_UNIX_Printing_System "w:ru:Common UNIX Printing System"), общая UNIX система печати) - это кроссплатформенное решение для печати для всех UNIX систем. Оно основано на "Internet Printing Protocol" (IPP, интернет-протокол печати) и предоставляет полный спектр возможностей для печати для большинства Postscript и растровых принтеров. CUPS распространяется под GNU GPL....*"
 
 Хотя существуют другие пакеты печати, такие как LPRNG, CUPS более популярен и довольно прост в использовании. Это система печати по умолчанию как в Arch Linux, так и во многих других Linux-дистрибутивах.
 
@@ -62,16 +72,13 @@
 
 ## Установка
 
-Вам, скорее всего, потребуются пакеты [cups](https://www.archlinux.org/packages/?name=cups), [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) и [gsfonts](https://www.archlinux.org/packages/?name=gsfonts). [Установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") их можно из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [cups](https://www.archlinux.org/packages/?name=cups).
 
-Если стандартный *cups* не работает, то можно попробовать установить пакет [cups-usblp](https://aur.archlinux.org/packages/cups-usblp/).
+Для печати из приложений GTK3 вам потребуется дополнительно установить пакет [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends).
 
-*   *cups* - собственно пакет CUPS
-*   *ghostscript* - интерпретатор для языка Postscript
-*   *gsfonts* - стандартные Type1 шрифты GhostScript
-*   *hpoj* - при использовании HP Officejet, во избежание проблем, установите этот пакет согласно инструкциям. Для получения дополнительной информации почитайте [обсуждение на launchpad/hplip](http://answers.launchpad.net/hplip/+question/133425)
+Если вы намерены "распечатать" документ PDF, тогда вам необходимо установить пакет [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf). По умолчанию файлы PDF хранятся в `/var/spool/cups-pdf/$USER`. Местоположение можно изменить в `/etc/cups/cups-pdf.conf`.
 
-Если ваша система подключена к сетевому принтеру с использованием протокола samba, или система является сервером печати для Windows-клиентов, установите пакет [samba](https://www.archlinux.org/packages/?name=samba).
+[Включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") службу `org.cups.cupsd.service`.
 
 ### Драйверы принтеров
 

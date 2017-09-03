@@ -29,6 +29,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
 *   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
 *   [27 No suspend on LID closure](#No_suspend_on_LID_closure)
+*   [28 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
 
 ## Shell freezes
 
@@ -356,3 +357,12 @@ GNOME defaults to this behaviour about suspension:
 Currently [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) is not able to modify the behaviour on the second case, when a monitor is connected to the computer. While it can inhibit suspension with no monitor attached.
 
 **Note:** Behaviour on LID closure is controlled also by systemd. See [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
+
+## gnome-shell / gnome-session crashes on session startup
+
+Sometimes `gnome-session` crashes immediately after login. This might be more visible on wayland and it might seem as if every second login attempt fails. The problem can be temporarily worked around by removing the files in `~/.config/gnome-session/saved-session`. A more lasting work-around is to disable the session manager's `auto-save-session` feature:
+
+```
+$ gsettings set org.gnome.SessionManager auto-save-session false
+
+```

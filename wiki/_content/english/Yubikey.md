@@ -82,19 +82,19 @@ The YubiKey is a small USB dongle with one button and an LED to communicate with
 
 One of its strengths is that it can emulate a USB keyboard to send a password (OTP or static password) as text, and thus requires only USB HID drivers found on practically all computers (desktop, mobile, tablet).
 
-Which makes it vulnerable against keyloggers if the `static password` functionality is used. Which is why if possible one should avoid it and try to only use the OneTimePassword OTP, Challenge-Response and CCID Smartcard functionality.
+This also makes it vulnerable to keyloggers if the `static password` functionality is used, which is why if possible one should avoid it and try to only use the OneTimePassword OTP, Challenge-Response and CCID Smartcard functionality.
 
 #### Possible Inputs
 
-It is taking ***INPUTS*** in the form of:
+It takes ***INPUTS*** in the form of:
 
-*   API calls send to the key via the USB interface.
+*   API calls sent to the key via the USB interface.
 *   short button press
 *   long button press
 
 #### Possible Outputs
 
-And transforms these INPUTS into ***OUTPUTS*** in the form of:
+It transforms these INPUTS into ***OUTPUTS*** in the form of:
 
 *   Sending keystroke keycodes (emulating a USB keyboard and typing for you)
     This is used to:
@@ -109,7 +109,7 @@ And transforms these INPUTS into ***OUTPUTS*** in the form of:
 
 ### The Button
 
-The button works by slightly touching. Even sometimes reacts when you are very close, but don't touch yet.
+The button works by slightly touching. Sometimes it even reacts when you are very close, but aren't touching it yet.
 
 #### Effects of pressing the button
 
@@ -144,7 +144,7 @@ Yubikeys support up to 3 different USB connection/transport modes (depending on 
     These slots can have one of the following credentials configured: a [Yubico OTP](https://developers.yubico.com/OTP/) (which is what comes preconfigured in the short press slot on a new key), a static password, a challenge-response credential, an OATH-HOTP credential.
     All this functionality is found in the `ykman slot` commands.
 
-*   CCID mode (`ccid`, short `c`) - this is the subsystem allowing to act as a Smartcard (using CCID protocol). (TODO:explain further)
+*   CCID mode (`ccid`, short `c`) - this is the subsystem allowing the key to act as a Smartcard (using CCID protocol). (TODO:explain further)
 
 #### What does a mode do ?
 
@@ -157,9 +157,9 @@ These modes can be activated/deactivated independently from each other.
 
 #### Which mode is used?
 
-Only one connection mode will be used at one point in time to communicate with the YubiKey.
+Only one connection mode will be used at any given point in time to communicate with the YubiKey.
 
-When you plug your YubiKey one connection mode will be chosen. (TODO:verify) The order of preference is:
+When you plug in your YubiKey one, connection mode will be chosen. (TODO:verify) The order of preference is:
 
 *   If the **CCID mode** is activated, this mode will be chosen.
 *   Otherwise (so CCID deactivated and) if the **U2F mode** is activated, this mode will be chosen.
@@ -215,7 +215,7 @@ The possible messages are:
 *   *slow blinking*: Power/setting up/ready for use (TODO explain)
 *   *rapid blinking*: Error, configuring driver (TODO explain)
 
-If the CCID mode (TODO: CCID only mode???) is turned on, then the key is always slow blinking when you insert it! You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it's ready for use. Mac and Linux systems will keep blinking.
+If the CCID mode (TODO: CCID only mode???) is turned on, then the key is always slowly blinking when you insert it! You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it's ready for use. Mac and Linux systems will keep blinking.
 
 ### The Initial configuration
 
@@ -223,13 +223,13 @@ On a new YubiKey the Yubico OTP is preconfigured on slot 1\.
 
 **Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [[see here](https://forum.yubico.com/viewtopic.php?f=16&t=1960)].
 
-Meaning: Being the security-minded person one could think that it is a good idea to reset configuration slot 1 to a new OTP. But then a "VV" prefix in your credentials must be used. Whereas the factory credentials on your Yubikey use a "CC" prefix!
+Meaning: Being a security-minded person one could think that it is a good idea to reset configuration slot 1 to a new OTP. But then a "VV" prefix in your credentials must be used. Whereas the factory credentials on your Yubikey use a "CC" prefix!
 
 You can upload a "VV" credential using the Yubico personalization tool GUI or manually upload the new AES key to the [upload.yubico.com website] in order to regain the same functionality than with the original factory configuration.
 
 VV credentials are not less secure than CC. However some services may choose to trust only CC credentials as they believe that the user process is more prone to security vulnerabilities.
 
-This is, because you could have maleware on your machine or someone intercepting your key when sending it to the YubiCloud. Despite this scenario being extremely unlikely to happen, it needs consideration from service providers.
+This is because you could have maleware on your machine or someone intercepting your key when sending it to the YubiCloud. Despite this scenario being extremely unlikely to happen, it needs consideration from service providers.
 
 ### Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"
 
@@ -245,7 +245,7 @@ The 16 characters used in the ModHex alphabet are: `c,b,d,e,f,g,h,i,j,k,l,n,r,t,
 
 ### Yubico OTP mode
 
-The Yubico OTP mode is AES symmetric key based. On a new YubiKey the Yubico OTP is preconfigured on slot 1\. This initial AES symmetric key is stored in the YubiKey and the same AES key is already stored on the Yubico Authentication server. This allows to validate against YubiCloud, meaning the use of Yubico OTP in combination with the Yubico Forum website for instance or on [demo.yubico.com](/index.php?title=Demo.yubico.com&action=edit&redlink=1 "Demo.yubico.com (page does not exist)")).
+The Yubico OTP mode is AES symmetric key based. On a new YubiKey the Yubico OTP is preconfigured on slot 1\. This initial AES symmetric key is stored in the YubiKey and the same AES key is already stored on the Yubico Authentication server. This allows validating against YubiCloud, meaning the use of Yubico OTP in combination with the Yubico Forum website for instance or on [demo.yubico.com](/index.php?title=Demo.yubico.com&action=edit&redlink=1 "Demo.yubico.com (page does not exist)")).
 
 The initial configuration and AES key stored in slot 1 can of course be overwritten.
 
@@ -255,7 +255,7 @@ The initial configuration and AES key stored in slot 1 can of course be overwrit
 
 Yubikey's authentication protocol is based on [symmetric cryptography](https://en.wikipedia.org/wiki/Symmetric_cryptography "wikipedia:Symmetric cryptography"). More specifically, each Yubikey contains a 128-bit [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") key unique to that device. It is used to encrypt a token made of different fields such as the ID of the key, a counter, a random number, etc. The OTP is made from concatenating the ID of the key with this encrypted token.
 
-This OTP is sent to the target system, to which we want to authenticate. This target system asks a validation server if the OTP is good. The validation server has a mapping of Yubikey IDs -> AES key. Using the key ID in the OTP, it can thus retrieve the AES key and decrypt the other part of the OTP. If it looks OK (plain-text ID and encrypted ID are the same, the counter is bigger than the last seen one to prevent [replay attacks](https://en.wikipedia.org/wiki/Replay_attack "wikipedia:Replay attack")...), then authentication is successful.
+This OTP is sent to the target system to which we want to authenticate. This target system asks a validation server if the OTP is good. The validation server has a mapping of Yubikey IDs -> AES key. Using the key ID in the OTP, it can thus retrieve the AES key and decrypt the other part of the OTP. If it looks OK (plain-text ID and encrypted ID are the same, the counter is bigger than the last seen one to prevent [replay attacks](https://en.wikipedia.org/wiki/Replay_attack "wikipedia:Replay attack")...), then authentication is successful.
 
 The validation server sends that authentication status back to the target system, which grants access or not based on that response.
 

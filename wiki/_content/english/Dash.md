@@ -1,10 +1,10 @@
 [DASH (Debian Almquist shell)](https://en.wikipedia.org/wiki/Debian_Almquist_shell "wikipedia:Debian Almquist shell") is a modern POSIX-compliant implementation of [`/bin/sh` (sh, Bourne shell)](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
-DASH is not [Bash](/index.php/Bash "Bash") compatible, it's the other way around.
+DASH is not [Bash](/index.php/Bash "Bash") compatible, but Bash tries to be mostly compatible with POSIX, and thus Dash.
 
 DASH shines in:
 
-*   Speed of execution. As simple, roughly [4x times faster](https://unix.stackexchange.com/questions/148035/is-dash-or-some-other-shell-faster-than-bash) than Bash and others.
+*   Speed of execution. Roughly [4x times faster](https://unix.stackexchange.com/questions/148035/is-dash-or-some-other-shell-faster-than-bash) than Bash and others.
 *   Very limited resources (disc space, RAM or CPU). As minimalistic - much smaller (134.1 kB vs 6.5 MB installed, 13 kSLOC vs 176 kSLOC) then Bash and others.
 *   Security. Long ago established tiny project, with simple and long ago established functionality. While it is well [alive](https://git.kernel.org/cgit/utils/dash/dash.git/log/) project with [many](https://git.kernel.org/cgit/utils/dash/dash.git/stats/?period=q&ofs=10) developers. Which mean small attack surface, while many eyes on code.
 *   If classic `/bin/sh` needed only.
@@ -39,9 +39,11 @@ Install [checkbashisms](https://aur.archlinux.org/packages/checkbashisms/) from 
 *   Installed scripts with a `#!/bin/sh` shebang:
 
 ```
-$ checkbashisms -f -p $(grep -IrlE '^#! ?(/usr)?/bin/(env )?sh' /usr/bin)
+$ checkbashisms -f -p `egrep -l -r -I '^#![	 ]*(/usr)?/bin/(env[	 ]*)?sh' /usr/bin`
 
 ```
+
+*   `pacman -Qlq` can be used to list all pacman-installed files.
 
 ### Relinking /bin/sh
 

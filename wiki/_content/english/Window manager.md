@@ -1,3 +1,12 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [xinitrc](/index.php/Xinitrc "Xinitrc")
+*   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
+
 A [window manager](https://en.wikipedia.org/wiki/Window_manager "wikipedia:Window manager") (WM) is system software that controls the placement and appearance of windows within a windowing system in a graphical user interface (GUI). It can be part of a [desktop environment](/index.php/Desktop_environment "Desktop environment") (DE) or be used standalone.
 
 ## Contents
@@ -134,7 +143,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[MWM](https://en.wikipedia.org/wiki/Motif_Window_Manager "wikipedia:Motif Window Manager")** — The Motif Window Manager (MWM) is an X window manager based on the Motif toolkit.
 
-	[http://sourceforge.net/projects/motif/](http://sourceforge.net/projects/motif/) || [openmotif](https://www.archlinux.org/packages/?name=openmotif), [lesstif](https://www.archlinux.org/packages/?name=lesstif)
+	[http://sourceforge.net/projects/motif/](http://sourceforge.net/projects/motif/) || [openmotif](https://www.archlinux.org/packages/?name=openmotif)
 
 *   **[Openbox](/index.php/Openbox "Openbox")** — Highly configurable, next generation window manager with extensive standards support. The *box visual style is well known for its minimalistic appearance. Openbox uses the *box visual style, while providing a greater number of options for theme developers than previous *box implementations. The theme documentation describes the full range of options found in Openbox themes.
 

@@ -86,11 +86,12 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.14 jrpi](#jrpi)
         *   [5.1.15 linux-kalterfx](#linux-kalterfx)
         *   [5.1.16 markzz](#markzz)
-        *   [5.1.17 qt-debug](#qt-debug)
-        *   [5.1.18 quarry](#quarry)
-        *   [5.1.19 siosm-aur](#siosm-aur)
-        *   [5.1.20 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.21 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.17 mikelpint](#mikelpint)
+        *   [5.1.18 qt-debug](#qt-debug)
+        *   [5.1.19 quarry](#quarry)
+        *   [5.1.20 siosm-aur](#siosm-aur)
+        *   [5.1.21 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.22 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -895,6 +896,18 @@ Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
 ```
 [markzz]
 Server = https://repo.markzz.com/arch/$repo/$arch
+
+```
+
+#### mikelpint
+
+*   **Maintainer:** [Mikel Pintado (Mikelpint)](/index.php/User:Mikelpint "User:Mikelpint")
+*   **Description:** Packages that mikelpint maintains in the AUR.
+*   **Key ID:** 5CA78FC65B189E2B
+
+```
+[mikelpint]
+Server = https://mikelpint.github.io/archlinux
 
 ```
 

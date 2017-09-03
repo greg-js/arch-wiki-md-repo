@@ -13,7 +13,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [1.1 Network printers](#Network_printers)
     *   [1.2 Custom drivers](#Custom_drivers)
         *   [1.2.1 Manually installing from the RPM packages](#Manually_installing_from_the_RPM_packages)
-    *   [1.3 Multiple Copy Problem](#Multiple_Copy_Problem)
+    *   [1.3 Updating the firmware](#Updating_the_firmware)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
@@ -120,9 +120,7 @@ Brother provides custom drivers on their website, either in source tarball, rpm,
 
 Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should automatically install and configure your brother printer.
 
-### Multiple Copy Problem
-
-Sometimes when using the latest drivers, the printer will print multiple copies (for instance a MFC-9330CDW printed 10 copies). The solution is to update the firmware (there is a windows tool, but it didn't work for me).
+### Updating the firmware
 
 [Install](/index.php/Install "Install") [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) and run:
 

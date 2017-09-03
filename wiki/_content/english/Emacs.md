@@ -36,6 +36,7 @@
     *   [7.1 mg](#mg)
     *   [7.2 zile](#zile)
     *   [7.3 uemacs](#uemacs)
+    *   [7.4 remacs](#remacs)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -704,6 +705,10 @@ The latest upstream tarballs can be found in official GNU [mirrors](http://ftp.s
 **uemacs** is a "Micro-emacs" version customized by Linus Torvalds . Available as [uemacs-git](https://aur.archlinux.org/packages/uemacs-git/) in the [AUR](/index.php/AUR "AUR").
 
 The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/).
+
+### remacs
+
+**remacs** is a community-driven port of Emacs to Rust. Available as [remacs-git](https://aur.archlinux.org/packages/remacs-git/) in the [AUR](/index.php/AUR "AUR").
 
 ## See also
 

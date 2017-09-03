@@ -8,18 +8,19 @@
     *   [1.1 Q) Arch Linux 是什么？](#Q.29_Arch_Linux_.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
     *   [1.2 Q) 为什么我不想用Arch？](#Q.29_.E4.B8.BA.E4.BB.80.E4.B9.88.E6.88.91.E4.B8.8D.E6.83.B3.E7.94.A8Arch.EF.BC.9F)
     *   [1.3 Q) Arch Linux 支持什么架构?](#Q.29_Arch_Linux_.E6.94.AF.E6.8C.81.E4.BB.80.E4.B9.88.E6.9E.B6.E6.9E.84.3F)
-    *   [1.4 Arch Linux 支持 ARM 处理器吗?](#Arch_Linux_.E6.94.AF.E6.8C.81_ARM_.E5.A4.84.E7.90.86.E5.99.A8.E5.90.97.3F)
-    *   [1.5 我是一个彻头彻尾的Linux新手，我应该用Arch吗？](#.E6.88.91.E6.98.AF.E4.B8.80.E4.B8.AA.E5.BD.BB.E5.A4.B4.E5.BD.BB.E5.B0.BE.E7.9A.84Linux.E6.96.B0.E6.89.8B.EF.BC.8C.E6.88.91.E5.BA.94.E8.AF.A5.E7.94.A8Arch.E5.90.97.EF.BC.9F)
-    *   [1.6 Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些TMD死长死长的手册。](#Q.29_Arch.E7.9A.84.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE.E5.8D.81.E5.88.86.E9.BA.BB.E7.83.A6.EF.BC.8C.E7.A4.BE.E5.8C.BA.E7.9A.84.E4.BA.BA.E6.80.BB.E6.98.AF.E8.AE.A9.E6.88.91.E5.8E.BB.E8.AF.BB.E9.82.A3.E4.BA.9BTMD.E6.AD.BB.E9.95.BF.E6.AD.BB.E9.95.BF.E7.9A.84.E6.89.8B.E5.86.8C.E3.80.82)
-    *   [1.7 Q) Arch是为服务器、桌面还是工作站设计的？](#Q.29_Arch.E6.98.AF.E4.B8.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E3.80.81.E6.A1.8C.E9.9D.A2.E8.BF.98.E6.98.AF.E5.B7.A5.E4.BD.9C.E7.AB.99.E8.AE.BE.E8.AE.A1.E7.9A.84.EF.BC.9F)
-    *   [1.8 我太喜欢Arch了，希望开发团队实现一个新功能](#.E6.88.91.E5.A4.AA.E5.96.9C.E6.AC.A2Arch.E4.BA.86.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.BC.80.E5.8F.91.E5.9B.A2.E9.98.9F.E5.AE.9E.E7.8E.B0.E4.B8.80.E4.B8.AA.E6.96.B0.E5.8A.9F.E8.83.BD)
-    *   [1.9 Q) 什么时候发布新版本？](#Q.29_.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E5.8F.91.E5.B8.83.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.9F)
-    *   [1.10 Q) Arch Linux 是否稳定？会不会经常坏掉？](#Q.29_Arch_Linux_.E6.98.AF.E5.90.A6.E7.A8.B3.E5.AE.9A.EF.BC.9F.E4.BC.9A.E4.B8.8D.E4.BC.9A.E7.BB.8F.E5.B8.B8.E5.9D.8F.E6.8E.89.EF.BC.9F)
-    *   [1.11 Q) Arch需要更多曝光（比如广告）。](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E6.9B.9D.E5.85.89.EF.BC.88.E6.AF.94.E5.A6.82.E5.B9.BF.E5.91.8A.EF.BC.89.E3.80.82)
-    *   [1.12 Q) Arch需要更多开发者](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E5.BC.80.E5.8F.91.E8.80.85)
-    *   [1.13 Q) 为什么Arch下网速比其他系统慢？](#Q.29_.E4.B8.BA.E4.BB.80.E4.B9.88Arch.E4.B8.8B.E7.BD.91.E9.80.9F.E6.AF.94.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E6.85.A2.EF.BC.9F)
-    *   [1.14 Q) Arch为什么用了我的所有内存？](#Q.29_Arch.E4.B8.BA.E4.BB.80.E4.B9.88.E7.94.A8.E4.BA.86.E6.88.91.E7.9A.84.E6.89.80.E6.9C.89.E5.86.85.E5.AD.98.EF.BC.9F)
-    *   [1.15 Q) 我的磁盘空间被什么东西占用了？](#Q.29_.E6.88.91.E7.9A.84.E7.A3.81.E7.9B.98.E7.A9.BA.E9.97.B4.E8.A2.AB.E4.BB.80.E4.B9.88.E4.B8.9C.E8.A5.BF.E5.8D.A0.E7.94.A8.E4.BA.86.EF.BC.9F)
+    *   [1.4 Arch 遵循 FHS 吗?](#Arch_.E9.81.B5.E5.BE.AA_FHS_.E5.90.97.3F)
+    *   [1.5 Arch Linux 支持 ARM 处理器吗?](#Arch_Linux_.E6.94.AF.E6.8C.81_ARM_.E5.A4.84.E7.90.86.E5.99.A8.E5.90.97.3F)
+    *   [1.6 我是一个彻头彻尾的Linux新手，我应该用Arch吗？](#.E6.88.91.E6.98.AF.E4.B8.80.E4.B8.AA.E5.BD.BB.E5.A4.B4.E5.BD.BB.E5.B0.BE.E7.9A.84Linux.E6.96.B0.E6.89.8B.EF.BC.8C.E6.88.91.E5.BA.94.E8.AF.A5.E7.94.A8Arch.E5.90.97.EF.BC.9F)
+    *   [1.7 Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些TMD死长死长的手册。](#Q.29_Arch.E7.9A.84.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE.E5.8D.81.E5.88.86.E9.BA.BB.E7.83.A6.EF.BC.8C.E7.A4.BE.E5.8C.BA.E7.9A.84.E4.BA.BA.E6.80.BB.E6.98.AF.E8.AE.A9.E6.88.91.E5.8E.BB.E8.AF.BB.E9.82.A3.E4.BA.9BTMD.E6.AD.BB.E9.95.BF.E6.AD.BB.E9.95.BF.E7.9A.84.E6.89.8B.E5.86.8C.E3.80.82)
+    *   [1.8 Q) Arch是为服务器、桌面还是工作站设计的？](#Q.29_Arch.E6.98.AF.E4.B8.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E3.80.81.E6.A1.8C.E9.9D.A2.E8.BF.98.E6.98.AF.E5.B7.A5.E4.BD.9C.E7.AB.99.E8.AE.BE.E8.AE.A1.E7.9A.84.EF.BC.9F)
+    *   [1.9 我太喜欢Arch了，希望开发团队实现一个新功能](#.E6.88.91.E5.A4.AA.E5.96.9C.E6.AC.A2Arch.E4.BA.86.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.BC.80.E5.8F.91.E5.9B.A2.E9.98.9F.E5.AE.9E.E7.8E.B0.E4.B8.80.E4.B8.AA.E6.96.B0.E5.8A.9F.E8.83.BD)
+    *   [1.10 Q) 什么时候发布新版本？](#Q.29_.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E5.8F.91.E5.B8.83.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.9F)
+    *   [1.11 Q) Arch Linux 是否稳定？会不会经常坏掉？](#Q.29_Arch_Linux_.E6.98.AF.E5.90.A6.E7.A8.B3.E5.AE.9A.EF.BC.9F.E4.BC.9A.E4.B8.8D.E4.BC.9A.E7.BB.8F.E5.B8.B8.E5.9D.8F.E6.8E.89.EF.BC.9F)
+    *   [1.12 Q) Arch需要更多曝光（比如广告）。](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E6.9B.9D.E5.85.89.EF.BC.88.E6.AF.94.E5.A6.82.E5.B9.BF.E5.91.8A.EF.BC.89.E3.80.82)
+    *   [1.13 Q) Arch需要更多开发者](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E5.BC.80.E5.8F.91.E8.80.85)
+    *   [1.14 Q) 为什么Arch下网速比其他系统慢？](#Q.29_.E4.B8.BA.E4.BB.80.E4.B9.88Arch.E4.B8.8B.E7.BD.91.E9.80.9F.E6.AF.94.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E6.85.A2.EF.BC.9F)
+    *   [1.15 Q) Arch为什么用了我的所有内存？](#Q.29_Arch.E4.B8.BA.E4.BB.80.E4.B9.88.E7.94.A8.E4.BA.86.E6.88.91.E7.9A.84.E6.89.80.E6.9C.89.E5.86.85.E5.AD.98.EF.BC.9F)
+    *   [1.16 Q) 我的磁盘空间被什么东西占用了？](#Q.29_.E6.88.91.E7.9A.84.E7.A3.81.E7.9B.98.E7.A9.BA.E9.97.B4.E8.A2.AB.E4.BB.80.E4.B9.88.E4.B8.9C.E8.A5.BF.E5.8D.A0.E7.94.A8.E4.BA.86.EF.BC.9F)
 *   [2 软件包管理](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AE.A1.E7.90.86)
     *   [2.1 Q) 那个啥啥程序在什么软件包里面？](#Q.29_.E9.82.A3.E4.B8.AA.E5.95.A5.E5.95.A5.E7.A8.8B.E5.BA.8F.E5.9C.A8.E4.BB.80.E4.B9.88.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.87.8C.E9.9D.A2.EF.BC.9F)
     *   [2.2 Q) 我发现了某个软件包的错误，该怎么办？](#Q.29_.E6.88.91.E5.8F.91.E7.8E.B0.E4.BA.86.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E9.94.99.E8.AF.AF.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
@@ -69,6 +70,10 @@
 ### Q) Arch Linux 支持什么架构?
 
 Arch Linux 现在只支持 x86_64 (有时称为amd64) 架构，[对 i686 架构的支持将逐渐终结](https://www.archlinux.org/news/phasing-out-i686-support/)，如果你仍在使用 i686 版本，请参阅 [#我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
+
+### Arch 遵循 [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html) 吗?
+
+Arch Linux 遵循适用于 [systemd](/index.php/Systemd "Systemd") 服务管理器的文件系统架构，[file-hierarchy(7)](http://man7.org/linux/man-pages/man7/file-hierarchy.7.html) 包含了每个文件夹的解释和设计。 `/bin`, `/sbin` 和 `/usr/sbin` 现在是 `/usr/bin` 的符号链接，`/lib` (以及 `/lib64`) 是 `/usr/lib` 的符号链接。
 
 ### Arch Linux 支持 ARM 处理器吗?
 

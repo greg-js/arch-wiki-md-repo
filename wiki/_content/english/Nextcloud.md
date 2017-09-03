@@ -1,3 +1,12 @@
+Related articles
+
+*   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
+*   [LAMP](/index.php/LAMP "LAMP")
+*   [LEMP](/index.php/LEMP "LEMP")
+*   [Nginx](/index.php/Nginx "Nginx")
+*   [OpenSSL](/index.php/OpenSSL "OpenSSL")
+*   [WebDAV](/index.php/WebDAV "WebDAV")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
 	Nextcloud is a suite of client-server software for creating file hosting services and using them.
@@ -48,6 +57,7 @@ For differences between Nextcloud and ownCloud see [wikipedia:Nextcloud#Differen
     *   [8.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
     *   [8.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
     *   [8.11 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
+    *   [8.12 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
 *   [9 Tips and tricks](#Tips_and_tricks)
     *   [9.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [9.2 Docker](#Docker)
@@ -761,6 +771,18 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
 ### "Reading from keychain failed with error: 'No keychain service available'"
 
 Can be fixed for Gnome by installing the following 2 packages, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). Or the following for KDE, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [qtkeychain](https://www.archlinux.org/packages/?name=qtkeychain).
+
+### FolderSync: "Method Not Allowed"
+
+FolderSync needs access to `/owncloud/remote.php/webdav`, so you could create another alias for owncloud in your `/etc/httpd/conf/extra/nextcloud.conf`
+
+```
+  <IfModule mod_alias.c>
+    Alias /nextcloud /usr/share/webapps/nextcloud/
+    Alias /owncloud /usr/share/webapps/nextcloud/
+  </IfModule>
+
+```
 
 ## Tips and tricks
 

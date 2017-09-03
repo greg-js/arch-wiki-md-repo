@@ -31,9 +31,12 @@ See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
     *   [9.4 Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader)
     *   [9.5 Known limitations](#Known_limitations)
 *   [10 Run a Windows partition in VirtualBox](#Run_a_Windows_partition_in_VirtualBox)
-    *   [10.1 Configure udev to give VirtualBox access to Windows partitions](#Configure_udev_to_give_VirtualBox_access_to_Windows_partitions)
-    *   [10.2 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
-    *   [10.3 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
+    *   [10.1 Configure udev to give VirtualBox raw access to Windows partitions](#Configure_udev_to_give_VirtualBox_raw_access_to_Windows_partitions)
+    *   [10.2 VirtualBox configuration](#VirtualBox_configuration)
+        *   [10.2.1 Create virtual disk image files](#Create_virtual_disk_image_files)
+        *   [10.2.2 Attach virtual disk images to the VM](#Attach_virtual_disk_images_to_the_VM)
+    *   [10.3 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
+    *   [10.4 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
 
 ## Import/export VirtualBox virtual machines from/to other hypervisors
 
@@ -491,7 +494,74 @@ In some cases, it is useful to be able to [dual boot with Windows](/index.php/Du
 
 **Tip:** It will be useful to have the [Arch install ISO](https://www.archlinux.org/download/) readily available, as it will be used the configure the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") in the VM. It is also worth having access to Windows installation media (such as the [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO)) in case the Windows partition is corrupted.
 
-### Configure udev to give VirtualBox access to Windows partitions
+### Configure udev to give VirtualBox raw access to Windows partitions
+
+VirtualBox must have [raw disk access](https://www.virtualbox.org/manual/ch09.html#rawdisk) in order to run a Windows partition. Normally, this would require VirtualBox to be run with full root privileges, but [udev](/index.php/Udev "Udev") can be configured to restrict access to certain partitions. One convenient way to do this assign all Windows-related partitions to the *vboxusers* group, which can be done with the following udev rules:
+
+**Note:** The UUIDs in these rules correspond to particular [GPT partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). In this case, the UUIDs correspond to all [Microsoft Reserved](https://en.wikipedia.org/wiki/Microsoft_Reserved_Partition "wikipedia:Microsoft Reserved Partition") (*msftres*) and [Microsoft basic data](https://en.wikipedia.org/wiki/Microsoft_basic_data_partition "wikipedia:Microsoft basic data partition") (*msftdata*) partitions.
+ `/etc/udev/rules.d/99-vbox.rules` 
+```
+# Rules to give VirtualBox users raw access to Windows partitions
+
+# Microsoft Reserved partitions (msftres)
+SUBSYSTEM=="block", ENV{ID_PART_ENTRY_TYPE}=="e3c9e316-0b5c-4db8-817d-f92df00215ae", GROUP="vboxusers"
+
+# Windows partitions (msftdata)
+SUBSYSTEM=="block", ENV{ID_PART_ENTRY_TYPE}=="ebd0a0a2-b9e5-4433-87c0-68b6b72699c7", GROUP="vboxusers"
+
+```
+
+**Tip:** Useful udev environment variables and attributes corresponding to a particular partition can be found by running `udevadm info /dev/*sdXX*`.
+
+### VirtualBox configuration
+
+A VirtualBox VM must be manually created with a custom configuration.
+
+**Note:** Do not add a virtual disk during the initial creation of the VM.
+
+Configure the VM with the following settings:
+
+*   System
+    *   Motherboard
+        *   *Enable I/O APIC*
+        *   *Enable EFI*
+        *   *Hardware Clock in UTC Time*
+    *   Acceleration
+        *   Paravirtualization Interface: *Hyper-V*
+        *   *Enable VT-x/AMD-V*
+        *   *Enable Nested Paging*
+*   Display > Screen > Acceleration
+    *   *Enable 3D Acceleration*
+    *   *Enable 2D Acceleration*
+*   USB > *Enable USB Controller*
+
+**Note:** The *Hyper-V* setting is not required in order for the system to operate correctly, but it may help avoid licensing issues.
+
+#### Create virtual disk image files
+
+To access the Windows partitions, create a [raw VMDK file](https://www.virtualbox.org/manual/ch09.html#rawdisk) pointing to the relevant Windows partitions and set the ownership:
+
+```
+# vboxmanage internalcommands createrawvmdk -filename */path/to/vm/folder/windows.vmdk* -rawdisk /dev/*sdx* -partitions *res*,*data* -relative
+# chown *user*:*group* */path/to/vm/folder/windows.vmdk*
+```
+
+**Note:** When creating the raw VMDK file...
+
+*   Root access because VirtualBox must read the partition table
+*   The `-rawdisk` parameter should point to a block device, not a partition
+*   *res* is the partition number of the Microsoft Reserved Partition
+*   *data* is the partition number of the Microsoft basic data partition (i.e. the Windows installation)
+*   An extra file (*windows-pt.vmdk*) will also be created
+*   *windows.vmdk* will need to be re-created if the partition table is changed
+
+After creating the image, change the ownership so that the desired user/group has access:
+
+In order to boot the virtual machine in UEFI mode, a dedicated virtual disk for the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must be created:
+
+ `$ vboxmanage createmedium disk --filename */path/to/vm/folder/esp.vmdk* --size 512 --format VMDK` 
+
+#### Attach virtual disk images to the VM
 
 ### Set up a separate ESP in VirtualBox
 

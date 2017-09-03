@@ -66,23 +66,69 @@ See [Security#Kernel hardening](/index.php/Security#Kernel_hardening "Security")
 ### Improving performance
 
 ```
+# The maximum size of the receive queue.
+# The received frames will be stored in this queue after taking them from the ring buffer on the NIC.
+# Use high value for high speed cards to prevent loosing packets.
+# In real time application like SIP router, long queue must be assigned with high speed CPU otherwise the data in the queue will be out of date (old).
 net.core.netdev_max_backlog = 65536
+
+```
+
+```
+# The maximum ancillary buffer size allowed per socket.
+# Ancillary data is a sequence of struct cmsghdr structures with appended data.
 net.core.optmem_max = 65536
+
+```
+
+```
+# The upper limit on the value of the backlog parameter passed to the listen function.
+# Setting to higher values is only needed on a single highloaded server where new connection rate is high/bursty
 net.core.somaxconn = 16384
+
+```
+
+```
+# The default and maximum amount for the receive/send socket memory
+# By default the Linux network stack is not configured for high speed large file transfer across WAN links.
+# This is done to save memory resources.
+# You can easily tune Linux network stack by increasing network buffers size for high-speed networks that connect server systems to handle more network packets.
 net.core.rmem_default = 1048576
 net.core.wmem_default = 1048576
 net.core.rmem_max = 16777216
 net.core.wmem_max = 16777216
-
-```
-
-```
 net.ipv4.tcp_rmem = 4096 87380 16777216
 net.ipv4.tcp_wmem = 4096 65536 16777216
-net.ipv4.tcp_ecn = 0
+net.ipv4.udp_rmem_min = 16384
+net.ipv4.udp_wmem_min = 16384
+
+```
+
+```
+# An extension to the transmission control protocol (TCP) that helps reduce network latency by enabling data to be exchanged during the sender’s initial TCP SYN.
+# If both of your server and client are deployed on Linux 3.7.1 or higher, you can turn on fast_open for lower latency
 net.ipv4.tcp_fastopen = 3
+
+```
+
+```
+# The maximum queue length of pending connections 'Waiting Acknowledgment'
+# In the event of a synflood DOS attack, this queue can fill up pretty quickly, at which point tcp_syncookies will kick in allowing your system to continue to respond to legitimate traffic, and allowing you to gain access to block malicious IPs.
+# If the server suffers from overloads at peak times, you may want to increase this value a little bit.
 net.ipv4.tcp_max_syn_backlog = 65536
+
+```
+
+```
+# the maximum number of sockets in 'TIME_WAIT' state.
+# After reaching this number the system will start destroying the socket in this state.
+# Increase this to prevent simple DOS attacks
 net.ipv4.tcp_max_tw_buckets = 65536
+
+```
+
+```
+# TODO
 net.ipv4.tcp_slow_start_after_idle = 0
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_fin_timeout = 15
@@ -90,12 +136,6 @@ net.ipv4.tcp_keepalive_intvl = 60
 net.ipv4.tcp_keepalive_probes = 5
 net.ipv4.tcp_mtu_probing = 1
 net.ipv4.tcp_timestamps = 0
-
-```
-
-```
-net.ipv4.udp_rmem_min = 16384
-net.ipv4.udp_wmem_min = 16384
 
 ```
 

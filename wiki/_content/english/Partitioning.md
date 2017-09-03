@@ -1,3 +1,14 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [fdisk](/index.php/Fdisk "Fdisk")
+*   [parted](/index.php/Parted "Parted")
+*   [fstab](/index.php/Fstab "Fstab")
+*   [LVM](/index.php/LVM "LVM")
+*   [Swap](/index.php/Swap "Swap")
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
 [Partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "w:Disk partitioning") a hard drive divides the available space into sections that can be accessed independently. An entire drive may be allocated to a single partition, or multiple ones for cases such as dual-booting, maintaining a [swap](/index.php/Swap "Swap") partition, or to logically separate data such as audio and video files.
 
 The required information is stored in a [#Partition table](#Partition_table) scheme such as MBR or GPT.
@@ -227,7 +238,9 @@ parted | sfdisk
 sgdisk
 parted |
 | Graphical | GParted
+gnome-disk-utility
 partitionmanager | GParted
+gnome-disk-utility
 partitionmanager |
 
 **Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
@@ -271,6 +284,10 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 *   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
 
 	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
+
+*   **GNOME Disks** — Graphical tool written in GTK.
+
+	[https://wiki.gnome.org/Apps/Disks](https://wiki.gnome.org/Apps/Disks) || [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility)
 
 *   **KDE Partition Manager** — Graphical tool written in Qt.
 

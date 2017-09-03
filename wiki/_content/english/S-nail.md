@@ -328,8 +328,9 @@ The command `from` is nice for an overview, e.g., `f '@<@arch linux` will print 
 *   `new` marks (a) message(s) unread
 *   `seen` marks (a) message(s) read
 *   `P` prints (a) message(s) with all headers
-*   `p` prints (a) message(s) and all non-ignored headers.
+*   `p` prints (a) message(s) and all non-ignored headers
 *   `show` prints the raw message of content of (a) message(s)
+*   `write` or `w` download messages and attachments in native format to local storage
 
 ### Message composition
 

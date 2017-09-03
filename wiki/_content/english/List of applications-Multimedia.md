@@ -836,6 +836,10 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 #### Subtitles
 
+*   **[Aegisub](https://en.wikipedia.org/wiki/Aegisub "wikipedia:Aegisub")** — Subtitle editor.
+
+	[https://github.com/Aegisub/Aegisub](https://github.com/Aegisub/Aegisub) || [aegisub](https://www.archlinux.org/packages/?name=aegisub)
+
 *   **Gaupol** — Full-featured subtitle editor.
 
 	[http://home.gna.org/gaupol](http://home.gna.org/gaupol) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
@@ -852,13 +856,17 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
 
-*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
-
-	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
-
 *   **Subtitle Composer** — open-source Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form
 
 	[https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer) || [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/)
+
+*   **[Subtitle Edit](https://en.wikipedia.org/wiki/Subtitle_Edit "wikipedia:Subtitle Edit")** — Subtitle editing program. Written in C# using mono.
+
+	[https://github.com/SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit) || [subtitleedit](https://aur.archlinux.org/packages/subtitleedit/)
+
+*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
+
+	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
 
 #### DVD ripping
 

@@ -1,3 +1,13 @@
+Related articles
+
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Official repositories](/index.php/Official_repositories "Official repositories")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+
 [makepkg](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in) is a script to automate the building of packages. The requirements for using the script are a build-capable Unix platform and a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
 *makepkg* is provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package.
@@ -239,17 +249,6 @@ Run the following command in the same directory as the PKGBUILD file to generate
 $ updpkgsums
 
 ```
-
-Beware of Windows-style newlines (`\r
-`). Git replaces those with UNIX-style `
-` newlines in text files, which causes a difference in checksum. If checksum verification fails for your package on the AUR, try stripping the `\r`s from each file with
-
-```
-$ sed -i 's/\r//g' <filename>
-
-```
-
-before calculating the checksums.
 
 ### Use other compression algorithms
 

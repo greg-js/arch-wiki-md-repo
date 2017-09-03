@@ -376,11 +376,9 @@ ESSID="Wi-Fi network ESSID (not connection name)"
 
 interface=$1 status=$2
 case $status in
-  up)
+  up|vpn-down)
     if iwgetid | grep -qs ":\"$ESSID\""; then
-      if ! nmcli con show --active | grep "$VPN_NAME"; then
-        nmcli con up id "$VPN_NAME"
-      fi
+      nmcli con up id "$VPN_NAME"
     fi
     ;;
   down)
@@ -388,12 +386,6 @@ case $status in
       if nmcli con show --active | grep "$VPN_NAME"; then
         nmcli con down id "$VPN_NAME"
       fi
-    fi
-    ;;
-  vpn-down)
-    if iwgetid | grep -qs ":\"$ESSID\""; then
-      # Replace here username by your user name in order to get a notification when the VPN is down
-      sudo -u username DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send 'VPN' 'The VPN connection is disabled.' --icon=dialog-warning
     fi
     ;;
 esac

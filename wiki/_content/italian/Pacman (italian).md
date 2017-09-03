@@ -1,3 +1,20 @@
+Articoli correlati
+
+*   [Downgrading Packages (Italiano)](/index.php/Downgrading_Packages_(Italiano) "Downgrading Packages (Italiano)")
+*   [Improve Pacman Performance (Italiano)](/index.php/Improve_Pacman_Performance_(Italiano) "Improve Pacman Performance (Italiano)")
+*   [Pacman GUI Frontends (Italiano)](/index.php/Pacman_GUI_Frontends_(Italiano) "Pacman GUI Frontends (Italiano)")
+*   [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta")
+*   [Pacman Tips (Italiano)](/index.php/Pacman_Tips_(Italiano) "Pacman Tips (Italiano)")
+*   [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing")
+*   [FAQ (Italiano)#Package Management](/index.php/FAQ_(Italiano)#Package_Management "FAQ (Italiano)")
+
+*   [pacman-key (Italiano)](/index.php/Pacman-key_(Italiano) "Pacman-key (Italiano)")
+*   [Pacnew and Pacsave Files (Italiano)](/index.php/Pacnew_and_Pacsave_Files_(Italiano) "Pacnew and Pacsave Files (Italiano)")
+*   [List of Applications/Utilities (Italiano)#Gestori di pacchetti](/index.php/List_of_Applications/Utilities_(Italiano)#Gestori_di_pacchetti "List of Applications/Utilities (Italiano)")
+*   [Arch Build System (Italiano)](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)")
+*   [Official Repositories (Italiano)](/index.php/Official_Repositories_(Italiano) "Official Repositories (Italiano)")
+*   [Arch User Repository (Italiano)](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)")
+
 Il [gestore di pacchetti](https://en.wikipedia.org/wiki/it:Sistema_di_gestione_dei_pacchetti o compilati dall'utente stesso.
 
 Pacman può tenere un sistema aggiornato sincronizzando le liste di pacchetti con il server principale. Questo modello server/client permette all'utente anche di scaricare/installare pacchetti con un semplice comando, completi di tutte le dipendenze richieste.
@@ -133,7 +150,7 @@ Pacman 4 supporta i pacchetti firmati, aggiungendo così un ulteriore livello di
 
 ## Uso
 
-Ciò che segue è solo una piccola parte delle oeprazioni che pacman può eseguire. Per avere altri esempi, consultare [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
+Ciò che segue è solo una piccola parte delle operazioni che pacman può eseguire. Per avere altri esempi, consultare [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
 
 ### Installare pacchetti
 

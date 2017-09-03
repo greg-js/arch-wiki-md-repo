@@ -479,16 +479,13 @@ X11 forwarding is a mechanism that allows graphical interfaces of X11 programs r
 
 On the remote system:
 
-*   [install](/index.php/Pacman#Installing_specific_packages "Pacman") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) and [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) from the [official repositories](/index.php/Official_repositories "Official repositories")
+*   [install](/index.php/Install "Install") the [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) and [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) packages
 *   in `/etc/ssh/ssh**d**_config`:
     *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html))
     *   set `X11Forwarding` to *yes*
 *   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Daemon_management).
 
-On the client side:
-
-*   Install [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) (needed for the `xhost` command)
-*   enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
+On the client side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
 
 **Tip:** You can enable the `ForwardX11Trusted` option (`-Y` switch on the command line) if GUI is drawing badly or you receive errors; this will prevent X11 forwardings from being subjected to the [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) controls. Be sure you have read [the warning](#X11_forwarding) at the beginning of this section if you do so.
 

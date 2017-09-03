@@ -261,7 +261,7 @@ An example of a devilspie script setting the transparency of every window to .99
 
 ### Scrolling doesn't work in GTK 3 applications
 
-Try setting the [environment variable](/index.php/Environment_variable "Environment variable") `GDK_CORE_DEVICE_EVENTS`. See [PekWM bug #350](https://www.pekwm.org/projects/pekwm/tasks/350).
+Try setting the [environment variable](/index.php/Environment_variable "Environment variable") `GDK_CORE_DEVICE_EVENTS`. See [PekWM bug #350](https://www.pekwm.org/project/pekwm/tasks/350).
 
 ## See also
 

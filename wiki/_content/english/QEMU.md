@@ -1,3 +1,9 @@
+Related articles
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [Libvirt](/index.php/Libvirt "Libvirt")
+*   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
+
 According to the [QEMU about page](http://wiki.qemu.org/Main_Page), "QEMU is a generic and open source machine emulator and virtualizer."
 
 When used as a machine emulator, QEMU can run OSes and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your x86 PC). By using dynamic translation, it achieves very good performance.
@@ -100,6 +106,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [12.8 libgfapi error message](#libgfapi_error_message)
     *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -1790,6 +1797,29 @@ or some other boot hindering process (e.g. cannot unpack initramfs, cant start s
 ### Windows 7 guest suffers low-quality sound
 
 Using the `hda` audio driver for Windows 7 guest may result in low-quality sound. Changing the audio driver to `ac97` by passing the `-soundhw ac97` arguments to QEMU and installing the AC97 driver from [Realtek AC'97 Audio Codecs](http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false) in the guest may solve the problem. See [Red Hat Bugzilla – Bug 1176761](https://bugzilla.redhat.com/show_bug.cgi?id=1176761#c16) for more information.
+
+### Could not access KVM kernel module: Permission denied
+
+If you encounter the following error:
+
+```
+ libvirtError: internal error: process exited while connecting to monitor: Could not access KVM kernel module: Permission denied failed to initialize KVM: Permission denied
+
+```
+
+Systemd 234 assign it a dynamic id to group kvm (see [bug](https://bugs.archlinux.org/task/54943)). A workground for avoid this error, you need edit the file /etc/libvirt/qemu.conf and change the line:
+
+```
+ group = "78"
+
+```
+
+to
+
+```
+ group = "kvm"
+
+```
 
 ## See also
 

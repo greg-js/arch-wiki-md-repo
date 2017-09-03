@@ -1,3 +1,7 @@
+Related articles
+
+*   [Apache OpenOffice](/index.php/Apache_OpenOffice "Apache OpenOffice")
+
 From [Home - LibreOffice](https://www.libreoffice.org/):
 
 	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base.*
@@ -157,7 +161,7 @@ $ echo "Xft.lcdfilter: lcddefault" | xrdb -merge
 
 ```
 
-To make the change persistent, add `Xft.lcdfilter: lcddefault` to your `~/.Xresources` file, and make sure to run `$ xrdb -merge ~/.Xresources` ([source](https://bugs.launchpad.net/ubuntu/+source/openoffice.org/+bug/271283/comments/19). See [X resources](/index.php/X_resources "X resources") for more details.
+To make the change persistent, add `Xft.lcdfilter: lcddefault` to your `~/.Xresources` file, and make sure to run `$ xrdb -merge ~/.Xresources` ([source](https://bugs.launchpad.net/ubuntu/+source/cairo/+bug/271283/comments/23)). See [X resources](/index.php/X_resources "X resources") for more details.
 
 If this does not work, you can also try adding `Xft.lcdfilter: lcddefault` to your `~/.Xdefaults`. If you do not have this file, you will have to create it.
 
@@ -172,7 +176,7 @@ export SAL_ENABLE_FILE_LOCKING
 
 ```
 
-To avoid overwriting on update you can copy `/usr/lib/libreoffice/program/soffice` in `/usr/local/bin`. Original post [here](http://www.crazysquirrel.com/computing/debian/bugs/openoffice-over-nfs.jspx).
+To avoid overwriting on update you can copy `/usr/lib/libreoffice/program/soffice` in `/usr/local/bin`. Original post [here](http://195.110.9.173/computing/debian/bugs/openoffice-over-nfs.jspx).
 
 ### LibreOffice does not detect my certificates
 
@@ -209,7 +213,7 @@ Try either of the following workarounds:
 
 ### Media support
 
-If embedded videos are just gray boxes, make sure to have installed the [GStreamer plugins](/index.php/GStreamer#Current_version_plugins "GStreamer") required.
+If embedded videos are just gray boxes, make sure to have installed the [GStreamer plugins](/index.php/GStreamer#Installation "GStreamer") required.
 
 ### Default paper size in Writer and Draw
 

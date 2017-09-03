@@ -1,3 +1,8 @@
+Related articles
+
+*   [CUPS](/index.php/CUPS "CUPS")
+*   [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems")
+
 This article covers all non-specific (ie, not related to any one printer) troubleshooting of CUPS and printing drivers (but not problems related to printer sharing), including methods of determining the exact nature of the problem, and of solving the identified problem.
 
 ## Contents
@@ -49,6 +54,8 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [6.8 Cannot print from LibreOffice](#Cannot_print_from_LibreOffice)
     *   [6.9 Printer output shifted](#Printer_output_shifted)
     *   [6.10 Printer becomes stuck after a problem](#Printer_becomes_stuck_after_a_problem)
+    *   [6.11 Samsung: URF ERROR - Incomplete Session by time out](#Samsung:_URF_ERROR_-_Incomplete_Session_by_time_out)
+    *   [6.12 Brother: Printer prints multiple copies](#Brother:_Printer_prints_multiple_copies)
 
 ## Introduction
 
@@ -415,3 +422,13 @@ This seems to be caused by the wrong page size being set in [CUPS](/index.php/CU
 ### Printer becomes stuck after a problem
 
 When an issue arises during printing, the printer in CUPS may become unresponsive. `lpq` reports that the printer `is not ready`. It can be reactivated using `cupsenable`. To automatically have CUPS reactivate the printer, change [ErrorPolicy](https://www.cups.org/doc/man-cupsd.conf.html?TOPIC=Man+Pages#ErrorPolicy) from the default `stop-printer` to `retry-this-job`.
+
+### Samsung: URF ERROR - Incomplete Session by time out
+
+This error is usually encountered when printing files over the network through IPP to a Samsung printer, and is solved by using the [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) package.
+
+**Note:** The corresponding error code 11-1112 corresponds to an internal wiring problem with the printer, so contacting Samsung's tech support is futile.
+
+### Brother: Printer prints multiple copies
+
+Sometimes the printer will print multiple copies of a document (for instance a MFC-9330CDW printed 10 copies). The solution is to [update the printer firmware](/index.php/CUPS/Printer-specific_problems#Updating_the_firmware "CUPS/Printer-specific problems").

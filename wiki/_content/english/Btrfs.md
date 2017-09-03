@@ -1,3 +1,9 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [Snapper](/index.php/Snapper "Snapper")
+*   [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system")
+
 From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs"):
 
 	Btrfs (B-tree file system, pronounced as "butter F S", "better F S", "b-tree F S", or simply by spelling it out) is a file system based on the copy-on-write (COW) principle, initially designed at Oracle Corporation for use in Linux. The development of Btrfs began in 2007, and by August 2014, the file system's on-disk format has been marked as stable.

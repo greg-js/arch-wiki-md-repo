@@ -1,3 +1,8 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [KDE](/index.php/KDE "KDE")
+
 The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager "wikipedia:Simple Desktop Display Manager") (SDDM) is the preferred [display manager](/index.php/Display_manager "Display manager") for [KDE](/index.php/KDE "KDE") Plasma desktop. From Wikipedia:
 
 	*Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program) for X11\. SDDM was written from scratch in C++11 and supports theming via QML. It is the successor of the KDE Display Manager and is used in conjunction with KDE Frameworks 5, KDE Plasma 5 and KDE Applications 5.*
@@ -227,5 +232,3 @@ Try disabling HiDPI in `sddm.conf`:
 # Enable Qt's automatic high-DPI scaling
 EnableHiDPI=false
 ```
-
-Installing [sddm-git](https://aur.archlinux.org/packages/sddm-git/) may be required.

@@ -1,3 +1,9 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
+
 A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)"), or login manager, is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell. There are various implementations of display managers, just as there are various types of [window managers](/index.php/Window_managers "Window managers") and [desktop environments](/index.php/Desktop_environments "Desktop environments"). There is usually a certain amount of customization and themeability available with each one.
 
 ## Contents
@@ -51,10 +57,6 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 *   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
-
-*   **[SLiM](/index.php/SLiM "SLiM")** — Lightweight and elegant graphical login solution. (discontinued)
-
-	[http://sourceforge.net/projects/slim.berlios/](http://sourceforge.net/projects/slim.berlios/) || [slim](https://www.archlinux.org/packages/?name=slim)
 
 *   **[XDM](/index.php/XDM "XDM")** — X display manager with support for XDMCP, host chooser.
 

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
+*   [Foobar2000/Wine](/index.php/Foobar2000/Wine "Foobar2000/Wine")
+*   [CrossOver](/index.php/CrossOver "CrossOver")
+*   [Wine package guidelines](/index.php/Wine_package_guidelines "Wine package guidelines")
+
 [Wine](https://en.wikipedia.org/wiki/Wine_(software) is a *compatibility layer* capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator. See the [official project home](http://www.winehq.org/) and [wiki](https://wiki.winehq.org/) pages for longer introduction.
 
 ## Contents
@@ -618,7 +625,7 @@ These have their own sites, and are *not supported* in the official Wine forums/
 
 ### PyWinery
 
-[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, *winecfg*, application uninstaller and wineDOS. You can install You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/) package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
+[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, *winecfg*, application uninstaller and wineDOS. You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/) package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
 
 It is recommended using winetricks by default to open *.exe* files, so you can choose between any Wine configuration you have.
 

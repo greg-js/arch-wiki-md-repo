@@ -465,11 +465,9 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 ## Network
 
-- See [Sysctl#Improving_performance](/index.php/Sysctl#Improving_performance "Sysctl")
+Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached").
 
-- See [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
-
-- Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached](/index.php/Rescached "Rescached").
+See also [Sysctl#Improving_performance](/index.php/Sysctl#Improving_performance "Sysctl") and [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration").
 
 ## Watchdogs
 

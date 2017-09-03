@@ -1,3 +1,8 @@
+Related articles
+
+*   [Chromium](/index.php/Chromium "Chromium")
+*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
+
 The following tips and tricks should work for both Chromium and Chrome unless explicitly stated.
 
 ## Contents
@@ -366,7 +371,7 @@ When using a password store of another desktop environment you probably also wan
 
 ## Making flags persistent
 
-**Note:** The `chromium-flags.conf` file and the accompanying custom launcher script are specific to the Arch Linux [chromium](https://www.archlinux.org/packages/?name=chromium) package.
+**Note:** The `chromium-flags.conf` file and the accompanying custom launcher script are specific to the Arch Linux [chromium](https://www.archlinux.org/packages/?name=chromium) package. For [google-chrome](https://aur.archlinux.org/packages/google-chrome/), use `chrome-flags.conf` instead.
 
 You can put your flags in a `chromium-flags.conf` file under `$HOME/.config/` (or under `$XDG_CONFIG_HOME` if you have configured that environment variable).
 

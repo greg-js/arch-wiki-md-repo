@@ -1,3 +1,10 @@
+Related articles
+
+*   [Apache](/index.php/Apache "Apache")
+*   [PHP](/index.php/PHP "PHP")
+*   [MySQL](/index.php/MySQL "MySQL")
+*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+
 [Joomla!](https://www.joomla.org/) is a free and open-source content management system (CMS) for publishing web content. It is written in PHP and stores the data in a [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or MS SQL database.
 
 Among the supported features are page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.

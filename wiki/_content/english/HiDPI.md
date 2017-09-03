@@ -1,3 +1,7 @@
+Related articles
+
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+
 HiDPI (High Dots Per Inch) displays, also known by Apple's "[Retina Display](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display")" marketing name, are screens with a high resolution in a relatively small format. They are mostly found in high-end laptops and monitors.
 
 Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant.
@@ -125,7 +129,7 @@ You can use KDE's settings to fine tune font, icon, and widget scaling. This sol
 
 To adjust font, widget, and icon scaling together:
 
-1.  System Settings → Display and Monitor → Display Configuration → Scale Display
+1.  System Settings → Display and Monitor → Display Configuration → Scale Display (note: if you set a not integer value it may create issue with the font render in some application )
 2.  Drag the slider to the desired size
 3.  Restart for the settings to take effect
 

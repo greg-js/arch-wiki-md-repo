@@ -15,6 +15,7 @@ Familiarising yourself with the principles and guidelines here is both a courtes
         *   [2.1.4 No trolling](#No_trolling)
         *   [2.1.5 Do not flame](#Do_not_flame)
         *   [2.1.6 Be responsible](#Be_responsible)
+        *   [2.1.7 Member accounts](#Member_accounts)
     *   [2.2 Legality](#Legality)
         *   [2.2.1 Criminal solicitation](#Criminal_solicitation)
         *   [2.2.2 Spam/Advertising/Solicitation](#Spam.2FAdvertising.2FSolicitation)
@@ -31,12 +32,11 @@ Familiarising yourself with the principles and guidelines here is both a courtes
         *   [3.1.3 Life is a two-way street](#Life_is_a_two-way_street)
         *   [3.1.4 Product recommendation requests](#Product_recommendation_requests)
         *   [3.1.5 Old threads/"necro-bumping"](#Old_threads.2F.22necro-bumping.22)
-        *   [3.1.6 Forum member accounts](#Forum_member_accounts)
-        *   [3.1.7 No power-posting/empty posts](#No_power-posting.2Fempty_posts)
-        *   [3.1.8 Bumping](#Bumping)
-        *   [3.1.9 Cross-posting](#Cross-posting)
-        *   [3.1.10 Thread hijacking](#Thread_hijacking)
-        *   [3.1.11 Dustbin policy (marked for deletion)](#Dustbin_policy_.28marked_for_deletion.29)
+        *   [3.1.6 No power-posting/empty posts](#No_power-posting.2Fempty_posts)
+        *   [3.1.7 Bumping](#Bumping)
+        *   [3.1.8 Cross-posting](#Cross-posting)
+        *   [3.1.9 Thread hijacking](#Thread_hijacking)
+        *   [3.1.10 Dustbin policy (marked for deletion)](#Dustbin_policy_.28marked_for_deletion.29)
     *   [3.2 Mailing lists](#Mailing_lists)
         *   [3.2.1 Top posting](#Top_posting)
         *   [3.2.2 Quoting](#Quoting)
@@ -89,6 +89,12 @@ Flaming, in the most common sense definition, is directing negative, disrespectf
 #### Be responsible
 
 If an interpersonal issue arises, please be open-minded to the possibility that your behavior may have contributed to the problem. Taking responsibility for our actions is often a good first step toward a peaceful reconciliation.
+
+#### Member accounts
+
+Please limit your fora membership to one account only. Having multiple accounts is an unnecessary use of resources. Further, it may be interpreted as trolling behavior.
+
+Any form of [sockpuppetry](https://en.wikipedia.org/wiki/Sockpuppet_(Internet) "w:Sockpuppet (Internet)") or impersonation is strictly prohibited.
 
 ### Legality
 
@@ -176,10 +182,6 @@ Do your part to keep the forums tidy. Posting in old threads, or "necrobumping" 
 *   If you have a question, start a new thread and link to the old if relevant.
 *   If you have something to add and judge that your information is related, but more up-to-date, start a new thread and link to the old if desired, but avoid duplicating effort by posting information already contained in the Arch wiki.
 *   If you have a version-agnostic or corresponding solution, necrobumping can be appropriate.
-
-#### Forum member accounts
-
-Please limit your forum membership to one account only. Having multiple accounts is an unnecessary use of resources. Further, it may be interpreted as trolling behavior.
 
 #### No power-posting/empty posts
 

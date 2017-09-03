@@ -63,9 +63,7 @@ $ avahi-browse -alr
 
 to discover services in your network.
 
-The Avahi Zeroconf Browser (`avahi-discover` – note that it needs avahi's optional dependencies [pygtk](https://www.archlinux.org/packages/?name=pygtk) and [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus)) shows the various services on your network. You can also browse SSH and VNC Servers using `bssh` and `bvnc` respectively.
-
-There's a good list of software with Avahi support at their website: [http://avahi.org/wiki/Avah4users](http://avahi.org/wiki/Avah4users)
+The Avahi Zeroconf Browser (`avahi-discover` – note that it needs avahi's optional dependencies [gtk3](https://www.archlinux.org/packages/?name=gtk3), [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) and [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)) shows the various services on your network. You can also browse SSH and VNC Servers using `bssh` and `bvnc` respectively.
 
 ### Firewall
 
@@ -239,5 +237,5 @@ Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airpr
 
 *   [Avahi](http://avahi.org/) - Official project website
 *   [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)")
-*   [Bonjour for Windows](http://www.apple.com/support/downloads/bonjourforwindows.html) - Enable Zeroconf on Windows
+*   [iTunes (includes Bonjour)](https://www.apple.com/itunes/download/) - Enable Zeroconf on Windows
 *   [http://www.zeroconf.org/](http://www.zeroconf.org/)
