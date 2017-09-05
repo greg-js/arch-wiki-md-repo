@@ -16,7 +16,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev) package.
+[Install](/index.php/Install "Install") the package [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev) or [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks).
 
 ## Setup
 
@@ -95,27 +95,47 @@ Install [shadowsocks-qt5](https://www.archlinux.org/packages/?name=shadowsocks-q
 
 #### From the command line
 
-The server is started with the `ss-server` command.
+The server is started with the `ss-server`(shadowsocks-libev) or `ssserver`(shadowsocks) command.
 
 To start it in the foreground using the configuration file `/etc/shadowsocks/config.json`:
+
+shadowsocks-libev
 
 ```
 $ ss-server -c /etc/shadowsocks/config.json
 
 ```
 
+shadowsocks
+
+```
+$ ssserver -c /etc/shadowsocks/config.json
+
+```
+
 To run in the background:
+
+shadowsocks-libev
 
 ```
 $ ss-server -c /etc/shadowsocks/config.json -d start
 $ ss-server -c /etc/shadowsocks/config.json -d stop
+
+```
+
+shadowsocks
+
+```
+$ ssserver -c /etc/shadowsocks/config.json -d start
+$ ssserver -c /etc/shadowsocks/config.json -d stop
+
 ```
 
 #### Using systemd
 
 The Shadowsocks server can be controlled with an instance of `shadowsocks-server@.service`.
 
-For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks-libev-server@config.service`.
+For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks-libev-server@config.service`(shadowsocks-libev) or `shadowsocks-server@config.service`(shadowsocks).
 
 To bind Shadowsocks to a privileged port (less than 1024), the server should be started as user root:
 

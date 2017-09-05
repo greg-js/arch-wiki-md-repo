@@ -1,3 +1,8 @@
+Related articles
+
+*   [Fonts](/index.php/Fonts "Fonts")
+*   [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts")
+
 **Metric-compatible fonts** are fonts that match the metrics (i.e. glyph dimensions) of another font (often generics such as Helvetica, Times or Courier). Due to their matching metrics, replacing a font with a [metric-compatible](https://en.wikipedia.org/wiki/metric-compatible "wikipedia:metric-compatible") alternative does not change the formatting of the document or a web page. Such fonts are often developed for FOSS systems to display pages correctly.
 
 ## Contents
@@ -93,13 +98,15 @@ Microsoft bundles a number of fonts with Microsoft Windows and Microsoft Office.
 
 ### Liberation
 
-[Wikipedia:Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") provides four families Liberation Sans, Liberation Serif, and Liberation Mono, intended to be metric-compatible with common Microsoft Windows fonts. Since version 2.0.0, this set of fonts is released under SIL OFL, and is based on [#Chrome OS](#Chrome_OS) core fonts. They are available as [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
+[Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") provides four families Liberation Sans, Liberation Serif, and Liberation Mono, intended to be metric-compatible with common Microsoft Windows fonts. Since version 2.0.0, this set of fonts is released under SIL OFL, and is based on [#Chrome OS](#Chrome_OS) core fonts. They are available as [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
 
 Older, GPL-licensed versions of this font is based on Ascender Corporation's fonts, which is licensed by Red Hat, Inc. These versions of Liberation also includes Liberation Sans Narrow, which corresponds to Arial Narrow.
 
 ### Google
 
 Google provides a high number of [fonts](https://www.google.com/fonts), including different metric-compatible font families.
+
+[Gelasio](http://sorkintype.com/fonts.html#gel), the Google alternative for Georgia, can be found on [FontLibrary](https://fontlibrary.org/en/font/gelasio) under SIL OFL.
 
 #### Chrome OS
 
@@ -115,7 +122,7 @@ Since glyph mappings from [Symbol](https://en.wikipedia.org/wiki/Symbol_(typefac
 
 #### Selawik
 
-[Selawik](https://github.com/Microsoft/Selawik) is an open source replacement for Microsoft's [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") by Microsoft.
+[Selawik](https://github.com/Microsoft/Selawik) is an open source replacement for Microsoft's [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") by Microsoft. Unfortunately it does not match Segoe UI's kerning parameters yet.
 
 #### Wine Tahoma
 

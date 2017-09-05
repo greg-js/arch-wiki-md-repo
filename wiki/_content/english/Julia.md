@@ -5,15 +5,20 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Integration with editors](#Integration_with_editors)
-    *   [2.1 Vim](#Vim)
-        *   [2.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
-        *   [2.1.2 Linting](#Linting)
-*   [3 Performance](#Performance)
+*   [2 IJulia](#IJulia)
+*   [3 Integration with editors](#Integration_with_editors)
+    *   [3.1 Vim](#Vim)
+        *   [3.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
+        *   [3.1.2 Linting](#Linting)
+*   [4 Performance](#Performance)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [julia](https://www.archlinux.org/packages/?name=julia) package. To learn and use Julia, please read [upstream documents](https://docs.julialang.org/en/stable/).
+
+## IJulia
+
+If attempting to install [ijulia](https://github.com/JuliaLang/IJulia.jl) by running `Pkg.add("IJulia")` gives the warning `MbedTLS had build errors.` you might need to install the [mbedtls](https://www.archlinux.org/packages/?name=mbedtls) package.
 
 ## Integration with editors
 

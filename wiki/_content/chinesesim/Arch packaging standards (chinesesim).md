@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Arch+packaging+standards&diff=0&oldid=485119)可以查看翻译后英文页面的改动。
+
 当为Arch Linux构建软件包时,您应该遵循以下的**软件包指导原则**，如果您想贡献你的软件包至Arch Linux时,您应该更加遵循软件包指导原则。同时需要阅读[PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) 和 [makepkg](https://archlinux.org/pacman/makepkg.8.html) 手册。
 
 ## Contents
@@ -61,7 +63,7 @@ package() {
 *   任何情况下都要**避免**使用`/usr/libexec/`，应该使用`/usr/lib/${pkgname}/`。
 *   包信息文件中的`packager`字段可以通过修改`/etc/makepkg.conf`文件由编译者进行自定义。使用 `~/.makepkg.conf`也可以达到此目的。
 *   所有安装过程中所需输出的重要的信息，都可以放到**.install 文件中**.比如说如果某软件包需要扩展的安装步骤才能正常运行，你可以将这些步骤的介绍包含在.install文件中。
-*   **Dependencies** are the most common packaging error. Please take the time to verify them carefully, for example by running `ldd` on dynamic executables, checking tools required by scripts or looking at the documentation of the software. The [namcap](/index.php/Namcap "Namcap") utility can help you in this regard. This tool can analyze both PKGBUILD and the resulting package tarball and will warn you about bad permissions, missing dependencies, redundant dependencies, and other common mistakes.
+*   **Dependencies** 是最容易出现错误的地方。请花时间仔细核对，例如对动态可执行文件执行 `ldd`，检查脚本需要的工具，查看软件文档等。[namcap](/index.php/Namcap "Namcap") PKGBUILD 和生成的打包文件，报告权限错误、缺少依赖、过多依赖等常见问题。
 *   任何运行该软件包不需要，或者该软件包的通用功能不需要的**可选的依赖**不要加入到depends中，这些信息应该加入**optdepends** 数组，例如：
 
 ```
@@ -80,13 +82,13 @@ optdepends=('cups: printing support'
 *   尽量保持`PKGBUILD`文件中**每行**不超过100字符。
 *   如果可能的话, 从`PKGBUILD`文件中**去掉空行**（没有设置变量值的行）(如`provides`、`replaces`等)</li>
 *   通常实践建议按照上文中的`PKGBUILD`示例**安排各变量顺序**。当然这不是强制性的，这里唯一强制要求的是满足**正确的bash语法**。
-*   **Quote** variables which may contain spaces, such as `"$pkgdir"` and `"$srcdir"`.
-*   To ensure the **integrity** of packages, make sure that the [integrity variables](/index.php/PKGBUILD#Integrity "PKGBUILD") contain correct values. These can be updated using the `updpkgsums` tool.
+*   变量名可能包含空格时，请使用引号，例如`"$pkgdir"` 和 `"$srcdir"`.
+*   请确保软件包的**完整性**，确保 [校验变量](/index.php/PKGBUILD#Integrity "PKGBUILD") 包含正确的数值，可以通过 {ic|updpkgsums}} 工具进行更新。
 
 ## 软件包命名
 
 *   软件包应当仅包含**字母或数字**以及`@`, `.`, `_`, `+`, `-`，不能以 `-` 和 `.` 开头，所有的字母应当保持**小写**.
-*   Package names should NOT be suffixed with the upstream major release version number (e.g. we don't want libfoo2 if upstream calls it libfoo v2.3.4) in case the library and its dependencies are expected to be able to keep using the most recent library version with each respective upstream release. However, for some software or dependencies, this can not be assumed. In the past this has been especially true for widget toolkits such as GTK and Qt. Software that depends on such toolkits can usually not be trivially ported to a new major version. As such, in cases where software can not trivially keep rolling alongside its dependencies, package names should carry the major version suffix (e.g. gtk2, gtk3, qt4, qt5). For cases where most dependencies can keep rolling along the newest release but some can't (for instance closed source that needs libpng12 or similar), a deprecated version of that package might be called libfoo1 while the current version is just libfoo.
+*   软件包的名称不应该包含上游的主版本号，例如如果上游软件包是 libfoo v2.3.4，不应该命名为 libfoo2。这样在上游发布新的大版本时，就可以保留软件包名和依赖可以保持不变。只有个别软件包是例外，例如图形库 GTK 和 Qt。这些软件升级后，应用程序需要花很长时间和经历才能移植完成，所以系统需要同时安装多个版本，软件包名应该包含大版本号，比如 gtk2, gtk3, qt4, qt5\. 如果出现大部分软件包都可以同步升级，只有个别软件没有被 移植的情况，可以把老的软件包命名为 libfoo1，而新的软件包继续使用 libfoo。
 *   软件包版本号应当**和作者发行版号保持一致**. 如果需要的话，版本号可以包含字母（比如：nmap的版本就是2.54BETA32）。**版本号里不能包含连字符**，只能允许字母、数字、下划线、点号。
 *   Package releases（软件包发行号） **仅和 Arch 相关**. 这样用户就可以区分不同的编译版本。**发布号从1开始**,软件包将会被重新（打包）发布时 ，**发行号将会增加1**。当新版本发布的时候，发行号（release）自动回到1。软件包发布标记和软件包版本标记遵从同样的规则。
 

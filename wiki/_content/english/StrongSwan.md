@@ -1,3 +1,7 @@
+Related articles
+
+*   [Openswan L2TP/IPsec VPN client setup](/index.php/Openswan_L2TP/IPsec_VPN_client_setup "Openswan L2TP/IPsec VPN client setup")
+
 IPSec is an encryption and authentication standard that can be used to build secure Virtual Private Networks (VPNs).
 
 It is natively supported by the Linux kernel, but configuration of encryption keys is left to the user. The [IKE](https://en.wikipedia.org/wiki/Internet_Key_Exchange "wikipedia:Internet Key Exchange") protocols are therefore used in IPSec VPNs to automatically negotiate key exchanges securely using a variety of means, including certificates, pre-shared keys or both.
@@ -298,3 +302,4 @@ ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-
 ## See also
 
 *   [strongSwan 5: How to create your own VPN](https://www.zeitgeist.se/2013/11/22/strongswan-howto-create-your-own-vpn/) — The source used to write the initial revision of this article, with permission from the original author.
+*   [How to Set Up an IKEv2 VPN Server with StrongSwan on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ikev2-vpn-server-with-strongswan-on-ubuntu-16-04)

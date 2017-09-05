@@ -120,7 +120,7 @@ net.ipv4.tcp_max_syn_backlog = 65536
 ```
 
 ```
-# the maximum number of sockets in 'TIME_WAIT' state.
+# The maximum number of sockets in 'TIME_WAIT' state.
 # After reaching this number the system will start destroying the socket in this state.
 # Increase this to prevent simple DOS attacks
 net.ipv4.tcp_max_tw_buckets = 65536
@@ -128,13 +128,46 @@ net.ipv4.tcp_max_tw_buckets = 65536
 ```
 
 ```
-# TODO
+# Whether TCP should start at the default window size only for new connections or also for existing connections that have been idle for too long.
+# It kills persistent single connection performance and should be turned off.
 net.ipv4.tcp_slow_start_after_idle = 0
+
+```
+
+```
+# Whether TCP should reuse an existing connection in the TIME-WAIT state for a new outgoing connection if the new timestamp is strictly bigger than the most recent timestamp recorded for the previous connection.
+# This helps avoid from running out of available network sockets.
 net.ipv4.tcp_tw_reuse = 1
+
+```
+
+```
+# Fast-fail FIN connections which are useless.
 net.ipv4.tcp_fin_timeout = 15
-net.ipv4.tcp_keepalive_intvl = 60
-net.ipv4.tcp_keepalive_probes = 5
+
+```
+
+```
+# TCP keepalive is a mechanism for TCP connections that help to determine whether the other end has stopped responding or not.
+# TCP will send the keepalive probe contains null data to the network peer several times after a period of idle time. If the peer does not respond, the socket will be closed automatically.
+# By default, TCP keepalive process waits for two hours (7200 secs) for socket activity before sending the first keepalive probe, and then resend it every 75 seconds. As long as there is TCP/IP socket communications going on and active, no keepalive packets are needed.
+# With the following settings, your application will detect dead TCP connections after 120 seconds (60s + 10s + 10s + 10s + 10s + 10s + 10s)
+net.ipv4.tcp_keepalive_time = 60
+net.ipv4.tcp_keepalive_intvl = 10
+net.ipv4.tcp_keepalive_probes = 6
+
+```
+
+```
+# The longer the MTU the better for performance, but the worse for reliability.
+# This is because a lost packet means more data to be retransmitted and because many routers on the Internet can't deliver very long packets.
+# Enable smart MTU discovery when an ICMP black hole detected.
 net.ipv4.tcp_mtu_probing = 1
+
+```
+
+```
+# Turn timestamps off to reduce performance spikes related to timestamp generation.
 net.ipv4.tcp_timestamps = 0
 
 ```

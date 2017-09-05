@@ -1,3 +1,10 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [Mkinitcpio-btrfs](/index.php/Mkinitcpio-btrfs "Mkinitcpio-btrfs")
+*   [Snapper](/index.php/Snapper "Snapper")
+*   [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Btrfs](/index.php/Btrfs "Btrfs"). Дата последней синхронизации: 7 Декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Btrfs&diff=0&oldid=458333).
 
 Из [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs"):

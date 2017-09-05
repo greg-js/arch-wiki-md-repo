@@ -152,8 +152,8 @@ The package [tlp](https://www.archlinux.org/packages/?name=tlp) is an alternativ
 Using the following kernel boot parameters [reduces battery drain](http://www.phoronix.com/scan.php?page=article&item=intel_i915_power&num=1%7C):
 
 ```
-i915.i915_enable_rc6=1
-i915.i915_enable_fbc=1
+i915.enable_rc6=1
+i915.enable_fbc=1
 i915.lvds_downclock=1 
 i915.semaphores=1
 

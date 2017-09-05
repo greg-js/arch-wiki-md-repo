@@ -1,3 +1,9 @@
+Related articles
+
+*   [GNUnet](/index.php/GNUnet "GNUnet")
+*   [I2P](/index.php/I2P "I2P")
+*   [Freenet](/index.php/Freenet "Freenet")
+
 [Tor](https://www.torproject.org) is an open source implementation of 2nd generation [onion routing](https://en.wikipedia.org/wiki/Onion_routing "wikipedia:Onion routing") that provides free access to an anonymous proxy network. Its primary goal is to enable [online anonymity](https://en.wikipedia.org/wiki/Internet_anonymity "wikipedia:Internet anonymity") by protecting against [traffic analysis](https://en.wikipedia.org/wiki/Traffic_analysis "wikipedia:Traffic analysis") attacks.
 
 ## Contents
@@ -270,7 +276,7 @@ $ chromium --proxy-server="socks5://myproxy:8080" --host-resolver-rules="MAP * ~
 
 The `--proxy-server="socks5://myproxy:8080"` flag tells Chrome to send all `http://` and `https://` URL requests through the SOCKS proxy server `"myproxy:8080"`, using version 5 of the SOCKS protocol. The hostname for these URLs will be resolved by the proxy server, and not locally by Chrome.
 
-**Warning:** Proxying of `ftp://` URLs through a SOCKS proxy is not yet implemented.
+**Warning:** Proxying of `ftp://` URLs through a SOCKS proxy is not yet implemented[[2]](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy).
 
 The `--proxy-server` flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher". Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since once needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, `--host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"`, is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address `~NOTFOUND` (think of it as `0.0.0.0`). The `"EXCLUDE"` clause make an exception for `"myproxy"`, because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with `PROXY_CONNECTION_FAILED`.
 
@@ -350,7 +356,7 @@ Set your identification to nickserv, which will be read when connecting. Support
 
 ```
 
-Disable CTCP and DCC and set a different hostname to prevent information disclosure: [[2]](https://encrypteverything.ca/IRC_Anonymity_Guide)
+Disable CTCP and DCC and set a different hostname to prevent information disclosure: [[3]](https://encrypteverything.ca/IRC_Anonymity_Guide)
 
 ```
 /ignore * CTCPS
@@ -756,7 +762,7 @@ $ torify elinks 208.78.69.70
 
 ## Transparent Torification
 
-In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's *TransPort*, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's *SocksPort* will still work. This also works for DNS via Tor's *DNSPort*, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[3]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
+In some cases it is more secure and often easier to transparently torify an entire system instead of configuring individual applications to use Tor's socks port, not to mention preventing DNS leaks. Transparent torification can be done with [iptables](/index.php/Iptables "Iptables") in such a way that all outbound packets are redirected through Tor's *TransPort*, except the Tor traffic itself. Once in place, applications do not need to be configured to use Tor, though Tor's *SocksPort* will still work. This also works for DNS via Tor's *DNSPort*, but realize that Tor only supports TCP, thus UDP packets other than DNS cannot be sent through Tor and therefore must be blocked entirely to prevent leaks. Using iptables to transparently torify a system affords comparatively strong leak protection, but it is not a substitute for virtualized torification applications such as Whonix, or TorVM [[4]](https://www.whonix.org/wiki/Comparison_with_Others). Transparent torification also will not protect against fingerprinting attacks on its own, so it is recommended to use it in conjunction with the Tor Browser (search the AUR for the version you want: [https://aur.archlinux.org/packages/?K=tor-browser](https://aur.archlinux.org/packages/?K=tor-browser)) or to use an amnesic solution like [Tails](http://tails.boum.org/) instead. Applications can still learn your computer's hostname, MAC address, serial number, timezone, etc. and those with root privileges can disable the firewall entirely. In other words, transparent torification with iptables protects against accidental connections and DNS leaks by misconfigured software, it is not sufficient to protect against malware or software with serious security vulnerabilities.
 
 To enable transparent torification, use the following file for `iptables-restore` and `ip6tables-restore` (internally used by [systemd](/index.php/Systemd "Systemd")'s `iptables.service` and `ip6tables.service`).
 

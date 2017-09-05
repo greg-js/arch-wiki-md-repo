@@ -239,7 +239,7 @@ Description=rsnapshot (%I) backup
 [Service]
 Type=oneshot
 Nice=19
-IOSchedulingClass=3
+IOSchedulingClass=idle
 ExecStart=/usr/bin/rsnapshot %I
 ```
 

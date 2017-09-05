@@ -358,7 +358,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://www.xfce.org/](http://www.xfce.org/) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
-*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — [lesstif](https://www.archlinux.org/packages/?name=lesstif) 桌面环境自带的文本编辑器。
+*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Motif 桌面环境自带的文本编辑器。
 
 	[http://www.nedit.org/](http://www.nedit.org/) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 

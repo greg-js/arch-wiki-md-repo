@@ -476,7 +476,7 @@ If you are getting an instant crash/close upon launch, make sure you have the fo
 
 ## Civilization VI
 
-As with Civ V, you need to add `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'` to your [launch options](/index.php/Launch_option "Launch option").
+As with Civ V, you need to add `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` to your [launch options](/index.php/Launch_option "Launch option").
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 

@@ -39,6 +39,7 @@ On the **CA machine**, install [easy-rsa](https://www.archlinux.org/packages/?na
 
 ```
 # cd /etc/easy-rsa
+# export EASYRSA=$(pwd)
 # easyrsa init-pki
 # easyrsa build-ca
 

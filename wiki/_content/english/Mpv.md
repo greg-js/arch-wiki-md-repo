@@ -1,3 +1,7 @@
+Related articles
+
+*   [MPlayer](/index.php/MPlayer "MPlayer")
+
 [mpv](https://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and MPlayer2\. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
 
 ## Contents
@@ -6,33 +10,43 @@
     *   [1.1 Front ends](#Front_ends)
     *   [1.2 Forks](#Forks)
 *   [2 Configuration](#Configuration)
-    *   [2.1 An example input.conf file](#An_example_input.conf_file)
-    *   [2.2 mpv and PulseAudio/ALSA mixer controls since 0.18.1](#mpv_and_PulseAudio.2FALSA_mixer_controls_since_0.18.1)
-*   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 Hardware decoding](#Hardware_decoding)
-        *   [3.1.1 In GNOME Wayland](#In_GNOME_Wayland)
-    *   [3.2 High quality video output](#High_quality_video_output)
-    *   [3.3 Save position on quit](#Save_position_on_quit)
-    *   [3.4 Volume is too low](#Volume_is_too_low)
-    *   [3.5 Quickly cycle between aspect ratios](#Quickly_cycle_between_aspect_ratios)
-    *   [3.6 Ignoring aspect ratio](#Ignoring_aspect_ratio)
-    *   [3.7 Draw to the root window](#Draw_to_the_root_window)
-    *   [3.8 Always show GUI](#Always_show_GUI)
-    *   [3.9 Hide GUI for video files](#Hide_GUI_for_video_files)
-    *   [3.10 Restoring old OSC](#Restoring_old_OSC)
-    *   [3.11 Use as a browser plugin](#Use_as_a_browser_plugin)
-    *   [3.12 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
-    *   [3.13 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
-    *   [3.14 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
-    *   [3.15 youtube-dl audio with search](#youtube-dl_audio_with_search)
-    *   [3.16 Use mpv with a compositor](#Use_mpv_with_a_compositor)
-    *   [3.17 Creating a single screenshot](#Creating_a_single_screenshot)
-    *   [3.18 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
+    *   [2.1 General settings - mpv.conf](#General_settings_-_mpv.conf)
+        *   [2.1.1 Some simple high performance configurations](#Some_simple_high_performance_configurations)
+        *   [2.1.2 Profiles](#Profiles)
+    *   [2.2 Key bindings - input.conf](#Key_bindings_-_input.conf)
+    *   [2.3 Additional configuration files](#Additional_configuration_files)
+*   [3 Scripts](#Scripts)
+    *   [3.1 Javascript](#Javascript)
+    *   [3.2 Lua](#Lua)
+        *   [3.2.1 mpv-stats](#mpv-stats)
+        *   [3.2.2 mpv-webm](#mpv-webm)
 *   [4 Vapoursynth](#Vapoursynth)
-    *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
-    *   [5.2 Problems with window compositors](#Problems_with_window_compositors)
+    *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_.28SmoothVideoProject.29)
+    *   [4.2 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
+*   [5 Tips and Tricks](#Tips_and_Tricks)
+    *   [5.1 Hardware decoding](#Hardware_decoding)
+        *   [5.1.1 In GNOME Wayland](#In_GNOME_Wayland)
+    *   [5.2 Save position on quit](#Save_position_on_quit)
+    *   [5.3 Volume is too low](#Volume_is_too_low)
+    *   [5.4 Quickly cycle between aspect ratios](#Quickly_cycle_between_aspect_ratios)
+    *   [5.5 Ignoring aspect ratio](#Ignoring_aspect_ratio)
+    *   [5.6 Draw to the root window](#Draw_to_the_root_window)
+    *   [5.7 Always show GUI](#Always_show_GUI)
+    *   [5.8 Hide GUI for video files](#Hide_GUI_for_video_files)
+    *   [5.9 Restoring old OSC](#Restoring_old_OSC)
+    *   [5.10 Use as a browser plugin](#Use_as_a_browser_plugin)
+    *   [5.11 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
+    *   [5.12 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
+    *   [5.13 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
+    *   [5.14 youtube-dl audio with search](#youtube-dl_audio_with_search)
+    *   [5.15 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [5.16 Creating a single screenshot](#Creating_a_single_screenshot)
+    *   [5.17 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 General debugging](#General_debugging)
+    *   [6.2 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
+    *   [6.3 Problems with window compositors](#Problems_with_window_compositors)
+    *   [6.4 No volume bar, cannot change volume](#No_volume_bar.2C_cannot_change_volume)
 
 ## Installation
 
@@ -70,13 +84,105 @@ mpv comes with a minimal GUI called On Screen Controller (OSC), that appears whe
 
 ## Configuration
 
-*mpv'*s configuration is read from the files `mpv.conf` (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` (on screen display). For a full list of options, see the [mpv(1)](https://mpv.io/manual/master/) or the [GitHub docs](https://github.com/mpv-player/mpv/tree/master/DOCS/man).
+Though *mpv* comes with good all-around defaults that should work well on computers with weaker/older video cards. However, if you have a computer with a more modern video card then mpv allows you to do a great deal of configuration to achieve better video quality (limited only by the power of your video card). To do this one only needs to create a few configuration files (they do not exist by default).
 
-If the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is not set, user configuration files will be read from the `~/.config/mpv` directory. System-wide configuration files are read from the `/etc/mpv` directory.
+**Note:** Configuration files are read system-wide from `/etc/mpv` and per-user from `~/.config/mpv` (unless the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is set), where per-user settings override system-wide settings, all of which are overridden by the command line. User specific configuration is suggested since it may require some trial and error.
 
-### An example input.conf file
+First create the `~/.config/mpv` directory if it does not already exist.
 
-Copying the following into `~/.config/mpv/input.conf` will add a number of useful keybindings to mpv such as rotating video 90 degrees, zooming and panning.
+```
+$ mkdir ~/.config/mpv
+
+```
+
+To help you get you started *mpv* provides a couple empty sample configuration files with a lot of options commented out, they are located at `/usr/share/doc/mpv/`.
+
+*   `mpv.conf` will contain the majority of *mpv'*s settings.
+*   `input.conf` will just contain key bindings.
+
+Read through both of them to get an idea of how they work and what options are available. You may copy them to your config folder to use as a starting point if you like:
+
+```
+$ cp /usr/share/doc/mpv/mpv.conf ~/.config/mpv/mpv.conf
+$ cp /usr/share/doc/mpv/input.conf ~/.config/mpv/input.conf
+
+```
+
+### General settings - mpv.conf
+
+#### Some simple high performance configurations
+
+This one just loads some more powerful OpenGL options. Most users can probably run these without any problems but they are not enabled by default to avoid causing problems for the few users who cannot run them.
+
+ `~/.config/mpv/mpv.conf`  `profile=opengl-hq` 
+
+This adds two upscaling algorithms that give better results but again use more resources.
+
+ `~/.config/mpv/mpv.conf` 
+```
+profile=opengl-hq
+scale=ewa_lanczossharp
+cscale=ewa_lanczos
+```
+
+These last three options are a little more complicated. The first option makes it so that if audio and video go out of sync then instead of dropping video frames it will resample the audio (a slight change in audio pitch is often less noticeable than dropped frames). The mpv wiki has an in depth article on it titled [Display Synchronization](https://github.com/mpv-player/mpv/wiki/Display-synchronization). The remaining two essentially make motion appear smoother on your display by changing the way that frames are shown so that the source framerate jives better with your display's refresh rate (not to be confused with SVP's technique which actually converts video to 60fps). The mpv wiki has an in depth article on it titled [Interpolation](https://github.com/mpv-player/mpv/wiki/Interpolation) though it is also commonly known as *smoothmotion*.
+
+ `~/.config/mpv/mpv.conf` 
+```
+profile=opengl-hq
+scale=ewa_lanczossharp
+cscale=ewa_lanczos
+video-sync=display-resample
+interpolation
+tscale=oversample
+```
+
+Beyond this there is still a lot you can do but things become more complicated, require more powerful video cards, and are in constant development. As a brief overview, it is possible to load special shaders that perform exotic scaling and sharpening techniques including some that actually use deep neural networks trained on images (for both real world and animated content). To learn more about this take a look around the [mpv wiki](https://github.com/mpv-player/mpv/wiki), particularly the [user shader's section](https://github.com/mpv-player/mpv/wiki/User-Scripts#user-shaders).
+
+There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](https://mpv.io/manual/master/). It's also helpful to run *mpv* from the command line to check for error messages about the config.
+
+#### Profiles
+
+In `mpv.conf` it is possible to create *profiles* which are essentially just "groups of options" with which you can:
+
+*   Quickly switch between different configurations without having to rewrite the file.
+*   Create special profiles for special content.
+*   *nest* profiles so that you can make more complicated *profiles* out of simpler ones.
+
+Creating a profile is easy. The area at the top of `mpv.conf` is called the top level, any options you write there will kick into effect once *mpv* is started. However, once you define a profile by writing its name in brackets then every option you write below it (until you define a new profile) is considered part of that profile. Here is an example `mpv.conf`:
+
+ `~/.config/mpv/mpv.conf` 
+```
+profile=myprofile2        #Top level area, load myprofile2
+ontop=yes                 #Always on top
+
+[myprofile1]              #A simple profile, top level area ends here
+profile-desc="a profile"  #Optional description for profile
+fs=yes                    #Start in full screen
+
+[myprofile2]              #Another simple profile
+profile=opengl-hq         #A built in profile that comes with mpv
+log-file=~~/log           #Sets a location for writing a log file, ~~/ translates to ~/.config/mpv
+```
+
+There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `opengl-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it's never called in the top level area.
+
+Alternatively one could call mpv from the command line with
+
+```
+$ mpv --profile=myprofile1 video.mkv
+
+```
+
+and it would ignore all options except the ones in `myprofile1`.
+
+### Key bindings - input.conf
+
+Key bindings are actually fairly straightforward given the examples in `/usr/share/doc/mpv/input.conf` and the relevant section in the [manual](https://mpv.io/manual/master/#command-interface).
+
+Here is an `input.conf` file that attempts to reproduce [MPC-HC keybindings](https://github.com/dragons4life/MPC-HC-config-for-MPV/blob/master/input.conf) in mpv.
+
+Here are some more fun examples:
 
 ```
 Alt+RIGHT add video-rotate 90
@@ -90,19 +196,109 @@ Alt+k add video-pan-y -0.05
 
 ```
 
-### mpv and PulseAudio/ALSA mixer controls since 0.18.1
+### Additional configuration files
 
-This entry only applies if you are using pulseaudio for mpv (`-ao=pulse` or `ao=pulse` in `mpv.conf`), or if you want to control your ALSA mixer volume with mpv.
+In addition there are a few more configuration files one can create:
 
-Add the following to your `~/.config/mpv/input.conf` to make volume changes work again from PulseAudio/ALSA to mpv and vice versa:
+*   `~/.config/mpv/lua-settings/osc.conf` manages the [On Screen Controller](https://mpv.io/manual/master/#on-screen-controller)
+*   If you are using any Lua scripts then you can create a corresponding conf file for each one here: `~/.config/mpv/lua-settings/*scriptname*.conf`
+*   [lots more](https://mpv.io/manual/master/#files)
+
+## Scripts
+
+*mpv* has a [large variety of scripts](https://github.com/mpv-player/mpv/wiki/User-Scripts) that extend the functionality of the player. To this end it has internal bindings for both Lua and Javascript (added recently).
+
+Scripts are typically installed by simply putting them into the `~/.config/mpv/scripts/` directory (you may have to create it first), after that they will be automatically loaded when mpv starts (this behavior can be altered with other mpv options). Some scripts come with their own installation and configuration instructions so make sure to have a look. In addition some scripts are old, broken, and unmaintained.
+
+### Javascript
+
+Since Javascript support is still fairly new there is currently very little in the way of scripts but [documentation exists](https://mpv.io/manual/master/#javascript) for anyone interested in making their own.
+
+### Lua
+
+There are a lot of interesting Lua scripts for mpv. If you would like to make your own the relevant documentation may be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst).
+
+#### mpv-stats
+
+[mpv-stats](https://github.com/Argon-/mpv-stats/) (or simply *stats*) is a Lua script that outputs a lot of live statistics showing how well mpv is currently doing. It is very useful for making sure that your hardware can keep up with your configuration and for comparing different configurations. Since it is very actively maintained you may have to install [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in order to use it.
+
+#### mpv-webm
+
+[mpv-webm](https://github.com/ElegantMonkey/mpv-webm) (or simply *webm*) is a very easy to use Lua script that allows one to create webm's while watching videos. It includes several features and does not have any extra dependencies (relies entirely on mpv).
+
+## Vapoursynth
+
+Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for *mpv*.
+
+To use vapoursynth filters you have to install the [vapoursynth](https://www.archlinux.org/packages/?name=vapoursynth) package (or [vapoursynth-git](https://aur.archlinux.org/packages/vapoursynth-git/)) and compile *mpv* with the `--enable-vapoursynth` build flag.
+
+This is easier to do by first installing Vapoursynth and then installing (or re-installing if it's already installed) [mpv-git](https://aur.archlinux.org/packages/mpv-git/). The configure script for [mpv-git](https://aur.archlinux.org/packages/mpv-git/) will auto-detect Vapoursynth (as long as it has already been installed) and it will automatically compile mpv with support for Vapoursynth without having to manually change any configure options or anything (this makes it very easy to update mpv as well).
+
+### SVP 4 Linux (SmoothVideoProject)
+
+[SmoothVideoProject SVP](https://www.svp-team.com/wiki/Main_Page) is a program that's primarily known for converting video to 60fps. It's free [as in beer] and full featured for 64bit Linux (costs money for Windows and OS X and is incompatible with 32bit Linux).
+
+It has three main features and each one can be disabled/enabled as one chooses (you are not forced to use motion interpolation).
+
+1.  [Motion interpolation](https://www.svp-team.com/wiki/Manual:FRC) ([youtube video](https://www.youtube.com/watch?v=Wjb6CSe4708)) - An algorithm that converts video to 60fps. This creates the somewhat controversial "soap opera effect" that some people love and others hate. Unfortunately the algorithm is not perfect and it also introduces more than its share of weird artifacts. The algorithm can be tuned (via a slider) for either performance or quality. It also has some artifact reduction settings that interpolate actual frames with the generated frames reducing the noticeability of the artifacts. The framerate detection can be set to automatic or manual (manual seems to resolve performance issues for some users).
+2.  [Black bar lighting](https://www.svp-team.com/wiki/Manual:Outer_lighting) ([youtube video](https://www.youtube.com/watch?v=yTzTpW3kTBE)) - If the image has an aspect ratio that produces black bars on your display then SVP will illuminate the black bars with "lights" generated by the content on the screen. It has some amount of customization but the defaults are pretty close to optimal.
+3.  [LED ambient lighting control](https://www.svp-team.com/wiki/Manual:SVPlight) ([youtube video](https://www.youtube.com/watch?v=UUM2n-8kIJ8)) - Has the ability to control LED ambient lighting attached to your television.
+
+Once you have mpv compiled with Vapoursynth support it's fairly easy to get SVP working with mpv. Simply install [svp](https://aur.archlinux.org/packages/svp/), open the SVP program to let it assess your system performance (you may want to close other programs first so that it gets an accurate reading), and finally add the following mpv profile to your mpv.conf (taken from [here](https://www.svp-team.com/wiki/SVP:mpv)):
+
+ `mpv.conf` 
+```
+[svp]
+input-ipc-server=/tmp/mpvsocket     # Receives input from SVP
+hr-seek-framedrop=no                # Fixes audio desync
+resume-playback=no                  # Not compatible with SVP
+
+# Can fix stuttering in some cases, in other cases probably causes it. Try it if you experience stuttering.
+#opengl-early-flush=yes
+```
+
+Then, in order to use SVP you must have the SVP program running in the background before opening the file using mpv with that profile. Either do:
 
 ```
-/ add ao-volume -2
-SHIFT+* add ao-volume 2
+$ mpv --profile=svp video.mkv
 
 ```
 
-Change the above to whatever volume keys you use.
+or set `profile=svp` in the top-level portion of the mpv [config](/index.php/Mpv#Profiles "Mpv").
+
+If you want to use hardware decoding then you must use a copy-back decoder since normal decoders are not compatible with Vapoursynth (choose a `hwdec` option that ends in `-copy`). For instance:
+
+```
+hwdec=auto-copy
+hwdec-codecs=all
+
+```
+
+Either way, hardware decoding is discouraged by mpv devs and is not likely to make a significant difference in performance.
+
+### Debanding (flash3kyuu)
+
+To use the `f3k_db` debanding filter install [vapoursynth-plugin-f3kdb](https://www.archlinux.org/packages/?name=vapoursynth-plugin-f3kdb) and write a python script that uses the *vapoursynth* extension.
+
+The following sample script can be used to enable debanding in *mpv*.
+
+```
+import vapoursynth as vs
+core = vs.get_core()
+
+clip = video_in
+clip = core.std.Trim(clip, first=0, length=500000)
+clip = core.f3kdb.Deband(clip, grainy=0, grainc=0, output_depth=16)
+clip.set_output()
+
+```
+
+Finally specify the python script in the config file or use a command line argument when executing mpv.
+
+```
+$ mpv --vf=vapoursynth=f3k_db.py <video_file>
+
+```
 
 ## Tips and Tricks
 
@@ -110,42 +306,19 @@ Change the above to whatever volume keys you use.
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") [mpv(1)](https://mpv.io/manual/master/). To make this persistent, add the line `hwdec=*method*` to your configuration file.
+**Warning:** Hardware decoding is known to sometimes cause problems and as such it is considered "[usually a bad idea unless absolutely needed](https://github.com/mpv-player/mpv/commit/dbef5b737e2f994f02923c8214cba368b663a655)" by the developers. For that reason and because it typically offers very similar performance to software decoding it is disabled by default. Moreover, depending on the video card, drivers installed, and file being decoded hardware decoding may perform differently or may not even be used at all leading to inconsistent behavior that can be difficult to debug.
 
-When hardware decoding is used, the video output should generally be set to `opengl` or `opengl-hq` (or possibly `vdpau` if using `hwdec=vdpau`). In particular, `hwdec=vaapi` should be used with `profile=opengl` [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) if possible (`opengl-hq` has sometimes huge CPU spikes when a video is read using this mode).
+**Note:** The main difference between hardware decoding and software decoding is that in software decoding the file will be decompressed and then moved onto the video card whereas with hardware decoding it will be moved to the video card first and then decompressed. In either case, video *playback* will still be hardware accelerated via the video card.
 
-If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
+Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](https://mpv.io/manual/master/#video-output-drivers) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
-By default, hardware decoding is enabled for codecs h264, vc1, wmv3, hevc, mpeg2video and vp9\. It is however possible to specify codecs (e.g. `--hwdec-codecs=h264,mpeg2video`) or allow all codecs (`hwdec-codecs=all`) to use hardware decoding.
+The default video output driver, `opengl`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
+
+Even with hardware decoding enabled, it will only be used for some codecs by default (at the time of writing this list includes: h264, vc1, wmv3, hevc, mpeg2video, vp9). In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
 
 #### In GNOME Wayland
 
-Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`. To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland` [[2]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
-
-### High quality video output
-
-The `opengl-hq` profile is a high quality preset that uses the OpenGL video driver and enables various options selected by the mpv developers. To make use of it, specify it in your configuration file.
-
- `~/.config/mpv/mpv.conf`  `profile=opengl-hq` 
-
-This profile comes with a debanding filter that greatly reduces the amount of visible banding, blocking and other quantization artifacts, at the expensive of very slightly blurring some of the finest details. In practice, it's virtually always an improvement - the only reason to disable it would be for performance.
-
-If it leads to bad performance, you can disable it easily.
-
- `~/.config/mpv/mpv.conf` 
-```
-profile=opengl-hq
-deband=no
-```
-
-The `opengl-hq` profile defaults to the `spline36` scaling filter for mid quality and speed. For the best quality video output, the manual states that if your hardware can run it, `ewa_lanczossharp` is probably what you should use.
-
- `~/.config/mpv/mpv.conf` 
-```
-profile=opengl-hq
-scale=ewa_lanczossharp
-cscale=ewa_lanczossharp
-```
+Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`. To make mpv use the Wayland compositor, add the mpv option `opengl-backend=wayland` [[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### Save position on quit
 
@@ -232,14 +405,14 @@ To find and play audio straight from your terminal with `mm "*search terms*"` pu
 
 ```
 function mm() {
-    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
+    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch:"$@"
 }
 
 ```
 
 ### Use mpv with a compositor
 
-If you're using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when mpv is playing a video, try `x11-bypass-compositor=no`
+If you are using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when mpv is playing a video, try `x11-bypass-compositor=no`
 
 ### Creating a single screenshot
 
@@ -256,39 +429,20 @@ Screenshots will be saved in /path/to/screenshot.png.
 
 MPV may not suspend GNOME's Power Saving Settings if using Wayland (resulting in screen saver turning off the monitor while video is playing for example). A workaround is to add `gnome-session-inhibit` to the beginning of the `Exec=` line in `mpv.desktop`.
 
-## Vapoursynth
-
-Vapoursynth is an alternative to AviSynth that can be used on Linux and allows for Video manipulation via python scripts. Vapoursynths python scripts can be used as video filters for *mpv*.
-
-To use vapoursynth filters you have to install the [vapoursynth](https://www.archlinux.org/packages/?name=vapoursynth) package and compile *mpv* with the `--enable-vapoursynth` build flag.
-
-### Debanding (flash3kyuu)
-
-**Note:** Mpv already include a debanding shader which is enabled by default with the [opengl-hq profile](#High_quality_video_output). Refer to the manual for more information on how to tune it.
-
-To use the `f3k_db` debanding filter install [vapoursynth-plugin-f3kdb](https://www.archlinux.org/packages/?name=vapoursynth-plugin-f3kdb) and write a python script that uses the *vapoursynth* extension.
-
-The following sample script can be used to enable debanding in *mpv*.
-
-```
-import vapoursynth as vs
-core = vs.get_core()
-
-clip = video_in
-clip = core.std.Trim(clip, first=0, length=500000)
-clip = core.f3kdb.Deband(clip, grainy=0, grainc=0, output_depth=16)
-clip.set_output()
-
-```
-
-Finally specify the python script in the config file or use a command line argument when executing mpv.
-
-```
-$ mpv --vf=vapoursynth=f3k_db.py <video_file>
-
-```
-
 ## Troubleshooting
+
+### General debugging
+
+If you are having trouble with *mpv'*s playback (or if it's flat out failing to run) then the first three things you should do are:
+
+1.  Run *mpv* from the command line. If you are lucky there will be an error message there telling you what is wrong.
+    `$ mpv video.mkv`
+2.  Have *mpv* output a log file. The log file might be difficult to sift through but if something is broken you might see it there.
+    `$ mpv --log-file=./log video.mkv`
+3.  Run *mpv* without a configuration. If this runs well then the problem is somewhere in your configuration (perhaps your hardware cannot keep up with your settings).
+    `$ mpv --no-config video.mkv`
+
+If *mpv* runs but it just does not run well then a fourth thing that might be worth taking a look at is installing the [mpv-stats](/index.php/Mpv#mpv-stats "Mpv") script and using it to see exactly how it's performing.
 
 ### Fix jerky playback and tearing
 
@@ -316,3 +470,7 @@ vd-lavc-threads=<threads>
 Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make mpv also disable window compositing when playing in windowed mode (if supported by the compositor).
 
 With KWin compositing and hardware decoding, you may also want to set `x11-bypass-compositor=no` to keep compositing enabled in fullscreen, since reanabling compositing after leaving fullscreen may introduce stutter for a period of time.
+
+### No volume bar, cannot change volume
+
+Spin the mouse wheel over the volume icon.

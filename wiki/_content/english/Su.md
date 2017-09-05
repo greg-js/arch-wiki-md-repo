@@ -1,3 +1,8 @@
+Related articles
+
+*   [Users and groups](/index.php/Users_and_groups "Users and groups")
+*   [sudo](/index.php/Sudo "Sudo")
+
 The **su** command (**s**ubstitute **u**ser) is used to assume the identity of another user on the system, normally root. This saves having to logout and log back in as the user you want to be. Instead, you may login as another user **during** your session by starting a sort of "sub-session", and then logout back to your own session when done.
 
 ## Contents

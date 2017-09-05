@@ -25,6 +25,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.2 Static huge pages](#Static_huge_pages)
     *   [5.3 CPU frequency governor](#CPU_frequency_governor)
     *   [5.4 High DPC Latency](#High_DPC_Latency)
+    *   [5.5 Improving performance on AMD CPU](#Improving_performance_on_AMD_CPU)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
         *   [6.1.1 Script variants](#Script_variants)
@@ -437,6 +438,29 @@ Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU f
 If you are experiencing high DPC and/or interrupt latency in your Guest VM, ensure you have [loaded the needed virtio kernel modules](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") on the host kernel. Loadable virtio kernel modules include: `virtio-pci, virtio-net, virtio-blk, virtio-balloon, virtio-ring` and `virtio`.
 
 After loading one or more of these modules, `lsmod | grep virtio` executed on the host should not return empty.
+
+### Improving performance on AMD CPU
+
+**Note:** Was tested on AMD Ryzen 5 1600 - no stuttering at all. Don't know if it is applicable to non-Ryzen processors.
+
+Disabling Nested Page Tables(aka NPT) will improve GPU performance to a bare metal level while disabling Nested Virtualization feature will reduce periodical micro-freezes of whole VM introduced by disabled NPT.
+
+ `/etc/modprobe.d/kvm_amd.conf`  `options kvm_amd npt=0 nested=0` 
+
+If periodical stuttering still occurs try removing smep feature from vCPU:
+
+ `EDITOR=nano virsh edit [vmname]` 
+```
+...
+
+  <cpu mode='host-passthrough' check='none'>
+    ...
+    <feature policy='disable' name='smep'/>
+    ...
+  </cpu>
+
+...
+```
 
 ## Special procedures
 

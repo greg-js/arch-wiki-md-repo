@@ -2,7 +2,7 @@
 
 * * *
 
-[Інтернет](/index.php/List_of_applications/Internet_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Internet (Українська)") – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – [Утиліти](/index.php/List_of_applications/Utilities_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Utilities (Українська)") – **Документи** – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
+[Інтернет](/index.php/List_of_applications/Internet_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Internet (Українська)") – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – [Утиліти](/index.php/List_of_applications/Utilities_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Utilities (Українська)") – <a class="mw-selflink selflink">Документи</a> – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
 
 ## Contents
 
@@ -429,7 +429,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.xfce.org](https://www.xfce.org) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
-*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Text editor for the [lesstif](https://www.archlinux.org/packages/?name=lesstif) environment.
+*   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Text editor for the Motif environment.
 
 	[http://www.nedit.org](http://www.nedit.org) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 

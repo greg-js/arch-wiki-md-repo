@@ -72,22 +72,15 @@ Jails for many different services are already present in `/etc/fail2ban/jail.con
 
 ### Paths
 
-There currently is no out-of-the-box support for archlinux, but the fedora defaults can make a decent starting point:
-
-```
-# cp /etc/fail2ban/paths-fedora.conf /etc/fail2ban/paths-archlinux.conf
-
-```
-
-To activate that configuration, add or alter the following section in the `jail.local` file:
+There is currently basic support for archlinux, to activate that configuration, add or alter the following section in the `jail.local` file:
 
 ```
 [INCLUDES]
-before = paths-archlinux.conf
+before = paths-arch.conf
 
 ```
 
-[Restart](/index.php/Restart "Restart") `fail2ban.service` to test your configuration. Watch out for "file not found errors" from *fail2ban-client* if the fail2ban service fails to start. Adjust the paths `paths-archlinux.conf` or `jail.local` as needed. Many of the default jails might not work out of the box.
+[Restart](/index.php/Restart "Restart") `fail2ban.service` to test your configuration. Watch out for "file not found errors" from *fail2ban-client* if the fail2ban service fails to start. Adjust the paths `paths-arch.conf` or `jail.local` as needed. Many of the default jails might not work out of the box.
 
 ### Custom SSH jail
 

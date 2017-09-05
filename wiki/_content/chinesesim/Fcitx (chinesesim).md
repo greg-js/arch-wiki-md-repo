@@ -1,3 +1,9 @@
+Related articles
+
+*   [IBus](/index.php/IBus "IBus")
+*   [SCIM](/index.php/SCIM "SCIM")
+*   [UIM](/index.php/UIM "UIM")
+
 [Fcitx](http://code.google.com/p/fcitx/) (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台(即原来的 G 五笔)，包括五笔、拼音(全拼和双拼)、二笔、区位等输入模块，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
 
 ## Contents
@@ -407,6 +413,7 @@ export XMODIFIERS=@im=fcitx
 *   [Fcitx Wiki](http://fcitx-im.org/)
 *   [Fcitx Themes](http://kde-look.org/index.php?xcontentmode=88)
 *   [猫颜文字 For Fcitx QuickPhrase](http://blog.felixc.at/2012/05/kitty-for-fcitx-quickphrase/)
+*   [emoji常用表情-fcitx-emoji](https://github.com/levinit/fcitx-emoji)
 *   [史前大坑 Fcitx 官方 Artwork 团队出品：Fcitx 输入法皮肤制作全教程](https://forum.suse.org.cn/viewtopic.php?f=16&t=731)
 *   [rime 朙(ming)月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict/view/general)
 *   [Fcitx not work in terminal, nautilus, gedit](https://bugzilla.gnome.org/show_bug.cgi?id=747825#c6)

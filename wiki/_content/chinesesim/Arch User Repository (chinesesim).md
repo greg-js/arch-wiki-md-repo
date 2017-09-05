@@ -1,4 +1,17 @@
-**翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-18，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=477222)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [AUR 帮助程序](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)")
+*   [AUR Trusted User Guidelines (简体中文)](/index.php/AUR_Trusted_User_Guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR Trusted User Guidelines (简体中文)")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [PKGBUILD (简体中文)](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")
+*   [makepkg (简体中文)](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
+*   [Pacman (简体中文)](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
+*   [.SRCINFO (简体中文)](/index.php/.SRCINFO_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) ".SRCINFO (简体中文)")
+*   [Official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")
+*   [Arch Build System (简体中文)](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+
+**翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=488175)可以查看翻译后英文页面的改动。
 
 [Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community "Community")仓库。本文介绍用户访问和使用AUR的方法。
 
@@ -327,6 +340,8 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 
 同时，你可以自行更新 PKGBUILD - 通常软件更新不需要修改编译或打包方式，更新 `pkgver` 或 `source` 数组就足够了。
 
+**Note:** [VCS 软件包](/index.php/VCS_package_guidelines "VCS package guidelines") 在 pkgver 变化时并不会过时，所以不要标记它们，AUR 维护者不应该仅为了 pkgver 进行提交。
+
 ### `makepkg`无法构建某个软件包怎么办？
 
 你很可能忘了点啥。
@@ -343,7 +358,7 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 
 ### 我想提交一个PKGBUILD，希望别人帮忙检查错误。
 
-你可以在aur-general贴出你的PKGBUILD并征求他人意见，或到irc.freenode.net上的[IRC频道](/index.php/ArchChannel "ArchChannel")#archlinux寻求帮助。也可以自己使用[namcap](/index.php?title=Namcap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Namcap (简体中文) (page does not exist)")检查PKGBUILD和软件包。
+你可以在aur-general贴出你的PKGBUILD并征求他人意见，或到irc.freenode.net上的[IRC频道](/index.php/ArchChannel "ArchChannel")#archlinux-aur寻求帮助。也可以自己使用[namcap](/index.php?title=Namcap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Namcap (简体中文) (page does not exist)")检查PKGBUILD和软件包。
 
 ### PKGBUILD（AUR软件包）怎样才能被收录到community软件仓库？
 
@@ -397,3 +412,4 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 
 *   [AUR Web](https://aur.archlinux.org)
 *   [AUR 邮件列表](https://lists.archlinux.org/listinfo/aur-general)
+*   [DeveloperWiki:AUR Cleanup Day](/index.php/DeveloperWiki:AUR_Cleanup_Day "DeveloperWiki:AUR Cleanup Day")

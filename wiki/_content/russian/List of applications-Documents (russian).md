@@ -4,7 +4,7 @@
 
 * * *
 
-[Интернет](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Internet (Русский)") – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – **Документы** – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – [Другие](/index.php/List_of_applications/Other_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Other (Русский)")
+[Интернет](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Internet (Русский)") – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – <a class="mw-selflink selflink">Документы</a> – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – [Другие](/index.php/List_of_applications/Other_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Other (Русский)")
 
 ## Contents
 
@@ -368,7 +368,7 @@
 
 	[http://www.xfce.org/](http://www.xfce.org/) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
-*   **[Nedit](https://en.wikipedia.org/wiki/ru:NEdit "wikipedia:ru:NEdit")** — Текстовый редактор для среды [lesstif](https://www.archlinux.org/packages/?name=lesstif)
+*   **[Nedit](https://en.wikipedia.org/wiki/ru:NEdit "wikipedia:ru:NEdit")** — Текстовый редактор для среды Motif
 
 	[http://www.nedit.org/](http://www.nedit.org/) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 

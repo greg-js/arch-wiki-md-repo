@@ -20,7 +20,7 @@ The ArchHaskell group works on providing [Haskell](/index.php/Haskell "Haskell")
 
 ## Resources
 
-The main resources for the **ArchHaskell** community to interact and discuss are:
+The main resources for the <a class="mw-selflink selflink">ArchHaskell</a> community to interact and discuss are:
 
 *   #archlinux-haskell IRC channel @ freenode.org
 *   arch-haskell@haskell.org [mailing list](http://haskell.org/mailman/listinfo/arch-haskell) and [archives](http://www.haskell.org/pipermail/arch-haskell)
@@ -112,7 +112,7 @@ Server = http://archhaskell.mynerdside.com/$repo/$arch
 
 ### Community
 
-See the **ArchHaskell** community page and get in touch via the mailing list or the IRC channel.
+See the <a class="mw-selflink selflink">ArchHaskell</a> community page and get in touch via the mailing list or the IRC channel.
 
 ### Overview
 
@@ -140,4 +140,4 @@ For example, for haskell-foo, ensure:
 
 ### Switching to ArchHaskell repository
 
-There can be some problems switching to [ArchHaskell repository](#ArchHaskell_repository) when some Haskell packages are already installed from [official repositories](/index.php/Official_repositories "Official repositories"). The surest way is to remove all Haskell related packages, synchronize the [pacman](/index.php/Pacman "Pacman") packages database, and reinstall all the needed packages. Also for Xmonad users, be sure to install `haskell-xmonad` package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad).
+There can be some problems switching to [ArchHaskell repository](#Available_repositories) when some Haskell packages are already installed from [official repositories](/index.php/Official_repositories "Official repositories"). The surest way is to remove all Haskell related packages, synchronize the [pacman](/index.php/Pacman "Pacman") packages database, and reinstall all the needed packages. Also for Xmonad users, be sure to install `haskell-xmonad` package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad).

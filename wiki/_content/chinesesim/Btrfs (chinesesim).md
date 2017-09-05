@@ -1,3 +1,11 @@
+相关文章
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [Btrfs - Tips and tricks](/index.php/Btrfs_-_Tips_and_tricks "Btrfs - Tips and tricks")
+*   [Mkinitcpio-btrfs](/index.php/Mkinitcpio-btrfs "Mkinitcpio-btrfs")
+*   [Snapper](/index.php/Snapper "Snapper")
+*   [Installing on Btrfs root](/index.php/Installing_on_Btrfs_root "Installing on Btrfs root")
+
 **翻译状态：** 本文是英文页面 [Btrfs](/index.php/Btrfs "Btrfs") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-13，点击[这里](https://wiki.archlinux.org/index.php?title=Btrfs&diff=0&oldid=432990)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Lighttpd](/index.php/Lighttpd "Lighttpd")
+*   [Nginx](/index.php/Nginx "Nginx")
+*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
+
 Pi-hole is a shell-script based project that manages blocklists of known advertisements and malware and seamlessly interacts with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) to simply drop all any request to a known bad-actor. Pi-hole replaces your router as the LAN's DNS so all requests go through it without the need to install anything on the client-side. This setup effectively deploys network-wide adblocking (ie for all connected devices). The package comes with a nice webUI (as well as a CLI interface) and is very lightweight and scaleable.
 
 ## Contents

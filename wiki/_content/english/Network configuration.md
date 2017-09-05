@@ -1,3 +1,12 @@
+Related articles
+
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
+*   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
+
 This page explains how to set up a **wired** connection to a network. If you need to set up **wireless** networking see the [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") page.
 
 ## Contents
@@ -410,13 +419,18 @@ If you would prefer to retain traditional interface names such as eth0, [Predict
 
 ### Set device MTU and queue length
 
-You can change the device MTU and queue length by defining manually with an udev-rule. For example:
+You can change the device [MTU](https://en.wikipedia.org/wiki/Maximum_transmission_unit "wikipedia:Maximum transmission unit") and queue length by defining manually with an udev-rule. For example:
 
  `/etc/udev/rules.d/10-network.rules` 
 ```
-ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_len}="2000"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1500", ATTR{tx_queue_len}="2000"
 
 ```
+
+**Note:**
+
+*   `mtu`: For PPPoE, the MTU should be no larger than 1492\. You can also set MTU via [systemd.netdev(5)](http://man7.org/linux/man-pages/man5/systemd.netdev.5.html).
+*   `tx_queue_len`: Small value for slower devices with a high latency like modem links and ISDN. High value is recommend for server connected over the high-speed Internet connections that perform large data transfers.
 
 ### ifplugd for laptops
 

@@ -1,9 +1,20 @@
+Related articles
+
+*   [Chromebook](/index.php/Chromebook "Chromebook")
+
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 To install Arch Linux on this model of Chromebook, you have to run these commands to install a Seabios boot stub:
 
 ```
 $ cd; rm -f flash_chromebook_rom.sh; curl -k -L -O [https://johnlewis.ie/flash_chromebook_rom.sh](https://johnlewis.ie/flash_chromebook_rom.sh); sudo -E bash flash_chromebook_rom.sh
+
+```
+
+For a faster boot time you can use a UEFI bootloader ([coreboot](https://www.coreboot.org/)), even remove all the google components. As shown by reddit user coolstarorg in /r/chrultrabook [subreddit](https://www.reddit.com/r/chrultrabook/comments/4t28v1/uefi_firmware_available_for_all_broadwell/?ref=share&ref_source=link).
+
+```
+$ cd ~; curl -L -O [https://coolstar.org/chromebook/setup-firmware.sh](https://coolstar.org/chromebook/setup-firmware.sh); sudo bash setup-firmware.sh
 
 ```
 
@@ -18,6 +29,7 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 
 ## See also
 
+*   [https://www.reddit.com/r/chrultrabook/](https://www.reddit.com/r/chrultrabook/)
 *   [https://johnlewis.ie/custom-chromebook-firmware/rom-download/](https://johnlewis.ie/custom-chromebook-firmware/rom-download/)
 *   [https://plus.google.com/communities/112479827373921524726](https://plus.google.com/communities/112479827373921524726)
 *   [https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH](https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH)

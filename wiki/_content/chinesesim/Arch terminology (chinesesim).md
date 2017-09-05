@@ -1,37 +1,47 @@
-**翻译状态：** 本文是英文页面 [Arch_terminology](/index.php/Arch_terminology "Arch terminology") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-17，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=426096)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_terminology](/index.php/Arch_terminology "Arch terminology") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=476777)可以查看翻译后英文页面的改动。
 
 本页面试图揭开 Arch Linux 社区术语的神秘面纱。您可以自由的添加或更改任何术语，但是请使用某个章节的编辑选项。如果想添加新术语请按照字母顺序。
 
 ## Contents
 
-*   [1 Arch Linux](#Arch_Linux)
-*   [2 Arch 之道](#Arch_.E4.B9.8B.E9.81.93)
-*   [3 ABS](#ABS)
+*   [1 ABS](#ABS)
+*   [2 Arch Linux](#Arch_Linux)
+*   [3 Arch 之道](#Arch_.E4.B9.8B.E9.81.93)
 *   [4 Arch Linux Archive](#Arch_Linux_Archive)
 *   [5 AUR](#AUR)
-*   [6 PKGBUILD](#PKGBUILD)
-*   [7 TU, 可信用户](#TU.2C_.E5.8F.AF.E4.BF.A1.E7.94.A8.E6.88.B7)
-*   [8 bbs](#bbs)
-*   [9 community/[community]](#community.2F.5Bcommunity.5D)
-*   [10 core/[core]](#core.2F.5Bcore.5D)
-*   [11 custom/user repository](#custom.2Fuser_repository)
-*   [12 Developer](#Developer)
-*   [13 extra/[extra]](#extra.2F.5Bextra.5D)
-*   [14 initramfs](#initramfs)
-*   [15 initrd](#initrd)
-*   [16 KISS](#KISS)
-*   [17 makepkg](#makepkg)
-*   [18 namcap](#namcap)
-*   [19 package](#package)
-*   [20 软件包维护者](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.B4.E6.8A.A4.E8.80.85)
-*   [21 pacman](#pacman)
-*   [22 pacman.conf](#pacman.conf)
+*   [6 TU, 可信用户](#TU.2C_.E5.8F.AF.E4.BF.A1.E7.94.A8.E6.88.B7)
+*   [7 bbs](#bbs)
+*   [8 community/[community]](#community.2F.5Bcommunity.5D)
+*   [9 core/[core]](#core.2F.5Bcore.5D)
+*   [10 custom/user repository](#custom.2Fuser_repository)
+*   [11 Developer](#Developer)
+*   [12 extra/[extra]](#extra.2F.5Bextra.5D)
+*   [13 initramfs](#initramfs)
+*   [14 initrd](#initrd)
+*   [15 KISS](#KISS)
+*   [16 makepkg](#makepkg)
+*   [17 namcap](#namcap)
+*   [18 package](#package)
+*   [19 软件包维护者](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.B4.E6.8A.A4.E8.80.85)
+*   [20 pacman](#pacman)
+*   [21 pacman.conf](#pacman.conf)
+*   [22 PKGBUILD](#PKGBUILD)
 *   [23 仓库/repo](#.E4.BB.93.E5.BA.93.2Frepo)
 *   [24 RTFM](#RTFM)
-*   [25 taurball](#taurball)
-*   [26 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [27 udev](#udev)
-*   [28 wiki](#wiki)
+*   [25 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [26 udev](#udev)
+*   [27 wiki](#wiki)
+
+## ABS
+
+[Arch 编译系统](/index.php/Arch_Build_System "Arch Build System") (ABS) 可以:
+
+*   为没有打包的软件制作软件包
+*   定制/修改已有的软件包，满足您的需求（启用或禁用选项)
+*   用自定义的编译选项编译整个系统，"类似 Gentoo"
+*   让内核模块在自定义内核上工作
+
+ABS 不是必须的，但是很有用。
 
 ## Arch Linux
 
@@ -49,17 +59,6 @@ Archlinux、ArchLinux、archLinux、aRcHlInUx 等等称呼都不是标准的。
 
 一个[Arch Linux 原则](/index.php/Arch_Linux#Principles "Arch Linux") 的非正式传统说法。
 
-## ABS
-
-[Arch 编译系统](/index.php/Arch_Build_System "Arch Build System") (ABS) 可以:
-
-*   为没有打包的软件制作软件包
-*   定制/修改已有的软件包，满足您的需求（启用或禁用选项)
-*   用自定义的编译选项编译整个系统，"类似 Gentoo"
-*   让内核模块在自定义内核上工作
-
-ABS 不是必须的，但是很有用。
-
 ## Arch Linux Archive
 
 [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (a.k.a ALA), 之前被称为　Arch Linux Rollback Machine (a.k.a ARM), 保存历史上的官方软件仓库快照，ISO　镜像和　boot straps　压缩包。
@@ -71,10 +70,6 @@ ABS 不是必须的，但是很有用。
 许多官方仓库软件包都来自AUR。通过AUR，大家相互分享新的软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")和其他相关文件）。用户还可以为软件包投票。如果一个软件包投票足够多、没有协议问题、打包质量好，那么它就很有希望被收录进官方[community]仓库（以后就可以直接通过[pacman](/index.php/Pacman "Pacman") 或 [abs](/index.php/ABS "ABS") 安装了）。
 
 通过[这个](https://aur.archlinux.org)页面可以访问 AUR。
-
-## PKGBUILD
-
-[PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 是编译 Arch Linux 软件包使用的脚本。详情参考 [Creating packages (简体中文)](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)").
 
 ## TU, 可信用户
 
@@ -89,8 +84,6 @@ ABS 不是必须的，但是很有用。
 ## community/[community]
 
 [community] 仓库存储 [可信用户](/index.php/Trusted_Users "Trusted Users") 预先编译的软件包。[community] 中的大部分软件包都来自 [AUR](/index.php/AUR "AUR").
-
-要访问 [community] 仓库，取消 `/etc/pacman.conf` 中的注释。
 
 ## core/[core]
 
@@ -165,6 +158,10 @@ Arch 软件包管理器 [pacman](/index.php/Pacman "Pacman") 可以安装、更�
 
 [pacman](/index.php/Pacman "Pacman") 的配置文件，位于 `/etc`. 完整介绍请参考`man pacman.conf`.
 
+## PKGBUILD
+
+[PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 是编译 Arch Linux 软件包使用的脚本。详情参考 [Creating packages (简体中文)](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)").
+
 ## 仓库/repo
 
 软件仓库是包含一个或多个从 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 编译出来的软件包. [官方软件仓库](/index.php/Official_repositories "Official repositories")分成多个部分以方便管理。Pacman 使用这些仓库查找和安装软件包。一个仓库可以是本地的，也可以是远程的(先下载软件包再安装).
@@ -183,10 +180,6 @@ Arch 软件包管理器 [pacman](/index.php/Pacman "Pacman") 可以安装、更�
 *   搜索 [论坛](https://bbs.archlinux.org)
 *   搜索 [邮件列表](https://www.google.com/#hl=en&q=arch+site:archlinux.org%2Fpipermail%2F)
 *   搜索 [web](https://www.google.com)
-
-## taurball
-
-makepkg 创建安装二进制软件包所需要的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 和本地代码文件。这个名称是从上传这样的 tar 文件到 [AUR](/index.php/AUR "AUR") 而来，即 "tAURball"。
 
 ## testing/[testing]
 

@@ -22,13 +22,7 @@ $> lsusb
 Bus 003 Device 002: ID 046d:c626 Logitech, Inc. 3Dconnexion Space Navigator 3D Mouse
 ```
 
-2\. Install [openmotif](https://www.archlinux.org/packages/?name=openmotif) or if you need [lesstif](https://www.archlinux.org/packages/?name=lesstif) (e.g. for [xpdf](https://www.archlinux.org/packages/?name=xpdf)) you can just get the `libXm.so.4` library from it:
-
-```
-$> sudo pacman -Sw openmotif # download openmotif to cache, do not install
-$> tar xJOf /var/cache/pacman/pkg/openmotif-* usr/lib/libXm.so.4.0.3 > libXm.so.4
-$> sudo mv libXm.so.4 /usr/lib/libXm.so.4
-```
+2\. Install [openmotif](https://www.archlinux.org/packages/?name=openmotif).
 
 3\. Symlink `libXm.so.4` to `libXm.so.3`
 

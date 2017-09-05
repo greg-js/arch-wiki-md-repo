@@ -1,3 +1,9 @@
+Related articles
+
+*   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
+*   [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment")
+*   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
 	Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. The language provides constructs intended to enable writing clear programs on both a small and large scale.
@@ -210,7 +216,7 @@ exec python3 "$@"
 
 ```
 
-Where `/path/to/project1/*|/path/to/project2/*|/path/to/project3*` is a list of patterns separated by `|` matching all project trees.
+Where `/path/to/project1/*|/path/to/project2/*|/path/to/project3*` is a list of patterns separated by `|` matching all project trees. For some scripts, the path may not be the first parameter, for example Google SDK it sends "-S" as the first parameter. The readlink command should change to `script=$(readlink -f -- "$1")`.
 
 Do not forget to make it [executable](/index.php/Executable "Executable"). Afterwards scripts within the specified project trees will be run with Python 2.
 

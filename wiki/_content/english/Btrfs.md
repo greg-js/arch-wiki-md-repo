@@ -427,7 +427,7 @@ See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.p
 
 Using copy-on-write, Btrfs is able to copy files or whole subvolumes without actually copying the data. However whenever a file is altered a new *proper* copy is created. Deduplication takes this a step further, by actively identifying blocks of data which share common sequences and combining them into an extent with the same copy-on-write semantics.
 
-For an overview of available tools to deduplicate your Btrfs partition have a look at the [upstream Wiki entry](https://btrfs.wiki.kernel.org/index.php/Deduplication#Batch).
+Tools dedicated to deduplicate a Btrfs formatted partition include [duperemove](https://aur.archlinux.org/packages/duperemove/), [bedup](https://aur.archlinux.org/packages/bedup/) and *btrfs-dedup*. One may also want to merely deduplicate data on a file based level instead using e.g. [rmlint](https://www.archlinux.org/packages/?name=rmlint) or [jdupes](https://aur.archlinux.org/packages/jdupes/). For an overview of available features of those programs and additional information have a look at the [upstream Wiki entry](https://btrfs.wiki.kernel.org/index.php/Deduplication#Batch).
 
 Furthermore Btrfs developers are working on inband (also known as synchronous or inline) deduplication, meaning deduplication done when writing new data to the filesystem. Currently it is still an experiment which is developed out-of-tree. Users willing to test the new feature should read the [appropriate kernel wiki page](https://btrfs.wiki.kernel.org/index.php/User_notes_on_dedupe).
 

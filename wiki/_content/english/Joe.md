@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")
+*   [List of applications/Documents#Text editors](/index.php/List_of_applications/Documents#Text_editors "List of applications/Documents")

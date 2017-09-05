@@ -1,3 +1,9 @@
+相关文章
+
+*   [Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")
+*   [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
+*   [Beginners' Guide (简体中文)](/index.php/Beginners%27_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' Guide (简体中文)")
+
 依据「[Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")」：我们不会为你配置好一切，因为“喜好和需求，每人皆不同”，但是会尽量确保让配置时方便和简单。事实上，甚至远比使用某些Linux中文版本容易。
 
 本文尽可能提供了各种常见软件的中文化指导。但实际应用中，你可能遇到各种各样的麻烦。遇到了麻烦，不要气馁，解决问题本身就是一种乐趣。你可以通过各种渠道寻求帮助：
@@ -17,6 +23,7 @@
     *   [1.4 中文字体](#.E4.B8.AD.E6.96.87.E5.AD.97.E4.BD.93)
         *   [1.4.1 安装字体](#.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
         *   [1.4.2 中文字体配置](#.E4.B8.AD.E6.96.87.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)
+            *   [1.4.2.1 修正简体中文显示为异体（日文）字形](#.E4.BF.AE.E6.AD.A3.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.E6.98.BE.E7.A4.BA.E4.B8.BA.E5.BC.82.E4.BD.93.EF.BC.88.E6.97.A5.E6.96.87.EF.BC.89.E5.AD.97.E5.BD.A2)
         *   [1.4.3 fontconfig设置](#fontconfig.E8.AE.BE.E7.BD.AE)
     *   [1.5 中文输入法](#.E4.B8.AD.E6.96.87.E8.BE.93.E5.85.A5.E6.B3.95)
 *   [2 终端中文支持](#.E7.BB.88.E7.AB.AF.E4.B8.AD.E6.96.87.E6.94.AF.E6.8C.81)
@@ -36,12 +43,14 @@
         *   [3.8.2 xine](#xine)
         *   [3.8.3 gstreamer](#gstreamer)
     *   [3.9 LaTeX](#LaTeX)
-*   [4 其他中文化问题](#.E5.85.B6.E4.BB.96.E4.B8.AD.E6.96.87.E5.8C.96.E9.97.AE.E9.A2.98)
-    *   [4.1 MP3文件标签乱码](#MP3.E6.96.87.E4.BB.B6.E6.A0.87.E7.AD.BE.E4.B9.B1.E7.A0.81)
-    *   [4.2 Windows分区下的中文文件名乱码](#Windows.E5.88.86.E5.8C.BA.E4.B8.8B.E7.9A.84.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E4.B9.B1.E7.A0.81)
-    *   [4.3 Samba乱码](#Samba.E4.B9.B1.E7.A0.81)
-    *   [4.4 ftp乱码](#ftp.E4.B9.B1.E7.A0.81)
-    *   [4.5 翻译软件](#.E7.BF.BB.E8.AF.91.E8.BD.AF.E4.BB.B6)
+*   [4 乱码问题](#.E4.B9.B1.E7.A0.81.E9.97.AE.E9.A2.98)
+    *   [4.1 乱码文件和文件名的转码](#.E4.B9.B1.E7.A0.81.E6.96.87.E4.BB.B6.E5.92.8C.E6.96.87.E4.BB.B6.E5.90.8D.E7.9A.84.E8.BD.AC.E7.A0.81)
+    *   [4.2 zip压缩包乱码](#zip.E5.8E.8B.E7.BC.A9.E5.8C.85.E4.B9.B1.E7.A0.81)
+    *   [4.3 MP3文件标签乱码](#MP3.E6.96.87.E4.BB.B6.E6.A0.87.E7.AD.BE.E4.B9.B1.E7.A0.81)
+    *   [4.4 Windows分区下的中文文件名乱码](#Windows.E5.88.86.E5.8C.BA.E4.B8.8B.E7.9A.84.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E4.B9.B1.E7.A0.81)
+    *   [4.5 Samba乱码](#Samba.E4.B9.B1.E7.A0.81)
+    *   [4.6 ftp乱码](#ftp.E4.B9.B1.E7.A0.81)
+*   [5 翻译软件](#.E7.BF.BB.E8.AF.91.E8.BD.AF.E4.BB.B6)
 
 ## 基本中文支持
 
@@ -58,7 +67,7 @@ zh_CN.GB2312
 zh_CN.GBK
 zh_CN.GB18030
 zh_CN.UTF-8
-zh_TW
+zh_TW.BIG-5
 zh_TW.UTF-8
 
 ```
@@ -71,7 +80,7 @@ zh_CN.UTF-8 UTF-8
 
 ```
 
-然后执行locale-gen命令，便可以在系统中使用这些locale。可以通过`locale`命令来查看当前使用的locale：亦可通过`locale -a`命令来查看目前可以使用的locale；
+然后执行`locale-gen`命令，便可以在系统中使用这些locale。可以通过`locale`命令来查看当前使用的locale：亦可通过`locale -a`命令来查看目前可以使用的locale；
 
 ### 启用中文locale
 
@@ -124,6 +133,7 @@ export LC_CTYPE=en_US.UTF-8
 *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai)
 *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming)
 *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)
+*   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk)
 
 系统字体将默认安装到`/usr/share/fonts`。如果没有root权限或只打算自己使用某些字体，可以直接复制这些字体到`~/.fonts`目录（或其子目录）下面，并把该路径加入/etc/fonts/local.conf中。具体参见后面章节。
@@ -132,25 +142,18 @@ export LC_CTYPE=en_US.UTF-8
 
 #### 中文字体配置
 
-安装好字体以后，字体显示效果可能不堪入目。需要对fontconfig和某些程序进行调整。
+##### 修正简体中文显示为异体（日文）字形
 
-fontconfig是字体选择的接口，你可以用它去控制单个字体或者字体族的属性，比如hint或者autohint。
+安装的Noto Sans CJK 或 adobe source han sans otc fonts（思源黑体） 或 adobe source han serif otc fonts（思源宋体）后，在某些情况下（框架未定义地区）汉字字形与标准形态不符，例如门、关、复等字字形与规范中文不符。这是因为每个程序中可以设置不同的默认字体，比如Arial或者Tohamo，而这些字体的属性由fontconfig控制，其使用顺序是据地区代码以A-Z字母表顺序成默认排序，由于 ja-JP 在 zh_{CN,HK,SG,TW} 之前，故优先显示日文字形。
 
-另外每个程序中可以设置不同的默认字体，比如Arial或者Tohamo。这些字体的属性由fontconfig控制。所以当字体显示不满意时，首先需要判断是调整字体的种类还是字体的属性。prefer 是据地区代码以A-Z字母表顺序成默认排序，由于 ja-JP 在 zh_{CN,HK,SG,TW} 之前，故优先显示日文字形。
+解决方法任选一种：
 
-*   修正 Noto Sans CJK 或 adobe source han sans otc fonts/adobe source han serif otc fonts 简体中文显示为异体（日文）字形
+*   安装思源的简体中文字体部分如[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)而非中日韩（CJK)整包，或者在aur中安装[noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/)。(推荐，此方法最简单）
 
-安装思源黑体/宋体（adobe source han sans/serif otc fonts)或Google Noto Sans CJK后，在某些情况下（框架未定义地区）汉字字形与标准形态不符，例如门、关、复等字字形与规范中文不符，这是因为日文 prefer（优先度）高于中文导致的，即同一个字的多个字形，由于优先度的关系使日文字形默认显示。
+*   在 locale.conf 中设置中文为默认语言LANG=zh_{CN,HK,SG,TW}.UTF-8，则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。
+*   手动调整 prefer，即，将中文字形调整到日文字形之前。[[3]](http://tieba.baidu.com/p/4879946717)
 
-解决方法：
-
-1.安装思源的简体中文字体部分如[adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts)、[adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts)而非中日韩（CJK)整包。
-
-2.在 locale.conf 中设置中文为默认语言（LANG=zh_{CN,HK,SG,TW}.UTF-8），则不会出现此问题，原因是 locale 定义了框架内地区（即 CJK 优先度），使得字体 prefer 被忽略。
-
-3.如果安装的是思源黑体/宋体cjk包或者noto fonts cjk，则手动调整 prefer，即，将中文字形调整到日文字形之前。[[3]](http://tieba.baidu.com/p/4879946717)
-
-以noto fonts 为例，修改文件 /etc/fonts/conf.avail/64-language-selector-prefer.conf 如下，无此文件则创建：
+以noto-fonts-cjk 为例，修改文件 /etc/fonts/conf.avail/64-language-selector-prefer.conf 如下，无此文件则创建：
 
 ```
  <?xml version="1.0"?>
@@ -314,7 +317,40 @@ xine也可以显示中文字幕，但需要制作自己的中文字体。具体�
 
 首先需要安装CJK包，然后需要安装合适的字体。具体可以参考：[[6]](http://www.ctex.org)。
 
-## 其他中文化问题
+## 乱码问题
+
+避免乱码基本原则：使用utf-8代替gbk/gb2312。
+
+### 乱码文件和文件名的转码
+
+*   文件名乱码：安装 [convmv](https://www.archlinux.org/packages/?name=convmv)，使用`convmv`命令转换编码格式。示例：
+
+```
+convmv -f gbk -t utf8 file
+
+```
+
+-f指定原编码格式，-t指定要转换成的编码格式。
+
+*   文件内容乱码：使用`iconv`命令转换格式。示例：
+
+```
+iconv -f gbk -t utf8 file
+
+```
+
+-f指定原编码格式，-t指定要转换成的编码格式。
+
+### zip压缩包乱码
+
+避免方法：非utf8编码环境下(一般windwos下的中文环境即是）不使用zip进行压缩（建议使用7z)。 解决方案：安装使用[unzip-iconv](https://aur.archlinux.org/packages/unzip-iconv/)或者[unzip-natspec](https://aur.archlinux.org/packages/unzip-natspec/)取代原版的[unzip](https://www.archlinux.org/packages/?name=unzip)来解压缩，示例：
+
+```
+ unzip -O gbk file.zip
+
+```
+
+file.zip是压缩文件，gbk是该文件的编码格式，以-O指定（原版unzip无-O选项）。
 
 ### MP3文件标签乱码
 
@@ -388,37 +424,9 @@ remote_charsets=gb2312
 
 但下载下来的文件名仍然是乱码，需要打补丁编译。补丁地址为: [http://www.teatime.com.tw/%7Etommy/linux/gftp_remote_charsets.patch](http://www.teatime.com.tw/%7Etommy/linux/gftp_remote_charsets.patch)
 
-### 翻译软件
+## 翻译软件
 
-目前有两个选择：星际译王或者goldendict，这两者默认都不带字典，所以安装完软件后，需要下载相应字典。 下面介绍安装星际译王： 先安装[stardict](https://www.archlinux.org/packages/?name=stardict)软件包：
-
-```
-pacman -S stardict
-
-```
-
-stardict默认是不带字典的，需要去[[7]](http://stardict.sourceforge.net/)下载字典安装。安装方法如下：
-
-```
-tar -xjvf testdict.tar.bz2
-mv testdict /usr/share/stardict/dic
-
-```
-
-安装TTS发音，stardict默认是不带发音的，需要下载。下载安装方法如下：
-
-```
-wget [http://stardict-3.googlecode.com/files/WyabdcRealPeopleTTS.tar.bz2](http://stardict-3.googlecode.com/files/WyabdcRealPeopleTTS.tar.bz2)
-tar -xjvf WyabdcRealPeopleTTS.tar.bz2
-mv WyabdcRealPeopleTTS /usr/share
-
-```
-
-重新启动stardict
-
-推荐使用：
-
-*   xdict英汉字典
-*   Merriam Webster 10th dictionary
-*   牛津现代英汉双解辞典(正体中文)
-*   朗道英汉词典(正体中文)
+*   [sdcv](https://www.archlinux.org/packages/?name=sdcv)（命令行的星际译王）和[ydcv](https://www.archlinux.org/packages/?name=ydcv)命令行的有道词典。
+*   [youdao-dict](https://aur.archlinux.org/packages/youdao-dict/)：有道词典（图形界面），屏幕取词翻译。
+*   [goldendict](https://www.archlinux.org/packages/?name=goldendict)：默认都不带字典，可下载相应字典包（支持Babylon的词库格式.BGL，已经不再维护的StarDict的词库格式（.ifo/.dict/.idx/.syn），Dictd的词库格式（.index/.dict(.dz) ，ABBYY Lingvo 的词库格式（.dsl/.lsa/.dat），mdict的词库格式等等。可在互联网上下载这些词典的词库文件导入的goldendict使用（可能有版权问题）。
+*   [moedict](https://aur.archlinux.org/packages/moedict/)一个跨多平台的汉语词典，除汉字、词、成语等，还包含客家话、闽南话、简单的外文翻译、笔顺书写等等，[萌典在线地址](https://www.moedict.tw/%E8%90%8C)。

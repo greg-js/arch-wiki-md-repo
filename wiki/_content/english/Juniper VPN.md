@@ -9,7 +9,7 @@
 *   [2 Workarounds](#Workarounds)
     *   [2.1 64-bit Java (workaround 1)](#64-bit_Java_.28workaround_1.29)
     *   [2.2 64-bit Java (workaround 2)](#64-bit_Java_.28workaround_2.29)
-    *   [2.3 GCC and Motif](#GCC_and_Motif)
+    *   [2.3 Motif and libstdc++-libc6.2-2.so.3](#Motif_and_libstdc.2B.2B-libc6.2-2.so.3)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Password incorrect](#Password_incorrect)
     *   [3.2 Login succeeds but Network Connect will not launch](#Login_succeeds_but_Network_Connect_will_not_launch)
@@ -268,52 +268,15 @@ Another approach is to install an alternative version of Java and link the Java 
 
 For more information, see the following guide from [Southern Illinois University](https://web.archive.org/web/20120114155121/http://wireless.siu.edu:80/install-ubuntu-64.htm).
 
-### GCC and Motif
+### Motif and libstdc++-libc6.2-2.so.3
 
-**Warning:** The steps involved in this section, including using obsolete compilers and binaries and symlinking new library names to old are **absolutely not recommended**.
+**Warning:** The steps involved in this section, including using obsolete libraries and symlinking new library names to old are **absolutely not recommended**.
 
-You may have difficulty using Juniper VPN due to the versions of GCC and Motif installed on your machine. If so, follow the instructions below.
+When trying to use Juniper VPN, you may be informed that there are missing libraries. If so, follow the instructions below.
 
 1) Install a Java Runtime Environment (JRE) - see [Java](/index.php/Java "Java").
 
-2) Install an older version of GCC - either version 2 or version 3\. Alternatively install *lib-compat* using the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") below which will also provide the required `libstdc++-libc6.2-2.so.3`:
-
-```
-# Contributor: Clement Siuchung Cheung <clement.cheung@umich.edu>
-pkgname=lib-compat
-pkgver=1.4.1
-pkgrel=1
-pkgdesc="Gentoo lib compat for old programs only available in binary"
-arch=(x86)
-url="[http://www.gentoo.org/](http://www.gentoo.org/)"
-source=([ftp://ftp.ibiblio.org/pub/linux/distributions/gentoo/distfiles/${pkgname}-${pkgver}.tar.bz2](ftp://ftp.ibiblio.org/pub/linux/distributions/gentoo/distfiles/${pkgname}-${pkgver}.tar.bz2))
-md5sums=('ec4a4528295b5879ad055e44c4a6d463')
-
-build() {
-  cd $startdir/src/${pkgname}-${pkgver}/x86
-
-  # Install /lib files
-  mkdir -p $startdir/pkg/lib
-  mv ld-linux.so.1* $startdir/pkg/lib
-
-  # Install /usr/lib files
-  mkdir -p $startdir/pkg/usr/lib
-  mv *.so* $startdir/pkg/usr/lib
-
-  # Fix files
-  cd $startdir/pkg/usr/lib
-  mv -f libstdc++-libc6.2-2.so.3 libstdc++-3-libc6.2-2-2.10.0.so
-  ln -s libstdc++-3-libc6.2-2-2.10.0.so libstdc++-libc6.2-2.so.3
-  mv -f libstdc++-libc6.1-1.so.2 libstdc++-2-libc6.1-1-2.9.0.so
-  ln -s libstdc++-2-libc6.1-1-2.9.0.so libstdc++-libc6.1-1.so.2
-  ln -s libstdc++.so.2.8.0 libstdc++.so.2.8
-  ln -s libstdc++.so.2.7.2.8 libstdc++.so.2.7.2
-  ln -s libg++.so.2.7.2.8 libg++.so.2.7.2
-  rm -f libstdc++.so.2.9.dummy libstdc++.so.2.9.0
-  rm -f libsmpeg-0.4.so.0.dummy
-}
-
-```
+2) Install [libstdc++296](https://aur.archlinux.org/packages/libstdc%2B%2B296/) which provides the required `libstdc++-libc6.2-2.so.3` library.
 
 3) Install the Motif toolkit. Note that *lesstif* must be used - the [openmotif](https://www.archlinux.org/packages/?name=openmotif) package provides a version of Motif that is too recent. Specifically, it provides `libXm.so.4` instead of `libXm.so.3`.
 

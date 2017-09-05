@@ -1,3 +1,10 @@
+Related articles
+
+*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+*   [Chromium](/index.php/Chromium "Chromium")
+*   [Otter Browser](/index.php/Otter_Browser "Otter Browser")
+*   [Vivaldi](/index.php/Vivaldi "Vivaldi")
+
 [Opera](http://www.opera.com) is a free of charge web browser developed since 1994 by the Norwegian company [Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software"). It is known for being the first to bring new browsing features to the world that have become common on all web browsers, such as tabbed browsing and built-in search.
 
 ## Contents
@@ -244,7 +251,7 @@ This will disable GTK+ styling support and hence avoid the issue.
 
 When using a dark GTK theme, one might encounter Opera address bar and Internet pages with unreadable input and text fields (e.g. Amazon can have black text on black text field background). This can happen because the site only sets either background or text color, and Opera takes the other one from the theme.
 
-Using an installed clear theme and a command help to work around the problem: `env GTK2_RC_FILES=/usr/share/themes/<light-theme-name/gtk-2.0/gtkrc opera`
+Using an installed clear theme and a command help to work around the problem: `env GTK_THEME=<light-theme-name> opera`
 
 to turn it as default, use a prefered text editor and edit the file `/usr/bin/opera`. e.g. using Opera 12.14:
 
@@ -266,7 +273,7 @@ edit the file and follow the example changing to...
 #!/bin/sh
 export OPERA_DIR=${OPERA_DIR:-/usr/share/opera}
 export OPERA_PERSONALDIR=${OPERA_PERSONALDIR:-$HOME/.opera}
-env GTK2_RC_FILES=/usr/share/themes/Clearlooks/gtk-2.0/gtkrc /usr/lib/opera/opera "$@"
+env GTK_THEME=Clearlooks /usr/lib/opera/opera "$@"
 
 ```
 

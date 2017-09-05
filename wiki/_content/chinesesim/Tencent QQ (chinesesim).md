@@ -2,29 +2,42 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ## Contents
 
-*   [1 基于 WebQQ](#.E5.9F.BA.E4.BA.8E_WebQQ)
-    *   [1.1 SmartQQ](#SmartQQ)
-    *   [1.2 官方 Adobe Air 客户端](#.E5.AE.98.E6.96.B9_Adobe_Air_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [1.3 PyWebQQ (python-webqq)](#PyWebQQ_.28python-webqq.29)
-    *   [1.4 pidgin-lwqq](#pidgin-lwqq)
-    *   [1.5 telepathy/empathy-lwqq](#telepathy.2Fempathy-lwqq)
-    *   [1.6 gtkqq](#gtkqq)
-    *   [1.7 qtqq](#qtqq)
-    *   [1.8 weechat-webqq](#weechat-webqq)
-*   [2 独立开发](#.E7.8B.AC.E7.AB.8B.E5.BC.80.E5.8F.91)
-    *   [2.1 libqq](#libqq)
-*   [3 官方版本](#.E5.AE.98.E6.96.B9.E7.89.88.E6.9C.AC)
-*   [4 Wine 模拟](#Wine_.E6.A8.A1.E6.8B.9F)
-    *   [4.1 Wine QQ](#Wine_QQ)
-    *   [4.2 Wine QQ 轻聊版](#Wine_QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
-    *   [4.3 Wine TIM](#Wine_TIM)
-        *   [4.3.1 安装前的准备](#.E5.AE.89.E8.A3.85.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
-        *   [4.3.2 安装及配置](#.E5.AE.89.E8.A3.85.E5.8F.8A.E9.85.8D.E7.BD.AE)
-        *   [4.3.3 相关问题解决](#.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [4.4 CrossOver TM2013](#CrossOver_TM2013)
-    *   [4.5 Awesome 下的配置](#Awesome_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
-    *   [4.6 i3 下的配置](#i3_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [1 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
+*   [2 基于 WebQQ](#.E5.9F.BA.E4.BA.8E_WebQQ)
+    *   [2.1 SmartQQ](#SmartQQ)
+    *   [2.2 官方 Adobe Air 客户端](#.E5.AE.98.E6.96.B9_Adobe_Air_.E5.AE.A2.E6.88.B7.E7.AB.AF)
+    *   [2.3 PyWebQQ (python-webqq)](#PyWebQQ_.28python-webqq.29)
+    *   [2.4 pidgin-lwqq](#pidgin-lwqq)
+    *   [2.5 telepathy/empathy-lwqq](#telepathy.2Fempathy-lwqq)
+    *   [2.6 gtkqq](#gtkqq)
+    *   [2.7 qtqq](#qtqq)
+    *   [2.8 weechat-webqq](#weechat-webqq)
+*   [3 独立开发](#.E7.8B.AC.E7.AB.8B.E5.BC.80.E5.8F.91)
+    *   [3.1 libqq](#libqq)
+*   [4 官方版本](#.E5.AE.98.E6.96.B9.E7.89.88.E6.9C.AC)
+*   [5 Wine 模拟](#Wine_.E6.A8.A1.E6.8B.9F)
+    *   [5.1 Wine QQ](#Wine_QQ)
+    *   [5.2 Wine QQ 轻聊版](#Wine_QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
+    *   [5.3 Wine TIM](#Wine_TIM)
+        *   [5.3.1 安装前的准备](#.E5.AE.89.E8.A3.85.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
+        *   [5.3.2 安装及配置](#.E5.AE.89.E8.A3.85.E5.8F.8A.E9.85.8D.E7.BD.AE)
+        *   [5.3.3 相关问题解决](#.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
+    *   [5.4 CrossOver TM2013](#CrossOver_TM2013)
+    *   [5.5 Awesome 下的配置](#Awesome_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
+    *   [5.6 i3 下的配置](#i3_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
+
+## 使用虚拟机
+
+简单方便，不用解决各种依赖、字体等问题。这里建议使用virtualbox。
+
+1\. 安装[virtualbox](https://www.archlinux.org/packages/?name=virtualbox)，可参看[VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") 。 2\. 下载[Microsoft提供的正版虚拟机专用系统](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)(选择virtualbox格式的下载）。
+
+3\. 从虚拟机导入系统（根据使用需求设置虚拟机要使用的cpu和内存配置）；
+
+4\. 在虚拟机中的windows系统中安装腾讯QQ。
+
+技巧：virtualbox的**无缝模式**（默认案件ctrl+l)开启后，虚拟机系统中开启的窗口就如同在宿主机中的原生窗口一样，使用体验大大提升。
 
 ## 基于 WebQQ
 

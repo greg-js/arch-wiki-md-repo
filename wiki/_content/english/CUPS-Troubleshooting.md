@@ -13,8 +13,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [2.2 All jobs are "stopped"](#All_jobs_are_.22stopped.22)
     *   [2.3 All jobs are "The printer is not responding"](#All_jobs_are_.22The_printer_is_not_responding.22)
     *   [2.4 The PPD version is not compatible with gutenprint](#The_PPD_version_is_not_compatible_with_gutenprint)
-    *   [2.5 Gutenprint update](#Gutenprint_update)
-    *   [2.6 Printers are not present in the print dialog for GTK3 applications](#Printers_are_not_present_in_the_print_dialog_for_GTK3_applications)
+    *   [2.5 Printers are not present in the print dialog for GTK3 applications](#Printers_are_not_present_in_the_print_dialog_for_GTK3_applications)
 *   [3 Networking issues](#Networking_issues)
     *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
     *   [3.2 Old CUPS server](#Old_CUPS_server)
@@ -132,11 +131,7 @@ Run:
 
 ```
 
-And restart CUPS (as pointed out in gutenprint's post-install message)
-
-### Gutenprint update
-
-If you update Gutenprint you also need to refresh the selected driver. Go to the printer properties, edit "Make and Model" and reselect the old driver. As an alternative you can also delete the printer with the outdated driver and do an initial setup. Your settings will be lost then.
+And restart CUPS (as pointed out in gutenprint's post-install message).
 
 ### Printers are not present in the print dialog for GTK3 applications
 
@@ -421,7 +416,9 @@ This seems to be caused by the wrong page size being set in [CUPS](/index.php/CU
 
 ### Printer becomes stuck after a problem
 
-When an issue arises during printing, the printer in CUPS may become unresponsive. `lpq` reports that the printer `is not ready`. It can be reactivated using `cupsenable`. To automatically have CUPS reactivate the printer, change [ErrorPolicy](https://www.cups.org/doc/man-cupsd.conf.html?TOPIC=Man+Pages#ErrorPolicy) from the default `stop-printer` to `retry-this-job`.
+When an issue arises during printing, the printer in CUPS may become unresponsive. `lpq` reports that the printer `is not ready`, and it can be reactivated using `cupsenable`. In the CUPS web interface, the printer is shown as *Paused*, and can be reactivated by *resuming* the printer.
+
+To automatically have CUPS reactivate the printer, change [ErrorPolicy](https://www.cups.org/doc/man-cupsd.conf.html?TOPIC=Man+Pages#ErrorPolicy) from the default `stop-printer` to `retry-this-job`.
 
 ### Samsung: URF ERROR - Incomplete Session by time out
 

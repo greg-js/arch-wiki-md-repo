@@ -1,3 +1,8 @@
+Related articles
+
+*   [Audiobook](/index.php/Audiobook "Audiobook")
+*   [iPhone tethering](/index.php/IPhone_tethering "IPhone tethering")
+
 The purpose of this article is to demonstrate the use of an **iPad**, **iPod** or **iPhone** with Arch Linux.
 
 ## Contents
@@ -26,7 +31,7 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
 
 ## Connecting to a device
 
-Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) package. Restarting the file manager or application might be needed.
+Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) package. Restarting the file manager or application might be needed. Also confirm that usbmuxd is running in the background if the device is still not being recognized by the file manager or application.
 
 ## Changing iPod mountpoint
 
@@ -201,7 +206,7 @@ If you have not previously synced your device using iTunes specifically, you wil
 
 #### Unobfuscating the Database
 
-Since firmware version 2.0, Apple has obfuscated the music database. If you are using recent firmware, the file `/System/Library/Lockdown/Checkpoint.xml` can be modified to enable use of the older, non-obfuscated database. Replace:
+Since firmware version 2.0, Apple has obfuscated the music database. If you are using recent firmware, the file `/System/Library/Lockdown/Checkpoint.xml` can be modified to enable use of the older, non-obfuscated database. If that file doesn't exist then try to copy from `/System/Library/CoreServices/Checkpoint.xml` to `/System/Library/Lockdown/Checkpoint.xml` then replace:
 
 ```
 <key>DBVersion</key>

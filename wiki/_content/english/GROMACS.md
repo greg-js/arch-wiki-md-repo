@@ -1,3 +1,7 @@
+Related articles
+
+*   [List of applications/Science](/index.php/List_of_applications/Science "List of applications/Science")
+
 According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 	a versatile package to perform [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics "wikipedia:Molecular dynamics"), i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
@@ -54,7 +58,7 @@ According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 **Note:** If you are compiling on a Haswell processor, you may need to configure [makepkg](/index.php/Makepkg "Makepkg") to use `-march=native` to successfully compile with AVX2_256 instructions.
 
-*   `-DGMX_X11=ON` - Set to use `gmx view`, the built-in trajectory viewer. This flag requires the [lesstif](https://www.archlinux.org/packages/?name=lesstif) and [libx11](https://www.archlinux.org/packages/?name=libx11) packages.
+*   `-DGMX_X11=ON` - Set to use `gmx view`, the built-in trajectory viewer. This flag requires the [openmotif](https://www.archlinux.org/packages/?name=openmotif) and [libx11](https://www.archlinux.org/packages/?name=libx11) packages.
 *   `-DREGRESSIONTEST_DOWNLOAD=ON` - Set to test your GROMACS build. To run the tests [set your build to run](/index.php/Creating_packages#check.28.29 "Creating packages") `make check`. The [libxml2](https://www.archlinux.org/packages/?name=libxml2) package is required.
 *   `-DGMX_DEFAULT_SUFFIX=OFF` - Set to turn of default suffix for GROMACS programs for MPI or double precision builds.
 *   `-DGMX_BINARY_SUFFIX=*xxx*` and `-DGMX_LIBS_SUFFIX=*xxx*` - Set the default suffix to *xxx* for binaries and libraries, respectively.

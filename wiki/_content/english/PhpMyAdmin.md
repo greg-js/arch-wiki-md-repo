@@ -10,7 +10,7 @@
     *   [2.4 Nginx](#Nginx)
         *   [2.4.1 Option 1: subdomain](#Option_1:_subdomain)
         *   [2.4.2 Option 2: subdirectory using symlink](#Option_2:_subdirectory_using_symlink)
-        *   [2.4.3 Option 3: subdirectory using alias](#Option_3:_subdirectory_using_alias)
+        *   [2.4.3 Option 3: subdirectory using location](#Option_3:_subdirectory_using_location)
 *   [3 phpMyAdmin configuration](#phpMyAdmin_configuration)
     *   [3.1 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
     *   [3.2 Enabling Configuration Storage (optional)](#Enabling_Configuration_Storage_.28optional.29)
@@ -114,39 +114,36 @@ To get PhpMyAdmin working with your [nginx](/index.php/Nginx "Nginx") setup, fir
 
 ```
 
-#### Option 3: subdirectory using alias
+#### Option 3: subdirectory using location
 
-If for some reason you are unable to create a symlink in the root of the server or would just rather use an alias, you can use this example configuration.
+If for some reason you are unable to create a symlink in the root of the server or would just rather use location, you can use this example configuration.
 
-Using this method, you'll access PhpMyAdmin as `localhost/phpmyadmin`, similarly to Apache.
+Using this method, you'll access PhpMyAdmin as `localhost/phpMyAdmin`, similarly to Apache.
 
 ```
- location /phpmyadmin {
-         alias /usr/share/webapps/phpMyAdmin;
-         # Optionally set separate access and error logs for phpMyAdmin
-         access_log /var/log/nginx/phpmyadmin_access.log;
-         error_log /var/log/nginx/phpmyadmin_error.log;
-         index   index.php;  
-         try_files $uri $uri/ =404;
-         # Deny some static files
-         location ~ ^/phpmyadmin/(README|LICENSE|ChangeLog|DCO)$ {
-                 deny all;
-         }
-         # Deny .md files
-         location ~ ^/phpmyadmin/(.+\.md)$ {
-                 deny all;
-         }
-         # Deny some directories
-         location ~ ^/phpmyadmin/(doc|sql|setup)/ {
-                 deny all;
-         }
-         #FastCGI config for PhpMyAdmin
-         location ~ /phpmyadmin/(.+\.php)$ {
-                 fastcgi_param  SCRIPT_FILENAME /usr/share/webapps/phpMyAdmin/$1;
-                 fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-                 fastcgi_index  index.php;
-                 include        fastcgi.conf;
-         }
+ location /phpMyAdmin {
+     root /usr/share/webapps;
+     index   index.php;  
+     try_files $uri $uri/ =404;
+     # Deny some static files
+     location ~ ^/phpMyAdmin/(README|LICENSE|ChangeLog|DCO)$ {
+         deny all;
+     }
+     # Deny .md files
+     location ~ ^/phpMyAdmin/(.+\.md)$ {
+         deny all;
+     }
+     # Deny some directories
+     location ~ ^/phpMyAdmin/(doc|sql|setup)/ {
+         deny all;
+     }
+     #FastCGI config for phpMyAdmin
+     location ~ /phpMyAdmin/(.+\.php)$ {
+         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+         fastcgi_index  index.php;
+         include        fastcgi.conf;
+     }
  }
 
 ```

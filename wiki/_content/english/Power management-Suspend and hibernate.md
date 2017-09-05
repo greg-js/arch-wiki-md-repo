@@ -1,3 +1,12 @@
+Related articles
+
+*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
+*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
+*   [systemd](/index.php/Systemd "Systemd")
+*   [pm-utils](/index.php/Pm-utils "Pm-utils")
+*   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
+*   [Power management](/index.php/Power_management "Power management")
+
 Currently there are three methods of suspending available: **suspend to RAM** (usually called just **suspend**), **suspend to disk** (usually known as **hibernate**), and **hybrid suspend** (sometimes aptly called **suspend to both**):
 
 *   **Suspend to RAM** method cuts power to most parts of the machine aside from the RAM, which is required to restore the machine's state. Because of the large power savings, it is advisable for laptops to automatically enter this mode when the computer is running on batteries and the lid is closed (or the user is inactive for some time).
@@ -89,7 +98,19 @@ The kernel parameter `resume=*swap_partition*` has to be used. Either the name t
 
 Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
 
-The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details.
+The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details. for example,the swap partition is "ic|dev/sda3" and booloader is grub2,edit `/etc/default/grub`,find the "GRUB_CMD_LINUX_DEFAULT" line,add "resume=/dev/sda3",like this:
+
+```
+ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_pstate=enable resume=/dev/sda3"
+
+```
+
+then update grub config
+
+```
+ sudo grub-mkconfig -o /boot/grub/grub.cfg  
+
+```
 
 #### Hibernation into swap file
 

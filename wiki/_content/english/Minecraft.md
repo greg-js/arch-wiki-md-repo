@@ -67,15 +67,15 @@ There are several [programs and editors](http://www.minecraftwiki.net/wiki/Progr
 
 ### Installation
 
-The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [Systemd](/index.php/Systemd "Systemd") unit files and includes a small control script.
+The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [systemd](/index.php/Systemd "Systemd") unit files and includes a small control script. Almost all Minecraft servers will require [Java](/index.php/Java "Java") in order to run ([Cuberite](#Cuberite), being written in C++ and Lua, as a prominent exception).
 
-**Note:** Almost all Minecraft servers will require [Java](/index.php/Java "Java") in order to run ([Cuberite](#Cuberite), being written in C++ and Lua, as a prominent exception). Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
+**Note:** Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
 
 ### Setup
 
 #### Introduction
 
-In the installation process the `minecraft` user and group is introduced. Establishing a Minecraft-specific user is recommended for security reasons. By running Minecraft under an unprivileged user account, anyone who successfully exploits your Minecraft server will only get access to that user account, and not yours. However you may safely add your user to the `minecraft` group and add group write permission to the directory `/srv/minecraft` (default) to modify Minecraft server settings. Make sure that all files in the `/srv/minecraft` directory are either owned by the `minecraft` user, or that the user has by other means r/w permissions. The server will error out if it is unable to access certain files and might even have insufficient rights to write an according error message to the log.
+In the installation process the `minecraft` user and group is introduced. Establishing a Minecraft-specific user is recommended for security reasons. By running Minecraft under an unprivileged user account, anyone who successfully exploits your Minecraft server will only get access to that user account, and not yours. However you may safely add your user to the `minecraft` group and add group write permission to the directory `/srv/minecraft` (default) to modify Minecraft server settings. Make sure that all files in the `/srv/minecraft` directory are either owned by the `minecraft` user, or that the user has by other means read and write permissions. The server will error out if it is unable to access certain files and might even have insufficient rights to write an according error message to the log.
 
 The package provides a systemd service and timer to take automatic backups. By default the backups are located in the `backup` folder under the server root directory. Though to keep the disk footprint small only the 10 most recent backups are preserved (configurable via `KEEP_BACKUPS`). The related systemd files are `minecraftd-backup.timer` and `minecraftd-backup.service`. They may easily be [adapted](/index.php/Edit "Edit") to your liking, e.g. to follow a custom backup interval.
 
@@ -92,15 +92,15 @@ To start the server you may either use systemd or run it directly from the comma
 
 #### Server management script
 
-To easily control the server you may use the provided `minecraftd` script. It is capable of doing the basic commands like `start`, `stop`, `restart` or attaching to the session with `console`. Moreover it may be used to display status information with `status`, backup the server world directory with `backup`, restore world data from backups with `restore` or run single commands in the server console with `command <server command>`.
+To easily control the server you may use the provided `minecraftd` script. It is capable of doing basic commands like `start`, `stop`, `restart` or attaching to the session with `console`. Moreover it may be used to display status information with `status`, backup the server world directory with `backup`, restore world data from backups with `restore` or run single commands in the server console with `command *do-something*`.
 
-**Note:** Regarding the server `console`, remember that you can exit any screen session with `ctrl+a` `d`.
+**Note:** Regarding the server console (reachable via `minecraftd console`), remember that you can exit any screen session with `ctrl+a` `d`.
 
 #### Tweaking
 
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 
-More advanced users may wish enable `IDLE_SERVER` by setting it to `true` in `/etc/conf.d/minecraft`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](http://man7.org/linux/man-pages/man1/ncat.1.html) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time, it significantly decreases the CPU and memory usage, leading to more reasonably resource/power consumption.
+For example, more advanced users may wish enable `IDLE_SERVER` by setting it to `true`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](http://man7.org/linux/man-pages/man1/ncat.1.html) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time after suspension, it significantly decreases the CPU and memory usage leading to a more reasonably resource and power consumption.
 
 ### Spigot (respectively Craftbukkit)
 

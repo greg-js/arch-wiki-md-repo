@@ -1,3 +1,7 @@
+Related articles
+
+*   [Unreal Tournament 4](/index.php/Unreal_Tournament_4 "Unreal Tournament 4")
+
 Unreal Engine 4 is the latest version of the videogame Engine Created By Epic Games
 
 The content of this article was originally written on [this page](https://wiki.unrealengine.com/Building_On_Linux) and adapted specifically for Arch Linux.
@@ -95,3 +99,5 @@ The marketplace apps can be downloaded using the [launcher](https://www.unrealen
    /Program Files (x86)/Epic Games/Launcher/VaultCache/
 
 ```
+
+Also there is an implementation of [UE4 Marketplace Downloader](https://github.com/Allar/ue4-mp-downloader) written in JS.

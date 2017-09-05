@@ -1,3 +1,12 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [xinitrc](/index.php/Xinitrc "Xinitrc")
+*   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
+
 [윈도우 매니저](https://en.wikipedia.org/wiki/Window_manager "wikipedia:Window manager") (Window Manager, WM)은 그래픽 유저 인터페이스(GUI)의 윈도우 시스템 내에서의 창의 위치와 모양을 관리하는 시스템 소프트웨어이다. 데스크탑 환경([desktop environment](/index.php/Desktop_environment "Desktop environment"), DE)의 일부 혹은 독립된 형태로 사용된다.
 
 *이 문서에서는 '창 관리자' 대신 '윈도우 매니저'라는 용어를 사용한다.*
@@ -136,7 +145,7 @@
 
 *   **[MWM](https://en.wikipedia.org/wiki/Motif_Window_Manager "wikipedia:Motif Window Manager")** — Motif toolkit을 기반로 개발된 윈도우 매니저이다.
 
-	[http://sourceforge.net/projects/motif/](http://sourceforge.net/projects/motif/) || [openmotif](https://www.archlinux.org/packages/?name=openmotif), [lesstif](https://www.archlinux.org/packages/?name=lesstif)
+	[http://sourceforge.net/projects/motif/](http://sourceforge.net/projects/motif/) || [openmotif](https://www.archlinux.org/packages/?name=openmotif)
 
 *   **[Openbox](/index.php/Openbox "Openbox")** — 커스터마이징의 자유도가 높고 extensive 표준들을 지원하는 윈도우 매니저이다.
 

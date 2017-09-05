@@ -21,7 +21,7 @@
 
 ## 安装
 
-可[安装](/index.php/Install "Install") [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)。
+可[安装](/index.php/Install "Install") [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev) 或者 [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)。
 
 ## 配置
 
@@ -106,25 +106,29 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 安装 [shadowsocks-qt5](https://www.archlinux.org/packages/?name=shadowsocks-qt5)。
 
-**提示：** 也可以使用[shadowsocks-gui@gitHub](https://github.com/shadowsocks/shadowsocks-gui),如果不希望自己编译的话到[shadowsocks-gui@sourceforge](http://sourceforge.net/projects/shadowsocksgui/files/dist/)直接下载。
-
-* * *
-
 #### 浏览器配置
 
 **提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名。
 
 ##### Firefox
 
-以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")使用代理服务器的方法示例。
+以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")使用[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)管理代理的方法示例。
 
-安装代理插件[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile):打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy代理插件，安装完毕后重启浏览器。
+1\. 安装代理插件[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)：打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy代理插件，安装完毕后重启浏览器。
 
-设置代理：找到foxyproxy插件，单击进入foxyproxy的设置界面，在代理服务器目录左侧选择添加代理服务器，为新加代理起一个名字，然后在代理服务器设置里选择手动设置代理服务器，ip地址栏填写127.0.0.1，勾选SOCKS代理服务器，点选SOCKS V5，然后确定。
+2\. 设置代理：找到foxyproxy插件，单击进入foxyproxy的设置界面，在代理服务器目录左侧选择添加代理服务器，为新加代理起一个名字，然后在代理服务器设置里选择手动设置代理服务器，ip地址栏填写127.0.0.1，勾选SOCKS代理服务器，点选SOCKS V5，然后确定。
 
-开启快速添加（可选）：在foxyproxy设置中，选择快速添加，勾选启用，在进入某些需要代理的网站时可以按下Alt+f2将网址添加到设定的代理中（！此功能需要foxyproxy标准版）。
+3\. 使用代理：在foxyproxy上鼠标右键点击，指针移动到添加的代理上，就可以选择使用此代理服务器。也可以根据个人需求给某些特定域名添加到代理列表，使指定域名使用相应的代理设置。
 
-使用代理：在foxyproxy上鼠标右键点击，指针移动到添加的代理上，就可以选择使用此代理服务器。也可以根据个人需求给某些特定域名添加到代理列表，使指定域名使用相应的代理设置。
+高级用法：
+
+1\. 快速添加：打开foxyproxy,在快速添加（quick enable）选项卡中勾上快速添加，可以访问的网址规则添加到白名单中。（！此功能需要foxyproxy标准版，默认快捷键为alt+f2可能与其他程序有冲突）。
+
+2\. 订阅白名单规则，以gfwlist为例：
+
+从[gfwlist](https://github.com/gfwlist/gfwlist)]获取被屏蔽的网址规则列表，点击该项目的gfwlist.txt文件，进入后点击"raw"查看源码，可从浏览器地址栏获取[该文件URL](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)。
+
+打开foxyproxy,在规则订阅（pattern subscrib)选项卡中添加一个新的订阅规则，名称随意，规则订阅URL栏填写刚才用"raw"查看的[gfwlist.txt地址](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)，代理项选择使用了ss的代理，设置一个自动更新规则的间隔时间（Refresh Rate），格式（Format)选择FoxyProxy，混淆（obfuscation）选择Base64，保存后使其生效。
 
 更多有关foxyproxy内容，请到[foxyproxy官网](https://getfoxyproxy.org)查看。
 
@@ -175,7 +179,7 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 方法一：
 
 1.  在服务器上`cd`到`config.json`所在目录：
-2.  运行`ssserver`；
+2.  运行`ssserver`（如果安装的是shadowsocks-libev则使用ss-server替代ssserver，下同）；
 
 如果想在后台一直运行，可改执行：`nohup ssserver > log &`；
 
@@ -192,7 +196,7 @@ $ chromium %U --proxy-server=127.0.0.1:8118
 
 #### 以守护进程形式运行服务端
 
-以上只是启动了客户端的守护进程，如果架设的是服务器，则需要：
+以上只是启动了客户端的守护进程，如果架设的是服务器，则需要使用systemd开启`shadowsocks-server@foo`(foo是配置文件名，如果使用shadowsocks-libev，则使用shadowsocks-libev-server替代shadowsocks-server)：
 
 ```
 # systemctl start shadowsocks-server@foo
