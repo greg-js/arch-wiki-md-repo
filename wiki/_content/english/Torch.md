@@ -1,5 +1,3 @@
-[Torch7](http://torch.ch) is a scientific computing framework with wide support for machine learning algorithms. It is easy to use and provides a very efficient implementation, thanks to an easy and fast scripting language, LuaJIT, and an underlying C implementation.
+Redirect to:
 
-## Installation
-
-Install [torch7-git](https://aur.archlinux.org/packages/torch7-git/) from the [AUR](/index.php/AUR "AUR").
+*   [Category:Framework](/index.php/Category:Framework "Category:Framework")

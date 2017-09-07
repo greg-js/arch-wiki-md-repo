@@ -1,3 +1,12 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Oblogout](/index.php/Oblogout "Oblogout")
+*   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
+
 [Openbox](http://openbox.org/wiki/Main_Page) is a lightweight, powerful, and highly configurable *stacking* [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
 
 ## Contents

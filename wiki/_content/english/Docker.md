@@ -1,3 +1,10 @@
+Related articles
+
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
+*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
+*   [Vagrant](/index.php/Vagrant "Vagrant")
+
 [Docker](https://www.docker.com) is a utility to pack, ship and run any application as a lightweight container.
 
 ## Contents
@@ -14,6 +21,7 @@
     *   [2.5 Configuring DNS](#Configuring_DNS)
     *   [2.6 Running Docker with a manually-defined network](#Running_Docker_with_a_manually-defined_network)
     *   [2.7 Images location](#Images_location)
+    *   [2.8 Insecure registries](#Insecure_registries)
 *   [3 Images](#Images)
     *   [3.1 Arch Linux](#Arch_Linux)
         *   [3.1.1 Manually](#Manually)
@@ -198,6 +206,17 @@ Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for t
 [Service]
 ExecStart= 
 ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
+```
+
+### Insecure registries
+
+If you decide to use a self signed certificate for your private registry, Docker will refuse to use it until you declare that you trust it. Add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `--insecure-registry` parameter to the `dockerd`:
+
+ `/etc/systemd/system/docker.service.d/override.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// --insecure-registry my.registry.name:5000
 ```
 
 ## Images

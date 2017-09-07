@@ -35,7 +35,7 @@
 
 ## Gedateerde informatie
 
-**Warning:** De informatie op deze pagina is zeer gedateerd, en deze instructies werken niet op een hedendaags Arch Linux-systeem. Voor de informatie die u nodig heeft verwijzen wij u naar de [Engelse network configuration](/index.php/Network_Configuration "Network Configuration")-pagina.
+**Warning:** De informatie op deze pagina is zeer gedateerd, en deze instructies werken niet op een hedendaags Arch Linux-systeem. Voor de informatie die u nodig heeft verwijzen wij u naar de [Engelse network configuration](/index.php/Network_configuration "Network configuration")-pagina.
 
 Hulp bij het up-to-date brengen van deze pagina wordt zeer gewaardeerd.
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+*   [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")
+
 The computer often seems to make beep noises or other sounds at various times, whether we want them or not. They come from various sources, and as such, you may be able to configure if or when they occur. For situations where no sound card or speakers are available and a simple audio notification is desired, see [#Beep](#Beep).
 
 Sounds from the computer can be heard from the built-in case speaker, the speakers, or headphones which are plugged into the soundcard (in which case the noise may be unexpectedly loud).
@@ -163,4 +168,4 @@ While many people are happy with the traditional beep sound, some may like to ch
 
 ## See also
 
-*   [xset(1)](https://www.x.org/releases/X11R7.7/doc/man/man1/xset.1.xhtml), [setterm(1)](http://man7.org/linux/man-pages/man1/setterm.1.html), [readline(3)](http://man7.org/linux/man-pages/man3/readline.3.html)
+*   [xset(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1), [setterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setterm.1), [readline(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3)

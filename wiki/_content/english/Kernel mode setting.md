@@ -1,3 +1,9 @@
+Related articles
+
+*   [ATI](/index.php/ATI "ATI")
+*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
+*   [Nouveau](/index.php/Nouveau "Nouveau")
+
 Kernel [Mode Setting](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode-setting") (KMS) is a method for setting display resolution and depth in the kernel space rather than user space.
 
 The Linux kernel's implementation of KMS enables native resolution in the framebuffer and allows for instant console (tty) switching. KMS also enables newer technologies (such as DRI2) which will help reduce artifacts and increase 3D performance, even kernel space power-saving.

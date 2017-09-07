@@ -66,7 +66,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[http://kmymoney2.sourceforge.net/index-home.html](http://kmymoney2.sourceforge.net/index-home.html) || [kmymoney](https://www.archlinux.org/packages/?name=kmymoney)
 
-*   **Ledger** — Ledger is a powerful, double-entry accounting system that is accessed from the UNIX command-line.
+*   **[Ledger](/index.php/Ledger "Ledger")** — Ledger is a powerful, double-entry accounting system that is accessed from the UNIX command-line.
 
 	[http://ledger-cli.org/](http://ledger-cli.org/) || [ledger](https://aur.archlinux.org/packages/ledger/)
 
@@ -333,6 +333,10 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 *   **twin** — Text-mode window manager.
 
 	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
+
+*   **Wmutils** — A set of tools for X windows manipulation.
+
+	[https://github.com/wmutils/core](https://github.com/wmutils/core) || [wmutils-git](https://aur.archlinux.org/packages/wmutils-git/)
 
 ##### Graphical
 

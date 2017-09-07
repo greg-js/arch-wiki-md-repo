@@ -1,3 +1,9 @@
+相关文章
+
+*   [网络配置](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "网络配置")
+*   [无线网络配置](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "无线网络配置")
+*   [dhcpd](/index.php/Dhcpd "Dhcpd")
+
 **翻译状态：** 本文是英文页面 [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-12-26，点击[这里](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=460097)可以查看翻译后英文页面的改动。
 
 *dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
@@ -55,7 +61,7 @@ dhcpcd: *eth0*: leased 192.168.1.70 for 86400 seconds
 
 ## 配置
 
-The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details. Some of the frequently used options are highlighted below.
+The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details. Some of the frequently used options are highlighted below.
 
 ### DHCP 静态路由
 
@@ -120,7 +126,7 @@ static routers=192.168.0.1
 static domain_name_servers=192.168.0.1 8.8.8.8
 ```
 
-More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details.
+More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details.
 
 #### Fallback 配置文件
 
@@ -143,7 +149,7 @@ fallback static_eth0
 
 ## 钩子
 
-*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](http://roy.marples.name/man/html8/dhcpcd-run-hooks.html) for details.
+*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)for details.
 
 **提示：**
 
@@ -298,5 +304,4 @@ After making changes, [reload the configuration](/index.php/Systemd#Editing_prov
 
 ## 参阅
 
-*   [dhcpcd(8)](http://roy.marples.name/man/html8/dhcpcd.html)
-*   [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html)
+*   [dhcpcd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)* [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)

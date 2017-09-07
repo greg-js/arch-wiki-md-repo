@@ -51,7 +51,7 @@ Follow the scanner part of the [scanner calibration](https://blog.simon-dreher.d
 
 ### Printer calibration
 
-See [cups-calibrate(8)](http://linux.die.net/man/8/cups-calibrate).
+See [cups-calibrate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cups-calibrate.8).
 
 ### File transfer
 

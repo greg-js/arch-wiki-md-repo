@@ -1,3 +1,7 @@
+Related articles
+
+*   [Shairport](/index.php/Shairport "Shairport")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/AirPort "wikipedia:AirPort"):
 
 	"*AirPort is the name given to a series of Apple products using the (Wi-Fi) protocols (802.11b, 802.11g, 802.11n and 802.11ac). These products comprise a number of wireless routers and wireless cards. The AirPort Extreme name was originally intended to signify the addition of the 802.11g protocol to these products.*"
@@ -37,28 +41,8 @@ Nmap finished: 1 IP address (1 host up) scanned in 25.815 seconds
 
 ```
 
-Note the port of the **jetdirect** service, and edit `printer.conf`. The **DeviceURI** entry should be **socket://**, followed by your station IP address, a colon, and the **jetdirect** port number.
+Note the port of the **jetdirect** service, and use a [printer URI](/index.php/CUPS#Printer_URI "CUPS") of **socket://**, followed by your station IP address, a colon, and the **jetdirect** port number.
 
 **Note:** In order for this technique to work reliably, the AirPort should have a static local IP address using DHCP settings at the router.
- `/etc/cups/printer.conf` 
-```
-# Printer configuration file for CUPS v1.2.11
-# Written by cupsd on 2007-06-26 00:44
-<Printer LaserSim>
-Info SAMSUNG ML-1510 gdi
-Location SomoStation
-**DeviceURI socket://192.168.0.4:9100**
-State Idle
-StateTime 1182811465
-Accepting Yes
-Shared Yes
-JobSheets none none
-QuotaPeriod 0
-PageLimit 0
-KLimit 0
-OpPolicy default
-ErrorPolicy stop-printer
-</Printer>
-```
 
-See the [CUPS](/index.php/CUPS "CUPS") for more information.
+See [CUPS](/index.php/CUPS "CUPS") for more information.

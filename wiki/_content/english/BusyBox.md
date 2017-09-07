@@ -1,3 +1,8 @@
+Related articles
+
+*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
+*   [init](/index.php/Init "Init")
+
 **Warning:** Do not expect full drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options.
 
 [w:BusyBox](https://en.wikipedia.org/wiki/BusyBox "w:BusyBox")

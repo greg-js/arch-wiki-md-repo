@@ -157,6 +157,10 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 	[http://rkhunter.sourceforge.net/](http://rkhunter.sourceforge.net/) || [rkhunter](https://www.archlinux.org/packages/?name=rkhunter)
 
+*   **Hostsblock** — A script that downloads, sorts, and compiles multiple ad- and malware-blocking hosts files.
+
+	[http://gaenserich.github.com/hostsblock/](http://gaenserich.github.com/hostsblock/) || [hostsblock](https://aur.archlinux.org/packages/hostsblock/)
+
 #### Backup programs
 
 See the main article: [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs").

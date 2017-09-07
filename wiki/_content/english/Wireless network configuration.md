@@ -1,3 +1,12 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding")
+*   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
+
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
 
 ## Contents
@@ -51,7 +60,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [6.2 Realtek](#Realtek)
         *   [6.2.1 rtl8192cu](#rtl8192cu)
         *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [6.2.3 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
+        *   [6.2.3 rtl8812au/rtl8814au/rtl8821au](#rtl8812au.2Frtl8814au.2Frtl8821au)
     *   [6.3 Atheros](#Atheros)
         *   [6.3.1 ath5k](#ath5k)
         *   [6.3.2 ath9k](#ath9k)
@@ -380,13 +389,13 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### connman
 
-[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See connman-service.config(5) and [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan") for details.
+[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan") for details.
 
 #### netctl
 
-[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See netctl.profile(5) for details.
+[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
 
-**Warning:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in netctl.profile(5).
+**Warning:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
 **Tip:** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 
@@ -667,21 +676,16 @@ or
 
 If you have very poor signal maybe your device has only one antenna connected and auto mode does not work. You can force the antenna with `ant_sel=1` or `ant_sel=2` kernel option.
 
-#### rtl8812au/rtl8821au
+#### rtl8812au/rtl8814au/rtl8821au
 
-The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) (driver version 4), or [rtl8812au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8812au-v5-dkms-git/) (driver version 5).
+These are Realtek chipsets designed for AC1200/1750/1900 USB adapters, using respectively rtl8812au/rtl8821au/rtl8814au.
 
-```
-# modprobe 8812au
+Several packages provide the kernel drivers:
 
-```
-
-If that does not work, try the 8812/8821 module [rtl8812au_rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/).
-
-```
-# modprobe rtl8812au_rtl8821au
-
-```
+| Chipset | Driver version | [AUR](/index.php/AUR "AUR") package |
+| rtl8812au only | 5.2.9 | [rtl8812au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8812au-v5-dkms-git/) |
+| rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8821au-v5-dkms-git/) |
+| rtl8814au | 4.3.21 | [edimax_ac1750_8814au-dkms](https://aur.archlinux.org/packages/edimax_ac1750_8814au-dkms/) |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
 

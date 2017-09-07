@@ -1,3 +1,9 @@
+Related articles
+
+*   [Dovecot](/index.php/Dovecot "Dovecot")
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [Exim](/index.php/Exim "Exim")
+
 This article explains how to install and configure a simple [OpenSMTPD](https://www.opensmtpd.org/) server.
 
 ## Contents
@@ -33,7 +39,7 @@ OpenSMTPD is configured in `/etc/smtpd`.
 
 To have local mail working, for example for [cron](/index.php/Cron "Cron") mails, it is enough to simply [start](/index.php/Start "Start") `smtpd.service`.
 
-The default configuration of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail. See [smtpd.conf(5)](http://man.openbsd.org/smtpd.conf).
+The default configuration of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail. See [smtpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smtpd.conf.5).
 
 #### Local-only
 

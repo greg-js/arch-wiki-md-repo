@@ -1,5 +1,18 @@
 **翻译状态：** 本文是英文页面 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=448817)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")
+*   [Zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")
+*   [常用建议](/index.php/General_Recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General Recommendations (简体中文)")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [sudo](/index.php/Sudo "Sudo")
+*   [cron](/index.php/Cron "Cron")
+*   [man page](/index.php/Man_page "Man page")
+*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [Color output in console](/index.php/Color_output_in_console "Color output in console")
+
 本文涉及 GNU/Linux 系统的所谓的 "核心" 工具，就像 **less**, **ls**, 和 **grep**，包括了"但不限于"以上集成于GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 中的工具。下文提供了颇为丰富的软件技巧和有帮助的其他信息。
 
 ## Contents
@@ -130,7 +143,7 @@ One would probably expect a *find* command to take as argument a file name and s
 
 ## locate
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)，安装后，一个脚本会每天更新数据库。以 root 手动运行 *updatedb* 也可以更新数据库。 也预生成的或者由守护进程和增量编码压缩过的文件数据库搜索. 它要快于 *find*, 但需要经常更新数据库.默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备。详情请参考 [updatedb(1)](http://man7.org/linux/man-pages/man1/updatedb.1.html)。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mlocate](https://www.archlinux.org/packages/?name=mlocate)，安装后，一个脚本会每天更新数据库。以 root 手动运行 *updatedb* 也可以更新数据库。 也预生成的或者由守护进程和增量编码压缩过的文件数据库搜索. 它要快于 *find*, 但需要经常更新数据库.默认会忽略 `/media` 和 `/mnt` 等路径，所以 *locate* 不会查找外置设备。详情请参考 [updatedb(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.1)。
 
 *locate* 命令是一个快速查找文件系统的常用 Unix 工具。因为是从数据库查找而不是直接访问文件系统，所以速度比 [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") 快很多。而缺点是数据库更新后的新文件不会被搜索到。使用 *locate* 前，请先以 root 权限执行 `updatedb`.
 
@@ -138,7 +151,7 @@ One would probably expect a *find* command to take as argument a file name and s
 
 ## lsblk
 
-[lsblk(8)](http://man7.org/linux/man-pages/man8/lsblk.8.html) 命令会显示所有连接到系统的设备和分区状况：
+[lsblk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) 命令会显示所有连接到系统的设备和分区状况：
 
  `$ lsblk` 
 ```
@@ -346,7 +359,7 @@ $ ss -au
 
 ```
 
-For more information see [ss(8)](http://man7.org/linux/man-pages/man8/ss.8.html) or [introductory examples](http://www.cyberciti.biz/files/ss.html).
+For more information see [ss(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or [introductory examples](http://www.cyberciti.biz/files/ss.html).
 
 ## tar
 
@@ -386,7 +399,7 @@ The construction of some of these *tar* arguments may be considered legacy, but 
 
 *wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
 
-See [wipefs(8)](http://man7.org/linux/man-pages/man8/wipefs.8.html) for more information.
+See [wipefs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
 
 For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+*   [Multihead](/index.php/Multihead "Multihead")
+
 **翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-6-16，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=477117)可以查看翻译后英文页面的改动。
 
 "xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。 当前使用的显示器用 ***** 标记，优先使用的显示器用 **+** 标记。
@@ -55,7 +60,7 @@ LVDS connected 1400x1050+0+0 (normal left inverted right x axis y axis) 286mm x 
 
 ```
 
-**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。详情请参考 [xrandr(1)](https://www.x.org/archive/X11R7.5/doc/man/man1/xrandr.1.html)。
+**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。详情请参考 [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1)。
 
 ## 添加未被检测到的有效分辨率
 

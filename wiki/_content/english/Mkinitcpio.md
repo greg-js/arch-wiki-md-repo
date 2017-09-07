@@ -1,3 +1,10 @@
+Related articles
+
+*   [systemd](/index.php/Systemd "Systemd")
+*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+*   [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+
 **mkinitcpio** is the next generation of [initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs") creation.
 
 ## Contents
@@ -34,7 +41,7 @@
 
 ## Overview
 
-mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
+mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8):
 
 	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
 
@@ -217,7 +224,7 @@ Provides a busybox recovery shell when using **systemd** hook.
 | **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
 | **encrypt** | **sd-encrypt** | Adds the `dm_crypt` kernel module and the `cryptsetup` tool to the image. You must have [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) installed to use this. | Detects and unlocks an encrypted root partition. See [#Runtime customization](#Runtime_customization) for further configuration.
 
-For **sd-encrypt** see [systemd-cryptsetup-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for available kernel command line options. Alternatively, if the file `/etc/crypttab.initramfs` exists, it will be added to the initramfs as `/etc/crypttab`. See the [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html) manpage for more information on crypttab syntax.
+For **sd-encrypt** see [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for available kernel command line options. Alternatively, if the file `/etc/crypttab.initramfs` exists, it will be added to the initramfs as `/etc/crypttab`. See the [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) manpage for more information on crypttab syntax.
 
  |
 | **lvm2** | **sd-lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
@@ -275,7 +282,7 @@ root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660            # GPT partition UU
 
 	Alter the order in which modules are loaded by specifying modules to load early via `earlymodules=mod1[,mod2,...]`. (This may be used, for example, to ensure the correct ordering of multiple network interfaces.)
 
-See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [mkinitcpio(8)](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212) for other parameters.
+See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) for other parameters.
 
 ### Using RAID
 

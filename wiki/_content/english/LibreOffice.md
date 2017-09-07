@@ -217,7 +217,7 @@ If embedded videos are just gray boxes, make sure to have installed the [GStream
 
 ### Default paper size in Writer and Draw
 
-If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size. See papersize(5).
+If the default paper size in blank Writer and Draw documents is persistently incorrect for your locale, try installing the [libpaper](https://www.archlinux.org/packages/?name=libpaper) optional dependency and either updating `/etc/papersize` (for a system-wide change) or exporting the `PAPERSIZE` environment variable (for a user change) with your preferred paper size. See [papersize(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 

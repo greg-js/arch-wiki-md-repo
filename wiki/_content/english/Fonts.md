@@ -1,3 +1,9 @@
+Related articles
+
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"): "A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats."
 
 Note that certain font licenses may impose some legal limitations.
@@ -408,21 +414,50 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 
 ##### Pan-CJK
 
-*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
+*   adobe source han fonts
+
+Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
+
+*   *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Sans fonts
+    *   [adobe-source-han-serif-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-otc-fonts) - Serif fonts
+
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look. It is currently a rebadged version of [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
 
 ##### Chinese
 
-*   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - Simplified Chinese OpenType/CFF fonts
-*   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Traditional Chinese OpenType/CFF fonts
-*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - *Kaiti* (brush stroke) Unicode font (enabling anti-aliasing is suggested)
-*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - *Mingti* (printed) Unicode font
+*   adobe source han fonts
+    *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - Simplified Chinese OpenType/CFF Sans fonts
+    *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Traditional Chinese OpenType/CFF Sans fonts
+    *   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts) - Simplified Chinese OpenType/CFF Serif fonts
+    *   [adobe-source-han-serif-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-tw-fonts) - Traditional Chinese OpenType/CFF Serif fonts
+
+*   noto Chinese fonts
+    *   [noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/) - Noto CJK-SC fonts for Simplified Chinese
+    *   [noto-fonts-tc](https://aur.archlinux.org/packages/noto-fonts-tc/) - Noto CJK-TC fonts for Traditional Chinese
+
+*   wqy fonts
+    *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
+    *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font.
+
+*   arphic fonts
+    *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - *Kaiti* (brush stroke) Unicode font (enabling anti-aliasing is suggested)
+    *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - *Mingti* (printed) Unicode font
+
 *   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - *New Sung* font, previously is ttf-fireflysung package
-*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - A Sans-Serif style high quality CJKV outline font.
-*   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
-*   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font
-*   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - CJK serif font that emphasis on an old-style typeface
-*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Kai and Song traditional Chinese font from the Ministry of Education of Taiwan
+
+*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Chinese and Vietnamese ttf fonts
+
+*   Standart fonts of the Republic of China ministry of education in Taiwan
+    *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Kai and Song traditional Chinese font from the Ministry of Education of Taiwan
+    *   [ttf-twcns-fonts](https://aur.archlinux.org/packages/ttf-twcns-fonts/) Chinese TrueType fonts by Ministry of Education of Taiwan government, support CNS11643 standard, including Kai and Sung fontface.
+
+*   Windows Chinses fonts
+    *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - windows8 simple Chinese fonts。
+    *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - windows8 traditional Chinese fonts。
+    *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - windows10 simple Chinese fonts。
+    *   [ttf-ms-win10-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win10-zh_tw/) - windows10 traditional Chinese fonts。
+
+*   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - CJK serif font that emphasis on an old-style typeface.
 
 ##### Japanese
 

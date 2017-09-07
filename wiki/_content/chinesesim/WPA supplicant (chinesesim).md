@@ -1,3 +1,9 @@
+Related articles
+
+*   [网络配置](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "网络配置")
+*   [无线网络配置](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "无线网络配置")
+*   [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise")
+
 **翻译状态：** 本文是英文页面 [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-01，点击[这里](https://wiki.archlinux.org/index.php?title=WPA_Supplicant&diff=0&oldid=450471)可以查看翻译后英文页面的改动。
 
 [wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) 是跨平台的 WPA [请求者程序（supplicant）](https://en.wikipedia.org/wiki/Supplicant_(computer) "wikipedia:Supplicant (computer)")，支持 WEP、WPA 和 WPA2（[IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN （健壮安全网络-Robust Secure Network））。可以在桌面、笔记本甚至嵌入式系统中使用。
@@ -314,7 +320,7 @@ ExecStart=
 ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I **-Dnl80211,wext**
 ```
 
-**注意:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
+**注意:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
 
 ### 挂载了网络共享（CIFS）时的关机问题
 

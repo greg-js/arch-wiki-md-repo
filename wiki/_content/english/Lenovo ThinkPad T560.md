@@ -1,3 +1,3 @@
-## Installation
+Redirect to:
 
-Use the [Installation](/index.php/Installation "Installation") guide.
+*   [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo")

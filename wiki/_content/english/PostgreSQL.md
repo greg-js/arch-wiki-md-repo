@@ -1,3 +1,7 @@
+Related articles
+
+*   [PhpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")
+
 [PostgreSQL](http://www.postgresql.org/) is an open source, community driven, standard compliant object-relational database system.
 
 This document describes how to set up PostgreSQL. It also describes how to configure PostgreSQL to be accessible from a remote client. Among other applications, PostgreSQL can be substituted for MySQL as part of the [LAMP](/index.php/LAMP "LAMP") web stack.
@@ -40,7 +44,7 @@ $ su
 
 ```
 
-See [su(1)](http://man7.org/linux/man-pages/man1/su.1.html) or [sudo(8)](https://www.sudo.ws/man/sudo.man.html) for their usage.
+See [su(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) or [sudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) for their usage.
 
 **Note:** Commands that should be run as the postgres user are prefixed by `[postgres]$` in this article.
 

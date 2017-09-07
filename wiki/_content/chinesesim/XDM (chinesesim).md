@@ -1,3 +1,7 @@
+相关文章
+
+*   [Display Manager](/index.php/Display_Manager "Display Manager")
+
 来自 [XDM 手册页](http://www.xfree86.org/current/xdm.1.html):
 
 	*Xdm 能为本地和远程服务器提供一系列图形显示功能。xdm的设计满足图形显示的基本要求并遵循开放组织标准(XDMCPX Display Manager Control Protocol)，即X显示管理协议。Xdm提供的功能与init, getty等以文本登录为主的程序相似:提供登录会话，获取用户名和密码，并将授权给予登录用户并提供工作会话。*
@@ -83,7 +87,7 @@ XDM 提供了一个简单而又直观的图形登录界面。
 
 ## Multiple X sessions & Login in the window
 
-With the [Xdmcp](/index.php/Xdmcp "Xdmcp") enable, you can easily run multiple X sessions simultaneously on the same machine.
+With the [XDMCP](/index.php/XDMCP "XDMCP") enable, you can easily run multiple X sessions simultaneously on the same machine.
 
  `# X -query ip_xdmcp_server :2 ` 
 

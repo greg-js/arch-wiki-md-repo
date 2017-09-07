@@ -1,3 +1,8 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [Ext3](/index.php/Ext3 "Ext3")
+
 From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
 
 	Ext4 is the evolution of the most used Linux filesystem, Ext3\. In many ways, Ext4 is a deeper improvement over Ext3 than Ext3 was over Ext2\. Ext3 was mostly about adding journaling to Ext2, but Ext4 modifies important data structures of the filesystem such as the ones destined to store the file data. The result is a filesystem with an improved design, better performance, reliability, and features.
@@ -33,11 +38,11 @@ To format a partition do:
 
 ```
 
-**Tip:** See [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) for more options; edit `/etc/mke2fs.conf` to view/configure default options.
+**Tip:** See [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) for more options; edit `/etc/mke2fs.conf` to view/configure default options.
 
 ### Bytes-per-inode ratio
 
-From [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html):
+From [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
 
 	***mke2fs** creates an inode for every* bytes-per-inode *bytes of space on the disk. The larger the* bytes-per-inode *ratio, the fewer inodes will be created.*
 
@@ -77,7 +82,7 @@ The bytes-per-inode ratio can also be set directly via the `-i` option: *e.g.* u
 
 ### Reserved blocks
 
-By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html)).
+By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8)).
 
 For modern high-capacity disks, this is higher than necessary if the partition is used as a long-term archive or not crucial to system operations (like `/home`). See [this email](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) for the opinion of ext4 developer Ted Ts'o on reserved blocks.
 
@@ -102,7 +107,7 @@ To reduce it to 1% afterwards, use:
 
 ```
 
-You can use [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html) to find the device name:
+You can use [findmnt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) to find the device name:
 
 ```
 $ findmnt */the/mount/point*
@@ -201,7 +206,7 @@ Next, enable the encryption feature flag on your filesystem:
 
 ```
 
-**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
+**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem. Also GRUB is unable to mount the drive at the moment. There is a patch on the way.
 
 **Tip:** If you need revert this operation:
 ```

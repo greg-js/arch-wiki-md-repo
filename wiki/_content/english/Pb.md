@@ -1,3 +1,8 @@
+Related articles
+
+*   [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal")
+*   [Pastebin](/index.php/Pastebin "Pastebin")
+
 [pb](https://github.com/ptpb/pb) is a lightweight pastebin and URL shortener built, written in Python using Flask. The official instance is [https://ptpb.pw/](https://ptpb.pw/).
 
 **Warning:** A pastebin should not be used for sharing confidential or private information.
@@ -42,7 +47,7 @@ See [https://ptpb.pw](https://ptpb.pw) and [API specification](https://ptpb.pw/a
 
 ### pbpst
 
-See [pbpst(1)](https://github.com/HalosGhost/pbpst/blob/master/doc/pbpst.rst) and [pbpst_db(5)](https://github.com/HalosGhost/pbpst/blob/master/doc/pbpst_db.rst) for usage details.
+See [pbpst(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pbpst.1) and [pbpst_db(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pbpst_db.5) for usage details.
 
 **Note:**
 

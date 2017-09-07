@@ -1,3 +1,7 @@
+Related articles
+
+*   [x11vnc](/index.php/X11vnc "X11vnc")
+
 [TigerVNC](http://tigervnc.org/) is an implementation of the [VNC](https://en.wikipedia.org/wiki/VNC "wikipedia:VNC") protocol. This article focuses on the server functionality.
 
 ## Contents
@@ -161,7 +165,7 @@ WantedBy=multi-user.target
 
 #### Multi-user mode
 
-One can use systemd socket activation in combination with [XDMCP](/index.php/Xdmcp "Xdmcp") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. This setup uses the display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that users cannot leave a session running on the server and reconnect to it later. To get this running, first set up [XDMCP](/index.php/Xdmcp "Xdmcp") and make sure the display manager is running. Then create:
+One can use systemd socket activation in combination with [XDMCP](/index.php/XDMCP "XDMCP") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. This setup uses the display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that users cannot leave a session running on the server and reconnect to it later. To get this running, first set up [XDMCP](/index.php/XDMCP "XDMCP") and make sure the display manager is running. Then create:
 
  `/etc/systemd/system/xvnc.socket` 
 ```

@@ -240,15 +240,15 @@ $ prompt -p
 
 For users who are dissatisfied with the prompts mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with prompt escapes.
 
-See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings, or take a look at the zshmisc(1) manpage.
+See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings, or take a look at the [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) manpage.
 
 ##### Colors
 
 Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt").
 
-See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) in zshmisc(1) for prompt escapes to set foreground color, background color and other visual effects.
+See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) in [zshmisc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
 
-Colors can be specified by [numeric color code](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) or by name (see zshzle(1) section [CHARACTER HIGHLIGHTING](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting)). Most terminals support the following colors by name:
+Colors can be specified by [numeric color code](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) or by name (see [zshzle(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1) section [CHARACTER HIGHLIGHTING](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting)). Most terminals support the following colors by name:
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |
@@ -377,7 +377,7 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session.
 
-See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) in zshcontrib(1).
+See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) in [zshcontrib(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1).
 
 ### Help command
 
@@ -403,7 +403,7 @@ autoload -Uz run-help-svk
 autoload -Uz run-help-svn
 ```
 
-For example `run-help git commit` command will now open the man page [git-commit(1)](http://man7.org/linux/man-pages/man1/git-commit.1.html) instead of [git(1)](http://man7.org/linux/man-pages/man1/git.1.html).
+For example `run-help git commit` command will now open the man page [git-commit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
 
 ### Fish-like syntax highlighting
 
@@ -565,7 +565,7 @@ To this:
 *   [A User's Guide to ZSH](http://zsh.sourceforge.net/Guide/zshguide.html)
 *   [The Z Shell Manual](http://zsh.sourceforge.net/Doc/Release/index-frame.html) (different format available [here](http://zsh.sourceforge.net/Doc/))
 *   [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html)
-*   [zsh-lovers(1)](https://grml.org/zsh/zsh-lovers.html) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
+*   [zsh-lovers(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh-lovers.1) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
 *   [Zsh Wiki](http://zshwiki.org/home/)
 *   [Gentoo: Zsh/Guide](https://wiki.gentoo.org/wiki/Zsh/Guide "gentoo:Zsh/Guide")
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)

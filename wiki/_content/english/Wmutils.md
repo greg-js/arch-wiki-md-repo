@@ -1,7 +1,3 @@
-Using [wmutils](https://github.com/wmutils) (*window manipulation utilities*), you can do a multitude of simple tasks such as listing windows, moving/resizing/teleporting them, changing their visibilty, changing their stacking order, and more. You can even chain commands together to complete actions that other window managers cannot do.
+Redirect to:
 
-## Installation
-
-[Install](/index.php/Install "Install") the [wmutils-git](https://aur.archlinux.org/packages/wmutils-git/) package for the core functionality.
-
-*wmutils*, however, is only a windows manipulation utility. A [window manager](/index.php/Window_manager "Window manager") and a keybinding controller ([sxhkd](/index.php/Sxhkd "Sxhkd"), [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and others) are also required. In the following sections, [swm-git](https://aur.archlinux.org/packages/swm-git/) and *sxhkd* will be used.
+*   [List of applications/Other](/index.php/List_of_applications/Other "List of applications/Other")

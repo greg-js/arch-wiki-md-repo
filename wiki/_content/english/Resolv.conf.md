@@ -1,4 +1,8 @@
-The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.conf(5)](http://man7.org/linux/man-pages/man5/resolv.conf.5.html):
+Related articles
+
+*   [Improving performance#Network](/index.php/Improving_performance#Network "Improving performance")
+
+The configuration file for DNS resolvers is `/etc/resolv.conf`. From [resolv.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5):
 
 	The resolver is a set of routines in the C library that provide access to the Internet Domain Name System (DNS). The resolver configuration file contains information that is read by the resolver routines the first time they are invoked by a process. The file is designed to be human readable and contains a list of keywords with values that provide various types of resolver information.
 
@@ -207,7 +211,7 @@ dns=none
 
 ### Using openresolv
 
-[openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See resolvconf(8) and resolvconf.conf(5) for more information.
+[openresolv](https://www.archlinux.org/packages/?name=openresolv) provides a utility *resolvconf*, which is a framework for managing multiple DNS configurations. See [resolvconf(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) and [resolvconf.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) for more information.
 
 The configuration is done in `/etc/resolvconf.conf` and running `resolvconf -u` will generate `/etc/resolv.conf`.
 

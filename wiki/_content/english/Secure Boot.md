@@ -1,3 +1,7 @@
+Related articles
+
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
 For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) article. This article focuses on how to set up Secure Boot in Arch Linux.
 
 ## Contents
@@ -356,7 +360,7 @@ $ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *ne
 
 ```
 
-If instead of replacing your db key, you want to **add** another one to the Signature Database, you need to use the option `-a` (see sign-efi-sig-list(1)):
+If instead of replacing your db key, you want to **add** another one to the Signature Database, you need to use the option `-a` (see [sign-efi-sig-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sign-efi-sig-list.1)):
 
 ```
 $ sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
@@ -371,7 +375,7 @@ When Secure Boot is active (i.e. in "User Mode") you will only be able to launch
 
 Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
-**Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`. See sbsign(1) for more information.
+**Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`. See [sbsign(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sbsign.1) for more information.
 
 ```
 # sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux

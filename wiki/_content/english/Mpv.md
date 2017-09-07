@@ -22,7 +22,6 @@ Related articles
         *   [3.2.2 mpv-webm](#mpv-webm)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_.28SmoothVideoProject.29)
-    *   [4.2 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Hardware decoding](#Hardware_decoding)
         *   [5.1.1 In GNOME Wayland](#In_GNOME_Wayland)
@@ -139,7 +138,7 @@ tscale=oversample
 
 Beyond this there is still a lot you can do but things become more complicated, require more powerful video cards, and are in constant development. As a brief overview, it is possible to load special shaders that perform exotic scaling and sharpening techniques including some that actually use deep neural networks trained on images (for both real world and animated content). To learn more about this take a look around the [mpv wiki](https://github.com/mpv-player/mpv/wiki), particularly the [user shader's section](https://github.com/mpv-player/mpv/wiki/User-Scripts#user-shaders).
 
-There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](https://mpv.io/manual/master/). It's also helpful to run *mpv* from the command line to check for error messages about the config.
+There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1). It's also helpful to run *mpv* from the command line to check for error messages about the config.
 
 #### Profiles
 
@@ -264,7 +263,7 @@ $ mpv --profile=svp video.mkv
 
 ```
 
-or set `profile=svp` in the top-level portion of the mpv [config](/index.php/Mpv#Profiles "Mpv").
+or set `profile=svp` in the top-level portion of the mpv [config](#Profiles).
 
 If you want to use hardware decoding then you must use a copy-back decoder since normal decoders are not compatible with Vapoursynth (choose a `hwdec` option that ends in `-copy`). For instance:
 
@@ -276,30 +275,6 @@ hwdec-codecs=all
 
 Either way, hardware decoding is discouraged by mpv devs and is not likely to make a significant difference in performance.
 
-### Debanding (flash3kyuu)
-
-To use the `f3k_db` debanding filter install [vapoursynth-plugin-f3kdb](https://www.archlinux.org/packages/?name=vapoursynth-plugin-f3kdb) and write a python script that uses the *vapoursynth* extension.
-
-The following sample script can be used to enable debanding in *mpv*.
-
-```
-import vapoursynth as vs
-core = vs.get_core()
-
-clip = video_in
-clip = core.std.Trim(clip, first=0, length=500000)
-clip = core.f3kdb.Deband(clip, grainy=0, grainc=0, output_depth=16)
-clip.set_output()
-
-```
-
-Finally specify the python script in the config file or use a command line argument when executing mpv.
-
-```
-$ mpv --vf=vapoursynth=f3k_db.py <video_file>
-
-```
-
 ## Tips and Tricks
 
 ### Hardware decoding
@@ -310,7 +285,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 **Note:** The main difference between hardware decoding and software decoding is that in software decoding the file will be decompressed and then moved onto the video card whereas with hardware decoding it will be moved to the video card first and then decompressed. In either case, video *playback* will still be hardware accelerated via the video card.
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](https://mpv.io/manual/master/#video-output-drivers) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
+Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
 The default video output driver, `opengl`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 
@@ -442,7 +417,7 @@ If you are having trouble with *mpv'*s playback (or if it's flat out failing to 
 3.  Run *mpv* without a configuration. If this runs well then the problem is somewhere in your configuration (perhaps your hardware cannot keep up with your settings).
     `$ mpv --no-config video.mkv`
 
-If *mpv* runs but it just does not run well then a fourth thing that might be worth taking a look at is installing the [mpv-stats](/index.php/Mpv#mpv-stats "Mpv") script and using it to see exactly how it's performing.
+If *mpv* runs but it just does not run well then a fourth thing that might be worth taking a look at is installing the [mpv-stats](#mpv-stats) script and using it to see exactly how it's performing.
 
 ### Fix jerky playback and tearing
 

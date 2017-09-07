@@ -206,7 +206,7 @@ If the DPI displayed by xdpyinfo is not correct, see [Xorg#Display size and DPI]
 
 ## X Resources
 
-If you are not using a desktop environment such as KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in `~/.Xresources`:
+If you are not using a desktop environment such as KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in [Xresources](/index.php/Xresources "Xresources"):
 
  `~/.Xresources` 
 ```

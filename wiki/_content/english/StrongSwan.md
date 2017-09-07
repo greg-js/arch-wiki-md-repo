@@ -42,7 +42,7 @@ Let us start by creating a self-signed root CA certificate:
 $ cd /etc/ipsec.d/
 $ ipsec pki --gen --type rsa --size 4096 --outform pem > private/strongswanKey.pem
 $ chmod 600 private/strongswanKey.pem
-$ ipsec pki --self --ca --lifetime 3650 --outform pem
+$ ipsec pki --self --ca --lifetime 3650 --outform pem \
             --in private/strongswanKey.pem --type rsa \
             --dn "C=CH, O=strongSwan, CN=strongSwan Root CA" \
       > cacerts/strongswanCert.pem

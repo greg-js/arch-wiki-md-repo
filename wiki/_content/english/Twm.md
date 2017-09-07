@@ -36,7 +36,7 @@ Then start [X](/index.php/X "X") as normal.
 
 By default, twm looks very dated and unintuitive. By creating the file `~/.twmrc`, you can customize twm to make it more friendly.
 
-[twm(1)](http://man7.org/linux/man-pages/man1/twm.1.html) gives full details of the commands which can be used in your `~/.twmrc` file. Many `~/.twmrc` files have been posted online. The site [xwinman.org](http://www.xwinman.org/vtwm.php) has several `~/.twmrc` files with screenshots which might provide inspiration. A [Google search for "twmrc"](https://www.google.com/search?q=twmrc) can be used to find new ideas.
+[twm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/twm.1)gives full details of the commands which can be used in your `~/.twmrc` file. Many `~/.twmrc` files have been posted online. The site [xwinman.org](http://www.xwinman.org/vtwm.php) has several `~/.twmrc` files with screenshots which might provide inspiration. A [Google search for "twmrc"](https://www.google.com/search?q=twmrc) can be used to find new ideas.
 
 ## Tips and tricks
 

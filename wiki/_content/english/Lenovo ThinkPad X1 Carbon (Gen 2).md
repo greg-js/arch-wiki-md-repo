@@ -1,3 +1,10 @@
+Related articles
+
+*   [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon")
+*   [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)")
+*   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
+
 **Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
 
 ## Contents
@@ -264,7 +271,7 @@ gsettings set org.gnome.settings-daemon.plugins.mouse active false
 
 #### Touchpad not working after wake up from sleep
 
-See here: [Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend](/index.php/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend "Touchpad Synaptics")
+See here: [Touchpad Synaptics#Touchpad does not work after resuming from hibernate/suspend](/index.php/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend "Touchpad Synaptics")
 
 ### Keyboard backlight
 

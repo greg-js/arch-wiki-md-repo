@@ -1,3 +1,11 @@
+相关文章
+
+*   [网络配置](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "网络配置")
+*   [软AP](/index.php/%E8%BD%AFAP "软AP")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [无线网络绑定](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E7%BB%91%E5%AE%9A "无线网络绑定")
+
 **翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-01，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=452586)可以查看翻译后英文页面的改动。
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
@@ -529,13 +537,13 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### connman
 
-[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See connman-service.config(5) and [ConnMan#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam "ConnMan") for details.
+[ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [ConnMan#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam "ConnMan") for details.
 
 #### netctl
 
-[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See netctl.profile(5) for details.
+[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
 
-**警告:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in netctl.profile(5).
+**警告:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
 **提示：** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 

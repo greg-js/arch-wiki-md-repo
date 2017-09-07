@@ -795,6 +795,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://dag.wieers.com/home-made/dstat/](http://dag.wieers.com/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat)
 
+*   **[Fsniper](/index.php/Fsniper "Fsniper")** — Daemon to run scripts based on changes in files monitored by inotify.
+
+	[http://projects.l3ib.org/fsniper/](http://projects.l3ib.org/fsniper/) || [fsniper](https://aur.archlinux.org/packages/fsniper/)
+
 *   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK+](/index.php/GTK%2B "GTK+") with many plug-ins.
 
 	[http://billw2.github.io/gkrellm/gkrellm.html](http://billw2.github.io/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)

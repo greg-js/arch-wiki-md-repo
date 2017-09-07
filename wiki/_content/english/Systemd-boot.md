@@ -1,3 +1,10 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
 **systemd-boot**, previously called **gummiboot**, is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on Arch system by default.
 
 It is simple to configure but it can only start EFI executables such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager.
@@ -63,7 +70,7 @@ Unlike the previous separate *gummiboot* package, which updated automatically on
 
 #### Manually
 
-*systemd-boot* ([bootctl(1)](http://man7.org/linux/man-pages/man1/bootctl.1.html), [systemd-efi-boot-generator(8)](http://man7.org/linux/man-pages/man8/systemd-efi-boot-generator.8.html)) assumes that your EFI System Partition is mounted on `/boot`.
+*systemd-boot* ([bootctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1), [systemd-efi-boot-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-efi-boot-generator.8)) assumes that your EFI System Partition is mounted on `/boot`.
 
 ```
 # bootctl update

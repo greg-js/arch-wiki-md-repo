@@ -1,3 +1,8 @@
+Related articles
+
+*   [Emacs#Custom colors and theme](/index.php/Emacs#Custom_colors_and_theme "Emacs")
+*   [nano#Syntax highlighting](/index.php/Nano#Syntax_highlighting "Nano")
+
 This page was created to consolidate colorization of CLI outputs.
 
 ## Contents
@@ -68,7 +73,7 @@ alias grep='grep --color=auto'
 
 The `GREP_COLORS` variable is used to define colors, and it configures various parts of highlighting.
 
-See [grep(1)](http://man7.org/linux/man-pages/man1/grep.1.html) for more information.
+See [grep(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) for more information.
 
 The `GREP_COLOR` environment variable can be used to define the default highlight color (the default is red). To change the color, find the needed [ANSI escape sequence](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) and apply it with:
 
@@ -100,7 +105,7 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like. [This blog post](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized) and the page [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") also help.
 
-**Note:** The `LESS_TERMCAP_*xx*` variables are currently undocumented in [less(1)](http://man7.org/linux/man-pages/man1/less.1.html). For a detailed explanation, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
+**Note:** The `LESS_TERMCAP_*xx*` variables are currently undocumented in [less(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/less.1). For a detailed explanation, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
 
 #### Reading from stdin
 
@@ -176,15 +181,15 @@ alias ls='ls --color=auto'
 
 ```
 
-The `LS_COLORS` variable is used to define colors, and it configures various parts of highlighting. Use the [dircolors(1)](http://man7.org/linux/man-pages/man1/dircolors.1.html) command to set it.
+The `LS_COLORS` variable is used to define colors, and it configures various parts of highlighting. Use the [dircolors(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dircolors.1) command to set it.
 
-**Note:** Using the `--color` option may incur a noticeable performance penalty when *ls* is run in a directory with very many entries. The default settings require *ls* to [stat(1)](http://man7.org/linux/man-pages/man1/stat.1.html) every single file it lists. However, if you would like most of the file-type coloring but can live without the other coloring options (e.g. executable, orphan, sticky, other-writable, capability), use *dircolors* to set the `LS_COLORS` environment variable like this:
+**Note:** Using the `--color` option may incur a noticeable performance penalty when *ls* is run in a directory with very many entries. The default settings require *ls* to [stat(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/stat.1) every single file it lists. However, if you would like most of the file-type coloring but can live without the other coloring options (e.g. executable, orphan, sticky, other-writable, capability), use *dircolors* to set the `LS_COLORS` environment variable like this:
 ```
 eval $(dircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | dircolors -)
 
 ```
 
-See [ls(1)](http://man7.org/linux/man-pages/man1/ls.1.html) for more information.
+See [ls(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) for more information.
 
 ### man
 
@@ -470,7 +475,7 @@ See [Fish#Web interface](/index.php/Fish#Web_interface "Fish").
 
 ### Virtual console
 
-The colors in the [Linux virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")—see [console(4)](http://man7.org/linux/man-pages/man4/console.4.html)—running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB`, where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
+The colors in the [Linux virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")—see [console(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/console.4)—running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB`, where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
 
 For example, to reuse existing colors defined in `~/.Xresources`, add the following to the shell initialization file (such as `~/.bashrc`):
 

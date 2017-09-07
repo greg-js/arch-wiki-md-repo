@@ -1,3 +1,11 @@
+Related articles
+
+*   [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing")
+*   [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems")
+*   [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting")
+*   [Samba](/index.php/Samba "Samba")
+*   [LPRng](/index.php/LPRng "LPRng")
+
 [CUPS](http://www.cups.org/) is the standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems.
 
 ## Contents
@@ -31,7 +39,7 @@
 
 [Install](/index.php/Install "Install") the [cups](https://www.archlinux.org/packages/?name=cups) package.
 
-In order to print from GTK3 applications you will need to additionally install the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package.
+For GTK3 printing support, see [Gtk#Printers not shown in the GTK print dialog](/index.php/Gtk#Printers_not_shown_in_the_GTK_print_dialog "Gtk").
 
 If you intend to "print" into a PDF document, also install the [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf) package. By default, pdf files are stored in `/var/spool/cups-pdf/$USER`. The location can be changed in `/etc/cups/cups-pdf.conf`.
 
@@ -316,7 +324,7 @@ The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cup
 
 [Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
 
-[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](https://linux.die.net/man/5/papersize).
+[cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 
 By default, all logs are sent to files in `/var/log/cups/`. By changing the values of the `AccessLog`, `ErrorLog`, and `PageLog` directives in `/etc/cups/cups-files.conf` to `syslog`, CUPS can be made to log to the [systemd journal](/index.php/Systemd_journal "Systemd journal") instead. See [the fedora wiki page](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) for information on the original proposed change.
 

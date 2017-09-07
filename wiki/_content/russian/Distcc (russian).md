@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [TORQUE](/index.php/TORQUE "TORQUE")
+*   [Slurm](/index.php/Slurm "Slurm")
+
 Distcc это программа, предназначенная для распределения задач компиляции между компьютерами в сети на таких языках как C, C++, Objective C or Objective C++. Приведет к тем же результатам, что и локальная сборка, простота в установке и использовании и как правило, гораздо быстрее, чем локальная компиляция. Круто то что можно использовать его вместе с родными утилитами для компиляции Arch, такими как makepkg.
 
 ## Contents
@@ -50,7 +55,7 @@ Distcc это программа, предназначенная для расп
 
 ### Ведомый (Slaves)
 
-Конфигурация для slaves хранится в `/etc/conf.d/distccd`. Параметры командной строки указаны в [distcc(1)](https://linux.die.net/man/1/distccd). Как минимум, настроить разрешенные диапазонов адресов в [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") формат:
+Конфигурация для slaves хранится в `/etc/conf.d/distccd`. Параметры командной строки указаны в [distcc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1). Как минимум, настроить разрешенные диапазонов адресов в [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") формат:
 
 ```
 DISTCC_ARGS="--allow 192.168.0.0/24"

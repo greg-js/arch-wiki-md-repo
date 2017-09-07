@@ -114,6 +114,9 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")使用[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)管理代理的方法示例。
 
+**注意:** foxyproxy旧版本下架，已经被替换成新版本，该版本功能较少，目前无法使用pac模式添加gfwlist，如有需要可安装[switchyomega](https://addons.mozilla.org/en-US/firefox/addon/switchyomega/)插件，使用方法参照下文chromium中的设置
+。
+
 1\. 安装代理插件[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile)：打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy代理插件，安装完毕后重启浏览器。
 
 2\. 设置代理：找到foxyproxy插件，单击进入foxyproxy的设置界面，在代理服务器目录左侧选择添加代理服务器，为新加代理起一个名字，然后在代理服务器设置里选择手动设置代理服务器，ip地址栏填写127.0.0.1，勾选SOCKS代理服务器，点选SOCKS V5，然后确定。
@@ -138,9 +141,9 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 方法一：
 
-请安装 [Proxy SwitchyOmega插件](https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif)（SwitchySharp已停止开发），若商店打不开的话可以直接下载Github上面的[crx文件](https://github.com/FelisCatus/SwitchyOmega/releases)可参考[该扩展提供的图解流程](https://github.com/FelisCatus/SwitchyOmega)。
+请安装 [Proxy SwitchyOmega插件](https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif)（[Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)已停止维护），若商店打不开的话可以直接下载Github上面的[crx文件](https://github.com/FelisCatus/SwitchyOmega/releases)可参考[该扩展提供的图解流程](https://github.com/FelisCatus/SwitchyOmega)。
 
-另外提供老版[Proxy SwitchySharp扩展](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)因为它诞生早，经过了更多用户的考验，且基本功能完备。
+*   添加gfwlist规则：参阅[Google Chrome + SwitchyOmega + GFWList](https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList)
 
 也可以选用其他代理扩展，设置方法类似。
 

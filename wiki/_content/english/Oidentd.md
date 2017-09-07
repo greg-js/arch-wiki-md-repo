@@ -14,7 +14,7 @@
 
 ## Configuration
 
-With no global nor user configuration file(s), the users' ident replies will be that of their login name. This makes configuration files optional. See [oidentd.conf(5)](http://linux.die.net/man/5/oidentd.conf) for more detail.
+With no global nor user configuration file(s), the users' ident replies will be that of their login name. This makes configuration files optional. See [oidentd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/oidentd.conf.5) for more detail.
 
 ### Global configuration
 

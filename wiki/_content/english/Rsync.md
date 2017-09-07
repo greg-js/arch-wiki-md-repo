@@ -1,3 +1,8 @@
+Related articles
+
+*   [System backup](/index.php/System_backup "System backup")
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+
 [rsync](https://rsync.samba.org/) is an open source utility that provides fast incremental file transfer.
 
 ## Contents
@@ -189,7 +194,7 @@ Also, the script must have write permission for owner (root, of course) only (se
 *   Due to the limitations of inotify and systemd (see [this question and answer](http://www.quora.com/Linux-Kernel/Inotify-monitoring-of-directories-is-not-recursive-Is-there-any-specific-reason-for-this-design-in-Linux-kernel)), recursive filesystem monitoring is not possible. Although you can watch a directory and its contents, it will not recurse into subdirectories and watch the contents of them; you must explicitly specify every directory to watch, even if that directory is a child of an already watched directory.
 *   This setup is based on a [systemd/User](/index.php/Systemd/User "Systemd/User") instance.
 
-Instead of running time interval backups with time based schedules, such as those implemented in [cron](/index.php/Cron "Cron"), it is possible to run a backup every time one of the files you are backing up changes. `systemd.path` units use `inotify` to monitor the filesystem, and can be used in conjunction with `systemd.service` files to start any process (in this case your **rsync** backup) based on a filesystem event.
+Instead of running time interval backups with time based schedules, such as those implemented in [cron](/index.php/Cron "Cron"), it is possible to run a backup every time one of the files you are backing up changes. `systemd.path` units use `inotify` to monitor the filesystem, and can be used in conjunction with `systemd.service` files to start any process (in this case your <a class="mw-selflink selflink">rsync</a> backup) based on a filesystem event.
 
 First, create the `systemd.path` file that will monitor the files you are backing up:
 
@@ -209,7 +214,7 @@ WantedBy=default.target
 
 Then create a `systemd.service` file that will be activated when it detects a change. By default a service file of the same name as the path unit (in this case `backup.path`) will be activated, except with the `.service` extension instead of `.path` (in this case `backup.service`).
 
-**Note:** If you need to run multiple rsync commands, use `Type=oneshot`. This allows you to specify multiple `ExecStart=` parameters, one for each **rsync** command, that will be executed. Alternatively, you can simply write a script to perform all of your backups, just like [cron](/index.php/Cron "Cron") scripts.
+**Note:** If you need to run multiple rsync commands, use `Type=oneshot`. This allows you to specify multiple `ExecStart=` parameters, one for each <a class="mw-selflink selflink">rsync</a> command, that will be executed. Alternatively, you can simply write a script to perform all of your backups, just like [cron](/index.php/Cron "Cron") scripts.
  `~/.config/systemd/user/backup.service` 
 ```
 [Unit]
@@ -347,7 +352,7 @@ The `--exclude` option causes files that match the given patterns to be excluded
 *   If you use a [swap file](/index.php/Swap_file "Swap file"), make sure to exclude it as well.
 *   Consider if you want to backup the `/home/` folder. If it contains your data it might be considerably larger than the system. Otherwise consider excluding unimportant subdirectories such as `/home/*/.thumbnails/*`, `/home/*/.cache/mozilla/*`, `/home/*/.cache/chromium/*`, and `/home/*/.local/share/Trash/*`, depending on software installed on the system. If [GVFS](/index.php/GVFS "GVFS") is installed, `/home/*/.gvfs` must be excluded to prevent rsync errors.
 
-You may want to include additional **rsync** options, such as the following. See [rsync(1)](http://man7.org/linux/man-pages/man1/rsync.1.html) for the full list.
+You may want to include additional <a class="mw-selflink selflink">rsync</a> options, such as the following. See [rsync(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) for the full list.
 
 *   If you use many hard links, consider adding the `-H` option, which is turned off by default due to its memory expense; however, it should be no problem on most modern machines. Many hard links reside under the `/usr/` directory.
 *   You may want to add rsync's `--delete` option if you are running this multiple times to the same backup folder. In this case make sure that the source path does not end with `/*`, or this option will only have effect on the files inside the subdirectories of the source directory, but it will have no effect on the files residing directly inside the source directory.

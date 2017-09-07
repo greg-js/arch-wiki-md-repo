@@ -27,7 +27,7 @@
 
 ## nymeria.archlinux.org
 
-*   mail
+*   mail [turned off]
 *   repos/rsync [turned off]
 
 ## dragon.archlinux.org
@@ -62,7 +62,7 @@
 ## apollo.archlinux.org ([[1]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 
 *   bbs [wip]
-*   wiki
+*   wiki [wip]
 *   aur
 *   mailman
 *   planet [done]
@@ -70,7 +70,6 @@
 *   archweb [done]
 *   patchwork [wip]
 *   projects
-*   mail (uncertain. possibly better if mail is on orion so that not everything is on one box)
 
 ## soyuz.archlinux.org ([[2]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 
@@ -85,6 +84,7 @@ NOTE: Talk to heftig about server specs before ordering.
 *   repos/rsync [done]
 *   sources [done]
 *   archive
+*   mail [done]
 
 # Plan of attack
 
@@ -95,14 +95,7 @@ NOTE: Talk to heftig about server specs before ordering.
 
 # misc TODO
 
-*   Run local resolving nameserver on mail server to make sure blacklist/whitelist checks are not blocked because the hetzner ns has hit some limits (install local unbound + change DNS in networkd file)
-
-*   Set up email on vostok
-*   Set up status backup checking script (ask Florian, simple find command) on vostok
-
-*   Set up orion
-    *   Migrate archive from seblu's server
-    *   Set up automatic updates
+*   Set up backup monitoring
 
 *   Migrate patchwork. Reference: [https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md](https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md)
     *   Add automatic updates when patches are pushed to a repo (at the bottom of the above link)

@@ -1,3 +1,8 @@
+Related articles
+
+*   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+
 **翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-23，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=482115)可以查看翻译后英文页面的改动。
 
 Libvirt 是一组软件的汇集，提供了管理虚拟机和其它虚拟化功能（如：存储和网络接口等）的便利途径。这些软件包括：一个长期稳定的 C 语言 API、一个守护进程（libvirtd）和一个命令行工具（virsh）。Libvirt 的主要目标是提供一个单一途径以管理多种不同虚拟化方案以及虚拟化主机，包括：[KVM/QEMU](/index.php/QEMU "QEMU")，[Xen](/index.php/Xen "Xen")，[LXC](/index.php/LXC "LXC")，[OpenVZ](http://openvz.org) 或 [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") （[详见这里](http://libvirt.org/drivers.html)）。
@@ -97,18 +102,18 @@ Libvirt 的一些主要功能如下：
 
 **注意:** 为使 `polkit` 认证工作正常，应该重启一次系统。
 
-*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种**策略**（参阅：[Polkit_(简体中文)#操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.93.8D.E4.BD.9C "Polkit (简体中文)")）：
+*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种**策略**（参阅：[Polkit (简体中文)#操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.93.8D.E4.BD.9C "Polkit (简体中文)")）：
 
 *   `org.libvirt.unix.manage` 面向完全的管理访问（读写模式后台 socket），以及
 *   `org.libvirt.unix.monitor` 面向仅监视察看访问（只读 socket）。
 
 默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
 
-Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅：[Polkit_(简体中文)#管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
+Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅：[Polkit (简体中文)#管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
 
-**注意:** 要求口令的提示由系统中的认证代理给出（参阅：[Polkit_(简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")）。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
+**注意:** 要求口令的提示由系统中的认证代理给出（参阅：[Polkit (简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")）。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
 
-**提示：** 如果要配置无口令认证，参阅 [Polkit_(简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)")。
+**提示：** 如果要配置无口令认证，参阅 [Polkit (简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)")。
 
 从 libvirt 1.2.16 版开始（提案见：[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 组的成员用户默认可以无口令访问读写模式 socket。最简单的判断方法就是看 libvirt 组是否存在并且用户是否该组成员。如果要把 kvm 组访问读写模式后台 socket 的认证策略改为免认证模式，可创建下面的文件：
 

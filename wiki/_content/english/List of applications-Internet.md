@@ -94,6 +94,10 @@
 
 	[https://roy.marples.name/projects/dhcpcd](https://roy.marples.name/projects/dhcpcd) || [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)
 
+*   **Kea** — An open source implementation of the Dynamic Host Configuration Protocol (DHCP) servers.
+
+	[https://www.isc.org/kea/](https://www.isc.org/kea/) || [kea](https://www.archlinux.org/packages/?name=kea)
+
 *   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
 
 	[https://projects.archlinux.org/netctl.git/](https://projects.archlinux.org/netctl.git/) || [netctl](https://www.archlinux.org/packages/?name=netctl)
@@ -155,6 +159,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 *   **[I2P](/index.php/I2P "I2P")** — A distributed anonymous network.
 
 	[https://geti2p.net](https://geti2p.net) || [i2p](https://aur.archlinux.org/packages/i2p/)
+
+*   **[Lantern](/index.php/Lantern "Lantern")** — A free peer-to-peer internet censorship circumvention software.
+
+	[https://getlantern.org/en_US/](https://getlantern.org/en_US/) || [lantern-bin](https://aur.archlinux.org/packages/lantern-bin/)
 
 *   **[Tor](/index.php/Tor "Tor")** — Anonymizing overlay network.
 

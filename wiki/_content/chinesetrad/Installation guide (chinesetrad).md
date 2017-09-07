@@ -2,7 +2,7 @@
 
 本文將指引您使用由官方安裝映像檔啟動的 live system 安裝 [Arch Linux](/index.php/Arch_Linux "Arch Linux")。安裝之前請先閱讀 [FAQ](/index.php/FAQ "FAQ")。For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading")。
 
-更詳細的資源，可以參考 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章（安裝過程中可以使用 [ELinks](/index.php/ELinks "ELinks") 瀏覽），或者閱讀該命令的 [man page](/index.php/Man_page "Man page") ，參考 [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. 如需要互動式幫助，可透過 [IRC channel](/index.php/IRC_channel "IRC channel") 及 [forums](https://bbs.archlinux.org/)。
+更詳細的資源，可以參考 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章（安裝過程中可以使用 [ELinks](/index.php/ELinks "ELinks") 瀏覽），或者閱讀該命令的 [man page](/index.php/Man_page "Man page") ，參考 [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for an overview of the configuration. 如需要互動式幫助，可透過 [IRC channel](/index.php/IRC_channel "IRC channel") 及 [forums](https://bbs.archlinux.org/)。
 
 ## Contents
 
@@ -34,7 +34,7 @@
 
 Arch Linux 可以運行在任何記憶體不小於 256MB 的相容裝置上。最基本的 [base](https://www.archlinux.org/groups/x86_64/base/) 套件組需要至少 800MB 的磁碟空間。安裝過程需要從遠端的repo取得套件，因此必須確定網路正常運作。
 
-[Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") 包含了下載並啟動安裝媒體的說明。啟動後您會以 root 的身份登入並進入 [Zsh](/index.php/Zsh "Zsh") 命令列，常見的指令例如 [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) 可以使用 Tab 鍵自動補齊。
+[Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") 包含了下載並啟動安裝媒體的說明。啟動後您會以 root 的身份登入並進入 [Zsh](/index.php/Zsh "Zsh") 命令列，常見的指令例如 [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) 可以使用 Tab 鍵自動補齊。
 
 編輯配置文件可用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim")。
 
@@ -51,26 +51,26 @@ As instructions differ for [UEFI](/index.php/UEFI "UEFI") systems，檢查 [efiv
 
 默認的鍵盤配置([console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"))為 [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg")。`ls /usr/share/kbd/keymaps/**/*.map.gz` 可列出可用的键盘布局。
 
-配置可用 [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html) 改變，加上檔案名稱（可以忽略路徑及副檔名）。例如：
+配置可用 [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) 改變，加上檔案名稱（可以忽略路徑及副檔名）。例如：
 
 ```
 # loadkeys *de-latin1*
 
 ```
 
-[Console fonts](/index.php/Console_fonts "Console fonts") 位於 `/usr/share/kbd/consolefonts/`，設置方式請參考 [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html)。
+[Console fonts](/index.php/Console_fonts "Console fonts") 位於 `/usr/share/kbd/consolefonts/`，設置方式請參考 [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8)。
 
 ### Connect to the Internet (連接到網際網路)
 
 所有支援的有線網路在 live system 啟動後皆會啟用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")，可以用 [ping](/index.php/Ping "Ping") 等工具檢查網路連接。
 
-如欲使用其他網路配置（[network configuration](/index.php/Network_configuration "Network configuration")）工具，可以使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")及[netctl](/index.php/Netctl "Netctl")。範例請參考[systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html)和[netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt)。
+如欲使用其他網路配置（[network configuration](/index.php/Network_configuration "Network configuration")）工具，可以使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")及[netctl](/index.php/Netctl "Netctl")。範例請參考[systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5)和[netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5)。
 
 使用兩個網路服務（service）之一時，請先 [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`。
 
 ### Update the system clock (更新系統時間)
 
-用[timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html)確保系統時間為正確的：
+用[timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1)確保系統時間為正確的：
 
 ```
 # timedatectl set-ntp true
@@ -89,18 +89,18 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 ### Format the partitions (格式化磁碟)
 
-使用 [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html) 建立檔案系統([File systems](/index.php/File_systems "File systems"))，或者使用 [mkswap(8)](http://man7.org/linux/man-pages/man8/mkswap.8.html) 建立 [swap](/index.php/Swap "Swap") 區。詳細請參考 [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems")。
+使用 [mkfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.8) 建立檔案系統([File systems](/index.php/File_systems "File systems"))，或者使用 [mkswap(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkswap.8) 建立 [swap](/index.php/Swap "Swap") 區。詳細請參考 [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems")。
 
 ### Mount the partitions (掛載磁碟)
 
-掛載([mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)) root 分割區到 `/mnt`。例如：
+掛載([mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)) root 分割區到 `/mnt`。例如：
 
 ```
 # mount /dev/*sda1* /mnt 
 
 ```
 
-之後請為其他分割區創建目錄(directory)並掛載他們 (`/mnt/boot`, `/mnt/home`, ...)，並用 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 啟動 *swap* 分割區，如此才能被 *genfstab* 偵測到。
+之後請為其他分割區創建目錄(directory)並掛載他們 (`/mnt/boot`, `/mnt/home`, ...)，並用 [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8) 啟動 *swap* 分割區，如此才能被 *genfstab* 偵測到。
 
 ## Installation (安裝系統)
 
@@ -121,7 +121,7 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 此套件組並無包含全部 live 安裝環境的中所有工具，例如 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 或特定的無線韌體。[packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) 包含了他們的差異。
 
-To [install](/index.php/Install "Install") other packages or groups to the new system, append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
+To [install](/index.php/Install "Install") other packages or groups to the new system, append their names to *pacstrap* (space separated) or to individual [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands after the [#Chroot](#Chroot) step.
 
 ## Configure the system (配置系統)
 
@@ -154,7 +154,7 @@ To [install](/index.php/Install "Install") other packages or groups to the new s
 
 ```
 
-使用 [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) 建立 `/etc/adjtime`。If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time_standard "Time standard").
+使用 [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) 建立 `/etc/adjtime`。If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time_standard "Time standard").
 
 ```
 # hwclock --systohc --*utc*
@@ -170,14 +170,14 @@ To [install](/index.php/Install "Install") other packages or groups to the new s
 
 ```
 
-创建 locale.conf 并提交您的本地化选项 在 [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) 中設定您的語系選項。例如：
+创建 locale.conf 并提交您的本地化选项 在 [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) 中設定您的語系選項。例如：
 
 ```
 # echo LANG=*en_US.UTF-8* > /etc/locale.conf
 
 ```
 
-If required, set the [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).
+If required, set the [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5).
 
 ### Hostname (主機名稱)
 
@@ -229,7 +229,7 @@ When making configuration changes to [mkinitcpio.conf](/index.php/Mkinitcpio.con
 
 輸入 `exit` 或按下 `Ctrl+D` 以離開 chroot 環境。
 
-Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
+Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 最後，輸入`reboot` 以重新啟動裝置，所有未卸載的磁碟分割區將會自動由 *systemd* 卸載。記得移除安裝媒體並以 root 身份登入新系統。
 

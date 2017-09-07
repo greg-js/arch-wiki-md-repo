@@ -1,3 +1,8 @@
+Related articles
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
+
 Libvirt is collection of software that provides a convenient way to manage virtual machines and other virtualization functionality, such as storage and network interface management. These software pieces include a long term stable C API, a daemon (libvirtd), and a command line utility (virsh). A primary goal of libvirt is to provide a single way to manage multiple different virtualization providers/hypervisors, such as the [KVM/QEMU](/index.php/QEMU "QEMU"), [Xen](/index.php/Xen "Xen"), [LXC](/index.php/LXC "LXC"), [OpenVZ](http://openvz.org) or [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") ([among others](http://libvirt.org/drivers.html)).
 
 Some of the major libvirt features are:
@@ -41,7 +46,8 @@ Some of the major libvirt features are:
 *   [5 Python connectivity code](#Python_connectivity_code)
 *   [6 UEFI Support](#UEFI_Support)
 *   [7 PulseAudio](#PulseAudio)
-*   [8 See also](#See_also)
+*   [8 KVM Group Fix](#KVM_Group_Fix)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -617,7 +623,7 @@ For more information about this, refer to [this fedora wiki page](https://fedora
 
 ## PulseAudio
 
-The PulseAudio daemon normally runs under your regular user account, and will only accept connections from the same user. This can be a problem if QEMU is being run as root through **libvirt**. To run QEMU as a regular user, edit `/etc/libvirt/qemu.conf` and set the `user` option to your username.
+The PulseAudio daemon normally runs under your regular user account, and will only accept connections from the same user. This can be a problem if QEMU is being run as root through <a class="mw-selflink selflink">libvirt</a>. To run QEMU as a regular user, edit `/etc/libvirt/qemu.conf` and set the `user` option to your username.
 
 ```
 user = "dave"
@@ -635,6 +641,17 @@ You will also need to tell QEMU to use the PulseAudio backend and identify the s
 ```
 
 `1000` is your user id. Change it if necessary.
+
+## KVM Group Fix
+
+If you are getting the error
+
+```
+ Unable to complete install: 'unsupported configuration: CPU mode 'custom' for x86_64 kvm domain on x86_64 host is not supported by hypervisor'
+
+```
+
+Then simply edit `/etc/libvirt/qemu.conf` and change `group="78"` to `group="kvm"`. Then restart `libvirtd.service`. See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1728381#p1728381) for more information.
 
 ## See also
 

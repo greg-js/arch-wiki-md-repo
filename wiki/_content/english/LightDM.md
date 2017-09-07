@@ -1,3 +1,9 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [GDM](/index.php/GDM "GDM")
+*   [LXDM](/index.php/LXDM "LXDM")
+
 [LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager"). Its key features are:
 
 *   Cross-desktop - supports different desktop technologies.
@@ -100,7 +106,7 @@ $ dm-tool --help
 
 ### User switching
 
-**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use [light-locker](/index.php/LightDM#Lock_the_screen_using_light-locker "LightDM") or something from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use [light-locker](#Lock_the_screen_using_light-locker) or something from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 LightDM's *dm-tool* command can be used to allow multiple users to be logged in on separate ttys. The following will send a signal requesting that the current session be locked and then will initiate a switch to LightDM's greeter, allowing a new user to log in to the system.
 
@@ -301,7 +307,7 @@ Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/inde
 
 ### Login using ~/.xinitrc
 
-See [Display Manager#Run ~/.xinitrc as a session](/index.php/Display_Manager#Run_.7E.2F.xinitrc_as_a_session "Display Manager").
+See [Display manager#Run ~/.xinitrc as a session](/index.php/Display_manager#Run_.7E.2F.xinitrc_as_a_session "Display manager").
 
 ### NumLock on by default
 

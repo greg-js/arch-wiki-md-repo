@@ -10,6 +10,7 @@ The proper, recommended way to run GUI apps under X with elevated privileges is 
 *   [2 Alternate methods](#Alternate_methods)
     *   [2.1 Temporarily allow root access](#Temporarily_allow_root_access)
     *   [2.2 Permanently allow root access](#Permanently_allow_root_access)
+*   [3 Wayland](#Wayland)
 
 ## Ponctual methods
 
@@ -91,3 +92,7 @@ export XAUTHORITY=/home/usersname/.Xauthority kwrite
 ```
 
 (to allow root to access kwrite, for instance.)
+
+## Wayland
+
+If you are running wayland, you'll find that the fallback X server won't work when running programs as root. Try running `xhost +local:` first.

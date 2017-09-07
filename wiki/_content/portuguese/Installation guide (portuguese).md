@@ -1,6 +1,6 @@
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)").
 
-Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
+Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)") ou as [páginas de manual](/index.php/Man_page_(Portugu%C3%AAs) "Man page (Português)") dos vários programas, ambos relacionados neste guia. Veja [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para uma visão geral da configuração. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
 ## Contents
 
@@ -32,7 +32,7 @@ Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index
 
 Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "w:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve levar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, uma conexão internet deve é necessária.
 
-Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Baixe e inicialize a mídia de instalação como explicado em [Category:Getting and installing Arch (Português)](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
 Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Textedit "Textedit") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
@@ -40,9 +40,9 @@ Para trocar para um console diferente — por exemplo, para ver esse guia com [E
 
 O [mapa de teclas de console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Para listar todos os layouts disponíveis, execute `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
+Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitindo caminho e extensão de arquivo. Por exemplo, execute `loadkeys br-abnt2` para definir um layout de teclado [ABNT (brasileiro)](https://en.wikipedia.org/wiki/File:KB_Portuguese_Brazil.svg "w:File:KB Portuguese Brazil.svg").
 
-[Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+[Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Verificar o modo de inicialização
 
@@ -66,11 +66,11 @@ A imagem de instalação [habilita](/index.php/Habilita "Habilita") o *daemon* [
 
 Se nenhum estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@<TAB>` e veja [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Drivers_de_dispositivos "Configuração de rede").
 
-Para conexões **sem fio** (*wireless*), iw(8), wpa_supplicant(8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
+Para conexões **sem fio** (*wireless*), [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) e [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") estão disponíveis. Veja [Configuração de rede sem fio](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ### Atualizar o relógio do sistema
 
-Use [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html) para garantir que o relógio do sistema está certo:
+Use [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) para garantir que o relógio do sistema está certo:
 
 ```
 # timedatectl set-ntp true
@@ -190,7 +190,7 @@ Por exemplo, para definir para o fuso horário de Brasília (*BRT* ou *BRST*), e
 
 ```
 
-Execute [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) para gerar `/etc/adjtime`:
+Execute [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) para gerar `/etc/adjtime`:
 
 ```
 # hwclock --systohc
@@ -208,17 +208,17 @@ Descomente `pt_BR.UTF-8 UTF-8` e qualquer outra [localização](/index.php/Local
 
 ```
 
-Defina a [variável](/index.php/Variable "Variable") `LANG` em [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) adequadamente, por exemplo:
+Defina a [variável](/index.php/Variable "Variable") `LANG` em [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) adequadamente, por exemplo:
 
  `/etc/locale.conf`  `LANG=*pt_BR.UTF-8*` 
 
-Se você [definir o layout do teclado](#Definir_o_layout_do_teclado), torne as alterações persistentes em [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
+Se você [definir o layout do teclado](#Definir_o_layout_do_teclado), torne as alterações persistentes em [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*br-abnt2*` 
 
 ### Hostname
 
-Crie o arquivo [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
+Crie o arquivo [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
 
  `/etc/hostname` 
 ```
@@ -226,7 +226,7 @@ Crie o arquivo [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.htm
 
 ```
 
-Considere adicionar uma entrada correspondente ao [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+Considere adicionar uma entrada correspondente ao [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -248,7 +248,7 @@ Para [Configuração sem fio](/index.php/Wireless_configuration "Wireless config
 
 Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote [linux](https://www.archlinux.org/packages/?name=linux) com *pacstrap*.
 
-Para configurações especiais, modifique o arquivo mkinitcpio.conf(5) e recrie a imagem initramfs:
+Para configurações especiais, modifique o arquivo [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
 
 ```
 # mkinitcpio -p linux
@@ -276,7 +276,7 @@ Se você tiver um CPU Intel, instale o pacote [intel-ucode](https://www.archlinu
 
 Saia de ambiente *chroot* digitando `exit` ou pressionando `Ctrl+D`.
 
-Opcionalmente, desmonte todas as partições com `umount -R /mnt`: isso permite noticiar quaisquer partições "ocupadas" e localizar a causa com o [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
+Opcionalmente, desmonte todas as partições com `umount -R /mnt`: isso permite noticiar quaisquer partições "ocupadas" e localizar a causa com o [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 Finalmente, reinicie a máquina digitando `reboot`: quaisquer partições que ainda estejam montadas serão desmontadas automaticamente por *systemd*. Lembre-se de remover a mídia de instalação e, então, se autenticando no novo sistema com a conta de root.
 

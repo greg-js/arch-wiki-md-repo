@@ -1,3 +1,15 @@
+Related articles
+
+*   [Autostarting](/index.php/Autostarting "Autostarting")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Wayland](/index.php/Wayland "Wayland")
+*   [xinit](/index.php/Xinit "Xinit")
+*   [xrandr](/index.php/Xrandr "Xrandr")
+
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 	The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
@@ -87,7 +99,7 @@ Xorg searches for installed drivers automatically:
 
 *   If it cannot find the specific driver installed for the hardware (listed below), it first searches for *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
 *   If that is not found, it searches for *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), the generic driver, which handles a large number of chipsets but does not include any 2D or 3D acceleration.
-*   If *vesa* is not found, Xorg will fall back to [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), which includes GLAMOR acceleration (see [modesetting(4)](http://linux.die.net/man/4/modesetting)).
+*   If *vesa* is not found, Xorg will fall back to [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), which includes GLAMOR acceleration (see [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
 
 In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
 

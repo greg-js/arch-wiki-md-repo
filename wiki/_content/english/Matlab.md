@@ -1,3 +1,9 @@
+Related articles
+
+*   [Octave](/index.php/Octave "Octave")
+*   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
+*   [Mathematica](/index.php/Mathematica "Mathematica")
+
 From the [official website](http://www.mathworks.com/products/matlab/):
 
 	*MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java.*
@@ -416,7 +422,7 @@ In some interfaces - such as Simulation Data Inspector or Simulink Test Manager 
 
 ### Not starting - licensing error
 
-In case MATLAB will not start from a [desktop environment](/index.php/Desktop_environment "Desktop environment") by the call of its [desktop file](/index.php/Desktop_entries "Desktop entries") one should see the output as you start it from the terminal. For a *Licensing error* such as:
+In case MATLAB will not start from a [desktop environment](/index.php/Desktop_environment "Desktop environment") by the call of its [desktop file](/index.php/Desktop_file "Desktop file") one should see the output as you start it from the terminal. For a *Licensing error* such as:
 
  `# matlab` 
 ```
@@ -440,4 +446,4 @@ Licensing error: -9,57.
 
 ```
 
-a re-[activation](/index.php/Matlab#Activation "Matlab") might solve the problem.
+a re-[activation](#Activation) might solve the problem.

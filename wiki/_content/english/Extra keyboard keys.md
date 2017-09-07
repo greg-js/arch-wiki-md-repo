@@ -1,3 +1,12 @@
+Related articles
+
+*   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
+*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
+*   [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
+*   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
+*   [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")
+*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
+
 Many keyboards include some *special keys* (also called *hotkeys* or *multimedia keys*), which are supposed to execute an application or print special characters (not included in the standard national keymaps). [udev](/index.php/Udev "Udev") contains a large database of mappings specific to individual keyboards, so common keyboards usually work out of the box. If you have very recent or uncommon piece of hardware, you may need to adjust the mapping manually.
 
 Prerequisite for modifying the key mapping is knowing how the keys are identified on the system. There are multiple levels:
@@ -179,9 +188,7 @@ then check xev again. If you combine this with the acpi_osi="!Windows 2012" boot
 
 ### Lenovo T460p (or possibly others)
 
-Out of the box, the backlight keys (on F5, F6) might not be available, even via the /dev/input interface. To fix this, try adding the following option to your boot parameters:
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT="... video.use_native_backlight=1 ..."` 
+Out of the box, the backlight keys (on F5, F6) might not be available, even via the `/dev/input` interface. To fix this, follow [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-line_options "Backlight").
 
 ## Gaming Keyboards
 

@@ -494,7 +494,7 @@ You can also create an entry for this in `/etc/fstab`
 
 ```
 
-**Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [Davfs#Storing_credentials](/index.php/Davfs#Storing_credentials "Davfs").
+**Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [Davfs#Storing credentials](/index.php/Davfs#Storing_credentials "Davfs").
 
 **Note:** If creating/copying files is not possible, while the same operations work on directories, see [Davfs#Creating/copying files not possible and/or freezes](/index.php/Davfs#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs").
 

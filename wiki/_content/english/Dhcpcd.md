@@ -1,3 +1,9 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [dhcpd](/index.php/Dhcpd "Dhcpd")
+
 *dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](https://roy.marples.name/projects/dhcpcd) for the full list of features.
 
 **Note:** *dhcpcd* (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
@@ -50,7 +56,7 @@ In all of the above, you will be assigned a dynamic IP address. To assign a stat
 
 ## Configuration
 
-The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](https://www.daemon-systems.org/man/dhcpcd.conf.5.html) for details. Some of the frequently used options are highlighted below.
+The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) for details. Some of the frequently used options are highlighted below.
 
 ### DHCP static route(s)
 
@@ -104,7 +110,7 @@ static routers=192.168.0.1
 static domain_name_servers=192.168.0.1 8.8.8.8
 ```
 
-More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details.
+More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)for details.
 
 #### Fallback profile
 
@@ -127,7 +133,7 @@ fallback static_eth0
 
 ## Hooks
 
-*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](http://roy.marples.name/man/html8/dhcpcd-run-hooks.html) for details.
+*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)for details.
 
 **Note:**
 
@@ -293,5 +299,4 @@ After making changes, [reload the configuration](/index.php/Systemd#Editing_prov
 
 ## See also
 
-*   [dhcpcd(8)](http://roy.marples.name/man/html8/dhcpcd.html)
-*   [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html)
+*   [dhcpcd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)* [dhcpcd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)

@@ -1,3 +1,7 @@
+Related articles
+
+*   [rxvt-unicode/Tips and tricks](/index.php/Rxvt-unicode/Tips_and_tricks "Rxvt-unicode/Tips and tricks")
+
 [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a customizable [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") forked from [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), the ability to display multiple font types and support for [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") extensions.
 
 ## Contents
@@ -34,7 +38,7 @@
 
 ## Configuration
 
-See [urxvt(1)](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod) and [urxvt(7)](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod) for available settings and values.
+See [urxvt(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1) and [urxvt(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.7) for available settings and values.
 
 ### Xresources
 

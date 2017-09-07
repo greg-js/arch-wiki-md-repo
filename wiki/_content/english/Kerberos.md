@@ -31,7 +31,7 @@ Related articles
 
 It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_synchronization "Time") to keep client/server clocks in sync.
 
-If hostname resolution has not been configured, you can manually add your clients and server to the [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) file of each machine. Note that the FQDN (myclient.example.com) must be the first hostname after the IP address in the hosts file.
+If hostname resolution has not been configured, you can manually add your clients and server to the [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file of each machine. Note that the FQDN (myclient.example.com) must be the first hostname after the IP address in the hosts file.
 
 ## Server configuration
 
@@ -256,7 +256,7 @@ A kerberos principal has three components, formatted as `primary/instance@REALM`
 
 ### With remote kadmin
 
-This is the easier method, but requires you to have configured [kadmin](/index.php/Kerberos#Configuring_kadmin "Kerberos").
+This is the easier method, but requires you to have configured [kadmin](#Configuring_kadmin).
 
 Open kadmin as root (so we can write the keytab) on the client, authenticating with your admin principal:
 
@@ -322,7 +322,7 @@ Finally, delete kbclient.keytab from the server and client.
 
 ## SSH Authentication
 
-Use the instructions in [Service principals and keytabs](/index.php/Kerberos#Service_principals_and_keytabs "Kerberos") to create a principal for the "host" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
+Use the instructions in [Service principals and keytabs](#Service_principals_and_keytabs) to create a principal for the "host" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
 
 Modify your [SSH](/index.php/SSH "SSH") server configuration to enable GSSAPI authentication:
 
@@ -382,9 +382,9 @@ Valid starting       Expires              Service principal
 
 ## NFS Security
 
-First, configure your [NFS server](/index.php/NFS#Server "NFS") server. Also see [NFS Troubleshooting](/index.php/NFS/Troubleshooting "NFS/Troubleshooting"). Configuring a [time sync daemon](/index.php/Time#Time_synchronization "Time") on both the clients and the server is strongly recommended. Clock drift will cause this to break, and the error message will not be helpful.
+First, configure your [NFS server](/index.php/NFS#Server "NFS") server. Also see [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting"). Configuring a [time sync daemon](/index.php/Time#Time_synchronization "Time") on both the clients and the server is strongly recommended. Clock drift will cause this to break, and the error message will not be helpful.
 
-Use the instructions in [Service principals and keytabs](/index.php/Kerberos#Service_principals_and_keytabs "Kerberos") to create a principal for the "nfs" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
+Use the instructions in [Service principals and keytabs](#Service_principals_and_keytabs) to create a principal for the "nfs" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
 
 ### NFS Server
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 From [XDM manual page](http://www.xfree86.org/current/xdm.1.html):
 
 	*Xdm manages a collection of X displays, which may be on the local host or remote servers. The design of xdm was guided by the needs of X terminals as well as The Open Group standard XDMCP, the X Display Manager Control Protocol. Xdm provides services similar to those provided by init, getty and login on character terminals: prompting for login name and password, authenticating the user, and running a "session."*
@@ -93,7 +97,7 @@ Comment out the logo defines:
 
 ### Multiple X sessions & Login in the window
 
-With the [Xdmcp](/index.php/Xdmcp "Xdmcp") enable, you can easily run multiple X sessions simultaneously on the same machine.
+With the [XDMCP](/index.php/XDMCP "XDMCP") enable, you can easily run multiple X sessions simultaneously on the same machine.
 
 ```
 # X -query ip_xdmcp_server :2

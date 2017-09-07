@@ -1,3 +1,10 @@
+Related articles
+
+*   [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications")
+*   [Qt](/index.php/Qt "Qt")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [GTK+/Development](/index.php/GTK%2B/Development "GTK+/Development")
+
 From the [GTK+ website](http://www.gtk.org):
 
 	GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites.
@@ -575,6 +582,8 @@ Simply set them to 0 or remove the whole file to use GNOME defaults.
 ### Printers not shown in the GTK print dialog
 
 From GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
+
+Note for those who do not want to install polkit (and do not want to hassle with AUR packages like [gtk3-light](https://aur.archlinux.org/packages/gtk3-light/) [gtk3-nobroadway-nowayland-nocolord](https://aur.archlinux.org/packages/gtk3-nobroadway-nowayland-nocolord/) [gtk3-print-backends-nocolord](https://aur.archlinux.org/packages/gtk3-print-backends-nocolord/) [colord-nopolkit](https://aur.archlinux.org/packages/colord-nopolkit/)): Although colord is needed for printing if GTK or gtk3-print-backends were compiled with colord support, printing works fine without polkit installed; at least with a monochrome printer and package versions gtk3-print-backends=3.22.19-2 and colord=1.4.1-1.
 
 ### Some GTK+ 2 themes only change the UI color palette
 

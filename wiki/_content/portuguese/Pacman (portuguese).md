@@ -1,3 +1,18 @@
+Artigos relacionados
+
+*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
+*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
+*   [pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")
+*   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
+*   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
+*   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+*   [FAQ#Package management](/index.php/FAQ#Package_management "FAQ")
+*   [System maintenance](/index.php/System_maintenance "System maintenance")
+*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+
 O [gerenciador de pacote](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") **[pacman](https://www.archlinux.org/pacman/)** é uma das grandes vantagens do Arch Linux. Combina um simples pacote no formato binário, com um fácil uso de [sistema de compilação](/index.php/Arch_Build_System "Arch Build System"). A meta do pacman é tornar o mais fácil possivel gerenciar pacotes, sejam eles dos [oficiais repositórios Arch](/index.php/Official_repositories "Official repositories") ou das próprias compilações do usuário.
 
 Pacman mantém o sistema atualizado, listas de pacotes de sincronização com o servidor mestre. Este modelo servidor/cliente também permite o usuário baixar/instalar pacotes com um simples comando, completo com todas as dependências requeridas.
@@ -49,7 +64,7 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
 
 ## Uso
 
-O que se segue é apenas uma pequena amostra das operações que o pacman pode executar. Para ler mais exemplos, consulte [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html#_examples).
+O que se segue é apenas uma pequena amostra das operações que o pacman pode executar. Para ler mais exemplos, consulte [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
 **Dica:** Para usuários que utilizaram outras distribuições linux antes, ver o artigo [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") será útil.
 

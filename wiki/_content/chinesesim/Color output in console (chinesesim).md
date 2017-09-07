@@ -1,3 +1,8 @@
+相关文章
+
+*   [Emacs#Custom colors and theme](/index.php/Emacs#Custom_colors_and_theme "Emacs")
+*   [nano#Syntax highlighting](/index.php/Nano#Syntax_highlighting "Nano")
+
 **翻译状态：** 本文是英文页面 [Color_output_in_console](/index.php/Color_output_in_console "Color output in console") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Color_output_in_console&diff=0&oldid=448928)可以查看翻译后英文页面的改动。
 
 This page was created to consolidate colorization of CLI outputs.
@@ -454,7 +459,7 @@ See [Fish#Web interface](/index.php/Fish#Web_interface "Fish").
 
 ### Virtual console
 
-The colors in the [Linux virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")—see [console(4)](http://man7.org/linux/man-pages/man4/console.4.html)—running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB`, where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
+The colors in the [Linux virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")—see [console(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/console.4)—running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB`, where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
 
 For example, to reuse existing colors defined in `~/.Xresources`, add the following to the shell initialization file (such as `~/.bashrc`):
 

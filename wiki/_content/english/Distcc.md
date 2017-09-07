@@ -1,3 +1,8 @@
+Related articles
+
+*   [TORQUE](/index.php/TORQUE "TORQUE")
+*   [Slurm](/index.php/Slurm "Slurm")
+
 Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network. It should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. The cool part is one can use it together with native Arch build tools such as makepkg.
 
 ## Contents
@@ -50,7 +55,7 @@ For other distros, or even OSes including Windows through using Cygwin, refer to
 
 ### Slaves
 
-The configuration for the slaves is stored in `/etc/conf.d/distccd`. The available command line options are listed in [distcc(1)](https://linux.die.net/man/1/distccd). At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
+The configuration for the slaves is stored in `/etc/conf.d/distccd`. The available command line options are listed in [distcc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1). At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
 
 ```
 DISTCC_ARGS="--allow 192.168.0.0/24"

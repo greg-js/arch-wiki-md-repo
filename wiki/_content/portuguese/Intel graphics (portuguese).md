@@ -1,3 +1,13 @@
+Artigos relacionados
+
+*   [Intel GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500")
+*   [Intel GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
+*   [Xrandr](/index.php/Xrandr "Xrandr")
+*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
+*   [Vulkan](/index.php/Vulkan "Vulkan")
+
 A Intel provém e suporta drivers de código aberto (open source), portanto as GPU Intel são plug-and-play.
 
 Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
@@ -49,7 +59,7 @@ Instale o pacote [mesa](https://www.archlinux.org/packages/?name=mesa), que forn
 
 Não se esqueça de checar [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Note:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Note:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Carregando
 

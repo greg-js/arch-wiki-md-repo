@@ -163,7 +163,7 @@ Finally, you should obtain an IP address as indicated in the [#Overview](#Overvi
 
 ## Advanced usage
 
-For networks of varying complexity, possibly employing extensive use of [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), it will be useful to maintain a customised configuration file. For an overview of the configuration with examples, refer to [wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf); for details on all the supported configuration parameters, refer to the example file `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.[[1]](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf)
+For networks of varying complexity, possibly employing extensive use of [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), it will be useful to maintain a customised configuration file. For an overview of the configuration with examples, refer to [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5); for details on all the supported configuration parameters, refer to the example file `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.[[1]](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf)
 
 ### Configuration
 
@@ -354,7 +354,7 @@ ExecStart=
 ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I **-Dnl80211,wext**
 ```
 
-**Note:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
+**Note:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
 
 ### Problem with mounted network shares (cifs) and shutdown
 

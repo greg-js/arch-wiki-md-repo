@@ -1,3 +1,8 @@
+Related articles
+
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Multihead](/index.php/Multihead "Multihead")
+
 *xrandr* is an official configuration utility to the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension. It can be used to set the size, orientation or reflection of the outputs for a screen. For configuring multiple monitors see the [Multihead](/index.php/Multihead "Multihead") page.
 
 ## Contents
@@ -73,7 +78,7 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 **Note:**
 
 *   Changes you make using *xrandr* will only last through the current session.
-*   *xrandr* has a lot more capabilities - see [xrandr(1)](https://www.x.org/archive/X11R7.5/doc/man/man1/xrandr.1.html) for details.
+*   *xrandr* has a lot more capabilities - see [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details.
 
 ## Configuration
 

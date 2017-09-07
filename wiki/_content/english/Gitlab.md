@@ -1,3 +1,8 @@
+Related articles
+
+*   [Gitolite](/index.php/Gitolite "Gitolite")
+*   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
+
 From [GitLab's homepage:](https://about.gitlab.com/)
 
 	GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers.
@@ -129,7 +134,7 @@ listen "**127.0.0.1:8080**", :tcp_nopush => true
 
 ### Redis
 
-In order to provide sufficient performance you will need a cache database. [Install](/index.php/Redis#Installation "Redis") and [configure](/index.php/Redis#Configure "Redis") a Redis instance, being careful to the section dedicated to listening via a socket.
+In order to provide sufficient performance you will need a cache database. [Install](/index.php/Redis#Installation "Redis") and [configure](/index.php/Redis#Configuration "Redis") a Redis instance, being careful to the section dedicated to listening via a socket.
 
 *   Add the user *git* and *gitlab* to the *redis* [group](/index.php/Group "Group").
 
@@ -507,7 +512,7 @@ listen "127.0.0.1:8080"
 
 Create a configuration file for Gitlab’s virtual host and insert the lines below adjusted accordingly. For the ssl section see [LAMP#SSL](/index.php/LAMP#SSL "LAMP"). If you do not need it, remove it. Notice that the SSL virtual host needs a specific IP instead of generic. Also if you set a custom port for Unicorn, do not forget to set it at the BalanceMember line.
 
-You can use these [examples](https://gitlab.com/gitlab-org/gitlab-recipes/blob/079f70dd2c091434a8dd04ed5b1a0d0e937cd361/web-server/apache/gitlab-ssl-apache2.4.conf) to get you started.
+You can use these [examples](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) to get you started.
 
 ##### Enable host and start unicorn
 

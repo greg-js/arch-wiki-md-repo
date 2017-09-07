@@ -96,7 +96,7 @@ You can also view a list of recent test results and detailed information about a
 
 ### smartd
 
-The smartd daemon monitors SMART statuses and emits notifications when something goes wrong. It can be managed with systemd and configured using the `/etc/smartd.conf` configuration file. The configuration file syntax is esoteric, and this wiki page provides only a quick reference. For more complete information, read the examples and comments within the configuration file, or read [smartd.conf(5)](https://www.smartmontools.org/browser/trunk/smartmontools/smartd.conf.5.in).
+The smartd daemon monitors SMART statuses and emits notifications when something goes wrong. It can be managed with systemd and configured using the `/etc/smartd.conf` configuration file. The configuration file syntax is esoteric, and this wiki page provides only a quick reference. For more complete information, read the examples and comments within the configuration file, or read [smartd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smartd.conf.5).
 
 #### daemon management
 
@@ -203,7 +203,7 @@ As an alternative you can user -i option of smartd. It controls how often smartd
 
  `/etc/default/smartmontools`  `SMARTD_ARGS="-i 21600"  Check status every 21600 seconds (3 hours)` 
 
-For more info see [smartd(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartd.8.in).
+For more info see [smartd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smartd.8).
 
 #### Schedule self-tests
 

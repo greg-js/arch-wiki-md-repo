@@ -52,10 +52,63 @@ $ intel-virtual-output -f
 
 **Note:** Starting with nvidia-360 the nvidia-modeset module will prevent bumblebee from unloading properly and has to be removed first.
 
+It is needed to enable virtual outputs for intel graphic card `xorg.conf.d`.
+
+ `20-intel.conf` 
+```
+Section "Device"
+    Identifier "intelgpu0"
+    Driver "intel"
+    Option "VirtualHeads" "2"
+EndSection
+```
+
+see also [Stackexchange](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for troubleshooting with virtual outputs
+
+ `multiscreen_enable.sh` 
+```
+#!/bin/bash
+# Initializes Bumblebee for multi-screen functionality.
+
+#modprobe bbswitch # probably not needed 
+optirun true
+intel-virtual-output
+#following line needs to be adapted to the according sceanrio
+xrandr --output LVDS1 --auto --pos 0x0 --output VIRTUAL8 --mode VIRTUAL8.740-1920x1200 --pos 1920x-60 
+
+```
+ `multiscreen_term.sh` 
+```
+#!/bin/bash
+# Initializes Bumblebee for multi-screen functionality.
+xrandr --output VIRTUAL8 --off  
+xorg_process=$(ps aux | grep 'Xorg :8' | awk '{print $2}')
+kill -15 $xorg_process
+sleep 1
+rmmod nvidia_modeset
+sleep 1
+rmmod nvidia
+
+```
+ `multiscreen_reinit.sh` 
+```
+#!/bin/bash
+# Restarts Bumblebee for multi-screen functionality.
+
+tee /proc/acpi/bbswitch <<<ON
+modprobe bbswitch
+modprobe nvidia-modeset
+optirun true
+intel-virtual-output
+xrandr --output LVDS1 --auto --pos 0x0 --output VIRTUAL8 --mode VIRTUAL8.740-1920x1200 --pos 1920x-60 
+
+```
+
 For the nvidia card to recognize external monitors, some lines have to be commented out of the default config file at `/etc/bumblebee/xorg.conf.nvidia`.
 
  `xorg.conf.nvidia` 
 ```
+
 ...
  #   Option "UseEDID" "false"
  #   Option "UseDisplayDevice" "none"

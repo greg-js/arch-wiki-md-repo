@@ -1,4 +1,17 @@
-Este artículo trata los utilidades de los sistemas GNU/Linux denominadas utilidades *core*, como *less*, *ls*, y *grep*. El ámbito de este artículo incluye, pero no está limitado a, aquellas utilidades incluidas en el paquete de GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). Lo siguiente son varios trucos y consejos y otras informaciones útiles relacionadas con estas utilidades.
+Related articles
+
+*   [Bash (Español)](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")
+*   [Zsh](/index.php/Zsh "Zsh")
+*   [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
+*   [GNU Project (Español)](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)")
+*   [sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
+*   [cron](/index.php/Cron "Cron")
+*   [File system search](/index.php/File_system_search "File system search")
+*   [man page](/index.php/Man_page "Man page")
+*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
+Este artículo trata sobre las utilidades de los sistemas GNU/Linux denominadas *core*, tales como *less*, *ls*, y *grep*. El ámbito de este artículo incluye (pero no está limitado) a las utilidades del paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils) de GNU. Los siguientes son trucos, consejos e información relacionada con dichas utilidades.
 
 ## Contents
 
@@ -29,7 +42,7 @@ Este artículo trata los utilidades de los sistemas GNU/Linux denominadas utilid
 
 ## Comandos básicos
 
-La siguiente tabla lista los comandos de consola básicos que todo usuario linux debería conocer. Comandos en **negrita** son parte de la línea de comandos, otros son programas separados llamados desde la consola. Véase las siguientes secciones y *Artículos relacionados* para más detalles.
+La siguiente tabla lista los comandos básicos de consola que todo usuario linux debería conocer. Comandos en **negrita** son parte de la línea de comandos, los otros son programas separados llamados desde la consola. Véase las siguientes secciones y *Artículos relacionados* para más detalles.
 
 | Comando | Descripción | Ejemplo |
 | man | Muestra la página del manual para ese comando | man ed |
@@ -47,16 +60,16 @@ La siguiente tabla lista los comandos de consola básicos que todo usuario linux
 | cat | Muestra el contenido de un archivo | cat /etc/hostname |
 | strings | Muestra caracteres imprimibles en un fichero binario | strings /usr/bin/free |
 | find | Busca un archivo | find ~ -name myfile |
-| mount | Mointa una partición | mount /dev/sdc1 /media/usb |
+| mount | Monta una partición | mount /dev/sdc1 /media/usb |
 | df -h | Muestra el espacio disponible en todas las particiones |
 | ps -A | Muestra todos los procesos en ejecución |
 | killall | Mata todas las instancias de un proceso en ejecución |
 
 ## cat
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*catenate*) es una utilidad estándar de unix que concatena y lista ficheros.
+[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*concatenate*) es una utilidad estándar de unix que concatena y lista ficheros.
 
-*   Dado que *cat* no es un comando integrado en la consola, en bastantes ocasiones encontrará más conveniente usar una [redirección (English)](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por ejemplo en scripts, o si le preocupa el rendimiento . De hecho `< *file*` hace lo mismo que `cat *file*`.
+*   Dado que *cat* no es un comando integrado en la consola, en bastantes ocasiones encontrará más conveniente usar una [redirección (English)](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por ejemplo en scripts, o si le preocupa el rendimiento. De hecho `< *file*` hace lo mismo que `cat *file*`.
 
 *   *cat* es capaz de trabajar con múltiples líneas, aunque esto se ve a veces como una mala práctica.
 
@@ -80,13 +93,13 @@ $ echo "\
 
 ```
 
-*   Si necesita lista las lineas del fichero en orden inverso, existe una utilidad llamada tac [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* invertido).
+*   Si necesita lista las líneas del fichero en orden inverso, existe una utilidad llamada tac [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* invertido).
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) es un comando de sistemas operativos Unix y similares cuyo propósito principal es convertir y copiar un fichero.
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) es un comando de sistemas operativos Unix y tipo-Unix cuyo propósito principal es convertir y copiar un fichero.
 
-**Note:** *cp* hace lo mismo que *dd* sin pasarle argumentos pero no esta diseñado para procedimientos de borrado de discos más versátiles.
+**Note:** *cp* hace lo mismo que *dd* sin pasarle argumentos pero no está diseñado para procedimientos de borrado de discos más versátiles.
 
 ### Comprobar el progreso de dd en ejecución
 
@@ -99,21 +112,21 @@ Por defecto, no hay salida para *dd* hasta que la tarea ha terminado. Con *kill*
 
 **Note:** Esto afectará de igual manera a todas las instancias en ejecución de *dd*.
 
-Or:
+O:
 
 ```
 # kill -USR1 *pid_del_comando_dd*
 
 ```
 
-For example:
+Por ejemplo:
 
 ```
 # kill -USR1 $(pidof dd)
 
 ```
 
-Esto provoca que *dd* imprima de forma inmediatael progreso en la terminal. Por ejemplo:
+Esto provoca que *dd* imprima de forma inmediata el progreso en la terminal. Por ejemplo:
 
 ```
 605+0 records in
@@ -124,7 +137,7 @@ Esto provoca que *dd* imprima de forma inmediatael progreso en la terminal. Por 
 
 #### Usando el visor de tubería (pv)
 
-Como alternative puede usar [pv](https://www.archlinux.org/packages/?name=pv) para monitorizar el pipeline de dd:
+Como alternativa puede usar [pv](https://www.archlinux.org/packages/?name=pv) para monitorizar el pipeline de dd:
 
 ```
 # dd if=*/origen/de/flujo_de_archivo* | pv -*opciones_de_monitorización* -s *tamaño_del_archivo* | dd of=*/destino/de/flujo_de_archivo*
@@ -162,21 +175,21 @@ Otros programas por el estilo de *dd* muestra un estatus de salida periódico, p
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (de [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") *g/re/p*, *global/regular expression/print*) es una utilidad para busqueda de texto en línea de comandos escrito originalmente para Unix. El comando *grep* busca ficheros o en la entrada estándar de manera global líneas que coincidan con una expresión regular dada y las imprime a la salida estándar del programa.
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (de [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") *g/re/p*, *global/regular expression/print*) es una utilidad para búsqueda de texto en línea de comandos escrito originalmente para Unix. El comando *grep* busca ficheros o en la entrada estándar de manera global líneas que coincidan con una expresión regular dada y las imprime en la salida estándar del programa.
 
 *   Recuerde que *grep* maneja ficheros files, por lo que un comando como `cat *archivo* | grep *patrón*` es remplazable por `grep *patrón* *archivo*`
 
-*   Alternativas a *grep* optimizadas para codigo fuente existe , como [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) y [ack](https://www.archlinux.org/packages/?name=ack).
+*   Alternativas a *grep* optimizadas para código fuente existen, como, [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) y [ack](https://www.archlinux.org/packages/?name=ack).
 
 ### Salida con colores
 
 La salida con colores de `grep` puede ser muy útil para aprender [expresiones regulares](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") y características adicionales de `grep`.
 
-Para habilitar el coloreado de *grep* la siguiente entrada en el archivo de configuración de su terminal (p.ej:. si usa [Bash](/index.php/Bash "Bash")):
+Para habilitar el coloreado de *grep* agregue la siguiente entrada en el archivo de configuración de su terminal (p.ej:. si usa [Bash](/index.php/Bash "Bash")):
 
  `~/.bashrc`  `alias grep='grep --color=auto'` 
 
-Para incluir numeración de las líneas en la salida, incluya `-n` a la entrada anterior.
+Para incluir numeración de las líneas en la salida, incluya `-n` en la entrada anterior.
 
 La variable de entorno `GREP_COLOR` puede usarse para definir el color de resaltado por defecto (por defecto es rojo). Para cambiar el color busque en [secuencia de escape ANSI](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) para el color que desee y añádalo con:
 
@@ -256,15 +269,15 @@ Vea `man sponge` para más detalles.
 | ip tuntap | manejo de dispositivos TUN/TAP |
 | ip xfrm | manejo de políticas IPsec | ip-xfrm |
 
-El comando `help` está disponible para todos los objetos. Por ejemplo, escribiendo `ip addr help` se mostrará la sintaxis de comando disponible para el objeto address. Para un uso avanzado véase [documentación iproute2](http://www.policyrouting.org/iproute2.doc.html).
+El comando `help` está disponible para todos los objetos. Por ejemplo, escribiendo `ip addr help` se mostrará la sintaxis del comando disponible para el objeto address. Para un uso avanzado véase [documentación iproute2](http://www.policyrouting.org/iproute2.doc.html).
 
 El artículo [Configuración de Red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") muestra como el comando *ip* es usado en la práctica para varias tareas típicas.
 
-**Nota:** Puede que esté familiarizado con el comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") , que era usado versiones anteriores de Linux para la configuración de interfaces. Ahora está obsoleto en Arch Linux; debería usar *ip* en su lugar.
+**Nota:** Puede que esté familiarizado con el comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig"), que era usado en versiones anteriores de Linux para la configuración de interfaces. Ahora está obsoleto en Arch Linux; debería usar *ip* en su lugar.
 
 ## less
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) es un visualizados de archivos de texto en consola. Al contrario que otros visualizadores similares como [more](https://en.wikipedia.org/wiki/more_(command) y [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* ofrece una interfaz mucho más avanzada y completa [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
+[less](https://en.wikipedia.org/wiki/less_(Unix) es un visualizador de archivos de texto en consola. Al contrario que otros visualizadores similares como [more](https://en.wikipedia.org/wiki/more_(command) y [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* ofrece una interfaz mucho más avanzada y completa [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
 
 Véase [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para más alternativas.
 
@@ -284,7 +297,7 @@ export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 ```
 
-Cambio los valores a su gusto. Referencias: [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code").
+Cambie los valores a su gusto. Referencias: [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code").
 
 ### Salida en color mediante wrappers
 
@@ -327,13 +340,13 @@ export PAGER='vimpager'
 alias less=$PAGER
 ```
 
-Ahora los programas que use la variable de entorno `PAGER`, como [git](/index.php/Git "Git"), usarán *vim* como un visualizador.
+Ahora los programas que usen la variable de entorno `PAGER`, como [git](/index.php/Git "Git"), usarán *vim* como un visualizador.
 
 ### Salida coloreada cuando lee de entrada estándar
 
 **Nota:** Se recomienda añadir [#Salida en color mediante variables de entorno](#Salida_en_color_mediante_variables_de_entorno) a su `~/.bashrc` o `~/.zshrc`, ya que lo siguiente esta basado en `export LESS=R`
 
-Cuando ejecuta un comando y redirige su [salida estándar](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (*stdout*) a *less* para visualizarla (p.ej: `pacman -Qe | less`), puede encontrarse con que la salida ya no sale coloreada. Esto suele pasar porque el programa intentar detectar si su *salida estándar* es un terminal interactivo, en cuyo caso imprime el texto coloreado,y en caso contrario no. Esto es un buen comportamiento cuando quiere redirigir la *salida estándar* a un fichero, p.ej: `pacman -Qe > pkglst-backup.txt`, pero menos indicado cuando quiere visualizar la salid con `less`.
+Cuando ejecuta un comando y redirige su [salida estándar](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (*stdout*) a *less* para visualizarla (p.ej: `pacman -Qe | less`), puede encontrarse con que la salida ya no sale coloreada. Esto suele pasar porque el programa intentar detectar si su *salida estándar* es un terminal interactivo, en cuyo caso imprime el texto coloreado, en caso contrario no. Esto es un buen comportamiento cuando quiere redirigir la *salida estándar* a un fichero, p.ej: `pacman -Qe > pkglst-backup.txt`, pero menos indicado cuando quiere visualizar la salid con `less`.
 
 Algunos programas proveen una opción para deshabilitar la detección de tty interactiva:
 
@@ -409,7 +422,7 @@ $ pty *program* | less
 
 *   *ls* puede listar [permisos de ficheros](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
 
-*   Salida coloreada puede ser habilitadac con un simple alias. El fichero `~/.bashrc` debería tener la siguiente entrada copiada de `/etc/skel/.bashrc`:
+*   Salida coloreada puede ser habilitada con un simple alias. El fichero `~/.bashrc` debería tener la siguiente entrada copiada de `/etc/skel/.bashrc`:
 
 	`alias ls='ls --color=auto'`
 
@@ -421,7 +434,7 @@ El siguiente paso mejorará aún más la salida coloreada de *ls*; por ejemplo, 
 
 [mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (*make directory*) es un comando para crear directorios.
 
-*   Para crear un directorio y toda su jerarquía, es usado el argumento `-p`, de otra forma se monstraría un error. Como se supone que los usuario saben lo que quieren, ,el argumento `-p` puede usarse por defecto:
+*   Para crear un directorio y toda su jerarquía, es usado el argumento `-p`, de otra forma se monstraría un error. Como se supone que los usuario saben lo que quieren, el argumento `-p` puede usarse por defecto:
 
 	 `alias mkdir='mkdir -p -v'` 
 
@@ -453,11 +466,11 @@ El siguiente paso mejorará aún más la salida coloreada de *ls*; por ejemplo, 
 
 	Usuarios de Zsh pueden querer poner `noglob` antes de `timeout` para evitar expansiones implicitas.
 
-*   Para eliminar directorios que estén vacíos, use *rmdir* ya que falla en cada de que el objetivo contengo ficheros.
+*   Para eliminar directorios vacíos, use *rmdir*, si el objetivo contiene ficheros fallará.
 
 ## sed
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*) is una utilidad de Unix que parsea y transforma texto
+[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*) es una utilidad de Unix que parsea y transforma texto
 
 Aquí hay un puñado [list](http://sed.sourceforge.net/sed1line.txt) de ejemplo de una línea de como usar sed muy útiles.
 

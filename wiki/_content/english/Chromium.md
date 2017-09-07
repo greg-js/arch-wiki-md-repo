@@ -1,3 +1,10 @@
+Related articles
+
+*   [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks")
+*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+*   [Firefox](/index.php/Firefox "Firefox")
+*   [Opera](/index.php/Opera "Opera")
+
 [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser from "The Chromium Project", based on the [Blink](https://en.wikipedia.org/wiki/Blink_(web_engine) rendering engine.
 
 ## Contents
@@ -23,7 +30,7 @@
 
 ## Installation
 
-The open-source project, **Chromium**, can be [installed](/index.php/Install "Install") with the [chromium](https://www.archlinux.org/packages/?name=chromium) package.
+The open-source project, **Chromium**, can be [installed](/index.php/Install "Install") with the [chromium](https://www.archlinux.org/packages/?name=chromium) package. For printing support, see [Gtk#Printers not shown in the GTK print dialog](/index.php/Gtk#Printers_not_shown_in_the_GTK_print_dialog "Gtk").
 
 Other alternatives include:
 
@@ -41,7 +48,7 @@ Other alternatives include:
 
 *   **Chromium with [VA-API](/index.php/VA-API "VA-API") support** — with a patch to enable VA-API
 
-	[https://www.chromium.org/](https://www.chromium.org/) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
+	[https://chromium-review.googlesource.com/c/chromium/src/+/532294](https://chromium-review.googlesource.com/c/chromium/src/+/532294) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
 
 The derived browser, **Google Chrome**, bundled with Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
 

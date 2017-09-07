@@ -1,5 +1,11 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [bspwm](/index.php/Bspwm "Bspwm"). Дата последней синхронизации: 12 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Bspwm&diff=0&oldid=425338).
 
+Related articles
+
+*   [Bspwm/Примеры настроек](/index.php/Bspwm/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA "Bspwm/Примеры настроек")
+*   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
+*   [Сравнение тайловых оконных менеджеров](/index.php/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D0%BE%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2 "Сравнение тайловых оконных менеджеров")
+
 *bspwm* тайловый оконный менеджер представляющий окна как слои двоичного дерева. Также поддерживает [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) и несколько мониторов. Настраивается и управляется с помощью сообщений.
 
 ## Contents

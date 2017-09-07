@@ -1,6 +1,6 @@
 <center>**Navegación**</center>
 
-<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — **Equipo y traductores** — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Glorario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)")</center>
+<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — <a class="mw-selflink selflink">Equipo y traductores</a> — [Colaboración y mantenimiento](/index.php/ArchWiki_Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki Translation Team/Contributing (Español)") — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Glorario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)")</center>
 
 * * *
 
@@ -85,6 +85,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 ### Activos
 
 *   [Arlesy](/index.php/User:Arlesy "User:Arlesy") - [enviar email](/index.php/Special:EmailUser/Arlesy "Special:EmailUser/Arlesy")
+*   [Hen](/index.php/User:Hen "User:Hen") - [enviar mensaje](/index.php/Special:EmailUser/Hen "Special:EmailUser/Hen")
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 *   [Knight](/index.php/User:DKS "User:DKS")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - Traducción cada Domingo y Miércoles (*en principio*)

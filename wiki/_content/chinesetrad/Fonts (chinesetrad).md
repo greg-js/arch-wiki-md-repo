@@ -1,3 +1,10 @@
+相關文章
+
+*   [字型設定 (英)](/index.php/Font_configuration "Font configuration")
+*   [Java 執行環境字型 (英)](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [微軟字型 (英)](/index.php/MS_Fonts "MS Fonts")
+*   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
+
 **翻譯狀態：** 本文章是 [Fonts](/index.php/Fonts "Fonts") 的翻譯版本。最近一次的翻譯時間：2014-01-25。點擊[本連結](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=285531)查看英文頁面之後的變更。
 
 摘自[維基百科](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font")：
@@ -391,6 +398,8 @@ $ setfont
     *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驛微米黑，無襯線形式字體。
     *   [wqy-microhei-lite](https://www.archlinux.org/packages/?name=wqy-microhei-lite) - 文泉驛微米黑light版（筆畫更細）。
 
+*   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - 舊字體風格的中日韓存先字體
+
 ##### 中文字
 
 *   思源字體
@@ -399,20 +408,27 @@ $ setfont
     *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑體簡體中文部分
     *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑體繁體中文部分
 
+*   noto中文字體
+    *   [noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/) - Noto 簡體中文字體
+    *   [noto-fonts-tc](https://aur.archlinux.org/packages/noto-fonts-tc/) - Noto 繁體中文字體
+
 *   文泉驛字體
     *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驛正黑體，黑體 (無襯線) 的中文輪廓字體，附帶文泉驛點陣宋體 (也支持部分日韓字符)。
     *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - 文泉驛點陣宋體 (襯線) 中文字體。
 
+*   文鼎字體
 *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - **楷書** (帶有筆觸) Unicode 字體 (推荐啟用反鋸齒)
 *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - **明體** (印刷) Unicode 字體
+
 *   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - **新宋**字體，之前為 ttf-fireflysung
+
 *   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - 中文、越南文 TrueType 字體
 
-*   台灣教育部標准字體
-    *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁體）台灣教育部發行的標准楷書、宋體字體。
-    *   [ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/) - 台灣教育部發行的[NS11643標准的中文交換碼全字庫](http://data.gov.tw/node/5961)，包含明體、正宋體及正楷體。
+*   台灣中華民國教育部標准字體
+    *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - 台灣教育部發行的標准楷書、宋體字體。
+    *   [ttf-twcns-fonts](https://aur.archlinux.org/packages/ttf-twcns-fonts/) - 台灣中華民國教育部發行的[NS11643標准的中文交換碼全字庫](http://data.gov.tw/node/5961)，包含明體、正宋體及正楷體。
 
-*   windows字體
+*   windows中文字體
     *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - windows8簡體中文字體。
     *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - windows8繁體中文字體。
     *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - windows10簡體中文字體。

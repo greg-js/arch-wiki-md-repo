@@ -1,3 +1,9 @@
+Artigos relacionados
+
+*   [Network configuration (Português)](/index.php/Network_configuration_(Portugu%C3%AAs) "Network configuration (Português)")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Category:Network configuration (Português)](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)")
+
 O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicações preparadas para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das wireless, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME](/index.php/GNOME "GNOME").
 
 ## Contents
@@ -113,7 +119,7 @@ Os seguintes aplicativos são úteis para o gerenciamento de redes sem um servid
 
 Um frontend de linha de comando, incluído no pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-Para maiores detalhes veja [nmcli(1)](https://www.mankier.com/1/nmcli). Exemplos:
+Para maiores detalhes veja [nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Exemplos:
 
 *   Para conectar a uma rede sem fio: `nmcli dev wifi connect <name> password <password>` 
 *   Para conectar a uma rede sem fio através da interface `wlan1`: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
@@ -127,7 +133,7 @@ Para maiores detalhes veja [nmcli(1)](https://www.mankier.com/1/nmcli). Exemplos
 
 A interface em curses *nmtui* é parte integrante do pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-Para maiores detalhes veja [nmtui(1)](https://www.mankier.com/1/nmtui).
+Para maiores detalhes veja [nmtui(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
 
 #### nmcli-dmenu
 

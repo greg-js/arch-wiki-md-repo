@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA")
+*   [List of applications/Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities")

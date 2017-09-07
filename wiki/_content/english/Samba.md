@@ -75,7 +75,7 @@ To get started you can copy the default config file `/etc/samba/smb.conf.default
 
 ```
 
-The available options are documented in the [smb.conf(5)](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) man page. Whenever you modify the file run the `testparm` command to check for syntactic errrors.
+The available options are documented in the [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page. Whenever you modify the file run the `testparm` command to check for syntactic errrors.
 
 ### Creating a share
 
@@ -85,7 +85,7 @@ The `workgroup` specified in `smb.conf` has to match the in use Windows workgrou
 
 ### Starting services
 
-To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See the [smbd(8)](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) and [nmbd(8)](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) man pages for details, as the `nmbd.service` service may not always be required.
+To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See the [smbd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smbd.8) and [nmbd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmbd.8) man pages for details, as the `nmbd.service` service may not always be required.
 
 **Tip:** Instead of having the service running since boot, you can enable `smbd.socket` so the daemon is started on the first incoming connection. Do not forget to disable `smbd.service`.
 
@@ -841,7 +841,7 @@ mount.cifs //server/share /mnt/point -o sec=ntlmssp,...
 
 ```
 
-See the [mount.cifs(8)](https://www.samba.org/samba/docs/man/manpages-3/mount.cifs.8.html) man page: **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
+See the [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) man page: **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
 
 ### Mapping reserved Windows characters
 

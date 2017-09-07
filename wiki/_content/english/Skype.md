@@ -3,7 +3,7 @@ There are two official Linux versions of Skype available:
 *   The new Skype for Linux: see [#Skype for Linux](#Skype_for_Linux)
 *   The old Skype (version 4.x, final release in June 2014): see [#Legacy Skype](#Legacy_Skype)
 
-	Legacy Skype does not support calling to some newer clients.[[1]](https://blogs.skype.com/news/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/) **Should have stopped working on 1 July 2017**[[2]](http://www.omgubuntu.co.uk/2017/06/skype-4-3-linux-stop-working-july-2017) but is still working as of 5 July 2017.
+	Legacy Skype does not support calling to some newer clients.[[1]](https://blogs.skype.com/news/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/) **Was "retired" on 1 July 2017**[[2]](http://www.omgubuntu.co.uk/2017/06/skype-4-3-linux-stop-working-july-2017) (but is still working as of 5 July 2017).
 
 Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working (group) voice and video chat (video chat seems to only work in Chromium/Chrome).
 

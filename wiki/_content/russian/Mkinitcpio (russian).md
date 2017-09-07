@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
+*   [Kernel modules (Русский)](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)")
+
 ## Contents
 
 *   [1 Введение](#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5)
@@ -220,7 +225,7 @@ Runtime hooks - хуки выполняемые в initramfs. Располага
 | **consolefont** | Добавляет в initramfs консольный шрифт указанный `/etc/vconsole.conf`. | Загружает шрифт указанный в `/etc/vconsole.conf`. |
 | **encrypt** | **sd-encrypt** | Добавлет модуль ядра `dm_crypt` и `cryptsetup`. Требуется пакет [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup). | Определяет и подключает зашифрованый корневой раздел. См. [#Runtime customization](#Runtime_customization) для дальнейшей настройки.
 
-Для **sd-encrypt** см. [systemd-cryptsetup-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) допустимые параметры ядра. В качестве альтернативы, если файл `/etc/crypttab.initramfs` существует, он будет добавлен в initramfs как `/ etc / crypttab`. Дополнительную информацию о синтаксисе crypttab см. [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html).
+Для **sd-encrypt** см. [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) допустимые параметры ядра. В качестве альтернативы, если файл `/etc/crypttab.initramfs` существует, он будет добавлен в initramfs как `/ etc / crypttab`. Дополнительную информацию о синтаксисе crypttab см. [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
 
  |
 | **lvm2** | **sd-lvm2** | Добавляет поддержку `lvm`. Требует установленного пакета [lvm2](https://www.archlinux.org/packages/?name=lvm2). | Включает поддержку lvm. Необходим, если корневая файловая система на [LVM](/index.php/LVM "LVM"). |

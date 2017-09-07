@@ -150,7 +150,7 @@ optdepends=('cups: printing support'
 
 ## 授权协议
 
-请参考 [PKGBUILD_(简体中文)#license](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#license "PKGBUILD (简体中文)")
+请参考 [PKGBUILD (简体中文)#license](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#license "PKGBUILD (简体中文)")
 
 ## 特殊包补充手册
 

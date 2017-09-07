@@ -1,3 +1,10 @@
+Related articles
+
+*   [PAM](/index.php/PAM "PAM")
+*   [Capabilities](/index.php/Capabilities "Capabilities")
+*   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")
+*   [Category:Security](/index.php/Category:Security "Category:Security")
+
 This article contains recommendations and best practices for hardening an Arch Linux system.
 
 ## Contents
@@ -622,7 +629,7 @@ See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg").
 
 ### Protect against rogue USB devices
 
-Install [Usbguard](/index.php/Usbguard "Usbguard"), which is a software framework that helps to protect your computer against rogue USB devices (a.k.a. [BadUSB](https://srlabs.de/badusb), [PoisonTap](https://github.com/samyk/poisontap) or [LanTurtle](https://lanturtle.com/)) by implementing basic whitelisting and blacklisting capabilities based on device attributes.
+Install [USBGuard](/index.php/USBGuard "USBGuard"), which is a software framework that helps to protect your computer against rogue USB devices (a.k.a. [BadUSB](https://srlabs.de/badusb), [PoisonTap](https://github.com/samyk/poisontap) or [LanTurtle](https://lanturtle.com/)) by implementing basic whitelisting and blacklisting capabilities based on device attributes.
 
 ## Rebuilding packages
 

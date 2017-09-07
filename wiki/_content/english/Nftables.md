@@ -1,3 +1,8 @@
+Related articles
+
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [iptables](/index.php/Iptables "Iptables")
+
 [nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing ip-, ip6-, arp-, and ebtables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for ip- and ip6tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
 
 It consists of three main components: a kernel implementation, the libnl netlink communication and the nftables user-space front-end. The kernel provides a netlink configuration interface, as well as run-time rule-set evaluation, libnl contains the low-level functions for communicating with the kernel, and the nftables front-end is what the user interacts with via nft.
@@ -313,7 +318,7 @@ The following is an incomplete list of the matches available:
 *   sctp (SCTP protocol)
 *   ct (connection tracking)
 
-The following is an incomplete list of match arguments (for a more complete list, see [nft(8)](http://www.netfilter.org/projects/nftables/manpage.html)):
+The following is an incomplete list of match arguments (for a more complete list, see [nft(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8)):
 
 ```
 meta:

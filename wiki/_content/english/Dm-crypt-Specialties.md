@@ -494,7 +494,7 @@ There are two options for initramfs to support a detached LUKS header.
 
 #### Using systemd hook
 
-First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html)
+First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
 
  `/etc/crypttab.initramfs`  `MyStorage    PARTUUID=00000000-0000-0000-0000-000000000000    none    header=/boot/header.img` 
 
@@ -509,7 +509,7 @@ HOOKS="... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ..."
 
 [Recreate the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and you are done.
 
-**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for the supported options.
+**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for the supported options.
 
 #### Modifying encrypt hook
 

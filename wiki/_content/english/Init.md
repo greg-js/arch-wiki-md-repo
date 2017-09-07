@@ -1,3 +1,8 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [ConsoleKit](/index.php/ConsoleKit "ConsoleKit")
+
 **Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). [[1]](https://lists.archlinux.org/pipermail/arch-general/2015-July/039460.html) When using a different init system, please mention so in support requests.
 
 [Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init") is the first process started during system boot. It is a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.
@@ -94,10 +99,6 @@ These components combine to the init *system*. Some inits include the service ma
 *   **s6** — Small suite of programs for UNIX, designed to allow service supervision in the line of daemontools and runit.
 
 	[http://skarnet.org/software/s6/](http://skarnet.org/software/s6/) || [s6](https://aur.archlinux.org/packages/s6/)
-
-*   **watchman** — A not-so-simple service manager for Linux.
-
-	[https://gitlab.com/fbt/watchman](https://gitlab.com/fbt/watchman) || [watchman-sm](https://aur.archlinux.org/packages/watchman-sm/)
 
 ## Configuration
 

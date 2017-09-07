@@ -98,19 +98,7 @@ The kernel parameter `resume=*swap_partition*` has to be used. Either the name t
 
 Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
 
-The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details. for example,the swap partition is "ic|dev/sda3" and booloader is grub2,edit `/etc/default/grub`,find the "GRUB_CMD_LINUX_DEFAULT" line,add "resume=/dev/sda3",like this:
-
-```
- GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_pstate=enable resume=/dev/sda3"
-
-```
-
-then update grub config
-
-```
- sudo grub-mkconfig -o /boot/grub/grub.cfg  
-
-```
+The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details.
 
 #### Hibernation into swap file
 

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Time](/index.php/Time "Time")
+*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
+*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
+*   [Chrony](/index.php/Chrony "Chrony")
+
 [OpenNTPD](http://www.openntpd.org/) (part of the OpenBSD project) is a daemon that can be used to synchronize the system clock to internet time servers using the Network Time Protocol, and can also act as a time server itself if needed. It implements the Simple Network Time Protocol version 4, as described in RFC 5905, and the Network Time Protocol version 3, as described in RFC 1305.
 
 ## Contents
@@ -23,7 +30,7 @@
 
 ## Configuration
 
-To configure OpenNTPD, you need to edit `/etc/ntpd.conf`. See [ntpd.conf(5)](http://man.openbsd.org/ntpd.conf) for all available options.
+To configure OpenNTPD, you need to edit `/etc/ntpd.conf`. See [ntpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntpd.conf.5) for all available options.
 
 **Tip:** After configuring, check the configuration file for validity by executing:
 ```
@@ -118,7 +125,7 @@ Another possibility is to use dhclient hooks to start and stop openntpd. When dh
 *   `/etc/dhclient-enter-hooks`
 *   `/etc/dhclient-exit-hooks`
 
-See dhclient-script(8)
+See [dhclient-script(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhclient-script.8)
 
 #### Using dhcpcd hooks
 
@@ -132,7 +139,7 @@ fi
 
 ```
 
-See [dhcpcd-run-hooks(8)](http://roy.marples.name/man/html8/dhcpcd-run-hooks.html)
+See [dhcpcd-run-hooks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8)
 
 ## Troubleshooting
 

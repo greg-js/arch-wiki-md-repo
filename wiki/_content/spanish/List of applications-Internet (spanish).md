@@ -277,7 +277,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
 
 *   **Psi+** — Versión mejorada del cliente Jabber Psi con nuevas [características](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
@@ -431,7 +431,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Cliente Jabber basado en Qt con soporte para videoconferencia (desde la versión 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Software de telefonía que permite realizar llamadas de voz y vídeo gratis de PC a PC, e integrar todos los contactos de mensajería instantánea en un solo lugar (antes llamado Wengo Phone).
 

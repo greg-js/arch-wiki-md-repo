@@ -535,7 +535,7 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
 
 *   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
@@ -687,7 +687,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing (since version 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Softphone which allows you to make free PC to PC video and voice calls, and to integrate all your IM contacts in one place (formerly Wengo Phone).
 

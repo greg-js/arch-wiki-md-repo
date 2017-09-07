@@ -1,3 +1,5 @@
+This page explains the [yubico.com](https://yubico.com) YubiKey. How it works, how you can use it. And there is plenty of usage. Enjoy. Please start by reading the [#Introduction](#Introduction).
+
 A small section of this article also works for *Fido U2F* USB keys : [#Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
 
 **Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#The Initial configuration](#The_Initial_configuration).
@@ -30,6 +32,10 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
         *   [2.1.3 YubiCloud and validation servers](#YubiCloud_and_validation_servers)
     *   [2.2 OATH-HOTP mode (RFC 4226)](#OATH-HOTP_mode_.28RFC_4226.29)
 *   [3 Challenge-Response](#Challenge-Response)
+    *   [3.1 Function and Application of Challenge-Response](#Function_and_Application_of_Challenge-Response)
+    *   [3.2 Setup the slot](#Setup_the_slot)
+    *   [3.3 Use the slot - get a Response for a Challenge](#Use_the_slot_-_get_a_Response_for_a_Challenge)
+    *   [3.4 Use-Cases](#Use-Cases)
 *   [4 U2F](#U2F)
     *   [4.1 Enabling U2F in the browser](#Enabling_U2F_in_the_browser)
         *   [4.1.1 Chromium/Chrome](#Chromium.2FChrome)
@@ -39,21 +45,24 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
     *   [6.1 Enable the CCID mode](#Enable_the_CCID_mode)
     *   [6.2 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
 *   [7 Usecases - putting your YubiKey to good use](#Usecases_-_putting_your_YubiKey_to_good_use)
-    *   [7.1 Yubikey and KeePass](#Yubikey_and_KeePass)
-    *   [7.2 Two-factor authentication with SSH](#Two-factor_authentication_with_SSH)
-        *   [7.2.1 Prerequisites](#Prerequisites)
-        *   [7.2.2 Configuration](#Configuration)
-            *   [7.2.2.1 Authorization Mapping Files](#Authorization_Mapping_Files)
-                *   [7.2.2.1.1 Central authorization mapping](#Central_authorization_mapping)
-                *   [7.2.2.1.2 Per-user authorization mapping](#Per-user_authorization_mapping)
-                *   [7.2.2.1.3 Obtaining the Yubikey token ID (a.k.a. public ID)](#Obtaining_the_Yubikey_token_ID_.28a.k.a._public_ID.29)
-            *   [7.2.2.2 PAM configuration](#PAM_configuration)
-                *   [7.2.2.2.1 The default way](#The_default_way)
-                *   [7.2.2.2.2 Using pure HMAC to authenticate the validation server](#Using_pure_HMAC_to_authenticate_the_validation_server)
-                *   [7.2.2.2.3 Using pure HTTPS to authenticate the validation server](#Using_pure_HTTPS_to_authenticate_the_validation_server)
-            *   [7.2.2.3 SSHD configuration](#SSHD_configuration)
-        *   [7.2.3 That is it!](#That_is_it.21)
-        *   [7.2.4 Explanation](#Explanation)
+    *   [7.1 YubiKey and cryptsetup encrypted partition/disk](#YubiKey_and_cryptsetup_encrypted_partition.2Fdisk)
+    *   [7.2 Yubikey and KeePass](#Yubikey_and_KeePass)
+        *   [7.2.1 keepassx2](#keepassx2)
+        *   [7.2.2 keepassxC](#keepassxC)
+    *   [7.3 Two-factor authentication with SSH](#Two-factor_authentication_with_SSH)
+        *   [7.3.1 Prerequisites](#Prerequisites)
+        *   [7.3.2 Configuration](#Configuration)
+            *   [7.3.2.1 Authorization Mapping Files](#Authorization_Mapping_Files)
+                *   [7.3.2.1.1 Central authorization mapping](#Central_authorization_mapping)
+                *   [7.3.2.1.2 Per-user authorization mapping](#Per-user_authorization_mapping)
+                *   [7.3.2.1.3 Obtaining the Yubikey token ID (a.k.a. public ID)](#Obtaining_the_Yubikey_token_ID_.28a.k.a._public_ID.29)
+            *   [7.3.2.2 PAM configuration](#PAM_configuration)
+                *   [7.3.2.2.1 The default way](#The_default_way)
+                *   [7.3.2.2.2 Using pure HMAC to authenticate the validation server](#Using_pure_HMAC_to_authenticate_the_validation_server)
+                *   [7.3.2.2.3 Using pure HTTPS to authenticate the validation server](#Using_pure_HTTPS_to_authenticate_the_validation_server)
+            *   [7.3.2.3 SSHD configuration](#SSHD_configuration)
+        *   [7.3.3 That is it!](#That_is_it.21)
+        *   [7.3.4 Explanation](#Explanation)
 *   [8 Maintenance / Upgrades](#Maintenance_.2F_Upgrades)
     *   [8.1 Installing the OATH Applet for a Yubikey NEO](#Installing_the_OATH_Applet_for_a_Yubikey_NEO)
         *   [8.1.1 Configure the NEO as a CCID Device](#Configure_the_NEO_as_a_CCID_Device)
@@ -221,15 +230,8 @@ If the CCID mode (TODO: CCID only mode???) is turned on, then the key is always 
 
 On a new YubiKey the Yubico OTP is preconfigured on slot 1\.
 
-**Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [[see here](https://forum.yubico.com/viewtopic.php?f=16&t=1960)].
-
-Meaning: Being a security-minded person one could think that it is a good idea to reset configuration slot 1 to a new OTP. But then a "VV" prefix in your credentials must be used. Whereas the factory credentials on your Yubikey use a "CC" prefix!
-
-You can upload a "VV" credential using the Yubico personalization tool GUI or manually upload the new AES key to the [upload.yubico.com website] in order to regain the same functionality than with the original factory configuration.
-
-VV credentials are not less secure than CC. However some services may choose to trust only CC credentials as they believe that the user process is more prone to security vulnerabilities.
-
-This is because you could have maleware on your machine or someone intercepting your key when sending it to the YubiCloud. Despite this scenario being extremely unlikely to happen, it needs consideration from service providers.
+**Warning:**
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
 
 ### Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"
 
@@ -239,7 +241,7 @@ A limitation of the YubiKey, however, prevents you from choosing characters that
 
 The 16 characters used in the ModHex alphabet are: `c,b,d,e,f,g,h,i,j,k,l,n,r,t,u,v`. These characters share a property that makes them very valuable to a YubiKey: They use the same scan codes across a very large number of keyboard layouts. In other words, the scan code 0x06 maps to the character c for English, Swedish, German, French, and many others.
 
-[[See here for full info](https://www.yubico.com/wp-content/uploads/2015/11/Yubico_WhitePaper_Static_Password_Function.pdf)]
+[See here for full info](https://www.yubico.com/wp-content/uploads/2015/11/Yubico_WhitePaper_Static_Password_Function.pdf)
 
 ## OneTimePasswords (OTP)
 
@@ -292,7 +294,44 @@ So you can either:
 
 ## Challenge-Response
 
-...
+### Function and Application of Challenge-Response
+
+This technic can be used to authenticate.
+
+A Challenge is sent to the YubiKey and a response is (auto-magically) calculated and send back. This calcucation needs a secret (e.g. an AES key in case of the Yubico OTP mode) The same Challenge always results in the same Response. Without the secret this calculation is not meant to be feasable. Even if in the possesion of many (TODO:reference!?) Challenge-Response pairs.
+
+This can be used for:
+
+*   true 2-factor (posession and knowledge) authentication:
+    If you combine the response (posession factor) with a password (knowledge factor) and to authenticate you need to present the triple (challenge,response, password) to 3rd party. In which case the challenge and the corresponding response can be (publicly) send to a 3rd party to authenticate the poession factor, by redoing basically the same (auto-magical) calculation. The needed secret needs to be shared with 3rd party to allow an authentication.
+
+*   semi 2-factor (posession and knowledge) authentication:
+    The challenge can be public. Only with the possession of the YubiKey hardware the response can be generated. This can be used to create a "sort-of" 2-factor authentication (posession and knowledge): If you combine the response (posession factor) with a password (knowledge factor) and use the result for instance as passphrase for cryptsetup.
+
+This functionality will consume one slot. And it is used via API-Calls to the YubiKey. So you usually use some tool to communicate the Challenge to your YubiKey and get back the response.
+
+There are two Challenge-Response modes:
+
+*   Yubico OTP mode
+*   HMAC-SHA1 mode
+
+### Setup the slot
+
+In order to setup slot 2 in challenge-response HMAC mode you probably want to run something like:
+
+ `ykpersonalize -v -2 -ochal-resp -ochal-hmac -ohmac-lt64 -ochal-btn-trig -oserial-api-visible` 
+**Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#The Initial configuration](#The_Initial_configuration).
+
+### Use the slot - get a Response for a Challenge
+
+To use a Challenge-Response slot (no matter which mode):
+
+ `ykchalresp -2 <CHALLENGE>` 
+
+### Use-Cases
+
+*   allowing semi-2-factor authentication with cryptsetup, see [#YubiKey and cryptsetup encrypted partition/disk](#YubiKey_and_cryptsetup_encrypted_partition.2Fdisk).
+*   allowing semi-2-factor authentication to open a keepass database, see [#keepassxC](#keepassxC)
 
 ## U2F
 
@@ -330,9 +369,26 @@ These steps will allow you to use the OpenPGP functionality of your YubiKey (onc
 
 ## Usecases - putting your YubiKey to good use
 
+### YubiKey and cryptsetup encrypted partition/disk
+
+Yubikey can be used to strenghen the security of your cryptsetup encrypted partition/disk (e.g. in LUKS format).
+
+A robust and comfortable to use implementation of a initramfs hook to integrate your yubikey using Challenge-Response (using a static non-private challenge) and optionally a password on top of it [can be found here](https://github.com/Tormen/yubikey-full-disk-encryption).
+
 ### Yubikey and KeePass
 
 Yubikey can be integrated with [KeePass](/index.php/KeePass "KeePass") using [plugins](/index.php/KeePass#Yubikey "KeePass").
+
+For a native open-source implementation of KeePass have a look at:
+
+#### keepassx2
+
+[keepassx2](https://www.archlinux.org/packages/?name=keepassx2) ([see keepassx.org](https://keepassx.org/)) a keepass QT FOSS reimplementation, extremely stable and available for Windows, MacOSX and Linux.
+
+#### keepassxC
+
+[keepassxc](https://www.archlinux.org/packages/?name=keepassxc) ([see keepassxc.org](https://keepassxc.org/)) a keepassx fork that integrated YubiKey into keepassx v2.
+The integration covers Challenge-Response as security factor to open the database, but also the generation of OTP using the YubiKey.
 
 ### Two-factor authentication with SSH
 

@@ -1,3 +1,11 @@
+Related articles
+
+*   [DNSSEC](/index.php/DNSSEC "DNSSEC")
+*   [BIND](/index.php/BIND "BIND")
+*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
+*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
+
 [Unbound](https://unbound.net/) is a validating, recursive, and caching DNS resolver. According to [Wikipedia:Unbound (DNS Server)](https://en.wikipedia.org/wiki/Unbound_(DNS_Server) "wikipedia:Unbound (DNS Server)"):
 
 	Unbound has supplanted the Berkeley Internet Name Domain ([BIND](/index.php/BIND "BIND")) as the default, base-system name server in several open source projects, where it is perceived as smaller, more modern, and more secure for most applications.
@@ -40,7 +48,7 @@ Additionally, the [expat](https://www.archlinux.org/packages/?name=expat) packag
 
 ## Configuration
 
-A default configuration is already included at`/etc/unbound/unbound.conf`. Additionally, there is a commented sample configuration file with other available options located at `/etc/unbound/unbound.conf.example`. The following sections highlight different settings for the configuration file. See [unbound.conf(5)](http://unbound.net/documentation/unbound.conf.html) for other settings and more details.
+A default configuration is already included at`/etc/unbound/unbound.conf`. Additionally, there is a commented sample configuration file with other available options located at `/etc/unbound/unbound.conf.example`. The following sections highlight different settings for the configuration file. See [unbound.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/unbound.conf.5) for other settings and more details.
 
 Unless otherwise specified, any options listed in this section are to be placed under the `server` section in the configuration like so:
 

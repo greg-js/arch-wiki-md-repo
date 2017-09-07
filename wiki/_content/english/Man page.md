@@ -1,3 +1,7 @@
+Related articles
+
+*   [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console")
+
 **man pages**—abbreviation for "manual pages"—are the form of documentation that is available on almost all UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware info files, GNU's attempt at replacing the traditional man page format.
@@ -32,7 +36,7 @@ $ man *page_name*
 
 Manuals are sorted into several sections. For a full listing see the section entitled "Sections of the manual pages" in `man man-pages`.
 
-Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as [man(1)](http://man7.org/linux/man-pages/man1/man.1.html) and [man(7)](http://man7.org/linux/man-pages/man7/man.7.html). In this case, give man the section number followed by the name of the man page, for example:
+Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as [man(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) and [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). In this case, give man the section number followed by the name of the man page, for example:
 
 ```
 $ man 5 passwd
@@ -211,23 +215,23 @@ There are several online databases of man pages, including:
 
 Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ASCII table).
 
-*   [ascii(7)](http://man7.org/linux/man-pages/man7/ascii.7.html)
-*   [boot(7)](http://man7.org/linux/man-pages/man7/boot.7.html)
-*   [charsets(7)](http://man7.org/linux/man-pages/man7/charsets.7.html)
-*   [chmod(1)](http://man7.org/linux/man-pages/man1/chmod.1.html)
-*   [credentials(7)](http://man7.org/linux/man-pages/man7/credentials.7.html)
-*   [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html)
-*   [hier(7)](http://man7.org/linux/man-pages/man7/hier.7.html)
-*   [systemd(1)](http://man7.org/linux/man-pages/man1/systemd.1.html)
-*   [locale(1p)](http://man7.org/linux/man-pages/man1/locale.1p.html), [locale(5)](http://man7.org/linux/man-pages/man5/locale.5.html), [locale(7)](http://man7.org/linux/man-pages/man7/locale.7.html)
-*   [printf(3)](http://man7.org/linux/man-pages/man3/printf.3.html)
-*   [proc(5)](http://man7.org/linux/man-pages/man5/proc.5.html)
-*   [regex(7)](http://man7.org/linux/man-pages/man7/regex.7.html)
-*   [signal(7)](http://man7.org/linux/man-pages/man7/signal.7.html)
-*   [term(5)](http://man7.org/linux/man-pages/man5/term.5.html), [term(7)](http://man7.org/linux/man-pages/man7/term.7.html)
-*   [termcap(5)](http://man7.org/linux/man-pages/man5/termcap.5.html)
-*   [terminfo(5)](http://man7.org/linux/man-pages/man5/terminfo.5.html)
-*   [utf-8(7)](http://man7.org/linux/man-pages/man7/utf-8.7.html)
+*   [ascii(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ascii.7)
+*   [boot(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/boot.7)
+*   [charsets(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/charsets.7)
+*   [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)
+*   [credentials(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/credentials.7)
+*   [fstab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5)
+*   [hier(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hier.7)
+*   [systemd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.1)
+*   [locale(1p)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.1p), [locale(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.5), [locale(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.7)
+*   [printf(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3)
+*   [proc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/proc.5)
+*   [regex(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/regex.7)
+*   [signal(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7)
+*   [term(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/term.5), [term(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/term.7)
+*   [termcap(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/termcap.5)
+*   [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
+*   [utf-8(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
 
 More generally, have a look at category 7 pages:
 
@@ -238,11 +242,11 @@ $ man -s 7 -k ".*"
 
 Arch Linux specific pages:
 
-*   [archlinux(7)](https://manned.org/archlinux.7)
-*   [mkinitcpio(8)](https://manned.org/mkinitcpio.8)
-*   [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)
-*   [pacman-key(8)](https://www.archlinux.org/pacman/pacman-key.8.html)
-*   [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)
+*   [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)
+*   [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8)
+*   [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8)
+*   [pacman-key(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman-key.8)
+*   [pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5)
 
 ## See also
 

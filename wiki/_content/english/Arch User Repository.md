@@ -274,6 +274,8 @@ $ git push
 
 **Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
 
+Note that you need to regenerate the `.SRCINFO` every time you change `PKGBUILD` metadata, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates. Otherwise the AUR will not show the updated version numbers.
+
 ### Maintaining packages
 
 *   Check for feedback and comments from other users and try to incorporate any improvements they suggest; consider it a learning process!

@@ -1,10 +1,16 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+
 [util-linux fdisk](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table.
 
 [GPT fdisk](http://www.rodsbooks.com/gdisk/), as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
 
-This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html) and its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html) utility, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) and [sgdisk(8)](http://www.rodsbooks.com/gdisk/sgdisk.html) utilities.
+This article covers [fdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) and its related [sfdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) utility, as well as the analogous [gdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
 
-**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html) and [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) can be used.
+**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) and [cgdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
 
 ## Contents
 
@@ -195,7 +201,7 @@ This opens the *fdisk* dialogue where you can type in commands.
 
 #### gdisk
 
-Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) for its usage.
+Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) for its usage.
 
 *gdisk* performs partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
 

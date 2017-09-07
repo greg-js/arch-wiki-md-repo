@@ -170,7 +170,7 @@ crypto=sha512:twofish-xts-plain64:512:0:
 
 ### Using sd-encrypt hook
 
-In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for more options and more details.
+In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
 
 **Tip:** If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`.
 
@@ -238,7 +238,7 @@ The `/etc/crypttab` (encrypted device table) file is similar to the [fstab](/ind
 
 `crypttab` is read *before* `fstab`, so that dm-crypt containers can be unlocked before the file system inside is mounted. Note that `crypttab` is read *after* the system has booted up, therefore it is not a replacement for unlocking encrypted partitions by using [mkinitcpio](#mkinitcpio) hooks and [boot loader options](#Boot_loader) as in the case of [encrypting the root partition](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). `crypttab` processing at boot time is made by the `systemd-cryptsetup-generator` automatically.
 
-See [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
+See [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
 
 **Note:** When using [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and the `sd-encrypt` hook, if a non-root partition's passphrase is the same as root's, there is no need to put that non-root partition in crypttab due to passphrase caching. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=219859) for more information.
 

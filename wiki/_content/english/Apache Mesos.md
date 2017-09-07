@@ -1,3 +1,3 @@
-Apache Mesos abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.
+Redirect to:
 
-The [mesos](https://aur.archlinux.org/packages/mesos/) package is available for installation
+*   [Category:Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing")

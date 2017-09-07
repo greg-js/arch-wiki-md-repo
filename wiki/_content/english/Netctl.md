@@ -1,3 +1,10 @@
+Related articles
+
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
 [netctl](https://projects.archlinux.org/netctl.git/) is a CLI-based tool used to configure and manage network connections via profiles.
 
 ## Contents
@@ -67,11 +74,11 @@ To use an example profile, simply [copy](/index.php/Copy "Copy") it from `/etc/n
 *   For wireless settings, you can use `wifi-menu -o` as root to generate the profile file in `/etc/netctl/`. The [dialog](https://www.archlinux.org/packages/?name=dialog) package is required to use *wifi-menu*.
 *   Use `SkipNoCarrier=yes` in your profile to enable a static IP profile on a wired interface no matter if the cable is connected or not.
 
-See [netctl.profile(5)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.profile.5.txt) for a complete list of profile options.
+See [netctl.profile(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for a complete list of profile options.
 
 ## Usage
 
-See [netctl(1)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.1.txt) for a complete list of *netctl* commands.
+See [netctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1) for a complete list of *netctl* commands.
 
 ### Starting a profile
 
@@ -106,7 +113,7 @@ If you need to switch multiple profiles frequently (i.e., traveling with a lapto
 
 ### Special systemd units
 
-*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profiles for wired and wireless connections. See [netctl.special(7)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl.special.7.txt) for a complete list of special systemd units.
+*netctl* provides special [systemd](/index.php/Systemd "Systemd") services for automatically switching of profiles for wired and wireless connections. See [netctl.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.special.7) for a complete list of special systemd units.
 
 #### Wired
 
@@ -131,7 +138,7 @@ Note that *interface* is not literal, but to be substituted by the name of your 
 *   If any of the profiles contain errors, such as an empty or misquoted `Key=` variable, the unit will fail to load with the message `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`, even when that profile is not being used.
 *   If you have previously [enabled a profile](#Enabling_a_profile) through *netctl*, run `netctl disable *profile*` to prevent the profile from starting twice at boot.
 
-It is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a complete list of available actions see [netctl-auto(1)](https://raw.githubusercontent.com/joukewitteveen/netctl/master/docs/netctl-auto.1.txt).
+It is possible to manually control an interface otherwise managed by *netctl-auto* without having to stop `netctl-auto.service`. This is done using the *netctl-auto* command. For a complete list of available actions see [netctl-auto(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/netctl-auto.1).
 
 ## Tips and tricks
 

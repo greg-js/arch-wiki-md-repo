@@ -1,3 +1,17 @@
+Related articles
+
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
+*   [MacBook4,2 (late 2008)](/index.php/MacBook4,2_(late_2008) "MacBook4,2 (late 2008)")
+*   [MacBook5,2 (early-mid 2009)](/index.php/MacBook5,2_(early-mid_2009) "MacBook5,2 (early-mid 2009)")
+*   [MacBookPro7,1](/index.php/MacBookPro7,1 "MacBookPro7,1")
+*   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
+*   [MacBookPro9,2 (Mid-2012)](/index.php/MacBookPro9,2_(Mid-2012) "MacBookPro9,2 (Mid-2012)")
+*   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
+*   [MacBookPro11,x](/index.php/MacBookPro11,x "MacBookPro11,x")
+*   [iMac Aluminum](/index.php/IMac_Aluminum "IMac Aluminum")
+*   [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive")
+
 Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
 ## Contents
@@ -1319,7 +1333,7 @@ For some multi-boot users who utilize a separate Linux boot partition, the OS X 
 
 Assuming grub2 as the bootloader:
 
-Use the Arch LiveCD to boot to a shell and [chroot](/index.php/Change_root "Change root") to your broken Arch Linux environment.
+Use the Arch LiveCD to boot to a shell and [chroot](/index.php/Chroot "Chroot") to your broken Arch Linux environment.
 
 Mount the ESP on /boot.
 
@@ -1383,7 +1397,7 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 
 **Note:** I used the 201212 ISO image.
 
-Since older Macbooks have a 32bit EFI running, the usual installation image is not recognized. You need to either remove the UEFI support from the disc ([Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_ISO](/index.php/Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_ISO "Unified Extensible Firmware Interface")) or build a 32bit EFI version of the disc. The paragraphs below will take the first path to success, booting into BIOS mode and its pitfalls. For a try the other way round, read [Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface") first.
+Since older Macbooks have a 32bit EFI running, the usual installation image is not recognized. You need to either remove the UEFI support from the disc ([Unified Extensible Firmware Interface#Remove_UEFI_boot_support_from_ISO](/index.php/Unified_Extensible_Firmware_Interface#Remove_UEFI_boot_support_from_ISO "Unified Extensible Firmware Interface")) or build a 32bit EFI version of the disc. The paragraphs below will take the first path to success, booting into BIOS mode and its pitfalls. For a try the other way round, read [Unified Extensible Firmware Interface#Create UEFI bootable USB from ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface") first.
 
 First prepare your harddisc according to your wishes. In this scenario it was a "Linux only" approach with
 
@@ -1482,7 +1496,7 @@ Haptic feedback works out of the box due to the trackpad's built-in firmware.
 
 There are several drivers available that provide multitouch support. The following have been confirmed working with the MacBookPro12,1.
 
-For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see [libinput(4)](https://www.mankier.com/4/libinput).
+For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see [libinput(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4).
 
  `/etc/X11/xorg.conf.d/90-libinput.conf` 
 ```

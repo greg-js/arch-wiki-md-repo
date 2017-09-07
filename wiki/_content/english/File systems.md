@@ -1,3 +1,24 @@
+Related articles
+
+*   [Core utilities#lsblk](/index.php/Core_utilities#lsblk "Core utilities")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [fsck](/index.php/Fsck "Fsck")
+*   [fstab](/index.php/Fstab "Fstab")
+*   [List of applications/Internet#Distributed file systems](/index.php/List_of_applications/Internet#Distributed_file_systems "List of applications/Internet")
+*   [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")
+*   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+*   [NFS](/index.php/NFS "NFS")
+*   [NTFS-3G](/index.php/NTFS-3G "NTFS-3G")
+*   [FAT](/index.php/FAT "FAT")
+*   [QEMU#Mounting a partition inside a raw disk image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU")
+*   [Samba](/index.php/Samba "Samba")
+*   [tmpfs](/index.php/Tmpfs "Tmpfs")
+*   [udev](/index.php/Udev "Udev")
+*   [udisks](/index.php/Udisks "Udisks")
+*   [umask](/index.php/Umask "Umask")
+*   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
 	In computing, a file system (or filesystem) is used to control how data is stored and retrieved. Without a file system, information placed in a storage medium would be one large body of data with no way to tell where one piece of information stops and the next begins. By separating the data into pieces and giving each piece a name, the information is easily isolated and identified.
@@ -23,22 +44,22 @@ Individual drive partitions can be setup using one of the many different availab
 
 ## Types of file systems
 
-See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
+See [filesystems(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) for a general overview, and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
 
 | File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
-| [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
-| [VFAT](/index.php/VFAT "VFAT") | [mkfs.vfat(8)](https://linux.die.net/man/8/mkfs.vfat) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
+| [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
+| [VFAT](/index.php/VFAT "VFAT") | [mkfs.vfat(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.vfat.8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
 | [exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT") | mkfs.exfat(8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Optional | N/A (FUSE-based) |
-| [F2FS](/index.php/F2FS "F2FS") | mkfs.f2fs(8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Flash-based devices |
-| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
-| [ext4](/index.php/Ext4 "Ext4") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
-| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) | Optional | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") file system |
-| [JFS](/index.php/JFS "JFS") | mkfs.jfs(8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
-| [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | mkfs.nilfs2(8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Yes | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
-| [NTFS](/index.php/NTFS "NTFS") | [mkfs.ntfs(8)](https://linux.die.net/man/8/mkfs.ntfs) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") file system |
+| [F2FS](/index.php/F2FS "F2FS") | [mkfs.f2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Flash-based devices |
+| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
+| [ext4](/index.php/Ext4 "Ext4") | [mke2fs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
+| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System") | [mkfs.hfsplus(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.hfsplus.8) | [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) | Optional | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") file system |
+| [JFS](/index.php/JFS "JFS") | [mkfs.jfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | [mkfs.nilfs2(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.nilfs2.8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Yes | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
+| [NTFS](/index.php/NTFS "NTFS") | [mkfs.ntfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") file system |
 | [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | No |
-| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS") | mkfs.reiserfs(8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
-| [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
+| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS") | [mkfs.reiserfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
+| [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
 
 [xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
 [xfs-delayed-logging-design.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-delayed-logging-design.txt)
@@ -212,7 +233,7 @@ Mounted file systems **must** be [unmounted](#Umount_a_file_system) before proce
 
 To find just mounted file systems, see [#List mounted file systems](#List_mounted_file_systems).
 
-To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
+To create a new file system, use [mkfs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.8). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
 
 For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions) on `/dev/sda1`, run:
 
@@ -230,7 +251,7 @@ The new file system can now be mounted to a directory of choice.
 
 ## Mount a file system
 
-To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html). This example mounts `/dev/sda1` to `/mnt`.
+To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). This example mounts `/dev/sda1` to `/mnt`.
 
 ```
 # mount /dev/sda1 /mnt
@@ -267,7 +288,7 @@ See these related articles and the article of the filesystem of interest for mor
 
 ### List mounted file systems
 
-To list all mounted file systems, use [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html):
+To list all mounted file systems, use [findmnt(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8):
 
 ```
 $ findmnt
@@ -285,7 +306,7 @@ $ findmnt /dev/sda1
 
 ### Umount a file system
 
-To unmount a file system use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Either the device containing the file system (e.g., `/dev/sda1`) or the mount point (e.g., `/mnt`) can be specified:
+To unmount a file system use [umount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8). Either the device containing the file system (e.g., `/dev/sda1`) or the mount point (e.g., `/mnt`) can be specified:
 
 ```
 # umount /dev/sda1
@@ -301,7 +322,7 @@ Or
 
 ## See also
 
-*   [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html)
+*   [filesystems(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5)
 *   [Documentation of file systems supported by linux](https://www.kernel.org/doc/Documentation/filesystems/)
 *   [Wikipedia:File systems](https://en.wikipedia.org/wiki/File_systems "wikipedia:File systems")
 *   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")

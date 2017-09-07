@@ -1,3 +1,8 @@
+Related articles
+
+*   [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems")
+*   [Scanner Button Daemon](/index.php/Scanner_Button_Daemon "Scanner Button Daemon")
+
 [SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. [Here](http://www.sane-project.org/sane-supported-devices.html) you can check if sane supports your scanner.
 
 ## Contents
@@ -127,7 +132,7 @@ localhost
 
 If you use [iptables](/index.php/Iptables "Iptables"), [insert](/index.php/Kernel_modules "Kernel modules") the `nf_conntrack_sane` module to let the firewall track `saned` connections.
 
-Now [start/enable](/index.php/Start/enable "Start/enable") `saned.socket`. Your scanner is now available over the network. For more information, see [saned(8)](http://www.sane-project.org/man/saned.8.html).
+Now [start/enable](/index.php/Start/enable "Start/enable") `saned.socket`. Your scanner is now available over the network. For more information, see [saned(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/saned.8).
 
 **Note:** saned intentionally refuses to share scanners that use the net: backend (which includes some USB scanners). There is a crude patch to allow this in [FS#54786](https://bugs.archlinux.org/task/54786), but note it may cause problems on some networks. Check output of `scanimage -L` on the server to see the scanner url.
 

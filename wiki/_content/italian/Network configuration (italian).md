@@ -1,4 +1,12 @@
-**Warning:** Le informazioni di questa pagina sono attualmente obsolete. Per ora, fare riferimento alla [versione inglese](/index.php/Network_Configuration "Network Configuration").
+**Warning:** Le informazioni di questa pagina sono attualmente obsolete. Per ora, fare riferimento alla [versione inglese](/index.php/Network_configuration "Network configuration").
+
+Articoli correlati
+
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Samba (Italiano)](/index.php/Samba_(Italiano) "Samba (Italiano)")
+*   [Wireless Setup (Italiano)](/index.php/Wireless_Setup_(Italiano) "Wireless Setup (Italiano)")
+*   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
 
 Una semplice guida per la configurazione di rete e risoluzione di problemi annessi.
 

@@ -26,6 +26,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.3 CPU frequency governor](#CPU_frequency_governor)
     *   [5.4 High DPC Latency](#High_DPC_Latency)
     *   [5.5 Improving performance on AMD CPU](#Improving_performance_on_AMD_CPU)
+    *   [5.6 Further Tuning](#Further_Tuning)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
         *   [6.1.1 Script variants](#Script_variants)
@@ -418,6 +419,8 @@ On a VM with a PCI passthrough, however, it is **not possible** to benefit from 
 
 To allocate huge pages at boot, one must simply specify the desired amount on their kernel comand line with `hugepages=x`. For instance, reserving 1024 pages with `hugepages=1024` and the default size of 2048kB per huge page creates 2GBs worth of memory for the virtual machine to use.
 
+If supported by CPU page size could be set manually. 1 GB huge page support could be verified by `grep pdpe1gb /proc/cpuinfo`. Setting 1 GB huge page size via kernel parameters :`default_hugepagesz=1G hugepagesz=1G hugepages=X transparent_hugepage=never`
+
 Also, since static huge pages can only be used by applications that specifically request it, you must add this section in your libvirt domain configuration to allow kvm to benefit from them :
 
  `EDITOR=nano virsh edit [vmname]` 
@@ -441,11 +444,13 @@ After loading one or more of these modules, `lsmod | grep virtio` executed on th
 
 ### Improving performance on AMD CPU
 
-**Note:** Was tested on AMD Ryzen 5 1600 - no stuttering at all. Don't know if it is applicable to non-Ryzen processors.
+**Note:** Was tested on AMD Ryzen 5 1600 - helps a lot, depends on guest's applications.
 
-Disabling Nested Page Tables(aka NPT) will improve GPU performance to a bare metal level while disabling Nested Virtualization feature will reduce periodical micro-freezes of whole VM introduced by disabled NPT.
+Disabling Nested Page Tables(aka NPT) will improve GPU performance to a bare metal level.
 
- `/etc/modprobe.d/kvm_amd.conf`  `options kvm_amd npt=0 nested=0` 
+ `/etc/modprobe.d/kvm_amd.conf`  `options kvm_amd npt=0` 
+
+Using [huge pages](#Static_huge_pages) for guest and bigger huge page size(e.g. 1 GB) could reduce periodical micro-freezes of whole VM introduced by disabled NPT.
 
 If periodical stuttering still occurs try removing smep feature from vCPU:
 
@@ -461,6 +466,14 @@ If periodical stuttering still occurs try removing smep feature from vCPU:
 
 ...
 ```
+
+### Further Tuning
+
+More specialized VM tuning tips are available at [Red Hat's Virtualization Tuning and Optimization Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Virtualization_Tuning_and_Optimization_Guide/index.html). This guide may be especially helpful if you're experiencing:
+
+*   Moderate CPU load on the host during downloads/uploads from within the guest: See *Bridge Zero Copy Transmit* for a potential fix.
+*   Guests capping out at certain network speeds during downloads/uploads despite virtio-net being used: See *Multi-queue virtio-net* for a potential fix.
+*   Guests "stuttering" under high I/O, despite the same workload not affecting hosts to the same degree: See *Multi-queue virtio-scsi* for a potential fix.
 
 ## Special procedures
 

@@ -72,7 +72,7 @@ pacman -Fl | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files |
 | List installed local packages along with version | pacman -Q | rpm -qa | dpkg -l | zypper search -s; rpm -qa | emerge -e world |
 | Search locally installed package for names or descriptions | pacman -Qs | rpm -qa '*<str>*' | aptitude search '~i(~n $name|~d $description)' | eix -S -I |
 | List packages not required by any other package | pacman -Qt | package-cleanup --all --leaves | deborphan -anp1 |
-| List packages installed explicitly (not as dependencies) | pacman -Qe | apt-mark showmanual |
+| List packages installed explicitly (not as dependencies) | pacman -Qe | dnf history userinstalled | apt-mark showmanual |
 | List packages installed automatically (as dependencies) | pacman -Qd | apt-mark showauto |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+
 *bspwm* is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
 
 ## Contents

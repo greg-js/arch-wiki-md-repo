@@ -1,3 +1,11 @@
+Related articles
+
+*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+*   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
+*   [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy")
+*   [Chromium](/index.php/Chromium "Chromium")
+*   [Opera](/index.php/Opera "Opera")
+
 [Firefox](https://www.mozilla.org/firefox) is a popular open-source graphical web browser from [Mozilla](https://www.mozilla.org).
 
 ## Contents
@@ -39,7 +47,7 @@
 
 ## Installing
 
-Firefox can be [installed](/index.php/Installed "Installed") with the [firefox](https://www.archlinux.org/packages/?name=firefox) package. For printing support, install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends), which is an optional dependency of [gtk3](https://www.archlinux.org/packages/?name=gtk3).
+Firefox can be [installed](/index.php/Installed "Installed") with the [firefox](https://www.archlinux.org/packages/?name=firefox) package. For printing support, see [Gtk#Printers not shown in the GTK print dialog](/index.php/Gtk#Printers_not_shown_in_the_GTK_print_dialog "Gtk").
 
 Other alternatives include:
 

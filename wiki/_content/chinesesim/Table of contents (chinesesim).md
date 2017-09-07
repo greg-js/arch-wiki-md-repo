@@ -2,10 +2,10 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(164)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(165)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(22)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
-| <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
+| <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(20)</small> |
 | <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
 | <small>1.3.</small> [活动](/index.php/Category:Events_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Events (简体中文)") <small>(1)</small> |
@@ -32,9 +32,9 @@
 | <small>2.14.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4)</small> |
 | <small>2.15.</small> [文本编辑器](/index.php/Category:Text_editors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Text editors (简体中文)") <small>(3)</small> |
 | <small>2.16.</small> [Wine](/index.php/Category:Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wine (简体中文)") <small>(1)</small> |
-| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(15)</small> |
+| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(14)</small> |
 | <small>3.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)"))</small> |
-| <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
+| <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(20)</small> |
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
 | <small>3.2.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(3)</small> |
 | <small>3.3.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(3)</small> |
@@ -50,7 +50,7 @@
 | <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics tablet (简体中文)") <small>(1)</small> |
 | <small>4.7.2.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(6)</small> |
 | <small>4.7.3.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(2)</small> |
-| <small>4.8.</small> [笔记本电脑](/index.php/Category:Laptops_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Laptops (简体中文)") <small>(3)</small> |
+| <small>4.8.</small> [笔记本电脑](/index.php/Category:Laptops_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Laptops (简体中文)") <small>(4)</small> |
 | <small>4.8.1.</small> [Acer](/index.php/Category:Acer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Acer (简体中文)") <small>(1)</small> |
 | <small>4.8.2.</small> [Apple](/index.php/Category:Apple_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apple (简体中文)") <small>(1)</small> |
 | <small>4.8.3.</small> [Dell](/index.php/Category:Dell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dell (简体中文)") <small>(1)</small> |
@@ -98,7 +98,7 @@
 | <small>7.5.</small> [Dotfiles](/index.php/Category:Dotfiles_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dotfiles (简体中文)") <small>(1)</small> |
 | <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(25)</small> |
 | <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(25)</small> |
-| <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(7)</small> |
+| <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(8)</small> |
 | <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(26)</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(5)</small> |
 | <small>8.1.</small> [音频/视频](/index.php/Category:Audio/Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio/Video (简体中文)") <small>(12)</small> |

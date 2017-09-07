@@ -1,25 +1,30 @@
+Related articles
+
+*   [Lenovo ThinkPad T400s](/index.php/Lenovo_ThinkPad_T400s "Lenovo ThinkPad T400s")
+
 Installation instructions for the Lenovo ThinkPad T400.
 
 ## Contents
 
 *   [1 System Specification](#System_Specification)
-*   [2 Network](#Network)
-    *   [2.1 Ethernet](#Ethernet)
-    *   [2.2 Wireless](#Wireless)
-        *   [2.2.1 Intel chipset](#Intel_chipset)
-        *   [2.2.2 Realtek chipset](#Realtek_chipset)
-    *   [2.3 Modem](#Modem)
-    *   [2.4 Bluetooth](#Bluetooth)
-*   [3 Graphics/Xorg Configuration](#Graphics.2FXorg_Configuration)
-    *   [3.1 Integrated Graphics](#Integrated_Graphics)
-    *   [3.2 Discrete Graphics](#Discrete_Graphics)
-    *   [3.3 Switchable Graphics](#Switchable_Graphics)
-    *   [3.4 Synaptic, UltraNav](#Synaptic.2C_UltraNav)
-*   [4 Audio](#Audio)
-*   [5 Multimedia Keys](#Multimedia_Keys)
-    *   [5.1 Mute](#Mute)
-*   [6 ACPI](#ACPI)
-*   [7 SUSPEND-RESUME](#SUSPEND-RESUME)
+*   [2 Installation](#Installation)
+*   [3 Network](#Network)
+    *   [3.1 Ethernet](#Ethernet)
+    *   [3.2 Wireless](#Wireless)
+        *   [3.2.1 Intel chipset](#Intel_chipset)
+        *   [3.2.2 Realtek chipset](#Realtek_chipset)
+    *   [3.3 Modem](#Modem)
+    *   [3.4 Bluetooth](#Bluetooth)
+*   [4 Graphics/Xorg Configuration](#Graphics.2FXorg_Configuration)
+    *   [4.1 Integrated Graphics](#Integrated_Graphics)
+    *   [4.2 Discrete Graphics](#Discrete_Graphics)
+    *   [4.3 Switchable Graphics](#Switchable_Graphics)
+    *   [4.4 Synaptic, UltraNav](#Synaptic.2C_UltraNav)
+*   [5 Audio](#Audio)
+*   [6 Multimedia Keys](#Multimedia_Keys)
+    *   [6.1 Mute](#Mute)
+*   [7 ACPI](#ACPI)
+*   [8 SUSPEND-RESUME](#SUSPEND-RESUME)
 
 ## System Specification
 
@@ -41,6 +46,10 @@ Below is an overview of the T400 specifications as originally used to start this
 *   No camera
 *   No fingerprint reader
 *   No Intel Turbo Memory
+
+## Installation
+
+Even with the latest BIOS update,T400 BIOS does not support EFI, but can handle GPT disk.
 
 ## Network
 

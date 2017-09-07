@@ -45,7 +45,7 @@ Remember to define the correct the number of MAKEFLAGS and other vars in `/opt/a
 
 ```
 
-**Note:** If access to the [Xorg](/index.php/Xorg "Xorg") server of the host is required, allow it for a given user with `xhost +si:localuser:*chroot_user*`. See [Xsecurity(7)](https://www.x.org/releases/X11R7.7/doc/man/man7/Xsecurity.7.xhtml) for details.
+**Note:** If access to the [Xorg](/index.php/Xorg "Xorg") server of the host is required, allow it for a given user with `xhost +si:localuser:*chroot_user*`. See [Xsecurity(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xsecurity.7) for details.
 
 It is recommended to use a custom bash prompt inside the 32-bit chroot installation in order to differentiate from the regular system. You can, for example, add a `ARCH32` string to the `PS1` variable defined in `~/.bashrc`.
 

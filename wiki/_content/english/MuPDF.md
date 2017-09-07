@@ -1,3 +1,7 @@
+Related articles
+
+*   [llpp](/index.php/Llpp "Llpp")
+
 [MuPDF](https://en.wikipedia.org/wiki/MuPDF "w:MuPDF") is a lightweight PDF viewer and toolkit written in portable C. It also reads XPS, OpenXPS and ePub documents.
 
 The renderer in MuPDF is tailored for high quality anti-aliased graphics. It renders text with metrics and spacing accurate to within fractions of a pixel for the highest fidelity in reproducing the look of a printed page on screen.
@@ -10,7 +14,7 @@ MuPDF supports all static functions required by PDF 1.7 and is a lightweight alt
 
 ## Usage
 
-The application is ran from the command-line with `mupdf filename.pdf`. Supported arguments are `-d *password*` for required passwords, `-z N%` for the Zoomlevel and `-p N` for the first selected page. See [mupdf(1)](http://mupdf.com/docs/manual) for details.
+The application is ran from the command-line with `mupdf filename.pdf`. Supported arguments are `-d *password*` for required passwords, `-z N%` for the Zoomlevel and `-p N` for the first selected page. See [mupdf(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mupdf.1) for details.
 
 Navigation within a file works through keyboard shortcuts and mouse interaction.
 

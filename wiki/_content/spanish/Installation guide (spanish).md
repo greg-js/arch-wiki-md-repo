@@ -2,7 +2,7 @@
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
 
-Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas; vea [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
+Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas; vea [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
 
 ## Contents
 
@@ -34,7 +34,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Arch Linux puede ser ejecutado en cualquier máquina compatible con [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64"), con un mínimo de 512 MB RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) puede tomar alrededor de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
 
-*   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Iniciará sesión como usuario root en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), y se le presentará con el intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"); órdenes comunes como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) pueden ser [completadas con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+*   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Iniciará sesión como usuario root en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), y se le presentará con el intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"); órdenes comunes como [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) pueden ser [completadas con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
 *   Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [ELinks](/index.php/ELinks "ELinks") junto con la instalación— utilice el [atajo](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*`. Para [editar/modificar](/index.php/Edit "Edit") los archivos de configuración, dispone de los editores [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") y [vim](/index.php/Vim#Usage "Vim") .
 
@@ -42,9 +42,9 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Por defecto, [la distribución del teclado de la consola](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") es la de [EE.UU.](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Las opciones disponibles de los archivos de mapas de teclas se pueden enumerar con `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-*   La distribución del teclado se puede cambiar con la orden [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), añadiendo el nombre de un archivo (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»). Por ejemplo, ejecute `loadkeys es` para establecer una distribución de teclado [español](https://en.wikipedia.org/wiki/File:KB_Spanish.svg "wikipedia:File:KB Spanish.svg").
+*   La distribución del teclado se puede cambiar con la orden [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), añadiendo el nombre de un archivo (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»). Por ejemplo, ejecute `loadkeys es` para establecer una distribución de teclado [español](https://en.wikipedia.org/wiki/File:KB_Spanish.svg "wikipedia:File:KB Spanish.svg").
 
-*   [Los tipos de letras para la consola](/index.php/Console_fonts "Console fonts") los puede encontrar en `/usr/share/kbd/consolefonts/`, y, como antes, se pueden ajustar con la orden [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+*   [Los tipos de letras para la consola](/index.php/Console_fonts "Console fonts") los puede encontrar en `/usr/share/kbd/consolefonts/`, y, como antes, se pueden ajustar con la orden [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Verificar el modo de arranque
 
@@ -58,11 +58,11 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Si no dispone de ninguna conexión, [detenga](/index.php/Systemd#Using_units "Systemd") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@<TAB>` y eche un vistazo al artículo [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
-*   Para realizar conexiones **inalámbricas**, dispone de iw(8), wpa_supplicant(8) y [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl"). Vea [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+*   Para realizar conexiones **inalámbricas**, dispone de [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) y [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl"). Vea [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ### Actualizar el reloj del sistema
 
-*   Utilice [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html) para asegurarse de que la hora del sistema es correcta: `# timedatectl set-ntp true` 
+*   Utilice [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) para asegurarse de que la hora del sistema es correcta: `# timedatectl set-ntp true` 
 
 *   Para comprobar el estado del servicio, utilice `timedatectl status`.
 
@@ -129,7 +129,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Configure la [zona horaria](/index.php/Time_zone "Time zone"): `# ln -s /usr/share/zoneinfo/*Región*/*Ciudad* /etc/localtime` 
 
-*   Ejecute [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) para generar el archivo `/etc/adjtime`: `# hwclock --systohc` 
+*   Ejecute [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) para generar el archivo `/etc/adjtime`: `# hwclock --systohc` 
 
 *   Esta orden presume que le reloj del hardware esta configurada con [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Vea [Time#Time standard](/index.php/Time#Time_standard "Time") para obtener más detalles.
 
@@ -137,17 +137,17 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Descomente el [locale](/index.php/Locale "Locale") necesario en `/etc/locale.gen`, además de `en_US.UTF-8 UTF-8` y, después, genérelo con la orden: `# locale-gen` 
 
-*   Defina la [variable](/index.php/Variable "Variable") `LANG` en [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) según su caso, por ejemplo:
+*   Defina la [variable](/index.php/Variable "Variable") `LANG` en [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) según su caso, por ejemplo:
 
  `/etc/locale.conf`  `LANG=*es_ES.UTF-8*` 
 
-*   Si fuese necesario, defina la [distribución del teclado de la consola](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") y las preferencias del [tipo de letras](/index.php/Fonts#Console_fonts "Fonts") en [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).:
+*   Si fuese necesario, defina la [distribución del teclado de la consola](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") y las preferencias del [tipo de letras](/index.php/Fonts#Console_fonts "Fonts") en [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5).:
 
  `/etc/vconsole.conf`  `KEYMAP=*es*` 
 
 ### Nombre del equipo
 
-*   Cree el archivo [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
+*   Cree el archivo [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
 
  `/etc/hostname` 
 ```
@@ -155,7 +155,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ```
 
-*   Considere añadir una entrada similar en [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+*   Considere añadir una entrada similar en [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -193,7 +193,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Salga del entorno chroot escribiendo `exit` o presionando `Ctrl+D`.
 
-*   Opcionalmente, desmonte manualmente todas las particiones con `umount -R /mnt`: esto permite advertir cualquier partición «ocupada», y buscar su causa con [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
+*   Opcionalmente, desmonte manualmente todas las particiones con `umount -R /mnt`: esto permite advertir cualquier partición «ocupada», y buscar su causa con [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 *   Por último, reinicie el equipo escribiendo `reboot`: cualquier partición que todavía siga montada será desmontada automáticamente por *systemd*. Recuerde que debe retirar el soporte de instalación e iniciar sesión en el nuevo sistema con la cuenta de root.
 

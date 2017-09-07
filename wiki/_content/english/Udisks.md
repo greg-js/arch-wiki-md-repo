@@ -1,3 +1,10 @@
+Related articles
+
+*   [udev](/index.php/Udev "Udev")
+*   [Mount](/index.php/Mount "Mount")
+*   [Polkit](/index.php/Polkit "Polkit")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) provides a daemon *udisksd*, that implements D-Bus interfaces used to query and manipulate storage devices, and a command-line tool *udisksctl*, used to query and use the daemon.
 
 ## Contents
@@ -22,7 +29,7 @@
 
 There are two versions of *udisks* called [udisks](https://aur.archlinux.org/packages/udisks/) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of **udisks** has ceased in favor of **udisks2**. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-[udisksd(8)](https://udisks.freedesktop.org/docs/latest/udiskd.8.html) (for **udisks2**) and [udisks-daemon(8)](https://udisks.freedesktop.org/docs/1.0.5/udisks-daemon.8.html) (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](https://udisks.freedesktop.org/docs/latest/udisksctl.1.html) and [udisks(1)](https://udisks.freedesktop.org/docs/1.0.5/udisks.1.html), respectively.
+[udisksd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) (for **udisks2**) and [udisks-daemon(8)](https://udisks.freedesktop.org/docs/1.0.5/udisks-daemon.8.html) (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) and [udisks(1)](https://udisks.freedesktop.org/docs/1.0.5/udisks.1.html), respectively.
 
 ## Configuration
 

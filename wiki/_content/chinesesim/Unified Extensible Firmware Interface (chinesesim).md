@@ -1,3 +1,12 @@
+相关文章
+
+*   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
+*   [UEFI/Hardware](/index.php/UEFI/Hardware "UEFI/Hardware")
+
 **翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=481694)可以查看翻译后英文页面的改动。
 
 [统一可扩展固件界面](http://www.uefi.org/)(Unified Extensible Firmware Interface)，简称 UEFI, 是操作系统与固件交互的新模式，提供了启动操作系统或程序的标准环境。该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")”，二者启动的区别见 [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process")。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
@@ -247,7 +256,7 @@ TARGET SOURCE  FSTYPE OPTIONS
 
 ```
 
-参考efibootmgr(8) 或 [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README)。
+参考[efibootmgr(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) 或 [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README)。
 
 **注意:** UEFI 使用反斜杠 `\` 作为路径分隔符 (类似于 Windows 路径)，Efibootmgr 解析路径之前内部会把 `/` 转换为 `\`.
 

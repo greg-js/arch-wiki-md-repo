@@ -1,3 +1,18 @@
+相关文章
+
+*   [Creating packages (简体中文)](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)")
+*   [软件包降级](/index.php/%E8%BD%AF%E4%BB%B6%E5%8C%85%E9%99%8D%E7%BA%A7 "软件包降级")
+*   [pacman/Package signing (简体中文)](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Package signing (简体中文)")
+*   [pacman/Pacnew and Pacsave (简体中文)](/index.php/Pacman/Pacnew_and_Pacsave_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Pacnew and Pacsave (简体中文)")
+*   [pacman/Rosetta (简体中文)](/index.php/Pacman/Rosetta_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Rosetta (简体中文)")
+*   [pacman/Tips and tricks (简体中文)](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Tips and tricks (简体中文)")
+*   [FAQ#Package Management (简体中文)](/index.php/FAQ#Package_Management_.28.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.29 "FAQ")
+
+*   [System maintenance (简体中文)](/index.php/System_maintenance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "System maintenance (简体中文)")
+*   [Arch Build System (简体中文)](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")
+*   [Official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")
+*   [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
+
 **翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-01，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=465856)可以查看翻译后英文页面的改动。
 
 [pacman](https://archlinux.org/pacman/)[软件包管理器](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的一大亮点。它将一个简单的二进制包格式和易用的构建系统结合了起来(参见[makepkg](/index.php/Makepkg "Makepkg")和[ABS](/index.php/ABS "ABS"))。不管软件包是来自官方的 Arch 库还是用户自己创建，*pacman* 都能方便得管理。

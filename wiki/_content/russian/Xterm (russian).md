@@ -121,7 +121,7 @@ XTerm.vt100.saveLines: 4096
 
 ```
 
-Другие ресурсы X, влияющие на прокрутку - это `jumpScroll`, `multiScroll`, и `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://man7.org/linux/man-pages/man1/xterm.1.html)). Для прокрутки внутри [#альтернативного экрана](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT) установите для параметра `alternateScroll` значение `true`.
+Другие ресурсы X, влияющие на прокрутку - это `jumpScroll`, `multiScroll`, и `fastScroll` (all under `XTerm.vt100`, see [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1)). Для прокрутки внутри [#альтернативного экрана](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.B5.D0.BD.D1.8E_VT) установите для параметра `alternateScroll` значение `true`.
 
 #### Полоса прокрутки
 
@@ -275,7 +275,7 @@ XTerm.vt100.color15: rgb:e4/e4/e4
 
 Цвет `PapayaWhip` совпадает с `rgb:ff/ef/d5`, который такой же, как и `#ffefd5`.
 
-Смотрите [X(7)](ftp://www.x.org/pub/current/doc/man/man7/X.7.xhtml) из [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), для более полного описания синтаксиса цвета
+Смотрите [X(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/X.7) из [xorg-docs](https://www.archlinux.org/packages/?name=xorg-docs), для более полного описания синтаксиса цвета
 
 Многие предложения по цветовым схемам можно просмотреть в разделе форума, [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818&p=1).
 

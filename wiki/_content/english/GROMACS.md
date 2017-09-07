@@ -468,4 +468,4 @@ Now when you run *gmx pdb2gmx* this solvent model should be available for the ap
 
 *   [GROMACS Tutorials](http://www.gromacs.org/Documentation/Tutorials)
 *   [Justin Lemkul's Tutorials](http://www.bevanlab.biochem.vt.edu/Pages/Personal/justin/gmx-tutorials/index.html) — includes a variety of different simulation methods (umbrella sampling, free energy calculations, etc).
-*   [James Barnett's Tutorials](http://github.com/wesbarnett/gromacs-tutorials) — a few basic tutorials on simulations with an organic solute. Includes how to use *gmx pdb2gmx* with a user-created molecule.
+*   [James Barnett's Tutorials](http://wbarnett.us/tutorials/) — a few basic tutorials on simulations with an organic solute. Includes how to use *gmx pdb2gmx* with a user-created molecule.

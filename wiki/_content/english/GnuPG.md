@@ -1,3 +1,9 @@
+Related articles
+
+*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
+
 According to the [official website](http://www.gnupg.org):
 
 	GnuPG is a complete and free implementation of the [OpenPGP](http://openpgp.org/about/) standard as defined by [RFC4880](https://tools.ietf.org/html/rfc4880) (also known as PGP). GnuPG allows you to encrypt and sign your data and communication. It features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
@@ -445,7 +451,7 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 *gpg-agent* is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. [gnupg](https://www.archlinux.org/packages/?name=gnupg) comes with [systemd user](/index.php/Systemd/User "Systemd/User") sockets which are enabled by default. These sockets are `gpg-agent.socket`, `gpg-agent-extra.socket`, `gpg-agent-browser.socket`, `gpg-agent-ssh.socket`, and `dirmngr.socket`.
 
 *   The main `gpg-agent.socket` is used by *gpg* to connect to the *gpg-agent* daemon.
-*   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See gpg-agent(1) for details.
+*   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1) for details.
 *   The `gpg-agent-ssh.socket` can be used by [SSH](/index.php/SSH "SSH") to cache [SSH keys](/index.php/SSH_keys "SSH keys") added by the *ssh-add* program. See [#SSH agent](#SSH_agent) for the necessary configuration.
 *   The `dirmngr.socket` starts a GnuPG daemon handling connections to keyservers.
 

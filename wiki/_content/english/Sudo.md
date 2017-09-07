@@ -1,3 +1,8 @@
+Related articles
+
+*   [Users and groups](/index.php/Users_and_groups "Users and groups")
+*   [su](/index.php/Su "Su")
+
 [sudo](https://www.sudo.ws/sudo/) allows a system administrator to delegate authority to give certain users—or groups of users—the ability to run commands as root or another user while providing an audit trail of the commands and their arguments.
 
 Sudo is an alternative to [su](/index.php/Su "Su") for running commands as root. Unlike [su](/index.php/Su "Su"), which launches a root shell that allows all further commands root access, sudo instead grants temporary privilege escalation to a single command. By enabling root privileges only when needed, sudo usage reduces the likelihood that a typo or a bug in an invoked command will ruin the system.
@@ -50,11 +55,11 @@ $ sudo pacman -Syu
 
 ```
 
-See [sudo(8)](https://www.sudo.ws/man/sudo.man.html) for more information.
+See [sudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) for more information.
 
 ## Configuration
 
-See [sudoers(5)](https://www.sudo.ws/man/sudoers.man.html) for more information, such as configuring the password timeout.
+See [sudoers(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) for more information, such as configuring the password timeout.
 
 ### View current settings
 
@@ -62,12 +67,12 @@ Run `sudo -ll` to print out the current sudo configuration, or `sudo -lU *user*`
 
 ### Using visudo
 
-The configuration file for sudo is `/etc/sudoers`. It should **always** be edited with the [visudo(8)](https://linux.die.net/man/8/visudo) command. `visudo` locks the `sudoers` file, saves edits to a temporary file, and checks that file's grammar before copying it to `/etc/sudoers`.
+The configuration file for sudo is `/etc/sudoers`. It should **always** be edited with the [visudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/visudo.8) command. `visudo` locks the `sudoers` file, saves edits to a temporary file, and checks that file's grammar before copying it to `/etc/sudoers`.
 
 **Warning:**
 
 *   It is imperative that `sudoers` be free of syntax errors! Any error makes sudo unusable. **Always** edit it with `visudo` to prevent errors.
-*   From [visudo(8)](https://www.sudo.ws/man/visudo.man.html): *Note that this can be a security hole since it allows the user to execute any program they wish simply by setting VISUAL or EDITOR.*
+*   From [visudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/visudo.8): *Note that this can be a security hole since it allows the user to execute any program they wish simply by setting VISUAL or EDITOR.*
 
 The default editor for visudo is `vi`. sudo from the core repository is compiled with `--with-env-editor` by default and honors the use of the `VISUAL` and `EDITOR` variables. `EDITOR` is not used when `VISUAL` is set.
 
@@ -136,7 +141,7 @@ USER_NAME HOST_NAME= NOPASSWD: /usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/
 
 ```
 
-A detailed `sudoers` example is available at `/usr/share/doc/sudo/examples/sudoers`. Otherwise, see the [sudoers(5)](https://www.sudo.ws/man/sudoers.man.html) for detailed information.
+A detailed `sudoers` example is available at `/usr/share/doc/sudo/examples/sudoers`. Otherwise, see the [sudoers(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) for detailed information.
 
 ### Sudoers default file permissions
 
@@ -384,7 +389,7 @@ admin% screen
 *   There is no need to edit a `sudoers.pacnew` file;
 *   If there is a problem with a new entry, you can remove the offending file instead of editing `/etc/sudoers` (but see the warning below).
 
-The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f /etc/sudoers.d/*somefile*`. See the "Including other files from within sudoers" section of [sudoers(5)](https://www.sudo.ws/man/sudoers.man.html) for details.
+The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f /etc/sudoers.d/*somefile*`. See the "Including other files from within sudoers" section of [sudoers(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) for details.
 
 The files in `/etc/sudoers.d/` directory are parsed in lexicographical order, file names containing `.` or `~` are skipped. To avoid sorting problems, the file names should begin with two digits, e.g. `01_foo`.
 

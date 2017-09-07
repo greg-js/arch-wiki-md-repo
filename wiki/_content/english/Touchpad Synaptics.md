@@ -69,7 +69,7 @@ The Synaptics driver can be [installed](/index.php/Installed "Installed") with t
 
 ## Configuration
 
-The primary method of configuration for the touchpad is through an [Xorg](/index.php/Xorg "Xorg") server configuration file. After installation of `xf86-input-synaptics`, a default configuration file is located at `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Users can copy this file to `/etc/X11/xorg.conf.d/` and edit it to configure the various driver options available. Refer to the synaptics(4) manual page for a complete list of available options. Machine-specific options can be discovered using [synclient](#Synclient).
+The primary method of configuration for the touchpad is through an [Xorg](/index.php/Xorg "Xorg") server configuration file. After installation of `xf86-input-synaptics`, a default configuration file is located at `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Users can copy this file to `/etc/X11/xorg.conf.d/` and edit it to configure the various driver options available. Refer to the [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4) manual page for a complete list of available options. Machine-specific options can be discovered using [synclient](#Synclient).
 
 ### Frequently used options
 
@@ -250,11 +250,11 @@ From left to right, this shows:
 *   `1`: device can configure vertical resolution
 *   `1`: device can configure horizontal resolution
 
-Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties. See synaptics(4) for full documentation of the Synaptics properties.
+Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties. See [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4) for full documentation of the Synaptics properties.
 
 ### Synclient
 
-Synclient can configure every option available to the user as documented in synaptics(4). A full list of the current user settings can be brought up:
+Synclient can configure every option available to the user as documented in [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4). A full list of the current user settings can be brought up:
 
 ```
 $ synclient -l
@@ -573,7 +573,7 @@ EndSection
 
 ```
 
-The format for the SoftButtonAreas option is (from synaptics(4)):
+The format for the SoftButtonAreas option is (from [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)):
 
  `RightButtonAreaLeft RightButtonAreaRight RightButtonAreaTop RightButtonAreaBottom  MiddleButtonAreaLeft MiddleButtonAreaRight MiddleButtonAreaTop MiddleButtonAreaBottom` 
 

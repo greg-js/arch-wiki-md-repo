@@ -2,7 +2,7 @@
 
 Этот документ является руководством по установке [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)") из-под системы, запущенной с официального установочного образа. Перед установкой рекомендуется посмотреть [часто задаваемые вопросы](/index.php/%D0%A7%D0%B0%D1%81%D1%82%D0%BE_%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B "Часто задаваемые вопросы"). Чтобы получить разъяснения по понятиям, используемым на этой странице, смотрите статью [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение").
 
-Более подробные инструкции приведены в соответствующих статьях [ArchWiki](/index.php/ArchWiki:About_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki:About (Русский)") и на [страницах справочных руководств (man)](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") различных программ. Ссылки и на то, и на другое присутствуют в этом руководстве. Общий обзор процесса настройки смотрите на странице [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt). Также вы можете получить помощь в [IRC-канале](/index.php/IRC_channel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "IRC channel (Русский)") и на [англоязычном](https://bbs.archlinux.org/) и [русскоязычном](http://archlinux.org.ru/forum/) форумах Arch Linux.
+Более подробные инструкции приведены в соответствующих статьях [ArchWiki](/index.php/ArchWiki:About_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki:About (Русский)") и на [страницах справочных руководств (man)](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") различных программ. Ссылки и на то, и на другое присутствуют в этом руководстве. Общий обзор процесса настройки смотрите на странице [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7). Также вы можете получить помощь в [IRC-канале](/index.php/IRC_channel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "IRC channel (Русский)") и на [англоязычном](https://bbs.archlinux.org/) и [русскоязычном](http://archlinux.org.ru/forum/) форумах Arch Linux.
 
 ## Contents
 
@@ -34,15 +34,15 @@
 
 Arch Linux способен работать на любой [x86_64](https://en.wikipedia.org/wiki/ru:X86-64 "w:ru:X86-64")-совместимой машине, имеющей хотя бы 512 MB ОЗУ. Базовая установка со всеми пакетами группы [base](https://www.archlinux.org/groups/x86_64/base/) занимает меньше 800 MB дискового пространства. Поскольку для процесса установки требуется получать пакеты из удаленного репозитория, необходимо работающее интернет-соединение.
 
-Скачайте и запустите установочный образ, как это описано в статьях из категории [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)"). Вы автоматически войдете в систему от имени суперпользователя в первой [виртуальной консоли](https://en.wikipedia.org/wiki/ru:%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C "w:ru:Виртуальная консоль") и увидите перед собой приглашение интерпретатора [Zsh](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zsh (Русский)"). Вы можете использовать [автоматическую подстановку по клавише tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") для часто используемых команд, таких как, например, [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html).
+Скачайте и запустите установочный образ, как это описано в статьях из категории [Получение и установка Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Getting and installing Arch (Русский)"). Вы автоматически войдете в систему от имени суперпользователя в первой [виртуальной консоли](https://en.wikipedia.org/wiki/ru:%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C "w:ru:Виртуальная консоль") и увидите перед собой приглашение интерпретатора [Zsh](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Zsh (Русский)"). Вы можете использовать [автоматическую подстановку по клавише tab](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") для часто используемых команд, таких как, например, [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1).
 
 Чтобы в процессе установки переключиться на другую виртуальную консоль, например, чтобы посмотреть это руководство при помощи браузера [ELinks](/index.php/ELinks "ELinks"), используйте [горячие клавиши](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*стрелка*`. Для [редактирования](/index.php/Help:Reading_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C.2C_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C.2C_.D1.80.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C "Help:Reading (Русский)") файлов доступны [nano](/index.php/Nano_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Nano (Русский)"), [vi](https://en.wikipedia.org/wiki/ru:vi "w:ru:vi") and [vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Vim (Русский)").
 
 ### Установка раскладки клавиатуры
 
-По умолчанию используется [раскладка](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите `ls /usr/share/kbd/keymaps/**/*.map.gz`. Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите `loadkeys ru`.
+По умолчанию используется [раскладка](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите `ls /usr/share/kbd/keymaps/**/*.map.gz`. Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите `loadkeys ru`.
 
-[Консольные шрифты](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Fonts (Русский)") расположены в каталоге `/usr/share/kbd/consolefonts/` и могут быть выбраны при помощи [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+[Консольные шрифты](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Fonts (Русский)") расположены в каталоге `/usr/share/kbd/consolefonts/` и могут быть выбраны при помощи [setfont(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Проверка загруженного режима
 
@@ -66,11 +66,11 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 Если узел недоступен, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") службу *dhcpcd* при помощи `systemctl stop dhcpcd@`, `Tab` и обратитесь к разделу [Настройка сети#Драйвер устройства](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Настройка сети").
 
-Для **беспроводных** соединений доступны iw(8), wpa_supplicant(8) и [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"). Также смотрите статью [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети").
+Для **беспроводных** соединений доступны [iw(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) и [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"). Также смотрите статью [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети").
 
 ### Синхронизация системных часов
 
-Чтобы удостовериться, что время выставлено правильно, используйте [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html):
+Чтобы удостовериться, что время выставлено правильно, используйте [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1):
 
 ```
 # timedatectl set-ntp true
@@ -183,7 +183,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ```
 
-Запустите [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html), чтобы сгенерировать `/etc/adjtime`:
+Запустите [hwclock(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8), чтобы сгенерировать `/etc/adjtime`:
 
 ```
 # hwclock --systohc
@@ -201,17 +201,17 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ```
 
-Задайте необходимое значение [переменной](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `LANG` в файле [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html), например:
+Задайте необходимое значение [переменной](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `LANG` в файле [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5), например:
 
  `/etc/locale.conf`  `LANG=*ru_RU.UTF-8*` 
 
-Если вы [меняли раскладку клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B), сделайте это изменение постоянным в файле [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
+Если вы [меняли раскладку клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B), сделайте это изменение постоянным в файле [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*ru*` 
 
 ### Имя хоста
 
-Создайте файл [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
+Создайте файл [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
 
  `/etc/hostname` 
 ```
@@ -219,7 +219,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ```
 
-Рекомендуется также добавить соответствующую запись в файл [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+Рекомендуется также добавить соответствующую запись в файл [hosts(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
@@ -241,7 +241,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 Как правило, создание нового образа *initramfs* не требуется, поскольку *pacstrap* автоматически запускает [mkinitcpio](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mkinitcpio (Русский)") после установки пакета [linux](https://www.archlinux.org/packages/?name=linux).
 
-Если вам нужно что-либо изменить, отредактируйте файл [mkinitcpio.conf(5)](https://git.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.conf.5.txt) и пересоздайте образ *initramfs*:
+Если вам нужно что-либо изменить, отредактируйте файл [mkinitcpio.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) и пересоздайте образ *initramfs*:
 
 ```
 # mkinitcpio -p linux
@@ -267,7 +267,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 Выйдите из окружения chroot, набрав `exit` или нажав `Ctrl+D`.
 
-Вы можете размонтировать все разделы с помощью команды `umount -R /mnt`, чтобы убедиться в том, что ни один из разделов не остался занят какой-либо программой. Если нужно, для поиска таких программ используйте [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
+Вы можете размонтировать все разделы с помощью команды `umount -R /mnt`, чтобы убедиться в том, что ни один из разделов не остался занят какой-либо программой. Если нужно, для поиска таких программ используйте [fuser(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 
 Теперь перезагрузите компьютер, набрав `reboot`: если какие-нибудь разделы остались смонтированными, [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") их размонтирует. Не забудьте извлечь установочный диск. После загрузки войдите в систему в качестве суперпользователя.
 

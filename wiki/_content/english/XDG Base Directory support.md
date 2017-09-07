@@ -1,3 +1,8 @@
+Related articles
+
+*   [dotfiles](/index.php/Dotfiles "Dotfiles")
+*   [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories")
+
 This article exists to catalog the growing set of software using the [XDG Base Directory Specification](http://standards.freedesktop.org/basedir-spec/latest/) introduced in 2003\. This is here to demonstrate the viability of this specification by listing commonly found dotfiles and their support status. For those not currently supporting the Base Directory Specification, workarounds will be demonstrated to emulate it instead.
 
 The workarounds will be limited to anything not involving patching the source, executing code stored in [environment variables](/index.php/Environment_variable "Environment variable") or compile-time options. The rationale for this is that configurations should be portable across systems and having compile-time options prevent that.
@@ -512,7 +517,7 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 `~/.julia_history`
 
  | [[99]](https://github.com/JuliaLang/julia/issues/4630) [[100]](https://github.com/JuliaLang/julia/issues/10016) |
-| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
+| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[101]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
 | [lldb](http://lldb.llvm.org/) | `~/.lldb`
 
 `~/.lldbinit`
@@ -523,17 +528,17 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 `~/.matho_history`
 
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
-| [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[101]](https://github.com/Deltafire/MilkyTracker/issues/12) |
-| [Minecraft](https://minecraft.net/) | `~/.minecraft` | [[102]](https://bugs.mojang.com/browse/MCL-2563) |
+| [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[102]](https://github.com/Deltafire/MilkyTracker/issues/12) |
+| [Minecraft](https://minecraft.net/) | `~/.minecraft` | [[103]](https://bugs.mojang.com/browse/MCL-2563) |
 | [mongodb](https://www.mongodb.org/) | `~/.mongorc.js`
 
 `~/.dbshell`
 
- | [[103]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
+ | [[104]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
  `~/.netrc` | Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp. |
-| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[104]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
-| [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[105]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
-| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[106]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
+| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[105]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
+| [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[106]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
+| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[107]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:18](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L18). |
 | various [shells](/index.php/Shell "Shell") and [display managers](/index.php/Display_manager "Display manager") | `~/.profile` |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
@@ -543,30 +548,30 @@ Note that these variables are respected by *xinit*, but not by *startx*.
 | [RedNotebook](http://rednotebook.sourceforge.net/) | `~/.rednotebook` |
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
 | [Scribus](https://www.scribus.net/) | `~/.scribus` |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[107]](https://bugzil.la/726939) |
-| [Skype](/index.php/Skype "Skype") < 5.0 | `~/.Skype` | [[108]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[108]](https://bugzil.la/726939) |
+| [Skype](/index.php/Skype "Skype") < 5.0 | `~/.Skype` | [[109]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | `~/.solfege`
 
 `~/.solfegerc`
 
 `~/lessonfiles`
 
- | [[109]](https://savannah.gnu.org/bugs/index.php?50251) |
+ | [[110]](https://savannah.gnu.org/bugs/index.php?50251) |
 | [SpamAssassin](https://spamassassin.apache.org/) | `~/.spamassassin` |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
 | [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history`
 
 `~/.sqliterc`
 
- | [[110]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[111]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
+ | [[111]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[112]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
 | [Steam](/index.php/Steam "Steam") | `~/.steam`
 
 `~/.steampath` `~/.steampid`
 
- | [[112]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) |
+ | [[113]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[113]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[114]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | `~/.vim`
 
@@ -596,14 +601,14 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[114]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[115]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[115]](https://github.com/conformal/xombrero/issues/74) |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[116]](https://github.com/conformal/xombrero/issues/74) |
 | [yarn](https://www.archlinux.org/packages/?name=yarn) | `~/.yarnrc`
 
 `~/.yarn/`
@@ -612,7 +617,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 `~/.yarn-config/`
 
- | [[116]](https://github.com/yarnpkg/yarn/issues/2334) |
+ | [[117]](https://github.com/yarnpkg/yarn/issues/2334) |
 | [zsh](/index.php/Zsh "Zsh") | `~/.zshrc`
 
 `~/.zprofile` `~/.zshenv`
@@ -621,7 +626,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 `~/.histfile`
 
- | [[117]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[118]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 
