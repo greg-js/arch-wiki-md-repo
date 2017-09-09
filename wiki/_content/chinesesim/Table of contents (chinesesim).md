@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(165)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(163)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(22)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(20)</small> |
@@ -36,9 +36,10 @@
 | <small>3.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)"))</small> |
 | <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(20)</small> |
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
-| <small>3.2.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(3)</small> |
-| <small>3.3.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(3)</small> |
-| <small>3.4.</small> [部件工具](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
+| <small>3.2.</small> [Framework](/index.php/Category:Framework_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Framework (简体中文)") <small>(1)</small> |
+| <small>3.3.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(3)</small> |
+| <small>3.4.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(3)</small> |
+| <small>3.5.</small> [部件工具](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
 | <small>4.</small> [硬件](/index.php/Category:Hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware (简体中文)") <small>(2)</small> |
 | <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |

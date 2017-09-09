@@ -9,7 +9,7 @@
 | <small>1.4.</small> [Events](/index.php/Category:Events "Category:Events") <small>(4)</small> |
 | <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(33)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(3)</small> |
-| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(21)</small> |
+| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(20)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(8)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
 | <small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(12)</small> |
@@ -30,11 +30,11 @@
 | <small>2.10.8.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>2.10.9.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
-| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(48)</small> |
+| <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(47)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(20)</small> |
 | <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(17)</small> |
-| <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(17)</small> |
+| <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(18)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(3)</small> |
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(12)</small> |
@@ -47,11 +47,10 @@
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Framework](/index.php/Category:Framework "Category:Framework") <small>(3)</small> |
-| <small>3.3.</small> [Framework](/index.php/Category:Framework_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Framework (简体中文)") <small>(1)</small> |
-| <small>3.4.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>3.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(24)</small> |
-| <small>3.6.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
-| <small>3.7.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
+| <small>3.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>3.4.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(24)</small> |
+| <small>3.5.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
+| <small>3.6.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |
 | <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(9)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6)</small> |
@@ -64,11 +63,11 @@
 | <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
 | <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(22)</small> |
 | <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(21)</small> |
+| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(22)</small> |
 | <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(37)</small> |
 | <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
-| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(70)</small> |
+| <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(71)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(60)</small> |

@@ -350,7 +350,7 @@ Extension is available in the Chrome Web Store: [Vanilla Cookie Manager](https:/
 
 Chromium's 'Do Not Track' option is turned off by default. To enable it, visit `chrome://settings`, scroll down to **Show advanced settings...** and under **Privacy**, check **Send a "Do Not Track" request with your browsing traffic**.
 
-**Note:** DNT isn't going to stop all web tracking. So even if you turn this feature on, your data may be still collected and analyzed.
+**Note:** DNT is a suggestion for the websites you're visiting to not track you. It may be just ignored, and isn't going to stop all web tracking. Even if you turn this feature on, your data may be still collected and analyzed.
 
 ### Force a password store
 

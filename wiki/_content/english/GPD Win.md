@@ -61,6 +61,8 @@ wifi-menu
 
 ```
 
+**Note:** If the Wi-Fi seems to fail, there may be an extra setting required to be set in the BIOS. Reboot, and hold the Del key while the device is starting up, and in the BIOS screen, go under the Chipset tab, and select South Bridge, then LPSS & SCC Configuration, then change SCC SDIO Support to PCI Mode. Save the BIOS changes then get back to the Copy the File step and retry.
+
 #### Battery monitoring
 
 Works out of the box since kernel 4.12. Earlier kernels require [Hans de Goede's patched kernel](http://hansdegoede.livejournal.com/17445.html). His kernel will also fix "Not charging when the power cable gets plugged in after boot" and "Only drawing max 0.5A from the charger, charging slowly if at all".

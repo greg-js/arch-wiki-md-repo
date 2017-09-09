@@ -430,7 +430,7 @@ Bemærk også, at nogle konfigurationsværktøjer for X måske ikke virker læng
 
 Nogle pakker har fastkodede henvisninger til `/usr/X11R6`. Disse pakker har brug for at blive rettet. I mellemtiden, se hvilke pakker, der installerer filer i `/usr/X11R6`. Afinstallér disse og lav et symbolsk link fra `/usr` til `/usr/X11R6` og geninstallér de berørte pakker. En anden mulighed er at flytte indholdet af `/usr/X11R6` til `/usr` og lave det symbolske link.
 
-Du kan også blot tilføje et andet modul med <code/>ModulePath "/usr/X11R6/lib/modules"</code>.
+Du kan også blot tilføje et andet modul med `ModulePath "/usr/X11R6/lib/modules"`.
 Dette virker f.eks for for Nvidia 76.76.
 
 ## Fejlfinding

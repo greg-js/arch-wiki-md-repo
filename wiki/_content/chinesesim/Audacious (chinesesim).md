@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Audacious](/index.php/Audacious "Audacious") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-28，点击[这里](https://wiki.archlinux.org/index.php?title=Audacious&diff=0&oldid=437889)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Audacious](/index.php/Audacious "Audacious") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Audacious&diff=0&oldid=473815)可以查看翻译后英文页面的改动。
 
 [Audacious](http://audacious-media-player.org/) 是轻量级、自由软件、基于GTK+开发的GUI音乐播放器，注重音质且支持广泛的文件编码格式，并可透过第三方附加组件扩充功能。
 

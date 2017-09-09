@@ -318,6 +318,8 @@ If your client is timing out with "LCP: timeout sending Config-Requests", then y
 
 ```
 
+If you see «Error: either "to" is duplicate, or "uid" is a garbage.» then that's probably because the pptpclient package is [out of date](https://bbs.archlinux.org/viewtopic.php?pid=1705884#p1705884), flagged [2017-04-22](https://www.archlinux.org/packages/?sort=flag_date&maintainer=daniel).
+
 ## Remarks
 
 You can find more information about configuring pptpclient at their website: [pptpclient website](http://pptpclient.sourceforge.net/). The contents of this article were adapted from their Ubuntu How-To which also provides some hints on how to do things such as connecting on boot. These examples should be easy to adapt into daemons or other scripts to help automate your configuration.

@@ -60,17 +60,6 @@ Wine can be installed with the packages [wine](https://www.archlinux.org/package
 
 You may also want to install [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that need support for Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
-**Architectural differences**
-
-Wine by default is 32-bit, as is the i686 Arch package. As such, it is unable to execute any 64-bit Windows applications.
-
-The x86_64 Arch package, however, is built with `--enable-win64`. This activates the Wine version of [WoW64](https://en.wikipedia.org/wiki/WoW64 "wikipedia:WoW64").
-
-*   In Windows, this complicated subsystem allows the user to use 32-bit and 64-bit Windows programs concurrently and even in the same directory.
-*   In Wine, some 32-bit programs do not work properly in a 64-bit prefix. In that case the user will have to make separate directories/prefixes. See the [Wine FAQ](https://wiki.winehq.org/FAQ#How_do_I_create_a_32_bit_wineprefix_on_a_64_bit_system.3F) for specific information on this.
-
-If you run into problems with `winetricks` or programs with a 64-bit environment, try creating a new 32-bit `WINEPREFIX`. See below: [#WINEARCH](#WINEARCH). Using the x86_64 Wine package with `WINEARCH=win32` should have the same behaviour as using the i686 Wine package.
-
 ## Configuration
 
 Configuring Wine is typically accomplished using:
@@ -108,8 +97,6 @@ $ WINEARCH=win32 WINEPREFIX=~/win32 winecfg
 $ WINEPREFIX=~/win64 winecfg
 
 ```
-
-**Note:** During prefix creation, the 64-bit version of Wine treats all folders as 64-bit prefixes and will not create a 32-bit in any existing folder. To create a 32-bit prefix you have to let Wine create the folder specified in `WINEPREFIX`. See WineHQ bug [29661](https://bugs.winehq.org/show_bug.cgi?id=29661)
 
 You can also use `WINEARCH` in combination with other Wine programs, such as *winetricks* (using Steam as an example):
 
@@ -525,25 +512,25 @@ $ WINEARCH=win32 WINEPREFIX=~/win32 winetricks -q msxml3 dotnet40 corefonts
 
 #### Office 2010
 
-Microsoft Office 2010 (MSO-2010) works without any problems ~~(tested with Microsoft Office Home and Student 2010, Wine 1.7.5; Microsoft Office Professional Plus 2010, Wine 1.7.51)~~. Activation over Internet also works.
+The 32-bit version of Office 2010 works without any problems. Activation over Internet also works.
 
-Start by enabling multilib (32-bit) repos and installing [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) [samba](https://www.archlinux.org/packages/?name=samba) [lib32-libxslt](https://www.archlinux.org/packages/?name=lib32-libxslt) [libwbclient](https://www.archlinux.org/packages/?name=libwbclient) [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2)
+Start by installing the [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) [samba](https://www.archlinux.org/packages/?name=samba) [lib32-libxslt](https://www.archlinux.org/packages/?name=lib32-libxslt) [libwbclient](https://www.archlinux.org/packages/?name=libwbclient) [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2) packages.
 
 Proceed with launching the installer:
 
 ```
-$ export WINEPREFIX=~/.wine # Wine prefix to use
+$ export WINEPREFIX=~/.wine
 $ export WINEARCH=win32
 $ wine /path/to/office_cd/setup.exe
 
 ```
 
-If you do not want to setup MSO-2010 in the default Wine prefix (`~/.wine`), create new one as described in [#WINEPREFIX](#WINEPREFIX) section. You could also put the above exports into your shell initialization script as also noted there.
+If you do not want to setup Office 2010 in the default Wine prefix (`~/.wine`), create new one as described in [#WINEPREFIX](#WINEPREFIX) section. You could also put the above exports into your shell initialization script as also noted there.
 
 ```
 **Tips**
 1\. You may be interested in Microsoft fonts, there are a number of ways to do so, see [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") article.
-2\. If installation fails, ensure your wine prefix is 32-bit by running in terminal "head -5 ~/.wine/system.reg"
+2\. If installation fails, ensure your wine prefix is 32-bit by running in terminal `head -5 ~/.wine/system.reg`
 3\. Ensure **Windows version is XP**.
 
 ```
@@ -558,11 +545,11 @@ As an alternative to the above method, [playonlinux](https://www.archlinux.org/p
 
 #### Office 2013
 
-[Should work](http://www.phoronix.com/scan.php?page=news_item&px=CodeWeavers-CrossOver-16) with Wine 2.0 and newer - most likely 32-bit versions only. The exact status for each application should be updated on [this](https://appdb.winehq.org/objectManager.php?sClass=application&iId=31) page once Wine 2.0 is out.
+The 32-bit version of Office 2013 works without any problems. See [the WineHQ page](https://appdb.winehq.org/objectManager.php?sClass=version&iId=26323) for more information.
 
 #### Office 2016
 
-Doesn't work.
+The 32-bit version of Office 2016 should work. See [the WineHQ page](https://appdb.winehq.org/objectManager.php?sClass=version&iId=34941) for more information.
 
 ### Running Wine under a separate user account
 

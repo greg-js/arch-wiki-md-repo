@@ -1,3 +1,16 @@
+Related articles
+
+*   [AirVPN](/index.php/AirVPN "AirVPN")
+*   [ABS](/index.php/ABS "ABS")
+*   [Cgroups](/index.php/Cgroups "Cgroups")
+*   [Docker](/index.php/Docker "Docker")
+*   [LXD](/index.php/LXD "LXD")
+*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers")
+*   [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers")
+*   [PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+
 Linux Containers (LXC) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space and the resource control mechanism. This is provided by [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
 
 Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn"), [docker](/index.php/Docker "Docker") or also the [rkt](https://www.archlinux.org/packages/?name=rkt) package.
@@ -152,6 +165,8 @@ The examples below can be used with *privileged* and *unprivileged* containers a
 
 #### Basic config with networking
 
+**Note:** With the release of lxc-1:2.1.0-1, many of the configuration options have changed. Existing containers need to be updated; users are directed to the table of these changes in the [v2.1 release notes](https://discuss.linuxcontainers.org/t/lxc-2-1-has-been-released/487).
+
 System resources to be virtualized/isolated when a process is using the container are defined in `/var/lib/lxc/CONTAINER_NAME/config`. By default, the creation process will make a minimum setup without networking support. Below is an example config with networking:
 
  `/var/lib/lxc/playtime/config` 
@@ -161,22 +176,22 @@ System resources to be virtualized/isolated when a process is using the containe
 # For additional config options, please look at lxc.container.conf(5)
 
 ## default values
-lxc.rootfs = /var/lib/lxc/playtime/rootfs
-lxc.utsname = playtime
+lxc.rootfs.path = /var/lib/lxc/playtime/rootfs
+lxc.uts.name = playtime
 lxc.arch = x86_64
 lxc.include = /usr/share/lxc/config/archlinux.common.conf
 
 ## network
-lxc.network.type = veth
-lxc.network.link = br0
-lxc.network.flags = up
-lxc.network.name = eth0
-lxc.network.hwaddr = ee:ec:fa:e9:56:7d
+lxc.net.0.type = veth
+lxc.net.0.link = br0
+lxc.net.0.flags = up
+lxc.net.0.name = eth0
+lxc.net.0.hwaddr = ee:ec:fa:e9:56:7d
 # uncomment the next two lines if static IP addresses are needed
 # leaving these commented will imply DHCP networking
 #
-#lxc.network.ipv4 = 192.168.0.3/24
-#lxc.network.ipv4.gateway = 192.168.0.1
+#lxc.net.0.ipv4 = 192.168.0.3/24
+#lxc.net.0.ipv4.gateway = 192.168.0.1
 
 ```
 
@@ -199,8 +214,6 @@ In order to run programs on the host's display, some bind mounts need to be defi
 
 ```
 ## for xorg
-## fix overmounting see: [https://github.com/lxc/lxc/issues/434](https://github.com/lxc/lxc/issues/434)
-lxc.mount.entry = tmpfs tmp tmpfs defaults
 lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
 lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
 lxc.mount.entry = /tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir
@@ -379,10 +392,10 @@ Example `*container*/config`
 
 ```
 ...
-lxc.network.type = veth
-lxc.network.name = veth0
-lxc.network.flags = up
-lxc.network.link = `bridge`
+lxc.net.0.type = veth
+lxc.net.0.name = veth0
+lxc.net.0.flags = up
+lxc.net.0.link = `bridge`
 ...
 
 ```

@@ -232,3 +232,13 @@ Try disabling HiDPI in `sddm.conf`:
 # Enable Qt's automatic high-DPI scaling
 EnableHiDPI=false
 ```
+
+If even the above fails, you can try setting your screen size in a Xorg conf file:
+
+ `/etc/X11/xorg.conf.d/90-monitor.conf` 
+```
+Section "Monitor"
+        Identifier      "<default monitor>"
+        DisplaySize     345 194 # in millimeters
+EndSection
+```

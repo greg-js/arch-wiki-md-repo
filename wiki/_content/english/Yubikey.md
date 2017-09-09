@@ -20,6 +20,7 @@ A small section of this article also works for *Fido U2F* USB keys : [#Enabling
         *   [1.3.4 How do I read the enabled (activated) modes ?](#How_do_I_read_the_enabled_.28activated.29_modes_.3F)
         *   [1.3.5 How do I set the enabled (activated) modes ?](#How_do_I_set_the_enabled_.28activated.29_modes_.3F)
     *   [1.4 Two Slots](#Two_Slots)
+        *   [1.4.1 Configuration of the slots](#Configuration_of_the_slots)
     *   [1.5 The LED](#The_LED)
     *   [1.6 The Initial configuration](#The_Initial_configuration)
     *   [1.7 Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"](#Limitations_of_the_passwords_typed_by_YubiKey_via_USB-keyboard_--_or_.22Why_do_my_password_look_so_weak_.3F.22)
@@ -155,6 +156,8 @@ Yubikeys support up to 3 different USB connection/transport modes (depending on 
 
 *   CCID mode (`ccid`, short `c`) - this is the subsystem allowing the key to act as a Smartcard (using CCID protocol). (TODO:explain further)
 
+**Note:** See [#The LED](#The_LED) about CCID related blinking.
+
 #### What does a mode do ?
 
 A mode defines:
@@ -168,7 +171,7 @@ These modes can be activated/deactivated independently from each other.
 
 Only one connection mode will be used at any given point in time to communicate with the YubiKey.
 
-When you plug in your YubiKey one, connection mode will be chosen. (TODO:verify) The order of preference is:
+When you plug in your YubiKey one, connection mode will be chosen. The order of preference (TODO:verify) is:
 
 *   If the **CCID mode** is activated, this mode will be chosen.
 *   Otherwise (so CCID deactivated and) if the **U2F mode** is activated, this mode will be chosen.
@@ -184,11 +187,12 @@ Meaning that currently the OTP, U2F and CCID subsystem of the key are enabled .
 
 #### How do I set the enabled (activated) modes ?
 
-`ykman mode <MODE>` will allow you to define which modes should be actiavted/enabled/available. `<MODE>` can be a string, such as "OTP+U2F+CCID", or a shortened form "o+u+c", or it can also be a mode-number.
+`ykman mode <MODE>` will allow you to define which modes should be actiavted/enabled/available.
 
-With "+" you can combine multiple modes that you wish to be enabled. The mode-number is one number that encodes several enabled modes (like flags) into one value:
-
-TODO:list the mode number table
+*   `<MODE>` can be a string, such as "OTP+U2F+CCID", or a shortened form "o+u+c".
+    With "+" you can combine multiple modes that you wish to be enabled.
+*   `<MODE>` can be a mode-number, which is one number that encodes several enabled modes (like flags) into one value.
+    The only valid modes when using numbers is 0 - 6 ([see here](https://github.com/Yubico/yubikey-manager/blob/master/ykman/util.py#L94)). The extra flags are not part of the mode in that sense, they just need to be set at the same time as the mode is set.
 
 Usually what you want is to make all functionality available (you will still need to potentially configure stuff, see functionality sections below for more details). In order to do so you can use:
 
@@ -196,15 +200,17 @@ Usually what you want is to make all functionality available (you will still nee
 
 **Note:** Using the "80" mode-number or the corresponding "--touch-eject" parameter of `ykman mode` can only be used when the device is in CCID mode _only_ (by running `ykman mode ccid --touch-eject` for instance).
 
-But this is not recommend as it would prevent you from using the U2F and OTP features of the YubiKey.
+Once the --touch-eject flag is set, you should be able to eject/insert the smartcard by pressing the button. The LED should indicate if the card is inserted or not as well.
 
-The often seen:
+**Warning:** But using the 80 mode-number or the corresponding `--touch-eject` is not recommend as it would prevent you from using the U2F and OTP features of the YubiKey.
+
+**Note:** The often seen:
 
 `ykman mode c+u+o --touch-eject` or `ykman mode 86`
 
 will ignore the --touch-eject and be identical to the above recommended `ykman mode 6`.
 
-TODO: Verify this REMARK.
+86 is not a valid mode. It might be a bug that the tool accepts higher values ([see here](https://github.com/Yubico/yubikey-manager/issues/20#issuecomment-326496204)).
 
 ### Two Slots
 
@@ -212,11 +218,19 @@ Only if the OTP mode is activated (see Modes of the YubiKey below), the Yubikey 
 
 If the transport mode OTP is enabled, the two YubiKey Slots, long press and short press, can be configured and used.
 
+#### Configuration of the slots
+
 These slots can have one of the following credentials configured: a [Yubico OTP](https://developers.yubico.com/OTP/) (which is what comes preconfigured in the short press slot on a new key), a static password, a challenge-response credential, an OATH-HOTP credential. All this functionality is found in the `ykman slot` commands.
+
+**Note:** A slot has either a Yubico OTP or a challenge-response credential configured. More general: One, and only one, type of the above listed possible credential per slot.
+
+There are several flags that can be set during the configuration of the slots. These flags /cannot/ be read from the device once written. However, the behaviour of the device should change when the flags are set ;)
+
+**Note:** Actually most of (all of??) the parameters and details you use during configuration of the slots, cannot be read back, once written to the YubiKey.
 
 ### The LED
 
-The YubiKey has a small green LED able to communicate with you. It's message to you actually depends on the currently used USB connection mode of your YubiKey. See (TODO:create in-document link) modes.
+The YubiKey has a small green LED able to communicate with you. It's message to you actually depends on the currently used [USB connection mode](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey) of your YubiKey.
 
 The possible messages are:
 
@@ -224,14 +238,22 @@ The possible messages are:
 *   *slow blinking*: Power/setting up/ready for use (TODO explain)
 *   *rapid blinking*: Error, configuring driver (TODO explain)
 
-If the CCID mode (TODO: CCID only mode???) is turned on, then the key is always slowly blinking when you insert it! You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it's ready for use. Mac and Linux systems will keep blinking.
+**Note:** If the CCID mode is turned on, then the LED of the key is always shortly flashing every two-three seconds once inserted.
+You can turn the blinking off by disabling the CCID mode. This slow blinking just shows that the device has power, alternatively it shows a need for a button press. On Windows this behavior will typically stop once drivers are installed and it's ready for use. Mac and Linux systems will keep blinking; here [the best current workaround](https://github.com/Yubico/yubikey-manager/issues/20#issuecomment-326496204) to get the LED to blink less is to disable CCID.
 
 ### The Initial configuration
 
 On a new YubiKey the Yubico OTP is preconfigured on slot 1\.
 
-**Warning:**
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+**Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [[see here](https://forum.yubico.com/viewtopic.php?f=16&t=1960)].
+
+Meaning: Being a security-minded person one could think that it is a good idea to reset configuration slot 1 to a new OTP. But then a "VV" prefix in your credentials must be used. Whereas the factory credentials on your Yubikey use a "CC" prefix!
+
+You can upload a "VV" credential using the Yubico personalization tool GUI or manually upload the new AES key to the [upload.yubico.com website] in order to regain the same functionality than with the original factory configuration.
+
+VV credentials are not less secure than CC. However some services may choose to trust only CC credentials as they believe that the user process is more prone to security vulnerabilities.
+
+This is because you could have maleware on your machine or someone intercepting your key when sending it to the YubiCloud. Despite this scenario being extremely unlikely to happen, it needs consideration from service providers.
 
 ### Limitations of the passwords typed by YubiKey via USB-keyboard -- or "Why do my password look so weak ?"
 
@@ -251,7 +273,7 @@ The Yubico OTP mode is AES symmetric key based. On a new YubiKey the Yubico OTP 
 
 The initial configuration and AES key stored in slot 1 can of course be overwritten.
 
-**Warning:** But please see [#The Initial configuration](#The_Initial_configuration) before
+**Warning:** Please read [#The Initial configuration](#The_Initial_configuration) before you overwrite the intial configuration of slot 1 that your YubiKey comes shipped with.
 
 #### How does it work
 

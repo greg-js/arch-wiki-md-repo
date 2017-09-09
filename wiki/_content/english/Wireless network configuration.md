@@ -60,7 +60,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
     *   [6.2 Realtek](#Realtek)
         *   [6.2.1 rtl8192cu](#rtl8192cu)
         *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [6.2.3 rtl8812au/rtl8814au/rtl8821au](#rtl8812au.2Frtl8814au.2Frtl8821au)
+        *   [6.2.3 rtl8811au/rtl8812au/rtl8814au/rtl8821au](#rtl8811au.2Frtl8812au.2Frtl8814au.2Frtl8821au)
     *   [6.3 Atheros](#Atheros)
         *   [6.3.1 ath5k](#ath5k)
         *   [6.3.2 ath9k](#ath9k)
@@ -656,6 +656,8 @@ New chipset as of 2012 with support for 5 Ghz bands. It may require proprietary 
 
 ### Realtek
 
+See [[6]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+
 #### rtl8192cu
 
 The driver is now in the kernel, but many users have reported being unable to make a connection although scanning for networks does work.
@@ -676,15 +678,15 @@ or
 
 If you have very poor signal maybe your device has only one antenna connected and auto mode does not work. You can force the antenna with `ant_sel=1` or `ant_sel=2` kernel option.
 
-#### rtl8812au/rtl8814au/rtl8821au
+#### rtl8811au/rtl8812au/rtl8814au/rtl8821au
 
-These are Realtek chipsets designed for AC1200/1750/1900 USB adapters, using respectively rtl8812au/rtl8821au/rtl8814au.
+These are Realtek chipsets designed for AC600/AC1200/1750/1900 USB adapters.
 
 Several packages provide the kernel drivers:
 
 | Chipset | Driver version | [AUR](/index.php/AUR "AUR") package |
 | rtl8812au only | 5.2.9 | [rtl8812au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8812au-v5-dkms-git/) |
-| rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8821au-v5-dkms-git/) |
+| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8821au-v5-dkms-git/) |
 | rtl8814au | 4.3.21 | [edimax_ac1750_8814au-dkms](https://aur.archlinux.org/packages/edimax_ac1750_8814au-dkms/) |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
@@ -789,7 +791,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[7]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[8]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[8]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[9]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
@@ -797,7 +799,7 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[9]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[10]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -856,7 +858,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[10]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[11]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

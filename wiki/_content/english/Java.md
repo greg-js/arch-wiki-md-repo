@@ -1,3 +1,8 @@
+Related articles
+
+*   [Java Package Guidelines](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+
 From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)"):
 
 	Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture.
@@ -9,7 +14,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 *   [1 Installation](#Installation)
     *   [1.1 OpenJDK 7](#OpenJDK_7)
     *   [1.2 OpenJDK 8](#OpenJDK_8)
-    *   [1.3 OpenJFX](#OpenJFX)
+    *   [1.3 OpenJFX 8](#OpenJFX_8)
 *   [2 Flagging packages as out-of-date](#Flagging_packages_as_out-of-date)
 *   [3 Switching between JVM](#Switching_between_JVM)
     *   [3.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
@@ -47,7 +52,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 *   Installing a JDK will automatically pull its JRE dependency.
 *   After installation, the Java environment will need to be recognized by the shell (`$PATH` variable). This can be done by sourcing `/etc/profile` from the command line or by logging out/in again of a Desktop Environment.
 
-Two *common* packages named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) are automatically pulled as dependency and provide environment file `/etc/profile.d/jre.sh`. This file contains all JVM common environment variables. Package [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) also provides a utility script `archlinux-java` that can display and change the default Java environment. This script sets links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` to point at a valid non-conflicting Java environment installed and Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}. Most executables provided by the Java environment set have direct links from `/usr/bin`, others are available in `$PATH`.
+Two *common* packages named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) are automatically pulled as dependency and provide environment file `/etc/profile.d/jre.sh`. It should **always** be edited using the `archlinux-java` command. The `archlinux-java` helper script is used to set the Java default environment, to set `JAVA_ENV`, and to fix a broken configuration. Package [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) also provides a utility script `archlinux-java` that can display and change the default Java environment. This script sets links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` to point at a valid non-conflicting Java environment installed and Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}. Most executables provided by the Java environment set have direct links from `/usr/bin`, others are available in `$PATH`.
 
 **Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
 
@@ -55,30 +60,34 @@ The following packages are available:
 
 ### OpenJDK 7
 
-| Package name | Use |
-| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Java runtime environment (*JRE*) without any graphical tool - version 7 |
-| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Complete Java Runtime Environment (*JRE*) - version 7 |
-| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Java Development Kit (*JDK*) - version 7 |
-| [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | OpenJDK javadoc - version 7 |
-| [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | OpenJDK sources - version 7 |
+[JDK 7](http://openjdk.java.net/projects/jdk7/) is the open-source implementation of the seventh edition of Java SE.
+
+| Package name | Description |
+| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | OpenJDK Java 7 runtime environment without any graphical user interface |
+| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | OpenJDK Java 7 full runtime environment |
+| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | OpenJDK Java 7 development kit |
+| [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | OpenJDK Java 7 documentation |
+| [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | OpenJDK Java 7 sources |
 
 ### OpenJDK 8
 
-| Package name | Use |
-| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Java runtime environment (*JRE*) without any graphical tool - version 8 |
-| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Complete Java Runtime Environment (*JRE*) - version 8 |
-| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Java Development Kit (*JDK*) - version 8 |
-| [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | OpenJDK javadoc - version 8 |
-| [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | OpenJDK sources - version 8 |
+[JDK 8](http://openjdk.java.net/projects/jdk8/) is the open-source implementation of the eight edition of Java SE.
 
-### OpenJFX
+| Package name | Description |
+| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | OpenJDK Java 8 runtime environment without any graphical user interface |
+| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | OpenJDK Java 8 full runtime environment |
+| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | OpenJDK Java 8 development kit |
+| [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | OpenJDK Java 8 documentation |
+| [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | OpenJDK Java 8 sources |
 
-JavaFX is also available from the official repositories. It depends on OpenJDK 8\.
+### OpenJFX 8
 
-| Package name | Use |
+[Java OpenJFX](http://openjdk.java.net/projects/openjfx/) is the open-source implementation of JavaFX.
+
+| Package name | Description |
 | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | Java OpenJFX 8 client application platform (open-source implementation of JavaFX) |
-| [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | OpenJFX javadoc |
-| [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) | OpenJFX sources |
+| [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | Java OpenJFX 8 documentation |
+| [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) | Java OpenJFX 8 sources |
 
 ## Flagging packages as out-of-date
 

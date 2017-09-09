@@ -475,7 +475,7 @@ See [Fish#Web interface](/index.php/Fish#Web_interface "Fish").
 
 ### Virtual console
 
-The colors in the [Linux virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")—see [console(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/console.4)—running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB`, where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
+The colors in the [Linux virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") running on the framebuffer can be changed. This is done by writing the escape code `\\e]PXRRGGBB`, where `X` is the hexadecimal index of the color from 0-F, and `RRGGBB` is a traditional hexadecimal RGB code.
 
 For example, to reuse existing colors defined in `~/.Xresources`, add the following to the shell initialization file (such as `~/.bashrc`):
 

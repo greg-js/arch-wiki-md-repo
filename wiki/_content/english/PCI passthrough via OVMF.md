@@ -25,6 +25,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.2 Static huge pages](#Static_huge_pages)
     *   [5.3 CPU frequency governor](#CPU_frequency_governor)
     *   [5.4 High DPC Latency](#High_DPC_Latency)
+        *   [5.4.1 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
     *   [5.5 Improving performance on AMD CPU](#Improving_performance_on_AMD_CPU)
     *   [5.6 Further Tuning](#Further_Tuning)
 *   [6 Special procedures](#Special_procedures)
@@ -442,9 +443,28 @@ If you are experiencing high DPC and/or interrupt latency in your Guest VM, ensu
 
 After loading one or more of these modules, `lsmod | grep virtio` executed on the host should not return empty.
 
+#### CPU pinning with isolcpus
+
+Alternatively, make sure that you have isolated CPUs properly. In this example, I will assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcb_nocbs` to completely isolate the CPUs from the kernel.
+
+ `sudo vim /etc/defaults/grub` 
+```
+...
+GRUB_CMDLINE_LINUX="..your other params.. isolcpus=4-7 nohz_full=4-7 rcb_nocbs=4-7"
+...
+```
+
+Then, run `qemu-system-x86_64` with taskset and chrt:
+
+`sudo chrt -r 1 taskset -c 4-7 qemu-system-x86_64 ...`
+
+The `chrt` command will ensure that the task scheduler will round-robin distribute work (otherwise it will all stay on the first cpu). For `taskset`, the CPU numbers can be comma- and/or dash-separated, like "0,1,2,3" or "0-4" or "1,7-8,10" etc.
+
+See [this reddit comment](https://www.reddit.com/r/VFIO/comments/6vgtpx/high_dpc_latency_and_audio_stuttering_on_windows/dm0sfto/) for more info.
+
 ### Improving performance on AMD CPU
 
-**Note:** Was tested on AMD Ryzen 5 1600 - helps a lot, depends on guest's applications.
+**Note:** Was tested on AMD Ryzen 5 1600 - helps a lot, depends on guest's applications. This slows down systems with AMD FX processors considerably, 1GB hugepages are fine however.
 
 Disabling Nested Page Tables(aka NPT) will improve GPU performance to a bare metal level.
 

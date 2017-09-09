@@ -1,3 +1,10 @@
+Related articles
+
+*   [wvdial](/index.php/Wvdial "Wvdial")
+*   [Direct Modem Connection](/index.php/Direct_Modem_Connection "Direct Modem Connection")
+*   [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd")
+*   [Category:Modems](/index.php/Category:Modems "Category:Modems")
+
 A number of mobile telephone networks around the world offer mobile internet connections over UMTS (or EDGE or GSM) using a portable USB modem device.
 
 ## Contents
@@ -16,6 +23,7 @@ A number of mobile telephone networks around the world offer mobile internet con
         *   [4.7.1 QoS parameter](#QoS_parameter)
         *   [4.7.2 Baud parameter](#Baud_parameter)
     *   [4.8 Monitor used bandwith](#Monitor_used_bandwith)
+    *   [4.9 Connection halts after few minutes running](#Connection_halts_after_few_minutes_running)
 *   [5 Reading SMS](#Reading_SMS)
     *   [5.1 command line script](#command_line_script)
 *   [6 Fix image quality](#Fix_image_quality)
@@ -144,6 +152,17 @@ But the official Huawei E261 windows application set the Baud=9600 under Windows
 Frequently a 3G connection obtained via a mobile phone operator comes with restricted bandwidth, so that you are only allowed to use a certain bandwidth per time (e.g. 1GB per month). While it is quite straight-forward to know which type of network applications are pretty bandwidth extensive (e.g. video streaming, gaming, torrent, etc.), it may be difficult to keep an overview about overall consumed bandwidth.
 
 A number of tools are available to help with that. Two console tools are [vnstat](https://www.archlinux.org/packages/?name=vnstat), which allows to keep track of bandwith over time, and [iftop](https://www.archlinux.org/packages/?name=iftop) to monitor bandwidth of individual sessions. If you are a [KDE](/index.php/KDE "KDE") user, [knemo](https://www.archlinux.org/packages/?name=knemo) might help. All are available in the [official repositories](/index.php/Official_repositories "Official repositories").
+
+### Connection halts after few minutes running
+
+This problem occurs on some modems which locked by a mobile operator. You can successfully connect to the internet but after few minutes connection halts and your modem reboots. That happens because an operator built a some checks into modem firmware so a modem checks if a branded software is running on your pc, but usually that software is Windows-only, and obviously you don't use it. Fix (it works on ZTE-mf190 at least) is simple - send this command through serial port (use minicom or similar soft):
+
+```
+AT+ZCDRUN=E\r
+
+```
+
+This command will delete a NODOWNLOAD.FLG file in the modem's filesystem - it will disable such checks.
 
 ## Reading SMS
 

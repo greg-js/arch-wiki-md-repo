@@ -1,3 +1,7 @@
+Related articles
+
+*   [xmobar](/index.php/Xmobar "Xmobar")
+
 [xmonad](http://xmonad.org/) is a tiling [window manager](/index.php/Window_manager "Window manager") for [X](/index.php/X "X"). Windows are arranged automatically to tile the screen without gaps or overlap, maximizing screen use. Window manager features are accessible from the keyboard: a mouse is optional.
 
 xmonad is written, configured and extensible in [Haskell](http://haskell.org/). Custom layout algorithms, key bindings and other extensions may be written by the user in configuration files.
@@ -282,7 +286,7 @@ main = xmonad =<< xmobar defaultConfig { modMask = mod4Mask {- or any other conf
 
 #### More configurable
 
-As of xmonad(-contrib) 0.9, there is a new [statusBar](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-DynamicLog.html#v%3AstatusBar) function in [XMonad.Hooks.DynamicLog](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-DynamicLog.html). It allows you to use your own configuration for:
+As of xmonad(-contrib) 0.9, there is a new [statusBar](https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Hooks-DynamicLog.html#v:statusBar) function in [XMonad.Hooks.DynamicLog](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-DynamicLog.html). It allows you to use your own configuration for:
 
 *   The command used to execute the bar
 *   The PP that determines what is being written to the bar

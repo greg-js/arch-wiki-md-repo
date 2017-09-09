@@ -108,7 +108,7 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 ALSA能够截获[OSS](/index.php/OSS "OSS")调用，然后转而在ALSA中重新发送他们。例如，对于试图打开`/dev/dsp`并向里面写入声音数据的传统应用，这个模仿层很有用。没有OSS或者这个模仿库的话，会缺少`/dev/dsp`，应用程序从而不会产生任何声音。
 
-如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#.E7.BC.A9.E6.B7.B7)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
+如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#.E7.BC.A9.E6.B7.B7.EF.BC.88downmixing.EF.BC.89)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
 
 ### PulseAudio compatibility
 

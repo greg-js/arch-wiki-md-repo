@@ -1,4 +1,8 @@
-**翻译状态：** 本文是英文页面 [AUR_Trusted_User_Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-12，点击[这里](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=424924)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
+
+**翻译状态：** 本文是英文页面 [AUR_Trusted_User_Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-08，点击[这里](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=475842)可以查看翻译后英文页面的改动。
 
 **Trusted User (TU)** 是负责使 AUR 正常工作的社区成员。他们维护热门的包（[并在必要时与上游项目交涉或者向上游项目发送补丁](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)），并且参与管理事务的表决。TU 由现任的 TU 从活跃的社区成员中民主选举产生。 TU 是唯一具有决定 AUR 发展方向的权利的社区成员群体。
 
@@ -28,8 +32,8 @@ TU们依靠[TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)来�
 6.  提醒 [BBS admin](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) 更改你在论坛上的账户
 7.  向先辈 TU 索要 #archlinux-tu@freenode 的密码并挂在上面。这不是必须的，但是这样会更方便。因为那儿是黑历史曝光和新想法提出的地方。
 
-1.  为[软件包签名](/index.php/Package_signing "Package signing")创建 PGP key.
-2.  按照此 [模板](https://www.archlinux.org/trustedusers/) 向 Ionuț Bîru (ibiru@archlinux.org) 或 Florian Pritz (bluewind@xinu.at)提交所有信息来获得 dev 接口的访问权限
+1.  为[软件包签名](/index.php/Package_signing "Package signing")创建 PGP key 或者使用已有的key，请确保 key 包含加密的 subkey，这样才能收到加密的验证令牌。
+2.  按照此 [模板](https://www.archlinux.org/people/trusted-users/) 向 Ionuț Bîru (ibiru@archlinux.org) 或 Florian Pritz (bluewind@xinu.at)发邮件，包含所有信息以获得 dev 接口的访问权限
 3.  给 Florian 发一封加密邮件:
     *   包含一个 SSH 公钥，如果还没有，使用 `ssh-keygen` 生成。[Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") 包含更多信息。
     *   要求将你加入 arch-dev-public 白名单.
@@ -39,9 +43,10 @@ TU们依靠[TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)来�
     *   在 bug 管理系统的 "Keyring" 项目中提交任务，步骤参考 [这里](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html)，三个主密钥持有者会签名您的 PGP 密钥。
 5.  给 Lukas Fleischer 发送一封附有 ssh 公钥的邮件。如果你没有一个公钥，使用`ssh-keygen`来生成一个。更多关于 ssh 密钥的信息请查看 [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") 页面
 6.  安装 [devtools](https://www.archlinux.org/packages/?name=devtools) 软件包
-7.  在 nymeria.archlinux.org 创建 `~/staging/community` 和 `~/staging/community-testing` 两个目录（如果你对维护 multilib 的软件包感兴趣也可以创建 `~/staging/multilib`）。这一步骤 **非常重要** 因为 devtools 脚本使用这些目录来处理输入的软件包。
-8.  如果你在两天内没有在 bugtracker 被升级到 TU 组，在 arch-dev-public 发邮件询问
-9.  开始你的贡献吧！
+7.  为主机 `orion.archlinux.org` 和 `repos.archlinux.org` 上配置[ssh 私钥](/index.php/Arch_User_Repository#Authentication "Arch User Repository")
+8.  Ssh 到 yourname@orion.archlinux.org (得到权限之后).
+9.  如果你在两天内没有在 bugtracker 被升级到 TU 组，在 arch-dev-public 发邮件询问
+10.  开始你的贡献吧！
 
 ## TU 和 [unsupported]
 
@@ -74,35 +79,37 @@ TU 也很适合撰写文档来记录一些值得推荐的行为。
 
 ### 访问并更新仓库
 
-[community] 仓库现在使用和 [core] 和 [extra] 仓库相同的工具 **devtools** 来上传软件包。唯一的不同在于 [core] 和 [extra] 使用服务器 [https://archlinux.org](https://archlinux.org) 而 [community] 仓库使用服务器`nymeria.archlinux.org`。因此 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面中大多数指令都能在不用改动的情况下使用。这里介绍关于 [community] 仓库的一些特殊的信息。devtools 需要软件打包人员 [设置 PACKAGER 变量](/index.php/Arch_Build_System#Set_the_PACKAGER_variable_in_.2Fetc.2Fmakepkg.conf "Arch Build System"). 通过 `/usr/share/devtools/makepkg-{i686,x86_64}.conf` 配置，因为在干净的 chroot 中没有正常的配置文件。
+[community] 仓库现在使用和 [core] 和 [extra] 仓库相同的工具 **devtools** 来上传软件包。唯一的不同在于 [core] 和 [extra] 使用服务器 [https://archlinux.org](https://archlinux.org) 而 [community] 仓库使用服务器`orion.archlinux.org`。因此 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面中大多数指令都能在不用改动的情况下使用。这里介绍关于 [community] 仓库的一些特殊的信息。devtools 需要软件打包人员 [设置 makepkg.conf 中的 PACKAGER 变量](/index.php/Makepkg#Packager_information "Makepkg").
 
 首先，你应该做一个 [community] 软件仓库的 **非递归签出**：
 
 ```
-svn checkout -N svn+ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-community/svn
+svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn svn-community
 
 ```
 
-这一步骤将会创建一个名为 svn 的目录，里面只有包含 svn 信息的 .svn 目录。
+这一步骤将会创建一个名为 svn-community 的目录，里面只有包含 svn 信息的 .svn 目录。
 
 关于 **签出**，**更新**所有软件包或**添加**一个软件包，请参见 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 。
 
 要**移除**一个软件包：
 
 ```
- ssh nymeria.archlinux.org /community/db-remove community arch pkgname
+ ssh orion.archlinux.org /community/db-remove community arch pkgname
 
 ```
 
-在此以及接下来的文中，arch 可以是 Arch Linux 支持两个平台 i686 或 x86_64。（“any”怎么办？）
+在此以及接下来的文中，arch 可以是 Arch Linux 支持两个平台 i686 或 x86_64。
+
+**Note:** 如果编辑的是 *any* 架构的软件包，可以按 x64 执行，一般都能正常使用。
 
 当你完成了 PKGBUILD 等之后，你应该 **提交** 你的更改（`svn commit`）。
 
-用 `mkarchroot` 或帮助脚本 `extra-i686-build`/`extra-x86_64-build` 编译软件包.
+用 `mkarchroot` 或帮助脚本 `extra-i686-build`/`extra-x86_64-build` 编译软件包. 如该要上传到 testing，也需要 `testing-i686-build` 和 `testing-x86_64-build`.
 
-用 `gpg --detach-sign *.pkg.tar.xz` 签署软件包.
+用 `gpg --detach-sign *.pkg.tar.xz` 签署软件包. 如果使用不同密钥进行签名，可以在 `~/.makepkg.conf` 中设置 `GPGKEY=<identifier>`.
 
-如果你想要**发布**一个软件包，首先将软件包和签名用 scp 拷贝到 nymeria.archlinux.org 的 *staging/community* 目录下，然后通过进入 *pkgname/trunk* 目录并运行 `archrelease community-arch` 来为 **标识** 该软件包。这将在 *community-i686* 或 *community-x86_64* 目录下创建一份 trunk 条目的 svn 拷贝。这也表示这一软件包已经在所在平台的 [community] 仓库中了。
+如果你想要**发布**一个软件包，首先将软件包和签名用 scp 拷贝到 orion.archlinux.org 的 *staging/community* 目录下，然后通过进入 *pkgname/trunk* 目录并运行 `archrelease community-arch` 来为 **标识** 该软件包。这将在 *community-i686* 或 *community-x86_64* 目录下创建一份 trunk 条目的 svn 拷贝。这也表示这一软件包已经在所在平台的 [community] 仓库中了。注意 staging 目录与 staging 仓库不一样，所有软件包都需要上传到 staging 目录。可以使用 `communitypkg` 脚本自动执行这个过程。
 
 ***注意：** 在有些情况下，特别是对于 community 软件包来说，x86_64 的 TU 也许会在 pkgrel 后加上 .1 （不是 +1）。这表示对于 PKGBUILD 的改动是仅限于 x86_64 平台的并且 i686 平台的维护者 **不应该** 为 i686 平台重建此软件包。如果 TU 想要提升 pkgrel ，那就应该按照通常的方法 +1 。然而，TU 在提升 pkgrel 时，pkgrel=2.1 不应该变为 pkgrel=3.1 而必须应变为 pkgrel=3 。简单的说，就是将 带有点（.） 发行的版本只留给维护 x86_64 平台的 TU 来避免混乱。*
 
@@ -110,17 +117,17 @@ svn checkout -N svn+ssh://svn-community@nymeria.archlinux.org/srv/repos/svn-comm
 
 *   **更新** 软件包目录 (`svn update some-package`)
 *   **改变当前目录** 到软件包的 trunk 目录 (`cd some-package/trunk`)
-*   **编辑** PKGBUILD，做出必要的更改，
+*   **编辑** PKGBUILD，做出必要的更改，用 `updpkgsums` 更新校验和.
 *   **编译** 软件包：使用 `makechrootpkg` 或 `extra-i686-build`/`extra-x86_64-build`. **必须**在 [干净的chroot环境](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") 中构建软件包。
 *   **[Namcap](/index.php/Namcap "Namcap")** PKGBUILD 文件和 pkg.tar.gz 二进制包
 *   使用 `communitypkg "commit message"` **提交**、**签名**，**拷贝**并**标识** 此软件包。这将自动进行下面步骤
     *   将改变 **提交** 至 trunk (`svn commit`)
     *   **签署** 软件包: `gpg --detach-sign *.pkg.tar.xz`.
-    *   将软件包和签名拷贝到 nymeria.archlinux.org (`scp pkgname-ver-rel-arch.pkg.tar.xz *.pkg.tar.xz.sig nymeria.archlinux.org:staging/community/`)
+    *   将软件包和签名拷贝到 orion.archlinux.org (`scp pkgname-ver-rel-arch.pkg.tar.xz *.pkg.tar.xz.sig orion.archlinux.org:staging/community/`)
     *   **标识** 此软件包 (`archrelease community-{i686,x86_64`})
-*   **更新** 软件仓库(`ssh nymeria.archlinux.org /community/db-update`)
+*   **更新** 软件仓库(`ssh orion.archlinux.org /community/db-update`)
 
-另外请阅读 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面的 *Miscellaneours* 部分。对于 *Avoid having to enter your password all the time* 部分，使用 nymeria.archlinux.org 而不要使用 gerolde.archlinux.org。
+另外请阅读 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面的 *Miscellaneours* 部分和 [SSH keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys")。对于 *Avoid having to enter your password all the time* 部分，使用 orion.archlinux.org 而不要使用 gerolde.archlinux.org。
 
 ### 停止维护软件包
 

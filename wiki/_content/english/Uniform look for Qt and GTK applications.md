@@ -1,3 +1,8 @@
+Related articles
+
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [Qt](/index.php/Qt "Qt")
+
 [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") based programs both use a different widget toolkit to render the graphical user interface. Each come with different themes, styles and icon sets by default, among other things, so the "look and feel" differ significantly. This article will help you make your Qt and GTK+ applications look similar for a more streamlined and integrated desktop experience.
 
 ## Contents
@@ -100,6 +105,8 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 ## Tips and tricks
 
 ### KDE file dialogs for GTK+ applications
+
+**Chromium** At least for chromium installing `kdialog` makes chromium used kde file dialog ( so `KGtk-wrapper` is not required )
 
 **Warning:** Some GTK+ applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash ([Firefox](/index.php/Firefox "Firefox") or [Thunderbird](/index.php/Thunderbird "Thunderbird")).
 

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Courier MTA](/index.php/Courier_MTA "Courier MTA")
+*   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [SOGo](/index.php/SOGo "SOGo")
+
 This article describes how to set up a complete virtual user mail system on an Arch Linux system in the simplest manner possible. However, since a mail system consists of many complex components, quite a bit of configuration will still be necessary.
 
 Roughly, the components used in this article are Postfix as the mail server, Dovecot as the IMAP server, Roundcube as the webmail interface and PostfixAdmin as the administration interface to manage it all.
@@ -181,6 +188,33 @@ dbname = postfix_db
 table = mailbox
 select_field = maildir
 where_field = username
+
+```
+
+For alias domains functionality adjust the following files:
+
+ `/etc/postfix/main.cf` 
+```
+virtual_alias_maps = proxy:mysql:/etc/postfix/virtual_alias_maps.cf,proxy:mysql:/etc/postfix/virtual_alias_domains_maps.cf
+virtual_alias_domains = proxy:mysql:/etc/postfix/virtual_alias_domains.cf
+
+```
+ `/etc/postfix/virtual_alias_domains_maps.cf` 
+```
+user = postfix_user
+password = hunter2
+hosts = localhost
+dbname = postfix_db
+query = SELECT goto FROM alias,alias_domain WHERE alias_domain.alias_domain = '%d' and alias.address = CONCAT('%u', '@', alias_domain.target_domain) AND alias.active = 1 AND alias_domain.active='1'
+
+```
+ `/etc/postfix/virtual_alias_domains.cf` 
+```
+user = postfix_user
+password = hunter2
+hosts = localhost
+dbname = postfix_db
+query = SELECT alias_domain FROM alias_domain WHERE alias_domain='%s' AND active = '1'
 
 ```
 

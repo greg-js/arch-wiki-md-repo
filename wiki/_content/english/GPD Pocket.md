@@ -1,4 +1,4 @@
-These are my notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-umpc-laptop-ubuntu-or-win-10-os-laptop--2#/).
+Notes to get Arch Linux on the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-umpc-laptop-ubuntu-or-win-10-os-laptop--2#/).
 
 ## Contents
 
@@ -40,28 +40,36 @@ Server = https://github.com/njkli/$repo/raw/master/repo
 
 ```
 
-Install fan control and custom kernel using `#pacman -S gpd-fan linux-jwrdegoede linux-jwrdegoede-docs linux-jwrdegoede-headers`.
+Install fan control and custom kernel using `# pacman -S gpd-fan linux-jwrdegoede linux-jwrdegoede-docs linux-jwrdegoede-headers`.
 
 ### Power and Fan
 
-Install `#pacman -S tlp`
-Edit /etc/default/tlp
-`DISK_DEVICES="mmcblk0"
-DISK_IOSCHED="deadline"
-`
-Copy fan config `cp /etc/default/gpd-fan.example /etc/default/gpd-fan` and uncomment settings.
+Install [tlp](https://www.archlinux.org/packages/?name=tlp) `# pacman -S tlp`
+Edit the following lines in /etc/default/tlp
+
+ `/etc/default/tlp` 
+```
+...
+DISK_DEVICES="mmcblk0"
+DISK_IOSCHED="deadline" 
+...
+
+```
+
+Copy fan config `# cp /etc/default/gpd-fan.example /etc/default/gpd-fan` and uncomment settings.
 
 ### WiFi
 
 Copy brcmfmac4356-pcie.txt from [here](https://github.com/cawilliamson/ansible-gpdpocket/tree/master/roles/common/files) to /lib/firmware/brcm/ then run
-`modprobe -r brcmfmac`
-`modprobe brcmfmac`
+`# modprobe -r brcmfmac`
+`# modprobe brcmfmac`
 
 **Note:** This did not work for me right away. I would get this error on boot
 
-> brcmfmac: brcmf_chip_recognition: chip backplane type 15 is not supported brcmfmac: brcmf_pcie_probe: failed 14e4:43ec
+> brcmfmac: brcmf_chip_recognition: chip backplane type 15 is not supported
+> brcmfmac: brcmf_pcie_probe: failed 14e4:43ec
 
-To fix this, I installed the broadcom-wl-dkms and tested and then removed it now the wifi works just fine.
+To fix this, I installed broadcom-wl-dkms and tested and then removed it now the wifi works just fine.
 
 ### Bluetooth
 
@@ -142,15 +150,19 @@ xrandr --dpi 168"
 
 ### Touchscreen Gestures
 
-Install touchegg from AUR then copy config files from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-touchegg-config/files) and set permissions. `sudo cp touchegg.conf /usr/share/touchegg/
-sudo chmod 0644 /usr/share/touchegg/touchegg/touchegg.conf
-sudo cp 01_touchegg /etc/X11/xinit/xinitrc.d/
-sudo chmod 0755 /etc/X11/xinit/xinitrc.d/01_touchegg
-`
+Install [touchegg](https://aur.archlinux.org/packages/touchegg/) then copy config files from [here](https://github.com/nexus511/gpd-ubuntu-packages/tree/master/packages/gpdpocket-touchegg-config/files) and set permissions.
+
+```
+# cp touchegg.conf /usr/share/touchegg/
+# chmod 0644 /usr/share/touchegg/touchegg/touchegg.conf
+# cp 01_touchegg /etc/X11/xinit/xinitrc.d/
+# chmod 0755 /etc/X11/xinit/xinitrc.d/01_touchegg
+
+```
 
 ### KDE Display
 
-In System Settings > Display and Monitor change Orientation to 90° Clockwise, and Scale Display to a comfortable size, 1.5 seems to be the best for me.
+In System Settings > Display and Monitor change Orientation to 90° Clockwise, and Scale Display to a comfortable size.
 
 ### Mouse Scroll Emulation
 

@@ -1,4 +1,11 @@
-Owners of **AMD** (previously **ATI**) video cards have a choice between [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source drivers (**ATI** for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver for older cards.
+Related articles
+
+*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
+*   [AMDGPU](/index.php/AMDGPU "AMDGPU")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Vulkan](/index.php/Vulkan "Vulkan")
+
+Owners of **AMD** (previously **ATI**) video cards have a choice between [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source drivers (<a class="mw-selflink selflink">ATI</a> for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver for older cards.
 
 The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](https://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).)
 
@@ -133,7 +140,7 @@ Option "DRI" "3"
 
 ```
 
-**TearFree** is a tearing prevention option which prevents tearing by using the hardware page flipping mechanism. Enabling this option currently disables Option "EnablePageFlip":
+**TearFree** is a tearing prevention option which prevents tearing by using the hardware page flipping mechanism:
 
 ```
 Option "TearFree" "on"

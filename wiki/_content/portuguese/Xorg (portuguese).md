@@ -417,7 +417,7 @@ Also note that some X configuration tools might stop working. The easiest way to
 
 Some packages have hard-coded references to `/usr/X11R6`. These packages need fixing. In the meantime, look what packages install files in `/usr/X11R6`, uninstall those, make a symlink from `/usr` to `/usr/X11R6` and reinstall the affected packages. Another option is to move the contents of `/usr/X11R6` to `/usr` and make the symlink.
 
-Or you can just add a second module path via <code/>ModulePath "/usr/X11R6/lib/modules"</code> This works e.g. for Nvidia 76.76
+Or you can just add a second module path via `ModulePath "/usr/X11R6/lib/modules"` This works e.g. for Nvidia 76.76
 
 ## Troubleshooting
 

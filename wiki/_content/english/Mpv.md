@@ -423,7 +423,7 @@ If *mpv* runs but it just does not run well then a fourth thing that might be wo
 
 mpv defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the XV (XVideo) video output device may help:
 
- `~/.config/mpv/mpv.conf`  `profile=xv` 
+ `~/.config/mpv/mpv.conf`  `vo=xv` 
 
 This VO is deprecated and will cause issues in recent versions of mpv, most noticeably is the osd looking very blurry.
 

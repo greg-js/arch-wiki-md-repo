@@ -1,3 +1,10 @@
+Related articles
+
+*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [Nouveau](/index.php/Nouveau "Nouveau")
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
+*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
+
 From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 	Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.
@@ -731,11 +738,15 @@ See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1643609) for m
 
 ### Broken power management with kernel 4.8
 
-If you have a newer laptop (BIOS date 2015 or newer), then Linux 4.8 might break bbswitch ([bbswitch issue 140](https://github.com/Bumblebee-Project/bbswitch/issues/140)) since bbswitch does not support the newer, recommended power management method. As a result, the dGPU may fail to power on, fail to power off or worse.
+If you have a newer laptop (BIOS date 2015 or newer), then Linux 4.8 might break bbswitch ([bbswitch issue 140](https://github.com/Bumblebee-Project/bbswitch/issues/140)) since bbswitch does not support the newer, recommended power management method. As a result, the GPU may fail to power on, fail to power off or worse.
 
 As a workaround, add `pcie_port_pm=off` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 Alternatively, if you are only interested in power saving (and perhaps use of external monitors), remove bbswitch and rely on [Nouveau](/index.php/Nouveau "Nouveau") runtime power-management (which supports the new method).
+
+**powertop --auto-tune issue**
+
+For the same reason as above if you run `powertop --auto-tune` this will probably set the PM to `auto`, something similar to: ``echo 'auto' > /sys/bus/pci/devices/0000:01:00.0/power/control';` ... and you'l need to reboot in order to use the card.
 
 ### Lockup issue (lspci hangs)
 

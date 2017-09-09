@@ -29,7 +29,13 @@
     *   [5.1 Инструменты CLI](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_CLI)
     *   [5.2 Веб интерфейс](#.D0.92.D0.B5.D0.B1_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81)
     *   [5.3 Приложения с GUI](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_GUI)
-*   [6 См. также](#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [6 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [6.1 cups-browsed](#cups-browsed)
+    *   [6.2 Серверы печати и удаленное администрирование](#.D0.A1.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D1.8B_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D0.B8_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D0.B0.D0.B4.D0.BC.D0.B8.D0.BD.D0.B8.D1.81.D1.82.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+    *   [6.3 Разрешение аутентификации администратора через PolicyKit](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D1.83.D1.82.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D0.B8_.D0.B0.D0.B4.D0.BC.D0.B8.D0.BD.D0.B8.D1.81.D1.82.D1.80.D0.B0.D1.82.D0.BE.D1.80.D0.B0_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_PolicyKit)
+    *   [6.4 Без локального сервера CUPS](#.D0.91.D0.B5.D0.B7_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0_CUPS)
+*   [7 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+*   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -284,7 +290,7 @@ $ lpq -a # во всех очередях
 
 **Примечание:** Если используется HTTPS-соединение с CUPS, оно может длиться очень долго, прежде чем интерфейс появится при первом доступе. Это связано с тем, что первый запрос инициирует создание SSL-сертификатов, которое может занимать много времени.
 
-Для выполнения административных задач требуется аутентификация веб-интерфейса. Аутентифицируйте себя либо как `root`, либо убедитесь, что ваш пользователь входит в группу с полномочиями управления принтерами, для получения допольнительной информации смотрите [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
+Для выполнения административных задач требуется аутентификация веб-интерфейса. Аутентифицируйте себя либо как `root`, либо убедитесь, что ваш пользователь входит в группу с полномочиями управления принтерами, для получения дополнительной информации смотрите [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
 
 	Добавление принтера
 
@@ -314,12 +320,65 @@ $ lpq -a # во всех очередях
 
 	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
 
-# См. также
+## Настройка
 
-*   [Официальная документация CUPS documentation](http://localhost:631/documentation.html), *локальная установка*
-*   [Официальный Веб-сайт CUPS](http://www.cups.org/)
-*   [Linux Printing](http://www.linuxprinting.org/), *[Linux Foundation](http://www.linuxfoundation.org)*
-*   [Руководство по печати в Gentoo](http://www.gentoo.org/doc/en/printing-howto.xml), *[Источники Документации Gentoo](http://www.gentoo.org/doc/en)*
-*   [Форум пользователей Arch Linux](https://bbs.archlinux.org/)
+Настройки сервера CUPS находятся в `/etc/cups/cupsd.conf` и `/etc/cups/cups-files.conf`. После редактирования любого из этих файлов, [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") `org.cups.cupsd.service`, чтобы применить произведенные изменения. Настройки по умолчанию подходят для большинства пользователей.
 
-*   [Простая установка принтеров HP](http://wiki.gotux.net/config/hp-printer)
+[Группы](/index.php/%D0%93%D1%80%D1%83%D0%BF%D0%BF%D1%8B "Группы") с привилегиями администрирования принтера определены в `SystemGroup` в `/etc/cups/cups-files.conf`. Группа `sys` используется по умолчанию.
+
+Пакет [cups](https://www.archlinux.org/packages/?name=cups) собран с поддержкой [libpaper](https://www.archlinux.org/packages/?name=libpaper) и значением по умолчанию для формата бумаги **Письмо** для файла libpaper. Чтобы избежать необходимости изменять размер бумаги для каждого принтера, отредактируйте `/etc/papersize` и задайте размер бумаги по умолчанию для вашей системы. Для получения дополнительной информации смотрите [papersize(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
+
+По умолчанию все журналы отправляются в файлы в `/var/log/cups/`. Изменив значения директив `AccessLog`, `ErrorLog` и `PageLog` в `/etc/cups/cups-files.conf` на `syslog`, то CUPS сможет отправлять логи в [журнал systemd](/index.php/%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB_systemd "Журнал systemd"). Смотрите [вики-страницу fedora](https://fedoraproject.org/wiki/Changes/CupsJournalLogging) для получения информации об исходном предлагаемом изменении.
+
+### cups-browsed
+
+CUPS может использовать [Avahi](/index.php/Avahi "Avahi") для обнаружения неизвестных общих принтеров в вашей сети. Это может быть полезно при больших настройках, где сервер неизвестен. Чтобы использовать эту функцию, настройте [разрешение .local hostname](/index.php/Avahi#Hostname_resolution "Avahi") и запустите службы `avahi-daemon.service` и `cups-browsed.service`. Задания отправляются непосредственно на принтер без какой-либо обработки, поэтому созданные очереди могут не работать, однако для принтеров, не требущих драйверов, такие как те, которые поддерживают [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) или [AirPrint](https://en.wikipedia.org/wiki/ru:AirPrint "w:ru:AirPrint") все должно работать из коробки.
+
+**Примечание:** Поиск сетевых принтеров [может значительно увеличить время, необходимое для загрузки вашего компьютера](https://bbs.archlinux.org/viewtopic.php?pid=1720219#p1720219).
+
+### Серверы печати и удаленное администрирование
+
+Для получения дополнительной информации смотрите [CUPS/Совместное использование принтеров](/index.php/CUPS/%D0%A1%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D0%BE%D0%B5_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BE%D0%B2 "CUPS/Совместное использование принтеров") и [CUPS/Printer sharing#Remote administration](/index.php/CUPS/Printer_sharing#Remote_administration "CUPS/Printer sharing").
+
+### Разрешение аутентификации администратора через PolicyKit
+
+[PolicyKit](/index.php/Polkit_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Polkit (Русский)") можно настроить так, чтобы пользователи могли настраивать принтеры с помощью графического интерфейса без пароля администратора.
+
+Вот пример, который позволяет членам [группы](/index.php/%D0%93%D1%80%D1%83%D0%BF%D0%BF%D1%8B "Группы") wheel управлять принтерами без пароля:
+
+ `/etc/polkit-1/rules.d/49-allow-passwordless-printer-admin.rules` 
+```
+polkit.addRule(function(action, subject) { 
+    if (action.id == "org.opensuse.cupspkhelper.mechanism.all-edit" && 
+        subject.isInGroup("wheel")){ 
+        return polkit.Result.YES; 
+    } 
+});
+```
+
+### Без локального сервера CUPS
+
+CUPS можно настроить для прямого подключения к удаленным серверам принтеров вместо запуска локального сервера печати. Для этого потребуется [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [libcups](https://www.archlinux.org/packages/?name=libcups). Некоторым приложениям по-прежнему потребуется пакет [cups](https://www.archlinux.org/packages/?name=cups) для печати.
+
+**Важно:** Доступ к удаленным принтерам без локального сервера CUPS не рекомендуется разработчиками. [[4]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+
+Чтобы использовать удаленный сервер CUPS, установите [переменную окружения](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F "Переменные окружения") `CUPS_SERVER` в `printerserver.mydomain:port`. Например, если вы хотите использовать другой сервер печати для одного экземпляра [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") (замените `printserver.mydomain:port` на имя/порт своего сервера печати):
+
+```
+$ CUPS_SERVER=printserver.mydomain:port firefox
+
+```
+
+## Исправление проблем
+
+Для получения дополнительной информации смотрите [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting").
+
+# Смотрите также
+
+*   [Официальная документация CUPS documentation](http://localhost:631/help), *локальная установка*
+*   [Википедия:Common UNIX Printing System](https://en.wikipedia.org/wiki/ru:Common_UNIX_Printing_System "w:ru:Common UNIX Printing System")
+*   [Домашняя страница OpenPrinting](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
+*   [Руководство по печати OpenSuSE Concepts - объясняет полный рабочий процесс печати](https://en.opensuse.org/Concepts_printing)
+*   [OpenSuSE CUPS в двух словах - быстрый обзор CUPS](https://en.opensuse.org/SDB:CUPS_in_a_Nutshell)
+*   [Руководство по печати Gentoo](https://wiki.gentoo.org/wiki/Printing/ru)
+*   [Портал печати Debian - подробные технические руководства](https://wiki.debian.org/Printing "debian:Printing")
