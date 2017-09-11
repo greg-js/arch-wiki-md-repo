@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+
 Los poseedores de tarjetas gráficas **ATI/AMD** pueden elegir entre el [controlador privativo](/index.php/ATI_Catalyst_(Espa%C3%B1ol) "ATI Catalyst (Español)") de AMD ([catalyst](https://aur.archlinux.org/packages/catalyst/)) y el controlador de código abierto ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). Este artículo trata sobre el controlador de código abierto.
 
 El controlador libre no está *a la par* con el controlador propietario en términos de rendimiento 3D en las nuevas tarjetas ni tiene soporte tan fiable para la salida de TV. Sin embargo, ofrece un mejor apoyo dual-head, aceleración 2D excelente, y proporciona suficiente aceleración 3D necesaria para algunos [gestores de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") que aprovechan la aceleración OpenGl, tal como [Compiz](/index.php/Compiz "Compiz") o KWin.
@@ -187,7 +192,7 @@ Por otra parte, también se puede hacer con una opción modprobe en `/etc/modpro
 
 ```
 
-**Para más información y otras opciones, lea la página de manual radeon y la página de módulos info**: `man radeon`, `modinfo radeon`.
+**Para más información y otras opciones, lea la página de manual radeon y la página de módulos info**: [radeon(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/radeon.4), `modinfo radeon`.
 
 Un buena herramienta para probar es [driconf](https://www.archlinux.org/packages/?name=driconf). Esto le permitirá modificar varias configuraciones, como vsync, filtrado anisotrópico, compresión de texturas, etc. Con esta herramienta es posible deshabilitar «Low Impact fallback», necesario para algunos programas (por ejemplo, Google Earth).
 

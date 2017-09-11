@@ -145,7 +145,7 @@ nameserver 77.88.8.3
 
 ### Utilizar openresolv
 
-[openresolv](https://www.archlinux.org/packages/?name=openresolv) proporciona una utilidad *resolvconf* , que es una infraestructura para la gestión de múltiples configuraciones DNS. Vea `man 8 resolvconf` y `man 5 resolvconf.conf` para obtener más información.
+[openresolv](https://www.archlinux.org/packages/?name=openresolv) proporciona una utilidad *resolvconf* , que es una infraestructura para la gestión de múltiples configuraciones DNS. Vea [resolvconf(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.8) y [resolvconf.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolvconf.conf.5) para obtener más información.
 
 La configuración se realiza en `/etc/resolvconf.conf`, que al ejecutar `resolvconf -u` generará `/etc/resolv.conf`.
 

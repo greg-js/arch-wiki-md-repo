@@ -1,3 +1,11 @@
+相关文章
+
+*   [Display manager (简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
+*   [Start X at Login (简体中文)](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")
+*   [Xorg_(简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+*   [Xprofile_(简体中文)](/index.php/Xprofile_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xprofile (简体中文)")
+*   [Xresources](/index.php/Xresources "Xresources")
+
 **翻译状态：** 本文是英文页面 [Xinitrc](/index.php/Xinitrc "Xinitrc") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Xinitrc&diff=0&oldid=442881)可以查看翻译后英文页面的改动。
 
 `~/.xinitrc` 文件是 `xinit` 和它的前端 `startx` 第一次启动时会读取的脚本。通常用在启动 X 时执行[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 和其他程序，例如启动守护进程和设置环境变量。`xinit`程序用来启动[X窗口系统](/index.php/Xorg "Xorg")，是不使用[显示管理器](/index.php/Display_manager "Display manager")时的第一个客户端。
@@ -42,7 +50,7 @@ exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
 
 ### xinitrc
 
-如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 `man 1 xinit`。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
+如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 [xinit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1)。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
 
 ```
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -172,7 +180,7 @@ Note that the full path is **required**. Optionally, you can also specify custom
 
 ```
 
-参阅 `man startx`.
+参阅 [startx(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
 ### Making a DE/WM choice
 

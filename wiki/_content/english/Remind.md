@@ -38,7 +38,7 @@ REM December 25 +30 MSG Christmas
 
 The last particular day of a month is given by subtracting 7 days from the first day of the next month. The `+` symbol tells remind to start reminding that number of days ahead.
 
-See also `remind(1)` [man page](/index.php/Man_page "Man page") for detailed information about configuring *remind*.
+See also [remind(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/remind.1) [man page](/index.php/Man_page "Man page") for detailed information about configuring *remind*.
 
 ### Include
 
@@ -85,4 +85,4 @@ The `-p` option makes *remind* print output suitable for *rem2ps*. *rem2ps* by d
 
 ## See also
 
-*   [remind(1)](http://linux.die.net/man/1/remind) — man page on die.net
+*   [remind(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/remind.1) man page

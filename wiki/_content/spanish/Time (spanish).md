@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Network Time Protocol daemon (Español)](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)")
+
 En un sistema operativo, el reloj (*«clock»*) está determinado por cuatro partes: el valor del horario, la hora estándar, la zona horaria y el horario de verano (-DST- **D**aylight **S**aving **T**ime, si corresponde). En este artículo se explica qué son y cómo leer/configurar los mismos. Para *mantener* la hora del sistema ajustada mediante la red consulte [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)").
 
 ## Contents
@@ -156,7 +160,7 @@ He aquí un ejemplo:
 
 Esto creará un enlace simbólico `/etc/localtime` que apunta a un archivo de información de zonas en `/usr/share/zoneinfo/`. En caso de que decida crear el enlace manualmente, tenga en cuenta que debe ser un enlace relativo, no absoluto, como se especifica en archlinux(7).
 
-Véase `man 1 timedatectl`, `man 5 localtime`, y `man 7 archlinux` para más detalles.
+Véase [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5), y [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para más detalles.
 
 **Nota:** Si el archivo de configuración `/etc/timezone` anterior a la instalación de systemd todavía está presente en su sistema, puede eliminarlo de forma segura, puesto que ya no se utilizará.
 

@@ -49,9 +49,7 @@ Create `~/.config/bspwm/` and `~/.config/sxhkd/`, then copy `/usr/share/doc/bspw
 
 These two files are where you will be setting wm settings and keybindings, respectively. See [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations") for annotated examples.
 
-Documentation for bspwm is found by running `man bspwm`.
-
-There is also documentation for sxhkd found by running `man sxhkd`.
+See also the [bspwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) and [sxhkd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1) manuals for detailed documentation.
 
 #### Note for multi-monitor setups
 
@@ -98,7 +96,7 @@ If a particular window does not seem to be behaving according to your rules, che
 
 #### Using lemonbar
 
-An example panel for [lemonbar](https://aur.archlinux.org/packages/lemonbar/) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](/index.php/Lemonbar "Lemonbar") wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
+An example panel for [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](/index.php/Lemonbar "Lemonbar") wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
 
 To display system information on your status bar you can use various system calls. This example will show you how to edit your `panel` to get the volume status on your BAR:
 

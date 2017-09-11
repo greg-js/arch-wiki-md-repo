@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Configuring Network (Italiano)](/index.php/Configuring_Network_(Italiano) "Configuring Network (Italiano)")
+*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet Share (Italiano)](/index.php/Internet_Share_(Italiano) "Internet Share (Italiano)")
+
 La configurazione dei dispositivi wireless è un processo suddiviso in due parti: innanzitutto occorre identificare la propria scheda di rete wireless e assicurarsi che i relativi driver (reperibili sull'immagine di installazione) siano caricati, quindi occorre configurarla. La seconda parte consiste nella scelta di un metodo di gestione delle connessioni wireless. Questa pagina coprirà entrambi i punti e fornirà link aggiuntivi ai vari tool di gestione.
 
 ## Contents
@@ -734,7 +741,7 @@ Alcuni utenti potrebbero dover specificare l'opzione `countrycode` al caricament
 
 ```
 
-Si possono verificare le impostazioni con il comando {{ic|iwlist}. Si veda `man iwlist` e la [pagina](http://madwifi-project.org/wiki/UserDocs/CountryCode) relativa ai CountryCode sul wiki di MadWifi. Per applicare queste impostazioni automaticamente al boot, si aggiunga la seguente riga ad `/etc/modprobe.d/modprobe.conf`:
+Si possono verificare le impostazioni con il comando {{ic|iwlist}. Si veda [iwlist(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iwlist.8) e la [pagina](http://madwifi-project.org/wiki/UserDocs/CountryCode) relativa ai CountryCode sul wiki di MadWifi. Per applicare queste impostazioni automaticamente al boot, si aggiunga la seguente riga ad `/etc/modprobe.d/modprobe.conf`:
 
 ```
 options ath_pci countrycode=528

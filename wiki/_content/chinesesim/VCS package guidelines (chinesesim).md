@@ -46,7 +46,7 @@ The [ABS](/index.php/ABS "ABS") package provides prototypes for [cvs](/index.php
 
 ### VCS sources
 
-**Note:** Pacman 4.1 supports the following VCS sources: `bzr`, `git`, `hg` and `svn`. See the `fragment` section of `man PKGBUILD` or [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) for a list of supported VCS.
+**Note:** Pacman 4.1 supports the following VCS sources: `bzr`, `git`, `hg` and `svn`. See the `fragment` section of [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) or [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html) for a list of supported VCS.
 
 Starting with [pacman](https://www.archlinux.org/packages/?name=pacman) 4.1, the VCS sources should be specified in the `source=()` array and will be treated like any other source. `makepkg` will clone/checkout/branch the repo into `$SRCDEST` (same as `$startdir` if not set in [makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html)) and copy it to `$srcdir` (in a specific way to each VCS). The local repo is left untouched, thus invalidating the need for a `-build` directory.
 

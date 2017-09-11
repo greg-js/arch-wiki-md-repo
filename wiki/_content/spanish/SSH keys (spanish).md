@@ -226,7 +226,7 @@ a su `.bashrc` o `.bash_profile`.
 
 **Tip:** Si quiere mayor seguridad reemplace -Q con --clear pero es menos conveniente.
 
-Si es necesario, reemplace `~/.ssh/id_dsa` con `~/.ssh/id_rsa`. Para aquellos que usan una shell que no es Bash, vean`keychain --help` o `man keychain` para detalles en otras Shells.
+Si es necesario, reemplace `~/.ssh/id_dsa` con `~/.ssh/id_rsa`. Para aquellos que usan una shell que no es Bash, vean`keychain --help` o [keychain(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/keychain.1) para detalles en otras Shells.
 
 Cierre su shell y vuélvala a abrir, Keychain deberá aparecer y si es la primera vez que corre, le preguntara por la frase-de-paso de la llave privada especificada.
 

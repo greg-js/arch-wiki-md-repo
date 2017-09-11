@@ -1,3 +1,12 @@
+Artículos relacionados
+
+*   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
+*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
+*   [Xrandr](/index.php/Xrandr "Xrandr")
+*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
+
 Desde que Intel desarrolla y proporciona controladores de código abierto, las tarjetas de vídeo Intel son esencialmente plug-and-play.
 
 Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs correspondientes, consulte [esta comparación en la wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
@@ -44,7 +53,7 @@ La aceleración de vídeo por hardware para codificar/decodificar en las GPU má
 
 No necesita ningún tipo de configuración para hacer funcionar Xorg (el archivo `xorg.conf` no es necessario, pero tiene que estar configurado correctamente si está presente).
 
-Para ver la lista de opciones, escriba `man intel`
+Para ver la lista de opciones, escriba [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4)
 
 ## KMS (Kernel Mode Setting)
 

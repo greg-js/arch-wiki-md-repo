@@ -307,7 +307,7 @@ $ setfont
 
 ### 持續性的設定
 
-`/etc/vconsole.conf` 的 `FONT` 用來在開機時設定字型，對於所有的虛擬終端機都是固定的，詳情請參見 `man 5 vconsole.conf` 的說明。
+`/etc/vconsole.conf` 的 `FONT` 用來在開機時設定字型，對於所有的虛擬終端機都是固定的，詳情請參見 [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) 的說明。
 
 若要顯示 *Č, ž, đ, š* 或 *Ł, ę, ą, ś* 之類的字元，使用 `lat2-16.psfu.gz` 這個字型：
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
+
 A proxy is "an interface for a service, especially for one that is remote, resource-intensive, or otherwise difficult to use directly". Source: [Proxy - Wiktionary](http://en.wiktionary.org/wiki/proxy).
 
 ## Contents
@@ -193,7 +197,7 @@ proxychains <program>
 
 Where <program> can be any program already installed on your system (e.g. xterm, gnome-terminal, etc).
 
-If using *tsocks*, the configuration takes place in `/etc/tsocks.conf`. See `man 5 tsocks.conf` for the options. An example minimum configuration looks like this:
+If using *tsocks*, the configuration takes place in `/etc/tsocks.conf`. See [tsocks.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tsocks.conf.5) for the options. An example minimum configuration looks like this:
 
  `/etc/tsocks.conf` 
 ```

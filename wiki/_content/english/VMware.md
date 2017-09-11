@@ -467,8 +467,6 @@ An easier workaround is to make VMWare use the system's version of zlib instead 
 
 #### vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5
 
-**Note:** Use this is not required on version 12.5.6, but a workaround may be necessary for 12.5.7\. See below.
-
 It seems to be a problem with the file `/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6`, missing `CXXABI_1.3.8`.
 
 If the system have installed [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) or [gcc-libs-multilib](https://www.archlinux.org/packages/?name=gcc-libs-multilib), that library is already installed. Therefore, it's possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:

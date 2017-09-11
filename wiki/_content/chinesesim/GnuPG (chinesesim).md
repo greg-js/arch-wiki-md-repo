@@ -1,3 +1,9 @@
+Related articles
+
+*   [pacman/Package signing (简体中文)](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Package signing (简体中文)")
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
+
 **翻译状态：** 本文是英文页面 [GnuPG](/index.php/GnuPG "GnuPG") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-27，点击[这里](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=441685)可以查看翻译后英文页面的改动。
 
 根据 [官方网站](http://www.gnupg.org):
@@ -380,7 +386,7 @@ Starting with GnuPG 2.1.0 the use of *gpg-agent* is required. *gpg-agent* is sta
 
 ### Configuration
 
-gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in `man gpg-agent`. For example you can change cache ttl for unused keys:
+gpg-agent can be configured via `~/.gnupg/gpg-agent.conf` file. The configuration options are listed in [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example you can change cache ttl for unused keys:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
@@ -522,7 +528,7 @@ fi
 *   If you use non-default GnuPG [#Directory location](#Directory_location), run `gpgconf --create-socketdir` to create a socket directory under `/run/user/$UID/gnupg/`. Otherwise the socket will be placed in the GnuPG home directory.
 *   The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[3]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
-Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in `man gpg-agent`. For example:
+Also set the GPG_TTY and refresh the TTY in case user has switched into an X session as stated in [gpg-agent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1). For example:
 
  `~/.bashrc` 
 ```
@@ -577,7 +583,7 @@ disable-ccid
 
 ```
 
-Please check `man scdaemon` if you do not use OpenSC.
+Please check [scdaemon(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) if you do not use OpenSC.
 
 ## 使用技巧
 

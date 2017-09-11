@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
+*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
+*   [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)")
+
 Da quando Intel fornisce e sviluppa driver open source, le schede video Intel sono essenzialmente plug-and-play.
 
 Per un elenco completo dei modelli GPU-Intel e dei corrispondenti chipset e CPU, si veda [questo confronto su wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
@@ -42,7 +48,7 @@ L'accelerazione hardware video di decodifica/codifica sulle vecchie GPU è forni
 
 Non è necessario alcun tipo di configurazione per far funzionare Xorg (il file `xorg.conf` non è necessario ma ha bisogno di essere configurato correttamente se presente).
 
-Per una lista delle opzioni eseguire `man intel`.
+Per una lista delle opzioni eseguire [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4).
 
 ## KMS (Kernel Mode Setting)
 

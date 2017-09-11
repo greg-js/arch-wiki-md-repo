@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [ranger](/index.php/Ranger "Ranger")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander"). Дата последней синхронизации: 10 сентября 2015‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Midnight_Commander&diff=0&oldid=399096).
 
 [Midnight Commander](https://en.wikipedia.org/wiki/ru:Midnight_Commander "wikipedia:ru:Midnight Commander") — графический файловый менеджер, позволяющий копировать, перемещать и удалять файлы и деревья каталогов, производить поиск по файлам и запускать команды в командной оболочке. Он включает в себя встроенный просмотрщик и редактор файлов.
@@ -44,7 +49,7 @@ Midnight Commander имеет графический интерфейс, кот�
 
 ## Usage
 
-The below section provides a short overview on usage of Midnight commander. References to `man mc` and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
+The below section provides a short overview on usage of Midnight commander. References to mc(1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
 
 **Tip:** All hints are available in `/usr/share/mc/hints/`.
 
@@ -60,7 +65,7 @@ Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs
 
 These can be called via the *mc* interface (with *Use internal* enabled in `F9 > Options > Configuration`), or separately as symbolic links to the *mc* binary.
 
-*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see `man mcedit`
+*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see [mcedit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcedit.1)
 *   *mcview* - Text and hex viewer with goto marks and regex search
 *   *mcdiff* - Compares and edits two files in-place (`C-x d`)
 
@@ -96,7 +101,7 @@ export MC_KEYMAP=/etc/mc/mc.emacs.keymap
 
 ```
 
-Смотрите также `man 1 mc` для получения более подробной информации.
+Смотрите также mc(1) для получения более подробной информации.
 
 ### Навигация стрелками
 
@@ -207,7 +212,7 @@ export MC_XDG_OPEN=~/bin/xdg-open-null
 
 ### Find file shows no results
 
-If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see `man mount`) instead, or the *External panelize* command.
+If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see [mount(2)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.2)) instead, or the *External panelize* command.
 
 ## Смотрите также
 

@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Boot Debugging (Italiano)](/index.php/Boot_Debugging_(Italiano) "Boot Debugging (Italiano)")
+*   [Kernels (Italiano)](/index.php/Kernels_(Italiano) "Kernels (Italiano)")
+*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
+
 I moduli del [kernel](https://en.wikipedia.org/wiki/it:Kernel "wikipedia:it:Kernel") sono file di codice che possono essere caricati e rimossi dal kernel su richiesta. Essi estendono le funzionalità del kernel senza bisogno di riavviare il sistema. In questo articolo saranno approfonditi i metodi per la gestione dei moduli del kernel.
 
 ## Contents
@@ -84,7 +90,7 @@ I moduli extra al kernel da caricare durante il boot sono configurati in una lis
 virtio-net
 ```
 
-vedere `man 5 modules-load.d` per maggiori dettagli.
+vedere [modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) per maggiori dettagli.
 
 ### Impostazione delle opzioni
 

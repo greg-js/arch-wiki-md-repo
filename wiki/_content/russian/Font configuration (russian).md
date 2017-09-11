@@ -1,3 +1,13 @@
+Related articles
+
+*   [Шрифты](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B "Шрифты")
+*   [Настройка шрифтов/Примеры](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "Настройка шрифтов/Примеры")
+*   [Infinality (Русский)](/index.php/Infinality_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Infinality (Русский)")
+*   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
+*   [Шрифты Microsoft](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B_Microsoft "Шрифты Microsoft")
+*   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
+*   [Шрифты окружения Java Runtime](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_Java_Runtime "Шрифты окружения Java Runtime")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Font configuration](/index.php/Font_configuration "Font configuration"). Дата последней синхронизации: 7 Декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=455396).
 
 [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) - это библиотека, разработанная для предоставления списка доступных [шрифтов](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fonts (Русский)") приложениям, а также для настройки того, как шрифты будут отображены: смотрите [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig"). Библиотека FreeType [freetype2](https://www.archlinux.org/packages/?name=freetype2) отображает (рендерит) шрифты, основываясь на этих настройках.
@@ -50,7 +60,7 @@ $ fc-list : file
 
 ```
 
-Для больших выводных форматов, смотрите `man fc-list`.
+Для больших выводных форматов, смотрите [fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1).
 
 Проверьте известные пути шрифтов Xorg, посмотрев свой журнал:
 

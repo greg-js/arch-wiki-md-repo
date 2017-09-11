@@ -1,3 +1,14 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Openbox](/index.php/Openbox "Openbox")
+*   [PCManFM](/index.php/PCManFM "PCManFM")
+*   [LXDM](/index.php/LXDM "LXDM")
+*   [LXQt](/index.php/LXQt "LXQt")
+*   [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality")
+
 From project [home page](http://lxde.org/):
 
 	*The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers.*
@@ -127,7 +138,7 @@ LXAppearance, provided by the [lxappearance](https://www.archlinux.org/packages/
 
 ### Digital clock applet time
 
-You can right click on the digital clock applet on the panel and set how it displays the current time using the strftime format - see [man strftime](http://linux.die.net/man/3/strftime) for details.
+You can right click on the digital clock applet on the panel and set how it displays the current time using the strftime format - see [strftime(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) for details.
 
 ### Font settings
 

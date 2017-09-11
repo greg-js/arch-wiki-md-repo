@@ -1018,7 +1018,7 @@ $ pulseaudio --start
 
 *   Чтобы получить подробную информацию о недавно появившихся незаписанных ошибок или просто получить статус демона, используйте команду `pax11publish -d` и `pulseaudio -v` где `v` опция может быть использована для многократно установления подробности вывода журнала, равное `--log-level[=LEVEL]` опции где LEVEL от 0 до 4\. Смотрите раздел [#Вывод статуса ошибок PulseAudio утилитами проверки](#.D0.92.D1.8B.D0.B2.D0.BE.D0.B4_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.B0_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_PulseAudio_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D0.B0.D0.BC.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8).
 
-Для больших подробностей смотрите страницу справки [pax11publish](http://linux.die.net/man/1/pax11publish) и [pulseaudio](http://linux.die.net/man/1/pulseaudio).
+Для больших подробностей смотрите страницу справки [pax11publish(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) и [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1).
 
 #### Вывод статуса ошибок PulseAudio утилитами проверки
 
@@ -1059,7 +1059,7 @@ fs.inotify.max_user_watches = 100000
 
 *   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about *inotify/max_user_watches*
 *   [reasonable amount of inotify watches with Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
-*   [inotify](http://linux.die.net/man/7/inotify) - man page
+*   [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - man page
 
 ### Демон уже запущен
 

@@ -56,7 +56,7 @@ tmpfs                  /tmp          tmpfs     nodev,nosuid          0      0
 *   **<file systems>** - 要挂载的分区或存储设备.
 *   **<dir>** - <file systems>的挂载位置。
 *   **<type>** - 要挂载设备或是分区的文件系统类型，支持许多种不同的文件系统：`ext2`, `ext3`, `ext4`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` 及 `auto`。 设置成`auto`类型，mount 命令会猜测使用的文件系统类型，对 CDROM 和 DVD 等移动设备是非常有用的。
-*   **<options>** - 挂载时使用的参数，注意有些[mount 参数](http://linux.die.net/man/8/mount)是特定文件系统才有的。一些比较常用的参数有：
+*   **<options>** - 挂载时使用的参数，注意有些 参数是特定文件系统才有的。一些比较常用的参数有 ([mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8))：
 
 *   `auto` - 在启动时或键入了 `mount -a` 命令时自动挂载。
 *   `noauto` - 只在你的命令下被挂载。

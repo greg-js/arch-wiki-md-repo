@@ -85,7 +85,7 @@ This configuration sets SFQ on the root on the eth0 device, configuring it to pe
 
 Since systemd 217, fq_codel is the default. [CoDel](https://en.wikipedia.org/wiki/CoDel "wikipedia:CoDel") (Controlled Delay) is an attempt to limit buffer bloating and minimize latency in saturated network links by distinguishing good queues (that empty quickly) from bad queues that stay saturated and slow. The [fair queueing](https://en.wikipedia.org/wiki/Fair_queueing "wikipedia:Fair queueing") Codel utilizes fair queues to more readily distribute available bandwidth between Codel flows. The configuration options are limited intentionally, since the algorithm is designed to work with dynamic networks, and there are some corner cases to consider that are discussed on the [bufferbloat wiki concerning Codel](http://www.bufferbloat.net/projects/codel/wiki), including issues on very large switches and sub megabit connections.
 
-Additional information is available via the `man tc-codel` and `man tc-fq_codel`.
+Additional information is available via the [tc-codel(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tc-codel.8) and [tc-fq_codel(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tc-fq_codel.8).
 
 **Warning:** Make sure your ethernet driver supports Byte Queue Limits before using CoDel. [Here is a list of drivers supported as of kernel 3.6](http://www.bufferbloat.net/projects/bloat/wiki/BQL_enabled_drivers)
 

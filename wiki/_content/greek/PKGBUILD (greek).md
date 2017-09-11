@@ -1,3 +1,10 @@
+Σχετικά άρθρα
+
+*   [Arch Packaging Standards](/index.php/Arch_Packaging_Standards "Arch Packaging Standards")
+*   [Creating Packages](/index.php/Creating_Packages "Creating Packages")
+*   [Custom local repository](/index.php/Custom_local_repository "Custom local repository")
+*   [pacman Tips](/index.php/Pacman_Tips "Pacman Tips")
+
 Το **PKGBUILD** είναι το αρχείο περιγραφής της διαδικασίας [δημιουργίας πακέτων](/index.php/Creating_packages "Creating packages") του [Arch Linux](/index.php/Arch_Linux "Arch Linux").
 
 Τα πακέτα στο Arch Linux δημιουργούνται με το εργαλείο [makepkg](/index.php/Makepkg "Makepkg") και οι πληροφορίες για τη δημιουργία τους βρίσκονται στο αρχείο PKGBUILD. Όταν εκτελείται η εντολή **makepkg**, το πρόγραμμα ψάχνει για ένα αρχείο `PKGBUILD` στον τρέχον κατάλογο και ακολουθεί τις οδηγίες είτε για την μεταγλώττιση είτε για την ανάκτηση των αρχείων που απαιτούνται για τη δημιουργία του πακέτου (`*pkgname*.pkg.tar.xz`) το οποίο τελικά θα περιέχει όλα τα binary αρχεία καθώς και τις οδηγίες εγκατάστασης και μπορεί πλέον να εγκατασταθεί απευθείας μέσω του [pacman](/index.php/Pacman "Pacman").
@@ -234,11 +241,11 @@ noextract=(${source[@]##*/})
 
 ### sha1sums
 
-Μια σειρά από SHA-1 160-bit checksums. Αποτελεί εναλλακτικό των `md5sums` που περιγράφονται παραπάνω, όμως είναι επίσης γνωστό ότι έχει αδυναμίες, οπότε θα πρέπει να σκεφτείτε την χρήση ενός ισχυρότερου εναλλακτικού. Για να ενεργοποιήσετε την χρήση και την παραγωγή αυτών των checksums, σιγουρευτείτε ότι ρυθμίσατε την επιλογή `INTEGRITY_CHECK` στο αρχείο `/etc/makepkg.conf`. Δείτε τις σελίδες `man makepkg.conf`.
+Μια σειρά από SHA-1 160-bit checksums. Αποτελεί εναλλακτικό των `md5sums` που περιγράφονται παραπάνω, όμως είναι επίσης γνωστό ότι έχει αδυναμίες, οπότε θα πρέπει να σκεφτείτε την χρήση ενός ισχυρότερου εναλλακτικού. Για να ενεργοποιήσετε την χρήση και την παραγωγή αυτών των checksums, σιγουρευτείτε ότι ρυθμίσατε την επιλογή `INTEGRITY_CHECK` στο αρχείο `/etc/makepkg.conf`. Δείτε τις σελίδες [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 ### sha256sums, sha384sums, sha512sums
 
-Μια σειρά από SHA-2 checksums με ακολουθίες των 256, 384 και 512 bits αντίστοιχα. Αποτελούν εναλλακτικές των `md5sums` που περιγράφηκαν παραπάνω και γενικά πιστεύεται ότι είναι ισχυρότερες. Για να ενεργοποιήσετε την χρήση και την παραγωγή αυτών των checksums, σιγουρευτείτε ότι ρυθμίσατε την επιλογή `INTEGRITY_CHECK` στο αρχείο `/etc/makepkg.conf`. Δείτε τις σελίδες man `man makepkg.conf`.
+Μια σειρά από SHA-2 checksums με ακολουθίες των 256, 384 και 512 bits αντίστοιχα. Αποτελούν εναλλακτικές των `md5sums` που περιγράφηκαν παραπάνω και γενικά πιστεύεται ότι είναι ισχυρότερες. Για να ενεργοποιήσετε την χρήση και την παραγωγή αυτών των checksums, σιγουρευτείτε ότι ρυθμίσατε την επιλογή `INTEGRITY_CHECK` στο αρχείο `/etc/makepkg.conf`. Δείτε τις σελίδες man [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 ## Δείτε επίσης
 

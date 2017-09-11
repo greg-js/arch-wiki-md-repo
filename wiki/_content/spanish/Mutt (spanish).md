@@ -276,7 +276,7 @@ Sin importar si usa POP o IMAP para recibir correo probablemente enviará correo
 
 #### Usando el soporte nativo de SMTP
 
-La version pacman de Mutt está compilada con soporte de SMTP. Consulte el manual en línea `man muttrc` para mayor información.
+La version pacman de Mutt está compilada con soporte de SMTP. Consulte el manual en línea [muttrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) para mayor información.
 
 Por ejemplo:
 

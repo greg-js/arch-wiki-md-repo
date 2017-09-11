@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Daemon](/index.php/Daemon "Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-01-03，点击[这里](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=236086)可以查看翻译后英文页面的改动。
 
-**守护进程**（daemon），指后台运行的、等待特定事件发生并提供服务的程序。典型的例子如网页服务器，等待网页传输请求并提供传输服务；又如ssh服务器，等待用户登入操作。许多守护进程提供**不可见的服务**，比如记录日志（syslog，metalog）、校准时间（ntpd）。详情见手册: `man 7 daemon`
+**守护进程**（daemon），指后台运行的、等待特定事件发生并提供服务的程序。典型的例子如网页服务器，等待网页传输请求并提供传输服务；又如ssh服务器，等待用户登入操作。许多守护进程提供**不可见的服务**，比如记录日志（syslog，metalog）、校准时间（ntpd）。详情见手册: [daemon(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7)
 
 尽管实际意义有所不同，守护进程也可以叫做**系统服务**。实际上，后者似乎是个更好理解的名称。
 

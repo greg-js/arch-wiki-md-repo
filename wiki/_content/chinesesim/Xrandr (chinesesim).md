@@ -149,7 +149,7 @@ EndSection
 
 ```
 
-关于更多的配置细节，请阅读[Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")或`man xorg.conf`。
+关于更多的配置细节，请阅读[Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")或[xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5)。
 
 ### 在xprofile设定xrandr命令
 

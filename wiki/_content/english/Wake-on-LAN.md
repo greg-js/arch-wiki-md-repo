@@ -83,7 +83,7 @@ WakeOnLan=magic
 
 **Note:** This configuration applies only to the link-level, and is independent of network-level daemons such as [NetworkManager](/index.php/NetworkManager "NetworkManager") or [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
 
-See [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") and `man systemd.link` for more information.
+See [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") and [systemd.link(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for more information.
 
 #### systemd service
 

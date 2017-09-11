@@ -1,3 +1,8 @@
+相关文章
+
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+
 **翻译状态：** 本文是英文页面 [Iptables](/index.php/Iptables "Iptables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=266924)可以查看翻译后英文页面的改动。
 
 *iptables* 是一个配置 Linux 内核 [防火墙](/index.php/Firewall "Firewall") 的命令行工具，是 [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") 项目的一部分。术语 *iptables* 也经常代指该内核级防火墙。iptables 可以直接配置，也可以通过许多 [前端](/index.php/Firewalls#iptables_front-ends "Firewalls") 和 [图形界面](/index.php/Firewall#iptables_GUIs "Firewall") 配置。iptables 用于 [ipv4](https://en.wikipedia.org/wiki/Ipv4 "wikipedia:Ipv4")，*ip6tables* 用于 [ipv6](https://en.wikipedia.org/wiki/Ipv6 "wikipedia:Ipv6")。
@@ -93,7 +98,7 @@ iptables 包含 5 张表（tables）:
 
 表由链组成，链是一些按顺序排列的规则的列表。默认的 `filter` 表包含 `INPUT`， `OUTPUT` 和 `FORWARD` 3条内建的链，这3条链作用于数据包过滤过程中的不同时间点，如该[流程图](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg)所示。`nat` 表包含`PREROUTING`， `POSTROUTING` 和 `OUTPUT` 链。
 
-使用 `man 8 iptables` 查看其他表中内建链的描述。
+使用 [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) 查看其他表中内建链的描述。
 
 默认情况下，任何链中都没有规则。可以向链中添加自己想用的规则。链的默认规则通常设置为 `ACCEPT`，如果想确保任何包都不能通过规则集，那么可以重置为 `DROP`。默认的规则总是在一条链的最后生效，所以在默认规则生效前数据包需要通过所有存在的规则。
 
@@ -103,7 +108,7 @@ iptables 包含 5 张表（tables）:
 
 数据包的过滤基于 **规则**。**规则**由一个*目标*（数据包包匹配所有条件后的动作）和很多*匹配*（导致该规则可以应用的数据包所满足的条件）指定。一个规则的典型匹配事项是数据包进入的端口（例如：eth0 或者 eth1）、数据包的类型（ICMP, TCP, 或者 UDP）和数据包的目的端口。
 
-目标使用 `-j` 或者 `--jump` 选项指定。目标可以是用户定义的链（例如，如果条件匹配，跳转到之后的用户定义的链，继续处理）、一个内置的特定目标或者是一个目标扩展。内置目标是 `ACCEPT`， `DROP`， `QUEUE` 和 `RETURN`，目标扩展是 `REJECT` and `LOG`。如果目标是内置目标，数据包的命运会立刻被决定并且在当前表的数据包的处理过程会停止。如果目标是用户定义的链，并且数据包成功穿过第二条链，目标将移动到原始链中的下一个规则。目标扩展可以被*终止*（像内置目标一样）或者*不终止*（像用户定义链一样）。详细信息参阅 `man 8 iptables-extensions`。
+目标使用 `-j` 或者 `--jump` 选项指定。目标可以是用户定义的链（例如，如果条件匹配，跳转到之后的用户定义的链，继续处理）、一个内置的特定目标或者是一个目标扩展。内置目标是 `ACCEPT`， `DROP`， `QUEUE` 和 `RETURN`，目标扩展是 `REJECT` and `LOG`。如果目标是内置目标，数据包的命运会立刻被决定并且在当前表的数据包的处理过程会停止。如果目标是用户定义的链，并且数据包成功穿过第二条链，目标将移动到原始链中的下一个规则。目标扩展可以被*终止*（像内置目标一样）或者*不终止*（像用户定义链一样）。详细信息参阅 [iptables-extensions(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8)。
 
 ### 遍历链 （Traversing Chains）
 

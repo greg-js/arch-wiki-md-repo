@@ -82,7 +82,7 @@ Per vedere lo stato della sincronizzazione NTP, si visiti `/var/log/daemon.log` 
 
 OpenNTPD aggiusta l'orologio con piccole variazioni alla volta. Ciò è stato fatto per evitare improvvisi, grandi fluttuazioni di tempo nel proprio sistema, che potrebbero comportare problemi a servizi di sistema (ad esempio, quelli relativi a cron). Perciò, ci può volere un pò prima di correggere l'orario.
 
-Se l'orologio non è funzionante per più di 180 secondi si può provare con "`ntpd -s -d`" lanciato in una console. Se ntpd è già avviato, si può semplicemente riavviarlo con `sudo /etc/rc.d/openntpd restart`, dal momento che il pacchetto Arch di openntpd usa la variabile "-s" di base. Si veda `man ntpd` per maggiori informazioni. Si può anche impostare l'[orologio di sistema](/index.php/Time#Time_Set "Time") il più vicino possibile all'ora attuale e quindi permettere a OpenNTPD di completare la sintonizzazione del tempo.
+Se l'orologio non è funzionante per più di 180 secondi si può provare con "`ntpd -s -d`" lanciato in una console. Se ntpd è già avviato, si può semplicemente riavviarlo con `sudo /etc/rc.d/openntpd restart`, dal momento che il pacchetto Arch di openntpd usa la variabile "-s" di base. Si veda [ntpd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntpd.1) per maggiori informazioni. Si può anche impostare l'[orologio di sistema](/index.php/Time#Time_Set "Time") il più vicino possibile all'ora attuale e quindi permettere a OpenNTPD di completare la sintonizzazione del tempo.
 
 ## Rendere openntpd dipendente dall'accesso al network
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Backup programs](/index.php/Backup_programs "Backup programs")
+*   [rsync](/index.php/Rsync "Rsync")
+
 這篇文章是教你使用 [rsync](/index.php/Rsync "Rsync") 來備份你的 "/" ， 並且排除部份目錄。 這個方法比使用 `dd` 備份磁碟 ([disk cloning](/index.php/Disk_cloning "Disk cloning")) 更好。我們可以使用這個方法備份不同的磁區大小以及不同的檔案系統，而且這個方法也比使用 `cp -a` 來得更好，因為有更好的的檔案權限控管，以及保留檔案屬性還有 Access Control Lists (ACLs). [[1]](http://www.bestbits.at/acl/about.html)
 
 ## Contents
@@ -29,7 +34,7 @@
 
 ## 使用 script
 
-底下的 script 也是提供一樣的備份方法，在備份的同時仍舊會保留 symbolic links, devices, permissions and ownerships, 以及其他的檔案屬性。你可以將你想要除外的部份放在 `--exclude` 的字串裏面。如果你想要瞭解更多，你可以參考 `man rsync` 和 `man date`。
+底下的 script 也是提供一樣的備份方法，在備份的同時仍舊會保留 symbolic links, devices, permissions and ownerships, 以及其他的檔案屬性。你可以將你想要除外的部份放在 `--exclude` 的字串裏面。如果你想要瞭解更多，你可以參考 [rsync(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) 和 [date(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/date.1)。
 
 **Note:** 如果你計劃將系統備份到 `/mnt` 或 `/media` 以外的地方，別忘了把他加入 --exclude 的清單中，以免造成無窮迴圈。
 

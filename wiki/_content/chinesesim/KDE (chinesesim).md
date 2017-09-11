@@ -1,4 +1,15 @@
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-27，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=487258)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Dolphin](/index.php/Dolphin "Dolphin")
+*   [Qt](/index.php/Qt "Qt")
+*   [KDevelop](/index.php/KDevelop "KDevelop")
+*   [Trinity](/index.php/Trinity "Trinity")
+*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
+
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-27，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=489302)可以查看翻译后英文页面的改动。
 
 KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment "Desktop environment")、支持库和框架 (KDE Frameworks)、和应用组成的软件项目。KDE 官网维护了一份 [UserBase Wiki](https://userbase.kde.org/)。用户能在那里找到大部分 KDE 应用的详细信息。
 
@@ -115,8 +126,6 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 ### 图形界面启动
 
-**提示：** 为了更好地将 [SDDM](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)") 与 Plasma 整合，建议您使用微风主题。您可以在“系统设置 - 开关机”内设置。
-
 使用[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")：
 
 *   在菜单中选择 *Plasma* 用 Xorg 启动。
@@ -155,7 +164,7 @@ Plasma 可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%B
 
 ```
 
-这将呈现出 [kde-look.org](http://www.kde-look.org/) 的前端让你轻松安装，卸载，或者更新第三方 Plasma 脚本。
+这将呈现出 [https://store.kde.org/](https://store.kde.org/) 的前端让你轻松安装，卸载，或者更新第三方 Plasma 脚本。
 
 加载页面和锁定页面暂时无法自定义，但你可以在 `/usr/share/plasma/look-and-feel/` 修改原本的主题。请阅 Kubuntu论坛的[这个帖子](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61)。
 

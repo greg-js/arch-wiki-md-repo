@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Codecs](/index.php/Codecs "Codecs")
+*   [MPlayer](/index.php/MPlayer "MPlayer")
+*   [dvdbackup](/index.php/Dvdbackup "Dvdbackup")
+*   [MEncoder](/index.php/MEncoder "MEncoder")
+
 Da [wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive")
 
 	*In informatica, una unità di disco ottico (ODD), è un disco che utilizza la luce laser o onde elettromagnetiche all'interno, o vicino lo spettro della luce visibile come parte del processo di lettura o scrittura di dati su o da dischi ottici. Alcune unità possono leggere solo i dischi, ma le recenti unità sono comunemente lettori e registratori, chiamati anche masterizzatori. Compact disc, DVD e dischi Blu-ray sono comuni tipi di supporti ottici che possono essere letti e registrati da tali unità. Unità ottica è il nome generico; le unità sono solitamente descritte come "CD", "DVD " o "Blu-ray ", seguito da "Lettore", "Masterizzatore", ecc.*
@@ -439,7 +446,7 @@ $ growisofs -M /dev/cdrw -V "ARCHIVE_2013_07_28" -r -J ./more_for_iso
 
 ```
 
-Per i dettagli vedere il [growisofs manuale](http://linux.die.net/man/1/growisofs) e la documentazione di `genisoimage`, `mkisofs`, `xorrisofs`.
+Per i dettagli vedere il [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) manuale e la documentazione di `genisoimage`, `mkisofs`, `xorrisofs`.
 
 #### Multisessione con xorriso
 

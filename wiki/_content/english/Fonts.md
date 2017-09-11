@@ -269,7 +269,7 @@ Font names are case-sensitive. With no parameter, `setfont` returns the console 
 
 ### Persistent configuration
 
-The `FONT` variable in `/etc/vconsole.conf` is used to set the font at boot, persistently for all consoles. See `man 5 vconsole.conf` for details.
+The `FONT` variable in `/etc/vconsole.conf` is used to set the font at boot, persistently for all consoles. See [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for details.
 
 For displaying characters such as *Č, ž, đ, š* or *Ł, ę, ą, ś* using the font `lat2-16.psfu.gz`:
 

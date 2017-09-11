@@ -7,7 +7,7 @@ Nginx is often used together with a scripting language such as [PHP](/index.php/
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Configuration Example](#Configuration_Example)
+    *   [3.1 Configuration example](#Configuration_example)
     *   [3.2 General configuration](#General_configuration)
         *   [3.2.1 Processes and connections](#Processes_and_connections)
         *   [3.2.2 Running under different user](#Running_under_different_user)
@@ -65,7 +65,7 @@ More details and examples can be found in [http://wiki.nginx.org/Configuration](
 
 The examples below cover the most common use cases. It is assumed that you use the default location for documents (`/usr/share/nginx/html`). If that is not the case, substitute your path instead.
 
-### Configuration Example
+### Configuration example
 
  `/etc/nginx/nginx.conf` 
 ```
@@ -142,7 +142,7 @@ server {
 
 ```
 
-[Restart](/index.php/Restart "Restart") the `nginx` service to apply any changes.
+[Restart](/index.php/Restart "Restart") `nginx.service` to apply any changes.
 
 You should configure a DNS-server like [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") so that these domain names could be resolved for connecting clients.
 
@@ -197,7 +197,7 @@ To remove a `server`, delete the symlink:
 
 ```
 
-Reload or restart `nginx` service to enable the new configuration.
+Reload or restart `nginx.service` to enable the new configuration.
 
 #### TLS/SSL
 
@@ -282,7 +282,7 @@ server {
 
 ```
 
-[Restart](/index.php/Restart "Restart") the `nginx` service to apply any changes.
+[Restart](/index.php/Restart "Restart") `nginx.service` to apply any changes.
 
 #### Per-User Directories
 
@@ -315,7 +315,7 @@ server {
 
 See [#PHP implementation](#PHP_implementation) for more information on PHP configuration with `nginx`.
 
-Reload or restart `nginx` service to enable the new configuration.
+Restart `nginx.service` to enable the new configuration.
 
 ### FastCGI
 
@@ -407,7 +407,7 @@ To enable PHP support for a particular server, simple include `php.conf`:
 
 ##### Test configuration
 
-You need to [restart](/index.php/Restart "Restart") the `php-fpm` and `nginx` daemons if the configuration has been changed in order to apply changes.
+You need to [restart](/index.php/Restart "Restart") the `php-fpm.service` and `nginx.service` units if the configuration has been changed in order to apply changes.
 
 To test the FastCGI implementation, create a new PHP file inside the `root` folder containing:
 
@@ -484,7 +484,7 @@ nginx needs `/dev/null`, `/dev/random`, and `/dev/urandom`. To install these in 
 
 **Tip:** Be sure that `/srv/http` is mounted without no-dev option
 
-**Tip:** See `man mknod` and `ls -l /dev/{null,random,urandom}` to better understand the *mknod* options.
+**Tip:** See [mknod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) and `ls -l /dev/{null,random,urandom}` to better understand the *mknod* options.
 
 ```
 # export JAIL=/srv/http

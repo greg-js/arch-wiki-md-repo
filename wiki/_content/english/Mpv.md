@@ -8,10 +8,9 @@ Related articles
 
 *   [1 Installation](#Installation)
     *   [1.1 Front ends](#Front_ends)
-    *   [1.2 Forks](#Forks)
 *   [2 Configuration](#Configuration)
     *   [2.1 General settings - mpv.conf](#General_settings_-_mpv.conf)
-        *   [2.1.1 Some simple high performance configurations](#Some_simple_high_performance_configurations)
+        *   [2.1.1 High quality configurations](#High_quality_configurations)
         *   [2.1.2 Profiles](#Profiles)
     *   [2.2 Key bindings - input.conf](#Key_bindings_-_input.conf)
     *   [2.3 Additional configuration files](#Additional_configuration_files)
@@ -75,12 +74,6 @@ mpv comes with a minimal GUI called On Screen Controller (OSC), that appears whe
 
 	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
-### Forks
-
-*   **bomi** — Powerful and easy to use multimedia player (Qt 5).
-
-	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
-
 ## Configuration
 
 Though *mpv* comes with good all-around defaults that should work well on computers with weaker/older video cards. However, if you have a computer with a more modern video card then mpv allows you to do a great deal of configuration to achieve better video quality (limited only by the power of your video card). To do this one only needs to create a few configuration files (they do not exist by default).
@@ -109,19 +102,19 @@ $ cp /usr/share/doc/mpv/input.conf ~/.config/mpv/input.conf
 
 ### General settings - mpv.conf
 
-#### Some simple high performance configurations
+#### High quality configurations
 
-This one just loads some more powerful OpenGL options. Most users can probably run these without any problems but they are not enabled by default to avoid causing problems for the few users who cannot run them.
+This loads high quality OpenGL options. Most users can run these without any problems, but they are not enabled by default to avoid causing problems for the few users who cannot run them.
 
  `~/.config/mpv/mpv.conf`  `profile=opengl-hq` 
 
-This adds two upscaling algorithms that give better results but again use more resources.
+The `opengl-hq` profile defaults to the `spline36` scaling filter for mid quality and speed. For the best quality video output, the manual states that if your hardware can run it, `ewa_lanczossharp` is probably what you should use.
 
  `~/.config/mpv/mpv.conf` 
 ```
 profile=opengl-hq
 scale=ewa_lanczossharp
-cscale=ewa_lanczos
+cscale=ewa_lanczossharp
 ```
 
 These last three options are a little more complicated. The first option makes it so that if audio and video go out of sync then instead of dropping video frames it will resample the audio (a slight change in audio pitch is often less noticeable than dropped frames). The mpv wiki has an in depth article on it titled [Display Synchronization](https://github.com/mpv-player/mpv/wiki/Display-synchronization). The remaining two essentially make motion appear smoother on your display by changing the way that frames are shown so that the source framerate jives better with your display's refresh rate (not to be confused with SVP's technique which actually converts video to 60fps). The mpv wiki has an in depth article on it titled [Interpolation](https://github.com/mpv-player/mpv/wiki/Interpolation) though it is also commonly known as *smoothmotion*.
@@ -130,7 +123,7 @@ These last three options are a little more complicated. The first option makes i
 ```
 profile=opengl-hq
 scale=ewa_lanczossharp
-cscale=ewa_lanczos
+cscale=ewa_lanczossharp
 video-sync=display-resample
 interpolation
 tscale=oversample

@@ -269,7 +269,7 @@ $ nmap --scan-delay 3.1 192.168.56.1
 
 ```
 
-For other timing and parallelization options, see `man nmap`.
+For other timing and parallelization options, see [nmap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmap.1).
 
 ### Specify targets input from a list file
 

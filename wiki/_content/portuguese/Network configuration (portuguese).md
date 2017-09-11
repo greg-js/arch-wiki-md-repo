@@ -1,3 +1,11 @@
+Artigos relacionados
+
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
+
 Esta página explica como configurar uma conexão **cabeada**. Se você deseja configurar uma rede **wireless/sem fio** veja a página [Configuração de Redes Sem Fio](/index.php/Wireless_Setup "Wireless Setup").
 
 ## Contents
@@ -61,7 +69,7 @@ Esta página explica como configurar uma conexão **cabeada**. Se você deseja c
 
 Muitas vezes, o procedimento básico de instalação cria uma configuração de rede cabeada. Para verificar se há configuração, utilize o seguinte comando:
 
-**Note:** A opção `-c 3` chama 3 vezes a ação de envio de pacotes icmp. Veja `man ping` para maiores informações.
+**Note:** A opção `-c 3` chama 3 vezes a ação de envio de pacotes icmp. Veja [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) para maiores informações.
  `$ ping -c 3 www.google.com` 
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
@@ -105,7 +113,7 @@ Um A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") é 
 
 Este comando colocará a informação **meunome** no arquivo `/etc/hostname`.
 
-Veja `man 5 hostname` e `man 1 hostnamectl` para maiores detalhes.
+Veja [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) e [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) para maiores detalhes.
 
 **Note:**
 
@@ -308,7 +316,7 @@ Exemplo:
 
 **Note:** A máscara de rede deve ser atribuída na notação [CIDR](https://pt.wikipedia.org/wiki/CIDR).
 
-Para maiores opções veja `man ip`.
+Para maiores opções veja [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
 
 Para adicionar rota até o gateway da rede:
 

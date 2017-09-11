@@ -365,7 +365,7 @@ See the crontab [man page](/index.php/Man_page "Man page") for further informati
 
 ## run-parts issue
 
-cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: `man run-parts`).
+cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
 
 ## Running Xorg server based applications
 

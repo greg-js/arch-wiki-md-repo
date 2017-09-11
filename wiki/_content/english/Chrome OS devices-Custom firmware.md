@@ -1,3 +1,8 @@
+Related articles
+
+*   [Chromebook](/index.php/Chromebook "Chromebook")
+*   [Chromebook Pixel 2](/index.php/Chromebook_Pixel_2 "Chromebook Pixel 2")
+
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 ## Contents
@@ -135,7 +140,7 @@ Matt DeVillier's firmware for Chromebooks and Chromeboxes has some differences c
 
 *   Built based on latest coreboot upstream, rather than on the frozen source snapshot provided by Google.
 
-The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected in one of them and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")) with no option of changing this default behaviour.
+The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected in one of them and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")) with no option of changing this default behaviour.
 
 #### Flashing the firmware
 

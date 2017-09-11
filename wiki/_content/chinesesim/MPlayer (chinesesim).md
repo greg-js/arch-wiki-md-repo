@@ -1,3 +1,7 @@
+相关文章
+
+*   [mpv](/index.php/Mpv "Mpv")
+
 **翻译状态：** 本文是英文页面 [MPlayer](/index.php/MPlayer "MPlayer") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-12-23，点击[这里](https://wiki.archlinux.org/index.php?title=MPlayer&diff=0&oldid=454536)可以查看翻译后英文页面的改动。
 
 [MPlayer](http://www.mplayerhq.hu/) 是 GNU/Linux 下非常流行的影音播放器，支持大多数文件格式，非常通用。
@@ -96,11 +100,11 @@
 
 `~/.mplayer/` 下默认包含一个 *config* 文件.
 
-参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 `man mplayer`.
+参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 ### 按键绑定
 
-系统按键绑定通过 `/etc/mplayer/input.conf` 配置，个人按键绑定通过 `~/.mplayer/input.conf` 配。完整的键盘快捷键列表请阅读 `man mplayer`.
+系统按键绑定通过 `/etc/mplayer/input.conf` 配置，个人按键绑定通过 `~/.mplayer/input.conf` 配。完整的键盘快捷键列表请阅读 [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 参阅：[XF86 键盘符号](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols)
 

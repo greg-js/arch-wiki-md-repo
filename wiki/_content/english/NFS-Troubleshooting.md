@@ -1,3 +1,7 @@
+Related articles
+
+*   [NFS](/index.php/NFS "NFS")
+
 Dedicated article for common problems and solutions.
 
 ## Contents
@@ -551,7 +555,7 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 ### References
 
 *   [https://github.com/torvalds/linux/tree/master/include/linux](https://github.com/torvalds/linux/tree/master/include/linux)
-*   [http://linux.die.net/man/8/rpcdebug](http://linux.die.net/man/8/rpcdebug)
+*   [rpcdebug(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rpcdebug.8)
 *   [http://utcc.utoronto.ca/~cks/space/blog/linux/NFSClientDebuggingBits](http://utcc.utoronto.ca/~cks/space/blog/linux/NFSClientDebuggingBits)
 *   [http://www.novell.com/support/kb/doc.php?id=7011571](http://www.novell.com/support/kb/doc.php?id=7011571)
 *   [http://stromberg.dnsalias.org/~strombrg/NFS-troubleshooting-2.html](http://stromberg.dnsalias.org/~strombrg/NFS-troubleshooting-2.html)

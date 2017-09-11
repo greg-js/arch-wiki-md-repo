@@ -1,4 +1,16 @@
-This article discusses variables definable by the maintainer in a PKGBUILD. For information on the PKGBUILD functions and creating packages in general, refer to [Creating packages](/index.php/Creating_packages "Creating packages"). Also read `man PKGBUILD`.
+Related articles
+
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Category:Package development](/index.php/Category:Package_development "Category:Package development")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+
+This article discusses variables definable by the maintainer in a PKGBUILD. For information on the PKGBUILD functions and creating packages in general, refer to [Creating packages](/index.php/Creating_packages "Creating packages"). Also read [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
 A PKGBUILD is a shell script containing the build information required by [Arch Linux](/index.php/Arch_Linux "Arch Linux") packages.
 

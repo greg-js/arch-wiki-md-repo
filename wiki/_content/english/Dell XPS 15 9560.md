@@ -38,7 +38,8 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [4.3 Proprietary driver with PRIME output offloading](#Proprietary_driver_with_PRIME_output_offloading)
 *   [5 Firmware updates](#Firmware_updates)
 *   [6 Fingerprint reader](#Fingerprint_reader)
-*   [7 External links](#External_links)
+*   [7 Notes](#Notes)
+*   [8 External links](#External_links)
 
 ## UEFI
 
@@ -147,6 +148,10 @@ Alternatively, firmware updates can be installed by copying the MS-DOS executabl
 ## Fingerprint reader
 
 The fingerprint reader is a Validity/Synaptics model with USB id `138a:0090`. There currently is no Linux driver but an open source Linux driver is being developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+
+## Notes
+
+The suspend function key is not printed on the keyboard, but it's actually mapped to `Fn`+`Insert`.
 
 ## External links
 

@@ -103,7 +103,7 @@ Match User *someuser*
 
 **Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
 
-See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
+See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
 
 ## Automounting
 

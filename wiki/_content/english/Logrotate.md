@@ -1,3 +1,8 @@
+Related articles
+
+*   [Cron](/index.php/Cron "Cron")
+*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+
 From [https://github.com/logrotate/logrotate](https://github.com/logrotate/logrotate):
 
 	*The logrotate utility is designed to simplify the administration of log files on a system which generates a lot of log files. Logrotate allows for the automatic rotation compression, removal and mailing of log files. Logrotate can be set to handle a log file daily, weekly, monthly or when the log file gets to a certain size.*
@@ -74,4 +79,4 @@ file-to-be-rotated {
 ## See also
 
 *   [Logrotate on Gentoo Linux Wiki](http://wiki.gentoo.org/wiki/Logrotate)
-*   [logrotate(8) Manual page](http://linux.die.net/man/8/logrotate)
+*   [logrotate(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.8) manual page

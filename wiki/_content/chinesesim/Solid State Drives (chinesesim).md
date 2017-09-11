@@ -1,3 +1,9 @@
+相关文章
+
+*   [SSD Benchmarking](/index.php/SSD_Benchmarking "SSD Benchmarking")
+*   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
+*   [profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
+
 **翻译状态：** 本文是英文页面 [Solid_State_Drives](/index.php/Solid_State_Drives "Solid State Drives") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&diff=0&oldid=362598)可以查看翻译后英文页面的改动。
 
 固态硬盘 (SSD) 不是即插即用设备。如果想让 SSD 获得更好的性能，需要特别考虑分区对齐、文件系统选择、TRIM 支持等等。本文尝试搜集一些相关的关键的学习点，来让用户能够在 Linux 中充分利用 SSD。用户在进行操作前最好通读全文。
@@ -161,7 +167,7 @@ VFAT 只有挂载参数为'discard'(而不是fstrim)时才支持 TRIM 。
 
 在 `/etc/lvm/lvm.conf`里把`issue_discards` 选项的值由 0 改为 1。
 
-**注意:** 启用该选项会使得当逻辑卷不再使用物理卷的空间(如 lvremove, lvreduce, 等等)时，将discard发给逻辑卷的底层物理卷" (见 `man lvm.conf` 和/或 `/etc/lvm/lvm.conf` 中的注释内容)。 因此，它似乎并不需要为“常规”TRIM请求（文件系统内的文件删除）来发挥作用。
+**注意:** 启用该选项会使得当逻辑卷不再使用物理卷的空间(如 lvremove, lvreduce, 等等)时，将discard发给逻辑卷的底层物理卷" (见 [lvm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) 和/或 `/etc/lvm/lvm.conf` 中的注释内容)。 因此，它似乎并不需要为“常规”TRIM请求（文件系统内的文件删除）来发挥作用。
 
 #### 为dm-crypt启用TRIM
 
@@ -294,7 +300,7 @@ Security:
 
 使用 [iotop](https://www.archlinux.org/packages/?name=iotop) 以及 sort 对硬盘写入排序来观察程序对硬盘写的量及频率。
 
-**提示：** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 `man iotop`。
+**提示：** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 [iotop(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iotop.8)。
 ```
 # iotop -boqqq
 

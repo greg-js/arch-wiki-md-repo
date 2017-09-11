@@ -1,3 +1,8 @@
+Ссылки по теме
+
+*   [Зеркала](/index.php/%D0%97%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D0%B0 "Зеркала")
+*   [Создание пакетов](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2 "Создание пакетов")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Дата последней синхронизации: 19 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=426435).
 
 Для общих методов улучшения гибкости предоставляемых советов или самого Pacman смотрите [Базовые утилиты](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B "Базовые утилиты") и [Bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)").
@@ -895,7 +900,7 @@ XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allo
 
 **Совет:** [This alternative configuration for using pacman with aria2](https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879) tries to simplify configuration and adds more configuration options.
 
-See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in `man aria2c` for used aria2c options.
+See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in [aria2c(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) for used aria2c options.
 
 	`-d, --dir`
 

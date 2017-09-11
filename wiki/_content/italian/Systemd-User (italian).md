@@ -1,3 +1,9 @@
+Related articles
+
+*   [systemd (Italiano)](/index.php/Systemd_(Italiano) "Systemd (Italiano)")
+*   [Automatic login to virtual console (Italiano)](/index.php/Automatic_login_to_virtual_console_(Italiano) "Automatic login to virtual console (Italiano)")
+*   [Start X at Login (Italiano)](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")
+
 [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") offre agli utenti la possibilità di gestire i servizi sotto il controllo dell'utente tramite una istanza di systemd per singolo utente, che consente agli stessi di avviare, fermare, abilitare e disabilitare le proprie unità. Questa caratteristica è utile per demoni e altre operazioni automatiche come lo scaricamento della posta. È inoltre possibile, con alcune modifiche, avviare Xorg e il window manager in uso direttamente tramite i servizi utente.
 
 ## Contents
@@ -219,7 +225,7 @@ WantedBy=default.target
 
 ```
 
-Come specificato in `man systemd.unit`, la variabile `%h` viene sostituita con la home directory dell'utente che esegue il servizio. Vi sono altre variabili disponibili, spiegate in dettaglio nelle pagine di manuale di [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)").
+Come specificato in [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), la variabile `%h` viene sostituita con la home directory dell'utente che esegue il servizio. Vi sono altre variabili disponibili, spiegate in dettaglio nelle pagine di manuale di [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)").
 
 ### Nota per applicazioni X11
 

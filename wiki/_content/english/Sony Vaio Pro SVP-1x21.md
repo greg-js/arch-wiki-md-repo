@@ -60,7 +60,7 @@ Works as expected as of kernel version 3.11
 
 #### UEFI
 
-Inside the chroot [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Variables "Unified Extensible Firmware Interface") might not be available. To make them available for installing the bootloader, run
+Inside the chroot [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") might not be available. To make them available for installing the bootloader, run
 
 ```
    mount -t efivarfs efivarfs /sys/firmware/efi/efivars

@@ -527,4 +527,4 @@ To make true transparency work, make sure to comment urxvt*tintColor and urxvt*i
 *   [rxvt-unicode FAQ](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod) - Official FAQ
 *   [rxvt-unicode Reference](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod) - Official manual page
 *   [urxvtperl](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/src/urxvt.pm) - Official Perl extension reference
-*   `man urxvt`
+*   [urxvt(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1)

@@ -14,7 +14,7 @@ Capabilities (POSIX 1003.1e, capabilities(7)) provide fine-grained control over 
 
 ## Implementation
 
-Capabilities are implemented on Linux using [extended attributes](/index.php/Extended_attributes "Extended attributes") (`man 7 xattr`) in the *security* namespace. Extended attributes are supported by all major Linux filesystems, including Ext2, Ext3, Ext4, Btrfs, JFS, XFS, and Reiserfs. The following example prints the capabilities of ping with `getcap`, and then prints the same data in its encoded form using `getfattr`:
+Capabilities are implemented on Linux using [extended attributes](/index.php/Extended_attributes "Extended attributes") ([xattr(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xattr.7)) in the *security* namespace. Extended attributes are supported by all major Linux filesystems, including Ext2, Ext3, Ext4, Btrfs, JFS, XFS, and Reiserfs. The following example prints the capabilities of ping with `getcap`, and then prints the same data in its encoded form using `getfattr`:
 
 ```
 $ getcap /bin/ping

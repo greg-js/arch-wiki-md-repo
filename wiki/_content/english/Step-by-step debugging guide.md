@@ -1,3 +1,10 @@
+Related articles
+
+*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
+*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+
 This page is mainly about how to gather more information in connection with bug reports. Even though the word "debug" is used, it's not intended as a guide for how to debug programs while developing.
 
 ## Contents
@@ -131,7 +138,7 @@ LD_DEBUG=files appname > appname.log 2>&1
 
 The output will end up in `appname.log`.
 
-For more information, see `man ld-linux`.
+For more information, see [ld-linux(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ld-linux.8).
 
 ### Readelf
 

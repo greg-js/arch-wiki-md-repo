@@ -250,7 +250,7 @@ setkey edit "v"
 
 ```
 
-إذا كنت تريد الألوان والزخارف (سميك أو تحته خط) *في نفس الوقت* انظر `man xterm` لشرح مصدر `veryBoldColors`.
+إذا كنت تريد الألوان والزخارف (سميك أو تحته خط) *في نفس الوقت* انظر [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) لشرح مصدر `veryBoldColors`.
 
 #### rxvt-unicode
 

@@ -242,7 +242,7 @@ eval `keychain --eval --nogui -Q -q id_rsa`
 
 Aggiungendo l'opzione `-q` o `--quiet` al comando keychain non mostrerà l'output del comando nelle nuove sessioni. Notare anche che l'opzione `--agents` non è strettamente necessaria, perché keychain costruirà la lista automaticamente basandosi sull'esistenza di [ssh-agent](https://www.archlinux.org/packages/?name=ssh-agent) o [gpg-agent](https://www.archlinux.org/packages/?name=gpg-agent) nel sistema. Se si desidera una maggiore sicurezza sostituire -Q con --clear, anche se non sarà molto conveniente.
 
-Se necessario, sostituire `~/.ssh/id_ecdsa` con il percorso della propria chiave privata. Per coloro che usano una shell non compatibile con bash, vedere `keychain --help` o `man keychain` per maggiori informazioni sulle altre shell.
+Se necessario, sostituire `~/.ssh/id_ecdsa` con il percorso della propria chiave privata. Per coloro che usano una shell non compatibile con bash, vedere `keychain --help` o [keychain(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/keychain.1) per maggiori informazioni sulle altre shell.
 
 Chiudere la shell ed avviarla di nuovo. Dovrebbe apparire il portachiavi e se è il primo avvio realizzato, verrà richiesta la passphrase della chiave privata specifica.
 

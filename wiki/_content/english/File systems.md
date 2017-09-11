@@ -104,6 +104,10 @@ Some FUSE-based file systems:
 
 	[https://www.presslabs.com/gitfs/](https://www.presslabs.com/gitfs/) || [gitfs](https://aur.archlinux.org/packages/gitfs/)
 
+*   **[gocryptfs](/index.php/Gocryptfs "Gocryptfs")** — gocryptfs is a userspace stackable cryptographic file-system.
+
+	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/)
+
 *   **xbfuse-git** — Mount an Xbox (360) ISO.
 
 	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)

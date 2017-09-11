@@ -179,11 +179,11 @@ The [Openbox per-app settings](http://openbox.org/wiki/Help:Applications) can be
 
 ### Daemon-client
 
-**Warning:** If the server crashes, all processes in the clients are terminated. For example, *xkill* and server resets/restarts will kill the urxvtd instance including all windows it has opened. See `man urxvtd` for details.
+**Warning:** If the server crashes, all processes in the clients are terminated. For example, *xkill* and server resets/restarts will kill the urxvtd instance including all windows it has opened. See [urxvtd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1) for details.
 
 #### Xinitrc
 
-See the *Examples* section in `man urxvtd`. This is the preferred option.
+See the *Examples* section in [urxvtd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1). This is the preferred option.
 
 #### systemd
 

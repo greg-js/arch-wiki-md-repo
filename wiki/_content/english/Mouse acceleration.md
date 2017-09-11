@@ -1,3 +1,8 @@
+Related articles
+
+*   [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons")
+*   [Mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate")
+
 Setting the mouse acceleration depends on the windowing protocol you are using: either [Xorg](/index.php/Xorg "Xorg") or [Wayland](/index.php/Wayland "Wayland").
 
 *   On [Xorg](/index.php/Xorg "Xorg"), there are several ways of setting mouse acceleration
@@ -24,7 +29,7 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
 
 ### In Xorg configuration
 
-See `man xorg.conf` for details.
+See [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) for details.
 
 Examples:
 
@@ -96,7 +101,7 @@ $ xset m default
 
 ```
 
-For more info see `man xset`.
+For more info see [xset(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1).
 
 Commands may be stored in [Xinitrc](/index.php/Xinitrc "Xinitrc") or [Xprofile](/index.php/Xprofile "Xprofile"). Alternatively, create a [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `.config/autostart`:
 

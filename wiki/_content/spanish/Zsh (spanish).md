@@ -446,7 +446,7 @@ Zsh siempre executa `/etc/zsh/zshenv` y `$ZDOTDIR/.zshenv` así que no cargue en
 
 Si la shell es una shell de inicio de sesión, los comandos son leídos desde `/etc/profile` y después desde `$ZDOTDIR/.zprofile`. Entonces, Si la shell es interactiva, los comando son leídos desde `/etc/zsh/zshrc` y luego desde `$ZDOTDIR/.zshrc`. Finalmente, si la shell es una shell de inicio de sesión, `/etc/zsh/zlogin` y `$ZDOTDIR/.zlogin` son leídos.
 
-Vea tambiénla sección *STARTUP/SHUTDOWN FILES* de `man zsh`.
+Vea tambiénla sección *STARTUP/SHUTDOWN FILES* de [zsh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh.1).
 
 ### Rehash persistente
 

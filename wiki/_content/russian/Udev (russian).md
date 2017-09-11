@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [udisks](/index.php/Udisks "Udisks")
+
 По функциональности *udev* заменяет *hotplug* и *hwdetect*.
 
 Из [статьи о udev на Википедии](https://en.wikipedia.org/wiki/ru:Udev "wikipedia:ru:Udev"):
@@ -39,7 +43,7 @@
 
 ## Установка
 
-В настоящий момент *udev* включен в состав пакета [systemd](https://www.archlinux.org/packages/?name=systemd) и в системах Arch Linux устанавливается по умолчанию. Смотрите также `man systemd-udevd.service` для получения дополнительной информации.
+В настоящий момент *udev* включен в состав пакета [systemd](https://www.archlinux.org/packages/?name=systemd) и в системах Arch Linux устанавливается по умолчанию. Смотрите также [systemd-udevd.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-udevd.service.8) для получения дополнительной информации.
 
 ## О правилах udev
 

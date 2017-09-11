@@ -1,3 +1,8 @@
+Related articles
+
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [pacman tips](/index.php/Pacman_tips "Pacman tips")
+
 The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a fork of [KDE](/index.php/KDE "KDE") 3.5 aiming to retain the traditional desktop style.
 
 TDE still depends on an old version of Qt, which they now maintain themselves, since it is deprecated. The Trinity applications and applets should also work with other desktop environments.
@@ -34,7 +39,7 @@ The suggested build order is specified in the [How to Build TDE](https://wiki.tr
 ```
 #!/bin/sh
 git clone https://github.com/michael-manley/Trinity_ArchLinux_PKGBUILD.git trinity
-cd trinity/R14.0.3
+cd trinity/R14.0.4
 dir=$PWD
 
 for pkg in tqt3 tqtinterface arts dbus-tqt dbus-1-tqt tqca-tls libart-lgpl avahi-tqt tdelibs tdebase tdebindings tdeaccessibility tdeutils; do

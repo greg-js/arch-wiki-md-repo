@@ -206,7 +206,7 @@ See [Rxvt-unicode#Configuration](/index.php/Rxvt-unicode#Configuration "Rxvt-uni
 
 ### Xpdf
 
-See `**Options**` in [man xpdf](http://linux.die.net/man/1/xpdf).
+See `**Options**` in [xpdf(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xpdf.1).
 
 ## Troubleshooting
 

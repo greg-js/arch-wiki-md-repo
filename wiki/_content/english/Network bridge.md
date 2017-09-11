@@ -1,3 +1,8 @@
+Related articles
+
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+*   [ODROID#Bridge_interfaces_do_not_work_as_expected](/index.php/ODROID#Bridge_interfaces_do_not_work_as_expected "ODROID")
+
 A bridge is a piece of software used to unite two or more network segments. A bridge behaves like a virtual network switch, working transparently (the other machines do not need to know or care about its existence). Any real devices (e.g. `eth0`) and virtual devices (e.g. `tap0`) can be connected to it.
 
 This article explains how to create a bridge that contains at least an ethernet device. This is useful for things like the bridge mode of [QEMU](/index.php/QEMU "QEMU"), setting a software based access point, etc.
@@ -46,7 +51,7 @@ Adding the interface into the bridge is done by setting its master to `*bridge_n
 
 ```
 
-To show the existing bridges and associated interfaces, use the *bridge* utility (also part of [iproute2](https://www.archlinux.org/packages/?name=iproute2)). See `man bridge` for details.
+To show the existing bridges and associated interfaces, use the *bridge* utility (also part of [iproute2](https://www.archlinux.org/packages/?name=iproute2)). See [bridge(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bridge.8) for details.
 
 ```
 # bridge link
@@ -78,7 +83,7 @@ This will automatically remove all interfaces from the bridge. The slave interfa
 
 ### With bridge-utils
 
-This section describes the management of a network bridge using the legacy *brctl* tool from the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) package, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). See `man brctl` for full listing of options.
+This section describes the management of a network bridge using the legacy *brctl* tool from the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) package, which is available in the [official repositories](/index.php/Official_repositories "Official repositories"). See [brctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/brctl.8) for full listing of options.
 
 Create a new bridge:
 

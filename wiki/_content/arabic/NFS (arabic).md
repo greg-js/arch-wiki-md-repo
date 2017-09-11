@@ -1,3 +1,7 @@
+Related articles
+
+*   [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")
+
 نقلا عن: [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"): نظام ملفات الشبكة:*(Network File System NFS) هو بروتوكول نظام الملفات الموزع وقد تم تطويره من شركة صن ميكروسيستمز عام 1984 ، حيث يتيح للمستخدم على الحاسب العميل أن يصل للملفات عبر الشبكة بطريقة مشابهة لكيفية الوصول إلى أقراص التخزين المحلية.*
 
 ## Contents
@@ -77,7 +81,7 @@ Nobody-Group = nobody
 
 ```
 
-لا يحتاج المستخدمون لفتح المشاركة بداخل الشبكة الفرعية، أحدهم يمكنه تحديد عنوان IP مفرد أو hostname أيضا. لمزيد من المعلومات عن كل الخيارات المتاحة انظر `man 5 exports`. إذا قمت بتعديل الملف `/etc/exports` أثناء عمل الخادم ، يجب عليك إعادة التصدير لها لتفعيل ما قمت به من تغييرات:
+لا يحتاج المستخدمون لفتح المشاركة بداخل الشبكة الفرعية، أحدهم يمكنه تحديد عنوان IP مفرد أو hostname أيضا. لمزيد من المعلومات عن كل الخيارات المتاحة انظر [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5). إذا قمت بتعديل الملف `/etc/exports` أثناء عمل الخادم ، يجب عليك إعادة التصدير لها لتفعيل ما قمت به من تغييرات:
 
  `# exportfs -ra` 
 

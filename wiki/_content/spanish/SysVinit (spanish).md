@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [init](/index.php/Init "Init")
+
 **Advertencia:** SysVinit está en desuso en Arch Linux [[1]](https://www.archlinux.org/news/end-of-initscripts-support/) y se ha retirado de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Es necesario actualizar a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
 
 En los sistemas basados en SysVinit, **init** es el primer proceso que se ejecuta una vez que se carga el Kernel de Linux. Por defecto, el programa init usado por el kernel es `/sbin/init` proveido por [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (de forma predeterminada en las instalaciones nuevas, véase [systemd](/index.php/Systemd "Systemd")) o [sysvinit](https://aur.archlinux.org/packages/sysvinit/). La palabra **init** siempre se refiere a sysvinit en este artículo.

@@ -19,7 +19,7 @@ This article describes alternative wiping methods to the specialized utilities t
 
 **Warning:** Wiping of single files is less effective, if the partition has been [defragmented](https://en.wikipedia.org/wiki/File_system_fragmentation "wikipedia:File system fragmentation"), resized or moved, or the files have been [duplicated](https://en.wikipedia.org/wiki/Temporary_folder "wikipedia:Temporary folder") on the same device before. It is much harder to recovery if the whole [encrypted data](/index.php/Security#Disk_encryption "Security") container part was wiped but encryption will lower [disk performance](https://en.wikipedia.org/wiki/Disk_encryption#Implementations "wikipedia:Disk encryption") much, if it is not [hardware based](https://en.wikipedia.org/wiki/Disk_encryption_hardware "wikipedia:Disk encryption hardware") encryption that has almost no impact on the performance. See also [Securely wipe disk#Data remanence](/index.php/Securely_wipe_disk#Data_remanence "Securely wipe disk").
 
-**Note:** To preserve file access and modification time you can use [touch](http://linux.die.net/man/1/touch) command to change time and [stat](http://linux.die.net/man/1/stat) command to read time information before accessing the file. See also [comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Metadata "wikipedia:Comparison of file systems") for support of metadata and timestamps by them.
+**Note:** To preserve file access and modification time you can use [touch(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/touch.1) command to change time and [stat(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/stat.1) command to read time information before accessing the file. See also [comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Metadata "wikipedia:Comparison of file systems") for support of metadata and timestamps by them.
 
 Wiping of a single file consists of two basic and one advanced anti-forensic time consumed method that can be done only with specialized tools, the last one method will not be covered in this article.
 
@@ -128,7 +128,7 @@ $ while [ 1 -lt 2 ];do cat file1-to-use.as-template file2-to-use.as-template /tm
 
 ```
 
-With *dd* you can safely wipe repetitively without out-of-space-errors, if size to be wiped is set up correctly with options. By using *dd* inside the while loop for *stdout* you will be able to chose which part of the file you want to restore by combining the `skip` and `seek` options with random or fixed values e.g. restore only partition start or end from a file, related are [head](http://linux.die.net/man/1/head) and [tail](http://linux.die.net/man/1/head) commands for output of the file parts to *stdout*.
+With *dd* you can safely wipe repetitively without out-of-space-errors, if size to be wiped is set up correctly with options. By using *dd* inside the while loop for *stdout* you will be able to chose which part of the file you want to restore by combining the `skip` and `seek` options with random or fixed values e.g. restore only partition start or end from a file, related are [head(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/head.1) and [tail(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tail.1) commands for output of the file parts to *stdout*.
 
 ```
 while [ 2 -gt 1 ]; do 
@@ -173,7 +173,7 @@ DestinationFile="$((${RANDOM/0/1}$(date "+%s")/${RANDOM/0/1}))"
 7z a -t7z -mhe=on -p"${Password}" -mx=0 -v1m *${DestinationFile} source*
 ```
 
-See also [p7zip](https://www.archlinux.org/packages/?name=p7zip) [man page](http://linux.die.net/man/1/7z) for description of used options.
+See also [7z(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) for description of used options.
 
 The `source` can be a predefined file with random data or a device, e.g. `/dev/urandom` or another block device or partition on it, e.g. `/dev/sd"XY"`, with data you are not afraid to be found then even deleted files on it will be compressed to the destination.
 

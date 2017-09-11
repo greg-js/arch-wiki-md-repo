@@ -34,7 +34,7 @@ $ man *page_name*
 
 ```
 
-Manuais são ordenados em diversas seções. Para uma listagem completa, veja a seção intitulada "Sections of the manual pages" no `man man-pages`.
+Manuais são ordenados em diversas seções. Para uma listagem completa, veja a seção intitulada "Sections of the manual pages" no [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 Páginas man geralmente são referenciadas por seu nome, seguido do número de sua seção em parênteses. Geralmente há múltiplas páginas man com o mesmo nome, tal como [man(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) e [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). Neste caso, forneça ao man o número da seção seguido pelo nome da página man. Por exemplo:
 
@@ -56,7 +56,7 @@ ls (1)               - list directory contents
 
 ## Formato
 
-Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a navegá-las. Veja a seção intitulada "Sections within a manual page" em `man man-pages`.
+Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a navegá-las. Veja a seção intitulada "Sections within a manual page" em [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 ## Pesquisando por manuais
 

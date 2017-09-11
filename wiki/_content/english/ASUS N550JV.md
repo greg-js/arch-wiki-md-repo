@@ -37,8 +37,6 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.5 Card reader does not detect cards](#Card_reader_does_not_detect_cards)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Fan control](#Fan_control)
-        *   [3.1.1 Dual fan method](#Dual_fan_method)
-        *   [3.1.2 Single fan method](#Single_fan_method)
     *   [3.2 Enable full performance of GPU](#Enable_full_performance_of_GPU)
     *   [3.3 Special keys for window managers](#Special_keys_for_window_managers)
 
@@ -272,83 +270,9 @@ Due to unknown reasons, card reader does not detect cards. To resolve this, quic
 
 ### Fan control
 
-**Warning:** Stopping fans on high CPU/GPU load might cause serious damage to your notebook.
+See [Fan_speed_control](/index.php/Fan_speed_control "Fan speed control").
 
-Below are the methods, which can be used to control both fans. Generally there are 2 advantages of fans control:
-
-*   Save power (completely stopped fans - notes taking or viewing pictures on battery)
-*   Prevent overheating (100% speed of both fans - you can play game longer on max performance until GPU throttling occurs)
-
-#### Dual fan method
-
-**Note:** CPU fan will be controlled by `asus-wmi` and `asus-nb-wmi` modules, therefore blacklisting them prevent FN+X keys from working. However, you don't need to do anything with these modules since `asus_fan` seem to work fine. You might only see false values using `sensors` command (e.g. `asus-isa-0000` will always display 2300 RPM).
-
-Install [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/). Load kernel module:
-
-```
-# modprobe asus_fan
-
-```
-
-**Note:** For unknown reasons this is likely going to fail (no asus_fan module found in your system). [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and system reboot usually fixes this issue.
-
-Check if you have any control over both fans:
-
-```
-# echo 255 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1          # Full CPU fan speed (Value: 255)
-# echo 0 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1            # CPU fan is stopped (Value: 0)
-# echo 255 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1          # Full GFX fan speed (Value: 255)
-# echo 0 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1            # GFX fan is stopped (Value: 0)
-# echo 2 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1_enable     # Change CPU fan mode to automatic
-# echo 1 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1_enable     # Change CPU fan mode to manual
-# echo 2 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2_enable     # Change GFX fan mode to automatic
-# echo 1 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2_enable     # Change GFX fan mode to manual
-# cat /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/temp1_input          # Display GFX temperature (will always be 0 when GFX is disabled/unused)
-
-```
-
-If everything works, you might want to load this kernel module on boot:
-
- `/etc/modules-load.d/asus_fan.conf` 
-```
-# Load asus_fan module on boot:
-asus_fan
-
-```
-
-To be able to use [Fan speed control](/index.php/Fan_speed_control "Fan speed control") script, see [Fan speed control#There are no working fan sensors, all readings are 0](/index.php/Fan_speed_control#There_are_no_working_fan_sensors.2C_all_readings_are_0 "Fan speed control").
-
-Here is a configuration file, which was tested and working fine on the Asus N550JV. However, it might need some tweaking:
-
- `/etc/fancontrol` 
-```
-INTERVAL=10
-FCTEMPS=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/temp1_input
-FCFANS=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/fan1_input /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/fan2_input
-MINTEMP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=50 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=45
-MAXTEMP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=80 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=90
-MINSTART=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=40 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=40
-MINSTOP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=10 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=10
-
-```
-
-#### Single fan method
-
-**Note:** The kernel modules for fan control are `asus-wmi` and `asus-nb-wmi`. Unfortunately, as seen in this [GitHub page](https://github.com/KastB/asus_wmi), you can only control the right side fan (designed for CPU cooling only). Left fan will always be controlled by system and you don't have any controls over it.
-
-Below are the commands to control it (there is no need to replace the wildcard with anything, since the hwmon**X** will change after each boot):
-
-```
-# echo 255 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1           # Full fan speed (Value: 255)
-# echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1             # Fan is stopped (Value: 0)
-# echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[[:print:]]*/pwm1_enable     # Change fan mode to automatic
-# echo 1 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1_enable      # Change fan mode to manual
-
-```
-
-To be able to use [Fan speed control](/index.php/Fan_speed_control "Fan speed control") script, see [Fan speed control#There are no working fan sensors, all readings are 0](/index.php/Fan_speed_control#There_are_no_working_fan_sensors.2C_all_readings_are_0 "Fan speed control").
-
-Here is a configuration file, which was tested to work on the Asus N550JV. It however might need some tweaking:
+Here is a configuration file, which was tested on Asus N550JV and was used with `asus-nb-wmi` kernel module. It however might need some tweaking:
 
  `/etc/fancontrol` 
 ```
@@ -359,6 +283,20 @@ MINTEMP=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=50
 MAXTEMP=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=80
 MINSTART=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=40
 MINSTOP=/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1=10
+
+```
+
+Here is a configuration file, which was tested on Asus N550JV and was used with `asus-fan` kernel module. It however might need some tweaking:
+
+ `/etc/fancontrol` 
+```
+INTERVAL=10
+FCTEMPS=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/temp1_input
+FCFANS=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/fan1_input /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/fan2_input
+MINTEMP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=50 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=45
+MAXTEMP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=80 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=90
+MINSTART=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=40 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=40
+MINSTOP=/sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1=10 /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2=10
 
 ```
 

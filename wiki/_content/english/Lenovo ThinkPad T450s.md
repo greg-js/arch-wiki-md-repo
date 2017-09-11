@@ -87,9 +87,7 @@ Note- this driver still has some problems for me: I have found that I have to <t
 
 ### Touchpad
 
-You can install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for configuration.
-
-In the alternative, install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and see [Libinput](/index.php/Libinput "Libinput") for configuration.
+You can install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and see [Libinput](/index.php/Libinput "Libinput") for configuration.
 
 ### Sound
 
@@ -133,7 +131,7 @@ Note that there is a BIOS option to change the function keys so that F1 - F12 ar
 
 Be sure to install tlp or powertop.
 
-sudo pacman -S tlp sudo systemctl enable tlp.service sudo systemctl start tlp.service
+sudo pacman -S tlp; sudo systemctl enable tlp.service; sudo systemctl start tlp.service
 
 ### SSD
 

@@ -55,7 +55,7 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 *   Proffitt, Brian. "[From the Desktop: Tom LaStrange Speaks!](http://www.linuxplanet.com/linuxplanet/reports/3000/2/)", *LinuxPlanet*, February 6, 2001\. Retrieved October 22, 2009.
 *   "[UWM (computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")", *Wikipedia*. Retrieved October 22, 2009.
 *   "[Twm](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm")", *Wikipedia*. Retrieved October 22, 2009.
-*   "[Twm man page](http://linux.die.net/man/1/twm)", *linux.die.net*. Retrieved October 22, 2009.
+*   [twm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/twm.1) man page
 *   "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", *custompc.plus.com*. Retrieved August 12, 2013.
 *   "[Window Managers for X: TWM/VTWM](http://xwinman.org/vtwm.php)", *xwinman.org*. Retrieved October 22, 2009.
 *   "[Google search for twmrc](https://www.google.com/search?q=twmrc)", *google.com*. Retrieved October 22, 2009.

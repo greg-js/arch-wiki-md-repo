@@ -83,7 +83,7 @@ For a GUI, you can use [vidalia](https://aur.archlinux.org/packages/vidalia/).
 
 ## Configuration
 
-By default Tor reads configurations from the file `/etc/tor/torrc`. The configuration options are explained in `man tor` and the [Tor website](https://torproject.org/docs/tor-manual.html.en). The default configuration should work fine for most Tor users.
+By default Tor reads configurations from the file `/etc/tor/torrc`. The configuration options are explained in [tor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) and the [Tor website](https://torproject.org/docs/tor-manual.html.en). The default configuration should work fine for most Tor users.
 
 There are potential conflicts between configurations in `torrc` and those in `tor.service`.
 
@@ -223,7 +223,7 @@ LimitNOFILE=32768
 
 ```
 
-`--network-macvlan=$INTERFACE --private-network` automagically creates a macvlan named `mv-$INTERFACE` inside the container, which is not visible from the host. `--private-network` is implied by `--network-macvlan=` according to `man systemd-nspawn`. This is advisable for security as it will allow you to give a private IP to the container, and it won't know what your machine's IP is. This can help obscure DNS requests.
+`--network-macvlan=$INTERFACE --private-network` automagically creates a macvlan named `mv-$INTERFACE` inside the container, which is not visible from the host. `--private-network` is implied by `--network-macvlan=` according to [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). This is advisable for security as it will allow you to give a private IP to the container, and it won't know what your machine's IP is. This can help obscure DNS requests.
 
 `LimitNOFILE=32768` per [#Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors).
 
@@ -781,7 +781,7 @@ TransPort 9040
 
 ```
 
-See `man iptables`.
+See [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8).
 
 **Note:**
 

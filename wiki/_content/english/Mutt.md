@@ -325,7 +325,7 @@ There are other variables that you may need to set. For example for use of START
 
  `set ssl_starttls = yes` 
 
-See `man 5 muttrc` for more information.
+See [muttrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) for more information.
 
 #### External SMTP support
 
@@ -925,7 +925,7 @@ set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
 
 ```
 
-See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), `man 3 strftime` and `man 3 printf` for more details.
+See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), [strftime(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) and [printf(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/printf.3) for more details.
 
 #### Display recipient instead of sender in "Sent" folder view
 

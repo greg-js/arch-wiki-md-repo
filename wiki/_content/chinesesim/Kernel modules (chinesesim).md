@@ -1,3 +1,9 @@
+相关文章
+
+*   [Boot Debugging](/index.php/Boot_Debugging "Boot Debugging")
+*   [Kernels (简体中文)](/index.php/Kernels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels (简体中文)")
+*   [Kernel parameters (简体中文)](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Kernel_modules](/index.php/Kernel_modules "Kernel modules") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-07-06，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel_modules&diff=0&oldid=264846)可以查看翻译后英文页面的改动。
 
 [内核模块](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module")是可以按需加载或卸载的内核代码，可以不重启系统就扩充内核的功能。
@@ -110,7 +116,7 @@ systemd 读取 `/etc/modules-load.d/` 中的配置加载额外的内核模块。
 virtio-net
 ```
 
-另见`man 5 modules-load.d`。
+另见[modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5)。
 
 ### 配置内核模块参数
 

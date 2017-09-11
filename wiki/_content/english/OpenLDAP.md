@@ -1,3 +1,8 @@
+Related articles
+
+*   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
+*   [LDAP Hosts](/index.php/LDAP_Hosts "LDAP Hosts")
+
 [OpenLDAP](https://www.openldap.org/) is an open-source implementation of the LDAP protocol. An LDAP server basically is a non-relational database which is optimised for accessing, but not writing, data. It is mainly used as an address book (for e.g. email clients) or authentication backend to various services (such as Samba, where it is used to emulate a domain controller, or [Linux system authentication](/index.php/LDAP_authentication "LDAP authentication"), where it replaces `/etc/passwd`) and basically holds the user data.
 
 **Note:** Commands related to OpenLDAP that begin with `ldap` (like `ldapsearch`) are client-side utilities, while commands that begin with `slap` (like `slapcat`) are server-side.
@@ -112,6 +117,8 @@ Then we generate the new configuration with:
 ```
 
 The above command has to be run every time you change `slapd.conf`. Check if everything succeeded. Ignore message "bdb_monitor_db_open: monitoring disabled; configure monitor database to enable".
+
+**Note:** Berkeley DB (BDB) should no longer be used. The mdb backend to slapd(8) is the recommended primary backend for a normal slapd database. It uses OpenLDAP's own Lightning Memory-Mapped Database (LMDB) library to store data and is intended to replace the Berkeley DB backend. The official OpenLDAP package in [core] defaults to mdb.
 
 **Note:** Index the directory after you populate it. You should stop slapd before doing this.
 ```
@@ -246,7 +253,7 @@ TLSCACertificatePath /usr/share/ca-certificates/trust-source
 
 ```
 
-The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. **NOTE:** DEFAULT is a wildcard. See `man ciphers` for description of ciphers, wildcards and options supported.
+The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. **NOTE:** DEFAULT is a wildcard. See [ciphers(1ssl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ciphers.1ssl) for description of ciphers, wildcards and options supported.
 
 **Note:** To see which ciphers are supported by your local OpenSSL installation, type the following: `openssl ciphers -v ALL:COMPLEMENTOFALL`. Always test which ciphers will actually be enabled by TLSCipherSuite by providing it to OpenSSL command, like this: `openssl ciphers -v 'DEFAULT'`
 

@@ -186,7 +186,7 @@ Her er et lille udsnit af de andre muligheder:
 
 ```
 
-For en mere detaljeret liste over parametre henvises til `pacman --help` eller `man pacman`.
+For en mere detaljeret liste over parametre henvises til `pacman --help` eller [pacman(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
 ## Konfiguration
 

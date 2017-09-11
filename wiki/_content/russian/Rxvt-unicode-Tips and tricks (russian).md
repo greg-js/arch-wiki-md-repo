@@ -203,7 +203,7 @@ URxvt.perl-ext-common: default,matcher,tabbed
 
 #### Xinitrc
 
-Смотрите раздел *Примеры* в `man urxvtd`. Это предпочтительный вариант.
+Смотрите раздел *Примеры* в [urxvtd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvtd.1). Это предпочтительный вариант.
 
 **Совет:** Добавьте в ваш `~/.xinitrc` строку:
 ```

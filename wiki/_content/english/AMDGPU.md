@@ -1,3 +1,10 @@
+Related articles
+
+*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
+*   [ATI](/index.php/ATI "ATI")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Vulkan](/index.php/Vulkan "Vulkan")
+
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
 At the moment there is support for [Volcanic Islands (VI)](https://www.x.org/wiki/RadeonFeature/) and experimental support for [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) and [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) cards. AMD has absolutely no plans for supporting the pre-GCN GPUs.
@@ -123,7 +130,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 The following options apply to `/etc/X11/xorg.conf.d/**20-amdgpu.conf**`.
 
-Please read `man amdgpu` first before setting driver options.
+Please read [amdgpu(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/amdgpu.4) first before setting driver options.
 
 **DRI** sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the Xorg version is >= 1.18.3, otherwise DRI2 is used:
 
@@ -172,4 +179,4 @@ If you have screen artifacts when setting your screen frequency up to 120+Hz you
 
 A workaround [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
-There is a GUI solution [[3]](https://github.com/marazmista/radeon-profile) were you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+There is a GUI solution [[3]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).

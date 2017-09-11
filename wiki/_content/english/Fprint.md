@@ -1,3 +1,8 @@
+Related articles
+
+*   [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui")
+*   [ThinkFinger](/index.php/ThinkFinger "ThinkFinger")
+
 From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
 	The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices.
@@ -65,7 +70,7 @@ $ for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprin
 
 You will be asked to scan the given finger. Swipe your right index finger **five times**. After that, the signature is created in `/var/lib/fprint/`.
 
-For more information, see `man fprintd`.
+For more information, see [fprintd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fprintd.1).
 
 ### Restrict enrolling
 

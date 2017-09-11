@@ -1,3 +1,7 @@
+Related articles
+
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+
 This article explains different methods to take [screenshots](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") on your system.
 
 ## Contents
@@ -205,7 +209,7 @@ $ scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png
 
 saves the screenshot in a filename with the current year, month, date, hours, minutes, and seconds to a folder in your home directory called "screenshots"
 
-See `man scrot` for more information. You can simply automate the file to uploaded like so [[1]](https://github.com/kaihendry/Kai-s--HOME/tree/master/bin).
+See [scrot(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/scrot.1) for more information. You can simply automate the file to uploaded like so [[1]](https://github.com/kaihendry/Kai-s--HOME/tree/master/bin).
 
 **Note:** According to [this thread](http://comments.gmane.org/gmane.comp.misc.suckless/6901), `scrot -s` does not work when run using a shortcut in [dwm](https://www.archlinux.org/packages/?name=dwm) (defined in `config.def.c`/`config.c`).
 

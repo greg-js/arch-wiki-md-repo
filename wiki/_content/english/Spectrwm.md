@@ -260,7 +260,7 @@ Meta+Shift+q: exit spectrwm
 
 ### Help, I just logged in and all I see is a blank screen
 
-Press `Shift+WinKey+Return` and an xterm will start. See `man spectrwm` for other default key bindings. Also check your configuration file.
+Press `Shift+WinKey+Return` and an xterm will start. See [spectrwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/spectrwm.1) for other default key bindings. Also check your configuration file.
 
 ### Why does my window open in a desktop other then the current active one?
 

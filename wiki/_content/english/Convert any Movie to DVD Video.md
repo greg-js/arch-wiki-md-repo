@@ -1,3 +1,8 @@
+Related articles
+
+*   [Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive")
+*   [MPlayer](/index.php/MPlayer "MPlayer")
+
 MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package. See [MPlayer](/index.php/MPlayer "MPlayer") for details. [mplayer2](https://aur.archlinux.org/packages/mplayer2/) [does not include MEncoder](http://www.mplayer2.org/differences/#mencoder-is-no-longer-available).
 
 	*Why another article about this process?* There is a plethora of articles, man pages, and blog entries about how to convert any movie to a standard DVD Video viewable on any hardware DVD player. However, most of those pages focus on one aspect of this process. The point of this article is to summarize most of the available knowledge in only one place.
@@ -712,7 +717,7 @@ emphasise "Success: dvd.iso image created"
 
 To use the script, copy and paste it into an appropriately named file (such as `video2dvdiso.sh`), and then execute `chmod +x <file>`.
 
-Hopefully the script is quite easy to understand so you can change it as needed. See `man ffmpeg` `man mkisofs` `man dvdauthor` for more information.
+Hopefully the script is quite easy to understand so you can change it as needed. See [ffmpeg(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ffmpeg.1) [mkisofs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkisofs.8) [dvdauthor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dvdauthor.1) for more information.
 
 **Example usage**
 

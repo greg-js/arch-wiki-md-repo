@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Aspell](/index.php/Aspell "Aspell") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-25，点击[这里](https://wiki.archlinux.org/index.php?title=Aspell&diff=0&oldid=442909)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Aspell](/index.php/Aspell "Aspell") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-11，点击[这里](https://wiki.archlinux.org/index.php?title=Aspell&diff=0&oldid=489440)可以查看翻译后英文页面的改动。
 
 [官方网站](http://aspell.net/): "GNU Aspell 是一个自由、开源的拼写检查工具，目的是取代 Ispell. 可以单独使用，也可以作为库文件使用."
 
@@ -15,7 +15,7 @@
 
 ## 使用
 
-很多程序会自动使用 *aspell*，无需额外配置。用户也可以手动执行 *aspell*，参考 `man aspell`.
+很多程序会自动使用 *aspell*，无需额外配置。用户也可以手动执行 *aspell*，参考 [aspell(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1).
 
 对单个文件执行拼写检查:
 

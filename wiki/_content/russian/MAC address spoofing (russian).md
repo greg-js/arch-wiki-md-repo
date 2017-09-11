@@ -114,7 +114,7 @@ link/ether 00:1d:98:5a:d1:3a
 
 ### Способ 1: systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") поддерживает подмену MAC-адреса при помощи [файлов link](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_link "Systemd-networkd (Русский)") (смотрите `man systemd.link` для получения дополнительной информации).
+[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") поддерживает подмену MAC-адреса при помощи [файлов link](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_link "Systemd-networkd (Русский)") (смотрите [systemd.link(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) для получения дополнительной информации).
 
 Для подмены статическим адресом:
 

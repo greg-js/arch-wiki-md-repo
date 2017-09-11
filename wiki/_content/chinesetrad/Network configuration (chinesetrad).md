@@ -1,3 +1,10 @@
+相關文章
+
+*   [巨型封包 (英)](/index.php/Jumbo_frames "Jumbo frames")
+*   [防火牆 (英)](/index.php/Firewalls "Firewalls")
+*   [無線網路設定 (英)](/index.php/Wireless_Setup "Wireless Setup")
+*   [應用程式清單#網路管理員 (英)](/index.php/List_of_applications#Network_managers "List of applications")
+
 **翻譯狀態：** 本文章是 [Network_Configuration](/index.php/Network_Configuration "Network Configuration") 的翻譯版本。最近一次的翻譯時間：2014-05-02。點擊[本連結](https://wiki.archlinux.org/index.php?title=Network_Configuration&diff=0&oldid=311601)查看英文頁面之後的變更。
 
 本頁將介紹如何設定**有線**網路連線。若您需要設定**無線**網路，請參考[無線網路設定](/index.php/Wireless_network_configuration "Wireless network configuration")。
@@ -57,7 +64,7 @@
 
 一般來說，基本的安裝過程都已經建立了可運作的網路設定。請執行下列指令以進行檢查：
 
-**註記:** `-c 3` 選項表示將會呼叫三次。詳細請參閱 `man ping` 。
+**註記:** `-c 3` 選項表示將會呼叫三次。詳細請參閱 [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) 。
 
 **提示：** 您也可以嘗試使用其他的 Domain ，如 www.hinet.net 。
  `$ ping -c 3 www.google.com` 
@@ -106,7 +113,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 這樣會將 `*myhostname*` 寫入 `/etc/hostname` 檔案中。
 
-詳細請參閱 `man 5 hostname` 與 `man 1 hostnamectl` 。
+詳細請參閱 [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 與 [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) 。
 
 在 `/etc/hosts` 中加入相同的主機名稱：
 
@@ -282,7 +289,7 @@ lo eth0 eth1 firewire0
 
 **註記:** 子網路遮罩使用了 [CIDR 表示法](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation")（CIDR，Classless Inter-Domain Routing，無類別網路間路由）。
 
-詳情請參閱 `man ip` 。
+詳情請參閱 [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7) 。
 
 以類似下列的方法加上您的 IP 位址：
 

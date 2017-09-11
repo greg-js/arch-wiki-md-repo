@@ -1,3 +1,9 @@
+相关文章
+
+*   [桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")
+*   [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")
+*   [窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")
+
 **翻译状态：** 本文是英文页面 [Enlightenment](/index.php/Enlightenment "Enlightenment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-25，点击[这里](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=464174)可以查看翻译后英文页面的改动。
 
 ## Contents
@@ -279,7 +285,7 @@ Enlightenment, Development Release 16 was first released in 2000, and reached ve
 
 Install [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
 
-See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at `man e16`, not `man enlightenment`, and only gives startup options.
+See `/usr/share/doc/e16/e16.html` for in depth documentation. The man page is at [e16(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) and only gives startup options.
 
 ### 基本设置
 

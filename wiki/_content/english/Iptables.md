@@ -1,3 +1,12 @@
+Related articles
+
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+*   [Sshguard](/index.php/Sshguard "Sshguard")
+*   [Fail2ban](/index.php/Fail2ban "Fail2ban")
+*   [Nftables](/index.php/Nftables "Nftables")
+
 *iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [frontends](/index.php/Firewalls#Console_frontends "Firewalls") and [GUIs](/index.php/Firewalls#Graphic_frontends "Firewalls"). iptables is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6").
 
 [nftables](/index.php/Nftables "Nftables") was released in [release with Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), and will one day replace iptables as the main Linux firewall utility.
@@ -90,7 +99,7 @@ In most common use cases you will only use two of these: **filter** and **nat**.
 
 Tables consist of *chains*, which are lists of rules which are followed in order. The default table, `filter`, contains three built-in chains: `INPUT`, `OUTPUT` and `FORWARD` which are activated at different points of the packet filtering process, as illustrated in the [flow chart](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg). The nat table includes `PREROUTING`, `POSTROUTING`, and `OUTPUT` chains.
 
-See `man 8 iptables` for a description of built-in chains in other tables.
+See [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) for a description of built-in chains in other tables.
 
 By default, none of the chains contain any rules. It is up to you to append rules to the chains that you want to use. Chains *do* have a default policy, which is generally set to `ACCEPT`, but can be reset to `DROP`, if you want to be sure that nothing slips through your ruleset. The default policy always applies at the end of a chain only. Hence, the packet has to pass through all existing rules in the chain before the default policy is applied.
 
@@ -100,7 +109,7 @@ User-defined chains can be added to make rulesets more efficient or more easily 
 
 Packet filtering is based on *rules*, which are specified by multiple *matches* (conditions the packet must satisfy so that the rule can be applied), and one *target* (action taken when the packet matches all conditions). The typical things a rule might match on are what interface the packet came in on (e.g eth0 or eth1), what type of packet it is (ICMP, TCP, or UDP), or the destination port of the packet.
 
-Targets are specified using the `-j` or `--jump` option. Targets can be either user-defined chains (i.e. if these conditions are matched, jump to the following user-defined chain and continue processing there), one of the special built-in targets, or a target extension. Built-in targets are `ACCEPT`, `DROP`, `QUEUE` and `RETURN`, target extensions are, for example, `REJECT` and `LOG`. If the target is a built-in target, the fate of the packet is decided immediately and processing of the packet in current table is stopped. If the target is a user-defined chain and the fate of the packet is not decided by this second chain, it will be filtered against the remaining rules of the original chain. Target extensions can be either *terminating* (as built-in targets) or *non-terminating* (as user-defined chains), see `man 8 iptables-extensions` for details.
+Targets are specified using the `-j` or `--jump` option. Targets can be either user-defined chains (i.e. if these conditions are matched, jump to the following user-defined chain and continue processing there), one of the special built-in targets, or a target extension. Built-in targets are `ACCEPT`, `DROP`, `QUEUE` and `RETURN`, target extensions are, for example, `REJECT` and `LOG`. If the target is a built-in target, the fate of the packet is decided immediately and processing of the packet in current table is stopped. If the target is a user-defined chain and the fate of the packet is not decided by this second chain, it will be filtered against the remaining rules of the original chain. Target extensions can be either *terminating* (as built-in targets) or *non-terminating* (as user-defined chains), see [iptables-extensions(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8) for details.
 
 ### Traversing Chains
 

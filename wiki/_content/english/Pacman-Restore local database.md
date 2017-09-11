@@ -69,7 +69,7 @@ Proceed once the contents of both lists are satisfactory, since they will be use
 
 ## Performing the recovery
 
-Define bash alias for recovery purposes:
+Define a bash function for recovery purposes:
 
 ```
  recovery-pacman() {

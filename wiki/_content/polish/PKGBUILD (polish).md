@@ -1,5 +1,12 @@
 **Translation Status:** This article is a localized version of [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Last translation date: 9 November 2012‎. You can help to synchronize translation, if there were [ID changes](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=History) in English version.
 
+Related articles
+
+*   [Arch Packaging Standards](/index.php/Arch_Packaging_Standards "Arch Packaging Standards")
+*   [Tworzenie Pakietów](/index.php?title=Tworzenie_Pakiet%C3%B3w&action=edit&redlink=1 "Tworzenie Pakietów (page does not exist)")
+*   [Custom local repository](/index.php/Custom_local_repository "Custom local repository")
+*   [pacman Tips](/index.php/Pacman_Tips "Pacman Tips")
+
 **PKGBUILD** jest plikiem [Arch Linuksa](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)") opisującym proces budowania pakietu używany podczas [tworzenia pakietów](/index.php?title=Tworzenie_Pakiet%C3%B3w&action=edit&redlink=1 "Tworzenie Pakietów (page does not exist)").
 
 Pakiety w Arch Linuksie budowane są za pomocą narzędzia [makepkg](/index.php/Makepkg "Makepkg") i informacji zawartych w PKGBUILDach. Kiedy **makepkg** jest uruchamiany, szuka pliku `PKGBUILD` w aktualnym katalogu i postępuje zgodnie ze wskazówkami w nim zawartymi aby skompilować źródła lub w jakikolwiek inny sposób pobrać pliki potrzebne do zbudowania pliku pakietu (`*pkgname*.pkg.tar.xz`). Wynikowy pakiet zawiera pliki binarne i instrukcje instalacyjne, łatwo instalowane z [pacmanem](/index.php/Pacman "Pacman").
@@ -234,11 +241,11 @@ An array of MD5 checksums of the files listed in the `source` array. Once all fi
 
 ### sha1sums
 
-An array of SHA-1 160-bit checksums. This is an alternative to `md5sums` described above, but it is also known to have weaknesses, so you should consider using a stronger alternative. To enable use and generation of these checksums, be sure to set up the `INTEGRITY_CHECK` option in `/etc/makepkg.conf`. See `man makepkg.conf`.
+An array of SHA-1 160-bit checksums. This is an alternative to `md5sums` described above, but it is also known to have weaknesses, so you should consider using a stronger alternative. To enable use and generation of these checksums, be sure to set up the `INTEGRITY_CHECK` option in `/etc/makepkg.conf`. See [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 ### sha256sums, sha384sums, sha512sums
 
-An array of SHA-2 checksums with digest sizes 256, 384 and 512 bits respectively. These are alternatives to `md5sums` described above and are generally believed to be stronger. To enable use and generation of these checksums, be sure to set up the `INTEGRITY_CHECK` option in `/etc/makepkg.conf`. See `man makepkg.conf`.
+An array of SHA-2 checksums with digest sizes 256, 384 and 512 bits respectively. These are alternatives to `md5sums` described above and are generally believed to be stronger. To enable use and generation of these checksums, be sure to set up the `INTEGRITY_CHECK` option in `/etc/makepkg.conf`. See [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 ## See also
 

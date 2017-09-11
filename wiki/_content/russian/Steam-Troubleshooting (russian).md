@@ -84,7 +84,7 @@ Could not find required OpenGL entry point 'glGetError'! Either your video card 
 
 ##### Использование динамического компоновщика
 
-Динамический компоновщик (`man 8 ld.so`) может загружать определённые библиотеки с помощью [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `LD_PRELOAD`.
+Динамический компоновщик ([ld.so(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8)) может загружать определённые библиотеки с помощью [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `LD_PRELOAD`.
 
 ```
 LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam

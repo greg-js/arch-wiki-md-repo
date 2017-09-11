@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")
+
 Según la [Wikipedia](https://en.wikipedia.org/wiki/es:Network_File_System "wikipedia:es:Network File System"):
 
 	*El Network File System (Sistema de archivos de red), o NFS, es un protocolo de nivel de aplicación, desarrollado originariamente por Sun Microsystems en 1984, que permite a un usuario de un equipo cliente acceder a archivos remotos a través de una red, de una manera similar a como se accede a los archivos almacenados localmente.*
@@ -109,7 +113,7 @@ Añada los directorios que se compartirán y la dirección IP o nombre de servid
 
 Los usuarios no necesitan abrir el material compartido a la subred completa; se puede especificar solo una dirección IP o un nombre de servidor.
 
-Para más información sobre todas las opciones disponibles vea `man 5 exports`.
+Para más información sobre todas las opciones disponibles vea [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
 
 Si usted modifica `/etc/exports` mientras el servidor está funcionando, debe volver a exportarlos para que los cambios surtan efecto:
 

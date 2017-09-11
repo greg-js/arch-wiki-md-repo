@@ -510,4 +510,4 @@ TermExec = ${Terminal} -e
 *   [rxvt-unicode FAQ](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod) - Zvanični FAQ
 *   [rxvt-unicode Reference](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod) - Zvanična strana uputstva
 *   [urxvtperl](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/src/urxvt.pm) - Zvanično uputstvo za perl ekstenzije
-*   `man urxvt`
+*   [urxvt(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1)

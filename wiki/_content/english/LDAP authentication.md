@@ -1,3 +1,8 @@
+Related articles
+
+*   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
+*   [LDAP Hosts](/index.php/LDAP_Hosts "LDAP Hosts")
+
 ## Contents
 
 *   [1 Introduction and Concepts](#Introduction_and_Concepts)
@@ -324,7 +329,7 @@ ldap_network_timeout = 2
 ldap_group_member = uniquemember
 ```
 
-The above is an example only. See `man sssd.conf` for the full details.
+The above is an example only. See [sssd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sssd.conf.5) for the full details.
 
 Finally set the file permissions `chmod 600 /etc/sssd/sssd.conf` otherwise sssd will fail to start.
 

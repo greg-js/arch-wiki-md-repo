@@ -1,3 +1,8 @@
+Related articles
+
+*   [GnuPG](/index.php/GnuPG "GnuPG")
+*   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
+
 To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. The current Master Signing Keys are found [here](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up *pacman-key*. So the web of trust links the user's key to the Master Keys.
 
 Examples of webs of trust:
@@ -162,10 +167,17 @@ keyserver hkp://pgp.mit.edu:11371
 
 ```
 
-If this does not help either, change the keyserver to the kjsl keyserver, which provides this service through port 80 (the HTTP port), which should always remain unblocked:
+If this does not help either, change the keyserver to the kjsl keyserver, which provides this service through port 80 (the HTTP port), which should always remain unblocked.
 
 ```
 keyserver hkp://keyserver.kjsl.com:80
+
+```
+
+If even port 80 doesn't work (for example when company uses some kind of http-only "transparent" proxy instead of routing, following could work:
+
+```
+keyserver hkps://hkps.pool.sks-keyservers.net:443
 
 ```
 

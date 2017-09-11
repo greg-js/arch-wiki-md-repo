@@ -1,3 +1,7 @@
+Related articles
+
+*   [Mount](/index.php/Mount "Mount")
+
 This document describes how to use the popular USB memory sticks with Linux. However, it is also valid for other devices such as digital cameras that act as if they were just a USB storage device.
 
 If you have an up-to-date system with the standard Arch kernel and a modern [Desktop environment](/index.php/Desktop_environment "Desktop environment") your device should just show up on your desktop, with no need to open a console.
@@ -60,7 +64,7 @@ or
 
 ```
 
-If `mount` does not recognize the format of the device you can try to use the `-t` argument, see `man mount` for details.
+If `mount` does not recognize the format of the device you can try to use the `-t` argument, see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for details.
 
 **Note:**
 

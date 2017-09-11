@@ -1,3 +1,8 @@
+相关文章
+
+*   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
+*   [LDAP Hosts](/index.php/LDAP_Hosts "LDAP Hosts")
+
 **翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-27，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=464607)可以查看翻译后英文页面的改动。
 
 OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器本质上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_authentication "LDAP authentication") 时代替 `/etc/passwd` 的作用。）
@@ -242,7 +247,7 @@ TLSCACertificatePath /usr/share/ca-certificates/trust-source
 
 ```
 
-The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. DEFAULT is a wildcard. See `man ciphers` for description of ciphers, wildcards and options supported.
+The TLSCipherSuite specifies a list of OpenSSL ciphers from which slapd will choose when negotiating TLS connections, in decreasing order of preference. In addition to those specific ciphers, you can use any of the wildcards supported by OpenSSL. DEFAULT is a wildcard. See [ciphers(1ssl)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ciphers.1ssl) for description of ciphers, wildcards and options supported.
 
 **Note:** To see which ciphers are supported by your local OpenSSL installation, type the following: `openssl ciphers -v ALL:COMPLEMENTOFALL`. Always test which ciphers will actually be enabled by TLSCipherSuite by providing it to OpenSSL command, like this: `openssl ciphers -v 'DEFAULT'`
 

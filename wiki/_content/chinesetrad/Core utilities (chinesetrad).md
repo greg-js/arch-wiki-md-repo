@@ -1,5 +1,12 @@
 **翻譯狀態：** 本文章是 [Core_Utilities](/index.php/Core_Utilities "Core Utilities") 的翻譯版本。最近一次的翻譯時間：2014-01-20。點擊[本連結](https://wiki.archlinux.org/index.php?title=Core_Utilities&diff=0&oldid=293712)查看英文頁面之後的變更。
 
+相關文章
+
+*   [Bash (英)](/index.php/Bash "Bash")
+*   [Zsh (英)](/index.php/Zsh "Zsh")
+*   [一般建議](/index.php/General_Recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General Recommendations (正體中文)")
+*   [GNU 專案 (英)](/index.php/GNU_Project "GNU Project")
+
 本文章涉及 GNU/Linux 系統上所謂的「核心」工具，例如 *less* ，*ls* 和 *grep* ，本文聚焦 (但不限於) 在 GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) 軟體包的工具集，並提供各種關於這些工具的建議、技巧與資訊。
 
 ## Contents
@@ -97,7 +104,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 ```
 
-更多資訊請參閱 `man iconv` 。
+更多資訊請參閱 [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) 。
 
 ## ip
 

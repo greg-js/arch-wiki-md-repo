@@ -43,7 +43,7 @@ udev carica i moduli del kernel simultaneamente, ciò può quindi comportare una
 
 ## Installazione
 
-Udev è ora parte di [systemd](https://www.archlinux.org/packages/?name=systemd) e viene installato di default su Arch Linux. Vedere `man systemd-udevd.service` per ulteriori informazioni.
+Udev è ora parte di [systemd](https://www.archlinux.org/packages/?name=systemd) e viene installato di default su Arch Linux. Vedere [systemd-udevd.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-udevd.service.8) per ulteriori informazioni.
 
 ## Le regole di udev
 
@@ -87,7 +87,7 @@ Mentre UDisks include dei semplici metodi di mount(ed umount) delle periferiche 
 
 ### Mount automatico delle periferiche USB
 
-**Nota:** Nelle seguenti regole, le opzioni per il comando mount sono definite con `ENV{mount_options}="relatime"`, consultare `man mount`(ed eventualmente `man ntfs-3g`) per tutte le possibili opzioni, leggere [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance") per informazioni relative alle performance.
+**Nota:** Nelle seguenti regole, le opzioni per il comando mount sono definite con `ENV{mount_options}="relatime"`, consultare [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)(ed eventualmente [ntfs-3g(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntfs-3g.8)) per tutte le possibili opzioni, leggere [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance") per informazioni relative alle performance.
 
 **Nota:** L'opzione `users` per il comando mount **non** permetterà comunque agli utenti di smontare il filesystem.
 

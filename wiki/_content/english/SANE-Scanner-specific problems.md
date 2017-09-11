@@ -111,7 +111,7 @@ If xsane crashes with message "`=bugchk_free(ptr==(nil))@brother_modelinf.c(482)
 
 Find out your printer/scanner's IP address, and add it on a new line to `/etc/sane.d/pixma.conf` in the format `bjnp://10.0.0.20`.
 
-Sane should now find your device. For more details refer to `man sane-pixma`.
+Sane should now find your device. For more details refer to [sane-pixma(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sane-pixma.5).
 
 ## Epson
 

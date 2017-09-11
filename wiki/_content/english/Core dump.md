@@ -90,7 +90,7 @@ The default set in `/usr/lib/sysctl.d/50-coredump.conf` sends all core dumps to 
 
 **Note:** If you do not have full-disk encryption, this means your program's memory will be written to raw disk! This is a potential information leak even if you have encrypted swap.
 
-To retrieve a core dump from the journal, see `man coredumpctl`
+To retrieve a core dump from the journal, see [coredumpctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/coredumpctl.1)
 
 ## Examining a core dump
 

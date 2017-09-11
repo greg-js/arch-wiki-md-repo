@@ -1,3 +1,11 @@
+Related articles
+
+*   [Security](/index.php/Security "Security")
+*   [pam_mount](/index.php/Pam_mount "Pam mount")
+*   [pam_usb](/index.php/Pam_usb "Pam usb")
+*   [pam_abl](/index.php/Pam_abl "Pam abl")
+*   [pam_oath](/index.php/Pam_oath "Pam oath")
+
 **翻译状态：** 本文是英文页面 [PAM](/index.php/PAM "PAM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-14，点击[这里](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=436909)可以查看翻译后英文页面的改动。
 
 Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进行系统级的用户认证。如下描述引用自 [[1]](http://www.linux-pam.org/whatispam.html):
@@ -81,7 +89,7 @@ auth      required  pam_unix.so     try_first_pass nullok
 auth      optional  pam_permit.so
 ```
 
-`man pam_unix` 说明如下：“本认证 （ `pam_unix.so` ）用于检查用户密码作为认证。默认情况不允许密码为空的用户进入”。而 `pam_permit.so` 允许密码为空的情况。如果将 `rerquired` 和 `optional` 交换位置，则两种情况都将允许无密码登录。
+[pam_unix(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) 说明如下：“本认证 （ `pam_unix.so` ）用于检查用户密码作为认证。默认情况不允许密码为空的用户进入”。而 `pam_permit.so` 允许密码为空的情况。如果将 `rerquired` 和 `optional` 交换位置，则两种情况都将允许无密码登录。
 
 第二种情况恰好相反，默认情况下创建如下的文件：
 

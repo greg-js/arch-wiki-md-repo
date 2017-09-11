@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [Fonts (Italiano)](/index.php/Fonts_(Italiano) "Fonts (Italiano)")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
+*   [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples")
+
 Fontconfig è una libreria progettata per fornire un elenco di [fonts](/index.php/Fonts_(Italiano) "Fonts (Italiano)") disponibili per le applicazioni, e anche per la configurazione necessaria ad ottenere il relativo rendering. Vedere il pacchetto [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) e [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig"). La libreria Free type (pacchetto [freetype2](https://www.archlinux.org/packages/?name=freetype2)) renderizza i font, sulla base di questa configurazione.
 
 Anche se Fontconfig è l'attuale standard in Linux, alcune applicazioni si basano ancora sul metodo originale di categorizzazione dei font: la configurazione di Xorg server.
@@ -47,7 +54,7 @@ fc-list : file
 
 ```
 
-Vedere `man fc-list` per maggiori informazioni.
+Vedere [fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1) per maggiori informazioni.
 
 Verificare la presenza di percorsi di font Xorg noti esaminando il log:
 

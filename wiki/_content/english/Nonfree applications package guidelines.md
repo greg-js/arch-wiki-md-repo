@@ -116,7 +116,7 @@ Few examples of various strategies for obtaining files required for package:
 
 ### Custom DLAGENTS
 
-Some software authors aggressively protect their software from automatic downloading: ban certain "User-Agent" strings, create temporary links to files etc. You can still conveniently download this files by using `DLAGENTS` variable in PKGBUILD (see `man makepkg.conf`). This is used by some packages in [official repositories](/index.php/Official_repositories "Official repositories"), for example [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
+Some software authors aggressively protect their software from automatic downloading: ban certain "User-Agent" strings, create temporary links to files etc. You can still conveniently download this files by using `DLAGENTS` variable in PKGBUILD (see [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5)). This is used by some packages in [official repositories](/index.php/Official_repositories "Official repositories"), for example [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
 
 Please pay attention, if you want to have a customized user-agent string, if the latter contains spaces, parentheses, or slashes in it (or actually anything that can break parsing), this will not work. There's no workaround, this is the nature of arrays in bash and the way DLAGENTS was designed to be consumed in makepkg. The following example will thus **not work**:
 

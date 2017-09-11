@@ -42,7 +42,7 @@ Once the authentication is successful, it will be possible to connect to the net
 
 ## Connecting with wpa_cli
 
-This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli) for details.
+This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
 
@@ -230,7 +230,7 @@ First start *wpa_supplicant* command, whose most commonly used arguments are:
     *   `nl80211` is the current standard, but not all wireless chip's modules support it.
     *   `wext` is currently deprecated, but still widely supported.
 
-See [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant) for the full argument list. For example:
+See [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) for the full argument list. For example:
 
 ```
 # wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
@@ -298,7 +298,7 @@ Before running the `wpa_supplicant-wired@*adapter*.service` service, make sure t
 
 ### wpa_cli action script
 
-*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli) for details.
+*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 The following example will use [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") to notify the user about the events:
 
@@ -392,9 +392,9 @@ with a capital "v" (see [FS#51358](https://bugs.archlinux.org/task/51358)). You 
 
 ## See also
 
-*   [WPA Supplicant home](http://hostap.epitest.fi/wpa_supplicant/)
+*   [WPA Supplicant home](https://w1.fi/wpa_supplicant/)
 *   [wpa_cli usage examples](https://gist.github.com/buhman/7162560)
-*   [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)
-*   [wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)
-*   [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli)
+*   [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
+*   [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)
+*   [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8)
 *   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)

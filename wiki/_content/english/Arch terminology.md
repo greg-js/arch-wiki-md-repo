@@ -162,7 +162,7 @@ The repository has the pre-compiled packages of one or (usually) more [PKGBUILDs
 
 ## [RTFM](https://en.wikipedia.org/wiki/RTFM "wikipedia:RTFM")
 
-"Read The Fucking (or Fine) Manual". This simple message is replied to a lot of new Linux/Arch users who ask about the functionality of a program when it is clearly defined in the program's manual.
+"Read The Fine Manual". This simple message is replied to a lot of new Linux/Arch users who ask about the functionality of a program when it is clearly defined in the program's manual.
 
 It is often used when a user fails to make any attempt to find a solution to the problem themselves. If someone tells you this, they are not trying to offend you; they are just frustrated with your lack of effort.
 

@@ -13,7 +13,7 @@ From the [official website](http://aspell.net/): "GNU Aspell is a Free and Open 
 
 ## Usage
 
-Many programs use *aspell* automatically and need no further configuration. Additionally one can use *aspell* manually. Here are some basic usages. See `man aspell` for more.
+Many programs use *aspell* automatically and need no further configuration. Additionally one can use *aspell* manually. Here are some basic usages. See [aspell(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1) for more.
 
 To spell check a single file:
 

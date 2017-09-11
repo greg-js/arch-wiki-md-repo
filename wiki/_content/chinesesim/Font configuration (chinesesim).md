@@ -1,5 +1,12 @@
 **翻译状态：** 本文是英文页面 [Font_Configuration](/index.php/Font_Configuration "Font Configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-06-07，点击[这里](https://wiki.archlinux.org/index.php?title=Font_Configuration&diff=0&oldid=229345)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [字体](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
+*   [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples")
+
 Fontconfig 是一个为应用程序提供可用 [字体](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") 的程序库，也可用来配置字体渲染效果，参见[fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 软件包和 [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig")。Free type 库([freetype2](https://www.archlinux.org/packages/?name=freetype2) 软件包)就是以此为配置基础来渲染字体。
 
 尽管 Fontconfig 已经是当今 Linux 字体界的标准，但是仍有一部分应用使用更加原始的字体显示方法，[X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")。
@@ -50,7 +57,7 @@ $ fc-list : file
 
 ```
 
-参见`man fc-list`以获得更多输出格式方面的信息。
+参见[fc-list(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fc-list.1)以获得更多输出格式方面的信息。
 
 通过考察Xorg的log文件来检查Xorg包含的字体路径:
 

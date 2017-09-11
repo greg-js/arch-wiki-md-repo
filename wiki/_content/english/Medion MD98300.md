@@ -255,12 +255,7 @@ ionice -c 3 cp /path/to/huge/file /path/of/the/copy
 
 It starts *cp* with the scheduling class *idle*. That means that you shouldn't get a hanging system while it is copying (although it will need longer, but thats the deal).
 
-More information in the man page[[3]](http://linux.die.net/man/1/ionice):
-
-```
-man ionice
-
-```
+More information in the man page [ionice(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1).
 
 ## Touchpad tweaks
 

@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)")
+*   [Start X at Login (Español)](/index.php/Start_X_at_Login_(Espa%C3%B1ol) "Start X at Login (Español)")
+
 [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") ofrece a los usuarios la capacidad de ejecutar una instancia de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para gestionar la sesión y los servicios. Esto permite a los usuarios iniciar, detener, habilitar y deshabilitar las unidades que se encuentren dentro de ciertas carpetas cuando systemd se ejecuta por el usuario. Esto es conveniente para los demonios y otros servicios que normalmente se ejecutan como un usuario diferente a root o un usuario especial, como por ejemplo [mpd](/index.php/Mpd "Mpd")
 
 ## Contents
@@ -306,7 +312,7 @@ WantedBy=default.target
 
 ```
 
-Como se detalla en `man systemd.unit`, la variable `%h` es reemplazada por la carpeta home del usuario que ejecuta el servicio. Hay otras variables en las manpages de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") que puede tenerlas en cuenta.
+Como se detalla en [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), la variable `%h` es reemplazada por la carpeta home del usuario que ejecuta el servicio. Hay otras variables en las manpages de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") que puede tenerlas en cuenta.
 
 ### Nota acerca de las aplicaciones X
 

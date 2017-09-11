@@ -1,3 +1,11 @@
+Ссылки по теме
+
+*   [Jumbo-кадры](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Настройка беспроводной сети](/index.php/Wireless_Setup_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wireless Setup (Русский)")
+*   [Сетевой мост](/index.php/Network_bridge "Network bridge")
+*   [Список приложений/Интернет#Управление подключениями](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8 "Список приложений/Интернет")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 2014-10-16\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=340238).
 
 На этой странице объясняется, как настроить **проводное** подключение к сети. Если вам необходимо настроить **беспроводное** подключение, смотрите статью [Настройка беспроводной сети](/index.php/Wireless_Setup_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wireless Setup (Русский)").
@@ -58,7 +66,7 @@
 
 В большом количестве случаев базовая процедура установки создает работающую конфигурацию сети. Чтобы это проверить, используйте следующую команду:
 
-**Примечание:** Опция `-c 3` задает количество отправляемых запросов (три). Для получения дополнительной информации смотрите страницу справочного руководства `man ping`
+**Примечание:** Опция `-c 3` задает количество отправляемых запросов (три). Для получения дополнительной информации смотрите страницу справочного руководства [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8)
  `$ ping -c 3 yandex.ru` 
 ```
 PING yandex.ru (93.158.134.11) 56(84) bytes of data.
@@ -104,7 +112,7 @@ rtt min/avg/max/mdev = 14.840/15.917/17.788/1.335 ms
 
 Эта команда создаст запись `*моеимяузла*` в файле `/etc/hostname`.
 
-Для получения дополнительной информации смотрите страницы справочного руководства `man 5 hostname` и `man 1 hostnamectl`.
+Для получения дополнительной информации смотрите страницы справочного руководства [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) и [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1).
 
 Добавьте то же самое имя узла в `/etc/hosts`:
 
@@ -290,7 +298,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 **Примечание:** Маска подсети была указана при помощи [бесклассовой адресации](https://en.wikipedia.org/wiki/ru:%D0%91%D0%B5%D1%81%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%D1%86%D0%B8%D1%8F "wikipedia:ru:Бесклассовая адресация")
 
-Чтобы увидеть список всех опций, смотрите страницу справочного руководства `man ip`.
+Чтобы увидеть список всех опций, смотрите страницу справочного руководства [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
 
 Добавьте ваш IP-адрес шлюза, как здесь:
 

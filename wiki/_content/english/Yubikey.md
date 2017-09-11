@@ -245,7 +245,7 @@ You can turn the blinking off by disabling the CCID mode. This slow blinking jus
 
 On a new YubiKey the Yubico OTP is preconfigured on slot 1\.
 
-**Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [[see here](https://forum.yubico.com/viewtopic.php?f=16&t=1960)].
+**Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [see here](https://forum.yubico.com/viewtopic.php?f=16&t=1960).
 
 Meaning: Being a security-minded person one could think that it is a good idea to reset configuration slot 1 to a new OTP. But then a "VV" prefix in your credentials must be used. Whereas the factory credentials on your Yubikey use a "CC" prefix!
 

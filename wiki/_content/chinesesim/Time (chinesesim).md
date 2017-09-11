@@ -1,3 +1,7 @@
+相关文章
+
+*   [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Time](/index.php/Time "Time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=Time&diff=0&oldid=442442)可以查看翻译后英文页面的改动。
 
 一个操作系统通过如下内容确定时间：时间数值、时间标准、时区和夏令时调节(中国已经废止)。本文分别介绍各个部分的定义及如何设置他们。要维护准确的系统时间，请参考 [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)") 一文。
@@ -174,7 +178,7 @@ $ timedatectl list-timezones
 
 此命令会创建一个`/etc/localtime`软链接，指向`/usr/share/zoneinfo/`中的时区文件，如果手动创建此链接请确保是相对链接而不是绝对链接，参阅archlinux(7).
 
-See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more details.
+See [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5), and [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for more details.
 
 **Note:** 如果pre-systemd配置的/etc/timezone仍然存在于你的系统，你可以放心地将其删除，因为它不再使用。
 

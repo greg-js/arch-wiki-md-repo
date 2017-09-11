@@ -29,7 +29,7 @@ $ systemctl reboot
 
 ```
 
-按下待机、关机和休眠按钮和盖下显示屏的事件也由 logind 处理（参见 `man logind.conf`）。
+按下待机、关机和休眠按钮和盖下显示屏的事件也由 logind 处理（参见 [logind.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5)）。
 
 ## 使用 sudo
 

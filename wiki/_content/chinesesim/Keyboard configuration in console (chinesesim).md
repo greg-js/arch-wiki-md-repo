@@ -1,3 +1,8 @@
+相关文章
+
+*   [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+
 **翻译状态：** 本文是英文页面 [Keyboard_Configuration_in_Console](/index.php/Keyboard_Configuration_in_Console "Keyboard Configuration in Console") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-07，点击[这里](https://wiki.archlinux.org/index.php?title=Keyboard_Configuration_in_Console&diff=0&oldid=359908)可以查看翻译后英文页面的改动。
 
 **Note:** 此文仅介绍简单设置，修改布局、按键映射等高级功能请查看 [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")。
@@ -55,7 +60,7 @@ $ localectl list-keymaps | grep -i *search_term*
 
 ### 永久设置
 
-可以把键盘设置到 `/etc/vconsole.conf`，[systemd](/index.php/Systemd "Systemd") 在启动时会读取此文件. `KEYMAP` 变量指定键盘映射，如果未设置或为空，则使用默认的 `us` 键盘映射，选项信息可以参考 `man 5 vconsole.conf`。
+可以把键盘设置到 `/etc/vconsole.conf`，[systemd](/index.php/Systemd "Systemd") 在启动时会读取此文件. `KEYMAP` 变量指定键盘映射，如果未设置或为空，则使用默认的 `us` 键盘映射，选项信息可以参考 [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)。
 
  `/etc/vconsole.conf` 
 ```
@@ -71,11 +76,11 @@ $ localectl set-keymap --no-convert *keymap*
 
 ```
 
-`--no-convert` 选项会阻止 `localectl` 自动将 [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") 修改为最接近的匹配。详情参阅 `man localectl`。
+`--no-convert` 选项会阻止 `localectl` 自动将 [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") 修改为最接近的匹配。详情参阅 [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1)。
 
 ### 临时设置
 
-也可以使用 *loadkeys* 工具临时修改键盘布局，参阅 `man 1 loadkeys`
+也可以使用 *loadkeys* 工具临时修改键盘布局，参阅 [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1)
 
 ```
 # loadkeys *keymap*

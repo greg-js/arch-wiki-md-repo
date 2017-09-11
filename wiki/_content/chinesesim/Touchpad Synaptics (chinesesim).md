@@ -1,5 +1,9 @@
 **翻译状态：** 本文是英文页面 [Touchpad_Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-01，点击[这里](https://wiki.archlinux.org/index.php?title=Touchpad_Synaptics&diff=0&oldid=443547)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+
 本文描述了 ***Synaptics 输入驱动*** 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板
 
 **注意:** `xf86-input-synaptics` 已经进入低维护状态，不会再有大的更新，请尽量使用 [libinput](/index.php/Libinput "Libinput")，libinput 使用另外的方式识别和处理多点触控功能。
@@ -581,7 +585,7 @@ Option "SoftButtonAreas"  "50% 0 82% 0 0 0 0 0"
 
 这三个选项是开启其他按键的关键,第一个启用多点触控,第二个关闭中键模拟(ClickPad不支持),第三个定义软按键区域
 
-SoftButtonAreas选项的格式是(请参考`man 4 synaptics`):
+SoftButtonAreas选项的格式是(请参考[synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)):
 
  `RightButtonAreaLeft RightButtonAreaRight RightButtonAreaTop RightButtonAreaBottom  MiddleButtonAreaLeft MiddleButtonAreaRight MiddleButtonAreaTop MiddleButtonAreaBottom` 
 

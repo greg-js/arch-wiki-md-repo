@@ -1,3 +1,9 @@
+Related articles
+
+*   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
+*   [polkit](/index.php/Polkit "Polkit")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
 Users and groups are used on GNU/Linux for [access control](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control")—that is, to control access to the system's files, directories, and peripherals. Linux offers relatively simple/coarse access control mechanisms by default. For more advanced options, see [ACL](/index.php/ACL "ACL") and [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
 
 ## Contents
@@ -92,7 +98,7 @@ List files owned by a user or group with the *find* utility:
 
 A file's owning user and group can be changed with the *chown* (change owner) command. A file's access permissions can be changed with the *chmod* (change mode) command.
 
-See [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.net/man/1/chmod), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
+See [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
 
 ## File list
 
@@ -108,7 +114,7 @@ See [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.
 
 ## User management
 
-To list users currently logged on the system, the *who* command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See [passwd(1)](http://man7.org/linux/man-pages/man1/passwd.1.html) for the description of the output format.
+To list users currently logged on the system, the *who* command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See [passwd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) for the description of the output format.
 
 To add a new user, use the *useradd* command:
 
@@ -126,7 +132,7 @@ To add a new user, use the *useradd* command:
 
 **Note:** The password for the newly created user must then be defined, using *passwd* as shown in [#Example adding a user](#Example_adding_a_user).
 
-When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](http://man7.org/linux/man-pages/man8/nologin.8.html)).
+When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
 ### Example adding a user
 
@@ -315,7 +321,7 @@ Note that the Arch Linux defaults of the files are created as *.pacnew* files by
 
 ## Group management
 
-`/etc/group` is the file that defines the groups on the system (see [group(5)](http://man7.org/linux/man-pages/man5/group.5.html) for details).
+`/etc/group` is the file that defines the groups on the system (see [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
 
 Display group membership with the `groups` command:
 

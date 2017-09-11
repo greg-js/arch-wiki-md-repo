@@ -51,7 +51,7 @@ FromLineOverride=yes
 
 ```
 
-**Note:** Take note, that the shown configuration is an example for Gmail, You may have to use other settings. If it is not working as expected read the man page `man 8 ssmtp`, please.
+**Note:** Take note, that the shown configuration is an example for Gmail, You may have to use other settings. If it is not working as expected read the man page [ssmtp(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssmtp.8), please.
 
 Create aliases for local usernames (optional)
 

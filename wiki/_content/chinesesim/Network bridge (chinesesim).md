@@ -1,5 +1,9 @@
 **翻译状态：** 本文是英文页面 [Network_bridge](/index.php/Network_bridge "Network bridge") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-05-07，点击[这里](https://wiki.archlinux.org/index.php?title=Network_bridge&diff=0&oldid=367464)可以查看翻译后英文页面的改动。
 
+Related articles
+
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+
 网桥是一种软件配置，用于连结两个或更多个不同网段。网桥的行为就像是一台虚拟的网络交换机，工作于透明模式（即其他机器不必关注网桥的存在与否）。任意的真实物理设备（例如 `eth0`）和虚拟设备（例如 `tap0`）都可以连接到网桥。
 
 本文讲述如何创建至少包含一个以太网设备的网桥，这种应用常见于[QEMU](/index.php/QEMU "QEMU")、设置基于软件的访问点等场景。
@@ -23,7 +27,7 @@
 
 ### 通过 bridge-utils
 
-本节讲述用 [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) 软件包里面的 *brctl* 工具管理网桥。该软件包已进入官方仓库（[official repositories](/index.php/Official_repositories "Official repositories")）。*brctl* 的完整选项清单请参阅 `man brctl`。
+本节讲述用 [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) 软件包里面的 *brctl* 工具管理网桥。该软件包已进入官方仓库（[official repositories](/index.php/Official_repositories "Official repositories")）。*brctl* 的完整选项清单请参阅 [brctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/brctl.8)。
 
 新建一个网桥：
 
@@ -88,7 +92,7 @@ $ brctl show
 
 ```
 
-要显示现存的网桥及其关联的端口，可以用 *bridge* 工具（它也是 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 的组成部分）。详阅 `man bridge`。
+要显示现存的网桥及其关联的端口，可以用 *bridge* 工具（它也是 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 的组成部分）。详阅 [bridge(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bridge.8)。
 
 ```
 # bridge link show

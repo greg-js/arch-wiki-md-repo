@@ -222,7 +222,7 @@ Celery needs `/dev/null` and `/dev/urandom`. Celery will not crash at startup if
 
 **Tip:** Be sure that `/srv/http/apps/celery` is mounted without no-dev option
 
-**Tip:** See `man mknod` and `ls -l /dev/{null,urandom}` to better understand the *mknod* options.
+**Tip:** See [mknod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) and `ls -l /dev/{null,urandom}` to better understand the *mknod* options.
 
 ```
 # mkdir /srv/http/apps/celery/dev

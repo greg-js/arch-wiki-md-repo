@@ -1,3 +1,8 @@
+Related articles
+
+*   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
+*   [fstab](/index.php/Fstab "Fstab")
+
 Az az oldal a cserehely és a lapozás használatához nyújt bevezetőt GNU/Linux-on. Emellett tárgyalja a cserehelyek és a cserefájlok készítésének és aktiválásának módját.
 
 A [All about Linux swap space (Mindent a Linux cserehelyről)](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
@@ -70,7 +75,7 @@ Hogy rendszerindításkor hasznájuk ezt a partíciót, jegyezzük be az [fstab]
 
 ```
 
-**Megjegyzés:** Ha TRIM támogatású SSD-t használunk, a cserehelyet jelölő sorban inkább használjuk a `defaults,discard` csatolási opciókat az [fstab](/index.php/Fstab "Fstab")-ban. Ha manuálisan aktiváljuk a *swapon* paranccsal, a `-d` vagy `--discard` paraméterrel ugyanerre jutunk. Lásd a `man 8 swapon`-t a részletekért.
+**Megjegyzés:** Ha TRIM támogatású SSD-t használunk, a cserehelyet jelölő sorban inkább használjuk a `defaults,discard` csatolási opciókat az [fstab](/index.php/Fstab "Fstab")-ban. Ha manuálisan aktiváljuk a *swapon* paranccsal, a `-d` vagy `--discard` paraméterrel ugyanerre jutunk. Lásd a [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8)-t a részletekért.
 
 ## Cserefájl
 

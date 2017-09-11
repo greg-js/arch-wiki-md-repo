@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Keyboard Configuration in Console (Español)](/index.php/Keyboard_Configuration_in_Console_(Espa%C3%B1ol) "Keyboard Configuration in Console (Español)")
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+*   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
+
 **Nota:** Este artículo trata únicamente sobre la configuración básica, sin modificar los diseños, asignación de teclas extras, etc. Véase [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") para conocer más sobre estos temas avanzados.
 
 Xorg utiliza [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") (XKB) para gestionar la distribución del teclado. Por otra parte, [xmodmap](/index.php/Xmodmap "Xmodmap") se puede utilizar para acceder al mapa del teclado interno directamente. Por lo general, no se recomienda el uso de *xmodmap*, excepto, tal vez, para tareas simples.
@@ -106,7 +113,7 @@ $ setxkbmap -layout *distribución_xkb*
 
 ```
 
-Véase `man 1 setxkbmap` para conocer un listado completo de los argumentos que se pueden pasar a la línea de órdenes.
+Véase [setxkbmap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1) para conocer un listado completo de los argumentos que se pueden pasar a la línea de órdenes.
 
 Por ejemplo:
 

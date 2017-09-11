@@ -47,6 +47,16 @@ end ArchIsTheBest;
 
 ```
 
+	AppleScript
+
+	A scripting language created by Apple Inc. and built into the Classic Mac OS since System 7 and into all versions of macOS.
+
+```
+display alert "Arch is the best!"
+say "Indeed, Arch is the best."
+
+```
+
 	ArnoldC
 
 	Programming language based on the one-liners of Arnold Schwarzenegger.
@@ -1089,6 +1099,15 @@ print "Arch is the best!
 
 ```
 
+	Swift
+
+	A general-purpose, multi-paradigm, compiled programming language developed by Apple Inc.
+
+```
+print("Arch is the best!")
+
+```
+
 	Tcl/Tk
 
 	A scripting language that is commonly used for rapid prototyping, scripted applications, GUIs and testing.
@@ -1176,6 +1195,19 @@ void loop()
 
 ```
 
+	Visual Basic
+
+	A third-generation event-driven programming language and integrated development environment (IDE) from Microsoft for its Component Object Model (COM) programming model.
+
+```
+Module Arch
+  Sub Main()
+      MsgBox("Arch is the best!")
+  End Sub
+End Module
+
+```
+
 	X11
 
 	X11 is an architecture independent system for display of graphical user interfaces.
@@ -1230,6 +1262,17 @@ FUNC Main() int
   IO.write("Arch is the best!")
   RETURN 0
 }
+
+```
+
+	Zsh
+
+	A UNIX command interpreter (shell) closely resembling ksh, but includes many enhancements.
+
+```
+#!/bin/zsh -f
+setopt extendedglob
+print -- $(tput setaf 2) ${$(<<<${${${(@j: :)${(@s:_:)${:-What_Linux_is_the_best?}}}/* (#b)([A-Z]i)/Arch $match[1]}} tr '?' '!')} $(tput sgr0)
 
 ```
 

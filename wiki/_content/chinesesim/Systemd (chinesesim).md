@@ -1,3 +1,14 @@
+相关文章
+
+*   [systemd/User (简体中文)](/index.php/Systemd/User_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/User (简体中文)")
+*   [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)")
+*   [Systemd FAQ (简体中文)](/index.php/Systemd_FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd FAQ (简体中文)")
+*   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
+*   [Daemons#List of deamons](/index.php/Daemons#List_of_deamons "Daemons")
+*   [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")
+*   [Improve Boot Performance (简体中文)](/index.php/Improve_Boot_Performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Improve Boot Performance (简体中文)")
+*   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
+
 **翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=448461)可以查看翻译后英文页面的改动。
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd)：
@@ -52,7 +63,7 @@
 
 ## systemd 基本工具
 
-监视和控制systemd的主要命令是`systemctl`。该命令可用于查看系统状态和管理系统及服务。详见`man 1 systemctl`。
+监视和控制systemd的主要命令是`systemctl`。该命令可用于查看系统状态和管理系统及服务。详见[systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
 
 **提示：**
 
@@ -99,7 +110,7 @@ $ systemctl list-unit-files
 
 ### 使用单元
 
-一个单元配置文件可以描述如下内容之一：系统服务（`.service`）、挂载点（`.mount`）、sockets（`.sockets`） 、系统设备（`.device`）、交换分区（`.swap`）、文件路径（`.path`）、启动目标（`.target`）、由 systemd 管理的计时器（`.timer`）。详情参阅 `man 5 systemd.unit` 。
+一个单元配置文件可以描述如下内容之一：系统服务（`.service`）、挂载点（`.mount`）、sockets（`.sockets`） 、系统设备（`.device`）、交换分区（`.swap`）、文件路径（`.path`）、启动目标（`.target`）、由 systemd 管理的计时器（`.timer`）。详情参阅 [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 。
 
 使用 `systemctl` 控制单元时，通常需要使用单元文件的全名，包括扩展名（例如 `sshd.service` ）。但是有些单元可以在 `systemctl` 中使用简写方式。
 
@@ -113,7 +124,7 @@ $ systemctl list-unit-files
 
 **提示：**
 
-*   下面的大部分命令都可以跟多个单元名, 详细信息参见 `man systemctl`。
+*   下面的大部分命令都可以跟多个单元名, 详细信息参见 [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)。
 *   `systemctl`命令在`enable`、`disable`和`mask`子命令中增加了`--now`选项，可以实现激活的同时启动服务，取消激活的同时停止服务。
 *   一个软件包可能会提供多个不同的单元。如果你已经安装了软件包，可以通过`pacman -Qql *package* | grep systemd`命令检查这个软件包提供了哪些单元。
 
@@ -250,9 +261,9 @@ $ systemctl hybrid-sleep
 *   `/etc/systemd/system/` ：系统管理员安装的单元
 
 *   当 `systemd` 运行在[用户模式](/index.php/Systemd/User#How_it_works "Systemd/User")下时，使用的加载路径是完全不同的。
-*   systemd 单元名仅能包含 ASCII 字符，下划线和点号。其它字符需要用 C-style "\x2d" 替换。参阅 `man systemd.unit` 和 `man systemd-escape` 。}}
+*   systemd 单元名仅能包含 ASCII 字符，下划线和点号。其它字符需要用 C-style "\x2d" 替换。参阅 [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) 和 [systemd-escape(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) 。}}
 
-单元文件的语法，可以参考系统已经安装的单元，也可以参考 `man systemd.service` 中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
+单元文件的语法，可以参考系统已经安装的单元，也可以参考 [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) 中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
 **提示：** 以 `#` 开头的注释可能也能用在 unit-files 中，但是只能在新行中使用。不要在 *systemd* 的参数后面使用行末注释， 否则 unit 将会启动失败。
 
@@ -402,7 +413,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 ```
 
-详情参见`systemd-tmpfiles(8)` 和 `man 5 tmpfiles.d`。
+详情参见`systemd-tmpfiles(8)` 和 [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5)。
 
 **注意:** 该方法不能向 `/sys` 中的配置文件添加参数，因为 `systemd-tmpfiles-setup` 有可能在相关模块加载前运行。这种情况下，需要首先通过 `modinfo <模块名>` 确认需要的参数，然后在 [`/etc/modprobe.d` 目录下的配置文件](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.80.89.E9.A1.B9 "Kernel modules (简体中文)")中修改配置参数。另外，还可以使用 [udev 规则](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev_.E8.A7.84.E5.88.99 "Udev (简体中文)")，在设备就绪时设置相应属性。
 
@@ -438,7 +449,7 @@ A syslog facility code is used to specify the type of program that is logging th
 | Facility code | Keyword | Description | Info |
 | 0 | kern | kernel messages |
 | 1 | user | user-level messages |
-| 2 | mail | mail system | Archaic POSIX still supported and sometimes used system, for more `man mail`) |
+| 2 | mail | mail system | Archaic POSIX still supported and sometimes used system, for more [mail(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
 | 3 | daemon | system daemons | All deamons, including systemd and its subsystems |
 | 4 | auth | security/authorization messages | Also watch for different facility 10 |
 | 5 | syslog | messages generated internally by syslogd | As it standartized for syslogd, not used by systemd (see facility 3) |
@@ -521,7 +532,7 @@ Examples:
 *   显示内核环缓存消息r: `# journalctl -k` 
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
 
-详情参阅`man journalctl`、`man systemd.journal-fields`，以及 Lennert 的这篇[博文](http://0pointer.de/blog/projects/journalctl.html)。
+详情参阅[journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)、[systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7)，以及 Lennert 的这篇[博文](http://0pointer.de/blog/projects/journalctl.html)。
 
 ### 日志大小限制
 
@@ -537,7 +548,7 @@ Examples:
 SystemMaxUse=50M
 ```
 
-详情参见 `man journald.conf`.
+详情参见 [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
 
 ### 配合 syslog 使用
 
@@ -565,7 +576,7 @@ systemd 提供了 socket `/run/systemd/journal/syslog`，以兼容传统日志�
 *   清理日志使总大小小于 100M: `# journalctl --vacuum-size=100M` 
 *   清理最早两周前的日志. `# journalctl --vacuum-time=2weeks` 
 
-参阅 `man journalctl` 获得更多信息.
+参阅 [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) 获得更多信息.
 
 ### Journald in conjunction with syslog
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Mirrors](/index.php/Mirrors "Mirrors")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+
 For general methods to improve the flexibility of the provided tips or pacman itself, see [Core utilities](/index.php/Core_utilities "Core utilities") and [Bash](/index.php/Bash "Bash").
 
 ## Contents
@@ -572,7 +577,7 @@ XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allo
 
 **Tip:** [This alternative configuration for using pacman with aria2](https://bbs.archlinux.org/viewtopic.php?pid=1491879#p1491879) tries to simplify configuration and adds more configuration options.
 
-See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in `man aria2c` for used aria2c options.
+See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) in [aria2c(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aria2c.1) for used aria2c options.
 
 *   `-d, --dir` :The directory to store the downloaded file(s) as specified by [pacman](/index.php/Pacman "Pacman").
 *   `-o, --out`: The output file name(s) of the downloaded file(s).

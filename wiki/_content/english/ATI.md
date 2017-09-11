@@ -124,7 +124,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 The following options apply to `/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
-Please read `man radeon` and [RadeonFeature](https://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
+Please read [radeon(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/radeon.4) and [RadeonFeature](https://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
 
 **Acceleration architecture**; Glamor is available as a 2D acceleration method implemented through OpenGL, and it [is the default](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e) for R600 (Radeon HD2000 series) and newer graphic cards. Older cards use EXA.
 

@@ -1,3 +1,10 @@
+相關文章
+
+*   [開發者 Wiki:UID / GID 資料庫 (英)](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
+*   [polkit (英)](/index.php/Polkit "Polkit")
+*   [chmod (英)](/index.php/Chmod "Chmod")
+*   [更改使用者名稱 (英)](/index.php/Change_username "Change username")
+
 **翻譯狀態：** 本文章是 [Users_and_Groups](/index.php/Users_and_Groups "Users and Groups") 的翻譯版本。最近一次的翻譯時間：2014-01-23。點擊[本連結](https://wiki.archlinux.org/index.php?title=Users_and_Groups&diff=0&oldid=290182)查看英文頁面之後的變更。
 
 GNU/Linux 利用使用者和群組的概念來[控制存取](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") — 也就是控制系統的檔案、目錄、周邊設備的存取權。Linux 預設對存取權限的控制相當簡易。更多進階的存取控制請參閱 [ACL](/index.php/ACL "ACL") 和 [LDAP 驗證](/index.php/LDAP_authentication "LDAP authentication")。
@@ -90,7 +97,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 檔案的擁有者和所屬群組可以透過 `chown` (change owner；更改擁有者) 指令更改。檔案的存取權限可以透過 `chmod` (change mode；更改模式) 指令更改。
 
-一些額外的詳細資訊請參閱 [man chown](http://linux.die.net/man/1/chown)，[man chmod](http://linux.die.net/man/1/chmod)，以及 [Linux 檔案權限](http://www.tuxfiles.org/linuxhelp/filepermissions.html)。
+一些額外的詳細資訊請參閱 [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1)，[chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)，以及 [Linux 檔案權限](http://www.tuxfiles.org/linuxhelp/filepermissions.html)。
 
 ## 檔案清單
 
@@ -207,7 +214,7 @@ account:password:UID:GID:GECOS:directory:shell
 
 ## 群組管理
 
-`/etc/group` 這個檔案定義了系統內的群組 (詳情列於 `man group`)。
+`/etc/group` 這個檔案定義了系統內的群組 (詳情列於 [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5))。
 
 以 `groups` 指令顯示使用者所屬群組：
 

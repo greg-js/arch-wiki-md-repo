@@ -174,7 +174,7 @@ unzip -cp image-file.zip | dd of=/dev/sdXY
 
 The *zip* tool cannot split files on the fly but you can use the `zipsplit` utility on an already created file.
 
-See also `man zip` for more information.
+See also [zip(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zip.1) for more information.
 
 #### Rar
 

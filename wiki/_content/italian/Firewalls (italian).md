@@ -23,13 +23,13 @@ Ci sono molti post nei forum riguardo alle differenti applicazioni firewall e sc
 *   [3 Firewall Builder](#Firewall_Builder)
 *   [4 Altri](#Altri)
 
-*   **[Iptables](/index.php/Iptables "Iptables")** — Iptables è un potente **firewall** integrato nel kernel Linux ed è una parte del progetto [netfilter](https://en.wikipedia.org/wiki/it:Netfilter "wikipedia:it:Netfilter"). Gli altri firewall sono solamete dei front-end grafici.
+*   **[Iptables](/index.php/Iptables "Iptables")** — Iptables è un potente <a class="mw-selflink selflink">firewall</a> integrato nel kernel Linux ed è una parte del progetto [netfilter](https://en.wikipedia.org/wiki/it:Netfilter "wikipedia:it:Netfilter"). Gli altri firewall sono solamete dei front-end grafici.
 
 	**Vedi anche:**
 
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Router](/index.php/Router "Router")
-*   `man iptables` – [http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8](http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8)
+*   [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) – [http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8](http://unixhelp.ed.ac.uk/CGI/man-cgi?iptables+8)
 *   [http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/](http://tldp.org/HOWTO/Masquerading-Simple-HOWTO/)
 *   [http://netfilter.org/documentation/HOWTO/NAT-HOWTO.html](http://netfilter.org/documentation/HOWTO/NAT-HOWTO.html)
 *   [http://www.frozentux.net/documents/iptables-tutorial/](http://www.frozentux.net/documents/iptables-tutorial/)

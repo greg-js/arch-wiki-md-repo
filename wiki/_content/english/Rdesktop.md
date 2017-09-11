@@ -1,3 +1,8 @@
+Related articles
+
+*   [xrdp](/index.php/Xrdp "Xrdp")
+*   [Remmina](/index.php/Remmina "Remmina")
+
 [rdesktop](http://www.rdesktop.org/) is a free, open source client for Microsoft's proprietary RDP protocol released under the GNU General Public License. Use rdesktop to connect to Windows 2000/XP/Vista/Win7 RDP server to remotely administrate the Windows box.
 
 As of July 2008, rdesktop implements a large subset of the RDP 5 protocol, including:
@@ -33,7 +38,7 @@ Support for the additional features available in RDP 5.1 and RDP 6 (including mu
 
 ## Usage
 
-For a complete listing of options see `man rdesktop`. Here is a typical line:
+For a complete listing of options see [rdesktop(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rdesktop.1). Here is a typical line:
 
 ```
 $ rdesktop -g 1440x900 -P -z -x l -r sound:off -u windowsuser 98.180.102.33:3389

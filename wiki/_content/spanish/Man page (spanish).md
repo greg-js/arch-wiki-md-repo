@@ -277,7 +277,7 @@ que *reemplaza* las decoraciones con colores. Añada también:
 
 ```
 
-Si quiere colores y decoraciones (negrita o subrayado) *al mismo tiempo*. Vea `man xterm` para una descripción del recurso `veryBoldColors`.
+Si quiere colores y decoraciones (negrita o subrayado) *al mismo tiempo*. Vea [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) para una descripción del recurso `veryBoldColors`.
 
 #### rxvt-unicode
 

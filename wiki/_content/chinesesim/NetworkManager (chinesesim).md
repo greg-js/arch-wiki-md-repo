@@ -1,3 +1,9 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Category:Network configuration](/index.php/Category:Network_configuration "Category:Network configuration")
+
 **翻译状态：** 本文是英文页面 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-17，点击[这里](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=361369)可以查看翻译后英文页面的改动。
 
 [网络管理器](http://projects.gnome.org/NetworkManager/)(NetworManager)是检测网络、自动连接网络的程序。无论是无线还是有线连接，它都可以令您轻松管理。对于无线网络,网络管理器优先连接已知的网络并可以自动切换到最可靠的无线网络。利用网络管理器的程序可以自由切换在线和离线模式。网络管理器会相对无线网络优先选择有线网络，支持 VPN。网络管理器最初由 Redhat 公司开发，现在由 [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 管理。
@@ -190,7 +196,7 @@ killall nm-applet
 
 命令行前端*nmcli*包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
 
-对于使用信息，参考`man nmcli`。 例子:
+对于使用信息，参考[nmcli(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1)。 例子:
 
 *   连接 WiFi 网络: `nmcli dev wifi connect <name> password <password>` 
 *   通过`wlan1`接口连接 WiFi 网络: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
@@ -204,7 +210,7 @@ killall nm-applet
 
 "nmtui" 是一个基于curses的图形化前端，包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
 
-使用信息参见`man nmtui`。
+使用信息参见[nmtui(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1)。
 
 #### nmcli-dmenu
 

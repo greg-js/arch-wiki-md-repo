@@ -1,3 +1,11 @@
+Related articles
+
+*   [NFS](/index.php/NFS "NFS")
+*   [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")
+*   [PXE](/index.php/PXE "PXE")
+*   [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")
+*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
+
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
 
 	*A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server.*
@@ -111,7 +119,7 @@ Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it.
     copyonwrite = false
 ```
 
-**Note:** Set `copyonwrite` to true if you want to have multiple clients using the same NBD share simultaneously; refer to `man 5 nbd-server` for more details.
+**Note:** Set `copyonwrite` to true if you want to have multiple clients using the same NBD share simultaneously; refer to [nbd-server(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nbd-server.5) for more details.
 
 Start `nbd` systemd service.
 

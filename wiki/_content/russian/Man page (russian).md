@@ -265,7 +265,7 @@ setkey edit "v"
 
 ```
 
-если вы хотите видеть цвета и начертания одновременно. Смотрите также `man xterm` для описания ресурса терминала `veryBoldColors`.
+если вы хотите видеть цвета и начертания одновременно. Смотрите также [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) для описания ресурса терминала `veryBoldColors`.
 
 #### rxvt-unicode
 

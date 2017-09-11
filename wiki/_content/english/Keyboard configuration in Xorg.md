@@ -1,3 +1,10 @@
+Related articles
+
+*   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
+
 This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension") or [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") respectively.
 
 ## Contents
@@ -89,13 +96,13 @@ The layout name is usually a [2-letter country code](https://en.wikipedia.org/wi
 *   `localectl list-x11-keymap-variants [*layout*]`
 *   `localectl list-x11-keymap-options`
 
-Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts. See `man xkeyboard-config` for more detailed information.
+Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts. See [xkeyboard-config(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xkeyboard-config.7) for more detailed information.
 
 ### Using setxkbmap
 
 *setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [xinitrc](/index.php/Xinitrc "Xinitrc") or [xprofile](/index.php/Xprofile "Xprofile"). This overrides system-wide configuration specified following [#Using X configuration files](#Using_X_configuration_files).
 
-The usage is as follows (see `man 1 setxkbmap`):
+The usage is as follows (see [setxkbmap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setxkbmap.1)):
 
 ```
 $ setxkbmap [-model *xkb_model*] [-layout *xkb_layout*] [-variant *xkb_variant*] [-option *xkb_options*]
@@ -148,7 +155,7 @@ $ localectl [--no-convert] set-x11-keymap *layout* [*model* [*variant* [*options
 
 ```
 
-To set a *model*, *variant* or *options*, all preceding fields need to be specified, but the preceding fields can be skipped by passing an empty string with `""`. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See `man localectl` for more information.
+To set a *model*, *variant* or *options*, all preceding fields need to be specified, but the preceding fields can be skipped by passing an empty string with `""`. Unless the `--no-convert` option is passed, the specified keymap is also converted to the closest matching console keymap and applied to the [console configuration](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") in `vconsole.conf`. See [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) for more information.
 
 To create a `/etc/X11/xorg.conf.d/00-keyboard.conf` like the above:
 
@@ -301,7 +308,7 @@ A more resistant way to set the typematic delay and rate is to make them the *se
 *   `-ardelay *miliseconds*` - sets the autorepeat delay (length of time in milliseconds that a key must be depressed before autorepeat starts).
 *   `-arinterval *miliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
 
-See `man xserver` for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
+See [Xserver(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
 
 ### Using XServer options
 

@@ -156,7 +156,7 @@ Arch 软件包管理器 [pacman](/index.php/Pacman "Pacman") 可以安装、更�
 
 ## pacman.conf
 
-[pacman](/index.php/Pacman "Pacman") 的配置文件，位于 `/etc`. 完整介绍请参考`man pacman.conf`.
+[pacman](/index.php/Pacman "Pacman") 的配置文件，位于 `/etc`. 完整介绍请参考[pacman.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
 
 ## PKGBUILD
 

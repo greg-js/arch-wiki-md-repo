@@ -29,7 +29,7 @@ $ systemctl reboot
 
 ```
 
-Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел *System Commands* в справочном руководстве `man systemctl`.
+Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел *System Commands* в справочном руководстве [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1).
 
 ## Используя sudo
 
@@ -41,7 +41,7 @@ $ sudo systemctl reboot
 
 ```
 
-Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел *System Commands* в справочном руководстве `man systemctl`.
+Другие команды, такие как `systemctl suspend` и `systemctl hibernate` также могут быть использованы. Смотрите раздел *System Commands* в справочном руководстве [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1).
 
 ### Ограничение привилегий sudo
 

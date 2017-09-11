@@ -1,3 +1,8 @@
+Related articles
+
+*   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
+*   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
+
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") serves as a proxy to sound applications using existing kernel sound components like [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). Since ALSA is included in Arch Linux by default, the most common deployment scenarios include PulseAudio with ALSA.
 
 ## Contents
@@ -108,7 +113,7 @@ Defines base settings like the default sample rates used by modules, resampling 
 
 #### default.pa
 
-This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self-explanatory, consult `man pulse-cli-syntax` for the details of the syntax.
+This file is a startup script and is used to configure modules. It is actually parsed and read after the daemon has finished initializing and additional commands can be sent at runtime using `$ pactl` or `$ pacmd`. The startup script can also be provided on the command line by starting PulseAudio in a terminal using `$ pulseaudio -nC`. This will make the daemon load the CLI module and will accept the configuration directly from the command line, and output resulting information or error messages on the same terminal. This can be useful when debugging the daemon or just to test various modules before setting them permanently on disk. The manual page is quite self-explanatory, consult [pulse-cli-syntax(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulse-cli-syntax.5) for the details of the syntax.
 
 **Tip:**
 

@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Display manager (Italiano)](/index.php/Display_manager_(Italiano) "Display manager (Italiano)")
+*   [Silent boot](/index.php/Silent_boot "Silent boot")
+*   [Start X at Login (Italiano)](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")
+
 Questo articolo descrive come accedere automaticamente a una “console virtuale” o tty alla fine del [processo di boot](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)"). Questo articolo tratta solamente dell'accesso alla console; i metodi per avviare [il server X](/index.php/Xorg_(Italiano) "Xorg (Italiano)") sono descritti in [Start X at Login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)").
 
 ## Service
@@ -23,7 +29,7 @@ ExecStart=-/sbin/agetty --noclear -a *USERNAME* %I 38400
 WantedBy=getty.target
 ```
 
-**Tip:** È possibile cambiare `Type=idle` in `Type=simple` per permettere un leggero ritardo per l'esecuzione di agetty fino a che tutti i processi non siano completati. Questa opzione è molto utile quando si [avvia X al boot in modo automatico](/index.php/Far_partire_X_al_boot "Far partire X al boot"). Vedere `man systemd.service` per ulterioti informazioni.
+**Tip:** È possibile cambiare `Type=idle` in `Type=simple` per permettere un leggero ritardo per l'esecuzione di agetty fino a che tutti i processi non siano completati. Questa opzione è molto utile quando si [avvia X al boot in modo automatico](/index.php/Far_partire_X_al_boot "Far partire X al boot"). Vedere [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) per ulterioti informazioni.
 **Nota:** `Type=simple` può provocare messaggi di debug da parte di systemd che vanno a "sovrascrivere" le tty.
 
 **Nota:** Se si usa mingetty, cambiare /sbin/agetty con /sbin/mingetty

@@ -248,7 +248,7 @@ Molti utenti preferiscono utilizzare `nano` al posto di `vi` poiché risulta pi�
 
 #### Primo metodo
 
-**Attenzione:** Dal `man 8 visudo`: *Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR.*
+**Attenzione:** Dal [visudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/visudo.8): *Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR.*
 
 [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") reperibile nel repository *core*, è compilato in modo predefinito con l'opzione `--with-env-editor` e rispetta l'uso delle variabili `VISUAL` ed `EDITOR`. Per poter stabilire di utilizzare *nano* come editor per il comando **visudo** per tutta la durata della sessione corrente della console, bisogna impostare ed esportare la variabile `EDITOR` prima di chiamare **visudo**.
 
@@ -266,7 +266,7 @@ export EDITOR=nano
 
 #### Secondo metodo
 
-**Attenzione:** Dal `man 8 visudo`: *Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR.*
+**Attenzione:** Dal [visudo(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/visudo.8): *Si noti che questo metodo potrebbe compromettere la sicurezza in quanto permette all'utente di eseguire qualsiasi programma che desiderano semplicemente impostando le variabili VISUAL o EDITOR.*
 
 La variabile **EDITOR** può anche essere impostata all'interno dei seguenti file per un uso persistente:
 

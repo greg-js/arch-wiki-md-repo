@@ -1,3 +1,7 @@
+Related articles
+
+*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+
 **Tip:** The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from a terminal emulator to see that output.
 
 **Note:** Bugs should be reported at Valve's [GitHub issue tracker](https://github.com/ValveSoftware/steam-for-linux).
@@ -39,6 +43,7 @@
 *   [20 Very slow app download speed](#Very_slow_app_download_speed)
 *   [21 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
 *   [22 Launching games on nvidia optimus laptops](#Launching_games_on_nvidia_optimus_laptops)
+*   [23 "Needs to be online" error](#.22Needs_to_be_online.22_error)
 
 ## Debugging Steam
 
@@ -97,7 +102,7 @@ $ steam-runtime
 
 ```
 
-This is the command which is run when you run Steam via `/usr/bin/steam` or the "Steam" [desktop entry](/index.php/Desktop_entry "Desktop entry"). Runtime libraries which are known to cause problems are overriden via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](http://man7.org/linux/man-pages/man8/ld.so.8.html)). If your system still has library conflicts with this command, you can make a copy of `/usr/bin/steam-runtime` and edit it to add additional workarounds.
+This is the command which is run when you run Steam via `/usr/bin/steam` or the "Steam" [desktop entry](/index.php/Desktop_entry "Desktop entry"). Runtime libraries which are known to cause problems are overriden via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ld.so.8)). If your system still has library conflicts with this command, you can make a copy of `/usr/bin/steam-runtime` and edit it to add additional workarounds.
 
 ```
 $ steam-native
@@ -468,3 +473,9 @@ For steam to work, disable dri3 in xorg config file or as a workaround run steam
 ## Launching games on nvidia optimus laptops
 
 To be able to play games which require using nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while steam is already running will not restart it. You should explicitly exit and then start steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.
+
+## "Needs to be online" error
+
+If the Steam launcher refuses to start and you get an error saying: "Fatal Error: Steam needs to be online to update" while you **are** online, then there might be issues with name resolving.
+
+Try to install [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns).

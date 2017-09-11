@@ -1,3 +1,23 @@
+Artigos relacionados
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager (Português)](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GDM (Português)](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)")
+*   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
+*   [GNOME/Troubleshooting](/index.php/GNOME/Troubleshooting "GNOME/Troubleshooting")
+*   [GNOME/Files](/index.php/GNOME/Files "GNOME/Files")
+*   [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME/Gedit")
+*   [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")
+*   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
+*   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
+*   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
+*   [MATE](/index.php/MATE "MATE")
+*   [Official repositories (Português)#gnome-unstable](/index.php/Official_repositories_(Portugu%C3%AAs)#gnome-unstable "Official repositories (Português)")
+
 [GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Desktop_environment "Desktop environment"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](https://en.wikipedia.org/wiki/pt:Projeto_GNU "wikipedia:pt:Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg "Xorg").
 
 ## Contents
@@ -270,7 +290,7 @@ Backends para o aplicativo de mensagem do GNOME [empathy](https://www.archlinux.
 
 O shell do GNOME possui uma pesquisa que possa ser rapidamente acessada pressionando a tecla `Super` e comece a digitar. O pacote [tracker](https://www.archlinux.org/packages/?name=tracker) é instalado por padrão como parte do grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) e fornece um aplicativo de indexação e banco de dados de metadados. Ele pode ser configurado com o item de menu *Pesquisa e indexação*; monitore o status com *tracker-control*. É iniciado automaticamente pelo *gnome-session* quando o usuário inicia a sessão. Indexação pode ser iniciada manualmente com `tracker-control -s`. As configurações de pesquisa também podem ser configuradas no painel *Configurações de sistema*.
 
-O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql*. Veja sua página de manual com `man tracker-sparql` para mais informações.
+O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql*. Veja sua página de manual com [tracker-sparql(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1) para mais informações.
 
 ### Configurações avançadas
 

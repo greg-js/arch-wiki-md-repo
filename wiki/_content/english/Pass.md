@@ -84,7 +84,7 @@ $ passmenu
 
 ```
 
-Then selecting an entry will copy its password to the clipboard. See `man dmenu` for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
+Then selecting an entry will copy its password to the clipboard. See [dmenu(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/dmenu.1) for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
 
 ## Migrating to pass
 

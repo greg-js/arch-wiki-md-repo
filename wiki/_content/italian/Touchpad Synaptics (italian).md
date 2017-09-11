@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Xorg](/index.php/Xorg "Xorg")
+
 Questo articolo spiega il processo di installazione e configurazione de ***Synaptics input driver*** per i touchpad Synaptics (e ALPS) che si trovano sulla maggior parte dei notebook.
 
 ## Contents
@@ -787,7 +791,7 @@ Option "SoftButtonAreas"  "50% 0 82% 0 0 0 0 0"
 
 Queste tre opzioni sono fondamentali: la prima abilita il supporto multitouch, la seconda disabilita l'emulazione del pulsante centrale (non supportata per i ClickPad) e la terza va a definire le aree pulsante.
 
-Il formato per l'opzione SoftButtonAreas è (fa `man 4 synaptics`):
+Il formato per l'opzione SoftButtonAreas è (fa [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)):
 
  `RightButtonAreaLeft RightButtonAreaRight RightButtonAreaTop RightButtonAreaBottom  MiddleButtonAreaLeft MiddleButtonAreaRight MiddleButtonAreaTop MiddleButtonAreaBottom` 
 

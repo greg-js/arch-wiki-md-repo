@@ -137,7 +137,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
 
 ```
 
-See `man iconv` for more details.
+See [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
 
 ### Convert a file in place
 
@@ -150,7 +150,7 @@ $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
 
 ```
 
-See `man sponge` for details.
+See [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
 
 ## ip
 
@@ -403,7 +403,7 @@ Forcing a given format:
 | `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
 `xz -cd *file*.xz | tar xvf -` |
 
-The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See its [man page](/index.php/Man_page "Man page") with `man tar` for details.
+The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
 
 ## which
 

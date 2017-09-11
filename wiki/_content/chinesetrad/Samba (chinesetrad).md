@@ -1,3 +1,10 @@
+Related articles
+
+*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
+*   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
+*   [SOGo](/index.php/SOGo "SOGo")
+*   [NFS](/index.php/NFS "NFS")
+
 **翻譯狀態：** 本文章是 [Samba](/index.php/Samba "Samba") 的翻譯版本。最近一次的翻譯時間：2015-01-22。點擊[本連結](https://wiki.archlinux.org/index.php?title=Samba&diff=0&oldid=357593)查看英文頁面之後的變更。
 
 **Samba** is a re-implementation of the [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol, it facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). Some users say that Samba is easily configured and that operation is very straight-forward. However, many new users run into problems with its complexity and non-intuitive mechanism. It is strongly suggested that the user sticks close to the following directions.
@@ -41,7 +48,7 @@ The Samba server is configured in `/etc/samba/smb.conf`. Copy the default Samba 
 
 ### Creating a share
 
-Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. It also creates a share for printers by default. There are a number of commented sample configurations included. More information about available options for shared resources can be found in `man smb.conf`. [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) is the on-line version.
+Edit `/etc/samba/smb.conf`, scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. It also creates a share for printers by default. There are a number of commented sample configurations included. More information about available options for shared resources can be found in [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5). [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) is the on-line version.
 
 On Windows side, be sure to change `smb.conf` to the Windows Workgroup. (Windows default: WORKGROUP)
 
@@ -182,7 +189,7 @@ Mount the share using the `mount.cifs` type. Not all the options listed below ar
 
 `-o [options]`
 
-	See `man mount.cifs` for more information.
+	See [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more information.
 
 **Note:**
 

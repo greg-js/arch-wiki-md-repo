@@ -1,3 +1,8 @@
+Related articles
+
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [ranger](/index.php/Ranger "Ranger")
+
 [Midnight Commander](https://en.wikipedia.org/wiki/Midnight_Commander "wikipedia:Midnight Commander") is an orthodox (two-pane) file manager, supporting standard file operations, virtual filesystems, panelizing of external commands, and user menus. It also includes an internal viewer, editor, and visual diff tool.
 
 As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works on a regular console, inside an X Window terminal, over [SSH](/index.php/SSH "SSH") connections and all kinds of remote shells.
@@ -62,7 +67,7 @@ Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs
 
 These can be called via the *mc* interface (with *Use internal* enabled in `F9 > Options > Configuration`), or separately as symbolic links to the *mc* binary.
 
-*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see `man mcedit`
+*   *mcedit* - Text and binary file editor, with regex replace, syntax highlighting, macros and shell piping, see [mcedit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcedit.1)
 *   *mcview* - Text and hex viewer with goto marks and regex search
 *   *mcdiff* - Compares and edits two files in-place (`C-x d`)
 
@@ -177,7 +182,7 @@ export MC_XDG_OPEN=~/bin/nohup-open
 
 ### Find file shows no results
 
-If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. *Find file* does not follow symbolic links, so use bind mounts (see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)) instead, or the *External panelize* command.
+If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. *Find file* does not follow symbolic links, so use bind mounts (see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)) instead, or the *External panelize* command.
 
 ### Broken shortcuts
 

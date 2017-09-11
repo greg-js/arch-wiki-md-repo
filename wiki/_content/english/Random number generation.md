@@ -16,7 +16,7 @@ Generation of random data is crucial for several applications like making crypto
 
 The Linux kernel's built-in RNGs [/dev/{u}random](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/random") are highly acclaimed for producing reliable random data providing the same security level that is used for the creation of cryptographic keys. The random number generator gathers environmental noise from device drivers and other sources into an entropy pool.
 
-Note that the `man random` command will misdirect to the library function manpage [random(3)](http://man7.org/linux/man-pages/man3/random.3.html) while for information about the `/dev/random` device files you should run `man 4 random` to read [random(4)](http://man7.org/linux/man-pages/man4/random.4.html).
+Note that the `man random` command will misdirect to the library function manpage [random(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/random.3) while for information about the `/dev/random` device files you should run `man 4 random` to read [random(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/random.4).
 
 ### /dev/random
 
@@ -56,7 +56,7 @@ Some posts which explain and discuss the different aspects are:
 
 For an Arch system, the above implies the following for `/dev/urandom`:
 
-1.  Use the kernel's `getrandom()` system call, whenever possible. It is provided to ensure that `/dev/urandom` has initialized appropriately. See [getrandom(2)](http://man7.org/linux/man-pages/man2/getrandom.2.html)
+1.  Use the kernel's `getrandom()` system call, whenever possible. It is provided to ensure that `/dev/urandom` has initialized appropriately. See [getrandom(2)](http://jlk.fjfi.cvut.cz/arch/manpages/man/getrandom.2).
 2.  If you use the `/dev/urandom` device for generating entropy for any long-term purpose, **do ensure** it has initialized properly.
 3.  Take care to troubleshoot critical services which rely on `/dev/urandom` entropy during boot/startup. Even on a modern system the kernel's entropy initialization may take many seconds and some factors (e.g. virtualization) may delay it further. The kernel does warn, but not indefinetely.[[2]](https://patchwork.kernel.org/patch/9173499/)
 

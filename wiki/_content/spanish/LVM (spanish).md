@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
+*   [Dm-crypt/Encrypting an Entire System (Español)#LVM sobre LUKS](/index.php/Dm-crypt/Encrypting_an_Entire_System_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt/Encrypting an Entire System (Español)")
+*   [Dm-crypt/Encrypting an Entire System (Español)#LUKS sobre LVM](/index.php/Dm-crypt/Encrypting_an_Entire_System_(Espa%C3%B1ol)#LUKS_sobre_LVM "Dm-crypt/Encrypting an Entire System (Español)")
+
 **Estado de la traducción:** este artículo es una versión traducida de [LVM](/index.php/LVM "LVM"). Fecha de la última traducción/revisión: **2015-06-25**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=379925).
 
 De [Wikipedia](https://en.wikipedia.org/wiki/es:LVM "wikipedia:es:LVM"):
@@ -471,7 +477,7 @@ Si desea ocupar todo el espacio libre de un grupo de volúmenes, utilice la sigu
 
 ```
 
-Vea `man lvresize` para conocer opciones más detalladas.
+Vea [lvresize(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) para conocer opciones más detalladas.
 
 ##### Redimensionar por separado el sistema de archivos
 

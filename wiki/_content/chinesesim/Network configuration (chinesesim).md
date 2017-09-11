@@ -1,3 +1,10 @@
+相关文章
+
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")
+*   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
+
 **翻译状态：** 本文是英文页面 [Network_configuration](/index.php/Network_configuration "Network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-28，点击[这里](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=445647)可以查看翻译后英文页面的改动。
 
 本页解释了如何配置 **有线** 网络连接。如果你需要设置 **无线** 网络，参见[无线配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")页面。
@@ -69,7 +76,7 @@ PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 
 成功时会收到类似上面的 64 bytes 信息，按 `Control-C` 可以停止ping.
 
-**提示：** 参数 `-c 3` 表示执行命令 `ping` 3次 。 参见 `man ping`。
+**提示：** 参数 `-c 3` 表示执行命令 `ping` 3次 。 参见 [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8)。
 
 如果上面的命令说 unknown hosts，意思是你的机器无法进行域名解析。这可能和你的服务提供商或者你的路由器/网关有关。你可以尝试 ping `8.8.8.8` 来验证你的电脑是否能访问 Internet。它是 Google 的主 DNS 服务器，因此它可以视为可信的，通常不会被过滤系统或代理屏蔽。
 
@@ -91,7 +98,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 
 ```
 
-这将会把 **myhostname** 写入 `/etc/hostname`。详情参见 `man 5 hostname` 和 `man 1 hostnamectl`。
+这将会把 **myhostname** 写入 `/etc/hostname`。详情参见 [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) 和 [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1)。
 
 **注意:** 在 Arch Linux chroot 安装环境中，*hostnamectl*不起作用，要设置安装环境的主机名，请手动[编辑](/index.php/Textedit "Textedit") `/etc/hostname`，加入一行`*myhostname*`.
 
@@ -342,7 +349,7 @@ It is possible to manually set up a static IP using only the [iproute2](https://
 
 1.  ip link set *interface* down
 
-更多选项参见：`man ip`，这些命令可以用 systemd 服务自动启动，请参考[systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
+更多选项参见：[ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7)，这些命令可以用 systemd 服务自动启动，请参考[systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
 
 #### 计算地址
 

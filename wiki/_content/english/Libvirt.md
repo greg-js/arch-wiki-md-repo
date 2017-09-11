@@ -328,7 +328,7 @@ Print active and inactive domains:
 
 #### Create a new domain using virt-install
 
-For an extremely detailed domain (virtual machine) setup, it is easier to [#Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD). See `man virt-install` for more details and information about unlisted options.
+For an extremely detailed domain (virtual machine) setup, it is easier to [#Create a new domain using virt-manager](#Create_a_new_domain_using_virt-manager). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD). See [virt-install(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1) for more details and information about unlisted options.
 
 Arch Linux install (two GiB, qcow2 format volume create; user-networking):
 

@@ -84,7 +84,7 @@ LC_TIME=en_DK.UTF-8
 
 	 `# localectl set-locale LANG=en_US.UTF-8` 
 
-	参阅 `man 1 localectl` 获得更多细节.
+	参阅 [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) 获得更多细节.
 
 **Tip:** 如果安装是使用的 `locale` 正是你需要的，可以在 chroot 后通过 `# locale > /etc/locale.conf`进行设置。
 
@@ -97,7 +97,7 @@ LC_TIME=en_DK.UTF-8
 
 这些 `locale.conf` 文件的优先级定义在 `/etc/profile.d/locale.sh` 中.
 
-参阅 [#支持的变量](#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8F.98.E9.87.8F), `man 5 locale.conf` 和相关连的文章获得更多细节.
+参阅 [#支持的变量](#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8F.98.E9.87.8F), [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) 和相关连的文章获得更多细节.
 
 `locale.conf` 的变更会在下次登录时生效,要立刻应用新的设置的话,可以运行:
 

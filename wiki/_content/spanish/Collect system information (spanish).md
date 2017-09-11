@@ -90,7 +90,7 @@ En una máquina con Trisquel (una distribución sólo-software-libre derivativa 
 
 *POR HACER*
 
-*   Más información: `man issue`.
+*   Más información: [issue(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/issue.5).
 
 Para saber qué **kernel** se está usando, basta con utilizar el comando <tt>uname</tt>:
 
@@ -113,7 +113,7 @@ De aquí podemos obtener la siguiente información:
 *   El kernel está compilado para la arquitectura y máquina *Intel 686* o mejor conocido como Intel Pentium Pro (6), lo que equivale a las familias de procesadores Core y M, y a todos los procesadores Intel posteriores a Pentium II y AMD Athlon y posteriores. En términos básicos esto significa que el kernel está optimizado para correr en hardware Intel "moderno".
 *   El kernel soporta la capacidad <tt>PAE</tt> o [Extensión de Dirección Física](https://es.wikipedia.org/wiki/Extensión_de_dirección_física) del procesador, que permite a procesadores de 32-bit obtener más de 4GiB de memoria RAM cuando esté disponible, además de habilitar el llamado "bit NX".
 
-*   Más información: `man uname`.
+*   Más información: [uname(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/uname.1).
 
 Además el kernel cuando arranca mantiene un archivo llamado **/proc/version** donde se puede obtener información adicional sobre el kernel que se está usando actualmente.
 
@@ -196,9 +196,9 @@ Swap:         1105          0       1105
 
 ```
 
-*   `man free`
+*   [free(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/free.1)
 
-También es posible obtener la cantidad de memoria en la lista de procesos e información que entrega el comando `man top`
+También es posible obtener la cantidad de memoria en la lista de procesos e información que entrega el comando [top(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/top.1)
 
 Al ejecutar **top** se desplegará la lista de procesos y consumos que está tomando cada uno, en la parte superior se podrá observar información sobre la memoria, cpu y otros
 
@@ -274,7 +274,7 @@ Base Board Information
 
 ### Almacenamiento
 
-*   Comando **fdisk -l** -> `man fdisk`
+*   Comando **fdisk -l** -> [fdisk(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8)
 
 Ejemplo de salida de **fdisk -l**: aquí se puede observar que la máquina posee 3 unidades de almacenamiento conectada, se puede observar la distribución de las particiones de cada una. Este comando debe ser ejecutado con niveles de root.
 
@@ -316,8 +316,8 @@ $cat /proc/partitions
 
 ```
 
-*   `man blkid`
-*   `man df`
+*   [blkid(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/blkid.8)
+*   [df(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/df.1)
 *   **Ver también: [Explicaciones Acerca de /dev](/index.php?title=Explicaciones_Acerca_de_/dev&action=edit&redlink=1 "Explicaciones Acerca de /dev (page does not exist)")**.
 
 ### Interface Humana
@@ -328,7 +328,7 @@ La información de estado está almacenada en un árbol de directorios en <tt>/e
 
 #### Dispositivos USB
 
-Utilizando el comando **lsusb** `man lsusb` Ejemplo de salida de **lsusb**
+Utilizando el comando **lsusb** [lsusb(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lsusb.8) Ejemplo de salida de **lsusb**
 
 ```
 Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
@@ -341,7 +341,7 @@ Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 
 #### Dispositivos PCI
 
-utilizando el comando **lspci** `man lspci`
+utilizando el comando **lspci** [lspci(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lspci.8)
 
 Ejemplo de salida de **lspci**:
 
@@ -544,7 +544,7 @@ La configuración del gestor de paquetes está almacenada en un directorio en <t
 
 ### Permisos y privilegios del Usuario
 
-`man whoami` Ejemplo de salida de **whoami**
+[whoami(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/whoami.1) Ejemplo de salida de **whoami**
 
 ```
 dalacost@urano:~$ whoami
@@ -554,7 +554,7 @@ dalacost
 
 El comando **id** retorna la información de grupos y privilegios de un usuario. Se le pasa de parámetro el nombre de un usuario (opcional) y retorna una lista de los grupos (con sus GID) a los que pertenece ese usuario, y que en un sistema Linux determina de qué privilegios dispone ese usuario y qué operaciones puede realizar.
 
-`man id` Ejemplo de salida de **id**
+[id(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/id.1) Ejemplo de salida de **id**
 
 ```
 dalacost@urano:~$ id
@@ -573,7 +573,7 @@ En el ejemplo anterior, el usuario <tt>dalacost</tt> tiene los siguientes privil
 
 ### Otros usuarios conectados al sistema
 
-El comando **who** `man who` permite obtener información sobre otros usuarios conectados al mismo sistema.
+El comando **who** [who(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/who.1) permite obtener información sobre otros usuarios conectados al mismo sistema.
 
 Ejemplo de salida del comando **who**
 
@@ -597,7 +597,7 @@ dalacost pts/13       2010-02-03 11:09 (:0.0)
 
 ### Últimos usuarios autentificados en el sistema
 
-`man last`
+[last(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/last.1)
 
 Salida de ejemplo del comando **last**
 
@@ -657,7 +657,7 @@ sshd:x:115:65534::/var/run/sshd:/usr/sbin/nologin
 
 ```
 
-*   `man passwd`
+*   [passwd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1)
 
 ### Grupos validos del sistema
 
@@ -744,7 +744,7 @@ sshd:*:14595:0:99999:7:::
 
 ### Conexión a la Red
 
-*   `man ifconfig`
+*   [ifconfig(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ifconfig.8)
 
 Listando las interfaces de red con el comando **ifconfig**
 
@@ -778,7 +778,7 @@ lo        Link encap:Bucle local
 
 ```
 
-*   `man iwconfig`
+*   [iwconfig(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iwconfig.8)
 
 Listando interfaces de red con soporte inalámbrico con el comando **iwconfig** , en este ejemplo se puede ver que la interfaz llamada **eth2**, posee soporte para red inalábrica y está conectada a la red llamada **Lacosox.org**
 
@@ -797,7 +797,7 @@ pan0      no wireless extensions.
 
 ```
 
-*   `man iwlist`
+*   [iwlist(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iwlist.8)
 
 Con iwlist es posible lista las redes inalábricas disponibles ( esta es solo una de las cosas que puede hacer). para esto se debe usar el comando **iwlist interfaz scan**
 
@@ -829,7 +829,7 @@ eth2      Scan completed :
 
 ### Puntos de Montaje
 
-`man df`
+[df(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/df.1)
 
 Salida de ejemplo del comando **df**
 
@@ -856,7 +856,7 @@ cat /etc/fstab
 
 ### Carga
 
-*   `man top`
+*   [top(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/top.1)
 
 Salida normal del comando **top**
 
@@ -906,7 +906,7 @@ Swap:   393584k total,        0k used,   393584k free,   541492k cached
 
 ```
 
-*   `man uptime`
+*   [uptime(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/uptime.1)
 
 Salida normal del comando **uptime**
 
@@ -915,7 +915,7 @@ Salida normal del comando **uptime**
 
 ```
 
-*   `man free`
+*   [free(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/free.1)
 
 Salida normal del comando **free**
 
@@ -927,7 +927,7 @@ Swap:       393584          0     393584
 
 ```
 
-*   `man w`
+*   [w(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/w.1)
 
 Salida normal del comando **w**
 

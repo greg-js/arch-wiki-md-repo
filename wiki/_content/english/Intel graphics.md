@@ -98,7 +98,7 @@ Additional options are added by the user on new lines below `Driver`.
 *   You may need to indicate `Option "AccelMethod"` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
 *   You might need to add more device sections than the one listed above. This will be indicated where necessary.
 
-For the full list of options, see the [man page](/index.php/Man_page "Man page") for `intel`.
+For the full list of options, see the [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) man page.
 
 ## Module-based Powersaving Options
 
@@ -245,7 +245,7 @@ Option      "AccelMethod"  "uxa"
 
 ```
 
-See `man 4 intel` under `Option "AccelMethod"`.
+See [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) under `Option "AccelMethod"`.
 
 ### DRI3 issues
 

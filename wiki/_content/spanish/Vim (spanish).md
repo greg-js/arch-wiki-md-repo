@@ -27,7 +27,7 @@ Vim (**Vi** I**M**Proved), es un editor de texto derivado de Vi. Es notoriamente
 
 ## Configuración
 
-El archivo de configuración de vim está situado directamente en el directorio personal del usuario (`~/`) y se llama .vimrc. Se puede encontrar un archivo .vimrc de ejemplo en `/etc/vimrc`.
+El archivo de configuración de vim está situado en el directorio personal del usuario (`~/`) con el nombre .vimrc. Puede encontrar un archivo .vimrc de ejemplo en `/etc/vimrc`.
 
 ```
 "Sample .vimrc
@@ -58,7 +58,7 @@ pacman -S gvim
 
 ```
 
-*   Existe también disponible via [pacman](/index.php/Pacman "Pacman") un grupo seleccionado de guiones muy populares para vim.
+*   Se encuentra disponible vía [pacman](/index.php/Pacman "Pacman") un grupo seleccionado de guiones muy populares para vim.
 
 ```
 pacman -S vim-plugins
@@ -83,7 +83,7 @@ vim
 
 ```
 
-(Puede darle nombre al archivo después cuando lo grabe.)
+(puede darle nombre al archivo después, cuando lo grabe).
 
 ### Cómo introducir texto
 

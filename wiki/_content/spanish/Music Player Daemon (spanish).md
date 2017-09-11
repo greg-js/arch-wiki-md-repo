@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [MPD/Tips and Tricks](/index.php/MPD/Tips_and_Tricks "MPD/Tips and Tricks")
+*   [MPD/Troubleshooting](/index.php/MPD/Troubleshooting "MPD/Troubleshooting")
+
 **MPD** (Music Player Daemon) es un reproductor de audio que maneja una arquitectura servidor-cliente. MPD se ejecuta en el fondo como un daemon, gestiona listas de reproducción y una base de datos, y hace uso de muy pocos recursos. Para hacer uso de una interfaz gráfica, es necesario un cliente adicional. Más información puede obtenerse en su [página web](http://www.musicpd.org/).
 
 ## Contents
@@ -559,7 +564,7 @@ begin
 end
 ```
 
-Para mas información de mpc ejecute `man mpc`.
+Para mas información de mpc ejecute [mpc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1).
 
 ### Control de MPD por medio del teléfono con Bluetooth
 

@@ -52,7 +52,7 @@ In `/etc/fstab` sono contenuti i seguenti campi separati da spazi o tabulazioni:
 *   **<file systems>** - definisce la periferica di archiviazione o la partizione.
 *   **<dir>** - indica al comando mount la cartella dove sarà montata la partizione(<file system>).
 *   **<type>** - indica il tipo di file system della partizione o del dispositivo. Sono supportati diversi file system. Alcuni esempi sono: `ext2`, `ext3`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap`, ed `auto`. L'opzione `auto` lascia riconoscere al comando mount il tipo di file system da utilizzare, questa opzione e utile in caso di supporti ottici (CD/DVD).
-*   **<options>** - indica le opzioni utilizzate dal comando mount sul file system. Alcune [opzioni di mount](http://linux.die.net/man/8/mount) fanno riferimento a specifici file system, altre invece sono generiche:
+*   **<options>** - indica le opzioni utilizzate dal comando mount sul file system. Alcune opzioni di mount fanno riferimento a specifici file system, altre invece sono generiche ([mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)):
 
 *   `auto` - Il file system sarà montato automaticamente durante l'avvio del sistema, oppure quando viene lanciato il comando `mount -a`.
 *   `noauto` - Il file system non sarà montato automaticamente ma solo manualmente.

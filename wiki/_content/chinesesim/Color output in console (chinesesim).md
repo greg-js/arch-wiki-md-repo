@@ -356,7 +356,7 @@ which *replaces* the decorations with the colors. Also add:
 
 ```
 
-if you want colors and decorations (bold or underline) *at the same time*. See `man xterm` for a description of the `veryBoldColors` resource.
+if you want colors and decorations (bold or underline) *at the same time*. See [xterm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xterm.1) for a description of the `veryBoldColors` resource.
 
 #### rxvt-unicode
 

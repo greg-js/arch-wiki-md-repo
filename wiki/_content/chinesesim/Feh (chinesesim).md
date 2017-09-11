@@ -107,7 +107,7 @@ eval `cat ~/.fehbg` &
 
 为了随机切换桌面壁纸，用下面的代码创建一个脚本 (例如 `wallpaper.sh`)。设置脚本为可执行 (`chmod +x wallpaper.sh`) 然后从 `~/.xinitrc` 中调用。你也可以直接把代码放置在 `~/.xinitrc` 中而不是放在单独文件中。
 
-按照您的需要更改 `~/.wallpaper` 目录，以及 `15m` 延时 (参见 `man sleep` 查看选项)。
+按照您的需要更改 `~/.wallpaper` 目录，以及 `15m` 延时 (参见 [sleep(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.1) 查看选项)。
 
 ```
 #!/bin/sh

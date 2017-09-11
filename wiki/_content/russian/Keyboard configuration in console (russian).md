@@ -1,5 +1,11 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Дата последней синхронизации: 23 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=482706).
 
+Ссылки по теме
+
+*   [Конфигурация клавиатуры в Xorg](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_Xorg "Конфигурация клавиатуры в Xorg")
+*   [Дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши")
+*   [Шрифты#Шрифт в консоли](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Шрифты")
+
 **Примечание:** В этой статье описана лишь базовая настройка без модификации раскладок, назначения действий для дополнительных клавиш и т.п. Информацию по этим темам можно найти в статье [Дополнительные клавиши](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8 "Дополнительные клавиши")
 
 Сопоставление клавиш (раскладки) для [виртуальной консоли](https://en.wikipedia.org/wiki/ru:%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C "w:ru:Виртуальная консоль"), консольных шрифтов и консольных карт предоставляется пакетом [kbd](https://www.archlinux.org/packages/?name=kbd) (зависимость от [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")), который также предоставляет множество инструментов низкого уровня для управления виртуальной консолью. Кроме того, *systemd* также предоставляет инструмент *localectl*, который может контролировать как [локали](/index.php/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Locale (Русский)") системы, так и настройки раскладки клавиатуры как для виртуальной консоли, так и для Xorg.
@@ -53,7 +59,7 @@ $ find /usr/share/kbd/keymaps/ -type f
 
 ### Постоянная конфигурация
 
-Постоянную комбинацию клавиш можно установить в `/etc/vconsole.conf`, которая считывается [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") при запуске. Для указания раскладки используется переменная `KEYMAP`. Если переменная пуста или не установлена, в качестве значения по умолчанию используется комбинация клавиш `us`. Смотрите `man 5 vconsole.conf` для получения информации обо всех параметрах. Например:
+Постоянную комбинацию клавиш можно установить в `/etc/vconsole.conf`, которая считывается [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") при запуске. Для указания раскладки используется переменная `KEYMAP`. Если переменная пуста или не установлена, в качестве значения по умолчанию используется комбинация клавиш `us`. Смотрите [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) для получения информации обо всех параметрах. Например:
 
  `/etc/vconsole.conf` 
 ```
@@ -69,7 +75,7 @@ $ localectl set-keymap --no-convert *keymap*
 
 ```
 
-Опцию `--no-convert` можно использовать для предотвращения `localectl` автоматического изменения [раскладки клавиатуры Xorg](/index.php/Keyboard_configuration_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in Xorg (Русский)") до ближайшего совпадения. Для получения допольнительной информации смотрите `man localectl`.
+Опцию `--no-convert` можно использовать для предотвращения `localectl` автоматического изменения [раскладки клавиатуры Xorg](/index.php/Keyboard_configuration_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in Xorg (Русский)") до ближайшего совпадения. Для получения допольнительной информации смотрите [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1).
 
 ### Временная конфигурация
 
@@ -82,7 +88,7 @@ $ localectl set-keymap --no-convert *keymap*
 
 ```
 
-Для получения допольнительной информации смотрите `man 1 loadkeys`.
+Для получения допольнительной информации смотрите [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1).
 
 ## Регулировка typematic задержки и скорости
 

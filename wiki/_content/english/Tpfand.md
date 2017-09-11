@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ThinkPad Fan Control](/index.php/ThinkPad_Fan_Control "ThinkPad Fan Control")
+*   [Fan speed control#ThinkPad laptops](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control")

@@ -1,3 +1,9 @@
+Related articles
+
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
+*   [Bluez4](/index.php/Bluez4 "Bluez4")
+*   [Mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate")
+
 This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetooth") mouse through the command line without relying upon a graphical application.
 
 ## Contents
@@ -85,7 +91,7 @@ If the scroll speed is too slow, you can try
 
 ```
 # rmmod hid_magicmouse
-# modprobe hid_magicmouse croll_acceleration=1 scroll_speed=55
+# modprobe hid_magicmouse scroll_acceleration=1 scroll_speed=55
 
 ```
 
@@ -93,7 +99,7 @@ Scroll speed can be set from 0 to 63.
 
 If the speed suits you, you can make the change permanent in `/etc/modprobe.d/`
 
- ` /etc/modprobe.d/hid_magicmouse.conf `  `options hid_magicmouse croll_acceleration=1 scroll_speed=55` 
+ ` /etc/modprobe.d/hid_magicmouse.conf `  `options hid_magicmouse scroll_acceleration=1 scroll_speed=55` 
 
 ### Apple Magic Mouse middle click
 

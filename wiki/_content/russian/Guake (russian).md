@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")
+
 [Guake](http://guake.org) — выпадающий эмулятор терминала для [GNOME](/index.php/GNOME "GNOME") (наподобие [Yakuake](/index.php/Yakuake "Yakuake") для [KDE](/index.php/KDE "KDE"), [Tilda](/index.php/Tilda "Tilda") и консоли из игры Quake).
 
 ## Contents
@@ -129,4 +133,4 @@ guake --rename-tab="shell1"
 
 ## Смотрите также
 
-*   [man guake(1)](http://linux.die.net/man/1/guake) на die.net
+*   [guake(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/guake.1)

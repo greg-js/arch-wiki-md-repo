@@ -184,7 +184,7 @@ If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to 
 
 For a lightweight method (without support for listing public shares, etc.), only install [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to provide `/usr/bin/mount.cifs`.
 
-Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See `man smbclient` for commonly used commands.
+Install [smbclient](https://www.archlinux.org/packages/?name=smbclient) for an ftp-like command line interface. See [smbclient(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1) for commonly used commands.
 
 **Note:** [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires an /etc/samba/smb.conf file which the utility, touch, can generate (as an empty file), or if [samba](https://www.archlinux.org/packages/?name=samba) is installed, it can be copied from the default [#smb.conf](#smb.conf).
 
@@ -249,7 +249,7 @@ To allow users to mount it as long as the mount point resides in a directory con
 
 `-o [options]`
 
-	See `man mount.cifs` for more information.
+	See [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for more information.
 
 **Note:**
 
@@ -478,7 +478,7 @@ If you do not have printers to be shared, use the following setting to save some
 
 **Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
 
-Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in `man smb.conf`.
+Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
 
  `/etc/samba/smb.conf` 
 ```

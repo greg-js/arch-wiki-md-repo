@@ -1,3 +1,7 @@
+Related articles
+
+*   [GNOME](/index.php/GNOME "GNOME")
+
 [Guake](http://guake-project.org/) is a top-down terminal for [GNOME](/index.php/GNOME "GNOME") (in the style of [Yakuake](/index.php/Yakuake "Yakuake") for [KDE](/index.php/KDE "KDE"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake).
 
 ## Contents
@@ -150,4 +154,4 @@ for_window [class="Main.py"] floating enable
 
 ## See also
 
-*   [man guake(1)](http://linux.die.net/man/1/guake) on die.net
+*   [guake(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/guake.1)

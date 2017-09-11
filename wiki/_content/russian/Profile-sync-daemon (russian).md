@@ -198,7 +198,7 @@ OnUnitActiveSec=10min
 
 ```
 
-См. `man systemd.timer` для получения дополнительной информации о настройке таймеров.
+См. [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5) для получения дополнительной информации о настройке таймеров.
 
 ## FAQ
 

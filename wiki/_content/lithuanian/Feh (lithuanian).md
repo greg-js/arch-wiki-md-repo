@@ -73,7 +73,7 @@ sh ~/.fehbg &
 
 Norint atsitiktinai keisti darbastalio fonus, sukurkite skriptą su sekančiu kodu (pvz.: `wallpaper.sh`). Suteikite jam paleisties teises (`chmod +x wallpaper.sh`) ir paleiskite jį iš `~/.xinitrc`. Skriptą galite tiesiogiai rašyti į `~/.xinitrc`, nebūtinai jį rašyti į `wallpaper.sh`.
 
-Pakeiskite `$HOME/.wallpaper` direktoriją į jums tinkamą ir "15m" (15 minučių) intervalą tarp darbastalio fonų keitimosi (peržiūrėkite `man sleep` papildomoms opcijoms).
+Pakeiskite `$HOME/.wallpaper` direktoriją į jums tinkamą ir "15m" (15 minučių) intervalą tarp darbastalio fonų keitimosi (peržiūrėkite [sleep(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.1) papildomoms opcijoms).
 
 ```
 #!/bin/sh

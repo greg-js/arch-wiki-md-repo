@@ -1087,7 +1087,7 @@ $ pulseaudio --start
 
 *   To get details about currently appeared unfixed errors or just get status of daemon use commands like `pax11publish -d` and `pulseaudio -v` where `v` option can be used multiple time to set verbosity of log output equal to the `--log-level[=LEVEL]` option where LEVEL is from 0 to 4\. See the [#Outputs by PulseAudio error status check utilities](#Outputs_by_PulseAudio_error_status_check_utilities) section.
 
-See also man pages for [pax11publish](http://linux.die.net/man/1/pax11publish) and [pulseaudio](http://linux.die.net/man/1/pulseaudio) for more details.
+See also man pages for [pax11publish(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) and [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1) for more details.
 
 #### Outputs by PulseAudio error status check utilities
 
@@ -1128,7 +1128,7 @@ fs.inotify.max_user_watches = 100000
 
 *   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) and [dnotify, inotify](http://lwn.net/Articles/604686/)- more details about *inotify/max_user_watches*
 *   [reasonable amount of inotify watches with Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
-*   [inotify](http://linux.die.net/man/7/inotify) - man page
+*   [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - man page
 
 ### Daemon already running
 

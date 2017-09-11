@@ -1,3 +1,12 @@
+Artigos relacionados
+
+*   [systemd/User](/index.php/Systemd/User "Systemd/User")
+*   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
+*   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
+*   [Daemons List](/index.php/Daemons_List "Daemons List")
+*   [udev](/index.php/Udev "Udev")
+*   [Improve Boot Performance](/index.php/Improve_Boot_Performance "Improve Boot Performance")
+
 De [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 	*Systemd* é um sistema e gerenciador de serviços para Linux, compatível com os scripts de inicializações SysV e LS. *Systemd* fornece recursos de paralelização agressivos, usa socket e ativação [D-Bus](/index.php/D-Bus "D-Bus") para iniciar serviços, oferece o início de daemons on-demand, mantém o registro de processos usando [grupos de controle](/index.php/Cgroups "Cgroups") Linux, suporte snapshotting e restauração do estado do sistema, preserva pontos de montagens e automontagens e implementa uma lógica de controle elaborado transacional baseada em dependência de serviço.
@@ -37,7 +46,7 @@ De [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 ## Uso básico systemctl
 
-O principal comando usado para introspecção e controle *systemd* é **systemctl**. Alguns de seus usos são examinando o estado do sistema e gerenciando o sistema e serviços. Consulte `man 1 systemctl` para mais detalhes.
+O principal comando usado para introspecção e controle *systemd* é **systemctl**. Alguns de seus usos são examinando o estado do sistema e gerenciando o sistema e serviços. Consulte [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para mais detalhes.
 
 **Dica:** Você pode usar todos os comandos *systemctl* com o `-H *user*@*host*` que muda para controlar uma instância *systemd* em uma máquina remota. Isso usará [SSH](/index.php/SSH "SSH") para conectar-se uma instância remota *systemd*.
 
@@ -83,7 +92,7 @@ Quando usa *systemctl*, você geralmente tem que especificar o nome completo do 
 *   Os pontos de montagem serão automaticamente convertidos para a unit *.mount* adequada. Por exemplo, especificando `/home` equivale a `home.mount`.
 *   Similar aos pontos de montagem, dispositivos são automaticamente convertido para a unit *.device* adequada, portanto, especificando `/dev/sda2` equivale a `dev-sda2.device`.
 
-Consulte `man systemd.unit` para detalhes.
+Consulte [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) para detalhes.
 
 Ativa uma unit imediatamente:
 
@@ -241,7 +250,7 @@ tmpfiles também pode ser usado para escrever os valores em determinados arquivo
 
  `/etc/tmpfiles.d/disable-usb-wake.conf`  `w /proc/acpi/wakeup - - - - USBE` 
 
-Consulte `man 5 tmpfiles.d` para detalhes.
+Consulte [tmpfiles.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) para detalhes.
 
 **Nota:** Este método pode não funcionar para definir as opções em `/sys` uma vez que o serviço *systemd-tmpfiles-setup* pode ser executado antes dos módulos de dispositivo apropriado for carregado. Neste caso, você pode verificar se o módulo tem um parâmetro para a opção que pretende definir com `modinfo *module*` e ajustar essa opção com um [arquivo de configuração em /etc/modprobe.d](/index.php/Modprobe.d#Configuration "Modprobe.d"). Caso contrário, você terá que escrever uma [regra udev](/index.php/Udev#About_udev_rules "Udev") para ajustar o atributo adequado logo que o dispositivo aparecer.
 
@@ -257,7 +266,7 @@ Dependências são normalmente colocadas em serviços e não em targets. Por exe
 
 ### Tipo
 
-Há vários tipos diferentes de arranque a considerar quando se escreve um arquivo de serviço personalizado. Isso é definido com o parâmetro `Type=` na seção `[Service]`. Consulte `man systemd.service` para uma explicação mais detalhada.
+Há vários tipos diferentes de arranque a considerar quando se escreve um arquivo de serviço personalizado. Isso é definido com o parâmetro `Type=` na seção `[Service]`. Consulte [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) para uma explicação mais detalhada.
 
 *   `Type=simple` (padrão): *systemd* considera que o serviço seja iniciado imediatamente. O processo não tem fork. Não use este tipo se outros serviços carecem ser solicitados neste serviço, a menos que seja socket ativado.
 *   `Type=forking`: *systemd* considera que o serviço iniciou uma vez que os processos forks e o pai sairam. Para daemons clássicos use este tipo, a menos que você saiba que ele não é necessário. Deve especificar `PIDFile=` tão bem como *systemd* possa acompanhar o processo principal.
@@ -430,7 +439,7 @@ Mostra todas as mensagens de uma unit específica:
 
 ```
 
-Consulte `man 1 journalctl`, `man 7 systemd.journal-fields`, ou [mensagem do blog](http://0pointer.de/blog/projects/journalctl.html) de Lennert para detalhes.
+Consulte [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), ou [mensagem do blog](http://0pointer.de/blog/projects/journalctl.html) de Lennert para detalhes.
 
 ### Tamanho limite do Journal
 
@@ -441,7 +450,7 @@ SystemMaxUse=50M
 
 ```
 
-Consulte `man journald.conf` para mais informações.
+Consulte [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) para mais informações.
 
 ### Journald em conjunto com o syslog
 

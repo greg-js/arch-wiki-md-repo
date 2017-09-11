@@ -206,7 +206,9 @@ Next, enable the encryption feature flag on your filesystem:
 
 ```
 
-**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem. Also GRUB is unable to mount the drive at the moment. There is a patch on the way.
+**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
+
+**Warning:** If your /boot/ directory is on an ext4 file system, check that your boot loader supports the ext4 encryption.
 
 **Tip:** If you need revert this operation:
 ```

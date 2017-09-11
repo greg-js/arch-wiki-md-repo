@@ -1,3 +1,9 @@
+Related articles
+
+*   [DPMS](/index.php/DPMS "DPMS")
+*   [Xresources](/index.php/Xresources "Xresources")
+*   [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
+
 [XScreenSaver](https://www.jwz.org/xscreensaver/) is a screen saver and locker for the X Window System.
 
 ## Contents
@@ -58,7 +64,7 @@ DPMS and screen blanking can be disabled by starting *xscreensaver-demo* and, fo
 
 ## Usage
 
-**Tip:** To start XScreenSaver without the splash screen, use the `-no-splash` switch. See `man xscreensaver` for a full list of options.
+**Tip:** To start XScreenSaver without the splash screen, use the `-no-splash` switch. See [xscreensaver(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xscreensaver.1) for a full list of options.
 
 In the [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE") and [LXQt](/index.php/LXQt "LXQt") environments, XScreenSaver is autostarted automatically if it is available - no further action is required. For other environments, see [Autostarting](/index.php/Autostarting "Autostarting").
 

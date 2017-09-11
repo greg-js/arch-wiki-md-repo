@@ -115,7 +115,7 @@ $ timidity example.midi
 
 ```
 
-Add option `-in` or `-ig` for a text-based/gtk+ interface. E.g. as a Xfce/GNOME user you may want to set MIDI files to open with the custom command `timidity -ig`. There are many other options to TiMidity++. See `man timidity` or use `-h` to get help.
+Add option `-in` or `-ig` for a text-based/gtk+ interface. E.g. as a Xfce/GNOME user you may want to set MIDI files to open with the custom command `timidity -ig`. There are many other options to TiMidity++. See [timidity(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timidity.1) or use `-h` to get help.
 
 The GTK+ interface offers such features as a playlist, track length estimates, volume control, a file load dialog box, play and pause buttons, rewind and fast forward buttons, as well as options to change the pitch of or speed up or slow down the playback of a midi file.
 

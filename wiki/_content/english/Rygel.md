@@ -10,8 +10,8 @@ After having installed Rygel on a GNOME environment, the "Share media" option wi
 
 Rygel can be configured globally (`/etc/rygel.conf`) or per-user (`~/.config/rygel.conf`). The default `/etc/rygel.conf` is well documented.
 
-More information on these and other configuration options can be found with `man rygel.conf`.
+More information on these and other configuration options can be found with [rygel.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rygel.conf.5).
 
 ## Troubleshooting
 
-When starting Rygel from the command line, there are several options that might help you troubleshoot any strange behaviour. Find out more about these options with `man rygel`.
+When starting Rygel from the command line, there are several options that might help you troubleshoot any strange behaviour. Find out more about these options with [rygel(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rygel.1).

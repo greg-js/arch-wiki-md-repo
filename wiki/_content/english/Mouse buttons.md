@@ -1,3 +1,8 @@
+Related articles
+
+*   [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration")
+*   [Mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate")
+
 This article describes how to configure a mouse with more than 3 buttons.
 
 ## Contents
@@ -487,9 +492,9 @@ The 'event1' was changed to 'event*' in case udev gives it a different device nu
 
 ```
 
-See `man 1 evrouter` for a full explanation of the fields.
+See evrouter(1) for a full explanation of the fields.
 
-**Tip:** Rules can apply only to specific windows, see `man 1 evrouter` for details.
+**Tip:** Rules can apply only to specific windows, see evrouter(1) for details.
 
 After setting up the config file, run it as a daemon:
 

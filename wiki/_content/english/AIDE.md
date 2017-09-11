@@ -27,7 +27,7 @@ To initialize the database, use `aide -i` or `aideinit`. Depending on your confi
 
 You can check the system against the baseline database using `aide -C`, or update the baseline db using `aide -u`.
 
-For more info, see `man aide`.
+For more info, see [aide(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aide.1).
 
 ### Cron
 

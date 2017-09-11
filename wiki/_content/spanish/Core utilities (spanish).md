@@ -229,7 +229,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 ```
 
-Vea `man iconv` para más detalles.
+Vea [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) para más detalles.
 
 ### Convertir el fichero reemplazándolo
 
@@ -242,7 +242,7 @@ $ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
 
 ```
 
-Vea `man sponge` para más detalles.
+Vea [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para más detalles.
 
 ## ip
 
@@ -371,7 +371,7 @@ En el caso de que el programa no proporcione una opción similar, es posible eng
 
 *   **[script](https://en.wikipedia.org/wiki/Script_(Unix) "wikipedia:Script (Unix)")** — Una utilidad que hace typescript de una sesión de terminal.
 
-	[http://man7.org/linux/man-pages/man1/script.1.html](http://man7.org/linux/man-pages/man1/script.1.html) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 	Ejemplo: `script -fqc "*program*" | less` or [[2]](http://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdin-is-interactive-not-a-pipe/20401674#20401674)
 

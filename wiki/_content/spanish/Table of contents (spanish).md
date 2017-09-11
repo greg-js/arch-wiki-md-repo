@@ -19,7 +19,7 @@
 | <small>2.8.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>2.8.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
 | <small>2.8.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
-| <small>2.8.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(5)</small> |
+| <small>2.8.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(4)</small> |
 | <small>2.9.</small> [Ciencia y matemáticas](/index.php/Category:Mathematics_and_science_(Espa%C3%B1ol) "Category:Mathematics and science (Español)") <small>(1)</small> |
 | <small>2.10.</small> [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)") <small>(6)</small> |
 | <small>2.10.1.</small> [Manipulación de imágenes](/index.php/Category:Image_manipulation_(Espa%C3%B1ol) "Category:Image manipulation (Español)") <small>(3)</small> |
@@ -64,7 +64,7 @@
 | <small>5.4.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>5.4.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
 | <small>5.4.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
-| <small>5.4.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(5)</small> |
+| <small>5.4.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(4)</small> |
 | <small>5.5.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
 | <small>5.6.</small> [Configuración de conexiones de red](/index.php/Category:Network_configuration_(Espa%C3%B1ol) "Category:Network configuration (Español)") <small>(5)</small> |
 | <small>5.7.</small> [Network sharing](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)") <small>(2)</small> |

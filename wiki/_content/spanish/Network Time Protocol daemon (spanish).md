@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)")
+*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
+*   [Chrony](/index.php/Chrony "Chrony")
+
 [Network Time Protocol](https://en.wikipedia.org/wiki/es:Network_Time_Protocol de un sistema GNU/Linux con los servidores horarios de Internet. Está diseñado para mitigar los efectos de la variable de latencia de la red y, por lo general, pueden mantener el horario dentro de un margen de decenas de milisegundos respecto a Internet. La precisión en las redes de área local es aún mejor, hasta un milisegundo.
 
 [El Proyecto NTP](http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project) proporciona una implementación de referencia del protocolo llamado simplemente NTP. Una alternativa a NTP es [Chrony](/index.php/Chrony "Chrony"), un dial-up amigable y diseñado específicamente para los sistemas que no están en línea todo el tiempo, y [OpenNTPD](/index.php/OpenNTPD "OpenNTPD"), que forma parte del proyecto OpenBSD y que actualmente no se mantiene para Linux.
@@ -77,7 +84,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Nota:** Aún con las opciones anteriores, estas todavía permiten a otras personas consultar el time server. Para evitarlo, es necesario añadir `noserve` a fin de detener la función de servir el tiempo horario. También impide la sincronización horaria, ya que bloquea todos los paquetes, excepto las consultas de ntpd y ntpdc.
 
-La documentación completa para la opción "restrict" se encuentra en `man ntp_acc`. Consulte [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) para obtener instrucciones detalladas.
+La documentación completa para la opción "restrict" se encuentra en [ntp_acc()](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Consulte [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) para obtener instrucciones detalladas.
 
 Siguiendo con la configuración, debe decirle a *ntpd* qué debe permitir a través del propio servidor; la siguiente línea es suficiente si no va a configurar un servidor NTP:
 
@@ -126,7 +133,7 @@ logfile /var/log/ntp.log
 
 ### Otros recursos para la configuración de NTP
 
-En conclusión, no olvide consultar las páginas man: es probable que `man ntp.conf` responda a cualquier duda que todavía pudiera tener (consulta las páginas man relacionadas: `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
+En conclusión, no olvide consultar las páginas man: es probable que [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) responda a cualquier duda que todavía pudiera tener (consulta las páginas man relacionadas: `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
 
 ## Usar sin demonio
 

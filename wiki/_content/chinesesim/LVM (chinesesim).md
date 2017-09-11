@@ -1,5 +1,12 @@
 **翻译状态：** 本文是英文页面 [LVM](/index.php/LVM "LVM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-08-12，点击[这里](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=266713)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
+*   [dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system")
+*   [dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
+*   [Resizing LVM-on-LUKS](/index.php/Resizing_LVM-on-LUKS "Resizing LVM-on-LUKS")
+
 来自 [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux) 的解释：
 
 	LVM 是一种可用在[Linux内核](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel")的[逻辑分卷管理器](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management")；可用于管理磁盘驱动器或其他类似的大容量存储设备。
@@ -459,7 +466,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-查阅`man lvresize`可见详细说明。
+查阅[lvresize(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8)可见详细说明。
 
 ##### 单独设置文件系统大小
 

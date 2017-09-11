@@ -1,3 +1,16 @@
+相关文章
+
+*   [登录时启动X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")
+*   [Autostarting](/index.php/Autostarting "Autostarting")
+*   [X启动时执行命令](/index.php/Execute_commands_after_X_start "Execute commands after X start")
+*   [登录管理器](/index.php/Login_Manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Login Manager (简体中文)")
+*   [窗口管理器](/index.php/Window_Manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window Manager (简体中文)")
+*   [字体配置](/index.php/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font Configuration (简体中文)")
+*   [光标主题](/index.php/Cursor_themes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cursor themes (简体中文)")
+*   [使用所有鼠标按键](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working")
+*   [桌面环境](/index.php/Desktop_Environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop Environment (简体中文)")
+*   [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)")
+
 **Xorg** 是 X11 窗口系统的一个开源实现。Xorg 在 Linux 用户中非常流行，已经成为图形用户程序的必备条件，所以大部分发行版都提供了它。详情参见 [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") 维基文章或访问[Xorg 网站](http://www.x.org/wiki/)。
 
 ## Contents
@@ -692,4 +705,4 @@ needs_root_rights = *yes*
 
 ```
 
-同时请参见 [Xorg.wrap(1)](http://manned.org/Xorg.wrap.1) 和 [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User")。
+同时请参见 [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) 和 [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User")。

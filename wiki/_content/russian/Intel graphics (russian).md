@@ -1,3 +1,12 @@
+Ссылки по теме
+
+*   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
+*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
+*   [Xrandr](/index.php/Xrandr "Xrandr")
+*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Intel graphics](/index.php/Intel_graphics "Intel graphics"). Дата последней синхронизации: 7 октября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Intel_graphics&diff=0&oldid=403749).
 
 С тех пор как Intel предоставляет и поддерживает только свободные драйвера, видеокарты Intel graphics работают "из коробки".
@@ -226,7 +235,7 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 ### Проблемы SNA
 
-Согласно `man 4 intel`:
+Согласно [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4):
 
 	*Есть несколько движков для ускорения DDX. "UXA" (Архитектура Единого Ускорения) является зрелой базовой, которая была введена для поддержки модели драйвера GEM. Именно в процессе заменены "SNA" (новое ускорение в SandyBridge). Cпособность выбора использовать базовую остается для обратной совместимости.*
 

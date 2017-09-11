@@ -327,6 +327,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 
  |
 | [MPlayer](/index.php/MPlayer "MPlayer") | `~/.mplayer` | `$ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer` |
+| [msmtp](/index.php/Msmtp "Msmtp") | `~/.msmtprc` | `$ msmtp -C "$XDG_CONFIG_HOME"/msmtp/msmtprc` |
 | [ncurses](https://www.archlinux.org/packages/?name=ncurses) | `~/.terminfo` | Precludes system path searching:
 
 `$ export TERMINFO="$XDG_DATA_HOME"/terminfo`

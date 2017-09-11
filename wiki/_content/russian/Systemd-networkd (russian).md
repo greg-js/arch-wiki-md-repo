@@ -1,3 +1,11 @@
+Ссылки по теме
+
+*   [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
+*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети")
+*   [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Дата последней синхронизации: 28 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-networkd&diff=0&oldid=423358).
 
 *systemd-networkd* - это системный демон, который управляет сетевыми настройками. По мере появления он обнаруживает и настраивает сетевые устройства, также может создавать виртуальные сетевые устройства. Эта служба может быть особенно полезной для установки сложных сетевых настроек, для контейнера управляемым [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") или для виртуальных машин. А также отлично работает на простом соединении.
@@ -63,7 +71,7 @@ hosts: files **resolve** myhostname
 
 ```
 
-Смотрите `man systemd-resolved`, `man resolved.conf` и [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
+Смотрите [systemd-resolved(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8), [resolved.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) и [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 **Примечание:** Systemd's `resolve` не может найти локальный домен, когда дается только имя хоста, даже когда `UseDomains=yes` или `Domains=[domain-list]` присутствует в соответствующем файле `.network`, и что файл производит ожидаемый `search [domain-list]` в `resolv.conf`. Если вы столкнулись с этой проблемой:
 
@@ -316,7 +324,7 @@ RouteMetric=20
 
 Для отладки, настоятельно рекомендуется [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакеты [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) и [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
-Если вы используете *systemd-nspawn*, вам, возможно, потребуется изменить `systemd-nspawn@.service` и добавить параметры загрузки в строку `ExecStart`. Для исчерпывающего списка варианттов, обратитесь к `man 1 systemd-nspawn`. Обратите внимание, если вы хотите, использовать автоматическую настройку DNS от DHCP, то Вам необходимо включить `systemd-resolved` и символьную ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`. Для большей информации, смотрите `systemd-resolved.service(8)`.
+Если вы используете *systemd-nspawn*, вам, возможно, потребуется изменить `systemd-nspawn@.service` и добавить параметры загрузки в строку `ExecStart`. Для исчерпывающего списка варианттов, обратитесь к [systemd-nspawn(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Обратите внимание, если вы хотите, использовать автоматическую настройку DNS от DHCP, то Вам необходимо включить `systemd-resolved` и символьную ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`. Для большей информации, смотрите `systemd-resolved.service(8)`.
 
 **Совет:** Before you start to configure your container network, it is useful to:
 

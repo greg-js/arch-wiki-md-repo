@@ -1,3 +1,7 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+
 This article describes how one can connect directly to the Internet from an Arch Linux box using an internal modem or external modem in bridge mode.
 
 Due to a lack of developers for dialup issues, connecting Arch to the Internet with a dialup line requires a lot of manual setup. If at all possible, set up a dedicated router which can be used as a default gateway on the Arch box.
@@ -13,7 +17,7 @@ Due to a lack of developers for dialup issues, connecting Arch to the Internet w
 
 ## Analog modem
 
-To be able to use a Hayes-compatible, external, analog modem, you need to at least have the [ppp](https://www.archlinux.org/packages/?name=ppp) package installed. Modify the file `/etc/ppp/options` to suit your needs, following instructions located in `man pppd`. You will need to define a chat script to supply your username and password to the ISP after the initial connection has been established. The manpages for pppd and chat have examples in them that should suffice to get a connection up and running if you are up for it. With udev, your serial ports usually are `/dev/tts/0` and `/dev/tts/1`.
+To be able to use a Hayes-compatible, external, analog modem, you need to at least have the [ppp](https://www.archlinux.org/packages/?name=ppp) package installed. Modify the file `/etc/ppp/options` to suit your needs, following instructions located in [pppd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pppd.8). You will need to define a chat script to supply your username and password to the ISP after the initial connection has been established. The manpages for pppd and chat have examples in them that should suffice to get a connection up and running if you are up for it. With udev, your serial ports usually are `/dev/tts/0` and `/dev/tts/1`.
 
 **Tip:** Read [#Dial-up without a dialer](#Dial-up_without_a_dialer).
 

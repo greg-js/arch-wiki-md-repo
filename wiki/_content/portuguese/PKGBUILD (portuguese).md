@@ -1,4 +1,17 @@
-Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também `man PKGBUILD`.
+Artigos relacionados
+
+*   [Arch packaging standards (Português)](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
+*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   [.SRCINFO (Português)](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Category:Package development (Português)](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)")
+*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+*   [Getting PKGBUILDs from SVN (Português)](/index.php/Getting_PKGBUILDs_from_SVN_(Portugu%C3%AAs) "Getting PKGBUILDs from SVN (Português)")
+
+Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
 Um PKGBUILD é um script shell contendo as informações de compilação necessárias por pacotes do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)").
 

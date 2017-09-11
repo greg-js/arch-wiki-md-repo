@@ -1,3 +1,10 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [xprofile](/index.php/Xprofile "Xprofile")
+*   [Xresources](/index.php/Xresources "Xresources")
+
 The `~/.xinitrc` file is a shell script read by *xinit* and by its front-end *startx*. It is mainly used to execute [desktop environments](/index.php/Desktop_environment "Desktop environment"), [window managers](/index.php/Window_manager "Window manager") and other programs when starting the X server (e.g., starting daemons and setting environment variables). The *xinit* program starts the [X Window System](/index.php/X_Window_System "X Window System") server and works as first client program on systems that are not using a [display manager](/index.php/Display_manager "Display manager").
 
 One of the main functions of `~/.xinitrc` is to dictate which client for the X Window System is invoked with *startx* or *xinit* programs on a per-user basis. There exists numerous additional specifications and commands that may also be added to `~/.xinitrc` as you further customize your system.
@@ -46,7 +53,7 @@ Alternatively, if you wish to have the X display on a separate console from the 
 
 If `.xinitrc` is present in a user's home directory, *startx* and *xinit* execute it. Otherwise *startx* will run the default `/etc/X11/xinit/xinitrc`.
 
-**Note:** *Xinit* has its own default behaviour instead of executing the file. See `man 1 xinit` for details.
+**Note:** *Xinit* has its own default behaviour instead of executing the file. See [xinit(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) for details.
 
 This default xinitrc will start a basic environment with [Twm](/index.php/Twm "Twm"), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) and [Xterm](/index.php/Xterm "Xterm") (assuming that the necessary packages are installed). Therefore, to start a different window manager or desktop environment, first create a copy of the default `xinitrc` in home directory:
 
@@ -148,7 +155,7 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 ```
 
-See also `man startx`.
+See also [startx(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
 **Tip:** This can be used even to start a regular GUI programs but without any of the window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
 

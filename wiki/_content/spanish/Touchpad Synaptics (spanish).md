@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+
 Este artículo detalla el proceso de instalación y configuración de ***Synaptics input driver*** para los touchpads Synaptics (y ALPS) que se encuentra en la mayoría de portátiles.
 
 ## Contents
@@ -756,7 +760,7 @@ Option "SoftButtonAreas"      "50% 0 82% 0 0 0 0 0"
 
 Estas tres opciones son la clave, la primera activa el soporte multitouch, la segunda deshabilitará la emulación de la pulsación central (no soportado para ClickPads), y la tercera se definirán las áreas de pulsación.
 
-El formato para la opción SoftButtonAreas es (de `man 4 synaptics`):
+El formato para la opción SoftButtonAreas es (de [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)):
 
  `RightButtonAreaLeft RightButtonAreaRight RightButtonAreaTop RightButtonAreaBottom  MiddleButtonAreaLeft MiddleButtonAreaRight MiddleButtonAreaTop MiddleButtonAreaBottom` 
 

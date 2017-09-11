@@ -31,7 +31,7 @@ $ man *nama_halaman*
 
 ```
 
-Panduan-panduan diurutkan menjadi beberapa bagian. Untuk daftar lengkapnya, lihat bagian berjudul "Sections of the manual pages" in `man man-pages`.
+Panduan-panduan diurutkan menjadi beberapa bagian. Untuk daftar lengkapnya, lihat bagian berjudul "Sections of the manual pages" in [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 Halaman panduan biasanya dirujuk berdasarkan namanya, diikuti dengan jumlah bagiannya dalam tanda kurung. Sering kali ada beberapa halaman panduan dengan nama yang sama, seperti man(1) dan man(7). Dalam hal ini, memberikan nomor bagian pada man yang diikuti dengan nama halaman panduan, misalnya:
 
@@ -52,7 +52,7 @@ ls (1)               - list directory contents
 
 ## Format
 
-Semua halaman panduan mengikuti format yang cukup standar, yang membantu dalam melakukan navigasi pada halaman panduan. Lihat bagian yang berjudul "Sections within a manual page" dalam `man man-pages`.
+Semua halaman panduan mengikuti format yang cukup standar, yang membantu dalam melakukan navigasi pada halaman panduan. Lihat bagian yang berjudul "Sections within a manual page" dalam [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 ## Mencari panduan
 

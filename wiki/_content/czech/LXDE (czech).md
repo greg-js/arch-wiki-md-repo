@@ -165,7 +165,7 @@ Třetím způsobem je použít globální soubor `/etc/xdg/lxsession/LXDE/autost
 
 ### Nastavení aplletu digitálních hodin
 
-Standardní čas (ne vojenský) se zobrazí formátem hh:mm nebo hh:mm:ss - další parametry viz(`man strftime`):
+Standardní čas (ne vojenský) se zobrazí formátem hh:mm nebo hh:mm:ss - další parametry viz([strftime(3)](http://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3)):
 
 ```
 %I:%M

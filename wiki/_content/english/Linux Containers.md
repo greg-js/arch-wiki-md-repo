@@ -110,8 +110,8 @@ See, [ABS](/index.php/ABS "ABS") for more on compiling a custom kernel.
 Secondly, modify `/etc/lxc/default.conf` to contain the following lines:
 
 ```
-lxc.id_map = u 0 100000 65536
-lxc.id_map = g 0 100000 65536
+lxc.idmap = u 0 100000 65536
+lxc.idmap = g 0 100000 65536
 
 ```
 
@@ -161,7 +161,7 @@ Alternatively, create a *privileged* container, and see: [#Converting a privileg
 
 ### Container configuration
 
-The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.id_map = u 0 100000 65536` and the `lxc.id_map = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29) section.
+The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.idmap = u 0 100000 65536` and the `lxc.idmap = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29) section.
 
 #### Basic config with networking
 

@@ -1,3 +1,13 @@
+Artículos relacionados
+
+*   [SSH keys](/index.php/SSH_keys "SSH keys")
+*   [Pam abl](/index.php/Pam_abl "Pam abl")
+*   [fail2ban](/index.php/Fail2ban "Fail2ban")
+*   [sshguard](/index.php/Sshguard "Sshguard")
+*   [SSHFS](/index.php/SSHFS "SSHFS")
+*   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng")
+*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
+
 **Estado de la traducción:** este artículo es una versión traducida de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Fecha de la última traducción/revisión: **2014-12-26**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=352767).
 
 **S**ecure **Sh**ell o **SSH** es un protocolo de red que permite el intercambio de datos sobre un canal seguro entre dos computadoras. SSH usa técnicas de cifrado que hacen que la información que viaja por el medio de comunicación vaya de manera no legible y ninguna tercera persona pueda descubrir el usuario y contraseña de la conexión ni lo que se escribe durante toda la sesión. SSH usa criptografía de clave pública para autenticar el equipo remoto y permitir al mismo autenticar al usuario si es necesario.
@@ -329,7 +339,7 @@ En el sistema remoto:
 
 *   [instale](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes_espec.C3.ADficos "Pacman (Español)") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) y [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   en `/etc/ssh/ssh**d**_config`:
-    *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver `man sshd_config`)
+    *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver [sshd_config(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
     *   ajuste `X11Forwarding` a *yes*
 *   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio *sshd*](#Gesti.C3.B3n_del_Demonio_SSHD).
 
@@ -374,7 +384,7 @@ $ xhost +hostname
 
 ```
 
-donde hostname es el nombre del equipo en particular al que desea remitirse. Ver `man xhost` para más detalles.
+donde hostname es el nombre del equipo en particular al que desea remitirse. Ver [xhost(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xhost.1) para más detalles.
 
 Tenga cuidado con algunas aplicaciones, ya que hacen un chequeo para ejecutar una instancia en la máquina local. [Firefox](/index.php/Firefox "Firefox") es un ejemplo: o bien cierre la instancia de Firefox en ejecución o utilice el siguiente parámetro de inicio para poner en marcha una instancia remota en el equipo local:
 
@@ -463,7 +473,7 @@ Compression yes
 
 ```
 
-**Advertencia:** `man ssh` establece que «*La compresión es deseable en las líneas de módem y otras conexiones lentas, pero ralentizará las cosas en redes rápidas*». Este consejo podría ser contraproducente en función de su configuración de red.
+**Advertencia:** [ssh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1) establece que «*La compresión es deseable en las líneas de módem y otras conexiones lentas, pero ralentizará las cosas en redes rápidas*». Este consejo podría ser contraproducente en función de su configuración de red.
 
 El tiempo de inicio de sesión puede ser acortado usando el sufijo `-4`,que saltea la búsqueda IPv6\. Esto puede hacerse permanente añadiendo esta línea bajo el host correcto en `/etc/ssh/ssh_config`:
 

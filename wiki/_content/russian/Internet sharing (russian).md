@@ -1,3 +1,14 @@
+Ссылки по теме
+
+*   [Android tethering (Русский)](/index.php/Android_tethering_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Android tethering (Русский)")
+*   [Программная точка доступа](/index.php/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%B0%D1%8F_%D1%82%D0%BE%D1%87%D0%BA%D0%B0_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0 "Программная точка доступа")
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Sharing PPP Connection](/index.php/Sharing_PPP_Connection "Sharing PPP Connection")
+*   [Руководство по простой настройке брандмауэра](/index.php/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D0%BE_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B5_%D0%B1%D1%80%D0%B0%D0%BD%D0%B4%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%B0 "Руководство по простой настройке брандмауэра")
+*   [Router](/index.php/Router "Router")
+*   [USB 3G-модем](/index.php/USB_3G-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BC "USB 3G-модем")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Дата последней синхронизации: 2015-07-29\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Internet_sharing&diff=0&oldid=380885).
 
 Эта статья описывает как раздать подключение к интернету от одного компьютера одному или нескольким другим компьютерам.
@@ -69,7 +80,7 @@ net.ipv6.conf.all.forwarding=1
 
 После этого рекомендуется дважды проверить, что после перезагрузки пересылка работает как положено.
 
-**Примечание:** [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") предоставляет новую семантику пересылки в версии 220/221. [[1]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS) Если вы используете systemd-networkd для управления сетевыми интерфейсами, оно **перекроет** настройки `net.*.ip_forward`, по умолчанию выключив пересылку. Чтобы оно принимало вышеописанные настройки, нужно задать `IPForward=kernel` в конфигурационном файле интерфейса systemd-networkd (смотрите `man 5 systemd.network` для дополнительной информации).
+**Примечание:** [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") предоставляет новую семантику пересылки в версии 220/221. [[1]](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS) Если вы используете systemd-networkd для управления сетевыми интерфейсами, оно **перекроет** настройки `net.*.ip_forward`, по умолчанию выключив пересылку. Чтобы оно принимало вышеописанные настройки, нужно задать `IPForward=kernel` в конфигурационном файле интерфейса systemd-networkd (смотрите [systemd.network(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) для дополнительной информации).
 
 ### Включите NAT
 

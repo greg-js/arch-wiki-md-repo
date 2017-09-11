@@ -143,7 +143,7 @@ $ chmod -x wallpaper.sh
 
 e lanciarlo all'avvio (ad esempio da `~/.xinitrc`). Se non si vuole usare questo script in più al file di startup già presente nel sistema è possibile incollare il codice direttamente in `~/.xinitrc`.
 
-Cambiare la directory `~/.wallpaper` con quella desiderata e i `15m` di pausa con un tempo a piacimento. Per maggiori informazioni consultare il man di sleep dando in un terminale `man sleep`.
+Cambiare la directory `~/.wallpaper` con quella desiderata e i `15m` di pausa con un tempo a piacimento. Per maggiori informazioni consultare il man di sleep dando in un terminale [sleep(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.1).
 
  `wallpaper.sh` 
 ```

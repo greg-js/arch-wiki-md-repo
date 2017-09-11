@@ -401,7 +401,7 @@ where `*displayName*` is the name of the display device e.g. `DFP-4`. You can fi
 
 ## Overclocking with nvidia-settings GUI not working
 
-Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). `man nvidia-settings` for more information.
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information.
 
 Example to query all variables:
 

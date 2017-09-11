@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [KMS (Español)](/index.php/Kernel_Mode_Setting_(Espa%C3%B1ol) "Kernel Mode Setting (Español)")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+
 **Wayland** es un nuevo protocolo para gestionar ventanas para Linux. La utilización de Wayland requiere cambios y reinstalación de partes del software del sistema. Para obtener más información sobre Wayland vea esta [página](http://wayland.freedesktop.org/).
 
 **Advertencia:** Wayland está en fuerte desarrollo. La ayuda técnica no se puede garantizar y puede que no funcione como se esperaba.
@@ -131,7 +136,7 @@ $ weston-view doc1.pdf doc2.pdf...
 
 ### Configuración
 
-He aquí un archivo de configuración de ejemplo para la distribución del teclado, la selección de módulos y modificaciones de la interfaz de usuario. Vea `man weston.ini` para obtener los detalles completos:
+He aquí un archivo de configuración de ejemplo para la distribución del teclado, la selección de módulos y modificaciones de la interfaz de usuario. Vea [weston.ini(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) para obtener los detalles completos:
 
  `~/.config/weston.ini` 
 ```

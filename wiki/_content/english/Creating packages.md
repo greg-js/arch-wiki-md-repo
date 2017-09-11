@@ -1,3 +1,16 @@
+Related articles
+
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
+
 This article aims to assist users creating their own packages using the Arch Linux "ports-like" [build system](/index.php/Arch_Build_System "Arch Build System"), also for submission in [AUR](/index.php/AUR "AUR"). It covers creation of a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") – a package build description file sourced by `makepkg` to create a binary package from source. If already in possession of a `PKGBUILD`, see [makepkg](/index.php/Makepkg "Makepkg"). For instructions regarding existing rules and ways to improve package quality see [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards").
 
 ## Contents
@@ -111,7 +124,7 @@ There are five functions, listed here in the order they are executed if all of t
 
 This function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver.28.29) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
 
-**Note:** (From `man PKGBUILD`) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
+**Note:** (From [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
 
 #### pkgver()
 

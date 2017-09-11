@@ -109,7 +109,7 @@ logfile /var/log/ntp.log
 
 Вообще, журнал (лог) устанавливать необязательно, но рекомендуется для того, чтобы знать, какие изменения проводит *ntpd*.
 
-В заключении, никогда не забывайте читать man: `man ntp.conf`. Это ответит на многие Ваши вопросы. Также можно посмотреть `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
+В заключении, никогда не забывайте читать man: [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5). Это ответит на многие Ваши вопросы. Также можно посмотреть `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
 
 ## Запуск демона
 

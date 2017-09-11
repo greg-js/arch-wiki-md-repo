@@ -1,3 +1,8 @@
+Related articles
+
+*   [ACPI modules](/index.php/ACPI_modules "ACPI modules")
+*   [DSDT](/index.php/DSDT "DSDT")
+
 [acpid2](http://acpid2.sourceforge.net/) is a flexible and extensible daemon for delivering [ACPI events](/index.php/ACPI_modules "ACPI modules"). When an event occurs, it executes programs to handle the event. These events are triggered by certain actions, such as:
 
 *   Pressing special keys, including the Power/Sleep/Suspend button
@@ -239,14 +244,14 @@ esac
 
 ### Getting user name of the current display
 
-To run commands dependening on [Xorg](/index.php/Xorg "Xorg"), defining the X display as well as the MIT magic cookie file (via XAUTHORITY) is required. Latter is a security credential providing read and write access to the X server, display, and any input devices (see `man xauth`).
+To run commands dependening on [Xorg](/index.php/Xorg "Xorg"), defining the X display as well as the MIT magic cookie file (via XAUTHORITY) is required. Latter is a security credential providing read and write access to the X server, display, and any input devices (see [xauth(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xauth.1)).
 
 See [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) for an example function when using [xinitrc](/index.php/Xinitrc "Xinitrc").
 
 **Note:**
 
 *   If the LCD backlight is not turned off when the lid is closed, you may do so manually by running `getXuser xset dpms force off` and `getXuser xset dpms force on` respectively on lid close and lid open events. Should the display be blanked, but the backlight left on, instead use [vbetool](https://www.archlinux.org/packages/?name=vbetool) with `vbetool dpms off` and `vbetool dpms on`. See also [XScreenSaver#Configuration](/index.php/XScreenSaver#Configuration "XScreenSaver").
-*   When using *who* or *w*, make sure `/run/utmp` is created at boot-time. See `man utmp` for details.
+*   When using *who* or *w*, make sure `/run/utmp` is created at boot-time. See [utmp(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/utmp.5) for details.
 
 #### Connect to acpid socket
 

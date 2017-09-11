@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Improving performance](/index.php/Improving_performance "Improving performance")
+*   [Silent boot](/index.php/Silent_boot "Silent boot")
+*   [Daemon](/index.php/Daemon "Daemon")
+*   [e4rat](/index.php/E4rat "E4rat")
+*   [Kexec](/index.php/Kexec "Kexec")
+
 Mejorar el rendimiento de arranque de un sistema puede proporcionar que los tiempos de espera de arranque sean reducidos, para aprender más acerca de cómo ciertos archivos y scripts del sistema interactúan entre sí. En este artículo se intentará agregar métodos sobre cómo mejorar el rendimiento de arranque de un sistema Arch Linux.
 
 ## Contents
@@ -51,7 +59,7 @@ $ systemd-analyze plot > plot.svg
 
 ```
 
-Ver `man systemd-analyze` para más detalles.
+Ver [systemd-analyze(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analyze.1) para más detalles.
 
 ## Usando systemd-bootchart
 

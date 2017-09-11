@@ -1,3 +1,8 @@
+相关文章
+
+*   [Kernel Mode Setting (简体中文)](/index.php/Kernel_Mode_Setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Mode Setting (简体中文)")
+*   [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Wayland](/index.php/Wayland "Wayland") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-06，点击[这里](https://wiki.archlinux.org/index.php?title=Wayland&diff=0&oldid=408148)可以查看翻译后英文页面的改动。
 
 **Wayland** 是 Linux 的一个新的图形接口协议。使用 Wayland 需要更改或重新安装一部分系统中的软件。更多关于 Wayland 的信息参见 [主页](http://wayland.freedesktop.org/)。
@@ -94,7 +99,7 @@ $ weston-image image1.jpg image2.jpg...
 
 ### 配置
 
-键盘布局，模块的选择，UI的修改的示例配置文件，请参阅`man weston.ini`
+键盘布局，模块的选择，UI的修改的示例配置文件，请参阅[weston.ini(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5)
 
  `~/.config/weston.ini` 
 ```

@@ -1,3 +1,23 @@
+Ссылки по теме
+
+*   [Среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола")
+*   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
+*   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
+*   [GTK+ (Русский)](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)")
+*   [GDM](/index.php/GDM "GDM")
+*   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
+*   [GNOME/Troubleshooting](/index.php/GNOME/Troubleshooting "GNOME/Troubleshooting")
+*   [GNOME/Files](/index.php/GNOME/Files "GNOME/Files")
+*   [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME/Gedit")
+*   [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")
+*   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
+*   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
+*   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
+*   [Cinnamon (Русский)](/index.php/Cinnamon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cinnamon (Русский)")
+*   [MATE (Русский)](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)")
+*   [Официальные репозитории#gnome-unstable](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8#gnome-unstable "Официальные репозитории")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 12 марта 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=466506).
 
 **GNOME** (произностися как /ɡˈnoʊm/[5] или /ˈnoʊm/[6]) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
@@ -127,9 +147,9 @@ GNOME может быть запущен как графически, испол
 Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  export QT_QPA_PLATFORM=wayland
-  XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
+# export QT_QPA_PLATFORM=wayland
+  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
@@ -254,7 +274,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 В GNOME встроен поиск, доступ к которому можно получить, используя клавишу `Super`. [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию, как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*; мониторинг состояния посредством *tracker-control*. Автоматически запускается *gnome-session* при входе в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
 
-Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства `man tracker-sparql`.
+Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства [tracker-sparql(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1).
 
 ### Расширенная конфигурация
 

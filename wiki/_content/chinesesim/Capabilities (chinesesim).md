@@ -16,7 +16,7 @@
 
 ## 设置方法
 
-在linux中，能力是通过命名空间*security*下的[extended attributes](/index.php/Extended_attributes "Extended attributes") (`man 7 xattr`)实现。主流linux都支持扩展属性，包括Ext2，Ext3，Ext4，Btrfs，JFS，XFS，和Reiserfs。 下面的例子展示了用`getcap`显示ping命令的能力，然后通过使用`getfattr`显示相同的编码后的数据。
+在linux中，能力是通过命名空间*security*下的[extended attributes](/index.php/Extended_attributes "Extended attributes") ([xattr(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xattr.7))实现。主流linux都支持扩展属性，包括Ext2，Ext3，Ext4，Btrfs，JFS，XFS，和Reiserfs。 下面的例子展示了用`getcap`显示ping命令的能力，然后通过使用`getfattr`显示相同的编码后的数据。
 
 ```
 $ getcap /bin/ping

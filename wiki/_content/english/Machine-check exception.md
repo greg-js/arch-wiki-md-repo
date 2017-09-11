@@ -15,7 +15,7 @@ Machine check exceptions (MCEs) can occur for a variety of reasons ranging from 
 
 ## Configuration
 
-mcelog's configuration file is located at `/etc/mcelog/mcelog.conf`. See `man mcelog`, `man mcelog.conf` and `man mcelog.triggers` for more information.
+mcelog's configuration file is located at `/etc/mcelog/mcelog.conf`. See [mcelog(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcelog.8), [mcelog.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcelog.conf.5) and [mcelog.triggers(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mcelog.triggers.5) for more information.
 
 [Start](/index.php/Start "Start") and enable `mcelog.service`. By default, the service runs *mcelog* as a daemon.
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [mpv](/index.php/Mpv "Mpv")
+
 [MPlayer](http://www.mplayerhq.hu/) is a popular movie player for GNU/Linux. It has support for most video and audio formats and is thus highly versatile, even if it is mostly used for viewing videos.
 
 ## Contents
@@ -97,11 +101,11 @@ System-wide configuration files are located in the `/etc/mplayer/`, whereas the 
 
 A file `config` is created in the `~/.mplayer/` directory by default.
 
-See also: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), `man mplayer`.
+See also: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 ### Key bindings
 
-System key bindings are configured via `/etc/mplayer/input.conf`. Personal key bindings are stored in `~/.mplayer/input.conf`. For a complete list of keyboard shortcuts look at `man mplayer`.
+System key bindings are configured via `/etc/mplayer/input.conf`. Personal key bindings are stored in `~/.mplayer/input.conf`. For a complete list of keyboard shortcuts look at [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 See also: [XF86 keyboard symbols](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols)
 

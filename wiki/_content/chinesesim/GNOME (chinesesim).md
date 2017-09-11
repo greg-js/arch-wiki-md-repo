@@ -1,3 +1,22 @@
+相关文章
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GDM](/index.php/GDM "GDM")
+*   [GNOME/Tips and tricks (简体中文)](/index.php/GNOME/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME/Tips and tricks (简体中文)")
+*   [GNOME/Troubleshooting (简体中文)](/index.php/GNOME/Troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME/Troubleshooting (简体中文)")
+*   [GNOME/Files](/index.php/GNOME/Files "GNOME/Files")
+*   [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME/Gedit")
+*   [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")
+*   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
+*   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
+*   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
+*   [MATE](/index.php/MATE "MATE")
+*   [Official repositories#gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories")
+
 **翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=451075)可以查看翻译后英文页面的改动。
 
 [GNOME](https://www.gnome.org/)（读音是*gah-nohm* 或 *nohm*）是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。它由[GNOME 项目组](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project")设计，完全自由和开源。GNOME是[GNU 项目](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project")的一部分。默认使用[Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)")而不是[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")进行显示。
@@ -251,7 +270,7 @@ Backends for the GNOME messaging application [empathy](https://www.archlinux.org
 
 The GNOME shell has a search that can be quickly accessed by pressing the `Super` key and starting to type. The [tracker](https://www.archlinux.org/packages/?name=tracker) package is installed by default as a part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group and provides an indexing application and metadata database. It can be configured with the *Search and Indexing* menu item; monitor status with *tracker-control*. It is started automatically by *gnome-session* when the user logs in. Indexing can be started manually with `tracker-control -s`. Search settings can also be configured in the *System Settings* panel.
 
-The Tracker database can be queried using the *tracker-sparql* command. View its manual page `man tracker-sparql` for more information.
+The Tracker database can be queried using the *tracker-sparql* command. View its manual page [tracker-sparql(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1) for more information.
 
 ### 高级设置
 

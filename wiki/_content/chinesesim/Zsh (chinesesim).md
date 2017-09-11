@@ -437,7 +437,7 @@ Zsh 经常执行 `/etc/zsh/zshenv` 和 `$ZDOTDIR/.zshenv`，所以不要让他�
 
 如果是一个登录了的终端，会加载 `/etc/profile` 然后加载 `$ZDOTDIR/.zprofile`。然后如果是交互式模式，会继续加载 `/etc/zsh/zshrc` 接着加载 `$ZDOTDIR/.zshrc` 。最后如果还是登录了的终端，`/etc/zsh/zlogin` 和 `$ZDOTDIR/.zlogin` 也会被加载。
 
-另请参见 `man zsh` 的 *STARTUP/SHUTDOWN FILES* 章节。
+另请参见 [zsh(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/zsh.1) 的 *STARTUP/SHUTDOWN FILES* 章节。
 
 ### 刷新自动补全
 

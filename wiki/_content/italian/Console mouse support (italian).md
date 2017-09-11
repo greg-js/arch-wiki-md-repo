@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Daemon (Italiano)](/index.php/Daemon_(Italiano) "Daemon (Italiano)")
+
 GPM, abbreviativo di General Purpose Mouse, è un demone che fornisce supporto al mouse per le console virtuali Linux. È incluso nella maggior parte delle distribuzioni Linux.
 
 ## Contents
@@ -68,4 +72,4 @@ DAEMONS=(syslog-ng **gpm** network netfs crond)
 
 ```
 
-Per maggiori informazioni `man gpm`.
+Per maggiori informazioni [gpm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpm.8).

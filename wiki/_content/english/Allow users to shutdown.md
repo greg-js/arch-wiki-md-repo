@@ -29,7 +29,7 @@ $ systemctl reboot
 
 ```
 
-Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the *System Commands* section in `man systemctl`
+Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the *System Commands* section in [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
 
 ## Using sudo
 
@@ -41,7 +41,7 @@ $ sudo systemctl reboot
 
 ```
 
-Other commands can be used as well, including `sudo systemctl suspend` and `sudo systemctl hibernate`. See the *System Commands* section in `man systemctl`
+Other commands can be used as well, including `sudo systemctl suspend` and `sudo systemctl hibernate`. See the *System Commands* section in [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
 
 ### Users without sudo privileges
 

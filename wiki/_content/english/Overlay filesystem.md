@@ -1,3 +1,7 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+
 From [the initial kernel commit](https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c)
 
 	Overlayfs allows one, usually read-write, directory tree to be overlaid onto another, read-only directory tree. All modifications go to the upper, writable layer. This type of mechanism is most often used for live CDs but there's a wide variety of other uses.
@@ -45,7 +49,7 @@ The `noauto` and `x-systemd.automount` mount options are necessary to prevent sy
 
 ### Read-only overlay
 
-Sometimes, it is only desired to create a read-only view of the combination of two or more directories. In that case, it can be created in a easier manner, as the directories `upper` and `work` are **not** required:
+Sometimes, it is only desired to create a read-only view of the combination of two or more directories. In that case, it can be created in an easier manner, as the directories `upper` and `work` are **not** required:
 
 ```
 # mount -t overlay overlay -o lowerdir=*/lower1:/lower2* */merged*

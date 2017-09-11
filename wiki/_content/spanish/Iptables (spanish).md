@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Firewalls (Español)](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)")
+*   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+*   [Sshguard](/index.php/Sshguard "Sshguard")
+*   [Fail2ban](/index.php/Fail2ban "Fail2ban")
+
 Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") integrado en el kernel de Linux y que forma parte del proyecto [netfilter](https://en.wikipedia.org/wiki/es:Netfilter o una [GUI](/index.php/Firewalls_(Espa%C3%B1ol)#GUI_para_iptables "Firewalls (Español)"). iptables es usado por [IPv4](https://en.wikipedia.org/wiki/es:IPv4 "wikipedia:es:IPv4"), en tanto que ip6tables es usado para [IPv6](https://en.wikipedia.org/wiki/es:IPv6 "wikipedia:es:IPv6").
 
 [nftables](http://netfilter.org/projects/nftables/) está programada para [ser liberada con el kernel de Linux 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), y vendrá a sustituir definitivamente iptables como la principal utilidad de cortafuegos de Linux. Por ahora, un howto está disponible [aquí](https://home.regit.org/netfilter-en/nftables-quick-howto/).
@@ -47,7 +55,7 @@ Las tablas contienen *cadenas*, que son listas de reglas que ordenan los [paquet
 2.  Todo el tráfico saliente, generado localmente, pasa a través de la cadena `OUTPUT`
 3.  Todo el tráfico enrutado, que no se ha suministrado localmente, pasa a través de la cadena `FORWARD`.
 
-Véase `man 8 iptables` para obtener una descripción de las cadenas integradas en otras tablas.
+Véase [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) para obtener una descripción de las cadenas integradas en otras tablas.
 
 El usuario puede definir las reglas de las cadenas para hacerlas más eficientes.
 
@@ -57,7 +65,7 @@ Las cadenas compiladas tienen un target predefinido, que se utiliza si no hay re
 
 El filtrado de los paquetes de red se basa en *rules* -*reglas*-, que se especifican por diversos *matches* -*«coincidencias»*- (condiciones que el paquete debe satisfacer para que la regla se puede aplicar), y un *target* -*«objetivo»* (acción a tomar cuando el paquete coincide con la condición plenamente). Si bien las condiciones individuales suelen ser muy simples, la especificación de la regla completa puede ser muy compleja.
 
-Los targets se especifican mediante la opción `-j` o `--jump`. Los targets pueden ser tanto las cadenas definidas por el usuario, como uno de los targets integrados especiales, o una extensión de target. Los targets integrados son `ACCEPT`, `DROP`, `QUEUE` y `RETURN`; las extensiones de target son, por ejemplo, `REJECT` y `LOG`. Si el target es un target integrado, el destino del paquete es decidido inmediatamente y el procesamiento del paquete red en la tabla actual se detiene. Si el target es una cadena definida por el usuario y el paquete supera con éxito esta segunda cadena, se moverá a la siguiente regla de la cadena inicial. Las extensiones de target pueden ser tanto *terminating* (como los targets integrados) como *non-terminating* (como las cadenas especificadas por el usuario), Véase `man 8 iptables-extensions` para obtener más detalles
+Los targets se especifican mediante la opción `-j` o `--jump`. Los targets pueden ser tanto las cadenas definidas por el usuario, como uno de los targets integrados especiales, o una extensión de target. Los targets integrados son `ACCEPT`, `DROP`, `QUEUE` y `RETURN`; las extensiones de target son, por ejemplo, `REJECT` y `LOG`. Si el target es un target integrado, el destino del paquete es decidido inmediatamente y el procesamiento del paquete red en la tabla actual se detiene. Si el target es una cadena definida por el usuario y el paquete supera con éxito esta segunda cadena, se moverá a la siguiente regla de la cadena inicial. Las extensiones de target pueden ser tanto *terminating* (como los targets integrados) como *non-terminating* (como las cadenas especificadas por el usuario), Véase [iptables-extensions(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8) para obtener más detalles
 
 ### Módulos
 

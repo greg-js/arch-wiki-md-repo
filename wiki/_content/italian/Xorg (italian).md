@@ -1,3 +1,15 @@
+Articoli correlati
+
+*   [Start X at Login](/index.php/Start_X_at_Login_(Italiano) "Start X at Login (Italiano)")
+*   [Execute commands after X start](/index.php/Execute_commands_after_X_start "Execute commands after X start")
+*   [Display Manager](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Gestori di finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+*   [Configurazione dei Font](/index.php/Font_Configuration_(Italiano) "Font Configuration (Italiano)")
+*   [Temi dei cursori](/index.php/X11_Cursors_(Italiano) "X11 Cursors (Italiano)")
+*   [Cursor Themes](/index.php/Cursor_Themes "Cursor Themes")
+*   [Ambienti Desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Wayland](/index.php/Wayland "Wayland")
+
 Da [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 	*Il progetto X.Org fornisce un'implementazione open source del sistema X Window. Il lavoro di sviluppo è stato fatto in collaborazione con la comunità freedesktop.org. La Fondazione X.Org è l' organizzazione no-profit educativa, il cui Consiglio serve questo sforzo, e in cui tutti i membri conducono questo lavoro.*
@@ -115,7 +127,7 @@ Per maggiori informazioni, si veda [xinitrc](/index.php/Xinitrc_(Italiano) "Xini
 
 **Note:** Arch Linux fornisce dei file di configurazione predefiniti in `/etc/X11/xorg.conf.d`, e nessuna configurazione aggiuntiva è necessaria per la maggior parte delle configurazioni.
 
-Xorg usa un file di configurazione chiamato `xorg.conf` e file che terminano con il suffisso `.conf` per la sua configurazione iniziale : l' elenco completo delle cartelle in cui i file vengono cercati può essere trovato [qui](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o eseguendo `man xorg.conf`, insieme ad una spiegazione dettagliata di tutte le le opzioni disponibili.
+Xorg usa un file di configurazione chiamato `xorg.conf` e file che terminano con il suffisso `.conf` per la sua configurazione iniziale : l' elenco completo delle cartelle in cui i file vengono cercati può essere trovato [qui](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) o eseguendo [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), insieme ad una spiegazione dettagliata di tutte le le opzioni disponibili.
 
 ### Utilizzando i file .conf
 
@@ -130,7 +142,7 @@ Xorg può anche essere configurato tramite `/etc/X11/xorg.conf` o `/etc/xorg.con
 
 ```
 
-Questo dovrebbe creare un file `xorg.conf.new` in `/root/` che dovrete copiare come `/etc/X11/xorg.conf`, per maggiori informazioni si veda `man xorg.conf`.
+Questo dovrebbe creare un file `xorg.conf.new` in `/root/` che dovrete copiare come `/etc/X11/xorg.conf`, per maggiori informazioni si veda [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5).
 
 In alternativa, i driver proprietari della scheda video potrebbero includere uno strumento per configurare automaticamente Xorg. Si veda l'articolo relativo al proprio driver video, [NVIDIA](/index.php/NVIDIA_(Italiano) "NVIDIA (Italiano)") o [AMD Catalyst](/index.php/AMD_Catalyst_(Italiano) "AMD Catalyst (Italiano)") per i dettagli.
 

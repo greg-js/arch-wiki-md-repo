@@ -149,7 +149,7 @@ To start the X server without a display manager, see [xinit](/index.php/Xinit "X
 
 **Note:** Arch supplies default configuration files in `/usr/share/X11/xorg.conf.d`, and no extra configuration is necessary for most setups.
 
-Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found at [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) or by running `man xorg.conf`, together with a detailed explanation of all the available options.
+Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found at [[1]](http://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml) or by running [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), together with a detailed explanation of all the available options.
 
 ### Using .conf files
 
@@ -712,7 +712,7 @@ needs_root_rights = *yes*
 
 ```
 
-See also [Xorg.wrap(1)](http://manned.org/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
+See also [Xorg.wrap(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
 
 [GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used. If you don't use KMS with [NVIDIA](/index.php/NVIDIA "NVIDIA"), you can force rootless Xorg as described above via `Xwrapper.config`.
 

@@ -419,7 +419,7 @@ $ xhost +nomemacchina
 
 ```
 
-Dove *nomemacchina* è il nome della macchina a cui si vuole garantire l'accesso. Digitare "`man xhost`" per maggiori informazioni.
+Dove *nomemacchina* è il nome della macchina a cui si vuole garantire l'accesso. Digitare "[xhost(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xhost.1)" per maggiori informazioni.
 
 Alcune applicazioni verificano la presenza di altre istanze sulla macchina locale. Ad esempio Firefox. Sarà necessario quindi chiudere l'applicazione oppure usare la seguente opzione per avviare una sessione remota dalla macchina locale.
 

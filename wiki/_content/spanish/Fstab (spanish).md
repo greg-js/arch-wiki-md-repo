@@ -57,7 +57,7 @@ El archivo `/etc/fstab` contiene los siguientes campos separados por un espacio 
 *   **<file system>** - Define la partición o dispositivo de almacenamiento para ser montado.
 *   **<dir>** - Indica a la orden mount el punto de montaje donde la partición (*<file system>*) será montada.
 *   **<type>** - Indica el tipo de sistema de archivos de la partición o dispositivo de almacenamiento para ser montado. Hay muchos sistemas de archivos diferentes que son compatibles como, por ejemplo: `ext2`, `ext3`, `ext4`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` y `auto`. El *type* `auto` permite a la orden *mount* determinar qué tipo de sistema de archivos se utiliza. Esta opción es útil para proporcionar soporte a unidades ópticas (CD/DVD).
-*   **<options>** - Indica las opciones de montaje que la orden mount utilizará para montar el sistema de archivos. Tenga en cuenta que algunas [opciones de montaje](http://linux.die.net/man/8/mount) son para ​​sistema de archivos específicos. Algunas de las opciones más comunes son:
+*   **<options>** - Indica las opciones de montaje que la orden mount utilizará para montar el sistema de archivos. Tenga en cuenta que algunas opciones de montaje son para ​​sistema de archivos específicos [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). Algunas de las opciones más comunes son:
 
 *   `auto` - El sistema de archivos será montado automáticamente durante el arranque, o cuando la orden `mount -a` se invoque.
 *   `noauto` - El sistema de archivos no será montado automáticamente, solo cuando se le ordene manualmente.

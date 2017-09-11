@@ -46,9 +46,9 @@ exec bspwm
 
 Эти два файла, в которых вы будите устанавливать соответственно настройки wm (оконного менеджера) и горячих клавиш. В качестве примера, смотрите [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations").
 
-Документацию для bspwm можно посмотреть выполнив `man bspwm`.
+Документацию для bspwm можно посмотреть выполнив [bspwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1).
 
-Также есть документация для sxhkd, выполните `man sxhkd`.
+Также есть документация для sxhkd, выполните [sxhkd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1).
 
 #### Примечание для установки нескольких мониторов
 

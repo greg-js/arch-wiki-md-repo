@@ -246,7 +246,7 @@ Option      "AccelMethod"  "uxa"
 
 ```
 
-Veja `man 4 intel` sobre `Option "AccelMethod"`.
+Veja [intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) sobre `Option "AccelMethod"`.
 
 ### Problemas com DRI3
 

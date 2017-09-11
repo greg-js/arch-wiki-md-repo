@@ -1,4 +1,12 @@
-> <font color="grey">*I've met people who thought that git is a front-end to GitHub. They were wrong, git is a front-end to the AUR.*</font>
+Related articles
+
+*   [Gitweb](/index.php/Gitweb "Gitweb")
+*   [Cgit](/index.php/Cgit "Cgit")
+*   [HTTP tunneling#Tunneling Git](/index.php/HTTP_tunneling#Tunneling_Git "HTTP tunneling")
+*   [Subversion](/index.php/Subversion "Subversion")
+*   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
+
+> I've met people who thought that git is a front-end to GitHub. They were wrong, git is a front-end to the AUR.
 > — Linus Torvalds
 
 [Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain [AUR](/index.php/AUR "AUR") packages, as well as many other projects, including sources for the Linux kernel.
@@ -65,7 +73,7 @@ This tutorial teaches how to use Git for basic distributed revision control of a
 
 Git is a distributed version control system, which means that the entire history of changes to a repository is stored locally, in a directory called `./.git` in the project directory. The project files which are visible to the user constitute the *working tree*. These files can be updated to match revisions stored in `./.git` using `git` commands (e.g. `git checkout`), and new revisions can be created in turn by editing these files and running the appropriate `git` commands (e.g. `git commit`).
 
-See `man gitglossary` for more complete definitions of the terms used in this tutorial.
+See [gitglossary(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gitglossary.7) for more complete definitions of the terms used in this tutorial.
 
 A typical Git work-flow is:
 

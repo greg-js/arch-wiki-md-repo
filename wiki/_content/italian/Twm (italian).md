@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Window Manager (Italiano)](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+
 TWM è un window manager per X11\. Si tratta di un piccolo programma, in fase di costruzione contro Xlib invece di usare una libreria di widget, e come tale è molto leggero sulle risorse di sistema. Anche se semplice, è altamente configurabile, caratteri, colori, larghezza dei bordi, barra del titolo e pulsanti possono essere impostati dall'utente
 
 ## Contents
@@ -44,7 +48,7 @@ Per impostazione predefinita, twm appare molto datato e poco intuitivo. Modifica
 
 ## Risorse
 
-*   La pagina man di twm fornisce tutti i dettagli dei comandi che possono essere usati nel file `.Twmrc`. Lo potete consultare sia online  oppure, una volta installato digitando quanto segue nel propt dei comandi:
+*   La pagina man di twm fornisce tutti i dettagli dei comandi che possono essere usati nel file `.Twmrc`. Lo potete consultare sia online [twm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/twm.1) oppure, una volta installato digitando quanto segue nel propt dei comandi:
 
 ```
 man twm
@@ -67,7 +71,7 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 2.  "[UWM (computing)](https://en.wikipedia.org/wiki/UWM_(computing) "wikipedia:UWM (computing)")", *Wikipedia*. Retrieved October 22, 2009.
 3.  "[Twm](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm")", *Wikipedia*. Retrieved October 22, 2009.
 4.  "[Pkg: xorg-twm - Arch Linux Package Details](https://www.archlinux.org/packages/extra/i686/xorg-twm/)", *Arch Linux package search*. Retrieved October 22, 2009.
-5.  "[Twm man page](http://linux.die.net/man/1/twm)", *linux.die.net*. Retrieved October 22, 2009.
+5.  [twm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/twm.1) man page
 6.  "[Sample twmrc](http://www.custompc.plus.com/twm/configs/twmrc09)", *custompc.plus.com*. Retrieved August 12, 2013.
 7.  "[Window Managers for X: TWM/VTWM](http://xwinman.org/vtwm.php)", *xwinman.org*. Retrieved October 22, 2009.
 8.  "[Google search for twmrc](http://www.google.com/search?q=twmrc)", *google.com*. Retrieved October 22, 2009.

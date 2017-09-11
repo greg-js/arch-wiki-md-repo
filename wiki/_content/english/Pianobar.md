@@ -1,3 +1,7 @@
+Related articles
+
+*   [List of Applications/Multimedia](/index.php/List_of_Applications/Multimedia "List of Applications/Multimedia")
+
 [Pianobar](http://6xq.net/projects/pianobar/) is a free/open-source, console-based client for the personalized online radio [Pandora](http://www.pandora.com/).
 
 ***Features***
@@ -41,7 +45,7 @@ CONFIGURATION
        except for \x00 and the special value disabled are allowed here.
 ```
 
-Here is an example configuration file. See `man pianobar` for more configuration options.
+Here is an example configuration file. See [pianobar(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pianobar.1) for more configuration options.
 
  `$ ~/.config/pianobar/config` 
 ```

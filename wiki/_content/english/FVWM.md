@@ -161,7 +161,7 @@ The style argument can be one of the following:
 
 A number of vector styles are documented [here](http://fvwmforums.org/wiki/Config/VectorButtons/). You can also create your own vector buttons using this [vector buttons viewer](http://gromnitsky.users.sourceforge.net/js/fvwm-vector/). Finally, see [this page](http://fvwmforums.org/wiki/Decor/) for some example decoration configurations that use pixmaps, including imitations of Crux (a Sawfish theme), Mac OS and Windows 98.
 
-The flag affects the state for a button. Some examples of flags include *Raised*, *Sunk* and *Flat*. For more information, see `man fvwm` and look for the ButtonStyle section.
+The flag affects the state for a button. Some examples of flags include *Raised*, *Sunk* and *Flat*. For more information, see [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) and look for the ButtonStyle section.
 
 **Note:** To give the buttons the same background as the title, use the `UseTitleStyle` flag. Alternatively, specify your button backgrounds using the `ButtonStyle` command and then follow this with an `AddButtonStyle` command to specify the vector or pixmap image. `AddButtonStyle` takes the same syntax as `ButtonStyle`.
 
@@ -233,7 +233,7 @@ Use the *xdg_menu* tool, provided by [archlinux-xdg-menu](https://www.archlinux.
 
 **Note:** Most styles can be negated with a `!`. For instance the style `Title` forces the window manager to give the window a title whilst `!Title` has the opposite effect.
 
-The `Style` command allows one to configure various aspects of the window manager itself and also to set behaviors for certain windows. The syntax is `Style *window-name* *stylename*`. The *window-name* argument can be a window name, class, title name or resource string. Use `*` to match all windows. See `man fvwm` for all available styles - some examples are provided below:
+The `Style` command allows one to configure various aspects of the window manager itself and also to set behaviors for certain windows. The syntax is `Style *window-name* *stylename*`. The *window-name* argument can be a window name, class, title name or resource string. Use `*` to match all windows. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for all available styles - some examples are provided below:
 
 *   `Style "*" CascadePlacement` - make the window manager use the cascade placement algorithm for all new windows.
 *   `Style "Chromium" PositionPlacement center` - ensure that all new Chromium windows are placed in the center of the screen.
@@ -252,7 +252,7 @@ AddToFunc VolumeFunc
 
 ```
 
-One can also use conditional commands (see `man fvwm` and look for the Conditional Commands section). For instance, suppose one wanted a function that would close all windows in the current page other than the one which has focus. That function can be defined as below:
+One can also use conditional commands (see [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) and look for the Conditional Commands section). For instance, suppose one wanted a function that would close all windows in the current page other than the one which has focus. That function can be defined as below:
 
 ```
 AddToFunc CloseAllButThis
@@ -325,7 +325,7 @@ With the argument * the FvwmPager will show only one desk but it will always be 
 
 ```
 
-See `man fvwmpager` for a list of module commands.
+See [FvwmPager(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmPager.1) for a list of module commands.
 
 #### FvwmButtons
 
@@ -370,7 +370,7 @@ Containers are spaces defined which can span multiple rows and columns or subdiv
 
 Note that a container is created by defining a certain number of columns and rows and then using the keyword container. Elements inside the container are defined underneath this line and the container is then closed with the *End* command.
 
-For a full list of options, see `man fvwmbuttons`.
+For a full list of options, see [FvwmButtons(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmButtons.1).
 
 #### FvwmEvent
 
@@ -395,7 +395,7 @@ where `windowshade` is the event and `Lower` is the command to be executed when 
 
 ```
 
-For a full list of events, see `man fvwmevent`.
+For a full list of events, see [FvwmEvent(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/FvwmEvent.1).
 
 ### Colors
 
@@ -413,7 +413,7 @@ Colorsets in FVWM are a set of four colors (a foreground color, a background col
 
 All colorsets are identified by a number. Any numbering convention can be used; the fvwm-themes project documents one such convention that uses the first 40 colorsets (0-39). See [[4]](http://fvwm-themes.sourceforge.net/doc/colorsets).
 
-Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See `man fvwm` - the Colorsets section - for more information.
+Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) - the Colorsets section - for more information.
 
 **Tip:** Using `Style "*" Colorset *num*` overrides the `Color` style and using `Style "*" HilightColorset *num*` overrides the `HilightFore` and `HilightBack` styles.
 
@@ -487,7 +487,7 @@ NumLock, CapsLock and ScrollLock can intefere with ClickToFocus as well as mouse
 
 ### Use ClickToFocus
 
-Ensure that [perl-tk](https://www.archlinux.org/packages/?name=perl-tk) and [perl-x11-protocol](https://www.archlinux.org/packages/?name=perl-x11-protocol) are installed. The use the following style command: `Style "*" ClickToFocus`. See `man fvwm` for other focus behaviors.
+Ensure that [perl-tk](https://www.archlinux.org/packages/?name=perl-tk) and [perl-x11-protocol](https://www.archlinux.org/packages/?name=perl-x11-protocol) are installed. The use the following style command: `Style "*" ClickToFocus`. See [fvwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fvwm.1) for other focus behaviors.
 
 ### Window tiling
 

@@ -1,3 +1,16 @@
+Artigos relacionados
+
+*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Arch packaging standards (Português)](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
+*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [.SRCINFO (Português)](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
+*   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
+
 Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes usando o [sistema de compilação](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") "tipo *ports*" do Arch Linux, também para enviou ao [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Ele cobre criação de um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") – um arquivo de descrição de compilação de pacote carregado pelo `makepkg` para criar um pacote binário a partir do fonte. Se já estiver em posse de um `PKGBUILD`, veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Para instruções sobre regras e formas existentes para melhorar a qualidade de pacote, veja [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch").
 
 ## Contents
@@ -111,7 +124,7 @@ Há cinco funções, listadas aqui na ordem em que elas são executadas, se toda
 
 Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver.28.29) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
-**Note:** (De `man PKGBUILD`) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
+**Note:** (De [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
 #### pkgver()
 

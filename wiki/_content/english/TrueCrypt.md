@@ -1,3 +1,9 @@
+Related articles
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [Tcplay](/index.php/Tcplay "Tcplay")
+*   [Tomb](/index.php/Tomb "Tomb")
+
 **Warning:** As of May 2014, development on TrueCrypt is discontinued and [will no longer receive updates and fixes](http://truecrypt.sourceforge.net/). Consider alternatives such as [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), [tcplay](/index.php/Tcplay "Tcplay") or use a TrueCrypt fork. For example, [VeraCrypt](https://veracrypt.fr/) is in active development and available as [veracrypt](https://www.archlinux.org/packages/?name=veracrypt); VeraCrypt storage format is compatible with TrueCrypt storage format since version 1.0f.
 
 The [pure-privacy assocation](https://pure-privacy.org/) has adopted the TrueCrypt project. [[1]](https://truecrypt.ch/) Final release repository with information about TrueCrypt code audit: [[2]](https://www.grc.com/misc/truecrypt/truecrypt.htm)
@@ -87,7 +93,7 @@ Replace `container-to-mount` with the device file under `/dev` or the path to th
 
 If you are using key files, supply them using the `--key-file` option, to open a hidden volume, supply the `--tcrypt-hidden` option and for a partition or whole drive that is encrypted in system mode use the `--tcrypt-system` option.
 
-See `man cryptsetup` for more details and all supported options.
+See [cryptsetup(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for more details and all supported options.
 
 ### Automounting using /etc/crypttab
 
@@ -111,7 +117,7 @@ For a standard truecrypt volume, use *tcrypt* instead of *tcrypt-system*. And fo
 
 Instead of *auto*, you can put directly your filesystem, and put usual mount options. It is useful with NTFS for mounting as a normal user.
 
-See `man crypttab` for more details and options supported.
+See [crypttab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) for more details and options supported.
 
 ## Encrypting a file as a virtual volume
 

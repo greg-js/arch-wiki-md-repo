@@ -38,10 +38,11 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.9 Segmentation fault on startup](#Segmentation_fault_on_startup)
     *   [5.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
     *   [5.11 Addon manager not working](#Addon_manager_not_working)
-    *   [5.12 Using webcam/video device](#Using_webcam.2Fvideo_device)
-    *   [5.13 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
-    *   [5.14 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
-    *   [5.15 Not starting - licensing error](#Not_starting_-_licensing_error)
+    *   [5.12 Live Script Errors](#Live_Script_Errors)
+    *   [5.13 Using webcam/video device](#Using_webcam.2Fvideo_device)
+    *   [5.14 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
+    *   [5.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
+    *   [5.16 Not starting - licensing error](#Not_starting_-_licensing_error)
 
 ## Overview
 
@@ -393,6 +394,17 @@ Make it so that these symlinks are pointing to your system glib libraries instea
 Relinking of "libfreetype.so.6" is also necessary to open these interfaces. This is found in `matlabroot/R2017a/bin/glnxa64/`.
 
 If the window opens but is blank, consider switching the html renderer to: " webutils.htmlrenderer('basic');" as described in [#Help browser](#Help_browser).
+
+### Live Script Errors
+
+If you get the error when attempting to load or create a LiveScript:
+
+```
+ `Viewing matlab live script files is not currently supported by this operating system configuration`
+
+```
+
+The steps in [#Addon manager not working](#Addon_manager_not_working) may resolve the issue.
 
 ### Using webcam/video device
 

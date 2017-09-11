@@ -1,3 +1,7 @@
+Ссылки по теме
+
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Umask](/index.php/Umask "Umask"). Дата последней синхронизации: 24 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=482814).
 
 The *umask* utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because *umask* affects the current shell execution environment, it is usually implemented as built-in command of a shell.
@@ -25,7 +29,7 @@ That is, the resulting permissions `R` are the result of [bitwise conjunction](h
 **Note:**
 
 *   Linux does not allow a file to be created with execution permissions, in fact the default creation permissions are 777 for directories, but only 666 for files.
-*   On Linux, only the file permission bits of the mask are used.[[1]](http://man7.org/linux/man-pages/man2/umask.2.html) The *suid*, *sgid* and *sticky* bits of the mask are ignored.
+*   On Linux, only the file permission bits of the mask are used - see [umask(2)](http://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). The *suid*, *sgid* and *sticky* bits of the mask are ignored.
 
 For example, let us assume that the file-creation mode mask is 027\. Here the bitwise representation of each digit represents:
 
@@ -62,7 +66,7 @@ When the `-S` option, standardized by POSIX, is used, the mask will be displayed
 
 You can set the umask value through the *umask* command. The string specifying the mode mask follows the same syntactic rules as the mode argument of [chmod](/index.php/Chmod "Chmod") (see the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) for details).
 
-Most Linux distributions set a default value of `022`, including Arch[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) or `002` in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bashrc`.
+Most Linux distributions set a default value of `022`, including Arch[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) or `002` in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bashrc`.
 
 If you need to set a different value, you can either directly edit such file, thus affecting all users, or call *umask* from your shell's user configuration file, e.g. `~/.bashrc` to only change your umask, however these changes will only take effect after the next login. To change your umask during your current session only, simply run *umask* and type your desired value. For example, running `umask 077` will give you read and write permissions for new files, and read, write and execute permissions for new folders.
 

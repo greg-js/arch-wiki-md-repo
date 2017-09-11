@@ -34,7 +34,7 @@ $ man *page_name*
 
 ```
 
-Manuals are sorted into several sections. For a full listing see the section entitled "Sections of the manual pages" in `man man-pages`.
+Manuals are sorted into several sections. For a full listing see the section entitled "Sections of the manual pages" in [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as [man(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.1) and [man(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man.7). In this case, give man the section number followed by the name of the man page, for example:
 
@@ -56,7 +56,7 @@ ls (1)               - list directory contents
 
 ## Format
 
-Man pages all follow a fairly standard format, which helps in navigating them. See the section entitled "Sections within a manual page" in `man man-pages`.
+Man pages all follow a fairly standard format, which helps in navigating them. See the section entitled "Sections within a manual page" in [man-pages(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
 
 ## Searching manuals
 
@@ -198,7 +198,6 @@ There are several online databases of man pages, including:
 *   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
 *   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
 *   [*Linux man pages at die.net*](http://linux.die.net/man/)
-*   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
 *   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
 *   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
 *   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)

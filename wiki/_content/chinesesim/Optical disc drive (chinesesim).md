@@ -1,3 +1,10 @@
+相关文章
+
+*   [DVD Playing](/index.php/DVD_Playing "DVD Playing")
+*   [DVD Burning](/index.php/DVD_Burning "DVD Burning")
+*   [dvdbackup](/index.php/Dvdbackup "Dvdbackup")
+*   [MEncoder](/index.php/MEncoder "MEncoder")
+
 摘自 [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
 
 	In computing, an optical disc drive (ODD) is a disk drive that uses laser light or electromagnetic waves within or near the visible light spectrum as part of the process of reading or writing data to or from optical discs. Some drives can only read from discs, but recent drives are commonly both readers and recorders, also called burners or writers. Compact discs, DVDs, and Blu-ray discs are common types of optical media which can be read and recorded by such drives. Optical drive is the generic name; drives are usually described as "CD" "DVD", or "Blu-ray", followed by "drive", "writer", etc.
@@ -444,7 +451,7 @@ $ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-For details see the [growisofs manual](http://linux.die.net/man/1/growisofs) and the manuals of *mkisofs* and *xorrisofs*.
+For details see the [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) manual and the manuals of *mkisofs* and *xorrisofs*.
 
 #### Multi-session by xorriso
 

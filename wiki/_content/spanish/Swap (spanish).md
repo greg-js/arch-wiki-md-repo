@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
+*   [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
+
 Definición de swap dada por el artículo [«Todo sobre el espacio swap de Linux»](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
 
 	*Linux divide su memoria física RAM (memoria de acceso aleatorio) en capas de memoria llamadas páginas. El swapping es el proceso por el que una página de memoria se copia en un espacio del disco configurado previamente para ello, llamado espacio de swap (o de intercambio), para liberar esa memoria RAM. Los tamaños combinados de la memoria física y del espacio swap determinan la cantidad de memoria virtual disponible.*
@@ -70,7 +75,7 @@ Para activar esta partición swap en el arranque, añada la entrada siguiente al
 **Nota:**
 
 *   Añadir una entrada a fstab is optional es opcional en la mayoría de los casos con systemd. Vea la sección siguiente.
-*   Si utiliza un SSD con soporte TRIM, considere usar `defaults,discard` en la línea swap de [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"). Si activa manualmente swap con *swapon*, utilizar el parámetro `-d` o `--discard` producenel mismo efecto. Vea `man 8 swapon` para más detalles.
+*   Si utiliza un SSD con soporte TRIM, considere usar `defaults,discard` en la línea swap de [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"). Si activa manualmente swap con *swapon*, utilizar el parámetro `-d` o `--discard` producenel mismo efecto. Vea [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8) para más detalles.
 
 ### Activación por systemd
 

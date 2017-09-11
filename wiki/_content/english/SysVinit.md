@@ -1,3 +1,7 @@
+Related articles
+
+*   [init](/index.php/Init "Init")
+
 **Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). [[1]](https://www.archlinux.org/news/end-of-initscripts-support/) When using SysVinit, please mention so in support requests.
 
 On systems based on SysVinit, **init** is the first process that is executed once the Linux kernel loads. The default init program used by the kernel is `/sbin/init` provided by [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (by default on new installs, see [systemd](/index.php/Systemd "Systemd")) or [sysvinit](https://aur.archlinux.org/packages/sysvinit/). The word **init** will always refer to sysvinit in this article.

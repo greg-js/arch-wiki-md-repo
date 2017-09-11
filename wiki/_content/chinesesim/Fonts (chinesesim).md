@@ -381,7 +381,7 @@ $ setfont
 
 ### 持久性配置
 
-`/etc/vconsole.conf` 的 `FONT` 变量可以用来在启动时设置字体, 对于所有的终端都具有持久性作用。详情请查看 `man 5 vconsole.conf` 。
+`/etc/vconsole.conf` 的 `FONT` 变量可以用来在启动时设置字体, 对于所有的终端都具有持久性作用。详情请查看 [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) 。
 
 若要显示 *Č, ž, đ, š* 或 *Ł, ę, ą, ś* 之类的字符，请使用 `lat2-16.psfu.gz` 这个字体：
 

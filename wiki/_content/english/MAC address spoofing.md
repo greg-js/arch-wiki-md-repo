@@ -112,7 +112,7 @@ Finally, to return the MAC address to its original, permanent hardware value:
 
 ### Method 1: systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") supports MAC address spoofing via [link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") (see `man systemd.link` for details).
+[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") supports MAC address spoofing via [link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") (see [systemd.link(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for details).
 
 To set a static spoofed MAC address:
 

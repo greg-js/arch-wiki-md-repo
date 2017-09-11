@@ -1,6 +1,19 @@
+相关文章
+
+*   [Arch packaging standards (简体中文)](/index.php/Arch_packaging_standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch packaging standards (简体中文)")
+*   [Arch Build System (简体中文)](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")
+*   [Creating packages (简体中文)](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)")
+*   [.SRCINFO](/index.php/.SRCINFO ".SRCINFO")
+*   [Category:Package development](/index.php/Category:Package_development "Category:Package development")
+*   [Pacman tips (简体中文)](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman tips (简体中文)")
+*   [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
+*   [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
+*   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
+*   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
+
 **翻译状态：** 本文是英文页面 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-05-18，点击[这里](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=477450)可以查看翻译后英文页面的改动。
 
-**PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 `man PKGBUILD`.
+**PKGBUILD**是一个shell脚本，包含 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 在构建软件包时需要的信息。本页面讨论PKGUILD中使用的变量。若要获取PKGBUILD中函数的信息，请参考[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)") 和 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
 Arch Linux 用 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)") 创建软件包。当 **makepkg** 运行时，它会在当前目录寻找 `PKGBUILD` 文件，并依照其中的指令去获取依赖文件，编译出 `pkgname.pkg.tar.xz` 文件。生成的包内有二进制文件和安装指令，可以使用 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 进行安装。
 

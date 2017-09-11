@@ -43,7 +43,7 @@ There are different versions of the UX31, some have Sentelic and some have Elant
 
 Touch & Scroll works out of the box. Clickpad functionality does not. (However, using two and three finger touches for right an middle click works fine).
 
-If higher pressure must be applied to your touchpad in order to function properly, tweak the following properties according to your needs [[1]](http://linux.die.net/man/4/synaptics)
+If higher pressure must be applied to your touchpad in order to function properly, tweak the following properties according to your needs [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)
 
 ```
 synclient FingerLow=5

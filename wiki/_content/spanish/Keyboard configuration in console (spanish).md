@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [Keyboard Configuration in Xorg (Español)](/index.php/Keyboard_Configuration_in_Xorg_(Espa%C3%B1ol) "Keyboard Configuration in Xorg (Español)")
+*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+
 **Nota:** Este artículo trata únicamente sobre la configuración básica, sin modificar diseños, asignación de teclas extras, etc. Véase [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") para conocer más sobre estos temas avanzados.
 
 Las asignaciones del teclado (keymaps) para la [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), tipos de letras de la consola y mapas de la consola son proporcionados por el paquete [kbd](https://www.archlinux.org/packages/?name=kbd) (paquete que ya debería estar instalado), que también proporciona muchas herramientas de bajo nivel para la gestión de la consola virtual.
@@ -42,7 +47,7 @@ Las convenciones de los nombres de los mapas de teclado de la consola no son muy
 
 ### Configuración permanente
 
-La configuración de alto nivel puede realizarse en `/etc/vconsole.conf`, que es leído por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") en el arranque. La variable `KEYMAP` se utiliza para especificar la distribución de teclado. Si la variable está vacía o no se establece, la distribución del teclado usada por defecto es `us`. Véase `man 5 vconsole.conf` para obtener más ejemplos. Por ejemplo:
+La configuración de alto nivel puede realizarse en `/etc/vconsole.conf`, que es leído por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") en el arranque. La variable `KEYMAP` se utiliza para especificar la distribución de teclado. Si la variable está vacía o no se establece, la distribución del teclado usada por defecto es `us`. Véase [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para obtener más ejemplos. Por ejemplo:
 
  `/etc/vconsole.conf` 
 ```
@@ -58,7 +63,7 @@ $ localectl set-keymap --no-convert *mapa_de_teclas*
 
 ```
 
-Véase `man 1 localectl` para obtener más detalles.
+Véase [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) para obtener más detalles.
 
 ### Configuración temporal
 
@@ -71,7 +76,7 @@ La utilidad *loadkeys* se utiliza para este propósito, utilizado internamente p
 
 ```
 
-Véase `man 1 loadkeys` para obtener más detalles.
+Véase [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) para obtener más detalles.
 
 ## Otras opciones
 
@@ -89,7 +94,7 @@ FONT_MAP=8859-15
 
 ```
 
-Si la variable `FONT` está vacía o no se establece, se utiliza, por defecto, el tipo de letra incorporado en el kernel. Véase `man 5 vconsole.conf` para conocer más detalles.
+Si la variable `FONT` está vacía o no se establece, se utiliza, por defecto, el tipo de letra incorporado en el kernel. Véase [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para conocer más detalles.
 
 ### Ajustar el retardo y la velocidad de typematic
 

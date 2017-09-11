@@ -270,7 +270,7 @@ end
 
 ```
 
-There are more functions for mpc, run `man mpc` for more info.
+There are more functions for mpc, run [mpc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1) for more info.
 
 ## PulseAudio
 

@@ -1,3 +1,7 @@
+관련 항목
+
+*   [Daemon](/index.php/Daemon "Daemon")
+
 GPM(General Purpose Mouse)은 리눅스 가상 콘솔에서 마우스를 지원하는 데몬이다.
 
 ## Contents
@@ -58,4 +62,4 @@ DAEMONS=(syslog-ng **gpm** network netfs crond)
 
 ```
 
-더 자세한 사상은 `man gpm`을 보라.
+더 자세한 사상은 [gpm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpm.8)을 보라.

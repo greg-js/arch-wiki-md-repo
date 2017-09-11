@@ -41,28 +41,27 @@ Related articles
     *   [3.7 Checking connectivity](#Checking_connectivity)
 *   [4 Testing](#Testing)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 NetworkManager Debug Log](#NetworkManager_Debug_Log)
-    *   [5.2 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
-    *   [5.3 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
-    *   [5.4 Network management disabled](#Network_management_disabled)
-    *   [5.5 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
-    *   [5.6 Customizing resolv.conf](#Customizing_resolv.conf)
-    *   [5.7 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [5.8 Hostname problems](#Hostname_problems)
-        *   [5.8.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
-        *   [5.8.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
-    *   [5.9 Missing default route](#Missing_default_route)
-    *   [5.10 3G modem not detected](#3G_modem_not_detected)
-    *   [5.11 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [5.12 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [5.13 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [5.14 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [5.15 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [5.16 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [5.17 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [5.18 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [5.19 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
-    *   [5.20 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [5.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
+    *   [5.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
+    *   [5.3 Network management disabled](#Network_management_disabled)
+    *   [5.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
+    *   [5.5 Customizing resolv.conf](#Customizing_resolv.conf)
+    *   [5.6 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
+    *   [5.7 Hostname problems](#Hostname_problems)
+        *   [5.7.1 Configure dhclient to push the hostname to the DHCP server](#Configure_dhclient_to_push_the_hostname_to_the_DHCP_server)
+        *   [5.7.2 Configure NetworkManager to use a specific DHCP client](#Configure_NetworkManager_to_use_a_specific_DHCP_client)
+    *   [5.8 Missing default route](#Missing_default_route)
+    *   [5.9 3G modem not detected](#3G_modem_not_detected)
+    *   [5.10 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [5.11 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [5.12 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [5.13 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [5.14 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [5.15 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [5.16 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [5.17 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [5.18 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [5.19 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
         *   [6.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
@@ -240,7 +239,7 @@ NetworkManager will require some additional steps to be able run properly. Make 
 
 ### Enable NetworkManager
 
-NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") via `NetworkManager.service`. Once the NetworkManager daemon is started, it will automatically connect to any available "system connections" that have already been configured. Any "user connections" or unconfigured connections will need *nmcli* or an applet to configure and connect.
+NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") with the `NetworkManager.service` [systemd](/index.php/Systemd "Systemd") unit. Once the NetworkManager daemon is started, it will automatically connect to any available "system connections" that have already been configured. Any "user connections" or unconfigured connections will need *nmcli* or an applet to configure and connect.
 
 NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Usually no configuration needs to be done to the global defaults.
 
@@ -525,10 +524,6 @@ nm-applet --sm-disable &
 For static IP addresses, you will have to configure NetworkManager to understand them. The process usually involves right-clicking the applet and selecting something like 'Edit Connections'.
 
 ## Troubleshooting
-
-### NetworkManager Debug Log
-
-See [systemd#Filtering output](/index.php/Systemd#Filtering_output "Systemd")
 
 ### No prompt for password of secured Wi-Fi networks
 

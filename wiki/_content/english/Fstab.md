@@ -5,9 +5,9 @@ Related articles
 *   [tmpfs](/index.php/Tmpfs "Tmpfs")
 *   [swap](/index.php/Swap "Swap")
 
-The [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html) file can be used to define how disk partitions, various other block devices, or remote filesystems should be mounted into the filesystem.
+The [fstab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5) file can be used to define how disk partitions, various other block devices, or remote filesystems should be mounted into the filesystem.
 
-Each filesystem is described in a separate line. These definitions will be converted into [systemd](/index.php/Systemd "Systemd") mount units dynamically at boot, and when the configuration of the system manager is reloaded. The default setup will automatically [fsck](/index.php/Fsck "Fsck") and mount filesystems before starting services that need them to be mounted. For example, systemd automatically makes sure that remote filesystem mounts like [NFS](/index.php/NFS "NFS") or [Samba](/index.php/Samba "Samba") are only started after the network has been set up. Therefore, local and remote filesystem mounts specified in `/etc/fstab` should work out of the box. See [systemd.mount(5)](http://man7.org/linux/man-pages/man5/systemd.mount.5.html) for details.
+Each filesystem is described in a separate line. These definitions will be converted into [systemd](/index.php/Systemd "Systemd") mount units dynamically at boot, and when the configuration of the system manager is reloaded. The default setup will automatically [fsck](/index.php/Fsck "Fsck") and mount filesystems before starting services that need them to be mounted. For example, systemd automatically makes sure that remote filesystem mounts like [NFS](/index.php/NFS "NFS") or [Samba](/index.php/Samba "Samba") are only started after the network has been set up. Therefore, local and remote filesystem mounts specified in `/etc/fstab` should work out of the box. See [systemd.mount(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
 
 The `mount` command will use fstab, if just one of either directory or device is given, to fill in the value for the other parameter. When doing so, mount options which are listed in fstab will also be used.
 
@@ -41,17 +41,17 @@ A simple `/etc/fstab`, using kernel name descriptors:
 ```
 
 *   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
-*   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS).
+*   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS).
 *   `<dump>` is checked by the [dump(8)](http://linux.die.net/man/8/dump) utility.
-*   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](http://man7.org/linux/man-pages/man8/fsck.8.html).
+*   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.8).
 
 **Tip:** The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
 
 **Note:** If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`.
 
-All specified devices within `/etc/fstab` will be automatically mounted on startup and when the `-a` flag is used with [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
+All specified devices within `/etc/fstab` will be automatically mounted on startup and when the `-a` flag is used with [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
 
-See [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html#DESCRIPTION) for details.
+See [fstab(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5#DESCRIPTION) for details.
 
 ## Identifying filesystems
 
@@ -203,7 +203,7 @@ Below atime options can impact drive performance.
 
 **Note:** `noatime` implies `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
 
-*   `relatime` updates the access time only if the previous access time was earlier than the current modify or change time. In addition, since Linux 2.6.30, the access time is always updated if the previous access time was more than 24 hours old. This option is used when the `defaults` option, `atime` option (which means to use the kernel default, which is `relatime`; see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) and [wikipedia:Stat (system call)#Criticism of atime](https://en.wikipedia.org/wiki/Stat_(system_call)#Criticism_of_atime "wikipedia:Stat (system call)")) or no options at all are specified.
+*   `relatime` updates the access time only if the previous access time was earlier than the current modify or change time. In addition, since Linux 2.6.30, the access time is always updated if the previous access time was more than 24 hours old. This option is used when the `defaults` option, `atime` option (which means to use the kernel default, which is `relatime`; see [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) and [wikipedia:Stat (system call)#Criticism of atime](https://en.wikipedia.org/wiki/Stat_(system_call)#Criticism_of_atime "wikipedia:Stat (system call)")) or no options at all are specified.
 
 When using [Mutt](/index.php/Mutt "Mutt") or other applications that need to know if a file has been read since the last time it was modified, the `noatime` option should not be used; using the `relatime` option is acceptable and still provides a performance improvement.
 

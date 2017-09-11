@@ -97,11 +97,11 @@ Los archivos de configuración global del sistema están situados en `/etc/mplay
 
 En el directorio `~/.mplayer/` hay un archivo creado automáticamente con el nombre *config* destinado a contener las configuraciones por defecto para el usuario.
 
-Véase también: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), `man mplayer`.
+Véase también: [Example MPlayer configuration file](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES), [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 ### Atajos del teclado
 
-Los atajos del teclado del sistema son configurados por medio de `/etc/mplayer/input.conf`. Los atajos del teclado personales son guardados en `~/.mplayer/input.conf`. Para una lista completa de atajos del teclado véase `man mplayer`.
+Los atajos del teclado del sistema son configurados por medio de `/etc/mplayer/input.conf`. Los atajos del teclado personales son guardados en `~/.mplayer/input.conf`. Para una lista completa de atajos del teclado véase [mplayer(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
 
 Véase también: [XF86 keyboard symbols](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols)
 

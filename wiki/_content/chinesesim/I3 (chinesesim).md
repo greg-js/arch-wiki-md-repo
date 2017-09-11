@@ -1,3 +1,13 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+*   [Clipboard](/index.php/Clipboard "Clipboard")
+*   [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting")
+
 **翻译状态：** 本文是英文页面 [i3](/index.php/I3 "I3") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-03-22，点击[这里](https://wiki.archlinux.org/index.php?title=i3&diff=0&oldid=471488)可以查看翻译后英文页面的改动。
 
 [i3](http://i3wm.org/) 是一套动态[平铺式窗口管理器](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")，灵感来自针对开发者与资深用户的 [wmii](/index.php/Wmii "Wmii")。
@@ -180,7 +190,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 ```
 
-不是所有的插件都被在默认配置文件中被定义，一些配置值对于系统也可能是无效的，所以需要相应的更新。具体见 `man i3status` 。
+不是所有的插件都被在默认配置文件中被定义，一些配置值对于系统也可能是无效的，所以需要相应的更新。具体见 [i3status(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/i3status.1) 。
 
 #### i3status可选方案
 
@@ -188,7 +198,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 	[https://github.com/brndnmtthws/conky](https://github.com/brndnmtthws/conky) || [conky](https://www.archlinux.org/packages/?name=conky)
 
-*   **[i3blocks](/index.php/I3blocks "I3blocks")** — 通过 shell 脚本扩展。 它可以处理点击事件，中断，和定义或更在块的基础上更新间隔。
+*   **[i3blocks](/index.php?title=I3blocks&action=edit&redlink=1 "I3blocks (page does not exist)")** — 通过 shell 脚本扩展。 它可以处理点击事件，中断，和定义或更在块的基础上更新间隔。
 
 	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)
 

@@ -291,7 +291,7 @@ enable-git-config=1
 
 ```
 
-For detailed documentation about the available settings in this configuration file, please see the manpage (`man cgitrc`).
+For detailed documentation about the available settings in this configuration file, please see the manpage ([cgitrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/cgitrc.5)).
 
 ### Syntax highlighting
 

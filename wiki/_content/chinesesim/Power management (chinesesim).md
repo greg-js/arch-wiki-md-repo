@@ -107,7 +107,7 @@ ExecStart=-/usr/bin/pkill sshfs
 WantedBy=sleep.target
 ```
 
-上述服务文件的一些解释（详见 `man systemd.service`）：
+上述服务文件的一些解释（详见 [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)）：
 
 *   如果设置 `Type=OneShot`，那么可以使用多个 `ExecStart=` 参数。否则只能写一个，替代方案是在 `ExecStartPre` 中添加命令，或使用分号分隔不同命令（见第一个例子，分号前后的空格都是**必须**的）。
 *   若命令前加上一个“-”（半角减号），则命令返回非零值时会被忽略、当作正常执行处理。
@@ -177,4 +177,4 @@ esac
 
 1.  chmod a+x /usr/lib/systemd/system-sleep/example.sh
 
-详情参见 `man 7 systemd.special` 和 `man 8 systemd-sleep`。
+详情参见 [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) 和 [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8)。

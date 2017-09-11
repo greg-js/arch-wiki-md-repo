@@ -1,3 +1,10 @@
+相关文章
+
+*   [NFS](/index.php/NFS "NFS")
+*   [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")
+*   [PXE](/index.php/PXE "PXE")
+*   [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")
+
 **翻译状态：** 本文是英文页面 [Diskless_system](/index.php/Diskless_system "Diskless system") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-24，点击[这里](https://wiki.archlinux.org/index.php?title=Diskless_system&diff=0&oldid=405829)可以查看翻译后英文页面的改动。
 
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
@@ -113,7 +120,7 @@ Next, start NFS services: `rpc-idmapd` `rpc-mountd`.
     copyonwrite = false
 ```
 
-**Note:** Set `copyonwrite` to true if you want to have multiple clients using the same NBD share simultaneously; refer to `man 5 nbd-server` for more details.
+**Note:** Set `copyonwrite` to true if you want to have multiple clients using the same NBD share simultaneously; refer to [nbd-server(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nbd-server.5) for more details.
 
 Start `nbd` systemd service.
 

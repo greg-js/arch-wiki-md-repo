@@ -21,7 +21,7 @@
 
 ### 通过xorg配置文件
 
-参见 `man xorg.conf` 来获得详细信息.
+参见 [xorg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) 来获得详细信息.
 
 范例:
 
@@ -84,7 +84,7 @@ $ xset m default
 
 ```
 
-获得更多细节，参见`man xset`页面.
+获得更多细节，参见[xset(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xset.1)页面.
 
 To make it permanent, edit xorg configuration (see above) or add commands to [xprofile](/index.php/Xprofile "Xprofile"). The latter won't affect speed in a [display manager](/index.php/Display_manager "Display manager").
 

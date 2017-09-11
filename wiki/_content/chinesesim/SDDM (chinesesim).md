@@ -1,3 +1,8 @@
+相关文章
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")
+
 **翻译状态：** 本文是英文页面 [SDDM](/index.php/SDDM "SDDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-12-19，点击[这里](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=349882)可以查看翻译后英文页面的改动。
 
 [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager 。 维基百科介绍：
@@ -27,7 +32,7 @@
 
 ## 配置
 
-SDDM的配置文件为 `/etc/sddm.conf` 。运行 `man sddm.conf` 可以了解所有的选项。
+SDDM的配置文件为 `/etc/sddm.conf` 。运行 [sddm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) 可以了解所有的选项。
 
 在使用了 [systemd](/index.php/Systemd "Systemd") 的系统中, 由于 SDDM 默认使用 `systemd-logind` 管理会话，无需作额外的设置，因此安装SDDM时将不会产生配置文件。如果你确实需要修改配置文件，SDDM提供了一个命令用于产生一个包含了默认设置的配置文件样本:
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [cgroups](/index.php/Cgroups "Cgroups")
+
 This article provides information on prioritizing process threads in real time, as opposed to at startup only. It shows how you can control CPU, memory, and other resource utilization of individual processes, or all processes run by a particular group.
 
 While many recent processors are powerful enough to play a dozen video or audio streams simultaneously, it is still possible that another thread hijacks the processor for half a second to complete another task. This results in short interrupts in audio or video streams. It is also possible that video/audio streams get out of sync. While this is annoying for a casual music listener; for a content producer, composer or video editor this issue is much more serious as it interrupts their workflow.
@@ -59,7 +63,7 @@ An example for why one might want to alter these settings is to get high-perform
 
 See [professional audio](/index.php/Professional_audio "Professional audio") for more information.
 
-There are an infinite variety of possible PAM limits configurations. While an overview is provided here, it is highly advisable to read the `man 5 limits.conf` page in order to better understand these functions.
+There are an infinite variety of possible PAM limits configurations. While an overview is provided here, it is highly advisable to read the [limits.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/limits.conf.5) page in order to better understand these functions.
 
 ## Hard and soft realtime
 

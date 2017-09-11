@@ -1,3 +1,11 @@
+Ссылки по теме
+
+*   [Кодеки](/index.php/%D0%9A%D0%BE%D0%B4%D0%B5%D0%BA%D0%B8 "Кодеки")
+*   [MPlayer (Русский)](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)")
+*   [dvdbackup](/index.php/Dvdbackup "Dvdbackup")
+*   [MEncoder (Русский)](/index.php/MEncoder_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MEncoder (Русский)")
+*   [BluRay](/index.php/BluRay "BluRay")
+
 Из [Википедии](https://en.wikipedia.org/wiki/ru:%D0%9E%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%B8%D0%B2%D0%BE%D0%B4 "wikipedia:ru:Оптический привод"):
 
 	*"Опти́ческий при́вод — устройство, имеющее механическую составляющую, управляемую электронной схемой и предназначенное для считывания и (в большинстве современных моделей) записи информации с оптических носителей информации в виде пластикового диска с отверстием в центре (компакт-диск, DVD и т. д.); процесс считывания/записи информации с диска осуществляется при помощи лазера."*
@@ -442,7 +450,7 @@ $ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-Для получения дополнительной информации смотрите [инструкцию по growisofs](http://linux.die.net/man/1/growisofs), а также инструкции по *genisoimage*, *mkisofs* и *xorrisofs*.
+Для получения дополнительной информации смотрите инструкцию по [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1), а также инструкции по *genisoimage*, *mkisofs* и *xorrisofs*.
 
 #### Мультисессия с помощью xorriso
 

@@ -1,3 +1,15 @@
+Artículos relacionados
+
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+*   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
+
 Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paquetes utilizando el [sistema de compilación](/index.php/Arch_Build_System "Arch Build System") de Arch Linux, asi como subirlos en [AUR](/index.php/AUR "AUR"). Cubre la creación de un [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") - un archivo de descripción de compilación de paquetes originado por `makepkg` para crear un paquete binario desde los archivos fuentes. Si ya está posee un archivo `PKGBUILD`, vea [makepkg](/index.php/Makepkg "Makepkg"). Para obtener instrucciones sobre las normas existentes y las formas de mejorar la calidad del paquete, consulte [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
 
 ## Contents
@@ -113,7 +125,7 @@ Hay cinco funciones, enumeradas aquí en el orden en que se ejecutan si todas ex
 
 Esta función, utiliza comandos para preparar las fuentes para la construcción que se ejecuta, como [parches](/index.php/Patching_in_ABS "Patching in ABS"). Esta función se ejecuta justo después de la extracción del paquete, antes de [pkgver()](#pkgver.28.29) y la función de build. Si la extracción se omite (`makepkg -e`), entonces `prepare()` no se ejecuta.
 
-**Nota:** : (Desde `man PKGBUILD`) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
+**Nota:** : (Desde [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
 
 #### pkgver()
 

@@ -42,7 +42,7 @@ Related articles
 
 ## 用 wpa_cli 连接
 
-This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli) for details.
+This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
 
@@ -163,7 +163,7 @@ Failed to read or parse configuration '/dev/fd/63'
 
 ## 高级用法
 
-对于各种纷繁复杂的网络，更常见的场景是使用 [EAP](https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE) 管理配置文件。各种配置及其范例可参阅手册页[wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)；所有可支持的配置参数可参考范例文件 `/etc/wpa_supplicant/wpa_supplicant.conf`。
+对于各种纷繁复杂的网络，更常见的场景是使用 [EAP](https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE) 管理配置文件。各种配置及其范例可参阅手册页[wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)；所有可支持的配置参数可参考范例文件 `/etc/wpa_supplicant/wpa_supplicant.conf`。
 
 ### 配置
 
@@ -231,7 +231,7 @@ First start *wpa_supplicant* command, whose most commonly used arguments are:
     *   `nl80211` is the current standard, but not all wireless chip's modules support it.
     *   `wext` is currently deprecated, but still widely supported.
 
-See [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant) for the full argument list. For example:
+See [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) for the full argument list. For example:
 
 ```
 # wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
@@ -264,7 +264,7 @@ followed by a method to obtain an ip address manually as indicated in the [#Over
 
 ### wpa_cli 操作脚本
 
-*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli) for details.
+*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 The following example will use [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") to notify the user about the events:
 
@@ -349,7 +349,7 @@ In some instances it was found that storing the passphrase cleartext in the `psk
 
 *   [WPA Supplicant 主页](http://hostap.epitest.fi/wpa_supplicant/)
 *   [wpa_cli 用例](https://gist.github.com/buhman/7162560)
-*   [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)
-*   [wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)
-*   [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli)
+*   [wpa_supplicant(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
+*   [wpa_supplicant.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)
+*   [wpa_cli(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8)
 *   [Kernel.org wpa_supplicant 文档](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)

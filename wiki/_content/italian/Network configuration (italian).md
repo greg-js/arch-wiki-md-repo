@@ -72,7 +72,7 @@ rtt min/avg/max/mdev = 298.107/373.642/437.202/57.415 ms
 
 ```
 
-**Suggerimento:** L'opzione `-c 3` esegue `ping` 3 volte. Vedere`man ping` per maggiori informazioni.
+**Suggerimento:** L'opzione `-c 3` esegue `ping` 3 volte. Vedere[ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) per maggiori informazioni.
 
 Se funziona, si possono personalizzare le impostazioni con le opzioni che seguono.
 
@@ -329,7 +329,7 @@ Ad esempio:
 
 ```
 
-Per altre opzioni, vedere: `man ip`
+Per altre opzioni, vedere: [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7)
 
 Aggiungere il proprio gateway in questo modo:
 

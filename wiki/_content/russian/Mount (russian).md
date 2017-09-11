@@ -1,3 +1,15 @@
+Ссылки по теме
+
+*   [Fstab (Русский)](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
+*   [Udev (Русский)](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)")
+*   [Права доступа к файлам и атрибуты](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [umask](/index.php/Umask "Umask")
+*   [Файловые системы](/index.php/File_systems "File systems")
+*   [USB-устройства хранения](/index.php/USB_Storage_Devices_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "USB Storage Devices (Русский)")
+*   [Список приложений#Монтирование](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Список приложений")
+*   [Оптический привод](/index.php/%D0%9E%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%B8%D0%B2%D0%BE%D0%B4 "Оптический привод")
+*   [QEMU#Монтирование раздела внутрь raw-образа диска](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU")
+
 *mount* это команда для подключения и доступа к файловым системам, дисковых отделав и сетевых ресурсов. Она может подключать файловые системы поддерживающиеся ядром Линукса но может также быть дополнена новыми дополнениями для ядра программами такими как [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) для подключения [NTFS](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") файловых систем с поддержкой для чтения и записи.
 
 ## Contents
@@ -27,7 +39,7 @@ $ zgrep _FS= /proc/config.gz | sed "s/^CONFIG_//m" | sed "s/.$//m" | sed "s/_FS=
 
 ```
 
-Показать все поддерживающиеся ФС также видны в `man mount`.
+Показать все поддерживающиеся ФС также видны в [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8).
 
 Показать все поддерживающиеся ФС твоим ядром:
 
@@ -203,6 +215,6 @@ mksquashfs source /адрес/назначения.img   -comp lzo  -Xalgorithm 
 ## См. также
 
 *   Документация файловых систем, поддерживаемых ядром: [kernel.org](https://www.kernel.org/doc/Documentation/filesystems/) (англ.)
-*   Руководство по комманде *mount*: [linux.die.net](http://linux.die.net/man/8/mount) (англ.)
+*   Руководство по комманде *mount*: [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) (англ.)
 *   [Mount на Википедии](https://en.wikipedia.org/wiki/ru:Mount "wikipedia:ru:Mount")
 *   Краткая инструкция по созданию и использованию образов диска: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto) (англ.)

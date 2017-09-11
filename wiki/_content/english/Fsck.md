@@ -1,4 +1,10 @@
-[fsck](https://en.wikipedia.org/wiki/Fsck "wikipedia:Fsck") stands for *"file system check"* and it is used to check and optionally repair one or more Linux file systems. Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of the filesystems (see: `man fsck`).
+Related articles
+
+*   [Ext4](/index.php/Ext4 "Ext4")
+*   [Btrfs](/index.php/Btrfs "Btrfs")
+*   [fstab](/index.php/Fstab "Fstab")
+
+[fsck](https://en.wikipedia.org/wiki/Fsck "wikipedia:Fsck") stands for *"file system check"* and it is used to check and optionally repair one or more Linux file systems. Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of the filesystems (see: [fsck(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.8)).
 
 The [Arch Linux boot process](/index.php/Arch_boot_process "Arch boot process") conveniently takes care of the fsck procedure for you and will check all relevant partitions on your drive(s) automatically on every boot. Hence, there is usually no need to resort to the command-line unless necessary.
 
@@ -31,7 +37,7 @@ The first option is the recommended default, and what you will end up with if yo
 
 If you use the `base` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook, you can force fsck at boot time by passing `fsck.mode=force` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). This will check every filesystem you have on the machine.
 
-Alternatively, systemd provides [systemd-fsck@.service(8)](http://man7.org/linux/man-pages/man8/systemd-fsck%40.service.8.html), which checks all configured file systems, which were not checked in the initramfs. However, checking the root filesystem this way causes a delay in the boot process, because the file system has to be remounted.
+Alternatively, systemd provides [systemd-fsck@.service(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-fsck%40.service.8), which checks all configured file systems, which were not checked in the initramfs. However, checking the root filesystem this way causes a delay in the boot process, because the file system has to be remounted.
 
 **Note:** For those accustomed to use other GNU/Linux distributions, the old tricks consisting in writing a file with the name `forcefsck` to the root of each filesystem or using the command `shutdown` with the `-F` flag were only working for the old [SysVinit](/index.php/SysVinit "SysVinit") and early versions of [Upstart](https://en.wikipedia.org/wiki/Upstart "wikipedia:Upstart") and are not working with [systemd](/index.php/Systemd "Systemd"). The aforementioned solution is thus the only one working for Arch Linux.
 

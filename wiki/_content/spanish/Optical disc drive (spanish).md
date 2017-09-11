@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)")
+*   [MPlayer](/index.php/MPlayer "MPlayer")
+*   [dvdbackup](/index.php/Dvdbackup "Dvdbackup")
+*   [MEncoder](/index.php/MEncoder "MEncoder")
+*   [BluRay](/index.php/BluRay "BluRay")
+
 Según [Wikipedia](https://en.wikipedia.org/wiki/es:Unidad_de_disco_%C3%B3ptico "wikipedia:es:Unidad de disco óptico")
 
 	*En informática, una unidad de disco óptico es una unidad de disco que usa una luz láser u ondas electromagnéticas cercanas al espectro de la luz como parte del proceso de lectura o escritura de datos desde un archivo a discos ópticos. Algunas unidades solo pueden leer discos, pero las unidades más recientes usualmente son tanto lectoras como grabadoras. Para referirse a las unidades con ambas capacidades se suele usar el término lectograbadora. Los discos compactos (CD), DVD (Disco versátil digital) , y Blu-ray Disc (también conocido como Blu-ray o BD) son los tipos de soportes ópticos más comunes que pueden ser leídos y grabados por estas unidades.*
@@ -432,7 +440,7 @@ $ growisofs -M /dev/sr0 -V "ARCHIVE_2013_07_28" -r -J ./more_for_iso
 
 ```
 
-Para más detalles, véase el [manual de growisofs](http://linux.die.net/man/1/growisofs) y los manuales de `genisoimage`, `mkisofs` y `xorrisofs`.
+Para más detalles, véase el manual de [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) y los manuales de `genisoimage`, `mkisofs` y `xorrisofs`.
 
 #### Multisesión con xorriso
 

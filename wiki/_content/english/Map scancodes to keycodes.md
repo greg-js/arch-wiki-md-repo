@@ -25,7 +25,7 @@ You need to know the *scancodes* of keys you wish to remap. See [Extra keyboard 
 
 ## Using udev
 
-[udev](/index.php/Udev "Udev") provides a builtin function called *hwdb* to maintain the hardware database index in `/etc/udev/hwdb.bin`. The database is compiled from files with *.hwdb* extension located in directories `/usr/lib/udev/hwdb.d/`, `/run/udev/hwdb.d/` and `/etc/udev/hwdb.d/`. The default *scancodes-to-keycodes* mapping file is `/usr/lib/udev/hwdb.d/60-keyboard.hwdb`. See `man udev` for details.
+[udev](/index.php/Udev "Udev") provides a builtin function called *hwdb* to maintain the hardware database index in `/etc/udev/hwdb.bin`. The database is compiled from files with *.hwdb* extension located in directories `/usr/lib/udev/hwdb.d/`, `/run/udev/hwdb.d/` and `/etc/udev/hwdb.d/`. The default *scancodes-to-keycodes* mapping file is `/usr/lib/udev/hwdb.d/60-keyboard.hwdb`. See [udev(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udev.7) for details.
 
 **Note:** From systemd 220 the udev ABI changed. Users using custom udev hwdb rules should update them according to the new ABI
 

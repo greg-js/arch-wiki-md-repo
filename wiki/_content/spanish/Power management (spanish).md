@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Power saving](/index.php/Power_saving "Power saving")
+*   [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
+*   [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate")
+
 El propósito de esta página es proporcionar información general sobre la administración de energía en Arch Linux. Como Arch Linux utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), como administrador del sistema, este artículo se centra en él.
 
 Hay varios lugares donde se puede cambiar la configuración de administración de energía:
@@ -132,7 +138,7 @@ ExecStart=-/usr/bin/pkill -9 sshfs
 WantedBy=sleep.target
 ```
 
-Unos consejos útiles acerca de estos archivos de servicio (más información en `man systemd.service`):
+Unos consejos útiles acerca de estos archivos de servicio (más información en [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   Si está presente `Type=OneShot`, entonces puede utilizar múltiples líneas `ExecStart=`. De lo contrario, solo está permitida una línea ExecStart. No obstante, puede agregar más órdenes con `ExecStartPre` o mediante la separación de las órdenes con un punto y coma (véase el primer ejemplo de arriba —fíjese en los espacios en blanco antes y después del punto y coma... ¡estos son necesarios!—).
 *   Una orden con un prefijo `-` causará un código de salida distinto de cero que será ignorado y la orden será tratada como cumplida.
@@ -205,7 +211,7 @@ No debemos olvidarnos de hacer el script ejecutable:
 
 ```
 
-Véanse `man 7 systemd.special` y `man 8 systemd-sleep` para obtener más información.
+Véanse [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) y [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) para obtener más información.
 
 ## Solución de problemas
 

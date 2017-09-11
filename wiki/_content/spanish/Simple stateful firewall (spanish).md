@@ -274,7 +274,7 @@ Para aceptar transmisiones UDP entrantes en el puerto 53 para un servidor DNS:
 
 ```
 
-Vea `man iptables` para conocer reglas más avanzadas, como equipar múltiples puertos.
+Vea [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) para conocer reglas más avanzadas, como equipar múltiples puertos.
 
 #### Golpear puertos
 

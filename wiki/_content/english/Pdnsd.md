@@ -1,3 +1,10 @@
+Related articles
+
+*   [BIND](/index.php/BIND "BIND")
+*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
+*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Unbound](/index.php/Unbound "Unbound")
+
 [pdnsd](http://members.home.nl/p.a.rombouts/pdnsd/index.html) is a DNS server designed for local caching of DNS information. Correctly configured, it can significantly increase browsing speed on a broadband connection. Compared to [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") it can remember its cache after a reboot; "p" stands for persistent.
 
 ## Contents
@@ -146,7 +153,7 @@ The `par_queries=1;` option is useful if you specify more than one DNS server in
 
 The `proxy_only=on;` setting is mentioned below in the FAQ and is important for home broadband users since you generally are using only one or two DNS servers instead of trying to do the full-blown hierarchical name resolution that a full DNS server would do. This setting will prevent `pdnsd` from resolving all the way back to the "authoritative" name server, and instead accept the results of the DNS servers that were already specified in the "server" section. Once again, this reduces the number of DNS queries you need to make, improving performance.
 
-The `purge_cache=off;` setting tells `pdnsd` not to remove cache entries even if they have outlived the DNS record's time-to-live metric. This can be very useful when your ISP's DNS server goes down and you want to be able to access name lookups for domains you frequently use despite the outage. Records will still be bumped out of the cache based on age once the cache becomes full (see `man pdnsd.conf` on how to set the size of the cache).
+The `purge_cache=off;` setting tells `pdnsd` not to remove cache entries even if they have outlived the DNS record's time-to-live metric. This can be very useful when your ISP's DNS server goes down and you want to be able to access name lookups for domains you frequently use despite the outage. Records will still be bumped out of the cache based on age once the cache becomes full (see [pdnsd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pdnsd.conf.5) on how to set the size of the cache).
 
 ### Additional performance settings
 

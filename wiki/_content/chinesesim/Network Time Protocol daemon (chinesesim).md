@@ -1,3 +1,10 @@
+相关文章
+
+*   [Time (简体中文)](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)")
+*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
+*   [Chrony](/index.php/Chrony "Chrony")
+
 **翻译状态：** 本文是英文页面 [Network_Time_Protocol_daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-22，点击[这里](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&diff=0&oldid=446540)可以查看翻译后英文页面的改动。
 
 [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") （网络时间协议）是 GNU/Linux 系统通过互联网时间服务器同步系统[软件时钟](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)")的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。
@@ -27,7 +34,7 @@
 
 ## 配置
 
-主要的后台进程是 *ntpd*, 可以通过 `/etc/ntp.conf` 配置。详细信息可以参考手册 `man ntp.conf` 和相关的 `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
+主要的后台进程是 *ntpd*, 可以通过 `/etc/ntp.conf` 配置。详细信息可以参考手册 [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) 和相关的 `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`.
 
 ### 连接到 NTP 服务器
 
@@ -76,7 +83,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **注意:** 这会允许其他人查询你的时间服务器。你需要添加 `noserve` 来停止提供时间。
 
-"restrict"选项的完整文档可以从 `man ntp_acc` 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
+"restrict"选项的完整文档可以从 [ntp_acc()](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.) 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
 
 你需要在这一行之后告诉 *ntpd* 什么可以访问你的服务器；如果你不是在配置一台 NTP 服务器的话，下面一行就足够了。
 

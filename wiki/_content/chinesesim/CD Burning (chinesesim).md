@@ -1,3 +1,8 @@
+Related articles
+
+*   [Codecs (简体中文)](/index.php/Codecs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Codecs (简体中文)")
+*   [MPlayer (简体中文)](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MPlayer (简体中文)")
+
 摘自 [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
 
 	在计算机中，光盘驱动器（ODD）指使用激光或可见光谱内或附近的电磁波来从光盘写入或读取数据的驱动器。有的光盘驱动器只能读取，但现在的驱动器都普遍能够读取和记录，也叫做烧录或写入。小型光盘，DVD和蓝光碟都是可以用这类驱动器读取写入的光学介质。光驱是普遍叫法；驱动器往往被描述成“CD” “DVD”，或者“Blu-ray”，后面跟上“drive” “write”，等等。
@@ -447,7 +452,7 @@ $ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-For details see the [growisofs manual](http://linux.die.net/man/1/growisofs) and the manuals of *mkisofs* and *xorrisofs*.
+For details see the [growisofs(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/growisofs.1) manual and the manuals of *mkisofs* and *xorrisofs*.
 
 #### Multi-session by xorriso
 

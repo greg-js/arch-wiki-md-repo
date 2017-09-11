@@ -96,7 +96,7 @@ LC_TIME="en_DK.UTF-8"
 
 ```
 
-طالع `man 1 localectl` و `man 5 locale.conf` للتفاصيل.
+طالع [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) و [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) للتفاصيل.
 
 سيأخذون تأثيرهم بعد إعادة إقلاع النظام وسيُعيّنون كجلسات مفردة أثناء الولوج.
 

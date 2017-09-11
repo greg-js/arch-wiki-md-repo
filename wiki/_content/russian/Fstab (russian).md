@@ -65,7 +65,7 @@
 
 	*options*
 
-	Параметры монтирования файловой системы. Подробнее смотрите на [man-странице mount](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS). Обратите внимание, что некоторые параметры относятся к конкретным типам файловых систем.
+	Параметры монтирования файловой системы. Подробнее смотрите на [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS). Обратите внимание, что некоторые параметры относятся к конкретным типам файловых систем.
 
 	*dump*
 

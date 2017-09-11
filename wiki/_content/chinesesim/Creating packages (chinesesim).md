@@ -1,5 +1,16 @@
 **翻译状态：** 本文是英文页面 [Creating_Packages](/index.php/Creating_Packages "Creating Packages") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-04-23，点击[这里](https://wiki.archlinux.org/index.php?title=Creating_Packages&diff=0&oldid=363482)可以查看翻译后英文页面的改动。
 
+相关文章
+
+*   [Arch 编译系统](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")
+*   [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
+*   [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")
+*   [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
+*   [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")
+*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
+*   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
+
 本文旨在帮助用户利用 Arch Linux 的类似 ports 的软件包构建系统创建自己的软件包。包含了创建 [PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)") – 一个包创建描述文件，由 `makepkg` 使用来从源代码创建二进制包。[Arch 软件包标准](/index.php/Arch_packaging_standards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch packaging standards (简体中文)")包含当前规则和提高软件包质量的方法。如果已经有了 `PKGBUILD` 文件，请参考 [makepkg (简体中文)](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)").
 
 ## Contents
@@ -134,7 +145,7 @@ PKGBUILD文件的编写例子可以在`/usr/share/pacman/`处找到。PKGBUILD�
 
 Pacman 4.1 引入了 `prepare()` 函数. 在这一函数中, 那些用于预处理源文件以进行构建的命令会被执行, 例如 patching. 这一函数执行在 build() 函数之前, 软件包解压之后. 如果解压过程被跳过 (`makepkg -e`), 那么 `prepare()` 函数就不会被执行.
 
-**注意:** (从 `man PKGBUILD`) 中可以知道, 该函数运行在 `bash -e` 模式下, 意味着任何以非零状态退出的命令都会造成该函数中止.
+**注意:** (从 [PKGBUILD(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) 中可以知道, 该函数运行在 `bash -e` 模式下, 意味着任何以非零状态退出的命令都会造成该函数中止.
 
 #### build()
 

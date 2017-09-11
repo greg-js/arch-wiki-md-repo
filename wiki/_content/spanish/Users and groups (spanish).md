@@ -1,3 +1,10 @@
+Artículos relacionados
+
+*   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
+*   [polkit](/index.php/Polkit "Polkit")
+*   [chmod](/index.php/Chmod "Chmod")
+*   [Change username (Español)](/index.php/Change_username_(Espa%C3%B1ol) "Change username (Español)")
+
 Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [control de los accesos](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —es decir, determina qué usuarios y servicios están autorizados para acceder a los archivos, directorios y dispositivos periféricos presentes en el sistema—. Linux ofrece de forma predefinida mecanismos de control de acceso relativamente simples/básicos. Para obtener opciones más avanzadas, consulte [ACL](/index.php/Lista_de_Control_de_Acceso "Lista de Control de Acceso") y [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
 ## Contents
@@ -88,7 +95,7 @@ Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden 
 
 El usuario y el grupo propietarios de un archivo pueden ser cambiados con la orden `chown` (*«change owner»*). Los permisos de acceso a un archivo se pueden cambiar con la orden `chmod` (*«change mode»*).
 
-Véase [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.net/man/1/chmod), y [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) para obtener información adicional.
+Véase [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) para obtener información adicional.
 
 ## Lista de archivos
 
@@ -205,7 +212,7 @@ donde:
 
 ## Gestión de grupos
 
-En el archivo `/etc/group` se definen los grupos presentes en el sistema (ejecute la orden `man group` para conocer más detalle).
+En el archivo `/etc/group` se definen los grupos presentes en el sistema (ejecute la orden [group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para conocer más detalle).
 
 La orden `groups` muestra la pertenencia al grupo:
 

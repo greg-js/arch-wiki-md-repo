@@ -92,7 +92,7 @@ LC_TIME="ko_KR.UTF-8"
 
 1.  localectl set-locale LANG="ko_KR.utf8"
 
-더 자세한 사항은 `man 1 localectl`과 `man 5 locale.conf`를 참고하라.
+더 자세한 사항은 [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1)과 [locale.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5)를 참고하라.
 
 로캘은 시스템을 재부팅해야 적용되며 로그인하면 각 세션별로 설정될 것이다.
 

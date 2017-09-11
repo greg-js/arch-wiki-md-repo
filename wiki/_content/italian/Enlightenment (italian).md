@@ -1,3 +1,9 @@
+Articoli correlati
+
+*   [Ambienti desktop](/index.php/Desktop_Environment_(Italiano) "Desktop Environment (Italiano)")
+*   [Gestori delle sessioni](/index.php/Display_Manager_(Italiano) "Display Manager (Italiano)")
+*   [Gestori delle finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+
 Tratto dalla [documentazione di Enlightenment](http://trac.enlightenment.org/e/wiki/Enlightenment):
 
 	*L'ambiente di lavoro Enlightenment fornisce un window manager efficiente e mozzafiato basato sul Enlightenment Foundation Libraries (EFL) insieme ad altri componenti del desktop essenziali, come un file manager, le icone del desktop e widget. Vanta un livello senza precedenti di capacità di eseguire temi grafici, pur essendo in grado di eseguirli con hardware più vecchio o su dispositivi embedded.*
@@ -213,7 +219,7 @@ Il primo rilascio di sviluppo di Enlightenment DR16 è avvenuto nel 2000, e la v
 
 Per installare [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
 
-Enlightenment può risultare molto differente dagli altri gestori delle finestre, leggere `/usr/share/doc/e16/e16.html` dopo l'installazione per maggiori dettagli. La pagina manuale è `man e16`, non `man enlightenment`, ed analizza solo le opzioni di avvio.
+Enlightenment può risultare molto differente dagli altri gestori delle finestre, leggere `/usr/share/doc/e16/e16.html` dopo l'installazione per maggiori dettagli. La pagina manuale è [e16(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) ed analizza solo le opzioni di avvio.
 
 ### Configurazione di base
 

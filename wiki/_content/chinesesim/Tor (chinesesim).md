@@ -1,3 +1,8 @@
+相关文章
+
+*   [Privoxy](/index.php/Privoxy "Privoxy")
+*   [Polipo](/index.php/Polipo "Polipo")
+
 [Tor](https://www.torproject.org/download/download.html.en) 是一个开源实现，第二代洋葱路由匿名代理网络，提供免费访问。其首要目标是通过对流量分析攻击保护，使网上的匿名性。
 
 ## Contents
@@ -45,7 +50,7 @@
 
 ## 配置
 
-为了跟好的理解Tor`/etc/tor/torrc`配置文件. 配置选项在 man tor`man tor`和[Tor website](https://www.torproject.org/docs/tor-manual.html.en)有介绍.
+为了跟好的理解Tor`/etc/tor/torrc`配置文件. 配置选项在 man tor[tor(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1)和[Tor website](https://www.torproject.org/docs/tor-manual.html.en)有介绍.
 
 默认配置应该能够很好的为大多数Tor用户服务除了哪些是用Vidalia的用户, Vidalia是一Tor的图形界面。 在[AUR](/index.php/AUR "AUR")有可用包[Vidalia package](https://aur.archlinux.org/packages.php?ID=9731)。除了控制过程中的Vidalia允许您查看Tor状态监视带宽使用情况，查看，过滤，搜索日志消息;和配置Tor的某些方面。
 

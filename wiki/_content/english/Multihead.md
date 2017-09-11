@@ -1,3 +1,14 @@
+Related articles
+
+*   [Xorg](/index.php/Xorg "Xorg")
+*   [xrandr](/index.php/Xrandr "Xrandr")
+*   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
+*   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
+*   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
+*   [ATI#Dual Head setup](/index.php/ATI#Dual_Head_setup "ATI")
+
+*   [Extreme Multihead](/index.php/Extreme_Multihead "Extreme Multihead")
+
 **Multi-head**, **multi-screen**, **multi-display** or **multi-monitor** represent a setup when multiple display devices are attached to a computer. This article provides general description of multiple multi-head setup methods, and provides some examples of configuration.
 
 **Note:** The terms used in this article are very specific to avoid confusion:
@@ -74,7 +85,7 @@ RandR can be configured for the current session via the [xrandr](/index.php/Xran
 
 **Note:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
 
-You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See `man xrandr` for details. Some frequently used settings are described below.
+You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details. Some frequently used settings are described below.
 
 #### VGA1 left of HDMI1 at their preferred resolutions
 

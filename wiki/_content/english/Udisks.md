@@ -147,7 +147,7 @@ The above line is also useful to hide multi device btrfs filesystems, as all the
 
 ### Apply ATA settings (udisks2)
 
-At start-up and when a drive is connected, udisksd will apply configuration stored in the file `/etc/udisks2/*IDENTIFIER*.conf` where *IDENTIFIER* is the value of the Drive:Id property for the drive. Currently ATA settings are supported. See `man udisks` for available options. These settings have essentially the same effect as those of [hdparm](/index.php/Hdparm "Hdparm"), but they are persistent as long as the udisks daemon is autostarted.
+At start-up and when a drive is connected, udisksd will apply configuration stored in the file `/etc/udisks2/*IDENTIFIER*.conf` where *IDENTIFIER* is the value of the Drive:Id property for the drive. Currently ATA settings are supported. See [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for available options. These settings have essentially the same effect as those of [hdparm](/index.php/Hdparm "Hdparm"), but they are persistent as long as the udisks daemon is autostarted.
 
 For example, to set standby timeout to 240 (20 minutes) for a drive, add the following:
 
@@ -194,7 +194,7 @@ or for all devices:
 
 ```
 
-See `man udisks` for more information.
+See [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for more information.
 
 ### Broken standby timer (udisks2)
 

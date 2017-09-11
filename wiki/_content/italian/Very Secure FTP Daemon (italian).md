@@ -44,7 +44,7 @@ Per usare `vsftpd` con `xinetd`, vedere la sezione sottostante per le procedure 
 
 ## Configurazione
 
-La maggior parte delle impostazioni in `vsftpd` sono fatte modificando il file `/etc/vsftpd.conf`. Il file è di per se stesso ben documentato, per cui questa sezione mette in luce solo alcuni importanti cambiamenti che si potrebbe voler effettuare. Per tutte le opzioni disponibili e la documentazione, sfogliare `man vsftpd.conf` (5).
+La maggior parte delle impostazioni in `vsftpd` sono fatte modificando il file `/etc/vsftpd.conf`. Il file è di per se stesso ben documentato, per cui questa sezione mette in luce solo alcuni importanti cambiamenti che si potrebbe voler effettuare. Per tutte le opzioni disponibili e la documentazione, sfogliare [vsftpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5) (5).
 
 ### Abilitare l'upload
 

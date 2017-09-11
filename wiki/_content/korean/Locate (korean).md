@@ -10,4 +10,4 @@
 
 When `mlocate`가 설치될 때 데이터베이스를 갱신할 `/etc/cron.daily`( [cron](/index.php/Cron "Cron")이 매일 실행) 스크립트가 자동으로 설치된다. 또한 언제라도 `updatedb`를 수동으로 실행할 수 있다.
 
-시간을 절약하기 위해 `updatedb`는 특정한 파일시스템과 경로를 무시하도록 `/etc/updatedb.conf`를 편집해서 설정할 수 있다. `man updatedb.conf`는 이 파일의 의미를 설명한다. 디폴트 설정 파일에서 무시되는 경로("PRUNEPATHS" 문자열에 지정됨) 중에서 `/media`와 `/mnt`가 있다. 따라서 `locate`는 외부 장치에 있는 파일을 찾지 못할 수도 있다.
+시간을 절약하기 위해 `updatedb`는 특정한 파일시스템과 경로를 무시하도록 `/etc/updatedb.conf`를 편집해서 설정할 수 있다. [updatedb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.conf.5)는 이 파일의 의미를 설명한다. 디폴트 설정 파일에서 무시되는 경로("PRUNEPATHS" 문자열에 지정됨) 중에서 `/media`와 `/mnt`가 있다. 따라서 `locate`는 외부 장치에 있는 파일을 찾지 못할 수도 있다.

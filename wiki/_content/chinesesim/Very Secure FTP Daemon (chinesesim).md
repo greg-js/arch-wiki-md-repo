@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-08，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=484127)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-10，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=489724)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (Very Secure FTP Daemon) 是一个为UNIX类系统开发的轻量,稳定和安全的FTP服务器端.
 
@@ -88,7 +88,7 @@ anonymous_enable=YES
 ...
 ```
 
-您也可以添加以下选项（详见 `man vsftpd.conf`）：
+您也可以添加以下选项（详见 [vsftpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5)）：
 
  `/etc/vsftpd.conf` 
 ```

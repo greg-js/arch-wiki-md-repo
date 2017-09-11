@@ -1,3 +1,9 @@
+Σχετικά άρθρα
+
+*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Wireless Setup](/index.php/Wireless_Setup "Wireless Setup")
+
 Αυτή η σελίδα εξηγεί πως θα δημιουργήσετε μια **ενσύρματη** σύνδεση σε ένα δίκτυο. Αν θέλετε να δημιουργήσετε **ασύρματη** σύνδεση δείτε το [Wireless Setup](/index.php/Wireless_Setup_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Wireless Setup (Ελληνικά)")
 
 ## Contents
@@ -59,7 +65,7 @@
 
 Συνήθως η διαδικασία της βασικής εγκατάστασης, έχει δημιουργήσει μια σωστά διαμορφωμένη και ενεργή σύνδεση δικτύου. Για να το διαπιστώσετε δώστε την παρακάτω εντολή:
 
-**Σημείωση:** Η επιλογή `-c 3` την επαναλαμβάνει τρεις φορές. Δείτε `man ping` για περισσότερες πληροφορίες.
+**Σημείωση:** Η επιλογή `-c 3` την επαναλαμβάνει τρεις φορές. Δείτε [ping(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) για περισσότερες πληροφορίες.
  `$ ping -c 3 www.google.com` 
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
@@ -105,7 +111,7 @@ rtt min/avg/max/mdev = 52.975/65.375/72.543/8.803 ms
 
 Ορίσατε ως όνομα του υπολογιστή σας το **myhostname** στο `/etc/hostname`.
 
-Δείτε `man 5 hostname` και `man 1 hostnamectl` για λεπτομέρειες.
+Δείτε [hostname(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5) και [hostnamectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1) για λεπτομέρειες.
 
 **Σημείωση:** Η διεργασία `hostnamectl` υποστηρίζει FQDNs. Δεν είναι πλέον αναγκαίο να επεξεργαστείτε το αρχείο `/etc/hosts`, αφού το [systemd](https://www.archlinux.org/packages/?name=systemd) παρέχει την δυνατότητα επίλυσης ονομάτων στο δίκτυο και εγκαθίσταται από προεπιλογή και αυτόματα σε όλα τα συστήματα.
 
@@ -361,7 +367,7 @@ nooption domain_name_servers
 
 **Σημείωση:** Η μάσκα υποδικτύου (subnet mask) προσδιορίστηκε χρησιμοποιώντας [CIDR notation](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation").
 
-Για περισσότερες επιλογές, δείτε `man ip`.
+Για περισσότερες επιλογές, δείτε [ip(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ip.7).
 
 Προσθέστε την πύλη εξόδου σας (gateway) με:
 

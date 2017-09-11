@@ -294,7 +294,7 @@ Some of the commands that can be used with *unbound-control* are:
 
 ```
 
-Please refer to `man 8 unbound-control` for a detailed look at the operations it supports.
+Please refer to [unbound-control(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-control.8) for a detailed look at the operations it supports.
 
 ## 添加一个权威DNS服务器
 

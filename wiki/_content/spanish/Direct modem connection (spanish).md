@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Configuring Network (Español)](/index.php/Configuring_Network_(Espa%C3%B1ol) "Configuring Network (Español)")
+
 En este artículo se describe cómo se puede conectar directamente a Internet desde un marco de Arch Linux usando un [módem](https://en.wikipedia.org/wiki/es:M%C3%B3dem "wikipedia:es:Módem") interno o un módem externo en modo puente.
 
 Debido a la falta de desarrolladores para cuestiones de acceso telefónico, conectar Arch a Internet con una línea telefónica requiere mucha configuración manual. Si ello fuera posible, configure un router dedicado para que pueda ser utilizado como una puerta de enlace predeterminada en el marco de Arch.
@@ -13,7 +17,7 @@ Debido a la falta de desarrolladores para cuestiones de acceso telefónico, cone
 
 ## Módem analógico
 
-Para poder usar un modem analógico, externo, compatible con Hayes, necesitas tener como mínimo el paquete [ppp](https://www.archlinux.org/packages/?name=ppp) instalado. Modifica el archivo `/etc/ppp/options` para que se ajuste a tus necesidades y según `man pppd`. Necesitarás definir un script de chat para proporcionar tu nombre de usuario y contraseña al ISP después de que la conexión inicial haya sido establecida. Las manpages para pppd y chat tienen ejemplos que deben ser suficientes para obtener una conexión funcionando si eres o bien lo suficientemente experimentado, o bien lo suficientemente terco. Con udev, tus puertos seriales son usualmente `/dev/tts/0` y `/dev/tts/1`.
+Para poder usar un modem analógico, externo, compatible con Hayes, necesitas tener como mínimo el paquete [ppp](https://www.archlinux.org/packages/?name=ppp) instalado. Modifica el archivo `/etc/ppp/options` para que se ajuste a tus necesidades y según [pppd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pppd.8). Necesitarás definir un script de chat para proporcionar tu nombre de usuario y contraseña al ISP después de que la conexión inicial haya sido establecida. Las manpages para pppd y chat tienen ejemplos que deben ser suficientes para obtener una conexión funcionando si eres o bien lo suficientemente experimentado, o bien lo suficientemente terco. Con udev, tus puertos seriales son usualmente `/dev/tts/0` y `/dev/tts/1`.
 
 **Sugerencia:** Lee [Dialup without a dialer HOWTO](/index.php/Dialup_without_a_dialer_HOWTO "Dialup without a dialer HOWTO") (sólo en inglés).
 

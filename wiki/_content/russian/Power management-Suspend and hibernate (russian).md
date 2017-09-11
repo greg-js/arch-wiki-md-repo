@@ -70,7 +70,7 @@ See main article [TuxOnIce](/index.php/TuxOnIce "TuxOnIce").
 
 [systemd](/index.php/Systemd "Systemd") provides native commands for suspend, hibernate and a hybrid suspend, see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management") for details. This is the default interface used in Arch Linux.
 
-See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Power management") for additional information on configuring suspend/hibernate hooks. Also see `man systemctl`, `man systemd-sleep`, and `man systemd.special`.
+See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Power management") for additional information on configuring suspend/hibernate hooks. Also see [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1), [systemd-sleep(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8), and [systemd.special(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7).
 
 ### pm-utils
 

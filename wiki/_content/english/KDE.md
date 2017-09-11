@@ -1,3 +1,14 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Dolphin](/index.php/Dolphin "Dolphin")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Qt](/index.php/Qt "Qt")
+*   [KDevelop](/index.php/KDevelop "KDevelop")
+*   [Trinity](/index.php/Trinity "Trinity")
+*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
+
 KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma, a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](https://userbase.kde.org/). Detailed information about most KDE applications can be found there.
 
 ## Contents
@@ -114,8 +125,6 @@ Plasma can be started either graphically, using a [display manager](/index.php/D
 
 ### Graphically
 
-**Tip:** To better integrate [SDDM](/index.php/SDDM "SDDM") with Plasma, it is recommended to (force-)select the breeze theme. Related setting is located at *System Settings > Startup and Shutdown*. See [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM").
-
 Using a [Display manager](/index.php/Display_manager "Display manager"):
 
 *   Select *Plasma* to launch a new session in [Xorg](/index.php/Xorg "Xorg").
@@ -149,7 +158,7 @@ Some Frameworks 5 applications can use KDElibs 4 configuration, after moving the
 
 The easiest way to install themes is by going through the *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
 
-This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
+This will present a frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts.
 
 Splash and Lock screens are currently unavailable so to customize these screens you have to modify the original theme found in `/usr/share/plasma/look-and-feel/`. See [this thread](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) on the Kubuntu forums.
 

@@ -199,7 +199,7 @@ Tiling support can be added to JWM with the [Poor Man's Tiling Window Manager](h
 
 ### Additional troubleshooting
 
-If X is not already running on `tty1`, `Ctrl+Alt+F1` will allow you to review standard output errors and messages. See `man script` command for details on how to create a typescript of what is printed to the terminal.
+If X is not already running on `tty1`, `Ctrl+Alt+F1` will allow you to review standard output errors and messages. See [script(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/script.1) command for details on how to create a typescript of what is printed to the terminal.
 
 ### All windows are transparent using compton
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Audiobook](/index.php/Audiobook "Audiobook")
+*   [iPhone tethering](/index.php/IPhone_tethering "IPhone tethering")
+
 The purpose of this article is to demonstrate the use of iDevices under Arch Linux.
 
 ## Contents
@@ -150,7 +155,7 @@ This can convert to mp4 files. If you enforce a hard max of bit rate @ 700ish an
 
 [Install](/index.php/Install "Install") the [mplayer](https://www.archlinux.org/packages/?name=mplayer) package from the official repositories.
 
-Has *extremely* comprehensive configuration support, which will be able to spit out iPod-compatible video files. Check out `man mencoder`; a lot of MPlayer opts will also affect encoding.
+Has *extremely* comprehensive configuration support, which will be able to spit out iPod-compatible video files. Check out [mencoder(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mencoder.1); a lot of MPlayer opts will also affect encoding.
 
 A basic guide is also available at [MEncoder](/index.php/MEncoder "MEncoder").
 

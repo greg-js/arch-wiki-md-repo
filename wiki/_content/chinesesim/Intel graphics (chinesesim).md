@@ -1,5 +1,14 @@
 [[[Category:Graphics (简体中文)]]
 
+相关文章
+
+*   [Intel GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500")
+*   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
+*   [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
+*   [Xrandr](/index.php/Xrandr "Xrandr")
+*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
+
 **翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-16，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=446766)可以查看翻译后英文页面的改动。
 
 由于 Intel 提供和支持 X.Org 开源驱动，Intel 的显卡基本上是即插即用的。
@@ -76,7 +85,7 @@ EndSection
 *   在创建配置文件时，你可能需要指定`Option "AccelMethod"`（加速方式），哪怕只是将他设定为默认的方式 （现在的默认加速方式为 `"sna"`）；否则 X 可能会崩溃。
 *   你可能会需要在配置文件中添加更多的`Section "Device"`（驱动部分）。在相应的文章中会提示你在何处添加。
 
-查看完整选项列表，在终端中输入`man intel`。
+查看完整选项列表，在终端中输入[intel(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4)。
 
 ## 加载
 

@@ -1,3 +1,14 @@
+Related articles
+
+*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
+*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
+*   [eCryptfs](/index.php/ECryptfs "ECryptfs")
+*   [EncFS](/index.php/EncFS "EncFS")
+*   [Tomb](/index.php/Tomb "Tomb")
+*   [tcplay](/index.php/Tcplay "Tcplay")
+*   [GnuPG](/index.php/GnuPG "GnuPG")
+*   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
+
 This article discusses common techniques available in Arch Linux for cryptographically protecting a logical part of a storage disk (folder, partition, whole disk, ...), so that all data that is written to it is automatically encrypted, and decrypted on-the-fly when read again.
 
 "Storage disks" in this context can be your computer's hard drive(s), external devices like USB flash drives or DVD's, as well as *virtual* storage disks like loop-back devices or cloud storage *(as long as Arch Linux can address it as a block device or filesystem)*.
@@ -204,7 +215,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 (with LUKS) |  ? |  ? |  ? |
 | Protection against key scrubbing | ✔ | ✔
 (without LUKS) |  ? |  ? |  ? |
-| Support for multiple (independently revokable) keys for the same encrypted data |  ? | ✔
+| Support for multiple (independently revocable) keys for the same encrypted data |  ? | ✔
 (with LUKS) |  ? |  ? | ✖ |
 | 
 

@@ -12,9 +12,6 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 OpenJDK 7](#OpenJDK_7)
-    *   [1.2 OpenJDK 8](#OpenJDK_8)
-    *   [1.3 OpenJFX 8](#OpenJFX_8)
 *   [2 Flagging packages as out-of-date](#Flagging_packages_as_out-of-date)
 *   [3 Switching between JVM](#Switching_between_JVM)
     *   [3.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
@@ -23,27 +20,20 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [3.4 Fixing the default Java environment](#Fixing_the_default_Java_environment)
     *   [3.5 Launching an application with the non-default java version](#Launching_an_application_with_the_non-default_java_version)
 *   [4 Package pre-requisites to support archlinux-java](#Package_pre-requisites_to_support_archlinux-java)
-*   [5 Unsupported JVM from AUR](#Unsupported_JVM_from_AUR)
-    *   [5.1 Java SE](#Java_SE)
-        *   [5.1.1 Java SE 9](#Java_SE_9)
-        *   [5.1.2 Java SE 6/7](#Java_SE_6.2F7)
-        *   [5.1.3 32-bit Java SE](#32-bit_Java_SE)
-    *   [5.2 VMkit](#VMkit)
-    *   [5.3 Parrot VM](#Parrot_VM)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 MySQL](#MySQL)
-    *   [6.2 Impersonate another window manager](#Impersonate_another_window_manager)
-    *   [6.3 Illegible fonts](#Illegible_fonts)
-    *   [6.4 Missing text in some applications](#Missing_text_in_some_applications)
-    *   [6.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
-    *   [6.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Better font rendering](#Better_font_rendering)
-    *   [7.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
-    *   [7.3 GTK LookAndFeel](#GTK_LookAndFeel)
-    *   [7.4 Better 2D performance](#Better_2D_performance)
-    *   [7.5 Non-reparenting window managers](#Non-reparenting_window_managers)
-*   [8 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 MySQL](#MySQL)
+    *   [5.2 Impersonate another window manager](#Impersonate_another_window_manager)
+    *   [5.3 Illegible fonts](#Illegible_fonts)
+    *   [5.4 Missing text in some applications](#Missing_text_in_some_applications)
+    *   [5.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [5.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Better font rendering](#Better_font_rendering)
+    *   [6.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
+    *   [6.3 GTK LookAndFeel](#GTK_LookAndFeel)
+    *   [6.4 Better 2D performance](#Better_2D_performance)
+    *   [6.5 Non-reparenting window managers](#Non-reparenting_window_managers)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -52,42 +42,35 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 *   Installing a JDK will automatically pull its JRE dependency.
 *   After installation, the Java environment will need to be recognized by the shell (`$PATH` variable). This can be done by sourcing `/etc/profile` from the command line or by logging out/in again of a Desktop Environment.
 
-Two *common* packages named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) are automatically pulled as dependency and provide environment file `/etc/profile.d/jre.sh`. It should **always** be edited using the `archlinux-java` command. The `archlinux-java` helper script is used to set the Java default environment, to set `JAVA_ENV`, and to fix a broken configuration. Package [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) also provides a utility script `archlinux-java` that can display and change the default Java environment. This script sets links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` to point at a valid non-conflicting Java environment installed and Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}. Most executables provided by the Java environment set have direct links from `/usr/bin`, others are available in `$PATH`.
+Two *common* packages are respectively pulled as dependency, named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) (for both Java runtime and environment) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) (for Java environment). The provided environment file `/etc/profile.d/jre.sh` points to a linked location `/usr/lib/jvm/default/bin`, set by the `archlinux-java` helper script. The links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` should **always** be edited with `archlinux-java`. This is used to display and point to a working default Java environment in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}` or a Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}/jre`.
+
+Most executables of the Java installation are provided by direct links in `/usr/bin`, while others are available in `$PATH`.
 
 **Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
 
 The following packages are available:
 
-### OpenJDK 7
+**OpenJDK 7** — The open-source implementation of the seventh edition of Java SE.
 
-[JDK 7](http://openjdk.java.net/projects/jdk7/) is the open-source implementation of the seventh edition of Java SE.
+	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
 
-| Package name | Description |
-| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | OpenJDK Java 7 runtime environment without any graphical user interface |
-| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | OpenJDK Java 7 full runtime environment |
-| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | OpenJDK Java 7 development kit |
-| [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | OpenJDK Java 7 documentation |
-| [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | OpenJDK Java 7 sources |
+**OpenJDK 8** — The open-source implementation of the eight edition of Java SE.
 
-### OpenJDK 8
+	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
 
-[JDK 8](http://openjdk.java.net/projects/jdk8/) is the open-source implementation of the eight edition of Java SE.
+**OpenJFX 8** — The open-source implementation of JavaFX.
 
-| Package name | Description |
-| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | OpenJDK Java 8 runtime environment without any graphical user interface |
-| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | OpenJDK Java 8 full runtime environment |
-| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | OpenJDK Java 8 development kit |
-| [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | OpenJDK Java 8 documentation |
-| [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | OpenJDK Java 8 sources |
+	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
-### OpenJFX 8
+**Java SE** — Oracle's implementation of JRE and JDK.
 
-[Java OpenJFX](http://openjdk.java.net/projects/openjfx/) is the open-source implementation of JavaFX.
+	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre6](https://aur.archlinux.org/packages/jre6/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre-devel](https://aur.archlinux.org/packages/jre-devel/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
 
-| Package name | Description |
-| [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | Java OpenJFX 8 client application platform (open-source implementation of JavaFX) |
-| [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | Java OpenJFX 8 documentation |
-| [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) | Java OpenJFX 8 sources |
+**Parrot VM** — a VM with experimental support for Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/), or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
+
+	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://www.archlinux.org/packages/?name=parrot)
+
+**Note:** 32-bit versions of Java SE can be found by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). They use [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), which functions as [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) by suffixing with `32`, e.g. `java32`.
 
 ## Flagging packages as out-of-date
 
@@ -202,36 +185,6 @@ Also please note that:
 *   Packages that need a **specific Java vendor** should declare dependency on the corresponding package
 *   OpenJDK packages now declare `provides="java-runtime-openjdk=${pkgver}"` etc. This enables a third-party package to declare dependency on an OpenJDK without specifying a version
 
-## Unsupported JVM from AUR
-
-**Warning:** Packages in [AUR](/index.php/AUR "AUR") may or may not support `archlinux-java`
-
-### Java SE
-
-Several packages from [AUR](/index.php/AUR "AUR") provide Oracle's implementations of JRE and JDK, but the main ones are [jre](https://aur.archlinux.org/packages/jre/), [server-jre](https://aur.archlinux.org/packages/server-jre/) and [jdk](https://aur.archlinux.org/packages/jdk/).
-
-#### Java SE 9
-
-The development version of Java 9 includes [jre-devel](https://aur.archlinux.org/packages/jre-devel/) and [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/).
-
-#### Java SE 6/7
-
-Older versions include [jre6](https://aur.archlinux.org/packages/jre6/)/[jre7](https://aur.archlinux.org/packages/jre7/) and [jdk6](https://aur.archlinux.org/packages/jdk6/)/[jdk7](https://aur.archlinux.org/packages/jdk7/).
-
-#### 32-bit Java SE
-
-Almost all of the above packages can be found in 32-bit by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/).
-
-**Note:** These packages use `archlinux-java32` ([java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/)), which is separate from `archlinux-java` ([java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common)), but functions the same, by suffixing the Java links with `32`, e.g. `java32`.
-
-### VMkit
-
-[VMkit](http://vmkit.llvm.org/index.html) is an LLVM-based framework for JIT virtual machines. J3 is a JVM running on VMkit. The webpage can be found here: [vmkit](http://vmkit.llvm.org/get_started.html). J3 depends on the GNU classpath libraries, but may also work with the Apache class path libraries.
-
-### Parrot VM
-
-[Parrot](http://www.parrot.org/) is a VM that offers experimental [support for Java](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: Either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/) or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk). [Install](/index.php/Install "Install") it with the [parrot](https://www.archlinux.org/packages/?name=parrot) package.
-
 ## Troubleshooting
 
 ### MySQL
@@ -269,13 +222,13 @@ There are several things that may help:
 *   For Oracle's JRE/JDK, use [SetWMName.](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName) However, its effect may be canceled when also using `XMonad.Hooks.EwmhDesktops`. In this case, appending
 
 ```
- >> setWMName "LG3D"
+>> setWMName "LG3D"
 
 ```
 
 to the `LogHook` may help.
 
-See [[1]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
+See [[2]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
 
 ### System freezes when debugging JavaFX Applications
 
@@ -312,9 +265,9 @@ See [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "
 Setting the _JAVA_OPTIONS environment variables makes java (openjdk) write to stderr messages of the form: 'Picked up _JAVA_OPTIONS=...'. To supress those mesages in your terminal you can unset the environment variable in your shell startup files and alias java to pass those same options as command line arguments:
 
 ```
- _SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"
- unset _JAVA_OPTIONS
- alias java='java "$_SILENT_JAVA_OPTIONS"'
+_SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"
+unset _JAVA_OPTIONS
+alias java='java "$_SILENT_JAVA_OPTIONS"'
 
 ```
 
@@ -335,7 +288,7 @@ Some Java programs insist on using the cross platform Metal look and feel. In so
 Switching to OpenGL-based hardware acceleration pipeline will improve 2D performance
 
 ```
- export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
+export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
 
 ```
 
@@ -344,7 +297,7 @@ Switching to OpenGL-based hardware acceleration pipeline will improve 2D perform
 Non-reparenting window managers user should set the following environment variable in their `.xinitrc`
 
 ```
- export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 ```
 

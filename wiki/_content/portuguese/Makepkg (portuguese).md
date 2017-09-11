@@ -1,3 +1,12 @@
+Artigos relacionados
+
+*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
+*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+
 Makepkg é usado para compilar e construir um pacote adequado para instalação com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), gerenciador de pacotes do Arch Linux. Makepkg é um script automático para a construção do pacote; podendo fazer o download e validar o arquivo, checando as dependências, configurações do tempo de compilação, compilar o código, instalar temporariamente como root, fazer a personalização, gerar informações, e por fim, fazer todo empacotamento.
 
 O Makepkg é fornecido pelos pacotes do [pacman](https://www.archlinux.org/packages/?name=pacman) package.
@@ -80,7 +89,7 @@ Veja a página de manual do GCC para uma lista completa de opções disponíveis
 
 A opção `MAKEFLAGS` pode ser usada para especificar opções adicionais a fazer. Usuários com sistemas multi-core/multi-processador podem especificar o número de tarefas para executar simultaneamente. Isto pode ser feito com o uso do `nproc` para determinar o número de processadores disponíveis, e.x. `-j4` *(onde 4 é a saída de `nproc`)*. Alguns especificamente do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") substituem isso com `-j1`, por causa de corriqueira condições em determinadas versões ou simplesmente porque isso não é suportado, em primeiro lugar. Os pacotes que falham ao construir por causa disso devem ser [reportados](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") no bug tracker depois de ter certeza que o erro é de fato causado por sua MAKEFLAGS.
 
-Consulte `man make` para obter uma lista completa das opções disponíveis.
+Consulte [make(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para obter uma lista completa das opções disponíveis.
 
 ### Saída de pacote
 

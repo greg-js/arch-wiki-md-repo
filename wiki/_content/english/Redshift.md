@@ -53,7 +53,7 @@ There are several options to have redshift automatically started:
 *   By using the provided [systemd service unit files](/index.php/Systemd#Using_units "Systemd"). Be careful: the service can only be started in user mode, see [systemd/User#Basic setup](/index.php/Systemd/User#Basic_setup "Systemd/User"). Two service files are provided: `/usr/lib/systemd/user/redshift.service` and `/usr/lib/systemd/user/redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon. The `DISPLAY` environment variable needs to be configured. See [systemd/User#DISPLAY and XAUTHORITY](/index.php/Systemd/User#DISPLAY_and_XAUTHORITY "Systemd/User").
 *   By right-clicking the system tray icon when redshift-gtk or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
 
-**Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see `man systemd.service`)
+**Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5))
 
 *   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`. On other desktop environments, [Desktop entries](/index.php/Desktop_entries "Desktop entries") inside `~/.config/autostart` can be used.
 

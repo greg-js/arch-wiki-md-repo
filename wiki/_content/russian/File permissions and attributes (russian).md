@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Пользователи и группы](/index.php/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B8_%D0%B8_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B "Пользователи и группы")
+*   [umask](/index.php/Umask "Umask")
+*   [Access Control Lists (Русский)](/index.php/Access_Control_Lists_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Access Control Lists (Русский)")
+*   [Capabilities](/index.php/Capabilities "Capabilities")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Дата последней синхронизации: 22 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=482645).
 
 [Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы") use [права доступа](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%B0%D0%B2%D0%B0_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0 "w:ru:Права доступа") and [атрибуты](https://en.wikipedia.org/wiki/ru:%D0%90%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0 "w:ru:Атрибут файла") to regulate the level of interaction that system processes can have with files and directories.
@@ -54,13 +61,13 @@ Each of the three permission triads (`rwx` in the example above) can be made up 
 | Write permission (second character) | `-` | The file cannot be modified. | The directory's contents cannot be modified. |
 | `w` | The file can be modified. | The directory's contents can be modified (create new files or folders; rename or delete existing files or folders); requires the execute permission to be also set, otherwise this permission has no effect. |
 | Execute permission (third character) | `-` | The file cannot be executed. | The directory cannot be accessed with [cd](/index.php/Cd "Cd"). |
-| `x` | The file can be executed. | The directory can be accessed with [cd](/index.php/Cd "Cd"); this is the only permission bit that in practice can be considered to be "inherited" from the ancestor directories, in fact if *any* folder in the path does not have the `x` bit set, the final file or folder cannot be accessed either, regardless of its permissions; see `man 7 path_resolution` for more information. |
+| `x` | The file can be executed. | The directory can be accessed with [cd](/index.php/Cd "Cd"); this is the only permission bit that in practice can be considered to be "inherited" from the ancestor directories, in fact if *any* folder in the path does not have the `x` bit set, the final file or folder cannot be accessed either, regardless of its permissions; see [path_resolution(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/path_resolution.7) for more information. |
 | `s` | The [setuid](https://en.wikipedia.org/wiki/setuid "w:setuid") bit when found in the **u**ser triad; the **setgid** bit when found in the **g**roup triad; it is not found in the **o**thers triad; it also implies that `x` is set. |
 | `S` | Same as `s`, but `x` is not set; rare on regular files, and useless on folders. |
 | `t` | The [sticky](https://en.wikipedia.org/wiki/sticky_bit "w:sticky bit") bit; it can only be found in the **o**thers triad; it also implies that `x` is set. |
 | `T` | Same as `t`, but `x` is not set; rare on regular files, and useless on folders. |
 
-See `info Coreutils -n "Mode Structure"` and `man 1 chmod` for more details.
+See `info Coreutils -n "Mode Structure"` and [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) for more details.
 
 #### Examples
 

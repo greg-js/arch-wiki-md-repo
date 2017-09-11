@@ -41,7 +41,7 @@ For added security, consider limiting fail2ban capabilities by specifying `Capab
 CapabilityBoundingSet=CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_RAW
 ```
 
-In the example above, `CAP_DAC_READ_SEARCH` will allow fail2ban full read access, and `CAP_NET_ADMIN` and `CAP_NET_RAW` allow setting of firewall rules with [iptables](/index.php/Iptables "Iptables"). Additional capabilities may be required, depending on your fail2ban configuration. See `man capabilities` for more info.
+In the example above, `CAP_DAC_READ_SEARCH` will allow fail2ban full read access, and `CAP_NET_ADMIN` and `CAP_NET_RAW` allow setting of firewall rules with [iptables](/index.php/Iptables "Iptables"). Additional capabilities may be required, depending on your fail2ban configuration. See [capabilities(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/capabilities.7) for more info.
 
 ### Filesystem Access
 

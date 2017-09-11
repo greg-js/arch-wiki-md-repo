@@ -1,3 +1,9 @@
+Related articles
+
+*   [systemd](/index.php/Systemd "Systemd")
+*   [Automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")
+*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
+
 [systemd](/index.php/Systemd "Systemd") offers users the ability to manage services under the user's control with a per-user systemd instance, enabling users to start, stop, enable, and disable their own units. This is convenient for daemons and other services that are commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"), or to perform automated tasks like fetching mail. With some caveats it is even possible to run xorg and the entire window manager from user services.
 
 ## Contents
@@ -56,6 +62,8 @@ The user instance of systemd does not inherit any of the [environment variables]
 3.  Add a drop-in config file in `/etc/systemd/system/user@.service.d/`. Affects all user units; see [#Service example](#Service_example)
 4.  At any time, use `systemctl --user set-environment` or `systemctl --user import-environment`. Affects all user units started after setting the environment variables, but not the units that were already running.
 5.  Using the `dbus-update-activation-environment --systemd --all` command provided by [dbus](/index.php/Dbus "Dbus"). Has the same effect as `systemctl --user import-environment`, but also affects the D-Bus session. You can add this to the end of your shell initialization file.
+6.  For "global" environment variables for the user environment you can use the environment.d directories which are parsed by systemd generators. See [environment.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) for more information.
+7.  You can also write an environment generator script which can produce environment variables that vary from user to user, this is probably the best way if you need per-user envirnments (this is the case for XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS, etc). See [systemd.environment-generator(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.environment-generator.7).
 
 One variable you may want to set is `PATH`.
 
@@ -229,7 +237,7 @@ WantedBy=default.target
 
 ```
 
-As detailed in `man systemd.unit`, the `%h` variable is replaced by the home directory of the user running the service. There are other variables that can be taken into account in the [systemd](/index.php/Systemd "Systemd") manpages.
+As detailed in [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), the `%h` variable is replaced by the home directory of the user running the service. There are other variables that can be taken into account in the [systemd](/index.php/Systemd "Systemd") manpages.
 
 ### Note about X applications
 

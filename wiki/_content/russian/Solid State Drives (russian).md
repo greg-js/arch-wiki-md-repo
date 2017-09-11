@@ -1,3 +1,9 @@
+Ссылки по теме
+
+*   [SSD Benchmarking](/index.php/SSD_Benchmarking "SSD Benchmarking")
+*   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
+*   [profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
+
 Твердотельные накопители (SSD) не достаточно просто подключить чтобы они заработали должным образом. Необходимо учитывать некоторые специфичные вещи для достижения оптимальной производительности, такие как выравнивание разделов, выбор файловой системы, поддержка TRIM и т.д. Статья пытается охватить общую информацию и ключевые понятия, чтобы позволить пользователям получить максимальную отдачу от твердотельных дисков под Linux. Рекомендуется прочесть статью полностью перед тем, как следовать рекомендациям.
 
 **Примечание:** Хотя статья и предназначена для пользователей Linux, большая часть информации может относиться также и к другим операционным системам, таким как BSD, Mac OS X или Windows.
@@ -155,7 +161,7 @@ VFAT поддерживает TRIM только с помощью флага м�
 
 Измените значение опции `issue_discards` с 0 на 1 в файле `/etc/lvm/lvm.conf`.
 
-**Примечание:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. lvremove, lvreduce, etc)" (смотрите `man lvm.conf` и/или вписанные комментарии в `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
+**Примечание:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. lvremove, lvreduce, etc)" (смотрите [lvm.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.conf.5) и/или вписанные комментарии в `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
 
 #### Включение TRIM для dm-crypt
 

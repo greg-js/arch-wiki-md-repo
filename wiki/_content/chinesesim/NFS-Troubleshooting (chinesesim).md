@@ -1,3 +1,7 @@
+Related articles
+
+*   [NFS (简体中文)](/index.php/NFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NFS (简体中文)")
+
 **翻译状态：** 本文是英文页面 [NFS/Troubleshooting](/index.php/NFS/Troubleshooting "NFS/Troubleshooting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=NFS%2FTroubleshooting&diff=0&oldid=449910)可以查看翻译后英文页面的改动。
 
 本篇专述共性问题及其解决方案。
@@ -525,7 +529,7 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 ### References
 
 *   [https://github.com/torvalds/linux/tree/master/include/linux](https://github.com/torvalds/linux/tree/master/include/linux)
-*   [http://linux.die.net/man/8/rpcdebug](http://linux.die.net/man/8/rpcdebug)
+*   [rpcdebug(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rpcdebug.8)
 *   [http://utcc.utoronto.ca/~cks/space/blog/linux/NFSClientDebuggingBits](http://utcc.utoronto.ca/~cks/space/blog/linux/NFSClientDebuggingBits)
 *   [http://www.novell.com/support/kb/doc.php?id=7011571](http://www.novell.com/support/kb/doc.php?id=7011571)
 *   [http://stromberg.dnsalias.org/~strombrg/NFS-troubleshooting-2.html](http://stromberg.dnsalias.org/~strombrg/NFS-troubleshooting-2.html)

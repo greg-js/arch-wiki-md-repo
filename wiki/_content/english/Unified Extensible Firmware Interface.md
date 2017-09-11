@@ -154,7 +154,7 @@ If EFI Variables support does not work even after the above conditions are satis
 
 #### Mount efivarfs
 
-**Warning:** *efivars* is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting *efivars* read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as *efibootmgr* and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware-setup` work.
+**Warning:** *efivars* is mounted writeable by default [[2]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[3]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting *efivars* read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as *efibootmgr* and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware-setup` work.
 
 If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI variables to [#Userspace tools](#Userspace_tools) like `efibootmgr`:
 

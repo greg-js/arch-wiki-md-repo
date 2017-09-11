@@ -1,3 +1,16 @@
+Ссылки по теме
+
+*   [Bash (Русский)](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)")
+*   [Zsh](/index.php/Zsh "Zsh")
+*   [Основные рекомендации](/index.php/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8 "Основные рекомендации")
+*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [sudo (Русский)](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)")
+*   [cron](/index.php/Cron "Cron")
+*   [File system search](/index.php/File_system_search "File system search")
+*   [Страница справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства")
+*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Core utilities](/index.php/Core_utilities "Core utilities"). Дата последней синхронизации: 2015-03-07\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=364226).
 
 Эта статья описывает так называемые *базовые* утилиты для системы GNU/Linux, такие как *less*, *ls* и *grep*. В этой статье будут описаны утилиты GNU, находящиеся в пакете [coreutils](https://www.archlinux.org/packages/?name=coreutils), а также некоторые другие. Ниже будут описаны различные полезные советы и другая полезная информация, связанная с этими утилитами.
@@ -218,7 +231,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
 
 ```
 
-Смотрите `man iconv` для дополнительной информации.
+Смотрите [iconv(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) для дополнительной информации.
 
 ### Конвертирование файла на месте
 
@@ -231,7 +244,7 @@ $ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
 
 ```
 
-Смотрите `man sponge` для дополнительной информации.
+Смотрите [sponge(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) для дополнительной информации.
 
 ## ip
 
@@ -360,7 +373,7 @@ alias less=$PAGER
 
 *   **[script](https://en.wikipedia.org/wiki/Script_(Unix) "wikipedia:Script (Unix)")** — Утилита, которая делает машинопись терминальной сессии.
 
-	[http://man7.org/linux/man-pages/man1/script.1.html](http://man7.org/linux/man-pages/man1/script.1.html) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 	Пример: `script -fqc "*программа*" | less` или [[2]](http://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdin-is-interactive-not-a-pipe/20401674#20401674)
 

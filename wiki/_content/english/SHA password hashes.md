@@ -1,3 +1,7 @@
+Related articles
+
+*   [Security#Password hashes](/index.php/Security#Password_hashes "Security")
+
 The Secure Hash Algorithms (SHA) are a set of [hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function "wikipedia:Cryptographic hash function") often used to encrypt passwords. By default Arch uses SHA-512 for passwords, but some systems may still be using the older [MD5](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5") algorithm. This article describes how to increase password security.
 
 ## Benefits of SHA-2 over MD5
@@ -23,7 +27,7 @@ password	required	pam_unix.so sha512 shadow nullok **rounds=65536**
 
 ```
 
-**Note:** For a more detailed explanation of the `/etc/pam.d/passwd` password options check the [PAM man page](http://linux.die.net/man/8/pam_unix).
+**Note:** For a more detailed explanation of the `/etc/pam.d/passwd` password options check the [pam_unix(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) man page.
 
 ## Re-hash the passwords
 

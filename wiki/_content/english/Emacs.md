@@ -22,16 +22,17 @@
     *   [4.10 Clipboard support for emacs-nox](#Clipboard_support_for_emacs-nox)
 *   [5 Extensions](#Extensions)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Colored output issues](#Colored_output_issues)
-    *   [6.2 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
-    *   [6.3 Slow startup](#Slow_startup)
-    *   [6.4 Cannot open load file: ...](#Cannot_open_load_file:_...)
-    *   [6.5 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
-    *   [6.6 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
-    *   [6.7 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
-    *   [6.8 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
-    *   [6.9 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
-    *   [6.10 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
+    *   [6.1 Emacs fails to start with the error message 'Undefined color: "WINDOW_FOREGROUND"'](#Emacs_fails_to_start_with_the_error_message_.27Undefined_color:_.22WINDOW_FOREGROUND.22.27)
+    *   [6.2 Colored output issues](#Colored_output_issues)
+    *   [6.3 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
+    *   [6.4 Slow startup](#Slow_startup)
+    *   [6.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
+    *   [6.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
+    *   [6.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
+    *   [6.8 Emacs client gets stuck when switching back to it](#Emacs_client_gets_stuck_when_switching_back_to_it)
+    *   [6.9 Emacs-nox output gets messy](#Emacs-nox_output_gets_messy)
+    *   [6.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
+    *   [6.11 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
 *   [7 Alternatives](#Alternatives)
     *   [7.1 mg](#mg)
     *   [7.2 zile](#zile)
@@ -151,6 +152,10 @@ $ systemctl --user enable --now emacs
 ```
 
 Note that systemd user units do not inherit environment variables from a login shell (like `~/.bash_profile`), so you may want to set the variables in `~/.pam_environment` instead. See [Systemd/User](/index.php/Systemd/User "Systemd/User") for more information.
+
+If you start emacs as a daemon, you may want to set the `VISUAL` and `EDITOR` environment variables to `emacsclient` so that programs that start an editor use emacsclient instead of starting a new full instance of the editor. Programs that use an external editor include email programs (for editing the message), Git (for editing the commit message), and less (the `v` command for editing the displayed file). Do not use the `-n` (`--nowait`) option to emacsclient, since programs typically expect editing to be finished when the editor exits.
+
+It is also recommended to change any GUI start menu entries (or equivalent) for Emacs to point to emacsclient instead of emacs, so that the emacs daemon is used instead of starting a new emacs process.
 
 ## Usage
 
@@ -534,6 +539,10 @@ Should instructions describing how to activate a specific extension not be avail
 Since we are at it, you may be a contributor to Arch Linux Wiki, or any Mediawiki-based website. Then emacs will become your best friend thanks to the [Emacs Mediawiki](/index.php/Emacs_Mediawiki "Emacs Mediawiki") extension. Check the dedicated page for more details.
 
 ## Troubleshooting
+
+### Emacs fails to start with the error message 'Undefined color: "WINDOW_FOREGROUND"'
+
+You need to install either the [mcpp](https://www.archlinux.org/packages/?name=mcpp) package or the [gcc](https://www.archlinux.org/packages/?name=gcc) package. The C preprocessor *cpp* is used to preprocess [X resources](/index.php/X_resources "X resources") by *xrdb*. If a C preprocessor is not installed on the system, *xrdb* silently skips running the C preprocessor and the symbol WINDOW_FOREGROUND is not expanded to a hexadecimal color code.
 
 ### Colored output issues
 

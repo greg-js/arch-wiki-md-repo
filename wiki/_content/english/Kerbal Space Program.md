@@ -52,7 +52,7 @@ Another solution that may work on some architectures is to add `-force-glcore` a
 
 ### Graphics flickering when using primusrun
 
-Run with PRIMUS_SYNC=2 (but you will get reduced frame rate this way)
+Run with PRIMUS_SYNC=2 (but you will get reduced frame rate this way). Alternatively run KSP using optirun.
 
 ### Game crashes when accessing settings or saves on 64 bit systems on Steam
 
@@ -117,4 +117,5 @@ Disable "Edge Highlighting (PPFX)" in graphics settings ingame.
 
 ## See also
 
-*   [http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread](http://forum.kerbalspaceprogram.com/showthread.php/24529-The-Linux-compatibility-thread)!
+*   [https://wiki.kerbalspaceprogram.com/wiki/Linux](https://wiki.kerbalspaceprogram.com/wiki/Linux)!
+*   [https://forum.kerbalspaceprogram.com/index.php?/topic/22561-the-linux-compatibility-thread/](https://forum.kerbalspaceprogram.com/index.php?/topic/22561-the-linux-compatibility-thread/)!

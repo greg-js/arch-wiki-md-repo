@@ -1,24 +1,53 @@
-Fancontrol, part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), can be used to control the speed and sound of CPU/case fans. This article covers configuration/setup of the utility.
+Related articles
 
-For some Dell laptops, an alternative is [#i8kutils](#i8kutils).
+*   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
+
+Fan control can bring various benefits to your system, such as quieter working system and power saving by completely stopping fans on low CPU load.
+
+**Warning:** Configuring or completely stopping fans on high system load might result in permanently damaged hardware. You have been warned!
 
 ## Contents
 
-*   [1 Sensor driver](#Sensor_driver)
-    *   [1.1 lm-sensors](#lm-sensors)
-        *   [1.1.1 Increasing fan_div](#Increasing_fan_div)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Tweaking](#Tweaking)
-*   [3 fancontrol](#fancontrol)
-*   [4 i8kutils](#i8kutils)
-    *   [4.1 Dependencies](#Dependencies)
-    *   [4.2 Configuration](#Configuration_2)
+*   [1 Overview](#Overview)
+*   [2 Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)
+    *   [2.1 lm-sensors](#lm-sensors)
+        *   [2.1.1 Increasing fan_div](#Increasing_fan_div)
+    *   [2.2 Configuration](#Configuration)
+        *   [2.2.1 Tweaking](#Tweaking)
+    *   [2.3 fancontrol](#fancontrol)
+*   [3 NBFC](#NBFC)
+    *   [3.1 Installation](#Installation)
+    *   [3.2 Configuration](#Configuration_2)
+*   [4 Dell laptops](#Dell_laptops)
+    *   [4.1 Installation](#Installation_2)
+    *   [4.2 Configuration](#Configuration_3)
     *   [4.3 Disable BIOS fan speed control](#Disable_BIOS_fan_speed_control)
     *   [4.4 Installation as a service](#Installation_as_a_service)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 There are no working fan sensors, all readings are 0](#There_are_no_working_fan_sensors.2C_all_readings_are_0)
+*   [5 ThinkPad laptops](#ThinkPad_laptops)
+    *   [5.1 Installation](#Installation_3)
+    *   [5.2 Running](#Running)
+    *   [5.3 Old packages which have gone missing](#Old_packages_which_have_gone_missing)
+*   [6 Asus laptops](#Asus_laptops)
+    *   [6.1 Kernel modules overview](#Kernel_modules_overview)
+    *   [6.2 asus-nb-wmi](#asus-nb-wmi)
+    *   [6.3 asus_fan](#asus_fan)
+    *   [6.4 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
 
-## Sensor driver
+# Overview
+
+**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. By using [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) tool, you might need to monitor highest temperature of both CPU and GPU, which cannot be achieved with [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) without modifications to `fancontrol` script. [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
+
+There are multiple working solutions for fan control for both desktops and notebooks. Depending on your needs:
+
+*   [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) - General tool to configure fan speeds. Most suitable for desktops.
+*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control. Supports wide variety of laptops, including the latest ones.
+*   [Dell laptops](#Dell_laptops) - Alternative fan control daemon for some Dell laptops.
+*   [ThinkPad laptops](#ThinkPad_laptops) - Fan configuration for some ThinkPad laptops.
+*   [Asus laptops](#Asus_laptops) - Configure some Asus laptops for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) or manual control.
+
+# Fancontrol (lm-sensors)
+
+`fancontrol` is a part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), which can be used to control the speed of CPU/case fans.
 
 Support for newer motherboards may not yet be in the Linux kernel. Check the official [lm-sensors devices](https://hwmon.wiki.kernel.org/device_support_status) table to see if experimental drivers are available for such motherboards.
 
@@ -26,7 +55,7 @@ It is recommended not to use `lm_sensors.service` to load the needed modules for
 
 In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sensors-detect` accepting the defaults. In the `modules-load.d` file place one module name per line. Specifying them like this will create a reproducible order. Another alternative is to use absolute device names in the configuration file.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1415552#p1415552)
 
-### lm-sensors
+## lm-sensors
 
 Set up [lm_sensors](/index.php/Lm_sensors "Lm sensors").
 
@@ -52,7 +81,7 @@ temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal di
 
 If the output does not display an RPM value for the CPU fan, one may need to increase the fan divisor. If fan speed is shown and higher than 0, skip the next step.
 
-#### Increasing fan_div
+### Increasing fan_div
 
 The first line of the sensors output is the chipset used by the motherboard for readings of temperatures and voltages.
 
@@ -89,8 +118,6 @@ Once sensors are properly configured, use `pwmconfig` to test and configure fan 
 ```
 
 ### Tweaking
-
-**Warning:** Some of the steps outlined below describe how to tweak fan speeds. Before doing this be sure to have a low CPU load.
 
 **Note:** On several systems, the included script may report errors as it tries to calibrate fans to the respective pulse-width modulation (PWM). Users may safely ignore these errors. The problem is that the script does not wait long enough before ramping up or down the PWM.
 
@@ -162,15 +189,50 @@ To enable starting *fancontrol* automatically on every boot, [enable](/index.php
 
 For an unofficial GUI [install](/index.php/Install "Install") [fancontrol-gui](https://aur.archlinux.org/packages/fancontrol-gui/) or [fancontrol-kcm](https://aur.archlinux.org/packages/fancontrol-kcm/).
 
-## i8kutils
+# NBFC
 
-[i8kutils](https://aur.archlinux.org/packages/i8kutils/) provides an alternative method of controlling the fan speed on some Dell Inspiron and Latitude laptops. It makes use of the `/proc/i8k` interface provided by the `dell_smm_hwmon` driver (formerly `i8k`). Results will vary depending on the exact model of laptop.
+NBFC is a cross-platform fan control solution for notebooks. It comes with a powerful configuration system, which allows to adjust it to many different notebook models, including some of the latest ones.
 
-### Dependencies
+## Installation
 
-[tcl](https://www.archlinux.org/packages/?name=tcl) must be installed in order to run `i8kmon` as a background service (using the `--daemon` option). To run the X11 desktop applet, [tk](https://www.archlinux.org/packages/?name=tk) is required as well.
+NBFC can be installed as [nbfc-beta](https://aur.archlinux.org/packages/nbfc-beta/). Also start & enable `nbfc.service`.
 
-### Configuration
+## Configuration
+
+NBFC comes with pre-made profiles. You can find them in `/opt/nbfc/Configs/` directory.
+
+**Tip:** Profiles are being updated more frequently in [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) rather than together with releases. You may want to download some profiles directly to `/opt/nbfc/Configs/`.
+
+Check if there is anything NBFC can recommend:
+
+```
+$ nbfc config -r
+
+```
+
+If there is at least one model, try to apply this profile and see how fan speeds are being handled. For example:
+
+```
+$ nbfc config -a "Asus Zenbook UX430UA"
+
+```
+
+If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) and check if there are any similar models available from the same manufacturer. If there is - download directly to `/opt/nbfc/Configs/` directory. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
+
+Run `nbfc` to see all options. More information is available at [first steps](https://github.com/hirschmann/nbfc/wiki/First-steps#linux) from NBFC GIT wiki.
+
+# Dell laptops
+
+`i8kutils` is a daemon to configure fan speed according to CPU temperatures on some Dell Inspiron and Latitude laptops. It uses of the `/proc/i8k` interface provided by the `dell_smm_hwmon` driver (formerly `i8k`). Results will vary depending on the exact model of laptop.
+
+## Installation
+
+[i8kutils](https://aur.archlinux.org/packages/i8kutils/) is the main package to control fan speed. Additionally, you might want to install these:
+
+*   [tcl](https://www.archlinux.org/packages/?name=tcl) - must be installed in order to run `i8kmon` as a background service (using the `--daemon` option).
+*   [tk](https://www.archlinux.org/packages/?name=tk) - must be installed together with [tcl](https://www.archlinux.org/packages/?name=tcl) to run as X11 desktop applet.
+
+## Configuration
 
 By default, `i8kmon` only monitors the CPU temperature and fan speed passively. To enable its fan speed control, either run it with the `--auto` option or enable the option permanently in `/etc/i8kutils/i8kmon.conf`:
 
@@ -190,7 +252,7 @@ set config(2)  {{2 2}  65 128  65 128}
 
 This example starts the fan at low speed when the CPU temperature reaches 55 °C, switching to high speed at 75 °C. The fan will switch back to low speed once the temperature drops to 65 °C, and turns off completely at 45 °C.
 
-### Disable BIOS fan speed control
+## Disable BIOS fan speed control
 
 It may be necessary to turn off control of the fan speed by the BIOS to prevent it from "fighting" with `i8kmon`. On some laptops, this can be done using the `smm` utility. **This utility is extremely dangerous as it writes directly to an I/O port to invoke the processor's [System Management Mode](https://en.wikipedia.org/wiki/System_Management_Mode "wikipedia:System Management Mode"). Use it at your own risk.**
 
@@ -217,7 +279,7 @@ To enable it again:
 
 **Note:** This method may disable other power management features of the BIOS as well, such as notifying Linux when the power button is pressed.
 
-### Installation as a service
+## Installation as a service
 
 `i8kmon` can be started automatically as a [systemd](/index.php/Systemd "Systemd") service using a unit file similar to the following:
 
@@ -237,61 +299,172 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-## Troubleshooting
+# ThinkPad laptops
 
-### There are no working fan sensors, all readings are 0
+By default, the embedded controller (EC) regulates fan speed. If it's too conservative/loud for your taste, you might want a daemon to take over control. But this is risky: you take responsibility for temperature control. Excessive temperatures can damage or shorten the lifespan of components in your laptop.
 
-**Warning:** This section is for power users. Do not follow it if you do not know what you are doing.
+From the [http://www.thinkwiki.org/wiki/How_to_control_fan_speed](http://www.thinkwiki.org/wiki/How_to_control_fan_speed):
 
-First, find a directory containing your required files:
+	*Fan control operations are disabled by default for safety reasons. To enable fan control, the module parameter fan_control=1 must be given to thinkpad-acpi.*
+
+Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [simpfand-git](https://aur.archlinux.org/packages/simpfand-git/) and [thinkfan](https://aur.archlinux.org/packages/thinkfan/).
+
+## Installation
+
+Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/). Then have a look at the files:
 
 ```
-# find /sys/class/hwmon/hwmon*/ -name "fan*"
-
-```
-
-And the output should look like this:
-
-```
-/sys/class/hwmon/**hwmon2**/fan1_input
-/sys/class/hwmon/**hwmon2**/fan1_label
+# pacman -Ql thinkfan
 
 ```
 
-This means that files you will need are located in `/sys/class/hwmon/**hwmon2**/`.
-
-Now check the current fan speed:
+Note that the thinkfan package installs /usr/lib/modprobe.d/thinkpad_acpi.conf, which contains
 
 ```
-# cat /sys/class/hwmon/**hwmon2**/pwm1
+options thinkpad_acpi fan_control=1
 
 ```
 
-The output should be from 0 to 255.
-
-Now check if you are able to control fan speed by running some of these commands (note value between 0 to 255\. 0 means fan is completely stopped):
+So fan control is enabled by default.
 
 ```
-# echo "100" > /sys/class/hwmon/**hwmon2**/pwm1
-# echo "200" > /sys/class/hwmon/**hwmon2**/pwm1
-# echo "255" > /sys/class/hwmon/**hwmon2**/pwm1
+$ su
+# modprobe thinkpad_acpi
+# cat /proc/acpi/ibm/fan
 
 ```
 
-If you can hear how fan noise changes according to fan speed values given above, then you are on the right path and `pwmconfig` indeed shows incorrect message.
+You should see that the fan level is "auto" by default, but you can echo a level command to the same file to control the fan speed manually. The thinkfan daemon will do this automatically.
 
-Open first console and execute:
-
-```
-# watch -n 1 "echo 2 > /sys/class/hwmon/hwmon2/pwm1_enable"
+You will need to copy one of the example config files (e.g. /usr/share/doc/thinkfan/examples/thinkfan.conf.simple) to /etc/thinkfan.conf, and modify to taste. This file specifies which sensors to read, and which interface to use to control the fan. Some systems have /proc/acpi/ibm/fan available; on others, you will need to specify something like
 
 ```
+hwmon /sys/devices/virtual/thermal/thermal_zone0/temp
 
-Then open second console and execute this:
+```
+
+to use generic hwmon sensors instead of thinkpad-specific ones.
+
+## Running
+
+You can test your configuration first by running thinkfan manually (as root):
+
+```
+# thinkfan -n
+
+```
+
+and see how it reacts to the load level of whatever other programs you have running.
+
+When you have it configured correctly, the thinkfan daemon can be started by running (as root):
+
+```
+# systemctl start thinkfan
+
+```
+
+or by automatically loading it on system startup:
+
+```
+# systemctl enable thinkfan
+
+```
+
+## Old packages which have gone missing
+
+[tpfand](https://aur.archlinux.org/packages/tpfand/) and a version that doesn't require [HAL](/index.php/HAL "HAL") [tpfand-no-hal](https://aur.archlinux.org/packages/tpfand-no-hal/) are not actively developed anymore, and no longer available. An additional GTK+ frontend was provided in the [tpfan-admin](https://aur.archlinux.org/packages/tpfan-admin/) package in the [AUR](/index.php/AUR "AUR") which enables the monitoring of temperatures as well as the graphical adjustment of trigger points.
+
+Due to tpfand not beeing actively developed anymore, there was a fork called tpfanco (which in fact uses the same names for the executables as tpfand): [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/).
+
+The configuration file for tpfand (same for tpfanco) was `/etc/tpfand.conf`.
+
+Additionally, the [tpfand-profiles](https://aur.archlinux.org/packages/tpfand-profiles/) package in the [AUR](/index.php/AUR "AUR") provided the latest fan profiles for various thinkpad models.
+
+# Asus laptops
+
+This topic will cover drivers configuration on Asus laptops **for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)**. If possible, use [#NBFC](#NBFC).
+
+## Kernel modules overview
+
+*   [#asus-nb-wmi](#asus-nb-wmi) is a kernel module, which is included in mainstream Linux kernel and is loaded automatically in Asus laptops. It will only allow to control a single fan and if there is a second fan - you will not have any controls over it. Blacklisting this module will prevent keyboard backlight to work.
+*   [#asus_fan](#asus_fan) is a kernel module, which allows to control both fans on some older Asus laptops. Does not work with the most recent models.
+
+In configuration files, we are going to use full paths to sysfs files (e.g. `/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1`). This is because hwmon**1** might change to any other number after reboot. [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) is written in [Bash](/index.php/Bash "Bash"), so using these paths in configuration file is completely acceptable. You can find complete `/etc/fancontrol` configuration file examples at [ASUS_N550JV#Fan_control](/index.php/ASUS_N550JV#Fan_control "ASUS N550JV").
+
+## asus-nb-wmi
+
+Kernel module `asus-nb-wmi` is already included in Linux kernel and should already be loaded to your kernel.
+
+Below are the commands to control it. Check if you have any controls over your fan:
+
+```
+# echo 255 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1           # Full fan speed (Value: 255)
+# echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1             # Fan is stopped (Value: 0)
+# echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[[:print:]]*/pwm1_enable     # Change fan mode to automatic
+# echo 1 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1_enable      # Change fan mode to manual
+
+```
+
+If you were able to modify fan speed with above commands, then continue with [#Generate_config_file_with_pmwconfig](#Generate_config_file_with_pmwconfig).
+
+## asus_fan
+
+Install [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/). Load kernel module:
+
+```
+# modprobe asus_fan
+
+```
+
+**Note:** For unknown reasons this is likely going to fail (no asus_fan module found in your system). [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and system reboot usually fix this issue.
+
+Check if you have any control over both fans:
+
+```
+# echo 255 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1          # Full CPU fan speed (Value: 255)
+# echo 0 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1            # CPU fan is stopped (Value: 0)
+# echo 255 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1          # Full GFX fan speed (Value: 255)
+# echo 0 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1            # GFX fan is stopped (Value: 0)
+# echo 2 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1_enable     # Change CPU fan mode to automatic
+# echo 1 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm1_enable     # Change CPU fan mode to manual
+# echo 2 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2_enable     # Change GFX fan mode to automatic
+# echo 1 > /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/pwm2_enable     # Change GFX fan mode to manual
+# cat /sys/devices/platform/asus_fan/hwmon/hwmon[[:print:]]*/temp1_input          # Display GFX temperature (will always be 0 when GFX is disabled/unused)
+
+```
+
+If everything works, you might want to load this kernel module on boot:
+
+ `/etc/modules-load.d/asus_fan.conf` 
+```
+# Load asus_fan module on boot:
+asus_fan
+
+```
+
+Continue with [#Generate_config_file_with_pmwconfig](#Generate_config_file_with_pmwconfig).
+
+## Generate config file with pmwconfig
+
+If you get an error `There are no working fan sensors, all readings are 0` while generating config file with `pwmconfig`, open first console and execute:
+
+```
+# watch -n 1 "echo 2 > /sys/devices/platform/**<kernel_module>**/hwmon/hwmon[[:print:]]*/pwm**1**_enable"
+
+```
+
+If you use `asus_fan` kernel module and have 2nd fan, in second console:
+
+```
+# watch -n 1 "echo 2 > /sys/devices/platform/**<kernel_module>**/hwmon/hwmon[[:print:]]*/pwm**2**_enable"
+
+```
+
+And finally, in the third console:
 
 ```
 # pwmconfig
 
 ```
 
-Once you are done and the configuration file is generated, you should stop the first console.
+Once you are done and the configuration file is generated, you should stop the first and second consoles. Continue with [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29). After config file is generated, you might need to manually replace PWM values with full sysfs paths as they are used in these steps, because hwmon number values might change after reboot.

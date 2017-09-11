@@ -1,3 +1,9 @@
+相关文章
+
+*   [NFS](/index.php/NFS "NFS")
+*   [Samba/Active Directory domain controller](/index.php/Samba/Active_Directory_domain_controller "Samba/Active Directory domain controller")
+*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
+
 **Samba** 是 [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block 的补充使得在 Linux 和 Windows 系统中进行文件共享、打印机共享更容易实现。一些用户说Samba配置简单，操作直观。然而，许多新用户会因为它的复杂性和非直观的机制而遇到问题。强烈建议新用户仔细按照下面的指导。
 
 ## Contents
@@ -73,7 +79,7 @@ Samba 服务的默认配置文件在 `/etc/samba/smb.conf.default` 中，需要�
    valid users = %S
 ```
 
-同时，默认配置文件也共享打印机，包含一些不错的示例配置。更多的可用选项可以通过 `man smb.conf` 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。
+同时，默认配置文件也共享打印机，包含一些不错的示例配置。更多的可用选项可以通过 [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。
 
 On Windows side, be sure to change `smb.conf` to the in-use Windows Workgroup (default: `WORKGROUP`).
 
@@ -189,7 +195,7 @@ Samba 需要 Linux 账户才能使用 - 可以使用已有账户或 [创建新�
 
 如果不需要查询公开的共享，可以安装轻量级的 [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) 软件包，使用 `/usr/bin/mount.cifs` 命令挂载共享.
 
-要使用类似 ftp 的命令行界面，请安装软件包 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。常用命令请参考 `man smbclient`。
+要使用类似 ftp 的命令行界面，请安装软件包 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。常用命令请参考 [smbclient(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1)。
 
 [桌面环境](/index.php/Desktop_environment "Desktop environment") 可能提供了图形界面，参考[#文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE).
 
@@ -250,7 +256,7 @@ $ smbtree -b -N
 
 `-o [options]`
 
-	详情请参考 `man mount.cifs`.
+	详情请参考 [mount.cifs(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8).
 
 **Note:**
 
@@ -444,7 +450,7 @@ There are a number of useful programs, but they may need to have packages create
 
 **Note:** Setting this parameter will affect the performance of Samba, as it will be forced to check all files and directories for a match as they are scanned.
 
-Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in `man smb.conf`.
+Samba offers an option to block files with certain patterns, like file extensions. This option can be used to prevent dissemination of viruses or to dissuade users from wasting space with certain files. More information about this option can be found in [smb.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
 
  `/etc/samba/smb.conf` 
 ```

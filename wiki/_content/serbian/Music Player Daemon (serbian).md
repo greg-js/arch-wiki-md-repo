@@ -638,7 +638,7 @@ end
 
 ```
 
-Postoji vise funkcija za mpc, pokrenite `man mpc` za vise informacija.
+Postoji vise funkcija za mpc, pokrenite [mpc(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpc.1) za vise informacija.
 
 ### Kontrola MPD-a sa bluetooth telefonom
 

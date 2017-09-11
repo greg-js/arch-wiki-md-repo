@@ -1,3 +1,7 @@
+相关文章
+
+*   [守护进程](/index.php/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B "守护进程")
+
 GPM（General Purpose Mouse，通用鼠标）是为 Linux 虚拟控制台（TTY）提供鼠标支持的守护进程。大多数 Linux 发行版中都有它。
 
 ## Contents
@@ -68,4 +72,4 @@ DAEMONS=(syslog-ng **gpm** network netfs crond)
 
 ```
 
-更多信息见 `man gpm`。
+更多信息见 [gpm(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/gpm.8)。

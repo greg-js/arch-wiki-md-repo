@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Устранение часто встречающихся неполадок](/index.php/%D0%A3%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B0%D1%81%D1%82%D0%BE_%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F_%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA "Устранение часто встречающихся неполадок")
+*   [Ядра](/index.php/%D0%AF%D0%B4%D1%80%D0%B0 "Ядра")
+*   [Параметры ядра](/index.php/%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B_%D1%8F%D0%B4%D1%80%D0%B0 "Параметры ядра")
+*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Kernel modules](/index.php/Kernel_modules "Kernel modules"). Дата последней синхронизации: 2015-07-29\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Kernel_modules&diff=0&oldid=388445).
 
 [Модули ядра](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B6%D0%B0%D0%B5%D0%BC%D1%8B%D0%B9_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D1%8F%D0%B4%D1%80%D0%B0 "wikipedia:ru:Загружаемый модуль ядра") — это отдельные кусочки кода, которые могут быть загружены и выгружены из ядра по мере необходимости. Они расширяют функциональность ядра без необходимости перезагрузки системы.
@@ -83,7 +90,7 @@ $ modprobe --show-depends *module_name*
 virtio-net
 ```
 
-Смотрите `man modules-load.d` для дополнительной информации.
+Смотрите [modules-load.d(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/modules-load.d.5) для дополнительной информации.
 
 ## Управление модулями вручную
 

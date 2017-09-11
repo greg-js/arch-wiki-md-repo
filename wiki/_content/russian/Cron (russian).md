@@ -1,3 +1,8 @@
+Related articles
+
+*   [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры")
+*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
+
 Из [Википедии](https://ru.wikipedia.org/wiki/Cron):
 
 ***cron** - классический демон-планировщик задач в UNIX-подобных операционных системах, использующийся для периодического выполнения заданий в определённое время. Регулярные действия описываются инструкциями, помещенными в файлы crontab и в специальные директории.*
@@ -345,7 +350,7 @@ alias scron="su -c $(printf "%q " "crontab -e")"
 
 ## run-parts issue
 
-cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: `man run-parts`).
+cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
 
 ## Running X.org server-based applications
 

@@ -1,3 +1,9 @@
+相关文章
+
+*   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
+*   [polkit](/index.php/Polkit "Polkit")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+
 **翻译状态：** 本文是英文页面 [Users_and_Groups](/index.php/Users_and_Groups "Users and Groups") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=Users_and_Groups&diff=0&oldid=445643)可以查看翻译后英文页面的改动。
 
 GNU/Linux 通过用户和用户组实现[访问控制](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —— 包括对文件访问、设备使用的控制。Linux 默认的访问控制机制相对简单直接，不过还有一些更加高级的机制，包括 [ACL](/index.php/ACL "ACL") 和 [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
@@ -90,7 +96,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 文件的属主、属组可以通过`chown`命令更改。文件的权限可以通过`chmod`命令修改。
 
-详情参见：[man chown](http://linux.die.net/man/1/chown)、[man chmod](http://linux.die.net/man/1/chmod)、[Linux 文件权限](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions)。
+详情参见：[chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1)、[chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1)、[Linux 文件权限](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions)。
 
 ## 用户管理
 
@@ -274,7 +280,7 @@ Note that the Arch Linux defaults of the files are created as .pacnew files by n
 
 ## 用户组管理
 
-`/etc/group`文件储存了系统中用户组的信息，详情参见：`man group`。
+`/etc/group`文件储存了系统中用户组的信息，详情参见：[group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5)。
 
 使用`groups`命令查看用户所在组的名称：
 

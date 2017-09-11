@@ -1,3 +1,8 @@
+Related articles
+
+*   [MPD/Tips and Tricks](/index.php/MPD/Tips_and_Tricks "MPD/Tips and Tricks")
+*   [MPD/Troubleshooting](/index.php/MPD/Troubleshooting "MPD/Troubleshooting")
+
 **[MPD](http://www.musicpd.org/)** (**m**usic **p**layer **d**aemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database all while using very few resources. In order to interface with it, a separate [client](#Clients) is needed.
 
 ## Contents
@@ -88,7 +93,7 @@ Test everything by starting a client application ([ncmpc](https://www.archlinux.
 
 If the `mpd.socket` unit (provided by [mpd](https://www.archlinux.org/packages/?name=mpd)) is enabled while `mpd.service` is disabled, systemd will not start mpd immediately, but it will listen on the appropriate sockets. When an mpd client attempts to connect on one of those sockets, systemd will start `mpd.service` and transparently hand over control of those ports to the mpd process.
 
-If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Edit "Edit") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see `man 5 mpd.conf` for details).
+If you prefer to listen on different UNIX sockets or network ports (even multiple sockets of each type), or if you prefer not to listen on network ports at all, [edit](/index.php/Edit "Edit") the `mpd.socket` unit appropriately **and** modify `/etc/mpd.conf` to match the configuration (see [mpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mpd.conf.5) for details).
 
 #### Configure audio
 

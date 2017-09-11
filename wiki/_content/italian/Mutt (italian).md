@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [fdm](/index.php/Fdm "Fdm")
+*   [msmtp](/index.php/Msmtp "Msmtp")
+
 **Mutt** è un programma per la gestione della posta elettronica testuale rinomato per le sue straordinarie caratteristiche. Mutt è il client di posta preferito da un gran numero di utenti esperti. Sfortunatamente, un'installazione standard di Mutt è tormentata da complesse associazioni di tasti, e ha una quantità tale di documentazione da scoraggiare i nuovi utenti. Questa guida aiuterà l'utente medio a configurare ed eseguire Mutt, e iniziare a personalizzarlo secondo le proprie esigenze.
 
 ## Contents
@@ -299,7 +304,7 @@ Indipendentemente che si utilizzi POP o IMAP per ricevere la posta, sarà probab
 
 #### Utilizzare il supporto nativo SMTP
 
-La versione Mutt di pacman è compilata con il supporto SMTP. Basta controllare il manuale online [muttrc](http://manual.cream.org/index.cgi/muttrc.5), o `man muttrc` per ulteriori informazioni.
+La versione Mutt di pacman è compilata con il supporto SMTP. Basta controllare il manuale online [muttrc](http://manual.cream.org/index.cgi/muttrc.5), o [muttrc(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) per ulteriori informazioni.
 
 Per esempio:
 

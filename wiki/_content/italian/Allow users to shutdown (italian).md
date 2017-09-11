@@ -9,7 +9,7 @@ Per spegnere:
 
 ```
 
-Sospensione, spegnimento, ibernazione e chiusura del coperchio (per i laptop) sono eventi gestiti anche da logind (vedere `man logind.conf` per altre informazioni).
+Sospensione, spegnimento, ibernazione e chiusura del coperchio (per i laptop) sono eventi gestiti anche da logind (vedere [logind.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5) per altre informazioni).
 
 ## Utilizzare sudo
 

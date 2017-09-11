@@ -432,7 +432,7 @@ eval $(keychain --eval --agents ssh -Q --quiet id_ecdsa)
 
 ```
 
-如有需要，请把 `id_ecdsa` 换成您的私钥路径。如果您使用的 shell 不兼容 [Bash (简体中文)](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")，请参考 `keychain --help` 或者 `man keychain`。
+如有需要，请把 `id_ecdsa` 换成您的私钥路径。如果您使用的 shell 不兼容 [Bash (简体中文)](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")，请参考 `keychain --help` 或者 [keychain(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/keychain.1)。
 
 要测试 keychain 是否配置成功，请注销当前会话，重新登录。如果这是您第一次运行 keychain，则您会被要求输入私钥的密码短语。因为 keychain 复用已成功登录的会话中的 `ssh-agent` 进程，所以您再次登录是就无需输入密码短语了。当您重启机器时，您才会被要求再次输入密码短语。
 

@@ -1,3 +1,13 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+*   [Clipboard](/index.php/Clipboard "Clipboard")
+*   [Autostarting#Graphical](/index.php/Autostarting#Graphical "Autostarting")
+
 Az [i3](http://i3wm.org/) egy dinamikus csempéző ablakkezelő ([tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")), amit a [wmii](/index.php/Wmii "Wmii") inspirált, legfőképp fejlesztőknek, és haladó felhasználóknak tervezve.
 
 Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása, fa-struktúrájú ablakkezelés, és több mód, ahogyan a [vim](/index.php/Vim "Vim")-ben.
@@ -186,7 +196,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 ```
 
-Nem minden plugin van definiálva az alapértelmezett konfigurációban, és néhány konfigurációs érték esetleg érvénytelen a rendszereden, ezért szükség szerint szerkesztésre szorulhat. Lásd a `man i3status`-t a részletekért.
+Nem minden plugin van definiálva az alapértelmezett konfigurációban, és néhány konfigurációs érték esetleg érvénytelen a rendszereden, ezért szükség szerint szerkesztésre szorulhat. Lásd a [i3status(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/i3status.1)-t a részletekért.
 
 #### i3status helyettesítők
 
@@ -270,7 +280,7 @@ Az ikonok hozzáadása a formázási sztringekhez a `~/.config/i3status/config`-
 
 ### Terminál emulátorok
 
-Alapértelmezetten a `$mod+Return` lenyomása futtatja az `i3-sensible-terminal`-t, ami egy szkript egy terminál emulátor meghívására. Lásd `man i3-sensible-terminal`-t a meghívható terminálok sorrendjéért.
+Alapértelmezetten a `$mod+Return` lenyomása futtatja az `i3-sensible-terminal`-t, ami egy szkript egy terminál emulátor meghívására. Lásd [i3-sensible-terminal(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/i3-sensible-terminal.1)-t a meghívható terminálok sorrendjéért.
 
 Ha ehelyett egy meghatározott terminált szeretnél indítani, módosítsd a következő sort az `~/.config/i3/config`-ben:
 

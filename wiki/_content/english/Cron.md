@@ -1,3 +1,8 @@
+Related articles
+
+*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
+*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
 	*cron* is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration.
@@ -378,7 +383,7 @@ alias scron="su -c $(printf "%q " "crontab -e")"
 
 ## run-parts issue
 
-cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: `man run-parts`).
+cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
 
 ## Running X.org server-based applications
 

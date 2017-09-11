@@ -15,7 +15,7 @@ irssi se encuentra disponible en los repositorios de Arch; simplemente ejecute, 
 
 ## Configuración
 
-Puede configurarlo editando cualquiera de estos dos ficheros (vea la *man page*, `man irssi`, para más información):
+Puede configurarlo editando cualquiera de estos dos ficheros (vea la *man page*, [irssi(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/irssi.1), para más información):
 
 *   `/etc/irssi.conf`
     Los cambios que realice en este fichero afectarán a todas las instancias de irssi.

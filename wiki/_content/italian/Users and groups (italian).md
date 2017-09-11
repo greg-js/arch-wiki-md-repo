@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
+*   [polkit](/index.php/Polkit "Polkit")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [Change username](/index.php/Change_username "Change username")
+
 Gli utenti e i gruppi sono usati nei sistemi GNU/Linux per [il controllo degli accessi](https://en.wikipedia.org/wiki/Access_control#Computer_security "wikipedia:Access control") - ciò permette di determinare quali utenti e servizi sono autorizzati ad accedere ai file, alle cartelle oppure alle periferiche presenti sul sistema. Linux offre dei sistemi relativamente semplici di default. Per avere delle opzioni avanzate, consultare [ACL](/index.php/ACL "ACL") e [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
 ## Contents
@@ -91,7 +98,7 @@ Per elencare i file posseduti da un utente o un gruppo con il comando `find`:
 
 L'utente ed il gruppo proprietario dei file possono essere cambiati con il comando `chown` (change owner). I permessi di accesso ai file possono essere cambiati con il comando `chmod` (change mode).
 
-Consultare [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.net/man/1/chmod), e [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) per maggiori informazioni.
+Consultare [chown(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), e [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) per maggiori informazioni.
 
 ## Lista dei file
 
@@ -223,7 +230,7 @@ dove
 
 ## Gestione dei gruppi
 
-Nel file `/etc/group` sono definiti i gruppi presenti sul sistema (`man group` per maggiori informazioni).
+Nel file `/etc/group` sono definiti i gruppi presenti sul sistema ([group(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) per maggiori informazioni).
 
 Per visualizzare l'appartenenza ai gruppi con il comando `groups`:
 

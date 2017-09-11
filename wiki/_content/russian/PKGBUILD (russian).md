@@ -1,3 +1,14 @@
+Ссылки по теме
+
+*   [Arch packaging standards (Русский)](/index.php/Arch_packaging_standards_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch packaging standards (Русский)")
+*   [Arch Build System (Русский)](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")
+*   [Создание пакетов](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2 "Создание пакетов")
+*   [Категория:Разработка пакетов](/index.php/Category:Package_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package development (Русский)")
+*   [pacman/Советы и приёмы](/index.php/Pacman/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Pacman/Советы и приёмы")
+*   [Arch User Repository (Русский)](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)")
+*   [makepkg (Русский)](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
+*   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
+
 В этой статье приведен список переменных, которые мейнтейнеры описывают в файлах PKGBUILD. Для получения информации о функциях, используемых в этих файлах, а также о создании пакетов в целом, смотрите статью [Создание пакетов](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2 "Создание пакетов").
 
 PKGBUILD — это shell-скрипт, содержащий информацию, необходимую для сборки пакетов [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)").
@@ -289,7 +300,7 @@ noextract=("${source[@]%%::*}")
 
 ### sha1sums
 
-Массив 160-битных контрольных сумм SHA-1\. Он является альтернативой `md5sums`, описанного выше. Чтобы включить проверку этих контрольных сумм, необходимо включить опцию `INTEGRITY_CHECK` в `/etc/makepkg.conf`. Смотрите `man makepkg.conf`.
+Массив 160-битных контрольных сумм SHA-1\. Он является альтернативой `md5sums`, описанного выше. Чтобы включить проверку этих контрольных сумм, необходимо включить опцию `INTEGRITY_CHECK` в `/etc/makepkg.conf`. Смотрите [makepkg.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 
 **Примечание:** В алгоритме SHA-1 присутствуют известные слабые места, поэтому предпочтительнее использовать более стойкие аналоги из семейства алгоритмов SHA-2 — например, SHA-256.
 

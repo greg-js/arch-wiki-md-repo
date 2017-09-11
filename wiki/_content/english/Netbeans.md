@@ -14,6 +14,7 @@ From [Wikipedia article](https://en.wikipedia.org/wiki/Netbeans "wikipedia:Netbe
     *   [2.4 Integrate Netbeans with kwallet](#Integrate_Netbeans_with_kwallet)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Maven problems with small tmpfs](#Maven_problems_with_small_tmpfs)
+    *   [3.2 Wrong Directory for JDK/JRE](#Wrong_Directory_for_JDK.2FJRE)
 
 ## Installation
 
@@ -123,3 +124,16 @@ If your system has a small tmpfs partition you will have problems unpacking the 
 netbeans_default_options="*[...]*-J-client -J-Xss2m -J-Xms32m -J-XX:PermSize=32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.java2d.dpiaware=true -J-Dsun.zip.disableMemoryMapping=true -J-Djava.io.tmpdir=/path/to/tmp/dir"
 *[...]*
 ```
+
+### Wrong Directory for JDK/JRE
+
+It might be that after installation, netbeans_jdkhome is set incorrectly:
+
+ `/usr/share/netbeans/etc/netbeans.conf` 
+```
+*[...]*
+netbeans_jdkhome="/tmp/yaourt-tmp-x230a/aur-netbeans-cpp/pkg/netbeans-cpp/usr/share/netbeans/bin/jre" (example)
+*[...]*
+```
+
+Just comment out this line, netbeans will find the proper path on startup. Since netbeans.conf might be overwritten during an update, this procedure might need to be done again after an update, or you put netbeans_jdkhome into the config in your home directory (see above).

@@ -497,7 +497,7 @@ xcompmgr &
 gnome-session --session=xmonad
 ```
 
-Now choose "Xmonad GNOME (Composite)" in the list of sessions during login. Reference `man xcompmgr` for additional "eye candy".
+Now choose "Xmonad GNOME (Composite)" in the list of sessions during login. Reference [xcompmgr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xcompmgr.1) for additional "eye candy".
 
 ### Xfce 4 and xmonad
 

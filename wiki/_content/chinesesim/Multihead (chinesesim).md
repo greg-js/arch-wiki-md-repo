@@ -1,3 +1,14 @@
+Related articles
+
+*   [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+*   [xrandr (简体中文)](/index.php/Xrandr_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xrandr (简体中文)")
+*   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
+*   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
+*   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
+*   [ATI#Dual Head setup](/index.php/ATI#Dual_Head_setup "ATI")
+
+*   [Extreme Multihead](/index.php/Extreme_Multihead "Extreme Multihead")
+
 **翻译状态：** 本文是英文页面 [Multihead](/index.php/Multihead "Multihead") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-22，点击[这里](https://wiki.archlinux.org/index.php?title=Multihead&diff=0&oldid=482215)可以查看翻译后英文页面的改动。
 
 **多头（Multi-head）**、**多屏（multi-screen）**、**多显（multi-display）**或**多监视器（multi-monitor）**是指同一台计算机上连接了多个显示设备的配置场景。本文提供多种多头的配置方式，并给出若干设置实例。
@@ -76,7 +87,7 @@ RandR can be configured for the current session via the [xrandr](/index.php/Xran
 
 **注意:** This section assumes that you have read the [xrandr](/index.php/Xrandr "Xrandr") page for basic info about *xrandr*.
 
-You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See `man xrandr` for details. Some frequently used settings are described below.
+You may arrange your screens either relatively to each other (using the `--right-of`, `--left-of`, `--above`, `--below` options), or by absolute coordinates (using the `--pos` option; note that in this case you usually need to know resolutions of your monitors). See [xrandr(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1) for details. Some frequently used settings are described below.
 
 #### HDMI1 设定于最佳分辨率且 VGA1 位于它左面
 
