@@ -178,7 +178,7 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 
 ## Using file-based encryption
 
-**Note:** Ext4 forbids encrypting the root *(/)* directory and will produce an error on [kernel](/index.php/Kernel "Kernel") 4.13 and later [[5]](https://patchwork.kernel.org/patch/9787619/) [[6]](https://www.phoronix.com/scan.php?page=news_item&px=EXT4-Linux-4.13-Work).
+**Note:** Ext4 forbids encrypting the root (`/`) directory and will produce an error on [kernel](/index.php/Kernel "Kernel") 4.13 and later [[5]](https://patchwork.kernel.org/patch/9787619/) [[6]](https://www.phoronix.com/scan.php?page=news_item&px=EXT4-Linux-4.13-Work).
 
 ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
 
@@ -199,6 +199,11 @@ Block size:               4096
 
 If these values are not the same, then your filesystem will not support encryption, so **do not proceed further**.
 
+**Warning:**
+
+*   Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
+*   If the `/boot/` directory is on the ext4 file system, check that the boot loader supports the ext4 encryption.
+
 Next, enable the encryption feature flag on your filesystem:
 
 ```
@@ -206,15 +211,7 @@ Next, enable the encryption feature flag on your filesystem:
 
 ```
 
-**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
-
-**Warning:** If your /boot/ directory is on an ext4 file system, check that your boot loader supports the ext4 encryption.
-
-**Tip:** If you need revert this operation:
-```
-# fsck -fn; debugfs -w -R "feature -encrypt" /dev/device; fsck -fn;
-
-```
+**Tip:** The operation can be reverted with `debugfs -w -R "feature -encrypt" /dev/*device*`. Run [fsck](/index.php/Fsck "Fsck") before and after to ensure the integrity of the file system.
 
 Next, make a directory to encrypt:
 

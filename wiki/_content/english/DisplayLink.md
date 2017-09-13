@@ -21,6 +21,9 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw.2FUnresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
     *   [3.5 Impossible to activate displaylink's screen](#Impossible_to_activate_displaylink.27s_screen)
     *   [3.6 Suspend problem](#Suspend_problem)
+    *   [3.7 DisplayLink driver does not work with Intel GPUs after recent X upgrades](#DisplayLink_driver_does_not_work_with_Intel_GPUs_after_recent_X_upgrades)
+        *   [3.7.1 Workaround 1: Use older intel driver as a fallback](#Workaround_1:_Use_older_intel_driver_as_a_fallback)
+        *   [3.7.2 Workaround 2: Temporarily disable PageFlip for modesetting](#Workaround_2:_Temporarily_disable_PageFlip_for_modesetting)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -159,34 +162,11 @@ Avoid placing these commands in `~/.xprofile` as this breaks the display configu
 
 #### Switching between displaylink and nvidia/nouveau driver
 
-Currently (displaylink version 1.3.54-1) it is not possible to use displaylink device and nvidia/nouveau driver simultaniously on optimus based laptops. To be able to use displaylink device, you can create file with the following contents:
-
- `/usr/share/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-  Identifier "Intel Graphics"
-  Driver "Intel"
-  Option "AccelMethod" "sna"
-  Option "TearFree" "true"
-  Option "TripleBuffer" "true"
-  Option "MigrationHeuristic" "greedy"
-  Option "Tiling" "true"
-  Option "Pageflip" "true"
-  Option "ExaNoComposite" "false"
-  Option "Tiling" "true"
-  Option "Pageflip" "true"
-EndSection
-```
-
-Then reboot.
-
-After that, you should be able to use displaylink device. This method worked with kernel 4.12.8-1-ARCH and installed [evdi-git](https://aur.archlinux.org/packages/evdi-git/) package.
-
-**Note:** When you type this to 20-intel.conf, then bumblebee service is running, but it cannot work. Also, laptop's fans are becoming very noisy and laptop's temperature becomes very high.
+Currently (displaylink version 1.3.54-1) it is not possible to use displaylink device and nvidia/nouveau driver simultaniously on optimus based laptops. Currently to be able to use displaylink device on intel GPU, you should create config file (see troubleshooting section below). However, with that config file it is not possible to use primusrun. Bumblebee service is running, but it cannot work. Also, laptop's fans are becoming very noisy and laptop's temperature becomes very high.
 
 When you want to switch back to activate nvidia driver, comment everything in that file and reboot.
 
-To check which driver is used for your discrete video card run `lspci -nnk -s xx:xx.x` (replace xx:xx.x with your nvidia gpu pci id).
+To check which driver is used for your discrete video card, run `lspci -nnk -s xx:xx.x` (replace xx:xx.x with your nvidia gpu pci id).
 
 ## Troubleshooting
 
@@ -263,6 +243,42 @@ options nouveau modeset=0
 ### Suspend problem
 
 Displaylink is not working after suspend. Reboot your system and then you are able to use displaylink again.
+
+### DisplayLink driver does not work with Intel GPUs after recent X upgrades
+
+As [this support](http://support.displaylink.com/knowledgebase/articles/1181623) page says, upgrading the X Window Server to a version newer than 1.18.3 will make the system not compatible with DisplayLink by default. This applies to systems using an integrated Intel GPU, or a combination of integrated Intel GPU and a discrete GPU. Until fixes in X Windows System will be released, there are two workarounds:
+
+#### Workaround 1: Use older intel driver as a fallback
+
+Use the "intel" driver for the integrated GPU instead of "modesetting", which is now the default.
+
+Create a file with the following content:
+
+ `/usr/share/X11/xorg.conf.d/20-displaylink.conf` 
+```
+Section "Device" 
+  Identifier "Intel Graphics"
+  Driver "intel"
+EndSection
+
+```
+
+A reboot is required for the setting to be effective.
+
+You may need the [evdi-git](https://aur.archlinux.org/packages/evdi-git/) package.
+
+#### Workaround 2: Temporarily disable PageFlip for modesetting
+
+For users that prefer to keep using "modesetting" driver, disabling page flipping should also help. Create a file with the following content:
+
+ `/usr/share/X11/xorg.conf.d/20-displaylink.conf` 
+```
+Section "Device"
+  Driver "modesetting"
+  Option "PageFlip" "false"
+EndSection 
+
+```
 
 ## See Also
 

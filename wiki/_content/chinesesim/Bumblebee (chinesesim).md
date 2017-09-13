@@ -1,3 +1,10 @@
+相关文章
+
+*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [Nouveau (简体中文)](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)")
+*   [NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")
+*   [Intel图形卡](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Bumblebee](/index.php/Bumblebee "Bumblebee") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-25，点击[这里](https://wiki.archlinux.org/index.php?title=Bumblebee&diff=0&oldid=359259)可以查看翻译后英文页面的改动。
 
 引自 Bumblebee [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
@@ -55,7 +62,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 ## 安装
 
-安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BISO有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。
+安装 Bumblebee 之前，检查你的 BIOS 并尽可能激活 Optimus (老式电脑称之为"可切换显卡"，BIOS有可能没有提供此项设置)，并且为次要显卡安装 [Intel 驱动](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel graphics (简体中文)")。
 
 安装:
 

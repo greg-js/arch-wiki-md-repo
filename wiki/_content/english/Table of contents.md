@@ -27,7 +27,7 @@
 | <small>2.10.5.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15)</small> |
 | <small>2.10.6.</small> [News aggregators](/index.php/Category:News_aggregators "Category:News aggregators") <small>(3)</small> |
 | <small>2.10.7.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
-| <small>2.10.8.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(26) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>2.10.8.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>2.10.9.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(47)</small> |
@@ -112,7 +112,7 @@
 | <small>5.15.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>5.15.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
 | <small>5.15.4.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(29) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
-| <small>5.15.5.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(26) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
+| <small>5.15.5.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.15.6.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(4)</small> |
 | <small>5.15.7.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(29) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>5.15.8.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(7)</small> |

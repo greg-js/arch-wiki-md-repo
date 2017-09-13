@@ -38,7 +38,6 @@ Several packages come preinstalled with Atom, notable packages that are not, inc
 *   [language-archlinux](https://atom.io/packages/language-archlinux) which provides syntax-highlighting for PKGBUILDs (if installed along with the [language-unix-shell](https://atom.io/packages/language-unix-shell) package) along with support for running several tests and other actions on PKGBUILDs without a terminal (including [makepkg](/index.php/Makepkg "Makepkg"), [namcap](/index.php/Namcap "Namcap"), *updpkgsums*, etc.).
 *   [markdown-writer](https://atom.io/packages/markdown-writer) which turns Atom into an efficient Markdown writer.
 *   [script](https://atom.io/packages/script) which enables Atom the ability to run scripts, based on file names.
-*   [terminal-fusion](https://atom.io/packages/terminal-fusion) which adds an embedded terminal window to Atom.
 
 ## Troubleshooting
 

@@ -406,47 +406,47 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 #### Área de trabalho
 
-Various Desktop settings can be applied.
+Várias configurações de área de trabalho podem ser aplicadas.
 
 ##### Ícones na área de trabalho
 
-See [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
+Veja [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
 
 ##### Tela de bloqueio e plano de fundo
 
-When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
+Ao definir o plano de fundo da área de trabalho ou da tela de bloqueio, é importante notar que a aba Imagens são exibirá imagens localizadas na pasta `/home/*nome-de-usuário*/Imagens`. Se você deseja usar uma imagem não localizada nesta pasta, use os comandos indicados abaixo.
 
-For the desktop background:
-
-```
-$ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/picture.jpg'
+Para o plano de fundo da área de trabalho:
 
 ```
-
-For the lock screen background
+$ gsettings set org.gnome.desktop.background picture-uri 'file:///caminho/para/minha/imagem.jpg'
 
 ```
-$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
+
+Para o plano de fundo da tela de bloqueio:
+
+```
+$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///caminho/para/minha/imagem.jpg'
 
 ```
 
 #### Extensões
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/) and the appropriate browser extension.
+**Nota:** O plugin de navegador do GNOME Shell que permite que usuários instalem extensões do [extensions.gnome.org](https://extensions.gnome.org) funciona sem mais configurações para navegadores como o [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). Para os navegadores [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera e Vivaldi, é necessário instralar [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/) e a extensão de navegador apropriada.
 
-GNOME Shell can be customized with extensions per user or system-wide.
+GNOME Shell pode ser personalizado com extensões por usuário ou para todo o sistema.
 
-The catalogue of extensions is available at [extensions.gnome.org](https://extensions.gnome.org). By a user they can be installed and activated in the browser by setting the switch in the top left of the screen to **ON** and clicking **Install** on the resulting dialog (if the extension in question is not installed). After installation it is shown in the [extensions.gnome.org/local/](https://extensions.gnome.org/local/) tab, which has to be visited as well to check for available updates. Installed extensions can also be enabled or disabled using [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+O catálogo de extensões está disponível em [extensions.gnome.org](https://extensions.gnome.org). Por um usuário, elas podem ser instaladas e ativadas no navegador definindo o botão no canto superior direito da tela para **ON** e clicando em **Install** no diálogo resultante (se a extensão em questão não estiver instalada). Após a instalação, é mostrar na aba [extensions.gnome.org/local/](https://extensions.gnome.org/local/), qual tem que ser visitado, assim como verificar por atualizações disponíveis. Extensões instaladas também podem ser habilitadas ou desabilitadas usando [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 
-More information about GNOME shell extensions is available on the [GNOME Shell Extensions about page](https://extensions.gnome.org/about/).
+Mais informações sobre extensões do GNOME shell estão disponíveis na [página de manual do GNOME Shell Extensions](https://extensions.gnome.org/about/).
 
-[Installing](/index.php/Installing "Installing") extensions via a package makes them available for all users of the system and automates the update process.
+[Instalar](/index.php/Instalar "Instalar") extensões por um pacote torna-os disponível para todos os usuários do sistema e automatiza o processo de atualização.
 
-The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session).
+O pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) fornece um conjunto de extensões mantidas como parte do projeto GNOME (muitas das extensões incluídas são usadas pela sessão do GNOME Clássico).
 
-Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
+Usuários que desejem uma barra de tarefas, mas não desejam usar a sessão do GNOME Clássico, podem querer habilitar a extensão *Window list* (fornecida pelo pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions)).
 
-Listing currently enabled extensions can be achieved with:
+A listagem de extensões atualmente habilitadas podem ser obtida com:
 
 ```
 $ gsettings get org.gnome.shell enabled-extensions
@@ -455,15 +455,15 @@ $ gsettings get org.gnome.shell enabled-extensions
 
 #### Métodos de entrada
 
-GNOME has integrated support for input methods through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.
+O GNOME possui suporte integrado para métodos de entrada por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
 
 #### Fontes
 
-**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
+**Dica:** Se você definiu o *Fator de escala* para um valor acima de 1.00, o menu de Acessibilidade será habilitado automaticamente.
 
-Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweak Tool for the relevant options.
+Fontes podem ser definidas para *Títulos de janelas*, *Interface* (aplicativos), *Documentos* e *Monoespaçada*. Veja a aba Fontes na Ferramenta de Ajustes para opções relevantes.
 
-For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+Para *hinting*, RGBA provavelmente é melhor por atender a maioria dos tipos de monitores. Se as fontes aparecerem bloqueadas demais, reduza *hinting* para *Slight* ou *None*.
 
 #### Inicialização de aplicativos
 

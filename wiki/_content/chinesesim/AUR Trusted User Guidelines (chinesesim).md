@@ -2,7 +2,7 @@
 
 *   [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
 
-**翻译状态：** 本文是英文页面 [AUR_Trusted_User_Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-08，点击[这里](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=475842)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [AUR_Trusted_User_Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-13，点击[这里](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=490048)可以查看翻译后英文页面的改动。
 
 **Trusted User (TU)** 是负责使 AUR 正常工作的社区成员。他们维护热门的包（[并在必要时与上游项目交涉或者向上游项目发送补丁](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)），并且参与管理事务的表决。TU 由现任的 TU 从活跃的社区成员中民主选举产生。 TU 是唯一具有决定 AUR 发展方向的权利的社区成员群体。
 
@@ -20,7 +20,8 @@ TU们依靠[TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)来�
     *   [3.5 将软件包从 [community] 移至 unsupported](#.E5.B0.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8E_.5Bcommunity.5D_.E7.A7.BB.E8.87.B3_unsupported)
     *   [3.6 将软件包从 [community-testing] 移至 [community]](#.E5.B0.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8E_.5Bcommunity-testing.5D_.E7.A7.BB.E8.87.B3_.5Bcommunity.5D)
     *   [3.7 从 unsupported 删除软件包](#.E4.BB.8E_unsupported_.E5.88.A0.E9.99.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.8 另见](#.E5.8F.A6.E8.A7.81)
+*   [4 TU 辞职需要完成的事项](#TU_.E8.BE.9E.E8.81.8C.E9.9C.80.E8.A6.81.E5.AE.8C.E6.88.90.E7.9A.84.E4.BA.8B.E9.A1.B9)
+*   [5 另见](#.E5.8F.A6.E8.A7.81)
 
 ## 新 TU 的 TODO 列表
 
@@ -156,6 +157,15 @@ ssh nymeria.archlinux.org /srv/repos/svn-community/dbscripts/db-move community-t
 
 例如，一个虚设的软件包可以见 [https://aur.archlinux.org/packages.php?ID=23600](https://aur.archlinux.org/packages.php?ID=23600)
 
-### 另见
+## TU 辞职需要完成的事项
+
+当一个 TU 辞去自己的职务，而且不再是一个开发者时，需要执行如下操作：
+
+1.  此 TU 的所有软件包需要被重新签名(重新打包). TU 编译的软件包可以通过下面 URL 从 Archweb 查询 [https://www.archlinux.org/packages/?sort=&q=&packager=$packager&flagged=](https://www.archlinux.org/packages/?sort=&q=&packager=$packager&flagged=) where packager 替换成 TU 在 Archweb 的用户名.
+2.  Archweb 需要禁用此 TU 帐号，并添加到 'Retired Trusted users' 组. 从 'Trusted Users' 移除此 TU，软件仓库权限收回。
+3.  从服务器上禁用此帐号的 shell 访问权限(尤其是 repos.archlinux.org, pkgbuild.com)
+4.  移除此用户的 GPG key，仓库中提交新的 archlinux-keyring 软件包。
+
+## 另见
 
 *   [DeveloperWiki#Packaging Guidelines](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")

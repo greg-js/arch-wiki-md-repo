@@ -1,3 +1,8 @@
+Related articles
+
+*   [List of applications](/index.php/List_of_applications "List of applications")
+*   [Gaming#Emulators](/index.php/Gaming#Emulators "Gaming")
+
 This page strives to list all games which have a package available in the [official repositories](/index.php/Official_repositories "Official repositories") or the [AUR](/index.php/AUR "AUR"). There are many more Linux games available, which are not packaged. See [Gaming#Getting games](/index.php/Gaming#Getting_games "Gaming") for ways to obtain them.
 
 For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For an up to date selection of games available in the AUR, try checking the [AUR 'game' keyword](https://aur.archlinux.org/packages/?SeB=k&K=game).
@@ -1025,7 +1030,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **KReversi** — A *reversi* implementation. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kreversi/](https://www.kde.org/applications/games/kreversi/) || [kdegames-kreversi](https://www.archlinux.org/packages/?name=kdegames-kreversi)
+	[https://www.kde.org/applications/games/kreversi/](https://www.kde.org/applications/games/kreversi/) || [kreversi](https://www.archlinux.org/packages/?name=kreversi)
 
 *   **KsirK** — A *risk*-styled game in which players try to conquer the world by deciding which area to be invaded next. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 

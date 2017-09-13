@@ -37,6 +37,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
         *   [2.4.10 You are already signed in on this computer](#You_are_already_signed_in_on_this_computer)
         *   [2.4.11 Empty white screen window](#Empty_white_screen_window)
         *   [2.4.12 Skype doesn't output any sound after upgrading PulseAudio](#Skype_doesn.27t_output_any_sound_after_upgrading_PulseAudio)
+        *   [2.4.13 Skype outputs only UI sounds, but no voice/microphone](#Skype_outputs_only_UI_sounds.2C_but_no_voice.2Fmicrophone)
 *   [3 Skype plugin for Pidgin](#Skype_plugin_for_Pidgin)
 
 ## Skype for Linux
@@ -824,6 +825,10 @@ $ echo *username* *password* | skype --pipelogin
 #### Skype doesn't output any sound after upgrading PulseAudio
 
 Currently, Skype doesn't work PulseAudio 9.0 `enable-memfd` option, you have to make sure it's disabled in `/etc/pulse/daemon.conf`.
+
+#### Skype outputs only UI sounds, but no voice/microphone
+
+This might be caused by the wrong sound card being selected for [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/). Try *Tools > Audio & Video settings* and choose 'Default device'. (You can make a test call there as well to verify the settings). Also, make sure you have pulseaudio installed.
 
 ## Skype plugin for Pidgin
 

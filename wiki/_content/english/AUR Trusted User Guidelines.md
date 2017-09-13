@@ -1,3 +1,7 @@
+Related articles
+
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+
 **Trusted Users (TU)** are members of the community charged with keeping the AUR in working order. They maintain popular packages ([communicating with and sending patches upstream as needed](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)), and vote in administrative matters. A TU is elected from active community members by current TUs in a democratic process. TUs are the only members who have a final say in the direction of the AUR.
 
 The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)
@@ -14,7 +18,8 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
     *   [3.5 Moving packages from [community] to unsupported](#Moving_packages_from_.5Bcommunity.5D_to_unsupported)
     *   [3.6 Moving packages from [community-testing] to [community]](#Moving_packages_from_.5Bcommunity-testing.5D_to_.5Bcommunity.5D)
     *   [3.7 Deleting packages from unsupported](#Deleting_packages_from_unsupported)
-    *   [3.8 See also](#See_also)
+*   [4 TODO list retiring a Trusted User](#TODO_list_retiring_a_Trusted_User)
+*   [5 See also](#See_also)
 
 ## TODO list for new Trusted Users
 
@@ -146,6 +151,15 @@ ssh nymeria.archlinux.org /srv/repos/svn-community/dbscripts/db-move community-t
 
 There is no point in removing dummy packages, because they will be re-created in an attempt to track dependencies. If someone uploads a real package then all dependents will point to the correct place.
 
-### See also
+## TODO list retiring a Trusted User
+
+When a TU resigns the following list has be followed, these steps do not apply when a TU resigns but is still a Developer.
+
+1.  All packages packaged by the retiree should be resigned (so rebuild). Packages packaged by the retiree can be found in Archweb [https://www.archlinux.org/packages/?sort=&q=&packager=$packager&flagged=](https://www.archlinux.org/packages/?sort=&q=&packager=$packager&flagged=) where packager is the username on Archweb.
+2.  The account of the retiree should be disabled on Archweb and added to the 'Retired Trusted users' group. The retiree should be removed from the 'Trusted Users' and the repository permissions should be reduced to none.
+3.  The shell access to our servers should be disabled. (notably repos.archlinux.org, pkgbuild.com)
+4.  The GPG key should be removed and a new archlinux-keyring package should be pushed to the repos.
+
+## See also
 
 *   [DeveloperWiki#Packaging Guidelines](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")

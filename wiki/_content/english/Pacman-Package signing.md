@@ -167,13 +167,6 @@ keyserver hkp://pgp.mit.edu:11371
 
 ```
 
-If this does not help either, change the keyserver to the kjsl keyserver, which provides this service through port 80 (the HTTP port), which should always remain unblocked.
-
-```
-keyserver hkp://keyserver.kjsl.com:80
-
-```
-
 If even port 80 doesn't work (for example when company uses some kind of http-only "transparent" proxy instead of routing, following could work:
 
 ```

@@ -744,10 +744,6 @@ As a workaround, add `pcie_port_pm=off` to your [Kernel parameters](/index.php/K
 
 Alternatively, if you are only interested in power saving (and perhaps use of external monitors), remove bbswitch and rely on [Nouveau](/index.php/Nouveau "Nouveau") runtime power-management (which supports the new method).
 
-**powertop --auto-tune issue**
-
-For the same reason as above if you run `powertop --auto-tune` this will probably set the PM to `auto`, something similar to: ``echo 'auto' > /sys/bus/pci/devices/0000:01:00.0/power/control';` ... and you'l need to reboot in order to use the card.
-
 ### Lockup issue (lspci hangs)
 
 See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")] for an issue that affects new laptops with a GTX 965M (or alike).

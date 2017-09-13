@@ -1,3 +1,8 @@
+Related articles
+
+*   [VMware](/index.php/VMware "VMware")
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
+
 [Parallels](http://www.parallels.com/products/desktop) Desktop is a hypervisor for macOS which allows users to install a variety of operating systems as "virtual machines" (guests) on the host system, reducing the need for managing multiple physical machines. A more complete description on virtualization can be found at [Wikipedia](https://en.wikipedia.org/wiki/Hardware_virtualization "wikipedia:Hardware virtualization").
 
 ## Contents
@@ -18,6 +23,8 @@
 ## Installation of Arch as a guest
 
 Parallels Desktop supports Linux guests out of the box, but only offers support for a few Linux distributions - excluding Arch Linux. This means the installation of Parallels tools have not been tested by the vendor, and requires some manual intervention to work under Arch. If you do not wish to use Parallels tools, installation is as simple as choosing "other linux" when creating a new virtual machine and proceeding as you would on any real machine.
+
+In addition to the instructions below, there is an installation guide for Arch Linux in Parallels Knowledgebase [[1]](http://kb.parallels.com/en/124124).
 
 ## Parallels Tools
 

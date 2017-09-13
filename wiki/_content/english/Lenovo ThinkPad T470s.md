@@ -6,6 +6,7 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | Smartcard Reader | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | Fingerprint Reader | No |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T470s laptop.

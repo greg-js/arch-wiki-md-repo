@@ -172,17 +172,7 @@ make DESTDIR="$pkgdir/" install
 
 **Note:** Algumas vezes é caso do `DESTDIR` não ser usado no `Makefile`; em vez disso, você pode precisar usar `prefix`. Se o pacote é compilado com *autoconf* / *automake*, use `DESTDIR`; isso é o que está [documentado](https://www.gnu.org/software/automake/manual/automake.html#Install) nos manuais. Se `DESTDIR` não funcionar, tente compilar com `make prefix="$pkgdir/usr/" install`. Se isso não funcionar, você terá que olhar mais profundamente nos comandos de instalação que são executados por "`make <...> install`".
 
-Alguns casos estranhos, softwares esperam ser executados de um único diretório. Em tais casos, é sábio copiá-los para `$pkgdir/opt`.
-
-Com uma certa frequência o processo de instalação criará um subdiretório dentro do diretório `pkg`. Se ele não criar, porém, *makepkg* vai gerar vários erros e você precisará criar manualmente os subdiretórios adicionando os comandos `mkdir -p` apropriados na função `build()` antes do procedimento de instalação ser executado.
-
-Em pacotes antigos, não havia uma função `package()`. Então, arquivos eram colocados no diretório *pkg* no final da função `build()`. Se `package()` estiver presente, `build()` executa via *fakeroot*. Em novos pacotes, `package()` é exigido e executa via *fakeroot*, e `build()` executa sem quaisquer privilégios em especial.
-
-`makepkg --repackage` executa apenas a função `package()`, então ele cria um arquivo `*.pkg.*` sem compilar o pacote. Isso pode economizar tempo, por exemplo, se você tiver alterado apenas a variável `depends` do pacote.
-
-**Note:** A função `package()` é a única função exigida em um PKGBUILD. Se você só precisa copiar arquivos para seus respectivos diretórios para instalar um programa, não coloque isso na função `build()`, e sim na função `package()`.
-
-**Note:** Criar links simbólicos é um processo ligeiramente estranho na função `package()`. Usando a abordagem ingênua `ln -s "${pkgdir}/de/foo" "${pkgdir}/para/goo"` vai resultar em um link simbólico para o diretório de compilação. A forma apropriada de criar um link é criá-lo apontando para uma fonte inicialmente quebrada, `ln -s "/de/foo" "${pkgdir}/para/goo"`. Uma vez o pacote esteja instalado, o link vai apontar para o lugar correto.
+`makepkg --repackage` executa apenas a função `package()`, então ele cria um pacote sem compilar. Isso pode economizar tempo, por exemplo, se você tiver alterado apenas a variável `depends` do pacote.
 
 ## Teste do PKGBUILD e pacote
 

@@ -2,8 +2,9 @@
 
 *   [1 Known issues](#Known_issues)
     *   [1.1 Open issues](#Open_issues)
-    *   [1.2 Fixed](#Fixed)
-    *   [1.3 Laptop Settings](#Laptop_Settings)
+    *   [1.2 Has Workaround](#Has_Workaround)
+    *   [1.3 Fixed](#Fixed)
+    *   [1.4 Laptop Settings](#Laptop_Settings)
 
 ## Known issues
 
@@ -14,6 +15,10 @@ The following are known problems and workarounds for the Lenovo Thinkpad T430s, 
 *   The usual issue with laptop hard drives and disk head parking: [see here](/index.php/Hdparm#Parking_your_hard_drive "Hdparm")
 *   At least on one T430s, using QCad with [SNA](/index.php/Intel_graphics "Intel graphics") would reliably crash Xorg. A workaround is using UXA instead of SNA. ([FS#31617](https://bugs.archlinux.org/task/31617))
 *   The accelerometer for [HDAPS](/index.php/HDAPS "HDAPS") isn't supported.
+
+### Has Workaround
+
+*   The system sometimes does not properly resume after being put into a suspended state. To fix configure [GRUB](/index.php/GRUB "GRUB")'s use of ACPI sleep functionality by adding "acpi_sleep=nonvs" in GRUB_CMDLINE_LINUX in /etc/default/grub
 
 ### Fixed
 

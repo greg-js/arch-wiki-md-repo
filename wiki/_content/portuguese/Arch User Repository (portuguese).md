@@ -1,3 +1,16 @@
+Artigos relacionados
+
+*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [.SRCINFO (Português)](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
+*   [AurJson](/index.php/AurJson "AurJson")
+*   [AUR Trusted User Guidelines (Português)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)")
+*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
+*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   [AUR helpers (Português)](/index.php/AUR_helpers_(Portugu%C3%AAs) "AUR helpers (Português)")
+
 O Arch User Repository (AUR) ou, em português, Repositório de Usuário do Arch é um repositório dirigido pela comunidade para usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem a você compilar um pacote de um fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e depois instalar via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado para organizar e compartilhar novos pacotes da comunidade e ajudar a acelerar a inclusão dos pacotes populares no repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Este documento explica como usuários podem acessar e utilizar o AUR.
 
 Um bom número de novos pacotes que entram para os repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir com seus próprios pacotes (PKGBUILD e arquivos relacionados). A comunidade do AUR tem a capacidade de votar a favor ou contra os pacotes no AUR. Se um pacote se torna popular o bastante -- desde que tenha uma licença compatível e uma boa técnica de empacotamento -- ele pode ser colocado no repositório *community* (diretamente acessível pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
@@ -239,9 +252,9 @@ O novo pacote aparecerá no AUR após você executar *push* no primeiro commit. 
 
 #### Enviando pacotes
 
-**Tip:** Para evitar arquivos não rastreados de commits e manter um diretório de trabalho mais limpo possível, exclua todos os arquivos com `.gitignore` e force a adição de arquivos. Veja o [uso de gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
-
 Os procedimentos para envio de pacotes para o AUR é o mesmo de novos pacotes e atualizações de pacotes. Você precisa pelo menos de um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e um [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)") no diretório de nível superior para poder fazer o *push* do seu pacote para o AUR.
+
+**Nota:** Você precisa regerar o `.SRCINFO` toda vez que você alterar os metadados do `PKGBUILD`, tal como atualizações de [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD"). Do contrário, o AUR não vai mostrar os números de versão atualizados.
 
 Para enviar, adicione o `PKGBUILD`, `.SRCINFO` e quaisquer arquivos auxiliares (como arquivos `.install` ou arquivos fontes locais como `.patch`) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit` e, finalmente, publique as alterações para o AUR com `git push`.
 
@@ -255,7 +268,10 @@ $ git push
 
 ```
 
-**Tip:** Se você inicialmente se esqueceu de fazer commit do `.SRCINFO` e adicionou-o em um commit posterior, o AUR ainda rejeitará seus *pushes* porque o `.SRCINFO` deve existir para *todo* commit. Para resolver esse problema, você pode usar [git rebase](https://git-scm.com/docs/git-rebase) com a opção `--root` ou [git filter-branch](https://git-scm.com/docs/git-filter-branch) com a opção `--tree-filter`.
+**Tip:**
+
+*   Se você inicialmente se esqueceu de fazer commit do `.SRCINFO` e adicionou-o em um commit posterior, o AUR ainda rejeitará seus *pushes* porque o `.SRCINFO` deve existir para *todo* commit. Para resolver esse problema, você pode usar [git rebase](https://git-scm.com/docs/git-rebase) com a opção `--root` ou [git filter-branch](https://git-scm.com/docs/git-filter-branch) com a opção `--tree-filter`.
+*   Para evitar arquivos não rastreados de commits e manter o diretório de trabalho o mais limpo possível, exclua todos os arquivos com `.gitignore` e force a adição de arquivos. Veja o [uso de gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
 
 ### Mantendo pacotes
 
@@ -278,8 +294,6 @@ $ git push
 Requisições de remoção podem ser negadas, caso em que você provavelmente será aconselhado a abandonar o pacote para a referência de um possível futuro mantenedor.
 
 ## Repositórios Git para pacotes AUR3
-
-**Note:** aur-mirror não está mais disponível
 
 O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4 em Agosto de 2015.
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Display manager](/index.php/Display_manager "Display manager")
+
 **Warning:** The SliM project has been abandoned (last release was 2013, the [project homepage](http://slim.berlios.de/) is down), and is not fully compatible with [systemd](/index.php/Systemd "Systemd"), including *logind* sessions. Consider using a different [Display manager](/index.php/Display_manager "Display manager") or [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
 [SLiM](http://sourceforge.net/projects/slim.berlios/) is an acronym for **S**imple **L**og**i**n **M**anager. Lightweight and easily configurable, SLiM requires minimal dependencies, and none from the [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") desktop environments. It therefore contributes towards a lightweight system for users that also like to use lightweight desktops such as [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), and [Fluxbox](/index.php/Fluxbox "Fluxbox").
@@ -258,7 +262,7 @@ Or if you want to play a song when slim loads (and you have the beep program ins
 
 **Warning:** If auto login is enabled, the GNOME keyring will not be unlocked automatically on login. This will cause dependent applications, such as Chrome/Chromium and NetworkManager, to misbehave (see [https://bbs.archlinux.org/viewtopic.php?id=167579](https://bbs.archlinux.org/viewtopic.php?id=167579)).
 
-See [GNOME Keyring#Use without GNOME, and without a display manager](/index.php/GNOME_Keyring#Use_without_GNOME.2C_and_without_a_display_manager "GNOME Keyring") to use GNOME Keyring in a custom session.
+See [GNOME Keyring#Using the keyring outside GNOME](/index.php/GNOME_Keyring#Using_the_keyring_outside_GNOME "GNOME Keyring") to use GNOME Keyring in a custom session.
 
 ### Setting DPI with SLiM
 

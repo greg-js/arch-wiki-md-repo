@@ -8,12 +8,12 @@ RAR (and UNRAR) is the Linux port of the commandline-only version of [WinRAR](ht
     *   [2.2 UNRAR](#UNRAR)
 *   [3 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
 *   [4 RAR 压缩例子](#RAR_.E5.8E.8B.E7.BC.A9.E4.BE.8B.E5.AD.90)
-    *   [4.1 General syntax](#General_syntax)
+    *   [4.1 基本语法](#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95)
     *   [4.2 Recursively compress an entire directory structure](#Recursively_compress_an_entire_directory_structure)
     *   [4.3 Mixed-mode archives](#Mixed-mode_archives)
     *   [4.4 Recursively compress many directory structures using a list](#Recursively_compress_many_directory_structures_using_a_list)
 *   [5 UNRAR 例子](#UNRAR_.E4.BE.8B.E5.AD.90)
-    *   [5.1 General syntax](#General_syntax_2)
+    *   [5.1 基本语法](#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95_2)
 
 ## 主要特点
 
@@ -26,42 +26,42 @@ RAR (and UNRAR) is the Linux port of the commandline-only version of [WinRAR](ht
 
 ### RAR
 
-Obtain [rar](https://aur.archlinux.org/packages/rar/) (full package minus UNRAR) available in the [AUR](/index.php/AUR "AUR").
+可以通过 [AUR](/index.php/AUR "AUR") 来安装 [rar](https://aur.archlinux.org/packages/rar/)（除 UNRAR 外的所有功能）。
 
 ### UNRAR
 
-The [unrar](https://www.archlinux.org/packages/?name=unrar) is provided separately and resides in the [official repositories](/index.php/Official_repositories "Official repositories"). Install it via [pacman](/index.php/Pacman "Pacman") as usual.
+[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")单独提供了 [unrar](https://www.archlinux.org/packages/?name=unrar) ，可以像平常一样通过 [pacman](/index.php/Pacman "Pacman") 来安装。
 
 ## 配置文件
 
-RAR for Linux reads configuration information from the file `~/.rarrc` (i.e. in the user's home directory) or if you wish to define a global set of options for all users in the /etc directory.
+Linux 版的 RAR 从 `~/.rarrc` （即用户的 home 目录下）读取配置信息，又或者可以在 /etc 目录下，定义一个全局配置文件，供所有用户使用。
 
-The syntax of the file is simply the following string:
+这个文件的语法如下：
 
 ```
 switches=any RAR switches, separated by spaces
 
 ```
 
-For example:
+举个例子：
 
 ```
 switches=-m5 -rr5 -ol -msjpg;mp3;avi;zip;rar;tar;gz;jpg
 
 ```
 
-For a complete listing and explanation of rar's switches, see the [user's manual](http://www.rarreg.com/users_manual.php)
+要想获得关于 RAR 选项的完整清单及详细解释，可以访问 [用户手册](http://www.rarreg.com/users_manual.php) 。
 
 ## RAR 压缩例子
 
-### General syntax
+### 基本语法
 
 ```
 $ rar *command* -*switch 1* -*switch N* *archive* *files.rar* *@listfiles...*
 
 ```
 
-For a complete listing of commands and switches, see the last section of this article or simply run `rar`.
+要想获得完整的命令及选项，请参阅本文的最后一部分，或者运行 `rar` 。
 
 ### Recursively compress an entire directory structure
 
@@ -119,28 +119,28 @@ $ rar a -r -rr10 -s /media/data/homes-backup.rar @/path/to/home-list
 
 ## UNRAR 例子
 
-### General syntax
+### 基本语法
 
 ```
 $ unrar *command* -*switch 1* -*switch N* *archive* *files...* *@listfiles...* *path_to_extract\*
 
 ```
 
-For a complete listing of commands and switches simply run:
+想了解完整的命令及选项，只需运行：
 
 ```
 $ unrar --help
 
 ```
 
-To extract into a new folder:
+解压到一个新的目录：
 
 ```
 $ unrar x /media/data/homes-backup.rar homes-backup/
 
 ```
 
-For multi-part rar files, run:
+运行以下命令，来解压分卷压缩文件：
 
 ```
 $ unrar x homes-backup.part1.rar homes-backup/

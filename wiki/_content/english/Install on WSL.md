@@ -56,7 +56,9 @@ In the Windows explorer, navigate to `C:\Users\*username*\AppData\Local\lxss\roo
 
 Now move (do not copy) the same folders from `C:\Users\*username*\AppData\Local\lxss\root\root.x86_64` to `C:\Users\*username*\AppData\Local\lxss\rootfs`
 
-Using a Linux computer build [fakeroot-tcp](https://aur.archlinux.org/packages/fakeroot-tcp/) and [glibc-wsl](https://aur.archlinux.org/packages/glibc-wsl/), then copy the packages to your Windows PC. *glibc-wsl* has a workaround for [this bug](https://github.com/Microsoft/BashOnWindows/issues/1878), and *fakeroot-tcp* is necessary until System V IPC is fully implemented [(see here)](https://github.com/Microsoft/BashOnWindows/issues/1016). This step will be unnecessary when those bugs are fixed.
+Using a Linux computer build [fakeroot-tcp](https://aur.archlinux.org/packages/fakeroot-tcp/) and [glibc-wsl](https://aur.archlinux.org/packages/glibc-wsl/). Note that `--nocheck` can be used with `makepkg` to skip a very time-consuming test suite when building [glibc-wsl](https://aur.archlinux.org/packages/glibc-wsl/).
+
+Then copy the packages to your Windows PC. *glibc-wsl* has a workaround for [this bug](https://github.com/Microsoft/BashOnWindows/issues/1878), and *fakeroot-tcp* is necessary until System V IPC is fully implemented [(see here)](https://github.com/Microsoft/BashOnWindows/issues/1016). This step will be unnecessary when those bugs are fixed.
 
 Open bash again, and setup Arch:
 

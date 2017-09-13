@@ -171,7 +171,7 @@ Aqui está uma lista de coisas que você pode fazer para ganhar alguma "populari
 *   Junte-se aos [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") para ganhar experiência em empacotamento para mostrar suas habilidades.
 *   Envie pacotes para o AUR.
 *   Junte-se a projetos que estão "na boca do brete" para serem incorporados ao Arch algum dia, ou crie seu próprio projeto.
-*   Trabalhe no *pacman*, *makepkg* ou outra forma de código-fonte e envie *patches* para o bug tracker.
+*   Trabalhe no *pacman*, *makepkg* ou outros [projetos do Arch](https://git.archlinux.org/) e envie *patches* para o bug tracker.
 *   Navegue pelo [rastreador de bugs](https://bugs.archlinux.org/) e tente consertar bugs existentes.
 *   Encontre e envie novos bugs.
 *   Conserte erros na wiki, adicione novas páginas, limpe as existentes e certifique-se que seus procedimentos para tal estão atualizados.

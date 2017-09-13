@@ -57,6 +57,8 @@ The following workarounds are available:
 *   Set `amdgpu` as first to load in the [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES="amdgpu radeon"`.
 *   [Blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
+Also, since kernel 4.13, adding the `amdgpu.si_support=1` or `amdgpu.cik_support=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") is [required](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1). Otherwise, AMDGPU will not start and you will end up with either radeon being used instead or the display being frozen during the boot.
+
 ### AMDGPU PRO
 
 **Warning:** Arch Linux is officially not supported.

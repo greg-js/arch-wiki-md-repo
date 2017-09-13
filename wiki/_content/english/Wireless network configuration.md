@@ -51,12 +51,13 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [5.8.3 Cause #3](#Cause_.233)
         *   [5.8.4 Cause #4](#Cause_.234)
 *   [6 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
-    *   [6.1 Ralink](#Ralink)
+    *   [6.1 Ralink/Mediatek](#Ralink.2FMediatek)
         *   [6.1.1 rt2x00](#rt2x00)
         *   [6.1.2 rt3090](#rt3090)
         *   [6.1.3 rt3290](#rt3290)
         *   [6.1.4 rt3573](#rt3573)
         *   [6.1.5 rt5572](#rt5572)
+        *   [6.1.6 mt7612u](#mt7612u)
     *   [6.2 Realtek](#Realtek)
         *   [6.2.1 rtl8192cu](#rtl8192cu)
         *   [6.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
@@ -624,7 +625,7 @@ This section covers methods and procedures for installing kernel modules and *fi
 
 See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general informations on operations with modules.
 
-### Ralink
+### Ralink/Mediatek
 
 #### rt2x00
 
@@ -653,6 +654,10 @@ New chipset as of 2012\. It may require proprietary drivers from Ralink. Differe
 #### rt5572
 
 New chipset as of 2012 with support for 5 Ghz bands. It may require proprietary drivers from Ralink and some effort to compile them. At the time of writing a how-to on compilation is available for a DLINK DWA-160 rev. B2 [here](http://bernaerts.dyndns.org/linux/229-ubuntu-precise-dlink-dwa160-revb2).
+
+#### mt7612u
+
+New chipset as of 2014, released under their new commercial name Mediatek. It is an AC1200 or AC1300 chipset. Manufacturer provides drivers for Linux on their [support page](https://www.mediatek.com/products/broadbandWifi/mt7612u)
 
 ### Realtek
 
@@ -685,8 +690,8 @@ These are Realtek chipsets designed for AC600/AC1200/1750/1900 USB adapters.
 Several packages provide the kernel drivers:
 
 | Chipset | Driver version | [AUR](/index.php/AUR "AUR") package |
-| rtl8812au only | 5.2.9 | [rtl8812au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8812au-v5-dkms-git/) |
-| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-v5-dkms-git](https://aur.archlinux.org/packages/rtl8821au-v5-dkms-git/) |
+| rtl8812au only | 5.2.9 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) |
+| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) |
 | rtl8814au | 4.3.21 | [edimax_ac1750_8814au-dkms](https://aur.archlinux.org/packages/edimax_ac1750_8814au-dkms/) |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.

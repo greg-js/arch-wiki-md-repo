@@ -256,9 +256,9 @@ The new package will appear on AUR after you *push* the first commit. You can no
 
 #### Uploading packages
 
-**Tip:** To prevent untracked files from commits and keep a clean working directory as possible, exclude all files with `.gitignore` and force-add files instead. See [dotfiles#Using gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
-
 The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
+
+**Note:** You need to regenerate the `.SRCINFO` every time you change `PKGBUILD` metadata, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates. Otherwise the AUR will not show the updated version numbers.
 
 To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
 
@@ -272,9 +272,10 @@ $ git push
 
 ```
 
-**Tip:** If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
+**Tip:**
 
-Note that you need to regenerate the `.SRCINFO` every time you change `PKGBUILD` metadata, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates. Otherwise the AUR will not show the updated version numbers.
+*   If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
+*   To prevent untracked files from commits and to keep the working directory as clean as possible, exclude all files with `.gitignore` and force-add files instead. See [dotfiles#Using gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
 
 ### Maintaining packages
 

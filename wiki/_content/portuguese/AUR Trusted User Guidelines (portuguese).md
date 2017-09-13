@@ -1,3 +1,7 @@
+Artigos relacionados
+
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+
 O **Trusted User (TU)** ("Usuário confiado") é um membro da comunidade encarregado de manter o AUR funcionando. Ele/Ela mantém pacotes populares ([comunicando com o *upstream* e enviando-o patches quando necessário](https://mailman.archlinux.org/pipermail/aur-general/2010-September/010649.html)) e vota em assuntos administrativos. Um TU é eleito de membros ativos da comunidade pelos atuais TUs em um processo democrático. TUs são os únicos membros que têm a última palavra na direção do AUR.
 
 Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) ("Estatuto dos TUs")
@@ -14,7 +18,8 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
     *   [3.5 Movendo pacotes do [community] para unsupported](#Movendo_pacotes_do_.5Bcommunity.5D_para_unsupported)
     *   [3.6 Movendo pacotes do [community-testing] para [community]](#Movendo_pacotes_do_.5Bcommunity-testing.5D_para_.5Bcommunity.5D)
     *   [3.7 Excluindo pacotes do unsupported](#Excluindo_pacotes_do_unsupported)
-    *   [3.8 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Lista de TODO na retirada de um Trusted User](#Lista_de_TODO_na_retirada_de_um_Trusted_User)
+*   [5 Veja também](#Veja_tamb.C3.A9m)
 
 ## Lista de tarefas para novos Trusted Users
 
@@ -141,6 +146,15 @@ ssh nymeria.archlinux.org /arch/db-move community-testing community package
 
 Não há sentido em remover pacotes-modelos, porque eles serão recriados na tentativa de atender dependências. Se alguém enviar um pacote real, então todos os dependentes irão apontar para o local correto.
 
-### Veja também
+## Lista de TODO na retirada de um Trusted User
+
+Quando um TU renuncia, a seguinte lista tem que ser seguida, essas etapas não se aplicam quando um TU renuncia, mas ainda é um desenvolvedor.
+
+1.  Todos os pacotes empacotados pelo TU retirado devem ser resignados (portanto, recompilados). Pacotes empacotados pelo retirado podem ser localizados no Archweb [https://www.archlinux.org/packages/?sort=&q=&empacotador=$empacotador&flagged=](https://www.archlinux.org/packages/?sort=&q=&empacotador=$empacotador&flagged=), sendo empacotador o nome de usuário no Archweb.
+2.  A conta do retirado deve ser desabilitada no Archweb e adicionada ao grupo "Retired Trusted users". O retirado deve ser removido dos "Trusted Users" e as permissões de repositório devem ser reduzidas a zero.
+3.  O acesso shell a nossos servidores devem ser desabilitados. (especialmente repos.archlinux.org, pkgbuild.com)
+4.  A chave GPG deve ser removida e um novo pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) deve ser enviado para os repositórios.
+
+## Veja também
 
 *   [Diretrizes de Empacotamento](/index.php/DeveloperWiki#Packaging_Guidelines "DeveloperWiki")

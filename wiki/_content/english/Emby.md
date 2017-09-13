@@ -10,4 +10,11 @@
 
 Access Emby through the browser by navigating to [http://localhost:8096/](http://localhost:8096/)
 
-Emby runs under the [user](/index.php/User "User") and [group](/index.php/Group "Group") `emby`, [change ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") of library folders and/or files to `emby` allowing scanning, importing, etc.
+Emby runs under the [user](/index.php/User "User") and [group](/index.php/Group "Group") `emby`. To provide Emby access to you media library, either add user emby to the group that owns your files:
+
+```
+sudo gpasswd -a emby audio
+
+```
+
+or [change their owner](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") to user emby.

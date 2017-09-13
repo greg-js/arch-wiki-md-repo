@@ -15,6 +15,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
         *   [2.1.4 Sem "trollagem"](#Sem_.22trollagem.22)
         *   [2.1.5 Não incendeie discussões](#N.C3.A3o_incendeie_discuss.C3.B5es)
         *   [2.1.6 Seja responsável](#Seja_respons.C3.A1vel)
+        *   [2.1.7 Contas de membros](#Contas_de_membros)
     *   [2.2 Legalidade](#Legalidade)
         *   [2.2.1 Solicitação criminal](#Solicita.C3.A7.C3.A3o_criminal)
         *   [2.2.2 Spam/Publicidade/Solicitação](#Spam.2FPublicidade.2FSolicita.C3.A7.C3.A3o)
@@ -31,12 +32,11 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
         *   [3.1.3 A vida é uma via de mão dupla](#A_vida_.C3.A9_uma_via_de_m.C3.A3o_dupla)
         *   [3.1.4 Requisições de recomendação de produtos](#Requisi.C3.A7.C3.B5es_de_recomenda.C3.A7.C3.A3o_de_produtos)
         *   [3.1.5 Tópicos antigos/"ressurreição de tópicos"](#T.C3.B3picos_antigos.2F.22ressurrei.C3.A7.C3.A3o_de_t.C3.B3picos.22)
-        *   [3.1.6 Contas de membros do fórum](#Contas_de_membros_do_f.C3.B3rum)
-        *   [3.1.7 Proibição de tópicos vazios/*power-posting*](#Proibi.C3.A7.C3.A3o_de_t.C3.B3picos_vazios.2Fpower-posting)
-        *   [3.1.8 *Bumping*](#Bumping)
-        *   [3.1.9 Publicação cruzada](#Publica.C3.A7.C3.A3o_cruzada)
-        *   [3.1.10 Espoliação(Hijacking) de Tópicos](#Espolia.C3.A7.C3.A3o.28Hijacking.29_de_T.C3.B3picos)
-        *   [3.1.11 Política da caixa de lixo (*marked for deletion*)](#Pol.C3.ADtica_da_caixa_de_lixo_.28marked_for_deletion.29)
+        *   [3.1.6 Proibição de tópicos vazios/*power-posting*](#Proibi.C3.A7.C3.A3o_de_t.C3.B3picos_vazios.2Fpower-posting)
+        *   [3.1.7 *Bumping*](#Bumping)
+        *   [3.1.8 Publicação cruzada](#Publica.C3.A7.C3.A3o_cruzada)
+        *   [3.1.9 Espoliação(Hijacking) de Tópicos](#Espolia.C3.A7.C3.A3o.28Hijacking.29_de_T.C3.B3picos)
+        *   [3.1.10 Política da caixa de lixo (*marked for deletion*)](#Pol.C3.ADtica_da_caixa_de_lixo_.28marked_for_deletion.29)
     *   [3.2 Listas de discussão](#Listas_de_discuss.C3.A3o)
         *   [3.2.1 *Top posting*](#Top_posting)
         *   [3.2.2 Citação](#Cita.C3.A7.C3.A3o)
@@ -89,6 +89,12 @@ Incendiar discussões (*"flames"*), em uma definição comum, é diretamente neg
 #### Seja responsável
 
 Se um problema entre pessoas surgir, tenha a mente aberta verificar se há a possibilidade do seu comportamento ter contribuído para o problema. Tomar responsabilidade pelas suas ações pode ser um passo decisivo para uma reconciliação pacífica.
+
+#### Contas de membros
+
+Por favor, limite-se ao cadastro de apenas uma conta de fórum. Ter mais que uma conta é uso desnecessário de recursos. Além do mais, poderá ser interpretado como um comportamento troll.
+
+Qualquer forma de [sockpuppet](https://en.wikipedia.org/wiki/Sockpuppet_(Internet) "w:Sockpuppet (Internet)") ou impersonalização é estritamente proibida.
 
 ### Legalidade
 
@@ -147,6 +153,7 @@ Além do [código comum](#C.C3.B3digo_de_conduta), cada um dos fóruns possui su
 *   Quando criar perguntas, acrescente o máximo de informação que puder, incluindo mensagens de erro, saída de terminal, logs, procedimento executado durante o acontecimento, quais documentações você utilizou como base e arquivos de configuração pertinentes.
 *   Escolha apenas um assunto por discussão. Tópicos longos são desencorajados nos sub-fóruns técnicos.
 *   Poste sua questão em apenas um sub-fórum. Busque o de maior relevância antes de criar o tópico.
+*   Não publique tutoriais ou "como fazer's": documentação no wiki, no qual ele pode ser mantido.
 *   Quando for responder a um tópico existente, sempre leia a postagem original com o objetivo de manter o foco no assunto inicial.
 *   Finalmente, quando uma solução é encontrada marque o tópico como resolvido(solved) sempre adicionando a marcação [SOLVED] ao título original.
     Note que você deve evitar utilizar a marcação [CLOSED], que é utilizada pelo sistema para marcar tópicos que não estão mais acessíveis para novas postagens.
@@ -175,10 +182,6 @@ Faça sua parte para manter o fórum organizado. Postar em tópicos antigos, ou 
 *   Se você possui uma pergunta, inicie um novo tópico e referencie um antigo se relevante.
 *   Se você possui algo a adicionar e julga que a informação é relacionada porém mais atualizada, inicie um novo tópico e relacione o antigo se desejado, porém, evite a duplicação de esforços postando informação que já está catalogada na Wiki do Arch
 *   Se você possui uma solução que é agnóstica a versão do software, a "ressurreição de tópico" pode ser algo apropriado.
-
-#### Contas de membros do fórum
-
-Por favor, limite-se ao cadastro de apenas uma conta de fórum. Ter mais que uma conta é uso desnecessário de recursos. Além do mais, poderá ser interpretado como um comportamento troll.
 
 #### Proibição de tópicos vazios/*power-posting*
 

@@ -11,7 +11,9 @@ Twm has stood for *Tom's Window Manager*, *Tab Window Manager* and more recently
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Patched version](#Patched_version)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Oversized window titles and menus](#Oversized_window_titles_and_menus)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -49,6 +51,12 @@ xcompmgr -o 0.3  -c -r 8 -t -10 -l -12 &
 /path-to-directory/twm -visual TrueColor -depth 32 -f /path-to-directory/dot.twmrc
 
 ```
+
+## Troubleshooting
+
+### Oversized window titles and menus
+
+You might find that titlebars and menu entries in TWM are extremely large - twice the size that one might typically expect. This is a [locale](/index.php/Locale "Locale") issue with TWM that occurs when a `UTF-8` locale is used. Setting the locale to `C` fixes the issue. See [[2]](https://forums.gentoo.org/viewtopic-t-530562-start-0.html).
 
 ## See also
 

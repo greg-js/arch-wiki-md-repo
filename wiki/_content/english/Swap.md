@@ -1,3 +1,12 @@
+Related articles
+
+*   [fstab](/index.php/Fstab "Fstab")
+*   [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate")
+*   [Zswap](/index.php/Zswap "Zswap")
+*   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
+*   [ZFS#Swap_volume](/index.php/ZFS#Swap_volume "ZFS")
+*   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
+
 This page provides an introduction to swap space and paging on GNU/Linux. It covers creation and activation of swap partitions and swap files.
 
 From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
@@ -21,9 +30,10 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
 *   [3 Swap encryption](#Swap_encryption)
 *   [4 Performance](#Performance)
     *   [4.1 Swappiness](#Swappiness)
-    *   [4.2 Priority](#Priority)
-    *   [4.3 Using zswap or zram](#Using_zswap_or_zram)
-    *   [4.4 Striping](#Striping)
+    *   [4.2 VFS cache pressure](#VFS_cache_pressure)
+    *   [4.3 Priority](#Priority)
+    *   [4.4 Using zswap or zram](#Using_zswap_or_zram)
+    *   [4.5 Striping](#Striping)
 
 ## Swap space
 
@@ -84,7 +94,7 @@ lsblk -no UUID /dev/sd*xy*
 **Note:**
 
 *   The fstab-entry is optional if the swap partition is located on a device using GPT. See the next subsection.
-*   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d`/`--discard` parameter achieves the same. See [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) for details.
+*   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d`/`--discard` parameter achieves the same. See [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8) for details.
 
 **Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
 
@@ -224,6 +234,8 @@ To set the swappiness value permanently, edit a *sysctl* configuration file
  `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
 
 To test and more on why this may work, take a look at [this article](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
+
+### VFS cache pressure
 
 Another *sysctl* parameter that affects swap performance is `vm.vfs_cache_pressure`, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed[[2]](http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim). For more information, see the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
 

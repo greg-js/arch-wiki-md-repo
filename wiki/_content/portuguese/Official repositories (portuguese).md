@@ -1,3 +1,13 @@
+Artigos relacionados
+
+*   [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
+*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [Mirrors](/index.php/Mirrors "Mirrors")
+*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+
 Um [repositório de software](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") é um local de armazenamento a partir do qual pacotes de software são obtidos para instalação.
 
 **Repositórios oficiais** do Arch Linux contêm softwares essenciais e populares, prontamente acessíveis via [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Eles são mantidos por [mantenedores de pacote](/index.php/Arch_terminology_(Portugu%C3%AAs)#Package_maintainer "Arch terminology (Português)").
@@ -77,7 +87,7 @@ Novos pacotes vão para o *testing* se:
 
 **Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
-Se você habilitar *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar *testing*.
+**Warning:** Se você habilitar *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar ambos *testing* e *community-testing*.
 
 #### community-testing
 

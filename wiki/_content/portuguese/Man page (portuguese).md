@@ -60,41 +60,41 @@ Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a
 
 ## Pesquisando por manuais
 
-Even though the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
+Apesar do utilitário `man` permitir que usuários exibam páginas man, e pesquisem seu conteúdo via *less*, um problema surge quando não se sabe o nome exato da página de manual desejada em primeiro lugar! Por sorte, as opções `-k` ou `--apropos` podem ser usadas para pesquisar pelas descrições de página de manual por ocorrências de uma palavra-chave dada.
 
-The research feature is provided by a dedicated cache. By default you may not have any cache built and all your searches will give you the *nothing appropriate* result. You can generate the cache or update it by running
+O recurso de pesquisa é fornecido por um cache dedicado. Por padrão, você não pode ter qualquer cache compilado e todas suas pesquisa lhe darão *nenhum resultado apropriado*. Você pode gerar o cache ou atualizá-lo executando
 
 ```
 # mandb
 
 ```
 
-You should run it everytime a new manpage is installed.
+Você deve executá-lo toda vez que uma nova página man é instalada.
 
-Now you can begin your search. For example, to search for man pages related to "password":
+Agora, você pode começar sua pesquisa. Por exemplo, para pesquisar por páginas man relacionadas a "password":
 
 ```
 $ man -k password
 
 ```
 
-or:
+ou:
 
 ```
 $ man --apropos password
 
 ```
 
-This is equivalent to calling the `apropos` command:
+Isso é equivalente a chamar o comando `apropos`:
 
 ```
 $ apropos password
 
 ```
 
-The given keyword is interpreted as a regular expression by default.
+A palavra-chave dada é interpretada como uma expressão regular por padrão.
 
-If you want to do a more in-depth search by matching the keywords found in the whole articles, you can use the `-K` option:
+Se você deseja fazer uma pesquisa mais profunda correspondendo palavras-chave encontradas em todos os artigos, você pode usar a opção `-K`:
 
 ```
 $ man -K password
@@ -103,9 +103,9 @@ $ man -K password
 
 ## Largura de página
 
-The man page width is controlled by the `MANWIDTH` environment variable.
+A largura de páginas man é controlada pela variável de ambiente `MANWIDTH`.
 
-If the number of columns in the terminal is too small (e.g. the window width is narrow), the line breaks will be wrong. This can be very disturbing for reading. You can fix this by setting the MANWIDTH on `man` invocation. With `Bash`, that would be:
+Se o número de colunas no terminal é pequeno demais (ex.: a largura da janela é estreita), as quebras de linha ficarão erradas. Isso pode ser bem incômodo para ler. Você pode corrigir isso definindo MANWIDTH na invocação de `man`. Com `Bash`, isso seria:
 
  `~/.bashrc` 
 ```
@@ -120,39 +120,39 @@ man() {
 
 ## Lendo páginas man locais
 
-Instead of the standard interface, using browsers such as [lynx](https://www.archlinux.org/packages/?name=lynx) and [Firefox](/index.php/Firefox "Firefox") to view man pages allows users to reap info pages' main benefit of hyperlinked text. Alternatives include the following:
+Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archlinux.org/packages/?name=lynx) e [Firefox](/index.php/Firefox "Firefox") para visualizar páginas man permite que os usuários colham o principal benefício de texto hiperlink das páginas info. As alternativas incluem o seguinte:
 
-*   [KDE](/index.php/KDE "KDE") users can read man pages in
-    *   Konqueror using `man:<name>`.
-    *   KHelpCenter ([khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)) in "UNIX manual pages" or by running `khelpcenter man:<name>`.
-*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
-*   The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) can be used via `yelp man:<name>`.
+*   Usuários do [KDE](/index.php/KDE "KDE") podem ler páginas man com
+    *   Konqueror usando `man:<nome>`.
+    *   KHelpCenter ([khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)) em "UNIX manual pages" ou executando `khelpcenter man:<nome>`.
+*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) fornece uma visão categorizada em páginas man no [X](/index.php/X "X").
+*   [yelp](https://www.archlinux.org/packages/?name=yelp), o navegador de ajuda do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), pode ser usado via `yelp man:<nome>`.
 
 ### Convertendo para HTML legível com navegador
 
 #### mdocml
 
-Install [mdocml](https://aur.archlinux.org/packages/mdocml/) from [AUR](/index.php/AUR "AUR"). To convert a page, for example `free(1)`:
+Instale [mdocml](https://aur.archlinux.org/packages/mdocml/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Para converter uma página, por exemplo `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
 
 ```
 
-Now open the file called `free.html` in your favourite browser.
+Agora, abra o arquivo chamado `free.html` em seu navegador favorito.
 
 #### man2html
 
-First, install [man2html](https://www.archlinux.org/packages/?name=man2html) from the official repositories.
+Primeiro, instale [man2html](https://www.archlinux.org/packages/?name=man2html) dos repositórios oficiais.
 
-Now, convert a man page:
+Agora, converta uma página man:
 
 ```
 $ man free | man2html -compress -cgiurl man$section/$title.$section$subsection.html > ~/man/free.html
 
 ```
 
-Another use for `man2html` is exporting to raw, printer-friendly text:
+Outro uso para `man2html` é exportar para texto não tratado, no formato de impressão:
 
 ```
 $ man free | man2html -bare > ~/free.txt
@@ -161,20 +161,20 @@ $ man free | man2html -bare > ~/free.txt
 
 #### man -H
 
-The GNU implementation of man in the Arch repositories also has the ability to do this on its own:
+A implementação GNU do man nos repositórios Arch também possuem a habilidade de fazer isso por conta própria:
 
 ```
 $ man -H free
 
 ```
 
-This will read your `BROWSER` [environment variable](/index.php/Environment_variable "Environment variable") to determine the browser. You can override this by passing the binary to the `-H` option.
+Isso vai ler sua [variável de ambiente](/index.php/Environment_variable "Environment variable") `BROWSER` para determinar o navegador. Você pode sobrepor isso passando o executável para a opção `-H`.
 
 #### roffit
 
-First install [roffit](https://aur.archlinux.org/packages/roffit/) from [AUR](/index.php/AUR "AUR").
+Primeiro, instale [roffit](https://aur.archlinux.org/packages/roffit/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
-To convert a man page:
+Para converter uma página man:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
@@ -183,37 +183,36 @@ $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 
 ### Convertendo para PDF
 
-man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have ghostscript installed, converting a man page to PDF is actually very easy: `man -t <manpage> | ps2pdf - <pdf>`. [This google image search](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) should give you an idea of what the result looks like; it may not be to everybody's liking.
+Páginas man sempre foram imprimíveis: elas são escritas em troff, que é fundamentalmente uma linguagem de formatação de texto. Se você tiver o ghostscript instalado, a conversão de uma página man para PDF é realmente bem fácil: `man -t <manpage> | ps2pdf - <pdf>`. [Essa pesquisa de imagens no Google](https://www.google.com.br/search?q=manpage+pdf+troff&source=lnms&tbm=isch) deve lhe dar uma ideia do que o resultado se parece com; pode não ser do gosto de todas as pessoas.
 
-Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no hyperlinks. Some man pages were specifically designed for terminal viewing, and won't look right in PS or PDF form.
+Ressalvas: Fontes são geralmente limitadas a Times em tamanhos fixos. Não há hyperlinks. Algumas páginas man foram projetadas especificamente para ver no terminal e não ficarão bem na forma de PS ou PDF.
 
 ## Páginas man online
 
-There are several online databases of man pages, including:
+Há vários bancos de dado online de páginas man, incluindo:
 
-*   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-*   [*Arch Linux man pages*](https://manned.org/pkg/arch)
-*   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
-*   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
-*   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
-*   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
-*   [*Linux man pages at die.net*](http://linux.die.net/man/)
-*   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
-*   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [*Mac OS X Manual Pages*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [*On-line UNIX manual pages*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [*OpenBSD manual pages*](http://www.openbsd.org/cgi-bin/man.cgi)
-*   [*Plan 9 Manual — Volume 1*](http://man.cat-v.org/plan_9/)
-*   [*Inferno Manual — Volume 1*](http://man.cat-v.org/inferno/)
-*   [*Storage Foundation Man Pages*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)
+*   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream do [man-pages](https://www.archlinux.org/packages/?name=man-pages) do Arch Linux.
+*   [*Páginas man do Arch Linux*](https://manned.org/pkg/arch)
+*   [*Páginas man do Debian GNU/Linux*](http://manpages.debian.net/)
+*   [*Páginas man do DragonFlyBSD*](http://leaf.dragonflybsd.org/cgi/web-man)
+*   [*Páginas man hypertext do FreeBSD*](http://www.freebsd.org/cgi/man.cgi)
+*   [*Páginas man do Linux e Solaris 10*](http://www.manpages.spotlynx.com/)
+*   [*Páginas man do Linux no die.net*](http://linux.die.net/man/)
+*   [*Páginas man do NetBSD*](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [*Páginas man do Mac OS X*](http://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
+*   [*Páginas man online do UNIX*](http://unixhelp.ed.ac.uk/alphabetical/index.html)
+*   [*Páginas de manual do OpenBSD*](http://www.openbsd.org/cgi-bin/man.cgi)
+*   [*Manual do Plan 9 — Volume 1*](http://man.cat-v.org/plan_9/)
+*   [*Manual do Inferno — Volume 1*](http://man.cat-v.org/inferno/)
+*   [*Páginas man do Storage Foundation*](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
+*   [*O repositório de páginas man do UNIX and Linux Forums*](http://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [*Repositório de páginas man do Ubuntu*](http://manpages.ubuntu.com/)
 
-**Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.
+**Atenção:** Algumas distribuições fornecem páginas man alteradas ou desatualizadas que se diferem daquelas fornecidas pelo Arch. Exercite o cuidado ao usar páginas man online.
 
 ## Páginas man notáveis
 
-Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ASCII table).
+Aqui está uma lista não exaustiva de páginas dignas de nota que podem lhe ajudar a entender muitas coisas em profundidade. Alguns deles podem servir como uma boa referência (como a tabela ASCII).
 
 *   [ascii(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ascii.7)
 *   [boot(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/boot.7)
@@ -233,14 +232,14 @@ Here follows a non-exhaustive list of noteworthy pages that might help you under
 *   [terminfo(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)
 *   [utf-8(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/utf-8.7)
 
-More generally, have a look at category 7 pages:
+De forma mais geral, dê uma olhada nas páginas de categoria 7:
 
 ```
 $ man -s 7 -k ".*" 
 
 ```
 
-Arch Linux specific pages:
+Páginas específicas do Arch Linux:
 
 *   [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)
 *   [mkinitcpio(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8)
@@ -250,5 +249,5 @@ Arch Linux specific pages:
 
 ## Veja também
 
-*   [man page - Gentoo wiki article](https://wiki.gentoo.org/wiki/Man_page)
-*   [Write The Fine Manual with pod2man](https://linuxtidbits.wordpress.com/2013/08/21/wtfm-write-the-fine-manual-with-pod2man-text-converter/)
+*   [man page - artigo wiki do Gentoo](https://wiki.gentoo.org/wiki/Man_page)
+*   [Escrevendo o bom manual com pod2man](https://linuxtidbits.wordpress.com/2013/08/21/wtfm-write-the-fine-manual-with-pod2man-text-converter/)

@@ -46,7 +46,7 @@ For [Xorg](/index.php/Xorg "Xorg"), a default configuration file for the wrapper
 First, execute:
 
 ```
-# libinput list-devices 
+# libinput list-devices
 
 ```
 
@@ -61,17 +61,17 @@ $ xinput list
 
 ```
 
-to view all devices and determine their numbers
+to view all devices and determine their names and numbers. In the following, `*device*` is either the name or number identifying the device to operate with.
 
 ```
-$ xinput list-props *device-number* 
+$ xinput list-props *device*
 
 ```
 
 to view and
 
 ```
-$ xinput set-prop *device-number* *option-number* *setting* 
+$ xinput set-prop *device* *option-number* *setting*
 
 ```
 
@@ -173,7 +173,7 @@ $ xinput get-button-map *device*
 
 ```
 
-You can freely permutate the button numbers and write them back. Example:
+where *device* is either the device name or the device ID, as returned by `xinput list`. You can freely permutate the button numbers and write them back. Example:
 
 ```
 $ xinput set-button-map *device* 1 6 3 4 5 0 7
